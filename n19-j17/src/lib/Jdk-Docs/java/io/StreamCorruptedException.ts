@@ -8,6 +8,13 @@ DocsCollector.collect('java.io.StreamCorruptedException', [
 	],
 	/* fields */ UDF,
 	[/* constructors */
+		[/* constructor */ '<init>()', [
+			[/* constructor description */
+				[/* text */ 't', `Create a StreamCorruptedException and list no reason why thrown.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF
+		]],
 		[/* constructor */ '<init>(java.lang.String)', [
 			[/* constructor description */
 				[/* text */ 't', `Create a StreamCorruptedException and list a reason why thrown.`]
@@ -17,13 +24,6 @@ DocsCollector.collect('java.io.StreamCorruptedException', [
 					[/* text */ 't', `String describing the reason for the exception.`]
 				]]
 			],
-			/* throws */ UDF
-		]],
-		[/* constructor */ '<init>()', [
-			[/* constructor description */
-				[/* text */ 't', `Create a StreamCorruptedException and list no reason why thrown.`]
-			],
-			/* parameters */ UDF,
 			/* throws */ UDF
 		]]
 	],

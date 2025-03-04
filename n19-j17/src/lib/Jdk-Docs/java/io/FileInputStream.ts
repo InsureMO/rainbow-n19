@@ -21,6 +21,64 @@ DocsCollector.collect('java.io.FileInputStream', [
 	],
 	/* fields */ UDF,
 	[/* constructors */
+		[/* constructor */ '<init>(java.io.File)', [
+			[/* constructor description */
+				[/* text */ 't', `Creates a `],
+				[/* inline code block */ 'i', `FileInputStream`],
+				[/* text */ 't', ` by
+ opening a connection to an actual file,
+ the file named by the `],
+				[/* inline code block */ 'i', `File`],
+				[/* text */ 't', `
+ object `],
+				[/* inline code block */ 'i', `file`],
+				[/* text */ 't', ` in the file system.
+ A new `],
+				[/* inline code block */ 'i', `FileDescriptor`],
+				[/* text */ 't', ` object
+ is created to represent this file connection.
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', `
+ First, if there is a security manager,
+ its `],
+					[/* inline code block */ 'i', `checkRead`],
+					[/* text */ 't', ` method  is called
+ with the path represented by the `],
+					[/* inline code block */ 'i', `file`],
+					[/* text */ 't', `
+ argument as its argument.
+ `]
+				]],
+				[/* block */ 'b', [
+					[/* text */ 't', `
+ If the named file does not exist, is a directory rather than a regular
+ file, or for some other reason cannot be opened for reading then a
+ `],
+					[/* inline code block */ 'i', `FileNotFoundException`],
+					[/* text */ 't', ` is thrown.`]
+				]]
+			],
+			[/* parameters */
+				[/* parameter */ 'file', [/* parameter description */
+					[/* text */ 't', `the file to be opened for reading.`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.io.FileNotFoundException', [/* throw description */
+					[/* text */ 't', `if the file does not exist,
+             is a directory rather than a regular file,
+             or for some other reason cannot be opened for
+             reading.`]
+				]],
+				[/* throw */ 'java.lang.SecurityException', [/* throw description */
+					[/* text */ 't', `if a security manager exists and its
+             `],
+					[/* inline code block */ 'i', `checkRead`],
+					[/* text */ 't', ` method denies read access to the file.`]
+				]]
+			]
+		]],
 		[/* constructor */ '<init>(java.io.FileDescriptor)', [
 			[/* constructor description */
 				[/* text */ 't', `Creates a `],
@@ -84,64 +142,6 @@ DocsCollector.collect('java.io.FileInputStream', [
 				]]
 			]
 		]],
-		[/* constructor */ '<init>(java.io.File)', [
-			[/* constructor description */
-				[/* text */ 't', `Creates a `],
-				[/* inline code block */ 'i', `FileInputStream`],
-				[/* text */ 't', ` by
- opening a connection to an actual file,
- the file named by the `],
-				[/* inline code block */ 'i', `File`],
-				[/* text */ 't', `
- object `],
-				[/* inline code block */ 'i', `file`],
-				[/* text */ 't', ` in the file system.
- A new `],
-				[/* inline code block */ 'i', `FileDescriptor`],
-				[/* text */ 't', ` object
- is created to represent this file connection.
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', `
- First, if there is a security manager,
- its `],
-					[/* inline code block */ 'i', `checkRead`],
-					[/* text */ 't', ` method  is called
- with the path represented by the `],
-					[/* inline code block */ 'i', `file`],
-					[/* text */ 't', `
- argument as its argument.
- `]
-				]],
-				[/* block */ 'b', [
-					[/* text */ 't', `
- If the named file does not exist, is a directory rather than a regular
- file, or for some other reason cannot be opened for reading then a
- `],
-					[/* inline code block */ 'i', `FileNotFoundException`],
-					[/* text */ 't', ` is thrown.`]
-				]]
-			],
-			[/* parameters */
-				[/* parameter */ 'file', [/* parameter description */
-					[/* text */ 't', `the file to be opened for reading.`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.io.FileNotFoundException', [/* throw description */
-					[/* text */ 't', `if the file does not exist,
-             is a directory rather than a regular file,
-             or for some other reason cannot be opened for
-             reading.`]
-				]],
-				[/* throw */ 'java.lang.SecurityException', [/* throw description */
-					[/* text */ 't', `if a security manager exists and its
-             `],
-					[/* inline code block */ 'i', `checkRead`],
-					[/* text */ 't', ` method denies read access to the file.`]
-				]]
-			]
-		]],
 		[/* constructor */ '<init>(java.lang.String)', [
 			[/* constructor description */
 				[/* text */ 't', `Creates a `],
@@ -201,6 +201,57 @@ DocsCollector.collect('java.io.FileInputStream', [
 		]]
 	],
 	[/* methods */
+		[/* method */ 'readAllBytes()', UDF],
+		[/* method */ 'readNBytes(int)', UDF],
+		[/* method */ 'getFD()', [
+			[/* method description */
+				[/* text */ 't', `Returns the `],
+				[/* inline code block */ 'i', `FileDescriptor`],
+				[/* text */ 't', `
+ object  that represents the connection to
+ the actual file in the file system being
+ used by this `],
+				[/* inline code block */ 'i', `FileInputStream`],
+				[/* text */ 't', `.`]
+			],
+			/* parameters */ UDF,
+			[/* throws */
+				[/* throw */ 'java.io.IOException', [/* throw description */
+					[/* text */ 't', `if an I/O error occurs.`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `the file descriptor object associated with this stream.`]
+			]
+		]],
+		[/* method */ 'available()', [
+			[/* method description */
+				[/* text */ 't', `Returns an estimate of the number of remaining bytes that can be read (or
+ skipped over) from this input stream without blocking by the next
+ invocation of a method for this input stream. Returns 0 when the file
+ position is beyond EOF. The next invocation might be the same thread
+ or another thread. A single read or skip of this many bytes will not
+ block, but may read or skip fewer bytes.
+
+ `],
+				[/* block */ 'b', ` In some cases, a non-blocking read (or skip) may appear to be
+ blocked when it is merely slow, for example when reading large
+ files over slow networks.`]
+			],
+			/* parameters */ UDF,
+			[/* throws */
+				[/* throw */ 'java.io.IOException', [/* throw description */
+					[/* text */ 't', `if this file input stream has been closed by calling
+             `],
+					[/* inline code block */ 'i', `close`],
+					[/* text */ 't', ` or an I/O error occurs.`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `an estimate of the number of remaining bytes that can be read
+             (or skipped over) from this input stream without blocking.`]
+			]
+		]],
 		[/* method */ 'read()', [
 			[/* method description */
 				[/* text */ 't', `Reads a byte of data from this input stream. This method blocks
@@ -302,25 +353,30 @@ DocsCollector.collect('java.io.FileInputStream', [
              the file has been reached.`]
 			]
 		]],
-		[/* method */ 'close()', [
+		[/* method */ 'getChannel()', [
 			[/* method description */
-				[/* text */ 't', `Closes this file input stream and releases any system resources
- associated with the stream.
+				[/* text */ 't', `Returns the unique `],
+				[/* reference */ 'r', `java.nio.channels.FileChannel`],
+				[/* text */ 't', `
+ object associated with this file input stream.
 
  `],
-				[/* block */ 'b', ` If this stream has an associated channel then the channel is closed
- as well.`]
-			],
-			/* parameters */ UDF,
-			[/* throws */
-				[/* throw */ 'java.io.IOException', [/* throw description */
-					[/* text */ 't', `if an I/O error occurs.`]
+				[/* block */ 'b', [
+					[/* text */ 't', ` The initial `],
+					[/* reference */ 'r', `java.channels.FileChannel#position()`],
+					[/* text */ 't', ` of the returned channel will be equal to the
+ number of bytes read from the file so far.  Reading bytes from this
+ stream will increment the channel's position.  Changing the channel's
+ position, either explicitly or by reading, will change this stream's
+ file position.`]
 				]]
 			],
-			/* return */ UDF
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the file channel associated with this file input stream`]
+			]
 		]],
-		[/* method */ 'readAllBytes()', UDF],
-		[/* method */ 'readNBytes(int)', UDF],
 		[/* method */ 'skip(long)', [
 			[/* method description */
 				[/* text */ 't', `Skips over and discards `],
@@ -370,44 +426,14 @@ DocsCollector.collect('java.io.FileInputStream', [
 				[/* text */ 't', `the actual number of bytes skipped.`]
 			]
 		]],
-		[/* method */ 'available()', [
+		[/* method */ 'close()', [
 			[/* method description */
-				[/* text */ 't', `Returns an estimate of the number of remaining bytes that can be read (or
- skipped over) from this input stream without blocking by the next
- invocation of a method for this input stream. Returns 0 when the file
- position is beyond EOF. The next invocation might be the same thread
- or another thread. A single read or skip of this many bytes will not
- block, but may read or skip fewer bytes.
+				[/* text */ 't', `Closes this file input stream and releases any system resources
+ associated with the stream.
 
  `],
-				[/* block */ 'b', ` In some cases, a non-blocking read (or skip) may appear to be
- blocked when it is merely slow, for example when reading large
- files over slow networks.`]
-			],
-			/* parameters */ UDF,
-			[/* throws */
-				[/* throw */ 'java.io.IOException', [/* throw description */
-					[/* text */ 't', `if this file input stream has been closed by calling
-             `],
-					[/* inline code block */ 'i', `close`],
-					[/* text */ 't', ` or an I/O error occurs.`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `an estimate of the number of remaining bytes that can be read
-             (or skipped over) from this input stream without blocking.`]
-			]
-		]],
-		[/* method */ 'getFD()', [
-			[/* method description */
-				[/* text */ 't', `Returns the `],
-				[/* inline code block */ 'i', `FileDescriptor`],
-				[/* text */ 't', `
- object  that represents the connection to
- the actual file in the file system being
- used by this `],
-				[/* inline code block */ 'i', `FileInputStream`],
-				[/* text */ 't', `.`]
+				[/* block */ 'b', ` If this stream has an associated channel then the channel is closed
+ as well.`]
 			],
 			/* parameters */ UDF,
 			[/* throws */
@@ -415,33 +441,7 @@ DocsCollector.collect('java.io.FileInputStream', [
 					[/* text */ 't', `if an I/O error occurs.`]
 				]]
 			],
-			[/* return description */
-				[/* text */ 't', `the file descriptor object associated with this stream.`]
-			]
-		]],
-		[/* method */ 'getChannel()', [
-			[/* method description */
-				[/* text */ 't', `Returns the unique `],
-				[/* reference */ 'r', `java.nio.channels.FileChannel`],
-				[/* text */ 't', `
- object associated with this file input stream.
-
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', ` The initial `],
-					[/* reference */ 'r', `java.channels.FileChannel#position()`],
-					[/* text */ 't', ` of the returned channel will be equal to the
- number of bytes read from the file so far.  Reading bytes from this
- stream will increment the channel's position.  Changing the channel's
- position, either explicitly or by reading, will change this stream's
- file position.`]
-				]]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the file channel associated with this file input stream`]
-			]
+			/* return */ UDF
 		]]
 	],
 ]);

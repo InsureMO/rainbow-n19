@@ -103,36 +103,6 @@ DocsCollector.collect('java.security.ProtectionDomain', [
 		]]
 	],
 	[/* methods */
-		[/* method */ 'toString()', [
-			[/* method description */
-				[/* text */ 't', `Convert a ProtectionDomain to a String.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `a string representation of the object.`]
-			]
-		]],
-		[/* method */ 'getClassLoader()', [
-			[/* method description */
-				[/* text */ 't', `Returns the ClassLoader of this domain.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the ClassLoader of this domain which may be null.`]
-			]
-		]],
-		[/* method */ 'getCodeSource()', [
-			[/* method description */
-				[/* text */ 't', `Returns the CodeSource of this domain.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the CodeSource of this domain which may be null.`]
-			]
-		]],
 		[/* method */ 'implies(java.security.Permission)', [
 			[/* method description */
 				[/* text */ 't', `Check and see if this ProtectionDomain implies the permissions
@@ -169,6 +139,40 @@ DocsCollector.collect('java.security.ProtectionDomain', [
 				[/* text */ 't', ` is implied by this ProtectionDomain.`]
 			]
 		]],
+		[/* method */ 'staticPermissionsOnly()', [
+			[/* method description */
+				[/* text */ 't', `Returns true if this domain contains only static permissions
+ and does not check the current `],
+				[/* inline code block */ 'i', `Policy`],
+				[/* text */ 't', ` at the time of
+ permission checking.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `true if this domain contains only static permissions.`]
+			]
+		]],
+		[/* method */ 'getClassLoader()', [
+			[/* method description */
+				[/* text */ 't', `Returns the ClassLoader of this domain.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the ClassLoader of this domain which may be null.`]
+			]
+		]],
+		[/* method */ 'getCodeSource()', [
+			[/* method description */
+				[/* text */ 't', `Returns the CodeSource of this domain.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the CodeSource of this domain which may be null.`]
+			]
+		]],
 		[/* method */ 'getPermissions()', [
 			[/* method description */
 				[/* text */ 't', `Returns the static permissions granted to this domain.`]
@@ -190,18 +194,14 @@ DocsCollector.collect('java.security.ProtectionDomain', [
  Returns a new array each time this method is called.`]
 			]
 		]],
-		[/* method */ 'staticPermissionsOnly()', [
+		[/* method */ 'toString()', [
 			[/* method description */
-				[/* text */ 't', `Returns true if this domain contains only static permissions
- and does not check the current `],
-				[/* inline code block */ 'i', `Policy`],
-				[/* text */ 't', ` at the time of
- permission checking.`]
+				[/* text */ 't', `Convert a ProtectionDomain to a String.`]
 			],
 			/* parameters */ UDF,
 			/* throws */ UDF,
 			[/* return description */
-				[/* text */ 't', `true if this domain contains only static permissions.`]
+				[/* text */ 't', `a string representation of the object.`]
 			]
 		]]
 	],

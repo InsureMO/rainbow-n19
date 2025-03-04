@@ -933,12 +933,6 @@ JdkClassCreateHelper.class('java.time.LocalTime', [
 		]
 	],
 	[/* declared fields */
-		[/* public static final java.time.LocalTime java.time.LocalTime.MIN */
-			/* name */ 'MIN',
-			/* type */ 'java.time.LocalTime',
-			/* annotations */ UDF,
-			/* modifiers */ 25
-		],
 		[/* public static final java.time.LocalTime java.time.LocalTime.MAX */
 			/* name */ 'MAX',
 			/* type */ 'java.time.LocalTime',
@@ -947,6 +941,12 @@ JdkClassCreateHelper.class('java.time.LocalTime', [
 		],
 		[/* public static final java.time.LocalTime java.time.LocalTime.MIDNIGHT */
 			/* name */ 'MIDNIGHT',
+			/* type */ 'java.time.LocalTime',
+			/* annotations */ UDF,
+			/* modifiers */ 25
+		],
+		[/* public static final java.time.LocalTime java.time.LocalTime.MIN */
+			/* name */ 'MIN',
 			/* type */ 'java.time.LocalTime',
 			/* annotations */ UDF,
 			/* modifiers */ 25

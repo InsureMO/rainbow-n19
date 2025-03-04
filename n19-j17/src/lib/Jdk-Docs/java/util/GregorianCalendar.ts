@@ -457,20 +457,6 @@ DocsCollector.collect('java.util.GregorianCalendar', [
 		[/* block */ 'b', '']
 	],
 	[/* fields */
-		[/* field */ 'BC', [
-			[/* field description */
-				[/* text */ 't', `Value of the `],
-				[/* inline code block */ 'i', `ERA`],
-				[/* text */ 't', ` field indicating
- the period before the common era (before Christ), also known as BCE.
- The sequence of years at the transition from `],
-				[/* inline code block */ 'i', `BC`],
-				[/* text */ 't', ` to `],
-				[/* inline code block */ 'i', `AD`],
-				[/* text */ 't', ` is
- ..., 2 BC, 1 BC, 1 AD, 2 AD,...`]
-			],
-		]],
 		[/* field */ 'AD', [
 			[/* field description */
 				[/* text */ 't', `Value of the `],
@@ -484,9 +470,36 @@ DocsCollector.collect('java.util.GregorianCalendar', [
 				[/* text */ 't', ` is
  ..., 2 BC, 1 BC, 1 AD, 2 AD,...`]
 			],
+		]],
+		[/* field */ 'BC', [
+			[/* field description */
+				[/* text */ 't', `Value of the `],
+				[/* inline code block */ 'i', `ERA`],
+				[/* text */ 't', ` field indicating
+ the period before the common era (before Christ), also known as BCE.
+ The sequence of years at the transition from `],
+				[/* inline code block */ 'i', `BC`],
+				[/* text */ 't', ` to `],
+				[/* inline code block */ 'i', `AD`],
+				[/* text */ 't', ` is
+ ..., 2 BC, 1 BC, 1 AD, 2 AD,...`]
+			],
 		]]
 	],
 	[/* constructors */
+		[/* constructor */ '<init>()', [
+			[/* constructor description */
+				[/* text */ 't', `Constructs a default `],
+				[/* inline code block */ 'i', `GregorianCalendar`],
+				[/* text */ 't', ` using the current time
+ in the default time zone with the default
+ `],
+				[/* reference */ 'r', `.Locale.Category#FORMAT`],
+				[/* text */ 't', ` locale.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF
+		]],
 		[/* constructor */ '<init>(int,int,int)', [
 			[/* constructor description */
 				[/* text */ 't', `Constructs a `],
@@ -596,17 +609,18 @@ DocsCollector.collect('java.util.GregorianCalendar', [
 			],
 			/* throws */ UDF
 		]],
-		[/* constructor */ '<init>()', [
+		[/* constructor */ '<init>(java.util.Locale)', [
 			[/* constructor description */
-				[/* text */ 't', `Constructs a default `],
+				[/* text */ 't', `Constructs a `],
 				[/* inline code block */ 'i', `GregorianCalendar`],
-				[/* text */ 't', ` using the current time
- in the default time zone with the default
- `],
-				[/* reference */ 'r', `.Locale.Category#FORMAT`],
-				[/* text */ 't', ` locale.`]
+				[/* text */ 't', ` based on the current time
+ in the default time zone with the given locale.`]
 			],
-			/* parameters */ UDF,
+			[/* parameters */
+				[/* parameter */ 'aLocale', [/* parameter description */
+					[/* text */ 't', `the given locale.`]
+				]]
+			],
 			/* throws */ UDF
 		]],
 		[/* constructor */ '<init>(java.util.TimeZone)', [
@@ -622,20 +636,6 @@ DocsCollector.collect('java.util.GregorianCalendar', [
 			[/* parameters */
 				[/* parameter */ 'zone', [/* parameter description */
 					[/* text */ 't', `the given time zone.`]
-				]]
-			],
-			/* throws */ UDF
-		]],
-		[/* constructor */ '<init>(java.util.Locale)', [
-			[/* constructor description */
-				[/* text */ 't', `Constructs a `],
-				[/* inline code block */ 'i', `GregorianCalendar`],
-				[/* text */ 't', ` based on the current time
- in the default time zone with the given locale.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'aLocale', [/* parameter description */
-					[/* text */ 't', `the given locale.`]
 				]]
 			],
 			/* throws */ UDF
@@ -659,6 +659,548 @@ DocsCollector.collect('java.util.GregorianCalendar', [
 		]]
 	],
 	[/* methods */
+		[/* method */ 'computeFields()', [
+			[/* method description */
+				[/* text */ 't', `Converts the time value (millisecond offset from the `],
+				[/* reference */ 'r', `.Calendar#Epoch`],
+				[/* text */ 't', `) to calendar field values.
+ The time is `],
+				[/* text */ 't', `not`],
+				[/* text */ 't', `
+ recomputed first; to recompute the time, then the fields, call the
+ `],
+				[/* inline code block */ 'i', `complete`],
+				[/* text */ 't', ` method.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			/* return */ UDF
+		]],
+		[/* method */ 'computeTime()', [
+			[/* method description */
+				[/* text */ 't', `Converts calendar field values to the time value (millisecond
+ offset from the `],
+				[/* reference */ 'r', `.Calendar#Epoch`],
+				[/* text */ 't', `).`]
+			],
+			/* parameters */ UDF,
+			[/* throws */
+				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
+					[/* text */ 't', `if any calendar fields are invalid.`]
+				]]
+			],
+			/* return */ UDF
+		]],
+		[/* method */ 'equals(java.lang.Object)', [
+			[/* method description */
+				[/* text */ 't', `Compares this `],
+				[/* inline code block */ 'i', `GregorianCalendar`],
+				[/* text */ 't', ` to the specified
+ `],
+				[/* inline code block */ 'i', `Object`],
+				[/* text */ 't', `. The result is `],
+				[/* inline code block */ 'i', `true`],
+				[/* text */ 't', ` if and
+ only if the argument is a `],
+				[/* inline code block */ 'i', `GregorianCalendar`],
+				[/* text */ 't', ` object
+ that represents the same time value (millisecond offset from
+ the `],
+				[/* reference */ 'r', `.Calendar#Epoch`],
+				[/* text */ 't', `) under the same
+ `],
+				[/* inline code block */ 'i', `Calendar`],
+				[/* text */ 't', ` parameters and Gregorian change date as
+ this object.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'obj', [/* parameter description */
+					[/* text */ 't', `the object to compare with.`]
+				]]
+			],
+			/* throws */ UDF,
+			[/* return description */
+				[/* inline code block */ 'i', `true`],
+				[/* text */ 't', ` if this object is equal to `],
+				[/* inline code block */ 'i', `obj`],
+				[/* text */ 't', `;
+ `],
+				[/* inline code block */ 'i', `false`],
+				[/* text */ 't', ` otherwise.`]
+			]
+		]],
+		[/* method */ 'isLeapYear(int)', [
+			[/* method description */
+				[/* text */ 't', `Determines if the given year is a leap year. Returns `],
+				[/* inline code block */ 'i', `true`],
+				[/* text */ 't', ` if
+ the given year is a leap year. To specify BC year numbers,
+ `],
+				[/* inline code block */ 'i', `1 - year number`],
+				[/* text */ 't', ` must be given. For example, year BC 4 is
+ specified as -3.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'year', [/* parameter description */
+					[/* text */ 't', `the given year.`]
+				]]
+			],
+			/* throws */ UDF,
+			[/* return description */
+				[/* inline code block */ 'i', `true`],
+				[/* text */ 't', ` if the given year is a leap year; `],
+				[/* inline code block */ 'i', `false`],
+				[/* text */ 't', ` otherwise.`]
+			]
+		]],
+		[/* method */ 'isWeekDateSupported()', [
+			[/* method description */
+				[/* text */ 't', `Returns `],
+				[/* inline code block */ 'i', `true`],
+				[/* text */ 't', ` indicating this `],
+				[/* inline code block */ 'i', `GregorianCalendar`],
+				[/* text */ 't', `
+ supports week dates.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* inline code block */ 'i', `true`],
+				[/* text */ 't', ` (always)`]
+			]
+		]],
+		[/* method */ 'getGregorianChange()', [
+			[/* method description */
+				[/* text */ 't', `Gets the Gregorian Calendar change date.  This is the point when the
+ switch from Julian dates to Gregorian dates occurred. Default is
+ October 15, 1582 (Gregorian). Previous to this, dates will be in the Julian
+ calendar.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the Gregorian cutover date for this `],
+				[/* inline code block */ 'i', `GregorianCalendar`],
+				[/* text */ 't', ` object.`]
+			]
+		]],
+		[/* method */ 'getActualMaximum(int)', [
+			[/* method description */
+				[/* text */ 't', `Returns the maximum value that this calendar field could have,
+ taking into consideration the given time value and the current
+ values of the
+ `],
+				[/* reference */ 'r', `.Calendar#getFirstDayOfWeek()`],
+				[/* text */ 't', `,
+ `],
+				[/* reference */ 'r', `.Calendar#getMinimalDaysInFirstWeek()`],
+				[/* text */ 't', `,
+ `],
+				[/* reference */ 'r', `#getGregorianChange()`, `getGregorianChange`],
+				[/* text */ 't', ` and
+ `],
+				[/* reference */ 'r', `.Calendar#getTimeZone()`],
+				[/* text */ 't', ` methods.
+ For example, if the date of this instance is February 1, 2004,
+ the actual maximum value of the `],
+				[/* inline code block */ 'i', `DAY_OF_MONTH`],
+				[/* text */ 't', ` field
+ is 29 because 2004 is a leap year, and if the date of this
+ instance is February 1, 2005, it's 28.
+
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', `This method calculates the maximum value of `],
+					[/* reference */ 'r', `.Calendar#WEEK_OF_YEAR`],
+					[/* text */ 't', ` based on the `],
+					[/* reference */ 'r', `.Calendar#YEAR`],
+					[/* text */ 't', ` (calendar year) value, not the `],
+					[/* text */ 't', `week year`],
+					[/* text */ 't', `. Call `],
+					[/* reference */ 'r', `#getWeeksInWeekYear()`, `getWeeksInWeekYear()`],
+					[/* text */ 't', ` to get the maximum value of `],
+					[/* inline code block */ 'i', `WEEK_OF_YEAR`],
+					[/* text */ 't', ` in the week year of this `],
+					[/* inline code block */ 'i', `GregorianCalendar`],
+					[/* text */ 't', `.`]
+				]]
+			],
+			[/* parameters */
+				[/* parameter */ 'field', [/* parameter description */
+					[/* text */ 't', `the calendar field`]
+				]]
+			],
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the maximum of the given field for the time value of
+ this `],
+				[/* inline code block */ 'i', `GregorianCalendar`]
+			]
+		]],
+		[/* method */ 'getActualMinimum(int)', [
+			[/* method description */
+				[/* text */ 't', `Returns the minimum value that this calendar field could have,
+ taking into consideration the given time value and the current
+ values of the
+ `],
+				[/* reference */ 'r', `.Calendar#getFirstDayOfWeek()`],
+				[/* text */ 't', `,
+ `],
+				[/* reference */ 'r', `.Calendar#getMinimalDaysInFirstWeek()`],
+				[/* text */ 't', `,
+ `],
+				[/* reference */ 'r', `#getGregorianChange()`, `getGregorianChange`],
+				[/* text */ 't', ` and
+ `],
+				[/* reference */ 'r', `.Calendar#getTimeZone()`],
+				[/* text */ 't', ` methods.
+
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', `For example, if the Gregorian change date is January 10,
+ 1970 and the date of this `],
+					[/* inline code block */ 'i', `GregorianCalendar`],
+					[/* text */ 't', ` is
+ January 20, 1970, the actual minimum value of the
+ `],
+					[/* inline code block */ 'i', `DAY_OF_MONTH`],
+					[/* text */ 't', ` field is 10 because the previous date
+ of January 10, 1970 is December 27, 1996 (in the Julian
+ calendar). Therefore, December 28, 1969 to January 9, 1970
+ don't exist.`]
+				]]
+			],
+			[/* parameters */
+				[/* parameter */ 'field', [/* parameter description */
+					[/* text */ 't', `the calendar field`]
+				]]
+			],
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the minimum of the given field for the time value of
+ this `],
+				[/* inline code block */ 'i', `GregorianCalendar`]
+			]
+		]],
+		[/* method */ 'getGreatestMinimum(int)', [
+			[/* method description */
+				[/* text */ 't', `Returns the highest minimum value for the given calendar field
+ of this `],
+				[/* inline code block */ 'i', `GregorianCalendar`],
+				[/* text */ 't', ` instance. The highest
+ minimum value is defined as the largest value returned by
+ `],
+				[/* reference */ 'r', `#getActualMinimum(int)`, `getActualMinimum(int)`],
+				[/* text */ 't', ` for any possible time value,
+ taking into consideration the current values of the
+ `],
+				[/* reference */ 'r', `.Calendar#getFirstDayOfWeek()`],
+				[/* text */ 't', `,
+ `],
+				[/* reference */ 'r', `.Calendar#getMinimalDaysInFirstWeek()`],
+				[/* text */ 't', `,
+ `],
+				[/* reference */ 'r', `#getGregorianChange()`, `getGregorianChange`],
+				[/* text */ 't', ` and
+ `],
+				[/* reference */ 'r', `.Calendar#getTimeZone()`],
+				[/* text */ 't', ` methods.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'field', [/* parameter description */
+					[/* text */ 't', `the calendar field.`]
+				]]
+			],
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the highest minimum value for the given calendar field.`]
+			]
+		]],
+		[/* method */ 'getLeastMaximum(int)', [
+			[/* method description */
+				[/* text */ 't', `Returns the lowest maximum value for the given calendar field
+ of this `],
+				[/* inline code block */ 'i', `GregorianCalendar`],
+				[/* text */ 't', ` instance. The lowest
+ maximum value is defined as the smallest value returned by
+ `],
+				[/* reference */ 'r', `#getActualMaximum(int)`, `getActualMaximum(int)`],
+				[/* text */ 't', ` for any possible time value,
+ taking into consideration the current values of the
+ `],
+				[/* reference */ 'r', `.Calendar#getFirstDayOfWeek()`],
+				[/* text */ 't', `,
+ `],
+				[/* reference */ 'r', `.Calendar#getMinimalDaysInFirstWeek()`],
+				[/* text */ 't', `,
+ `],
+				[/* reference */ 'r', `#getGregorianChange()`, `getGregorianChange`],
+				[/* text */ 't', ` and
+ `],
+				[/* reference */ 'r', `.Calendar#getTimeZone()`],
+				[/* text */ 't', ` methods.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'field', [/* parameter description */
+					[/* text */ 't', `the calendar field`]
+				]]
+			],
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the lowest maximum value for the given calendar field.`]
+			]
+		]],
+		[/* method */ 'getMaximum(int)', [
+			[/* method description */
+				[/* text */ 't', `Returns the maximum value for the given calendar field of this
+ `],
+				[/* inline code block */ 'i', `GregorianCalendar`],
+				[/* text */ 't', ` instance. The maximum value is
+ defined as the largest value returned by the `],
+				[/* reference */ 'r', `.Calendar#get(int)`],
+				[/* text */ 't', ` method for any possible time value,
+ taking into consideration the current values of the
+ `],
+				[/* reference */ 'r', `.Calendar#getFirstDayOfWeek()`],
+				[/* text */ 't', `,
+ `],
+				[/* reference */ 'r', `.Calendar#getMinimalDaysInFirstWeek()`],
+				[/* text */ 't', `,
+ `],
+				[/* reference */ 'r', `#getGregorianChange()`, `getGregorianChange`],
+				[/* text */ 't', ` and
+ `],
+				[/* reference */ 'r', `.Calendar#getTimeZone()`],
+				[/* text */ 't', ` methods.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'field', [/* parameter description */
+					[/* text */ 't', `the calendar field.`]
+				]]
+			],
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the maximum value for the given calendar field.`]
+			]
+		]],
+		[/* method */ 'getMinimum(int)', [
+			[/* method description */
+				[/* text */ 't', `Returns the minimum value for the given calendar field of this
+ `],
+				[/* inline code block */ 'i', `GregorianCalendar`],
+				[/* text */ 't', ` instance. The minimum value is
+ defined as the smallest value returned by the `],
+				[/* reference */ 'r', `.Calendar#get(int)`],
+				[/* text */ 't', ` method for any possible time value,
+ taking into consideration the current values of the
+ `],
+				[/* reference */ 'r', `.Calendar#getFirstDayOfWeek()`],
+				[/* text */ 't', `,
+ `],
+				[/* reference */ 'r', `.Calendar#getMinimalDaysInFirstWeek()`],
+				[/* text */ 't', `,
+ `],
+				[/* reference */ 'r', `#getGregorianChange()`, `getGregorianChange`],
+				[/* text */ 't', ` and
+ `],
+				[/* reference */ 'r', `.Calendar#getTimeZone()`],
+				[/* text */ 't', ` methods.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'field', [/* parameter description */
+					[/* text */ 't', `the calendar field.`]
+				]]
+			],
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the minimum value for the given calendar field.`]
+			]
+		]],
+		[/* method */ 'getWeeksInWeekYear()', [
+			[/* method description */
+				[/* text */ 't', `Returns the number of weeks in the `],
+				[/* text */ 't', `week year`],
+				[/* text */ 't', `
+ represented by this `],
+				[/* inline code block */ 'i', `GregorianCalendar`],
+				[/* text */ 't', `.
+
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', `For example, if this `],
+					[/* inline code block */ 'i', `GregorianCalendar`],
+					[/* text */ 't', `'s date is
+ December 31, 2008 with `],
+					[/* text */ 't', `the ISO 8601 compatible setting`],
+					[/* text */ 't', `, this method will return 53 for the
+ period: December 29, 2008 to January 3, 2010 while `],
+					[/* reference */ 'r', `#getActualMaximum(int)`, `getActualMaximum(WEEK_OF_YEAR)`],
+					[/* text */ 't', ` will return
+ 52 for the period: December 31, 2007 to December 28, 2008.`]
+				]]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the number of weeks in the week year.`]
+			]
+		]],
+		[/* method */ 'getWeekYear()', [
+			[/* method description */
+				[/* text */ 't', `Returns the `],
+				[/* text */ 't', `week year`],
+				[/* text */ 't', ` represented by this
+ `],
+				[/* inline code block */ 'i', `GregorianCalendar`],
+				[/* text */ 't', `. The dates in the weeks between 1 and the
+ maximum week number of the week year have the same week year value
+ that may be one year before or after the `],
+				[/* reference */ 'r', `.Calendar#YEAR`],
+				[/* text */ 't', `
+ (calendar year) value.
+
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', `This method calls `],
+					[/* reference */ 'r', `.Calendar#complete()`],
+					[/* text */ 't', ` before
+ calculating the week year.`]
+				]]
+			],
+			/* parameters */ UDF,
+			[/* throws */
+				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
+					[/* text */ 't', `if any of the calendar fields is invalid in non-lenient mode.`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `the week year represented by this `],
+				[/* inline code block */ 'i', `GregorianCalendar`],
+				[/* text */ 't', `.
+         If the `],
+				[/* reference */ 'r', `.Calendar#ERA`],
+				[/* text */ 't', ` value is `],
+				[/* text */ 't', `BC`],
+				[/* text */ 't', `, the year is
+         represented by 0 or a negative number: BC 1 is 0, BC 2
+         is -1, BC 3 is -2, and so on.`]
+			]
+		]],
+		[/* method */ 'hashCode()', [
+			[/* method description */
+				[/* text */ 't', `Generates the hash code for this `],
+				[/* inline code block */ 'i', `GregorianCalendar`],
+				[/* text */ 't', ` object.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `a hash code value for this object.`]
+			]
+		]],
+		[/* method */ 'clone()', UDF],
+		[/* method */ 'getCalendarType()', [
+			[/* method description */
+				[/* text */ 't', `Returns `],
+				[/* inline code block */ 'i', `"gregory"`],
+				[/* text */ 't', ` as the calendar type.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* inline code block */ 'i', `"gregory"`]
+			]
+		]],
+		[/* method */ 'toZonedDateTime()', [
+			[/* method description */
+				[/* text */ 't', `Converts this object to a `],
+				[/* inline code block */ 'i', `ZonedDateTime`],
+				[/* text */ 't', ` that represents
+ the same point on the time-line as this `],
+				[/* inline code block */ 'i', `GregorianCalendar`],
+				[/* text */ 't', `.
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', `
+ Since this object supports a Julian-Gregorian cutover date and
+ `],
+					[/* inline code block */ 'i', `ZonedDateTime`],
+					[/* text */ 't', ` does not, it is possible that the resulting year,
+ month and day will have different values.  The result will represent the
+ correct date in the ISO calendar system, which will also be the same value
+ for Modified Julian Days.`]
+				]]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `a zoned date-time representing the same point on the time-line
+  as this gregorian calendar`]
+			]
+		]],
+		[/* method */ 'getTimeZone()', UDF],
+		[/* method */ 'from(java.time.ZonedDateTime)', [
+			[/* method description */
+				[/* text */ 't', `Obtains an instance of `],
+				[/* inline code block */ 'i', `GregorianCalendar`],
+				[/* text */ 't', ` with the default locale
+ from a `],
+				[/* inline code block */ 'i', `ZonedDateTime`],
+				[/* text */ 't', ` object.
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', `
+ Since `],
+					[/* inline code block */ 'i', `ZonedDateTime`],
+					[/* text */ 't', ` does not support a Julian-Gregorian cutover
+ date and uses ISO calendar system, the return GregorianCalendar is a pure
+ Gregorian calendar and uses ISO 8601 standard for week definitions,
+ which has `],
+					[/* inline code block */ 'i', `MONDAY`],
+					[/* text */ 't', ` as the `],
+					[/* reference */ 'r', `.Calendar#getFirstDayOfWeek()`],
+					[/* text */ 't', ` and `],
+					[/* inline code block */ 'i', `4`],
+					[/* text */ 't', ` as the value of the
+ `],
+					[/* reference */ 'r', `.Calendar#getMinimalDaysInFirstWeek()`],
+					[/* text */ 't', `.
+ `]
+				]],
+				[/* block */ 'b', [
+					[/* inline code block */ 'i', `ZoneDateTime`],
+					[/* text */ 't', ` can store points on the time-line further in the
+ future and further in the past than `],
+					[/* inline code block */ 'i', `GregorianCalendar`],
+					[/* text */ 't', `. In this
+ scenario, this method will throw an `],
+					[/* inline code block */ 'i', `IllegalArgumentException`],
+					[/* text */ 't', `
+ exception.`]
+				]]
+			],
+			[/* parameters */
+				[/* parameter */ 'zdt', [/* parameter description */
+					[/* text */ 't', `the zoned date-time object to convert`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
+					[/* text */ 't', `if `],
+					[/* inline code block */ 'i', `zdt`],
+					[/* text */ 't', ` is null`]
+				]],
+				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
+					[/* text */ 't', `if the zoned date-time is too
+ large to represent as a `],
+					[/* inline code block */ 'i', `GregorianCalendar`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `the gregorian calendar representing the same point on the
+  time-line as the zoned date-time provided`]
+			]
+		]],
 		[/* method */ 'add(int,int)', [
 			[/* method description */
 				[/* text */ 't', `Adds the specified (signed) amount of time to the given calendar field,
@@ -725,329 +1267,54 @@ DocsCollector.collect('java.util.GregorianCalendar', [
 			],
 			/* return */ UDF
 		]],
-		[/* method */ 'equals(java.lang.Object)', [
+		[/* method */ 'roll(int,boolean)', [
 			[/* method description */
-				[/* text */ 't', `Compares this `],
-				[/* inline code block */ 'i', `GregorianCalendar`],
-				[/* text */ 't', ` to the specified
- `],
-				[/* inline code block */ 'i', `Object`],
-				[/* text */ 't', `. The result is `],
-				[/* inline code block */ 'i', `true`],
-				[/* text */ 't', ` if and
- only if the argument is a `],
-				[/* inline code block */ 'i', `GregorianCalendar`],
-				[/* text */ 't', ` object
- that represents the same time value (millisecond offset from
- the `],
-				[/* reference */ 'r', `.Calendar#Epoch`],
-				[/* text */ 't', `) under the same
- `],
-				[/* inline code block */ 'i', `Calendar`],
-				[/* text */ 't', ` parameters and Gregorian change date as
- this object.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'obj', [/* parameter description */
-					[/* text */ 't', `the object to compare with.`]
-				]]
-			],
-			/* throws */ UDF,
-			[/* return description */
-				[/* inline code block */ 'i', `true`],
-				[/* text */ 't', ` if this object is equal to `],
-				[/* inline code block */ 'i', `obj`],
-				[/* text */ 't', `;
- `],
-				[/* inline code block */ 'i', `false`],
-				[/* text */ 't', ` otherwise.`]
-			]
-		]],
-		[/* method */ 'hashCode()', [
-			[/* method description */
-				[/* text */ 't', `Generates the hash code for this `],
-				[/* inline code block */ 'i', `GregorianCalendar`],
-				[/* text */ 't', ` object.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `a hash code value for this object.`]
-			]
-		]],
-		[/* method */ 'clone()', UDF],
-		[/* method */ 'from(java.time.ZonedDateTime)', [
-			[/* method description */
-				[/* text */ 't', `Obtains an instance of `],
-				[/* inline code block */ 'i', `GregorianCalendar`],
-				[/* text */ 't', ` with the default locale
- from a `],
-				[/* inline code block */ 'i', `ZonedDateTime`],
-				[/* text */ 't', ` object.
+				[/* text */ 't', `Adds or subtracts (up/down) a single unit of time on the given time
+ field without changing larger fields.
  `],
 				[/* block */ 'b', [
-					[/* text */ 't', `
- Since `],
-					[/* inline code block */ 'i', `ZonedDateTime`],
-					[/* text */ 't', ` does not support a Julian-Gregorian cutover
- date and uses ISO calendar system, the return GregorianCalendar is a pure
- Gregorian calendar and uses ISO 8601 standard for week definitions,
- which has `],
-					[/* inline code block */ 'i', `MONDAY`],
-					[/* text */ 't', ` as the `],
-					[/* reference */ 'r', `.Calendar#getFirstDayOfWeek()`],
-					[/* text */ 't', ` and `],
-					[/* inline code block */ 'i', `4`],
-					[/* text */ 't', ` as the value of the
- `],
-					[/* reference */ 'r', `.Calendar#getMinimalDaysInFirstWeek()`],
-					[/* text */ 't', `.
- `]
-				]],
-				[/* block */ 'b', [
-					[/* inline code block */ 'i', `ZoneDateTime`],
-					[/* text */ 't', ` can store points on the time-line further in the
- future and further in the past than `],
+					[/* text */ 't', `Example`],
+					[/* text */ 't', `: Consider a `],
 					[/* inline code block */ 'i', `GregorianCalendar`],
-					[/* text */ 't', `. In this
- scenario, this method will throw an `],
-					[/* inline code block */ 'i', `IllegalArgumentException`],
 					[/* text */ 't', `
- exception.`]
+ originally set to December 31, 1999. Calling `],
+					[/* reference */ 'r', `#roll(int,boolean)`, `roll(Calendar.MONTH, true)`],
+					[/* text */ 't', `
+ sets the calendar to January 31, 1999.  The `],
+					[/* inline code block */ 'i', `YEAR`],
+					[/* text */ 't', ` field is unchanged
+ because it is a larger field than `],
+					[/* inline code block */ 'i', `MONTH`],
+					[/* text */ 't', `.`]
 				]]
 			],
 			[/* parameters */
-				[/* parameter */ 'zdt', [/* parameter description */
-					[/* text */ 't', `the zoned date-time object to convert`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
-					[/* text */ 't', `if `],
-					[/* inline code block */ 'i', `zdt`],
-					[/* text */ 't', ` is null`]
+				[/* parameter */ 'up', [/* parameter description */
+					[/* text */ 't', `indicates if the value of the specified calendar field is to be
+ rolled up or rolled down. Use `],
+					[/* inline code block */ 'i', `true`],
+					[/* text */ 't', ` if rolling up, `],
+					[/* inline code block */ 'i', `false`],
+					[/* text */ 't', ` otherwise.`]
 				]],
-				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
-					[/* text */ 't', `if the zoned date-time is too
- large to represent as a `],
-					[/* inline code block */ 'i', `GregorianCalendar`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `the gregorian calendar representing the same point on the
-  time-line as the zoned date-time provided`]
-			]
-		]],
-		[/* method */ 'getCalendarType()', [
-			[/* method description */
-				[/* text */ 't', `Returns `],
-				[/* inline code block */ 'i', `"gregory"`],
-				[/* text */ 't', ` as the calendar type.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* inline code block */ 'i', `"gregory"`]
-			]
-		]],
-		[/* method */ 'getMinimum(int)', [
-			[/* method description */
-				[/* text */ 't', `Returns the minimum value for the given calendar field of this
- `],
-				[/* inline code block */ 'i', `GregorianCalendar`],
-				[/* text */ 't', ` instance. The minimum value is
- defined as the smallest value returned by the `],
-				[/* reference */ 'r', `.Calendar#get(int)`],
-				[/* text */ 't', ` method for any possible time value,
- taking into consideration the current values of the
- `],
-				[/* reference */ 'r', `.Calendar#getFirstDayOfWeek()`],
-				[/* text */ 't', `,
- `],
-				[/* reference */ 'r', `.Calendar#getMinimalDaysInFirstWeek()`],
-				[/* text */ 't', `,
- `],
-				[/* reference */ 'r', `#getGregorianChange()`, `getGregorianChange`],
-				[/* text */ 't', ` and
- `],
-				[/* reference */ 'r', `.Calendar#getTimeZone()`],
-				[/* text */ 't', ` methods.`]
-			],
-			[/* parameters */
 				[/* parameter */ 'field', [/* parameter description */
-					[/* text */ 't', `the calendar field.`]
+					[/* text */ 't', `the time field.`]
 				]]
 			],
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the minimum value for the given calendar field.`]
-			]
-		]],
-		[/* method */ 'getMaximum(int)', [
-			[/* method description */
-				[/* text */ 't', `Returns the maximum value for the given calendar field of this
- `],
-				[/* inline code block */ 'i', `GregorianCalendar`],
-				[/* text */ 't', ` instance. The maximum value is
- defined as the largest value returned by the `],
-				[/* reference */ 'r', `.Calendar#get(int)`],
-				[/* text */ 't', ` method for any possible time value,
- taking into consideration the current values of the
- `],
-				[/* reference */ 'r', `.Calendar#getFirstDayOfWeek()`],
-				[/* text */ 't', `,
- `],
-				[/* reference */ 'r', `.Calendar#getMinimalDaysInFirstWeek()`],
-				[/* text */ 't', `,
- `],
-				[/* reference */ 'r', `#getGregorianChange()`, `getGregorianChange`],
-				[/* text */ 't', ` and
- `],
-				[/* reference */ 'r', `.Calendar#getTimeZone()`],
-				[/* text */ 't', ` methods.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'field', [/* parameter description */
-					[/* text */ 't', `the calendar field.`]
-				]]
-			],
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the maximum value for the given calendar field.`]
-			]
-		]],
-		[/* method */ 'isLeapYear(int)', [
-			[/* method description */
-				[/* text */ 't', `Determines if the given year is a leap year. Returns `],
-				[/* inline code block */ 'i', `true`],
-				[/* text */ 't', ` if
- the given year is a leap year. To specify BC year numbers,
- `],
-				[/* inline code block */ 'i', `1 - year number`],
-				[/* text */ 't', ` must be given. For example, year BC 4 is
- specified as -3.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'year', [/* parameter description */
-					[/* text */ 't', `the given year.`]
-				]]
-			],
-			/* throws */ UDF,
-			[/* return description */
-				[/* inline code block */ 'i', `true`],
-				[/* text */ 't', ` if the given year is a leap year; `],
-				[/* inline code block */ 'i', `false`],
-				[/* text */ 't', ` otherwise.`]
-			]
-		]],
-		[/* method */ 'setTimeZone(java.util.TimeZone)', UDF],
-		[/* method */ 'getTimeZone()', UDF],
-		[/* method */ 'isWeekDateSupported()', [
-			[/* method description */
-				[/* text */ 't', `Returns `],
-				[/* inline code block */ 'i', `true`],
-				[/* text */ 't', ` indicating this `],
-				[/* inline code block */ 'i', `GregorianCalendar`],
-				[/* text */ 't', `
- supports week dates.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* inline code block */ 'i', `true`],
-				[/* text */ 't', ` (always)`]
-			]
-		]],
-		[/* method */ 'getWeekYear()', [
-			[/* method description */
-				[/* text */ 't', `Returns the `],
-				[/* text */ 't', `week year`],
-				[/* text */ 't', ` represented by this
- `],
-				[/* inline code block */ 'i', `GregorianCalendar`],
-				[/* text */ 't', `. The dates in the weeks between 1 and the
- maximum week number of the week year have the same week year value
- that may be one year before or after the `],
-				[/* reference */ 'r', `.Calendar#YEAR`],
-				[/* text */ 't', `
- (calendar year) value.
-
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', `This method calls `],
-					[/* reference */ 'r', `.Calendar#complete()`],
-					[/* text */ 't', ` before
- calculating the week year.`]
-				]]
-			],
-			/* parameters */ UDF,
 			[/* throws */
 				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
-					[/* text */ 't', `if any of the calendar fields is invalid in non-lenient mode.`]
+					[/* text */ 't', `if `],
+					[/* inline code block */ 'i', `field`],
+					[/* text */ 't', ` is
+ `],
+					[/* inline code block */ 'i', `ZONE_OFFSET`],
+					[/* text */ 't', `, `],
+					[/* inline code block */ 'i', `DST_OFFSET`],
+					[/* text */ 't', `, or unknown,
+ or if any calendar fields have out-of-range values in
+ non-lenient mode.`]
 				]]
 			],
-			[/* return description */
-				[/* text */ 't', `the week year represented by this `],
-				[/* inline code block */ 'i', `GregorianCalendar`],
-				[/* text */ 't', `.
-         If the `],
-				[/* reference */ 'r', `.Calendar#ERA`],
-				[/* text */ 't', ` value is `],
-				[/* text */ 't', `BC`],
-				[/* text */ 't', `, the year is
-         represented by 0 or a negative number: BC 1 is 0, BC 2
-         is -1, BC 3 is -2, and so on.`]
-			]
-		]],
-		[/* method */ 'getLeastMaximum(int)', [
-			[/* method description */
-				[/* text */ 't', `Returns the lowest maximum value for the given calendar field
- of this `],
-				[/* inline code block */ 'i', `GregorianCalendar`],
-				[/* text */ 't', ` instance. The lowest
- maximum value is defined as the smallest value returned by
- `],
-				[/* reference */ 'r', `#getActualMaximum(int)`, `getActualMaximum(int)`],
-				[/* text */ 't', ` for any possible time value,
- taking into consideration the current values of the
- `],
-				[/* reference */ 'r', `.Calendar#getFirstDayOfWeek()`],
-				[/* text */ 't', `,
- `],
-				[/* reference */ 'r', `.Calendar#getMinimalDaysInFirstWeek()`],
-				[/* text */ 't', `,
- `],
-				[/* reference */ 'r', `#getGregorianChange()`, `getGregorianChange`],
-				[/* text */ 't', ` and
- `],
-				[/* reference */ 'r', `.Calendar#getTimeZone()`],
-				[/* text */ 't', ` methods.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'field', [/* parameter description */
-					[/* text */ 't', `the calendar field`]
-				]]
-			],
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the lowest maximum value for the given calendar field.`]
-			]
-		]],
-		[/* method */ 'computeFields()', [
-			[/* method description */
-				[/* text */ 't', `Converts the time value (millisecond offset from the `],
-				[/* reference */ 'r', `.Calendar#Epoch`],
-				[/* text */ 't', `) to calendar field values.
- The time is `],
-				[/* text */ 't', `not`],
-				[/* text */ 't', `
- recomputed first; to recompute the time, then the fields, call the
- `],
-				[/* inline code block */ 'i', `complete`],
-				[/* text */ 't', ` method.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
 			/* return */ UDF
 		]],
 		[/* method */ 'roll(int,int)', [
@@ -1152,105 +1419,34 @@ DocsCollector.collect('java.util.GregorianCalendar', [
 			],
 			/* return */ UDF
 		]],
-		[/* method */ 'roll(int,boolean)', [
+		[/* method */ 'setGregorianChange(java.util.Date)', [
 			[/* method description */
-				[/* text */ 't', `Adds or subtracts (up/down) a single unit of time on the given time
- field without changing larger fields.
+				[/* text */ 't', `Sets the `],
+				[/* inline code block */ 'i', `GregorianCalendar`],
+				[/* text */ 't', ` change date. This is the point when the switch
+ from Julian dates to Gregorian dates occurred. Default is October 15,
+ 1582 (Gregorian). Previous to this, dates will be in the Julian calendar.
  `],
 				[/* block */ 'b', [
-					[/* text */ 't', `Example`],
-					[/* text */ 't', `: Consider a `],
-					[/* inline code block */ 'i', `GregorianCalendar`],
 					[/* text */ 't', `
- originally set to December 31, 1999. Calling `],
-					[/* reference */ 'r', `#roll(int,boolean)`, `roll(Calendar.MONTH, true)`],
-					[/* text */ 't', `
- sets the calendar to January 31, 1999.  The `],
-					[/* inline code block */ 'i', `YEAR`],
-					[/* text */ 't', ` field is unchanged
- because it is a larger field than `],
-					[/* inline code block */ 'i', `MONTH`],
+ To obtain a pure Julian calendar, set the change date to
+ `],
+					[/* inline code block */ 'i', `Date(Long.MAX_VALUE)`],
+					[/* text */ 't', `.  To obtain a pure Gregorian calendar,
+ set the change date to `],
+					[/* inline code block */ 'i', `Date(Long.MIN_VALUE)`],
 					[/* text */ 't', `.`]
 				]]
 			],
 			[/* parameters */
-				[/* parameter */ 'up', [/* parameter description */
-					[/* text */ 't', `indicates if the value of the specified calendar field is to be
- rolled up or rolled down. Use `],
-					[/* inline code block */ 'i', `true`],
-					[/* text */ 't', ` if rolling up, `],
-					[/* inline code block */ 'i', `false`],
-					[/* text */ 't', ` otherwise.`]
-				]],
-				[/* parameter */ 'field', [/* parameter description */
-					[/* text */ 't', `the time field.`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
-					[/* text */ 't', `if `],
-					[/* inline code block */ 'i', `field`],
-					[/* text */ 't', ` is
- `],
-					[/* inline code block */ 'i', `ZONE_OFFSET`],
-					[/* text */ 't', `, `],
-					[/* inline code block */ 'i', `DST_OFFSET`],
-					[/* text */ 't', `, or unknown,
- or if any calendar fields have out-of-range values in
- non-lenient mode.`]
-				]]
-			],
-			/* return */ UDF
-		]],
-		[/* method */ 'getGreatestMinimum(int)', [
-			[/* method description */
-				[/* text */ 't', `Returns the highest minimum value for the given calendar field
- of this `],
-				[/* inline code block */ 'i', `GregorianCalendar`],
-				[/* text */ 't', ` instance. The highest
- minimum value is defined as the largest value returned by
- `],
-				[/* reference */ 'r', `#getActualMinimum(int)`, `getActualMinimum(int)`],
-				[/* text */ 't', ` for any possible time value,
- taking into consideration the current values of the
- `],
-				[/* reference */ 'r', `.Calendar#getFirstDayOfWeek()`],
-				[/* text */ 't', `,
- `],
-				[/* reference */ 'r', `.Calendar#getMinimalDaysInFirstWeek()`],
-				[/* text */ 't', `,
- `],
-				[/* reference */ 'r', `#getGregorianChange()`, `getGregorianChange`],
-				[/* text */ 't', ` and
- `],
-				[/* reference */ 'r', `.Calendar#getTimeZone()`],
-				[/* text */ 't', ` methods.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'field', [/* parameter description */
-					[/* text */ 't', `the calendar field.`]
+				[/* parameter */ 'date', [/* parameter description */
+					[/* text */ 't', `the given Gregorian cutover date.`]
 				]]
 			],
 			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the highest minimum value for the given calendar field.`]
-			]
-		]],
-		[/* method */ 'computeTime()', [
-			[/* method description */
-				[/* text */ 't', `Converts calendar field values to the time value (millisecond
- offset from the `],
-				[/* reference */ 'r', `.Calendar#Epoch`],
-				[/* text */ 't', `).`]
-			],
-			/* parameters */ UDF,
-			[/* throws */
-				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
-					[/* text */ 't', `if any calendar fields are invalid.`]
-				]]
-			],
 			/* return */ UDF
 		]],
+		[/* method */ 'setTimeZone(java.util.TimeZone)', UDF],
 		[/* method */ 'setWeekDate(int,int,int)', [
 			[/* method description */
 				[/* text */ 't', `Sets this `],
@@ -1350,202 +1546,6 @@ DocsCollector.collect('java.util.GregorianCalendar', [
 				]]
 			],
 			/* return */ UDF
-		]],
-		[/* method */ 'getWeeksInWeekYear()', [
-			[/* method description */
-				[/* text */ 't', `Returns the number of weeks in the `],
-				[/* text */ 't', `week year`],
-				[/* text */ 't', `
- represented by this `],
-				[/* inline code block */ 'i', `GregorianCalendar`],
-				[/* text */ 't', `.
-
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', `For example, if this `],
-					[/* inline code block */ 'i', `GregorianCalendar`],
-					[/* text */ 't', `'s date is
- December 31, 2008 with `],
-					[/* text */ 't', `the ISO 8601 compatible setting`],
-					[/* text */ 't', `, this method will return 53 for the
- period: December 29, 2008 to January 3, 2010 while `],
-					[/* reference */ 'r', `#getActualMaximum(int)`, `getActualMaximum(WEEK_OF_YEAR)`],
-					[/* text */ 't', ` will return
- 52 for the period: December 31, 2007 to December 28, 2008.`]
-				]]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the number of weeks in the week year.`]
-			]
-		]],
-		[/* method */ 'getActualMinimum(int)', [
-			[/* method description */
-				[/* text */ 't', `Returns the minimum value that this calendar field could have,
- taking into consideration the given time value and the current
- values of the
- `],
-				[/* reference */ 'r', `.Calendar#getFirstDayOfWeek()`],
-				[/* text */ 't', `,
- `],
-				[/* reference */ 'r', `.Calendar#getMinimalDaysInFirstWeek()`],
-				[/* text */ 't', `,
- `],
-				[/* reference */ 'r', `#getGregorianChange()`, `getGregorianChange`],
-				[/* text */ 't', ` and
- `],
-				[/* reference */ 'r', `.Calendar#getTimeZone()`],
-				[/* text */ 't', ` methods.
-
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', `For example, if the Gregorian change date is January 10,
- 1970 and the date of this `],
-					[/* inline code block */ 'i', `GregorianCalendar`],
-					[/* text */ 't', ` is
- January 20, 1970, the actual minimum value of the
- `],
-					[/* inline code block */ 'i', `DAY_OF_MONTH`],
-					[/* text */ 't', ` field is 10 because the previous date
- of January 10, 1970 is December 27, 1996 (in the Julian
- calendar). Therefore, December 28, 1969 to January 9, 1970
- don't exist.`]
-				]]
-			],
-			[/* parameters */
-				[/* parameter */ 'field', [/* parameter description */
-					[/* text */ 't', `the calendar field`]
-				]]
-			],
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the minimum of the given field for the time value of
- this `],
-				[/* inline code block */ 'i', `GregorianCalendar`]
-			]
-		]],
-		[/* method */ 'getActualMaximum(int)', [
-			[/* method description */
-				[/* text */ 't', `Returns the maximum value that this calendar field could have,
- taking into consideration the given time value and the current
- values of the
- `],
-				[/* reference */ 'r', `.Calendar#getFirstDayOfWeek()`],
-				[/* text */ 't', `,
- `],
-				[/* reference */ 'r', `.Calendar#getMinimalDaysInFirstWeek()`],
-				[/* text */ 't', `,
- `],
-				[/* reference */ 'r', `#getGregorianChange()`, `getGregorianChange`],
-				[/* text */ 't', ` and
- `],
-				[/* reference */ 'r', `.Calendar#getTimeZone()`],
-				[/* text */ 't', ` methods.
- For example, if the date of this instance is February 1, 2004,
- the actual maximum value of the `],
-				[/* inline code block */ 'i', `DAY_OF_MONTH`],
-				[/* text */ 't', ` field
- is 29 because 2004 is a leap year, and if the date of this
- instance is February 1, 2005, it's 28.
-
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', `This method calculates the maximum value of `],
-					[/* reference */ 'r', `.Calendar#WEEK_OF_YEAR`],
-					[/* text */ 't', ` based on the `],
-					[/* reference */ 'r', `.Calendar#YEAR`],
-					[/* text */ 't', ` (calendar year) value, not the `],
-					[/* text */ 't', `week year`],
-					[/* text */ 't', `. Call `],
-					[/* reference */ 'r', `#getWeeksInWeekYear()`, `getWeeksInWeekYear()`],
-					[/* text */ 't', ` to get the maximum value of `],
-					[/* inline code block */ 'i', `WEEK_OF_YEAR`],
-					[/* text */ 't', ` in the week year of this `],
-					[/* inline code block */ 'i', `GregorianCalendar`],
-					[/* text */ 't', `.`]
-				]]
-			],
-			[/* parameters */
-				[/* parameter */ 'field', [/* parameter description */
-					[/* text */ 't', `the calendar field`]
-				]]
-			],
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the maximum of the given field for the time value of
- this `],
-				[/* inline code block */ 'i', `GregorianCalendar`]
-			]
-		]],
-		[/* method */ 'setGregorianChange(java.util.Date)', [
-			[/* method description */
-				[/* text */ 't', `Sets the `],
-				[/* inline code block */ 'i', `GregorianCalendar`],
-				[/* text */ 't', ` change date. This is the point when the switch
- from Julian dates to Gregorian dates occurred. Default is October 15,
- 1582 (Gregorian). Previous to this, dates will be in the Julian calendar.
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', `
- To obtain a pure Julian calendar, set the change date to
- `],
-					[/* inline code block */ 'i', `Date(Long.MAX_VALUE)`],
-					[/* text */ 't', `.  To obtain a pure Gregorian calendar,
- set the change date to `],
-					[/* inline code block */ 'i', `Date(Long.MIN_VALUE)`],
-					[/* text */ 't', `.`]
-				]]
-			],
-			[/* parameters */
-				[/* parameter */ 'date', [/* parameter description */
-					[/* text */ 't', `the given Gregorian cutover date.`]
-				]]
-			],
-			/* throws */ UDF,
-			/* return */ UDF
-		]],
-		[/* method */ 'getGregorianChange()', [
-			[/* method description */
-				[/* text */ 't', `Gets the Gregorian Calendar change date.  This is the point when the
- switch from Julian dates to Gregorian dates occurred. Default is
- October 15, 1582 (Gregorian). Previous to this, dates will be in the Julian
- calendar.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the Gregorian cutover date for this `],
-				[/* inline code block */ 'i', `GregorianCalendar`],
-				[/* text */ 't', ` object.`]
-			]
-		]],
-		[/* method */ 'toZonedDateTime()', [
-			[/* method description */
-				[/* text */ 't', `Converts this object to a `],
-				[/* inline code block */ 'i', `ZonedDateTime`],
-				[/* text */ 't', ` that represents
- the same point on the time-line as this `],
-				[/* inline code block */ 'i', `GregorianCalendar`],
-				[/* text */ 't', `.
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', `
- Since this object supports a Julian-Gregorian cutover date and
- `],
-					[/* inline code block */ 'i', `ZonedDateTime`],
-					[/* text */ 't', ` does not, it is possible that the resulting year,
- month and day will have different values.  The result will represent the
- correct date in the ISO calendar system, which will also be the same value
- for Modified Julian Days.`]
-				]]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `a zoned date-time representing the same point on the time-line
-  as this gregorian calendar`]
-			]
 		]]
 	],
 ]);

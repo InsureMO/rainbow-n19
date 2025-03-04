@@ -69,107 +69,6 @@ DocsCollector.collect('java.time.zone.ZoneRulesProvider', [
 		]]
 	],
 	[/* methods */
-		[/* method */ 'getRules(java.lang.String,boolean)', [
-			[/* method description */
-				[/* text */ 't', `Gets the rules for the zone ID.
- `],
-				[/* block */ 'b', `
- This returns the latest available rules for the zone ID.
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', `
- This method relies on time-zone data provider files that are configured.
- These are loaded using a `],
-					[/* inline code block */ 'i', `ServiceLoader`],
-					[/* text */ 't', `.
- `]
-				]],
-				[/* block */ 'b', [
-					[/* text */ 't', `
- The caching flag is designed to allow provider implementations to
- prevent the rules being cached in `],
-					[/* inline code block */ 'i', `ZoneId`],
-					[/* text */ 't', `.
- Under normal circumstances, the caching of zone rules is highly desirable
- as it will provide greater performance. However, there is a use case where
- the caching would not be desirable, see `],
-					[/* reference */ 'r', `#provideRules(java.lang.String,boolean)`, `provideRules(java.lang.String, boolean)`],
-					[/* text */ 't', `.`]
-				]]
-			],
-			[/* parameters */
-				[/* parameter */ 'zoneId', [/* parameter description */
-					[/* text */ 't', `the zone ID as defined by `],
-					[/* inline code block */ 'i', `ZoneId`],
-					[/* text */ 't', `, not null`]
-				]],
-				[/* parameter */ 'forCaching', [/* parameter description */
-					[/* text */ 't', `whether the rules are being queried for caching,
- true if the returned rules will be cached by `],
-					[/* inline code block */ 'i', `ZoneId`],
-					[/* text */ 't', `,
- false if they will be returned to the user without being cached in `],
-					[/* inline code block */ 'i', `ZoneId`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.time.zone.ZoneRulesException', [/* throw description */
-					[/* text */ 't', `if rules cannot be obtained for the zone ID`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `the rules, null if `],
-				[/* inline code block */ 'i', `forCaching`],
-				[/* text */ 't', ` is true and this
- is a dynamic provider that wants to prevent caching in `],
-				[/* inline code block */ 'i', `ZoneId`],
-				[/* text */ 't', `,
- otherwise not null`]
-			]
-		]],
-		[/* method */ 'getAvailableZoneIds()', [
-			[/* method description */
-				[/* text */ 't', `Gets the set of available zone IDs.
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', `
- These IDs are the string form of a `],
-					[/* reference */ 'r', `java.time.ZoneId`],
-					[/* text */ 't', `.`]
-				]]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the unmodifiable set of zone IDs, not null`]
-			]
-		]],
-		[/* method */ 'provideZoneIds()', [
-			[/* method description */
-				[/* text */ 't', `SPI method to get the available zone IDs.
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', `
- This obtains the IDs that this `],
-					[/* inline code block */ 'i', `ZoneRulesProvider`],
-					[/* text */ 't', ` provides.
- A provider should provide data for at least one zone ID.
- `]
-				]],
-				[/* block */ 'b', `
- The returned zone IDs remain available and valid for the lifetime of the application.
- A dynamic provider may increase the set of IDs as more data becomes available.`]
-			],
-			/* parameters */ UDF,
-			[/* throws */
-				[/* throw */ 'java.time.zone.ZoneRulesException', [/* throw description */
-					[/* text */ 't', `if a problem occurs while providing the IDs`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `the set of zone IDs being provided, not null`]
-			]
-		]],
 		[/* method */ 'provideRules(java.lang.String,boolean)', [
 			[/* method description */
 				[/* text */ 't', `SPI method to get the rules for the zone ID.
@@ -270,6 +169,32 @@ DocsCollector.collect('java.time.zone.ZoneRulesProvider', [
   from oldest to newest, not null`]
 			]
 		]],
+		[/* method */ 'provideZoneIds()', [
+			[/* method description */
+				[/* text */ 't', `SPI method to get the available zone IDs.
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', `
+ This obtains the IDs that this `],
+					[/* inline code block */ 'i', `ZoneRulesProvider`],
+					[/* text */ 't', ` provides.
+ A provider should provide data for at least one zone ID.
+ `]
+				]],
+				[/* block */ 'b', `
+ The returned zone IDs remain available and valid for the lifetime of the application.
+ A dynamic provider may increase the set of IDs as more data becomes available.`]
+			],
+			/* parameters */ UDF,
+			[/* throws */
+				[/* throw */ 'java.time.zone.ZoneRulesException', [/* throw description */
+					[/* text */ 't', `if a problem occurs while providing the IDs`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `the set of zone IDs being provided, not null`]
+			]
+		]],
 		[/* method */ 'provideRefresh()', [
 			[/* method description */
 				[/* text */ 't', `SPI method to refresh the rules from the underlying data provider.
@@ -292,77 +217,6 @@ DocsCollector.collect('java.time.zone.ZoneRulesProvider', [
 			[/* return description */
 				[/* text */ 't', `true if the rules were updated`]
 			]
-		]],
-		[/* method */ 'getVersions(java.lang.String)', [
-			[/* method description */
-				[/* text */ 't', `Gets the history of rules for the zone ID.
- `],
-				[/* block */ 'b', `
- Time-zones are defined by governments and change frequently.
- This method allows applications to find the history of changes to the
- rules for a single zone ID. The map is keyed by a string, which is the
- version string associated with the rules.
- `],
-				[/* block */ 'b', `
- The exact meaning and format of the version is provider specific.
- The version must follow lexicographical order, thus the returned map will
- be order from the oldest known rules to the newest available rules.
- The default 'TZDB' group uses version numbering consisting of the year
- followed by a letter, such as '2009e' or '2012f'.
- `],
-				[/* block */ 'b', `
- Implementations must provide a result for each valid zone ID, however
- they do not have to provide a history of rules.
- Thus the map will always contain one element, and will only contain more
- than one element if historical rule information is available.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'zoneId', [/* parameter description */
-					[/* text */ 't', `the zone ID as defined by `],
-					[/* inline code block */ 'i', `ZoneId`],
-					[/* text */ 't', `, not null`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.time.zone.ZoneRulesException', [/* throw description */
-					[/* text */ 't', `if history cannot be obtained for the zone ID`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `a modifiable copy of the history of the rules for the ID, sorted
-  from oldest to newest, not null`]
-			]
-		]],
-		[/* method */ 'registerProvider(java.time.zone.ZoneRulesProvider)', [
-			[/* method description */
-				[/* text */ 't', `Registers a zone rules provider.
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', `
- This adds a new provider to those currently available.
- A provider supplies rules for one or more zone IDs.
- A provider cannot be registered if it supplies a zone ID that has already been
- registered. See the notes on time-zone IDs in `],
-					[/* reference */ 'r', `java.time.ZoneId`],
-					[/* text */ 't', `, especially
- the section on using the concept of a "group" to make IDs unique.
- `]
-				]],
-				[/* block */ 'b', `
- To ensure the integrity of time-zones already created, there is no way
- to deregister providers.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'provider', [/* parameter description */
-					[/* text */ 't', `the provider to register, not null`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.time.zone.ZoneRulesException', [/* throw description */
-					[/* text */ 't', `if a zone ID is already registered`]
-				]]
-			],
-			/* return */ UDF
 		]],
 		[/* method */ 'refresh()', [
 			[/* method description */
@@ -408,6 +262,152 @@ DocsCollector.collect('java.time.zone.ZoneRulesProvider', [
 			[/* return description */
 				[/* text */ 't', `true if the rules were updated`]
 			]
+		]],
+		[/* method */ 'getRules(java.lang.String,boolean)', [
+			[/* method description */
+				[/* text */ 't', `Gets the rules for the zone ID.
+ `],
+				[/* block */ 'b', `
+ This returns the latest available rules for the zone ID.
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', `
+ This method relies on time-zone data provider files that are configured.
+ These are loaded using a `],
+					[/* inline code block */ 'i', `ServiceLoader`],
+					[/* text */ 't', `.
+ `]
+				]],
+				[/* block */ 'b', [
+					[/* text */ 't', `
+ The caching flag is designed to allow provider implementations to
+ prevent the rules being cached in `],
+					[/* inline code block */ 'i', `ZoneId`],
+					[/* text */ 't', `.
+ Under normal circumstances, the caching of zone rules is highly desirable
+ as it will provide greater performance. However, there is a use case where
+ the caching would not be desirable, see `],
+					[/* reference */ 'r', `#provideRules(java.lang.String,boolean)`, `provideRules(java.lang.String, boolean)`],
+					[/* text */ 't', `.`]
+				]]
+			],
+			[/* parameters */
+				[/* parameter */ 'zoneId', [/* parameter description */
+					[/* text */ 't', `the zone ID as defined by `],
+					[/* inline code block */ 'i', `ZoneId`],
+					[/* text */ 't', `, not null`]
+				]],
+				[/* parameter */ 'forCaching', [/* parameter description */
+					[/* text */ 't', `whether the rules are being queried for caching,
+ true if the returned rules will be cached by `],
+					[/* inline code block */ 'i', `ZoneId`],
+					[/* text */ 't', `,
+ false if they will be returned to the user without being cached in `],
+					[/* inline code block */ 'i', `ZoneId`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.time.zone.ZoneRulesException', [/* throw description */
+					[/* text */ 't', `if rules cannot be obtained for the zone ID`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `the rules, null if `],
+				[/* inline code block */ 'i', `forCaching`],
+				[/* text */ 't', ` is true and this
+ is a dynamic provider that wants to prevent caching in `],
+				[/* inline code block */ 'i', `ZoneId`],
+				[/* text */ 't', `,
+ otherwise not null`]
+			]
+		]],
+		[/* method */ 'getVersions(java.lang.String)', [
+			[/* method description */
+				[/* text */ 't', `Gets the history of rules for the zone ID.
+ `],
+				[/* block */ 'b', `
+ Time-zones are defined by governments and change frequently.
+ This method allows applications to find the history of changes to the
+ rules for a single zone ID. The map is keyed by a string, which is the
+ version string associated with the rules.
+ `],
+				[/* block */ 'b', `
+ The exact meaning and format of the version is provider specific.
+ The version must follow lexicographical order, thus the returned map will
+ be order from the oldest known rules to the newest available rules.
+ The default 'TZDB' group uses version numbering consisting of the year
+ followed by a letter, such as '2009e' or '2012f'.
+ `],
+				[/* block */ 'b', `
+ Implementations must provide a result for each valid zone ID, however
+ they do not have to provide a history of rules.
+ Thus the map will always contain one element, and will only contain more
+ than one element if historical rule information is available.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'zoneId', [/* parameter description */
+					[/* text */ 't', `the zone ID as defined by `],
+					[/* inline code block */ 'i', `ZoneId`],
+					[/* text */ 't', `, not null`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.time.zone.ZoneRulesException', [/* throw description */
+					[/* text */ 't', `if history cannot be obtained for the zone ID`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `a modifiable copy of the history of the rules for the ID, sorted
+  from oldest to newest, not null`]
+			]
+		]],
+		[/* method */ 'getAvailableZoneIds()', [
+			[/* method description */
+				[/* text */ 't', `Gets the set of available zone IDs.
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', `
+ These IDs are the string form of a `],
+					[/* reference */ 'r', `java.time.ZoneId`],
+					[/* text */ 't', `.`]
+				]]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the unmodifiable set of zone IDs, not null`]
+			]
+		]],
+		[/* method */ 'registerProvider(java.time.zone.ZoneRulesProvider)', [
+			[/* method description */
+				[/* text */ 't', `Registers a zone rules provider.
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', `
+ This adds a new provider to those currently available.
+ A provider supplies rules for one or more zone IDs.
+ A provider cannot be registered if it supplies a zone ID that has already been
+ registered. See the notes on time-zone IDs in `],
+					[/* reference */ 'r', `java.time.ZoneId`],
+					[/* text */ 't', `, especially
+ the section on using the concept of a "group" to make IDs unique.
+ `]
+				]],
+				[/* block */ 'b', `
+ To ensure the integrity of time-zones already created, there is no way
+ to deregister providers.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'provider', [/* parameter description */
+					[/* text */ 't', `the provider to register, not null`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.time.zone.ZoneRulesException', [/* throw description */
+					[/* text */ 't', `if a zone ID is already registered`]
+				]]
+			],
+			/* return */ UDF
 		]]
 	],
 ]);

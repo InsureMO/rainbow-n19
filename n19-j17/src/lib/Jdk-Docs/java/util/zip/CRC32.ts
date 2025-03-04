@@ -26,32 +26,21 @@ DocsCollector.collect('java.util.zip.CRC32', [
 		]]
 	],
 	[/* methods */
-		[/* method */ 'update(int)', [
+		[/* method */ 'getValue()', [
 			[/* method description */
-				[/* text */ 't', `Updates the CRC-32 checksum with the specified byte (the low
- eight bits of the argument b).`]
+				[/* text */ 't', `Returns CRC-32 value.`]
 			],
-			[/* parameters */
-				[/* parameter */ 'b', [/* parameter description */
-					[/* text */ 't', `the byte to update the checksum with`]
-				]]
-			],
+			/* parameters */ UDF,
 			/* throws */ UDF,
-			/* return */ UDF
+			[/* return description */
+				[/* text */ 't', `the current checksum value`]
+			]
 		]],
-		[/* method */ 'update(java.nio.ByteBuffer)', [
+		[/* method */ 'reset()', [
 			[/* method description */
-				[/* text */ 't', `Updates the CRC-32 checksum with the bytes from the specified buffer.
-
- The checksum is updated with the remaining bytes in the buffer, starting
- at the buffer's position. Upon return, the buffer's position will be
- updated to its limit; its limit will not have been changed.`]
+				[/* text */ 't', `Resets CRC-32 to initial value.`]
 			],
-			[/* parameters */
-				[/* parameter */ 'buffer', [/* parameter description */
-					[/* text */ 't', `the ByteBuffer to update the checksum with`]
-				]]
-			],
+			/* parameters */ UDF,
 			/* throws */ UDF,
 			/* return */ UDF
 		]],
@@ -87,21 +76,32 @@ DocsCollector.collect('java.util.zip.CRC32', [
 			],
 			/* return */ UDF
 		]],
-		[/* method */ 'getValue()', [
+		[/* method */ 'update(int)', [
 			[/* method description */
-				[/* text */ 't', `Returns CRC-32 value.`]
+				[/* text */ 't', `Updates the CRC-32 checksum with the specified byte (the low
+ eight bits of the argument b).`]
 			],
-			/* parameters */ UDF,
+			[/* parameters */
+				[/* parameter */ 'b', [/* parameter description */
+					[/* text */ 't', `the byte to update the checksum with`]
+				]]
+			],
 			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the current checksum value`]
-			]
+			/* return */ UDF
 		]],
-		[/* method */ 'reset()', [
+		[/* method */ 'update(java.nio.ByteBuffer)', [
 			[/* method description */
-				[/* text */ 't', `Resets CRC-32 to initial value.`]
+				[/* text */ 't', `Updates the CRC-32 checksum with the bytes from the specified buffer.
+
+ The checksum is updated with the remaining bytes in the buffer, starting
+ at the buffer's position. Upon return, the buffer's position will be
+ updated to its limit; its limit will not have been changed.`]
 			],
-			/* parameters */ UDF,
+			[/* parameters */
+				[/* parameter */ 'buffer', [/* parameter description */
+					[/* text */ 't', `the ByteBuffer to update the checksum with`]
+				]]
+			],
 			/* throws */ UDF,
 			/* return */ UDF
 		]]

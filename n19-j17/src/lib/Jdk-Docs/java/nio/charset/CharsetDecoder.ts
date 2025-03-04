@@ -193,6 +193,252 @@ DocsCollector.collect('java.nio.charset.CharsetDecoder', [
 		]]
 	],
 	[/* methods */
+		[/* method */ 'decodeLoop(java.nio.ByteBuffer,java.nio.CharBuffer)', [
+			[/* method description */
+				[/* text */ 't', `Decodes one or more bytes into one or more characters.
+
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', ` This method encapsulates the basic decoding loop, decoding as many
+ bytes as possible until it either runs out of input, runs out of room
+ in the output buffer, or encounters a decoding error.  This method is
+ invoked by the `],
+					[/* reference */ 'r', `#decode(java.nio.ByteBuffer,java.nio.CharBuffer,boolean)`, `decode`],
+					[/* text */ 't', ` method, which handles result
+ interpretation and error recovery.
+
+ `]
+				]],
+				[/* block */ 'b', [
+					[/* text */ 't', ` The buffers are read from, and written to, starting at their current
+ positions.  At most `],
+					[/* reference */ 'r', `java.Buffer#remaining()`],
+					[/* text */ 't', ` bytes
+ will be read, and at most `],
+					[/* reference */ 'r', `java.Buffer#remaining()`],
+					[/* text */ 't', `
+ characters will be written.  The buffers' positions will be advanced to
+ reflect the bytes read and the characters written, but their marks and
+ limits will not be modified.
+
+ `]
+				]],
+				[/* block */ 'b', [
+					[/* text */ 't', ` This method returns a `],
+					[/* reference */ 'r', `java.nio.charset.CoderResult`],
+					[/* text */ 't', ` object to describe its
+ reason for termination, in the same manner as the `],
+					[/* reference */ 'r', `#decode(java.nio.ByteBuffer,java.nio.CharBuffer,boolean)`, `decode`],
+					[/* text */ 't', `
+ method.  Most implementations of this method will handle decoding errors
+ by returning an appropriate result object for interpretation by the
+ `],
+					[/* reference */ 'r', `#decode(java.nio.ByteBuffer,java.nio.CharBuffer,boolean)`, `decode`],
+					[/* text */ 't', ` method.  An optimized implementation may instead
+ examine the relevant error action and implement that action itself.
+
+ `]
+				]],
+				[/* block */ 'b', [
+					[/* text */ 't', ` An implementation of this method may perform arbitrary lookahead by
+ returning `],
+					[/* reference */ 'r', `.CoderResult#UNDERFLOW`],
+					[/* text */ 't', ` until it receives sufficient
+ input.  `]
+				]]
+			],
+			[/* parameters */
+				[/* parameter */ 'in', [/* parameter description */
+					[/* text */ 't', `The input byte buffer`]
+				]],
+				[/* parameter */ 'out', [/* parameter description */
+					[/* text */ 't', `The output character buffer`]
+				]]
+			],
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `A coder-result object describing the reason for termination`]
+			]
+		]],
+		[/* method */ 'implFlush(java.nio.CharBuffer)', [
+			[/* method description */
+				[/* text */ 't', `Flushes this decoder.
+
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', ` The default implementation of this method does nothing, and always
+ returns `],
+					[/* reference */ 'r', `.CoderResult#UNDERFLOW`],
+					[/* text */ 't', `.  This method should be overridden
+ by decoders that may need to write final characters to the output buffer
+ once the entire input sequence has been read. `]
+				]]
+			],
+			[/* parameters */
+				[/* parameter */ 'out', [/* parameter description */
+					[/* text */ 't', `The output character buffer`]
+				]]
+			],
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `A coder-result object, either `],
+				[/* reference */ 'r', `.CoderResult#UNDERFLOW`],
+				[/* text */ 't', ` or
+          `],
+				[/* reference */ 'r', `.CoderResult#OVERFLOW`]
+			]
+		]],
+		[/* method */ 'implOnMalformedInput(java.nio.charset.CodingErrorAction)', [
+			[/* method description */
+				[/* text */ 't', `Reports a change to this decoder's malformed-input action.
+
+ `],
+				[/* block */ 'b', ` The default implementation of this method does nothing.  This method
+ should be overridden by decoders that require notification of changes to
+ the malformed-input action.  `]
+			],
+			[/* parameters */
+				[/* parameter */ 'newAction', [/* parameter description */
+					[/* text */ 't', `The new action`]
+				]]
+			],
+			/* throws */ UDF,
+			/* return */ UDF
+		]],
+		[/* method */ 'implOnUnmappableCharacter(java.nio.charset.CodingErrorAction)', [
+			[/* method description */
+				[/* text */ 't', `Reports a change to this decoder's unmappable-character action.
+
+ `],
+				[/* block */ 'b', ` The default implementation of this method does nothing.  This method
+ should be overridden by decoders that require notification of changes to
+ the unmappable-character action.  `]
+			],
+			[/* parameters */
+				[/* parameter */ 'newAction', [/* parameter description */
+					[/* text */ 't', `The new action`]
+				]]
+			],
+			/* throws */ UDF,
+			/* return */ UDF
+		]],
+		[/* method */ 'implReplaceWith(java.lang.String)', [
+			[/* method description */
+				[/* text */ 't', `Reports a change to this decoder's replacement value.
+
+ `],
+				[/* block */ 'b', ` The default implementation of this method does nothing.  This method
+ should be overridden by decoders that require notification of changes to
+ the replacement.  `]
+			],
+			[/* parameters */
+				[/* parameter */ 'newReplacement', [/* parameter description */
+					[/* text */ 't', `The replacement value`]
+				]]
+			],
+			/* throws */ UDF,
+			/* return */ UDF
+		]],
+		[/* method */ 'implReset()', [
+			[/* method description */
+				[/* text */ 't', `Resets this decoder, clearing any charset-specific internal state.
+
+ `],
+				[/* block */ 'b', ` The default implementation of this method does nothing.  This method
+ should be overridden by decoders that maintain internal state.  `]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			/* return */ UDF
+		]],
+		[/* method */ 'isAutoDetecting()', [
+			[/* method description */
+				[/* text */ 't', `Tells whether or not this decoder implements an auto-detecting charset.
+
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', ` The default implementation of this method always returns
+ `],
+					[/* inline code block */ 'i', `false`],
+					[/* text */ 't', `; it should be overridden by auto-detecting decoders to
+ return `],
+					[/* inline code block */ 'i', `true`],
+					[/* text */ 't', `.  `]
+				]]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* inline code block */ 'i', `true`],
+				[/* text */ 't', ` if, and only if, this decoder implements an
+          auto-detecting charset`]
+			]
+		]],
+		[/* method */ 'isCharsetDetected()', [
+			[/* method description */
+				[/* text */ 't', `Tells whether or not this decoder has yet detected a
+ charset  `],
+				[/* text */ 't', `(optional operation)`],
+				[/* text */ 't', `.
+
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', ` If this decoder implements an auto-detecting charset then at a
+ single point during a decoding operation this method may start returning
+ `],
+					[/* inline code block */ 'i', `true`],
+					[/* text */ 't', ` to indicate that a specific charset has been detected in
+ the input byte sequence.  Once this occurs, the `],
+					[/* reference */ 'r', `#detectedCharset()`, `detectedCharset`],
+					[/* text */ 't', ` method may be invoked to retrieve the detected charset.
+
+ `]
+				]],
+				[/* block */ 'b', [
+					[/* text */ 't', ` That this method returns `],
+					[/* inline code block */ 'i', `false`],
+					[/* text */ 't', ` does not imply that no bytes
+ have yet been decoded.  Some auto-detecting decoders are capable of
+ decoding some, or even all, of an input byte sequence without fixing on
+ a particular charset.
+
+ `]
+				]],
+				[/* block */ 'b', [
+					[/* text */ 't', ` The default implementation of this method always throws an `],
+					[/* reference */ 'r', `java.lang.UnsupportedOperationException`],
+					[/* text */ 't', `; it should be overridden by
+ auto-detecting decoders to return `],
+					[/* inline code block */ 'i', `true`],
+					[/* text */ 't', ` once the input charset
+ has been determined.  `]
+				]]
+			],
+			/* parameters */ UDF,
+			[/* throws */
+				[/* throw */ 'java.lang.UnsupportedOperationException', [/* throw description */
+					[/* text */ 't', `If this decoder does not implement an auto-detecting charset`]
+				]]
+			],
+			[/* return description */
+				[/* inline code block */ 'i', `true`],
+				[/* text */ 't', ` if, and only if, this decoder has detected a
+          specific charset`]
+			]
+		]],
+		[/* method */ 'averageCharsPerByte()', [
+			[/* method description */
+				[/* text */ 't', `Returns the average number of characters that will be produced for each
+ byte of input.  This heuristic value may be used to estimate the size
+ of the output buffer required for a given input sequence.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `The average number of characters produced
+          per byte of input`]
+			]
+		]],
 		[/* method */ 'maxCharsPerByte()', [
 			[/* method description */
 				[/* text */ 't', `Returns the maximum number of characters that will be produced for each
@@ -210,6 +456,73 @@ DocsCollector.collect('java.nio.charset.CharsetDecoder', [
 			[/* return description */
 				[/* text */ 't', `The maximum number of characters that will be produced per
           byte of input`]
+			]
+		]],
+		[/* method */ 'replacement()', [
+			[/* method description */
+				[/* text */ 't', `Returns this decoder's replacement value.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `This decoder's current replacement,
+          which is never `],
+				[/* inline code block */ 'i', `null`],
+				[/* text */ 't', ` and is never empty`]
+			]
+		]],
+		[/* method */ 'decode(java.nio.ByteBuffer)', [
+			[/* method description */
+				[/* text */ 't', `Convenience method that decodes the remaining content of a single input
+ byte buffer into a newly-allocated character buffer.
+
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', ` This method implements an entire `],
+					[/* text */ 't', `decoding operation`],
+					[/* text */ 't', `; that is, it resets this decoder, then it decodes the
+ bytes in the given byte buffer, and finally it flushes this
+ decoder.  This method should therefore not be invoked if a decoding
+ operation is already in progress.  `]
+				]]
+			],
+			[/* parameters */
+				[/* parameter */ 'in', [/* parameter description */
+					[/* text */ 't', `The input byte buffer`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.lang.IllegalStateException', [/* throw description */
+					[/* text */ 't', `If a decoding operation is already in progress`]
+				]],
+				[/* throw */ 'java.nio.charset.MalformedInputException', [/* throw description */
+					[/* text */ 't', `If the byte sequence starting at the input buffer's current
+          position is not legal for this charset and the current malformed-input action
+          is `],
+					[/* reference */ 'r', `.CodingErrorAction#REPORT`]
+				]],
+				[/* throw */ 'java.nio.charset.UnmappableCharacterException', [/* throw description */
+					[/* text */ 't', `If the byte sequence starting at the input buffer's current
+          position cannot be mapped to an equivalent character sequence and
+          the current unmappable-character action is `],
+					[/* reference */ 'r', `.CodingErrorAction#REPORT`]
+				]],
+				[/* throw */ 'java.nio.charset.CharacterCodingException', UDF]
+			],
+			[/* return description */
+				[/* text */ 't', `A newly-allocated character buffer containing the result of the
+         decoding operation.  The buffer's position will be zero and its
+         limit will follow the last character written.`]
+			]
+		]],
+		[/* method */ 'charset()', [
+			[/* method description */
+				[/* text */ 't', `Returns the charset that created this decoder.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `This decoder's charset`]
 			]
 		]],
 		[/* method */ 'onMalformedInput(java.nio.charset.CodingErrorAction)', [
@@ -264,48 +577,58 @@ DocsCollector.collect('java.nio.charset.CharsetDecoder', [
 				[/* text */ 't', `This decoder`]
 			]
 		]],
-		[/* method */ 'decode(java.nio.ByteBuffer)', [
+		[/* method */ 'replaceWith(java.lang.String)', [
 			[/* method description */
-				[/* text */ 't', `Convenience method that decodes the remaining content of a single input
- byte buffer into a newly-allocated character buffer.
+				[/* text */ 't', `Changes this decoder's replacement value.
 
  `],
 				[/* block */ 'b', [
-					[/* text */ 't', ` This method implements an entire `],
-					[/* text */ 't', `decoding operation`],
-					[/* text */ 't', `; that is, it resets this decoder, then it decodes the
- bytes in the given byte buffer, and finally it flushes this
- decoder.  This method should therefore not be invoked if a decoding
- operation is already in progress.  `]
+					[/* text */ 't', ` This method invokes the `],
+					[/* reference */ 'r', `#implReplaceWith(java.lang.String)`, `implReplaceWith`],
+					[/* text */ 't', `
+ method, passing the new replacement, after checking that the new
+ replacement is acceptable.  `]
 				]]
 			],
 			[/* parameters */
-				[/* parameter */ 'in', [/* parameter description */
-					[/* text */ 't', `The input byte buffer`]
+				[/* parameter */ 'newReplacement', [/* parameter description */
+					[/* text */ 't', `The new replacement; must not be
+         `],
+					[/* inline code block */ 'i', `null`],
+					[/* text */ 't', `, must have non-zero length,
+
+         and must not be longer than the value returned by the
+         `],
+					[/* reference */ 'r', `#maxCharsPerByte()`, `maxCharsPerByte`],
+					[/* text */ 't', ` method`]
 				]]
 			],
 			[/* throws */
-				[/* throw */ 'java.lang.IllegalStateException', [/* throw description */
-					[/* text */ 't', `If a decoding operation is already in progress`]
-				]],
-				[/* throw */ 'java.nio.charset.MalformedInputException', [/* throw description */
-					[/* text */ 't', `If the byte sequence starting at the input buffer's current
-          position is not legal for this charset and the current malformed-input action
-          is `],
-					[/* reference */ 'r', `.CodingErrorAction#REPORT`]
-				]],
-				[/* throw */ 'java.nio.charset.UnmappableCharacterException', [/* throw description */
-					[/* text */ 't', `If the byte sequence starting at the input buffer's current
-          position cannot be mapped to an equivalent character sequence and
-          the current unmappable-character action is `],
-					[/* reference */ 'r', `.CodingErrorAction#REPORT`]
-				]],
-				[/* throw */ 'java.nio.charset.CharacterCodingException', UDF]
+				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
+					[/* text */ 't', `If the preconditions on the parameter do not hold`]
+				]]
 			],
 			[/* return description */
-				[/* text */ 't', `A newly-allocated character buffer containing the result of the
-         decoding operation.  The buffer's position will be zero and its
-         limit will follow the last character written.`]
+				[/* text */ 't', `This decoder`]
+			]
+		]],
+		[/* method */ 'reset()', [
+			[/* method description */
+				[/* text */ 't', `Resets this decoder, clearing any internal state.
+
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', ` This method resets charset-independent state and also invokes the
+ `],
+					[/* reference */ 'r', `#implReset()`, `implReset`],
+					[/* text */ 't', ` method in order to perform any
+ charset-specific reset actions.  `]
+				]]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `This decoder`]
 			]
 		]],
 		[/* method */ 'decode(java.nio.ByteBuffer,java.nio.CharBuffer,boolean)', [
@@ -560,352 +883,6 @@ DocsCollector.collect('java.nio.charset.CharsetDecoder', [
 				[/* reference */ 'r', `.CoderResult#OVERFLOW`]
 			]
 		]],
-		[/* method */ 'charset()', [
-			[/* method description */
-				[/* text */ 't', `Returns the charset that created this decoder.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `This decoder's charset`]
-			]
-		]],
-		[/* method */ 'replacement()', [
-			[/* method description */
-				[/* text */ 't', `Returns this decoder's replacement value.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `This decoder's current replacement,
-          which is never `],
-				[/* inline code block */ 'i', `null`],
-				[/* text */ 't', ` and is never empty`]
-			]
-		]],
-		[/* method */ 'reset()', [
-			[/* method description */
-				[/* text */ 't', `Resets this decoder, clearing any internal state.
-
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', ` This method resets charset-independent state and also invokes the
- `],
-					[/* reference */ 'r', `#implReset()`, `implReset`],
-					[/* text */ 't', ` method in order to perform any
- charset-specific reset actions.  `]
-				]]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `This decoder`]
-			]
-		]],
-		[/* method */ 'implFlush(java.nio.CharBuffer)', [
-			[/* method description */
-				[/* text */ 't', `Flushes this decoder.
-
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', ` The default implementation of this method does nothing, and always
- returns `],
-					[/* reference */ 'r', `.CoderResult#UNDERFLOW`],
-					[/* text */ 't', `.  This method should be overridden
- by decoders that may need to write final characters to the output buffer
- once the entire input sequence has been read. `]
-				]]
-			],
-			[/* parameters */
-				[/* parameter */ 'out', [/* parameter description */
-					[/* text */ 't', `The output character buffer`]
-				]]
-			],
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `A coder-result object, either `],
-				[/* reference */ 'r', `.CoderResult#UNDERFLOW`],
-				[/* text */ 't', ` or
-          `],
-				[/* reference */ 'r', `.CoderResult#OVERFLOW`]
-			]
-		]],
-		[/* method */ 'malformedInputAction()', [
-			[/* method description */
-				[/* text */ 't', `Returns this decoder's current action for malformed-input errors.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `The current malformed-input action, which is never `],
-				[/* inline code block */ 'i', `null`]
-			]
-		]],
-		[/* method */ 'unmappableCharacterAction()', [
-			[/* method description */
-				[/* text */ 't', `Returns this decoder's current action for unmappable-character errors.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `The current unmappable-character action, which is never
-         `],
-				[/* inline code block */ 'i', `null`]
-			]
-		]],
-		[/* method */ 'replaceWith(java.lang.String)', [
-			[/* method description */
-				[/* text */ 't', `Changes this decoder's replacement value.
-
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', ` This method invokes the `],
-					[/* reference */ 'r', `#implReplaceWith(java.lang.String)`, `implReplaceWith`],
-					[/* text */ 't', `
- method, passing the new replacement, after checking that the new
- replacement is acceptable.  `]
-				]]
-			],
-			[/* parameters */
-				[/* parameter */ 'newReplacement', [/* parameter description */
-					[/* text */ 't', `The new replacement; must not be
-         `],
-					[/* inline code block */ 'i', `null`],
-					[/* text */ 't', `, must have non-zero length,
-
-         and must not be longer than the value returned by the
-         `],
-					[/* reference */ 'r', `#maxCharsPerByte()`, `maxCharsPerByte`],
-					[/* text */ 't', ` method`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
-					[/* text */ 't', `If the preconditions on the parameter do not hold`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `This decoder`]
-			]
-		]],
-		[/* method */ 'implReplaceWith(java.lang.String)', [
-			[/* method description */
-				[/* text */ 't', `Reports a change to this decoder's replacement value.
-
- `],
-				[/* block */ 'b', ` The default implementation of this method does nothing.  This method
- should be overridden by decoders that require notification of changes to
- the replacement.  `]
-			],
-			[/* parameters */
-				[/* parameter */ 'newReplacement', [/* parameter description */
-					[/* text */ 't', `The replacement value`]
-				]]
-			],
-			/* throws */ UDF,
-			/* return */ UDF
-		]],
-		[/* method */ 'implOnMalformedInput(java.nio.charset.CodingErrorAction)', [
-			[/* method description */
-				[/* text */ 't', `Reports a change to this decoder's malformed-input action.
-
- `],
-				[/* block */ 'b', ` The default implementation of this method does nothing.  This method
- should be overridden by decoders that require notification of changes to
- the malformed-input action.  `]
-			],
-			[/* parameters */
-				[/* parameter */ 'newAction', [/* parameter description */
-					[/* text */ 't', `The new action`]
-				]]
-			],
-			/* throws */ UDF,
-			/* return */ UDF
-		]],
-		[/* method */ 'implOnUnmappableCharacter(java.nio.charset.CodingErrorAction)', [
-			[/* method description */
-				[/* text */ 't', `Reports a change to this decoder's unmappable-character action.
-
- `],
-				[/* block */ 'b', ` The default implementation of this method does nothing.  This method
- should be overridden by decoders that require notification of changes to
- the unmappable-character action.  `]
-			],
-			[/* parameters */
-				[/* parameter */ 'newAction', [/* parameter description */
-					[/* text */ 't', `The new action`]
-				]]
-			],
-			/* throws */ UDF,
-			/* return */ UDF
-		]],
-		[/* method */ 'implReset()', [
-			[/* method description */
-				[/* text */ 't', `Resets this decoder, clearing any charset-specific internal state.
-
- `],
-				[/* block */ 'b', ` The default implementation of this method does nothing.  This method
- should be overridden by decoders that maintain internal state.  `]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			/* return */ UDF
-		]],
-		[/* method */ 'decodeLoop(java.nio.ByteBuffer,java.nio.CharBuffer)', [
-			[/* method description */
-				[/* text */ 't', `Decodes one or more bytes into one or more characters.
-
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', ` This method encapsulates the basic decoding loop, decoding as many
- bytes as possible until it either runs out of input, runs out of room
- in the output buffer, or encounters a decoding error.  This method is
- invoked by the `],
-					[/* reference */ 'r', `#decode(java.nio.ByteBuffer,java.nio.CharBuffer,boolean)`, `decode`],
-					[/* text */ 't', ` method, which handles result
- interpretation and error recovery.
-
- `]
-				]],
-				[/* block */ 'b', [
-					[/* text */ 't', ` The buffers are read from, and written to, starting at their current
- positions.  At most `],
-					[/* reference */ 'r', `java.Buffer#remaining()`],
-					[/* text */ 't', ` bytes
- will be read, and at most `],
-					[/* reference */ 'r', `java.Buffer#remaining()`],
-					[/* text */ 't', `
- characters will be written.  The buffers' positions will be advanced to
- reflect the bytes read and the characters written, but their marks and
- limits will not be modified.
-
- `]
-				]],
-				[/* block */ 'b', [
-					[/* text */ 't', ` This method returns a `],
-					[/* reference */ 'r', `java.nio.charset.CoderResult`],
-					[/* text */ 't', ` object to describe its
- reason for termination, in the same manner as the `],
-					[/* reference */ 'r', `#decode(java.nio.ByteBuffer,java.nio.CharBuffer,boolean)`, `decode`],
-					[/* text */ 't', `
- method.  Most implementations of this method will handle decoding errors
- by returning an appropriate result object for interpretation by the
- `],
-					[/* reference */ 'r', `#decode(java.nio.ByteBuffer,java.nio.CharBuffer,boolean)`, `decode`],
-					[/* text */ 't', ` method.  An optimized implementation may instead
- examine the relevant error action and implement that action itself.
-
- `]
-				]],
-				[/* block */ 'b', [
-					[/* text */ 't', ` An implementation of this method may perform arbitrary lookahead by
- returning `],
-					[/* reference */ 'r', `.CoderResult#UNDERFLOW`],
-					[/* text */ 't', ` until it receives sufficient
- input.  `]
-				]]
-			],
-			[/* parameters */
-				[/* parameter */ 'in', [/* parameter description */
-					[/* text */ 't', `The input byte buffer`]
-				]],
-				[/* parameter */ 'out', [/* parameter description */
-					[/* text */ 't', `The output character buffer`]
-				]]
-			],
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `A coder-result object describing the reason for termination`]
-			]
-		]],
-		[/* method */ 'averageCharsPerByte()', [
-			[/* method description */
-				[/* text */ 't', `Returns the average number of characters that will be produced for each
- byte of input.  This heuristic value may be used to estimate the size
- of the output buffer required for a given input sequence.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `The average number of characters produced
-          per byte of input`]
-			]
-		]],
-		[/* method */ 'isAutoDetecting()', [
-			[/* method description */
-				[/* text */ 't', `Tells whether or not this decoder implements an auto-detecting charset.
-
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', ` The default implementation of this method always returns
- `],
-					[/* inline code block */ 'i', `false`],
-					[/* text */ 't', `; it should be overridden by auto-detecting decoders to
- return `],
-					[/* inline code block */ 'i', `true`],
-					[/* text */ 't', `.  `]
-				]]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* inline code block */ 'i', `true`],
-				[/* text */ 't', ` if, and only if, this decoder implements an
-          auto-detecting charset`]
-			]
-		]],
-		[/* method */ 'isCharsetDetected()', [
-			[/* method description */
-				[/* text */ 't', `Tells whether or not this decoder has yet detected a
- charset  `],
-				[/* text */ 't', `(optional operation)`],
-				[/* text */ 't', `.
-
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', ` If this decoder implements an auto-detecting charset then at a
- single point during a decoding operation this method may start returning
- `],
-					[/* inline code block */ 'i', `true`],
-					[/* text */ 't', ` to indicate that a specific charset has been detected in
- the input byte sequence.  Once this occurs, the `],
-					[/* reference */ 'r', `#detectedCharset()`, `detectedCharset`],
-					[/* text */ 't', ` method may be invoked to retrieve the detected charset.
-
- `]
-				]],
-				[/* block */ 'b', [
-					[/* text */ 't', ` That this method returns `],
-					[/* inline code block */ 'i', `false`],
-					[/* text */ 't', ` does not imply that no bytes
- have yet been decoded.  Some auto-detecting decoders are capable of
- decoding some, or even all, of an input byte sequence without fixing on
- a particular charset.
-
- `]
-				]],
-				[/* block */ 'b', [
-					[/* text */ 't', ` The default implementation of this method always throws an `],
-					[/* reference */ 'r', `java.lang.UnsupportedOperationException`],
-					[/* text */ 't', `; it should be overridden by
- auto-detecting decoders to return `],
-					[/* inline code block */ 'i', `true`],
-					[/* text */ 't', ` once the input charset
- has been determined.  `]
-				]]
-			],
-			/* parameters */ UDF,
-			[/* throws */
-				[/* throw */ 'java.lang.UnsupportedOperationException', [/* throw description */
-					[/* text */ 't', `If this decoder does not implement an auto-detecting charset`]
-				]]
-			],
-			[/* return description */
-				[/* inline code block */ 'i', `true`],
-				[/* text */ 't', ` if, and only if, this decoder has detected a
-          specific charset`]
-			]
-		]],
 		[/* method */ 'detectedCharset()', [
 			[/* method description */
 				[/* text */ 't', `Retrieves the charset that was detected by this
@@ -946,6 +923,29 @@ DocsCollector.collect('java.nio.charset.CharsetDecoder', [
           or `],
 				[/* inline code block */ 'i', `null`],
 				[/* text */ 't', ` if the charset has not yet been determined`]
+			]
+		]],
+		[/* method */ 'malformedInputAction()', [
+			[/* method description */
+				[/* text */ 't', `Returns this decoder's current action for malformed-input errors.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `The current malformed-input action, which is never `],
+				[/* inline code block */ 'i', `null`]
+			]
+		]],
+		[/* method */ 'unmappableCharacterAction()', [
+			[/* method description */
+				[/* text */ 't', `Returns this decoder's current action for unmappable-character errors.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `The current unmappable-character action, which is never
+         `],
+				[/* inline code block */ 'i', `null`]
 			]
 		]]
 	],

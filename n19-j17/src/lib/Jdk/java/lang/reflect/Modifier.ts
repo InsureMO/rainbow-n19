@@ -275,8 +275,26 @@ JdkClassCreateHelper.class('java.lang.reflect.Modifier', [
 		]
 	],
 	[/* declared fields */
-		[/* public static final int java.lang.reflect.Modifier.PUBLIC */
-			/* name */ 'PUBLIC',
+		[/* public static final int java.lang.reflect.Modifier.ABSTRACT */
+			/* name */ 'ABSTRACT',
+			/* type */ 'int',
+			/* annotations */ UDF,
+			/* modifiers */ 25
+		],
+		[/* public static final int java.lang.reflect.Modifier.FINAL */
+			/* name */ 'FINAL',
+			/* type */ 'int',
+			/* annotations */ UDF,
+			/* modifiers */ 25
+		],
+		[/* public static final int java.lang.reflect.Modifier.INTERFACE */
+			/* name */ 'INTERFACE',
+			/* type */ 'int',
+			/* annotations */ UDF,
+			/* modifiers */ 25
+		],
+		[/* public static final int java.lang.reflect.Modifier.NATIVE */
+			/* name */ 'NATIVE',
 			/* type */ 'int',
 			/* annotations */ UDF,
 			/* modifiers */ 25
@@ -293,14 +311,20 @@ JdkClassCreateHelper.class('java.lang.reflect.Modifier', [
 			/* annotations */ UDF,
 			/* modifiers */ 25
 		],
+		[/* public static final int java.lang.reflect.Modifier.PUBLIC */
+			/* name */ 'PUBLIC',
+			/* type */ 'int',
+			/* annotations */ UDF,
+			/* modifiers */ 25
+		],
 		[/* public static final int java.lang.reflect.Modifier.STATIC */
 			/* name */ 'STATIC',
 			/* type */ 'int',
 			/* annotations */ UDF,
 			/* modifiers */ 25
 		],
-		[/* public static final int java.lang.reflect.Modifier.FINAL */
-			/* name */ 'FINAL',
+		[/* public static final int java.lang.reflect.Modifier.STRICT */
+			/* name */ 'STRICT',
 			/* type */ 'int',
 			/* annotations */ UDF,
 			/* modifiers */ 25
@@ -311,38 +335,14 @@ JdkClassCreateHelper.class('java.lang.reflect.Modifier', [
 			/* annotations */ UDF,
 			/* modifiers */ 25
 		],
-		[/* public static final int java.lang.reflect.Modifier.VOLATILE */
-			/* name */ 'VOLATILE',
-			/* type */ 'int',
-			/* annotations */ UDF,
-			/* modifiers */ 25
-		],
 		[/* public static final int java.lang.reflect.Modifier.TRANSIENT */
 			/* name */ 'TRANSIENT',
 			/* type */ 'int',
 			/* annotations */ UDF,
 			/* modifiers */ 25
 		],
-		[/* public static final int java.lang.reflect.Modifier.NATIVE */
-			/* name */ 'NATIVE',
-			/* type */ 'int',
-			/* annotations */ UDF,
-			/* modifiers */ 25
-		],
-		[/* public static final int java.lang.reflect.Modifier.INTERFACE */
-			/* name */ 'INTERFACE',
-			/* type */ 'int',
-			/* annotations */ UDF,
-			/* modifiers */ 25
-		],
-		[/* public static final int java.lang.reflect.Modifier.ABSTRACT */
-			/* name */ 'ABSTRACT',
-			/* type */ 'int',
-			/* annotations */ UDF,
-			/* modifiers */ 25
-		],
-		[/* public static final int java.lang.reflect.Modifier.STRICT */
-			/* name */ 'STRICT',
+		[/* public static final int java.lang.reflect.Modifier.VOLATILE */
+			/* name */ 'VOLATILE',
 			/* type */ 'int',
 			/* annotations */ UDF,
 			/* modifiers */ 25

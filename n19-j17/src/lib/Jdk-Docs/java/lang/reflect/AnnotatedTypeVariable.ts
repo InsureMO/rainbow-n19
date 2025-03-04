@@ -11,20 +11,6 @@ DocsCollector.collect('java.lang.reflect.AnnotatedTypeVariable', [
 	/* fields */ UDF,
 	/* constructors */ UDF,
 	[/* methods */
-		[/* method */ 'getAnnotatedBounds()', [
-			[/* method description */
-				[/* text */ 't', `Returns the potentially annotated bounds of this type variable.
- If no bound is explicitly declared, the bound is unannotated
- `],
-				[/* inline code block */ 'i', `Object`],
-				[/* text */ 't', `.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the potentially annotated bounds of this type variable`]
-			]
-		]],
 		[/* method */ 'getAnnotatedOwnerType()', [
 			[/* method description */
 				[/* text */ 't', `Returns the potentially annotated type that this type is a member of, if
@@ -51,6 +37,20 @@ DocsCollector.collect('java.lang.reflect.AnnotatedTypeVariable', [
 			/* throws */ UDF,
 			[/* return description */
 				[/* inline code block */ 'i', `null`]
+			]
+		]],
+		[/* method */ 'getAnnotatedBounds()', [
+			[/* method description */
+				[/* text */ 't', `Returns the potentially annotated bounds of this type variable.
+ If no bound is explicitly declared, the bound is unannotated
+ `],
+				[/* inline code block */ 'i', `Object`],
+				[/* text */ 't', `.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the potentially annotated bounds of this type variable`]
 			]
 		]]
 	],

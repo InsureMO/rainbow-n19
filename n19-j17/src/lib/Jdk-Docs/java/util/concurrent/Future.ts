@@ -80,62 +80,6 @@ DocsCollector.collect('java.util.concurrent.Future', [
 	/* fields */ UDF,
 	/* constructors */ UDF,
 	[/* methods */
-		[/* method */ 'get(long,java.util.concurrent.TimeUnit)', [
-			[/* method description */
-				[/* text */ 't', `Waits if necessary for at most the given time for the computation
- to complete, and then retrieves its result, if available.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'timeout', [/* parameter description */
-					[/* text */ 't', `the maximum time to wait`]
-				]],
-				[/* parameter */ 'unit', [/* parameter description */
-					[/* text */ 't', `the time unit of the timeout argument`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.util.concurrent.CancellationException', [/* throw description */
-					[/* text */ 't', `if the computation was cancelled`]
-				]],
-				[/* throw */ 'java.util.concurrent.ExecutionException', [/* throw description */
-					[/* text */ 't', `if the computation threw an
- exception`]
-				]],
-				[/* throw */ 'java.lang.InterruptedException', [/* throw description */
-					[/* text */ 't', `if the current thread was interrupted
- while waiting`]
-				]],
-				[/* throw */ 'java.util.concurrent.TimeoutException', [/* throw description */
-					[/* text */ 't', `if the wait timed out`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `the computed result`]
-			]
-		]],
-		[/* method */ 'get()', [
-			[/* method description */
-				[/* text */ 't', `Waits if necessary for the computation to complete, and then
- retrieves its result.`]
-			],
-			/* parameters */ UDF,
-			[/* throws */
-				[/* throw */ 'java.util.concurrent.CancellationException', [/* throw description */
-					[/* text */ 't', `if the computation was cancelled`]
-				]],
-				[/* throw */ 'java.util.concurrent.ExecutionException', [/* throw description */
-					[/* text */ 't', `if the computation threw an
- exception`]
-				]],
-				[/* throw */ 'java.lang.InterruptedException', [/* throw description */
-					[/* text */ 't', `if the current thread was interrupted
- while waiting`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `the computed result`]
-			]
-		]],
 		[/* method */ 'cancel(boolean)', [
 			[/* method description */
 				[/* text */ 't', `Attempts to cancel execution of this task.  This method has no
@@ -214,6 +158,62 @@ DocsCollector.collect('java.util.concurrent.Future', [
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if this task completed`]
+			]
+		]],
+		[/* method */ 'get()', [
+			[/* method description */
+				[/* text */ 't', `Waits if necessary for the computation to complete, and then
+ retrieves its result.`]
+			],
+			/* parameters */ UDF,
+			[/* throws */
+				[/* throw */ 'java.util.concurrent.CancellationException', [/* throw description */
+					[/* text */ 't', `if the computation was cancelled`]
+				]],
+				[/* throw */ 'java.util.concurrent.ExecutionException', [/* throw description */
+					[/* text */ 't', `if the computation threw an
+ exception`]
+				]],
+				[/* throw */ 'java.lang.InterruptedException', [/* throw description */
+					[/* text */ 't', `if the current thread was interrupted
+ while waiting`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `the computed result`]
+			]
+		]],
+		[/* method */ 'get(long,java.util.concurrent.TimeUnit)', [
+			[/* method description */
+				[/* text */ 't', `Waits if necessary for at most the given time for the computation
+ to complete, and then retrieves its result, if available.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'timeout', [/* parameter description */
+					[/* text */ 't', `the maximum time to wait`]
+				]],
+				[/* parameter */ 'unit', [/* parameter description */
+					[/* text */ 't', `the time unit of the timeout argument`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.util.concurrent.CancellationException', [/* throw description */
+					[/* text */ 't', `if the computation was cancelled`]
+				]],
+				[/* throw */ 'java.util.concurrent.ExecutionException', [/* throw description */
+					[/* text */ 't', `if the computation threw an
+ exception`]
+				]],
+				[/* throw */ 'java.lang.InterruptedException', [/* throw description */
+					[/* text */ 't', `if the current thread was interrupted
+ while waiting`]
+				]],
+				[/* throw */ 'java.util.concurrent.TimeoutException', [/* throw description */
+					[/* text */ 't', `if the wait timed out`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `the computed result`]
 			]
 		]]
 	],

@@ -112,241 +112,6 @@ DocsCollector.collect('java.util.LinkedList', [
 		]]
 	],
 	[/* methods */
-		[/* method */ 'add(java.lang.Object)', [
-			[/* method description */
-				[/* text */ 't', `Appends the specified element to the end of this list.
-
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', `This method is equivalent to `],
-					[/* reference */ 'r', `#addLast(E)`, `addLast(E)`],
-					[/* text */ 't', `.`]
-				]]
-			],
-			[/* parameters */
-				[/* parameter */ 'e', [/* parameter description */
-					[/* text */ 't', `element to be appended to this list`]
-				]]
-			],
-			/* throws */ UDF,
-			[/* return description */
-				[/* inline code block */ 'i', `true`],
-				[/* text */ 't', ` (as specified by `],
-				[/* reference */ 'r', `.Collection#add(E)`],
-				[/* text */ 't', `)`]
-			]
-		]],
-		[/* method */ 'add(int,java.lang.Object)', [
-			[/* method description */
-				[/* text */ 't', `Inserts the specified element at the specified position in this list.
- Shifts the element currently at that position (if any) and any
- subsequent elements to the right (adds one to their indices).`]
-			],
-			[/* parameters */
-				[/* parameter */ 'index', [/* parameter description */
-					[/* text */ 't', `index at which the specified element is to be inserted`]
-				]],
-				[/* parameter */ 'element', [/* parameter description */
-					[/* text */ 't', `element to be inserted`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.IndexOutOfBoundsException', [/* throw description */
-					[/* text */ 't', `if the index is out of range
-         (`],
-					[/* inline code block */ 'i', `index < 0 || index > size()`],
-					[/* text */ 't', `)`]
-				]]
-			],
-			/* return */ UDF
-		]],
-		[/* method */ 'remove(java.lang.Object)', [
-			[/* method description */
-				[/* text */ 't', `Removes the first occurrence of the specified element from this list,
- if it is present.  If this list does not contain the element, it is
- unchanged.  More formally, removes the element with the lowest index
- `],
-				[/* inline code block */ 'i', `i`],
-				[/* text */ 't', ` such that
- `],
-				[/* inline code block */ 'i', `Objects.equals(o, get(i))`],
-				[/* text */ 't', `
- (if such an element exists).  Returns `],
-				[/* inline code block */ 'i', `true`],
-				[/* text */ 't', ` if this list
- contained the specified element (or equivalently, if this list
- changed as a result of the call).`]
-			],
-			[/* parameters */
-				[/* parameter */ 'o', [/* parameter description */
-					[/* text */ 't', `element to be removed from this list, if present`]
-				]]
-			],
-			/* throws */ UDF,
-			[/* return description */
-				[/* inline code block */ 'i', `true`],
-				[/* text */ 't', ` if this list contained the specified element`]
-			]
-		]],
-		[/* method */ 'remove()', [
-			[/* method description */
-				[/* text */ 't', `Retrieves and removes the head (first element) of this list.`]
-			],
-			/* parameters */ UDF,
-			[/* throws */
-				[/* throw */ 'java.util.NoSuchElementException', [/* throw description */
-					[/* text */ 't', `if this list is empty`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `the head of this list`]
-			]
-		]],
-		[/* method */ 'remove(int)', [
-			[/* method description */
-				[/* text */ 't', `Removes the element at the specified position in this list.  Shifts any
- subsequent elements to the left (subtracts one from their indices).
- Returns the element that was removed from the list.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'index', [/* parameter description */
-					[/* text */ 't', `the index of the element to be removed`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.IndexOutOfBoundsException', [/* throw description */
-					[/* text */ 't', `if the index is out of range
-         (`],
-					[/* inline code block */ 'i', `index < 0 || index >= size()`],
-					[/* text */ 't', `)`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `the element previously at the specified position`]
-			]
-		]],
-		[/* method */ 'get(int)', [
-			[/* method description */
-				[/* text */ 't', `Returns the element at the specified position in this list.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'index', [/* parameter description */
-					[/* text */ 't', `index of the element to return`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.IndexOutOfBoundsException', [/* throw description */
-					[/* text */ 't', `if the index is out of range
-         (`],
-					[/* inline code block */ 'i', `index < 0 || index >= size()`],
-					[/* text */ 't', `)`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `the element at the specified position in this list`]
-			]
-		]],
-		[/* method */ 'clone()', [
-			[/* method description */
-				[/* text */ 't', `Returns a shallow copy of this `],
-				[/* inline code block */ 'i', `LinkedList`],
-				[/* text */ 't', `. (The elements
- themselves are not cloned.)`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `a shallow copy of this `],
-				[/* inline code block */ 'i', `LinkedList`],
-				[/* text */ 't', ` instance`]
-			]
-		]],
-		[/* method */ 'indexOf(java.lang.Object)', [
-			[/* method description */
-				[/* text */ 't', `Returns the index of the first occurrence of the specified element
- in this list, or -1 if this list does not contain the element.
- More formally, returns the lowest index `],
-				[/* inline code block */ 'i', `i`],
-				[/* text */ 't', ` such that
- `],
-				[/* inline code block */ 'i', `Objects.equals(o, get(i))`],
-				[/* text */ 't', `,
- or -1 if there is no such index.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'o', [/* parameter description */
-					[/* text */ 't', `element to search for`]
-				]]
-			],
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the index of the first occurrence of the specified element in
-         this list, or -1 if this list does not contain the element`]
-			]
-		]],
-		[/* method */ 'clear()', [
-			[/* method description */
-				[/* text */ 't', `Removes all of the elements from this list.
- The list will be empty after this call returns.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			/* return */ UDF
-		]],
-		[/* method */ 'lastIndexOf(java.lang.Object)', [
-			[/* method description */
-				[/* text */ 't', `Returns the index of the last occurrence of the specified element
- in this list, or -1 if this list does not contain the element.
- More formally, returns the highest index `],
-				[/* inline code block */ 'i', `i`],
-				[/* text */ 't', ` such that
- `],
-				[/* inline code block */ 'i', `Objects.equals(o, get(i))`],
-				[/* text */ 't', `,
- or -1 if there is no such index.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'o', [/* parameter description */
-					[/* text */ 't', `element to search for`]
-				]]
-			],
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the index of the last occurrence of the specified element in
-         this list, or -1 if this list does not contain the element`]
-			]
-		]],
-		[/* method */ 'size()', [
-			[/* method description */
-				[/* text */ 't', `Returns the number of elements in this list.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the number of elements in this list`]
-			]
-		]],
-		[/* method */ 'toArray()', [
-			[/* method description */
-				[/* text */ 't', `Returns an array containing all of the elements in this list
- in proper sequence (from first to last element).
-
- `],
-				[/* block */ 'b', `The returned array will be "safe" in that no references to it are
- maintained by this list.  (In other words, this method must allocate
- a new array).  The caller is thus free to modify the returned array.
-
- `],
-				[/* block */ 'b', `This method acts as bridge between array-based and collection-based
- APIs.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `an array containing all of the elements in this list
-         in proper sequence`]
-			]
-		]],
 		[/* method */ 'toArray(java.lang.Object[])', [
 			[/* method description */
 				[/* text */ 't', `Returns an array containing all of the elements in this list in
@@ -423,62 +188,28 @@ DocsCollector.collect('java.util.LinkedList', [
 				[/* text */ 't', `an array containing the elements of the list`]
 			]
 		]],
-		[/* method */ 'contains(java.lang.Object)', [
+		[/* method */ 'add(java.lang.Object)', [
 			[/* method description */
-				[/* text */ 't', `Returns `],
-				[/* inline code block */ 'i', `true`],
-				[/* text */ 't', ` if this list contains the specified element.
- More formally, returns `],
-				[/* inline code block */ 'i', `true`],
-				[/* text */ 't', ` if and only if this list contains
- at least one element `],
-				[/* inline code block */ 'i', `e`],
-				[/* text */ 't', ` such that
- `],
-				[/* inline code block */ 'i', `Objects.equals(o, e)`],
-				[/* text */ 't', `.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'o', [/* parameter description */
-					[/* text */ 't', `element whose presence in this list is to be tested`]
-				]]
-			],
-			/* throws */ UDF,
-			[/* return description */
-				[/* inline code block */ 'i', `true`],
-				[/* text */ 't', ` if this list contains the specified element`]
-			]
-		]],
-		[/* method */ 'spliterator()', [
-			[/* method description */
-				[/* text */ 't', `Creates a `],
-				[/* reference */ 'r', `.Spliterator#binding`],
-				[/* text */ 't', `
- and `],
-				[/* text */ 't', `fail-fast`],
-				[/* reference */ 'r', `java.util.Spliterator`],
-				[/* text */ 't', ` over the elements in this
- list.
+				[/* text */ 't', `Appends the specified element to the end of this list.
 
  `],
 				[/* block */ 'b', [
-					[/* text */ 't', `The `],
-					[/* inline code block */ 'i', `Spliterator`],
-					[/* text */ 't', ` reports `],
-					[/* reference */ 'r', `.Spliterator#SIZED`],
-					[/* text */ 't', ` and
- `],
-					[/* reference */ 'r', `.Spliterator#ORDERED`],
-					[/* text */ 't', `.  Overriding implementations should document
- the reporting of additional characteristic values.`]
+					[/* text */ 't', `This method is equivalent to `],
+					[/* reference */ 'r', `#addLast(E)`, `addLast(E)`],
+					[/* text */ 't', `.`]
 				]]
 			],
-			/* parameters */ UDF,
+			[/* parameters */
+				[/* parameter */ 'e', [/* parameter description */
+					[/* text */ 't', `element to be appended to this list`]
+				]]
+			],
 			/* throws */ UDF,
 			[/* return description */
-				[/* text */ 't', `a `],
-				[/* inline code block */ 'i', `Spliterator`],
-				[/* text */ 't', ` over the elements in this list`]
+				[/* inline code block */ 'i', `true`],
+				[/* text */ 't', ` (as specified by `],
+				[/* reference */ 'r', `.Collection#add(E)`],
+				[/* text */ 't', `)`]
 			]
 		]],
 		[/* method */ 'addAll(int,java.util.Collection)', [
@@ -539,6 +270,384 @@ DocsCollector.collect('java.util.LinkedList', [
 				[/* text */ 't', ` if this list changed as a result of the call`]
 			]
 		]],
+		[/* method */ 'contains(java.lang.Object)', [
+			[/* method description */
+				[/* text */ 't', `Returns `],
+				[/* inline code block */ 'i', `true`],
+				[/* text */ 't', ` if this list contains the specified element.
+ More formally, returns `],
+				[/* inline code block */ 'i', `true`],
+				[/* text */ 't', ` if and only if this list contains
+ at least one element `],
+				[/* inline code block */ 'i', `e`],
+				[/* text */ 't', ` such that
+ `],
+				[/* inline code block */ 'i', `Objects.equals(o, e)`],
+				[/* text */ 't', `.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'o', [/* parameter description */
+					[/* text */ 't', `element whose presence in this list is to be tested`]
+				]]
+			],
+			/* throws */ UDF,
+			[/* return description */
+				[/* inline code block */ 'i', `true`],
+				[/* text */ 't', ` if this list contains the specified element`]
+			]
+		]],
+		[/* method */ 'offer(java.lang.Object)', [
+			[/* method description */
+				[/* text */ 't', `Adds the specified element as the tail (last element) of this list.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'e', [/* parameter description */
+					[/* text */ 't', `the element to add`]
+				]]
+			],
+			/* throws */ UDF,
+			[/* return description */
+				[/* inline code block */ 'i', `true`],
+				[/* text */ 't', ` (as specified by `],
+				[/* reference */ 'r', `.Queue#offer(E)`],
+				[/* text */ 't', `)`]
+			]
+		]],
+		[/* method */ 'offerFirst(java.lang.Object)', [
+			[/* method description */
+				[/* text */ 't', `Inserts the specified element at the front of this list.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'e', [/* parameter description */
+					[/* text */ 't', `the element to insert`]
+				]]
+			],
+			/* throws */ UDF,
+			[/* return description */
+				[/* inline code block */ 'i', `true`],
+				[/* text */ 't', ` (as specified by `],
+				[/* reference */ 'r', `.Deque#offerFirst(E)`],
+				[/* text */ 't', `)`]
+			]
+		]],
+		[/* method */ 'offerLast(java.lang.Object)', [
+			[/* method description */
+				[/* text */ 't', `Inserts the specified element at the end of this list.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'e', [/* parameter description */
+					[/* text */ 't', `the element to insert`]
+				]]
+			],
+			/* throws */ UDF,
+			[/* return description */
+				[/* inline code block */ 'i', `true`],
+				[/* text */ 't', ` (as specified by `],
+				[/* reference */ 'r', `.Deque#offerLast(E)`],
+				[/* text */ 't', `)`]
+			]
+		]],
+		[/* method */ 'remove(java.lang.Object)', [
+			[/* method description */
+				[/* text */ 't', `Removes the first occurrence of the specified element from this list,
+ if it is present.  If this list does not contain the element, it is
+ unchanged.  More formally, removes the element with the lowest index
+ `],
+				[/* inline code block */ 'i', `i`],
+				[/* text */ 't', ` such that
+ `],
+				[/* inline code block */ 'i', `Objects.equals(o, get(i))`],
+				[/* text */ 't', `
+ (if such an element exists).  Returns `],
+				[/* inline code block */ 'i', `true`],
+				[/* text */ 't', ` if this list
+ contained the specified element (or equivalently, if this list
+ changed as a result of the call).`]
+			],
+			[/* parameters */
+				[/* parameter */ 'o', [/* parameter description */
+					[/* text */ 't', `element to be removed from this list, if present`]
+				]]
+			],
+			/* throws */ UDF,
+			[/* return description */
+				[/* inline code block */ 'i', `true`],
+				[/* text */ 't', ` if this list contained the specified element`]
+			]
+		]],
+		[/* method */ 'removeFirstOccurrence(java.lang.Object)', [
+			[/* method description */
+				[/* text */ 't', `Removes the first occurrence of the specified element in this
+ list (when traversing the list from head to tail).  If the list
+ does not contain the element, it is unchanged.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'o', [/* parameter description */
+					[/* text */ 't', `element to be removed from this list, if present`]
+				]]
+			],
+			/* throws */ UDF,
+			[/* return description */
+				[/* inline code block */ 'i', `true`],
+				[/* text */ 't', ` if the list contained the specified element`]
+			]
+		]],
+		[/* method */ 'removeLastOccurrence(java.lang.Object)', [
+			[/* method description */
+				[/* text */ 't', `Removes the last occurrence of the specified element in this
+ list (when traversing the list from head to tail).  If the list
+ does not contain the element, it is unchanged.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'o', [/* parameter description */
+					[/* text */ 't', `element to be removed from this list, if present`]
+				]]
+			],
+			/* throws */ UDF,
+			[/* return description */
+				[/* inline code block */ 'i', `true`],
+				[/* text */ 't', ` if the list contained the specified element`]
+			]
+		]],
+		[/* method */ 'element()', [
+			[/* method description */
+				[/* text */ 't', `Retrieves, but does not remove, the head (first element) of this list.`]
+			],
+			/* parameters */ UDF,
+			[/* throws */
+				[/* throw */ 'java.util.NoSuchElementException', [/* throw description */
+					[/* text */ 't', `if this list is empty`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `the head of this list`]
+			]
+		]],
+		[/* method */ 'get(int)', [
+			[/* method description */
+				[/* text */ 't', `Returns the element at the specified position in this list.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'index', [/* parameter description */
+					[/* text */ 't', `index of the element to return`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.lang.IndexOutOfBoundsException', [/* throw description */
+					[/* text */ 't', `if the index is out of range
+         (`],
+					[/* inline code block */ 'i', `index < 0 || index >= size()`],
+					[/* text */ 't', `)`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `the element at the specified position in this list`]
+			]
+		]],
+		[/* method */ 'getFirst()', [
+			[/* method description */
+				[/* text */ 't', `Returns the first element in this list.`]
+			],
+			/* parameters */ UDF,
+			[/* throws */
+				[/* throw */ 'java.util.NoSuchElementException', [/* throw description */
+					[/* text */ 't', `if this list is empty`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `the first element in this list`]
+			]
+		]],
+		[/* method */ 'getLast()', [
+			[/* method description */
+				[/* text */ 't', `Returns the last element in this list.`]
+			],
+			/* parameters */ UDF,
+			[/* throws */
+				[/* throw */ 'java.util.NoSuchElementException', [/* throw description */
+					[/* text */ 't', `if this list is empty`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `the last element in this list`]
+			]
+		]],
+		[/* method */ 'peek()', [
+			[/* method description */
+				[/* text */ 't', `Retrieves, but does not remove, the head (first element) of this list.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the head of this list, or `],
+				[/* inline code block */ 'i', `null`],
+				[/* text */ 't', ` if this list is empty`]
+			]
+		]],
+		[/* method */ 'peekFirst()', [
+			[/* method description */
+				[/* text */ 't', `Retrieves, but does not remove, the first element of this list,
+ or returns `],
+				[/* inline code block */ 'i', `null`],
+				[/* text */ 't', ` if this list is empty.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the first element of this list, or `],
+				[/* inline code block */ 'i', `null`],
+				[/* text */ 't', `
+         if this list is empty`]
+			]
+		]],
+		[/* method */ 'peekLast()', [
+			[/* method description */
+				[/* text */ 't', `Retrieves, but does not remove, the last element of this list,
+ or returns `],
+				[/* inline code block */ 'i', `null`],
+				[/* text */ 't', ` if this list is empty.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the last element of this list, or `],
+				[/* inline code block */ 'i', `null`],
+				[/* text */ 't', `
+         if this list is empty`]
+			]
+		]],
+		[/* method */ 'poll()', [
+			[/* method description */
+				[/* text */ 't', `Retrieves and removes the head (first element) of this list.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the head of this list, or `],
+				[/* inline code block */ 'i', `null`],
+				[/* text */ 't', ` if this list is empty`]
+			]
+		]],
+		[/* method */ 'pollFirst()', [
+			[/* method description */
+				[/* text */ 't', `Retrieves and removes the first element of this list,
+ or returns `],
+				[/* inline code block */ 'i', `null`],
+				[/* text */ 't', ` if this list is empty.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the first element of this list, or `],
+				[/* inline code block */ 'i', `null`],
+				[/* text */ 't', ` if
+     this list is empty`]
+			]
+		]],
+		[/* method */ 'pollLast()', [
+			[/* method description */
+				[/* text */ 't', `Retrieves and removes the last element of this list,
+ or returns `],
+				[/* inline code block */ 'i', `null`],
+				[/* text */ 't', ` if this list is empty.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the last element of this list, or `],
+				[/* inline code block */ 'i', `null`],
+				[/* text */ 't', ` if
+     this list is empty`]
+			]
+		]],
+		[/* method */ 'pop()', [
+			[/* method description */
+				[/* text */ 't', `Pops an element from the stack represented by this list.  In other
+ words, removes and returns the first element of this list.
+
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', `This method is equivalent to `],
+					[/* reference */ 'r', `#removeFirst()`, `removeFirst()`],
+					[/* text */ 't', `.`]
+				]]
+			],
+			/* parameters */ UDF,
+			[/* throws */
+				[/* throw */ 'java.util.NoSuchElementException', [/* throw description */
+					[/* text */ 't', `if this list is empty`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `the element at the front of this list (which is the top
+         of the stack represented by this list)`]
+			]
+		]],
+		[/* method */ 'remove()', [
+			[/* method description */
+				[/* text */ 't', `Retrieves and removes the head (first element) of this list.`]
+			],
+			/* parameters */ UDF,
+			[/* throws */
+				[/* throw */ 'java.util.NoSuchElementException', [/* throw description */
+					[/* text */ 't', `if this list is empty`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `the head of this list`]
+			]
+		]],
+		[/* method */ 'remove(int)', [
+			[/* method description */
+				[/* text */ 't', `Removes the element at the specified position in this list.  Shifts any
+ subsequent elements to the left (subtracts one from their indices).
+ Returns the element that was removed from the list.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'index', [/* parameter description */
+					[/* text */ 't', `the index of the element to be removed`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.lang.IndexOutOfBoundsException', [/* throw description */
+					[/* text */ 't', `if the index is out of range
+         (`],
+					[/* inline code block */ 'i', `index < 0 || index >= size()`],
+					[/* text */ 't', `)`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `the element previously at the specified position`]
+			]
+		]],
+		[/* method */ 'removeFirst()', [
+			[/* method description */
+				[/* text */ 't', `Removes and returns the first element from this list.`]
+			],
+			/* parameters */ UDF,
+			[/* throws */
+				[/* throw */ 'java.util.NoSuchElementException', [/* throw description */
+					[/* text */ 't', `if this list is empty`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `the first element from this list`]
+			]
+		]],
+		[/* method */ 'removeLast()', [
+			[/* method description */
+				[/* text */ 't', `Removes and returns the last element from this list.`]
+			],
+			/* parameters */ UDF,
+			[/* throws */
+				[/* throw */ 'java.util.NoSuchElementException', [/* throw description */
+					[/* text */ 't', `if this list is empty`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `the last element from this list`]
+			]
+		]],
 		[/* method */ 'set(int,java.lang.Object)', [
 			[/* method description */
 				[/* text */ 't', `Replaces the element at the specified position in this list with the
@@ -564,42 +673,109 @@ DocsCollector.collect('java.util.LinkedList', [
 				[/* text */ 't', `the element previously at the specified position`]
 			]
 		]],
-		[/* method */ 'poll()', [
+		[/* method */ 'indexOf(java.lang.Object)', [
 			[/* method description */
-				[/* text */ 't', `Retrieves and removes the head (first element) of this list.`]
+				[/* text */ 't', `Returns the index of the first occurrence of the specified element
+ in this list, or -1 if this list does not contain the element.
+ More formally, returns the lowest index `],
+				[/* inline code block */ 'i', `i`],
+				[/* text */ 't', ` such that
+ `],
+				[/* inline code block */ 'i', `Objects.equals(o, get(i))`],
+				[/* text */ 't', `,
+ or -1 if there is no such index.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the head of this list, or `],
-				[/* inline code block */ 'i', `null`],
-				[/* text */ 't', ` if this list is empty`]
-			]
-		]],
-		[/* method */ 'peek()', [
-			[/* method description */
-				[/* text */ 't', `Retrieves, but does not remove, the head (first element) of this list.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the head of this list, or `],
-				[/* inline code block */ 'i', `null`],
-				[/* text */ 't', ` if this list is empty`]
-			]
-		]],
-		[/* method */ 'element()', [
-			[/* method description */
-				[/* text */ 't', `Retrieves, but does not remove, the head (first element) of this list.`]
-			],
-			/* parameters */ UDF,
-			[/* throws */
-				[/* throw */ 'java.util.NoSuchElementException', [/* throw description */
-					[/* text */ 't', `if this list is empty`]
+			[/* parameters */
+				[/* parameter */ 'o', [/* parameter description */
+					[/* text */ 't', `element to search for`]
 				]]
 			],
+			/* throws */ UDF,
 			[/* return description */
-				[/* text */ 't', `the head of this list`]
+				[/* text */ 't', `the index of the first occurrence of the specified element in
+         this list, or -1 if this list does not contain the element`]
+			]
+		]],
+		[/* method */ 'lastIndexOf(java.lang.Object)', [
+			[/* method description */
+				[/* text */ 't', `Returns the index of the last occurrence of the specified element
+ in this list, or -1 if this list does not contain the element.
+ More formally, returns the highest index `],
+				[/* inline code block */ 'i', `i`],
+				[/* text */ 't', ` such that
+ `],
+				[/* inline code block */ 'i', `Objects.equals(o, get(i))`],
+				[/* text */ 't', `,
+ or -1 if there is no such index.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'o', [/* parameter description */
+					[/* text */ 't', `element to search for`]
+				]]
+			],
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the index of the last occurrence of the specified element in
+         this list, or -1 if this list does not contain the element`]
+			]
+		]],
+		[/* method */ 'size()', [
+			[/* method description */
+				[/* text */ 't', `Returns the number of elements in this list.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the number of elements in this list`]
+			]
+		]],
+		[/* method */ 'clone()', [
+			[/* method description */
+				[/* text */ 't', `Returns a shallow copy of this `],
+				[/* inline code block */ 'i', `LinkedList`],
+				[/* text */ 't', `. (The elements
+ themselves are not cloned.)`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `a shallow copy of this `],
+				[/* inline code block */ 'i', `LinkedList`],
+				[/* text */ 't', ` instance`]
+			]
+		]],
+		[/* method */ 'toArray()', [
+			[/* method description */
+				[/* text */ 't', `Returns an array containing all of the elements in this list
+ in proper sequence (from first to last element).
+
+ `],
+				[/* block */ 'b', `The returned array will be "safe" in that no references to it are
+ maintained by this list.  (In other words, this method must allocate
+ a new array).  The caller is thus free to modify the returned array.
+
+ `],
+				[/* block */ 'b', `This method acts as bridge between array-based and collection-based
+ APIs.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `an array containing all of the elements in this list
+         in proper sequence`]
+			]
+		]],
+		[/* method */ 'descendingIterator()', [
+			[/* method description */
+				[/* block */ 'b', `Returns an iterator over the elements in this deque in reverse
+ sequential order.  The elements will be returned in order from
+ last (tail) to first (head).`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `an iterator over the elements in this deque in reverse
+ sequence`]
 			]
 		]],
 		[/* method */ 'listIterator(int)', [
@@ -651,48 +827,61 @@ DocsCollector.collect('java.util.LinkedList', [
          sequence), starting at the specified position in the list`]
 			]
 		]],
-		[/* method */ 'push(java.lang.Object)', [
+		[/* method */ 'spliterator()', [
 			[/* method description */
-				[/* text */ 't', `Pushes an element onto the stack represented by this list.  In other
- words, inserts the element at the front of this list.
+				[/* text */ 't', `Creates a `],
+				[/* reference */ 'r', `.Spliterator#binding`],
+				[/* text */ 't', `
+ and `],
+				[/* text */ 't', `fail-fast`],
+				[/* reference */ 'r', `java.util.Spliterator`],
+				[/* text */ 't', ` over the elements in this
+ list.
 
  `],
 				[/* block */ 'b', [
-					[/* text */ 't', `This method is equivalent to `],
-					[/* reference */ 'r', `#addFirst(E)`, `addFirst(E)`],
-					[/* text */ 't', `.`]
-				]]
-			],
-			[/* parameters */
-				[/* parameter */ 'e', [/* parameter description */
-					[/* text */ 't', `the element to push`]
-				]]
-			],
-			/* throws */ UDF,
-			/* return */ UDF
-		]],
-		[/* method */ 'pop()', [
-			[/* method description */
-				[/* text */ 't', `Pops an element from the stack represented by this list.  In other
- words, removes and returns the first element of this list.
-
+					[/* text */ 't', `The `],
+					[/* inline code block */ 'i', `Spliterator`],
+					[/* text */ 't', ` reports `],
+					[/* reference */ 'r', `.Spliterator#SIZED`],
+					[/* text */ 't', ` and
  `],
-				[/* block */ 'b', [
-					[/* text */ 't', `This method is equivalent to `],
-					[/* reference */ 'r', `#removeFirst()`, `removeFirst()`],
-					[/* text */ 't', `.`]
+					[/* reference */ 'r', `.Spliterator#ORDERED`],
+					[/* text */ 't', `.  Overriding implementations should document
+ the reporting of additional characteristic values.`]
 				]]
 			],
 			/* parameters */ UDF,
-			[/* throws */
-				[/* throw */ 'java.util.NoSuchElementException', [/* throw description */
-					[/* text */ 't', `if this list is empty`]
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `a `],
+				[/* inline code block */ 'i', `Spliterator`],
+				[/* text */ 't', ` over the elements in this list`]
+			]
+		]],
+		[/* method */ 'add(int,java.lang.Object)', [
+			[/* method description */
+				[/* text */ 't', `Inserts the specified element at the specified position in this list.
+ Shifts the element currently at that position (if any) and any
+ subsequent elements to the right (adds one to their indices).`]
+			],
+			[/* parameters */
+				[/* parameter */ 'index', [/* parameter description */
+					[/* text */ 't', `index at which the specified element is to be inserted`]
+				]],
+				[/* parameter */ 'element', [/* parameter description */
+					[/* text */ 't', `element to be inserted`]
 				]]
 			],
-			[/* return description */
-				[/* text */ 't', `the element at the front of this list (which is the top
-         of the stack represented by this list)`]
-			]
+			[/* throws */
+				[/* throw */ 'java.lang.IndexOutOfBoundsException', [/* throw description */
+					[/* text */ 't', `if the index is out of range
+         (`],
+					[/* inline code block */ 'i', `index < 0 || index > size()`],
+					[/* text */ 't', `)`]
+				]]
+			],
+			/* return */ UDF
 		]],
 		[/* method */ 'addFirst(java.lang.Object)', [
 			[/* method description */
@@ -725,223 +914,34 @@ DocsCollector.collect('java.util.LinkedList', [
 			/* throws */ UDF,
 			/* return */ UDF
 		]],
-		[/* method */ 'pollFirst()', [
+		[/* method */ 'clear()', [
 			[/* method description */
-				[/* text */ 't', `Retrieves and removes the first element of this list,
- or returns `],
-				[/* inline code block */ 'i', `null`],
-				[/* text */ 't', ` if this list is empty.`]
+				[/* text */ 't', `Removes all of the elements from this list.
+ The list will be empty after this call returns.`]
 			],
 			/* parameters */ UDF,
 			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the first element of this list, or `],
-				[/* inline code block */ 'i', `null`],
-				[/* text */ 't', ` if
-     this list is empty`]
-			]
+			/* return */ UDF
 		]],
-		[/* method */ 'pollLast()', [
+		[/* method */ 'push(java.lang.Object)', [
 			[/* method description */
-				[/* text */ 't', `Retrieves and removes the last element of this list,
- or returns `],
-				[/* inline code block */ 'i', `null`],
-				[/* text */ 't', ` if this list is empty.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the last element of this list, or `],
-				[/* inline code block */ 'i', `null`],
-				[/* text */ 't', ` if
-     this list is empty`]
-			]
-		]],
-		[/* method */ 'offerLast(java.lang.Object)', [
-			[/* method description */
-				[/* text */ 't', `Inserts the specified element at the end of this list.`]
+				[/* text */ 't', `Pushes an element onto the stack represented by this list.  In other
+ words, inserts the element at the front of this list.
+
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', `This method is equivalent to `],
+					[/* reference */ 'r', `#addFirst(E)`, `addFirst(E)`],
+					[/* text */ 't', `.`]
+				]]
 			],
 			[/* parameters */
 				[/* parameter */ 'e', [/* parameter description */
-					[/* text */ 't', `the element to insert`]
+					[/* text */ 't', `the element to push`]
 				]]
 			],
 			/* throws */ UDF,
-			[/* return description */
-				[/* inline code block */ 'i', `true`],
-				[/* text */ 't', ` (as specified by `],
-				[/* reference */ 'r', `.Deque#offerLast(E)`],
-				[/* text */ 't', `)`]
-			]
-		]],
-		[/* method */ 'removeFirst()', [
-			[/* method description */
-				[/* text */ 't', `Removes and returns the first element from this list.`]
-			],
-			/* parameters */ UDF,
-			[/* throws */
-				[/* throw */ 'java.util.NoSuchElementException', [/* throw description */
-					[/* text */ 't', `if this list is empty`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `the first element from this list`]
-			]
-		]],
-		[/* method */ 'getFirst()', [
-			[/* method description */
-				[/* text */ 't', `Returns the first element in this list.`]
-			],
-			/* parameters */ UDF,
-			[/* throws */
-				[/* throw */ 'java.util.NoSuchElementException', [/* throw description */
-					[/* text */ 't', `if this list is empty`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `the first element in this list`]
-			]
-		]],
-		[/* method */ 'peekFirst()', [
-			[/* method description */
-				[/* text */ 't', `Retrieves, but does not remove, the first element of this list,
- or returns `],
-				[/* inline code block */ 'i', `null`],
-				[/* text */ 't', ` if this list is empty.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the first element of this list, or `],
-				[/* inline code block */ 'i', `null`],
-				[/* text */ 't', `
-         if this list is empty`]
-			]
-		]],
-		[/* method */ 'removeFirstOccurrence(java.lang.Object)', [
-			[/* method description */
-				[/* text */ 't', `Removes the first occurrence of the specified element in this
- list (when traversing the list from head to tail).  If the list
- does not contain the element, it is unchanged.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'o', [/* parameter description */
-					[/* text */ 't', `element to be removed from this list, if present`]
-				]]
-			],
-			/* throws */ UDF,
-			[/* return description */
-				[/* inline code block */ 'i', `true`],
-				[/* text */ 't', ` if the list contained the specified element`]
-			]
-		]],
-		[/* method */ 'offerFirst(java.lang.Object)', [
-			[/* method description */
-				[/* text */ 't', `Inserts the specified element at the front of this list.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'e', [/* parameter description */
-					[/* text */ 't', `the element to insert`]
-				]]
-			],
-			/* throws */ UDF,
-			[/* return description */
-				[/* inline code block */ 'i', `true`],
-				[/* text */ 't', ` (as specified by `],
-				[/* reference */ 'r', `.Deque#offerFirst(E)`],
-				[/* text */ 't', `)`]
-			]
-		]],
-		[/* method */ 'removeLast()', [
-			[/* method description */
-				[/* text */ 't', `Removes and returns the last element from this list.`]
-			],
-			/* parameters */ UDF,
-			[/* throws */
-				[/* throw */ 'java.util.NoSuchElementException', [/* throw description */
-					[/* text */ 't', `if this list is empty`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `the last element from this list`]
-			]
-		]],
-		[/* method */ 'getLast()', [
-			[/* method description */
-				[/* text */ 't', `Returns the last element in this list.`]
-			],
-			/* parameters */ UDF,
-			[/* throws */
-				[/* throw */ 'java.util.NoSuchElementException', [/* throw description */
-					[/* text */ 't', `if this list is empty`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `the last element in this list`]
-			]
-		]],
-		[/* method */ 'peekLast()', [
-			[/* method description */
-				[/* text */ 't', `Retrieves, but does not remove, the last element of this list,
- or returns `],
-				[/* inline code block */ 'i', `null`],
-				[/* text */ 't', ` if this list is empty.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the last element of this list, or `],
-				[/* inline code block */ 'i', `null`],
-				[/* text */ 't', `
-         if this list is empty`]
-			]
-		]],
-		[/* method */ 'removeLastOccurrence(java.lang.Object)', [
-			[/* method description */
-				[/* text */ 't', `Removes the last occurrence of the specified element in this
- list (when traversing the list from head to tail).  If the list
- does not contain the element, it is unchanged.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'o', [/* parameter description */
-					[/* text */ 't', `element to be removed from this list, if present`]
-				]]
-			],
-			/* throws */ UDF,
-			[/* return description */
-				[/* inline code block */ 'i', `true`],
-				[/* text */ 't', ` if the list contained the specified element`]
-			]
-		]],
-		[/* method */ 'offer(java.lang.Object)', [
-			[/* method description */
-				[/* text */ 't', `Adds the specified element as the tail (last element) of this list.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'e', [/* parameter description */
-					[/* text */ 't', `the element to add`]
-				]]
-			],
-			/* throws */ UDF,
-			[/* return description */
-				[/* inline code block */ 'i', `true`],
-				[/* text */ 't', ` (as specified by `],
-				[/* reference */ 'r', `.Queue#offer(E)`],
-				[/* text */ 't', `)`]
-			]
-		]],
-		[/* method */ 'descendingIterator()', [
-			[/* method description */
-				[/* block */ 'b', `Returns an iterator over the elements in this deque in reverse
- sequential order.  The elements will be returned in order from
- last (tail) to first (head).`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `an iterator over the elements in this deque in reverse
- sequence`]
-			]
+			/* return */ UDF
 		]]
 	],
 ]);

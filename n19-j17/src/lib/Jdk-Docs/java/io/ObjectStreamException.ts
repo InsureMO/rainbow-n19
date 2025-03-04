@@ -7,6 +7,13 @@ DocsCollector.collect('java.io.ObjectStreamException', [
 	],
 	/* fields */ UDF,
 	[/* constructors */
+		[/* constructor */ '<init>()', [
+			[/* constructor description */
+				[/* text */ 't', `Create an ObjectStreamException.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF
+		]],
 		[/* constructor */ '<init>(java.lang.String)', [
 			[/* constructor description */
 				[/* text */ 't', `Create an ObjectStreamException with the specified argument.`]
@@ -16,13 +23,6 @@ DocsCollector.collect('java.io.ObjectStreamException', [
 					[/* text */ 't', `the detailed message for the exception`]
 				]]
 			],
-			/* throws */ UDF
-		]],
-		[/* constructor */ '<init>()', [
-			[/* constructor description */
-				[/* text */ 't', `Create an ObjectStreamException.`]
-			],
-			/* parameters */ UDF,
 			/* throws */ UDF
 		]]
 	],

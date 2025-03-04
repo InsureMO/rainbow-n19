@@ -534,30 +534,78 @@ DocsCollector.collect('java.text.CompactNumberFormat', [
 				[/* inline code block */ 'i', `CompactNumberFormat`]
 			]
 		]],
-		[/* method */ 'hashCode()', [
+		[/* method */ 'isGroupingUsed()', [
 			[/* method description */
-				[/* text */ 't', `Returns the hash code for this `],
-				[/* inline code block */ 'i', `CompactNumberFormat`],
-				[/* text */ 't', ` instance.`]
+				[/* text */ 't', `Returns true if grouping is used in this format. For example, with
+ grouping on and grouping size set to 3, the number `],
+				[/* inline code block */ 'i', `12346567890987654`],
+				[/* text */ 't', `
+ can be formatted as `],
+				[/* inline code block */ 'i', `"12,347 trillion"`],
+				[/* text */ 't', ` in the
+ `],
+				[/* reference */ 'r', `java.Locale#US`],
+				[/* text */ 't', `.
+ The grouping separator is locale dependent.`]
 			],
 			/* parameters */ UDF,
 			/* throws */ UDF,
 			[/* return description */
-				[/* text */ 't', `hash code for this `],
-				[/* inline code block */ 'i', `CompactNumberFormat`]
+				[/* inline code block */ 'i', `true`],
+				[/* text */ 't', ` if grouping is used;
+         `],
+				[/* inline code block */ 'i', `false`],
+				[/* text */ 't', ` otherwise`]
 			]
 		]],
-		[/* method */ 'clone()', [
+		[/* method */ 'isParseBigDecimal()', [
 			[/* method description */
-				[/* text */ 't', `Creates and returns a copy of this `],
-				[/* inline code block */ 'i', `CompactNumberFormat`],
+				[/* text */ 't', `Returns whether the `],
+				[/* reference */ 'r', `#parse(java.lang.String,java.text.ParsePosition)`, `parse(String, ParsePosition)`],
 				[/* text */ 't', `
- instance.`]
+ method returns `],
+				[/* inline code block */ 'i', `BigDecimal`],
+				[/* text */ 't', `. The default value is false.`]
 			],
 			/* parameters */ UDF,
 			/* throws */ UDF,
 			[/* return description */
-				[/* text */ 't', `a clone of this instance`]
+				[/* inline code block */ 'i', `true`],
+				[/* text */ 't', ` if the parse method returns BigDecimal;
+         `],
+				[/* inline code block */ 'i', `false`],
+				[/* text */ 't', ` otherwise`]
+			]
+		]],
+		[/* method */ 'isParseIntegerOnly()', [
+			[/* method description */
+				[/* text */ 't', `Returns true if this format parses only an integer from the number
+ component of a compact number.
+ Parsing an integer means that only an integer is considered from the
+ number component, prefix/suffix is still considered to compute the
+ resulting output.
+ For example, in the `],
+				[/* reference */ 'r', `java.Locale#US`],
+				[/* text */ 't', `, if this method
+ returns `],
+				[/* inline code block */ 'i', `true`],
+				[/* text */ 't', `, the string `],
+				[/* inline code block */ 'i', `"1234.78 thousand"`],
+				[/* text */ 't', ` would be
+ parsed as the value `],
+				[/* inline code block */ 'i', `1234000`],
+				[/* text */ 't', ` (1234 (integer part) * 1000
+ (thousand)) and the fractional part would be skipped.
+ The exact format accepted by the parse operation is locale dependent.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* inline code block */ 'i', `true`],
+				[/* text */ 't', ` if compact numbers should be parsed as integers
+         only; `],
+				[/* inline code block */ 'i', `false`],
+				[/* text */ 't', ` otherwise`]
 			]
 		]],
 		[/* method */ 'format(java.lang.Object,java.lang.StringBuffer,java.text.FieldPosition)', [
@@ -640,134 +688,34 @@ DocsCollector.collect('java.text.CompactNumberFormat', [
 				[/* inline code block */ 'i', `toAppendTo`]
 			]
 		]],
-		[/* method */ 'format(long,java.lang.StringBuffer,java.text.FieldPosition)', [
+		[/* method */ 'getGroupingSize()', [
 			[/* method description */
-				[/* text */ 't', `Formats a long to produce a string representing its compact form.`]
+				[/* text */ 't', `Returns the grouping size. Grouping size is the number of digits between
+ grouping separators in the integer portion of a number. For example,
+ in the compact number `],
+				[/* inline code block */ 'i', `"12,347 trillion"`],
+				[/* text */ 't', ` for the
+ `],
+				[/* reference */ 'r', `java.Locale#US`],
+				[/* text */ 't', `, the grouping size is 3.`]
 			],
-			[/* parameters */
-				[/* parameter */ 'number', [/* parameter description */
-					[/* text */ 't', `the long number to format`]
-				]],
-				[/* parameter */ 'result', [/* parameter description */
-					[/* text */ 't', `where the text is to be appended`]
-				]],
-				[/* parameter */ 'fieldPosition', [/* parameter description */
-					[/* text */ 't', `keeps track on the position of the field within
-                         the returned string. For example, to format
-                         a number `],
-					[/* inline code block */ 'i', `123456789`],
-					[/* text */ 't', ` in the
-                         `],
-					[/* reference */ 'r', `java.Locale#US`],
-					[/* text */ 't', `,
-                         if the given `],
-					[/* inline code block */ 'i', `fieldPosition`],
-					[/* text */ 't', ` is
-                         `],
-					[/* reference */ 'r', `.NumberFormat#INTEGER_FIELD`],
-					[/* text */ 't', `, the begin
-                         index and end index of `],
-					[/* inline code block */ 'i', `fieldPosition`],
-					[/* text */ 't', `
-                         will be set to 0 and 3, respectively for the
-                         output string `],
-					[/* inline code block */ 'i', `123M`],
-					[/* text */ 't', `. Similarly, positions
-                         of the prefix and the suffix fields can be
-                         obtained using `],
-					[/* reference */ 'r', `.NumberFormat.Field#PREFIX`],
-					[/* text */ 't', `
-                         and `],
-					[/* reference */ 'r', `.NumberFormat.Field#SUFFIX`],
-					[/* text */ 't', ` respectively.`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
-					[/* text */ 't', `if `],
-					[/* inline code block */ 'i', `result`],
-					[/* text */ 't', ` or
-               `],
-					[/* inline code block */ 'i', `fieldPosition`],
-					[/* text */ 't', ` is `],
-					[/* inline code block */ 'i', `null`]
-				]],
-				[/* throw */ 'java.lang.ArithmeticException', [/* throw description */
-					[/* text */ 't', `if rounding is needed with rounding
-               mode being set to `],
-					[/* inline code block */ 'i', `RoundingMode.UNNECESSARY`]
-				]]
-			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
 			[/* return description */
-				[/* text */ 't', `the `],
-				[/* inline code block */ 'i', `StringBuffer`],
-				[/* text */ 't', ` passed in as `],
-				[/* inline code block */ 'i', `result`]
+				[/* text */ 't', `the grouping size`]
 			]
 		]],
-		[/* method */ 'format(double,java.lang.StringBuffer,java.text.FieldPosition)', [
+		[/* method */ 'hashCode()', [
 			[/* method description */
-				[/* text */ 't', `Formats a double to produce a string representing its compact form.`]
+				[/* text */ 't', `Returns the hash code for this `],
+				[/* inline code block */ 'i', `CompactNumberFormat`],
+				[/* text */ 't', ` instance.`]
 			],
-			[/* parameters */
-				[/* parameter */ 'number', [/* parameter description */
-					[/* text */ 't', `the double number to format`]
-				]],
-				[/* parameter */ 'result', [/* parameter description */
-					[/* text */ 't', `where the text is to be appended`]
-				]],
-				[/* parameter */ 'fieldPosition', [/* parameter description */
-					[/* text */ 't', `keeps track on the position of the field within
-                         the returned string. For example, to format
-                         a number `],
-					[/* inline code block */ 'i', `1234567.89`],
-					[/* text */ 't', ` in the
-                         `],
-					[/* reference */ 'r', `java.Locale#US`],
-					[/* text */ 't', `
-                         if the given `],
-					[/* inline code block */ 'i', `fieldPosition`],
-					[/* text */ 't', ` is
-                         `],
-					[/* reference */ 'r', `.NumberFormat#INTEGER_FIELD`],
-					[/* text */ 't', `, the begin
-                         index and end index of `],
-					[/* inline code block */ 'i', `fieldPosition`],
-					[/* text */ 't', `
-                         will be set to 0 and 1, respectively for the
-                         output string `],
-					[/* inline code block */ 'i', `1M`],
-					[/* text */ 't', `. Similarly, positions
-                         of the prefix and the suffix fields can be
-                         obtained using `],
-					[/* reference */ 'r', `.NumberFormat.Field#PREFIX`],
-					[/* text */ 't', `
-                         and `],
-					[/* reference */ 'r', `.NumberFormat.Field#SUFFIX`],
-					[/* text */ 't', ` respectively.`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
-					[/* text */ 't', `if `],
-					[/* inline code block */ 'i', `result`],
-					[/* text */ 't', ` or
-            `],
-					[/* inline code block */ 'i', `fieldPosition`],
-					[/* text */ 't', ` is `],
-					[/* inline code block */ 'i', `null`]
-				]],
-				[/* throw */ 'java.lang.ArithmeticException', [/* throw description */
-					[/* text */ 't', `if rounding is needed with rounding
-            mode being set to `],
-					[/* inline code block */ 'i', `RoundingMode.UNNECESSARY`]
-				]]
-			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
 			[/* return description */
-				[/* text */ 't', `the `],
-				[/* inline code block */ 'i', `StringBuffer`],
-				[/* text */ 't', ` passed in as `],
-				[/* inline code block */ 'i', `result`]
+				[/* text */ 't', `hash code for this `],
+				[/* inline code block */ 'i', `CompactNumberFormat`]
 			]
 		]],
 		[/* method */ 'parse(java.lang.String,java.text.ParsePosition)', [
@@ -929,6 +877,136 @@ DocsCollector.collect('java.text.CompactNumberFormat', [
 				[/* text */ 't', ` if the parse fails`]
 			]
 		]],
+		[/* method */ 'format(double,java.lang.StringBuffer,java.text.FieldPosition)', [
+			[/* method description */
+				[/* text */ 't', `Formats a double to produce a string representing its compact form.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'number', [/* parameter description */
+					[/* text */ 't', `the double number to format`]
+				]],
+				[/* parameter */ 'result', [/* parameter description */
+					[/* text */ 't', `where the text is to be appended`]
+				]],
+				[/* parameter */ 'fieldPosition', [/* parameter description */
+					[/* text */ 't', `keeps track on the position of the field within
+                         the returned string. For example, to format
+                         a number `],
+					[/* inline code block */ 'i', `1234567.89`],
+					[/* text */ 't', ` in the
+                         `],
+					[/* reference */ 'r', `java.Locale#US`],
+					[/* text */ 't', `
+                         if the given `],
+					[/* inline code block */ 'i', `fieldPosition`],
+					[/* text */ 't', ` is
+                         `],
+					[/* reference */ 'r', `.NumberFormat#INTEGER_FIELD`],
+					[/* text */ 't', `, the begin
+                         index and end index of `],
+					[/* inline code block */ 'i', `fieldPosition`],
+					[/* text */ 't', `
+                         will be set to 0 and 1, respectively for the
+                         output string `],
+					[/* inline code block */ 'i', `1M`],
+					[/* text */ 't', `. Similarly, positions
+                         of the prefix and the suffix fields can be
+                         obtained using `],
+					[/* reference */ 'r', `.NumberFormat.Field#PREFIX`],
+					[/* text */ 't', `
+                         and `],
+					[/* reference */ 'r', `.NumberFormat.Field#SUFFIX`],
+					[/* text */ 't', ` respectively.`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
+					[/* text */ 't', `if `],
+					[/* inline code block */ 'i', `result`],
+					[/* text */ 't', ` or
+            `],
+					[/* inline code block */ 'i', `fieldPosition`],
+					[/* text */ 't', ` is `],
+					[/* inline code block */ 'i', `null`]
+				]],
+				[/* throw */ 'java.lang.ArithmeticException', [/* throw description */
+					[/* text */ 't', `if rounding is needed with rounding
+            mode being set to `],
+					[/* inline code block */ 'i', `RoundingMode.UNNECESSARY`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `the `],
+				[/* inline code block */ 'i', `StringBuffer`],
+				[/* text */ 't', ` passed in as `],
+				[/* inline code block */ 'i', `result`]
+			]
+		]],
+		[/* method */ 'format(long,java.lang.StringBuffer,java.text.FieldPosition)', [
+			[/* method description */
+				[/* text */ 't', `Formats a long to produce a string representing its compact form.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'number', [/* parameter description */
+					[/* text */ 't', `the long number to format`]
+				]],
+				[/* parameter */ 'result', [/* parameter description */
+					[/* text */ 't', `where the text is to be appended`]
+				]],
+				[/* parameter */ 'fieldPosition', [/* parameter description */
+					[/* text */ 't', `keeps track on the position of the field within
+                         the returned string. For example, to format
+                         a number `],
+					[/* inline code block */ 'i', `123456789`],
+					[/* text */ 't', ` in the
+                         `],
+					[/* reference */ 'r', `java.Locale#US`],
+					[/* text */ 't', `,
+                         if the given `],
+					[/* inline code block */ 'i', `fieldPosition`],
+					[/* text */ 't', ` is
+                         `],
+					[/* reference */ 'r', `.NumberFormat#INTEGER_FIELD`],
+					[/* text */ 't', `, the begin
+                         index and end index of `],
+					[/* inline code block */ 'i', `fieldPosition`],
+					[/* text */ 't', `
+                         will be set to 0 and 3, respectively for the
+                         output string `],
+					[/* inline code block */ 'i', `123M`],
+					[/* text */ 't', `. Similarly, positions
+                         of the prefix and the suffix fields can be
+                         obtained using `],
+					[/* reference */ 'r', `.NumberFormat.Field#PREFIX`],
+					[/* text */ 't', `
+                         and `],
+					[/* reference */ 'r', `.NumberFormat.Field#SUFFIX`],
+					[/* text */ 't', ` respectively.`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
+					[/* text */ 't', `if `],
+					[/* inline code block */ 'i', `result`],
+					[/* text */ 't', ` or
+               `],
+					[/* inline code block */ 'i', `fieldPosition`],
+					[/* text */ 't', ` is `],
+					[/* inline code block */ 'i', `null`]
+				]],
+				[/* throw */ 'java.lang.ArithmeticException', [/* throw description */
+					[/* text */ 't', `if rounding is needed with rounding
+               mode being set to `],
+					[/* inline code block */ 'i', `RoundingMode.UNNECESSARY`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `the `],
+				[/* inline code block */ 'i', `StringBuffer`],
+				[/* text */ 't', ` passed in as `],
+				[/* inline code block */ 'i', `result`]
+			]
+		]],
 		[/* method */ 'getRoundingMode()', [
 			[/* method description */
 				[/* text */ 't', `Gets the `],
@@ -1003,228 +1081,17 @@ DocsCollector.collect('java.text.CompactNumberFormat', [
          formatted value`]
 			]
 		]],
-		[/* method */ 'setGroupingUsed(boolean)', [
+		[/* method */ 'clone()', [
 			[/* method description */
-				[/* text */ 't', `Sets whether or not grouping will be used in this format.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'newValue', [/* parameter description */
-					[/* text */ 't', ``],
-					[/* inline code block */ 'i', `true`],
-					[/* text */ 't', ` if grouping is used;
-                 `],
-					[/* inline code block */ 'i', `false`],
-					[/* text */ 't', ` otherwise`]
-				]]
-			],
-			/* throws */ UDF,
-			/* return */ UDF
-		]],
-		[/* method */ 'setMinimumIntegerDigits(int)', [
-			[/* method description */
-				[/* text */ 't', `Sets the minimum number of digits allowed in the integer portion of a
- number.
- The maximum allowed integer range is 309, if the `],
-				[/* inline code block */ 'i', `newValue`],
-				[/* text */ 't', ` > 309,
- then the minimum integer digits count is set to 309. Negative input
- values are replaced with 0.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'newValue', [/* parameter description */
-					[/* text */ 't', `the minimum number of integer digits to be shown`]
-				]]
-			],
-			/* throws */ UDF,
-			/* return */ UDF
-		]],
-		[/* method */ 'setMaximumIntegerDigits(int)', [
-			[/* method description */
-				[/* text */ 't', `Sets the maximum number of digits allowed in the integer portion of a
- number.
- The maximum allowed integer range is 309, if the `],
-				[/* inline code block */ 'i', `newValue`],
-				[/* text */ 't', ` > 309,
- then the maximum integer digits count is set to 309. Negative input
- values are replaced with 0.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'newValue', [/* parameter description */
-					[/* text */ 't', `the maximum number of integer digits to be shown`]
-				]]
-			],
-			/* throws */ UDF,
-			/* return */ UDF
-		]],
-		[/* method */ 'isParseIntegerOnly()', [
-			[/* method description */
-				[/* text */ 't', `Returns true if this format parses only an integer from the number
- component of a compact number.
- Parsing an integer means that only an integer is considered from the
- number component, prefix/suffix is still considered to compute the
- resulting output.
- For example, in the `],
-				[/* reference */ 'r', `java.Locale#US`],
-				[/* text */ 't', `, if this method
- returns `],
-				[/* inline code block */ 'i', `true`],
-				[/* text */ 't', `, the string `],
-				[/* inline code block */ 'i', `"1234.78 thousand"`],
-				[/* text */ 't', ` would be
- parsed as the value `],
-				[/* inline code block */ 'i', `1234000`],
-				[/* text */ 't', ` (1234 (integer part) * 1000
- (thousand)) and the fractional part would be skipped.
- The exact format accepted by the parse operation is locale dependent.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* inline code block */ 'i', `true`],
-				[/* text */ 't', ` if compact numbers should be parsed as integers
-         only; `],
-				[/* inline code block */ 'i', `false`],
-				[/* text */ 't', ` otherwise`]
-			]
-		]],
-		[/* method */ 'setParseIntegerOnly(boolean)', [
-			[/* method description */
-				[/* text */ 't', `Sets whether or not this format parses only an integer from the number
- component of a compact number.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'value', [/* parameter description */
-					[/* text */ 't', ``],
-					[/* inline code block */ 'i', `true`],
-					[/* text */ 't', ` if compact numbers should be parsed as
-              integers only; `],
-					[/* inline code block */ 'i', `false`],
-					[/* text */ 't', ` otherwise`]
-				]]
-			],
-			/* throws */ UDF,
-			/* return */ UDF
-		]],
-		[/* method */ 'isGroupingUsed()', [
-			[/* method description */
-				[/* text */ 't', `Returns true if grouping is used in this format. For example, with
- grouping on and grouping size set to 3, the number `],
-				[/* inline code block */ 'i', `12346567890987654`],
-				[/* text */ 't', `
- can be formatted as `],
-				[/* inline code block */ 'i', `"12,347 trillion"`],
-				[/* text */ 't', ` in the
- `],
-				[/* reference */ 'r', `java.Locale#US`],
-				[/* text */ 't', `.
- The grouping separator is locale dependent.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* inline code block */ 'i', `true`],
-				[/* text */ 't', ` if grouping is used;
-         `],
-				[/* inline code block */ 'i', `false`],
-				[/* text */ 't', ` otherwise`]
-			]
-		]],
-		[/* method */ 'setMaximumFractionDigits(int)', [
-			[/* method description */
-				[/* text */ 't', `Sets the maximum number of digits allowed in the fraction portion of a
- number.
- The maximum allowed fraction range is 340, if the `],
-				[/* inline code block */ 'i', `newValue`],
-				[/* text */ 't', ` > 340,
- then the maximum fraction digits count is set to 340. Negative input
- values are replaced with 0.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'newValue', [/* parameter description */
-					[/* text */ 't', `the maximum number of fraction digits to be shown`]
-				]]
-			],
-			/* throws */ UDF,
-			/* return */ UDF
-		]],
-		[/* method */ 'setMinimumFractionDigits(int)', [
-			[/* method description */
-				[/* text */ 't', `Sets the minimum number of digits allowed in the fraction portion of a
- number.
- The maximum allowed fraction range is 340, if the `],
-				[/* inline code block */ 'i', `newValue`],
-				[/* text */ 't', ` > 340,
- then the minimum fraction digits count is set to 340. Negative input
- values are replaced with 0.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'newValue', [/* parameter description */
-					[/* text */ 't', `the minimum number of fraction digits to be shown`]
-				]]
-			],
-			/* throws */ UDF,
-			/* return */ UDF
-		]],
-		[/* method */ 'setRoundingMode(java.math.RoundingMode)', [
-			[/* method description */
-				[/* text */ 't', `Sets the `],
-				[/* reference */ 'r', `enum class in java.math.RoundingMode`],
-				[/* text */ 't', ` used in this
- `],
+				[/* text */ 't', `Creates and returns a copy of this `],
 				[/* inline code block */ 'i', `CompactNumberFormat`],
-				[/* text */ 't', `.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'roundingMode', [/* parameter description */
-					[/* text */ 't', `the `],
-					[/* inline code block */ 'i', `RoundingMode`],
-					[/* text */ 't', ` to be used`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
-					[/* text */ 't', `if `],
-					[/* inline code block */ 'i', `roundingMode`],
-					[/* text */ 't', ` is `],
-					[/* inline code block */ 'i', `null`]
-				]]
-			],
-			/* return */ UDF
-		]],
-		[/* method */ 'isParseBigDecimal()', [
-			[/* method description */
-				[/* text */ 't', `Returns whether the `],
-				[/* reference */ 'r', `#parse(java.lang.String,java.text.ParsePosition)`, `parse(String, ParsePosition)`],
 				[/* text */ 't', `
- method returns `],
-				[/* inline code block */ 'i', `BigDecimal`],
-				[/* text */ 't', `. The default value is false.`]
+ instance.`]
 			],
 			/* parameters */ UDF,
 			/* throws */ UDF,
 			[/* return description */
-				[/* inline code block */ 'i', `true`],
-				[/* text */ 't', ` if the parse method returns BigDecimal;
-         `],
-				[/* inline code block */ 'i', `false`],
-				[/* text */ 't', ` otherwise`]
-			]
-		]],
-		[/* method */ 'getGroupingSize()', [
-			[/* method description */
-				[/* text */ 't', `Returns the grouping size. Grouping size is the number of digits between
- grouping separators in the integer portion of a number. For example,
- in the compact number `],
-				[/* inline code block */ 'i', `"12,347 trillion"`],
-				[/* text */ 't', ` for the
- `],
-				[/* reference */ 'r', `java.Locale#US`],
-				[/* text */ 't', `, the grouping size is 3.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the grouping size`]
+				[/* text */ 't', `a clone of this instance`]
 			]
 		]],
 		[/* method */ 'setGroupingSize(int)', [
@@ -1254,6 +1121,95 @@ DocsCollector.collect('java.text.CompactNumberFormat', [
 			],
 			/* return */ UDF
 		]],
+		[/* method */ 'setGroupingUsed(boolean)', [
+			[/* method description */
+				[/* text */ 't', `Sets whether or not grouping will be used in this format.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'newValue', [/* parameter description */
+					[/* text */ 't', ``],
+					[/* inline code block */ 'i', `true`],
+					[/* text */ 't', ` if grouping is used;
+                 `],
+					[/* inline code block */ 'i', `false`],
+					[/* text */ 't', ` otherwise`]
+				]]
+			],
+			/* throws */ UDF,
+			/* return */ UDF
+		]],
+		[/* method */ 'setMaximumFractionDigits(int)', [
+			[/* method description */
+				[/* text */ 't', `Sets the maximum number of digits allowed in the fraction portion of a
+ number.
+ The maximum allowed fraction range is 340, if the `],
+				[/* inline code block */ 'i', `newValue`],
+				[/* text */ 't', ` > 340,
+ then the maximum fraction digits count is set to 340. Negative input
+ values are replaced with 0.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'newValue', [/* parameter description */
+					[/* text */ 't', `the maximum number of fraction digits to be shown`]
+				]]
+			],
+			/* throws */ UDF,
+			/* return */ UDF
+		]],
+		[/* method */ 'setMaximumIntegerDigits(int)', [
+			[/* method description */
+				[/* text */ 't', `Sets the maximum number of digits allowed in the integer portion of a
+ number.
+ The maximum allowed integer range is 309, if the `],
+				[/* inline code block */ 'i', `newValue`],
+				[/* text */ 't', ` > 309,
+ then the maximum integer digits count is set to 309. Negative input
+ values are replaced with 0.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'newValue', [/* parameter description */
+					[/* text */ 't', `the maximum number of integer digits to be shown`]
+				]]
+			],
+			/* throws */ UDF,
+			/* return */ UDF
+		]],
+		[/* method */ 'setMinimumFractionDigits(int)', [
+			[/* method description */
+				[/* text */ 't', `Sets the minimum number of digits allowed in the fraction portion of a
+ number.
+ The maximum allowed fraction range is 340, if the `],
+				[/* inline code block */ 'i', `newValue`],
+				[/* text */ 't', ` > 340,
+ then the minimum fraction digits count is set to 340. Negative input
+ values are replaced with 0.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'newValue', [/* parameter description */
+					[/* text */ 't', `the minimum number of fraction digits to be shown`]
+				]]
+			],
+			/* throws */ UDF,
+			/* return */ UDF
+		]],
+		[/* method */ 'setMinimumIntegerDigits(int)', [
+			[/* method description */
+				[/* text */ 't', `Sets the minimum number of digits allowed in the integer portion of a
+ number.
+ The maximum allowed integer range is 309, if the `],
+				[/* inline code block */ 'i', `newValue`],
+				[/* text */ 't', ` > 309,
+ then the minimum integer digits count is set to 309. Negative input
+ values are replaced with 0.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'newValue', [/* parameter description */
+					[/* text */ 't', `the minimum number of integer digits to be shown`]
+				]]
+			],
+			/* throws */ UDF,
+			/* return */ UDF
+		]],
 		[/* method */ 'setParseBigDecimal(boolean)', [
 			[/* method description */
 				[/* text */ 't', `Sets whether the `],
@@ -1274,6 +1230,50 @@ DocsCollector.collect('java.text.CompactNumberFormat', [
 				]]
 			],
 			/* throws */ UDF,
+			/* return */ UDF
+		]],
+		[/* method */ 'setParseIntegerOnly(boolean)', [
+			[/* method description */
+				[/* text */ 't', `Sets whether or not this format parses only an integer from the number
+ component of a compact number.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'value', [/* parameter description */
+					[/* text */ 't', ``],
+					[/* inline code block */ 'i', `true`],
+					[/* text */ 't', ` if compact numbers should be parsed as
+              integers only; `],
+					[/* inline code block */ 'i', `false`],
+					[/* text */ 't', ` otherwise`]
+				]]
+			],
+			/* throws */ UDF,
+			/* return */ UDF
+		]],
+		[/* method */ 'setRoundingMode(java.math.RoundingMode)', [
+			[/* method description */
+				[/* text */ 't', `Sets the `],
+				[/* reference */ 'r', `enum class in java.math.RoundingMode`],
+				[/* text */ 't', ` used in this
+ `],
+				[/* inline code block */ 'i', `CompactNumberFormat`],
+				[/* text */ 't', `.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'roundingMode', [/* parameter description */
+					[/* text */ 't', `the `],
+					[/* inline code block */ 'i', `RoundingMode`],
+					[/* text */ 't', ` to be used`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
+					[/* text */ 't', `if `],
+					[/* inline code block */ 'i', `roundingMode`],
+					[/* text */ 't', ` is `],
+					[/* inline code block */ 'i', `null`]
+				]]
+			],
 			/* return */ UDF
 		]]
 	],

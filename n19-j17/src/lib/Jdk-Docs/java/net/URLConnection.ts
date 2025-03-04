@@ -198,26 +198,45 @@ DocsCollector.collect('java.net.URLConnection', [
 		[/* block */ 'b', '']
 	],
 	[/* fields */
-		[/* field */ 'url', [
+		[/* field */ 'allowUserInteraction', [
 			[/* field description */
-				[/* text */ 't', `The URL represents the remote object on the World Wide Web to
- which this connection is opened.
+				[/* text */ 't', `If `],
+				[/* inline code block */ 'i', `true`],
+				[/* text */ 't', `, this `],
+				[/* inline code block */ 'i', `URL`],
+				[/* text */ 't', ` is being examined in
+ a context in which it makes sense to allow user interactions such
+ as popping up an authentication dialog. If `],
+				[/* inline code block */ 'i', `false`],
+				[/* text */ 't', `,
+ then no user interaction is allowed.
  `],
 				[/* block */ 'b', [
 					[/* text */ 't', `
- The value of this field can be accessed by the
+ The value of this field can be set by the
  `],
-					[/* inline code block */ 'i', `getURL`],
+					[/* inline code block */ 'i', `setAllowUserInteraction`],
 					[/* text */ 't', ` method.
- `]
-				]],
-				[/* block */ 'b', [
-					[/* text */ 't', `
- The default value of this variable is the value of the URL
- argument in the `],
-					[/* inline code block */ 'i', `URLConnection`],
-					[/* text */ 't', ` constructor.`]
+ Its value is returned by the
+ `],
+					[/* inline code block */ 'i', `getAllowUserInteraction`],
+					[/* text */ 't', ` method.
+ Its default value is the value of the argument in the last invocation
+ of the `],
+					[/* inline code block */ 'i', `setDefaultAllowUserInteraction`],
+					[/* text */ 't', ` method.`]
 				]]
+			],
+		]],
+		[/* field */ 'connected', [
+			[/* field description */
+				[/* text */ 't', `If `],
+				[/* inline code block */ 'i', `false`],
+				[/* text */ 't', `, this connection object has not created a
+ communications link to the specified URL. If `],
+				[/* inline code block */ 'i', `true`],
+				[/* text */ 't', `,
+ the communications link has been established.`]
 			],
 		]],
 		[/* field */ 'doInput', [
@@ -276,33 +295,55 @@ DocsCollector.collect('java.net.URLConnection', [
 				]]
 			],
 		]],
-		[/* field */ 'allowUserInteraction', [
+		[/* field */ 'ifModifiedSince', [
 			[/* field description */
-				[/* text */ 't', `If `],
-				[/* inline code block */ 'i', `true`],
-				[/* text */ 't', `, this `],
-				[/* inline code block */ 'i', `URL`],
-				[/* text */ 't', ` is being examined in
- a context in which it makes sense to allow user interactions such
- as popping up an authentication dialog. If `],
-				[/* inline code block */ 'i', `false`],
-				[/* text */ 't', `,
- then no user interaction is allowed.
+				[/* text */ 't', `Some protocols support skipping the fetching of the object unless
+ the object has been modified more recently than a certain time.
+ `],
+				[/* block */ 'b', `
+ A nonzero value gives a time as the number of milliseconds since
+ January 1, 1970, GMT. The object is fetched only if it has been
+ modified more recently than that time.
  `],
 				[/* block */ 'b', [
 					[/* text */ 't', `
- The value of this field can be set by the
+ This variable is set by the `],
+					[/* inline code block */ 'i', `setIfModifiedSince`],
+					[/* text */ 't', `
+ method. Its value is returned by the
  `],
-					[/* inline code block */ 'i', `setAllowUserInteraction`],
+					[/* inline code block */ 'i', `getIfModifiedSince`],
 					[/* text */ 't', ` method.
- Its value is returned by the
+ `]
+				]],
+				[/* block */ 'b', [
+					[/* text */ 't', `
+ The default value of this field is `],
+					[/* inline code block */ 'i', `0`],
+					[/* text */ 't', `, indicating
+ that the fetching must always occur.`]
+				]]
+			],
+		]],
+		[/* field */ 'url', [
+			[/* field description */
+				[/* text */ 't', `The URL represents the remote object on the World Wide Web to
+ which this connection is opened.
  `],
-					[/* inline code block */ 'i', `getAllowUserInteraction`],
+				[/* block */ 'b', [
+					[/* text */ 't', `
+ The value of this field can be accessed by the
+ `],
+					[/* inline code block */ 'i', `getURL`],
 					[/* text */ 't', ` method.
- Its default value is the value of the argument in the last invocation
- of the `],
-					[/* inline code block */ 'i', `setDefaultAllowUserInteraction`],
-					[/* text */ 't', ` method.`]
+ `]
+				]],
+				[/* block */ 'b', [
+					[/* text */ 't', `
+ The default value of this variable is the value of the URL
+ argument in the `],
+					[/* inline code block */ 'i', `URLConnection`],
+					[/* text */ 't', ` constructor.`]
 				]]
 			],
 		]],
@@ -342,47 +383,6 @@ DocsCollector.collect('java.net.URLConnection', [
 					[/* text */ 't', `.`]
 				]]
 			],
-		]],
-		[/* field */ 'ifModifiedSince', [
-			[/* field description */
-				[/* text */ 't', `Some protocols support skipping the fetching of the object unless
- the object has been modified more recently than a certain time.
- `],
-				[/* block */ 'b', `
- A nonzero value gives a time as the number of milliseconds since
- January 1, 1970, GMT. The object is fetched only if it has been
- modified more recently than that time.
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', `
- This variable is set by the `],
-					[/* inline code block */ 'i', `setIfModifiedSince`],
-					[/* text */ 't', `
- method. Its value is returned by the
- `],
-					[/* inline code block */ 'i', `getIfModifiedSince`],
-					[/* text */ 't', ` method.
- `]
-				]],
-				[/* block */ 'b', [
-					[/* text */ 't', `
- The default value of this field is `],
-					[/* inline code block */ 'i', `0`],
-					[/* text */ 't', `, indicating
- that the fetching must always occur.`]
-				]]
-			],
-		]],
-		[/* field */ 'connected', [
-			[/* field description */
-				[/* text */ 't', `If `],
-				[/* inline code block */ 'i', `false`],
-				[/* text */ 't', `, this connection object has not created a
- communications link to the specified URL. If `],
-				[/* inline code block */ 'i', `true`],
-				[/* text */ 't', `,
- the communications link has been established.`]
-			],
 		]]
 	],
 	[/* constructors */
@@ -400,20 +400,6 @@ DocsCollector.collect('java.net.URLConnection', [
 		]]
 	],
 	[/* methods */
-		[/* method */ 'toString()', [
-			[/* method description */
-				[/* text */ 't', `Returns a `],
-				[/* inline code block */ 'i', `String`],
-				[/* text */ 't', ` representation of this URL connection.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `a string representation of this `],
-				[/* inline code block */ 'i', `URLConnection`],
-				[/* text */ 't', `.`]
-			]
-		]],
 		[/* method */ 'connect()', [
 			[/* method description */
 				[/* text */ 't', `Opens a communications link to the resource referenced by this
@@ -454,6 +440,202 @@ DocsCollector.collect('java.net.URLConnection', [
 			],
 			/* return */ UDF
 		]],
+		[/* method */ 'getAllowUserInteraction()', [
+			[/* method description */
+				[/* text */ 't', `Returns the value of the `],
+				[/* inline code block */ 'i', `allowUserInteraction`],
+				[/* text */ 't', ` field for
+ this object.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the value of the `],
+				[/* inline code block */ 'i', `allowUserInteraction`],
+				[/* text */ 't', ` field for
+          this object.`]
+			]
+		]],
+		[/* method */ 'getDefaultUseCaches()', [
+			[/* method description */
+				[/* text */ 't', `Returns the default value of a `],
+				[/* inline code block */ 'i', `URLConnection`],
+				[/* text */ 't', `'s
+ `],
+				[/* inline code block */ 'i', `useCaches`],
+				[/* text */ 't', ` flag.
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', `
+ This default is "sticky", being a part of the static state of all
+ URLConnections.  This flag applies to the next, and all following
+ URLConnections that are created. This default value can be over-ridden
+ per protocol using `],
+					[/* reference */ 'r', `#setDefaultUseCaches(java.lang.String,boolean)`, `setDefaultUseCaches(String,boolean)`]
+				]]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the default value of a `],
+				[/* inline code block */ 'i', `URLConnection`],
+				[/* text */ 't', `'s
+          `],
+				[/* inline code block */ 'i', `useCaches`],
+				[/* text */ 't', ` flag.`]
+			]
+		]],
+		[/* method */ 'getDoInput()', [
+			[/* method description */
+				[/* text */ 't', `Returns the value of this `],
+				[/* inline code block */ 'i', `URLConnection`],
+				[/* text */ 't', `'s
+ `],
+				[/* inline code block */ 'i', `doInput`],
+				[/* text */ 't', ` flag.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the value of this `],
+				[/* inline code block */ 'i', `URLConnection`],
+				[/* text */ 't', `'s
+          `],
+				[/* inline code block */ 'i', `doInput`],
+				[/* text */ 't', ` flag.`]
+			]
+		]],
+		[/* method */ 'getDoOutput()', [
+			[/* method description */
+				[/* text */ 't', `Returns the value of this `],
+				[/* inline code block */ 'i', `URLConnection`],
+				[/* text */ 't', `'s
+ `],
+				[/* inline code block */ 'i', `doOutput`],
+				[/* text */ 't', ` flag.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the value of this `],
+				[/* inline code block */ 'i', `URLConnection`],
+				[/* text */ 't', `'s
+          `],
+				[/* inline code block */ 'i', `doOutput`],
+				[/* text */ 't', ` flag.`]
+			]
+		]],
+		[/* method */ 'getUseCaches()', [
+			[/* method description */
+				[/* text */ 't', `Returns the value of this `],
+				[/* inline code block */ 'i', `URLConnection`],
+				[/* text */ 't', `'s
+ `],
+				[/* inline code block */ 'i', `useCaches`],
+				[/* text */ 't', ` field.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the value of this `],
+				[/* inline code block */ 'i', `URLConnection`],
+				[/* text */ 't', `'s
+          `],
+				[/* inline code block */ 'i', `useCaches`],
+				[/* text */ 't', ` field.`]
+			]
+		]],
+		[/* method */ 'getConnectTimeout()', [
+			[/* method description */
+				[/* text */ 't', `Returns setting for connect timeout.
+ `],
+				[/* block */ 'b', `
+ 0 return implies that the option is disabled
+ (i.e., timeout of infinity).`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `an `],
+				[/* inline code block */ 'i', `int`],
+				[/* text */ 't', ` that indicates the connect timeout
+         value in milliseconds`]
+			]
+		]],
+		[/* method */ 'getContentLength()', [
+			[/* method description */
+				[/* text */ 't', `Returns the value of the `],
+				[/* inline code block */ 'i', `content-length`],
+				[/* text */ 't', ` header field.
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', `Note`],
+					[/* text */ 't', `: `],
+					[/* reference */ 'r', `#getContentLengthLong()`, `getContentLengthLong()`],
+					[/* text */ 't', `
+ should be preferred over this method, since it returns a `],
+					[/* inline code block */ 'i', `long`],
+					[/* text */ 't', `
+ instead and is therefore more portable.`]
+				]]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the content length of the resource that this connection's URL
+          references, `],
+				[/* inline code block */ 'i', `-1`],
+				[/* text */ 't', ` if the content length is not known,
+          or if the content length is greater than Integer.MAX_VALUE.`]
+			]
+		]],
+		[/* method */ 'getHeaderFieldInt(java.lang.String,int)', [
+			[/* method description */
+				[/* text */ 't', `Returns the value of the named field parsed as a number.
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', `
+ This form of `],
+					[/* inline code block */ 'i', `getHeaderField`],
+					[/* text */ 't', ` exists because some
+ connection types (e.g., `],
+					[/* inline code block */ 'i', `http-ng`],
+					[/* text */ 't', `) have pre-parsed
+ headers. Classes for that connection type can override this method
+ and short-circuit the parsing.`]
+				]]
+			],
+			[/* parameters */
+				[/* parameter */ 'name', [/* parameter description */
+					[/* text */ 't', `the name of the header field.`]
+				]],
+				[/* parameter */ 'Default', [/* parameter description */
+					[/* text */ 't', `the default value.`]
+				]]
+			],
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the value of the named field, parsed as an integer. The
+          `],
+				[/* inline code block */ 'i', `Default`],
+				[/* text */ 't', ` value is returned if the field is
+          missing or malformed.`]
+			]
+		]],
+		[/* method */ 'getReadTimeout()', [
+			[/* method description */
+				[/* text */ 't', `Returns setting for read timeout. 0 return implies that the
+ option is disabled (i.e., timeout of infinity).`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `an `],
+				[/* inline code block */ 'i', `int`],
+				[/* text */ 't', ` that indicates the read timeout
+         value in milliseconds`]
+			]
+		]],
 		[/* method */ 'getInputStream()', [
 			[/* method description */
 				[/* text */ 't', `Returns an input stream that reads from this open connection.
@@ -477,36 +659,23 @@ DocsCollector.collect('java.net.URLConnection', [
 				[/* text */ 't', `an input stream that reads from this open connection.`]
 			]
 		]],
-		[/* method */ 'getContent(java.lang.Class[])', [
+		[/* method */ 'getOutputStream()', [
 			[/* method description */
-				[/* text */ 't', `Retrieves the contents of this URL connection.`]
+				[/* text */ 't', `Returns an output stream that writes to this connection.`]
 			],
-			[/* parameters */
-				[/* parameter */ 'classes', [/* parameter description */
-					[/* text */ 't', `the `],
-					[/* inline code block */ 'i', `Class`],
-					[/* text */ 't', ` array
- indicating the requested types`]
-				]]
-			],
+			/* parameters */ UDF,
 			[/* throws */
 				[/* throw */ 'java.io.IOException', [/* throw description */
 					[/* text */ 't', `if an I/O error occurs while
-               getting the content.`]
+               creating the output stream.`]
 				]],
 				[/* throw */ 'java.net.UnknownServiceException', [/* throw description */
 					[/* text */ 't', `if the protocol does not support
-               the content type.`]
+               output.`]
 				]]
 			],
 			[/* return description */
-				[/* text */ 't', `the object fetched that is the first match of the type
-               specified in the classes array. null if none of
-               the requested types are supported.
-               The `],
-				[/* inline code block */ 'i', `instanceof`],
-				[/* text */ 't', ` operator should be used to
-               determine the specific kind of object returned.`]
+				[/* text */ 't', `an output stream that writes to this connection.`]
 			]
 		]],
 		[/* method */ 'getContent()', [
@@ -606,249 +775,66 @@ DocsCollector.collect('java.net.URLConnection', [
                returned.`]
 			]
 		]],
-		[/* method */ 'getPermission()', [
+		[/* method */ 'getContent(java.lang.Class[])', [
 			[/* method description */
-				[/* text */ 't', `Returns a permission object representing the permission
- necessary to make the connection represented by this
- object. This method returns null if no permission is
- required to make the connection. By default, this method
- returns `],
-				[/* inline code block */ 'i', `java.security.AllPermission`],
-				[/* text */ 't', `. Subclasses
- should override this method and return the permission
- that best represents the permission required to make
- a connection to the URL. For example, a `],
-				[/* inline code block */ 'i', `URLConnection`],
-				[/* text */ 't', `
- representing a `],
-				[/* inline code block */ 'i', `file:`],
-				[/* text */ 't', ` URL would return a
- `],
-				[/* inline code block */ 'i', `java.io.FilePermission`],
-				[/* text */ 't', ` object.
-
- `],
-				[/* block */ 'b', `The permission returned may dependent upon the state of the
- connection. For example, the permission before connecting may be
- different from that after connecting. For example, an HTTP
- sever, say foo.com, may redirect the connection to a different
- host, say bar.com. Before connecting the permission returned by
- the connection will represent the permission needed to connect
- to foo.com, while the permission returned after connecting will
- be to bar.com.
-
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', `Permissions are generally used for two purposes: to protect
- caches of objects obtained through URLConnections, and to check
- the right of a recipient to learn about a particular URL. In
- the first case, the permission should be obtained
- `],
-					[/* text */ 't', `after`],
-					[/* text */ 't', ` the object has been obtained. For example, in an
- HTTP connection, this will represent the permission to connect
- to the host from which the data was ultimately fetched. In the
- second case, the permission should be obtained and tested
- `],
-					[/* text */ 't', `before`],
-					[/* text */ 't', ` connecting.`]
+				[/* text */ 't', `Retrieves the contents of this URL connection.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'classes', [/* parameter description */
+					[/* text */ 't', `the `],
+					[/* inline code block */ 'i', `Class`],
+					[/* text */ 't', ` array
+ indicating the requested types`]
 				]]
 			],
-			/* parameters */ UDF,
 			[/* throws */
 				[/* throw */ 'java.io.IOException', [/* throw description */
-					[/* text */ 't', `if the computation of the permission
- requires network or file I/O and an exception occurs while
- computing it.`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `the permission object representing the permission
- necessary to make the connection represented by this
- URLConnection.`]
-			]
-		]],
-		[/* method */ 'setUseCaches(boolean)', [
-			[/* method description */
-				[/* text */ 't', `Sets the value of the `],
-				[/* inline code block */ 'i', `useCaches`],
-				[/* text */ 't', ` field of this
- `],
-				[/* inline code block */ 'i', `URLConnection`],
-				[/* text */ 't', ` to the specified value.
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', `
- Some protocols do caching of documents.  Occasionally, it is important
- to be able to "tunnel through" and ignore the caches (e.g., the
- "reload" button in a browser).  If the UseCaches flag on a connection
- is true, the connection is allowed to use whatever caches it can.
-  If false, caches are to be ignored.
-  The default value comes from defaultUseCaches, which defaults to
- true. A default value can also be set per-protocol using
- `],
-					[/* reference */ 'r', `#setDefaultUseCaches(java.lang.String,boolean)`, `setDefaultUseCaches(String,boolean)`],
-					[/* text */ 't', `.`]
-				]]
-			],
-			[/* parameters */
-				[/* parameter */ 'usecaches', [/* parameter description */
-					[/* text */ 't', `a `],
-					[/* inline code block */ 'i', `boolean`],
-					[/* text */ 't', ` indicating whether
- or not to allow caching`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.IllegalStateException', [/* throw description */
-					[/* text */ 't', `if already connected`]
-				]]
-			],
-			/* return */ UDF
-		]],
-		[/* method */ 'setRequestProperty(java.lang.String,java.lang.String)', [
-			[/* method description */
-				[/* text */ 't', `Sets the general request property. If a property with the key already
- exists, overwrite its value with the new value.
-
- `],
-				[/* block */ 'b', ` NOTE: HTTP requires all request properties which can
- legally have multiple instances with the same key
- to use a comma-separated list syntax which enables multiple
- properties to be appended into a single property.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'key', [/* parameter description */
-					[/* text */ 't', `the keyword by which the request is known
-                  (e.g., "`],
-					[/* inline code block */ 'i', `Accept`],
-					[/* text */ 't', `").`]
+					[/* text */ 't', `if an I/O error occurs while
+               getting the content.`]
 				]],
-				[/* parameter */ 'value', [/* parameter description */
-					[/* text */ 't', `the value associated with it.`]
+				[/* throw */ 'java.net.UnknownServiceException', [/* throw description */
+					[/* text */ 't', `if the protocol does not support
+               the content type.`]
 				]]
 			],
-			[/* throws */
-				[/* throw */ 'java.lang.IllegalStateException', [/* throw description */
-					[/* text */ 't', `if already connected`]
-				]],
-				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
-					[/* text */ 't', `if key is `],
-					[/* inline code block */ 'i', `null`]
-				]]
-			],
-			/* return */ UDF
-		]],
-		[/* method */ 'getURL()', [
-			[/* method description */
-				[/* text */ 't', `Returns the value of this `],
-				[/* inline code block */ 'i', `URLConnection`],
-				[/* text */ 't', `'s `],
-				[/* inline code block */ 'i', `URL`],
-				[/* text */ 't', `
- field.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
 			[/* return description */
-				[/* text */ 't', `the value of this `],
-				[/* inline code block */ 'i', `URLConnection`],
-				[/* text */ 't', `'s `],
-				[/* inline code block */ 'i', `URL`],
-				[/* text */ 't', `
-          field.`]
+				[/* text */ 't', `the object fetched that is the first match of the type
+               specified in the classes array. null if none of
+               the requested types are supported.
+               The `],
+				[/* inline code block */ 'i', `instanceof`],
+				[/* text */ 't', ` operator should be used to
+               determine the specific kind of object returned.`]
 			]
 		]],
-		[/* method */ 'getContentLength()', [
+		[/* method */ 'getContentEncoding()', [
 			[/* method description */
 				[/* text */ 't', `Returns the value of the `],
-				[/* inline code block */ 'i', `content-length`],
-				[/* text */ 't', ` header field.
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', `Note`],
-					[/* text */ 't', `: `],
-					[/* reference */ 'r', `#getContentLengthLong()`, `getContentLengthLong()`],
-					[/* text */ 't', `
- should be preferred over this method, since it returns a `],
-					[/* inline code block */ 'i', `long`],
-					[/* text */ 't', `
- instead and is therefore more portable.`]
-				]]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the content length of the resource that this connection's URL
-          references, `],
-				[/* inline code block */ 'i', `-1`],
-				[/* text */ 't', ` if the content length is not known,
-          or if the content length is greater than Integer.MAX_VALUE.`]
-			]
-		]],
-		[/* method */ 'getLastModified()', [
-			[/* method description */
-				[/* text */ 't', `Returns the value of the `],
-				[/* inline code block */ 'i', `last-modified`],
-				[/* text */ 't', ` header field.
- The result is the number of milliseconds since January 1, 1970 GMT.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the date the resource referenced by this
-          `],
-				[/* inline code block */ 'i', `URLConnection`],
-				[/* text */ 't', ` was last modified, or 0 if not known.`]
-			]
-		]],
-		[/* method */ 'getDate()', [
-			[/* method description */
-				[/* text */ 't', `Returns the value of the `],
-				[/* inline code block */ 'i', `date`],
+				[/* inline code block */ 'i', `content-encoding`],
 				[/* text */ 't', ` header field.`]
 			],
 			/* parameters */ UDF,
 			/* throws */ UDF,
 			[/* return description */
-				[/* text */ 't', `the sending date of the resource that the URL references,
+				[/* text */ 't', `the content encoding of the resource that the URL references,
           or `],
-				[/* inline code block */ 'i', `0`],
-				[/* text */ 't', ` if not known. The value returned is the
-          number of milliseconds since January 1, 1970 GMT.`]
+				[/* inline code block */ 'i', `null`],
+				[/* text */ 't', ` if not known.`]
 			]
 		]],
-		[/* method */ 'getOutputStream()', [
+		[/* method */ 'getContentType()', [
 			[/* method description */
-				[/* text */ 't', `Returns an output stream that writes to this connection.`]
-			],
-			/* parameters */ UDF,
-			[/* throws */
-				[/* throw */ 'java.io.IOException', [/* throw description */
-					[/* text */ 't', `if an I/O error occurs while
-               creating the output stream.`]
-				]],
-				[/* throw */ 'java.net.UnknownServiceException', [/* throw description */
-					[/* text */ 't', `if the protocol does not support
-               output.`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `an output stream that writes to this connection.`]
-			]
-		]],
-		[/* method */ 'getHeaderFields()', [
-			[/* method description */
-				[/* text */ 't', `Returns an unmodifiable Map of the header fields.
- The Map keys are Strings that represent the
- response-header field names. Each Map value is an
- unmodifiable List of Strings that represents
- the corresponding field values.`]
+				[/* text */ 't', `Returns the value of the `],
+				[/* inline code block */ 'i', `content-type`],
+				[/* text */ 't', ` header field.`]
 			],
 			/* parameters */ UDF,
 			/* throws */ UDF,
 			[/* return description */
-				[/* text */ 't', `a Map of header fields`]
+				[/* text */ 't', `the content type of the resource that the URL references,
+          or `],
+				[/* inline code block */ 'i', `null`],
+				[/* text */ 't', ` if not known.`]
 			]
 		]],
 		[/* method */ 'getHeaderField(int)', [
@@ -961,33 +947,6 @@ DocsCollector.collect('java.net.URLConnection', [
 				[/* text */ 't', `.`]
 			]
 		]],
-		[/* method */ 'addRequestProperty(java.lang.String,java.lang.String)', [
-			[/* method description */
-				[/* text */ 't', `Adds a general request property specified by a
- key-value pair.  This method will not overwrite
- existing values associated with the same key.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'key', [/* parameter description */
-					[/* text */ 't', `the keyword by which the request is known
-                  (e.g., "`],
-					[/* inline code block */ 'i', `Accept`],
-					[/* text */ 't', `").`]
-				]],
-				[/* parameter */ 'value', [/* parameter description */
-					[/* text */ 't', `the value associated with it.`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.IllegalStateException', [/* throw description */
-					[/* text */ 't', `if already connected`]
-				]],
-				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
-					[/* text */ 't', `if key is null`]
-				]]
-			],
-			/* return */ UDF
-		]],
 		[/* method */ 'getRequestProperty(java.lang.String)', [
 			[/* method description */
 				[/* text */ 't', `Returns the value of the named general request property for this
@@ -1008,6 +967,116 @@ DocsCollector.collect('java.net.URLConnection', [
            connection. If key is null, then null is returned.`]
 			]
 		]],
+		[/* method */ 'toString()', [
+			[/* method description */
+				[/* text */ 't', `Returns a `],
+				[/* inline code block */ 'i', `String`],
+				[/* text */ 't', ` representation of this URL connection.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `a string representation of this `],
+				[/* inline code block */ 'i', `URLConnection`],
+				[/* text */ 't', `.`]
+			]
+		]],
+		[/* method */ 'getURL()', [
+			[/* method description */
+				[/* text */ 't', `Returns the value of this `],
+				[/* inline code block */ 'i', `URLConnection`],
+				[/* text */ 't', `'s `],
+				[/* inline code block */ 'i', `URL`],
+				[/* text */ 't', `
+ field.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the value of this `],
+				[/* inline code block */ 'i', `URLConnection`],
+				[/* text */ 't', `'s `],
+				[/* inline code block */ 'i', `URL`],
+				[/* text */ 't', `
+          field.`]
+			]
+		]],
+		[/* method */ 'getPermission()', [
+			[/* method description */
+				[/* text */ 't', `Returns a permission object representing the permission
+ necessary to make the connection represented by this
+ object. This method returns null if no permission is
+ required to make the connection. By default, this method
+ returns `],
+				[/* inline code block */ 'i', `java.security.AllPermission`],
+				[/* text */ 't', `. Subclasses
+ should override this method and return the permission
+ that best represents the permission required to make
+ a connection to the URL. For example, a `],
+				[/* inline code block */ 'i', `URLConnection`],
+				[/* text */ 't', `
+ representing a `],
+				[/* inline code block */ 'i', `file:`],
+				[/* text */ 't', ` URL would return a
+ `],
+				[/* inline code block */ 'i', `java.io.FilePermission`],
+				[/* text */ 't', ` object.
+
+ `],
+				[/* block */ 'b', `The permission returned may dependent upon the state of the
+ connection. For example, the permission before connecting may be
+ different from that after connecting. For example, an HTTP
+ sever, say foo.com, may redirect the connection to a different
+ host, say bar.com. Before connecting the permission returned by
+ the connection will represent the permission needed to connect
+ to foo.com, while the permission returned after connecting will
+ be to bar.com.
+
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', `Permissions are generally used for two purposes: to protect
+ caches of objects obtained through URLConnections, and to check
+ the right of a recipient to learn about a particular URL. In
+ the first case, the permission should be obtained
+ `],
+					[/* text */ 't', `after`],
+					[/* text */ 't', ` the object has been obtained. For example, in an
+ HTTP connection, this will represent the permission to connect
+ to the host from which the data was ultimately fetched. In the
+ second case, the permission should be obtained and tested
+ `],
+					[/* text */ 't', `before`],
+					[/* text */ 't', ` connecting.`]
+				]]
+			],
+			/* parameters */ UDF,
+			[/* throws */
+				[/* throw */ 'java.io.IOException', [/* throw description */
+					[/* text */ 't', `if the computation of the permission
+ requires network or file I/O and an exception occurs while
+ computing it.`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `the permission object representing the permission
+ necessary to make the connection represented by this
+ URLConnection.`]
+			]
+		]],
+		[/* method */ 'getHeaderFields()', [
+			[/* method description */
+				[/* text */ 't', `Returns an unmodifiable Map of the header fields.
+ The Map keys are Strings that represent the
+ response-header field names. Each Map value is an
+ unmodifiable List of Strings that represents
+ the corresponding field values.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `a Map of header fields`]
+			]
+		]],
 		[/* method */ 'getRequestProperties()', [
 			[/* method description */
 				[/* text */ 't', `Returns an unmodifiable Map of general request
@@ -1025,6 +1094,53 @@ DocsCollector.collect('java.net.URLConnection', [
 			],
 			[/* return description */
 				[/* text */ 't', `a Map of the general request properties for this connection.`]
+			]
+		]],
+		[/* method */ 'getContentLengthLong()', [
+			[/* method description */
+				[/* text */ 't', `Returns the value of the `],
+				[/* inline code block */ 'i', `content-length`],
+				[/* text */ 't', ` header field as a
+ long.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the content length of the resource that this connection's URL
+          references, or `],
+				[/* inline code block */ 'i', `-1`],
+				[/* text */ 't', ` if the content length is
+          not known.`]
+			]
+		]],
+		[/* method */ 'getDate()', [
+			[/* method description */
+				[/* text */ 't', `Returns the value of the `],
+				[/* inline code block */ 'i', `date`],
+				[/* text */ 't', ` header field.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the sending date of the resource that the URL references,
+          or `],
+				[/* inline code block */ 'i', `0`],
+				[/* text */ 't', ` if not known. The value returned is the
+          number of milliseconds since January 1, 1970 GMT.`]
+			]
+		]],
+		[/* method */ 'getExpiration()', [
+			[/* method description */
+				[/* text */ 't', `Returns the value of the `],
+				[/* inline code block */ 'i', `expires`],
+				[/* text */ 't', ` header field.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the expiration date of the resource that this URL references,
+          or 0 if not known. The value is the number of milliseconds since
+          January 1, 1970 GMT.`]
 			]
 		]],
 		[/* method */ 'getHeaderFieldDate(java.lang.String,long)', [
@@ -1062,100 +1178,6 @@ DocsCollector.collect('java.net.URLConnection', [
           missing or malformed.`]
 			]
 		]],
-		[/* method */ 'getContentLengthLong()', [
-			[/* method description */
-				[/* text */ 't', `Returns the value of the `],
-				[/* inline code block */ 'i', `content-length`],
-				[/* text */ 't', ` header field as a
- long.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the content length of the resource that this connection's URL
-          references, or `],
-				[/* inline code block */ 'i', `-1`],
-				[/* text */ 't', ` if the content length is
-          not known.`]
-			]
-		]],
-		[/* method */ 'getContentType()', [
-			[/* method description */
-				[/* text */ 't', `Returns the value of the `],
-				[/* inline code block */ 'i', `content-type`],
-				[/* text */ 't', ` header field.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the content type of the resource that the URL references,
-          or `],
-				[/* inline code block */ 'i', `null`],
-				[/* text */ 't', ` if not known.`]
-			]
-		]],
-		[/* method */ 'getContentEncoding()', [
-			[/* method description */
-				[/* text */ 't', `Returns the value of the `],
-				[/* inline code block */ 'i', `content-encoding`],
-				[/* text */ 't', ` header field.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the content encoding of the resource that the URL references,
-          or `],
-				[/* inline code block */ 'i', `null`],
-				[/* text */ 't', ` if not known.`]
-			]
-		]],
-		[/* method */ 'getExpiration()', [
-			[/* method description */
-				[/* text */ 't', `Returns the value of the `],
-				[/* inline code block */ 'i', `expires`],
-				[/* text */ 't', ` header field.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the expiration date of the resource that this URL references,
-          or 0 if not known. The value is the number of milliseconds since
-          January 1, 1970 GMT.`]
-			]
-		]],
-		[/* method */ 'getHeaderFieldInt(java.lang.String,int)', [
-			[/* method description */
-				[/* text */ 't', `Returns the value of the named field parsed as a number.
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', `
- This form of `],
-					[/* inline code block */ 'i', `getHeaderField`],
-					[/* text */ 't', ` exists because some
- connection types (e.g., `],
-					[/* inline code block */ 'i', `http-ng`],
-					[/* text */ 't', `) have pre-parsed
- headers. Classes for that connection type can override this method
- and short-circuit the parsing.`]
-				]]
-			],
-			[/* parameters */
-				[/* parameter */ 'name', [/* parameter description */
-					[/* text */ 't', `the name of the header field.`]
-				]],
-				[/* parameter */ 'Default', [/* parameter description */
-					[/* text */ 't', `the default value.`]
-				]]
-			],
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the value of the named field, parsed as an integer. The
-          `],
-				[/* inline code block */ 'i', `Default`],
-				[/* text */ 't', ` value is returned if the field is
-          missing or malformed.`]
-			]
-		]],
 		[/* method */ 'getHeaderFieldLong(java.lang.String,long)', [
 			[/* method description */
 				[/* text */ 't', `Returns the value of the named field parsed as a number.
@@ -1189,176 +1211,6 @@ DocsCollector.collect('java.net.URLConnection', [
           missing or malformed.`]
 			]
 		]],
-		[/* method */ 'setDoInput(boolean)', [
-			[/* method description */
-				[/* text */ 't', `Sets the value of the `],
-				[/* inline code block */ 'i', `doInput`],
-				[/* text */ 't', ` field for this
- `],
-				[/* inline code block */ 'i', `URLConnection`],
-				[/* text */ 't', ` to the specified value.
- `],
-				[/* block */ 'b', `
- A URL connection can be used for input and/or output.  Set the doInput
- flag to true if you intend to use the URL connection for input,
- false if not.  The default is true.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'doinput', [/* parameter description */
-					[/* text */ 't', `the new value.`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.IllegalStateException', [/* throw description */
-					[/* text */ 't', `if already connected`]
-				]]
-			],
-			/* return */ UDF
-		]],
-		[/* method */ 'getDoInput()', [
-			[/* method description */
-				[/* text */ 't', `Returns the value of this `],
-				[/* inline code block */ 'i', `URLConnection`],
-				[/* text */ 't', `'s
- `],
-				[/* inline code block */ 'i', `doInput`],
-				[/* text */ 't', ` flag.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the value of this `],
-				[/* inline code block */ 'i', `URLConnection`],
-				[/* text */ 't', `'s
-          `],
-				[/* inline code block */ 'i', `doInput`],
-				[/* text */ 't', ` flag.`]
-			]
-		]],
-		[/* method */ 'setDoOutput(boolean)', [
-			[/* method description */
-				[/* text */ 't', `Sets the value of the `],
-				[/* inline code block */ 'i', `doOutput`],
-				[/* text */ 't', ` field for this
- `],
-				[/* inline code block */ 'i', `URLConnection`],
-				[/* text */ 't', ` to the specified value.
- `],
-				[/* block */ 'b', `
- A URL connection can be used for input and/or output.  Set the doOutput
- flag to true if you intend to use the URL connection for output,
- false if not.  The default is false.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'dooutput', [/* parameter description */
-					[/* text */ 't', `the new value.`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.IllegalStateException', [/* throw description */
-					[/* text */ 't', `if already connected`]
-				]]
-			],
-			/* return */ UDF
-		]],
-		[/* method */ 'getDoOutput()', [
-			[/* method description */
-				[/* text */ 't', `Returns the value of this `],
-				[/* inline code block */ 'i', `URLConnection`],
-				[/* text */ 't', `'s
- `],
-				[/* inline code block */ 'i', `doOutput`],
-				[/* text */ 't', ` flag.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the value of this `],
-				[/* inline code block */ 'i', `URLConnection`],
-				[/* text */ 't', `'s
-          `],
-				[/* inline code block */ 'i', `doOutput`],
-				[/* text */ 't', ` flag.`]
-			]
-		]],
-		[/* method */ 'setAllowUserInteraction(boolean)', [
-			[/* method description */
-				[/* text */ 't', `Set the value of the `],
-				[/* inline code block */ 'i', `allowUserInteraction`],
-				[/* text */ 't', ` field of
- this `],
-				[/* inline code block */ 'i', `URLConnection`],
-				[/* text */ 't', `.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'allowuserinteraction', [/* parameter description */
-					[/* text */ 't', `the new value.`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.IllegalStateException', [/* throw description */
-					[/* text */ 't', `if already connected`]
-				]]
-			],
-			/* return */ UDF
-		]],
-		[/* method */ 'getAllowUserInteraction()', [
-			[/* method description */
-				[/* text */ 't', `Returns the value of the `],
-				[/* inline code block */ 'i', `allowUserInteraction`],
-				[/* text */ 't', ` field for
- this object.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the value of the `],
-				[/* inline code block */ 'i', `allowUserInteraction`],
-				[/* text */ 't', ` field for
-          this object.`]
-			]
-		]],
-		[/* method */ 'getUseCaches()', [
-			[/* method description */
-				[/* text */ 't', `Returns the value of this `],
-				[/* inline code block */ 'i', `URLConnection`],
-				[/* text */ 't', `'s
- `],
-				[/* inline code block */ 'i', `useCaches`],
-				[/* text */ 't', ` field.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the value of this `],
-				[/* inline code block */ 'i', `URLConnection`],
-				[/* text */ 't', `'s
-          `],
-				[/* inline code block */ 'i', `useCaches`],
-				[/* text */ 't', ` field.`]
-			]
-		]],
-		[/* method */ 'setIfModifiedSince(long)', [
-			[/* method description */
-				[/* text */ 't', `Sets the value of the `],
-				[/* inline code block */ 'i', `ifModifiedSince`],
-				[/* text */ 't', ` field of
- this `],
-				[/* inline code block */ 'i', `URLConnection`],
-				[/* text */ 't', ` to the specified value.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'ifmodifiedsince', [/* parameter description */
-					[/* text */ 't', `the new value.`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.IllegalStateException', [/* throw description */
-					[/* text */ 't', `if already connected`]
-				]]
-			],
-			/* return */ UDF
-		]],
 		[/* method */ 'getIfModifiedSince()', [
 			[/* method description */
 				[/* text */ 't', `Returns the value of this object's `],
@@ -1371,6 +1223,43 @@ DocsCollector.collect('java.net.URLConnection', [
 				[/* text */ 't', `the value of this object's `],
 				[/* inline code block */ 'i', `ifModifiedSince`],
 				[/* text */ 't', ` field.`]
+			]
+		]],
+		[/* method */ 'getLastModified()', [
+			[/* method description */
+				[/* text */ 't', `Returns the value of the `],
+				[/* inline code block */ 'i', `last-modified`],
+				[/* text */ 't', ` header field.
+ The result is the number of milliseconds since January 1, 1970 GMT.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the date the resource referenced by this
+          `],
+				[/* inline code block */ 'i', `URLConnection`],
+				[/* text */ 't', ` was last modified, or 0 if not known.`]
+			]
+		]],
+		[/* method */ 'getDefaultAllowUserInteraction()', [
+			[/* method description */
+				[/* text */ 't', `Returns the default value of the `],
+				[/* inline code block */ 'i', `allowUserInteraction`],
+				[/* text */ 't', `
+ field.
+ `],
+				[/* block */ 'b', `
+ This default is "sticky", being a part of the static state of all
+ URLConnections.  This flag applies to the next, and all following
+ URLConnections that are created.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the default value of the `],
+				[/* inline code block */ 'i', `allowUserInteraction`],
+				[/* text */ 't', `
+          field.`]
 			]
 		]],
 		[/* method */ 'getDefaultUseCaches(java.lang.String)', [
@@ -1401,268 +1290,6 @@ DocsCollector.collect('java.net.URLConnection', [
 				[/* text */ 't', ` flag for the given protocol.`]
 			]
 		]],
-		[/* method */ 'getDefaultUseCaches()', [
-			[/* method description */
-				[/* text */ 't', `Returns the default value of a `],
-				[/* inline code block */ 'i', `URLConnection`],
-				[/* text */ 't', `'s
- `],
-				[/* inline code block */ 'i', `useCaches`],
-				[/* text */ 't', ` flag.
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', `
- This default is "sticky", being a part of the static state of all
- URLConnections.  This flag applies to the next, and all following
- URLConnections that are created. This default value can be over-ridden
- per protocol using `],
-					[/* reference */ 'r', `#setDefaultUseCaches(java.lang.String,boolean)`, `setDefaultUseCaches(String,boolean)`]
-				]]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the default value of a `],
-				[/* inline code block */ 'i', `URLConnection`],
-				[/* text */ 't', `'s
-          `],
-				[/* inline code block */ 'i', `useCaches`],
-				[/* text */ 't', ` flag.`]
-			]
-		]],
-		[/* method */ 'setDefaultUseCaches(boolean)', [
-			[/* method description */
-				[/* text */ 't', `Sets the default value of the `],
-				[/* inline code block */ 'i', `useCaches`],
-				[/* text */ 't', ` field to the
- specified value. This default value can be over-ridden
- per protocol using `],
-				[/* reference */ 'r', `#setDefaultUseCaches(java.lang.String,boolean)`, `setDefaultUseCaches(String,boolean)`]
-			],
-			[/* parameters */
-				[/* parameter */ 'defaultusecaches', [/* parameter description */
-					[/* text */ 't', `the new value.`]
-				]]
-			],
-			/* throws */ UDF,
-			/* return */ UDF
-		]],
-		[/* method */ 'setDefaultUseCaches(java.lang.String,boolean)', [
-			[/* method description */
-				[/* text */ 't', `Sets the default value of the `],
-				[/* inline code block */ 'i', `useCaches`],
-				[/* text */ 't', ` field for the named
- protocol to the given value. This value overrides any default setting
- set by `],
-				[/* reference */ 'r', `#setDefaultUseCaches(boolean)`, `setDefaultUseCaches(boolean)`],
-				[/* text */ 't', ` for the given protocol.
- Successive calls to this method change the setting and affect the
- default value for all future connections of that protocol. The protocol
- name is case insensitive.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'protocol', [/* parameter description */
-					[/* text */ 't', `the protocol to set the default for`]
-				]],
-				[/* parameter */ 'defaultVal', [/* parameter description */
-					[/* text */ 't', `whether caching is enabled by default for the given protocol`]
-				]]
-			],
-			/* throws */ UDF,
-			/* return */ UDF
-		]],
-		[/* method */ 'setConnectTimeout(int)', [
-			[/* method description */
-				[/* text */ 't', `Sets a specified timeout value, in milliseconds, to be used
- when opening a communications link to the resource referenced
- by this URLConnection.  If the timeout expires before the
- connection can be established, a
- java.net.SocketTimeoutException is raised. A timeout of zero is
- interpreted as an infinite timeout.
-
- `],
-				[/* block */ 'b', ` Some non-standard implementation of this method may ignore
- the specified timeout. To see the connect timeout set, please
- call getConnectTimeout().`]
-			],
-			[/* parameters */
-				[/* parameter */ 'timeout', [/* parameter description */
-					[/* text */ 't', `an `],
-					[/* inline code block */ 'i', `int`],
-					[/* text */ 't', ` that specifies the connect
-               timeout value in milliseconds`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
-					[/* text */ 't', `if the timeout parameter is negative`]
-				]]
-			],
-			/* return */ UDF
-		]],
-		[/* method */ 'getConnectTimeout()', [
-			[/* method description */
-				[/* text */ 't', `Returns setting for connect timeout.
- `],
-				[/* block */ 'b', `
- 0 return implies that the option is disabled
- (i.e., timeout of infinity).`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `an `],
-				[/* inline code block */ 'i', `int`],
-				[/* text */ 't', ` that indicates the connect timeout
-         value in milliseconds`]
-			]
-		]],
-		[/* method */ 'setReadTimeout(int)', [
-			[/* method description */
-				[/* text */ 't', `Sets the read timeout to a specified timeout, in
- milliseconds. A non-zero value specifies the timeout when
- reading from Input stream when a connection is established to a
- resource. If the timeout expires before there is data available
- for read, a java.net.SocketTimeoutException is raised. A
- timeout of zero is interpreted as an infinite timeout.
-
- `],
-				[/* block */ 'b', ` Some non-standard implementation of this method ignores the
- specified timeout. To see the read timeout set, please call
- getReadTimeout().`]
-			],
-			[/* parameters */
-				[/* parameter */ 'timeout', [/* parameter description */
-					[/* text */ 't', `an `],
-					[/* inline code block */ 'i', `int`],
-					[/* text */ 't', ` that specifies the timeout
- value to be used in milliseconds`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
-					[/* text */ 't', `if the timeout parameter is negative`]
-				]]
-			],
-			/* return */ UDF
-		]],
-		[/* method */ 'getReadTimeout()', [
-			[/* method description */
-				[/* text */ 't', `Returns setting for read timeout. 0 return implies that the
- option is disabled (i.e., timeout of infinity).`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `an `],
-				[/* inline code block */ 'i', `int`],
-				[/* text */ 't', ` that indicates the read timeout
-         value in milliseconds`]
-			]
-		]],
-		[/* method */ 'getFileNameMap()', [
-			[/* method description */
-				[/* text */ 't', `Loads filename map (a mimetable) from a data file. It will
- first try to load the user-specific table, defined
- by "content.types.user.table" property. If that fails,
- it tries to load the default built-in table.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the FileNameMap`]
-			]
-		]],
-		[/* method */ 'setFileNameMap(java.net.FileNameMap)', [
-			[/* method description */
-				[/* text */ 't', `Sets the FileNameMap.
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', `
- If there is a security manager, this method first calls
- the security manager's `],
-					[/* inline code block */ 'i', `checkSetFactory`],
-					[/* text */ 't', ` method
- to ensure the operation is allowed.
- This could result in a SecurityException.`]
-				]]
-			],
-			[/* parameters */
-				[/* parameter */ 'map', [/* parameter description */
-					[/* text */ 't', `the FileNameMap to be set`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.SecurityException', [/* throw description */
-					[/* text */ 't', `if a security manager exists and its
-             `],
-					[/* inline code block */ 'i', `checkSetFactory`],
-					[/* text */ 't', ` method doesn't allow the operation.`]
-				]]
-			],
-			/* return */ UDF
-		]],
-		[/* method */ 'setDefaultAllowUserInteraction(boolean)', [
-			[/* method description */
-				[/* text */ 't', `Sets the default value of the
- `],
-				[/* inline code block */ 'i', `allowUserInteraction`],
-				[/* text */ 't', ` field for all future
- `],
-				[/* inline code block */ 'i', `URLConnection`],
-				[/* text */ 't', ` objects to the specified value.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'defaultallowuserinteraction', [/* parameter description */
-					[/* text */ 't', `the new value.`]
-				]]
-			],
-			/* throws */ UDF,
-			/* return */ UDF
-		]],
-		[/* method */ 'getDefaultAllowUserInteraction()', [
-			[/* method description */
-				[/* text */ 't', `Returns the default value of the `],
-				[/* inline code block */ 'i', `allowUserInteraction`],
-				[/* text */ 't', `
- field.
- `],
-				[/* block */ 'b', `
- This default is "sticky", being a part of the static state of all
- URLConnections.  This flag applies to the next, and all following
- URLConnections that are created.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the default value of the `],
-				[/* inline code block */ 'i', `allowUserInteraction`],
-				[/* text */ 't', `
-          field.`]
-			]
-		]],
-		[/* method */ 'setDefaultRequestProperty(java.lang.String,java.lang.String)', [
-			[/* method description */
-				[/* text */ 't', `Sets the default value of a general request property. When a
- `],
-				[/* inline code block */ 'i', `URLConnection`],
-				[/* text */ 't', ` is created, it is initialized with
- these properties.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'key', [/* parameter description */
-					[/* text */ 't', `the keyword by which the request is known
-                  (e.g., "`],
-					[/* inline code block */ 'i', `Accept`],
-					[/* text */ 't', `").`]
-				]],
-				[/* parameter */ 'value', [/* parameter description */
-					[/* text */ 't', `the value associated with the key.`]
-				]]
-			],
-			/* throws */ UDF,
-			/* return */ UDF
-		]],
 		[/* method */ 'getDefaultRequestProperty(java.lang.String)', [
 			[/* method description */
 				[/* text */ 't', `Returns the value of the default request property. Default request
@@ -1678,49 +1305,6 @@ DocsCollector.collect('java.net.URLConnection', [
 				[/* text */ 't', `the value of the default request property
  for the specified key.`]
 			]
-		]],
-		[/* method */ 'setContentHandlerFactory(java.net.ContentHandlerFactory)', [
-			[/* method description */
-				[/* text */ 't', `Sets the `],
-				[/* inline code block */ 'i', `ContentHandlerFactory`],
-				[/* text */ 't', ` of an
- application. It can be called at most once by an application.
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', `
- The `],
-					[/* inline code block */ 'i', `ContentHandlerFactory`],
-					[/* text */ 't', ` instance is used to
- construct a content handler from a content type.
- `]
-				]],
-				[/* block */ 'b', [
-					[/* text */ 't', `
- If there is a security manager, this method first calls
- the security manager's `],
-					[/* inline code block */ 'i', `checkSetFactory`],
-					[/* text */ 't', ` method
- to ensure the operation is allowed.
- This could result in a SecurityException.`]
-				]]
-			],
-			[/* parameters */
-				[/* parameter */ 'fac', [/* parameter description */
-					[/* text */ 't', `the desired factory.`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.Error', [/* throw description */
-					[/* text */ 't', `if the factory has already been defined.`]
-				]],
-				[/* throw */ 'java.lang.SecurityException', [/* throw description */
-					[/* text */ 't', `if a security manager exists and its
-             `],
-					[/* inline code block */ 'i', `checkSetFactory`],
-					[/* text */ 't', ` method doesn't allow the operation.`]
-				]]
-			],
-			/* return */ UDF
 		]],
 		[/* method */ 'guessContentTypeFromName(java.lang.String)', [
 			[/* method description */
@@ -1781,6 +1365,422 @@ DocsCollector.collect('java.net.URLConnection', [
 				[/* text */ 't', ` if none
              can be determined.`]
 			]
+		]],
+		[/* method */ 'getFileNameMap()', [
+			[/* method description */
+				[/* text */ 't', `Loads filename map (a mimetable) from a data file. It will
+ first try to load the user-specific table, defined
+ by "content.types.user.table" property. If that fails,
+ it tries to load the default built-in table.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the FileNameMap`]
+			]
+		]],
+		[/* method */ 'setContentHandlerFactory(java.net.ContentHandlerFactory)', [
+			[/* method description */
+				[/* text */ 't', `Sets the `],
+				[/* inline code block */ 'i', `ContentHandlerFactory`],
+				[/* text */ 't', ` of an
+ application. It can be called at most once by an application.
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', `
+ The `],
+					[/* inline code block */ 'i', `ContentHandlerFactory`],
+					[/* text */ 't', ` instance is used to
+ construct a content handler from a content type.
+ `]
+				]],
+				[/* block */ 'b', [
+					[/* text */ 't', `
+ If there is a security manager, this method first calls
+ the security manager's `],
+					[/* inline code block */ 'i', `checkSetFactory`],
+					[/* text */ 't', ` method
+ to ensure the operation is allowed.
+ This could result in a SecurityException.`]
+				]]
+			],
+			[/* parameters */
+				[/* parameter */ 'fac', [/* parameter description */
+					[/* text */ 't', `the desired factory.`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.lang.Error', [/* throw description */
+					[/* text */ 't', `if the factory has already been defined.`]
+				]],
+				[/* throw */ 'java.lang.SecurityException', [/* throw description */
+					[/* text */ 't', `if a security manager exists and its
+             `],
+					[/* inline code block */ 'i', `checkSetFactory`],
+					[/* text */ 't', ` method doesn't allow the operation.`]
+				]]
+			],
+			/* return */ UDF
+		]],
+		[/* method */ 'setDefaultAllowUserInteraction(boolean)', [
+			[/* method description */
+				[/* text */ 't', `Sets the default value of the
+ `],
+				[/* inline code block */ 'i', `allowUserInteraction`],
+				[/* text */ 't', ` field for all future
+ `],
+				[/* inline code block */ 'i', `URLConnection`],
+				[/* text */ 't', ` objects to the specified value.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'defaultallowuserinteraction', [/* parameter description */
+					[/* text */ 't', `the new value.`]
+				]]
+			],
+			/* throws */ UDF,
+			/* return */ UDF
+		]],
+		[/* method */ 'setDefaultRequestProperty(java.lang.String,java.lang.String)', [
+			[/* method description */
+				[/* text */ 't', `Sets the default value of a general request property. When a
+ `],
+				[/* inline code block */ 'i', `URLConnection`],
+				[/* text */ 't', ` is created, it is initialized with
+ these properties.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'key', [/* parameter description */
+					[/* text */ 't', `the keyword by which the request is known
+                  (e.g., "`],
+					[/* inline code block */ 'i', `Accept`],
+					[/* text */ 't', `").`]
+				]],
+				[/* parameter */ 'value', [/* parameter description */
+					[/* text */ 't', `the value associated with the key.`]
+				]]
+			],
+			/* throws */ UDF,
+			/* return */ UDF
+		]],
+		[/* method */ 'setDefaultUseCaches(java.lang.String,boolean)', [
+			[/* method description */
+				[/* text */ 't', `Sets the default value of the `],
+				[/* inline code block */ 'i', `useCaches`],
+				[/* text */ 't', ` field for the named
+ protocol to the given value. This value overrides any default setting
+ set by `],
+				[/* reference */ 'r', `#setDefaultUseCaches(boolean)`, `setDefaultUseCaches(boolean)`],
+				[/* text */ 't', ` for the given protocol.
+ Successive calls to this method change the setting and affect the
+ default value for all future connections of that protocol. The protocol
+ name is case insensitive.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'protocol', [/* parameter description */
+					[/* text */ 't', `the protocol to set the default for`]
+				]],
+				[/* parameter */ 'defaultVal', [/* parameter description */
+					[/* text */ 't', `whether caching is enabled by default for the given protocol`]
+				]]
+			],
+			/* throws */ UDF,
+			/* return */ UDF
+		]],
+		[/* method */ 'setFileNameMap(java.net.FileNameMap)', [
+			[/* method description */
+				[/* text */ 't', `Sets the FileNameMap.
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', `
+ If there is a security manager, this method first calls
+ the security manager's `],
+					[/* inline code block */ 'i', `checkSetFactory`],
+					[/* text */ 't', ` method
+ to ensure the operation is allowed.
+ This could result in a SecurityException.`]
+				]]
+			],
+			[/* parameters */
+				[/* parameter */ 'map', [/* parameter description */
+					[/* text */ 't', `the FileNameMap to be set`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.lang.SecurityException', [/* throw description */
+					[/* text */ 't', `if a security manager exists and its
+             `],
+					[/* inline code block */ 'i', `checkSetFactory`],
+					[/* text */ 't', ` method doesn't allow the operation.`]
+				]]
+			],
+			/* return */ UDF
+		]],
+		[/* method */ 'addRequestProperty(java.lang.String,java.lang.String)', [
+			[/* method description */
+				[/* text */ 't', `Adds a general request property specified by a
+ key-value pair.  This method will not overwrite
+ existing values associated with the same key.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'key', [/* parameter description */
+					[/* text */ 't', `the keyword by which the request is known
+                  (e.g., "`],
+					[/* inline code block */ 'i', `Accept`],
+					[/* text */ 't', `").`]
+				]],
+				[/* parameter */ 'value', [/* parameter description */
+					[/* text */ 't', `the value associated with it.`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.lang.IllegalStateException', [/* throw description */
+					[/* text */ 't', `if already connected`]
+				]],
+				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
+					[/* text */ 't', `if key is null`]
+				]]
+			],
+			/* return */ UDF
+		]],
+		[/* method */ 'setAllowUserInteraction(boolean)', [
+			[/* method description */
+				[/* text */ 't', `Set the value of the `],
+				[/* inline code block */ 'i', `allowUserInteraction`],
+				[/* text */ 't', ` field of
+ this `],
+				[/* inline code block */ 'i', `URLConnection`],
+				[/* text */ 't', `.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'allowuserinteraction', [/* parameter description */
+					[/* text */ 't', `the new value.`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.lang.IllegalStateException', [/* throw description */
+					[/* text */ 't', `if already connected`]
+				]]
+			],
+			/* return */ UDF
+		]],
+		[/* method */ 'setConnectTimeout(int)', [
+			[/* method description */
+				[/* text */ 't', `Sets a specified timeout value, in milliseconds, to be used
+ when opening a communications link to the resource referenced
+ by this URLConnection.  If the timeout expires before the
+ connection can be established, a
+ java.net.SocketTimeoutException is raised. A timeout of zero is
+ interpreted as an infinite timeout.
+
+ `],
+				[/* block */ 'b', ` Some non-standard implementation of this method may ignore
+ the specified timeout. To see the connect timeout set, please
+ call getConnectTimeout().`]
+			],
+			[/* parameters */
+				[/* parameter */ 'timeout', [/* parameter description */
+					[/* text */ 't', `an `],
+					[/* inline code block */ 'i', `int`],
+					[/* text */ 't', ` that specifies the connect
+               timeout value in milliseconds`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
+					[/* text */ 't', `if the timeout parameter is negative`]
+				]]
+			],
+			/* return */ UDF
+		]],
+		[/* method */ 'setDefaultUseCaches(boolean)', [
+			[/* method description */
+				[/* text */ 't', `Sets the default value of the `],
+				[/* inline code block */ 'i', `useCaches`],
+				[/* text */ 't', ` field to the
+ specified value. This default value can be over-ridden
+ per protocol using `],
+				[/* reference */ 'r', `#setDefaultUseCaches(java.lang.String,boolean)`, `setDefaultUseCaches(String,boolean)`]
+			],
+			[/* parameters */
+				[/* parameter */ 'defaultusecaches', [/* parameter description */
+					[/* text */ 't', `the new value.`]
+				]]
+			],
+			/* throws */ UDF,
+			/* return */ UDF
+		]],
+		[/* method */ 'setDoInput(boolean)', [
+			[/* method description */
+				[/* text */ 't', `Sets the value of the `],
+				[/* inline code block */ 'i', `doInput`],
+				[/* text */ 't', ` field for this
+ `],
+				[/* inline code block */ 'i', `URLConnection`],
+				[/* text */ 't', ` to the specified value.
+ `],
+				[/* block */ 'b', `
+ A URL connection can be used for input and/or output.  Set the doInput
+ flag to true if you intend to use the URL connection for input,
+ false if not.  The default is true.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'doinput', [/* parameter description */
+					[/* text */ 't', `the new value.`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.lang.IllegalStateException', [/* throw description */
+					[/* text */ 't', `if already connected`]
+				]]
+			],
+			/* return */ UDF
+		]],
+		[/* method */ 'setDoOutput(boolean)', [
+			[/* method description */
+				[/* text */ 't', `Sets the value of the `],
+				[/* inline code block */ 'i', `doOutput`],
+				[/* text */ 't', ` field for this
+ `],
+				[/* inline code block */ 'i', `URLConnection`],
+				[/* text */ 't', ` to the specified value.
+ `],
+				[/* block */ 'b', `
+ A URL connection can be used for input and/or output.  Set the doOutput
+ flag to true if you intend to use the URL connection for output,
+ false if not.  The default is false.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'dooutput', [/* parameter description */
+					[/* text */ 't', `the new value.`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.lang.IllegalStateException', [/* throw description */
+					[/* text */ 't', `if already connected`]
+				]]
+			],
+			/* return */ UDF
+		]],
+		[/* method */ 'setIfModifiedSince(long)', [
+			[/* method description */
+				[/* text */ 't', `Sets the value of the `],
+				[/* inline code block */ 'i', `ifModifiedSince`],
+				[/* text */ 't', ` field of
+ this `],
+				[/* inline code block */ 'i', `URLConnection`],
+				[/* text */ 't', ` to the specified value.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'ifmodifiedsince', [/* parameter description */
+					[/* text */ 't', `the new value.`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.lang.IllegalStateException', [/* throw description */
+					[/* text */ 't', `if already connected`]
+				]]
+			],
+			/* return */ UDF
+		]],
+		[/* method */ 'setReadTimeout(int)', [
+			[/* method description */
+				[/* text */ 't', `Sets the read timeout to a specified timeout, in
+ milliseconds. A non-zero value specifies the timeout when
+ reading from Input stream when a connection is established to a
+ resource. If the timeout expires before there is data available
+ for read, a java.net.SocketTimeoutException is raised. A
+ timeout of zero is interpreted as an infinite timeout.
+
+ `],
+				[/* block */ 'b', ` Some non-standard implementation of this method ignores the
+ specified timeout. To see the read timeout set, please call
+ getReadTimeout().`]
+			],
+			[/* parameters */
+				[/* parameter */ 'timeout', [/* parameter description */
+					[/* text */ 't', `an `],
+					[/* inline code block */ 'i', `int`],
+					[/* text */ 't', ` that specifies the timeout
+ value to be used in milliseconds`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
+					[/* text */ 't', `if the timeout parameter is negative`]
+				]]
+			],
+			/* return */ UDF
+		]],
+		[/* method */ 'setRequestProperty(java.lang.String,java.lang.String)', [
+			[/* method description */
+				[/* text */ 't', `Sets the general request property. If a property with the key already
+ exists, overwrite its value with the new value.
+
+ `],
+				[/* block */ 'b', ` NOTE: HTTP requires all request properties which can
+ legally have multiple instances with the same key
+ to use a comma-separated list syntax which enables multiple
+ properties to be appended into a single property.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'key', [/* parameter description */
+					[/* text */ 't', `the keyword by which the request is known
+                  (e.g., "`],
+					[/* inline code block */ 'i', `Accept`],
+					[/* text */ 't', `").`]
+				]],
+				[/* parameter */ 'value', [/* parameter description */
+					[/* text */ 't', `the value associated with it.`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.lang.IllegalStateException', [/* throw description */
+					[/* text */ 't', `if already connected`]
+				]],
+				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
+					[/* text */ 't', `if key is `],
+					[/* inline code block */ 'i', `null`]
+				]]
+			],
+			/* return */ UDF
+		]],
+		[/* method */ 'setUseCaches(boolean)', [
+			[/* method description */
+				[/* text */ 't', `Sets the value of the `],
+				[/* inline code block */ 'i', `useCaches`],
+				[/* text */ 't', ` field of this
+ `],
+				[/* inline code block */ 'i', `URLConnection`],
+				[/* text */ 't', ` to the specified value.
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', `
+ Some protocols do caching of documents.  Occasionally, it is important
+ to be able to "tunnel through" and ignore the caches (e.g., the
+ "reload" button in a browser).  If the UseCaches flag on a connection
+ is true, the connection is allowed to use whatever caches it can.
+  If false, caches are to be ignored.
+  The default value comes from defaultUseCaches, which defaults to
+ true. A default value can also be set per-protocol using
+ `],
+					[/* reference */ 'r', `#setDefaultUseCaches(java.lang.String,boolean)`, `setDefaultUseCaches(String,boolean)`],
+					[/* text */ 't', `.`]
+				]]
+			],
+			[/* parameters */
+				[/* parameter */ 'usecaches', [/* parameter description */
+					[/* text */ 't', `a `],
+					[/* inline code block */ 'i', `boolean`],
+					[/* text */ 't', ` indicating whether
+ or not to allow caching`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.lang.IllegalStateException', [/* throw description */
+					[/* text */ 't', `if already connected`]
+				]]
+			],
+			/* return */ UDF
 		]]
 	],
 ]);

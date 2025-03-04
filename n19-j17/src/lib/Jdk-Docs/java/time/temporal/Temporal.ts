@@ -145,92 +145,6 @@ DocsCollector.collect('java.time.temporal.Temporal', [
 				[/* text */ 't', `true if the unit can be added/subtracted, false if not`]
 			]
 		]],
-		[/* method */ 'with(java.time.temporal.TemporalField,long)', [
-			[/* method description */
-				[/* text */ 't', `Returns an object of the same type as this object with the specified field altered.
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', `
- This returns a new object based on this one with the value for the specified field changed.
- For example, on a `],
-					[/* inline code block */ 'i', `LocalDate`],
-					[/* text */ 't', `, this could be used to set the year, month or day-of-month.
- The returned object will have the same observable type as this object.
- `]
-				]],
-				[/* block */ 'b', `
- In some cases, changing a field is not fully defined. For example, if the target object is
- a date representing the 31st January, then changing the month to February would be unclear.
- In cases like this, the field is responsible for resolving the result. Typically it will choose
- the previous valid date, which would be the last valid day of February in this example.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'field', [/* parameter description */
-					[/* text */ 't', `the field to set in the result, not null`]
-				]],
-				[/* parameter */ 'newValue', [/* parameter description */
-					[/* text */ 't', `the new value of the field in the result`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.time.DateTimeException', [/* throw description */
-					[/* text */ 't', `if the field cannot be set`]
-				]],
-				[/* throw */ 'java.time.temporal.UnsupportedTemporalTypeException', [/* throw description */
-					[/* text */ 't', `if the field is not supported`]
-				]],
-				[/* throw */ 'java.lang.ArithmeticException', [/* throw description */
-					[/* text */ 't', `if numeric overflow occurs`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `an object of the same type with the specified field set, not null`]
-			]
-		]],
-		[/* method */ 'with(java.time.temporal.TemporalAdjuster)', [
-			[/* method description */
-				[/* text */ 't', `Returns an adjusted object of the same type as this object with the adjustment made.
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', `
- This adjusts this date-time according to the rules of the specified adjuster.
- A simple adjuster might simply set the one of the fields, such as the year field.
- A more complex adjuster might set the date to the last day of the month.
- A selection of common adjustments is provided in
- `],
-					[/* reference */ 'r', `java.time.temporal.TemporalAdjusters`],
-					[/* text */ 't', `.
- These include finding the "last day of the month" and "next Wednesday".
- The adjuster is responsible for handling special cases, such as the varying
- lengths of month and leap years.
- `]
-				]],
-				[/* block */ 'b', `
- Some example code indicating how and why this method is used:
- `],
-				[/* code block */ 'c', `  date = date.with(Month.JULY);        // most key classes implement TemporalAdjuster
-  date = date.with(lastDayOfMonth());  // static import from Adjusters
-  date = date.with(next(WEDNESDAY));   // static import from Adjusters and DayOfWeek
- `],
-				[/* block */ 'b', '']
-			],
-			[/* parameters */
-				[/* parameter */ 'adjuster', [/* parameter description */
-					[/* text */ 't', `the adjuster to use, not null`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.time.DateTimeException', [/* throw description */
-					[/* text */ 't', `if unable to make the adjustment`]
-				]],
-				[/* throw */ 'java.lang.ArithmeticException', [/* throw description */
-					[/* text */ 't', `if numeric overflow occurs`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `an object of the same type with the specified adjustment made, not null`]
-			]
-		]],
 		[/* method */ 'plus(long,java.time.temporal.TemporalUnit)', [
 			[/* method description */
 				[/* text */ 't', `Returns an object of the same type as this object with the specified period added.
@@ -273,56 +187,46 @@ DocsCollector.collect('java.time.temporal.Temporal', [
 				[/* text */ 't', `an object of the same type with the specified period added, not null`]
 			]
 		]],
-		[/* method */ 'plus(java.time.temporal.TemporalAmount)', [
+		[/* method */ 'with(java.time.temporal.TemporalField,long)', [
 			[/* method description */
-				[/* text */ 't', `Returns an object of the same type as this object with an amount added.
+				[/* text */ 't', `Returns an object of the same type as this object with the specified field altered.
  `],
 				[/* block */ 'b', [
 					[/* text */ 't', `
- This adjusts this temporal, adding according to the rules of the specified amount.
- The amount is typically a `],
-					[/* reference */ 'r', `java.time.Period`],
-					[/* text */ 't', ` but may be any other type implementing
- the `],
-					[/* reference */ 'r', `java.time.temporal.TemporalAmount`],
-					[/* text */ 't', ` interface, such as `],
-					[/* reference */ 'r', `java.time.Duration`],
-					[/* text */ 't', `.
+ This returns a new object based on this one with the value for the specified field changed.
+ For example, on a `],
+					[/* inline code block */ 'i', `LocalDate`],
+					[/* text */ 't', `, this could be used to set the year, month or day-of-month.
+ The returned object will have the same observable type as this object.
  `]
 				]],
 				[/* block */ 'b', `
- Some example code indicating how and why this method is used:
- `],
-				[/* code block */ 'c', `  date = date.plus(period);                // add a Period instance
-  date = date.plus(duration);              // add a Duration instance
-  date = date.plus(workingDays(6));        // example user-written workingDays method
- `],
-				[/* block */ 'b', ''],
-				[/* block */ 'b', [
-					[/* text */ 't', `
- Note that calling `],
-					[/* inline code block */ 'i', `plus`],
-					[/* text */ 't', ` followed by `],
-					[/* inline code block */ 'i', `minus`],
-					[/* text */ 't', ` is not guaranteed to
- return the same date-time.`]
-				]]
+ In some cases, changing a field is not fully defined. For example, if the target object is
+ a date representing the 31st January, then changing the month to February would be unclear.
+ In cases like this, the field is responsible for resolving the result. Typically it will choose
+ the previous valid date, which would be the last valid day of February in this example.`]
 			],
 			[/* parameters */
-				[/* parameter */ 'amount', [/* parameter description */
-					[/* text */ 't', `the amount to add, not null`]
+				[/* parameter */ 'field', [/* parameter description */
+					[/* text */ 't', `the field to set in the result, not null`]
+				]],
+				[/* parameter */ 'newValue', [/* parameter description */
+					[/* text */ 't', `the new value of the field in the result`]
 				]]
 			],
 			[/* throws */
 				[/* throw */ 'java.time.DateTimeException', [/* throw description */
-					[/* text */ 't', `if the addition cannot be made`]
+					[/* text */ 't', `if the field cannot be set`]
+				]],
+				[/* throw */ 'java.time.temporal.UnsupportedTemporalTypeException', [/* throw description */
+					[/* text */ 't', `if the field is not supported`]
 				]],
 				[/* throw */ 'java.lang.ArithmeticException', [/* throw description */
 					[/* text */ 't', `if numeric overflow occurs`]
 				]]
 			],
 			[/* return description */
-				[/* text */ 't', `an object of the same type with the specified adjustment made, not null`]
+				[/* text */ 't', `an object of the same type with the specified field set, not null`]
 			]
 		]],
 		[/* method */ 'until(java.time.temporal.Temporal,java.time.temporal.TemporalUnit)', [
@@ -498,6 +402,102 @@ DocsCollector.collect('java.time.temporal.Temporal', [
 			],
 			[/* return description */
 				[/* text */ 't', `an object of the same type with the specified period subtracted, not null`]
+			]
+		]],
+		[/* method */ 'plus(java.time.temporal.TemporalAmount)', [
+			[/* method description */
+				[/* text */ 't', `Returns an object of the same type as this object with an amount added.
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', `
+ This adjusts this temporal, adding according to the rules of the specified amount.
+ The amount is typically a `],
+					[/* reference */ 'r', `java.time.Period`],
+					[/* text */ 't', ` but may be any other type implementing
+ the `],
+					[/* reference */ 'r', `java.time.temporal.TemporalAmount`],
+					[/* text */ 't', ` interface, such as `],
+					[/* reference */ 'r', `java.time.Duration`],
+					[/* text */ 't', `.
+ `]
+				]],
+				[/* block */ 'b', `
+ Some example code indicating how and why this method is used:
+ `],
+				[/* code block */ 'c', `  date = date.plus(period);                // add a Period instance
+  date = date.plus(duration);              // add a Duration instance
+  date = date.plus(workingDays(6));        // example user-written workingDays method
+ `],
+				[/* block */ 'b', ''],
+				[/* block */ 'b', [
+					[/* text */ 't', `
+ Note that calling `],
+					[/* inline code block */ 'i', `plus`],
+					[/* text */ 't', ` followed by `],
+					[/* inline code block */ 'i', `minus`],
+					[/* text */ 't', ` is not guaranteed to
+ return the same date-time.`]
+				]]
+			],
+			[/* parameters */
+				[/* parameter */ 'amount', [/* parameter description */
+					[/* text */ 't', `the amount to add, not null`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.time.DateTimeException', [/* throw description */
+					[/* text */ 't', `if the addition cannot be made`]
+				]],
+				[/* throw */ 'java.lang.ArithmeticException', [/* throw description */
+					[/* text */ 't', `if numeric overflow occurs`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `an object of the same type with the specified adjustment made, not null`]
+			]
+		]],
+		[/* method */ 'with(java.time.temporal.TemporalAdjuster)', [
+			[/* method description */
+				[/* text */ 't', `Returns an adjusted object of the same type as this object with the adjustment made.
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', `
+ This adjusts this date-time according to the rules of the specified adjuster.
+ A simple adjuster might simply set the one of the fields, such as the year field.
+ A more complex adjuster might set the date to the last day of the month.
+ A selection of common adjustments is provided in
+ `],
+					[/* reference */ 'r', `java.time.temporal.TemporalAdjusters`],
+					[/* text */ 't', `.
+ These include finding the "last day of the month" and "next Wednesday".
+ The adjuster is responsible for handling special cases, such as the varying
+ lengths of month and leap years.
+ `]
+				]],
+				[/* block */ 'b', `
+ Some example code indicating how and why this method is used:
+ `],
+				[/* code block */ 'c', `  date = date.with(Month.JULY);        // most key classes implement TemporalAdjuster
+  date = date.with(lastDayOfMonth());  // static import from Adjusters
+  date = date.with(next(WEDNESDAY));   // static import from Adjusters and DayOfWeek
+ `],
+				[/* block */ 'b', '']
+			],
+			[/* parameters */
+				[/* parameter */ 'adjuster', [/* parameter description */
+					[/* text */ 't', `the adjuster to use, not null`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.time.DateTimeException', [/* throw description */
+					[/* text */ 't', `if unable to make the adjustment`]
+				]],
+				[/* throw */ 'java.lang.ArithmeticException', [/* throw description */
+					[/* text */ 't', `if numeric overflow occurs`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `an object of the same type with the specified adjustment made, not null`]
 			]
 		]]
 	],

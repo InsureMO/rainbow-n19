@@ -48,19 +48,19 @@ DocsCollector.collect('java.lang.ProcessBuilder$Redirect', [
 		]]
 	],
 	[/* fields */
-		[/* field */ 'PIPE', [
+		[/* field */ 'DISCARD', [
 			[/* field description */
-				[/* text */ 't', `Indicates that subprocess I/O will be connected to the
- current Java process over a pipe.
-
- This is the default handling of subprocess standard I/O.
+				[/* text */ 't', `Indicates that subprocess output will be discarded.
+ A typical implementation discards the output by writing to
+ an operating system specific "null file".
 
  `],
 				[/* block */ 'b', `It will always be true that
-  `],
+ `],
 				[/* code block */ 'c', [
-					[/* inline code block */ 'i', `Redirect.PIPE.file() == null &&
- Redirect.PIPE.type() == Redirect.Type.PIPE`]
+					[/* inline code block */ 'i', `Redirect.DISCARD.file() is the filename appropriate for the operating system
+ and may be null &&
+ Redirect.DISCARD.type() == Redirect.Type.WRITE`]
 				]],
 				[/* block */ 'b', '']
 			],
@@ -81,19 +81,19 @@ DocsCollector.collect('java.lang.ProcessBuilder$Redirect', [
 				[/* block */ 'b', '']
 			],
 		]],
-		[/* field */ 'DISCARD', [
+		[/* field */ 'PIPE', [
 			[/* field description */
-				[/* text */ 't', `Indicates that subprocess output will be discarded.
- A typical implementation discards the output by writing to
- an operating system specific "null file".
+				[/* text */ 't', `Indicates that subprocess I/O will be connected to the
+ current Java process over a pipe.
+
+ This is the default handling of subprocess standard I/O.
 
  `],
 				[/* block */ 'b', `It will always be true that
- `],
+  `],
 				[/* code block */ 'c', [
-					[/* inline code block */ 'i', `Redirect.DISCARD.file() is the filename appropriate for the operating system
- and may be null &&
- Redirect.DISCARD.type() == Redirect.Type.WRITE`]
+					[/* inline code block */ 'i', `Redirect.PIPE.file() == null &&
+ Redirect.PIPE.type() == Redirect.Type.PIPE`]
 				]],
 				[/* block */ 'b', '']
 			],
@@ -157,62 +157,6 @@ DocsCollector.collect('java.lang.ProcessBuilder$Redirect', [
 				[/* inline code block */ 'i', `Redirect`]
 			]
 		]],
-		[/* method */ 'to(java.io.File)', [
-			[/* method description */
-				[/* text */ 't', `Returns a redirect to write to the specified file.
- If the specified file exists when the subprocess is started,
- its previous contents will be discarded.
-
- `],
-				[/* block */ 'b', `It will always be true that
-  `],
-				[/* code block */ 'c', [
-					[/* inline code block */ 'i', `Redirect.to(file).file() == file &&
- Redirect.to(file).type() == Redirect.Type.WRITE`]
-				]],
-				[/* block */ 'b', '']
-			],
-			[/* parameters */
-				[/* parameter */ 'file', [/* parameter description */
-					[/* text */ 't', `The `],
-					[/* inline code block */ 'i', `File`],
-					[/* text */ 't', ` for the `],
-					[/* inline code block */ 'i', `Redirect`],
-					[/* text */ 't', `.`]
-				]]
-			],
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `a redirect to write to the specified file`]
-			]
-		]],
-		[/* method */ 'from(java.io.File)', [
-			[/* method description */
-				[/* text */ 't', `Returns a redirect to read from the specified file.
-
- `],
-				[/* block */ 'b', `It will always be true that
-  `],
-				[/* code block */ 'c', [
-					[/* inline code block */ 'i', `Redirect.from(file).file() == file &&
- Redirect.from(file).type() == Redirect.Type.READ`]
-				]],
-				[/* block */ 'b', '']
-			],
-			[/* parameters */
-				[/* parameter */ 'file', [/* parameter description */
-					[/* text */ 't', `The `],
-					[/* inline code block */ 'i', `File`],
-					[/* text */ 't', ` for the `],
-					[/* inline code block */ 'i', `Redirect`],
-					[/* text */ 't', `.`]
-				]]
-			],
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `a redirect to read from the specified file`]
-			]
-		]],
 		[/* method */ 'file()', [
 			[/* method description */
 				[/* text */ 't', `Returns the `],
@@ -261,6 +205,62 @@ DocsCollector.collect('java.lang.ProcessBuilder$Redirect', [
 			/* throws */ UDF,
 			[/* return description */
 				[/* text */ 't', `a redirect to append to the specified file`]
+			]
+		]],
+		[/* method */ 'from(java.io.File)', [
+			[/* method description */
+				[/* text */ 't', `Returns a redirect to read from the specified file.
+
+ `],
+				[/* block */ 'b', `It will always be true that
+  `],
+				[/* code block */ 'c', [
+					[/* inline code block */ 'i', `Redirect.from(file).file() == file &&
+ Redirect.from(file).type() == Redirect.Type.READ`]
+				]],
+				[/* block */ 'b', '']
+			],
+			[/* parameters */
+				[/* parameter */ 'file', [/* parameter description */
+					[/* text */ 't', `The `],
+					[/* inline code block */ 'i', `File`],
+					[/* text */ 't', ` for the `],
+					[/* inline code block */ 'i', `Redirect`],
+					[/* text */ 't', `.`]
+				]]
+			],
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `a redirect to read from the specified file`]
+			]
+		]],
+		[/* method */ 'to(java.io.File)', [
+			[/* method description */
+				[/* text */ 't', `Returns a redirect to write to the specified file.
+ If the specified file exists when the subprocess is started,
+ its previous contents will be discarded.
+
+ `],
+				[/* block */ 'b', `It will always be true that
+  `],
+				[/* code block */ 'c', [
+					[/* inline code block */ 'i', `Redirect.to(file).file() == file &&
+ Redirect.to(file).type() == Redirect.Type.WRITE`]
+				]],
+				[/* block */ 'b', '']
+			],
+			[/* parameters */
+				[/* parameter */ 'file', [/* parameter description */
+					[/* text */ 't', `The `],
+					[/* inline code block */ 'i', `File`],
+					[/* text */ 't', ` for the `],
+					[/* inline code block */ 'i', `Redirect`],
+					[/* text */ 't', `.`]
+				]]
+			],
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `a redirect to write to the specified file`]
 			]
 		]]
 	],

@@ -1427,14 +1427,14 @@ JdkClassCreateHelper.class('java.time.LocalDateTime', [
 		]
 	],
 	[/* declared fields */
-		[/* public static final java.time.LocalDateTime java.time.LocalDateTime.MIN */
-			/* name */ 'MIN',
+		[/* public static final java.time.LocalDateTime java.time.LocalDateTime.MAX */
+			/* name */ 'MAX',
 			/* type */ 'java.time.LocalDateTime',
 			/* annotations */ UDF,
 			/* modifiers */ 25
 		],
-		[/* public static final java.time.LocalDateTime java.time.LocalDateTime.MAX */
-			/* name */ 'MAX',
+		[/* public static final java.time.LocalDateTime java.time.LocalDateTime.MIN */
+			/* name */ 'MIN',
 			/* type */ 'java.time.LocalDateTime',
 			/* annotations */ UDF,
 			/* modifiers */ 25

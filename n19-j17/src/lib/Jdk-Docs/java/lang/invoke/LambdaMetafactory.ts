@@ -362,12 +362,11 @@ DocsCollector.collect('java.lang.invoke.LambdaMetafactory', [
 		[/* block */ 'b', '']
 	],
 	[/* fields */
-		[/* field */ 'FLAG_SERIALIZABLE', [
+		[/* field */ 'FLAG_BRIDGES', [
 			[/* field description */
-				[/* text */ 't', `Flag for `],
-				[/* reference */ 'r', `#altMetafactory(java.lang.invoke.MethodHandles.Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.Object...)`, `altMetafactory(java.lang.invoke.MethodHandles.Lookup, java.lang.String, java.lang.invoke.MethodType, java.lang.Object...)`],
-				[/* text */ 't', ` indicating the lambda object
- must be serializable`]
+				[/* text */ 't', `Flag for alternate metafactories indicating the lambda object requires
+ additional methods that invoke the `],
+				[/* inline code block */ 'i', `implementation`]
 			],
 		]],
 		[/* field */ 'FLAG_MARKERS', [
@@ -379,169 +378,17 @@ DocsCollector.collect('java.lang.invoke.LambdaMetafactory', [
 				[/* inline code block */ 'i', `Serializable`]
 			],
 		]],
-		[/* field */ 'FLAG_BRIDGES', [
+		[/* field */ 'FLAG_SERIALIZABLE', [
 			[/* field description */
-				[/* text */ 't', `Flag for alternate metafactories indicating the lambda object requires
- additional methods that invoke the `],
-				[/* inline code block */ 'i', `implementation`]
+				[/* text */ 't', `Flag for `],
+				[/* reference */ 'r', `#altMetafactory(java.lang.invoke.MethodHandles.Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.Object...)`, `altMetafactory(java.lang.invoke.MethodHandles.Lookup, java.lang.String, java.lang.invoke.MethodType, java.lang.Object...)`],
+				[/* text */ 't', ` indicating the lambda object
+ must be serializable`]
 			],
 		]]
 	],
 	/* constructors */ UDF,
 	[/* methods */
-		[/* method */ 'metafactory(java.lang.invoke.MethodHandles.Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.invoke.MethodType,java.lang.invoke.MethodHandle,java.lang.invoke.MethodType)', [
-			[/* method description */
-				[/* text */ 't', `Facilitates the creation of simple "function objects" that implement one
- or more interfaces by delegation to a provided `],
-				[/* reference */ 'r', `java.lang.invoke.MethodHandle`],
-				[/* text */ 't', `,
- after appropriate type adaptation and partial evaluation of arguments.
- Typically used as a `],
-				[/* text */ 't', `bootstrap method`],
-				[/* text */ 't', ` for `],
-				[/* inline code block */ 'i', `invokedynamic`],
-				[/* text */ 't', `
- call sites, to support the `],
-				[/* text */ 't', `lambda expression`],
-				[/* text */ 't', ` and `],
-				[/* text */ 't', `method
- reference expression`],
-				[/* text */ 't', ` features of the Java Programming Language.
-
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', `This is the standard, streamlined metafactory; additional flexibility
- is provided by `],
-					[/* reference */ 'r', `#altMetafactory(java.lang.invoke.MethodHandles.Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.Object...)`, `altMetafactory(MethodHandles.Lookup, String, MethodType, Object...)`],
-					[/* text */ 't', `.
- A general description of the behavior of this method is provided
- `],
-					[/* reference */ 'r', `java.lang.invoke.LambdaMetafactory`],
-					[/* text */ 't', `.
-
- `]
-				]],
-				[/* block */ 'b', [
-					[/* text */ 't', `When the target of the `],
-					[/* inline code block */ 'i', `CallSite`],
-					[/* text */ 't', ` returned from this method is
- invoked, the resulting function objects are instances of a class which
- implements the interface named by the return type of `],
-					[/* inline code block */ 'i', `factoryType`],
-					[/* text */ 't', `,
- declares a method with the name given by `],
-					[/* inline code block */ 'i', `interfaceMethodName`],
-					[/* text */ 't', ` and the
- signature given by `],
-					[/* inline code block */ 'i', `interfaceMethodType`],
-					[/* text */ 't', `.  It may also override additional
- methods from `],
-					[/* inline code block */ 'i', `Object`],
-					[/* text */ 't', `.`]
-				]]
-			],
-			[/* parameters */
-				[/* parameter */ 'caller', [/* parameter description */
-					[/* text */ 't', `Represents a lookup context with the accessibility
-               privileges of the caller.  Specifically, the lookup context
-               must have `],
-					[/* reference */ 'r', `.MethodHandles.Lookup#hasFullPrivilegeAccess()`],
-					[/* text */ 't', `.
-               When used with `],
-					[/* inline code block */ 'i', `invokedynamic`],
-					[/* text */ 't', `, this is stacked
-               automatically by the VM.`]
-				]],
-				[/* parameter */ 'interfaceMethodName', [/* parameter description */
-					[/* text */ 't', `The name of the method to implement.  When used with
-                            `],
-					[/* inline code block */ 'i', `invokedynamic`],
-					[/* text */ 't', `, this is provided by the
-                            `],
-					[/* inline code block */ 'i', `NameAndType`],
-					[/* text */ 't', ` of the `],
-					[/* inline code block */ 'i', `InvokeDynamic`],
-					[/* text */ 't', `
-                            structure and is stacked automatically by the VM.`]
-				]],
-				[/* parameter */ 'factoryType', [/* parameter description */
-					[/* text */ 't', `The expected signature of the `],
-					[/* inline code block */ 'i', `CallSite`],
-					[/* text */ 't', `.  The
-                    parameter types represent the types of capture variables;
-                    the return type is the interface to implement.   When
-                    used with `],
-					[/* inline code block */ 'i', `invokedynamic`],
-					[/* text */ 't', `, this is provided by
-                    the `],
-					[/* inline code block */ 'i', `NameAndType`],
-					[/* text */ 't', ` of the `],
-					[/* inline code block */ 'i', `InvokeDynamic`],
-					[/* text */ 't', `
-                    structure and is stacked automatically by the VM.`]
-				]],
-				[/* parameter */ 'interfaceMethodType', [/* parameter description */
-					[/* text */ 't', `Signature and return type of method to be
-                            implemented by the function object.`]
-				]],
-				[/* parameter */ 'implementation', [/* parameter description */
-					[/* text */ 't', `A direct method handle describing the implementation
-                       method which should be called (with suitable adaptation
-                       of argument types and return types, and with captured
-                       arguments prepended to the invocation arguments) at
-                       invocation time.`]
-				]],
-				[/* parameter */ 'dynamicMethodType', [/* parameter description */
-					[/* text */ 't', `The signature and return type that should
-                          be enforced dynamically at invocation time.
-                          In simple use cases this is the same as
-                          `],
-					[/* inline code block */ 'i', `interfaceMethodType`],
-					[/* text */ 't', `.`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.invoke.LambdaConversionException', [/* throw description */
-					[/* text */ 't', `If `],
-					[/* inline code block */ 'i', `caller`],
-					[/* text */ 't', ` does not have full privilege
-         access, or if `],
-					[/* inline code block */ 'i', `interfaceMethodName`],
-					[/* text */ 't', ` is not a valid JVM
-         method name, or if the return type of `],
-					[/* inline code block */ 'i', `factoryType`],
-					[/* text */ 't', ` is not
-         an interface, or if `],
-					[/* inline code block */ 'i', `implementation`],
-					[/* text */ 't', ` is not a direct method
-         handle referencing a method or constructor, or if the linkage
-         invariants are violated, as defined `],
-					[/* reference */ 'r', `java.lang.invoke.LambdaMetafactory`],
-					[/* text */ 't', `.`]
-				]],
-				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
-					[/* text */ 't', `If any argument is `],
-					[/* inline code block */ 'i', `null`],
-					[/* text */ 't', `.`]
-				]],
-				[/* throw */ 'java.lang.SecurityException', [/* throw description */
-					[/* text */ 't', `If a security manager is present, and it
-         `],
-					[/* reference */ 'r', `.MethodHandles.Lookup#secmgr`],
-					[/* text */ 't', `
-         from `],
-					[/* inline code block */ 'i', `caller`],
-					[/* text */ 't', ` to the package of `],
-					[/* inline code block */ 'i', `implementation`],
-					[/* text */ 't', `.`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `a CallSite whose target can be used to perform capture, generating
-         instances of the interface named by `],
-				[/* inline code block */ 'i', `factoryType`]
-			]
-		]],
 		[/* method */ 'altMetafactory(java.lang.invoke.MethodHandles.Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.Object...)', [
 			[/* method description */
 				[/* text */ 't', `Facilitates the creation of simple "function objects" that implement one
@@ -853,6 +700,159 @@ DocsCollector.collect('java.lang.invoke.LambdaMetafactory', [
 					[/* inline code block */ 'i', `altMethodCount`],
 					[/* text */ 't', ` are negative
          integers.`]
+				]],
+				[/* throw */ 'java.lang.SecurityException', [/* throw description */
+					[/* text */ 't', `If a security manager is present, and it
+         `],
+					[/* reference */ 'r', `.MethodHandles.Lookup#secmgr`],
+					[/* text */ 't', `
+         from `],
+					[/* inline code block */ 'i', `caller`],
+					[/* text */ 't', ` to the package of `],
+					[/* inline code block */ 'i', `implementation`],
+					[/* text */ 't', `.`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `a CallSite whose target can be used to perform capture, generating
+         instances of the interface named by `],
+				[/* inline code block */ 'i', `factoryType`]
+			]
+		]],
+		[/* method */ 'metafactory(java.lang.invoke.MethodHandles.Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.invoke.MethodType,java.lang.invoke.MethodHandle,java.lang.invoke.MethodType)', [
+			[/* method description */
+				[/* text */ 't', `Facilitates the creation of simple "function objects" that implement one
+ or more interfaces by delegation to a provided `],
+				[/* reference */ 'r', `java.lang.invoke.MethodHandle`],
+				[/* text */ 't', `,
+ after appropriate type adaptation and partial evaluation of arguments.
+ Typically used as a `],
+				[/* text */ 't', `bootstrap method`],
+				[/* text */ 't', ` for `],
+				[/* inline code block */ 'i', `invokedynamic`],
+				[/* text */ 't', `
+ call sites, to support the `],
+				[/* text */ 't', `lambda expression`],
+				[/* text */ 't', ` and `],
+				[/* text */ 't', `method
+ reference expression`],
+				[/* text */ 't', ` features of the Java Programming Language.
+
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', `This is the standard, streamlined metafactory; additional flexibility
+ is provided by `],
+					[/* reference */ 'r', `#altMetafactory(java.lang.invoke.MethodHandles.Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.Object...)`, `altMetafactory(MethodHandles.Lookup, String, MethodType, Object...)`],
+					[/* text */ 't', `.
+ A general description of the behavior of this method is provided
+ `],
+					[/* reference */ 'r', `java.lang.invoke.LambdaMetafactory`],
+					[/* text */ 't', `.
+
+ `]
+				]],
+				[/* block */ 'b', [
+					[/* text */ 't', `When the target of the `],
+					[/* inline code block */ 'i', `CallSite`],
+					[/* text */ 't', ` returned from this method is
+ invoked, the resulting function objects are instances of a class which
+ implements the interface named by the return type of `],
+					[/* inline code block */ 'i', `factoryType`],
+					[/* text */ 't', `,
+ declares a method with the name given by `],
+					[/* inline code block */ 'i', `interfaceMethodName`],
+					[/* text */ 't', ` and the
+ signature given by `],
+					[/* inline code block */ 'i', `interfaceMethodType`],
+					[/* text */ 't', `.  It may also override additional
+ methods from `],
+					[/* inline code block */ 'i', `Object`],
+					[/* text */ 't', `.`]
+				]]
+			],
+			[/* parameters */
+				[/* parameter */ 'caller', [/* parameter description */
+					[/* text */ 't', `Represents a lookup context with the accessibility
+               privileges of the caller.  Specifically, the lookup context
+               must have `],
+					[/* reference */ 'r', `.MethodHandles.Lookup#hasFullPrivilegeAccess()`],
+					[/* text */ 't', `.
+               When used with `],
+					[/* inline code block */ 'i', `invokedynamic`],
+					[/* text */ 't', `, this is stacked
+               automatically by the VM.`]
+				]],
+				[/* parameter */ 'interfaceMethodName', [/* parameter description */
+					[/* text */ 't', `The name of the method to implement.  When used with
+                            `],
+					[/* inline code block */ 'i', `invokedynamic`],
+					[/* text */ 't', `, this is provided by the
+                            `],
+					[/* inline code block */ 'i', `NameAndType`],
+					[/* text */ 't', ` of the `],
+					[/* inline code block */ 'i', `InvokeDynamic`],
+					[/* text */ 't', `
+                            structure and is stacked automatically by the VM.`]
+				]],
+				[/* parameter */ 'factoryType', [/* parameter description */
+					[/* text */ 't', `The expected signature of the `],
+					[/* inline code block */ 'i', `CallSite`],
+					[/* text */ 't', `.  The
+                    parameter types represent the types of capture variables;
+                    the return type is the interface to implement.   When
+                    used with `],
+					[/* inline code block */ 'i', `invokedynamic`],
+					[/* text */ 't', `, this is provided by
+                    the `],
+					[/* inline code block */ 'i', `NameAndType`],
+					[/* text */ 't', ` of the `],
+					[/* inline code block */ 'i', `InvokeDynamic`],
+					[/* text */ 't', `
+                    structure and is stacked automatically by the VM.`]
+				]],
+				[/* parameter */ 'interfaceMethodType', [/* parameter description */
+					[/* text */ 't', `Signature and return type of method to be
+                            implemented by the function object.`]
+				]],
+				[/* parameter */ 'implementation', [/* parameter description */
+					[/* text */ 't', `A direct method handle describing the implementation
+                       method which should be called (with suitable adaptation
+                       of argument types and return types, and with captured
+                       arguments prepended to the invocation arguments) at
+                       invocation time.`]
+				]],
+				[/* parameter */ 'dynamicMethodType', [/* parameter description */
+					[/* text */ 't', `The signature and return type that should
+                          be enforced dynamically at invocation time.
+                          In simple use cases this is the same as
+                          `],
+					[/* inline code block */ 'i', `interfaceMethodType`],
+					[/* text */ 't', `.`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.lang.invoke.LambdaConversionException', [/* throw description */
+					[/* text */ 't', `If `],
+					[/* inline code block */ 'i', `caller`],
+					[/* text */ 't', ` does not have full privilege
+         access, or if `],
+					[/* inline code block */ 'i', `interfaceMethodName`],
+					[/* text */ 't', ` is not a valid JVM
+         method name, or if the return type of `],
+					[/* inline code block */ 'i', `factoryType`],
+					[/* text */ 't', ` is not
+         an interface, or if `],
+					[/* inline code block */ 'i', `implementation`],
+					[/* text */ 't', ` is not a direct method
+         handle referencing a method or constructor, or if the linkage
+         invariants are violated, as defined `],
+					[/* reference */ 'r', `java.lang.invoke.LambdaMetafactory`],
+					[/* text */ 't', `.`]
+				]],
+				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
+					[/* text */ 't', `If any argument is `],
+					[/* inline code block */ 'i', `null`],
+					[/* text */ 't', `.`]
 				]],
 				[/* throw */ 'java.lang.SecurityException', [/* throw description */
 					[/* text */ 't', `If a security manager is present, and it

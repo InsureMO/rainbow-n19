@@ -143,21 +143,6 @@ DocsCollector.collect('java.lang.annotation.Annotation', [
      that is logically equivalent to this one, otherwise false`]
 			]
 		]],
-		[/* method */ 'toString()', [
-			[/* method description */
-				[/* text */ 't', `Returns a string representation of this annotation.  The details
- of the representation are implementation-dependent, but the following
- may be regarded as typical:
- `],
-				[/* code block */ 'c', `   @com.example.Name(first="Duke", middle="of", last="Java")
- `]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `a string representation of this annotation`]
-			]
-		]],
 		[/* method */ 'hashCode()', [
 			[/* method description */
 				[/* text */ 't', `Returns the hash code of this annotation.
@@ -249,6 +234,21 @@ DocsCollector.collect('java.lang.annotation.Annotation', [
 			/* throws */ UDF,
 			[/* return description */
 				[/* text */ 't', `the annotation interface of this annotation`]
+			]
+		]],
+		[/* method */ 'toString()', [
+			[/* method description */
+				[/* text */ 't', `Returns a string representation of this annotation.  The details
+ of the representation are implementation-dependent, but the following
+ may be regarded as typical:
+ `],
+				[/* code block */ 'c', `   @com.example.Name(first="Duke", middle="of", last="Java")
+ `]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `a string representation of this annotation`]
 			]
 		]]
 	],

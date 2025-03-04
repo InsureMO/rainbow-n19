@@ -8,35 +8,18 @@ DocsCollector.collect('java.util.zip.ZipOutputStream', [
  entries.`]
 	],
 	[/* fields */
-		[/* field */ 'STORED', [
-			[/* field description */
-				[/* text */ 't', `Compression method for uncompressed (STORED) entries.`]
-			],
-		]],
 		[/* field */ 'DEFLATED', [
 			[/* field description */
 				[/* text */ 't', `Compression method for compressed (DEFLATED) entries.`]
 			],
+		]],
+		[/* field */ 'STORED', [
+			[/* field description */
+				[/* text */ 't', `Compression method for uncompressed (STORED) entries.`]
+			],
 		]]
 	],
 	[/* constructors */
-		[/* constructor */ '<init>(java.io.OutputStream,java.nio.charset.Charset)', [
-			[/* constructor description */
-				[/* text */ 't', `Creates a new ZIP output stream.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'out', [/* parameter description */
-					[/* text */ 't', `the actual output stream`]
-				]],
-				[/* parameter */ 'charset', [/* parameter description */
-					[/* text */ 't', `the `],
-					[/* reference */ 'r', `java.nio.charset.Charset`],
-					[/* text */ 't', `
-                to be used to encode the entry names and comments`]
-				]]
-			],
-			/* throws */ UDF
-		]],
 		[/* constructor */ '<init>(java.io.OutputStream)', [
 			[/* constructor description */
 				[/* text */ 't', `Creates a new ZIP output stream.
@@ -52,6 +35,23 @@ DocsCollector.collect('java.util.zip.ZipOutputStream', [
 			[/* parameters */
 				[/* parameter */ 'out', [/* parameter description */
 					[/* text */ 't', `the actual output stream`]
+				]]
+			],
+			/* throws */ UDF
+		]],
+		[/* constructor */ '<init>(java.io.OutputStream,java.nio.charset.Charset)', [
+			[/* constructor description */
+				[/* text */ 't', `Creates a new ZIP output stream.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'out', [/* parameter description */
+					[/* text */ 't', `the actual output stream`]
+				]],
+				[/* parameter */ 'charset', [/* parameter description */
+					[/* text */ 't', `the `],
+					[/* reference */ 'r', `java.nio.charset.Charset`],
+					[/* text */ 't', `
+                to be used to encode the entry names and comments`]
 				]]
 			],
 			/* throws */ UDF
@@ -99,6 +99,22 @@ DocsCollector.collect('java.util.zip.ZipOutputStream', [
 			],
 			/* return */ UDF
 		]],
+		[/* method */ 'closeEntry()', [
+			[/* method description */
+				[/* text */ 't', `Closes the current ZIP entry and positions the stream for writing
+ the next entry.`]
+			],
+			/* parameters */ UDF,
+			[/* throws */
+				[/* throw */ 'java.util.zip.ZipException', [/* throw description */
+					[/* text */ 't', `if a ZIP format error has occurred`]
+				]],
+				[/* throw */ 'java.io.IOException', [/* throw description */
+					[/* text */ 't', `if an I/O error has occurred`]
+				]]
+			],
+			/* return */ UDF
+		]],
 		[/* method */ 'finish()', [
 			[/* method description */
 				[/* text */ 't', `Finishes writing the contents of the ZIP output stream without closing
@@ -112,59 +128,6 @@ DocsCollector.collect('java.util.zip.ZipOutputStream', [
 				]],
 				[/* throw */ 'java.io.IOException', [/* throw description */
 					[/* text */ 't', `if an I/O exception has occurred`]
-				]]
-			],
-			/* return */ UDF
-		]],
-		[/* method */ 'setMethod(int)', [
-			[/* method description */
-				[/* text */ 't', `Sets the default compression method for subsequent entries. This
- default will be used whenever the compression method is not specified
- for an individual ZIP file entry, and is initially set to DEFLATED.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'method', [/* parameter description */
-					[/* text */ 't', `the default compression method`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
-					[/* text */ 't', `if the specified compression method
-            is invalid`]
-				]]
-			],
-			/* return */ UDF
-		]],
-		[/* method */ 'setComment(java.lang.String)', [
-			[/* method description */
-				[/* text */ 't', `Sets the ZIP file comment.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'comment', [/* parameter description */
-					[/* text */ 't', `the comment string`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
-					[/* text */ 't', `if the length of the specified
-            ZIP file comment is greater than 0xFFFF bytes`]
-				]]
-			],
-			/* return */ UDF
-		]],
-		[/* method */ 'setLevel(int)', [
-			[/* method description */
-				[/* text */ 't', `Sets the compression level for subsequent entries which are DEFLATED.
- The default setting is DEFAULT_COMPRESSION.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'level', [/* parameter description */
-					[/* text */ 't', `the compression level (0-9)`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
-					[/* text */ 't', `if the compression level is invalid`]
 				]]
 			],
 			/* return */ UDF
@@ -203,18 +166,55 @@ DocsCollector.collect('java.util.zip.ZipOutputStream', [
 			],
 			/* return */ UDF
 		]],
-		[/* method */ 'closeEntry()', [
+		[/* method */ 'setComment(java.lang.String)', [
 			[/* method description */
-				[/* text */ 't', `Closes the current ZIP entry and positions the stream for writing
- the next entry.`]
+				[/* text */ 't', `Sets the ZIP file comment.`]
 			],
-			/* parameters */ UDF,
+			[/* parameters */
+				[/* parameter */ 'comment', [/* parameter description */
+					[/* text */ 't', `the comment string`]
+				]]
+			],
 			[/* throws */
-				[/* throw */ 'java.util.zip.ZipException', [/* throw description */
-					[/* text */ 't', `if a ZIP format error has occurred`]
-				]],
-				[/* throw */ 'java.io.IOException', [/* throw description */
-					[/* text */ 't', `if an I/O error has occurred`]
+				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
+					[/* text */ 't', `if the length of the specified
+            ZIP file comment is greater than 0xFFFF bytes`]
+				]]
+			],
+			/* return */ UDF
+		]],
+		[/* method */ 'setLevel(int)', [
+			[/* method description */
+				[/* text */ 't', `Sets the compression level for subsequent entries which are DEFLATED.
+ The default setting is DEFAULT_COMPRESSION.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'level', [/* parameter description */
+					[/* text */ 't', `the compression level (0-9)`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
+					[/* text */ 't', `if the compression level is invalid`]
+				]]
+			],
+			/* return */ UDF
+		]],
+		[/* method */ 'setMethod(int)', [
+			[/* method description */
+				[/* text */ 't', `Sets the default compression method for subsequent entries. This
+ default will be used whenever the compression method is not specified
+ for an individual ZIP file entry, and is initially set to DEFLATED.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'method', [/* parameter description */
+					[/* text */ 't', `the default compression method`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
+					[/* text */ 't', `if the specified compression method
+            is invalid`]
 				]]
 			],
 			/* return */ UDF

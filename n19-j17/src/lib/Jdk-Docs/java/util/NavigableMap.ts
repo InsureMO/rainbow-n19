@@ -148,115 +148,141 @@ DocsCollector.collect('java.util.NavigableMap', [
 	/* fields */ UDF,
 	/* constructors */ UDF,
 	[/* methods */
-		[/* method */ 'navigableKeySet()', [
+		[/* method */ 'ceilingEntry(java.lang.Object)', [
 			[/* method description */
-				[/* text */ 't', `Returns a `],
-				[/* reference */ 'r', `java.util.NavigableSet`],
-				[/* text */ 't', ` view of the keys contained in this map.
- The set's iterator returns the keys in ascending order.
- The set is backed by the map, so changes to the map are reflected in
- the set, and vice-versa.  If the map is modified while an iteration
- over the set is in progress (except through the iterator's own `],
-				[/* inline code block */ 'i', `remove`],
-				[/* text */ 't', ` operation), the results of the iteration are undefined.  The
- set supports element removal, which removes the corresponding mapping
- from the map, via the `],
-				[/* inline code block */ 'i', `Iterator.remove`],
-				[/* text */ 't', `, `],
-				[/* inline code block */ 'i', `Set.remove`],
-				[/* text */ 't', `,
- `],
-				[/* inline code block */ 'i', `removeAll`],
-				[/* text */ 't', `, `],
-				[/* inline code block */ 'i', `retainAll`],
-				[/* text */ 't', `, and `],
-				[/* inline code block */ 'i', `clear`],
-				[/* text */ 't', ` operations.
- It does not support the `],
-				[/* inline code block */ 'i', `add`],
-				[/* text */ 't', ` or `],
-				[/* inline code block */ 'i', `addAll`],
-				[/* text */ 't', ` operations.`]
+				[/* text */ 't', `Returns a key-value mapping associated with the least key
+ greater than or equal to the given key, or `],
+				[/* inline code block */ 'i', `null`],
+				[/* text */ 't', ` if
+ there is no such key.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'key', [/* parameter description */
+					[/* text */ 't', `the key`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.lang.ClassCastException', [/* throw description */
+					[/* text */ 't', `if the specified key cannot be compared
+         with the keys currently in the map`]
+				]],
+				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
+					[/* text */ 't', `if the specified key is null
+         and this map does not permit null keys`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `an entry with the least key greater than or equal to
+         `],
+				[/* inline code block */ 'i', `key`],
+				[/* text */ 't', `, or `],
+				[/* inline code block */ 'i', `null`],
+				[/* text */ 't', ` if there is no such key`]
+			]
+		]],
+		[/* method */ 'firstEntry()', [
+			[/* method description */
+				[/* text */ 't', `Returns a key-value mapping associated with the least
+ key in this map, or `],
+				[/* inline code block */ 'i', `null`],
+				[/* text */ 't', ` if the map is empty.`]
 			],
 			/* parameters */ UDF,
 			/* throws */ UDF,
 			[/* return description */
-				[/* text */ 't', `a navigable set view of the keys in this map`]
+				[/* text */ 't', `an entry with the least key,
+         or `],
+				[/* inline code block */ 'i', `null`],
+				[/* text */ 't', ` if this map is empty`]
 			]
 		]],
-		[/* method */ 'descendingKeySet()', [
+		[/* method */ 'floorEntry(java.lang.Object)', [
 			[/* method description */
-				[/* text */ 't', `Returns a reverse order `],
-				[/* reference */ 'r', `java.util.NavigableSet`],
-				[/* text */ 't', ` view of the keys contained in this map.
- The set's iterator returns the keys in descending order.
- The set is backed by the map, so changes to the map are reflected in
- the set, and vice-versa.  If the map is modified while an iteration
- over the set is in progress (except through the iterator's own `],
-				[/* inline code block */ 'i', `remove`],
-				[/* text */ 't', ` operation), the results of the iteration are undefined.  The
- set supports element removal, which removes the corresponding mapping
- from the map, via the `],
-				[/* inline code block */ 'i', `Iterator.remove`],
-				[/* text */ 't', `, `],
-				[/* inline code block */ 'i', `Set.remove`],
+				[/* text */ 't', `Returns a key-value mapping associated with the greatest key
+ less than or equal to the given key, or `],
+				[/* inline code block */ 'i', `null`],
+				[/* text */ 't', ` if there
+ is no such key.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'key', [/* parameter description */
+					[/* text */ 't', `the key`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.lang.ClassCastException', [/* throw description */
+					[/* text */ 't', `if the specified key cannot be compared
+         with the keys currently in the map`]
+				]],
+				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
+					[/* text */ 't', `if the specified key is null
+         and this map does not permit null keys`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `an entry with the greatest key less than or equal to
+         `],
+				[/* inline code block */ 'i', `key`],
+				[/* text */ 't', `, or `],
+				[/* inline code block */ 'i', `null`],
+				[/* text */ 't', ` if there is no such key`]
+			]
+		]],
+		[/* method */ 'higherEntry(java.lang.Object)', [
+			[/* method description */
+				[/* text */ 't', `Returns a key-value mapping associated with the least key
+ strictly greater than the given key, or `],
+				[/* inline code block */ 'i', `null`],
+				[/* text */ 't', ` if there
+ is no such key.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'key', [/* parameter description */
+					[/* text */ 't', `the key`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.lang.ClassCastException', [/* throw description */
+					[/* text */ 't', `if the specified key cannot be compared
+         with the keys currently in the map`]
+				]],
+				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
+					[/* text */ 't', `if the specified key is null
+         and this map does not permit null keys`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `an entry with the least key greater than `],
+				[/* inline code block */ 'i', `key`],
 				[/* text */ 't', `,
- `],
-				[/* inline code block */ 'i', `removeAll`],
-				[/* text */ 't', `, `],
-				[/* inline code block */ 'i', `retainAll`],
-				[/* text */ 't', `, and `],
-				[/* inline code block */ 'i', `clear`],
-				[/* text */ 't', ` operations.
- It does not support the `],
-				[/* inline code block */ 'i', `add`],
-				[/* text */ 't', ` or `],
-				[/* inline code block */ 'i', `addAll`],
-				[/* text */ 't', ` operations.`]
+         or `],
+				[/* inline code block */ 'i', `null`],
+				[/* text */ 't', ` if there is no such key`]
+			]
+		]],
+		[/* method */ 'lastEntry()', [
+			[/* method description */
+				[/* text */ 't', `Returns a key-value mapping associated with the greatest
+ key in this map, or `],
+				[/* inline code block */ 'i', `null`],
+				[/* text */ 't', ` if the map is empty.`]
 			],
 			/* parameters */ UDF,
 			/* throws */ UDF,
 			[/* return description */
-				[/* text */ 't', `a reverse order navigable set view of the keys in this map`]
-			]
-		]],
-		[/* method */ 'lowerKey(java.lang.Object)', [
-			[/* method description */
-				[/* text */ 't', `Returns the greatest key strictly less than the given key, or
- `],
-				[/* inline code block */ 'i', `null`],
-				[/* text */ 't', ` if there is no such key.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'key', [/* parameter description */
-					[/* text */ 't', `the key`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.ClassCastException', [/* throw description */
-					[/* text */ 't', `if the specified key cannot be compared
-         with the keys currently in the map`]
-				]],
-				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
-					[/* text */ 't', `if the specified key is null
-         and this map does not permit null keys`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `the greatest key less than `],
-				[/* inline code block */ 'i', `key`],
-				[/* text */ 't', `,
+				[/* text */ 't', `an entry with the greatest key,
          or `],
 				[/* inline code block */ 'i', `null`],
-				[/* text */ 't', ` if there is no such key`]
+				[/* text */ 't', ` if this map is empty`]
 			]
 		]],
-		[/* method */ 'floorKey(java.lang.Object)', [
+		[/* method */ 'lowerEntry(java.lang.Object)', [
 			[/* method description */
-				[/* text */ 't', `Returns the greatest key less than or equal to the given key,
- or `],
+				[/* text */ 't', `Returns a key-value mapping associated with the greatest key
+ strictly less than the given key, or `],
 				[/* inline code block */ 'i', `null`],
-				[/* text */ 't', ` if there is no such key.`]
+				[/* text */ 't', ` if there is
+ no such key.`]
 			],
 			[/* parameters */
 				[/* parameter */ 'key', [/* parameter description */
@@ -274,69 +300,7 @@ DocsCollector.collect('java.util.NavigableMap', [
 				]]
 			],
 			[/* return description */
-				[/* text */ 't', `the greatest key less than or equal to `],
-				[/* inline code block */ 'i', `key`],
-				[/* text */ 't', `,
-         or `],
-				[/* inline code block */ 'i', `null`],
-				[/* text */ 't', ` if there is no such key`]
-			]
-		]],
-		[/* method */ 'ceilingKey(java.lang.Object)', [
-			[/* method description */
-				[/* text */ 't', `Returns the least key greater than or equal to the given key,
- or `],
-				[/* inline code block */ 'i', `null`],
-				[/* text */ 't', ` if there is no such key.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'key', [/* parameter description */
-					[/* text */ 't', `the key`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.ClassCastException', [/* throw description */
-					[/* text */ 't', `if the specified key cannot be compared
-         with the keys currently in the map`]
-				]],
-				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
-					[/* text */ 't', `if the specified key is null
-         and this map does not permit null keys`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `the least key greater than or equal to `],
-				[/* inline code block */ 'i', `key`],
-				[/* text */ 't', `,
-         or `],
-				[/* inline code block */ 'i', `null`],
-				[/* text */ 't', ` if there is no such key`]
-			]
-		]],
-		[/* method */ 'higherKey(java.lang.Object)', [
-			[/* method description */
-				[/* text */ 't', `Returns the least key strictly greater than the given key, or
- `],
-				[/* inline code block */ 'i', `null`],
-				[/* text */ 't', ` if there is no such key.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'key', [/* parameter description */
-					[/* text */ 't', `the key`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.ClassCastException', [/* throw description */
-					[/* text */ 't', `if the specified key cannot be compared
-         with the keys currently in the map`]
-				]],
-				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
-					[/* text */ 't', `if the specified key is null
-         and this map does not permit null keys`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `the least key greater than `],
+				[/* text */ 't', `an entry with the greatest key less than `],
 				[/* inline code block */ 'i', `key`],
 				[/* text */ 't', `,
          or `],
@@ -374,6 +338,110 @@ DocsCollector.collect('java.util.NavigableMap', [
          or `],
 				[/* inline code block */ 'i', `null`],
 				[/* text */ 't', ` if this map is empty`]
+			]
+		]],
+		[/* method */ 'descendingMap()', [
+			[/* method description */
+				[/* text */ 't', `Returns a reverse order view of the mappings contained in this map.
+ The descending map is backed by this map, so changes to the map are
+ reflected in the descending map, and vice-versa.  If either map is
+ modified while an iteration over a collection view of either map
+ is in progress (except through the iterator's own `],
+				[/* inline code block */ 'i', `remove`],
+				[/* text */ 't', `
+ operation), the results of the iteration are undefined.
+
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', `The returned map has an ordering equivalent to
+ `],
+					[/* reference */ 'r', `.Collections#reverseOrder(java.util.Comparator)`],
+					[/* inline code block */ 'i', `(comparator())`],
+					[/* text */ 't', `.
+ The expression `],
+					[/* inline code block */ 'i', `m.descendingMap().descendingMap()`],
+					[/* text */ 't', ` returns a
+ view of `],
+					[/* inline code block */ 'i', `m`],
+					[/* text */ 't', ` essentially equivalent to `],
+					[/* inline code block */ 'i', `m`],
+					[/* text */ 't', `.`]
+				]]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `a reverse order view of this map`]
+			]
+		]],
+		[/* method */ 'headMap(java.lang.Object,boolean)', [
+			[/* method description */
+				[/* text */ 't', `Returns a view of the portion of this map whose keys are less than (or
+ equal to, if `],
+				[/* inline code block */ 'i', `inclusive`],
+				[/* text */ 't', ` is true) `],
+				[/* inline code block */ 'i', `toKey`],
+				[/* text */ 't', `.  The returned
+ map is backed by this map, so changes in the returned map are reflected
+ in this map, and vice-versa.  The returned map supports all optional
+ map operations that this map supports.
+
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', `The returned map will throw an `],
+					[/* inline code block */ 'i', `IllegalArgumentException`],
+					[/* text */ 't', `
+ on an attempt to insert a key outside its range.`]
+				]]
+			],
+			[/* parameters */
+				[/* parameter */ 'toKey', [/* parameter description */
+					[/* text */ 't', `high endpoint of the keys in the returned map`]
+				]],
+				[/* parameter */ 'inclusive', [/* parameter description */
+					[/* text */ 't', ``],
+					[/* inline code block */ 'i', `true`],
+					[/* text */ 't', ` if the high endpoint
+        is to be included in the returned view`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.lang.ClassCastException', [/* throw description */
+					[/* text */ 't', `if `],
+					[/* inline code block */ 'i', `toKey`],
+					[/* text */ 't', ` is not compatible
+         with this map's comparator (or, if the map has no comparator,
+         if `],
+					[/* inline code block */ 'i', `toKey`],
+					[/* text */ 't', ` does not implement `],
+					[/* reference */ 'r', `java.lang.Comparable`],
+					[/* text */ 't', `).
+         Implementations may, but are not required to, throw this
+         exception if `],
+					[/* inline code block */ 'i', `toKey`],
+					[/* text */ 't', ` cannot be compared to keys
+         currently in the map.`]
+				]],
+				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
+					[/* text */ 't', `if `],
+					[/* inline code block */ 'i', `toKey`],
+					[/* text */ 't', ` is null
+         and this map does not permit null keys`]
+				]],
+				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
+					[/* text */ 't', `if this map itself has a
+         restricted range, and `],
+					[/* inline code block */ 'i', `toKey`],
+					[/* text */ 't', ` lies outside the
+         bounds of the range`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `a view of the portion of this map whose keys are less than
+         (or equal to, if `],
+				[/* inline code block */ 'i', `inclusive`],
+				[/* text */ 't', ` is true) `],
+				[/* inline code block */ 'i', `toKey`]
 			]
 		]],
 		[/* method */ 'subMap(java.lang.Object,boolean,java.lang.Object,boolean)', [
@@ -475,6 +543,215 @@ DocsCollector.collect('java.util.NavigableMap', [
 				[/* inline code block */ 'i', `toKey`]
 			]
 		]],
+		[/* method */ 'tailMap(java.lang.Object,boolean)', [
+			[/* method description */
+				[/* text */ 't', `Returns a view of the portion of this map whose keys are greater than (or
+ equal to, if `],
+				[/* inline code block */ 'i', `inclusive`],
+				[/* text */ 't', ` is true) `],
+				[/* inline code block */ 'i', `fromKey`],
+				[/* text */ 't', `.  The returned
+ map is backed by this map, so changes in the returned map are reflected
+ in this map, and vice-versa.  The returned map supports all optional
+ map operations that this map supports.
+
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', `The returned map will throw an `],
+					[/* inline code block */ 'i', `IllegalArgumentException`],
+					[/* text */ 't', `
+ on an attempt to insert a key outside its range.`]
+				]]
+			],
+			[/* parameters */
+				[/* parameter */ 'fromKey', [/* parameter description */
+					[/* text */ 't', `low endpoint of the keys in the returned map`]
+				]],
+				[/* parameter */ 'inclusive', [/* parameter description */
+					[/* text */ 't', ``],
+					[/* inline code block */ 'i', `true`],
+					[/* text */ 't', ` if the low endpoint
+        is to be included in the returned view`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.lang.ClassCastException', [/* throw description */
+					[/* text */ 't', `if `],
+					[/* inline code block */ 'i', `fromKey`],
+					[/* text */ 't', ` is not compatible
+         with this map's comparator (or, if the map has no comparator,
+         if `],
+					[/* inline code block */ 'i', `fromKey`],
+					[/* text */ 't', ` does not implement `],
+					[/* reference */ 'r', `java.lang.Comparable`],
+					[/* text */ 't', `).
+         Implementations may, but are not required to, throw this
+         exception if `],
+					[/* inline code block */ 'i', `fromKey`],
+					[/* text */ 't', ` cannot be compared to keys
+         currently in the map.`]
+				]],
+				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
+					[/* text */ 't', `if `],
+					[/* inline code block */ 'i', `fromKey`],
+					[/* text */ 't', ` is null
+         and this map does not permit null keys`]
+				]],
+				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
+					[/* text */ 't', `if this map itself has a
+         restricted range, and `],
+					[/* inline code block */ 'i', `fromKey`],
+					[/* text */ 't', ` lies outside the
+         bounds of the range`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `a view of the portion of this map whose keys are greater than
+         (or equal to, if `],
+				[/* inline code block */ 'i', `inclusive`],
+				[/* text */ 't', ` is true) `],
+				[/* inline code block */ 'i', `fromKey`]
+			]
+		]],
+		[/* method */ 'descendingKeySet()', [
+			[/* method description */
+				[/* text */ 't', `Returns a reverse order `],
+				[/* reference */ 'r', `java.util.NavigableSet`],
+				[/* text */ 't', ` view of the keys contained in this map.
+ The set's iterator returns the keys in descending order.
+ The set is backed by the map, so changes to the map are reflected in
+ the set, and vice-versa.  If the map is modified while an iteration
+ over the set is in progress (except through the iterator's own `],
+				[/* inline code block */ 'i', `remove`],
+				[/* text */ 't', ` operation), the results of the iteration are undefined.  The
+ set supports element removal, which removes the corresponding mapping
+ from the map, via the `],
+				[/* inline code block */ 'i', `Iterator.remove`],
+				[/* text */ 't', `, `],
+				[/* inline code block */ 'i', `Set.remove`],
+				[/* text */ 't', `,
+ `],
+				[/* inline code block */ 'i', `removeAll`],
+				[/* text */ 't', `, `],
+				[/* inline code block */ 'i', `retainAll`],
+				[/* text */ 't', `, and `],
+				[/* inline code block */ 'i', `clear`],
+				[/* text */ 't', ` operations.
+ It does not support the `],
+				[/* inline code block */ 'i', `add`],
+				[/* text */ 't', ` or `],
+				[/* inline code block */ 'i', `addAll`],
+				[/* text */ 't', ` operations.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `a reverse order navigable set view of the keys in this map`]
+			]
+		]],
+		[/* method */ 'navigableKeySet()', [
+			[/* method description */
+				[/* text */ 't', `Returns a `],
+				[/* reference */ 'r', `java.util.NavigableSet`],
+				[/* text */ 't', ` view of the keys contained in this map.
+ The set's iterator returns the keys in ascending order.
+ The set is backed by the map, so changes to the map are reflected in
+ the set, and vice-versa.  If the map is modified while an iteration
+ over the set is in progress (except through the iterator's own `],
+				[/* inline code block */ 'i', `remove`],
+				[/* text */ 't', ` operation), the results of the iteration are undefined.  The
+ set supports element removal, which removes the corresponding mapping
+ from the map, via the `],
+				[/* inline code block */ 'i', `Iterator.remove`],
+				[/* text */ 't', `, `],
+				[/* inline code block */ 'i', `Set.remove`],
+				[/* text */ 't', `,
+ `],
+				[/* inline code block */ 'i', `removeAll`],
+				[/* text */ 't', `, `],
+				[/* inline code block */ 'i', `retainAll`],
+				[/* text */ 't', `, and `],
+				[/* inline code block */ 'i', `clear`],
+				[/* text */ 't', ` operations.
+ It does not support the `],
+				[/* inline code block */ 'i', `add`],
+				[/* text */ 't', ` or `],
+				[/* inline code block */ 'i', `addAll`],
+				[/* text */ 't', ` operations.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `a navigable set view of the keys in this map`]
+			]
+		]],
+		[/* method */ 'headMap(java.lang.Object)', [
+			[/* method description */
+				[/* text */ 't', `Returns a view of the portion of this map whose keys are
+ strictly less than `],
+				[/* inline code block */ 'i', `toKey`],
+				[/* text */ 't', `.  The returned map is backed
+ by this map, so changes in the returned map are reflected in
+ this map, and vice-versa.  The returned map supports all
+ optional map operations that this map supports.
+
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', `The returned map will throw an `],
+					[/* inline code block */ 'i', `IllegalArgumentException`],
+					[/* text */ 't', `
+ on an attempt to insert a key outside its range.
+
+ `]
+				]],
+				[/* block */ 'b', [
+					[/* text */ 't', `Equivalent to `],
+					[/* inline code block */ 'i', `headMap(toKey, false)`],
+					[/* text */ 't', `.`]
+				]]
+			],
+			[/* parameters */
+				[/* parameter */ 'toKey', [/* parameter description */
+					[/* text */ 't', `high endpoint (exclusive) of the keys in the returned map`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.lang.ClassCastException', [/* throw description */
+					[/* text */ 't', `if `],
+					[/* inline code block */ 'i', `toKey`],
+					[/* text */ 't', ` is not compatible
+         with this map's comparator (or, if the map has no comparator,
+         if `],
+					[/* inline code block */ 'i', `toKey`],
+					[/* text */ 't', ` does not implement `],
+					[/* reference */ 'r', `java.lang.Comparable`],
+					[/* text */ 't', `).
+         Implementations may, but are not required to, throw this
+         exception if `],
+					[/* inline code block */ 'i', `toKey`],
+					[/* text */ 't', ` cannot be compared to keys
+         currently in the map.`]
+				]],
+				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
+					[/* text */ 't', `if `],
+					[/* inline code block */ 'i', `toKey`],
+					[/* text */ 't', ` is null and
+         this map does not permit null keys`]
+				]],
+				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
+					[/* text */ 't', `if this map itself has a
+         restricted range, and `],
+					[/* inline code block */ 'i', `toKey`],
+					[/* text */ 't', ` lies outside the
+         bounds of the range`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `a view of the portion of this map whose keys are strictly
+         less than `],
+				[/* inline code block */ 'i', `toKey`]
+			]
+		]],
 		[/* method */ 'subMap(java.lang.Object,java.lang.Object)', [
 			[/* method description */
 				[/* text */ 't', `Returns a view of the portion of this map whose keys range from
@@ -565,213 +842,6 @@ DocsCollector.collect('java.util.NavigableMap', [
 				[/* text */ 't', `, exclusive`]
 			]
 		]],
-		[/* method */ 'headMap(java.lang.Object)', [
-			[/* method description */
-				[/* text */ 't', `Returns a view of the portion of this map whose keys are
- strictly less than `],
-				[/* inline code block */ 'i', `toKey`],
-				[/* text */ 't', `.  The returned map is backed
- by this map, so changes in the returned map are reflected in
- this map, and vice-versa.  The returned map supports all
- optional map operations that this map supports.
-
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', `The returned map will throw an `],
-					[/* inline code block */ 'i', `IllegalArgumentException`],
-					[/* text */ 't', `
- on an attempt to insert a key outside its range.
-
- `]
-				]],
-				[/* block */ 'b', [
-					[/* text */ 't', `Equivalent to `],
-					[/* inline code block */ 'i', `headMap(toKey, false)`],
-					[/* text */ 't', `.`]
-				]]
-			],
-			[/* parameters */
-				[/* parameter */ 'toKey', [/* parameter description */
-					[/* text */ 't', `high endpoint (exclusive) of the keys in the returned map`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.ClassCastException', [/* throw description */
-					[/* text */ 't', `if `],
-					[/* inline code block */ 'i', `toKey`],
-					[/* text */ 't', ` is not compatible
-         with this map's comparator (or, if the map has no comparator,
-         if `],
-					[/* inline code block */ 'i', `toKey`],
-					[/* text */ 't', ` does not implement `],
-					[/* reference */ 'r', `java.lang.Comparable`],
-					[/* text */ 't', `).
-         Implementations may, but are not required to, throw this
-         exception if `],
-					[/* inline code block */ 'i', `toKey`],
-					[/* text */ 't', ` cannot be compared to keys
-         currently in the map.`]
-				]],
-				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
-					[/* text */ 't', `if `],
-					[/* inline code block */ 'i', `toKey`],
-					[/* text */ 't', ` is null and
-         this map does not permit null keys`]
-				]],
-				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
-					[/* text */ 't', `if this map itself has a
-         restricted range, and `],
-					[/* inline code block */ 'i', `toKey`],
-					[/* text */ 't', ` lies outside the
-         bounds of the range`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `a view of the portion of this map whose keys are strictly
-         less than `],
-				[/* inline code block */ 'i', `toKey`]
-			]
-		]],
-		[/* method */ 'headMap(java.lang.Object,boolean)', [
-			[/* method description */
-				[/* text */ 't', `Returns a view of the portion of this map whose keys are less than (or
- equal to, if `],
-				[/* inline code block */ 'i', `inclusive`],
-				[/* text */ 't', ` is true) `],
-				[/* inline code block */ 'i', `toKey`],
-				[/* text */ 't', `.  The returned
- map is backed by this map, so changes in the returned map are reflected
- in this map, and vice-versa.  The returned map supports all optional
- map operations that this map supports.
-
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', `The returned map will throw an `],
-					[/* inline code block */ 'i', `IllegalArgumentException`],
-					[/* text */ 't', `
- on an attempt to insert a key outside its range.`]
-				]]
-			],
-			[/* parameters */
-				[/* parameter */ 'toKey', [/* parameter description */
-					[/* text */ 't', `high endpoint of the keys in the returned map`]
-				]],
-				[/* parameter */ 'inclusive', [/* parameter description */
-					[/* text */ 't', ``],
-					[/* inline code block */ 'i', `true`],
-					[/* text */ 't', ` if the high endpoint
-        is to be included in the returned view`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.ClassCastException', [/* throw description */
-					[/* text */ 't', `if `],
-					[/* inline code block */ 'i', `toKey`],
-					[/* text */ 't', ` is not compatible
-         with this map's comparator (or, if the map has no comparator,
-         if `],
-					[/* inline code block */ 'i', `toKey`],
-					[/* text */ 't', ` does not implement `],
-					[/* reference */ 'r', `java.lang.Comparable`],
-					[/* text */ 't', `).
-         Implementations may, but are not required to, throw this
-         exception if `],
-					[/* inline code block */ 'i', `toKey`],
-					[/* text */ 't', ` cannot be compared to keys
-         currently in the map.`]
-				]],
-				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
-					[/* text */ 't', `if `],
-					[/* inline code block */ 'i', `toKey`],
-					[/* text */ 't', ` is null
-         and this map does not permit null keys`]
-				]],
-				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
-					[/* text */ 't', `if this map itself has a
-         restricted range, and `],
-					[/* inline code block */ 'i', `toKey`],
-					[/* text */ 't', ` lies outside the
-         bounds of the range`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `a view of the portion of this map whose keys are less than
-         (or equal to, if `],
-				[/* inline code block */ 'i', `inclusive`],
-				[/* text */ 't', ` is true) `],
-				[/* inline code block */ 'i', `toKey`]
-			]
-		]],
-		[/* method */ 'tailMap(java.lang.Object,boolean)', [
-			[/* method description */
-				[/* text */ 't', `Returns a view of the portion of this map whose keys are greater than (or
- equal to, if `],
-				[/* inline code block */ 'i', `inclusive`],
-				[/* text */ 't', ` is true) `],
-				[/* inline code block */ 'i', `fromKey`],
-				[/* text */ 't', `.  The returned
- map is backed by this map, so changes in the returned map are reflected
- in this map, and vice-versa.  The returned map supports all optional
- map operations that this map supports.
-
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', `The returned map will throw an `],
-					[/* inline code block */ 'i', `IllegalArgumentException`],
-					[/* text */ 't', `
- on an attempt to insert a key outside its range.`]
-				]]
-			],
-			[/* parameters */
-				[/* parameter */ 'fromKey', [/* parameter description */
-					[/* text */ 't', `low endpoint of the keys in the returned map`]
-				]],
-				[/* parameter */ 'inclusive', [/* parameter description */
-					[/* text */ 't', ``],
-					[/* inline code block */ 'i', `true`],
-					[/* text */ 't', ` if the low endpoint
-        is to be included in the returned view`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.ClassCastException', [/* throw description */
-					[/* text */ 't', `if `],
-					[/* inline code block */ 'i', `fromKey`],
-					[/* text */ 't', ` is not compatible
-         with this map's comparator (or, if the map has no comparator,
-         if `],
-					[/* inline code block */ 'i', `fromKey`],
-					[/* text */ 't', ` does not implement `],
-					[/* reference */ 'r', `java.lang.Comparable`],
-					[/* text */ 't', `).
-         Implementations may, but are not required to, throw this
-         exception if `],
-					[/* inline code block */ 'i', `fromKey`],
-					[/* text */ 't', ` cannot be compared to keys
-         currently in the map.`]
-				]],
-				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
-					[/* text */ 't', `if `],
-					[/* inline code block */ 'i', `fromKey`],
-					[/* text */ 't', ` is null
-         and this map does not permit null keys`]
-				]],
-				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
-					[/* text */ 't', `if this map itself has a
-         restricted range, and `],
-					[/* inline code block */ 'i', `fromKey`],
-					[/* text */ 't', ` lies outside the
-         bounds of the range`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `a view of the portion of this map whose keys are greater than
-         (or equal to, if `],
-				[/* inline code block */ 'i', `inclusive`],
-				[/* text */ 't', ` is true) `],
-				[/* inline code block */ 'i', `fromKey`]
-			]
-		]],
 		[/* method */ 'tailMap(java.lang.Object)', [
 			[/* method description */
 				[/* text */ 't', `Returns a view of the portion of this map whose keys are
@@ -839,47 +909,12 @@ DocsCollector.collect('java.util.NavigableMap', [
 				[/* inline code block */ 'i', `fromKey`]
 			]
 		]],
-		[/* method */ 'descendingMap()', [
+		[/* method */ 'ceilingKey(java.lang.Object)', [
 			[/* method description */
-				[/* text */ 't', `Returns a reverse order view of the mappings contained in this map.
- The descending map is backed by this map, so changes to the map are
- reflected in the descending map, and vice-versa.  If either map is
- modified while an iteration over a collection view of either map
- is in progress (except through the iterator's own `],
-				[/* inline code block */ 'i', `remove`],
-				[/* text */ 't', `
- operation), the results of the iteration are undefined.
-
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', `The returned map has an ordering equivalent to
- `],
-					[/* reference */ 'r', `.Collections#reverseOrder(java.util.Comparator)`],
-					[/* inline code block */ 'i', `(comparator())`],
-					[/* text */ 't', `.
- The expression `],
-					[/* inline code block */ 'i', `m.descendingMap().descendingMap()`],
-					[/* text */ 't', ` returns a
- view of `],
-					[/* inline code block */ 'i', `m`],
-					[/* text */ 't', ` essentially equivalent to `],
-					[/* inline code block */ 'i', `m`],
-					[/* text */ 't', `.`]
-				]]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `a reverse order view of this map`]
-			]
-		]],
-		[/* method */ 'lowerEntry(java.lang.Object)', [
-			[/* method description */
-				[/* text */ 't', `Returns a key-value mapping associated with the greatest key
- strictly less than the given key, or `],
+				[/* text */ 't', `Returns the least key greater than or equal to the given key,
+ or `],
 				[/* inline code block */ 'i', `null`],
-				[/* text */ 't', ` if there is
- no such key.`]
+				[/* text */ 't', ` if there is no such key.`]
 			],
 			[/* parameters */
 				[/* parameter */ 'key', [/* parameter description */
@@ -897,7 +932,7 @@ DocsCollector.collect('java.util.NavigableMap', [
 				]]
 			],
 			[/* return description */
-				[/* text */ 't', `an entry with the greatest key less than `],
+				[/* text */ 't', `the least key greater than or equal to `],
 				[/* inline code block */ 'i', `key`],
 				[/* text */ 't', `,
          or `],
@@ -905,13 +940,12 @@ DocsCollector.collect('java.util.NavigableMap', [
 				[/* text */ 't', ` if there is no such key`]
 			]
 		]],
-		[/* method */ 'floorEntry(java.lang.Object)', [
+		[/* method */ 'floorKey(java.lang.Object)', [
 			[/* method description */
-				[/* text */ 't', `Returns a key-value mapping associated with the greatest key
- less than or equal to the given key, or `],
+				[/* text */ 't', `Returns the greatest key less than or equal to the given key,
+ or `],
 				[/* inline code block */ 'i', `null`],
-				[/* text */ 't', ` if there
- is no such key.`]
+				[/* text */ 't', ` if there is no such key.`]
 			],
 			[/* parameters */
 				[/* parameter */ 'key', [/* parameter description */
@@ -929,71 +963,7 @@ DocsCollector.collect('java.util.NavigableMap', [
 				]]
 			],
 			[/* return description */
-				[/* text */ 't', `an entry with the greatest key less than or equal to
-         `],
-				[/* inline code block */ 'i', `key`],
-				[/* text */ 't', `, or `],
-				[/* inline code block */ 'i', `null`],
-				[/* text */ 't', ` if there is no such key`]
-			]
-		]],
-		[/* method */ 'ceilingEntry(java.lang.Object)', [
-			[/* method description */
-				[/* text */ 't', `Returns a key-value mapping associated with the least key
- greater than or equal to the given key, or `],
-				[/* inline code block */ 'i', `null`],
-				[/* text */ 't', ` if
- there is no such key.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'key', [/* parameter description */
-					[/* text */ 't', `the key`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.ClassCastException', [/* throw description */
-					[/* text */ 't', `if the specified key cannot be compared
-         with the keys currently in the map`]
-				]],
-				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
-					[/* text */ 't', `if the specified key is null
-         and this map does not permit null keys`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `an entry with the least key greater than or equal to
-         `],
-				[/* inline code block */ 'i', `key`],
-				[/* text */ 't', `, or `],
-				[/* inline code block */ 'i', `null`],
-				[/* text */ 't', ` if there is no such key`]
-			]
-		]],
-		[/* method */ 'higherEntry(java.lang.Object)', [
-			[/* method description */
-				[/* text */ 't', `Returns a key-value mapping associated with the least key
- strictly greater than the given key, or `],
-				[/* inline code block */ 'i', `null`],
-				[/* text */ 't', ` if there
- is no such key.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'key', [/* parameter description */
-					[/* text */ 't', `the key`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.ClassCastException', [/* throw description */
-					[/* text */ 't', `if the specified key cannot be compared
-         with the keys currently in the map`]
-				]],
-				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
-					[/* text */ 't', `if the specified key is null
-         and this map does not permit null keys`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `an entry with the least key greater than `],
+				[/* text */ 't', `the greatest key less than or equal to `],
 				[/* inline code block */ 'i', `key`],
 				[/* text */ 't', `,
          or `],
@@ -1001,36 +971,66 @@ DocsCollector.collect('java.util.NavigableMap', [
 				[/* text */ 't', ` if there is no such key`]
 			]
 		]],
-		[/* method */ 'firstEntry()', [
+		[/* method */ 'higherKey(java.lang.Object)', [
 			[/* method description */
-				[/* text */ 't', `Returns a key-value mapping associated with the least
- key in this map, or `],
+				[/* text */ 't', `Returns the least key strictly greater than the given key, or
+ `],
 				[/* inline code block */ 'i', `null`],
-				[/* text */ 't', ` if the map is empty.`]
+				[/* text */ 't', ` if there is no such key.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			[/* parameters */
+				[/* parameter */ 'key', [/* parameter description */
+					[/* text */ 't', `the key`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.lang.ClassCastException', [/* throw description */
+					[/* text */ 't', `if the specified key cannot be compared
+         with the keys currently in the map`]
+				]],
+				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
+					[/* text */ 't', `if the specified key is null
+         and this map does not permit null keys`]
+				]]
+			],
 			[/* return description */
-				[/* text */ 't', `an entry with the least key,
+				[/* text */ 't', `the least key greater than `],
+				[/* inline code block */ 'i', `key`],
+				[/* text */ 't', `,
          or `],
 				[/* inline code block */ 'i', `null`],
-				[/* text */ 't', ` if this map is empty`]
+				[/* text */ 't', ` if there is no such key`]
 			]
 		]],
-		[/* method */ 'lastEntry()', [
+		[/* method */ 'lowerKey(java.lang.Object)', [
 			[/* method description */
-				[/* text */ 't', `Returns a key-value mapping associated with the greatest
- key in this map, or `],
+				[/* text */ 't', `Returns the greatest key strictly less than the given key, or
+ `],
 				[/* inline code block */ 'i', `null`],
-				[/* text */ 't', ` if the map is empty.`]
+				[/* text */ 't', ` if there is no such key.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			[/* parameters */
+				[/* parameter */ 'key', [/* parameter description */
+					[/* text */ 't', `the key`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.lang.ClassCastException', [/* throw description */
+					[/* text */ 't', `if the specified key cannot be compared
+         with the keys currently in the map`]
+				]],
+				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
+					[/* text */ 't', `if the specified key is null
+         and this map does not permit null keys`]
+				]]
+			],
 			[/* return description */
-				[/* text */ 't', `an entry with the greatest key,
+				[/* text */ 't', `the greatest key less than `],
+				[/* inline code block */ 'i', `key`],
+				[/* text */ 't', `,
          or `],
 				[/* inline code block */ 'i', `null`],
-				[/* text */ 't', ` if this map is empty`]
+				[/* text */ 't', ` if there is no such key`]
 			]
 		]]
 	],

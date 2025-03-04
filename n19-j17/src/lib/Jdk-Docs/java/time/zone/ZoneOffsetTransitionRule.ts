@@ -43,14 +43,48 @@ DocsCollector.collect('java.time.zone.ZoneOffsetTransitionRule', [
 				[/* text */ 't', `true if equal`]
 			]
 		]],
-		[/* method */ 'toString()', [
+		[/* method */ 'isMidnightEndOfDay()', [
 			[/* method description */
-				[/* text */ 't', `Returns a string describing this object.`]
+				[/* text */ 't', `Is the transition local time midnight at the end of day.
+ `],
+				[/* block */ 'b', `
+ The transition may be represented as occurring at 24:00.`]
 			],
 			/* parameters */ UDF,
 			/* throws */ UDF,
 			[/* return description */
-				[/* text */ 't', `a string for debugging, not null`]
+				[/* text */ 't', `whether a local time of midnight is at the start or end of the day`]
+			]
+		]],
+		[/* method */ 'getDayOfMonthIndicator()', [
+			[/* method description */
+				[/* text */ 't', `Gets the indicator of the day-of-month of the transition.
+ `],
+				[/* block */ 'b', `
+ If the rule defines an exact date then the day is the month of that date.
+ `],
+				[/* block */ 'b', `
+ If the rule defines a week where the transition might occur, then the day
+ defines either the start of the end of the transition week.
+ `],
+				[/* block */ 'b', `
+ If the value is positive, then it represents a normal day-of-month, and is the
+ earliest possible date that the transition can be.
+ The date may refer to 29th February which should be treated as 1st March in non-leap years.
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', `
+ If the value is negative, then it represents the number of days back from the
+ end of the month where `],
+					[/* inline code block */ 'i', `-1`],
+					[/* text */ 't', ` is the last day of the month.
+ In this case, the day identified is the latest possible date that the transition can be.`]
+				]]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the day-of-month indicator, from -28 to 31 excluding 0`]
 			]
 		]],
 		[/* method */ 'hashCode()', [
@@ -61,6 +95,129 @@ DocsCollector.collect('java.time.zone.ZoneOffsetTransitionRule', [
 			/* throws */ UDF,
 			[/* return description */
 				[/* text */ 't', `the hash code`]
+			]
+		]],
+		[/* method */ 'toString()', [
+			[/* method description */
+				[/* text */ 't', `Returns a string describing this object.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `a string for debugging, not null`]
+			]
+		]],
+		[/* method */ 'getDayOfWeek()', [
+			[/* method description */
+				[/* text */ 't', `Gets the day-of-week of the transition.
+ `],
+				[/* block */ 'b', `
+ If the rule defines an exact date then this returns null.
+ `],
+				[/* block */ 'b', `
+ If the rule defines a week where the cutover might occur, then this method
+ returns the day-of-week that the month-day will be adjusted to.
+ If the day is positive then the adjustment is later.
+ If the day is negative then the adjustment is earlier.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the day-of-week that the transition occurs, null if the rule defines an exact date`]
+			]
+		]],
+		[/* method */ 'getLocalTime()', [
+			[/* method description */
+				[/* text */ 't', `Gets the local time of day of the transition which must be checked with
+ `],
+				[/* reference */ 'r', `#isMidnightEndOfDay()`, `isMidnightEndOfDay()`],
+				[/* text */ 't', `.
+ `],
+				[/* block */ 'b', `
+ The time is converted into an instant using the time definition.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the local time of day of the transition, not null`]
+			]
+		]],
+		[/* method */ 'getMonth()', [
+			[/* method description */
+				[/* text */ 't', `Gets the month of the transition.
+ `],
+				[/* block */ 'b', `
+ If the rule defines an exact date then the month is the month of that date.
+ `],
+				[/* block */ 'b', `
+ If the rule defines a week where the transition might occur, then the month
+ if the month of either the earliest or latest possible date of the cutover.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the month of the transition, not null`]
+			]
+		]],
+		[/* method */ 'createTransition(int)', [
+			[/* method description */
+				[/* text */ 't', `Creates a transition instance for the specified year.
+ `],
+				[/* block */ 'b', `
+ Calculations are performed using the ISO-8601 chronology.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'year', [/* parameter description */
+					[/* text */ 't', `the year to create a transition for, not null`]
+				]]
+			],
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the transition instance, not null`]
+			]
+		]],
+		[/* method */ 'getTimeDefinition()', [
+			[/* method description */
+				[/* text */ 't', `Gets the time definition, specifying how to convert the time to an instant.
+ `],
+				[/* block */ 'b', `
+ The local time can be converted to an instant using the standard offset,
+ the wall offset or UTC.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the time definition, not null`]
+			]
+		]],
+		[/* method */ 'getOffsetAfter()', [
+			[/* method description */
+				[/* text */ 't', `Gets the offset after the transition.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the offset after, not null`]
+			]
+		]],
+		[/* method */ 'getOffsetBefore()', [
+			[/* method description */
+				[/* text */ 't', `Gets the offset before the transition.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the offset before, not null`]
+			]
+		]],
+		[/* method */ 'getStandardOffset()', [
+			[/* method description */
+				[/* text */ 't', `Gets the standard offset in force at the transition.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the standard offset, not null`]
 			]
 		]],
 		[/* method */ 'of(java.time.Month,int,java.time.DayOfWeek,java.time.LocalTime,boolean,java.time.zone.ZoneOffsetTransitionRule.TimeDefinition,java.time.ZoneOffset,java.time.ZoneOffset,java.time.ZoneOffset)', [
@@ -123,163 +280,6 @@ DocsCollector.collect('java.time.zone.ZoneOffsetTransitionRule', [
 			],
 			[/* return description */
 				[/* text */ 't', `the rule, not null`]
-			]
-		]],
-		[/* method */ 'getDayOfWeek()', [
-			[/* method description */
-				[/* text */ 't', `Gets the day-of-week of the transition.
- `],
-				[/* block */ 'b', `
- If the rule defines an exact date then this returns null.
- `],
-				[/* block */ 'b', `
- If the rule defines a week where the cutover might occur, then this method
- returns the day-of-week that the month-day will be adjusted to.
- If the day is positive then the adjustment is later.
- If the day is negative then the adjustment is earlier.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the day-of-week that the transition occurs, null if the rule defines an exact date`]
-			]
-		]],
-		[/* method */ 'getOffsetAfter()', [
-			[/* method description */
-				[/* text */ 't', `Gets the offset after the transition.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the offset after, not null`]
-			]
-		]],
-		[/* method */ 'getOffsetBefore()', [
-			[/* method description */
-				[/* text */ 't', `Gets the offset before the transition.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the offset before, not null`]
-			]
-		]],
-		[/* method */ 'createTransition(int)', [
-			[/* method description */
-				[/* text */ 't', `Creates a transition instance for the specified year.
- `],
-				[/* block */ 'b', `
- Calculations are performed using the ISO-8601 chronology.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'year', [/* parameter description */
-					[/* text */ 't', `the year to create a transition for, not null`]
-				]]
-			],
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the transition instance, not null`]
-			]
-		]],
-		[/* method */ 'getStandardOffset()', [
-			[/* method description */
-				[/* text */ 't', `Gets the standard offset in force at the transition.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the standard offset, not null`]
-			]
-		]],
-		[/* method */ 'getMonth()', [
-			[/* method description */
-				[/* text */ 't', `Gets the month of the transition.
- `],
-				[/* block */ 'b', `
- If the rule defines an exact date then the month is the month of that date.
- `],
-				[/* block */ 'b', `
- If the rule defines a week where the transition might occur, then the month
- if the month of either the earliest or latest possible date of the cutover.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the month of the transition, not null`]
-			]
-		]],
-		[/* method */ 'getDayOfMonthIndicator()', [
-			[/* method description */
-				[/* text */ 't', `Gets the indicator of the day-of-month of the transition.
- `],
-				[/* block */ 'b', `
- If the rule defines an exact date then the day is the month of that date.
- `],
-				[/* block */ 'b', `
- If the rule defines a week where the transition might occur, then the day
- defines either the start of the end of the transition week.
- `],
-				[/* block */ 'b', `
- If the value is positive, then it represents a normal day-of-month, and is the
- earliest possible date that the transition can be.
- The date may refer to 29th February which should be treated as 1st March in non-leap years.
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', `
- If the value is negative, then it represents the number of days back from the
- end of the month where `],
-					[/* inline code block */ 'i', `-1`],
-					[/* text */ 't', ` is the last day of the month.
- In this case, the day identified is the latest possible date that the transition can be.`]
-				]]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the day-of-month indicator, from -28 to 31 excluding 0`]
-			]
-		]],
-		[/* method */ 'getLocalTime()', [
-			[/* method description */
-				[/* text */ 't', `Gets the local time of day of the transition which must be checked with
- `],
-				[/* reference */ 'r', `#isMidnightEndOfDay()`, `isMidnightEndOfDay()`],
-				[/* text */ 't', `.
- `],
-				[/* block */ 'b', `
- The time is converted into an instant using the time definition.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the local time of day of the transition, not null`]
-			]
-		]],
-		[/* method */ 'isMidnightEndOfDay()', [
-			[/* method description */
-				[/* text */ 't', `Is the transition local time midnight at the end of day.
- `],
-				[/* block */ 'b', `
- The transition may be represented as occurring at 24:00.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `whether a local time of midnight is at the start or end of the day`]
-			]
-		]],
-		[/* method */ 'getTimeDefinition()', [
-			[/* method description */
-				[/* text */ 't', `Gets the time definition, specifying how to convert the time to an instant.
- `],
-				[/* block */ 'b', `
- The local time can be converted to an instant using the standard offset,
- the wall offset or UTC.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the time definition, not null`]
 			]
 		]]
 	],

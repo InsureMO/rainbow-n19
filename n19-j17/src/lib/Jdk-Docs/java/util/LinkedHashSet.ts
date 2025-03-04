@@ -174,25 +174,6 @@ DocsCollector.collect('java.util.LinkedHashSet', [
 	],
 	/* fields */ UDF,
 	[/* constructors */
-		[/* constructor */ '<init>(java.util.Collection)', [
-			[/* constructor description */
-				[/* text */ 't', `Constructs a new linked hash set with the same elements as the
- specified collection.  The linked hash set is created with an initial
- capacity sufficient to hold the elements in the specified collection
- and the default load factor (0.75).`]
-			],
-			[/* parameters */
-				[/* parameter */ 'c', [/* parameter description */
-					[/* text */ 't', `the collection whose elements are to be placed into
-           this set`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
-					[/* text */ 't', `if the specified collection is null`]
-				]]
-			]
-		]],
 		[/* constructor */ '<init>()', [
 			[/* constructor description */
 				[/* text */ 't', `Constructs a new, empty linked hash set with the default initial
@@ -235,6 +216,25 @@ DocsCollector.collect('java.util.LinkedHashSet', [
 				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
 					[/* text */ 't', `if the initial capacity is less
                than zero, or if the load factor is nonpositive`]
+				]]
+			]
+		]],
+		[/* constructor */ '<init>(java.util.Collection)', [
+			[/* constructor description */
+				[/* text */ 't', `Constructs a new linked hash set with the same elements as the
+ specified collection.  The linked hash set is created with an initial
+ capacity sufficient to hold the elements in the specified collection
+ and the default load factor (0.75).`]
+			],
+			[/* parameters */
+				[/* parameter */ 'c', [/* parameter description */
+					[/* text */ 't', `the collection whose elements are to be placed into
+           this set`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
+					[/* text */ 't', `if the specified collection is null`]
 				]]
 			]
 		]]

@@ -817,202 +817,75 @@ DocsCollector.collect('java.lang.invoke.VarHandle', [
 	/* fields */ UDF,
 	/* constructors */ UDF,
 	[/* methods */
-		[/* method */ 'get(java.lang.Object...)', [
+		[/* method */ 'withInvokeBehavior()', [
 			[/* method description */
-				[/* text */ 't', `Returns the value of a variable, with memory semantics of reading as
- if the variable was declared non-`],
-				[/* inline code block */ 'i', `volatile`],
-				[/* text */ 't', `.  Commonly referred to
- as plain read access.
-
+				[/* text */ 't', `Returns a VarHandle, with access to the same variable(s) as this VarHandle, but whose
+ invocation behavior of access mode methods is adjusted to
+ `],
+				[/* text */ 't', `invoke behavior`],
+				[/* text */ 't', `.
+ `],
+				[/* block */ 'b', `
+ If this VarHandle already has invoke behavior this VarHandle is returned.
  `],
 				[/* block */ 'b', [
-					[/* text */ 't', `The method signature is of the form `],
-					[/* inline code block */ 'i', `(CT1 ct1, ..., CTn ctn)T`],
-					[/* text */ 't', `.
-
- `]
-				]],
-				[/* block */ 'b', [
-					[/* text */ 't', `The symbolic type descriptor at the call site of `],
-					[/* inline code block */ 'i', `get`],
 					[/* text */ 't', `
- must match the access mode type that is the result of calling
- `],
-					[/* inline code block */ 'i', `accessModeType(VarHandle.AccessMode.GET)`],
-					[/* text */ 't', ` on this VarHandle.
-
- `]
-				]],
-				[/* block */ 'b', [
-					[/* text */ 't', `This access mode is supported by all VarHandle instances and never
- throws `],
-					[/* inline code block */ 'i', `UnsupportedOperationException`],
+ Invoking `],
+					[/* reference */ 'r', `#hasInvokeExactBehavior()`, `hasInvokeExactBehavior()`],
+					[/* text */ 't', ` on the returned var handle
+ is guaranteed to return `],
+					[/* inline code block */ 'i', `false`],
 					[/* text */ 't', `.`]
 				]]
 			],
-			[/* parameters */
-				[/* parameter */ 'args', [/* parameter description */
-					[/* text */ 't', `the signature-polymorphic parameter list of the form
- `],
-					[/* inline code block */ 'i', `(CT1 ct1, ..., CTn)`],
-					[/* text */ 't', `
- , statically represented using varargs.`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.invoke.WrongMethodTypeException', [/* throw description */
-					[/* text */ 't', `if the access mode type does not
- match the caller's symbolic type descriptor.`]
-				]],
-				[/* throw */ 'java.lang.ClassCastException', [/* throw description */
-					[/* text */ 't', `if the access mode type matches the caller's
- symbolic type descriptor, but a reference cast fails.`]
-				]]
-			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
 			[/* return description */
-				[/* text */ 't', `the signature-polymorphic result that is the value of the
- variable
- , statically represented using `],
-				[/* inline code block */ 'i', `Object`],
+				[/* text */ 't', `a VarHandle with invoke behavior`]
+			]
+		]],
+		[/* method */ 'withInvokeExactBehavior()', [
+			[/* method description */
+				[/* text */ 't', `Returns a VarHandle, with access to the same variable(s) as this VarHandle, but whose
+ invocation behavior of access mode methods is adjusted to
+ `],
+				[/* text */ 't', `invoke-exact behavior`],
+				[/* text */ 't', `.
+ `],
+				[/* block */ 'b', `
+ If this VarHandle already has invoke-exact behavior this VarHandle is returned.
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', `
+ Invoking `],
+					[/* reference */ 'r', `#hasInvokeExactBehavior()`, `hasInvokeExactBehavior()`],
+					[/* text */ 't', ` on the returned var handle
+ is guaranteed to return `],
+					[/* inline code block */ 'i', `true`],
+					[/* text */ 't', `.`]
+				]]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `a VarHandle with invoke-exact behavior`]
+			]
+		]],
+		[/* method */ 'hasInvokeExactBehavior()', [
+			[/* method description */
+				[/* text */ 't', `Returns `],
+				[/* inline code block */ 'i', `true`],
+				[/* text */ 't', ` if this VarHandle has `],
+				[/* text */ 't', `invoke-exact behavior`],
 				[/* text */ 't', `.`]
-			]
-		]],
-		[/* method */ 'toString()', [
-			[/* method description */
-				[/* text */ 't', `Returns a compact textual description of this `],
-				[/* reference */ 'r', `java.lang.invoke.VarHandle`],
-				[/* text */ 't', `,
- including the type of variable described, and a description of its coordinates.`]
 			],
 			/* parameters */ UDF,
 			/* throws */ UDF,
 			[/* return description */
-				[/* text */ 't', `A compact textual description of this `],
-				[/* reference */ 'r', `java.lang.invoke.VarHandle`]
-			]
-		]],
-		[/* method */ 'fullFence()', [
-			[/* method description */
-				[/* text */ 't', `Ensures that loads and stores before the fence will not be reordered
- with
- loads and stores after the fence.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			/* return */ UDF
-		]],
-		[/* method */ 'describeConstable()', [
-			[/* method description */
-				[/* text */ 't', `Return a nominal descriptor for this instance, if one can be
- constructed, or an empty `],
-				[/* reference */ 'r', `java.util.Optional`],
-				[/* text */ 't', ` if one cannot be.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `An `],
-				[/* reference */ 'r', `java.util.Optional`],
-				[/* text */ 't', ` containing the resulting nominal descriptor,
- or an empty `],
-				[/* reference */ 'r', `java.util.Optional`],
-				[/* text */ 't', ` if one cannot be constructed.`]
-			]
-		]],
-		[/* method */ 'set(java.lang.Object...)', [
-			[/* method description */
-				[/* text */ 't', `Sets the value of a variable to the `],
-				[/* inline code block */ 'i', `newValue`],
-				[/* text */ 't', `, with memory
- semantics of setting as if the variable was declared non-`],
-				[/* inline code block */ 'i', `volatile`],
-				[/* text */ 't', `
- and non-`],
-				[/* inline code block */ 'i', `final`],
-				[/* text */ 't', `.  Commonly referred to as plain write access.
-
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', `The method signature is of the form `],
-					[/* inline code block */ 'i', `(CT1 ct1, ..., CTn ctn, T newValue)void`]
-				]],
-				[/* block */ 'b', [
-					[/* text */ 't', `The symbolic type descriptor at the call site of `],
-					[/* inline code block */ 'i', `set`],
-					[/* text */ 't', `
- must match the access mode type that is the result of calling
- `],
-					[/* inline code block */ 'i', `accessModeType(VarHandle.AccessMode.SET)`],
-					[/* text */ 't', ` on this VarHandle.`]
-				]]
-			],
-			[/* parameters */
-				[/* parameter */ 'args', [/* parameter description */
-					[/* text */ 't', `the signature-polymorphic parameter list of the form
- `],
-					[/* inline code block */ 'i', `(CT1 ct1, ..., CTn ctn, T newValue)`],
-					[/* text */ 't', `
- , statically represented using varargs.`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.UnsupportedOperationException', [/* throw description */
-					[/* text */ 't', `if the access mode is unsupported
- for this VarHandle.`]
-				]],
-				[/* throw */ 'java.lang.invoke.WrongMethodTypeException', [/* throw description */
-					[/* text */ 't', `if the access mode type does not
- match the caller's symbolic type descriptor.`]
-				]],
-				[/* throw */ 'java.lang.ClassCastException', [/* throw description */
-					[/* text */ 't', `if the access mode type matches the caller's
- symbolic type descriptor, but a reference cast fails.`]
-				]]
-			],
-			/* return */ UDF
-		]],
-		[/* method */ 'varType()', [
-			[/* method description */
-				[/* text */ 't', `Returns the variable type of variables referenced by this VarHandle.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the variable type of variables referenced by this VarHandle`]
-			]
-		]],
-		[/* method */ 'coordinateTypes()', [
-			[/* method description */
-				[/* text */ 't', `Returns the coordinate types for this VarHandle.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the coordinate types for this VarHandle. The returned
- list is unmodifiable`]
-			]
-		]],
-		[/* method */ 'accessModeType(java.lang.invoke.VarHandle.AccessMode)', [
-			[/* method description */
-				[/* text */ 't', `Obtains the access mode type for this VarHandle and a given access mode.
-
- `],
-				[/* block */ 'b', `The access mode type's parameter types will consist of a prefix that
- is the coordinate types of this VarHandle followed by further
- types as defined by the access mode method.
- The access mode type's return type is defined by the return type of the
- access mode method.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'accessMode', [/* parameter description */
-					[/* text */ 't', `the access mode, corresponding to the
- signature-polymorphic method of the same name`]
-				]]
-			],
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the access mode type for the given access mode`]
+				[/* inline code block */ 'i', `true`],
+				[/* text */ 't', ` if this VarHandle has `],
+				[/* text */ 't', `invoke-exact behavior`],
+				[/* text */ 't', `.`]
 			]
 		]],
 		[/* method */ 'isAccessModeSupported(java.lang.invoke.VarHandle.AccessMode)', [
@@ -1050,363 +923,41 @@ DocsCollector.collect('java.lang.invoke.VarHandle', [
 				[/* text */ 't', `.`]
 			]
 		]],
-		[/* method */ 'loadLoadFence()', [
+		[/* method */ 'accessModeType(java.lang.invoke.VarHandle.AccessMode)', [
 			[/* method description */
-				[/* text */ 't', `Ensures that loads before the fence will not be reordered with
- loads after the fence.`]
+				[/* text */ 't', `Obtains the access mode type for this VarHandle and a given access mode.
+
+ `],
+				[/* block */ 'b', `The access mode type's parameter types will consist of a prefix that
+ is the coordinate types of this VarHandle followed by further
+ types as defined by the access mode method.
+ The access mode type's return type is defined by the return type of the
+ access mode method.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'accessMode', [/* parameter description */
+					[/* text */ 't', `the access mode, corresponding to the
+ signature-polymorphic method of the same name`]
+				]]
+			],
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the access mode type for the given access mode`]
+			]
+		]],
+		[/* method */ 'toString()', [
+			[/* method description */
+				[/* text */ 't', `Returns a compact textual description of this `],
+				[/* reference */ 'r', `java.lang.invoke.VarHandle`],
+				[/* text */ 't', `,
+ including the type of variable described, and a description of its coordinates.`]
 			],
 			/* parameters */ UDF,
 			/* throws */ UDF,
-			/* return */ UDF
-		]],
-		[/* method */ 'storeStoreFence()', [
-			[/* method description */
-				[/* text */ 't', `Ensures that stores before the fence will not be reordered with
- stores after the fence.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			/* return */ UDF
-		]],
-		[/* method */ 'hasInvokeExactBehavior()', [
-			[/* method description */
-				[/* text */ 't', `Returns `],
-				[/* inline code block */ 'i', `true`],
-				[/* text */ 't', ` if this VarHandle has `],
-				[/* text */ 't', `invoke-exact behavior`],
-				[/* text */ 't', `.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
 			[/* return description */
-				[/* inline code block */ 'i', `true`],
-				[/* text */ 't', ` if this VarHandle has `],
-				[/* text */ 't', `invoke-exact behavior`],
-				[/* text */ 't', `.`]
+				[/* text */ 't', `A compact textual description of this `],
+				[/* reference */ 'r', `java.lang.invoke.VarHandle`]
 			]
-		]],
-		[/* method */ 'getVolatile(java.lang.Object...)', [
-			[/* method description */
-				[/* text */ 't', `Returns the value of a variable, with memory semantics of reading as if
- the variable was declared `],
-				[/* inline code block */ 'i', `volatile`],
-				[/* text */ 't', `.
-
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', `The method signature is of the form `],
-					[/* inline code block */ 'i', `(CT1 ct1, ..., CTn ctn)T`],
-					[/* text */ 't', `.
-
- `]
-				]],
-				[/* block */ 'b', [
-					[/* text */ 't', `The symbolic type descriptor at the call site of `],
-					[/* inline code block */ 'i', `getVolatile`],
-					[/* text */ 't', `
- must match the access mode type that is the result of calling
- `],
-					[/* inline code block */ 'i', `accessModeType(VarHandle.AccessMode.GET_VOLATILE)`],
-					[/* text */ 't', ` on this
- VarHandle.`]
-				]]
-			],
-			[/* parameters */
-				[/* parameter */ 'args', [/* parameter description */
-					[/* text */ 't', `the signature-polymorphic parameter list of the form
- `],
-					[/* inline code block */ 'i', `(CT1 ct1, ..., CTn ctn)`],
-					[/* text */ 't', `
- , statically represented using varargs.`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.UnsupportedOperationException', [/* throw description */
-					[/* text */ 't', `if the access mode is unsupported
- for this VarHandle.`]
-				]],
-				[/* throw */ 'java.lang.invoke.WrongMethodTypeException', [/* throw description */
-					[/* text */ 't', `if the access mode type does not
- match the caller's symbolic type descriptor.`]
-				]],
-				[/* throw */ 'java.lang.ClassCastException', [/* throw description */
-					[/* text */ 't', `if the access mode type matches the caller's
- symbolic type descriptor, but a reference cast fails.`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `the signature-polymorphic result that is the value of the
- variable
- , statically represented using `],
-				[/* inline code block */ 'i', `Object`],
-				[/* text */ 't', `.`]
-			]
-		]],
-		[/* method */ 'setVolatile(java.lang.Object...)', [
-			[/* method description */
-				[/* text */ 't', `Sets the value of a variable to the `],
-				[/* inline code block */ 'i', `newValue`],
-				[/* text */ 't', `, with memory
- semantics of setting as if the variable was declared `],
-				[/* inline code block */ 'i', `volatile`],
-				[/* text */ 't', `.
-
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', `The method signature is of the form `],
-					[/* inline code block */ 'i', `(CT1 ct1, ..., CTn ctn, T newValue)void`],
-					[/* text */ 't', `.
-
- `]
-				]],
-				[/* block */ 'b', [
-					[/* text */ 't', `The symbolic type descriptor at the call site of `],
-					[/* inline code block */ 'i', `setVolatile`],
-					[/* text */ 't', `
- must match the access mode type that is the result of calling
- `],
-					[/* inline code block */ 'i', `accessModeType(VarHandle.AccessMode.SET_VOLATILE)`],
-					[/* text */ 't', ` on this
- VarHandle.`]
-				]]
-			],
-			[/* parameters */
-				[/* parameter */ 'args', [/* parameter description */
-					[/* text */ 't', `the signature-polymorphic parameter list of the form
- `],
-					[/* inline code block */ 'i', `(CT1 ct1, ..., CTn ctn, T newValue)`],
-					[/* text */ 't', `
- , statically represented using varargs.`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.UnsupportedOperationException', [/* throw description */
-					[/* text */ 't', `if the access mode is unsupported
- for this VarHandle.`]
-				]],
-				[/* throw */ 'java.lang.invoke.WrongMethodTypeException', [/* throw description */
-					[/* text */ 't', `if the access mode type does not
- match the caller's symbolic type descriptor.`]
-				]],
-				[/* throw */ 'java.lang.ClassCastException', [/* throw description */
-					[/* text */ 't', `if the access mode type matches the caller's
- symbolic type descriptor, but a reference cast fails.`]
-				]]
-			],
-			/* return */ UDF
-		]],
-		[/* method */ 'getOpaque(java.lang.Object...)', [
-			[/* method description */
-				[/* text */ 't', `Returns the value of a variable, accessed in program order, but with no
- assurance of memory ordering effects with respect to other threads.
-
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', `The method signature is of the form `],
-					[/* inline code block */ 'i', `(CT1 ct1, ..., CTn ctn)T`],
-					[/* text */ 't', `.
-
- `]
-				]],
-				[/* block */ 'b', [
-					[/* text */ 't', `The symbolic type descriptor at the call site of `],
-					[/* inline code block */ 'i', `getOpaque`],
-					[/* text */ 't', `
- must match the access mode type that is the result of calling
- `],
-					[/* inline code block */ 'i', `accessModeType(VarHandle.AccessMode.GET_OPAQUE)`],
-					[/* text */ 't', ` on this
- VarHandle.`]
-				]]
-			],
-			[/* parameters */
-				[/* parameter */ 'args', [/* parameter description */
-					[/* text */ 't', `the signature-polymorphic parameter list of the form
- `],
-					[/* inline code block */ 'i', `(CT1 ct1, ..., CTn ctn)`],
-					[/* text */ 't', `
- , statically represented using varargs.`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.UnsupportedOperationException', [/* throw description */
-					[/* text */ 't', `if the access mode is unsupported
- for this VarHandle.`]
-				]],
-				[/* throw */ 'java.lang.invoke.WrongMethodTypeException', [/* throw description */
-					[/* text */ 't', `if the access mode type does not
- match the caller's symbolic type descriptor.`]
-				]],
-				[/* throw */ 'java.lang.ClassCastException', [/* throw description */
-					[/* text */ 't', `if the access mode type matches the caller's
- symbolic type descriptor, but a reference cast fails.`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `the signature-polymorphic result that is the value of the
- variable
- , statically represented using `],
-				[/* inline code block */ 'i', `Object`],
-				[/* text */ 't', `.`]
-			]
-		]],
-		[/* method */ 'setOpaque(java.lang.Object...)', [
-			[/* method description */
-				[/* text */ 't', `Sets the value of a variable to the `],
-				[/* inline code block */ 'i', `newValue`],
-				[/* text */ 't', `, in program order,
- but with no assurance of memory ordering effects with respect to other
- threads.
-
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', `The method signature is of the form `],
-					[/* inline code block */ 'i', `(CT1 ct1, ..., CTn ctn, T newValue)void`],
-					[/* text */ 't', `.
-
- `]
-				]],
-				[/* block */ 'b', [
-					[/* text */ 't', `The symbolic type descriptor at the call site of `],
-					[/* inline code block */ 'i', `setOpaque`],
-					[/* text */ 't', `
- must match the access mode type that is the result of calling
- `],
-					[/* inline code block */ 'i', `accessModeType(VarHandle.AccessMode.SET_OPAQUE)`],
-					[/* text */ 't', ` on this
- VarHandle.`]
-				]]
-			],
-			[/* parameters */
-				[/* parameter */ 'args', [/* parameter description */
-					[/* text */ 't', `the signature-polymorphic parameter list of the form
- `],
-					[/* inline code block */ 'i', `(CT1 ct1, ..., CTn ctn, T newValue)`],
-					[/* text */ 't', `
- , statically represented using varargs.`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.UnsupportedOperationException', [/* throw description */
-					[/* text */ 't', `if the access mode is unsupported
- for this VarHandle.`]
-				]],
-				[/* throw */ 'java.lang.invoke.WrongMethodTypeException', [/* throw description */
-					[/* text */ 't', `if the access mode type does not
- match the caller's symbolic type descriptor.`]
-				]],
-				[/* throw */ 'java.lang.ClassCastException', [/* throw description */
-					[/* text */ 't', `if the access mode type matches the caller's
- symbolic type descriptor, but a reference cast fails.`]
-				]]
-			],
-			/* return */ UDF
-		]],
-		[/* method */ 'getAcquire(java.lang.Object...)', [
-			[/* method description */
-				[/* text */ 't', `Returns the value of a variable, and ensures that subsequent loads and
- stores are not reordered before this access.
-
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', `The method signature is of the form `],
-					[/* inline code block */ 'i', `(CT1 ct1, ..., CTn ctn)T`],
-					[/* text */ 't', `.
-
- `]
-				]],
-				[/* block */ 'b', [
-					[/* text */ 't', `The symbolic type descriptor at the call site of `],
-					[/* inline code block */ 'i', `getAcquire`],
-					[/* text */ 't', `
- must match the access mode type that is the result of calling
- `],
-					[/* inline code block */ 'i', `accessModeType(VarHandle.AccessMode.GET_ACQUIRE)`],
-					[/* text */ 't', ` on this
- VarHandle.`]
-				]]
-			],
-			[/* parameters */
-				[/* parameter */ 'args', [/* parameter description */
-					[/* text */ 't', `the signature-polymorphic parameter list of the form
- `],
-					[/* inline code block */ 'i', `(CT1 ct1, ..., CTn ctn)`],
-					[/* text */ 't', `
- , statically represented using varargs.`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.UnsupportedOperationException', [/* throw description */
-					[/* text */ 't', `if the access mode is unsupported
- for this VarHandle.`]
-				]],
-				[/* throw */ 'java.lang.invoke.WrongMethodTypeException', [/* throw description */
-					[/* text */ 't', `if the access mode type does not
- match the caller's symbolic type descriptor.`]
-				]],
-				[/* throw */ 'java.lang.ClassCastException', [/* throw description */
-					[/* text */ 't', `if the access mode type matches the caller's
- symbolic type descriptor, but a reference cast fails.`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `the signature-polymorphic result that is the value of the
- variable
- , statically represented using `],
-				[/* inline code block */ 'i', `Object`],
-				[/* text */ 't', `.`]
-			]
-		]],
-		[/* method */ 'setRelease(java.lang.Object...)', [
-			[/* method description */
-				[/* text */ 't', `Sets the value of a variable to the `],
-				[/* inline code block */ 'i', `newValue`],
-				[/* text */ 't', `, and ensures that
- prior loads and stores are not reordered after this access.
-
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', `The method signature is of the form `],
-					[/* inline code block */ 'i', `(CT1 ct1, ..., CTn ctn, T newValue)void`],
-					[/* text */ 't', `.
-
- `]
-				]],
-				[/* block */ 'b', [
-					[/* text */ 't', `The symbolic type descriptor at the call site of `],
-					[/* inline code block */ 'i', `setRelease`],
-					[/* text */ 't', `
- must match the access mode type that is the result of calling
- `],
-					[/* inline code block */ 'i', `accessModeType(VarHandle.AccessMode.SET_RELEASE)`],
-					[/* text */ 't', ` on this
- VarHandle.`]
-				]]
-			],
-			[/* parameters */
-				[/* parameter */ 'args', [/* parameter description */
-					[/* text */ 't', `the signature-polymorphic parameter list of the form
- `],
-					[/* inline code block */ 'i', `(CT1 ct1, ..., CTn ctn, T newValue)`],
-					[/* text */ 't', `
- , statically represented using varargs.`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.UnsupportedOperationException', [/* throw description */
-					[/* text */ 't', `if the access mode is unsupported
- for this VarHandle.`]
-				]],
-				[/* throw */ 'java.lang.invoke.WrongMethodTypeException', [/* throw description */
-					[/* text */ 't', `if the access mode type does not
- match the caller's symbolic type descriptor.`]
-				]],
-				[/* throw */ 'java.lang.ClassCastException', [/* throw description */
-					[/* text */ 't', `if the access mode type matches the caller's
- symbolic type descriptor, but a reference cast fails.`]
-				]]
-			],
-			/* return */ UDF
 		]],
 		[/* method */ 'compareAndSet(java.lang.Object...)', [
 			[/* method description */
@@ -1477,6 +1028,312 @@ DocsCollector.collect('java.lang.invoke.VarHandle', [
  witness value was not the same as the `],
 				[/* inline code block */ 'i', `expectedValue`],
 				[/* text */ 't', `.`]
+			]
+		]],
+		[/* method */ 'weakCompareAndSet(java.lang.Object...)', [
+			[/* method description */
+				[/* text */ 't', `Possibly atomically sets the value of a variable to the `],
+				[/* inline code block */ 'i', `newValue`],
+				[/* text */ 't', `
+ with the memory semantics of `],
+				[/* reference */ 'r', `#setVolatile(java.lang.Object...)`, `setVolatile(java.lang.Object...)`],
+				[/* text */ 't', ` if the variable's
+ current value, referred to as the `],
+				[/* text */ 't', `witness value`],
+				[/* text */ 't', `, `],
+				[/* inline code block */ 'i', `==`],
+				[/* text */ 't', ` the
+ `],
+				[/* inline code block */ 'i', `expectedValue`],
+				[/* text */ 't', `, as accessed with the memory semantics of
+ `],
+				[/* reference */ 'r', `#getVolatile(java.lang.Object...)`, `getVolatile(java.lang.Object...)`],
+				[/* text */ 't', `.
+
+ `],
+				[/* block */ 'b', `This operation may fail spuriously (typically, due to memory
+ contention) even if the witness value does match the expected value.
+
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', `The method signature is of the form `],
+					[/* inline code block */ 'i', `(CT1 ct1, ..., CTn ctn, T expectedValue, T newValue)boolean`],
+					[/* text */ 't', `.
+
+ `]
+				]],
+				[/* block */ 'b', [
+					[/* text */ 't', `The symbolic type descriptor at the call site of `],
+					[/* inline code block */ 'i', `weakCompareAndSet`],
+					[/* text */ 't', ` must match the access mode type that is the
+ result of calling `],
+					[/* inline code block */ 'i', `accessModeType(VarHandle.AccessMode.WEAK_COMPARE_AND_SET)`],
+					[/* text */ 't', `
+ on this VarHandle.`]
+				]]
+			],
+			[/* parameters */
+				[/* parameter */ 'args', [/* parameter description */
+					[/* text */ 't', `the signature-polymorphic parameter list of the form
+ `],
+					[/* inline code block */ 'i', `(CT1 ct1, ..., CTn ctn, T expectedValue, T newValue)`],
+					[/* text */ 't', `
+ , statically represented using varargs.`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.lang.UnsupportedOperationException', [/* throw description */
+					[/* text */ 't', `if the access mode is unsupported
+ for this VarHandle.`]
+				]],
+				[/* throw */ 'java.lang.invoke.WrongMethodTypeException', [/* throw description */
+					[/* text */ 't', `if the access mode type does not
+ match the caller's symbolic type descriptor.`]
+				]],
+				[/* throw */ 'java.lang.ClassCastException', [/* throw description */
+					[/* text */ 't', `if the access mode type matches the caller's
+ symbolic type descriptor, but a reference cast fails.`]
+				]]
+			],
+			[/* return description */
+				[/* inline code block */ 'i', `true`],
+				[/* text */ 't', ` if successful, otherwise `],
+				[/* inline code block */ 'i', `false`],
+				[/* text */ 't', ` if the
+ witness value was not the same as the `],
+				[/* inline code block */ 'i', `expectedValue`],
+				[/* text */ 't', ` or if this
+ operation spuriously failed.`]
+			]
+		]],
+		[/* method */ 'weakCompareAndSetAcquire(java.lang.Object...)', [
+			[/* method description */
+				[/* text */ 't', `Possibly atomically sets the value of a variable to the `],
+				[/* inline code block */ 'i', `newValue`],
+				[/* text */ 't', `
+ with the semantics of `],
+				[/* reference */ 'r', `#set(java.lang.Object...)`, `set(java.lang.Object...)`],
+				[/* text */ 't', ` if the variable's current value,
+ referred to as the `],
+				[/* text */ 't', `witness value`],
+				[/* text */ 't', `, `],
+				[/* inline code block */ 'i', `==`],
+				[/* text */ 't', ` the
+ `],
+				[/* inline code block */ 'i', `expectedValue`],
+				[/* text */ 't', `, as accessed with the memory semantics of
+ `],
+				[/* reference */ 'r', `#getAcquire(java.lang.Object...)`, `getAcquire(java.lang.Object...)`],
+				[/* text */ 't', `.
+
+ `],
+				[/* block */ 'b', `This operation may fail spuriously (typically, due to memory
+ contention) even if the witness value does match the expected value.
+
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', `The method signature is of the form `],
+					[/* inline code block */ 'i', `(CT1 ct1, ..., CTn ctn, T expectedValue, T newValue)boolean`],
+					[/* text */ 't', `.
+
+ `]
+				]],
+				[/* block */ 'b', [
+					[/* text */ 't', `The symbolic type descriptor at the call site of `],
+					[/* inline code block */ 'i', `weakCompareAndSetAcquire`],
+					[/* text */ 't', `
+ must match the access mode type that is the result of calling
+ `],
+					[/* inline code block */ 'i', `accessModeType(VarHandle.AccessMode.WEAK_COMPARE_AND_SET_ACQUIRE)`],
+					[/* text */ 't', `
+ on this VarHandle.`]
+				]]
+			],
+			[/* parameters */
+				[/* parameter */ 'args', [/* parameter description */
+					[/* text */ 't', `the signature-polymorphic parameter list of the form
+ `],
+					[/* inline code block */ 'i', `(CT1 ct1, ..., CTn ctn, T expectedValue, T newValue)`],
+					[/* text */ 't', `
+ , statically represented using varargs.`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.lang.UnsupportedOperationException', [/* throw description */
+					[/* text */ 't', `if the access mode is unsupported
+ for this VarHandle.`]
+				]],
+				[/* throw */ 'java.lang.invoke.WrongMethodTypeException', [/* throw description */
+					[/* text */ 't', `if the access mode type does not
+ match the caller's symbolic type descriptor.`]
+				]],
+				[/* throw */ 'java.lang.ClassCastException', [/* throw description */
+					[/* text */ 't', `if the access mode type matches the caller's
+ symbolic type descriptor, but a reference cast fails.`]
+				]]
+			],
+			[/* return description */
+				[/* inline code block */ 'i', `true`],
+				[/* text */ 't', ` if successful, otherwise `],
+				[/* inline code block */ 'i', `false`],
+				[/* text */ 't', ` if the
+ witness value was not the same as the `],
+				[/* inline code block */ 'i', `expectedValue`],
+				[/* text */ 't', ` or if this
+ operation spuriously failed.`]
+			]
+		]],
+		[/* method */ 'weakCompareAndSetPlain(java.lang.Object...)', [
+			[/* method description */
+				[/* text */ 't', `Possibly atomically sets the value of a variable to the `],
+				[/* inline code block */ 'i', `newValue`],
+				[/* text */ 't', `
+ with the semantics of `],
+				[/* reference */ 'r', `#set(java.lang.Object...)`, `set(java.lang.Object...)`],
+				[/* text */ 't', ` if the variable's current value,
+ referred to as the `],
+				[/* text */ 't', `witness value`],
+				[/* text */ 't', `, `],
+				[/* inline code block */ 'i', `==`],
+				[/* text */ 't', ` the
+ `],
+				[/* inline code block */ 'i', `expectedValue`],
+				[/* text */ 't', `, as accessed with the memory semantics of
+ `],
+				[/* reference */ 'r', `#get(java.lang.Object...)`, `get(java.lang.Object...)`],
+				[/* text */ 't', `.
+
+ `],
+				[/* block */ 'b', `This operation may fail spuriously (typically, due to memory
+ contention) even if the witness value does match the expected value.
+
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', `The method signature is of the form `],
+					[/* inline code block */ 'i', `(CT1 ct1, ..., CTn ctn, T expectedValue, T newValue)boolean`],
+					[/* text */ 't', `.
+
+ `]
+				]],
+				[/* block */ 'b', [
+					[/* text */ 't', `The symbolic type descriptor at the call site of `],
+					[/* inline code block */ 'i', `weakCompareAndSetPlain`],
+					[/* text */ 't', ` must match the access mode type that is the result of
+ calling `],
+					[/* inline code block */ 'i', `accessModeType(VarHandle.AccessMode.WEAK_COMPARE_AND_SET_PLAIN)`],
+					[/* text */ 't', `
+ on this VarHandle.`]
+				]]
+			],
+			[/* parameters */
+				[/* parameter */ 'args', [/* parameter description */
+					[/* text */ 't', `the signature-polymorphic parameter list of the form
+ `],
+					[/* inline code block */ 'i', `(CT1 ct1, ..., CTn ctn, T expectedValue, T newValue)`],
+					[/* text */ 't', `
+ , statically represented using varargs.`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.lang.UnsupportedOperationException', [/* throw description */
+					[/* text */ 't', `if the access mode is unsupported
+ for this VarHandle.`]
+				]],
+				[/* throw */ 'java.lang.invoke.WrongMethodTypeException', [/* throw description */
+					[/* text */ 't', `if the access mode type does not
+ match the caller's symbolic type descriptor.`]
+				]],
+				[/* throw */ 'java.lang.ClassCastException', [/* throw description */
+					[/* text */ 't', `if the access mode type matches the caller's
+ symbolic type descriptor, but a reference cast fails.`]
+				]]
+			],
+			[/* return description */
+				[/* inline code block */ 'i', `true`],
+				[/* text */ 't', ` if successful, otherwise `],
+				[/* inline code block */ 'i', `false`],
+				[/* text */ 't', ` if the
+ witness value was not the same as the `],
+				[/* inline code block */ 'i', `expectedValue`],
+				[/* text */ 't', ` or if this
+ operation spuriously failed.`]
+			]
+		]],
+		[/* method */ 'weakCompareAndSetRelease(java.lang.Object...)', [
+			[/* method description */
+				[/* text */ 't', `Possibly atomically sets the value of a variable to the `],
+				[/* inline code block */ 'i', `newValue`],
+				[/* text */ 't', `
+ with the semantics of `],
+				[/* reference */ 'r', `#setRelease(java.lang.Object...)`, `setRelease(java.lang.Object...)`],
+				[/* text */ 't', ` if the variable's current
+ value, referred to as the `],
+				[/* text */ 't', `witness value`],
+				[/* text */ 't', `, `],
+				[/* inline code block */ 'i', `==`],
+				[/* text */ 't', ` the
+ `],
+				[/* inline code block */ 'i', `expectedValue`],
+				[/* text */ 't', `, as accessed with the memory semantics of
+ `],
+				[/* reference */ 'r', `#get(java.lang.Object...)`, `get(java.lang.Object...)`],
+				[/* text */ 't', `.
+
+ `],
+				[/* block */ 'b', `This operation may fail spuriously (typically, due to memory
+ contention) even if the witness value does match the expected value.
+
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', `The method signature is of the form `],
+					[/* inline code block */ 'i', `(CT1 ct1, ..., CTn ctn, T expectedValue, T newValue)boolean`],
+					[/* text */ 't', `.
+
+ `]
+				]],
+				[/* block */ 'b', [
+					[/* text */ 't', `The symbolic type descriptor at the call site of `],
+					[/* inline code block */ 'i', `weakCompareAndSetRelease`],
+					[/* text */ 't', `
+ must match the access mode type that is the result of calling
+ `],
+					[/* inline code block */ 'i', `accessModeType(VarHandle.AccessMode.WEAK_COMPARE_AND_SET_RELEASE)`],
+					[/* text */ 't', `
+ on this VarHandle.`]
+				]]
+			],
+			[/* parameters */
+				[/* parameter */ 'args', [/* parameter description */
+					[/* text */ 't', `the signature-polymorphic parameter list of the form
+ `],
+					[/* inline code block */ 'i', `(CT1 ct1, ..., CTn ctn, T expectedValue, T newValue)`],
+					[/* text */ 't', `
+ , statically represented using varargs.`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.lang.UnsupportedOperationException', [/* throw description */
+					[/* text */ 't', `if the access mode is unsupported
+ for this VarHandle.`]
+				]],
+				[/* throw */ 'java.lang.invoke.WrongMethodTypeException', [/* throw description */
+					[/* text */ 't', `if the access mode type does not
+ match the caller's symbolic type descriptor.`]
+				]],
+				[/* throw */ 'java.lang.ClassCastException', [/* throw description */
+					[/* text */ 't', `if the access mode type matches the caller's
+ symbolic type descriptor, but a reference cast fails.`]
+				]]
+			],
+			[/* return description */
+				[/* inline code block */ 'i', `true`],
+				[/* text */ 't', ` if successful, otherwise `],
+				[/* inline code block */ 'i', `false`],
+				[/* text */ 't', ` if the
+ witness value was not the same as the `],
+				[/* inline code block */ 'i', `expectedValue`],
+				[/* text */ 't', ` or if this
+ operation spuriously failed.`]
 			]
 		]],
 		[/* method */ 'compareAndExchange(java.lang.Object...)', [
@@ -1695,292 +1552,50 @@ DocsCollector.collect('java.lang.invoke.VarHandle', [
 				[/* text */ 't', `.`]
 			]
 		]],
-		[/* method */ 'weakCompareAndSetPlain(java.lang.Object...)', [
+		[/* method */ 'get(java.lang.Object...)', [
 			[/* method description */
-				[/* text */ 't', `Possibly atomically sets the value of a variable to the `],
-				[/* inline code block */ 'i', `newValue`],
-				[/* text */ 't', `
- with the semantics of `],
-				[/* reference */ 'r', `#set(java.lang.Object...)`, `set(java.lang.Object...)`],
-				[/* text */ 't', ` if the variable's current value,
- referred to as the `],
-				[/* text */ 't', `witness value`],
-				[/* text */ 't', `, `],
-				[/* inline code block */ 'i', `==`],
-				[/* text */ 't', ` the
- `],
-				[/* inline code block */ 'i', `expectedValue`],
-				[/* text */ 't', `, as accessed with the memory semantics of
- `],
-				[/* reference */ 'r', `#get(java.lang.Object...)`, `get(java.lang.Object...)`],
-				[/* text */ 't', `.
-
- `],
-				[/* block */ 'b', `This operation may fail spuriously (typically, due to memory
- contention) even if the witness value does match the expected value.
+				[/* text */ 't', `Returns the value of a variable, with memory semantics of reading as
+ if the variable was declared non-`],
+				[/* inline code block */ 'i', `volatile`],
+				[/* text */ 't', `.  Commonly referred to
+ as plain read access.
 
  `],
 				[/* block */ 'b', [
 					[/* text */ 't', `The method signature is of the form `],
-					[/* inline code block */ 'i', `(CT1 ct1, ..., CTn ctn, T expectedValue, T newValue)boolean`],
+					[/* inline code block */ 'i', `(CT1 ct1, ..., CTn ctn)T`],
 					[/* text */ 't', `.
 
  `]
 				]],
 				[/* block */ 'b', [
 					[/* text */ 't', `The symbolic type descriptor at the call site of `],
-					[/* inline code block */ 'i', `weakCompareAndSetPlain`],
-					[/* text */ 't', ` must match the access mode type that is the result of
- calling `],
-					[/* inline code block */ 'i', `accessModeType(VarHandle.AccessMode.WEAK_COMPARE_AND_SET_PLAIN)`],
-					[/* text */ 't', `
- on this VarHandle.`]
-				]]
-			],
-			[/* parameters */
-				[/* parameter */ 'args', [/* parameter description */
-					[/* text */ 't', `the signature-polymorphic parameter list of the form
- `],
-					[/* inline code block */ 'i', `(CT1 ct1, ..., CTn ctn, T expectedValue, T newValue)`],
-					[/* text */ 't', `
- , statically represented using varargs.`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.UnsupportedOperationException', [/* throw description */
-					[/* text */ 't', `if the access mode is unsupported
- for this VarHandle.`]
-				]],
-				[/* throw */ 'java.lang.invoke.WrongMethodTypeException', [/* throw description */
-					[/* text */ 't', `if the access mode type does not
- match the caller's symbolic type descriptor.`]
-				]],
-				[/* throw */ 'java.lang.ClassCastException', [/* throw description */
-					[/* text */ 't', `if the access mode type matches the caller's
- symbolic type descriptor, but a reference cast fails.`]
-				]]
-			],
-			[/* return description */
-				[/* inline code block */ 'i', `true`],
-				[/* text */ 't', ` if successful, otherwise `],
-				[/* inline code block */ 'i', `false`],
-				[/* text */ 't', ` if the
- witness value was not the same as the `],
-				[/* inline code block */ 'i', `expectedValue`],
-				[/* text */ 't', ` or if this
- operation spuriously failed.`]
-			]
-		]],
-		[/* method */ 'weakCompareAndSet(java.lang.Object...)', [
-			[/* method description */
-				[/* text */ 't', `Possibly atomically sets the value of a variable to the `],
-				[/* inline code block */ 'i', `newValue`],
-				[/* text */ 't', `
- with the memory semantics of `],
-				[/* reference */ 'r', `#setVolatile(java.lang.Object...)`, `setVolatile(java.lang.Object...)`],
-				[/* text */ 't', ` if the variable's
- current value, referred to as the `],
-				[/* text */ 't', `witness value`],
-				[/* text */ 't', `, `],
-				[/* inline code block */ 'i', `==`],
-				[/* text */ 't', ` the
- `],
-				[/* inline code block */ 'i', `expectedValue`],
-				[/* text */ 't', `, as accessed with the memory semantics of
- `],
-				[/* reference */ 'r', `#getVolatile(java.lang.Object...)`, `getVolatile(java.lang.Object...)`],
-				[/* text */ 't', `.
-
- `],
-				[/* block */ 'b', `This operation may fail spuriously (typically, due to memory
- contention) even if the witness value does match the expected value.
-
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', `The method signature is of the form `],
-					[/* inline code block */ 'i', `(CT1 ct1, ..., CTn ctn, T expectedValue, T newValue)boolean`],
-					[/* text */ 't', `.
-
- `]
-				]],
-				[/* block */ 'b', [
-					[/* text */ 't', `The symbolic type descriptor at the call site of `],
-					[/* inline code block */ 'i', `weakCompareAndSet`],
-					[/* text */ 't', ` must match the access mode type that is the
- result of calling `],
-					[/* inline code block */ 'i', `accessModeType(VarHandle.AccessMode.WEAK_COMPARE_AND_SET)`],
-					[/* text */ 't', `
- on this VarHandle.`]
-				]]
-			],
-			[/* parameters */
-				[/* parameter */ 'args', [/* parameter description */
-					[/* text */ 't', `the signature-polymorphic parameter list of the form
- `],
-					[/* inline code block */ 'i', `(CT1 ct1, ..., CTn ctn, T expectedValue, T newValue)`],
-					[/* text */ 't', `
- , statically represented using varargs.`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.UnsupportedOperationException', [/* throw description */
-					[/* text */ 't', `if the access mode is unsupported
- for this VarHandle.`]
-				]],
-				[/* throw */ 'java.lang.invoke.WrongMethodTypeException', [/* throw description */
-					[/* text */ 't', `if the access mode type does not
- match the caller's symbolic type descriptor.`]
-				]],
-				[/* throw */ 'java.lang.ClassCastException', [/* throw description */
-					[/* text */ 't', `if the access mode type matches the caller's
- symbolic type descriptor, but a reference cast fails.`]
-				]]
-			],
-			[/* return description */
-				[/* inline code block */ 'i', `true`],
-				[/* text */ 't', ` if successful, otherwise `],
-				[/* inline code block */ 'i', `false`],
-				[/* text */ 't', ` if the
- witness value was not the same as the `],
-				[/* inline code block */ 'i', `expectedValue`],
-				[/* text */ 't', ` or if this
- operation spuriously failed.`]
-			]
-		]],
-		[/* method */ 'weakCompareAndSetAcquire(java.lang.Object...)', [
-			[/* method description */
-				[/* text */ 't', `Possibly atomically sets the value of a variable to the `],
-				[/* inline code block */ 'i', `newValue`],
-				[/* text */ 't', `
- with the semantics of `],
-				[/* reference */ 'r', `#set(java.lang.Object...)`, `set(java.lang.Object...)`],
-				[/* text */ 't', ` if the variable's current value,
- referred to as the `],
-				[/* text */ 't', `witness value`],
-				[/* text */ 't', `, `],
-				[/* inline code block */ 'i', `==`],
-				[/* text */ 't', ` the
- `],
-				[/* inline code block */ 'i', `expectedValue`],
-				[/* text */ 't', `, as accessed with the memory semantics of
- `],
-				[/* reference */ 'r', `#getAcquire(java.lang.Object...)`, `getAcquire(java.lang.Object...)`],
-				[/* text */ 't', `.
-
- `],
-				[/* block */ 'b', `This operation may fail spuriously (typically, due to memory
- contention) even if the witness value does match the expected value.
-
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', `The method signature is of the form `],
-					[/* inline code block */ 'i', `(CT1 ct1, ..., CTn ctn, T expectedValue, T newValue)boolean`],
-					[/* text */ 't', `.
-
- `]
-				]],
-				[/* block */ 'b', [
-					[/* text */ 't', `The symbolic type descriptor at the call site of `],
-					[/* inline code block */ 'i', `weakCompareAndSetAcquire`],
+					[/* inline code block */ 'i', `get`],
 					[/* text */ 't', `
  must match the access mode type that is the result of calling
  `],
-					[/* inline code block */ 'i', `accessModeType(VarHandle.AccessMode.WEAK_COMPARE_AND_SET_ACQUIRE)`],
-					[/* text */ 't', `
- on this VarHandle.`]
-				]]
-			],
-			[/* parameters */
-				[/* parameter */ 'args', [/* parameter description */
-					[/* text */ 't', `the signature-polymorphic parameter list of the form
- `],
-					[/* inline code block */ 'i', `(CT1 ct1, ..., CTn ctn, T expectedValue, T newValue)`],
-					[/* text */ 't', `
- , statically represented using varargs.`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.UnsupportedOperationException', [/* throw description */
-					[/* text */ 't', `if the access mode is unsupported
- for this VarHandle.`]
-				]],
-				[/* throw */ 'java.lang.invoke.WrongMethodTypeException', [/* throw description */
-					[/* text */ 't', `if the access mode type does not
- match the caller's symbolic type descriptor.`]
-				]],
-				[/* throw */ 'java.lang.ClassCastException', [/* throw description */
-					[/* text */ 't', `if the access mode type matches the caller's
- symbolic type descriptor, but a reference cast fails.`]
-				]]
-			],
-			[/* return description */
-				[/* inline code block */ 'i', `true`],
-				[/* text */ 't', ` if successful, otherwise `],
-				[/* inline code block */ 'i', `false`],
-				[/* text */ 't', ` if the
- witness value was not the same as the `],
-				[/* inline code block */ 'i', `expectedValue`],
-				[/* text */ 't', ` or if this
- operation spuriously failed.`]
-			]
-		]],
-		[/* method */ 'weakCompareAndSetRelease(java.lang.Object...)', [
-			[/* method description */
-				[/* text */ 't', `Possibly atomically sets the value of a variable to the `],
-				[/* inline code block */ 'i', `newValue`],
-				[/* text */ 't', `
- with the semantics of `],
-				[/* reference */ 'r', `#setRelease(java.lang.Object...)`, `setRelease(java.lang.Object...)`],
-				[/* text */ 't', ` if the variable's current
- value, referred to as the `],
-				[/* text */ 't', `witness value`],
-				[/* text */ 't', `, `],
-				[/* inline code block */ 'i', `==`],
-				[/* text */ 't', ` the
- `],
-				[/* inline code block */ 'i', `expectedValue`],
-				[/* text */ 't', `, as accessed with the memory semantics of
- `],
-				[/* reference */ 'r', `#get(java.lang.Object...)`, `get(java.lang.Object...)`],
-				[/* text */ 't', `.
-
- `],
-				[/* block */ 'b', `This operation may fail spuriously (typically, due to memory
- contention) even if the witness value does match the expected value.
-
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', `The method signature is of the form `],
-					[/* inline code block */ 'i', `(CT1 ct1, ..., CTn ctn, T expectedValue, T newValue)boolean`],
-					[/* text */ 't', `.
+					[/* inline code block */ 'i', `accessModeType(VarHandle.AccessMode.GET)`],
+					[/* text */ 't', ` on this VarHandle.
 
  `]
 				]],
 				[/* block */ 'b', [
-					[/* text */ 't', `The symbolic type descriptor at the call site of `],
-					[/* inline code block */ 'i', `weakCompareAndSetRelease`],
-					[/* text */ 't', `
- must match the access mode type that is the result of calling
- `],
-					[/* inline code block */ 'i', `accessModeType(VarHandle.AccessMode.WEAK_COMPARE_AND_SET_RELEASE)`],
-					[/* text */ 't', `
- on this VarHandle.`]
+					[/* text */ 't', `This access mode is supported by all VarHandle instances and never
+ throws `],
+					[/* inline code block */ 'i', `UnsupportedOperationException`],
+					[/* text */ 't', `.`]
 				]]
 			],
 			[/* parameters */
 				[/* parameter */ 'args', [/* parameter description */
 					[/* text */ 't', `the signature-polymorphic parameter list of the form
  `],
-					[/* inline code block */ 'i', `(CT1 ct1, ..., CTn ctn, T expectedValue, T newValue)`],
+					[/* inline code block */ 'i', `(CT1 ct1, ..., CTn)`],
 					[/* text */ 't', `
  , statically represented using varargs.`]
 				]]
 			],
 			[/* throws */
-				[/* throw */ 'java.lang.UnsupportedOperationException', [/* throw description */
-					[/* text */ 't', `if the access mode is unsupported
- for this VarHandle.`]
-				]],
 				[/* throw */ 'java.lang.invoke.WrongMethodTypeException', [/* throw description */
 					[/* text */ 't', `if the access mode type does not
  match the caller's symbolic type descriptor.`]
@@ -1991,107 +1606,33 @@ DocsCollector.collect('java.lang.invoke.VarHandle', [
 				]]
 			],
 			[/* return description */
-				[/* inline code block */ 'i', `true`],
-				[/* text */ 't', ` if successful, otherwise `],
-				[/* inline code block */ 'i', `false`],
-				[/* text */ 't', ` if the
- witness value was not the same as the `],
-				[/* inline code block */ 'i', `expectedValue`],
-				[/* text */ 't', ` or if this
- operation spuriously failed.`]
-			]
-		]],
-		[/* method */ 'getAndSet(java.lang.Object...)', [
-			[/* method description */
-				[/* text */ 't', `Atomically sets the value of a variable to the `],
-				[/* inline code block */ 'i', `newValue`],
-				[/* text */ 't', ` with the
- memory semantics of `],
-				[/* reference */ 'r', `#setVolatile(java.lang.Object...)`, `setVolatile(java.lang.Object...)`],
-				[/* text */ 't', ` and returns the variable's
- previous value, as accessed with the memory semantics of
- `],
-				[/* reference */ 'r', `#getVolatile(java.lang.Object...)`, `getVolatile(java.lang.Object...)`],
-				[/* text */ 't', `.
-
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', `The method signature is of the form `],
-					[/* inline code block */ 'i', `(CT1 ct1, ..., CTn ctn, T newValue)T`],
-					[/* text */ 't', `.
-
- `]
-				]],
-				[/* block */ 'b', [
-					[/* text */ 't', `The symbolic type descriptor at the call site of `],
-					[/* inline code block */ 'i', `getAndSet`],
-					[/* text */ 't', `
- must match the access mode type that is the result of calling
- `],
-					[/* inline code block */ 'i', `accessModeType(VarHandle.AccessMode.GET_AND_SET)`],
-					[/* text */ 't', ` on this
- VarHandle.`]
-				]]
-			],
-			[/* parameters */
-				[/* parameter */ 'args', [/* parameter description */
-					[/* text */ 't', `the signature-polymorphic parameter list of the form
- `],
-					[/* inline code block */ 'i', `(CT1 ct1, ..., CTn ctn, T newValue)`],
-					[/* text */ 't', `
- , statically represented using varargs.`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.UnsupportedOperationException', [/* throw description */
-					[/* text */ 't', `if the access mode is unsupported
- for this VarHandle.`]
-				]],
-				[/* throw */ 'java.lang.invoke.WrongMethodTypeException', [/* throw description */
-					[/* text */ 't', `if the access mode type does not
- match the caller's symbolic type descriptor.`]
-				]],
-				[/* throw */ 'java.lang.ClassCastException', [/* throw description */
-					[/* text */ 't', `if the access mode type matches the caller's
- symbolic type descriptor, but a reference cast fails.`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `the signature-polymorphic result that is the previous value of
- the variable
+				[/* text */ 't', `the signature-polymorphic result that is the value of the
+ variable
  , statically represented using `],
 				[/* inline code block */ 'i', `Object`],
 				[/* text */ 't', `.`]
 			]
 		]],
-		[/* method */ 'getAndSetAcquire(java.lang.Object...)', [
+		[/* method */ 'getAcquire(java.lang.Object...)', [
 			[/* method description */
-				[/* text */ 't', `Atomically sets the value of a variable to the `],
-				[/* inline code block */ 'i', `newValue`],
-				[/* text */ 't', ` with the
- memory semantics of `],
-				[/* reference */ 'r', `#set(java.lang.Object...)`, `set(java.lang.Object...)`],
-				[/* text */ 't', ` and returns the variable's
- previous value, as accessed with the memory semantics of
- `],
-				[/* reference */ 'r', `#getAcquire(java.lang.Object...)`, `getAcquire(java.lang.Object...)`],
-				[/* text */ 't', `.
+				[/* text */ 't', `Returns the value of a variable, and ensures that subsequent loads and
+ stores are not reordered before this access.
 
  `],
 				[/* block */ 'b', [
 					[/* text */ 't', `The method signature is of the form `],
-					[/* inline code block */ 'i', `(CT1 ct1, ..., CTn ctn, T newValue)T`],
+					[/* inline code block */ 'i', `(CT1 ct1, ..., CTn ctn)T`],
 					[/* text */ 't', `.
 
  `]
 				]],
 				[/* block */ 'b', [
 					[/* text */ 't', `The symbolic type descriptor at the call site of `],
-					[/* inline code block */ 'i', `getAndSetAcquire`],
+					[/* inline code block */ 'i', `getAcquire`],
 					[/* text */ 't', `
  must match the access mode type that is the result of calling
  `],
-					[/* inline code block */ 'i', `accessModeType(VarHandle.AccessMode.GET_AND_SET_ACQUIRE)`],
+					[/* inline code block */ 'i', `accessModeType(VarHandle.AccessMode.GET_ACQUIRE)`],
 					[/* text */ 't', ` on this
  VarHandle.`]
 				]]
@@ -2100,7 +1641,7 @@ DocsCollector.collect('java.lang.invoke.VarHandle', [
 				[/* parameter */ 'args', [/* parameter description */
 					[/* text */ 't', `the signature-polymorphic parameter list of the form
  `],
-					[/* inline code block */ 'i', `(CT1 ct1, ..., CTn ctn, T newValue)`],
+					[/* inline code block */ 'i', `(CT1 ct1, ..., CTn ctn)`],
 					[/* text */ 't', `
  , statically represented using varargs.`]
 				]]
@@ -2120,71 +1661,8 @@ DocsCollector.collect('java.lang.invoke.VarHandle', [
 				]]
 			],
 			[/* return description */
-				[/* text */ 't', `the signature-polymorphic result that is the previous value of
- the variable
- , statically represented using `],
-				[/* inline code block */ 'i', `Object`],
-				[/* text */ 't', `.`]
-			]
-		]],
-		[/* method */ 'getAndSetRelease(java.lang.Object...)', [
-			[/* method description */
-				[/* text */ 't', `Atomically sets the value of a variable to the `],
-				[/* inline code block */ 'i', `newValue`],
-				[/* text */ 't', ` with the
- memory semantics of `],
-				[/* reference */ 'r', `#setRelease(java.lang.Object...)`, `setRelease(java.lang.Object...)`],
-				[/* text */ 't', ` and returns the variable's
- previous value, as accessed with the memory semantics of
- `],
-				[/* reference */ 'r', `#get(java.lang.Object...)`, `get(java.lang.Object...)`],
-				[/* text */ 't', `.
-
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', `The method signature is of the form `],
-					[/* inline code block */ 'i', `(CT1 ct1, ..., CTn ctn, T newValue)T`],
-					[/* text */ 't', `.
-
- `]
-				]],
-				[/* block */ 'b', [
-					[/* text */ 't', `The symbolic type descriptor at the call site of `],
-					[/* inline code block */ 'i', `getAndSetRelease`],
-					[/* text */ 't', `
- must match the access mode type that is the result of calling
- `],
-					[/* inline code block */ 'i', `accessModeType(VarHandle.AccessMode.GET_AND_SET_RELEASE)`],
-					[/* text */ 't', ` on this
- VarHandle.`]
-				]]
-			],
-			[/* parameters */
-				[/* parameter */ 'args', [/* parameter description */
-					[/* text */ 't', `the signature-polymorphic parameter list of the form
- `],
-					[/* inline code block */ 'i', `(CT1 ct1, ..., CTn ctn, T newValue)`],
-					[/* text */ 't', `
- , statically represented using varargs.`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.UnsupportedOperationException', [/* throw description */
-					[/* text */ 't', `if the access mode is unsupported
- for this VarHandle.`]
-				]],
-				[/* throw */ 'java.lang.invoke.WrongMethodTypeException', [/* throw description */
-					[/* text */ 't', `if the access mode type does not
- match the caller's symbolic type descriptor.`]
-				]],
-				[/* throw */ 'java.lang.ClassCastException', [/* throw description */
-					[/* text */ 't', `if the access mode type matches the caller's
- symbolic type descriptor, but a reference cast fails.`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `the signature-polymorphic result that is the previous value of
- the variable
+				[/* text */ 't', `the signature-polymorphic result that is the value of the
+ variable
  , statically represented using `],
 				[/* inline code block */ 'i', `Object`],
 				[/* text */ 't', `.`]
@@ -2353,222 +1831,6 @@ DocsCollector.collect('java.lang.invoke.VarHandle', [
 					[/* text */ 't', `the signature-polymorphic parameter list of the form
  `],
 					[/* inline code block */ 'i', `(CT1 ct1, ..., CTn ctn, T value)`],
-					[/* text */ 't', `
- , statically represented using varargs.`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.UnsupportedOperationException', [/* throw description */
-					[/* text */ 't', `if the access mode is unsupported
- for this VarHandle.`]
-				]],
-				[/* throw */ 'java.lang.invoke.WrongMethodTypeException', [/* throw description */
-					[/* text */ 't', `if the access mode type does not
- match the caller's symbolic type descriptor.`]
-				]],
-				[/* throw */ 'java.lang.ClassCastException', [/* throw description */
-					[/* text */ 't', `if the access mode type matches the caller's
- symbolic type descriptor, but a reference cast fails.`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `the signature-polymorphic result that is the previous value of
- the variable
- , statically represented using `],
-				[/* inline code block */ 'i', `Object`],
-				[/* text */ 't', `.`]
-			]
-		]],
-		[/* method */ 'getAndBitwiseOr(java.lang.Object...)', [
-			[/* method description */
-				[/* text */ 't', `Atomically sets the value of a variable to the result of
- bitwise OR between the variable's current value and the `],
-				[/* inline code block */ 'i', `mask`],
-				[/* text */ 't', `
- with the memory semantics of `],
-				[/* reference */ 'r', `#setVolatile(java.lang.Object...)`, `setVolatile(java.lang.Object...)`],
-				[/* text */ 't', ` and returns the
- variable's previous value, as accessed with the memory semantics of
- `],
-				[/* reference */ 'r', `#getVolatile(java.lang.Object...)`, `getVolatile(java.lang.Object...)`],
-				[/* text */ 't', `.
-
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', `If the variable type is the non-integral `],
-					[/* inline code block */ 'i', `boolean`],
-					[/* text */ 't', ` type then a
- logical OR is performed instead of a bitwise OR.
-
- `]
-				]],
-				[/* block */ 'b', [
-					[/* text */ 't', `The method signature is of the form `],
-					[/* inline code block */ 'i', `(CT1 ct1, ..., CTn ctn, T mask)T`],
-					[/* text */ 't', `.
-
- `]
-				]],
-				[/* block */ 'b', [
-					[/* text */ 't', `The symbolic type descriptor at the call site of `],
-					[/* inline code block */ 'i', `getAndBitwiseOr`],
-					[/* text */ 't', `
- must match the access mode type that is the result of calling
- `],
-					[/* inline code block */ 'i', `accessModeType(VarHandle.AccessMode.GET_AND_BITWISE_OR)`],
-					[/* text */ 't', ` on this
- VarHandle.`]
-				]]
-			],
-			[/* parameters */
-				[/* parameter */ 'args', [/* parameter description */
-					[/* text */ 't', `the signature-polymorphic parameter list of the form
- `],
-					[/* inline code block */ 'i', `(CT1 ct1, ..., CTn ctn, T mask)`],
-					[/* text */ 't', `
- , statically represented using varargs.`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.UnsupportedOperationException', [/* throw description */
-					[/* text */ 't', `if the access mode is unsupported
- for this VarHandle.`]
-				]],
-				[/* throw */ 'java.lang.invoke.WrongMethodTypeException', [/* throw description */
-					[/* text */ 't', `if the access mode type does not
- match the caller's symbolic type descriptor.`]
-				]],
-				[/* throw */ 'java.lang.ClassCastException', [/* throw description */
-					[/* text */ 't', `if the access mode type matches the caller's
- symbolic type descriptor, but a reference cast fails.`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `the signature-polymorphic result that is the previous value of
- the variable
- , statically represented using `],
-				[/* inline code block */ 'i', `Object`],
-				[/* text */ 't', `.`]
-			]
-		]],
-		[/* method */ 'getAndBitwiseOrAcquire(java.lang.Object...)', [
-			[/* method description */
-				[/* text */ 't', `Atomically sets the value of a variable to the result of
- bitwise OR between the variable's current value and the `],
-				[/* inline code block */ 'i', `mask`],
-				[/* text */ 't', `
- with the memory semantics of `],
-				[/* reference */ 'r', `#set(java.lang.Object...)`, `set(java.lang.Object...)`],
-				[/* text */ 't', ` and returns the
- variable's previous value, as accessed with the memory semantics of
- `],
-				[/* reference */ 'r', `#getAcquire(java.lang.Object...)`, `getAcquire(java.lang.Object...)`],
-				[/* text */ 't', `.
-
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', `If the variable type is the non-integral `],
-					[/* inline code block */ 'i', `boolean`],
-					[/* text */ 't', ` type then a
- logical OR is performed instead of a bitwise OR.
-
- `]
-				]],
-				[/* block */ 'b', [
-					[/* text */ 't', `The method signature is of the form `],
-					[/* inline code block */ 'i', `(CT1 ct1, ..., CTn ctn, T mask)T`],
-					[/* text */ 't', `.
-
- `]
-				]],
-				[/* block */ 'b', [
-					[/* text */ 't', `The symbolic type descriptor at the call site of `],
-					[/* inline code block */ 'i', `getAndBitwiseOrAcquire`],
-					[/* text */ 't', `
- must match the access mode type that is the result of calling
- `],
-					[/* inline code block */ 'i', `accessModeType(VarHandle.AccessMode.GET_AND_BITWISE_OR_ACQUIRE)`],
-					[/* text */ 't', ` on this
- VarHandle.`]
-				]]
-			],
-			[/* parameters */
-				[/* parameter */ 'args', [/* parameter description */
-					[/* text */ 't', `the signature-polymorphic parameter list of the form
- `],
-					[/* inline code block */ 'i', `(CT1 ct1, ..., CTn ctn, T mask)`],
-					[/* text */ 't', `
- , statically represented using varargs.`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.UnsupportedOperationException', [/* throw description */
-					[/* text */ 't', `if the access mode is unsupported
- for this VarHandle.`]
-				]],
-				[/* throw */ 'java.lang.invoke.WrongMethodTypeException', [/* throw description */
-					[/* text */ 't', `if the access mode type does not
- match the caller's symbolic type descriptor.`]
-				]],
-				[/* throw */ 'java.lang.ClassCastException', [/* throw description */
-					[/* text */ 't', `if the access mode type matches the caller's
- symbolic type descriptor, but a reference cast fails.`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `the signature-polymorphic result that is the previous value of
- the variable
- , statically represented using `],
-				[/* inline code block */ 'i', `Object`],
-				[/* text */ 't', `.`]
-			]
-		]],
-		[/* method */ 'getAndBitwiseOrRelease(java.lang.Object...)', [
-			[/* method description */
-				[/* text */ 't', `Atomically sets the value of a variable to the result of
- bitwise OR between the variable's current value and the `],
-				[/* inline code block */ 'i', `mask`],
-				[/* text */ 't', `
- with the memory semantics of `],
-				[/* reference */ 'r', `#setRelease(java.lang.Object...)`, `setRelease(java.lang.Object...)`],
-				[/* text */ 't', ` and returns the
- variable's previous value, as accessed with the memory semantics of
- `],
-				[/* reference */ 'r', `#get(java.lang.Object...)`, `get(java.lang.Object...)`],
-				[/* text */ 't', `.
-
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', `If the variable type is the non-integral `],
-					[/* inline code block */ 'i', `boolean`],
-					[/* text */ 't', ` type then a
- logical OR is performed instead of a bitwise OR.
-
- `]
-				]],
-				[/* block */ 'b', [
-					[/* text */ 't', `The method signature is of the form `],
-					[/* inline code block */ 'i', `(CT1 ct1, ..., CTn ctn, T mask)T`],
-					[/* text */ 't', `.
-
- `]
-				]],
-				[/* block */ 'b', [
-					[/* text */ 't', `The symbolic type descriptor at the call site of `],
-					[/* inline code block */ 'i', `getAndBitwiseOrRelease`],
-					[/* text */ 't', `
- must match the access mode type that is the result of calling
- `],
-					[/* inline code block */ 'i', `accessModeType(VarHandle.AccessMode.GET_AND_BITWISE_OR_RELEASE)`],
-					[/* text */ 't', ` on this
- VarHandle.`]
-				]]
-			],
-			[/* parameters */
-				[/* parameter */ 'args', [/* parameter description */
-					[/* text */ 't', `the signature-polymorphic parameter list of the form
- `],
-					[/* inline code block */ 'i', `(CT1 ct1, ..., CTn ctn, T mask)`],
 					[/* text */ 't', `
  , statically represented using varargs.`]
 				]]
@@ -2776,6 +2038,222 @@ DocsCollector.collect('java.lang.invoke.VarHandle', [
  must match the access mode type that is the result of calling
  `],
 					[/* inline code block */ 'i', `accessModeType(VarHandle.AccessMode.GET_AND_BITWISE_AND_RELEASE)`],
+					[/* text */ 't', ` on this
+ VarHandle.`]
+				]]
+			],
+			[/* parameters */
+				[/* parameter */ 'args', [/* parameter description */
+					[/* text */ 't', `the signature-polymorphic parameter list of the form
+ `],
+					[/* inline code block */ 'i', `(CT1 ct1, ..., CTn ctn, T mask)`],
+					[/* text */ 't', `
+ , statically represented using varargs.`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.lang.UnsupportedOperationException', [/* throw description */
+					[/* text */ 't', `if the access mode is unsupported
+ for this VarHandle.`]
+				]],
+				[/* throw */ 'java.lang.invoke.WrongMethodTypeException', [/* throw description */
+					[/* text */ 't', `if the access mode type does not
+ match the caller's symbolic type descriptor.`]
+				]],
+				[/* throw */ 'java.lang.ClassCastException', [/* throw description */
+					[/* text */ 't', `if the access mode type matches the caller's
+ symbolic type descriptor, but a reference cast fails.`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `the signature-polymorphic result that is the previous value of
+ the variable
+ , statically represented using `],
+				[/* inline code block */ 'i', `Object`],
+				[/* text */ 't', `.`]
+			]
+		]],
+		[/* method */ 'getAndBitwiseOr(java.lang.Object...)', [
+			[/* method description */
+				[/* text */ 't', `Atomically sets the value of a variable to the result of
+ bitwise OR between the variable's current value and the `],
+				[/* inline code block */ 'i', `mask`],
+				[/* text */ 't', `
+ with the memory semantics of `],
+				[/* reference */ 'r', `#setVolatile(java.lang.Object...)`, `setVolatile(java.lang.Object...)`],
+				[/* text */ 't', ` and returns the
+ variable's previous value, as accessed with the memory semantics of
+ `],
+				[/* reference */ 'r', `#getVolatile(java.lang.Object...)`, `getVolatile(java.lang.Object...)`],
+				[/* text */ 't', `.
+
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', `If the variable type is the non-integral `],
+					[/* inline code block */ 'i', `boolean`],
+					[/* text */ 't', ` type then a
+ logical OR is performed instead of a bitwise OR.
+
+ `]
+				]],
+				[/* block */ 'b', [
+					[/* text */ 't', `The method signature is of the form `],
+					[/* inline code block */ 'i', `(CT1 ct1, ..., CTn ctn, T mask)T`],
+					[/* text */ 't', `.
+
+ `]
+				]],
+				[/* block */ 'b', [
+					[/* text */ 't', `The symbolic type descriptor at the call site of `],
+					[/* inline code block */ 'i', `getAndBitwiseOr`],
+					[/* text */ 't', `
+ must match the access mode type that is the result of calling
+ `],
+					[/* inline code block */ 'i', `accessModeType(VarHandle.AccessMode.GET_AND_BITWISE_OR)`],
+					[/* text */ 't', ` on this
+ VarHandle.`]
+				]]
+			],
+			[/* parameters */
+				[/* parameter */ 'args', [/* parameter description */
+					[/* text */ 't', `the signature-polymorphic parameter list of the form
+ `],
+					[/* inline code block */ 'i', `(CT1 ct1, ..., CTn ctn, T mask)`],
+					[/* text */ 't', `
+ , statically represented using varargs.`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.lang.UnsupportedOperationException', [/* throw description */
+					[/* text */ 't', `if the access mode is unsupported
+ for this VarHandle.`]
+				]],
+				[/* throw */ 'java.lang.invoke.WrongMethodTypeException', [/* throw description */
+					[/* text */ 't', `if the access mode type does not
+ match the caller's symbolic type descriptor.`]
+				]],
+				[/* throw */ 'java.lang.ClassCastException', [/* throw description */
+					[/* text */ 't', `if the access mode type matches the caller's
+ symbolic type descriptor, but a reference cast fails.`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `the signature-polymorphic result that is the previous value of
+ the variable
+ , statically represented using `],
+				[/* inline code block */ 'i', `Object`],
+				[/* text */ 't', `.`]
+			]
+		]],
+		[/* method */ 'getAndBitwiseOrAcquire(java.lang.Object...)', [
+			[/* method description */
+				[/* text */ 't', `Atomically sets the value of a variable to the result of
+ bitwise OR between the variable's current value and the `],
+				[/* inline code block */ 'i', `mask`],
+				[/* text */ 't', `
+ with the memory semantics of `],
+				[/* reference */ 'r', `#set(java.lang.Object...)`, `set(java.lang.Object...)`],
+				[/* text */ 't', ` and returns the
+ variable's previous value, as accessed with the memory semantics of
+ `],
+				[/* reference */ 'r', `#getAcquire(java.lang.Object...)`, `getAcquire(java.lang.Object...)`],
+				[/* text */ 't', `.
+
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', `If the variable type is the non-integral `],
+					[/* inline code block */ 'i', `boolean`],
+					[/* text */ 't', ` type then a
+ logical OR is performed instead of a bitwise OR.
+
+ `]
+				]],
+				[/* block */ 'b', [
+					[/* text */ 't', `The method signature is of the form `],
+					[/* inline code block */ 'i', `(CT1 ct1, ..., CTn ctn, T mask)T`],
+					[/* text */ 't', `.
+
+ `]
+				]],
+				[/* block */ 'b', [
+					[/* text */ 't', `The symbolic type descriptor at the call site of `],
+					[/* inline code block */ 'i', `getAndBitwiseOrAcquire`],
+					[/* text */ 't', `
+ must match the access mode type that is the result of calling
+ `],
+					[/* inline code block */ 'i', `accessModeType(VarHandle.AccessMode.GET_AND_BITWISE_OR_ACQUIRE)`],
+					[/* text */ 't', ` on this
+ VarHandle.`]
+				]]
+			],
+			[/* parameters */
+				[/* parameter */ 'args', [/* parameter description */
+					[/* text */ 't', `the signature-polymorphic parameter list of the form
+ `],
+					[/* inline code block */ 'i', `(CT1 ct1, ..., CTn ctn, T mask)`],
+					[/* text */ 't', `
+ , statically represented using varargs.`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.lang.UnsupportedOperationException', [/* throw description */
+					[/* text */ 't', `if the access mode is unsupported
+ for this VarHandle.`]
+				]],
+				[/* throw */ 'java.lang.invoke.WrongMethodTypeException', [/* throw description */
+					[/* text */ 't', `if the access mode type does not
+ match the caller's symbolic type descriptor.`]
+				]],
+				[/* throw */ 'java.lang.ClassCastException', [/* throw description */
+					[/* text */ 't', `if the access mode type matches the caller's
+ symbolic type descriptor, but a reference cast fails.`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `the signature-polymorphic result that is the previous value of
+ the variable
+ , statically represented using `],
+				[/* inline code block */ 'i', `Object`],
+				[/* text */ 't', `.`]
+			]
+		]],
+		[/* method */ 'getAndBitwiseOrRelease(java.lang.Object...)', [
+			[/* method description */
+				[/* text */ 't', `Atomically sets the value of a variable to the result of
+ bitwise OR between the variable's current value and the `],
+				[/* inline code block */ 'i', `mask`],
+				[/* text */ 't', `
+ with the memory semantics of `],
+				[/* reference */ 'r', `#setRelease(java.lang.Object...)`, `setRelease(java.lang.Object...)`],
+				[/* text */ 't', ` and returns the
+ variable's previous value, as accessed with the memory semantics of
+ `],
+				[/* reference */ 'r', `#get(java.lang.Object...)`, `get(java.lang.Object...)`],
+				[/* text */ 't', `.
+
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', `If the variable type is the non-integral `],
+					[/* inline code block */ 'i', `boolean`],
+					[/* text */ 't', ` type then a
+ logical OR is performed instead of a bitwise OR.
+
+ `]
+				]],
+				[/* block */ 'b', [
+					[/* text */ 't', `The method signature is of the form `],
+					[/* inline code block */ 'i', `(CT1 ct1, ..., CTn ctn, T mask)T`],
+					[/* text */ 't', `.
+
+ `]
+				]],
+				[/* block */ 'b', [
+					[/* text */ 't', `The symbolic type descriptor at the call site of `],
+					[/* inline code block */ 'i', `getAndBitwiseOrRelease`],
+					[/* text */ 't', `
+ must match the access mode type that is the result of calling
+ `],
+					[/* inline code block */ 'i', `accessModeType(VarHandle.AccessMode.GET_AND_BITWISE_OR_RELEASE)`],
 					[/* text */ 't', ` on this
  VarHandle.`]
 				]]
@@ -3027,58 +2505,523 @@ DocsCollector.collect('java.lang.invoke.VarHandle', [
 				[/* text */ 't', `.`]
 			]
 		]],
-		[/* method */ 'withInvokeExactBehavior()', [
+		[/* method */ 'getAndSet(java.lang.Object...)', [
 			[/* method description */
-				[/* text */ 't', `Returns a VarHandle, with access to the same variable(s) as this VarHandle, but whose
- invocation behavior of access mode methods is adjusted to
+				[/* text */ 't', `Atomically sets the value of a variable to the `],
+				[/* inline code block */ 'i', `newValue`],
+				[/* text */ 't', ` with the
+ memory semantics of `],
+				[/* reference */ 'r', `#setVolatile(java.lang.Object...)`, `setVolatile(java.lang.Object...)`],
+				[/* text */ 't', ` and returns the variable's
+ previous value, as accessed with the memory semantics of
  `],
-				[/* text */ 't', `invoke-exact behavior`],
+				[/* reference */ 'r', `#getVolatile(java.lang.Object...)`, `getVolatile(java.lang.Object...)`],
 				[/* text */ 't', `.
- `],
-				[/* block */ 'b', `
- If this VarHandle already has invoke-exact behavior this VarHandle is returned.
+
  `],
 				[/* block */ 'b', [
+					[/* text */ 't', `The method signature is of the form `],
+					[/* inline code block */ 'i', `(CT1 ct1, ..., CTn ctn, T newValue)T`],
+					[/* text */ 't', `.
+
+ `]
+				]],
+				[/* block */ 'b', [
+					[/* text */ 't', `The symbolic type descriptor at the call site of `],
+					[/* inline code block */ 'i', `getAndSet`],
 					[/* text */ 't', `
- Invoking `],
-					[/* reference */ 'r', `#hasInvokeExactBehavior()`, `hasInvokeExactBehavior()`],
-					[/* text */ 't', ` on the returned var handle
- is guaranteed to return `],
-					[/* inline code block */ 'i', `true`],
-					[/* text */ 't', `.`]
+ must match the access mode type that is the result of calling
+ `],
+					[/* inline code block */ 'i', `accessModeType(VarHandle.AccessMode.GET_AND_SET)`],
+					[/* text */ 't', ` on this
+ VarHandle.`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			[/* parameters */
+				[/* parameter */ 'args', [/* parameter description */
+					[/* text */ 't', `the signature-polymorphic parameter list of the form
+ `],
+					[/* inline code block */ 'i', `(CT1 ct1, ..., CTn ctn, T newValue)`],
+					[/* text */ 't', `
+ , statically represented using varargs.`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.lang.UnsupportedOperationException', [/* throw description */
+					[/* text */ 't', `if the access mode is unsupported
+ for this VarHandle.`]
+				]],
+				[/* throw */ 'java.lang.invoke.WrongMethodTypeException', [/* throw description */
+					[/* text */ 't', `if the access mode type does not
+ match the caller's symbolic type descriptor.`]
+				]],
+				[/* throw */ 'java.lang.ClassCastException', [/* throw description */
+					[/* text */ 't', `if the access mode type matches the caller's
+ symbolic type descriptor, but a reference cast fails.`]
+				]]
+			],
 			[/* return description */
-				[/* text */ 't', `a VarHandle with invoke-exact behavior`]
+				[/* text */ 't', `the signature-polymorphic result that is the previous value of
+ the variable
+ , statically represented using `],
+				[/* inline code block */ 'i', `Object`],
+				[/* text */ 't', `.`]
 			]
 		]],
-		[/* method */ 'withInvokeBehavior()', [
+		[/* method */ 'getAndSetAcquire(java.lang.Object...)', [
 			[/* method description */
-				[/* text */ 't', `Returns a VarHandle, with access to the same variable(s) as this VarHandle, but whose
- invocation behavior of access mode methods is adjusted to
+				[/* text */ 't', `Atomically sets the value of a variable to the `],
+				[/* inline code block */ 'i', `newValue`],
+				[/* text */ 't', ` with the
+ memory semantics of `],
+				[/* reference */ 'r', `#set(java.lang.Object...)`, `set(java.lang.Object...)`],
+				[/* text */ 't', ` and returns the variable's
+ previous value, as accessed with the memory semantics of
  `],
-				[/* text */ 't', `invoke behavior`],
+				[/* reference */ 'r', `#getAcquire(java.lang.Object...)`, `getAcquire(java.lang.Object...)`],
 				[/* text */ 't', `.
- `],
-				[/* block */ 'b', `
- If this VarHandle already has invoke behavior this VarHandle is returned.
+
  `],
 				[/* block */ 'b', [
+					[/* text */ 't', `The method signature is of the form `],
+					[/* inline code block */ 'i', `(CT1 ct1, ..., CTn ctn, T newValue)T`],
+					[/* text */ 't', `.
+
+ `]
+				]],
+				[/* block */ 'b', [
+					[/* text */ 't', `The symbolic type descriptor at the call site of `],
+					[/* inline code block */ 'i', `getAndSetAcquire`],
 					[/* text */ 't', `
- Invoking `],
-					[/* reference */ 'r', `#hasInvokeExactBehavior()`, `hasInvokeExactBehavior()`],
-					[/* text */ 't', ` on the returned var handle
- is guaranteed to return `],
-					[/* inline code block */ 'i', `false`],
-					[/* text */ 't', `.`]
+ must match the access mode type that is the result of calling
+ `],
+					[/* inline code block */ 'i', `accessModeType(VarHandle.AccessMode.GET_AND_SET_ACQUIRE)`],
+					[/* text */ 't', ` on this
+ VarHandle.`]
 				]]
+			],
+			[/* parameters */
+				[/* parameter */ 'args', [/* parameter description */
+					[/* text */ 't', `the signature-polymorphic parameter list of the form
+ `],
+					[/* inline code block */ 'i', `(CT1 ct1, ..., CTn ctn, T newValue)`],
+					[/* text */ 't', `
+ , statically represented using varargs.`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.lang.UnsupportedOperationException', [/* throw description */
+					[/* text */ 't', `if the access mode is unsupported
+ for this VarHandle.`]
+				]],
+				[/* throw */ 'java.lang.invoke.WrongMethodTypeException', [/* throw description */
+					[/* text */ 't', `if the access mode type does not
+ match the caller's symbolic type descriptor.`]
+				]],
+				[/* throw */ 'java.lang.ClassCastException', [/* throw description */
+					[/* text */ 't', `if the access mode type matches the caller's
+ symbolic type descriptor, but a reference cast fails.`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `the signature-polymorphic result that is the previous value of
+ the variable
+ , statically represented using `],
+				[/* inline code block */ 'i', `Object`],
+				[/* text */ 't', `.`]
+			]
+		]],
+		[/* method */ 'getAndSetRelease(java.lang.Object...)', [
+			[/* method description */
+				[/* text */ 't', `Atomically sets the value of a variable to the `],
+				[/* inline code block */ 'i', `newValue`],
+				[/* text */ 't', ` with the
+ memory semantics of `],
+				[/* reference */ 'r', `#setRelease(java.lang.Object...)`, `setRelease(java.lang.Object...)`],
+				[/* text */ 't', ` and returns the variable's
+ previous value, as accessed with the memory semantics of
+ `],
+				[/* reference */ 'r', `#get(java.lang.Object...)`, `get(java.lang.Object...)`],
+				[/* text */ 't', `.
+
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', `The method signature is of the form `],
+					[/* inline code block */ 'i', `(CT1 ct1, ..., CTn ctn, T newValue)T`],
+					[/* text */ 't', `.
+
+ `]
+				]],
+				[/* block */ 'b', [
+					[/* text */ 't', `The symbolic type descriptor at the call site of `],
+					[/* inline code block */ 'i', `getAndSetRelease`],
+					[/* text */ 't', `
+ must match the access mode type that is the result of calling
+ `],
+					[/* inline code block */ 'i', `accessModeType(VarHandle.AccessMode.GET_AND_SET_RELEASE)`],
+					[/* text */ 't', ` on this
+ VarHandle.`]
+				]]
+			],
+			[/* parameters */
+				[/* parameter */ 'args', [/* parameter description */
+					[/* text */ 't', `the signature-polymorphic parameter list of the form
+ `],
+					[/* inline code block */ 'i', `(CT1 ct1, ..., CTn ctn, T newValue)`],
+					[/* text */ 't', `
+ , statically represented using varargs.`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.lang.UnsupportedOperationException', [/* throw description */
+					[/* text */ 't', `if the access mode is unsupported
+ for this VarHandle.`]
+				]],
+				[/* throw */ 'java.lang.invoke.WrongMethodTypeException', [/* throw description */
+					[/* text */ 't', `if the access mode type does not
+ match the caller's symbolic type descriptor.`]
+				]],
+				[/* throw */ 'java.lang.ClassCastException', [/* throw description */
+					[/* text */ 't', `if the access mode type matches the caller's
+ symbolic type descriptor, but a reference cast fails.`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `the signature-polymorphic result that is the previous value of
+ the variable
+ , statically represented using `],
+				[/* inline code block */ 'i', `Object`],
+				[/* text */ 't', `.`]
+			]
+		]],
+		[/* method */ 'getOpaque(java.lang.Object...)', [
+			[/* method description */
+				[/* text */ 't', `Returns the value of a variable, accessed in program order, but with no
+ assurance of memory ordering effects with respect to other threads.
+
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', `The method signature is of the form `],
+					[/* inline code block */ 'i', `(CT1 ct1, ..., CTn ctn)T`],
+					[/* text */ 't', `.
+
+ `]
+				]],
+				[/* block */ 'b', [
+					[/* text */ 't', `The symbolic type descriptor at the call site of `],
+					[/* inline code block */ 'i', `getOpaque`],
+					[/* text */ 't', `
+ must match the access mode type that is the result of calling
+ `],
+					[/* inline code block */ 'i', `accessModeType(VarHandle.AccessMode.GET_OPAQUE)`],
+					[/* text */ 't', ` on this
+ VarHandle.`]
+				]]
+			],
+			[/* parameters */
+				[/* parameter */ 'args', [/* parameter description */
+					[/* text */ 't', `the signature-polymorphic parameter list of the form
+ `],
+					[/* inline code block */ 'i', `(CT1 ct1, ..., CTn ctn)`],
+					[/* text */ 't', `
+ , statically represented using varargs.`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.lang.UnsupportedOperationException', [/* throw description */
+					[/* text */ 't', `if the access mode is unsupported
+ for this VarHandle.`]
+				]],
+				[/* throw */ 'java.lang.invoke.WrongMethodTypeException', [/* throw description */
+					[/* text */ 't', `if the access mode type does not
+ match the caller's symbolic type descriptor.`]
+				]],
+				[/* throw */ 'java.lang.ClassCastException', [/* throw description */
+					[/* text */ 't', `if the access mode type matches the caller's
+ symbolic type descriptor, but a reference cast fails.`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `the signature-polymorphic result that is the value of the
+ variable
+ , statically represented using `],
+				[/* inline code block */ 'i', `Object`],
+				[/* text */ 't', `.`]
+			]
+		]],
+		[/* method */ 'getVolatile(java.lang.Object...)', [
+			[/* method description */
+				[/* text */ 't', `Returns the value of a variable, with memory semantics of reading as if
+ the variable was declared `],
+				[/* inline code block */ 'i', `volatile`],
+				[/* text */ 't', `.
+
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', `The method signature is of the form `],
+					[/* inline code block */ 'i', `(CT1 ct1, ..., CTn ctn)T`],
+					[/* text */ 't', `.
+
+ `]
+				]],
+				[/* block */ 'b', [
+					[/* text */ 't', `The symbolic type descriptor at the call site of `],
+					[/* inline code block */ 'i', `getVolatile`],
+					[/* text */ 't', `
+ must match the access mode type that is the result of calling
+ `],
+					[/* inline code block */ 'i', `accessModeType(VarHandle.AccessMode.GET_VOLATILE)`],
+					[/* text */ 't', ` on this
+ VarHandle.`]
+				]]
+			],
+			[/* parameters */
+				[/* parameter */ 'args', [/* parameter description */
+					[/* text */ 't', `the signature-polymorphic parameter list of the form
+ `],
+					[/* inline code block */ 'i', `(CT1 ct1, ..., CTn ctn)`],
+					[/* text */ 't', `
+ , statically represented using varargs.`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.lang.UnsupportedOperationException', [/* throw description */
+					[/* text */ 't', `if the access mode is unsupported
+ for this VarHandle.`]
+				]],
+				[/* throw */ 'java.lang.invoke.WrongMethodTypeException', [/* throw description */
+					[/* text */ 't', `if the access mode type does not
+ match the caller's symbolic type descriptor.`]
+				]],
+				[/* throw */ 'java.lang.ClassCastException', [/* throw description */
+					[/* text */ 't', `if the access mode type matches the caller's
+ symbolic type descriptor, but a reference cast fails.`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `the signature-polymorphic result that is the value of the
+ variable
+ , statically represented using `],
+				[/* inline code block */ 'i', `Object`],
+				[/* text */ 't', `.`]
+			]
+		]],
+		[/* method */ 'set(java.lang.Object...)', [
+			[/* method description */
+				[/* text */ 't', `Sets the value of a variable to the `],
+				[/* inline code block */ 'i', `newValue`],
+				[/* text */ 't', `, with memory
+ semantics of setting as if the variable was declared non-`],
+				[/* inline code block */ 'i', `volatile`],
+				[/* text */ 't', `
+ and non-`],
+				[/* inline code block */ 'i', `final`],
+				[/* text */ 't', `.  Commonly referred to as plain write access.
+
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', `The method signature is of the form `],
+					[/* inline code block */ 'i', `(CT1 ct1, ..., CTn ctn, T newValue)void`]
+				]],
+				[/* block */ 'b', [
+					[/* text */ 't', `The symbolic type descriptor at the call site of `],
+					[/* inline code block */ 'i', `set`],
+					[/* text */ 't', `
+ must match the access mode type that is the result of calling
+ `],
+					[/* inline code block */ 'i', `accessModeType(VarHandle.AccessMode.SET)`],
+					[/* text */ 't', ` on this VarHandle.`]
+				]]
+			],
+			[/* parameters */
+				[/* parameter */ 'args', [/* parameter description */
+					[/* text */ 't', `the signature-polymorphic parameter list of the form
+ `],
+					[/* inline code block */ 'i', `(CT1 ct1, ..., CTn ctn, T newValue)`],
+					[/* text */ 't', `
+ , statically represented using varargs.`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.lang.UnsupportedOperationException', [/* throw description */
+					[/* text */ 't', `if the access mode is unsupported
+ for this VarHandle.`]
+				]],
+				[/* throw */ 'java.lang.invoke.WrongMethodTypeException', [/* throw description */
+					[/* text */ 't', `if the access mode type does not
+ match the caller's symbolic type descriptor.`]
+				]],
+				[/* throw */ 'java.lang.ClassCastException', [/* throw description */
+					[/* text */ 't', `if the access mode type matches the caller's
+ symbolic type descriptor, but a reference cast fails.`]
+				]]
+			],
+			/* return */ UDF
+		]],
+		[/* method */ 'setOpaque(java.lang.Object...)', [
+			[/* method description */
+				[/* text */ 't', `Sets the value of a variable to the `],
+				[/* inline code block */ 'i', `newValue`],
+				[/* text */ 't', `, in program order,
+ but with no assurance of memory ordering effects with respect to other
+ threads.
+
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', `The method signature is of the form `],
+					[/* inline code block */ 'i', `(CT1 ct1, ..., CTn ctn, T newValue)void`],
+					[/* text */ 't', `.
+
+ `]
+				]],
+				[/* block */ 'b', [
+					[/* text */ 't', `The symbolic type descriptor at the call site of `],
+					[/* inline code block */ 'i', `setOpaque`],
+					[/* text */ 't', `
+ must match the access mode type that is the result of calling
+ `],
+					[/* inline code block */ 'i', `accessModeType(VarHandle.AccessMode.SET_OPAQUE)`],
+					[/* text */ 't', ` on this
+ VarHandle.`]
+				]]
+			],
+			[/* parameters */
+				[/* parameter */ 'args', [/* parameter description */
+					[/* text */ 't', `the signature-polymorphic parameter list of the form
+ `],
+					[/* inline code block */ 'i', `(CT1 ct1, ..., CTn ctn, T newValue)`],
+					[/* text */ 't', `
+ , statically represented using varargs.`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.lang.UnsupportedOperationException', [/* throw description */
+					[/* text */ 't', `if the access mode is unsupported
+ for this VarHandle.`]
+				]],
+				[/* throw */ 'java.lang.invoke.WrongMethodTypeException', [/* throw description */
+					[/* text */ 't', `if the access mode type does not
+ match the caller's symbolic type descriptor.`]
+				]],
+				[/* throw */ 'java.lang.ClassCastException', [/* throw description */
+					[/* text */ 't', `if the access mode type matches the caller's
+ symbolic type descriptor, but a reference cast fails.`]
+				]]
+			],
+			/* return */ UDF
+		]],
+		[/* method */ 'setRelease(java.lang.Object...)', [
+			[/* method description */
+				[/* text */ 't', `Sets the value of a variable to the `],
+				[/* inline code block */ 'i', `newValue`],
+				[/* text */ 't', `, and ensures that
+ prior loads and stores are not reordered after this access.
+
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', `The method signature is of the form `],
+					[/* inline code block */ 'i', `(CT1 ct1, ..., CTn ctn, T newValue)void`],
+					[/* text */ 't', `.
+
+ `]
+				]],
+				[/* block */ 'b', [
+					[/* text */ 't', `The symbolic type descriptor at the call site of `],
+					[/* inline code block */ 'i', `setRelease`],
+					[/* text */ 't', `
+ must match the access mode type that is the result of calling
+ `],
+					[/* inline code block */ 'i', `accessModeType(VarHandle.AccessMode.SET_RELEASE)`],
+					[/* text */ 't', ` on this
+ VarHandle.`]
+				]]
+			],
+			[/* parameters */
+				[/* parameter */ 'args', [/* parameter description */
+					[/* text */ 't', `the signature-polymorphic parameter list of the form
+ `],
+					[/* inline code block */ 'i', `(CT1 ct1, ..., CTn ctn, T newValue)`],
+					[/* text */ 't', `
+ , statically represented using varargs.`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.lang.UnsupportedOperationException', [/* throw description */
+					[/* text */ 't', `if the access mode is unsupported
+ for this VarHandle.`]
+				]],
+				[/* throw */ 'java.lang.invoke.WrongMethodTypeException', [/* throw description */
+					[/* text */ 't', `if the access mode type does not
+ match the caller's symbolic type descriptor.`]
+				]],
+				[/* throw */ 'java.lang.ClassCastException', [/* throw description */
+					[/* text */ 't', `if the access mode type matches the caller's
+ symbolic type descriptor, but a reference cast fails.`]
+				]]
+			],
+			/* return */ UDF
+		]],
+		[/* method */ 'setVolatile(java.lang.Object...)', [
+			[/* method description */
+				[/* text */ 't', `Sets the value of a variable to the `],
+				[/* inline code block */ 'i', `newValue`],
+				[/* text */ 't', `, with memory
+ semantics of setting as if the variable was declared `],
+				[/* inline code block */ 'i', `volatile`],
+				[/* text */ 't', `.
+
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', `The method signature is of the form `],
+					[/* inline code block */ 'i', `(CT1 ct1, ..., CTn ctn, T newValue)void`],
+					[/* text */ 't', `.
+
+ `]
+				]],
+				[/* block */ 'b', [
+					[/* text */ 't', `The symbolic type descriptor at the call site of `],
+					[/* inline code block */ 'i', `setVolatile`],
+					[/* text */ 't', `
+ must match the access mode type that is the result of calling
+ `],
+					[/* inline code block */ 'i', `accessModeType(VarHandle.AccessMode.SET_VOLATILE)`],
+					[/* text */ 't', ` on this
+ VarHandle.`]
+				]]
+			],
+			[/* parameters */
+				[/* parameter */ 'args', [/* parameter description */
+					[/* text */ 't', `the signature-polymorphic parameter list of the form
+ `],
+					[/* inline code block */ 'i', `(CT1 ct1, ..., CTn ctn, T newValue)`],
+					[/* text */ 't', `
+ , statically represented using varargs.`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.lang.UnsupportedOperationException', [/* throw description */
+					[/* text */ 't', `if the access mode is unsupported
+ for this VarHandle.`]
+				]],
+				[/* throw */ 'java.lang.invoke.WrongMethodTypeException', [/* throw description */
+					[/* text */ 't', `if the access mode type does not
+ match the caller's symbolic type descriptor.`]
+				]],
+				[/* throw */ 'java.lang.ClassCastException', [/* throw description */
+					[/* text */ 't', `if the access mode type matches the caller's
+ symbolic type descriptor, but a reference cast fails.`]
+				]]
+			],
+			/* return */ UDF
+		]],
+		[/* method */ 'varType()', [
+			[/* method description */
+				[/* text */ 't', `Returns the variable type of variables referenced by this VarHandle.`]
 			],
 			/* parameters */ UDF,
 			/* throws */ UDF,
 			[/* return description */
-				[/* text */ 't', `a VarHandle with invoke behavior`]
+				[/* text */ 't', `the variable type of variables referenced by this VarHandle`]
 			]
 		]],
 		[/* method */ 'toMethodHandle(java.lang.invoke.VarHandle.AccessMode)', [
@@ -3097,6 +3040,35 @@ DocsCollector.collect('java.lang.invoke.VarHandle', [
 				[/* text */ 't', `a method handle bound to this VarHandle and the given access mode`]
 			]
 		]],
+		[/* method */ 'coordinateTypes()', [
+			[/* method description */
+				[/* text */ 't', `Returns the coordinate types for this VarHandle.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the coordinate types for this VarHandle. The returned
+ list is unmodifiable`]
+			]
+		]],
+		[/* method */ 'describeConstable()', [
+			[/* method description */
+				[/* text */ 't', `Return a nominal descriptor for this instance, if one can be
+ constructed, or an empty `],
+				[/* reference */ 'r', `java.util.Optional`],
+				[/* text */ 't', ` if one cannot be.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `An `],
+				[/* reference */ 'r', `java.util.Optional`],
+				[/* text */ 't', ` containing the resulting nominal descriptor,
+ or an empty `],
+				[/* reference */ 'r', `java.util.Optional`],
+				[/* text */ 't', ` if one cannot be constructed.`]
+			]
+		]],
 		[/* method */ 'acquireFence()', [
 			[/* method description */
 				[/* text */ 't', `Ensures that loads before the fence will not be reordered with loads and
@@ -3106,10 +3078,38 @@ DocsCollector.collect('java.lang.invoke.VarHandle', [
 			/* throws */ UDF,
 			/* return */ UDF
 		]],
+		[/* method */ 'fullFence()', [
+			[/* method description */
+				[/* text */ 't', `Ensures that loads and stores before the fence will not be reordered
+ with
+ loads and stores after the fence.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			/* return */ UDF
+		]],
+		[/* method */ 'loadLoadFence()', [
+			[/* method description */
+				[/* text */ 't', `Ensures that loads before the fence will not be reordered with
+ loads after the fence.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			/* return */ UDF
+		]],
 		[/* method */ 'releaseFence()', [
 			[/* method description */
 				[/* text */ 't', `Ensures that loads and stores before the fence will not be
  reordered with stores after the fence.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			/* return */ UDF
+		]],
+		[/* method */ 'storeStoreFence()', [
+			[/* method description */
+				[/* text */ 't', `Ensures that stores before the fence will not be reordered with
+ stores after the fence.`]
 			],
 			/* parameters */ UDF,
 			/* throws */ UDF,

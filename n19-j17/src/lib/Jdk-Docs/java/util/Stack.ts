@@ -67,6 +67,27 @@ DocsCollector.collect('java.util.Stack', [
 				[/* text */ 't', ` otherwise.`]
 			]
 		]],
+		[/* method */ 'push(java.lang.Object)', [
+			[/* method description */
+				[/* text */ 't', `Pushes an item onto the top of this stack. This has exactly
+ the same effect as:
+ `],
+				[/* block */ 'b', [
+					[/* code block */ 'c', ` addElement(item)`]
+				]]
+			],
+			[/* parameters */
+				[/* parameter */ 'item', [/* parameter description */
+					[/* text */ 't', `the item to be pushed onto this stack.`]
+				]]
+			],
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the `],
+				[/* inline code block */ 'i', `item`],
+				[/* text */ 't', ` argument.`]
+			]
+		]],
 		[/* method */ 'peek()', [
 			[/* method description */
 				[/* text */ 't', `Looks at the object at the top of this stack without removing it
@@ -80,6 +101,24 @@ DocsCollector.collect('java.util.Stack', [
 			],
 			[/* return description */
 				[/* text */ 't', `the object at the top of this stack (the last item
+          of the `],
+				[/* inline code block */ 'i', `Vector`],
+				[/* text */ 't', ` object).`]
+			]
+		]],
+		[/* method */ 'pop()', [
+			[/* method description */
+				[/* text */ 't', `Removes the object at the top of this stack and returns that
+ object as the value of this function.`]
+			],
+			/* parameters */ UDF,
+			[/* throws */
+				[/* throw */ 'java.util.EmptyStackException', [/* throw description */
+					[/* text */ 't', `if this stack is empty.`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `The object at the top of this stack (the last item
           of the `],
 				[/* inline code block */ 'i', `Vector`],
 				[/* text */ 't', ` object).`]
@@ -115,45 +154,6 @@ DocsCollector.collect('java.util.Stack', [
 				[/* inline code block */ 'i', `-1`],
 				[/* text */ 't', `
           indicates that the object is not on the stack.`]
-			]
-		]],
-		[/* method */ 'push(java.lang.Object)', [
-			[/* method description */
-				[/* text */ 't', `Pushes an item onto the top of this stack. This has exactly
- the same effect as:
- `],
-				[/* block */ 'b', [
-					[/* code block */ 'c', ` addElement(item)`]
-				]]
-			],
-			[/* parameters */
-				[/* parameter */ 'item', [/* parameter description */
-					[/* text */ 't', `the item to be pushed onto this stack.`]
-				]]
-			],
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the `],
-				[/* inline code block */ 'i', `item`],
-				[/* text */ 't', ` argument.`]
-			]
-		]],
-		[/* method */ 'pop()', [
-			[/* method description */
-				[/* text */ 't', `Removes the object at the top of this stack and returns that
- object as the value of this function.`]
-			],
-			/* parameters */ UDF,
-			[/* throws */
-				[/* throw */ 'java.util.EmptyStackException', [/* throw description */
-					[/* text */ 't', `if this stack is empty.`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `The object at the top of this stack (the last item
-          of the `],
-				[/* inline code block */ 'i', `Vector`],
-				[/* text */ 't', ` object).`]
 			]
 		]]
 	],

@@ -17,6 +17,37 @@ DocsCollector.collect('java.lang.ref.ReferenceQueue', [
 		]]
 	],
 	[/* methods */
+		[/* method */ 'poll()', [
+			[/* method description */
+				[/* text */ 't', `Polls this queue to see if a reference object is available.  If one is
+ available without further delay then it is removed from the queue and
+ returned.  Otherwise this method immediately returns `],
+				[/* inline code block */ 'i', `null`],
+				[/* text */ 't', `.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `A reference object, if one was immediately available,
+          otherwise `],
+				[/* inline code block */ 'i', `null`]
+			]
+		]],
+		[/* method */ 'remove()', [
+			[/* method description */
+				[/* text */ 't', `Removes the next reference object in this queue, blocking until one
+ becomes available.`]
+			],
+			/* parameters */ UDF,
+			[/* throws */
+				[/* throw */ 'java.lang.InterruptedException', [/* throw description */
+					[/* text */ 't', `If the wait is interrupted`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `A reference object, blocking until one becomes available`]
+			]
+		]],
 		[/* method */ 'remove(long)', [
 			[/* method description */
 				[/* text */ 't', `Removes the next reference object in this queue, blocking until either
@@ -50,37 +81,6 @@ DocsCollector.collect('java.lang.ref.ReferenceQueue', [
 			[/* return description */
 				[/* text */ 't', `A reference object, if one was available within the specified
           timeout period, otherwise `],
-				[/* inline code block */ 'i', `null`]
-			]
-		]],
-		[/* method */ 'remove()', [
-			[/* method description */
-				[/* text */ 't', `Removes the next reference object in this queue, blocking until one
- becomes available.`]
-			],
-			/* parameters */ UDF,
-			[/* throws */
-				[/* throw */ 'java.lang.InterruptedException', [/* throw description */
-					[/* text */ 't', `If the wait is interrupted`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `A reference object, blocking until one becomes available`]
-			]
-		]],
-		[/* method */ 'poll()', [
-			[/* method description */
-				[/* text */ 't', `Polls this queue to see if a reference object is available.  If one is
- available without further delay then it is removed from the queue and
- returned.  Otherwise this method immediately returns `],
-				[/* inline code block */ 'i', `null`],
-				[/* text */ 't', `.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `A reference object, if one was immediately available,
-          otherwise `],
 				[/* inline code block */ 'i', `null`]
 			]
 		]]

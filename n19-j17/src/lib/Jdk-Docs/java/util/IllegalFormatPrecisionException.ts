@@ -30,7 +30,6 @@ DocsCollector.collect('java.util.IllegalFormatPrecisionException', [
 		]]
 	],
 	[/* methods */
-		[/* method */ 'getMessage()', UDF],
 		[/* method */ 'getPrecision()', [
 			[/* method description */
 				[/* text */ 't', `Returns the precision. If the precision isn't representable by an
@@ -45,6 +44,7 @@ DocsCollector.collect('java.util.IllegalFormatPrecisionException', [
 			[/* return description */
 				[/* text */ 't', `The precision`]
 			]
-		]]
+		]],
+		[/* method */ 'getMessage()', UDF]
 	],
 ]);

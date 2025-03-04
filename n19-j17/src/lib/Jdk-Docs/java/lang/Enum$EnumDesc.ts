@@ -13,6 +13,7 @@ DocsCollector.collect('java.lang.Enum$EnumDesc', [
 	/* fields */ UDF,
 	/* constructors */ UDF,
 	[/* methods */
+		[/* method */ 'resolveConstantDesc(java.lang.invoke.MethodHandles.Lookup)', UDF],
 		[/* method */ 'toString()', UDF],
 		[/* method */ 'of(java.lang.constant.ClassDesc,java.lang.String)', [
 			[/* method description */
@@ -40,7 +41,6 @@ DocsCollector.collect('java.lang.Enum$EnumDesc', [
 			[/* return description */
 				[/* text */ 't', `the nominal descriptor`]
 			]
-		]],
-		[/* method */ 'resolveConstantDesc(java.lang.invoke.MethodHandles.Lookup)', UDF]
+		]]
 	],
 ]);

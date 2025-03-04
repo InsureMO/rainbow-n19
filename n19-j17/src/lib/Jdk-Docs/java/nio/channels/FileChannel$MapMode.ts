@@ -6,6 +6,11 @@ DocsCollector.collect('java.nio.channels.FileChannel$MapMode', [
 		[/* text */ 't', `A file-mapping mode.`]
 	],
 	[/* fields */
+		[/* field */ 'PRIVATE', [
+			[/* field description */
+				[/* text */ 't', `Mode for a private (copy-on-write) mapping.`]
+			],
+		]],
 		[/* field */ 'READ_ONLY', [
 			[/* field description */
 				[/* text */ 't', `Mode for a read-only mapping.`]
@@ -14,11 +19,6 @@ DocsCollector.collect('java.nio.channels.FileChannel$MapMode', [
 		[/* field */ 'READ_WRITE', [
 			[/* field description */
 				[/* text */ 't', `Mode for a read/write mapping.`]
-			],
-		]],
-		[/* field */ 'PRIVATE', [
-			[/* field description */
-				[/* text */ 't', `Mode for a private (copy-on-write) mapping.`]
 			],
 		]]
 	],

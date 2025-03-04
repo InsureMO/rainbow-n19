@@ -37,6 +37,25 @@ DocsCollector.collect('java.lang.module.ModuleReference', [
 		]]
 	],
 	[/* methods */
+		[/* method */ 'open()', [
+			[/* method description */
+				[/* text */ 't', `Opens the module content for reading.`]
+			],
+			/* parameters */ UDF,
+			[/* throws */
+				[/* throw */ 'java.io.IOException', [/* throw description */
+					[/* text */ 't', `If an I/O error occurs`]
+				]],
+				[/* throw */ 'java.lang.SecurityException', [/* throw description */
+					[/* text */ 't', `If denied by the security manager`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `A `],
+				[/* inline code block */ 'i', `ModuleReader`],
+				[/* text */ 't', ` to read the module`]
+			]
+		]],
 		[/* method */ 'descriptor()', [
 			[/* method description */
 				[/* text */ 't', `Returns the module descriptor.`]
@@ -69,25 +88,6 @@ DocsCollector.collect('java.lang.module.ModuleReference', [
 				[/* text */ 't', `The location or an empty `],
 				[/* inline code block */ 'i', `Optional`],
 				[/* text */ 't', ` if not known`]
-			]
-		]],
-		[/* method */ 'open()', [
-			[/* method description */
-				[/* text */ 't', `Opens the module content for reading.`]
-			],
-			/* parameters */ UDF,
-			[/* throws */
-				[/* throw */ 'java.io.IOException', [/* throw description */
-					[/* text */ 't', `If an I/O error occurs`]
-				]],
-				[/* throw */ 'java.lang.SecurityException', [/* throw description */
-					[/* text */ 't', `If denied by the security manager`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `A `],
-				[/* inline code block */ 'i', `ModuleReader`],
-				[/* text */ 't', ` to read the module`]
 			]
 		]]
 	],

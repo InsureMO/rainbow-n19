@@ -63,34 +63,6 @@ DocsCollector.collect('java.io.OutputStreamWriter', [
 	],
 	/* fields */ UDF,
 	[/* constructors */
-		[/* constructor */ '<init>(java.io.OutputStream,java.nio.charset.CharsetEncoder)', [
-			[/* constructor description */
-				[/* text */ 't', `Creates an OutputStreamWriter that uses the given charset encoder.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'out', [/* parameter description */
-					[/* text */ 't', `An OutputStream`]
-				]],
-				[/* parameter */ 'enc', [/* parameter description */
-					[/* text */ 't', `A charset encoder`]
-				]]
-			],
-			/* throws */ UDF
-		]],
-		[/* constructor */ '<init>(java.io.OutputStream,java.nio.charset.Charset)', [
-			[/* constructor description */
-				[/* text */ 't', `Creates an OutputStreamWriter that uses the given charset.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'out', [/* parameter description */
-					[/* text */ 't', `An OutputStream`]
-				]],
-				[/* parameter */ 'cs', [/* parameter description */
-					[/* text */ 't', `A charset`]
-				]]
-			],
-			/* throws */ UDF
-		]],
 		[/* constructor */ '<init>(java.io.OutputStream)', [
 			[/* constructor description */
 				[/* text */ 't', `Creates an OutputStreamWriter that uses the default character encoding.`]
@@ -121,11 +93,82 @@ DocsCollector.collect('java.io.OutputStreamWriter', [
 					[/* text */ 't', `If the named encoding is not supported`]
 				]]
 			]
+		]],
+		[/* constructor */ '<init>(java.io.OutputStream,java.nio.charset.Charset)', [
+			[/* constructor description */
+				[/* text */ 't', `Creates an OutputStreamWriter that uses the given charset.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'out', [/* parameter description */
+					[/* text */ 't', `An OutputStream`]
+				]],
+				[/* parameter */ 'cs', [/* parameter description */
+					[/* text */ 't', `A charset`]
+				]]
+			],
+			/* throws */ UDF
+		]],
+		[/* constructor */ '<init>(java.io.OutputStream,java.nio.charset.CharsetEncoder)', [
+			[/* constructor description */
+				[/* text */ 't', `Creates an OutputStreamWriter that uses the given charset encoder.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'out', [/* parameter description */
+					[/* text */ 't', `An OutputStream`]
+				]],
+				[/* parameter */ 'enc', [/* parameter description */
+					[/* text */ 't', `A charset encoder`]
+				]]
+			],
+			/* throws */ UDF
 		]]
 	],
 	[/* methods */
-		[/* method */ 'append(java.lang.CharSequence,int,int)', UDF],
 		[/* method */ 'append(java.lang.CharSequence)', UDF],
+		[/* method */ 'append(java.lang.CharSequence,int,int)', UDF],
+		[/* method */ 'getEncoding()', [
+			[/* method description */
+				[/* text */ 't', `Returns the name of the character encoding being used by this stream.
+
+ `],
+				[/* block */ 'b', ` If the encoding has an historical name then that name is returned;
+ otherwise the encoding's canonical name is returned.
+
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', ` If this instance was created with the `],
+					[/* reference */ 'r', `#%3Cinit%3E(java.io.OutputStream,java.lang.String)`, `OutputStreamWriter(OutputStream, String)`],
+					[/* text */ 't', ` constructor then the returned
+ name, being unique for the encoding, may differ from the name passed to
+ the constructor.  This method may return `],
+					[/* inline code block */ 'i', `null`],
+					[/* text */ 't', ` if the stream has
+ been closed. `]
+				]]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `The historical name of this encoding, or possibly
+         `],
+				[/* inline code block */ 'i', `null`],
+				[/* text */ 't', ` if the stream has been closed`]
+			]
+		]],
+		[/* method */ 'close()', [
+			[/* method description */
+				[/* block */ 'b', `Closes the stream, flushing it first. Once the stream has been closed,
+ further write() or flush() invocations will cause an IOException to be
+ thrown. Closing a previously closed stream has no effect.`]
+			],
+			/* parameters */ UDF,
+			[/* throws */
+				[/* throw */ 'java.io.IOException', [/* throw description */
+					[/* text */ 't', `If an I/O error occurs`]
+				]]
+			],
+			/* return */ UDF
+		]],
 		[/* method */ 'flush()', [
 			[/* method description */
 				[/* text */ 't', `Flushes the stream.`]
@@ -171,6 +214,22 @@ DocsCollector.collect('java.io.OutputStreamWriter', [
 			],
 			/* return */ UDF
 		]],
+		[/* method */ 'write(int)', [
+			[/* method description */
+				[/* text */ 't', `Writes a single character.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'c', [/* parameter description */
+					[/* text */ 't', `int specifying a character to be written`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.io.IOException', [/* throw description */
+					[/* text */ 't', `If an I/O error occurs`]
+				]]
+			],
+			/* return */ UDF
+		]],
 		[/* method */ 'write(java.lang.String,int,int)', [
 			[/* method description */
 				[/* text */ 't', `Writes a portion of a string.`]
@@ -203,65 +262,6 @@ DocsCollector.collect('java.io.OutputStreamWriter', [
 				]]
 			],
 			/* return */ UDF
-		]],
-		[/* method */ 'write(int)', [
-			[/* method description */
-				[/* text */ 't', `Writes a single character.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'c', [/* parameter description */
-					[/* text */ 't', `int specifying a character to be written`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.io.IOException', [/* throw description */
-					[/* text */ 't', `If an I/O error occurs`]
-				]]
-			],
-			/* return */ UDF
-		]],
-		[/* method */ 'close()', [
-			[/* method description */
-				[/* block */ 'b', `Closes the stream, flushing it first. Once the stream has been closed,
- further write() or flush() invocations will cause an IOException to be
- thrown. Closing a previously closed stream has no effect.`]
-			],
-			/* parameters */ UDF,
-			[/* throws */
-				[/* throw */ 'java.io.IOException', [/* throw description */
-					[/* text */ 't', `If an I/O error occurs`]
-				]]
-			],
-			/* return */ UDF
-		]],
-		[/* method */ 'getEncoding()', [
-			[/* method description */
-				[/* text */ 't', `Returns the name of the character encoding being used by this stream.
-
- `],
-				[/* block */ 'b', ` If the encoding has an historical name then that name is returned;
- otherwise the encoding's canonical name is returned.
-
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', ` If this instance was created with the `],
-					[/* reference */ 'r', `#%3Cinit%3E(java.io.OutputStream,java.lang.String)`, `OutputStreamWriter(OutputStream, String)`],
-					[/* text */ 't', ` constructor then the returned
- name, being unique for the encoding, may differ from the name passed to
- the constructor.  This method may return `],
-					[/* inline code block */ 'i', `null`],
-					[/* text */ 't', ` if the stream has
- been closed. `]
-				]]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `The historical name of this encoding, or possibly
-         `],
-				[/* inline code block */ 'i', `null`],
-				[/* text */ 't', ` if the stream has been closed`]
-			]
 		]]
 	],
 ]);

@@ -228,8 +228,8 @@ JdkClassCreateHelper.class('java.io.ByteArrayInputStream', [
 			/* annotations */ UDF,
 			/* modifiers */ 4
 		],
-		[/* protected int java.io.ByteArrayInputStream.pos */
-			/* name */ 'pos',
+		[/* protected int java.io.ByteArrayInputStream.count */
+			/* name */ 'count',
 			/* type */ 'int',
 			/* annotations */ UDF,
 			/* modifiers */ 4
@@ -240,8 +240,8 @@ JdkClassCreateHelper.class('java.io.ByteArrayInputStream', [
 			/* annotations */ UDF,
 			/* modifiers */ 4
 		],
-		[/* protected int java.io.ByteArrayInputStream.count */
-			/* name */ 'count',
+		[/* protected int java.io.ByteArrayInputStream.pos */
+			/* name */ 'pos',
 			/* type */ 'int',
 			/* annotations */ UDF,
 			/* modifiers */ 4

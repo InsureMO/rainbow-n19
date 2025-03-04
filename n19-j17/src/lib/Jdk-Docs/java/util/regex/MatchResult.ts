@@ -18,6 +18,141 @@ DocsCollector.collect('java.util.regex.MatchResult', [
 	/* fields */ UDF,
 	/* constructors */ UDF,
 	[/* methods */
+		[/* method */ 'end()', [
+			[/* method description */
+				[/* text */ 't', `Returns the offset after the last character matched.`]
+			],
+			/* parameters */ UDF,
+			[/* throws */
+				[/* throw */ 'java.lang.IllegalStateException', [/* throw description */
+					[/* text */ 't', `If no match has yet been attempted,
+          or if the previous match operation failed`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `The offset after the last character matched`]
+			]
+		]],
+		[/* method */ 'end(int)', [
+			[/* method description */
+				[/* text */ 't', `Returns the offset after the last character of the subsequence
+ captured by the given group during this match.
+
+ `],
+				[/* block */ 'b', [
+					[/* reference */ 'r', `.Pattern#cg`],
+					[/* text */ 't', ` are indexed from left
+ to right, starting at one.  Group zero denotes the entire pattern, so
+ the expression `],
+					[/* text */ 't', `m.`],
+					[/* inline code block */ 'i', `end(0)`],
+					[/* text */ 't', ` is equivalent to
+ `],
+					[/* text */ 't', `m.`],
+					[/* inline code block */ 'i', `end()`],
+					[/* text */ 't', `.  `]
+				]]
+			],
+			[/* parameters */
+				[/* parameter */ 'group', [/* parameter description */
+					[/* text */ 't', `The index of a capturing group in this matcher's pattern`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.lang.IllegalStateException', [/* throw description */
+					[/* text */ 't', `If no match has yet been attempted,
+          or if the previous match operation failed`]
+				]],
+				[/* throw */ 'java.lang.IndexOutOfBoundsException', [/* throw description */
+					[/* text */ 't', `If there is no capturing group in the pattern
+          with the given index`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `The offset after the last character captured by the group,
+          or `],
+				[/* inline code block */ 'i', `-1`],
+				[/* text */ 't', ` if the match was successful
+          but the group itself did not match anything`]
+			]
+		]],
+		[/* method */ 'groupCount()', [
+			[/* method description */
+				[/* text */ 't', `Returns the number of capturing groups in this match result's pattern.
+
+ `],
+				[/* block */ 'b', ` Group zero denotes the entire pattern by convention. It is not
+ included in this count.
+
+ `],
+				[/* block */ 'b', ` Any non-negative integer smaller than or equal to the value
+ returned by this method is guaranteed to be a valid group index for
+ this matcher.  `]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `The number of capturing groups in this matcher's pattern`]
+			]
+		]],
+		[/* method */ 'start()', [
+			[/* method description */
+				[/* text */ 't', `Returns the start index of the match.`]
+			],
+			/* parameters */ UDF,
+			[/* throws */
+				[/* throw */ 'java.lang.IllegalStateException', [/* throw description */
+					[/* text */ 't', `If no match has yet been attempted,
+          or if the previous match operation failed`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `The index of the first character matched`]
+			]
+		]],
+		[/* method */ 'start(int)', [
+			[/* method description */
+				[/* text */ 't', `Returns the start index of the subsequence captured by the given group
+ during this match.
+
+ `],
+				[/* block */ 'b', [
+					[/* reference */ 'r', `.Pattern#cg`],
+					[/* text */ 't', ` are indexed from left
+ to right, starting at one.  Group zero denotes the entire pattern, so
+ the expression `],
+					[/* text */ 't', `m.`],
+					[/* inline code block */ 'i', `start(0)`],
+					[/* text */ 't', ` is equivalent to
+ `],
+					[/* text */ 't', `m.`],
+					[/* inline code block */ 'i', `start()`],
+					[/* text */ 't', `.  `]
+				]]
+			],
+			[/* parameters */
+				[/* parameter */ 'group', [/* parameter description */
+					[/* text */ 't', `The index of a capturing group in this matcher's pattern`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.lang.IllegalStateException', [/* throw description */
+					[/* text */ 't', `If no match has yet been attempted,
+          or if the previous match operation failed`]
+				]],
+				[/* throw */ 'java.lang.IndexOutOfBoundsException', [/* throw description */
+					[/* text */ 't', `If there is no capturing group in the pattern
+          with the given index`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `The index of the first character captured by the group,
+          or `],
+				[/* inline code block */ 'i', `-1`],
+				[/* text */ 't', ` if the match was successful but the group
+          itself did not match anything`]
+			]
+		]],
 		[/* method */ 'group()', [
 			[/* method description */
 				[/* text */ 't', `Returns the input subsequence matched by the previous match.
@@ -143,141 +278,6 @@ DocsCollector.collect('java.util.regex.MatchResult', [
 				[/* inline code block */ 'i', `null`],
 				[/* text */ 't', ` if the group
           failed to match part of the input`]
-			]
-		]],
-		[/* method */ 'start(int)', [
-			[/* method description */
-				[/* text */ 't', `Returns the start index of the subsequence captured by the given group
- during this match.
-
- `],
-				[/* block */ 'b', [
-					[/* reference */ 'r', `.Pattern#cg`],
-					[/* text */ 't', ` are indexed from left
- to right, starting at one.  Group zero denotes the entire pattern, so
- the expression `],
-					[/* text */ 't', `m.`],
-					[/* inline code block */ 'i', `start(0)`],
-					[/* text */ 't', ` is equivalent to
- `],
-					[/* text */ 't', `m.`],
-					[/* inline code block */ 'i', `start()`],
-					[/* text */ 't', `.  `]
-				]]
-			],
-			[/* parameters */
-				[/* parameter */ 'group', [/* parameter description */
-					[/* text */ 't', `The index of a capturing group in this matcher's pattern`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.IllegalStateException', [/* throw description */
-					[/* text */ 't', `If no match has yet been attempted,
-          or if the previous match operation failed`]
-				]],
-				[/* throw */ 'java.lang.IndexOutOfBoundsException', [/* throw description */
-					[/* text */ 't', `If there is no capturing group in the pattern
-          with the given index`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `The index of the first character captured by the group,
-          or `],
-				[/* inline code block */ 'i', `-1`],
-				[/* text */ 't', ` if the match was successful but the group
-          itself did not match anything`]
-			]
-		]],
-		[/* method */ 'start()', [
-			[/* method description */
-				[/* text */ 't', `Returns the start index of the match.`]
-			],
-			/* parameters */ UDF,
-			[/* throws */
-				[/* throw */ 'java.lang.IllegalStateException', [/* throw description */
-					[/* text */ 't', `If no match has yet been attempted,
-          or if the previous match operation failed`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `The index of the first character matched`]
-			]
-		]],
-		[/* method */ 'end(int)', [
-			[/* method description */
-				[/* text */ 't', `Returns the offset after the last character of the subsequence
- captured by the given group during this match.
-
- `],
-				[/* block */ 'b', [
-					[/* reference */ 'r', `.Pattern#cg`],
-					[/* text */ 't', ` are indexed from left
- to right, starting at one.  Group zero denotes the entire pattern, so
- the expression `],
-					[/* text */ 't', `m.`],
-					[/* inline code block */ 'i', `end(0)`],
-					[/* text */ 't', ` is equivalent to
- `],
-					[/* text */ 't', `m.`],
-					[/* inline code block */ 'i', `end()`],
-					[/* text */ 't', `.  `]
-				]]
-			],
-			[/* parameters */
-				[/* parameter */ 'group', [/* parameter description */
-					[/* text */ 't', `The index of a capturing group in this matcher's pattern`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.IllegalStateException', [/* throw description */
-					[/* text */ 't', `If no match has yet been attempted,
-          or if the previous match operation failed`]
-				]],
-				[/* throw */ 'java.lang.IndexOutOfBoundsException', [/* throw description */
-					[/* text */ 't', `If there is no capturing group in the pattern
-          with the given index`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `The offset after the last character captured by the group,
-          or `],
-				[/* inline code block */ 'i', `-1`],
-				[/* text */ 't', ` if the match was successful
-          but the group itself did not match anything`]
-			]
-		]],
-		[/* method */ 'end()', [
-			[/* method description */
-				[/* text */ 't', `Returns the offset after the last character matched.`]
-			],
-			/* parameters */ UDF,
-			[/* throws */
-				[/* throw */ 'java.lang.IllegalStateException', [/* throw description */
-					[/* text */ 't', `If no match has yet been attempted,
-          or if the previous match operation failed`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `The offset after the last character matched`]
-			]
-		]],
-		[/* method */ 'groupCount()', [
-			[/* method description */
-				[/* text */ 't', `Returns the number of capturing groups in this match result's pattern.
-
- `],
-				[/* block */ 'b', ` Group zero denotes the entire pattern by convention. It is not
- included in this count.
-
- `],
-				[/* block */ 'b', ` Any non-negative integer smaller than or equal to the value
- returned by this method is guaranteed to be a valid group index for
- this matcher.  `]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `The number of capturing groups in this matcher's pattern`]
 			]
 		]]
 	],

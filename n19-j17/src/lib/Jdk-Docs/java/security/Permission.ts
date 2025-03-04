@@ -59,20 +59,6 @@ DocsCollector.collect('java.security.Permission', [
 		]]
 	],
 	[/* methods */
-		[/* method */ 'getName()', [
-			[/* method description */
-				[/* text */ 't', `Returns the name of this Permission.
- For example, in the case of a `],
-				[/* inline code block */ 'i', `java.io.FilePermission`],
-				[/* text */ 't', `,
- the name will be a pathname.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the name of this Permission.`]
-			]
-		]],
 		[/* method */ 'equals(java.lang.Object)', [
 			[/* method description */
 				[/* text */ 't', `Checks two Permission objects for equality.
@@ -97,17 +83,33 @@ DocsCollector.collect('java.security.Permission', [
 				[/* text */ 't', `true if both Permission objects are equivalent.`]
 			]
 		]],
-		[/* method */ 'toString()', [
+		[/* method */ 'implies(java.security.Permission)', [
 			[/* method description */
-				[/* text */ 't', `Returns a string describing this Permission.  The convention is to
- specify the class name, the permission name, and the actions in
- the following format: '("ClassName" "name" "actions")', or
- '("ClassName" "name")' if actions list is null or empty.`]
+				[/* text */ 't', `Checks if the specified permission's actions are "implied by"
+ this object's actions.
+ `],
+				[/* block */ 'b', `
+ This must be implemented by subclasses of Permission, as they are the
+ only ones that can impose semantics on a Permission object.
+
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', `The `],
+					[/* inline code block */ 'i', `implies`],
+					[/* text */ 't', ` method is used by the AccessController to determine
+ whether or not a requested permission is implied by another permission that
+ is known to be valid in the current execution context.`]
+				]]
 			],
-			/* parameters */ UDF,
+			[/* parameters */
+				[/* parameter */ 'permission', [/* parameter description */
+					[/* text */ 't', `the permission to check against.`]
+				]]
+			],
 			/* throws */ UDF,
 			[/* return description */
-				[/* text */ 't', `information about this Permission.`]
+				[/* text */ 't', `true if the specified permission is implied by this object,
+ false if not.`]
 			]
 		]],
 		[/* method */ 'hashCode()', [
@@ -154,35 +156,6 @@ DocsCollector.collect('java.security.Permission', [
 				[/* text */ 't', `a hash code value for this object.`]
 			]
 		]],
-		[/* method */ 'implies(java.security.Permission)', [
-			[/* method description */
-				[/* text */ 't', `Checks if the specified permission's actions are "implied by"
- this object's actions.
- `],
-				[/* block */ 'b', `
- This must be implemented by subclasses of Permission, as they are the
- only ones that can impose semantics on a Permission object.
-
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', `The `],
-					[/* inline code block */ 'i', `implies`],
-					[/* text */ 't', ` method is used by the AccessController to determine
- whether or not a requested permission is implied by another permission that
- is known to be valid in the current execution context.`]
-				]]
-			],
-			[/* parameters */
-				[/* parameter */ 'permission', [/* parameter description */
-					[/* text */ 't', `the permission to check against.`]
-				]]
-			],
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `true if the specified permission is implied by this object,
- false if not.`]
-			]
-		]],
 		[/* method */ 'getActions()', [
 			[/* method description */
 				[/* text */ 't', `Returns the actions as a String. This is abstract
@@ -207,6 +180,33 @@ DocsCollector.collect('java.security.Permission', [
 			/* throws */ UDF,
 			[/* return description */
 				[/* text */ 't', `the actions of this Permission.`]
+			]
+		]],
+		[/* method */ 'getName()', [
+			[/* method description */
+				[/* text */ 't', `Returns the name of this Permission.
+ For example, in the case of a `],
+				[/* inline code block */ 'i', `java.io.FilePermission`],
+				[/* text */ 't', `,
+ the name will be a pathname.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the name of this Permission.`]
+			]
+		]],
+		[/* method */ 'toString()', [
+			[/* method description */
+				[/* text */ 't', `Returns a string describing this Permission.  The convention is to
+ specify the class name, the permission name, and the actions in
+ the following format: '("ClassName" "name" "actions")', or
+ '("ClassName" "name")' if actions list is null or empty.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `information about this Permission.`]
 			]
 		]],
 		[/* method */ 'newPermissionCollection()', [

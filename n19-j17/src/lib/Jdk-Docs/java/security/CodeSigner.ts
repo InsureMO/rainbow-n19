@@ -57,17 +57,6 @@ DocsCollector.collect('java.security.CodeSigner', [
 				[/* text */ 't', `true if the objects are considered equal, false otherwise.`]
 			]
 		]],
-		[/* method */ 'toString()', [
-			[/* method description */
-				[/* text */ 't', `Returns a string describing this code signer.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `A string comprising the signer's certificate and a timestamp,
-         if present.`]
-			]
-		]],
 		[/* method */ 'hashCode()', [
 			[/* method description */
 				[/* text */ 't', `Returns the hash code value for this code signer.
@@ -78,6 +67,17 @@ DocsCollector.collect('java.security.CodeSigner', [
 			/* throws */ UDF,
 			[/* return description */
 				[/* text */ 't', `a hash code value for this code signer.`]
+			]
+		]],
+		[/* method */ 'toString()', [
+			[/* method description */
+				[/* text */ 't', `Returns a string describing this code signer.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `A string comprising the signer's certificate and a timestamp,
+         if present.`]
 			]
 		]],
 		[/* method */ 'getSignerCertPath()', [

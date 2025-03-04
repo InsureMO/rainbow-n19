@@ -116,6 +116,32 @@ DocsCollector.collect('java.security.PermissionCollection', [
 		]]
 	],
 	[/* methods */
+		[/* method */ 'implies(java.security.Permission)', [
+			[/* method description */
+				[/* text */ 't', `Checks to see if the specified permission is implied by
+ the collection of Permission objects held in this PermissionCollection.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'permission', [/* parameter description */
+					[/* text */ 't', `the Permission object to compare.`]
+				]]
+			],
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `true if "permission" is implied by the  permissions in
+ the collection, false if not.`]
+			]
+		]],
+		[/* method */ 'elements()', [
+			[/* method description */
+				[/* text */ 't', `Returns an enumeration of all the Permission objects in the collection.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `an enumeration of all the Permissions.`]
+			]
+		]],
 		[/* method */ 'add(java.security.Permission)', [
 			[/* method description */
 				[/* text */ 't', `Adds a permission object to the current collection of permission objects.`]
@@ -137,6 +163,31 @@ DocsCollector.collect('java.security.PermissionCollection', [
 				]]
 			],
 			/* return */ UDF
+		]],
+		[/* method */ 'isReadOnly()', [
+			[/* method description */
+				[/* text */ 't', `Returns true if this PermissionCollection object is marked as readonly.
+ If it is readonly, no new Permission objects can be added to it
+ using `],
+				[/* inline code block */ 'i', `add`],
+				[/* text */ 't', `.
+
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', `By default, the object is `],
+					[/* text */ 't', `not`],
+					[/* text */ 't', ` readonly. It can be set to
+ readonly by a call to `],
+					[/* inline code block */ 'i', `setReadOnly`],
+					[/* text */ 't', `.`]
+				]]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `true if this PermissionCollection object is marked as readonly,
+ false otherwise.`]
+			]
 		]],
 		[/* method */ 'toString()', [
 			[/* method description */
@@ -166,70 +217,6 @@ DocsCollector.collect('java.security.PermissionCollection', [
          as described above.`]
 			]
 		]],
-		[/* method */ 'elements()', [
-			[/* method description */
-				[/* text */ 't', `Returns an enumeration of all the Permission objects in the collection.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `an enumeration of all the Permissions.`]
-			]
-		]],
-		[/* method */ 'setReadOnly()', [
-			[/* method description */
-				[/* text */ 't', `Marks this PermissionCollection object as "readonly". After
- a PermissionCollection object
- is marked as readonly, no new Permission objects can be added to it
- using `],
-				[/* inline code block */ 'i', `add`],
-				[/* text */ 't', `.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			/* return */ UDF
-		]],
-		[/* method */ 'implies(java.security.Permission)', [
-			[/* method description */
-				[/* text */ 't', `Checks to see if the specified permission is implied by
- the collection of Permission objects held in this PermissionCollection.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'permission', [/* parameter description */
-					[/* text */ 't', `the Permission object to compare.`]
-				]]
-			],
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `true if "permission" is implied by the  permissions in
- the collection, false if not.`]
-			]
-		]],
-		[/* method */ 'isReadOnly()', [
-			[/* method description */
-				[/* text */ 't', `Returns true if this PermissionCollection object is marked as readonly.
- If it is readonly, no new Permission objects can be added to it
- using `],
-				[/* inline code block */ 'i', `add`],
-				[/* text */ 't', `.
-
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', `By default, the object is `],
-					[/* text */ 't', `not`],
-					[/* text */ 't', ` readonly. It can be set to
- readonly by a call to `],
-					[/* inline code block */ 'i', `setReadOnly`],
-					[/* text */ 't', `.`]
-				]]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `true if this PermissionCollection object is marked as readonly,
- false otherwise.`]
-			]
-		]],
 		[/* method */ 'elementsAsStream()', [
 			[/* method description */
 				[/* text */ 't', `Returns a stream of all the Permission objects in the collection.
@@ -248,6 +235,19 @@ DocsCollector.collect('java.security.PermissionCollection', [
 			[/* return description */
 				[/* text */ 't', `a stream of all the Permissions.`]
 			]
+		]],
+		[/* method */ 'setReadOnly()', [
+			[/* method description */
+				[/* text */ 't', `Marks this PermissionCollection object as "readonly". After
+ a PermissionCollection object
+ is marked as readonly, no new Permission objects can be added to it
+ using `],
+				[/* inline code block */ 'i', `add`],
+				[/* text */ 't', `.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			/* return */ UDF
 		]]
 	],
 ]);

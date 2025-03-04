@@ -12,9 +12,10 @@ DocsCollector.collect('java.io.CharArrayReader', [
 				[/* text */ 't', `The character buffer.`]
 			],
 		]],
-		[/* field */ 'pos', [
+		[/* field */ 'count', [
 			[/* field description */
-				[/* text */ 't', `The current buffer position.`]
+				[/* text */ 't', `The index of the end of this buffer.  There is not valid
+  data at or beyond this index.`]
 			],
 		]],
 		[/* field */ 'markedPos', [
@@ -22,10 +23,9 @@ DocsCollector.collect('java.io.CharArrayReader', [
 				[/* text */ 't', `The position of mark in buffer.`]
 			],
 		]],
-		[/* field */ 'count', [
+		[/* field */ 'pos', [
 			[/* field description */
-				[/* text */ 't', `The index of the end of this buffer.  There is not valid
-  data at or beyond this index.`]
+				[/* text */ 't', `The current buffer position.`]
 			],
 		]]
 	],
@@ -88,6 +88,51 @@ DocsCollector.collect('java.io.CharArrayReader', [
 		]]
 	],
 	[/* methods */
+		[/* method */ 'markSupported()', [
+			[/* method description */
+				[/* text */ 't', `Tells whether this stream supports the mark() operation, which it does.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `true if and only if this stream supports the mark operation.`]
+			]
+		]],
+		[/* method */ 'ready()', [
+			[/* method description */
+				[/* text */ 't', `Tells whether this stream is ready to be read.  Character-array readers
+ are always ready to be read.`]
+			],
+			/* parameters */ UDF,
+			[/* throws */
+				[/* throw */ 'java.io.IOException', [/* throw description */
+					[/* text */ 't', `If an I/O error occurs`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `True if the next read() is guaranteed not to block for input,
+ false otherwise.  Note that returning false does not guarantee that the
+ next read will block.`]
+			]
+		]],
+		[/* method */ 'read()', [
+			[/* method description */
+				[/* text */ 't', `Reads a single character.`]
+			],
+			/* parameters */ UDF,
+			[/* throws */
+				[/* throw */ 'java.io.IOException', [/* throw description */
+					[/* text */ 't', `If an I/O error occurs`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `The character read, as an integer in the range 0 to 65535
+             (`],
+				[/* inline code block */ 'i', `0x00-0xffff`],
+				[/* text */ 't', `), or -1 if the end of the stream has
+             been reached`]
+			]
+		]],
 		[/* method */ 'read(char[],int,int)', [
 			[/* method description */
 				[/* text */ 't', `Reads characters into a portion of an array.
@@ -142,57 +187,6 @@ DocsCollector.collect('java.io.CharArrayReader', [
 			]
 		]],
 		[/* method */ 'read(java.nio.CharBuffer)', UDF],
-		[/* method */ 'read()', [
-			[/* method description */
-				[/* text */ 't', `Reads a single character.`]
-			],
-			/* parameters */ UDF,
-			[/* throws */
-				[/* throw */ 'java.io.IOException', [/* throw description */
-					[/* text */ 't', `If an I/O error occurs`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `The character read, as an integer in the range 0 to 65535
-             (`],
-				[/* inline code block */ 'i', `0x00-0xffff`],
-				[/* text */ 't', `), or -1 if the end of the stream has
-             been reached`]
-			]
-		]],
-		[/* method */ 'close()', [
-			[/* method description */
-				[/* text */ 't', `Closes the stream and releases any system resources associated with
- it.  Once the stream has been closed, further read(), ready(),
- mark(), reset(), or skip() invocations will throw an IOException.
- Closing a previously closed stream has no effect. This method will block
- while there is another thread blocking on the reader.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			/* return */ UDF
-		]],
-		[/* method */ 'mark(int)', [
-			[/* method description */
-				[/* text */ 't', `Marks the present position in the stream.  Subsequent calls to reset()
- will reposition the stream to this point.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'readAheadLimit', [/* parameter description */
-					[/* text */ 't', `Limit on the number of characters that may be
-                         read while still preserving the mark.  Because
-                         the stream's input comes from a character array,
-                         there is no actual limit; hence this argument is
-                         ignored.`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.io.IOException', [/* throw description */
-					[/* text */ 't', `If an I/O error occurs`]
-				]]
-			],
-			/* return */ UDF
-		]],
 		[/* method */ 'skip(long)', [
 			[/* method description */
 				[/* text */ 't', `Skips characters. If the stream is already at its end before this method
@@ -230,15 +224,38 @@ DocsCollector.collect('java.io.CharArrayReader', [
 				[/* text */ 't', `The number of characters actually skipped`]
 			]
 		]],
-		[/* method */ 'markSupported()', [
+		[/* method */ 'close()', [
 			[/* method description */
-				[/* text */ 't', `Tells whether this stream supports the mark() operation, which it does.`]
+				[/* text */ 't', `Closes the stream and releases any system resources associated with
+ it.  Once the stream has been closed, further read(), ready(),
+ mark(), reset(), or skip() invocations will throw an IOException.
+ Closing a previously closed stream has no effect. This method will block
+ while there is another thread blocking on the reader.`]
 			],
 			/* parameters */ UDF,
 			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `true if and only if this stream supports the mark operation.`]
-			]
+			/* return */ UDF
+		]],
+		[/* method */ 'mark(int)', [
+			[/* method description */
+				[/* text */ 't', `Marks the present position in the stream.  Subsequent calls to reset()
+ will reposition the stream to this point.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'readAheadLimit', [/* parameter description */
+					[/* text */ 't', `Limit on the number of characters that may be
+                         read while still preserving the mark.  Because
+                         the stream's input comes from a character array,
+                         there is no actual limit; hence this argument is
+                         ignored.`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.io.IOException', [/* throw description */
+					[/* text */ 't', `If an I/O error occurs`]
+				]]
+			],
+			/* return */ UDF
 		]],
 		[/* method */ 'reset()', [
 			[/* method description */
@@ -252,23 +269,6 @@ DocsCollector.collect('java.io.CharArrayReader', [
 				]]
 			],
 			/* return */ UDF
-		]],
-		[/* method */ 'ready()', [
-			[/* method description */
-				[/* text */ 't', `Tells whether this stream is ready to be read.  Character-array readers
- are always ready to be read.`]
-			],
-			/* parameters */ UDF,
-			[/* throws */
-				[/* throw */ 'java.io.IOException', [/* throw description */
-					[/* text */ 't', `If an I/O error occurs`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `True if the next read() is guaranteed not to block for input,
- false otherwise.  Note that returning false does not guarantee that the
- next read will block.`]
-			]
 		]]
 	],
 ]);

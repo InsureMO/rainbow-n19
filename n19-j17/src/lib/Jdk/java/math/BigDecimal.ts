@@ -1265,26 +1265,14 @@ JdkClassCreateHelper.class('java.math.BigDecimal', [
 		]
 	],
 	[/* declared fields */
-		[/* public static final java.math.BigDecimal java.math.BigDecimal.ZERO */
-			/* name */ 'ZERO',
-			/* type */ 'java.math.BigDecimal',
-			/* annotations */ UDF,
-			/* modifiers */ 25
-		],
 		[/* public static final java.math.BigDecimal java.math.BigDecimal.ONE */
 			/* name */ 'ONE',
 			/* type */ 'java.math.BigDecimal',
 			/* annotations */ UDF,
 			/* modifiers */ 25
 		],
-		[/* public static final java.math.BigDecimal java.math.BigDecimal.TEN */
-			/* name */ 'TEN',
-			/* type */ 'java.math.BigDecimal',
-			/* annotations */ UDF,
-			/* modifiers */ 25
-		],
-		[/* public static final int java.math.BigDecimal.ROUND_UP */
-			/* name */ 'ROUND_UP',
+		[/* public static final int java.math.BigDecimal.ROUND_CEILING */
+			/* name */ 'ROUND_CEILING',
 			/* type */ 'int',
 			[/* annotations */
 				[
@@ -1307,32 +1295,8 @@ JdkClassCreateHelper.class('java.math.BigDecimal', [
 			],
 			/* modifiers */ 25
 		],
-		[/* public static final int java.math.BigDecimal.ROUND_CEILING */
-			/* name */ 'ROUND_CEILING',
-			/* type */ 'int',
-			[/* annotations */
-				[
-					'java.lang.Deprecated',
-					['p', 'since', '9'],
-					['p', 'forRemoval', false]
-				]
-			],
-			/* modifiers */ 25
-		],
 		[/* public static final int java.math.BigDecimal.ROUND_FLOOR */
 			/* name */ 'ROUND_FLOOR',
-			/* type */ 'int',
-			[/* annotations */
-				[
-					'java.lang.Deprecated',
-					['p', 'since', '9'],
-					['p', 'forRemoval', false]
-				]
-			],
-			/* modifiers */ 25
-		],
-		[/* public static final int java.math.BigDecimal.ROUND_HALF_UP */
-			/* name */ 'ROUND_HALF_UP',
 			/* type */ 'int',
 			[/* annotations */
 				[
@@ -1367,6 +1331,18 @@ JdkClassCreateHelper.class('java.math.BigDecimal', [
 			],
 			/* modifiers */ 25
 		],
+		[/* public static final int java.math.BigDecimal.ROUND_HALF_UP */
+			/* name */ 'ROUND_HALF_UP',
+			/* type */ 'int',
+			[/* annotations */
+				[
+					'java.lang.Deprecated',
+					['p', 'since', '9'],
+					['p', 'forRemoval', false]
+				]
+			],
+			/* modifiers */ 25
+		],
 		[/* public static final int java.math.BigDecimal.ROUND_UNNECESSARY */
 			/* name */ 'ROUND_UNNECESSARY',
 			/* type */ 'int',
@@ -1377,6 +1353,30 @@ JdkClassCreateHelper.class('java.math.BigDecimal', [
 					['p', 'forRemoval', false]
 				]
 			],
+			/* modifiers */ 25
+		],
+		[/* public static final int java.math.BigDecimal.ROUND_UP */
+			/* name */ 'ROUND_UP',
+			/* type */ 'int',
+			[/* annotations */
+				[
+					'java.lang.Deprecated',
+					['p', 'since', '9'],
+					['p', 'forRemoval', false]
+				]
+			],
+			/* modifiers */ 25
+		],
+		[/* public static final java.math.BigDecimal java.math.BigDecimal.TEN */
+			/* name */ 'TEN',
+			/* type */ 'java.math.BigDecimal',
+			/* annotations */ UDF,
+			/* modifiers */ 25
+		],
+		[/* public static final java.math.BigDecimal java.math.BigDecimal.ZERO */
+			/* name */ 'ZERO',
+			/* type */ 'java.math.BigDecimal',
+			/* annotations */ UDF,
 			/* modifiers */ 25
 		]
 	],

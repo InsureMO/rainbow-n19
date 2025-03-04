@@ -255,185 +255,17 @@ DocsCollector.collect('java.net.InetAddress', [
 				[/* text */ 't', ` otherwise.`]
 			]
 		]],
-		[/* method */ 'toString()', [
+		[/* method */ 'isAnyLocalAddress()', [
 			[/* method description */
-				[/* text */ 't', `Converts this IP address to a `],
-				[/* inline code block */ 'i', `String`],
-				[/* text */ 't', `. The
- string returned is of the form: hostname / literal IP
- address.
-
- If the host name is unresolved, no reverse name service lookup
- is performed. The hostname part will be represented by an empty string.`]
+				[/* text */ 't', `Utility routine to check if the InetAddress is a wildcard address.`]
 			],
 			/* parameters */ UDF,
 			/* throws */ UDF,
 			[/* return description */
-				[/* text */ 't', `a string representation of this IP address.`]
-			]
-		]],
-		[/* method */ 'hashCode()', [
-			[/* method description */
-				[/* text */ 't', `Returns a hashcode for this IP address.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `a hash code value for this IP address.`]
-			]
-		]],
-		[/* method */ 'getHostAddress()', [
-			[/* method description */
-				[/* text */ 't', `Returns the IP address string in textual presentation.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the raw IP address in a string format.`]
-			]
-		]],
-		[/* method */ 'getAddress()', [
-			[/* method description */
-				[/* text */ 't', `Returns the raw IP address of this `],
-				[/* inline code block */ 'i', `InetAddress`],
-				[/* text */ 't', `
- object. The result is in network byte order: the highest order
- byte of the address is in `],
-				[/* inline code block */ 'i', `getAddress()[0]`],
-				[/* text */ 't', `.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the raw IP address of this object.`]
-			]
-		]],
-		[/* method */ 'getByName(java.lang.String)', [
-			[/* method description */
-				[/* text */ 't', `Determines the IP address of a host, given the host's name.
-
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', ` The host name can either be a machine name, such as
- "`],
-					[/* inline code block */ 'i', `www.example.com`],
-					[/* text */ 't', `", or a textual representation of its
- IP address. If a literal IP address is supplied, only the
- validity of the address format is checked.
-
- `]
-				]],
-				[/* block */ 'b', [
-					[/* text */ 't', ` For `],
-					[/* inline code block */ 'i', `host`],
-					[/* text */ 't', ` specified in literal IPv6 address,
- either the form defined in RFC 2732 or the literal IPv6 address
- format defined in RFC 2373 is accepted. IPv6 scoped addresses are also
- supported. See `],
-					[/* reference */ 'r', `.Inet6Address#scoped`],
-					[/* text */ 't', ` for a description of IPv6
- scoped addresses.
-
- `]
-				]],
-				[/* block */ 'b', [
-					[/* text */ 't', ` If the host is `],
-					[/* inline code block */ 'i', `null`],
-					[/* text */ 't', ` or `],
-					[/* inline code block */ 'i', `host.length()`],
-					[/* text */ 't', ` is equal
- to zero, then an `],
-					[/* inline code block */ 'i', `InetAddress`],
-					[/* text */ 't', ` representing an address of the
- loopback interface is returned.
- See `],
-					[/* external link */ 'a', `http://www.ietf.org/rfc/rfc3330.txt`, `RFC 3330`],
-					[/* text */ 't', `
- section 2 and `],
-					[/* external link */ 'a', `http://www.ietf.org/rfc/rfc2373.txt`, `RFC 2373`],
-					[/* text */ 't', `
- section 2.5.3.
-
- `]
-				]],
-				[/* block */ 'b', [
-					[/* text */ 't', ` If there is a security manager, and `],
-					[/* inline code block */ 'i', `host`],
-					[/* text */ 't', ` is not `],
-					[/* inline code block */ 'i', `null`],
-					[/* text */ 't', `
- or `],
-					[/* inline code block */ 'i', `host.length()`],
-					[/* text */ 't', ` is not equal to zero, the security manager's
- `],
-					[/* inline code block */ 'i', `checkConnect`],
-					[/* text */ 't', ` method is called with the hostname and `],
-					[/* inline code block */ 'i', `-1`],
-					[/* text */ 't', `
- as its arguments to determine if the operation is allowed.`]
-				]]
-			],
-			[/* parameters */
-				[/* parameter */ 'host', [/* parameter description */
-					[/* text */ 't', `the specified host, or `],
-					[/* inline code block */ 'i', `null`],
-					[/* text */ 't', `.`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.net.UnknownHostException', [/* throw description */
-					[/* text */ 't', `if no IP address for the
-               `],
-					[/* inline code block */ 'i', `host`],
-					[/* text */ 't', ` could be found, or if a scope_id was specified
-               for a global IPv6 address.`]
-				]],
-				[/* throw */ 'java.lang.SecurityException', [/* throw description */
-					[/* text */ 't', `if a security manager exists
-             and its checkConnect method doesn't allow the operation`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `an IP address for the given host name.`]
-			]
-		]],
-		[/* method */ 'getHostName()', [
-			[/* method description */
-				[/* text */ 't', `Gets the host name for this IP address.
-
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', `If this InetAddress was created with a host name,
- this host name will be remembered and returned;
- otherwise, a reverse name lookup will be performed
- and the result will be returned based on the system
- configured name lookup service. If a lookup of the name service
- is required, call
- `],
-					[/* reference */ 'r', `#getCanonicalHostName()`, `getCanonicalHostName`],
-					[/* text */ 't', `.
-
- `]
-				]],
-				[/* block */ 'b', [
-					[/* text */ 't', `If there is a security manager, its
- `],
-					[/* inline code block */ 'i', `checkConnect`],
-					[/* text */ 't', ` method is first called
- with the hostname and `],
-					[/* inline code block */ 'i', `-1`],
-					[/* text */ 't', `
- as its arguments to see if the operation is allowed.
- If the operation is not allowed, it will return
- the textual representation of the IP address.`]
-				]]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the host name for this IP address, or if the operation
-    is not allowed by the security check, the textual
-    representation of the IP address.`]
+				[/* text */ 't', `a `],
+				[/* inline code block */ 'i', `boolean`],
+				[/* text */ 't', ` indicating if the InetAddress is
+         a wildcard address.`]
 			]
 		]],
 		[/* method */ 'isLinkLocalAddress()', [
@@ -447,6 +279,104 @@ DocsCollector.collect('java.net.InetAddress', [
 				[/* inline code block */ 'i', `boolean`],
 				[/* text */ 't', ` indicating if the InetAddress is
  a link local address; or false if address is not a link local unicast address.`]
+			]
+		]],
+		[/* method */ 'isLoopbackAddress()', [
+			[/* method description */
+				[/* text */ 't', `Utility routine to check if the InetAddress is a loopback address.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `a `],
+				[/* inline code block */ 'i', `boolean`],
+				[/* text */ 't', ` indicating if the InetAddress is
+ a loopback address; or false otherwise.`]
+			]
+		]],
+		[/* method */ 'isMCGlobal()', [
+			[/* method description */
+				[/* text */ 't', `Utility routine to check if the multicast address has global scope.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `a `],
+				[/* inline code block */ 'i', `boolean`],
+				[/* text */ 't', ` indicating if the address has
+         is a multicast address of global scope, false if it is not
+         of global scope or it is not a multicast address`]
+			]
+		]],
+		[/* method */ 'isMCLinkLocal()', [
+			[/* method description */
+				[/* text */ 't', `Utility routine to check if the multicast address has link scope.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `a `],
+				[/* inline code block */ 'i', `boolean`],
+				[/* text */ 't', ` indicating if the address has
+         is a multicast address of link-local scope, false if it is not
+         of link-local scope or it is not a multicast address`]
+			]
+		]],
+		[/* method */ 'isMCNodeLocal()', [
+			[/* method description */
+				[/* text */ 't', `Utility routine to check if the multicast address has node scope.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `a `],
+				[/* inline code block */ 'i', `boolean`],
+				[/* text */ 't', ` indicating if the address has
+         is a multicast address of node-local scope, false if it is not
+         of node-local scope or it is not a multicast address`]
+			]
+		]],
+		[/* method */ 'isMCOrgLocal()', [
+			[/* method description */
+				[/* text */ 't', `Utility routine to check if the multicast address has organization scope.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `a `],
+				[/* inline code block */ 'i', `boolean`],
+				[/* text */ 't', ` indicating if the address has
+         is a multicast address of organization-local scope,
+         false if it is not of organization-local scope
+         or it is not a multicast address`]
+			]
+		]],
+		[/* method */ 'isMCSiteLocal()', [
+			[/* method description */
+				[/* text */ 't', `Utility routine to check if the multicast address has site scope.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `a `],
+				[/* inline code block */ 'i', `boolean`],
+				[/* text */ 't', ` indicating if the address has
+         is a multicast address of site-local scope, false if it is not
+         of site-local scope or it is not a multicast address`]
+			]
+		]],
+		[/* method */ 'isMulticastAddress()', [
+			[/* method description */
+				[/* text */ 't', `Utility routine to check if the InetAddress is an
+ IP multicast address.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `a `],
+				[/* inline code block */ 'i', `boolean`],
+				[/* text */ 't', ` indicating if the InetAddress is
+ an IP multicast address`]
 			]
 		]],
 		[/* method */ 'isReachable(int)', [
@@ -549,6 +479,354 @@ DocsCollector.collect('java.net.InetAddress', [
 				[/* text */ 't', ` indicating if the address is reachable.`]
 			]
 		]],
+		[/* method */ 'isSiteLocalAddress()', [
+			[/* method description */
+				[/* text */ 't', `Utility routine to check if the InetAddress is a site local address.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `a `],
+				[/* inline code block */ 'i', `boolean`],
+				[/* text */ 't', ` indicating if the InetAddress is
+ a site local address; or false if address is not a site local unicast address.`]
+			]
+		]],
+		[/* method */ 'getAddress()', [
+			[/* method description */
+				[/* text */ 't', `Returns the raw IP address of this `],
+				[/* inline code block */ 'i', `InetAddress`],
+				[/* text */ 't', `
+ object. The result is in network byte order: the highest order
+ byte of the address is in `],
+				[/* inline code block */ 'i', `getAddress()[0]`],
+				[/* text */ 't', `.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the raw IP address of this object.`]
+			]
+		]],
+		[/* method */ 'hashCode()', [
+			[/* method description */
+				[/* text */ 't', `Returns a hashcode for this IP address.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `a hash code value for this IP address.`]
+			]
+		]],
+		[/* method */ 'getCanonicalHostName()', [
+			[/* method description */
+				[/* text */ 't', `Gets the fully qualified domain name for this IP address.
+ Best effort method, meaning we may not be able to return
+ the FQDN depending on the underlying system configuration.
+
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', `If there is a security manager, this method first
+ calls its `],
+					[/* inline code block */ 'i', `checkConnect`],
+					[/* text */ 't', ` method
+ with the hostname and `],
+					[/* inline code block */ 'i', `-1`],
+					[/* text */ 't', `
+ as its arguments to see if the calling code is allowed to know
+ the hostname for this IP address, i.e., to connect to the host.
+ If the operation is not allowed, it will return
+ the textual representation of the IP address.`]
+				]]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the fully qualified domain name for this IP address,
+    or if the operation is not allowed by the security check,
+    the textual representation of the IP address.`]
+			]
+		]],
+		[/* method */ 'getHostAddress()', [
+			[/* method description */
+				[/* text */ 't', `Returns the IP address string in textual presentation.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the raw IP address in a string format.`]
+			]
+		]],
+		[/* method */ 'getHostName()', [
+			[/* method description */
+				[/* text */ 't', `Gets the host name for this IP address.
+
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', `If this InetAddress was created with a host name,
+ this host name will be remembered and returned;
+ otherwise, a reverse name lookup will be performed
+ and the result will be returned based on the system
+ configured name lookup service. If a lookup of the name service
+ is required, call
+ `],
+					[/* reference */ 'r', `#getCanonicalHostName()`, `getCanonicalHostName`],
+					[/* text */ 't', `.
+
+ `]
+				]],
+				[/* block */ 'b', [
+					[/* text */ 't', `If there is a security manager, its
+ `],
+					[/* inline code block */ 'i', `checkConnect`],
+					[/* text */ 't', ` method is first called
+ with the hostname and `],
+					[/* inline code block */ 'i', `-1`],
+					[/* text */ 't', `
+ as its arguments to see if the operation is allowed.
+ If the operation is not allowed, it will return
+ the textual representation of the IP address.`]
+				]]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the host name for this IP address, or if the operation
+    is not allowed by the security check, the textual
+    representation of the IP address.`]
+			]
+		]],
+		[/* method */ 'toString()', [
+			[/* method description */
+				[/* text */ 't', `Converts this IP address to a `],
+				[/* inline code block */ 'i', `String`],
+				[/* text */ 't', `. The
+ string returned is of the form: hostname / literal IP
+ address.
+
+ If the host name is unresolved, no reverse name service lookup
+ is performed. The hostname part will be represented by an empty string.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `a string representation of this IP address.`]
+			]
+		]],
+		[/* method */ 'getByAddress(byte[])', [
+			[/* method description */
+				[/* text */ 't', `Returns an `],
+				[/* inline code block */ 'i', `InetAddress`],
+				[/* text */ 't', ` object given the raw IP address .
+ The argument is in network byte order: the highest order
+ byte of the address is in `],
+				[/* inline code block */ 'i', `getAddress()[0]`],
+				[/* text */ 't', `.
+
+ `],
+				[/* block */ 'b', ` This method doesn't block, i.e. no reverse name service lookup
+ is performed.
+
+ `],
+				[/* block */ 'b', ` IPv4 address byte array must be 4 bytes long and IPv6 byte array
+ must be 16 bytes long`]
+			],
+			[/* parameters */
+				[/* parameter */ 'addr', [/* parameter description */
+					[/* text */ 't', `the raw IP address in network byte order`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.net.UnknownHostException', [/* throw description */
+					[/* text */ 't', `if IP address is of illegal length`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `an InetAddress object created from the raw IP address.`]
+			]
+		]],
+		[/* method */ 'getByAddress(java.lang.String,byte[])', [
+			[/* method description */
+				[/* text */ 't', `Creates an InetAddress based on the provided host name and IP address.
+ No name service is checked for the validity of the address.
+
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', ` The host name can either be a machine name, such as
+ "`],
+					[/* inline code block */ 'i', `www.example.com`],
+					[/* text */ 't', `", or a textual representation of its IP
+ address.
+ `]
+				]],
+				[/* block */ 'b', ` No validity checking is done on the host name either.
+
+ `],
+				[/* block */ 'b', ` If addr specifies an IPv4 address an instance of Inet4Address
+ will be returned; otherwise, an instance of Inet6Address
+ will be returned.
+
+ `],
+				[/* block */ 'b', ` IPv4 address byte array must be 4 bytes long and IPv6 byte array
+ must be 16 bytes long`]
+			],
+			[/* parameters */
+				[/* parameter */ 'host', [/* parameter description */
+					[/* text */ 't', `the specified host`]
+				]],
+				[/* parameter */ 'addr', [/* parameter description */
+					[/* text */ 't', `the raw IP address in network byte order`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.net.UnknownHostException', [/* throw description */
+					[/* text */ 't', `if IP address is of illegal length`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `an InetAddress object created from the raw IP address.`]
+			]
+		]],
+		[/* method */ 'getByName(java.lang.String)', [
+			[/* method description */
+				[/* text */ 't', `Determines the IP address of a host, given the host's name.
+
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', ` The host name can either be a machine name, such as
+ "`],
+					[/* inline code block */ 'i', `www.example.com`],
+					[/* text */ 't', `", or a textual representation of its
+ IP address. If a literal IP address is supplied, only the
+ validity of the address format is checked.
+
+ `]
+				]],
+				[/* block */ 'b', [
+					[/* text */ 't', ` For `],
+					[/* inline code block */ 'i', `host`],
+					[/* text */ 't', ` specified in literal IPv6 address,
+ either the form defined in RFC 2732 or the literal IPv6 address
+ format defined in RFC 2373 is accepted. IPv6 scoped addresses are also
+ supported. See `],
+					[/* reference */ 'r', `.Inet6Address#scoped`],
+					[/* text */ 't', ` for a description of IPv6
+ scoped addresses.
+
+ `]
+				]],
+				[/* block */ 'b', [
+					[/* text */ 't', ` If the host is `],
+					[/* inline code block */ 'i', `null`],
+					[/* text */ 't', ` or `],
+					[/* inline code block */ 'i', `host.length()`],
+					[/* text */ 't', ` is equal
+ to zero, then an `],
+					[/* inline code block */ 'i', `InetAddress`],
+					[/* text */ 't', ` representing an address of the
+ loopback interface is returned.
+ See `],
+					[/* external link */ 'a', `http://www.ietf.org/rfc/rfc3330.txt`, `RFC 3330`],
+					[/* text */ 't', `
+ section 2 and `],
+					[/* external link */ 'a', `http://www.ietf.org/rfc/rfc2373.txt`, `RFC 2373`],
+					[/* text */ 't', `
+ section 2.5.3.
+
+ `]
+				]],
+				[/* block */ 'b', [
+					[/* text */ 't', ` If there is a security manager, and `],
+					[/* inline code block */ 'i', `host`],
+					[/* text */ 't', ` is not `],
+					[/* inline code block */ 'i', `null`],
+					[/* text */ 't', `
+ or `],
+					[/* inline code block */ 'i', `host.length()`],
+					[/* text */ 't', ` is not equal to zero, the security manager's
+ `],
+					[/* inline code block */ 'i', `checkConnect`],
+					[/* text */ 't', ` method is called with the hostname and `],
+					[/* inline code block */ 'i', `-1`],
+					[/* text */ 't', `
+ as its arguments to determine if the operation is allowed.`]
+				]]
+			],
+			[/* parameters */
+				[/* parameter */ 'host', [/* parameter description */
+					[/* text */ 't', `the specified host, or `],
+					[/* inline code block */ 'i', `null`],
+					[/* text */ 't', `.`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.net.UnknownHostException', [/* throw description */
+					[/* text */ 't', `if no IP address for the
+               `],
+					[/* inline code block */ 'i', `host`],
+					[/* text */ 't', ` could be found, or if a scope_id was specified
+               for a global IPv6 address.`]
+				]],
+				[/* throw */ 'java.lang.SecurityException', [/* throw description */
+					[/* text */ 't', `if a security manager exists
+             and its checkConnect method doesn't allow the operation`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `an IP address for the given host name.`]
+			]
+		]],
+		[/* method */ 'getLocalHost()', [
+			[/* method description */
+				[/* text */ 't', `Returns the address of the local host. This is achieved by retrieving
+ the name of the host from the system, then resolving that name into
+ an `],
+				[/* inline code block */ 'i', `InetAddress`],
+				[/* text */ 't', `.
+
+ `],
+				[/* block */ 'b', `Note: The resolved address may be cached for a short period of time.
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', `If there is a security manager, its
+ `],
+					[/* inline code block */ 'i', `checkConnect`],
+					[/* text */ 't', ` method is called
+ with the local host name and `],
+					[/* inline code block */ 'i', `-1`],
+					[/* text */ 't', `
+ as its arguments to see if the operation is allowed.
+ If the operation is not allowed, an InetAddress representing
+ the loopback address is returned.`]
+				]]
+			],
+			/* parameters */ UDF,
+			[/* throws */
+				[/* throw */ 'java.net.UnknownHostException', [/* throw description */
+					[/* text */ 't', `if the local host name could not
+             be resolved into an address.`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `the address of the local host.`]
+			]
+		]],
+		[/* method */ 'getLoopbackAddress()', [
+			[/* method description */
+				[/* text */ 't', `Returns the loopback address.
+ `],
+				[/* block */ 'b', `
+ The InetAddress returned will represent the IPv4
+ loopback address, 127.0.0.1, or the IPv6 loopback
+ address, ::1. The IPv4 loopback address returned
+ is only one of many in the form 127.*.*.*`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the InetAddress loopback instance.`]
+			]
+		]],
 		[/* method */ 'getAllByName(java.lang.String)', [
 			[/* method description */
 				[/* text */ 't', `Given the name of a host, returns an array of its IP addresses,
@@ -640,284 +918,6 @@ DocsCollector.collect('java.net.InetAddress', [
 			],
 			[/* return description */
 				[/* text */ 't', `an array of all the IP addresses for a given host name.`]
-			]
-		]],
-		[/* method */ 'getByAddress(byte[])', [
-			[/* method description */
-				[/* text */ 't', `Returns an `],
-				[/* inline code block */ 'i', `InetAddress`],
-				[/* text */ 't', ` object given the raw IP address .
- The argument is in network byte order: the highest order
- byte of the address is in `],
-				[/* inline code block */ 'i', `getAddress()[0]`],
-				[/* text */ 't', `.
-
- `],
-				[/* block */ 'b', ` This method doesn't block, i.e. no reverse name service lookup
- is performed.
-
- `],
-				[/* block */ 'b', ` IPv4 address byte array must be 4 bytes long and IPv6 byte array
- must be 16 bytes long`]
-			],
-			[/* parameters */
-				[/* parameter */ 'addr', [/* parameter description */
-					[/* text */ 't', `the raw IP address in network byte order`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.net.UnknownHostException', [/* throw description */
-					[/* text */ 't', `if IP address is of illegal length`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `an InetAddress object created from the raw IP address.`]
-			]
-		]],
-		[/* method */ 'getByAddress(java.lang.String,byte[])', [
-			[/* method description */
-				[/* text */ 't', `Creates an InetAddress based on the provided host name and IP address.
- No name service is checked for the validity of the address.
-
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', ` The host name can either be a machine name, such as
- "`],
-					[/* inline code block */ 'i', `www.example.com`],
-					[/* text */ 't', `", or a textual representation of its IP
- address.
- `]
-				]],
-				[/* block */ 'b', ` No validity checking is done on the host name either.
-
- `],
-				[/* block */ 'b', ` If addr specifies an IPv4 address an instance of Inet4Address
- will be returned; otherwise, an instance of Inet6Address
- will be returned.
-
- `],
-				[/* block */ 'b', ` IPv4 address byte array must be 4 bytes long and IPv6 byte array
- must be 16 bytes long`]
-			],
-			[/* parameters */
-				[/* parameter */ 'host', [/* parameter description */
-					[/* text */ 't', `the specified host`]
-				]],
-				[/* parameter */ 'addr', [/* parameter description */
-					[/* text */ 't', `the raw IP address in network byte order`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.net.UnknownHostException', [/* throw description */
-					[/* text */ 't', `if IP address is of illegal length`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `an InetAddress object created from the raw IP address.`]
-			]
-		]],
-		[/* method */ 'isMulticastAddress()', [
-			[/* method description */
-				[/* text */ 't', `Utility routine to check if the InetAddress is an
- IP multicast address.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `a `],
-				[/* inline code block */ 'i', `boolean`],
-				[/* text */ 't', ` indicating if the InetAddress is
- an IP multicast address`]
-			]
-		]],
-		[/* method */ 'isAnyLocalAddress()', [
-			[/* method description */
-				[/* text */ 't', `Utility routine to check if the InetAddress is a wildcard address.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `a `],
-				[/* inline code block */ 'i', `boolean`],
-				[/* text */ 't', ` indicating if the InetAddress is
-         a wildcard address.`]
-			]
-		]],
-		[/* method */ 'isLoopbackAddress()', [
-			[/* method description */
-				[/* text */ 't', `Utility routine to check if the InetAddress is a loopback address.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `a `],
-				[/* inline code block */ 'i', `boolean`],
-				[/* text */ 't', ` indicating if the InetAddress is
- a loopback address; or false otherwise.`]
-			]
-		]],
-		[/* method */ 'isSiteLocalAddress()', [
-			[/* method description */
-				[/* text */ 't', `Utility routine to check if the InetAddress is a site local address.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `a `],
-				[/* inline code block */ 'i', `boolean`],
-				[/* text */ 't', ` indicating if the InetAddress is
- a site local address; or false if address is not a site local unicast address.`]
-			]
-		]],
-		[/* method */ 'isMCGlobal()', [
-			[/* method description */
-				[/* text */ 't', `Utility routine to check if the multicast address has global scope.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `a `],
-				[/* inline code block */ 'i', `boolean`],
-				[/* text */ 't', ` indicating if the address has
-         is a multicast address of global scope, false if it is not
-         of global scope or it is not a multicast address`]
-			]
-		]],
-		[/* method */ 'isMCNodeLocal()', [
-			[/* method description */
-				[/* text */ 't', `Utility routine to check if the multicast address has node scope.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `a `],
-				[/* inline code block */ 'i', `boolean`],
-				[/* text */ 't', ` indicating if the address has
-         is a multicast address of node-local scope, false if it is not
-         of node-local scope or it is not a multicast address`]
-			]
-		]],
-		[/* method */ 'isMCLinkLocal()', [
-			[/* method description */
-				[/* text */ 't', `Utility routine to check if the multicast address has link scope.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `a `],
-				[/* inline code block */ 'i', `boolean`],
-				[/* text */ 't', ` indicating if the address has
-         is a multicast address of link-local scope, false if it is not
-         of link-local scope or it is not a multicast address`]
-			]
-		]],
-		[/* method */ 'isMCSiteLocal()', [
-			[/* method description */
-				[/* text */ 't', `Utility routine to check if the multicast address has site scope.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `a `],
-				[/* inline code block */ 'i', `boolean`],
-				[/* text */ 't', ` indicating if the address has
-         is a multicast address of site-local scope, false if it is not
-         of site-local scope or it is not a multicast address`]
-			]
-		]],
-		[/* method */ 'isMCOrgLocal()', [
-			[/* method description */
-				[/* text */ 't', `Utility routine to check if the multicast address has organization scope.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `a `],
-				[/* inline code block */ 'i', `boolean`],
-				[/* text */ 't', ` indicating if the address has
-         is a multicast address of organization-local scope,
-         false if it is not of organization-local scope
-         or it is not a multicast address`]
-			]
-		]],
-		[/* method */ 'getCanonicalHostName()', [
-			[/* method description */
-				[/* text */ 't', `Gets the fully qualified domain name for this IP address.
- Best effort method, meaning we may not be able to return
- the FQDN depending on the underlying system configuration.
-
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', `If there is a security manager, this method first
- calls its `],
-					[/* inline code block */ 'i', `checkConnect`],
-					[/* text */ 't', ` method
- with the hostname and `],
-					[/* inline code block */ 'i', `-1`],
-					[/* text */ 't', `
- as its arguments to see if the calling code is allowed to know
- the hostname for this IP address, i.e., to connect to the host.
- If the operation is not allowed, it will return
- the textual representation of the IP address.`]
-				]]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the fully qualified domain name for this IP address,
-    or if the operation is not allowed by the security check,
-    the textual representation of the IP address.`]
-			]
-		]],
-		[/* method */ 'getLoopbackAddress()', [
-			[/* method description */
-				[/* text */ 't', `Returns the loopback address.
- `],
-				[/* block */ 'b', `
- The InetAddress returned will represent the IPv4
- loopback address, 127.0.0.1, or the IPv6 loopback
- address, ::1. The IPv4 loopback address returned
- is only one of many in the form 127.*.*.*`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the InetAddress loopback instance.`]
-			]
-		]],
-		[/* method */ 'getLocalHost()', [
-			[/* method description */
-				[/* text */ 't', `Returns the address of the local host. This is achieved by retrieving
- the name of the host from the system, then resolving that name into
- an `],
-				[/* inline code block */ 'i', `InetAddress`],
-				[/* text */ 't', `.
-
- `],
-				[/* block */ 'b', `Note: The resolved address may be cached for a short period of time.
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', `If there is a security manager, its
- `],
-					[/* inline code block */ 'i', `checkConnect`],
-					[/* text */ 't', ` method is called
- with the local host name and `],
-					[/* inline code block */ 'i', `-1`],
-					[/* text */ 't', `
- as its arguments to see if the operation is allowed.
- If the operation is not allowed, an InetAddress representing
- the loopback address is returned.`]
-				]]
-			],
-			/* parameters */ UDF,
-			[/* throws */
-				[/* throw */ 'java.net.UnknownHostException', [/* throw description */
-					[/* text */ 't', `if the local host name could not
-             be resolved into an address.`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `the address of the local host.`]
 			]
 		]]
 	],

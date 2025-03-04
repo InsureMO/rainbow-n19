@@ -30,6 +30,74 @@ DocsCollector.collect('java.util.Iterator', [
 	/* fields */ UDF,
 	/* constructors */ UDF,
 	[/* methods */
+		[/* method */ 'hasNext()', [
+			[/* method description */
+				[/* text */ 't', `Returns `],
+				[/* inline code block */ 'i', `true`],
+				[/* text */ 't', ` if the iteration has more elements.
+ (In other words, returns `],
+				[/* inline code block */ 'i', `true`],
+				[/* text */ 't', ` if `],
+				[/* reference */ 'r', `#next()`, `next()`],
+				[/* text */ 't', ` would
+ return an element rather than throwing an exception.)`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* inline code block */ 'i', `true`],
+				[/* text */ 't', ` if the iteration has more elements`]
+			]
+		]],
+		[/* method */ 'next()', [
+			[/* method description */
+				[/* text */ 't', `Returns the next element in the iteration.`]
+			],
+			/* parameters */ UDF,
+			[/* throws */
+				[/* throw */ 'java.util.NoSuchElementException', [/* throw description */
+					[/* text */ 't', `if the iteration has no more elements`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `the next element in the iteration`]
+			]
+		]],
+		[/* method */ 'forEachRemaining(java.util.function.Consumer)', [
+			[/* method description */
+				[/* text */ 't', `Performs the given action for each remaining element until all elements
+ have been processed or the action throws an exception.  Actions are
+ performed in the order of iteration, if that order is specified.
+ Exceptions thrown by the action are relayed to the caller.
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', `
+ The behavior of an iterator is unspecified if the action modifies the
+ collection in any way (even by calling the `],
+					[/* reference */ 'r', `#remove()`, `remove`],
+					[/* text */ 't', ` method
+ or other mutator methods of `],
+					[/* inline code block */ 'i', `Iterator`],
+					[/* text */ 't', ` subtypes),
+ unless an overriding class has specified a concurrent modification policy.
+ `]
+				]],
+				[/* block */ 'b', `
+ Subsequent behavior of an iterator is unspecified if the action throws an
+ exception.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'action', [/* parameter description */
+					[/* text */ 't', `The action to be performed for each element`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
+					[/* text */ 't', `if the specified action is null`]
+				]]
+			],
+			/* return */ UDF
+		]],
 		[/* method */ 'remove()', [
 			[/* method description */
 				[/* text */ 't', `Removes from the underlying collection the last element returned
@@ -74,74 +142,6 @@ DocsCollector.collect('java.util.Iterator', [
 				]]
 			],
 			/* return */ UDF
-		]],
-		[/* method */ 'forEachRemaining(java.util.function.Consumer)', [
-			[/* method description */
-				[/* text */ 't', `Performs the given action for each remaining element until all elements
- have been processed or the action throws an exception.  Actions are
- performed in the order of iteration, if that order is specified.
- Exceptions thrown by the action are relayed to the caller.
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', `
- The behavior of an iterator is unspecified if the action modifies the
- collection in any way (even by calling the `],
-					[/* reference */ 'r', `#remove()`, `remove`],
-					[/* text */ 't', ` method
- or other mutator methods of `],
-					[/* inline code block */ 'i', `Iterator`],
-					[/* text */ 't', ` subtypes),
- unless an overriding class has specified a concurrent modification policy.
- `]
-				]],
-				[/* block */ 'b', `
- Subsequent behavior of an iterator is unspecified if the action throws an
- exception.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'action', [/* parameter description */
-					[/* text */ 't', `The action to be performed for each element`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
-					[/* text */ 't', `if the specified action is null`]
-				]]
-			],
-			/* return */ UDF
-		]],
-		[/* method */ 'hasNext()', [
-			[/* method description */
-				[/* text */ 't', `Returns `],
-				[/* inline code block */ 'i', `true`],
-				[/* text */ 't', ` if the iteration has more elements.
- (In other words, returns `],
-				[/* inline code block */ 'i', `true`],
-				[/* text */ 't', ` if `],
-				[/* reference */ 'r', `#next()`, `next()`],
-				[/* text */ 't', ` would
- return an element rather than throwing an exception.)`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* inline code block */ 'i', `true`],
-				[/* text */ 't', ` if the iteration has more elements`]
-			]
-		]],
-		[/* method */ 'next()', [
-			[/* method description */
-				[/* text */ 't', `Returns the next element in the iteration.`]
-			],
-			/* parameters */ UDF,
-			[/* throws */
-				[/* throw */ 'java.util.NoSuchElementException', [/* throw description */
-					[/* text */ 't', `if the iteration has no more elements`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `the next element in the iteration`]
-			]
 		]]
 	],
 ]);

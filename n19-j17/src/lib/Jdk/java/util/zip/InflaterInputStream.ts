@@ -223,15 +223,15 @@ JdkClassCreateHelper.class('java.util.zip.InflaterInputStream', [
 		]
 	],
 	[/* declared fields */
-		[/* protected java.util.zip.Inflater java.util.zip.InflaterInputStream.inf */
-			/* name */ 'inf',
-			/* type */ 'java.util.zip.Inflater',
-			/* annotations */ UDF,
-			/* modifiers */ 4
-		],
 		[/* protected byte[] java.util.zip.InflaterInputStream.buf */
 			/* name */ 'buf',
 			/* type */ '[B',
+			/* annotations */ UDF,
+			/* modifiers */ 4
+		],
+		[/* protected java.util.zip.Inflater java.util.zip.InflaterInputStream.inf */
+			/* name */ 'inf',
+			/* type */ 'java.util.zip.Inflater',
 			/* annotations */ UDF,
 			/* modifiers */ 4
 		],

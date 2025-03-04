@@ -64,6 +64,65 @@ DocsCollector.collect('java.io.StreamTokenizer', [
 		]]
 	],
 	[/* fields */
+		[/* field */ 'nval', [
+			[/* field description */
+				[/* text */ 't', `If the current token is a number, this field contains the value
+ of that number. The current token is a number when the value of
+ the `],
+				[/* inline code block */ 'i', `ttype`],
+				[/* text */ 't', ` field is `],
+				[/* inline code block */ 'i', `TT_NUMBER`],
+				[/* text */ 't', `.
+ `],
+				[/* block */ 'b', `
+ The initial value of this field is 0.0.`]
+			],
+		]],
+		[/* field */ 'sval', [
+			[/* field description */
+				[/* text */ 't', `If the current token is a word token, this field contains a
+ string giving the characters of the word token. When the current
+ token is a quoted string token, this field contains the body of
+ the string.
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', `
+ The current token is a word when the value of the
+ `],
+					[/* inline code block */ 'i', `ttype`],
+					[/* text */ 't', ` field is `],
+					[/* inline code block */ 'i', `TT_WORD`],
+					[/* text */ 't', `. The current token is
+ a quoted string token when the value of the `],
+					[/* inline code block */ 'i', `ttype`],
+					[/* text */ 't', ` field is
+ a quote character.
+ `]
+				]],
+				[/* block */ 'b', `
+ The initial value of this field is null.`]
+			],
+		]],
+		[/* field */ 'TT_EOF', [
+			[/* field description */
+				[/* text */ 't', `A constant indicating that the end of the stream has been read.`]
+			],
+		]],
+		[/* field */ 'TT_EOL', [
+			[/* field description */
+				[/* text */ 't', `A constant indicating that the end of the line has been read.`]
+			],
+		]],
+		[/* field */ 'TT_NUMBER', [
+			[/* field description */
+				[/* text */ 't', `A constant indicating that a number token has been read.`]
+			],
+		]],
+		[/* field */ 'TT_WORD', [
+			[/* field description */
+				[/* text */ 't', `A constant indicating that a word token has been read.`]
+			],
+		]],
 		[/* field */ 'ttype', [
 			[/* field description */
 				[/* text */ 't', `After a call to the `],
@@ -107,79 +166,9 @@ DocsCollector.collect('java.io.StreamTokenizer', [
 				[/* block */ 'b', `
  The initial value of this field is -4.`]
 			],
-		]],
-		[/* field */ 'TT_EOF', [
-			[/* field description */
-				[/* text */ 't', `A constant indicating that the end of the stream has been read.`]
-			],
-		]],
-		[/* field */ 'TT_EOL', [
-			[/* field description */
-				[/* text */ 't', `A constant indicating that the end of the line has been read.`]
-			],
-		]],
-		[/* field */ 'TT_NUMBER', [
-			[/* field description */
-				[/* text */ 't', `A constant indicating that a number token has been read.`]
-			],
-		]],
-		[/* field */ 'TT_WORD', [
-			[/* field description */
-				[/* text */ 't', `A constant indicating that a word token has been read.`]
-			],
-		]],
-		[/* field */ 'sval', [
-			[/* field description */
-				[/* text */ 't', `If the current token is a word token, this field contains a
- string giving the characters of the word token. When the current
- token is a quoted string token, this field contains the body of
- the string.
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', `
- The current token is a word when the value of the
- `],
-					[/* inline code block */ 'i', `ttype`],
-					[/* text */ 't', ` field is `],
-					[/* inline code block */ 'i', `TT_WORD`],
-					[/* text */ 't', `. The current token is
- a quoted string token when the value of the `],
-					[/* inline code block */ 'i', `ttype`],
-					[/* text */ 't', ` field is
- a quote character.
- `]
-				]],
-				[/* block */ 'b', `
- The initial value of this field is null.`]
-			],
-		]],
-		[/* field */ 'nval', [
-			[/* field description */
-				[/* text */ 't', `If the current token is a number, this field contains the value
- of that number. The current token is a number when the value of
- the `],
-				[/* inline code block */ 'i', `ttype`],
-				[/* text */ 't', ` field is `],
-				[/* inline code block */ 'i', `TT_NUMBER`],
-				[/* text */ 't', `.
- `],
-				[/* block */ 'b', `
- The initial value of this field is 0.0.`]
-			],
 		]]
 	],
 	[/* constructors */
-		[/* constructor */ '<init>(java.io.Reader)', [
-			[/* constructor description */
-				[/* text */ 't', `Create a tokenizer that parses the given character stream.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'r', [/* parameter description */
-					[/* text */ 't', `a Reader object providing the input stream.`]
-				]]
-			],
-			/* throws */ UDF
-		]],
 		[/* constructor */ '<init>(java.io.InputStream)', [
 			[/* constructor description */
 				[/* text */ 't', `Creates a stream tokenizer that parses the specified input
@@ -243,28 +232,28 @@ DocsCollector.collect('java.io.StreamTokenizer', [
 				]]
 			],
 			/* throws */ UDF
+		]],
+		[/* constructor */ '<init>(java.io.Reader)', [
+			[/* constructor description */
+				[/* text */ 't', `Create a tokenizer that parses the given character stream.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'r', [/* parameter description */
+					[/* text */ 't', `a Reader object providing the input stream.`]
+				]]
+			],
+			/* throws */ UDF
 		]]
 	],
 	[/* methods */
-		[/* method */ 'toString()', [
+		[/* method */ 'lineno()', [
 			[/* method description */
-				[/* text */ 't', `Returns the string representation of the current stream token and
- the line number it occurs on.
-
- `],
-				[/* block */ 'b', `The precise string returned is unspecified, although the following
- example can be considered typical:
-
- `],
-				[/* block */ 'b', [
-					[/* code block */ 'c', `Token['a'], line 10`]
-				]],
-				[/* block */ 'b', '']
+				[/* text */ 't', `Return the current line number.`]
 			],
 			/* parameters */ UDF,
 			/* throws */ UDF,
 			[/* return description */
-				[/* text */ 't', `a string representation of the token`]
+				[/* text */ 't', `the current line number of this stream tokenizer.`]
 			]
 		]],
 		[/* method */ 'nextToken()', [
@@ -299,65 +288,26 @@ DocsCollector.collect('java.io.StreamTokenizer', [
 				[/* text */ 't', ` field.`]
 			]
 		]],
-		[/* method */ 'resetSyntax()', [
+		[/* method */ 'toString()', [
 			[/* method description */
-				[/* text */ 't', `Resets this tokenizer's syntax table so that all characters are
- "ordinary." See the `],
-				[/* inline code block */ 'i', `ordinaryChar`],
-				[/* text */ 't', ` method
- for more information on a character being ordinary.`]
+				[/* text */ 't', `Returns the string representation of the current stream token and
+ the line number it occurs on.
+
+ `],
+				[/* block */ 'b', `The precise string returned is unspecified, although the following
+ example can be considered typical:
+
+ `],
+				[/* block */ 'b', [
+					[/* code block */ 'c', `Token['a'], line 10`]
+				]],
+				[/* block */ 'b', '']
 			],
 			/* parameters */ UDF,
 			/* throws */ UDF,
-			/* return */ UDF
-		]],
-		[/* method */ 'wordChars(int,int)', [
-			[/* method description */
-				[/* text */ 't', `Specifies that all characters `],
-				[/* text */ 't', `c`],
-				[/* text */ 't', ` in the range
- `],
-				[/* inline code block */ 'i', `low <= c <= high`],
-				[/* text */ 't', `
- are word constituents. A word token consists of a word constituent
- followed by zero or more word constituents or number constituents.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'low', [/* parameter description */
-					[/* text */ 't', `the low end of the range.`]
-				]],
-				[/* parameter */ 'hi', [/* parameter description */
-					[/* text */ 't', `the high end of the range.`]
-				]]
-			],
-			/* throws */ UDF,
-			/* return */ UDF
-		]],
-		[/* method */ 'whitespaceChars(int,int)', [
-			[/* method description */
-				[/* text */ 't', `Specifies that all characters `],
-				[/* text */ 't', `c`],
-				[/* text */ 't', ` in the range
- `],
-				[/* inline code block */ 'i', `low <= c <= high`],
-				[/* text */ 't', `
- are white space characters. White space characters serve only to
- separate tokens in the input stream.
-
- `],
-				[/* block */ 'b', `Any other attribute settings for the characters in the specified
- range are cleared.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'low', [/* parameter description */
-					[/* text */ 't', `the low end of the range.`]
-				]],
-				[/* parameter */ 'hi', [/* parameter description */
-					[/* text */ 't', `the high end of the range.`]
-				]]
-			],
-			/* throws */ UDF,
-			/* return */ UDF
+			[/* return description */
+				[/* text */ 't', `a string representation of the token`]
+			]
 		]],
 		[/* method */ 'commentChar(int)', [
 			[/* method description */
@@ -376,46 +326,50 @@ DocsCollector.collect('java.io.StreamTokenizer', [
 			/* throws */ UDF,
 			/* return */ UDF
 		]],
-		[/* method */ 'quoteChar(int)', [
+		[/* method */ 'eolIsSignificant(boolean)', [
 			[/* method description */
-				[/* text */ 't', `Specifies that matching pairs of this character delimit string
- constants in this tokenizer.
+				[/* text */ 't', `Determines whether or not ends of line are treated as tokens.
+ If the flag argument is true, this tokenizer treats end of lines
+ as tokens; the `],
+				[/* inline code block */ 'i', `nextToken`],
+				[/* text */ 't', ` method returns
+ `],
+				[/* inline code block */ 'i', `TT_EOL`],
+				[/* text */ 't', ` and also sets the `],
+				[/* inline code block */ 'i', `ttype`],
+				[/* text */ 't', ` field to
+ this value when an end of line is read.
  `],
 				[/* block */ 'b', [
 					[/* text */ 't', `
- When the `],
-					[/* inline code block */ 'i', `nextToken`],
-					[/* text */ 't', ` method encounters a string
- constant, the `],
-					[/* inline code block */ 'i', `ttype`],
-					[/* text */ 't', ` field is set to the string
- delimiter and the `],
-					[/* inline code block */ 'i', `sval`],
-					[/* text */ 't', ` field is set to the body of
- the string.
+ A line is a sequence of characters ending with either a
+ carriage-return character (`],
+					[/* inline code block */ 'i', `'\\r'`],
+					[/* text */ 't', `) or a newline
+ character (`],
+					[/* inline code block */ 'i', `'\\n'`],
+					[/* text */ 't', `). In addition, a carriage-return
+ character followed immediately by a newline character is treated
+ as a single end-of-line token.
  `]
 				]],
 				[/* block */ 'b', [
 					[/* text */ 't', `
- If a string quote character is encountered, then a string is
- recognized, consisting of all characters after (but not including)
- the string quote character, up to (but not including) the next
- occurrence of that same string quote character, or a line
- terminator, or end of file. The usual escape sequences such as
- `],
-					[/* inline code block */ 'i', `"\\n"`],
-					[/* text */ 't', ` and `],
-					[/* inline code block */ 'i', `"\\t"`],
-					[/* text */ 't', ` are recognized and
- converted to single characters as the string is parsed.
-
- `]
-				]],
-				[/* block */ 'b', `Any other attribute settings for the specified character are cleared.`]
+ If the `],
+					[/* inline code block */ 'i', `flag`],
+					[/* text */ 't', ` is false, end-of-line characters are
+ treated as white space and serve only to separate tokens.`]
+				]]
 			],
 			[/* parameters */
-				[/* parameter */ 'ch', [/* parameter description */
-					[/* text */ 't', `the character.`]
+				[/* parameter */ 'flag', [/* parameter description */
+					[/* text */ 't', ``],
+					[/* inline code block */ 'i', `true`],
+					[/* text */ 't', ` indicates that end-of-line characters
+                 are separate tokens; `],
+					[/* inline code block */ 'i', `false`],
+					[/* text */ 't', ` indicates that
+                 end-of-line characters are white space.`]
 				]]
 			],
 			/* throws */ UDF,
@@ -493,6 +447,139 @@ DocsCollector.collect('java.io.StreamTokenizer', [
 			/* throws */ UDF,
 			/* return */ UDF
 		]],
+		[/* method */ 'ordinaryChars(int,int)', [
+			[/* method description */
+				[/* text */ 't', `Specifies that all characters `],
+				[/* text */ 't', `c`],
+				[/* text */ 't', ` in the range
+ `],
+				[/* inline code block */ 'i', `low <= c <= high`],
+				[/* text */ 't', `
+ are "ordinary" in this tokenizer. See the
+ `],
+				[/* inline code block */ 'i', `ordinaryChar`],
+				[/* text */ 't', ` method for more information on a
+ character being ordinary.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'low', [/* parameter description */
+					[/* text */ 't', `the low end of the range.`]
+				]],
+				[/* parameter */ 'hi', [/* parameter description */
+					[/* text */ 't', `the high end of the range.`]
+				]]
+			],
+			/* throws */ UDF,
+			/* return */ UDF
+		]],
+		[/* method */ 'parseNumbers()', [
+			[/* method description */
+				[/* text */ 't', `Specifies that numbers should be parsed by this tokenizer. The
+ syntax table of this tokenizer is modified so that each of the twelve
+ characters:
+ `],
+				[/* block */ 'b', [
+					[/* code block */ 'c', `      0 1 2 3 4 5 6 7 8 9 . -
+ `]
+				]],
+				[/* block */ 'b', `
+ has the "numeric" attribute.
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', `
+ When the parser encounters a word token that has the format of a
+ double precision floating-point number, it treats the token as a
+ number rather than a word, by setting the `],
+					[/* inline code block */ 'i', `ttype`],
+					[/* text */ 't', `
+ field to the value `],
+					[/* inline code block */ 'i', `TT_NUMBER`],
+					[/* text */ 't', ` and putting the numeric
+ value of the token into the `],
+					[/* inline code block */ 'i', `nval`],
+					[/* text */ 't', ` field.`]
+				]]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			/* return */ UDF
+		]],
+		[/* method */ 'pushBack()', [
+			[/* method description */
+				[/* text */ 't', `Causes the next call to the `],
+				[/* inline code block */ 'i', `nextToken`],
+				[/* text */ 't', ` method of this
+ tokenizer to return the current value in the `],
+				[/* inline code block */ 'i', `ttype`],
+				[/* text */ 't', `
+ field, and not to modify the value in the `],
+				[/* inline code block */ 'i', `nval`],
+				[/* text */ 't', ` or
+ `],
+				[/* inline code block */ 'i', `sval`],
+				[/* text */ 't', ` field.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			/* return */ UDF
+		]],
+		[/* method */ 'quoteChar(int)', [
+			[/* method description */
+				[/* text */ 't', `Specifies that matching pairs of this character delimit string
+ constants in this tokenizer.
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', `
+ When the `],
+					[/* inline code block */ 'i', `nextToken`],
+					[/* text */ 't', ` method encounters a string
+ constant, the `],
+					[/* inline code block */ 'i', `ttype`],
+					[/* text */ 't', ` field is set to the string
+ delimiter and the `],
+					[/* inline code block */ 'i', `sval`],
+					[/* text */ 't', ` field is set to the body of
+ the string.
+ `]
+				]],
+				[/* block */ 'b', [
+					[/* text */ 't', `
+ If a string quote character is encountered, then a string is
+ recognized, consisting of all characters after (but not including)
+ the string quote character, up to (but not including) the next
+ occurrence of that same string quote character, or a line
+ terminator, or end of file. The usual escape sequences such as
+ `],
+					[/* inline code block */ 'i', `"\\n"`],
+					[/* text */ 't', ` and `],
+					[/* inline code block */ 'i', `"\\t"`],
+					[/* text */ 't', ` are recognized and
+ converted to single characters as the string is parsed.
+
+ `]
+				]],
+				[/* block */ 'b', `Any other attribute settings for the specified character are cleared.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'ch', [/* parameter description */
+					[/* text */ 't', `the character.`]
+				]]
+			],
+			/* throws */ UDF,
+			/* return */ UDF
+		]],
+		[/* method */ 'resetSyntax()', [
+			[/* method description */
+				[/* text */ 't', `Resets this tokenizer's syntax table so that all characters are
+ "ordinary." See the `],
+				[/* inline code block */ 'i', `ordinaryChar`],
+				[/* text */ 't', ` method
+ for more information on a character being ordinary.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			/* return */ UDF
+		]],
 		[/* method */ 'slashSlashComments(boolean)', [
 			[/* method description */
 				[/* text */ 't', `Determines whether or not the tokenizer recognizes C++-style comments.
@@ -556,49 +643,7 @@ DocsCollector.collect('java.io.StreamTokenizer', [
 			/* throws */ UDF,
 			/* return */ UDF
 		]],
-		[/* method */ 'parseNumbers()', [
-			[/* method description */
-				[/* text */ 't', `Specifies that numbers should be parsed by this tokenizer. The
- syntax table of this tokenizer is modified so that each of the twelve
- characters:
- `],
-				[/* block */ 'b', [
-					[/* code block */ 'c', `      0 1 2 3 4 5 6 7 8 9 . -
- `]
-				]],
-				[/* block */ 'b', `
- has the "numeric" attribute.
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', `
- When the parser encounters a word token that has the format of a
- double precision floating-point number, it treats the token as a
- number rather than a word, by setting the `],
-					[/* inline code block */ 'i', `ttype`],
-					[/* text */ 't', `
- field to the value `],
-					[/* inline code block */ 'i', `TT_NUMBER`],
-					[/* text */ 't', ` and putting the numeric
- value of the token into the `],
-					[/* inline code block */ 'i', `nval`],
-					[/* text */ 't', ` field.`]
-				]]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			/* return */ UDF
-		]],
-		[/* method */ 'lineno()', [
-			[/* method description */
-				[/* text */ 't', `Return the current line number.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the current line number of this stream tokenizer.`]
-			]
-		]],
-		[/* method */ 'ordinaryChars(int,int)', [
+		[/* method */ 'whitespaceChars(int,int)', [
 			[/* method description */
 				[/* text */ 't', `Specifies that all characters `],
 				[/* text */ 't', `c`],
@@ -606,11 +651,12 @@ DocsCollector.collect('java.io.StreamTokenizer', [
  `],
 				[/* inline code block */ 'i', `low <= c <= high`],
 				[/* text */ 't', `
- are "ordinary" in this tokenizer. See the
+ are white space characters. White space characters serve only to
+ separate tokens in the input stream.
+
  `],
-				[/* inline code block */ 'i', `ordinaryChar`],
-				[/* text */ 't', ` method for more information on a
- character being ordinary.`]
+				[/* block */ 'b', `Any other attribute settings for the characters in the specified
+ range are cleared.`]
 			],
 			[/* parameters */
 				[/* parameter */ 'low', [/* parameter description */
@@ -623,71 +669,25 @@ DocsCollector.collect('java.io.StreamTokenizer', [
 			/* throws */ UDF,
 			/* return */ UDF
 		]],
-		[/* method */ 'eolIsSignificant(boolean)', [
+		[/* method */ 'wordChars(int,int)', [
 			[/* method description */
-				[/* text */ 't', `Determines whether or not ends of line are treated as tokens.
- If the flag argument is true, this tokenizer treats end of lines
- as tokens; the `],
-				[/* inline code block */ 'i', `nextToken`],
-				[/* text */ 't', ` method returns
+				[/* text */ 't', `Specifies that all characters `],
+				[/* text */ 't', `c`],
+				[/* text */ 't', ` in the range
  `],
-				[/* inline code block */ 'i', `TT_EOL`],
-				[/* text */ 't', ` and also sets the `],
-				[/* inline code block */ 'i', `ttype`],
-				[/* text */ 't', ` field to
- this value when an end of line is read.
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', `
- A line is a sequence of characters ending with either a
- carriage-return character (`],
-					[/* inline code block */ 'i', `'\\r'`],
-					[/* text */ 't', `) or a newline
- character (`],
-					[/* inline code block */ 'i', `'\\n'`],
-					[/* text */ 't', `). In addition, a carriage-return
- character followed immediately by a newline character is treated
- as a single end-of-line token.
- `]
-				]],
-				[/* block */ 'b', [
-					[/* text */ 't', `
- If the `],
-					[/* inline code block */ 'i', `flag`],
-					[/* text */ 't', ` is false, end-of-line characters are
- treated as white space and serve only to separate tokens.`]
-				]]
+				[/* inline code block */ 'i', `low <= c <= high`],
+				[/* text */ 't', `
+ are word constituents. A word token consists of a word constituent
+ followed by zero or more word constituents or number constituents.`]
 			],
 			[/* parameters */
-				[/* parameter */ 'flag', [/* parameter description */
-					[/* text */ 't', ``],
-					[/* inline code block */ 'i', `true`],
-					[/* text */ 't', ` indicates that end-of-line characters
-                 are separate tokens; `],
-					[/* inline code block */ 'i', `false`],
-					[/* text */ 't', ` indicates that
-                 end-of-line characters are white space.`]
+				[/* parameter */ 'low', [/* parameter description */
+					[/* text */ 't', `the low end of the range.`]
+				]],
+				[/* parameter */ 'hi', [/* parameter description */
+					[/* text */ 't', `the high end of the range.`]
 				]]
 			],
-			/* throws */ UDF,
-			/* return */ UDF
-		]],
-		[/* method */ 'pushBack()', [
-			[/* method description */
-				[/* text */ 't', `Causes the next call to the `],
-				[/* inline code block */ 'i', `nextToken`],
-				[/* text */ 't', ` method of this
- tokenizer to return the current value in the `],
-				[/* inline code block */ 'i', `ttype`],
-				[/* text */ 't', `
- field, and not to modify the value in the `],
-				[/* inline code block */ 'i', `nval`],
-				[/* text */ 't', ` or
- `],
-				[/* inline code block */ 'i', `sval`],
-				[/* text */ 't', ` field.`]
-			],
-			/* parameters */ UDF,
 			/* throws */ UDF,
 			/* return */ UDF
 		]]

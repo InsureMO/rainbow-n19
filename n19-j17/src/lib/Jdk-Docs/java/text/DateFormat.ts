@@ -195,6 +195,12 @@ DocsCollector.collect('java.text.DateFormat', [
  externally.`]
 	],
 	[/* fields */
+		[/* field */ 'AM_PM_FIELD', [
+			[/* field description */
+				[/* text */ 't', `Useful constant for AM_PM field alignment.
+ Used in FieldPosition of date/time formatting.`]
+			],
+		]],
 		[/* field */ 'calendar', [
 			[/* field description */
 				[/* text */ 't', `The `],
@@ -217,72 +223,9 @@ DocsCollector.collect('java.text.DateFormat', [
 				]]
 			],
 		]],
-		[/* field */ 'numberFormat', [
-			[/* field description */
-				[/* text */ 't', `The number formatter that `],
-				[/* inline code block */ 'i', `DateFormat`],
-				[/* text */ 't', ` uses to format numbers
- in dates and times.  Subclasses should initialize this to a number format
- appropriate for the locale associated with this `],
-				[/* inline code block */ 'i', `DateFormat`],
-				[/* text */ 't', `.`]
-			],
-		]],
-		[/* field */ 'ERA_FIELD', [
-			[/* field description */
-				[/* text */ 't', `Useful constant for ERA field alignment.
- Used in FieldPosition of date/time formatting.`]
-			],
-		]],
-		[/* field */ 'YEAR_FIELD', [
-			[/* field description */
-				[/* text */ 't', `Useful constant for YEAR field alignment.
- Used in FieldPosition of date/time formatting.`]
-			],
-		]],
-		[/* field */ 'MONTH_FIELD', [
-			[/* field description */
-				[/* text */ 't', `Useful constant for MONTH field alignment.
- Used in FieldPosition of date/time formatting.`]
-			],
-		]],
 		[/* field */ 'DATE_FIELD', [
 			[/* field description */
 				[/* text */ 't', `Useful constant for DATE field alignment.
- Used in FieldPosition of date/time formatting.`]
-			],
-		]],
-		[/* field */ 'HOUR_OF_DAY1_FIELD', [
-			[/* field description */
-				[/* text */ 't', `Useful constant for one-based HOUR_OF_DAY field alignment.
- Used in FieldPosition of date/time formatting.
- HOUR_OF_DAY1_FIELD is used for the one-based 24-hour clock.
- For example, 23:59 + 01:00 results in 24:59.`]
-			],
-		]],
-		[/* field */ 'HOUR_OF_DAY0_FIELD', [
-			[/* field description */
-				[/* text */ 't', `Useful constant for zero-based HOUR_OF_DAY field alignment.
- Used in FieldPosition of date/time formatting.
- HOUR_OF_DAY0_FIELD is used for the zero-based 24-hour clock.
- For example, 23:59 + 01:00 results in 00:59.`]
-			],
-		]],
-		[/* field */ 'MINUTE_FIELD', [
-			[/* field description */
-				[/* text */ 't', `Useful constant for MINUTE field alignment.
- Used in FieldPosition of date/time formatting.`]
-			],
-		]],
-		[/* field */ 'SECOND_FIELD', [
-			[/* field description */
-				[/* text */ 't', `Useful constant for SECOND field alignment.
- Used in FieldPosition of date/time formatting.`]
-			],
-		]],
-		[/* field */ 'MILLISECOND_FIELD', [
-			[/* field description */
-				[/* text */ 't', `Useful constant for MILLISECOND field alignment.
  Used in FieldPosition of date/time formatting.`]
 			],
 		]],
@@ -292,42 +235,32 @@ DocsCollector.collect('java.text.DateFormat', [
  Used in FieldPosition of date/time formatting.`]
 			],
 		]],
-		[/* field */ 'DAY_OF_YEAR_FIELD', [
-			[/* field description */
-				[/* text */ 't', `Useful constant for DAY_OF_YEAR field alignment.
- Used in FieldPosition of date/time formatting.`]
-			],
-		]],
 		[/* field */ 'DAY_OF_WEEK_IN_MONTH_FIELD', [
 			[/* field description */
 				[/* text */ 't', `Useful constant for DAY_OF_WEEK_IN_MONTH field alignment.
  Used in FieldPosition of date/time formatting.`]
 			],
 		]],
-		[/* field */ 'WEEK_OF_YEAR_FIELD', [
+		[/* field */ 'DAY_OF_YEAR_FIELD', [
 			[/* field description */
-				[/* text */ 't', `Useful constant for WEEK_OF_YEAR field alignment.
+				[/* text */ 't', `Useful constant for DAY_OF_YEAR field alignment.
  Used in FieldPosition of date/time formatting.`]
 			],
 		]],
-		[/* field */ 'WEEK_OF_MONTH_FIELD', [
+		[/* field */ 'DEFAULT', [
 			[/* field description */
-				[/* text */ 't', `Useful constant for WEEK_OF_MONTH field alignment.
+				[/* text */ 't', `Constant for default style pattern.  Its value is MEDIUM.`]
+			],
+		]],
+		[/* field */ 'ERA_FIELD', [
+			[/* field description */
+				[/* text */ 't', `Useful constant for ERA field alignment.
  Used in FieldPosition of date/time formatting.`]
 			],
 		]],
-		[/* field */ 'AM_PM_FIELD', [
+		[/* field */ 'FULL', [
 			[/* field description */
-				[/* text */ 't', `Useful constant for AM_PM field alignment.
- Used in FieldPosition of date/time formatting.`]
-			],
-		]],
-		[/* field */ 'HOUR1_FIELD', [
-			[/* field description */
-				[/* text */ 't', `Useful constant for one-based HOUR field alignment.
- Used in FieldPosition of date/time formatting.
- HOUR1_FIELD is used for the one-based 12-hour clock.
- For example, 11:30 PM + 1 hour results in 12:30 AM.`]
+				[/* text */ 't', `Constant for full style pattern.`]
 			],
 		]],
 		[/* field */ 'HOUR0_FIELD', [
@@ -338,15 +271,28 @@ DocsCollector.collect('java.text.DateFormat', [
  For example, 11:30 PM + 1 hour results in 00:30 AM.`]
 			],
 		]],
-		[/* field */ 'TIMEZONE_FIELD', [
+		[/* field */ 'HOUR1_FIELD', [
 			[/* field description */
-				[/* text */ 't', `Useful constant for TIMEZONE field alignment.
- Used in FieldPosition of date/time formatting.`]
+				[/* text */ 't', `Useful constant for one-based HOUR field alignment.
+ Used in FieldPosition of date/time formatting.
+ HOUR1_FIELD is used for the one-based 12-hour clock.
+ For example, 11:30 PM + 1 hour results in 12:30 AM.`]
 			],
 		]],
-		[/* field */ 'FULL', [
+		[/* field */ 'HOUR_OF_DAY0_FIELD', [
 			[/* field description */
-				[/* text */ 't', `Constant for full style pattern.`]
+				[/* text */ 't', `Useful constant for zero-based HOUR_OF_DAY field alignment.
+ Used in FieldPosition of date/time formatting.
+ HOUR_OF_DAY0_FIELD is used for the zero-based 24-hour clock.
+ For example, 23:59 + 01:00 results in 00:59.`]
+			],
+		]],
+		[/* field */ 'HOUR_OF_DAY1_FIELD', [
+			[/* field description */
+				[/* text */ 't', `Useful constant for one-based HOUR_OF_DAY field alignment.
+ Used in FieldPosition of date/time formatting.
+ HOUR_OF_DAY1_FIELD is used for the one-based 24-hour clock.
+ For example, 23:59 + 01:00 results in 24:59.`]
 			],
 		]],
 		[/* field */ 'LONG', [
@@ -359,14 +305,68 @@ DocsCollector.collect('java.text.DateFormat', [
 				[/* text */ 't', `Constant for medium style pattern.`]
 			],
 		]],
+		[/* field */ 'MILLISECOND_FIELD', [
+			[/* field description */
+				[/* text */ 't', `Useful constant for MILLISECOND field alignment.
+ Used in FieldPosition of date/time formatting.`]
+			],
+		]],
+		[/* field */ 'MINUTE_FIELD', [
+			[/* field description */
+				[/* text */ 't', `Useful constant for MINUTE field alignment.
+ Used in FieldPosition of date/time formatting.`]
+			],
+		]],
+		[/* field */ 'MONTH_FIELD', [
+			[/* field description */
+				[/* text */ 't', `Useful constant for MONTH field alignment.
+ Used in FieldPosition of date/time formatting.`]
+			],
+		]],
+		[/* field */ 'numberFormat', [
+			[/* field description */
+				[/* text */ 't', `The number formatter that `],
+				[/* inline code block */ 'i', `DateFormat`],
+				[/* text */ 't', ` uses to format numbers
+ in dates and times.  Subclasses should initialize this to a number format
+ appropriate for the locale associated with this `],
+				[/* inline code block */ 'i', `DateFormat`],
+				[/* text */ 't', `.`]
+			],
+		]],
+		[/* field */ 'SECOND_FIELD', [
+			[/* field description */
+				[/* text */ 't', `Useful constant for SECOND field alignment.
+ Used in FieldPosition of date/time formatting.`]
+			],
+		]],
 		[/* field */ 'SHORT', [
 			[/* field description */
 				[/* text */ 't', `Constant for short style pattern.`]
 			],
 		]],
-		[/* field */ 'DEFAULT', [
+		[/* field */ 'TIMEZONE_FIELD', [
 			[/* field description */
-				[/* text */ 't', `Constant for default style pattern.  Its value is MEDIUM.`]
+				[/* text */ 't', `Useful constant for TIMEZONE field alignment.
+ Used in FieldPosition of date/time formatting.`]
+			],
+		]],
+		[/* field */ 'WEEK_OF_MONTH_FIELD', [
+			[/* field description */
+				[/* text */ 't', `Useful constant for WEEK_OF_MONTH field alignment.
+ Used in FieldPosition of date/time formatting.`]
+			],
+		]],
+		[/* field */ 'WEEK_OF_YEAR_FIELD', [
+			[/* field description */
+				[/* text */ 't', `Useful constant for WEEK_OF_YEAR field alignment.
+ Used in FieldPosition of date/time formatting.`]
+			],
+		]],
+		[/* field */ 'YEAR_FIELD', [
+			[/* field description */
+				[/* text */ 't', `Useful constant for YEAR field alignment.
+ Used in FieldPosition of date/time formatting.`]
 			],
 		]]
 	],
@@ -380,6 +380,131 @@ DocsCollector.collect('java.text.DateFormat', [
 		]]
 	],
 	[/* methods */
+		[/* method */ 'format(java.util.Date,java.lang.StringBuffer,java.text.FieldPosition)', [
+			[/* method description */
+				[/* text */ 't', `Formats a `],
+				[/* reference */ 'r', `java.util.Date`],
+				[/* text */ 't', ` into a date-time string. The formatted
+ string is appended to the given `],
+				[/* inline code block */ 'i', `StringBuffer`],
+				[/* text */ 't', `.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'date', [/* parameter description */
+					[/* text */ 't', `a Date to be formatted into a date-time string.`]
+				]],
+				[/* parameter */ 'toAppendTo', [/* parameter description */
+					[/* text */ 't', `the string buffer for the returning date-time string.`]
+				]],
+				[/* parameter */ 'fieldPosition', [/* parameter description */
+					[/* text */ 't', `keeps track on the position of the field within
+ the returned string. For example, given a date-time text
+ `],
+					[/* inline code block */ 'i', `"1996.07.10 AD at 15:08:56 PDT"`],
+					[/* text */ 't', `, if the given `],
+					[/* inline code block */ 'i', `fieldPosition`],
+					[/* text */ 't', `
+ is `],
+					[/* text */ 't', `YEAR_FIELD`],
+					[/* text */ 't', `, the begin index and end index of
+ `],
+					[/* inline code block */ 'i', `fieldPosition`],
+					[/* text */ 't', ` will be set to 0 and 4, respectively.
+ Notice that if the same date-time field appears more than once in a
+ pattern, the `],
+					[/* inline code block */ 'i', `fieldPosition`],
+					[/* text */ 't', ` will be set for the first occurrence
+ of that date-time field. For instance, formatting a `],
+					[/* inline code block */ 'i', `Date`],
+					[/* text */ 't', ` to the
+ date-time string `],
+					[/* inline code block */ 'i', `"1 PM PDT (Pacific Daylight Time)"`],
+					[/* text */ 't', ` using the
+ pattern `],
+					[/* inline code block */ 'i', `"h a z (zzzz)"`],
+					[/* text */ 't', ` and the alignment field
+ `],
+					[/* text */ 't', `TIMEZONE_FIELD`],
+					[/* text */ 't', `, the begin index and end index of
+ `],
+					[/* inline code block */ 'i', `fieldPosition`],
+					[/* text */ 't', ` will be set to 5 and 8, respectively, for the
+ first occurrence of the timezone pattern character `],
+					[/* inline code block */ 'i', `'z'`],
+					[/* text */ 't', `.`]
+				]]
+			],
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the string buffer passed in as `],
+				[/* inline code block */ 'i', `toAppendTo`],
+				[/* text */ 't', `, with formatted
+ text appended.`]
+			]
+		]],
+		[/* method */ 'parse(java.lang.String,java.text.ParsePosition)', [
+			[/* method description */
+				[/* text */ 't', `Parse a date/time string according to the given parse position.  For
+ example, a time text `],
+				[/* inline code block */ 'i', `"07/10/96 4:5 PM, PDT"`],
+				[/* text */ 't', ` will be parsed into a `],
+				[/* inline code block */ 'i', `Date`],
+				[/* text */ 't', `
+ that is equivalent to `],
+				[/* inline code block */ 'i', `Date(837039900000L)`],
+				[/* text */ 't', `.
+
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', ` By default, parsing is lenient: If the input is not in the form used
+ by this object's format method but can still be parsed as a date, then
+ the parse succeeds.  Clients may insist on strict adherence to the
+ format by calling `],
+					[/* reference */ 'r', `#setLenient(boolean)`, `setLenient(false)`],
+					[/* text */ 't', `.
+
+ `]
+				]],
+				[/* block */ 'b', [
+					[/* text */ 't', `This parsing operation uses the `],
+					[/* text */ 't', `calendar`],
+					[/* text */ 't', ` to produce
+ a `],
+					[/* inline code block */ 'i', `Date`],
+					[/* text */ 't', `. As a result, the `],
+					[/* inline code block */ 'i', `calendar`],
+					[/* text */ 't', `'s date-time
+ fields and the `],
+					[/* inline code block */ 'i', `TimeZone`],
+					[/* text */ 't', ` value may have been
+ overwritten, depending on subclass implementations. Any `],
+					[/* inline code block */ 'i', `TimeZone`],
+					[/* text */ 't', ` value that has previously been set by a call to
+ `],
+					[/* reference */ 'r', `#setTimeZone(java.util.TimeZone)`, `setTimeZone`],
+					[/* text */ 't', ` may need
+ to be restored for further operations.`]
+				]]
+			],
+			[/* parameters */
+				[/* parameter */ 'source', [/* parameter description */
+					[/* text */ 't', `The date/time string to be parsed`]
+				]],
+				[/* parameter */ 'pos', [/* parameter description */
+					[/* text */ 't', `On input, the position at which to start parsing; on
+              output, the position at which parsing terminated, or the
+              start position if the parse failed.`]
+				]]
+			],
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `A `],
+				[/* inline code block */ 'i', `Date`],
+				[/* text */ 't', `, or `],
+				[/* inline code block */ 'i', `null`],
+				[/* text */ 't', ` if the input could not be parsed`]
+			]
+		]],
 		[/* method */ 'equals(java.lang.Object)', [
 			[/* method description */
 				[/* text */ 't', `Overrides equals`]
@@ -398,24 +523,43 @@ DocsCollector.collect('java.text.DateFormat', [
 				[/* text */ 't', ` otherwise.`]
 			]
 		]],
-		[/* method */ 'hashCode()', [
+		[/* method */ 'isLenient()', [
 			[/* method description */
-				[/* text */ 't', `Overrides hashCode`]
+				[/* text */ 't', `Tell whether date/time parsing is to be lenient.
+ This method is equivalent to the following call.
+ `],
+				[/* block */ 'b', [
+					[/* code block */ 'c', [
+						[/* inline code block */ 'i', `getCalendar().isLenient()`]
+					]]
+				]]
 			],
 			/* parameters */ UDF,
 			/* throws */ UDF,
 			[/* return description */
-				[/* text */ 't', `a hash code value for this object.`]
+				[/* inline code block */ 'i', `true`],
+				[/* text */ 't', ` if the `],
+				[/* text */ 't', `calendar`],
+				[/* text */ 't', ` is lenient;
+         `],
+				[/* inline code block */ 'i', `false`],
+				[/* text */ 't', ` otherwise.`]
 			]
 		]],
-		[/* method */ 'clone()', [
+		[/* method */ 'format(java.util.Date)', [
 			[/* method description */
-				[/* text */ 't', `Overrides Cloneable`]
+				[/* text */ 't', `Formats a `],
+				[/* reference */ 'r', `java.util.Date`],
+				[/* text */ 't', ` into a date-time string.`]
 			],
-			/* parameters */ UDF,
+			[/* parameters */
+				[/* parameter */ 'date', [/* parameter description */
+					[/* text */ 't', `the time value to be formatted into a date-time string.`]
+				]]
+			],
 			/* throws */ UDF,
 			[/* return description */
-				[/* text */ 't', `a clone of this instance.`]
+				[/* text */ 't', `the formatted date-time string.`]
 			]
 		]],
 		[/* method */ 'format(java.lang.Object,java.lang.StringBuffer,java.text.FieldPosition)', [
@@ -496,216 +640,24 @@ DocsCollector.collect('java.text.DateFormat', [
          with formatted text appended.`]
 			]
 		]],
-		[/* method */ 'format(java.util.Date)', [
+		[/* method */ 'hashCode()', [
 			[/* method description */
-				[/* text */ 't', `Formats a `],
-				[/* reference */ 'r', `java.util.Date`],
-				[/* text */ 't', ` into a date-time string.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'date', [/* parameter description */
-					[/* text */ 't', `the time value to be formatted into a date-time string.`]
-				]]
-			],
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the formatted date-time string.`]
-			]
-		]],
-		[/* method */ 'format(java.util.Date,java.lang.StringBuffer,java.text.FieldPosition)', [
-			[/* method description */
-				[/* text */ 't', `Formats a `],
-				[/* reference */ 'r', `java.util.Date`],
-				[/* text */ 't', ` into a date-time string. The formatted
- string is appended to the given `],
-				[/* inline code block */ 'i', `StringBuffer`],
-				[/* text */ 't', `.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'date', [/* parameter description */
-					[/* text */ 't', `a Date to be formatted into a date-time string.`]
-				]],
-				[/* parameter */ 'toAppendTo', [/* parameter description */
-					[/* text */ 't', `the string buffer for the returning date-time string.`]
-				]],
-				[/* parameter */ 'fieldPosition', [/* parameter description */
-					[/* text */ 't', `keeps track on the position of the field within
- the returned string. For example, given a date-time text
- `],
-					[/* inline code block */ 'i', `"1996.07.10 AD at 15:08:56 PDT"`],
-					[/* text */ 't', `, if the given `],
-					[/* inline code block */ 'i', `fieldPosition`],
-					[/* text */ 't', `
- is `],
-					[/* text */ 't', `YEAR_FIELD`],
-					[/* text */ 't', `, the begin index and end index of
- `],
-					[/* inline code block */ 'i', `fieldPosition`],
-					[/* text */ 't', ` will be set to 0 and 4, respectively.
- Notice that if the same date-time field appears more than once in a
- pattern, the `],
-					[/* inline code block */ 'i', `fieldPosition`],
-					[/* text */ 't', ` will be set for the first occurrence
- of that date-time field. For instance, formatting a `],
-					[/* inline code block */ 'i', `Date`],
-					[/* text */ 't', ` to the
- date-time string `],
-					[/* inline code block */ 'i', `"1 PM PDT (Pacific Daylight Time)"`],
-					[/* text */ 't', ` using the
- pattern `],
-					[/* inline code block */ 'i', `"h a z (zzzz)"`],
-					[/* text */ 't', ` and the alignment field
- `],
-					[/* text */ 't', `TIMEZONE_FIELD`],
-					[/* text */ 't', `, the begin index and end index of
- `],
-					[/* inline code block */ 'i', `fieldPosition`],
-					[/* text */ 't', ` will be set to 5 and 8, respectively, for the
- first occurrence of the timezone pattern character `],
-					[/* inline code block */ 'i', `'z'`],
-					[/* text */ 't', `.`]
-				]]
-			],
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the string buffer passed in as `],
-				[/* inline code block */ 'i', `toAppendTo`],
-				[/* text */ 't', `, with formatted
- text appended.`]
-			]
-		]],
-		[/* method */ 'getInstance()', [
-			[/* method description */
-				[/* text */ 't', `Get a default date/time formatter that uses the SHORT style for both the
- date and the time.`]
+				[/* text */ 't', `Overrides hashCode`]
 			],
 			/* parameters */ UDF,
 			/* throws */ UDF,
 			[/* return description */
-				[/* text */ 't', `a date/time formatter`]
+				[/* text */ 't', `a hash code value for this object.`]
 			]
 		]],
-		[/* method */ 'parse(java.lang.String,java.text.ParsePosition)', [
+		[/* method */ 'clone()', [
 			[/* method description */
-				[/* text */ 't', `Parse a date/time string according to the given parse position.  For
- example, a time text `],
-				[/* inline code block */ 'i', `"07/10/96 4:5 PM, PDT"`],
-				[/* text */ 't', ` will be parsed into a `],
-				[/* inline code block */ 'i', `Date`],
-				[/* text */ 't', `
- that is equivalent to `],
-				[/* inline code block */ 'i', `Date(837039900000L)`],
-				[/* text */ 't', `.
-
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', ` By default, parsing is lenient: If the input is not in the form used
- by this object's format method but can still be parsed as a date, then
- the parse succeeds.  Clients may insist on strict adherence to the
- format by calling `],
-					[/* reference */ 'r', `#setLenient(boolean)`, `setLenient(false)`],
-					[/* text */ 't', `.
-
- `]
-				]],
-				[/* block */ 'b', [
-					[/* text */ 't', `This parsing operation uses the `],
-					[/* text */ 't', `calendar`],
-					[/* text */ 't', ` to produce
- a `],
-					[/* inline code block */ 'i', `Date`],
-					[/* text */ 't', `. As a result, the `],
-					[/* inline code block */ 'i', `calendar`],
-					[/* text */ 't', `'s date-time
- fields and the `],
-					[/* inline code block */ 'i', `TimeZone`],
-					[/* text */ 't', ` value may have been
- overwritten, depending on subclass implementations. Any `],
-					[/* inline code block */ 'i', `TimeZone`],
-					[/* text */ 't', ` value that has previously been set by a call to
- `],
-					[/* reference */ 'r', `#setTimeZone(java.util.TimeZone)`, `setTimeZone`],
-					[/* text */ 't', ` may need
- to be restored for further operations.`]
-				]]
-			],
-			[/* parameters */
-				[/* parameter */ 'source', [/* parameter description */
-					[/* text */ 't', `The date/time string to be parsed`]
-				]],
-				[/* parameter */ 'pos', [/* parameter description */
-					[/* text */ 't', `On input, the position at which to start parsing; on
-              output, the position at which parsing terminated, or the
-              start position if the parse failed.`]
-				]]
-			],
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `A `],
-				[/* inline code block */ 'i', `Date`],
-				[/* text */ 't', `, or `],
-				[/* inline code block */ 'i', `null`],
-				[/* text */ 't', ` if the input could not be parsed`]
-			]
-		]],
-		[/* method */ 'parse(java.lang.String)', [
-			[/* method description */
-				[/* text */ 't', `Parses text from the beginning of the given string to produce a date.
- The method may not use the entire text of the given string.
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', `
- See the `],
-					[/* reference */ 'r', `#parse(java.lang.String,java.text.ParsePosition)`, `parse(String, ParsePosition)`],
-					[/* text */ 't', ` method for more information
- on date parsing.`]
-				]]
-			],
-			[/* parameters */
-				[/* parameter */ 'source', [/* parameter description */
-					[/* text */ 't', `A `],
-					[/* inline code block */ 'i', `String`],
-					[/* text */ 't', ` whose beginning should be parsed.`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.text.ParseException', [/* throw description */
-					[/* text */ 't', `if the beginning of the specified string
-            cannot be parsed.`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `A `],
-				[/* inline code block */ 'i', `Date`],
-				[/* text */ 't', ` parsed from the string.`]
-			]
-		]],
-		[/* method */ 'getAvailableLocales()', [
-			[/* method description */
-				[/* text */ 't', `Returns an array of all locales for which the
- `],
-				[/* inline code block */ 'i', `get*Instance`],
-				[/* text */ 't', ` methods of this class can return
- localized instances.
- The returned array represents the union of locales supported by the Java
- runtime and by installed
- `],
-				[/* reference */ 'r', `java.text.spi.DateFormatProvider`],
-				[/* text */ 't', ` implementations.
- It must contain at least a `],
-				[/* inline code block */ 'i', `Locale`],
-				[/* text */ 't', ` instance equal to
- `],
-				[/* reference */ 'r', `java.Locale#US`],
-				[/* text */ 't', `.`]
+				[/* text */ 't', `Overrides Cloneable`]
 			],
 			/* parameters */ UDF,
 			/* throws */ UDF,
 			[/* return description */
-				[/* text */ 't', `An array of locales for which localized
-         `],
-				[/* inline code block */ 'i', `DateFormat`],
-				[/* text */ 't', ` instances are available.`]
+				[/* text */ 't', `a clone of this instance.`]
 			]
 		]],
 		[/* method */ 'parseObject(java.lang.String,java.text.ParsePosition)', [
@@ -775,22 +727,155 @@ DocsCollector.collect('java.text.DateFormat', [
          error, returns null.`]
 			]
 		]],
-		[/* method */ 'getDateTimeInstance(int,int,java.util.Locale)', [
+		[/* method */ 'getNumberFormat()', [
 			[/* method description */
-				[/* text */ 't', `Gets the date/time formatter with the given formatting styles
+				[/* text */ 't', `Gets the number formatter which this date/time formatter uses to
+ format and parse a time.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the number formatter which this date/time formatter uses.`]
+			]
+		]],
+		[/* method */ 'getCalendar()', [
+			[/* method description */
+				[/* text */ 't', `Gets the calendar associated with this date/time formatter.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the calendar associated with this date/time formatter.`]
+			]
+		]],
+		[/* method */ 'parse(java.lang.String)', [
+			[/* method description */
+				[/* text */ 't', `Parses text from the beginning of the given string to produce a date.
+ The method may not use the entire text of the given string.
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', `
+ See the `],
+					[/* reference */ 'r', `#parse(java.lang.String,java.text.ParsePosition)`, `parse(String, ParsePosition)`],
+					[/* text */ 't', ` method for more information
+ on date parsing.`]
+				]]
+			],
+			[/* parameters */
+				[/* parameter */ 'source', [/* parameter description */
+					[/* text */ 't', `A `],
+					[/* inline code block */ 'i', `String`],
+					[/* text */ 't', ` whose beginning should be parsed.`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.text.ParseException', [/* throw description */
+					[/* text */ 't', `if the beginning of the specified string
+            cannot be parsed.`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `A `],
+				[/* inline code block */ 'i', `Date`],
+				[/* text */ 't', ` parsed from the string.`]
+			]
+		]],
+		[/* method */ 'getTimeZone()', [
+			[/* method description */
+				[/* text */ 't', `Gets the time zone.
+ This method is equivalent to the following call.
+ `],
+				[/* block */ 'b', [
+					[/* code block */ 'c', [
+						[/* inline code block */ 'i', `getCalendar().getTimeZone()`]
+					]]
+				]]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the time zone associated with the calendar of DateFormat.`]
+			]
+		]],
+		[/* method */ 'getDateInstance()', [
+			[/* method description */
+				[/* text */ 't', `Gets the date formatter with the default formatting style
+ for the default `],
+				[/* reference */ 'r', `java.Locale.Category#FORMAT`],
+				[/* text */ 't', ` locale.
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', `This is equivalent to calling
+ `],
+					[/* reference */ 'r', `#getDateInstance(int,java.util.Locale)`, `getDateInstance(DEFAULT, Locale.getDefault(Locale.Category.FORMAT))`],
+					[/* text */ 't', `.`]
+				]]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `a date formatter.`]
+			]
+		]],
+		[/* method */ 'getDateInstance(int)', [
+			[/* method description */
+				[/* text */ 't', `Gets the date formatter with the given formatting style
+ for the default `],
+				[/* reference */ 'r', `java.Locale.Category#FORMAT`],
+				[/* text */ 't', ` locale.
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', `This is equivalent to calling
+ `],
+					[/* reference */ 'r', `#getDateInstance(int,java.util.Locale)`, `getDateInstance(style, Locale.getDefault(Locale.Category.FORMAT))`],
+					[/* text */ 't', `.`]
+				]]
+			],
+			[/* parameters */
+				[/* parameter */ 'style', [/* parameter description */
+					[/* text */ 't', `the given formatting style. For example,
+ SHORT for "M/d/yy" in the US locale.`]
+				]]
+			],
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `a date formatter.`]
+			]
+		]],
+		[/* method */ 'getDateInstance(int,java.util.Locale)', [
+			[/* method description */
+				[/* text */ 't', `Gets the date formatter with the given formatting style
  for the given locale.`]
 			],
 			[/* parameters */
-				[/* parameter */ 'dateStyle', [/* parameter description */
-					[/* text */ 't', `the given date formatting style.`]
-				]],
-				[/* parameter */ 'timeStyle', [/* parameter description */
-					[/* text */ 't', `the given time formatting style.`]
+				[/* parameter */ 'style', [/* parameter description */
+					[/* text */ 't', `the given formatting style. For example,
+ SHORT for "M/d/yy" in the US locale.`]
 				]],
 				[/* parameter */ 'aLocale', [/* parameter description */
 					[/* text */ 't', `the given locale.`]
 				]]
 			],
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `a date formatter.`]
+			]
+		]],
+		[/* method */ 'getDateTimeInstance()', [
+			[/* method description */
+				[/* text */ 't', `Gets the date/time formatter with the default formatting style
+ for the default `],
+				[/* reference */ 'r', `java.Locale.Category#FORMAT`],
+				[/* text */ 't', ` locale.
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', `This is equivalent to calling
+ `],
+					[/* reference */ 'r', `#getDateTimeInstance(int,int,java.util.Locale)`, `getDateTimeInstance(DEFAULT, DEFAULT, Locale.getDefault(Locale.Category.FORMAT))`],
+					[/* text */ 't', `.`]
+				]]
+			],
+			/* parameters */ UDF,
 			/* throws */ UDF,
 			[/* return description */
 				[/* text */ 't', `a date/time formatter.`]
@@ -825,144 +910,17 @@ DocsCollector.collect('java.text.DateFormat', [
 				[/* text */ 't', `a date/time formatter.`]
 			]
 		]],
-		[/* method */ 'getDateTimeInstance()', [
+		[/* method */ 'getDateTimeInstance(int,int,java.util.Locale)', [
 			[/* method description */
-				[/* text */ 't', `Gets the date/time formatter with the default formatting style
- for the default `],
-				[/* reference */ 'r', `java.Locale.Category#FORMAT`],
-				[/* text */ 't', ` locale.
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', `This is equivalent to calling
- `],
-					[/* reference */ 'r', `#getDateTimeInstance(int,int,java.util.Locale)`, `getDateTimeInstance(DEFAULT, DEFAULT, Locale.getDefault(Locale.Category.FORMAT))`],
-					[/* text */ 't', `.`]
-				]]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `a date/time formatter.`]
-			]
-		]],
-		[/* method */ 'setTimeZone(java.util.TimeZone)', [
-			[/* method description */
-				[/* text */ 't', `Sets the time zone for the calendar of this `],
-				[/* inline code block */ 'i', `DateFormat`],
-				[/* text */ 't', ` object.
- This method is equivalent to the following call.
- `],
-				[/* block */ 'b', [
-					[/* code block */ 'c', [
-						[/* inline code block */ 'i', `getCalendar().setTimeZone(zone)`]
-					]]
-				]],
-				[/* block */ 'b', [
-					[/* text */ 't', `The `],
-					[/* inline code block */ 'i', `TimeZone`],
-					[/* text */ 't', ` set by this method is overwritten by a
- `],
-					[/* reference */ 'r', `#setCalendar(java.util.Calendar)`, `setCalendar`],
-					[/* text */ 't', ` call.
-
- `]
-				]],
-				[/* block */ 'b', [
-					[/* text */ 't', `The `],
-					[/* inline code block */ 'i', `TimeZone`],
-					[/* text */ 't', ` set by this method may be overwritten as
- a result of a call to the parse method.`]
-				]]
-			],
-			[/* parameters */
-				[/* parameter */ 'zone', [/* parameter description */
-					[/* text */ 't', `the given new time zone.`]
-				]]
-			],
-			/* throws */ UDF,
-			/* return */ UDF
-		]],
-		[/* method */ 'getTimeZone()', [
-			[/* method description */
-				[/* text */ 't', `Gets the time zone.
- This method is equivalent to the following call.
- `],
-				[/* block */ 'b', [
-					[/* code block */ 'c', [
-						[/* inline code block */ 'i', `getCalendar().getTimeZone()`]
-					]]
-				]]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the time zone associated with the calendar of DateFormat.`]
-			]
-		]],
-		[/* method */ 'setLenient(boolean)', [
-			[/* method description */
-				[/* text */ 't', `Specify whether or not date/time parsing is to be lenient.  With
- lenient parsing, the parser may use heuristics to interpret inputs that
- do not precisely match this object's format.  With strict parsing,
- inputs must match this object's format.
-
- `],
-				[/* block */ 'b', `This method is equivalent to the following call.
- `],
-				[/* block */ 'b', [
-					[/* code block */ 'c', [
-						[/* inline code block */ 'i', `getCalendar().setLenient(lenient)`]
-					]]
-				]],
-				[/* block */ 'b', ''],
-				[/* block */ 'b', [
-					[/* text */ 't', `This leniency value is overwritten by a call to `],
-					[/* reference */ 'r', `#setCalendar(java.util.Calendar)`, `setCalendar()`],
-					[/* text */ 't', `.`]
-				]]
-			],
-			[/* parameters */
-				[/* parameter */ 'lenient', [/* parameter description */
-					[/* text */ 't', `when `],
-					[/* inline code block */ 'i', `true`],
-					[/* text */ 't', `, parsing is lenient`]
-				]]
-			],
-			/* throws */ UDF,
-			/* return */ UDF
-		]],
-		[/* method */ 'isLenient()', [
-			[/* method description */
-				[/* text */ 't', `Tell whether date/time parsing is to be lenient.
- This method is equivalent to the following call.
- `],
-				[/* block */ 'b', [
-					[/* code block */ 'c', [
-						[/* inline code block */ 'i', `getCalendar().isLenient()`]
-					]]
-				]]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* inline code block */ 'i', `true`],
-				[/* text */ 't', ` if the `],
-				[/* text */ 't', `calendar`],
-				[/* text */ 't', ` is lenient;
-         `],
-				[/* inline code block */ 'i', `false`],
-				[/* text */ 't', ` otherwise.`]
-			]
-		]],
-		[/* method */ 'getDateInstance(int,java.util.Locale)', [
-			[/* method description */
-				[/* text */ 't', `Gets the date formatter with the given formatting style
+				[/* text */ 't', `Gets the date/time formatter with the given formatting styles
  for the given locale.`]
 			],
 			[/* parameters */
-				[/* parameter */ 'style', [/* parameter description */
-					[/* text */ 't', `the given formatting style. For example,
- SHORT for "M/d/yy" in the US locale.`]
+				[/* parameter */ 'dateStyle', [/* parameter description */
+					[/* text */ 't', `the given date formatting style.`]
+				]],
+				[/* parameter */ 'timeStyle', [/* parameter description */
+					[/* text */ 't', `the given time formatting style.`]
 				]],
 				[/* parameter */ 'aLocale', [/* parameter description */
 					[/* text */ 't', `the given locale.`]
@@ -970,52 +928,18 @@ DocsCollector.collect('java.text.DateFormat', [
 			],
 			/* throws */ UDF,
 			[/* return description */
-				[/* text */ 't', `a date formatter.`]
+				[/* text */ 't', `a date/time formatter.`]
 			]
 		]],
-		[/* method */ 'getDateInstance(int)', [
+		[/* method */ 'getInstance()', [
 			[/* method description */
-				[/* text */ 't', `Gets the date formatter with the given formatting style
- for the default `],
-				[/* reference */ 'r', `java.Locale.Category#FORMAT`],
-				[/* text */ 't', ` locale.
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', `This is equivalent to calling
- `],
-					[/* reference */ 'r', `#getDateInstance(int,java.util.Locale)`, `getDateInstance(style, Locale.getDefault(Locale.Category.FORMAT))`],
-					[/* text */ 't', `.`]
-				]]
-			],
-			[/* parameters */
-				[/* parameter */ 'style', [/* parameter description */
-					[/* text */ 't', `the given formatting style. For example,
- SHORT for "M/d/yy" in the US locale.`]
-				]]
-			],
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `a date formatter.`]
-			]
-		]],
-		[/* method */ 'getDateInstance()', [
-			[/* method description */
-				[/* text */ 't', `Gets the date formatter with the default formatting style
- for the default `],
-				[/* reference */ 'r', `java.Locale.Category#FORMAT`],
-				[/* text */ 't', ` locale.
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', `This is equivalent to calling
- `],
-					[/* reference */ 'r', `#getDateInstance(int,java.util.Locale)`, `getDateInstance(DEFAULT, Locale.getDefault(Locale.Category.FORMAT))`],
-					[/* text */ 't', `.`]
-				]]
+				[/* text */ 't', `Get a default date/time formatter that uses the SHORT style for both the
+ date and the time.`]
 			],
 			/* parameters */ UDF,
 			/* throws */ UDF,
 			[/* return description */
-				[/* text */ 't', `a date formatter.`]
+				[/* text */ 't', `a date/time formatter`]
 			]
 		]],
 		[/* method */ 'getTimeInstance()', [
@@ -1082,6 +1006,34 @@ DocsCollector.collect('java.text.DateFormat', [
 				[/* text */ 't', `a time formatter.`]
 			]
 		]],
+		[/* method */ 'getAvailableLocales()', [
+			[/* method description */
+				[/* text */ 't', `Returns an array of all locales for which the
+ `],
+				[/* inline code block */ 'i', `get*Instance`],
+				[/* text */ 't', ` methods of this class can return
+ localized instances.
+ The returned array represents the union of locales supported by the Java
+ runtime and by installed
+ `],
+				[/* reference */ 'r', `java.text.spi.DateFormatProvider`],
+				[/* text */ 't', ` implementations.
+ It must contain at least a `],
+				[/* inline code block */ 'i', `Locale`],
+				[/* text */ 't', ` instance equal to
+ `],
+				[/* reference */ 'r', `java.Locale#US`],
+				[/* text */ 't', `.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `An array of locales for which localized
+         `],
+				[/* inline code block */ 'i', `DateFormat`],
+				[/* text */ 't', ` instances are available.`]
+			]
+		]],
 		[/* method */ 'setCalendar(java.util.Calendar)', [
 			[/* method description */
 				[/* text */ 't', `Set the calendar to be used by this date format.  Initially, the default
@@ -1109,15 +1061,37 @@ DocsCollector.collect('java.text.DateFormat', [
 			/* throws */ UDF,
 			/* return */ UDF
 		]],
-		[/* method */ 'getCalendar()', [
+		[/* method */ 'setLenient(boolean)', [
 			[/* method description */
-				[/* text */ 't', `Gets the calendar associated with this date/time formatter.`]
+				[/* text */ 't', `Specify whether or not date/time parsing is to be lenient.  With
+ lenient parsing, the parser may use heuristics to interpret inputs that
+ do not precisely match this object's format.  With strict parsing,
+ inputs must match this object's format.
+
+ `],
+				[/* block */ 'b', `This method is equivalent to the following call.
+ `],
+				[/* block */ 'b', [
+					[/* code block */ 'c', [
+						[/* inline code block */ 'i', `getCalendar().setLenient(lenient)`]
+					]]
+				]],
+				[/* block */ 'b', ''],
+				[/* block */ 'b', [
+					[/* text */ 't', `This leniency value is overwritten by a call to `],
+					[/* reference */ 'r', `#setCalendar(java.util.Calendar)`, `setCalendar()`],
+					[/* text */ 't', `.`]
+				]]
 			],
-			/* parameters */ UDF,
+			[/* parameters */
+				[/* parameter */ 'lenient', [/* parameter description */
+					[/* text */ 't', `when `],
+					[/* inline code block */ 'i', `true`],
+					[/* text */ 't', `, parsing is lenient`]
+				]]
+			],
 			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the calendar associated with this date/time formatter.`]
-			]
+			/* return */ UDF
 		]],
 		[/* method */ 'setNumberFormat(java.text.NumberFormat)', [
 			[/* method description */
@@ -1131,16 +1105,42 @@ DocsCollector.collect('java.text.DateFormat', [
 			/* throws */ UDF,
 			/* return */ UDF
 		]],
-		[/* method */ 'getNumberFormat()', [
+		[/* method */ 'setTimeZone(java.util.TimeZone)', [
 			[/* method description */
-				[/* text */ 't', `Gets the number formatter which this date/time formatter uses to
- format and parse a time.`]
+				[/* text */ 't', `Sets the time zone for the calendar of this `],
+				[/* inline code block */ 'i', `DateFormat`],
+				[/* text */ 't', ` object.
+ This method is equivalent to the following call.
+ `],
+				[/* block */ 'b', [
+					[/* code block */ 'c', [
+						[/* inline code block */ 'i', `getCalendar().setTimeZone(zone)`]
+					]]
+				]],
+				[/* block */ 'b', [
+					[/* text */ 't', `The `],
+					[/* inline code block */ 'i', `TimeZone`],
+					[/* text */ 't', ` set by this method is overwritten by a
+ `],
+					[/* reference */ 'r', `#setCalendar(java.util.Calendar)`, `setCalendar`],
+					[/* text */ 't', ` call.
+
+ `]
+				]],
+				[/* block */ 'b', [
+					[/* text */ 't', `The `],
+					[/* inline code block */ 'i', `TimeZone`],
+					[/* text */ 't', ` set by this method may be overwritten as
+ a result of a call to the parse method.`]
+				]]
 			],
-			/* parameters */ UDF,
+			[/* parameters */
+				[/* parameter */ 'zone', [/* parameter description */
+					[/* text */ 't', `the given new time zone.`]
+				]]
+			],
 			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the number formatter which this date/time formatter uses.`]
-			]
+			/* return */ UDF
 		]]
 	],
 ]);

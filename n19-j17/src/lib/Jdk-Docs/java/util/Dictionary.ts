@@ -43,40 +43,64 @@ DocsCollector.collect('java.util.Dictionary', [
 		]]
 	],
 	[/* methods */
-		[/* method */ 'remove(java.lang.Object)', [
+		[/* method */ 'isEmpty()', [
 			[/* method description */
-				[/* text */ 't', `Removes the `],
-				[/* inline code block */ 'i', `key`],
-				[/* text */ 't', ` (and its corresponding
- `],
-				[/* inline code block */ 'i', `value`],
-				[/* text */ 't', `) from this dictionary. This method does nothing
- if the `],
-				[/* inline code block */ 'i', `key`],
-				[/* text */ 't', ` is not in this dictionary.`]
+				[/* text */ 't', `Tests if this dictionary maps no keys to value. The general contract
+ for the `],
+				[/* inline code block */ 'i', `isEmpty`],
+				[/* text */ 't', ` method is that the result is true if and only
+ if this dictionary contains no entries.`]
 			],
-			[/* parameters */
-				[/* parameter */ 'key', [/* parameter description */
-					[/* text */ 't', `the key that needs to be removed.`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
-					[/* text */ 't', `if `],
-					[/* inline code block */ 'i', `key`],
-					[/* text */ 't', ` is `],
-					[/* inline code block */ 'i', `null`],
-					[/* text */ 't', `.`]
-				]]
-			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
 			[/* return description */
-				[/* text */ 't', `the value to which the `],
-				[/* inline code block */ 'i', `key`],
-				[/* text */ 't', ` had been mapped in this
-          dictionary, or `],
-				[/* inline code block */ 'i', `null`],
-				[/* text */ 't', ` if the key did not have a
-          mapping.`]
+				[/* inline code block */ 'i', `true`],
+				[/* text */ 't', ` if this dictionary maps no keys to values;
+          `],
+				[/* inline code block */ 'i', `false`],
+				[/* text */ 't', ` otherwise.`]
+			]
+		]],
+		[/* method */ 'size()', [
+			[/* method description */
+				[/* text */ 't', `Returns the number of entries (distinct keys) in this dictionary.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the number of keys in this dictionary.`]
+			]
+		]],
+		[/* method */ 'keys()', [
+			[/* method description */
+				[/* text */ 't', `Returns an enumeration of the keys in this dictionary. The general
+ contract for the keys method is that an `],
+				[/* inline code block */ 'i', `Enumeration`],
+				[/* text */ 't', ` object
+ is returned that will generate all the keys for which this dictionary
+ contains entries.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `an enumeration of the keys in this dictionary.`]
+			]
+		]],
+		[/* method */ 'elements()', [
+			[/* method description */
+				[/* text */ 't', `Returns an enumeration of the values in this dictionary. The general
+ contract for the `],
+				[/* inline code block */ 'i', `elements`],
+				[/* text */ 't', ` method is that an
+ `],
+				[/* inline code block */ 'i', `Enumeration`],
+				[/* text */ 't', ` is returned that will generate all the elements
+ contained in entries in this dictionary.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `an enumeration of the values in this dictionary.`]
 			]
 		]],
 		[/* method */ 'get(java.lang.Object)', [
@@ -195,64 +219,40 @@ DocsCollector.collect('java.util.Dictionary', [
              have a previous mapping.`]
 			]
 		]],
-		[/* method */ 'isEmpty()', [
+		[/* method */ 'remove(java.lang.Object)', [
 			[/* method description */
-				[/* text */ 't', `Tests if this dictionary maps no keys to value. The general contract
- for the `],
-				[/* inline code block */ 'i', `isEmpty`],
-				[/* text */ 't', ` method is that the result is true if and only
- if this dictionary contains no entries.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* inline code block */ 'i', `true`],
-				[/* text */ 't', ` if this dictionary maps no keys to values;
-          `],
-				[/* inline code block */ 'i', `false`],
-				[/* text */ 't', ` otherwise.`]
-			]
-		]],
-		[/* method */ 'size()', [
-			[/* method description */
-				[/* text */ 't', `Returns the number of entries (distinct keys) in this dictionary.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the number of keys in this dictionary.`]
-			]
-		]],
-		[/* method */ 'elements()', [
-			[/* method description */
-				[/* text */ 't', `Returns an enumeration of the values in this dictionary. The general
- contract for the `],
-				[/* inline code block */ 'i', `elements`],
-				[/* text */ 't', ` method is that an
+				[/* text */ 't', `Removes the `],
+				[/* inline code block */ 'i', `key`],
+				[/* text */ 't', ` (and its corresponding
  `],
-				[/* inline code block */ 'i', `Enumeration`],
-				[/* text */ 't', ` is returned that will generate all the elements
- contained in entries in this dictionary.`]
+				[/* inline code block */ 'i', `value`],
+				[/* text */ 't', `) from this dictionary. This method does nothing
+ if the `],
+				[/* inline code block */ 'i', `key`],
+				[/* text */ 't', ` is not in this dictionary.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `an enumeration of the values in this dictionary.`]
-			]
-		]],
-		[/* method */ 'keys()', [
-			[/* method description */
-				[/* text */ 't', `Returns an enumeration of the keys in this dictionary. The general
- contract for the keys method is that an `],
-				[/* inline code block */ 'i', `Enumeration`],
-				[/* text */ 't', ` object
- is returned that will generate all the keys for which this dictionary
- contains entries.`]
+			[/* parameters */
+				[/* parameter */ 'key', [/* parameter description */
+					[/* text */ 't', `the key that needs to be removed.`]
+				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			[/* throws */
+				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
+					[/* text */ 't', `if `],
+					[/* inline code block */ 'i', `key`],
+					[/* text */ 't', ` is `],
+					[/* inline code block */ 'i', `null`],
+					[/* text */ 't', `.`]
+				]]
+			],
 			[/* return description */
-				[/* text */ 't', `an enumeration of the keys in this dictionary.`]
+				[/* text */ 't', `the value to which the `],
+				[/* inline code block */ 'i', `key`],
+				[/* text */ 't', ` had been mapped in this
+          dictionary, or `],
+				[/* inline code block */ 'i', `null`],
+				[/* text */ 't', ` if the key did not have a
+          mapping.`]
 			]
 		]]
 	],

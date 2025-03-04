@@ -12,6 +12,30 @@ DocsCollector.collect('java.util.IllformedLocaleException', [
 	],
 	/* fields */ UDF,
 	[/* constructors */
+		[/* constructor */ '<init>()', [
+			[/* constructor description */
+				[/* text */ 't', `Constructs a new `],
+				[/* inline code block */ 'i', `IllformedLocaleException`],
+				[/* text */ 't', ` with no
+ detail message and -1 as the error index.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF
+		]],
+		[/* constructor */ '<init>(java.lang.String)', [
+			[/* constructor description */
+				[/* text */ 't', `Constructs a new `],
+				[/* inline code block */ 'i', `IllformedLocaleException`],
+				[/* text */ 't', ` with the
+ given message and -1 as the error index.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'message', [/* parameter description */
+					[/* text */ 't', `the message`]
+				]]
+			],
+			/* throws */ UDF
+		]],
 		[/* constructor */ '<init>(java.lang.String,int)', [
 			[/* constructor description */
 				[/* text */ 't', `Constructs a new `],
@@ -30,30 +54,6 @@ DocsCollector.collect('java.util.IllformedLocaleException', [
 					[/* text */ 't', `the index`]
 				]]
 			],
-			/* throws */ UDF
-		]],
-		[/* constructor */ '<init>(java.lang.String)', [
-			[/* constructor description */
-				[/* text */ 't', `Constructs a new `],
-				[/* inline code block */ 'i', `IllformedLocaleException`],
-				[/* text */ 't', ` with the
- given message and -1 as the error index.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'message', [/* parameter description */
-					[/* text */ 't', `the message`]
-				]]
-			],
-			/* throws */ UDF
-		]],
-		[/* constructor */ '<init>()', [
-			[/* constructor description */
-				[/* text */ 't', `Constructs a new `],
-				[/* inline code block */ 'i', `IllformedLocaleException`],
-				[/* text */ 't', ` with no
- detail message and -1 as the error index.`]
-			],
-			/* parameters */ UDF,
 			/* throws */ UDF
 		]]
 	],

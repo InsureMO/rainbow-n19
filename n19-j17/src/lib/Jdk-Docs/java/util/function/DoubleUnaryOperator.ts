@@ -28,16 +28,6 @@ DocsCollector.collect('java.util.function.DoubleUnaryOperator', [
 	/* fields */ UDF,
 	/* constructors */ UDF,
 	[/* methods */
-		[/* method */ 'identity()', [
-			[/* method description */
-				[/* text */ 't', `Returns a unary operator that always returns its input argument.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `a unary operator that always returns its input argument`]
-			]
-		]],
 		[/* method */ 'applyAsDouble(double)', [
 			[/* method description */
 				[/* text */ 't', `Applies this operator to the given operand.`]
@@ -50,6 +40,32 @@ DocsCollector.collect('java.util.function.DoubleUnaryOperator', [
 			/* throws */ UDF,
 			[/* return description */
 				[/* text */ 't', `the operator result`]
+			]
+		]],
+		[/* method */ 'andThen(java.util.function.DoubleUnaryOperator)', [
+			[/* method description */
+				[/* text */ 't', `Returns a composed operator that first applies this operator to
+ its input, and then applies the `],
+				[/* inline code block */ 'i', `after`],
+				[/* text */ 't', ` operator to the result.
+ If evaluation of either operator throws an exception, it is relayed to
+ the caller of the composed operator.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'after', [/* parameter description */
+					[/* text */ 't', `the operator to apply after this operator is applied`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
+					[/* text */ 't', `if after is null`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `a composed operator that first applies this operator and then
+ applies the `],
+				[/* inline code block */ 'i', `after`],
+				[/* text */ 't', ` operator`]
 			]
 		]],
 		[/* method */ 'compose(java.util.function.DoubleUnaryOperator)', [
@@ -78,30 +94,14 @@ DocsCollector.collect('java.util.function.DoubleUnaryOperator', [
  operator and then applies this operator`]
 			]
 		]],
-		[/* method */ 'andThen(java.util.function.DoubleUnaryOperator)', [
+		[/* method */ 'identity()', [
 			[/* method description */
-				[/* text */ 't', `Returns a composed operator that first applies this operator to
- its input, and then applies the `],
-				[/* inline code block */ 'i', `after`],
-				[/* text */ 't', ` operator to the result.
- If evaluation of either operator throws an exception, it is relayed to
- the caller of the composed operator.`]
+				[/* text */ 't', `Returns a unary operator that always returns its input argument.`]
 			],
-			[/* parameters */
-				[/* parameter */ 'after', [/* parameter description */
-					[/* text */ 't', `the operator to apply after this operator is applied`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
-					[/* text */ 't', `if after is null`]
-				]]
-			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
 			[/* return description */
-				[/* text */ 't', `a composed operator that first applies this operator and then
- applies the `],
-				[/* inline code block */ 'i', `after`],
-				[/* text */ 't', ` operator`]
+				[/* text */ 't', `a unary operator that always returns its input argument`]
 			]
 		]]
 	],

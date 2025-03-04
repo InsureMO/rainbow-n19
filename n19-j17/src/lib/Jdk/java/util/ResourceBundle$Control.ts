@@ -302,8 +302,8 @@ JdkClassCreateHelper.class('java.util.ResourceBundle$Control', [
 		]
 	],
 	[/* declared fields */
-		[/* public static final java.util.List<java.lang.String> java.util.ResourceBundle$Control.FORMAT_DEFAULT */
-			/* name */ 'FORMAT_DEFAULT',
+		[/* public static final java.util.List<java.lang.String> java.util.ResourceBundle$Control.FORMAT_CLASS */
+			/* name */ 'FORMAT_CLASS',
 			/* type */ [/* parameterized type */ 'pt', [
 				[/* actual argument types */
 					'java.lang.String'
@@ -314,8 +314,8 @@ JdkClassCreateHelper.class('java.util.ResourceBundle$Control', [
 			/* annotations */ UDF,
 			/* modifiers */ 25
 		],
-		[/* public static final java.util.List<java.lang.String> java.util.ResourceBundle$Control.FORMAT_CLASS */
-			/* name */ 'FORMAT_CLASS',
+		[/* public static final java.util.List<java.lang.String> java.util.ResourceBundle$Control.FORMAT_DEFAULT */
+			/* name */ 'FORMAT_DEFAULT',
 			/* type */ [/* parameterized type */ 'pt', [
 				[/* actual argument types */
 					'java.lang.String'

@@ -35,6 +35,17 @@ DocsCollector.collect('java.lang.invoke.TypeDescriptor$OfField', [
 				[/* text */ 't', `whether this field descriptor describes a primitive type`]
 			]
 		]],
+		[/* method */ 'arrayType()', [
+			[/* method description */
+				[/* text */ 't', `Return a descriptor for the array type whose component type is described by this
+ descriptor`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the descriptor for the array type`]
+			]
+		]],
 		[/* method */ 'componentType()', [
 			[/* method description */
 				[/* text */ 't', `If this field descriptor describes an array type, return
@@ -49,17 +60,6 @@ DocsCollector.collect('java.lang.invoke.TypeDescriptor$OfField', [
 				[/* inline code block */ 'i', `null`],
 				[/* text */ 't', ` if this field descriptor does
  not describe an array type`]
-			]
-		]],
-		[/* method */ 'arrayType()', [
-			[/* method description */
-				[/* text */ 't', `Return a descriptor for the array type whose component type is described by this
- descriptor`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the descriptor for the array type`]
 			]
 		]]
 	],

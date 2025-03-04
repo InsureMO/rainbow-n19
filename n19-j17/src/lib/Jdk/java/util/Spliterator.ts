@@ -158,8 +158,8 @@ JdkClassCreateHelper.class('java.util.Spliterator', [
 		]
 	],
 	[/* declared fields */
-		[/* public static final int java.util.Spliterator.ORDERED */
-			/* name */ 'ORDERED',
+		[/* public static final int java.util.Spliterator.CONCURRENT */
+			/* name */ 'CONCURRENT',
 			/* type */ 'int',
 			/* annotations */ UDF,
 			/* modifiers */ 25
@@ -170,14 +170,8 @@ JdkClassCreateHelper.class('java.util.Spliterator', [
 			/* annotations */ UDF,
 			/* modifiers */ 25
 		],
-		[/* public static final int java.util.Spliterator.SORTED */
-			/* name */ 'SORTED',
-			/* type */ 'int',
-			/* annotations */ UDF,
-			/* modifiers */ 25
-		],
-		[/* public static final int java.util.Spliterator.SIZED */
-			/* name */ 'SIZED',
+		[/* public static final int java.util.Spliterator.IMMUTABLE */
+			/* name */ 'IMMUTABLE',
 			/* type */ 'int',
 			/* annotations */ UDF,
 			/* modifiers */ 25
@@ -188,14 +182,20 @@ JdkClassCreateHelper.class('java.util.Spliterator', [
 			/* annotations */ UDF,
 			/* modifiers */ 25
 		],
-		[/* public static final int java.util.Spliterator.IMMUTABLE */
-			/* name */ 'IMMUTABLE',
+		[/* public static final int java.util.Spliterator.ORDERED */
+			/* name */ 'ORDERED',
 			/* type */ 'int',
 			/* annotations */ UDF,
 			/* modifiers */ 25
 		],
-		[/* public static final int java.util.Spliterator.CONCURRENT */
-			/* name */ 'CONCURRENT',
+		[/* public static final int java.util.Spliterator.SIZED */
+			/* name */ 'SIZED',
+			/* type */ 'int',
+			/* annotations */ UDF,
+			/* modifiers */ 25
+		],
+		[/* public static final int java.util.Spliterator.SORTED */
+			/* name */ 'SORTED',
 			/* type */ 'int',
 			/* annotations */ UDF,
 			/* modifiers */ 25

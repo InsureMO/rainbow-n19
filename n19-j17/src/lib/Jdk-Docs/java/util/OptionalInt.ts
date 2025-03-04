@@ -49,6 +49,31 @@ DocsCollector.collect('java.util.OptionalInt', [
 	/* fields */ UDF,
 	/* constructors */ UDF,
 	[/* methods */
+		[/* method */ 'orElseThrow(java.util.function.Supplier)', [
+			[/* method description */
+				[/* text */ 't', `If a value is present, returns the value, otherwise throws an exception
+ produced by the exception supplying function.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'exceptionSupplier', [/* parameter description */
+					[/* text */ 't', `the supplying function that produces an
+        exception to be thrown`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'X', [/* throw description */
+					[/* text */ 't', `if no value is present`]
+				]],
+				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
+					[/* text */ 't', `if no value is present and the exception
+         supplying function is `],
+					[/* inline code block */ 'i', `null`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `the value, if present`]
+			]
+		]],
 		[/* method */ 'equals(java.lang.Object)', [
 			[/* method description */
 				[/* text */ 't', `Indicates whether some other object is "equal to" this
@@ -86,36 +111,6 @@ DocsCollector.collect('java.util.OptionalInt', [
 				[/* inline code block */ 'i', `false`]
 			]
 		]],
-		[/* method */ 'toString()', [
-			[/* method description */
-				[/* text */ 't', `Returns a non-empty string representation of this `],
-				[/* inline code block */ 'i', `OptionalInt`],
-				[/* text */ 't', `
- suitable for debugging.  The exact presentation format is unspecified and
- may vary between implementations and versions.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the string representation of this instance`]
-			]
-		]],
-		[/* method */ 'hashCode()', [
-			[/* method description */
-				[/* text */ 't', `Returns the hash code of the value, if present, otherwise `],
-				[/* inline code block */ 'i', `0`],
-				[/* text */ 't', `
- (zero) if no value is present.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `hash code value of the present value or `],
-				[/* inline code block */ 'i', `0`],
-				[/* text */ 't', ` if no value is
-         present`]
-			]
-		]],
 		[/* method */ 'isEmpty()', [
 			[/* method description */
 				[/* text */ 't', `If a value is not present, returns `],
@@ -133,56 +128,6 @@ DocsCollector.collect('java.util.OptionalInt', [
 				[/* inline code block */ 'i', `false`]
 			]
 		]],
-		[/* method */ 'stream()', [
-			[/* method description */
-				[/* text */ 't', `If a value is present, returns a sequential `],
-				[/* reference */ 'r', `java.util.stream.IntStream`],
-				[/* text */ 't', ` containing
- only that value, otherwise returns an empty `],
-				[/* inline code block */ 'i', `IntStream`],
-				[/* text */ 't', `.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the optional value as an `],
-				[/* inline code block */ 'i', `IntStream`]
-			]
-		]],
-		[/* method */ 'of(int)', [
-			[/* method description */
-				[/* text */ 't', `Returns an `],
-				[/* inline code block */ 'i', `OptionalInt`],
-				[/* text */ 't', ` describing the given value.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'value', [/* parameter description */
-					[/* text */ 't', `the value to describe`]
-				]]
-			],
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `an `],
-				[/* inline code block */ 'i', `OptionalInt`],
-				[/* text */ 't', ` with the value present`]
-			]
-		]],
-		[/* method */ 'empty()', [
-			[/* method description */
-				[/* text */ 't', `Returns an empty `],
-				[/* inline code block */ 'i', `OptionalInt`],
-				[/* text */ 't', ` instance.  No value is present for
- this `],
-				[/* inline code block */ 'i', `OptionalInt`],
-				[/* text */ 't', `.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `an empty `],
-				[/* inline code block */ 'i', `OptionalInt`]
-			]
-		]],
 		[/* method */ 'isPresent()', [
 			[/* method description */
 				[/* text */ 't', `If a value is present, returns `],
@@ -197,6 +142,40 @@ DocsCollector.collect('java.util.OptionalInt', [
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if a value is present, otherwise `],
 				[/* inline code block */ 'i', `false`]
+			]
+		]],
+		[/* method */ 'getAsInt()', [
+			[/* method description */
+				[/* text */ 't', `If a value is present, returns the value, otherwise throws
+ `],
+				[/* inline code block */ 'i', `NoSuchElementException`],
+				[/* text */ 't', `.`]
+			],
+			/* parameters */ UDF,
+			[/* throws */
+				[/* throw */ 'java.util.NoSuchElementException', [/* throw description */
+					[/* text */ 't', `if no value is present`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `the value described by this `],
+				[/* inline code block */ 'i', `OptionalInt`]
+			]
+		]],
+		[/* method */ 'hashCode()', [
+			[/* method description */
+				[/* text */ 't', `Returns the hash code of the value, if present, otherwise `],
+				[/* inline code block */ 'i', `0`],
+				[/* text */ 't', `
+ (zero) if no value is present.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `hash code value of the present value or `],
+				[/* inline code block */ 'i', `0`],
+				[/* text */ 't', ` if no value is
+         present`]
 			]
 		]],
 		[/* method */ 'orElse(int)', [
@@ -217,29 +196,26 @@ DocsCollector.collect('java.util.OptionalInt', [
 				[/* inline code block */ 'i', `other`]
 			]
 		]],
-		[/* method */ 'orElseThrow(java.util.function.Supplier)', [
+		[/* method */ 'orElseGet(java.util.function.IntSupplier)', [
 			[/* method description */
-				[/* text */ 't', `If a value is present, returns the value, otherwise throws an exception
- produced by the exception supplying function.`]
+				[/* text */ 't', `If a value is present, returns the value, otherwise returns the result
+ produced by the supplying function.`]
 			],
 			[/* parameters */
-				[/* parameter */ 'exceptionSupplier', [/* parameter description */
-					[/* text */ 't', `the supplying function that produces an
-        exception to be thrown`]
+				[/* parameter */ 'supplier', [/* parameter description */
+					[/* text */ 't', `the supplying function that produces a value to be returned`]
 				]]
 			],
 			[/* throws */
-				[/* throw */ 'X', [/* throw description */
-					[/* text */ 't', `if no value is present`]
-				]],
 				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
-					[/* text */ 't', `if no value is present and the exception
-         supplying function is `],
+					[/* text */ 't', `if no value is present and the supplying
+         function is `],
 					[/* inline code block */ 'i', `null`]
 				]]
 			],
 			[/* return description */
-				[/* text */ 't', `the value, if present`]
+				[/* text */ 't', `the value, if present, otherwise the result produced by the
+         supplying function`]
 			]
 		]],
 		[/* method */ 'orElseThrow()', [
@@ -258,6 +234,70 @@ DocsCollector.collect('java.util.OptionalInt', [
 			[/* return description */
 				[/* text */ 't', `the value described by this `],
 				[/* inline code block */ 'i', `OptionalInt`]
+			]
+		]],
+		[/* method */ 'toString()', [
+			[/* method description */
+				[/* text */ 't', `Returns a non-empty string representation of this `],
+				[/* inline code block */ 'i', `OptionalInt`],
+				[/* text */ 't', `
+ suitable for debugging.  The exact presentation format is unspecified and
+ may vary between implementations and versions.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the string representation of this instance`]
+			]
+		]],
+		[/* method */ 'stream()', [
+			[/* method description */
+				[/* text */ 't', `If a value is present, returns a sequential `],
+				[/* reference */ 'r', `java.util.stream.IntStream`],
+				[/* text */ 't', ` containing
+ only that value, otherwise returns an empty `],
+				[/* inline code block */ 'i', `IntStream`],
+				[/* text */ 't', `.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the optional value as an `],
+				[/* inline code block */ 'i', `IntStream`]
+			]
+		]],
+		[/* method */ 'empty()', [
+			[/* method description */
+				[/* text */ 't', `Returns an empty `],
+				[/* inline code block */ 'i', `OptionalInt`],
+				[/* text */ 't', ` instance.  No value is present for
+ this `],
+				[/* inline code block */ 'i', `OptionalInt`],
+				[/* text */ 't', `.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `an empty `],
+				[/* inline code block */ 'i', `OptionalInt`]
+			]
+		]],
+		[/* method */ 'of(int)', [
+			[/* method description */
+				[/* text */ 't', `Returns an `],
+				[/* inline code block */ 'i', `OptionalInt`],
+				[/* text */ 't', ` describing the given value.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'value', [/* parameter description */
+					[/* text */ 't', `the value to describe`]
+				]]
+			],
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `an `],
+				[/* inline code block */ 'i', `OptionalInt`],
+				[/* text */ 't', ` with the value present`]
 			]
 		]],
 		[/* method */ 'ifPresent(java.util.function.IntConsumer)', [
@@ -305,46 +345,6 @@ DocsCollector.collect('java.util.OptionalInt', [
 				]]
 			],
 			/* return */ UDF
-		]],
-		[/* method */ 'orElseGet(java.util.function.IntSupplier)', [
-			[/* method description */
-				[/* text */ 't', `If a value is present, returns the value, otherwise returns the result
- produced by the supplying function.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'supplier', [/* parameter description */
-					[/* text */ 't', `the supplying function that produces a value to be returned`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
-					[/* text */ 't', `if no value is present and the supplying
-         function is `],
-					[/* inline code block */ 'i', `null`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `the value, if present, otherwise the result produced by the
-         supplying function`]
-			]
-		]],
-		[/* method */ 'getAsInt()', [
-			[/* method description */
-				[/* text */ 't', `If a value is present, returns the value, otherwise throws
- `],
-				[/* inline code block */ 'i', `NoSuchElementException`],
-				[/* text */ 't', `.`]
-			],
-			/* parameters */ UDF,
-			[/* throws */
-				[/* throw */ 'java.util.NoSuchElementException', [/* throw description */
-					[/* text */ 't', `if no value is present`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `the value described by this `],
-				[/* inline code block */ 'i', `OptionalInt`]
-			]
 		]]
 	],
 ]);

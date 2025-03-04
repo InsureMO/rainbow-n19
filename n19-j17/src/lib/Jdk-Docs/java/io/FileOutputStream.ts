@@ -29,59 +29,54 @@ DocsCollector.collect('java.io.FileOutputStream', [
 	],
 	/* fields */ UDF,
 	[/* constructors */
-		[/* constructor */ '<init>(java.io.FileDescriptor)', [
+		[/* constructor */ '<init>(java.io.File)', [
 			[/* constructor description */
-				[/* text */ 't', `Creates a file output stream to write to the specified file
- descriptor, which represents an existing connection to an actual
- file in the file system.
+				[/* text */ 't', `Creates a file output stream to write to the file represented by
+ the specified `],
+				[/* inline code block */ 'i', `File`],
+				[/* text */ 't', ` object. A new
+ `],
+				[/* inline code block */ 'i', `FileDescriptor`],
+				[/* text */ 't', ` object is created to represent this
+ file connection.
  `],
 				[/* block */ 'b', [
 					[/* text */ 't', `
  First, if there is a security manager, its `],
 					[/* inline code block */ 'i', `checkWrite`],
 					[/* text */ 't', `
- method is called with the file descriptor `],
-					[/* inline code block */ 'i', `fdObj`],
+ method is called with the path represented by the `],
+					[/* inline code block */ 'i', `file`],
 					[/* text */ 't', `
  argument as its argument.
  `]
 				]],
 				[/* block */ 'b', [
 					[/* text */ 't', `
- If `],
-					[/* inline code block */ 'i', `fdObj`],
-					[/* text */ 't', ` is null then a `],
-					[/* inline code block */ 'i', `NullPointerException`],
-					[/* text */ 't', `
- is thrown.
- `]
-				]],
-				[/* block */ 'b', [
-					[/* text */ 't', `
- This constructor does not throw an exception if `],
-					[/* inline code block */ 'i', `fdObj`],
-					[/* text */ 't', `
- is `],
-					[/* reference */ 'r', `.FileDescriptor#valid()`],
-					[/* text */ 't', `.
- However, if the methods are invoked on the resulting stream to attempt
- I/O on the stream, an `],
-					[/* inline code block */ 'i', `IOException`],
+ If the file exists but is a directory rather than a regular file, does
+ not exist but cannot be created, or cannot be opened for any other
+ reason then a `],
+					[/* inline code block */ 'i', `FileNotFoundException`],
 					[/* text */ 't', ` is thrown.`]
 				]]
 			],
 			[/* parameters */
-				[/* parameter */ 'fdObj', [/* parameter description */
-					[/* text */ 't', `the file descriptor to be opened for writing`]
+				[/* parameter */ 'file', [/* parameter description */
+					[/* text */ 't', `the file to be opened for writing.`]
 				]]
 			],
 			[/* throws */
+				[/* throw */ 'java.io.FileNotFoundException', [/* throw description */
+					[/* text */ 't', `if the file exists but is a directory
+                   rather than a regular file, does not exist but cannot
+                   be created, or cannot be opened for any other reason`]
+				]],
 				[/* throw */ 'java.lang.SecurityException', [/* throw description */
 					[/* text */ 't', `if a security manager exists and its
                `],
 					[/* inline code block */ 'i', `checkWrite`],
-					[/* text */ 't', ` method denies
-               write access to the file descriptor`]
+					[/* text */ 't', ` method denies write access
+               to the file.`]
 				]]
 			]
 		]],
@@ -145,26 +140,78 @@ DocsCollector.collect('java.io.FileOutputStream', [
 				]]
 			]
 		]],
-		[/* constructor */ '<init>(java.io.File)', [
+		[/* constructor */ '<init>(java.io.FileDescriptor)', [
 			[/* constructor description */
-				[/* text */ 't', `Creates a file output stream to write to the file represented by
- the specified `],
-				[/* inline code block */ 'i', `File`],
-				[/* text */ 't', ` object. A new
- `],
-				[/* inline code block */ 'i', `FileDescriptor`],
-				[/* text */ 't', ` object is created to represent this
- file connection.
+				[/* text */ 't', `Creates a file output stream to write to the specified file
+ descriptor, which represents an existing connection to an actual
+ file in the file system.
  `],
 				[/* block */ 'b', [
 					[/* text */ 't', `
  First, if there is a security manager, its `],
 					[/* inline code block */ 'i', `checkWrite`],
 					[/* text */ 't', `
- method is called with the path represented by the `],
-					[/* inline code block */ 'i', `file`],
+ method is called with the file descriptor `],
+					[/* inline code block */ 'i', `fdObj`],
 					[/* text */ 't', `
  argument as its argument.
+ `]
+				]],
+				[/* block */ 'b', [
+					[/* text */ 't', `
+ If `],
+					[/* inline code block */ 'i', `fdObj`],
+					[/* text */ 't', ` is null then a `],
+					[/* inline code block */ 'i', `NullPointerException`],
+					[/* text */ 't', `
+ is thrown.
+ `]
+				]],
+				[/* block */ 'b', [
+					[/* text */ 't', `
+ This constructor does not throw an exception if `],
+					[/* inline code block */ 'i', `fdObj`],
+					[/* text */ 't', `
+ is `],
+					[/* reference */ 'r', `.FileDescriptor#valid()`],
+					[/* text */ 't', `.
+ However, if the methods are invoked on the resulting stream to attempt
+ I/O on the stream, an `],
+					[/* inline code block */ 'i', `IOException`],
+					[/* text */ 't', ` is thrown.`]
+				]]
+			],
+			[/* parameters */
+				[/* parameter */ 'fdObj', [/* parameter description */
+					[/* text */ 't', `the file descriptor to be opened for writing`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.lang.SecurityException', [/* throw description */
+					[/* text */ 't', `if a security manager exists and its
+               `],
+					[/* inline code block */ 'i', `checkWrite`],
+					[/* text */ 't', ` method denies
+               write access to the file descriptor`]
+				]]
+			]
+		]],
+		[/* constructor */ '<init>(java.lang.String)', [
+			[/* constructor description */
+				[/* text */ 't', `Creates a file output stream to write to the file with the
+ specified name. A new `],
+				[/* inline code block */ 'i', `FileDescriptor`],
+				[/* text */ 't', ` object is
+ created to represent this file connection.
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', `
+ First, if there is a security manager, its `],
+					[/* inline code block */ 'i', `checkWrite`],
+					[/* text */ 't', `
+ method is called with `],
+					[/* inline code block */ 'i', `name`],
+					[/* text */ 't', ` as its argument.
  `]
 				]],
 				[/* block */ 'b', [
@@ -177,8 +224,8 @@ DocsCollector.collect('java.io.FileOutputStream', [
 				]]
 			],
 			[/* parameters */
-				[/* parameter */ 'file', [/* parameter description */
-					[/* text */ 't', `the file to be opened for writing.`]
+				[/* parameter */ 'name', [/* parameter description */
+					[/* text */ 't', `the system-dependent filename`]
 				]]
 			],
 			[/* throws */
@@ -252,70 +299,65 @@ DocsCollector.collect('java.io.FileOutputStream', [
                to the file.`]
 				]]
 			]
-		]],
-		[/* constructor */ '<init>(java.lang.String)', [
-			[/* constructor description */
-				[/* text */ 't', `Creates a file output stream to write to the file with the
- specified name. A new `],
-				[/* inline code block */ 'i', `FileDescriptor`],
-				[/* text */ 't', ` object is
- created to represent this file connection.
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', `
- First, if there is a security manager, its `],
-					[/* inline code block */ 'i', `checkWrite`],
-					[/* text */ 't', `
- method is called with `],
-					[/* inline code block */ 'i', `name`],
-					[/* text */ 't', ` as its argument.
- `]
-				]],
-				[/* block */ 'b', [
-					[/* text */ 't', `
- If the file exists but is a directory rather than a regular file, does
- not exist but cannot be created, or cannot be opened for any other
- reason then a `],
-					[/* inline code block */ 'i', `FileNotFoundException`],
-					[/* text */ 't', ` is thrown.`]
-				]]
-			],
-			[/* parameters */
-				[/* parameter */ 'name', [/* parameter description */
-					[/* text */ 't', `the system-dependent filename`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.io.FileNotFoundException', [/* throw description */
-					[/* text */ 't', `if the file exists but is a directory
-                   rather than a regular file, does not exist but cannot
-                   be created, or cannot be opened for any other reason`]
-				]],
-				[/* throw */ 'java.lang.SecurityException', [/* throw description */
-					[/* text */ 't', `if a security manager exists and its
-               `],
-					[/* inline code block */ 'i', `checkWrite`],
-					[/* text */ 't', ` method denies write access
-               to the file.`]
-				]]
-			]
 		]]
 	],
 	[/* methods */
-		[/* method */ 'write(int)', [
+		[/* method */ 'getFD()', [
 			[/* method description */
-				[/* text */ 't', `Writes the specified byte to this file output stream. Implements
- the `],
-				[/* inline code block */ 'i', `write`],
-				[/* text */ 't', ` method of `],
-				[/* inline code block */ 'i', `OutputStream`],
-				[/* text */ 't', `.`]
+				[/* text */ 't', `Returns the file descriptor associated with this stream.`]
 			],
-			[/* parameters */
-				[/* parameter */ 'b', [/* parameter description */
-					[/* text */ 't', `the byte to be written.`]
+			/* parameters */ UDF,
+			[/* throws */
+				[/* throw */ 'java.io.IOException', [/* throw description */
+					[/* text */ 't', `if an I/O error occurs.`]
 				]]
 			],
+			[/* return description */
+				[/* text */ 't', `the `],
+				[/* inline code block */ 'i', `FileDescriptor`],
+				[/* text */ 't', ` object that represents
+          the connection to the file in the file system being used
+          by this `],
+				[/* inline code block */ 'i', `FileOutputStream`],
+				[/* text */ 't', ` object.`]
+			]
+		]],
+		[/* method */ 'getChannel()', [
+			[/* method description */
+				[/* text */ 't', `Returns the unique `],
+				[/* reference */ 'r', `java.nio.channels.FileChannel`],
+				[/* text */ 't', `
+ object associated with this file output stream.
+
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', ` The initial `],
+					[/* reference */ 'r', `java.channels.FileChannel#position()`],
+					[/* text */ 't', ` of the returned channel will be equal to the
+ number of bytes written to the file so far unless this stream is in
+ append mode, in which case it will be equal to the size of the file.
+ Writing bytes to this stream will increment the channel's position
+ accordingly.  Changing the channel's position, either explicitly or by
+ writing, will change this stream's file position.`]
+				]]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the file channel associated with this file output stream`]
+			]
+		]],
+		[/* method */ 'close()', [
+			[/* method description */
+				[/* text */ 't', `Closes this file output stream and releases any system resources
+ associated with this stream. This file output stream may no longer
+ be used for writing bytes.
+
+ `],
+				[/* block */ 'b', ` If this stream has an associated channel then the channel is closed
+ as well.`]
+			],
+			/* parameters */ UDF,
 			[/* throws */
 				[/* throw */ 'java.io.IOException', [/* throw description */
 					[/* text */ 't', `if an I/O error occurs.`]
@@ -369,68 +411,26 @@ DocsCollector.collect('java.io.FileOutputStream', [
 			],
 			/* return */ UDF
 		]],
-		[/* method */ 'close()', [
+		[/* method */ 'write(int)', [
 			[/* method description */
-				[/* text */ 't', `Closes this file output stream and releases any system resources
- associated with this stream. This file output stream may no longer
- be used for writing bytes.
-
- `],
-				[/* block */ 'b', ` If this stream has an associated channel then the channel is closed
- as well.`]
+				[/* text */ 't', `Writes the specified byte to this file output stream. Implements
+ the `],
+				[/* inline code block */ 'i', `write`],
+				[/* text */ 't', ` method of `],
+				[/* inline code block */ 'i', `OutputStream`],
+				[/* text */ 't', `.`]
 			],
-			/* parameters */ UDF,
+			[/* parameters */
+				[/* parameter */ 'b', [/* parameter description */
+					[/* text */ 't', `the byte to be written.`]
+				]]
+			],
 			[/* throws */
 				[/* throw */ 'java.io.IOException', [/* throw description */
 					[/* text */ 't', `if an I/O error occurs.`]
 				]]
 			],
 			/* return */ UDF
-		]],
-		[/* method */ 'getFD()', [
-			[/* method description */
-				[/* text */ 't', `Returns the file descriptor associated with this stream.`]
-			],
-			/* parameters */ UDF,
-			[/* throws */
-				[/* throw */ 'java.io.IOException', [/* throw description */
-					[/* text */ 't', `if an I/O error occurs.`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `the `],
-				[/* inline code block */ 'i', `FileDescriptor`],
-				[/* text */ 't', ` object that represents
-          the connection to the file in the file system being used
-          by this `],
-				[/* inline code block */ 'i', `FileOutputStream`],
-				[/* text */ 't', ` object.`]
-			]
-		]],
-		[/* method */ 'getChannel()', [
-			[/* method description */
-				[/* text */ 't', `Returns the unique `],
-				[/* reference */ 'r', `java.nio.channels.FileChannel`],
-				[/* text */ 't', `
- object associated with this file output stream.
-
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', ` The initial `],
-					[/* reference */ 'r', `java.channels.FileChannel#position()`],
-					[/* text */ 't', ` of the returned channel will be equal to the
- number of bytes written to the file so far unless this stream is in
- append mode, in which case it will be equal to the size of the file.
- Writing bytes to this stream will increment the channel's position
- accordingly.  Changing the channel's position, either explicitly or by
- writing, will change this stream's file position.`]
-				]]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the file channel associated with this file output stream`]
-			]
 		]]
 	],
 ]);

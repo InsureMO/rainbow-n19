@@ -30,18 +30,6 @@ DocsCollector.collect('java.util.regex.PatternSyntaxException', [
 		]]
 	],
 	[/* methods */
-		[/* method */ 'getMessage()', [
-			[/* method description */
-				[/* text */ 't', `Returns a multi-line string containing the description of the syntax
- error and its index, the erroneous regular-expression pattern, and a
- visual indication of the error index within the pattern.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `The full detail message`]
-			]
-		]],
 		[/* method */ 'getIndex()', [
 			[/* method description */
 				[/* text */ 't', `Retrieves the error index.`]
@@ -63,6 +51,18 @@ DocsCollector.collect('java.util.regex.PatternSyntaxException', [
 			/* throws */ UDF,
 			[/* return description */
 				[/* text */ 't', `The description of the error`]
+			]
+		]],
+		[/* method */ 'getMessage()', [
+			[/* method description */
+				[/* text */ 't', `Returns a multi-line string containing the description of the syntax
+ error and its index, the erroneous regular-expression pattern, and a
+ visual indication of the error index within the pattern.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `The full detail message`]
 			]
 		]],
 		[/* method */ 'getPattern()', [

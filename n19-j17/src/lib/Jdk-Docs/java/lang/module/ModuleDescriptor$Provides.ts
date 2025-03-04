@@ -47,39 +47,6 @@ DocsCollector.collect('java.lang.module.ModuleDescriptor$Provides', [
 				[/* inline code block */ 'i', `Provides`]
 			]
 		]],
-		[/* method */ 'toString()', [
-			[/* method description */
-				[/* text */ 't', `Returns a string describing this `],
-				[/* inline code block */ 'i', `Provides`],
-				[/* text */ 't', `.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `A string describing this `],
-				[/* inline code block */ 'i', `Provides`]
-			]
-		]],
-		[/* method */ 'hashCode()', [
-			[/* method description */
-				[/* text */ 't', `Computes a hash code for this `],
-				[/* inline code block */ 'i', `Provides`],
-				[/* text */ 't', `.
-
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', ` The hash code is based upon the service type and the set of
- providers. It satisfies the general contract of the `],
-					[/* reference */ 'r', `java.Object#hashCode()`],
-					[/* text */ 't', ` method. `]
-				]]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `The hash-code value for this module provides`]
-			]
-		]],
 		[/* method */ 'compareTo(java.lang.module.ModuleDescriptor.Provides)', [
 			[/* method description */
 				[/* text */ 't', `Compares this `],
@@ -121,6 +88,26 @@ DocsCollector.collect('java.lang.module.ModuleDescriptor$Provides', [
 				[/* inline code block */ 'i', `Provides`]
 			]
 		]],
+		[/* method */ 'hashCode()', [
+			[/* method description */
+				[/* text */ 't', `Computes a hash code for this `],
+				[/* inline code block */ 'i', `Provides`],
+				[/* text */ 't', `.
+
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', ` The hash code is based upon the service type and the set of
+ providers. It satisfies the general contract of the `],
+					[/* reference */ 'r', `java.Object#hashCode()`],
+					[/* text */ 't', ` method. `]
+				]]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `The hash-code value for this module provides`]
+			]
+		]],
 		[/* method */ 'service()', [
 			[/* method description */
 				[/* text */ 't', `Returns the fully qualified class name of the service type.`]
@@ -129,6 +116,19 @@ DocsCollector.collect('java.lang.module.ModuleDescriptor$Provides', [
 			/* throws */ UDF,
 			[/* return description */
 				[/* text */ 't', `The fully qualified class name of the service type`]
+			]
+		]],
+		[/* method */ 'toString()', [
+			[/* method description */
+				[/* text */ 't', `Returns a string describing this `],
+				[/* inline code block */ 'i', `Provides`],
+				[/* text */ 't', `.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `A string describing this `],
+				[/* inline code block */ 'i', `Provides`]
 			]
 		]],
 		[/* method */ 'providers()', [

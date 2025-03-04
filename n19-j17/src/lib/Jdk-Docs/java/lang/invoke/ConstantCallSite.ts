@@ -17,21 +17,6 @@ DocsCollector.collect('java.lang.invoke.ConstantCallSite', [
 	],
 	/* fields */ UDF,
 	[/* constructors */
-		[/* constructor */ '<init>(java.lang.invoke.MethodHandle)', [
-			[/* constructor description */
-				[/* text */ 't', `Creates a call site with a permanent target.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'target', [/* parameter description */
-					[/* text */ 't', `the target to be permanently associated with this call site`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
-					[/* text */ 't', `if the proposed target is null`]
-				]]
-			]
-		]],
 		[/* constructor */ '<init>(java.lang.invoke.MethodType,java.lang.invoke.MethodHandle)', [
 			[/* constructor description */
 				[/* text */ 't', `Creates a call site with a permanent target, possibly bound to the call site itself.
@@ -110,6 +95,21 @@ DocsCollector.collect('java.lang.invoke.ConstantCallSite', [
 				]],
 				[/* throw */ 'java.lang.Throwable', [/* throw description */
 					[/* text */ 't', `anything else thrown by the hook function`]
+				]]
+			]
+		]],
+		[/* constructor */ '<init>(java.lang.invoke.MethodHandle)', [
+			[/* constructor description */
+				[/* text */ 't', `Creates a call site with a permanent target.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'target', [/* parameter description */
+					[/* text */ 't', `the target to be permanently associated with this call site`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
+					[/* text */ 't', `if the proposed target is null`]
 				]]
 			]
 		]]

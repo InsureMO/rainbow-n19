@@ -28,16 +28,21 @@ DocsCollector.collect('java.util.zip.Adler32', [
 		]]
 	],
 	[/* methods */
-		[/* method */ 'update(int)', [
+		[/* method */ 'getValue()', [
 			[/* method description */
-				[/* text */ 't', `Updates the checksum with the specified byte (the low eight
- bits of the argument b).`]
+				[/* text */ 't', `Returns the checksum value.`]
 			],
-			[/* parameters */
-				[/* parameter */ 'b', [/* parameter description */
-					[/* text */ 't', `the byte to update the checksum with`]
-				]]
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the current checksum value`]
+			]
+		]],
+		[/* method */ 'reset()', [
+			[/* method description */
+				[/* text */ 't', `Resets the checksum to initial value.`]
 			],
+			/* parameters */ UDF,
 			/* throws */ UDF,
 			/* return */ UDF
 		]],
@@ -73,6 +78,19 @@ DocsCollector.collect('java.util.zip.Adler32', [
 			],
 			/* return */ UDF
 		]],
+		[/* method */ 'update(int)', [
+			[/* method description */
+				[/* text */ 't', `Updates the checksum with the specified byte (the low eight
+ bits of the argument b).`]
+			],
+			[/* parameters */
+				[/* parameter */ 'b', [/* parameter description */
+					[/* text */ 't', `the byte to update the checksum with`]
+				]]
+			],
+			/* throws */ UDF,
+			/* return */ UDF
+		]],
 		[/* method */ 'update(java.nio.ByteBuffer)', [
 			[/* method description */
 				[/* text */ 't', `Updates the checksum with the bytes from the specified buffer.
@@ -86,24 +104,6 @@ DocsCollector.collect('java.util.zip.Adler32', [
 					[/* text */ 't', `the ByteBuffer to update the checksum with`]
 				]]
 			],
-			/* throws */ UDF,
-			/* return */ UDF
-		]],
-		[/* method */ 'getValue()', [
-			[/* method description */
-				[/* text */ 't', `Returns the checksum value.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the current checksum value`]
-			]
-		]],
-		[/* method */ 'reset()', [
-			[/* method description */
-				[/* text */ 't', `Resets the checksum to initial value.`]
-			],
-			/* parameters */ UDF,
 			/* throws */ UDF,
 			/* return */ UDF
 		]]

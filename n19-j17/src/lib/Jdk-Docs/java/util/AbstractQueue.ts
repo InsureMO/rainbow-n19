@@ -131,51 +131,6 @@ DocsCollector.collect('java.util.AbstractQueue', [
 				[/* text */ 't', `)`]
 			]
 		]],
-		[/* method */ 'remove()', [
-			[/* method description */
-				[/* text */ 't', `Retrieves and removes the head of this queue.  This method differs
- from `],
-				[/* reference */ 'r', `.Queue#poll()`],
-				[/* text */ 't', ` only in that it throws an exception if this
- queue is empty.
-
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', `This implementation returns the result of `],
-					[/* inline code block */ 'i', `poll`],
-					[/* text */ 't', `
- unless the queue is empty.`]
-				]]
-			],
-			/* parameters */ UDF,
-			[/* throws */
-				[/* throw */ 'java.util.NoSuchElementException', [/* throw description */
-					[/* text */ 't', `if this queue is empty`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `the head of this queue`]
-			]
-		]],
-		[/* method */ 'clear()', [
-			[/* method description */
-				[/* text */ 't', `Removes all of the elements from this queue.
- The queue will be empty after this call returns.
-
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', `This implementation repeatedly invokes `],
-					[/* reference */ 'r', `.Queue#poll()`],
-					[/* text */ 't', ` until it
- returns `],
-					[/* inline code block */ 'i', `null`],
-					[/* text */ 't', `.`]
-				]]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			/* return */ UDF
-		]],
 		[/* method */ 'addAll(java.util.Collection)', [
 			[/* method description */
 				[/* text */ 't', `Adds all of the elements in the specified collection to this
@@ -254,6 +209,51 @@ DocsCollector.collect('java.util.AbstractQueue', [
 			[/* return description */
 				[/* text */ 't', `the head of this queue`]
 			]
+		]],
+		[/* method */ 'remove()', [
+			[/* method description */
+				[/* text */ 't', `Retrieves and removes the head of this queue.  This method differs
+ from `],
+				[/* reference */ 'r', `.Queue#poll()`],
+				[/* text */ 't', ` only in that it throws an exception if this
+ queue is empty.
+
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', `This implementation returns the result of `],
+					[/* inline code block */ 'i', `poll`],
+					[/* text */ 't', `
+ unless the queue is empty.`]
+				]]
+			],
+			/* parameters */ UDF,
+			[/* throws */
+				[/* throw */ 'java.util.NoSuchElementException', [/* throw description */
+					[/* text */ 't', `if this queue is empty`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `the head of this queue`]
+			]
+		]],
+		[/* method */ 'clear()', [
+			[/* method description */
+				[/* text */ 't', `Removes all of the elements from this queue.
+ The queue will be empty after this call returns.
+
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', `This implementation repeatedly invokes `],
+					[/* reference */ 'r', `.Queue#poll()`],
+					[/* text */ 't', ` until it
+ returns `],
+					[/* inline code block */ 'i', `null`],
+					[/* text */ 't', `.`]
+				]]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			/* return */ UDF
 		]]
 	],
 ]);

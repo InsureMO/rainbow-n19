@@ -50,120 +50,19 @@ DocsCollector.collect('java.time.temporal.ValueRange', [
 				[/* text */ 't', `true if this is equal to the other range`]
 			]
 		]],
-		[/* method */ 'toString()', [
+		[/* method */ 'isFixed()', [
 			[/* method description */
-				[/* text */ 't', `Outputs this range as a `],
-				[/* inline code block */ 'i', `String`],
-				[/* text */ 't', `.
+				[/* text */ 't', `Is the value range fixed and fully known.
  `],
 				[/* block */ 'b', `
- The format will be '{min}/{largestMin} - {smallestMax}/{max}',
- where the largestMin or smallestMax sections may be omitted, together
- with associated slash, if they are the same as the min or max.`]
+ For example, the ISO day-of-month runs from 1 to between 28 and 31.
+ Since there is uncertainty about the maximum value, the range is not fixed.
+ However, for the month of January, the range is always 1 to 31, thus it is fixed.`]
 			],
 			/* parameters */ UDF,
 			/* throws */ UDF,
 			[/* return description */
-				[/* text */ 't', `a string representation of this range, not null`]
-			]
-		]],
-		[/* method */ 'hashCode()', [
-			[/* method description */
-				[/* text */ 't', `A hash code for this range.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `a suitable hash code`]
-			]
-		]],
-		[/* method */ 'of(long,long)', [
-			[/* method description */
-				[/* text */ 't', `Obtains a fixed value range.
- `],
-				[/* block */ 'b', `
- This factory obtains a range where the minimum and maximum values are fixed.
- For example, the ISO month-of-year always runs from 1 to 12.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'min', [/* parameter description */
-					[/* text */ 't', `the minimum value`]
-				]],
-				[/* parameter */ 'max', [/* parameter description */
-					[/* text */ 't', `the maximum value`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
-					[/* text */ 't', `if the minimum is greater than the maximum`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `the ValueRange for min, max, not null`]
-			]
-		]],
-		[/* method */ 'of(long,long,long,long)', [
-			[/* method description */
-				[/* text */ 't', `Obtains a fully variable value range.
- `],
-				[/* block */ 'b', `
- This factory obtains a range where both the minimum and maximum value may vary.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'minSmallest', [/* parameter description */
-					[/* text */ 't', `the smallest minimum value`]
-				]],
-				[/* parameter */ 'minLargest', [/* parameter description */
-					[/* text */ 't', `the largest minimum value`]
-				]],
-				[/* parameter */ 'maxSmallest', [/* parameter description */
-					[/* text */ 't', `the smallest maximum value`]
-				]],
-				[/* parameter */ 'maxLargest', [/* parameter description */
-					[/* text */ 't', `the largest maximum value`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
-					[/* text */ 't', `if
-     the smallest minimum is greater than the smallest maximum,
-  or the smallest maximum is greater than the largest maximum,
-  or the largest minimum is greater than the largest maximum,
-  or the smallest minimum is greater than the largest minimum`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `the ValueRange for smallest min, largest min, smallest max, largest max, not null`]
-			]
-		]],
-		[/* method */ 'of(long,long,long)', [
-			[/* method description */
-				[/* text */ 't', `Obtains a variable value range.
- `],
-				[/* block */ 'b', `
- This factory obtains a range where the minimum value is fixed and the maximum value may vary.
- For example, the ISO day-of-month always starts at 1, but ends between 28 and 31.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'min', [/* parameter description */
-					[/* text */ 't', `the minimum value`]
-				]],
-				[/* parameter */ 'maxSmallest', [/* parameter description */
-					[/* text */ 't', `the smallest maximum value`]
-				]],
-				[/* parameter */ 'maxLargest', [/* parameter description */
-					[/* text */ 't', `the largest maximum value`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
-					[/* text */ 't', `if
-     the minimum is greater than the smallest maximum,
-  or the smallest maximum is greater than the largest maximum`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `the ValueRange for min, smallest max, largest max, not null`]
+				[/* text */ 't', `true if the set of values is fixed`]
 			]
 		]],
 		[/* method */ 'isIntValue()', [
@@ -205,6 +104,33 @@ DocsCollector.collect('java.time.temporal.ValueRange', [
 				[/* inline code block */ 'i', `int`]
 			]
 		]],
+		[/* method */ 'isValidIntValue(long)', [
+			[/* method description */
+				[/* text */ 't', `Checks if the value is within the valid range and that all values
+ in the range fit in an `],
+				[/* inline code block */ 'i', `int`],
+				[/* text */ 't', `.
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', `
+ This method combines `],
+					[/* reference */ 'r', `#isIntValue()`, `isIntValue()`],
+					[/* text */ 't', ` and `],
+					[/* reference */ 'r', `#isValidValue(long)`, `isValidValue(long)`],
+					[/* text */ 't', `.`]
+				]]
+			],
+			[/* parameters */
+				[/* parameter */ 'value', [/* parameter description */
+					[/* text */ 't', `the value to check`]
+				]]
+			],
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `true if the value is valid and fits in an `],
+				[/* inline code block */ 'i', `int`]
+			]
+		]],
 		[/* method */ 'isValidValue(long)', [
 			[/* method description */
 				[/* text */ 't', `Checks if the value is within the valid range.
@@ -220,27 +146,6 @@ DocsCollector.collect('java.time.temporal.ValueRange', [
 			/* throws */ UDF,
 			[/* return description */
 				[/* text */ 't', `true if the value is valid`]
-			]
-		]],
-		[/* method */ 'checkValidValue(long,java.time.temporal.TemporalField)', [
-			[/* method description */
-				[/* text */ 't', `Checks that the specified value is valid.
- `],
-				[/* block */ 'b', `
- This validates that the value is within the valid range of values.
- The field is only used to improve the error message.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'value', [/* parameter description */
-					[/* text */ 't', `the value to check`]
-				]],
-				[/* parameter */ 'field', [/* parameter description */
-					[/* text */ 't', `the field being checked, may be null`]
-				]]
-			],
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the value that was passed in`]
 			]
 		]],
 		[/* method */ 'checkValidIntValue(long,java.time.temporal.TemporalField)', [
@@ -271,74 +176,52 @@ DocsCollector.collect('java.time.temporal.ValueRange', [
 				[/* text */ 't', `the value that was passed in`]
 			]
 		]],
-		[/* method */ 'getMinimum()', [
+		[/* method */ 'hashCode()', [
 			[/* method description */
-				[/* text */ 't', `Gets the minimum value that the field can take.
- `],
-				[/* block */ 'b', `
- For example, the ISO day-of-month always starts at 1.
- The minimum is therefore 1.`]
+				[/* text */ 't', `A hash code for this range.`]
 			],
 			/* parameters */ UDF,
 			/* throws */ UDF,
 			[/* return description */
-				[/* text */ 't', `the minimum value for this field`]
+				[/* text */ 't', `a suitable hash code`]
 			]
 		]],
-		[/* method */ 'getMaximum()', [
+		[/* method */ 'toString()', [
 			[/* method description */
-				[/* text */ 't', `Gets the maximum value that the field can take.
- `],
-				[/* block */ 'b', `
- For example, the ISO day-of-month runs to between 28 and 31 days.
- The maximum is therefore 31.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the maximum value for this field`]
-			]
-		]],
-		[/* method */ 'isValidIntValue(long)', [
-			[/* method description */
-				[/* text */ 't', `Checks if the value is within the valid range and that all values
- in the range fit in an `],
-				[/* inline code block */ 'i', `int`],
+				[/* text */ 't', `Outputs this range as a `],
+				[/* inline code block */ 'i', `String`],
 				[/* text */ 't', `.
  `],
-				[/* block */ 'b', [
-					[/* text */ 't', `
- This method combines `],
-					[/* reference */ 'r', `#isIntValue()`, `isIntValue()`],
-					[/* text */ 't', ` and `],
-					[/* reference */ 'r', `#isValidValue(long)`, `isValidValue(long)`],
-					[/* text */ 't', `.`]
-				]]
+				[/* block */ 'b', `
+ The format will be '{min}/{largestMin} - {smallestMax}/{max}',
+ where the largestMin or smallestMax sections may be omitted, together
+ with associated slash, if they are the same as the min or max.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `a string representation of this range, not null`]
+			]
+		]],
+		[/* method */ 'checkValidValue(long,java.time.temporal.TemporalField)', [
+			[/* method description */
+				[/* text */ 't', `Checks that the specified value is valid.
+ `],
+				[/* block */ 'b', `
+ This validates that the value is within the valid range of values.
+ The field is only used to improve the error message.`]
 			],
 			[/* parameters */
 				[/* parameter */ 'value', [/* parameter description */
 					[/* text */ 't', `the value to check`]
+				]],
+				[/* parameter */ 'field', [/* parameter description */
+					[/* text */ 't', `the field being checked, may be null`]
 				]]
 			],
 			/* throws */ UDF,
 			[/* return description */
-				[/* text */ 't', `true if the value is valid and fits in an `],
-				[/* inline code block */ 'i', `int`]
-			]
-		]],
-		[/* method */ 'isFixed()', [
-			[/* method description */
-				[/* text */ 't', `Is the value range fixed and fully known.
- `],
-				[/* block */ 'b', `
- For example, the ISO day-of-month runs from 1 to between 28 and 31.
- Since there is uncertainty about the maximum value, the range is not fixed.
- However, for the month of January, the range is always 1 to 31, thus it is fixed.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `true if the set of values is fixed`]
+				[/* text */ 't', `the value that was passed in`]
 			]
 		]],
 		[/* method */ 'getLargestMinimum()', [
@@ -355,6 +238,34 @@ DocsCollector.collect('java.time.temporal.ValueRange', [
 				[/* text */ 't', `the largest possible minimum value for this field`]
 			]
 		]],
+		[/* method */ 'getMaximum()', [
+			[/* method description */
+				[/* text */ 't', `Gets the maximum value that the field can take.
+ `],
+				[/* block */ 'b', `
+ For example, the ISO day-of-month runs to between 28 and 31 days.
+ The maximum is therefore 31.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the maximum value for this field`]
+			]
+		]],
+		[/* method */ 'getMinimum()', [
+			[/* method description */
+				[/* text */ 't', `Gets the minimum value that the field can take.
+ `],
+				[/* block */ 'b', `
+ For example, the ISO day-of-month always starts at 1.
+ The minimum is therefore 1.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the minimum value for this field`]
+			]
+		]],
 		[/* method */ 'getSmallestMaximum()', [
 			[/* method description */
 				[/* text */ 't', `Gets the smallest possible maximum value that the field can take.
@@ -367,6 +278,95 @@ DocsCollector.collect('java.time.temporal.ValueRange', [
 			/* throws */ UDF,
 			[/* return description */
 				[/* text */ 't', `the smallest possible maximum value for this field`]
+			]
+		]],
+		[/* method */ 'of(long,long)', [
+			[/* method description */
+				[/* text */ 't', `Obtains a fixed value range.
+ `],
+				[/* block */ 'b', `
+ This factory obtains a range where the minimum and maximum values are fixed.
+ For example, the ISO month-of-year always runs from 1 to 12.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'min', [/* parameter description */
+					[/* text */ 't', `the minimum value`]
+				]],
+				[/* parameter */ 'max', [/* parameter description */
+					[/* text */ 't', `the maximum value`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
+					[/* text */ 't', `if the minimum is greater than the maximum`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `the ValueRange for min, max, not null`]
+			]
+		]],
+		[/* method */ 'of(long,long,long)', [
+			[/* method description */
+				[/* text */ 't', `Obtains a variable value range.
+ `],
+				[/* block */ 'b', `
+ This factory obtains a range where the minimum value is fixed and the maximum value may vary.
+ For example, the ISO day-of-month always starts at 1, but ends between 28 and 31.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'min', [/* parameter description */
+					[/* text */ 't', `the minimum value`]
+				]],
+				[/* parameter */ 'maxSmallest', [/* parameter description */
+					[/* text */ 't', `the smallest maximum value`]
+				]],
+				[/* parameter */ 'maxLargest', [/* parameter description */
+					[/* text */ 't', `the largest maximum value`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
+					[/* text */ 't', `if
+     the minimum is greater than the smallest maximum,
+  or the smallest maximum is greater than the largest maximum`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `the ValueRange for min, smallest max, largest max, not null`]
+			]
+		]],
+		[/* method */ 'of(long,long,long,long)', [
+			[/* method description */
+				[/* text */ 't', `Obtains a fully variable value range.
+ `],
+				[/* block */ 'b', `
+ This factory obtains a range where both the minimum and maximum value may vary.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'minSmallest', [/* parameter description */
+					[/* text */ 't', `the smallest minimum value`]
+				]],
+				[/* parameter */ 'minLargest', [/* parameter description */
+					[/* text */ 't', `the largest minimum value`]
+				]],
+				[/* parameter */ 'maxSmallest', [/* parameter description */
+					[/* text */ 't', `the smallest maximum value`]
+				]],
+				[/* parameter */ 'maxLargest', [/* parameter description */
+					[/* text */ 't', `the largest maximum value`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
+					[/* text */ 't', `if
+     the smallest minimum is greater than the smallest maximum,
+  or the smallest maximum is greater than the largest maximum,
+  or the largest minimum is greater than the largest maximum,
+  or the smallest minimum is greater than the largest minimum`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `the ValueRange for smallest min, largest min, smallest max, largest max, not null`]
 			]
 		]]
 	],

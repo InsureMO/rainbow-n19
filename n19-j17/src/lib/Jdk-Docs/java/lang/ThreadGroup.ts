@@ -76,6 +76,69 @@ DocsCollector.collect('java.lang.ThreadGroup', [
 		]]
 	],
 	[/* methods */
+		[/* method */ 'allowThreadSuspension(boolean)', [
+			[/* method description */
+				[/* text */ 't', `Used by VM to control lowmem implicit suspension.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'b', [/* parameter description */
+					[/* text */ 't', `boolean to allow or disallow suspension`]
+				]]
+			],
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `true on success`]
+			]
+		]],
+		[/* method */ 'isDaemon()', [
+			[/* method description */
+				[/* text */ 't', `Tests if this thread group is a daemon thread group. A
+ daemon thread group is automatically destroyed when its last
+ thread is stopped or its last thread group is destroyed.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* inline code block */ 'i', `true`],
+				[/* text */ 't', ` if this thread group is a daemon thread group;
+          `],
+				[/* inline code block */ 'i', `false`],
+				[/* text */ 't', ` otherwise.`]
+			]
+		]],
+		[/* method */ 'parentOf(java.lang.ThreadGroup)', [
+			[/* method description */
+				[/* text */ 't', `Tests if this thread group is either the thread group
+ argument or one of its ancestor thread groups.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'g', [/* parameter description */
+					[/* text */ 't', `a thread group.`]
+				]]
+			],
+			/* throws */ UDF,
+			[/* return description */
+				[/* inline code block */ 'i', `true`],
+				[/* text */ 't', ` if this thread group is the thread group
+          argument or one of its ancestor thread groups;
+          `],
+				[/* inline code block */ 'i', `false`],
+				[/* text */ 't', ` otherwise.`]
+			]
+		]],
+		[/* method */ 'getMaxPriority()', [
+			[/* method description */
+				[/* text */ 't', `Returns the maximum priority of this thread group. Threads that are
+ part of this group cannot have a higher priority than the maximum
+ priority.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the maximum priority that a thread in this thread group
+          can have.`]
+			]
+		]],
 		[/* method */ 'getName()', [
 			[/* method description */
 				[/* text */ 't', `Returns the name of this thread group.`]
@@ -85,25 +148,6 @@ DocsCollector.collect('java.lang.ThreadGroup', [
 			[/* return description */
 				[/* text */ 't', `the name of this thread group.`]
 			]
-		]],
-		[/* method */ 'toString()', [
-			[/* method description */
-				[/* text */ 't', `Returns a string representation of this Thread group.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `a string representation of this thread group.`]
-			]
-		]],
-		[/* method */ 'list()', [
-			[/* method description */
-				[/* text */ 't', `Prints information about this thread group to the standard
- output. This method is useful only for debugging.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			/* return */ UDF
 		]],
 		[/* method */ 'getParent()', [
 			[/* method description */
@@ -159,80 +203,28 @@ DocsCollector.collect('java.lang.ThreadGroup', [
 			],
 			/* return */ UDF
 		]],
-		[/* method */ 'setDaemon(boolean)', [
+		[/* method */ 'destroy()', [
 			[/* method description */
-				[/* text */ 't', `Changes the daemon status of this thread group.
+				[/* text */ 't', `Destroys this thread group and all of its subgroups. This thread
+ group must be empty, indicating that all threads that had been in
+ this thread group have since stopped.
  `],
 				[/* block */ 'b', [
 					[/* text */ 't', `
  First, the `],
 					[/* inline code block */ 'i', `checkAccess`],
 					[/* text */ 't', ` method of this thread group is
- called with no arguments; this may result in a security exception.
- `]
-				]],
-				[/* block */ 'b', `
- A daemon thread group is automatically destroyed when its last
- thread is stopped or its last thread group is destroyed.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'daemon', [/* parameter description */
-					[/* text */ 't', `if `],
-					[/* inline code block */ 'i', `true`],
-					[/* text */ 't', `, marks this thread group as
-                      a daemon thread group; otherwise, marks this
-                      thread group as normal.`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.SecurityException', [/* throw description */
-					[/* text */ 't', `if the current thread cannot modify
-               this thread group.`]
-				]]
-			],
-			/* return */ UDF
-		]],
-		[/* method */ 'isDaemon()', [
-			[/* method description */
-				[/* text */ 't', `Tests if this thread group is a daemon thread group. A
- daemon thread group is automatically destroyed when its last
- thread is stopped or its last thread group is destroyed.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* inline code block */ 'i', `true`],
-				[/* text */ 't', ` if this thread group is a daemon thread group;
-          `],
-				[/* inline code block */ 'i', `false`],
-				[/* text */ 't', ` otherwise.`]
-			]
-		]],
-		[/* method */ 'resume()', [
-			[/* method description */
-				[/* text */ 't', `Resumes all threads in this thread group.
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', `
- First, the `],
-					[/* inline code block */ 'i', `checkAccess`],
-					[/* text */ 't', ` method of this thread group is
- called with no arguments; this may result in a security exception.
- `]
-				]],
-				[/* block */ 'b', [
-					[/* text */ 't', `
- This method then calls the `],
-					[/* inline code block */ 'i', `resume`],
-					[/* text */ 't', ` method on all the
- threads in this thread group and in all of its sub groups.`]
+ called with no arguments; this may result in a security exception.`]
 				]]
 			],
 			/* parameters */ UDF,
 			[/* throws */
+				[/* throw */ 'java.lang.IllegalThreadStateException', [/* throw description */
+					[/* text */ 't', `if the thread group is not
+               empty or if the thread group has already been destroyed.`]
+				]],
 				[/* throw */ 'java.lang.SecurityException', [/* throw description */
-					[/* text */ 't', `if the current thread is not allowed to
-               access this thread group or any of the threads in the
+					[/* text */ 't', `if the current thread cannot modify this
                thread group.`]
 				]]
 			],
@@ -268,18 +260,185 @@ DocsCollector.collect('java.lang.ThreadGroup', [
 			],
 			/* return */ UDF
 		]],
-		[/* method */ 'getMaxPriority()', [
+		[/* method */ 'resume()', [
 			[/* method description */
-				[/* text */ 't', `Returns the maximum priority of this thread group. Threads that are
- part of this group cannot have a higher priority than the maximum
- priority.`]
+				[/* text */ 't', `Resumes all threads in this thread group.
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', `
+ First, the `],
+					[/* inline code block */ 'i', `checkAccess`],
+					[/* text */ 't', ` method of this thread group is
+ called with no arguments; this may result in a security exception.
+ `]
+				]],
+				[/* block */ 'b', [
+					[/* text */ 't', `
+ This method then calls the `],
+					[/* inline code block */ 'i', `resume`],
+					[/* text */ 't', ` method on all the
+ threads in this thread group and in all of its sub groups.`]
+				]]
 			],
 			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the maximum priority that a thread in this thread group
-          can have.`]
-			]
+			[/* throws */
+				[/* throw */ 'java.lang.SecurityException', [/* throw description */
+					[/* text */ 't', `if the current thread is not allowed to
+               access this thread group or any of the threads in the
+               thread group.`]
+				]]
+			],
+			/* return */ UDF
+		]],
+		[/* method */ 'setDaemon(boolean)', [
+			[/* method description */
+				[/* text */ 't', `Changes the daemon status of this thread group.
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', `
+ First, the `],
+					[/* inline code block */ 'i', `checkAccess`],
+					[/* text */ 't', ` method of this thread group is
+ called with no arguments; this may result in a security exception.
+ `]
+				]],
+				[/* block */ 'b', `
+ A daemon thread group is automatically destroyed when its last
+ thread is stopped or its last thread group is destroyed.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'daemon', [/* parameter description */
+					[/* text */ 't', `if `],
+					[/* inline code block */ 'i', `true`],
+					[/* text */ 't', `, marks this thread group as
+                      a daemon thread group; otherwise, marks this
+                      thread group as normal.`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.lang.SecurityException', [/* throw description */
+					[/* text */ 't', `if the current thread cannot modify
+               this thread group.`]
+				]]
+			],
+			/* return */ UDF
+		]],
+		[/* method */ 'setMaxPriority(int)', [
+			[/* method description */
+				[/* text */ 't', `Sets the maximum priority of the group. Threads in the thread
+ group that already have a higher priority are not affected.
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', `
+ First, the `],
+					[/* inline code block */ 'i', `checkAccess`],
+					[/* text */ 't', ` method of this thread group is
+ called with no arguments; this may result in a security exception.
+ `]
+				]],
+				[/* block */ 'b', [
+					[/* text */ 't', `
+ If the `],
+					[/* inline code block */ 'i', `pri`],
+					[/* text */ 't', ` argument is less than
+ `],
+					[/* reference */ 'r', `.Thread#MIN_PRIORITY`],
+					[/* text */ 't', ` or greater than
+ `],
+					[/* reference */ 'r', `.Thread#MAX_PRIORITY`],
+					[/* text */ 't', `, the maximum priority of the group
+ remains unchanged.
+ `]
+				]],
+				[/* block */ 'b', [
+					[/* text */ 't', `
+ Otherwise, the priority of this ThreadGroup object is set to the
+ smaller of the specified `],
+					[/* inline code block */ 'i', `pri`],
+					[/* text */ 't', ` and the maximum permitted
+ priority of the parent of this thread group. (If this thread group
+ is the system thread group, which has no parent, then its maximum
+ priority is simply set to `],
+					[/* inline code block */ 'i', `pri`],
+					[/* text */ 't', `.) Then this method is
+ called recursively, with `],
+					[/* inline code block */ 'i', `pri`],
+					[/* text */ 't', ` as its argument, for
+ every thread group that belongs to this thread group.`]
+				]]
+			],
+			[/* parameters */
+				[/* parameter */ 'pri', [/* parameter description */
+					[/* text */ 't', `the new priority of the thread group.`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.lang.SecurityException', [/* throw description */
+					[/* text */ 't', `if the current thread cannot modify
+               this thread group.`]
+				]]
+			],
+			/* return */ UDF
+		]],
+		[/* method */ 'stop()', [
+			[/* method description */
+				[/* text */ 't', `Stops all threads in this thread group.
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', `
+ First, the `],
+					[/* inline code block */ 'i', `checkAccess`],
+					[/* text */ 't', ` method of this thread group is
+ called with no arguments; this may result in a security exception.
+ `]
+				]],
+				[/* block */ 'b', [
+					[/* text */ 't', `
+ This method then calls the `],
+					[/* inline code block */ 'i', `stop`],
+					[/* text */ 't', ` method on all the
+ threads in this thread group and in all of its subgroups.`]
+				]]
+			],
+			/* parameters */ UDF,
+			[/* throws */
+				[/* throw */ 'java.lang.SecurityException', [/* throw description */
+					[/* text */ 't', `if the current thread is not allowed
+               to access this thread group or any of the threads in
+               the thread group.`]
+				]]
+			],
+			/* return */ UDF
+		]],
+		[/* method */ 'suspend()', [
+			[/* method description */
+				[/* text */ 't', `Suspends all threads in this thread group.
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', `
+ First, the `],
+					[/* inline code block */ 'i', `checkAccess`],
+					[/* text */ 't', ` method of this thread group is
+ called with no arguments; this may result in a security exception.
+ `]
+				]],
+				[/* block */ 'b', [
+					[/* text */ 't', `
+ This method then calls the `],
+					[/* inline code block */ 'i', `suspend`],
+					[/* text */ 't', ` method on all the
+ threads in this thread group and in all of its subgroups.`]
+				]]
+			],
+			/* parameters */ UDF,
+			[/* throws */
+				[/* throw */ 'java.lang.SecurityException', [/* throw description */
+					[/* text */ 't', `if the current thread is not allowed
+               to access this thread group or any of the threads in
+               the thread group.`]
+				]]
+			],
+			/* return */ UDF
 		]],
 		[/* method */ 'activeCount()', [
 			[/* method description */
@@ -302,93 +461,23 @@ DocsCollector.collect('java.lang.ThreadGroup', [
           group as an ancestor`]
 			]
 		]],
-		[/* method */ 'enumerate(java.lang.ThreadGroup[],boolean)', [
+		[/* method */ 'activeGroupCount()', [
 			[/* method description */
-				[/* text */ 't', `Copies into the specified array references to every active
- subgroup in this thread group. If `],
-				[/* inline code block */ 'i', `recurse`],
-				[/* text */ 't', ` is
- `],
-				[/* inline code block */ 'i', `true`],
-				[/* text */ 't', `, this method recursively enumerates all subgroups of this
- thread group and references to every active thread group in these
- subgroups are also included.
+				[/* text */ 't', `Returns an estimate of the number of active groups in this
+ thread group and its subgroups. Recursively iterates over
+ all subgroups in this thread group.
 
  `],
-				[/* block */ 'b', [
-					[/* text */ 't', ` An application might use the
- `],
-					[/* reference */ 'r', `#activeGroupCount()`, `activeGroupCount`],
-					[/* text */ 't', ` method to
- get an estimate of how big the array should be, however `],
-					[/* text */ 't', `if the
- array is too short to hold all the thread groups, the extra thread
- groups are silently ignored.`],
-					[/* text */ 't', `  If it is critical to obtain every
- active subgroup in this thread group, the caller should verify that
- the returned int value is strictly less than the length of
- `],
-					[/* inline code block */ 'i', `list`],
-					[/* text */ 't', `.
-
- `]
-				]],
-				[/* block */ 'b', ` Due to the inherent race condition in this method, it is recommended
- that the method only be used for debugging and monitoring purposes.`]
+				[/* block */ 'b', ` The value returned is only an estimate because the number of
+ thread groups may change dynamically while this method traverses
+ internal data structures. This method is intended primarily for
+ debugging and monitoring purposes.`]
 			],
-			[/* parameters */
-				[/* parameter */ 'list', [/* parameter description */
-					[/* text */ 't', `an array into which to put the list of thread groups`]
-				]],
-				[/* parameter */ 'recurse', [/* parameter description */
-					[/* text */ 't', `if `],
-					[/* inline code block */ 'i', `true`],
-					[/* text */ 't', `, recursively enumerate all subgroups`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.SecurityException', [/* throw description */
-					[/* text */ 't', `if `],
-					[/* reference */ 'r', `#checkAccess()`, `checkAccess`],
-					[/* text */ 't', ` determines that
-          the current thread cannot access this thread group`]
-				]]
-			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
 			[/* return description */
-				[/* text */ 't', `the number of thread groups put into the array`]
-			]
-		]],
-		[/* method */ 'enumerate(java.lang.ThreadGroup[])', [
-			[/* method description */
-				[/* text */ 't', `Copies into the specified array references to every active
- subgroup in this thread group and its subgroups.
-
- `],
-				[/* block */ 'b', ` An invocation of this method behaves in exactly the same
- way as the invocation
-
- `],
-				[/* block */ 'b', [
-					[/* reference */ 'r', `#enumerate(java.lang.ThreadGroup%5B%5D,boolean)`, `enumerate`],
-					[/* inline code block */ 'i', `(list, true)`]
-				]],
-				[/* block */ 'b', '']
-			],
-			[/* parameters */
-				[/* parameter */ 'list', [/* parameter description */
-					[/* text */ 't', `an array into which to put the list of thread groups`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.SecurityException', [/* throw description */
-					[/* text */ 't', `if `],
-					[/* reference */ 'r', `#checkAccess()`, `checkAccess`],
-					[/* text */ 't', ` determines that
-          the current thread cannot access this thread group`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `the number of thread groups put into the array`]
+				[/* text */ 't', `the number of active thread groups with this thread group as
+          an ancestor`]
 			]
 		]],
 		[/* method */ 'enumerate(java.lang.Thread[])', [
@@ -480,6 +569,124 @@ DocsCollector.collect('java.lang.ThreadGroup', [
 				[/* text */ 't', `the number of threads put into the array`]
 			]
 		]],
+		[/* method */ 'enumerate(java.lang.ThreadGroup[])', [
+			[/* method description */
+				[/* text */ 't', `Copies into the specified array references to every active
+ subgroup in this thread group and its subgroups.
+
+ `],
+				[/* block */ 'b', ` An invocation of this method behaves in exactly the same
+ way as the invocation
+
+ `],
+				[/* block */ 'b', [
+					[/* reference */ 'r', `#enumerate(java.lang.ThreadGroup%5B%5D,boolean)`, `enumerate`],
+					[/* inline code block */ 'i', `(list, true)`]
+				]],
+				[/* block */ 'b', '']
+			],
+			[/* parameters */
+				[/* parameter */ 'list', [/* parameter description */
+					[/* text */ 't', `an array into which to put the list of thread groups`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.lang.SecurityException', [/* throw description */
+					[/* text */ 't', `if `],
+					[/* reference */ 'r', `#checkAccess()`, `checkAccess`],
+					[/* text */ 't', ` determines that
+          the current thread cannot access this thread group`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `the number of thread groups put into the array`]
+			]
+		]],
+		[/* method */ 'enumerate(java.lang.ThreadGroup[],boolean)', [
+			[/* method description */
+				[/* text */ 't', `Copies into the specified array references to every active
+ subgroup in this thread group. If `],
+				[/* inline code block */ 'i', `recurse`],
+				[/* text */ 't', ` is
+ `],
+				[/* inline code block */ 'i', `true`],
+				[/* text */ 't', `, this method recursively enumerates all subgroups of this
+ thread group and references to every active thread group in these
+ subgroups are also included.
+
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', ` An application might use the
+ `],
+					[/* reference */ 'r', `#activeGroupCount()`, `activeGroupCount`],
+					[/* text */ 't', ` method to
+ get an estimate of how big the array should be, however `],
+					[/* text */ 't', `if the
+ array is too short to hold all the thread groups, the extra thread
+ groups are silently ignored.`],
+					[/* text */ 't', `  If it is critical to obtain every
+ active subgroup in this thread group, the caller should verify that
+ the returned int value is strictly less than the length of
+ `],
+					[/* inline code block */ 'i', `list`],
+					[/* text */ 't', `.
+
+ `]
+				]],
+				[/* block */ 'b', ` Due to the inherent race condition in this method, it is recommended
+ that the method only be used for debugging and monitoring purposes.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'list', [/* parameter description */
+					[/* text */ 't', `an array into which to put the list of thread groups`]
+				]],
+				[/* parameter */ 'recurse', [/* parameter description */
+					[/* text */ 't', `if `],
+					[/* inline code block */ 'i', `true`],
+					[/* text */ 't', `, recursively enumerate all subgroups`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.lang.SecurityException', [/* throw description */
+					[/* text */ 't', `if `],
+					[/* reference */ 'r', `#checkAccess()`, `checkAccess`],
+					[/* text */ 't', ` determines that
+          the current thread cannot access this thread group`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `the number of thread groups put into the array`]
+			]
+		]],
+		[/* method */ 'toString()', [
+			[/* method description */
+				[/* text */ 't', `Returns a string representation of this Thread group.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `a string representation of this thread group.`]
+			]
+		]],
+		[/* method */ 'isDestroyed()', [
+			[/* method description */
+				[/* text */ 't', `Tests if this thread group has been destroyed.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `true if this object is destroyed`]
+			]
+		]],
+		[/* method */ 'list()', [
+			[/* method description */
+				[/* text */ 't', `Prints information about this thread group to the standard
+ output. This method is useful only for debugging.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			/* return */ UDF
+		]],
 		[/* method */ 'uncaughtException(java.lang.Thread,java.lang.Throwable)', [
 			[/* method description */
 				[/* text */ 't', `Called by the Java Virtual Machine when a thread in this
@@ -561,213 +768,6 @@ DocsCollector.collect('java.lang.ThreadGroup', [
 			],
 			/* throws */ UDF,
 			/* return */ UDF
-		]],
-		[/* method */ 'stop()', [
-			[/* method description */
-				[/* text */ 't', `Stops all threads in this thread group.
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', `
- First, the `],
-					[/* inline code block */ 'i', `checkAccess`],
-					[/* text */ 't', ` method of this thread group is
- called with no arguments; this may result in a security exception.
- `]
-				]],
-				[/* block */ 'b', [
-					[/* text */ 't', `
- This method then calls the `],
-					[/* inline code block */ 'i', `stop`],
-					[/* text */ 't', ` method on all the
- threads in this thread group and in all of its subgroups.`]
-				]]
-			],
-			/* parameters */ UDF,
-			[/* throws */
-				[/* throw */ 'java.lang.SecurityException', [/* throw description */
-					[/* text */ 't', `if the current thread is not allowed
-               to access this thread group or any of the threads in
-               the thread group.`]
-				]]
-			],
-			/* return */ UDF
-		]],
-		[/* method */ 'suspend()', [
-			[/* method description */
-				[/* text */ 't', `Suspends all threads in this thread group.
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', `
- First, the `],
-					[/* inline code block */ 'i', `checkAccess`],
-					[/* text */ 't', ` method of this thread group is
- called with no arguments; this may result in a security exception.
- `]
-				]],
-				[/* block */ 'b', [
-					[/* text */ 't', `
- This method then calls the `],
-					[/* inline code block */ 'i', `suspend`],
-					[/* text */ 't', ` method on all the
- threads in this thread group and in all of its subgroups.`]
-				]]
-			],
-			/* parameters */ UDF,
-			[/* throws */
-				[/* throw */ 'java.lang.SecurityException', [/* throw description */
-					[/* text */ 't', `if the current thread is not allowed
-               to access this thread group or any of the threads in
-               the thread group.`]
-				]]
-			],
-			/* return */ UDF
-		]],
-		[/* method */ 'setMaxPriority(int)', [
-			[/* method description */
-				[/* text */ 't', `Sets the maximum priority of the group. Threads in the thread
- group that already have a higher priority are not affected.
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', `
- First, the `],
-					[/* inline code block */ 'i', `checkAccess`],
-					[/* text */ 't', ` method of this thread group is
- called with no arguments; this may result in a security exception.
- `]
-				]],
-				[/* block */ 'b', [
-					[/* text */ 't', `
- If the `],
-					[/* inline code block */ 'i', `pri`],
-					[/* text */ 't', ` argument is less than
- `],
-					[/* reference */ 'r', `.Thread#MIN_PRIORITY`],
-					[/* text */ 't', ` or greater than
- `],
-					[/* reference */ 'r', `.Thread#MAX_PRIORITY`],
-					[/* text */ 't', `, the maximum priority of the group
- remains unchanged.
- `]
-				]],
-				[/* block */ 'b', [
-					[/* text */ 't', `
- Otherwise, the priority of this ThreadGroup object is set to the
- smaller of the specified `],
-					[/* inline code block */ 'i', `pri`],
-					[/* text */ 't', ` and the maximum permitted
- priority of the parent of this thread group. (If this thread group
- is the system thread group, which has no parent, then its maximum
- priority is simply set to `],
-					[/* inline code block */ 'i', `pri`],
-					[/* text */ 't', `.) Then this method is
- called recursively, with `],
-					[/* inline code block */ 'i', `pri`],
-					[/* text */ 't', ` as its argument, for
- every thread group that belongs to this thread group.`]
-				]]
-			],
-			[/* parameters */
-				[/* parameter */ 'pri', [/* parameter description */
-					[/* text */ 't', `the new priority of the thread group.`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.SecurityException', [/* throw description */
-					[/* text */ 't', `if the current thread cannot modify
-               this thread group.`]
-				]]
-			],
-			/* return */ UDF
-		]],
-		[/* method */ 'activeGroupCount()', [
-			[/* method description */
-				[/* text */ 't', `Returns an estimate of the number of active groups in this
- thread group and its subgroups. Recursively iterates over
- all subgroups in this thread group.
-
- `],
-				[/* block */ 'b', ` The value returned is only an estimate because the number of
- thread groups may change dynamically while this method traverses
- internal data structures. This method is intended primarily for
- debugging and monitoring purposes.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the number of active thread groups with this thread group as
-          an ancestor`]
-			]
-		]],
-		[/* method */ 'destroy()', [
-			[/* method description */
-				[/* text */ 't', `Destroys this thread group and all of its subgroups. This thread
- group must be empty, indicating that all threads that had been in
- this thread group have since stopped.
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', `
- First, the `],
-					[/* inline code block */ 'i', `checkAccess`],
-					[/* text */ 't', ` method of this thread group is
- called with no arguments; this may result in a security exception.`]
-				]]
-			],
-			/* parameters */ UDF,
-			[/* throws */
-				[/* throw */ 'java.lang.IllegalThreadStateException', [/* throw description */
-					[/* text */ 't', `if the thread group is not
-               empty or if the thread group has already been destroyed.`]
-				]],
-				[/* throw */ 'java.lang.SecurityException', [/* throw description */
-					[/* text */ 't', `if the current thread cannot modify this
-               thread group.`]
-				]]
-			],
-			/* return */ UDF
-		]],
-		[/* method */ 'isDestroyed()', [
-			[/* method description */
-				[/* text */ 't', `Tests if this thread group has been destroyed.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `true if this object is destroyed`]
-			]
-		]],
-		[/* method */ 'parentOf(java.lang.ThreadGroup)', [
-			[/* method description */
-				[/* text */ 't', `Tests if this thread group is either the thread group
- argument or one of its ancestor thread groups.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'g', [/* parameter description */
-					[/* text */ 't', `a thread group.`]
-				]]
-			],
-			/* throws */ UDF,
-			[/* return description */
-				[/* inline code block */ 'i', `true`],
-				[/* text */ 't', ` if this thread group is the thread group
-          argument or one of its ancestor thread groups;
-          `],
-				[/* inline code block */ 'i', `false`],
-				[/* text */ 't', ` otherwise.`]
-			]
-		]],
-		[/* method */ 'allowThreadSuspension(boolean)', [
-			[/* method description */
-				[/* text */ 't', `Used by VM to control lowmem implicit suspension.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'b', [/* parameter description */
-					[/* text */ 't', `boolean to allow or disallow suspension`]
-				]]
-			],
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `true on success`]
-			]
 		]]
 	],
 ]);

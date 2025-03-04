@@ -318,18 +318,6 @@ JdkClassCreateHelper.class('java.text.Bidi', [
 		]
 	],
 	[/* declared fields */
-		[/* public static final int java.text.Bidi.DIRECTION_LEFT_TO_RIGHT */
-			/* name */ 'DIRECTION_LEFT_TO_RIGHT',
-			/* type */ 'int',
-			/* annotations */ UDF,
-			/* modifiers */ 25
-		],
-		[/* public static final int java.text.Bidi.DIRECTION_RIGHT_TO_LEFT */
-			/* name */ 'DIRECTION_RIGHT_TO_LEFT',
-			/* type */ 'int',
-			/* annotations */ UDF,
-			/* modifiers */ 25
-		],
 		[/* public static final int java.text.Bidi.DIRECTION_DEFAULT_LEFT_TO_RIGHT */
 			/* name */ 'DIRECTION_DEFAULT_LEFT_TO_RIGHT',
 			/* type */ 'int',
@@ -338,6 +326,18 @@ JdkClassCreateHelper.class('java.text.Bidi', [
 		],
 		[/* public static final int java.text.Bidi.DIRECTION_DEFAULT_RIGHT_TO_LEFT */
 			/* name */ 'DIRECTION_DEFAULT_RIGHT_TO_LEFT',
+			/* type */ 'int',
+			/* annotations */ UDF,
+			/* modifiers */ 25
+		],
+		[/* public static final int java.text.Bidi.DIRECTION_LEFT_TO_RIGHT */
+			/* name */ 'DIRECTION_LEFT_TO_RIGHT',
+			/* type */ 'int',
+			/* annotations */ UDF,
+			/* modifiers */ 25
+		],
+		[/* public static final int java.text.Bidi.DIRECTION_RIGHT_TO_LEFT */
+			/* name */ 'DIRECTION_RIGHT_TO_LEFT',
 			/* type */ 'int',
 			/* annotations */ UDF,
 			/* modifiers */ 25

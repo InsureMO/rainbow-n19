@@ -70,6 +70,45 @@ DocsCollector.collect('java.lang.StackWalker', [
 	/* fields */ UDF,
 	/* constructors */ UDF,
 	[/* methods */
+		[/* method */ 'walk(java.util.function.Function)', [
+			[/* method description */
+				[/* text */ 't', `Applies the given function to the stream of `],
+				[/* inline code block */ 'i', `StackFrame`],
+				[/* text */ 't', `s
+ for the current thread, traversing from the top frame of the stack,
+ which is the method calling this `],
+				[/* inline code block */ 'i', `walk`],
+				[/* text */ 't', ` method.
+
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', `The `],
+					[/* inline code block */ 'i', `StackFrame`],
+					[/* text */ 't', ` stream will be closed when
+ this method returns.  When a closed `],
+					[/* inline code block */ 'i', `Stream<StackFrame>`],
+					[/* text */ 't', ` object
+ is reused, `],
+					[/* inline code block */ 'i', `IllegalStateException`],
+					[/* text */ 't', ` will be thrown.`]
+				]]
+			],
+			[/* parameters */
+				[/* parameter */ 'function', [/* parameter description */
+					[/* text */ 't', `a function that takes a stream of
+                 `],
+					[/* reference */ 'r', `java.lang.StackWalker.StackFrame`],
+					[/* text */ 't', ` and returns a result.`]
+				]]
+			],
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the result of applying the function to the stream of
+         `],
+				[/* reference */ 'r', `java.lang.StackWalker.StackFrame`],
+				[/* text */ 't', `.`]
+			]
+		]],
 		[/* method */ 'getCallerClass()', [
 			[/* method description */
 				[/* text */ 't', `Gets the `],
@@ -222,6 +261,63 @@ DocsCollector.collect('java.lang.StackWalker', [
 				[/* text */ 't', ` configured with the given option`]
 			]
 		]],
+		[/* method */ 'getInstance(java.util.Set)', [
+			[/* method description */
+				[/* text */ 't', `Returns a `],
+				[/* inline code block */ 'i', `StackWalker`],
+				[/* text */ 't', ` instance with the given `],
+				[/* inline code block */ 'i', `options`],
+				[/* text */ 't', ` specifying
+ the stack frame information it can access.  If the given `],
+				[/* inline code block */ 'i', `options`],
+				[/* text */ 't', `
+ is empty, this `],
+				[/* inline code block */ 'i', `StackWalker`],
+				[/* text */ 't', ` is configured to skip all
+ `],
+				[/* reference */ 'r', `.StackWalker.Option#SHOW_HIDDEN_FRAMES`],
+				[/* text */ 't', ` and no
+ `],
+				[/* reference */ 'r', `.StackWalker.Option#RETAIN_CLASS_REFERENCE`],
+				[/* text */ 't', ` is retained.
+
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', `
+ If a security manager is present and the given `],
+					[/* inline code block */ 'i', `options`],
+					[/* text */ 't', ` contains
+ `],
+					[/* reference */ 'r', `.StackWalker.Option#RETAIN_CLASS_REFERENCE`],
+					[/* text */ 't', `,
+ it calls its `],
+					[/* reference */ 'r', `.SecurityManager#checkPermission(java.security.Permission)`],
+					[/* text */ 't', `
+ method for `],
+					[/* inline code block */ 'i', `RuntimePermission("getStackWalkerWithClassReference")`],
+					[/* text */ 't', `.`]
+				]]
+			],
+			[/* parameters */
+				[/* parameter */ 'options', [/* parameter description */
+					[/* text */ 't', ``],
+					[/* reference */ 'r', `enum class in java.lang.StackWalker.Option`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.lang.SecurityException', [/* throw description */
+					[/* text */ 't', `if a security manager exists and its
+         `],
+					[/* inline code block */ 'i', `checkPermission`],
+					[/* text */ 't', ` method denies access.`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `a `],
+				[/* inline code block */ 'i', `StackWalker`],
+				[/* text */ 't', ` configured with the given options`]
+			]
+		]],
 		[/* method */ 'getInstance(java.util.Set,int)', [
 			[/* method description */
 				[/* text */ 't', `Returns a `],
@@ -300,63 +396,6 @@ DocsCollector.collect('java.lang.StackWalker', [
 				[/* text */ 't', ` configured with the given options`]
 			]
 		]],
-		[/* method */ 'getInstance(java.util.Set)', [
-			[/* method description */
-				[/* text */ 't', `Returns a `],
-				[/* inline code block */ 'i', `StackWalker`],
-				[/* text */ 't', ` instance with the given `],
-				[/* inline code block */ 'i', `options`],
-				[/* text */ 't', ` specifying
- the stack frame information it can access.  If the given `],
-				[/* inline code block */ 'i', `options`],
-				[/* text */ 't', `
- is empty, this `],
-				[/* inline code block */ 'i', `StackWalker`],
-				[/* text */ 't', ` is configured to skip all
- `],
-				[/* reference */ 'r', `.StackWalker.Option#SHOW_HIDDEN_FRAMES`],
-				[/* text */ 't', ` and no
- `],
-				[/* reference */ 'r', `.StackWalker.Option#RETAIN_CLASS_REFERENCE`],
-				[/* text */ 't', ` is retained.
-
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', `
- If a security manager is present and the given `],
-					[/* inline code block */ 'i', `options`],
-					[/* text */ 't', ` contains
- `],
-					[/* reference */ 'r', `.StackWalker.Option#RETAIN_CLASS_REFERENCE`],
-					[/* text */ 't', `,
- it calls its `],
-					[/* reference */ 'r', `.SecurityManager#checkPermission(java.security.Permission)`],
-					[/* text */ 't', `
- method for `],
-					[/* inline code block */ 'i', `RuntimePermission("getStackWalkerWithClassReference")`],
-					[/* text */ 't', `.`]
-				]]
-			],
-			[/* parameters */
-				[/* parameter */ 'options', [/* parameter description */
-					[/* text */ 't', ``],
-					[/* reference */ 'r', `enum class in java.lang.StackWalker.Option`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.SecurityException', [/* throw description */
-					[/* text */ 't', `if a security manager exists and its
-         `],
-					[/* inline code block */ 'i', `checkPermission`],
-					[/* text */ 't', ` method denies access.`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `a `],
-				[/* inline code block */ 'i', `StackWalker`],
-				[/* text */ 't', ` configured with the given options`]
-			]
-		]],
 		[/* method */ 'forEach(java.util.function.Consumer)', [
 			[/* method description */
 				[/* text */ 't', `Performs the given action on each element of `],
@@ -385,45 +424,6 @@ DocsCollector.collect('java.lang.StackWalker', [
 			],
 			/* throws */ UDF,
 			/* return */ UDF
-		]],
-		[/* method */ 'walk(java.util.function.Function)', [
-			[/* method description */
-				[/* text */ 't', `Applies the given function to the stream of `],
-				[/* inline code block */ 'i', `StackFrame`],
-				[/* text */ 't', `s
- for the current thread, traversing from the top frame of the stack,
- which is the method calling this `],
-				[/* inline code block */ 'i', `walk`],
-				[/* text */ 't', ` method.
-
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', `The `],
-					[/* inline code block */ 'i', `StackFrame`],
-					[/* text */ 't', ` stream will be closed when
- this method returns.  When a closed `],
-					[/* inline code block */ 'i', `Stream<StackFrame>`],
-					[/* text */ 't', ` object
- is reused, `],
-					[/* inline code block */ 'i', `IllegalStateException`],
-					[/* text */ 't', ` will be thrown.`]
-				]]
-			],
-			[/* parameters */
-				[/* parameter */ 'function', [/* parameter description */
-					[/* text */ 't', `a function that takes a stream of
-                 `],
-					[/* reference */ 'r', `java.lang.StackWalker.StackFrame`],
-					[/* text */ 't', ` and returns a result.`]
-				]]
-			],
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the result of applying the function to the stream of
-         `],
-				[/* reference */ 'r', `java.lang.StackWalker.StackFrame`],
-				[/* text */ 't', `.`]
-			]
 		]]
 	],
 ]);

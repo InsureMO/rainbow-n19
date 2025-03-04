@@ -408,15 +408,28 @@ DocsCollector.collect('java.math.RoundingMode', [
 	/* fields */ UDF,
 	/* constructors */ UDF,
 	[/* methods */
-		[/* method */ 'values()', [
+		[/* method */ 'valueOf(int)', [
 			[/* method description */
-				[/* text */ 't', `Returns an array containing the constants of this enum class, in
-the order they are declared.`]
+				[/* text */ 't', `Returns the `],
+				[/* inline code block */ 'i', `RoundingMode`],
+				[/* text */ 't', ` object corresponding to a
+ legacy integer rounding mode constant in `],
+				[/* reference */ 'r', `java.math.BigDecimal`],
+				[/* text */ 't', `.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			[/* parameters */
+				[/* parameter */ 'rm', [/* parameter description */
+					[/* text */ 't', `legacy integer rounding mode to convert`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
+					[/* text */ 't', `integer is out of range`]
+				]]
+			],
 			[/* return description */
-				[/* text */ 't', `an array containing the constants of this enum class, in the order they are declared`]
+				[/* inline code block */ 'i', `RoundingMode`],
+				[/* text */ 't', ` corresponding to the given integer.`]
 			]
 		]],
 		[/* method */ 'valueOf(java.lang.String)', [
@@ -445,28 +458,15 @@ not permitted.)`]
 				[/* text */ 't', `the enum constant with the specified name`]
 			]
 		]],
-		[/* method */ 'valueOf(int)', [
+		[/* method */ 'values()', [
 			[/* method description */
-				[/* text */ 't', `Returns the `],
-				[/* inline code block */ 'i', `RoundingMode`],
-				[/* text */ 't', ` object corresponding to a
- legacy integer rounding mode constant in `],
-				[/* reference */ 'r', `java.math.BigDecimal`],
-				[/* text */ 't', `.`]
+				[/* text */ 't', `Returns an array containing the constants of this enum class, in
+the order they are declared.`]
 			],
-			[/* parameters */
-				[/* parameter */ 'rm', [/* parameter description */
-					[/* text */ 't', `legacy integer rounding mode to convert`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
-					[/* text */ 't', `integer is out of range`]
-				]]
-			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
 			[/* return description */
-				[/* inline code block */ 'i', `RoundingMode`],
-				[/* text */ 't', ` corresponding to the given integer.`]
+				[/* text */ 't', `an array containing the constants of this enum class, in the order they are declared`]
 			]
 		]]
 	],

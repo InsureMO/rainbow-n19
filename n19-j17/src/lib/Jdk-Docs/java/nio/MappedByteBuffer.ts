@@ -46,165 +46,70 @@ DocsCollector.collect('java.nio.MappedByteBuffer', [
 	/* fields */ UDF,
 	/* constructors */ UDF,
 	[/* methods */
-		[/* method */ 'load()', [
+		[/* method */ 'compact()', [
 			[/* method description */
-				[/* text */ 't', `Loads this buffer's content into physical memory.
-
- `],
-				[/* block */ 'b', ` This method makes a best effort to ensure that, when it returns,
- this buffer's content is resident in physical memory.  Invoking this
- method may cause some number of page faults and I/O operations to
- occur. `]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `This buffer`]
-			]
-		]],
-		[/* method */ 'clear()', [
-			[/* method description */
-				[/* text */ 't', `Clears this buffer.  The position is set to zero, the limit is set to
- the capacity, and the mark is discarded.
+				[/* text */ 't', `Compacts this buffer  `],
+				[/* text */ 't', `(optional operation)`],
+				[/* text */ 't', `.
 
  `],
 				[/* block */ 'b', [
-					[/* text */ 't', ` Invoke this method before using a sequence of channel-read or
+					[/* text */ 't', ` The bytes between the buffer's current position and its limit,
+ if any, are copied to the beginning of the buffer.  That is, the
+ byte at index `],
+					[/* text */ 't', `p`],
+					[/* text */ 't', ` = `],
+					[/* inline code block */ 'i', `position()`],
+					[/* text */ 't', ` is copied
+ to index zero, the byte at index `],
+					[/* text */ 't', `p`],
+					[/* text */ 't', ` + 1 is copied
+ to index one, and so forth until the byte at index
  `],
-					[/* text */ 't', `put`],
-					[/* text */ 't', ` operations to fill this buffer.  For example:
+					[/* inline code block */ 'i', `limit()`],
+					[/* text */ 't', ` - 1 is copied to index
+ `],
+					[/* text */ 't', `n`],
+					[/* text */ 't', ` = `],
+					[/* inline code block */ 'i', `limit()`],
+					[/* text */ 't', ` - `],
+					[/* inline code block */ 'i', `1`],
+					[/* text */ 't', ` - `],
+					[/* text */ 't', `p`],
+					[/* text */ 't', `.
+ The buffer's position is then set to `],
+					[/* text */ 't', `n+1`],
+					[/* text */ 't', ` and its limit is set to
+ its capacity.  The mark, if defined, is discarded.
 
  `]
 				]],
 				[/* block */ 'b', [
-					[/* code block */ 'c', ` buf.clear();     // Prepare buffer for reading
- in.read(buf);    // Read data`]
-				]],
-				[/* block */ 'b', ''],
-				[/* block */ 'b', ` This method does not actually erase the data in the buffer, but it
- is named as if it did because it will most often be used in situations
- in which that might as well be the case. `]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `This buffer`]
-			]
-		]],
-		[/* method */ 'position(int)', [
-			[/* method description */
-				[/* text */ 't', `Sets this buffer's position.  If the mark is defined and larger than the
- new position then it is discarded.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'newPosition', [/* parameter description */
-					[/* text */ 't', `The new position value; must be non-negative
-         and no larger than the current limit`]
-				]]
-			],
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `This buffer`]
-			]
-		]],
-		[/* method */ 'limit(int)', [
-			[/* method description */
-				[/* text */ 't', `Sets this buffer's limit.  If the position is larger than the new limit
- then it is set to the new limit.  If the mark is defined and larger than
- the new limit then it is discarded.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'newLimit', [/* parameter description */
-					[/* text */ 't', `The new limit value; must be non-negative
-         and no larger than this buffer's capacity`]
-				]]
-			],
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `This buffer`]
-			]
-		]],
-		[/* method */ 'mark()', [
-			[/* method description */
-				[/* text */ 't', `Sets this buffer's mark at its position.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `This buffer`]
-			]
-		]],
-		[/* method */ 'reset()', [
-			[/* method description */
-				[/* text */ 't', `Resets this buffer's position to the previously-marked position.
-
- `],
-				[/* block */ 'b', ` Invoking this method neither changes nor discards the mark's
- value. `]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `This buffer`]
-			]
-		]],
-		[/* method */ 'flip()', [
-			[/* method description */
-				[/* text */ 't', `Flips this buffer.  The limit is set to the current position and then
- the position is set to zero.  If the mark is defined then it is
- discarded.
-
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', ` After a sequence of channel-read or `],
+					[/* text */ 't', ` The buffer's position is set to the number of bytes copied,
+ rather than to zero, so that an invocation of this method can be
+ followed immediately by an invocation of another relative `],
 					[/* text */ 't', `put`],
-					[/* text */ 't', ` operations, invoke
- this method to prepare for a sequence of channel-write or relative
- `],
-					[/* text */ 't', `get`],
-					[/* text */ 't', ` operations.  For example:
-
- `]
-				]],
-				[/* block */ 'b', [
-					[/* code block */ 'c', ` buf.put(magic);    // Prepend header
- in.read(buf);      // Read data into rest of buffer
- buf.flip();        // Flip buffer
- out.write(buf);    // Write header + data to channel`]
-				]],
-				[/* block */ 'b', ''],
-				[/* block */ 'b', [
-					[/* text */ 't', ` This method is often used in conjunction with the `],
-					[/* reference */ 'r', `.ByteBuffer#compact()`],
-					[/* text */ 't', ` method when transferring data from
- one place to another.  `]
-				]]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `This buffer`]
-			]
-		]],
-		[/* method */ 'rewind()', [
-			[/* method description */
-				[/* text */ 't', `Rewinds this buffer.  The position is set to zero and the mark is
- discarded.
-
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', ` Invoke this method before a sequence of channel-write or `],
-					[/* text */ 't', `get`],
 					[/* text */ 't', `
- operations, assuming that the limit has already been set
- appropriately.  For example:
+ method. `]
+				]],
+				[/* block */ 'b', [
+					[/* text */ 't', ` Invoke this method after writing data from a buffer in case the
+ write was incomplete.  The following loop, for example, copies bytes
+ from one channel to another via the buffer `],
+					[/* inline code block */ 'i', `buf`],
+					[/* text */ 't', `:
 
  `]
 				]],
 				[/* block */ 'b', [
-					[/* code block */ 'c', ` out.write(buf);    // Write remaining data
- buf.rewind();      // Rewind buffer
- buf.get(array);    // Copy data into array`]
+					[/* code block */ 'c', [
+						[/* inline code block */ 'i', `buf.clear();          // Prepare buffer for use
+   while (in.read(buf) >= 0 || buf.position != 0) {
+       buf.flip();
+       out.write(buf);
+       buf.compact();    // In case of partial write
+   }`]
+					]]
 				]],
 				[/* block */ 'b', '']
 			],
@@ -212,6 +117,37 @@ DocsCollector.collect('java.nio.MappedByteBuffer', [
 			/* throws */ UDF,
 			[/* return description */
 				[/* text */ 't', `This buffer`]
+			]
+		]],
+		[/* method */ 'duplicate()', [
+			[/* method description */
+				[/* text */ 't', `Creates a new byte buffer that shares this buffer's content.
+
+ `],
+				[/* block */ 'b', ` The content of the new buffer will be that of this buffer.  Changes
+ to this buffer's content will be visible in the new buffer, and vice
+ versa; the two buffers' position, limit, and mark values will be
+ independent.
+
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', ` The new buffer's capacity, limit, position,
+
+ and mark values will be identical to those of this buffer, and its byte
+ order will be `],
+					[/* reference */ 'r', `.ByteOrder#BIG_ENDIAN`],
+					[/* text */ 't', `.
+
+
+
+ The new buffer will be direct if, and only if, this buffer is direct, and
+ it will be read-only if, and only if, this buffer is read-only.  `]
+				]]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `The new byte buffer`]
 			]
 		]],
 		[/* method */ 'slice()', [
@@ -331,110 +267,6 @@ DocsCollector.collect('java.nio.MappedByteBuffer', [
 				[/* text */ 't', `The new buffer`]
 			]
 		]],
-		[/* method */ 'duplicate()', [
-			[/* method description */
-				[/* text */ 't', `Creates a new byte buffer that shares this buffer's content.
-
- `],
-				[/* block */ 'b', ` The content of the new buffer will be that of this buffer.  Changes
- to this buffer's content will be visible in the new buffer, and vice
- versa; the two buffers' position, limit, and mark values will be
- independent.
-
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', ` The new buffer's capacity, limit, position,
-
- and mark values will be identical to those of this buffer, and its byte
- order will be `],
-					[/* reference */ 'r', `.ByteOrder#BIG_ENDIAN`],
-					[/* text */ 't', `.
-
-
-
- The new buffer will be direct if, and only if, this buffer is direct, and
- it will be read-only if, and only if, this buffer is read-only.  `]
-				]]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `The new byte buffer`]
-			]
-		]],
-		[/* method */ 'compact()', [
-			[/* method description */
-				[/* text */ 't', `Compacts this buffer  `],
-				[/* text */ 't', `(optional operation)`],
-				[/* text */ 't', `.
-
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', ` The bytes between the buffer's current position and its limit,
- if any, are copied to the beginning of the buffer.  That is, the
- byte at index `],
-					[/* text */ 't', `p`],
-					[/* text */ 't', ` = `],
-					[/* inline code block */ 'i', `position()`],
-					[/* text */ 't', ` is copied
- to index zero, the byte at index `],
-					[/* text */ 't', `p`],
-					[/* text */ 't', ` + 1 is copied
- to index one, and so forth until the byte at index
- `],
-					[/* inline code block */ 'i', `limit()`],
-					[/* text */ 't', ` - 1 is copied to index
- `],
-					[/* text */ 't', `n`],
-					[/* text */ 't', ` = `],
-					[/* inline code block */ 'i', `limit()`],
-					[/* text */ 't', ` - `],
-					[/* inline code block */ 'i', `1`],
-					[/* text */ 't', ` - `],
-					[/* text */ 't', `p`],
-					[/* text */ 't', `.
- The buffer's position is then set to `],
-					[/* text */ 't', `n+1`],
-					[/* text */ 't', ` and its limit is set to
- its capacity.  The mark, if defined, is discarded.
-
- `]
-				]],
-				[/* block */ 'b', [
-					[/* text */ 't', ` The buffer's position is set to the number of bytes copied,
- rather than to zero, so that an invocation of this method can be
- followed immediately by an invocation of another relative `],
-					[/* text */ 't', `put`],
-					[/* text */ 't', `
- method. `]
-				]],
-				[/* block */ 'b', [
-					[/* text */ 't', ` Invoke this method after writing data from a buffer in case the
- write was incomplete.  The following loop, for example, copies bytes
- from one channel to another via the buffer `],
-					[/* inline code block */ 'i', `buf`],
-					[/* text */ 't', `:
-
- `]
-				]],
-				[/* block */ 'b', [
-					[/* code block */ 'c', [
-						[/* inline code block */ 'i', `buf.clear();          // Prepare buffer for use
-   while (in.read(buf) >= 0 || buf.position != 0) {
-       buf.flip();
-       out.write(buf);
-       buf.compact();    // In case of partial write
-   }`]
-					]]
-				]],
-				[/* block */ 'b', '']
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `This buffer`]
-			]
-		]],
 		[/* method */ 'isLoaded()', [
 			[/* method description */
 				[/* text */ 't', `Tells whether or not this buffer's content is resident in physical
@@ -465,6 +297,73 @@ DocsCollector.collect('java.nio.MappedByteBuffer', [
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if it is likely that this buffer's content
           is resident in physical memory`]
+			]
+		]],
+		[/* method */ 'clear()', [
+			[/* method description */
+				[/* text */ 't', `Clears this buffer.  The position is set to zero, the limit is set to
+ the capacity, and the mark is discarded.
+
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', ` Invoke this method before using a sequence of channel-read or
+ `],
+					[/* text */ 't', `put`],
+					[/* text */ 't', ` operations to fill this buffer.  For example:
+
+ `]
+				]],
+				[/* block */ 'b', [
+					[/* code block */ 'c', ` buf.clear();     // Prepare buffer for reading
+ in.read(buf);    // Read data`]
+				]],
+				[/* block */ 'b', ''],
+				[/* block */ 'b', ` This method does not actually erase the data in the buffer, but it
+ is named as if it did because it will most often be used in situations
+ in which that might as well be the case. `]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `This buffer`]
+			]
+		]],
+		[/* method */ 'flip()', [
+			[/* method description */
+				[/* text */ 't', `Flips this buffer.  The limit is set to the current position and then
+ the position is set to zero.  If the mark is defined then it is
+ discarded.
+
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', ` After a sequence of channel-read or `],
+					[/* text */ 't', `put`],
+					[/* text */ 't', ` operations, invoke
+ this method to prepare for a sequence of channel-write or relative
+ `],
+					[/* text */ 't', `get`],
+					[/* text */ 't', ` operations.  For example:
+
+ `]
+				]],
+				[/* block */ 'b', [
+					[/* code block */ 'c', ` buf.put(magic);    // Prepend header
+ in.read(buf);      // Read data into rest of buffer
+ buf.flip();        // Flip buffer
+ out.write(buf);    // Write header + data to channel`]
+				]],
+				[/* block */ 'b', ''],
+				[/* block */ 'b', [
+					[/* text */ 't', ` This method is often used in conjunction with the `],
+					[/* reference */ 'r', `.ByteBuffer#compact()`],
+					[/* text */ 't', ` method when transferring data from
+ one place to another.  `]
+				]]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `This buffer`]
 			]
 		]],
 		[/* method */ 'force()', [
@@ -570,6 +469,107 @@ DocsCollector.collect('java.nio.MappedByteBuffer', [
          storage device containing the mapped file`]
 				]]
 			],
+			[/* return description */
+				[/* text */ 't', `This buffer`]
+			]
+		]],
+		[/* method */ 'limit(int)', [
+			[/* method description */
+				[/* text */ 't', `Sets this buffer's limit.  If the position is larger than the new limit
+ then it is set to the new limit.  If the mark is defined and larger than
+ the new limit then it is discarded.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'newLimit', [/* parameter description */
+					[/* text */ 't', `The new limit value; must be non-negative
+         and no larger than this buffer's capacity`]
+				]]
+			],
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `This buffer`]
+			]
+		]],
+		[/* method */ 'load()', [
+			[/* method description */
+				[/* text */ 't', `Loads this buffer's content into physical memory.
+
+ `],
+				[/* block */ 'b', ` This method makes a best effort to ensure that, when it returns,
+ this buffer's content is resident in physical memory.  Invoking this
+ method may cause some number of page faults and I/O operations to
+ occur. `]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `This buffer`]
+			]
+		]],
+		[/* method */ 'mark()', [
+			[/* method description */
+				[/* text */ 't', `Sets this buffer's mark at its position.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `This buffer`]
+			]
+		]],
+		[/* method */ 'position(int)', [
+			[/* method description */
+				[/* text */ 't', `Sets this buffer's position.  If the mark is defined and larger than the
+ new position then it is discarded.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'newPosition', [/* parameter description */
+					[/* text */ 't', `The new position value; must be non-negative
+         and no larger than the current limit`]
+				]]
+			],
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `This buffer`]
+			]
+		]],
+		[/* method */ 'reset()', [
+			[/* method description */
+				[/* text */ 't', `Resets this buffer's position to the previously-marked position.
+
+ `],
+				[/* block */ 'b', ` Invoking this method neither changes nor discards the mark's
+ value. `]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `This buffer`]
+			]
+		]],
+		[/* method */ 'rewind()', [
+			[/* method description */
+				[/* text */ 't', `Rewinds this buffer.  The position is set to zero and the mark is
+ discarded.
+
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', ` Invoke this method before a sequence of channel-write or `],
+					[/* text */ 't', `get`],
+					[/* text */ 't', `
+ operations, assuming that the limit has already been set
+ appropriately.  For example:
+
+ `]
+				]],
+				[/* block */ 'b', [
+					[/* code block */ 'c', ` out.write(buf);    // Write remaining data
+ buf.rewind();      // Rewind buffer
+ buf.get(array);    // Copy data into array`]
+				]],
+				[/* block */ 'b', '']
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
 			[/* return description */
 				[/* text */ 't', `This buffer`]
 			]

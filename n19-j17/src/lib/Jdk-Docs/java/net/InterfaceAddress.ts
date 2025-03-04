@@ -45,6 +45,16 @@ DocsCollector.collect('java.net.InterfaceAddress', [
 				[/* text */ 't', ` otherwise.`]
 			]
 		]],
+		[/* method */ 'hashCode()', [
+			[/* method description */
+				[/* text */ 't', `Returns a hashcode for this Interface address.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `a hash code value for this Interface address.`]
+			]
+		]],
 		[/* method */ 'toString()', [
 			[/* method description */
 				[/* text */ 't', `Converts this Interface address to a `],
@@ -56,16 +66,6 @@ DocsCollector.collect('java.net.InterfaceAddress', [
 			/* throws */ UDF,
 			[/* return description */
 				[/* text */ 't', `a string representation of this Interface address.`]
-			]
-		]],
-		[/* method */ 'hashCode()', [
-			[/* method description */
-				[/* text */ 't', `Returns a hashcode for this Interface address.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `a hash code value for this Interface address.`]
 			]
 		]],
 		[/* method */ 'getAddress()', [

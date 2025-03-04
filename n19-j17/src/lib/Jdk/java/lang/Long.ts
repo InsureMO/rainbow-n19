@@ -989,15 +989,27 @@ JdkClassCreateHelper.class('java.lang.Long', [
 		]
 	],
 	[/* declared fields */
-		[/* public static final long java.lang.Long.MIN_VALUE */
-			/* name */ 'MIN_VALUE',
-			/* type */ 'long',
+		[/* public static final int java.lang.Long.BYTES */
+			/* name */ 'BYTES',
+			/* type */ 'int',
 			/* annotations */ UDF,
 			/* modifiers */ 25
 		],
 		[/* public static final long java.lang.Long.MAX_VALUE */
 			/* name */ 'MAX_VALUE',
 			/* type */ 'long',
+			/* annotations */ UDF,
+			/* modifiers */ 25
+		],
+		[/* public static final long java.lang.Long.MIN_VALUE */
+			/* name */ 'MIN_VALUE',
+			/* type */ 'long',
+			/* annotations */ UDF,
+			/* modifiers */ 25
+		],
+		[/* public static final int java.lang.Long.SIZE */
+			/* name */ 'SIZE',
+			/* type */ 'int',
 			/* annotations */ UDF,
 			/* modifiers */ 25
 		],
@@ -1010,18 +1022,6 @@ JdkClassCreateHelper.class('java.lang.Long', [
 				/* raw type */ 'java.lang.Class',
 				/* owner type */ UDF
 			]],
-			/* annotations */ UDF,
-			/* modifiers */ 25
-		],
-		[/* public static final int java.lang.Long.SIZE */
-			/* name */ 'SIZE',
-			/* type */ 'int',
-			/* annotations */ UDF,
-			/* modifiers */ 25
-		],
-		[/* public static final int java.lang.Long.BYTES */
-			/* name */ 'BYTES',
-			/* type */ 'int',
 			/* annotations */ UDF,
 			/* modifiers */ 25
 		]

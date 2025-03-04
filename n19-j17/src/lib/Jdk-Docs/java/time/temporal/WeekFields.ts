@@ -348,16 +348,20 @@ DocsCollector.collect('java.time.temporal.WeekFields', [
 				[/* text */ 't', `true if this is equal to the specified rules`]
 			]
 		]],
-		[/* method */ 'toString()', [
+		[/* method */ 'getMinimalDaysInFirstWeek()', [
 			[/* method description */
-				[/* text */ 't', `A string representation of this `],
-				[/* inline code block */ 'i', `WeekFields`],
-				[/* text */ 't', ` instance.`]
+				[/* text */ 't', `Gets the minimal number of days in the first week.
+ `],
+				[/* block */ 'b', `
+ The number of days considered to define the first week of a month or year
+ varies by culture.
+ For example, the ISO-8601 requires 4 days (more than half a week) to
+ be present before counting the first week.`]
 			],
 			/* parameters */ UDF,
 			/* throws */ UDF,
 			[/* return description */
-				[/* text */ 't', `the string representation, not null`]
+				[/* text */ 't', `the minimal number of days in the first week of a month or year, from 1 to 7`]
 			]
 		]],
 		[/* method */ 'hashCode()', [
@@ -372,78 +376,35 @@ DocsCollector.collect('java.time.temporal.WeekFields', [
 				[/* text */ 't', `a suitable hash code`]
 			]
 		]],
-		[/* method */ 'of(java.util.Locale)', [
+		[/* method */ 'toString()', [
 			[/* method description */
-				[/* text */ 't', `Obtains an instance of `],
+				[/* text */ 't', `A string representation of this `],
 				[/* inline code block */ 'i', `WeekFields`],
-				[/* text */ 't', ` appropriate for a locale.
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', `
- This will look up appropriate values from the provider of localization data.
- If the locale contains "fw" (First day of week) and/or "rg"
- (Region Override) `],
-					[/* reference */ 'r', `java.time.Locale#def_locale_extension`],
-					[/* text */ 't', `, returned instance will reflect the values specified with
- those extensions. If both "fw" and "rg" are specified, the value from
- the "fw" extension supersedes the implicit one from the "rg" extension.`]
-				]]
+				[/* text */ 't', ` instance.`]
 			],
-			[/* parameters */
-				[/* parameter */ 'locale', [/* parameter description */
-					[/* text */ 't', `the locale to use, not null`]
-				]]
-			],
+			/* parameters */ UDF,
 			/* throws */ UDF,
 			[/* return description */
-				[/* text */ 't', `the week-definition, not null`]
+				[/* text */ 't', `the string representation, not null`]
 			]
 		]],
-		[/* method */ 'of(java.time.DayOfWeek,int)', [
+		[/* method */ 'getFirstDayOfWeek()', [
 			[/* method description */
-				[/* text */ 't', `Obtains an instance of `],
-				[/* inline code block */ 'i', `WeekFields`],
-				[/* text */ 't', ` from the first day-of-week and minimal days.
+				[/* text */ 't', `Gets the first day-of-week.
  `],
 				[/* block */ 'b', [
 					[/* text */ 't', `
- The first day-of-week defines the ISO `],
+ The first day-of-week varies by culture.
+ For example, the US uses Sunday, while France and the ISO-8601 standard use Monday.
+ This method returns the first day using the standard `],
 					[/* inline code block */ 'i', `DayOfWeek`],
-					[/* text */ 't', ` that is day 1 of the week.
- The minimal number of days in the first week defines how many days must be present
- in a month or year, starting from the first day-of-week, before the week is counted
- as the first week. A value of 1 will count the first day of the month or year as part
- of the first week, whereas a value of 7 will require the whole seven days to be in
- the new month or year.
- `]
-				]],
-				[/* block */ 'b', [
-					[/* text */ 't', `
- WeekFields instances are singletons; for each unique combination
- of `],
-					[/* inline code block */ 'i', `firstDayOfWeek`],
-					[/* text */ 't', ` and `],
-					[/* inline code block */ 'i', `minimalDaysInFirstWeek`],
-					[/* text */ 't', `
- the same instance will be returned.`]
+					[/* text */ 't', ` enum.`]
 				]]
 			],
-			[/* parameters */
-				[/* parameter */ 'firstDayOfWeek', [/* parameter description */
-					[/* text */ 't', `the first day of the week, not null`]
-				]],
-				[/* parameter */ 'minimalDaysInFirstWeek', [/* parameter description */
-					[/* text */ 't', `the minimal number of days in the first week, from 1 to 7`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
-					[/* text */ 't', `if the minimal days value is less than one
-      or greater than 7`]
-				]]
-			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
 			[/* return description */
-				[/* text */ 't', `the week-definition, not null`]
+				[/* text */ 't', `the first day-of-week, not null`]
 			]
 		]],
 		[/* method */ 'dayOfWeek()', [
@@ -486,53 +447,21 @@ DocsCollector.collect('java.time.temporal.WeekFields', [
 				[/* text */ 't', `a field providing access to the day-of-week with localized numbering, not null`]
 			]
 		]],
-		[/* method */ 'getFirstDayOfWeek()', [
+		[/* method */ 'weekBasedYear()', [
 			[/* method description */
-				[/* text */ 't', `Gets the first day-of-week.
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', `
- The first day-of-week varies by culture.
- For example, the US uses Sunday, while France and the ISO-8601 standard use Monday.
- This method returns the first day using the standard `],
-					[/* inline code block */ 'i', `DayOfWeek`],
-					[/* text */ 't', ` enum.`]
-				]]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the first day-of-week, not null`]
-			]
-		]],
-		[/* method */ 'getMinimalDaysInFirstWeek()', [
-			[/* method description */
-				[/* text */ 't', `Gets the minimal number of days in the first week.
- `],
-				[/* block */ 'b', `
- The number of days considered to define the first week of a month or year
- varies by culture.
- For example, the ISO-8601 requires 4 days (more than half a week) to
- be present before counting the first week.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the minimal number of days in the first week of a month or year, from 1 to 7`]
-			]
-		]],
-		[/* method */ 'weekOfYear()', [
-			[/* method description */
-				[/* text */ 't', `Returns a field to access the week of year based on this `],
+				[/* text */ 't', `Returns a field to access the year of a week-based-year based on this `],
 				[/* inline code block */ 'i', `WeekFields`],
 				[/* text */ 't', `.
  `],
 				[/* block */ 'b', [
 					[/* text */ 't', `
- This represents the concept of the count of weeks within the year where weeks
- start on a fixed day-of-week, such as Monday.
+ This represents the concept of the year where weeks start on a fixed day-of-week,
+ such as Monday and each week belongs to exactly one year.
  This field is typically used with `],
 					[/* reference */ 'r', `#dayOfWeek()`, `dayOfWeek()`],
+					[/* text */ 't', ` and
+ `],
+					[/* reference */ 'r', `#weekOfWeekBasedYear()`, `weekOfWeekBasedYear()`],
 					[/* text */ 't', `.
  `]
 				]],
@@ -544,34 +473,16 @@ DocsCollector.collect('java.time.temporal.WeekFields', [
  where there are at least `],
 					[/* reference */ 'r', `#getMinimalDaysInFirstWeek()`, `getMinimalDaysInFirstWeek()`],
 					[/* text */ 't', ` days in the year.
- Thus, week one may start up to `],
-					[/* inline code block */ 'i', `minDays`],
-					[/* text */ 't', ` days before the start of the year.
- If the first week starts after the start of the year then the period before is week zero (0).
+ Thus, week one may start before the start of the year.
+ If the first week starts after the start of the year then the period before
+ is in the last week of the previous year.
  `]
-				]],
-				[/* block */ 'b', [
-					[/* text */ 't', `
- For example:`],
-					[/* new line */ 'n'],
-					[/* text */ 't', `
- - if the 1st day of the year is a Monday, week one starts on the 1st and there is no week zero`],
-					[/* new line */ 'n'],
-					[/* text */ 't', `
- - if the 2nd day of the year is a Monday, week one starts on the 2nd and the 1st is in week zero`],
-					[/* new line */ 'n'],
-					[/* text */ 't', `
- - if the 4th day of the year is a Monday, week one starts on the 4th and the 1st to 3rd is in week zero`],
-					[/* new line */ 'n'],
-					[/* text */ 't', `
- - if the 5th day of the year is a Monday, week two starts on the 5th and the 1st to 4th is in week one`],
-					[/* new line */ 'n']
 				]],
 				[/* block */ 'b', `
  This field can be used with any calendar system.
  `],
 				[/* block */ 'b', `
- In the resolving phase of parsing, a date can be created from a year,
+ In the resolving phase of parsing, a date can be created from a week-based-year,
  week-of-year and day-of-week.
  `],
 				[/* block */ 'b', [
@@ -580,7 +491,8 @@ DocsCollector.collect('java.time.temporal.WeekFields', [
 					[/* reference */ 'r', `java.ResolverStyle#STRICT`],
 					[/* text */ 't', `, all three fields are
  validated against their range of valid values. The week-of-year field
- is validated to ensure that the resulting year is the year requested.
+ is validated to ensure that the resulting week-based-year is the
+ week-based-year requested.
  `]
 				]],
 				[/* block */ 'b', [
@@ -588,9 +500,9 @@ DocsCollector.collect('java.time.temporal.WeekFields', [
  In `],
 					[/* reference */ 'r', `java.ResolverStyle#SMART`],
 					[/* text */ 't', `, all three fields are
- validated against their range of valid values. The week-of-year field
- is validated from 0 to 54, meaning that the resulting date can be in a
- different year to that specified.
+ validated against their range of valid values. The week-of-week-based-year field
+ is validated from 1 to 53, meaning that the resulting date can be in the
+ following week-based-year to that specified.
  `]
 				]],
 				[/* block */ 'b', [
@@ -600,15 +512,15 @@ DocsCollector.collect('java.time.temporal.WeekFields', [
 					[/* text */ 't', `, the year and day-of-week
  are validated against the range of valid values. The resulting date is calculated
  equivalent to the following three stage approach.
- First, create a date on the first day of the first week in the requested year.
- Then take the week-of-year, subtract one, and add the amount in weeks to the date.
+ First, create a date on the first day of the first week in the requested week-based-year.
+ Then take the week-of-week-based-year, subtract one, and add the amount in weeks to the date.
  Finally, adjust to the correct day-of-week within the localized week.`]
 				]]
 			],
 			/* parameters */ UDF,
 			/* throws */ UDF,
 			[/* return description */
-				[/* text */ 't', `a field providing access to the week-of-year, not null`]
+				[/* text */ 't', `a field providing access to the week-based-year, not null`]
 			]
 		]],
 		[/* method */ 'weekOfMonth()', [
@@ -797,21 +709,18 @@ DocsCollector.collect('java.time.temporal.WeekFields', [
 				[/* text */ 't', `a field providing access to the week-of-week-based-year, not null`]
 			]
 		]],
-		[/* method */ 'weekBasedYear()', [
+		[/* method */ 'weekOfYear()', [
 			[/* method description */
-				[/* text */ 't', `Returns a field to access the year of a week-based-year based on this `],
+				[/* text */ 't', `Returns a field to access the week of year based on this `],
 				[/* inline code block */ 'i', `WeekFields`],
 				[/* text */ 't', `.
  `],
 				[/* block */ 'b', [
 					[/* text */ 't', `
- This represents the concept of the year where weeks start on a fixed day-of-week,
- such as Monday and each week belongs to exactly one year.
+ This represents the concept of the count of weeks within the year where weeks
+ start on a fixed day-of-week, such as Monday.
  This field is typically used with `],
 					[/* reference */ 'r', `#dayOfWeek()`, `dayOfWeek()`],
-					[/* text */ 't', ` and
- `],
-					[/* reference */ 'r', `#weekOfWeekBasedYear()`, `weekOfWeekBasedYear()`],
 					[/* text */ 't', `.
  `]
 				]],
@@ -823,16 +732,34 @@ DocsCollector.collect('java.time.temporal.WeekFields', [
  where there are at least `],
 					[/* reference */ 'r', `#getMinimalDaysInFirstWeek()`, `getMinimalDaysInFirstWeek()`],
 					[/* text */ 't', ` days in the year.
- Thus, week one may start before the start of the year.
- If the first week starts after the start of the year then the period before
- is in the last week of the previous year.
+ Thus, week one may start up to `],
+					[/* inline code block */ 'i', `minDays`],
+					[/* text */ 't', ` days before the start of the year.
+ If the first week starts after the start of the year then the period before is week zero (0).
  `]
+				]],
+				[/* block */ 'b', [
+					[/* text */ 't', `
+ For example:`],
+					[/* new line */ 'n'],
+					[/* text */ 't', `
+ - if the 1st day of the year is a Monday, week one starts on the 1st and there is no week zero`],
+					[/* new line */ 'n'],
+					[/* text */ 't', `
+ - if the 2nd day of the year is a Monday, week one starts on the 2nd and the 1st is in week zero`],
+					[/* new line */ 'n'],
+					[/* text */ 't', `
+ - if the 4th day of the year is a Monday, week one starts on the 4th and the 1st to 3rd is in week zero`],
+					[/* new line */ 'n'],
+					[/* text */ 't', `
+ - if the 5th day of the year is a Monday, week two starts on the 5th and the 1st to 4th is in week one`],
+					[/* new line */ 'n']
 				]],
 				[/* block */ 'b', `
  This field can be used with any calendar system.
  `],
 				[/* block */ 'b', `
- In the resolving phase of parsing, a date can be created from a week-based-year,
+ In the resolving phase of parsing, a date can be created from a year,
  week-of-year and day-of-week.
  `],
 				[/* block */ 'b', [
@@ -841,8 +768,7 @@ DocsCollector.collect('java.time.temporal.WeekFields', [
 					[/* reference */ 'r', `java.ResolverStyle#STRICT`],
 					[/* text */ 't', `, all three fields are
  validated against their range of valid values. The week-of-year field
- is validated to ensure that the resulting week-based-year is the
- week-based-year requested.
+ is validated to ensure that the resulting year is the year requested.
  `]
 				]],
 				[/* block */ 'b', [
@@ -850,9 +776,9 @@ DocsCollector.collect('java.time.temporal.WeekFields', [
  In `],
 					[/* reference */ 'r', `java.ResolverStyle#SMART`],
 					[/* text */ 't', `, all three fields are
- validated against their range of valid values. The week-of-week-based-year field
- is validated from 1 to 53, meaning that the resulting date can be in the
- following week-based-year to that specified.
+ validated against their range of valid values. The week-of-year field
+ is validated from 0 to 54, meaning that the resulting date can be in a
+ different year to that specified.
  `]
 				]],
 				[/* block */ 'b', [
@@ -862,15 +788,89 @@ DocsCollector.collect('java.time.temporal.WeekFields', [
 					[/* text */ 't', `, the year and day-of-week
  are validated against the range of valid values. The resulting date is calculated
  equivalent to the following three stage approach.
- First, create a date on the first day of the first week in the requested week-based-year.
- Then take the week-of-week-based-year, subtract one, and add the amount in weeks to the date.
+ First, create a date on the first day of the first week in the requested year.
+ Then take the week-of-year, subtract one, and add the amount in weeks to the date.
  Finally, adjust to the correct day-of-week within the localized week.`]
 				]]
 			],
 			/* parameters */ UDF,
 			/* throws */ UDF,
 			[/* return description */
-				[/* text */ 't', `a field providing access to the week-based-year, not null`]
+				[/* text */ 't', `a field providing access to the week-of-year, not null`]
+			]
+		]],
+		[/* method */ 'of(java.time.DayOfWeek,int)', [
+			[/* method description */
+				[/* text */ 't', `Obtains an instance of `],
+				[/* inline code block */ 'i', `WeekFields`],
+				[/* text */ 't', ` from the first day-of-week and minimal days.
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', `
+ The first day-of-week defines the ISO `],
+					[/* inline code block */ 'i', `DayOfWeek`],
+					[/* text */ 't', ` that is day 1 of the week.
+ The minimal number of days in the first week defines how many days must be present
+ in a month or year, starting from the first day-of-week, before the week is counted
+ as the first week. A value of 1 will count the first day of the month or year as part
+ of the first week, whereas a value of 7 will require the whole seven days to be in
+ the new month or year.
+ `]
+				]],
+				[/* block */ 'b', [
+					[/* text */ 't', `
+ WeekFields instances are singletons; for each unique combination
+ of `],
+					[/* inline code block */ 'i', `firstDayOfWeek`],
+					[/* text */ 't', ` and `],
+					[/* inline code block */ 'i', `minimalDaysInFirstWeek`],
+					[/* text */ 't', `
+ the same instance will be returned.`]
+				]]
+			],
+			[/* parameters */
+				[/* parameter */ 'firstDayOfWeek', [/* parameter description */
+					[/* text */ 't', `the first day of the week, not null`]
+				]],
+				[/* parameter */ 'minimalDaysInFirstWeek', [/* parameter description */
+					[/* text */ 't', `the minimal number of days in the first week, from 1 to 7`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
+					[/* text */ 't', `if the minimal days value is less than one
+      or greater than 7`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `the week-definition, not null`]
+			]
+		]],
+		[/* method */ 'of(java.util.Locale)', [
+			[/* method description */
+				[/* text */ 't', `Obtains an instance of `],
+				[/* inline code block */ 'i', `WeekFields`],
+				[/* text */ 't', ` appropriate for a locale.
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', `
+ This will look up appropriate values from the provider of localization data.
+ If the locale contains "fw" (First day of week) and/or "rg"
+ (Region Override) `],
+					[/* reference */ 'r', `java.time.Locale#def_locale_extension`],
+					[/* text */ 't', `, returned instance will reflect the values specified with
+ those extensions. If both "fw" and "rg" are specified, the value from
+ the "fw" extension supersedes the implicit one from the "rg" extension.`]
+				]]
+			],
+			[/* parameters */
+				[/* parameter */ 'locale', [/* parameter description */
+					[/* text */ 't', `the locale to use, not null`]
+				]]
+			],
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the week-definition, not null`]
 			]
 		]]
 	],

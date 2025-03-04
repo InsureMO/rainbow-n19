@@ -67,130 +67,6 @@ DocsCollector.collect('java.time.InstantSource', [
 	/* fields */ UDF,
 	/* constructors */ UDF,
 	[/* methods */
-		[/* method */ 'offset(java.time.InstantSource,java.time.Duration)', [
-			[/* method description */
-				[/* text */ 't', `Obtains a source that returns instants from the specified source with the
- specified duration added.
- `],
-				[/* block */ 'b', `
- This source wraps another source, returning instants that are later by the
- specified duration. If the duration is negative, the instants will be
- earlier than the current date and time.
- The main use case for this is to simulate running in the future or in the past.
- `],
-				[/* block */ 'b', `
- A duration of zero would have no offsetting effect.
- Passing zero will return the underlying source.
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', `
- The returned implementation is immutable, thread-safe and `],
-					[/* inline code block */ 'i', `Serializable`],
-					[/* text */ 't', `
- providing that the base source is.`]
-				]]
-			],
-			[/* parameters */
-				[/* parameter */ 'baseSource', [/* parameter description */
-					[/* text */ 't', `the base source to add the duration to, not null`]
-				]],
-				[/* parameter */ 'offsetDuration', [/* parameter description */
-					[/* text */ 't', `the duration to add, not null`]
-				]]
-			],
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `a source based on the base source with the duration added, not null`]
-			]
-		]],
-		[/* method */ 'millis()', [
-			[/* method description */
-				[/* text */ 't', `Gets the current millisecond instant of the source.
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', `
- This returns the millisecond-based instant, measured from 1970-01-01T00:00Z (UTC).
- This is equivalent to the definition of `],
-					[/* reference */ 'r', `java.System#currentTimeMillis()`],
-					[/* text */ 't', `.
- `]
-				]],
-				[/* block */ 'b', [
-					[/* text */ 't', `
- Most applications should avoid this method and use `],
-					[/* reference */ 'r', `java.time.Instant`],
-					[/* text */ 't', ` to represent
- an instant on the time-line rather than a raw millisecond value.
- This method is provided to allow the use of the source in high performance use cases
- where the creation of an object would be unacceptable.`]
-				]]
-			],
-			/* parameters */ UDF,
-			[/* throws */
-				[/* throw */ 'java.time.DateTimeException', [/* throw description */
-					[/* text */ 't', `if the instant cannot be obtained, not thrown by most implementations`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `the current millisecond instant from this source, measured from
-  the Java epoch of 1970-01-01T00:00Z (UTC), not null`]
-			]
-		]],
-		[/* method */ 'system()', [
-			[/* method description */
-				[/* text */ 't', `Obtains a source that returns the current instant using the best available
- system clock.
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', `
- This source is based on the best available system clock. This may use
- `],
-					[/* reference */ 'r', `java.System#currentTimeMillis()`],
-					[/* text */ 't', `, or a higher resolution system clock if
- one is available.
- `]
-				]],
-				[/* block */ 'b', [
-					[/* text */ 't', `
- The returned implementation is immutable, thread-safe and
- `],
-					[/* inline code block */ 'i', `Serializable`],
-					[/* text */ 't', `.`]
-				]]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `a source that uses the best available system clock, not null`]
-			]
-		]],
-		[/* method */ 'fixed(java.time.Instant)', [
-			[/* method description */
-				[/* text */ 't', `Obtains a source that always returns the same instant.
- `],
-				[/* block */ 'b', `
- This source simply returns the specified instant.
- As such, it is not a source that represents the current instant.
- The main use case for this is in testing, where the fixed source ensures
- tests are not dependent on the current source.
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', `
- The returned implementation is immutable, thread-safe and `],
-					[/* inline code block */ 'i', `Serializable`],
-					[/* text */ 't', `.`]
-				]]
-			],
-			[/* parameters */
-				[/* parameter */ 'fixedInstant', [/* parameter description */
-					[/* text */ 't', `the instant to use, not null`]
-				]]
-			],
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `a source that always returns the same instant, not null`]
-			]
-		]],
 		[/* method */ 'instant()', [
 			[/* method description */
 				[/* text */ 't', `Gets the current instant of the source.
@@ -236,6 +112,130 @@ DocsCollector.collect('java.time.InstantSource', [
 			/* throws */ UDF,
 			[/* return description */
 				[/* text */ 't', `a clock based on this source with the specified time-zone, not null`]
+			]
+		]],
+		[/* method */ 'millis()', [
+			[/* method description */
+				[/* text */ 't', `Gets the current millisecond instant of the source.
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', `
+ This returns the millisecond-based instant, measured from 1970-01-01T00:00Z (UTC).
+ This is equivalent to the definition of `],
+					[/* reference */ 'r', `java.System#currentTimeMillis()`],
+					[/* text */ 't', `.
+ `]
+				]],
+				[/* block */ 'b', [
+					[/* text */ 't', `
+ Most applications should avoid this method and use `],
+					[/* reference */ 'r', `java.time.Instant`],
+					[/* text */ 't', ` to represent
+ an instant on the time-line rather than a raw millisecond value.
+ This method is provided to allow the use of the source in high performance use cases
+ where the creation of an object would be unacceptable.`]
+				]]
+			],
+			/* parameters */ UDF,
+			[/* throws */
+				[/* throw */ 'java.time.DateTimeException', [/* throw description */
+					[/* text */ 't', `if the instant cannot be obtained, not thrown by most implementations`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `the current millisecond instant from this source, measured from
+  the Java epoch of 1970-01-01T00:00Z (UTC), not null`]
+			]
+		]],
+		[/* method */ 'fixed(java.time.Instant)', [
+			[/* method description */
+				[/* text */ 't', `Obtains a source that always returns the same instant.
+ `],
+				[/* block */ 'b', `
+ This source simply returns the specified instant.
+ As such, it is not a source that represents the current instant.
+ The main use case for this is in testing, where the fixed source ensures
+ tests are not dependent on the current source.
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', `
+ The returned implementation is immutable, thread-safe and `],
+					[/* inline code block */ 'i', `Serializable`],
+					[/* text */ 't', `.`]
+				]]
+			],
+			[/* parameters */
+				[/* parameter */ 'fixedInstant', [/* parameter description */
+					[/* text */ 't', `the instant to use, not null`]
+				]]
+			],
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `a source that always returns the same instant, not null`]
+			]
+		]],
+		[/* method */ 'offset(java.time.InstantSource,java.time.Duration)', [
+			[/* method description */
+				[/* text */ 't', `Obtains a source that returns instants from the specified source with the
+ specified duration added.
+ `],
+				[/* block */ 'b', `
+ This source wraps another source, returning instants that are later by the
+ specified duration. If the duration is negative, the instants will be
+ earlier than the current date and time.
+ The main use case for this is to simulate running in the future or in the past.
+ `],
+				[/* block */ 'b', `
+ A duration of zero would have no offsetting effect.
+ Passing zero will return the underlying source.
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', `
+ The returned implementation is immutable, thread-safe and `],
+					[/* inline code block */ 'i', `Serializable`],
+					[/* text */ 't', `
+ providing that the base source is.`]
+				]]
+			],
+			[/* parameters */
+				[/* parameter */ 'baseSource', [/* parameter description */
+					[/* text */ 't', `the base source to add the duration to, not null`]
+				]],
+				[/* parameter */ 'offsetDuration', [/* parameter description */
+					[/* text */ 't', `the duration to add, not null`]
+				]]
+			],
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `a source based on the base source with the duration added, not null`]
+			]
+		]],
+		[/* method */ 'system()', [
+			[/* method description */
+				[/* text */ 't', `Obtains a source that returns the current instant using the best available
+ system clock.
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', `
+ This source is based on the best available system clock. This may use
+ `],
+					[/* reference */ 'r', `java.System#currentTimeMillis()`],
+					[/* text */ 't', `, or a higher resolution system clock if
+ one is available.
+ `]
+				]],
+				[/* block */ 'b', [
+					[/* text */ 't', `
+ The returned implementation is immutable, thread-safe and
+ `],
+					[/* inline code block */ 'i', `Serializable`],
+					[/* text */ 't', `.`]
+				]]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `a source that uses the best available system clock, not null`]
 			]
 		]],
 		[/* method */ 'tick(java.time.InstantSource,java.time.Duration)', [

@@ -22,97 +22,6 @@ DocsCollector.collect('java.lang.invoke.ConstantBootstraps', [
 	/* fields */ UDF,
 	/* constructors */ UDF,
 	[/* methods */
-		[/* method */ 'invoke(java.lang.invoke.MethodHandles.Lookup,java.lang.String,java.lang.Class,java.lang.invoke.MethodHandle,java.lang.Object...)', [
-			[/* method description */
-				[/* text */ 't', `Returns the result of invoking a method handle with the provided
- arguments.
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', `
- This method behaves as if the method handle to be invoked is the result
- of adapting the given method handle, via `],
-					[/* reference */ 'r', `.MethodHandle#asType(java.lang.invoke.MethodType)`],
-					[/* text */ 't', `, to
- adjust the return type to the desired type.`]
-				]]
-			],
-			[/* parameters */
-				[/* parameter */ 'lookup', [/* parameter description */
-					[/* text */ 't', `unused`]
-				]],
-				[/* parameter */ 'name', [/* parameter description */
-					[/* text */ 't', `unused`]
-				]],
-				[/* parameter */ 'type', [/* parameter description */
-					[/* text */ 't', `the desired type of the value to be returned, which must be
- compatible with the return type of the method handle`]
-				]],
-				[/* parameter */ 'handle', [/* parameter description */
-					[/* text */ 't', `the method handle to be invoked`]
-				]],
-				[/* parameter */ 'args', [/* parameter description */
-					[/* text */ 't', `the arguments to pass to the method handle, as if with
- `],
-					[/* reference */ 'r', `.MethodHandle#invokeWithArguments(java.lang.Object...)`],
-					[/* text */ 't', `.  Each argument may be
- `],
-					[/* inline code block */ 'i', `null`],
-					[/* text */ 't', `.`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.invoke.WrongMethodTypeException', [/* throw description */
-					[/* text */ 't', `if the handle's method type cannot be
- adjusted to take the given number of arguments, or if the handle's return
- type cannot be adjusted to the desired type`]
-				]],
-				[/* throw */ 'java.lang.ClassCastException', [/* throw description */
-					[/* text */ 't', `if an argument or the result produced by
- invoking the handle cannot be converted by reference casting`]
-				]],
-				[/* throw */ 'java.lang.Throwable', [/* throw description */
-					[/* text */ 't', `anything thrown by the method handle invocation`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `the result of invoking the method handle`]
-			]
-		]],
-		[/* method */ 'primitiveClass(java.lang.invoke.MethodHandles.Lookup,java.lang.String,java.lang.Class)', [
-			[/* method description */
-				[/* text */ 't', `Returns a `],
-				[/* reference */ 'r', `java.lang.Class`],
-				[/* text */ 't', ` mirror for the primitive type whose type
- descriptor is specified by `],
-				[/* inline code block */ 'i', `name`],
-				[/* text */ 't', `.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'lookup', [/* parameter description */
-					[/* text */ 't', `unused`]
-				]],
-				[/* parameter */ 'name', [/* parameter description */
-					[/* text */ 't', `the descriptor (JVMS 4.3) of the desired primitive type`]
-				]],
-				[/* parameter */ 'type', [/* parameter description */
-					[/* text */ 't', `the required result type (must be `],
-					[/* inline code block */ 'i', `Class.class`],
-					[/* text */ 't', `)`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
-					[/* text */ 't', `if the name is not a descriptor for a
- primitive type or the type is not `],
-					[/* inline code block */ 'i', `Class.class`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `the `],
-				[/* reference */ 'r', `java.lang.Class`],
-				[/* text */ 't', ` mirror`]
-			]
-		]],
 		[/* method */ 'enumConstant(java.lang.invoke.MethodHandles.Lookup,java.lang.String,java.lang.Class)', [
 			[/* method description */
 				[/* text */ 't', `Returns an `],
@@ -156,91 +65,13 @@ DocsCollector.collect('java.lang.invoke.ConstantBootstraps', [
  specified name`]
 			]
 		]],
-		[/* method */ 'getStaticFinal(java.lang.invoke.MethodHandles.Lookup,java.lang.String,java.lang.Class)', [
-			[/* method description */
-				[/* text */ 't', `Returns the value of a static final field declared in the class which
- is the same as the field's type (or, for primitive-valued fields,
- declared in the wrapper class.)  This is a simplified form of
- `],
-				[/* reference */ 'r', `#getStaticFinal(java.lang.invoke.MethodHandles.Lookup,java.lang.String,java.lang.Class,java.lang.Class)`, `getStaticFinal(MethodHandles.Lookup, String, Class, Class)`],
-				[/* text */ 't', `
- for the case where a class declares distinguished constant instances of
- itself.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'lookup', [/* parameter description */
-					[/* text */ 't', `the lookup context describing the class performing the
- operation (normally stacked by the JVM)`]
-				]],
-				[/* parameter */ 'name', [/* parameter description */
-					[/* text */ 't', `the name of the field`]
-				]],
-				[/* parameter */ 'type', [/* parameter description */
-					[/* text */ 't', `the type of the field`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.IllegalAccessError', [/* throw description */
-					[/* text */ 't', `if the declaring class or the field is not
- accessible to the class performing the operation`]
-				]],
-				[/* throw */ 'java.lang.NoSuchFieldError', [/* throw description */
-					[/* text */ 't', `if the specified field does not exist`]
-				]],
-				[/* throw */ 'java.lang.IncompatibleClassChangeError', [/* throw description */
-					[/* text */ 't', `if the specified field is not
- `],
-					[/* inline code block */ 'i', `final`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `the value of the field`]
-			]
-		]],
-		[/* method */ 'getStaticFinal(java.lang.invoke.MethodHandles.Lookup,java.lang.String,java.lang.Class,java.lang.Class)', [
-			[/* method description */
-				[/* text */ 't', `Returns the value of a static final field.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'lookup', [/* parameter description */
-					[/* text */ 't', `the lookup context describing the class performing the
- operation (normally stacked by the JVM)`]
-				]],
-				[/* parameter */ 'name', [/* parameter description */
-					[/* text */ 't', `the name of the field`]
-				]],
-				[/* parameter */ 'type', [/* parameter description */
-					[/* text */ 't', `the type of the field`]
-				]],
-				[/* parameter */ 'declaringClass', [/* parameter description */
-					[/* text */ 't', `the class in which the field is declared`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.IllegalAccessError', [/* throw description */
-					[/* text */ 't', `if the declaring class or the field is not
- accessible to the class performing the operation`]
-				]],
-				[/* throw */ 'java.lang.NoSuchFieldError', [/* throw description */
-					[/* text */ 't', `if the specified field does not exist`]
-				]],
-				[/* throw */ 'java.lang.IncompatibleClassChangeError', [/* throw description */
-					[/* text */ 't', `if the specified field is not
- `],
-					[/* inline code block */ 'i', `final`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `the value of the field`]
-			]
-		]],
-		[/* method */ 'nullConstant(java.lang.invoke.MethodHandles.Lookup,java.lang.String,java.lang.Class)', [
+		[/* method */ 'primitiveClass(java.lang.invoke.MethodHandles.Lookup,java.lang.String,java.lang.Class)', [
 			[/* method description */
 				[/* text */ 't', `Returns a `],
-				[/* inline code block */ 'i', `null`],
-				[/* text */ 't', ` object reference for the reference type specified
- by `],
-				[/* inline code block */ 'i', `type`],
+				[/* reference */ 'r', `java.lang.Class`],
+				[/* text */ 't', ` mirror for the primitive type whose type
+ descriptor is specified by `],
+				[/* inline code block */ 'i', `name`],
 				[/* text */ 't', `.`]
 			],
 			[/* parameters */
@@ -248,23 +79,63 @@ DocsCollector.collect('java.lang.invoke.ConstantBootstraps', [
 					[/* text */ 't', `unused`]
 				]],
 				[/* parameter */ 'name', [/* parameter description */
-					[/* text */ 't', `unused`]
+					[/* text */ 't', `the descriptor (JVMS 4.3) of the desired primitive type`]
 				]],
 				[/* parameter */ 'type', [/* parameter description */
-					[/* text */ 't', `a reference type`]
+					[/* text */ 't', `the required result type (must be `],
+					[/* inline code block */ 'i', `Class.class`],
+					[/* text */ 't', `)`]
 				]]
 			],
 			[/* throws */
 				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
-					[/* text */ 't', `if `],
-					[/* inline code block */ 'i', `type`],
-					[/* text */ 't', ` is not a reference type`]
+					[/* text */ 't', `if the name is not a descriptor for a
+ primitive type or the type is not `],
+					[/* inline code block */ 'i', `Class.class`]
 				]]
 			],
 			[/* return description */
-				[/* text */ 't', `a `],
-				[/* inline code block */ 'i', `null`],
-				[/* text */ 't', ` value`]
+				[/* text */ 't', `the `],
+				[/* reference */ 'r', `java.lang.Class`],
+				[/* text */ 't', ` mirror`]
+			]
+		]],
+		[/* method */ 'arrayVarHandle(java.lang.invoke.MethodHandles.Lookup,java.lang.String,java.lang.Class,java.lang.Class)', [
+			[/* method description */
+				[/* text */ 't', `Finds a `],
+				[/* reference */ 'r', `java.lang.invoke.VarHandle`],
+				[/* text */ 't', ` for an array type.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'lookup', [/* parameter description */
+					[/* text */ 't', `the lookup context describing the class performing the
+ operation (normally stacked by the JVM)`]
+				]],
+				[/* parameter */ 'name', [/* parameter description */
+					[/* text */ 't', `unused`]
+				]],
+				[/* parameter */ 'type', [/* parameter description */
+					[/* text */ 't', `the required result type (must be `],
+					[/* inline code block */ 'i', `Class<VarHandle>`],
+					[/* text */ 't', `)`]
+				]],
+				[/* parameter */ 'arrayClass', [/* parameter description */
+					[/* text */ 't', `the type of the array`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.lang.IllegalAccessError', [/* throw description */
+					[/* text */ 't', `if the component type of the array is not
+ accessible to the class performing the operation`]
+				]],
+				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
+					[/* text */ 't', `if the type is not `],
+					[/* inline code block */ 'i', `VarHandle`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `the `],
+				[/* reference */ 'r', `java.lang.invoke.VarHandle`]
 			]
 		]],
 		[/* method */ 'fieldVarHandle(java.lang.invoke.MethodHandles.Lookup,java.lang.String,java.lang.Class,java.lang.Class,java.lang.Class)', [
@@ -344,44 +215,6 @@ DocsCollector.collect('java.lang.invoke.ConstantBootstraps', [
 				]],
 				[/* throw */ 'java.lang.NoSuchFieldError', [/* throw description */
 					[/* text */ 't', `if the specified field does not exist`]
-				]],
-				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
-					[/* text */ 't', `if the type is not `],
-					[/* inline code block */ 'i', `VarHandle`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `the `],
-				[/* reference */ 'r', `java.lang.invoke.VarHandle`]
-			]
-		]],
-		[/* method */ 'arrayVarHandle(java.lang.invoke.MethodHandles.Lookup,java.lang.String,java.lang.Class,java.lang.Class)', [
-			[/* method description */
-				[/* text */ 't', `Finds a `],
-				[/* reference */ 'r', `java.lang.invoke.VarHandle`],
-				[/* text */ 't', ` for an array type.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'lookup', [/* parameter description */
-					[/* text */ 't', `the lookup context describing the class performing the
- operation (normally stacked by the JVM)`]
-				]],
-				[/* parameter */ 'name', [/* parameter description */
-					[/* text */ 't', `unused`]
-				]],
-				[/* parameter */ 'type', [/* parameter description */
-					[/* text */ 't', `the required result type (must be `],
-					[/* inline code block */ 'i', `Class<VarHandle>`],
-					[/* text */ 't', `)`]
-				]],
-				[/* parameter */ 'arrayClass', [/* parameter description */
-					[/* text */ 't', `the type of the array`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.IllegalAccessError', [/* throw description */
-					[/* text */ 't', `if the component type of the array is not
- accessible to the class performing the operation`]
 				]],
 				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
 					[/* text */ 't', `if the type is not `],
@@ -537,6 +370,173 @@ DocsCollector.collect('java.lang.invoke.ConstantBootstraps', [
 			],
 			[/* return description */
 				[/* text */ 't', `the converted value`]
+			]
+		]],
+		[/* method */ 'getStaticFinal(java.lang.invoke.MethodHandles.Lookup,java.lang.String,java.lang.Class)', [
+			[/* method description */
+				[/* text */ 't', `Returns the value of a static final field declared in the class which
+ is the same as the field's type (or, for primitive-valued fields,
+ declared in the wrapper class.)  This is a simplified form of
+ `],
+				[/* reference */ 'r', `#getStaticFinal(java.lang.invoke.MethodHandles.Lookup,java.lang.String,java.lang.Class,java.lang.Class)`, `getStaticFinal(MethodHandles.Lookup, String, Class, Class)`],
+				[/* text */ 't', `
+ for the case where a class declares distinguished constant instances of
+ itself.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'lookup', [/* parameter description */
+					[/* text */ 't', `the lookup context describing the class performing the
+ operation (normally stacked by the JVM)`]
+				]],
+				[/* parameter */ 'name', [/* parameter description */
+					[/* text */ 't', `the name of the field`]
+				]],
+				[/* parameter */ 'type', [/* parameter description */
+					[/* text */ 't', `the type of the field`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.lang.IllegalAccessError', [/* throw description */
+					[/* text */ 't', `if the declaring class or the field is not
+ accessible to the class performing the operation`]
+				]],
+				[/* throw */ 'java.lang.NoSuchFieldError', [/* throw description */
+					[/* text */ 't', `if the specified field does not exist`]
+				]],
+				[/* throw */ 'java.lang.IncompatibleClassChangeError', [/* throw description */
+					[/* text */ 't', `if the specified field is not
+ `],
+					[/* inline code block */ 'i', `final`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `the value of the field`]
+			]
+		]],
+		[/* method */ 'getStaticFinal(java.lang.invoke.MethodHandles.Lookup,java.lang.String,java.lang.Class,java.lang.Class)', [
+			[/* method description */
+				[/* text */ 't', `Returns the value of a static final field.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'lookup', [/* parameter description */
+					[/* text */ 't', `the lookup context describing the class performing the
+ operation (normally stacked by the JVM)`]
+				]],
+				[/* parameter */ 'name', [/* parameter description */
+					[/* text */ 't', `the name of the field`]
+				]],
+				[/* parameter */ 'type', [/* parameter description */
+					[/* text */ 't', `the type of the field`]
+				]],
+				[/* parameter */ 'declaringClass', [/* parameter description */
+					[/* text */ 't', `the class in which the field is declared`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.lang.IllegalAccessError', [/* throw description */
+					[/* text */ 't', `if the declaring class or the field is not
+ accessible to the class performing the operation`]
+				]],
+				[/* throw */ 'java.lang.NoSuchFieldError', [/* throw description */
+					[/* text */ 't', `if the specified field does not exist`]
+				]],
+				[/* throw */ 'java.lang.IncompatibleClassChangeError', [/* throw description */
+					[/* text */ 't', `if the specified field is not
+ `],
+					[/* inline code block */ 'i', `final`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `the value of the field`]
+			]
+		]],
+		[/* method */ 'invoke(java.lang.invoke.MethodHandles.Lookup,java.lang.String,java.lang.Class,java.lang.invoke.MethodHandle,java.lang.Object...)', [
+			[/* method description */
+				[/* text */ 't', `Returns the result of invoking a method handle with the provided
+ arguments.
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', `
+ This method behaves as if the method handle to be invoked is the result
+ of adapting the given method handle, via `],
+					[/* reference */ 'r', `.MethodHandle#asType(java.lang.invoke.MethodType)`],
+					[/* text */ 't', `, to
+ adjust the return type to the desired type.`]
+				]]
+			],
+			[/* parameters */
+				[/* parameter */ 'lookup', [/* parameter description */
+					[/* text */ 't', `unused`]
+				]],
+				[/* parameter */ 'name', [/* parameter description */
+					[/* text */ 't', `unused`]
+				]],
+				[/* parameter */ 'type', [/* parameter description */
+					[/* text */ 't', `the desired type of the value to be returned, which must be
+ compatible with the return type of the method handle`]
+				]],
+				[/* parameter */ 'handle', [/* parameter description */
+					[/* text */ 't', `the method handle to be invoked`]
+				]],
+				[/* parameter */ 'args', [/* parameter description */
+					[/* text */ 't', `the arguments to pass to the method handle, as if with
+ `],
+					[/* reference */ 'r', `.MethodHandle#invokeWithArguments(java.lang.Object...)`],
+					[/* text */ 't', `.  Each argument may be
+ `],
+					[/* inline code block */ 'i', `null`],
+					[/* text */ 't', `.`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.lang.invoke.WrongMethodTypeException', [/* throw description */
+					[/* text */ 't', `if the handle's method type cannot be
+ adjusted to take the given number of arguments, or if the handle's return
+ type cannot be adjusted to the desired type`]
+				]],
+				[/* throw */ 'java.lang.ClassCastException', [/* throw description */
+					[/* text */ 't', `if an argument or the result produced by
+ invoking the handle cannot be converted by reference casting`]
+				]],
+				[/* throw */ 'java.lang.Throwable', [/* throw description */
+					[/* text */ 't', `anything thrown by the method handle invocation`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `the result of invoking the method handle`]
+			]
+		]],
+		[/* method */ 'nullConstant(java.lang.invoke.MethodHandles.Lookup,java.lang.String,java.lang.Class)', [
+			[/* method description */
+				[/* text */ 't', `Returns a `],
+				[/* inline code block */ 'i', `null`],
+				[/* text */ 't', ` object reference for the reference type specified
+ by `],
+				[/* inline code block */ 'i', `type`],
+				[/* text */ 't', `.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'lookup', [/* parameter description */
+					[/* text */ 't', `unused`]
+				]],
+				[/* parameter */ 'name', [/* parameter description */
+					[/* text */ 't', `unused`]
+				]],
+				[/* parameter */ 'type', [/* parameter description */
+					[/* text */ 't', `a reference type`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
+					[/* text */ 't', `if `],
+					[/* inline code block */ 'i', `type`],
+					[/* text */ 't', ` is not a reference type`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `a `],
+				[/* inline code block */ 'i', `null`],
+				[/* text */ 't', ` value`]
 			]
 		]]
 	],

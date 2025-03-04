@@ -107,18 +107,6 @@ DocsCollector.collect('java.lang.constant.DynamicConstantDesc', [
 				[/* text */ 't', `.`]
 			]
 		]],
-		[/* method */ 'toString()', [
-			[/* method description */
-				[/* text */ 't', `Returns a compact textual description of this constant description,
- including the bootstrap method, the constant name and type, and
- the static bootstrap arguments.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `A compact textual description of this call site descriptor`]
-			]
-		]],
 		[/* method */ 'hashCode()', [
 			[/* method description */
 				[/* block */ 'b', [
@@ -183,177 +171,6 @@ DocsCollector.collect('java.lang.constant.DynamicConstantDesc', [
 				[/* text */ 't', `a hash code value for this object.`]
 			]
 		]],
-		[/* method */ 'of(java.lang.constant.DirectMethodHandleDesc,java.lang.constant.ConstantDesc...)', [
-			[/* method description */
-				[/* text */ 't', `Returns a nominal descriptor for a dynamic constant whose name parameter
- is `],
-				[/* reference */ 'r', `.ConstantDescs#DEFAULT_NAME`],
-				[/* text */ 't', `, and whose type parameter is always
- the same as the bootstrap method return type.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'bootstrapMethod', [/* parameter description */
-					[/* text */ 't', `a `],
-					[/* reference */ 'r', `java.lang.constant.DirectMethodHandleDesc`],
-					[/* text */ 't', ` describing the
-                        bootstrap method for the constant`]
-				]],
-				[/* parameter */ 'bootstrapArgs', [/* parameter description */
-					[/* text */ 't', ``],
-					[/* reference */ 'r', `java.lang.constant.ConstantDesc`],
-					[/* text */ 't', `s describing the static arguments
-                      to the bootstrap, that would appear in the
-                      `],
-					[/* inline code block */ 'i', `BootstrapMethods`],
-					[/* text */ 't', ` attribute`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
-					[/* text */ 't', `if any argument is null`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `the nominal descriptor`]
-			]
-		]],
-		[/* method */ 'of(java.lang.constant.DirectMethodHandleDesc)', [
-			[/* method description */
-				[/* text */ 't', `Returns a nominal descriptor for a dynamic constant whose bootstrap has
- no static arguments, whose name parameter is `],
-				[/* reference */ 'r', `.ConstantDescs#DEFAULT_NAME`],
-				[/* text */ 't', `,
- and whose type parameter is always the same as the bootstrap method return type.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'bootstrapMethod', [/* parameter description */
-					[/* text */ 't', `a `],
-					[/* reference */ 'r', `java.lang.constant.DirectMethodHandleDesc`],
-					[/* text */ 't', ` describing the
-                        bootstrap method for the constant`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
-					[/* text */ 't', `if any argument is null`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `the nominal descriptor`]
-			]
-		]],
-		[/* method */ 'resolveConstantDesc(java.lang.invoke.MethodHandles.Lookup)', [
-			[/* method description */
-				[/* block */ 'b', [
-					[/* text */ 't', `Resolves this descriptor reflectively, emulating the resolution behavior
- of JVMS 5.4.3 and the access control behavior of JVMS 5.4.4.  The resolution
- and access control context is provided by the `],
-					[/* reference */ 'r', `java.lang.invoke.MethodHandles.Lookup`],
-					[/* text */ 't', `
- parameter.  No caching of the resulting value is performed.`]
-				]]
-			],
-			[/* parameters */
-				[/* parameter */ 'lookup', [/* parameter description */
-					[/* text */ 't', `The `],
-					[/* reference */ 'r', `java.lang.invoke.MethodHandles.Lookup`],
-					[/* text */ 't', ` to provide name resolution
-               and access control context`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.ReflectiveOperationException', [/* throw description */
-					[/* text */ 't', `if a class, method, or field
- could not be reflectively resolved in the course of resolution`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `the resolved constant value`]
-			]
-		]],
-		[/* method */ 'bootstrapMethod()', [
-			[/* method description */
-				[/* text */ 't', `Returns a `],
-				[/* reference */ 'r', `java.lang.constant.MethodHandleDesc`],
-				[/* text */ 't', ` describing the bootstrap method for
- this constant.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the bootstrap method`]
-			]
-		]],
-		[/* method */ 'ofNamed(java.lang.constant.DirectMethodHandleDesc,java.lang.String,java.lang.constant.ClassDesc,java.lang.constant.ConstantDesc...)', [
-			[/* method description */
-				[/* text */ 't', `Returns a nominal descriptor for a dynamic constant.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'bootstrapMethod', [/* parameter description */
-					[/* text */ 't', `a `],
-					[/* reference */ 'r', `java.lang.constant.DirectMethodHandleDesc`],
-					[/* text */ 't', ` describing the
-                        bootstrap method for the constant`]
-				]],
-				[/* parameter */ 'constantName', [/* parameter description */
-					[/* text */ 't', `The unqualified name that would appear in the `],
-					[/* inline code block */ 'i', `NameAndType`],
-					[/* text */ 't', `
-                     operand of the `],
-					[/* inline code block */ 'i', `LDC`],
-					[/* text */ 't', ` for this constant`]
-				]],
-				[/* parameter */ 'constantType', [/* parameter description */
-					[/* text */ 't', `a `],
-					[/* reference */ 'r', `java.lang.constant.ClassDesc`],
-					[/* text */ 't', ` describing the type
-                     that would appear in the `],
-					[/* inline code block */ 'i', `NameAndType`],
-					[/* text */ 't', ` operand
-                     of the `],
-					[/* inline code block */ 'i', `LDC`],
-					[/* text */ 't', ` for this constant`]
-				]],
-				[/* parameter */ 'bootstrapArgs', [/* parameter description */
-					[/* text */ 't', ``],
-					[/* reference */ 'r', `java.lang.constant.ConstantDesc`],
-					[/* text */ 't', `s describing the static arguments
-                      to the bootstrap, that would appear in the
-                      `],
-					[/* inline code block */ 'i', `BootstrapMethods`],
-					[/* text */ 't', ` attribute`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
-					[/* text */ 't', `if any argument is null`]
-				]],
-				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
-					[/* text */ 't', `if the `],
-					[/* inline code block */ 'i', `name`],
-					[/* text */ 't', ` has the incorrect
- format`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `the nominal descriptor`]
-			]
-		]],
-		[/* method */ 'constantName()', [
-			[/* method description */
-				[/* text */ 't', `Returns the name that would appear in the `],
-				[/* inline code block */ 'i', `NameAndType`],
-				[/* text */ 't', ` operand
- of the `],
-				[/* inline code block */ 'i', `LDC`],
-				[/* text */ 't', ` for this constant.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the constant name`]
-			]
-		]],
 		[/* method */ 'constantType()', [
 			[/* method description */
 				[/* text */ 't', `Returns a `],
@@ -379,6 +196,60 @@ DocsCollector.collect('java.lang.constant.DynamicConstantDesc', [
 			/* throws */ UDF,
 			[/* return description */
 				[/* text */ 't', `the bootstrap arguments`]
+			]
+		]],
+		[/* method */ 'bootstrapMethod()', [
+			[/* method description */
+				[/* text */ 't', `Returns a `],
+				[/* reference */ 'r', `java.lang.constant.MethodHandleDesc`],
+				[/* text */ 't', ` describing the bootstrap method for
+ this constant.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the bootstrap method`]
+			]
+		]],
+		[/* method */ 'constantName()', [
+			[/* method description */
+				[/* text */ 't', `Returns the name that would appear in the `],
+				[/* inline code block */ 'i', `NameAndType`],
+				[/* text */ 't', ` operand
+ of the `],
+				[/* inline code block */ 'i', `LDC`],
+				[/* text */ 't', ` for this constant.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the constant name`]
+			]
+		]],
+		[/* method */ 'toString()', [
+			[/* method description */
+				[/* text */ 't', `Returns a compact textual description of this constant description,
+ including the bootstrap method, the constant name and type, and
+ the static bootstrap arguments.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `A compact textual description of this call site descriptor`]
+			]
+		]],
+		[/* method */ 'bootstrapArgsList()', [
+			[/* method description */
+				[/* text */ 't', `Returns the bootstrap arguments for this constant as an immutable `],
+				[/* reference */ 'r', `java.util.List`],
+				[/* text */ 't', `.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `a `],
+				[/* reference */ 'r', `java.util.List`],
+				[/* text */ 't', ` of the bootstrap arguments`]
 			]
 		]],
 		[/* method */ 'ofCanonical(java.lang.constant.DirectMethodHandleDesc,java.lang.String,java.lang.constant.ClassDesc,java.lang.constant.ConstantDesc[])', [
@@ -469,18 +340,147 @@ DocsCollector.collect('java.lang.constant.DynamicConstantDesc', [
 				[/* text */ 't', `the nominal descriptor`]
 			]
 		]],
-		[/* method */ 'bootstrapArgsList()', [
+		[/* method */ 'of(java.lang.constant.DirectMethodHandleDesc)', [
 			[/* method description */
-				[/* text */ 't', `Returns the bootstrap arguments for this constant as an immutable `],
-				[/* reference */ 'r', `java.util.List`],
-				[/* text */ 't', `.`]
+				[/* text */ 't', `Returns a nominal descriptor for a dynamic constant whose bootstrap has
+ no static arguments, whose name parameter is `],
+				[/* reference */ 'r', `.ConstantDescs#DEFAULT_NAME`],
+				[/* text */ 't', `,
+ and whose type parameter is always the same as the bootstrap method return type.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			[/* parameters */
+				[/* parameter */ 'bootstrapMethod', [/* parameter description */
+					[/* text */ 't', `a `],
+					[/* reference */ 'r', `java.lang.constant.DirectMethodHandleDesc`],
+					[/* text */ 't', ` describing the
+                        bootstrap method for the constant`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
+					[/* text */ 't', `if any argument is null`]
+				]]
+			],
 			[/* return description */
-				[/* text */ 't', `a `],
-				[/* reference */ 'r', `java.util.List`],
-				[/* text */ 't', ` of the bootstrap arguments`]
+				[/* text */ 't', `the nominal descriptor`]
+			]
+		]],
+		[/* method */ 'of(java.lang.constant.DirectMethodHandleDesc,java.lang.constant.ConstantDesc...)', [
+			[/* method description */
+				[/* text */ 't', `Returns a nominal descriptor for a dynamic constant whose name parameter
+ is `],
+				[/* reference */ 'r', `.ConstantDescs#DEFAULT_NAME`],
+				[/* text */ 't', `, and whose type parameter is always
+ the same as the bootstrap method return type.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'bootstrapMethod', [/* parameter description */
+					[/* text */ 't', `a `],
+					[/* reference */ 'r', `java.lang.constant.DirectMethodHandleDesc`],
+					[/* text */ 't', ` describing the
+                        bootstrap method for the constant`]
+				]],
+				[/* parameter */ 'bootstrapArgs', [/* parameter description */
+					[/* text */ 't', ``],
+					[/* reference */ 'r', `java.lang.constant.ConstantDesc`],
+					[/* text */ 't', `s describing the static arguments
+                      to the bootstrap, that would appear in the
+                      `],
+					[/* inline code block */ 'i', `BootstrapMethods`],
+					[/* text */ 't', ` attribute`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
+					[/* text */ 't', `if any argument is null`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `the nominal descriptor`]
+			]
+		]],
+		[/* method */ 'ofNamed(java.lang.constant.DirectMethodHandleDesc,java.lang.String,java.lang.constant.ClassDesc,java.lang.constant.ConstantDesc...)', [
+			[/* method description */
+				[/* text */ 't', `Returns a nominal descriptor for a dynamic constant.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'bootstrapMethod', [/* parameter description */
+					[/* text */ 't', `a `],
+					[/* reference */ 'r', `java.lang.constant.DirectMethodHandleDesc`],
+					[/* text */ 't', ` describing the
+                        bootstrap method for the constant`]
+				]],
+				[/* parameter */ 'constantName', [/* parameter description */
+					[/* text */ 't', `The unqualified name that would appear in the `],
+					[/* inline code block */ 'i', `NameAndType`],
+					[/* text */ 't', `
+                     operand of the `],
+					[/* inline code block */ 'i', `LDC`],
+					[/* text */ 't', ` for this constant`]
+				]],
+				[/* parameter */ 'constantType', [/* parameter description */
+					[/* text */ 't', `a `],
+					[/* reference */ 'r', `java.lang.constant.ClassDesc`],
+					[/* text */ 't', ` describing the type
+                     that would appear in the `],
+					[/* inline code block */ 'i', `NameAndType`],
+					[/* text */ 't', ` operand
+                     of the `],
+					[/* inline code block */ 'i', `LDC`],
+					[/* text */ 't', ` for this constant`]
+				]],
+				[/* parameter */ 'bootstrapArgs', [/* parameter description */
+					[/* text */ 't', ``],
+					[/* reference */ 'r', `java.lang.constant.ConstantDesc`],
+					[/* text */ 't', `s describing the static arguments
+                      to the bootstrap, that would appear in the
+                      `],
+					[/* inline code block */ 'i', `BootstrapMethods`],
+					[/* text */ 't', ` attribute`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
+					[/* text */ 't', `if any argument is null`]
+				]],
+				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
+					[/* text */ 't', `if the `],
+					[/* inline code block */ 'i', `name`],
+					[/* text */ 't', ` has the incorrect
+ format`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `the nominal descriptor`]
+			]
+		]],
+		[/* method */ 'resolveConstantDesc(java.lang.invoke.MethodHandles.Lookup)', [
+			[/* method description */
+				[/* block */ 'b', [
+					[/* text */ 't', `Resolves this descriptor reflectively, emulating the resolution behavior
+ of JVMS 5.4.3 and the access control behavior of JVMS 5.4.4.  The resolution
+ and access control context is provided by the `],
+					[/* reference */ 'r', `java.lang.invoke.MethodHandles.Lookup`],
+					[/* text */ 't', `
+ parameter.  No caching of the resulting value is performed.`]
+				]]
+			],
+			[/* parameters */
+				[/* parameter */ 'lookup', [/* parameter description */
+					[/* text */ 't', `The `],
+					[/* reference */ 'r', `java.lang.invoke.MethodHandles.Lookup`],
+					[/* text */ 't', ` to provide name resolution
+               and access control context`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.lang.ReflectiveOperationException', [/* throw description */
+					[/* text */ 't', `if a class, method, or field
+ could not be reflectively resolved in the course of resolution`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `the resolved constant value`]
 			]
 		]]
 	],

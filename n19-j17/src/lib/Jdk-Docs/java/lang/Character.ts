@@ -310,20 +310,247 @@ DocsCollector.collect('java.lang.Character', [
 		]]
 	],
 	[/* fields */
-		[/* field */ 'MIN_RADIX', [
+		[/* field */ 'BYTES', [
 			[/* field description */
-				[/* text */ 't', `The minimum radix available for conversion to and from strings.
- The constant value of this field is the smallest value permitted
- for the radix argument in radix-conversion methods such as the
+				[/* text */ 't', `The number of bytes used to represent a `],
+				[/* inline code block */ 'i', `char`],
+				[/* text */ 't', ` value in unsigned
+ binary form.`]
+			],
+		]],
+		[/* field */ 'COMBINING_SPACING_MARK', [
+			[/* field description */
+				[/* text */ 't', `General category "Mc" in the Unicode specification.`]
+			],
+		]],
+		[/* field */ 'CONNECTOR_PUNCTUATION', [
+			[/* field description */
+				[/* text */ 't', `General category "Pc" in the Unicode specification.`]
+			],
+		]],
+		[/* field */ 'CONTROL', [
+			[/* field description */
+				[/* text */ 't', `General category "Cc" in the Unicode specification.`]
+			],
+		]],
+		[/* field */ 'CURRENCY_SYMBOL', [
+			[/* field description */
+				[/* text */ 't', `General category "Sc" in the Unicode specification.`]
+			],
+		]],
+		[/* field */ 'DASH_PUNCTUATION', [
+			[/* field description */
+				[/* text */ 't', `General category "Pd" in the Unicode specification.`]
+			],
+		]],
+		[/* field */ 'DECIMAL_DIGIT_NUMBER', [
+			[/* field description */
+				[/* text */ 't', `General category "Nd" in the Unicode specification.`]
+			],
+		]],
+		[/* field */ 'DIRECTIONALITY_ARABIC_NUMBER', [
+			[/* field description */
+				[/* text */ 't', `Weak bidirectional character type "AN" in the Unicode specification.`]
+			],
+		]],
+		[/* field */ 'DIRECTIONALITY_BOUNDARY_NEUTRAL', [
+			[/* field description */
+				[/* text */ 't', `Weak bidirectional character type "BN" in the Unicode specification.`]
+			],
+		]],
+		[/* field */ 'DIRECTIONALITY_COMMON_NUMBER_SEPARATOR', [
+			[/* field description */
+				[/* text */ 't', `Weak bidirectional character type "CS" in the Unicode specification.`]
+			],
+		]],
+		[/* field */ 'DIRECTIONALITY_EUROPEAN_NUMBER', [
+			[/* field description */
+				[/* text */ 't', `Weak bidirectional character type "EN" in the Unicode specification.`]
+			],
+		]],
+		[/* field */ 'DIRECTIONALITY_EUROPEAN_NUMBER_SEPARATOR', [
+			[/* field description */
+				[/* text */ 't', `Weak bidirectional character type "ES" in the Unicode specification.`]
+			],
+		]],
+		[/* field */ 'DIRECTIONALITY_EUROPEAN_NUMBER_TERMINATOR', [
+			[/* field description */
+				[/* text */ 't', `Weak bidirectional character type "ET" in the Unicode specification.`]
+			],
+		]],
+		[/* field */ 'DIRECTIONALITY_FIRST_STRONG_ISOLATE', [
+			[/* field description */
+				[/* text */ 't', `Weak bidirectional character type "FSI" in the Unicode specification.`]
+			],
+		]],
+		[/* field */ 'DIRECTIONALITY_LEFT_TO_RIGHT', [
+			[/* field description */
+				[/* text */ 't', `Strong bidirectional character type "L" in the Unicode specification.`]
+			],
+		]],
+		[/* field */ 'DIRECTIONALITY_LEFT_TO_RIGHT_EMBEDDING', [
+			[/* field description */
+				[/* text */ 't', `Strong bidirectional character type "LRE" in the Unicode specification.`]
+			],
+		]],
+		[/* field */ 'DIRECTIONALITY_LEFT_TO_RIGHT_ISOLATE', [
+			[/* field description */
+				[/* text */ 't', `Weak bidirectional character type "LRI" in the Unicode specification.`]
+			],
+		]],
+		[/* field */ 'DIRECTIONALITY_LEFT_TO_RIGHT_OVERRIDE', [
+			[/* field description */
+				[/* text */ 't', `Strong bidirectional character type "LRO" in the Unicode specification.`]
+			],
+		]],
+		[/* field */ 'DIRECTIONALITY_NONSPACING_MARK', [
+			[/* field description */
+				[/* text */ 't', `Weak bidirectional character type "NSM" in the Unicode specification.`]
+			],
+		]],
+		[/* field */ 'DIRECTIONALITY_OTHER_NEUTRALS', [
+			[/* field description */
+				[/* text */ 't', `Neutral bidirectional character type "ON" in the Unicode specification.`]
+			],
+		]],
+		[/* field */ 'DIRECTIONALITY_PARAGRAPH_SEPARATOR', [
+			[/* field description */
+				[/* text */ 't', `Neutral bidirectional character type "B" in the Unicode specification.`]
+			],
+		]],
+		[/* field */ 'DIRECTIONALITY_POP_DIRECTIONAL_FORMAT', [
+			[/* field description */
+				[/* text */ 't', `Weak bidirectional character type "PDF" in the Unicode specification.`]
+			],
+		]],
+		[/* field */ 'DIRECTIONALITY_POP_DIRECTIONAL_ISOLATE', [
+			[/* field description */
+				[/* text */ 't', `Weak bidirectional character type "PDI" in the Unicode specification.`]
+			],
+		]],
+		[/* field */ 'DIRECTIONALITY_RIGHT_TO_LEFT', [
+			[/* field description */
+				[/* text */ 't', `Strong bidirectional character type "R" in the Unicode specification.`]
+			],
+		]],
+		[/* field */ 'DIRECTIONALITY_RIGHT_TO_LEFT_ARABIC', [
+			[/* field description */
+				[/* text */ 't', `Strong bidirectional character type "AL" in the Unicode specification.`]
+			],
+		]],
+		[/* field */ 'DIRECTIONALITY_RIGHT_TO_LEFT_EMBEDDING', [
+			[/* field description */
+				[/* text */ 't', `Strong bidirectional character type "RLE" in the Unicode specification.`]
+			],
+		]],
+		[/* field */ 'DIRECTIONALITY_RIGHT_TO_LEFT_ISOLATE', [
+			[/* field description */
+				[/* text */ 't', `Weak bidirectional character type "RLI" in the Unicode specification.`]
+			],
+		]],
+		[/* field */ 'DIRECTIONALITY_RIGHT_TO_LEFT_OVERRIDE', [
+			[/* field description */
+				[/* text */ 't', `Strong bidirectional character type "RLO" in the Unicode specification.`]
+			],
+		]],
+		[/* field */ 'DIRECTIONALITY_SEGMENT_SEPARATOR', [
+			[/* field description */
+				[/* text */ 't', `Neutral bidirectional character type "S" in the Unicode specification.`]
+			],
+		]],
+		[/* field */ 'DIRECTIONALITY_UNDEFINED', [
+			[/* field description */
+				[/* text */ 't', `Undefined bidirectional character type. Undefined `],
+				[/* inline code block */ 'i', `char`],
+				[/* text */ 't', `
+ values have undefined directionality in the Unicode specification.`]
+			],
+		]],
+		[/* field */ 'DIRECTIONALITY_WHITESPACE', [
+			[/* field description */
+				[/* text */ 't', `Neutral bidirectional character type "WS" in the Unicode specification.`]
+			],
+		]],
+		[/* field */ 'ENCLOSING_MARK', [
+			[/* field description */
+				[/* text */ 't', `General category "Me" in the Unicode specification.`]
+			],
+		]],
+		[/* field */ 'END_PUNCTUATION', [
+			[/* field description */
+				[/* text */ 't', `General category "Pe" in the Unicode specification.`]
+			],
+		]],
+		[/* field */ 'FINAL_QUOTE_PUNCTUATION', [
+			[/* field description */
+				[/* text */ 't', `General category "Pf" in the Unicode specification.`]
+			],
+		]],
+		[/* field */ 'FORMAT', [
+			[/* field description */
+				[/* text */ 't', `General category "Cf" in the Unicode specification.`]
+			],
+		]],
+		[/* field */ 'INITIAL_QUOTE_PUNCTUATION', [
+			[/* field description */
+				[/* text */ 't', `General category "Pi" in the Unicode specification.`]
+			],
+		]],
+		[/* field */ 'LETTER_NUMBER', [
+			[/* field description */
+				[/* text */ 't', `General category "Nl" in the Unicode specification.`]
+			],
+		]],
+		[/* field */ 'LINE_SEPARATOR', [
+			[/* field description */
+				[/* text */ 't', `General category "Zl" in the Unicode specification.`]
+			],
+		]],
+		[/* field */ 'LOWERCASE_LETTER', [
+			[/* field description */
+				[/* text */ 't', `General category "Ll" in the Unicode specification.`]
+			],
+		]],
+		[/* field */ 'MATH_SYMBOL', [
+			[/* field description */
+				[/* text */ 't', `General category "Sm" in the Unicode specification.`]
+			],
+		]],
+		[/* field */ 'MAX_CODE_POINT', [
+			[/* field description */
+				[/* text */ 't', `The maximum value of a
  `],
-				[/* inline code block */ 'i', `digit`],
-				[/* text */ 't', ` method, the `],
-				[/* inline code block */ 'i', `forDigit`],
-				[/* text */ 't', ` method, and the
+				[/* external link */ 'a', `http://www.unicode.org/glossary/#code_point`, `Unicode code point`],
+				[/* text */ 't', `, constant `],
+				[/* inline code block */ 'i', `U+10FFFF`],
+				[/* text */ 't', `.`]
+			],
+		]],
+		[/* field */ 'MAX_HIGH_SURROGATE', [
+			[/* field description */
+				[/* text */ 't', `The maximum value of a
  `],
-				[/* inline code block */ 'i', `toString`],
-				[/* text */ 't', ` method of class `],
-				[/* inline code block */ 'i', `Integer`],
+				[/* external link */ 'a', `http://www.unicode.org/glossary/#high_surrogate_code_unit`, `Unicode high-surrogate code unit`],
+				[/* text */ 't', `
+ in the UTF-16 encoding, constant `],
+				[/* inline code block */ 'i', `'\\uDBFF'`],
+				[/* text */ 't', `.
+ A high-surrogate is also known as a `],
+				[/* text */ 't', `leading-surrogate`],
+				[/* text */ 't', `.`]
+			],
+		]],
+		[/* field */ 'MAX_LOW_SURROGATE', [
+			[/* field description */
+				[/* text */ 't', `The maximum value of a
+ `],
+				[/* external link */ 'a', `http://www.unicode.org/glossary/#low_surrogate_code_unit`, `Unicode low-surrogate code unit`],
+				[/* text */ 't', `
+ in the UTF-16 encoding, constant `],
+				[/* inline code block */ 'i', `'\\uDFFF'`],
+				[/* text */ 't', `.
+ A low-surrogate is also known as a `],
+				[/* text */ 't', `trailing-surrogate`],
 				[/* text */ 't', `.`]
 			],
 		]],
@@ -344,13 +571,11 @@ DocsCollector.collect('java.lang.Character', [
 				[/* text */ 't', `.`]
 			],
 		]],
-		[/* field */ 'MIN_VALUE', [
+		[/* field */ 'MAX_SURROGATE', [
 			[/* field description */
-				[/* text */ 't', `The constant value of this field is the smallest value of type
- `],
-				[/* inline code block */ 'i', `char`],
-				[/* text */ 't', `, `],
-				[/* inline code block */ 'i', `'\\u0000'`],
+				[/* text */ 't', `The maximum value of a Unicode surrogate code unit in the
+ UTF-16 encoding, constant `],
+				[/* inline code block */ 'i', `'\\uDFFF'`],
 				[/* text */ 't', `.`]
 			],
 		]],
@@ -364,287 +589,14 @@ DocsCollector.collect('java.lang.Character', [
 				[/* text */ 't', `.`]
 			],
 		]],
-		[/* field */ 'TYPE', [
+		[/* field */ 'MIN_CODE_POINT', [
 			[/* field description */
-				[/* text */ 't', `The `],
-				[/* inline code block */ 'i', `Class`],
-				[/* text */ 't', ` instance representing the primitive type
+				[/* text */ 't', `The minimum value of a
  `],
-				[/* inline code block */ 'i', `char`],
+				[/* external link */ 'a', `http://www.unicode.org/glossary/#code_point`, `Unicode code point`],
+				[/* text */ 't', `, constant `],
+				[/* inline code block */ 'i', `U+0000`],
 				[/* text */ 't', `.`]
-			],
-		]],
-		[/* field */ 'UNASSIGNED', [
-			[/* field description */
-				[/* text */ 't', `General category "Cn" in the Unicode specification.`]
-			],
-		]],
-		[/* field */ 'UPPERCASE_LETTER', [
-			[/* field description */
-				[/* text */ 't', `General category "Lu" in the Unicode specification.`]
-			],
-		]],
-		[/* field */ 'LOWERCASE_LETTER', [
-			[/* field description */
-				[/* text */ 't', `General category "Ll" in the Unicode specification.`]
-			],
-		]],
-		[/* field */ 'TITLECASE_LETTER', [
-			[/* field description */
-				[/* text */ 't', `General category "Lt" in the Unicode specification.`]
-			],
-		]],
-		[/* field */ 'MODIFIER_LETTER', [
-			[/* field description */
-				[/* text */ 't', `General category "Lm" in the Unicode specification.`]
-			],
-		]],
-		[/* field */ 'OTHER_LETTER', [
-			[/* field description */
-				[/* text */ 't', `General category "Lo" in the Unicode specification.`]
-			],
-		]],
-		[/* field */ 'NON_SPACING_MARK', [
-			[/* field description */
-				[/* text */ 't', `General category "Mn" in the Unicode specification.`]
-			],
-		]],
-		[/* field */ 'ENCLOSING_MARK', [
-			[/* field description */
-				[/* text */ 't', `General category "Me" in the Unicode specification.`]
-			],
-		]],
-		[/* field */ 'COMBINING_SPACING_MARK', [
-			[/* field description */
-				[/* text */ 't', `General category "Mc" in the Unicode specification.`]
-			],
-		]],
-		[/* field */ 'DECIMAL_DIGIT_NUMBER', [
-			[/* field description */
-				[/* text */ 't', `General category "Nd" in the Unicode specification.`]
-			],
-		]],
-		[/* field */ 'LETTER_NUMBER', [
-			[/* field description */
-				[/* text */ 't', `General category "Nl" in the Unicode specification.`]
-			],
-		]],
-		[/* field */ 'OTHER_NUMBER', [
-			[/* field description */
-				[/* text */ 't', `General category "No" in the Unicode specification.`]
-			],
-		]],
-		[/* field */ 'SPACE_SEPARATOR', [
-			[/* field description */
-				[/* text */ 't', `General category "Zs" in the Unicode specification.`]
-			],
-		]],
-		[/* field */ 'LINE_SEPARATOR', [
-			[/* field description */
-				[/* text */ 't', `General category "Zl" in the Unicode specification.`]
-			],
-		]],
-		[/* field */ 'PARAGRAPH_SEPARATOR', [
-			[/* field description */
-				[/* text */ 't', `General category "Zp" in the Unicode specification.`]
-			],
-		]],
-		[/* field */ 'CONTROL', [
-			[/* field description */
-				[/* text */ 't', `General category "Cc" in the Unicode specification.`]
-			],
-		]],
-		[/* field */ 'FORMAT', [
-			[/* field description */
-				[/* text */ 't', `General category "Cf" in the Unicode specification.`]
-			],
-		]],
-		[/* field */ 'PRIVATE_USE', [
-			[/* field description */
-				[/* text */ 't', `General category "Co" in the Unicode specification.`]
-			],
-		]],
-		[/* field */ 'SURROGATE', [
-			[/* field description */
-				[/* text */ 't', `General category "Cs" in the Unicode specification.`]
-			],
-		]],
-		[/* field */ 'DASH_PUNCTUATION', [
-			[/* field description */
-				[/* text */ 't', `General category "Pd" in the Unicode specification.`]
-			],
-		]],
-		[/* field */ 'START_PUNCTUATION', [
-			[/* field description */
-				[/* text */ 't', `General category "Ps" in the Unicode specification.`]
-			],
-		]],
-		[/* field */ 'END_PUNCTUATION', [
-			[/* field description */
-				[/* text */ 't', `General category "Pe" in the Unicode specification.`]
-			],
-		]],
-		[/* field */ 'CONNECTOR_PUNCTUATION', [
-			[/* field description */
-				[/* text */ 't', `General category "Pc" in the Unicode specification.`]
-			],
-		]],
-		[/* field */ 'OTHER_PUNCTUATION', [
-			[/* field description */
-				[/* text */ 't', `General category "Po" in the Unicode specification.`]
-			],
-		]],
-		[/* field */ 'MATH_SYMBOL', [
-			[/* field description */
-				[/* text */ 't', `General category "Sm" in the Unicode specification.`]
-			],
-		]],
-		[/* field */ 'CURRENCY_SYMBOL', [
-			[/* field description */
-				[/* text */ 't', `General category "Sc" in the Unicode specification.`]
-			],
-		]],
-		[/* field */ 'MODIFIER_SYMBOL', [
-			[/* field description */
-				[/* text */ 't', `General category "Sk" in the Unicode specification.`]
-			],
-		]],
-		[/* field */ 'OTHER_SYMBOL', [
-			[/* field description */
-				[/* text */ 't', `General category "So" in the Unicode specification.`]
-			],
-		]],
-		[/* field */ 'INITIAL_QUOTE_PUNCTUATION', [
-			[/* field description */
-				[/* text */ 't', `General category "Pi" in the Unicode specification.`]
-			],
-		]],
-		[/* field */ 'FINAL_QUOTE_PUNCTUATION', [
-			[/* field description */
-				[/* text */ 't', `General category "Pf" in the Unicode specification.`]
-			],
-		]],
-		[/* field */ 'DIRECTIONALITY_UNDEFINED', [
-			[/* field description */
-				[/* text */ 't', `Undefined bidirectional character type. Undefined `],
-				[/* inline code block */ 'i', `char`],
-				[/* text */ 't', `
- values have undefined directionality in the Unicode specification.`]
-			],
-		]],
-		[/* field */ 'DIRECTIONALITY_LEFT_TO_RIGHT', [
-			[/* field description */
-				[/* text */ 't', `Strong bidirectional character type "L" in the Unicode specification.`]
-			],
-		]],
-		[/* field */ 'DIRECTIONALITY_RIGHT_TO_LEFT', [
-			[/* field description */
-				[/* text */ 't', `Strong bidirectional character type "R" in the Unicode specification.`]
-			],
-		]],
-		[/* field */ 'DIRECTIONALITY_RIGHT_TO_LEFT_ARABIC', [
-			[/* field description */
-				[/* text */ 't', `Strong bidirectional character type "AL" in the Unicode specification.`]
-			],
-		]],
-		[/* field */ 'DIRECTIONALITY_EUROPEAN_NUMBER', [
-			[/* field description */
-				[/* text */ 't', `Weak bidirectional character type "EN" in the Unicode specification.`]
-			],
-		]],
-		[/* field */ 'DIRECTIONALITY_EUROPEAN_NUMBER_SEPARATOR', [
-			[/* field description */
-				[/* text */ 't', `Weak bidirectional character type "ES" in the Unicode specification.`]
-			],
-		]],
-		[/* field */ 'DIRECTIONALITY_EUROPEAN_NUMBER_TERMINATOR', [
-			[/* field description */
-				[/* text */ 't', `Weak bidirectional character type "ET" in the Unicode specification.`]
-			],
-		]],
-		[/* field */ 'DIRECTIONALITY_ARABIC_NUMBER', [
-			[/* field description */
-				[/* text */ 't', `Weak bidirectional character type "AN" in the Unicode specification.`]
-			],
-		]],
-		[/* field */ 'DIRECTIONALITY_COMMON_NUMBER_SEPARATOR', [
-			[/* field description */
-				[/* text */ 't', `Weak bidirectional character type "CS" in the Unicode specification.`]
-			],
-		]],
-		[/* field */ 'DIRECTIONALITY_NONSPACING_MARK', [
-			[/* field description */
-				[/* text */ 't', `Weak bidirectional character type "NSM" in the Unicode specification.`]
-			],
-		]],
-		[/* field */ 'DIRECTIONALITY_BOUNDARY_NEUTRAL', [
-			[/* field description */
-				[/* text */ 't', `Weak bidirectional character type "BN" in the Unicode specification.`]
-			],
-		]],
-		[/* field */ 'DIRECTIONALITY_PARAGRAPH_SEPARATOR', [
-			[/* field description */
-				[/* text */ 't', `Neutral bidirectional character type "B" in the Unicode specification.`]
-			],
-		]],
-		[/* field */ 'DIRECTIONALITY_SEGMENT_SEPARATOR', [
-			[/* field description */
-				[/* text */ 't', `Neutral bidirectional character type "S" in the Unicode specification.`]
-			],
-		]],
-		[/* field */ 'DIRECTIONALITY_WHITESPACE', [
-			[/* field description */
-				[/* text */ 't', `Neutral bidirectional character type "WS" in the Unicode specification.`]
-			],
-		]],
-		[/* field */ 'DIRECTIONALITY_OTHER_NEUTRALS', [
-			[/* field description */
-				[/* text */ 't', `Neutral bidirectional character type "ON" in the Unicode specification.`]
-			],
-		]],
-		[/* field */ 'DIRECTIONALITY_LEFT_TO_RIGHT_EMBEDDING', [
-			[/* field description */
-				[/* text */ 't', `Strong bidirectional character type "LRE" in the Unicode specification.`]
-			],
-		]],
-		[/* field */ 'DIRECTIONALITY_LEFT_TO_RIGHT_OVERRIDE', [
-			[/* field description */
-				[/* text */ 't', `Strong bidirectional character type "LRO" in the Unicode specification.`]
-			],
-		]],
-		[/* field */ 'DIRECTIONALITY_RIGHT_TO_LEFT_EMBEDDING', [
-			[/* field description */
-				[/* text */ 't', `Strong bidirectional character type "RLE" in the Unicode specification.`]
-			],
-		]],
-		[/* field */ 'DIRECTIONALITY_RIGHT_TO_LEFT_OVERRIDE', [
-			[/* field description */
-				[/* text */ 't', `Strong bidirectional character type "RLO" in the Unicode specification.`]
-			],
-		]],
-		[/* field */ 'DIRECTIONALITY_POP_DIRECTIONAL_FORMAT', [
-			[/* field description */
-				[/* text */ 't', `Weak bidirectional character type "PDF" in the Unicode specification.`]
-			],
-		]],
-		[/* field */ 'DIRECTIONALITY_LEFT_TO_RIGHT_ISOLATE', [
-			[/* field description */
-				[/* text */ 't', `Weak bidirectional character type "LRI" in the Unicode specification.`]
-			],
-		]],
-		[/* field */ 'DIRECTIONALITY_RIGHT_TO_LEFT_ISOLATE', [
-			[/* field description */
-				[/* text */ 't', `Weak bidirectional character type "RLI" in the Unicode specification.`]
-			],
-		]],
-		[/* field */ 'DIRECTIONALITY_FIRST_STRONG_ISOLATE', [
-			[/* field description */
-				[/* text */ 't', `Weak bidirectional character type "FSI" in the Unicode specification.`]
-			],
-		]],
-		[/* field */ 'DIRECTIONALITY_POP_DIRECTIONAL_ISOLATE', [
-			[/* field description */
-				[/* text */ 't', `Weak bidirectional character type "PDI" in the Unicode specification.`]
 			],
 		]],
 		[/* field */ 'MIN_HIGH_SURROGATE', [
@@ -655,20 +607,6 @@ DocsCollector.collect('java.lang.Character', [
 				[/* text */ 't', `
  in the UTF-16 encoding, constant `],
 				[/* inline code block */ 'i', `'\\uD800'`],
-				[/* text */ 't', `.
- A high-surrogate is also known as a `],
-				[/* text */ 't', `leading-surrogate`],
-				[/* text */ 't', `.`]
-			],
-		]],
-		[/* field */ 'MAX_HIGH_SURROGATE', [
-			[/* field description */
-				[/* text */ 't', `The maximum value of a
- `],
-				[/* external link */ 'a', `http://www.unicode.org/glossary/#high_surrogate_code_unit`, `Unicode high-surrogate code unit`],
-				[/* text */ 't', `
- in the UTF-16 encoding, constant `],
-				[/* inline code block */ 'i', `'\\uDBFF'`],
 				[/* text */ 't', `.
  A high-surrogate is also known as a `],
 				[/* text */ 't', `leading-surrogate`],
@@ -689,33 +627,20 @@ DocsCollector.collect('java.lang.Character', [
 				[/* text */ 't', `.`]
 			],
 		]],
-		[/* field */ 'MAX_LOW_SURROGATE', [
+		[/* field */ 'MIN_RADIX', [
 			[/* field description */
-				[/* text */ 't', `The maximum value of a
+				[/* text */ 't', `The minimum radix available for conversion to and from strings.
+ The constant value of this field is the smallest value permitted
+ for the radix argument in radix-conversion methods such as the
  `],
-				[/* external link */ 'a', `http://www.unicode.org/glossary/#low_surrogate_code_unit`, `Unicode low-surrogate code unit`],
-				[/* text */ 't', `
- in the UTF-16 encoding, constant `],
-				[/* inline code block */ 'i', `'\\uDFFF'`],
-				[/* text */ 't', `.
- A low-surrogate is also known as a `],
-				[/* text */ 't', `trailing-surrogate`],
-				[/* text */ 't', `.`]
-			],
-		]],
-		[/* field */ 'MIN_SURROGATE', [
-			[/* field description */
-				[/* text */ 't', `The minimum value of a Unicode surrogate code unit in the
- UTF-16 encoding, constant `],
-				[/* inline code block */ 'i', `'\\uD800'`],
-				[/* text */ 't', `.`]
-			],
-		]],
-		[/* field */ 'MAX_SURROGATE', [
-			[/* field description */
-				[/* text */ 't', `The maximum value of a Unicode surrogate code unit in the
- UTF-16 encoding, constant `],
-				[/* inline code block */ 'i', `'\\uDFFF'`],
+				[/* inline code block */ 'i', `digit`],
+				[/* text */ 't', ` method, the `],
+				[/* inline code block */ 'i', `forDigit`],
+				[/* text */ 't', ` method, and the
+ `],
+				[/* inline code block */ 'i', `toString`],
+				[/* text */ 't', ` method of class `],
+				[/* inline code block */ 'i', `Integer`],
 				[/* text */ 't', `.`]
 			],
 		]],
@@ -729,24 +654,67 @@ DocsCollector.collect('java.lang.Character', [
 				[/* text */ 't', `.`]
 			],
 		]],
-		[/* field */ 'MIN_CODE_POINT', [
+		[/* field */ 'MIN_SURROGATE', [
 			[/* field description */
-				[/* text */ 't', `The minimum value of a
- `],
-				[/* external link */ 'a', `http://www.unicode.org/glossary/#code_point`, `Unicode code point`],
-				[/* text */ 't', `, constant `],
-				[/* inline code block */ 'i', `U+0000`],
+				[/* text */ 't', `The minimum value of a Unicode surrogate code unit in the
+ UTF-16 encoding, constant `],
+				[/* inline code block */ 'i', `'\\uD800'`],
 				[/* text */ 't', `.`]
 			],
 		]],
-		[/* field */ 'MAX_CODE_POINT', [
+		[/* field */ 'MIN_VALUE', [
 			[/* field description */
-				[/* text */ 't', `The maximum value of a
+				[/* text */ 't', `The constant value of this field is the smallest value of type
  `],
-				[/* external link */ 'a', `http://www.unicode.org/glossary/#code_point`, `Unicode code point`],
-				[/* text */ 't', `, constant `],
-				[/* inline code block */ 'i', `U+10FFFF`],
+				[/* inline code block */ 'i', `char`],
+				[/* text */ 't', `, `],
+				[/* inline code block */ 'i', `'\\u0000'`],
 				[/* text */ 't', `.`]
+			],
+		]],
+		[/* field */ 'MODIFIER_LETTER', [
+			[/* field description */
+				[/* text */ 't', `General category "Lm" in the Unicode specification.`]
+			],
+		]],
+		[/* field */ 'MODIFIER_SYMBOL', [
+			[/* field description */
+				[/* text */ 't', `General category "Sk" in the Unicode specification.`]
+			],
+		]],
+		[/* field */ 'NON_SPACING_MARK', [
+			[/* field description */
+				[/* text */ 't', `General category "Mn" in the Unicode specification.`]
+			],
+		]],
+		[/* field */ 'OTHER_LETTER', [
+			[/* field description */
+				[/* text */ 't', `General category "Lo" in the Unicode specification.`]
+			],
+		]],
+		[/* field */ 'OTHER_NUMBER', [
+			[/* field description */
+				[/* text */ 't', `General category "No" in the Unicode specification.`]
+			],
+		]],
+		[/* field */ 'OTHER_PUNCTUATION', [
+			[/* field description */
+				[/* text */ 't', `General category "Po" in the Unicode specification.`]
+			],
+		]],
+		[/* field */ 'OTHER_SYMBOL', [
+			[/* field description */
+				[/* text */ 't', `General category "So" in the Unicode specification.`]
+			],
+		]],
+		[/* field */ 'PARAGRAPH_SEPARATOR', [
+			[/* field description */
+				[/* text */ 't', `General category "Zp" in the Unicode specification.`]
+			],
+		]],
+		[/* field */ 'PRIVATE_USE', [
+			[/* field description */
+				[/* text */ 't', `General category "Co" in the Unicode specification.`]
 			],
 		]],
 		[/* field */ 'SIZE', [
@@ -759,12 +727,44 @@ DocsCollector.collect('java.lang.Character', [
 				[/* text */ 't', `.`]
 			],
 		]],
-		[/* field */ 'BYTES', [
+		[/* field */ 'SPACE_SEPARATOR', [
 			[/* field description */
-				[/* text */ 't', `The number of bytes used to represent a `],
+				[/* text */ 't', `General category "Zs" in the Unicode specification.`]
+			],
+		]],
+		[/* field */ 'START_PUNCTUATION', [
+			[/* field description */
+				[/* text */ 't', `General category "Ps" in the Unicode specification.`]
+			],
+		]],
+		[/* field */ 'SURROGATE', [
+			[/* field description */
+				[/* text */ 't', `General category "Cs" in the Unicode specification.`]
+			],
+		]],
+		[/* field */ 'TITLECASE_LETTER', [
+			[/* field description */
+				[/* text */ 't', `General category "Lt" in the Unicode specification.`]
+			],
+		]],
+		[/* field */ 'TYPE', [
+			[/* field description */
+				[/* text */ 't', `The `],
+				[/* inline code block */ 'i', `Class`],
+				[/* text */ 't', ` instance representing the primitive type
+ `],
 				[/* inline code block */ 'i', `char`],
-				[/* text */ 't', ` value in unsigned
- binary form.`]
+				[/* text */ 't', `.`]
+			],
+		]],
+		[/* field */ 'UNASSIGNED', [
+			[/* field description */
+				[/* text */ 't', `General category "Cn" in the Unicode specification.`]
+			],
+		]],
+		[/* field */ 'UPPERCASE_LETTER', [
+			[/* field description */
+				[/* text */ 't', `General category "Lu" in the Unicode specification.`]
 			],
 		]]
 	],
@@ -790,85 +790,241 @@ DocsCollector.collect('java.lang.Character', [
 		]]
 	],
 	[/* methods */
-		[/* method */ 'getName(int)', [
+		[/* method */ 'equals(java.lang.Object)', [
 			[/* method description */
-				[/* text */ 't', `Returns the Unicode name of the specified character
+				[/* text */ 't', `Compares this object against the specified object.
+ The result is `],
+				[/* inline code block */ 'i', `true`],
+				[/* text */ 't', ` if and only if the argument is not
  `],
-				[/* inline code block */ 'i', `codePoint`],
-				[/* text */ 't', `, or null if the code point is
+				[/* inline code block */ 'i', `null`],
+				[/* text */ 't', ` and is a `],
+				[/* inline code block */ 'i', `Character`],
+				[/* text */ 't', ` object that
+ represents the same `],
+				[/* inline code block */ 'i', `char`],
+				[/* text */ 't', ` value as this object.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'obj', [/* parameter description */
+					[/* text */ 't', `the object to compare with.`]
+				]]
+			],
+			/* throws */ UDF,
+			[/* return description */
+				[/* inline code block */ 'i', `true`],
+				[/* text */ 't', ` if the objects are the same;
+          `],
+				[/* inline code block */ 'i', `false`],
+				[/* text */ 't', ` otherwise.`]
+			]
+		]],
+		[/* method */ 'charValue()', [
+			[/* method description */
+				[/* text */ 't', `Returns the value of this `],
+				[/* inline code block */ 'i', `Character`],
+				[/* text */ 't', ` object.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the primitive `],
+				[/* inline code block */ 'i', `char`],
+				[/* text */ 't', ` value represented by
+          this object.`]
+			]
+		]],
+		[/* method */ 'compareTo(java.lang.Character)', [
+			[/* method description */
+				[/* text */ 't', `Compares two `],
+				[/* inline code block */ 'i', `Character`],
+				[/* text */ 't', ` objects numerically.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'anotherCharacter', [/* parameter description */
+					[/* text */ 't', `the `],
+					[/* inline code block */ 'i', `Character`],
+					[/* text */ 't', ` to be compared.`]
+				]]
+			],
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the value `],
+				[/* inline code block */ 'i', `0`],
+				[/* text */ 't', ` if the argument `],
+				[/* inline code block */ 'i', `Character`],
+				[/* text */ 't', `
+          is equal to this `],
+				[/* inline code block */ 'i', `Character`],
+				[/* text */ 't', `; a value less than
+          `],
+				[/* inline code block */ 'i', `0`],
+				[/* text */ 't', ` if this `],
+				[/* inline code block */ 'i', `Character`],
+				[/* text */ 't', ` is numerically less
+          than the `],
+				[/* inline code block */ 'i', `Character`],
+				[/* text */ 't', ` argument; and a value greater than
+          `],
+				[/* inline code block */ 'i', `0`],
+				[/* text */ 't', ` if this `],
+				[/* inline code block */ 'i', `Character`],
+				[/* text */ 't', ` is numerically greater
+          than the `],
+				[/* inline code block */ 'i', `Character`],
+				[/* text */ 't', ` argument (unsigned comparison).
+          Note that this is strictly a numerical comparison; it is not
+          locale-dependent.`]
+			]
+		]],
+		[/* method */ 'hashCode()', [
+			[/* method description */
+				[/* text */ 't', `Returns a hash code for this `],
+				[/* inline code block */ 'i', `Character`],
+				[/* text */ 't', `; equal to the result
+ of invoking `],
+				[/* inline code block */ 'i', `charValue()`],
+				[/* text */ 't', `.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `a hash code value for this `],
+				[/* inline code block */ 'i', `Character`]
+			]
+		]],
+		[/* method */ 'toString()', [
+			[/* method description */
+				[/* text */ 't', `Returns a `],
+				[/* inline code block */ 'i', `String`],
+				[/* text */ 't', ` object representing this
  `],
-				[/* text */ 't', `unassigned`],
-				[/* text */ 't', `.
+				[/* inline code block */ 'i', `Character`],
+				[/* text */ 't', `'s value.  The result is a string of
+ length 1 whose sole component is the primitive
+ `],
+				[/* inline code block */ 'i', `char`],
+				[/* text */ 't', ` value represented by this
+ `],
+				[/* inline code block */ 'i', `Character`],
+				[/* text */ 't', ` object.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `a string representation of this object.`]
+			]
+		]],
+		[/* method */ 'describeConstable()', [
+			[/* method description */
+				[/* text */ 't', `Returns an `],
+				[/* reference */ 'r', `java.util.Optional`],
+				[/* text */ 't', ` containing the nominal descriptor for this
+ instance.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `an `],
+				[/* reference */ 'r', `java.util.Optional`],
+				[/* text */ 't', ` describing the `],
+				[/* reference */ 'r', `java.lang.Character`],
+				[/* text */ 't', ` instance`]
+			]
+		]],
+		[/* method */ 'isAlphabetic(int)', [
+			[/* method description */
+				[/* text */ 't', `Determines if the specified character (Unicode code point) is alphabetic.
  `],
 				[/* block */ 'b', [
 					[/* text */ 't', `
- Note: if the specified character is not assigned a name by
- the `],
-					[/* text */ 't', `UnicodeData`],
-					[/* text */ 't', ` file (part of the Unicode Character
- Database maintained by the Unicode Consortium), the returned
- name is the same as the result of expression:
-
+ A character is considered to be alphabetic if its general category type,
+ provided by `],
+					[/* reference */ 'r', `#getType(int)`, `getType(codePoint)`],
+					[/* text */ 't', `, is any of
+ the following:
  `]
 				]],
-				[/* block */ 'b', [
-					[/* inline code block */ 'i', `Character.UnicodeBlock.of(codePoint).toString().replace('_', ' ') + " " + Integer.toHexString(codePoint).toUpperCase(Locale.ROOT);`]
+				[/* list */ 'l', [
+					[/* block */ 'b', [
+						[/* inline code block */ 'i', `UPPERCASE_LETTER`]
+					]],
+					[/* block */ 'b', [
+						[/* inline code block */ 'i', `LOWERCASE_LETTER`]
+					]],
+					[/* block */ 'b', [
+						[/* inline code block */ 'i', `TITLECASE_LETTER`]
+					]],
+					[/* block */ 'b', [
+						[/* inline code block */ 'i', `MODIFIER_LETTER`]
+					]],
+					[/* block */ 'b', [
+						[/* inline code block */ 'i', `OTHER_LETTER`]
+					]],
+					[/* block */ 'b', [
+						[/* inline code block */ 'i', `LETTER_NUMBER`]
+					]]
 				]],
+				[/* text */ 't', `
+ or it has contributory property Other_Alphabetic as defined by the
+ Unicode Standard.`],
 				[/* block */ 'b', '']
 			],
 			[/* parameters */
 				[/* parameter */ 'codePoint', [/* parameter description */
-					[/* text */ 't', `the character (Unicode code point)`]
+					[/* text */ 't', `the character (Unicode code point) to be tested.`]
 				]]
 			],
-			[/* throws */
-				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
-					[/* text */ 't', `if the specified
-            `],
-					[/* inline code block */ 'i', `codePoint`],
-					[/* text */ 't', ` is not a valid Unicode
-            code point.`]
-				]]
-			],
+			/* throws */ UDF,
 			[/* return description */
-				[/* text */ 't', `the Unicode name of the specified character, or null if
-         the code point is unassigned.`]
+				[/* inline code block */ 'i', `true`],
+				[/* text */ 't', ` if the character is a Unicode alphabet
+          character, `],
+				[/* inline code block */ 'i', `false`],
+				[/* text */ 't', ` otherwise.`]
 			]
 		]],
-		[/* method */ 'isJavaIdentifierStart(char)', [
+		[/* method */ 'isBmpCodePoint(int)', [
 			[/* method description */
-				[/* text */ 't', `Determines if the specified character is
- permissible as the first character in a Java identifier.
+				[/* text */ 't', `Determines whether the specified character (Unicode code point)
+ is in the `],
+				[/* text */ 't', `Basic Multilingual Plane (BMP)`],
+				[/* text */ 't', `.
+ Such code points can be represented using a single `],
+				[/* inline code block */ 'i', `char`],
+				[/* text */ 't', `.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'codePoint', [/* parameter description */
+					[/* text */ 't', `the character (Unicode code point) to be tested`]
+				]]
+			],
+			/* throws */ UDF,
+			[/* return description */
+				[/* inline code block */ 'i', `true`],
+				[/* text */ 't', ` if the specified code point is between
+         `],
+				[/* text */ 't', `MIN_VALUE`],
+				[/* text */ 't', ` and `],
+				[/* text */ 't', `MAX_VALUE`],
+				[/* text */ 't', ` inclusive;
+         `],
+				[/* inline code block */ 'i', `false`],
+				[/* text */ 't', ` otherwise.`]
+			]
+		]],
+		[/* method */ 'isDefined(char)', [
+			[/* method description */
+				[/* text */ 't', `Determines if a character is defined in Unicode.
  `],
 				[/* block */ 'b', `
- A character may start a Java identifier if and only if
- one of the following conditions is true:
+ A character is defined if at least one of the following is true:
  `],
 				[/* list */ 'l', [
-					[/* block */ 'b', [
-						[/* reference */ 'r', `#isLetter(int)`, `isLetter(ch)`],
-						[/* text */ 't', ` returns `],
-						[/* inline code block */ 'i', `true`]
-					]],
-					[/* block */ 'b', [
-						[/* reference */ 'r', `#getType(int)`, `getType(ch)`],
-						[/* text */ 't', ` returns `],
-						[/* inline code block */ 'i', `LETTER_NUMBER`]
-					]],
-					[/* block */ 'b', [
-						[/* inline code block */ 'i', `ch`],
-						[/* text */ 't', ` is a currency symbol (such as `],
-						[/* inline code block */ 'i', `'$'`],
-						[/* text */ 't', `)
+					[/* block */ 'b', `It has an entry in the UnicodeData file.
+ `],
+					[/* block */ 'b', `It has a value in a range defined by the UnicodeData file.
  `]
-					]],
-					[/* block */ 'b', [
-						[/* inline code block */ 'i', `ch`],
-						[/* text */ 't', ` is a connecting punctuation character (such as `],
-						[/* inline code block */ 'i', `'_'`],
-						[/* text */ 't', `).
- `]
-					]]
 				]],
 				[/* block */ 'b', ''],
 				[/* block */ 'b', [
@@ -878,7 +1034,131 @@ DocsCollector.collect('java.lang.Character', [
 					[/* text */ 't', `. To support
  all Unicode characters, including supplementary characters, use
  the `],
-					[/* reference */ 'r', `#isJavaIdentifierStart(int)`, `isJavaIdentifierStart(int)`],
+					[/* reference */ 'r', `#isDefined(int)`, `isDefined(int)`],
+					[/* text */ 't', ` method.`]
+				]]
+			],
+			[/* parameters */
+				[/* parameter */ 'ch', [/* parameter description */
+					[/* text */ 't', `the character to be tested`]
+				]]
+			],
+			/* throws */ UDF,
+			[/* return description */
+				[/* inline code block */ 'i', `true`],
+				[/* text */ 't', ` if the character has a defined meaning
+          in Unicode; `],
+				[/* inline code block */ 'i', `false`],
+				[/* text */ 't', ` otherwise.`]
+			]
+		]],
+		[/* method */ 'isDefined(int)', [
+			[/* method description */
+				[/* text */ 't', `Determines if a character (Unicode code point) is defined in Unicode.
+ `],
+				[/* block */ 'b', `
+ A character is defined if at least one of the following is true:
+ `],
+				[/* list */ 'l', [
+					[/* block */ 'b', `It has an entry in the UnicodeData file.
+ `],
+					[/* block */ 'b', `It has a value in a range defined by the UnicodeData file.
+ `]
+				]],
+				[/* block */ 'b', '']
+			],
+			[/* parameters */
+				[/* parameter */ 'codePoint', [/* parameter description */
+					[/* text */ 't', `the character (Unicode code point) to be tested.`]
+				]]
+			],
+			/* throws */ UDF,
+			[/* return description */
+				[/* inline code block */ 'i', `true`],
+				[/* text */ 't', ` if the character has a defined meaning
+          in Unicode; `],
+				[/* inline code block */ 'i', `false`],
+				[/* text */ 't', ` otherwise.`]
+			]
+		]],
+		[/* method */ 'isDigit(char)', [
+			[/* method description */
+				[/* text */ 't', `Determines if the specified character is a digit.
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', `
+ A character is a digit if its general category type, provided
+ by `],
+					[/* inline code block */ 'i', `Character.getType(ch)`],
+					[/* text */ 't', `, is
+ `],
+					[/* inline code block */ 'i', `DECIMAL_DIGIT_NUMBER`],
+					[/* text */ 't', `.
+ `]
+				]],
+				[/* block */ 'b', `
+ Some Unicode character ranges that contain digits:
+ `],
+				[/* list */ 'l', [
+					[/* block */ 'b', [
+						[/* inline code block */ 'i', `'\\u0030'`],
+						[/* text */ 't', ` through `],
+						[/* inline code block */ 'i', `'\\u0039'`],
+						[/* text */ 't', `,
+     ISO-LATIN-1 digits (`],
+						[/* inline code block */ 'i', `'0'`],
+						[/* text */ 't', ` through `],
+						[/* inline code block */ 'i', `'9'`],
+						[/* text */ 't', `)
+ `]
+					]],
+					[/* block */ 'b', [
+						[/* inline code block */ 'i', `'\\u0660'`],
+						[/* text */ 't', ` through `],
+						[/* inline code block */ 'i', `'\\u0669'`],
+						[/* text */ 't', `,
+     Arabic-Indic digits
+ `]
+					]],
+					[/* block */ 'b', [
+						[/* inline code block */ 'i', `'\\u06F0'`],
+						[/* text */ 't', ` through `],
+						[/* inline code block */ 'i', `'\\u06F9'`],
+						[/* text */ 't', `,
+     Extended Arabic-Indic digits
+ `]
+					]],
+					[/* block */ 'b', [
+						[/* inline code block */ 'i', `'\\u0966'`],
+						[/* text */ 't', ` through `],
+						[/* inline code block */ 'i', `'\\u096F'`],
+						[/* text */ 't', `,
+     Devanagari digits
+ `]
+					]],
+					[/* block */ 'b', [
+						[/* inline code block */ 'i', `'\\uFF10'`],
+						[/* text */ 't', ` through `],
+						[/* inline code block */ 'i', `'\\uFF19'`],
+						[/* text */ 't', `,
+     Fullwidth digits
+ `]
+					]]
+				]],
+				[/* text */ 't', `
+
+ Many other character ranges contain digits as well.
+
+ `],
+				[/* block */ 'b', ''],
+				[/* block */ 'b', [
+					[/* text */ 't', `Note:`],
+					[/* text */ 't', ` This method cannot handle `],
+					[/* text */ 't', `supplementary characters`],
+					[/* text */ 't', `. To support
+ all Unicode characters, including supplementary characters, use
+ the `],
+					[/* reference */ 'r', `#isDigit(int)`, `isDigit(int)`],
 					[/* text */ 't', ` method.`]
 				]]
 			],
@@ -890,45 +1170,243 @@ DocsCollector.collect('java.lang.Character', [
 			/* throws */ UDF,
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
-				[/* text */ 't', ` if the character may start a Java identifier;
+				[/* text */ 't', ` if the character is a digit;
           `],
 				[/* inline code block */ 'i', `false`],
 				[/* text */ 't', ` otherwise.`]
 			]
 		]],
-		[/* method */ 'isJavaIdentifierStart(int)', [
+		[/* method */ 'isDigit(int)', [
 			[/* method description */
-				[/* text */ 't', `Determines if the character (Unicode code point) is
- permissible as the first character in a Java identifier.
+				[/* text */ 't', `Determines if the specified character (Unicode code point) is a digit.
  `],
+				[/* block */ 'b', [
+					[/* text */ 't', `
+ A character is a digit if its general category type, provided
+ by `],
+					[/* reference */ 'r', `#getType(int)`, `getType(codePoint)`],
+					[/* text */ 't', `, is
+ `],
+					[/* inline code block */ 'i', `DECIMAL_DIGIT_NUMBER`],
+					[/* text */ 't', `.
+ `]
+				]],
 				[/* block */ 'b', `
- A character may start a Java identifier if and only if
- one of the following conditions is true:
+ Some Unicode character ranges that contain digits:
  `],
 				[/* list */ 'l', [
 					[/* block */ 'b', [
-						[/* reference */ 'r', `#isLetter(int)`, `isLetter(codePoint)`],
-						[/* text */ 't', `
-      returns `],
-						[/* inline code block */ 'i', `true`]
-					]],
-					[/* block */ 'b', [
-						[/* reference */ 'r', `#getType(int)`, `getType(codePoint)`],
-						[/* text */ 't', `
-      returns `],
-						[/* inline code block */ 'i', `LETTER_NUMBER`]
-					]],
-					[/* block */ 'b', [
-						[/* text */ 't', ` the referenced character is a currency symbol (such as `],
-						[/* inline code block */ 'i', `'$'`],
+						[/* inline code block */ 'i', `'\\u0030'`],
+						[/* text */ 't', ` through `],
+						[/* inline code block */ 'i', `'\\u0039'`],
+						[/* text */ 't', `,
+     ISO-LATIN-1 digits (`],
+						[/* inline code block */ 'i', `'0'`],
+						[/* text */ 't', ` through `],
+						[/* inline code block */ 'i', `'9'`],
 						[/* text */ 't', `)
  `]
 					]],
 					[/* block */ 'b', [
-						[/* text */ 't', ` the referenced character is a connecting punctuation character
-      (such as `],
-						[/* inline code block */ 'i', `'_'`],
-						[/* text */ 't', `).
+						[/* inline code block */ 'i', `'\\u0660'`],
+						[/* text */ 't', ` through `],
+						[/* inline code block */ 'i', `'\\u0669'`],
+						[/* text */ 't', `,
+     Arabic-Indic digits
+ `]
+					]],
+					[/* block */ 'b', [
+						[/* inline code block */ 'i', `'\\u06F0'`],
+						[/* text */ 't', ` through `],
+						[/* inline code block */ 'i', `'\\u06F9'`],
+						[/* text */ 't', `,
+     Extended Arabic-Indic digits
+ `]
+					]],
+					[/* block */ 'b', [
+						[/* inline code block */ 'i', `'\\u0966'`],
+						[/* text */ 't', ` through `],
+						[/* inline code block */ 'i', `'\\u096F'`],
+						[/* text */ 't', `,
+     Devanagari digits
+ `]
+					]],
+					[/* block */ 'b', [
+						[/* inline code block */ 'i', `'\\uFF10'`],
+						[/* text */ 't', ` through `],
+						[/* inline code block */ 'i', `'\\uFF19'`],
+						[/* text */ 't', `,
+     Fullwidth digits
+ `]
+					]]
+				]],
+				[/* text */ 't', `
+
+ Many other character ranges contain digits as well.`],
+				[/* block */ 'b', '']
+			],
+			[/* parameters */
+				[/* parameter */ 'codePoint', [/* parameter description */
+					[/* text */ 't', `the character (Unicode code point) to be tested.`]
+				]]
+			],
+			/* throws */ UDF,
+			[/* return description */
+				[/* inline code block */ 'i', `true`],
+				[/* text */ 't', ` if the character is a digit;
+          `],
+				[/* inline code block */ 'i', `false`],
+				[/* text */ 't', ` otherwise.`]
+			]
+		]],
+		[/* method */ 'isHighSurrogate(char)', [
+			[/* method description */
+				[/* text */ 't', `Determines if the given `],
+				[/* inline code block */ 'i', `char`],
+				[/* text */ 't', ` value is a
+ `],
+				[/* external link */ 'a', `http://www.unicode.org/glossary/#high_surrogate_code_unit`, `Unicode high-surrogate code unit`],
+				[/* text */ 't', `
+ (also known as `],
+				[/* text */ 't', `leading-surrogate code unit`],
+				[/* text */ 't', `).
+
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', `Such values do not represent characters by themselves,
+ but are used in the representation of
+ `],
+					[/* text */ 't', `supplementary characters`],
+					[/* text */ 't', `
+ in the UTF-16 encoding.`]
+				]]
+			],
+			[/* parameters */
+				[/* parameter */ 'ch', [/* parameter description */
+					[/* text */ 't', `the `],
+					[/* inline code block */ 'i', `char`],
+					[/* text */ 't', ` value to be tested.`]
+				]]
+			],
+			/* throws */ UDF,
+			[/* return description */
+				[/* inline code block */ 'i', `true`],
+				[/* text */ 't', ` if the `],
+				[/* inline code block */ 'i', `char`],
+				[/* text */ 't', ` value is between
+         `],
+				[/* text */ 't', `MIN_HIGH_SURROGATE`],
+				[/* text */ 't', ` and
+         `],
+				[/* text */ 't', `MAX_HIGH_SURROGATE`],
+				[/* text */ 't', ` inclusive;
+         `],
+				[/* inline code block */ 'i', `false`],
+				[/* text */ 't', ` otherwise.`]
+			]
+		]],
+		[/* method */ 'isIdentifierIgnorable(char)', [
+			[/* method description */
+				[/* text */ 't', `Determines if the specified character should be regarded as
+ an ignorable character in a Java identifier or a Unicode identifier.
+ `],
+				[/* block */ 'b', `
+ The following Unicode characters are ignorable in a Java identifier
+ or a Unicode identifier:
+ `],
+				[/* list */ 'l', [
+					[/* block */ 'b', [
+						[/* text */ 't', `ISO control characters that are not whitespace
+ `],
+						[/* list */ 'l', [
+							[/* block */ 'b', [
+								[/* inline code block */ 'i', `'\\u0000'`],
+								[/* text */ 't', ` through `],
+								[/* inline code block */ 'i', `'\\u0008'`]
+							]],
+							[/* block */ 'b', [
+								[/* inline code block */ 'i', `'\\u000E'`],
+								[/* text */ 't', ` through `],
+								[/* inline code block */ 'i', `'\\u001B'`]
+							]],
+							[/* block */ 'b', [
+								[/* inline code block */ 'i', `'\\u007F'`],
+								[/* text */ 't', ` through `],
+								[/* inline code block */ 'i', `'\\u009F'`]
+							]]
+						]]
+					]],
+					[/* block */ 'b', [
+						[/* text */ 't', `all characters that have the `],
+						[/* inline code block */ 'i', `FORMAT`],
+						[/* text */ 't', ` general
+ category value
+ `]
+					]]
+				]],
+				[/* block */ 'b', ''],
+				[/* block */ 'b', [
+					[/* text */ 't', `Note:`],
+					[/* text */ 't', ` This method cannot handle `],
+					[/* text */ 't', `supplementary characters`],
+					[/* text */ 't', `. To support
+ all Unicode characters, including supplementary characters, use
+ the `],
+					[/* reference */ 'r', `#isIdentifierIgnorable(int)`, `isIdentifierIgnorable(int)`],
+					[/* text */ 't', ` method.`]
+				]]
+			],
+			[/* parameters */
+				[/* parameter */ 'ch', [/* parameter description */
+					[/* text */ 't', `the character to be tested.`]
+				]]
+			],
+			/* throws */ UDF,
+			[/* return description */
+				[/* inline code block */ 'i', `true`],
+				[/* text */ 't', ` if the character is an ignorable control
+          character that may be part of a Java or Unicode identifier;
+           `],
+				[/* inline code block */ 'i', `false`],
+				[/* text */ 't', ` otherwise.`]
+			]
+		]],
+		[/* method */ 'isIdentifierIgnorable(int)', [
+			[/* method description */
+				[/* text */ 't', `Determines if the specified character (Unicode code point) should be regarded as
+ an ignorable character in a Java identifier or a Unicode identifier.
+ `],
+				[/* block */ 'b', `
+ The following Unicode characters are ignorable in a Java identifier
+ or a Unicode identifier:
+ `],
+				[/* list */ 'l', [
+					[/* block */ 'b', [
+						[/* text */ 't', `ISO control characters that are not whitespace
+ `],
+						[/* list */ 'l', [
+							[/* block */ 'b', [
+								[/* inline code block */ 'i', `'\\u0000'`],
+								[/* text */ 't', ` through `],
+								[/* inline code block */ 'i', `'\\u0008'`]
+							]],
+							[/* block */ 'b', [
+								[/* inline code block */ 'i', `'\\u000E'`],
+								[/* text */ 't', ` through `],
+								[/* inline code block */ 'i', `'\\u001B'`]
+							]],
+							[/* block */ 'b', [
+								[/* inline code block */ 'i', `'\\u007F'`],
+								[/* text */ 't', ` through `],
+								[/* inline code block */ 'i', `'\\u009F'`]
+							]]
+						]]
+					]],
+					[/* block */ 'b', [
+						[/* text */ 't', `all characters that have the `],
+						[/* inline code block */ 'i', `FORMAT`],
+						[/* text */ 't', ` general
+ category value
  `]
 					]]
 				]],
@@ -942,7 +1420,100 @@ DocsCollector.collect('java.lang.Character', [
 			/* throws */ UDF,
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
-				[/* text */ 't', ` if the character may start a Java identifier;
+				[/* text */ 't', ` if the character is an ignorable control
+          character that may be part of a Java or Unicode identifier;
+          `],
+				[/* inline code block */ 'i', `false`],
+				[/* text */ 't', ` otherwise.`]
+			]
+		]],
+		[/* method */ 'isIdeographic(int)', [
+			[/* method description */
+				[/* text */ 't', `Determines if the specified character (Unicode code point) is a CJKV
+ (Chinese, Japanese, Korean and Vietnamese) ideograph, as defined by
+ the Unicode Standard.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'codePoint', [/* parameter description */
+					[/* text */ 't', `the character (Unicode code point) to be tested.`]
+				]]
+			],
+			/* throws */ UDF,
+			[/* return description */
+				[/* inline code block */ 'i', `true`],
+				[/* text */ 't', ` if the character is a Unicode ideograph
+          character, `],
+				[/* inline code block */ 'i', `false`],
+				[/* text */ 't', ` otherwise.`]
+			]
+		]],
+		[/* method */ 'isISOControl(char)', [
+			[/* method description */
+				[/* text */ 't', `Determines if the specified character is an ISO control
+ character.  A character is considered to be an ISO control
+ character if its code is in the range `],
+				[/* inline code block */ 'i', `'\\u0000'`],
+				[/* text */ 't', `
+ through `],
+				[/* inline code block */ 'i', `'\\u001F'`],
+				[/* text */ 't', ` or in the range
+ `],
+				[/* inline code block */ 'i', `'\\u007F'`],
+				[/* text */ 't', ` through `],
+				[/* inline code block */ 'i', `'\\u009F'`],
+				[/* text */ 't', `.
+
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', `Note:`],
+					[/* text */ 't', ` This method cannot handle `],
+					[/* text */ 't', `supplementary characters`],
+					[/* text */ 't', `. To support
+ all Unicode characters, including supplementary characters, use
+ the `],
+					[/* reference */ 'r', `#isISOControl(int)`, `isISOControl(int)`],
+					[/* text */ 't', ` method.`]
+				]]
+			],
+			[/* parameters */
+				[/* parameter */ 'ch', [/* parameter description */
+					[/* text */ 't', `the character to be tested.`]
+				]]
+			],
+			/* throws */ UDF,
+			[/* return description */
+				[/* inline code block */ 'i', `true`],
+				[/* text */ 't', ` if the character is an ISO control character;
+          `],
+				[/* inline code block */ 'i', `false`],
+				[/* text */ 't', ` otherwise.`]
+			]
+		]],
+		[/* method */ 'isISOControl(int)', [
+			[/* method description */
+				[/* text */ 't', `Determines if the referenced character (Unicode code point) is an ISO control
+ character.  A character is considered to be an ISO control
+ character if its code is in the range `],
+				[/* inline code block */ 'i', `'\\u0000'`],
+				[/* text */ 't', `
+ through `],
+				[/* inline code block */ 'i', `'\\u001F'`],
+				[/* text */ 't', ` or in the range
+ `],
+				[/* inline code block */ 'i', `'\\u007F'`],
+				[/* text */ 't', ` through `],
+				[/* inline code block */ 'i', `'\\u009F'`],
+				[/* text */ 't', `.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'codePoint', [/* parameter description */
+					[/* text */ 't', `the character (Unicode code point) to be tested.`]
+				]]
+			],
+			/* throws */ UDF,
+			[/* return description */
+				[/* inline code block */ 'i', `true`],
+				[/* text */ 't', ` if the character is an ISO control character;
           `],
 				[/* inline code block */ 'i', `false`],
 				[/* text */ 't', ` otherwise.`]
@@ -1072,370 +1643,41 @@ DocsCollector.collect('java.lang.Character', [
 				[/* text */ 't', ` otherwise.`]
 			]
 		]],
-		[/* method */ 'equals(java.lang.Object)', [
+		[/* method */ 'isJavaIdentifierStart(char)', [
 			[/* method description */
-				[/* text */ 't', `Compares this object against the specified object.
- The result is `],
-				[/* inline code block */ 'i', `true`],
-				[/* text */ 't', ` if and only if the argument is not
+				[/* text */ 't', `Determines if the specified character is
+ permissible as the first character in a Java identifier.
  `],
-				[/* inline code block */ 'i', `null`],
-				[/* text */ 't', ` and is a `],
-				[/* inline code block */ 'i', `Character`],
-				[/* text */ 't', ` object that
- represents the same `],
-				[/* inline code block */ 'i', `char`],
-				[/* text */ 't', ` value as this object.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'obj', [/* parameter description */
-					[/* text */ 't', `the object to compare with.`]
-				]]
-			],
-			/* throws */ UDF,
-			[/* return description */
-				[/* inline code block */ 'i', `true`],
-				[/* text */ 't', ` if the objects are the same;
-          `],
-				[/* inline code block */ 'i', `false`],
-				[/* text */ 't', ` otherwise.`]
-			]
-		]],
-		[/* method */ 'toString(int)', [
-			[/* method description */
-				[/* text */ 't', `Returns a `],
-				[/* inline code block */ 'i', `String`],
-				[/* text */ 't', ` object representing the
- specified character (Unicode code point).  The result is a string of
- length 1 or 2, consisting solely of the specified `],
-				[/* inline code block */ 'i', `codePoint`],
-				[/* text */ 't', `.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'codePoint', [/* parameter description */
-					[/* text */ 't', `the `],
-					[/* inline code block */ 'i', `codePoint`],
-					[/* text */ 't', ` to be converted`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
-					[/* text */ 't', `if the specified
-      `],
-					[/* inline code block */ 'i', `codePoint`],
-					[/* text */ 't', ` is not a `],
-					[/* reference */ 'r', `#isValidCodePoint(int)`, `valid Unicode code point`],
-					[/* text */ 't', `.`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `the string representation of the specified `],
-				[/* inline code block */ 'i', `codePoint`]
-			]
-		]],
-		[/* method */ 'toString()', [
-			[/* method description */
-				[/* text */ 't', `Returns a `],
-				[/* inline code block */ 'i', `String`],
-				[/* text */ 't', ` object representing this
- `],
-				[/* inline code block */ 'i', `Character`],
-				[/* text */ 't', `'s value.  The result is a string of
- length 1 whose sole component is the primitive
- `],
-				[/* inline code block */ 'i', `char`],
-				[/* text */ 't', ` value represented by this
- `],
-				[/* inline code block */ 'i', `Character`],
-				[/* text */ 't', ` object.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `a string representation of this object.`]
-			]
-		]],
-		[/* method */ 'toString(char)', [
-			[/* method description */
-				[/* text */ 't', `Returns a `],
-				[/* inline code block */ 'i', `String`],
-				[/* text */ 't', ` object representing the
- specified `],
-				[/* inline code block */ 'i', `char`],
-				[/* text */ 't', `.  The result is a string of length
- 1 consisting solely of the specified `],
-				[/* inline code block */ 'i', `char`],
-				[/* text */ 't', `.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'c', [/* parameter description */
-					[/* text */ 't', `the `],
-					[/* inline code block */ 'i', `char`],
-					[/* text */ 't', ` to be converted`]
-				]]
-			],
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the string representation of the specified `],
-				[/* inline code block */ 'i', `char`]
-			]
-		]],
-		[/* method */ 'hashCode(char)', [
-			[/* method description */
-				[/* text */ 't', `Returns a hash code for a `],
-				[/* inline code block */ 'i', `char`],
-				[/* text */ 't', ` value; compatible with
- `],
-				[/* inline code block */ 'i', `Character.hashCode()`],
-				[/* text */ 't', `.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'value', [/* parameter description */
-					[/* text */ 't', `The `],
-					[/* inline code block */ 'i', `char`],
-					[/* text */ 't', ` for which to return a hash code.`]
-				]]
-			],
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `a hash code value for a `],
-				[/* inline code block */ 'i', `char`],
-				[/* text */ 't', ` value.`]
-			]
-		]],
-		[/* method */ 'hashCode()', [
-			[/* method description */
-				[/* text */ 't', `Returns a hash code for this `],
-				[/* inline code block */ 'i', `Character`],
-				[/* text */ 't', `; equal to the result
- of invoking `],
-				[/* inline code block */ 'i', `charValue()`],
-				[/* text */ 't', `.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `a hash code value for this `],
-				[/* inline code block */ 'i', `Character`]
-			]
-		]],
-		[/* method */ 'reverseBytes(char)', [
-			[/* method description */
-				[/* text */ 't', `Returns the value obtained by reversing the order of the bytes in the
- specified `],
-				[/* inline code block */ 'i', `char`],
-				[/* text */ 't', ` value.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'ch', [/* parameter description */
-					[/* text */ 't', `The `],
-					[/* inline code block */ 'i', `char`],
-					[/* text */ 't', ` of which to reverse the byte order.`]
-				]]
-			],
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the value obtained by reversing (or, equivalently, swapping)
-     the bytes in the specified `],
-				[/* inline code block */ 'i', `char`],
-				[/* text */ 't', ` value.`]
-			]
-		]],
-		[/* method */ 'compareTo(java.lang.Character)', [
-			[/* method description */
-				[/* text */ 't', `Compares two `],
-				[/* inline code block */ 'i', `Character`],
-				[/* text */ 't', ` objects numerically.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'anotherCharacter', [/* parameter description */
-					[/* text */ 't', `the `],
-					[/* inline code block */ 'i', `Character`],
-					[/* text */ 't', ` to be compared.`]
-				]]
-			],
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the value `],
-				[/* inline code block */ 'i', `0`],
-				[/* text */ 't', ` if the argument `],
-				[/* inline code block */ 'i', `Character`],
-				[/* text */ 't', `
-          is equal to this `],
-				[/* inline code block */ 'i', `Character`],
-				[/* text */ 't', `; a value less than
-          `],
-				[/* inline code block */ 'i', `0`],
-				[/* text */ 't', ` if this `],
-				[/* inline code block */ 'i', `Character`],
-				[/* text */ 't', ` is numerically less
-          than the `],
-				[/* inline code block */ 'i', `Character`],
-				[/* text */ 't', ` argument; and a value greater than
-          `],
-				[/* inline code block */ 'i', `0`],
-				[/* text */ 't', ` if this `],
-				[/* inline code block */ 'i', `Character`],
-				[/* text */ 't', ` is numerically greater
-          than the `],
-				[/* inline code block */ 'i', `Character`],
-				[/* text */ 't', ` argument (unsigned comparison).
-          Note that this is strictly a numerical comparison; it is not
-          locale-dependent.`]
-			]
-		]],
-		[/* method */ 'isDigit(int)', [
-			[/* method description */
-				[/* text */ 't', `Determines if the specified character (Unicode code point) is a digit.
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', `
- A character is a digit if its general category type, provided
- by `],
-					[/* reference */ 'r', `#getType(int)`, `getType(codePoint)`],
-					[/* text */ 't', `, is
- `],
-					[/* inline code block */ 'i', `DECIMAL_DIGIT_NUMBER`],
-					[/* text */ 't', `.
- `]
-				]],
 				[/* block */ 'b', `
- Some Unicode character ranges that contain digits:
+ A character may start a Java identifier if and only if
+ one of the following conditions is true:
  `],
 				[/* list */ 'l', [
 					[/* block */ 'b', [
-						[/* inline code block */ 'i', `'\\u0030'`],
-						[/* text */ 't', ` through `],
-						[/* inline code block */ 'i', `'\\u0039'`],
-						[/* text */ 't', `,
-     ISO-LATIN-1 digits (`],
-						[/* inline code block */ 'i', `'0'`],
-						[/* text */ 't', ` through `],
-						[/* inline code block */ 'i', `'9'`],
+						[/* reference */ 'r', `#isLetter(int)`, `isLetter(ch)`],
+						[/* text */ 't', ` returns `],
+						[/* inline code block */ 'i', `true`]
+					]],
+					[/* block */ 'b', [
+						[/* reference */ 'r', `#getType(int)`, `getType(ch)`],
+						[/* text */ 't', ` returns `],
+						[/* inline code block */ 'i', `LETTER_NUMBER`]
+					]],
+					[/* block */ 'b', [
+						[/* inline code block */ 'i', `ch`],
+						[/* text */ 't', ` is a currency symbol (such as `],
+						[/* inline code block */ 'i', `'$'`],
 						[/* text */ 't', `)
  `]
 					]],
 					[/* block */ 'b', [
-						[/* inline code block */ 'i', `'\\u0660'`],
-						[/* text */ 't', ` through `],
-						[/* inline code block */ 'i', `'\\u0669'`],
-						[/* text */ 't', `,
-     Arabic-Indic digits
- `]
-					]],
-					[/* block */ 'b', [
-						[/* inline code block */ 'i', `'\\u06F0'`],
-						[/* text */ 't', ` through `],
-						[/* inline code block */ 'i', `'\\u06F9'`],
-						[/* text */ 't', `,
-     Extended Arabic-Indic digits
- `]
-					]],
-					[/* block */ 'b', [
-						[/* inline code block */ 'i', `'\\u0966'`],
-						[/* text */ 't', ` through `],
-						[/* inline code block */ 'i', `'\\u096F'`],
-						[/* text */ 't', `,
-     Devanagari digits
- `]
-					]],
-					[/* block */ 'b', [
-						[/* inline code block */ 'i', `'\\uFF10'`],
-						[/* text */ 't', ` through `],
-						[/* inline code block */ 'i', `'\\uFF19'`],
-						[/* text */ 't', `,
-     Fullwidth digits
+						[/* inline code block */ 'i', `ch`],
+						[/* text */ 't', ` is a connecting punctuation character (such as `],
+						[/* inline code block */ 'i', `'_'`],
+						[/* text */ 't', `).
  `]
 					]]
 				]],
-				[/* text */ 't', `
-
- Many other character ranges contain digits as well.`],
-				[/* block */ 'b', '']
-			],
-			[/* parameters */
-				[/* parameter */ 'codePoint', [/* parameter description */
-					[/* text */ 't', `the character (Unicode code point) to be tested.`]
-				]]
-			],
-			/* throws */ UDF,
-			[/* return description */
-				[/* inline code block */ 'i', `true`],
-				[/* text */ 't', ` if the character is a digit;
-          `],
-				[/* inline code block */ 'i', `false`],
-				[/* text */ 't', ` otherwise.`]
-			]
-		]],
-		[/* method */ 'isDigit(char)', [
-			[/* method description */
-				[/* text */ 't', `Determines if the specified character is a digit.
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', `
- A character is a digit if its general category type, provided
- by `],
-					[/* inline code block */ 'i', `Character.getType(ch)`],
-					[/* text */ 't', `, is
- `],
-					[/* inline code block */ 'i', `DECIMAL_DIGIT_NUMBER`],
-					[/* text */ 't', `.
- `]
-				]],
-				[/* block */ 'b', `
- Some Unicode character ranges that contain digits:
- `],
-				[/* list */ 'l', [
-					[/* block */ 'b', [
-						[/* inline code block */ 'i', `'\\u0030'`],
-						[/* text */ 't', ` through `],
-						[/* inline code block */ 'i', `'\\u0039'`],
-						[/* text */ 't', `,
-     ISO-LATIN-1 digits (`],
-						[/* inline code block */ 'i', `'0'`],
-						[/* text */ 't', ` through `],
-						[/* inline code block */ 'i', `'9'`],
-						[/* text */ 't', `)
- `]
-					]],
-					[/* block */ 'b', [
-						[/* inline code block */ 'i', `'\\u0660'`],
-						[/* text */ 't', ` through `],
-						[/* inline code block */ 'i', `'\\u0669'`],
-						[/* text */ 't', `,
-     Arabic-Indic digits
- `]
-					]],
-					[/* block */ 'b', [
-						[/* inline code block */ 'i', `'\\u06F0'`],
-						[/* text */ 't', ` through `],
-						[/* inline code block */ 'i', `'\\u06F9'`],
-						[/* text */ 't', `,
-     Extended Arabic-Indic digits
- `]
-					]],
-					[/* block */ 'b', [
-						[/* inline code block */ 'i', `'\\u0966'`],
-						[/* text */ 't', ` through `],
-						[/* inline code block */ 'i', `'\\u096F'`],
-						[/* text */ 't', `,
-     Devanagari digits
- `]
-					]],
-					[/* block */ 'b', [
-						[/* inline code block */ 'i', `'\\uFF10'`],
-						[/* text */ 't', ` through `],
-						[/* inline code block */ 'i', `'\\uFF19'`],
-						[/* text */ 't', `,
-     Fullwidth digits
- `]
-					]]
-				]],
-				[/* text */ 't', `
-
- Many other character ranges contain digits as well.
-
- `],
 				[/* block */ 'b', ''],
 				[/* block */ 'b', [
 					[/* text */ 't', `Note:`],
@@ -1444,7 +1686,7 @@ DocsCollector.collect('java.lang.Character', [
 					[/* text */ 't', `. To support
  all Unicode characters, including supplementary characters, use
  the `],
-					[/* reference */ 'r', `#isDigit(int)`, `isDigit(int)`],
+					[/* reference */ 'r', `#isJavaIdentifierStart(int)`, `isJavaIdentifierStart(int)`],
 					[/* text */ 't', ` method.`]
 				]]
 			],
@@ -1456,42 +1698,49 @@ DocsCollector.collect('java.lang.Character', [
 			/* throws */ UDF,
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
-				[/* text */ 't', ` if the character is a digit;
+				[/* text */ 't', ` if the character may start a Java identifier;
           `],
 				[/* inline code block */ 'i', `false`],
 				[/* text */ 't', ` otherwise.`]
 			]
 		]],
-		[/* method */ 'isLowerCase(int)', [
+		[/* method */ 'isJavaIdentifierStart(int)', [
 			[/* method description */
-				[/* text */ 't', `Determines if the specified character (Unicode code point) is a
- lowercase character.
+				[/* text */ 't', `Determines if the character (Unicode code point) is
+ permissible as the first character in a Java identifier.
  `],
-				[/* block */ 'b', [
-					[/* text */ 't', `
- A character is lowercase if its general category type, provided
- by `],
-					[/* reference */ 'r', `#getType(char)`, `getType(codePoint)`],
-					[/* text */ 't', `, is
- `],
-					[/* inline code block */ 'i', `LOWERCASE_LETTER`],
-					[/* text */ 't', `, or it has contributory property
- Other_Lowercase as defined by the Unicode Standard.
- `]
-				]],
 				[/* block */ 'b', `
- The following are examples of lowercase characters:
+ A character may start a Java identifier if and only if
+ one of the following conditions is true:
  `],
-				[/* block */ 'b', [
-					[/* code block */ 'c', ` a b c d e f g h i j k l m n o p q r s t u v w x y z
- '\\u00DF' '\\u00E0' '\\u00E1' '\\u00E2' '\\u00E3' '\\u00E4' '\\u00E5' '\\u00E6'
- '\\u00E7' '\\u00E8' '\\u00E9' '\\u00EA' '\\u00EB' '\\u00EC' '\\u00ED' '\\u00EE'
- '\\u00EF' '\\u00F0' '\\u00F1' '\\u00F2' '\\u00F3' '\\u00F4' '\\u00F5' '\\u00F6'
- '\\u00F8' '\\u00F9' '\\u00FA' '\\u00FB' '\\u00FC' '\\u00FD' '\\u00FE' '\\u00FF'
+				[/* list */ 'l', [
+					[/* block */ 'b', [
+						[/* reference */ 'r', `#isLetter(int)`, `isLetter(codePoint)`],
+						[/* text */ 't', `
+      returns `],
+						[/* inline code block */ 'i', `true`]
+					]],
+					[/* block */ 'b', [
+						[/* reference */ 'r', `#getType(int)`, `getType(codePoint)`],
+						[/* text */ 't', `
+      returns `],
+						[/* inline code block */ 'i', `LETTER_NUMBER`]
+					]],
+					[/* block */ 'b', [
+						[/* text */ 't', ` the referenced character is a currency symbol (such as `],
+						[/* inline code block */ 'i', `'$'`],
+						[/* text */ 't', `)
  `]
+					]],
+					[/* block */ 'b', [
+						[/* text */ 't', ` the referenced character is a connecting punctuation character
+      (such as `],
+						[/* inline code block */ 'i', `'_'`],
+						[/* text */ 't', `).
+ `]
+					]]
 				]],
-				[/* block */ 'b', ''],
-				[/* block */ 'b', ` Many other Unicode characters are lowercase too.`]
+				[/* block */ 'b', '']
 			],
 			[/* parameters */
 				[/* parameter */ 'codePoint', [/* parameter description */
@@ -1501,7 +1750,303 @@ DocsCollector.collect('java.lang.Character', [
 			/* throws */ UDF,
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
-				[/* text */ 't', ` if the character is lowercase;
+				[/* text */ 't', ` if the character may start a Java identifier;
+          `],
+				[/* inline code block */ 'i', `false`],
+				[/* text */ 't', ` otherwise.`]
+			]
+		]],
+		[/* method */ 'isJavaLetter(char)', [
+			[/* method description */
+				[/* text */ 't', `Determines if the specified character is permissible as the first
+ character in a Java identifier.
+ `],
+				[/* block */ 'b', `
+ A character may start a Java identifier if and only if
+ one of the following conditions is true:
+ `],
+				[/* list */ 'l', [
+					[/* block */ 'b', [
+						[/* reference */ 'r', `#isLetter(int)`, `isLetter(ch)`],
+						[/* text */ 't', ` returns `],
+						[/* inline code block */ 'i', `true`]
+					]],
+					[/* block */ 'b', [
+						[/* reference */ 'r', `#getType(int)`, `getType(ch)`],
+						[/* text */ 't', ` returns `],
+						[/* inline code block */ 'i', `LETTER_NUMBER`]
+					]],
+					[/* block */ 'b', [
+						[/* inline code block */ 'i', `ch`],
+						[/* text */ 't', ` is a currency symbol (such as `],
+						[/* inline code block */ 'i', `'$'`],
+						[/* text */ 't', `)
+ `]
+					]],
+					[/* block */ 'b', [
+						[/* inline code block */ 'i', `ch`],
+						[/* text */ 't', ` is a connecting punctuation character (such as `],
+						[/* inline code block */ 'i', `'_'`],
+						[/* text */ 't', `).
+ `]
+					]]
+				]],
+				[/* block */ 'b', '']
+			],
+			[/* parameters */
+				[/* parameter */ 'ch', [/* parameter description */
+					[/* text */ 't', `the character to be tested.`]
+				]]
+			],
+			/* throws */ UDF,
+			[/* return description */
+				[/* inline code block */ 'i', `true`],
+				[/* text */ 't', ` if the character may start a Java
+          identifier; `],
+				[/* inline code block */ 'i', `false`],
+				[/* text */ 't', ` otherwise.`]
+			]
+		]],
+		[/* method */ 'isJavaLetterOrDigit(char)', [
+			[/* method description */
+				[/* text */ 't', `Determines if the specified character may be part of a Java
+ identifier as other than the first character.
+ `],
+				[/* block */ 'b', `
+ A character may be part of a Java identifier if and only if one
+ of the following conditions is true:
+ `],
+				[/* list */ 'l', [
+					[/* block */ 'b', `  it is a letter
+ `],
+					[/* block */ 'b', [
+						[/* text */ 't', `  it is a currency symbol (such as `],
+						[/* inline code block */ 'i', `'$'`],
+						[/* text */ 't', `)
+ `]
+					]],
+					[/* block */ 'b', [
+						[/* text */ 't', `  it is a connecting punctuation character (such as `],
+						[/* inline code block */ 'i', `'_'`],
+						[/* text */ 't', `)
+ `]
+					]],
+					[/* block */ 'b', `  it is a digit
+ `],
+					[/* block */ 'b', `  it is a numeric letter (such as a Roman numeral character)
+ `],
+					[/* block */ 'b', `  it is a combining mark
+ `],
+					[/* block */ 'b', `  it is a non-spacing mark
+ `],
+					[/* block */ 'b', [
+						[/* inline code block */ 'i', `isIdentifierIgnorable`],
+						[/* text */ 't', ` returns
+ `],
+						[/* inline code block */ 'i', `true`],
+						[/* text */ 't', ` for the character.
+ `]
+					]]
+				]],
+				[/* block */ 'b', '']
+			],
+			[/* parameters */
+				[/* parameter */ 'ch', [/* parameter description */
+					[/* text */ 't', `the character to be tested.`]
+				]]
+			],
+			/* throws */ UDF,
+			[/* return description */
+				[/* inline code block */ 'i', `true`],
+				[/* text */ 't', ` if the character may be part of a
+          Java identifier; `],
+				[/* inline code block */ 'i', `false`],
+				[/* text */ 't', ` otherwise.`]
+			]
+		]],
+		[/* method */ 'isLetter(char)', [
+			[/* method description */
+				[/* text */ 't', `Determines if the specified character is a letter.
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', `
+ A character is considered to be a letter if its general
+ category type, provided by `],
+					[/* inline code block */ 'i', `Character.getType(ch)`],
+					[/* text */ 't', `,
+ is any of the following:
+ `]
+				]],
+				[/* list */ 'l', [
+					[/* block */ 'b', [
+						[/* inline code block */ 'i', `UPPERCASE_LETTER`]
+					]],
+					[/* block */ 'b', [
+						[/* inline code block */ 'i', `LOWERCASE_LETTER`]
+					]],
+					[/* block */ 'b', [
+						[/* inline code block */ 'i', `TITLECASE_LETTER`]
+					]],
+					[/* block */ 'b', [
+						[/* inline code block */ 'i', `MODIFIER_LETTER`]
+					]],
+					[/* block */ 'b', [
+						[/* inline code block */ 'i', `OTHER_LETTER`]
+					]]
+				]],
+				[/* text */ 't', `
+
+ Not all letters have case. Many characters are
+ letters but are neither uppercase nor lowercase nor titlecase.
+
+ `],
+				[/* block */ 'b', ''],
+				[/* block */ 'b', [
+					[/* text */ 't', `Note:`],
+					[/* text */ 't', ` This method cannot handle `],
+					[/* text */ 't', `supplementary characters`],
+					[/* text */ 't', `. To support
+ all Unicode characters, including supplementary characters, use
+ the `],
+					[/* reference */ 'r', `#isLetter(int)`, `isLetter(int)`],
+					[/* text */ 't', ` method.`]
+				]]
+			],
+			[/* parameters */
+				[/* parameter */ 'ch', [/* parameter description */
+					[/* text */ 't', `the character to be tested.`]
+				]]
+			],
+			/* throws */ UDF,
+			[/* return description */
+				[/* inline code block */ 'i', `true`],
+				[/* text */ 't', ` if the character is a letter;
+          `],
+				[/* inline code block */ 'i', `false`],
+				[/* text */ 't', ` otherwise.`]
+			]
+		]],
+		[/* method */ 'isLetter(int)', [
+			[/* method description */
+				[/* text */ 't', `Determines if the specified character (Unicode code point) is a letter.
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', `
+ A character is considered to be a letter if its general
+ category type, provided by `],
+					[/* reference */ 'r', `#getType(int)`, `getType(codePoint)`],
+					[/* text */ 't', `,
+ is any of the following:
+ `]
+				]],
+				[/* list */ 'l', [
+					[/* block */ 'b', [
+						[/* inline code block */ 'i', `UPPERCASE_LETTER`]
+					]],
+					[/* block */ 'b', [
+						[/* inline code block */ 'i', `LOWERCASE_LETTER`]
+					]],
+					[/* block */ 'b', [
+						[/* inline code block */ 'i', `TITLECASE_LETTER`]
+					]],
+					[/* block */ 'b', [
+						[/* inline code block */ 'i', `MODIFIER_LETTER`]
+					]],
+					[/* block */ 'b', [
+						[/* inline code block */ 'i', `OTHER_LETTER`]
+					]]
+				]],
+				[/* text */ 't', `
+
+ Not all letters have case. Many characters are
+ letters but are neither uppercase nor lowercase nor titlecase.`],
+				[/* block */ 'b', '']
+			],
+			[/* parameters */
+				[/* parameter */ 'codePoint', [/* parameter description */
+					[/* text */ 't', `the character (Unicode code point) to be tested.`]
+				]]
+			],
+			/* throws */ UDF,
+			[/* return description */
+				[/* inline code block */ 'i', `true`],
+				[/* text */ 't', ` if the character is a letter;
+          `],
+				[/* inline code block */ 'i', `false`],
+				[/* text */ 't', ` otherwise.`]
+			]
+		]],
+		[/* method */ 'isLetterOrDigit(char)', [
+			[/* method description */
+				[/* text */ 't', `Determines if the specified character is a letter or digit.
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', `
+ A character is considered to be a letter or digit if either
+ `],
+					[/* inline code block */ 'i', `Character.isLetter(char ch)`],
+					[/* text */ 't', ` or
+ `],
+					[/* inline code block */ 'i', `Character.isDigit(char ch)`],
+					[/* text */ 't', ` returns
+ `],
+					[/* inline code block */ 'i', `true`],
+					[/* text */ 't', ` for the character.
+
+ `]
+				]],
+				[/* block */ 'b', [
+					[/* text */ 't', `Note:`],
+					[/* text */ 't', ` This method cannot handle `],
+					[/* text */ 't', `supplementary characters`],
+					[/* text */ 't', `. To support
+ all Unicode characters, including supplementary characters, use
+ the `],
+					[/* reference */ 'r', `#isLetterOrDigit(int)`, `isLetterOrDigit(int)`],
+					[/* text */ 't', ` method.`]
+				]]
+			],
+			[/* parameters */
+				[/* parameter */ 'ch', [/* parameter description */
+					[/* text */ 't', `the character to be tested.`]
+				]]
+			],
+			/* throws */ UDF,
+			[/* return description */
+				[/* inline code block */ 'i', `true`],
+				[/* text */ 't', ` if the character is a letter or digit;
+          `],
+				[/* inline code block */ 'i', `false`],
+				[/* text */ 't', ` otherwise.`]
+			]
+		]],
+		[/* method */ 'isLetterOrDigit(int)', [
+			[/* method description */
+				[/* text */ 't', `Determines if the specified character (Unicode code point) is a letter or digit.
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', `
+ A character is considered to be a letter or digit if either
+ `],
+					[/* reference */ 'r', `#isLetter(int)`, `isLetter(codePoint)`],
+					[/* text */ 't', ` or
+ `],
+					[/* reference */ 'r', `#isDigit(int)`, `isDigit(codePoint)`],
+					[/* text */ 't', ` returns
+ `],
+					[/* inline code block */ 'i', `true`],
+					[/* text */ 't', ` for the character.`]
+				]]
+			],
+			[/* parameters */
+				[/* parameter */ 'codePoint', [/* parameter description */
+					[/* text */ 't', `the character (Unicode code point) to be tested.`]
+				]]
+			],
+			/* throws */ UDF,
+			[/* return description */
+				[/* inline code block */ 'i', `true`],
+				[/* text */ 't', ` if the character is a letter or digit;
           `],
 				[/* inline code block */ 'i', `false`],
 				[/* text */ 't', ` otherwise.`]
@@ -1559,6 +2104,912 @@ DocsCollector.collect('java.lang.Character', [
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if the character is lowercase;
           `],
+				[/* inline code block */ 'i', `false`],
+				[/* text */ 't', ` otherwise.`]
+			]
+		]],
+		[/* method */ 'isLowerCase(int)', [
+			[/* method description */
+				[/* text */ 't', `Determines if the specified character (Unicode code point) is a
+ lowercase character.
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', `
+ A character is lowercase if its general category type, provided
+ by `],
+					[/* reference */ 'r', `#getType(char)`, `getType(codePoint)`],
+					[/* text */ 't', `, is
+ `],
+					[/* inline code block */ 'i', `LOWERCASE_LETTER`],
+					[/* text */ 't', `, or it has contributory property
+ Other_Lowercase as defined by the Unicode Standard.
+ `]
+				]],
+				[/* block */ 'b', `
+ The following are examples of lowercase characters:
+ `],
+				[/* block */ 'b', [
+					[/* code block */ 'c', ` a b c d e f g h i j k l m n o p q r s t u v w x y z
+ '\\u00DF' '\\u00E0' '\\u00E1' '\\u00E2' '\\u00E3' '\\u00E4' '\\u00E5' '\\u00E6'
+ '\\u00E7' '\\u00E8' '\\u00E9' '\\u00EA' '\\u00EB' '\\u00EC' '\\u00ED' '\\u00EE'
+ '\\u00EF' '\\u00F0' '\\u00F1' '\\u00F2' '\\u00F3' '\\u00F4' '\\u00F5' '\\u00F6'
+ '\\u00F8' '\\u00F9' '\\u00FA' '\\u00FB' '\\u00FC' '\\u00FD' '\\u00FE' '\\u00FF'
+ `]
+				]],
+				[/* block */ 'b', ''],
+				[/* block */ 'b', ` Many other Unicode characters are lowercase too.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'codePoint', [/* parameter description */
+					[/* text */ 't', `the character (Unicode code point) to be tested.`]
+				]]
+			],
+			/* throws */ UDF,
+			[/* return description */
+				[/* inline code block */ 'i', `true`],
+				[/* text */ 't', ` if the character is lowercase;
+          `],
+				[/* inline code block */ 'i', `false`],
+				[/* text */ 't', ` otherwise.`]
+			]
+		]],
+		[/* method */ 'isLowSurrogate(char)', [
+			[/* method description */
+				[/* text */ 't', `Determines if the given `],
+				[/* inline code block */ 'i', `char`],
+				[/* text */ 't', ` value is a
+ `],
+				[/* external link */ 'a', `http://www.unicode.org/glossary/#low_surrogate_code_unit`, `Unicode low-surrogate code unit`],
+				[/* text */ 't', `
+ (also known as `],
+				[/* text */ 't', `trailing-surrogate code unit`],
+				[/* text */ 't', `).
+
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', `Such values do not represent characters by themselves,
+ but are used in the representation of
+ `],
+					[/* text */ 't', `supplementary characters`],
+					[/* text */ 't', `
+ in the UTF-16 encoding.`]
+				]]
+			],
+			[/* parameters */
+				[/* parameter */ 'ch', [/* parameter description */
+					[/* text */ 't', `the `],
+					[/* inline code block */ 'i', `char`],
+					[/* text */ 't', ` value to be tested.`]
+				]]
+			],
+			/* throws */ UDF,
+			[/* return description */
+				[/* inline code block */ 'i', `true`],
+				[/* text */ 't', ` if the `],
+				[/* inline code block */ 'i', `char`],
+				[/* text */ 't', ` value is between
+         `],
+				[/* text */ 't', `MIN_LOW_SURROGATE`],
+				[/* text */ 't', ` and
+         `],
+				[/* text */ 't', `MAX_LOW_SURROGATE`],
+				[/* text */ 't', ` inclusive;
+         `],
+				[/* inline code block */ 'i', `false`],
+				[/* text */ 't', ` otherwise.`]
+			]
+		]],
+		[/* method */ 'isMirrored(char)', [
+			[/* method description */
+				[/* text */ 't', `Determines whether the character is mirrored according to the
+ Unicode specification.  Mirrored characters should have their
+ glyphs horizontally mirrored when displayed in text that is
+ right-to-left.  For example, `],
+				[/* inline code block */ 'i', `'\\u0028'`],
+				[/* text */ 't', ` LEFT
+ PARENTHESIS is semantically defined to be an `],
+				[/* text */ 't', `opening
+ parenthesis`],
+				[/* text */ 't', `.  This will appear as a "(" in text that is
+ left-to-right but as a ")" in text that is right-to-left.
+
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', `Note:`],
+					[/* text */ 't', ` This method cannot handle `],
+					[/* text */ 't', `supplementary characters`],
+					[/* text */ 't', `. To support
+ all Unicode characters, including supplementary characters, use
+ the `],
+					[/* reference */ 'r', `#isMirrored(int)`, `isMirrored(int)`],
+					[/* text */ 't', ` method.`]
+				]]
+			],
+			[/* parameters */
+				[/* parameter */ 'ch', [/* parameter description */
+					[/* text */ 't', ``],
+					[/* inline code block */ 'i', `char`],
+					[/* text */ 't', ` for which the mirrored property is requested`]
+				]]
+			],
+			/* throws */ UDF,
+			[/* return description */
+				[/* inline code block */ 'i', `true`],
+				[/* text */ 't', ` if the char is mirrored, `],
+				[/* inline code block */ 'i', `false`],
+				[/* text */ 't', `
+         if the `],
+				[/* inline code block */ 'i', `char`],
+				[/* text */ 't', ` is not mirrored or is not defined.`]
+			]
+		]],
+		[/* method */ 'isMirrored(int)', [
+			[/* method description */
+				[/* text */ 't', `Determines whether the specified character (Unicode code point)
+ is mirrored according to the Unicode specification.  Mirrored
+ characters should have their glyphs horizontally mirrored when
+ displayed in text that is right-to-left.  For example,
+ `],
+				[/* inline code block */ 'i', `'\\u0028'`],
+				[/* text */ 't', ` LEFT PARENTHESIS is semantically
+ defined to be an `],
+				[/* text */ 't', `opening parenthesis`],
+				[/* text */ 't', `.  This will appear
+ as a "(" in text that is left-to-right but as a ")" in text
+ that is right-to-left.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'codePoint', [/* parameter description */
+					[/* text */ 't', `the character (Unicode code point) to be tested.`]
+				]]
+			],
+			/* throws */ UDF,
+			[/* return description */
+				[/* inline code block */ 'i', `true`],
+				[/* text */ 't', ` if the character is mirrored, `],
+				[/* inline code block */ 'i', `false`],
+				[/* text */ 't', `
+          if the character is not mirrored or is not defined.`]
+			]
+		]],
+		[/* method */ 'isSpace(char)', [
+			[/* method description */
+				[/* text */ 't', `Determines if the specified character is ISO-LATIN-1 white space.
+ This method returns `],
+				[/* inline code block */ 'i', `true`],
+				[/* text */ 't', ` for the following five
+ characters only:
+ `],
+				[/* table */ 'tbl',
+					[/* caption */ 'tc'],
+					[/* table header */ 'th', [
+						[/* table row */ 'tr', [
+							[/* table header cell */ 'thc', [
+								[/* text */ 't', `Character
+     `]
+							]],
+							[/* table header cell */ 'thc', [
+								[/* text */ 't', `Code
+     `]
+							]],
+							[/* table header cell */ 'thc', [
+								[/* text */ 't', `Name
+ `]
+							]]
+						]]
+					]],
+					[/* table body */ 'tb', [
+						[/* table row */ 'tr', [
+							[/* table header cell */ 'thc', [
+								[/* inline code block */ 'i', `'\\t'`]
+							]],
+							[/* table cell */ 'tbc', [
+								[/* inline code block */ 'i', `U+0009`]
+							]],
+							[/* table cell */ 'tbc', [
+								[/* inline code block */ 'i', `HORIZONTAL TABULATION`]
+							]]
+						]],
+						[/* table row */ 'tr', [
+							[/* table header cell */ 'thc', [
+								[/* inline code block */ 'i', `'\\n'`]
+							]],
+							[/* table cell */ 'tbc', [
+								[/* inline code block */ 'i', `U+000A`]
+							]],
+							[/* table cell */ 'tbc', [
+								[/* inline code block */ 'i', `NEW LINE`]
+							]]
+						]],
+						[/* table row */ 'tr', [
+							[/* table header cell */ 'thc', [
+								[/* inline code block */ 'i', `'\\f'`]
+							]],
+							[/* table cell */ 'tbc', [
+								[/* inline code block */ 'i', `U+000C`]
+							]],
+							[/* table cell */ 'tbc', [
+								[/* inline code block */ 'i', `FORM FEED`]
+							]]
+						]],
+						[/* table row */ 'tr', [
+							[/* table header cell */ 'thc', [
+								[/* inline code block */ 'i', `'\\r'`]
+							]],
+							[/* table cell */ 'tbc', [
+								[/* inline code block */ 'i', `U+000D`]
+							]],
+							[/* table cell */ 'tbc', [
+								[/* inline code block */ 'i', `CARRIAGE RETURN`]
+							]]
+						]],
+						[/* table row */ 'tr', [
+							[/* table header cell */ 'thc', [
+								[/* inline code block */ 'i', `' '`]
+							]],
+							[/* table cell */ 'tbc', [
+								[/* inline code block */ 'i', `U+0020`]
+							]],
+							[/* table cell */ 'tbc', [
+								[/* inline code block */ 'i', `SPACE`]
+							]]
+						]]
+					]],
+				]
+			],
+			[/* parameters */
+				[/* parameter */ 'ch', [/* parameter description */
+					[/* text */ 't', `the character to be tested.`]
+				]]
+			],
+			/* throws */ UDF,
+			[/* return description */
+				[/* inline code block */ 'i', `true`],
+				[/* text */ 't', ` if the character is ISO-LATIN-1 white
+             space; `],
+				[/* inline code block */ 'i', `false`],
+				[/* text */ 't', ` otherwise.`]
+			]
+		]],
+		[/* method */ 'isSpaceChar(char)', [
+			[/* method description */
+				[/* text */ 't', `Determines if the specified character is a Unicode space character.
+ A character is considered to be a space character if and only if
+ it is specified to be a space character by the Unicode Standard. This
+ method returns true if the character's general category type is any of
+ the following:
+ `],
+				[/* list */ 'l', [
+					[/* block */ 'b', [
+						[/* inline code block */ 'i', `SPACE_SEPARATOR`]
+					]],
+					[/* block */ 'b', [
+						[/* inline code block */ 'i', `LINE_SEPARATOR`]
+					]],
+					[/* block */ 'b', [
+						[/* inline code block */ 'i', `PARAGRAPH_SEPARATOR`]
+					]]
+				]],
+				[/* block */ 'b', [
+					[/* text */ 't', `Note:`],
+					[/* text */ 't', ` This method cannot handle `],
+					[/* text */ 't', `supplementary characters`],
+					[/* text */ 't', `. To support
+ all Unicode characters, including supplementary characters, use
+ the `],
+					[/* reference */ 'r', `#isSpaceChar(int)`, `isSpaceChar(int)`],
+					[/* text */ 't', ` method.`]
+				]]
+			],
+			[/* parameters */
+				[/* parameter */ 'ch', [/* parameter description */
+					[/* text */ 't', `the character to be tested.`]
+				]]
+			],
+			/* throws */ UDF,
+			[/* return description */
+				[/* inline code block */ 'i', `true`],
+				[/* text */ 't', ` if the character is a space character;
+          `],
+				[/* inline code block */ 'i', `false`],
+				[/* text */ 't', ` otherwise.`]
+			]
+		]],
+		[/* method */ 'isSpaceChar(int)', [
+			[/* method description */
+				[/* text */ 't', `Determines if the specified character (Unicode code point) is a
+ Unicode space character.  A character is considered to be a
+ space character if and only if it is specified to be a space
+ character by the Unicode Standard. This method returns true if
+ the character's general category type is any of the following:
+
+ `],
+				[/* list */ 'l', [
+					[/* block */ 'b', [
+						[/* text */ 't', `SPACE_SEPARATOR`]
+					]],
+					[/* block */ 'b', [
+						[/* text */ 't', `LINE_SEPARATOR`]
+					]],
+					[/* block */ 'b', [
+						[/* text */ 't', `PARAGRAPH_SEPARATOR`]
+					]]
+				]]
+			],
+			[/* parameters */
+				[/* parameter */ 'codePoint', [/* parameter description */
+					[/* text */ 't', `the character (Unicode code point) to be tested.`]
+				]]
+			],
+			/* throws */ UDF,
+			[/* return description */
+				[/* inline code block */ 'i', `true`],
+				[/* text */ 't', ` if the character is a space character;
+          `],
+				[/* inline code block */ 'i', `false`],
+				[/* text */ 't', ` otherwise.`]
+			]
+		]],
+		[/* method */ 'isSupplementaryCodePoint(int)', [
+			[/* method description */
+				[/* text */ 't', `Determines whether the specified character (Unicode code point)
+ is in the `],
+				[/* text */ 't', `supplementary character`],
+				[/* text */ 't', ` range.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'codePoint', [/* parameter description */
+					[/* text */ 't', `the character (Unicode code point) to be tested`]
+				]]
+			],
+			/* throws */ UDF,
+			[/* return description */
+				[/* inline code block */ 'i', `true`],
+				[/* text */ 't', ` if the specified code point is between
+         `],
+				[/* text */ 't', `MIN_SUPPLEMENTARY_CODE_POINT`],
+				[/* text */ 't', ` and
+         `],
+				[/* text */ 't', `MAX_CODE_POINT`],
+				[/* text */ 't', ` inclusive;
+         `],
+				[/* inline code block */ 'i', `false`],
+				[/* text */ 't', ` otherwise.`]
+			]
+		]],
+		[/* method */ 'isSurrogate(char)', [
+			[/* method description */
+				[/* text */ 't', `Determines if the given `],
+				[/* inline code block */ 'i', `char`],
+				[/* text */ 't', ` value is a Unicode
+ `],
+				[/* text */ 't', `surrogate code unit`],
+				[/* text */ 't', `.
+
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', `Such values do not represent characters by themselves,
+ but are used in the representation of
+ `],
+					[/* text */ 't', `supplementary characters`],
+					[/* text */ 't', `
+ in the UTF-16 encoding.
+
+ `]
+				]],
+				[/* block */ 'b', [
+					[/* text */ 't', `A char value is a surrogate code unit if and only if it is either
+ a `],
+					[/* reference */ 'r', `#isLowSurrogate(char)`, `low-surrogate code unit`],
+					[/* text */ 't', ` or
+ a `],
+					[/* reference */ 'r', `#isHighSurrogate(char)`, `high-surrogate code unit`],
+					[/* text */ 't', `.`]
+				]]
+			],
+			[/* parameters */
+				[/* parameter */ 'ch', [/* parameter description */
+					[/* text */ 't', `the `],
+					[/* inline code block */ 'i', `char`],
+					[/* text */ 't', ` value to be tested.`]
+				]]
+			],
+			/* throws */ UDF,
+			[/* return description */
+				[/* inline code block */ 'i', `true`],
+				[/* text */ 't', ` if the `],
+				[/* inline code block */ 'i', `char`],
+				[/* text */ 't', ` value is between
+         `],
+				[/* text */ 't', `MIN_SURROGATE`],
+				[/* text */ 't', ` and
+         `],
+				[/* text */ 't', `MAX_SURROGATE`],
+				[/* text */ 't', ` inclusive;
+         `],
+				[/* inline code block */ 'i', `false`],
+				[/* text */ 't', ` otherwise.`]
+			]
+		]],
+		[/* method */ 'isSurrogatePair(char,char)', [
+			[/* method description */
+				[/* text */ 't', `Determines whether the specified pair of `],
+				[/* inline code block */ 'i', `char`],
+				[/* text */ 't', `
+ values is a valid
+ `],
+				[/* external link */ 'a', `http://www.unicode.org/glossary/#surrogate_pair`, `Unicode surrogate pair`],
+				[/* text */ 't', `.
+
+ `],
+				[/* block */ 'b', `This method is equivalent to the expression:
+ `],
+				[/* block */ 'b', [
+					[/* code block */ 'c', [
+						[/* inline code block */ 'i', `isHighSurrogate(high) && isLowSurrogate(low)`]
+					]]
+				]],
+				[/* block */ 'b', '']
+			],
+			[/* parameters */
+				[/* parameter */ 'high', [/* parameter description */
+					[/* text */ 't', `the high-surrogate code value to be tested`]
+				]],
+				[/* parameter */ 'low', [/* parameter description */
+					[/* text */ 't', `the low-surrogate code value to be tested`]
+				]]
+			],
+			/* throws */ UDF,
+			[/* return description */
+				[/* inline code block */ 'i', `true`],
+				[/* text */ 't', ` if the specified high and
+ low-surrogate code values represent a valid surrogate pair;
+ `],
+				[/* inline code block */ 'i', `false`],
+				[/* text */ 't', ` otherwise.`]
+			]
+		]],
+		[/* method */ 'isTitleCase(char)', [
+			[/* method description */
+				[/* text */ 't', `Determines if the specified character is a titlecase character.
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', `
+ A character is a titlecase character if its general
+ category type, provided by `],
+					[/* inline code block */ 'i', `Character.getType(ch)`],
+					[/* text */ 't', `,
+ is `],
+					[/* inline code block */ 'i', `TITLECASE_LETTER`],
+					[/* text */ 't', `.
+ `]
+				]],
+				[/* block */ 'b', `
+ Some characters look like pairs of Latin letters. For example, there
+ is an uppercase letter that looks like "LJ" and has a corresponding
+ lowercase letter that looks like "lj". A third form, which looks like "Lj",
+ is the appropriate form to use when rendering a word in lowercase
+ with initial capitals, as for a book title.
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', `
+ These are some of the Unicode characters for which this method returns
+ `],
+					[/* inline code block */ 'i', `true`],
+					[/* text */ 't', `:
+ `]
+				]],
+				[/* list */ 'l', [
+					[/* block */ 'b', [
+						[/* inline code block */ 'i', `LATIN CAPITAL LETTER D WITH SMALL LETTER Z WITH CARON`]
+					]],
+					[/* block */ 'b', [
+						[/* inline code block */ 'i', `LATIN CAPITAL LETTER L WITH SMALL LETTER J`]
+					]],
+					[/* block */ 'b', [
+						[/* inline code block */ 'i', `LATIN CAPITAL LETTER N WITH SMALL LETTER J`]
+					]],
+					[/* block */ 'b', [
+						[/* inline code block */ 'i', `LATIN CAPITAL LETTER D WITH SMALL LETTER Z`]
+					]]
+				]],
+				[/* block */ 'b', ''],
+				[/* block */ 'b', ` Many other Unicode characters are titlecase too.
+
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', `Note:`],
+					[/* text */ 't', ` This method cannot handle `],
+					[/* text */ 't', `supplementary characters`],
+					[/* text */ 't', `. To support
+ all Unicode characters, including supplementary characters, use
+ the `],
+					[/* reference */ 'r', `#isTitleCase(int)`, `isTitleCase(int)`],
+					[/* text */ 't', ` method.`]
+				]]
+			],
+			[/* parameters */
+				[/* parameter */ 'ch', [/* parameter description */
+					[/* text */ 't', `the character to be tested.`]
+				]]
+			],
+			/* throws */ UDF,
+			[/* return description */
+				[/* inline code block */ 'i', `true`],
+				[/* text */ 't', ` if the character is titlecase;
+          `],
+				[/* inline code block */ 'i', `false`],
+				[/* text */ 't', ` otherwise.`]
+			]
+		]],
+		[/* method */ 'isTitleCase(int)', [
+			[/* method description */
+				[/* text */ 't', `Determines if the specified character (Unicode code point) is a titlecase character.
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', `
+ A character is a titlecase character if its general
+ category type, provided by `],
+					[/* reference */ 'r', `#getType(int)`, `getType(codePoint)`],
+					[/* text */ 't', `,
+ is `],
+					[/* inline code block */ 'i', `TITLECASE_LETTER`],
+					[/* text */ 't', `.
+ `]
+				]],
+				[/* block */ 'b', `
+ Some characters look like pairs of Latin letters. For example, there
+ is an uppercase letter that looks like "LJ" and has a corresponding
+ lowercase letter that looks like "lj". A third form, which looks like "Lj",
+ is the appropriate form to use when rendering a word in lowercase
+ with initial capitals, as for a book title.
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', `
+ These are some of the Unicode characters for which this method returns
+ `],
+					[/* inline code block */ 'i', `true`],
+					[/* text */ 't', `:
+ `]
+				]],
+				[/* list */ 'l', [
+					[/* block */ 'b', [
+						[/* inline code block */ 'i', `LATIN CAPITAL LETTER D WITH SMALL LETTER Z WITH CARON`]
+					]],
+					[/* block */ 'b', [
+						[/* inline code block */ 'i', `LATIN CAPITAL LETTER L WITH SMALL LETTER J`]
+					]],
+					[/* block */ 'b', [
+						[/* inline code block */ 'i', `LATIN CAPITAL LETTER N WITH SMALL LETTER J`]
+					]],
+					[/* block */ 'b', [
+						[/* inline code block */ 'i', `LATIN CAPITAL LETTER D WITH SMALL LETTER Z`]
+					]]
+				]],
+				[/* block */ 'b', ''],
+				[/* block */ 'b', ` Many other Unicode characters are titlecase too.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'codePoint', [/* parameter description */
+					[/* text */ 't', `the character (Unicode code point) to be tested.`]
+				]]
+			],
+			/* throws */ UDF,
+			[/* return description */
+				[/* inline code block */ 'i', `true`],
+				[/* text */ 't', ` if the character is titlecase;
+          `],
+				[/* inline code block */ 'i', `false`],
+				[/* text */ 't', ` otherwise.`]
+			]
+		]],
+		[/* method */ 'isUnicodeIdentifierPart(char)', [
+			[/* method description */
+				[/* text */ 't', `Determines if the specified character may be part of a Unicode
+ identifier as other than the first character.
+ `],
+				[/* block */ 'b', `
+ A character may be part of a Unicode identifier if and only if
+ one of the following statements is true:
+ `],
+				[/* list */ 'l', [
+					[/* block */ 'b', `  it is a letter
+ `],
+					[/* block */ 'b', [
+						[/* text */ 't', `  it is a connecting punctuation character (such as `],
+						[/* inline code block */ 'i', `'_'`],
+						[/* text */ 't', `)
+ `]
+					]],
+					[/* block */ 'b', `  it is a digit
+ `],
+					[/* block */ 'b', `  it is a numeric letter (such as a Roman numeral character)
+ `],
+					[/* block */ 'b', `  it is a combining mark
+ `],
+					[/* block */ 'b', `  it is a non-spacing mark
+ `],
+					[/* block */ 'b', [
+						[/* inline code block */ 'i', `isIdentifierIgnorable`],
+						[/* text */ 't', ` returns
+ `],
+						[/* inline code block */ 'i', `true`],
+						[/* text */ 't', ` for this character.
+ `]
+					]],
+					[/* block */ 'b', [
+						[/* text */ 't', ` it is an `],
+						[/* external link */ 'a', `http://www.unicode.org/reports/tr44/#Other_ID_Start`, `Other_ID_Start`],
+						[/* text */ 't', ` character.
+ `]
+					]],
+					[/* block */ 'b', [
+						[/* text */ 't', ` it is an `],
+						[/* external link */ 'a', `http://www.unicode.org/reports/tr44/#Other_ID_Continue`, `Other_ID_Continue`],
+						[/* text */ 't', ` character.
+ `]
+					]]
+				]],
+				[/* block */ 'b', ''],
+				[/* block */ 'b', [
+					[/* text */ 't', `
+ This method conforms to `],
+					[/* external link */ 'a', `https://unicode.org/reports/tr31/#R1`, `UAX31-R1: Default Identifiers`],
+					[/* text */ 't', ` requirement of the Unicode Standard,
+ with the following profile of UAX31:
+ `]
+				]],
+				[/* code block */ 'c', ` Continue := Start + ID_Continue + ignorable
+ Medial := empty
+ ignorable := isIdentifierIgnorable(char) returns true for the character
+ `],
+				[/* inline code block */ 'i', `ignorable`],
+				[/* text */ 't', ` is added to `],
+				[/* inline code block */ 'i', `Continue`],
+				[/* text */ 't', ` for backward
+ compatibility.
+
+ `],
+				[/* block */ 'b', ''],
+				[/* block */ 'b', [
+					[/* text */ 't', `Note:`],
+					[/* text */ 't', ` This method cannot handle `],
+					[/* text */ 't', `supplementary characters`],
+					[/* text */ 't', `. To support
+ all Unicode characters, including supplementary characters, use
+ the `],
+					[/* reference */ 'r', `#isUnicodeIdentifierPart(int)`, `isUnicodeIdentifierPart(int)`],
+					[/* text */ 't', ` method.`]
+				]]
+			],
+			[/* parameters */
+				[/* parameter */ 'ch', [/* parameter description */
+					[/* text */ 't', `the character to be tested.`]
+				]]
+			],
+			/* throws */ UDF,
+			[/* return description */
+				[/* inline code block */ 'i', `true`],
+				[/* text */ 't', ` if the character may be part of a
+          Unicode identifier; `],
+				[/* inline code block */ 'i', `false`],
+				[/* text */ 't', ` otherwise.`]
+			]
+		]],
+		[/* method */ 'isUnicodeIdentifierPart(int)', [
+			[/* method description */
+				[/* text */ 't', `Determines if the specified character (Unicode code point) may be part of a Unicode
+ identifier as other than the first character.
+ `],
+				[/* block */ 'b', `
+ A character may be part of a Unicode identifier if and only if
+ one of the following statements is true:
+ `],
+				[/* list */ 'l', [
+					[/* block */ 'b', `  it is a letter
+ `],
+					[/* block */ 'b', [
+						[/* text */ 't', `  it is a connecting punctuation character (such as `],
+						[/* inline code block */ 'i', `'_'`],
+						[/* text */ 't', `)
+ `]
+					]],
+					[/* block */ 'b', `  it is a digit
+ `],
+					[/* block */ 'b', `  it is a numeric letter (such as a Roman numeral character)
+ `],
+					[/* block */ 'b', `  it is a combining mark
+ `],
+					[/* block */ 'b', `  it is a non-spacing mark
+ `],
+					[/* block */ 'b', [
+						[/* inline code block */ 'i', `isIdentifierIgnorable`],
+						[/* text */ 't', ` returns
+ `],
+						[/* inline code block */ 'i', `true`],
+						[/* text */ 't', ` for this character.
+ `]
+					]],
+					[/* block */ 'b', [
+						[/* text */ 't', ` it is an `],
+						[/* external link */ 'a', `http://www.unicode.org/reports/tr44/#Other_ID_Start`, `Other_ID_Start`],
+						[/* text */ 't', ` character.
+ `]
+					]],
+					[/* block */ 'b', [
+						[/* text */ 't', ` it is an `],
+						[/* external link */ 'a', `http://www.unicode.org/reports/tr44/#Other_ID_Continue`, `Other_ID_Continue`],
+						[/* text */ 't', ` character.
+ `]
+					]]
+				]],
+				[/* block */ 'b', ''],
+				[/* block */ 'b', [
+					[/* text */ 't', `
+ This method conforms to `],
+					[/* external link */ 'a', `https://unicode.org/reports/tr31/#R1`, `UAX31-R1: Default Identifiers`],
+					[/* text */ 't', ` requirement of the Unicode Standard,
+ with the following profile of UAX31:
+ `]
+				]],
+				[/* code block */ 'c', ` Continue := Start + ID_Continue + ignorable
+ Medial := empty
+ ignorable := isIdentifierIgnorable(int) returns true for the character
+ `],
+				[/* inline code block */ 'i', `ignorable`],
+				[/* text */ 't', ` is added to `],
+				[/* inline code block */ 'i', `Continue`],
+				[/* text */ 't', ` for backward
+ compatibility.`],
+				[/* block */ 'b', '']
+			],
+			[/* parameters */
+				[/* parameter */ 'codePoint', [/* parameter description */
+					[/* text */ 't', `the character (Unicode code point) to be tested.`]
+				]]
+			],
+			/* throws */ UDF,
+			[/* return description */
+				[/* inline code block */ 'i', `true`],
+				[/* text */ 't', ` if the character may be part of a
+          Unicode identifier; `],
+				[/* inline code block */ 'i', `false`],
+				[/* text */ 't', ` otherwise.`]
+			]
+		]],
+		[/* method */ 'isUnicodeIdentifierStart(char)', [
+			[/* method description */
+				[/* text */ 't', `Determines if the specified character is permissible as the
+ first character in a Unicode identifier.
+ `],
+				[/* block */ 'b', `
+ A character may start a Unicode identifier if and only if
+ one of the following conditions is true:
+ `],
+				[/* list */ 'l', [
+					[/* block */ 'b', [
+						[/* reference */ 'r', `#isLetter(int)`, `isLetter(ch)`],
+						[/* text */ 't', ` returns `],
+						[/* inline code block */ 'i', `true`]
+					]],
+					[/* block */ 'b', [
+						[/* reference */ 'r', `#getType(int)`, `getType(ch)`],
+						[/* text */ 't', ` returns
+      `],
+						[/* inline code block */ 'i', `LETTER_NUMBER`],
+						[/* text */ 't', `.
+ `]
+					]],
+					[/* block */ 'b', [
+						[/* text */ 't', ` it is an `],
+						[/* external link */ 'a', `http://www.unicode.org/reports/tr44/#Other_ID_Start`, `Other_ID_Start`],
+						[/* text */ 't', ` character.
+ `]
+					]]
+				]],
+				[/* block */ 'b', ''],
+				[/* block */ 'b', [
+					[/* text */ 't', `
+ This method conforms to `],
+					[/* external link */ 'a', `https://unicode.org/reports/tr31/#R1`, `UAX31-R1: Default Identifiers`],
+					[/* text */ 't', ` requirement of the Unicode Standard,
+ with the following profile of UAX31:
+ `]
+				]],
+				[/* code block */ 'c', ` Start := ID_Start + 'VERTICAL TILDE' (U+2E2F)
+ `],
+				[/* inline code block */ 'i', `'VERTICAL TILDE'`],
+				[/* text */ 't', ` is added to `],
+				[/* inline code block */ 'i', `Start`],
+				[/* text */ 't', ` for backward
+ compatibility.
+
+ `],
+				[/* block */ 'b', ''],
+				[/* block */ 'b', [
+					[/* text */ 't', `Note:`],
+					[/* text */ 't', ` This method cannot handle `],
+					[/* text */ 't', `supplementary characters`],
+					[/* text */ 't', `. To support
+ all Unicode characters, including supplementary characters, use
+ the `],
+					[/* reference */ 'r', `#isUnicodeIdentifierStart(int)`, `isUnicodeIdentifierStart(int)`],
+					[/* text */ 't', ` method.`]
+				]]
+			],
+			[/* parameters */
+				[/* parameter */ 'ch', [/* parameter description */
+					[/* text */ 't', `the character to be tested.`]
+				]]
+			],
+			/* throws */ UDF,
+			[/* return description */
+				[/* inline code block */ 'i', `true`],
+				[/* text */ 't', ` if the character may start a Unicode
+          identifier; `],
+				[/* inline code block */ 'i', `false`],
+				[/* text */ 't', ` otherwise.`]
+			]
+		]],
+		[/* method */ 'isUnicodeIdentifierStart(int)', [
+			[/* method description */
+				[/* text */ 't', `Determines if the specified character (Unicode code point) is permissible as the
+ first character in a Unicode identifier.
+ `],
+				[/* block */ 'b', `
+ A character may start a Unicode identifier if and only if
+ one of the following conditions is true:
+ `],
+				[/* list */ 'l', [
+					[/* block */ 'b', [
+						[/* reference */ 'r', `#isLetter(int)`, `isLetter(codePoint)`],
+						[/* text */ 't', `
+      returns `],
+						[/* inline code block */ 'i', `true`]
+					]],
+					[/* block */ 'b', [
+						[/* reference */ 'r', `#getType(int)`, `getType(codePoint)`],
+						[/* text */ 't', `
+      returns `],
+						[/* inline code block */ 'i', `LETTER_NUMBER`],
+						[/* text */ 't', `.
+ `]
+					]],
+					[/* block */ 'b', [
+						[/* text */ 't', ` it is an `],
+						[/* external link */ 'a', `http://www.unicode.org/reports/tr44/#Other_ID_Start`, `Other_ID_Start`],
+						[/* text */ 't', ` character.
+ `]
+					]]
+				]],
+				[/* block */ 'b', ''],
+				[/* block */ 'b', [
+					[/* text */ 't', `
+ This method conforms to `],
+					[/* external link */ 'a', `https://unicode.org/reports/tr31/#R1`, `UAX31-R1: Default Identifiers`],
+					[/* text */ 't', ` requirement of the Unicode Standard,
+ with the following profile of UAX31:
+ `]
+				]],
+				[/* code block */ 'c', ` Start := ID_Start + 'VERTICAL TILDE' (U+2E2F)
+ `],
+				[/* inline code block */ 'i', `'VERTICAL TILDE'`],
+				[/* text */ 't', ` is added to `],
+				[/* inline code block */ 'i', `Start`],
+				[/* text */ 't', ` for backward
+ compatibility.`],
+				[/* block */ 'b', '']
+			],
+			[/* parameters */
+				[/* parameter */ 'codePoint', [/* parameter description */
+					[/* text */ 't', `the character (Unicode code point) to be tested.`]
+				]]
+			],
+			/* throws */ UDF,
+			[/* return description */
+				[/* inline code block */ 'i', `true`],
+				[/* text */ 't', ` if the character may start a Unicode
+          identifier; `],
 				[/* inline code block */ 'i', `false`],
 				[/* text */ 't', ` otherwise.`]
 			]
@@ -1661,99 +3112,29 @@ DocsCollector.collect('java.lang.Character', [
 				[/* text */ 't', ` otherwise.`]
 			]
 		]],
-		[/* method */ 'isWhitespace(int)', [
+		[/* method */ 'isValidCodePoint(int)', [
 			[/* method description */
-				[/* text */ 't', `Determines if the specified character (Unicode code point) is
- white space according to Java.  A character is a Java
- whitespace character if and only if it satisfies one of the
- following criteria:
+				[/* text */ 't', `Determines whether the specified code point is a valid
  `],
-				[/* list */ 'l', [
-					[/* block */ 'b', [
-						[/* text */ 't', ` It is a Unicode space character (`],
-						[/* text */ 't', `SPACE_SEPARATOR`],
-						[/* text */ 't', `,
-      `],
-						[/* text */ 't', `LINE_SEPARATOR`],
-						[/* text */ 't', `, or `],
-						[/* text */ 't', `PARAGRAPH_SEPARATOR`],
-						[/* text */ 't', `)
-      but is not also a non-breaking space (`],
-						[/* inline code block */ 'i', `'\\u00A0'`],
-						[/* text */ 't', `,
-      `],
-						[/* inline code block */ 'i', `'\\u2007'`],
-						[/* text */ 't', `, `],
-						[/* inline code block */ 'i', `'\\u202F'`],
-						[/* text */ 't', `).
- `]
-					]],
-					[/* block */ 'b', [
-						[/* text */ 't', ` It is `],
-						[/* inline code block */ 'i', `'\\t'`],
-						[/* text */ 't', `, U+0009 HORIZONTAL TABULATION.
- `]
-					]],
-					[/* block */ 'b', [
-						[/* text */ 't', ` It is `],
-						[/* inline code block */ 'i', `'\\n'`],
-						[/* text */ 't', `, U+000A LINE FEED.
- `]
-					]],
-					[/* block */ 'b', [
-						[/* text */ 't', ` It is `],
-						[/* inline code block */ 'i', `'\\u000B'`],
-						[/* text */ 't', `, U+000B VERTICAL TABULATION.
- `]
-					]],
-					[/* block */ 'b', [
-						[/* text */ 't', ` It is `],
-						[/* inline code block */ 'i', `'\\f'`],
-						[/* text */ 't', `, U+000C FORM FEED.
- `]
-					]],
-					[/* block */ 'b', [
-						[/* text */ 't', ` It is `],
-						[/* inline code block */ 'i', `'\\r'`],
-						[/* text */ 't', `, U+000D CARRIAGE RETURN.
- `]
-					]],
-					[/* block */ 'b', [
-						[/* text */ 't', ` It is `],
-						[/* inline code block */ 'i', `'\\u001C'`],
-						[/* text */ 't', `, U+001C FILE SEPARATOR.
- `]
-					]],
-					[/* block */ 'b', [
-						[/* text */ 't', ` It is `],
-						[/* inline code block */ 'i', `'\\u001D'`],
-						[/* text */ 't', `, U+001D GROUP SEPARATOR.
- `]
-					]],
-					[/* block */ 'b', [
-						[/* text */ 't', ` It is `],
-						[/* inline code block */ 'i', `'\\u001E'`],
-						[/* text */ 't', `, U+001E RECORD SEPARATOR.
- `]
-					]],
-					[/* block */ 'b', [
-						[/* text */ 't', ` It is `],
-						[/* inline code block */ 'i', `'\\u001F'`],
-						[/* text */ 't', `, U+001F UNIT SEPARATOR.
- `]
-					]]
-				]]
+				[/* external link */ 'a', `http://www.unicode.org/glossary/#code_point`, `Unicode code point value`],
+				[/* text */ 't', `.`]
 			],
 			[/* parameters */
 				[/* parameter */ 'codePoint', [/* parameter description */
-					[/* text */ 't', `the character (Unicode code point) to be tested.`]
+					[/* text */ 't', `the Unicode code point to be tested`]
 				]]
 			],
 			/* throws */ UDF,
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
-				[/* text */ 't', ` if the character is a Java whitespace
-          character; `],
+				[/* text */ 't', ` if the specified code point value is between
+         `],
+				[/* text */ 't', `MIN_CODE_POINT`],
+				[/* text */ 't', ` and
+         `],
+				[/* text */ 't', `MAX_CODE_POINT`],
+				[/* text */ 't', ` inclusive;
+         `],
 				[/* inline code block */ 'i', `false`],
 				[/* text */ 't', ` otherwise.`]
 			]
@@ -1864,394 +3245,218 @@ DocsCollector.collect('java.lang.Character', [
 				[/* text */ 't', ` otherwise.`]
 			]
 		]],
-		[/* method */ 'compare(char,char)', [
+		[/* method */ 'isWhitespace(int)', [
 			[/* method description */
-				[/* text */ 't', `Compares two `],
-				[/* inline code block */ 'i', `char`],
-				[/* text */ 't', ` values numerically.
- The value returned is identical to what would be returned by:
+				[/* text */ 't', `Determines if the specified character (Unicode code point) is
+ white space according to Java.  A character is a Java
+ whitespace character if and only if it satisfies one of the
+ following criteria:
  `],
-				[/* code block */ 'c', `    Character.valueOf(x).compareTo(Character.valueOf(y))
+				[/* list */ 'l', [
+					[/* block */ 'b', [
+						[/* text */ 't', ` It is a Unicode space character (`],
+						[/* text */ 't', `SPACE_SEPARATOR`],
+						[/* text */ 't', `,
+      `],
+						[/* text */ 't', `LINE_SEPARATOR`],
+						[/* text */ 't', `, or `],
+						[/* text */ 't', `PARAGRAPH_SEPARATOR`],
+						[/* text */ 't', `)
+      but is not also a non-breaking space (`],
+						[/* inline code block */ 'i', `'\\u00A0'`],
+						[/* text */ 't', `,
+      `],
+						[/* inline code block */ 'i', `'\\u2007'`],
+						[/* text */ 't', `, `],
+						[/* inline code block */ 'i', `'\\u202F'`],
+						[/* text */ 't', `).
  `]
-			],
-			[/* parameters */
-				[/* parameter */ 'x', [/* parameter description */
-					[/* text */ 't', `the first `],
-					[/* inline code block */ 'i', `char`],
-					[/* text */ 't', ` to compare`]
-				]],
-				[/* parameter */ 'y', [/* parameter description */
-					[/* text */ 't', `the second `],
-					[/* inline code block */ 'i', `char`],
-					[/* text */ 't', ` to compare`]
+					]],
+					[/* block */ 'b', [
+						[/* text */ 't', ` It is `],
+						[/* inline code block */ 'i', `'\\t'`],
+						[/* text */ 't', `, U+0009 HORIZONTAL TABULATION.
+ `]
+					]],
+					[/* block */ 'b', [
+						[/* text */ 't', ` It is `],
+						[/* inline code block */ 'i', `'\\n'`],
+						[/* text */ 't', `, U+000A LINE FEED.
+ `]
+					]],
+					[/* block */ 'b', [
+						[/* text */ 't', ` It is `],
+						[/* inline code block */ 'i', `'\\u000B'`],
+						[/* text */ 't', `, U+000B VERTICAL TABULATION.
+ `]
+					]],
+					[/* block */ 'b', [
+						[/* text */ 't', ` It is `],
+						[/* inline code block */ 'i', `'\\f'`],
+						[/* text */ 't', `, U+000C FORM FEED.
+ `]
+					]],
+					[/* block */ 'b', [
+						[/* text */ 't', ` It is `],
+						[/* inline code block */ 'i', `'\\r'`],
+						[/* text */ 't', `, U+000D CARRIAGE RETURN.
+ `]
+					]],
+					[/* block */ 'b', [
+						[/* text */ 't', ` It is `],
+						[/* inline code block */ 'i', `'\\u001C'`],
+						[/* text */ 't', `, U+001C FILE SEPARATOR.
+ `]
+					]],
+					[/* block */ 'b', [
+						[/* text */ 't', ` It is `],
+						[/* inline code block */ 'i', `'\\u001D'`],
+						[/* text */ 't', `, U+001D GROUP SEPARATOR.
+ `]
+					]],
+					[/* block */ 'b', [
+						[/* text */ 't', ` It is `],
+						[/* inline code block */ 'i', `'\\u001E'`],
+						[/* text */ 't', `, U+001E RECORD SEPARATOR.
+ `]
+					]],
+					[/* block */ 'b', [
+						[/* text */ 't', ` It is `],
+						[/* inline code block */ 'i', `'\\u001F'`],
+						[/* text */ 't', `, U+001F UNIT SEPARATOR.
+ `]
+					]]
 				]]
-			],
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the value `],
-				[/* inline code block */ 'i', `0`],
-				[/* text */ 't', ` if `],
-				[/* inline code block */ 'i', `x == y`],
-				[/* text */ 't', `;
-         a value less than `],
-				[/* inline code block */ 'i', `0`],
-				[/* text */ 't', ` if `],
-				[/* inline code block */ 'i', `x < y`],
-				[/* text */ 't', `; and
-         a value greater than `],
-				[/* inline code block */ 'i', `0`],
-				[/* text */ 't', ` if `],
-				[/* inline code block */ 'i', `x > y`]
-			]
-		]],
-		[/* method */ 'charValue()', [
-			[/* method description */
-				[/* text */ 't', `Returns the value of this `],
-				[/* inline code block */ 'i', `Character`],
-				[/* text */ 't', ` object.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the primitive `],
-				[/* inline code block */ 'i', `char`],
-				[/* text */ 't', ` value represented by
-          this object.`]
-			]
-		]],
-		[/* method */ 'valueOf(char)', [
-			[/* method description */
-				[/* text */ 't', `Returns a `],
-				[/* inline code block */ 'i', `Character`],
-				[/* text */ 't', ` instance representing the specified
- `],
-				[/* inline code block */ 'i', `char`],
-				[/* text */ 't', ` value.
- If a new `],
-				[/* inline code block */ 'i', `Character`],
-				[/* text */ 't', ` instance is not required, this method
- should generally be used in preference to the constructor
- `],
-				[/* reference */ 'r', `#%3Cinit%3E(char)`, `Character(char)`],
-				[/* text */ 't', `, as this method is likely to yield
- significantly better space and time performance by caching
- frequently requested values.
-
- This method will always cache values in the range `],
-				[/* inline code block */ 'i', `'\\u0000'`],
-				[/* text */ 't', ` to `],
-				[/* inline code block */ 'i', `'\\u007F'`],
-				[/* text */ 't', `, inclusive, and may
- cache other values outside of this range.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'c', [/* parameter description */
-					[/* text */ 't', `a char value.`]
-				]]
-			],
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `a `],
-				[/* inline code block */ 'i', `Character`],
-				[/* text */ 't', ` instance representing `],
-				[/* inline code block */ 'i', `c`],
-				[/* text */ 't', `.`]
-			]
-		]],
-		[/* method */ 'toChars(int)', [
-			[/* method description */
-				[/* text */ 't', `Converts the specified character (Unicode code point) to its
- UTF-16 representation stored in a `],
-				[/* inline code block */ 'i', `char`],
-				[/* text */ 't', ` array. If
- the specified code point is a BMP (Basic Multilingual Plane or
- Plane 0) value, the resulting `],
-				[/* inline code block */ 'i', `char`],
-				[/* text */ 't', ` array has
- the same value as `],
-				[/* inline code block */ 'i', `codePoint`],
-				[/* text */ 't', `. If the specified code
- point is a supplementary code point, the resulting
- `],
-				[/* inline code block */ 'i', `char`],
-				[/* text */ 't', ` array has the corresponding surrogate pair.`]
 			],
 			[/* parameters */
 				[/* parameter */ 'codePoint', [/* parameter description */
-					[/* text */ 't', `a Unicode code point`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
-					[/* text */ 't', `if the specified
- `],
-					[/* inline code block */ 'i', `codePoint`],
-					[/* text */ 't', ` is not a valid Unicode code point.`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `a `],
-				[/* inline code block */ 'i', `char`],
-				[/* text */ 't', ` array having
-         `],
-				[/* inline code block */ 'i', `codePoint`],
-				[/* text */ 't', `'s UTF-16 representation.`]
-			]
-		]],
-		[/* method */ 'toChars(int,char[],int)', [
-			[/* method description */
-				[/* text */ 't', `Converts the specified character (Unicode code point) to its
- UTF-16 representation. If the specified code point is a BMP
- (Basic Multilingual Plane or Plane 0) value, the same value is
- stored in `],
-				[/* inline code block */ 'i', `dst[dstIndex]`],
-				[/* text */ 't', `, and 1 is returned. If the
- specified code point is a supplementary character, its
- surrogate values are stored in `],
-				[/* inline code block */ 'i', `dst[dstIndex]`],
-				[/* text */ 't', `
- (high-surrogate) and `],
-				[/* inline code block */ 'i', `dst[dstIndex+1]`],
-				[/* text */ 't', `
- (low-surrogate), and 2 is returned.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'codePoint', [/* parameter description */
-					[/* text */ 't', `the character (Unicode code point) to be converted.`]
-				]],
-				[/* parameter */ 'dst', [/* parameter description */
-					[/* text */ 't', `an array of `],
-					[/* inline code block */ 'i', `char`],
-					[/* text */ 't', ` in which the
- `],
-					[/* inline code block */ 'i', `codePoint`],
-					[/* text */ 't', `'s UTF-16 value is stored.`]
-				]],
-				[/* parameter */ 'dstIndex', [/* parameter description */
-					[/* text */ 't', `the start index into the `],
-					[/* inline code block */ 'i', `dst`],
-					[/* text */ 't', `
- array where the converted value is stored.`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
-					[/* text */ 't', `if the specified
- `],
-					[/* inline code block */ 'i', `codePoint`],
-					[/* text */ 't', ` is not a valid Unicode code point.`]
-				]],
-				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
-					[/* text */ 't', `if the specified `],
-					[/* inline code block */ 'i', `dst`],
-					[/* text */ 't', ` is null.`]
-				]],
-				[/* throw */ 'java.lang.IndexOutOfBoundsException', [/* throw description */
-					[/* text */ 't', `if `],
-					[/* inline code block */ 'i', `dstIndex`],
-					[/* text */ 't', `
- is negative or not less than `],
-					[/* inline code block */ 'i', `dst.length`],
-					[/* text */ 't', `, or if
- `],
-					[/* inline code block */ 'i', `dst`],
-					[/* text */ 't', ` at `],
-					[/* inline code block */ 'i', `dstIndex`],
-					[/* text */ 't', ` doesn't have enough
- array element(s) to store the resulting `],
-					[/* inline code block */ 'i', `char`],
-					[/* text */ 't', `
- value(s). (If `],
-					[/* inline code block */ 'i', `dstIndex`],
-					[/* text */ 't', ` is equal to
- `],
-					[/* inline code block */ 'i', `dst.length-1`],
-					[/* text */ 't', ` and the specified
- `],
-					[/* inline code block */ 'i', `codePoint`],
-					[/* text */ 't', ` is a supplementary character, the
- high-surrogate value is not stored in
- `],
-					[/* inline code block */ 'i', `dst[dstIndex]`],
-					[/* text */ 't', `.)`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `1 if the code point is a BMP code point, 2 if the
- code point is a supplementary code point.`]
-			]
-		]],
-		[/* method */ 'isHighSurrogate(char)', [
-			[/* method description */
-				[/* text */ 't', `Determines if the given `],
-				[/* inline code block */ 'i', `char`],
-				[/* text */ 't', ` value is a
- `],
-				[/* external link */ 'a', `http://www.unicode.org/glossary/#high_surrogate_code_unit`, `Unicode high-surrogate code unit`],
-				[/* text */ 't', `
- (also known as `],
-				[/* text */ 't', `leading-surrogate code unit`],
-				[/* text */ 't', `).
-
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', `Such values do not represent characters by themselves,
- but are used in the representation of
- `],
-					[/* text */ 't', `supplementary characters`],
-					[/* text */ 't', `
- in the UTF-16 encoding.`]
-				]]
-			],
-			[/* parameters */
-				[/* parameter */ 'ch', [/* parameter description */
-					[/* text */ 't', `the `],
-					[/* inline code block */ 'i', `char`],
-					[/* text */ 't', ` value to be tested.`]
+					[/* text */ 't', `the character (Unicode code point) to be tested.`]
 				]]
 			],
 			/* throws */ UDF,
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
-				[/* text */ 't', ` if the `],
-				[/* inline code block */ 'i', `char`],
-				[/* text */ 't', ` value is between
-         `],
-				[/* text */ 't', `MIN_HIGH_SURROGATE`],
-				[/* text */ 't', ` and
-         `],
-				[/* text */ 't', `MAX_HIGH_SURROGATE`],
-				[/* text */ 't', ` inclusive;
-         `],
+				[/* text */ 't', ` if the character is a Java whitespace
+          character; `],
 				[/* inline code block */ 'i', `false`],
 				[/* text */ 't', ` otherwise.`]
 			]
 		]],
-		[/* method */ 'isLowSurrogate(char)', [
+		[/* method */ 'getDirectionality(char)', [
 			[/* method description */
-				[/* text */ 't', `Determines if the given `],
+				[/* text */ 't', `Returns the Unicode directionality property for the given
+ character.  Character directionality is used to calculate the
+ visual ordering of text. The directionality value of undefined
+ `],
 				[/* inline code block */ 'i', `char`],
-				[/* text */ 't', ` value is a
- `],
-				[/* external link */ 'a', `http://www.unicode.org/glossary/#low_surrogate_code_unit`, `Unicode low-surrogate code unit`],
-				[/* text */ 't', `
- (also known as `],
-				[/* text */ 't', `trailing-surrogate code unit`],
-				[/* text */ 't', `).
-
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', `Such values do not represent characters by themselves,
- but are used in the representation of
- `],
-					[/* text */ 't', `supplementary characters`],
-					[/* text */ 't', `
- in the UTF-16 encoding.`]
-				]]
-			],
-			[/* parameters */
-				[/* parameter */ 'ch', [/* parameter description */
-					[/* text */ 't', `the `],
-					[/* inline code block */ 'i', `char`],
-					[/* text */ 't', ` value to be tested.`]
-				]]
-			],
-			/* throws */ UDF,
-			[/* return description */
-				[/* inline code block */ 'i', `true`],
-				[/* text */ 't', ` if the `],
-				[/* inline code block */ 'i', `char`],
-				[/* text */ 't', ` value is between
-         `],
-				[/* text */ 't', `MIN_LOW_SURROGATE`],
-				[/* text */ 't', ` and
-         `],
-				[/* text */ 't', `MAX_LOW_SURROGATE`],
-				[/* text */ 't', ` inclusive;
-         `],
-				[/* inline code block */ 'i', `false`],
-				[/* text */ 't', ` otherwise.`]
-			]
-		]],
-		[/* method */ 'isSurrogate(char)', [
-			[/* method description */
-				[/* text */ 't', `Determines if the given `],
-				[/* inline code block */ 'i', `char`],
-				[/* text */ 't', ` value is a Unicode
- `],
-				[/* text */ 't', `surrogate code unit`],
+				[/* text */ 't', ` values is `],
+				[/* inline code block */ 'i', `DIRECTIONALITY_UNDEFINED`],
 				[/* text */ 't', `.
 
  `],
 				[/* block */ 'b', [
-					[/* text */ 't', `Such values do not represent characters by themselves,
- but are used in the representation of
- `],
+					[/* text */ 't', `Note:`],
+					[/* text */ 't', ` This method cannot handle `],
 					[/* text */ 't', `supplementary characters`],
-					[/* text */ 't', `
- in the UTF-16 encoding.
-
- `]
-				]],
-				[/* block */ 'b', [
-					[/* text */ 't', `A char value is a surrogate code unit if and only if it is either
- a `],
-					[/* reference */ 'r', `#isLowSurrogate(char)`, `low-surrogate code unit`],
-					[/* text */ 't', ` or
- a `],
-					[/* reference */ 'r', `#isHighSurrogate(char)`, `high-surrogate code unit`],
-					[/* text */ 't', `.`]
+					[/* text */ 't', `. To support
+ all Unicode characters, including supplementary characters, use
+ the `],
+					[/* reference */ 'r', `#getDirectionality(int)`, `getDirectionality(int)`],
+					[/* text */ 't', ` method.`]
 				]]
 			],
 			[/* parameters */
 				[/* parameter */ 'ch', [/* parameter description */
-					[/* text */ 't', `the `],
+					[/* text */ 't', ``],
 					[/* inline code block */ 'i', `char`],
-					[/* text */ 't', ` value to be tested.`]
+					[/* text */ 't', ` for which the directionality property
+            is requested.`]
 				]]
 			],
 			/* throws */ UDF,
 			[/* return description */
-				[/* inline code block */ 'i', `true`],
-				[/* text */ 't', ` if the `],
+				[/* text */ 't', `the directionality property of the `],
 				[/* inline code block */ 'i', `char`],
-				[/* text */ 't', ` value is between
-         `],
-				[/* text */ 't', `MIN_SURROGATE`],
-				[/* text */ 't', ` and
-         `],
-				[/* text */ 't', `MAX_SURROGATE`],
-				[/* text */ 't', ` inclusive;
-         `],
-				[/* inline code block */ 'i', `false`],
-				[/* text */ 't', ` otherwise.`]
+				[/* text */ 't', ` value.`]
 			]
 		]],
-		[/* method */ 'isSupplementaryCodePoint(int)', [
+		[/* method */ 'getDirectionality(int)', [
 			[/* method description */
-				[/* text */ 't', `Determines whether the specified character (Unicode code point)
- is in the `],
-				[/* text */ 't', `supplementary character`],
-				[/* text */ 't', ` range.`]
+				[/* text */ 't', `Returns the Unicode directionality property for the given
+ character (Unicode code point).  Character directionality is
+ used to calculate the visual ordering of text. The
+ directionality value of undefined character is `],
+				[/* text */ 't', `DIRECTIONALITY_UNDEFINED`],
+				[/* text */ 't', `.`]
 			],
 			[/* parameters */
 				[/* parameter */ 'codePoint', [/* parameter description */
-					[/* text */ 't', `the character (Unicode code point) to be tested`]
+					[/* text */ 't', `the character (Unicode code point) for which
+          the directionality property is requested.`]
 				]]
 			],
 			/* throws */ UDF,
 			[/* return description */
-				[/* inline code block */ 'i', `true`],
-				[/* text */ 't', ` if the specified code point is between
-         `],
-				[/* text */ 't', `MIN_SUPPLEMENTARY_CODE_POINT`],
-				[/* text */ 't', ` and
-         `],
-				[/* text */ 't', `MAX_CODE_POINT`],
-				[/* text */ 't', ` inclusive;
-         `],
-				[/* inline code block */ 'i', `false`],
-				[/* text */ 't', ` otherwise.`]
+				[/* text */ 't', `the directionality property of the character.`]
+			]
+		]],
+		[/* method */ 'forDigit(int,int)', [
+			[/* method description */
+				[/* text */ 't', `Determines the character representation for a specific digit in
+ the specified radix. If the value of `],
+				[/* inline code block */ 'i', `radix`],
+				[/* text */ 't', ` is not a
+ valid radix, or the value of `],
+				[/* inline code block */ 'i', `digit`],
+				[/* text */ 't', ` is not a valid
+ digit in the specified radix, the null character
+ (`],
+				[/* inline code block */ 'i', `'\\u0000'`],
+				[/* text */ 't', `) is returned.
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', `
+ The `],
+					[/* inline code block */ 'i', `radix`],
+					[/* text */ 't', ` argument is valid if it is greater than or
+ equal to `],
+					[/* inline code block */ 'i', `MIN_RADIX`],
+					[/* text */ 't', ` and less than or equal to
+ `],
+					[/* inline code block */ 'i', `MAX_RADIX`],
+					[/* text */ 't', `. The `],
+					[/* inline code block */ 'i', `digit`],
+					[/* text */ 't', ` argument is valid if
+ `],
+					[/* inline code block */ 'i', `0 <= digit < radix`],
+					[/* text */ 't', `.
+ `]
+				]],
+				[/* block */ 'b', [
+					[/* text */ 't', `
+ If the digit is less than 10, then
+ `],
+					[/* inline code block */ 'i', `'0' + digit`],
+					[/* text */ 't', ` is returned. Otherwise, the value
+ `],
+					[/* inline code block */ 'i', `'a' + digit - 10`],
+					[/* text */ 't', ` is returned.`]
+				]]
+			],
+			[/* parameters */
+				[/* parameter */ 'digit', [/* parameter description */
+					[/* text */ 't', `the number to convert to a character.`]
+				]],
+				[/* parameter */ 'radix', [/* parameter description */
+					[/* text */ 't', `the radix.`]
+				]]
+			],
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the `],
+				[/* inline code block */ 'i', `char`],
+				[/* text */ 't', ` representation of the specified digit
+          in the specified radix.`]
 			]
 		]],
 		[/* method */ 'highSurrogate(int)', [
@@ -2362,26 +3567,267 @@ DocsCollector.collect('java.lang.Character', [
           character in the UTF-16 encoding`]
 			]
 		]],
-		[/* method */ 'toCodePoint(char,char)', [
+		[/* method */ 'reverseBytes(char)', [
 			[/* method description */
-				[/* text */ 't', `Converts the specified surrogate pair to its supplementary code
- point value. This method does not validate the specified
- surrogate pair. The caller must validate it using `],
-				[/* reference */ 'r', `#isSurrogatePair(char,char)`, `isSurrogatePair`],
-				[/* text */ 't', ` if necessary.`]
+				[/* text */ 't', `Returns the value obtained by reversing the order of the bytes in the
+ specified `],
+				[/* inline code block */ 'i', `char`],
+				[/* text */ 't', ` value.`]
 			],
 			[/* parameters */
-				[/* parameter */ 'high', [/* parameter description */
-					[/* text */ 't', `the high-surrogate code unit`]
-				]],
-				[/* parameter */ 'low', [/* parameter description */
-					[/* text */ 't', `the low-surrogate code unit`]
+				[/* parameter */ 'ch', [/* parameter description */
+					[/* text */ 't', `The `],
+					[/* inline code block */ 'i', `char`],
+					[/* text */ 't', ` of which to reverse the byte order.`]
 				]]
 			],
 			/* throws */ UDF,
 			[/* return description */
-				[/* text */ 't', `the supplementary code point composed from the
-         specified surrogate pair.`]
+				[/* text */ 't', `the value obtained by reversing (or, equivalently, swapping)
+     the bytes in the specified `],
+				[/* inline code block */ 'i', `char`],
+				[/* text */ 't', ` value.`]
+			]
+		]],
+		[/* method */ 'toLowerCase(char)', [
+			[/* method description */
+				[/* text */ 't', `Converts the character argument to lowercase using case
+ mapping information from the UnicodeData file.
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', `
+ Note that
+ `],
+					[/* inline code block */ 'i', `Character.isLowerCase(Character.toLowerCase(ch))`],
+					[/* text */ 't', `
+ does not always return `],
+					[/* inline code block */ 'i', `true`],
+					[/* text */ 't', ` for some ranges of
+ characters, particularly those that are symbols or ideographs.
+
+ `]
+				]],
+				[/* block */ 'b', [
+					[/* text */ 't', `In general, `],
+					[/* reference */ 'r', `.String#toLowerCase()`],
+					[/* text */ 't', ` should be used to map
+ characters to lowercase. `],
+					[/* inline code block */ 'i', `String`],
+					[/* text */ 't', ` case mapping methods
+ have several benefits over `],
+					[/* inline code block */ 'i', `Character`],
+					[/* text */ 't', ` case mapping methods.
+ `],
+					[/* inline code block */ 'i', `String`],
+					[/* text */ 't', ` case mapping methods can perform locale-sensitive
+ mappings, context-sensitive mappings, and 1:M character mappings, whereas
+ the `],
+					[/* inline code block */ 'i', `Character`],
+					[/* text */ 't', ` case mapping methods cannot.
+
+ `]
+				]],
+				[/* block */ 'b', [
+					[/* text */ 't', `Note:`],
+					[/* text */ 't', ` This method cannot handle `],
+					[/* text */ 't', `supplementary characters`],
+					[/* text */ 't', `. To support
+ all Unicode characters, including supplementary characters, use
+ the `],
+					[/* reference */ 'r', `#toLowerCase(int)`, `toLowerCase(int)`],
+					[/* text */ 't', ` method.`]
+				]]
+			],
+			[/* parameters */
+				[/* parameter */ 'ch', [/* parameter description */
+					[/* text */ 't', `the character to be converted.`]
+				]]
+			],
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the lowercase equivalent of the character, if any;
+          otherwise, the character itself.`]
+			]
+		]],
+		[/* method */ 'toTitleCase(char)', [
+			[/* method description */
+				[/* text */ 't', `Converts the character argument to titlecase using case mapping
+ information from the UnicodeData file. If a character has no
+ explicit titlecase mapping and is not itself a titlecase char
+ according to UnicodeData, then the uppercase mapping is
+ returned as an equivalent titlecase mapping. If the
+ `],
+				[/* inline code block */ 'i', `char`],
+				[/* text */ 't', ` argument is already a titlecase
+ `],
+				[/* inline code block */ 'i', `char`],
+				[/* text */ 't', `, the same `],
+				[/* inline code block */ 'i', `char`],
+				[/* text */ 't', ` value will be
+ returned.
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', `
+ Note that
+ `],
+					[/* inline code block */ 'i', `Character.isTitleCase(Character.toTitleCase(ch))`],
+					[/* text */ 't', `
+ does not always return `],
+					[/* inline code block */ 'i', `true`],
+					[/* text */ 't', ` for some ranges of
+ characters.
+
+ `]
+				]],
+				[/* block */ 'b', [
+					[/* text */ 't', `Note:`],
+					[/* text */ 't', ` This method cannot handle `],
+					[/* text */ 't', `supplementary characters`],
+					[/* text */ 't', `. To support
+ all Unicode characters, including supplementary characters, use
+ the `],
+					[/* reference */ 'r', `#toTitleCase(int)`, `toTitleCase(int)`],
+					[/* text */ 't', ` method.`]
+				]]
+			],
+			[/* parameters */
+				[/* parameter */ 'ch', [/* parameter description */
+					[/* text */ 't', `the character to be converted.`]
+				]]
+			],
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the titlecase equivalent of the character, if any;
+          otherwise, the character itself.`]
+			]
+		]],
+		[/* method */ 'toUpperCase(char)', [
+			[/* method description */
+				[/* text */ 't', `Converts the character argument to uppercase using case mapping
+ information from the UnicodeData file.
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', `
+ Note that
+ `],
+					[/* inline code block */ 'i', `Character.isUpperCase(Character.toUpperCase(ch))`],
+					[/* text */ 't', `
+ does not always return `],
+					[/* inline code block */ 'i', `true`],
+					[/* text */ 't', ` for some ranges of
+ characters, particularly those that are symbols or ideographs.
+
+ `]
+				]],
+				[/* block */ 'b', [
+					[/* text */ 't', `In general, `],
+					[/* reference */ 'r', `.String#toUpperCase()`],
+					[/* text */ 't', ` should be used to map
+ characters to uppercase. `],
+					[/* inline code block */ 'i', `String`],
+					[/* text */ 't', ` case mapping methods
+ have several benefits over `],
+					[/* inline code block */ 'i', `Character`],
+					[/* text */ 't', ` case mapping methods.
+ `],
+					[/* inline code block */ 'i', `String`],
+					[/* text */ 't', ` case mapping methods can perform locale-sensitive
+ mappings, context-sensitive mappings, and 1:M character mappings, whereas
+ the `],
+					[/* inline code block */ 'i', `Character`],
+					[/* text */ 't', ` case mapping methods cannot.
+
+ `]
+				]],
+				[/* block */ 'b', [
+					[/* text */ 't', `Note:`],
+					[/* text */ 't', ` This method cannot handle `],
+					[/* text */ 't', `supplementary characters`],
+					[/* text */ 't', `. To support
+ all Unicode characters, including supplementary characters, use
+ the `],
+					[/* reference */ 'r', `#toUpperCase(int)`, `toUpperCase(int)`],
+					[/* text */ 't', ` method.`]
+				]]
+			],
+			[/* parameters */
+				[/* parameter */ 'ch', [/* parameter description */
+					[/* text */ 't', `the character to be converted.`]
+				]]
+			],
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the uppercase equivalent of the character, if any;
+          otherwise, the character itself.`]
+			]
+		]],
+		[/* method */ 'toChars(int)', [
+			[/* method description */
+				[/* text */ 't', `Converts the specified character (Unicode code point) to its
+ UTF-16 representation stored in a `],
+				[/* inline code block */ 'i', `char`],
+				[/* text */ 't', ` array. If
+ the specified code point is a BMP (Basic Multilingual Plane or
+ Plane 0) value, the resulting `],
+				[/* inline code block */ 'i', `char`],
+				[/* text */ 't', ` array has
+ the same value as `],
+				[/* inline code block */ 'i', `codePoint`],
+				[/* text */ 't', `. If the specified code
+ point is a supplementary code point, the resulting
+ `],
+				[/* inline code block */ 'i', `char`],
+				[/* text */ 't', ` array has the corresponding surrogate pair.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'codePoint', [/* parameter description */
+					[/* text */ 't', `a Unicode code point`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
+					[/* text */ 't', `if the specified
+ `],
+					[/* inline code block */ 'i', `codePoint`],
+					[/* text */ 't', ` is not a valid Unicode code point.`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `a `],
+				[/* inline code block */ 'i', `char`],
+				[/* text */ 't', ` array having
+         `],
+				[/* inline code block */ 'i', `codePoint`],
+				[/* text */ 't', `'s UTF-16 representation.`]
+			]
+		]],
+		[/* method */ 'charCount(int)', [
+			[/* method description */
+				[/* text */ 't', `Determines the number of `],
+				[/* inline code block */ 'i', `char`],
+				[/* text */ 't', ` values needed to
+ represent the specified character (Unicode code point). If the
+ specified character is equal to or greater than 0x10000, then
+ the method returns 2. Otherwise, the method returns 1.
+
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', `This method doesn't validate the specified character to be a
+ valid Unicode code point. The caller must validate the
+ character value using `],
+					[/* reference */ 'r', `#isValidCodePoint(int)`, `isValidCodePoint`],
+					[/* text */ 't', `
+ if necessary.`]
+				]]
+			],
+			[/* parameters */
+				[/* parameter */ 'codePoint', [/* parameter description */
+					[/* text */ 't', `the character (Unicode code point) to be tested.`]
+				]]
+			],
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `2 if the character is a valid supplementary character; 1 otherwise.`]
 			]
 		]],
 		[/* method */ 'codePointAt(char[],int)', [
@@ -2578,68 +4024,6 @@ DocsCollector.collect('java.lang.Character', [
 				[/* text */ 't', `the Unicode code point at the given index`]
 			]
 		]],
-		[/* method */ 'codePointBefore(java.lang.CharSequence,int)', [
-			[/* method description */
-				[/* text */ 't', `Returns the code point preceding the given index of the
- `],
-				[/* inline code block */ 'i', `CharSequence`],
-				[/* text */ 't', `. If the `],
-				[/* inline code block */ 'i', `char`],
-				[/* text */ 't', ` value at
- `],
-				[/* inline code block */ 'i', `(index - 1)`],
-				[/* text */ 't', ` in the `],
-				[/* inline code block */ 'i', `CharSequence`],
-				[/* text */ 't', ` is in
- the low-surrogate range, `],
-				[/* inline code block */ 'i', `(index - 2)`],
-				[/* text */ 't', ` is not
- negative, and the `],
-				[/* inline code block */ 'i', `char`],
-				[/* text */ 't', ` value at `],
-				[/* inline code block */ 'i', `(index - 2)`],
-				[/* text */ 't', `
- in the `],
-				[/* inline code block */ 'i', `CharSequence`],
-				[/* text */ 't', ` is in the
- high-surrogate range, then the supplementary code point
- corresponding to this surrogate pair is returned. Otherwise,
- the `],
-				[/* inline code block */ 'i', `char`],
-				[/* text */ 't', ` value at `],
-				[/* inline code block */ 'i', `(index - 1)`],
-				[/* text */ 't', ` is
- returned.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'seq', [/* parameter description */
-					[/* text */ 't', `the `],
-					[/* inline code block */ 'i', `CharSequence`],
-					[/* text */ 't', ` instance`]
-				]],
-				[/* parameter */ 'index', [/* parameter description */
-					[/* text */ 't', `the index following the code point that should be returned`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
-					[/* text */ 't', `if `],
-					[/* inline code block */ 'i', `seq`],
-					[/* text */ 't', ` is null.`]
-				]],
-				[/* throw */ 'java.lang.IndexOutOfBoundsException', [/* throw description */
-					[/* text */ 't', `if the `],
-					[/* inline code block */ 'i', `index`],
-					[/* text */ 't', `
- argument is less than 1 or greater than `],
-					[/* reference */ 'r', `.CharSequence#length()`],
-					[/* text */ 't', `.`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `the Unicode code point value before the given index.`]
-			]
-		]],
 		[/* method */ 'codePointBefore(char[],int)', [
 			[/* method description */
 				[/* text */ 't', `Returns the code point preceding the given index of the
@@ -2788,6 +4172,68 @@ DocsCollector.collect('java.lang.Character', [
 				[/* text */ 't', `the Unicode code point value before the given index.`]
 			]
 		]],
+		[/* method */ 'codePointBefore(java.lang.CharSequence,int)', [
+			[/* method description */
+				[/* text */ 't', `Returns the code point preceding the given index of the
+ `],
+				[/* inline code block */ 'i', `CharSequence`],
+				[/* text */ 't', `. If the `],
+				[/* inline code block */ 'i', `char`],
+				[/* text */ 't', ` value at
+ `],
+				[/* inline code block */ 'i', `(index - 1)`],
+				[/* text */ 't', ` in the `],
+				[/* inline code block */ 'i', `CharSequence`],
+				[/* text */ 't', ` is in
+ the low-surrogate range, `],
+				[/* inline code block */ 'i', `(index - 2)`],
+				[/* text */ 't', ` is not
+ negative, and the `],
+				[/* inline code block */ 'i', `char`],
+				[/* text */ 't', ` value at `],
+				[/* inline code block */ 'i', `(index - 2)`],
+				[/* text */ 't', `
+ in the `],
+				[/* inline code block */ 'i', `CharSequence`],
+				[/* text */ 't', ` is in the
+ high-surrogate range, then the supplementary code point
+ corresponding to this surrogate pair is returned. Otherwise,
+ the `],
+				[/* inline code block */ 'i', `char`],
+				[/* text */ 't', ` value at `],
+				[/* inline code block */ 'i', `(index - 1)`],
+				[/* text */ 't', ` is
+ returned.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'seq', [/* parameter description */
+					[/* text */ 't', `the `],
+					[/* inline code block */ 'i', `CharSequence`],
+					[/* text */ 't', ` instance`]
+				]],
+				[/* parameter */ 'index', [/* parameter description */
+					[/* text */ 't', `the index following the code point that should be returned`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
+					[/* text */ 't', `if `],
+					[/* inline code block */ 'i', `seq`],
+					[/* text */ 't', ` is null.`]
+				]],
+				[/* throw */ 'java.lang.IndexOutOfBoundsException', [/* throw description */
+					[/* text */ 't', `if the `],
+					[/* inline code block */ 'i', `index`],
+					[/* text */ 't', `
+ argument is less than 1 or greater than `],
+					[/* reference */ 'r', `.CharSequence#length()`],
+					[/* text */ 't', `.`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `the Unicode code point value before the given index.`]
+			]
+		]],
 		[/* method */ 'codePointCount(char[],int,int)', [
 			[/* method description */
 				[/* text */ 't', `Returns the number of Unicode code points in a subarray of the
@@ -2911,1555 +4357,94 @@ DocsCollector.collect('java.lang.Character', [
  range`]
 			]
 		]],
-		[/* method */ 'offsetByCodePoints(java.lang.CharSequence,int,int)', [
+		[/* method */ 'codePointOf(java.lang.String)', [
 			[/* method description */
-				[/* text */ 't', `Returns the index within the given char sequence that is offset
- from the given `],
-				[/* inline code block */ 'i', `index`],
-				[/* text */ 't', ` by `],
-				[/* inline code block */ 'i', `codePointOffset`],
-				[/* text */ 't', `
- code points. Unpaired surrogates within the text range given by
+				[/* text */ 't', `Returns the code point value of the Unicode character specified by
+ the given Unicode character name.
  `],
-				[/* inline code block */ 'i', `index`],
-				[/* text */ 't', ` and `],
-				[/* inline code block */ 'i', `codePointOffset`],
-				[/* text */ 't', ` count as
- one code point each.`]
+				[/* block */ 'b', [
+					[/* text */ 't', `
+ Note: if a character is not assigned a name by the `],
+					[/* text */ 't', `UnicodeData`],
+					[/* text */ 't', `
+ file (part of the Unicode Character Database maintained by the Unicode
+ Consortium), its name is defined as the result of expression:
+
+ `]
+				]],
+				[/* block */ 'b', [
+					[/* inline code block */ 'i', `Character.UnicodeBlock.of(codePoint).toString().replace('_', ' ') + " " + Integer.toHexString(codePoint).toUpperCase(Locale.ROOT);`]
+				]],
+				[/* block */ 'b', ''],
+				[/* block */ 'b', [
+					[/* text */ 't', `
+ The `],
+					[/* inline code block */ 'i', `name`],
+					[/* text */ 't', ` matching is case insensitive, with any leading and
+ trailing whitespace character removed.`]
+				]]
 			],
 			[/* parameters */
-				[/* parameter */ 'seq', [/* parameter description */
-					[/* text */ 't', `the char sequence`]
-				]],
-				[/* parameter */ 'index', [/* parameter description */
-					[/* text */ 't', `the index to be offset`]
-				]],
-				[/* parameter */ 'codePointOffset', [/* parameter description */
-					[/* text */ 't', `the offset in code points`]
+				[/* parameter */ 'name', [/* parameter description */
+					[/* text */ 't', `the Unicode character name`]
 				]]
 			],
 			[/* throws */
+				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
+					[/* text */ 't', `if the specified `],
+					[/* inline code block */ 'i', `name`],
+					[/* text */ 't', `
+         is not a valid Unicode character name.`]
+				]],
 				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
 					[/* text */ 't', `if `],
-					[/* inline code block */ 'i', `seq`],
-					[/* text */ 't', ` is null.`]
-				]],
-				[/* throw */ 'java.lang.IndexOutOfBoundsException', [/* throw description */
-					[/* text */ 't', `if `],
-					[/* inline code block */ 'i', `index`],
-					[/* text */ 't', `
-   is negative or larger then the length of the char sequence,
-   or if `],
-					[/* inline code block */ 'i', `codePointOffset`],
-					[/* text */ 't', ` is positive and the
-   subsequence starting with `],
-					[/* inline code block */ 'i', `index`],
-					[/* text */ 't', ` has fewer than
-   `],
-					[/* inline code block */ 'i', `codePointOffset`],
-					[/* text */ 't', ` code points, or if
-   `],
-					[/* inline code block */ 'i', `codePointOffset`],
-					[/* text */ 't', ` is negative and the subsequence
-   before `],
-					[/* inline code block */ 'i', `index`],
-					[/* text */ 't', ` has fewer than the absolute value
-   of `],
-					[/* inline code block */ 'i', `codePointOffset`],
-					[/* text */ 't', ` code points.`]
+					[/* inline code block */ 'i', `name`],
+					[/* text */ 't', ` is `],
+					[/* inline code block */ 'i', `null`]
 				]]
 			],
 			[/* return description */
-				[/* text */ 't', `the index within the char sequence`]
+				[/* text */ 't', `the code point value of the character specified by its name.`]
 			]
 		]],
-		[/* method */ 'offsetByCodePoints(char[],int,int,int,int)', [
+		[/* method */ 'compare(char,char)', [
 			[/* method description */
-				[/* text */ 't', `Returns the index within the given `],
+				[/* text */ 't', `Compares two `],
 				[/* inline code block */ 'i', `char`],
-				[/* text */ 't', ` subarray
- that is offset from the given `],
-				[/* inline code block */ 'i', `index`],
-				[/* text */ 't', ` by
+				[/* text */ 't', ` values numerically.
+ The value returned is identical to what would be returned by:
  `],
-				[/* inline code block */ 'i', `codePointOffset`],
-				[/* text */ 't', ` code points. The
- `],
-				[/* inline code block */ 'i', `start`],
-				[/* text */ 't', ` and `],
-				[/* inline code block */ 'i', `count`],
-				[/* text */ 't', ` arguments specify a
- subarray of the `],
-				[/* inline code block */ 'i', `char`],
-				[/* text */ 't', ` array. Unpaired surrogates
- within the text range given by `],
-				[/* inline code block */ 'i', `index`],
-				[/* text */ 't', ` and
- `],
-				[/* inline code block */ 'i', `codePointOffset`],
-				[/* text */ 't', ` count as one code point each.`]
+				[/* code block */ 'c', `    Character.valueOf(x).compareTo(Character.valueOf(y))
+ `]
 			],
 			[/* parameters */
-				[/* parameter */ 'a', [/* parameter description */
-					[/* text */ 't', `the `],
+				[/* parameter */ 'x', [/* parameter description */
+					[/* text */ 't', `the first `],
 					[/* inline code block */ 'i', `char`],
-					[/* text */ 't', ` array`]
+					[/* text */ 't', ` to compare`]
 				]],
-				[/* parameter */ 'start', [/* parameter description */
-					[/* text */ 't', `the index of the first `],
+				[/* parameter */ 'y', [/* parameter description */
+					[/* text */ 't', `the second `],
 					[/* inline code block */ 'i', `char`],
-					[/* text */ 't', ` of the
- subarray`]
-				]],
-				[/* parameter */ 'count', [/* parameter description */
-					[/* text */ 't', `the length of the subarray in `],
-					[/* inline code block */ 'i', `char`],
-					[/* text */ 't', `s`]
-				]],
-				[/* parameter */ 'index', [/* parameter description */
-					[/* text */ 't', `the index to be offset`]
-				]],
-				[/* parameter */ 'codePointOffset', [/* parameter description */
-					[/* text */ 't', `the offset in code points`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
-					[/* text */ 't', `if `],
-					[/* inline code block */ 'i', `a`],
-					[/* text */ 't', ` is null.`]
-				]],
-				[/* throw */ 'java.lang.IndexOutOfBoundsException', [/* throw description */
-					[/* text */ 't', `if `],
-					[/* inline code block */ 'i', `start`],
-					[/* text */ 't', ` or `],
-					[/* inline code block */ 'i', `count`],
-					[/* text */ 't', ` is negative,
-   or if `],
-					[/* inline code block */ 'i', `start + count`],
-					[/* text */ 't', ` is larger than the length of
-   the given array,
-   or if `],
-					[/* inline code block */ 'i', `index`],
-					[/* text */ 't', ` is less than `],
-					[/* inline code block */ 'i', `start`],
-					[/* text */ 't', ` or
-   larger then `],
-					[/* inline code block */ 'i', `start + count`],
-					[/* text */ 't', `,
-   or if `],
-					[/* inline code block */ 'i', `codePointOffset`],
-					[/* text */ 't', ` is positive and the text range
-   starting with `],
-					[/* inline code block */ 'i', `index`],
-					[/* text */ 't', ` and ending with `],
-					[/* inline code block */ 'i', `start + count - 1`],
-					[/* text */ 't', `
-   has fewer than `],
-					[/* inline code block */ 'i', `codePointOffset`],
-					[/* text */ 't', ` code
-   points,
-   or if `],
-					[/* inline code block */ 'i', `codePointOffset`],
-					[/* text */ 't', ` is negative and the text range
-   starting with `],
-					[/* inline code block */ 'i', `start`],
-					[/* text */ 't', ` and ending with `],
-					[/* inline code block */ 'i', `index - 1`],
-					[/* text */ 't', `
-   has fewer than the absolute value of
-   `],
-					[/* inline code block */ 'i', `codePointOffset`],
-					[/* text */ 't', ` code points.`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `the index within the subarray`]
-			]
-		]],
-		[/* method */ 'toLowerCase(int)', [
-			[/* method description */
-				[/* text */ 't', `Converts the character (Unicode code point) argument to
- lowercase using case mapping information from the UnicodeData
- file.
-
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', ` Note that
- `],
-					[/* inline code block */ 'i', `Character.isLowerCase(Character.toLowerCase(codePoint))`],
-					[/* text */ 't', `
- does not always return `],
-					[/* inline code block */ 'i', `true`],
-					[/* text */ 't', ` for some ranges of
- characters, particularly those that are symbols or ideographs.
-
- `]
-				]],
-				[/* block */ 'b', [
-					[/* text */ 't', `In general, `],
-					[/* reference */ 'r', `.String#toLowerCase()`],
-					[/* text */ 't', ` should be used to map
- characters to lowercase. `],
-					[/* inline code block */ 'i', `String`],
-					[/* text */ 't', ` case mapping methods
- have several benefits over `],
-					[/* inline code block */ 'i', `Character`],
-					[/* text */ 't', ` case mapping methods.
- `],
-					[/* inline code block */ 'i', `String`],
-					[/* text */ 't', ` case mapping methods can perform locale-sensitive
- mappings, context-sensitive mappings, and 1:M character mappings, whereas
- the `],
-					[/* inline code block */ 'i', `Character`],
-					[/* text */ 't', ` case mapping methods cannot.`]
-				]]
-			],
-			[/* parameters */
-				[/* parameter */ 'codePoint', [/* parameter description */
-					[/* text */ 't', `the character (Unicode code point) to be converted.`]
+					[/* text */ 't', ` to compare`]
 				]]
 			],
 			/* throws */ UDF,
 			[/* return description */
-				[/* text */ 't', `the lowercase equivalent of the character (Unicode code
-          point), if any; otherwise, the character itself.`]
-			]
-		]],
-		[/* method */ 'toLowerCase(char)', [
-			[/* method description */
-				[/* text */ 't', `Converts the character argument to lowercase using case
- mapping information from the UnicodeData file.
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', `
- Note that
- `],
-					[/* inline code block */ 'i', `Character.isLowerCase(Character.toLowerCase(ch))`],
-					[/* text */ 't', `
- does not always return `],
-					[/* inline code block */ 'i', `true`],
-					[/* text */ 't', ` for some ranges of
- characters, particularly those that are symbols or ideographs.
-
- `]
-				]],
-				[/* block */ 'b', [
-					[/* text */ 't', `In general, `],
-					[/* reference */ 'r', `.String#toLowerCase()`],
-					[/* text */ 't', ` should be used to map
- characters to lowercase. `],
-					[/* inline code block */ 'i', `String`],
-					[/* text */ 't', ` case mapping methods
- have several benefits over `],
-					[/* inline code block */ 'i', `Character`],
-					[/* text */ 't', ` case mapping methods.
- `],
-					[/* inline code block */ 'i', `String`],
-					[/* text */ 't', ` case mapping methods can perform locale-sensitive
- mappings, context-sensitive mappings, and 1:M character mappings, whereas
- the `],
-					[/* inline code block */ 'i', `Character`],
-					[/* text */ 't', ` case mapping methods cannot.
-
- `]
-				]],
-				[/* block */ 'b', [
-					[/* text */ 't', `Note:`],
-					[/* text */ 't', ` This method cannot handle `],
-					[/* text */ 't', `supplementary characters`],
-					[/* text */ 't', `. To support
- all Unicode characters, including supplementary characters, use
- the `],
-					[/* reference */ 'r', `#toLowerCase(int)`, `toLowerCase(int)`],
-					[/* text */ 't', ` method.`]
-				]]
-			],
-			[/* parameters */
-				[/* parameter */ 'ch', [/* parameter description */
-					[/* text */ 't', `the character to be converted.`]
-				]]
-			],
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the lowercase equivalent of the character, if any;
-          otherwise, the character itself.`]
-			]
-		]],
-		[/* method */ 'toUpperCase(char)', [
-			[/* method description */
-				[/* text */ 't', `Converts the character argument to uppercase using case mapping
- information from the UnicodeData file.
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', `
- Note that
- `],
-					[/* inline code block */ 'i', `Character.isUpperCase(Character.toUpperCase(ch))`],
-					[/* text */ 't', `
- does not always return `],
-					[/* inline code block */ 'i', `true`],
-					[/* text */ 't', ` for some ranges of
- characters, particularly those that are symbols or ideographs.
-
- `]
-				]],
-				[/* block */ 'b', [
-					[/* text */ 't', `In general, `],
-					[/* reference */ 'r', `.String#toUpperCase()`],
-					[/* text */ 't', ` should be used to map
- characters to uppercase. `],
-					[/* inline code block */ 'i', `String`],
-					[/* text */ 't', ` case mapping methods
- have several benefits over `],
-					[/* inline code block */ 'i', `Character`],
-					[/* text */ 't', ` case mapping methods.
- `],
-					[/* inline code block */ 'i', `String`],
-					[/* text */ 't', ` case mapping methods can perform locale-sensitive
- mappings, context-sensitive mappings, and 1:M character mappings, whereas
- the `],
-					[/* inline code block */ 'i', `Character`],
-					[/* text */ 't', ` case mapping methods cannot.
-
- `]
-				]],
-				[/* block */ 'b', [
-					[/* text */ 't', `Note:`],
-					[/* text */ 't', ` This method cannot handle `],
-					[/* text */ 't', `supplementary characters`],
-					[/* text */ 't', `. To support
- all Unicode characters, including supplementary characters, use
- the `],
-					[/* reference */ 'r', `#toUpperCase(int)`, `toUpperCase(int)`],
-					[/* text */ 't', ` method.`]
-				]]
-			],
-			[/* parameters */
-				[/* parameter */ 'ch', [/* parameter description */
-					[/* text */ 't', `the character to be converted.`]
-				]]
-			],
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the uppercase equivalent of the character, if any;
-          otherwise, the character itself.`]
-			]
-		]],
-		[/* method */ 'toUpperCase(int)', [
-			[/* method description */
-				[/* text */ 't', `Converts the character (Unicode code point) argument to
- uppercase using case mapping information from the UnicodeData
- file.
-
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', `Note that
- `],
-					[/* inline code block */ 'i', `Character.isUpperCase(Character.toUpperCase(codePoint))`],
-					[/* text */ 't', `
- does not always return `],
-					[/* inline code block */ 'i', `true`],
-					[/* text */ 't', ` for some ranges of
- characters, particularly those that are symbols or ideographs.
-
- `]
-				]],
-				[/* block */ 'b', [
-					[/* text */ 't', `In general, `],
-					[/* reference */ 'r', `.String#toUpperCase()`],
-					[/* text */ 't', ` should be used to map
- characters to uppercase. `],
-					[/* inline code block */ 'i', `String`],
-					[/* text */ 't', ` case mapping methods
- have several benefits over `],
-					[/* inline code block */ 'i', `Character`],
-					[/* text */ 't', ` case mapping methods.
- `],
-					[/* inline code block */ 'i', `String`],
-					[/* text */ 't', ` case mapping methods can perform locale-sensitive
- mappings, context-sensitive mappings, and 1:M character mappings, whereas
- the `],
-					[/* inline code block */ 'i', `Character`],
-					[/* text */ 't', ` case mapping methods cannot.`]
-				]]
-			],
-			[/* parameters */
-				[/* parameter */ 'codePoint', [/* parameter description */
-					[/* text */ 't', `the character (Unicode code point) to be converted.`]
-				]]
-			],
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the uppercase equivalent of the character, if any;
-          otherwise, the character itself.`]
-			]
-		]],
-		[/* method */ 'isBmpCodePoint(int)', [
-			[/* method description */
-				[/* text */ 't', `Determines whether the specified character (Unicode code point)
- is in the `],
-				[/* text */ 't', `Basic Multilingual Plane (BMP)`],
-				[/* text */ 't', `.
- Such code points can be represented using a single `],
-				[/* inline code block */ 'i', `char`],
-				[/* text */ 't', `.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'codePoint', [/* parameter description */
-					[/* text */ 't', `the character (Unicode code point) to be tested`]
-				]]
-			],
-			/* throws */ UDF,
-			[/* return description */
-				[/* inline code block */ 'i', `true`],
-				[/* text */ 't', ` if the specified code point is between
-         `],
-				[/* text */ 't', `MIN_VALUE`],
-				[/* text */ 't', ` and `],
-				[/* text */ 't', `MAX_VALUE`],
-				[/* text */ 't', ` inclusive;
-         `],
-				[/* inline code block */ 'i', `false`],
-				[/* text */ 't', ` otherwise.`]
-			]
-		]],
-		[/* method */ 'describeConstable()', [
-			[/* method description */
-				[/* text */ 't', `Returns an `],
-				[/* reference */ 'r', `java.util.Optional`],
-				[/* text */ 't', ` containing the nominal descriptor for this
- instance.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `an `],
-				[/* reference */ 'r', `java.util.Optional`],
-				[/* text */ 't', ` describing the `],
-				[/* reference */ 'r', `java.lang.Character`],
-				[/* text */ 't', ` instance`]
-			]
-		]],
-		[/* method */ 'getType(char)', [
-			[/* method description */
-				[/* text */ 't', `Returns a value indicating a character's general category.
-
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', `Note:`],
-					[/* text */ 't', ` This method cannot handle `],
-					[/* text */ 't', `supplementary characters`],
-					[/* text */ 't', `. To support
- all Unicode characters, including supplementary characters, use
- the `],
-					[/* reference */ 'r', `#getType(int)`, `getType(int)`],
-					[/* text */ 't', ` method.`]
-				]]
-			],
-			[/* parameters */
-				[/* parameter */ 'ch', [/* parameter description */
-					[/* text */ 't', `the character to be tested.`]
-				]]
-			],
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `a value of type `],
-				[/* inline code block */ 'i', `int`],
-				[/* text */ 't', ` representing the
-          character's general category.`]
-			]
-		]],
-		[/* method */ 'getType(int)', [
-			[/* method description */
-				[/* text */ 't', `Returns a value indicating a character's general category.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'codePoint', [/* parameter description */
-					[/* text */ 't', `the character (Unicode code point) to be tested.`]
-				]]
-			],
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `a value of type `],
-				[/* inline code block */ 'i', `int`],
-				[/* text */ 't', ` representing the
-          character's general category.`]
-			]
-		]],
-		[/* method */ 'isLetter(char)', [
-			[/* method description */
-				[/* text */ 't', `Determines if the specified character is a letter.
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', `
- A character is considered to be a letter if its general
- category type, provided by `],
-					[/* inline code block */ 'i', `Character.getType(ch)`],
-					[/* text */ 't', `,
- is any of the following:
- `]
-				]],
-				[/* list */ 'l', [
-					[/* block */ 'b', [
-						[/* inline code block */ 'i', `UPPERCASE_LETTER`]
-					]],
-					[/* block */ 'b', [
-						[/* inline code block */ 'i', `LOWERCASE_LETTER`]
-					]],
-					[/* block */ 'b', [
-						[/* inline code block */ 'i', `TITLECASE_LETTER`]
-					]],
-					[/* block */ 'b', [
-						[/* inline code block */ 'i', `MODIFIER_LETTER`]
-					]],
-					[/* block */ 'b', [
-						[/* inline code block */ 'i', `OTHER_LETTER`]
-					]]
-				]],
-				[/* text */ 't', `
-
- Not all letters have case. Many characters are
- letters but are neither uppercase nor lowercase nor titlecase.
-
- `],
-				[/* block */ 'b', ''],
-				[/* block */ 'b', [
-					[/* text */ 't', `Note:`],
-					[/* text */ 't', ` This method cannot handle `],
-					[/* text */ 't', `supplementary characters`],
-					[/* text */ 't', `. To support
- all Unicode characters, including supplementary characters, use
- the `],
-					[/* reference */ 'r', `#isLetter(int)`, `isLetter(int)`],
-					[/* text */ 't', ` method.`]
-				]]
-			],
-			[/* parameters */
-				[/* parameter */ 'ch', [/* parameter description */
-					[/* text */ 't', `the character to be tested.`]
-				]]
-			],
-			/* throws */ UDF,
-			[/* return description */
-				[/* inline code block */ 'i', `true`],
-				[/* text */ 't', ` if the character is a letter;
-          `],
-				[/* inline code block */ 'i', `false`],
-				[/* text */ 't', ` otherwise.`]
-			]
-		]],
-		[/* method */ 'isLetter(int)', [
-			[/* method description */
-				[/* text */ 't', `Determines if the specified character (Unicode code point) is a letter.
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', `
- A character is considered to be a letter if its general
- category type, provided by `],
-					[/* reference */ 'r', `#getType(int)`, `getType(codePoint)`],
-					[/* text */ 't', `,
- is any of the following:
- `]
-				]],
-				[/* list */ 'l', [
-					[/* block */ 'b', [
-						[/* inline code block */ 'i', `UPPERCASE_LETTER`]
-					]],
-					[/* block */ 'b', [
-						[/* inline code block */ 'i', `LOWERCASE_LETTER`]
-					]],
-					[/* block */ 'b', [
-						[/* inline code block */ 'i', `TITLECASE_LETTER`]
-					]],
-					[/* block */ 'b', [
-						[/* inline code block */ 'i', `MODIFIER_LETTER`]
-					]],
-					[/* block */ 'b', [
-						[/* inline code block */ 'i', `OTHER_LETTER`]
-					]]
-				]],
-				[/* text */ 't', `
-
- Not all letters have case. Many characters are
- letters but are neither uppercase nor lowercase nor titlecase.`],
-				[/* block */ 'b', '']
-			],
-			[/* parameters */
-				[/* parameter */ 'codePoint', [/* parameter description */
-					[/* text */ 't', `the character (Unicode code point) to be tested.`]
-				]]
-			],
-			/* throws */ UDF,
-			[/* return description */
-				[/* inline code block */ 'i', `true`],
-				[/* text */ 't', ` if the character is a letter;
-          `],
-				[/* inline code block */ 'i', `false`],
-				[/* text */ 't', ` otherwise.`]
-			]
-		]],
-		[/* method */ 'isLetterOrDigit(int)', [
-			[/* method description */
-				[/* text */ 't', `Determines if the specified character (Unicode code point) is a letter or digit.
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', `
- A character is considered to be a letter or digit if either
- `],
-					[/* reference */ 'r', `#isLetter(int)`, `isLetter(codePoint)`],
-					[/* text */ 't', ` or
- `],
-					[/* reference */ 'r', `#isDigit(int)`, `isDigit(codePoint)`],
-					[/* text */ 't', ` returns
- `],
-					[/* inline code block */ 'i', `true`],
-					[/* text */ 't', ` for the character.`]
-				]]
-			],
-			[/* parameters */
-				[/* parameter */ 'codePoint', [/* parameter description */
-					[/* text */ 't', `the character (Unicode code point) to be tested.`]
-				]]
-			],
-			/* throws */ UDF,
-			[/* return description */
-				[/* inline code block */ 'i', `true`],
-				[/* text */ 't', ` if the character is a letter or digit;
-          `],
-				[/* inline code block */ 'i', `false`],
-				[/* text */ 't', ` otherwise.`]
-			]
-		]],
-		[/* method */ 'isLetterOrDigit(char)', [
-			[/* method description */
-				[/* text */ 't', `Determines if the specified character is a letter or digit.
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', `
- A character is considered to be a letter or digit if either
- `],
-					[/* inline code block */ 'i', `Character.isLetter(char ch)`],
-					[/* text */ 't', ` or
- `],
-					[/* inline code block */ 'i', `Character.isDigit(char ch)`],
-					[/* text */ 't', ` returns
- `],
-					[/* inline code block */ 'i', `true`],
-					[/* text */ 't', ` for the character.
-
- `]
-				]],
-				[/* block */ 'b', [
-					[/* text */ 't', `Note:`],
-					[/* text */ 't', ` This method cannot handle `],
-					[/* text */ 't', `supplementary characters`],
-					[/* text */ 't', `. To support
- all Unicode characters, including supplementary characters, use
- the `],
-					[/* reference */ 'r', `#isLetterOrDigit(int)`, `isLetterOrDigit(int)`],
-					[/* text */ 't', ` method.`]
-				]]
-			],
-			[/* parameters */
-				[/* parameter */ 'ch', [/* parameter description */
-					[/* text */ 't', `the character to be tested.`]
-				]]
-			],
-			/* throws */ UDF,
-			[/* return description */
-				[/* inline code block */ 'i', `true`],
-				[/* text */ 't', ` if the character is a letter or digit;
-          `],
-				[/* inline code block */ 'i', `false`],
-				[/* text */ 't', ` otherwise.`]
-			]
-		]],
-		[/* method */ 'isValidCodePoint(int)', [
-			[/* method description */
-				[/* text */ 't', `Determines whether the specified code point is a valid
- `],
-				[/* external link */ 'a', `http://www.unicode.org/glossary/#code_point`, `Unicode code point value`],
-				[/* text */ 't', `.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'codePoint', [/* parameter description */
-					[/* text */ 't', `the Unicode code point to be tested`]
-				]]
-			],
-			/* throws */ UDF,
-			[/* return description */
-				[/* inline code block */ 'i', `true`],
-				[/* text */ 't', ` if the specified code point value is between
-         `],
-				[/* text */ 't', `MIN_CODE_POINT`],
-				[/* text */ 't', ` and
-         `],
-				[/* text */ 't', `MAX_CODE_POINT`],
-				[/* text */ 't', ` inclusive;
-         `],
-				[/* inline code block */ 'i', `false`],
-				[/* text */ 't', ` otherwise.`]
-			]
-		]],
-		[/* method */ 'isTitleCase(int)', [
-			[/* method description */
-				[/* text */ 't', `Determines if the specified character (Unicode code point) is a titlecase character.
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', `
- A character is a titlecase character if its general
- category type, provided by `],
-					[/* reference */ 'r', `#getType(int)`, `getType(codePoint)`],
-					[/* text */ 't', `,
- is `],
-					[/* inline code block */ 'i', `TITLECASE_LETTER`],
-					[/* text */ 't', `.
- `]
-				]],
-				[/* block */ 'b', `
- Some characters look like pairs of Latin letters. For example, there
- is an uppercase letter that looks like "LJ" and has a corresponding
- lowercase letter that looks like "lj". A third form, which looks like "Lj",
- is the appropriate form to use when rendering a word in lowercase
- with initial capitals, as for a book title.
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', `
- These are some of the Unicode characters for which this method returns
- `],
-					[/* inline code block */ 'i', `true`],
-					[/* text */ 't', `:
- `]
-				]],
-				[/* list */ 'l', [
-					[/* block */ 'b', [
-						[/* inline code block */ 'i', `LATIN CAPITAL LETTER D WITH SMALL LETTER Z WITH CARON`]
-					]],
-					[/* block */ 'b', [
-						[/* inline code block */ 'i', `LATIN CAPITAL LETTER L WITH SMALL LETTER J`]
-					]],
-					[/* block */ 'b', [
-						[/* inline code block */ 'i', `LATIN CAPITAL LETTER N WITH SMALL LETTER J`]
-					]],
-					[/* block */ 'b', [
-						[/* inline code block */ 'i', `LATIN CAPITAL LETTER D WITH SMALL LETTER Z`]
-					]]
-				]],
-				[/* block */ 'b', ''],
-				[/* block */ 'b', ` Many other Unicode characters are titlecase too.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'codePoint', [/* parameter description */
-					[/* text */ 't', `the character (Unicode code point) to be tested.`]
-				]]
-			],
-			/* throws */ UDF,
-			[/* return description */
-				[/* inline code block */ 'i', `true`],
-				[/* text */ 't', ` if the character is titlecase;
-          `],
-				[/* inline code block */ 'i', `false`],
-				[/* text */ 't', ` otherwise.`]
-			]
-		]],
-		[/* method */ 'isTitleCase(char)', [
-			[/* method description */
-				[/* text */ 't', `Determines if the specified character is a titlecase character.
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', `
- A character is a titlecase character if its general
- category type, provided by `],
-					[/* inline code block */ 'i', `Character.getType(ch)`],
-					[/* text */ 't', `,
- is `],
-					[/* inline code block */ 'i', `TITLECASE_LETTER`],
-					[/* text */ 't', `.
- `]
-				]],
-				[/* block */ 'b', `
- Some characters look like pairs of Latin letters. For example, there
- is an uppercase letter that looks like "LJ" and has a corresponding
- lowercase letter that looks like "lj". A third form, which looks like "Lj",
- is the appropriate form to use when rendering a word in lowercase
- with initial capitals, as for a book title.
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', `
- These are some of the Unicode characters for which this method returns
- `],
-					[/* inline code block */ 'i', `true`],
-					[/* text */ 't', `:
- `]
-				]],
-				[/* list */ 'l', [
-					[/* block */ 'b', [
-						[/* inline code block */ 'i', `LATIN CAPITAL LETTER D WITH SMALL LETTER Z WITH CARON`]
-					]],
-					[/* block */ 'b', [
-						[/* inline code block */ 'i', `LATIN CAPITAL LETTER L WITH SMALL LETTER J`]
-					]],
-					[/* block */ 'b', [
-						[/* inline code block */ 'i', `LATIN CAPITAL LETTER N WITH SMALL LETTER J`]
-					]],
-					[/* block */ 'b', [
-						[/* inline code block */ 'i', `LATIN CAPITAL LETTER D WITH SMALL LETTER Z`]
-					]]
-				]],
-				[/* block */ 'b', ''],
-				[/* block */ 'b', ` Many other Unicode characters are titlecase too.
-
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', `Note:`],
-					[/* text */ 't', ` This method cannot handle `],
-					[/* text */ 't', `supplementary characters`],
-					[/* text */ 't', `. To support
- all Unicode characters, including supplementary characters, use
- the `],
-					[/* reference */ 'r', `#isTitleCase(int)`, `isTitleCase(int)`],
-					[/* text */ 't', ` method.`]
-				]]
-			],
-			[/* parameters */
-				[/* parameter */ 'ch', [/* parameter description */
-					[/* text */ 't', `the character to be tested.`]
-				]]
-			],
-			/* throws */ UDF,
-			[/* return description */
-				[/* inline code block */ 'i', `true`],
-				[/* text */ 't', ` if the character is titlecase;
-          `],
-				[/* inline code block */ 'i', `false`],
-				[/* text */ 't', ` otherwise.`]
-			]
-		]],
-		[/* method */ 'isDefined(int)', [
-			[/* method description */
-				[/* text */ 't', `Determines if a character (Unicode code point) is defined in Unicode.
- `],
-				[/* block */ 'b', `
- A character is defined if at least one of the following is true:
- `],
-				[/* list */ 'l', [
-					[/* block */ 'b', `It has an entry in the UnicodeData file.
- `],
-					[/* block */ 'b', `It has a value in a range defined by the UnicodeData file.
- `]
-				]],
-				[/* block */ 'b', '']
-			],
-			[/* parameters */
-				[/* parameter */ 'codePoint', [/* parameter description */
-					[/* text */ 't', `the character (Unicode code point) to be tested.`]
-				]]
-			],
-			/* throws */ UDF,
-			[/* return description */
-				[/* inline code block */ 'i', `true`],
-				[/* text */ 't', ` if the character has a defined meaning
-          in Unicode; `],
-				[/* inline code block */ 'i', `false`],
-				[/* text */ 't', ` otherwise.`]
-			]
-		]],
-		[/* method */ 'isDefined(char)', [
-			[/* method description */
-				[/* text */ 't', `Determines if a character is defined in Unicode.
- `],
-				[/* block */ 'b', `
- A character is defined if at least one of the following is true:
- `],
-				[/* list */ 'l', [
-					[/* block */ 'b', `It has an entry in the UnicodeData file.
- `],
-					[/* block */ 'b', `It has a value in a range defined by the UnicodeData file.
- `]
-				]],
-				[/* block */ 'b', ''],
-				[/* block */ 'b', [
-					[/* text */ 't', `Note:`],
-					[/* text */ 't', ` This method cannot handle `],
-					[/* text */ 't', `supplementary characters`],
-					[/* text */ 't', `. To support
- all Unicode characters, including supplementary characters, use
- the `],
-					[/* reference */ 'r', `#isDefined(int)`, `isDefined(int)`],
-					[/* text */ 't', ` method.`]
-				]]
-			],
-			[/* parameters */
-				[/* parameter */ 'ch', [/* parameter description */
-					[/* text */ 't', `the character to be tested`]
-				]]
-			],
-			/* throws */ UDF,
-			[/* return description */
-				[/* inline code block */ 'i', `true`],
-				[/* text */ 't', ` if the character has a defined meaning
-          in Unicode; `],
-				[/* inline code block */ 'i', `false`],
-				[/* text */ 't', ` otherwise.`]
-			]
-		]],
-		[/* method */ 'isIdeographic(int)', [
-			[/* method description */
-				[/* text */ 't', `Determines if the specified character (Unicode code point) is a CJKV
- (Chinese, Japanese, Korean and Vietnamese) ideograph, as defined by
- the Unicode Standard.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'codePoint', [/* parameter description */
-					[/* text */ 't', `the character (Unicode code point) to be tested.`]
-				]]
-			],
-			/* throws */ UDF,
-			[/* return description */
-				[/* inline code block */ 'i', `true`],
-				[/* text */ 't', ` if the character is a Unicode ideograph
-          character, `],
-				[/* inline code block */ 'i', `false`],
-				[/* text */ 't', ` otherwise.`]
-			]
-		]],
-		[/* method */ 'isUnicodeIdentifierStart(int)', [
-			[/* method description */
-				[/* text */ 't', `Determines if the specified character (Unicode code point) is permissible as the
- first character in a Unicode identifier.
- `],
-				[/* block */ 'b', `
- A character may start a Unicode identifier if and only if
- one of the following conditions is true:
- `],
-				[/* list */ 'l', [
-					[/* block */ 'b', [
-						[/* reference */ 'r', `#isLetter(int)`, `isLetter(codePoint)`],
-						[/* text */ 't', `
-      returns `],
-						[/* inline code block */ 'i', `true`]
-					]],
-					[/* block */ 'b', [
-						[/* reference */ 'r', `#getType(int)`, `getType(codePoint)`],
-						[/* text */ 't', `
-      returns `],
-						[/* inline code block */ 'i', `LETTER_NUMBER`],
-						[/* text */ 't', `.
- `]
-					]],
-					[/* block */ 'b', [
-						[/* text */ 't', ` it is an `],
-						[/* external link */ 'a', `http://www.unicode.org/reports/tr44/#Other_ID_Start`, `Other_ID_Start`],
-						[/* text */ 't', ` character.
- `]
-					]]
-				]],
-				[/* block */ 'b', ''],
-				[/* block */ 'b', [
-					[/* text */ 't', `
- This method conforms to `],
-					[/* external link */ 'a', `https://unicode.org/reports/tr31/#R1`, `UAX31-R1: Default Identifiers`],
-					[/* text */ 't', ` requirement of the Unicode Standard,
- with the following profile of UAX31:
- `]
-				]],
-				[/* code block */ 'c', ` Start := ID_Start + 'VERTICAL TILDE' (U+2E2F)
- `],
-				[/* inline code block */ 'i', `'VERTICAL TILDE'`],
-				[/* text */ 't', ` is added to `],
-				[/* inline code block */ 'i', `Start`],
-				[/* text */ 't', ` for backward
- compatibility.`],
-				[/* block */ 'b', '']
-			],
-			[/* parameters */
-				[/* parameter */ 'codePoint', [/* parameter description */
-					[/* text */ 't', `the character (Unicode code point) to be tested.`]
-				]]
-			],
-			/* throws */ UDF,
-			[/* return description */
-				[/* inline code block */ 'i', `true`],
-				[/* text */ 't', ` if the character may start a Unicode
-          identifier; `],
-				[/* inline code block */ 'i', `false`],
-				[/* text */ 't', ` otherwise.`]
-			]
-		]],
-		[/* method */ 'isUnicodeIdentifierStart(char)', [
-			[/* method description */
-				[/* text */ 't', `Determines if the specified character is permissible as the
- first character in a Unicode identifier.
- `],
-				[/* block */ 'b', `
- A character may start a Unicode identifier if and only if
- one of the following conditions is true:
- `],
-				[/* list */ 'l', [
-					[/* block */ 'b', [
-						[/* reference */ 'r', `#isLetter(int)`, `isLetter(ch)`],
-						[/* text */ 't', ` returns `],
-						[/* inline code block */ 'i', `true`]
-					]],
-					[/* block */ 'b', [
-						[/* reference */ 'r', `#getType(int)`, `getType(ch)`],
-						[/* text */ 't', ` returns
-      `],
-						[/* inline code block */ 'i', `LETTER_NUMBER`],
-						[/* text */ 't', `.
- `]
-					]],
-					[/* block */ 'b', [
-						[/* text */ 't', ` it is an `],
-						[/* external link */ 'a', `http://www.unicode.org/reports/tr44/#Other_ID_Start`, `Other_ID_Start`],
-						[/* text */ 't', ` character.
- `]
-					]]
-				]],
-				[/* block */ 'b', ''],
-				[/* block */ 'b', [
-					[/* text */ 't', `
- This method conforms to `],
-					[/* external link */ 'a', `https://unicode.org/reports/tr31/#R1`, `UAX31-R1: Default Identifiers`],
-					[/* text */ 't', ` requirement of the Unicode Standard,
- with the following profile of UAX31:
- `]
-				]],
-				[/* code block */ 'c', ` Start := ID_Start + 'VERTICAL TILDE' (U+2E2F)
- `],
-				[/* inline code block */ 'i', `'VERTICAL TILDE'`],
-				[/* text */ 't', ` is added to `],
-				[/* inline code block */ 'i', `Start`],
-				[/* text */ 't', ` for backward
- compatibility.
-
- `],
-				[/* block */ 'b', ''],
-				[/* block */ 'b', [
-					[/* text */ 't', `Note:`],
-					[/* text */ 't', ` This method cannot handle `],
-					[/* text */ 't', `supplementary characters`],
-					[/* text */ 't', `. To support
- all Unicode characters, including supplementary characters, use
- the `],
-					[/* reference */ 'r', `#isUnicodeIdentifierStart(int)`, `isUnicodeIdentifierStart(int)`],
-					[/* text */ 't', ` method.`]
-				]]
-			],
-			[/* parameters */
-				[/* parameter */ 'ch', [/* parameter description */
-					[/* text */ 't', `the character to be tested.`]
-				]]
-			],
-			/* throws */ UDF,
-			[/* return description */
-				[/* inline code block */ 'i', `true`],
-				[/* text */ 't', ` if the character may start a Unicode
-          identifier; `],
-				[/* inline code block */ 'i', `false`],
-				[/* text */ 't', ` otherwise.`]
-			]
-		]],
-		[/* method */ 'isUnicodeIdentifierPart(int)', [
-			[/* method description */
-				[/* text */ 't', `Determines if the specified character (Unicode code point) may be part of a Unicode
- identifier as other than the first character.
- `],
-				[/* block */ 'b', `
- A character may be part of a Unicode identifier if and only if
- one of the following statements is true:
- `],
-				[/* list */ 'l', [
-					[/* block */ 'b', `  it is a letter
- `],
-					[/* block */ 'b', [
-						[/* text */ 't', `  it is a connecting punctuation character (such as `],
-						[/* inline code block */ 'i', `'_'`],
-						[/* text */ 't', `)
- `]
-					]],
-					[/* block */ 'b', `  it is a digit
- `],
-					[/* block */ 'b', `  it is a numeric letter (such as a Roman numeral character)
- `],
-					[/* block */ 'b', `  it is a combining mark
- `],
-					[/* block */ 'b', `  it is a non-spacing mark
- `],
-					[/* block */ 'b', [
-						[/* inline code block */ 'i', `isIdentifierIgnorable`],
-						[/* text */ 't', ` returns
- `],
-						[/* inline code block */ 'i', `true`],
-						[/* text */ 't', ` for this character.
- `]
-					]],
-					[/* block */ 'b', [
-						[/* text */ 't', ` it is an `],
-						[/* external link */ 'a', `http://www.unicode.org/reports/tr44/#Other_ID_Start`, `Other_ID_Start`],
-						[/* text */ 't', ` character.
- `]
-					]],
-					[/* block */ 'b', [
-						[/* text */ 't', ` it is an `],
-						[/* external link */ 'a', `http://www.unicode.org/reports/tr44/#Other_ID_Continue`, `Other_ID_Continue`],
-						[/* text */ 't', ` character.
- `]
-					]]
-				]],
-				[/* block */ 'b', ''],
-				[/* block */ 'b', [
-					[/* text */ 't', `
- This method conforms to `],
-					[/* external link */ 'a', `https://unicode.org/reports/tr31/#R1`, `UAX31-R1: Default Identifiers`],
-					[/* text */ 't', ` requirement of the Unicode Standard,
- with the following profile of UAX31:
- `]
-				]],
-				[/* code block */ 'c', ` Continue := Start + ID_Continue + ignorable
- Medial := empty
- ignorable := isIdentifierIgnorable(int) returns true for the character
- `],
-				[/* inline code block */ 'i', `ignorable`],
-				[/* text */ 't', ` is added to `],
-				[/* inline code block */ 'i', `Continue`],
-				[/* text */ 't', ` for backward
- compatibility.`],
-				[/* block */ 'b', '']
-			],
-			[/* parameters */
-				[/* parameter */ 'codePoint', [/* parameter description */
-					[/* text */ 't', `the character (Unicode code point) to be tested.`]
-				]]
-			],
-			/* throws */ UDF,
-			[/* return description */
-				[/* inline code block */ 'i', `true`],
-				[/* text */ 't', ` if the character may be part of a
-          Unicode identifier; `],
-				[/* inline code block */ 'i', `false`],
-				[/* text */ 't', ` otherwise.`]
-			]
-		]],
-		[/* method */ 'isUnicodeIdentifierPart(char)', [
-			[/* method description */
-				[/* text */ 't', `Determines if the specified character may be part of a Unicode
- identifier as other than the first character.
- `],
-				[/* block */ 'b', `
- A character may be part of a Unicode identifier if and only if
- one of the following statements is true:
- `],
-				[/* list */ 'l', [
-					[/* block */ 'b', `  it is a letter
- `],
-					[/* block */ 'b', [
-						[/* text */ 't', `  it is a connecting punctuation character (such as `],
-						[/* inline code block */ 'i', `'_'`],
-						[/* text */ 't', `)
- `]
-					]],
-					[/* block */ 'b', `  it is a digit
- `],
-					[/* block */ 'b', `  it is a numeric letter (such as a Roman numeral character)
- `],
-					[/* block */ 'b', `  it is a combining mark
- `],
-					[/* block */ 'b', `  it is a non-spacing mark
- `],
-					[/* block */ 'b', [
-						[/* inline code block */ 'i', `isIdentifierIgnorable`],
-						[/* text */ 't', ` returns
- `],
-						[/* inline code block */ 'i', `true`],
-						[/* text */ 't', ` for this character.
- `]
-					]],
-					[/* block */ 'b', [
-						[/* text */ 't', ` it is an `],
-						[/* external link */ 'a', `http://www.unicode.org/reports/tr44/#Other_ID_Start`, `Other_ID_Start`],
-						[/* text */ 't', ` character.
- `]
-					]],
-					[/* block */ 'b', [
-						[/* text */ 't', ` it is an `],
-						[/* external link */ 'a', `http://www.unicode.org/reports/tr44/#Other_ID_Continue`, `Other_ID_Continue`],
-						[/* text */ 't', ` character.
- `]
-					]]
-				]],
-				[/* block */ 'b', ''],
-				[/* block */ 'b', [
-					[/* text */ 't', `
- This method conforms to `],
-					[/* external link */ 'a', `https://unicode.org/reports/tr31/#R1`, `UAX31-R1: Default Identifiers`],
-					[/* text */ 't', ` requirement of the Unicode Standard,
- with the following profile of UAX31:
- `]
-				]],
-				[/* code block */ 'c', ` Continue := Start + ID_Continue + ignorable
- Medial := empty
- ignorable := isIdentifierIgnorable(char) returns true for the character
- `],
-				[/* inline code block */ 'i', `ignorable`],
-				[/* text */ 't', ` is added to `],
-				[/* inline code block */ 'i', `Continue`],
-				[/* text */ 't', ` for backward
- compatibility.
-
- `],
-				[/* block */ 'b', ''],
-				[/* block */ 'b', [
-					[/* text */ 't', `Note:`],
-					[/* text */ 't', ` This method cannot handle `],
-					[/* text */ 't', `supplementary characters`],
-					[/* text */ 't', `. To support
- all Unicode characters, including supplementary characters, use
- the `],
-					[/* reference */ 'r', `#isUnicodeIdentifierPart(int)`, `isUnicodeIdentifierPart(int)`],
-					[/* text */ 't', ` method.`]
-				]]
-			],
-			[/* parameters */
-				[/* parameter */ 'ch', [/* parameter description */
-					[/* text */ 't', `the character to be tested.`]
-				]]
-			],
-			/* throws */ UDF,
-			[/* return description */
-				[/* inline code block */ 'i', `true`],
-				[/* text */ 't', ` if the character may be part of a
-          Unicode identifier; `],
-				[/* inline code block */ 'i', `false`],
-				[/* text */ 't', ` otherwise.`]
-			]
-		]],
-		[/* method */ 'isIdentifierIgnorable(int)', [
-			[/* method description */
-				[/* text */ 't', `Determines if the specified character (Unicode code point) should be regarded as
- an ignorable character in a Java identifier or a Unicode identifier.
- `],
-				[/* block */ 'b', `
- The following Unicode characters are ignorable in a Java identifier
- or a Unicode identifier:
- `],
-				[/* list */ 'l', [
-					[/* block */ 'b', [
-						[/* text */ 't', `ISO control characters that are not whitespace
- `],
-						[/* list */ 'l', [
-							[/* block */ 'b', [
-								[/* inline code block */ 'i', `'\\u0000'`],
-								[/* text */ 't', ` through `],
-								[/* inline code block */ 'i', `'\\u0008'`]
-							]],
-							[/* block */ 'b', [
-								[/* inline code block */ 'i', `'\\u000E'`],
-								[/* text */ 't', ` through `],
-								[/* inline code block */ 'i', `'\\u001B'`]
-							]],
-							[/* block */ 'b', [
-								[/* inline code block */ 'i', `'\\u007F'`],
-								[/* text */ 't', ` through `],
-								[/* inline code block */ 'i', `'\\u009F'`]
-							]]
-						]]
-					]],
-					[/* block */ 'b', [
-						[/* text */ 't', `all characters that have the `],
-						[/* inline code block */ 'i', `FORMAT`],
-						[/* text */ 't', ` general
- category value
- `]
-					]]
-				]],
-				[/* block */ 'b', '']
-			],
-			[/* parameters */
-				[/* parameter */ 'codePoint', [/* parameter description */
-					[/* text */ 't', `the character (Unicode code point) to be tested.`]
-				]]
-			],
-			/* throws */ UDF,
-			[/* return description */
-				[/* inline code block */ 'i', `true`],
-				[/* text */ 't', ` if the character is an ignorable control
-          character that may be part of a Java or Unicode identifier;
-          `],
-				[/* inline code block */ 'i', `false`],
-				[/* text */ 't', ` otherwise.`]
-			]
-		]],
-		[/* method */ 'isIdentifierIgnorable(char)', [
-			[/* method description */
-				[/* text */ 't', `Determines if the specified character should be regarded as
- an ignorable character in a Java identifier or a Unicode identifier.
- `],
-				[/* block */ 'b', `
- The following Unicode characters are ignorable in a Java identifier
- or a Unicode identifier:
- `],
-				[/* list */ 'l', [
-					[/* block */ 'b', [
-						[/* text */ 't', `ISO control characters that are not whitespace
- `],
-						[/* list */ 'l', [
-							[/* block */ 'b', [
-								[/* inline code block */ 'i', `'\\u0000'`],
-								[/* text */ 't', ` through `],
-								[/* inline code block */ 'i', `'\\u0008'`]
-							]],
-							[/* block */ 'b', [
-								[/* inline code block */ 'i', `'\\u000E'`],
-								[/* text */ 't', ` through `],
-								[/* inline code block */ 'i', `'\\u001B'`]
-							]],
-							[/* block */ 'b', [
-								[/* inline code block */ 'i', `'\\u007F'`],
-								[/* text */ 't', ` through `],
-								[/* inline code block */ 'i', `'\\u009F'`]
-							]]
-						]]
-					]],
-					[/* block */ 'b', [
-						[/* text */ 't', `all characters that have the `],
-						[/* inline code block */ 'i', `FORMAT`],
-						[/* text */ 't', ` general
- category value
- `]
-					]]
-				]],
-				[/* block */ 'b', ''],
-				[/* block */ 'b', [
-					[/* text */ 't', `Note:`],
-					[/* text */ 't', ` This method cannot handle `],
-					[/* text */ 't', `supplementary characters`],
-					[/* text */ 't', `. To support
- all Unicode characters, including supplementary characters, use
- the `],
-					[/* reference */ 'r', `#isIdentifierIgnorable(int)`, `isIdentifierIgnorable(int)`],
-					[/* text */ 't', ` method.`]
-				]]
-			],
-			[/* parameters */
-				[/* parameter */ 'ch', [/* parameter description */
-					[/* text */ 't', `the character to be tested.`]
-				]]
-			],
-			/* throws */ UDF,
-			[/* return description */
-				[/* inline code block */ 'i', `true`],
-				[/* text */ 't', ` if the character is an ignorable control
-          character that may be part of a Java or Unicode identifier;
-           `],
-				[/* inline code block */ 'i', `false`],
-				[/* text */ 't', ` otherwise.`]
-			]
-		]],
-		[/* method */ 'toTitleCase(int)', [
-			[/* method description */
-				[/* text */ 't', `Converts the character (Unicode code point) argument to titlecase using case mapping
- information from the UnicodeData file. If a character has no
- explicit titlecase mapping and is not itself a titlecase char
- according to UnicodeData, then the uppercase mapping is
- returned as an equivalent titlecase mapping. If the
- character argument is already a titlecase
- character, the same character value will be
- returned.
-
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', `Note that
- `],
-					[/* inline code block */ 'i', `Character.isTitleCase(Character.toTitleCase(codePoint))`],
-					[/* text */ 't', `
- does not always return `],
-					[/* inline code block */ 'i', `true`],
-					[/* text */ 't', ` for some ranges of
- characters.`]
-				]]
-			],
-			[/* parameters */
-				[/* parameter */ 'codePoint', [/* parameter description */
-					[/* text */ 't', `the character (Unicode code point) to be converted.`]
-				]]
-			],
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the titlecase equivalent of the character, if any;
-          otherwise, the character itself.`]
-			]
-		]],
-		[/* method */ 'toTitleCase(char)', [
-			[/* method description */
-				[/* text */ 't', `Converts the character argument to titlecase using case mapping
- information from the UnicodeData file. If a character has no
- explicit titlecase mapping and is not itself a titlecase char
- according to UnicodeData, then the uppercase mapping is
- returned as an equivalent titlecase mapping. If the
- `],
-				[/* inline code block */ 'i', `char`],
-				[/* text */ 't', ` argument is already a titlecase
- `],
-				[/* inline code block */ 'i', `char`],
-				[/* text */ 't', `, the same `],
-				[/* inline code block */ 'i', `char`],
-				[/* text */ 't', ` value will be
- returned.
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', `
- Note that
- `],
-					[/* inline code block */ 'i', `Character.isTitleCase(Character.toTitleCase(ch))`],
-					[/* text */ 't', `
- does not always return `],
-					[/* inline code block */ 'i', `true`],
-					[/* text */ 't', ` for some ranges of
- characters.
-
- `]
-				]],
-				[/* block */ 'b', [
-					[/* text */ 't', `Note:`],
-					[/* text */ 't', ` This method cannot handle `],
-					[/* text */ 't', `supplementary characters`],
-					[/* text */ 't', `. To support
- all Unicode characters, including supplementary characters, use
- the `],
-					[/* reference */ 'r', `#toTitleCase(int)`, `toTitleCase(int)`],
-					[/* text */ 't', ` method.`]
-				]]
-			],
-			[/* parameters */
-				[/* parameter */ 'ch', [/* parameter description */
-					[/* text */ 't', `the character to be converted.`]
-				]]
-			],
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the titlecase equivalent of the character, if any;
-          otherwise, the character itself.`]
-			]
-		]],
-		[/* method */ 'digit(int,int)', [
-			[/* method description */
-				[/* text */ 't', `Returns the numeric value of the specified character (Unicode
- code point) in the specified radix.
-
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', `If the radix is not in the range `],
-					[/* inline code block */ 'i', `MIN_RADIX`],
-					[/* text */ 't', ` ≤
- `],
-					[/* inline code block */ 'i', `radix`],
-					[/* text */ 't', ` ≤ `],
-					[/* inline code block */ 'i', `MAX_RADIX`],
-					[/* text */ 't', ` or if the
- character is not a valid digit in the specified
- radix, `],
-					[/* inline code block */ 'i', `-1`],
-					[/* text */ 't', ` is returned. A character is a valid digit
- if at least one of the following is true:
- `]
-				]],
-				[/* list */ 'l', [
-					[/* block */ 'b', [
-						[/* text */ 't', `The method `],
-						[/* reference */ 'r', `#isDigit(int)`, `isDigit(codePoint)`],
-						[/* text */ 't', ` is `],
-						[/* inline code block */ 'i', `true`],
-						[/* text */ 't', ` of the character
-     and the Unicode decimal digit value of the character (or its
-     single-character decomposition) is less than the specified radix.
-     In this case the decimal digit value is returned.
- `]
-					]],
-					[/* block */ 'b', [
-						[/* text */ 't', `The character is one of the uppercase Latin letters
-     `],
-						[/* inline code block */ 'i', `'A'`],
-						[/* text */ 't', ` through `],
-						[/* inline code block */ 'i', `'Z'`],
-						[/* text */ 't', ` and its code is less than
-     `],
-						[/* inline code block */ 'i', `radix + 'A' - 10`],
-						[/* text */ 't', `.
-     In this case, `],
-						[/* inline code block */ 'i', `codePoint - 'A' + 10`],
-						[/* text */ 't', `
-     is returned.
- `]
-					]],
-					[/* block */ 'b', [
-						[/* text */ 't', `The character is one of the lowercase Latin letters
-     `],
-						[/* inline code block */ 'i', `'a'`],
-						[/* text */ 't', ` through `],
-						[/* inline code block */ 'i', `'z'`],
-						[/* text */ 't', ` and its code is less than
-     `],
-						[/* inline code block */ 'i', `radix + 'a' - 10`],
-						[/* text */ 't', `.
-     In this case, `],
-						[/* inline code block */ 'i', `codePoint - 'a' + 10`],
-						[/* text */ 't', `
-     is returned.
- `]
-					]],
-					[/* block */ 'b', [
-						[/* text */ 't', `The character is one of the fullwidth uppercase Latin letters A
-     (`],
-						[/* inline code block */ 'i', `'\\uFF21'`],
-						[/* text */ 't', `) through Z (`],
-						[/* inline code block */ 'i', `'\\uFF3A'`],
-						[/* text */ 't', `)
-     and its code is less than
-     `],
-						[/* inline code block */ 'i', `radix + '\\uFF21' - 10`],
-						[/* text */ 't', `.
-     In this case,
-     `],
-						[/* inline code block */ 'i', `codePoint - '\\uFF21' + 10`],
-						[/* text */ 't', `
-     is returned.
- `]
-					]],
-					[/* block */ 'b', [
-						[/* text */ 't', `The character is one of the fullwidth lowercase Latin letters a
-     (`],
-						[/* inline code block */ 'i', `'\\uFF41'`],
-						[/* text */ 't', `) through z (`],
-						[/* inline code block */ 'i', `'\\uFF5A'`],
-						[/* text */ 't', `)
-     and its code is less than
-     `],
-						[/* inline code block */ 'i', `radix + '\\uFF41'- 10`],
-						[/* text */ 't', `.
-     In this case,
-     `],
-						[/* inline code block */ 'i', `codePoint - '\\uFF41' + 10`],
-						[/* text */ 't', `
-     is returned.
- `]
-					]]
-				]],
-				[/* block */ 'b', '']
-			],
-			[/* parameters */
-				[/* parameter */ 'codePoint', [/* parameter description */
-					[/* text */ 't', `the character (Unicode code point) to be converted.`]
-				]],
-				[/* parameter */ 'radix', [/* parameter description */
-					[/* text */ 't', `the radix.`]
-				]]
-			],
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the numeric value represented by the character in the
-          specified radix.`]
+				[/* text */ 't', `the value `],
+				[/* inline code block */ 'i', `0`],
+				[/* text */ 't', ` if `],
+				[/* inline code block */ 'i', `x == y`],
+				[/* text */ 't', `;
+         a value less than `],
+				[/* inline code block */ 'i', `0`],
+				[/* text */ 't', ` if `],
+				[/* inline code block */ 'i', `x < y`],
+				[/* text */ 't', `; and
+         a value greater than `],
+				[/* inline code block */ 'i', `0`],
+				[/* text */ 't', ` if `],
+				[/* inline code block */ 'i', `x > y`]
 			]
 		]],
 		[/* method */ 'digit(char,int)', [
@@ -4593,71 +4578,123 @@ DocsCollector.collect('java.lang.Character', [
           specified radix.`]
 			]
 		]],
-		[/* method */ 'getNumericValue(int)', [
+		[/* method */ 'digit(int,int)', [
 			[/* method description */
-				[/* text */ 't', `Returns the `],
-				[/* inline code block */ 'i', `int`],
-				[/* text */ 't', ` value that the specified
- character (Unicode code point) represents. For example, the character
- `],
-				[/* inline code block */ 'i', `'\\u216C'`],
-				[/* text */ 't', ` (the Roman numeral fifty) will return
- an `],
-				[/* inline code block */ 'i', `int`],
-				[/* text */ 't', ` with a value of 50.
+				[/* text */ 't', `Returns the numeric value of the specified character (Unicode
+ code point) in the specified radix.
+
  `],
 				[/* block */ 'b', [
-					[/* text */ 't', `
- The letters A-Z in their uppercase (`],
-					[/* inline code block */ 'i', `'\\u0041'`],
-					[/* text */ 't', ` through
+					[/* text */ 't', `If the radix is not in the range `],
+					[/* inline code block */ 'i', `MIN_RADIX`],
+					[/* text */ 't', ` ≤
  `],
-					[/* inline code block */ 'i', `'\\u005A'`],
-					[/* text */ 't', `), lowercase
- (`],
-					[/* inline code block */ 'i', `'\\u0061'`],
-					[/* text */ 't', ` through `],
-					[/* inline code block */ 'i', `'\\u007A'`],
-					[/* text */ 't', `), and
- full width variant (`],
-					[/* inline code block */ 'i', `'\\uFF21'`],
-					[/* text */ 't', ` through
- `],
-					[/* inline code block */ 'i', `'\\uFF3A'`],
-					[/* text */ 't', ` and `],
-					[/* inline code block */ 'i', `'\\uFF41'`],
-					[/* text */ 't', ` through
- `],
-					[/* inline code block */ 'i', `'\\uFF5A'`],
-					[/* text */ 't', `) forms have numeric values from 10
- through 35. This is independent of the Unicode specification,
- which does not assign numeric values to these `],
-					[/* inline code block */ 'i', `char`],
-					[/* text */ 't', `
- values.
+					[/* inline code block */ 'i', `radix`],
+					[/* text */ 't', ` ≤ `],
+					[/* inline code block */ 'i', `MAX_RADIX`],
+					[/* text */ 't', ` or if the
+ character is not a valid digit in the specified
+ radix, `],
+					[/* inline code block */ 'i', `-1`],
+					[/* text */ 't', ` is returned. A character is a valid digit
+ if at least one of the following is true:
  `]
 				]],
-				[/* block */ 'b', `
- If the character does not have a numeric value, then -1 is returned.
- If the character has a numeric value that cannot be represented as a
- nonnegative integer (for example, a fractional value), then -2
- is returned.`]
+				[/* list */ 'l', [
+					[/* block */ 'b', [
+						[/* text */ 't', `The method `],
+						[/* reference */ 'r', `#isDigit(int)`, `isDigit(codePoint)`],
+						[/* text */ 't', ` is `],
+						[/* inline code block */ 'i', `true`],
+						[/* text */ 't', ` of the character
+     and the Unicode decimal digit value of the character (or its
+     single-character decomposition) is less than the specified radix.
+     In this case the decimal digit value is returned.
+ `]
+					]],
+					[/* block */ 'b', [
+						[/* text */ 't', `The character is one of the uppercase Latin letters
+     `],
+						[/* inline code block */ 'i', `'A'`],
+						[/* text */ 't', ` through `],
+						[/* inline code block */ 'i', `'Z'`],
+						[/* text */ 't', ` and its code is less than
+     `],
+						[/* inline code block */ 'i', `radix + 'A' - 10`],
+						[/* text */ 't', `.
+     In this case, `],
+						[/* inline code block */ 'i', `codePoint - 'A' + 10`],
+						[/* text */ 't', `
+     is returned.
+ `]
+					]],
+					[/* block */ 'b', [
+						[/* text */ 't', `The character is one of the lowercase Latin letters
+     `],
+						[/* inline code block */ 'i', `'a'`],
+						[/* text */ 't', ` through `],
+						[/* inline code block */ 'i', `'z'`],
+						[/* text */ 't', ` and its code is less than
+     `],
+						[/* inline code block */ 'i', `radix + 'a' - 10`],
+						[/* text */ 't', `.
+     In this case, `],
+						[/* inline code block */ 'i', `codePoint - 'a' + 10`],
+						[/* text */ 't', `
+     is returned.
+ `]
+					]],
+					[/* block */ 'b', [
+						[/* text */ 't', `The character is one of the fullwidth uppercase Latin letters A
+     (`],
+						[/* inline code block */ 'i', `'\\uFF21'`],
+						[/* text */ 't', `) through Z (`],
+						[/* inline code block */ 'i', `'\\uFF3A'`],
+						[/* text */ 't', `)
+     and its code is less than
+     `],
+						[/* inline code block */ 'i', `radix + '\\uFF21' - 10`],
+						[/* text */ 't', `.
+     In this case,
+     `],
+						[/* inline code block */ 'i', `codePoint - '\\uFF21' + 10`],
+						[/* text */ 't', `
+     is returned.
+ `]
+					]],
+					[/* block */ 'b', [
+						[/* text */ 't', `The character is one of the fullwidth lowercase Latin letters a
+     (`],
+						[/* inline code block */ 'i', `'\\uFF41'`],
+						[/* text */ 't', `) through z (`],
+						[/* inline code block */ 'i', `'\\uFF5A'`],
+						[/* text */ 't', `)
+     and its code is less than
+     `],
+						[/* inline code block */ 'i', `radix + '\\uFF41'- 10`],
+						[/* text */ 't', `.
+     In this case,
+     `],
+						[/* inline code block */ 'i', `codePoint - '\\uFF41' + 10`],
+						[/* text */ 't', `
+     is returned.
+ `]
+					]]
+				]],
+				[/* block */ 'b', '']
 			],
 			[/* parameters */
 				[/* parameter */ 'codePoint', [/* parameter description */
 					[/* text */ 't', `the character (Unicode code point) to be converted.`]
+				]],
+				[/* parameter */ 'radix', [/* parameter description */
+					[/* text */ 't', `the radix.`]
 				]]
 			],
 			/* throws */ UDF,
 			[/* return description */
-				[/* text */ 't', `the numeric value of the character, as a nonnegative `],
-				[/* inline code block */ 'i', `int`],
-				[/* text */ 't', `
-          value; -2 if the character has a numeric value but the value
-          can not be represented as a nonnegative `],
-				[/* inline code block */ 'i', `int`],
-				[/* text */ 't', ` value;
-          -1 if the character has no numeric value.`]
+				[/* text */ 't', `the numeric value represented by the character in the
+          specified radix.`]
 			]
 		]],
 		[/* method */ 'getNumericValue(char)', [
@@ -4737,721 +4774,684 @@ DocsCollector.collect('java.lang.Character', [
           -1 if the character has no numeric value.`]
 			]
 		]],
-		[/* method */ 'isSpaceChar(int)', [
+		[/* method */ 'getNumericValue(int)', [
 			[/* method description */
-				[/* text */ 't', `Determines if the specified character (Unicode code point) is a
- Unicode space character.  A character is considered to be a
- space character if and only if it is specified to be a space
- character by the Unicode Standard. This method returns true if
- the character's general category type is any of the following:
-
+				[/* text */ 't', `Returns the `],
+				[/* inline code block */ 'i', `int`],
+				[/* text */ 't', ` value that the specified
+ character (Unicode code point) represents. For example, the character
  `],
-				[/* list */ 'l', [
-					[/* block */ 'b', [
-						[/* text */ 't', `SPACE_SEPARATOR`]
-					]],
-					[/* block */ 'b', [
-						[/* text */ 't', `LINE_SEPARATOR`]
-					]],
-					[/* block */ 'b', [
-						[/* text */ 't', `PARAGRAPH_SEPARATOR`]
-					]]
-				]]
-			],
-			[/* parameters */
-				[/* parameter */ 'codePoint', [/* parameter description */
-					[/* text */ 't', `the character (Unicode code point) to be tested.`]
-				]]
-			],
-			/* throws */ UDF,
-			[/* return description */
-				[/* inline code block */ 'i', `true`],
-				[/* text */ 't', ` if the character is a space character;
-          `],
-				[/* inline code block */ 'i', `false`],
-				[/* text */ 't', ` otherwise.`]
-			]
-		]],
-		[/* method */ 'isSpaceChar(char)', [
-			[/* method description */
-				[/* text */ 't', `Determines if the specified character is a Unicode space character.
- A character is considered to be a space character if and only if
- it is specified to be a space character by the Unicode Standard. This
- method returns true if the character's general category type is any of
- the following:
- `],
-				[/* list */ 'l', [
-					[/* block */ 'b', [
-						[/* inline code block */ 'i', `SPACE_SEPARATOR`]
-					]],
-					[/* block */ 'b', [
-						[/* inline code block */ 'i', `LINE_SEPARATOR`]
-					]],
-					[/* block */ 'b', [
-						[/* inline code block */ 'i', `PARAGRAPH_SEPARATOR`]
-					]]
-				]],
-				[/* block */ 'b', [
-					[/* text */ 't', `Note:`],
-					[/* text */ 't', ` This method cannot handle `],
-					[/* text */ 't', `supplementary characters`],
-					[/* text */ 't', `. To support
- all Unicode characters, including supplementary characters, use
- the `],
-					[/* reference */ 'r', `#isSpaceChar(int)`, `isSpaceChar(int)`],
-					[/* text */ 't', ` method.`]
-				]]
-			],
-			[/* parameters */
-				[/* parameter */ 'ch', [/* parameter description */
-					[/* text */ 't', `the character to be tested.`]
-				]]
-			],
-			/* throws */ UDF,
-			[/* return description */
-				[/* inline code block */ 'i', `true`],
-				[/* text */ 't', ` if the character is a space character;
-          `],
-				[/* inline code block */ 'i', `false`],
-				[/* text */ 't', ` otherwise.`]
-			]
-		]],
-		[/* method */ 'isISOControl(char)', [
-			[/* method description */
-				[/* text */ 't', `Determines if the specified character is an ISO control
- character.  A character is considered to be an ISO control
- character if its code is in the range `],
-				[/* inline code block */ 'i', `'\\u0000'`],
-				[/* text */ 't', `
- through `],
-				[/* inline code block */ 'i', `'\\u001F'`],
-				[/* text */ 't', ` or in the range
- `],
-				[/* inline code block */ 'i', `'\\u007F'`],
-				[/* text */ 't', ` through `],
-				[/* inline code block */ 'i', `'\\u009F'`],
-				[/* text */ 't', `.
-
+				[/* inline code block */ 'i', `'\\u216C'`],
+				[/* text */ 't', ` (the Roman numeral fifty) will return
+ an `],
+				[/* inline code block */ 'i', `int`],
+				[/* text */ 't', ` with a value of 50.
  `],
 				[/* block */ 'b', [
-					[/* text */ 't', `Note:`],
-					[/* text */ 't', ` This method cannot handle `],
-					[/* text */ 't', `supplementary characters`],
-					[/* text */ 't', `. To support
- all Unicode characters, including supplementary characters, use
- the `],
-					[/* reference */ 'r', `#isISOControl(int)`, `isISOControl(int)`],
-					[/* text */ 't', ` method.`]
-				]]
-			],
-			[/* parameters */
-				[/* parameter */ 'ch', [/* parameter description */
-					[/* text */ 't', `the character to be tested.`]
-				]]
-			],
-			/* throws */ UDF,
-			[/* return description */
-				[/* inline code block */ 'i', `true`],
-				[/* text */ 't', ` if the character is an ISO control character;
-          `],
-				[/* inline code block */ 'i', `false`],
-				[/* text */ 't', ` otherwise.`]
-			]
-		]],
-		[/* method */ 'isISOControl(int)', [
-			[/* method description */
-				[/* text */ 't', `Determines if the referenced character (Unicode code point) is an ISO control
- character.  A character is considered to be an ISO control
- character if its code is in the range `],
-				[/* inline code block */ 'i', `'\\u0000'`],
-				[/* text */ 't', `
- through `],
-				[/* inline code block */ 'i', `'\\u001F'`],
-				[/* text */ 't', ` or in the range
+					[/* text */ 't', `
+ The letters A-Z in their uppercase (`],
+					[/* inline code block */ 'i', `'\\u0041'`],
+					[/* text */ 't', ` through
  `],
-				[/* inline code block */ 'i', `'\\u007F'`],
-				[/* text */ 't', ` through `],
-				[/* inline code block */ 'i', `'\\u009F'`],
-				[/* text */ 't', `.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'codePoint', [/* parameter description */
-					[/* text */ 't', `the character (Unicode code point) to be tested.`]
-				]]
-			],
-			/* throws */ UDF,
-			[/* return description */
-				[/* inline code block */ 'i', `true`],
-				[/* text */ 't', ` if the character is an ISO control character;
-          `],
-				[/* inline code block */ 'i', `false`],
-				[/* text */ 't', ` otherwise.`]
-			]
-		]],
-		[/* method */ 'getDirectionality(int)', [
-			[/* method description */
-				[/* text */ 't', `Returns the Unicode directionality property for the given
- character (Unicode code point).  Character directionality is
- used to calculate the visual ordering of text. The
- directionality value of undefined character is `],
-				[/* text */ 't', `DIRECTIONALITY_UNDEFINED`],
-				[/* text */ 't', `.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'codePoint', [/* parameter description */
-					[/* text */ 't', `the character (Unicode code point) for which
-          the directionality property is requested.`]
-				]]
-			],
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the directionality property of the character.`]
-			]
-		]],
-		[/* method */ 'getDirectionality(char)', [
-			[/* method description */
-				[/* text */ 't', `Returns the Unicode directionality property for the given
- character.  Character directionality is used to calculate the
- visual ordering of text. The directionality value of undefined
+					[/* inline code block */ 'i', `'\\u005A'`],
+					[/* text */ 't', `), lowercase
+ (`],
+					[/* inline code block */ 'i', `'\\u0061'`],
+					[/* text */ 't', ` through `],
+					[/* inline code block */ 'i', `'\\u007A'`],
+					[/* text */ 't', `), and
+ full width variant (`],
+					[/* inline code block */ 'i', `'\\uFF21'`],
+					[/* text */ 't', ` through
  `],
-				[/* inline code block */ 'i', `char`],
-				[/* text */ 't', ` values is `],
-				[/* inline code block */ 'i', `DIRECTIONALITY_UNDEFINED`],
-				[/* text */ 't', `.
-
+					[/* inline code block */ 'i', `'\\uFF3A'`],
+					[/* text */ 't', ` and `],
+					[/* inline code block */ 'i', `'\\uFF41'`],
+					[/* text */ 't', ` through
  `],
-				[/* block */ 'b', [
-					[/* text */ 't', `Note:`],
-					[/* text */ 't', ` This method cannot handle `],
-					[/* text */ 't', `supplementary characters`],
-					[/* text */ 't', `. To support
- all Unicode characters, including supplementary characters, use
- the `],
-					[/* reference */ 'r', `#getDirectionality(int)`, `getDirectionality(int)`],
-					[/* text */ 't', ` method.`]
-				]]
-			],
-			[/* parameters */
-				[/* parameter */ 'ch', [/* parameter description */
-					[/* text */ 't', ``],
+					[/* inline code block */ 'i', `'\\uFF5A'`],
+					[/* text */ 't', `) forms have numeric values from 10
+ through 35. This is independent of the Unicode specification,
+ which does not assign numeric values to these `],
 					[/* inline code block */ 'i', `char`],
-					[/* text */ 't', ` for which the directionality property
-            is requested.`]
+					[/* text */ 't', `
+ values.
+ `]
+				]],
+				[/* block */ 'b', `
+ If the character does not have a numeric value, then -1 is returned.
+ If the character has a numeric value that cannot be represented as a
+ nonnegative integer (for example, a fractional value), then -2
+ is returned.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'codePoint', [/* parameter description */
+					[/* text */ 't', `the character (Unicode code point) to be converted.`]
 				]]
 			],
 			/* throws */ UDF,
 			[/* return description */
-				[/* text */ 't', `the directionality property of the `],
+				[/* text */ 't', `the numeric value of the character, as a nonnegative `],
+				[/* inline code block */ 'i', `int`],
+				[/* text */ 't', `
+          value; -2 if the character has a numeric value but the value
+          can not be represented as a nonnegative `],
+				[/* inline code block */ 'i', `int`],
+				[/* text */ 't', ` value;
+          -1 if the character has no numeric value.`]
+			]
+		]],
+		[/* method */ 'getType(char)', [
+			[/* method description */
+				[/* text */ 't', `Returns a value indicating a character's general category.
+
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', `Note:`],
+					[/* text */ 't', ` This method cannot handle `],
+					[/* text */ 't', `supplementary characters`],
+					[/* text */ 't', `. To support
+ all Unicode characters, including supplementary characters, use
+ the `],
+					[/* reference */ 'r', `#getType(int)`, `getType(int)`],
+					[/* text */ 't', ` method.`]
+				]]
+			],
+			[/* parameters */
+				[/* parameter */ 'ch', [/* parameter description */
+					[/* text */ 't', `the character to be tested.`]
+				]]
+			],
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `a value of type `],
+				[/* inline code block */ 'i', `int`],
+				[/* text */ 't', ` representing the
+          character's general category.`]
+			]
+		]],
+		[/* method */ 'getType(int)', [
+			[/* method description */
+				[/* text */ 't', `Returns a value indicating a character's general category.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'codePoint', [/* parameter description */
+					[/* text */ 't', `the character (Unicode code point) to be tested.`]
+				]]
+			],
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `a value of type `],
+				[/* inline code block */ 'i', `int`],
+				[/* text */ 't', ` representing the
+          character's general category.`]
+			]
+		]],
+		[/* method */ 'hashCode(char)', [
+			[/* method description */
+				[/* text */ 't', `Returns a hash code for a `],
+				[/* inline code block */ 'i', `char`],
+				[/* text */ 't', ` value; compatible with
+ `],
+				[/* inline code block */ 'i', `Character.hashCode()`],
+				[/* text */ 't', `.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'value', [/* parameter description */
+					[/* text */ 't', `The `],
+					[/* inline code block */ 'i', `char`],
+					[/* text */ 't', ` for which to return a hash code.`]
+				]]
+			],
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `a hash code value for a `],
 				[/* inline code block */ 'i', `char`],
 				[/* text */ 't', ` value.`]
 			]
 		]],
-		[/* method */ 'isMirrored(char)', [
+		[/* method */ 'offsetByCodePoints(char[],int,int,int,int)', [
 			[/* method description */
-				[/* text */ 't', `Determines whether the character is mirrored according to the
- Unicode specification.  Mirrored characters should have their
- glyphs horizontally mirrored when displayed in text that is
- right-to-left.  For example, `],
-				[/* inline code block */ 'i', `'\\u0028'`],
-				[/* text */ 't', ` LEFT
- PARENTHESIS is semantically defined to be an `],
-				[/* text */ 't', `opening
- parenthesis`],
-				[/* text */ 't', `.  This will appear as a "(" in text that is
- left-to-right but as a ")" in text that is right-to-left.
-
+				[/* text */ 't', `Returns the index within the given `],
+				[/* inline code block */ 'i', `char`],
+				[/* text */ 't', ` subarray
+ that is offset from the given `],
+				[/* inline code block */ 'i', `index`],
+				[/* text */ 't', ` by
  `],
-				[/* block */ 'b', [
-					[/* text */ 't', `Note:`],
-					[/* text */ 't', ` This method cannot handle `],
-					[/* text */ 't', `supplementary characters`],
-					[/* text */ 't', `. To support
- all Unicode characters, including supplementary characters, use
- the `],
-					[/* reference */ 'r', `#isMirrored(int)`, `isMirrored(int)`],
-					[/* text */ 't', ` method.`]
-				]]
+				[/* inline code block */ 'i', `codePointOffset`],
+				[/* text */ 't', ` code points. The
+ `],
+				[/* inline code block */ 'i', `start`],
+				[/* text */ 't', ` and `],
+				[/* inline code block */ 'i', `count`],
+				[/* text */ 't', ` arguments specify a
+ subarray of the `],
+				[/* inline code block */ 'i', `char`],
+				[/* text */ 't', ` array. Unpaired surrogates
+ within the text range given by `],
+				[/* inline code block */ 'i', `index`],
+				[/* text */ 't', ` and
+ `],
+				[/* inline code block */ 'i', `codePointOffset`],
+				[/* text */ 't', ` count as one code point each.`]
 			],
 			[/* parameters */
-				[/* parameter */ 'ch', [/* parameter description */
-					[/* text */ 't', ``],
+				[/* parameter */ 'a', [/* parameter description */
+					[/* text */ 't', `the `],
 					[/* inline code block */ 'i', `char`],
-					[/* text */ 't', ` for which the mirrored property is requested`]
+					[/* text */ 't', ` array`]
+				]],
+				[/* parameter */ 'start', [/* parameter description */
+					[/* text */ 't', `the index of the first `],
+					[/* inline code block */ 'i', `char`],
+					[/* text */ 't', ` of the
+ subarray`]
+				]],
+				[/* parameter */ 'count', [/* parameter description */
+					[/* text */ 't', `the length of the subarray in `],
+					[/* inline code block */ 'i', `char`],
+					[/* text */ 't', `s`]
+				]],
+				[/* parameter */ 'index', [/* parameter description */
+					[/* text */ 't', `the index to be offset`]
+				]],
+				[/* parameter */ 'codePointOffset', [/* parameter description */
+					[/* text */ 't', `the offset in code points`]
 				]]
 			],
-			/* throws */ UDF,
+			[/* throws */
+				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
+					[/* text */ 't', `if `],
+					[/* inline code block */ 'i', `a`],
+					[/* text */ 't', ` is null.`]
+				]],
+				[/* throw */ 'java.lang.IndexOutOfBoundsException', [/* throw description */
+					[/* text */ 't', `if `],
+					[/* inline code block */ 'i', `start`],
+					[/* text */ 't', ` or `],
+					[/* inline code block */ 'i', `count`],
+					[/* text */ 't', ` is negative,
+   or if `],
+					[/* inline code block */ 'i', `start + count`],
+					[/* text */ 't', ` is larger than the length of
+   the given array,
+   or if `],
+					[/* inline code block */ 'i', `index`],
+					[/* text */ 't', ` is less than `],
+					[/* inline code block */ 'i', `start`],
+					[/* text */ 't', ` or
+   larger then `],
+					[/* inline code block */ 'i', `start + count`],
+					[/* text */ 't', `,
+   or if `],
+					[/* inline code block */ 'i', `codePointOffset`],
+					[/* text */ 't', ` is positive and the text range
+   starting with `],
+					[/* inline code block */ 'i', `index`],
+					[/* text */ 't', ` and ending with `],
+					[/* inline code block */ 'i', `start + count - 1`],
+					[/* text */ 't', `
+   has fewer than `],
+					[/* inline code block */ 'i', `codePointOffset`],
+					[/* text */ 't', ` code
+   points,
+   or if `],
+					[/* inline code block */ 'i', `codePointOffset`],
+					[/* text */ 't', ` is negative and the text range
+   starting with `],
+					[/* inline code block */ 'i', `start`],
+					[/* text */ 't', ` and ending with `],
+					[/* inline code block */ 'i', `index - 1`],
+					[/* text */ 't', `
+   has fewer than the absolute value of
+   `],
+					[/* inline code block */ 'i', `codePointOffset`],
+					[/* text */ 't', ` code points.`]
+				]]
+			],
 			[/* return description */
-				[/* inline code block */ 'i', `true`],
-				[/* text */ 't', ` if the char is mirrored, `],
-				[/* inline code block */ 'i', `false`],
-				[/* text */ 't', `
-         if the `],
-				[/* inline code block */ 'i', `char`],
-				[/* text */ 't', ` is not mirrored or is not defined.`]
+				[/* text */ 't', `the index within the subarray`]
 			]
 		]],
-		[/* method */ 'isMirrored(int)', [
+		[/* method */ 'offsetByCodePoints(java.lang.CharSequence,int,int)', [
 			[/* method description */
-				[/* text */ 't', `Determines whether the specified character (Unicode code point)
- is mirrored according to the Unicode specification.  Mirrored
- characters should have their glyphs horizontally mirrored when
- displayed in text that is right-to-left.  For example,
+				[/* text */ 't', `Returns the index within the given char sequence that is offset
+ from the given `],
+				[/* inline code block */ 'i', `index`],
+				[/* text */ 't', ` by `],
+				[/* inline code block */ 'i', `codePointOffset`],
+				[/* text */ 't', `
+ code points. Unpaired surrogates within the text range given by
  `],
-				[/* inline code block */ 'i', `'\\u0028'`],
-				[/* text */ 't', ` LEFT PARENTHESIS is semantically
- defined to be an `],
-				[/* text */ 't', `opening parenthesis`],
-				[/* text */ 't', `.  This will appear
- as a "(" in text that is left-to-right but as a ")" in text
- that is right-to-left.`]
+				[/* inline code block */ 'i', `index`],
+				[/* text */ 't', ` and `],
+				[/* inline code block */ 'i', `codePointOffset`],
+				[/* text */ 't', ` count as
+ one code point each.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'seq', [/* parameter description */
+					[/* text */ 't', `the char sequence`]
+				]],
+				[/* parameter */ 'index', [/* parameter description */
+					[/* text */ 't', `the index to be offset`]
+				]],
+				[/* parameter */ 'codePointOffset', [/* parameter description */
+					[/* text */ 't', `the offset in code points`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
+					[/* text */ 't', `if `],
+					[/* inline code block */ 'i', `seq`],
+					[/* text */ 't', ` is null.`]
+				]],
+				[/* throw */ 'java.lang.IndexOutOfBoundsException', [/* throw description */
+					[/* text */ 't', `if `],
+					[/* inline code block */ 'i', `index`],
+					[/* text */ 't', `
+   is negative or larger then the length of the char sequence,
+   or if `],
+					[/* inline code block */ 'i', `codePointOffset`],
+					[/* text */ 't', ` is positive and the
+   subsequence starting with `],
+					[/* inline code block */ 'i', `index`],
+					[/* text */ 't', ` has fewer than
+   `],
+					[/* inline code block */ 'i', `codePointOffset`],
+					[/* text */ 't', ` code points, or if
+   `],
+					[/* inline code block */ 'i', `codePointOffset`],
+					[/* text */ 't', ` is negative and the subsequence
+   before `],
+					[/* inline code block */ 'i', `index`],
+					[/* text */ 't', ` has fewer than the absolute value
+   of `],
+					[/* inline code block */ 'i', `codePointOffset`],
+					[/* text */ 't', ` code points.`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `the index within the char sequence`]
+			]
+		]],
+		[/* method */ 'toChars(int,char[],int)', [
+			[/* method description */
+				[/* text */ 't', `Converts the specified character (Unicode code point) to its
+ UTF-16 representation. If the specified code point is a BMP
+ (Basic Multilingual Plane or Plane 0) value, the same value is
+ stored in `],
+				[/* inline code block */ 'i', `dst[dstIndex]`],
+				[/* text */ 't', `, and 1 is returned. If the
+ specified code point is a supplementary character, its
+ surrogate values are stored in `],
+				[/* inline code block */ 'i', `dst[dstIndex]`],
+				[/* text */ 't', `
+ (high-surrogate) and `],
+				[/* inline code block */ 'i', `dst[dstIndex+1]`],
+				[/* text */ 't', `
+ (low-surrogate), and 2 is returned.`]
 			],
 			[/* parameters */
 				[/* parameter */ 'codePoint', [/* parameter description */
-					[/* text */ 't', `the character (Unicode code point) to be tested.`]
+					[/* text */ 't', `the character (Unicode code point) to be converted.`]
+				]],
+				[/* parameter */ 'dst', [/* parameter description */
+					[/* text */ 't', `an array of `],
+					[/* inline code block */ 'i', `char`],
+					[/* text */ 't', ` in which the
+ `],
+					[/* inline code block */ 'i', `codePoint`],
+					[/* text */ 't', `'s UTF-16 value is stored.`]
+				]],
+				[/* parameter */ 'dstIndex', [/* parameter description */
+					[/* text */ 't', `the start index into the `],
+					[/* inline code block */ 'i', `dst`],
+					[/* text */ 't', `
+ array where the converted value is stored.`]
 				]]
 			],
-			/* throws */ UDF,
+			[/* throws */
+				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
+					[/* text */ 't', `if the specified
+ `],
+					[/* inline code block */ 'i', `codePoint`],
+					[/* text */ 't', ` is not a valid Unicode code point.`]
+				]],
+				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
+					[/* text */ 't', `if the specified `],
+					[/* inline code block */ 'i', `dst`],
+					[/* text */ 't', ` is null.`]
+				]],
+				[/* throw */ 'java.lang.IndexOutOfBoundsException', [/* throw description */
+					[/* text */ 't', `if `],
+					[/* inline code block */ 'i', `dstIndex`],
+					[/* text */ 't', `
+ is negative or not less than `],
+					[/* inline code block */ 'i', `dst.length`],
+					[/* text */ 't', `, or if
+ `],
+					[/* inline code block */ 'i', `dst`],
+					[/* text */ 't', ` at `],
+					[/* inline code block */ 'i', `dstIndex`],
+					[/* text */ 't', ` doesn't have enough
+ array element(s) to store the resulting `],
+					[/* inline code block */ 'i', `char`],
+					[/* text */ 't', `
+ value(s). (If `],
+					[/* inline code block */ 'i', `dstIndex`],
+					[/* text */ 't', ` is equal to
+ `],
+					[/* inline code block */ 'i', `dst.length-1`],
+					[/* text */ 't', ` and the specified
+ `],
+					[/* inline code block */ 'i', `codePoint`],
+					[/* text */ 't', ` is a supplementary character, the
+ high-surrogate value is not stored in
+ `],
+					[/* inline code block */ 'i', `dst[dstIndex]`],
+					[/* text */ 't', `.)`]
+				]]
+			],
 			[/* return description */
-				[/* inline code block */ 'i', `true`],
-				[/* text */ 't', ` if the character is mirrored, `],
-				[/* inline code block */ 'i', `false`],
-				[/* text */ 't', `
-          if the character is not mirrored or is not defined.`]
+				[/* text */ 't', `1 if the code point is a BMP code point, 2 if the
+ code point is a supplementary code point.`]
 			]
 		]],
-		[/* method */ 'isSurrogatePair(char,char)', [
+		[/* method */ 'toCodePoint(char,char)', [
 			[/* method description */
-				[/* text */ 't', `Determines whether the specified pair of `],
-				[/* inline code block */ 'i', `char`],
-				[/* text */ 't', `
- values is a valid
- `],
-				[/* external link */ 'a', `http://www.unicode.org/glossary/#surrogate_pair`, `Unicode surrogate pair`],
-				[/* text */ 't', `.
-
- `],
-				[/* block */ 'b', `This method is equivalent to the expression:
- `],
-				[/* block */ 'b', [
-					[/* code block */ 'c', [
-						[/* inline code block */ 'i', `isHighSurrogate(high) && isLowSurrogate(low)`]
-					]]
-				]],
-				[/* block */ 'b', '']
+				[/* text */ 't', `Converts the specified surrogate pair to its supplementary code
+ point value. This method does not validate the specified
+ surrogate pair. The caller must validate it using `],
+				[/* reference */ 'r', `#isSurrogatePair(char,char)`, `isSurrogatePair`],
+				[/* text */ 't', ` if necessary.`]
 			],
 			[/* parameters */
 				[/* parameter */ 'high', [/* parameter description */
-					[/* text */ 't', `the high-surrogate code value to be tested`]
+					[/* text */ 't', `the high-surrogate code unit`]
 				]],
 				[/* parameter */ 'low', [/* parameter description */
-					[/* text */ 't', `the low-surrogate code value to be tested`]
+					[/* text */ 't', `the low-surrogate code unit`]
 				]]
 			],
 			/* throws */ UDF,
 			[/* return description */
-				[/* inline code block */ 'i', `true`],
-				[/* text */ 't', ` if the specified high and
- low-surrogate code values represent a valid surrogate pair;
- `],
-				[/* inline code block */ 'i', `false`],
-				[/* text */ 't', ` otherwise.`]
+				[/* text */ 't', `the supplementary code point composed from the
+         specified surrogate pair.`]
 			]
 		]],
-		[/* method */ 'charCount(int)', [
+		[/* method */ 'toLowerCase(int)', [
 			[/* method description */
-				[/* text */ 't', `Determines the number of `],
-				[/* inline code block */ 'i', `char`],
-				[/* text */ 't', ` values needed to
- represent the specified character (Unicode code point). If the
- specified character is equal to or greater than 0x10000, then
- the method returns 2. Otherwise, the method returns 1.
+				[/* text */ 't', `Converts the character (Unicode code point) argument to
+ lowercase using case mapping information from the UnicodeData
+ file.
 
  `],
 				[/* block */ 'b', [
-					[/* text */ 't', `This method doesn't validate the specified character to be a
- valid Unicode code point. The caller must validate the
- character value using `],
-					[/* reference */ 'r', `#isValidCodePoint(int)`, `isValidCodePoint`],
+					[/* text */ 't', ` Note that
+ `],
+					[/* inline code block */ 'i', `Character.isLowerCase(Character.toLowerCase(codePoint))`],
 					[/* text */ 't', `
- if necessary.`]
+ does not always return `],
+					[/* inline code block */ 'i', `true`],
+					[/* text */ 't', ` for some ranges of
+ characters, particularly those that are symbols or ideographs.
+
+ `]
+				]],
+				[/* block */ 'b', [
+					[/* text */ 't', `In general, `],
+					[/* reference */ 'r', `.String#toLowerCase()`],
+					[/* text */ 't', ` should be used to map
+ characters to lowercase. `],
+					[/* inline code block */ 'i', `String`],
+					[/* text */ 't', ` case mapping methods
+ have several benefits over `],
+					[/* inline code block */ 'i', `Character`],
+					[/* text */ 't', ` case mapping methods.
+ `],
+					[/* inline code block */ 'i', `String`],
+					[/* text */ 't', ` case mapping methods can perform locale-sensitive
+ mappings, context-sensitive mappings, and 1:M character mappings, whereas
+ the `],
+					[/* inline code block */ 'i', `Character`],
+					[/* text */ 't', ` case mapping methods cannot.`]
 				]]
 			],
 			[/* parameters */
 				[/* parameter */ 'codePoint', [/* parameter description */
-					[/* text */ 't', `the character (Unicode code point) to be tested.`]
+					[/* text */ 't', `the character (Unicode code point) to be converted.`]
 				]]
 			],
 			/* throws */ UDF,
 			[/* return description */
-				[/* text */ 't', `2 if the character is a valid supplementary character; 1 otherwise.`]
+				[/* text */ 't', `the lowercase equivalent of the character (Unicode code
+          point), if any; otherwise, the character itself.`]
 			]
 		]],
-		[/* method */ 'isJavaLetter(char)', [
+		[/* method */ 'toTitleCase(int)', [
 			[/* method description */
-				[/* text */ 't', `Determines if the specified character is permissible as the first
- character in a Java identifier.
- `],
-				[/* block */ 'b', `
- A character may start a Java identifier if and only if
- one of the following conditions is true:
- `],
-				[/* list */ 'l', [
-					[/* block */ 'b', [
-						[/* reference */ 'r', `#isLetter(int)`, `isLetter(ch)`],
-						[/* text */ 't', ` returns `],
-						[/* inline code block */ 'i', `true`]
-					]],
-					[/* block */ 'b', [
-						[/* reference */ 'r', `#getType(int)`, `getType(ch)`],
-						[/* text */ 't', ` returns `],
-						[/* inline code block */ 'i', `LETTER_NUMBER`]
-					]],
-					[/* block */ 'b', [
-						[/* inline code block */ 'i', `ch`],
-						[/* text */ 't', ` is a currency symbol (such as `],
-						[/* inline code block */ 'i', `'$'`],
-						[/* text */ 't', `)
- `]
-					]],
-					[/* block */ 'b', [
-						[/* inline code block */ 'i', `ch`],
-						[/* text */ 't', ` is a connecting punctuation character (such as `],
-						[/* inline code block */ 'i', `'_'`],
-						[/* text */ 't', `).
- `]
-					]]
-				]],
-				[/* block */ 'b', '']
-			],
-			[/* parameters */
-				[/* parameter */ 'ch', [/* parameter description */
-					[/* text */ 't', `the character to be tested.`]
-				]]
-			],
-			/* throws */ UDF,
-			[/* return description */
-				[/* inline code block */ 'i', `true`],
-				[/* text */ 't', ` if the character may start a Java
-          identifier; `],
-				[/* inline code block */ 'i', `false`],
-				[/* text */ 't', ` otherwise.`]
-			]
-		]],
-		[/* method */ 'isJavaLetterOrDigit(char)', [
-			[/* method description */
-				[/* text */ 't', `Determines if the specified character may be part of a Java
- identifier as other than the first character.
- `],
-				[/* block */ 'b', `
- A character may be part of a Java identifier if and only if one
- of the following conditions is true:
- `],
-				[/* list */ 'l', [
-					[/* block */ 'b', `  it is a letter
- `],
-					[/* block */ 'b', [
-						[/* text */ 't', `  it is a currency symbol (such as `],
-						[/* inline code block */ 'i', `'$'`],
-						[/* text */ 't', `)
- `]
-					]],
-					[/* block */ 'b', [
-						[/* text */ 't', `  it is a connecting punctuation character (such as `],
-						[/* inline code block */ 'i', `'_'`],
-						[/* text */ 't', `)
- `]
-					]],
-					[/* block */ 'b', `  it is a digit
- `],
-					[/* block */ 'b', `  it is a numeric letter (such as a Roman numeral character)
- `],
-					[/* block */ 'b', `  it is a combining mark
- `],
-					[/* block */ 'b', `  it is a non-spacing mark
- `],
-					[/* block */ 'b', [
-						[/* inline code block */ 'i', `isIdentifierIgnorable`],
-						[/* text */ 't', ` returns
- `],
-						[/* inline code block */ 'i', `true`],
-						[/* text */ 't', ` for the character.
- `]
-					]]
-				]],
-				[/* block */ 'b', '']
-			],
-			[/* parameters */
-				[/* parameter */ 'ch', [/* parameter description */
-					[/* text */ 't', `the character to be tested.`]
-				]]
-			],
-			/* throws */ UDF,
-			[/* return description */
-				[/* inline code block */ 'i', `true`],
-				[/* text */ 't', ` if the character may be part of a
-          Java identifier; `],
-				[/* inline code block */ 'i', `false`],
-				[/* text */ 't', ` otherwise.`]
-			]
-		]],
-		[/* method */ 'isAlphabetic(int)', [
-			[/* method description */
-				[/* text */ 't', `Determines if the specified character (Unicode code point) is alphabetic.
+				[/* text */ 't', `Converts the character (Unicode code point) argument to titlecase using case mapping
+ information from the UnicodeData file. If a character has no
+ explicit titlecase mapping and is not itself a titlecase char
+ according to UnicodeData, then the uppercase mapping is
+ returned as an equivalent titlecase mapping. If the
+ character argument is already a titlecase
+ character, the same character value will be
+ returned.
+
  `],
 				[/* block */ 'b', [
+					[/* text */ 't', `Note that
+ `],
+					[/* inline code block */ 'i', `Character.isTitleCase(Character.toTitleCase(codePoint))`],
 					[/* text */ 't', `
- A character is considered to be alphabetic if its general category type,
- provided by `],
-					[/* reference */ 'r', `#getType(int)`, `getType(codePoint)`],
-					[/* text */ 't', `, is any of
- the following:
- `]
-				]],
-				[/* list */ 'l', [
-					[/* block */ 'b', [
-						[/* inline code block */ 'i', `UPPERCASE_LETTER`]
-					]],
-					[/* block */ 'b', [
-						[/* inline code block */ 'i', `LOWERCASE_LETTER`]
-					]],
-					[/* block */ 'b', [
-						[/* inline code block */ 'i', `TITLECASE_LETTER`]
-					]],
-					[/* block */ 'b', [
-						[/* inline code block */ 'i', `MODIFIER_LETTER`]
-					]],
-					[/* block */ 'b', [
-						[/* inline code block */ 'i', `OTHER_LETTER`]
-					]],
-					[/* block */ 'b', [
-						[/* inline code block */ 'i', `LETTER_NUMBER`]
-					]]
-				]],
-				[/* text */ 't', `
- or it has contributory property Other_Alphabetic as defined by the
- Unicode Standard.`],
-				[/* block */ 'b', '']
+ does not always return `],
+					[/* inline code block */ 'i', `true`],
+					[/* text */ 't', ` for some ranges of
+ characters.`]
+				]]
 			],
 			[/* parameters */
 				[/* parameter */ 'codePoint', [/* parameter description */
-					[/* text */ 't', `the character (Unicode code point) to be tested.`]
+					[/* text */ 't', `the character (Unicode code point) to be converted.`]
 				]]
 			],
 			/* throws */ UDF,
 			[/* return description */
-				[/* inline code block */ 'i', `true`],
-				[/* text */ 't', ` if the character is a Unicode alphabet
-          character, `],
-				[/* inline code block */ 'i', `false`],
-				[/* text */ 't', ` otherwise.`]
+				[/* text */ 't', `the titlecase equivalent of the character, if any;
+          otherwise, the character itself.`]
 			]
 		]],
-		[/* method */ 'isSpace(char)', [
+		[/* method */ 'toUpperCase(int)', [
 			[/* method description */
-				[/* text */ 't', `Determines if the specified character is ISO-LATIN-1 white space.
- This method returns `],
-				[/* inline code block */ 'i', `true`],
-				[/* text */ 't', ` for the following five
- characters only:
- `],
-				[/* table */ 'tbl',
-					[/* caption */ 'tc'],
-					[/* table header */ 'th', [
-						[/* table row */ 'tr', [
-							[/* table header cell */ 'thc', [
-								[/* text */ 't', `Character
-     `]
-							]],
-							[/* table header cell */ 'thc', [
-								[/* text */ 't', `Code
-     `]
-							]],
-							[/* table header cell */ 'thc', [
-								[/* text */ 't', `Name
- `]
-							]]
-						]]
-					]],
-					[/* table body */ 'tb', [
-						[/* table row */ 'tr', [
-							[/* table header cell */ 'thc', [
-								[/* inline code block */ 'i', `'\\t'`]
-							]],
-							[/* table cell */ 'tbc', [
-								[/* inline code block */ 'i', `U+0009`]
-							]],
-							[/* table cell */ 'tbc', [
-								[/* inline code block */ 'i', `HORIZONTAL TABULATION`]
-							]]
-						]],
-						[/* table row */ 'tr', [
-							[/* table header cell */ 'thc', [
-								[/* inline code block */ 'i', `'\\n'`]
-							]],
-							[/* table cell */ 'tbc', [
-								[/* inline code block */ 'i', `U+000A`]
-							]],
-							[/* table cell */ 'tbc', [
-								[/* inline code block */ 'i', `NEW LINE`]
-							]]
-						]],
-						[/* table row */ 'tr', [
-							[/* table header cell */ 'thc', [
-								[/* inline code block */ 'i', `'\\f'`]
-							]],
-							[/* table cell */ 'tbc', [
-								[/* inline code block */ 'i', `U+000C`]
-							]],
-							[/* table cell */ 'tbc', [
-								[/* inline code block */ 'i', `FORM FEED`]
-							]]
-						]],
-						[/* table row */ 'tr', [
-							[/* table header cell */ 'thc', [
-								[/* inline code block */ 'i', `'\\r'`]
-							]],
-							[/* table cell */ 'tbc', [
-								[/* inline code block */ 'i', `U+000D`]
-							]],
-							[/* table cell */ 'tbc', [
-								[/* inline code block */ 'i', `CARRIAGE RETURN`]
-							]]
-						]],
-						[/* table row */ 'tr', [
-							[/* table header cell */ 'thc', [
-								[/* inline code block */ 'i', `' '`]
-							]],
-							[/* table cell */ 'tbc', [
-								[/* inline code block */ 'i', `U+0020`]
-							]],
-							[/* table cell */ 'tbc', [
-								[/* inline code block */ 'i', `SPACE`]
-							]]
-						]]
-					]],
-				]
-			],
-			[/* parameters */
-				[/* parameter */ 'ch', [/* parameter description */
-					[/* text */ 't', `the character to be tested.`]
-				]]
-			],
-			/* throws */ UDF,
-			[/* return description */
-				[/* inline code block */ 'i', `true`],
-				[/* text */ 't', ` if the character is ISO-LATIN-1 white
-             space; `],
-				[/* inline code block */ 'i', `false`],
-				[/* text */ 't', ` otherwise.`]
-			]
-		]],
-		[/* method */ 'forDigit(int,int)', [
-			[/* method description */
-				[/* text */ 't', `Determines the character representation for a specific digit in
- the specified radix. If the value of `],
-				[/* inline code block */ 'i', `radix`],
-				[/* text */ 't', ` is not a
- valid radix, or the value of `],
-				[/* inline code block */ 'i', `digit`],
-				[/* text */ 't', ` is not a valid
- digit in the specified radix, the null character
- (`],
-				[/* inline code block */ 'i', `'\\u0000'`],
-				[/* text */ 't', `) is returned.
+				[/* text */ 't', `Converts the character (Unicode code point) argument to
+ uppercase using case mapping information from the UnicodeData
+ file.
+
  `],
 				[/* block */ 'b', [
+					[/* text */ 't', `Note that
+ `],
+					[/* inline code block */ 'i', `Character.isUpperCase(Character.toUpperCase(codePoint))`],
 					[/* text */ 't', `
- The `],
-					[/* inline code block */ 'i', `radix`],
-					[/* text */ 't', ` argument is valid if it is greater than or
- equal to `],
-					[/* inline code block */ 'i', `MIN_RADIX`],
-					[/* text */ 't', ` and less than or equal to
- `],
-					[/* inline code block */ 'i', `MAX_RADIX`],
-					[/* text */ 't', `. The `],
-					[/* inline code block */ 'i', `digit`],
-					[/* text */ 't', ` argument is valid if
- `],
-					[/* inline code block */ 'i', `0 <= digit < radix`],
-					[/* text */ 't', `.
+ does not always return `],
+					[/* inline code block */ 'i', `true`],
+					[/* text */ 't', ` for some ranges of
+ characters, particularly those that are symbols or ideographs.
+
  `]
 				]],
 				[/* block */ 'b', [
-					[/* text */ 't', `
- If the digit is less than 10, then
+					[/* text */ 't', `In general, `],
+					[/* reference */ 'r', `.String#toUpperCase()`],
+					[/* text */ 't', ` should be used to map
+ characters to uppercase. `],
+					[/* inline code block */ 'i', `String`],
+					[/* text */ 't', ` case mapping methods
+ have several benefits over `],
+					[/* inline code block */ 'i', `Character`],
+					[/* text */ 't', ` case mapping methods.
  `],
-					[/* inline code block */ 'i', `'0' + digit`],
-					[/* text */ 't', ` is returned. Otherwise, the value
- `],
-					[/* inline code block */ 'i', `'a' + digit - 10`],
-					[/* text */ 't', ` is returned.`]
+					[/* inline code block */ 'i', `String`],
+					[/* text */ 't', ` case mapping methods can perform locale-sensitive
+ mappings, context-sensitive mappings, and 1:M character mappings, whereas
+ the `],
+					[/* inline code block */ 'i', `Character`],
+					[/* text */ 't', ` case mapping methods cannot.`]
 				]]
 			],
 			[/* parameters */
-				[/* parameter */ 'digit', [/* parameter description */
-					[/* text */ 't', `the number to convert to a character.`]
-				]],
-				[/* parameter */ 'radix', [/* parameter description */
-					[/* text */ 't', `the radix.`]
+				[/* parameter */ 'codePoint', [/* parameter description */
+					[/* text */ 't', `the character (Unicode code point) to be converted.`]
 				]]
 			],
 			/* throws */ UDF,
 			[/* return description */
-				[/* text */ 't', `the `],
+				[/* text */ 't', `the uppercase equivalent of the character, if any;
+          otherwise, the character itself.`]
+			]
+		]],
+		[/* method */ 'valueOf(char)', [
+			[/* method description */
+				[/* text */ 't', `Returns a `],
+				[/* inline code block */ 'i', `Character`],
+				[/* text */ 't', ` instance representing the specified
+ `],
 				[/* inline code block */ 'i', `char`],
-				[/* text */ 't', ` representation of the specified digit
-          in the specified radix.`]
+				[/* text */ 't', ` value.
+ If a new `],
+				[/* inline code block */ 'i', `Character`],
+				[/* text */ 't', ` instance is not required, this method
+ should generally be used in preference to the constructor
+ `],
+				[/* reference */ 'r', `#%3Cinit%3E(char)`, `Character(char)`],
+				[/* text */ 't', `, as this method is likely to yield
+ significantly better space and time performance by caching
+ frequently requested values.
+
+ This method will always cache values in the range `],
+				[/* inline code block */ 'i', `'\\u0000'`],
+				[/* text */ 't', ` to `],
+				[/* inline code block */ 'i', `'\\u007F'`],
+				[/* text */ 't', `, inclusive, and may
+ cache other values outside of this range.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'c', [/* parameter description */
+					[/* text */ 't', `a char value.`]
+				]]
+			],
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `a `],
+				[/* inline code block */ 'i', `Character`],
+				[/* text */ 't', ` instance representing `],
+				[/* inline code block */ 'i', `c`],
+				[/* text */ 't', `.`]
 			]
 		]],
-		[/* method */ 'codePointOf(java.lang.String)', [
+		[/* method */ 'getName(int)', [
 			[/* method description */
-				[/* text */ 't', `Returns the code point value of the Unicode character specified by
- the given Unicode character name.
+				[/* text */ 't', `Returns the Unicode name of the specified character
+ `],
+				[/* inline code block */ 'i', `codePoint`],
+				[/* text */ 't', `, or null if the code point is
+ `],
+				[/* text */ 't', `unassigned`],
+				[/* text */ 't', `.
  `],
 				[/* block */ 'b', [
 					[/* text */ 't', `
- Note: if a character is not assigned a name by the `],
+ Note: if the specified character is not assigned a name by
+ the `],
 					[/* text */ 't', `UnicodeData`],
-					[/* text */ 't', `
- file (part of the Unicode Character Database maintained by the Unicode
- Consortium), its name is defined as the result of expression:
+					[/* text */ 't', ` file (part of the Unicode Character
+ Database maintained by the Unicode Consortium), the returned
+ name is the same as the result of expression:
 
  `]
 				]],
 				[/* block */ 'b', [
 					[/* inline code block */ 'i', `Character.UnicodeBlock.of(codePoint).toString().replace('_', ' ') + " " + Integer.toHexString(codePoint).toUpperCase(Locale.ROOT);`]
 				]],
-				[/* block */ 'b', ''],
-				[/* block */ 'b', [
-					[/* text */ 't', `
- The `],
-					[/* inline code block */ 'i', `name`],
-					[/* text */ 't', ` matching is case insensitive, with any leading and
- trailing whitespace character removed.`]
-				]]
+				[/* block */ 'b', '']
 			],
 			[/* parameters */
-				[/* parameter */ 'name', [/* parameter description */
-					[/* text */ 't', `the Unicode character name`]
+				[/* parameter */ 'codePoint', [/* parameter description */
+					[/* text */ 't', `the character (Unicode code point)`]
 				]]
 			],
 			[/* throws */
 				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
-					[/* text */ 't', `if the specified `],
-					[/* inline code block */ 'i', `name`],
-					[/* text */ 't', `
-         is not a valid Unicode character name.`]
-				]],
-				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
-					[/* text */ 't', `if `],
-					[/* inline code block */ 'i', `name`],
-					[/* text */ 't', ` is `],
-					[/* inline code block */ 'i', `null`]
+					[/* text */ 't', `if the specified
+            `],
+					[/* inline code block */ 'i', `codePoint`],
+					[/* text */ 't', ` is not a valid Unicode
+            code point.`]
 				]]
 			],
 			[/* return description */
-				[/* text */ 't', `the code point value of the character specified by its name.`]
+				[/* text */ 't', `the Unicode name of the specified character, or null if
+         the code point is unassigned.`]
+			]
+		]],
+		[/* method */ 'toString(char)', [
+			[/* method description */
+				[/* text */ 't', `Returns a `],
+				[/* inline code block */ 'i', `String`],
+				[/* text */ 't', ` object representing the
+ specified `],
+				[/* inline code block */ 'i', `char`],
+				[/* text */ 't', `.  The result is a string of length
+ 1 consisting solely of the specified `],
+				[/* inline code block */ 'i', `char`],
+				[/* text */ 't', `.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'c', [/* parameter description */
+					[/* text */ 't', `the `],
+					[/* inline code block */ 'i', `char`],
+					[/* text */ 't', ` to be converted`]
+				]]
+			],
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the string representation of the specified `],
+				[/* inline code block */ 'i', `char`]
+			]
+		]],
+		[/* method */ 'toString(int)', [
+			[/* method description */
+				[/* text */ 't', `Returns a `],
+				[/* inline code block */ 'i', `String`],
+				[/* text */ 't', ` object representing the
+ specified character (Unicode code point).  The result is a string of
+ length 1 or 2, consisting solely of the specified `],
+				[/* inline code block */ 'i', `codePoint`],
+				[/* text */ 't', `.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'codePoint', [/* parameter description */
+					[/* text */ 't', `the `],
+					[/* inline code block */ 'i', `codePoint`],
+					[/* text */ 't', ` to be converted`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
+					[/* text */ 't', `if the specified
+      `],
+					[/* inline code block */ 'i', `codePoint`],
+					[/* text */ 't', ` is not a `],
+					[/* reference */ 'r', `#isValidCodePoint(int)`, `valid Unicode code point`],
+					[/* text */ 't', `.`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `the string representation of the specified `],
+				[/* inline code block */ 'i', `codePoint`]
 			]
 		]]
 	],

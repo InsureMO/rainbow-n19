@@ -11,31 +11,6 @@ DocsCollector.collect('java.io.ObjectInputFilter$FilterInfo', [
 	/* fields */ UDF,
 	/* constructors */ UDF,
 	[/* methods */
-		[/* method */ 'depth()', [
-			[/* method description */
-				[/* text */ 't', `The current depth.
- The depth starts at `],
-				[/* inline code block */ 'i', `1`],
-				[/* text */ 't', ` and increases for each nested object and
- decrements when each nested object returns.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the current depth`]
-			]
-		]],
-		[/* method */ 'arrayLength()', [
-			[/* method description */
-				[/* text */ 't', `The number of array elements when deserializing an array of the class.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the non-negative number of array elements when deserializing
- an array of the class, otherwise -1`]
-			]
-		]],
 		[/* method */ 'serialClass()', [
 			[/* method description */
 				[/* text */ 't', `The class of an object being deserialized.
@@ -59,6 +34,31 @@ DocsCollector.collect('java.io.ObjectInputFilter$FilterInfo', [
 			/* throws */ UDF,
 			[/* return description */
 				[/* text */ 't', `class of an object being deserialized; may be null`]
+			]
+		]],
+		[/* method */ 'arrayLength()', [
+			[/* method description */
+				[/* text */ 't', `The number of array elements when deserializing an array of the class.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the non-negative number of array elements when deserializing
+ an array of the class, otherwise -1`]
+			]
+		]],
+		[/* method */ 'depth()', [
+			[/* method description */
+				[/* text */ 't', `The current depth.
+ The depth starts at `],
+				[/* inline code block */ 'i', `1`],
+				[/* text */ 't', ` and increases for each nested object and
+ decrements when each nested object returns.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the current depth`]
 			]
 		]],
 		[/* method */ 'references()', [

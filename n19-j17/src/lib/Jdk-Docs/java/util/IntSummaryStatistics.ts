@@ -119,6 +119,68 @@ DocsCollector.collect('java.util.IntSummaryStatistics', [
 		]]
 	],
 	[/* methods */
+		[/* method */ 'getAverage()', [
+			[/* method description */
+				[/* text */ 't', `Returns the arithmetic mean of values recorded, or zero if no values have been
+ recorded.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the arithmetic mean of values, or zero if none`]
+			]
+		]],
+		[/* method */ 'getMax()', [
+			[/* method description */
+				[/* text */ 't', `Returns the maximum value recorded, or `],
+				[/* inline code block */ 'i', `Integer.MIN_VALUE`],
+				[/* text */ 't', ` if no
+ values have been recorded.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the maximum value, or `],
+				[/* inline code block */ 'i', `Integer.MIN_VALUE`],
+				[/* text */ 't', ` if none`]
+			]
+		]],
+		[/* method */ 'getMin()', [
+			[/* method description */
+				[/* text */ 't', `Returns the minimum value recorded, or `],
+				[/* inline code block */ 'i', `Integer.MAX_VALUE`],
+				[/* text */ 't', ` if no
+ values have been recorded.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the minimum value, or `],
+				[/* inline code block */ 'i', `Integer.MAX_VALUE`],
+				[/* text */ 't', ` if none`]
+			]
+		]],
+		[/* method */ 'getCount()', [
+			[/* method description */
+				[/* text */ 't', `Returns the count of values recorded.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the count of values`]
+			]
+		]],
+		[/* method */ 'getSum()', [
+			[/* method description */
+				[/* text */ 't', `Returns the sum of values recorded, or zero if no values have been
+ recorded.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the sum of values, or zero if none`]
+			]
+		]],
 		[/* method */ 'toString()', [
 			[/* method description */
 				[/* text */ 't', `Returns a non-empty string representation of this object suitable for
@@ -163,68 +225,6 @@ DocsCollector.collect('java.util.IntSummaryStatistics', [
 				]]
 			],
 			/* return */ UDF
-		]],
-		[/* method */ 'getCount()', [
-			[/* method description */
-				[/* text */ 't', `Returns the count of values recorded.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the count of values`]
-			]
-		]],
-		[/* method */ 'getSum()', [
-			[/* method description */
-				[/* text */ 't', `Returns the sum of values recorded, or zero if no values have been
- recorded.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the sum of values, or zero if none`]
-			]
-		]],
-		[/* method */ 'getMin()', [
-			[/* method description */
-				[/* text */ 't', `Returns the minimum value recorded, or `],
-				[/* inline code block */ 'i', `Integer.MAX_VALUE`],
-				[/* text */ 't', ` if no
- values have been recorded.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the minimum value, or `],
-				[/* inline code block */ 'i', `Integer.MAX_VALUE`],
-				[/* text */ 't', ` if none`]
-			]
-		]],
-		[/* method */ 'getAverage()', [
-			[/* method description */
-				[/* text */ 't', `Returns the arithmetic mean of values recorded, or zero if no values have been
- recorded.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the arithmetic mean of values, or zero if none`]
-			]
-		]],
-		[/* method */ 'getMax()', [
-			[/* method description */
-				[/* text */ 't', `Returns the maximum value recorded, or `],
-				[/* inline code block */ 'i', `Integer.MIN_VALUE`],
-				[/* text */ 't', ` if no
- values have been recorded.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the maximum value, or `],
-				[/* inline code block */ 'i', `Integer.MIN_VALUE`],
-				[/* text */ 't', ` if none`]
-			]
 		]]
 	],
 ]);

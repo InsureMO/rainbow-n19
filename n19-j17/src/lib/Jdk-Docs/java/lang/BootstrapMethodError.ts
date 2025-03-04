@@ -25,18 +25,25 @@ DocsCollector.collect('java.lang.BootstrapMethodError', [
 	],
 	/* fields */ UDF,
 	[/* constructors */
-		[/* constructor */ '<init>(java.lang.Throwable)', [
+		[/* constructor */ '<init>()', [
+			[/* constructor description */
+				[/* text */ 't', `Constructs a `],
+				[/* inline code block */ 'i', `BootstrapMethodError`],
+				[/* text */ 't', ` with no detail message.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF
+		]],
+		[/* constructor */ '<init>(java.lang.String)', [
 			[/* constructor description */
 				[/* text */ 't', `Constructs a `],
 				[/* inline code block */ 'i', `BootstrapMethodError`],
 				[/* text */ 't', ` with the specified
- cause.`]
+ detail message.`]
 			],
 			[/* parameters */
-				[/* parameter */ 'cause', [/* parameter description */
-					[/* text */ 't', `the cause, may be `],
-					[/* inline code block */ 'i', `null`],
-					[/* text */ 't', `.`]
+				[/* parameter */ 's', [/* parameter description */
+					[/* text */ 't', `the detail message.`]
 				]]
 			],
 			/* throws */ UDF
@@ -60,27 +67,20 @@ DocsCollector.collect('java.lang.BootstrapMethodError', [
 			],
 			/* throws */ UDF
 		]],
-		[/* constructor */ '<init>(java.lang.String)', [
+		[/* constructor */ '<init>(java.lang.Throwable)', [
 			[/* constructor description */
 				[/* text */ 't', `Constructs a `],
 				[/* inline code block */ 'i', `BootstrapMethodError`],
 				[/* text */ 't', ` with the specified
- detail message.`]
+ cause.`]
 			],
 			[/* parameters */
-				[/* parameter */ 's', [/* parameter description */
-					[/* text */ 't', `the detail message.`]
+				[/* parameter */ 'cause', [/* parameter description */
+					[/* text */ 't', `the cause, may be `],
+					[/* inline code block */ 'i', `null`],
+					[/* text */ 't', `.`]
 				]]
 			],
-			/* throws */ UDF
-		]],
-		[/* constructor */ '<init>()', [
-			[/* constructor description */
-				[/* text */ 't', `Constructs a `],
-				[/* inline code block */ 'i', `BootstrapMethodError`],
-				[/* text */ 't', ` with no detail message.`]
-			],
-			/* parameters */ UDF,
 			/* throws */ UDF
 		]]
 	],

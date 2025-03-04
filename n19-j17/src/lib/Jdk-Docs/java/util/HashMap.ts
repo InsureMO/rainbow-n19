@@ -165,6 +165,16 @@ DocsCollector.collect('java.util.HashMap', [
 	],
 	/* fields */ UDF,
 	[/* constructors */
+		[/* constructor */ '<init>()', [
+			[/* constructor description */
+				[/* text */ 't', `Constructs an empty `],
+				[/* inline code block */ 'i', `HashMap`],
+				[/* text */ 't', ` with the default initial capacity
+ (16) and the default load factor (0.75).`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF
+		]],
 		[/* constructor */ '<init>(int)', [
 			[/* constructor description */
 				[/* text */ 't', `Constructs an empty `],
@@ -230,135 +240,83 @@ DocsCollector.collect('java.util.HashMap', [
 					[/* text */ 't', `if the specified map is null`]
 				]]
 			]
-		]],
-		[/* constructor */ '<init>()', [
-			[/* constructor description */
-				[/* text */ 't', `Constructs an empty `],
-				[/* inline code block */ 'i', `HashMap`],
-				[/* text */ 't', ` with the default initial capacity
- (16) and the default load factor (0.75).`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF
 		]]
 	],
 	[/* methods */
-		[/* method */ 'remove(java.lang.Object,java.lang.Object)', UDF],
-		[/* method */ 'remove(java.lang.Object)', [
+		[/* method */ 'containsKey(java.lang.Object)', [
 			[/* method description */
-				[/* text */ 't', `Removes the mapping for the specified key from this map if present.`]
+				[/* text */ 't', `Returns `],
+				[/* inline code block */ 'i', `true`],
+				[/* text */ 't', ` if this map contains a mapping for the
+ specified key.`]
 			],
 			[/* parameters */
 				[/* parameter */ 'key', [/* parameter description */
-					[/* text */ 't', `key whose mapping is to be removed from the map`]
+					[/* text */ 't', `The key whose presence in this map is to be tested`]
 				]]
 			],
 			/* throws */ UDF,
 			[/* return description */
-				[/* text */ 't', `the previous value associated with `],
-				[/* inline code block */ 'i', `key`],
-				[/* text */ 't', `, or
-         `],
-				[/* inline code block */ 'i', `null`],
-				[/* text */ 't', ` if there was no mapping for `],
-				[/* inline code block */ 'i', `key`],
-				[/* text */ 't', `.
-         (A `],
-				[/* inline code block */ 'i', `null`],
-				[/* text */ 't', ` return can also indicate that the map
-         previously associated `],
-				[/* inline code block */ 'i', `null`],
-				[/* text */ 't', ` with `],
-				[/* inline code block */ 'i', `key`],
-				[/* text */ 't', `.)`]
+				[/* inline code block */ 'i', `true`],
+				[/* text */ 't', ` if this map contains a mapping for the specified
+ key.`]
 			]
 		]],
-		[/* method */ 'get(java.lang.Object)', [
+		[/* method */ 'containsValue(java.lang.Object)', [
 			[/* method description */
-				[/* text */ 't', `Returns the value to which the specified key is mapped,
- or `],
-				[/* inline code block */ 'i', `null`],
-				[/* text */ 't', ` if this map contains no mapping for the key.
-
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', `More formally, if this map contains a mapping from a key
- `],
-					[/* inline code block */ 'i', `k`],
-					[/* text */ 't', ` to a value `],
-					[/* inline code block */ 'i', `v`],
-					[/* text */ 't', ` such that `],
-					[/* inline code block */ 'i', `(key==null ? k==null : key.equals(k))`],
-					[/* text */ 't', `, then this method returns `],
-					[/* inline code block */ 'i', `v`],
-					[/* text */ 't', `; otherwise
- it returns `],
-					[/* inline code block */ 'i', `null`],
-					[/* text */ 't', `.  (There can be at most one such mapping.)
-
- `]
-				]],
-				[/* block */ 'b', [
-					[/* text */ 't', `A return value of `],
-					[/* inline code block */ 'i', `null`],
-					[/* text */ 't', ` does not `],
-					[/* text */ 't', `necessarily`],
-					[/* text */ 't', `
- indicate that the map contains no mapping for the key; it's also
- possible that the map explicitly maps the key to `],
-					[/* inline code block */ 'i', `null`],
-					[/* text */ 't', `.
- The `],
-					[/* reference */ 'r', `#containsKey(java.lang.Object)`, `containsKey`],
-					[/* text */ 't', ` operation may be used to
- distinguish these two cases.`]
-				]]
+				[/* text */ 't', `Returns `],
+				[/* inline code block */ 'i', `true`],
+				[/* text */ 't', ` if this map maps one or more keys to the
+ specified value.`]
 			],
 			[/* parameters */
-				[/* parameter */ 'key', [/* parameter description */
-					[/* text */ 't', `the key whose associated value is to be returned`]
-				]]
-			],
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the value to which the specified key is mapped, or
-         `],
-				[/* inline code block */ 'i', `null`],
-				[/* text */ 't', ` if this map contains no mapping for the key`]
-			]
-		]],
-		[/* method */ 'put(java.lang.Object,java.lang.Object)', [
-			[/* method description */
-				[/* text */ 't', `Associates the specified value with the specified key in this map.
- If the map previously contained a mapping for the key, the old
- value is replaced.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'key', [/* parameter description */
-					[/* text */ 't', `key with which the specified value is to be associated`]
-				]],
 				[/* parameter */ 'value', [/* parameter description */
-					[/* text */ 't', `value to be associated with the specified key`]
+					[/* text */ 't', `value whose presence in this map is to be tested`]
 				]]
 			],
 			/* throws */ UDF,
 			[/* return description */
-				[/* text */ 't', `the previous value associated with `],
-				[/* inline code block */ 'i', `key`],
-				[/* text */ 't', `, or
-         `],
-				[/* inline code block */ 'i', `null`],
-				[/* text */ 't', ` if there was no mapping for `],
-				[/* inline code block */ 'i', `key`],
-				[/* text */ 't', `.
-         (A `],
-				[/* inline code block */ 'i', `null`],
-				[/* text */ 't', ` return can also indicate that the map
-         previously associated `],
-				[/* inline code block */ 'i', `null`],
-				[/* text */ 't', ` with `],
-				[/* inline code block */ 'i', `key`],
-				[/* text */ 't', `.)`]
+				[/* inline code block */ 'i', `true`],
+				[/* text */ 't', ` if this map maps one or more keys to the
+         specified value`]
+			]
+		]],
+		[/* method */ 'isEmpty()', [
+			[/* method description */
+				[/* text */ 't', `Returns `],
+				[/* inline code block */ 'i', `true`],
+				[/* text */ 't', ` if this map contains no key-value mappings.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* inline code block */ 'i', `true`],
+				[/* text */ 't', ` if this map contains no key-value mappings`]
+			]
+		]],
+		[/* method */ 'remove(java.lang.Object,java.lang.Object)', UDF],
+		[/* method */ 'replace(java.lang.Object,java.lang.Object,java.lang.Object)', UDF],
+		[/* method */ 'size()', [
+			[/* method description */
+				[/* text */ 't', `Returns the number of key-value mappings in this map.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the number of key-value mappings in this map`]
+			]
+		]],
+		[/* method */ 'clone()', [
+			[/* method description */
+				[/* text */ 't', `Returns a shallow copy of this `],
+				[/* inline code block */ 'i', `HashMap`],
+				[/* text */ 't', ` instance: the keys and
+ values themselves are not cloned.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `a shallow copy of this map`]
 			]
 		]],
 		[/* method */ 'values()', [
@@ -397,117 +355,6 @@ DocsCollector.collect('java.util.HashMap', [
 			/* throws */ UDF,
 			[/* return description */
 				[/* text */ 't', `a view of the values contained in this map`]
-			]
-		]],
-		[/* method */ 'clone()', [
-			[/* method description */
-				[/* text */ 't', `Returns a shallow copy of this `],
-				[/* inline code block */ 'i', `HashMap`],
-				[/* text */ 't', ` instance: the keys and
- values themselves are not cloned.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `a shallow copy of this map`]
-			]
-		]],
-		[/* method */ 'clear()', [
-			[/* method description */
-				[/* text */ 't', `Removes all of the mappings from this map.
- The map will be empty after this call returns.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			/* return */ UDF
-		]],
-		[/* method */ 'isEmpty()', [
-			[/* method description */
-				[/* text */ 't', `Returns `],
-				[/* inline code block */ 'i', `true`],
-				[/* text */ 't', ` if this map contains no key-value mappings.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* inline code block */ 'i', `true`],
-				[/* text */ 't', ` if this map contains no key-value mappings`]
-			]
-		]],
-		[/* method */ 'replace(java.lang.Object,java.lang.Object)', UDF],
-		[/* method */ 'replace(java.lang.Object,java.lang.Object,java.lang.Object)', UDF],
-		[/* method */ 'replaceAll(java.util.function.BiFunction)', UDF],
-		[/* method */ 'size()', [
-			[/* method description */
-				[/* text */ 't', `Returns the number of key-value mappings in this map.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the number of key-value mappings in this map`]
-			]
-		]],
-		[/* method */ 'merge(java.lang.Object,java.lang.Object,java.util.function.BiFunction)', [
-			[/* method description */
-				[/* text */ 't', `If the specified key is not already associated with a value or is
- associated with null, associates it with the given non-null value.
- Otherwise, replaces the associated value with the results of the given
- remapping function, or removes if the result is `],
-				[/* inline code block */ 'i', `null`],
-				[/* text */ 't', `. This
- method may be of use when combining multiple mapped values for a key.
- For example, to either create or append a `],
-				[/* inline code block */ 'i', `String msg`],
-				[/* text */ 't', ` to a
- value mapping:
-
- `],
-				[/* code block */ 'c', [
-					[/* inline code block */ 'i', `map.merge(key, msg, String::concat)`]
-				]],
-				[/* block */ 'b', [
-					[/* text */ 't', `If the remapping function returns `],
-					[/* inline code block */ 'i', `null`],
-					[/* text */ 't', `, the mapping is removed.
- If the remapping function itself throws an (unchecked) exception, the
- exception is rethrown, and the current mapping is left unchanged.
-
- `]
-				]],
-				[/* block */ 'b', `The remapping function should not modify this map during computation.
-
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', `This method will, on a best-effort basis, throw a
- `],
-					[/* reference */ 'r', `java.util.ConcurrentModificationException`],
-					[/* text */ 't', ` if it is detected that the
- remapping function modifies this map during computation.`]
-				]]
-			],
-			[/* parameters */
-				[/* parameter */ 'key', [/* parameter description */
-					[/* text */ 't', `key with which the resulting value is to be associated`]
-				]],
-				[/* parameter */ 'value', [/* parameter description */
-					[/* text */ 't', `the non-null value to be merged with the existing value
-        associated with the key or, if no existing value or a null value
-        is associated with the key, to be associated with the key`]
-				]],
-				[/* parameter */ 'remappingFunction', [/* parameter description */
-					[/* text */ 't', `the remapping function to recompute a value if
-        present`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.util.ConcurrentModificationException', [/* throw description */
-					[/* text */ 't', `if it is detected that the
- remapping function modified this map`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `the new value associated with the specified key, or null if no
-         value is associated with the key`]
 			]
 		]],
 		[/* method */ 'entrySet()', [
@@ -551,25 +398,44 @@ DocsCollector.collect('java.util.HashMap', [
 				[/* text */ 't', `a set view of the mappings contained in this map`]
 			]
 		]],
-		[/* method */ 'putAll(java.util.Map)', [
+		[/* method */ 'keySet()', [
 			[/* method description */
-				[/* text */ 't', `Copies all of the mappings from the specified map to this map.
- These mappings will replace any mappings that this map had for
- any of the keys currently in the specified map.`]
+				[/* text */ 't', `Returns a `],
+				[/* reference */ 'r', `java.util.Set`],
+				[/* text */ 't', ` view of the keys contained in this map.
+ The set is backed by the map, so changes to the map are
+ reflected in the set, and vice-versa.  If the map is modified
+ while an iteration over the set is in progress (except through
+ the iterator's own `],
+				[/* inline code block */ 'i', `remove`],
+				[/* text */ 't', ` operation), the results of
+ the iteration are undefined.  The set supports element removal,
+ which removes the corresponding mapping from the map, via the
+ `],
+				[/* inline code block */ 'i', `Iterator.remove`],
+				[/* text */ 't', `, `],
+				[/* inline code block */ 'i', `Set.remove`],
+				[/* text */ 't', `,
+ `],
+				[/* inline code block */ 'i', `removeAll`],
+				[/* text */ 't', `, `],
+				[/* inline code block */ 'i', `retainAll`],
+				[/* text */ 't', `, and `],
+				[/* inline code block */ 'i', `clear`],
+				[/* text */ 't', `
+ operations.  It does not support the `],
+				[/* inline code block */ 'i', `add`],
+				[/* text */ 't', ` or `],
+				[/* inline code block */ 'i', `addAll`],
+				[/* text */ 't', `
+ operations.`]
 			],
-			[/* parameters */
-				[/* parameter */ 'm', [/* parameter description */
-					[/* text */ 't', `mappings to be stored in this map`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
-					[/* text */ 't', `if the specified map is null`]
-				]]
-			],
-			/* return */ UDF
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `a set view of the keys contained in this map`]
+			]
 		]],
-		[/* method */ 'putIfAbsent(java.lang.Object,java.lang.Object)', UDF],
 		[/* method */ 'compute(java.lang.Object,java.util.function.BiFunction)', [
 			[/* method description */
 				[/* text */ 't', `Attempts to compute a mapping for the specified key and its current
@@ -628,26 +494,6 @@ DocsCollector.collect('java.util.HashMap', [
 			],
 			[/* return description */
 				[/* text */ 't', `the new value associated with the specified key, or null if none`]
-			]
-		]],
-		[/* method */ 'forEach(java.util.function.BiConsumer)', UDF],
-		[/* method */ 'containsKey(java.lang.Object)', [
-			[/* method description */
-				[/* text */ 't', `Returns `],
-				[/* inline code block */ 'i', `true`],
-				[/* text */ 't', ` if this map contains a mapping for the
- specified key.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'key', [/* parameter description */
-					[/* text */ 't', `The key whose presence in this map is to be tested`]
-				]]
-			],
-			/* throws */ UDF,
-			[/* return description */
-				[/* inline code block */ 'i', `true`],
-				[/* text */ 't', ` if this map contains a mapping for the specified
- key.`]
 			]
 		]],
 		[/* method */ 'computeIfAbsent(java.lang.Object,java.util.function.Function)', [
@@ -718,64 +564,6 @@ DocsCollector.collect('java.util.HashMap', [
          the specified key, or null if the computed value is null`]
 			]
 		]],
-		[/* method */ 'keySet()', [
-			[/* method description */
-				[/* text */ 't', `Returns a `],
-				[/* reference */ 'r', `java.util.Set`],
-				[/* text */ 't', ` view of the keys contained in this map.
- The set is backed by the map, so changes to the map are
- reflected in the set, and vice-versa.  If the map is modified
- while an iteration over the set is in progress (except through
- the iterator's own `],
-				[/* inline code block */ 'i', `remove`],
-				[/* text */ 't', ` operation), the results of
- the iteration are undefined.  The set supports element removal,
- which removes the corresponding mapping from the map, via the
- `],
-				[/* inline code block */ 'i', `Iterator.remove`],
-				[/* text */ 't', `, `],
-				[/* inline code block */ 'i', `Set.remove`],
-				[/* text */ 't', `,
- `],
-				[/* inline code block */ 'i', `removeAll`],
-				[/* text */ 't', `, `],
-				[/* inline code block */ 'i', `retainAll`],
-				[/* text */ 't', `, and `],
-				[/* inline code block */ 'i', `clear`],
-				[/* text */ 't', `
- operations.  It does not support the `],
-				[/* inline code block */ 'i', `add`],
-				[/* text */ 't', ` or `],
-				[/* inline code block */ 'i', `addAll`],
-				[/* text */ 't', `
- operations.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `a set view of the keys contained in this map`]
-			]
-		]],
-		[/* method */ 'containsValue(java.lang.Object)', [
-			[/* method description */
-				[/* text */ 't', `Returns `],
-				[/* inline code block */ 'i', `true`],
-				[/* text */ 't', ` if this map maps one or more keys to the
- specified value.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'value', [/* parameter description */
-					[/* text */ 't', `value whose presence in this map is to be tested`]
-				]]
-			],
-			/* throws */ UDF,
-			[/* return description */
-				[/* inline code block */ 'i', `true`],
-				[/* text */ 't', ` if this map maps one or more keys to the
-         specified value`]
-			]
-		]],
-		[/* method */ 'getOrDefault(java.lang.Object,java.lang.Object)', UDF],
 		[/* method */ 'computeIfPresent(java.lang.Object,java.util.function.BiFunction)', [
 			[/* method description */
 				[/* text */ 't', `If the value for the specified key is present and non-null, attempts to
@@ -819,6 +607,218 @@ DocsCollector.collect('java.util.HashMap', [
 			[/* return description */
 				[/* text */ 't', `the new value associated with the specified key, or null if none`]
 			]
-		]]
+		]],
+		[/* method */ 'get(java.lang.Object)', [
+			[/* method description */
+				[/* text */ 't', `Returns the value to which the specified key is mapped,
+ or `],
+				[/* inline code block */ 'i', `null`],
+				[/* text */ 't', ` if this map contains no mapping for the key.
+
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', `More formally, if this map contains a mapping from a key
+ `],
+					[/* inline code block */ 'i', `k`],
+					[/* text */ 't', ` to a value `],
+					[/* inline code block */ 'i', `v`],
+					[/* text */ 't', ` such that `],
+					[/* inline code block */ 'i', `(key==null ? k==null : key.equals(k))`],
+					[/* text */ 't', `, then this method returns `],
+					[/* inline code block */ 'i', `v`],
+					[/* text */ 't', `; otherwise
+ it returns `],
+					[/* inline code block */ 'i', `null`],
+					[/* text */ 't', `.  (There can be at most one such mapping.)
+
+ `]
+				]],
+				[/* block */ 'b', [
+					[/* text */ 't', `A return value of `],
+					[/* inline code block */ 'i', `null`],
+					[/* text */ 't', ` does not `],
+					[/* text */ 't', `necessarily`],
+					[/* text */ 't', `
+ indicate that the map contains no mapping for the key; it's also
+ possible that the map explicitly maps the key to `],
+					[/* inline code block */ 'i', `null`],
+					[/* text */ 't', `.
+ The `],
+					[/* reference */ 'r', `#containsKey(java.lang.Object)`, `containsKey`],
+					[/* text */ 't', ` operation may be used to
+ distinguish these two cases.`]
+				]]
+			],
+			[/* parameters */
+				[/* parameter */ 'key', [/* parameter description */
+					[/* text */ 't', `the key whose associated value is to be returned`]
+				]]
+			],
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the value to which the specified key is mapped, or
+         `],
+				[/* inline code block */ 'i', `null`],
+				[/* text */ 't', ` if this map contains no mapping for the key`]
+			]
+		]],
+		[/* method */ 'getOrDefault(java.lang.Object,java.lang.Object)', UDF],
+		[/* method */ 'merge(java.lang.Object,java.lang.Object,java.util.function.BiFunction)', [
+			[/* method description */
+				[/* text */ 't', `If the specified key is not already associated with a value or is
+ associated with null, associates it with the given non-null value.
+ Otherwise, replaces the associated value with the results of the given
+ remapping function, or removes if the result is `],
+				[/* inline code block */ 'i', `null`],
+				[/* text */ 't', `. This
+ method may be of use when combining multiple mapped values for a key.
+ For example, to either create or append a `],
+				[/* inline code block */ 'i', `String msg`],
+				[/* text */ 't', ` to a
+ value mapping:
+
+ `],
+				[/* code block */ 'c', [
+					[/* inline code block */ 'i', `map.merge(key, msg, String::concat)`]
+				]],
+				[/* block */ 'b', [
+					[/* text */ 't', `If the remapping function returns `],
+					[/* inline code block */ 'i', `null`],
+					[/* text */ 't', `, the mapping is removed.
+ If the remapping function itself throws an (unchecked) exception, the
+ exception is rethrown, and the current mapping is left unchanged.
+
+ `]
+				]],
+				[/* block */ 'b', `The remapping function should not modify this map during computation.
+
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', `This method will, on a best-effort basis, throw a
+ `],
+					[/* reference */ 'r', `java.util.ConcurrentModificationException`],
+					[/* text */ 't', ` if it is detected that the
+ remapping function modifies this map during computation.`]
+				]]
+			],
+			[/* parameters */
+				[/* parameter */ 'key', [/* parameter description */
+					[/* text */ 't', `key with which the resulting value is to be associated`]
+				]],
+				[/* parameter */ 'value', [/* parameter description */
+					[/* text */ 't', `the non-null value to be merged with the existing value
+        associated with the key or, if no existing value or a null value
+        is associated with the key, to be associated with the key`]
+				]],
+				[/* parameter */ 'remappingFunction', [/* parameter description */
+					[/* text */ 't', `the remapping function to recompute a value if
+        present`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.util.ConcurrentModificationException', [/* throw description */
+					[/* text */ 't', `if it is detected that the
+ remapping function modified this map`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `the new value associated with the specified key, or null if no
+         value is associated with the key`]
+			]
+		]],
+		[/* method */ 'put(java.lang.Object,java.lang.Object)', [
+			[/* method description */
+				[/* text */ 't', `Associates the specified value with the specified key in this map.
+ If the map previously contained a mapping for the key, the old
+ value is replaced.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'key', [/* parameter description */
+					[/* text */ 't', `key with which the specified value is to be associated`]
+				]],
+				[/* parameter */ 'value', [/* parameter description */
+					[/* text */ 't', `value to be associated with the specified key`]
+				]]
+			],
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the previous value associated with `],
+				[/* inline code block */ 'i', `key`],
+				[/* text */ 't', `, or
+         `],
+				[/* inline code block */ 'i', `null`],
+				[/* text */ 't', ` if there was no mapping for `],
+				[/* inline code block */ 'i', `key`],
+				[/* text */ 't', `.
+         (A `],
+				[/* inline code block */ 'i', `null`],
+				[/* text */ 't', ` return can also indicate that the map
+         previously associated `],
+				[/* inline code block */ 'i', `null`],
+				[/* text */ 't', ` with `],
+				[/* inline code block */ 'i', `key`],
+				[/* text */ 't', `.)`]
+			]
+		]],
+		[/* method */ 'putIfAbsent(java.lang.Object,java.lang.Object)', UDF],
+		[/* method */ 'remove(java.lang.Object)', [
+			[/* method description */
+				[/* text */ 't', `Removes the mapping for the specified key from this map if present.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'key', [/* parameter description */
+					[/* text */ 't', `key whose mapping is to be removed from the map`]
+				]]
+			],
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the previous value associated with `],
+				[/* inline code block */ 'i', `key`],
+				[/* text */ 't', `, or
+         `],
+				[/* inline code block */ 'i', `null`],
+				[/* text */ 't', ` if there was no mapping for `],
+				[/* inline code block */ 'i', `key`],
+				[/* text */ 't', `.
+         (A `],
+				[/* inline code block */ 'i', `null`],
+				[/* text */ 't', ` return can also indicate that the map
+         previously associated `],
+				[/* inline code block */ 'i', `null`],
+				[/* text */ 't', ` with `],
+				[/* inline code block */ 'i', `key`],
+				[/* text */ 't', `.)`]
+			]
+		]],
+		[/* method */ 'replace(java.lang.Object,java.lang.Object)', UDF],
+		[/* method */ 'clear()', [
+			[/* method description */
+				[/* text */ 't', `Removes all of the mappings from this map.
+ The map will be empty after this call returns.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			/* return */ UDF
+		]],
+		[/* method */ 'forEach(java.util.function.BiConsumer)', UDF],
+		[/* method */ 'putAll(java.util.Map)', [
+			[/* method description */
+				[/* text */ 't', `Copies all of the mappings from the specified map to this map.
+ These mappings will replace any mappings that this map had for
+ any of the keys currently in the specified map.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'm', [/* parameter description */
+					[/* text */ 't', `mappings to be stored in this map`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
+					[/* text */ 't', `if the specified map is null`]
+				]]
+			],
+			/* return */ UDF
+		]],
+		[/* method */ 'replaceAll(java.util.function.BiFunction)', UDF]
 	],
 ]);

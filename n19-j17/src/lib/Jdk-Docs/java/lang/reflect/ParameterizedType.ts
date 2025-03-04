@@ -28,6 +28,47 @@ DocsCollector.collect('java.lang.reflect.ParameterizedType', [
 	/* fields */ UDF,
 	/* constructors */ UDF,
 	[/* methods */
+		[/* method */ 'getOwnerType()', [
+			[/* method description */
+				[/* text */ 't', `Returns a `],
+				[/* inline code block */ 'i', `Type`],
+				[/* text */ 't', ` object representing the type that this type
+ is a member of.  For example, if this type is `],
+				[/* inline code block */ 'i', `O<T>.I<S>`],
+				[/* text */ 't', `,
+ return a representation of `],
+				[/* inline code block */ 'i', `O<T>`],
+				[/* text */ 't', `.
+
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', `If this type is a top-level type, `],
+					[/* inline code block */ 'i', `null`],
+					[/* text */ 't', ` is returned.`]
+				]]
+			],
+			/* parameters */ UDF,
+			[/* throws */
+				[/* throw */ 'java.lang.TypeNotPresentException', [/* throw description */
+					[/* text */ 't', `if the owner type
+     refers to a non-existent class or interface declaration`]
+				]],
+				[/* throw */ 'java.lang.reflect.MalformedParameterizedTypeException', [/* throw description */
+					[/* text */ 't', `if the owner type
+     refers to a parameterized type that cannot be instantiated
+     for any reason`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `a `],
+				[/* inline code block */ 'i', `Type`],
+				[/* text */ 't', ` object representing the type that
+     this type is a member of. If this type is a top-level type,
+     `],
+				[/* inline code block */ 'i', `null`],
+				[/* text */ 't', ` is returned`]
+			]
+		]],
 		[/* method */ 'getRawType()', [
 			[/* method description */
 				[/* text */ 't', `Returns the `],
@@ -73,47 +114,6 @@ DocsCollector.collect('java.lang.reflect.ParameterizedType', [
 				[/* inline code block */ 'i', `Type`],
 				[/* text */ 't', ` objects representing the actual type
      arguments to this type`]
-			]
-		]],
-		[/* method */ 'getOwnerType()', [
-			[/* method description */
-				[/* text */ 't', `Returns a `],
-				[/* inline code block */ 'i', `Type`],
-				[/* text */ 't', ` object representing the type that this type
- is a member of.  For example, if this type is `],
-				[/* inline code block */ 'i', `O<T>.I<S>`],
-				[/* text */ 't', `,
- return a representation of `],
-				[/* inline code block */ 'i', `O<T>`],
-				[/* text */ 't', `.
-
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', `If this type is a top-level type, `],
-					[/* inline code block */ 'i', `null`],
-					[/* text */ 't', ` is returned.`]
-				]]
-			],
-			/* parameters */ UDF,
-			[/* throws */
-				[/* throw */ 'java.lang.TypeNotPresentException', [/* throw description */
-					[/* text */ 't', `if the owner type
-     refers to a non-existent class or interface declaration`]
-				]],
-				[/* throw */ 'java.lang.reflect.MalformedParameterizedTypeException', [/* throw description */
-					[/* text */ 't', `if the owner type
-     refers to a parameterized type that cannot be instantiated
-     for any reason`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `a `],
-				[/* inline code block */ 'i', `Type`],
-				[/* text */ 't', ` object representing the type that
-     this type is a member of. If this type is a top-level type,
-     `],
-				[/* inline code block */ 'i', `null`],
-				[/* text */ 't', ` is returned`]
 			]
 		]]
 	],

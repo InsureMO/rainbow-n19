@@ -102,6 +102,18 @@ DocsCollector.collect('java.util.ArrayDeque', [
 			/* parameters */ UDF,
 			/* throws */ UDF
 		]],
+		[/* constructor */ '<init>(int)', [
+			[/* constructor description */
+				[/* text */ 't', `Constructs an empty array deque with an initial capacity
+ sufficient to hold the specified number of elements.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'numElements', [/* parameter description */
+					[/* text */ 't', `lower bound on initial capacity of the deque`]
+				]]
+			],
+			/* throws */ UDF
+		]],
 		[/* constructor */ '<init>(java.util.Collection)', [
 			[/* constructor description */
 				[/* text */ 't', `Constructs a deque containing the elements of the specified
@@ -122,150 +134,9 @@ DocsCollector.collect('java.util.ArrayDeque', [
 					[/* text */ 't', `if the specified collection is null`]
 				]]
 			]
-		]],
-		[/* constructor */ '<init>(int)', [
-			[/* constructor description */
-				[/* text */ 't', `Constructs an empty array deque with an initial capacity
- sufficient to hold the specified number of elements.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'numElements', [/* parameter description */
-					[/* text */ 't', `lower bound on initial capacity of the deque`]
-				]]
-			],
-			/* throws */ UDF
 		]]
 	],
 	[/* methods */
-		[/* method */ 'add(java.lang.Object)', [
-			[/* method description */
-				[/* text */ 't', `Inserts the specified element at the end of this deque.
-
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', `This method is equivalent to `],
-					[/* reference */ 'r', `#addLast(E)`, `addLast(E)`],
-					[/* text */ 't', `.`]
-				]]
-			],
-			[/* parameters */
-				[/* parameter */ 'e', [/* parameter description */
-					[/* text */ 't', `the element to add`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
-					[/* text */ 't', `if the specified element is null`]
-				]]
-			],
-			[/* return description */
-				[/* inline code block */ 'i', `true`],
-				[/* text */ 't', ` (as specified by `],
-				[/* reference */ 'r', `.Collection#add(E)`],
-				[/* text */ 't', `)`]
-			]
-		]],
-		[/* method */ 'remove()', [
-			[/* method description */
-				[/* text */ 't', `Retrieves and removes the head of the queue represented by this deque.
-
- This method differs from `],
-				[/* reference */ 'r', `#poll()`, `poll()`],
-				[/* text */ 't', ` only in that it
- throws an exception if this deque is empty.
-
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', `This method is equivalent to `],
-					[/* reference */ 'r', `#removeFirst()`, `removeFirst()`],
-					[/* text */ 't', `.`]
-				]]
-			],
-			/* parameters */ UDF,
-			[/* throws */
-				[/* throw */ 'java.util.NoSuchElementException', [/* throw description */
-					[/* text */ 't', `if this deque is empty`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `the head of the queue represented by this deque`]
-			]
-		]],
-		[/* method */ 'remove(java.lang.Object)', [
-			[/* method description */
-				[/* text */ 't', `Removes a single instance of the specified element from this deque.
- If the deque does not contain the element, it is unchanged.
- More formally, removes the first element `],
-				[/* inline code block */ 'i', `e`],
-				[/* text */ 't', ` such that
- `],
-				[/* inline code block */ 'i', `o.equals(e)`],
-				[/* text */ 't', ` (if such an element exists).
- Returns `],
-				[/* inline code block */ 'i', `true`],
-				[/* text */ 't', ` if this deque contained the specified element
- (or equivalently, if this deque changed as a result of the call).
-
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', `This method is equivalent to `],
-					[/* reference */ 'r', `#removeFirstOccurrence(java.lang.Object)`, `removeFirstOccurrence(Object)`],
-					[/* text */ 't', `.`]
-				]]
-			],
-			[/* parameters */
-				[/* parameter */ 'o', [/* parameter description */
-					[/* text */ 't', `element to be removed from this deque, if present`]
-				]]
-			],
-			/* throws */ UDF,
-			[/* return description */
-				[/* inline code block */ 'i', `true`],
-				[/* text */ 't', ` if this deque contained the specified element`]
-			]
-		]],
-		[/* method */ 'clone()', [
-			[/* method description */
-				[/* text */ 't', `Returns a copy of this deque.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `a copy of this deque`]
-			]
-		]],
-		[/* method */ 'clear()', [
-			[/* method description */
-				[/* text */ 't', `Removes all of the elements from this deque.
- The deque will be empty after this call returns.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			/* return */ UDF
-		]],
-		[/* method */ 'isEmpty()', [
-			[/* method description */
-				[/* text */ 't', `Returns `],
-				[/* inline code block */ 'i', `true`],
-				[/* text */ 't', ` if this deque contains no elements.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* inline code block */ 'i', `true`],
-				[/* text */ 't', ` if this deque contains no elements`]
-			]
-		]],
-		[/* method */ 'size()', [
-			[/* method description */
-				[/* text */ 't', `Returns the number of elements in this deque.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the number of elements in this deque`]
-			]
-		]],
 		[/* method */ 'toArray(java.lang.Object[])', [
 			[/* method description */
 				[/* text */ 't', `Returns an array containing all of the elements in this deque in
@@ -341,41 +212,56 @@ DocsCollector.collect('java.util.ArrayDeque', [
 				[/* text */ 't', `an array containing all of the elements in this deque`]
 			]
 		]],
-		[/* method */ 'toArray()', [
+		[/* method */ 'add(java.lang.Object)', [
 			[/* method description */
-				[/* text */ 't', `Returns an array containing all of the elements in this deque
- in proper sequence (from first to last element).
+				[/* text */ 't', `Inserts the specified element at the end of this deque.
 
  `],
-				[/* block */ 'b', `The returned array will be "safe" in that no references to it are
- maintained by this deque.  (In other words, this method must allocate
- a new array).  The caller is thus free to modify the returned array.
-
- `],
-				[/* block */ 'b', `This method acts as bridge between array-based and collection-based
- APIs.`]
+				[/* block */ 'b', [
+					[/* text */ 't', `This method is equivalent to `],
+					[/* reference */ 'r', `#addLast(E)`, `addLast(E)`],
+					[/* text */ 't', `.`]
+				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			[/* parameters */
+				[/* parameter */ 'e', [/* parameter description */
+					[/* text */ 't', `the element to add`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
+					[/* text */ 't', `if the specified element is null`]
+				]]
+			],
 			[/* return description */
-				[/* text */ 't', `an array containing all of the elements in this deque`]
+				[/* inline code block */ 'i', `true`],
+				[/* text */ 't', ` (as specified by `],
+				[/* reference */ 'r', `.Collection#add(E)`],
+				[/* text */ 't', `)`]
 			]
 		]],
-		[/* method */ 'iterator()', [
+		[/* method */ 'addAll(java.util.Collection)', [
 			[/* method description */
-				[/* text */ 't', `Returns an iterator over the elements in this deque.  The elements
- will be ordered from first (head) to last (tail).  This is the same
- order that elements would be dequeued (via successive calls to
- `],
-				[/* reference */ 'r', `#remove()`, `remove()`],
-				[/* text */ 't', ` or popped (via successive calls to `],
-				[/* reference */ 'r', `#pop()`, `pop()`],
-				[/* text */ 't', `).`]
+				[/* text */ 't', `Adds all of the elements in the specified collection at the end
+ of this deque, as if by calling `],
+				[/* reference */ 'r', `#addLast(E)`, `addLast(E)`],
+				[/* text */ 't', ` on each one,
+ in the order that they are returned by the collection's iterator.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			[/* parameters */
+				[/* parameter */ 'c', [/* parameter description */
+					[/* text */ 't', `the elements to be inserted into this deque`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
+					[/* text */ 't', `if the specified collection or any
+         of its elements are null`]
+				]]
+			],
 			[/* return description */
-				[/* text */ 't', `an iterator over the elements in this deque`]
+				[/* inline code block */ 'i', `true`],
+				[/* text */ 't', ` if this deque changed as a result of the call`]
 			]
 		]],
 		[/* method */ 'contains(java.lang.Object)', [
@@ -401,6 +287,597 @@ DocsCollector.collect('java.util.ArrayDeque', [
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if this deque contains the specified element`]
+			]
+		]],
+		[/* method */ 'isEmpty()', [
+			[/* method description */
+				[/* text */ 't', `Returns `],
+				[/* inline code block */ 'i', `true`],
+				[/* text */ 't', ` if this deque contains no elements.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* inline code block */ 'i', `true`],
+				[/* text */ 't', ` if this deque contains no elements`]
+			]
+		]],
+		[/* method */ 'offer(java.lang.Object)', [
+			[/* method description */
+				[/* text */ 't', `Inserts the specified element at the end of this deque.
+
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', `This method is equivalent to `],
+					[/* reference */ 'r', `#offerLast(E)`, `offerLast(E)`],
+					[/* text */ 't', `.`]
+				]]
+			],
+			[/* parameters */
+				[/* parameter */ 'e', [/* parameter description */
+					[/* text */ 't', `the element to add`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
+					[/* text */ 't', `if the specified element is null`]
+				]]
+			],
+			[/* return description */
+				[/* inline code block */ 'i', `true`],
+				[/* text */ 't', ` (as specified by `],
+				[/* reference */ 'r', `.Queue#offer(E)`],
+				[/* text */ 't', `)`]
+			]
+		]],
+		[/* method */ 'offerFirst(java.lang.Object)', [
+			[/* method description */
+				[/* text */ 't', `Inserts the specified element at the front of this deque.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'e', [/* parameter description */
+					[/* text */ 't', `the element to add`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
+					[/* text */ 't', `if the specified element is null`]
+				]]
+			],
+			[/* return description */
+				[/* inline code block */ 'i', `true`],
+				[/* text */ 't', ` (as specified by `],
+				[/* reference */ 'r', `.Deque#offerFirst(E)`],
+				[/* text */ 't', `)`]
+			]
+		]],
+		[/* method */ 'offerLast(java.lang.Object)', [
+			[/* method description */
+				[/* text */ 't', `Inserts the specified element at the end of this deque.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'e', [/* parameter description */
+					[/* text */ 't', `the element to add`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
+					[/* text */ 't', `if the specified element is null`]
+				]]
+			],
+			[/* return description */
+				[/* inline code block */ 'i', `true`],
+				[/* text */ 't', ` (as specified by `],
+				[/* reference */ 'r', `.Deque#offerLast(E)`],
+				[/* text */ 't', `)`]
+			]
+		]],
+		[/* method */ 'remove(java.lang.Object)', [
+			[/* method description */
+				[/* text */ 't', `Removes a single instance of the specified element from this deque.
+ If the deque does not contain the element, it is unchanged.
+ More formally, removes the first element `],
+				[/* inline code block */ 'i', `e`],
+				[/* text */ 't', ` such that
+ `],
+				[/* inline code block */ 'i', `o.equals(e)`],
+				[/* text */ 't', ` (if such an element exists).
+ Returns `],
+				[/* inline code block */ 'i', `true`],
+				[/* text */ 't', ` if this deque contained the specified element
+ (or equivalently, if this deque changed as a result of the call).
+
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', `This method is equivalent to `],
+					[/* reference */ 'r', `#removeFirstOccurrence(java.lang.Object)`, `removeFirstOccurrence(Object)`],
+					[/* text */ 't', `.`]
+				]]
+			],
+			[/* parameters */
+				[/* parameter */ 'o', [/* parameter description */
+					[/* text */ 't', `element to be removed from this deque, if present`]
+				]]
+			],
+			/* throws */ UDF,
+			[/* return description */
+				[/* inline code block */ 'i', `true`],
+				[/* text */ 't', ` if this deque contained the specified element`]
+			]
+		]],
+		[/* method */ 'removeAll(java.util.Collection)', [
+			[/* method description */
+				[/* block */ 'b', `Removes all of this collection's elements that are also contained in the
+ specified collection (optional operation).  After this call returns,
+ this collection will contain no elements in common with the specified
+ collection.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'c', [/* parameter description */
+					[/* text */ 't', `collection containing elements to be removed from this collection`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
+					[/* text */ 't', `if this collection contains one or more
+         null elements and the specified collection does not support
+         null elements
+         (`],
+					[/* text */ 't', `optional`],
+					[/* text */ 't', `),
+         or if the specified collection is null`]
+				]]
+			],
+			[/* return description */
+				[/* inline code block */ 'i', `true`],
+				[/* text */ 't', ` if this collection changed as a result of the
+         call`]
+			]
+		]],
+		[/* method */ 'removeFirstOccurrence(java.lang.Object)', [
+			[/* method description */
+				[/* text */ 't', `Removes the first occurrence of the specified element in this
+ deque (when traversing the deque from head to tail).
+ If the deque does not contain the element, it is unchanged.
+ More formally, removes the first element `],
+				[/* inline code block */ 'i', `e`],
+				[/* text */ 't', ` such that
+ `],
+				[/* inline code block */ 'i', `o.equals(e)`],
+				[/* text */ 't', ` (if such an element exists).
+ Returns `],
+				[/* inline code block */ 'i', `true`],
+				[/* text */ 't', ` if this deque contained the specified element
+ (or equivalently, if this deque changed as a result of the call).`]
+			],
+			[/* parameters */
+				[/* parameter */ 'o', [/* parameter description */
+					[/* text */ 't', `element to be removed from this deque, if present`]
+				]]
+			],
+			/* throws */ UDF,
+			[/* return description */
+				[/* inline code block */ 'i', `true`],
+				[/* text */ 't', ` if the deque contained the specified element`]
+			]
+		]],
+		[/* method */ 'removeIf(java.util.function.Predicate)', [
+			[/* method description */
+				[/* block */ 'b', `Removes all of the elements of this collection that satisfy the given
+ predicate.  Errors or runtime exceptions thrown during iteration or by
+ the predicate are relayed to the caller.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'filter', [/* parameter description */
+					[/* text */ 't', `a predicate which returns `],
+					[/* inline code block */ 'i', `true`],
+					[/* text */ 't', ` for elements to be
+        removed`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
+					[/* text */ 't', `if the specified filter is null`]
+				]]
+			],
+			[/* return description */
+				[/* inline code block */ 'i', `true`],
+				[/* text */ 't', ` if any elements were removed`]
+			]
+		]],
+		[/* method */ 'removeLastOccurrence(java.lang.Object)', [
+			[/* method description */
+				[/* text */ 't', `Removes the last occurrence of the specified element in this
+ deque (when traversing the deque from head to tail).
+ If the deque does not contain the element, it is unchanged.
+ More formally, removes the last element `],
+				[/* inline code block */ 'i', `e`],
+				[/* text */ 't', ` such that
+ `],
+				[/* inline code block */ 'i', `o.equals(e)`],
+				[/* text */ 't', ` (if such an element exists).
+ Returns `],
+				[/* inline code block */ 'i', `true`],
+				[/* text */ 't', ` if this deque contained the specified element
+ (or equivalently, if this deque changed as a result of the call).`]
+			],
+			[/* parameters */
+				[/* parameter */ 'o', [/* parameter description */
+					[/* text */ 't', `element to be removed from this deque, if present`]
+				]]
+			],
+			/* throws */ UDF,
+			[/* return description */
+				[/* inline code block */ 'i', `true`],
+				[/* text */ 't', ` if the deque contained the specified element`]
+			]
+		]],
+		[/* method */ 'retainAll(java.util.Collection)', [
+			[/* method description */
+				[/* block */ 'b', `Retains only the elements in this collection that are contained in the
+ specified collection (optional operation).  In other words, removes from
+ this collection all of its elements that are not contained in the
+ specified collection.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'c', [/* parameter description */
+					[/* text */ 't', `collection containing elements to be retained in this collection`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
+					[/* text */ 't', `if this collection contains one or more
+         null elements and the specified collection does not permit null
+         elements
+         (`],
+					[/* text */ 't', `optional`],
+					[/* text */ 't', `),
+         or if the specified collection is null`]
+				]]
+			],
+			[/* return description */
+				[/* inline code block */ 'i', `true`],
+				[/* text */ 't', ` if this collection changed as a result of the call`]
+			]
+		]],
+		[/* method */ 'element()', [
+			[/* method description */
+				[/* text */ 't', `Retrieves, but does not remove, the head of the queue represented by
+ this deque.  This method differs from `],
+				[/* reference */ 'r', `#peek()`, `peek`],
+				[/* text */ 't', ` only in
+ that it throws an exception if this deque is empty.
+
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', `This method is equivalent to `],
+					[/* reference */ 'r', `#getFirst()`, `getFirst()`],
+					[/* text */ 't', `.`]
+				]]
+			],
+			/* parameters */ UDF,
+			[/* throws */
+				[/* throw */ 'java.util.NoSuchElementException', [/* throw description */
+					[/* text */ 't', `if this deque is empty`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `the head of the queue represented by this deque`]
+			]
+		]],
+		[/* method */ 'getFirst()', [
+			[/* method description */
+				[/* block */ 'b', [
+					[/* text */ 't', `Retrieves, but does not remove, the first element of this deque.
+
+ This method differs from `],
+					[/* reference */ 'r', `.Deque#peekFirst()`],
+					[/* text */ 't', ` only in that it
+ throws an exception if this deque is empty.`]
+				]]
+			],
+			/* parameters */ UDF,
+			[/* throws */
+				[/* throw */ 'java.util.NoSuchElementException', [/* throw description */
+					[/* text */ 't', `if this deque is empty`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `the head of this deque`]
+			]
+		]],
+		[/* method */ 'getLast()', [
+			[/* method description */
+				[/* block */ 'b', [
+					[/* text */ 't', `Retrieves, but does not remove, the last element of this deque.
+ This method differs from `],
+					[/* reference */ 'r', `.Deque#peekLast()`],
+					[/* text */ 't', ` only in that it
+ throws an exception if this deque is empty.`]
+				]]
+			],
+			/* parameters */ UDF,
+			[/* throws */
+				[/* throw */ 'java.util.NoSuchElementException', [/* throw description */
+					[/* text */ 't', `if this deque is empty`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `the tail of this deque`]
+			]
+		]],
+		[/* method */ 'peek()', [
+			[/* method description */
+				[/* text */ 't', `Retrieves, but does not remove, the head of the queue represented by
+ this deque, or returns `],
+				[/* inline code block */ 'i', `null`],
+				[/* text */ 't', ` if this deque is empty.
+
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', `This method is equivalent to `],
+					[/* reference */ 'r', `#peekFirst()`, `peekFirst()`],
+					[/* text */ 't', `.`]
+				]]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the head of the queue represented by this deque, or
+         `],
+				[/* inline code block */ 'i', `null`],
+				[/* text */ 't', ` if this deque is empty`]
+			]
+		]],
+		[/* method */ 'peekFirst()', [
+			[/* method description */
+				[/* block */ 'b', [
+					[/* text */ 't', `Retrieves, but does not remove, the first element of this deque,
+ or returns `],
+					[/* inline code block */ 'i', `null`],
+					[/* text */ 't', ` if this deque is empty.`]
+				]]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the head of this deque, or `],
+				[/* inline code block */ 'i', `null`],
+				[/* text */ 't', ` if this deque is empty`]
+			]
+		]],
+		[/* method */ 'peekLast()', [
+			[/* method description */
+				[/* block */ 'b', [
+					[/* text */ 't', `Retrieves, but does not remove, the last element of this deque,
+ or returns `],
+					[/* inline code block */ 'i', `null`],
+					[/* text */ 't', ` if this deque is empty.`]
+				]]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the tail of this deque, or `],
+				[/* inline code block */ 'i', `null`],
+				[/* text */ 't', ` if this deque is empty`]
+			]
+		]],
+		[/* method */ 'poll()', [
+			[/* method description */
+				[/* text */ 't', `Retrieves and removes the head of the queue represented by this deque
+ (in other words, the first element of this deque), or returns
+ `],
+				[/* inline code block */ 'i', `null`],
+				[/* text */ 't', ` if this deque is empty.
+
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', `This method is equivalent to `],
+					[/* reference */ 'r', `#pollFirst()`, `pollFirst()`],
+					[/* text */ 't', `.`]
+				]]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the head of the queue represented by this deque, or
+         `],
+				[/* inline code block */ 'i', `null`],
+				[/* text */ 't', ` if this deque is empty`]
+			]
+		]],
+		[/* method */ 'pollFirst()', [
+			[/* method description */
+				[/* block */ 'b', [
+					[/* text */ 't', `Retrieves and removes the first element of this deque,
+ or returns `],
+					[/* inline code block */ 'i', `null`],
+					[/* text */ 't', ` if this deque is empty.`]
+				]]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the head of this deque, or `],
+				[/* inline code block */ 'i', `null`],
+				[/* text */ 't', ` if this deque is empty`]
+			]
+		]],
+		[/* method */ 'pollLast()', [
+			[/* method description */
+				[/* block */ 'b', [
+					[/* text */ 't', `Retrieves and removes the last element of this deque,
+ or returns `],
+					[/* inline code block */ 'i', `null`],
+					[/* text */ 't', ` if this deque is empty.`]
+				]]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the tail of this deque, or `],
+				[/* inline code block */ 'i', `null`],
+				[/* text */ 't', ` if this deque is empty`]
+			]
+		]],
+		[/* method */ 'pop()', [
+			[/* method description */
+				[/* text */ 't', `Pops an element from the stack represented by this deque.  In other
+ words, removes and returns the first element of this deque.
+
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', `This method is equivalent to `],
+					[/* reference */ 'r', `#removeFirst()`, `removeFirst()`],
+					[/* text */ 't', `.`]
+				]]
+			],
+			/* parameters */ UDF,
+			[/* throws */
+				[/* throw */ 'java.util.NoSuchElementException', [/* throw description */
+					[/* text */ 't', `if this deque is empty`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `the element at the front of this deque (which is the top
+         of the stack represented by this deque)`]
+			]
+		]],
+		[/* method */ 'remove()', [
+			[/* method description */
+				[/* text */ 't', `Retrieves and removes the head of the queue represented by this deque.
+
+ This method differs from `],
+				[/* reference */ 'r', `#poll()`, `poll()`],
+				[/* text */ 't', ` only in that it
+ throws an exception if this deque is empty.
+
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', `This method is equivalent to `],
+					[/* reference */ 'r', `#removeFirst()`, `removeFirst()`],
+					[/* text */ 't', `.`]
+				]]
+			],
+			/* parameters */ UDF,
+			[/* throws */
+				[/* throw */ 'java.util.NoSuchElementException', [/* throw description */
+					[/* text */ 't', `if this deque is empty`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `the head of the queue represented by this deque`]
+			]
+		]],
+		[/* method */ 'removeFirst()', [
+			[/* method description */
+				[/* block */ 'b', [
+					[/* text */ 't', `Retrieves and removes the first element of this deque.  This method
+ differs from `],
+					[/* reference */ 'r', `.Deque#pollFirst()`],
+					[/* text */ 't', ` only in that it throws an
+ exception if this deque is empty.`]
+				]]
+			],
+			/* parameters */ UDF,
+			[/* throws */
+				[/* throw */ 'java.util.NoSuchElementException', [/* throw description */
+					[/* text */ 't', `if this deque is empty`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `the head of this deque`]
+			]
+		]],
+		[/* method */ 'removeLast()', [
+			[/* method description */
+				[/* block */ 'b', [
+					[/* text */ 't', `Retrieves and removes the last element of this deque.  This method
+ differs from `],
+					[/* reference */ 'r', `.Deque#pollLast()`],
+					[/* text */ 't', ` only in that it throws an
+ exception if this deque is empty.`]
+				]]
+			],
+			/* parameters */ UDF,
+			[/* throws */
+				[/* throw */ 'java.util.NoSuchElementException', [/* throw description */
+					[/* text */ 't', `if this deque is empty`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `the tail of this deque`]
+			]
+		]],
+		[/* method */ 'size()', [
+			[/* method description */
+				[/* text */ 't', `Returns the number of elements in this deque.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the number of elements in this deque`]
+			]
+		]],
+		[/* method */ 'toArray()', [
+			[/* method description */
+				[/* text */ 't', `Returns an array containing all of the elements in this deque
+ in proper sequence (from first to last element).
+
+ `],
+				[/* block */ 'b', `The returned array will be "safe" in that no references to it are
+ maintained by this deque.  (In other words, this method must allocate
+ a new array).  The caller is thus free to modify the returned array.
+
+ `],
+				[/* block */ 'b', `This method acts as bridge between array-based and collection-based
+ APIs.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `an array containing all of the elements in this deque`]
+			]
+		]],
+		[/* method */ 'clone()', [
+			[/* method description */
+				[/* text */ 't', `Returns a copy of this deque.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `a copy of this deque`]
+			]
+		]],
+		[/* method */ 'descendingIterator()', [
+			[/* method description */
+				[/* block */ 'b', `Returns an iterator over the elements in this deque in reverse
+ sequential order.  The elements will be returned in order from
+ last (tail) to first (head).`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `an iterator over the elements in this deque in reverse
+ sequence`]
+			]
+		]],
+		[/* method */ 'iterator()', [
+			[/* method description */
+				[/* text */ 't', `Returns an iterator over the elements in this deque.  The elements
+ will be ordered from first (head) to last (tail).  This is the same
+ order that elements would be dequeued (via successive calls to
+ `],
+				[/* reference */ 'r', `#remove()`, `remove()`],
+				[/* text */ 't', ` or popped (via successive calls to `],
+				[/* reference */ 'r', `#pop()`, `pop()`],
+				[/* text */ 't', `).`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `an iterator over the elements in this deque`]
 			]
 		]],
 		[/* method */ 'spliterator()', [
@@ -438,259 +915,6 @@ DocsCollector.collect('java.util.ArrayDeque', [
 				[/* text */ 't', `a `],
 				[/* inline code block */ 'i', `Spliterator`],
 				[/* text */ 't', ` over the elements in this deque`]
-			]
-		]],
-		[/* method */ 'addAll(java.util.Collection)', [
-			[/* method description */
-				[/* text */ 't', `Adds all of the elements in the specified collection at the end
- of this deque, as if by calling `],
-				[/* reference */ 'r', `#addLast(E)`, `addLast(E)`],
-				[/* text */ 't', ` on each one,
- in the order that they are returned by the collection's iterator.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'c', [/* parameter description */
-					[/* text */ 't', `the elements to be inserted into this deque`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
-					[/* text */ 't', `if the specified collection or any
-         of its elements are null`]
-				]]
-			],
-			[/* return description */
-				[/* inline code block */ 'i', `true`],
-				[/* text */ 't', ` if this deque changed as a result of the call`]
-			]
-		]],
-		[/* method */ 'forEach(java.util.function.Consumer)', [
-			[/* method description */
-				[/* block */ 'b', [
-					[/* text */ 't', `Performs the given action for each element of the `],
-					[/* inline code block */ 'i', `Iterable`],
-					[/* text */ 't', `
- until all elements have been processed or the action throws an
- exception.  Actions are performed in the order of iteration, if that
- order is specified.  Exceptions thrown by the action are relayed to the
- caller.
- `],
-					[/* block */ 'b', `
- The behavior of this method is unspecified if the action performs
- side-effects that modify the underlying source of elements, unless an
- overriding class has specified a concurrent modification policy.`]
-				]]
-			],
-			[/* parameters */
-				[/* parameter */ 'action', [/* parameter description */
-					[/* text */ 't', `The action to be performed for each element`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
-					[/* text */ 't', `if the specified action is null`]
-				]]
-			],
-			/* return */ UDF
-		]],
-		[/* method */ 'poll()', [
-			[/* method description */
-				[/* text */ 't', `Retrieves and removes the head of the queue represented by this deque
- (in other words, the first element of this deque), or returns
- `],
-				[/* inline code block */ 'i', `null`],
-				[/* text */ 't', ` if this deque is empty.
-
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', `This method is equivalent to `],
-					[/* reference */ 'r', `#pollFirst()`, `pollFirst()`],
-					[/* text */ 't', `.`]
-				]]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the head of the queue represented by this deque, or
-         `],
-				[/* inline code block */ 'i', `null`],
-				[/* text */ 't', ` if this deque is empty`]
-			]
-		]],
-		[/* method */ 'peek()', [
-			[/* method description */
-				[/* text */ 't', `Retrieves, but does not remove, the head of the queue represented by
- this deque, or returns `],
-				[/* inline code block */ 'i', `null`],
-				[/* text */ 't', ` if this deque is empty.
-
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', `This method is equivalent to `],
-					[/* reference */ 'r', `#peekFirst()`, `peekFirst()`],
-					[/* text */ 't', `.`]
-				]]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the head of the queue represented by this deque, or
-         `],
-				[/* inline code block */ 'i', `null`],
-				[/* text */ 't', ` if this deque is empty`]
-			]
-		]],
-		[/* method */ 'removeIf(java.util.function.Predicate)', [
-			[/* method description */
-				[/* block */ 'b', `Removes all of the elements of this collection that satisfy the given
- predicate.  Errors or runtime exceptions thrown during iteration or by
- the predicate are relayed to the caller.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'filter', [/* parameter description */
-					[/* text */ 't', `a predicate which returns `],
-					[/* inline code block */ 'i', `true`],
-					[/* text */ 't', ` for elements to be
-        removed`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
-					[/* text */ 't', `if the specified filter is null`]
-				]]
-			],
-			[/* return description */
-				[/* inline code block */ 'i', `true`],
-				[/* text */ 't', ` if any elements were removed`]
-			]
-		]],
-		[/* method */ 'element()', [
-			[/* method description */
-				[/* text */ 't', `Retrieves, but does not remove, the head of the queue represented by
- this deque.  This method differs from `],
-				[/* reference */ 'r', `#peek()`, `peek`],
-				[/* text */ 't', ` only in
- that it throws an exception if this deque is empty.
-
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', `This method is equivalent to `],
-					[/* reference */ 'r', `#getFirst()`, `getFirst()`],
-					[/* text */ 't', `.`]
-				]]
-			],
-			/* parameters */ UDF,
-			[/* throws */
-				[/* throw */ 'java.util.NoSuchElementException', [/* throw description */
-					[/* text */ 't', `if this deque is empty`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `the head of the queue represented by this deque`]
-			]
-		]],
-		[/* method */ 'removeAll(java.util.Collection)', [
-			[/* method description */
-				[/* block */ 'b', `Removes all of this collection's elements that are also contained in the
- specified collection (optional operation).  After this call returns,
- this collection will contain no elements in common with the specified
- collection.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'c', [/* parameter description */
-					[/* text */ 't', `collection containing elements to be removed from this collection`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
-					[/* text */ 't', `if this collection contains one or more
-         null elements and the specified collection does not support
-         null elements
-         (`],
-					[/* text */ 't', `optional`],
-					[/* text */ 't', `),
-         or if the specified collection is null`]
-				]]
-			],
-			[/* return description */
-				[/* inline code block */ 'i', `true`],
-				[/* text */ 't', ` if this collection changed as a result of the
-         call`]
-			]
-		]],
-		[/* method */ 'retainAll(java.util.Collection)', [
-			[/* method description */
-				[/* block */ 'b', `Retains only the elements in this collection that are contained in the
- specified collection (optional operation).  In other words, removes from
- this collection all of its elements that are not contained in the
- specified collection.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'c', [/* parameter description */
-					[/* text */ 't', `collection containing elements to be retained in this collection`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
-					[/* text */ 't', `if this collection contains one or more
-         null elements and the specified collection does not permit null
-         elements
-         (`],
-					[/* text */ 't', `optional`],
-					[/* text */ 't', `),
-         or if the specified collection is null`]
-				]]
-			],
-			[/* return description */
-				[/* inline code block */ 'i', `true`],
-				[/* text */ 't', ` if this collection changed as a result of the call`]
-			]
-		]],
-		[/* method */ 'push(java.lang.Object)', [
-			[/* method description */
-				[/* text */ 't', `Pushes an element onto the stack represented by this deque.  In other
- words, inserts the element at the front of this deque.
-
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', `This method is equivalent to `],
-					[/* reference */ 'r', `#addFirst(E)`, `addFirst(E)`],
-					[/* text */ 't', `.`]
-				]]
-			],
-			[/* parameters */
-				[/* parameter */ 'e', [/* parameter description */
-					[/* text */ 't', `the element to push`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
-					[/* text */ 't', `if the specified element is null`]
-				]]
-			],
-			/* return */ UDF
-		]],
-		[/* method */ 'pop()', [
-			[/* method description */
-				[/* text */ 't', `Pops an element from the stack represented by this deque.  In other
- words, removes and returns the first element of this deque.
-
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', `This method is equivalent to `],
-					[/* reference */ 'r', `#removeFirst()`, `removeFirst()`],
-					[/* text */ 't', `.`]
-				]]
-			],
-			/* parameters */ UDF,
-			[/* throws */
-				[/* throw */ 'java.util.NoSuchElementException', [/* throw description */
-					[/* text */ 't', `if this deque is empty`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `the element at the front of this deque (which is the top
-         of the stack represented by this deque)`]
 			]
 		]],
 		[/* method */ 'addFirst(java.lang.Object)', [
@@ -732,265 +956,59 @@ DocsCollector.collect('java.util.ArrayDeque', [
 			],
 			/* return */ UDF
 		]],
-		[/* method */ 'pollFirst()', [
+		[/* method */ 'clear()', [
 			[/* method description */
-				[/* block */ 'b', [
-					[/* text */ 't', `Retrieves and removes the first element of this deque,
- or returns `],
-					[/* inline code block */ 'i', `null`],
-					[/* text */ 't', ` if this deque is empty.`]
-				]]
+				[/* text */ 't', `Removes all of the elements from this deque.
+ The deque will be empty after this call returns.`]
 			],
 			/* parameters */ UDF,
 			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the head of this deque, or `],
-				[/* inline code block */ 'i', `null`],
-				[/* text */ 't', ` if this deque is empty`]
-			]
+			/* return */ UDF
 		]],
-		[/* method */ 'pollLast()', [
+		[/* method */ 'forEach(java.util.function.Consumer)', [
 			[/* method description */
 				[/* block */ 'b', [
-					[/* text */ 't', `Retrieves and removes the last element of this deque,
- or returns `],
-					[/* inline code block */ 'i', `null`],
-					[/* text */ 't', ` if this deque is empty.`]
+					[/* text */ 't', `Performs the given action for each element of the `],
+					[/* inline code block */ 'i', `Iterable`],
+					[/* text */ 't', `
+ until all elements have been processed or the action throws an
+ exception.  Actions are performed in the order of iteration, if that
+ order is specified.  Exceptions thrown by the action are relayed to the
+ caller.
+ `],
+					[/* block */ 'b', `
+ The behavior of this method is unspecified if the action performs
+ side-effects that modify the underlying source of elements, unless an
+ overriding class has specified a concurrent modification policy.`]
 				]]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the tail of this deque, or `],
-				[/* inline code block */ 'i', `null`],
-				[/* text */ 't', ` if this deque is empty`]
-			]
-		]],
-		[/* method */ 'offerLast(java.lang.Object)', [
-			[/* method description */
-				[/* text */ 't', `Inserts the specified element at the end of this deque.`]
 			],
 			[/* parameters */
-				[/* parameter */ 'e', [/* parameter description */
-					[/* text */ 't', `the element to add`]
+				[/* parameter */ 'action', [/* parameter description */
+					[/* text */ 't', `The action to be performed for each element`]
 				]]
 			],
 			[/* throws */
 				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
-					[/* text */ 't', `if the specified element is null`]
+					[/* text */ 't', `if the specified action is null`]
 				]]
 			],
-			[/* return description */
-				[/* inline code block */ 'i', `true`],
-				[/* text */ 't', ` (as specified by `],
-				[/* reference */ 'r', `.Deque#offerLast(E)`],
-				[/* text */ 't', `)`]
-			]
+			/* return */ UDF
 		]],
-		[/* method */ 'removeFirst()', [
+		[/* method */ 'push(java.lang.Object)', [
 			[/* method description */
-				[/* block */ 'b', [
-					[/* text */ 't', `Retrieves and removes the first element of this deque.  This method
- differs from `],
-					[/* reference */ 'r', `.Deque#pollFirst()`],
-					[/* text */ 't', ` only in that it throws an
- exception if this deque is empty.`]
-				]]
-			],
-			/* parameters */ UDF,
-			[/* throws */
-				[/* throw */ 'java.util.NoSuchElementException', [/* throw description */
-					[/* text */ 't', `if this deque is empty`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `the head of this deque`]
-			]
-		]],
-		[/* method */ 'getFirst()', [
-			[/* method description */
-				[/* block */ 'b', [
-					[/* text */ 't', `Retrieves, but does not remove, the first element of this deque.
-
- This method differs from `],
-					[/* reference */ 'r', `.Deque#peekFirst()`],
-					[/* text */ 't', ` only in that it
- throws an exception if this deque is empty.`]
-				]]
-			],
-			/* parameters */ UDF,
-			[/* throws */
-				[/* throw */ 'java.util.NoSuchElementException', [/* throw description */
-					[/* text */ 't', `if this deque is empty`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `the head of this deque`]
-			]
-		]],
-		[/* method */ 'peekFirst()', [
-			[/* method description */
-				[/* block */ 'b', [
-					[/* text */ 't', `Retrieves, but does not remove, the first element of this deque,
- or returns `],
-					[/* inline code block */ 'i', `null`],
-					[/* text */ 't', ` if this deque is empty.`]
-				]]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the head of this deque, or `],
-				[/* inline code block */ 'i', `null`],
-				[/* text */ 't', ` if this deque is empty`]
-			]
-		]],
-		[/* method */ 'removeFirstOccurrence(java.lang.Object)', [
-			[/* method description */
-				[/* text */ 't', `Removes the first occurrence of the specified element in this
- deque (when traversing the deque from head to tail).
- If the deque does not contain the element, it is unchanged.
- More formally, removes the first element `],
-				[/* inline code block */ 'i', `e`],
-				[/* text */ 't', ` such that
- `],
-				[/* inline code block */ 'i', `o.equals(e)`],
-				[/* text */ 't', ` (if such an element exists).
- Returns `],
-				[/* inline code block */ 'i', `true`],
-				[/* text */ 't', ` if this deque contained the specified element
- (or equivalently, if this deque changed as a result of the call).`]
-			],
-			[/* parameters */
-				[/* parameter */ 'o', [/* parameter description */
-					[/* text */ 't', `element to be removed from this deque, if present`]
-				]]
-			],
-			/* throws */ UDF,
-			[/* return description */
-				[/* inline code block */ 'i', `true`],
-				[/* text */ 't', ` if the deque contained the specified element`]
-			]
-		]],
-		[/* method */ 'offerFirst(java.lang.Object)', [
-			[/* method description */
-				[/* text */ 't', `Inserts the specified element at the front of this deque.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'e', [/* parameter description */
-					[/* text */ 't', `the element to add`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
-					[/* text */ 't', `if the specified element is null`]
-				]]
-			],
-			[/* return description */
-				[/* inline code block */ 'i', `true`],
-				[/* text */ 't', ` (as specified by `],
-				[/* reference */ 'r', `.Deque#offerFirst(E)`],
-				[/* text */ 't', `)`]
-			]
-		]],
-		[/* method */ 'removeLast()', [
-			[/* method description */
-				[/* block */ 'b', [
-					[/* text */ 't', `Retrieves and removes the last element of this deque.  This method
- differs from `],
-					[/* reference */ 'r', `.Deque#pollLast()`],
-					[/* text */ 't', ` only in that it throws an
- exception if this deque is empty.`]
-				]]
-			],
-			/* parameters */ UDF,
-			[/* throws */
-				[/* throw */ 'java.util.NoSuchElementException', [/* throw description */
-					[/* text */ 't', `if this deque is empty`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `the tail of this deque`]
-			]
-		]],
-		[/* method */ 'getLast()', [
-			[/* method description */
-				[/* block */ 'b', [
-					[/* text */ 't', `Retrieves, but does not remove, the last element of this deque.
- This method differs from `],
-					[/* reference */ 'r', `.Deque#peekLast()`],
-					[/* text */ 't', ` only in that it
- throws an exception if this deque is empty.`]
-				]]
-			],
-			/* parameters */ UDF,
-			[/* throws */
-				[/* throw */ 'java.util.NoSuchElementException', [/* throw description */
-					[/* text */ 't', `if this deque is empty`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `the tail of this deque`]
-			]
-		]],
-		[/* method */ 'peekLast()', [
-			[/* method description */
-				[/* block */ 'b', [
-					[/* text */ 't', `Retrieves, but does not remove, the last element of this deque,
- or returns `],
-					[/* inline code block */ 'i', `null`],
-					[/* text */ 't', ` if this deque is empty.`]
-				]]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the tail of this deque, or `],
-				[/* inline code block */ 'i', `null`],
-				[/* text */ 't', ` if this deque is empty`]
-			]
-		]],
-		[/* method */ 'removeLastOccurrence(java.lang.Object)', [
-			[/* method description */
-				[/* text */ 't', `Removes the last occurrence of the specified element in this
- deque (when traversing the deque from head to tail).
- If the deque does not contain the element, it is unchanged.
- More formally, removes the last element `],
-				[/* inline code block */ 'i', `e`],
-				[/* text */ 't', ` such that
- `],
-				[/* inline code block */ 'i', `o.equals(e)`],
-				[/* text */ 't', ` (if such an element exists).
- Returns `],
-				[/* inline code block */ 'i', `true`],
-				[/* text */ 't', ` if this deque contained the specified element
- (or equivalently, if this deque changed as a result of the call).`]
-			],
-			[/* parameters */
-				[/* parameter */ 'o', [/* parameter description */
-					[/* text */ 't', `element to be removed from this deque, if present`]
-				]]
-			],
-			/* throws */ UDF,
-			[/* return description */
-				[/* inline code block */ 'i', `true`],
-				[/* text */ 't', ` if the deque contained the specified element`]
-			]
-		]],
-		[/* method */ 'offer(java.lang.Object)', [
-			[/* method description */
-				[/* text */ 't', `Inserts the specified element at the end of this deque.
+				[/* text */ 't', `Pushes an element onto the stack represented by this deque.  In other
+ words, inserts the element at the front of this deque.
 
  `],
 				[/* block */ 'b', [
 					[/* text */ 't', `This method is equivalent to `],
-					[/* reference */ 'r', `#offerLast(E)`, `offerLast(E)`],
+					[/* reference */ 'r', `#addFirst(E)`, `addFirst(E)`],
 					[/* text */ 't', `.`]
 				]]
 			],
 			[/* parameters */
 				[/* parameter */ 'e', [/* parameter description */
-					[/* text */ 't', `the element to add`]
+					[/* text */ 't', `the element to push`]
 				]]
 			],
 			[/* throws */
@@ -998,25 +1016,7 @@ DocsCollector.collect('java.util.ArrayDeque', [
 					[/* text */ 't', `if the specified element is null`]
 				]]
 			],
-			[/* return description */
-				[/* inline code block */ 'i', `true`],
-				[/* text */ 't', ` (as specified by `],
-				[/* reference */ 'r', `.Queue#offer(E)`],
-				[/* text */ 't', `)`]
-			]
-		]],
-		[/* method */ 'descendingIterator()', [
-			[/* method description */
-				[/* block */ 'b', `Returns an iterator over the elements in this deque in reverse
- sequential order.  The elements will be returned in order from
- last (tail) to first (head).`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `an iterator over the elements in this deque in reverse
- sequence`]
-			]
+			/* return */ UDF
 		]]
 	],
 ]);

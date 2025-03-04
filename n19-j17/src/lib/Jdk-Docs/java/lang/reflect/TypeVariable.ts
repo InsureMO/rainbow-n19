@@ -24,14 +24,34 @@ DocsCollector.collect('java.lang.reflect.TypeVariable', [
 	/* fields */ UDF,
 	/* constructors */ UDF,
 	[/* methods */
-		[/* method */ 'getName()', [
+		[/* method */ 'getGenericDeclaration()', [
 			[/* method description */
-				[/* text */ 't', `Returns the name of this type variable, as it occurs in the source code.`]
+				[/* text */ 't', `Returns the `],
+				[/* inline code block */ 'i', `GenericDeclaration`],
+				[/* text */ 't', ` object representing the
+ generic declaration declared for this type variable.`]
 			],
 			/* parameters */ UDF,
 			/* throws */ UDF,
 			[/* return description */
-				[/* text */ 't', `the name of this type variable, as it appears in the source code`]
+				[/* text */ 't', `the generic declaration declared for this type variable.`]
+			]
+		]],
+		[/* method */ 'getAnnotatedBounds()', [
+			[/* method description */
+				[/* text */ 't', `Returns an array of AnnotatedType objects that represent the use of
+ types to denote the upper bounds of the type parameter represented by
+ this TypeVariable. The order of the objects in the array corresponds to
+ the order of the bounds in the declaration of the type parameter. Note that
+ if no upper bound is explicitly declared, the upper bound is unannotated
+ `],
+				[/* inline code block */ 'i', `Object`],
+				[/* text */ 't', `.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `an array of objects representing the upper bound(s) of the type variable`]
 			]
 		]],
 		[/* method */ 'getBounds()', [
@@ -78,34 +98,14 @@ DocsCollector.collect('java.lang.reflect.TypeVariable', [
      bound(s) of this type variable`]
 			]
 		]],
-		[/* method */ 'getGenericDeclaration()', [
+		[/* method */ 'getName()', [
 			[/* method description */
-				[/* text */ 't', `Returns the `],
-				[/* inline code block */ 'i', `GenericDeclaration`],
-				[/* text */ 't', ` object representing the
- generic declaration declared for this type variable.`]
+				[/* text */ 't', `Returns the name of this type variable, as it occurs in the source code.`]
 			],
 			/* parameters */ UDF,
 			/* throws */ UDF,
 			[/* return description */
-				[/* text */ 't', `the generic declaration declared for this type variable.`]
-			]
-		]],
-		[/* method */ 'getAnnotatedBounds()', [
-			[/* method description */
-				[/* text */ 't', `Returns an array of AnnotatedType objects that represent the use of
- types to denote the upper bounds of the type parameter represented by
- this TypeVariable. The order of the objects in the array corresponds to
- the order of the bounds in the declaration of the type parameter. Note that
- if no upper bound is explicitly declared, the upper bound is unannotated
- `],
-				[/* inline code block */ 'i', `Object`],
-				[/* text */ 't', `.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `an array of objects representing the upper bound(s) of the type variable`]
+				[/* text */ 't', `the name of this type variable, as it appears in the source code`]
 			]
 		]]
 	],

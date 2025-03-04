@@ -99,6 +99,16 @@ DocsCollector.collect('java.util.HashSet', [
 	],
 	/* fields */ UDF,
 	[/* constructors */
+		[/* constructor */ '<init>()', [
+			[/* constructor description */
+				[/* text */ 't', `Constructs a new, empty set; the backing `],
+				[/* inline code block */ 'i', `HashMap`],
+				[/* text */ 't', ` instance has
+ default initial capacity (16) and load factor (0.75).`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF
+		]],
 		[/* constructor */ '<init>(int)', [
 			[/* constructor description */
 				[/* text */ 't', `Constructs a new, empty set; the backing `],
@@ -159,120 +169,9 @@ DocsCollector.collect('java.util.HashSet', [
 					[/* text */ 't', `if the specified collection is null`]
 				]]
 			]
-		]],
-		[/* constructor */ '<init>()', [
-			[/* constructor description */
-				[/* text */ 't', `Constructs a new, empty set; the backing `],
-				[/* inline code block */ 'i', `HashMap`],
-				[/* text */ 't', ` instance has
- default initial capacity (16) and load factor (0.75).`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF
 		]]
 	],
 	[/* methods */
-		[/* method */ 'add(java.lang.Object)', [
-			[/* method description */
-				[/* text */ 't', `Adds the specified element to this set if it is not already present.
- More formally, adds the specified element `],
-				[/* inline code block */ 'i', `e`],
-				[/* text */ 't', ` to this set if
- this set contains no element `],
-				[/* inline code block */ 'i', `e2`],
-				[/* text */ 't', ` such that
- `],
-				[/* inline code block */ 'i', `Objects.equals(e, e2)`],
-				[/* text */ 't', `.
- If this set already contains the element, the call leaves the set
- unchanged and returns `],
-				[/* inline code block */ 'i', `false`],
-				[/* text */ 't', `.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'e', [/* parameter description */
-					[/* text */ 't', `element to be added to this set`]
-				]]
-			],
-			/* throws */ UDF,
-			[/* return description */
-				[/* inline code block */ 'i', `true`],
-				[/* text */ 't', ` if this set did not already contain the specified
- element`]
-			]
-		]],
-		[/* method */ 'remove(java.lang.Object)', [
-			[/* method description */
-				[/* text */ 't', `Removes the specified element from this set if it is present.
- More formally, removes an element `],
-				[/* inline code block */ 'i', `e`],
-				[/* text */ 't', ` such that
- `],
-				[/* inline code block */ 'i', `Objects.equals(o, e)`],
-				[/* text */ 't', `,
- if this set contains such an element.  Returns `],
-				[/* inline code block */ 'i', `true`],
-				[/* text */ 't', ` if
- this set contained the element (or equivalently, if this set
- changed as a result of the call).  (This set will not contain the
- element once the call returns.)`]
-			],
-			[/* parameters */
-				[/* parameter */ 'o', [/* parameter description */
-					[/* text */ 't', `object to be removed from this set, if present`]
-				]]
-			],
-			/* throws */ UDF,
-			[/* return description */
-				[/* inline code block */ 'i', `true`],
-				[/* text */ 't', ` if the set contained the specified element`]
-			]
-		]],
-		[/* method */ 'clone()', [
-			[/* method description */
-				[/* text */ 't', `Returns a shallow copy of this `],
-				[/* inline code block */ 'i', `HashSet`],
-				[/* text */ 't', ` instance: the elements
- themselves are not cloned.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `a shallow copy of this set`]
-			]
-		]],
-		[/* method */ 'clear()', [
-			[/* method description */
-				[/* text */ 't', `Removes all of the elements from this set.
- The set will be empty after this call returns.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			/* return */ UDF
-		]],
-		[/* method */ 'isEmpty()', [
-			[/* method description */
-				[/* text */ 't', `Returns `],
-				[/* inline code block */ 'i', `true`],
-				[/* text */ 't', ` if this set contains no elements.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* inline code block */ 'i', `true`],
-				[/* text */ 't', ` if this set contains no elements`]
-			]
-		]],
-		[/* method */ 'size()', [
-			[/* method description */
-				[/* text */ 't', `Returns the number of elements in this set (its cardinality).`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the number of elements in this set (its cardinality)`]
-			]
-		]],
 		[/* method */ 'toArray(java.lang.Object[])', [
 			[/* method description */
 				[/* block */ 'b', [
@@ -316,6 +215,124 @@ DocsCollector.collect('java.util.HashSet', [
 				[/* text */ 't', `an array containing all of the elements in this collection`]
 			]
 		]],
+		[/* method */ 'add(java.lang.Object)', [
+			[/* method description */
+				[/* text */ 't', `Adds the specified element to this set if it is not already present.
+ More formally, adds the specified element `],
+				[/* inline code block */ 'i', `e`],
+				[/* text */ 't', ` to this set if
+ this set contains no element `],
+				[/* inline code block */ 'i', `e2`],
+				[/* text */ 't', ` such that
+ `],
+				[/* inline code block */ 'i', `Objects.equals(e, e2)`],
+				[/* text */ 't', `.
+ If this set already contains the element, the call leaves the set
+ unchanged and returns `],
+				[/* inline code block */ 'i', `false`],
+				[/* text */ 't', `.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'e', [/* parameter description */
+					[/* text */ 't', `element to be added to this set`]
+				]]
+			],
+			/* throws */ UDF,
+			[/* return description */
+				[/* inline code block */ 'i', `true`],
+				[/* text */ 't', ` if this set did not already contain the specified
+ element`]
+			]
+		]],
+		[/* method */ 'contains(java.lang.Object)', [
+			[/* method description */
+				[/* text */ 't', `Returns `],
+				[/* inline code block */ 'i', `true`],
+				[/* text */ 't', ` if this set contains the specified element.
+ More formally, returns `],
+				[/* inline code block */ 'i', `true`],
+				[/* text */ 't', ` if and only if this set
+ contains an element `],
+				[/* inline code block */ 'i', `e`],
+				[/* text */ 't', ` such that
+ `],
+				[/* inline code block */ 'i', `Objects.equals(o, e)`],
+				[/* text */ 't', `.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'o', [/* parameter description */
+					[/* text */ 't', `element whose presence in this set is to be tested`]
+				]]
+			],
+			/* throws */ UDF,
+			[/* return description */
+				[/* inline code block */ 'i', `true`],
+				[/* text */ 't', ` if this set contains the specified element`]
+			]
+		]],
+		[/* method */ 'isEmpty()', [
+			[/* method description */
+				[/* text */ 't', `Returns `],
+				[/* inline code block */ 'i', `true`],
+				[/* text */ 't', ` if this set contains no elements.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* inline code block */ 'i', `true`],
+				[/* text */ 't', ` if this set contains no elements`]
+			]
+		]],
+		[/* method */ 'remove(java.lang.Object)', [
+			[/* method description */
+				[/* text */ 't', `Removes the specified element from this set if it is present.
+ More formally, removes an element `],
+				[/* inline code block */ 'i', `e`],
+				[/* text */ 't', ` such that
+ `],
+				[/* inline code block */ 'i', `Objects.equals(o, e)`],
+				[/* text */ 't', `,
+ if this set contains such an element.  Returns `],
+				[/* inline code block */ 'i', `true`],
+				[/* text */ 't', ` if
+ this set contained the element (or equivalently, if this set
+ changed as a result of the call).  (This set will not contain the
+ element once the call returns.)`]
+			],
+			[/* parameters */
+				[/* parameter */ 'o', [/* parameter description */
+					[/* text */ 't', `object to be removed from this set, if present`]
+				]]
+			],
+			/* throws */ UDF,
+			[/* return description */
+				[/* inline code block */ 'i', `true`],
+				[/* text */ 't', ` if the set contained the specified element`]
+			]
+		]],
+		[/* method */ 'size()', [
+			[/* method description */
+				[/* text */ 't', `Returns the number of elements in this set (its cardinality).`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the number of elements in this set (its cardinality)`]
+			]
+		]],
+		[/* method */ 'clone()', [
+			[/* method description */
+				[/* text */ 't', `Returns a shallow copy of this `],
+				[/* inline code block */ 'i', `HashSet`],
+				[/* text */ 't', ` instance: the elements
+ themselves are not cloned.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `a shallow copy of this set`]
+			]
+		]],
 		[/* method */ 'toArray()', [
 			[/* method description */
 				[/* block */ 'b', [
@@ -356,32 +373,6 @@ DocsCollector.collect('java.util.HashSet', [
 				[/* text */ 't', `an Iterator over the elements in this set`]
 			]
 		]],
-		[/* method */ 'contains(java.lang.Object)', [
-			[/* method description */
-				[/* text */ 't', `Returns `],
-				[/* inline code block */ 'i', `true`],
-				[/* text */ 't', ` if this set contains the specified element.
- More formally, returns `],
-				[/* inline code block */ 'i', `true`],
-				[/* text */ 't', ` if and only if this set
- contains an element `],
-				[/* inline code block */ 'i', `e`],
-				[/* text */ 't', ` such that
- `],
-				[/* inline code block */ 'i', `Objects.equals(o, e)`],
-				[/* text */ 't', `.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'o', [/* parameter description */
-					[/* text */ 't', `element whose presence in this set is to be tested`]
-				]]
-			],
-			/* throws */ UDF,
-			[/* return description */
-				[/* inline code block */ 'i', `true`],
-				[/* text */ 't', ` if this set contains the specified element`]
-			]
-		]],
 		[/* method */ 'spliterator()', [
 			[/* method description */
 				[/* text */ 't', `Creates a `],
@@ -413,6 +404,15 @@ DocsCollector.collect('java.util.HashSet', [
 				[/* inline code block */ 'i', `Spliterator`],
 				[/* text */ 't', ` over the elements in this set`]
 			]
+		]],
+		[/* method */ 'clear()', [
+			[/* method description */
+				[/* text */ 't', `Removes all of the elements from this set.
+ The set will be empty after this call returns.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			/* return */ UDF
 		]]
 	],
 ]);

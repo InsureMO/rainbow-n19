@@ -182,16 +182,6 @@ DocsCollector.collect('java.lang.invoke.MethodType', [
 	/* fields */ UDF,
 	/* constructors */ UDF,
 	[/* methods */
-		[/* method */ 'returnType()', [
-			[/* method description */
-				[/* text */ 't', `Returns the return type of this method type.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the return type`]
-			]
-		]],
 		[/* method */ 'equals(java.lang.Object)', [
 			[/* method description */
 				[/* text */ 't', `Compares the specified object with this type for equality.
@@ -214,28 +204,34 @@ DocsCollector.collect('java.lang.invoke.MethodType', [
 				[/* text */ 't', ` otherwise.`]
 			]
 		]],
-		[/* method */ 'toString()', [
+		[/* method */ 'hasPrimitives()', [
 			[/* method description */
-				[/* text */ 't', `Returns a string representation of the method type,
- of the form `],
-				[/* inline code block */ 'i', `"(PT0,PT1...)RT"`],
-				[/* text */ 't', `.
- The string representation of a method type is a
- parenthesis enclosed, comma separated list of type names,
- followed immediately by the return type.
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', `
- Each type is represented by its
- `],
-					[/* reference */ 'r', `java.Class#getSimpleName()`],
-					[/* text */ 't', `.`]
-				]]
+				[/* text */ 't', `Reports if this type contains a primitive argument or return value.
+ The return type `],
+				[/* inline code block */ 'i', `void`],
+				[/* text */ 't', ` counts as a primitive.`]
 			],
 			/* parameters */ UDF,
 			/* throws */ UDF,
 			[/* return description */
-				[/* text */ 't', `a string representation of the object.`]
+				[/* text */ 't', `true if any of the types are primitives`]
+			]
+		]],
+		[/* method */ 'hasWrappers()', [
+			[/* method description */
+				[/* text */ 't', `Reports if this type contains a wrapper argument or return value.
+ Wrappers are types which box primitive values, such as `],
+				[/* reference */ 'r', `java.lang.Integer`],
+				[/* text */ 't', `.
+ The reference type `],
+				[/* inline code block */ 'i', `java.lang.Void`],
+				[/* text */ 't', ` counts as a wrapper,
+ if it occurs as a return type.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `true if any of the types are wrappers`]
 			]
 		]],
 		[/* method */ 'hashCode()', [
@@ -249,6 +245,375 @@ DocsCollector.collect('java.lang.invoke.MethodType', [
 			/* throws */ UDF,
 			[/* return description */
 				[/* text */ 't', `the hash code value for this method type`]
+			]
+		]],
+		[/* method */ 'parameterCount()', [
+			[/* method description */
+				[/* text */ 't', `Returns the number of parameter types in this method type.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the number of parameter types`]
+			]
+		]],
+		[/* method */ 'lastParameterType()', [
+			[/* method description */
+				[/* text */ 't', `Returns the last parameter type of this method type.
+ If this type has no parameters, the sentinel value
+ `],
+				[/* inline code block */ 'i', `void.class`],
+				[/* text */ 't', ` is returned instead.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the last parameter type if any, else `],
+				[/* inline code block */ 'i', `void.class`]
+			]
+		]],
+		[/* method */ 'parameterType(int)', [
+			[/* method description */
+				[/* text */ 't', `Returns the parameter type at the specified index, within this method type.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'num', [/* parameter description */
+					[/* text */ 't', `the index (zero-based) of the desired parameter type`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.lang.IndexOutOfBoundsException', [/* throw description */
+					[/* text */ 't', `if `],
+					[/* inline code block */ 'i', `num`],
+					[/* text */ 't', ` is not a valid index into `],
+					[/* inline code block */ 'i', `parameterArray()`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `the selected parameter type`]
+			]
+		]],
+		[/* method */ 'returnType()', [
+			[/* method description */
+				[/* text */ 't', `Returns the return type of this method type.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the return type`]
+			]
+		]],
+		[/* method */ 'parameterArray()', [
+			[/* method description */
+				[/* text */ 't', `Presents the parameter types as an array (a convenience method).
+ Changes to the array will not result in changes to the type.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the parameter types (as a fresh copy if necessary)`]
+			]
+		]],
+		[/* method */ 'appendParameterTypes(java.lang.Class...)', [
+			[/* method description */
+				[/* text */ 't', `Finds or creates a method type with additional parameter types.
+ Convenience method for `],
+				[/* reference */ 'r', `#methodType(java.lang.Class,java.lang.Class%5B%5D)`, `methodType`],
+				[/* text */ 't', `.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'ptypesToInsert', [/* parameter description */
+					[/* text */ 't', `zero or more new parameter types to insert after the end of the parameter list`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
+					[/* text */ 't', `if any element of `],
+					[/* inline code block */ 'i', `ptypesToInsert`],
+					[/* text */ 't', ` is `],
+					[/* inline code block */ 'i', `void.class`],
+					[/* text */ 't', `
+                                  or if the resulting method type would have more than 255 parameter slots`]
+				]],
+				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
+					[/* text */ 't', `if `],
+					[/* inline code block */ 'i', `ptypesToInsert`],
+					[/* text */ 't', ` or any of its elements is null`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `the same type, except with the selected parameter(s) appended`]
+			]
+		]],
+		[/* method */ 'appendParameterTypes(java.util.List)', [
+			[/* method description */
+				[/* text */ 't', `Finds or creates a method type with additional parameter types.
+ Convenience method for `],
+				[/* reference */ 'r', `#methodType(java.lang.Class,java.lang.Class%5B%5D)`, `methodType`],
+				[/* text */ 't', `.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'ptypesToInsert', [/* parameter description */
+					[/* text */ 't', `zero or more new parameter types to insert after the end of the parameter list`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
+					[/* text */ 't', `if any element of `],
+					[/* inline code block */ 'i', `ptypesToInsert`],
+					[/* text */ 't', ` is `],
+					[/* inline code block */ 'i', `void.class`],
+					[/* text */ 't', `
+                                  or if the resulting method type would have more than 255 parameter slots`]
+				]],
+				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
+					[/* text */ 't', `if `],
+					[/* inline code block */ 'i', `ptypesToInsert`],
+					[/* text */ 't', ` or any of its elements is null`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `the same type, except with the selected parameter(s) appended`]
+			]
+		]],
+		[/* method */ 'changeParameterType(int,java.lang.Class)', [
+			[/* method description */
+				[/* text */ 't', `Finds or creates a method type with a single different parameter type.
+ Convenience method for `],
+				[/* reference */ 'r', `#methodType(java.lang.Class,java.lang.Class%5B%5D)`, `methodType`],
+				[/* text */ 't', `.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'num', [/* parameter description */
+					[/* text */ 't', `the index (zero-based) of the parameter type to change`]
+				]],
+				[/* parameter */ 'nptype', [/* parameter description */
+					[/* text */ 't', `a new parameter type to replace the old one with`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.lang.IndexOutOfBoundsException', [/* throw description */
+					[/* text */ 't', `if `],
+					[/* inline code block */ 'i', `num`],
+					[/* text */ 't', ` is not a valid index into `],
+					[/* inline code block */ 'i', `parameterArray()`]
+				]],
+				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
+					[/* text */ 't', `if `],
+					[/* inline code block */ 'i', `nptype`],
+					[/* text */ 't', ` is `],
+					[/* inline code block */ 'i', `void.class`]
+				]],
+				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
+					[/* text */ 't', `if `],
+					[/* inline code block */ 'i', `nptype`],
+					[/* text */ 't', ` is null`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `the same type, except with the selected parameter changed`]
+			]
+		]],
+		[/* method */ 'changeReturnType(java.lang.Class)', [
+			[/* method description */
+				[/* text */ 't', `Finds or creates a method type with a different return type.
+ Convenience method for `],
+				[/* reference */ 'r', `#methodType(java.lang.Class,java.lang.Class%5B%5D)`, `methodType`],
+				[/* text */ 't', `.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'nrtype', [/* parameter description */
+					[/* text */ 't', `a return parameter type to replace the old one with`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
+					[/* text */ 't', `if `],
+					[/* inline code block */ 'i', `nrtype`],
+					[/* text */ 't', ` is null`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `the same type, except with the return type change`]
+			]
+		]],
+		[/* method */ 'dropParameterTypes(int,int)', [
+			[/* method description */
+				[/* text */ 't', `Finds or creates a method type with some parameter types omitted.
+ Convenience method for `],
+				[/* reference */ 'r', `#methodType(java.lang.Class,java.lang.Class%5B%5D)`, `methodType`],
+				[/* text */ 't', `.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'start', [/* parameter description */
+					[/* text */ 't', `the index (zero-based) of the first parameter type to remove`]
+				]],
+				[/* parameter */ 'end', [/* parameter description */
+					[/* text */ 't', `the index (greater than `],
+					[/* inline code block */ 'i', `start`],
+					[/* text */ 't', `) of the first parameter type after not to remove`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.lang.IndexOutOfBoundsException', [/* throw description */
+					[/* text */ 't', `if `],
+					[/* inline code block */ 'i', `start`],
+					[/* text */ 't', ` is negative or greater than `],
+					[/* inline code block */ 'i', `parameterCount()`],
+					[/* text */ 't', `
+                                  or if `],
+					[/* inline code block */ 'i', `end`],
+					[/* text */ 't', ` is negative or greater than `],
+					[/* inline code block */ 'i', `parameterCount()`],
+					[/* text */ 't', `
+                                  or if `],
+					[/* inline code block */ 'i', `start`],
+					[/* text */ 't', ` is greater than `],
+					[/* inline code block */ 'i', `end`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `the same type, except with the selected parameter(s) removed`]
+			]
+		]],
+		[/* method */ 'erase()', [
+			[/* method description */
+				[/* text */ 't', `Erases all reference types to `],
+				[/* inline code block */ 'i', `Object`],
+				[/* text */ 't', `.
+ Convenience method for `],
+				[/* reference */ 'r', `#methodType(java.lang.Class,java.lang.Class%5B%5D)`, `methodType`],
+				[/* text */ 't', `.
+ All primitive types (including `],
+				[/* inline code block */ 'i', `void`],
+				[/* text */ 't', `) will remain unchanged.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `a version of the original type with all reference types replaced`]
+			]
+		]],
+		[/* method */ 'generic()', [
+			[/* method description */
+				[/* text */ 't', `Converts all types, both reference and primitive, to `],
+				[/* inline code block */ 'i', `Object`],
+				[/* text */ 't', `.
+ Convenience method for `],
+				[/* reference */ 'r', `#genericMethodType(int)`, `genericMethodType`],
+				[/* text */ 't', `.
+ The expression `],
+				[/* inline code block */ 'i', `type.wrap().erase()`],
+				[/* text */ 't', ` produces the same value
+ as `],
+				[/* inline code block */ 'i', `type.generic()`],
+				[/* text */ 't', `.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `a version of the original type with all types replaced`]
+			]
+		]],
+		[/* method */ 'insertParameterTypes(int,java.lang.Class...)', [
+			[/* method description */
+				[/* text */ 't', `Finds or creates a method type with additional parameter types.
+ Convenience method for `],
+				[/* reference */ 'r', `#methodType(java.lang.Class,java.lang.Class%5B%5D)`, `methodType`],
+				[/* text */ 't', `.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'num', [/* parameter description */
+					[/* text */ 't', `the position (zero-based) of the inserted parameter type(s)`]
+				]],
+				[/* parameter */ 'ptypesToInsert', [/* parameter description */
+					[/* text */ 't', `zero or more new parameter types to insert into the parameter list`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.lang.IndexOutOfBoundsException', [/* throw description */
+					[/* text */ 't', `if `],
+					[/* inline code block */ 'i', `num`],
+					[/* text */ 't', ` is negative or greater than `],
+					[/* inline code block */ 'i', `parameterCount()`]
+				]],
+				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
+					[/* text */ 't', `if any element of `],
+					[/* inline code block */ 'i', `ptypesToInsert`],
+					[/* text */ 't', ` is `],
+					[/* inline code block */ 'i', `void.class`],
+					[/* text */ 't', `
+                                  or if the resulting method type would have more than 255 parameter slots`]
+				]],
+				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
+					[/* text */ 't', `if `],
+					[/* inline code block */ 'i', `ptypesToInsert`],
+					[/* text */ 't', ` or any of its elements is null`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `the same type, except with the selected parameter(s) inserted`]
+			]
+		]],
+		[/* method */ 'insertParameterTypes(int,java.util.List)', [
+			[/* method description */
+				[/* text */ 't', `Finds or creates a method type with additional parameter types.
+ Convenience method for `],
+				[/* reference */ 'r', `#methodType(java.lang.Class,java.lang.Class%5B%5D)`, `methodType`],
+				[/* text */ 't', `.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'num', [/* parameter description */
+					[/* text */ 't', `the position (zero-based) of the inserted parameter type(s)`]
+				]],
+				[/* parameter */ 'ptypesToInsert', [/* parameter description */
+					[/* text */ 't', `zero or more new parameter types to insert into the parameter list`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.lang.IndexOutOfBoundsException', [/* throw description */
+					[/* text */ 't', `if `],
+					[/* inline code block */ 'i', `num`],
+					[/* text */ 't', ` is negative or greater than `],
+					[/* inline code block */ 'i', `parameterCount()`]
+				]],
+				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
+					[/* text */ 't', `if any element of `],
+					[/* inline code block */ 'i', `ptypesToInsert`],
+					[/* text */ 't', ` is `],
+					[/* inline code block */ 'i', `void.class`],
+					[/* text */ 't', `
+                                  or if the resulting method type would have more than 255 parameter slots`]
+				]],
+				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
+					[/* text */ 't', `if `],
+					[/* inline code block */ 'i', `ptypesToInsert`],
+					[/* text */ 't', ` or any of its elements is null`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `the same type, except with the selected parameter(s) inserted`]
+			]
+		]],
+		[/* method */ 'unwrap()', [
+			[/* method description */
+				[/* text */ 't', `Converts all wrapper types to their corresponding primitive types.
+ Convenience method for `],
+				[/* reference */ 'r', `#methodType(java.lang.Class,java.lang.Class%5B%5D)`, `methodType`],
+				[/* text */ 't', `.
+ All primitive types (including `],
+				[/* inline code block */ 'i', `void`],
+				[/* text */ 't', `) will remain unchanged.
+ A return type of `],
+				[/* inline code block */ 'i', `java.lang.Void`],
+				[/* text */ 't', ` is changed to `],
+				[/* inline code block */ 'i', `void`],
+				[/* text */ 't', `.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `a version of the original type with all wrapper types replaced`]
 			]
 		]],
 		[/* method */ 'wrap()', [
@@ -274,24 +639,6 @@ DocsCollector.collect('java.lang.invoke.MethodType', [
 			/* throws */ UDF,
 			[/* return description */
 				[/* text */ 't', `a version of the original type with all primitive types replaced`]
-			]
-		]],
-		[/* method */ 'describeConstable()', [
-			[/* method description */
-				[/* text */ 't', `Returns a nominal descriptor for this instance, if one can be
- constructed, or an empty `],
-				[/* reference */ 'r', `java.util.Optional`],
-				[/* text */ 't', ` if one cannot be.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `An `],
-				[/* reference */ 'r', `java.util.Optional`],
-				[/* text */ 't', ` containing the resulting nominal descriptor,
- or an empty `],
-				[/* reference */ 'r', `java.util.Optional`],
-				[/* text */ 't', ` if one cannot be constructed.`]
 			]
 		]],
 		[/* method */ 'descriptorString()', [
@@ -348,128 +695,318 @@ DocsCollector.collect('java.lang.invoke.MethodType', [
 				[/* text */ 't', `the descriptor string for this method type`]
 			]
 		]],
-		[/* method */ 'parameterType(int)', [
+		[/* method */ 'toMethodDescriptorString()', [
 			[/* method description */
-				[/* text */ 't', `Returns the parameter type at the specified index, within this method type.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'num', [/* parameter description */
-					[/* text */ 't', `the index (zero-based) of the desired parameter type`]
+				[/* text */ 't', `Returns a descriptor string for the method type.  This method
+ is equivalent to calling `],
+				[/* reference */ 'r', `#descriptorString()`, `MethodType::descriptorString`],
+				[/* text */ 't', `.
+
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', `
+ Note that this is not a strict inverse of `],
+					[/* reference */ 'r', `#fromMethodDescriptorString(java.lang.String,java.lang.ClassLoader)`, `fromMethodDescriptorString`],
+					[/* text */ 't', `.
+ Two distinct classes which share a common name but have different class loaders
+ will appear identical when viewed within descriptor strings.
+ `]
+				]],
+				[/* block */ 'b', [
+					[/* text */ 't', `
+ This method is included for the benefit of applications that must
+ generate bytecodes that process method handles and `],
+					[/* inline code block */ 'i', `invokedynamic`],
+					[/* text */ 't', `.
+ `],
+					[/* reference */ 'r', `#fromMethodDescriptorString(java.lang.String,java.lang.ClassLoader)`, `fromMethodDescriptorString`],
+					[/* text */ 't', `,
+ because the latter requires a suitable class loader argument.`]
 				]]
 			],
-			[/* throws */
-				[/* throw */ 'java.lang.IndexOutOfBoundsException', [/* throw description */
-					[/* text */ 't', `if `],
-					[/* inline code block */ 'i', `num`],
-					[/* text */ 't', ` is not a valid index into `],
-					[/* inline code block */ 'i', `parameterArray()`]
-				]]
-			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
 			[/* return description */
-				[/* text */ 't', `the selected parameter type`]
+				[/* text */ 't', `the descriptor string for this method type`]
 			]
 		]],
-		[/* method */ 'insertParameterTypes(int,java.util.List)', [
+		[/* method */ 'toString()', [
 			[/* method description */
-				[/* text */ 't', `Finds or creates a method type with additional parameter types.
+				[/* text */ 't', `Returns a string representation of the method type,
+ of the form `],
+				[/* inline code block */ 'i', `"(PT0,PT1...)RT"`],
+				[/* text */ 't', `.
+ The string representation of a method type is a
+ parenthesis enclosed, comma separated list of type names,
+ followed immediately by the return type.
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', `
+ Each type is represented by its
+ `],
+					[/* reference */ 'r', `java.Class#getSimpleName()`],
+					[/* text */ 't', `.`]
+				]]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `a string representation of the object.`]
+			]
+		]],
+		[/* method */ 'parameterList()', [
+			[/* method description */
+				[/* text */ 't', `Presents the parameter types as a list (a convenience method).
+ The list will be immutable.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the parameter types (as an immutable list)`]
+			]
+		]],
+		[/* method */ 'describeConstable()', [
+			[/* method description */
+				[/* text */ 't', `Returns a nominal descriptor for this instance, if one can be
+ constructed, or an empty `],
+				[/* reference */ 'r', `java.util.Optional`],
+				[/* text */ 't', ` if one cannot be.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `An `],
+				[/* reference */ 'r', `java.util.Optional`],
+				[/* text */ 't', ` containing the resulting nominal descriptor,
+ or an empty `],
+				[/* reference */ 'r', `java.util.Optional`],
+				[/* text */ 't', ` if one cannot be constructed.`]
+			]
+		]],
+		[/* method */ 'fromMethodDescriptorString(java.lang.String,java.lang.ClassLoader)', [
+			[/* method description */
+				[/* text */ 't', `Finds or creates an instance of a method type, given the spelling of its bytecode descriptor.
  Convenience method for `],
 				[/* reference */ 'r', `#methodType(java.lang.Class,java.lang.Class%5B%5D)`, `methodType`],
-				[/* text */ 't', `.`]
+				[/* text */ 't', `.
+ Any class or interface name embedded in the descriptor string will be
+ resolved by the given loader (or if it is null, on the system class loader).
+ `],
+				[/* block */ 'b', `
+ Note that it is possible to encounter method types which cannot be
+ constructed by this method, because their component types are
+ not all reachable from a common class loader.
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', `
+ This method is included for the benefit of applications that must
+ generate bytecodes that process method handles and `],
+					[/* inline code block */ 'i', `invokedynamic`],
+					[/* text */ 't', `.`]
+				]]
 			],
 			[/* parameters */
-				[/* parameter */ 'num', [/* parameter description */
-					[/* text */ 't', `the position (zero-based) of the inserted parameter type(s)`]
+				[/* parameter */ 'descriptor', [/* parameter description */
+					[/* text */ 't', `a bytecode-level type descriptor string "(T...)T"`]
 				]],
-				[/* parameter */ 'ptypesToInsert', [/* parameter description */
-					[/* text */ 't', `zero or more new parameter types to insert into the parameter list`]
+				[/* parameter */ 'loader', [/* parameter description */
+					[/* text */ 't', `the class loader in which to look up the types`]
 				]]
 			],
 			[/* throws */
-				[/* throw */ 'java.lang.IndexOutOfBoundsException', [/* throw description */
-					[/* text */ 't', `if `],
-					[/* inline code block */ 'i', `num`],
-					[/* text */ 't', ` is negative or greater than `],
-					[/* inline code block */ 'i', `parameterCount()`]
+				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
+					[/* text */ 't', `if the string is null`]
 				]],
 				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
-					[/* text */ 't', `if any element of `],
-					[/* inline code block */ 'i', `ptypesToInsert`],
-					[/* text */ 't', ` is `],
-					[/* inline code block */ 'i', `void.class`],
-					[/* text */ 't', `
-                                  or if the resulting method type would have more than 255 parameter slots`]
+					[/* text */ 't', `if the string is not well-formed`]
 				]],
-				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
-					[/* text */ 't', `if `],
-					[/* inline code block */ 'i', `ptypesToInsert`],
-					[/* text */ 't', ` or any of its elements is null`]
+				[/* throw */ 'java.lang.TypeNotPresentException', [/* throw description */
+					[/* text */ 't', `if a named type cannot be found`]
+				]],
+				[/* throw */ 'java.lang.SecurityException', [/* throw description */
+					[/* text */ 't', `if the security manager is present and
+         `],
+					[/* inline code block */ 'i', `loader`],
+					[/* text */ 't', ` is `],
+					[/* inline code block */ 'i', `null`],
+					[/* text */ 't', ` and the caller does not have the
+         `],
+					[/* reference */ 'r', `java.lang.RuntimePermission`],
+					[/* inline code block */ 'i', `("getClassLoader")`]
 				]]
 			],
 			[/* return description */
-				[/* text */ 't', `the same type, except with the selected parameter(s) inserted`]
+				[/* text */ 't', `a method type matching the bytecode-level type descriptor`]
 			]
 		]],
-		[/* method */ 'insertParameterTypes(int,java.lang.Class...)', [
+		[/* method */ 'genericMethodType(int)', [
 			[/* method description */
-				[/* text */ 't', `Finds or creates a method type with additional parameter types.
+				[/* text */ 't', `Finds or creates a method type whose components are all `],
+				[/* inline code block */ 'i', `Object`],
+				[/* text */ 't', `.
  Convenience method for `],
 				[/* reference */ 'r', `#methodType(java.lang.Class,java.lang.Class%5B%5D)`, `methodType`],
-				[/* text */ 't', `.`]
+				[/* text */ 't', `.
+ All parameters and the return type will be Object.`]
 			],
 			[/* parameters */
-				[/* parameter */ 'num', [/* parameter description */
-					[/* text */ 't', `the position (zero-based) of the inserted parameter type(s)`]
-				]],
-				[/* parameter */ 'ptypesToInsert', [/* parameter description */
-					[/* text */ 't', `zero or more new parameter types to insert into the parameter list`]
+				[/* parameter */ 'objectArgCount', [/* parameter description */
+					[/* text */ 't', `number of parameters`]
 				]]
 			],
 			[/* throws */
-				[/* throw */ 'java.lang.IndexOutOfBoundsException', [/* throw description */
-					[/* text */ 't', `if `],
-					[/* inline code block */ 'i', `num`],
-					[/* text */ 't', ` is negative or greater than `],
-					[/* inline code block */ 'i', `parameterCount()`]
-				]],
 				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
-					[/* text */ 't', `if any element of `],
-					[/* inline code block */ 'i', `ptypesToInsert`],
-					[/* text */ 't', ` is `],
-					[/* inline code block */ 'i', `void.class`],
-					[/* text */ 't', `
-                                  or if the resulting method type would have more than 255 parameter slots`]
-				]],
-				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
 					[/* text */ 't', `if `],
-					[/* inline code block */ 'i', `ptypesToInsert`],
-					[/* text */ 't', ` or any of its elements is null`]
+					[/* inline code block */ 'i', `objectArgCount`],
+					[/* text */ 't', ` is negative or greater than 255`]
 				]]
 			],
 			[/* return description */
-				[/* text */ 't', `the same type, except with the selected parameter(s) inserted`]
+				[/* text */ 't', `a generally applicable method type, for all calls of the given argument count`]
 			]
 		]],
-		[/* method */ 'changeReturnType(java.lang.Class)', [
+		[/* method */ 'genericMethodType(int,boolean)', [
 			[/* method description */
-				[/* text */ 't', `Finds or creates a method type with a different return type.
+				[/* text */ 't', `Finds or creates a method type whose components are `],
+				[/* inline code block */ 'i', `Object`],
+				[/* text */ 't', ` with an optional trailing `],
+				[/* inline code block */ 'i', `Object[]`],
+				[/* text */ 't', ` array.
  Convenience method for `],
 				[/* reference */ 'r', `#methodType(java.lang.Class,java.lang.Class%5B%5D)`, `methodType`],
+				[/* text */ 't', `.
+ All parameters and the return type will be `],
+				[/* inline code block */ 'i', `Object`],
+				[/* text */ 't', `,
+ except the final array parameter if any, which will be `],
+				[/* inline code block */ 'i', `Object[]`],
 				[/* text */ 't', `.`]
 			],
 			[/* parameters */
-				[/* parameter */ 'nrtype', [/* parameter description */
-					[/* text */ 't', `a return parameter type to replace the old one with`]
+				[/* parameter */ 'objectArgCount', [/* parameter description */
+					[/* text */ 't', `number of parameters (excluding the final array parameter if any)`]
+				]],
+				[/* parameter */ 'finalArray', [/* parameter description */
+					[/* text */ 't', `whether there will be a trailing array parameter, of type `],
+					[/* inline code block */ 'i', `Object[]`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
+					[/* text */ 't', `if `],
+					[/* inline code block */ 'i', `objectArgCount`],
+					[/* text */ 't', ` is negative or greater than 255 (or 254, if `],
+					[/* inline code block */ 'i', `finalArray`],
+					[/* text */ 't', ` is true)`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `a generally applicable method type, for all calls of the given fixed argument count and a collected array of further arguments`]
+			]
+		]],
+		[/* method */ 'methodType(java.lang.Class)', [
+			[/* method description */
+				[/* text */ 't', `Finds or creates a method type with the given components.
+ Convenience method for `],
+				[/* reference */ 'r', `#methodType(java.lang.Class,java.lang.Class%5B%5D)`, `methodType`],
+				[/* text */ 't', `.
+ The resulting method has no parameter types.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'rtype', [/* parameter description */
+					[/* text */ 't', `the return type`]
 				]]
 			],
 			[/* throws */
 				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
 					[/* text */ 't', `if `],
-					[/* inline code block */ 'i', `nrtype`],
+					[/* inline code block */ 'i', `rtype`],
 					[/* text */ 't', ` is null`]
 				]]
 			],
 			[/* return description */
-				[/* text */ 't', `the same type, except with the return type change`]
+				[/* text */ 't', `a method type with the given return value`]
+			]
+		]],
+		[/* method */ 'methodType(java.lang.Class,java.lang.Class)', [
+			[/* method description */
+				[/* text */ 't', `Finds or creates a method type with the given components.
+ Convenience method for `],
+				[/* reference */ 'r', `#methodType(java.lang.Class,java.lang.Class%5B%5D)`, `methodType`],
+				[/* text */ 't', `.
+ The resulting method has the single given parameter type.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'rtype', [/* parameter description */
+					[/* text */ 't', `the return type`]
+				]],
+				[/* parameter */ 'ptype0', [/* parameter description */
+					[/* text */ 't', `the parameter type`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
+					[/* text */ 't', `if `],
+					[/* inline code block */ 'i', `rtype`],
+					[/* text */ 't', ` or `],
+					[/* inline code block */ 'i', `ptype0`],
+					[/* text */ 't', ` is null`]
+				]],
+				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
+					[/* text */ 't', `if `],
+					[/* inline code block */ 'i', `ptype0`],
+					[/* text */ 't', ` is `],
+					[/* inline code block */ 'i', `void.class`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `a method type with the given return value and parameter type`]
+			]
+		]],
+		[/* method */ 'methodType(java.lang.Class,java.lang.Class,java.lang.Class...)', [
+			[/* method description */
+				[/* text */ 't', `Finds or creates a method type with the given components.
+ Convenience method for `],
+				[/* reference */ 'r', `#methodType(java.lang.Class,java.lang.Class%5B%5D)`, `methodType`],
+				[/* text */ 't', `.
+ The leading parameter type is prepended to the remaining array.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'rtype', [/* parameter description */
+					[/* text */ 't', `the return type`]
+				]],
+				[/* parameter */ 'ptype0', [/* parameter description */
+					[/* text */ 't', `the first parameter type`]
+				]],
+				[/* parameter */ 'ptypes', [/* parameter description */
+					[/* text */ 't', `the remaining parameter types`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
+					[/* text */ 't', `if `],
+					[/* inline code block */ 'i', `rtype`],
+					[/* text */ 't', ` or `],
+					[/* inline code block */ 'i', `ptype0`],
+					[/* text */ 't', ` or `],
+					[/* inline code block */ 'i', `ptypes`],
+					[/* text */ 't', ` or any element of `],
+					[/* inline code block */ 'i', `ptypes`],
+					[/* text */ 't', ` is null`]
+				]],
+				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
+					[/* text */ 't', `if `],
+					[/* inline code block */ 'i', `ptype0`],
+					[/* text */ 't', ` or `],
+					[/* inline code block */ 'i', `ptypes`],
+					[/* text */ 't', ` or any element of `],
+					[/* inline code block */ 'i', `ptypes`],
+					[/* text */ 't', ` is `],
+					[/* inline code block */ 'i', `void.class`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `a method type with the given components`]
 			]
 		]],
 		[/* method */ 'methodType(java.lang.Class,java.lang.Class[])', [
@@ -537,52 +1074,6 @@ DocsCollector.collect('java.lang.invoke.MethodType', [
 				[/* text */ 't', `a method type with the given components`]
 			]
 		]],
-		[/* method */ 'methodType(java.lang.Class,java.lang.Class,java.lang.Class...)', [
-			[/* method description */
-				[/* text */ 't', `Finds or creates a method type with the given components.
- Convenience method for `],
-				[/* reference */ 'r', `#methodType(java.lang.Class,java.lang.Class%5B%5D)`, `methodType`],
-				[/* text */ 't', `.
- The leading parameter type is prepended to the remaining array.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'rtype', [/* parameter description */
-					[/* text */ 't', `the return type`]
-				]],
-				[/* parameter */ 'ptype0', [/* parameter description */
-					[/* text */ 't', `the first parameter type`]
-				]],
-				[/* parameter */ 'ptypes', [/* parameter description */
-					[/* text */ 't', `the remaining parameter types`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
-					[/* text */ 't', `if `],
-					[/* inline code block */ 'i', `rtype`],
-					[/* text */ 't', ` or `],
-					[/* inline code block */ 'i', `ptype0`],
-					[/* text */ 't', ` or `],
-					[/* inline code block */ 'i', `ptypes`],
-					[/* text */ 't', ` or any element of `],
-					[/* inline code block */ 'i', `ptypes`],
-					[/* text */ 't', ` is null`]
-				]],
-				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
-					[/* text */ 't', `if `],
-					[/* inline code block */ 'i', `ptype0`],
-					[/* text */ 't', ` or `],
-					[/* inline code block */ 'i', `ptypes`],
-					[/* text */ 't', ` or any element of `],
-					[/* inline code block */ 'i', `ptypes`],
-					[/* text */ 't', ` is `],
-					[/* inline code block */ 'i', `void.class`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `a method type with the given components`]
-			]
-		]],
 		[/* method */ 'methodType(java.lang.Class,java.util.List)', [
 			[/* method description */
 				[/* text */ 't', `Finds or creates a method type with the given components.
@@ -617,497 +1108,6 @@ DocsCollector.collect('java.lang.invoke.MethodType', [
 			],
 			[/* return description */
 				[/* text */ 't', `a method type with the given components`]
-			]
-		]],
-		[/* method */ 'methodType(java.lang.Class,java.lang.Class)', [
-			[/* method description */
-				[/* text */ 't', `Finds or creates a method type with the given components.
- Convenience method for `],
-				[/* reference */ 'r', `#methodType(java.lang.Class,java.lang.Class%5B%5D)`, `methodType`],
-				[/* text */ 't', `.
- The resulting method has the single given parameter type.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'rtype', [/* parameter description */
-					[/* text */ 't', `the return type`]
-				]],
-				[/* parameter */ 'ptype0', [/* parameter description */
-					[/* text */ 't', `the parameter type`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
-					[/* text */ 't', `if `],
-					[/* inline code block */ 'i', `rtype`],
-					[/* text */ 't', ` or `],
-					[/* inline code block */ 'i', `ptype0`],
-					[/* text */ 't', ` is null`]
-				]],
-				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
-					[/* text */ 't', `if `],
-					[/* inline code block */ 'i', `ptype0`],
-					[/* text */ 't', ` is `],
-					[/* inline code block */ 'i', `void.class`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `a method type with the given return value and parameter type`]
-			]
-		]],
-		[/* method */ 'methodType(java.lang.Class)', [
-			[/* method description */
-				[/* text */ 't', `Finds or creates a method type with the given components.
- Convenience method for `],
-				[/* reference */ 'r', `#methodType(java.lang.Class,java.lang.Class%5B%5D)`, `methodType`],
-				[/* text */ 't', `.
- The resulting method has no parameter types.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'rtype', [/* parameter description */
-					[/* text */ 't', `the return type`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
-					[/* text */ 't', `if `],
-					[/* inline code block */ 'i', `rtype`],
-					[/* text */ 't', ` is null`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `a method type with the given return value`]
-			]
-		]],
-		[/* method */ 'dropParameterTypes(int,int)', [
-			[/* method description */
-				[/* text */ 't', `Finds or creates a method type with some parameter types omitted.
- Convenience method for `],
-				[/* reference */ 'r', `#methodType(java.lang.Class,java.lang.Class%5B%5D)`, `methodType`],
-				[/* text */ 't', `.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'start', [/* parameter description */
-					[/* text */ 't', `the index (zero-based) of the first parameter type to remove`]
-				]],
-				[/* parameter */ 'end', [/* parameter description */
-					[/* text */ 't', `the index (greater than `],
-					[/* inline code block */ 'i', `start`],
-					[/* text */ 't', `) of the first parameter type after not to remove`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.IndexOutOfBoundsException', [/* throw description */
-					[/* text */ 't', `if `],
-					[/* inline code block */ 'i', `start`],
-					[/* text */ 't', ` is negative or greater than `],
-					[/* inline code block */ 'i', `parameterCount()`],
-					[/* text */ 't', `
-                                  or if `],
-					[/* inline code block */ 'i', `end`],
-					[/* text */ 't', ` is negative or greater than `],
-					[/* inline code block */ 'i', `parameterCount()`],
-					[/* text */ 't', `
-                                  or if `],
-					[/* inline code block */ 'i', `start`],
-					[/* text */ 't', ` is greater than `],
-					[/* inline code block */ 'i', `end`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `the same type, except with the selected parameter(s) removed`]
-			]
-		]],
-		[/* method */ 'appendParameterTypes(java.util.List)', [
-			[/* method description */
-				[/* text */ 't', `Finds or creates a method type with additional parameter types.
- Convenience method for `],
-				[/* reference */ 'r', `#methodType(java.lang.Class,java.lang.Class%5B%5D)`, `methodType`],
-				[/* text */ 't', `.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'ptypesToInsert', [/* parameter description */
-					[/* text */ 't', `zero or more new parameter types to insert after the end of the parameter list`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
-					[/* text */ 't', `if any element of `],
-					[/* inline code block */ 'i', `ptypesToInsert`],
-					[/* text */ 't', ` is `],
-					[/* inline code block */ 'i', `void.class`],
-					[/* text */ 't', `
-                                  or if the resulting method type would have more than 255 parameter slots`]
-				]],
-				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
-					[/* text */ 't', `if `],
-					[/* inline code block */ 'i', `ptypesToInsert`],
-					[/* text */ 't', ` or any of its elements is null`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `the same type, except with the selected parameter(s) appended`]
-			]
-		]],
-		[/* method */ 'appendParameterTypes(java.lang.Class...)', [
-			[/* method description */
-				[/* text */ 't', `Finds or creates a method type with additional parameter types.
- Convenience method for `],
-				[/* reference */ 'r', `#methodType(java.lang.Class,java.lang.Class%5B%5D)`, `methodType`],
-				[/* text */ 't', `.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'ptypesToInsert', [/* parameter description */
-					[/* text */ 't', `zero or more new parameter types to insert after the end of the parameter list`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
-					[/* text */ 't', `if any element of `],
-					[/* inline code block */ 'i', `ptypesToInsert`],
-					[/* text */ 't', ` is `],
-					[/* inline code block */ 'i', `void.class`],
-					[/* text */ 't', `
-                                  or if the resulting method type would have more than 255 parameter slots`]
-				]],
-				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
-					[/* text */ 't', `if `],
-					[/* inline code block */ 'i', `ptypesToInsert`],
-					[/* text */ 't', ` or any of its elements is null`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `the same type, except with the selected parameter(s) appended`]
-			]
-		]],
-		[/* method */ 'parameterCount()', [
-			[/* method description */
-				[/* text */ 't', `Returns the number of parameter types in this method type.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the number of parameter types`]
-			]
-		]],
-		[/* method */ 'genericMethodType(int,boolean)', [
-			[/* method description */
-				[/* text */ 't', `Finds or creates a method type whose components are `],
-				[/* inline code block */ 'i', `Object`],
-				[/* text */ 't', ` with an optional trailing `],
-				[/* inline code block */ 'i', `Object[]`],
-				[/* text */ 't', ` array.
- Convenience method for `],
-				[/* reference */ 'r', `#methodType(java.lang.Class,java.lang.Class%5B%5D)`, `methodType`],
-				[/* text */ 't', `.
- All parameters and the return type will be `],
-				[/* inline code block */ 'i', `Object`],
-				[/* text */ 't', `,
- except the final array parameter if any, which will be `],
-				[/* inline code block */ 'i', `Object[]`],
-				[/* text */ 't', `.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'objectArgCount', [/* parameter description */
-					[/* text */ 't', `number of parameters (excluding the final array parameter if any)`]
-				]],
-				[/* parameter */ 'finalArray', [/* parameter description */
-					[/* text */ 't', `whether there will be a trailing array parameter, of type `],
-					[/* inline code block */ 'i', `Object[]`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
-					[/* text */ 't', `if `],
-					[/* inline code block */ 'i', `objectArgCount`],
-					[/* text */ 't', ` is negative or greater than 255 (or 254, if `],
-					[/* inline code block */ 'i', `finalArray`],
-					[/* text */ 't', ` is true)`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `a generally applicable method type, for all calls of the given fixed argument count and a collected array of further arguments`]
-			]
-		]],
-		[/* method */ 'genericMethodType(int)', [
-			[/* method description */
-				[/* text */ 't', `Finds or creates a method type whose components are all `],
-				[/* inline code block */ 'i', `Object`],
-				[/* text */ 't', `.
- Convenience method for `],
-				[/* reference */ 'r', `#methodType(java.lang.Class,java.lang.Class%5B%5D)`, `methodType`],
-				[/* text */ 't', `.
- All parameters and the return type will be Object.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'objectArgCount', [/* parameter description */
-					[/* text */ 't', `number of parameters`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
-					[/* text */ 't', `if `],
-					[/* inline code block */ 'i', `objectArgCount`],
-					[/* text */ 't', ` is negative or greater than 255`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `a generally applicable method type, for all calls of the given argument count`]
-			]
-		]],
-		[/* method */ 'lastParameterType()', [
-			[/* method description */
-				[/* text */ 't', `Returns the last parameter type of this method type.
- If this type has no parameters, the sentinel value
- `],
-				[/* inline code block */ 'i', `void.class`],
-				[/* text */ 't', ` is returned instead.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the last parameter type if any, else `],
-				[/* inline code block */ 'i', `void.class`]
-			]
-		]],
-		[/* method */ 'parameterList()', [
-			[/* method description */
-				[/* text */ 't', `Presents the parameter types as a list (a convenience method).
- The list will be immutable.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the parameter types (as an immutable list)`]
-			]
-		]],
-		[/* method */ 'erase()', [
-			[/* method description */
-				[/* text */ 't', `Erases all reference types to `],
-				[/* inline code block */ 'i', `Object`],
-				[/* text */ 't', `.
- Convenience method for `],
-				[/* reference */ 'r', `#methodType(java.lang.Class,java.lang.Class%5B%5D)`, `methodType`],
-				[/* text */ 't', `.
- All primitive types (including `],
-				[/* inline code block */ 'i', `void`],
-				[/* text */ 't', `) will remain unchanged.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `a version of the original type with all reference types replaced`]
-			]
-		]],
-		[/* method */ 'toMethodDescriptorString()', [
-			[/* method description */
-				[/* text */ 't', `Returns a descriptor string for the method type.  This method
- is equivalent to calling `],
-				[/* reference */ 'r', `#descriptorString()`, `MethodType::descriptorString`],
-				[/* text */ 't', `.
-
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', `
- Note that this is not a strict inverse of `],
-					[/* reference */ 'r', `#fromMethodDescriptorString(java.lang.String,java.lang.ClassLoader)`, `fromMethodDescriptorString`],
-					[/* text */ 't', `.
- Two distinct classes which share a common name but have different class loaders
- will appear identical when viewed within descriptor strings.
- `]
-				]],
-				[/* block */ 'b', [
-					[/* text */ 't', `
- This method is included for the benefit of applications that must
- generate bytecodes that process method handles and `],
-					[/* inline code block */ 'i', `invokedynamic`],
-					[/* text */ 't', `.
- `],
-					[/* reference */ 'r', `#fromMethodDescriptorString(java.lang.String,java.lang.ClassLoader)`, `fromMethodDescriptorString`],
-					[/* text */ 't', `,
- because the latter requires a suitable class loader argument.`]
-				]]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the descriptor string for this method type`]
-			]
-		]],
-		[/* method */ 'parameterArray()', [
-			[/* method description */
-				[/* text */ 't', `Presents the parameter types as an array (a convenience method).
- Changes to the array will not result in changes to the type.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the parameter types (as a fresh copy if necessary)`]
-			]
-		]],
-		[/* method */ 'hasPrimitives()', [
-			[/* method description */
-				[/* text */ 't', `Reports if this type contains a primitive argument or return value.
- The return type `],
-				[/* inline code block */ 'i', `void`],
-				[/* text */ 't', ` counts as a primitive.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `true if any of the types are primitives`]
-			]
-		]],
-		[/* method */ 'unwrap()', [
-			[/* method description */
-				[/* text */ 't', `Converts all wrapper types to their corresponding primitive types.
- Convenience method for `],
-				[/* reference */ 'r', `#methodType(java.lang.Class,java.lang.Class%5B%5D)`, `methodType`],
-				[/* text */ 't', `.
- All primitive types (including `],
-				[/* inline code block */ 'i', `void`],
-				[/* text */ 't', `) will remain unchanged.
- A return type of `],
-				[/* inline code block */ 'i', `java.lang.Void`],
-				[/* text */ 't', ` is changed to `],
-				[/* inline code block */ 'i', `void`],
-				[/* text */ 't', `.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `a version of the original type with all wrapper types replaced`]
-			]
-		]],
-		[/* method */ 'changeParameterType(int,java.lang.Class)', [
-			[/* method description */
-				[/* text */ 't', `Finds or creates a method type with a single different parameter type.
- Convenience method for `],
-				[/* reference */ 'r', `#methodType(java.lang.Class,java.lang.Class%5B%5D)`, `methodType`],
-				[/* text */ 't', `.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'num', [/* parameter description */
-					[/* text */ 't', `the index (zero-based) of the parameter type to change`]
-				]],
-				[/* parameter */ 'nptype', [/* parameter description */
-					[/* text */ 't', `a new parameter type to replace the old one with`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.IndexOutOfBoundsException', [/* throw description */
-					[/* text */ 't', `if `],
-					[/* inline code block */ 'i', `num`],
-					[/* text */ 't', ` is not a valid index into `],
-					[/* inline code block */ 'i', `parameterArray()`]
-				]],
-				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
-					[/* text */ 't', `if `],
-					[/* inline code block */ 'i', `nptype`],
-					[/* text */ 't', ` is `],
-					[/* inline code block */ 'i', `void.class`]
-				]],
-				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
-					[/* text */ 't', `if `],
-					[/* inline code block */ 'i', `nptype`],
-					[/* text */ 't', ` is null`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `the same type, except with the selected parameter changed`]
-			]
-		]],
-		[/* method */ 'hasWrappers()', [
-			[/* method description */
-				[/* text */ 't', `Reports if this type contains a wrapper argument or return value.
- Wrappers are types which box primitive values, such as `],
-				[/* reference */ 'r', `java.lang.Integer`],
-				[/* text */ 't', `.
- The reference type `],
-				[/* inline code block */ 'i', `java.lang.Void`],
-				[/* text */ 't', ` counts as a wrapper,
- if it occurs as a return type.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `true if any of the types are wrappers`]
-			]
-		]],
-		[/* method */ 'generic()', [
-			[/* method description */
-				[/* text */ 't', `Converts all types, both reference and primitive, to `],
-				[/* inline code block */ 'i', `Object`],
-				[/* text */ 't', `.
- Convenience method for `],
-				[/* reference */ 'r', `#genericMethodType(int)`, `genericMethodType`],
-				[/* text */ 't', `.
- The expression `],
-				[/* inline code block */ 'i', `type.wrap().erase()`],
-				[/* text */ 't', ` produces the same value
- as `],
-				[/* inline code block */ 'i', `type.generic()`],
-				[/* text */ 't', `.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `a version of the original type with all types replaced`]
-			]
-		]],
-		[/* method */ 'fromMethodDescriptorString(java.lang.String,java.lang.ClassLoader)', [
-			[/* method description */
-				[/* text */ 't', `Finds or creates an instance of a method type, given the spelling of its bytecode descriptor.
- Convenience method for `],
-				[/* reference */ 'r', `#methodType(java.lang.Class,java.lang.Class%5B%5D)`, `methodType`],
-				[/* text */ 't', `.
- Any class or interface name embedded in the descriptor string will be
- resolved by the given loader (or if it is null, on the system class loader).
- `],
-				[/* block */ 'b', `
- Note that it is possible to encounter method types which cannot be
- constructed by this method, because their component types are
- not all reachable from a common class loader.
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', `
- This method is included for the benefit of applications that must
- generate bytecodes that process method handles and `],
-					[/* inline code block */ 'i', `invokedynamic`],
-					[/* text */ 't', `.`]
-				]]
-			],
-			[/* parameters */
-				[/* parameter */ 'descriptor', [/* parameter description */
-					[/* text */ 't', `a bytecode-level type descriptor string "(T...)T"`]
-				]],
-				[/* parameter */ 'loader', [/* parameter description */
-					[/* text */ 't', `the class loader in which to look up the types`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
-					[/* text */ 't', `if the string is null`]
-				]],
-				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
-					[/* text */ 't', `if the string is not well-formed`]
-				]],
-				[/* throw */ 'java.lang.TypeNotPresentException', [/* throw description */
-					[/* text */ 't', `if a named type cannot be found`]
-				]],
-				[/* throw */ 'java.lang.SecurityException', [/* throw description */
-					[/* text */ 't', `if the security manager is present and
-         `],
-					[/* inline code block */ 'i', `loader`],
-					[/* text */ 't', ` is `],
-					[/* inline code block */ 'i', `null`],
-					[/* text */ 't', ` and the caller does not have the
-         `],
-					[/* reference */ 'r', `java.lang.RuntimePermission`],
-					[/* inline code block */ 'i', `("getClassLoader")`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `a method type matching the bytecode-level type descriptor`]
 			]
 		]]
 	],

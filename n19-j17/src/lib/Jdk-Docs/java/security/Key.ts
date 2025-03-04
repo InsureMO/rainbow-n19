@@ -125,6 +125,22 @@ DocsCollector.collect('java.security.Key', [
  encoding.`]
 			]
 		]],
+		[/* method */ 'getAlgorithm()', [
+			[/* method description */
+				[/* text */ 't', `Returns the standard algorithm name for this key. For
+ example, "DSA" would indicate that this key is a DSA key.
+ See the key related sections (KeyFactory, KeyGenerator,
+ KeyPairGenerator, and SecretKeyFactory) in the `],
+				[/* text */ 't', `Java Security Standard Algorithm Names Specification`],
+				[/* text */ 't', `
+ for information about standard key algorithm names.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the name of the algorithm associated with this key.`]
+			]
+		]],
 		[/* method */ 'getFormat()', [
 			[/* method description */
 				[/* text */ 't', `Returns the name of the primary encoding format of this key,
@@ -153,22 +169,6 @@ DocsCollector.collect('java.security.Key', [
 			/* throws */ UDF,
 			[/* return description */
 				[/* text */ 't', `the primary encoding format of the key.`]
-			]
-		]],
-		[/* method */ 'getAlgorithm()', [
-			[/* method description */
-				[/* text */ 't', `Returns the standard algorithm name for this key. For
- example, "DSA" would indicate that this key is a DSA key.
- See the key related sections (KeyFactory, KeyGenerator,
- KeyPairGenerator, and SecretKeyFactory) in the `],
-				[/* text */ 't', `Java Security Standard Algorithm Names Specification`],
-				[/* text */ 't', `
- for information about standard key algorithm names.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the name of the algorithm associated with this key.`]
 			]
 		]]
 	],

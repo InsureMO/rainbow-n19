@@ -2220,86 +2220,6 @@ DocsCollector.collect('java.lang.invoke.MethodHandles$Lookup', [
 		]]
 	],
 	[/* fields */
-		[/* field */ 'PUBLIC', [
-			[/* field description */
-				[/* text */ 't', `A single-bit mask representing `],
-				[/* inline code block */ 'i', `public`],
-				[/* text */ 't', ` access,
-  which may contribute to the result of `],
-				[/* reference */ 'r', `#lookupModes()`, `lookupModes`],
-				[/* text */ 't', `.
-  The value, `],
-				[/* inline code block */ 'i', `0x01`],
-				[/* text */ 't', `, happens to be the same as the value of the
-  `],
-				[/* inline code block */ 'i', `public`],
-				[/* reference */ 'r', `java.Modifier#PUBLIC`],
-				[/* text */ 't', `.
-  `],
-				[/* block */ 'b', [
-					[/* text */ 't', `
-  A `],
-					[/* inline code block */ 'i', `Lookup`],
-					[/* text */ 't', ` with this lookup mode performs cross-module access check
-  with respect to the `],
-					[/* reference */ 'r', `#lookupClass()`, `lookup class`],
-					[/* text */ 't', ` and
-  `],
-					[/* reference */ 'r', `#previousLookupClass()`, `previous lookup class`],
-					[/* text */ 't', ` if present.`]
-				]]
-			],
-		]],
-		[/* field */ 'PRIVATE', [
-			[/* field description */
-				[/* text */ 't', `A single-bit mask representing `],
-				[/* inline code block */ 'i', `private`],
-				[/* text */ 't', ` access,
-  which may contribute to the result of `],
-				[/* reference */ 'r', `#lookupModes()`, `lookupModes`],
-				[/* text */ 't', `.
-  The value, `],
-				[/* inline code block */ 'i', `0x02`],
-				[/* text */ 't', `, happens to be the same as the value of the
-  `],
-				[/* inline code block */ 'i', `private`],
-				[/* reference */ 'r', `java.Modifier#PRIVATE`],
-				[/* text */ 't', `.`]
-			],
-		]],
-		[/* field */ 'PROTECTED', [
-			[/* field description */
-				[/* text */ 't', `A single-bit mask representing `],
-				[/* inline code block */ 'i', `protected`],
-				[/* text */ 't', ` access,
-  which may contribute to the result of `],
-				[/* reference */ 'r', `#lookupModes()`, `lookupModes`],
-				[/* text */ 't', `.
-  The value, `],
-				[/* inline code block */ 'i', `0x04`],
-				[/* text */ 't', `, happens to be the same as the value of the
-  `],
-				[/* inline code block */ 'i', `protected`],
-				[/* reference */ 'r', `java.Modifier#PROTECTED`],
-				[/* text */ 't', `.`]
-			],
-		]],
-		[/* field */ 'PACKAGE', [
-			[/* field description */
-				[/* text */ 't', `A single-bit mask representing `],
-				[/* inline code block */ 'i', `package`],
-				[/* text */ 't', ` access (default access),
-  which may contribute to the result of `],
-				[/* reference */ 'r', `#lookupModes()`, `lookupModes`],
-				[/* text */ 't', `.
-  The value is `],
-				[/* inline code block */ 'i', `0x08`],
-				[/* text */ 't', `, which does not correspond meaningfully to
-  any particular `],
-				[/* reference */ 'r', `java.lang.reflect.Modifier`],
-				[/* text */ 't', `.`]
-			],
-		]],
 		[/* field */ 'MODULE', [
 			[/* field description */
 				[/* text */ 't', `A single-bit mask representing `],
@@ -2322,41 +2242,6 @@ DocsCollector.collect('java.lang.invoke.MethodHandles$Lookup', [
   with this lookup mode can access all public types in the module of the
   lookup class and public types in packages exported by other modules
   to the module of the lookup class.
-  `],
-				[/* block */ 'b', [
-					[/* text */ 't', `
-  If this lookup mode is set, the `],
-					[/* reference */ 'r', `#previousLookupClass()`, `previous lookup class`],
-					[/* text */ 't', ` is always `],
-					[/* inline code block */ 'i', `null`],
-					[/* text */ 't', `.`]
-				]]
-			],
-		]],
-		[/* field */ 'UNCONDITIONAL', [
-			[/* field description */
-				[/* text */ 't', `A single-bit mask representing `],
-				[/* inline code block */ 'i', `unconditional`],
-				[/* text */ 't', ` access
-  which may contribute to the result of `],
-				[/* reference */ 'r', `#lookupModes()`, `lookupModes`],
-				[/* text */ 't', `.
-  The value is `],
-				[/* inline code block */ 'i', `0x20`],
-				[/* text */ 't', `, which does not correspond meaningfully to
-  any particular `],
-				[/* reference */ 'r', `java.lang.reflect.Modifier`],
-				[/* text */ 't', `.
-  A `],
-				[/* inline code block */ 'i', `Lookup`],
-				[/* text */ 't', ` with this lookup mode assumes `],
-				[/* reference */ 'r', `java.Module#canRead(java.lang.Module)`],
-				[/* text */ 't', `.
-  This lookup mode can access all public members of public types
-  of all modules when the type is in a package that is `],
-				[/* reference */ 'r', `java.Module#isExported(java.lang.String)`],
-				[/* text */ 't', `.
-
   `],
 				[/* block */ 'b', [
 					[/* text */ 't', `
@@ -2401,744 +2286,171 @@ DocsCollector.collect('java.lang.invoke.MethodHandles$Lookup', [
 					[/* text */ 't', `.`]
 				]]
 			],
+		]],
+		[/* field */ 'PACKAGE', [
+			[/* field description */
+				[/* text */ 't', `A single-bit mask representing `],
+				[/* inline code block */ 'i', `package`],
+				[/* text */ 't', ` access (default access),
+  which may contribute to the result of `],
+				[/* reference */ 'r', `#lookupModes()`, `lookupModes`],
+				[/* text */ 't', `.
+  The value is `],
+				[/* inline code block */ 'i', `0x08`],
+				[/* text */ 't', `, which does not correspond meaningfully to
+  any particular `],
+				[/* reference */ 'r', `java.lang.reflect.Modifier`],
+				[/* text */ 't', `.`]
+			],
+		]],
+		[/* field */ 'PRIVATE', [
+			[/* field description */
+				[/* text */ 't', `A single-bit mask representing `],
+				[/* inline code block */ 'i', `private`],
+				[/* text */ 't', ` access,
+  which may contribute to the result of `],
+				[/* reference */ 'r', `#lookupModes()`, `lookupModes`],
+				[/* text */ 't', `.
+  The value, `],
+				[/* inline code block */ 'i', `0x02`],
+				[/* text */ 't', `, happens to be the same as the value of the
+  `],
+				[/* inline code block */ 'i', `private`],
+				[/* reference */ 'r', `java.Modifier#PRIVATE`],
+				[/* text */ 't', `.`]
+			],
+		]],
+		[/* field */ 'PROTECTED', [
+			[/* field description */
+				[/* text */ 't', `A single-bit mask representing `],
+				[/* inline code block */ 'i', `protected`],
+				[/* text */ 't', ` access,
+  which may contribute to the result of `],
+				[/* reference */ 'r', `#lookupModes()`, `lookupModes`],
+				[/* text */ 't', `.
+  The value, `],
+				[/* inline code block */ 'i', `0x04`],
+				[/* text */ 't', `, happens to be the same as the value of the
+  `],
+				[/* inline code block */ 'i', `protected`],
+				[/* reference */ 'r', `java.Modifier#PROTECTED`],
+				[/* text */ 't', `.`]
+			],
+		]],
+		[/* field */ 'PUBLIC', [
+			[/* field description */
+				[/* text */ 't', `A single-bit mask representing `],
+				[/* inline code block */ 'i', `public`],
+				[/* text */ 't', ` access,
+  which may contribute to the result of `],
+				[/* reference */ 'r', `#lookupModes()`, `lookupModes`],
+				[/* text */ 't', `.
+  The value, `],
+				[/* inline code block */ 'i', `0x01`],
+				[/* text */ 't', `, happens to be the same as the value of the
+  `],
+				[/* inline code block */ 'i', `public`],
+				[/* reference */ 'r', `java.Modifier#PUBLIC`],
+				[/* text */ 't', `.
+  `],
+				[/* block */ 'b', [
+					[/* text */ 't', `
+  A `],
+					[/* inline code block */ 'i', `Lookup`],
+					[/* text */ 't', ` with this lookup mode performs cross-module access check
+  with respect to the `],
+					[/* reference */ 'r', `#lookupClass()`, `lookup class`],
+					[/* text */ 't', ` and
+  `],
+					[/* reference */ 'r', `#previousLookupClass()`, `previous lookup class`],
+					[/* text */ 't', ` if present.`]
+				]]
+			],
+		]],
+		[/* field */ 'UNCONDITIONAL', [
+			[/* field description */
+				[/* text */ 't', `A single-bit mask representing `],
+				[/* inline code block */ 'i', `unconditional`],
+				[/* text */ 't', ` access
+  which may contribute to the result of `],
+				[/* reference */ 'r', `#lookupModes()`, `lookupModes`],
+				[/* text */ 't', `.
+  The value is `],
+				[/* inline code block */ 'i', `0x20`],
+				[/* text */ 't', `, which does not correspond meaningfully to
+  any particular `],
+				[/* reference */ 'r', `java.lang.reflect.Modifier`],
+				[/* text */ 't', `.
+  A `],
+				[/* inline code block */ 'i', `Lookup`],
+				[/* text */ 't', ` with this lookup mode assumes `],
+				[/* reference */ 'r', `java.Module#canRead(java.lang.Module)`],
+				[/* text */ 't', `.
+  This lookup mode can access all public members of public types
+  of all modules when the type is in a package that is `],
+				[/* reference */ 'r', `java.Module#isExported(java.lang.String)`],
+				[/* text */ 't', `.
+
+  `],
+				[/* block */ 'b', [
+					[/* text */ 't', `
+  If this lookup mode is set, the `],
+					[/* reference */ 'r', `#previousLookupClass()`, `previous lookup class`],
+					[/* text */ 't', ` is always `],
+					[/* inline code block */ 'i', `null`],
+					[/* text */ 't', `.`]
+				]]
+			],
 		]]
 	],
 	/* constructors */ UDF,
 	[/* methods */
-		[/* method */ 'toString()', [
+		[/* method */ 'hasFullPrivilegeAccess()', [
 			[/* method description */
-				[/* text */ 't', `Displays the name of the class from which lookups are to be made,
- followed by "/" and the name of the `],
-				[/* reference */ 'r', `#previousLookupClass()`, `previous lookup class`],
-				[/* text */ 't', ` if present.
- (The name is the one reported by `],
-				[/* reference */ 'r', `java.Class#getName()`],
-				[/* text */ 't', `.)
- If there are restrictions on the access permitted to this lookup,
- this is indicated by adding a suffix to the class name, consisting
- of a slash and a keyword.  The keyword represents the strongest
- allowed access, and is chosen as follows:
- `],
-				[/* list */ 'l', [
-					[/* block */ 'b', `If no access is allowed, the suffix is "/noaccess".
- `],
-					[/* block */ 'b', `If only unconditional access is allowed, the suffix is "/publicLookup".
- `],
-					[/* block */ 'b', `If only public access to types in exported packages is allowed, the suffix is "/public".
- `],
-					[/* block */ 'b', `If only public and module access are allowed, the suffix is "/module".
- `],
-					[/* block */ 'b', `If public and package access are allowed, the suffix is "/package".
- `],
-					[/* block */ 'b', `If public, package, and private access are allowed, the suffix is "/private".
- `]
-				]],
-				[/* text */ 't', `
- If none of the above cases apply, it is the case that
- `],
-				[/* reference */ 'r', `#hasFullPrivilegeAccess()`, `full privilege access`],
-				[/* text */ 't', `
- (public, module, package, private, and protected) is allowed.
- In this case, no suffix is added.
- This is true only of an object obtained originally from
- `],
-				[/* reference */ 'r', `.MethodHandles#lookup()`],
-				[/* text */ 't', `.
- Objects created by `],
-				[/* reference */ 'r', `#in(java.lang.Class)`, `Lookup.in`],
-				[/* text */ 't', `
- always have restricted access, and will display a suffix.
- `],
-				[/* block */ 'b', `
- (It may seem strange that protected access should be
- stronger than private access.  Viewed independently from
- package access, protected access is the first to be lost,
- because it requires a direct subclass relationship between
- caller and callee.)`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `a string representation of the object.`]
-			]
-		]],
-		[/* method */ 'findClass(java.lang.String)', [
-			[/* method description */
-				[/* text */ 't', `Looks up a class by name from the lookup context defined by this `],
+				[/* text */ 't', `Returns `],
+				[/* inline code block */ 'i', `true`],
+				[/* text */ 't', ` if this lookup has `],
+				[/* text */ 't', `full privilege access`],
+				[/* text */ 't', `,
+ i.e. `],
+				[/* inline code block */ 'i', `PRIVATE`],
+				[/* text */ 't', ` and `],
+				[/* inline code block */ 'i', `MODULE`],
+				[/* text */ 't', ` access.
+ A `],
 				[/* inline code block */ 'i', `Lookup`],
-				[/* text */ 't', ` object,
- `],
-				[/* reference */ 'r', `.MethodHandles.Lookup#equiv`],
-				[/* text */ 't', ` by an `],
-				[/* inline code block */ 'i', `ldc`],
-				[/* text */ 't', ` instruction.
- Such a resolution, as specified in JVMS 5.4.3.1 section, attempts to locate and load the class,
- and then determines whether the class is accessible to this lookup object.
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', `
- The lookup context here is determined by the `],
-					[/* reference */ 'r', `#lookupClass()`, `lookup class`],
-					[/* text */ 't', `,
- its class loader, and the `],
-					[/* reference */ 'r', `#lookupModes()`, `lookup modes`],
-					[/* text */ 't', `.`]
-				]]
-			],
-			[/* parameters */
-				[/* parameter */ 'targetName', [/* parameter description */
-					[/* text */ 't', `the fully qualified name of the class to be looked up.`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.SecurityException', [/* throw description */
-					[/* text */ 't', `if a security manager is present and it
-                           `],
-					[/* reference */ 'r', `.MethodHandles.Lookup#secmgr`]
-				]],
-				[/* throw */ 'java.lang.LinkageError', [/* throw description */
-					[/* text */ 't', `if the linkage fails`]
-				]],
-				[/* throw */ 'java.lang.ClassNotFoundException', [/* throw description */
-					[/* text */ 't', `if the class cannot be loaded by the lookup class' loader.`]
-				]],
-				[/* throw */ 'java.lang.IllegalAccessException', [/* throw description */
-					[/* text */ 't', `if the class is not accessible, using the allowed access
- modes.`]
-				]],
-				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
-					[/* text */ 't', `if `],
-					[/* inline code block */ 'i', `targetName`],
-					[/* text */ 't', ` is null`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `the requested class.`]
-			]
-		]],
-		[/* method */ 'defineClass(byte[])', [
-			[/* method description */
-				[/* text */ 't', `Creates and links a class or interface from `],
-				[/* inline code block */ 'i', `bytes`],
-				[/* text */ 't', `
- with the same class loader and in the same runtime package and
- `],
-				[/* reference */ 'r', `java.security.ProtectionDomain`],
-				[/* text */ 't', ` as this lookup's
+				[/* text */ 't', ` object must have full privilege access in order to
+ access all members that are allowed to the
  `],
 				[/* reference */ 'r', `#lookupClass()`, `lookup class`],
-				[/* text */ 't', ` as if calling
- `],
-				[/* reference */ 'r', `java.ClassLoader#defineClass(java.lang.String,byte[],int,int,java.security.ProtectionDomain)`],
-				[/* text */ 't', `.
-
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', ` The `],
-					[/* reference */ 'r', `#lookupModes()`, `lookup modes`],
-					[/* text */ 't', ` for this lookup must include
- `],
-					[/* text */ 't', `PACKAGE`],
-					[/* text */ 't', ` access as default (package) members will be
- accessible to the class. The `],
-					[/* inline code block */ 'i', `PACKAGE`],
-					[/* text */ 't', ` lookup mode serves to authenticate
- that the lookup object was created by a caller in the runtime package (or derived
- from a lookup originally created by suitably privileged code to a target class in
- the runtime package). `]
-				]],
-				[/* block */ 'b', [
-					[/* text */ 't', ` The `],
-					[/* inline code block */ 'i', `bytes`],
-					[/* text */ 't', ` parameter is the class bytes of a valid class file (as defined
- by the `],
-					[/* text */ 't', `The Java Virtual Machine Specification`],
-					[/* text */ 't', `) with a class name in the
- same package as the lookup class. `]
-				]],
-				[/* block */ 'b', `The Java Language
- Specification`],
-				[/* block */ 'b', [
-					[/* text */ 't', ` If there is a security manager and this lookup does not have `],
-					[/* reference */ 'r', `#hasFullPrivilegeAccess()`, `full privilege access`],
-					[/* text */ 't', `, its `],
-					[/* inline code block */ 'i', `checkPermission`],
-					[/* text */ 't', ` method
- is first called to check `],
-					[/* inline code block */ 'i', `RuntimePermission("defineClass")`],
-					[/* text */ 't', `. `]
-				]]
-			],
-			[/* parameters */
-				[/* parameter */ 'bytes', [/* parameter description */
-					[/* text */ 't', `the class bytes`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.IllegalAccessException', [/* throw description */
-					[/* text */ 't', `if this lookup does not have `],
-					[/* inline code block */ 'i', `PACKAGE`],
-					[/* text */ 't', ` access`]
-				]],
-				[/* throw */ 'java.lang.ClassFormatError', [/* throw description */
-					[/* text */ 't', `if `],
-					[/* inline code block */ 'i', `bytes`],
-					[/* text */ 't', ` is not a `],
-					[/* inline code block */ 'i', `ClassFile`],
-					[/* text */ 't', ` structure`]
-				]],
-				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
-					[/* text */ 't', `if `],
-					[/* inline code block */ 'i', `bytes`],
-					[/* text */ 't', ` denotes a class in a different package
- than the lookup class or `],
-					[/* inline code block */ 'i', `bytes`],
-					[/* text */ 't', ` is not a class or interface
- (`],
-					[/* inline code block */ 'i', `ACC_MODULE`],
-					[/* text */ 't', ` flag is set in the value of the `],
-					[/* inline code block */ 'i', `access_flags`],
-					[/* text */ 't', ` item)`]
-				]],
-				[/* throw */ 'java.lang.VerifyError', [/* throw description */
-					[/* text */ 't', `if the newly created class cannot be verified`]
-				]],
-				[/* throw */ 'java.lang.LinkageError', [/* throw description */
-					[/* text */ 't', `if the newly created class cannot be linked for any other reason`]
-				]],
-				[/* throw */ 'java.lang.SecurityException', [/* throw description */
-					[/* text */ 't', `if a security manager is present and it
-                           `],
-					[/* reference */ 'r', `.MethodHandles.Lookup#secmgr`]
-				]],
-				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
-					[/* text */ 't', `if `],
-					[/* inline code block */ 'i', `bytes`],
-					[/* text */ 't', ` is `],
-					[/* inline code block */ 'i', `null`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `the `],
-				[/* inline code block */ 'i', `Class`],
-				[/* text */ 't', ` object for the class`]
-			]
-		]],
-		[/* method */ 'in(java.lang.Class)', [
-			[/* method description */
-				[/* text */ 't', `Creates a lookup on the specified new lookup class.
- The resulting object will report the specified
- class as its own `],
-				[/* reference */ 'r', `#lookupClass()`, `lookupClass`],
-				[/* text */ 't', `.
-
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', `
- However, the resulting `],
-					[/* inline code block */ 'i', `Lookup`],
-					[/* text */ 't', ` object is guaranteed
- to have no more access capabilities than the original.
- In particular, access capabilities can be lost as follows:`]
-				]],
-				[/* list */ 'l', [
-					[/* block */ 'b', [
-						[/* text */ 't', `If the new lookup class is different from the old lookup class,
- i.e. `],
-						[/* text */ 't', `ORIGINAL`],
-						[/* text */ 't', ` access is lost.
- `]
-					]],
-					[/* block */ 'b', [
-						[/* text */ 't', `If the new lookup class is in a different module from the old one,
- i.e. `],
-						[/* text */ 't', `MODULE`],
-						[/* text */ 't', ` access is lost.
- `]
-					]],
-					[/* block */ 'b', [
-						[/* text */ 't', `If the new lookup class is in a different package
- than the old one, protected and default (package) members will not be accessible,
- i.e. `],
-						[/* text */ 't', `PROTECTED`],
-						[/* text */ 't', ` and `],
-						[/* text */ 't', `PACKAGE`],
-						[/* text */ 't', ` access are lost.
- `]
-					]],
-					[/* block */ 'b', [
-						[/* text */ 't', `If the new lookup class is not within the same package member
- as the old one, private members will not be accessible, and protected members
- will not be accessible by virtue of inheritance,
- i.e. `],
-						[/* text */ 't', `PRIVATE`],
-						[/* text */ 't', ` access is lost.
- (Protected members may continue to be accessible because of package sharing.)
- `]
-					]],
-					[/* block */ 'b', [
-						[/* text */ 't', `If the new lookup class is not
- `],
-						[/* reference */ 'r', `#accessClass(java.lang.Class)`, `accessible`],
-						[/* text */ 't', ` to this lookup,
- then no members, not even public members, will be accessible
- i.e. all access modes are lost.
- `]
-					]],
-					[/* block */ 'b', `If the new lookup class, the old lookup class and the previous lookup class
- are all in different modules i.e. teleporting to a third module,
- all access modes are lost.
- `]
-				]],
-				[/* block */ 'b', ''],
-				[/* block */ 'b', `
- The new previous lookup class is chosen as follows:
- `],
-				[/* list */ 'l', [
-					[/* block */ 'b', [
-						[/* text */ 't', `If the new lookup object has `],
-						[/* text */ 't', `UNCONDITIONAL`],
-						[/* text */ 't', ` bit,
- the new previous lookup class is `],
-						[/* inline code block */ 'i', `null`],
-						[/* text */ 't', `.
- `]
-					]],
-					[/* block */ 'b', `If the new lookup class is in the same module as the old lookup class,
- the new previous lookup class is the old previous lookup class.
- `],
-					[/* block */ 'b', `If the new lookup class is in a different module from the old lookup class,
- the new previous lookup class is the old lookup class.
-`]
-				]],
-				[/* block */ 'b', ''],
-				[/* block */ 'b', [
-					[/* text */ 't', `
- The resulting lookup's capabilities for loading classes
- (used during `],
-					[/* reference */ 'r', `#findClass(java.lang.String)`, `findClass(java.lang.String)`],
-					[/* text */ 't', ` invocations)
- are determined by the lookup class' loader,
- which may change due to this operation.`]
-				]]
-			],
-			[/* parameters */
-				[/* parameter */ 'requestedLookupClass', [/* parameter description */
-					[/* text */ 't', `the desired lookup class for the new lookup object`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
-					[/* text */ 't', `if `],
-					[/* inline code block */ 'i', `requestedLookupClass`],
-					[/* text */ 't', ` is a primitive type or void or array class`]
-				]],
-				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
-					[/* text */ 't', `if the argument is null`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `a lookup object which reports the desired lookup class, or the same object
- if there is no change`]
-			]
-		]],
-		[/* method */ 'ensureInitialized(java.lang.Class)', [
-			[/* method description */
-				[/* text */ 't', `Ensures that `],
-				[/* inline code block */ 'i', `targetClass`],
-				[/* text */ 't', ` has been initialized. The class
- to be initialized must be `],
-				[/* reference */ 'r', `#accessClass(java.lang.Class)`, `accessible`],
-				[/* text */ 't', `
- to this `],
-				[/* inline code block */ 'i', `Lookup`],
-				[/* text */ 't', ` object.  This method causes `],
-				[/* inline code block */ 'i', `targetClass`],
-				[/* text */ 't', `
- to be initialized if it has not been already initialized,
- as specified in JVMS `],
-				[/* external link */ 'a', `https://docs.oracle.com/javase/specs/jvms/se17/html/jvms-5.html#jvms-5.5`, `5.5`],
 				[/* text */ 't', `.`]
 			],
-			[/* parameters */
-				[/* parameter */ 'targetClass', [/* parameter description */
-					[/* text */ 't', `the class to be initialized`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
-					[/* text */ 't', `if `],
-					[/* inline code block */ 'i', `targetClass`],
-					[/* text */ 't', ` is a primitive type or `],
-					[/* inline code block */ 'i', `void`],
-					[/* text */ 't', `
-          or array class`]
-				]],
-				[/* throw */ 'java.lang.IllegalAccessException', [/* throw description */
-					[/* text */ 't', `if `],
-					[/* inline code block */ 'i', `targetClass`],
-					[/* text */ 't', ` is not
-          `],
-					[/* reference */ 'r', `#accessClass(java.lang.Class)`, `accessible`],
-					[/* text */ 't', ` to this lookup`]
-				]],
-				[/* throw */ 'java.lang.ExceptionInInitializerError', [/* throw description */
-					[/* text */ 't', `if the class initialization provoked
-          by this method fails`]
-				]],
-				[/* throw */ 'java.lang.SecurityException', [/* throw description */
-					[/* text */ 't', `if a security manager is present and it
-          `],
-					[/* reference */ 'r', `.MethodHandles.Lookup#secmgr`]
-				]]
-			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
 			[/* return description */
-				[/* inline code block */ 'i', `targetClass`],
-				[/* text */ 't', ` that has been initialized`]
+				[/* inline code block */ 'i', `true`],
+				[/* text */ 't', ` if this lookup has full privilege access.`]
 			]
 		]],
-		[/* method */ 'revealDirect(java.lang.invoke.MethodHandle)', [
+		[/* method */ 'hasPrivateAccess()', [
 			[/* method description */
-				[/* text */ 't', `Cracks a `],
-				[/* reference */ 'r', `.MethodHandleInfo#directmh`],
-				[/* text */ 't', `
- created by this lookup object or a similar one.
- Security and access checks are performed to ensure that this lookup object
- is capable of reproducing the target method handle.
- This means that the cracking may fail if target is a direct method handle
- but was created by an unrelated lookup object.
- This can happen if the method handle is `],
-				[/* reference */ 'r', `.MethodHandles.Lookup#callsens`],
-				[/* text */ 't', `
- and was created by a lookup object for a different class.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'target', [/* parameter description */
-					[/* text */ 't', `a direct method handle to crack into symbolic reference components`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.SecurityException', [/* throw description */
-					[/* text */ 't', `if a security manager is present and it
-                              `],
-					[/* reference */ 'r', `.MethodHandles.Lookup#secmgr`]
-				]],
-				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
-					[/* text */ 't', `if the target is not a direct method handle or if access checking fails`]
-				]],
-				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
-					[/* text */ 't', `if the target is `],
-					[/* inline code block */ 'i', `null`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `a symbolic reference which can be used to reconstruct this method handle from this lookup object`]
-			]
-		]],
-		[/* method */ 'lookupClass()', [
-			[/* method description */
-				[/* text */ 't', `Tells which class is performing the lookup.  It is this class against
-  which checks are performed for visibility and access permissions.
-  `],
-				[/* block */ 'b', [
-					[/* text */ 't', `
-  If this lookup object has a `],
-					[/* reference */ 'r', `#previousLookupClass()`, `previous lookup class`],
-					[/* text */ 't', `,
-  access checks are performed against both the lookup class and the previous lookup class.
-  `]
-				]],
-				[/* block */ 'b', [
-					[/* text */ 't', `
-  The class implies a maximum level of access permission,
-  but the permissions may be additionally limited by the bitmask
-  `],
-					[/* reference */ 'r', `#lookupModes()`, `lookupModes`],
-					[/* text */ 't', `, which controls whether non-public members
-  can be accessed.`]
-				]]
+				[/* text */ 't', `Returns `],
+				[/* inline code block */ 'i', `true`],
+				[/* text */ 't', ` if this lookup has `],
+				[/* inline code block */ 'i', `PRIVATE`],
+				[/* text */ 't', ` and `],
+				[/* inline code block */ 'i', `MODULE`],
+				[/* text */ 't', ` access.`]
 			],
 			/* parameters */ UDF,
 			/* throws */ UDF,
 			[/* return description */
-				[/* text */ 't', `the lookup class, on behalf of which this lookup object finds members`]
-			]
-		]],
-		[/* method */ 'previousLookupClass()', [
-			[/* method description */
-				[/* text */ 't', `Reports a lookup class in another module that this lookup object
- was previously teleported from, or `],
-				[/* inline code block */ 'i', `null`],
-				[/* text */ 't', `.
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', `
- A `],
-					[/* inline code block */ 'i', `Lookup`],
-					[/* text */ 't', ` object produced by the factory methods, such as the
- `],
-					[/* reference */ 'r', `.MethodHandles#lookup()`],
-					[/* text */ 't', ` and `],
-					[/* reference */ 'r', `.MethodHandles#publicLookup()`],
-					[/* text */ 't', ` method,
- has `],
-					[/* inline code block */ 'i', `null`],
-					[/* text */ 't', ` previous lookup class.
- A `],
-					[/* inline code block */ 'i', `Lookup`],
-					[/* text */ 't', ` object has a non-null previous lookup class
- when this lookup was teleported from an old lookup class
- in one module to a new lookup class in another module.`]
-				]]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the lookup class in another module that this lookup object was
-         previously teleported from, or `],
-				[/* inline code block */ 'i', `null`]
-			]
-		]],
-		[/* method */ 'findVirtual(java.lang.Class,java.lang.String,java.lang.invoke.MethodType)', [
-			[/* method description */
-				[/* text */ 't', `Produces a method handle for a virtual method.
- The type of the method handle will be that of the method,
- with the receiver type (usually `],
-				[/* inline code block */ 'i', `refc`],
-				[/* text */ 't', `) prepended.
- The method and all its argument types must be accessible to the lookup object.
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', `
- When called, the handle will treat the first argument as a receiver
- and, for non-private methods, dispatch on the receiver's type to determine which method
- implementation to enter.
- For private methods the named method in `],
-					[/* inline code block */ 'i', `refc`],
-					[/* text */ 't', ` will be invoked on the receiver.
- (The dispatching action is identical with that performed by an
- `],
-					[/* inline code block */ 'i', `invokevirtual`],
-					[/* text */ 't', ` or `],
-					[/* inline code block */ 'i', `invokeinterface`],
-					[/* text */ 't', ` instruction.)
- `]
-				]],
-				[/* block */ 'b', [
-					[/* text */ 't', `
- The first argument will be of type `],
-					[/* inline code block */ 'i', `refc`],
-					[/* text */ 't', ` if the lookup
- class has full privileges to access the member.  Otherwise
- the member must be `],
-					[/* inline code block */ 'i', `protected`],
-					[/* text */ 't', ` and the first argument
- will be restricted in type to the lookup class.
- `]
-				]],
-				[/* block */ 'b', [
-					[/* text */ 't', `
- The returned method handle will have
- `],
-					[/* reference */ 'r', `.MethodHandle#asVarargsCollector(java.lang.Class)`],
-					[/* text */ 't', ` if and only if
- the method's variable arity modifier bit (`],
-					[/* inline code block */ 'i', `0x0080`],
-					[/* text */ 't', `) is set.
- `]
-				]],
-				[/* block */ 'b', [
-					[/* text */ 't', `
- Because of the general `],
-					[/* reference */ 'r', `.MethodHandles.Lookup#equiv`],
-					[/* text */ 't', ` between `],
-					[/* inline code block */ 'i', `invokevirtual`],
-					[/* text */ 't', `
- instructions and method handles produced by `],
-					[/* inline code block */ 'i', `findVirtual`],
-					[/* text */ 't', `,
- if the class is `],
-					[/* inline code block */ 'i', `MethodHandle`],
-					[/* text */ 't', ` and the name string is
- `],
-					[/* inline code block */ 'i', `invokeExact`],
-					[/* text */ 't', ` or `],
-					[/* inline code block */ 'i', `invoke`],
-					[/* text */ 't', `, the resulting
- method handle is equivalent to one produced by
- `],
-					[/* reference */ 'r', `.MethodHandles#exactInvoker(java.lang.invoke.MethodType)`],
-					[/* text */ 't', ` or
- `],
-					[/* reference */ 'r', `.MethodHandles#invoker(java.lang.invoke.MethodType)`],
-					[/* text */ 't', `
- with the same `],
-					[/* inline code block */ 'i', `type`],
-					[/* text */ 't', ` argument.
- `]
-				]],
-				[/* block */ 'b', [
-					[/* text */ 't', `
- If the class is `],
-					[/* inline code block */ 'i', `VarHandle`],
-					[/* text */ 't', ` and the name string corresponds to
- the name of a signature-polymorphic access mode method, the resulting
- method handle is equivalent to one produced by
- `],
-					[/* reference */ 'r', `.MethodHandles#varHandleInvoker(java.lang.invoke.VarHandle.AccessMode,java.lang.invoke.MethodType)`],
-					[/* text */ 't', ` with
- the access mode corresponding to the name string and with the same
- `],
-					[/* inline code block */ 'i', `type`],
-					[/* text */ 't', ` arguments.
- `]
-				]],
-				[/* block */ 'b', `Example:`],
-				[/* block */ 'b', [
-					[/* code block */ 'c', [
-						[/* inline code block */ 'i', `import static java.lang.invoke.MethodHandles.*;
-import static java.lang.invoke.MethodType.*;
-...
-MethodHandle MH_concat = publicLookup().findVirtual(String.class,
-  "concat", methodType(String.class, String.class));
-MethodHandle MH_hashCode = publicLookup().findVirtual(Object.class,
-  "hashCode", methodType(int.class));
-MethodHandle MH_hashCode_String = publicLookup().findVirtual(String.class,
-  "hashCode", methodType(int.class));
-assertEquals("xy", (String) MH_concat.invokeExact("x", "y"));
-assertEquals("xy".hashCode(), (int) MH_hashCode.invokeExact((Object)"xy"));
-assertEquals("xy".hashCode(), (int) MH_hashCode_String.invokeExact("xy"));
-// interface method:
-MethodHandle MH_subSequence = publicLookup().findVirtual(CharSequence.class,
-  "subSequence", methodType(CharSequence.class, int.class, int.class));
-assertEquals("def", MH_subSequence.invoke("abcdefghi", 3, 6).toString());
-// constructor "internal method" must be accessed differently:
-MethodType MT_newString = methodType(void.class); //()V for new String()
-try { assertEquals("impossible", lookup()
-        .findVirtual(String.class, "<init>", MT_newString));
- } catch (NoSuchMethodException ex) { } // OK
-MethodHandle MH_newString = publicLookup()
-  .findConstructor(String.class, MT_newString);
-assertEquals("", (String) MH_newString.invokeExact());`]
-					]]
-				]],
-				[/* block */ 'b', '']
-			],
-			[/* parameters */
-				[/* parameter */ 'refc', [/* parameter description */
-					[/* text */ 't', `the class or interface from which the method is accessed`]
-				]],
-				[/* parameter */ 'name', [/* parameter description */
-					[/* text */ 't', `the name of the method`]
-				]],
-				[/* parameter */ 'type', [/* parameter description */
-					[/* text */ 't', `the type of the method, with the receiver argument omitted`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.NoSuchMethodException', [/* throw description */
-					[/* text */ 't', `if the method does not exist`]
-				]],
-				[/* throw */ 'java.lang.IllegalAccessException', [/* throw description */
-					[/* text */ 't', `if access checking fails,
-                                or if the method is `],
-					[/* inline code block */ 'i', `static`],
-					[/* text */ 't', `,
-                                or if the method's variable arity modifier bit
-                                is set and `],
-					[/* inline code block */ 'i', `asVarargsCollector`],
-					[/* text */ 't', ` fails`]
-				]],
-				[/* throw */ 'java.lang.SecurityException', [/* throw description */
-					[/* text */ 't', `if a security manager is present and it
-                              `],
-					[/* reference */ 'r', `.MethodHandles.Lookup#secmgr`]
-				]],
-				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
-					[/* text */ 't', `if any argument is null`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `the desired method handle`]
-			]
-		]],
-		[/* method */ 'findStatic(java.lang.Class,java.lang.String,java.lang.invoke.MethodType)', [
-			[/* method description */
-				[/* text */ 't', `Produces a method handle for a static method.
- The type of the method handle will be that of the method.
- (Since static methods do not take receivers, there is no
- additional receiver argument inserted into the method handle type,
- as there would be with `],
-				[/* reference */ 'r', `#findVirtual(java.lang.Class,java.lang.String,java.lang.invoke.MethodType)`, `findVirtual`],
-				[/* text */ 't', ` or `],
-				[/* reference */ 'r', `#findSpecial(java.lang.Class,java.lang.String,java.lang.invoke.MethodType,java.lang.Class)`, `findSpecial`],
-				[/* text */ 't', `.)
- The method and all its argument types must be accessible to the lookup object.
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', `
- The returned method handle will have
- `],
-					[/* reference */ 'r', `.MethodHandle#asVarargsCollector(java.lang.Class)`],
-					[/* text */ 't', ` if and only if
- the method's variable arity modifier bit (`],
-					[/* inline code block */ 'i', `0x0080`],
-					[/* text */ 't', `) is set.
- `]
-				]],
-				[/* block */ 'b', `
- If the returned method handle is invoked, the method's class will
- be initialized, if it has not already been initialized.
- `],
-				[/* block */ 'b', `Example:`],
-				[/* block */ 'b', [
-					[/* code block */ 'c', [
-						[/* inline code block */ 'i', `import static java.lang.invoke.MethodHandles.*;
-import static java.lang.invoke.MethodType.*;
-...
-MethodHandle MH_asList = publicLookup().findStatic(Arrays.class,
-  "asList", methodType(List.class, Object[].class));
-assertEquals("[x, y]", MH_asList.invoke("x", "y").toString());`]
-					]]
-				]],
-				[/* block */ 'b', '']
-			],
-			[/* parameters */
-				[/* parameter */ 'refc', [/* parameter description */
-					[/* text */ 't', `the class from which the method is accessed`]
-				]],
-				[/* parameter */ 'name', [/* parameter description */
-					[/* text */ 't', `the name of the method`]
-				]],
-				[/* parameter */ 'type', [/* parameter description */
-					[/* text */ 't', `the type of the method`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.NoSuchMethodException', [/* throw description */
-					[/* text */ 't', `if the method does not exist`]
-				]],
-				[/* throw */ 'java.lang.IllegalAccessException', [/* throw description */
-					[/* text */ 't', `if access checking fails,
-                                or if the method is not `],
-					[/* inline code block */ 'i', `static`],
-					[/* text */ 't', `,
-                                or if the method's variable arity modifier bit
-                                is set and `],
-					[/* inline code block */ 'i', `asVarargsCollector`],
-					[/* text */ 't', ` fails`]
-				]],
-				[/* throw */ 'java.lang.SecurityException', [/* throw description */
-					[/* text */ 't', `if a security manager is present and it
-                              `],
-					[/* reference */ 'r', `.MethodHandles.Lookup#secmgr`]
-				]],
-				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
-					[/* text */ 't', `if any argument is null`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `the desired method handle`]
+				[/* inline code block */ 'i', `true`],
+				[/* text */ 't', ` if this lookup has `],
+				[/* inline code block */ 'i', `PRIVATE`],
+				[/* text */ 't', ` and `],
+				[/* inline code block */ 'i', `MODULE`],
+				[/* text */ 't', ` access.`]
 			]
 		]],
 		[/* method */ 'lookupModes()', [
@@ -3195,33 +2507,6 @@ assertEquals("[x, y]", MH_asList.invoke("x", "y").toString());`]
 			/* throws */ UDF,
 			[/* return description */
 				[/* text */ 't', `the lookup modes, which limit the kinds of access performed by this lookup object`]
-			]
-		]],
-		[/* method */ 'hasFullPrivilegeAccess()', [
-			[/* method description */
-				[/* text */ 't', `Returns `],
-				[/* inline code block */ 'i', `true`],
-				[/* text */ 't', ` if this lookup has `],
-				[/* text */ 't', `full privilege access`],
-				[/* text */ 't', `,
- i.e. `],
-				[/* inline code block */ 'i', `PRIVATE`],
-				[/* text */ 't', ` and `],
-				[/* inline code block */ 'i', `MODULE`],
-				[/* text */ 't', ` access.
- A `],
-				[/* inline code block */ 'i', `Lookup`],
-				[/* text */ 't', ` object must have full privilege access in order to
- access all members that are allowed to the
- `],
-				[/* reference */ 'r', `#lookupClass()`, `lookup class`],
-				[/* text */ 't', `.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* inline code block */ 'i', `true`],
-				[/* text */ 't', ` if this lookup has full privilege access.`]
 			]
 		]],
 		[/* method */ 'accessClass(java.lang.Class)', [
@@ -3482,106 +2767,1376 @@ assertEquals("[x, y]", MH_asList.invoke("x", "y").toString());`]
 				[/* text */ 't', `the class that has been access-checked`]
 			]
 		]],
-		[/* method */ 'dropLookupMode(int)', [
+		[/* method */ 'defineClass(byte[])', [
 			[/* method description */
-				[/* text */ 't', `Creates a lookup on the same lookup class which this lookup object
- finds members, but with a lookup mode that has lost the given lookup mode.
- The lookup mode to drop is one of `],
-				[/* text */ 't', `PUBLIC`],
-				[/* text */ 't', `, `],
-				[/* text */ 't', `MODULE`],
-				[/* text */ 't', `, `],
-				[/* text */ 't', `PACKAGE`],
-				[/* text */ 't', `, `],
-				[/* text */ 't', `PROTECTED`],
-				[/* text */ 't', `,
+				[/* text */ 't', `Creates and links a class or interface from `],
+				[/* inline code block */ 'i', `bytes`],
+				[/* text */ 't', `
+ with the same class loader and in the same runtime package and
  `],
-				[/* text */ 't', `PRIVATE`],
-				[/* text */ 't', `, `],
-				[/* text */ 't', `ORIGINAL`],
-				[/* text */ 't', `, or
+				[/* reference */ 'r', `java.security.ProtectionDomain`],
+				[/* text */ 't', ` as this lookup's
  `],
-				[/* text */ 't', `UNCONDITIONAL`],
+				[/* reference */ 'r', `#lookupClass()`, `lookup class`],
+				[/* text */ 't', ` as if calling
+ `],
+				[/* reference */ 'r', `java.ClassLoader#defineClass(java.lang.String,byte[],int,int,java.security.ProtectionDomain)`],
 				[/* text */ 't', `.
 
  `],
 				[/* block */ 'b', [
-					[/* text */ 't', ` If this lookup is a `],
-					[/* reference */ 'r', `.MethodHandles#publicLookup()`],
-					[/* text */ 't', `,
- this lookup has `],
-					[/* inline code block */ 'i', `UNCONDITIONAL`],
-					[/* text */ 't', ` mode set and it has no other mode set.
- When dropping `],
-					[/* inline code block */ 'i', `UNCONDITIONAL`],
-					[/* text */ 't', ` on a public lookup then the resulting
- lookup has no access.
-
- `]
+					[/* text */ 't', ` The `],
+					[/* reference */ 'r', `#lookupModes()`, `lookup modes`],
+					[/* text */ 't', ` for this lookup must include
+ `],
+					[/* text */ 't', `PACKAGE`],
+					[/* text */ 't', ` access as default (package) members will be
+ accessible to the class. The `],
+					[/* inline code block */ 'i', `PACKAGE`],
+					[/* text */ 't', ` lookup mode serves to authenticate
+ that the lookup object was created by a caller in the runtime package (or derived
+ from a lookup originally created by suitably privileged code to a target class in
+ the runtime package). `]
 				]],
 				[/* block */ 'b', [
-					[/* text */ 't', ` If this lookup is not a public lookup, then the following applies
- regardless of its `],
-					[/* reference */ 'r', `#lookupModes()`, `lookup modes`],
-					[/* text */ 't', `.
- `],
-					[/* text */ 't', `PROTECTED`],
-					[/* text */ 't', ` and `],
-					[/* text */ 't', `ORIGINAL`],
-					[/* text */ 't', ` are always
- dropped and so the resulting lookup mode will never have these access
- capabilities. When dropping `],
-					[/* inline code block */ 'i', `PACKAGE`],
-					[/* text */ 't', `
- then the resulting lookup will not have `],
-					[/* inline code block */ 'i', `PACKAGE`],
-					[/* text */ 't', ` or `],
-					[/* inline code block */ 'i', `PRIVATE`],
-					[/* text */ 't', `
- access. When dropping `],
-					[/* inline code block */ 'i', `MODULE`],
-					[/* text */ 't', ` then the resulting lookup will not
- have `],
-					[/* inline code block */ 'i', `MODULE`],
-					[/* text */ 't', `, `],
-					[/* inline code block */ 'i', `PACKAGE`],
-					[/* text */ 't', `, or `],
-					[/* inline code block */ 'i', `PRIVATE`],
-					[/* text */ 't', ` access.
- When dropping `],
-					[/* inline code block */ 'i', `PUBLIC`],
-					[/* text */ 't', ` then the resulting lookup has no access.`]
+					[/* text */ 't', ` The `],
+					[/* inline code block */ 'i', `bytes`],
+					[/* text */ 't', ` parameter is the class bytes of a valid class file (as defined
+ by the `],
+					[/* text */ 't', `The Java Virtual Machine Specification`],
+					[/* text */ 't', `) with a class name in the
+ same package as the lookup class. `]
+				]],
+				[/* block */ 'b', `The Java Language
+ Specification`],
+				[/* block */ 'b', [
+					[/* text */ 't', ` If there is a security manager and this lookup does not have `],
+					[/* reference */ 'r', `#hasFullPrivilegeAccess()`, `full privilege access`],
+					[/* text */ 't', `, its `],
+					[/* inline code block */ 'i', `checkPermission`],
+					[/* text */ 't', ` method
+ is first called to check `],
+					[/* inline code block */ 'i', `RuntimePermission("defineClass")`],
+					[/* text */ 't', `. `]
 				]]
 			],
 			[/* parameters */
-				[/* parameter */ 'modeToDrop', [/* parameter description */
-					[/* text */ 't', `the lookup mode to drop`]
+				[/* parameter */ 'bytes', [/* parameter description */
+					[/* text */ 't', `the class bytes`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.lang.IllegalAccessException', [/* throw description */
+					[/* text */ 't', `if this lookup does not have `],
+					[/* inline code block */ 'i', `PACKAGE`],
+					[/* text */ 't', ` access`]
+				]],
+				[/* throw */ 'java.lang.ClassFormatError', [/* throw description */
+					[/* text */ 't', `if `],
+					[/* inline code block */ 'i', `bytes`],
+					[/* text */ 't', ` is not a `],
+					[/* inline code block */ 'i', `ClassFile`],
+					[/* text */ 't', ` structure`]
+				]],
+				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
+					[/* text */ 't', `if `],
+					[/* inline code block */ 'i', `bytes`],
+					[/* text */ 't', ` denotes a class in a different package
+ than the lookup class or `],
+					[/* inline code block */ 'i', `bytes`],
+					[/* text */ 't', ` is not a class or interface
+ (`],
+					[/* inline code block */ 'i', `ACC_MODULE`],
+					[/* text */ 't', ` flag is set in the value of the `],
+					[/* inline code block */ 'i', `access_flags`],
+					[/* text */ 't', ` item)`]
+				]],
+				[/* throw */ 'java.lang.VerifyError', [/* throw description */
+					[/* text */ 't', `if the newly created class cannot be verified`]
+				]],
+				[/* throw */ 'java.lang.LinkageError', [/* throw description */
+					[/* text */ 't', `if the newly created class cannot be linked for any other reason`]
+				]],
+				[/* throw */ 'java.lang.SecurityException', [/* throw description */
+					[/* text */ 't', `if a security manager is present and it
+                           `],
+					[/* reference */ 'r', `.MethodHandles.Lookup#secmgr`]
+				]],
+				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
+					[/* text */ 't', `if `],
+					[/* inline code block */ 'i', `bytes`],
+					[/* text */ 't', ` is `],
+					[/* inline code block */ 'i', `null`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `the `],
+				[/* inline code block */ 'i', `Class`],
+				[/* text */ 't', ` object for the class`]
+			]
+		]],
+		[/* method */ 'ensureInitialized(java.lang.Class)', [
+			[/* method description */
+				[/* text */ 't', `Ensures that `],
+				[/* inline code block */ 'i', `targetClass`],
+				[/* text */ 't', ` has been initialized. The class
+ to be initialized must be `],
+				[/* reference */ 'r', `#accessClass(java.lang.Class)`, `accessible`],
+				[/* text */ 't', `
+ to this `],
+				[/* inline code block */ 'i', `Lookup`],
+				[/* text */ 't', ` object.  This method causes `],
+				[/* inline code block */ 'i', `targetClass`],
+				[/* text */ 't', `
+ to be initialized if it has not been already initialized,
+ as specified in JVMS `],
+				[/* external link */ 'a', `https://docs.oracle.com/javase/specs/jvms/se17/html/jvms-5.html#jvms-5.5`, `5.5`],
+				[/* text */ 't', `.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'targetClass', [/* parameter description */
+					[/* text */ 't', `the class to be initialized`]
 				]]
 			],
 			[/* throws */
 				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
 					[/* text */ 't', `if `],
-					[/* inline code block */ 'i', `modeToDrop`],
-					[/* text */ 't', ` is not one of `],
-					[/* inline code block */ 'i', `PUBLIC`],
-					[/* text */ 't', `,
- `],
-					[/* inline code block */ 'i', `MODULE`],
-					[/* text */ 't', `, `],
-					[/* inline code block */ 'i', `PACKAGE`],
-					[/* text */ 't', `, `],
-					[/* inline code block */ 'i', `PROTECTED`],
-					[/* text */ 't', `, `],
-					[/* inline code block */ 'i', `PRIVATE`],
-					[/* text */ 't', `, `],
-					[/* inline code block */ 'i', `ORIGINAL`],
+					[/* inline code block */ 'i', `targetClass`],
+					[/* text */ 't', ` is a primitive type or `],
+					[/* inline code block */ 'i', `void`],
 					[/* text */ 't', `
- or `],
-					[/* inline code block */ 'i', `UNCONDITIONAL`]
+          or array class`]
+				]],
+				[/* throw */ 'java.lang.IllegalAccessException', [/* throw description */
+					[/* text */ 't', `if `],
+					[/* inline code block */ 'i', `targetClass`],
+					[/* text */ 't', ` is not
+          `],
+					[/* reference */ 'r', `#accessClass(java.lang.Class)`, `accessible`],
+					[/* text */ 't', ` to this lookup`]
+				]],
+				[/* throw */ 'java.lang.ExceptionInInitializerError', [/* throw description */
+					[/* text */ 't', `if the class initialization provoked
+          by this method fails`]
+				]],
+				[/* throw */ 'java.lang.SecurityException', [/* throw description */
+					[/* text */ 't', `if a security manager is present and it
+          `],
+					[/* reference */ 'r', `.MethodHandles.Lookup#secmgr`]
 				]]
 			],
 			[/* return description */
-				[/* text */ 't', `a lookup object which lacks the indicated mode, or the same object if there is no change`]
+				[/* inline code block */ 'i', `targetClass`],
+				[/* text */ 't', ` that has been initialized`]
+			]
+		]],
+		[/* method */ 'findClass(java.lang.String)', [
+			[/* method description */
+				[/* text */ 't', `Looks up a class by name from the lookup context defined by this `],
+				[/* inline code block */ 'i', `Lookup`],
+				[/* text */ 't', ` object,
+ `],
+				[/* reference */ 'r', `.MethodHandles.Lookup#equiv`],
+				[/* text */ 't', ` by an `],
+				[/* inline code block */ 'i', `ldc`],
+				[/* text */ 't', ` instruction.
+ Such a resolution, as specified in JVMS 5.4.3.1 section, attempts to locate and load the class,
+ and then determines whether the class is accessible to this lookup object.
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', `
+ The lookup context here is determined by the `],
+					[/* reference */ 'r', `#lookupClass()`, `lookup class`],
+					[/* text */ 't', `,
+ its class loader, and the `],
+					[/* reference */ 'r', `#lookupModes()`, `lookup modes`],
+					[/* text */ 't', `.`]
+				]]
+			],
+			[/* parameters */
+				[/* parameter */ 'targetName', [/* parameter description */
+					[/* text */ 't', `the fully qualified name of the class to be looked up.`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.lang.SecurityException', [/* throw description */
+					[/* text */ 't', `if a security manager is present and it
+                           `],
+					[/* reference */ 'r', `.MethodHandles.Lookup#secmgr`]
+				]],
+				[/* throw */ 'java.lang.LinkageError', [/* throw description */
+					[/* text */ 't', `if the linkage fails`]
+				]],
+				[/* throw */ 'java.lang.ClassNotFoundException', [/* throw description */
+					[/* text */ 't', `if the class cannot be loaded by the lookup class' loader.`]
+				]],
+				[/* throw */ 'java.lang.IllegalAccessException', [/* throw description */
+					[/* text */ 't', `if the class is not accessible, using the allowed access
+ modes.`]
+				]],
+				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
+					[/* text */ 't', `if `],
+					[/* inline code block */ 'i', `targetName`],
+					[/* text */ 't', ` is null`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `the requested class.`]
+			]
+		]],
+		[/* method */ 'lookupClass()', [
+			[/* method description */
+				[/* text */ 't', `Tells which class is performing the lookup.  It is this class against
+  which checks are performed for visibility and access permissions.
+  `],
+				[/* block */ 'b', [
+					[/* text */ 't', `
+  If this lookup object has a `],
+					[/* reference */ 'r', `#previousLookupClass()`, `previous lookup class`],
+					[/* text */ 't', `,
+  access checks are performed against both the lookup class and the previous lookup class.
+  `]
+				]],
+				[/* block */ 'b', [
+					[/* text */ 't', `
+  The class implies a maximum level of access permission,
+  but the permissions may be additionally limited by the bitmask
+  `],
+					[/* reference */ 'r', `#lookupModes()`, `lookupModes`],
+					[/* text */ 't', `, which controls whether non-public members
+  can be accessed.`]
+				]]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the lookup class, on behalf of which this lookup object finds members`]
+			]
+		]],
+		[/* method */ 'previousLookupClass()', [
+			[/* method description */
+				[/* text */ 't', `Reports a lookup class in another module that this lookup object
+ was previously teleported from, or `],
+				[/* inline code block */ 'i', `null`],
+				[/* text */ 't', `.
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', `
+ A `],
+					[/* inline code block */ 'i', `Lookup`],
+					[/* text */ 't', ` object produced by the factory methods, such as the
+ `],
+					[/* reference */ 'r', `.MethodHandles#lookup()`],
+					[/* text */ 't', ` and `],
+					[/* reference */ 'r', `.MethodHandles#publicLookup()`],
+					[/* text */ 't', ` method,
+ has `],
+					[/* inline code block */ 'i', `null`],
+					[/* text */ 't', ` previous lookup class.
+ A `],
+					[/* inline code block */ 'i', `Lookup`],
+					[/* text */ 't', ` object has a non-null previous lookup class
+ when this lookup was teleported from an old lookup class
+ in one module to a new lookup class in another module.`]
+				]]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the lookup class in another module that this lookup object was
+         previously teleported from, or `],
+				[/* inline code block */ 'i', `null`]
+			]
+		]],
+		[/* method */ 'bind(java.lang.Object,java.lang.String,java.lang.invoke.MethodType)', [
+			[/* method description */
+				[/* text */ 't', `Produces an early-bound method handle for a non-static method.
+ The receiver must have a supertype `],
+				[/* inline code block */ 'i', `defc`],
+				[/* text */ 't', ` in which a method
+ of the given name and type is accessible to the lookup class.
+ The method and all its argument types must be accessible to the lookup object.
+ The type of the method handle will be that of the method,
+ without any insertion of an additional receiver parameter.
+ The given receiver will be bound into the method handle,
+ so that every call to the method handle will invoke the
+ requested method on the given receiver.
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', `
+ The returned method handle will have
+ `],
+					[/* reference */ 'r', `.MethodHandle#asVarargsCollector(java.lang.Class)`],
+					[/* text */ 't', ` if and only if
+ the method's variable arity modifier bit (`],
+					[/* inline code block */ 'i', `0x0080`],
+					[/* text */ 't', `) is set
+ `],
+					[/* text */ 't', `and`],
+					[/* text */ 't', ` the trailing array argument is not the only argument.
+ (If the trailing array argument is the only argument,
+ the given receiver value will be bound to it.)
+ `]
+				]],
+				[/* block */ 'b', `
+ This is almost equivalent to the following code, with some differences noted below:
+ `],
+				[/* block */ 'b', [
+					[/* code block */ 'c', [
+						[/* inline code block */ 'i', `import static java.lang.invoke.MethodHandles.*;
+import static java.lang.invoke.MethodType.*;
+...
+MethodHandle mh0 = lookup().findVirtual(defc, name, type);
+MethodHandle mh1 = mh0.bindTo(receiver);
+mh1 = mh1.withVarargs(mh0.isVarargsCollector());
+return mh1;`]
+					]]
+				]],
+				[/* text */ 't', `
+ where `],
+				[/* inline code block */ 'i', `defc`],
+				[/* text */ 't', ` is either `],
+				[/* inline code block */ 'i', `receiver.getClass()`],
+				[/* text */ 't', ` or a super
+ type of that class, in which the requested method is accessible
+ to the lookup class.
+ (Unlike `],
+				[/* inline code block */ 'i', `bind`],
+				[/* text */ 't', `, `],
+				[/* inline code block */ 'i', `bindTo`],
+				[/* text */ 't', ` does not preserve variable arity.
+ Also, `],
+				[/* inline code block */ 'i', `bindTo`],
+				[/* text */ 't', ` may throw a `],
+				[/* inline code block */ 'i', `ClassCastException`],
+				[/* text */ 't', ` in instances where `],
+				[/* inline code block */ 'i', `bind`],
+				[/* text */ 't', ` would
+ throw an `],
+				[/* inline code block */ 'i', `IllegalAccessException`],
+				[/* text */ 't', `, as in the case where the member is `],
+				[/* inline code block */ 'i', `protected`],
+				[/* text */ 't', ` and
+ the receiver is restricted by `],
+				[/* inline code block */ 'i', `findVirtual`],
+				[/* text */ 't', ` to the lookup class.)`],
+				[/* block */ 'b', '']
+			],
+			[/* parameters */
+				[/* parameter */ 'receiver', [/* parameter description */
+					[/* text */ 't', `the object from which the method is accessed`]
+				]],
+				[/* parameter */ 'name', [/* parameter description */
+					[/* text */ 't', `the name of the method`]
+				]],
+				[/* parameter */ 'type', [/* parameter description */
+					[/* text */ 't', `the type of the method, with the receiver argument omitted`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.lang.NoSuchMethodException', [/* throw description */
+					[/* text */ 't', `if the method does not exist`]
+				]],
+				[/* throw */ 'java.lang.IllegalAccessException', [/* throw description */
+					[/* text */ 't', `if access checking fails
+                                or if the method's variable arity modifier bit
+                                is set and `],
+					[/* inline code block */ 'i', `asVarargsCollector`],
+					[/* text */ 't', ` fails`]
+				]],
+				[/* throw */ 'java.lang.SecurityException', [/* throw description */
+					[/* text */ 't', `if a security manager is present and it
+                              `],
+					[/* reference */ 'r', `.MethodHandles.Lookup#secmgr`]
+				]],
+				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
+					[/* text */ 't', `if any argument is null`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `the desired method handle`]
+			]
+		]],
+		[/* method */ 'findConstructor(java.lang.Class,java.lang.invoke.MethodType)', [
+			[/* method description */
+				[/* text */ 't', `Produces a method handle which creates an object and initializes it, using
+ the constructor of the specified type.
+ The parameter types of the method handle will be those of the constructor,
+ while the return type will be a reference to the constructor's class.
+ The constructor and all its argument types must be accessible to the lookup object.
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', `
+ The requested type must have a return type of `],
+					[/* inline code block */ 'i', `void`],
+					[/* text */ 't', `.
+ (This is consistent with the JVM's treatment of constructor type descriptors.)
+ `]
+				]],
+				[/* block */ 'b', [
+					[/* text */ 't', `
+ The returned method handle will have
+ `],
+					[/* reference */ 'r', `.MethodHandle#asVarargsCollector(java.lang.Class)`],
+					[/* text */ 't', ` if and only if
+ the constructor's variable arity modifier bit (`],
+					[/* inline code block */ 'i', `0x0080`],
+					[/* text */ 't', `) is set.
+ `]
+				]],
+				[/* block */ 'b', `
+ If the returned method handle is invoked, the constructor's class will
+ be initialized, if it has not already been initialized.
+ `],
+				[/* block */ 'b', `Example:`],
+				[/* block */ 'b', [
+					[/* code block */ 'c', [
+						[/* inline code block */ 'i', `import static java.lang.invoke.MethodHandles.*;
+import static java.lang.invoke.MethodType.*;
+...
+MethodHandle MH_newArrayList = publicLookup().findConstructor(
+  ArrayList.class, methodType(void.class, Collection.class));
+Collection orig = Arrays.asList("x", "y");
+Collection copy = (ArrayList) MH_newArrayList.invokeExact(orig);
+assert(orig != copy);
+assertEquals(orig, copy);
+// a variable-arity constructor:
+MethodHandle MH_newProcessBuilder = publicLookup().findConstructor(
+  ProcessBuilder.class, methodType(void.class, String[].class));
+ProcessBuilder pb = (ProcessBuilder)
+  MH_newProcessBuilder.invoke("x", "y", "z");
+assertEquals("[x, y, z]", pb.command().toString());`]
+					]]
+				]],
+				[/* block */ 'b', '']
+			],
+			[/* parameters */
+				[/* parameter */ 'refc', [/* parameter description */
+					[/* text */ 't', `the class or interface from which the method is accessed`]
+				]],
+				[/* parameter */ 'type', [/* parameter description */
+					[/* text */ 't', `the type of the method, with the receiver argument omitted, and a void return type`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.lang.NoSuchMethodException', [/* throw description */
+					[/* text */ 't', `if the constructor does not exist`]
+				]],
+				[/* throw */ 'java.lang.IllegalAccessException', [/* throw description */
+					[/* text */ 't', `if access checking fails
+                                or if the method's variable arity modifier bit
+                                is set and `],
+					[/* inline code block */ 'i', `asVarargsCollector`],
+					[/* text */ 't', ` fails`]
+				]],
+				[/* throw */ 'java.lang.SecurityException', [/* throw description */
+					[/* text */ 't', `if a security manager is present and it
+                              `],
+					[/* reference */ 'r', `.MethodHandles.Lookup#secmgr`]
+				]],
+				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
+					[/* text */ 't', `if any argument is null`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `the desired method handle`]
+			]
+		]],
+		[/* method */ 'findGetter(java.lang.Class,java.lang.String,java.lang.Class)', [
+			[/* method description */
+				[/* text */ 't', `Produces a method handle giving read access to a non-static field.
+ The type of the method handle will have a return type of the field's
+ value type.
+ The method handle's single argument will be the instance containing
+ the field.
+ Access checking is performed immediately on behalf of the lookup class.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'refc', [/* parameter description */
+					[/* text */ 't', `the class or interface from which the method is accessed`]
+				]],
+				[/* parameter */ 'name', [/* parameter description */
+					[/* text */ 't', `the field's name`]
+				]],
+				[/* parameter */ 'type', [/* parameter description */
+					[/* text */ 't', `the field's type`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.lang.NoSuchFieldException', [/* throw description */
+					[/* text */ 't', `if the field does not exist`]
+				]],
+				[/* throw */ 'java.lang.IllegalAccessException', [/* throw description */
+					[/* text */ 't', `if access checking fails, or if the field is `],
+					[/* inline code block */ 'i', `static`]
+				]],
+				[/* throw */ 'java.lang.SecurityException', [/* throw description */
+					[/* text */ 't', `if a security manager is present and it
+                              `],
+					[/* reference */ 'r', `.MethodHandles.Lookup#secmgr`]
+				]],
+				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
+					[/* text */ 't', `if any argument is null`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `a method handle which can load values from the field`]
+			]
+		]],
+		[/* method */ 'findSetter(java.lang.Class,java.lang.String,java.lang.Class)', [
+			[/* method description */
+				[/* text */ 't', `Produces a method handle giving write access to a non-static field.
+ The type of the method handle will have a void return type.
+ The method handle will take two arguments, the instance containing
+ the field, and the value to be stored.
+ The second argument will be of the field's value type.
+ Access checking is performed immediately on behalf of the lookup class.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'refc', [/* parameter description */
+					[/* text */ 't', `the class or interface from which the method is accessed`]
+				]],
+				[/* parameter */ 'name', [/* parameter description */
+					[/* text */ 't', `the field's name`]
+				]],
+				[/* parameter */ 'type', [/* parameter description */
+					[/* text */ 't', `the field's type`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.lang.NoSuchFieldException', [/* throw description */
+					[/* text */ 't', `if the field does not exist`]
+				]],
+				[/* throw */ 'java.lang.IllegalAccessException', [/* throw description */
+					[/* text */ 't', `if access checking fails, or if the field is `],
+					[/* inline code block */ 'i', `static`],
+					[/* text */ 't', `
+                                or `],
+					[/* inline code block */ 'i', `final`]
+				]],
+				[/* throw */ 'java.lang.SecurityException', [/* throw description */
+					[/* text */ 't', `if a security manager is present and it
+                              `],
+					[/* reference */ 'r', `.MethodHandles.Lookup#secmgr`]
+				]],
+				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
+					[/* text */ 't', `if any argument is null`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `a method handle which can store values into the field`]
+			]
+		]],
+		[/* method */ 'findSpecial(java.lang.Class,java.lang.String,java.lang.invoke.MethodType,java.lang.Class)', [
+			[/* method description */
+				[/* text */ 't', `Produces an early-bound method handle for a virtual method.
+ It will bypass checks for overriding methods on the receiver,
+ `],
+				[/* reference */ 'r', `.MethodHandles.Lookup#equiv`],
+				[/* text */ 't', ` from an `],
+				[/* inline code block */ 'i', `invokespecial`],
+				[/* text */ 't', `
+ instruction from within the explicitly specified `],
+				[/* inline code block */ 'i', `specialCaller`],
+				[/* text */ 't', `.
+ The type of the method handle will be that of the method,
+ with a suitably restricted receiver type prepended.
+ (The receiver type will be `],
+				[/* inline code block */ 'i', `specialCaller`],
+				[/* text */ 't', ` or a subtype.)
+ The method and all its argument types must be accessible
+ to the lookup object.
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', `
+ Before method resolution,
+ if the explicitly specified caller class is not identical with the
+ lookup class, or if this lookup object does not have
+ `],
+					[/* reference */ 'r', `.MethodHandles.Lookup#privacc`],
+					[/* text */ 't', `
+ privileges, the access fails.
+ `]
+				]],
+				[/* block */ 'b', [
+					[/* text */ 't', `
+ The returned method handle will have
+ `],
+					[/* reference */ 'r', `.MethodHandle#asVarargsCollector(java.lang.Class)`],
+					[/* text */ 't', ` if and only if
+ the method's variable arity modifier bit (`],
+					[/* inline code block */ 'i', `0x0080`],
+					[/* text */ 't', `) is set.
+ `]
+				]],
+				[/* block */ 'b', [
+					[/* text */ 't', `(Note:  JVM internal methods named `],
+					[/* inline code block */ 'i', `"<init>"`],
+					[/* text */ 't', ` are not visible to this API,
+ even though the `],
+					[/* inline code block */ 'i', `invokespecial`],
+					[/* text */ 't', ` instruction can refer to them
+ in special circumstances.  Use `],
+					[/* reference */ 'r', `#findConstructor(java.lang.Class,java.lang.invoke.MethodType)`, `findConstructor`],
+					[/* text */ 't', `
+ to access instance initialization methods in a safe manner.)`]
+				]],
+				[/* block */ 'b', `Example:`],
+				[/* block */ 'b', [
+					[/* code block */ 'c', [
+						[/* inline code block */ 'i', `import static java.lang.invoke.MethodHandles.*;
+import static java.lang.invoke.MethodType.*;
+...
+static class Listie extends ArrayList {
+  public String toString() { return "[wee Listie]"; }
+  static Lookup lookup() { return MethodHandles.lookup(); }
+}
+...
+// no access to constructor via invokeSpecial:
+MethodHandle MH_newListie = Listie.lookup()
+  .findConstructor(Listie.class, methodType(void.class));
+Listie l = (Listie) MH_newListie.invokeExact();
+try { assertEquals("impossible", Listie.lookup().findSpecial(
+        Listie.class, "<init>", methodType(void.class), Listie.class));
+ } catch (NoSuchMethodException ex) { } // OK
+// access to super and self methods via invokeSpecial:
+MethodHandle MH_super = Listie.lookup().findSpecial(
+  ArrayList.class, "toString" , methodType(String.class), Listie.class);
+MethodHandle MH_this = Listie.lookup().findSpecial(
+  Listie.class, "toString" , methodType(String.class), Listie.class);
+MethodHandle MH_duper = Listie.lookup().findSpecial(
+  Object.class, "toString" , methodType(String.class), Listie.class);
+assertEquals("[]", (String) MH_super.invokeExact(l));
+assertEquals(""+l, (String) MH_this.invokeExact(l));
+assertEquals("[]", (String) MH_duper.invokeExact(l)); // ArrayList method
+try { assertEquals("inaccessible", Listie.lookup().findSpecial(
+        String.class, "toString", methodType(String.class), Listie.class));
+ } catch (IllegalAccessException ex) { } // OK
+Listie subl = new Listie() { public String toString() { return "[subclass]"; } };
+assertEquals(""+l, (String) MH_this.invokeExact(subl)); // Listie method`]
+					]]
+				]],
+				[/* block */ 'b', '']
+			],
+			[/* parameters */
+				[/* parameter */ 'refc', [/* parameter description */
+					[/* text */ 't', `the class or interface from which the method is accessed`]
+				]],
+				[/* parameter */ 'name', [/* parameter description */
+					[/* text */ 't', `the name of the method (which must not be "<init>")`]
+				]],
+				[/* parameter */ 'type', [/* parameter description */
+					[/* text */ 't', `the type of the method, with the receiver argument omitted`]
+				]],
+				[/* parameter */ 'specialCaller', [/* parameter description */
+					[/* text */ 't', `the proposed calling class to perform the `],
+					[/* inline code block */ 'i', `invokespecial`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.lang.NoSuchMethodException', [/* throw description */
+					[/* text */ 't', `if the method does not exist`]
+				]],
+				[/* throw */ 'java.lang.IllegalAccessException', [/* throw description */
+					[/* text */ 't', `if access checking fails,
+                                or if the method is `],
+					[/* inline code block */ 'i', `static`],
+					[/* text */ 't', `,
+                                or if the method's variable arity modifier bit
+                                is set and `],
+					[/* inline code block */ 'i', `asVarargsCollector`],
+					[/* text */ 't', ` fails`]
+				]],
+				[/* throw */ 'java.lang.SecurityException', [/* throw description */
+					[/* text */ 't', `if a security manager is present and it
+                              `],
+					[/* reference */ 'r', `.MethodHandles.Lookup#secmgr`]
+				]],
+				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
+					[/* text */ 't', `if any argument is null`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `the desired method handle`]
+			]
+		]],
+		[/* method */ 'findStatic(java.lang.Class,java.lang.String,java.lang.invoke.MethodType)', [
+			[/* method description */
+				[/* text */ 't', `Produces a method handle for a static method.
+ The type of the method handle will be that of the method.
+ (Since static methods do not take receivers, there is no
+ additional receiver argument inserted into the method handle type,
+ as there would be with `],
+				[/* reference */ 'r', `#findVirtual(java.lang.Class,java.lang.String,java.lang.invoke.MethodType)`, `findVirtual`],
+				[/* text */ 't', ` or `],
+				[/* reference */ 'r', `#findSpecial(java.lang.Class,java.lang.String,java.lang.invoke.MethodType,java.lang.Class)`, `findSpecial`],
+				[/* text */ 't', `.)
+ The method and all its argument types must be accessible to the lookup object.
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', `
+ The returned method handle will have
+ `],
+					[/* reference */ 'r', `.MethodHandle#asVarargsCollector(java.lang.Class)`],
+					[/* text */ 't', ` if and only if
+ the method's variable arity modifier bit (`],
+					[/* inline code block */ 'i', `0x0080`],
+					[/* text */ 't', `) is set.
+ `]
+				]],
+				[/* block */ 'b', `
+ If the returned method handle is invoked, the method's class will
+ be initialized, if it has not already been initialized.
+ `],
+				[/* block */ 'b', `Example:`],
+				[/* block */ 'b', [
+					[/* code block */ 'c', [
+						[/* inline code block */ 'i', `import static java.lang.invoke.MethodHandles.*;
+import static java.lang.invoke.MethodType.*;
+...
+MethodHandle MH_asList = publicLookup().findStatic(Arrays.class,
+  "asList", methodType(List.class, Object[].class));
+assertEquals("[x, y]", MH_asList.invoke("x", "y").toString());`]
+					]]
+				]],
+				[/* block */ 'b', '']
+			],
+			[/* parameters */
+				[/* parameter */ 'refc', [/* parameter description */
+					[/* text */ 't', `the class from which the method is accessed`]
+				]],
+				[/* parameter */ 'name', [/* parameter description */
+					[/* text */ 't', `the name of the method`]
+				]],
+				[/* parameter */ 'type', [/* parameter description */
+					[/* text */ 't', `the type of the method`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.lang.NoSuchMethodException', [/* throw description */
+					[/* text */ 't', `if the method does not exist`]
+				]],
+				[/* throw */ 'java.lang.IllegalAccessException', [/* throw description */
+					[/* text */ 't', `if access checking fails,
+                                or if the method is not `],
+					[/* inline code block */ 'i', `static`],
+					[/* text */ 't', `,
+                                or if the method's variable arity modifier bit
+                                is set and `],
+					[/* inline code block */ 'i', `asVarargsCollector`],
+					[/* text */ 't', ` fails`]
+				]],
+				[/* throw */ 'java.lang.SecurityException', [/* throw description */
+					[/* text */ 't', `if a security manager is present and it
+                              `],
+					[/* reference */ 'r', `.MethodHandles.Lookup#secmgr`]
+				]],
+				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
+					[/* text */ 't', `if any argument is null`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `the desired method handle`]
+			]
+		]],
+		[/* method */ 'findStaticGetter(java.lang.Class,java.lang.String,java.lang.Class)', [
+			[/* method description */
+				[/* text */ 't', `Produces a method handle giving read access to a static field.
+ The type of the method handle will have a return type of the field's
+ value type.
+ The method handle will take no arguments.
+ Access checking is performed immediately on behalf of the lookup class.
+ `],
+				[/* block */ 'b', `
+ If the returned method handle is invoked, the field's class will
+ be initialized, if it has not already been initialized.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'refc', [/* parameter description */
+					[/* text */ 't', `the class or interface from which the method is accessed`]
+				]],
+				[/* parameter */ 'name', [/* parameter description */
+					[/* text */ 't', `the field's name`]
+				]],
+				[/* parameter */ 'type', [/* parameter description */
+					[/* text */ 't', `the field's type`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.lang.NoSuchFieldException', [/* throw description */
+					[/* text */ 't', `if the field does not exist`]
+				]],
+				[/* throw */ 'java.lang.IllegalAccessException', [/* throw description */
+					[/* text */ 't', `if access checking fails, or if the field is not `],
+					[/* inline code block */ 'i', `static`]
+				]],
+				[/* throw */ 'java.lang.SecurityException', [/* throw description */
+					[/* text */ 't', `if a security manager is present and it
+                              `],
+					[/* reference */ 'r', `.MethodHandles.Lookup#secmgr`]
+				]],
+				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
+					[/* text */ 't', `if any argument is null`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `a method handle which can load values from the field`]
+			]
+		]],
+		[/* method */ 'findStaticSetter(java.lang.Class,java.lang.String,java.lang.Class)', [
+			[/* method description */
+				[/* text */ 't', `Produces a method handle giving write access to a static field.
+ The type of the method handle will have a void return type.
+ The method handle will take a single
+ argument, of the field's value type, the value to be stored.
+ Access checking is performed immediately on behalf of the lookup class.
+ `],
+				[/* block */ 'b', `
+ If the returned method handle is invoked, the field's class will
+ be initialized, if it has not already been initialized.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'refc', [/* parameter description */
+					[/* text */ 't', `the class or interface from which the method is accessed`]
+				]],
+				[/* parameter */ 'name', [/* parameter description */
+					[/* text */ 't', `the field's name`]
+				]],
+				[/* parameter */ 'type', [/* parameter description */
+					[/* text */ 't', `the field's type`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.lang.NoSuchFieldException', [/* throw description */
+					[/* text */ 't', `if the field does not exist`]
+				]],
+				[/* throw */ 'java.lang.IllegalAccessException', [/* throw description */
+					[/* text */ 't', `if access checking fails, or if the field is not `],
+					[/* inline code block */ 'i', `static`],
+					[/* text */ 't', `
+                                or is `],
+					[/* inline code block */ 'i', `final`]
+				]],
+				[/* throw */ 'java.lang.SecurityException', [/* throw description */
+					[/* text */ 't', `if a security manager is present and it
+                              `],
+					[/* reference */ 'r', `.MethodHandles.Lookup#secmgr`]
+				]],
+				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
+					[/* text */ 't', `if any argument is null`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `a method handle which can store values into the field`]
+			]
+		]],
+		[/* method */ 'findVirtual(java.lang.Class,java.lang.String,java.lang.invoke.MethodType)', [
+			[/* method description */
+				[/* text */ 't', `Produces a method handle for a virtual method.
+ The type of the method handle will be that of the method,
+ with the receiver type (usually `],
+				[/* inline code block */ 'i', `refc`],
+				[/* text */ 't', `) prepended.
+ The method and all its argument types must be accessible to the lookup object.
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', `
+ When called, the handle will treat the first argument as a receiver
+ and, for non-private methods, dispatch on the receiver's type to determine which method
+ implementation to enter.
+ For private methods the named method in `],
+					[/* inline code block */ 'i', `refc`],
+					[/* text */ 't', ` will be invoked on the receiver.
+ (The dispatching action is identical with that performed by an
+ `],
+					[/* inline code block */ 'i', `invokevirtual`],
+					[/* text */ 't', ` or `],
+					[/* inline code block */ 'i', `invokeinterface`],
+					[/* text */ 't', ` instruction.)
+ `]
+				]],
+				[/* block */ 'b', [
+					[/* text */ 't', `
+ The first argument will be of type `],
+					[/* inline code block */ 'i', `refc`],
+					[/* text */ 't', ` if the lookup
+ class has full privileges to access the member.  Otherwise
+ the member must be `],
+					[/* inline code block */ 'i', `protected`],
+					[/* text */ 't', ` and the first argument
+ will be restricted in type to the lookup class.
+ `]
+				]],
+				[/* block */ 'b', [
+					[/* text */ 't', `
+ The returned method handle will have
+ `],
+					[/* reference */ 'r', `.MethodHandle#asVarargsCollector(java.lang.Class)`],
+					[/* text */ 't', ` if and only if
+ the method's variable arity modifier bit (`],
+					[/* inline code block */ 'i', `0x0080`],
+					[/* text */ 't', `) is set.
+ `]
+				]],
+				[/* block */ 'b', [
+					[/* text */ 't', `
+ Because of the general `],
+					[/* reference */ 'r', `.MethodHandles.Lookup#equiv`],
+					[/* text */ 't', ` between `],
+					[/* inline code block */ 'i', `invokevirtual`],
+					[/* text */ 't', `
+ instructions and method handles produced by `],
+					[/* inline code block */ 'i', `findVirtual`],
+					[/* text */ 't', `,
+ if the class is `],
+					[/* inline code block */ 'i', `MethodHandle`],
+					[/* text */ 't', ` and the name string is
+ `],
+					[/* inline code block */ 'i', `invokeExact`],
+					[/* text */ 't', ` or `],
+					[/* inline code block */ 'i', `invoke`],
+					[/* text */ 't', `, the resulting
+ method handle is equivalent to one produced by
+ `],
+					[/* reference */ 'r', `.MethodHandles#exactInvoker(java.lang.invoke.MethodType)`],
+					[/* text */ 't', ` or
+ `],
+					[/* reference */ 'r', `.MethodHandles#invoker(java.lang.invoke.MethodType)`],
+					[/* text */ 't', `
+ with the same `],
+					[/* inline code block */ 'i', `type`],
+					[/* text */ 't', ` argument.
+ `]
+				]],
+				[/* block */ 'b', [
+					[/* text */ 't', `
+ If the class is `],
+					[/* inline code block */ 'i', `VarHandle`],
+					[/* text */ 't', ` and the name string corresponds to
+ the name of a signature-polymorphic access mode method, the resulting
+ method handle is equivalent to one produced by
+ `],
+					[/* reference */ 'r', `.MethodHandles#varHandleInvoker(java.lang.invoke.VarHandle.AccessMode,java.lang.invoke.MethodType)`],
+					[/* text */ 't', ` with
+ the access mode corresponding to the name string and with the same
+ `],
+					[/* inline code block */ 'i', `type`],
+					[/* text */ 't', ` arguments.
+ `]
+				]],
+				[/* block */ 'b', `Example:`],
+				[/* block */ 'b', [
+					[/* code block */ 'c', [
+						[/* inline code block */ 'i', `import static java.lang.invoke.MethodHandles.*;
+import static java.lang.invoke.MethodType.*;
+...
+MethodHandle MH_concat = publicLookup().findVirtual(String.class,
+  "concat", methodType(String.class, String.class));
+MethodHandle MH_hashCode = publicLookup().findVirtual(Object.class,
+  "hashCode", methodType(int.class));
+MethodHandle MH_hashCode_String = publicLookup().findVirtual(String.class,
+  "hashCode", methodType(int.class));
+assertEquals("xy", (String) MH_concat.invokeExact("x", "y"));
+assertEquals("xy".hashCode(), (int) MH_hashCode.invokeExact((Object)"xy"));
+assertEquals("xy".hashCode(), (int) MH_hashCode_String.invokeExact("xy"));
+// interface method:
+MethodHandle MH_subSequence = publicLookup().findVirtual(CharSequence.class,
+  "subSequence", methodType(CharSequence.class, int.class, int.class));
+assertEquals("def", MH_subSequence.invoke("abcdefghi", 3, 6).toString());
+// constructor "internal method" must be accessed differently:
+MethodType MT_newString = methodType(void.class); //()V for new String()
+try { assertEquals("impossible", lookup()
+        .findVirtual(String.class, "<init>", MT_newString));
+ } catch (NoSuchMethodException ex) { } // OK
+MethodHandle MH_newString = publicLookup()
+  .findConstructor(String.class, MT_newString);
+assertEquals("", (String) MH_newString.invokeExact());`]
+					]]
+				]],
+				[/* block */ 'b', '']
+			],
+			[/* parameters */
+				[/* parameter */ 'refc', [/* parameter description */
+					[/* text */ 't', `the class or interface from which the method is accessed`]
+				]],
+				[/* parameter */ 'name', [/* parameter description */
+					[/* text */ 't', `the name of the method`]
+				]],
+				[/* parameter */ 'type', [/* parameter description */
+					[/* text */ 't', `the type of the method, with the receiver argument omitted`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.lang.NoSuchMethodException', [/* throw description */
+					[/* text */ 't', `if the method does not exist`]
+				]],
+				[/* throw */ 'java.lang.IllegalAccessException', [/* throw description */
+					[/* text */ 't', `if access checking fails,
+                                or if the method is `],
+					[/* inline code block */ 'i', `static`],
+					[/* text */ 't', `,
+                                or if the method's variable arity modifier bit
+                                is set and `],
+					[/* inline code block */ 'i', `asVarargsCollector`],
+					[/* text */ 't', ` fails`]
+				]],
+				[/* throw */ 'java.lang.SecurityException', [/* throw description */
+					[/* text */ 't', `if a security manager is present and it
+                              `],
+					[/* reference */ 'r', `.MethodHandles.Lookup#secmgr`]
+				]],
+				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
+					[/* text */ 't', `if any argument is null`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `the desired method handle`]
+			]
+		]],
+		[/* method */ 'unreflect(java.lang.reflect.Method)', [
+			[/* method description */
+				[/* text */ 't', `Makes a `],
+				[/* reference */ 'r', `.MethodHandleInfo#directmh`],
+				[/* text */ 't', `
+ to `],
+				[/* text */ 't', `m`],
+				[/* text */ 't', `, if the lookup class has permission.
+ If `],
+				[/* text */ 't', `m`],
+				[/* text */ 't', ` is non-static, the receiver argument is treated as an initial argument.
+ If `],
+				[/* text */ 't', `m`],
+				[/* text */ 't', ` is virtual, overriding is respected on every call.
+ Unlike the Core Reflection API, exceptions are `],
+				[/* text */ 't', `not`],
+				[/* text */ 't', ` wrapped.
+ The type of the method handle will be that of the method,
+ with the receiver type prepended (but only if it is non-static).
+ If the method's `],
+				[/* inline code block */ 'i', `accessible`],
+				[/* text */ 't', ` flag is not set,
+ access checking is performed immediately on behalf of the lookup class.
+ If `],
+				[/* text */ 't', `m`],
+				[/* text */ 't', ` is not public, do not share the resulting handle with untrusted parties.
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', `
+ The returned method handle will have
+ `],
+					[/* reference */ 'r', `.MethodHandle#asVarargsCollector(java.lang.Class)`],
+					[/* text */ 't', ` if and only if
+ the method's variable arity modifier bit (`],
+					[/* inline code block */ 'i', `0x0080`],
+					[/* text */ 't', `) is set.
+ `]
+				]],
+				[/* block */ 'b', [
+					[/* text */ 't', `
+ If `],
+					[/* text */ 't', `m`],
+					[/* text */ 't', ` is static, and
+ if the returned method handle is invoked, the method's class will
+ be initialized, if it has not already been initialized.`]
+				]]
+			],
+			[/* parameters */
+				[/* parameter */ 'm', [/* parameter description */
+					[/* text */ 't', `the reflected method`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.lang.IllegalAccessException', [/* throw description */
+					[/* text */ 't', `if access checking fails
+                                or if the method's variable arity modifier bit
+                                is set and `],
+					[/* inline code block */ 'i', `asVarargsCollector`],
+					[/* text */ 't', ` fails`]
+				]],
+				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
+					[/* text */ 't', `if the argument is null`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `a method handle which can invoke the reflected method`]
+			]
+		]],
+		[/* method */ 'unreflectConstructor(java.lang.reflect.Constructor)', [
+			[/* method description */
+				[/* text */ 't', `Produces a method handle for a reflected constructor.
+ The type of the method handle will be that of the constructor,
+ with the return type changed to the declaring class.
+ The method handle will perform a `],
+				[/* inline code block */ 'i', `newInstance`],
+				[/* text */ 't', ` operation,
+ creating a new instance of the constructor's class on the
+ arguments passed to the method handle.
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', `
+ If the constructor's `],
+					[/* inline code block */ 'i', `accessible`],
+					[/* text */ 't', ` flag is not set,
+ access checking is performed immediately on behalf of the lookup class.
+ `]
+				]],
+				[/* block */ 'b', [
+					[/* text */ 't', `
+ The returned method handle will have
+ `],
+					[/* reference */ 'r', `.MethodHandle#asVarargsCollector(java.lang.Class)`],
+					[/* text */ 't', ` if and only if
+ the constructor's variable arity modifier bit (`],
+					[/* inline code block */ 'i', `0x0080`],
+					[/* text */ 't', `) is set.
+ `]
+				]],
+				[/* block */ 'b', `
+ If the returned method handle is invoked, the constructor's class will
+ be initialized, if it has not already been initialized.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'c', [/* parameter description */
+					[/* text */ 't', `the reflected constructor`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.lang.IllegalAccessException', [/* throw description */
+					[/* text */ 't', `if access checking fails
+                                or if the method's variable arity modifier bit
+                                is set and `],
+					[/* inline code block */ 'i', `asVarargsCollector`],
+					[/* text */ 't', ` fails`]
+				]],
+				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
+					[/* text */ 't', `if the argument is null`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `a method handle which can invoke the reflected constructor`]
+			]
+		]],
+		[/* method */ 'unreflectGetter(java.lang.reflect.Field)', [
+			[/* method description */
+				[/* text */ 't', `Produces a method handle giving read access to a reflected field.
+ The type of the method handle will have a return type of the field's
+ value type.
+ If the field is `],
+				[/* inline code block */ 'i', `static`],
+				[/* text */ 't', `, the method handle will take no arguments.
+ Otherwise, its single argument will be the instance containing
+ the field.
+ If the `],
+				[/* inline code block */ 'i', `Field`],
+				[/* text */ 't', ` object's `],
+				[/* inline code block */ 'i', `accessible`],
+				[/* text */ 't', ` flag is not set,
+ access checking is performed immediately on behalf of the lookup class.
+ `],
+				[/* block */ 'b', `
+ If the field is static, and
+ if the returned method handle is invoked, the field's class will
+ be initialized, if it has not already been initialized.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'f', [/* parameter description */
+					[/* text */ 't', `the reflected field`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.lang.IllegalAccessException', [/* throw description */
+					[/* text */ 't', `if access checking fails`]
+				]],
+				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
+					[/* text */ 't', `if the argument is null`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `a method handle which can load values from the reflected field`]
+			]
+		]],
+		[/* method */ 'unreflectSetter(java.lang.reflect.Field)', [
+			[/* method description */
+				[/* text */ 't', `Produces a method handle giving write access to a reflected field.
+ The type of the method handle will have a void return type.
+ If the field is `],
+				[/* inline code block */ 'i', `static`],
+				[/* text */ 't', `, the method handle will take a single
+ argument, of the field's value type, the value to be stored.
+ Otherwise, the two arguments will be the instance containing
+ the field, and the value to be stored.
+ If the `],
+				[/* inline code block */ 'i', `Field`],
+				[/* text */ 't', ` object's `],
+				[/* inline code block */ 'i', `accessible`],
+				[/* text */ 't', ` flag is not set,
+ access checking is performed immediately on behalf of the lookup class.
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', `
+ If the field is `],
+					[/* inline code block */ 'i', `final`],
+					[/* text */ 't', `, write access will not be
+ allowed and access checking will fail, except under certain
+ narrow circumstances documented for `],
+					[/* reference */ 'r', `java.Field#set(java.lang.Object,java.lang.Object)`],
+					[/* text */ 't', `.
+ A method handle is returned only if a corresponding call to
+ the `],
+					[/* inline code block */ 'i', `Field`],
+					[/* text */ 't', ` object's `],
+					[/* inline code block */ 'i', `set`],
+					[/* text */ 't', ` method could return
+ normally.  In particular, fields which are both `],
+					[/* inline code block */ 'i', `static`],
+					[/* text */ 't', `
+ and `],
+					[/* inline code block */ 'i', `final`],
+					[/* text */ 't', ` may never be set.
+ `]
+				]],
+				[/* block */ 'b', [
+					[/* text */ 't', `
+ If the field is `],
+					[/* inline code block */ 'i', `static`],
+					[/* text */ 't', `, and
+ if the returned method handle is invoked, the field's class will
+ be initialized, if it has not already been initialized.`]
+				]]
+			],
+			[/* parameters */
+				[/* parameter */ 'f', [/* parameter description */
+					[/* text */ 't', `the reflected field`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.lang.IllegalAccessException', [/* throw description */
+					[/* text */ 't', `if access checking fails,
+         or if the field is `],
+					[/* inline code block */ 'i', `final`],
+					[/* text */ 't', ` and write access
+         is not enabled on the `],
+					[/* inline code block */ 'i', `Field`],
+					[/* text */ 't', ` object`]
+				]],
+				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
+					[/* text */ 't', `if the argument is null`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `a method handle which can store values into the reflected field`]
+			]
+		]],
+		[/* method */ 'unreflectSpecial(java.lang.reflect.Method,java.lang.Class)', [
+			[/* method description */
+				[/* text */ 't', `Produces a method handle for a reflected method.
+ It will bypass checks for overriding methods on the receiver,
+ `],
+				[/* reference */ 'r', `.MethodHandles.Lookup#equiv`],
+				[/* text */ 't', ` from an `],
+				[/* inline code block */ 'i', `invokespecial`],
+				[/* text */ 't', `
+ instruction from within the explicitly specified `],
+				[/* inline code block */ 'i', `specialCaller`],
+				[/* text */ 't', `.
+ The type of the method handle will be that of the method,
+ with a suitably restricted receiver type prepended.
+ (The receiver type will be `],
+				[/* inline code block */ 'i', `specialCaller`],
+				[/* text */ 't', ` or a subtype.)
+ If the method's `],
+				[/* inline code block */ 'i', `accessible`],
+				[/* text */ 't', ` flag is not set,
+ access checking is performed immediately on behalf of the lookup class,
+ as if `],
+				[/* inline code block */ 'i', `invokespecial`],
+				[/* text */ 't', ` instruction were being linked.
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', `
+ Before method resolution,
+ if the explicitly specified caller class is not identical with the
+ lookup class, or if this lookup object does not have
+ `],
+					[/* reference */ 'r', `.MethodHandles.Lookup#privacc`],
+					[/* text */ 't', `
+ privileges, the access fails.
+ `]
+				]],
+				[/* block */ 'b', [
+					[/* text */ 't', `
+ The returned method handle will have
+ `],
+					[/* reference */ 'r', `.MethodHandle#asVarargsCollector(java.lang.Class)`],
+					[/* text */ 't', ` if and only if
+ the method's variable arity modifier bit (`],
+					[/* inline code block */ 'i', `0x0080`],
+					[/* text */ 't', `) is set.`]
+				]]
+			],
+			[/* parameters */
+				[/* parameter */ 'm', [/* parameter description */
+					[/* text */ 't', `the reflected method`]
+				]],
+				[/* parameter */ 'specialCaller', [/* parameter description */
+					[/* text */ 't', `the class nominally calling the method`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.lang.IllegalAccessException', [/* throw description */
+					[/* text */ 't', `if access checking fails,
+                                or if the method is `],
+					[/* inline code block */ 'i', `static`],
+					[/* text */ 't', `,
+                                or if the method's variable arity modifier bit
+                                is set and `],
+					[/* inline code block */ 'i', `asVarargsCollector`],
+					[/* text */ 't', ` fails`]
+				]],
+				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
+					[/* text */ 't', `if any argument is null`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `a method handle which can invoke the reflected method`]
+			]
+		]],
+		[/* method */ 'revealDirect(java.lang.invoke.MethodHandle)', [
+			[/* method description */
+				[/* text */ 't', `Cracks a `],
+				[/* reference */ 'r', `.MethodHandleInfo#directmh`],
+				[/* text */ 't', `
+ created by this lookup object or a similar one.
+ Security and access checks are performed to ensure that this lookup object
+ is capable of reproducing the target method handle.
+ This means that the cracking may fail if target is a direct method handle
+ but was created by an unrelated lookup object.
+ This can happen if the method handle is `],
+				[/* reference */ 'r', `.MethodHandles.Lookup#callsens`],
+				[/* text */ 't', `
+ and was created by a lookup object for a different class.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'target', [/* parameter description */
+					[/* text */ 't', `a direct method handle to crack into symbolic reference components`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.lang.SecurityException', [/* throw description */
+					[/* text */ 't', `if a security manager is present and it
+                              `],
+					[/* reference */ 'r', `.MethodHandles.Lookup#secmgr`]
+				]],
+				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
+					[/* text */ 't', `if the target is not a direct method handle or if access checking fails`]
+				]],
+				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
+					[/* text */ 't', `if the target is `],
+					[/* inline code block */ 'i', `null`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `a symbolic reference which can be used to reconstruct this method handle from this lookup object`]
 			]
 		]],
 		[/* method */ 'defineHiddenClass(byte[],boolean,java.lang.invoke.MethodHandles.Lookup.ClassOption...)', [
@@ -4278,242 +4833,342 @@ assertEquals("[x, y]", MH_asList.invoke("x", "y").toString());`]
 				[/* text */ 't', ` access`]
 			]
 		]],
-		[/* method */ 'findConstructor(java.lang.Class,java.lang.invoke.MethodType)', [
+		[/* method */ 'dropLookupMode(int)', [
 			[/* method description */
-				[/* text */ 't', `Produces a method handle which creates an object and initializes it, using
- the constructor of the specified type.
- The parameter types of the method handle will be those of the constructor,
- while the return type will be a reference to the constructor's class.
- The constructor and all its argument types must be accessible to the lookup object.
+				[/* text */ 't', `Creates a lookup on the same lookup class which this lookup object
+ finds members, but with a lookup mode that has lost the given lookup mode.
+ The lookup mode to drop is one of `],
+				[/* text */ 't', `PUBLIC`],
+				[/* text */ 't', `, `],
+				[/* text */ 't', `MODULE`],
+				[/* text */ 't', `, `],
+				[/* text */ 't', `PACKAGE`],
+				[/* text */ 't', `, `],
+				[/* text */ 't', `PROTECTED`],
+				[/* text */ 't', `,
  `],
-				[/* block */ 'b', [
-					[/* text */ 't', `
- The requested type must have a return type of `],
-					[/* inline code block */ 'i', `void`],
-					[/* text */ 't', `.
- (This is consistent with the JVM's treatment of constructor type descriptors.)
- `]
-				]],
-				[/* block */ 'b', [
-					[/* text */ 't', `
- The returned method handle will have
+				[/* text */ 't', `PRIVATE`],
+				[/* text */ 't', `, `],
+				[/* text */ 't', `ORIGINAL`],
+				[/* text */ 't', `, or
  `],
-					[/* reference */ 'r', `.MethodHandle#asVarargsCollector(java.lang.Class)`],
-					[/* text */ 't', ` if and only if
- the constructor's variable arity modifier bit (`],
-					[/* inline code block */ 'i', `0x0080`],
-					[/* text */ 't', `) is set.
- `]
-				]],
-				[/* block */ 'b', `
- If the returned method handle is invoked, the constructor's class will
- be initialized, if it has not already been initialized.
- `],
-				[/* block */ 'b', `Example:`],
-				[/* block */ 'b', [
-					[/* code block */ 'c', [
-						[/* inline code block */ 'i', `import static java.lang.invoke.MethodHandles.*;
-import static java.lang.invoke.MethodType.*;
-...
-MethodHandle MH_newArrayList = publicLookup().findConstructor(
-  ArrayList.class, methodType(void.class, Collection.class));
-Collection orig = Arrays.asList("x", "y");
-Collection copy = (ArrayList) MH_newArrayList.invokeExact(orig);
-assert(orig != copy);
-assertEquals(orig, copy);
-// a variable-arity constructor:
-MethodHandle MH_newProcessBuilder = publicLookup().findConstructor(
-  ProcessBuilder.class, methodType(void.class, String[].class));
-ProcessBuilder pb = (ProcessBuilder)
-  MH_newProcessBuilder.invoke("x", "y", "z");
-assertEquals("[x, y, z]", pb.command().toString());`]
-					]]
-				]],
-				[/* block */ 'b', '']
-			],
-			[/* parameters */
-				[/* parameter */ 'refc', [/* parameter description */
-					[/* text */ 't', `the class or interface from which the method is accessed`]
-				]],
-				[/* parameter */ 'type', [/* parameter description */
-					[/* text */ 't', `the type of the method, with the receiver argument omitted, and a void return type`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.NoSuchMethodException', [/* throw description */
-					[/* text */ 't', `if the constructor does not exist`]
-				]],
-				[/* throw */ 'java.lang.IllegalAccessException', [/* throw description */
-					[/* text */ 't', `if access checking fails
-                                or if the method's variable arity modifier bit
-                                is set and `],
-					[/* inline code block */ 'i', `asVarargsCollector`],
-					[/* text */ 't', ` fails`]
-				]],
-				[/* throw */ 'java.lang.SecurityException', [/* throw description */
-					[/* text */ 't', `if a security manager is present and it
-                              `],
-					[/* reference */ 'r', `.MethodHandles.Lookup#secmgr`]
-				]],
-				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
-					[/* text */ 't', `if any argument is null`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `the desired method handle`]
-			]
-		]],
-		[/* method */ 'findSpecial(java.lang.Class,java.lang.String,java.lang.invoke.MethodType,java.lang.Class)', [
-			[/* method description */
-				[/* text */ 't', `Produces an early-bound method handle for a virtual method.
- It will bypass checks for overriding methods on the receiver,
- `],
-				[/* reference */ 'r', `.MethodHandles.Lookup#equiv`],
-				[/* text */ 't', ` from an `],
-				[/* inline code block */ 'i', `invokespecial`],
-				[/* text */ 't', `
- instruction from within the explicitly specified `],
-				[/* inline code block */ 'i', `specialCaller`],
+				[/* text */ 't', `UNCONDITIONAL`],
 				[/* text */ 't', `.
- The type of the method handle will be that of the method,
- with a suitably restricted receiver type prepended.
- (The receiver type will be `],
-				[/* inline code block */ 'i', `specialCaller`],
-				[/* text */ 't', ` or a subtype.)
- The method and all its argument types must be accessible
- to the lookup object.
+
  `],
 				[/* block */ 'b', [
-					[/* text */ 't', `
- Before method resolution,
- if the explicitly specified caller class is not identical with the
- lookup class, or if this lookup object does not have
- `],
-					[/* reference */ 'r', `.MethodHandles.Lookup#privacc`],
-					[/* text */ 't', `
- privileges, the access fails.
+					[/* text */ 't', ` If this lookup is a `],
+					[/* reference */ 'r', `.MethodHandles#publicLookup()`],
+					[/* text */ 't', `,
+ this lookup has `],
+					[/* inline code block */ 'i', `UNCONDITIONAL`],
+					[/* text */ 't', ` mode set and it has no other mode set.
+ When dropping `],
+					[/* inline code block */ 'i', `UNCONDITIONAL`],
+					[/* text */ 't', ` on a public lookup then the resulting
+ lookup has no access.
+
  `]
 				]],
 				[/* block */ 'b', [
-					[/* text */ 't', `
- The returned method handle will have
+					[/* text */ 't', ` If this lookup is not a public lookup, then the following applies
+ regardless of its `],
+					[/* reference */ 'r', `#lookupModes()`, `lookup modes`],
+					[/* text */ 't', `.
  `],
-					[/* reference */ 'r', `.MethodHandle#asVarargsCollector(java.lang.Class)`],
-					[/* text */ 't', ` if and only if
- the method's variable arity modifier bit (`],
-					[/* inline code block */ 'i', `0x0080`],
-					[/* text */ 't', `) is set.
- `]
-				]],
-				[/* block */ 'b', [
-					[/* text */ 't', `(Note:  JVM internal methods named `],
-					[/* inline code block */ 'i', `"<init>"`],
-					[/* text */ 't', ` are not visible to this API,
- even though the `],
-					[/* inline code block */ 'i', `invokespecial`],
-					[/* text */ 't', ` instruction can refer to them
- in special circumstances.  Use `],
-					[/* reference */ 'r', `#findConstructor(java.lang.Class,java.lang.invoke.MethodType)`, `findConstructor`],
+					[/* text */ 't', `PROTECTED`],
+					[/* text */ 't', ` and `],
+					[/* text */ 't', `ORIGINAL`],
+					[/* text */ 't', ` are always
+ dropped and so the resulting lookup mode will never have these access
+ capabilities. When dropping `],
+					[/* inline code block */ 'i', `PACKAGE`],
 					[/* text */ 't', `
- to access instance initialization methods in a safe manner.)`]
-				]],
-				[/* block */ 'b', `Example:`],
-				[/* block */ 'b', [
-					[/* code block */ 'c', [
-						[/* inline code block */ 'i', `import static java.lang.invoke.MethodHandles.*;
-import static java.lang.invoke.MethodType.*;
-...
-static class Listie extends ArrayList {
-  public String toString() { return "[wee Listie]"; }
-  static Lookup lookup() { return MethodHandles.lookup(); }
-}
-...
-// no access to constructor via invokeSpecial:
-MethodHandle MH_newListie = Listie.lookup()
-  .findConstructor(Listie.class, methodType(void.class));
-Listie l = (Listie) MH_newListie.invokeExact();
-try { assertEquals("impossible", Listie.lookup().findSpecial(
-        Listie.class, "<init>", methodType(void.class), Listie.class));
- } catch (NoSuchMethodException ex) { } // OK
-// access to super and self methods via invokeSpecial:
-MethodHandle MH_super = Listie.lookup().findSpecial(
-  ArrayList.class, "toString" , methodType(String.class), Listie.class);
-MethodHandle MH_this = Listie.lookup().findSpecial(
-  Listie.class, "toString" , methodType(String.class), Listie.class);
-MethodHandle MH_duper = Listie.lookup().findSpecial(
-  Object.class, "toString" , methodType(String.class), Listie.class);
-assertEquals("[]", (String) MH_super.invokeExact(l));
-assertEquals(""+l, (String) MH_this.invokeExact(l));
-assertEquals("[]", (String) MH_duper.invokeExact(l)); // ArrayList method
-try { assertEquals("inaccessible", Listie.lookup().findSpecial(
-        String.class, "toString", methodType(String.class), Listie.class));
- } catch (IllegalAccessException ex) { } // OK
-Listie subl = new Listie() { public String toString() { return "[subclass]"; } };
-assertEquals(""+l, (String) MH_this.invokeExact(subl)); // Listie method`]
-					]]
-				]],
-				[/* block */ 'b', '']
+ then the resulting lookup will not have `],
+					[/* inline code block */ 'i', `PACKAGE`],
+					[/* text */ 't', ` or `],
+					[/* inline code block */ 'i', `PRIVATE`],
+					[/* text */ 't', `
+ access. When dropping `],
+					[/* inline code block */ 'i', `MODULE`],
+					[/* text */ 't', ` then the resulting lookup will not
+ have `],
+					[/* inline code block */ 'i', `MODULE`],
+					[/* text */ 't', `, `],
+					[/* inline code block */ 'i', `PACKAGE`],
+					[/* text */ 't', `, or `],
+					[/* inline code block */ 'i', `PRIVATE`],
+					[/* text */ 't', ` access.
+ When dropping `],
+					[/* inline code block */ 'i', `PUBLIC`],
+					[/* text */ 't', ` then the resulting lookup has no access.`]
+				]]
 			],
 			[/* parameters */
-				[/* parameter */ 'refc', [/* parameter description */
-					[/* text */ 't', `the class or interface from which the method is accessed`]
-				]],
-				[/* parameter */ 'name', [/* parameter description */
-					[/* text */ 't', `the name of the method (which must not be "<init>")`]
-				]],
-				[/* parameter */ 'type', [/* parameter description */
-					[/* text */ 't', `the type of the method, with the receiver argument omitted`]
-				]],
-				[/* parameter */ 'specialCaller', [/* parameter description */
-					[/* text */ 't', `the proposed calling class to perform the `],
-					[/* inline code block */ 'i', `invokespecial`]
+				[/* parameter */ 'modeToDrop', [/* parameter description */
+					[/* text */ 't', `the lookup mode to drop`]
 				]]
 			],
 			[/* throws */
-				[/* throw */ 'java.lang.NoSuchMethodException', [/* throw description */
-					[/* text */ 't', `if the method does not exist`]
-				]],
-				[/* throw */ 'java.lang.IllegalAccessException', [/* throw description */
-					[/* text */ 't', `if access checking fails,
-                                or if the method is `],
-					[/* inline code block */ 'i', `static`],
+				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
+					[/* text */ 't', `if `],
+					[/* inline code block */ 'i', `modeToDrop`],
+					[/* text */ 't', ` is not one of `],
+					[/* inline code block */ 'i', `PUBLIC`],
 					[/* text */ 't', `,
-                                or if the method's variable arity modifier bit
-                                is set and `],
-					[/* inline code block */ 'i', `asVarargsCollector`],
-					[/* text */ 't', ` fails`]
-				]],
-				[/* throw */ 'java.lang.SecurityException', [/* throw description */
-					[/* text */ 't', `if a security manager is present and it
-                              `],
-					[/* reference */ 'r', `.MethodHandles.Lookup#secmgr`]
-				]],
-				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
-					[/* text */ 't', `if any argument is null`]
+ `],
+					[/* inline code block */ 'i', `MODULE`],
+					[/* text */ 't', `, `],
+					[/* inline code block */ 'i', `PACKAGE`],
+					[/* text */ 't', `, `],
+					[/* inline code block */ 'i', `PROTECTED`],
+					[/* text */ 't', `, `],
+					[/* inline code block */ 'i', `PRIVATE`],
+					[/* text */ 't', `, `],
+					[/* inline code block */ 'i', `ORIGINAL`],
+					[/* text */ 't', `
+ or `],
+					[/* inline code block */ 'i', `UNCONDITIONAL`]
 				]]
 			],
 			[/* return description */
-				[/* text */ 't', `the desired method handle`]
+				[/* text */ 't', `a lookup object which lacks the indicated mode, or the same object if there is no change`]
 			]
 		]],
-		[/* method */ 'findGetter(java.lang.Class,java.lang.String,java.lang.Class)', [
+		[/* method */ 'in(java.lang.Class)', [
 			[/* method description */
-				[/* text */ 't', `Produces a method handle giving read access to a non-static field.
- The type of the method handle will have a return type of the field's
- value type.
- The method handle's single argument will be the instance containing
- the field.
- Access checking is performed immediately on behalf of the lookup class.`]
+				[/* text */ 't', `Creates a lookup on the specified new lookup class.
+ The resulting object will report the specified
+ class as its own `],
+				[/* reference */ 'r', `#lookupClass()`, `lookupClass`],
+				[/* text */ 't', `.
+
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', `
+ However, the resulting `],
+					[/* inline code block */ 'i', `Lookup`],
+					[/* text */ 't', ` object is guaranteed
+ to have no more access capabilities than the original.
+ In particular, access capabilities can be lost as follows:`]
+				]],
+				[/* list */ 'l', [
+					[/* block */ 'b', [
+						[/* text */ 't', `If the new lookup class is different from the old lookup class,
+ i.e. `],
+						[/* text */ 't', `ORIGINAL`],
+						[/* text */ 't', ` access is lost.
+ `]
+					]],
+					[/* block */ 'b', [
+						[/* text */ 't', `If the new lookup class is in a different module from the old one,
+ i.e. `],
+						[/* text */ 't', `MODULE`],
+						[/* text */ 't', ` access is lost.
+ `]
+					]],
+					[/* block */ 'b', [
+						[/* text */ 't', `If the new lookup class is in a different package
+ than the old one, protected and default (package) members will not be accessible,
+ i.e. `],
+						[/* text */ 't', `PROTECTED`],
+						[/* text */ 't', ` and `],
+						[/* text */ 't', `PACKAGE`],
+						[/* text */ 't', ` access are lost.
+ `]
+					]],
+					[/* block */ 'b', [
+						[/* text */ 't', `If the new lookup class is not within the same package member
+ as the old one, private members will not be accessible, and protected members
+ will not be accessible by virtue of inheritance,
+ i.e. `],
+						[/* text */ 't', `PRIVATE`],
+						[/* text */ 't', ` access is lost.
+ (Protected members may continue to be accessible because of package sharing.)
+ `]
+					]],
+					[/* block */ 'b', [
+						[/* text */ 't', `If the new lookup class is not
+ `],
+						[/* reference */ 'r', `#accessClass(java.lang.Class)`, `accessible`],
+						[/* text */ 't', ` to this lookup,
+ then no members, not even public members, will be accessible
+ i.e. all access modes are lost.
+ `]
+					]],
+					[/* block */ 'b', `If the new lookup class, the old lookup class and the previous lookup class
+ are all in different modules i.e. teleporting to a third module,
+ all access modes are lost.
+ `]
+				]],
+				[/* block */ 'b', ''],
+				[/* block */ 'b', `
+ The new previous lookup class is chosen as follows:
+ `],
+				[/* list */ 'l', [
+					[/* block */ 'b', [
+						[/* text */ 't', `If the new lookup object has `],
+						[/* text */ 't', `UNCONDITIONAL`],
+						[/* text */ 't', ` bit,
+ the new previous lookup class is `],
+						[/* inline code block */ 'i', `null`],
+						[/* text */ 't', `.
+ `]
+					]],
+					[/* block */ 'b', `If the new lookup class is in the same module as the old lookup class,
+ the new previous lookup class is the old previous lookup class.
+ `],
+					[/* block */ 'b', `If the new lookup class is in a different module from the old lookup class,
+ the new previous lookup class is the old lookup class.
+`]
+				]],
+				[/* block */ 'b', ''],
+				[/* block */ 'b', [
+					[/* text */ 't', `
+ The resulting lookup's capabilities for loading classes
+ (used during `],
+					[/* reference */ 'r', `#findClass(java.lang.String)`, `findClass(java.lang.String)`],
+					[/* text */ 't', ` invocations)
+ are determined by the lookup class' loader,
+ which may change due to this operation.`]
+				]]
 			],
 			[/* parameters */
-				[/* parameter */ 'refc', [/* parameter description */
-					[/* text */ 't', `the class or interface from which the method is accessed`]
+				[/* parameter */ 'requestedLookupClass', [/* parameter description */
+					[/* text */ 't', `the desired lookup class for the new lookup object`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
+					[/* text */ 't', `if `],
+					[/* inline code block */ 'i', `requestedLookupClass`],
+					[/* text */ 't', ` is a primitive type or void or array class`]
+				]],
+				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
+					[/* text */ 't', `if the argument is null`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `a lookup object which reports the desired lookup class, or the same object
+ if there is no change`]
+			]
+		]],
+		[/* method */ 'findStaticVarHandle(java.lang.Class,java.lang.String,java.lang.Class)', [
+			[/* method description */
+				[/* text */ 't', `Produces a VarHandle giving access to a static field `],
+				[/* inline code block */ 'i', `name`],
+				[/* text */ 't', ` of
+ type `],
+				[/* inline code block */ 'i', `type`],
+				[/* text */ 't', ` declared in a class of type `],
+				[/* inline code block */ 'i', `decl`],
+				[/* text */ 't', `.
+ The VarHandle's variable type is `],
+				[/* inline code block */ 'i', `type`],
+				[/* text */ 't', ` and it has no
+ coordinate types.
+ `],
+				[/* block */ 'b', `
+ Access checking is performed immediately on behalf of the lookup
+ class.
+ `],
+				[/* block */ 'b', `
+ If the returned VarHandle is operated on, the declaring class will be
+ initialized, if it has not already been initialized.
+ `],
+				[/* block */ 'b', `
+ Certain access modes of the returned VarHandle are unsupported under
+ the following conditions:
+ `],
+				[/* list */ 'l', [
+					[/* block */ 'b', [
+						[/* text */ 't', `if the field is declared `],
+						[/* inline code block */ 'i', `final`],
+						[/* text */ 't', `, then the write, atomic
+     update, numeric atomic update, and bitwise atomic update access
+     modes are unsupported.
+ `]
+					]],
+					[/* block */ 'b', [
+						[/* text */ 't', `if the field type is anything other than `],
+						[/* inline code block */ 'i', `byte`],
+						[/* text */ 't', `,
+     `],
+						[/* inline code block */ 'i', `short`],
+						[/* text */ 't', `, `],
+						[/* inline code block */ 'i', `char`],
+						[/* text */ 't', `, `],
+						[/* inline code block */ 'i', `int`],
+						[/* text */ 't', `, `],
+						[/* inline code block */ 'i', `long`],
+						[/* text */ 't', `,
+     `],
+						[/* inline code block */ 'i', `float`],
+						[/* text */ 't', `, or `],
+						[/* inline code block */ 'i', `double`],
+						[/* text */ 't', `, then numeric atomic update
+     access modes are unsupported.
+ `]
+					]],
+					[/* block */ 'b', [
+						[/* text */ 't', `if the field type is anything other than `],
+						[/* inline code block */ 'i', `boolean`],
+						[/* text */ 't', `,
+     `],
+						[/* inline code block */ 'i', `byte`],
+						[/* text */ 't', `, `],
+						[/* inline code block */ 'i', `short`],
+						[/* text */ 't', `, `],
+						[/* inline code block */ 'i', `char`],
+						[/* text */ 't', `, `],
+						[/* inline code block */ 'i', `int`],
+						[/* text */ 't', ` or
+     `],
+						[/* inline code block */ 'i', `long`],
+						[/* text */ 't', ` then bitwise atomic update access modes are
+     unsupported.
+ `]
+					]]
+				]],
+				[/* block */ 'b', ''],
+				[/* block */ 'b', [
+					[/* text */ 't', `
+ If the field is declared `],
+					[/* inline code block */ 'i', `volatile`],
+					[/* text */ 't', ` then the returned VarHandle
+ will override access to the field (effectively ignore the
+ `],
+					[/* inline code block */ 'i', `volatile`],
+					[/* text */ 't', ` declaration) in accordance to its specified
+ access modes.
+ `]
+				]],
+				[/* block */ 'b', [
+					[/* text */ 't', `
+ If the field type is `],
+					[/* inline code block */ 'i', `float`],
+					[/* text */ 't', ` or `],
+					[/* inline code block */ 'i', `double`],
+					[/* text */ 't', ` then numeric
+ and atomic update access modes compare values using their bitwise
+ representation (see `],
+					[/* reference */ 'r', `java.Float#floatToRawIntBits(float)`],
+					[/* text */ 't', ` and
+ `],
+					[/* reference */ 'r', `java.Double#doubleToRawLongBits(double)`],
+					[/* text */ 't', `, respectively).`]
+				]]
+			],
+			[/* parameters */
+				[/* parameter */ 'decl', [/* parameter description */
+					[/* text */ 't', `the class that declares the static field`]
 				]],
 				[/* parameter */ 'name', [/* parameter description */
 					[/* text */ 't', `the field's name`]
 				]],
 				[/* parameter */ 'type', [/* parameter description */
-					[/* text */ 't', `the field's type`]
+					[/* text */ 't', `the field's type, of type `],
+					[/* inline code block */ 'i', `T`]
 				]]
 			],
 			[/* throws */
@@ -4521,7 +5176,7 @@ assertEquals(""+l, (String) MH_this.invokeExact(subl)); // Listie method`]
 					[/* text */ 't', `if the field does not exist`]
 				]],
 				[/* throw */ 'java.lang.IllegalAccessException', [/* throw description */
-					[/* text */ 't', `if access checking fails, or if the field is `],
+					[/* text */ 't', `if access checking fails, or if the field is not `],
 					[/* inline code block */ 'i', `static`]
 				]],
 				[/* throw */ 'java.lang.SecurityException', [/* throw description */
@@ -4534,51 +5189,7 @@ assertEquals(""+l, (String) MH_this.invokeExact(subl)); // Listie method`]
 				]]
 			],
 			[/* return description */
-				[/* text */ 't', `a method handle which can load values from the field`]
-			]
-		]],
-		[/* method */ 'findSetter(java.lang.Class,java.lang.String,java.lang.Class)', [
-			[/* method description */
-				[/* text */ 't', `Produces a method handle giving write access to a non-static field.
- The type of the method handle will have a void return type.
- The method handle will take two arguments, the instance containing
- the field, and the value to be stored.
- The second argument will be of the field's value type.
- Access checking is performed immediately on behalf of the lookup class.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'refc', [/* parameter description */
-					[/* text */ 't', `the class or interface from which the method is accessed`]
-				]],
-				[/* parameter */ 'name', [/* parameter description */
-					[/* text */ 't', `the field's name`]
-				]],
-				[/* parameter */ 'type', [/* parameter description */
-					[/* text */ 't', `the field's type`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.NoSuchFieldException', [/* throw description */
-					[/* text */ 't', `if the field does not exist`]
-				]],
-				[/* throw */ 'java.lang.IllegalAccessException', [/* throw description */
-					[/* text */ 't', `if access checking fails, or if the field is `],
-					[/* inline code block */ 'i', `static`],
-					[/* text */ 't', `
-                                or `],
-					[/* inline code block */ 'i', `final`]
-				]],
-				[/* throw */ 'java.lang.SecurityException', [/* throw description */
-					[/* text */ 't', `if a security manager is present and it
-                              `],
-					[/* reference */ 'r', `.MethodHandles.Lookup#secmgr`]
-				]],
-				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
-					[/* text */ 't', `if any argument is null`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `a method handle which can store values into the field`]
+				[/* text */ 't', `a VarHandle giving access to a static field`]
 			]
 		]],
 		[/* method */ 'findVarHandle(java.lang.Class,java.lang.String,java.lang.Class)', [
@@ -4721,653 +5332,6 @@ assertEquals(""+l, (String) MH_this.invokeExact(subl)); // Listie method`]
 				[/* text */ 't', `a VarHandle giving access to non-static fields.`]
 			]
 		]],
-		[/* method */ 'findStaticGetter(java.lang.Class,java.lang.String,java.lang.Class)', [
-			[/* method description */
-				[/* text */ 't', `Produces a method handle giving read access to a static field.
- The type of the method handle will have a return type of the field's
- value type.
- The method handle will take no arguments.
- Access checking is performed immediately on behalf of the lookup class.
- `],
-				[/* block */ 'b', `
- If the returned method handle is invoked, the field's class will
- be initialized, if it has not already been initialized.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'refc', [/* parameter description */
-					[/* text */ 't', `the class or interface from which the method is accessed`]
-				]],
-				[/* parameter */ 'name', [/* parameter description */
-					[/* text */ 't', `the field's name`]
-				]],
-				[/* parameter */ 'type', [/* parameter description */
-					[/* text */ 't', `the field's type`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.NoSuchFieldException', [/* throw description */
-					[/* text */ 't', `if the field does not exist`]
-				]],
-				[/* throw */ 'java.lang.IllegalAccessException', [/* throw description */
-					[/* text */ 't', `if access checking fails, or if the field is not `],
-					[/* inline code block */ 'i', `static`]
-				]],
-				[/* throw */ 'java.lang.SecurityException', [/* throw description */
-					[/* text */ 't', `if a security manager is present and it
-                              `],
-					[/* reference */ 'r', `.MethodHandles.Lookup#secmgr`]
-				]],
-				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
-					[/* text */ 't', `if any argument is null`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `a method handle which can load values from the field`]
-			]
-		]],
-		[/* method */ 'findStaticSetter(java.lang.Class,java.lang.String,java.lang.Class)', [
-			[/* method description */
-				[/* text */ 't', `Produces a method handle giving write access to a static field.
- The type of the method handle will have a void return type.
- The method handle will take a single
- argument, of the field's value type, the value to be stored.
- Access checking is performed immediately on behalf of the lookup class.
- `],
-				[/* block */ 'b', `
- If the returned method handle is invoked, the field's class will
- be initialized, if it has not already been initialized.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'refc', [/* parameter description */
-					[/* text */ 't', `the class or interface from which the method is accessed`]
-				]],
-				[/* parameter */ 'name', [/* parameter description */
-					[/* text */ 't', `the field's name`]
-				]],
-				[/* parameter */ 'type', [/* parameter description */
-					[/* text */ 't', `the field's type`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.NoSuchFieldException', [/* throw description */
-					[/* text */ 't', `if the field does not exist`]
-				]],
-				[/* throw */ 'java.lang.IllegalAccessException', [/* throw description */
-					[/* text */ 't', `if access checking fails, or if the field is not `],
-					[/* inline code block */ 'i', `static`],
-					[/* text */ 't', `
-                                or is `],
-					[/* inline code block */ 'i', `final`]
-				]],
-				[/* throw */ 'java.lang.SecurityException', [/* throw description */
-					[/* text */ 't', `if a security manager is present and it
-                              `],
-					[/* reference */ 'r', `.MethodHandles.Lookup#secmgr`]
-				]],
-				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
-					[/* text */ 't', `if any argument is null`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `a method handle which can store values into the field`]
-			]
-		]],
-		[/* method */ 'findStaticVarHandle(java.lang.Class,java.lang.String,java.lang.Class)', [
-			[/* method description */
-				[/* text */ 't', `Produces a VarHandle giving access to a static field `],
-				[/* inline code block */ 'i', `name`],
-				[/* text */ 't', ` of
- type `],
-				[/* inline code block */ 'i', `type`],
-				[/* text */ 't', ` declared in a class of type `],
-				[/* inline code block */ 'i', `decl`],
-				[/* text */ 't', `.
- The VarHandle's variable type is `],
-				[/* inline code block */ 'i', `type`],
-				[/* text */ 't', ` and it has no
- coordinate types.
- `],
-				[/* block */ 'b', `
- Access checking is performed immediately on behalf of the lookup
- class.
- `],
-				[/* block */ 'b', `
- If the returned VarHandle is operated on, the declaring class will be
- initialized, if it has not already been initialized.
- `],
-				[/* block */ 'b', `
- Certain access modes of the returned VarHandle are unsupported under
- the following conditions:
- `],
-				[/* list */ 'l', [
-					[/* block */ 'b', [
-						[/* text */ 't', `if the field is declared `],
-						[/* inline code block */ 'i', `final`],
-						[/* text */ 't', `, then the write, atomic
-     update, numeric atomic update, and bitwise atomic update access
-     modes are unsupported.
- `]
-					]],
-					[/* block */ 'b', [
-						[/* text */ 't', `if the field type is anything other than `],
-						[/* inline code block */ 'i', `byte`],
-						[/* text */ 't', `,
-     `],
-						[/* inline code block */ 'i', `short`],
-						[/* text */ 't', `, `],
-						[/* inline code block */ 'i', `char`],
-						[/* text */ 't', `, `],
-						[/* inline code block */ 'i', `int`],
-						[/* text */ 't', `, `],
-						[/* inline code block */ 'i', `long`],
-						[/* text */ 't', `,
-     `],
-						[/* inline code block */ 'i', `float`],
-						[/* text */ 't', `, or `],
-						[/* inline code block */ 'i', `double`],
-						[/* text */ 't', `, then numeric atomic update
-     access modes are unsupported.
- `]
-					]],
-					[/* block */ 'b', [
-						[/* text */ 't', `if the field type is anything other than `],
-						[/* inline code block */ 'i', `boolean`],
-						[/* text */ 't', `,
-     `],
-						[/* inline code block */ 'i', `byte`],
-						[/* text */ 't', `, `],
-						[/* inline code block */ 'i', `short`],
-						[/* text */ 't', `, `],
-						[/* inline code block */ 'i', `char`],
-						[/* text */ 't', `, `],
-						[/* inline code block */ 'i', `int`],
-						[/* text */ 't', ` or
-     `],
-						[/* inline code block */ 'i', `long`],
-						[/* text */ 't', ` then bitwise atomic update access modes are
-     unsupported.
- `]
-					]]
-				]],
-				[/* block */ 'b', ''],
-				[/* block */ 'b', [
-					[/* text */ 't', `
- If the field is declared `],
-					[/* inline code block */ 'i', `volatile`],
-					[/* text */ 't', ` then the returned VarHandle
- will override access to the field (effectively ignore the
- `],
-					[/* inline code block */ 'i', `volatile`],
-					[/* text */ 't', ` declaration) in accordance to its specified
- access modes.
- `]
-				]],
-				[/* block */ 'b', [
-					[/* text */ 't', `
- If the field type is `],
-					[/* inline code block */ 'i', `float`],
-					[/* text */ 't', ` or `],
-					[/* inline code block */ 'i', `double`],
-					[/* text */ 't', ` then numeric
- and atomic update access modes compare values using their bitwise
- representation (see `],
-					[/* reference */ 'r', `java.Float#floatToRawIntBits(float)`],
-					[/* text */ 't', ` and
- `],
-					[/* reference */ 'r', `java.Double#doubleToRawLongBits(double)`],
-					[/* text */ 't', `, respectively).`]
-				]]
-			],
-			[/* parameters */
-				[/* parameter */ 'decl', [/* parameter description */
-					[/* text */ 't', `the class that declares the static field`]
-				]],
-				[/* parameter */ 'name', [/* parameter description */
-					[/* text */ 't', `the field's name`]
-				]],
-				[/* parameter */ 'type', [/* parameter description */
-					[/* text */ 't', `the field's type, of type `],
-					[/* inline code block */ 'i', `T`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.NoSuchFieldException', [/* throw description */
-					[/* text */ 't', `if the field does not exist`]
-				]],
-				[/* throw */ 'java.lang.IllegalAccessException', [/* throw description */
-					[/* text */ 't', `if access checking fails, or if the field is not `],
-					[/* inline code block */ 'i', `static`]
-				]],
-				[/* throw */ 'java.lang.SecurityException', [/* throw description */
-					[/* text */ 't', `if a security manager is present and it
-                              `],
-					[/* reference */ 'r', `.MethodHandles.Lookup#secmgr`]
-				]],
-				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
-					[/* text */ 't', `if any argument is null`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `a VarHandle giving access to a static field`]
-			]
-		]],
-		[/* method */ 'bind(java.lang.Object,java.lang.String,java.lang.invoke.MethodType)', [
-			[/* method description */
-				[/* text */ 't', `Produces an early-bound method handle for a non-static method.
- The receiver must have a supertype `],
-				[/* inline code block */ 'i', `defc`],
-				[/* text */ 't', ` in which a method
- of the given name and type is accessible to the lookup class.
- The method and all its argument types must be accessible to the lookup object.
- The type of the method handle will be that of the method,
- without any insertion of an additional receiver parameter.
- The given receiver will be bound into the method handle,
- so that every call to the method handle will invoke the
- requested method on the given receiver.
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', `
- The returned method handle will have
- `],
-					[/* reference */ 'r', `.MethodHandle#asVarargsCollector(java.lang.Class)`],
-					[/* text */ 't', ` if and only if
- the method's variable arity modifier bit (`],
-					[/* inline code block */ 'i', `0x0080`],
-					[/* text */ 't', `) is set
- `],
-					[/* text */ 't', `and`],
-					[/* text */ 't', ` the trailing array argument is not the only argument.
- (If the trailing array argument is the only argument,
- the given receiver value will be bound to it.)
- `]
-				]],
-				[/* block */ 'b', `
- This is almost equivalent to the following code, with some differences noted below:
- `],
-				[/* block */ 'b', [
-					[/* code block */ 'c', [
-						[/* inline code block */ 'i', `import static java.lang.invoke.MethodHandles.*;
-import static java.lang.invoke.MethodType.*;
-...
-MethodHandle mh0 = lookup().findVirtual(defc, name, type);
-MethodHandle mh1 = mh0.bindTo(receiver);
-mh1 = mh1.withVarargs(mh0.isVarargsCollector());
-return mh1;`]
-					]]
-				]],
-				[/* text */ 't', `
- where `],
-				[/* inline code block */ 'i', `defc`],
-				[/* text */ 't', ` is either `],
-				[/* inline code block */ 'i', `receiver.getClass()`],
-				[/* text */ 't', ` or a super
- type of that class, in which the requested method is accessible
- to the lookup class.
- (Unlike `],
-				[/* inline code block */ 'i', `bind`],
-				[/* text */ 't', `, `],
-				[/* inline code block */ 'i', `bindTo`],
-				[/* text */ 't', ` does not preserve variable arity.
- Also, `],
-				[/* inline code block */ 'i', `bindTo`],
-				[/* text */ 't', ` may throw a `],
-				[/* inline code block */ 'i', `ClassCastException`],
-				[/* text */ 't', ` in instances where `],
-				[/* inline code block */ 'i', `bind`],
-				[/* text */ 't', ` would
- throw an `],
-				[/* inline code block */ 'i', `IllegalAccessException`],
-				[/* text */ 't', `, as in the case where the member is `],
-				[/* inline code block */ 'i', `protected`],
-				[/* text */ 't', ` and
- the receiver is restricted by `],
-				[/* inline code block */ 'i', `findVirtual`],
-				[/* text */ 't', ` to the lookup class.)`],
-				[/* block */ 'b', '']
-			],
-			[/* parameters */
-				[/* parameter */ 'receiver', [/* parameter description */
-					[/* text */ 't', `the object from which the method is accessed`]
-				]],
-				[/* parameter */ 'name', [/* parameter description */
-					[/* text */ 't', `the name of the method`]
-				]],
-				[/* parameter */ 'type', [/* parameter description */
-					[/* text */ 't', `the type of the method, with the receiver argument omitted`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.NoSuchMethodException', [/* throw description */
-					[/* text */ 't', `if the method does not exist`]
-				]],
-				[/* throw */ 'java.lang.IllegalAccessException', [/* throw description */
-					[/* text */ 't', `if access checking fails
-                                or if the method's variable arity modifier bit
-                                is set and `],
-					[/* inline code block */ 'i', `asVarargsCollector`],
-					[/* text */ 't', ` fails`]
-				]],
-				[/* throw */ 'java.lang.SecurityException', [/* throw description */
-					[/* text */ 't', `if a security manager is present and it
-                              `],
-					[/* reference */ 'r', `.MethodHandles.Lookup#secmgr`]
-				]],
-				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
-					[/* text */ 't', `if any argument is null`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `the desired method handle`]
-			]
-		]],
-		[/* method */ 'unreflect(java.lang.reflect.Method)', [
-			[/* method description */
-				[/* text */ 't', `Makes a `],
-				[/* reference */ 'r', `.MethodHandleInfo#directmh`],
-				[/* text */ 't', `
- to `],
-				[/* text */ 't', `m`],
-				[/* text */ 't', `, if the lookup class has permission.
- If `],
-				[/* text */ 't', `m`],
-				[/* text */ 't', ` is non-static, the receiver argument is treated as an initial argument.
- If `],
-				[/* text */ 't', `m`],
-				[/* text */ 't', ` is virtual, overriding is respected on every call.
- Unlike the Core Reflection API, exceptions are `],
-				[/* text */ 't', `not`],
-				[/* text */ 't', ` wrapped.
- The type of the method handle will be that of the method,
- with the receiver type prepended (but only if it is non-static).
- If the method's `],
-				[/* inline code block */ 'i', `accessible`],
-				[/* text */ 't', ` flag is not set,
- access checking is performed immediately on behalf of the lookup class.
- If `],
-				[/* text */ 't', `m`],
-				[/* text */ 't', ` is not public, do not share the resulting handle with untrusted parties.
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', `
- The returned method handle will have
- `],
-					[/* reference */ 'r', `.MethodHandle#asVarargsCollector(java.lang.Class)`],
-					[/* text */ 't', ` if and only if
- the method's variable arity modifier bit (`],
-					[/* inline code block */ 'i', `0x0080`],
-					[/* text */ 't', `) is set.
- `]
-				]],
-				[/* block */ 'b', [
-					[/* text */ 't', `
- If `],
-					[/* text */ 't', `m`],
-					[/* text */ 't', ` is static, and
- if the returned method handle is invoked, the method's class will
- be initialized, if it has not already been initialized.`]
-				]]
-			],
-			[/* parameters */
-				[/* parameter */ 'm', [/* parameter description */
-					[/* text */ 't', `the reflected method`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.IllegalAccessException', [/* throw description */
-					[/* text */ 't', `if access checking fails
-                                or if the method's variable arity modifier bit
-                                is set and `],
-					[/* inline code block */ 'i', `asVarargsCollector`],
-					[/* text */ 't', ` fails`]
-				]],
-				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
-					[/* text */ 't', `if the argument is null`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `a method handle which can invoke the reflected method`]
-			]
-		]],
-		[/* method */ 'unreflectSpecial(java.lang.reflect.Method,java.lang.Class)', [
-			[/* method description */
-				[/* text */ 't', `Produces a method handle for a reflected method.
- It will bypass checks for overriding methods on the receiver,
- `],
-				[/* reference */ 'r', `.MethodHandles.Lookup#equiv`],
-				[/* text */ 't', ` from an `],
-				[/* inline code block */ 'i', `invokespecial`],
-				[/* text */ 't', `
- instruction from within the explicitly specified `],
-				[/* inline code block */ 'i', `specialCaller`],
-				[/* text */ 't', `.
- The type of the method handle will be that of the method,
- with a suitably restricted receiver type prepended.
- (The receiver type will be `],
-				[/* inline code block */ 'i', `specialCaller`],
-				[/* text */ 't', ` or a subtype.)
- If the method's `],
-				[/* inline code block */ 'i', `accessible`],
-				[/* text */ 't', ` flag is not set,
- access checking is performed immediately on behalf of the lookup class,
- as if `],
-				[/* inline code block */ 'i', `invokespecial`],
-				[/* text */ 't', ` instruction were being linked.
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', `
- Before method resolution,
- if the explicitly specified caller class is not identical with the
- lookup class, or if this lookup object does not have
- `],
-					[/* reference */ 'r', `.MethodHandles.Lookup#privacc`],
-					[/* text */ 't', `
- privileges, the access fails.
- `]
-				]],
-				[/* block */ 'b', [
-					[/* text */ 't', `
- The returned method handle will have
- `],
-					[/* reference */ 'r', `.MethodHandle#asVarargsCollector(java.lang.Class)`],
-					[/* text */ 't', ` if and only if
- the method's variable arity modifier bit (`],
-					[/* inline code block */ 'i', `0x0080`],
-					[/* text */ 't', `) is set.`]
-				]]
-			],
-			[/* parameters */
-				[/* parameter */ 'm', [/* parameter description */
-					[/* text */ 't', `the reflected method`]
-				]],
-				[/* parameter */ 'specialCaller', [/* parameter description */
-					[/* text */ 't', `the class nominally calling the method`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.IllegalAccessException', [/* throw description */
-					[/* text */ 't', `if access checking fails,
-                                or if the method is `],
-					[/* inline code block */ 'i', `static`],
-					[/* text */ 't', `,
-                                or if the method's variable arity modifier bit
-                                is set and `],
-					[/* inline code block */ 'i', `asVarargsCollector`],
-					[/* text */ 't', ` fails`]
-				]],
-				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
-					[/* text */ 't', `if any argument is null`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `a method handle which can invoke the reflected method`]
-			]
-		]],
-		[/* method */ 'unreflectConstructor(java.lang.reflect.Constructor)', [
-			[/* method description */
-				[/* text */ 't', `Produces a method handle for a reflected constructor.
- The type of the method handle will be that of the constructor,
- with the return type changed to the declaring class.
- The method handle will perform a `],
-				[/* inline code block */ 'i', `newInstance`],
-				[/* text */ 't', ` operation,
- creating a new instance of the constructor's class on the
- arguments passed to the method handle.
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', `
- If the constructor's `],
-					[/* inline code block */ 'i', `accessible`],
-					[/* text */ 't', ` flag is not set,
- access checking is performed immediately on behalf of the lookup class.
- `]
-				]],
-				[/* block */ 'b', [
-					[/* text */ 't', `
- The returned method handle will have
- `],
-					[/* reference */ 'r', `.MethodHandle#asVarargsCollector(java.lang.Class)`],
-					[/* text */ 't', ` if and only if
- the constructor's variable arity modifier bit (`],
-					[/* inline code block */ 'i', `0x0080`],
-					[/* text */ 't', `) is set.
- `]
-				]],
-				[/* block */ 'b', `
- If the returned method handle is invoked, the constructor's class will
- be initialized, if it has not already been initialized.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'c', [/* parameter description */
-					[/* text */ 't', `the reflected constructor`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.IllegalAccessException', [/* throw description */
-					[/* text */ 't', `if access checking fails
-                                or if the method's variable arity modifier bit
-                                is set and `],
-					[/* inline code block */ 'i', `asVarargsCollector`],
-					[/* text */ 't', ` fails`]
-				]],
-				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
-					[/* text */ 't', `if the argument is null`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `a method handle which can invoke the reflected constructor`]
-			]
-		]],
-		[/* method */ 'unreflectGetter(java.lang.reflect.Field)', [
-			[/* method description */
-				[/* text */ 't', `Produces a method handle giving read access to a reflected field.
- The type of the method handle will have a return type of the field's
- value type.
- If the field is `],
-				[/* inline code block */ 'i', `static`],
-				[/* text */ 't', `, the method handle will take no arguments.
- Otherwise, its single argument will be the instance containing
- the field.
- If the `],
-				[/* inline code block */ 'i', `Field`],
-				[/* text */ 't', ` object's `],
-				[/* inline code block */ 'i', `accessible`],
-				[/* text */ 't', ` flag is not set,
- access checking is performed immediately on behalf of the lookup class.
- `],
-				[/* block */ 'b', `
- If the field is static, and
- if the returned method handle is invoked, the field's class will
- be initialized, if it has not already been initialized.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'f', [/* parameter description */
-					[/* text */ 't', `the reflected field`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.IllegalAccessException', [/* throw description */
-					[/* text */ 't', `if access checking fails`]
-				]],
-				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
-					[/* text */ 't', `if the argument is null`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `a method handle which can load values from the reflected field`]
-			]
-		]],
-		[/* method */ 'unreflectSetter(java.lang.reflect.Field)', [
-			[/* method description */
-				[/* text */ 't', `Produces a method handle giving write access to a reflected field.
- The type of the method handle will have a void return type.
- If the field is `],
-				[/* inline code block */ 'i', `static`],
-				[/* text */ 't', `, the method handle will take a single
- argument, of the field's value type, the value to be stored.
- Otherwise, the two arguments will be the instance containing
- the field, and the value to be stored.
- If the `],
-				[/* inline code block */ 'i', `Field`],
-				[/* text */ 't', ` object's `],
-				[/* inline code block */ 'i', `accessible`],
-				[/* text */ 't', ` flag is not set,
- access checking is performed immediately on behalf of the lookup class.
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', `
- If the field is `],
-					[/* inline code block */ 'i', `final`],
-					[/* text */ 't', `, write access will not be
- allowed and access checking will fail, except under certain
- narrow circumstances documented for `],
-					[/* reference */ 'r', `java.Field#set(java.lang.Object,java.lang.Object)`],
-					[/* text */ 't', `.
- A method handle is returned only if a corresponding call to
- the `],
-					[/* inline code block */ 'i', `Field`],
-					[/* text */ 't', ` object's `],
-					[/* inline code block */ 'i', `set`],
-					[/* text */ 't', ` method could return
- normally.  In particular, fields which are both `],
-					[/* inline code block */ 'i', `static`],
-					[/* text */ 't', `
- and `],
-					[/* inline code block */ 'i', `final`],
-					[/* text */ 't', ` may never be set.
- `]
-				]],
-				[/* block */ 'b', [
-					[/* text */ 't', `
- If the field is `],
-					[/* inline code block */ 'i', `static`],
-					[/* text */ 't', `, and
- if the returned method handle is invoked, the field's class will
- be initialized, if it has not already been initialized.`]
-				]]
-			],
-			[/* parameters */
-				[/* parameter */ 'f', [/* parameter description */
-					[/* text */ 't', `the reflected field`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.IllegalAccessException', [/* throw description */
-					[/* text */ 't', `if access checking fails,
-         or if the field is `],
-					[/* inline code block */ 'i', `final`],
-					[/* text */ 't', ` and write access
-         is not enabled on the `],
-					[/* inline code block */ 'i', `Field`],
-					[/* text */ 't', ` object`]
-				]],
-				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
-					[/* text */ 't', `if the argument is null`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `a method handle which can store values into the reflected field`]
-			]
-		]],
 		[/* method */ 'unreflectVarHandle(java.lang.reflect.Field)', [
 			[/* method description */
 				[/* text */ 't', `Produces a VarHandle giving access to a reflected field `],
@@ -5506,25 +5470,61 @@ return mh1;`]
  field`]
 			]
 		]],
-		[/* method */ 'hasPrivateAccess()', [
+		[/* method */ 'toString()', [
 			[/* method description */
-				[/* text */ 't', `Returns `],
-				[/* inline code block */ 'i', `true`],
-				[/* text */ 't', ` if this lookup has `],
-				[/* inline code block */ 'i', `PRIVATE`],
-				[/* text */ 't', ` and `],
-				[/* inline code block */ 'i', `MODULE`],
-				[/* text */ 't', ` access.`]
+				[/* text */ 't', `Displays the name of the class from which lookups are to be made,
+ followed by "/" and the name of the `],
+				[/* reference */ 'r', `#previousLookupClass()`, `previous lookup class`],
+				[/* text */ 't', ` if present.
+ (The name is the one reported by `],
+				[/* reference */ 'r', `java.Class#getName()`],
+				[/* text */ 't', `.)
+ If there are restrictions on the access permitted to this lookup,
+ this is indicated by adding a suffix to the class name, consisting
+ of a slash and a keyword.  The keyword represents the strongest
+ allowed access, and is chosen as follows:
+ `],
+				[/* list */ 'l', [
+					[/* block */ 'b', `If no access is allowed, the suffix is "/noaccess".
+ `],
+					[/* block */ 'b', `If only unconditional access is allowed, the suffix is "/publicLookup".
+ `],
+					[/* block */ 'b', `If only public access to types in exported packages is allowed, the suffix is "/public".
+ `],
+					[/* block */ 'b', `If only public and module access are allowed, the suffix is "/module".
+ `],
+					[/* block */ 'b', `If public and package access are allowed, the suffix is "/package".
+ `],
+					[/* block */ 'b', `If public, package, and private access are allowed, the suffix is "/private".
+ `]
+				]],
+				[/* text */ 't', `
+ If none of the above cases apply, it is the case that
+ `],
+				[/* reference */ 'r', `#hasFullPrivilegeAccess()`, `full privilege access`],
+				[/* text */ 't', `
+ (public, module, package, private, and protected) is allowed.
+ In this case, no suffix is added.
+ This is true only of an object obtained originally from
+ `],
+				[/* reference */ 'r', `.MethodHandles#lookup()`],
+				[/* text */ 't', `.
+ Objects created by `],
+				[/* reference */ 'r', `#in(java.lang.Class)`, `Lookup.in`],
+				[/* text */ 't', `
+ always have restricted access, and will display a suffix.
+ `],
+				[/* block */ 'b', `
+ (It may seem strange that protected access should be
+ stronger than private access.  Viewed independently from
+ package access, protected access is the first to be lost,
+ because it requires a direct subclass relationship between
+ caller and callee.)`]
 			],
 			/* parameters */ UDF,
 			/* throws */ UDF,
 			[/* return description */
-				[/* inline code block */ 'i', `true`],
-				[/* text */ 't', ` if this lookup has `],
-				[/* inline code block */ 'i', `PRIVATE`],
-				[/* text */ 't', ` and `],
-				[/* inline code block */ 'i', `MODULE`],
-				[/* text */ 't', ` access.`]
+				[/* text */ 't', `a string representation of the object.`]
 			]
 		]]
 	],

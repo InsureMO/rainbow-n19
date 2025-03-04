@@ -40,59 +40,19 @@ DocsCollector.collect('java.security.cert.Certificate', [
 		]]
 	],
 	[/* methods */
-		[/* method */ 'equals(java.lang.Object)', [
+		[/* method */ 'writeReplace()', [
 			[/* method description */
-				[/* text */ 't', `Compares this certificate for equality with the specified
- object. If the `],
-				[/* inline code block */ 'i', `other`],
-				[/* text */ 't', ` object is an
- `],
-				[/* inline code block */ 'i', `instanceof`],
-				[/* inline code block */ 'i', `Certificate`],
-				[/* text */ 't', `, then
- its encoded form is retrieved and compared with the
- encoded form of this certificate.`]
+				[/* text */ 't', `Replace the Certificate to be serialized.`]
 			],
-			[/* parameters */
-				[/* parameter */ 'other', [/* parameter description */
-					[/* text */ 't', `the object to test for equality with this certificate.`]
+			/* parameters */ UDF,
+			[/* throws */
+				[/* throw */ 'java.io.ObjectStreamException', [/* throw description */
+					[/* text */ 't', `if a new object representing
+ this Certificate could not be created`]
 				]]
 			],
-			/* throws */ UDF,
 			[/* return description */
-				[/* text */ 't', `true iff the encoded forms of the two certificates
- match, false otherwise.`]
-			]
-		]],
-		[/* method */ 'toString()', [
-			[/* method description */
-				[/* text */ 't', `Returns a string representation of this certificate.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `a string representation of this certificate.`]
-			]
-		]],
-		[/* method */ 'hashCode()', [
-			[/* method description */
-				[/* text */ 't', `Returns a hashcode value for this certificate from its
- encoded form.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the hashcode value.`]
-			]
-		]],
-		[/* method */ 'getType()', [
-			[/* method description */
-				[/* text */ 't', `Returns the type of this certificate.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the type of this certificate.`]
+				[/* text */ 't', `the alternate Certificate object to be serialized`]
 			]
 		]],
 		[/* method */ 'getEncoded()', [
@@ -112,19 +72,24 @@ DocsCollector.collect('java.security.cert.Certificate', [
 				[/* text */ 't', `the encoded form of this certificate`]
 			]
 		]],
-		[/* method */ 'writeReplace()', [
+		[/* method */ 'toString()', [
 			[/* method description */
-				[/* text */ 't', `Replace the Certificate to be serialized.`]
+				[/* text */ 't', `Returns a string representation of this certificate.`]
 			],
 			/* parameters */ UDF,
-			[/* throws */
-				[/* throw */ 'java.io.ObjectStreamException', [/* throw description */
-					[/* text */ 't', `if a new object representing
- this Certificate could not be created`]
-				]]
-			],
+			/* throws */ UDF,
 			[/* return description */
-				[/* text */ 't', `the alternate Certificate object to be serialized`]
+				[/* text */ 't', `a string representation of this certificate.`]
+			]
+		]],
+		[/* method */ 'getPublicKey()', [
+			[/* method description */
+				[/* text */ 't', `Gets the public key from this certificate.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the public key.`]
 			]
 		]],
 		[/* method */ 'verify(java.security.PublicKey)', [
@@ -192,6 +157,51 @@ DocsCollector.collect('java.security.cert.Certificate', [
 			],
 			/* return */ UDF
 		]],
+		[/* method */ 'equals(java.lang.Object)', [
+			[/* method description */
+				[/* text */ 't', `Compares this certificate for equality with the specified
+ object. If the `],
+				[/* inline code block */ 'i', `other`],
+				[/* text */ 't', ` object is an
+ `],
+				[/* inline code block */ 'i', `instanceof`],
+				[/* inline code block */ 'i', `Certificate`],
+				[/* text */ 't', `, then
+ its encoded form is retrieved and compared with the
+ encoded form of this certificate.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'other', [/* parameter description */
+					[/* text */ 't', `the object to test for equality with this certificate.`]
+				]]
+			],
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `true iff the encoded forms of the two certificates
+ match, false otherwise.`]
+			]
+		]],
+		[/* method */ 'getType()', [
+			[/* method description */
+				[/* text */ 't', `Returns the type of this certificate.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the type of this certificate.`]
+			]
+		]],
+		[/* method */ 'hashCode()', [
+			[/* method description */
+				[/* text */ 't', `Returns a hashcode value for this certificate from its
+ encoded form.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the hashcode value.`]
+			]
+		]],
 		[/* method */ 'verify(java.security.PublicKey,java.security.Provider)', [
 			[/* method description */
 				[/* text */ 't', `Verifies that this certificate was signed using the
@@ -239,16 +249,6 @@ DocsCollector.collect('java.security.cert.Certificate', [
 				]]
 			],
 			/* return */ UDF
-		]],
-		[/* method */ 'getPublicKey()', [
-			[/* method description */
-				[/* text */ 't', `Gets the public key from this certificate.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the public key.`]
-			]
 		]]
 	],
 ]);

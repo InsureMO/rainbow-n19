@@ -11,6 +11,60 @@ JdkClassCreateHelper.class('java.io.ObjectStreamConstants', [
 	/* declared constructors */,
 	/* declared methods */,
 	[/* declared fields */
+		[/* public static final int java.io.ObjectStreamConstants.baseWireHandle */
+			/* name */ 'baseWireHandle',
+			/* type */ 'int',
+			/* annotations */ UDF,
+			/* modifiers */ 25
+		],
+		[/* public static final int java.io.ObjectStreamConstants.PROTOCOL_VERSION_1 */
+			/* name */ 'PROTOCOL_VERSION_1',
+			/* type */ 'int',
+			/* annotations */ UDF,
+			/* modifiers */ 25
+		],
+		[/* public static final int java.io.ObjectStreamConstants.PROTOCOL_VERSION_2 */
+			/* name */ 'PROTOCOL_VERSION_2',
+			/* type */ 'int',
+			/* annotations */ UDF,
+			/* modifiers */ 25
+		],
+		[/* public static final byte java.io.ObjectStreamConstants.SC_BLOCK_DATA */
+			/* name */ 'SC_BLOCK_DATA',
+			/* type */ 'byte',
+			/* annotations */ UDF,
+			/* modifiers */ 25
+		],
+		[/* public static final byte java.io.ObjectStreamConstants.SC_ENUM */
+			/* name */ 'SC_ENUM',
+			/* type */ 'byte',
+			/* annotations */ UDF,
+			/* modifiers */ 25
+		],
+		[/* public static final byte java.io.ObjectStreamConstants.SC_EXTERNALIZABLE */
+			/* name */ 'SC_EXTERNALIZABLE',
+			/* type */ 'byte',
+			/* annotations */ UDF,
+			/* modifiers */ 25
+		],
+		[/* public static final byte java.io.ObjectStreamConstants.SC_SERIALIZABLE */
+			/* name */ 'SC_SERIALIZABLE',
+			/* type */ 'byte',
+			/* annotations */ UDF,
+			/* modifiers */ 25
+		],
+		[/* public static final byte java.io.ObjectStreamConstants.SC_WRITE_METHOD */
+			/* name */ 'SC_WRITE_METHOD',
+			/* type */ 'byte',
+			/* annotations */ UDF,
+			/* modifiers */ 25
+		],
+		[/* public static final java.io.SerializablePermission java.io.ObjectStreamConstants.SERIAL_FILTER_PERMISSION */
+			/* name */ 'SERIAL_FILTER_PERMISSION',
+			/* type */ 'java.io.SerializablePermission',
+			/* annotations */ UDF,
+			/* modifiers */ 25
+		],
 		[/* public static final short java.io.ObjectStreamConstants.STREAM_MAGIC */
 			/* name */ 'STREAM_MAGIC',
 			/* type */ 'short',
@@ -23,39 +77,15 @@ JdkClassCreateHelper.class('java.io.ObjectStreamConstants', [
 			/* annotations */ UDF,
 			/* modifiers */ 25
 		],
-		[/* public static final byte java.io.ObjectStreamConstants.TC_BASE */
-			/* name */ 'TC_BASE',
-			/* type */ 'byte',
+		[/* public static final java.io.SerializablePermission java.io.ObjectStreamConstants.SUBCLASS_IMPLEMENTATION_PERMISSION */
+			/* name */ 'SUBCLASS_IMPLEMENTATION_PERMISSION',
+			/* type */ 'java.io.SerializablePermission',
 			/* annotations */ UDF,
 			/* modifiers */ 25
 		],
-		[/* public static final byte java.io.ObjectStreamConstants.TC_NULL */
-			/* name */ 'TC_NULL',
-			/* type */ 'byte',
-			/* annotations */ UDF,
-			/* modifiers */ 25
-		],
-		[/* public static final byte java.io.ObjectStreamConstants.TC_REFERENCE */
-			/* name */ 'TC_REFERENCE',
-			/* type */ 'byte',
-			/* annotations */ UDF,
-			/* modifiers */ 25
-		],
-		[/* public static final byte java.io.ObjectStreamConstants.TC_CLASSDESC */
-			/* name */ 'TC_CLASSDESC',
-			/* type */ 'byte',
-			/* annotations */ UDF,
-			/* modifiers */ 25
-		],
-		[/* public static final byte java.io.ObjectStreamConstants.TC_OBJECT */
-			/* name */ 'TC_OBJECT',
-			/* type */ 'byte',
-			/* annotations */ UDF,
-			/* modifiers */ 25
-		],
-		[/* public static final byte java.io.ObjectStreamConstants.TC_STRING */
-			/* name */ 'TC_STRING',
-			/* type */ 'byte',
+		[/* public static final java.io.SerializablePermission java.io.ObjectStreamConstants.SUBSTITUTION_PERMISSION */
+			/* name */ 'SUBSTITUTION_PERMISSION',
+			/* type */ 'java.io.SerializablePermission',
 			/* annotations */ UDF,
 			/* modifiers */ 25
 		],
@@ -65,8 +95,8 @@ JdkClassCreateHelper.class('java.io.ObjectStreamConstants', [
 			/* annotations */ UDF,
 			/* modifiers */ 25
 		],
-		[/* public static final byte java.io.ObjectStreamConstants.TC_CLASS */
-			/* name */ 'TC_CLASS',
+		[/* public static final byte java.io.ObjectStreamConstants.TC_BASE */
+			/* name */ 'TC_BASE',
 			/* type */ 'byte',
 			/* annotations */ UDF,
 			/* modifiers */ 25
@@ -77,20 +107,32 @@ JdkClassCreateHelper.class('java.io.ObjectStreamConstants', [
 			/* annotations */ UDF,
 			/* modifiers */ 25
 		],
+		[/* public static final byte java.io.ObjectStreamConstants.TC_BLOCKDATALONG */
+			/* name */ 'TC_BLOCKDATALONG',
+			/* type */ 'byte',
+			/* annotations */ UDF,
+			/* modifiers */ 25
+		],
+		[/* public static final byte java.io.ObjectStreamConstants.TC_CLASS */
+			/* name */ 'TC_CLASS',
+			/* type */ 'byte',
+			/* annotations */ UDF,
+			/* modifiers */ 25
+		],
+		[/* public static final byte java.io.ObjectStreamConstants.TC_CLASSDESC */
+			/* name */ 'TC_CLASSDESC',
+			/* type */ 'byte',
+			/* annotations */ UDF,
+			/* modifiers */ 25
+		],
 		[/* public static final byte java.io.ObjectStreamConstants.TC_ENDBLOCKDATA */
 			/* name */ 'TC_ENDBLOCKDATA',
 			/* type */ 'byte',
 			/* annotations */ UDF,
 			/* modifiers */ 25
 		],
-		[/* public static final byte java.io.ObjectStreamConstants.TC_RESET */
-			/* name */ 'TC_RESET',
-			/* type */ 'byte',
-			/* annotations */ UDF,
-			/* modifiers */ 25
-		],
-		[/* public static final byte java.io.ObjectStreamConstants.TC_BLOCKDATALONG */
-			/* name */ 'TC_BLOCKDATALONG',
+		[/* public static final byte java.io.ObjectStreamConstants.TC_ENUM */
+			/* name */ 'TC_ENUM',
 			/* type */ 'byte',
 			/* annotations */ UDF,
 			/* modifiers */ 25
@@ -107,87 +149,45 @@ JdkClassCreateHelper.class('java.io.ObjectStreamConstants', [
 			/* annotations */ UDF,
 			/* modifiers */ 25
 		],
-		[/* public static final byte java.io.ObjectStreamConstants.TC_PROXYCLASSDESC */
-			/* name */ 'TC_PROXYCLASSDESC',
-			/* type */ 'byte',
-			/* annotations */ UDF,
-			/* modifiers */ 25
-		],
-		[/* public static final byte java.io.ObjectStreamConstants.TC_ENUM */
-			/* name */ 'TC_ENUM',
-			/* type */ 'byte',
-			/* annotations */ UDF,
-			/* modifiers */ 25
-		],
 		[/* public static final byte java.io.ObjectStreamConstants.TC_MAX */
 			/* name */ 'TC_MAX',
 			/* type */ 'byte',
 			/* annotations */ UDF,
 			/* modifiers */ 25
 		],
-		[/* public static final int java.io.ObjectStreamConstants.baseWireHandle */
-			/* name */ 'baseWireHandle',
-			/* type */ 'int',
-			/* annotations */ UDF,
-			/* modifiers */ 25
-		],
-		[/* public static final byte java.io.ObjectStreamConstants.SC_WRITE_METHOD */
-			/* name */ 'SC_WRITE_METHOD',
+		[/* public static final byte java.io.ObjectStreamConstants.TC_NULL */
+			/* name */ 'TC_NULL',
 			/* type */ 'byte',
 			/* annotations */ UDF,
 			/* modifiers */ 25
 		],
-		[/* public static final byte java.io.ObjectStreamConstants.SC_BLOCK_DATA */
-			/* name */ 'SC_BLOCK_DATA',
+		[/* public static final byte java.io.ObjectStreamConstants.TC_OBJECT */
+			/* name */ 'TC_OBJECT',
 			/* type */ 'byte',
 			/* annotations */ UDF,
 			/* modifiers */ 25
 		],
-		[/* public static final byte java.io.ObjectStreamConstants.SC_SERIALIZABLE */
-			/* name */ 'SC_SERIALIZABLE',
+		[/* public static final byte java.io.ObjectStreamConstants.TC_PROXYCLASSDESC */
+			/* name */ 'TC_PROXYCLASSDESC',
 			/* type */ 'byte',
 			/* annotations */ UDF,
 			/* modifiers */ 25
 		],
-		[/* public static final byte java.io.ObjectStreamConstants.SC_EXTERNALIZABLE */
-			/* name */ 'SC_EXTERNALIZABLE',
+		[/* public static final byte java.io.ObjectStreamConstants.TC_REFERENCE */
+			/* name */ 'TC_REFERENCE',
 			/* type */ 'byte',
 			/* annotations */ UDF,
 			/* modifiers */ 25
 		],
-		[/* public static final byte java.io.ObjectStreamConstants.SC_ENUM */
-			/* name */ 'SC_ENUM',
+		[/* public static final byte java.io.ObjectStreamConstants.TC_RESET */
+			/* name */ 'TC_RESET',
 			/* type */ 'byte',
 			/* annotations */ UDF,
 			/* modifiers */ 25
 		],
-		[/* public static final java.io.SerializablePermission java.io.ObjectStreamConstants.SUBSTITUTION_PERMISSION */
-			/* name */ 'SUBSTITUTION_PERMISSION',
-			/* type */ 'java.io.SerializablePermission',
-			/* annotations */ UDF,
-			/* modifiers */ 25
-		],
-		[/* public static final java.io.SerializablePermission java.io.ObjectStreamConstants.SUBCLASS_IMPLEMENTATION_PERMISSION */
-			/* name */ 'SUBCLASS_IMPLEMENTATION_PERMISSION',
-			/* type */ 'java.io.SerializablePermission',
-			/* annotations */ UDF,
-			/* modifiers */ 25
-		],
-		[/* public static final java.io.SerializablePermission java.io.ObjectStreamConstants.SERIAL_FILTER_PERMISSION */
-			/* name */ 'SERIAL_FILTER_PERMISSION',
-			/* type */ 'java.io.SerializablePermission',
-			/* annotations */ UDF,
-			/* modifiers */ 25
-		],
-		[/* public static final int java.io.ObjectStreamConstants.PROTOCOL_VERSION_1 */
-			/* name */ 'PROTOCOL_VERSION_1',
-			/* type */ 'int',
-			/* annotations */ UDF,
-			/* modifiers */ 25
-		],
-		[/* public static final int java.io.ObjectStreamConstants.PROTOCOL_VERSION_2 */
-			/* name */ 'PROTOCOL_VERSION_2',
-			/* type */ 'int',
+		[/* public static final byte java.io.ObjectStreamConstants.TC_STRING */
+			/* name */ 'TC_STRING',
+			/* type */ 'byte',
 			/* annotations */ UDF,
 			/* modifiers */ 25
 		]

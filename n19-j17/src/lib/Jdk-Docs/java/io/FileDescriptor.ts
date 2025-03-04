@@ -17,6 +17,15 @@ DocsCollector.collect('java.io.FileDescriptor', [
  Applications should not create their own file descriptors.`]
 	],
 	[/* fields */
+		[/* field */ 'err', [
+			[/* field description */
+				[/* text */ 't', `A handle to the standard error stream. Usually, this file
+ descriptor is not used directly, but rather via the output stream
+ known as `],
+				[/* inline code block */ 'i', `System.err`],
+				[/* text */ 't', `.`]
+			],
+		]],
 		[/* field */ 'in', [
 			[/* field description */
 				[/* text */ 't', `A handle to the standard input stream. Usually, this file
@@ -34,15 +43,6 @@ DocsCollector.collect('java.io.FileDescriptor', [
 				[/* inline code block */ 'i', `System.out`],
 				[/* text */ 't', `.`]
 			],
-		]],
-		[/* field */ 'err', [
-			[/* field description */
-				[/* text */ 't', `A handle to the standard error stream. Usually, this file
- descriptor is not used directly, but rather via the output stream
- known as `],
-				[/* inline code block */ 'i', `System.err`],
-				[/* text */ 't', `.`]
-			],
 		]]
 	],
 	[/* constructors */
@@ -56,6 +56,21 @@ DocsCollector.collect('java.io.FileDescriptor', [
 		]]
 	],
 	[/* methods */
+		[/* method */ 'valid()', [
+			[/* method description */
+				[/* text */ 't', `Tests if this file descriptor object is valid.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* inline code block */ 'i', `true`],
+				[/* text */ 't', ` if the file descriptor object represents a
+          valid, open file, socket, or other active I/O connection;
+          `],
+				[/* inline code block */ 'i', `false`],
+				[/* text */ 't', ` otherwise.`]
+			]
+		]],
 		[/* method */ 'sync()', [
 			[/* method description */
 				[/* text */ 't', `Force all system buffers to synchronize with the underlying
@@ -88,21 +103,6 @@ DocsCollector.collect('java.io.FileDescriptor', [
 				]]
 			],
 			/* return */ UDF
-		]],
-		[/* method */ 'valid()', [
-			[/* method description */
-				[/* text */ 't', `Tests if this file descriptor object is valid.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* inline code block */ 'i', `true`],
-				[/* text */ 't', ` if the file descriptor object represents a
-          valid, open file, socket, or other active I/O connection;
-          `],
-				[/* inline code block */ 'i', `false`],
-				[/* text */ 't', ` otherwise.`]
-			]
 		]]
 	],
 ]);

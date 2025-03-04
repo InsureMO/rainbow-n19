@@ -8,16 +8,6 @@ DocsCollector.collect('java.nio.file.WatchEvent$Kind', [
 	/* fields */ UDF,
 	/* constructors */ UDF,
 	[/* methods */
-		[/* method */ 'name()', [
-			[/* method description */
-				[/* text */ 't', `Returns the name of the event kind.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the name of the event kind`]
-			]
-		]],
 		[/* method */ 'type()', [
 			[/* method description */
 				[/* text */ 't', `Returns the type of the `],
@@ -28,6 +18,16 @@ DocsCollector.collect('java.nio.file.WatchEvent$Kind', [
 			/* throws */ UDF,
 			[/* return description */
 				[/* text */ 't', `the type of the context value`]
+			]
+		]],
+		[/* method */ 'name()', [
+			[/* method description */
+				[/* text */ 't', `Returns the name of the event kind.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the name of the event kind`]
 			]
 		]]
 	],

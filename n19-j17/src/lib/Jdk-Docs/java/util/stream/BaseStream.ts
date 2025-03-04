@@ -33,6 +33,19 @@ DocsCollector.collect('java.util.stream.BaseStream', [
 	/* fields */ UDF,
 	/* constructors */ UDF,
 	[/* methods */
+		[/* method */ 'isParallel()', [
+			[/* method description */
+				[/* text */ 't', `Returns whether this stream, if a terminal operation were to be executed,
+ would execute in parallel.  Calling this method after invoking an
+ terminal stream operation method may yield unpredictable results.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* inline code block */ 'i', `true`],
+				[/* text */ 't', ` if this stream would execute in parallel if executed`]
+			]
+		]],
 		[/* method */ 'iterator()', [
 			[/* method description */
 				[/* text */ 't', `Returns an iterator for the elements of this stream.
@@ -76,14 +89,39 @@ DocsCollector.collect('java.util.stream.BaseStream', [
 				[/* text */ 't', `the element spliterator for this stream`]
 			]
 		]],
-		[/* method */ 'close()', [
+		[/* method */ 'onClose(java.lang.Runnable)', [
 			[/* method description */
-				[/* text */ 't', `Closes this stream, causing all close handlers for this stream pipeline
- to be called.`]
+				[/* text */ 't', `Returns an equivalent stream with an additional close handler.  Close
+ handlers are run when the `],
+				[/* reference */ 'r', `#close()`, `close()`],
+				[/* text */ 't', ` method
+ is called on the stream, and are executed in the order they were
+ added.  All close handlers are run, even if earlier close handlers throw
+ exceptions.  If any close handler throws an exception, the first
+ exception thrown will be relayed to the caller of `],
+				[/* inline code block */ 'i', `close()`],
+				[/* text */ 't', `, with
+ any remaining exceptions added to that exception as suppressed exceptions
+ (unless one of the remaining exceptions is the same exception as the
+ first exception, since an exception cannot suppress itself.)  May
+ return itself.
+
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', `This is an `],
+					[/* reference */ 'r', `.package-summary#StreamOps`],
+					[/* text */ 't', `.`]
+				]]
 			],
-			/* parameters */ UDF,
+			[/* parameters */
+				[/* parameter */ 'closeHandler', [/* parameter description */
+					[/* text */ 't', `A task to execute when the stream is closed`]
+				]]
+			],
 			/* throws */ UDF,
-			/* return */ UDF
+			[/* return description */
+				[/* text */ 't', `a stream with a handler that is run if the stream is closed`]
+			]
 		]],
 		[/* method */ 'parallel()', [
 			[/* method description */
@@ -102,19 +140,6 @@ DocsCollector.collect('java.util.stream.BaseStream', [
 			/* throws */ UDF,
 			[/* return description */
 				[/* text */ 't', `a parallel stream`]
-			]
-		]],
-		[/* method */ 'isParallel()', [
-			[/* method description */
-				[/* text */ 't', `Returns whether this stream, if a terminal operation were to be executed,
- would execute in parallel.  Calling this method after invoking an
- terminal stream operation method may yield unpredictable results.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* inline code block */ 'i', `true`],
-				[/* text */ 't', ` if this stream would execute in parallel if executed`]
 			]
 		]],
 		[/* method */ 'sequential()', [
@@ -158,39 +183,14 @@ DocsCollector.collect('java.util.stream.BaseStream', [
 				[/* text */ 't', `an unordered stream`]
 			]
 		]],
-		[/* method */ 'onClose(java.lang.Runnable)', [
+		[/* method */ 'close()', [
 			[/* method description */
-				[/* text */ 't', `Returns an equivalent stream with an additional close handler.  Close
- handlers are run when the `],
-				[/* reference */ 'r', `#close()`, `close()`],
-				[/* text */ 't', ` method
- is called on the stream, and are executed in the order they were
- added.  All close handlers are run, even if earlier close handlers throw
- exceptions.  If any close handler throws an exception, the first
- exception thrown will be relayed to the caller of `],
-				[/* inline code block */ 'i', `close()`],
-				[/* text */ 't', `, with
- any remaining exceptions added to that exception as suppressed exceptions
- (unless one of the remaining exceptions is the same exception as the
- first exception, since an exception cannot suppress itself.)  May
- return itself.
-
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', `This is an `],
-					[/* reference */ 'r', `.package-summary#StreamOps`],
-					[/* text */ 't', `.`]
-				]]
+				[/* text */ 't', `Closes this stream, causing all close handlers for this stream pipeline
+ to be called.`]
 			],
-			[/* parameters */
-				[/* parameter */ 'closeHandler', [/* parameter description */
-					[/* text */ 't', `A task to execute when the stream is closed`]
-				]]
-			],
+			/* parameters */ UDF,
 			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `a stream with a handler that is run if the stream is closed`]
-			]
+			/* return */ UDF
 		]]
 	],
 ]);

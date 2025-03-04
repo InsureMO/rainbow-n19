@@ -15,50 +15,6 @@ DocsCollector.collect('java.lang.reflect.WildcardType', [
 	/* fields */ UDF,
 	/* constructors */ UDF,
 	[/* methods */
-		[/* method */ 'getUpperBounds()', [
-			[/* method description */
-				[/* text */ 't', `Returns an array of `],
-				[/* inline code block */ 'i', `Type`],
-				[/* text */ 't', ` objects representing the  upper
- bound(s) of this type variable.  If no upper bound is
- explicitly declared, the upper bound is `],
-				[/* inline code block */ 'i', `Object`],
-				[/* text */ 't', `.
-
- `],
-				[/* block */ 'b', `For each upper bound B :
- `],
-				[/* list */ 'l', [
-					[/* block */ 'b', [
-						[/* text */ 't', `if B is a parameterized type or a type variable, it is created,
-  (see `],
-						[/* reference */ 'r', `java.lang.reflect.ParameterizedType`],
-						[/* text */ 't', `
-  for the details of the creation process for parameterized types).
-  `]
-					]],
-					[/* block */ 'b', `Otherwise, B is resolved.
- `]
-				]],
-				[/* block */ 'b', '']
-			],
-			/* parameters */ UDF,
-			[/* throws */
-				[/* throw */ 'java.lang.TypeNotPresentException', [/* throw description */
-					[/* text */ 't', `if any of the
-     bounds refers to a non-existent type declaration`]
-				]],
-				[/* throw */ 'java.lang.reflect.MalformedParameterizedTypeException', [/* throw description */
-					[/* text */ 't', `if any of the
-     bounds refer to a parameterized type that cannot be instantiated
-     for any reason`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `an array of Types representing the upper bound(s) of this
-     type variable`]
-			]
-		]],
 		[/* method */ 'getLowerBounds()', [
 			[/* method description */
 				[/* text */ 't', `Returns an array of `],
@@ -101,6 +57,50 @@ DocsCollector.collect('java.lang.reflect.WildcardType', [
 			],
 			[/* return description */
 				[/* text */ 't', `an array of Types representing the lower bound(s) of this
+     type variable`]
+			]
+		]],
+		[/* method */ 'getUpperBounds()', [
+			[/* method description */
+				[/* text */ 't', `Returns an array of `],
+				[/* inline code block */ 'i', `Type`],
+				[/* text */ 't', ` objects representing the  upper
+ bound(s) of this type variable.  If no upper bound is
+ explicitly declared, the upper bound is `],
+				[/* inline code block */ 'i', `Object`],
+				[/* text */ 't', `.
+
+ `],
+				[/* block */ 'b', `For each upper bound B :
+ `],
+				[/* list */ 'l', [
+					[/* block */ 'b', [
+						[/* text */ 't', `if B is a parameterized type or a type variable, it is created,
+  (see `],
+						[/* reference */ 'r', `java.lang.reflect.ParameterizedType`],
+						[/* text */ 't', `
+  for the details of the creation process for parameterized types).
+  `]
+					]],
+					[/* block */ 'b', `Otherwise, B is resolved.
+ `]
+				]],
+				[/* block */ 'b', '']
+			],
+			/* parameters */ UDF,
+			[/* throws */
+				[/* throw */ 'java.lang.TypeNotPresentException', [/* throw description */
+					[/* text */ 't', `if any of the
+     bounds refers to a non-existent type declaration`]
+				]],
+				[/* throw */ 'java.lang.reflect.MalformedParameterizedTypeException', [/* throw description */
+					[/* text */ 't', `if any of the
+     bounds refer to a parameterized type that cannot be instantiated
+     for any reason`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `an array of Types representing the upper bound(s) of this
      type variable`]
 			]
 		]]

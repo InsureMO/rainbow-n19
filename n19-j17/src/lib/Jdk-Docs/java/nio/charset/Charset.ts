@@ -483,42 +483,124 @@ DocsCollector.collect('java.nio.charset.Charset', [
 		]]
 	],
 	[/* methods */
-		[/* method */ 'name()', [
+		[/* method */ 'contains(java.nio.charset.Charset)', [
 			[/* method description */
-				[/* text */ 't', `Returns this charset's canonical name.`]
+				[/* text */ 't', `Tells whether or not this charset contains the given charset.
+
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', ` A charset `],
+					[/* text */ 't', `C`],
+					[/* text */ 't', ` is said to `],
+					[/* text */ 't', `contain`],
+					[/* text */ 't', ` a charset `],
+					[/* text */ 't', `D`],
+					[/* text */ 't', ` if,
+ and only if, every character representable in `],
+					[/* text */ 't', `D`],
+					[/* text */ 't', ` is also
+ representable in `],
+					[/* text */ 't', `C`],
+					[/* text */ 't', `.  If this relationship holds then it is
+ guaranteed that every string that can be encoded in `],
+					[/* text */ 't', `D`],
+					[/* text */ 't', ` can also be
+ encoded in `],
+					[/* text */ 't', `C`],
+					[/* text */ 't', ` without performing any replacements.
+
+ `]
+				]],
+				[/* block */ 'b', [
+					[/* text */ 't', ` That `],
+					[/* text */ 't', `C`],
+					[/* text */ 't', ` contains `],
+					[/* text */ 't', `D`],
+					[/* text */ 't', ` does not imply that each character
+ representable in `],
+					[/* text */ 't', `C`],
+					[/* text */ 't', ` by a particular byte sequence is represented
+ in `],
+					[/* text */ 't', `D`],
+					[/* text */ 't', ` by the same byte sequence, although sometimes this is the
+ case.
+
+ `]
+				]],
+				[/* block */ 'b', ` Every charset contains itself.
+
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', ` This method computes an approximation of the containment relation:
+ If it returns `],
+					[/* inline code block */ 'i', `true`],
+					[/* text */ 't', ` then the given charset is known to be
+ contained by this charset; if it returns `],
+					[/* inline code block */ 'i', `false`],
+					[/* text */ 't', `, however, then
+ it is not necessarily the case that the given charset is not contained
+ in this charset.`]
+				]]
+			],
+			[/* parameters */
+				[/* parameter */ 'cs', [/* parameter description */
+					[/* text */ 't', `The given charset`]
+				]]
+			],
+			/* throws */ UDF,
+			[/* return description */
+				[/* inline code block */ 'i', `true`],
+				[/* text */ 't', ` if the given charset is contained in this charset`]
+			]
+		]],
+		[/* method */ 'newDecoder()', [
+			[/* method description */
+				[/* text */ 't', `Constructs a new decoder for this charset.`]
 			],
 			/* parameters */ UDF,
 			/* throws */ UDF,
 			[/* return description */
-				[/* text */ 't', `The canonical name of this charset`]
+				[/* text */ 't', `A new decoder for this charset`]
 			]
 		]],
-		[/* method */ 'forName(java.lang.String)', [
+		[/* method */ 'newEncoder()', [
 			[/* method description */
-				[/* text */ 't', `Returns a charset object for the named charset.`]
+				[/* text */ 't', `Constructs a new encoder for this charset.`]
 			],
-			[/* parameters */
-				[/* parameter */ 'charsetName', [/* parameter description */
-					[/* text */ 't', `The name of the requested charset; may be either
-         a canonical name or an alias`]
-				]]
-			],
+			/* parameters */ UDF,
 			[/* throws */
-				[/* throw */ 'java.nio.charset.IllegalCharsetNameException', [/* throw description */
-					[/* text */ 't', `If the given charset name is illegal`]
-				]],
-				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
-					[/* text */ 't', `If the given `],
-					[/* inline code block */ 'i', `charsetName`],
-					[/* text */ 't', ` is null`]
-				]],
-				[/* throw */ 'java.nio.charset.UnsupportedCharsetException', [/* throw description */
-					[/* text */ 't', `If no support for the named charset is available
-          in this instance of the Java virtual machine`]
+				[/* throw */ 'java.lang.UnsupportedOperationException', [/* throw description */
+					[/* text */ 't', `If this charset does not support encoding`]
 				]]
 			],
 			[/* return description */
-				[/* text */ 't', `A charset object for the named charset`]
+				[/* text */ 't', `A new encoder for this charset`]
+			]
+		]],
+		[/* method */ 'canEncode()', [
+			[/* method description */
+				[/* text */ 't', `Tells whether or not this charset supports encoding.
+
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', ` Nearly all charsets support encoding.  The primary exceptions are
+ special-purpose `],
+					[/* text */ 't', `auto-detect`],
+					[/* text */ 't', ` charsets whose decoders can determine
+ which of several possible encoding schemes is in use by examining the
+ input byte sequence.  Such charsets do not support encoding because
+ there is no way to determine which encoding should be used on output.
+ Implementations of such charsets should override this method to return
+ `],
+					[/* inline code block */ 'i', `false`],
+					[/* text */ 't', `. `]
+				]]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* inline code block */ 'i', `true`],
+				[/* text */ 't', ` if, and only if, this charset supports encoding`]
 			]
 		]],
 		[/* method */ 'equals(java.lang.Object)', [
@@ -541,24 +623,18 @@ DocsCollector.collect('java.nio.charset.Charset', [
           given object`]
 			]
 		]],
-		[/* method */ 'toString()', [
+		[/* method */ 'isRegistered()', [
 			[/* method description */
-				[/* text */ 't', `Returns a string describing this charset.`]
+				[/* text */ 't', `Tells whether or not this charset is registered in the `],
+				[/* external link */ 'a', `http://www.iana.org/assignments/character-sets`, `IANA Charset Registry`],
+				[/* text */ 't', `.`]
 			],
 			/* parameters */ UDF,
 			/* throws */ UDF,
 			[/* return description */
-				[/* text */ 't', `A string describing this charset`]
-			]
-		]],
-		[/* method */ 'hashCode()', [
-			[/* method description */
-				[/* text */ 't', `Computes a hashcode for this charset.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `An integer hashcode`]
+				[/* inline code block */ 'i', `true`],
+				[/* text */ 't', ` if, and only if, this charset is known by its
+          implementor to be registered with the IANA`]
 			]
 		]],
 		[/* method */ 'compareTo(java.nio.charset.Charset)', [
@@ -580,71 +656,34 @@ DocsCollector.collect('java.nio.charset.Charset', [
          is less than, equal to, or greater than the specified charset`]
 			]
 		]],
-		[/* method */ 'newDecoder()', [
+		[/* method */ 'hashCode()', [
 			[/* method description */
-				[/* text */ 't', `Constructs a new decoder for this charset.`]
+				[/* text */ 't', `Computes a hashcode for this charset.`]
 			],
 			/* parameters */ UDF,
 			/* throws */ UDF,
 			[/* return description */
-				[/* text */ 't', `A new decoder for this charset`]
+				[/* text */ 't', `An integer hashcode`]
 			]
 		]],
-		[/* method */ 'decode(java.nio.ByteBuffer)', [
+		[/* method */ 'name()', [
 			[/* method description */
-				[/* text */ 't', `Convenience method that decodes bytes in this charset into Unicode
- characters.
-
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', ` An invocation of this method upon a charset `],
-					[/* inline code block */ 'i', `cs`],
-					[/* text */ 't', ` returns the
- same result as the expression
-
- `]
-				]],
-				[/* code block */ 'c', `     cs.newDecoder()
-       .onMalformedInput(CodingErrorAction.REPLACE)
-       .onUnmappableCharacter(CodingErrorAction.REPLACE)
-       .decode(bb); `],
-				[/* text */ 't', `
-
- except that it is potentially more efficient because it can cache
- decoders between successive invocations.
-
- `],
-				[/* block */ 'b', ''],
-				[/* block */ 'b', [
-					[/* text */ 't', ` This method always replaces malformed-input and unmappable-character
- sequences with this charset's default replacement byte array.  In order
- to detect such sequences, use the `],
-					[/* reference */ 'r', `.CharsetDecoder#decode(java.nio.ByteBuffer)`],
-					[/* text */ 't', ` method directly.  `]
-				]]
-			],
-			[/* parameters */
-				[/* parameter */ 'bb', [/* parameter description */
-					[/* text */ 't', `The byte buffer to be decoded`]
-				]]
-			],
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `A char buffer containing the decoded characters`]
-			]
-		]],
-		[/* method */ 'newEncoder()', [
-			[/* method description */
-				[/* text */ 't', `Constructs a new encoder for this charset.`]
+				[/* text */ 't', `Returns this charset's canonical name.`]
 			],
 			/* parameters */ UDF,
-			[/* throws */
-				[/* throw */ 'java.lang.UnsupportedOperationException', [/* throw description */
-					[/* text */ 't', `If this charset does not support encoding`]
-				]]
-			],
+			/* throws */ UDF,
 			[/* return description */
-				[/* text */ 't', `A new encoder for this charset`]
+				[/* text */ 't', `The canonical name of this charset`]
+			]
+		]],
+		[/* method */ 'toString()', [
+			[/* method description */
+				[/* text */ 't', `Returns a string describing this charset.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `A string describing this charset`]
 			]
 		]],
 		[/* method */ 'encode(java.lang.String)', [
@@ -716,129 +755,47 @@ DocsCollector.collect('java.nio.charset.Charset', [
 				[/* text */ 't', `A byte buffer containing the encoded characters`]
 			]
 		]],
-		[/* method */ 'defaultCharset()', [
+		[/* method */ 'decode(java.nio.ByteBuffer)', [
 			[/* method description */
-				[/* text */ 't', `Returns the default charset of this Java virtual machine.
-
- `],
-				[/* block */ 'b', ` The default charset is determined during virtual-machine startup and
- typically depends upon the locale and charset of the underlying
- operating system.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `A charset object for the default charset`]
-			]
-		]],
-		[/* method */ 'canEncode()', [
-			[/* method description */
-				[/* text */ 't', `Tells whether or not this charset supports encoding.
+				[/* text */ 't', `Convenience method that decodes bytes in this charset into Unicode
+ characters.
 
  `],
 				[/* block */ 'b', [
-					[/* text */ 't', ` Nearly all charsets support encoding.  The primary exceptions are
- special-purpose `],
-					[/* text */ 't', `auto-detect`],
-					[/* text */ 't', ` charsets whose decoders can determine
- which of several possible encoding schemes is in use by examining the
- input byte sequence.  Such charsets do not support encoding because
- there is no way to determine which encoding should be used on output.
- Implementations of such charsets should override this method to return
- `],
-					[/* inline code block */ 'i', `false`],
-					[/* text */ 't', `. `]
-				]]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* inline code block */ 'i', `true`],
-				[/* text */ 't', ` if, and only if, this charset supports encoding`]
-			]
-		]],
-		[/* method */ 'contains(java.nio.charset.Charset)', [
-			[/* method description */
-				[/* text */ 't', `Tells whether or not this charset contains the given charset.
-
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', ` A charset `],
-					[/* text */ 't', `C`],
-					[/* text */ 't', ` is said to `],
-					[/* text */ 't', `contain`],
-					[/* text */ 't', ` a charset `],
-					[/* text */ 't', `D`],
-					[/* text */ 't', ` if,
- and only if, every character representable in `],
-					[/* text */ 't', `D`],
-					[/* text */ 't', ` is also
- representable in `],
-					[/* text */ 't', `C`],
-					[/* text */ 't', `.  If this relationship holds then it is
- guaranteed that every string that can be encoded in `],
-					[/* text */ 't', `D`],
-					[/* text */ 't', ` can also be
- encoded in `],
-					[/* text */ 't', `C`],
-					[/* text */ 't', ` without performing any replacements.
+					[/* text */ 't', ` An invocation of this method upon a charset `],
+					[/* inline code block */ 'i', `cs`],
+					[/* text */ 't', ` returns the
+ same result as the expression
 
  `]
 				]],
-				[/* block */ 'b', [
-					[/* text */ 't', ` That `],
-					[/* text */ 't', `C`],
-					[/* text */ 't', ` contains `],
-					[/* text */ 't', `D`],
-					[/* text */ 't', ` does not imply that each character
- representable in `],
-					[/* text */ 't', `C`],
-					[/* text */ 't', ` by a particular byte sequence is represented
- in `],
-					[/* text */ 't', `D`],
-					[/* text */ 't', ` by the same byte sequence, although sometimes this is the
- case.
+				[/* code block */ 'c', `     cs.newDecoder()
+       .onMalformedInput(CodingErrorAction.REPLACE)
+       .onUnmappableCharacter(CodingErrorAction.REPLACE)
+       .decode(bb); `],
+				[/* text */ 't', `
 
- `]
-				]],
-				[/* block */ 'b', ` Every charset contains itself.
+ except that it is potentially more efficient because it can cache
+ decoders between successive invocations.
 
  `],
+				[/* block */ 'b', ''],
 				[/* block */ 'b', [
-					[/* text */ 't', ` This method computes an approximation of the containment relation:
- If it returns `],
-					[/* inline code block */ 'i', `true`],
-					[/* text */ 't', ` then the given charset is known to be
- contained by this charset; if it returns `],
-					[/* inline code block */ 'i', `false`],
-					[/* text */ 't', `, however, then
- it is not necessarily the case that the given charset is not contained
- in this charset.`]
+					[/* text */ 't', ` This method always replaces malformed-input and unmappable-character
+ sequences with this charset's default replacement byte array.  In order
+ to detect such sequences, use the `],
+					[/* reference */ 'r', `.CharsetDecoder#decode(java.nio.ByteBuffer)`],
+					[/* text */ 't', ` method directly.  `]
 				]]
 			],
 			[/* parameters */
-				[/* parameter */ 'cs', [/* parameter description */
-					[/* text */ 't', `The given charset`]
+				[/* parameter */ 'bb', [/* parameter description */
+					[/* text */ 't', `The byte buffer to be decoded`]
 				]]
 			],
 			/* throws */ UDF,
 			[/* return description */
-				[/* inline code block */ 'i', `true`],
-				[/* text */ 't', ` if the given charset is contained in this charset`]
-			]
-		]],
-		[/* method */ 'isRegistered()', [
-			[/* method description */
-				[/* text */ 't', `Tells whether or not this charset is registered in the `],
-				[/* external link */ 'a', `http://www.iana.org/assignments/character-sets`, `IANA Charset Registry`],
-				[/* text */ 't', `.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* inline code block */ 'i', `true`],
-				[/* text */ 't', ` if, and only if, this charset is known by its
-          implementor to be registered with the IANA`]
+				[/* text */ 't', `A char buffer containing the decoded characters`]
 			]
 		]],
 		[/* method */ 'aliases()', [
@@ -849,6 +806,40 @@ DocsCollector.collect('java.nio.charset.Charset', [
 			/* throws */ UDF,
 			[/* return description */
 				[/* text */ 't', `An immutable set of this charset's aliases`]
+			]
+		]],
+		[/* method */ 'displayName()', [
+			[/* method description */
+				[/* text */ 't', `Returns this charset's human-readable name for the default locale.
+
+ `],
+				[/* block */ 'b', ` The default implementation of this method simply returns this
+ charset's canonical name.  Concrete subclasses of this class may
+ override this method in order to provide a localized display name. `]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `The display name of this charset in the default locale`]
+			]
+		]],
+		[/* method */ 'displayName(java.util.Locale)', [
+			[/* method description */
+				[/* text */ 't', `Returns this charset's human-readable name for the given locale.
+
+ `],
+				[/* block */ 'b', ` The default implementation of this method simply returns this
+ charset's canonical name.  Concrete subclasses of this class may
+ override this method in order to provide a localized display name. `]
+			],
+			[/* parameters */
+				[/* parameter */ 'locale', [/* parameter description */
+					[/* text */ 't', `The locale for which the display name is to be retrieved`]
+				]]
+			],
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `The display name of this charset in the given locale`]
 			]
 		]],
 		[/* method */ 'isSupported(java.lang.String)', [
@@ -875,6 +866,49 @@ DocsCollector.collect('java.nio.charset.Charset', [
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if, and only if, support for the named charset
           is available in the current Java virtual machine`]
+			]
+		]],
+		[/* method */ 'defaultCharset()', [
+			[/* method description */
+				[/* text */ 't', `Returns the default charset of this Java virtual machine.
+
+ `],
+				[/* block */ 'b', ` The default charset is determined during virtual-machine startup and
+ typically depends upon the locale and charset of the underlying
+ operating system.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `A charset object for the default charset`]
+			]
+		]],
+		[/* method */ 'forName(java.lang.String)', [
+			[/* method description */
+				[/* text */ 't', `Returns a charset object for the named charset.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'charsetName', [/* parameter description */
+					[/* text */ 't', `The name of the requested charset; may be either
+         a canonical name or an alias`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.nio.charset.IllegalCharsetNameException', [/* throw description */
+					[/* text */ 't', `If the given charset name is illegal`]
+				]],
+				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
+					[/* text */ 't', `If the given `],
+					[/* inline code block */ 'i', `charsetName`],
+					[/* text */ 't', ` is null`]
+				]],
+				[/* throw */ 'java.nio.charset.UnsupportedCharsetException', [/* throw description */
+					[/* text */ 't', `If no support for the named charset is available
+          in this instance of the Java virtual machine`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `A charset object for the named charset`]
 			]
 		]],
 		[/* method */ 'availableCharsets()', [
@@ -913,40 +947,6 @@ DocsCollector.collect('java.nio.charset.Charset', [
 			[/* return description */
 				[/* text */ 't', `An immutable, case-insensitive map from canonical charset names
          to charset objects`]
-			]
-		]],
-		[/* method */ 'displayName()', [
-			[/* method description */
-				[/* text */ 't', `Returns this charset's human-readable name for the default locale.
-
- `],
-				[/* block */ 'b', ` The default implementation of this method simply returns this
- charset's canonical name.  Concrete subclasses of this class may
- override this method in order to provide a localized display name. `]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `The display name of this charset in the default locale`]
-			]
-		]],
-		[/* method */ 'displayName(java.util.Locale)', [
-			[/* method description */
-				[/* text */ 't', `Returns this charset's human-readable name for the given locale.
-
- `],
-				[/* block */ 'b', ` The default implementation of this method simply returns this
- charset's canonical name.  Concrete subclasses of this class may
- override this method in order to provide a localized display name. `]
-			],
-			[/* parameters */
-				[/* parameter */ 'locale', [/* parameter description */
-					[/* text */ 't', `The locale for which the display name is to be retrieved`]
-				]]
-			],
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `The display name of this charset in the given locale`]
 			]
 		]]
 	],

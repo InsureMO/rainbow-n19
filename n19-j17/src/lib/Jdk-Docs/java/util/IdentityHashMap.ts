@@ -178,6 +178,14 @@ DocsCollector.collect('java.util.IdentityHashMap', [
 	],
 	/* fields */ UDF,
 	[/* constructors */
+		[/* constructor */ '<init>()', [
+			[/* constructor description */
+				[/* text */ 't', `Constructs a new, empty identity hash map with a default expected
+ maximum size (21).`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF
+		]],
 		[/* constructor */ '<init>(int)', [
 			[/* constructor description */
 				[/* text */ 't', `Constructs a new, empty map with the specified expected maximum size.
@@ -198,14 +206,6 @@ DocsCollector.collect('java.util.IdentityHashMap', [
 				]]
 			]
 		]],
-		[/* constructor */ '<init>()', [
-			[/* constructor description */
-				[/* text */ 't', `Constructs a new, empty identity hash map with a default expected
- maximum size (21).`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF
-		]],
 		[/* constructor */ '<init>(java.util.Map)', [
 			[/* constructor description */
 				[/* text */ 't', `Constructs a new identity hash map containing the keys-value mappings
@@ -224,122 +224,38 @@ DocsCollector.collect('java.util.IdentityHashMap', [
 		]]
 	],
 	[/* methods */
-		[/* method */ 'remove(java.lang.Object)', [
+		[/* method */ 'containsKey(java.lang.Object)', [
 			[/* method description */
-				[/* text */ 't', `Removes the mapping for this key from this map if present.`]
+				[/* text */ 't', `Tests whether the specified object reference is a key in this identity
+ hash map.`]
 			],
 			[/* parameters */
 				[/* parameter */ 'key', [/* parameter description */
-					[/* text */ 't', `key whose mapping is to be removed from the map`]
+					[/* text */ 't', `possible key`]
 				]]
 			],
 			/* throws */ UDF,
 			[/* return description */
-				[/* text */ 't', `the previous value associated with `],
-				[/* inline code block */ 'i', `key`],
-				[/* text */ 't', `, or
-         `],
-				[/* inline code block */ 'i', `null`],
-				[/* text */ 't', ` if there was no mapping for `],
-				[/* inline code block */ 'i', `key`],
-				[/* text */ 't', `.
-         (A `],
-				[/* inline code block */ 'i', `null`],
-				[/* text */ 't', ` return can also indicate that the map
-         previously associated `],
-				[/* inline code block */ 'i', `null`],
-				[/* text */ 't', ` with `],
-				[/* inline code block */ 'i', `key`],
-				[/* text */ 't', `.)`]
+				[/* inline code block */ 'i', `true`],
+				[/* text */ 't', ` if the specified object reference is a key
+          in this map`]
 			]
 		]],
-		[/* method */ 'get(java.lang.Object)', [
+		[/* method */ 'containsValue(java.lang.Object)', [
 			[/* method description */
-				[/* text */ 't', `Returns the value to which the specified key is mapped,
- or `],
-				[/* inline code block */ 'i', `null`],
-				[/* text */ 't', ` if this map contains no mapping for the key.
-
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', `More formally, if this map contains a mapping from a key
- `],
-					[/* inline code block */ 'i', `k`],
-					[/* text */ 't', ` to a value `],
-					[/* inline code block */ 'i', `v`],
-					[/* text */ 't', ` such that `],
-					[/* inline code block */ 'i', `(key == k)`],
-					[/* text */ 't', `,
- then this method returns `],
-					[/* inline code block */ 'i', `v`],
-					[/* text */ 't', `; otherwise it returns
- `],
-					[/* inline code block */ 'i', `null`],
-					[/* text */ 't', `.  (There can be at most one such mapping.)
-
- `]
-				]],
-				[/* block */ 'b', [
-					[/* text */ 't', `A return value of `],
-					[/* inline code block */ 'i', `null`],
-					[/* text */ 't', ` does not `],
-					[/* text */ 't', `necessarily`],
-					[/* text */ 't', `
- indicate that the map contains no mapping for the key; it's also
- possible that the map explicitly maps the key to `],
-					[/* inline code block */ 'i', `null`],
-					[/* text */ 't', `.
- The `],
-					[/* reference */ 'r', `#containsKey(java.lang.Object)`, `containsKey`],
-					[/* text */ 't', ` operation may be used to
- distinguish these two cases.`]
-				]]
+				[/* text */ 't', `Tests whether the specified object reference is a value in this identity
+ hash map.`]
 			],
 			[/* parameters */
-				[/* parameter */ 'key', [/* parameter description */
-					[/* text */ 't', `the key whose associated value is to be returned`]
-				]]
-			],
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the value to which the specified key is mapped, or
-         `],
-				[/* inline code block */ 'i', `null`],
-				[/* text */ 't', ` if this map contains no mapping for the key`]
-			]
-		]],
-		[/* method */ 'put(java.lang.Object,java.lang.Object)', [
-			[/* method description */
-				[/* text */ 't', `Associates the specified value with the specified key in this identity
- hash map.  If the map previously contained a mapping for the key, the
- old value is replaced.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'key', [/* parameter description */
-					[/* text */ 't', `the key with which the specified value is to be associated`]
-				]],
 				[/* parameter */ 'value', [/* parameter description */
-					[/* text */ 't', `the value to be associated with the specified key`]
+					[/* text */ 't', `value whose presence in this map is to be tested`]
 				]]
 			],
 			/* throws */ UDF,
 			[/* return description */
-				[/* text */ 't', `the previous value associated with `],
-				[/* inline code block */ 'i', `key`],
-				[/* text */ 't', `, or
-         `],
-				[/* inline code block */ 'i', `null`],
-				[/* text */ 't', ` if there was no mapping for `],
-				[/* inline code block */ 'i', `key`],
-				[/* text */ 't', `.
-         (A `],
-				[/* inline code block */ 'i', `null`],
-				[/* text */ 't', ` return can also indicate that the map
-         previously associated `],
-				[/* inline code block */ 'i', `null`],
-				[/* text */ 't', ` with `],
-				[/* inline code block */ 'i', `key`],
-				[/* text */ 't', `.)`]
+				[/* inline code block */ 'i', `true`],
+				[/* text */ 't', ` if this map maps one or more keys to the
+         specified object reference`]
 			]
 		]],
 		[/* method */ 'equals(java.lang.Object)', [
@@ -380,6 +296,89 @@ DocsCollector.collect('java.util.IdentityHashMap', [
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if the specified object is equal to this map`]
+			]
+		]],
+		[/* method */ 'isEmpty()', [
+			[/* method description */
+				[/* text */ 't', `Returns `],
+				[/* inline code block */ 'i', `true`],
+				[/* text */ 't', ` if this identity hash map contains no key-value
+ mappings.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* inline code block */ 'i', `true`],
+				[/* text */ 't', ` if this identity hash map contains no key-value
+         mappings`]
+			]
+		]],
+		[/* method */ 'hashCode()', [
+			[/* method description */
+				[/* text */ 't', `Returns the hash code value for this map.  The hash code of a map is
+ defined to be the sum of the hash codes of each entry in the map's
+ `],
+				[/* inline code block */ 'i', `entrySet()`],
+				[/* text */ 't', ` view.  This ensures that `],
+				[/* inline code block */ 'i', `m1.equals(m2)`],
+				[/* text */ 't', `
+ implies that `],
+				[/* inline code block */ 'i', `m1.hashCode()==m2.hashCode()`],
+				[/* text */ 't', ` for any two
+ `],
+				[/* inline code block */ 'i', `IdentityHashMap`],
+				[/* text */ 't', ` instances `],
+				[/* inline code block */ 'i', `m1`],
+				[/* text */ 't', ` and `],
+				[/* inline code block */ 'i', `m2`],
+				[/* text */ 't', `, as
+ required by the general contract of `],
+				[/* reference */ 'r', `java.Object#hashCode()`],
+				[/* text */ 't', `.
+
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', `Owing to the reference-equality-based semantics of the
+ `],
+					[/* inline code block */ 'i', `Map.Entry`],
+					[/* text */ 't', ` instances in the set returned by this map's
+ `],
+					[/* inline code block */ 'i', `entrySet`],
+					[/* text */ 't', ` method, it is possible that the contractual
+ requirement of `],
+					[/* inline code block */ 'i', `Object.hashCode`],
+					[/* text */ 't', ` mentioned in the previous
+ paragraph will be violated if one of the two objects being compared is
+ an `],
+					[/* inline code block */ 'i', `IdentityHashMap`],
+					[/* text */ 't', ` instance and the other is a normal map.`]
+				]]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the hash code value for this map`]
+			]
+		]],
+		[/* method */ 'size()', [
+			[/* method description */
+				[/* text */ 't', `Returns the number of key-value mappings in this identity hash map.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the number of key-value mappings in this map`]
+			]
+		]],
+		[/* method */ 'clone()', [
+			[/* method description */
+				[/* text */ 't', `Returns a shallow copy of this identity hash map: the keys and values
+ themselves are not cloned.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `a shallow copy of this map`]
 			]
 		]],
 		[/* method */ 'values()', [
@@ -438,99 +437,6 @@ DocsCollector.collect('java.util.IdentityHashMap', [
 			/* throws */ UDF,
 			[/* return description */
 				[/* text */ 't', `a collection view of the values contained in this map`]
-			]
-		]],
-		[/* method */ 'hashCode()', [
-			[/* method description */
-				[/* text */ 't', `Returns the hash code value for this map.  The hash code of a map is
- defined to be the sum of the hash codes of each entry in the map's
- `],
-				[/* inline code block */ 'i', `entrySet()`],
-				[/* text */ 't', ` view.  This ensures that `],
-				[/* inline code block */ 'i', `m1.equals(m2)`],
-				[/* text */ 't', `
- implies that `],
-				[/* inline code block */ 'i', `m1.hashCode()==m2.hashCode()`],
-				[/* text */ 't', ` for any two
- `],
-				[/* inline code block */ 'i', `IdentityHashMap`],
-				[/* text */ 't', ` instances `],
-				[/* inline code block */ 'i', `m1`],
-				[/* text */ 't', ` and `],
-				[/* inline code block */ 'i', `m2`],
-				[/* text */ 't', `, as
- required by the general contract of `],
-				[/* reference */ 'r', `java.Object#hashCode()`],
-				[/* text */ 't', `.
-
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', `Owing to the reference-equality-based semantics of the
- `],
-					[/* inline code block */ 'i', `Map.Entry`],
-					[/* text */ 't', ` instances in the set returned by this map's
- `],
-					[/* inline code block */ 'i', `entrySet`],
-					[/* text */ 't', ` method, it is possible that the contractual
- requirement of `],
-					[/* inline code block */ 'i', `Object.hashCode`],
-					[/* text */ 't', ` mentioned in the previous
- paragraph will be violated if one of the two objects being compared is
- an `],
-					[/* inline code block */ 'i', `IdentityHashMap`],
-					[/* text */ 't', ` instance and the other is a normal map.`]
-				]]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the hash code value for this map`]
-			]
-		]],
-		[/* method */ 'clone()', [
-			[/* method description */
-				[/* text */ 't', `Returns a shallow copy of this identity hash map: the keys and values
- themselves are not cloned.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `a shallow copy of this map`]
-			]
-		]],
-		[/* method */ 'clear()', [
-			[/* method description */
-				[/* text */ 't', `Removes all of the mappings from this map.
- The map will be empty after this call returns.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			/* return */ UDF
-		]],
-		[/* method */ 'isEmpty()', [
-			[/* method description */
-				[/* text */ 't', `Returns `],
-				[/* inline code block */ 'i', `true`],
-				[/* text */ 't', ` if this identity hash map contains no key-value
- mappings.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* inline code block */ 'i', `true`],
-				[/* text */ 't', ` if this identity hash map contains no key-value
-         mappings`]
-			]
-		]],
-		[/* method */ 'replaceAll(java.util.function.BiFunction)', UDF],
-		[/* method */ 'size()', [
-			[/* method description */
-				[/* text */ 't', `Returns the number of key-value mappings in this identity hash map.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the number of key-value mappings in this map`]
 			]
 		]],
 		[/* method */ 'entrySet()', [
@@ -625,42 +531,6 @@ DocsCollector.collect('java.util.IdentityHashMap', [
 				[/* text */ 't', `a set view of the identity-mappings contained in this map`]
 			]
 		]],
-		[/* method */ 'putAll(java.util.Map)', [
-			[/* method description */
-				[/* text */ 't', `Copies all of the mappings from the specified map to this map.
- These mappings will replace any mappings that this map had for
- any of the keys currently in the specified map.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'm', [/* parameter description */
-					[/* text */ 't', `mappings to be stored in this map`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
-					[/* text */ 't', `if the specified map is null`]
-				]]
-			],
-			/* return */ UDF
-		]],
-		[/* method */ 'forEach(java.util.function.BiConsumer)', UDF],
-		[/* method */ 'containsKey(java.lang.Object)', [
-			[/* method description */
-				[/* text */ 't', `Tests whether the specified object reference is a key in this identity
- hash map.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'key', [/* parameter description */
-					[/* text */ 't', `possible key`]
-				]]
-			],
-			/* throws */ UDF,
-			[/* return description */
-				[/* inline code block */ 'i', `true`],
-				[/* text */ 't', ` if the specified object reference is a key
-          in this map`]
-			]
-		]],
 		[/* method */ 'keySet()', [
 			[/* method description */
 				[/* text */ 't', `Returns an identity-based set view of the keys contained in this map.
@@ -753,22 +623,152 @@ DocsCollector.collect('java.util.IdentityHashMap', [
 				[/* text */ 't', `an identity-based set view of the keys contained in this map`]
 			]
 		]],
-		[/* method */ 'containsValue(java.lang.Object)', [
+		[/* method */ 'get(java.lang.Object)', [
 			[/* method description */
-				[/* text */ 't', `Tests whether the specified object reference is a value in this identity
- hash map.`]
+				[/* text */ 't', `Returns the value to which the specified key is mapped,
+ or `],
+				[/* inline code block */ 'i', `null`],
+				[/* text */ 't', ` if this map contains no mapping for the key.
+
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', `More formally, if this map contains a mapping from a key
+ `],
+					[/* inline code block */ 'i', `k`],
+					[/* text */ 't', ` to a value `],
+					[/* inline code block */ 'i', `v`],
+					[/* text */ 't', ` such that `],
+					[/* inline code block */ 'i', `(key == k)`],
+					[/* text */ 't', `,
+ then this method returns `],
+					[/* inline code block */ 'i', `v`],
+					[/* text */ 't', `; otherwise it returns
+ `],
+					[/* inline code block */ 'i', `null`],
+					[/* text */ 't', `.  (There can be at most one such mapping.)
+
+ `]
+				]],
+				[/* block */ 'b', [
+					[/* text */ 't', `A return value of `],
+					[/* inline code block */ 'i', `null`],
+					[/* text */ 't', ` does not `],
+					[/* text */ 't', `necessarily`],
+					[/* text */ 't', `
+ indicate that the map contains no mapping for the key; it's also
+ possible that the map explicitly maps the key to `],
+					[/* inline code block */ 'i', `null`],
+					[/* text */ 't', `.
+ The `],
+					[/* reference */ 'r', `#containsKey(java.lang.Object)`, `containsKey`],
+					[/* text */ 't', ` operation may be used to
+ distinguish these two cases.`]
+				]]
 			],
 			[/* parameters */
-				[/* parameter */ 'value', [/* parameter description */
-					[/* text */ 't', `value whose presence in this map is to be tested`]
+				[/* parameter */ 'key', [/* parameter description */
+					[/* text */ 't', `the key whose associated value is to be returned`]
 				]]
 			],
 			/* throws */ UDF,
 			[/* return description */
-				[/* inline code block */ 'i', `true`],
-				[/* text */ 't', ` if this map maps one or more keys to the
-         specified object reference`]
+				[/* text */ 't', `the value to which the specified key is mapped, or
+         `],
+				[/* inline code block */ 'i', `null`],
+				[/* text */ 't', ` if this map contains no mapping for the key`]
 			]
-		]]
+		]],
+		[/* method */ 'put(java.lang.Object,java.lang.Object)', [
+			[/* method description */
+				[/* text */ 't', `Associates the specified value with the specified key in this identity
+ hash map.  If the map previously contained a mapping for the key, the
+ old value is replaced.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'key', [/* parameter description */
+					[/* text */ 't', `the key with which the specified value is to be associated`]
+				]],
+				[/* parameter */ 'value', [/* parameter description */
+					[/* text */ 't', `the value to be associated with the specified key`]
+				]]
+			],
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the previous value associated with `],
+				[/* inline code block */ 'i', `key`],
+				[/* text */ 't', `, or
+         `],
+				[/* inline code block */ 'i', `null`],
+				[/* text */ 't', ` if there was no mapping for `],
+				[/* inline code block */ 'i', `key`],
+				[/* text */ 't', `.
+         (A `],
+				[/* inline code block */ 'i', `null`],
+				[/* text */ 't', ` return can also indicate that the map
+         previously associated `],
+				[/* inline code block */ 'i', `null`],
+				[/* text */ 't', ` with `],
+				[/* inline code block */ 'i', `key`],
+				[/* text */ 't', `.)`]
+			]
+		]],
+		[/* method */ 'remove(java.lang.Object)', [
+			[/* method description */
+				[/* text */ 't', `Removes the mapping for this key from this map if present.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'key', [/* parameter description */
+					[/* text */ 't', `key whose mapping is to be removed from the map`]
+				]]
+			],
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the previous value associated with `],
+				[/* inline code block */ 'i', `key`],
+				[/* text */ 't', `, or
+         `],
+				[/* inline code block */ 'i', `null`],
+				[/* text */ 't', ` if there was no mapping for `],
+				[/* inline code block */ 'i', `key`],
+				[/* text */ 't', `.
+         (A `],
+				[/* inline code block */ 'i', `null`],
+				[/* text */ 't', ` return can also indicate that the map
+         previously associated `],
+				[/* inline code block */ 'i', `null`],
+				[/* text */ 't', ` with `],
+				[/* inline code block */ 'i', `key`],
+				[/* text */ 't', `.)`]
+			]
+		]],
+		[/* method */ 'clear()', [
+			[/* method description */
+				[/* text */ 't', `Removes all of the mappings from this map.
+ The map will be empty after this call returns.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			/* return */ UDF
+		]],
+		[/* method */ 'forEach(java.util.function.BiConsumer)', UDF],
+		[/* method */ 'putAll(java.util.Map)', [
+			[/* method description */
+				[/* text */ 't', `Copies all of the mappings from the specified map to this map.
+ These mappings will replace any mappings that this map had for
+ any of the keys currently in the specified map.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'm', [/* parameter description */
+					[/* text */ 't', `mappings to be stored in this map`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
+					[/* text */ 't', `if the specified map is null`]
+				]]
+			],
+			/* return */ UDF
+		]],
+		[/* method */ 'replaceAll(java.util.function.BiFunction)', UDF]
 	],
 ]);

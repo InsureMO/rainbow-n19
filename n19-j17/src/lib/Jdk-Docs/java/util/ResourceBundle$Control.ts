@@ -251,6 +251,18 @@ DocsCollector.collect('java.util.ResourceBundle$Control', [
 		[/* block */ 'b', '']
 	],
 	[/* fields */
+		[/* field */ 'FORMAT_CLASS', [
+			[/* field description */
+				[/* text */ 't', `The class-only format `],
+				[/* inline code block */ 'i', `List`],
+				[/* text */ 't', ` containing
+ `],
+				[/* inline code block */ 'i', `"java.class"`],
+				[/* text */ 't', `. This `],
+				[/* inline code block */ 'i', `List`],
+				[/* text */ 't', ` is unmodifiable.`]
+			],
+		]],
 		[/* field */ 'FORMAT_DEFAULT', [
 			[/* field description */
 				[/* text */ 't', `The default format `],
@@ -262,18 +274,6 @@ DocsCollector.collect('java.util.ResourceBundle$Control', [
 				[/* inline code block */ 'i', `"java.properties"`],
 				[/* text */ 't', `, in
  this order. This `],
-				[/* inline code block */ 'i', `List`],
-				[/* text */ 't', ` is unmodifiable.`]
-			],
-		]],
-		[/* field */ 'FORMAT_CLASS', [
-			[/* field description */
-				[/* text */ 't', `The class-only format `],
-				[/* inline code block */ 'i', `List`],
-				[/* text */ 't', ` containing
- `],
-				[/* inline code block */ 'i', `"java.class"`],
-				[/* text */ 't', `. This `],
 				[/* inline code block */ 'i', `List`],
 				[/* text */ 't', ` is unmodifiable.`]
 			],
@@ -314,6 +314,122 @@ DocsCollector.collect('java.util.ResourceBundle$Control', [
 		]]
 	],
 	[/* methods */
+		[/* method */ 'needsReload(java.lang.String,java.util.Locale,java.lang.String,java.lang.ClassLoader,java.util.ResourceBundle,long)', [
+			[/* method description */
+				[/* text */ 't', `Determines if the expired `],
+				[/* inline code block */ 'i', `bundle`],
+				[/* text */ 't', ` in the cache needs
+ to be reloaded based on the loading time given by
+ `],
+				[/* inline code block */ 'i', `loadTime`],
+				[/* text */ 't', ` or some other criteria. The method returns
+ `],
+				[/* inline code block */ 'i', `true`],
+				[/* text */ 't', ` if reloading is required; `],
+				[/* inline code block */ 'i', `false`],
+				[/* text */ 't', `
+ otherwise. `],
+				[/* inline code block */ 'i', `loadTime`],
+				[/* text */ 't', ` is a millisecond offset since
+ the `],
+				[/* reference */ 'r', `.Calendar#Epoch`],
+				[/* text */ 't', `.
+
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', `
+ The calling `],
+					[/* inline code block */ 'i', `ResourceBundle.getBundle`],
+					[/* text */ 't', ` factory method
+ calls this method on the `],
+					[/* inline code block */ 'i', `ResourceBundle.Control`],
+					[/* text */ 't', `
+ instance used for its current invocation, not on the instance
+ used in the invocation that originally loaded the resource
+ bundle.
+
+ `]
+				]],
+				[/* block */ 'b', [
+					[/* text */ 't', `The default implementation compares `],
+					[/* inline code block */ 'i', `loadTime`],
+					[/* text */ 't', ` and
+ the last modified time of the source data of the resource
+ bundle. If it's determined that the source data has been modified
+ since `],
+					[/* inline code block */ 'i', `loadTime`],
+					[/* text */ 't', `, `],
+					[/* inline code block */ 'i', `true`],
+					[/* text */ 't', ` is
+ returned. Otherwise, `],
+					[/* inline code block */ 'i', `false`],
+					[/* text */ 't', ` is returned. This
+ implementation assumes that the given `],
+					[/* inline code block */ 'i', `format`],
+					[/* text */ 't', ` is the
+ same string as its file suffix if it's not one of the default
+ formats, `],
+					[/* inline code block */ 'i', `"java.class"`],
+					[/* text */ 't', ` or
+ `],
+					[/* inline code block */ 'i', `"java.properties"`],
+					[/* text */ 't', `.`]
+				]]
+			],
+			[/* parameters */
+				[/* parameter */ 'baseName', [/* parameter description */
+					[/* text */ 't', `the base bundle name of the resource bundle, a
+        fully qualified class name`]
+				]],
+				[/* parameter */ 'locale', [/* parameter description */
+					[/* text */ 't', `the locale for which the resource bundle
+        should be instantiated`]
+				]],
+				[/* parameter */ 'format', [/* parameter description */
+					[/* text */ 't', `the resource bundle format to be loaded`]
+				]],
+				[/* parameter */ 'loader', [/* parameter description */
+					[/* text */ 't', `the `],
+					[/* inline code block */ 'i', `ClassLoader`],
+					[/* text */ 't', ` to use to load the bundle`]
+				]],
+				[/* parameter */ 'bundle', [/* parameter description */
+					[/* text */ 't', `the resource bundle instance that has been expired
+        in the cache`]
+				]],
+				[/* parameter */ 'loadTime', [/* parameter description */
+					[/* text */ 't', `the time when `],
+					[/* inline code block */ 'i', `bundle`],
+					[/* text */ 't', ` was loaded and put
+        in the cache`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
+					[/* text */ 't', `if `],
+					[/* inline code block */ 'i', `baseName`],
+					[/* text */ 't', `, `],
+					[/* inline code block */ 'i', `locale`],
+					[/* text */ 't', `,
+        `],
+					[/* inline code block */ 'i', `format`],
+					[/* text */ 't', `, `],
+					[/* inline code block */ 'i', `loader`],
+					[/* text */ 't', `, or
+        `],
+					[/* inline code block */ 'i', `bundle`],
+					[/* text */ 't', ` is `],
+					[/* inline code block */ 'i', `null`]
+				]]
+			],
+			[/* return description */
+				[/* inline code block */ 'i', `true`],
+				[/* text */ 't', ` if the expired bundle needs to be
+        reloaded; `],
+				[/* inline code block */ 'i', `false`],
+				[/* text */ 't', ` otherwise.`]
+			]
+		]],
 		[/* method */ 'toResourceName(java.lang.String,java.lang.String)', [
 			[/* method description */
 				[/* text */ 't', `Converts the given `],
@@ -373,67 +489,179 @@ DocsCollector.collect('java.util.ResourceBundle$Control', [
 				[/* text */ 't', `the converted resource name`]
 			]
 		]],
-		[/* method */ 'getControl(java.util.List)', [
+		[/* method */ 'toBundleName(java.lang.String,java.util.Locale)', [
 			[/* method description */
-				[/* text */ 't', `Returns a `],
-				[/* inline code block */ 'i', `ResourceBundle.Control`],
-				[/* text */ 't', ` in which the `],
-				[/* reference */ 'r', `#getFormats(java.lang.String)`, `getFormats`],
-				[/* text */ 't', ` method returns the specified
- `],
-				[/* inline code block */ 'i', `formats`],
-				[/* text */ 't', `. The `],
-				[/* inline code block */ 'i', `formats`],
-				[/* text */ 't', ` must be equal to
- one of `],
-				[/* text */ 't', `FORMAT_PROPERTIES`],
-				[/* text */ 't', `, `],
-				[/* text */ 't', `FORMAT_CLASS`],
-				[/* text */ 't', ` or `],
-				[/* text */ 't', `FORMAT_DEFAULT`],
-				[/* text */ 't', `. `],
-				[/* inline code block */ 'i', `ResourceBundle.Control`],
+				[/* text */ 't', `Converts the given `],
+				[/* inline code block */ 'i', `baseName`],
+				[/* text */ 't', ` and `],
+				[/* inline code block */ 'i', `locale`],
 				[/* text */ 't', `
- instances returned by this method are singletons and thread-safe.
+ to the bundle name. This method is called from the default
+ implementation of the `],
+				[/* reference */ 'r', `#newBundle(java.lang.String,java.util.Locale,java.lang.String,java.lang.ClassLoader,boolean)`, `newBundle`],
+				[/* text */ 't', ` and `],
+				[/* reference */ 'r', `#needsReload(java.lang.String,java.util.Locale,java.lang.String,java.lang.ClassLoader,java.util.ResourceBundle,long)`, `needsReload`],
+				[/* text */ 't', `
+ methods.
 
  `],
+				[/* block */ 'b', `This implementation returns the following value:
+ `],
+				[/* code block */ 'c', `     baseName + "_" + language + "_" + script + "_" + country + "_" + variant
+ `],
+				[/* text */ 't', `
+ where `],
+				[/* inline code block */ 'i', `language`],
+				[/* text */ 't', `, `],
+				[/* inline code block */ 'i', `script`],
+				[/* text */ 't', `, `],
+				[/* inline code block */ 'i', `country`],
+				[/* text */ 't', `,
+ and `],
+				[/* inline code block */ 'i', `variant`],
+				[/* text */ 't', ` are the language, script, country, and variant
+ values of `],
+				[/* inline code block */ 'i', `locale`],
+				[/* text */ 't', `, respectively. Final component values that
+ are empty Strings are omitted along with the preceding '_'.  When the
+ script is empty, the script value is omitted along with the preceding '_'.
+ If all of the values are empty strings, then `],
+				[/* inline code block */ 'i', `baseName`],
+				[/* text */ 't', `
+ is returned.
+
+ `],
+				[/* block */ 'b', ''],
 				[/* block */ 'b', [
-					[/* text */ 't', `Specifying `],
-					[/* text */ 't', `FORMAT_DEFAULT`],
-					[/* text */ 't', ` is equivalent to
- instantiating the `],
-					[/* inline code block */ 'i', `ResourceBundle.Control`],
-					[/* text */ 't', ` class,
- except that this method returns a singleton.`]
-				]]
+					[/* text */ 't', `For example, if `],
+					[/* inline code block */ 'i', `baseName`],
+					[/* text */ 't', ` is
+ `],
+					[/* inline code block */ 'i', `"baseName"`],
+					[/* text */ 't', ` and `],
+					[/* inline code block */ 'i', `locale`],
+					[/* text */ 't', ` is
+ `],
+					[/* inline code block */ 'i', `Locale("ja", "", "XX")`],
+					[/* text */ 't', `, then
+ `],
+					[/* inline code block */ 'i', `"baseName_ja_ _XX"`],
+					[/* text */ 't', ` is returned. If the given
+ locale is `],
+					[/* inline code block */ 'i', `Locale("en")`],
+					[/* text */ 't', `, then
+ `],
+					[/* inline code block */ 'i', `"baseName_en"`],
+					[/* text */ 't', ` is returned.
+
+ `]
+				]],
+				[/* block */ 'b', `Overriding this method allows applications to use different
+ conventions in the organization and packaging of localized
+ resources.`]
 			],
 			[/* parameters */
-				[/* parameter */ 'formats', [/* parameter description */
-					[/* text */ 't', `the formats to be returned by the
-        `],
-					[/* inline code block */ 'i', `ResourceBundle.Control.getFormats`],
-					[/* text */ 't', ` method`]
+				[/* parameter */ 'baseName', [/* parameter description */
+					[/* text */ 't', `the base name of the resource bundle, a fully
+        qualified class name`]
+				]],
+				[/* parameter */ 'locale', [/* parameter description */
+					[/* text */ 't', `the locale for which a resource bundle should be
+        loaded`]
 				]]
 			],
 			[/* throws */
 				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
 					[/* text */ 't', `if `],
-					[/* inline code block */ 'i', `formats`],
-					[/* text */ 't', ` is `],
+					[/* inline code block */ 'i', `baseName`],
+					[/* text */ 't', ` or `],
+					[/* inline code block */ 'i', `locale`],
+					[/* text */ 't', `
+        is `],
 					[/* inline code block */ 'i', `null`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `the bundle name for the resource bundle`]
+			]
+		]],
+		[/* method */ 'getFormats(java.lang.String)', [
+			[/* method description */
+				[/* text */ 't', `Returns a `],
+				[/* inline code block */ 'i', `List`],
+				[/* text */ 't', ` of `],
+				[/* inline code block */ 'i', `String`],
+				[/* text */ 't', `s containing
+ formats to be used to load resource bundles for the given
+ `],
+				[/* inline code block */ 'i', `baseName`],
+				[/* text */ 't', `. The `],
+				[/* inline code block */ 'i', `ResourceBundle.getBundle`],
+				[/* text */ 't', `
+ factory method tries to load resource bundles with formats in the
+ order specified by the list. The list returned by this method
+ must have at least one `],
+				[/* inline code block */ 'i', `String`],
+				[/* text */ 't', `. The predefined
+ formats are `],
+				[/* inline code block */ 'i', `"java.class"`],
+				[/* text */ 't', ` for class-based resource
+ bundles and `],
+				[/* inline code block */ 'i', `"java.properties"`],
+				[/* text */ 't', ` for `],
+				[/* reference */ 'r', `java.util.PropertyResourceBundle`],
+				[/* text */ 't', ` ones. Strings starting
+ with `],
+				[/* inline code block */ 'i', `"java."`],
+				[/* text */ 't', ` are reserved for future extensions and
+ must not be used by application-defined formats.
+
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', `It is not a requirement to return an immutable (unmodifiable)
+ `],
+					[/* inline code block */ 'i', `List`],
+					[/* text */ 't', `.  However, the returned `],
+					[/* inline code block */ 'i', `List`],
+					[/* text */ 't', ` must
+ not be mutated after it has been returned by
+ `],
+					[/* inline code block */ 'i', `getFormats`],
+					[/* text */ 't', `.
+
+ `]
 				]],
-				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
+				[/* block */ 'b', [
+					[/* text */ 't', `The default implementation returns `],
+					[/* text */ 't', `FORMAT_DEFAULT`],
+					[/* text */ 't', ` so
+ that the `],
+					[/* inline code block */ 'i', `ResourceBundle.getBundle`],
+					[/* text */ 't', ` factory method
+ looks up first class-based resource bundles, then
+ properties-based ones.`]
+				]]
+			],
+			[/* parameters */
+				[/* parameter */ 'baseName', [/* parameter description */
+					[/* text */ 't', `the base name of the resource bundle, a fully qualified class
+        name`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
 					[/* text */ 't', `if `],
-					[/* inline code block */ 'i', `formats`],
-					[/* text */ 't', ` is unknown`]
+					[/* inline code block */ 'i', `baseName`],
+					[/* text */ 't', ` is null`]
 				]]
 			],
 			[/* return description */
 				[/* text */ 't', `a `],
-				[/* inline code block */ 'i', `ResourceBundle.Control`],
-				[/* text */ 't', ` supporting the
-        specified `],
-				[/* inline code block */ 'i', `formats`]
+				[/* inline code block */ 'i', `List`],
+				[/* text */ 't', ` of `],
+				[/* inline code block */ 'i', `String`],
+				[/* text */ 't', `s containing
+        formats for loading resource bundles.`]
 			]
 		]],
 		[/* method */ 'getCandidateLocales(java.lang.String,java.util.Locale)', [
@@ -1025,243 +1253,6 @@ DocsCollector.collect('java.util.ResourceBundle$Control', [
 				[/* inline code block */ 'i', `locale`]
 			]
 		]],
-		[/* method */ 'getNoFallbackControl(java.util.List)', [
-			[/* method description */
-				[/* text */ 't', `Returns a `],
-				[/* inline code block */ 'i', `ResourceBundle.Control`],
-				[/* text */ 't', ` in which the `],
-				[/* reference */ 'r', `#getFormats(java.lang.String)`, `getFormats`],
-				[/* text */ 't', ` method returns the specified
- `],
-				[/* inline code block */ 'i', `formats`],
-				[/* text */ 't', ` and the `],
-				[/* reference */ 'r', `#getFallbackLocale(java.lang.String,java.util.Locale)`, `getFallbackLocale`],
-				[/* text */ 't', `
- method returns `],
-				[/* inline code block */ 'i', `null`],
-				[/* text */ 't', `. The `],
-				[/* inline code block */ 'i', `formats`],
-				[/* text */ 't', ` must
- be equal to one of `],
-				[/* text */ 't', `FORMAT_PROPERTIES`],
-				[/* text */ 't', `, `],
-				[/* text */ 't', `FORMAT_CLASS`],
-				[/* text */ 't', ` or `],
-				[/* text */ 't', `FORMAT_DEFAULT`],
-				[/* text */ 't', `.
- `],
-				[/* inline code block */ 'i', `ResourceBundle.Control`],
-				[/* text */ 't', ` instances returned by this
- method are singletons and thread-safe.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'formats', [/* parameter description */
-					[/* text */ 't', `the formats to be returned by the
-        `],
-					[/* inline code block */ 'i', `ResourceBundle.Control.getFormats`],
-					[/* text */ 't', ` method`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
-					[/* text */ 't', `if `],
-					[/* inline code block */ 'i', `formats`],
-					[/* text */ 't', ` is `],
-					[/* inline code block */ 'i', `null`]
-				]],
-				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
-					[/* text */ 't', `if `],
-					[/* inline code block */ 'i', `formats`],
-					[/* text */ 't', ` is unknown`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `a `],
-				[/* inline code block */ 'i', `ResourceBundle.Control`],
-				[/* text */ 't', ` supporting the
-        specified `],
-				[/* inline code block */ 'i', `formats`],
-				[/* text */ 't', ` with no fallback
-        `],
-				[/* inline code block */ 'i', `Locale`],
-				[/* text */ 't', ` support`]
-			]
-		]],
-		[/* method */ 'toBundleName(java.lang.String,java.util.Locale)', [
-			[/* method description */
-				[/* text */ 't', `Converts the given `],
-				[/* inline code block */ 'i', `baseName`],
-				[/* text */ 't', ` and `],
-				[/* inline code block */ 'i', `locale`],
-				[/* text */ 't', `
- to the bundle name. This method is called from the default
- implementation of the `],
-				[/* reference */ 'r', `#newBundle(java.lang.String,java.util.Locale,java.lang.String,java.lang.ClassLoader,boolean)`, `newBundle`],
-				[/* text */ 't', ` and `],
-				[/* reference */ 'r', `#needsReload(java.lang.String,java.util.Locale,java.lang.String,java.lang.ClassLoader,java.util.ResourceBundle,long)`, `needsReload`],
-				[/* text */ 't', `
- methods.
-
- `],
-				[/* block */ 'b', `This implementation returns the following value:
- `],
-				[/* code block */ 'c', `     baseName + "_" + language + "_" + script + "_" + country + "_" + variant
- `],
-				[/* text */ 't', `
- where `],
-				[/* inline code block */ 'i', `language`],
-				[/* text */ 't', `, `],
-				[/* inline code block */ 'i', `script`],
-				[/* text */ 't', `, `],
-				[/* inline code block */ 'i', `country`],
-				[/* text */ 't', `,
- and `],
-				[/* inline code block */ 'i', `variant`],
-				[/* text */ 't', ` are the language, script, country, and variant
- values of `],
-				[/* inline code block */ 'i', `locale`],
-				[/* text */ 't', `, respectively. Final component values that
- are empty Strings are omitted along with the preceding '_'.  When the
- script is empty, the script value is omitted along with the preceding '_'.
- If all of the values are empty strings, then `],
-				[/* inline code block */ 'i', `baseName`],
-				[/* text */ 't', `
- is returned.
-
- `],
-				[/* block */ 'b', ''],
-				[/* block */ 'b', [
-					[/* text */ 't', `For example, if `],
-					[/* inline code block */ 'i', `baseName`],
-					[/* text */ 't', ` is
- `],
-					[/* inline code block */ 'i', `"baseName"`],
-					[/* text */ 't', ` and `],
-					[/* inline code block */ 'i', `locale`],
-					[/* text */ 't', ` is
- `],
-					[/* inline code block */ 'i', `Locale("ja", "", "XX")`],
-					[/* text */ 't', `, then
- `],
-					[/* inline code block */ 'i', `"baseName_ja_ _XX"`],
-					[/* text */ 't', ` is returned. If the given
- locale is `],
-					[/* inline code block */ 'i', `Locale("en")`],
-					[/* text */ 't', `, then
- `],
-					[/* inline code block */ 'i', `"baseName_en"`],
-					[/* text */ 't', ` is returned.
-
- `]
-				]],
-				[/* block */ 'b', `Overriding this method allows applications to use different
- conventions in the organization and packaging of localized
- resources.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'baseName', [/* parameter description */
-					[/* text */ 't', `the base name of the resource bundle, a fully
-        qualified class name`]
-				]],
-				[/* parameter */ 'locale', [/* parameter description */
-					[/* text */ 't', `the locale for which a resource bundle should be
-        loaded`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
-					[/* text */ 't', `if `],
-					[/* inline code block */ 'i', `baseName`],
-					[/* text */ 't', ` or `],
-					[/* inline code block */ 'i', `locale`],
-					[/* text */ 't', `
-        is `],
-					[/* inline code block */ 'i', `null`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `the bundle name for the resource bundle`]
-			]
-		]],
-		[/* method */ 'getFormats(java.lang.String)', [
-			[/* method description */
-				[/* text */ 't', `Returns a `],
-				[/* inline code block */ 'i', `List`],
-				[/* text */ 't', ` of `],
-				[/* inline code block */ 'i', `String`],
-				[/* text */ 't', `s containing
- formats to be used to load resource bundles for the given
- `],
-				[/* inline code block */ 'i', `baseName`],
-				[/* text */ 't', `. The `],
-				[/* inline code block */ 'i', `ResourceBundle.getBundle`],
-				[/* text */ 't', `
- factory method tries to load resource bundles with formats in the
- order specified by the list. The list returned by this method
- must have at least one `],
-				[/* inline code block */ 'i', `String`],
-				[/* text */ 't', `. The predefined
- formats are `],
-				[/* inline code block */ 'i', `"java.class"`],
-				[/* text */ 't', ` for class-based resource
- bundles and `],
-				[/* inline code block */ 'i', `"java.properties"`],
-				[/* text */ 't', ` for `],
-				[/* reference */ 'r', `java.util.PropertyResourceBundle`],
-				[/* text */ 't', ` ones. Strings starting
- with `],
-				[/* inline code block */ 'i', `"java."`],
-				[/* text */ 't', ` are reserved for future extensions and
- must not be used by application-defined formats.
-
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', `It is not a requirement to return an immutable (unmodifiable)
- `],
-					[/* inline code block */ 'i', `List`],
-					[/* text */ 't', `.  However, the returned `],
-					[/* inline code block */ 'i', `List`],
-					[/* text */ 't', ` must
- not be mutated after it has been returned by
- `],
-					[/* inline code block */ 'i', `getFormats`],
-					[/* text */ 't', `.
-
- `]
-				]],
-				[/* block */ 'b', [
-					[/* text */ 't', `The default implementation returns `],
-					[/* text */ 't', `FORMAT_DEFAULT`],
-					[/* text */ 't', ` so
- that the `],
-					[/* inline code block */ 'i', `ResourceBundle.getBundle`],
-					[/* text */ 't', ` factory method
- looks up first class-based resource bundles, then
- properties-based ones.`]
-				]]
-			],
-			[/* parameters */
-				[/* parameter */ 'baseName', [/* parameter description */
-					[/* text */ 't', `the base name of the resource bundle, a fully qualified class
-        name`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
-					[/* text */ 't', `if `],
-					[/* inline code block */ 'i', `baseName`],
-					[/* text */ 't', ` is null`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `a `],
-				[/* inline code block */ 'i', `List`],
-				[/* text */ 't', ` of `],
-				[/* inline code block */ 'i', `String`],
-				[/* text */ 't', `s containing
-        formats for loading resource bundles.`]
-			]
-		]],
 		[/* method */ 'getFallbackLocale(java.lang.String,java.util.Locale)', [
 			[/* method description */
 				[/* text */ 't', `Returns a `],
@@ -1548,120 +1539,129 @@ DocsCollector.collect('java.util.ResourceBundle$Control', [
         caching.`]
 			]
 		]],
-		[/* method */ 'needsReload(java.lang.String,java.util.Locale,java.lang.String,java.lang.ClassLoader,java.util.ResourceBundle,long)', [
+		[/* method */ 'getControl(java.util.List)', [
 			[/* method description */
-				[/* text */ 't', `Determines if the expired `],
-				[/* inline code block */ 'i', `bundle`],
-				[/* text */ 't', ` in the cache needs
- to be reloaded based on the loading time given by
+				[/* text */ 't', `Returns a `],
+				[/* inline code block */ 'i', `ResourceBundle.Control`],
+				[/* text */ 't', ` in which the `],
+				[/* reference */ 'r', `#getFormats(java.lang.String)`, `getFormats`],
+				[/* text */ 't', ` method returns the specified
  `],
-				[/* inline code block */ 'i', `loadTime`],
-				[/* text */ 't', ` or some other criteria. The method returns
- `],
-				[/* inline code block */ 'i', `true`],
-				[/* text */ 't', ` if reloading is required; `],
-				[/* inline code block */ 'i', `false`],
+				[/* inline code block */ 'i', `formats`],
+				[/* text */ 't', `. The `],
+				[/* inline code block */ 'i', `formats`],
+				[/* text */ 't', ` must be equal to
+ one of `],
+				[/* text */ 't', `FORMAT_PROPERTIES`],
+				[/* text */ 't', `, `],
+				[/* text */ 't', `FORMAT_CLASS`],
+				[/* text */ 't', ` or `],
+				[/* text */ 't', `FORMAT_DEFAULT`],
+				[/* text */ 't', `. `],
+				[/* inline code block */ 'i', `ResourceBundle.Control`],
 				[/* text */ 't', `
- otherwise. `],
-				[/* inline code block */ 'i', `loadTime`],
-				[/* text */ 't', ` is a millisecond offset since
- the `],
-				[/* reference */ 'r', `.Calendar#Epoch`],
-				[/* text */ 't', `.
+ instances returned by this method are singletons and thread-safe.
 
  `],
 				[/* block */ 'b', [
-					[/* text */ 't', `
- The calling `],
-					[/* inline code block */ 'i', `ResourceBundle.getBundle`],
-					[/* text */ 't', ` factory method
- calls this method on the `],
+					[/* text */ 't', `Specifying `],
+					[/* text */ 't', `FORMAT_DEFAULT`],
+					[/* text */ 't', ` is equivalent to
+ instantiating the `],
 					[/* inline code block */ 'i', `ResourceBundle.Control`],
-					[/* text */ 't', `
- instance used for its current invocation, not on the instance
- used in the invocation that originally loaded the resource
- bundle.
-
- `]
-				]],
-				[/* block */ 'b', [
-					[/* text */ 't', `The default implementation compares `],
-					[/* inline code block */ 'i', `loadTime`],
-					[/* text */ 't', ` and
- the last modified time of the source data of the resource
- bundle. If it's determined that the source data has been modified
- since `],
-					[/* inline code block */ 'i', `loadTime`],
-					[/* text */ 't', `, `],
-					[/* inline code block */ 'i', `true`],
-					[/* text */ 't', ` is
- returned. Otherwise, `],
-					[/* inline code block */ 'i', `false`],
-					[/* text */ 't', ` is returned. This
- implementation assumes that the given `],
-					[/* inline code block */ 'i', `format`],
-					[/* text */ 't', ` is the
- same string as its file suffix if it's not one of the default
- formats, `],
-					[/* inline code block */ 'i', `"java.class"`],
-					[/* text */ 't', ` or
- `],
-					[/* inline code block */ 'i', `"java.properties"`],
-					[/* text */ 't', `.`]
+					[/* text */ 't', ` class,
+ except that this method returns a singleton.`]
 				]]
 			],
 			[/* parameters */
-				[/* parameter */ 'baseName', [/* parameter description */
-					[/* text */ 't', `the base bundle name of the resource bundle, a
-        fully qualified class name`]
-				]],
-				[/* parameter */ 'locale', [/* parameter description */
-					[/* text */ 't', `the locale for which the resource bundle
-        should be instantiated`]
-				]],
-				[/* parameter */ 'format', [/* parameter description */
-					[/* text */ 't', `the resource bundle format to be loaded`]
-				]],
-				[/* parameter */ 'loader', [/* parameter description */
-					[/* text */ 't', `the `],
-					[/* inline code block */ 'i', `ClassLoader`],
-					[/* text */ 't', ` to use to load the bundle`]
-				]],
-				[/* parameter */ 'bundle', [/* parameter description */
-					[/* text */ 't', `the resource bundle instance that has been expired
-        in the cache`]
-				]],
-				[/* parameter */ 'loadTime', [/* parameter description */
-					[/* text */ 't', `the time when `],
-					[/* inline code block */ 'i', `bundle`],
-					[/* text */ 't', ` was loaded and put
-        in the cache`]
+				[/* parameter */ 'formats', [/* parameter description */
+					[/* text */ 't', `the formats to be returned by the
+        `],
+					[/* inline code block */ 'i', `ResourceBundle.Control.getFormats`],
+					[/* text */ 't', ` method`]
 				]]
 			],
 			[/* throws */
 				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
 					[/* text */ 't', `if `],
-					[/* inline code block */ 'i', `baseName`],
-					[/* text */ 't', `, `],
-					[/* inline code block */ 'i', `locale`],
-					[/* text */ 't', `,
-        `],
-					[/* inline code block */ 'i', `format`],
-					[/* text */ 't', `, `],
-					[/* inline code block */ 'i', `loader`],
-					[/* text */ 't', `, or
-        `],
-					[/* inline code block */ 'i', `bundle`],
+					[/* inline code block */ 'i', `formats`],
 					[/* text */ 't', ` is `],
 					[/* inline code block */ 'i', `null`]
+				]],
+				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
+					[/* text */ 't', `if `],
+					[/* inline code block */ 'i', `formats`],
+					[/* text */ 't', ` is unknown`]
 				]]
 			],
 			[/* return description */
-				[/* inline code block */ 'i', `true`],
-				[/* text */ 't', ` if the expired bundle needs to be
-        reloaded; `],
-				[/* inline code block */ 'i', `false`],
-				[/* text */ 't', ` otherwise.`]
+				[/* text */ 't', `a `],
+				[/* inline code block */ 'i', `ResourceBundle.Control`],
+				[/* text */ 't', ` supporting the
+        specified `],
+				[/* inline code block */ 'i', `formats`]
+			]
+		]],
+		[/* method */ 'getNoFallbackControl(java.util.List)', [
+			[/* method description */
+				[/* text */ 't', `Returns a `],
+				[/* inline code block */ 'i', `ResourceBundle.Control`],
+				[/* text */ 't', ` in which the `],
+				[/* reference */ 'r', `#getFormats(java.lang.String)`, `getFormats`],
+				[/* text */ 't', ` method returns the specified
+ `],
+				[/* inline code block */ 'i', `formats`],
+				[/* text */ 't', ` and the `],
+				[/* reference */ 'r', `#getFallbackLocale(java.lang.String,java.util.Locale)`, `getFallbackLocale`],
+				[/* text */ 't', `
+ method returns `],
+				[/* inline code block */ 'i', `null`],
+				[/* text */ 't', `. The `],
+				[/* inline code block */ 'i', `formats`],
+				[/* text */ 't', ` must
+ be equal to one of `],
+				[/* text */ 't', `FORMAT_PROPERTIES`],
+				[/* text */ 't', `, `],
+				[/* text */ 't', `FORMAT_CLASS`],
+				[/* text */ 't', ` or `],
+				[/* text */ 't', `FORMAT_DEFAULT`],
+				[/* text */ 't', `.
+ `],
+				[/* inline code block */ 'i', `ResourceBundle.Control`],
+				[/* text */ 't', ` instances returned by this
+ method are singletons and thread-safe.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'formats', [/* parameter description */
+					[/* text */ 't', `the formats to be returned by the
+        `],
+					[/* inline code block */ 'i', `ResourceBundle.Control.getFormats`],
+					[/* text */ 't', ` method`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
+					[/* text */ 't', `if `],
+					[/* inline code block */ 'i', `formats`],
+					[/* text */ 't', ` is `],
+					[/* inline code block */ 'i', `null`]
+				]],
+				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
+					[/* text */ 't', `if `],
+					[/* inline code block */ 'i', `formats`],
+					[/* text */ 't', ` is unknown`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `a `],
+				[/* inline code block */ 'i', `ResourceBundle.Control`],
+				[/* text */ 't', ` supporting the
+        specified `],
+				[/* inline code block */ 'i', `formats`],
+				[/* text */ 't', ` with no fallback
+        `],
+				[/* inline code block */ 'i', `Locale`],
+				[/* text */ 't', ` support`]
 			]
 		]]
 	],

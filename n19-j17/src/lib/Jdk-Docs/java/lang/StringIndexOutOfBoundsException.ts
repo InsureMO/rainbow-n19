@@ -24,20 +24,6 @@ DocsCollector.collect('java.lang.StringIndexOutOfBoundsException', [
 			/* parameters */ UDF,
 			/* throws */ UDF
 		]],
-		[/* constructor */ '<init>(java.lang.String)', [
-			[/* constructor description */
-				[/* text */ 't', `Constructs a `],
-				[/* inline code block */ 'i', `StringIndexOutOfBoundsException`],
-				[/* text */ 't', ` with the specified
- detail message.`]
-			],
-			[/* parameters */
-				[/* parameter */ 's', [/* parameter description */
-					[/* text */ 't', `the detail message.`]
-				]]
-			],
-			/* throws */ UDF
-		]],
 		[/* constructor */ '<init>(int)', [
 			[/* constructor description */
 				[/* text */ 't', `Constructs a new `],
@@ -52,6 +38,20 @@ DocsCollector.collect('java.lang.StringIndexOutOfBoundsException', [
 			[/* parameters */
 				[/* parameter */ 'index', [/* parameter description */
 					[/* text */ 't', `the illegal index.`]
+				]]
+			],
+			/* throws */ UDF
+		]],
+		[/* constructor */ '<init>(java.lang.String)', [
+			[/* constructor description */
+				[/* text */ 't', `Constructs a `],
+				[/* inline code block */ 'i', `StringIndexOutOfBoundsException`],
+				[/* text */ 't', ` with the specified
+ detail message.`]
+			],
+			[/* parameters */
+				[/* parameter */ 's', [/* parameter description */
+					[/* text */ 't', `the detail message.`]
 				]]
 			],
 			/* throws */ UDF

@@ -222,19 +222,34 @@ DocsCollector.collect('java.lang.Throwable', [
 			],
 			/* throws */ UDF
 		]],
-		[/* constructor */ '<init>(java.lang.Throwable)', [
+		[/* constructor */ '<init>()', [
 			[/* constructor description */
-				[/* text */ 't', `Constructs a new throwable with the specified cause and a detail
- message of `],
-				[/* inline code block */ 'i', `(cause==null ? null : cause.toString())`],
-				[/* text */ 't', ` (which
- typically contains the class and detail message of `],
-				[/* inline code block */ 'i', `cause`],
-				[/* text */ 't', `).
- This constructor is useful for throwables that are little more than
- wrappers for other throwables (for example, `],
-				[/* reference */ 'r', `java.security.PrivilegedActionException`],
-				[/* text */ 't', `).
+				[/* text */ 't', `Constructs a new throwable with `],
+				[/* inline code block */ 'i', `null`],
+				[/* text */ 't', ` as its detail message.
+ The cause is not initialized, and may subsequently be initialized by a
+ call to `],
+				[/* reference */ 'r', `#initCause(java.lang.Throwable)`, `initCause(java.lang.Throwable)`],
+				[/* text */ 't', `.
+
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', `The `],
+					[/* reference */ 'r', `#fillInStackTrace()`, `fillInStackTrace()`],
+					[/* text */ 't', ` method is called to initialize
+ the stack trace data in the newly created throwable.`]
+				]]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF
+		]],
+		[/* constructor */ '<init>(java.lang.String)', [
+			[/* constructor description */
+				[/* text */ 't', `Constructs a new throwable with the specified detail message.  The
+ cause is not initialized, and may subsequently be initialized by
+ a call to `],
+				[/* reference */ 'r', `#initCause(java.lang.Throwable)`, `initCause(java.lang.Throwable)`],
+				[/* text */ 't', `.
 
  `],
 				[/* block */ 'b', [
@@ -245,15 +260,11 @@ DocsCollector.collect('java.lang.Throwable', [
 				]]
 			],
 			[/* parameters */
-				[/* parameter */ 'cause', [/* parameter description */
-					[/* text */ 't', `the cause (which is saved for later retrieval by the
-         `],
-					[/* reference */ 'r', `#getCause()`, `getCause()`],
-					[/* text */ 't', ` method).  (A `],
-					[/* inline code block */ 'i', `null`],
-					[/* text */ 't', ` value is
-         permitted, and indicates that the cause is nonexistent or
-         unknown.)`]
+				[/* parameter */ 'message', [/* parameter description */
+					[/* text */ 't', `the detail message. The detail message is saved for
+          later retrieval by the `],
+					[/* reference */ 'r', `#getMessage()`, `getMessage()`],
+					[/* text */ 't', ` method.`]
 				]]
 			],
 			/* throws */ UDF
@@ -300,13 +311,19 @@ DocsCollector.collect('java.lang.Throwable', [
 			],
 			/* throws */ UDF
 		]],
-		[/* constructor */ '<init>(java.lang.String)', [
+		[/* constructor */ '<init>(java.lang.Throwable)', [
 			[/* constructor description */
-				[/* text */ 't', `Constructs a new throwable with the specified detail message.  The
- cause is not initialized, and may subsequently be initialized by
- a call to `],
-				[/* reference */ 'r', `#initCause(java.lang.Throwable)`, `initCause(java.lang.Throwable)`],
-				[/* text */ 't', `.
+				[/* text */ 't', `Constructs a new throwable with the specified cause and a detail
+ message of `],
+				[/* inline code block */ 'i', `(cause==null ? null : cause.toString())`],
+				[/* text */ 't', ` (which
+ typically contains the class and detail message of `],
+				[/* inline code block */ 'i', `cause`],
+				[/* text */ 't', `).
+ This constructor is useful for throwables that are little more than
+ wrappers for other throwables (for example, `],
+				[/* reference */ 'r', `java.security.PrivilegedActionException`],
+				[/* text */ 't', `).
 
  `],
 				[/* block */ 'b', [
@@ -317,38 +334,376 @@ DocsCollector.collect('java.lang.Throwable', [
 				]]
 			],
 			[/* parameters */
-				[/* parameter */ 'message', [/* parameter description */
-					[/* text */ 't', `the detail message. The detail message is saved for
-          later retrieval by the `],
-					[/* reference */ 'r', `#getMessage()`, `getMessage()`],
-					[/* text */ 't', ` method.`]
+				[/* parameter */ 'cause', [/* parameter description */
+					[/* text */ 't', `the cause (which is saved for later retrieval by the
+         `],
+					[/* reference */ 'r', `#getCause()`, `getCause()`],
+					[/* text */ 't', ` method).  (A `],
+					[/* inline code block */ 'i', `null`],
+					[/* text */ 't', ` value is
+         permitted, and indicates that the cause is nonexistent or
+         unknown.)`]
 				]]
 			],
-			/* throws */ UDF
-		]],
-		[/* constructor */ '<init>()', [
-			[/* constructor description */
-				[/* text */ 't', `Constructs a new throwable with `],
-				[/* inline code block */ 'i', `null`],
-				[/* text */ 't', ` as its detail message.
- The cause is not initialized, and may subsequently be initialized by a
- call to `],
-				[/* reference */ 'r', `#initCause(java.lang.Throwable)`, `initCause(java.lang.Throwable)`],
-				[/* text */ 't', `.
-
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', `The `],
-					[/* reference */ 'r', `#fillInStackTrace()`, `fillInStackTrace()`],
-					[/* text */ 't', ` method is called to initialize
- the stack trace data in the newly created throwable.`]
-				]]
-			],
-			/* parameters */ UDF,
 			/* throws */ UDF
 		]]
 	],
 	[/* methods */
+		[/* method */ 'getSuppressed()', [
+			[/* method description */
+				[/* text */ 't', `Returns an array containing all of the exceptions that were
+ suppressed, typically by the `],
+				[/* inline code block */ 'i', `try`],
+				[/* text */ 't', `-with-resources
+ statement, in order to deliver this exception.
+
+ If no exceptions were suppressed or `],
+				[/* reference */ 'r', `#%3Cinit%3E(java.lang.String,java.lang.Throwable,boolean,boolean)`, `suppression is disabled`],
+				[/* text */ 't', `, an empty array is returned.  This method is
+ thread-safe.  Writes to the returned array do not affect future
+ calls to this method.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `an array containing all of the exceptions that were
+         suppressed to deliver this exception.`]
+			]
+		]],
+		[/* method */ 'addSuppressed(java.lang.Throwable)', [
+			[/* method description */
+				[/* text */ 't', `Appends the specified exception to the exceptions that were
+ suppressed in order to deliver this exception. This method is
+ thread-safe and typically called (automatically and implicitly)
+ by the `],
+				[/* inline code block */ 'i', `try`],
+				[/* text */ 't', `-with-resources statement.
+
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', `The suppression behavior is enabled `],
+					[/* text */ 't', `unless`],
+					[/* text */ 't', ` disabled
+ `],
+					[/* reference */ 'r', `#%3Cinit%3E(java.lang.String,java.lang.Throwable,boolean,boolean)`, `via a constructor`],
+					[/* text */ 't', `.  When suppression is disabled, this method does
+ nothing other than to validate its argument.
+
+ `]
+				]],
+				[/* block */ 'b', [
+					[/* text */ 't', `Note that when one exception `],
+					[/* reference */ 'r', `#initCause(java.lang.Throwable)`, `causes`],
+					[/* text */ 't', ` another exception, the first
+ exception is usually caught and then the second exception is
+ thrown in response.  In other words, there is a causal
+ connection between the two exceptions.
+
+ In contrast, there are situations where two independent
+ exceptions can be thrown in sibling code blocks, in particular
+ in the `],
+					[/* inline code block */ 'i', `try`],
+					[/* text */ 't', ` block of a `],
+					[/* inline code block */ 'i', `try`],
+					[/* text */ 't', `-with-resources
+ statement and the compiler-generated `],
+					[/* inline code block */ 'i', `finally`],
+					[/* text */ 't', ` block
+ which closes the resource.
+
+ In these situations, only one of the thrown exceptions can be
+ propagated.  In the `],
+					[/* inline code block */ 'i', `try`],
+					[/* text */ 't', `-with-resources statement, when
+ there are two such exceptions, the exception originating from
+ the `],
+					[/* inline code block */ 'i', `try`],
+					[/* text */ 't', ` block is propagated and the exception from the
+ `],
+					[/* inline code block */ 'i', `finally`],
+					[/* text */ 't', ` block is added to the list of exceptions
+ suppressed by the exception from the `],
+					[/* inline code block */ 'i', `try`],
+					[/* text */ 't', ` block.  As an
+ exception unwinds the stack, it can accumulate multiple
+ suppressed exceptions.
+
+ `]
+				]],
+				[/* block */ 'b', `An exception may have suppressed exceptions while also being
+ caused by another exception.  Whether or not an exception has a
+ cause is semantically known at the time of its creation, unlike
+ whether or not an exception will suppress other exceptions
+ which is typically only determined after an exception is
+ thrown.
+
+ `],
+				[/* block */ 'b', `Note that programmer written code is also able to take
+ advantage of calling this method in situations where there are
+ multiple sibling exceptions and only one can be propagated.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'exception', [/* parameter description */
+					[/* text */ 't', `the exception to be added to the list of
+        suppressed exceptions`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
+					[/* text */ 't', `if `],
+					[/* inline code block */ 'i', `exception`],
+					[/* text */ 't', ` is this
+         throwable; a throwable cannot suppress itself.`]
+				]],
+				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
+					[/* text */ 't', `if `],
+					[/* inline code block */ 'i', `exception`],
+					[/* text */ 't', ` is `],
+					[/* inline code block */ 'i', `null`]
+				]]
+			],
+			/* return */ UDF
+		]],
+		[/* method */ 'getStackTrace()', [
+			[/* method description */
+				[/* text */ 't', `Provides programmatic access to the stack trace information printed by
+ `],
+				[/* reference */ 'r', `#printStackTrace()`, `printStackTrace()`],
+				[/* text */ 't', `.  Returns an array of stack trace elements,
+ each representing one stack frame.  The zeroth element of the array
+ (assuming the array's length is non-zero) represents the top of the
+ stack, which is the last method invocation in the sequence.  Typically,
+ this is the point at which this throwable was created and thrown.
+ The last element of the array (assuming the array's length is non-zero)
+ represents the bottom of the stack, which is the first method invocation
+ in the sequence.
+
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', `Some virtual machines may, under some circumstances, omit one
+ or more stack frames from the stack trace.  In the extreme case,
+ a virtual machine that has no stack trace information concerning
+ this throwable is permitted to return a zero-length array from this
+ method.  Generally speaking, the array returned by this method will
+ contain one element for every frame that would be printed by
+ `],
+					[/* inline code block */ 'i', `printStackTrace`],
+					[/* text */ 't', `.  Writes to the returned array do not
+ affect future calls to this method.`]
+				]]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `an array of stack trace elements representing the stack trace
+         pertaining to this throwable.`]
+			]
+		]],
+		[/* method */ 'getLocalizedMessage()', [
+			[/* method description */
+				[/* text */ 't', `Creates a localized description of this throwable.
+ Subclasses may override this method in order to produce a
+ locale-specific message.  For subclasses that do not override this
+ method, the default implementation returns the same result as
+ `],
+				[/* inline code block */ 'i', `getMessage()`],
+				[/* text */ 't', `.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `The localized description of this throwable.`]
+			]
+		]],
+		[/* method */ 'getMessage()', [
+			[/* method description */
+				[/* text */ 't', `Returns the detail message string of this throwable.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the detail message string of this `],
+				[/* inline code block */ 'i', `Throwable`],
+				[/* text */ 't', ` instance
+          (which may be `],
+				[/* inline code block */ 'i', `null`],
+				[/* text */ 't', `).`]
+			]
+		]],
+		[/* method */ 'toString()', [
+			[/* method description */
+				[/* text */ 't', `Returns a short description of this throwable.
+ The result is the concatenation of:
+ `],
+				[/* list */ 'l', [
+					[/* block */ 'b', [
+						[/* text */ 't', ` the `],
+						[/* reference */ 'r', `.Class#getName()`],
+						[/* text */ 't', ` of the class of this object
+ `]
+					]],
+					[/* block */ 'b', ` ": " (a colon and a space)
+ `],
+					[/* block */ 'b', [
+						[/* text */ 't', ` the result of invoking this object's `],
+						[/* reference */ 'r', `#getLocalizedMessage()`, `getLocalizedMessage()`],
+						[/* text */ 't', `
+      method
+ `]
+					]]
+				]],
+				[/* text */ 't', `
+ If `],
+				[/* inline code block */ 'i', `getLocalizedMessage`],
+				[/* text */ 't', ` returns `],
+				[/* inline code block */ 'i', `null`],
+				[/* text */ 't', `, then just
+ the class name is returned.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `a string representation of this throwable.`]
+			]
+		]],
+		[/* method */ 'fillInStackTrace()', [
+			[/* method description */
+				[/* text */ 't', `Fills in the execution stack trace. This method records within this
+ `],
+				[/* inline code block */ 'i', `Throwable`],
+				[/* text */ 't', ` object information about the current state of
+ the stack frames for the current thread.
+
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', `If the stack trace of this `],
+					[/* inline code block */ 'i', `Throwable`],
+					[/* reference */ 'r', `#%3Cinit%3E(java.lang.String,java.lang.Throwable,boolean,boolean)`, `is not writable`],
+					[/* text */ 't', `, calling this method has no effect.`]
+				]]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `a reference to this `],
+				[/* inline code block */ 'i', `Throwable`],
+				[/* text */ 't', ` instance.`]
+			]
+		]],
+		[/* method */ 'getCause()', [
+			[/* method description */
+				[/* text */ 't', `Returns the cause of this throwable or `],
+				[/* inline code block */ 'i', `null`],
+				[/* text */ 't', ` if the
+ cause is nonexistent or unknown.  (The cause is the throwable that
+ caused this throwable to get thrown.)
+
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', `This implementation returns the cause that was supplied via one of
+ the constructors requiring a `],
+					[/* inline code block */ 'i', `Throwable`],
+					[/* text */ 't', `, or that was set after
+ creation with the `],
+					[/* reference */ 'r', `#initCause(java.lang.Throwable)`, `initCause(Throwable)`],
+					[/* text */ 't', ` method.  While it is
+ typically unnecessary to override this method, a subclass can override
+ it to return a cause set by some other means.  This is appropriate for
+ a "legacy chained throwable" that predates the addition of chained
+ exceptions to `],
+					[/* inline code block */ 'i', `Throwable`],
+					[/* text */ 't', `.  Note that it is `],
+					[/* text */ 't', `not`],
+					[/* text */ 't', `
+ necessary to override any of the `],
+					[/* inline code block */ 'i', `PrintStackTrace`],
+					[/* text */ 't', ` methods,
+ all of which invoke the `],
+					[/* inline code block */ 'i', `getCause`],
+					[/* text */ 't', ` method to determine the
+ cause of a throwable.`]
+				]]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the cause of this throwable or `],
+				[/* inline code block */ 'i', `null`],
+				[/* text */ 't', ` if the
+          cause is nonexistent or unknown.`]
+			]
+		]],
+		[/* method */ 'initCause(java.lang.Throwable)', [
+			[/* method description */
+				[/* text */ 't', `Initializes the `],
+				[/* text */ 't', `cause`],
+				[/* text */ 't', ` of this throwable to the specified value.
+ (The cause is the throwable that caused this throwable to get thrown.)
+
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', `This method can be called at most once.  It is generally called from
+ within the constructor, or immediately after creating the
+ throwable.  If this throwable was created
+ with `],
+					[/* reference */ 'r', `#%3Cinit%3E(java.lang.Throwable)`, `Throwable(Throwable)`],
+					[/* text */ 't', ` or
+ `],
+					[/* reference */ 'r', `#%3Cinit%3E(java.lang.String,java.lang.Throwable)`, `Throwable(String,Throwable)`],
+					[/* text */ 't', `, this method cannot be called
+ even once.
+
+ `]
+				]],
+				[/* block */ 'b', `An example of using this method on a legacy throwable type
+ without other support for setting the cause is:
+
+ `],
+				[/* code block */ 'c', ` try {
+     lowLevelOp();
+ } catch (LowLevelException le) {
+     throw (HighLevelException)
+           new HighLevelException().initCause(le); // Legacy constructor
+ }
+ `],
+				[/* block */ 'b', '']
+			],
+			[/* parameters */
+				[/* parameter */ 'cause', [/* parameter description */
+					[/* text */ 't', `the cause (which is saved for later retrieval by the
+         `],
+					[/* reference */ 'r', `#getCause()`, `getCause()`],
+					[/* text */ 't', ` method).  (A `],
+					[/* inline code block */ 'i', `null`],
+					[/* text */ 't', ` value is
+         permitted, and indicates that the cause is nonexistent or
+         unknown.)`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
+					[/* text */ 't', `if `],
+					[/* inline code block */ 'i', `cause`],
+					[/* text */ 't', ` is this
+         throwable.  (A throwable cannot be its own cause.)`]
+				]],
+				[/* throw */ 'java.lang.IllegalStateException', [/* throw description */
+					[/* text */ 't', `if this throwable was
+         created with `],
+					[/* reference */ 'r', `#%3Cinit%3E(java.lang.Throwable)`, `Throwable(Throwable)`],
+					[/* text */ 't', ` or
+         `],
+					[/* reference */ 'r', `#%3Cinit%3E(java.lang.String,java.lang.Throwable)`, `Throwable(String,Throwable)`],
+					[/* text */ 't', `, or this method has already
+         been called on this throwable.`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `a reference to this `],
+				[/* inline code block */ 'i', `Throwable`],
+				[/* text */ 't', ` instance.`]
+			]
+		]],
 		[/* method */ 'printStackTrace()', [
 			[/* method description */
 				[/* text */ 't', `Prints this throwable and its backtrace to the
@@ -555,267 +910,6 @@ DocsCollector.collect('java.lang.Throwable', [
 			/* throws */ UDF,
 			/* return */ UDF
 		]],
-		[/* method */ 'fillInStackTrace()', [
-			[/* method description */
-				[/* text */ 't', `Fills in the execution stack trace. This method records within this
- `],
-				[/* inline code block */ 'i', `Throwable`],
-				[/* text */ 't', ` object information about the current state of
- the stack frames for the current thread.
-
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', `If the stack trace of this `],
-					[/* inline code block */ 'i', `Throwable`],
-					[/* reference */ 'r', `#%3Cinit%3E(java.lang.String,java.lang.Throwable,boolean,boolean)`, `is not writable`],
-					[/* text */ 't', `, calling this method has no effect.`]
-				]]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `a reference to this `],
-				[/* inline code block */ 'i', `Throwable`],
-				[/* text */ 't', ` instance.`]
-			]
-		]],
-		[/* method */ 'getCause()', [
-			[/* method description */
-				[/* text */ 't', `Returns the cause of this throwable or `],
-				[/* inline code block */ 'i', `null`],
-				[/* text */ 't', ` if the
- cause is nonexistent or unknown.  (The cause is the throwable that
- caused this throwable to get thrown.)
-
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', `This implementation returns the cause that was supplied via one of
- the constructors requiring a `],
-					[/* inline code block */ 'i', `Throwable`],
-					[/* text */ 't', `, or that was set after
- creation with the `],
-					[/* reference */ 'r', `#initCause(java.lang.Throwable)`, `initCause(Throwable)`],
-					[/* text */ 't', ` method.  While it is
- typically unnecessary to override this method, a subclass can override
- it to return a cause set by some other means.  This is appropriate for
- a "legacy chained throwable" that predates the addition of chained
- exceptions to `],
-					[/* inline code block */ 'i', `Throwable`],
-					[/* text */ 't', `.  Note that it is `],
-					[/* text */ 't', `not`],
-					[/* text */ 't', `
- necessary to override any of the `],
-					[/* inline code block */ 'i', `PrintStackTrace`],
-					[/* text */ 't', ` methods,
- all of which invoke the `],
-					[/* inline code block */ 'i', `getCause`],
-					[/* text */ 't', ` method to determine the
- cause of a throwable.`]
-				]]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the cause of this throwable or `],
-				[/* inline code block */ 'i', `null`],
-				[/* text */ 't', ` if the
-          cause is nonexistent or unknown.`]
-			]
-		]],
-		[/* method */ 'initCause(java.lang.Throwable)', [
-			[/* method description */
-				[/* text */ 't', `Initializes the `],
-				[/* text */ 't', `cause`],
-				[/* text */ 't', ` of this throwable to the specified value.
- (The cause is the throwable that caused this throwable to get thrown.)
-
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', `This method can be called at most once.  It is generally called from
- within the constructor, or immediately after creating the
- throwable.  If this throwable was created
- with `],
-					[/* reference */ 'r', `#%3Cinit%3E(java.lang.Throwable)`, `Throwable(Throwable)`],
-					[/* text */ 't', ` or
- `],
-					[/* reference */ 'r', `#%3Cinit%3E(java.lang.String,java.lang.Throwable)`, `Throwable(String,Throwable)`],
-					[/* text */ 't', `, this method cannot be called
- even once.
-
- `]
-				]],
-				[/* block */ 'b', `An example of using this method on a legacy throwable type
- without other support for setting the cause is:
-
- `],
-				[/* code block */ 'c', ` try {
-     lowLevelOp();
- } catch (LowLevelException le) {
-     throw (HighLevelException)
-           new HighLevelException().initCause(le); // Legacy constructor
- }
- `],
-				[/* block */ 'b', '']
-			],
-			[/* parameters */
-				[/* parameter */ 'cause', [/* parameter description */
-					[/* text */ 't', `the cause (which is saved for later retrieval by the
-         `],
-					[/* reference */ 'r', `#getCause()`, `getCause()`],
-					[/* text */ 't', ` method).  (A `],
-					[/* inline code block */ 'i', `null`],
-					[/* text */ 't', ` value is
-         permitted, and indicates that the cause is nonexistent or
-         unknown.)`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
-					[/* text */ 't', `if `],
-					[/* inline code block */ 'i', `cause`],
-					[/* text */ 't', ` is this
-         throwable.  (A throwable cannot be its own cause.)`]
-				]],
-				[/* throw */ 'java.lang.IllegalStateException', [/* throw description */
-					[/* text */ 't', `if this throwable was
-         created with `],
-					[/* reference */ 'r', `#%3Cinit%3E(java.lang.Throwable)`, `Throwable(Throwable)`],
-					[/* text */ 't', ` or
-         `],
-					[/* reference */ 'r', `#%3Cinit%3E(java.lang.String,java.lang.Throwable)`, `Throwable(String,Throwable)`],
-					[/* text */ 't', `, or this method has already
-         been called on this throwable.`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `a reference to this `],
-				[/* inline code block */ 'i', `Throwable`],
-				[/* text */ 't', ` instance.`]
-			]
-		]],
-		[/* method */ 'toString()', [
-			[/* method description */
-				[/* text */ 't', `Returns a short description of this throwable.
- The result is the concatenation of:
- `],
-				[/* list */ 'l', [
-					[/* block */ 'b', [
-						[/* text */ 't', ` the `],
-						[/* reference */ 'r', `.Class#getName()`],
-						[/* text */ 't', ` of the class of this object
- `]
-					]],
-					[/* block */ 'b', ` ": " (a colon and a space)
- `],
-					[/* block */ 'b', [
-						[/* text */ 't', ` the result of invoking this object's `],
-						[/* reference */ 'r', `#getLocalizedMessage()`, `getLocalizedMessage()`],
-						[/* text */ 't', `
-      method
- `]
-					]]
-				]],
-				[/* text */ 't', `
- If `],
-				[/* inline code block */ 'i', `getLocalizedMessage`],
-				[/* text */ 't', ` returns `],
-				[/* inline code block */ 'i', `null`],
-				[/* text */ 't', `, then just
- the class name is returned.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `a string representation of this throwable.`]
-			]
-		]],
-		[/* method */ 'getMessage()', [
-			[/* method description */
-				[/* text */ 't', `Returns the detail message string of this throwable.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the detail message string of this `],
-				[/* inline code block */ 'i', `Throwable`],
-				[/* text */ 't', ` instance
-          (which may be `],
-				[/* inline code block */ 'i', `null`],
-				[/* text */ 't', `).`]
-			]
-		]],
-		[/* method */ 'getSuppressed()', [
-			[/* method description */
-				[/* text */ 't', `Returns an array containing all of the exceptions that were
- suppressed, typically by the `],
-				[/* inline code block */ 'i', `try`],
-				[/* text */ 't', `-with-resources
- statement, in order to deliver this exception.
-
- If no exceptions were suppressed or `],
-				[/* reference */ 'r', `#%3Cinit%3E(java.lang.String,java.lang.Throwable,boolean,boolean)`, `suppression is disabled`],
-				[/* text */ 't', `, an empty array is returned.  This method is
- thread-safe.  Writes to the returned array do not affect future
- calls to this method.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `an array containing all of the exceptions that were
-         suppressed to deliver this exception.`]
-			]
-		]],
-		[/* method */ 'getLocalizedMessage()', [
-			[/* method description */
-				[/* text */ 't', `Creates a localized description of this throwable.
- Subclasses may override this method in order to produce a
- locale-specific message.  For subclasses that do not override this
- method, the default implementation returns the same result as
- `],
-				[/* inline code block */ 'i', `getMessage()`],
-				[/* text */ 't', `.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `The localized description of this throwable.`]
-			]
-		]],
-		[/* method */ 'getStackTrace()', [
-			[/* method description */
-				[/* text */ 't', `Provides programmatic access to the stack trace information printed by
- `],
-				[/* reference */ 'r', `#printStackTrace()`, `printStackTrace()`],
-				[/* text */ 't', `.  Returns an array of stack trace elements,
- each representing one stack frame.  The zeroth element of the array
- (assuming the array's length is non-zero) represents the top of the
- stack, which is the last method invocation in the sequence.  Typically,
- this is the point at which this throwable was created and thrown.
- The last element of the array (assuming the array's length is non-zero)
- represents the bottom of the stack, which is the first method invocation
- in the sequence.
-
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', `Some virtual machines may, under some circumstances, omit one
- or more stack frames from the stack trace.  In the extreme case,
- a virtual machine that has no stack trace information concerning
- this throwable is permitted to return a zero-length array from this
- method.  Generally speaking, the array returned by this method will
- contain one element for every frame that would be printed by
- `],
-					[/* inline code block */ 'i', `printStackTrace`],
-					[/* text */ 't', `.  Writes to the returned array do not
- affect future calls to this method.`]
-				]]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `an array of stack trace elements representing the stack trace
-         pertaining to this throwable.`]
-			]
-		]],
 		[/* method */ 'setStackTrace(java.lang.StackTraceElement[])', [
 			[/* method description */
 				[/* text */ 't', `Sets the stack trace elements that will be returned by
@@ -867,100 +961,6 @@ DocsCollector.collect('java.lang.Throwable', [
          `],
 					[/* inline code block */ 'i', `stackTrace`],
 					[/* text */ 't', ` are `],
-					[/* inline code block */ 'i', `null`]
-				]]
-			],
-			/* return */ UDF
-		]],
-		[/* method */ 'addSuppressed(java.lang.Throwable)', [
-			[/* method description */
-				[/* text */ 't', `Appends the specified exception to the exceptions that were
- suppressed in order to deliver this exception. This method is
- thread-safe and typically called (automatically and implicitly)
- by the `],
-				[/* inline code block */ 'i', `try`],
-				[/* text */ 't', `-with-resources statement.
-
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', `The suppression behavior is enabled `],
-					[/* text */ 't', `unless`],
-					[/* text */ 't', ` disabled
- `],
-					[/* reference */ 'r', `#%3Cinit%3E(java.lang.String,java.lang.Throwable,boolean,boolean)`, `via a constructor`],
-					[/* text */ 't', `.  When suppression is disabled, this method does
- nothing other than to validate its argument.
-
- `]
-				]],
-				[/* block */ 'b', [
-					[/* text */ 't', `Note that when one exception `],
-					[/* reference */ 'r', `#initCause(java.lang.Throwable)`, `causes`],
-					[/* text */ 't', ` another exception, the first
- exception is usually caught and then the second exception is
- thrown in response.  In other words, there is a causal
- connection between the two exceptions.
-
- In contrast, there are situations where two independent
- exceptions can be thrown in sibling code blocks, in particular
- in the `],
-					[/* inline code block */ 'i', `try`],
-					[/* text */ 't', ` block of a `],
-					[/* inline code block */ 'i', `try`],
-					[/* text */ 't', `-with-resources
- statement and the compiler-generated `],
-					[/* inline code block */ 'i', `finally`],
-					[/* text */ 't', ` block
- which closes the resource.
-
- In these situations, only one of the thrown exceptions can be
- propagated.  In the `],
-					[/* inline code block */ 'i', `try`],
-					[/* text */ 't', `-with-resources statement, when
- there are two such exceptions, the exception originating from
- the `],
-					[/* inline code block */ 'i', `try`],
-					[/* text */ 't', ` block is propagated and the exception from the
- `],
-					[/* inline code block */ 'i', `finally`],
-					[/* text */ 't', ` block is added to the list of exceptions
- suppressed by the exception from the `],
-					[/* inline code block */ 'i', `try`],
-					[/* text */ 't', ` block.  As an
- exception unwinds the stack, it can accumulate multiple
- suppressed exceptions.
-
- `]
-				]],
-				[/* block */ 'b', `An exception may have suppressed exceptions while also being
- caused by another exception.  Whether or not an exception has a
- cause is semantically known at the time of its creation, unlike
- whether or not an exception will suppress other exceptions
- which is typically only determined after an exception is
- thrown.
-
- `],
-				[/* block */ 'b', `Note that programmer written code is also able to take
- advantage of calling this method in situations where there are
- multiple sibling exceptions and only one can be propagated.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'exception', [/* parameter description */
-					[/* text */ 't', `the exception to be added to the list of
-        suppressed exceptions`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
-					[/* text */ 't', `if `],
-					[/* inline code block */ 'i', `exception`],
-					[/* text */ 't', ` is this
-         throwable; a throwable cannot suppress itself.`]
-				]],
-				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
-					[/* text */ 't', `if `],
-					[/* inline code block */ 'i', `exception`],
-					[/* text */ 't', ` is `],
 					[/* inline code block */ 'i', `null`]
 				]]
 			],

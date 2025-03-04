@@ -62,6 +62,52 @@ DocsCollector.collect('java.util.Base64', [
 	/* fields */ UDF,
 	/* constructors */ UDF,
 	[/* methods */
+		[/* method */ 'getDecoder()', [
+			[/* method description */
+				[/* text */ 't', `Returns a `],
+				[/* reference */ 'r', `java.util.Base64.Decoder`],
+				[/* text */ 't', ` that decodes using the
+ `],
+				[/* text */ 't', `Basic`],
+				[/* text */ 't', ` type base64 encoding scheme.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `A Base64 decoder.`]
+			]
+		]],
+		[/* method */ 'getMimeDecoder()', [
+			[/* method description */
+				[/* text */ 't', `Returns a `],
+				[/* reference */ 'r', `java.util.Base64.Decoder`],
+				[/* text */ 't', ` that decodes using the
+ `],
+				[/* text */ 't', `MIME`],
+				[/* text */ 't', ` type base64 decoding scheme.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `A Base64 decoder.`]
+			]
+		]],
+		[/* method */ 'getUrlDecoder()', [
+			[/* method description */
+				[/* text */ 't', `Returns a `],
+				[/* reference */ 'r', `java.util.Base64.Decoder`],
+				[/* text */ 't', ` that decodes using the
+ `],
+				[/* text */ 't', `URL and Filename safe`],
+				[/* text */ 't', ` type base64
+ encoding scheme.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `A Base64 decoder.`]
+			]
+		]],
 		[/* method */ 'getEncoder()', [
 			[/* method description */
 				[/* text */ 't', `Returns a `],
@@ -77,15 +123,14 @@ DocsCollector.collect('java.util.Base64', [
 				[/* text */ 't', `A Base64 encoder.`]
 			]
 		]],
-		[/* method */ 'getUrlEncoder()', [
+		[/* method */ 'getMimeEncoder()', [
 			[/* method description */
 				[/* text */ 't', `Returns a `],
 				[/* reference */ 'r', `java.util.Base64.Encoder`],
 				[/* text */ 't', ` that encodes using the
  `],
-				[/* text */ 't', `URL and Filename safe`],
-				[/* text */ 't', ` type base64
- encoding scheme.`]
+				[/* text */ 't', `MIME`],
+				[/* text */ 't', ` type base64 encoding scheme.`]
 			],
 			/* parameters */ UDF,
 			/* throws */ UDF,
@@ -126,26 +171,11 @@ DocsCollector.collect('java.util.Base64', [
 				[/* text */ 't', `A Base64 encoder.`]
 			]
 		]],
-		[/* method */ 'getMimeEncoder()', [
+		[/* method */ 'getUrlEncoder()', [
 			[/* method description */
 				[/* text */ 't', `Returns a `],
 				[/* reference */ 'r', `java.util.Base64.Encoder`],
 				[/* text */ 't', ` that encodes using the
- `],
-				[/* text */ 't', `MIME`],
-				[/* text */ 't', ` type base64 encoding scheme.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `A Base64 encoder.`]
-			]
-		]],
-		[/* method */ 'getUrlDecoder()', [
-			[/* method description */
-				[/* text */ 't', `Returns a `],
-				[/* reference */ 'r', `java.util.Base64.Decoder`],
-				[/* text */ 't', ` that decodes using the
  `],
 				[/* text */ 't', `URL and Filename safe`],
 				[/* text */ 't', ` type base64
@@ -154,37 +184,7 @@ DocsCollector.collect('java.util.Base64', [
 			/* parameters */ UDF,
 			/* throws */ UDF,
 			[/* return description */
-				[/* text */ 't', `A Base64 decoder.`]
-			]
-		]],
-		[/* method */ 'getMimeDecoder()', [
-			[/* method description */
-				[/* text */ 't', `Returns a `],
-				[/* reference */ 'r', `java.util.Base64.Decoder`],
-				[/* text */ 't', ` that decodes using the
- `],
-				[/* text */ 't', `MIME`],
-				[/* text */ 't', ` type base64 decoding scheme.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `A Base64 decoder.`]
-			]
-		]],
-		[/* method */ 'getDecoder()', [
-			[/* method description */
-				[/* text */ 't', `Returns a `],
-				[/* reference */ 'r', `java.util.Base64.Decoder`],
-				[/* text */ 't', ` that decodes using the
- `],
-				[/* text */ 't', `Basic`],
-				[/* text */ 't', ` type base64 encoding scheme.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `A Base64 decoder.`]
+				[/* text */ 't', `A Base64 encoder.`]
 			]
 		]]
 	],

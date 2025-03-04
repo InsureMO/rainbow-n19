@@ -98,22 +98,81 @@ DocsCollector.collect('java.nio.charset.CoderResult', [
 		]]
 	],
 	[/* fields */
+		[/* field */ 'OVERFLOW', [
+			[/* field description */
+				[/* text */ 't', `Result object indicating overflow, meaning that there is insufficient
+ room in the output buffer.`]
+			],
+		]],
 		[/* field */ 'UNDERFLOW', [
 			[/* field description */
 				[/* text */ 't', `Result object indicating underflow, meaning that either the input buffer
  has been completely consumed or, if the input buffer is not yet empty,
  that additional input is required.`]
 			],
-		]],
-		[/* field */ 'OVERFLOW', [
-			[/* field description */
-				[/* text */ 't', `Result object indicating overflow, meaning that there is insufficient
- room in the output buffer.`]
-			],
 		]]
 	],
 	/* constructors */ UDF,
 	[/* methods */
+		[/* method */ 'isError()', [
+			[/* method description */
+				[/* text */ 't', `Tells whether or not this object describes an error condition.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* inline code block */ 'i', `true`],
+				[/* text */ 't', ` if, and only if, this object denotes either a
+          malformed-input error or an unmappable-character error`]
+			]
+		]],
+		[/* method */ 'isMalformed()', [
+			[/* method description */
+				[/* text */ 't', `Tells whether or not this object describes a malformed-input error.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* inline code block */ 'i', `true`],
+				[/* text */ 't', ` if, and only if, this object denotes a
+          malformed-input error`]
+			]
+		]],
+		[/* method */ 'isOverflow()', [
+			[/* method description */
+				[/* text */ 't', `Tells whether or not this object describes an overflow condition.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* inline code block */ 'i', `true`],
+				[/* text */ 't', ` if, and only if, this object denotes overflow`]
+			]
+		]],
+		[/* method */ 'isUnderflow()', [
+			[/* method description */
+				[/* text */ 't', `Tells whether or not this object describes an underflow condition.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* inline code block */ 'i', `true`],
+				[/* text */ 't', ` if, and only if, this object denotes underflow`]
+			]
+		]],
+		[/* method */ 'isUnmappable()', [
+			[/* method description */
+				[/* text */ 't', `Tells whether or not this object describes an unmappable-character
+ error.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* inline code block */ 'i', `true`],
+				[/* text */ 't', ` if, and only if, this object denotes an
+          unmappable-character error`]
+			]
+		]],
 		[/* method */ 'length()', [
 			[/* method description */
 				[/* text */ 't', `Returns the length of the erroneous input described by this
@@ -145,15 +204,34 @@ DocsCollector.collect('java.nio.charset.CoderResult', [
 				[/* text */ 't', `A descriptive string`]
 			]
 		]],
-		[/* method */ 'isUnderflow()', [
+		[/* method */ 'malformedForLength(int)', [
 			[/* method description */
-				[/* text */ 't', `Tells whether or not this object describes an underflow condition.`]
+				[/* text */ 't', `Static factory method that returns the unique object describing a
+ malformed-input error of the given length.`]
 			],
-			/* parameters */ UDF,
+			[/* parameters */
+				[/* parameter */ 'length', [/* parameter description */
+					[/* text */ 't', `The given length`]
+				]]
+			],
 			/* throws */ UDF,
 			[/* return description */
-				[/* inline code block */ 'i', `true`],
-				[/* text */ 't', ` if, and only if, this object denotes underflow`]
+				[/* text */ 't', `The requested coder-result object`]
+			]
+		]],
+		[/* method */ 'unmappableForLength(int)', [
+			[/* method description */
+				[/* text */ 't', `Static factory method that returns the unique result object describing
+ an unmappable-character error of the given length.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'length', [/* parameter description */
+					[/* text */ 't', `The given length`]
+				]]
+			],
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `The requested coder-result object`]
 			]
 		]],
 		[/* method */ 'throwException()', [
@@ -181,84 +259,6 @@ DocsCollector.collect('java.nio.charset.CoderResult', [
 				[/* throw */ 'java.nio.charset.CharacterCodingException', UDF]
 			],
 			/* return */ UDF
-		]],
-		[/* method */ 'isOverflow()', [
-			[/* method description */
-				[/* text */ 't', `Tells whether or not this object describes an overflow condition.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* inline code block */ 'i', `true`],
-				[/* text */ 't', ` if, and only if, this object denotes overflow`]
-			]
-		]],
-		[/* method */ 'isError()', [
-			[/* method description */
-				[/* text */ 't', `Tells whether or not this object describes an error condition.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* inline code block */ 'i', `true`],
-				[/* text */ 't', ` if, and only if, this object denotes either a
-          malformed-input error or an unmappable-character error`]
-			]
-		]],
-		[/* method */ 'malformedForLength(int)', [
-			[/* method description */
-				[/* text */ 't', `Static factory method that returns the unique object describing a
- malformed-input error of the given length.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'length', [/* parameter description */
-					[/* text */ 't', `The given length`]
-				]]
-			],
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `The requested coder-result object`]
-			]
-		]],
-		[/* method */ 'isMalformed()', [
-			[/* method description */
-				[/* text */ 't', `Tells whether or not this object describes a malformed-input error.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* inline code block */ 'i', `true`],
-				[/* text */ 't', ` if, and only if, this object denotes a
-          malformed-input error`]
-			]
-		]],
-		[/* method */ 'isUnmappable()', [
-			[/* method description */
-				[/* text */ 't', `Tells whether or not this object describes an unmappable-character
- error.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* inline code block */ 'i', `true`],
-				[/* text */ 't', ` if, and only if, this object denotes an
-          unmappable-character error`]
-			]
-		]],
-		[/* method */ 'unmappableForLength(int)', [
-			[/* method description */
-				[/* text */ 't', `Static factory method that returns the unique result object describing
- an unmappable-character error of the given length.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'length', [/* parameter description */
-					[/* text */ 't', `The given length`]
-				]]
-			],
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `The requested coder-result object`]
-			]
 		]]
 	],
 ]);

@@ -5583,13 +5583,21 @@ DocsCollector.collect('java.util.Formatter', [
 	],
 	/* fields */ UDF,
 	[/* constructors */
-		[/* constructor */ '<init>(java.io.File,java.lang.String)', [
+		[/* constructor */ '<init>()', [
 			[/* constructor description */
-				[/* text */ 't', `Constructs a new formatter with the specified file and charset.
+				[/* text */ 't', `Constructs a new formatter.
 
  `],
 				[/* block */ 'b', [
-					[/* text */ 't', ` The locale used is the `],
+					[/* text */ 't', ` The destination of the formatted output is a `],
+					[/* reference */ 'r', `java.lang.StringBuilder`],
+					[/* text */ 't', `
+ which may be retrieved by invoking `],
+					[/* reference */ 'r', `#out()`, `out()`],
+					[/* text */ 't', ` and whose
+ current content may be converted into a string by invoking `],
+					[/* reference */ 'r', `#toString()`, `toString()`],
+					[/* text */ 't', `.  The locale used is the `],
 					[/* reference */ 'r', `.Locale#getDefault(java.util.Locale.Category)`],
 					[/* text */ 't', ` for
  `],
@@ -5598,35 +5606,8 @@ DocsCollector.collect('java.util.Formatter', [
  virtual machine.`]
 				]]
 			],
-			[/* parameters */
-				[/* parameter */ 'file', [/* parameter description */
-					[/* text */ 't', `The file to use as the destination of this formatter.  If the
-         file exists then it will be truncated to zero size; otherwise,
-         a new file will be created.  The output will be written to the
-         file and is buffered.`]
-				]],
-				[/* parameter */ 'csn', [/* parameter description */
-					[/* text */ 't', `The name of a supported `],
-					[/* reference */ 'r', `java.nio.charset.Charset`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.io.FileNotFoundException', [/* throw description */
-					[/* text */ 't', `If the given file object does not denote an existing, writable
-          regular file and a new regular file of that name cannot be
-          created, or if some other error occurs while opening or
-          creating the file`]
-				]],
-				[/* throw */ 'java.lang.SecurityException', [/* throw description */
-					[/* text */ 't', `If a security manager is present and `],
-					[/* reference */ 'r', `java.SecurityManager#checkWrite(java.io.FileDescriptor)`],
-					[/* text */ 't', ` denies
-          write access to the file`]
-				]],
-				[/* throw */ 'java.io.UnsupportedEncodingException', [/* throw description */
-					[/* text */ 't', `If the named charset is not supported`]
-				]]
-			]
+			/* parameters */ UDF,
+			/* throws */ UDF
 		]],
 		[/* constructor */ '<init>(java.io.File)', [
 			[/* constructor description */
@@ -5674,66 +5655,62 @@ DocsCollector.collect('java.util.Formatter', [
 				]]
 			]
 		]],
-		[/* constructor */ '<init>(java.lang.String,java.nio.charset.Charset,java.util.Locale)', [
+		[/* constructor */ '<init>(java.io.File,java.lang.String)', [
 			[/* constructor description */
-				[/* text */ 't', `Constructs a new formatter with the specified file name, charset, and
- locale.`]
+				[/* text */ 't', `Constructs a new formatter with the specified file and charset.
+
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', ` The locale used is the `],
+					[/* reference */ 'r', `.Locale#getDefault(java.util.Locale.Category)`],
+					[/* text */ 't', ` for
+ `],
+					[/* reference */ 'r', `.Locale.Category#FORMAT`],
+					[/* text */ 't', ` for this instance of the Java
+ virtual machine.`]
+				]]
 			],
 			[/* parameters */
-				[/* parameter */ 'fileName', [/* parameter description */
-					[/* text */ 't', `The name of the file to use as the destination of this
-         formatter.  If the file exists then it will be truncated to
-         zero size; otherwise, a new file will be created.  The output
-         will be written to the file and is buffered.`]
+				[/* parameter */ 'file', [/* parameter description */
+					[/* text */ 't', `The file to use as the destination of this formatter.  If the
+         file exists then it will be truncated to zero size; otherwise,
+         a new file will be created.  The output will be written to the
+         file and is buffered.`]
 				]],
-				[/* parameter */ 'charset', [/* parameter description */
-					[/* text */ 't', `A `],
+				[/* parameter */ 'csn', [/* parameter description */
+					[/* text */ 't', `The name of a supported `],
 					[/* reference */ 'r', `java.nio.charset.Charset`]
-				]],
-				[/* parameter */ 'l', [/* parameter description */
-					[/* text */ 't', `The `],
-					[/* reference */ 'r', `java.util.Locale`],
-					[/* text */ 't', ` to apply during
-         formatting.  If `],
-					[/* inline code block */ 'i', `l`],
-					[/* text */ 't', ` is `],
-					[/* inline code block */ 'i', `null`],
-					[/* text */ 't', ` then no localization
-         is applied.`]
 				]]
 			],
 			[/* throws */
-				[/* throw */ 'java.io.IOException', [/* throw description */
-					[/* text */ 't', `if an I/O error occurs while opening or creating the file`]
+				[/* throw */ 'java.io.FileNotFoundException', [/* throw description */
+					[/* text */ 't', `If the given file object does not denote an existing, writable
+          regular file and a new regular file of that name cannot be
+          created, or if some other error occurs while opening or
+          creating the file`]
 				]],
 				[/* throw */ 'java.lang.SecurityException', [/* throw description */
 					[/* text */ 't', `If a security manager is present and `],
 					[/* reference */ 'r', `java.SecurityManager#checkWrite(java.io.FileDescriptor)`],
-					[/* text */ 't', ` denies write
-          access to the file`]
+					[/* text */ 't', ` denies
+          write access to the file`]
 				]],
-				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
-					[/* text */ 't', `if `],
-					[/* inline code block */ 'i', `fileName`],
-					[/* text */ 't', ` or `],
-					[/* inline code block */ 'i', `charset`],
-					[/* text */ 't', ` is `],
-					[/* inline code block */ 'i', `null`],
-					[/* text */ 't', `.`]
+				[/* throw */ 'java.io.UnsupportedEncodingException', [/* throw description */
+					[/* text */ 't', `If the named charset is not supported`]
 				]]
 			]
 		]],
-		[/* constructor */ '<init>(java.lang.String,java.lang.String,java.util.Locale)', [
+		[/* constructor */ '<init>(java.io.File,java.lang.String,java.util.Locale)', [
 			[/* constructor description */
-				[/* text */ 't', `Constructs a new formatter with the specified file name, charset, and
+				[/* text */ 't', `Constructs a new formatter with the specified file, charset, and
  locale.`]
 			],
 			[/* parameters */
-				[/* parameter */ 'fileName', [/* parameter description */
-					[/* text */ 't', `The name of the file to use as the destination of this
-         formatter.  If the file exists then it will be truncated to
-         zero size; otherwise, a new file will be created.  The output
-         will be written to the file and is buffered.`]
+				[/* parameter */ 'file', [/* parameter description */
+					[/* text */ 't', `The file to use as the destination of this formatter.  If the
+         file exists then it will be truncated to zero size; otherwise,
+         a new file will be created.  The output will be written to the
+         file and is buffered.`]
 				]],
 				[/* parameter */ 'csn', [/* parameter description */
 					[/* text */ 't', `The name of a supported `],
@@ -5753,7 +5730,7 @@ DocsCollector.collect('java.util.Formatter', [
 			],
 			[/* throws */
 				[/* throw */ 'java.io.FileNotFoundException', [/* throw description */
-					[/* text */ 't', `If the given file name does not denote an existing, writable
+					[/* text */ 't', `If the given file object does not denote an existing, writable
           regular file and a new regular file of that name cannot be
           created, or if some other error occurs while opening or
           creating the file`]
@@ -5761,149 +5738,9 @@ DocsCollector.collect('java.util.Formatter', [
 				[/* throw */ 'java.lang.SecurityException', [/* throw description */
 					[/* text */ 't', `If a security manager is present and `],
 					[/* reference */ 'r', `java.SecurityManager#checkWrite(java.io.FileDescriptor)`],
-					[/* text */ 't', ` denies write
-          access to the file`]
+					[/* text */ 't', ` denies
+          write access to the file`]
 				]],
-				[/* throw */ 'java.io.UnsupportedEncodingException', [/* throw description */
-					[/* text */ 't', `If the named charset is not supported`]
-				]]
-			]
-		]],
-		[/* constructor */ '<init>(java.lang.String,java.lang.String)', [
-			[/* constructor description */
-				[/* text */ 't', `Constructs a new formatter with the specified file name and charset.
-
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', ` The locale used is the `],
-					[/* reference */ 'r', `.Locale#getDefault(java.util.Locale.Category)`],
-					[/* text */ 't', ` for
- `],
-					[/* reference */ 'r', `.Locale.Category#FORMAT`],
-					[/* text */ 't', ` for this instance of the Java
- virtual machine.`]
-				]]
-			],
-			[/* parameters */
-				[/* parameter */ 'fileName', [/* parameter description */
-					[/* text */ 't', `The name of the file to use as the destination of this
-         formatter.  If the file exists then it will be truncated to
-         zero size; otherwise, a new file will be created.  The output
-         will be written to the file and is buffered.`]
-				]],
-				[/* parameter */ 'csn', [/* parameter description */
-					[/* text */ 't', `The name of a supported `],
-					[/* reference */ 'r', `java.nio.charset.Charset`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.io.FileNotFoundException', [/* throw description */
-					[/* text */ 't', `If the given file name does not denote an existing, writable
-          regular file and a new regular file of that name cannot be
-          created, or if some other error occurs while opening or
-          creating the file`]
-				]],
-				[/* throw */ 'java.lang.SecurityException', [/* throw description */
-					[/* text */ 't', `If a security manager is present and `],
-					[/* reference */ 'r', `java.SecurityManager#checkWrite(java.io.FileDescriptor)`],
-					[/* text */ 't', ` denies write
-          access to the file`]
-				]],
-				[/* throw */ 'java.io.UnsupportedEncodingException', [/* throw description */
-					[/* text */ 't', `If the named charset is not supported`]
-				]]
-			]
-		]],
-		[/* constructor */ '<init>(java.io.OutputStream,java.lang.String)', [
-			[/* constructor description */
-				[/* text */ 't', `Constructs a new formatter with the specified output stream and
- charset.
-
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', ` The locale used is the `],
-					[/* reference */ 'r', `.Locale#getDefault(java.util.Locale.Category)`],
-					[/* text */ 't', ` for
- `],
-					[/* reference */ 'r', `.Locale.Category#FORMAT`],
-					[/* text */ 't', ` for this instance of the Java
- virtual machine.`]
-				]]
-			],
-			[/* parameters */
-				[/* parameter */ 'os', [/* parameter description */
-					[/* text */ 't', `The output stream to use as the destination of this formatter.
-         The output will be buffered.`]
-				]],
-				[/* parameter */ 'csn', [/* parameter description */
-					[/* text */ 't', `The name of a supported `],
-					[/* reference */ 'r', `java.nio.charset.Charset`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.io.UnsupportedEncodingException', [/* throw description */
-					[/* text */ 't', `If the named charset is not supported`]
-				]]
-			]
-		]],
-		[/* constructor */ '<init>(java.io.OutputStream)', [
-			[/* constructor description */
-				[/* text */ 't', `Constructs a new formatter with the specified output stream.
-
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', ` The charset used is the `],
-					[/* reference */ 'r', `java.charset.Charset#defaultCharset()`],
-					[/* text */ 't', ` for this
- instance of the Java virtual machine.
-
- `]
-				]],
-				[/* block */ 'b', [
-					[/* text */ 't', ` The locale used is the `],
-					[/* reference */ 'r', `.Locale#getDefault(java.util.Locale.Category)`],
-					[/* text */ 't', ` for
- `],
-					[/* reference */ 'r', `.Locale.Category#FORMAT`],
-					[/* text */ 't', ` for this instance of the Java
- virtual machine.`]
-				]]
-			],
-			[/* parameters */
-				[/* parameter */ 'os', [/* parameter description */
-					[/* text */ 't', `The output stream to use as the destination of this formatter.
-         The output will be buffered.`]
-				]]
-			],
-			/* throws */ UDF
-		]],
-		[/* constructor */ '<init>(java.io.OutputStream,java.lang.String,java.util.Locale)', [
-			[/* constructor description */
-				[/* text */ 't', `Constructs a new formatter with the specified output stream, charset,
- and locale.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'os', [/* parameter description */
-					[/* text */ 't', `The output stream to use as the destination of this formatter.
-         The output will be buffered.`]
-				]],
-				[/* parameter */ 'csn', [/* parameter description */
-					[/* text */ 't', `The name of a supported `],
-					[/* reference */ 'r', `java.nio.charset.Charset`]
-				]],
-				[/* parameter */ 'l', [/* parameter description */
-					[/* text */ 't', `The `],
-					[/* reference */ 'r', `java.util.Locale`],
-					[/* text */ 't', ` to apply during
-         formatting.  If `],
-					[/* inline code block */ 'i', `l`],
-					[/* text */ 't', ` is `],
-					[/* inline code block */ 'i', `null`],
-					[/* text */ 't', ` then no localization
-         is applied.`]
-				]]
-			],
-			[/* throws */
 				[/* throw */ 'java.io.UnsupportedEncodingException', [/* throw description */
 					[/* text */ 't', `If the named charset is not supported`]
 				]]
@@ -5958,17 +5795,78 @@ DocsCollector.collect('java.util.Formatter', [
 				]]
 			]
 		]],
-		[/* constructor */ '<init>(java.io.File,java.lang.String,java.util.Locale)', [
+		[/* constructor */ '<init>(java.io.OutputStream)', [
 			[/* constructor description */
-				[/* text */ 't', `Constructs a new formatter with the specified file, charset, and
- locale.`]
+				[/* text */ 't', `Constructs a new formatter with the specified output stream.
+
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', ` The charset used is the `],
+					[/* reference */ 'r', `java.charset.Charset#defaultCharset()`],
+					[/* text */ 't', ` for this
+ instance of the Java virtual machine.
+
+ `]
+				]],
+				[/* block */ 'b', [
+					[/* text */ 't', ` The locale used is the `],
+					[/* reference */ 'r', `.Locale#getDefault(java.util.Locale.Category)`],
+					[/* text */ 't', ` for
+ `],
+					[/* reference */ 'r', `.Locale.Category#FORMAT`],
+					[/* text */ 't', ` for this instance of the Java
+ virtual machine.`]
+				]]
 			],
 			[/* parameters */
-				[/* parameter */ 'file', [/* parameter description */
-					[/* text */ 't', `The file to use as the destination of this formatter.  If the
-         file exists then it will be truncated to zero size; otherwise,
-         a new file will be created.  The output will be written to the
-         file and is buffered.`]
+				[/* parameter */ 'os', [/* parameter description */
+					[/* text */ 't', `The output stream to use as the destination of this formatter.
+         The output will be buffered.`]
+				]]
+			],
+			/* throws */ UDF
+		]],
+		[/* constructor */ '<init>(java.io.OutputStream,java.lang.String)', [
+			[/* constructor description */
+				[/* text */ 't', `Constructs a new formatter with the specified output stream and
+ charset.
+
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', ` The locale used is the `],
+					[/* reference */ 'r', `.Locale#getDefault(java.util.Locale.Category)`],
+					[/* text */ 't', ` for
+ `],
+					[/* reference */ 'r', `.Locale.Category#FORMAT`],
+					[/* text */ 't', ` for this instance of the Java
+ virtual machine.`]
+				]]
+			],
+			[/* parameters */
+				[/* parameter */ 'os', [/* parameter description */
+					[/* text */ 't', `The output stream to use as the destination of this formatter.
+         The output will be buffered.`]
+				]],
+				[/* parameter */ 'csn', [/* parameter description */
+					[/* text */ 't', `The name of a supported `],
+					[/* reference */ 'r', `java.nio.charset.Charset`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.io.UnsupportedEncodingException', [/* throw description */
+					[/* text */ 't', `If the named charset is not supported`]
+				]]
+			]
+		]],
+		[/* constructor */ '<init>(java.io.OutputStream,java.lang.String,java.util.Locale)', [
+			[/* constructor description */
+				[/* text */ 't', `Constructs a new formatter with the specified output stream, charset,
+ and locale.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'os', [/* parameter description */
+					[/* text */ 't', `The output stream to use as the destination of this formatter.
+         The output will be buffered.`]
 				]],
 				[/* parameter */ 'csn', [/* parameter description */
 					[/* text */ 't', `The name of a supported `],
@@ -5987,48 +5885,10 @@ DocsCollector.collect('java.util.Formatter', [
 				]]
 			],
 			[/* throws */
-				[/* throw */ 'java.io.FileNotFoundException', [/* throw description */
-					[/* text */ 't', `If the given file object does not denote an existing, writable
-          regular file and a new regular file of that name cannot be
-          created, or if some other error occurs while opening or
-          creating the file`]
-				]],
-				[/* throw */ 'java.lang.SecurityException', [/* throw description */
-					[/* text */ 't', `If a security manager is present and `],
-					[/* reference */ 'r', `java.SecurityManager#checkWrite(java.io.FileDescriptor)`],
-					[/* text */ 't', ` denies
-          write access to the file`]
-				]],
 				[/* throw */ 'java.io.UnsupportedEncodingException', [/* throw description */
 					[/* text */ 't', `If the named charset is not supported`]
 				]]
 			]
-		]],
-		[/* constructor */ '<init>()', [
-			[/* constructor description */
-				[/* text */ 't', `Constructs a new formatter.
-
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', ` The destination of the formatted output is a `],
-					[/* reference */ 'r', `java.lang.StringBuilder`],
-					[/* text */ 't', `
- which may be retrieved by invoking `],
-					[/* reference */ 'r', `#out()`, `out()`],
-					[/* text */ 't', ` and whose
- current content may be converted into a string by invoking `],
-					[/* reference */ 'r', `#toString()`, `toString()`],
-					[/* text */ 't', `.  The locale used is the `],
-					[/* reference */ 'r', `.Locale#getDefault(java.util.Locale.Category)`],
-					[/* text */ 't', ` for
- `],
-					[/* reference */ 'r', `.Locale.Category#FORMAT`],
-					[/* text */ 't', ` for this instance of the Java
- virtual machine.`]
-				]]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF
 		]],
 		[/* constructor */ '<init>(java.io.OutputStream,java.nio.charset.Charset,java.util.Locale)', [
 			[/* constructor description */
@@ -6098,6 +5958,64 @@ DocsCollector.collect('java.util.Formatter', [
 			],
 			/* throws */ UDF
 		]],
+		[/* constructor */ '<init>(java.lang.Appendable)', [
+			[/* constructor description */
+				[/* text */ 't', `Constructs a new formatter with the specified destination.
+
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', ` The locale used is the `],
+					[/* reference */ 'r', `.Locale#getDefault(java.util.Locale.Category)`],
+					[/* text */ 't', ` for
+ `],
+					[/* reference */ 'r', `.Locale.Category#FORMAT`],
+					[/* text */ 't', ` for this instance of the Java
+ virtual machine.`]
+				]]
+			],
+			[/* parameters */
+				[/* parameter */ 'a', [/* parameter description */
+					[/* text */ 't', `Destination for the formatted output.  If `],
+					[/* inline code block */ 'i', `a`],
+					[/* text */ 't', ` is
+         `],
+					[/* inline code block */ 'i', `null`],
+					[/* text */ 't', ` then a `],
+					[/* reference */ 'r', `java.lang.StringBuilder`],
+					[/* text */ 't', ` will be created.`]
+				]]
+			],
+			/* throws */ UDF
+		]],
+		[/* constructor */ '<init>(java.lang.Appendable,java.util.Locale)', [
+			[/* constructor description */
+				[/* text */ 't', `Constructs a new formatter with the specified destination and locale.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'a', [/* parameter description */
+					[/* text */ 't', `Destination for the formatted output.  If `],
+					[/* inline code block */ 'i', `a`],
+					[/* text */ 't', ` is
+         `],
+					[/* inline code block */ 'i', `null`],
+					[/* text */ 't', ` then a `],
+					[/* reference */ 'r', `java.lang.StringBuilder`],
+					[/* text */ 't', ` will be created.`]
+				]],
+				[/* parameter */ 'l', [/* parameter description */
+					[/* text */ 't', `The `],
+					[/* reference */ 'r', `java.util.Locale`],
+					[/* text */ 't', ` to apply during
+         formatting.  If `],
+					[/* inline code block */ 'i', `l`],
+					[/* text */ 't', ` is `],
+					[/* inline code block */ 'i', `null`],
+					[/* text */ 't', ` then no localization
+         is applied.`]
+				]]
+			],
+			/* throws */ UDF
+		]],
 		[/* constructor */ '<init>(java.lang.String)', [
 			[/* constructor description */
 				[/* text */ 't', `Constructs a new formatter with the specified file name.
@@ -6144,20 +6062,66 @@ DocsCollector.collect('java.util.Formatter', [
 				]]
 			]
 		]],
-		[/* constructor */ '<init>(java.lang.Appendable,java.util.Locale)', [
+		[/* constructor */ '<init>(java.lang.String,java.lang.String)', [
 			[/* constructor description */
-				[/* text */ 't', `Constructs a new formatter with the specified destination and locale.`]
+				[/* text */ 't', `Constructs a new formatter with the specified file name and charset.
+
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', ` The locale used is the `],
+					[/* reference */ 'r', `.Locale#getDefault(java.util.Locale.Category)`],
+					[/* text */ 't', ` for
+ `],
+					[/* reference */ 'r', `.Locale.Category#FORMAT`],
+					[/* text */ 't', ` for this instance of the Java
+ virtual machine.`]
+				]]
 			],
 			[/* parameters */
-				[/* parameter */ 'a', [/* parameter description */
-					[/* text */ 't', `Destination for the formatted output.  If `],
-					[/* inline code block */ 'i', `a`],
-					[/* text */ 't', ` is
-         `],
-					[/* inline code block */ 'i', `null`],
-					[/* text */ 't', ` then a `],
-					[/* reference */ 'r', `java.lang.StringBuilder`],
-					[/* text */ 't', ` will be created.`]
+				[/* parameter */ 'fileName', [/* parameter description */
+					[/* text */ 't', `The name of the file to use as the destination of this
+         formatter.  If the file exists then it will be truncated to
+         zero size; otherwise, a new file will be created.  The output
+         will be written to the file and is buffered.`]
+				]],
+				[/* parameter */ 'csn', [/* parameter description */
+					[/* text */ 't', `The name of a supported `],
+					[/* reference */ 'r', `java.nio.charset.Charset`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.io.FileNotFoundException', [/* throw description */
+					[/* text */ 't', `If the given file name does not denote an existing, writable
+          regular file and a new regular file of that name cannot be
+          created, or if some other error occurs while opening or
+          creating the file`]
+				]],
+				[/* throw */ 'java.lang.SecurityException', [/* throw description */
+					[/* text */ 't', `If a security manager is present and `],
+					[/* reference */ 'r', `java.SecurityManager#checkWrite(java.io.FileDescriptor)`],
+					[/* text */ 't', ` denies write
+          access to the file`]
+				]],
+				[/* throw */ 'java.io.UnsupportedEncodingException', [/* throw description */
+					[/* text */ 't', `If the named charset is not supported`]
+				]]
+			]
+		]],
+		[/* constructor */ '<init>(java.lang.String,java.lang.String,java.util.Locale)', [
+			[/* constructor description */
+				[/* text */ 't', `Constructs a new formatter with the specified file name, charset, and
+ locale.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'fileName', [/* parameter description */
+					[/* text */ 't', `The name of the file to use as the destination of this
+         formatter.  If the file exists then it will be truncated to
+         zero size; otherwise, a new file will be created.  The output
+         will be written to the file and is buffered.`]
+				]],
+				[/* parameter */ 'csn', [/* parameter description */
+					[/* text */ 't', `The name of a supported `],
+					[/* reference */ 'r', `java.nio.charset.Charset`]
 				]],
 				[/* parameter */ 'l', [/* parameter description */
 					[/* text */ 't', `The `],
@@ -6171,7 +6135,72 @@ DocsCollector.collect('java.util.Formatter', [
          is applied.`]
 				]]
 			],
-			/* throws */ UDF
+			[/* throws */
+				[/* throw */ 'java.io.FileNotFoundException', [/* throw description */
+					[/* text */ 't', `If the given file name does not denote an existing, writable
+          regular file and a new regular file of that name cannot be
+          created, or if some other error occurs while opening or
+          creating the file`]
+				]],
+				[/* throw */ 'java.lang.SecurityException', [/* throw description */
+					[/* text */ 't', `If a security manager is present and `],
+					[/* reference */ 'r', `java.SecurityManager#checkWrite(java.io.FileDescriptor)`],
+					[/* text */ 't', ` denies write
+          access to the file`]
+				]],
+				[/* throw */ 'java.io.UnsupportedEncodingException', [/* throw description */
+					[/* text */ 't', `If the named charset is not supported`]
+				]]
+			]
+		]],
+		[/* constructor */ '<init>(java.lang.String,java.nio.charset.Charset,java.util.Locale)', [
+			[/* constructor description */
+				[/* text */ 't', `Constructs a new formatter with the specified file name, charset, and
+ locale.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'fileName', [/* parameter description */
+					[/* text */ 't', `The name of the file to use as the destination of this
+         formatter.  If the file exists then it will be truncated to
+         zero size; otherwise, a new file will be created.  The output
+         will be written to the file and is buffered.`]
+				]],
+				[/* parameter */ 'charset', [/* parameter description */
+					[/* text */ 't', `A `],
+					[/* reference */ 'r', `java.nio.charset.Charset`]
+				]],
+				[/* parameter */ 'l', [/* parameter description */
+					[/* text */ 't', `The `],
+					[/* reference */ 'r', `java.util.Locale`],
+					[/* text */ 't', ` to apply during
+         formatting.  If `],
+					[/* inline code block */ 'i', `l`],
+					[/* text */ 't', ` is `],
+					[/* inline code block */ 'i', `null`],
+					[/* text */ 't', ` then no localization
+         is applied.`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.io.IOException', [/* throw description */
+					[/* text */ 't', `if an I/O error occurs while opening or creating the file`]
+				]],
+				[/* throw */ 'java.lang.SecurityException', [/* throw description */
+					[/* text */ 't', `If a security manager is present and `],
+					[/* reference */ 'r', `java.SecurityManager#checkWrite(java.io.FileDescriptor)`],
+					[/* text */ 't', ` denies write
+          access to the file`]
+				]],
+				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
+					[/* text */ 't', `if `],
+					[/* inline code block */ 'i', `fileName`],
+					[/* text */ 't', ` or `],
+					[/* inline code block */ 'i', `charset`],
+					[/* text */ 't', ` is `],
+					[/* inline code block */ 'i', `null`],
+					[/* text */ 't', `.`]
+				]]
+			]
 		]],
 		[/* constructor */ '<init>(java.util.Locale)', [
 			[/* constructor description */
@@ -6204,38 +6233,54 @@ DocsCollector.collect('java.util.Formatter', [
 				]]
 			],
 			/* throws */ UDF
-		]],
-		[/* constructor */ '<init>(java.lang.Appendable)', [
-			[/* constructor description */
-				[/* text */ 't', `Constructs a new formatter with the specified destination.
-
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', ` The locale used is the `],
-					[/* reference */ 'r', `.Locale#getDefault(java.util.Locale.Category)`],
-					[/* text */ 't', ` for
- `],
-					[/* reference */ 'r', `.Locale.Category#FORMAT`],
-					[/* text */ 't', ` for this instance of the Java
- virtual machine.`]
-				]]
-			],
-			[/* parameters */
-				[/* parameter */ 'a', [/* parameter description */
-					[/* text */ 't', `Destination for the formatted output.  If `],
-					[/* inline code block */ 'i', `a`],
-					[/* text */ 't', ` is
-         `],
-					[/* inline code block */ 'i', `null`],
-					[/* text */ 't', ` then a `],
-					[/* reference */ 'r', `java.lang.StringBuilder`],
-					[/* text */ 't', ` will be created.`]
-				]]
-			],
-			/* throws */ UDF
 		]]
 	],
 	[/* methods */
+		[/* method */ 'ioException()', [
+			[/* method description */
+				[/* text */ 't', `Returns the `],
+				[/* inline code block */ 'i', `IOException`],
+				[/* text */ 't', ` last thrown by this formatter's `],
+				[/* reference */ 'r', `java.lang.Appendable`],
+				[/* text */ 't', `.
+
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', ` If the destination's `],
+					[/* inline code block */ 'i', `append()`],
+					[/* text */ 't', ` method never throws
+ `],
+					[/* inline code block */ 'i', `IOException`],
+					[/* text */ 't', `, then this method will always return `],
+					[/* inline code block */ 'i', `null`],
+					[/* text */ 't', `.`]
+				]]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `The last exception thrown by the Appendable or `],
+				[/* inline code block */ 'i', `null`],
+				[/* text */ 't', ` if
+          no such exception exists.`]
+			]
+		]],
+		[/* method */ 'out()', [
+			[/* method description */
+				[/* text */ 't', `Returns the destination for the output.`]
+			],
+			/* parameters */ UDF,
+			[/* throws */
+				[/* throw */ 'java.util.FormatterClosedException', [/* throw description */
+					[/* text */ 't', `If this formatter has been closed by invoking its `],
+					[/* reference */ 'r', `#close()`, `close()`],
+					[/* text */ 't', ` method`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `The destination for the output`]
+			]
+		]],
 		[/* method */ 'toString()', [
 			[/* method description */
 				[/* text */ 't', `Returns the result of invoking `],
@@ -6287,28 +6332,6 @@ DocsCollector.collect('java.util.Formatter', [
 				[/* text */ 't', ` on the destination
           for the output`]
 			]
-		]],
-		[/* method */ 'flush()', [
-			[/* method description */
-				[/* text */ 't', `Flushes this formatter.  If the destination implements the `],
-				[/* reference */ 'r', `java.io.Flushable`],
-				[/* text */ 't', ` interface, its `],
-				[/* inline code block */ 'i', `flush`],
-				[/* text */ 't', ` method will be invoked.
-
- `],
-				[/* block */ 'b', ` Flushing a formatter writes any buffered output in the destination
- to the underlying stream.`]
-			],
-			/* parameters */ UDF,
-			[/* throws */
-				[/* throw */ 'java.util.FormatterClosedException', [/* throw description */
-					[/* text */ 't', `If this formatter has been closed by invoking its `],
-					[/* reference */ 'r', `#close()`, `close()`],
-					[/* text */ 't', ` method`]
-				]]
-			],
-			/* return */ UDF
 		]],
 		[/* method */ 'format(java.lang.String,java.lang.Object...)', [
 			[/* method description */
@@ -6432,22 +6455,6 @@ DocsCollector.collect('java.util.Formatter', [
           locale`]
 			]
 		]],
-		[/* method */ 'out()', [
-			[/* method description */
-				[/* text */ 't', `Returns the destination for the output.`]
-			],
-			/* parameters */ UDF,
-			[/* throws */
-				[/* throw */ 'java.util.FormatterClosedException', [/* throw description */
-					[/* text */ 't', `If this formatter has been closed by invoking its `],
-					[/* reference */ 'r', `#close()`, `close()`],
-					[/* text */ 't', ` method`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `The destination for the output`]
-			]
-		]],
 		[/* method */ 'close()', [
 			[/* method description */
 				[/* text */ 't', `Closes this formatter.  If the destination implements the `],
@@ -6475,34 +6482,27 @@ DocsCollector.collect('java.util.Formatter', [
 			/* throws */ UDF,
 			/* return */ UDF
 		]],
-		[/* method */ 'ioException()', [
+		[/* method */ 'flush()', [
 			[/* method description */
-				[/* text */ 't', `Returns the `],
-				[/* inline code block */ 'i', `IOException`],
-				[/* text */ 't', ` last thrown by this formatter's `],
-				[/* reference */ 'r', `java.lang.Appendable`],
-				[/* text */ 't', `.
+				[/* text */ 't', `Flushes this formatter.  If the destination implements the `],
+				[/* reference */ 'r', `java.io.Flushable`],
+				[/* text */ 't', ` interface, its `],
+				[/* inline code block */ 'i', `flush`],
+				[/* text */ 't', ` method will be invoked.
 
  `],
-				[/* block */ 'b', [
-					[/* text */ 't', ` If the destination's `],
-					[/* inline code block */ 'i', `append()`],
-					[/* text */ 't', ` method never throws
- `],
-					[/* inline code block */ 'i', `IOException`],
-					[/* text */ 't', `, then this method will always return `],
-					[/* inline code block */ 'i', `null`],
-					[/* text */ 't', `.`]
-				]]
+				[/* block */ 'b', ` Flushing a formatter writes any buffered output in the destination
+ to the underlying stream.`]
 			],
 			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `The last exception thrown by the Appendable or `],
-				[/* inline code block */ 'i', `null`],
-				[/* text */ 't', ` if
-          no such exception exists.`]
-			]
+			[/* throws */
+				[/* throw */ 'java.util.FormatterClosedException', [/* throw description */
+					[/* text */ 't', `If this formatter has been closed by invoking its `],
+					[/* reference */ 'r', `#close()`, `close()`],
+					[/* text */ 't', ` method`]
+				]]
+			],
+			/* return */ UDF
 		]]
 	],
 ]);

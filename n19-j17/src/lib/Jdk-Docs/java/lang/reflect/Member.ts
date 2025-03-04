@@ -7,45 +7,21 @@ DocsCollector.collect('java.lang.reflect.Member', [
  a single member (a field or a method) or a constructor.`]
 	],
 	[/* fields */
-		[/* field */ 'PUBLIC', [
-			[/* field description */
-				[/* text */ 't', `Identifies the set of all public members of a class or interface,
- including inherited members.`]
-			],
-		]],
 		[/* field */ 'DECLARED', [
 			[/* field description */
 				[/* text */ 't', `Identifies the set of declared members of a class or interface.
  Inherited members are not included.`]
 			],
+		]],
+		[/* field */ 'PUBLIC', [
+			[/* field description */
+				[/* text */ 't', `Identifies the set of all public members of a class or interface,
+ including inherited members.`]
+			],
 		]]
 	],
 	/* constructors */ UDF,
 	[/* methods */
-		[/* method */ 'getName()', [
-			[/* method description */
-				[/* text */ 't', `Returns the simple name of the underlying member or constructor
- represented by this Member.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the simple name of the underlying member`]
-			]
-		]],
-		[/* method */ 'getModifiers()', [
-			[/* method description */
-				[/* text */ 't', `Returns the Java language modifiers for the member or
- constructor represented by this Member, as an integer.  The
- Modifier class should be used to decode the modifiers in
- the integer.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the Java language modifiers for the underlying member`]
-			]
-		]],
 		[/* method */ 'isSynthetic()', [
 			[/* method description */
 				[/* text */ 't', `Returns `],
@@ -62,6 +38,19 @@ DocsCollector.collect('java.lang.reflect.Member', [
  the compiler.`]
 			]
 		]],
+		[/* method */ 'getModifiers()', [
+			[/* method description */
+				[/* text */ 't', `Returns the Java language modifiers for the member or
+ constructor represented by this Member, as an integer.  The
+ Modifier class should be used to decode the modifiers in
+ the integer.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the Java language modifiers for the underlying member`]
+			]
+		]],
 		[/* method */ 'getDeclaringClass()', [
 			[/* method description */
 				[/* text */ 't', `Returns the Class object representing the class or interface
@@ -72,6 +61,17 @@ DocsCollector.collect('java.lang.reflect.Member', [
 			[/* return description */
 				[/* text */ 't', `an object representing the declaring class of the
  underlying member`]
+			]
+		]],
+		[/* method */ 'getName()', [
+			[/* method description */
+				[/* text */ 't', `Returns the simple name of the underlying member or constructor
+ represented by this Member.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the simple name of the underlying member`]
 			]
 		]]
 	],

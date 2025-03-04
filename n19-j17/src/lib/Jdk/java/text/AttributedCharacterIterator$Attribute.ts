@@ -87,6 +87,12 @@ JdkClassCreateHelper.class('java.text.AttributedCharacterIterator$Attribute', [
 		]
 	],
 	[/* declared fields */
+		[/* public static final java.text.AttributedCharacterIterator$Attribute java.text.AttributedCharacterIterator$Attribute.INPUT_METHOD_SEGMENT */
+			/* name */ 'INPUT_METHOD_SEGMENT',
+			/* type */ 'java.text.AttributedCharacterIterator$Attribute',
+			/* annotations */ UDF,
+			/* modifiers */ 25
+		],
 		[/* public static final java.text.AttributedCharacterIterator$Attribute java.text.AttributedCharacterIterator$Attribute.LANGUAGE */
 			/* name */ 'LANGUAGE',
 			/* type */ 'java.text.AttributedCharacterIterator$Attribute',
@@ -95,12 +101,6 @@ JdkClassCreateHelper.class('java.text.AttributedCharacterIterator$Attribute', [
 		],
 		[/* public static final java.text.AttributedCharacterIterator$Attribute java.text.AttributedCharacterIterator$Attribute.READING */
 			/* name */ 'READING',
-			/* type */ 'java.text.AttributedCharacterIterator$Attribute',
-			/* annotations */ UDF,
-			/* modifiers */ 25
-		],
-		[/* public static final java.text.AttributedCharacterIterator$Attribute java.text.AttributedCharacterIterator$Attribute.INPUT_METHOD_SEGMENT */
-			/* name */ 'INPUT_METHOD_SEGMENT',
 			/* type */ 'java.text.AttributedCharacterIterator$Attribute',
 			/* annotations */ UDF,
 			/* modifiers */ 25

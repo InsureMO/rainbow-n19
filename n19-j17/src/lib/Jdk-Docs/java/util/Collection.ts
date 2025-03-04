@@ -392,6 +392,57 @@ DocsCollector.collect('java.util.Collection', [
 	/* fields */ UDF,
 	/* constructors */ UDF,
 	[/* methods */
+		[/* method */ 'toArray(java.lang.Object[])', [
+			[/* method description */
+				[/* text */ 't', `Returns an array containing all of the elements in this collection;
+ the runtime type of the returned array is that of the specified array.
+ If the collection fits in the specified array, it is returned therein.
+ Otherwise, a new array is allocated with the runtime type of the
+ specified array and the size of this collection.
+
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', `If this collection fits in the specified array with room to spare
+ (i.e., the array has more elements than this collection), the element
+ in the array immediately following the end of the collection is set to
+ `],
+					[/* inline code block */ 'i', `null`],
+					[/* text */ 't', `.  (This is useful in determining the length of this
+ collection `],
+					[/* text */ 't', `only`],
+					[/* text */ 't', ` if the caller knows that this collection does
+ not contain any `],
+					[/* inline code block */ 'i', `null`],
+					[/* text */ 't', ` elements.)
+
+ `]
+				]],
+				[/* block */ 'b', `If this collection makes any guarantees as to what order its elements
+ are returned by its iterator, this method must return the elements in
+ the same order.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'a', [/* parameter description */
+					[/* text */ 't', `the array into which the elements of this collection are to be
+        stored, if it is big enough; otherwise, a new array of the same
+        runtime type is allocated for this purpose.`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.lang.ArrayStoreException', [/* throw description */
+					[/* text */ 't', `if the runtime type of any element in this
+         collection is not assignable to the `],
+					[/* reference */ 'r', `java.Class#getComponentType()`],
+					[/* text */ 't', ` of the specified array`]
+				]],
+				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
+					[/* text */ 't', `if the specified array is null`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `an array containing all of the elements in this collection`]
+			]
+		]],
 		[/* method */ 'add(java.lang.Object)', [
 			[/* method description */
 				[/* text */ 't', `Ensures that this collection contains the specified element (optional
@@ -463,25 +514,69 @@ DocsCollector.collect('java.util.Collection', [
          call`]
 			]
 		]],
-		[/* method */ 'remove(java.lang.Object)', [
+		[/* method */ 'addAll(java.util.Collection)', [
 			[/* method description */
-				[/* text */ 't', `Removes a single instance of the specified element from this
- collection, if it is present (optional operation).  More formally,
- removes an element `],
+				[/* text */ 't', `Adds all of the elements in the specified collection to this collection
+ (optional operation).  The behavior of this operation is undefined if
+ the specified collection is modified while the operation is in progress.
+ (This implies that the behavior of this call is undefined if the
+ specified collection is this collection, and this collection is
+ nonempty.)`]
+			],
+			[/* parameters */
+				[/* parameter */ 'c', [/* parameter description */
+					[/* text */ 't', `collection containing elements to be added to this collection`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.lang.UnsupportedOperationException', [/* throw description */
+					[/* text */ 't', `if the `],
+					[/* inline code block */ 'i', `addAll`],
+					[/* text */ 't', ` operation
+         is not supported by this collection`]
+				]],
+				[/* throw */ 'java.lang.ClassCastException', [/* throw description */
+					[/* text */ 't', `if the class of an element of the specified
+         collection prevents it from being added to this collection`]
+				]],
+				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
+					[/* text */ 't', `if the specified collection contains a
+         null element and this collection does not permit null elements,
+         or if the specified collection is null`]
+				]],
+				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
+					[/* text */ 't', `if some property of an element of the
+         specified collection prevents it from being added to this
+         collection`]
+				]],
+				[/* throw */ 'java.lang.IllegalStateException', [/* throw description */
+					[/* text */ 't', `if not all the elements can be added at
+         this time due to insertion restrictions`]
+				]]
+			],
+			[/* return description */
+				[/* inline code block */ 'i', `true`],
+				[/* text */ 't', ` if this collection changed as a result of the call`]
+			]
+		]],
+		[/* method */ 'contains(java.lang.Object)', [
+			[/* method description */
+				[/* text */ 't', `Returns `],
+				[/* inline code block */ 'i', `true`],
+				[/* text */ 't', ` if this collection contains the specified element.
+ More formally, returns `],
+				[/* inline code block */ 'i', `true`],
+				[/* text */ 't', ` if and only if this collection
+ contains at least one element `],
 				[/* inline code block */ 'i', `e`],
 				[/* text */ 't', ` such that
  `],
 				[/* inline code block */ 'i', `Objects.equals(o, e)`],
-				[/* text */ 't', `, if
- this collection contains one or more such elements.  Returns
- `],
-				[/* inline code block */ 'i', `true`],
-				[/* text */ 't', ` if this collection contained the specified element (or
- equivalently, if this collection changed as a result of the call).`]
+				[/* text */ 't', `.`]
 			],
 			[/* parameters */
 				[/* parameter */ 'o', [/* parameter description */
-					[/* text */ 't', `element to be removed from this collection, if present`]
+					[/* text */ 't', `element whose presence in this collection is to be tested`]
 				]]
 			],
 			[/* throws */
@@ -498,17 +593,49 @@ DocsCollector.collect('java.util.Collection', [
          (`],
 					[/* text */ 't', `optional`],
 					[/* text */ 't', `)`]
-				]],
-				[/* throw */ 'java.lang.UnsupportedOperationException', [/* throw description */
-					[/* text */ 't', `if the `],
-					[/* inline code block */ 'i', `remove`],
-					[/* text */ 't', ` operation
-         is not supported by this collection`]
 				]]
 			],
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
-				[/* text */ 't', ` if an element was removed as a result of this call`]
+				[/* text */ 't', ` if this collection contains the specified
+         element`]
+			]
+		]],
+		[/* method */ 'containsAll(java.util.Collection)', [
+			[/* method description */
+				[/* text */ 't', `Returns `],
+				[/* inline code block */ 'i', `true`],
+				[/* text */ 't', ` if this collection contains all of the elements
+ in the specified collection.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'c', [/* parameter description */
+					[/* text */ 't', `collection to be checked for containment in this collection`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.lang.ClassCastException', [/* throw description */
+					[/* text */ 't', `if the types of one or more elements
+         in the specified collection are incompatible with this
+         collection
+         (`],
+					[/* text */ 't', `optional`],
+					[/* text */ 't', `)`]
+				]],
+				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
+					[/* text */ 't', `if the specified collection contains one
+         or more null elements and this collection does not permit null
+         elements
+         (`],
+					[/* text */ 't', `optional`],
+					[/* text */ 't', `),
+         or if the specified collection is null.`]
+				]]
+			],
+			[/* return description */
+				[/* inline code block */ 'i', `true`],
+				[/* text */ 't', ` if this collection contains all of the elements
+         in the specified collection`]
 			]
 		]],
 		[/* method */ 'equals(java.lang.Object)', [
@@ -597,53 +724,6 @@ DocsCollector.collect('java.util.Collection', [
  collection`]
 			]
 		]],
-		[/* method */ 'hashCode()', [
-			[/* method description */
-				[/* text */ 't', `Returns the hash code value for this collection.  While the
- `],
-				[/* inline code block */ 'i', `Collection`],
-				[/* text */ 't', ` interface adds no stipulations to the general
- contract for the `],
-				[/* inline code block */ 'i', `Object.hashCode`],
-				[/* text */ 't', ` method, programmers should
- take note that any class that overrides the `],
-				[/* inline code block */ 'i', `Object.equals`],
-				[/* text */ 't', `
- method must also override the `],
-				[/* inline code block */ 'i', `Object.hashCode`],
-				[/* text */ 't', ` method in order
- to satisfy the general contract for the `],
-				[/* inline code block */ 'i', `Object.hashCode`],
-				[/* text */ 't', ` method.
- In particular, `],
-				[/* inline code block */ 'i', `c1.equals(c2)`],
-				[/* text */ 't', ` implies that
- `],
-				[/* inline code block */ 'i', `c1.hashCode()==c2.hashCode()`],
-				[/* text */ 't', `.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the hash code value for this collection`]
-			]
-		]],
-		[/* method */ 'clear()', [
-			[/* method description */
-				[/* text */ 't', `Removes all of the elements from this collection (optional operation).
- The collection will be empty after this method returns.`]
-			],
-			/* parameters */ UDF,
-			[/* throws */
-				[/* throw */ 'java.lang.UnsupportedOperationException', [/* throw description */
-					[/* text */ 't', `if the `],
-					[/* inline code block */ 'i', `clear`],
-					[/* text */ 't', ` operation
-         is not supported by this collection`]
-				]]
-			],
-			/* return */ UDF
-		]],
 		[/* method */ 'isEmpty()', [
 			[/* method description */
 				[/* text */ 't', `Returns `],
@@ -657,198 +737,25 @@ DocsCollector.collect('java.util.Collection', [
 				[/* text */ 't', ` if this collection contains no elements`]
 			]
 		]],
-		[/* method */ 'size()', [
+		[/* method */ 'remove(java.lang.Object)', [
 			[/* method description */
-				[/* text */ 't', `Returns the number of elements in this collection.  If this collection
- contains more than `],
-				[/* inline code block */ 'i', `Integer.MAX_VALUE`],
-				[/* text */ 't', ` elements, returns
- `],
-				[/* inline code block */ 'i', `Integer.MAX_VALUE`],
-				[/* text */ 't', `.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the number of elements in this collection`]
-			]
-		]],
-		[/* method */ 'toArray(java.lang.Object[])', [
-			[/* method description */
-				[/* text */ 't', `Returns an array containing all of the elements in this collection;
- the runtime type of the returned array is that of the specified array.
- If the collection fits in the specified array, it is returned therein.
- Otherwise, a new array is allocated with the runtime type of the
- specified array and the size of this collection.
-
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', `If this collection fits in the specified array with room to spare
- (i.e., the array has more elements than this collection), the element
- in the array immediately following the end of the collection is set to
- `],
-					[/* inline code block */ 'i', `null`],
-					[/* text */ 't', `.  (This is useful in determining the length of this
- collection `],
-					[/* text */ 't', `only`],
-					[/* text */ 't', ` if the caller knows that this collection does
- not contain any `],
-					[/* inline code block */ 'i', `null`],
-					[/* text */ 't', ` elements.)
-
- `]
-				]],
-				[/* block */ 'b', `If this collection makes any guarantees as to what order its elements
- are returned by its iterator, this method must return the elements in
- the same order.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'a', [/* parameter description */
-					[/* text */ 't', `the array into which the elements of this collection are to be
-        stored, if it is big enough; otherwise, a new array of the same
-        runtime type is allocated for this purpose.`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.ArrayStoreException', [/* throw description */
-					[/* text */ 't', `if the runtime type of any element in this
-         collection is not assignable to the `],
-					[/* reference */ 'r', `java.Class#getComponentType()`],
-					[/* text */ 't', ` of the specified array`]
-				]],
-				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
-					[/* text */ 't', `if the specified array is null`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `an array containing all of the elements in this collection`]
-			]
-		]],
-		[/* method */ 'toArray(java.util.function.IntFunction)', [
-			[/* method description */
-				[/* text */ 't', `Returns an array containing all of the elements in this collection,
- using the provided `],
-				[/* inline code block */ 'i', `generator`],
-				[/* text */ 't', ` function to allocate the returned array.
-
- `],
-				[/* block */ 'b', `If this collection makes any guarantees as to what order its elements
- are returned by its iterator, this method must return the elements in
- the same order.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'generator', [/* parameter description */
-					[/* text */ 't', `a function which produces a new array of the desired
-                  type and the provided length`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.ArrayStoreException', [/* throw description */
-					[/* text */ 't', `if the runtime type of any element in this
-         collection is not assignable to the `],
-					[/* reference */ 'r', `java.Class#getComponentType()`],
-					[/* text */ 't', ` of the generated array`]
-				]],
-				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
-					[/* text */ 't', `if the generator function is null`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `an array containing all of the elements in this collection`]
-			]
-		]],
-		[/* method */ 'toArray()', [
-			[/* method description */
-				[/* text */ 't', `Returns an array containing all of the elements in this collection.
- If this collection makes any guarantees as to what order its elements
- are returned by its iterator, this method must return the elements in
- the same order. The returned array's `],
-				[/* reference */ 'r', `java.Class#getComponentType()`],
-				[/* text */ 't', ` is `],
-				[/* inline code block */ 'i', `Object`],
-				[/* text */ 't', `.
-
- `],
-				[/* block */ 'b', `The returned array will be "safe" in that no references to it are
- maintained by this collection.  (In other words, this method must
- allocate a new array even if this collection is backed by an array).
- The caller is thus free to modify the returned array.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `an array, whose `],
-				[/* reference */ 'r', `java.Class#getComponentType()`],
-				[/* text */ 't', ` is `],
-				[/* inline code block */ 'i', `Object`],
-				[/* text */ 't', `, containing all of the elements in this collection`]
-			]
-		]],
-		[/* method */ 'iterator()', [
-			[/* method description */
-				[/* text */ 't', `Returns an iterator over the elements in this collection.  There are no
- guarantees concerning the order in which the elements are returned
- (unless this collection is an instance of some class that provides a
- guarantee).`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `an `],
-				[/* inline code block */ 'i', `Iterator`],
-				[/* text */ 't', ` over the elements in this collection`]
-			]
-		]],
-		[/* method */ 'stream()', [
-			[/* method description */
-				[/* text */ 't', `Returns a sequential `],
-				[/* inline code block */ 'i', `Stream`],
-				[/* text */ 't', ` with this collection as its source.
-
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', `This method should be overridden when the `],
-					[/* reference */ 'r', `#spliterator()`, `spliterator()`],
-					[/* text */ 't', `
- method cannot return a spliterator that is `],
-					[/* inline code block */ 'i', `IMMUTABLE`],
-					[/* text */ 't', `,
- `],
-					[/* inline code block */ 'i', `CONCURRENT`],
-					[/* text */ 't', `, or `],
-					[/* text */ 't', `late-binding`],
-					[/* text */ 't', `. (See `],
-					[/* reference */ 'r', `#spliterator()`, `spliterator()`],
-					[/* text */ 't', `
- for details.)`]
-				]]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `a sequential `],
-				[/* inline code block */ 'i', `Stream`],
-				[/* text */ 't', ` over the elements in this collection`]
-			]
-		]],
-		[/* method */ 'contains(java.lang.Object)', [
-			[/* method description */
-				[/* text */ 't', `Returns `],
-				[/* inline code block */ 'i', `true`],
-				[/* text */ 't', ` if this collection contains the specified element.
- More formally, returns `],
-				[/* inline code block */ 'i', `true`],
-				[/* text */ 't', ` if and only if this collection
- contains at least one element `],
+				[/* text */ 't', `Removes a single instance of the specified element from this
+ collection, if it is present (optional operation).  More formally,
+ removes an element `],
 				[/* inline code block */ 'i', `e`],
 				[/* text */ 't', ` such that
  `],
 				[/* inline code block */ 'i', `Objects.equals(o, e)`],
-				[/* text */ 't', `.`]
+				[/* text */ 't', `, if
+ this collection contains one or more such elements.  Returns
+ `],
+				[/* inline code block */ 'i', `true`],
+				[/* text */ 't', ` if this collection contained the specified element (or
+ equivalently, if this collection changed as a result of the call).`]
 			],
 			[/* parameters */
 				[/* parameter */ 'o', [/* parameter description */
-					[/* text */ 't', `element whose presence in this collection is to be tested`]
+					[/* text */ 't', `element to be removed from this collection, if present`]
 				]]
 			],
 			[/* throws */
@@ -865,154 +772,17 @@ DocsCollector.collect('java.util.Collection', [
          (`],
 					[/* text */ 't', `optional`],
 					[/* text */ 't', `)`]
-				]]
-			],
-			[/* return description */
-				[/* inline code block */ 'i', `true`],
-				[/* text */ 't', ` if this collection contains the specified
-         element`]
-			]
-		]],
-		[/* method */ 'spliterator()', [
-			[/* method description */
-				[/* text */ 't', `Creates a `],
-				[/* reference */ 'r', `java.util.Spliterator`],
-				[/* text */ 't', ` over the elements in this collection.
-
- Implementations should document characteristic values reported by the
- spliterator.  Such characteristic values are not required to be reported
- if the spliterator reports `],
-				[/* reference */ 'r', `.Spliterator#SIZED`],
-				[/* text */ 't', ` and this collection
- contains no elements.
-
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', `The default implementation should be overridden by subclasses that
- can return a more efficient spliterator.  In order to
- preserve expected laziness behavior for the `],
-					[/* reference */ 'r', `#stream()`, `stream()`],
-					[/* text */ 't', ` and
- `],
-					[/* reference */ 'r', `#parallelStream()`, `parallelStream()`],
-					[/* text */ 't', ` methods, spliterators should either have the
- characteristic of `],
-					[/* inline code block */ 'i', `IMMUTABLE`],
-					[/* text */ 't', ` or `],
-					[/* inline code block */ 'i', `CONCURRENT`],
-					[/* text */ 't', `, or be
- `],
-					[/* reference */ 'r', `.Spliterator#binding`],
-					[/* text */ 't', `.
- If none of these is practical, the overriding class should describe the
- spliterator's documented policy of binding and structural interference,
- and should override the `],
-					[/* reference */ 'r', `#stream()`, `stream()`],
-					[/* text */ 't', ` and `],
-					[/* reference */ 'r', `#parallelStream()`, `parallelStream()`],
-					[/* text */ 't', `
- methods to create streams using a `],
-					[/* inline code block */ 'i', `Supplier`],
-					[/* text */ 't', ` of the spliterator,
- as in:
- `]
 				]],
-				[/* code block */ 'c', [
-					[/* inline code block */ 'i', `Stream<E> s = StreamSupport.stream(() -> spliterator(), spliteratorCharacteristics)`]
-				]],
-				[/* block */ 'b', ''],
-				[/* block */ 'b', [
-					[/* text */ 't', `These requirements ensure that streams produced by the
- `],
-					[/* reference */ 'r', `#stream()`, `stream()`],
-					[/* text */ 't', ` and `],
-					[/* reference */ 'r', `#parallelStream()`, `parallelStream()`],
-					[/* text */ 't', ` methods will reflect the
- contents of the collection as of initiation of the terminal stream
- operation.`]
-				]]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `a `],
-				[/* inline code block */ 'i', `Spliterator`],
-				[/* text */ 't', ` over the elements in this collection`]
-			]
-		]],
-		[/* method */ 'addAll(java.util.Collection)', [
-			[/* method description */
-				[/* text */ 't', `Adds all of the elements in the specified collection to this collection
- (optional operation).  The behavior of this operation is undefined if
- the specified collection is modified while the operation is in progress.
- (This implies that the behavior of this call is undefined if the
- specified collection is this collection, and this collection is
- nonempty.)`]
-			],
-			[/* parameters */
-				[/* parameter */ 'c', [/* parameter description */
-					[/* text */ 't', `collection containing elements to be added to this collection`]
-				]]
-			],
-			[/* throws */
 				[/* throw */ 'java.lang.UnsupportedOperationException', [/* throw description */
 					[/* text */ 't', `if the `],
-					[/* inline code block */ 'i', `addAll`],
+					[/* inline code block */ 'i', `remove`],
 					[/* text */ 't', ` operation
          is not supported by this collection`]
-				]],
-				[/* throw */ 'java.lang.ClassCastException', [/* throw description */
-					[/* text */ 't', `if the class of an element of the specified
-         collection prevents it from being added to this collection`]
-				]],
-				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
-					[/* text */ 't', `if the specified collection contains a
-         null element and this collection does not permit null elements,
-         or if the specified collection is null`]
-				]],
-				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
-					[/* text */ 't', `if some property of an element of the
-         specified collection prevents it from being added to this
-         collection`]
-				]],
-				[/* throw */ 'java.lang.IllegalStateException', [/* throw description */
-					[/* text */ 't', `if not all the elements can be added at
-         this time due to insertion restrictions`]
 				]]
 			],
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
-				[/* text */ 't', ` if this collection changed as a result of the call`]
-			]
-		]],
-		[/* method */ 'removeIf(java.util.function.Predicate)', [
-			[/* method description */
-				[/* text */ 't', `Removes all of the elements of this collection that satisfy the given
- predicate.  Errors or runtime exceptions thrown during iteration or by
- the predicate are relayed to the caller.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'filter', [/* parameter description */
-					[/* text */ 't', `a predicate which returns `],
-					[/* inline code block */ 'i', `true`],
-					[/* text */ 't', ` for elements to be
-        removed`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
-					[/* text */ 't', `if the specified filter is null`]
-				]],
-				[/* throw */ 'java.lang.UnsupportedOperationException', [/* throw description */
-					[/* text */ 't', `if elements cannot be removed
-         from this collection.  Implementations may throw this exception if a
-         matching element cannot be removed or if, in general, removal is not
-         supported.`]
-				]]
-			],
-			[/* return description */
-				[/* inline code block */ 'i', `true`],
-				[/* text */ 't', ` if any elements were removed`]
+				[/* text */ 't', ` if an element was removed as a result of this call`]
 			]
 		]],
 		[/* method */ 'removeAll(java.util.Collection)', [
@@ -1100,41 +870,239 @@ DocsCollector.collect('java.util.Collection', [
 				[/* text */ 't', ` if this collection changed as a result of the call`]
 			]
 		]],
-		[/* method */ 'containsAll(java.util.Collection)', [
+		[/* method */ 'hashCode()', [
 			[/* method description */
-				[/* text */ 't', `Returns `],
-				[/* inline code block */ 'i', `true`],
-				[/* text */ 't', ` if this collection contains all of the elements
- in the specified collection.`]
+				[/* text */ 't', `Returns the hash code value for this collection.  While the
+ `],
+				[/* inline code block */ 'i', `Collection`],
+				[/* text */ 't', ` interface adds no stipulations to the general
+ contract for the `],
+				[/* inline code block */ 'i', `Object.hashCode`],
+				[/* text */ 't', ` method, programmers should
+ take note that any class that overrides the `],
+				[/* inline code block */ 'i', `Object.equals`],
+				[/* text */ 't', `
+ method must also override the `],
+				[/* inline code block */ 'i', `Object.hashCode`],
+				[/* text */ 't', ` method in order
+ to satisfy the general contract for the `],
+				[/* inline code block */ 'i', `Object.hashCode`],
+				[/* text */ 't', ` method.
+ In particular, `],
+				[/* inline code block */ 'i', `c1.equals(c2)`],
+				[/* text */ 't', ` implies that
+ `],
+				[/* inline code block */ 'i', `c1.hashCode()==c2.hashCode()`],
+				[/* text */ 't', `.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the hash code value for this collection`]
+			]
+		]],
+		[/* method */ 'size()', [
+			[/* method description */
+				[/* text */ 't', `Returns the number of elements in this collection.  If this collection
+ contains more than `],
+				[/* inline code block */ 'i', `Integer.MAX_VALUE`],
+				[/* text */ 't', ` elements, returns
+ `],
+				[/* inline code block */ 'i', `Integer.MAX_VALUE`],
+				[/* text */ 't', `.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the number of elements in this collection`]
+			]
+		]],
+		[/* method */ 'toArray()', [
+			[/* method description */
+				[/* text */ 't', `Returns an array containing all of the elements in this collection.
+ If this collection makes any guarantees as to what order its elements
+ are returned by its iterator, this method must return the elements in
+ the same order. The returned array's `],
+				[/* reference */ 'r', `java.Class#getComponentType()`],
+				[/* text */ 't', ` is `],
+				[/* inline code block */ 'i', `Object`],
+				[/* text */ 't', `.
+
+ `],
+				[/* block */ 'b', `The returned array will be "safe" in that no references to it are
+ maintained by this collection.  (In other words, this method must
+ allocate a new array even if this collection is backed by an array).
+ The caller is thus free to modify the returned array.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `an array, whose `],
+				[/* reference */ 'r', `java.Class#getComponentType()`],
+				[/* text */ 't', ` is `],
+				[/* inline code block */ 'i', `Object`],
+				[/* text */ 't', `, containing all of the elements in this collection`]
+			]
+		]],
+		[/* method */ 'iterator()', [
+			[/* method description */
+				[/* text */ 't', `Returns an iterator over the elements in this collection.  There are no
+ guarantees concerning the order in which the elements are returned
+ (unless this collection is an instance of some class that provides a
+ guarantee).`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `an `],
+				[/* inline code block */ 'i', `Iterator`],
+				[/* text */ 't', ` over the elements in this collection`]
+			]
+		]],
+		[/* method */ 'clear()', [
+			[/* method description */
+				[/* text */ 't', `Removes all of the elements from this collection (optional operation).
+ The collection will be empty after this method returns.`]
+			],
+			/* parameters */ UDF,
+			[/* throws */
+				[/* throw */ 'java.lang.UnsupportedOperationException', [/* throw description */
+					[/* text */ 't', `if the `],
+					[/* inline code block */ 'i', `clear`],
+					[/* text */ 't', ` operation
+         is not supported by this collection`]
+				]]
+			],
+			/* return */ UDF
+		]],
+		[/* method */ 'toArray(java.util.function.IntFunction)', [
+			[/* method description */
+				[/* text */ 't', `Returns an array containing all of the elements in this collection,
+ using the provided `],
+				[/* inline code block */ 'i', `generator`],
+				[/* text */ 't', ` function to allocate the returned array.
+
+ `],
+				[/* block */ 'b', `If this collection makes any guarantees as to what order its elements
+ are returned by its iterator, this method must return the elements in
+ the same order.`]
 			],
 			[/* parameters */
-				[/* parameter */ 'c', [/* parameter description */
-					[/* text */ 't', `collection to be checked for containment in this collection`]
+				[/* parameter */ 'generator', [/* parameter description */
+					[/* text */ 't', `a function which produces a new array of the desired
+                  type and the provided length`]
 				]]
 			],
 			[/* throws */
-				[/* throw */ 'java.lang.ClassCastException', [/* throw description */
-					[/* text */ 't', `if the types of one or more elements
-         in the specified collection are incompatible with this
-         collection
-         (`],
-					[/* text */ 't', `optional`],
-					[/* text */ 't', `)`]
+				[/* throw */ 'java.lang.ArrayStoreException', [/* throw description */
+					[/* text */ 't', `if the runtime type of any element in this
+         collection is not assignable to the `],
+					[/* reference */ 'r', `java.Class#getComponentType()`],
+					[/* text */ 't', ` of the generated array`]
 				]],
 				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
-					[/* text */ 't', `if the specified collection contains one
-         or more null elements and this collection does not permit null
-         elements
-         (`],
-					[/* text */ 't', `optional`],
-					[/* text */ 't', `),
-         or if the specified collection is null.`]
+					[/* text */ 't', `if the generator function is null`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `an array containing all of the elements in this collection`]
+			]
+		]],
+		[/* method */ 'removeIf(java.util.function.Predicate)', [
+			[/* method description */
+				[/* text */ 't', `Removes all of the elements of this collection that satisfy the given
+ predicate.  Errors or runtime exceptions thrown during iteration or by
+ the predicate are relayed to the caller.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'filter', [/* parameter description */
+					[/* text */ 't', `a predicate which returns `],
+					[/* inline code block */ 'i', `true`],
+					[/* text */ 't', ` for elements to be
+        removed`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
+					[/* text */ 't', `if the specified filter is null`]
+				]],
+				[/* throw */ 'java.lang.UnsupportedOperationException', [/* throw description */
+					[/* text */ 't', `if elements cannot be removed
+         from this collection.  Implementations may throw this exception if a
+         matching element cannot be removed or if, in general, removal is not
+         supported.`]
 				]]
 			],
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
-				[/* text */ 't', ` if this collection contains all of the elements
-         in the specified collection`]
+				[/* text */ 't', ` if any elements were removed`]
+			]
+		]],
+		[/* method */ 'spliterator()', [
+			[/* method description */
+				[/* text */ 't', `Creates a `],
+				[/* reference */ 'r', `java.util.Spliterator`],
+				[/* text */ 't', ` over the elements in this collection.
+
+ Implementations should document characteristic values reported by the
+ spliterator.  Such characteristic values are not required to be reported
+ if the spliterator reports `],
+				[/* reference */ 'r', `.Spliterator#SIZED`],
+				[/* text */ 't', ` and this collection
+ contains no elements.
+
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', `The default implementation should be overridden by subclasses that
+ can return a more efficient spliterator.  In order to
+ preserve expected laziness behavior for the `],
+					[/* reference */ 'r', `#stream()`, `stream()`],
+					[/* text */ 't', ` and
+ `],
+					[/* reference */ 'r', `#parallelStream()`, `parallelStream()`],
+					[/* text */ 't', ` methods, spliterators should either have the
+ characteristic of `],
+					[/* inline code block */ 'i', `IMMUTABLE`],
+					[/* text */ 't', ` or `],
+					[/* inline code block */ 'i', `CONCURRENT`],
+					[/* text */ 't', `, or be
+ `],
+					[/* reference */ 'r', `.Spliterator#binding`],
+					[/* text */ 't', `.
+ If none of these is practical, the overriding class should describe the
+ spliterator's documented policy of binding and structural interference,
+ and should override the `],
+					[/* reference */ 'r', `#stream()`, `stream()`],
+					[/* text */ 't', ` and `],
+					[/* reference */ 'r', `#parallelStream()`, `parallelStream()`],
+					[/* text */ 't', `
+ methods to create streams using a `],
+					[/* inline code block */ 'i', `Supplier`],
+					[/* text */ 't', ` of the spliterator,
+ as in:
+ `]
+				]],
+				[/* code block */ 'c', [
+					[/* inline code block */ 'i', `Stream<E> s = StreamSupport.stream(() -> spliterator(), spliteratorCharacteristics)`]
+				]],
+				[/* block */ 'b', ''],
+				[/* block */ 'b', [
+					[/* text */ 't', `These requirements ensure that streams produced by the
+ `],
+					[/* reference */ 'r', `#stream()`, `stream()`],
+					[/* text */ 't', ` and `],
+					[/* reference */ 'r', `#parallelStream()`, `parallelStream()`],
+					[/* text */ 't', ` methods will reflect the
+ contents of the collection as of initiation of the terminal stream
+ operation.`]
+				]]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `a `],
+				[/* inline code block */ 'i', `Spliterator`],
+				[/* text */ 't', ` over the elements in this collection`]
 			]
 		]],
 		[/* method */ 'parallelStream()', [
@@ -1169,6 +1137,38 @@ DocsCollector.collect('java.util.Collection', [
 				[/* inline code block */ 'i', `Stream`],
 				[/* text */ 't', ` over the elements in this
  collection`]
+			]
+		]],
+		[/* method */ 'stream()', [
+			[/* method description */
+				[/* text */ 't', `Returns a sequential `],
+				[/* inline code block */ 'i', `Stream`],
+				[/* text */ 't', ` with this collection as its source.
+
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', `This method should be overridden when the `],
+					[/* reference */ 'r', `#spliterator()`, `spliterator()`],
+					[/* text */ 't', `
+ method cannot return a spliterator that is `],
+					[/* inline code block */ 'i', `IMMUTABLE`],
+					[/* text */ 't', `,
+ `],
+					[/* inline code block */ 'i', `CONCURRENT`],
+					[/* text */ 't', `, or `],
+					[/* text */ 't', `late-binding`],
+					[/* text */ 't', `. (See `],
+					[/* reference */ 'r', `#spliterator()`, `spliterator()`],
+					[/* text */ 't', `
+ for details.)`]
+				]]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `a sequential `],
+				[/* inline code block */ 'i', `Stream`],
+				[/* text */ 't', ` over the elements in this collection`]
 			]
 		]]
 	],

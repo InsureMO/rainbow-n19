@@ -170,15 +170,15 @@ JdkClassCreateHelper.class('java.util.zip.InflaterOutputStream', [
 		]
 	],
 	[/* declared fields */
-		[/* protected final java.util.zip.Inflater java.util.zip.InflaterOutputStream.inf */
-			/* name */ 'inf',
-			/* type */ 'java.util.zip.Inflater',
-			/* annotations */ UDF,
-			/* modifiers */ 20
-		],
 		[/* protected final byte[] java.util.zip.InflaterOutputStream.buf */
 			/* name */ 'buf',
 			/* type */ '[B',
+			/* annotations */ UDF,
+			/* modifiers */ 20
+		],
+		[/* protected final java.util.zip.Inflater java.util.zip.InflaterOutputStream.inf */
+			/* name */ 'inf',
+			/* type */ 'java.util.zip.Inflater',
 			/* annotations */ UDF,
 			/* modifiers */ 20
 		]

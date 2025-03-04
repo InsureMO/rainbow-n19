@@ -8,26 +8,6 @@ DocsCollector.collect('java.lang.module.ModuleDescriptor$Requires', [
 	/* fields */ UDF,
 	/* constructors */ UDF,
 	[/* methods */
-		[/* method */ 'modifiers()', [
-			[/* method description */
-				[/* text */ 't', `Returns the set of modifiers.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `A possibly-empty unmodifiable set of modifiers`]
-			]
-		]],
-		[/* method */ 'name()', [
-			[/* method description */
-				[/* text */ 't', `Return the module name.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `The module name`]
-			]
-		]],
 		[/* method */ 'equals(java.lang.Object)', [
 			[/* method description */
 				[/* text */ 't', `Tests this module dependence for equality with the given object.
@@ -60,35 +40,6 @@ DocsCollector.collect('java.lang.module.ModuleDescriptor$Requires', [
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if, and only if, the given object is a module
           dependence that is equal to this module dependence`]
-			]
-		]],
-		[/* method */ 'toString()', [
-			[/* method description */
-				[/* text */ 't', `Returns a string describing this module dependence.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `A string describing this module dependence`]
-			]
-		]],
-		[/* method */ 'hashCode()', [
-			[/* method description */
-				[/* text */ 't', `Computes a hash code for this module dependence.
-
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', ` The hash code is based upon the module name, modifiers, and the
- module version if recorded at compile time. It satisfies the general
- contract of the `],
-					[/* reference */ 'r', `java.Object#hashCode()`],
-					[/* text */ 't', ` method. `]
-				]]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `The hash-code value for this module dependence`]
 			]
 		]],
 		[/* method */ 'compareTo(java.lang.module.ModuleDescriptor.Requires)', [
@@ -129,19 +80,43 @@ DocsCollector.collect('java.lang.module.ModuleDescriptor$Requires', [
          module dependence`]
 			]
 		]],
-		[/* method */ 'rawCompiledVersion()', [
+		[/* method */ 'hashCode()', [
 			[/* method description */
-				[/* text */ 't', `Returns the string with the possibly-unparseable version of the module
- if recorded at compile-time.`]
+				[/* text */ 't', `Computes a hash code for this module dependence.
+
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', ` The hash code is based upon the module name, modifiers, and the
+ module version if recorded at compile time. It satisfies the general
+ contract of the `],
+					[/* reference */ 'r', `java.Object#hashCode()`],
+					[/* text */ 't', ` method. `]
+				]]
 			],
 			/* parameters */ UDF,
 			/* throws */ UDF,
 			[/* return description */
-				[/* text */ 't', `The string containing the version of the module if recorded
-         at compile-time, or an empty `],
-				[/* inline code block */ 'i', `Optional`],
-				[/* text */ 't', ` if no version
-         was recorded`]
+				[/* text */ 't', `The hash-code value for this module dependence`]
+			]
+		]],
+		[/* method */ 'name()', [
+			[/* method description */
+				[/* text */ 't', `Return the module name.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `The module name`]
+			]
+		]],
+		[/* method */ 'toString()', [
+			[/* method description */
+				[/* text */ 't', `Returns a string describing this module dependence.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `A string describing this module dependence`]
 			]
 		]],
 		[/* method */ 'compiledVersion()', [
@@ -157,6 +132,31 @@ DocsCollector.collect('java.lang.module.ModuleDescriptor$Requires', [
 				[/* text */ 't', ` if no version was recorded or
          the version string recorded is `],
 				[/* reference */ 'r', `.ModuleDescriptor.Version#parse(java.lang.String)`]
+			]
+		]],
+		[/* method */ 'rawCompiledVersion()', [
+			[/* method description */
+				[/* text */ 't', `Returns the string with the possibly-unparseable version of the module
+ if recorded at compile-time.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `The string containing the version of the module if recorded
+         at compile-time, or an empty `],
+				[/* inline code block */ 'i', `Optional`],
+				[/* text */ 't', ` if no version
+         was recorded`]
+			]
+		]],
+		[/* method */ 'modifiers()', [
+			[/* method description */
+				[/* text */ 't', `Returns the set of modifiers.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `A possibly-empty unmodifiable set of modifiers`]
 			]
 		]]
 	],

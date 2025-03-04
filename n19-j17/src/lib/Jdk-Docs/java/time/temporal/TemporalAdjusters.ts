@@ -57,235 +57,6 @@ DocsCollector.collect('java.time.temporal.TemporalAdjusters', [
 	/* fields */ UDF,
 	/* constructors */ UDF,
 	[/* methods */
-		[/* method */ 'next(java.time.DayOfWeek)', [
-			[/* method description */
-				[/* text */ 't', `Returns the next day-of-week adjuster, which adjusts the date to the
- first occurrence of the specified day-of-week after the date being adjusted.
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', `
- The ISO calendar system behaves as follows:`],
-					[/* new line */ 'n'],
-					[/* text */ 't', `
- The input 2011-01-15 (a Saturday) for parameter (MONDAY) will return 2011-01-17 (two days later).`],
-					[/* new line */ 'n'],
-					[/* text */ 't', `
- The input 2011-01-15 (a Saturday) for parameter (WEDNESDAY) will return 2011-01-19 (four days later).`],
-					[/* new line */ 'n'],
-					[/* text */ 't', `
- The input 2011-01-15 (a Saturday) for parameter (SATURDAY) will return 2011-01-22 (seven days later).
- `]
-				]],
-				[/* block */ 'b', [
-					[/* text */ 't', `
- The behavior is suitable for use with most calendar systems.
- It uses the `],
-					[/* inline code block */ 'i', `DAY_OF_WEEK`],
-					[/* text */ 't', ` field and the `],
-					[/* inline code block */ 'i', `DAYS`],
-					[/* text */ 't', ` unit,
- and assumes a seven day week.`]
-				]]
-			],
-			[/* parameters */
-				[/* parameter */ 'dayOfWeek', [/* parameter description */
-					[/* text */ 't', `the day-of-week to move the date to, not null`]
-				]]
-			],
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the next day-of-week adjuster, not null`]
-			]
-		]],
-		[/* method */ 'previous(java.time.DayOfWeek)', [
-			[/* method description */
-				[/* text */ 't', `Returns the previous day-of-week adjuster, which adjusts the date to the
- first occurrence of the specified day-of-week before the date being adjusted.
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', `
- The ISO calendar system behaves as follows:`],
-					[/* new line */ 'n'],
-					[/* text */ 't', `
- The input 2011-01-15 (a Saturday) for parameter (MONDAY) will return 2011-01-10 (five days earlier).`],
-					[/* new line */ 'n'],
-					[/* text */ 't', `
- The input 2011-01-15 (a Saturday) for parameter (WEDNESDAY) will return 2011-01-12 (three days earlier).`],
-					[/* new line */ 'n'],
-					[/* text */ 't', `
- The input 2011-01-15 (a Saturday) for parameter (SATURDAY) will return 2011-01-08 (seven days earlier).
- `]
-				]],
-				[/* block */ 'b', [
-					[/* text */ 't', `
- The behavior is suitable for use with most calendar systems.
- It uses the `],
-					[/* inline code block */ 'i', `DAY_OF_WEEK`],
-					[/* text */ 't', ` field and the `],
-					[/* inline code block */ 'i', `DAYS`],
-					[/* text */ 't', ` unit,
- and assumes a seven day week.`]
-				]]
-			],
-			[/* parameters */
-				[/* parameter */ 'dayOfWeek', [/* parameter description */
-					[/* text */ 't', `the day-of-week to move the date to, not null`]
-				]]
-			],
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the previous day-of-week adjuster, not null`]
-			]
-		]],
-		[/* method */ 'lastDayOfMonth()', [
-			[/* method description */
-				[/* text */ 't', `Returns the "last day of month" adjuster, which returns a new date set to
- the last day of the current month.
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', `
- The ISO calendar system behaves as follows:`],
-					[/* new line */ 'n'],
-					[/* text */ 't', `
- The input 2011-01-15 will return 2011-01-31.`],
-					[/* new line */ 'n'],
-					[/* text */ 't', `
- The input 2011-02-15 will return 2011-02-28.`],
-					[/* new line */ 'n'],
-					[/* text */ 't', `
- The input 2012-02-15 will return 2012-02-29 (leap year).`],
-					[/* new line */ 'n'],
-					[/* text */ 't', `
- The input 2011-04-15 will return 2011-04-30.
- `]
-				]],
-				[/* block */ 'b', `
- The behavior is suitable for use with most calendar systems.
- It is equivalent to:
- `],
-				[/* code block */ 'c', `  long lastDay = temporal.range(DAY_OF_MONTH).getMaximum();
-  temporal.with(DAY_OF_MONTH, lastDay);
- `],
-				[/* block */ 'b', '']
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the last day-of-month adjuster, not null`]
-			]
-		]],
-		[/* method */ 'nextOrSame(java.time.DayOfWeek)', [
-			[/* method description */
-				[/* text */ 't', `Returns the next-or-same day-of-week adjuster, which adjusts the date to the
- first occurrence of the specified day-of-week after the date being adjusted
- unless it is already on that day in which case the same object is returned.
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', `
- The ISO calendar system behaves as follows:`],
-					[/* new line */ 'n'],
-					[/* text */ 't', `
- The input 2011-01-15 (a Saturday) for parameter (MONDAY) will return 2011-01-17 (two days later).`],
-					[/* new line */ 'n'],
-					[/* text */ 't', `
- The input 2011-01-15 (a Saturday) for parameter (WEDNESDAY) will return 2011-01-19 (four days later).`],
-					[/* new line */ 'n'],
-					[/* text */ 't', `
- The input 2011-01-15 (a Saturday) for parameter (SATURDAY) will return 2011-01-15 (same as input).
- `]
-				]],
-				[/* block */ 'b', [
-					[/* text */ 't', `
- The behavior is suitable for use with most calendar systems.
- It uses the `],
-					[/* inline code block */ 'i', `DAY_OF_WEEK`],
-					[/* text */ 't', ` field and the `],
-					[/* inline code block */ 'i', `DAYS`],
-					[/* text */ 't', ` unit,
- and assumes a seven day week.`]
-				]]
-			],
-			[/* parameters */
-				[/* parameter */ 'dayOfWeek', [/* parameter description */
-					[/* text */ 't', `the day-of-week to check for or move the date to, not null`]
-				]]
-			],
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the next-or-same day-of-week adjuster, not null`]
-			]
-		]],
-		[/* method */ 'previousOrSame(java.time.DayOfWeek)', [
-			[/* method description */
-				[/* text */ 't', `Returns the previous-or-same day-of-week adjuster, which adjusts the date to the
- first occurrence of the specified day-of-week before the date being adjusted
- unless it is already on that day in which case the same object is returned.
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', `
- The ISO calendar system behaves as follows:`],
-					[/* new line */ 'n'],
-					[/* text */ 't', `
- The input 2011-01-15 (a Saturday) for parameter (MONDAY) will return 2011-01-10 (five days earlier).`],
-					[/* new line */ 'n'],
-					[/* text */ 't', `
- The input 2011-01-15 (a Saturday) for parameter (WEDNESDAY) will return 2011-01-12 (three days earlier).`],
-					[/* new line */ 'n'],
-					[/* text */ 't', `
- The input 2011-01-15 (a Saturday) for parameter (SATURDAY) will return 2011-01-15 (same as input).
- `]
-				]],
-				[/* block */ 'b', [
-					[/* text */ 't', `
- The behavior is suitable for use with most calendar systems.
- It uses the `],
-					[/* inline code block */ 'i', `DAY_OF_WEEK`],
-					[/* text */ 't', ` field and the `],
-					[/* inline code block */ 'i', `DAYS`],
-					[/* text */ 't', ` unit,
- and assumes a seven day week.`]
-				]]
-			],
-			[/* parameters */
-				[/* parameter */ 'dayOfWeek', [/* parameter description */
-					[/* text */ 't', `the day-of-week to check for or move the date to, not null`]
-				]]
-			],
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the previous-or-same day-of-week adjuster, not null`]
-			]
-		]],
-		[/* method */ 'firstDayOfYear()', [
-			[/* method description */
-				[/* text */ 't', `Returns the "first day of year" adjuster, which returns a new date set to
- the first day of the current year.
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', `
- The ISO calendar system behaves as follows:`],
-					[/* new line */ 'n'],
-					[/* text */ 't', `
- The input 2011-01-15 will return 2011-01-01.`],
-					[/* new line */ 'n'],
-					[/* text */ 't', `
- The input 2011-02-15 will return 2011-01-01.`],
-					[/* new line */ 'n']
-				]],
-				[/* block */ 'b', `
- The behavior is suitable for use with most calendar systems.
- It is equivalent to:
- `],
-				[/* code block */ 'c', `  temporal.with(DAY_OF_YEAR, 1);
- `],
-				[/* block */ 'b', '']
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the first day-of-year adjuster, not null`]
-			]
-		]],
 		[/* method */ 'dayOfWeekInMonth(int,java.time.DayOfWeek)', [
 			[/* method description */
 				[/* text */ 't', `Returns the day-of-week in month adjuster, which returns a new date
@@ -359,47 +130,6 @@ DocsCollector.collect('java.time.temporal.TemporalAdjusters', [
 				[/* text */ 't', `the day-of-week in month adjuster, not null`]
 			]
 		]],
-		[/* method */ 'ofDateAdjuster(java.util.function.UnaryOperator)', [
-			[/* method description */
-				[/* text */ 't', `Obtains a `],
-				[/* inline code block */ 'i', `TemporalAdjuster`],
-				[/* text */ 't', ` that wraps a date adjuster.
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', `
- The `],
-					[/* inline code block */ 'i', `TemporalAdjuster`],
-					[/* text */ 't', ` is based on the low level `],
-					[/* inline code block */ 'i', `Temporal`],
-					[/* text */ 't', ` interface.
- This method allows an adjustment from `],
-					[/* inline code block */ 'i', `LocalDate`],
-					[/* text */ 't', ` to `],
-					[/* inline code block */ 'i', `LocalDate`],
-					[/* text */ 't', `
- to be wrapped to match the temporal-based interface.
- This is provided for convenience to make user-written adjusters simpler.
- `]
-				]],
-				[/* block */ 'b', `
- In general, user-written adjusters should be static constants:
- `],
-				[/* code block */ 'c', [
-					[/* inline code block */ 'i', `static TemporalAdjuster TWO_DAYS_LATER =
-       TemporalAdjusters.ofDateAdjuster(date -> date.plusDays(2));`]
-				]],
-				[/* block */ 'b', '']
-			],
-			[/* parameters */
-				[/* parameter */ 'dateBasedAdjuster', [/* parameter description */
-					[/* text */ 't', `the date-based adjuster, not null`]
-				]]
-			],
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the temporal adjuster wrapping on the date adjuster, not null`]
-			]
-		]],
 		[/* method */ 'firstDayOfMonth()', [
 			[/* method description */
 				[/* text */ 't', `Returns the "first day of month" adjuster, which returns a new date set to
@@ -460,37 +190,6 @@ DocsCollector.collect('java.time.temporal.TemporalAdjusters', [
 				[/* text */ 't', `the first day of next month adjuster, not null`]
 			]
 		]],
-		[/* method */ 'lastDayOfYear()', [
-			[/* method description */
-				[/* text */ 't', `Returns the "last day of year" adjuster, which returns a new date set to
- the last day of the current year.
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', `
- The ISO calendar system behaves as follows:`],
-					[/* new line */ 'n'],
-					[/* text */ 't', `
- The input 2011-01-15 will return 2011-12-31.`],
-					[/* new line */ 'n'],
-					[/* text */ 't', `
- The input 2011-02-15 will return 2011-12-31.`],
-					[/* new line */ 'n']
-				]],
-				[/* block */ 'b', `
- The behavior is suitable for use with most calendar systems.
- It is equivalent to:
- `],
-				[/* code block */ 'c', `  long lastDay = temporal.range(DAY_OF_YEAR).getMaximum();
-  temporal.with(DAY_OF_YEAR, lastDay);
- `],
-				[/* block */ 'b', '']
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the last day-of-year adjuster, not null`]
-			]
-		]],
 		[/* method */ 'firstDayOfNextYear()', [
 			[/* method description */
 				[/* text */ 't', `Returns the "first day of next year" adjuster, which returns a new date set to
@@ -516,6 +215,36 @@ DocsCollector.collect('java.time.temporal.TemporalAdjusters', [
 			/* throws */ UDF,
 			[/* return description */
 				[/* text */ 't', `the first day of next month adjuster, not null`]
+			]
+		]],
+		[/* method */ 'firstDayOfYear()', [
+			[/* method description */
+				[/* text */ 't', `Returns the "first day of year" adjuster, which returns a new date set to
+ the first day of the current year.
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', `
+ The ISO calendar system behaves as follows:`],
+					[/* new line */ 'n'],
+					[/* text */ 't', `
+ The input 2011-01-15 will return 2011-01-01.`],
+					[/* new line */ 'n'],
+					[/* text */ 't', `
+ The input 2011-02-15 will return 2011-01-01.`],
+					[/* new line */ 'n']
+				]],
+				[/* block */ 'b', `
+ The behavior is suitable for use with most calendar systems.
+ It is equivalent to:
+ `],
+				[/* code block */ 'c', `  temporal.with(DAY_OF_YEAR, 1);
+ `],
+				[/* block */ 'b', '']
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the first day-of-year adjuster, not null`]
 			]
 		]],
 		[/* method */ 'firstInMonth(java.time.DayOfWeek)', [
@@ -558,6 +287,74 @@ DocsCollector.collect('java.time.temporal.TemporalAdjusters', [
 				[/* text */ 't', `the first in month adjuster, not null`]
 			]
 		]],
+		[/* method */ 'lastDayOfMonth()', [
+			[/* method description */
+				[/* text */ 't', `Returns the "last day of month" adjuster, which returns a new date set to
+ the last day of the current month.
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', `
+ The ISO calendar system behaves as follows:`],
+					[/* new line */ 'n'],
+					[/* text */ 't', `
+ The input 2011-01-15 will return 2011-01-31.`],
+					[/* new line */ 'n'],
+					[/* text */ 't', `
+ The input 2011-02-15 will return 2011-02-28.`],
+					[/* new line */ 'n'],
+					[/* text */ 't', `
+ The input 2012-02-15 will return 2012-02-29 (leap year).`],
+					[/* new line */ 'n'],
+					[/* text */ 't', `
+ The input 2011-04-15 will return 2011-04-30.
+ `]
+				]],
+				[/* block */ 'b', `
+ The behavior is suitable for use with most calendar systems.
+ It is equivalent to:
+ `],
+				[/* code block */ 'c', `  long lastDay = temporal.range(DAY_OF_MONTH).getMaximum();
+  temporal.with(DAY_OF_MONTH, lastDay);
+ `],
+				[/* block */ 'b', '']
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the last day-of-month adjuster, not null`]
+			]
+		]],
+		[/* method */ 'lastDayOfYear()', [
+			[/* method description */
+				[/* text */ 't', `Returns the "last day of year" adjuster, which returns a new date set to
+ the last day of the current year.
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', `
+ The ISO calendar system behaves as follows:`],
+					[/* new line */ 'n'],
+					[/* text */ 't', `
+ The input 2011-01-15 will return 2011-12-31.`],
+					[/* new line */ 'n'],
+					[/* text */ 't', `
+ The input 2011-02-15 will return 2011-12-31.`],
+					[/* new line */ 'n']
+				]],
+				[/* block */ 'b', `
+ The behavior is suitable for use with most calendar systems.
+ It is equivalent to:
+ `],
+				[/* code block */ 'c', `  long lastDay = temporal.range(DAY_OF_YEAR).getMaximum();
+  temporal.with(DAY_OF_YEAR, lastDay);
+ `],
+				[/* block */ 'b', '']
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the last day-of-year adjuster, not null`]
+			]
+		]],
 		[/* method */ 'lastInMonth(java.time.DayOfWeek)', [
 			[/* method description */
 				[/* text */ 't', `Returns the last in month adjuster, which returns a new date
@@ -596,6 +393,209 @@ DocsCollector.collect('java.time.temporal.TemporalAdjusters', [
 			/* throws */ UDF,
 			[/* return description */
 				[/* text */ 't', `the first in month adjuster, not null`]
+			]
+		]],
+		[/* method */ 'next(java.time.DayOfWeek)', [
+			[/* method description */
+				[/* text */ 't', `Returns the next day-of-week adjuster, which adjusts the date to the
+ first occurrence of the specified day-of-week after the date being adjusted.
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', `
+ The ISO calendar system behaves as follows:`],
+					[/* new line */ 'n'],
+					[/* text */ 't', `
+ The input 2011-01-15 (a Saturday) for parameter (MONDAY) will return 2011-01-17 (two days later).`],
+					[/* new line */ 'n'],
+					[/* text */ 't', `
+ The input 2011-01-15 (a Saturday) for parameter (WEDNESDAY) will return 2011-01-19 (four days later).`],
+					[/* new line */ 'n'],
+					[/* text */ 't', `
+ The input 2011-01-15 (a Saturday) for parameter (SATURDAY) will return 2011-01-22 (seven days later).
+ `]
+				]],
+				[/* block */ 'b', [
+					[/* text */ 't', `
+ The behavior is suitable for use with most calendar systems.
+ It uses the `],
+					[/* inline code block */ 'i', `DAY_OF_WEEK`],
+					[/* text */ 't', ` field and the `],
+					[/* inline code block */ 'i', `DAYS`],
+					[/* text */ 't', ` unit,
+ and assumes a seven day week.`]
+				]]
+			],
+			[/* parameters */
+				[/* parameter */ 'dayOfWeek', [/* parameter description */
+					[/* text */ 't', `the day-of-week to move the date to, not null`]
+				]]
+			],
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the next day-of-week adjuster, not null`]
+			]
+		]],
+		[/* method */ 'nextOrSame(java.time.DayOfWeek)', [
+			[/* method description */
+				[/* text */ 't', `Returns the next-or-same day-of-week adjuster, which adjusts the date to the
+ first occurrence of the specified day-of-week after the date being adjusted
+ unless it is already on that day in which case the same object is returned.
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', `
+ The ISO calendar system behaves as follows:`],
+					[/* new line */ 'n'],
+					[/* text */ 't', `
+ The input 2011-01-15 (a Saturday) for parameter (MONDAY) will return 2011-01-17 (two days later).`],
+					[/* new line */ 'n'],
+					[/* text */ 't', `
+ The input 2011-01-15 (a Saturday) for parameter (WEDNESDAY) will return 2011-01-19 (four days later).`],
+					[/* new line */ 'n'],
+					[/* text */ 't', `
+ The input 2011-01-15 (a Saturday) for parameter (SATURDAY) will return 2011-01-15 (same as input).
+ `]
+				]],
+				[/* block */ 'b', [
+					[/* text */ 't', `
+ The behavior is suitable for use with most calendar systems.
+ It uses the `],
+					[/* inline code block */ 'i', `DAY_OF_WEEK`],
+					[/* text */ 't', ` field and the `],
+					[/* inline code block */ 'i', `DAYS`],
+					[/* text */ 't', ` unit,
+ and assumes a seven day week.`]
+				]]
+			],
+			[/* parameters */
+				[/* parameter */ 'dayOfWeek', [/* parameter description */
+					[/* text */ 't', `the day-of-week to check for or move the date to, not null`]
+				]]
+			],
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the next-or-same day-of-week adjuster, not null`]
+			]
+		]],
+		[/* method */ 'ofDateAdjuster(java.util.function.UnaryOperator)', [
+			[/* method description */
+				[/* text */ 't', `Obtains a `],
+				[/* inline code block */ 'i', `TemporalAdjuster`],
+				[/* text */ 't', ` that wraps a date adjuster.
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', `
+ The `],
+					[/* inline code block */ 'i', `TemporalAdjuster`],
+					[/* text */ 't', ` is based on the low level `],
+					[/* inline code block */ 'i', `Temporal`],
+					[/* text */ 't', ` interface.
+ This method allows an adjustment from `],
+					[/* inline code block */ 'i', `LocalDate`],
+					[/* text */ 't', ` to `],
+					[/* inline code block */ 'i', `LocalDate`],
+					[/* text */ 't', `
+ to be wrapped to match the temporal-based interface.
+ This is provided for convenience to make user-written adjusters simpler.
+ `]
+				]],
+				[/* block */ 'b', `
+ In general, user-written adjusters should be static constants:
+ `],
+				[/* code block */ 'c', [
+					[/* inline code block */ 'i', `static TemporalAdjuster TWO_DAYS_LATER =
+       TemporalAdjusters.ofDateAdjuster(date -> date.plusDays(2));`]
+				]],
+				[/* block */ 'b', '']
+			],
+			[/* parameters */
+				[/* parameter */ 'dateBasedAdjuster', [/* parameter description */
+					[/* text */ 't', `the date-based adjuster, not null`]
+				]]
+			],
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the temporal adjuster wrapping on the date adjuster, not null`]
+			]
+		]],
+		[/* method */ 'previous(java.time.DayOfWeek)', [
+			[/* method description */
+				[/* text */ 't', `Returns the previous day-of-week adjuster, which adjusts the date to the
+ first occurrence of the specified day-of-week before the date being adjusted.
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', `
+ The ISO calendar system behaves as follows:`],
+					[/* new line */ 'n'],
+					[/* text */ 't', `
+ The input 2011-01-15 (a Saturday) for parameter (MONDAY) will return 2011-01-10 (five days earlier).`],
+					[/* new line */ 'n'],
+					[/* text */ 't', `
+ The input 2011-01-15 (a Saturday) for parameter (WEDNESDAY) will return 2011-01-12 (three days earlier).`],
+					[/* new line */ 'n'],
+					[/* text */ 't', `
+ The input 2011-01-15 (a Saturday) for parameter (SATURDAY) will return 2011-01-08 (seven days earlier).
+ `]
+				]],
+				[/* block */ 'b', [
+					[/* text */ 't', `
+ The behavior is suitable for use with most calendar systems.
+ It uses the `],
+					[/* inline code block */ 'i', `DAY_OF_WEEK`],
+					[/* text */ 't', ` field and the `],
+					[/* inline code block */ 'i', `DAYS`],
+					[/* text */ 't', ` unit,
+ and assumes a seven day week.`]
+				]]
+			],
+			[/* parameters */
+				[/* parameter */ 'dayOfWeek', [/* parameter description */
+					[/* text */ 't', `the day-of-week to move the date to, not null`]
+				]]
+			],
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the previous day-of-week adjuster, not null`]
+			]
+		]],
+		[/* method */ 'previousOrSame(java.time.DayOfWeek)', [
+			[/* method description */
+				[/* text */ 't', `Returns the previous-or-same day-of-week adjuster, which adjusts the date to the
+ first occurrence of the specified day-of-week before the date being adjusted
+ unless it is already on that day in which case the same object is returned.
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', `
+ The ISO calendar system behaves as follows:`],
+					[/* new line */ 'n'],
+					[/* text */ 't', `
+ The input 2011-01-15 (a Saturday) for parameter (MONDAY) will return 2011-01-10 (five days earlier).`],
+					[/* new line */ 'n'],
+					[/* text */ 't', `
+ The input 2011-01-15 (a Saturday) for parameter (WEDNESDAY) will return 2011-01-12 (three days earlier).`],
+					[/* new line */ 'n'],
+					[/* text */ 't', `
+ The input 2011-01-15 (a Saturday) for parameter (SATURDAY) will return 2011-01-15 (same as input).
+ `]
+				]],
+				[/* block */ 'b', [
+					[/* text */ 't', `
+ The behavior is suitable for use with most calendar systems.
+ It uses the `],
+					[/* inline code block */ 'i', `DAY_OF_WEEK`],
+					[/* text */ 't', ` field and the `],
+					[/* inline code block */ 'i', `DAYS`],
+					[/* text */ 't', ` unit,
+ and assumes a seven day week.`]
+				]]
+			],
+			[/* parameters */
+				[/* parameter */ 'dayOfWeek', [/* parameter description */
+					[/* text */ 't', `the day-of-week to check for or move the date to, not null`]
+				]]
+			],
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the previous-or-same day-of-week adjuster, not null`]
 			]
 		]]
 	],

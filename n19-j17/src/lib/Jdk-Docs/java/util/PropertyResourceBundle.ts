@@ -188,42 +188,6 @@ DocsCollector.collect('java.util.PropertyResourceBundle', [
 		]]
 	],
 	[/* methods */
-		[/* method */ 'getKeys()', [
-			[/* method description */
-				[/* text */ 't', `Returns an `],
-				[/* inline code block */ 'i', `Enumeration`],
-				[/* text */ 't', ` of the keys contained in
- this `],
-				[/* inline code block */ 'i', `ResourceBundle`],
-				[/* text */ 't', ` and its parent bundles.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `an `],
-				[/* inline code block */ 'i', `Enumeration`],
-				[/* text */ 't', ` of the keys contained in
-         this `],
-				[/* inline code block */ 'i', `ResourceBundle`],
-				[/* text */ 't', ` and its parent bundles.`]
-			]
-		]],
-		[/* method */ 'handleGetObject(java.lang.String)', [
-			[/* method description */
-				[/* block */ 'b', `Gets an object for the given key from this resource bundle.
- Returns null if this resource bundle does not contain an
- object for the given key.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'key', [/* parameter description */
-					[/* text */ 't', `the key for the desired object`]
-				]]
-			],
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the object for the given key, or null`]
-			]
-		]],
 		[/* method */ 'handleKeySet()', [
 			[/* method description */
 				[/* text */ 't', `Returns a `],
@@ -243,6 +207,42 @@ DocsCollector.collect('java.util.PropertyResourceBundle', [
 				[/* text */ 't', ` of the keys contained only in this
          `],
 				[/* inline code block */ 'i', `ResourceBundle`]
+			]
+		]],
+		[/* method */ 'handleGetObject(java.lang.String)', [
+			[/* method description */
+				[/* block */ 'b', `Gets an object for the given key from this resource bundle.
+ Returns null if this resource bundle does not contain an
+ object for the given key.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'key', [/* parameter description */
+					[/* text */ 't', `the key for the desired object`]
+				]]
+			],
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the object for the given key, or null`]
+			]
+		]],
+		[/* method */ 'getKeys()', [
+			[/* method description */
+				[/* text */ 't', `Returns an `],
+				[/* inline code block */ 'i', `Enumeration`],
+				[/* text */ 't', ` of the keys contained in
+ this `],
+				[/* inline code block */ 'i', `ResourceBundle`],
+				[/* text */ 't', ` and its parent bundles.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `an `],
+				[/* inline code block */ 'i', `Enumeration`],
+				[/* text */ 't', ` of the keys contained in
+         this `],
+				[/* inline code block */ 'i', `ResourceBundle`],
+				[/* text */ 't', ` and its parent bundles.`]
 			]
 		]]
 	],

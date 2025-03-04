@@ -115,28 +115,20 @@ DocsCollector.collect('java.util.Map$Entry', [
 				[/* text */ 't', `the hash code value for this map entry`]
 			]
 		]],
-		[/* method */ 'copyOf(java.util.Map.Entry)', [
+		[/* method */ 'getKey()', [
 			[/* method description */
-				[/* text */ 't', `Returns a copy of the given `],
-				[/* inline code block */ 'i', `Map.Entry`],
-				[/* text */ 't', `. The returned instance is not
- associated with any map. The returned instance has the same characteristics
- as instances returned by the `],
-				[/* reference */ 'r', `.Map#entry(K,V)`],
-				[/* text */ 't', ` method.`]
+				[/* text */ 't', `Returns the key corresponding to this entry.`]
 			],
-			[/* parameters */
-				[/* parameter */ 'e', [/* parameter description */
-					[/* text */ 't', `the entry to be copied`]
-				]]
-			],
+			/* parameters */ UDF,
 			[/* throws */
-				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
-					[/* text */ 't', `if e is null or if either of its key or value is null`]
+				[/* throw */ 'java.lang.IllegalStateException', [/* throw description */
+					[/* text */ 't', `implementations may, but are not
+         required to, throw this exception if the entry has been
+         removed from the backing map.`]
 				]]
 			],
 			[/* return description */
-				[/* text */ 't', `a map entry equal to the given entry`]
+				[/* text */ 't', `the key corresponding to this entry`]
 			]
 		]],
 		[/* method */ 'getValue()', [
@@ -157,22 +149,6 @@ DocsCollector.collect('java.util.Map$Entry', [
 			],
 			[/* return description */
 				[/* text */ 't', `the value corresponding to this entry`]
-			]
-		]],
-		[/* method */ 'getKey()', [
-			[/* method description */
-				[/* text */ 't', `Returns the key corresponding to this entry.`]
-			],
-			/* parameters */ UDF,
-			[/* throws */
-				[/* throw */ 'java.lang.IllegalStateException', [/* throw description */
-					[/* text */ 't', `implementations may, but are not
-         required to, throw this exception if the entry has been
-         removed from the backing map.`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `the key corresponding to this entry`]
 			]
 		]],
 		[/* method */ 'setValue(java.lang.Object)', [
@@ -218,32 +194,6 @@ DocsCollector.collect('java.util.Map$Entry', [
 				[/* text */ 't', `old value corresponding to the entry`]
 			]
 		]],
-		[/* method */ 'comparingByKey(java.util.Comparator)', [
-			[/* method description */
-				[/* text */ 't', `Returns a comparator that compares `],
-				[/* reference */ 'r', `java.util.Map.Entry`],
-				[/* text */ 't', ` by key using the given
- `],
-				[/* reference */ 'r', `java.util.Comparator`],
-				[/* text */ 't', `.
-
- `],
-				[/* block */ 'b', `The returned comparator is serializable if the specified comparator
- is also serializable.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'cmp', [/* parameter description */
-					[/* text */ 't', `the key `],
-					[/* reference */ 'r', `java.util.Comparator`]
-				]]
-			],
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `a comparator that compares `],
-				[/* reference */ 'r', `java.util.Map.Entry`],
-				[/* text */ 't', ` by the key.`]
-			]
-		]],
 		[/* method */ 'comparingByKey()', [
 			[/* method description */
 				[/* text */ 't', `Returns a comparator that compares `],
@@ -286,6 +236,32 @@ DocsCollector.collect('java.util.Map$Entry', [
 				[/* text */ 't', ` in natural order on value.`]
 			]
 		]],
+		[/* method */ 'comparingByKey(java.util.Comparator)', [
+			[/* method description */
+				[/* text */ 't', `Returns a comparator that compares `],
+				[/* reference */ 'r', `java.util.Map.Entry`],
+				[/* text */ 't', ` by key using the given
+ `],
+				[/* reference */ 'r', `java.util.Comparator`],
+				[/* text */ 't', `.
+
+ `],
+				[/* block */ 'b', `The returned comparator is serializable if the specified comparator
+ is also serializable.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'cmp', [/* parameter description */
+					[/* text */ 't', `the key `],
+					[/* reference */ 'r', `java.util.Comparator`]
+				]]
+			],
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `a comparator that compares `],
+				[/* reference */ 'r', `java.util.Map.Entry`],
+				[/* text */ 't', ` by the key.`]
+			]
+		]],
 		[/* method */ 'comparingByValue(java.util.Comparator)', [
 			[/* method description */
 				[/* text */ 't', `Returns a comparator that compares `],
@@ -310,6 +286,30 @@ DocsCollector.collect('java.util.Map$Entry', [
 				[/* text */ 't', `a comparator that compares `],
 				[/* reference */ 'r', `java.util.Map.Entry`],
 				[/* text */ 't', ` by the value.`]
+			]
+		]],
+		[/* method */ 'copyOf(java.util.Map.Entry)', [
+			[/* method description */
+				[/* text */ 't', `Returns a copy of the given `],
+				[/* inline code block */ 'i', `Map.Entry`],
+				[/* text */ 't', `. The returned instance is not
+ associated with any map. The returned instance has the same characteristics
+ as instances returned by the `],
+				[/* reference */ 'r', `.Map#entry(K,V)`],
+				[/* text */ 't', ` method.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'e', [/* parameter description */
+					[/* text */ 't', `the entry to be copied`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
+					[/* text */ 't', `if e is null or if either of its key or value is null`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `a map entry equal to the given entry`]
 			]
 		]]
 	],

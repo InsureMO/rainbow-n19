@@ -20,6 +20,45 @@ DocsCollector.collect('java.io.StringReader', [
 		]]
 	],
 	[/* methods */
+		[/* method */ 'markSupported()', [
+			[/* method description */
+				[/* text */ 't', `Tells whether this stream supports the mark() operation, which it does.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `true if and only if this stream supports the mark operation.`]
+			]
+		]],
+		[/* method */ 'ready()', [
+			[/* method description */
+				[/* text */ 't', `Tells whether this stream is ready to be read.`]
+			],
+			/* parameters */ UDF,
+			[/* throws */
+				[/* throw */ 'java.io.IOException', [/* throw description */
+					[/* text */ 't', `If the stream is closed`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `True if the next read() is guaranteed not to block for input`]
+			]
+		]],
+		[/* method */ 'read()', [
+			[/* method description */
+				[/* text */ 't', `Reads a single character.`]
+			],
+			/* parameters */ UDF,
+			[/* throws */
+				[/* throw */ 'java.io.IOException', [/* throw description */
+					[/* text */ 't', `If an I/O error occurs`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `The character read, or -1 if the end of the stream has been
+             reached`]
+			]
+		]],
 		[/* method */ 'read(char[],int,int)', [
 			[/* method description */
 				[/* text */ 't', `Reads characters into a portion of an array.
@@ -73,58 +112,6 @@ DocsCollector.collect('java.io.StringReader', [
              stream has been reached`]
 			]
 		]],
-		[/* method */ 'read()', [
-			[/* method description */
-				[/* text */ 't', `Reads a single character.`]
-			],
-			/* parameters */ UDF,
-			[/* throws */
-				[/* throw */ 'java.io.IOException', [/* throw description */
-					[/* text */ 't', `If an I/O error occurs`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `The character read, or -1 if the end of the stream has been
-             reached`]
-			]
-		]],
-		[/* method */ 'close()', [
-			[/* method description */
-				[/* text */ 't', `Closes the stream and releases any system resources associated with
- it. Once the stream has been closed, further read(),
- ready(), mark(), or reset() invocations will throw an IOException.
- Closing a previously closed stream has no effect. This method will block
- while there is another thread blocking on the reader.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			/* return */ UDF
-		]],
-		[/* method */ 'mark(int)', [
-			[/* method description */
-				[/* text */ 't', `Marks the present position in the stream.  Subsequent calls to reset()
- will reposition the stream to this point.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'readAheadLimit', [/* parameter description */
-					[/* text */ 't', `Limit on the number of characters that may be
-                         read while still preserving the mark.  Because
-                         the stream's input comes from a string, there
-                         is no actual limit, so this argument must not
-                         be negative, but is otherwise ignored.`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
-					[/* text */ 't', `If `],
-					[/* inline code block */ 'i', `readAheadLimit < 0`]
-				]],
-				[/* throw */ 'java.io.IOException', [/* throw description */
-					[/* text */ 't', `If an I/O error occurs`]
-				]]
-			],
-			/* return */ UDF
-		]],
 		[/* method */ 'skip(long)', [
 			[/* method description */
 				[/* text */ 't', `Skips characters. If the stream is already at its end before this method
@@ -170,15 +157,42 @@ DocsCollector.collect('java.io.StringReader', [
 				[/* text */ 't', `The number of characters actually skipped`]
 			]
 		]],
-		[/* method */ 'markSupported()', [
+		[/* method */ 'close()', [
 			[/* method description */
-				[/* text */ 't', `Tells whether this stream supports the mark() operation, which it does.`]
+				[/* text */ 't', `Closes the stream and releases any system resources associated with
+ it. Once the stream has been closed, further read(),
+ ready(), mark(), or reset() invocations will throw an IOException.
+ Closing a previously closed stream has no effect. This method will block
+ while there is another thread blocking on the reader.`]
 			],
 			/* parameters */ UDF,
 			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `true if and only if this stream supports the mark operation.`]
-			]
+			/* return */ UDF
+		]],
+		[/* method */ 'mark(int)', [
+			[/* method description */
+				[/* text */ 't', `Marks the present position in the stream.  Subsequent calls to reset()
+ will reposition the stream to this point.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'readAheadLimit', [/* parameter description */
+					[/* text */ 't', `Limit on the number of characters that may be
+                         read while still preserving the mark.  Because
+                         the stream's input comes from a string, there
+                         is no actual limit, so this argument must not
+                         be negative, but is otherwise ignored.`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
+					[/* text */ 't', `If `],
+					[/* inline code block */ 'i', `readAheadLimit < 0`]
+				]],
+				[/* throw */ 'java.io.IOException', [/* throw description */
+					[/* text */ 't', `If an I/O error occurs`]
+				]]
+			],
+			/* return */ UDF
 		]],
 		[/* method */ 'reset()', [
 			[/* method description */
@@ -192,20 +206,6 @@ DocsCollector.collect('java.io.StringReader', [
 				]]
 			],
 			/* return */ UDF
-		]],
-		[/* method */ 'ready()', [
-			[/* method description */
-				[/* text */ 't', `Tells whether this stream is ready to be read.`]
-			],
-			/* parameters */ UDF,
-			[/* throws */
-				[/* throw */ 'java.io.IOException', [/* throw description */
-					[/* text */ 't', `If the stream is closed`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `True if the next read() is guaranteed not to block for input`]
-			]
 		]]
 	],
 ]);

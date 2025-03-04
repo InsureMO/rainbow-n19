@@ -1134,8 +1134,8 @@ JdkClassCreateHelper.class('java.time.LocalDate', [
 		]
 	],
 	[/* declared fields */
-		[/* public static final java.time.LocalDate java.time.LocalDate.MIN */
-			/* name */ 'MIN',
+		[/* public static final java.time.LocalDate java.time.LocalDate.EPOCH */
+			/* name */ 'EPOCH',
 			/* type */ 'java.time.LocalDate',
 			/* annotations */ UDF,
 			/* modifiers */ 25
@@ -1146,8 +1146,8 @@ JdkClassCreateHelper.class('java.time.LocalDate', [
 			/* annotations */ UDF,
 			/* modifiers */ 25
 		],
-		[/* public static final java.time.LocalDate java.time.LocalDate.EPOCH */
-			/* name */ 'EPOCH',
+		[/* public static final java.time.LocalDate java.time.LocalDate.MIN */
+			/* name */ 'MIN',
 			/* type */ 'java.time.LocalDate',
 			/* annotations */ UDF,
 			/* modifiers */ 25

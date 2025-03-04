@@ -512,27 +512,27 @@ JdkClassCreateHelper.class('java.lang.Double', [
 		]
 	],
 	[/* declared fields */
-		[/* public static final double java.lang.Double.POSITIVE_INFINITY */
-			/* name */ 'POSITIVE_INFINITY',
-			/* type */ 'double',
+		[/* public static final int java.lang.Double.BYTES */
+			/* name */ 'BYTES',
+			/* type */ 'int',
 			/* annotations */ UDF,
 			/* modifiers */ 25
 		],
-		[/* public static final double java.lang.Double.NEGATIVE_INFINITY */
-			/* name */ 'NEGATIVE_INFINITY',
-			/* type */ 'double',
-			/* annotations */ UDF,
-			/* modifiers */ 25
-		],
-		[/* public static final double java.lang.Double.NaN */
-			/* name */ 'NaN',
-			/* type */ 'double',
+		[/* public static final int java.lang.Double.MAX_EXPONENT */
+			/* name */ 'MAX_EXPONENT',
+			/* type */ 'int',
 			/* annotations */ UDF,
 			/* modifiers */ 25
 		],
 		[/* public static final double java.lang.Double.MAX_VALUE */
 			/* name */ 'MAX_VALUE',
 			/* type */ 'double',
+			/* annotations */ UDF,
+			/* modifiers */ 25
+		],
+		[/* public static final int java.lang.Double.MIN_EXPONENT */
+			/* name */ 'MIN_EXPONENT',
+			/* type */ 'int',
 			/* annotations */ UDF,
 			/* modifiers */ 25
 		],
@@ -548,26 +548,26 @@ JdkClassCreateHelper.class('java.lang.Double', [
 			/* annotations */ UDF,
 			/* modifiers */ 25
 		],
-		[/* public static final int java.lang.Double.MAX_EXPONENT */
-			/* name */ 'MAX_EXPONENT',
-			/* type */ 'int',
+		[/* public static final double java.lang.Double.NaN */
+			/* name */ 'NaN',
+			/* type */ 'double',
 			/* annotations */ UDF,
 			/* modifiers */ 25
 		],
-		[/* public static final int java.lang.Double.MIN_EXPONENT */
-			/* name */ 'MIN_EXPONENT',
-			/* type */ 'int',
+		[/* public static final double java.lang.Double.NEGATIVE_INFINITY */
+			/* name */ 'NEGATIVE_INFINITY',
+			/* type */ 'double',
+			/* annotations */ UDF,
+			/* modifiers */ 25
+		],
+		[/* public static final double java.lang.Double.POSITIVE_INFINITY */
+			/* name */ 'POSITIVE_INFINITY',
+			/* type */ 'double',
 			/* annotations */ UDF,
 			/* modifiers */ 25
 		],
 		[/* public static final int java.lang.Double.SIZE */
 			/* name */ 'SIZE',
-			/* type */ 'int',
-			/* annotations */ UDF,
-			/* modifiers */ 25
-		],
-		[/* public static final int java.lang.Double.BYTES */
-			/* name */ 'BYTES',
 			/* type */ 'int',
 			/* annotations */ UDF,
 			/* modifiers */ 25

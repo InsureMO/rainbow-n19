@@ -256,14 +256,76 @@ DocsCollector.collect('java.text.BreakIterator', [
 		]]
 	],
 	[/* methods */
-		[/* method */ 'clone()', [
+		[/* method */ 'current()', [
 			[/* method description */
-				[/* text */ 't', `Create a copy of this iterator`]
+				[/* text */ 't', `Returns character index of the text boundary that was most
+ recently returned by next(), next(int), previous(), first(), last(),
+ following(int) or preceding(int). If any of these methods returns
+ `],
+				[/* inline code block */ 'i', `BreakIterator.DONE`],
+				[/* text */ 't', ` because either first or last text boundary
+ has been reached, it returns the first or last text boundary depending on
+ which one is reached.`]
 			],
 			/* parameters */ UDF,
 			/* throws */ UDF,
 			[/* return description */
-				[/* text */ 't', `A copy of this`]
+				[/* text */ 't', `The text boundary returned from the above methods, first or last
+ text boundary.`]
+			]
+		]],
+		[/* method */ 'first()', [
+			[/* method description */
+				[/* text */ 't', `Returns the first boundary. The iterator's current position is set
+ to the first text boundary.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `The character index of the first text boundary.`]
+			]
+		]],
+		[/* method */ 'following(int)', [
+			[/* method description */
+				[/* text */ 't', `Returns the first boundary following the specified character offset. If the
+ specified offset is equal to the last text boundary, it returns
+ `],
+				[/* inline code block */ 'i', `BreakIterator.DONE`],
+				[/* text */ 't', ` and the iterator's current position is unchanged.
+ Otherwise, the iterator's current position is set to the returned boundary.
+ The value returned is always greater than the offset or the value
+ `],
+				[/* inline code block */ 'i', `BreakIterator.DONE`],
+				[/* text */ 't', `.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'offset', [/* parameter description */
+					[/* text */ 't', `the character offset to begin scanning.`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
+					[/* text */ 't', `if the specified offset is less than
+ the first text boundary or greater than the last text boundary.`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `The first boundary after the specified offset or
+ `],
+				[/* inline code block */ 'i', `BreakIterator.DONE`],
+				[/* text */ 't', ` if the last text boundary is passed in
+ as the offset.`]
+			]
+		]],
+		[/* method */ 'last()', [
+			[/* method description */
+				[/* text */ 't', `Returns the last boundary. The iterator's current position is set
+ to the last text boundary.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `The character index of the last text boundary.`]
 			]
 		]],
 		[/* method */ 'next()', [
@@ -320,46 +382,6 @@ DocsCollector.collect('java.text.BreakIterator', [
  has been reached.`]
 			]
 		]],
-		[/* method */ 'last()', [
-			[/* method description */
-				[/* text */ 't', `Returns the last boundary. The iterator's current position is set
- to the last text boundary.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `The character index of the last text boundary.`]
-			]
-		]],
-		[/* method */ 'first()', [
-			[/* method description */
-				[/* text */ 't', `Returns the first boundary. The iterator's current position is set
- to the first text boundary.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `The character index of the first text boundary.`]
-			]
-		]],
-		[/* method */ 'current()', [
-			[/* method description */
-				[/* text */ 't', `Returns character index of the text boundary that was most
- recently returned by next(), next(int), previous(), first(), last(),
- following(int) or preceding(int). If any of these methods returns
- `],
-				[/* inline code block */ 'i', `BreakIterator.DONE`],
-				[/* text */ 't', ` because either first or last text boundary
- has been reached, it returns the first or last text boundary depending on
- which one is reached.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `The text boundary returned from the above methods, first or last
- text boundary.`]
-			]
-		]],
 		[/* method */ 'previous()', [
 			[/* method description */
 				[/* text */ 't', `Returns the boundary preceding the current boundary. If the current boundary
@@ -379,34 +401,6 @@ DocsCollector.collect('java.text.BreakIterator', [
  boundary.`]
 			]
 		]],
-		[/* method */ 'getAvailableLocales()', [
-			[/* method description */
-				[/* text */ 't', `Returns an array of all locales for which the
- `],
-				[/* inline code block */ 'i', `get*Instance`],
-				[/* text */ 't', ` methods of this class can return
- localized instances.
- The returned array represents the union of locales supported by the Java
- runtime and by installed
- `],
-				[/* reference */ 'r', `java.text.spi.BreakIteratorProvider`],
-				[/* text */ 't', ` implementations.
- It must contain at least a `],
-				[/* inline code block */ 'i', `Locale`],
-				[/* text */ 't', `
- instance equal to `],
-				[/* reference */ 'r', `java.Locale#US`],
-				[/* text */ 't', `.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `An array of locales for which localized
-         `],
-				[/* inline code block */ 'i', `BreakIterator`],
-				[/* text */ 't', ` instances are available.`]
-			]
-		]],
 		[/* method */ 'getText()', [
 			[/* method description */
 				[/* text */ 't', `Get the text being scanned`]
@@ -416,19 +410,6 @@ DocsCollector.collect('java.text.BreakIterator', [
 			[/* return description */
 				[/* text */ 't', `the text being scanned`]
 			]
-		]],
-		[/* method */ 'setText(java.lang.String)', [
-			[/* method description */
-				[/* text */ 't', `Set a new text string to be scanned.  The current scan
- position is reset to first().`]
-			],
-			[/* parameters */
-				[/* parameter */ 'newText', [/* parameter description */
-					[/* text */ 't', `new text to scan.`]
-				]]
-			],
-			/* throws */ UDF,
-			/* return */ UDF
 		]],
 		[/* method */ 'setText(java.text.CharacterIterator)', [
 			[/* method description */
@@ -443,39 +424,78 @@ DocsCollector.collect('java.text.BreakIterator', [
 			/* throws */ UDF,
 			/* return */ UDF
 		]],
-		[/* method */ 'getWordInstance(java.util.Locale)', [
+		[/* method */ 'isBoundary(int)', [
 			[/* method description */
-				[/* text */ 't', `Returns a new `],
-				[/* inline code block */ 'i', `BreakIterator`],
-				[/* text */ 't', ` instance
- for `],
-				[/* reference */ 'r', `.BreakIterator#word`],
-				[/* text */ 't', `
- for the given locale.`]
+				[/* text */ 't', `Returns true if the specified character offset is a text boundary.`]
 			],
 			[/* parameters */
-				[/* parameter */ 'locale', [/* parameter description */
-					[/* text */ 't', `the desired locale`]
+				[/* parameter */ 'offset', [/* parameter description */
+					[/* text */ 't', `the character offset to check.`]
 				]]
 			],
 			[/* throws */
-				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
-					[/* text */ 't', `if `],
-					[/* inline code block */ 'i', `locale`],
-					[/* text */ 't', ` is null`]
+				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
+					[/* text */ 't', `if the specified offset is less than
+ the first text boundary or greater than the last text boundary.`]
 				]]
 			],
 			[/* return description */
-				[/* text */ 't', `A break iterator for word breaks`]
+				[/* inline code block */ 'i', `true`],
+				[/* text */ 't', ` if "offset" is a boundary position,
+ `],
+				[/* inline code block */ 'i', `false`],
+				[/* text */ 't', ` otherwise.`]
 			]
 		]],
-		[/* method */ 'getWordInstance()', [
+		[/* method */ 'preceding(int)', [
+			[/* method description */
+				[/* text */ 't', `Returns the last boundary preceding the specified character offset. If the
+ specified offset is equal to the first text boundary, it returns
+ `],
+				[/* inline code block */ 'i', `BreakIterator.DONE`],
+				[/* text */ 't', ` and the iterator's current position is unchanged.
+ Otherwise, the iterator's current position is set to the returned boundary.
+ The value returned is always less than the offset or the value
+ `],
+				[/* inline code block */ 'i', `BreakIterator.DONE`],
+				[/* text */ 't', `.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'offset', [/* parameter description */
+					[/* text */ 't', `the character offset to begin scanning.`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
+					[/* text */ 't', `if the specified offset is less than
+ the first text boundary or greater than the last text boundary.`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `The last boundary before the specified offset or
+ `],
+				[/* inline code block */ 'i', `BreakIterator.DONE`],
+				[/* text */ 't', ` if the first text boundary is passed in
+ as the offset.`]
+			]
+		]],
+		[/* method */ 'clone()', [
+			[/* method description */
+				[/* text */ 't', `Create a copy of this iterator`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `A copy of this`]
+			]
+		]],
+		[/* method */ 'getCharacterInstance()', [
 			[/* method description */
 				[/* text */ 't', `Returns a new `],
 				[/* inline code block */ 'i', `BreakIterator`],
 				[/* text */ 't', ` instance
  for `],
-				[/* reference */ 'r', `.BreakIterator#word`],
+				[/* reference */ 'r', `.BreakIterator#character`],
 				[/* text */ 't', `
  for the `],
 				[/* reference */ 'r', `java.Locale#getDefault()`],
@@ -484,51 +504,7 @@ DocsCollector.collect('java.text.BreakIterator', [
 			/* parameters */ UDF,
 			/* throws */ UDF,
 			[/* return description */
-				[/* text */ 't', `A break iterator for word breaks`]
-			]
-		]],
-		[/* method */ 'getLineInstance(java.util.Locale)', [
-			[/* method description */
-				[/* text */ 't', `Returns a new `],
-				[/* inline code block */ 'i', `BreakIterator`],
-				[/* text */ 't', ` instance
- for `],
-				[/* reference */ 'r', `.BreakIterator#line`],
-				[/* text */ 't', `
- for the given locale.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'locale', [/* parameter description */
-					[/* text */ 't', `the desired locale`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
-					[/* text */ 't', `if `],
-					[/* inline code block */ 'i', `locale`],
-					[/* text */ 't', ` is null`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `A break iterator for line breaks`]
-			]
-		]],
-		[/* method */ 'getLineInstance()', [
-			[/* method description */
-				[/* text */ 't', `Returns a new `],
-				[/* inline code block */ 'i', `BreakIterator`],
-				[/* text */ 't', ` instance
- for `],
-				[/* reference */ 'r', `.BreakIterator#line`],
-				[/* text */ 't', `
- for the `],
-				[/* reference */ 'r', `java.Locale#getDefault()`],
-				[/* text */ 't', `.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `A break iterator for line breaks`]
+				[/* text */ 't', `A break iterator for character breaks`]
 			]
 		]],
 		[/* method */ 'getCharacterInstance(java.util.Locale)', [
@@ -557,13 +533,13 @@ DocsCollector.collect('java.text.BreakIterator', [
 				[/* text */ 't', `A break iterator for character breaks`]
 			]
 		]],
-		[/* method */ 'getCharacterInstance()', [
+		[/* method */ 'getLineInstance()', [
 			[/* method description */
 				[/* text */ 't', `Returns a new `],
 				[/* inline code block */ 'i', `BreakIterator`],
 				[/* text */ 't', ` instance
  for `],
-				[/* reference */ 'r', `.BreakIterator#character`],
+				[/* reference */ 'r', `.BreakIterator#line`],
 				[/* text */ 't', `
  for the `],
 				[/* reference */ 'r', `java.Locale#getDefault()`],
@@ -572,7 +548,33 @@ DocsCollector.collect('java.text.BreakIterator', [
 			/* parameters */ UDF,
 			/* throws */ UDF,
 			[/* return description */
-				[/* text */ 't', `A break iterator for character breaks`]
+				[/* text */ 't', `A break iterator for line breaks`]
+			]
+		]],
+		[/* method */ 'getLineInstance(java.util.Locale)', [
+			[/* method description */
+				[/* text */ 't', `Returns a new `],
+				[/* inline code block */ 'i', `BreakIterator`],
+				[/* text */ 't', ` instance
+ for `],
+				[/* reference */ 'r', `.BreakIterator#line`],
+				[/* text */ 't', `
+ for the given locale.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'locale', [/* parameter description */
+					[/* text */ 't', `the desired locale`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
+					[/* text */ 't', `if `],
+					[/* inline code block */ 'i', `locale`],
+					[/* text */ 't', ` is null`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `A break iterator for line breaks`]
 			]
 		]],
 		[/* method */ 'getSentenceInstance()', [
@@ -619,92 +621,90 @@ DocsCollector.collect('java.text.BreakIterator', [
 				[/* text */ 't', `A break iterator for sentence breaks`]
 			]
 		]],
-		[/* method */ 'following(int)', [
+		[/* method */ 'getWordInstance()', [
 			[/* method description */
-				[/* text */ 't', `Returns the first boundary following the specified character offset. If the
- specified offset is equal to the last text boundary, it returns
- `],
-				[/* inline code block */ 'i', `BreakIterator.DONE`],
-				[/* text */ 't', ` and the iterator's current position is unchanged.
- Otherwise, the iterator's current position is set to the returned boundary.
- The value returned is always greater than the offset or the value
- `],
-				[/* inline code block */ 'i', `BreakIterator.DONE`],
+				[/* text */ 't', `Returns a new `],
+				[/* inline code block */ 'i', `BreakIterator`],
+				[/* text */ 't', ` instance
+ for `],
+				[/* reference */ 'r', `.BreakIterator#word`],
+				[/* text */ 't', `
+ for the `],
+				[/* reference */ 'r', `java.Locale#getDefault()`],
 				[/* text */ 't', `.`]
 			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `A break iterator for word breaks`]
+			]
+		]],
+		[/* method */ 'getWordInstance(java.util.Locale)', [
+			[/* method description */
+				[/* text */ 't', `Returns a new `],
+				[/* inline code block */ 'i', `BreakIterator`],
+				[/* text */ 't', ` instance
+ for `],
+				[/* reference */ 'r', `.BreakIterator#word`],
+				[/* text */ 't', `
+ for the given locale.`]
+			],
 			[/* parameters */
-				[/* parameter */ 'offset', [/* parameter description */
-					[/* text */ 't', `the character offset to begin scanning.`]
+				[/* parameter */ 'locale', [/* parameter description */
+					[/* text */ 't', `the desired locale`]
 				]]
 			],
 			[/* throws */
-				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
-					[/* text */ 't', `if the specified offset is less than
- the first text boundary or greater than the last text boundary.`]
+				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
+					[/* text */ 't', `if `],
+					[/* inline code block */ 'i', `locale`],
+					[/* text */ 't', ` is null`]
 				]]
 			],
 			[/* return description */
-				[/* text */ 't', `The first boundary after the specified offset or
- `],
-				[/* inline code block */ 'i', `BreakIterator.DONE`],
-				[/* text */ 't', ` if the last text boundary is passed in
- as the offset.`]
+				[/* text */ 't', `A break iterator for word breaks`]
 			]
 		]],
-		[/* method */ 'preceding(int)', [
+		[/* method */ 'getAvailableLocales()', [
 			[/* method description */
-				[/* text */ 't', `Returns the last boundary preceding the specified character offset. If the
- specified offset is equal to the first text boundary, it returns
+				[/* text */ 't', `Returns an array of all locales for which the
  `],
-				[/* inline code block */ 'i', `BreakIterator.DONE`],
-				[/* text */ 't', ` and the iterator's current position is unchanged.
- Otherwise, the iterator's current position is set to the returned boundary.
- The value returned is always less than the offset or the value
+				[/* inline code block */ 'i', `get*Instance`],
+				[/* text */ 't', ` methods of this class can return
+ localized instances.
+ The returned array represents the union of locales supported by the Java
+ runtime and by installed
  `],
-				[/* inline code block */ 'i', `BreakIterator.DONE`],
+				[/* reference */ 'r', `java.text.spi.BreakIteratorProvider`],
+				[/* text */ 't', ` implementations.
+ It must contain at least a `],
+				[/* inline code block */ 'i', `Locale`],
+				[/* text */ 't', `
+ instance equal to `],
+				[/* reference */ 'r', `java.Locale#US`],
 				[/* text */ 't', `.`]
 			],
-			[/* parameters */
-				[/* parameter */ 'offset', [/* parameter description */
-					[/* text */ 't', `the character offset to begin scanning.`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
-					[/* text */ 't', `if the specified offset is less than
- the first text boundary or greater than the last text boundary.`]
-				]]
-			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
 			[/* return description */
-				[/* text */ 't', `The last boundary before the specified offset or
- `],
-				[/* inline code block */ 'i', `BreakIterator.DONE`],
-				[/* text */ 't', ` if the first text boundary is passed in
- as the offset.`]
+				[/* text */ 't', `An array of locales for which localized
+         `],
+				[/* inline code block */ 'i', `BreakIterator`],
+				[/* text */ 't', ` instances are available.`]
 			]
 		]],
-		[/* method */ 'isBoundary(int)', [
+		[/* method */ 'setText(java.lang.String)', [
 			[/* method description */
-				[/* text */ 't', `Returns true if the specified character offset is a text boundary.`]
+				[/* text */ 't', `Set a new text string to be scanned.  The current scan
+ position is reset to first().`]
 			],
 			[/* parameters */
-				[/* parameter */ 'offset', [/* parameter description */
-					[/* text */ 't', `the character offset to check.`]
+				[/* parameter */ 'newText', [/* parameter description */
+					[/* text */ 't', `new text to scan.`]
 				]]
 			],
-			[/* throws */
-				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
-					[/* text */ 't', `if the specified offset is less than
- the first text boundary or greater than the last text boundary.`]
-				]]
-			],
-			[/* return description */
-				[/* inline code block */ 'i', `true`],
-				[/* text */ 't', ` if "offset" is a boundary position,
- `],
-				[/* inline code block */ 'i', `false`],
-				[/* text */ 't', ` otherwise.`]
-			]
+			/* throws */ UDF,
+			/* return */ UDF
 		]]
 	],
 ]);

@@ -31,7 +31,6 @@ DocsCollector.collect('java.util.DuplicateFormatFlagsException', [
 		]]
 	],
 	[/* methods */
-		[/* method */ 'getMessage()', UDF],
 		[/* method */ 'getFlags()', [
 			[/* method description */
 				[/* text */ 't', `Returns the set of flags which contains a duplicate flag.`]
@@ -41,6 +40,7 @@ DocsCollector.collect('java.util.DuplicateFormatFlagsException', [
 			[/* return description */
 				[/* text */ 't', `The flags`]
 			]
-		]]
+		]],
+		[/* method */ 'getMessage()', UDF]
 	],
 ]);

@@ -285,9 +285,15 @@ JdkClassCreateHelper.class('java.io.StreamTokenizer', [
 		]
 	],
 	[/* declared fields */
-		[/* public int java.io.StreamTokenizer.ttype */
-			/* name */ 'ttype',
-			/* type */ 'int',
+		[/* public double java.io.StreamTokenizer.nval */
+			/* name */ 'nval',
+			/* type */ 'double',
+			/* annotations */ UDF,
+			/* modifiers */ 1
+		],
+		[/* public java.lang.String java.io.StreamTokenizer.sval */
+			/* name */ 'sval',
+			/* type */ 'java.lang.String',
 			/* annotations */ UDF,
 			/* modifiers */ 1
 		],
@@ -315,15 +321,9 @@ JdkClassCreateHelper.class('java.io.StreamTokenizer', [
 			/* annotations */ UDF,
 			/* modifiers */ 25
 		],
-		[/* public java.lang.String java.io.StreamTokenizer.sval */
-			/* name */ 'sval',
-			/* type */ 'java.lang.String',
-			/* annotations */ UDF,
-			/* modifiers */ 1
-		],
-		[/* public double java.io.StreamTokenizer.nval */
-			/* name */ 'nval',
-			/* type */ 'double',
+		[/* public int java.io.StreamTokenizer.ttype */
+			/* name */ 'ttype',
+			/* type */ 'int',
 			/* annotations */ UDF,
 			/* modifiers */ 1
 		]

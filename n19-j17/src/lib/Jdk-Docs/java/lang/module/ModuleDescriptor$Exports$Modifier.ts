@@ -8,17 +8,6 @@ DocsCollector.collect('java.lang.module.ModuleDescriptor$Exports$Modifier', [
 	/* fields */ UDF,
 	/* constructors */ UDF,
 	[/* methods */
-		[/* method */ 'values()', [
-			[/* method description */
-				[/* text */ 't', `Returns an array containing the constants of this enum class, in
-the order they are declared.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `an array containing the constants of this enum class, in the order they are declared`]
-			]
-		]],
 		[/* method */ 'valueOf(java.lang.String)', [
 			[/* method description */
 				[/* text */ 't', `Returns the enum constant of this class with the specified name.
@@ -43,6 +32,17 @@ not permitted.)`]
 			],
 			[/* return description */
 				[/* text */ 't', `the enum constant with the specified name`]
+			]
+		]],
+		[/* method */ 'values()', [
+			[/* method description */
+				[/* text */ 't', `Returns an array containing the constants of this enum class, in
+the order they are declared.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `an array containing the constants of this enum class, in the order they are declared`]
 			]
 		]]
 	],

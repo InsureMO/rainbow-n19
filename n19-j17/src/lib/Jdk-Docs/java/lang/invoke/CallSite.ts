@@ -106,21 +106,6 @@ private static CallSite bootstrapDynamic(MethodHandles.Lookup caller, String nam
 	/* fields */ UDF,
 	/* constructors */ UDF,
 	[/* methods */
-		[/* method */ 'type()', [
-			[/* method description */
-				[/* text */ 't', `Returns the type of this call site's target.
- Although targets may change, any call site's type is permanent, and can never change to an unequal type.
- The `],
-				[/* inline code block */ 'i', `setTarget`],
-				[/* text */ 't', ` method enforces this invariant by refusing any new target that does
- not have the previous target's type.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the type of the current target, which is also the type of any future target`]
-			]
-		]],
 		[/* method */ 'dynamicInvoker()', [
 			[/* method description */
 				[/* text */ 't', `Produces a method handle equivalent to an invokedynamic instruction
@@ -192,6 +177,21 @@ private static CallSite bootstrapDynamic(MethodHandles.Lookup caller, String nam
 				]]
 			],
 			/* return */ UDF
+		]],
+		[/* method */ 'type()', [
+			[/* method description */
+				[/* text */ 't', `Returns the type of this call site's target.
+ Although targets may change, any call site's type is permanent, and can never change to an unequal type.
+ The `],
+				[/* inline code block */ 'i', `setTarget`],
+				[/* text */ 't', ` method enforces this invariant by refusing any new target that does
+ not have the previous target's type.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the type of the current target, which is also the type of any future target`]
+			]
 		]]
 	],
 ]);

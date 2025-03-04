@@ -91,6 +91,21 @@ DocsCollector.collect('java.nio.file.WatchKey', [
 	/* fields */ UDF,
 	/* constructors */ UDF,
 	[/* methods */
+		[/* method */ 'isValid()', [
+			[/* method description */
+				[/* text */ 't', `Tells whether or not this watch key is valid.
+
+ `],
+				[/* block */ 'b', ` A watch key is valid upon creation and remains until it is cancelled,
+ or its watch service is closed.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* inline code block */ 'i', `true`],
+				[/* text */ 't', ` if, and only if, this watch key is valid`]
+			]
+		]],
 		[/* method */ 'reset()', [
 			[/* method description */
 				[/* text */ 't', `Resets this watch key.
@@ -113,56 +128,6 @@ DocsCollector.collect('java.nio.file.WatchKey', [
 				[/* text */ 't', ` if the watch key could not be reset because it is
           no longer `],
 				[/* reference */ 'r', `#isValid()`, `valid`]
-			]
-		]],
-		[/* method */ 'cancel()', [
-			[/* method description */
-				[/* text */ 't', `Cancels the registration with the watch service. Upon return the watch key
- will be invalid. If the watch key is enqueued, waiting to be retrieved
- from the watch service, then it will remain in the queue until it is
- removed. Pending events, if any, remain pending and may be retrieved by
- invoking the `],
-				[/* reference */ 'r', `#pollEvents()`, `pollEvents`],
-				[/* text */ 't', ` method after the key is
- cancelled.
-
- `],
-				[/* block */ 'b', ` If this watch key has already been cancelled then invoking this
- method has no effect.  Once cancelled, a watch key remains forever invalid.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			/* return */ UDF
-		]],
-		[/* method */ 'isValid()', [
-			[/* method description */
-				[/* text */ 't', `Tells whether or not this watch key is valid.
-
- `],
-				[/* block */ 'b', ` A watch key is valid upon creation and remains until it is cancelled,
- or its watch service is closed.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* inline code block */ 'i', `true`],
-				[/* text */ 't', ` if, and only if, this watch key is valid`]
-			]
-		]],
-		[/* method */ 'pollEvents()', [
-			[/* method description */
-				[/* text */ 't', `Retrieves and removes all pending events for this watch key, returning
- a `],
-				[/* inline code block */ 'i', `List`],
-				[/* text */ 't', ` of the events that were retrieved.
-
- `],
-				[/* block */ 'b', ` Note that this method does not wait if there are no events pending.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the list of the events retrieved; may be empty`]
 			]
 		]],
 		[/* method */ 'watchable()', [
@@ -188,6 +153,41 @@ DocsCollector.collect('java.nio.file.WatchKey', [
 			[/* return description */
 				[/* text */ 't', `the object for which this watch key was created`]
 			]
+		]],
+		[/* method */ 'pollEvents()', [
+			[/* method description */
+				[/* text */ 't', `Retrieves and removes all pending events for this watch key, returning
+ a `],
+				[/* inline code block */ 'i', `List`],
+				[/* text */ 't', ` of the events that were retrieved.
+
+ `],
+				[/* block */ 'b', ` Note that this method does not wait if there are no events pending.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the list of the events retrieved; may be empty`]
+			]
+		]],
+		[/* method */ 'cancel()', [
+			[/* method description */
+				[/* text */ 't', `Cancels the registration with the watch service. Upon return the watch key
+ will be invalid. If the watch key is enqueued, waiting to be retrieved
+ from the watch service, then it will remain in the queue until it is
+ removed. Pending events, if any, remain pending and may be retrieved by
+ invoking the `],
+				[/* reference */ 'r', `#pollEvents()`, `pollEvents`],
+				[/* text */ 't', ` method after the key is
+ cancelled.
+
+ `],
+				[/* block */ 'b', ` If this watch key has already been cancelled then invoking this
+ method has no effect.  Once cancelled, a watch key remains forever invalid.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			/* return */ UDF
 		]]
 	],
 ]);

@@ -117,6 +117,138 @@ DocsCollector.collect('java.util.UUID', [
           otherwise`]
 			]
 		]],
+		[/* method */ 'clockSequence()', [
+			[/* method description */
+				[/* text */ 't', `The clock sequence value associated with this UUID.
+
+ `],
+				[/* block */ 'b', ` The 14 bit clock sequence value is constructed from the clock
+ sequence field of this UUID.  The clock sequence field is used to
+ guarantee temporal uniqueness in a time-based UUID.
+
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', ` The `],
+					[/* inline code block */ 'i', `clockSequence`],
+					[/* text */ 't', ` value is only meaningful in a time-based
+ UUID, which has version type 1.  If this UUID is not a time-based UUID
+ then this method throws UnsupportedOperationException.`]
+				]]
+			],
+			/* parameters */ UDF,
+			[/* throws */
+				[/* throw */ 'java.lang.UnsupportedOperationException', [/* throw description */
+					[/* text */ 't', `If this UUID is not a version 1 UUID`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `The clock sequence of this `],
+				[/* inline code block */ 'i', `UUID`]
+			]
+		]],
+		[/* method */ 'compareTo(java.util.UUID)', [
+			[/* method description */
+				[/* text */ 't', `Compares this UUID with the specified UUID.
+
+ `],
+				[/* block */ 'b', ` The first of two UUIDs is greater than the second if the most
+ significant field in which the UUIDs differ is greater for the first
+ UUID.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'val', [/* parameter description */
+					[/* text */ 't', ``],
+					[/* inline code block */ 'i', `UUID`],
+					[/* text */ 't', ` to which this `],
+					[/* inline code block */ 'i', `UUID`],
+					[/* text */ 't', ` is to be compared`]
+				]]
+			],
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `-1, 0 or 1 as this `],
+				[/* inline code block */ 'i', `UUID`],
+				[/* text */ 't', ` is less than, equal to, or
+          greater than `],
+				[/* inline code block */ 'i', `val`]
+			]
+		]],
+		[/* method */ 'hashCode()', [
+			[/* method description */
+				[/* text */ 't', `Returns a hash code for this `],
+				[/* inline code block */ 'i', `UUID`],
+				[/* text */ 't', `.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `A hash code value for this `],
+				[/* inline code block */ 'i', `UUID`]
+			]
+		]],
+		[/* method */ 'variant()', [
+			[/* method description */
+				[/* text */ 't', `The variant number associated with this `],
+				[/* inline code block */ 'i', `UUID`],
+				[/* text */ 't', `.  The variant
+ number describes the layout of the `],
+				[/* inline code block */ 'i', `UUID`],
+				[/* text */ 't', `.
+
+ The variant number has the following meaning:
+ `],
+				[/* list */ 'l', [
+					[/* block */ 'b', `0    Reserved for NCS backward compatibility
+ `],
+					[/* block */ 'b', [
+						[/* text */ 't', `2    `],
+						[/* external link */ 'a', `http://www.ietf.org/rfc/rfc4122.txt`, `IETF RFC 4122`],
+						[/* text */ 't', `
+ (Leach-Salz), used by this class
+ `]
+					]],
+					[/* block */ 'b', `6    Reserved, Microsoft Corporation backward compatibility
+ `],
+					[/* block */ 'b', `7    Reserved for future definition
+ `]
+				]]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `The variant number of this `],
+				[/* inline code block */ 'i', `UUID`]
+			]
+		]],
+		[/* method */ 'version()', [
+			[/* method description */
+				[/* text */ 't', `The version number associated with this `],
+				[/* inline code block */ 'i', `UUID`],
+				[/* text */ 't', `.  The version
+ number describes how this `],
+				[/* inline code block */ 'i', `UUID`],
+				[/* text */ 't', ` was generated.
+
+ The version number has the following meaning:
+ `],
+				[/* list */ 'l', [
+					[/* block */ 'b', `1    Time-based UUID
+ `],
+					[/* block */ 'b', `2    DCE security UUID
+ `],
+					[/* block */ 'b', `3    Name-based UUID
+ `],
+					[/* block */ 'b', `4    Randomly generated UUID
+ `]
+				]]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `The version number of this `],
+				[/* inline code block */ 'i', `UUID`]
+			]
+		]],
 		[/* method */ 'toString()', [
 			[/* method description */
 				[/* text */ 't', `Returns a `],
@@ -155,73 +287,49 @@ DocsCollector.collect('java.util.UUID', [
 				[/* inline code block */ 'i', `UUID`]
 			]
 		]],
-		[/* method */ 'version()', [
+		[/* method */ 'getLeastSignificantBits()', [
 			[/* method description */
-				[/* text */ 't', `The version number associated with this `],
-				[/* inline code block */ 'i', `UUID`],
-				[/* text */ 't', `.  The version
- number describes how this `],
-				[/* inline code block */ 'i', `UUID`],
-				[/* text */ 't', ` was generated.
-
- The version number has the following meaning:
- `],
-				[/* list */ 'l', [
-					[/* block */ 'b', `1    Time-based UUID
- `],
-					[/* block */ 'b', `2    DCE security UUID
- `],
-					[/* block */ 'b', `3    Name-based UUID
- `],
-					[/* block */ 'b', `4    Randomly generated UUID
- `]
-				]]
+				[/* text */ 't', `Returns the least significant 64 bits of this UUID's 128 bit value.`]
 			],
 			/* parameters */ UDF,
 			/* throws */ UDF,
 			[/* return description */
-				[/* text */ 't', `The version number of this `],
-				[/* inline code block */ 'i', `UUID`]
+				[/* text */ 't', `The least significant 64 bits of this UUID's 128 bit value`]
 			]
 		]],
-		[/* method */ 'hashCode()', [
+		[/* method */ 'getMostSignificantBits()', [
 			[/* method description */
-				[/* text */ 't', `Returns a hash code for this `],
-				[/* inline code block */ 'i', `UUID`],
-				[/* text */ 't', `.`]
+				[/* text */ 't', `Returns the most significant 64 bits of this UUID's 128 bit value.`]
 			],
 			/* parameters */ UDF,
 			/* throws */ UDF,
 			[/* return description */
-				[/* text */ 't', `A hash code value for this `],
-				[/* inline code block */ 'i', `UUID`]
+				[/* text */ 't', `The most significant 64 bits of this UUID's 128 bit value`]
 			]
 		]],
-		[/* method */ 'compareTo(java.util.UUID)', [
+		[/* method */ 'node()', [
 			[/* method description */
-				[/* text */ 't', `Compares this UUID with the specified UUID.
+				[/* text */ 't', `The node value associated with this UUID.
 
  `],
-				[/* block */ 'b', ` The first of two UUIDs is greater than the second if the most
- significant field in which the UUIDs differ is greater for the first
- UUID.`]
+				[/* block */ 'b', ` The 48 bit node value is constructed from the node field of this
+ UUID.  This field is intended to hold the IEEE 802 address of the machine
+ that generated this UUID to guarantee spatial uniqueness.
+
+ `],
+				[/* block */ 'b', ` The node value is only meaningful in a time-based UUID, which has
+ version type 1.  If this UUID is not a time-based UUID then this method
+ throws UnsupportedOperationException.`]
 			],
-			[/* parameters */
-				[/* parameter */ 'val', [/* parameter description */
-					[/* text */ 't', ``],
-					[/* inline code block */ 'i', `UUID`],
-					[/* text */ 't', ` to which this `],
-					[/* inline code block */ 'i', `UUID`],
-					[/* text */ 't', ` is to be compared`]
+			/* parameters */ UDF,
+			[/* throws */
+				[/* throw */ 'java.lang.UnsupportedOperationException', [/* throw description */
+					[/* text */ 't', `If this UUID is not a version 1 UUID`]
 				]]
 			],
-			/* throws */ UDF,
 			[/* return description */
-				[/* text */ 't', `-1, 0 or 1 as this `],
-				[/* inline code block */ 'i', `UUID`],
-				[/* text */ 't', ` is less than, equal to, or
-          greater than `],
-				[/* inline code block */ 'i', `val`]
+				[/* text */ 't', `The node value of this `],
+				[/* inline code block */ 'i', `UUID`]
 			]
 		]],
 		[/* method */ 'timestamp()', [
@@ -259,101 +367,6 @@ DocsCollector.collect('java.util.UUID', [
 				[/* text */ 't', `.`]
 			]
 		]],
-		[/* method */ 'node()', [
-			[/* method description */
-				[/* text */ 't', `The node value associated with this UUID.
-
- `],
-				[/* block */ 'b', ` The 48 bit node value is constructed from the node field of this
- UUID.  This field is intended to hold the IEEE 802 address of the machine
- that generated this UUID to guarantee spatial uniqueness.
-
- `],
-				[/* block */ 'b', ` The node value is only meaningful in a time-based UUID, which has
- version type 1.  If this UUID is not a time-based UUID then this method
- throws UnsupportedOperationException.`]
-			],
-			/* parameters */ UDF,
-			[/* throws */
-				[/* throw */ 'java.lang.UnsupportedOperationException', [/* throw description */
-					[/* text */ 't', `If this UUID is not a version 1 UUID`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `The node value of this `],
-				[/* inline code block */ 'i', `UUID`]
-			]
-		]],
-		[/* method */ 'variant()', [
-			[/* method description */
-				[/* text */ 't', `The variant number associated with this `],
-				[/* inline code block */ 'i', `UUID`],
-				[/* text */ 't', `.  The variant
- number describes the layout of the `],
-				[/* inline code block */ 'i', `UUID`],
-				[/* text */ 't', `.
-
- The variant number has the following meaning:
- `],
-				[/* list */ 'l', [
-					[/* block */ 'b', `0    Reserved for NCS backward compatibility
- `],
-					[/* block */ 'b', [
-						[/* text */ 't', `2    `],
-						[/* external link */ 'a', `http://www.ietf.org/rfc/rfc4122.txt`, `IETF RFC 4122`],
-						[/* text */ 't', `
- (Leach-Salz), used by this class
- `]
-					]],
-					[/* block */ 'b', `6    Reserved, Microsoft Corporation backward compatibility
- `],
-					[/* block */ 'b', `7    Reserved for future definition
- `]
-				]]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `The variant number of this `],
-				[/* inline code block */ 'i', `UUID`]
-			]
-		]],
-		[/* method */ 'randomUUID()', [
-			[/* method description */
-				[/* text */ 't', `Static factory to retrieve a type 4 (pseudo randomly generated) UUID.
-
- The `],
-				[/* inline code block */ 'i', `UUID`],
-				[/* text */ 't', ` is generated using a cryptographically strong pseudo
- random number generator.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `A randomly generated `],
-				[/* inline code block */ 'i', `UUID`]
-			]
-		]],
-		[/* method */ 'nameUUIDFromBytes(byte[])', [
-			[/* method description */
-				[/* text */ 't', `Static factory to retrieve a type 3 (name based) `],
-				[/* inline code block */ 'i', `UUID`],
-				[/* text */ 't', ` based on
- the specified byte array.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'name', [/* parameter description */
-					[/* text */ 't', `A byte array to be used to construct a `],
-					[/* inline code block */ 'i', `UUID`]
-				]]
-			],
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `A `],
-				[/* inline code block */ 'i', `UUID`],
-				[/* text */ 't', ` generated from the specified array`]
-			]
-		]],
 		[/* method */ 'fromString(java.lang.String)', [
 			[/* method description */
 				[/* text */ 't', `Creates a `],
@@ -382,52 +395,39 @@ DocsCollector.collect('java.util.UUID', [
 				[/* text */ 't', ` with the specified value`]
 			]
 		]],
-		[/* method */ 'getLeastSignificantBits()', [
+		[/* method */ 'nameUUIDFromBytes(byte[])', [
 			[/* method description */
-				[/* text */ 't', `Returns the least significant 64 bits of this UUID's 128 bit value.`]
+				[/* text */ 't', `Static factory to retrieve a type 3 (name based) `],
+				[/* inline code block */ 'i', `UUID`],
+				[/* text */ 't', ` based on
+ the specified byte array.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'name', [/* parameter description */
+					[/* text */ 't', `A byte array to be used to construct a `],
+					[/* inline code block */ 'i', `UUID`]
+				]]
+			],
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `A `],
+				[/* inline code block */ 'i', `UUID`],
+				[/* text */ 't', ` generated from the specified array`]
+			]
+		]],
+		[/* method */ 'randomUUID()', [
+			[/* method description */
+				[/* text */ 't', `Static factory to retrieve a type 4 (pseudo randomly generated) UUID.
+
+ The `],
+				[/* inline code block */ 'i', `UUID`],
+				[/* text */ 't', ` is generated using a cryptographically strong pseudo
+ random number generator.`]
 			],
 			/* parameters */ UDF,
 			/* throws */ UDF,
 			[/* return description */
-				[/* text */ 't', `The least significant 64 bits of this UUID's 128 bit value`]
-			]
-		]],
-		[/* method */ 'getMostSignificantBits()', [
-			[/* method description */
-				[/* text */ 't', `Returns the most significant 64 bits of this UUID's 128 bit value.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `The most significant 64 bits of this UUID's 128 bit value`]
-			]
-		]],
-		[/* method */ 'clockSequence()', [
-			[/* method description */
-				[/* text */ 't', `The clock sequence value associated with this UUID.
-
- `],
-				[/* block */ 'b', ` The 14 bit clock sequence value is constructed from the clock
- sequence field of this UUID.  The clock sequence field is used to
- guarantee temporal uniqueness in a time-based UUID.
-
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', ` The `],
-					[/* inline code block */ 'i', `clockSequence`],
-					[/* text */ 't', ` value is only meaningful in a time-based
- UUID, which has version type 1.  If this UUID is not a time-based UUID
- then this method throws UnsupportedOperationException.`]
-				]]
-			],
-			/* parameters */ UDF,
-			[/* throws */
-				[/* throw */ 'java.lang.UnsupportedOperationException', [/* throw description */
-					[/* text */ 't', `If this UUID is not a version 1 UUID`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `The clock sequence of this `],
+				[/* text */ 't', `A randomly generated `],
 				[/* inline code block */ 'i', `UUID`]
 			]
 		]]

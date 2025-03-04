@@ -748,6 +748,12 @@ JdkClassCreateHelper.class('java.lang.Thread', [
 		]
 	],
 	[/* declared fields */
+		[/* public static final int java.lang.Thread.MAX_PRIORITY */
+			/* name */ 'MAX_PRIORITY',
+			/* type */ 'int',
+			/* annotations */ UDF,
+			/* modifiers */ 25
+		],
 		[/* public static final int java.lang.Thread.MIN_PRIORITY */
 			/* name */ 'MIN_PRIORITY',
 			/* type */ 'int',
@@ -756,12 +762,6 @@ JdkClassCreateHelper.class('java.lang.Thread', [
 		],
 		[/* public static final int java.lang.Thread.NORM_PRIORITY */
 			/* name */ 'NORM_PRIORITY',
-			/* type */ 'int',
-			/* annotations */ UDF,
-			/* modifiers */ 25
-		],
-		[/* public static final int java.lang.Thread.MAX_PRIORITY */
-			/* name */ 'MAX_PRIORITY',
 			/* type */ 'int',
 			/* annotations */ UDF,
 			/* modifiers */ 25

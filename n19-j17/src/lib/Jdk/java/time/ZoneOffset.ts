@@ -325,8 +325,8 @@ JdkClassCreateHelper.class('java.time.ZoneOffset', [
 		]
 	],
 	[/* declared fields */
-		[/* public static final java.time.ZoneOffset java.time.ZoneOffset.UTC */
-			/* name */ 'UTC',
+		[/* public static final java.time.ZoneOffset java.time.ZoneOffset.MAX */
+			/* name */ 'MAX',
 			/* type */ 'java.time.ZoneOffset',
 			/* annotations */ UDF,
 			/* modifiers */ 25
@@ -337,8 +337,8 @@ JdkClassCreateHelper.class('java.time.ZoneOffset', [
 			/* annotations */ UDF,
 			/* modifiers */ 25
 		],
-		[/* public static final java.time.ZoneOffset java.time.ZoneOffset.MAX */
-			/* name */ 'MAX',
+		[/* public static final java.time.ZoneOffset java.time.ZoneOffset.UTC */
+			/* name */ 'UTC',
 			/* type */ 'java.time.ZoneOffset',
 			/* annotations */ UDF,
 			/* modifiers */ 25

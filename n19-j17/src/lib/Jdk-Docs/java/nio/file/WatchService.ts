@@ -123,6 +123,24 @@ DocsCollector.collect('java.nio.file.WatchService', [
 	/* fields */ UDF,
 	/* constructors */ UDF,
 	[/* methods */
+		[/* method */ 'poll()', [
+			[/* method description */
+				[/* text */ 't', `Retrieves and removes the next watch key, or `],
+				[/* inline code block */ 'i', `null`],
+				[/* text */ 't', ` if none are
+ present.`]
+			],
+			/* parameters */ UDF,
+			[/* throws */
+				[/* throw */ 'java.nio.file.ClosedWatchServiceException', [/* throw description */
+					[/* text */ 't', `if this watch service is closed`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `the next watch key, or `],
+				[/* inline code block */ 'i', `null`]
+			]
+		]],
 		[/* method */ 'poll(long,java.util.concurrent.TimeUnit)', [
 			[/* method description */
 				[/* text */ 't', `Retrieves and removes the next watch key, waiting if necessary up to the
@@ -153,22 +171,22 @@ DocsCollector.collect('java.nio.file.WatchService', [
 				[/* inline code block */ 'i', `null`]
 			]
 		]],
-		[/* method */ 'poll()', [
+		[/* method */ 'take()', [
 			[/* method description */
-				[/* text */ 't', `Retrieves and removes the next watch key, or `],
-				[/* inline code block */ 'i', `null`],
-				[/* text */ 't', ` if none are
- present.`]
+				[/* text */ 't', `Retrieves and removes next watch key, waiting if none are yet present.`]
 			],
 			/* parameters */ UDF,
 			[/* throws */
 				[/* throw */ 'java.nio.file.ClosedWatchServiceException', [/* throw description */
-					[/* text */ 't', `if this watch service is closed`]
+					[/* text */ 't', `if this watch service is closed, or it is closed while waiting
+          for the next key`]
+				]],
+				[/* throw */ 'java.lang.InterruptedException', [/* throw description */
+					[/* text */ 't', `if interrupted while waiting`]
 				]]
 			],
 			[/* return description */
-				[/* text */ 't', `the next watch key, or `],
-				[/* inline code block */ 'i', `null`]
+				[/* text */ 't', `the next watch key`]
 			]
 		]],
 		[/* method */ 'close()', [
@@ -207,24 +225,6 @@ DocsCollector.collect('java.nio.file.WatchService', [
 				]]
 			],
 			/* return */ UDF
-		]],
-		[/* method */ 'take()', [
-			[/* method description */
-				[/* text */ 't', `Retrieves and removes next watch key, waiting if none are yet present.`]
-			],
-			/* parameters */ UDF,
-			[/* throws */
-				[/* throw */ 'java.nio.file.ClosedWatchServiceException', [/* throw description */
-					[/* text */ 't', `if this watch service is closed, or it is closed while waiting
-          for the next key`]
-				]],
-				[/* throw */ 'java.lang.InterruptedException', [/* throw description */
-					[/* text */ 't', `if interrupted while waiting`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `the next watch key`]
-			]
 		]]
 	],
 ]);

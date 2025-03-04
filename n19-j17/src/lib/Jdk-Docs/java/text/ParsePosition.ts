@@ -60,24 +60,15 @@ DocsCollector.collect('java.text.ParsePosition', [
 				[/* text */ 't', ` otherwise.`]
 			]
 		]],
-		[/* method */ 'toString()', [
+		[/* method */ 'getErrorIndex()', [
 			[/* method description */
-				[/* text */ 't', `Return a string representation of this ParsePosition.`]
+				[/* text */ 't', `Retrieve the index at which an error occurred, or -1 if the
+ error index has not been set.`]
 			],
 			/* parameters */ UDF,
 			/* throws */ UDF,
 			[/* return description */
-				[/* text */ 't', `a string representation of this object`]
-			]
-		]],
-		[/* method */ 'hashCode()', [
-			[/* method description */
-				[/* text */ 't', `Returns a hash code for this ParsePosition.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `a hash code value for this object`]
+				[/* text */ 't', `the index at which an error occurred`]
 			]
 		]],
 		[/* method */ 'getIndex()', [
@@ -92,15 +83,24 @@ DocsCollector.collect('java.text.ParsePosition', [
 				[/* text */ 't', `the current parse position`]
 			]
 		]],
-		[/* method */ 'getErrorIndex()', [
+		[/* method */ 'hashCode()', [
 			[/* method description */
-				[/* text */ 't', `Retrieve the index at which an error occurred, or -1 if the
- error index has not been set.`]
+				[/* text */ 't', `Returns a hash code for this ParsePosition.`]
 			],
 			/* parameters */ UDF,
 			/* throws */ UDF,
 			[/* return description */
-				[/* text */ 't', `the index at which an error occurred`]
+				[/* text */ 't', `a hash code value for this object`]
+			]
+		]],
+		[/* method */ 'toString()', [
+			[/* method description */
+				[/* text */ 't', `Return a string representation of this ParsePosition.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `a string representation of this object`]
 			]
 		]],
 		[/* method */ 'setErrorIndex(int)', [

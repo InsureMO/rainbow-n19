@@ -687,12 +687,6 @@ JdkClassCreateHelper.class('java.util.SimpleTimeZone', [
 		]
 	],
 	[/* declared fields */
-		[/* public static final int java.util.SimpleTimeZone.WALL_TIME */
-			/* name */ 'WALL_TIME',
-			/* type */ 'int',
-			/* annotations */ UDF,
-			/* modifiers */ 25
-		],
 		[/* public static final int java.util.SimpleTimeZone.STANDARD_TIME */
 			/* name */ 'STANDARD_TIME',
 			/* type */ 'int',
@@ -701,6 +695,12 @@ JdkClassCreateHelper.class('java.util.SimpleTimeZone', [
 		],
 		[/* public static final int java.util.SimpleTimeZone.UTC_TIME */
 			/* name */ 'UTC_TIME',
+			/* type */ 'int',
+			/* annotations */ UDF,
+			/* modifiers */ 25
+		],
+		[/* public static final int java.util.SimpleTimeZone.WALL_TIME */
+			/* name */ 'WALL_TIME',
 			/* type */ 'int',
 			/* annotations */ UDF,
 			/* modifiers */ 25

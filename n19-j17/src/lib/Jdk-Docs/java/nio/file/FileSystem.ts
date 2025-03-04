@@ -174,56 +174,161 @@ DocsCollector.collect('java.nio.file.FileSystem', [
 				[/* text */ 't', ` if, and only if, this file system is open`]
 			]
 		]],
-		[/* method */ 'provider()', [
+		[/* method */ 'isReadOnly()', [
 			[/* method description */
-				[/* text */ 't', `Returns the provider that created this file system.`]
+				[/* text */ 't', `Tells whether or not this file system allows only read-only access to
+ its file stores.`]
 			],
 			/* parameters */ UDF,
 			/* throws */ UDF,
 			[/* return description */
-				[/* text */ 't', `The provider that created this file system.`]
+				[/* inline code block */ 'i', `true`],
+				[/* text */ 't', ` if, and only if, this file system provides
+          read-only access`]
 			]
 		]],
-		[/* method */ 'close()', [
+		[/* method */ 'getFileStores()', [
 			[/* method description */
-				[/* text */ 't', `Closes this file system.
+				[/* text */ 't', `Returns an object to iterate over the underlying file stores.
 
  `],
 				[/* block */ 'b', [
-					[/* text */ 't', ` After a file system is closed then all subsequent access to the file
- system, either by methods defined by this class or on objects associated
- with this file system, throw `],
-					[/* reference */ 'r', `java.nio.file.ClosedFileSystemException`],
-					[/* text */ 't', `. If the
- file system is already closed then invoking this method has no effect.
+					[/* text */ 't', ` The elements of the returned iterator are the `],
+					[/* reference */ 'r', `java.nio.file.FileStore`],
+					[/* text */ 't', ` for this file system. The order of the elements is
+ not defined and the file stores may change during the lifetime of the
+ Java virtual machine. When an I/O error occurs, perhaps because a file
+ store is not accessible, then it is not returned by the iterator.
 
  `]
 				]],
 				[/* block */ 'b', [
-					[/* text */ 't', ` Closing a file system will close all open `],
-					[/* reference */ 'r', `java.nio.channels.Channel`],
-					[/* text */ 't', `, `],
-					[/* reference */ 'r', `java.nio.file.DirectoryStream`],
-					[/* text */ 't', `,
+					[/* text */ 't', ` In the case of the default provider, and a security manager is
+ installed, the security manager is invoked to check `],
+					[/* reference */ 'r', `java.lang.RuntimePermission`],
+					[/* inline code block */ 'i', `("getFileStoreAttributes")`],
+					[/* text */ 't', `. If denied, then
+ no file stores are returned by the iterator. In addition, the security
+ manager's `],
+					[/* reference */ 'r', `java.nio.SecurityManager#checkRead(java.lang.String)`],
+					[/* text */ 't', ` method is invoked to
+ check read access to the file store's `],
+					[/* text */ 't', `top-most`],
+					[/* text */ 't', ` directory. If
+ denied, the file store is not returned by the iterator. It is system
+ dependent if the permission checks are done when the iterator is obtained
+ or during iteration.
+
+ `]
+				]],
+				[/* block */ 'b', `Usage Example:`],
+				[/* code block */ 'c', `     for (FileStore store: FileSystems.getDefault().getFileStores()) {
+         long total = store.getTotalSpace() / 1024;
+         long used = (store.getTotalSpace() - store.getUnallocatedSpace()) / 1024;
+         long avail = store.getUsableSpace() / 1024;
+         System.out.format("%-20s %12d %12d %12d%n", store, total, used, avail);
+     }
  `],
-					[/* reference */ 'r', `java.nio.file.WatchService`],
-					[/* text */ 't', `, and other closeable objects associated
- with this file system. The `],
-					[/* reference */ 'r', `.FileSystems#getDefault()`],
-					[/* text */ 't', ` file
- system cannot be closed.`]
+				[/* block */ 'b', '']
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `An object to iterate over the backing file stores`]
+			]
+		]],
+		[/* method */ 'getRootDirectories()', [
+			[/* method description */
+				[/* text */ 't', `Returns an object to iterate over the paths of the root directories.
+
+ `],
+				[/* block */ 'b', ` A file system provides access to a file store that may be composed
+ of a number of distinct file hierarchies, each with its own top-level
+ root directory. Unless denied by the security manager, each element in
+ the returned iterator corresponds to the root directory of a distinct
+ file hierarchy. The order of the elements is not defined. The file
+ hierarchies may change during the lifetime of the Java virtual machine.
+ For example, in some implementations, the insertion of removable media
+ may result in the creation of a new file hierarchy with its own
+ top-level directory.
+
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', ` When a security manager is installed, it is invoked to check access
+ to the each root directory. If denied, the root directory is not returned
+ by the iterator. In the case of the default provider, the `],
+					[/* reference */ 'r', `java.nio.SecurityManager#checkRead(java.lang.String)`],
+					[/* text */ 't', ` method is invoked to check read access
+ to each root directory. It is system dependent if the permission checks
+ are done when the iterator is obtained or during iteration.`]
 				]]
 			],
 			/* parameters */ UDF,
-			[/* throws */
-				[/* throw */ 'java.io.IOException', [/* throw description */
-					[/* text */ 't', `If an I/O error occurs`]
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `An object to iterate over the root directories`]
+			]
+		]],
+		[/* method */ 'getSeparator()', [
+			[/* method description */
+				[/* text */ 't', `Returns the name separator, represented as a string.
+
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', ` The name separator is used to separate names in a path string. An
+ implementation may support multiple name separators in which case this
+ method returns an implementation specific `],
+					[/* text */ 't', `default`],
+					[/* text */ 't', ` name separator.
+ This separator is used when creating path strings by invoking the `],
+					[/* reference */ 'r', `.Path#toString()`],
+					[/* text */ 't', ` method.
+
+ `]
 				]],
-				[/* throw */ 'java.lang.UnsupportedOperationException', [/* throw description */
-					[/* text */ 't', `Thrown in the case of the default file system`]
+				[/* block */ 'b', [
+					[/* text */ 't', ` In the case of the default provider, this method returns the same
+ separator as `],
+					[/* reference */ 'r', `java.nio.File#separator`],
+					[/* text */ 't', `.`]
 				]]
 			],
-			/* return */ UDF
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `The name separator`]
+			]
+		]],
+		[/* method */ 'getUserPrincipalLookupService()', [
+			[/* method description */
+				[/* text */ 't', `Returns the `],
+				[/* inline code block */ 'i', `UserPrincipalLookupService`],
+				[/* text */ 't', ` for this file system
+ `],
+				[/* text */ 't', `(optional operation)`],
+				[/* text */ 't', `. The resulting lookup service may be used to
+ lookup user or group names.
+
+ `],
+				[/* block */ 'b', `Usage Example:`],
+				[/* code block */ 'c', `     UserPrincipalLookupService lookupService = FileSystems.getDefault().getUserPrincipalLookupService();
+     Files.setOwner(path, lookupService.lookupPrincipalByName("joe"));
+ `],
+				[/* block */ 'b', '']
+			],
+			/* parameters */ UDF,
+			[/* throws */
+				[/* throw */ 'java.lang.UnsupportedOperationException', [/* throw description */
+					[/* text */ 't', `If this `],
+					[/* inline code block */ 'i', `FileSystem`],
+					[/* text */ 't', ` does not does have a lookup service`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `The `],
+				[/* inline code block */ 'i', `UserPrincipalLookupService`],
+				[/* text */ 't', ` for this file system`]
+			]
 		]],
 		[/* method */ 'getPath(java.lang.String,java.lang.String...)', [
 			[/* method description */
@@ -327,166 +432,6 @@ DocsCollector.collect('java.nio.file.FileSystem', [
 			[/* return description */
 				[/* text */ 't', `the resulting `],
 				[/* inline code block */ 'i', `Path`]
-			]
-		]],
-		[/* method */ 'isReadOnly()', [
-			[/* method description */
-				[/* text */ 't', `Tells whether or not this file system allows only read-only access to
- its file stores.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* inline code block */ 'i', `true`],
-				[/* text */ 't', ` if, and only if, this file system provides
-          read-only access`]
-			]
-		]],
-		[/* method */ 'getSeparator()', [
-			[/* method description */
-				[/* text */ 't', `Returns the name separator, represented as a string.
-
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', ` The name separator is used to separate names in a path string. An
- implementation may support multiple name separators in which case this
- method returns an implementation specific `],
-					[/* text */ 't', `default`],
-					[/* text */ 't', ` name separator.
- This separator is used when creating path strings by invoking the `],
-					[/* reference */ 'r', `.Path#toString()`],
-					[/* text */ 't', ` method.
-
- `]
-				]],
-				[/* block */ 'b', [
-					[/* text */ 't', ` In the case of the default provider, this method returns the same
- separator as `],
-					[/* reference */ 'r', `java.nio.File#separator`],
-					[/* text */ 't', `.`]
-				]]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `The name separator`]
-			]
-		]],
-		[/* method */ 'getRootDirectories()', [
-			[/* method description */
-				[/* text */ 't', `Returns an object to iterate over the paths of the root directories.
-
- `],
-				[/* block */ 'b', ` A file system provides access to a file store that may be composed
- of a number of distinct file hierarchies, each with its own top-level
- root directory. Unless denied by the security manager, each element in
- the returned iterator corresponds to the root directory of a distinct
- file hierarchy. The order of the elements is not defined. The file
- hierarchies may change during the lifetime of the Java virtual machine.
- For example, in some implementations, the insertion of removable media
- may result in the creation of a new file hierarchy with its own
- top-level directory.
-
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', ` When a security manager is installed, it is invoked to check access
- to the each root directory. If denied, the root directory is not returned
- by the iterator. In the case of the default provider, the `],
-					[/* reference */ 'r', `java.nio.SecurityManager#checkRead(java.lang.String)`],
-					[/* text */ 't', ` method is invoked to check read access
- to each root directory. It is system dependent if the permission checks
- are done when the iterator is obtained or during iteration.`]
-				]]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `An object to iterate over the root directories`]
-			]
-		]],
-		[/* method */ 'getFileStores()', [
-			[/* method description */
-				[/* text */ 't', `Returns an object to iterate over the underlying file stores.
-
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', ` The elements of the returned iterator are the `],
-					[/* reference */ 'r', `java.nio.file.FileStore`],
-					[/* text */ 't', ` for this file system. The order of the elements is
- not defined and the file stores may change during the lifetime of the
- Java virtual machine. When an I/O error occurs, perhaps because a file
- store is not accessible, then it is not returned by the iterator.
-
- `]
-				]],
-				[/* block */ 'b', [
-					[/* text */ 't', ` In the case of the default provider, and a security manager is
- installed, the security manager is invoked to check `],
-					[/* reference */ 'r', `java.lang.RuntimePermission`],
-					[/* inline code block */ 'i', `("getFileStoreAttributes")`],
-					[/* text */ 't', `. If denied, then
- no file stores are returned by the iterator. In addition, the security
- manager's `],
-					[/* reference */ 'r', `java.nio.SecurityManager#checkRead(java.lang.String)`],
-					[/* text */ 't', ` method is invoked to
- check read access to the file store's `],
-					[/* text */ 't', `top-most`],
-					[/* text */ 't', ` directory. If
- denied, the file store is not returned by the iterator. It is system
- dependent if the permission checks are done when the iterator is obtained
- or during iteration.
-
- `]
-				]],
-				[/* block */ 'b', `Usage Example:`],
-				[/* code block */ 'c', `     for (FileStore store: FileSystems.getDefault().getFileStores()) {
-         long total = store.getTotalSpace() / 1024;
-         long used = (store.getTotalSpace() - store.getUnallocatedSpace()) / 1024;
-         long avail = store.getUsableSpace() / 1024;
-         System.out.format("%-20s %12d %12d %12d%n", store, total, used, avail);
-     }
- `],
-				[/* block */ 'b', '']
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `An object to iterate over the backing file stores`]
-			]
-		]],
-		[/* method */ 'supportedFileAttributeViews()', [
-			[/* method description */
-				[/* text */ 't', `Returns the set of the `],
-				[/* reference */ 'r', `.AttributeView#name()`],
-				[/* text */ 't', ` of the file
- attribute views supported by this `],
-				[/* inline code block */ 'i', `FileSystem`],
-				[/* text */ 't', `.
-
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', ` The `],
-					[/* reference */ 'r', `java.nio.file.attribute.BasicFileAttributeView`],
-					[/* text */ 't', ` is required to be supported and
- therefore the set contains at least one element, "basic".
-
- `]
-				]],
-				[/* block */ 'b', [
-					[/* text */ 't', ` The `],
-					[/* reference */ 'r', `.FileStore#supportsFileAttributeView(java.lang.String)`],
-					[/* text */ 't', ` method may be used to test if an
- underlying `],
-					[/* reference */ 'r', `java.nio.file.FileStore`],
-					[/* text */ 't', ` supports the file attributes identified by a
- file attribute view.`]
-				]]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `An unmodifiable set of the names of the supported file attribute
-          views`]
 			]
 		]],
 		[/* method */ 'getPathMatcher(java.lang.String)', [
@@ -847,35 +792,14 @@ DocsCollector.collect('java.nio.file.FileSystem', [
 				[/* text */ 't', `A path matcher that may be used to match paths against the pattern`]
 			]
 		]],
-		[/* method */ 'getUserPrincipalLookupService()', [
+		[/* method */ 'provider()', [
 			[/* method description */
-				[/* text */ 't', `Returns the `],
-				[/* inline code block */ 'i', `UserPrincipalLookupService`],
-				[/* text */ 't', ` for this file system
- `],
-				[/* text */ 't', `(optional operation)`],
-				[/* text */ 't', `. The resulting lookup service may be used to
- lookup user or group names.
-
- `],
-				[/* block */ 'b', `Usage Example:`],
-				[/* code block */ 'c', `     UserPrincipalLookupService lookupService = FileSystems.getDefault().getUserPrincipalLookupService();
-     Files.setOwner(path, lookupService.lookupPrincipalByName("joe"));
- `],
-				[/* block */ 'b', '']
+				[/* text */ 't', `Returns the provider that created this file system.`]
 			],
 			/* parameters */ UDF,
-			[/* throws */
-				[/* throw */ 'java.lang.UnsupportedOperationException', [/* throw description */
-					[/* text */ 't', `If this `],
-					[/* inline code block */ 'i', `FileSystem`],
-					[/* text */ 't', ` does not does have a lookup service`]
-				]]
-			],
+			/* throws */ UDF,
 			[/* return description */
-				[/* text */ 't', `The `],
-				[/* inline code block */ 'i', `UserPrincipalLookupService`],
-				[/* text */ 't', ` for this file system`]
+				[/* text */ 't', `The provider that created this file system.`]
 			]
 		]],
 		[/* method */ 'newWatchService()', [
@@ -907,6 +831,82 @@ DocsCollector.collect('java.nio.file.FileSystem', [
 			[/* return description */
 				[/* text */ 't', `a new watch service`]
 			]
+		]],
+		[/* method */ 'supportedFileAttributeViews()', [
+			[/* method description */
+				[/* text */ 't', `Returns the set of the `],
+				[/* reference */ 'r', `.AttributeView#name()`],
+				[/* text */ 't', ` of the file
+ attribute views supported by this `],
+				[/* inline code block */ 'i', `FileSystem`],
+				[/* text */ 't', `.
+
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', ` The `],
+					[/* reference */ 'r', `java.nio.file.attribute.BasicFileAttributeView`],
+					[/* text */ 't', ` is required to be supported and
+ therefore the set contains at least one element, "basic".
+
+ `]
+				]],
+				[/* block */ 'b', [
+					[/* text */ 't', ` The `],
+					[/* reference */ 'r', `.FileStore#supportsFileAttributeView(java.lang.String)`],
+					[/* text */ 't', ` method may be used to test if an
+ underlying `],
+					[/* reference */ 'r', `java.nio.file.FileStore`],
+					[/* text */ 't', ` supports the file attributes identified by a
+ file attribute view.`]
+				]]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `An unmodifiable set of the names of the supported file attribute
+          views`]
+			]
+		]],
+		[/* method */ 'close()', [
+			[/* method description */
+				[/* text */ 't', `Closes this file system.
+
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', ` After a file system is closed then all subsequent access to the file
+ system, either by methods defined by this class or on objects associated
+ with this file system, throw `],
+					[/* reference */ 'r', `java.nio.file.ClosedFileSystemException`],
+					[/* text */ 't', `. If the
+ file system is already closed then invoking this method has no effect.
+
+ `]
+				]],
+				[/* block */ 'b', [
+					[/* text */ 't', ` Closing a file system will close all open `],
+					[/* reference */ 'r', `java.nio.channels.Channel`],
+					[/* text */ 't', `, `],
+					[/* reference */ 'r', `java.nio.file.DirectoryStream`],
+					[/* text */ 't', `,
+ `],
+					[/* reference */ 'r', `java.nio.file.WatchService`],
+					[/* text */ 't', `, and other closeable objects associated
+ with this file system. The `],
+					[/* reference */ 'r', `.FileSystems#getDefault()`],
+					[/* text */ 't', ` file
+ system cannot be closed.`]
+				]]
+			],
+			/* parameters */ UDF,
+			[/* throws */
+				[/* throw */ 'java.io.IOException', [/* throw description */
+					[/* text */ 't', `If an I/O error occurs`]
+				]],
+				[/* throw */ 'java.lang.UnsupportedOperationException', [/* throw description */
+					[/* text */ 't', `Thrown in the case of the default file system`]
+				]]
+			],
+			/* return */ UDF
 		]]
 	],
 ]);

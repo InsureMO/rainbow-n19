@@ -17,21 +17,6 @@ DocsCollector.collect('java.util.InvalidPropertiesFormatException', [
 	],
 	/* fields */ UDF,
 	[/* constructors */
-		[/* constructor */ '<init>(java.lang.Throwable)', [
-			[/* constructor description */
-				[/* text */ 't', `Constructs an InvalidPropertiesFormatException with the specified
- cause.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'cause', [/* parameter description */
-					[/* text */ 't', `the cause (which is saved for later retrieval by the
-         `],
-					[/* reference */ 'r', `java.Throwable#getCause()`],
-					[/* text */ 't', ` method).`]
-				]]
-			],
-			/* throws */ UDF
-		]],
 		[/* constructor */ '<init>(java.lang.String)', [
 			[/* constructor description */
 				[/* text */ 't', `Constructs an InvalidPropertiesFormatException with the specified
@@ -43,6 +28,21 @@ DocsCollector.collect('java.util.InvalidPropertiesFormatException', [
           later retrieval by the `],
 					[/* reference */ 'r', `java.Throwable#getMessage()`],
 					[/* text */ 't', ` method.`]
+				]]
+			],
+			/* throws */ UDF
+		]],
+		[/* constructor */ '<init>(java.lang.Throwable)', [
+			[/* constructor description */
+				[/* text */ 't', `Constructs an InvalidPropertiesFormatException with the specified
+ cause.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'cause', [/* parameter description */
+					[/* text */ 't', `the cause (which is saved for later retrieval by the
+         `],
+					[/* reference */ 'r', `java.Throwable#getCause()`],
+					[/* text */ 't', ` method).`]
 				]]
 			],
 			/* throws */ UDF

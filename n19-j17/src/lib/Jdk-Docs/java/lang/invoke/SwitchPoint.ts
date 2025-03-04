@@ -138,36 +138,6 @@ DocsCollector.collect('java.lang.invoke.SwitchPoint', [
 		]]
 	],
 	[/* methods */
-		[/* method */ 'guardWithTest(java.lang.invoke.MethodHandle,java.lang.invoke.MethodHandle)', [
-			[/* method description */
-				[/* text */ 't', `Returns a method handle which always delegates either to the target or the fallback.
- The method handle will delegate to the target exactly as long as the switch point is valid.
- After that, it will permanently delegate to the fallback.
- `],
-				[/* block */ 'b', `
- The target and fallback must be of exactly the same method type,
- and the resulting combined method handle will also be of this type.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'target', [/* parameter description */
-					[/* text */ 't', `the method handle selected by the switch point as long as it is valid`]
-				]],
-				[/* parameter */ 'fallback', [/* parameter description */
-					[/* text */ 't', `the method handle selected by the switch point after it is invalidated`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
-					[/* text */ 't', `if either argument is null`]
-				]],
-				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
-					[/* text */ 't', `if the two method types do not match`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `a combined method handle which always calls either the target or fallback`]
-			]
-		]],
 		[/* method */ 'hasBeenInvalidated()', [
 			[/* method description */
 				[/* text */ 't', `Determines if this switch point has been invalidated yet.
@@ -208,6 +178,36 @@ DocsCollector.collect('java.lang.invoke.SwitchPoint', [
 			/* throws */ UDF,
 			[/* return description */
 				[/* text */ 't', `true if this switch point has been invalidated`]
+			]
+		]],
+		[/* method */ 'guardWithTest(java.lang.invoke.MethodHandle,java.lang.invoke.MethodHandle)', [
+			[/* method description */
+				[/* text */ 't', `Returns a method handle which always delegates either to the target or the fallback.
+ The method handle will delegate to the target exactly as long as the switch point is valid.
+ After that, it will permanently delegate to the fallback.
+ `],
+				[/* block */ 'b', `
+ The target and fallback must be of exactly the same method type,
+ and the resulting combined method handle will also be of this type.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'target', [/* parameter description */
+					[/* text */ 't', `the method handle selected by the switch point as long as it is valid`]
+				]],
+				[/* parameter */ 'fallback', [/* parameter description */
+					[/* text */ 't', `the method handle selected by the switch point after it is invalidated`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
+					[/* text */ 't', `if either argument is null`]
+				]],
+				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
+					[/* text */ 't', `if the two method types do not match`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `a combined method handle which always calls either the target or fallback`]
 			]
 		]],
 		[/* method */ 'invalidateAll(java.lang.invoke.SwitchPoint[])', [

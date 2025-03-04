@@ -557,14 +557,8 @@ JdkClassCreateHelper.class('java.time.format.DateTimeFormatter', [
 		]
 	],
 	[/* declared fields */
-		[/* public static final java.time.format.DateTimeFormatter java.time.format.DateTimeFormatter.ISO_LOCAL_DATE */
-			/* name */ 'ISO_LOCAL_DATE',
-			/* type */ 'java.time.format.DateTimeFormatter',
-			/* annotations */ UDF,
-			/* modifiers */ 25
-		],
-		[/* public static final java.time.format.DateTimeFormatter java.time.format.DateTimeFormatter.ISO_OFFSET_DATE */
-			/* name */ 'ISO_OFFSET_DATE',
+		[/* public static final java.time.format.DateTimeFormatter java.time.format.DateTimeFormatter.BASIC_ISO_DATE */
+			/* name */ 'BASIC_ISO_DATE',
 			/* type */ 'java.time.format.DateTimeFormatter',
 			/* annotations */ UDF,
 			/* modifiers */ 25
@@ -575,56 +569,8 @@ JdkClassCreateHelper.class('java.time.format.DateTimeFormatter', [
 			/* annotations */ UDF,
 			/* modifiers */ 25
 		],
-		[/* public static final java.time.format.DateTimeFormatter java.time.format.DateTimeFormatter.ISO_LOCAL_TIME */
-			/* name */ 'ISO_LOCAL_TIME',
-			/* type */ 'java.time.format.DateTimeFormatter',
-			/* annotations */ UDF,
-			/* modifiers */ 25
-		],
-		[/* public static final java.time.format.DateTimeFormatter java.time.format.DateTimeFormatter.ISO_OFFSET_TIME */
-			/* name */ 'ISO_OFFSET_TIME',
-			/* type */ 'java.time.format.DateTimeFormatter',
-			/* annotations */ UDF,
-			/* modifiers */ 25
-		],
-		[/* public static final java.time.format.DateTimeFormatter java.time.format.DateTimeFormatter.ISO_TIME */
-			/* name */ 'ISO_TIME',
-			/* type */ 'java.time.format.DateTimeFormatter',
-			/* annotations */ UDF,
-			/* modifiers */ 25
-		],
-		[/* public static final java.time.format.DateTimeFormatter java.time.format.DateTimeFormatter.ISO_LOCAL_DATE_TIME */
-			/* name */ 'ISO_LOCAL_DATE_TIME',
-			/* type */ 'java.time.format.DateTimeFormatter',
-			/* annotations */ UDF,
-			/* modifiers */ 25
-		],
-		[/* public static final java.time.format.DateTimeFormatter java.time.format.DateTimeFormatter.ISO_OFFSET_DATE_TIME */
-			/* name */ 'ISO_OFFSET_DATE_TIME',
-			/* type */ 'java.time.format.DateTimeFormatter',
-			/* annotations */ UDF,
-			/* modifiers */ 25
-		],
-		[/* public static final java.time.format.DateTimeFormatter java.time.format.DateTimeFormatter.ISO_ZONED_DATE_TIME */
-			/* name */ 'ISO_ZONED_DATE_TIME',
-			/* type */ 'java.time.format.DateTimeFormatter',
-			/* annotations */ UDF,
-			/* modifiers */ 25
-		],
 		[/* public static final java.time.format.DateTimeFormatter java.time.format.DateTimeFormatter.ISO_DATE_TIME */
 			/* name */ 'ISO_DATE_TIME',
-			/* type */ 'java.time.format.DateTimeFormatter',
-			/* annotations */ UDF,
-			/* modifiers */ 25
-		],
-		[/* public static final java.time.format.DateTimeFormatter java.time.format.DateTimeFormatter.ISO_ORDINAL_DATE */
-			/* name */ 'ISO_ORDINAL_DATE',
-			/* type */ 'java.time.format.DateTimeFormatter',
-			/* annotations */ UDF,
-			/* modifiers */ 25
-		],
-		[/* public static final java.time.format.DateTimeFormatter java.time.format.DateTimeFormatter.ISO_WEEK_DATE */
-			/* name */ 'ISO_WEEK_DATE',
 			/* type */ 'java.time.format.DateTimeFormatter',
 			/* annotations */ UDF,
 			/* modifiers */ 25
@@ -635,8 +581,62 @@ JdkClassCreateHelper.class('java.time.format.DateTimeFormatter', [
 			/* annotations */ UDF,
 			/* modifiers */ 25
 		],
-		[/* public static final java.time.format.DateTimeFormatter java.time.format.DateTimeFormatter.BASIC_ISO_DATE */
-			/* name */ 'BASIC_ISO_DATE',
+		[/* public static final java.time.format.DateTimeFormatter java.time.format.DateTimeFormatter.ISO_LOCAL_DATE */
+			/* name */ 'ISO_LOCAL_DATE',
+			/* type */ 'java.time.format.DateTimeFormatter',
+			/* annotations */ UDF,
+			/* modifiers */ 25
+		],
+		[/* public static final java.time.format.DateTimeFormatter java.time.format.DateTimeFormatter.ISO_LOCAL_DATE_TIME */
+			/* name */ 'ISO_LOCAL_DATE_TIME',
+			/* type */ 'java.time.format.DateTimeFormatter',
+			/* annotations */ UDF,
+			/* modifiers */ 25
+		],
+		[/* public static final java.time.format.DateTimeFormatter java.time.format.DateTimeFormatter.ISO_LOCAL_TIME */
+			/* name */ 'ISO_LOCAL_TIME',
+			/* type */ 'java.time.format.DateTimeFormatter',
+			/* annotations */ UDF,
+			/* modifiers */ 25
+		],
+		[/* public static final java.time.format.DateTimeFormatter java.time.format.DateTimeFormatter.ISO_OFFSET_DATE */
+			/* name */ 'ISO_OFFSET_DATE',
+			/* type */ 'java.time.format.DateTimeFormatter',
+			/* annotations */ UDF,
+			/* modifiers */ 25
+		],
+		[/* public static final java.time.format.DateTimeFormatter java.time.format.DateTimeFormatter.ISO_OFFSET_DATE_TIME */
+			/* name */ 'ISO_OFFSET_DATE_TIME',
+			/* type */ 'java.time.format.DateTimeFormatter',
+			/* annotations */ UDF,
+			/* modifiers */ 25
+		],
+		[/* public static final java.time.format.DateTimeFormatter java.time.format.DateTimeFormatter.ISO_OFFSET_TIME */
+			/* name */ 'ISO_OFFSET_TIME',
+			/* type */ 'java.time.format.DateTimeFormatter',
+			/* annotations */ UDF,
+			/* modifiers */ 25
+		],
+		[/* public static final java.time.format.DateTimeFormatter java.time.format.DateTimeFormatter.ISO_ORDINAL_DATE */
+			/* name */ 'ISO_ORDINAL_DATE',
+			/* type */ 'java.time.format.DateTimeFormatter',
+			/* annotations */ UDF,
+			/* modifiers */ 25
+		],
+		[/* public static final java.time.format.DateTimeFormatter java.time.format.DateTimeFormatter.ISO_TIME */
+			/* name */ 'ISO_TIME',
+			/* type */ 'java.time.format.DateTimeFormatter',
+			/* annotations */ UDF,
+			/* modifiers */ 25
+		],
+		[/* public static final java.time.format.DateTimeFormatter java.time.format.DateTimeFormatter.ISO_WEEK_DATE */
+			/* name */ 'ISO_WEEK_DATE',
+			/* type */ 'java.time.format.DateTimeFormatter',
+			/* annotations */ UDF,
+			/* modifiers */ 25
+		],
+		[/* public static final java.time.format.DateTimeFormatter java.time.format.DateTimeFormatter.ISO_ZONED_DATE_TIME */
+			/* name */ 'ISO_ZONED_DATE_TIME',
 			/* type */ 'java.time.format.DateTimeFormatter',
 			/* annotations */ UDF,
 			/* modifiers */ 25

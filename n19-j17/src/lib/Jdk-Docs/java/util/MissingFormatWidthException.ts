@@ -31,7 +31,6 @@ DocsCollector.collect('java.util.MissingFormatWidthException', [
 		]]
 	],
 	[/* methods */
-		[/* method */ 'getMessage()', UDF],
 		[/* method */ 'getFormatSpecifier()', [
 			[/* method description */
 				[/* text */ 't', `Returns the format specifier which does not have a width.`]
@@ -41,6 +40,7 @@ DocsCollector.collect('java.util.MissingFormatWidthException', [
 			[/* return description */
 				[/* text */ 't', `The format specifier which does not have a width`]
 			]
-		]]
+		]],
+		[/* method */ 'getMessage()', UDF]
 	],
 ]);

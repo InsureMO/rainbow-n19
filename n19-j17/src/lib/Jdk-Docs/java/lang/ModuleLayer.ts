@@ -188,52 +188,45 @@ DocsCollector.collect('java.lang.ModuleLayer', [
 	/* fields */ UDF,
 	/* constructors */ UDF,
 	[/* methods */
-		[/* method */ 'toString()', [
-			[/* method description */
-				[/* text */ 't', `Returns a string describing this module layer.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `A possibly empty string describing this module layer`]
-			]
-		]],
-		[/* method */ 'empty()', [
+		[/* method */ 'findLoader(java.lang.String)', [
 			[/* method description */
 				[/* text */ 't', `Returns the `],
-				[/* text */ 't', `empty`],
-				[/* text */ 't', ` layer. There are no modules in the empty
- layer. It has no parents.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `The empty layer`]
-			]
-		]],
-		[/* method */ 'boot()', [
-			[/* method description */
-				[/* text */ 't', `Returns the boot layer. The boot layer contains at least one module,
+				[/* inline code block */ 'i', `ClassLoader`],
+				[/* text */ 't', ` for the module with the given name. If
+ a module of the given name is not in this layer then the `],
+				[/* reference */ 'r', `#parents()`, `parent`],
+				[/* text */ 't', ` layers are searched in the manner specified by `],
+				[/* reference */ 'r', `#findModule(java.lang.String)`, `findModule`],
+				[/* text */ 't', `.
+
  `],
-				[/* inline code block */ 'i', `java.base`],
-				[/* text */ 't', `. Its parent is the `],
-				[/* reference */ 'r', `#empty()`, `empty`],
-				[/* text */ 't', ` layer.`]
+				[/* block */ 'b', [
+					[/* text */ 't', ` If there is a security manager then its `],
+					[/* inline code block */ 'i', `checkPermission`],
+					[/* text */ 't', `
+ method is called with a `],
+					[/* inline code block */ 'i', `RuntimePermission("getClassLoader")`],
+					[/* text */ 't', `
+ permission to check that the caller is allowed to get access to the
+ class loader. `]
+				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `The boot layer`]
-			]
-		]],
-		[/* method */ 'modules()', [
-			[/* method description */
-				[/* text */ 't', `Returns an unmodifiable set of the modules in this layer.`]
+			[/* parameters */
+				[/* parameter */ 'name', [/* parameter description */
+					[/* text */ 't', `The name of the module to find`]
+				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			[/* throws */
+				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
+					[/* text */ 't', `if a module of the given name is not
+         defined in this layer or any parent of this layer`]
+				]],
+				[/* throw */ 'java.lang.SecurityException', [/* throw description */
+					[/* text */ 't', `if denied by the security manager`]
+				]]
+			],
 			[/* return description */
-				[/* text */ 't', `A possibly-empty unmodifiable set of the modules in this layer`]
+				[/* text */ 't', `The ClassLoader that the module is defined to`]
 			]
 		]],
 		[/* method */ 'configuration()', [
@@ -244,49 +237,6 @@ DocsCollector.collect('java.lang.ModuleLayer', [
 			/* throws */ UDF,
 			[/* return description */
 				[/* text */ 't', `The configuration for this layer`]
-			]
-		]],
-		[/* method */ 'parents()', [
-			[/* method description */
-				[/* text */ 't', `Returns an unmodifiable list of this layer's parents, in search
- order. If this is the `],
-				[/* reference */ 'r', `#empty()`, `empty layer`],
-				[/* text */ 't', ` then an
- empty list is returned.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `A possibly-empty unmodifiable list of this layer's parents`]
-			]
-		]],
-		[/* method */ 'findModule(java.lang.String)', [
-			[/* method description */
-				[/* text */ 't', `Returns the module with the given name in this layer, or if not in this
- layer, the `],
-				[/* reference */ 'r', `#parents()`, `parent`],
-				[/* text */ 't', ` layers. Finding a module in
- parent layers is equivalent to invoking `],
-				[/* inline code block */ 'i', `findModule`],
-				[/* text */ 't', ` on each
- parent, in search order, until the module is found or all parents have
- been searched. In a `],
-				[/* text */ 't', `tree of layers`],
-				[/* text */ 't', `  then this is equivalent to
- a depth-first search.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'name', [/* parameter description */
-					[/* text */ 't', `The name of the module to find`]
-				]]
-			],
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `The module with the given name or an empty `],
-				[/* inline code block */ 'i', `Optional`],
-				[/* text */ 't', `
-         if there isn't a module with this name in this layer or any
-         parent layer`]
 			]
 		]],
 		[/* method */ 'defineModules(java.lang.module.Configuration,java.util.function.Function)', [
@@ -338,6 +288,217 @@ DocsCollector.collect('java.lang.ModuleLayer', [
 			],
 			[/* return description */
 				[/* text */ 't', `The newly created layer`]
+			]
+		]],
+		[/* method */ 'defineModulesWithManyLoaders(java.lang.module.Configuration,java.lang.ClassLoader)', [
+			[/* method description */
+				[/* text */ 't', `Creates a new module layer, with this layer as its parent, by defining the
+ modules in the given `],
+				[/* inline code block */ 'i', `Configuration`],
+				[/* text */ 't', ` to the Java virtual machine.
+ Each module is defined to its own `],
+				[/* reference */ 'r', `java.lang.ClassLoader`],
+				[/* text */ 't', ` created by this
+ method. The `],
+				[/* reference */ 'r', `.ClassLoader#getParent()`],
+				[/* text */ 't', ` of each class loader
+ is the given parent class loader. This method works exactly as specified
+ by the static `],
+				[/* reference */ 'r', `#defineModulesWithManyLoaders(java.lang.module.Configuration,java.util.List,java.lang.ClassLoader)`, `defineModulesWithManyLoaders`],
+				[/* text */ 't', ` method when invoked with this layer as the
+ parent. In other words, if this layer is `],
+				[/* inline code block */ 'i', `thisLayer`],
+				[/* text */ 't', ` then this
+ method is equivalent to invoking:
+ `],
+				[/* code block */ 'c', [
+					[/* inline code block */ 'i', `ModuleLayer.defineModulesWithManyLoaders(cf, List.of(thisLayer), parentLoader).layer();`]
+				]]
+			],
+			[/* parameters */
+				[/* parameter */ 'cf', [/* parameter description */
+					[/* text */ 't', `The configuration for the layer`]
+				]],
+				[/* parameter */ 'parentLoader', [/* parameter description */
+					[/* text */ 't', `The parent class loader for each of the class loaders created by
+         this method; may be `],
+					[/* inline code block */ 'i', `null`],
+					[/* text */ 't', ` for the bootstrap class loader`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
+					[/* text */ 't', `If the given configuration has more than one parent or the parent
+         of the configuration is not the configuration for this layer`]
+				]],
+				[/* throw */ 'java.lang.LayerInstantiationException', [/* throw description */
+					[/* text */ 't', `If the layer cannot be created for any of the reasons specified
+         by the static `],
+					[/* inline code block */ 'i', `defineModulesWithManyLoaders`],
+					[/* text */ 't', ` method`]
+				]],
+				[/* throw */ 'java.lang.SecurityException', [/* throw description */
+					[/* text */ 't', `If `],
+					[/* inline code block */ 'i', `RuntimePermission("createClassLoader")`],
+					[/* text */ 't', ` or
+         `],
+					[/* inline code block */ 'i', `RuntimePermission("getClassLoader")`],
+					[/* text */ 't', ` is denied by
+         the security manager`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `The newly created layer`]
+			]
+		]],
+		[/* method */ 'defineModulesWithOneLoader(java.lang.module.Configuration,java.lang.ClassLoader)', [
+			[/* method description */
+				[/* text */ 't', `Creates a new module layer, with this layer as its parent, by defining the
+ modules in the given `],
+				[/* inline code block */ 'i', `Configuration`],
+				[/* text */ 't', ` to the Java virtual machine.
+ This method creates one class loader and defines all modules to that
+ class loader. The `],
+				[/* reference */ 'r', `.ClassLoader#getParent()`],
+				[/* text */ 't', ` of each class
+ loader is the given parent class loader. This method works exactly as
+ specified by the static `],
+				[/* reference */ 'r', `#defineModulesWithOneLoader(java.lang.module.Configuration,java.util.List,java.lang.ClassLoader)`, `defineModulesWithOneLoader`],
+				[/* text */ 't', ` method when invoked with this layer as the
+ parent. In other words, if this layer is `],
+				[/* inline code block */ 'i', `thisLayer`],
+				[/* text */ 't', ` then this
+ method is equivalent to invoking:
+ `],
+				[/* code block */ 'c', [
+					[/* inline code block */ 'i', `ModuleLayer.defineModulesWithOneLoader(cf, List.of(thisLayer), parentLoader).layer();`]
+				]]
+			],
+			[/* parameters */
+				[/* parameter */ 'cf', [/* parameter description */
+					[/* text */ 't', `The configuration for the layer`]
+				]],
+				[/* parameter */ 'parentLoader', [/* parameter description */
+					[/* text */ 't', `The parent class loader for the class loader created by this
+         method; may be `],
+					[/* inline code block */ 'i', `null`],
+					[/* text */ 't', ` for the bootstrap class loader`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
+					[/* text */ 't', `If the given configuration has more than one parent or the parent
+         of the configuration is not the configuration for this layer`]
+				]],
+				[/* throw */ 'java.lang.LayerInstantiationException', [/* throw description */
+					[/* text */ 't', `If the layer cannot be created for any of the reasons specified
+         by the static `],
+					[/* inline code block */ 'i', `defineModulesWithOneLoader`],
+					[/* text */ 't', ` method`]
+				]],
+				[/* throw */ 'java.lang.SecurityException', [/* throw description */
+					[/* text */ 't', `If `],
+					[/* inline code block */ 'i', `RuntimePermission("createClassLoader")`],
+					[/* text */ 't', ` or
+         `],
+					[/* inline code block */ 'i', `RuntimePermission("getClassLoader")`],
+					[/* text */ 't', ` is denied by
+         the security manager`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `The newly created layer`]
+			]
+		]],
+		[/* method */ 'toString()', [
+			[/* method description */
+				[/* text */ 't', `Returns a string describing this module layer.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `A possibly empty string describing this module layer`]
+			]
+		]],
+		[/* method */ 'parents()', [
+			[/* method description */
+				[/* text */ 't', `Returns an unmodifiable list of this layer's parents, in search
+ order. If this is the `],
+				[/* reference */ 'r', `#empty()`, `empty layer`],
+				[/* text */ 't', ` then an
+ empty list is returned.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `A possibly-empty unmodifiable list of this layer's parents`]
+			]
+		]],
+		[/* method */ 'findModule(java.lang.String)', [
+			[/* method description */
+				[/* text */ 't', `Returns the module with the given name in this layer, or if not in this
+ layer, the `],
+				[/* reference */ 'r', `#parents()`, `parent`],
+				[/* text */ 't', ` layers. Finding a module in
+ parent layers is equivalent to invoking `],
+				[/* inline code block */ 'i', `findModule`],
+				[/* text */ 't', ` on each
+ parent, in search order, until the module is found or all parents have
+ been searched. In a `],
+				[/* text */ 't', `tree of layers`],
+				[/* text */ 't', `  then this is equivalent to
+ a depth-first search.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'name', [/* parameter description */
+					[/* text */ 't', `The name of the module to find`]
+				]]
+			],
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `The module with the given name or an empty `],
+				[/* inline code block */ 'i', `Optional`],
+				[/* text */ 't', `
+         if there isn't a module with this name in this layer or any
+         parent layer`]
+			]
+		]],
+		[/* method */ 'modules()', [
+			[/* method description */
+				[/* text */ 't', `Returns an unmodifiable set of the modules in this layer.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `A possibly-empty unmodifiable set of the modules in this layer`]
+			]
+		]],
+		[/* method */ 'boot()', [
+			[/* method description */
+				[/* text */ 't', `Returns the boot layer. The boot layer contains at least one module,
+ `],
+				[/* inline code block */ 'i', `java.base`],
+				[/* text */ 't', `. Its parent is the `],
+				[/* reference */ 'r', `#empty()`, `empty`],
+				[/* text */ 't', ` layer.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `The boot layer`]
+			]
+		]],
+		[/* method */ 'empty()', [
+			[/* method description */
+				[/* text */ 't', `Returns the `],
+				[/* text */ 't', `empty`],
+				[/* text */ 't', ` layer. There are no modules in the empty
+ layer. It has no parents.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `The empty layer`]
 			]
 		]],
 		[/* method */ 'defineModules(java.lang.module.Configuration,java.util.List,java.util.function.Function)', [
@@ -419,6 +580,99 @@ DocsCollector.collect('java.lang.ModuleLayer', [
 				]],
 				[/* throw */ 'java.lang.SecurityException', [/* throw description */
 					[/* text */ 't', `If `],
+					[/* inline code block */ 'i', `RuntimePermission("getClassLoader")`],
+					[/* text */ 't', ` is denied by
+         the security manager`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `A controller that controls the newly created layer`]
+			]
+		]],
+		[/* method */ 'defineModulesWithManyLoaders(java.lang.module.Configuration,java.util.List,java.lang.ClassLoader)', [
+			[/* method description */
+				[/* text */ 't', `Creates a new module layer by defining the modules in the given `],
+				[/* inline code block */ 'i', `Configuration`],
+				[/* text */ 't', ` to the Java virtual machine. Each module is defined to
+ its own `],
+				[/* reference */ 'r', `java.lang.ClassLoader`],
+				[/* text */ 't', ` created by this method. The `],
+				[/* reference */ 'r', `.ClassLoader#getParent()`],
+				[/* text */ 't', ` of each class loader is the given parent
+ class loader.
+
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', ` The class loaders created by this method implement `],
+					[/* text */ 't', `direct
+ delegation`],
+					[/* text */ 't', ` when loading classes from modules. If the `],
+					[/* reference */ 'r', `.ClassLoader#loadClass(java.lang.String,boolean)`],
+					[/* text */ 't', ` method is invoked to
+ load a class then it uses the package name of the class to map it to a
+ module. The package may be in the module defined to the class loader.
+ The package may be exported by another module in this layer to the
+ module defined to the class loader. It may be in a package exported by a
+ module in a parent layer. The class loader delegates to the class loader
+ of the module, throwing `],
+					[/* inline code block */ 'i', `ClassNotFoundException`],
+					[/* text */ 't', ` if not found by
+ that class loader. When `],
+					[/* inline code block */ 'i', `loadClass`],
+					[/* text */ 't', ` is invoked to load a class
+ that does not map to a module then it delegates to the parent class
+ loader. `]
+				]],
+				[/* block */ 'b', [
+					[/* text */ 't', ` The class loaders created by this method locate resources
+ (`],
+					[/* reference */ 'r', `.ClassLoader#getResource(java.lang.String)`],
+					[/* text */ 't', `, `],
+					[/* reference */ 'r', `.ClassLoader#getResources(java.lang.String)`],
+					[/* text */ 't', `, and other resource
+ methods) in the module defined to the class loader before searching
+ the parent class loader. `]
+				]],
+				[/* block */ 'b', ` If there is a security manager then the class loaders created by
+ this method will load classes and resources with privileges that are
+ restricted by the calling context of this method. `]
+			],
+			[/* parameters */
+				[/* parameter */ 'cf', [/* parameter description */
+					[/* text */ 't', `The configuration for the layer`]
+				]],
+				[/* parameter */ 'parentLayers', [/* parameter description */
+					[/* text */ 't', `The list of parent layers in search order`]
+				]],
+				[/* parameter */ 'parentLoader', [/* parameter description */
+					[/* text */ 't', `The parent class loader for each of the class loaders created by
+         this method; may be `],
+					[/* inline code block */ 'i', `null`],
+					[/* text */ 't', ` for the bootstrap class loader`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
+					[/* text */ 't', `If the parent(s) of the given configuration do not match the
+         configuration of the parent layers, including order`]
+				]],
+				[/* throw */ 'java.lang.LayerInstantiationException', [/* throw description */
+					[/* text */ 't', `If the layer cannot be created because the configuration contains
+         a module named "`],
+					[/* inline code block */ 'i', `java.base`],
+					[/* text */ 't', `" or a module contains a package
+         named "`],
+					[/* inline code block */ 'i', `java`],
+					[/* text */ 't', `" or a package with a name starting with
+         "`],
+					[/* inline code block */ 'i', `java.`],
+					[/* text */ 't', `"`]
+				]],
+				[/* throw */ 'java.lang.SecurityException', [/* throw description */
+					[/* text */ 't', `If `],
+					[/* inline code block */ 'i', `RuntimePermission("createClassLoader")`],
+					[/* text */ 't', ` or
+         `],
 					[/* inline code block */ 'i', `RuntimePermission("getClassLoader")`],
 					[/* text */ 't', ` is denied by
          the security manager`]
@@ -528,260 +782,6 @@ DocsCollector.collect('java.lang.ModuleLayer', [
 			],
 			[/* return description */
 				[/* text */ 't', `A controller that controls the newly created layer`]
-			]
-		]],
-		[/* method */ 'defineModulesWithOneLoader(java.lang.module.Configuration,java.lang.ClassLoader)', [
-			[/* method description */
-				[/* text */ 't', `Creates a new module layer, with this layer as its parent, by defining the
- modules in the given `],
-				[/* inline code block */ 'i', `Configuration`],
-				[/* text */ 't', ` to the Java virtual machine.
- This method creates one class loader and defines all modules to that
- class loader. The `],
-				[/* reference */ 'r', `.ClassLoader#getParent()`],
-				[/* text */ 't', ` of each class
- loader is the given parent class loader. This method works exactly as
- specified by the static `],
-				[/* reference */ 'r', `#defineModulesWithOneLoader(java.lang.module.Configuration,java.util.List,java.lang.ClassLoader)`, `defineModulesWithOneLoader`],
-				[/* text */ 't', ` method when invoked with this layer as the
- parent. In other words, if this layer is `],
-				[/* inline code block */ 'i', `thisLayer`],
-				[/* text */ 't', ` then this
- method is equivalent to invoking:
- `],
-				[/* code block */ 'c', [
-					[/* inline code block */ 'i', `ModuleLayer.defineModulesWithOneLoader(cf, List.of(thisLayer), parentLoader).layer();`]
-				]]
-			],
-			[/* parameters */
-				[/* parameter */ 'cf', [/* parameter description */
-					[/* text */ 't', `The configuration for the layer`]
-				]],
-				[/* parameter */ 'parentLoader', [/* parameter description */
-					[/* text */ 't', `The parent class loader for the class loader created by this
-         method; may be `],
-					[/* inline code block */ 'i', `null`],
-					[/* text */ 't', ` for the bootstrap class loader`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
-					[/* text */ 't', `If the given configuration has more than one parent or the parent
-         of the configuration is not the configuration for this layer`]
-				]],
-				[/* throw */ 'java.lang.LayerInstantiationException', [/* throw description */
-					[/* text */ 't', `If the layer cannot be created for any of the reasons specified
-         by the static `],
-					[/* inline code block */ 'i', `defineModulesWithOneLoader`],
-					[/* text */ 't', ` method`]
-				]],
-				[/* throw */ 'java.lang.SecurityException', [/* throw description */
-					[/* text */ 't', `If `],
-					[/* inline code block */ 'i', `RuntimePermission("createClassLoader")`],
-					[/* text */ 't', ` or
-         `],
-					[/* inline code block */ 'i', `RuntimePermission("getClassLoader")`],
-					[/* text */ 't', ` is denied by
-         the security manager`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `The newly created layer`]
-			]
-		]],
-		[/* method */ 'defineModulesWithManyLoaders(java.lang.module.Configuration,java.util.List,java.lang.ClassLoader)', [
-			[/* method description */
-				[/* text */ 't', `Creates a new module layer by defining the modules in the given `],
-				[/* inline code block */ 'i', `Configuration`],
-				[/* text */ 't', ` to the Java virtual machine. Each module is defined to
- its own `],
-				[/* reference */ 'r', `java.lang.ClassLoader`],
-				[/* text */ 't', ` created by this method. The `],
-				[/* reference */ 'r', `.ClassLoader#getParent()`],
-				[/* text */ 't', ` of each class loader is the given parent
- class loader.
-
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', ` The class loaders created by this method implement `],
-					[/* text */ 't', `direct
- delegation`],
-					[/* text */ 't', ` when loading classes from modules. If the `],
-					[/* reference */ 'r', `.ClassLoader#loadClass(java.lang.String,boolean)`],
-					[/* text */ 't', ` method is invoked to
- load a class then it uses the package name of the class to map it to a
- module. The package may be in the module defined to the class loader.
- The package may be exported by another module in this layer to the
- module defined to the class loader. It may be in a package exported by a
- module in a parent layer. The class loader delegates to the class loader
- of the module, throwing `],
-					[/* inline code block */ 'i', `ClassNotFoundException`],
-					[/* text */ 't', ` if not found by
- that class loader. When `],
-					[/* inline code block */ 'i', `loadClass`],
-					[/* text */ 't', ` is invoked to load a class
- that does not map to a module then it delegates to the parent class
- loader. `]
-				]],
-				[/* block */ 'b', [
-					[/* text */ 't', ` The class loaders created by this method locate resources
- (`],
-					[/* reference */ 'r', `.ClassLoader#getResource(java.lang.String)`],
-					[/* text */ 't', `, `],
-					[/* reference */ 'r', `.ClassLoader#getResources(java.lang.String)`],
-					[/* text */ 't', `, and other resource
- methods) in the module defined to the class loader before searching
- the parent class loader. `]
-				]],
-				[/* block */ 'b', ` If there is a security manager then the class loaders created by
- this method will load classes and resources with privileges that are
- restricted by the calling context of this method. `]
-			],
-			[/* parameters */
-				[/* parameter */ 'cf', [/* parameter description */
-					[/* text */ 't', `The configuration for the layer`]
-				]],
-				[/* parameter */ 'parentLayers', [/* parameter description */
-					[/* text */ 't', `The list of parent layers in search order`]
-				]],
-				[/* parameter */ 'parentLoader', [/* parameter description */
-					[/* text */ 't', `The parent class loader for each of the class loaders created by
-         this method; may be `],
-					[/* inline code block */ 'i', `null`],
-					[/* text */ 't', ` for the bootstrap class loader`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
-					[/* text */ 't', `If the parent(s) of the given configuration do not match the
-         configuration of the parent layers, including order`]
-				]],
-				[/* throw */ 'java.lang.LayerInstantiationException', [/* throw description */
-					[/* text */ 't', `If the layer cannot be created because the configuration contains
-         a module named "`],
-					[/* inline code block */ 'i', `java.base`],
-					[/* text */ 't', `" or a module contains a package
-         named "`],
-					[/* inline code block */ 'i', `java`],
-					[/* text */ 't', `" or a package with a name starting with
-         "`],
-					[/* inline code block */ 'i', `java.`],
-					[/* text */ 't', `"`]
-				]],
-				[/* throw */ 'java.lang.SecurityException', [/* throw description */
-					[/* text */ 't', `If `],
-					[/* inline code block */ 'i', `RuntimePermission("createClassLoader")`],
-					[/* text */ 't', ` or
-         `],
-					[/* inline code block */ 'i', `RuntimePermission("getClassLoader")`],
-					[/* text */ 't', ` is denied by
-         the security manager`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `A controller that controls the newly created layer`]
-			]
-		]],
-		[/* method */ 'defineModulesWithManyLoaders(java.lang.module.Configuration,java.lang.ClassLoader)', [
-			[/* method description */
-				[/* text */ 't', `Creates a new module layer, with this layer as its parent, by defining the
- modules in the given `],
-				[/* inline code block */ 'i', `Configuration`],
-				[/* text */ 't', ` to the Java virtual machine.
- Each module is defined to its own `],
-				[/* reference */ 'r', `java.lang.ClassLoader`],
-				[/* text */ 't', ` created by this
- method. The `],
-				[/* reference */ 'r', `.ClassLoader#getParent()`],
-				[/* text */ 't', ` of each class loader
- is the given parent class loader. This method works exactly as specified
- by the static `],
-				[/* reference */ 'r', `#defineModulesWithManyLoaders(java.lang.module.Configuration,java.util.List,java.lang.ClassLoader)`, `defineModulesWithManyLoaders`],
-				[/* text */ 't', ` method when invoked with this layer as the
- parent. In other words, if this layer is `],
-				[/* inline code block */ 'i', `thisLayer`],
-				[/* text */ 't', ` then this
- method is equivalent to invoking:
- `],
-				[/* code block */ 'c', [
-					[/* inline code block */ 'i', `ModuleLayer.defineModulesWithManyLoaders(cf, List.of(thisLayer), parentLoader).layer();`]
-				]]
-			],
-			[/* parameters */
-				[/* parameter */ 'cf', [/* parameter description */
-					[/* text */ 't', `The configuration for the layer`]
-				]],
-				[/* parameter */ 'parentLoader', [/* parameter description */
-					[/* text */ 't', `The parent class loader for each of the class loaders created by
-         this method; may be `],
-					[/* inline code block */ 'i', `null`],
-					[/* text */ 't', ` for the bootstrap class loader`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
-					[/* text */ 't', `If the given configuration has more than one parent or the parent
-         of the configuration is not the configuration for this layer`]
-				]],
-				[/* throw */ 'java.lang.LayerInstantiationException', [/* throw description */
-					[/* text */ 't', `If the layer cannot be created for any of the reasons specified
-         by the static `],
-					[/* inline code block */ 'i', `defineModulesWithManyLoaders`],
-					[/* text */ 't', ` method`]
-				]],
-				[/* throw */ 'java.lang.SecurityException', [/* throw description */
-					[/* text */ 't', `If `],
-					[/* inline code block */ 'i', `RuntimePermission("createClassLoader")`],
-					[/* text */ 't', ` or
-         `],
-					[/* inline code block */ 'i', `RuntimePermission("getClassLoader")`],
-					[/* text */ 't', ` is denied by
-         the security manager`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `The newly created layer`]
-			]
-		]],
-		[/* method */ 'findLoader(java.lang.String)', [
-			[/* method description */
-				[/* text */ 't', `Returns the `],
-				[/* inline code block */ 'i', `ClassLoader`],
-				[/* text */ 't', ` for the module with the given name. If
- a module of the given name is not in this layer then the `],
-				[/* reference */ 'r', `#parents()`, `parent`],
-				[/* text */ 't', ` layers are searched in the manner specified by `],
-				[/* reference */ 'r', `#findModule(java.lang.String)`, `findModule`],
-				[/* text */ 't', `.
-
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', ` If there is a security manager then its `],
-					[/* inline code block */ 'i', `checkPermission`],
-					[/* text */ 't', `
- method is called with a `],
-					[/* inline code block */ 'i', `RuntimePermission("getClassLoader")`],
-					[/* text */ 't', `
- permission to check that the caller is allowed to get access to the
- class loader. `]
-				]]
-			],
-			[/* parameters */
-				[/* parameter */ 'name', [/* parameter description */
-					[/* text */ 't', `The name of the module to find`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
-					[/* text */ 't', `if a module of the given name is not
-         defined in this layer or any parent of this layer`]
-				]],
-				[/* throw */ 'java.lang.SecurityException', [/* throw description */
-					[/* text */ 't', `if denied by the security manager`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `The ClassLoader that the module is defined to`]
 			]
 		]]
 	],

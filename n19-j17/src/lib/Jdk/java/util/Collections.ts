@@ -2691,12 +2691,6 @@ JdkClassCreateHelper.class('java.util.Collections', [
 		]
 	],
 	[/* declared fields */
-		[/* public static final java.util.Set java.util.Collections.EMPTY_SET */
-			/* name */ 'EMPTY_SET',
-			/* type */ 'java.util.Set',
-			/* annotations */ UDF,
-			/* modifiers */ 25
-		],
 		[/* public static final java.util.List java.util.Collections.EMPTY_LIST */
 			/* name */ 'EMPTY_LIST',
 			/* type */ 'java.util.List',
@@ -2706,6 +2700,12 @@ JdkClassCreateHelper.class('java.util.Collections', [
 		[/* public static final java.util.Map java.util.Collections.EMPTY_MAP */
 			/* name */ 'EMPTY_MAP',
 			/* type */ 'java.util.Map',
+			/* annotations */ UDF,
+			/* modifiers */ 25
+		],
+		[/* public static final java.util.Set java.util.Collections.EMPTY_SET */
+			/* name */ 'EMPTY_SET',
+			/* type */ 'java.util.Set',
 			/* annotations */ UDF,
 			/* modifiers */ 25
 		]

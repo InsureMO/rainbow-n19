@@ -243,6 +243,66 @@ DocsCollector.collect('java.time.ZoneId', [
 	],
 	/* constructors */ UDF,
 	[/* methods */
+		[/* method */ 'getId()', [
+			[/* method description */
+				[/* text */ 't', `Gets the unique time-zone ID.
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', `
+ This ID uniquely defines this object.
+ The format of an offset based ID is defined by `],
+					[/* reference */ 'r', `.ZoneOffset#getId()`],
+					[/* text */ 't', `.`]
+				]]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the time-zone unique ID, not null`]
+			]
+		]],
+		[/* method */ 'getRules()', [
+			[/* method description */
+				[/* text */ 't', `Gets the time-zone rules for this ID allowing calculations to be performed.
+ `],
+				[/* block */ 'b', `
+ The rules provide the functionality associated with a time-zone,
+ such as finding the offset for a given instant or local date-time.
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', `
+ A time-zone can be invalid if it is deserialized in a Java Runtime which
+ does not have the same rules loaded as the Java Runtime that stored it.
+ In this case, calling this method will throw a `],
+					[/* inline code block */ 'i', `ZoneRulesException`],
+					[/* text */ 't', `.
+ `]
+				]],
+				[/* block */ 'b', [
+					[/* text */ 't', `
+ The rules are supplied by `],
+					[/* reference */ 'r', `java.time.zone.ZoneRulesProvider`],
+					[/* text */ 't', `. An advanced provider may
+ support dynamic updates to the rules without restarting the Java Runtime.
+ If so, then the result of this method may change over time.
+ Each individual call will be still remain thread-safe.
+ `]
+				]],
+				[/* block */ 'b', [
+					[/* reference */ 'r', `java.time.ZoneOffset`],
+					[/* text */ 't', ` will always return a set of rules where the offset never changes.`]
+				]]
+			],
+			/* parameters */ UDF,
+			[/* throws */
+				[/* throw */ 'java.time.zone.ZoneRulesException', [/* throw description */
+					[/* text */ 't', `if no rules are available for this ID`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `the rules, not null`]
+			]
+		]],
 		[/* method */ 'equals(java.lang.Object)', [
 			[/* method description */
 				[/* text */ 't', `Checks if this time-zone ID is equal to another time-zone ID.
@@ -260,6 +320,46 @@ DocsCollector.collect('java.time.ZoneId', [
 				[/* text */ 't', `true if this is equal to the other time-zone ID`]
 			]
 		]],
+		[/* method */ 'hashCode()', [
+			[/* method description */
+				[/* text */ 't', `A hash code for this time-zone ID.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `a suitable hash code`]
+			]
+		]],
+		[/* method */ 'getDisplayName(java.time.format.TextStyle,java.util.Locale)', [
+			[/* method description */
+				[/* text */ 't', `Gets the textual representation of the zone, such as 'British Time' or
+ '+02:00'.
+ `],
+				[/* block */ 'b', `
+ This returns the textual name used to identify the time-zone ID,
+ suitable for presentation to the user.
+ The parameters control the style of the returned text and the locale.
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', `
+ If no textual mapping is found then the `],
+					[/* reference */ 'r', `#getId()`, `full ID`],
+					[/* text */ 't', ` is returned.`]
+				]]
+			],
+			[/* parameters */
+				[/* parameter */ 'style', [/* parameter description */
+					[/* text */ 't', `the length of the text required, not null`]
+				]],
+				[/* parameter */ 'locale', [/* parameter description */
+					[/* text */ 't', `the locale to use, not null`]
+				]]
+			],
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the text value of the zone, not null`]
+			]
+		]],
 		[/* method */ 'toString()', [
 			[/* method description */
 				[/* text */ 't', `Outputs this zone as a `],
@@ -272,44 +372,98 @@ DocsCollector.collect('java.time.ZoneId', [
 				[/* text */ 't', `a string representation of this time-zone ID, not null`]
 			]
 		]],
-		[/* method */ 'hashCode()', [
+		[/* method */ 'normalized()', [
 			[/* method description */
-				[/* text */ 't', `A hash code for this time-zone ID.`]
+				[/* text */ 't', `Normalizes the time-zone ID, returning a `],
+				[/* inline code block */ 'i', `ZoneOffset`],
+				[/* text */ 't', ` where possible.
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', `
+ The returns a normalized `],
+					[/* inline code block */ 'i', `ZoneId`],
+					[/* text */ 't', ` that can be used in place of this ID.
+ The result will have `],
+					[/* inline code block */ 'i', `ZoneRules`],
+					[/* text */ 't', ` equivalent to those returned by this object,
+ however the ID returned by `],
+					[/* inline code block */ 'i', `getId()`],
+					[/* text */ 't', ` may be different.
+ `]
+				]],
+				[/* block */ 'b', [
+					[/* text */ 't', `
+ The normalization checks if the rules of this `],
+					[/* inline code block */ 'i', `ZoneId`],
+					[/* text */ 't', ` have a fixed offset.
+ If they do, then the `],
+					[/* inline code block */ 'i', `ZoneOffset`],
+					[/* text */ 't', ` equal to that offset is returned.
+ Otherwise `],
+					[/* inline code block */ 'i', `this`],
+					[/* text */ 't', ` is returned.`]
+				]]
 			],
 			/* parameters */ UDF,
 			/* throws */ UDF,
 			[/* return description */
-				[/* text */ 't', `a suitable hash code`]
+				[/* text */ 't', `the time-zone unique ID, not null`]
 			]
 		]],
-		[/* method */ 'of(java.lang.String,java.util.Map)', [
+		[/* method */ 'from(java.time.temporal.TemporalAccessor)', [
 			[/* method description */
 				[/* text */ 't', `Obtains an instance of `],
 				[/* inline code block */ 'i', `ZoneId`],
-				[/* text */ 't', ` using its ID using a map
- of aliases to supplement the standard zone IDs.
+				[/* text */ 't', ` from a temporal object.
  `],
-				[/* block */ 'b', `
- Many users of time-zones use short abbreviations, such as PST for
- 'Pacific Standard Time' and PDT for 'Pacific Daylight Time'.
- These abbreviations are not unique, and so cannot be used as IDs.
- This method allows a map of string to time-zone to be setup and reused
- within an application.`]
+				[/* block */ 'b', [
+					[/* text */ 't', `
+ This obtains a zone based on the specified temporal.
+ A `],
+					[/* inline code block */ 'i', `TemporalAccessor`],
+					[/* text */ 't', ` represents an arbitrary set of date and time information,
+ which this factory converts to an instance of `],
+					[/* inline code block */ 'i', `ZoneId`],
+					[/* text */ 't', `.
+ `]
+				]],
+				[/* block */ 'b', [
+					[/* text */ 't', `
+ A `],
+					[/* inline code block */ 'i', `TemporalAccessor`],
+					[/* text */ 't', ` represents some form of date and time information.
+ This factory converts the arbitrary temporal object to an instance of `],
+					[/* inline code block */ 'i', `ZoneId`],
+					[/* text */ 't', `.
+ `]
+				]],
+				[/* block */ 'b', [
+					[/* text */ 't', `
+ The conversion will try to obtain the zone in a way that favours region-based
+ zones over offset-based zones using `],
+					[/* reference */ 'r', `.TemporalQueries#zone()`],
+					[/* text */ 't', `.
+ `]
+				]],
+				[/* block */ 'b', [
+					[/* text */ 't', `
+ This method matches the signature of the functional interface `],
+					[/* reference */ 'r', `java.time.temporal.TemporalQuery`],
+					[/* text */ 't', `
+ allowing it to be used as a query via method reference, `],
+					[/* inline code block */ 'i', `ZoneId::from`],
+					[/* text */ 't', `.`]
+				]]
 			],
 			[/* parameters */
-				[/* parameter */ 'zoneId', [/* parameter description */
-					[/* text */ 't', `the time-zone ID, not null`]
-				]],
-				[/* parameter */ 'aliasMap', [/* parameter description */
-					[/* text */ 't', `a map of alias zone IDs (typically abbreviations) to real zone IDs, not null`]
+				[/* parameter */ 'temporal', [/* parameter description */
+					[/* text */ 't', `the temporal object to convert, not null`]
 				]]
 			],
 			[/* throws */
 				[/* throw */ 'java.time.DateTimeException', [/* throw description */
-					[/* text */ 't', `if the zone ID has an invalid format`]
-				]],
-				[/* throw */ 'java.time.zone.ZoneRulesException', [/* throw description */
-					[/* text */ 't', `if the zone ID is a region ID that cannot be found`]
+					[/* text */ 't', `if unable to convert to a `],
+					[/* inline code block */ 'i', `ZoneId`]
 				]]
 			],
 			[/* return description */
@@ -433,245 +587,38 @@ DocsCollector.collect('java.time.ZoneId', [
 				[/* text */ 't', `the zone ID, not null`]
 			]
 		]],
-		[/* method */ 'from(java.time.temporal.TemporalAccessor)', [
+		[/* method */ 'of(java.lang.String,java.util.Map)', [
 			[/* method description */
 				[/* text */ 't', `Obtains an instance of `],
 				[/* inline code block */ 'i', `ZoneId`],
-				[/* text */ 't', ` from a temporal object.
+				[/* text */ 't', ` using its ID using a map
+ of aliases to supplement the standard zone IDs.
  `],
-				[/* block */ 'b', [
-					[/* text */ 't', `
- This obtains a zone based on the specified temporal.
- A `],
-					[/* inline code block */ 'i', `TemporalAccessor`],
-					[/* text */ 't', ` represents an arbitrary set of date and time information,
- which this factory converts to an instance of `],
-					[/* inline code block */ 'i', `ZoneId`],
-					[/* text */ 't', `.
- `]
-				]],
-				[/* block */ 'b', [
-					[/* text */ 't', `
- A `],
-					[/* inline code block */ 'i', `TemporalAccessor`],
-					[/* text */ 't', ` represents some form of date and time information.
- This factory converts the arbitrary temporal object to an instance of `],
-					[/* inline code block */ 'i', `ZoneId`],
-					[/* text */ 't', `.
- `]
-				]],
-				[/* block */ 'b', [
-					[/* text */ 't', `
- The conversion will try to obtain the zone in a way that favours region-based
- zones over offset-based zones using `],
-					[/* reference */ 'r', `.TemporalQueries#zone()`],
-					[/* text */ 't', `.
- `]
-				]],
-				[/* block */ 'b', [
-					[/* text */ 't', `
- This method matches the signature of the functional interface `],
-					[/* reference */ 'r', `java.time.temporal.TemporalQuery`],
-					[/* text */ 't', `
- allowing it to be used as a query via method reference, `],
-					[/* inline code block */ 'i', `ZoneId::from`],
-					[/* text */ 't', `.`]
-				]]
+				[/* block */ 'b', `
+ Many users of time-zones use short abbreviations, such as PST for
+ 'Pacific Standard Time' and PDT for 'Pacific Daylight Time'.
+ These abbreviations are not unique, and so cannot be used as IDs.
+ This method allows a map of string to time-zone to be setup and reused
+ within an application.`]
 			],
 			[/* parameters */
-				[/* parameter */ 'temporal', [/* parameter description */
-					[/* text */ 't', `the temporal object to convert, not null`]
+				[/* parameter */ 'zoneId', [/* parameter description */
+					[/* text */ 't', `the time-zone ID, not null`]
+				]],
+				[/* parameter */ 'aliasMap', [/* parameter description */
+					[/* text */ 't', `a map of alias zone IDs (typically abbreviations) to real zone IDs, not null`]
 				]]
 			],
 			[/* throws */
 				[/* throw */ 'java.time.DateTimeException', [/* throw description */
-					[/* text */ 't', `if unable to convert to a `],
-					[/* inline code block */ 'i', `ZoneId`]
+					[/* text */ 't', `if the zone ID has an invalid format`]
+				]],
+				[/* throw */ 'java.time.zone.ZoneRulesException', [/* throw description */
+					[/* text */ 't', `if the zone ID is a region ID that cannot be found`]
 				]]
 			],
 			[/* return description */
 				[/* text */ 't', `the zone ID, not null`]
-			]
-		]],
-		[/* method */ 'getId()', [
-			[/* method description */
-				[/* text */ 't', `Gets the unique time-zone ID.
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', `
- This ID uniquely defines this object.
- The format of an offset based ID is defined by `],
-					[/* reference */ 'r', `.ZoneOffset#getId()`],
-					[/* text */ 't', `.`]
-				]]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the time-zone unique ID, not null`]
-			]
-		]],
-		[/* method */ 'normalized()', [
-			[/* method description */
-				[/* text */ 't', `Normalizes the time-zone ID, returning a `],
-				[/* inline code block */ 'i', `ZoneOffset`],
-				[/* text */ 't', ` where possible.
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', `
- The returns a normalized `],
-					[/* inline code block */ 'i', `ZoneId`],
-					[/* text */ 't', ` that can be used in place of this ID.
- The result will have `],
-					[/* inline code block */ 'i', `ZoneRules`],
-					[/* text */ 't', ` equivalent to those returned by this object,
- however the ID returned by `],
-					[/* inline code block */ 'i', `getId()`],
-					[/* text */ 't', ` may be different.
- `]
-				]],
-				[/* block */ 'b', [
-					[/* text */ 't', `
- The normalization checks if the rules of this `],
-					[/* inline code block */ 'i', `ZoneId`],
-					[/* text */ 't', ` have a fixed offset.
- If they do, then the `],
-					[/* inline code block */ 'i', `ZoneOffset`],
-					[/* text */ 't', ` equal to that offset is returned.
- Otherwise `],
-					[/* inline code block */ 'i', `this`],
-					[/* text */ 't', ` is returned.`]
-				]]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the time-zone unique ID, not null`]
-			]
-		]],
-		[/* method */ 'systemDefault()', [
-			[/* method description */
-				[/* text */ 't', `Gets the system default time-zone.
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', `
- This queries `],
-					[/* reference */ 'r', `java.TimeZone#getDefault()`],
-					[/* text */ 't', ` to find the default time-zone
- and converts it to a `],
-					[/* inline code block */ 'i', `ZoneId`],
-					[/* text */ 't', `. If the system default time-zone is changed,
- then the result of this method will also change.`]
-				]]
-			],
-			/* parameters */ UDF,
-			[/* throws */
-				[/* throw */ 'java.time.DateTimeException', [/* throw description */
-					[/* text */ 't', `if the converted zone ID has an invalid format`]
-				]],
-				[/* throw */ 'java.time.zone.ZoneRulesException', [/* throw description */
-					[/* text */ 't', `if the converted zone region ID cannot be found`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `the zone ID, not null`]
-			]
-		]],
-		[/* method */ 'getRules()', [
-			[/* method description */
-				[/* text */ 't', `Gets the time-zone rules for this ID allowing calculations to be performed.
- `],
-				[/* block */ 'b', `
- The rules provide the functionality associated with a time-zone,
- such as finding the offset for a given instant or local date-time.
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', `
- A time-zone can be invalid if it is deserialized in a Java Runtime which
- does not have the same rules loaded as the Java Runtime that stored it.
- In this case, calling this method will throw a `],
-					[/* inline code block */ 'i', `ZoneRulesException`],
-					[/* text */ 't', `.
- `]
-				]],
-				[/* block */ 'b', [
-					[/* text */ 't', `
- The rules are supplied by `],
-					[/* reference */ 'r', `java.time.zone.ZoneRulesProvider`],
-					[/* text */ 't', `. An advanced provider may
- support dynamic updates to the rules without restarting the Java Runtime.
- If so, then the result of this method may change over time.
- Each individual call will be still remain thread-safe.
- `]
-				]],
-				[/* block */ 'b', [
-					[/* reference */ 'r', `java.time.ZoneOffset`],
-					[/* text */ 't', ` will always return a set of rules where the offset never changes.`]
-				]]
-			],
-			/* parameters */ UDF,
-			[/* throws */
-				[/* throw */ 'java.time.zone.ZoneRulesException', [/* throw description */
-					[/* text */ 't', `if no rules are available for this ID`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `the rules, not null`]
-			]
-		]],
-		[/* method */ 'getDisplayName(java.time.format.TextStyle,java.util.Locale)', [
-			[/* method description */
-				[/* text */ 't', `Gets the textual representation of the zone, such as 'British Time' or
- '+02:00'.
- `],
-				[/* block */ 'b', `
- This returns the textual name used to identify the time-zone ID,
- suitable for presentation to the user.
- The parameters control the style of the returned text and the locale.
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', `
- If no textual mapping is found then the `],
-					[/* reference */ 'r', `#getId()`, `full ID`],
-					[/* text */ 't', ` is returned.`]
-				]]
-			],
-			[/* parameters */
-				[/* parameter */ 'style', [/* parameter description */
-					[/* text */ 't', `the length of the text required, not null`]
-				]],
-				[/* parameter */ 'locale', [/* parameter description */
-					[/* text */ 't', `the locale to use, not null`]
-				]]
-			],
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the text value of the zone, not null`]
-			]
-		]],
-		[/* method */ 'getAvailableZoneIds()', [
-			[/* method description */
-				[/* text */ 't', `Gets the set of available zone IDs.
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', `
- This set includes the string form of all available region-based IDs.
- Offset-based zone IDs are not included in the returned set.
- The ID can be passed to `],
-					[/* reference */ 'r', `#of(java.lang.String)`, `of(String)`],
-					[/* text */ 't', ` to create a `],
-					[/* inline code block */ 'i', `ZoneId`],
-					[/* text */ 't', `.
- `]
-				]],
-				[/* block */ 'b', `
- The set of zone IDs can increase over time, although in a typical application
- the set of IDs is fixed. Each call to this method is thread-safe.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `a modifiable copy of the set of zone IDs, not null`]
 			]
 		]],
 		[/* method */ 'ofOffset(java.lang.String,java.time.ZoneOffset)', [
@@ -709,6 +656,59 @@ DocsCollector.collect('java.time.ZoneId', [
 			],
 			[/* return description */
 				[/* text */ 't', `the zone ID, not null`]
+			]
+		]],
+		[/* method */ 'systemDefault()', [
+			[/* method description */
+				[/* text */ 't', `Gets the system default time-zone.
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', `
+ This queries `],
+					[/* reference */ 'r', `java.TimeZone#getDefault()`],
+					[/* text */ 't', ` to find the default time-zone
+ and converts it to a `],
+					[/* inline code block */ 'i', `ZoneId`],
+					[/* text */ 't', `. If the system default time-zone is changed,
+ then the result of this method will also change.`]
+				]]
+			],
+			/* parameters */ UDF,
+			[/* throws */
+				[/* throw */ 'java.time.DateTimeException', [/* throw description */
+					[/* text */ 't', `if the converted zone ID has an invalid format`]
+				]],
+				[/* throw */ 'java.time.zone.ZoneRulesException', [/* throw description */
+					[/* text */ 't', `if the converted zone region ID cannot be found`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `the zone ID, not null`]
+			]
+		]],
+		[/* method */ 'getAvailableZoneIds()', [
+			[/* method description */
+				[/* text */ 't', `Gets the set of available zone IDs.
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', `
+ This set includes the string form of all available region-based IDs.
+ Offset-based zone IDs are not included in the returned set.
+ The ID can be passed to `],
+					[/* reference */ 'r', `#of(java.lang.String)`, `of(String)`],
+					[/* text */ 't', ` to create a `],
+					[/* inline code block */ 'i', `ZoneId`],
+					[/* text */ 't', `.
+ `]
+				]],
+				[/* block */ 'b', `
+ The set of zone IDs can increase over time, although in a typical application
+ the set of IDs is fixed. Each call to this method is thread-safe.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `a modifiable copy of the set of zone IDs, not null`]
 			]
 		]]
 	],

@@ -175,114 +175,6 @@ DocsCollector.collect('java.net.URL', [
 	],
 	/* fields */ UDF,
 	[/* constructors */
-		[/* constructor */ '<init>(java.net.URL,java.lang.String,java.net.URLStreamHandler)', [
-			[/* constructor description */
-				[/* text */ 't', `Creates a URL by parsing the given spec with the specified handler
- within a specified context. If the handler is null, the parsing
- occurs as with the two argument constructor.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'context', [/* parameter description */
-					[/* text */ 't', `the context in which to parse the specification.`]
-				]],
-				[/* parameter */ 'spec', [/* parameter description */
-					[/* text */ 't', `the `],
-					[/* inline code block */ 'i', `String`],
-					[/* text */ 't', ` to parse as a URL.`]
-				]],
-				[/* parameter */ 'handler', [/* parameter description */
-					[/* text */ 't', `the stream handler for the URL.`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.net.MalformedURLException', [/* throw description */
-					[/* text */ 't', `if no protocol is specified, or an
-               unknown protocol is found, or `],
-					[/* inline code block */ 'i', `spec`],
-					[/* text */ 't', ` is `],
-					[/* inline code block */ 'i', `null`],
-					[/* text */ 't', `,
-               or the parsed URL fails to comply with the specific syntax
-               of the associated protocol.`]
-				]],
-				[/* throw */ 'java.lang.SecurityException', [/* throw description */
-					[/* text */ 't', `if a security manager exists and its
-        `],
-					[/* inline code block */ 'i', `checkPermission`],
-					[/* text */ 't', ` method doesn't allow
-        specifying a stream handler.`]
-				]]
-			]
-		]],
-		[/* constructor */ '<init>(java.net.URL,java.lang.String)', [
-			[/* constructor description */
-				[/* text */ 't', `Creates a URL by parsing the given spec within a specified context.
-
- The new URL is created from the given context URL and the spec
- argument as described in
- RFC2396 "Uniform Resource Identifiers : Generic * Syntax" :
- `],
-				[/* block */ 'b', [
-					[/* code block */ 'c', `          <scheme>://<authority><path>?<query>#<fragment>
- `]
-				]],
-				[/* text */ 't', `
- The reference is parsed into the scheme, authority, path, query and
- fragment parts. If the path component is empty and the scheme,
- authority, and query components are undefined, then the new URL is a
- reference to the current document. Otherwise, the fragment and query
- parts present in the spec are used in the new URL.
- `],
-				[/* block */ 'b', `
- If the scheme component is defined in the given spec and does not match
- the scheme of the context, then the new URL is created as an absolute
- URL based on the spec alone. Otherwise the scheme component is inherited
- from the context URL.
- `],
-				[/* block */ 'b', `
- If the authority component is present in the spec then the spec is
- treated as absolute and the spec authority and path will replace the
- context authority and path. If the authority component is absent in the
- spec then the authority of the new URL will be inherited from the
- context.
- `],
-				[/* block */ 'b', `
- If the spec's path component begins with a slash character
- "/" then the
- path is treated as absolute and the spec path replaces the context path.
- `],
-				[/* block */ 'b', `
- Otherwise, the path is treated as a relative path and is appended to the
- context path, as described in RFC2396. Also, in this case,
- the path is canonicalized through the removal of directory
- changes made by occurrences of ".." and ".".
- `],
-				[/* block */ 'b', `
- For a more detailed description of URL parsing, refer to RFC2396.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'context', [/* parameter description */
-					[/* text */ 't', `the context in which to parse the specification.`]
-				]],
-				[/* parameter */ 'spec', [/* parameter description */
-					[/* text */ 't', `the `],
-					[/* inline code block */ 'i', `String`],
-					[/* text */ 't', ` to parse as a URL.`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.net.MalformedURLException', [/* throw description */
-					[/* text */ 't', `if no protocol is specified, or an
-               unknown protocol is found, or `],
-					[/* inline code block */ 'i', `spec`],
-					[/* text */ 't', ` is `],
-					[/* inline code block */ 'i', `null`],
-					[/* text */ 't', `,
-               or the parsed URL fails to comply with the specific syntax
-               of the associated protocol.`]
-				]]
-			]
-		]],
 		[/* constructor */ '<init>(java.lang.String)', [
 			[/* constructor description */
 				[/* text */ 't', `Creates a `],
@@ -519,42 +411,6 @@ DocsCollector.collect('java.net.URL', [
 				]]
 			]
 		]],
-		[/* constructor */ '<init>(java.lang.String,java.lang.String,java.lang.String)', [
-			[/* constructor description */
-				[/* text */ 't', `Creates a URL from the specified `],
-				[/* inline code block */ 'i', `protocol`],
-				[/* text */ 't', `
- name, `],
-				[/* inline code block */ 'i', `host`],
-				[/* text */ 't', ` name, and `],
-				[/* inline code block */ 'i', `file`],
-				[/* text */ 't', ` name. The
- default port for the specified protocol is used.
- `],
-				[/* block */ 'b', `
- This constructor is equivalent to the four-argument
- constructor with the only difference of using the
- default port for the specified protocol.
-
- No validation of the inputs is performed by this constructor.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'protocol', [/* parameter description */
-					[/* text */ 't', `the name of the protocol to use.`]
-				]],
-				[/* parameter */ 'host', [/* parameter description */
-					[/* text */ 't', `the name of the host.`]
-				]],
-				[/* parameter */ 'file', [/* parameter description */
-					[/* text */ 't', `the file on the host.`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.net.MalformedURLException', [/* throw description */
-					[/* text */ 't', `if an unknown protocol is specified.`]
-				]]
-			]
-		]],
 		[/* constructor */ '<init>(java.lang.String,java.lang.String,int,java.lang.String,java.net.URLStreamHandler)', [
 			[/* constructor description */
 				[/* text */ 't', `Creates a `],
@@ -631,6 +487,150 @@ DocsCollector.collect('java.net.URL', [
         specifying a stream handler explicitly.`]
 				]]
 			]
+		]],
+		[/* constructor */ '<init>(java.lang.String,java.lang.String,java.lang.String)', [
+			[/* constructor description */
+				[/* text */ 't', `Creates a URL from the specified `],
+				[/* inline code block */ 'i', `protocol`],
+				[/* text */ 't', `
+ name, `],
+				[/* inline code block */ 'i', `host`],
+				[/* text */ 't', ` name, and `],
+				[/* inline code block */ 'i', `file`],
+				[/* text */ 't', ` name. The
+ default port for the specified protocol is used.
+ `],
+				[/* block */ 'b', `
+ This constructor is equivalent to the four-argument
+ constructor with the only difference of using the
+ default port for the specified protocol.
+
+ No validation of the inputs is performed by this constructor.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'protocol', [/* parameter description */
+					[/* text */ 't', `the name of the protocol to use.`]
+				]],
+				[/* parameter */ 'host', [/* parameter description */
+					[/* text */ 't', `the name of the host.`]
+				]],
+				[/* parameter */ 'file', [/* parameter description */
+					[/* text */ 't', `the file on the host.`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.net.MalformedURLException', [/* throw description */
+					[/* text */ 't', `if an unknown protocol is specified.`]
+				]]
+			]
+		]],
+		[/* constructor */ '<init>(java.net.URL,java.lang.String)', [
+			[/* constructor description */
+				[/* text */ 't', `Creates a URL by parsing the given spec within a specified context.
+
+ The new URL is created from the given context URL and the spec
+ argument as described in
+ RFC2396 "Uniform Resource Identifiers : Generic * Syntax" :
+ `],
+				[/* block */ 'b', [
+					[/* code block */ 'c', `          <scheme>://<authority><path>?<query>#<fragment>
+ `]
+				]],
+				[/* text */ 't', `
+ The reference is parsed into the scheme, authority, path, query and
+ fragment parts. If the path component is empty and the scheme,
+ authority, and query components are undefined, then the new URL is a
+ reference to the current document. Otherwise, the fragment and query
+ parts present in the spec are used in the new URL.
+ `],
+				[/* block */ 'b', `
+ If the scheme component is defined in the given spec and does not match
+ the scheme of the context, then the new URL is created as an absolute
+ URL based on the spec alone. Otherwise the scheme component is inherited
+ from the context URL.
+ `],
+				[/* block */ 'b', `
+ If the authority component is present in the spec then the spec is
+ treated as absolute and the spec authority and path will replace the
+ context authority and path. If the authority component is absent in the
+ spec then the authority of the new URL will be inherited from the
+ context.
+ `],
+				[/* block */ 'b', `
+ If the spec's path component begins with a slash character
+ "/" then the
+ path is treated as absolute and the spec path replaces the context path.
+ `],
+				[/* block */ 'b', `
+ Otherwise, the path is treated as a relative path and is appended to the
+ context path, as described in RFC2396. Also, in this case,
+ the path is canonicalized through the removal of directory
+ changes made by occurrences of ".." and ".".
+ `],
+				[/* block */ 'b', `
+ For a more detailed description of URL parsing, refer to RFC2396.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'context', [/* parameter description */
+					[/* text */ 't', `the context in which to parse the specification.`]
+				]],
+				[/* parameter */ 'spec', [/* parameter description */
+					[/* text */ 't', `the `],
+					[/* inline code block */ 'i', `String`],
+					[/* text */ 't', ` to parse as a URL.`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.net.MalformedURLException', [/* throw description */
+					[/* text */ 't', `if no protocol is specified, or an
+               unknown protocol is found, or `],
+					[/* inline code block */ 'i', `spec`],
+					[/* text */ 't', ` is `],
+					[/* inline code block */ 'i', `null`],
+					[/* text */ 't', `,
+               or the parsed URL fails to comply with the specific syntax
+               of the associated protocol.`]
+				]]
+			]
+		]],
+		[/* constructor */ '<init>(java.net.URL,java.lang.String,java.net.URLStreamHandler)', [
+			[/* constructor description */
+				[/* text */ 't', `Creates a URL by parsing the given spec with the specified handler
+ within a specified context. If the handler is null, the parsing
+ occurs as with the two argument constructor.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'context', [/* parameter description */
+					[/* text */ 't', `the context in which to parse the specification.`]
+				]],
+				[/* parameter */ 'spec', [/* parameter description */
+					[/* text */ 't', `the `],
+					[/* inline code block */ 'i', `String`],
+					[/* text */ 't', ` to parse as a URL.`]
+				]],
+				[/* parameter */ 'handler', [/* parameter description */
+					[/* text */ 't', `the stream handler for the URL.`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.net.MalformedURLException', [/* throw description */
+					[/* text */ 't', `if no protocol is specified, or an
+               unknown protocol is found, or `],
+					[/* inline code block */ 'i', `spec`],
+					[/* text */ 't', ` is `],
+					[/* inline code block */ 'i', `null`],
+					[/* text */ 't', `,
+               or the parsed URL fails to comply with the specific syntax
+               of the associated protocol.`]
+				]],
+				[/* throw */ 'java.lang.SecurityException', [/* throw description */
+					[/* text */ 't', `if a security manager exists and its
+        `],
+					[/* inline code block */ 'i', `checkPermission`],
+					[/* text */ 't', ` method doesn't allow
+        specifying a stream handler.`]
+				]]
+			]
 		]]
 	],
 	[/* methods */
@@ -683,111 +683,6 @@ DocsCollector.collect('java.net.URL', [
 				[/* text */ 't', ` otherwise.`]
 			]
 		]],
-		[/* method */ 'toString()', [
-			[/* method description */
-				[/* text */ 't', `Constructs a string representation of this `],
-				[/* inline code block */ 'i', `URL`],
-				[/* text */ 't', `. The
- string is created by calling the `],
-				[/* inline code block */ 'i', `toExternalForm`],
-				[/* text */ 't', `
- method of the stream protocol handler for this object.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `a string representation of this object.`]
-			]
-		]],
-		[/* method */ 'hashCode()', [
-			[/* method description */
-				[/* text */ 't', `Creates an integer suitable for hash table indexing.`],
-				[/* block */ 'b', `
-
- The hash code is based upon all the URL components relevant for URL
- comparison. As such, this operation is a blocking operation.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `a hash code for this `],
-				[/* inline code block */ 'i', `URL`],
-				[/* text */ 't', `.`]
-			]
-		]],
-		[/* method */ 'openStream()', [
-			[/* method description */
-				[/* text */ 't', `Opens a connection to this `],
-				[/* inline code block */ 'i', `URL`],
-				[/* text */ 't', ` and returns an
- `],
-				[/* inline code block */ 'i', `InputStream`],
-				[/* text */ 't', ` for reading from that connection. This
- method is a shorthand for:
- `],
-				[/* block */ 'b', [
-					[/* code block */ 'c', `     openConnection().getInputStream()
- `]
-				]]
-			],
-			/* parameters */ UDF,
-			[/* throws */
-				[/* throw */ 'java.io.IOException', [/* throw description */
-					[/* text */ 't', `if an I/O exception occurs.`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `an input stream for reading from the URL connection.`]
-			]
-		]],
-		[/* method */ 'getHost()', [
-			[/* method description */
-				[/* text */ 't', `Gets the host name of this `],
-				[/* inline code block */ 'i', `URL`],
-				[/* text */ 't', `, if applicable.
- The format of the host conforms to RFC 2732, i.e. for a
- literal IPv6 address, this method will return the IPv6 address
- enclosed in square brackets (`],
-				[/* inline code block */ 'i', `'['`],
-				[/* text */ 't', ` and `],
-				[/* inline code block */ 'i', `']'`],
-				[/* text */ 't', `).`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the host name of this `],
-				[/* inline code block */ 'i', `URL`],
-				[/* text */ 't', `.`]
-			]
-		]],
-		[/* method */ 'getPort()', [
-			[/* method description */
-				[/* text */ 't', `Gets the port number of this `],
-				[/* inline code block */ 'i', `URL`],
-				[/* text */ 't', `.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the port number, or -1 if the port is not set`]
-			]
-		]],
-		[/* method */ 'getDefaultPort()', [
-			[/* method description */
-				[/* text */ 't', `Gets the default port number of the protocol associated
- with this `],
-				[/* inline code block */ 'i', `URL`],
-				[/* text */ 't', `. If the URL scheme or the URLStreamHandler
- for the URL do not define a default port number,
- then -1 is returned.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the port number`]
-			]
-		]],
 		[/* method */ 'sameFile(java.net.URL)', [
 			[/* method description */
 				[/* text */ 't', `Compares two URLs, excluding the fragment component.`],
@@ -821,6 +716,243 @@ DocsCollector.collect('java.net.URL', [
 				[/* text */ 't', ` otherwise.`]
 			]
 		]],
+		[/* method */ 'openStream()', [
+			[/* method description */
+				[/* text */ 't', `Opens a connection to this `],
+				[/* inline code block */ 'i', `URL`],
+				[/* text */ 't', ` and returns an
+ `],
+				[/* inline code block */ 'i', `InputStream`],
+				[/* text */ 't', ` for reading from that connection. This
+ method is a shorthand for:
+ `],
+				[/* block */ 'b', [
+					[/* code block */ 'c', `     openConnection().getInputStream()
+ `]
+				]]
+			],
+			/* parameters */ UDF,
+			[/* throws */
+				[/* throw */ 'java.io.IOException', [/* throw description */
+					[/* text */ 't', `if an I/O exception occurs.`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `an input stream for reading from the URL connection.`]
+			]
+		]],
+		[/* method */ 'getContent()', [
+			[/* method description */
+				[/* text */ 't', `Gets the contents of this URL. This method is a shorthand for:
+ `],
+				[/* block */ 'b', [
+					[/* code block */ 'c', `     openConnection().getContent()
+ `]
+				]]
+			],
+			/* parameters */ UDF,
+			[/* throws */
+				[/* throw */ 'java.io.IOException', [/* throw description */
+					[/* text */ 't', `if an I/O exception occurs.`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `the contents of this URL.`]
+			]
+		]],
+		[/* method */ 'getContent(java.lang.Class[])', [
+			[/* method description */
+				[/* text */ 't', `Gets the contents of this URL. This method is a shorthand for:
+ `],
+				[/* block */ 'b', [
+					[/* code block */ 'c', `     openConnection().getContent(classes)
+ `]
+				]]
+			],
+			[/* parameters */
+				[/* parameter */ 'classes', [/* parameter description */
+					[/* text */ 't', `an array of Java types`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.io.IOException', [/* throw description */
+					[/* text */ 't', `if an I/O exception occurs.`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `the content object of this URL that is the first match of
+               the types specified in the classes array.
+               null if none of the requested types are supported.`]
+			]
+		]],
+		[/* method */ 'getDefaultPort()', [
+			[/* method description */
+				[/* text */ 't', `Gets the default port number of the protocol associated
+ with this `],
+				[/* inline code block */ 'i', `URL`],
+				[/* text */ 't', `. If the URL scheme or the URLStreamHandler
+ for the URL do not define a default port number,
+ then -1 is returned.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the port number`]
+			]
+		]],
+		[/* method */ 'getPort()', [
+			[/* method description */
+				[/* text */ 't', `Gets the port number of this `],
+				[/* inline code block */ 'i', `URL`],
+				[/* text */ 't', `.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the port number, or -1 if the port is not set`]
+			]
+		]],
+		[/* method */ 'getAuthority()', [
+			[/* method description */
+				[/* text */ 't', `Gets the authority part of this `],
+				[/* inline code block */ 'i', `URL`],
+				[/* text */ 't', `.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the authority part of this `],
+				[/* inline code block */ 'i', `URL`]
+			]
+		]],
+		[/* method */ 'getFile()', [
+			[/* method description */
+				[/* text */ 't', `Gets the file name of this `],
+				[/* inline code block */ 'i', `URL`],
+				[/* text */ 't', `.
+ The returned file portion will be
+ the same as `],
+				[/* inline code block */ 'i', `getPath()`],
+				[/* text */ 't', `, plus the concatenation of
+ the value of `],
+				[/* inline code block */ 'i', `getQuery()`],
+				[/* text */ 't', `, if any. If there is
+ no query portion, this method and `],
+				[/* inline code block */ 'i', `getPath()`],
+				[/* text */ 't', ` will
+ return identical results.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the file name of this `],
+				[/* inline code block */ 'i', `URL`],
+				[/* text */ 't', `,
+ or an empty string if one does not exist`]
+			]
+		]],
+		[/* method */ 'getHost()', [
+			[/* method description */
+				[/* text */ 't', `Gets the host name of this `],
+				[/* inline code block */ 'i', `URL`],
+				[/* text */ 't', `, if applicable.
+ The format of the host conforms to RFC 2732, i.e. for a
+ literal IPv6 address, this method will return the IPv6 address
+ enclosed in square brackets (`],
+				[/* inline code block */ 'i', `'['`],
+				[/* text */ 't', ` and `],
+				[/* inline code block */ 'i', `']'`],
+				[/* text */ 't', `).`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the host name of this `],
+				[/* inline code block */ 'i', `URL`],
+				[/* text */ 't', `.`]
+			]
+		]],
+		[/* method */ 'getPath()', [
+			[/* method description */
+				[/* text */ 't', `Gets the path part of this `],
+				[/* inline code block */ 'i', `URL`],
+				[/* text */ 't', `.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the path part of this `],
+				[/* inline code block */ 'i', `URL`],
+				[/* text */ 't', `, or an
+ empty string if one does not exist`]
+			]
+		]],
+		[/* method */ 'getProtocol()', [
+			[/* method description */
+				[/* text */ 't', `Gets the protocol name of this `],
+				[/* inline code block */ 'i', `URL`],
+				[/* text */ 't', `.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the protocol of this `],
+				[/* inline code block */ 'i', `URL`],
+				[/* text */ 't', `.`]
+			]
+		]],
+		[/* method */ 'getQuery()', [
+			[/* method description */
+				[/* text */ 't', `Gets the query part of this `],
+				[/* inline code block */ 'i', `URL`],
+				[/* text */ 't', `.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the query part of this `],
+				[/* inline code block */ 'i', `URL`],
+				[/* text */ 't', `,
+ or `],
+				[/* inline code block */ 'i', `null`],
+				[/* text */ 't', ` if one does not exist`]
+			]
+		]],
+		[/* method */ 'getRef()', [
+			[/* method description */
+				[/* text */ 't', `Gets the anchor (also known as the "reference") of this
+ `],
+				[/* inline code block */ 'i', `URL`],
+				[/* text */ 't', `.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the anchor (also known as the "reference") of this
+          `],
+				[/* inline code block */ 'i', `URL`],
+				[/* text */ 't', `, or `],
+				[/* inline code block */ 'i', `null`],
+				[/* text */ 't', ` if one does not exist`]
+			]
+		]],
+		[/* method */ 'getUserInfo()', [
+			[/* method description */
+				[/* text */ 't', `Gets the userInfo part of this `],
+				[/* inline code block */ 'i', `URL`],
+				[/* text */ 't', `.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the userInfo part of this `],
+				[/* inline code block */ 'i', `URL`],
+				[/* text */ 't', `, or
+ `],
+				[/* inline code block */ 'i', `null`],
+				[/* text */ 't', ` if one does not exist`]
+			]
+		]],
 		[/* method */ 'toExternalForm()', [
 			[/* method description */
 				[/* text */ 't', `Constructs a string representation of this `],
@@ -835,6 +967,46 @@ DocsCollector.collect('java.net.URL', [
 			/* throws */ UDF,
 			[/* return description */
 				[/* text */ 't', `a string representation of this object.`]
+			]
+		]],
+		[/* method */ 'toString()', [
+			[/* method description */
+				[/* text */ 't', `Constructs a string representation of this `],
+				[/* inline code block */ 'i', `URL`],
+				[/* text */ 't', `. The
+ string is created by calling the `],
+				[/* inline code block */ 'i', `toExternalForm`],
+				[/* text */ 't', `
+ method of the stream protocol handler for this object.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `a string representation of this object.`]
+			]
+		]],
+		[/* method */ 'toURI()', [
+			[/* method description */
+				[/* text */ 't', `Returns a `],
+				[/* reference */ 'r', `java.net.URI`],
+				[/* text */ 't', ` equivalent to this URL.
+ This method functions in the same way as `],
+				[/* inline code block */ 'i', `new URI (this.toString())`],
+				[/* text */ 't', `.
+ `],
+				[/* block */ 'b', `Note, any URL instance that complies with RFC 2396 can be converted
+ to a URI. However, some URLs that are not strictly in compliance
+ can not be converted to a URI.`]
+			],
+			/* parameters */ UDF,
+			[/* throws */
+				[/* throw */ 'java.net.URISyntaxException', [/* throw description */
+					[/* text */ 't', `if this URL is not formatted strictly according to
+            RFC2396 and cannot be converted to a URI.`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `a URI instance equivalent to this URL.`]
 			]
 		]],
 		[/* method */ 'openConnection()', [
@@ -932,194 +1104,6 @@ DocsCollector.collect('java.net.URL', [
 				[/* text */ 't', ` to the URL.`]
 			]
 		]],
-		[/* method */ 'getContent()', [
-			[/* method description */
-				[/* text */ 't', `Gets the contents of this URL. This method is a shorthand for:
- `],
-				[/* block */ 'b', [
-					[/* code block */ 'c', `     openConnection().getContent()
- `]
-				]]
-			],
-			/* parameters */ UDF,
-			[/* throws */
-				[/* throw */ 'java.io.IOException', [/* throw description */
-					[/* text */ 't', `if an I/O exception occurs.`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `the contents of this URL.`]
-			]
-		]],
-		[/* method */ 'getContent(java.lang.Class[])', [
-			[/* method description */
-				[/* text */ 't', `Gets the contents of this URL. This method is a shorthand for:
- `],
-				[/* block */ 'b', [
-					[/* code block */ 'c', `     openConnection().getContent(classes)
- `]
-				]]
-			],
-			[/* parameters */
-				[/* parameter */ 'classes', [/* parameter description */
-					[/* text */ 't', `an array of Java types`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.io.IOException', [/* throw description */
-					[/* text */ 't', `if an I/O exception occurs.`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `the content object of this URL that is the first match of
-               the types specified in the classes array.
-               null if none of the requested types are supported.`]
-			]
-		]],
-		[/* method */ 'getProtocol()', [
-			[/* method description */
-				[/* text */ 't', `Gets the protocol name of this `],
-				[/* inline code block */ 'i', `URL`],
-				[/* text */ 't', `.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the protocol of this `],
-				[/* inline code block */ 'i', `URL`],
-				[/* text */ 't', `.`]
-			]
-		]],
-		[/* method */ 'getAuthority()', [
-			[/* method description */
-				[/* text */ 't', `Gets the authority part of this `],
-				[/* inline code block */ 'i', `URL`],
-				[/* text */ 't', `.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the authority part of this `],
-				[/* inline code block */ 'i', `URL`]
-			]
-		]],
-		[/* method */ 'getFile()', [
-			[/* method description */
-				[/* text */ 't', `Gets the file name of this `],
-				[/* inline code block */ 'i', `URL`],
-				[/* text */ 't', `.
- The returned file portion will be
- the same as `],
-				[/* inline code block */ 'i', `getPath()`],
-				[/* text */ 't', `, plus the concatenation of
- the value of `],
-				[/* inline code block */ 'i', `getQuery()`],
-				[/* text */ 't', `, if any. If there is
- no query portion, this method and `],
-				[/* inline code block */ 'i', `getPath()`],
-				[/* text */ 't', ` will
- return identical results.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the file name of this `],
-				[/* inline code block */ 'i', `URL`],
-				[/* text */ 't', `,
- or an empty string if one does not exist`]
-			]
-		]],
-		[/* method */ 'getRef()', [
-			[/* method description */
-				[/* text */ 't', `Gets the anchor (also known as the "reference") of this
- `],
-				[/* inline code block */ 'i', `URL`],
-				[/* text */ 't', `.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the anchor (also known as the "reference") of this
-          `],
-				[/* inline code block */ 'i', `URL`],
-				[/* text */ 't', `, or `],
-				[/* inline code block */ 'i', `null`],
-				[/* text */ 't', ` if one does not exist`]
-			]
-		]],
-		[/* method */ 'getQuery()', [
-			[/* method description */
-				[/* text */ 't', `Gets the query part of this `],
-				[/* inline code block */ 'i', `URL`],
-				[/* text */ 't', `.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the query part of this `],
-				[/* inline code block */ 'i', `URL`],
-				[/* text */ 't', `,
- or `],
-				[/* inline code block */ 'i', `null`],
-				[/* text */ 't', ` if one does not exist`]
-			]
-		]],
-		[/* method */ 'getPath()', [
-			[/* method description */
-				[/* text */ 't', `Gets the path part of this `],
-				[/* inline code block */ 'i', `URL`],
-				[/* text */ 't', `.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the path part of this `],
-				[/* inline code block */ 'i', `URL`],
-				[/* text */ 't', `, or an
- empty string if one does not exist`]
-			]
-		]],
-		[/* method */ 'getUserInfo()', [
-			[/* method description */
-				[/* text */ 't', `Gets the userInfo part of this `],
-				[/* inline code block */ 'i', `URL`],
-				[/* text */ 't', `.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the userInfo part of this `],
-				[/* inline code block */ 'i', `URL`],
-				[/* text */ 't', `, or
- `],
-				[/* inline code block */ 'i', `null`],
-				[/* text */ 't', ` if one does not exist`]
-			]
-		]],
-		[/* method */ 'toURI()', [
-			[/* method description */
-				[/* text */ 't', `Returns a `],
-				[/* reference */ 'r', `java.net.URI`],
-				[/* text */ 't', ` equivalent to this URL.
- This method functions in the same way as `],
-				[/* inline code block */ 'i', `new URI (this.toString())`],
-				[/* text */ 't', `.
- `],
-				[/* block */ 'b', `Note, any URL instance that complies with RFC 2396 can be converted
- to a URI. However, some URLs that are not strictly in compliance
- can not be converted to a URI.`]
-			],
-			/* parameters */ UDF,
-			[/* throws */
-				[/* throw */ 'java.net.URISyntaxException', [/* throw description */
-					[/* text */ 't', `if this URL is not formatted strictly according to
-            RFC2396 and cannot be converted to a URI.`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `a URI instance equivalent to this URL.`]
-			]
-		]],
 		[/* method */ 'setURLStreamHandlerFactory(java.net.URLStreamHandlerFactory)', [
 			[/* method description */
 				[/* text */ 't', `Sets an application's `],
@@ -1164,6 +1148,22 @@ construct a stream protocol handler from a protocol name.
 				]]
 			],
 			/* return */ UDF
+		]],
+		[/* method */ 'hashCode()', [
+			[/* method description */
+				[/* text */ 't', `Creates an integer suitable for hash table indexing.`],
+				[/* block */ 'b', `
+
+ The hash code is based upon all the URL components relevant for URL
+ comparison. As such, this operation is a blocking operation.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `a hash code for this `],
+				[/* inline code block */ 'i', `URL`],
+				[/* text */ 't', `.`]
+			]
 		]]
 	],
 ]);

@@ -44,31 +44,6 @@ DocsCollector.collect('java.time.chrono.AbstractChronology', [
 				[/* text */ 't', `true if this is equal to the other chronology`]
 			]
 		]],
-		[/* method */ 'toString()', [
-			[/* method description */
-				[/* text */ 't', `Outputs this chronology as a `],
-				[/* inline code block */ 'i', `String`],
-				[/* text */ 't', `, using the chronology ID.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `a string representation of this chronology, not null`]
-			]
-		]],
-		[/* method */ 'hashCode()', [
-			[/* method description */
-				[/* text */ 't', `A hash code for this chronology.
- `],
-				[/* block */ 'b', `
- The hash code should be based on the entire state of the object.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `a suitable hash code`]
-			]
-		]],
 		[/* method */ 'compareTo(java.time.chrono.Chronology)', [
 			[/* method description */
 				[/* text */ 't', `Compares this chronology to another chronology.
@@ -90,6 +65,31 @@ DocsCollector.collect('java.time.chrono.AbstractChronology', [
 			/* throws */ UDF,
 			[/* return description */
 				[/* text */ 't', `the comparator value, negative if less, positive if greater`]
+			]
+		]],
+		[/* method */ 'hashCode()', [
+			[/* method description */
+				[/* text */ 't', `A hash code for this chronology.
+ `],
+				[/* block */ 'b', `
+ The hash code should be based on the entire state of the object.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `a suitable hash code`]
+			]
+		]],
+		[/* method */ 'toString()', [
+			[/* method description */
+				[/* text */ 't', `Outputs this chronology as a `],
+				[/* inline code block */ 'i', `String`],
+				[/* text */ 't', `, using the chronology ID.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `a string representation of this chronology, not null`]
 			]
 		]],
 		[/* method */ 'resolveDate(java.util.Map,java.time.format.ResolverStyle)', [

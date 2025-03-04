@@ -84,205 +84,6 @@ DocsCollector.collect('java.lang.ProcessHandle', [
 	/* fields */ UDF,
 	/* constructors */ UDF,
 	[/* methods */
-		[/* method */ 'parent()', [
-			[/* method description */
-				[/* text */ 't', `Returns an `],
-				[/* inline code block */ 'i', `Optional<ProcessHandle>`],
-				[/* text */ 't', ` for the parent process.
- Note that Processes in a zombie state usually don't have a parent.`]
-			],
-			/* parameters */ UDF,
-			[/* throws */
-				[/* throw */ 'java.lang.SecurityException', [/* throw description */
-					[/* text */ 't', `if a security manager has been installed and
-         it denies RuntimePermission("manageProcess")`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `an `],
-				[/* inline code block */ 'i', `Optional<ProcessHandle>`],
-				[/* text */ 't', ` of the parent process;
-         the `],
-				[/* inline code block */ 'i', `Optional`],
-				[/* text */ 't', ` is empty if the child process does not have a parent
-         or if the parent is not available, possibly due to operating system limitations`]
-			]
-		]],
-		[/* method */ 'equals(java.lang.Object)', [
-			[/* method description */
-				[/* text */ 't', `Returns `],
-				[/* inline code block */ 'i', `true`],
-				[/* text */ 't', ` if `],
-				[/* inline code block */ 'i', `other`],
-				[/* text */ 't', ` object is non-null, is of the
- same implementation, and represents the same system process;
- otherwise it returns `],
-				[/* inline code block */ 'i', `false`],
-				[/* text */ 't', `.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'other', [/* parameter description */
-					[/* text */ 't', `another object`]
-				]]
-			],
-			/* throws */ UDF,
-			[/* return description */
-				[/* inline code block */ 'i', `true`],
-				[/* text */ 't', ` if the `],
-				[/* inline code block */ 'i', `other`],
-				[/* text */ 't', ` object is non-null,
-         is of the same implementation class and represents
-         the same system process; otherwise returns `],
-				[/* inline code block */ 'i', `false`]
-			]
-		]],
-		[/* method */ 'hashCode()', [
-			[/* method description */
-				[/* text */ 't', `Returns a hash code value for this ProcessHandle.
- The hashcode value follows the general contract for `],
-				[/* reference */ 'r', `.Object#hashCode()`],
-				[/* text */ 't', `.
- The value is a function of the `],
-				[/* reference */ 'r', `#pid()`, `pid()`],
-				[/* text */ 't', ` value and
- may be a function of additional information to uniquely identify the process.
- If two ProcessHandles are equal according to the `],
-				[/* reference */ 'r', `#equals(java.lang.Object)`, `equals`],
-				[/* text */ 't', `
- method, then calling the hashCode method on each of the two objects
- must produce the same integer result.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `a hash code value for this object`]
-			]
-		]],
-		[/* method */ 'compareTo(java.lang.ProcessHandle)', [
-			[/* method description */
-				[/* text */ 't', `Compares this ProcessHandle with the specified ProcessHandle for order.
- The order is not specified, but is consistent with `],
-				[/* reference */ 'r', `.Object#equals(java.lang.Object)`],
-				[/* text */ 't', `,
- which returns `],
-				[/* inline code block */ 'i', `true`],
-				[/* text */ 't', ` if and only if two instances of ProcessHandle
- are of the same implementation and represent the same system process.
- Comparison is only supported among objects of same implementation.
- If attempt is made to mutually compare two different implementations
- of `],
-				[/* reference */ 'r', `java.lang.ProcessHandle`],
-				[/* text */ 't', `s, `],
-				[/* reference */ 'r', `java.lang.ClassCastException`],
-				[/* text */ 't', ` is thrown.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'other', [/* parameter description */
-					[/* text */ 't', `the ProcessHandle to be compared`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
-					[/* text */ 't', `if the specified object is null`]
-				]],
-				[/* throw */ 'java.lang.ClassCastException', [/* throw description */
-					[/* text */ 't', `if the specified object is not of same class
-         as this object`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `a negative integer, zero, or a positive integer as this object
- is less than, equal to, or greater than the specified object.`]
-			]
-		]],
-		[/* method */ 'of(long)', [
-			[/* method description */
-				[/* text */ 't', `Returns an `],
-				[/* inline code block */ 'i', `Optional<ProcessHandle>`],
-				[/* text */ 't', ` for an existing native process.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'pid', [/* parameter description */
-					[/* text */ 't', `a native process ID`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.SecurityException', [/* throw description */
-					[/* text */ 't', `if a security manager has been installed and
-         it denies RuntimePermission("manageProcess")`]
-				]],
-				[/* throw */ 'java.lang.UnsupportedOperationException', [/* throw description */
-					[/* text */ 't', `if the implementation
-         does not support this operation`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `an `],
-				[/* inline code block */ 'i', `Optional<ProcessHandle>`],
-				[/* text */ 't', ` of the PID for the process;
-         the `],
-				[/* inline code block */ 'i', `Optional`],
-				[/* text */ 't', ` is empty if the process does not exist`]
-			]
-		]],
-		[/* method */ 'info()', [
-			[/* method description */
-				[/* text */ 't', `Returns a snapshot of information about the process.
-
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', ` A `],
-					[/* reference */ 'r', `java.lang.ProcessHandle.Info`],
-					[/* text */ 't', ` instance has accessor methods that return
- information about the process if it is available.`]
-				]]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `a snapshot of information about the process, always non-null`]
-			]
-		]],
-		[/* method */ 'current()', [
-			[/* method description */
-				[/* text */ 't', `Returns a ProcessHandle for the current process. The ProcessHandle cannot be
- used to destroy the current process, use `],
-				[/* reference */ 'r', `.System#exit(int)`],
-				[/* text */ 't', ` instead.`]
-			],
-			/* parameters */ UDF,
-			[/* throws */
-				[/* throw */ 'java.lang.SecurityException', [/* throw description */
-					[/* text */ 't', `if a security manager has been installed and
-         it denies RuntimePermission("manageProcess")`]
-				]],
-				[/* throw */ 'java.lang.UnsupportedOperationException', [/* throw description */
-					[/* text */ 't', `if the implementation
-         does not support this operation`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `a ProcessHandle for the current process`]
-			]
-		]],
-		[/* method */ 'isAlive()', [
-			[/* method description */
-				[/* text */ 't', `Tests whether the process represented by this `],
-				[/* inline code block */ 'i', `ProcessHandle`],
-				[/* text */ 't', ` is alive.
- Process termination is implementation and operating system specific.
- The process is considered alive as long as the PID is valid.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* inline code block */ 'i', `true`],
-				[/* text */ 't', ` if the process represented by this
-         `],
-				[/* inline code block */ 'i', `ProcessHandle`],
-				[/* text */ 't', ` object has not yet terminated`]
-			]
-		]],
 		[/* method */ 'destroy()', [
 			[/* method description */
 				[/* text */ 't', `Requests the process to be killed.
@@ -336,27 +137,280 @@ DocsCollector.collect('java.lang.ProcessHandle', [
 				[/* inline code block */ 'i', `false`]
 			]
 		]],
-		[/* method */ 'pid()', [
+		[/* method */ 'destroyForcibly()', [
 			[/* method description */
-				[/* text */ 't', `Returns the native process ID of the process. The native process ID is an
- identification number that the operating system assigns to the process.
- The operating system may reuse the process ID after a process terminates.
- Use `],
-				[/* reference */ 'r', `#equals(java.lang.Object)`, `equals`],
-				[/* text */ 't', ` or
+				[/* text */ 't', `Requests the process to be killed forcibly.
+ The process represented by this `],
+				[/* inline code block */ 'i', `ProcessHandle`],
+				[/* text */ 't', ` object is
+ forcibly terminated.
+ Forcible process destruction is defined as the immediate termination of the
+ process, whereas normal termination allows the process to shut down cleanly.
+ If the process is not alive, no action is taken.
+ The operating system access controls may prevent the process
+ from being killed.
  `],
-				[/* reference */ 'r', `#compareTo(java.lang.ProcessHandle)`, `compareTo`],
-				[/* text */ 't', ` to compare ProcessHandles.`]
+				[/* block */ 'b', [
+					[/* text */ 't', `
+ The `],
+					[/* reference */ 'r', `java.util.concurrent.CompletableFuture`],
+					[/* text */ 't', ` from `],
+					[/* reference */ 'r', `#onExit()`, `onExit()`],
+					[/* text */ 't', ` is
+ `],
+					[/* reference */ 'r', `java.concurrent.CompletableFuture#complete(T)`],
+					[/* text */ 't', `
+ when the process has terminated.
+ `]
+				]],
+				[/* block */ 'b', [
+					[/* text */ 't', `
+ Note: The process may not terminate immediately.
+ For example, `],
+					[/* inline code block */ 'i', `isAlive()`],
+					[/* text */ 't', ` may return true for a brief period
+ after `],
+					[/* inline code block */ 'i', `destroyForcibly()`],
+					[/* text */ 't', ` is called.`]
+				]]
 			],
 			/* parameters */ UDF,
 			[/* throws */
-				[/* throw */ 'java.lang.UnsupportedOperationException', [/* throw description */
-					[/* text */ 't', `if the implementation
-         does not support this operation`]
+				[/* throw */ 'java.lang.IllegalStateException', [/* throw description */
+					[/* text */ 't', `if the process is the current process`]
 				]]
 			],
 			[/* return description */
-				[/* text */ 't', `the native process ID of the process`]
+				[/* inline code block */ 'i', `true`],
+				[/* text */ 't', ` if termination was successfully requested,
+         otherwise `],
+				[/* inline code block */ 'i', `false`]
+			]
+		]],
+		[/* method */ 'equals(java.lang.Object)', [
+			[/* method description */
+				[/* text */ 't', `Returns `],
+				[/* inline code block */ 'i', `true`],
+				[/* text */ 't', ` if `],
+				[/* inline code block */ 'i', `other`],
+				[/* text */ 't', ` object is non-null, is of the
+ same implementation, and represents the same system process;
+ otherwise it returns `],
+				[/* inline code block */ 'i', `false`],
+				[/* text */ 't', `.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'other', [/* parameter description */
+					[/* text */ 't', `another object`]
+				]]
+			],
+			/* throws */ UDF,
+			[/* return description */
+				[/* inline code block */ 'i', `true`],
+				[/* text */ 't', ` if the `],
+				[/* inline code block */ 'i', `other`],
+				[/* text */ 't', ` object is non-null,
+         is of the same implementation class and represents
+         the same system process; otherwise returns `],
+				[/* inline code block */ 'i', `false`]
+			]
+		]],
+		[/* method */ 'isAlive()', [
+			[/* method description */
+				[/* text */ 't', `Tests whether the process represented by this `],
+				[/* inline code block */ 'i', `ProcessHandle`],
+				[/* text */ 't', ` is alive.
+ Process termination is implementation and operating system specific.
+ The process is considered alive as long as the PID is valid.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* inline code block */ 'i', `true`],
+				[/* text */ 't', ` if the process represented by this
+         `],
+				[/* inline code block */ 'i', `ProcessHandle`],
+				[/* text */ 't', ` object has not yet terminated`]
+			]
+		]],
+		[/* method */ 'supportsNormalTermination()', [
+			[/* method description */
+				[/* text */ 't', `Returns `],
+				[/* inline code block */ 'i', `true`],
+				[/* text */ 't', ` if the implementation of `],
+				[/* reference */ 'r', `#destroy()`, `destroy()`],
+				[/* text */ 't', `
+ normally terminates the process.
+ Returns `],
+				[/* inline code block */ 'i', `false`],
+				[/* text */ 't', ` if the implementation of `],
+				[/* inline code block */ 'i', `destroy`],
+				[/* text */ 't', `
+ forcibly and immediately terminates the process.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* inline code block */ 'i', `true`],
+				[/* text */ 't', ` if the implementation of `],
+				[/* reference */ 'r', `#destroy()`, `destroy()`],
+				[/* text */ 't', `
+         normally terminates the process;
+         otherwise, `],
+				[/* reference */ 'r', `#destroy()`, `destroy()`],
+				[/* text */ 't', ` forcibly terminates the process`]
+			]
+		]],
+		[/* method */ 'compareTo(java.lang.ProcessHandle)', [
+			[/* method description */
+				[/* text */ 't', `Compares this ProcessHandle with the specified ProcessHandle for order.
+ The order is not specified, but is consistent with `],
+				[/* reference */ 'r', `.Object#equals(java.lang.Object)`],
+				[/* text */ 't', `,
+ which returns `],
+				[/* inline code block */ 'i', `true`],
+				[/* text */ 't', ` if and only if two instances of ProcessHandle
+ are of the same implementation and represent the same system process.
+ Comparison is only supported among objects of same implementation.
+ If attempt is made to mutually compare two different implementations
+ of `],
+				[/* reference */ 'r', `java.lang.ProcessHandle`],
+				[/* text */ 't', `s, `],
+				[/* reference */ 'r', `java.lang.ClassCastException`],
+				[/* text */ 't', ` is thrown.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'other', [/* parameter description */
+					[/* text */ 't', `the ProcessHandle to be compared`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
+					[/* text */ 't', `if the specified object is null`]
+				]],
+				[/* throw */ 'java.lang.ClassCastException', [/* throw description */
+					[/* text */ 't', `if the specified object is not of same class
+         as this object`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `a negative integer, zero, or a positive integer as this object
+ is less than, equal to, or greater than the specified object.`]
+			]
+		]],
+		[/* method */ 'hashCode()', [
+			[/* method description */
+				[/* text */ 't', `Returns a hash code value for this ProcessHandle.
+ The hashcode value follows the general contract for `],
+				[/* reference */ 'r', `.Object#hashCode()`],
+				[/* text */ 't', `.
+ The value is a function of the `],
+				[/* reference */ 'r', `#pid()`, `pid()`],
+				[/* text */ 't', ` value and
+ may be a function of additional information to uniquely identify the process.
+ If two ProcessHandles are equal according to the `],
+				[/* reference */ 'r', `#equals(java.lang.Object)`, `equals`],
+				[/* text */ 't', `
+ method, then calling the hashCode method on each of the two objects
+ must produce the same integer result.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `a hash code value for this object`]
+			]
+		]],
+		[/* method */ 'info()', [
+			[/* method description */
+				[/* text */ 't', `Returns a snapshot of information about the process.
+
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', ` A `],
+					[/* reference */ 'r', `java.lang.ProcessHandle.Info`],
+					[/* text */ 't', ` instance has accessor methods that return
+ information about the process if it is available.`]
+				]]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `a snapshot of information about the process, always non-null`]
+			]
+		]],
+		[/* method */ 'onExit()', [
+			[/* method description */
+				[/* text */ 't', `Returns a `],
+				[/* inline code block */ 'i', `CompletableFuture<ProcessHandle>`],
+				[/* text */ 't', ` for the termination
+ of the process.
+ The `],
+				[/* reference */ 'r', `java.util.concurrent.CompletableFuture`],
+				[/* text */ 't', ` provides the ability
+ to trigger dependent functions or actions that may be run synchronously
+ or asynchronously upon process termination.
+ When the process has terminated the CompletableFuture is
+ `],
+				[/* reference */ 'r', `java.concurrent.CompletableFuture#complete(T)`],
+				[/* text */ 't', ` regardless
+ of the exit status of the process.
+ The `],
+				[/* inline code block */ 'i', `onExit`],
+				[/* text */ 't', ` method can be called multiple times to invoke
+ independent actions when the process exits.
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', `
+ Calling `],
+					[/* inline code block */ 'i', `onExit().get()`],
+					[/* text */ 't', ` waits for the process to terminate and returns
+ the ProcessHandle. The future can be used to check if the process is
+ `],
+					[/* reference */ 'r', `java.concurrent.CompletableFuture#isDone()`],
+					[/* text */ 't', ` or to
+ `],
+					[/* reference */ 'r', `java.concurrent.Future#get()`],
+					[/* text */ 't', ` for it to terminate.
+ `],
+					[/* reference */ 'r', `java.concurrent.Future#cancel(boolean)`],
+					[/* text */ 't', `
+ the CompleteableFuture does not affect the Process.`]
+				]]
+			],
+			/* parameters */ UDF,
+			[/* throws */
+				[/* throw */ 'java.lang.IllegalStateException', [/* throw description */
+					[/* text */ 't', `if the process is the current process`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `a new `],
+				[/* inline code block */ 'i', `CompletableFuture<ProcessHandle>`],
+				[/* text */ 't', ` for the ProcessHandle`]
+			]
+		]],
+		[/* method */ 'parent()', [
+			[/* method description */
+				[/* text */ 't', `Returns an `],
+				[/* inline code block */ 'i', `Optional<ProcessHandle>`],
+				[/* text */ 't', ` for the parent process.
+ Note that Processes in a zombie state usually don't have a parent.`]
+			],
+			/* parameters */ UDF,
+			[/* throws */
+				[/* throw */ 'java.lang.SecurityException', [/* throw description */
+					[/* text */ 't', `if a security manager has been installed and
+         it denies RuntimePermission("manageProcess")`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `an `],
+				[/* inline code block */ 'i', `Optional<ProcessHandle>`],
+				[/* text */ 't', ` of the parent process;
+         the `],
+				[/* inline code block */ 'i', `Optional`],
+				[/* text */ 't', ` is empty if the child process does not have a parent
+         or if the parent is not available, possibly due to operating system limitations`]
 			]
 		]],
 		[/* method */ 'children()', [
@@ -418,133 +472,79 @@ DocsCollector.collect('java.lang.ProcessHandle', [
          are descendants of the process`]
 			]
 		]],
-		[/* method */ 'destroyForcibly()', [
+		[/* method */ 'pid()', [
 			[/* method description */
-				[/* text */ 't', `Requests the process to be killed forcibly.
- The process represented by this `],
-				[/* inline code block */ 'i', `ProcessHandle`],
-				[/* text */ 't', ` object is
- forcibly terminated.
- Forcible process destruction is defined as the immediate termination of the
- process, whereas normal termination allows the process to shut down cleanly.
- If the process is not alive, no action is taken.
- The operating system access controls may prevent the process
- from being killed.
+				[/* text */ 't', `Returns the native process ID of the process. The native process ID is an
+ identification number that the operating system assigns to the process.
+ The operating system may reuse the process ID after a process terminates.
+ Use `],
+				[/* reference */ 'r', `#equals(java.lang.Object)`, `equals`],
+				[/* text */ 't', ` or
  `],
-				[/* block */ 'b', [
-					[/* text */ 't', `
- The `],
-					[/* reference */ 'r', `java.util.concurrent.CompletableFuture`],
-					[/* text */ 't', ` from `],
-					[/* reference */ 'r', `#onExit()`, `onExit()`],
-					[/* text */ 't', ` is
- `],
-					[/* reference */ 'r', `java.concurrent.CompletableFuture#complete(T)`],
-					[/* text */ 't', `
- when the process has terminated.
- `]
+				[/* reference */ 'r', `#compareTo(java.lang.ProcessHandle)`, `compareTo`],
+				[/* text */ 't', ` to compare ProcessHandles.`]
+			],
+			/* parameters */ UDF,
+			[/* throws */
+				[/* throw */ 'java.lang.UnsupportedOperationException', [/* throw description */
+					[/* text */ 't', `if the implementation
+         does not support this operation`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `the native process ID of the process`]
+			]
+		]],
+		[/* method */ 'current()', [
+			[/* method description */
+				[/* text */ 't', `Returns a ProcessHandle for the current process. The ProcessHandle cannot be
+ used to destroy the current process, use `],
+				[/* reference */ 'r', `.System#exit(int)`],
+				[/* text */ 't', ` instead.`]
+			],
+			/* parameters */ UDF,
+			[/* throws */
+				[/* throw */ 'java.lang.SecurityException', [/* throw description */
+					[/* text */ 't', `if a security manager has been installed and
+         it denies RuntimePermission("manageProcess")`]
 				]],
-				[/* block */ 'b', [
-					[/* text */ 't', `
- Note: The process may not terminate immediately.
- For example, `],
-					[/* inline code block */ 'i', `isAlive()`],
-					[/* text */ 't', ` may return true for a brief period
- after `],
-					[/* inline code block */ 'i', `destroyForcibly()`],
-					[/* text */ 't', ` is called.`]
-				]]
-			],
-			/* parameters */ UDF,
-			[/* throws */
-				[/* throw */ 'java.lang.IllegalStateException', [/* throw description */
-					[/* text */ 't', `if the process is the current process`]
+				[/* throw */ 'java.lang.UnsupportedOperationException', [/* throw description */
+					[/* text */ 't', `if the implementation
+         does not support this operation`]
 				]]
 			],
 			[/* return description */
-				[/* inline code block */ 'i', `true`],
-				[/* text */ 't', ` if termination was successfully requested,
-         otherwise `],
-				[/* inline code block */ 'i', `false`]
+				[/* text */ 't', `a ProcessHandle for the current process`]
 			]
 		]],
-		[/* method */ 'supportsNormalTermination()', [
+		[/* method */ 'of(long)', [
 			[/* method description */
-				[/* text */ 't', `Returns `],
-				[/* inline code block */ 'i', `true`],
-				[/* text */ 't', ` if the implementation of `],
-				[/* reference */ 'r', `#destroy()`, `destroy()`],
-				[/* text */ 't', `
- normally terminates the process.
- Returns `],
-				[/* inline code block */ 'i', `false`],
-				[/* text */ 't', ` if the implementation of `],
-				[/* inline code block */ 'i', `destroy`],
-				[/* text */ 't', `
- forcibly and immediately terminates the process.`]
+				[/* text */ 't', `Returns an `],
+				[/* inline code block */ 'i', `Optional<ProcessHandle>`],
+				[/* text */ 't', ` for an existing native process.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* inline code block */ 'i', `true`],
-				[/* text */ 't', ` if the implementation of `],
-				[/* reference */ 'r', `#destroy()`, `destroy()`],
-				[/* text */ 't', `
-         normally terminates the process;
-         otherwise, `],
-				[/* reference */ 'r', `#destroy()`, `destroy()`],
-				[/* text */ 't', ` forcibly terminates the process`]
-			]
-		]],
-		[/* method */ 'onExit()', [
-			[/* method description */
-				[/* text */ 't', `Returns a `],
-				[/* inline code block */ 'i', `CompletableFuture<ProcessHandle>`],
-				[/* text */ 't', ` for the termination
- of the process.
- The `],
-				[/* reference */ 'r', `java.util.concurrent.CompletableFuture`],
-				[/* text */ 't', ` provides the ability
- to trigger dependent functions or actions that may be run synchronously
- or asynchronously upon process termination.
- When the process has terminated the CompletableFuture is
- `],
-				[/* reference */ 'r', `java.concurrent.CompletableFuture#complete(T)`],
-				[/* text */ 't', ` regardless
- of the exit status of the process.
- The `],
-				[/* inline code block */ 'i', `onExit`],
-				[/* text */ 't', ` method can be called multiple times to invoke
- independent actions when the process exits.
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', `
- Calling `],
-					[/* inline code block */ 'i', `onExit().get()`],
-					[/* text */ 't', ` waits for the process to terminate and returns
- the ProcessHandle. The future can be used to check if the process is
- `],
-					[/* reference */ 'r', `java.concurrent.CompletableFuture#isDone()`],
-					[/* text */ 't', ` or to
- `],
-					[/* reference */ 'r', `java.concurrent.Future#get()`],
-					[/* text */ 't', ` for it to terminate.
- `],
-					[/* reference */ 'r', `java.concurrent.Future#cancel(boolean)`],
-					[/* text */ 't', `
- the CompleteableFuture does not affect the Process.`]
+			[/* parameters */
+				[/* parameter */ 'pid', [/* parameter description */
+					[/* text */ 't', `a native process ID`]
 				]]
 			],
-			/* parameters */ UDF,
 			[/* throws */
-				[/* throw */ 'java.lang.IllegalStateException', [/* throw description */
-					[/* text */ 't', `if the process is the current process`]
+				[/* throw */ 'java.lang.SecurityException', [/* throw description */
+					[/* text */ 't', `if a security manager has been installed and
+         it denies RuntimePermission("manageProcess")`]
+				]],
+				[/* throw */ 'java.lang.UnsupportedOperationException', [/* throw description */
+					[/* text */ 't', `if the implementation
+         does not support this operation`]
 				]]
 			],
 			[/* return description */
-				[/* text */ 't', `a new `],
-				[/* inline code block */ 'i', `CompletableFuture<ProcessHandle>`],
-				[/* text */ 't', ` for the ProcessHandle`]
+				[/* text */ 't', `an `],
+				[/* inline code block */ 'i', `Optional<ProcessHandle>`],
+				[/* text */ 't', ` of the PID for the process;
+         the `],
+				[/* inline code block */ 'i', `Optional`],
+				[/* text */ 't', ` is empty if the process does not exist`]
 			]
 		]],
 		[/* method */ 'allProcesses()', [

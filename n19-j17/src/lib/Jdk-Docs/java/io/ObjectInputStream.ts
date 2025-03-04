@@ -247,6 +247,51 @@ DocsCollector.collect('java.io.ObjectInputStream', [
 	],
 	/* fields */ UDF,
 	[/* constructors */
+		[/* constructor */ '<init>()', [
+			[/* constructor description */
+				[/* text */ 't', `Provide a way for subclasses that are completely reimplementing
+ ObjectInputStream to not have to allocate private data just used by this
+ implementation of ObjectInputStream.
+
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', `The constructor initializes the deserialization filter to the filter returned
+ by invoking the `],
+					[/* reference */ 'r', `.ObjectInputFilter.Config#getSerialFilterFactory()`],
+					[/* text */ 't', ` with `],
+					[/* inline code block */ 'i', `null`],
+					[/* text */ 't', ` for the current filter
+ and the `],
+					[/* reference */ 'r', `.ObjectInputFilter.Config#getSerialFilter()`],
+					[/* text */ 't', ` for the requested filter.
+
+ `]
+				]],
+				[/* block */ 'b', [
+					[/* text */ 't', `If there is a security manager installed, this method first calls the
+ security manager's `],
+					[/* inline code block */ 'i', `checkPermission`],
+					[/* text */ 't', ` method with the
+ `],
+					[/* inline code block */ 'i', `SerializablePermission("enableSubclassImplementation")`],
+					[/* text */ 't', `
+ permission to ensure it's ok to enable subclassing.`]
+				]]
+			],
+			/* parameters */ UDF,
+			[/* throws */
+				[/* throw */ 'java.lang.SecurityException', [/* throw description */
+					[/* text */ 't', `if a security manager exists and its
+          `],
+					[/* inline code block */ 'i', `checkPermission`],
+					[/* text */ 't', ` method denies enabling
+          subclassing.`]
+				]],
+				[/* throw */ 'java.io.IOException', [/* throw description */
+					[/* text */ 't', `if an I/O error occurs while creating this stream`]
+				]]
+			]
+		]],
 		[/* constructor */ '<init>(java.io.InputStream)', [
 			[/* constructor description */
 				[/* text */ 't', `Creates an ObjectInputStream that reads from the specified InputStream.
@@ -297,54 +342,82 @@ DocsCollector.collect('java.io.ObjectInputStream', [
 					[/* inline code block */ 'i', `null`]
 				]]
 			]
-		]],
-		[/* constructor */ '<init>()', [
-			[/* constructor description */
-				[/* text */ 't', `Provide a way for subclasses that are completely reimplementing
- ObjectInputStream to not have to allocate private data just used by this
- implementation of ObjectInputStream.
+		]]
+	],
+	[/* methods */
+		[/* method */ 'enableResolveObject(boolean)', [
+			[/* method description */
+				[/* text */ 't', `Enables the stream to do replacement of objects read from the stream. When
+ enabled, the `],
+				[/* reference */ 'r', `#resolveObject(java.lang.Object)`, `resolveObject(java.lang.Object)`],
+				[/* text */ 't', ` method is called for every object being
+ deserialized.
 
  `],
 				[/* block */ 'b', [
-					[/* text */ 't', `The constructor initializes the deserialization filter to the filter returned
- by invoking the `],
-					[/* reference */ 'r', `.ObjectInputFilter.Config#getSerialFilterFactory()`],
-					[/* text */ 't', ` with `],
-					[/* inline code block */ 'i', `null`],
-					[/* text */ 't', ` for the current filter
- and the `],
-					[/* reference */ 'r', `.ObjectInputFilter.Config#getSerialFilter()`],
-					[/* text */ 't', ` for the requested filter.
-
- `]
-				]],
-				[/* block */ 'b', [
-					[/* text */ 't', `If there is a security manager installed, this method first calls the
- security manager's `],
+					[/* text */ 't', `If object replacement is currently not enabled, and
+ `],
+					[/* inline code block */ 'i', `enable`],
+					[/* text */ 't', ` is true, and there is a security manager installed,
+ this method first calls the security manager's
+ `],
 					[/* inline code block */ 'i', `checkPermission`],
 					[/* text */ 't', ` method with the
  `],
-					[/* inline code block */ 'i', `SerializablePermission("enableSubclassImplementation")`],
-					[/* text */ 't', `
- permission to ensure it's ok to enable subclassing.`]
+					[/* inline code block */ 'i', `SerializablePermission("enableSubstitution")`],
+					[/* text */ 't', ` permission to
+ ensure that the caller is permitted to enable the stream to do replacement
+ of objects read from the stream.`]
 				]]
 			],
-			/* parameters */ UDF,
+			[/* parameters */
+				[/* parameter */ 'enable', [/* parameter description */
+					[/* text */ 't', `true for enabling use of `],
+					[/* inline code block */ 'i', `resolveObject`],
+					[/* text */ 't', ` for
+          every object being deserialized`]
+				]]
+			],
 			[/* throws */
 				[/* throw */ 'java.lang.SecurityException', [/* throw description */
 					[/* text */ 't', `if a security manager exists and its
           `],
 					[/* inline code block */ 'i', `checkPermission`],
-					[/* text */ 't', ` method denies enabling
-          subclassing.`]
-				]],
-				[/* throw */ 'java.io.IOException', [/* throw description */
-					[/* text */ 't', `if an I/O error occurs while creating this stream`]
+					[/* text */ 't', ` method denies enabling the stream
+          to do replacement of objects read from the stream.`]
 				]]
+			],
+			[/* return description */
+				[/* text */ 't', `the previous setting before this method was invoked`]
 			]
-		]]
-	],
-	[/* methods */
+		]],
+		[/* method */ 'readClassDescriptor()', [
+			[/* method description */
+				[/* text */ 't', `Read a class descriptor from the serialization stream.  This method is
+ called when the ObjectInputStream expects a class descriptor as the next
+ item in the serialization stream.  Subclasses of ObjectInputStream may
+ override this method to read in class descriptors that have been written
+ in non-standard formats (by subclasses of ObjectOutputStream which have
+ overridden the `],
+				[/* inline code block */ 'i', `writeClassDescriptor`],
+				[/* text */ 't', ` method).  By default,
+ this method reads class descriptors according to the format defined in
+ the Object Serialization specification.`]
+			],
+			/* parameters */ UDF,
+			[/* throws */
+				[/* throw */ 'java.io.IOException', [/* throw description */
+					[/* text */ 't', `If an I/O error has occurred.`]
+				]],
+				[/* throw */ 'java.lang.ClassNotFoundException', [/* throw description */
+					[/* text */ 't', `If the Class of a serialized object used
+          in the class descriptor representation cannot be found`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `the class descriptor read`]
+			]
+		]],
 		[/* method */ 'resolveClass(java.io.ObjectStreamClass)', [
 			[/* method description */
 				[/* text */ 't', `Load the local class equivalent of the specified stream class
@@ -438,593 +511,6 @@ DocsCollector.collect('java.io.ObjectInputStream', [
 				[/* inline code block */ 'i', `Class`],
 				[/* text */ 't', ` object corresponding to `],
 				[/* inline code block */ 'i', `desc`]
-			]
-		]],
-		[/* method */ 'defaultReadObject()', [
-			[/* method description */
-				[/* text */ 't', `Read the non-static and non-transient fields of the current class from
- this stream.  This may only be called from the readObject method of the
- class being deserialized. It will throw the NotActiveException if it is
- called otherwise.`]
-			],
-			/* parameters */ UDF,
-			[/* throws */
-				[/* throw */ 'java.lang.ClassNotFoundException', [/* throw description */
-					[/* text */ 't', `if the class of a serialized object
-          could not be found.`]
-				]],
-				[/* throw */ 'java.io.IOException', [/* throw description */
-					[/* text */ 't', `if an I/O error occurs.`]
-				]],
-				[/* throw */ 'java.io.NotActiveException', [/* throw description */
-					[/* text */ 't', `if the stream is not currently reading
-          objects.`]
-				]]
-			],
-			/* return */ UDF
-		]],
-		[/* method */ 'readObject()', [
-			[/* method description */
-				[/* text */ 't', `Read an object from the ObjectInputStream.  The class of the object, the
- signature of the class, and the values of the non-transient and
- non-static fields of the class and all of its supertypes are read.
- Default deserializing for a class can be overridden using the writeObject
- and readObject methods.  Objects referenced by this object are read
- transitively so that a complete equivalent graph of objects is
- reconstructed by readObject.
-
- `],
-				[/* block */ 'b', `The root object is completely restored when all of its fields and the
- objects it references are completely restored.  At this point the object
- validation callbacks are executed in order based on their registered
- priorities. The callbacks are registered by objects (in the readObject
- special methods) as they are individually restored.
-
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', `The deserialization filter, when not `],
-					[/* inline code block */ 'i', `null`],
-					[/* text */ 't', `, is invoked for
- each object (regular or class) read to reconstruct the root object.
- See `],
-					[/* reference */ 'r', `#setObjectInputFilter(java.io.ObjectInputFilter)`, `setObjectInputFilter`],
-					[/* text */ 't', ` for details.
-
- `]
-				]],
-				[/* block */ 'b', `Exceptions are thrown for problems with the InputStream and for
- classes that should not be deserialized.  All exceptions are fatal to
- the InputStream and leave it in an indeterminate state; it is up to the
- caller to ignore or recover the stream state.`]
-			],
-			/* parameters */ UDF,
-			[/* throws */
-				[/* throw */ 'java.lang.ClassNotFoundException', [/* throw description */
-					[/* text */ 't', `Class of a serialized object cannot be
-          found.`]
-				]],
-				[/* throw */ 'java.io.InvalidClassException', [/* throw description */
-					[/* text */ 't', `Something is wrong with a class used by
-          deserialization.`]
-				]],
-				[/* throw */ 'java.io.StreamCorruptedException', [/* throw description */
-					[/* text */ 't', `Control information in the
-          stream is inconsistent.`]
-				]],
-				[/* throw */ 'java.io.OptionalDataException', [/* throw description */
-					[/* text */ 't', `Primitive data was found in the
-          stream instead of objects.`]
-				]],
-				[/* throw */ 'java.io.IOException', [/* throw description */
-					[/* text */ 't', `Any of the usual Input/Output related exceptions.`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `the object read from the stream`]
-			]
-		]],
-		[/* method */ 'read(byte[],int,int)', [
-			[/* method description */
-				[/* text */ 't', `Reads into an array of bytes.  This method will block until some input
- is available. Consider using java.io.DataInputStream.readFully to read
- exactly 'length' bytes.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'buf', [/* parameter description */
-					[/* text */ 't', `the buffer into which the data is read`]
-				]],
-				[/* parameter */ 'off', [/* parameter description */
-					[/* text */ 't', `the start offset in the destination array `],
-					[/* inline code block */ 'i', `buf`]
-				]],
-				[/* parameter */ 'len', [/* parameter description */
-					[/* text */ 't', `the maximum number of bytes read`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
-					[/* text */ 't', `if `],
-					[/* inline code block */ 'i', `buf`],
-					[/* text */ 't', ` is `],
-					[/* inline code block */ 'i', `null`],
-					[/* text */ 't', `.`]
-				]],
-				[/* throw */ 'java.lang.IndexOutOfBoundsException', [/* throw description */
-					[/* text */ 't', `if `],
-					[/* inline code block */ 'i', `off`],
-					[/* text */ 't', ` is negative,
-          `],
-					[/* inline code block */ 'i', `len`],
-					[/* text */ 't', ` is negative, or `],
-					[/* inline code block */ 'i', `len`],
-					[/* text */ 't', ` is greater than
-          `],
-					[/* inline code block */ 'i', `buf.length - off`],
-					[/* text */ 't', `.`]
-				]],
-				[/* throw */ 'java.io.IOException', [/* throw description */
-					[/* text */ 't', `If an I/O error has occurred.`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `the actual number of bytes read, -1 is returned when the end of
-          the stream is reached.`]
-			]
-		]],
-		[/* method */ 'read()', [
-			[/* method description */
-				[/* text */ 't', `Reads a byte of data. This method will block if no input is available.`]
-			],
-			/* parameters */ UDF,
-			[/* throws */
-				[/* throw */ 'java.io.IOException', [/* throw description */
-					[/* text */ 't', `If an I/O error has occurred.`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `the byte read, or -1 if the end of the stream is reached.`]
-			]
-		]],
-		[/* method */ 'readFields()', [
-			[/* method description */
-				[/* text */ 't', `Reads the persistent fields from the stream and makes them available by
- name.`]
-			],
-			/* parameters */ UDF,
-			[/* throws */
-				[/* throw */ 'java.lang.ClassNotFoundException', [/* throw description */
-					[/* text */ 't', `if the class of a serialized object
-          could not be found.`]
-				]],
-				[/* throw */ 'java.io.IOException', [/* throw description */
-					[/* text */ 't', `if an I/O error occurs.`]
-				]],
-				[/* throw */ 'java.io.NotActiveException', [/* throw description */
-					[/* text */ 't', `if the stream is not currently reading
-          objects.`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `the `],
-				[/* inline code block */ 'i', `GetField`],
-				[/* text */ 't', ` object representing the persistent
-          fields of the object being deserialized`]
-			]
-		]],
-		[/* method */ 'readLine()', [
-			[/* method description */
-				[/* text */ 't', `Reads in a line that has been terminated by a \\n, \\r, \\r\\n or EOF.`]
-			],
-			/* parameters */ UDF,
-			[/* throws */
-				[/* throw */ 'java.io.IOException', [/* throw description */
-					[/* text */ 't', `if there are I/O errors while reading from the
-          underlying `],
-					[/* inline code block */ 'i', `InputStream`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `a String copy of the line.`]
-			]
-		]],
-		[/* method */ 'close()', [
-			[/* method description */
-				[/* text */ 't', `Closes the input stream. Must be called to release any resources
- associated with the stream.`]
-			],
-			/* parameters */ UDF,
-			[/* throws */
-				[/* throw */ 'java.io.IOException', [/* throw description */
-					[/* text */ 't', `If an I/O error has occurred.`]
-				]]
-			],
-			/* return */ UDF
-		]],
-		[/* method */ 'readInt()', [
-			[/* method description */
-				[/* text */ 't', `Reads a 32 bit int.`]
-			],
-			/* parameters */ UDF,
-			[/* throws */
-				[/* throw */ 'java.io.EOFException', [/* throw description */
-					[/* text */ 't', `If end of file is reached.`]
-				]],
-				[/* throw */ 'java.io.IOException', [/* throw description */
-					[/* text */ 't', `If other I/O error has occurred.`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `the 32 bit integer read.`]
-			]
-		]],
-		[/* method */ 'available()', [
-			[/* method description */
-				[/* text */ 't', `Returns the number of bytes that can be read without blocking.`]
-			],
-			/* parameters */ UDF,
-			[/* throws */
-				[/* throw */ 'java.io.IOException', [/* throw description */
-					[/* text */ 't', `if there are I/O errors while reading from the
-          underlying `],
-					[/* inline code block */ 'i', `InputStream`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `the number of available bytes.`]
-			]
-		]],
-		[/* method */ 'readUTF()', [
-			[/* method description */
-				[/* text */ 't', `Reads a String in
- `],
-				[/* reference */ 'r', `.DataInput#modified-utf-8`],
-				[/* text */ 't', `
- format.`]
-			],
-			/* parameters */ UDF,
-			[/* throws */
-				[/* throw */ 'java.io.IOException', [/* throw description */
-					[/* text */ 't', `if there are I/O errors while reading from the
-          underlying `],
-					[/* inline code block */ 'i', `InputStream`]
-				]],
-				[/* throw */ 'java.io.UTFDataFormatException', [/* throw description */
-					[/* text */ 't', `if read bytes do not represent a valid
-          modified UTF-8 encoding of a string`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `the String.`]
-			]
-		]],
-		[/* method */ 'readChar()', [
-			[/* method description */
-				[/* text */ 't', `Reads a 16 bit char.`]
-			],
-			/* parameters */ UDF,
-			[/* throws */
-				[/* throw */ 'java.io.EOFException', [/* throw description */
-					[/* text */ 't', `If end of file is reached.`]
-				]],
-				[/* throw */ 'java.io.IOException', [/* throw description */
-					[/* text */ 't', `If other I/O error has occurred.`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `the 16 bit char read.`]
-			]
-		]],
-		[/* method */ 'readFloat()', [
-			[/* method description */
-				[/* text */ 't', `Reads a 32 bit float.`]
-			],
-			/* parameters */ UDF,
-			[/* throws */
-				[/* throw */ 'java.io.EOFException', [/* throw description */
-					[/* text */ 't', `If end of file is reached.`]
-				]],
-				[/* throw */ 'java.io.IOException', [/* throw description */
-					[/* text */ 't', `If other I/O error has occurred.`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `the 32 bit float read.`]
-			]
-		]],
-		[/* method */ 'readUnsignedShort()', [
-			[/* method description */
-				[/* text */ 't', `Reads an unsigned 16 bit short.`]
-			],
-			/* parameters */ UDF,
-			[/* throws */
-				[/* throw */ 'java.io.EOFException', [/* throw description */
-					[/* text */ 't', `If end of file is reached.`]
-				]],
-				[/* throw */ 'java.io.IOException', [/* throw description */
-					[/* text */ 't', `If other I/O error has occurred.`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `the 16 bit short read.`]
-			]
-		]],
-		[/* method */ 'readLong()', [
-			[/* method description */
-				[/* text */ 't', `Reads a 64 bit long.`]
-			],
-			/* parameters */ UDF,
-			[/* throws */
-				[/* throw */ 'java.io.EOFException', [/* throw description */
-					[/* text */ 't', `If end of file is reached.`]
-				]],
-				[/* throw */ 'java.io.IOException', [/* throw description */
-					[/* text */ 't', `If other I/O error has occurred.`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `the read 64 bit long.`]
-			]
-		]],
-		[/* method */ 'readByte()', [
-			[/* method description */
-				[/* text */ 't', `Reads an 8 bit byte.`]
-			],
-			/* parameters */ UDF,
-			[/* throws */
-				[/* throw */ 'java.io.EOFException', [/* throw description */
-					[/* text */ 't', `If end of file is reached.`]
-				]],
-				[/* throw */ 'java.io.IOException', [/* throw description */
-					[/* text */ 't', `If other I/O error has occurred.`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `the 8 bit byte read.`]
-			]
-		]],
-		[/* method */ 'readShort()', [
-			[/* method description */
-				[/* text */ 't', `Reads a 16 bit short.`]
-			],
-			/* parameters */ UDF,
-			[/* throws */
-				[/* throw */ 'java.io.EOFException', [/* throw description */
-					[/* text */ 't', `If end of file is reached.`]
-				]],
-				[/* throw */ 'java.io.IOException', [/* throw description */
-					[/* text */ 't', `If other I/O error has occurred.`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `the 16 bit short read.`]
-			]
-		]],
-		[/* method */ 'readFully(byte[])', [
-			[/* method description */
-				[/* text */ 't', `Reads bytes, blocking until all bytes are read.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'buf', [/* parameter description */
-					[/* text */ 't', `the buffer into which the data is read`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
-					[/* text */ 't', `If `],
-					[/* inline code block */ 'i', `buf`],
-					[/* text */ 't', ` is `],
-					[/* inline code block */ 'i', `null`],
-					[/* text */ 't', `.`]
-				]],
-				[/* throw */ 'java.io.EOFException', [/* throw description */
-					[/* text */ 't', `If end of file is reached.`]
-				]],
-				[/* throw */ 'java.io.IOException', [/* throw description */
-					[/* text */ 't', `If other I/O error has occurred.`]
-				]]
-			],
-			/* return */ UDF
-		]],
-		[/* method */ 'readFully(byte[],int,int)', [
-			[/* method description */
-				[/* text */ 't', `Reads bytes, blocking until all bytes are read.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'buf', [/* parameter description */
-					[/* text */ 't', `the buffer into which the data is read`]
-				]],
-				[/* parameter */ 'off', [/* parameter description */
-					[/* text */ 't', `the start offset into the data array `],
-					[/* inline code block */ 'i', `buf`]
-				]],
-				[/* parameter */ 'len', [/* parameter description */
-					[/* text */ 't', `the maximum number of bytes to read`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
-					[/* text */ 't', `If `],
-					[/* inline code block */ 'i', `buf`],
-					[/* text */ 't', ` is `],
-					[/* inline code block */ 'i', `null`],
-					[/* text */ 't', `.`]
-				]],
-				[/* throw */ 'java.lang.IndexOutOfBoundsException', [/* throw description */
-					[/* text */ 't', `If `],
-					[/* inline code block */ 'i', `off`],
-					[/* text */ 't', ` is negative,
-          `],
-					[/* inline code block */ 'i', `len`],
-					[/* text */ 't', ` is negative, or `],
-					[/* inline code block */ 'i', `len`],
-					[/* text */ 't', ` is greater than
-          `],
-					[/* inline code block */ 'i', `buf.length - off`],
-					[/* text */ 't', `.`]
-				]],
-				[/* throw */ 'java.io.EOFException', [/* throw description */
-					[/* text */ 't', `If end of file is reached.`]
-				]],
-				[/* throw */ 'java.io.IOException', [/* throw description */
-					[/* text */ 't', `If other I/O error has occurred.`]
-				]]
-			],
-			/* return */ UDF
-		]],
-		[/* method */ 'skipBytes(int)', [
-			[/* method description */
-				[/* text */ 't', `Skips bytes.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'len', [/* parameter description */
-					[/* text */ 't', `the number of bytes to be skipped`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.io.IOException', [/* throw description */
-					[/* text */ 't', `If an I/O error has occurred.`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `the actual number of bytes skipped.`]
-			]
-		]],
-		[/* method */ 'readBoolean()', [
-			[/* method description */
-				[/* text */ 't', `Reads in a boolean.`]
-			],
-			/* parameters */ UDF,
-			[/* throws */
-				[/* throw */ 'java.io.EOFException', [/* throw description */
-					[/* text */ 't', `If end of file is reached.`]
-				]],
-				[/* throw */ 'java.io.IOException', [/* throw description */
-					[/* text */ 't', `If other I/O error has occurred.`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `the boolean read.`]
-			]
-		]],
-		[/* method */ 'readUnsignedByte()', [
-			[/* method description */
-				[/* text */ 't', `Reads an unsigned 8 bit byte.`]
-			],
-			/* parameters */ UDF,
-			[/* throws */
-				[/* throw */ 'java.io.EOFException', [/* throw description */
-					[/* text */ 't', `If end of file is reached.`]
-				]],
-				[/* throw */ 'java.io.IOException', [/* throw description */
-					[/* text */ 't', `If other I/O error has occurred.`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `the 8 bit byte read.`]
-			]
-		]],
-		[/* method */ 'readDouble()', [
-			[/* method description */
-				[/* text */ 't', `Reads a 64 bit double.`]
-			],
-			/* parameters */ UDF,
-			[/* throws */
-				[/* throw */ 'java.io.EOFException', [/* throw description */
-					[/* text */ 't', `If end of file is reached.`]
-				]],
-				[/* throw */ 'java.io.IOException', [/* throw description */
-					[/* text */ 't', `If other I/O error has occurred.`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `the 64 bit double read.`]
-			]
-		]],
-		[/* method */ 'readStreamHeader()', [
-			[/* method description */
-				[/* text */ 't', `The readStreamHeader method is provided to allow subclasses to read and
- verify their own stream headers. It reads and verifies the magic number
- and version number.`]
-			],
-			/* parameters */ UDF,
-			[/* throws */
-				[/* throw */ 'java.io.IOException', [/* throw description */
-					[/* text */ 't', `if there are I/O errors while reading from the
-          underlying `],
-					[/* inline code block */ 'i', `InputStream`]
-				]],
-				[/* throw */ 'java.io.StreamCorruptedException', [/* throw description */
-					[/* text */ 't', `if control information in the stream
-          is inconsistent`]
-				]]
-			],
-			/* return */ UDF
-		]],
-		[/* method */ 'readObjectOverride()', [
-			[/* method description */
-				[/* text */ 't', `This method is called by trusted subclasses of ObjectInputStream that
- constructed ObjectInputStream using the protected no-arg constructor.
- The subclass is expected to provide an override method with the modifier
- "final".`]
-			],
-			/* parameters */ UDF,
-			[/* throws */
-				[/* throw */ 'java.lang.ClassNotFoundException', [/* throw description */
-					[/* text */ 't', `Class definition of a serialized object
-          cannot be found.`]
-				]],
-				[/* throw */ 'java.io.OptionalDataException', [/* throw description */
-					[/* text */ 't', `Primitive data was found in the stream
-          instead of objects.`]
-				]],
-				[/* throw */ 'java.io.IOException', [/* throw description */
-					[/* text */ 't', `if I/O errors occurred while reading from the
-          underlying stream`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `the Object read from the stream.`]
-			]
-		]],
-		[/* method */ 'resolveObject(java.lang.Object)', [
-			[/* method description */
-				[/* text */ 't', `This method will allow trusted subclasses of ObjectInputStream to
- substitute one object for another during deserialization. Replacing
- objects is disabled until enableResolveObject is called. The
- enableResolveObject method checks that the stream requesting to resolve
- object can be trusted. Every reference to serializable objects is passed
- to resolveObject.  To insure that the private state of objects is not
- unintentionally exposed only trusted streams may use resolveObject.
-
- `],
-				[/* block */ 'b', `This method is called after an object has been read but before it is
- returned from readObject.  The default resolveObject method just returns
- the same object.
-
- `],
-				[/* block */ 'b', `When a subclass is replacing objects it must insure that the
- substituted object is compatible with every field where the reference
- will be stored.  Objects whose type is not a subclass of the type of the
- field or array element abort the deserialization by raising an exception
- and the object is not be stored.
-
- `],
-				[/* block */ 'b', `This method is called only once when each object is first
- encountered.  All subsequent references to the object will be redirected
- to the new object.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'obj', [/* parameter description */
-					[/* text */ 't', `object to be substituted`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.io.IOException', [/* throw description */
-					[/* text */ 't', `Any of the usual Input/Output exceptions.`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `the substituted object`]
 			]
 		]],
 		[/* method */ 'resolveProxyClass(java.lang.String[])', [
@@ -1145,183 +631,159 @@ DocsCollector.collect('java.io.ObjectInputStream', [
 				[/* text */ 't', `a proxy class for the specified interfaces`]
 			]
 		]],
-		[/* method */ 'readClassDescriptor()', [
+		[/* method */ 'readObjectOverride()', [
 			[/* method description */
-				[/* text */ 't', `Read a class descriptor from the serialization stream.  This method is
- called when the ObjectInputStream expects a class descriptor as the next
- item in the serialization stream.  Subclasses of ObjectInputStream may
- override this method to read in class descriptors that have been written
- in non-standard formats (by subclasses of ObjectOutputStream which have
- overridden the `],
-				[/* inline code block */ 'i', `writeClassDescriptor`],
-				[/* text */ 't', ` method).  By default,
- this method reads class descriptors according to the format defined in
- the Object Serialization specification.`]
+				[/* text */ 't', `This method is called by trusted subclasses of ObjectInputStream that
+ constructed ObjectInputStream using the protected no-arg constructor.
+ The subclass is expected to provide an override method with the modifier
+ "final".`]
+			],
+			/* parameters */ UDF,
+			[/* throws */
+				[/* throw */ 'java.lang.ClassNotFoundException', [/* throw description */
+					[/* text */ 't', `Class definition of a serialized object
+          cannot be found.`]
+				]],
+				[/* throw */ 'java.io.OptionalDataException', [/* throw description */
+					[/* text */ 't', `Primitive data was found in the stream
+          instead of objects.`]
+				]],
+				[/* throw */ 'java.io.IOException', [/* throw description */
+					[/* text */ 't', `if I/O errors occurred while reading from the
+          underlying stream`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `the Object read from the stream.`]
+			]
+		]],
+		[/* method */ 'resolveObject(java.lang.Object)', [
+			[/* method description */
+				[/* text */ 't', `This method will allow trusted subclasses of ObjectInputStream to
+ substitute one object for another during deserialization. Replacing
+ objects is disabled until enableResolveObject is called. The
+ enableResolveObject method checks that the stream requesting to resolve
+ object can be trusted. Every reference to serializable objects is passed
+ to resolveObject.  To insure that the private state of objects is not
+ unintentionally exposed only trusted streams may use resolveObject.
+
+ `],
+				[/* block */ 'b', `This method is called after an object has been read but before it is
+ returned from readObject.  The default resolveObject method just returns
+ the same object.
+
+ `],
+				[/* block */ 'b', `When a subclass is replacing objects it must insure that the
+ substituted object is compatible with every field where the reference
+ will be stored.  Objects whose type is not a subclass of the type of the
+ field or array element abort the deserialization by raising an exception
+ and the object is not be stored.
+
+ `],
+				[/* block */ 'b', `This method is called only once when each object is first
+ encountered.  All subsequent references to the object will be redirected
+ to the new object.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'obj', [/* parameter description */
+					[/* text */ 't', `object to be substituted`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.io.IOException', [/* throw description */
+					[/* text */ 't', `Any of the usual Input/Output exceptions.`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `the substituted object`]
+			]
+		]],
+		[/* method */ 'readStreamHeader()', [
+			[/* method description */
+				[/* text */ 't', `The readStreamHeader method is provided to allow subclasses to read and
+ verify their own stream headers. It reads and verifies the magic number
+ and version number.`]
 			],
 			/* parameters */ UDF,
 			[/* throws */
 				[/* throw */ 'java.io.IOException', [/* throw description */
-					[/* text */ 't', `If an I/O error has occurred.`]
-				]],
-				[/* throw */ 'java.lang.ClassNotFoundException', [/* throw description */
-					[/* text */ 't', `If the Class of a serialized object used
-          in the class descriptor representation cannot be found`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `the class descriptor read`]
-			]
-		]],
-		[/* method */ 'readUnshared()', [
-			[/* method description */
-				[/* text */ 't', `Reads an "unshared" object from the ObjectInputStream.  This method is
- identical to readObject, except that it prevents subsequent calls to
- readObject and readUnshared from returning additional references to the
- deserialized instance obtained via this call.  Specifically:
- `],
-				[/* list */ 'l', [
-					[/* block */ 'b', `If readUnshared is called to deserialize a back-reference (the
-       stream representation of an object which has been written
-       previously to the stream), an ObjectStreamException will be
-       thrown.
-
-   `],
-					[/* block */ 'b', `If readUnshared returns successfully, then any subsequent attempts
-       to deserialize back-references to the stream handle deserialized
-       by readUnshared will cause an ObjectStreamException to be thrown.
- `]
-				]],
-				[/* text */ 't', `
- Deserializing an object via readUnshared invalidates the stream handle
- associated with the returned object.  Note that this in itself does not
- always guarantee that the reference returned by readUnshared is unique;
- the deserialized object may define a readResolve method which returns an
- object visible to other parties, or readUnshared may return a Class
- object or enum constant obtainable elsewhere in the stream or through
- external means. If the deserialized object defines a readResolve method
- and the invocation of that method returns an array, then readUnshared
- returns a shallow clone of that array; this guarantees that the returned
- array object is unique and cannot be obtained a second time from an
- invocation of readObject or readUnshared on the ObjectInputStream,
- even if the underlying data stream has been manipulated.
-
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', `The deserialization filter, when not `],
-					[/* inline code block */ 'i', `null`],
-					[/* text */ 't', `, is invoked for
- each object (regular or class) read to reconstruct the root object.
- See `],
-					[/* reference */ 'r', `#setObjectInputFilter(java.io.ObjectInputFilter)`, `setObjectInputFilter`],
-					[/* text */ 't', ` for details.
-
- `]
-				]],
-				[/* block */ 'b', `ObjectInputStream subclasses which override this method can only be
- constructed in security contexts possessing the
- "enableSubclassImplementation" SerializablePermission; any attempt to
- instantiate such a subclass without this permission will cause a
- SecurityException to be thrown.`]
-			],
-			/* parameters */ UDF,
-			[/* throws */
-				[/* throw */ 'java.lang.ClassNotFoundException', [/* throw description */
-					[/* text */ 't', `if class of an object to deserialize
-          cannot be found`]
+					[/* text */ 't', `if there are I/O errors while reading from the
+          underlying `],
+					[/* inline code block */ 'i', `InputStream`]
 				]],
 				[/* throw */ 'java.io.StreamCorruptedException', [/* throw description */
 					[/* text */ 't', `if control information in the stream
           is inconsistent`]
-				]],
-				[/* throw */ 'java.io.ObjectStreamException', [/* throw description */
-					[/* text */ 't', `if object to deserialize has already
-          appeared in stream`]
-				]],
-				[/* throw */ 'java.io.OptionalDataException', [/* throw description */
-					[/* text */ 't', `if primitive data is next in stream`]
-				]],
-				[/* throw */ 'java.io.IOException', [/* throw description */
-					[/* text */ 't', `if an I/O error occurs during deserialization`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `reference to deserialized object`]
-			]
-		]],
-		[/* method */ 'registerValidation(java.io.ObjectInputValidation,int)', [
-			[/* method description */
-				[/* text */ 't', `Register an object to be validated before the graph is returned.  While
- similar to resolveObject these validations are called after the entire
- graph has been reconstituted.  Typically, a readObject method will
- register the object with the stream so that when all of the objects are
- restored a final set of validations can be performed.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'obj', [/* parameter description */
-					[/* text */ 't', `the object to receive the validation callback.`]
-				]],
-				[/* parameter */ 'prio', [/* parameter description */
-					[/* text */ 't', `controls the order of callbacks;zero is a good default.
-          Use higher numbers to be called back earlier, lower numbers for
-          later callbacks. Within a priority, callbacks are processed in
-          no particular order.`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.io.NotActiveException', [/* throw description */
-					[/* text */ 't', `The stream is not currently reading objects
-          so it is invalid to register a callback.`]
-				]],
-				[/* throw */ 'java.io.InvalidObjectException', [/* throw description */
-					[/* text */ 't', `The validation object is null.`]
 				]]
 			],
 			/* return */ UDF
 		]],
-		[/* method */ 'enableResolveObject(boolean)', [
+		[/* method */ 'readBoolean()', [
 			[/* method description */
-				[/* text */ 't', `Enables the stream to do replacement of objects read from the stream. When
- enabled, the `],
-				[/* reference */ 'r', `#resolveObject(java.lang.Object)`, `resolveObject(java.lang.Object)`],
-				[/* text */ 't', ` method is called for every object being
- deserialized.
-
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', `If object replacement is currently not enabled, and
- `],
-					[/* inline code block */ 'i', `enable`],
-					[/* text */ 't', ` is true, and there is a security manager installed,
- this method first calls the security manager's
- `],
-					[/* inline code block */ 'i', `checkPermission`],
-					[/* text */ 't', ` method with the
- `],
-					[/* inline code block */ 'i', `SerializablePermission("enableSubstitution")`],
-					[/* text */ 't', ` permission to
- ensure that the caller is permitted to enable the stream to do replacement
- of objects read from the stream.`]
-				]]
+				[/* text */ 't', `Reads in a boolean.`]
 			],
-			[/* parameters */
-				[/* parameter */ 'enable', [/* parameter description */
-					[/* text */ 't', `true for enabling use of `],
-					[/* inline code block */ 'i', `resolveObject`],
-					[/* text */ 't', ` for
-          every object being deserialized`]
-				]]
-			],
+			/* parameters */ UDF,
 			[/* throws */
-				[/* throw */ 'java.lang.SecurityException', [/* throw description */
-					[/* text */ 't', `if a security manager exists and its
-          `],
-					[/* inline code block */ 'i', `checkPermission`],
-					[/* text */ 't', ` method denies enabling the stream
-          to do replacement of objects read from the stream.`]
+				[/* throw */ 'java.io.EOFException', [/* throw description */
+					[/* text */ 't', `If end of file is reached.`]
+				]],
+				[/* throw */ 'java.io.IOException', [/* throw description */
+					[/* text */ 't', `If other I/O error has occurred.`]
 				]]
 			],
 			[/* return description */
-				[/* text */ 't', `the previous setting before this method was invoked`]
+				[/* text */ 't', `the boolean read.`]
+			]
+		]],
+		[/* method */ 'readByte()', [
+			[/* method description */
+				[/* text */ 't', `Reads an 8 bit byte.`]
+			],
+			/* parameters */ UDF,
+			[/* throws */
+				[/* throw */ 'java.io.EOFException', [/* throw description */
+					[/* text */ 't', `If end of file is reached.`]
+				]],
+				[/* throw */ 'java.io.IOException', [/* throw description */
+					[/* text */ 't', `If other I/O error has occurred.`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `the 8 bit byte read.`]
+			]
+		]],
+		[/* method */ 'readChar()', [
+			[/* method description */
+				[/* text */ 't', `Reads a 16 bit char.`]
+			],
+			/* parameters */ UDF,
+			[/* throws */
+				[/* throw */ 'java.io.EOFException', [/* throw description */
+					[/* text */ 't', `If end of file is reached.`]
+				]],
+				[/* throw */ 'java.io.IOException', [/* throw description */
+					[/* text */ 't', `If other I/O error has occurred.`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `the 16 bit char read.`]
+			]
+		]],
+		[/* method */ 'readDouble()', [
+			[/* method description */
+				[/* text */ 't', `Reads a 64 bit double.`]
+			],
+			/* parameters */ UDF,
+			[/* throws */
+				[/* throw */ 'java.io.EOFException', [/* throw description */
+					[/* text */ 't', `If end of file is reached.`]
+				]],
+				[/* throw */ 'java.io.IOException', [/* throw description */
+					[/* text */ 't', `If other I/O error has occurred.`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `the 64 bit double read.`]
 			]
 		]],
 		[/* method */ 'getObjectInputFilter()', [
@@ -1342,6 +804,66 @@ DocsCollector.collect('java.io.ObjectInputStream', [
 			/* throws */ UDF,
 			[/* return description */
 				[/* text */ 't', `the deserialization filter for the stream; may be null`]
+			]
+		]],
+		[/* method */ 'readObject()', [
+			[/* method description */
+				[/* text */ 't', `Read an object from the ObjectInputStream.  The class of the object, the
+ signature of the class, and the values of the non-transient and
+ non-static fields of the class and all of its supertypes are read.
+ Default deserializing for a class can be overridden using the writeObject
+ and readObject methods.  Objects referenced by this object are read
+ transitively so that a complete equivalent graph of objects is
+ reconstructed by readObject.
+
+ `],
+				[/* block */ 'b', `The root object is completely restored when all of its fields and the
+ objects it references are completely restored.  At this point the object
+ validation callbacks are executed in order based on their registered
+ priorities. The callbacks are registered by objects (in the readObject
+ special methods) as they are individually restored.
+
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', `The deserialization filter, when not `],
+					[/* inline code block */ 'i', `null`],
+					[/* text */ 't', `, is invoked for
+ each object (regular or class) read to reconstruct the root object.
+ See `],
+					[/* reference */ 'r', `#setObjectInputFilter(java.io.ObjectInputFilter)`, `setObjectInputFilter`],
+					[/* text */ 't', ` for details.
+
+ `]
+				]],
+				[/* block */ 'b', `Exceptions are thrown for problems with the InputStream and for
+ classes that should not be deserialized.  All exceptions are fatal to
+ the InputStream and leave it in an indeterminate state; it is up to the
+ caller to ignore or recover the stream state.`]
+			],
+			/* parameters */ UDF,
+			[/* throws */
+				[/* throw */ 'java.lang.ClassNotFoundException', [/* throw description */
+					[/* text */ 't', `Class of a serialized object cannot be
+          found.`]
+				]],
+				[/* throw */ 'java.io.InvalidClassException', [/* throw description */
+					[/* text */ 't', `Something is wrong with a class used by
+          deserialization.`]
+				]],
+				[/* throw */ 'java.io.StreamCorruptedException', [/* throw description */
+					[/* text */ 't', `Control information in the
+          stream is inconsistent.`]
+				]],
+				[/* throw */ 'java.io.OptionalDataException', [/* throw description */
+					[/* text */ 't', `Primitive data was found in the
+          stream instead of objects.`]
+				]],
+				[/* throw */ 'java.io.IOException', [/* throw description */
+					[/* text */ 't', `Any of the usual Input/Output related exceptions.`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `the object read from the stream`]
 			]
 		]],
 		[/* method */ 'setObjectInputFilter(java.io.ObjectInputFilter)', [
@@ -1454,6 +976,484 @@ DocsCollector.collect('java.io.ObjectInputStream', [
 					[/* reference */ 'r', `#getObjectInputFilter()`, `current filter`],
 					[/* text */ 't', ` is non-null, or
        if the filter has already been set.`]
+				]]
+			],
+			/* return */ UDF
+		]],
+		[/* method */ 'readFloat()', [
+			[/* method description */
+				[/* text */ 't', `Reads a 32 bit float.`]
+			],
+			/* parameters */ UDF,
+			[/* throws */
+				[/* throw */ 'java.io.EOFException', [/* throw description */
+					[/* text */ 't', `If end of file is reached.`]
+				]],
+				[/* throw */ 'java.io.IOException', [/* throw description */
+					[/* text */ 't', `If other I/O error has occurred.`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `the 32 bit float read.`]
+			]
+		]],
+		[/* method */ 'available()', [
+			[/* method description */
+				[/* text */ 't', `Returns the number of bytes that can be read without blocking.`]
+			],
+			/* parameters */ UDF,
+			[/* throws */
+				[/* throw */ 'java.io.IOException', [/* throw description */
+					[/* text */ 't', `if there are I/O errors while reading from the
+          underlying `],
+					[/* inline code block */ 'i', `InputStream`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `the number of available bytes.`]
+			]
+		]],
+		[/* method */ 'read()', [
+			[/* method description */
+				[/* text */ 't', `Reads a byte of data. This method will block if no input is available.`]
+			],
+			/* parameters */ UDF,
+			[/* throws */
+				[/* throw */ 'java.io.IOException', [/* throw description */
+					[/* text */ 't', `If an I/O error has occurred.`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `the byte read, or -1 if the end of the stream is reached.`]
+			]
+		]],
+		[/* method */ 'read(byte[],int,int)', [
+			[/* method description */
+				[/* text */ 't', `Reads into an array of bytes.  This method will block until some input
+ is available. Consider using java.io.DataInputStream.readFully to read
+ exactly 'length' bytes.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'buf', [/* parameter description */
+					[/* text */ 't', `the buffer into which the data is read`]
+				]],
+				[/* parameter */ 'off', [/* parameter description */
+					[/* text */ 't', `the start offset in the destination array `],
+					[/* inline code block */ 'i', `buf`]
+				]],
+				[/* parameter */ 'len', [/* parameter description */
+					[/* text */ 't', `the maximum number of bytes read`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
+					[/* text */ 't', `if `],
+					[/* inline code block */ 'i', `buf`],
+					[/* text */ 't', ` is `],
+					[/* inline code block */ 'i', `null`],
+					[/* text */ 't', `.`]
+				]],
+				[/* throw */ 'java.lang.IndexOutOfBoundsException', [/* throw description */
+					[/* text */ 't', `if `],
+					[/* inline code block */ 'i', `off`],
+					[/* text */ 't', ` is negative,
+          `],
+					[/* inline code block */ 'i', `len`],
+					[/* text */ 't', ` is negative, or `],
+					[/* inline code block */ 'i', `len`],
+					[/* text */ 't', ` is greater than
+          `],
+					[/* inline code block */ 'i', `buf.length - off`],
+					[/* text */ 't', `.`]
+				]],
+				[/* throw */ 'java.io.IOException', [/* throw description */
+					[/* text */ 't', `If an I/O error has occurred.`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `the actual number of bytes read, -1 is returned when the end of
+          the stream is reached.`]
+			]
+		]],
+		[/* method */ 'readInt()', [
+			[/* method description */
+				[/* text */ 't', `Reads a 32 bit int.`]
+			],
+			/* parameters */ UDF,
+			[/* throws */
+				[/* throw */ 'java.io.EOFException', [/* throw description */
+					[/* text */ 't', `If end of file is reached.`]
+				]],
+				[/* throw */ 'java.io.IOException', [/* throw description */
+					[/* text */ 't', `If other I/O error has occurred.`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `the 32 bit integer read.`]
+			]
+		]],
+		[/* method */ 'readUnsignedByte()', [
+			[/* method description */
+				[/* text */ 't', `Reads an unsigned 8 bit byte.`]
+			],
+			/* parameters */ UDF,
+			[/* throws */
+				[/* throw */ 'java.io.EOFException', [/* throw description */
+					[/* text */ 't', `If end of file is reached.`]
+				]],
+				[/* throw */ 'java.io.IOException', [/* throw description */
+					[/* text */ 't', `If other I/O error has occurred.`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `the 8 bit byte read.`]
+			]
+		]],
+		[/* method */ 'readUnsignedShort()', [
+			[/* method description */
+				[/* text */ 't', `Reads an unsigned 16 bit short.`]
+			],
+			/* parameters */ UDF,
+			[/* throws */
+				[/* throw */ 'java.io.EOFException', [/* throw description */
+					[/* text */ 't', `If end of file is reached.`]
+				]],
+				[/* throw */ 'java.io.IOException', [/* throw description */
+					[/* text */ 't', `If other I/O error has occurred.`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `the 16 bit short read.`]
+			]
+		]],
+		[/* method */ 'skipBytes(int)', [
+			[/* method description */
+				[/* text */ 't', `Skips bytes.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'len', [/* parameter description */
+					[/* text */ 't', `the number of bytes to be skipped`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.io.IOException', [/* throw description */
+					[/* text */ 't', `If an I/O error has occurred.`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `the actual number of bytes skipped.`]
+			]
+		]],
+		[/* method */ 'readFields()', [
+			[/* method description */
+				[/* text */ 't', `Reads the persistent fields from the stream and makes them available by
+ name.`]
+			],
+			/* parameters */ UDF,
+			[/* throws */
+				[/* throw */ 'java.lang.ClassNotFoundException', [/* throw description */
+					[/* text */ 't', `if the class of a serialized object
+          could not be found.`]
+				]],
+				[/* throw */ 'java.io.IOException', [/* throw description */
+					[/* text */ 't', `if an I/O error occurs.`]
+				]],
+				[/* throw */ 'java.io.NotActiveException', [/* throw description */
+					[/* text */ 't', `if the stream is not currently reading
+          objects.`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `the `],
+				[/* inline code block */ 'i', `GetField`],
+				[/* text */ 't', ` object representing the persistent
+          fields of the object being deserialized`]
+			]
+		]],
+		[/* method */ 'readUnshared()', [
+			[/* method description */
+				[/* text */ 't', `Reads an "unshared" object from the ObjectInputStream.  This method is
+ identical to readObject, except that it prevents subsequent calls to
+ readObject and readUnshared from returning additional references to the
+ deserialized instance obtained via this call.  Specifically:
+ `],
+				[/* list */ 'l', [
+					[/* block */ 'b', `If readUnshared is called to deserialize a back-reference (the
+       stream representation of an object which has been written
+       previously to the stream), an ObjectStreamException will be
+       thrown.
+
+   `],
+					[/* block */ 'b', `If readUnshared returns successfully, then any subsequent attempts
+       to deserialize back-references to the stream handle deserialized
+       by readUnshared will cause an ObjectStreamException to be thrown.
+ `]
+				]],
+				[/* text */ 't', `
+ Deserializing an object via readUnshared invalidates the stream handle
+ associated with the returned object.  Note that this in itself does not
+ always guarantee that the reference returned by readUnshared is unique;
+ the deserialized object may define a readResolve method which returns an
+ object visible to other parties, or readUnshared may return a Class
+ object or enum constant obtainable elsewhere in the stream or through
+ external means. If the deserialized object defines a readResolve method
+ and the invocation of that method returns an array, then readUnshared
+ returns a shallow clone of that array; this guarantees that the returned
+ array object is unique and cannot be obtained a second time from an
+ invocation of readObject or readUnshared on the ObjectInputStream,
+ even if the underlying data stream has been manipulated.
+
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', `The deserialization filter, when not `],
+					[/* inline code block */ 'i', `null`],
+					[/* text */ 't', `, is invoked for
+ each object (regular or class) read to reconstruct the root object.
+ See `],
+					[/* reference */ 'r', `#setObjectInputFilter(java.io.ObjectInputFilter)`, `setObjectInputFilter`],
+					[/* text */ 't', ` for details.
+
+ `]
+				]],
+				[/* block */ 'b', `ObjectInputStream subclasses which override this method can only be
+ constructed in security contexts possessing the
+ "enableSubclassImplementation" SerializablePermission; any attempt to
+ instantiate such a subclass without this permission will cause a
+ SecurityException to be thrown.`]
+			],
+			/* parameters */ UDF,
+			[/* throws */
+				[/* throw */ 'java.lang.ClassNotFoundException', [/* throw description */
+					[/* text */ 't', `if class of an object to deserialize
+          cannot be found`]
+				]],
+				[/* throw */ 'java.io.StreamCorruptedException', [/* throw description */
+					[/* text */ 't', `if control information in the stream
+          is inconsistent`]
+				]],
+				[/* throw */ 'java.io.ObjectStreamException', [/* throw description */
+					[/* text */ 't', `if object to deserialize has already
+          appeared in stream`]
+				]],
+				[/* throw */ 'java.io.OptionalDataException', [/* throw description */
+					[/* text */ 't', `if primitive data is next in stream`]
+				]],
+				[/* throw */ 'java.io.IOException', [/* throw description */
+					[/* text */ 't', `if an I/O error occurs during deserialization`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `reference to deserialized object`]
+			]
+		]],
+		[/* method */ 'readLine()', [
+			[/* method description */
+				[/* text */ 't', `Reads in a line that has been terminated by a \\n, \\r, \\r\\n or EOF.`]
+			],
+			/* parameters */ UDF,
+			[/* throws */
+				[/* throw */ 'java.io.IOException', [/* throw description */
+					[/* text */ 't', `if there are I/O errors while reading from the
+          underlying `],
+					[/* inline code block */ 'i', `InputStream`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `a String copy of the line.`]
+			]
+		]],
+		[/* method */ 'readUTF()', [
+			[/* method description */
+				[/* text */ 't', `Reads a String in
+ `],
+				[/* reference */ 'r', `.DataInput#modified-utf-8`],
+				[/* text */ 't', `
+ format.`]
+			],
+			/* parameters */ UDF,
+			[/* throws */
+				[/* throw */ 'java.io.IOException', [/* throw description */
+					[/* text */ 't', `if there are I/O errors while reading from the
+          underlying `],
+					[/* inline code block */ 'i', `InputStream`]
+				]],
+				[/* throw */ 'java.io.UTFDataFormatException', [/* throw description */
+					[/* text */ 't', `if read bytes do not represent a valid
+          modified UTF-8 encoding of a string`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `the String.`]
+			]
+		]],
+		[/* method */ 'readLong()', [
+			[/* method description */
+				[/* text */ 't', `Reads a 64 bit long.`]
+			],
+			/* parameters */ UDF,
+			[/* throws */
+				[/* throw */ 'java.io.EOFException', [/* throw description */
+					[/* text */ 't', `If end of file is reached.`]
+				]],
+				[/* throw */ 'java.io.IOException', [/* throw description */
+					[/* text */ 't', `If other I/O error has occurred.`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `the read 64 bit long.`]
+			]
+		]],
+		[/* method */ 'readShort()', [
+			[/* method description */
+				[/* text */ 't', `Reads a 16 bit short.`]
+			],
+			/* parameters */ UDF,
+			[/* throws */
+				[/* throw */ 'java.io.EOFException', [/* throw description */
+					[/* text */ 't', `If end of file is reached.`]
+				]],
+				[/* throw */ 'java.io.IOException', [/* throw description */
+					[/* text */ 't', `If other I/O error has occurred.`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `the 16 bit short read.`]
+			]
+		]],
+		[/* method */ 'close()', [
+			[/* method description */
+				[/* text */ 't', `Closes the input stream. Must be called to release any resources
+ associated with the stream.`]
+			],
+			/* parameters */ UDF,
+			[/* throws */
+				[/* throw */ 'java.io.IOException', [/* throw description */
+					[/* text */ 't', `If an I/O error has occurred.`]
+				]]
+			],
+			/* return */ UDF
+		]],
+		[/* method */ 'defaultReadObject()', [
+			[/* method description */
+				[/* text */ 't', `Read the non-static and non-transient fields of the current class from
+ this stream.  This may only be called from the readObject method of the
+ class being deserialized. It will throw the NotActiveException if it is
+ called otherwise.`]
+			],
+			/* parameters */ UDF,
+			[/* throws */
+				[/* throw */ 'java.lang.ClassNotFoundException', [/* throw description */
+					[/* text */ 't', `if the class of a serialized object
+          could not be found.`]
+				]],
+				[/* throw */ 'java.io.IOException', [/* throw description */
+					[/* text */ 't', `if an I/O error occurs.`]
+				]],
+				[/* throw */ 'java.io.NotActiveException', [/* throw description */
+					[/* text */ 't', `if the stream is not currently reading
+          objects.`]
+				]]
+			],
+			/* return */ UDF
+		]],
+		[/* method */ 'readFully(byte[])', [
+			[/* method description */
+				[/* text */ 't', `Reads bytes, blocking until all bytes are read.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'buf', [/* parameter description */
+					[/* text */ 't', `the buffer into which the data is read`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
+					[/* text */ 't', `If `],
+					[/* inline code block */ 'i', `buf`],
+					[/* text */ 't', ` is `],
+					[/* inline code block */ 'i', `null`],
+					[/* text */ 't', `.`]
+				]],
+				[/* throw */ 'java.io.EOFException', [/* throw description */
+					[/* text */ 't', `If end of file is reached.`]
+				]],
+				[/* throw */ 'java.io.IOException', [/* throw description */
+					[/* text */ 't', `If other I/O error has occurred.`]
+				]]
+			],
+			/* return */ UDF
+		]],
+		[/* method */ 'readFully(byte[],int,int)', [
+			[/* method description */
+				[/* text */ 't', `Reads bytes, blocking until all bytes are read.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'buf', [/* parameter description */
+					[/* text */ 't', `the buffer into which the data is read`]
+				]],
+				[/* parameter */ 'off', [/* parameter description */
+					[/* text */ 't', `the start offset into the data array `],
+					[/* inline code block */ 'i', `buf`]
+				]],
+				[/* parameter */ 'len', [/* parameter description */
+					[/* text */ 't', `the maximum number of bytes to read`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
+					[/* text */ 't', `If `],
+					[/* inline code block */ 'i', `buf`],
+					[/* text */ 't', ` is `],
+					[/* inline code block */ 'i', `null`],
+					[/* text */ 't', `.`]
+				]],
+				[/* throw */ 'java.lang.IndexOutOfBoundsException', [/* throw description */
+					[/* text */ 't', `If `],
+					[/* inline code block */ 'i', `off`],
+					[/* text */ 't', ` is negative,
+          `],
+					[/* inline code block */ 'i', `len`],
+					[/* text */ 't', ` is negative, or `],
+					[/* inline code block */ 'i', `len`],
+					[/* text */ 't', ` is greater than
+          `],
+					[/* inline code block */ 'i', `buf.length - off`],
+					[/* text */ 't', `.`]
+				]],
+				[/* throw */ 'java.io.EOFException', [/* throw description */
+					[/* text */ 't', `If end of file is reached.`]
+				]],
+				[/* throw */ 'java.io.IOException', [/* throw description */
+					[/* text */ 't', `If other I/O error has occurred.`]
+				]]
+			],
+			/* return */ UDF
+		]],
+		[/* method */ 'registerValidation(java.io.ObjectInputValidation,int)', [
+			[/* method description */
+				[/* text */ 't', `Register an object to be validated before the graph is returned.  While
+ similar to resolveObject these validations are called after the entire
+ graph has been reconstituted.  Typically, a readObject method will
+ register the object with the stream so that when all of the objects are
+ restored a final set of validations can be performed.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'obj', [/* parameter description */
+					[/* text */ 't', `the object to receive the validation callback.`]
+				]],
+				[/* parameter */ 'prio', [/* parameter description */
+					[/* text */ 't', `controls the order of callbacks;zero is a good default.
+          Use higher numbers to be called back earlier, lower numbers for
+          later callbacks. Within a priority, callbacks are processed in
+          no particular order.`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.io.NotActiveException', [/* throw description */
+					[/* text */ 't', `The stream is not currently reading objects
+          so it is invalid to register a callback.`]
+				]],
+				[/* throw */ 'java.io.InvalidObjectException', [/* throw description */
+					[/* text */ 't', `The validation object is null.`]
 				]]
 			],
 			/* return */ UDF

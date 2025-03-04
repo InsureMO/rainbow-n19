@@ -88,6 +88,58 @@ DocsCollector.collect('java.nio.channels.spi.AbstractInterruptibleChannel', [
 		]]
 	],
 	[/* methods */
+		[/* method */ 'implCloseChannel()', [
+			[/* method description */
+				[/* text */ 't', `Closes this channel.
+
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', ` This method is invoked by the `],
+					[/* reference */ 'r', `#close()`, `close`],
+					[/* text */ 't', ` method in order
+ to perform the actual work of closing the channel.  This method is only
+ invoked if the channel has not yet been closed, and it is never invoked
+ more than once.
+
+ `]
+				]],
+				[/* block */ 'b', ` An implementation of this method must arrange for any other thread
+ that is blocked in an I/O operation upon this channel to return
+ immediately, either by throwing an exception or by returning normally.
+ `]
+			],
+			/* parameters */ UDF,
+			[/* throws */
+				[/* throw */ 'java.io.IOException', [/* throw description */
+					[/* text */ 't', `If an I/O error occurs while closing the channel`]
+				]]
+			],
+			/* return */ UDF
+		]],
+		[/* method */ 'begin()', [
+			[/* method description */
+				[/* text */ 't', `Marks the beginning of an I/O operation that might block indefinitely.
+
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', ` This method should be invoked in tandem with the `],
+					[/* reference */ 'r', `#end(boolean)`, `end`],
+					[/* text */ 't', `
+ method, using a `],
+					[/* inline code block */ 'i', `try`],
+					[/* text */ 't', ` ... `],
+					[/* inline code block */ 'i', `finally`],
+					[/* text */ 't', ` block as
+ shown `],
+					[/* text */ 't', `above`],
+					[/* text */ 't', `, in order to implement asynchronous
+ closing and interruption for this channel.  `]
+				]]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			/* return */ UDF
+		]],
 		[/* method */ 'end(boolean)', [
 			[/* method description */
 				[/* text */ 't', `Marks the end of an I/O operation that might block indefinitely.
@@ -126,30 +178,6 @@ DocsCollector.collect('java.nio.channels.spi.AbstractInterruptibleChannel', [
 			],
 			/* return */ UDF
 		]],
-		[/* method */ 'begin()', [
-			[/* method description */
-				[/* text */ 't', `Marks the beginning of an I/O operation that might block indefinitely.
-
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', ` This method should be invoked in tandem with the `],
-					[/* reference */ 'r', `#end(boolean)`, `end`],
-					[/* text */ 't', `
- method, using a `],
-					[/* inline code block */ 'i', `try`],
-					[/* text */ 't', ` ... `],
-					[/* inline code block */ 'i', `finally`],
-					[/* text */ 't', ` block as
- shown `],
-					[/* text */ 't', `above`],
-					[/* text */ 't', `, in order to implement asynchronous
- closing and interruption for this channel.  `]
-				]]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			/* return */ UDF
-		]],
 		[/* method */ 'isOpen()', [
 			[/* method description */
 				[/* block */ 'b', `Tells whether or not this channel is open.`]
@@ -179,34 +207,6 @@ DocsCollector.collect('java.nio.channels.spi.AbstractInterruptibleChannel', [
 			[/* throws */
 				[/* throw */ 'java.io.IOException', [/* throw description */
 					[/* text */ 't', `If an I/O error occurs`]
-				]]
-			],
-			/* return */ UDF
-		]],
-		[/* method */ 'implCloseChannel()', [
-			[/* method description */
-				[/* text */ 't', `Closes this channel.
-
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', ` This method is invoked by the `],
-					[/* reference */ 'r', `#close()`, `close`],
-					[/* text */ 't', ` method in order
- to perform the actual work of closing the channel.  This method is only
- invoked if the channel has not yet been closed, and it is never invoked
- more than once.
-
- `]
-				]],
-				[/* block */ 'b', ` An implementation of this method must arrange for any other thread
- that is blocked in an I/O operation upon this channel to return
- immediately, either by throwing an exception or by returning normally.
- `]
-			],
-			/* parameters */ UDF,
-			[/* throws */
-				[/* throw */ 'java.io.IOException', [/* throw description */
-					[/* text */ 't', `If an I/O error occurs while closing the channel`]
 				]]
 			],
 			/* return */ UDF

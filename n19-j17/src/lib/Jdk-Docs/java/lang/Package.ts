@@ -141,131 +141,6 @@ DocsCollector.collect('java.lang.Package', [
 	/* fields */ UDF,
 	/* constructors */ UDF,
 	[/* methods */
-		[/* method */ 'getName()', [
-			[/* method description */
-				[/* text */ 't', `Return the name of this package.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `The fully-qualified name of this package as defined in section `],
-				[/* external link */ 'a', `https://docs.oracle.com/javase/specs/jls/se17/html/jls-6.html#jls-6.5.3`, `6.5.3`],
-				[/* text */ 't', ` of
-          `],
-				[/* text */ 't', `The Java Language Specification`],
-				[/* text */ 't', `,
-          for example, `],
-				[/* inline code block */ 'i', `java.lang`]
-			]
-		]],
-		[/* method */ 'toString()', [
-			[/* method description */
-				[/* text */ 't', `Returns the string representation of this Package.
- Its value is the string "package " and the package name.
- If the package title is defined it is appended.
- If the package version is defined it is appended.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the string representation of the package.`]
-			]
-		]],
-		[/* method */ 'hashCode()', [
-			[/* method description */
-				[/* text */ 't', `Return the hash code computed from the package name.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the hash code computed from the package name.`]
-			]
-		]],
-		[/* method */ 'isAnnotationPresent(java.lang.Class)', [
-			[/* method description */
-				[/* text */ 't', `Returns true if an annotation for the specified type
- is `],
-				[/* text */ 't', `present`],
-				[/* text */ 't', ` on this element, else false.  This method
- is designed primarily for convenient access to marker annotations.
-
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', `The truth value returned by this method is equivalent to:
- `],
-					[/* inline code block */ 'i', `getAnnotation(annotationClass) != null`]
-				]]
-			],
-			[/* parameters */
-				[/* parameter */ 'annotationClass', [/* parameter description */
-					[/* text */ 't', `the Class object corresponding to the
-        annotation type`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
-					[/* text */ 't', `if the given annotation class is null`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `true if an annotation for the specified annotation
-     type is present on this element, else false`]
-			]
-		]],
-		[/* method */ 'getPackage(java.lang.String)', [
-			[/* method description */
-				[/* text */ 't', `Finds a package by name in the caller's class loader and its
- ancestors.
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', `
- If the caller's class loader defines a `],
-					[/* inline code block */ 'i', `Package`],
-					[/* text */ 't', ` of the given name,
- the `],
-					[/* inline code block */ 'i', `Package`],
-					[/* text */ 't', ` is returned. Otherwise, the ancestors of the
- caller's class loader are searched recursively (parent by parent)
- for a `],
-					[/* inline code block */ 'i', `Package`],
-					[/* text */ 't', ` of the given name.
- `]
-				]],
-				[/* block */ 'b', [
-					[/* text */ 't', `
- Calling this method is equivalent to calling `],
-					[/* reference */ 'r', `.ClassLoader#getPackage(java.lang.String)`],
-					[/* text */ 't', `
- on a `],
-					[/* inline code block */ 'i', `ClassLoader`],
-					[/* text */ 't', ` instance which is the caller's class loader.`]
-				]]
-			],
-			[/* parameters */
-				[/* parameter */ 'name', [/* parameter description */
-					[/* text */ 't', `A package name, such as "`],
-					[/* inline code block */ 'i', `java.lang`],
-					[/* text */ 't', `".`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
-					[/* text */ 't', `if `],
-					[/* inline code block */ 'i', `name`],
-					[/* text */ 't', ` is `],
-					[/* inline code block */ 'i', `null`],
-					[/* text */ 't', `.`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `The `],
-				[/* inline code block */ 'i', `Package`],
-				[/* text */ 't', ` of the given name defined by the caller's
-         class loader or its ancestors, or `],
-				[/* inline code block */ 'i', `null`],
-				[/* text */ 't', ` if not found.`]
-			]
-		]],
 		[/* method */ 'getAnnotation(java.lang.Class)', [
 			[/* method description */
 				[/* text */ 't', `Returns this element's annotation for the specified type if
@@ -290,6 +165,35 @@ DocsCollector.collect('java.lang.Package', [
 			[/* return description */
 				[/* text */ 't', `this element's annotation for the specified annotation type if
      present on this element, else null`]
+			]
+		]],
+		[/* method */ 'getDeclaredAnnotation(java.lang.Class)', [
+			[/* method description */
+				[/* text */ 't', `Returns this element's annotation for the specified type if
+ such an annotation is `],
+				[/* text */ 't', `directly present`],
+				[/* text */ 't', `, else null.
+
+ This method ignores inherited annotations. (Returns null if no
+ annotations are directly present on this element.)
+ `],
+				[/* block */ 'b', `Note that any annotation returned by this method is a
+ declaration annotation.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'annotationClass', [/* parameter description */
+					[/* text */ 't', `the Class object corresponding to the
+        annotation type`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
+					[/* text */ 't', `if the given annotation class is null`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `this element's annotation for the specified annotation type if
+     directly present on this element, else null`]
 			]
 		]],
 		[/* method */ 'getAnnotationsByType(java.lang.Class)', [
@@ -335,58 +239,6 @@ DocsCollector.collect('java.lang.Package', [
 			[/* return description */
 				[/* text */ 't', `all this element's annotations for the specified annotation type if
      associated with this element, else an array of length zero`]
-			]
-		]],
-		[/* method */ 'getAnnotations()', [
-			[/* method description */
-				[/* text */ 't', `Returns annotations that are `],
-				[/* text */ 't', `present`],
-				[/* text */ 't', ` on this element.
-
- If there are no annotations `],
-				[/* text */ 't', `present`],
-				[/* text */ 't', ` on this element, the return
- value is an array of length 0.
-
- The caller of this method is free to modify the returned array; it will
- have no effect on the arrays returned to other callers.
- `],
-				[/* block */ 'b', `Note that any annotations returned by this method are
- declaration annotations.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `annotations present on this element`]
-			]
-		]],
-		[/* method */ 'getDeclaredAnnotation(java.lang.Class)', [
-			[/* method description */
-				[/* text */ 't', `Returns this element's annotation for the specified type if
- such an annotation is `],
-				[/* text */ 't', `directly present`],
-				[/* text */ 't', `, else null.
-
- This method ignores inherited annotations. (Returns null if no
- annotations are directly present on this element.)
- `],
-				[/* block */ 'b', `Note that any annotation returned by this method is a
- declaration annotation.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'annotationClass', [/* parameter description */
-					[/* text */ 't', `the Class object corresponding to the
-        annotation type`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
-					[/* text */ 't', `if the given annotation class is null`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `this element's annotation for the specified annotation type if
-     directly present on this element, else null`]
 			]
 		]],
 		[/* method */ 'getDeclaredAnnotationsByType(java.lang.Class)', [
@@ -436,6 +288,131 @@ DocsCollector.collect('java.lang.Package', [
      directly or indirectly present on this element, else an array of length zero`]
 			]
 		]],
+		[/* method */ 'isAnnotationPresent(java.lang.Class)', [
+			[/* method description */
+				[/* text */ 't', `Returns true if an annotation for the specified type
+ is `],
+				[/* text */ 't', `present`],
+				[/* text */ 't', ` on this element, else false.  This method
+ is designed primarily for convenient access to marker annotations.
+
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', `The truth value returned by this method is equivalent to:
+ `],
+					[/* inline code block */ 'i', `getAnnotation(annotationClass) != null`]
+				]]
+			],
+			[/* parameters */
+				[/* parameter */ 'annotationClass', [/* parameter description */
+					[/* text */ 't', `the Class object corresponding to the
+        annotation type`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
+					[/* text */ 't', `if the given annotation class is null`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `true if an annotation for the specified annotation
+     type is present on this element, else false`]
+			]
+		]],
+		[/* method */ 'isCompatibleWith(java.lang.String)', [
+			[/* method description */
+				[/* text */ 't', `Compare this package's specification version with a
+ desired version. It returns true if
+ this packages specification version number is greater than or equal
+ to the desired version number. `],
+				[/* block */ 'b', `
+
+ Version numbers are compared by sequentially comparing corresponding
+ components of the desired and specification strings.
+ Each component is converted as a decimal integer and the values
+ compared.
+ If the specification value is greater than the desired
+ value true is returned. If the value is less false is returned.
+ If the values are equal the period is skipped and the next pair of
+ components is compared.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'desired', [/* parameter description */
+					[/* text */ 't', `the version string of the desired version.`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.lang.NumberFormatException', [/* throw description */
+					[/* text */ 't', `if the current version is not known or
+         the desired or current version is not of the correct dotted form.`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `true if this package's version number is greater
+         than or equal to the desired version number`]
+			]
+		]],
+		[/* method */ 'isSealed()', [
+			[/* method description */
+				[/* text */ 't', `Returns true if this package is sealed.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `true if the package is sealed, false otherwise`]
+			]
+		]],
+		[/* method */ 'isSealed(java.net.URL)', [
+			[/* method description */
+				[/* text */ 't', `Returns true if this package is sealed with respect to the specified
+ code source `],
+				[/* inline code block */ 'i', `url`],
+				[/* text */ 't', `.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'url', [/* parameter description */
+					[/* text */ 't', `the code source URL`]
+				]]
+			],
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `true if this package is sealed with respect to the given `],
+				[/* inline code block */ 'i', `url`]
+			]
+		]],
+		[/* method */ 'hashCode()', [
+			[/* method description */
+				[/* text */ 't', `Return the hash code computed from the package name.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the hash code computed from the package name.`]
+			]
+		]],
+		[/* method */ 'getAnnotations()', [
+			[/* method description */
+				[/* text */ 't', `Returns annotations that are `],
+				[/* text */ 't', `present`],
+				[/* text */ 't', ` on this element.
+
+ If there are no annotations `],
+				[/* text */ 't', `present`],
+				[/* text */ 't', ` on this element, the return
+ value is an array of length 0.
+
+ The caller of this method is free to modify the returned array; it will
+ have no effect on the arrays returned to other callers.
+ `],
+				[/* block */ 'b', `Note that any annotations returned by this method are
+ declaration annotations.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `annotations present on this element`]
+			]
+		]],
 		[/* method */ 'getDeclaredAnnotations()', [
 			[/* method description */
 				[/* text */ 't', `Returns annotations that are `],
@@ -460,62 +437,66 @@ DocsCollector.collect('java.lang.Package', [
 				[/* text */ 't', `annotations directly present on this element`]
 			]
 		]],
-		[/* method */ 'isSealed(java.net.URL)', [
+		[/* method */ 'getImplementationTitle()', [
 			[/* method description */
-				[/* text */ 't', `Returns true if this package is sealed with respect to the specified
- code source `],
-				[/* inline code block */ 'i', `url`],
-				[/* text */ 't', `.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'url', [/* parameter description */
-					[/* text */ 't', `the code source URL`]
-				]]
-			],
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `true if this package is sealed with respect to the given `],
-				[/* inline code block */ 'i', `url`]
-			]
-		]],
-		[/* method */ 'isSealed()', [
-			[/* method description */
-				[/* text */ 't', `Returns true if this package is sealed.`]
+				[/* text */ 't', `Return the title of this package.`]
 			],
 			/* parameters */ UDF,
 			/* throws */ UDF,
 			[/* return description */
-				[/* text */ 't', `true if the package is sealed, false otherwise`]
+				[/* text */ 't', `the title of the implementation, `],
+				[/* inline code block */ 'i', `null`],
+				[/* text */ 't', ` is returned if it is not known.`]
 			]
 		]],
-		[/* method */ 'getPackages()', [
+		[/* method */ 'getImplementationVendor()', [
 			[/* method description */
-				[/* text */ 't', `Returns all of the `],
-				[/* inline code block */ 'i', `Package`],
-				[/* text */ 't', `s defined by the caller's class loader
- and its ancestors.  The returned array may contain more than one
- `],
-				[/* inline code block */ 'i', `Package`],
-				[/* text */ 't', ` object of the same package name, each defined by
- a different class loader in the class loader hierarchy.
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', `
- Calling this method is equivalent to calling `],
-					[/* reference */ 'r', `.ClassLoader#getPackages()`],
-					[/* text */ 't', `
- on a `],
-					[/* inline code block */ 'i', `ClassLoader`],
-					[/* text */ 't', ` instance which is the caller's class loader.`]
-				]]
+				[/* text */ 't', `Returns the vendor that implemented this package, `],
+				[/* inline code block */ 'i', `null`],
+				[/* text */ 't', `
+ is returned if it is not known.`]
 			],
 			/* parameters */ UDF,
 			/* throws */ UDF,
 			[/* return description */
-				[/* text */ 't', `The array of `],
-				[/* inline code block */ 'i', `Package`],
-				[/* text */ 't', ` objects defined by this
-          class loader and its ancestors`]
+				[/* text */ 't', `the vendor that implemented this package, `],
+				[/* inline code block */ 'i', `null`],
+				[/* text */ 't', `
+ is returned if it is not known.`]
+			]
+		]],
+		[/* method */ 'getImplementationVersion()', [
+			[/* method description */
+				[/* text */ 't', `Return the version of this implementation. It consists of any string
+ assigned by the vendor of this implementation and does
+ not have any particular syntax specified or expected by the Java
+ runtime. It may be compared for equality with other
+ package version strings used for this implementation
+ by this vendor for this package.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the version of the implementation, `],
+				[/* inline code block */ 'i', `null`],
+				[/* text */ 't', ` is returned if it is not known.`]
+			]
+		]],
+		[/* method */ 'getName()', [
+			[/* method description */
+				[/* text */ 't', `Return the name of this package.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `The fully-qualified name of this package as defined in section `],
+				[/* external link */ 'a', `https://docs.oracle.com/javase/specs/jls/se17/html/jls-6.html#jls-6.5.3`, `6.5.3`],
+				[/* text */ 't', ` of
+          `],
+				[/* text */ 't', `The Java Language Specification`],
+				[/* text */ 't', `,
+          for example, `],
+				[/* inline code block */ 'i', `java.lang`]
 			]
 		]],
 		[/* method */ 'getSpecificationTitle()', [
@@ -526,6 +507,20 @@ DocsCollector.collect('java.lang.Package', [
 			/* throws */ UDF,
 			[/* return description */
 				[/* text */ 't', `the specification title, `],
+				[/* inline code block */ 'i', `null`],
+				[/* text */ 't', ` is returned if it is not known.`]
+			]
+		]],
+		[/* method */ 'getSpecificationVendor()', [
+			[/* method description */
+				[/* text */ 't', `Return the name of the organization, vendor,
+ or company that owns and maintains the specification
+ of the classes that implement this package.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the specification vendor, `],
 				[/* inline code block */ 'i', `null`],
 				[/* text */ 't', ` is returned if it is not known.`]
 			]
@@ -622,96 +617,101 @@ DocsCollector.collect('java.lang.Package', [
 				[/* text */ 't', ` is returned if it is not known.`]
 			]
 		]],
-		[/* method */ 'getSpecificationVendor()', [
+		[/* method */ 'toString()', [
 			[/* method description */
-				[/* text */ 't', `Return the name of the organization, vendor,
- or company that owns and maintains the specification
- of the classes that implement this package.`]
+				[/* text */ 't', `Returns the string representation of this Package.
+ Its value is the string "package " and the package name.
+ If the package title is defined it is appended.
+ If the package version is defined it is appended.`]
 			],
 			/* parameters */ UDF,
 			/* throws */ UDF,
 			[/* return description */
-				[/* text */ 't', `the specification vendor, `],
-				[/* inline code block */ 'i', `null`],
-				[/* text */ 't', ` is returned if it is not known.`]
+				[/* text */ 't', `the string representation of the package.`]
 			]
 		]],
-		[/* method */ 'getImplementationTitle()', [
+		[/* method */ 'getPackage(java.lang.String)', [
 			[/* method description */
-				[/* text */ 't', `Return the title of this package.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the title of the implementation, `],
-				[/* inline code block */ 'i', `null`],
-				[/* text */ 't', ` is returned if it is not known.`]
-			]
-		]],
-		[/* method */ 'getImplementationVersion()', [
-			[/* method description */
-				[/* text */ 't', `Return the version of this implementation. It consists of any string
- assigned by the vendor of this implementation and does
- not have any particular syntax specified or expected by the Java
- runtime. It may be compared for equality with other
- package version strings used for this implementation
- by this vendor for this package.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the version of the implementation, `],
-				[/* inline code block */ 'i', `null`],
-				[/* text */ 't', ` is returned if it is not known.`]
-			]
-		]],
-		[/* method */ 'getImplementationVendor()', [
-			[/* method description */
-				[/* text */ 't', `Returns the vendor that implemented this package, `],
-				[/* inline code block */ 'i', `null`],
-				[/* text */ 't', `
- is returned if it is not known.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the vendor that implemented this package, `],
-				[/* inline code block */ 'i', `null`],
-				[/* text */ 't', `
- is returned if it is not known.`]
-			]
-		]],
-		[/* method */ 'isCompatibleWith(java.lang.String)', [
-			[/* method description */
-				[/* text */ 't', `Compare this package's specification version with a
- desired version. It returns true if
- this packages specification version number is greater than or equal
- to the desired version number. `],
-				[/* block */ 'b', `
-
- Version numbers are compared by sequentially comparing corresponding
- components of the desired and specification strings.
- Each component is converted as a decimal integer and the values
- compared.
- If the specification value is greater than the desired
- value true is returned. If the value is less false is returned.
- If the values are equal the period is skipped and the next pair of
- components is compared.`]
+				[/* text */ 't', `Finds a package by name in the caller's class loader and its
+ ancestors.
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', `
+ If the caller's class loader defines a `],
+					[/* inline code block */ 'i', `Package`],
+					[/* text */ 't', ` of the given name,
+ the `],
+					[/* inline code block */ 'i', `Package`],
+					[/* text */ 't', ` is returned. Otherwise, the ancestors of the
+ caller's class loader are searched recursively (parent by parent)
+ for a `],
+					[/* inline code block */ 'i', `Package`],
+					[/* text */ 't', ` of the given name.
+ `]
+				]],
+				[/* block */ 'b', [
+					[/* text */ 't', `
+ Calling this method is equivalent to calling `],
+					[/* reference */ 'r', `.ClassLoader#getPackage(java.lang.String)`],
+					[/* text */ 't', `
+ on a `],
+					[/* inline code block */ 'i', `ClassLoader`],
+					[/* text */ 't', ` instance which is the caller's class loader.`]
+				]]
 			],
 			[/* parameters */
-				[/* parameter */ 'desired', [/* parameter description */
-					[/* text */ 't', `the version string of the desired version.`]
+				[/* parameter */ 'name', [/* parameter description */
+					[/* text */ 't', `A package name, such as "`],
+					[/* inline code block */ 'i', `java.lang`],
+					[/* text */ 't', `".`]
 				]]
 			],
 			[/* throws */
-				[/* throw */ 'java.lang.NumberFormatException', [/* throw description */
-					[/* text */ 't', `if the current version is not known or
-         the desired or current version is not of the correct dotted form.`]
+				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
+					[/* text */ 't', `if `],
+					[/* inline code block */ 'i', `name`],
+					[/* text */ 't', ` is `],
+					[/* inline code block */ 'i', `null`],
+					[/* text */ 't', `.`]
 				]]
 			],
 			[/* return description */
-				[/* text */ 't', `true if this package's version number is greater
-         than or equal to the desired version number`]
+				[/* text */ 't', `The `],
+				[/* inline code block */ 'i', `Package`],
+				[/* text */ 't', ` of the given name defined by the caller's
+         class loader or its ancestors, or `],
+				[/* inline code block */ 'i', `null`],
+				[/* text */ 't', ` if not found.`]
+			]
+		]],
+		[/* method */ 'getPackages()', [
+			[/* method description */
+				[/* text */ 't', `Returns all of the `],
+				[/* inline code block */ 'i', `Package`],
+				[/* text */ 't', `s defined by the caller's class loader
+ and its ancestors.  The returned array may contain more than one
+ `],
+				[/* inline code block */ 'i', `Package`],
+				[/* text */ 't', ` object of the same package name, each defined by
+ a different class loader in the class loader hierarchy.
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', `
+ Calling this method is equivalent to calling `],
+					[/* reference */ 'r', `.ClassLoader#getPackages()`],
+					[/* text */ 't', `
+ on a `],
+					[/* inline code block */ 'i', `ClassLoader`],
+					[/* text */ 't', ` instance which is the caller's class loader.`]
+				]]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `The array of `],
+				[/* inline code block */ 'i', `Package`],
+				[/* text */ 't', ` objects defined by this
+          class loader and its ancestors`]
 			]
 		]]
 	],

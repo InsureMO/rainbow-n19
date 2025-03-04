@@ -24,15 +24,15 @@ DocsCollector.collect('java.io.OptionalDataException', [
 		]]
 	],
 	[/* fields */
+		[/* field */ 'eof', [
+			[/* field description */
+				[/* text */ 't', `True if there is no more data in the buffered part of the stream.`]
+			],
+		]],
 		[/* field */ 'length', [
 			[/* field description */
 				[/* text */ 't', `The number of bytes of primitive data available to be read
  in the current buffer.`]
-			],
-		]],
-		[/* field */ 'eof', [
-			[/* field description */
-				[/* text */ 't', `True if there is no more data in the buffered part of the stream.`]
 			],
 		]]
 	],

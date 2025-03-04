@@ -7,6 +7,15 @@ DocsCollector.collect('java.net.SocketException', [
 	],
 	/* fields */ UDF,
 	[/* constructors */
+		[/* constructor */ '<init>()', [
+			[/* constructor description */
+				[/* text */ 't', `Constructs a new `],
+				[/* inline code block */ 'i', `SocketException`],
+				[/* text */ 't', ` with no detail message.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF
+		]],
 		[/* constructor */ '<init>(java.lang.String)', [
 			[/* constructor description */
 				[/* text */ 't', `Constructs a new `],
@@ -19,15 +28,6 @@ DocsCollector.collect('java.net.SocketException', [
 					[/* text */ 't', `the detail message.`]
 				]]
 			],
-			/* throws */ UDF
-		]],
-		[/* constructor */ '<init>()', [
-			[/* constructor description */
-				[/* text */ 't', `Constructs a new `],
-				[/* inline code block */ 'i', `SocketException`],
-				[/* text */ 't', ` with no detail message.`]
-			],
-			/* parameters */ UDF,
 			/* throws */ UDF
 		]]
 	],

@@ -93,43 +93,6 @@ DocsCollector.collect('java.util.AbstractSet', [
 				[/* text */ 't', ` if the specified object is equal to this set`]
 			]
 		]],
-		[/* method */ 'hashCode()', [
-			[/* method description */
-				[/* text */ 't', `Returns the hash code value for this set.  The hash code of a set is
- defined to be the sum of the hash codes of the elements in the set,
- where the hash code of a `],
-				[/* inline code block */ 'i', `null`],
-				[/* text */ 't', ` element is defined to be zero.
- This ensures that `],
-				[/* inline code block */ 'i', `s1.equals(s2)`],
-				[/* text */ 't', ` implies that
- `],
-				[/* inline code block */ 'i', `s1.hashCode()==s2.hashCode()`],
-				[/* text */ 't', ` for any two sets `],
-				[/* inline code block */ 'i', `s1`],
-				[/* text */ 't', `
- and `],
-				[/* inline code block */ 'i', `s2`],
-				[/* text */ 't', `, as required by the general contract of
- `],
-				[/* reference */ 'r', `java.Object#hashCode()`],
-				[/* text */ 't', `.
-
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', `This implementation iterates over the set, calling the
- `],
-					[/* inline code block */ 'i', `hashCode`],
-					[/* text */ 't', ` method on each element in the set, and adding up
- the results.`]
-				]]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the hash code value for this set`]
-			]
-		]],
 		[/* method */ 'removeAll(java.util.Collection)', [
 			[/* method description */
 				[/* text */ 't', `Removes from this set all of its elements that are contained in the
@@ -205,6 +168,43 @@ DocsCollector.collect('java.util.AbstractSet', [
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if this set changed as a result of the call`]
+			]
+		]],
+		[/* method */ 'hashCode()', [
+			[/* method description */
+				[/* text */ 't', `Returns the hash code value for this set.  The hash code of a set is
+ defined to be the sum of the hash codes of the elements in the set,
+ where the hash code of a `],
+				[/* inline code block */ 'i', `null`],
+				[/* text */ 't', ` element is defined to be zero.
+ This ensures that `],
+				[/* inline code block */ 'i', `s1.equals(s2)`],
+				[/* text */ 't', ` implies that
+ `],
+				[/* inline code block */ 'i', `s1.hashCode()==s2.hashCode()`],
+				[/* text */ 't', ` for any two sets `],
+				[/* inline code block */ 'i', `s1`],
+				[/* text */ 't', `
+ and `],
+				[/* inline code block */ 'i', `s2`],
+				[/* text */ 't', `, as required by the general contract of
+ `],
+				[/* reference */ 'r', `java.Object#hashCode()`],
+				[/* text */ 't', `.
+
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', `This implementation iterates over the set, calling the
+ `],
+					[/* inline code block */ 'i', `hashCode`],
+					[/* text */ 't', ` method on each element in the set, and adding up
+ the results.`]
+				]]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the hash code value for this set`]
 			]
 		]]
 	],

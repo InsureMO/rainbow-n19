@@ -262,15 +262,15 @@ JdkClassCreateHelper.class('java.util.zip.DeflaterOutputStream', [
 		]
 	],
 	[/* declared fields */
-		[/* protected java.util.zip.Deflater java.util.zip.DeflaterOutputStream.def */
-			/* name */ 'def',
-			/* type */ 'java.util.zip.Deflater',
-			/* annotations */ UDF,
-			/* modifiers */ 4
-		],
 		[/* protected byte[] java.util.zip.DeflaterOutputStream.buf */
 			/* name */ 'buf',
 			/* type */ '[B',
+			/* annotations */ UDF,
+			/* modifiers */ 4
+		],
+		[/* protected java.util.zip.Deflater java.util.zip.DeflaterOutputStream.def */
+			/* name */ 'def',
+			/* type */ 'java.util.zip.Deflater',
 			/* annotations */ UDF,
 			/* modifiers */ 4
 		]

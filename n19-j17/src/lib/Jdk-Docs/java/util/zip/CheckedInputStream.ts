@@ -24,6 +24,20 @@ DocsCollector.collect('java.util.zip.CheckedInputStream', [
 		]]
 	],
 	[/* methods */
+		[/* method */ 'read()', [
+			[/* method description */
+				[/* text */ 't', `Reads a byte. Will block if no input is available.`]
+			],
+			/* parameters */ UDF,
+			[/* throws */
+				[/* throw */ 'java.io.IOException', [/* throw description */
+					[/* text */ 't', `if an I/O error has occurred`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `the byte read, or -1 if the end of the stream is reached.`]
+			]
+		]],
 		[/* method */ 'read(byte[],int,int)', [
 			[/* method description */
 				[/* text */ 't', `Reads into an array of bytes. If `],
@@ -75,18 +89,14 @@ DocsCollector.collect('java.util.zip.CheckedInputStream', [
             of the stream is reached.`]
 			]
 		]],
-		[/* method */ 'read()', [
+		[/* method */ 'getChecksum()', [
 			[/* method description */
-				[/* text */ 't', `Reads a byte. Will block if no input is available.`]
+				[/* text */ 't', `Returns the Checksum for this input stream.`]
 			],
 			/* parameters */ UDF,
-			[/* throws */
-				[/* throw */ 'java.io.IOException', [/* throw description */
-					[/* text */ 't', `if an I/O error has occurred`]
-				]]
-			],
+			/* throws */ UDF,
 			[/* return description */
-				[/* text */ 't', `the byte read, or -1 if the end of the stream is reached.`]
+				[/* text */ 't', `the Checksum value`]
 			]
 		]],
 		[/* method */ 'skip(long)', [
@@ -105,16 +115,6 @@ DocsCollector.collect('java.util.zip.CheckedInputStream', [
 			],
 			[/* return description */
 				[/* text */ 't', `the actual number of bytes skipped`]
-			]
-		]],
-		[/* method */ 'getChecksum()', [
-			[/* method description */
-				[/* text */ 't', `Returns the Checksum for this input stream.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the Checksum value`]
 			]
 		]]
 	],

@@ -532,27 +532,27 @@ JdkClassCreateHelper.class('java.lang.Float', [
 		]
 	],
 	[/* declared fields */
-		[/* public static final float java.lang.Float.POSITIVE_INFINITY */
-			/* name */ 'POSITIVE_INFINITY',
-			/* type */ 'float',
+		[/* public static final int java.lang.Float.BYTES */
+			/* name */ 'BYTES',
+			/* type */ 'int',
 			/* annotations */ UDF,
 			/* modifiers */ 25
 		],
-		[/* public static final float java.lang.Float.NEGATIVE_INFINITY */
-			/* name */ 'NEGATIVE_INFINITY',
-			/* type */ 'float',
-			/* annotations */ UDF,
-			/* modifiers */ 25
-		],
-		[/* public static final float java.lang.Float.NaN */
-			/* name */ 'NaN',
-			/* type */ 'float',
+		[/* public static final int java.lang.Float.MAX_EXPONENT */
+			/* name */ 'MAX_EXPONENT',
+			/* type */ 'int',
 			/* annotations */ UDF,
 			/* modifiers */ 25
 		],
 		[/* public static final float java.lang.Float.MAX_VALUE */
 			/* name */ 'MAX_VALUE',
 			/* type */ 'float',
+			/* annotations */ UDF,
+			/* modifiers */ 25
+		],
+		[/* public static final int java.lang.Float.MIN_EXPONENT */
+			/* name */ 'MIN_EXPONENT',
+			/* type */ 'int',
 			/* annotations */ UDF,
 			/* modifiers */ 25
 		],
@@ -568,26 +568,26 @@ JdkClassCreateHelper.class('java.lang.Float', [
 			/* annotations */ UDF,
 			/* modifiers */ 25
 		],
-		[/* public static final int java.lang.Float.MAX_EXPONENT */
-			/* name */ 'MAX_EXPONENT',
-			/* type */ 'int',
+		[/* public static final float java.lang.Float.NaN */
+			/* name */ 'NaN',
+			/* type */ 'float',
 			/* annotations */ UDF,
 			/* modifiers */ 25
 		],
-		[/* public static final int java.lang.Float.MIN_EXPONENT */
-			/* name */ 'MIN_EXPONENT',
-			/* type */ 'int',
+		[/* public static final float java.lang.Float.NEGATIVE_INFINITY */
+			/* name */ 'NEGATIVE_INFINITY',
+			/* type */ 'float',
+			/* annotations */ UDF,
+			/* modifiers */ 25
+		],
+		[/* public static final float java.lang.Float.POSITIVE_INFINITY */
+			/* name */ 'POSITIVE_INFINITY',
+			/* type */ 'float',
 			/* annotations */ UDF,
 			/* modifiers */ 25
 		],
 		[/* public static final int java.lang.Float.SIZE */
 			/* name */ 'SIZE',
-			/* type */ 'int',
-			/* annotations */ UDF,
-			/* modifiers */ 25
-		],
-		[/* public static final int java.lang.Float.BYTES */
-			/* name */ 'BYTES',
 			/* type */ 'int',
 			/* annotations */ UDF,
 			/* modifiers */ 25

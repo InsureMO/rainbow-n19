@@ -34,22 +34,6 @@ DocsCollector.collect('java.util.Enumeration', [
 	/* fields */ UDF,
 	/* constructors */ UDF,
 	[/* methods */
-		[/* method */ 'asIterator()', [
-			[/* method description */
-				[/* text */ 't', `Returns an `],
-				[/* reference */ 'r', `java.util.Iterator`],
-				[/* text */ 't', ` that traverses the remaining elements
- covered by this enumeration. Traversal is undefined if any methods
- are called on this enumeration after the call to `],
-				[/* inline code block */ 'i', `asIterator`],
-				[/* text */ 't', `.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `an Iterator representing the remaining elements of this Enumeration`]
-			]
-		]],
 		[/* method */ 'hasMoreElements()', [
 			[/* method description */
 				[/* text */ 't', `Tests if this enumeration contains more elements.`]
@@ -78,6 +62,22 @@ DocsCollector.collect('java.util.Enumeration', [
 			],
 			[/* return description */
 				[/* text */ 't', `the next element of this enumeration.`]
+			]
+		]],
+		[/* method */ 'asIterator()', [
+			[/* method description */
+				[/* text */ 't', `Returns an `],
+				[/* reference */ 'r', `java.util.Iterator`],
+				[/* text */ 't', ` that traverses the remaining elements
+ covered by this enumeration. Traversal is undefined if any methods
+ are called on this enumeration after the call to `],
+				[/* inline code block */ 'i', `asIterator`],
+				[/* text */ 't', `.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `an Iterator representing the remaining elements of this Enumeration`]
 			]
 		]]
 	],

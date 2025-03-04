@@ -145,52 +145,6 @@ DocsCollector.collect('java.text.Collator', [
 		]]
 	],
 	[/* fields */
-		[/* field */ 'PRIMARY', [
-			[/* field description */
-				[/* text */ 't', `Collator strength value.  When set, only PRIMARY differences are
- considered significant during comparison. The assignment of strengths
- to language features is locale dependent. A common example is for
- different base letters ("a" vs "b") to be considered a PRIMARY difference.`]
-			],
-		]],
-		[/* field */ 'SECONDARY', [
-			[/* field description */
-				[/* text */ 't', `Collator strength value.  When set, only SECONDARY and above differences are
- considered significant during comparison. The assignment of strengths
- to language features is locale dependent. A common example is for
- different accented forms of the same base letter ("a" vs "ä") to be
- considered a SECONDARY difference.`]
-			],
-		]],
-		[/* field */ 'TERTIARY', [
-			[/* field description */
-				[/* text */ 't', `Collator strength value.  When set, only TERTIARY and above differences are
- considered significant during comparison. The assignment of strengths
- to language features is locale dependent. A common example is for
- case differences ("a" vs "A") to be considered a TERTIARY difference.`]
-			],
-		]],
-		[/* field */ 'IDENTICAL', [
-			[/* field description */
-				[/* text */ 't', `Collator strength value.  When set, all differences are
- considered significant during comparison. The assignment of strengths
- to language features is locale dependent. A common example is for control
- characters ("\\u0001" vs "\\u0002") to be considered equal at the
- PRIMARY, SECONDARY, and TERTIARY levels but different at the IDENTICAL
- level.  Additionally, differences between pre-composed accents such as
- "\\u00C0" (A-grave) and combining accents such as "A\\u0300"
- (A, combining-grave) will be considered significant at the IDENTICAL
- level if decomposition is set to NO_DECOMPOSITION.`]
-			],
-		]],
-		[/* field */ 'NO_DECOMPOSITION', [
-			[/* field description */
-				[/* text */ 't', `Decomposition mode value. With NO_DECOMPOSITION
- set, accented characters will not be decomposed for collation. This
- is the default setting and provides the fastest collation but
- will only produce correct results for languages that do not use accents.`]
-			],
-		]],
 		[/* field */ 'CANONICAL_DECOMPOSITION', [
 			[/* field description */
 				[/* text */ 't', `Decomposition mode value. With CANONICAL_DECOMPOSITION
@@ -228,6 +182,52 @@ DocsCollector.collect('java.text.Collator', [
 					[/* text */ 't', `.`]
 				]]
 			],
+		]],
+		[/* field */ 'IDENTICAL', [
+			[/* field description */
+				[/* text */ 't', `Collator strength value.  When set, all differences are
+ considered significant during comparison. The assignment of strengths
+ to language features is locale dependent. A common example is for control
+ characters ("\\u0001" vs "\\u0002") to be considered equal at the
+ PRIMARY, SECONDARY, and TERTIARY levels but different at the IDENTICAL
+ level.  Additionally, differences between pre-composed accents such as
+ "\\u00C0" (A-grave) and combining accents such as "A\\u0300"
+ (A, combining-grave) will be considered significant at the IDENTICAL
+ level if decomposition is set to NO_DECOMPOSITION.`]
+			],
+		]],
+		[/* field */ 'NO_DECOMPOSITION', [
+			[/* field description */
+				[/* text */ 't', `Decomposition mode value. With NO_DECOMPOSITION
+ set, accented characters will not be decomposed for collation. This
+ is the default setting and provides the fastest collation but
+ will only produce correct results for languages that do not use accents.`]
+			],
+		]],
+		[/* field */ 'PRIMARY', [
+			[/* field description */
+				[/* text */ 't', `Collator strength value.  When set, only PRIMARY differences are
+ considered significant during comparison. The assignment of strengths
+ to language features is locale dependent. A common example is for
+ different base letters ("a" vs "b") to be considered a PRIMARY difference.`]
+			],
+		]],
+		[/* field */ 'SECONDARY', [
+			[/* field description */
+				[/* text */ 't', `Collator strength value.  When set, only SECONDARY and above differences are
+ considered significant during comparison. The assignment of strengths
+ to language features is locale dependent. A common example is for
+ different accented forms of the same base letter ("a" vs "ä") to be
+ considered a SECONDARY difference.`]
+			],
+		]],
+		[/* field */ 'TERTIARY', [
+			[/* field description */
+				[/* text */ 't', `Collator strength value.  When set, only TERTIARY and above differences are
+ considered significant during comparison. The assignment of strengths
+ to language features is locale dependent. A common example is for
+ case differences ("a" vs "A") to be considered a TERTIARY difference.`]
+			],
 		]]
 	],
 	[/* constructors */
@@ -242,23 +242,61 @@ DocsCollector.collect('java.text.Collator', [
 		]]
 	],
 	[/* methods */
-		[/* method */ 'equals(java.lang.String,java.lang.String)', [
+		[/* method */ 'compare(java.lang.String,java.lang.String)', [
 			[/* method description */
-				[/* text */ 't', `Convenience method for comparing the equality of two strings based on
- this Collator's collation rules.`]
+				[/* text */ 't', `Compares the source string to the target string according to the
+ collation rules for this Collator.  Returns an integer less than,
+ equal to or greater than zero depending on whether the source String is
+ less than, equal to or greater than the target string.  See the Collator
+ class description for an example of use.
+ `],
+				[/* block */ 'b', `
+ For a one time comparison, this method has the best performance. If a
+ given String will be involved in multiple comparisons, CollationKey.compareTo
+ has the best performance. See the Collator class description for an example
+ using CollationKeys.`]
 			],
 			[/* parameters */
 				[/* parameter */ 'source', [/* parameter description */
-					[/* text */ 't', `the source string to be compared with.`]
+					[/* text */ 't', `the source string.`]
 				]],
 				[/* parameter */ 'target', [/* parameter description */
-					[/* text */ 't', `the target string to be compared with.`]
+					[/* text */ 't', `the target string.`]
 				]]
 			],
 			/* throws */ UDF,
 			[/* return description */
-				[/* text */ 't', `true if the strings are equal according to the collation
- rules.  false, otherwise.`]
+				[/* text */ 't', `Returns an integer value. Value is less than zero if source is less than
+ target, value is zero if source and target are equal, value is greater than zero
+ if source is greater than target.`]
+			]
+		]],
+		[/* method */ 'hashCode()', [
+			[/* method description */
+				[/* text */ 't', `Generates the hash code for this Collator.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `a hash code value for this object.`]
+			]
+		]],
+		[/* method */ 'getCollationKey(java.lang.String)', [
+			[/* method description */
+				[/* text */ 't', `Transforms the String into a series of bits that can be compared bitwise
+ to other CollationKeys. CollationKeys provide better performance than
+ Collator.compare when Strings are involved in multiple comparisons.
+ See the Collator class description for an example using CollationKeys.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'source', [/* parameter description */
+					[/* text */ 't', `the string to be transformed into a collation key.`]
+				]]
+			],
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the CollationKey for the given String based on this Collator's collation
+ rules. If the source String is null, a null CollationKey is returned.`]
 			]
 		]],
 		[/* method */ 'equals(java.lang.Object)', [
@@ -276,24 +314,23 @@ DocsCollector.collect('java.text.Collator', [
  false otherwise.`]
 			]
 		]],
-		[/* method */ 'hashCode()', [
+		[/* method */ 'equals(java.lang.String,java.lang.String)', [
 			[/* method description */
-				[/* text */ 't', `Generates the hash code for this Collator.`]
+				[/* text */ 't', `Convenience method for comparing the equality of two strings based on
+ this Collator's collation rules.`]
 			],
-			/* parameters */ UDF,
+			[/* parameters */
+				[/* parameter */ 'source', [/* parameter description */
+					[/* text */ 't', `the source string to be compared with.`]
+				]],
+				[/* parameter */ 'target', [/* parameter description */
+					[/* text */ 't', `the target string to be compared with.`]
+				]]
+			],
 			/* throws */ UDF,
 			[/* return description */
-				[/* text */ 't', `a hash code value for this object.`]
-			]
-		]],
-		[/* method */ 'clone()', [
-			[/* method description */
-				[/* text */ 't', `Overrides Cloneable`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `a clone of this instance.`]
+				[/* text */ 't', `true if the strings are equal according to the collation
+ rules.  false, otherwise.`]
 			]
 		]],
 		[/* method */ 'compare(java.lang.Object,java.lang.Object)', [
@@ -329,44 +366,14 @@ DocsCollector.collect('java.text.Collator', [
          second.`]
 			]
 		]],
-		[/* method */ 'compare(java.lang.String,java.lang.String)', [
+		[/* method */ 'clone()', [
 			[/* method description */
-				[/* text */ 't', `Compares the source string to the target string according to the
- collation rules for this Collator.  Returns an integer less than,
- equal to or greater than zero depending on whether the source String is
- less than, equal to or greater than the target string.  See the Collator
- class description for an example of use.
- `],
-				[/* block */ 'b', `
- For a one time comparison, this method has the best performance. If a
- given String will be involved in multiple comparisons, CollationKey.compareTo
- has the best performance. See the Collator class description for an example
- using CollationKeys.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'source', [/* parameter description */
-					[/* text */ 't', `the source string.`]
-				]],
-				[/* parameter */ 'target', [/* parameter description */
-					[/* text */ 't', `the target string.`]
-				]]
-			],
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `Returns an integer value. Value is less than zero if source is less than
- target, value is zero if source and target are equal, value is greater than zero
- if source is greater than target.`]
-			]
-		]],
-		[/* method */ 'getInstance()', [
-			[/* method description */
-				[/* text */ 't', `Gets the Collator for the current default locale.
- The default locale is determined by java.util.Locale.getDefault.`]
+				[/* text */ 't', `Overrides Cloneable`]
 			],
 			/* parameters */ UDF,
 			/* throws */ UDF,
 			[/* return description */
-				[/* text */ 't', `the Collator for the default locale.(for example, en_US)`]
+				[/* text */ 't', `a clone of this instance.`]
 			]
 		]],
 		[/* method */ 'getInstance(java.util.Locale)', [
@@ -381,6 +388,17 @@ DocsCollector.collect('java.text.Collator', [
 			/* throws */ UDF,
 			[/* return description */
 				[/* text */ 't', `the Collator for the desired locale.`]
+			]
+		]],
+		[/* method */ 'getInstance()', [
+			[/* method description */
+				[/* text */ 't', `Gets the Collator for the current default locale.
+ The default locale is determined by java.util.Locale.getDefault.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the Collator for the default locale.(for example, en_US)`]
 			]
 		]],
 		[/* method */ 'getAvailableLocales()', [
@@ -449,25 +467,6 @@ DocsCollector.collect('java.text.Collator', [
 				[/* text */ 't', `this Collator's current strength property.`]
 			]
 		]],
-		[/* method */ 'setStrength(int)', [
-			[/* method description */
-				[/* text */ 't', `Sets this Collator's strength property.  The strength property determines
- the minimum level of difference considered significant during comparison.
- See the Collator class description for an example of use.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'newStrength', [/* parameter description */
-					[/* text */ 't', `the new strength value.`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
-					[/* text */ 't', `If the new strength value is not one of
- PRIMARY, SECONDARY, TERTIARY or IDENTICAL.`]
-				]]
-			],
-			/* return */ UDF
-		]],
 		[/* method */ 'setDecomposition(int)', [
 			[/* method description */
 				[/* text */ 't', `Set the decomposition mode of this Collator. See getDecomposition
@@ -486,23 +485,24 @@ DocsCollector.collect('java.text.Collator', [
 			],
 			/* return */ UDF
 		]],
-		[/* method */ 'getCollationKey(java.lang.String)', [
+		[/* method */ 'setStrength(int)', [
 			[/* method description */
-				[/* text */ 't', `Transforms the String into a series of bits that can be compared bitwise
- to other CollationKeys. CollationKeys provide better performance than
- Collator.compare when Strings are involved in multiple comparisons.
- See the Collator class description for an example using CollationKeys.`]
+				[/* text */ 't', `Sets this Collator's strength property.  The strength property determines
+ the minimum level of difference considered significant during comparison.
+ See the Collator class description for an example of use.`]
 			],
 			[/* parameters */
-				[/* parameter */ 'source', [/* parameter description */
-					[/* text */ 't', `the string to be transformed into a collation key.`]
+				[/* parameter */ 'newStrength', [/* parameter description */
+					[/* text */ 't', `the new strength value.`]
 				]]
 			],
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the CollationKey for the given String based on this Collator's collation
- rules. If the source String is null, a null CollationKey is returned.`]
-			]
+			[/* throws */
+				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
+					[/* text */ 't', `If the new strength value is not one of
+ PRIMARY, SECONDARY, TERTIARY or IDENTICAL.`]
+				]]
+			],
+			/* return */ UDF
 		]]
 	],
 ]);

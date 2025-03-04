@@ -230,20 +230,14 @@ JdkClassCreateHelper.class('java.text.Collator', [
 		]
 	],
 	[/* declared fields */
-		[/* public static final int java.text.Collator.PRIMARY */
-			/* name */ 'PRIMARY',
+		[/* public static final int java.text.Collator.CANONICAL_DECOMPOSITION */
+			/* name */ 'CANONICAL_DECOMPOSITION',
 			/* type */ 'int',
 			/* annotations */ UDF,
 			/* modifiers */ 25
 		],
-		[/* public static final int java.text.Collator.SECONDARY */
-			/* name */ 'SECONDARY',
-			/* type */ 'int',
-			/* annotations */ UDF,
-			/* modifiers */ 25
-		],
-		[/* public static final int java.text.Collator.TERTIARY */
-			/* name */ 'TERTIARY',
+		[/* public static final int java.text.Collator.FULL_DECOMPOSITION */
+			/* name */ 'FULL_DECOMPOSITION',
 			/* type */ 'int',
 			/* annotations */ UDF,
 			/* modifiers */ 25
@@ -260,14 +254,20 @@ JdkClassCreateHelper.class('java.text.Collator', [
 			/* annotations */ UDF,
 			/* modifiers */ 25
 		],
-		[/* public static final int java.text.Collator.CANONICAL_DECOMPOSITION */
-			/* name */ 'CANONICAL_DECOMPOSITION',
+		[/* public static final int java.text.Collator.PRIMARY */
+			/* name */ 'PRIMARY',
 			/* type */ 'int',
 			/* annotations */ UDF,
 			/* modifiers */ 25
 		],
-		[/* public static final int java.text.Collator.FULL_DECOMPOSITION */
-			/* name */ 'FULL_DECOMPOSITION',
+		[/* public static final int java.text.Collator.SECONDARY */
+			/* name */ 'SECONDARY',
+			/* type */ 'int',
+			/* annotations */ UDF,
+			/* modifiers */ 25
+		],
+		[/* public static final int java.text.Collator.TERTIARY */
+			/* name */ 'TERTIARY',
 			/* type */ 'int',
 			/* annotations */ UDF,
 			/* modifiers */ 25

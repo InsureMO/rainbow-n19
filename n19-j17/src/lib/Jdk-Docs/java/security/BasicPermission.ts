@@ -28,18 +28,16 @@ DocsCollector.collect('java.security.BasicPermission', [
 	],
 	/* fields */ UDF,
 	[/* constructors */
-		[/* constructor */ '<init>(java.lang.String,java.lang.String)', [
+		[/* constructor */ '<init>(java.lang.String)', [
 			[/* constructor description */
-				[/* text */ 't', `Creates a new BasicPermission object with the specified name.
- The name is the symbolic name of the BasicPermission, and the
- actions String is currently unused.`]
+				[/* text */ 't', `Creates a new BasicPermission with the specified name.
+ Name is the symbolic name of the permission, such as
+ "setFactory",
+ "print.queueJob", or "topLevelWindow", etc.`]
 			],
 			[/* parameters */
 				[/* parameter */ 'name', [/* parameter description */
 					[/* text */ 't', `the name of the BasicPermission.`]
-				]],
-				[/* parameter */ 'actions', [/* parameter description */
-					[/* text */ 't', `ignored.`]
 				]]
 			],
 			[/* throws */
@@ -57,16 +55,18 @@ DocsCollector.collect('java.security.BasicPermission', [
 				]]
 			]
 		]],
-		[/* constructor */ '<init>(java.lang.String)', [
+		[/* constructor */ '<init>(java.lang.String,java.lang.String)', [
 			[/* constructor description */
-				[/* text */ 't', `Creates a new BasicPermission with the specified name.
- Name is the symbolic name of the permission, such as
- "setFactory",
- "print.queueJob", or "topLevelWindow", etc.`]
+				[/* text */ 't', `Creates a new BasicPermission object with the specified name.
+ The name is the symbolic name of the BasicPermission, and the
+ actions String is currently unused.`]
 			],
 			[/* parameters */
 				[/* parameter */ 'name', [/* parameter description */
 					[/* text */ 't', `the name of the BasicPermission.`]
+				]],
+				[/* parameter */ 'actions', [/* parameter description */
+					[/* text */ 't', `ignored.`]
 				]]
 			],
 			[/* throws */
@@ -107,23 +107,6 @@ DocsCollector.collect('java.security.BasicPermission', [
   and has the same name as this BasicPermission object, false otherwise.`]
 			]
 		]],
-		[/* method */ 'hashCode()', [
-			[/* method description */
-				[/* text */ 't', `Returns the hash code value for this object.
- The hash code used is the hash code of the name, that is,
- `],
-				[/* inline code block */ 'i', `getName().hashCode()`],
-				[/* text */ 't', `, where `],
-				[/* inline code block */ 'i', `getName`],
-				[/* text */ 't', ` is
- from the Permission superclass.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `a hash code value for this object.`]
-			]
-		]],
 		[/* method */ 'implies(java.security.Permission)', [
 			[/* method description */
 				[/* text */ 't', `Checks if the specified permission is "implied" by
@@ -157,6 +140,23 @@ DocsCollector.collect('java.security.BasicPermission', [
 			[/* return description */
 				[/* text */ 't', `true if the passed permission is equal to or
  implied by this permission, false otherwise.`]
+			]
+		]],
+		[/* method */ 'hashCode()', [
+			[/* method description */
+				[/* text */ 't', `Returns the hash code value for this object.
+ The hash code used is the hash code of the name, that is,
+ `],
+				[/* inline code block */ 'i', `getName().hashCode()`],
+				[/* text */ 't', `, where `],
+				[/* inline code block */ 'i', `getName`],
+				[/* text */ 't', ` is
+ from the Permission superclass.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `a hash code value for this object.`]
 			]
 		]],
 		[/* method */ 'getActions()', [

@@ -50,85 +50,6 @@ DocsCollector.collect('java.io.StringWriter', [
 		]]
 	],
 	[/* methods */
-		[/* method */ 'toString()', [
-			[/* method description */
-				[/* text */ 't', `Return the buffer's current value as a string.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `a string representation of the object.`]
-			]
-		]],
-		[/* method */ 'append(java.lang.CharSequence,int,int)', [
-			[/* method description */
-				[/* text */ 't', `Appends a subsequence of the specified character sequence to this writer.
-
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', ` An invocation of this method of the form
- `],
-					[/* inline code block */ 'i', `out.append(csq, start, end)`],
-					[/* text */ 't', ` when `],
-					[/* inline code block */ 'i', `csq`],
-					[/* text */ 't', `
- is not `],
-					[/* inline code block */ 'i', `null`],
-					[/* text */ 't', `, behaves in
- exactly the same way as the invocation
-
- `]
-				]],
-				[/* code block */ 'c', [
-					[/* inline code block */ 'i', `out.write(csq.subSequence(start, end).toString())`]
-				]],
-				[/* block */ 'b', '']
-			],
-			[/* parameters */
-				[/* parameter */ 'csq', [/* parameter description */
-					[/* text */ 't', `The character sequence from which a subsequence will be
-         appended.  If `],
-					[/* inline code block */ 'i', `csq`],
-					[/* text */ 't', ` is `],
-					[/* inline code block */ 'i', `null`],
-					[/* text */ 't', `, then characters
-         will be appended as if `],
-					[/* inline code block */ 'i', `csq`],
-					[/* text */ 't', ` contained the four
-         characters `],
-					[/* inline code block */ 'i', `"null"`],
-					[/* text */ 't', `.`]
-				]],
-				[/* parameter */ 'start', [/* parameter description */
-					[/* text */ 't', `The index of the first character in the subsequence`]
-				]],
-				[/* parameter */ 'end', [/* parameter description */
-					[/* text */ 't', `The index of the character following the last character in the
-         subsequence`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.IndexOutOfBoundsException', [/* throw description */
-					[/* text */ 't', `If `],
-					[/* inline code block */ 'i', `start`],
-					[/* text */ 't', ` or `],
-					[/* inline code block */ 'i', `end`],
-					[/* text */ 't', ` are negative, `],
-					[/* inline code block */ 'i', `start`],
-					[/* text */ 't', `
-          is greater than `],
-					[/* inline code block */ 'i', `end`],
-					[/* text */ 't', `, or `],
-					[/* inline code block */ 'i', `end`],
-					[/* text */ 't', ` is greater than
-          `],
-					[/* inline code block */ 'i', `csq.length()`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `This writer`]
-			]
-		]],
 		[/* method */ 'append(char)', [
 			[/* method description */
 				[/* text */ 't', `Appends the specified character to this writer.
@@ -202,6 +123,113 @@ DocsCollector.collect('java.io.StringWriter', [
 				[/* text */ 't', `This writer`]
 			]
 		]],
+		[/* method */ 'append(java.lang.CharSequence,int,int)', [
+			[/* method description */
+				[/* text */ 't', `Appends a subsequence of the specified character sequence to this writer.
+
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', ` An invocation of this method of the form
+ `],
+					[/* inline code block */ 'i', `out.append(csq, start, end)`],
+					[/* text */ 't', ` when `],
+					[/* inline code block */ 'i', `csq`],
+					[/* text */ 't', `
+ is not `],
+					[/* inline code block */ 'i', `null`],
+					[/* text */ 't', `, behaves in
+ exactly the same way as the invocation
+
+ `]
+				]],
+				[/* code block */ 'c', [
+					[/* inline code block */ 'i', `out.write(csq.subSequence(start, end).toString())`]
+				]],
+				[/* block */ 'b', '']
+			],
+			[/* parameters */
+				[/* parameter */ 'csq', [/* parameter description */
+					[/* text */ 't', `The character sequence from which a subsequence will be
+         appended.  If `],
+					[/* inline code block */ 'i', `csq`],
+					[/* text */ 't', ` is `],
+					[/* inline code block */ 'i', `null`],
+					[/* text */ 't', `, then characters
+         will be appended as if `],
+					[/* inline code block */ 'i', `csq`],
+					[/* text */ 't', ` contained the four
+         characters `],
+					[/* inline code block */ 'i', `"null"`],
+					[/* text */ 't', `.`]
+				]],
+				[/* parameter */ 'start', [/* parameter description */
+					[/* text */ 't', `The index of the first character in the subsequence`]
+				]],
+				[/* parameter */ 'end', [/* parameter description */
+					[/* text */ 't', `The index of the character following the last character in the
+         subsequence`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.lang.IndexOutOfBoundsException', [/* throw description */
+					[/* text */ 't', `If `],
+					[/* inline code block */ 'i', `start`],
+					[/* text */ 't', ` or `],
+					[/* inline code block */ 'i', `end`],
+					[/* text */ 't', ` are negative, `],
+					[/* inline code block */ 'i', `start`],
+					[/* text */ 't', `
+          is greater than `],
+					[/* inline code block */ 'i', `end`],
+					[/* text */ 't', `, or `],
+					[/* inline code block */ 'i', `end`],
+					[/* text */ 't', ` is greater than
+          `],
+					[/* inline code block */ 'i', `csq.length()`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `This writer`]
+			]
+		]],
+		[/* method */ 'toString()', [
+			[/* method description */
+				[/* text */ 't', `Return the buffer's current value as a string.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `a string representation of the object.`]
+			]
+		]],
+		[/* method */ 'getBuffer()', [
+			[/* method description */
+				[/* text */ 't', `Return the string buffer itself.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `StringBuffer holding the current buffer value.`]
+			]
+		]],
+		[/* method */ 'close()', [
+			[/* method description */
+				[/* text */ 't', `Closing a `],
+				[/* inline code block */ 'i', `StringWriter`],
+				[/* text */ 't', ` has no effect. The methods in this
+ class can be called after the stream has been closed without generating
+ an `],
+				[/* inline code block */ 'i', `IOException`],
+				[/* text */ 't', `.`]
+			],
+			/* parameters */ UDF,
+			[/* throws */
+				[/* throw */ 'java.io.IOException', [/* throw description */
+					[/* text */ 't', `If an I/O error occurs`]
+				]]
+			],
+			/* return */ UDF
+		]],
 		[/* method */ 'flush()', [
 			[/* method description */
 				[/* text */ 't', `Flush the stream.
@@ -249,6 +277,30 @@ DocsCollector.collect('java.io.StringWriter', [
 			],
 			/* return */ UDF
 		]],
+		[/* method */ 'write(int)', [
+			[/* method description */
+				[/* text */ 't', `Write a single character.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'c', [/* parameter description */
+					[/* text */ 't', `int specifying a character to be written`]
+				]]
+			],
+			/* throws */ UDF,
+			/* return */ UDF
+		]],
+		[/* method */ 'write(java.lang.String)', [
+			[/* method description */
+				[/* text */ 't', `Write a string.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'str', [/* parameter description */
+					[/* text */ 't', `String to be written`]
+				]]
+			],
+			/* throws */ UDF,
+			/* return */ UDF
+		]],
 		[/* method */ 'write(java.lang.String,int,int)', [
 			[/* method description */
 				[/* text */ 't', `Write a portion of a string.`]
@@ -278,58 +330,6 @@ DocsCollector.collect('java.io.StringWriter', [
 				]]
 			],
 			/* return */ UDF
-		]],
-		[/* method */ 'write(java.lang.String)', [
-			[/* method description */
-				[/* text */ 't', `Write a string.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'str', [/* parameter description */
-					[/* text */ 't', `String to be written`]
-				]]
-			],
-			/* throws */ UDF,
-			/* return */ UDF
-		]],
-		[/* method */ 'write(int)', [
-			[/* method description */
-				[/* text */ 't', `Write a single character.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'c', [/* parameter description */
-					[/* text */ 't', `int specifying a character to be written`]
-				]]
-			],
-			/* throws */ UDF,
-			/* return */ UDF
-		]],
-		[/* method */ 'close()', [
-			[/* method description */
-				[/* text */ 't', `Closing a `],
-				[/* inline code block */ 'i', `StringWriter`],
-				[/* text */ 't', ` has no effect. The methods in this
- class can be called after the stream has been closed without generating
- an `],
-				[/* inline code block */ 'i', `IOException`],
-				[/* text */ 't', `.`]
-			],
-			/* parameters */ UDF,
-			[/* throws */
-				[/* throw */ 'java.io.IOException', [/* throw description */
-					[/* text */ 't', `If an I/O error occurs`]
-				]]
-			],
-			/* return */ UDF
-		]],
-		[/* method */ 'getBuffer()', [
-			[/* method description */
-				[/* text */ 't', `Return the string buffer itself.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `StringBuffer holding the current buffer value.`]
-			]
 		]]
 	],
 ]);

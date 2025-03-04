@@ -820,9 +820,15 @@ JdkClassCreateHelper.class('java.net.URLConnection', [
 		]
 	],
 	[/* declared fields */
-		[/* protected java.net.URL java.net.URLConnection.url */
-			/* name */ 'url',
-			/* type */ 'java.net.URL',
+		[/* protected boolean java.net.URLConnection.allowUserInteraction */
+			/* name */ 'allowUserInteraction',
+			/* type */ 'boolean',
+			/* annotations */ UDF,
+			/* modifiers */ 4
+		],
+		[/* protected boolean java.net.URLConnection.connected */
+			/* name */ 'connected',
+			/* type */ 'boolean',
 			/* annotations */ UDF,
 			/* modifiers */ 4
 		],
@@ -838,26 +844,20 @@ JdkClassCreateHelper.class('java.net.URLConnection', [
 			/* annotations */ UDF,
 			/* modifiers */ 4
 		],
-		[/* protected boolean java.net.URLConnection.allowUserInteraction */
-			/* name */ 'allowUserInteraction',
-			/* type */ 'boolean',
-			/* annotations */ UDF,
-			/* modifiers */ 4
-		],
-		[/* protected boolean java.net.URLConnection.useCaches */
-			/* name */ 'useCaches',
-			/* type */ 'boolean',
-			/* annotations */ UDF,
-			/* modifiers */ 4
-		],
 		[/* protected long java.net.URLConnection.ifModifiedSince */
 			/* name */ 'ifModifiedSince',
 			/* type */ 'long',
 			/* annotations */ UDF,
 			/* modifiers */ 4
 		],
-		[/* protected boolean java.net.URLConnection.connected */
-			/* name */ 'connected',
+		[/* protected java.net.URL java.net.URLConnection.url */
+			/* name */ 'url',
+			/* type */ 'java.net.URL',
+			/* annotations */ UDF,
+			/* modifiers */ 4
+		],
+		[/* protected boolean java.net.URLConnection.useCaches */
+			/* name */ 'useCaches',
 			/* type */ 'boolean',
 			/* annotations */ UDF,
 			/* modifiers */ 4

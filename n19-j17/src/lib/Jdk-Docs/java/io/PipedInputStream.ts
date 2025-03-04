@@ -27,11 +27,6 @@ DocsCollector.collect('java.io.PipedInputStream', [
  piped output stream is no longer alive.`]
 	],
 	[/* fields */
-		[/* field */ 'PIPE_SIZE', [
-			[/* field description */
-				[/* text */ 't', `The default size of the pipe's circular input buffer.`]
-			],
-		]],
 		[/* field */ 'buffer', [
 			[/* field description */
 				[/* text */ 't', `The circular buffer into which incoming data is placed.`]
@@ -54,9 +49,32 @@ DocsCollector.collect('java.io.PipedInputStream', [
 				[/* text */ 't', `The index of the position in the circular buffer at which the next
  byte of data will be read by this piped input stream.`]
 			],
+		]],
+		[/* field */ 'PIPE_SIZE', [
+			[/* field description */
+				[/* text */ 't', `The default size of the pipe's circular input buffer.`]
+			],
 		]]
 	],
 	[/* constructors */
+		[/* constructor */ '<init>()', [
+			[/* constructor description */
+				[/* text */ 't', `Creates a `],
+				[/* inline code block */ 'i', `PipedInputStream`],
+				[/* text */ 't', ` so
+ that it is not yet `],
+				[/* reference */ 'r', `#connect(java.io.PipedOutputStream)`, `connected`],
+				[/* text */ 't', `.
+ It must be `],
+				[/* reference */ 'r', `.PipedOutputStream#connect(java.io.PipedInputStream)`],
+				[/* text */ 't', ` to a
+ `],
+				[/* inline code block */ 'i', `PipedOutputStream`],
+				[/* text */ 't', ` before being used.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF
+		]],
 		[/* constructor */ '<init>(int)', [
 			[/* constructor description */
 				[/* text */ 't', `Creates a `],
@@ -85,23 +103,30 @@ DocsCollector.collect('java.io.PipedInputStream', [
 				]]
 			]
 		]],
-		[/* constructor */ '<init>()', [
+		[/* constructor */ '<init>(java.io.PipedOutputStream)', [
 			[/* constructor description */
 				[/* text */ 't', `Creates a `],
 				[/* inline code block */ 'i', `PipedInputStream`],
 				[/* text */ 't', ` so
- that it is not yet `],
-				[/* reference */ 'r', `#connect(java.io.PipedOutputStream)`, `connected`],
-				[/* text */ 't', `.
- It must be `],
-				[/* reference */ 'r', `.PipedOutputStream#connect(java.io.PipedInputStream)`],
-				[/* text */ 't', ` to a
- `],
-				[/* inline code block */ 'i', `PipedOutputStream`],
-				[/* text */ 't', ` before being used.`]
+ that it is connected to the piped output
+ stream `],
+				[/* inline code block */ 'i', `src`],
+				[/* text */ 't', `. Data bytes written
+ to `],
+				[/* inline code block */ 'i', `src`],
+				[/* text */ 't', ` will then be  available
+ as input from this stream.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF
+			[/* parameters */
+				[/* parameter */ 'src', [/* parameter description */
+					[/* text */ 't', `the stream to connect to.`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.io.IOException', [/* throw description */
+					[/* text */ 't', `if an I/O error occurs.`]
+				]]
+			]
 		]],
 		[/* constructor */ '<init>(java.io.PipedOutputStream,int)', [
 			[/* constructor description */
@@ -136,34 +161,59 @@ DocsCollector.collect('java.io.PipedInputStream', [
 					[/* text */ 't', `.`]
 				]]
 			]
-		]],
-		[/* constructor */ '<init>(java.io.PipedOutputStream)', [
-			[/* constructor description */
-				[/* text */ 't', `Creates a `],
-				[/* inline code block */ 'i', `PipedInputStream`],
-				[/* text */ 't', ` so
- that it is connected to the piped output
- stream `],
-				[/* inline code block */ 'i', `src`],
-				[/* text */ 't', `. Data bytes written
- to `],
-				[/* inline code block */ 'i', `src`],
-				[/* text */ 't', ` will then be  available
- as input from this stream.`]
+		]]
+	],
+	[/* methods */
+		[/* method */ 'receive(int)', [
+			[/* method description */
+				[/* text */ 't', `Receives a byte of data.  This method will block if no input is
+ available.`]
 			],
 			[/* parameters */
-				[/* parameter */ 'src', [/* parameter description */
-					[/* text */ 't', `the stream to connect to.`]
+				[/* parameter */ 'b', [/* parameter description */
+					[/* text */ 't', `the byte being received`]
 				]]
 			],
 			[/* throws */
 				[/* throw */ 'java.io.IOException', [/* throw description */
+					[/* text */ 't', `If the pipe is `],
+					[/* text */ 't', `broken`],
+					[/* text */ 't', `,
+          `],
+					[/* reference */ 'r', `#connect(java.io.PipedOutputStream)`, `unconnected`],
+					[/* text */ 't', `,
+          closed, or if an I/O error occurs.`]
+				]]
+			],
+			/* return */ UDF
+		]],
+		[/* method */ 'available()', [
+			[/* method description */
+				[/* text */ 't', `Returns the number of bytes that can be read from this input
+ stream without blocking.`]
+			],
+			/* parameters */ UDF,
+			[/* throws */
+				[/* throw */ 'java.io.IOException', [/* throw description */
 					[/* text */ 't', `if an I/O error occurs.`]
 				]]
+			],
+			[/* return description */
+				[/* text */ 't', `the number of bytes that can be read from this input stream
+         without blocking, or `],
+				[/* inline code block */ 'i', `0`],
+				[/* text */ 't', ` if this input stream has been
+         closed by invoking its `],
+				[/* reference */ 'r', `#close()`, `close()`],
+				[/* text */ 't', ` method, or if the pipe
+         is `],
+				[/* reference */ 'r', `#connect(java.io.PipedOutputStream)`, `unconnected`],
+				[/* text */ 't', `, or
+         `],
+				[/* text */ 't', `broken`],
+				[/* text */ 't', `.`]
 			]
-		]]
-	],
-	[/* methods */
+		]],
 		[/* method */ 'read()', [
 			[/* method description */
 				[/* text */ 't', `Reads the next byte of data from this piped input stream. The
@@ -267,6 +317,19 @@ DocsCollector.collect('java.io.PipedInputStream', [
              the stream has been reached.`]
 			]
 		]],
+		[/* method */ 'close()', [
+			[/* method description */
+				[/* text */ 't', `Closes this piped input stream and releases any system resources
+ associated with the stream.`]
+			],
+			/* parameters */ UDF,
+			[/* throws */
+				[/* throw */ 'java.io.IOException', [/* throw description */
+					[/* text */ 't', `if an I/O error occurs.`]
+				]]
+			],
+			/* return */ UDF
+		]],
 		[/* method */ 'connect(java.io.PipedOutputStream)', [
 			[/* method description */
 				[/* text */ 't', `Causes this piped input stream to be connected
@@ -315,69 +378,6 @@ DocsCollector.collect('java.io.PipedInputStream', [
 			[/* throws */
 				[/* throw */ 'java.io.IOException', [/* throw description */
 					[/* text */ 't', `if an I/O error occurs.`]
-				]]
-			],
-			/* return */ UDF
-		]],
-		[/* method */ 'close()', [
-			[/* method description */
-				[/* text */ 't', `Closes this piped input stream and releases any system resources
- associated with the stream.`]
-			],
-			/* parameters */ UDF,
-			[/* throws */
-				[/* throw */ 'java.io.IOException', [/* throw description */
-					[/* text */ 't', `if an I/O error occurs.`]
-				]]
-			],
-			/* return */ UDF
-		]],
-		[/* method */ 'available()', [
-			[/* method description */
-				[/* text */ 't', `Returns the number of bytes that can be read from this input
- stream without blocking.`]
-			],
-			/* parameters */ UDF,
-			[/* throws */
-				[/* throw */ 'java.io.IOException', [/* throw description */
-					[/* text */ 't', `if an I/O error occurs.`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `the number of bytes that can be read from this input stream
-         without blocking, or `],
-				[/* inline code block */ 'i', `0`],
-				[/* text */ 't', ` if this input stream has been
-         closed by invoking its `],
-				[/* reference */ 'r', `#close()`, `close()`],
-				[/* text */ 't', ` method, or if the pipe
-         is `],
-				[/* reference */ 'r', `#connect(java.io.PipedOutputStream)`, `unconnected`],
-				[/* text */ 't', `, or
-         `],
-				[/* text */ 't', `broken`],
-				[/* text */ 't', `.`]
-			]
-		]],
-		[/* method */ 'receive(int)', [
-			[/* method description */
-				[/* text */ 't', `Receives a byte of data.  This method will block if no input is
- available.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'b', [/* parameter description */
-					[/* text */ 't', `the byte being received`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.io.IOException', [/* throw description */
-					[/* text */ 't', `If the pipe is `],
-					[/* text */ 't', `broken`],
-					[/* text */ 't', `,
-          `],
-					[/* reference */ 'r', `#connect(java.io.PipedOutputStream)`, `unconnected`],
-					[/* text */ 't', `,
-          closed, or if an I/O error occurs.`]
 				]]
 			],
 			/* return */ UDF

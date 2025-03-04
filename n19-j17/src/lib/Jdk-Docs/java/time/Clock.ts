@@ -88,6 +88,56 @@ DocsCollector.collect('java.time.Clock', [
 		]]
 	],
 	[/* methods */
+		[/* method */ 'withZone(java.time.ZoneId)', [
+			[/* method description */
+				[/* text */ 't', `Returns a copy of this clock with a different time-zone.
+ `],
+				[/* block */ 'b', `
+ A clock will typically obtain the current instant and then convert that
+ to a date or time using a time-zone. This method returns a clock with
+ similar properties but using a different time-zone.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'zone', [/* parameter description */
+					[/* text */ 't', `the time-zone to change to, not null`]
+				]]
+			],
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `a clock based on this clock with the specified time-zone, not null`]
+			]
+		]],
+		[/* method */ 'instant()', [
+			[/* method description */
+				[/* text */ 't', `Gets the current instant of the clock.
+ `],
+				[/* block */ 'b', `
+ This returns an instant representing the current instant as defined by the clock.`]
+			],
+			/* parameters */ UDF,
+			[/* throws */
+				[/* throw */ 'java.time.DateTimeException', [/* throw description */
+					[/* text */ 't', `if the instant cannot be obtained, not thrown by most implementations`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `the current instant from this clock, not null`]
+			]
+		]],
+		[/* method */ 'getZone()', [
+			[/* method description */
+				[/* text */ 't', `Gets the time-zone being used to create dates and times.
+ `],
+				[/* block */ 'b', `
+ A clock will typically obtain the current instant and then convert that
+ to a date or time using a time-zone. This method returns the time-zone used.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the time-zone being used to interpret instants, not null`]
+			]
+		]],
 		[/* method */ 'equals(java.lang.Object)', [
 			[/* method description */
 				[/* text */ 't', `Checks if this clock is equal to another clock.
@@ -132,42 +182,6 @@ DocsCollector.collect('java.time.Clock', [
 				[/* text */ 't', `a suitable hash code`]
 			]
 		]],
-		[/* method */ 'offset(java.time.Clock,java.time.Duration)', [
-			[/* method description */
-				[/* text */ 't', `Obtains a clock that returns instants from the specified clock with the
- specified duration added.
- `],
-				[/* block */ 'b', `
- This clock wraps another clock, returning instants that are later by the
- specified duration. If the duration is negative, the instants will be
- earlier than the current date and time.
- The main use case for this is to simulate running in the future or in the past.
- `],
-				[/* block */ 'b', `
- A duration of zero would have no offsetting effect.
- Passing zero will return the underlying clock.
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', `
- The returned implementation is immutable, thread-safe and `],
-					[/* inline code block */ 'i', `Serializable`],
-					[/* text */ 't', `
- providing that the base clock is.`]
-				]]
-			],
-			[/* parameters */
-				[/* parameter */ 'baseClock', [/* parameter description */
-					[/* text */ 't', `the base clock to add the duration to, not null`]
-				]],
-				[/* parameter */ 'offsetDuration', [/* parameter description */
-					[/* text */ 't', `the duration to add, not null`]
-				]]
-			],
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `a clock based on the base clock with the duration added, not null`]
-			]
-		]],
 		[/* method */ 'millis()', [
 			[/* method description */
 				[/* text */ 't', `Gets the current millisecond instant of the clock.
@@ -208,6 +222,72 @@ DocsCollector.collect('java.time.Clock', [
   the Java epoch of 1970-01-01T00:00Z (UTC), not null`]
 			]
 		]],
+		[/* method */ 'fixed(java.time.Instant,java.time.ZoneId)', [
+			[/* method description */
+				[/* text */ 't', `Obtains a clock that always returns the same instant.
+ `],
+				[/* block */ 'b', `
+ This clock simply returns the specified instant.
+ As such, it is not a clock in the conventional sense.
+ The main use case for this is in testing, where the fixed clock ensures
+ tests are not dependent on the current clock.
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', `
+ The returned implementation is immutable, thread-safe and `],
+					[/* inline code block */ 'i', `Serializable`],
+					[/* text */ 't', `.`]
+				]]
+			],
+			[/* parameters */
+				[/* parameter */ 'fixedInstant', [/* parameter description */
+					[/* text */ 't', `the instant to use as the clock, not null`]
+				]],
+				[/* parameter */ 'zone', [/* parameter description */
+					[/* text */ 't', `the time-zone to use to convert the instant to date-time, not null`]
+				]]
+			],
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `a clock that always returns the same instant, not null`]
+			]
+		]],
+		[/* method */ 'offset(java.time.Clock,java.time.Duration)', [
+			[/* method description */
+				[/* text */ 't', `Obtains a clock that returns instants from the specified clock with the
+ specified duration added.
+ `],
+				[/* block */ 'b', `
+ This clock wraps another clock, returning instants that are later by the
+ specified duration. If the duration is negative, the instants will be
+ earlier than the current date and time.
+ The main use case for this is to simulate running in the future or in the past.
+ `],
+				[/* block */ 'b', `
+ A duration of zero would have no offsetting effect.
+ Passing zero will return the underlying clock.
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', `
+ The returned implementation is immutable, thread-safe and `],
+					[/* inline code block */ 'i', `Serializable`],
+					[/* text */ 't', `
+ providing that the base clock is.`]
+				]]
+			],
+			[/* parameters */
+				[/* parameter */ 'baseClock', [/* parameter description */
+					[/* text */ 't', `the base clock to add the duration to, not null`]
+				]],
+				[/* parameter */ 'offsetDuration', [/* parameter description */
+					[/* text */ 't', `the duration to add, not null`]
+				]]
+			],
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `a clock based on the base clock with the duration added, not null`]
+			]
+		]],
 		[/* method */ 'system(java.time.ZoneId)', [
 			[/* method description */
 				[/* text */ 't', `Obtains a clock that returns the current instant using the best available
@@ -240,86 +320,6 @@ DocsCollector.collect('java.time.Clock', [
 			/* throws */ UDF,
 			[/* return description */
 				[/* text */ 't', `a clock that uses the best available system clock in the specified zone, not null`]
-			]
-		]],
-		[/* method */ 'fixed(java.time.Instant,java.time.ZoneId)', [
-			[/* method description */
-				[/* text */ 't', `Obtains a clock that always returns the same instant.
- `],
-				[/* block */ 'b', `
- This clock simply returns the specified instant.
- As such, it is not a clock in the conventional sense.
- The main use case for this is in testing, where the fixed clock ensures
- tests are not dependent on the current clock.
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', `
- The returned implementation is immutable, thread-safe and `],
-					[/* inline code block */ 'i', `Serializable`],
-					[/* text */ 't', `.`]
-				]]
-			],
-			[/* parameters */
-				[/* parameter */ 'fixedInstant', [/* parameter description */
-					[/* text */ 't', `the instant to use as the clock, not null`]
-				]],
-				[/* parameter */ 'zone', [/* parameter description */
-					[/* text */ 't', `the time-zone to use to convert the instant to date-time, not null`]
-				]]
-			],
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `a clock that always returns the same instant, not null`]
-			]
-		]],
-		[/* method */ 'instant()', [
-			[/* method description */
-				[/* text */ 't', `Gets the current instant of the clock.
- `],
-				[/* block */ 'b', `
- This returns an instant representing the current instant as defined by the clock.`]
-			],
-			/* parameters */ UDF,
-			[/* throws */
-				[/* throw */ 'java.time.DateTimeException', [/* throw description */
-					[/* text */ 't', `if the instant cannot be obtained, not thrown by most implementations`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `the current instant from this clock, not null`]
-			]
-		]],
-		[/* method */ 'getZone()', [
-			[/* method description */
-				[/* text */ 't', `Gets the time-zone being used to create dates and times.
- `],
-				[/* block */ 'b', `
- A clock will typically obtain the current instant and then convert that
- to a date or time using a time-zone. This method returns the time-zone used.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the time-zone being used to interpret instants, not null`]
-			]
-		]],
-		[/* method */ 'withZone(java.time.ZoneId)', [
-			[/* method description */
-				[/* text */ 't', `Returns a copy of this clock with a different time-zone.
- `],
-				[/* block */ 'b', `
- A clock will typically obtain the current instant and then convert that
- to a date or time using a time-zone. This method returns a clock with
- similar properties but using a different time-zone.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'zone', [/* parameter description */
-					[/* text */ 't', `the time-zone to change to, not null`]
-				]]
-			],
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `a clock based on this clock with the specified time-zone, not null`]
 			]
 		]],
 		[/* method */ 'systemDefaultZone()', [
@@ -360,6 +360,51 @@ DocsCollector.collect('java.time.Clock', [
 			/* throws */ UDF,
 			[/* return description */
 				[/* text */ 't', `a clock that uses the best available system clock in the default zone, not null`]
+			]
+		]],
+		[/* method */ 'systemUTC()', [
+			[/* method description */
+				[/* text */ 't', `Obtains a clock that returns the current instant using the best available
+ system clock, converting to date and time using the UTC time-zone.
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', `
+ This clock, rather than `],
+					[/* reference */ 'r', `#systemDefaultZone()`, `systemDefaultZone()`],
+					[/* text */ 't', `, should be used when
+ you need the current instant without the date or time.
+ `]
+				]],
+				[/* block */ 'b', [
+					[/* text */ 't', `
+ This clock is based on the best available system clock.
+ This may use `],
+					[/* reference */ 'r', `java.System#currentTimeMillis()`],
+					[/* text */ 't', `, or a higher resolution
+ clock if one is available.
+ `]
+				]],
+				[/* block */ 'b', [
+					[/* text */ 't', `
+ Conversion from instant to date or time uses the `],
+					[/* reference */ 'r', `.ZoneOffset#UTC`],
+					[/* text */ 't', `.
+ `]
+				]],
+				[/* block */ 'b', [
+					[/* text */ 't', `
+ The returned implementation is immutable, thread-safe and `],
+					[/* inline code block */ 'i', `Serializable`],
+					[/* text */ 't', `.
+ It is equivalent to `],
+					[/* inline code block */ 'i', `system(ZoneOffset.UTC)`],
+					[/* text */ 't', `.`]
+				]]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `a clock that uses the best available system clock in the UTC zone, not null`]
 			]
 		]],
 		[/* method */ 'tick(java.time.Clock,java.time.Duration)', [
@@ -417,51 +462,6 @@ DocsCollector.collect('java.time.Clock', [
 				[/* text */ 't', `a clock that ticks in whole units of the duration, not null`]
 			]
 		]],
-		[/* method */ 'systemUTC()', [
-			[/* method description */
-				[/* text */ 't', `Obtains a clock that returns the current instant using the best available
- system clock, converting to date and time using the UTC time-zone.
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', `
- This clock, rather than `],
-					[/* reference */ 'r', `#systemDefaultZone()`, `systemDefaultZone()`],
-					[/* text */ 't', `, should be used when
- you need the current instant without the date or time.
- `]
-				]],
-				[/* block */ 'b', [
-					[/* text */ 't', `
- This clock is based on the best available system clock.
- This may use `],
-					[/* reference */ 'r', `java.System#currentTimeMillis()`],
-					[/* text */ 't', `, or a higher resolution
- clock if one is available.
- `]
-				]],
-				[/* block */ 'b', [
-					[/* text */ 't', `
- Conversion from instant to date or time uses the `],
-					[/* reference */ 'r', `.ZoneOffset#UTC`],
-					[/* text */ 't', `.
- `]
-				]],
-				[/* block */ 'b', [
-					[/* text */ 't', `
- The returned implementation is immutable, thread-safe and `],
-					[/* inline code block */ 'i', `Serializable`],
-					[/* text */ 't', `.
- It is equivalent to `],
-					[/* inline code block */ 'i', `system(ZoneOffset.UTC)`],
-					[/* text */ 't', `.`]
-				]]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `a clock that uses the best available system clock in the UTC zone, not null`]
-			]
-		]],
 		[/* method */ 'tickMillis(java.time.ZoneId)', [
 			[/* method description */
 				[/* text */ 't', `Obtains a clock that returns the current instant ticking in whole milliseconds
@@ -502,46 +502,6 @@ DocsCollector.collect('java.time.Clock', [
 				[/* text */ 't', `a clock that ticks in whole milliseconds using the specified zone, not null`]
 			]
 		]],
-		[/* method */ 'tickSeconds(java.time.ZoneId)', [
-			[/* method description */
-				[/* text */ 't', `Obtains a clock that returns the current instant ticking in whole seconds
- using the best available system clock.
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', `
- This clock will always have the nano-of-second field set to zero.
- This ensures that the visible time ticks in whole seconds.
- The underlying clock is the best available system clock, equivalent to
- using `],
-					[/* reference */ 'r', `#system(java.time.ZoneId)`, `system(ZoneId)`],
-					[/* text */ 't', `.
- `]
-				]],
-				[/* block */ 'b', `
- Implementations may use a caching strategy for performance reasons.
- As such, it is possible that the start of the second observed via this
- clock will be later than that observed directly via the underlying clock.
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', `
- The returned implementation is immutable, thread-safe and `],
-					[/* inline code block */ 'i', `Serializable`],
-					[/* text */ 't', `.
- It is equivalent to `],
-					[/* inline code block */ 'i', `tick(system(zone), Duration.ofSeconds(1))`],
-					[/* text */ 't', `.`]
-				]]
-			],
-			[/* parameters */
-				[/* parameter */ 'zone', [/* parameter description */
-					[/* text */ 't', `the time-zone to use to convert the instant to date-time, not null`]
-				]]
-			],
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `a clock that ticks in whole seconds using the specified zone, not null`]
-			]
-		]],
 		[/* method */ 'tickMinutes(java.time.ZoneId)', [
 			[/* method description */
 				[/* text */ 't', `Obtains a clock that returns the current instant ticking in whole minutes
@@ -580,6 +540,46 @@ DocsCollector.collect('java.time.Clock', [
 			/* throws */ UDF,
 			[/* return description */
 				[/* text */ 't', `a clock that ticks in whole minutes using the specified zone, not null`]
+			]
+		]],
+		[/* method */ 'tickSeconds(java.time.ZoneId)', [
+			[/* method description */
+				[/* text */ 't', `Obtains a clock that returns the current instant ticking in whole seconds
+ using the best available system clock.
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', `
+ This clock will always have the nano-of-second field set to zero.
+ This ensures that the visible time ticks in whole seconds.
+ The underlying clock is the best available system clock, equivalent to
+ using `],
+					[/* reference */ 'r', `#system(java.time.ZoneId)`, `system(ZoneId)`],
+					[/* text */ 't', `.
+ `]
+				]],
+				[/* block */ 'b', `
+ Implementations may use a caching strategy for performance reasons.
+ As such, it is possible that the start of the second observed via this
+ clock will be later than that observed directly via the underlying clock.
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', `
+ The returned implementation is immutable, thread-safe and `],
+					[/* inline code block */ 'i', `Serializable`],
+					[/* text */ 't', `.
+ It is equivalent to `],
+					[/* inline code block */ 'i', `tick(system(zone), Duration.ofSeconds(1))`],
+					[/* text */ 't', `.`]
+				]]
+			],
+			[/* parameters */
+				[/* parameter */ 'zone', [/* parameter description */
+					[/* text */ 't', `the time-zone to use to convert the instant to date-time, not null`]
+				]]
+			],
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `a clock that ticks in whole seconds using the specified zone, not null`]
 			]
 		]]
 	],

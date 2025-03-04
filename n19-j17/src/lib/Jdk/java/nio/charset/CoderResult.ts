@@ -122,14 +122,14 @@ JdkClassCreateHelper.class('java.nio.charset.CoderResult', [
 		]
 	],
 	[/* declared fields */
-		[/* public static final java.nio.charset.CoderResult java.nio.charset.CoderResult.UNDERFLOW */
-			/* name */ 'UNDERFLOW',
+		[/* public static final java.nio.charset.CoderResult java.nio.charset.CoderResult.OVERFLOW */
+			/* name */ 'OVERFLOW',
 			/* type */ 'java.nio.charset.CoderResult',
 			/* annotations */ UDF,
 			/* modifiers */ 25
 		],
-		[/* public static final java.nio.charset.CoderResult java.nio.charset.CoderResult.OVERFLOW */
-			/* name */ 'OVERFLOW',
+		[/* public static final java.nio.charset.CoderResult java.nio.charset.CoderResult.UNDERFLOW */
+			/* name */ 'UNDERFLOW',
 			/* type */ 'java.nio.charset.CoderResult',
 			/* annotations */ UDF,
 			/* modifiers */ 25

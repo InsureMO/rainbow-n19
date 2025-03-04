@@ -196,6 +196,17 @@ DocsCollector.collect('java.nio.FloatBuffer', [
 	/* fields */ UDF,
 	/* constructors */ UDF,
 	[/* methods */
+		[/* method */ 'isDirect()', [
+			[/* method description */
+				[/* text */ 't', `Tells whether or not this float buffer is direct.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* inline code block */ 'i', `true`],
+				[/* text */ 't', ` if, and only if, this buffer is direct`]
+			]
+		]],
 		[/* method */ 'get()', [
 			[/* method description */
 				[/* text */ 't', `Relative `],
@@ -211,52 +222,6 @@ DocsCollector.collect('java.nio.FloatBuffer', [
 			],
 			[/* return description */
 				[/* text */ 't', `The float at the buffer's current position`]
-			]
-		]],
-		[/* method */ 'get(int,float[])', [
-			[/* method description */
-				[/* text */ 't', `Absolute bulk `],
-				[/* text */ 't', `get`],
-				[/* text */ 't', ` method.
-
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', ` This method transfers floats from this buffer into the given
- destination array.  The position of this buffer is unchanged.  An
- invocation of this method of the form
- `],
-					[/* inline code block */ 'i', `src.get(index, dst)`],
-					[/* text */ 't', ` behaves in exactly the same
- way as the invocation:
-
- `]
-				]],
-				[/* code block */ 'c', `     src.get(index, dst, 0, dst.length) `],
-				[/* block */ 'b', '']
-			],
-			[/* parameters */
-				[/* parameter */ 'index', [/* parameter description */
-					[/* text */ 't', `The index in this buffer from which the first float will be
-         read; must be non-negative and less than `],
-					[/* inline code block */ 'i', `limit()`]
-				]],
-				[/* parameter */ 'dst', [/* parameter description */
-					[/* text */ 't', `The destination array`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.IndexOutOfBoundsException', [/* throw description */
-					[/* text */ 't', `If `],
-					[/* inline code block */ 'i', `index`],
-					[/* text */ 't', ` is negative, not smaller than `],
-					[/* inline code block */ 'i', `limit()`],
-					[/* text */ 't', `,
-          or `],
-					[/* inline code block */ 'i', `limit() - index < dst.length`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `This buffer`]
 			]
 		]],
 		[/* method */ 'get(int)', [
@@ -283,74 +248,806 @@ DocsCollector.collect('java.nio.FloatBuffer', [
 				[/* text */ 't', `The float at the given index`]
 			]
 		]],
-		[/* method */ 'get(int,float[],int,int)', [
+		[/* method */ 'order()', [
 			[/* method description */
-				[/* text */ 't', `Absolute bulk `],
+				[/* text */ 't', `Retrieves this buffer's byte order.
+
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', ` The byte order of a float buffer created by allocation or by
+ wrapping an existing `],
+					[/* inline code block */ 'i', `float`],
+					[/* text */ 't', ` array is the `],
+					[/* reference */ 'r', `.ByteOrder#nativeOrder()`],
+					[/* text */ 't', ` of the underlying
+ hardware.  The byte order of a float buffer created as a `],
+					[/* reference */ 'r', `.ByteBuffer#views`],
+					[/* text */ 't', ` of a byte buffer is that of the
+ byte buffer at the moment that the view is created.  `]
+				]]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `This buffer's byte order`]
+			]
+		]],
+		[/* method */ 'asReadOnlyBuffer()', [
+			[/* method description */
+				[/* text */ 't', `Creates a new, read-only float buffer that shares this buffer's
+ content.
+
+ `],
+				[/* block */ 'b', ` The content of the new buffer will be that of this buffer.  Changes
+ to this buffer's content will be visible in the new buffer; the new
+ buffer itself, however, will be read-only and will not allow the shared
+ content to be modified.  The two buffers' position, limit, and mark
+ values will be independent.
+
+ `],
+				[/* block */ 'b', ` The new buffer's capacity, limit, position,
+
+
+
+
+ mark values, and byte order will be identical to those of this buffer.
+
+
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', ` If this buffer is itself read-only then this method behaves in
+ exactly the same way as the `],
+					[/* reference */ 'r', `#duplicate()`, `duplicate`],
+					[/* text */ 't', ` method.  `]
+				]]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `The new, read-only float buffer`]
+			]
+		]],
+		[/* method */ 'compact()', [
+			[/* method description */
+				[/* text */ 't', `Compacts this buffer  `],
+				[/* text */ 't', `(optional operation)`],
+				[/* text */ 't', `.
+
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', ` The floats between the buffer's current position and its limit,
+ if any, are copied to the beginning of the buffer.  That is, the
+ float at index `],
+					[/* text */ 't', `p`],
+					[/* text */ 't', ` = `],
+					[/* inline code block */ 'i', `position()`],
+					[/* text */ 't', ` is copied
+ to index zero, the float at index `],
+					[/* text */ 't', `p`],
+					[/* text */ 't', ` + 1 is copied
+ to index one, and so forth until the float at index
+ `],
+					[/* inline code block */ 'i', `limit()`],
+					[/* text */ 't', ` - 1 is copied to index
+ `],
+					[/* text */ 't', `n`],
+					[/* text */ 't', ` = `],
+					[/* inline code block */ 'i', `limit()`],
+					[/* text */ 't', ` - `],
+					[/* inline code block */ 'i', `1`],
+					[/* text */ 't', ` - `],
+					[/* text */ 't', `p`],
+					[/* text */ 't', `.
+ The buffer's position is then set to `],
+					[/* text */ 't', `n+1`],
+					[/* text */ 't', ` and its limit is set to
+ its capacity.  The mark, if defined, is discarded.
+
+ `]
+				]],
+				[/* block */ 'b', [
+					[/* text */ 't', ` The buffer's position is set to the number of floats copied,
+ rather than to zero, so that an invocation of this method can be
+ followed immediately by an invocation of another relative `],
+					[/* text */ 't', `put`],
+					[/* text */ 't', `
+ method. `]
+				]]
+			],
+			/* parameters */ UDF,
+			[/* throws */
+				[/* throw */ 'java.nio.ReadOnlyBufferException', [/* throw description */
+					[/* text */ 't', `If this buffer is read-only`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `This buffer`]
+			]
+		]],
+		[/* method */ 'duplicate()', [
+			[/* method description */
+				[/* text */ 't', `Creates a new float buffer that shares this buffer's content.
+
+ `],
+				[/* block */ 'b', ` The content of the new buffer will be that of this buffer.  Changes
+ to this buffer's content will be visible in the new buffer, and vice
+ versa; the two buffers' position, limit, and mark values will be
+ independent.
+
+ `],
+				[/* block */ 'b', ` The new buffer's capacity, limit, position,
+
+
+
+
+ mark values, and byte order will be identical to those of this buffer.
+
+ The new buffer will be direct if, and only if, this buffer is direct, and
+ it will be read-only if, and only if, this buffer is read-only.  `]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `The new float buffer`]
+			]
+		]],
+		[/* method */ 'put(float)', [
+			[/* method description */
+				[/* text */ 't', `Relative `],
+				[/* text */ 't', `put`],
+				[/* text */ 't', ` method  `],
+				[/* text */ 't', `(optional operation)`],
+				[/* text */ 't', `.
+
+ `],
+				[/* block */ 'b', ` Writes the given float into this buffer at the current
+ position, and then increments the position. `]
+			],
+			[/* parameters */
+				[/* parameter */ 'f', [/* parameter description */
+					[/* text */ 't', `The float to be written`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.nio.BufferOverflowException', [/* throw description */
+					[/* text */ 't', `If this buffer's current position is not smaller than its limit`]
+				]],
+				[/* throw */ 'java.nio.ReadOnlyBufferException', [/* throw description */
+					[/* text */ 't', `If this buffer is read-only`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `This buffer`]
+			]
+		]],
+		[/* method */ 'put(int,float)', [
+			[/* method description */
+				[/* text */ 't', `Absolute `],
+				[/* text */ 't', `put`],
+				[/* text */ 't', ` method  `],
+				[/* text */ 't', `(optional operation)`],
+				[/* text */ 't', `.
+
+ `],
+				[/* block */ 'b', ` Writes the given float into this buffer at the given
+ index. `]
+			],
+			[/* parameters */
+				[/* parameter */ 'index', [/* parameter description */
+					[/* text */ 't', `The index at which the float will be written`]
+				]],
+				[/* parameter */ 'f', [/* parameter description */
+					[/* text */ 't', `The float value to be written`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.lang.IndexOutOfBoundsException', [/* throw description */
+					[/* text */ 't', `If `],
+					[/* inline code block */ 'i', `index`],
+					[/* text */ 't', ` is negative
+          or not smaller than the buffer's limit`]
+				]],
+				[/* throw */ 'java.nio.ReadOnlyBufferException', [/* throw description */
+					[/* text */ 't', `If this buffer is read-only`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `This buffer`]
+			]
+		]],
+		[/* method */ 'slice()', [
+			[/* method description */
+				[/* text */ 't', `Creates a new float buffer whose content is a shared subsequence of
+ this buffer's content.
+
+ `],
+				[/* block */ 'b', ` The content of the new buffer will start at this buffer's current
+ position.  Changes to this buffer's content will be visible in the new
+ buffer, and vice versa; the two buffers' position, limit, and mark
+ values will be independent.
+
+ `],
+				[/* block */ 'b', ` The new buffer's position will be zero, its capacity and its limit
+ will be the number of floats remaining in this buffer, its mark will be
+ undefined, and its byte order will be
+
+
+
+ identical to that of this buffer.
+
+ The new buffer will be direct if, and only if, this buffer is direct, and
+ it will be read-only if, and only if, this buffer is read-only.  `]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `The new float buffer`]
+			]
+		]],
+		[/* method */ 'slice(int,int)', [
+			[/* method description */
+				[/* text */ 't', `Creates a new float buffer whose content is a shared subsequence of
+ this buffer's content.
+
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', ` The content of the new buffer will start at position `],
+					[/* inline code block */ 'i', `index`],
+					[/* text */ 't', `
+ in this buffer, and will contain `],
+					[/* inline code block */ 'i', `length`],
+					[/* text */ 't', ` elements. Changes to
+ this buffer's content will be visible in the new buffer, and vice versa;
+ the two buffers' position, limit, and mark values will be independent.
+
+ `]
+				]],
+				[/* block */ 'b', [
+					[/* text */ 't', ` The new buffer's position will be zero, its capacity and its limit
+ will be `],
+					[/* inline code block */ 'i', `length`],
+					[/* text */ 't', `, its mark will be undefined, and its byte order
+ will be
+
+
+
+ identical to that of this buffer.
+
+ The new buffer will be direct if, and only if, this buffer is direct,
+ and it will be read-only if, and only if, this buffer is read-only. `]
+				]]
+			],
+			[/* parameters */
+				[/* parameter */ 'index', [/* parameter description */
+					[/* text */ 't', `The position in this buffer at which the content of the new
+          buffer will start; must be non-negative and no larger than
+          `],
+					[/* reference */ 'r', `.Buffer#limit()`]
+				]],
+				[/* parameter */ 'length', [/* parameter description */
+					[/* text */ 't', `The number of elements the new buffer will contain; must be
+          non-negative and no larger than `],
+					[/* inline code block */ 'i', `limit() - index`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.lang.IndexOutOfBoundsException', [/* throw description */
+					[/* text */ 't', `If `],
+					[/* inline code block */ 'i', `index`],
+					[/* text */ 't', ` is negative or greater than `],
+					[/* inline code block */ 'i', `limit()`],
+					[/* text */ 't', `,
+          `],
+					[/* inline code block */ 'i', `length`],
+					[/* text */ 't', ` is negative, or `],
+					[/* inline code block */ 'i', `length > limit() - index`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `The new buffer`]
+			]
+		]],
+		[/* method */ 'equals(java.lang.Object)', [
+			[/* method description */
+				[/* text */ 't', `Tells whether or not this buffer is equal to another object.
+
+ `],
+				[/* block */ 'b', ` Two float buffers are equal if, and only if,
+
+ `],
+				[/* list */ 'l', [
+					[/* block */ 'b', [
+						[/* block */ 'b', ` They have the same element type,  `]
+					]],
+					[/* block */ 'b', [
+						[/* block */ 'b', ` They have the same number of remaining elements, and
+   `]
+					]],
+					[/* block */ 'b', [
+						[/* block */ 'b', [
+							[/* text */ 't', ` The two sequences of remaining elements, considered
+   independently of their starting positions, are pointwise equal.
+
+   This method considers two float elements `],
+							[/* inline code block */ 'i', `a`],
+							[/* text */ 't', ` and `],
+							[/* inline code block */ 'i', `b`],
+							[/* text */ 't', `
+   to be equal if
+   `],
+							[/* inline code block */ 'i', `(a == b) || (Float.isNaN(a) && Float.isNaN(b))`],
+							[/* text */ 't', `.
+   The values `],
+							[/* inline code block */ 'i', `-0.0`],
+							[/* text */ 't', ` and `],
+							[/* inline code block */ 'i', `+0.0`],
+							[/* text */ 't', ` are considered to be
+   equal, unlike `],
+							[/* reference */ 'r', `java.Float#equals(java.lang.Object)`],
+							[/* text */ 't', `.
+
+   `]
+						]]
+					]]
+				]],
+				[/* block */ 'b', ''],
+				[/* block */ 'b', ` A float buffer is not equal to any other type of object.  `]
+			],
+			[/* parameters */
+				[/* parameter */ 'ob', [/* parameter description */
+					[/* text */ 't', `The object to which this buffer is to be compared`]
+				]]
+			],
+			/* throws */ UDF,
+			[/* return description */
+				[/* inline code block */ 'i', `true`],
+				[/* text */ 't', ` if, and only if, this buffer is equal to the
+           given object`]
+			]
+		]],
+		[/* method */ 'hasArray()', [
+			[/* method description */
+				[/* text */ 't', `Tells whether or not this buffer is backed by an accessible float
+ array.
+
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', ` If this method returns `],
+					[/* inline code block */ 'i', `true`],
+					[/* text */ 't', ` then the `],
+					[/* reference */ 'r', `#array()`, `array`],
+					[/* text */ 't', `
+ and `],
+					[/* reference */ 'r', `#arrayOffset()`, `arrayOffset`],
+					[/* text */ 't', ` methods may safely be invoked.
+ `]
+				]]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* inline code block */ 'i', `true`],
+				[/* text */ 't', ` if, and only if, this buffer
+          is backed by an array and is not read-only`]
+			]
+		]],
+		[/* method */ 'array()', [
+			[/* method description */
+				[/* text */ 't', `Returns the float array that backs this
+ buffer  `],
+				[/* text */ 't', `(optional operation)`],
+				[/* text */ 't', `.
+
+ `],
+				[/* block */ 'b', ` Modifications to this buffer's content will cause the returned
+ array's content to be modified, and vice versa.
+
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', ` Invoke the `],
+					[/* reference */ 'r', `#hasArray()`, `hasArray`],
+					[/* text */ 't', ` method before invoking this
+ method in order to ensure that this buffer has an accessible backing
+ array.  `]
+				]]
+			],
+			/* parameters */ UDF,
+			[/* throws */
+				[/* throw */ 'java.nio.ReadOnlyBufferException', [/* throw description */
+					[/* text */ 't', `If this buffer is backed by an array but is read-only`]
+				]],
+				[/* throw */ 'java.lang.UnsupportedOperationException', [/* throw description */
+					[/* text */ 't', `If this buffer is not backed by an accessible array`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `The array that backs this buffer`]
+			]
+		]],
+		[/* method */ 'arrayOffset()', [
+			[/* method description */
+				[/* text */ 't', `Returns the offset within this buffer's backing array of the first
+ element of the buffer  `],
+				[/* text */ 't', `(optional operation)`],
+				[/* text */ 't', `.
+
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', ` If this buffer is backed by an array then buffer position `],
+					[/* text */ 't', `p`],
+					[/* text */ 't', `
+ corresponds to array index `],
+					[/* text */ 't', `p`],
+					[/* text */ 't', ` + `],
+					[/* inline code block */ 'i', `arrayOffset()`],
+					[/* text */ 't', `.
+
+ `]
+				]],
+				[/* block */ 'b', [
+					[/* text */ 't', ` Invoke the `],
+					[/* reference */ 'r', `#hasArray()`, `hasArray`],
+					[/* text */ 't', ` method before invoking this
+ method in order to ensure that this buffer has an accessible backing
+ array.  `]
+				]]
+			],
+			/* parameters */ UDF,
+			[/* throws */
+				[/* throw */ 'java.nio.ReadOnlyBufferException', [/* throw description */
+					[/* text */ 't', `If this buffer is backed by an array but is read-only`]
+				]],
+				[/* throw */ 'java.lang.UnsupportedOperationException', [/* throw description */
+					[/* text */ 't', `If this buffer is not backed by an accessible array`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `The offset within this buffer's array
+          of the first element of the buffer`]
+			]
+		]],
+		[/* method */ 'clear()', [
+			[/* method description */
+				[/* text */ 't', `Clears this buffer.  The position is set to zero, the limit is set to
+ the capacity, and the mark is discarded.
+
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', ` Invoke this method before using a sequence of channel-read or
+ `],
+					[/* text */ 't', `put`],
+					[/* text */ 't', ` operations to fill this buffer.  For example:
+
+ `]
+				]],
+				[/* block */ 'b', [
+					[/* code block */ 'c', ` buf.clear();     // Prepare buffer for reading
+ in.read(buf);    // Read data`]
+				]],
+				[/* block */ 'b', ''],
+				[/* block */ 'b', ` This method does not actually erase the data in the buffer, but it
+ is named as if it did because it will most often be used in situations
+ in which that might as well be the case. `]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `This buffer`]
+			]
+		]],
+		[/* method */ 'flip()', [
+			[/* method description */
+				[/* text */ 't', `Flips this buffer.  The limit is set to the current position and then
+ the position is set to zero.  If the mark is defined then it is
+ discarded.
+
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', ` After a sequence of channel-read or `],
+					[/* text */ 't', `put`],
+					[/* text */ 't', ` operations, invoke
+ this method to prepare for a sequence of channel-write or relative
+ `],
+					[/* text */ 't', `get`],
+					[/* text */ 't', ` operations.  For example:
+
+ `]
+				]],
+				[/* block */ 'b', [
+					[/* code block */ 'c', ` buf.put(magic);    // Prepend header
+ in.read(buf);      // Read data into rest of buffer
+ buf.flip();        // Flip buffer
+ out.write(buf);    // Write header + data to channel`]
+				]],
+				[/* block */ 'b', ''],
+				[/* block */ 'b', [
+					[/* text */ 't', ` This method is often used in conjunction with the `],
+					[/* reference */ 'r', `.ByteBuffer#compact()`],
+					[/* text */ 't', ` method when transferring data from
+ one place to another.  `]
+				]]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `This buffer`]
+			]
+		]],
+		[/* method */ 'limit(int)', [
+			[/* method description */
+				[/* text */ 't', `Sets this buffer's limit.  If the position is larger than the new limit
+ then it is set to the new limit.  If the mark is defined and larger than
+ the new limit then it is discarded.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'newLimit', [/* parameter description */
+					[/* text */ 't', `The new limit value; must be non-negative
+         and no larger than this buffer's capacity`]
+				]]
+			],
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `This buffer`]
+			]
+		]],
+		[/* method */ 'mark()', [
+			[/* method description */
+				[/* text */ 't', `Sets this buffer's mark at its position.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `This buffer`]
+			]
+		]],
+		[/* method */ 'position(int)', [
+			[/* method description */
+				[/* text */ 't', `Sets this buffer's position.  If the mark is defined and larger than the
+ new position then it is discarded.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'newPosition', [/* parameter description */
+					[/* text */ 't', `The new position value; must be non-negative
+         and no larger than the current limit`]
+				]]
+			],
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `This buffer`]
+			]
+		]],
+		[/* method */ 'put(float[])', [
+			[/* method description */
+				[/* text */ 't', `Relative bulk `],
+				[/* text */ 't', `put`],
+				[/* text */ 't', ` method  `],
+				[/* text */ 't', `(optional operation)`],
+				[/* text */ 't', `.
+
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', ` This method transfers the entire content of the given source
+ float array into this buffer.  An invocation of this method of the
+ form `],
+					[/* inline code block */ 'i', `dst.put(a)`],
+					[/* text */ 't', ` behaves in exactly the same way as the
+ invocation
+
+ `]
+				]],
+				[/* code block */ 'c', `     dst.put(a, 0, a.length) `],
+				[/* block */ 'b', '']
+			],
+			[/* parameters */
+				[/* parameter */ 'src', [/* parameter description */
+					[/* text */ 't', `The source array`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.nio.BufferOverflowException', [/* throw description */
+					[/* text */ 't', `If there is insufficient space in this buffer`]
+				]],
+				[/* throw */ 'java.nio.ReadOnlyBufferException', [/* throw description */
+					[/* text */ 't', `If this buffer is read-only`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `This buffer`]
+			]
+		]],
+		[/* method */ 'reset()', [
+			[/* method description */
+				[/* text */ 't', `Resets this buffer's position to the previously-marked position.
+
+ `],
+				[/* block */ 'b', ` Invoking this method neither changes nor discards the mark's
+ value. `]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `This buffer`]
+			]
+		]],
+		[/* method */ 'rewind()', [
+			[/* method description */
+				[/* text */ 't', `Rewinds this buffer.  The position is set to zero and the mark is
+ discarded.
+
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', ` Invoke this method before a sequence of channel-write or `],
+					[/* text */ 't', `get`],
+					[/* text */ 't', `
+ operations, assuming that the limit has already been set
+ appropriately.  For example:
+
+ `]
+				]],
+				[/* block */ 'b', [
+					[/* code block */ 'c', ` out.write(buf);    // Write remaining data
+ buf.rewind();      // Rewind buffer
+ buf.get(array);    // Copy data into array`]
+				]],
+				[/* block */ 'b', '']
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `This buffer`]
+			]
+		]],
+		[/* method */ 'compareTo(java.nio.FloatBuffer)', [
+			[/* method description */
+				[/* text */ 't', `Compares this buffer to another.
+
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', ` Two float buffers are compared by comparing their sequences of
+ remaining elements lexicographically, without regard to the starting
+ position of each sequence within its corresponding buffer.
+
+ Pairs of `],
+					[/* inline code block */ 'i', `float`],
+					[/* text */ 't', ` elements are compared as if by invoking
+ `],
+					[/* reference */ 'r', `java.Float#compare(float,float)`],
+					[/* text */ 't', `, except that
+ `],
+					[/* inline code block */ 'i', `-0.0`],
+					[/* text */ 't', ` and `],
+					[/* inline code block */ 'i', `0.0`],
+					[/* text */ 't', ` are considered to be equal.
+ `],
+					[/* inline code block */ 'i', `Float.NaN`],
+					[/* text */ 't', ` is considered by this method to be equal
+ to itself and greater than all other `],
+					[/* inline code block */ 'i', `float`],
+					[/* text */ 't', ` values
+ (including `],
+					[/* inline code block */ 'i', `Float.POSITIVE_INFINITY`],
+					[/* text */ 't', `).
+
+
+
+
+
+ `]
+				]],
+				[/* block */ 'b', ` A float buffer is not comparable to any other type of object.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'that', [/* parameter description */
+					[/* text */ 't', `the object to be compared.`]
+				]]
+			],
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `A negative integer, zero, or a positive integer as this buffer
+          is less than, equal to, or greater than the given buffer`]
+			]
+		]],
+		[/* method */ 'hashCode()', [
+			[/* method description */
+				[/* text */ 't', `Returns the current hash code of this buffer.
+
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', ` The hash code of a float buffer depends only upon its remaining
+ elements; that is, upon the elements from `],
+					[/* inline code block */ 'i', `position()`],
+					[/* text */ 't', ` up to, and
+ including, the element at `],
+					[/* inline code block */ 'i', `limit()`],
+					[/* text */ 't', ` - `],
+					[/* inline code block */ 'i', `1`],
+					[/* text */ 't', `.
+
+ `]
+				]],
+				[/* block */ 'b', ` Because buffer hash codes are content-dependent, it is inadvisable
+ to use buffers as keys in hash maps or similar data structures unless it
+ is known that their contents will not change.  `]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `The current hash code of this buffer`]
+			]
+		]],
+		[/* method */ 'mismatch(java.nio.FloatBuffer)', [
+			[/* method description */
+				[/* text */ 't', `Finds and returns the relative index of the first mismatch between this
+ buffer and a given buffer.  The index is relative to the
+ `],
+				[/* reference */ 'r', `.Buffer#position()`],
+				[/* text */ 't', ` of each buffer and will be in the range of
+ 0 (inclusive) up to the smaller of the `],
+				[/* reference */ 'r', `.Buffer#remaining()`],
+				[/* text */ 't', `
+ elements in each buffer (exclusive).
+
+ `],
+				[/* block */ 'b', ` If the two buffers share a common prefix then the returned index is
+ the length of the common prefix and it follows that there is a mismatch
+ between the two buffers at that index within the respective buffers.
+ If one buffer is a proper prefix of the other then the returned index is
+ the smaller of the remaining elements in each buffer, and it follows that
+ the index is only valid for the buffer with the larger number of
+ remaining elements.
+ Otherwise, there is no mismatch.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'that', [/* parameter description */
+					[/* text */ 't', `The byte buffer to be tested for a mismatch with this buffer`]
+				]]
+			],
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `The relative index of the first mismatch between this and the
+          given buffer, otherwise -1 if no mismatch.`]
+			]
+		]],
+		[/* method */ 'toString()', [
+			[/* method description */
+				[/* text */ 't', `Returns a string summarizing the state of this buffer.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `A summary string`]
+			]
+		]],
+		[/* method */ 'get(float[])', [
+			[/* method description */
+				[/* text */ 't', `Relative bulk `],
 				[/* text */ 't', `get`],
 				[/* text */ 't', ` method.
 
  `],
 				[/* block */ 'b', [
-					[/* text */ 't', ` This method transfers `],
-					[/* inline code block */ 'i', `length`],
-					[/* text */ 't', ` floats from this
- buffer into the given array, starting at the given index in this
- buffer and at the given offset in the array.  The position of this
- buffer is unchanged.
-
- `]
-				]],
-				[/* block */ 'b', [
-					[/* text */ 't', ` An invocation of this method of the form
+					[/* text */ 't', ` This method transfers floats from this buffer into the given
+ destination array.  An invocation of this method of the form
  `],
-					[/* inline code block */ 'i', `src.get(index, dst, offset, length)`],
-					[/* text */ 't', `
- has exactly the same effect as the following loop except that it first
- checks the consistency of the supplied parameters and it is potentially
- much more efficient:
+					[/* inline code block */ 'i', `src.get(a)`],
+					[/* text */ 't', ` behaves in exactly the same way as the invocation
 
  `]
 				]],
-				[/* code block */ 'c', [
-					[/* inline code block */ 'i', `for (int i = offset, j = index; i < offset + length; i++, j++)
-         dst[i] = src.get(j);`]
-				]],
+				[/* code block */ 'c', `     src.get(a, 0, a.length) `],
 				[/* block */ 'b', '']
 			],
 			[/* parameters */
-				[/* parameter */ 'index', [/* parameter description */
-					[/* text */ 't', `The index in this buffer from which the first float will be
-         read; must be non-negative and less than `],
-					[/* inline code block */ 'i', `limit()`]
-				]],
 				[/* parameter */ 'dst', [/* parameter description */
 					[/* text */ 't', `The destination array`]
-				]],
-				[/* parameter */ 'offset', [/* parameter description */
-					[/* text */ 't', `The offset within the array of the first float to be
-         written; must be non-negative and less than
-         `],
-					[/* inline code block */ 'i', `dst.length`]
-				]],
-				[/* parameter */ 'length', [/* parameter description */
-					[/* text */ 't', `The number of floats to be written to the given array;
-         must be non-negative and no larger than the smaller of
-         `],
-					[/* inline code block */ 'i', `limit() - index`],
-					[/* text */ 't', ` and `],
-					[/* inline code block */ 'i', `dst.length - offset`]
 				]]
 			],
 			[/* throws */
-				[/* throw */ 'java.lang.IndexOutOfBoundsException', [/* throw description */
-					[/* text */ 't', `If the preconditions on the `],
-					[/* inline code block */ 'i', `index`],
-					[/* text */ 't', `, `],
-					[/* inline code block */ 'i', `offset`],
-					[/* text */ 't', `, and
-          `],
+				[/* throw */ 'java.nio.BufferUnderflowException', [/* throw description */
+					[/* text */ 't', `If there are fewer than `],
 					[/* inline code block */ 'i', `length`],
-					[/* text */ 't', ` parameters do not hold`]
+					[/* text */ 't', ` floats
+          remaining in this buffer`]
 				]]
 			],
 			[/* return description */
@@ -450,103 +1147,73 @@ DocsCollector.collect('java.nio.FloatBuffer', [
 				[/* text */ 't', `This buffer`]
 			]
 		]],
-		[/* method */ 'get(float[])', [
+		[/* method */ 'get(int,float[])', [
 			[/* method description */
-				[/* text */ 't', `Relative bulk `],
+				[/* text */ 't', `Absolute bulk `],
 				[/* text */ 't', `get`],
 				[/* text */ 't', ` method.
 
  `],
 				[/* block */ 'b', [
 					[/* text */ 't', ` This method transfers floats from this buffer into the given
- destination array.  An invocation of this method of the form
+ destination array.  The position of this buffer is unchanged.  An
+ invocation of this method of the form
  `],
-					[/* inline code block */ 'i', `src.get(a)`],
-					[/* text */ 't', ` behaves in exactly the same way as the invocation
+					[/* inline code block */ 'i', `src.get(index, dst)`],
+					[/* text */ 't', ` behaves in exactly the same
+ way as the invocation:
 
  `]
 				]],
-				[/* code block */ 'c', `     src.get(a, 0, a.length) `],
+				[/* code block */ 'c', `     src.get(index, dst, 0, dst.length) `],
 				[/* block */ 'b', '']
 			],
 			[/* parameters */
+				[/* parameter */ 'index', [/* parameter description */
+					[/* text */ 't', `The index in this buffer from which the first float will be
+         read; must be non-negative and less than `],
+					[/* inline code block */ 'i', `limit()`]
+				]],
 				[/* parameter */ 'dst', [/* parameter description */
 					[/* text */ 't', `The destination array`]
 				]]
 			],
 			[/* throws */
-				[/* throw */ 'java.nio.BufferUnderflowException', [/* throw description */
-					[/* text */ 't', `If there are fewer than `],
-					[/* inline code block */ 'i', `length`],
-					[/* text */ 't', ` floats
-          remaining in this buffer`]
+				[/* throw */ 'java.lang.IndexOutOfBoundsException', [/* throw description */
+					[/* text */ 't', `If `],
+					[/* inline code block */ 'i', `index`],
+					[/* text */ 't', ` is negative, not smaller than `],
+					[/* inline code block */ 'i', `limit()`],
+					[/* text */ 't', `,
+          or `],
+					[/* inline code block */ 'i', `limit() - index < dst.length`]
 				]]
 			],
 			[/* return description */
 				[/* text */ 't', `This buffer`]
 			]
 		]],
-		[/* method */ 'put(float[])', [
-			[/* method description */
-				[/* text */ 't', `Relative bulk `],
-				[/* text */ 't', `put`],
-				[/* text */ 't', ` method  `],
-				[/* text */ 't', `(optional operation)`],
-				[/* text */ 't', `.
-
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', ` This method transfers the entire content of the given source
- float array into this buffer.  An invocation of this method of the
- form `],
-					[/* inline code block */ 'i', `dst.put(a)`],
-					[/* text */ 't', ` behaves in exactly the same way as the
- invocation
-
- `]
-				]],
-				[/* code block */ 'c', `     dst.put(a, 0, a.length) `],
-				[/* block */ 'b', '']
-			],
-			[/* parameters */
-				[/* parameter */ 'src', [/* parameter description */
-					[/* text */ 't', `The source array`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.nio.BufferOverflowException', [/* throw description */
-					[/* text */ 't', `If there is insufficient space in this buffer`]
-				]],
-				[/* throw */ 'java.nio.ReadOnlyBufferException', [/* throw description */
-					[/* text */ 't', `If this buffer is read-only`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `This buffer`]
-			]
-		]],
-		[/* method */ 'put(int,float[],int,int)', [
+		[/* method */ 'get(int,float[],int,int)', [
 			[/* method description */
 				[/* text */ 't', `Absolute bulk `],
-				[/* text */ 't', `put`],
-				[/* text */ 't', ` method  `],
-				[/* text */ 't', `(optional operation)`],
-				[/* text */ 't', `.
+				[/* text */ 't', `get`],
+				[/* text */ 't', ` method.
 
  `],
 				[/* block */ 'b', [
 					[/* text */ 't', ` This method transfers `],
 					[/* inline code block */ 'i', `length`],
-					[/* text */ 't', ` floats from the given
- array, starting at the given offset in the array and at the given index
- in this buffer.  The position of this buffer is unchanged.
+					[/* text */ 't', ` floats from this
+ buffer into the given array, starting at the given index in this
+ buffer and at the given offset in the array.  The position of this
+ buffer is unchanged.
 
  `]
 				]],
 				[/* block */ 'b', [
 					[/* text */ 't', ` An invocation of this method of the form
  `],
-					[/* inline code block */ 'i', `dst.put(index, src, offset, length)`],
+					[/* inline code block */ 'i', `src.get(index, dst, offset, length)`],
 					[/* text */ 't', `
  has exactly the same effect as the following loop except that it first
  checks the consistency of the supplied parameters and it is potentially
@@ -556,31 +1223,32 @@ DocsCollector.collect('java.nio.FloatBuffer', [
 				]],
 				[/* code block */ 'c', [
 					[/* inline code block */ 'i', `for (int i = offset, j = index; i < offset + length; i++, j++)
-         dst.put(j, src[i]);`]
+         dst[i] = src.get(j);`]
 				]],
 				[/* block */ 'b', '']
 			],
 			[/* parameters */
 				[/* parameter */ 'index', [/* parameter description */
-					[/* text */ 't', `The index in this buffer at which the first float will be
-         written; must be non-negative and less than `],
+					[/* text */ 't', `The index in this buffer from which the first float will be
+         read; must be non-negative and less than `],
 					[/* inline code block */ 'i', `limit()`]
 				]],
-				[/* parameter */ 'src', [/* parameter description */
-					[/* text */ 't', `The array from which floats are to be read`]
+				[/* parameter */ 'dst', [/* parameter description */
+					[/* text */ 't', `The destination array`]
 				]],
 				[/* parameter */ 'offset', [/* parameter description */
-					[/* text */ 't', `The offset within the array of the first float to be read;
-         must be non-negative and less than `],
-					[/* inline code block */ 'i', `src.length`]
+					[/* text */ 't', `The offset within the array of the first float to be
+         written; must be non-negative and less than
+         `],
+					[/* inline code block */ 'i', `dst.length`]
 				]],
 				[/* parameter */ 'length', [/* parameter description */
-					[/* text */ 't', `The number of floats to be read from the given array;
+					[/* text */ 't', `The number of floats to be written to the given array;
          must be non-negative and no larger than the smaller of
          `],
 					[/* inline code block */ 'i', `limit() - index`],
 					[/* text */ 't', ` and `],
-					[/* inline code block */ 'i', `src.length - offset`]
+					[/* inline code block */ 'i', `dst.length - offset`]
 				]]
 			],
 			[/* throws */
@@ -593,59 +1261,6 @@ DocsCollector.collect('java.nio.FloatBuffer', [
           `],
 					[/* inline code block */ 'i', `length`],
 					[/* text */ 't', ` parameters do not hold`]
-				]],
-				[/* throw */ 'java.nio.ReadOnlyBufferException', [/* throw description */
-					[/* text */ 't', `If this buffer is read-only`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `This buffer`]
-			]
-		]],
-		[/* method */ 'put(int,float[])', [
-			[/* method description */
-				[/* text */ 't', `Absolute bulk `],
-				[/* text */ 't', `put`],
-				[/* text */ 't', ` method  `],
-				[/* text */ 't', `(optional operation)`],
-				[/* text */ 't', `.
-
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', ` This method copies floats into this buffer from the given source
- array.  The position of this buffer is unchanged.  An invocation of this
- method of the form `],
-					[/* inline code block */ 'i', `dst.put(index, src)`],
-					[/* text */ 't', `
- behaves in exactly the same way as the invocation:
-
- `]
-				]],
-				[/* code block */ 'c', `     dst.put(index, src, 0, src.length); `],
-				[/* block */ 'b', '']
-			],
-			[/* parameters */
-				[/* parameter */ 'index', [/* parameter description */
-					[/* text */ 't', `The index in this buffer at which the first float will be
-         written; must be non-negative and less than `],
-					[/* inline code block */ 'i', `limit()`]
-				]],
-				[/* parameter */ 'src', [/* parameter description */
-					[/* text */ 't', `The array from which floats are to be read`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.IndexOutOfBoundsException', [/* throw description */
-					[/* text */ 't', `If `],
-					[/* inline code block */ 'i', `index`],
-					[/* text */ 't', ` is negative, not smaller than `],
-					[/* inline code block */ 'i', `limit()`],
-					[/* text */ 't', `,
-          or `],
-					[/* inline code block */ 'i', `limit() - index < src.length`]
-				]],
-				[/* throw */ 'java.nio.ReadOnlyBufferException', [/* throw description */
-					[/* text */ 't', `If this buffer is read-only`]
 				]]
 			],
 			[/* return description */
@@ -737,6 +1352,133 @@ DocsCollector.collect('java.nio.FloatBuffer', [
 					[/* inline code block */ 'i', `length`],
 					[/* text */ 't', `
           parameters do not hold`]
+				]],
+				[/* throw */ 'java.nio.ReadOnlyBufferException', [/* throw description */
+					[/* text */ 't', `If this buffer is read-only`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `This buffer`]
+			]
+		]],
+		[/* method */ 'put(int,float[])', [
+			[/* method description */
+				[/* text */ 't', `Absolute bulk `],
+				[/* text */ 't', `put`],
+				[/* text */ 't', ` method  `],
+				[/* text */ 't', `(optional operation)`],
+				[/* text */ 't', `.
+
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', ` This method copies floats into this buffer from the given source
+ array.  The position of this buffer is unchanged.  An invocation of this
+ method of the form `],
+					[/* inline code block */ 'i', `dst.put(index, src)`],
+					[/* text */ 't', `
+ behaves in exactly the same way as the invocation:
+
+ `]
+				]],
+				[/* code block */ 'c', `     dst.put(index, src, 0, src.length); `],
+				[/* block */ 'b', '']
+			],
+			[/* parameters */
+				[/* parameter */ 'index', [/* parameter description */
+					[/* text */ 't', `The index in this buffer at which the first float will be
+         written; must be non-negative and less than `],
+					[/* inline code block */ 'i', `limit()`]
+				]],
+				[/* parameter */ 'src', [/* parameter description */
+					[/* text */ 't', `The array from which floats are to be read`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.lang.IndexOutOfBoundsException', [/* throw description */
+					[/* text */ 't', `If `],
+					[/* inline code block */ 'i', `index`],
+					[/* text */ 't', ` is negative, not smaller than `],
+					[/* inline code block */ 'i', `limit()`],
+					[/* text */ 't', `,
+          or `],
+					[/* inline code block */ 'i', `limit() - index < src.length`]
+				]],
+				[/* throw */ 'java.nio.ReadOnlyBufferException', [/* throw description */
+					[/* text */ 't', `If this buffer is read-only`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `This buffer`]
+			]
+		]],
+		[/* method */ 'put(int,float[],int,int)', [
+			[/* method description */
+				[/* text */ 't', `Absolute bulk `],
+				[/* text */ 't', `put`],
+				[/* text */ 't', ` method  `],
+				[/* text */ 't', `(optional operation)`],
+				[/* text */ 't', `.
+
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', ` This method transfers `],
+					[/* inline code block */ 'i', `length`],
+					[/* text */ 't', ` floats from the given
+ array, starting at the given offset in the array and at the given index
+ in this buffer.  The position of this buffer is unchanged.
+
+ `]
+				]],
+				[/* block */ 'b', [
+					[/* text */ 't', ` An invocation of this method of the form
+ `],
+					[/* inline code block */ 'i', `dst.put(index, src, offset, length)`],
+					[/* text */ 't', `
+ has exactly the same effect as the following loop except that it first
+ checks the consistency of the supplied parameters and it is potentially
+ much more efficient:
+
+ `]
+				]],
+				[/* code block */ 'c', [
+					[/* inline code block */ 'i', `for (int i = offset, j = index; i < offset + length; i++, j++)
+         dst.put(j, src[i]);`]
+				]],
+				[/* block */ 'b', '']
+			],
+			[/* parameters */
+				[/* parameter */ 'index', [/* parameter description */
+					[/* text */ 't', `The index in this buffer at which the first float will be
+         written; must be non-negative and less than `],
+					[/* inline code block */ 'i', `limit()`]
+				]],
+				[/* parameter */ 'src', [/* parameter description */
+					[/* text */ 't', `The array from which floats are to be read`]
+				]],
+				[/* parameter */ 'offset', [/* parameter description */
+					[/* text */ 't', `The offset within the array of the first float to be read;
+         must be non-negative and less than `],
+					[/* inline code block */ 'i', `src.length`]
+				]],
+				[/* parameter */ 'length', [/* parameter description */
+					[/* text */ 't', `The number of floats to be read from the given array;
+         must be non-negative and no larger than the smaller of
+         `],
+					[/* inline code block */ 'i', `limit() - index`],
+					[/* text */ 't', ` and `],
+					[/* inline code block */ 'i', `src.length - offset`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.lang.IndexOutOfBoundsException', [/* throw description */
+					[/* text */ 't', `If the preconditions on the `],
+					[/* inline code block */ 'i', `index`],
+					[/* text */ 't', `, `],
+					[/* inline code block */ 'i', `offset`],
+					[/* text */ 't', `, and
+          `],
+					[/* inline code block */ 'i', `length`],
+					[/* text */ 't', ` parameters do not hold`]
 				]],
 				[/* throw */ 'java.nio.ReadOnlyBufferException', [/* throw description */
 					[/* text */ 't', `If this buffer is read-only`]
@@ -914,243 +1656,45 @@ DocsCollector.collect('java.nio.FloatBuffer', [
 				[/* text */ 't', `This buffer`]
 			]
 		]],
-		[/* method */ 'put(int,float)', [
+		[/* method */ 'allocate(int)', [
 			[/* method description */
-				[/* text */ 't', `Absolute `],
-				[/* text */ 't', `put`],
-				[/* text */ 't', ` method  `],
-				[/* text */ 't', `(optional operation)`],
-				[/* text */ 't', `.
+				[/* text */ 't', `Allocates a new float buffer.
 
  `],
-				[/* block */ 'b', ` Writes the given float into this buffer at the given
- index. `]
+				[/* block */ 'b', [
+					[/* text */ 't', ` The new buffer's position will be zero, its limit will be its
+ capacity, its mark will be undefined, each of its elements will be
+ initialized to zero, and its byte order will be
+
+
+
+ the `],
+					[/* reference */ 'r', `.ByteOrder#nativeOrder()`],
+					[/* text */ 't', ` of the underlying
+ hardware.
+
+ It will have a `],
+					[/* reference */ 'r', `#array()`, `backing array`],
+					[/* text */ 't', `, and its
+ `],
+					[/* reference */ 'r', `#arrayOffset()`, `array offset`],
+					[/* text */ 't', ` will be zero.`]
+				]]
 			],
 			[/* parameters */
-				[/* parameter */ 'index', [/* parameter description */
-					[/* text */ 't', `The index at which the float will be written`]
-				]],
-				[/* parameter */ 'f', [/* parameter description */
-					[/* text */ 't', `The float value to be written`]
+				[/* parameter */ 'capacity', [/* parameter description */
+					[/* text */ 't', `The new buffer's capacity, in floats`]
 				]]
 			],
 			[/* throws */
-				[/* throw */ 'java.lang.IndexOutOfBoundsException', [/* throw description */
-					[/* text */ 't', `If `],
-					[/* inline code block */ 'i', `index`],
-					[/* text */ 't', ` is negative
-          or not smaller than the buffer's limit`]
-				]],
-				[/* throw */ 'java.nio.ReadOnlyBufferException', [/* throw description */
-					[/* text */ 't', `If this buffer is read-only`]
+				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
+					[/* text */ 't', `If the `],
+					[/* inline code block */ 'i', `capacity`],
+					[/* text */ 't', ` is a negative integer`]
 				]]
 			],
 			[/* return description */
-				[/* text */ 't', `This buffer`]
-			]
-		]],
-		[/* method */ 'put(float)', [
-			[/* method description */
-				[/* text */ 't', `Relative `],
-				[/* text */ 't', `put`],
-				[/* text */ 't', ` method  `],
-				[/* text */ 't', `(optional operation)`],
-				[/* text */ 't', `.
-
- `],
-				[/* block */ 'b', ` Writes the given float into this buffer at the current
- position, and then increments the position. `]
-			],
-			[/* parameters */
-				[/* parameter */ 'f', [/* parameter description */
-					[/* text */ 't', `The float to be written`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.nio.BufferOverflowException', [/* throw description */
-					[/* text */ 't', `If this buffer's current position is not smaller than its limit`]
-				]],
-				[/* throw */ 'java.nio.ReadOnlyBufferException', [/* throw description */
-					[/* text */ 't', `If this buffer is read-only`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `This buffer`]
-			]
-		]],
-		[/* method */ 'equals(java.lang.Object)', [
-			[/* method description */
-				[/* text */ 't', `Tells whether or not this buffer is equal to another object.
-
- `],
-				[/* block */ 'b', ` Two float buffers are equal if, and only if,
-
- `],
-				[/* list */ 'l', [
-					[/* block */ 'b', [
-						[/* block */ 'b', ` They have the same element type,  `]
-					]],
-					[/* block */ 'b', [
-						[/* block */ 'b', ` They have the same number of remaining elements, and
-   `]
-					]],
-					[/* block */ 'b', [
-						[/* block */ 'b', [
-							[/* text */ 't', ` The two sequences of remaining elements, considered
-   independently of their starting positions, are pointwise equal.
-
-   This method considers two float elements `],
-							[/* inline code block */ 'i', `a`],
-							[/* text */ 't', ` and `],
-							[/* inline code block */ 'i', `b`],
-							[/* text */ 't', `
-   to be equal if
-   `],
-							[/* inline code block */ 'i', `(a == b) || (Float.isNaN(a) && Float.isNaN(b))`],
-							[/* text */ 't', `.
-   The values `],
-							[/* inline code block */ 'i', `-0.0`],
-							[/* text */ 't', ` and `],
-							[/* inline code block */ 'i', `+0.0`],
-							[/* text */ 't', ` are considered to be
-   equal, unlike `],
-							[/* reference */ 'r', `java.Float#equals(java.lang.Object)`],
-							[/* text */ 't', `.
-
-   `]
-						]]
-					]]
-				]],
-				[/* block */ 'b', ''],
-				[/* block */ 'b', ` A float buffer is not equal to any other type of object.  `]
-			],
-			[/* parameters */
-				[/* parameter */ 'ob', [/* parameter description */
-					[/* text */ 't', `The object to which this buffer is to be compared`]
-				]]
-			],
-			/* throws */ UDF,
-			[/* return description */
-				[/* inline code block */ 'i', `true`],
-				[/* text */ 't', ` if, and only if, this buffer is equal to the
-           given object`]
-			]
-		]],
-		[/* method */ 'toString()', [
-			[/* method description */
-				[/* text */ 't', `Returns a string summarizing the state of this buffer.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `A summary string`]
-			]
-		]],
-		[/* method */ 'hashCode()', [
-			[/* method description */
-				[/* text */ 't', `Returns the current hash code of this buffer.
-
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', ` The hash code of a float buffer depends only upon its remaining
- elements; that is, upon the elements from `],
-					[/* inline code block */ 'i', `position()`],
-					[/* text */ 't', ` up to, and
- including, the element at `],
-					[/* inline code block */ 'i', `limit()`],
-					[/* text */ 't', ` - `],
-					[/* inline code block */ 'i', `1`],
-					[/* text */ 't', `.
-
- `]
-				]],
-				[/* block */ 'b', ` Because buffer hash codes are content-dependent, it is inadvisable
- to use buffers as keys in hash maps or similar data structures unless it
- is known that their contents will not change.  `]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `The current hash code of this buffer`]
-			]
-		]],
-		[/* method */ 'compareTo(java.nio.FloatBuffer)', [
-			[/* method description */
-				[/* text */ 't', `Compares this buffer to another.
-
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', ` Two float buffers are compared by comparing their sequences of
- remaining elements lexicographically, without regard to the starting
- position of each sequence within its corresponding buffer.
-
- Pairs of `],
-					[/* inline code block */ 'i', `float`],
-					[/* text */ 't', ` elements are compared as if by invoking
- `],
-					[/* reference */ 'r', `java.Float#compare(float,float)`],
-					[/* text */ 't', `, except that
- `],
-					[/* inline code block */ 'i', `-0.0`],
-					[/* text */ 't', ` and `],
-					[/* inline code block */ 'i', `0.0`],
-					[/* text */ 't', ` are considered to be equal.
- `],
-					[/* inline code block */ 'i', `Float.NaN`],
-					[/* text */ 't', ` is considered by this method to be equal
- to itself and greater than all other `],
-					[/* inline code block */ 'i', `float`],
-					[/* text */ 't', ` values
- (including `],
-					[/* inline code block */ 'i', `Float.POSITIVE_INFINITY`],
-					[/* text */ 't', `).
-
-
-
-
-
- `]
-				]],
-				[/* block */ 'b', ` A float buffer is not comparable to any other type of object.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'that', [/* parameter description */
-					[/* text */ 't', `the object to be compared.`]
-				]]
-			],
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `A negative integer, zero, or a positive integer as this buffer
-          is less than, equal to, or greater than the given buffer`]
-			]
-		]],
-		[/* method */ 'clear()', [
-			[/* method description */
-				[/* text */ 't', `Clears this buffer.  The position is set to zero, the limit is set to
- the capacity, and the mark is discarded.
-
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', ` Invoke this method before using a sequence of channel-read or
- `],
-					[/* text */ 't', `put`],
-					[/* text */ 't', ` operations to fill this buffer.  For example:
-
- `]
-				]],
-				[/* block */ 'b', [
-					[/* code block */ 'c', ` buf.clear();     // Prepare buffer for reading
- in.read(buf);    // Read data`]
-				]],
-				[/* block */ 'b', ''],
-				[/* block */ 'b', ` This method does not actually erase the data in the buffer, but it
- is named as if it did because it will most often be used in situations
- in which that might as well be the case. `]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `This buffer`]
+				[/* text */ 't', `The new float buffer`]
 			]
 		]],
 		[/* method */ 'wrap(float[])', [
@@ -1260,550 +1804,6 @@ DocsCollector.collect('java.nio.FloatBuffer', [
 			],
 			[/* return description */
 				[/* text */ 't', `The new float buffer`]
-			]
-		]],
-		[/* method */ 'position(int)', [
-			[/* method description */
-				[/* text */ 't', `Sets this buffer's position.  If the mark is defined and larger than the
- new position then it is discarded.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'newPosition', [/* parameter description */
-					[/* text */ 't', `The new position value; must be non-negative
-         and no larger than the current limit`]
-				]]
-			],
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `This buffer`]
-			]
-		]],
-		[/* method */ 'limit(int)', [
-			[/* method description */
-				[/* text */ 't', `Sets this buffer's limit.  If the position is larger than the new limit
- then it is set to the new limit.  If the mark is defined and larger than
- the new limit then it is discarded.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'newLimit', [/* parameter description */
-					[/* text */ 't', `The new limit value; must be non-negative
-         and no larger than this buffer's capacity`]
-				]]
-			],
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `This buffer`]
-			]
-		]],
-		[/* method */ 'isDirect()', [
-			[/* method description */
-				[/* text */ 't', `Tells whether or not this float buffer is direct.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* inline code block */ 'i', `true`],
-				[/* text */ 't', ` if, and only if, this buffer is direct`]
-			]
-		]],
-		[/* method */ 'hasArray()', [
-			[/* method description */
-				[/* text */ 't', `Tells whether or not this buffer is backed by an accessible float
- array.
-
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', ` If this method returns `],
-					[/* inline code block */ 'i', `true`],
-					[/* text */ 't', ` then the `],
-					[/* reference */ 'r', `#array()`, `array`],
-					[/* text */ 't', `
- and `],
-					[/* reference */ 'r', `#arrayOffset()`, `arrayOffset`],
-					[/* text */ 't', ` methods may safely be invoked.
- `]
-				]]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* inline code block */ 'i', `true`],
-				[/* text */ 't', ` if, and only if, this buffer
-          is backed by an array and is not read-only`]
-			]
-		]],
-		[/* method */ 'array()', [
-			[/* method description */
-				[/* text */ 't', `Returns the float array that backs this
- buffer  `],
-				[/* text */ 't', `(optional operation)`],
-				[/* text */ 't', `.
-
- `],
-				[/* block */ 'b', ` Modifications to this buffer's content will cause the returned
- array's content to be modified, and vice versa.
-
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', ` Invoke the `],
-					[/* reference */ 'r', `#hasArray()`, `hasArray`],
-					[/* text */ 't', ` method before invoking this
- method in order to ensure that this buffer has an accessible backing
- array.  `]
-				]]
-			],
-			/* parameters */ UDF,
-			[/* throws */
-				[/* throw */ 'java.nio.ReadOnlyBufferException', [/* throw description */
-					[/* text */ 't', `If this buffer is backed by an array but is read-only`]
-				]],
-				[/* throw */ 'java.lang.UnsupportedOperationException', [/* throw description */
-					[/* text */ 't', `If this buffer is not backed by an accessible array`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `The array that backs this buffer`]
-			]
-		]],
-		[/* method */ 'arrayOffset()', [
-			[/* method description */
-				[/* text */ 't', `Returns the offset within this buffer's backing array of the first
- element of the buffer  `],
-				[/* text */ 't', `(optional operation)`],
-				[/* text */ 't', `.
-
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', ` If this buffer is backed by an array then buffer position `],
-					[/* text */ 't', `p`],
-					[/* text */ 't', `
- corresponds to array index `],
-					[/* text */ 't', `p`],
-					[/* text */ 't', ` + `],
-					[/* inline code block */ 'i', `arrayOffset()`],
-					[/* text */ 't', `.
-
- `]
-				]],
-				[/* block */ 'b', [
-					[/* text */ 't', ` Invoke the `],
-					[/* reference */ 'r', `#hasArray()`, `hasArray`],
-					[/* text */ 't', ` method before invoking this
- method in order to ensure that this buffer has an accessible backing
- array.  `]
-				]]
-			],
-			/* parameters */ UDF,
-			[/* throws */
-				[/* throw */ 'java.nio.ReadOnlyBufferException', [/* throw description */
-					[/* text */ 't', `If this buffer is backed by an array but is read-only`]
-				]],
-				[/* throw */ 'java.lang.UnsupportedOperationException', [/* throw description */
-					[/* text */ 't', `If this buffer is not backed by an accessible array`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `The offset within this buffer's array
-          of the first element of the buffer`]
-			]
-		]],
-		[/* method */ 'mark()', [
-			[/* method description */
-				[/* text */ 't', `Sets this buffer's mark at its position.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `This buffer`]
-			]
-		]],
-		[/* method */ 'reset()', [
-			[/* method description */
-				[/* text */ 't', `Resets this buffer's position to the previously-marked position.
-
- `],
-				[/* block */ 'b', ` Invoking this method neither changes nor discards the mark's
- value. `]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `This buffer`]
-			]
-		]],
-		[/* method */ 'flip()', [
-			[/* method description */
-				[/* text */ 't', `Flips this buffer.  The limit is set to the current position and then
- the position is set to zero.  If the mark is defined then it is
- discarded.
-
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', ` After a sequence of channel-read or `],
-					[/* text */ 't', `put`],
-					[/* text */ 't', ` operations, invoke
- this method to prepare for a sequence of channel-write or relative
- `],
-					[/* text */ 't', `get`],
-					[/* text */ 't', ` operations.  For example:
-
- `]
-				]],
-				[/* block */ 'b', [
-					[/* code block */ 'c', ` buf.put(magic);    // Prepend header
- in.read(buf);      // Read data into rest of buffer
- buf.flip();        // Flip buffer
- out.write(buf);    // Write header + data to channel`]
-				]],
-				[/* block */ 'b', ''],
-				[/* block */ 'b', [
-					[/* text */ 't', ` This method is often used in conjunction with the `],
-					[/* reference */ 'r', `.ByteBuffer#compact()`],
-					[/* text */ 't', ` method when transferring data from
- one place to another.  `]
-				]]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `This buffer`]
-			]
-		]],
-		[/* method */ 'rewind()', [
-			[/* method description */
-				[/* text */ 't', `Rewinds this buffer.  The position is set to zero and the mark is
- discarded.
-
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', ` Invoke this method before a sequence of channel-write or `],
-					[/* text */ 't', `get`],
-					[/* text */ 't', `
- operations, assuming that the limit has already been set
- appropriately.  For example:
-
- `]
-				]],
-				[/* block */ 'b', [
-					[/* code block */ 'c', ` out.write(buf);    // Write remaining data
- buf.rewind();      // Rewind buffer
- buf.get(array);    // Copy data into array`]
-				]],
-				[/* block */ 'b', '']
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `This buffer`]
-			]
-		]],
-		[/* method */ 'slice(int,int)', [
-			[/* method description */
-				[/* text */ 't', `Creates a new float buffer whose content is a shared subsequence of
- this buffer's content.
-
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', ` The content of the new buffer will start at position `],
-					[/* inline code block */ 'i', `index`],
-					[/* text */ 't', `
- in this buffer, and will contain `],
-					[/* inline code block */ 'i', `length`],
-					[/* text */ 't', ` elements. Changes to
- this buffer's content will be visible in the new buffer, and vice versa;
- the two buffers' position, limit, and mark values will be independent.
-
- `]
-				]],
-				[/* block */ 'b', [
-					[/* text */ 't', ` The new buffer's position will be zero, its capacity and its limit
- will be `],
-					[/* inline code block */ 'i', `length`],
-					[/* text */ 't', `, its mark will be undefined, and its byte order
- will be
-
-
-
- identical to that of this buffer.
-
- The new buffer will be direct if, and only if, this buffer is direct,
- and it will be read-only if, and only if, this buffer is read-only. `]
-				]]
-			],
-			[/* parameters */
-				[/* parameter */ 'index', [/* parameter description */
-					[/* text */ 't', `The position in this buffer at which the content of the new
-          buffer will start; must be non-negative and no larger than
-          `],
-					[/* reference */ 'r', `.Buffer#limit()`]
-				]],
-				[/* parameter */ 'length', [/* parameter description */
-					[/* text */ 't', `The number of elements the new buffer will contain; must be
-          non-negative and no larger than `],
-					[/* inline code block */ 'i', `limit() - index`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.IndexOutOfBoundsException', [/* throw description */
-					[/* text */ 't', `If `],
-					[/* inline code block */ 'i', `index`],
-					[/* text */ 't', ` is negative or greater than `],
-					[/* inline code block */ 'i', `limit()`],
-					[/* text */ 't', `,
-          `],
-					[/* inline code block */ 'i', `length`],
-					[/* text */ 't', ` is negative, or `],
-					[/* inline code block */ 'i', `length > limit() - index`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `The new buffer`]
-			]
-		]],
-		[/* method */ 'slice()', [
-			[/* method description */
-				[/* text */ 't', `Creates a new float buffer whose content is a shared subsequence of
- this buffer's content.
-
- `],
-				[/* block */ 'b', ` The content of the new buffer will start at this buffer's current
- position.  Changes to this buffer's content will be visible in the new
- buffer, and vice versa; the two buffers' position, limit, and mark
- values will be independent.
-
- `],
-				[/* block */ 'b', ` The new buffer's position will be zero, its capacity and its limit
- will be the number of floats remaining in this buffer, its mark will be
- undefined, and its byte order will be
-
-
-
- identical to that of this buffer.
-
- The new buffer will be direct if, and only if, this buffer is direct, and
- it will be read-only if, and only if, this buffer is read-only.  `]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `The new float buffer`]
-			]
-		]],
-		[/* method */ 'duplicate()', [
-			[/* method description */
-				[/* text */ 't', `Creates a new float buffer that shares this buffer's content.
-
- `],
-				[/* block */ 'b', ` The content of the new buffer will be that of this buffer.  Changes
- to this buffer's content will be visible in the new buffer, and vice
- versa; the two buffers' position, limit, and mark values will be
- independent.
-
- `],
-				[/* block */ 'b', ` The new buffer's capacity, limit, position,
-
-
-
-
- mark values, and byte order will be identical to those of this buffer.
-
- The new buffer will be direct if, and only if, this buffer is direct, and
- it will be read-only if, and only if, this buffer is read-only.  `]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `The new float buffer`]
-			]
-		]],
-		[/* method */ 'order()', [
-			[/* method description */
-				[/* text */ 't', `Retrieves this buffer's byte order.
-
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', ` The byte order of a float buffer created by allocation or by
- wrapping an existing `],
-					[/* inline code block */ 'i', `float`],
-					[/* text */ 't', ` array is the `],
-					[/* reference */ 'r', `.ByteOrder#nativeOrder()`],
-					[/* text */ 't', ` of the underlying
- hardware.  The byte order of a float buffer created as a `],
-					[/* reference */ 'r', `.ByteBuffer#views`],
-					[/* text */ 't', ` of a byte buffer is that of the
- byte buffer at the moment that the view is created.  `]
-				]]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `This buffer's byte order`]
-			]
-		]],
-		[/* method */ 'mismatch(java.nio.FloatBuffer)', [
-			[/* method description */
-				[/* text */ 't', `Finds and returns the relative index of the first mismatch between this
- buffer and a given buffer.  The index is relative to the
- `],
-				[/* reference */ 'r', `.Buffer#position()`],
-				[/* text */ 't', ` of each buffer and will be in the range of
- 0 (inclusive) up to the smaller of the `],
-				[/* reference */ 'r', `.Buffer#remaining()`],
-				[/* text */ 't', `
- elements in each buffer (exclusive).
-
- `],
-				[/* block */ 'b', ` If the two buffers share a common prefix then the returned index is
- the length of the common prefix and it follows that there is a mismatch
- between the two buffers at that index within the respective buffers.
- If one buffer is a proper prefix of the other then the returned index is
- the smaller of the remaining elements in each buffer, and it follows that
- the index is only valid for the buffer with the larger number of
- remaining elements.
- Otherwise, there is no mismatch.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'that', [/* parameter description */
-					[/* text */ 't', `The byte buffer to be tested for a mismatch with this buffer`]
-				]]
-			],
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `The relative index of the first mismatch between this and the
-          given buffer, otherwise -1 if no mismatch.`]
-			]
-		]],
-		[/* method */ 'allocate(int)', [
-			[/* method description */
-				[/* text */ 't', `Allocates a new float buffer.
-
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', ` The new buffer's position will be zero, its limit will be its
- capacity, its mark will be undefined, each of its elements will be
- initialized to zero, and its byte order will be
-
-
-
- the `],
-					[/* reference */ 'r', `.ByteOrder#nativeOrder()`],
-					[/* text */ 't', ` of the underlying
- hardware.
-
- It will have a `],
-					[/* reference */ 'r', `#array()`, `backing array`],
-					[/* text */ 't', `, and its
- `],
-					[/* reference */ 'r', `#arrayOffset()`, `array offset`],
-					[/* text */ 't', ` will be zero.`]
-				]]
-			],
-			[/* parameters */
-				[/* parameter */ 'capacity', [/* parameter description */
-					[/* text */ 't', `The new buffer's capacity, in floats`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
-					[/* text */ 't', `If the `],
-					[/* inline code block */ 'i', `capacity`],
-					[/* text */ 't', ` is a negative integer`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `The new float buffer`]
-			]
-		]],
-		[/* method */ 'asReadOnlyBuffer()', [
-			[/* method description */
-				[/* text */ 't', `Creates a new, read-only float buffer that shares this buffer's
- content.
-
- `],
-				[/* block */ 'b', ` The content of the new buffer will be that of this buffer.  Changes
- to this buffer's content will be visible in the new buffer; the new
- buffer itself, however, will be read-only and will not allow the shared
- content to be modified.  The two buffers' position, limit, and mark
- values will be independent.
-
- `],
-				[/* block */ 'b', ` The new buffer's capacity, limit, position,
-
-
-
-
- mark values, and byte order will be identical to those of this buffer.
-
-
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', ` If this buffer is itself read-only then this method behaves in
- exactly the same way as the `],
-					[/* reference */ 'r', `#duplicate()`, `duplicate`],
-					[/* text */ 't', ` method.  `]
-				]]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `The new, read-only float buffer`]
-			]
-		]],
-		[/* method */ 'compact()', [
-			[/* method description */
-				[/* text */ 't', `Compacts this buffer  `],
-				[/* text */ 't', `(optional operation)`],
-				[/* text */ 't', `.
-
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', ` The floats between the buffer's current position and its limit,
- if any, are copied to the beginning of the buffer.  That is, the
- float at index `],
-					[/* text */ 't', `p`],
-					[/* text */ 't', ` = `],
-					[/* inline code block */ 'i', `position()`],
-					[/* text */ 't', ` is copied
- to index zero, the float at index `],
-					[/* text */ 't', `p`],
-					[/* text */ 't', ` + 1 is copied
- to index one, and so forth until the float at index
- `],
-					[/* inline code block */ 'i', `limit()`],
-					[/* text */ 't', ` - 1 is copied to index
- `],
-					[/* text */ 't', `n`],
-					[/* text */ 't', ` = `],
-					[/* inline code block */ 'i', `limit()`],
-					[/* text */ 't', ` - `],
-					[/* inline code block */ 'i', `1`],
-					[/* text */ 't', ` - `],
-					[/* text */ 't', `p`],
-					[/* text */ 't', `.
- The buffer's position is then set to `],
-					[/* text */ 't', `n+1`],
-					[/* text */ 't', ` and its limit is set to
- its capacity.  The mark, if defined, is discarded.
-
- `]
-				]],
-				[/* block */ 'b', [
-					[/* text */ 't', ` The buffer's position is set to the number of floats copied,
- rather than to zero, so that an invocation of this method can be
- followed immediately by an invocation of another relative `],
-					[/* text */ 't', `put`],
-					[/* text */ 't', `
- method. `]
-				]]
-			],
-			/* parameters */ UDF,
-			[/* throws */
-				[/* throw */ 'java.nio.ReadOnlyBufferException', [/* throw description */
-					[/* text */ 't', `If this buffer is read-only`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `This buffer`]
 			]
 		]]
 	],

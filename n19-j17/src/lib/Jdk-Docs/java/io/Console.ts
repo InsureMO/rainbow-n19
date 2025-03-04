@@ -115,14 +115,68 @@ DocsCollector.collect('java.io.Console', [
 	/* fields */ UDF,
 	/* constructors */ UDF,
 	[/* methods */
-		[/* method */ 'flush()', [
+		[/* method */ 'readPassword()', [
 			[/* method description */
-				[/* text */ 't', `Flushes the console and forces any buffered output to be written
- immediately .`]
+				[/* text */ 't', `Reads a password or passphrase from the console with echoing disabled`]
 			],
 			/* parameters */ UDF,
-			/* throws */ UDF,
-			/* return */ UDF
+			[/* throws */
+				[/* throw */ 'java.io.IOError', [/* throw description */
+					[/* text */ 't', `If an I/O error occurs.`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `A character array containing the password or passphrase read
+          from the console, not including any line-termination characters,
+          or `],
+				[/* inline code block */ 'i', `null`],
+				[/* text */ 't', ` if an end of stream has been reached.`]
+			]
+		]],
+		[/* method */ 'readPassword(java.lang.String,java.lang.Object...)', [
+			[/* method description */
+				[/* text */ 't', `Provides a formatted prompt, then reads a password or passphrase from
+ the console with echoing disabled.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'fmt', [/* parameter description */
+					[/* text */ 't', `A format string as described in `],
+					[/* reference */ 'r', `java.Formatter#syntax`],
+					[/* text */ 't', `
+         for the prompt text.`]
+				]],
+				[/* parameter */ 'args', [/* parameter description */
+					[/* text */ 't', `Arguments referenced by the format specifiers in the format
+         string.  If there are more arguments than format specifiers, the
+         extra arguments are ignored.  The maximum number of arguments is
+         limited by the maximum dimension of a Java array as defined by
+         `],
+					[/* text */ 't', `The Java Virtual Machine Specification`],
+					[/* text */ 't', `.`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.util.IllegalFormatException', [/* throw description */
+					[/* text */ 't', `If a format string contains an illegal syntax, a format
+          specifier that is incompatible with the given arguments,
+          insufficient arguments given the format string, or other
+          illegal conditions.  For specification of all possible
+          formatting errors, see the `],
+					[/* reference */ 'r', `java.Formatter#detail`],
+					[/* text */ 't', `
+          section of the formatter class specification.`]
+				]],
+				[/* throw */ 'java.io.IOError', [/* throw description */
+					[/* text */ 't', `If an I/O error occurs.`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `A character array containing the password or passphrase read
+          from the console, not including any line-termination characters,
+          or `],
+				[/* inline code block */ 'i', `null`],
+				[/* text */ 't', ` if an end of stream has been reached.`]
+			]
 		]],
 		[/* method */ 'format(java.lang.String,java.lang.Object...)', [
 			[/* method description */
@@ -165,35 +219,6 @@ DocsCollector.collect('java.io.Console', [
 			],
 			[/* return description */
 				[/* text */ 't', `This console`]
-			]
-		]],
-		[/* method */ 'charset()', [
-			[/* method description */
-				[/* text */ 't', `Returns the `],
-				[/* reference */ 'r', `java.nio.charset.Charset`],
-				[/* text */ 't', ` object used for
- the `],
-				[/* inline code block */ 'i', `Console`],
-				[/* text */ 't', `.
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', `
- The returned charset corresponds to the input and output source
- (e.g., keyboard and/or display) specified by the host environment or user.
- It may not necessarily be the same as the default charset returned from
- `],
-					[/* reference */ 'r', `java.charset.Charset#defaultCharset()`],
-					[/* text */ 't', `.`]
-				]]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `a `],
-				[/* reference */ 'r', `java.nio.charset.Charset`],
-				[/* text */ 't', ` object used for the
-          `],
-				[/* inline code block */ 'i', `Console`]
 			]
 		]],
 		[/* method */ 'printf(java.lang.String,java.lang.Object...)', [
@@ -253,66 +278,17 @@ DocsCollector.collect('java.io.Console', [
 				[/* text */ 't', `This console`]
 			]
 		]],
-		[/* method */ 'readLine()', [
+		[/* method */ 'writer()', [
 			[/* method description */
-				[/* text */ 't', `Reads a single line of text from the console.`]
+				[/* text */ 't', `Retrieves the unique `],
+				[/* reference */ 'r', `java.io.PrintWriter`],
+				[/* text */ 't', ` object
+ associated with this console.`]
 			],
 			/* parameters */ UDF,
-			[/* throws */
-				[/* throw */ 'java.io.IOError', [/* throw description */
-					[/* text */ 't', `If an I/O error occurs.`]
-				]]
-			],
+			/* throws */ UDF,
 			[/* return description */
-				[/* text */ 't', `A string containing the line read from the console, not
-          including any line-termination characters, or `],
-				[/* inline code block */ 'i', `null`],
-				[/* text */ 't', `
-          if an end of stream has been reached.`]
-			]
-		]],
-		[/* method */ 'readLine(java.lang.String,java.lang.Object...)', [
-			[/* method description */
-				[/* text */ 't', `Provides a formatted prompt, then reads a single line of text from the
- console.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'fmt', [/* parameter description */
-					[/* text */ 't', `A format string as described in `],
-					[/* reference */ 'r', `java.Formatter#syntax`],
-					[/* text */ 't', `.`]
-				]],
-				[/* parameter */ 'args', [/* parameter description */
-					[/* text */ 't', `Arguments referenced by the format specifiers in the format
-         string.  If there are more arguments than format specifiers, the
-         extra arguments are ignored.  The maximum number of arguments is
-         limited by the maximum dimension of a Java array as defined by
-         `],
-					[/* text */ 't', `The Java Virtual Machine Specification`],
-					[/* text */ 't', `.`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.util.IllegalFormatException', [/* throw description */
-					[/* text */ 't', `If a format string contains an illegal syntax, a format
-          specifier that is incompatible with the given arguments,
-          insufficient arguments given the format string, or other
-          illegal conditions.  For specification of all possible
-          formatting errors, see the `],
-					[/* reference */ 'r', `java.Formatter#detail`],
-					[/* text */ 't', ` section
-          of the formatter class specification.`]
-				]],
-				[/* throw */ 'java.io.IOError', [/* throw description */
-					[/* text */ 't', `If an I/O error occurs.`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `A string containing the line read from the console, not
-          including any line-termination characters, or `],
-				[/* inline code block */ 'i', `null`],
-				[/* text */ 't', `
-          if an end of stream has been reached.`]
+				[/* text */ 't', `The printwriter associated with this console`]
 			]
 		]],
 		[/* method */ 'reader()', [
@@ -384,30 +360,34 @@ DocsCollector.collect('java.io.Console', [
 				[/* text */ 't', `The reader associated with this console`]
 			]
 		]],
-		[/* method */ 'writer()', [
+		[/* method */ 'readLine()', [
 			[/* method description */
-				[/* text */ 't', `Retrieves the unique `],
-				[/* reference */ 'r', `java.io.PrintWriter`],
-				[/* text */ 't', ` object
- associated with this console.`]
+				[/* text */ 't', `Reads a single line of text from the console.`]
 			],
 			/* parameters */ UDF,
-			/* throws */ UDF,
+			[/* throws */
+				[/* throw */ 'java.io.IOError', [/* throw description */
+					[/* text */ 't', `If an I/O error occurs.`]
+				]]
+			],
 			[/* return description */
-				[/* text */ 't', `The printwriter associated with this console`]
+				[/* text */ 't', `A string containing the line read from the console, not
+          including any line-termination characters, or `],
+				[/* inline code block */ 'i', `null`],
+				[/* text */ 't', `
+          if an end of stream has been reached.`]
 			]
 		]],
-		[/* method */ 'readPassword(java.lang.String,java.lang.Object...)', [
+		[/* method */ 'readLine(java.lang.String,java.lang.Object...)', [
 			[/* method description */
-				[/* text */ 't', `Provides a formatted prompt, then reads a password or passphrase from
- the console with echoing disabled.`]
+				[/* text */ 't', `Provides a formatted prompt, then reads a single line of text from the
+ console.`]
 			],
 			[/* parameters */
 				[/* parameter */ 'fmt', [/* parameter description */
 					[/* text */ 't', `A format string as described in `],
 					[/* reference */ 'r', `java.Formatter#syntax`],
-					[/* text */ 't', `
-         for the prompt text.`]
+					[/* text */ 't', `.`]
 				]],
 				[/* parameter */ 'args', [/* parameter description */
 					[/* text */ 't', `Arguments referenced by the format specifiers in the format
@@ -427,38 +407,58 @@ DocsCollector.collect('java.io.Console', [
           illegal conditions.  For specification of all possible
           formatting errors, see the `],
 					[/* reference */ 'r', `java.Formatter#detail`],
-					[/* text */ 't', `
-          section of the formatter class specification.`]
+					[/* text */ 't', ` section
+          of the formatter class specification.`]
 				]],
 				[/* throw */ 'java.io.IOError', [/* throw description */
 					[/* text */ 't', `If an I/O error occurs.`]
 				]]
 			],
 			[/* return description */
-				[/* text */ 't', `A character array containing the password or passphrase read
-          from the console, not including any line-termination characters,
-          or `],
+				[/* text */ 't', `A string containing the line read from the console, not
+          including any line-termination characters, or `],
 				[/* inline code block */ 'i', `null`],
-				[/* text */ 't', ` if an end of stream has been reached.`]
+				[/* text */ 't', `
+          if an end of stream has been reached.`]
 			]
 		]],
-		[/* method */ 'readPassword()', [
+		[/* method */ 'charset()', [
 			[/* method description */
-				[/* text */ 't', `Reads a password or passphrase from the console with echoing disabled`]
-			],
-			/* parameters */ UDF,
-			[/* throws */
-				[/* throw */ 'java.io.IOError', [/* throw description */
-					[/* text */ 't', `If an I/O error occurs.`]
+				[/* text */ 't', `Returns the `],
+				[/* reference */ 'r', `java.nio.charset.Charset`],
+				[/* text */ 't', ` object used for
+ the `],
+				[/* inline code block */ 'i', `Console`],
+				[/* text */ 't', `.
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', `
+ The returned charset corresponds to the input and output source
+ (e.g., keyboard and/or display) specified by the host environment or user.
+ It may not necessarily be the same as the default charset returned from
+ `],
+					[/* reference */ 'r', `java.charset.Charset#defaultCharset()`],
+					[/* text */ 't', `.`]
 				]]
 			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
 			[/* return description */
-				[/* text */ 't', `A character array containing the password or passphrase read
-          from the console, not including any line-termination characters,
-          or `],
-				[/* inline code block */ 'i', `null`],
-				[/* text */ 't', ` if an end of stream has been reached.`]
+				[/* text */ 't', `a `],
+				[/* reference */ 'r', `java.nio.charset.Charset`],
+				[/* text */ 't', ` object used for the
+          `],
+				[/* inline code block */ 'i', `Console`]
 			]
+		]],
+		[/* method */ 'flush()', [
+			[/* method description */
+				[/* text */ 't', `Flushes the console and forces any buffered output to be written
+ immediately .`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			/* return */ UDF
 		]]
 	],
 ]);

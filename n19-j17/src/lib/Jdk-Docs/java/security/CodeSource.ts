@@ -69,67 +69,6 @@ DocsCollector.collect('java.security.CodeSource', [
 				[/* text */ 't', `true if the objects are considered equal, false otherwise.`]
 			]
 		]],
-		[/* method */ 'toString()', [
-			[/* method description */
-				[/* text */ 't', `Returns a string describing this CodeSource, telling its
- URL and certificates.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `information about this CodeSource.`]
-			]
-		]],
-		[/* method */ 'hashCode()', [
-			[/* method description */
-				[/* text */ 't', `Returns the hash code value for this object.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `a hash code value for this object.`]
-			]
-		]],
-		[/* method */ 'getLocation()', [
-			[/* method description */
-				[/* text */ 't', `Returns the location associated with this CodeSource.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the location (URL), or `],
-				[/* inline code block */ 'i', `null`],
-				[/* text */ 't', ` if no URL was supplied
- during construction.`]
-			]
-		]],
-		[/* method */ 'getCertificates()', [
-			[/* method description */
-				[/* text */ 't', `Returns the certificates associated with this CodeSource.
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', `
- If this CodeSource object was created using the
- `],
-					[/* reference */ 'r', `#%3Cinit%3E(java.net.URL,java.security.CodeSigner%5B%5D)`, `CodeSource(URL url, CodeSigner[] signers)`],
-					[/* text */ 't', `
- constructor then its certificate chains are extracted and used to
- create an array of Certificate objects. Each signer certificate is
- followed by its supporting certificate chain (which may be empty).
- Each signer certificate and its supporting certificate chain is ordered
- bottom-to-top (i.e., with the signer certificate first and the (root)
- certificate authority last).`]
-				]]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `a copy of the certificate array, or `],
-				[/* inline code block */ 'i', `null`],
-				[/* text */ 't', ` if there
- is none.`]
-			]
-		]],
 		[/* method */ 'implies(java.security.CodeSource)', [
 			[/* method description */
 				[/* text */ 't', `Returns true if this CodeSource object "implies" the specified CodeSource.
@@ -265,6 +204,46 @@ DocsCollector.collect('java.security.CodeSource', [
  false if not.`]
 			]
 		]],
+		[/* method */ 'getLocation()', [
+			[/* method description */
+				[/* text */ 't', `Returns the location associated with this CodeSource.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the location (URL), or `],
+				[/* inline code block */ 'i', `null`],
+				[/* text */ 't', ` if no URL was supplied
+ during construction.`]
+			]
+		]],
+		[/* method */ 'getCertificates()', [
+			[/* method description */
+				[/* text */ 't', `Returns the certificates associated with this CodeSource.
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', `
+ If this CodeSource object was created using the
+ `],
+					[/* reference */ 'r', `#%3Cinit%3E(java.net.URL,java.security.CodeSigner%5B%5D)`, `CodeSource(URL url, CodeSigner[] signers)`],
+					[/* text */ 't', `
+ constructor then its certificate chains are extracted and used to
+ create an array of Certificate objects. Each signer certificate is
+ followed by its supporting certificate chain (which may be empty).
+ Each signer certificate and its supporting certificate chain is ordered
+ bottom-to-top (i.e., with the signer certificate first and the (root)
+ certificate authority last).`]
+				]]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `a copy of the certificate array, or `],
+				[/* inline code block */ 'i', `null`],
+				[/* text */ 't', ` if there
+ is none.`]
+			]
+		]],
 		[/* method */ 'getCodeSigners()', [
 			[/* method description */
 				[/* text */ 't', `Returns the code signers associated with this CodeSource.
@@ -287,6 +266,27 @@ DocsCollector.collect('java.security.CodeSource', [
 				[/* inline code block */ 'i', `null`],
 				[/* text */ 't', ` if there
  is none.`]
+			]
+		]],
+		[/* method */ 'hashCode()', [
+			[/* method description */
+				[/* text */ 't', `Returns the hash code value for this object.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `a hash code value for this object.`]
+			]
+		]],
+		[/* method */ 'toString()', [
+			[/* method description */
+				[/* text */ 't', `Returns a string describing this CodeSource, telling its
+ URL and certificates.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `information about this CodeSource.`]
 			]
 		]]
 	],

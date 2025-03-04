@@ -8,16 +8,6 @@ DocsCollector.collect('java.lang.module.ModuleDescriptor$Exports', [
 	/* fields */ UDF,
 	/* constructors */ UDF,
 	[/* methods */
-		[/* method */ 'modifiers()', [
-			[/* method description */
-				[/* text */ 't', `Returns the set of modifiers.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `A possibly-empty unmodifiable set of modifiers`]
-			]
-		]],
 		[/* method */ 'equals(java.lang.Object)', [
 			[/* method description */
 				[/* text */ 't', `Tests this module export for equality with the given object.
@@ -51,34 +41,17 @@ DocsCollector.collect('java.lang.module.ModuleDescriptor$Exports', [
           dependence that is equal to this module dependence`]
 			]
 		]],
-		[/* method */ 'toString()', [
+		[/* method */ 'isQualified()', [
 			[/* method description */
-				[/* text */ 't', `Returns a string describing the exported package.`]
+				[/* text */ 't', `Returns `],
+				[/* inline code block */ 'i', `true`],
+				[/* text */ 't', ` if this is a qualified export.`]
 			],
 			/* parameters */ UDF,
 			/* throws */ UDF,
 			[/* return description */
-				[/* text */ 't', `A string describing the exported package`]
-			]
-		]],
-		[/* method */ 'hashCode()', [
-			[/* method description */
-				[/* text */ 't', `Computes a hash code for this module export.
-
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', ` The hash code is based upon the modifiers, the package name,
- and for a qualified export, the set of modules names to which the
- package is exported. It satisfies the general contract of the
- `],
-					[/* reference */ 'r', `java.Object#hashCode()`],
-					[/* text */ 't', ` method.`]
-				]]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `The hash-code value for this module export`]
+				[/* inline code block */ 'i', `true`],
+				[/* text */ 't', ` if this is a qualified export`]
 			]
 		]],
 		[/* method */ 'compareTo(java.lang.module.ModuleDescriptor.Exports)', [
@@ -116,6 +89,26 @@ DocsCollector.collect('java.lang.module.ModuleDescriptor$Exports', [
          export dependence`]
 			]
 		]],
+		[/* method */ 'hashCode()', [
+			[/* method description */
+				[/* text */ 't', `Computes a hash code for this module export.
+
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', ` The hash code is based upon the modifiers, the package name,
+ and for a qualified export, the set of modules names to which the
+ package is exported. It satisfies the general contract of the
+ `],
+					[/* reference */ 'r', `java.Object#hashCode()`],
+					[/* text */ 't', ` method.`]
+				]]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `The hash-code value for this module export`]
+			]
+		]],
 		[/* method */ 'source()', [
 			[/* method description */
 				[/* text */ 't', `Returns the package name.`]
@@ -126,17 +119,24 @@ DocsCollector.collect('java.lang.module.ModuleDescriptor$Exports', [
 				[/* text */ 't', `The package name`]
 			]
 		]],
-		[/* method */ 'isQualified()', [
+		[/* method */ 'toString()', [
 			[/* method description */
-				[/* text */ 't', `Returns `],
-				[/* inline code block */ 'i', `true`],
-				[/* text */ 't', ` if this is a qualified export.`]
+				[/* text */ 't', `Returns a string describing the exported package.`]
 			],
 			/* parameters */ UDF,
 			/* throws */ UDF,
 			[/* return description */
-				[/* inline code block */ 'i', `true`],
-				[/* text */ 't', ` if this is a qualified export`]
+				[/* text */ 't', `A string describing the exported package`]
+			]
+		]],
+		[/* method */ 'modifiers()', [
+			[/* method description */
+				[/* text */ 't', `Returns the set of modifiers.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `A possibly-empty unmodifiable set of modifiers`]
 			]
 		]],
 		[/* method */ 'targets()', [

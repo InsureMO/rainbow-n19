@@ -2356,31 +2356,29 @@ DocsCollector.collect('java.util.regex.Pattern', [
 		]]
 	],
 	[/* fields */
-		[/* field */ 'UNIX_LINES', [
+		[/* field */ 'CANON_EQ', [
 			[/* field description */
-				[/* text */ 't', `Enables Unix lines mode.
+				[/* text */ 't', `Enables canonical equivalence.
 
  `],
 				[/* block */ 'b', [
-					[/* text */ 't', ` In this mode, only the `],
-					[/* inline code block */ 'i', `'\\n'`],
-					[/* text */ 't', ` line terminator is recognized
- in the behavior of `],
-					[/* inline code block */ 'i', `.`],
-					[/* text */ 't', `, `],
-					[/* inline code block */ 'i', `^`],
-					[/* text */ 't', `, and `],
-					[/* inline code block */ 'i', `$`],
-					[/* text */ 't', `.
+					[/* text */ 't', ` When this flag is specified then two characters will be considered
+ to match if, and only if, their full canonical decompositions match.
+ The expression `],
+					[/* inline code block */ 'i', `"a\\u030A"`],
+					[/* text */ 't', `, for example, will match the
+ string `],
+					[/* inline code block */ 'i', `"\\u00E5"`],
+					[/* text */ 't', ` when this flag is specified.  By default,
+ matching does not take canonical equivalence into account.
 
  `]
 				]],
-				[/* block */ 'b', [
-					[/* text */ 't', ` Unix lines mode can also be enabled via the embedded flag
- expression `],
-					[/* inline code block */ 'i', `(?d)`],
-					[/* text */ 't', `.`]
-				]]
+				[/* block */ 'b', ` There is no embedded flag character for enabling canonical
+ equivalence.
+
+ `],
+				[/* block */ 'b', ` Specifying this flag may impose a performance penalty.  `]
 			],
 		]],
 		[/* field */ 'CASE_INSENSITIVE', [
@@ -2429,50 +2427,6 @@ DocsCollector.collect('java.util.regex.Pattern', [
 				]]
 			],
 		]],
-		[/* field */ 'MULTILINE', [
-			[/* field description */
-				[/* text */ 't', `Enables multiline mode.
-
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', ` In multiline mode the expressions `],
-					[/* inline code block */ 'i', `^`],
-					[/* text */ 't', ` and `],
-					[/* inline code block */ 'i', `$`],
-					[/* text */ 't', ` match
- just after or just before, respectively, a line terminator or the end of
- the input sequence.  By default these expressions only match at the
- beginning and the end of the entire input sequence.
-
- `]
-				]],
-				[/* block */ 'b', [
-					[/* text */ 't', ` Multiline mode can also be enabled via the embedded flag
- expression `],
-					[/* inline code block */ 'i', `(?m)`],
-					[/* text */ 't', `.  `]
-				]]
-			],
-		]],
-		[/* field */ 'LITERAL', [
-			[/* field description */
-				[/* text */ 't', `Enables literal parsing of the pattern.
-
- `],
-				[/* block */ 'b', ` When this flag is specified then the input string that specifies
- the pattern is treated as a sequence of literal characters.
- Metacharacters or escape sequences in the input sequence will be
- given no special meaning.
-
- `],
-				[/* block */ 'b', `The flags CASE_INSENSITIVE and UNICODE_CASE retain their impact on
- matching when used in conjunction with this flag. The other flags
- become superfluous.
-
- `],
-				[/* block */ 'b', ` There is no embedded flag character for enabling literal parsing.`]
-			],
-		]],
 		[/* field */ 'DOTALL', [
 			[/* field description */
 				[/* text */ 't', `Enables dotall mode.
@@ -2495,6 +2449,50 @@ DocsCollector.collect('java.util.regex.Pattern', [
 					[/* inline code block */ 'i', `s`],
 					[/* text */ 't', ` is a mnemonic for
  "single-line" mode, which is what this is called in Perl.)  `]
+				]]
+			],
+		]],
+		[/* field */ 'LITERAL', [
+			[/* field description */
+				[/* text */ 't', `Enables literal parsing of the pattern.
+
+ `],
+				[/* block */ 'b', ` When this flag is specified then the input string that specifies
+ the pattern is treated as a sequence of literal characters.
+ Metacharacters or escape sequences in the input sequence will be
+ given no special meaning.
+
+ `],
+				[/* block */ 'b', `The flags CASE_INSENSITIVE and UNICODE_CASE retain their impact on
+ matching when used in conjunction with this flag. The other flags
+ become superfluous.
+
+ `],
+				[/* block */ 'b', ` There is no embedded flag character for enabling literal parsing.`]
+			],
+		]],
+		[/* field */ 'MULTILINE', [
+			[/* field description */
+				[/* text */ 't', `Enables multiline mode.
+
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', ` In multiline mode the expressions `],
+					[/* inline code block */ 'i', `^`],
+					[/* text */ 't', ` and `],
+					[/* inline code block */ 'i', `$`],
+					[/* text */ 't', ` match
+ just after or just before, respectively, a line terminator or the end of
+ the input sequence.  By default these expressions only match at the
+ beginning and the end of the entire input sequence.
+
+ `]
+				]],
+				[/* block */ 'b', [
+					[/* text */ 't', ` Multiline mode can also be enabled via the embedded flag
+ expression `],
+					[/* inline code block */ 'i', `(?m)`],
+					[/* text */ 't', `.  `]
 				]]
 			],
 		]],
@@ -2522,31 +2520,6 @@ DocsCollector.collect('java.util.regex.Pattern', [
 
  `]
 				]],
-				[/* block */ 'b', ` Specifying this flag may impose a performance penalty.  `]
-			],
-		]],
-		[/* field */ 'CANON_EQ', [
-			[/* field description */
-				[/* text */ 't', `Enables canonical equivalence.
-
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', ` When this flag is specified then two characters will be considered
- to match if, and only if, their full canonical decompositions match.
- The expression `],
-					[/* inline code block */ 'i', `"a\\u030A"`],
-					[/* text */ 't', `, for example, will match the
- string `],
-					[/* inline code block */ 'i', `"\\u00E5"`],
-					[/* text */ 't', ` when this flag is specified.  By default,
- matching does not take canonical equivalence into account.
-
- `]
-				]],
-				[/* block */ 'b', ` There is no embedded flag character for enabling canonical
- equivalence.
-
- `],
 				[/* block */ 'b', ` Specifying this flag may impose a performance penalty.  `]
 			],
 		]],
@@ -2589,22 +2562,37 @@ DocsCollector.collect('java.util.regex.Pattern', [
 				[/* block */ 'b', `
  Specifying this flag may impose a performance penalty.  `]
 			],
+		]],
+		[/* field */ 'UNIX_LINES', [
+			[/* field description */
+				[/* text */ 't', `Enables Unix lines mode.
+
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', ` In this mode, only the `],
+					[/* inline code block */ 'i', `'\\n'`],
+					[/* text */ 't', ` line terminator is recognized
+ in the behavior of `],
+					[/* inline code block */ 'i', `.`],
+					[/* text */ 't', `, `],
+					[/* inline code block */ 'i', `^`],
+					[/* text */ 't', `, and `],
+					[/* inline code block */ 'i', `$`],
+					[/* text */ 't', `.
+
+ `]
+				]],
+				[/* block */ 'b', [
+					[/* text */ 't', ` Unix lines mode can also be enabled via the embedded flag
+ expression `],
+					[/* inline code block */ 'i', `(?d)`],
+					[/* text */ 't', `.`]
+				]]
+			],
 		]]
 	],
 	/* constructors */ UDF,
 	[/* methods */
-		[/* method */ 'toString()', [
-			[/* method description */
-				[/* block */ 'b', `Returns the string representation of this pattern. This
- is the regular expression from which this pattern was
- compiled.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `The string representation of this pattern`]
-			]
-		]],
 		[/* method */ 'flags()', [
 			[/* method description */
 				[/* text */ 't', `Returns this pattern's match flags.`]
@@ -2615,125 +2603,26 @@ DocsCollector.collect('java.util.regex.Pattern', [
 				[/* text */ 't', `The match flags specified when this pattern was compiled`]
 			]
 		]],
-		[/* method */ 'matches(java.lang.String,java.lang.CharSequence)', [
+		[/* method */ 'pattern()', [
 			[/* method description */
-				[/* text */ 't', `Compiles the given regular expression and attempts to match the given
- input against it.
-
- `],
-				[/* block */ 'b', ` An invocation of this convenience method of the form
-
- `],
-				[/* block */ 'b', [
-					[/* code block */ 'c', ` Pattern.matches(regex, input);`]
-				]],
-				[/* text */ 't', `
-
- behaves in exactly the same way as the expression
-
- `],
-				[/* block */ 'b', [
-					[/* code block */ 'c', ` Pattern.compile(regex).matcher(input).matches()`]
-				]],
-				[/* block */ 'b', ''],
-				[/* block */ 'b', ` If a pattern is to be used multiple times, compiling it once and reusing
- it will be more efficient than invoking this method each time.  `]
+				[/* text */ 't', `Returns the regular expression from which this pattern was compiled.`]
 			],
-			[/* parameters */
-				[/* parameter */ 'regex', [/* parameter description */
-					[/* text */ 't', `The expression to be compiled`]
-				]],
-				[/* parameter */ 'input', [/* parameter description */
-					[/* text */ 't', `The character sequence to be matched`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.util.regex.PatternSyntaxException', [/* throw description */
-					[/* text */ 't', `If the expression's syntax is invalid`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `whether or not the regular expression matches on the input`]
-			]
-		]],
-		[/* method */ 'compile(java.lang.String)', [
-			[/* method description */
-				[/* text */ 't', `Compiles the given regular expression into a pattern.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'regex', [/* parameter description */
-					[/* text */ 't', `The expression to be compiled`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.util.regex.PatternSyntaxException', [/* throw description */
-					[/* text */ 't', `If the expression's syntax is invalid`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `the given regular expression compiled into a pattern`]
-			]
-		]],
-		[/* method */ 'compile(java.lang.String,int)', [
-			[/* method description */
-				[/* text */ 't', `Compiles the given regular expression into a pattern with the given
- flags.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'regex', [/* parameter description */
-					[/* text */ 't', `The expression to be compiled`]
-				]],
-				[/* parameter */ 'flags', [/* parameter description */
-					[/* text */ 't', `Match flags, a bit mask that may include
-         `],
-					[/* text */ 't', `CASE_INSENSITIVE`],
-					[/* text */ 't', `, `],
-					[/* text */ 't', `MULTILINE`],
-					[/* text */ 't', `, `],
-					[/* text */ 't', `DOTALL`],
-					[/* text */ 't', `,
-         `],
-					[/* text */ 't', `UNICODE_CASE`],
-					[/* text */ 't', `, `],
-					[/* text */ 't', `CANON_EQ`],
-					[/* text */ 't', `, `],
-					[/* text */ 't', `UNIX_LINES`],
-					[/* text */ 't', `,
-         `],
-					[/* text */ 't', `LITERAL`],
-					[/* text */ 't', `, `],
-					[/* text */ 't', `UNICODE_CHARACTER_CLASS`],
-					[/* text */ 't', `
-         and `],
-					[/* text */ 't', `COMMENTS`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
-					[/* text */ 't', `If bit values other than those corresponding to the defined
-          match flags are set in `],
-					[/* inline code block */ 'i', `flags`]
-				]],
-				[/* throw */ 'java.util.regex.PatternSyntaxException', [/* throw description */
-					[/* text */ 't', `If the expression's syntax is invalid`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `the given regular expression compiled into a pattern with the given flags`]
-			]
-		]],
-		[/* method */ 'matcher(java.lang.CharSequence)', [
-			[/* method description */
-				[/* text */ 't', `Creates a matcher that will match the given input against this pattern.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'input', [/* parameter description */
-					[/* text */ 't', `The character sequence to be matched`]
-				]]
-			],
+			/* parameters */ UDF,
 			/* throws */ UDF,
 			[/* return description */
-				[/* text */ 't', `A new matcher for this pattern`]
+				[/* text */ 't', `The source of this pattern`]
+			]
+		]],
+		[/* method */ 'toString()', [
+			[/* method description */
+				[/* block */ 'b', `Returns the string representation of this pattern. This
+ is the regular expression from which this pattern was
+ compiled.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `The string representation of this pattern`]
 			]
 		]],
 		[/* method */ 'split(java.lang.CharSequence)', [
@@ -2961,49 +2850,15 @@ DocsCollector.collect('java.util.regex.Pattern', [
           around matches of this pattern`]
 			]
 		]],
-		[/* method */ 'quote(java.lang.String)', [
+		[/* method */ 'asMatchPredicate()', [
 			[/* method description */
-				[/* text */ 't', `Returns a literal pattern `],
-				[/* inline code block */ 'i', `String`],
-				[/* text */ 't', ` for the specified
- `],
-				[/* inline code block */ 'i', `String`],
-				[/* text */ 't', `.
-
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', `This method produces a `],
-					[/* inline code block */ 'i', `String`],
-					[/* text */ 't', ` that can be used to
- create a `],
-					[/* inline code block */ 'i', `Pattern`],
-					[/* text */ 't', ` that would match the string
- `],
-					[/* inline code block */ 'i', `s`],
-					[/* text */ 't', ` as if it were a literal pattern.`]
-				]],
-				[/* text */ 't', ` Metacharacters
- or escape sequences in the input sequence will be given no special
- meaning.`]
-			],
-			[/* parameters */
-				[/* parameter */ 's', [/* parameter description */
-					[/* text */ 't', `The string to be literalized`]
-				]]
-			],
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `A literal string replacement`]
-			]
-		]],
-		[/* method */ 'pattern()', [
-			[/* method description */
-				[/* text */ 't', `Returns the regular expression from which this pattern was compiled.`]
+				[/* text */ 't', `Creates a predicate that tests if this pattern matches a given input string.`]
 			],
 			/* parameters */ UDF,
 			/* throws */ UDF,
 			[/* return description */
-				[/* text */ 't', `The source of this pattern`]
+				[/* text */ 't', `The predicate which can be used for matching an input string
+          against this pattern.`]
 			]
 		]],
 		[/* method */ 'asPredicate()', [
@@ -3018,15 +2873,18 @@ DocsCollector.collect('java.util.regex.Pattern', [
           subsequence of a string`]
 			]
 		]],
-		[/* method */ 'asMatchPredicate()', [
+		[/* method */ 'matcher(java.lang.CharSequence)', [
 			[/* method description */
-				[/* text */ 't', `Creates a predicate that tests if this pattern matches a given input string.`]
+				[/* text */ 't', `Creates a matcher that will match the given input against this pattern.`]
 			],
-			/* parameters */ UDF,
+			[/* parameters */
+				[/* parameter */ 'input', [/* parameter description */
+					[/* text */ 't', `The character sequence to be matched`]
+				]]
+			],
 			/* throws */ UDF,
 			[/* return description */
-				[/* text */ 't', `The predicate which can be used for matching an input string
-          against this pattern.`]
+				[/* text */ 't', `A new matcher for this pattern`]
 			]
 		]],
 		[/* method */ 'splitAsStream(java.lang.CharSequence)', [
@@ -3067,6 +2925,148 @@ DocsCollector.collect('java.util.regex.Pattern', [
 			[/* return description */
 				[/* text */ 't', `The stream of strings computed by splitting the input
           around matches of this pattern`]
+			]
+		]],
+		[/* method */ 'matches(java.lang.String,java.lang.CharSequence)', [
+			[/* method description */
+				[/* text */ 't', `Compiles the given regular expression and attempts to match the given
+ input against it.
+
+ `],
+				[/* block */ 'b', ` An invocation of this convenience method of the form
+
+ `],
+				[/* block */ 'b', [
+					[/* code block */ 'c', ` Pattern.matches(regex, input);`]
+				]],
+				[/* text */ 't', `
+
+ behaves in exactly the same way as the expression
+
+ `],
+				[/* block */ 'b', [
+					[/* code block */ 'c', ` Pattern.compile(regex).matcher(input).matches()`]
+				]],
+				[/* block */ 'b', ''],
+				[/* block */ 'b', ` If a pattern is to be used multiple times, compiling it once and reusing
+ it will be more efficient than invoking this method each time.  `]
+			],
+			[/* parameters */
+				[/* parameter */ 'regex', [/* parameter description */
+					[/* text */ 't', `The expression to be compiled`]
+				]],
+				[/* parameter */ 'input', [/* parameter description */
+					[/* text */ 't', `The character sequence to be matched`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.util.regex.PatternSyntaxException', [/* throw description */
+					[/* text */ 't', `If the expression's syntax is invalid`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `whether or not the regular expression matches on the input`]
+			]
+		]],
+		[/* method */ 'quote(java.lang.String)', [
+			[/* method description */
+				[/* text */ 't', `Returns a literal pattern `],
+				[/* inline code block */ 'i', `String`],
+				[/* text */ 't', ` for the specified
+ `],
+				[/* inline code block */ 'i', `String`],
+				[/* text */ 't', `.
+
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', `This method produces a `],
+					[/* inline code block */ 'i', `String`],
+					[/* text */ 't', ` that can be used to
+ create a `],
+					[/* inline code block */ 'i', `Pattern`],
+					[/* text */ 't', ` that would match the string
+ `],
+					[/* inline code block */ 'i', `s`],
+					[/* text */ 't', ` as if it were a literal pattern.`]
+				]],
+				[/* text */ 't', ` Metacharacters
+ or escape sequences in the input sequence will be given no special
+ meaning.`]
+			],
+			[/* parameters */
+				[/* parameter */ 's', [/* parameter description */
+					[/* text */ 't', `The string to be literalized`]
+				]]
+			],
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `A literal string replacement`]
+			]
+		]],
+		[/* method */ 'compile(java.lang.String)', [
+			[/* method description */
+				[/* text */ 't', `Compiles the given regular expression into a pattern.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'regex', [/* parameter description */
+					[/* text */ 't', `The expression to be compiled`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.util.regex.PatternSyntaxException', [/* throw description */
+					[/* text */ 't', `If the expression's syntax is invalid`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `the given regular expression compiled into a pattern`]
+			]
+		]],
+		[/* method */ 'compile(java.lang.String,int)', [
+			[/* method description */
+				[/* text */ 't', `Compiles the given regular expression into a pattern with the given
+ flags.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'regex', [/* parameter description */
+					[/* text */ 't', `The expression to be compiled`]
+				]],
+				[/* parameter */ 'flags', [/* parameter description */
+					[/* text */ 't', `Match flags, a bit mask that may include
+         `],
+					[/* text */ 't', `CASE_INSENSITIVE`],
+					[/* text */ 't', `, `],
+					[/* text */ 't', `MULTILINE`],
+					[/* text */ 't', `, `],
+					[/* text */ 't', `DOTALL`],
+					[/* text */ 't', `,
+         `],
+					[/* text */ 't', `UNICODE_CASE`],
+					[/* text */ 't', `, `],
+					[/* text */ 't', `CANON_EQ`],
+					[/* text */ 't', `, `],
+					[/* text */ 't', `UNIX_LINES`],
+					[/* text */ 't', `,
+         `],
+					[/* text */ 't', `LITERAL`],
+					[/* text */ 't', `, `],
+					[/* text */ 't', `UNICODE_CHARACTER_CLASS`],
+					[/* text */ 't', `
+         and `],
+					[/* text */ 't', `COMMENTS`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
+					[/* text */ 't', `If bit values other than those corresponding to the defined
+          match flags are set in `],
+					[/* inline code block */ 'i', `flags`]
+				]],
+				[/* throw */ 'java.util.regex.PatternSyntaxException', [/* throw description */
+					[/* text */ 't', `If the expression's syntax is invalid`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `the given regular expression compiled into a pattern with the given flags`]
 			]
 		]]
 	],

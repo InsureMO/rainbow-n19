@@ -749,9 +749,34 @@ DocsCollector.collect('java.util.Locale', [
  constraint.`]
 	],
 	[/* fields */
+		[/* field */ 'CANADA', [
+			[/* field description */
+				[/* text */ 't', `Useful constant for country.`]
+			],
+		]],
+		[/* field */ 'CANADA_FRENCH', [
+			[/* field description */
+				[/* text */ 't', `Useful constant for country.`]
+			],
+		]],
+		[/* field */ 'CHINA', [
+			[/* field description */
+				[/* text */ 't', `Useful constant for country.`]
+			],
+		]],
+		[/* field */ 'CHINESE', [
+			[/* field description */
+				[/* text */ 't', `Useful constant for language.`]
+			],
+		]],
 		[/* field */ 'ENGLISH', [
 			[/* field description */
 				[/* text */ 't', `Useful constant for language.`]
+			],
+		]],
+		[/* field */ 'FRANCE', [
+			[/* field description */
+				[/* text */ 't', `Useful constant for country.`]
 			],
 		]],
 		[/* field */ 'FRENCH', [
@@ -764,44 +789,14 @@ DocsCollector.collect('java.util.Locale', [
 				[/* text */ 't', `Useful constant for language.`]
 			],
 		]],
-		[/* field */ 'ITALIAN', [
-			[/* field description */
-				[/* text */ 't', `Useful constant for language.`]
-			],
-		]],
-		[/* field */ 'JAPANESE', [
-			[/* field description */
-				[/* text */ 't', `Useful constant for language.`]
-			],
-		]],
-		[/* field */ 'KOREAN', [
-			[/* field description */
-				[/* text */ 't', `Useful constant for language.`]
-			],
-		]],
-		[/* field */ 'CHINESE', [
-			[/* field description */
-				[/* text */ 't', `Useful constant for language.`]
-			],
-		]],
-		[/* field */ 'SIMPLIFIED_CHINESE', [
-			[/* field description */
-				[/* text */ 't', `Useful constant for language.`]
-			],
-		]],
-		[/* field */ 'TRADITIONAL_CHINESE', [
-			[/* field description */
-				[/* text */ 't', `Useful constant for language.`]
-			],
-		]],
-		[/* field */ 'FRANCE', [
-			[/* field description */
-				[/* text */ 't', `Useful constant for country.`]
-			],
-		]],
 		[/* field */ 'GERMANY', [
 			[/* field description */
 				[/* text */ 't', `Useful constant for country.`]
+			],
+		]],
+		[/* field */ 'ITALIAN', [
+			[/* field description */
+				[/* text */ 't', `Useful constant for language.`]
 			],
 		]],
 		[/* field */ 'ITALY', [
@@ -814,29 +809,29 @@ DocsCollector.collect('java.util.Locale', [
 				[/* text */ 't', `Useful constant for country.`]
 			],
 		]],
+		[/* field */ 'JAPANESE', [
+			[/* field description */
+				[/* text */ 't', `Useful constant for language.`]
+			],
+		]],
 		[/* field */ 'KOREA', [
 			[/* field description */
 				[/* text */ 't', `Useful constant for country.`]
 			],
 		]],
-		[/* field */ 'UK', [
+		[/* field */ 'KOREAN', [
+			[/* field description */
+				[/* text */ 't', `Useful constant for language.`]
+			],
+		]],
+		[/* field */ 'PRC', [
 			[/* field description */
 				[/* text */ 't', `Useful constant for country.`]
 			],
 		]],
-		[/* field */ 'US', [
+		[/* field */ 'PRIVATE_USE_EXTENSION', [
 			[/* field description */
-				[/* text */ 't', `Useful constant for country.`]
-			],
-		]],
-		[/* field */ 'CANADA', [
-			[/* field description */
-				[/* text */ 't', `Useful constant for country.`]
-			],
-		]],
-		[/* field */ 'CANADA_FRENCH', [
-			[/* field description */
-				[/* text */ 't', `Useful constant for country.`]
+				[/* text */ 't', `The key for the private use extension ('x').`]
 			],
 		]],
 		[/* field */ 'ROOT', [
@@ -847,14 +842,9 @@ DocsCollector.collect('java.util.Locale', [
  neutral locale for the locale sensitive operations.`]
 			],
 		]],
-		[/* field */ 'CHINA', [
+		[/* field */ 'SIMPLIFIED_CHINESE', [
 			[/* field description */
-				[/* text */ 't', `Useful constant for country.`]
-			],
-		]],
-		[/* field */ 'PRC', [
-			[/* field description */
-				[/* text */ 't', `Useful constant for country.`]
+				[/* text */ 't', `Useful constant for language.`]
 			],
 		]],
 		[/* field */ 'TAIWAN', [
@@ -862,14 +852,24 @@ DocsCollector.collect('java.util.Locale', [
 				[/* text */ 't', `Useful constant for country.`]
 			],
 		]],
-		[/* field */ 'PRIVATE_USE_EXTENSION', [
+		[/* field */ 'TRADITIONAL_CHINESE', [
 			[/* field description */
-				[/* text */ 't', `The key for the private use extension ('x').`]
+				[/* text */ 't', `Useful constant for language.`]
+			],
+		]],
+		[/* field */ 'UK', [
+			[/* field description */
+				[/* text */ 't', `Useful constant for country.`]
 			],
 		]],
 		[/* field */ 'UNICODE_LOCALE_EXTENSION', [
 			[/* field description */
 				[/* text */ 't', `The key for Unicode locale extension ('u').`]
+			],
+		]],
+		[/* field */ 'US', [
+			[/* field description */
+				[/* text */ 't', `Useful constant for country.`]
 			],
 		]]
 	],
@@ -891,6 +891,33 @@ DocsCollector.collect('java.util.Locale', [
 			[/* throws */
 				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
 					[/* text */ 't', `thrown if argument is null.`]
+				]]
+			]
+		]],
+		[/* constructor */ '<init>(java.lang.String,java.lang.String)', [
+			[/* constructor description */
+				[/* text */ 't', `Construct a locale from language and country.
+ This constructor normalizes the language value to lowercase and
+ the country value to uppercase.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'language', [/* parameter description */
+					[/* text */ 't', `An ISO 639 alpha-2 or alpha-3 language code, or a language subtag
+ up to 8 characters in length.  See the `],
+					[/* inline code block */ 'i', `Locale`],
+					[/* text */ 't', ` class description about
+ valid language values.`]
+				]],
+				[/* parameter */ 'country', [/* parameter description */
+					[/* text */ 't', `An ISO 3166 alpha-2 country code or a UN M.49 numeric-3 area code.
+ See the `],
+					[/* inline code block */ 'i', `Locale`],
+					[/* text */ 't', ` class description about valid country values.`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
+					[/* text */ 't', `thrown if either argument is null.`]
 				]]
 			]
 		]],
@@ -928,33 +955,6 @@ DocsCollector.collect('java.util.Locale', [
 					[/* text */ 't', `thrown if any argument is null.`]
 				]]
 			]
-		]],
-		[/* constructor */ '<init>(java.lang.String,java.lang.String)', [
-			[/* constructor description */
-				[/* text */ 't', `Construct a locale from language and country.
- This constructor normalizes the language value to lowercase and
- the country value to uppercase.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'language', [/* parameter description */
-					[/* text */ 't', `An ISO 639 alpha-2 or alpha-3 language code, or a language subtag
- up to 8 characters in length.  See the `],
-					[/* inline code block */ 'i', `Locale`],
-					[/* text */ 't', ` class description about
- valid language values.`]
-				]],
-				[/* parameter */ 'country', [/* parameter description */
-					[/* text */ 't', `An ISO 3166 alpha-2 country code or a UN M.49 numeric-3 area code.
- See the `],
-					[/* inline code block */ 'i', `Locale`],
-					[/* text */ 't', ` class description about valid country values.`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
-					[/* text */ 't', `thrown if either argument is null.`]
-				]]
-			]
 		]]
 	],
 	[/* methods */
@@ -972,6 +972,142 @@ DocsCollector.collect('java.util.Locale', [
 			/* throws */ UDF,
 			[/* return description */
 				[/* text */ 't', `true if this Locale is equal to the specified object.`]
+			]
+		]],
+		[/* method */ 'hasExtensions()', [
+			[/* method description */
+				[/* text */ 't', `Returns `],
+				[/* inline code block */ 'i', `true`],
+				[/* text */ 't', ` if this `],
+				[/* inline code block */ 'i', `Locale`],
+				[/* text */ 't', ` has any `],
+				[/* text */ 't', `extensions`],
+				[/* text */ 't', `.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* inline code block */ 'i', `true`],
+				[/* text */ 't', ` if this `],
+				[/* inline code block */ 'i', `Locale`],
+				[/* text */ 't', ` has any extensions`]
+			]
+		]],
+		[/* method */ 'getDisplayCountry()', [
+			[/* method description */
+				[/* text */ 't', `Returns a name for the locale's country that is appropriate for display to the
+ user.
+ If possible, the name returned will be localized for the default
+ `],
+				[/* reference */ 'r', `.Locale.Category#DISPLAY`],
+				[/* text */ 't', ` locale.
+ For example, if the locale is fr_FR and the default
+ `],
+				[/* reference */ 'r', `.Locale.Category#DISPLAY`],
+				[/* text */ 't', ` locale
+ is en_US, getDisplayCountry() will return "France"; if the locale is en_US and
+ the default `],
+				[/* reference */ 'r', `.Locale.Category#DISPLAY`],
+				[/* text */ 't', ` locale is fr_FR,
+ getDisplayCountry() will return "Etats-Unis".
+ If the name returned cannot be localized for the default
+ `],
+				[/* reference */ 'r', `.Locale.Category#DISPLAY`],
+				[/* text */ 't', ` locale,
+ (say, we don't have a Japanese name for Croatia),
+ this function falls back on the English name, and uses the ISO code as a last-resort
+ value.  If the locale doesn't specify a country, this function returns the empty string.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `The name of the country appropriate to the locale.`]
+			]
+		]],
+		[/* method */ 'getDisplayLanguage()', [
+			[/* method description */
+				[/* text */ 't', `Returns a name for the locale's language that is appropriate for display to the
+ user.
+ If possible, the name returned will be localized for the default
+ `],
+				[/* reference */ 'r', `.Locale.Category#DISPLAY`],
+				[/* text */ 't', ` locale.
+ For example, if the locale is fr_FR and the default
+ `],
+				[/* reference */ 'r', `.Locale.Category#DISPLAY`],
+				[/* text */ 't', ` locale
+ is en_US, getDisplayLanguage() will return "French"; if the locale is en_US and
+ the default `],
+				[/* reference */ 'r', `.Locale.Category#DISPLAY`],
+				[/* text */ 't', ` locale is fr_FR,
+ getDisplayLanguage() will return "anglais".
+ If the name returned cannot be localized for the default
+ `],
+				[/* reference */ 'r', `.Locale.Category#DISPLAY`],
+				[/* text */ 't', ` locale,
+ (say, we don't have a Japanese name for Croatian),
+ this function falls back on the English name, and uses the ISO code as a last-resort
+ value.  If the locale doesn't specify a language, this function returns the empty string.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `The name of the display language.`]
+			]
+		]],
+		[/* method */ 'getDisplayName()', [
+			[/* method description */
+				[/* text */ 't', `Returns a name for the locale that is appropriate for display to the
+ user. This will be the values returned by getDisplayLanguage(),
+ getDisplayScript(), getDisplayCountry(), getDisplayVariant() and
+ optional `],
+				[/* reference */ 'r', `.Locale#def_locale_extension`],
+				[/* text */ 't', `
+ assembled into a single string. The non-empty values are used in order, with
+ the second and subsequent names in parentheses.  For example:
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', `
+ language (script, country, variant(, extension)*)`],
+					[/* new line */ 'n'],
+					[/* text */ 't', `
+ language (country(, extension)*)`],
+					[/* new line */ 'n'],
+					[/* text */ 't', `
+ language (variant(, extension)*)`],
+					[/* new line */ 'n'],
+					[/* text */ 't', `
+ script (country(, extension)*)`],
+					[/* new line */ 'n'],
+					[/* text */ 't', `
+ country (extension)*`],
+					[/* new line */ 'n']
+				]],
+				[/* text */ 't', `
+ depending on which fields are specified in the locale. The field
+ separator in the above parentheses, denoted as a comma character, may
+ be localized depending on the locale. If the language, script, country,
+ and variant fields are all empty, this function returns the empty string.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `The name of the locale appropriate to display.`]
+			]
+		]],
+		[/* method */ 'getDisplayVariant()', [
+			[/* method description */
+				[/* text */ 't', `Returns a name for the locale's variant code that is appropriate for display to the
+ user.  If possible, the name will be localized for the default
+ `],
+				[/* reference */ 'r', `.Locale.Category#DISPLAY`],
+				[/* text */ 't', ` locale.  If the locale
+ doesn't specify a variant code, this function returns the empty string.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `The name of the display variant code appropriate to the locale.`]
 			]
 		]],
 		[/* method */ 'toString()', [
@@ -1077,70 +1213,506 @@ DocsCollector.collect('java.util.Locale', [
 				[/* text */ 't', `a clone of this instance.`]
 			]
 		]],
-		[/* method */ 'getDefault(java.util.Locale.Category)', [
+		[/* method */ 'getCountry()', [
 			[/* method description */
-				[/* text */ 't', `Gets the current value of the default locale for the specified Category
- for this instance of the Java Virtual Machine.
- `],
-				[/* block */ 'b', `
- The Java Virtual Machine sets the default locale during startup based
- on the host environment. It is used by many locale-sensitive methods
- if no locale is explicitly specified. It can be changed using the
- setDefault(Locale.Category, Locale) method.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'category', [/* parameter description */
-					[/* text */ 't', `the specified category to get the default locale`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
-					[/* text */ 't', `if category is null`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `the default locale for the specified Category for this instance
-     of the Java Virtual Machine`]
-			]
-		]],
-		[/* method */ 'getDefault()', [
-			[/* method description */
-				[/* text */ 't', `Gets the current value of the default locale for this instance
- of the Java Virtual Machine.
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', `
- The Java Virtual Machine sets the default locale during startup
- based on the host environment. It is used by many locale-sensitive
- methods if no locale is explicitly specified.
- It can be changed using the
- `],
-					[/* reference */ 'r', `#setDefault(java.util.Locale)`, `setDefault`],
-					[/* text */ 't', ` method.`]
-				]]
+				[/* text */ 't', `Returns the country/region code for this locale, which should
+ either be the empty string, an uppercase ISO 3166 2-letter code,
+ or a UN M.49 3-digit code.`]
 			],
 			/* parameters */ UDF,
 			/* throws */ UDF,
 			[/* return description */
-				[/* text */ 't', `the default locale for this instance of the Java Virtual Machine`]
+				[/* text */ 't', `The country/region code, or the empty string if none is defined.`]
 			]
 		]],
-		[/* method */ 'lookup(java.util.List,java.util.Collection)', [
+		[/* method */ 'getDisplayCountry(java.util.Locale)', [
 			[/* method description */
-				[/* text */ 't', `Returns a `],
+				[/* text */ 't', `Returns a name for the locale's country that is appropriate for display to the
+ user.
+ If possible, the name returned will be localized according to inLocale.
+ For example, if the locale is fr_FR and inLocale
+ is en_US, getDisplayCountry() will return "France"; if the locale is en_US and
+ inLocale is fr_FR, getDisplayCountry() will return "Etats-Unis".
+ If the name returned cannot be localized according to inLocale.
+ (say, we don't have a Japanese name for Croatia),
+ this function falls back on the English name, and finally
+ on the ISO code as a last-resort value.  If the locale doesn't specify a country,
+ this function returns the empty string.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'inLocale', [/* parameter description */
+					[/* text */ 't', `The locale for which to retrieve the display country.`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
+					[/* text */ 't', `if `],
+					[/* inline code block */ 'i', `inLocale`],
+					[/* text */ 't', ` is `],
+					[/* inline code block */ 'i', `null`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `The name of the country appropriate to the given locale.`]
+			]
+		]],
+		[/* method */ 'getDisplayLanguage(java.util.Locale)', [
+			[/* method description */
+				[/* text */ 't', `Returns a name for the locale's language that is appropriate for display to the
+ user.
+ If possible, the name returned will be localized according to inLocale.
+ For example, if the locale is fr_FR and inLocale
+ is en_US, getDisplayLanguage() will return "French"; if the locale is en_US and
+ inLocale is fr_FR, getDisplayLanguage() will return "anglais".
+ If the name returned cannot be localized according to inLocale,
+ (say, we don't have a Japanese name for Croatian),
+ this function falls back on the English name, and finally
+ on the ISO code as a last-resort value.  If the locale doesn't specify a language,
+ this function returns the empty string.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'inLocale', [/* parameter description */
+					[/* text */ 't', `The locale for which to retrieve the display language.`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
+					[/* text */ 't', `if `],
+					[/* inline code block */ 'i', `inLocale`],
+					[/* text */ 't', ` is `],
+					[/* inline code block */ 'i', `null`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `The name of the display language appropriate to the given locale.`]
+			]
+		]],
+		[/* method */ 'getDisplayName(java.util.Locale)', [
+			[/* method description */
+				[/* text */ 't', `Returns a name for the locale that is appropriate for display
+ to the user.  This will be the values returned by
+ getDisplayLanguage(), getDisplayScript(),getDisplayCountry()
+ getDisplayVariant(), and optional `],
+				[/* reference */ 'r', `.Locale#def_locale_extension`],
+				[/* text */ 't', ` assembled into a single string. The non-empty
+ values are used in order, with the second and subsequent names in
+ parentheses.  For example:
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', `
+ language (script, country, variant(, extension)*)`],
+					[/* new line */ 'n'],
+					[/* text */ 't', `
+ language (country(, extension)*)`],
+					[/* new line */ 'n'],
+					[/* text */ 't', `
+ language (variant(, extension)*)`],
+					[/* new line */ 'n'],
+					[/* text */ 't', `
+ script (country(, extension)*)`],
+					[/* new line */ 'n'],
+					[/* text */ 't', `
+ country (extension)*`],
+					[/* new line */ 'n']
+				]],
+				[/* text */ 't', `
+ depending on which fields are specified in the locale. The field
+ separator in the above parentheses, denoted as a comma character, may
+ be localized depending on the locale. If the language, script, country,
+ and variant fields are all empty, this function returns the empty string.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'inLocale', [/* parameter description */
+					[/* text */ 't', `The locale for which to retrieve the display name.`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
+					[/* text */ 't', `if `],
+					[/* inline code block */ 'i', `inLocale`],
+					[/* text */ 't', ` is `],
+					[/* inline code block */ 'i', `null`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `The name of the locale appropriate to display.`]
+			]
+		]],
+		[/* method */ 'getDisplayScript()', [
+			[/* method description */
+				[/* text */ 't', `Returns a name for the locale's script that is appropriate for display to
+ the user. If possible, the name will be localized for the default
+ `],
+				[/* reference */ 'r', `.Locale.Category#DISPLAY`],
+				[/* text */ 't', ` locale.  Returns
+ the empty string if this locale doesn't specify a script code.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the display name of the script code for the current default
+     `],
+				[/* reference */ 'r', `.Locale.Category#DISPLAY`],
+				[/* text */ 't', ` locale`]
+			]
+		]],
+		[/* method */ 'getDisplayScript(java.util.Locale)', [
+			[/* method description */
+				[/* text */ 't', `Returns a name for the locale's script that is appropriate
+ for display to the user. If possible, the name will be
+ localized for the given locale. Returns the empty string if
+ this locale doesn't specify a script code.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'inLocale', [/* parameter description */
+					[/* text */ 't', `The locale for which to retrieve the display script.`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
+					[/* text */ 't', `if `],
+					[/* inline code block */ 'i', `inLocale`],
+					[/* text */ 't', ` is `],
+					[/* inline code block */ 'i', `null`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `the display name of the script code for the current default
+ `],
+				[/* reference */ 'r', `.Locale.Category#DISPLAY`],
+				[/* text */ 't', ` locale`]
+			]
+		]],
+		[/* method */ 'getDisplayVariant(java.util.Locale)', [
+			[/* method description */
+				[/* text */ 't', `Returns a name for the locale's variant code that is appropriate for display to the
+ user.  If possible, the name will be localized for inLocale.  If the locale
+ doesn't specify a variant code, this function returns the empty string.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'inLocale', [/* parameter description */
+					[/* text */ 't', `The locale for which to retrieve the display variant code.`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
+					[/* text */ 't', `if `],
+					[/* inline code block */ 'i', `inLocale`],
+					[/* text */ 't', ` is `],
+					[/* inline code block */ 'i', `null`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `The name of the display variant code appropriate to the given locale.`]
+			]
+		]],
+		[/* method */ 'getExtension(char)', [
+			[/* method description */
+				[/* text */ 't', `Returns the extension (or private use) value associated with
+ the specified key, or null if there is no extension
+ associated with the key. To be well-formed, the key must be one
+ of `],
+				[/* inline code block */ 'i', `[0-9A-Za-z]`],
+				[/* text */ 't', `. Keys are case-insensitive, so
+ for example 'z' and 'Z' represent the same extension.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'key', [/* parameter description */
+					[/* text */ 't', `the extension key`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
+					[/* text */ 't', `if key is not well-formed`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `The extension, or null if this locale defines no
+ extension for the specified key.`]
+			]
+		]],
+		[/* method */ 'getISO3Country()', [
+			[/* method description */
+				[/* text */ 't', `Returns a three-letter abbreviation for this locale's country.
+ If the country matches an ISO 3166-1 alpha-2 code, the
+ corresponding ISO 3166-1 alpha-3 uppercase code is returned.
+ If the locale doesn't specify a country, this will be the empty
+ string.
+
+ `],
+				[/* block */ 'b', `The ISO 3166-1 codes can be found on-line.`]
+			],
+			/* parameters */ UDF,
+			[/* throws */
+				[/* throw */ 'java.util.MissingResourceException', [/* throw description */
+					[/* text */ 't', `Throws MissingResourceException if the
+ three-letter country abbreviation is not available for this locale.`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `A three-letter abbreviation of this locale's country.`]
+			]
+		]],
+		[/* method */ 'getISO3Language()', [
+			[/* method description */
+				[/* text */ 't', `Returns a three-letter abbreviation of this locale's language.
+ If the language matches an ISO 639-1 two-letter code, the
+ corresponding ISO 639-2/T three-letter lowercase code is
+ returned.  The ISO 639-2 language codes can be found on-line,
+ see "Codes for the Representation of Names of Languages Part 2:
+ Alpha-3 Code".  If the locale specifies a three-letter
+ language, the language is returned as is.  If the locale does
+ not specify a language the empty string is returned.`]
+			],
+			/* parameters */ UDF,
+			[/* throws */
+				[/* throw */ 'java.util.MissingResourceException', [/* throw description */
+					[/* text */ 't', `Throws MissingResourceException if
+ three-letter language abbreviation is not available for this locale.`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `A three-letter abbreviation of this locale's language.`]
+			]
+		]],
+		[/* method */ 'getLanguage()', [
+			[/* method description */
+				[/* text */ 't', `Returns the language code of this Locale.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `The language code, or the empty string if none is defined.`]
+			]
+		]],
+		[/* method */ 'getScript()', [
+			[/* method description */
+				[/* text */ 't', `Returns the script for this locale, which should
+ either be the empty string or an ISO 15924 4-letter script
+ code. The first letter is uppercase and the rest are
+ lowercase, for example, 'Latn', 'Cyrl'.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `The script code, or the empty string if none is defined.`]
+			]
+		]],
+		[/* method */ 'getUnicodeLocaleType(java.lang.String)', [
+			[/* method description */
+				[/* text */ 't', `Returns the Unicode locale type associated with the specified Unicode locale key
+ for this locale. Returns the empty string for keys that are defined with no type.
+ Returns null if the key is not defined. Keys are case-insensitive. The key must
+ be two alphanumeric characters ([0-9a-zA-Z]), or an IllegalArgumentException is
+ thrown.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'key', [/* parameter description */
+					[/* text */ 't', `the Unicode locale key`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
+					[/* text */ 't', `if the key is not well-formed`]
+				]],
+				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
+					[/* text */ 't', `if `],
+					[/* inline code block */ 'i', `key`],
+					[/* text */ 't', ` is null`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `The Unicode locale type associated with the key, or null if the
+ locale does not define the key.`]
+			]
+		]],
+		[/* method */ 'getVariant()', [
+			[/* method description */
+				[/* text */ 't', `Returns the variant code for this locale.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `The variant code, or the empty string if none is defined.`]
+			]
+		]],
+		[/* method */ 'toLanguageTag()', [
+			[/* method description */
+				[/* text */ 't', `Returns a well-formed IETF BCP 47 language tag representing
+ this locale.
+
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', `If this `],
+					[/* inline code block */ 'i', `Locale`],
+					[/* text */ 't', ` has a language, country, or
+ variant that does not satisfy the IETF BCP 47 language tag
+ syntax requirements, this method handles these fields as
+ described below:
+
+ `]
+				]],
+				[/* block */ 'b', [
+					[/* text */ 't', `Language:`],
+					[/* text */ 't', ` If language is empty, or not `],
+					[/* text */ 't', `well-formed`],
+					[/* text */ 't', ` (for example "a" or
+ "e2"), it will be emitted as "und" (Undetermined).
+
+ `]
+				]],
+				[/* block */ 'b', [
+					[/* text */ 't', `Country:`],
+					[/* text */ 't', ` If country is not `],
+					[/* text */ 't', `well-formed`],
+					[/* text */ 't', ` (for example "12" or "USA"),
+ it will be omitted.
+
+ `]
+				]],
+				[/* block */ 'b', [
+					[/* text */ 't', `Variant:`],
+					[/* text */ 't', ` If variant `],
+					[/* text */ 't', `is`],
+					[/* text */ 't', `well-formed`],
+					[/* text */ 't', `, each sub-segment
+ (delimited by '-' or '_') is emitted as a subtag.  Otherwise:
+ `]
+				]],
+				[/* list */ 'l', [
+					[/* block */ 'b', [
+						[/* text */ 't', `if all sub-segments match `],
+						[/* inline code block */ 'i', `[0-9a-zA-Z]{1,8}`],
+						[/* text */ 't', `
+ (for example "WIN" or "Oracle_JDK_Standard_Edition"), the first
+ ill-formed sub-segment and all following will be appended to
+ the private use subtag.  The first appended subtag will be
+ "lvariant", followed by the sub-segments in order, separated by
+ hyphen. For example, "x-lvariant-WIN",
+ "Oracle-x-lvariant-JDK-Standard-Edition".
+
+ `]
+					]],
+					[/* block */ 'b', [
+						[/* text */ 't', `if any sub-segment does not match
+ `],
+						[/* inline code block */ 'i', `[0-9a-zA-Z]{1,8}`],
+						[/* text */ 't', `, the variant will be truncated
+ and the problematic sub-segment and all following sub-segments
+ will be omitted.  If the remainder is non-empty, it will be
+ emitted as a private use subtag as above (even if the remainder
+ turns out to be well-formed).  For example,
+ "Solaris_isjustthecoolestthing" is emitted as
+ "x-lvariant-Solaris", not as "solaris".`]
+					]]
+				]],
+				[/* block */ 'b', ''],
+				[/* block */ 'b', `Special Conversions:`],
+				[/* list */ 'l', [
+					[/* block */ 'b', `Deprecated ISO language codes "iw", "ji", and "in" are
+ converted to "he", "yi", and "id", respectively.
+
+ `],
+					[/* block */ 'b', `A locale with language "no", country "NO", and variant
+ "NY", representing Norwegian Nynorsk (Norway), is converted
+ to a language tag "nn-NO".`]
+				]],
+				[/* block */ 'b', ''],
+				[/* block */ 'b', `Note:`],
+				[/* code block */ 'c', `   new Locale("xx", "YY").toLanguageTag();`],
+				[/* text */ 't', `
+
+ will return "xx-YY", but the language subtag "xx" and the
+ region subtag "YY" are invalid because they are not registered
+ in the IANA Language Subtag Registry.`],
+				[/* block */ 'b', '']
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `a BCP47 language tag representing the locale`]
+			]
+		]],
+		[/* method */ 'stripExtensions()', [
+			[/* method description */
+				[/* text */ 't', `Returns a copy of this `],
 				[/* inline code block */ 'i', `Locale`],
-				[/* text */ 't', ` instance for the best-matching language
- tag using the lookup mechanism defined in RFC 4647.`]
+				[/* text */ 't', ` with no `],
+				[/* text */ 't', `extensions`],
+				[/* text */ 't', `. If this `],
+				[/* inline code block */ 'i', `Locale`],
+				[/* text */ 't', ` has no extensions, this `],
+				[/* inline code block */ 'i', `Locale`],
+				[/* text */ 't', `
+ is returned.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `a copy of this `],
+				[/* inline code block */ 'i', `Locale`],
+				[/* text */ 't', ` with no extensions, or `],
+				[/* inline code block */ 'i', `this`],
+				[/* text */ 't', `
+         if `],
+				[/* inline code block */ 'i', `this`],
+				[/* text */ 't', ` has no extensions`]
+			]
+		]],
+		[/* method */ 'getExtensionKeys()', [
+			[/* method description */
+				[/* text */ 't', `Returns the set of extension keys associated with this locale, or the
+ empty set if it has no extensions. The returned set is unmodifiable.
+ The keys will all be lower-case.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `The set of extension keys, or the empty set if this locale has
+ no extensions.`]
+			]
+		]],
+		[/* method */ 'getUnicodeLocaleAttributes()', [
+			[/* method description */
+				[/* text */ 't', `Returns the set of unicode locale attributes associated with
+ this locale, or the empty set if it has no attributes. The
+ returned set is unmodifiable.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `The set of attributes.`]
+			]
+		]],
+		[/* method */ 'getUnicodeLocaleKeys()', [
+			[/* method description */
+				[/* text */ 't', `Returns the set of Unicode locale keys defined by this locale, or the empty set if
+ this locale has none.  The returned set is immutable.  Keys are all lower case.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `The set of Unicode locale keys, or the empty set if this locale has
+ no Unicode locale keywords.`]
+			]
+		]],
+		[/* method */ 'lookupTag(java.util.List,java.util.Collection)', [
+			[/* method description */
+				[/* text */ 't', `Returns the best-matching language tag using the lookup mechanism
+ defined in RFC 4647.
+
+ This lookup operation on the given `],
+				[/* inline code block */ 'i', `tags`],
+				[/* text */ 't', ` ensures that the
+ first matching tag with preserved case is returned.`]
 			],
 			[/* parameters */
 				[/* parameter */ 'priorityList', [/* parameter description */
 					[/* text */ 't', `user's Language Priority List in which each language
      tag is sorted in descending order based on priority or weight`]
 				]],
-				[/* parameter */ 'locales', [/* parameter description */
-					[/* text */ 't', ``],
-					[/* inline code block */ 'i', `Locale`],
-					[/* text */ 't', ` instances used for matching`]
+				[/* parameter */ 'tags', [/* parameter description */
+					[/* text */ 't', `language tangs used for matching`]
 				]]
 			],
 			[/* throws */
@@ -1155,12 +1727,201 @@ DocsCollector.collect('java.util.Locale', [
 				]]
 			],
 			[/* return description */
-				[/* text */ 't', `the best matching `],
-				[/* inline code block */ 'i', `Locale`],
-				[/* text */ 't', ` instance chosen based on
-     priority or weight, or `],
+				[/* text */ 't', `the best matching language tag chosen based on priority or
+     weight, or `],
 				[/* inline code block */ 'i', `null`],
 				[/* text */ 't', ` if nothing matches.`]
+			]
+		]],
+		[/* method */ 'getISOCountries()', [
+			[/* method description */
+				[/* text */ 't', `Returns a list of all 2-letter country codes defined in ISO 3166.
+ Can be used to create Locales.
+ This method is equivalent to `],
+				[/* reference */ 'r', `#getISOCountries(java.util.Locale.IsoCountryCode)`, `getISOCountries(Locale.IsoCountryCode type)`],
+				[/* text */ 't', `
+ with `],
+				[/* inline code block */ 'i', `type`],
+				[/* reference */ 'r', `.Locale.IsoCountryCode#PART1_ALPHA2`],
+				[/* text */ 't', `.
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', `Note:`],
+					[/* text */ 't', ` The `],
+					[/* inline code block */ 'i', `Locale`],
+					[/* text */ 't', ` class also supports other codes for
+ country (region), such as 3-letter numeric UN M.49 area codes.
+ Therefore, the list returned by this method does not contain ALL valid
+ codes that can be used to create Locales.
+ `]
+				]],
+				[/* block */ 'b', [
+					[/* text */ 't', `
+ Note that this method does not return obsolete 2-letter country codes.
+ ISO3166-3 codes which designate country codes for those obsolete codes,
+ can be retrieved from `],
+					[/* reference */ 'r', `#getISOCountries(java.util.Locale.IsoCountryCode)`, `getISOCountries(Locale.IsoCountryCode type)`],
+					[/* text */ 't', ` with
+ `],
+					[/* inline code block */ 'i', `type`],
+					[/* reference */ 'r', `.Locale.IsoCountryCode#PART3`],
+					[/* text */ 't', `.`]
+				]]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `An array of ISO 3166 two-letter country codes.`]
+			]
+		]],
+		[/* method */ 'getISOLanguages()', [
+			[/* method description */
+				[/* text */ 't', `Returns a list of all 2-letter language codes defined in ISO 639.
+ Can be used to create Locales.
+ `],
+				[/* block */ 'b', `Note:`],
+				[/* list */ 'l', [
+					[/* block */ 'b', `ISO 639 is not a stable standard— some languages' codes have changed.
+ The list this function returns includes both the new and the old codes for the
+ languages whose codes have changed.
+ `],
+					[/* block */ 'b', [
+						[/* text */ 't', `The `],
+						[/* inline code block */ 'i', `Locale`],
+						[/* text */ 't', ` class also supports language codes up to
+ 8 characters in length.  Therefore, the list returned by this method does
+ not contain ALL valid codes that can be used to create Locales.
+ `]
+					]]
+				]],
+				[/* block */ 'b', '']
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `An array of ISO 639 two-letter language codes.`]
+			]
+		]],
+		[/* method */ 'filterTags(java.util.List,java.util.Collection)', [
+			[/* method description */
+				[/* text */ 't', `Returns a list of matching languages tags using the basic filtering
+ mechanism defined in RFC 4647. This is equivalent to
+ `],
+				[/* reference */ 'r', `#filterTags(java.util.List,java.util.Collection,java.util.Locale.FilteringMode)`, `filterTags(List, Collection, FilteringMode)`],
+				[/* text */ 't', ` when `],
+				[/* inline code block */ 'i', `mode`],
+				[/* text */ 't', `
+ is `],
+				[/* reference */ 'r', `.Locale.FilteringMode#AUTOSELECT_FILTERING`],
+				[/* text */ 't', `.
+
+ This filter operation on the given `],
+				[/* inline code block */ 'i', `tags`],
+				[/* text */ 't', ` ensures that only
+ unique matching tag(s) are returned with preserved case. In case of
+ duplicate matching tags with the case difference, the first matching
+ tag with preserved case is returned.
+ For example, "de-ch" is returned out of the duplicate matching tags
+ "de-ch" and "de-CH", if "de-ch" is checked first for matching in the
+ given `],
+				[/* inline code block */ 'i', `tags`],
+				[/* text */ 't', `. Note that if the given `],
+				[/* inline code block */ 'i', `tags`],
+				[/* text */ 't', ` is an unordered
+ `],
+				[/* inline code block */ 'i', `Collection`],
+				[/* text */ 't', `, the returned matching tag out of duplicate tags is
+ subject to change, depending on the implementation of the
+ `],
+				[/* inline code block */ 'i', `Collection`],
+				[/* text */ 't', `.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'priorityList', [/* parameter description */
+					[/* text */ 't', `user's Language Priority List in which each language
+     tag is sorted in descending order based on priority or weight`]
+				]],
+				[/* parameter */ 'tags', [/* parameter description */
+					[/* text */ 't', `language tags`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
+					[/* text */ 't', `if `],
+					[/* inline code block */ 'i', `priorityList`],
+					[/* text */ 't', ` or `],
+					[/* inline code block */ 'i', `tags`],
+					[/* text */ 't', ` is
+     `],
+					[/* inline code block */ 'i', `null`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `a list of matching language tags sorted in descending order
+     based on priority or weight, or an empty list if nothing matches.
+     The list is modifiable.`]
+			]
+		]],
+		[/* method */ 'filterTags(java.util.List,java.util.Collection,java.util.Locale.FilteringMode)', [
+			[/* method description */
+				[/* text */ 't', `Returns a list of matching languages tags using the basic filtering
+ mechanism defined in RFC 4647.
+
+ This filter operation on the given `],
+				[/* inline code block */ 'i', `tags`],
+				[/* text */ 't', ` ensures that only
+ unique matching tag(s) are returned with preserved case. In case of
+ duplicate matching tags with the case difference, the first matching
+ tag with preserved case is returned.
+ For example, "de-ch" is returned out of the duplicate matching tags
+ "de-ch" and "de-CH", if "de-ch" is checked first for matching in the
+ given `],
+				[/* inline code block */ 'i', `tags`],
+				[/* text */ 't', `. Note that if the given `],
+				[/* inline code block */ 'i', `tags`],
+				[/* text */ 't', ` is an unordered
+ `],
+				[/* inline code block */ 'i', `Collection`],
+				[/* text */ 't', `, the returned matching tag out of duplicate tags is
+ subject to change, depending on the implementation of the
+ `],
+				[/* inline code block */ 'i', `Collection`],
+				[/* text */ 't', `.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'priorityList', [/* parameter description */
+					[/* text */ 't', `user's Language Priority List in which each language
+     tag is sorted in descending order based on priority or weight`]
+				]],
+				[/* parameter */ 'tags', [/* parameter description */
+					[/* text */ 't', `language tags`]
+				]],
+				[/* parameter */ 'mode', [/* parameter description */
+					[/* text */ 't', `filtering mode`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
+					[/* text */ 't', `if `],
+					[/* inline code block */ 'i', `priorityList`],
+					[/* text */ 't', ` or `],
+					[/* inline code block */ 'i', `tags`],
+					[/* text */ 't', ` is
+     `],
+					[/* inline code block */ 'i', `null`]
+				]],
+				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
+					[/* text */ 't', `if one or more extended language ranges
+     are included in the given list when
+     `],
+					[/* reference */ 'r', `.Locale.FilteringMode#REJECT_EXTENDED_RANGES`],
+					[/* text */ 't', ` is specified`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `a list of matching language tags sorted in descending order
+     based on priority or weight, or an empty list if nothing matches.
+     The list is modifiable.`]
 			]
 		]],
 		[/* method */ 'filter(java.util.List,java.util.Collection)', [
@@ -1263,945 +2024,6 @@ DocsCollector.collect('java.util.Locale', [
 				[/* text */ 't', ` instances for matching language tags
      sorted in descending order based on priority or weight, or an empty
      list if nothing matches. The list is modifiable.`]
-			]
-		]],
-		[/* method */ 'getLanguage()', [
-			[/* method description */
-				[/* text */ 't', `Returns the language code of this Locale.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `The language code, or the empty string if none is defined.`]
-			]
-		]],
-		[/* method */ 'getScript()', [
-			[/* method description */
-				[/* text */ 't', `Returns the script for this locale, which should
- either be the empty string or an ISO 15924 4-letter script
- code. The first letter is uppercase and the rest are
- lowercase, for example, 'Latn', 'Cyrl'.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `The script code, or the empty string if none is defined.`]
-			]
-		]],
-		[/* method */ 'getVariant()', [
-			[/* method description */
-				[/* text */ 't', `Returns the variant code for this locale.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `The variant code, or the empty string if none is defined.`]
-			]
-		]],
-		[/* method */ 'getDisplayName(java.util.Locale)', [
-			[/* method description */
-				[/* text */ 't', `Returns a name for the locale that is appropriate for display
- to the user.  This will be the values returned by
- getDisplayLanguage(), getDisplayScript(),getDisplayCountry()
- getDisplayVariant(), and optional `],
-				[/* reference */ 'r', `.Locale#def_locale_extension`],
-				[/* text */ 't', ` assembled into a single string. The non-empty
- values are used in order, with the second and subsequent names in
- parentheses.  For example:
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', `
- language (script, country, variant(, extension)*)`],
-					[/* new line */ 'n'],
-					[/* text */ 't', `
- language (country(, extension)*)`],
-					[/* new line */ 'n'],
-					[/* text */ 't', `
- language (variant(, extension)*)`],
-					[/* new line */ 'n'],
-					[/* text */ 't', `
- script (country(, extension)*)`],
-					[/* new line */ 'n'],
-					[/* text */ 't', `
- country (extension)*`],
-					[/* new line */ 'n']
-				]],
-				[/* text */ 't', `
- depending on which fields are specified in the locale. The field
- separator in the above parentheses, denoted as a comma character, may
- be localized depending on the locale. If the language, script, country,
- and variant fields are all empty, this function returns the empty string.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'inLocale', [/* parameter description */
-					[/* text */ 't', `The locale for which to retrieve the display name.`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
-					[/* text */ 't', `if `],
-					[/* inline code block */ 'i', `inLocale`],
-					[/* text */ 't', ` is `],
-					[/* inline code block */ 'i', `null`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `The name of the locale appropriate to display.`]
-			]
-		]],
-		[/* method */ 'getDisplayName()', [
-			[/* method description */
-				[/* text */ 't', `Returns a name for the locale that is appropriate for display to the
- user. This will be the values returned by getDisplayLanguage(),
- getDisplayScript(), getDisplayCountry(), getDisplayVariant() and
- optional `],
-				[/* reference */ 'r', `.Locale#def_locale_extension`],
-				[/* text */ 't', `
- assembled into a single string. The non-empty values are used in order, with
- the second and subsequent names in parentheses.  For example:
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', `
- language (script, country, variant(, extension)*)`],
-					[/* new line */ 'n'],
-					[/* text */ 't', `
- language (country(, extension)*)`],
-					[/* new line */ 'n'],
-					[/* text */ 't', `
- language (variant(, extension)*)`],
-					[/* new line */ 'n'],
-					[/* text */ 't', `
- script (country(, extension)*)`],
-					[/* new line */ 'n'],
-					[/* text */ 't', `
- country (extension)*`],
-					[/* new line */ 'n']
-				]],
-				[/* text */ 't', `
- depending on which fields are specified in the locale. The field
- separator in the above parentheses, denoted as a comma character, may
- be localized depending on the locale. If the language, script, country,
- and variant fields are all empty, this function returns the empty string.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `The name of the locale appropriate to display.`]
-			]
-		]],
-		[/* method */ 'getAvailableLocales()', [
-			[/* method description */
-				[/* text */ 't', `Returns an array of all installed locales.
- The returned array represents the union of locales supported
- by the Java runtime environment and by installed
- `],
-				[/* reference */ 'r', `java.util.spi.LocaleServiceProvider`],
-				[/* text */ 't', `
- implementations.  It must contain at least a `],
-				[/* inline code block */ 'i', `Locale`],
-				[/* text */ 't', `
- instance equal to `],
-				[/* text */ 't', `Locale.US`],
-				[/* text */ 't', `.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `An array of installed locales.`]
-			]
-		]],
-		[/* method */ 'getCountry()', [
-			[/* method description */
-				[/* text */ 't', `Returns the country/region code for this locale, which should
- either be the empty string, an uppercase ISO 3166 2-letter code,
- or a UN M.49 3-digit code.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `The country/region code, or the empty string if none is defined.`]
-			]
-		]],
-		[/* method */ 'setDefault(java.util.Locale)', [
-			[/* method description */
-				[/* text */ 't', `Sets the default locale for this instance of the Java Virtual Machine.
- This does not affect the host locale.
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', `
- If there is a security manager, its `],
-					[/* inline code block */ 'i', `checkPermission`],
-					[/* text */ 't', `
- method is called with a `],
-					[/* inline code block */ 'i', `PropertyPermission("user.language", "write")`],
-					[/* text */ 't', `
- permission before the default locale is changed.
- `]
-				]],
-				[/* block */ 'b', `
- The Java Virtual Machine sets the default locale during startup
- based on the host environment. It is used by many locale-sensitive
- methods if no locale is explicitly specified.
- `],
-				[/* block */ 'b', `
- Since changing the default locale may affect many different areas
- of functionality, this method should only be used if the caller
- is prepared to reinitialize locale-sensitive code running
- within the same Java Virtual Machine.
- `],
-				[/* block */ 'b', `
- By setting the default locale with this method, all of the default
- locales for each Category are also set to the specified default locale.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'newLocale', [/* parameter description */
-					[/* text */ 't', `the new default locale`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.SecurityException', [/* throw description */
-					[/* text */ 't', `if a security manager exists and its
-        `],
-					[/* inline code block */ 'i', `checkPermission`],
-					[/* text */ 't', ` method doesn't allow the operation.`]
-				]],
-				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
-					[/* text */ 't', `if `],
-					[/* inline code block */ 'i', `newLocale`],
-					[/* text */ 't', ` is null`]
-				]]
-			],
-			/* return */ UDF
-		]],
-		[/* method */ 'setDefault(java.util.Locale.Category,java.util.Locale)', [
-			[/* method description */
-				[/* text */ 't', `Sets the default locale for the specified Category for this instance
- of the Java Virtual Machine. This does not affect the host locale.
- `],
-				[/* block */ 'b', `
- If there is a security manager, its checkPermission method is called
- with a PropertyPermission("user.language", "write") permission before
- the default locale is changed.
- `],
-				[/* block */ 'b', `
- The Java Virtual Machine sets the default locale during startup based
- on the host environment. It is used by many locale-sensitive methods
- if no locale is explicitly specified.
- `],
-				[/* block */ 'b', `
- Since changing the default locale may affect many different areas of
- functionality, this method should only be used if the caller is
- prepared to reinitialize locale-sensitive code running within the
- same Java Virtual Machine.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'category', [/* parameter description */
-					[/* text */ 't', `the specified category to set the default locale`]
-				]],
-				[/* parameter */ 'newLocale', [/* parameter description */
-					[/* text */ 't', `the new default locale`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.SecurityException', [/* throw description */
-					[/* text */ 't', `if a security manager exists and its
-     checkPermission method doesn't allow the operation.`]
-				]],
-				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
-					[/* text */ 't', `if category and/or newLocale is null`]
-				]]
-			],
-			/* return */ UDF
-		]],
-		[/* method */ 'hasExtensions()', [
-			[/* method description */
-				[/* text */ 't', `Returns `],
-				[/* inline code block */ 'i', `true`],
-				[/* text */ 't', ` if this `],
-				[/* inline code block */ 'i', `Locale`],
-				[/* text */ 't', ` has any `],
-				[/* text */ 't', `extensions`],
-				[/* text */ 't', `.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* inline code block */ 'i', `true`],
-				[/* text */ 't', ` if this `],
-				[/* inline code block */ 'i', `Locale`],
-				[/* text */ 't', ` has any extensions`]
-			]
-		]],
-		[/* method */ 'getUnicodeLocaleAttributes()', [
-			[/* method description */
-				[/* text */ 't', `Returns the set of unicode locale attributes associated with
- this locale, or the empty set if it has no attributes. The
- returned set is unmodifiable.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `The set of attributes.`]
-			]
-		]],
-		[/* method */ 'getUnicodeLocaleType(java.lang.String)', [
-			[/* method description */
-				[/* text */ 't', `Returns the Unicode locale type associated with the specified Unicode locale key
- for this locale. Returns the empty string for keys that are defined with no type.
- Returns null if the key is not defined. Keys are case-insensitive. The key must
- be two alphanumeric characters ([0-9a-zA-Z]), or an IllegalArgumentException is
- thrown.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'key', [/* parameter description */
-					[/* text */ 't', `the Unicode locale key`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
-					[/* text */ 't', `if the key is not well-formed`]
-				]],
-				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
-					[/* text */ 't', `if `],
-					[/* inline code block */ 'i', `key`],
-					[/* text */ 't', ` is null`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `The Unicode locale type associated with the key, or null if the
- locale does not define the key.`]
-			]
-		]],
-		[/* method */ 'getUnicodeLocaleKeys()', [
-			[/* method description */
-				[/* text */ 't', `Returns the set of Unicode locale keys defined by this locale, or the empty set if
- this locale has none.  The returned set is immutable.  Keys are all lower case.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `The set of Unicode locale keys, or the empty set if this locale has
- no Unicode locale keywords.`]
-			]
-		]],
-		[/* method */ 'getDisplayLanguage(java.util.Locale)', [
-			[/* method description */
-				[/* text */ 't', `Returns a name for the locale's language that is appropriate for display to the
- user.
- If possible, the name returned will be localized according to inLocale.
- For example, if the locale is fr_FR and inLocale
- is en_US, getDisplayLanguage() will return "French"; if the locale is en_US and
- inLocale is fr_FR, getDisplayLanguage() will return "anglais".
- If the name returned cannot be localized according to inLocale,
- (say, we don't have a Japanese name for Croatian),
- this function falls back on the English name, and finally
- on the ISO code as a last-resort value.  If the locale doesn't specify a language,
- this function returns the empty string.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'inLocale', [/* parameter description */
-					[/* text */ 't', `The locale for which to retrieve the display language.`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
-					[/* text */ 't', `if `],
-					[/* inline code block */ 'i', `inLocale`],
-					[/* text */ 't', ` is `],
-					[/* inline code block */ 'i', `null`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `The name of the display language appropriate to the given locale.`]
-			]
-		]],
-		[/* method */ 'getDisplayLanguage()', [
-			[/* method description */
-				[/* text */ 't', `Returns a name for the locale's language that is appropriate for display to the
- user.
- If possible, the name returned will be localized for the default
- `],
-				[/* reference */ 'r', `.Locale.Category#DISPLAY`],
-				[/* text */ 't', ` locale.
- For example, if the locale is fr_FR and the default
- `],
-				[/* reference */ 'r', `.Locale.Category#DISPLAY`],
-				[/* text */ 't', ` locale
- is en_US, getDisplayLanguage() will return "French"; if the locale is en_US and
- the default `],
-				[/* reference */ 'r', `.Locale.Category#DISPLAY`],
-				[/* text */ 't', ` locale is fr_FR,
- getDisplayLanguage() will return "anglais".
- If the name returned cannot be localized for the default
- `],
-				[/* reference */ 'r', `.Locale.Category#DISPLAY`],
-				[/* text */ 't', ` locale,
- (say, we don't have a Japanese name for Croatian),
- this function falls back on the English name, and uses the ISO code as a last-resort
- value.  If the locale doesn't specify a language, this function returns the empty string.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `The name of the display language.`]
-			]
-		]],
-		[/* method */ 'getDisplayScript()', [
-			[/* method description */
-				[/* text */ 't', `Returns a name for the locale's script that is appropriate for display to
- the user. If possible, the name will be localized for the default
- `],
-				[/* reference */ 'r', `.Locale.Category#DISPLAY`],
-				[/* text */ 't', ` locale.  Returns
- the empty string if this locale doesn't specify a script code.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the display name of the script code for the current default
-     `],
-				[/* reference */ 'r', `.Locale.Category#DISPLAY`],
-				[/* text */ 't', ` locale`]
-			]
-		]],
-		[/* method */ 'getDisplayScript(java.util.Locale)', [
-			[/* method description */
-				[/* text */ 't', `Returns a name for the locale's script that is appropriate
- for display to the user. If possible, the name will be
- localized for the given locale. Returns the empty string if
- this locale doesn't specify a script code.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'inLocale', [/* parameter description */
-					[/* text */ 't', `The locale for which to retrieve the display script.`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
-					[/* text */ 't', `if `],
-					[/* inline code block */ 'i', `inLocale`],
-					[/* text */ 't', ` is `],
-					[/* inline code block */ 'i', `null`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `the display name of the script code for the current default
- `],
-				[/* reference */ 'r', `.Locale.Category#DISPLAY`],
-				[/* text */ 't', ` locale`]
-			]
-		]],
-		[/* method */ 'getDisplayCountry()', [
-			[/* method description */
-				[/* text */ 't', `Returns a name for the locale's country that is appropriate for display to the
- user.
- If possible, the name returned will be localized for the default
- `],
-				[/* reference */ 'r', `.Locale.Category#DISPLAY`],
-				[/* text */ 't', ` locale.
- For example, if the locale is fr_FR and the default
- `],
-				[/* reference */ 'r', `.Locale.Category#DISPLAY`],
-				[/* text */ 't', ` locale
- is en_US, getDisplayCountry() will return "France"; if the locale is en_US and
- the default `],
-				[/* reference */ 'r', `.Locale.Category#DISPLAY`],
-				[/* text */ 't', ` locale is fr_FR,
- getDisplayCountry() will return "Etats-Unis".
- If the name returned cannot be localized for the default
- `],
-				[/* reference */ 'r', `.Locale.Category#DISPLAY`],
-				[/* text */ 't', ` locale,
- (say, we don't have a Japanese name for Croatia),
- this function falls back on the English name, and uses the ISO code as a last-resort
- value.  If the locale doesn't specify a country, this function returns the empty string.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `The name of the country appropriate to the locale.`]
-			]
-		]],
-		[/* method */ 'getDisplayCountry(java.util.Locale)', [
-			[/* method description */
-				[/* text */ 't', `Returns a name for the locale's country that is appropriate for display to the
- user.
- If possible, the name returned will be localized according to inLocale.
- For example, if the locale is fr_FR and inLocale
- is en_US, getDisplayCountry() will return "France"; if the locale is en_US and
- inLocale is fr_FR, getDisplayCountry() will return "Etats-Unis".
- If the name returned cannot be localized according to inLocale.
- (say, we don't have a Japanese name for Croatia),
- this function falls back on the English name, and finally
- on the ISO code as a last-resort value.  If the locale doesn't specify a country,
- this function returns the empty string.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'inLocale', [/* parameter description */
-					[/* text */ 't', `The locale for which to retrieve the display country.`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
-					[/* text */ 't', `if `],
-					[/* inline code block */ 'i', `inLocale`],
-					[/* text */ 't', ` is `],
-					[/* inline code block */ 'i', `null`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `The name of the country appropriate to the given locale.`]
-			]
-		]],
-		[/* method */ 'getDisplayVariant(java.util.Locale)', [
-			[/* method description */
-				[/* text */ 't', `Returns a name for the locale's variant code that is appropriate for display to the
- user.  If possible, the name will be localized for inLocale.  If the locale
- doesn't specify a variant code, this function returns the empty string.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'inLocale', [/* parameter description */
-					[/* text */ 't', `The locale for which to retrieve the display variant code.`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
-					[/* text */ 't', `if `],
-					[/* inline code block */ 'i', `inLocale`],
-					[/* text */ 't', ` is `],
-					[/* inline code block */ 'i', `null`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `The name of the display variant code appropriate to the given locale.`]
-			]
-		]],
-		[/* method */ 'getDisplayVariant()', [
-			[/* method description */
-				[/* text */ 't', `Returns a name for the locale's variant code that is appropriate for display to the
- user.  If possible, the name will be localized for the default
- `],
-				[/* reference */ 'r', `.Locale.Category#DISPLAY`],
-				[/* text */ 't', ` locale.  If the locale
- doesn't specify a variant code, this function returns the empty string.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `The name of the display variant code appropriate to the locale.`]
-			]
-		]],
-		[/* method */ 'filterTags(java.util.List,java.util.Collection,java.util.Locale.FilteringMode)', [
-			[/* method description */
-				[/* text */ 't', `Returns a list of matching languages tags using the basic filtering
- mechanism defined in RFC 4647.
-
- This filter operation on the given `],
-				[/* inline code block */ 'i', `tags`],
-				[/* text */ 't', ` ensures that only
- unique matching tag(s) are returned with preserved case. In case of
- duplicate matching tags with the case difference, the first matching
- tag with preserved case is returned.
- For example, "de-ch" is returned out of the duplicate matching tags
- "de-ch" and "de-CH", if "de-ch" is checked first for matching in the
- given `],
-				[/* inline code block */ 'i', `tags`],
-				[/* text */ 't', `. Note that if the given `],
-				[/* inline code block */ 'i', `tags`],
-				[/* text */ 't', ` is an unordered
- `],
-				[/* inline code block */ 'i', `Collection`],
-				[/* text */ 't', `, the returned matching tag out of duplicate tags is
- subject to change, depending on the implementation of the
- `],
-				[/* inline code block */ 'i', `Collection`],
-				[/* text */ 't', `.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'priorityList', [/* parameter description */
-					[/* text */ 't', `user's Language Priority List in which each language
-     tag is sorted in descending order based on priority or weight`]
-				]],
-				[/* parameter */ 'tags', [/* parameter description */
-					[/* text */ 't', `language tags`]
-				]],
-				[/* parameter */ 'mode', [/* parameter description */
-					[/* text */ 't', `filtering mode`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
-					[/* text */ 't', `if `],
-					[/* inline code block */ 'i', `priorityList`],
-					[/* text */ 't', ` or `],
-					[/* inline code block */ 'i', `tags`],
-					[/* text */ 't', ` is
-     `],
-					[/* inline code block */ 'i', `null`]
-				]],
-				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
-					[/* text */ 't', `if one or more extended language ranges
-     are included in the given list when
-     `],
-					[/* reference */ 'r', `.Locale.FilteringMode#REJECT_EXTENDED_RANGES`],
-					[/* text */ 't', ` is specified`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `a list of matching language tags sorted in descending order
-     based on priority or weight, or an empty list if nothing matches.
-     The list is modifiable.`]
-			]
-		]],
-		[/* method */ 'filterTags(java.util.List,java.util.Collection)', [
-			[/* method description */
-				[/* text */ 't', `Returns a list of matching languages tags using the basic filtering
- mechanism defined in RFC 4647. This is equivalent to
- `],
-				[/* reference */ 'r', `#filterTags(java.util.List,java.util.Collection,java.util.Locale.FilteringMode)`, `filterTags(List, Collection, FilteringMode)`],
-				[/* text */ 't', ` when `],
-				[/* inline code block */ 'i', `mode`],
-				[/* text */ 't', `
- is `],
-				[/* reference */ 'r', `.Locale.FilteringMode#AUTOSELECT_FILTERING`],
-				[/* text */ 't', `.
-
- This filter operation on the given `],
-				[/* inline code block */ 'i', `tags`],
-				[/* text */ 't', ` ensures that only
- unique matching tag(s) are returned with preserved case. In case of
- duplicate matching tags with the case difference, the first matching
- tag with preserved case is returned.
- For example, "de-ch" is returned out of the duplicate matching tags
- "de-ch" and "de-CH", if "de-ch" is checked first for matching in the
- given `],
-				[/* inline code block */ 'i', `tags`],
-				[/* text */ 't', `. Note that if the given `],
-				[/* inline code block */ 'i', `tags`],
-				[/* text */ 't', ` is an unordered
- `],
-				[/* inline code block */ 'i', `Collection`],
-				[/* text */ 't', `, the returned matching tag out of duplicate tags is
- subject to change, depending on the implementation of the
- `],
-				[/* inline code block */ 'i', `Collection`],
-				[/* text */ 't', `.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'priorityList', [/* parameter description */
-					[/* text */ 't', `user's Language Priority List in which each language
-     tag is sorted in descending order based on priority or weight`]
-				]],
-				[/* parameter */ 'tags', [/* parameter description */
-					[/* text */ 't', `language tags`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
-					[/* text */ 't', `if `],
-					[/* inline code block */ 'i', `priorityList`],
-					[/* text */ 't', ` or `],
-					[/* inline code block */ 'i', `tags`],
-					[/* text */ 't', ` is
-     `],
-					[/* inline code block */ 'i', `null`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `a list of matching language tags sorted in descending order
-     based on priority or weight, or an empty list if nothing matches.
-     The list is modifiable.`]
-			]
-		]],
-		[/* method */ 'lookupTag(java.util.List,java.util.Collection)', [
-			[/* method description */
-				[/* text */ 't', `Returns the best-matching language tag using the lookup mechanism
- defined in RFC 4647.
-
- This lookup operation on the given `],
-				[/* inline code block */ 'i', `tags`],
-				[/* text */ 't', ` ensures that the
- first matching tag with preserved case is returned.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'priorityList', [/* parameter description */
-					[/* text */ 't', `user's Language Priority List in which each language
-     tag is sorted in descending order based on priority or weight`]
-				]],
-				[/* parameter */ 'tags', [/* parameter description */
-					[/* text */ 't', `language tangs used for matching`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
-					[/* text */ 't', `if `],
-					[/* inline code block */ 'i', `priorityList`],
-					[/* text */ 't', ` or `],
-					[/* inline code block */ 'i', `tags`],
-					[/* text */ 't', ` is
-     `],
-					[/* inline code block */ 'i', `null`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `the best matching language tag chosen based on priority or
-     weight, or `],
-				[/* inline code block */ 'i', `null`],
-				[/* text */ 't', ` if nothing matches.`]
-			]
-		]],
-		[/* method */ 'getISOCountries(java.util.Locale.IsoCountryCode)', [
-			[/* method description */
-				[/* text */ 't', `Returns a `],
-				[/* inline code block */ 'i', `Set`],
-				[/* text */ 't', ` of ISO3166 country codes for the specified type.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'type', [/* parameter description */
-					[/* text */ 't', ``],
-					[/* reference */ 'r', `enum class in java.util.Locale.IsoCountryCode`],
-					[/* text */ 't', ` specified ISO code type.`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
-					[/* text */ 't', `if type is null`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `a `],
-				[/* inline code block */ 'i', `Set`],
-				[/* text */ 't', ` of ISO country codes for the specified type.`]
-			]
-		]],
-		[/* method */ 'getISOCountries()', [
-			[/* method description */
-				[/* text */ 't', `Returns a list of all 2-letter country codes defined in ISO 3166.
- Can be used to create Locales.
- This method is equivalent to `],
-				[/* reference */ 'r', `#getISOCountries(java.util.Locale.IsoCountryCode)`, `getISOCountries(Locale.IsoCountryCode type)`],
-				[/* text */ 't', `
- with `],
-				[/* inline code block */ 'i', `type`],
-				[/* reference */ 'r', `.Locale.IsoCountryCode#PART1_ALPHA2`],
-				[/* text */ 't', `.
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', `Note:`],
-					[/* text */ 't', ` The `],
-					[/* inline code block */ 'i', `Locale`],
-					[/* text */ 't', ` class also supports other codes for
- country (region), such as 3-letter numeric UN M.49 area codes.
- Therefore, the list returned by this method does not contain ALL valid
- codes that can be used to create Locales.
- `]
-				]],
-				[/* block */ 'b', [
-					[/* text */ 't', `
- Note that this method does not return obsolete 2-letter country codes.
- ISO3166-3 codes which designate country codes for those obsolete codes,
- can be retrieved from `],
-					[/* reference */ 'r', `#getISOCountries(java.util.Locale.IsoCountryCode)`, `getISOCountries(Locale.IsoCountryCode type)`],
-					[/* text */ 't', ` with
- `],
-					[/* inline code block */ 'i', `type`],
-					[/* reference */ 'r', `.Locale.IsoCountryCode#PART3`],
-					[/* text */ 't', `.`]
-				]]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `An array of ISO 3166 two-letter country codes.`]
-			]
-		]],
-		[/* method */ 'getISOLanguages()', [
-			[/* method description */
-				[/* text */ 't', `Returns a list of all 2-letter language codes defined in ISO 639.
- Can be used to create Locales.
- `],
-				[/* block */ 'b', `Note:`],
-				[/* list */ 'l', [
-					[/* block */ 'b', `ISO 639 is not a stable standard— some languages' codes have changed.
- The list this function returns includes both the new and the old codes for the
- languages whose codes have changed.
- `],
-					[/* block */ 'b', [
-						[/* text */ 't', `The `],
-						[/* inline code block */ 'i', `Locale`],
-						[/* text */ 't', ` class also supports language codes up to
- 8 characters in length.  Therefore, the list returned by this method does
- not contain ALL valid codes that can be used to create Locales.
- `]
-					]]
-				]],
-				[/* block */ 'b', '']
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `An array of ISO 639 two-letter language codes.`]
-			]
-		]],
-		[/* method */ 'stripExtensions()', [
-			[/* method description */
-				[/* text */ 't', `Returns a copy of this `],
-				[/* inline code block */ 'i', `Locale`],
-				[/* text */ 't', ` with no `],
-				[/* text */ 't', `extensions`],
-				[/* text */ 't', `. If this `],
-				[/* inline code block */ 'i', `Locale`],
-				[/* text */ 't', ` has no extensions, this `],
-				[/* inline code block */ 'i', `Locale`],
-				[/* text */ 't', `
- is returned.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `a copy of this `],
-				[/* inline code block */ 'i', `Locale`],
-				[/* text */ 't', ` with no extensions, or `],
-				[/* inline code block */ 'i', `this`],
-				[/* text */ 't', `
-         if `],
-				[/* inline code block */ 'i', `this`],
-				[/* text */ 't', ` has no extensions`]
-			]
-		]],
-		[/* method */ 'getExtension(char)', [
-			[/* method description */
-				[/* text */ 't', `Returns the extension (or private use) value associated with
- the specified key, or null if there is no extension
- associated with the key. To be well-formed, the key must be one
- of `],
-				[/* inline code block */ 'i', `[0-9A-Za-z]`],
-				[/* text */ 't', `. Keys are case-insensitive, so
- for example 'z' and 'Z' represent the same extension.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'key', [/* parameter description */
-					[/* text */ 't', `the extension key`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
-					[/* text */ 't', `if key is not well-formed`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `The extension, or null if this locale defines no
- extension for the specified key.`]
-			]
-		]],
-		[/* method */ 'getExtensionKeys()', [
-			[/* method description */
-				[/* text */ 't', `Returns the set of extension keys associated with this locale, or the
- empty set if it has no extensions. The returned set is unmodifiable.
- The keys will all be lower-case.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `The set of extension keys, or the empty set if this locale has
- no extensions.`]
-			]
-		]],
-		[/* method */ 'toLanguageTag()', [
-			[/* method description */
-				[/* text */ 't', `Returns a well-formed IETF BCP 47 language tag representing
- this locale.
-
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', `If this `],
-					[/* inline code block */ 'i', `Locale`],
-					[/* text */ 't', ` has a language, country, or
- variant that does not satisfy the IETF BCP 47 language tag
- syntax requirements, this method handles these fields as
- described below:
-
- `]
-				]],
-				[/* block */ 'b', [
-					[/* text */ 't', `Language:`],
-					[/* text */ 't', ` If language is empty, or not `],
-					[/* text */ 't', `well-formed`],
-					[/* text */ 't', ` (for example "a" or
- "e2"), it will be emitted as "und" (Undetermined).
-
- `]
-				]],
-				[/* block */ 'b', [
-					[/* text */ 't', `Country:`],
-					[/* text */ 't', ` If country is not `],
-					[/* text */ 't', `well-formed`],
-					[/* text */ 't', ` (for example "12" or "USA"),
- it will be omitted.
-
- `]
-				]],
-				[/* block */ 'b', [
-					[/* text */ 't', `Variant:`],
-					[/* text */ 't', ` If variant `],
-					[/* text */ 't', `is`],
-					[/* text */ 't', `well-formed`],
-					[/* text */ 't', `, each sub-segment
- (delimited by '-' or '_') is emitted as a subtag.  Otherwise:
- `]
-				]],
-				[/* list */ 'l', [
-					[/* block */ 'b', [
-						[/* text */ 't', `if all sub-segments match `],
-						[/* inline code block */ 'i', `[0-9a-zA-Z]{1,8}`],
-						[/* text */ 't', `
- (for example "WIN" or "Oracle_JDK_Standard_Edition"), the first
- ill-formed sub-segment and all following will be appended to
- the private use subtag.  The first appended subtag will be
- "lvariant", followed by the sub-segments in order, separated by
- hyphen. For example, "x-lvariant-WIN",
- "Oracle-x-lvariant-JDK-Standard-Edition".
-
- `]
-					]],
-					[/* block */ 'b', [
-						[/* text */ 't', `if any sub-segment does not match
- `],
-						[/* inline code block */ 'i', `[0-9a-zA-Z]{1,8}`],
-						[/* text */ 't', `, the variant will be truncated
- and the problematic sub-segment and all following sub-segments
- will be omitted.  If the remainder is non-empty, it will be
- emitted as a private use subtag as above (even if the remainder
- turns out to be well-formed).  For example,
- "Solaris_isjustthecoolestthing" is emitted as
- "x-lvariant-Solaris", not as "solaris".`]
-					]]
-				]],
-				[/* block */ 'b', ''],
-				[/* block */ 'b', `Special Conversions:`],
-				[/* list */ 'l', [
-					[/* block */ 'b', `Deprecated ISO language codes "iw", "ji", and "in" are
- converted to "he", "yi", and "id", respectively.
-
- `],
-					[/* block */ 'b', `A locale with language "no", country "NO", and variant
- "NY", representing Norwegian Nynorsk (Norway), is converted
- to a language tag "nn-NO".`]
-				]],
-				[/* block */ 'b', ''],
-				[/* block */ 'b', `Note:`],
-				[/* code block */ 'c', `   new Locale("xx", "YY").toLanguageTag();`],
-				[/* text */ 't', `
-
- will return "xx-YY", but the language subtag "xx" and the
- region subtag "YY" are invalid because they are not registered
- in the IANA Language Subtag Registry.`],
-				[/* block */ 'b', '']
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `a BCP47 language tag representing the locale`]
 			]
 		]],
 		[/* method */ 'forLanguageTag(java.lang.String)', [
@@ -2569,49 +2391,227 @@ DocsCollector.collect('java.util.Locale', [
 				[/* text */ 't', `The locale that best represents the language tag.`]
 			]
 		]],
-		[/* method */ 'getISO3Language()', [
+		[/* method */ 'getDefault()', [
 			[/* method description */
-				[/* text */ 't', `Returns a three-letter abbreviation of this locale's language.
- If the language matches an ISO 639-1 two-letter code, the
- corresponding ISO 639-2/T three-letter lowercase code is
- returned.  The ISO 639-2 language codes can be found on-line,
- see "Codes for the Representation of Names of Languages Part 2:
- Alpha-3 Code".  If the locale specifies a three-letter
- language, the language is returned as is.  If the locale does
- not specify a language the empty string is returned.`]
-			],
-			/* parameters */ UDF,
-			[/* throws */
-				[/* throw */ 'java.util.MissingResourceException', [/* throw description */
-					[/* text */ 't', `Throws MissingResourceException if
- three-letter language abbreviation is not available for this locale.`]
+				[/* text */ 't', `Gets the current value of the default locale for this instance
+ of the Java Virtual Machine.
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', `
+ The Java Virtual Machine sets the default locale during startup
+ based on the host environment. It is used by many locale-sensitive
+ methods if no locale is explicitly specified.
+ It can be changed using the
+ `],
+					[/* reference */ 'r', `#setDefault(java.util.Locale)`, `setDefault`],
+					[/* text */ 't', ` method.`]
 				]]
 			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
 			[/* return description */
-				[/* text */ 't', `A three-letter abbreviation of this locale's language.`]
+				[/* text */ 't', `the default locale for this instance of the Java Virtual Machine`]
 			]
 		]],
-		[/* method */ 'getISO3Country()', [
+		[/* method */ 'getDefault(java.util.Locale.Category)', [
 			[/* method description */
-				[/* text */ 't', `Returns a three-letter abbreviation for this locale's country.
- If the country matches an ISO 3166-1 alpha-2 code, the
- corresponding ISO 3166-1 alpha-3 uppercase code is returned.
- If the locale doesn't specify a country, this will be the empty
- string.
-
+				[/* text */ 't', `Gets the current value of the default locale for the specified Category
+ for this instance of the Java Virtual Machine.
  `],
-				[/* block */ 'b', `The ISO 3166-1 codes can be found on-line.`]
+				[/* block */ 'b', `
+ The Java Virtual Machine sets the default locale during startup based
+ on the host environment. It is used by many locale-sensitive methods
+ if no locale is explicitly specified. It can be changed using the
+ setDefault(Locale.Category, Locale) method.`]
 			],
-			/* parameters */ UDF,
+			[/* parameters */
+				[/* parameter */ 'category', [/* parameter description */
+					[/* text */ 't', `the specified category to get the default locale`]
+				]]
+			],
 			[/* throws */
-				[/* throw */ 'java.util.MissingResourceException', [/* throw description */
-					[/* text */ 't', `Throws MissingResourceException if the
- three-letter country abbreviation is not available for this locale.`]
+				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
+					[/* text */ 't', `if category is null`]
 				]]
 			],
 			[/* return description */
-				[/* text */ 't', `A three-letter abbreviation of this locale's country.`]
+				[/* text */ 't', `the default locale for the specified Category for this instance
+     of the Java Virtual Machine`]
 			]
+		]],
+		[/* method */ 'lookup(java.util.List,java.util.Collection)', [
+			[/* method description */
+				[/* text */ 't', `Returns a `],
+				[/* inline code block */ 'i', `Locale`],
+				[/* text */ 't', ` instance for the best-matching language
+ tag using the lookup mechanism defined in RFC 4647.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'priorityList', [/* parameter description */
+					[/* text */ 't', `user's Language Priority List in which each language
+     tag is sorted in descending order based on priority or weight`]
+				]],
+				[/* parameter */ 'locales', [/* parameter description */
+					[/* text */ 't', ``],
+					[/* inline code block */ 'i', `Locale`],
+					[/* text */ 't', ` instances used for matching`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
+					[/* text */ 't', `if `],
+					[/* inline code block */ 'i', `priorityList`],
+					[/* text */ 't', ` or `],
+					[/* inline code block */ 'i', `tags`],
+					[/* text */ 't', ` is
+     `],
+					[/* inline code block */ 'i', `null`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `the best matching `],
+				[/* inline code block */ 'i', `Locale`],
+				[/* text */ 't', ` instance chosen based on
+     priority or weight, or `],
+				[/* inline code block */ 'i', `null`],
+				[/* text */ 't', ` if nothing matches.`]
+			]
+		]],
+		[/* method */ 'getAvailableLocales()', [
+			[/* method description */
+				[/* text */ 't', `Returns an array of all installed locales.
+ The returned array represents the union of locales supported
+ by the Java runtime environment and by installed
+ `],
+				[/* reference */ 'r', `java.util.spi.LocaleServiceProvider`],
+				[/* text */ 't', `
+ implementations.  It must contain at least a `],
+				[/* inline code block */ 'i', `Locale`],
+				[/* text */ 't', `
+ instance equal to `],
+				[/* text */ 't', `Locale.US`],
+				[/* text */ 't', `.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `An array of installed locales.`]
+			]
+		]],
+		[/* method */ 'getISOCountries(java.util.Locale.IsoCountryCode)', [
+			[/* method description */
+				[/* text */ 't', `Returns a `],
+				[/* inline code block */ 'i', `Set`],
+				[/* text */ 't', ` of ISO3166 country codes for the specified type.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'type', [/* parameter description */
+					[/* text */ 't', ``],
+					[/* reference */ 'r', `enum class in java.util.Locale.IsoCountryCode`],
+					[/* text */ 't', ` specified ISO code type.`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
+					[/* text */ 't', `if type is null`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `a `],
+				[/* inline code block */ 'i', `Set`],
+				[/* text */ 't', ` of ISO country codes for the specified type.`]
+			]
+		]],
+		[/* method */ 'setDefault(java.util.Locale.Category,java.util.Locale)', [
+			[/* method description */
+				[/* text */ 't', `Sets the default locale for the specified Category for this instance
+ of the Java Virtual Machine. This does not affect the host locale.
+ `],
+				[/* block */ 'b', `
+ If there is a security manager, its checkPermission method is called
+ with a PropertyPermission("user.language", "write") permission before
+ the default locale is changed.
+ `],
+				[/* block */ 'b', `
+ The Java Virtual Machine sets the default locale during startup based
+ on the host environment. It is used by many locale-sensitive methods
+ if no locale is explicitly specified.
+ `],
+				[/* block */ 'b', `
+ Since changing the default locale may affect many different areas of
+ functionality, this method should only be used if the caller is
+ prepared to reinitialize locale-sensitive code running within the
+ same Java Virtual Machine.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'category', [/* parameter description */
+					[/* text */ 't', `the specified category to set the default locale`]
+				]],
+				[/* parameter */ 'newLocale', [/* parameter description */
+					[/* text */ 't', `the new default locale`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.lang.SecurityException', [/* throw description */
+					[/* text */ 't', `if a security manager exists and its
+     checkPermission method doesn't allow the operation.`]
+				]],
+				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
+					[/* text */ 't', `if category and/or newLocale is null`]
+				]]
+			],
+			/* return */ UDF
+		]],
+		[/* method */ 'setDefault(java.util.Locale)', [
+			[/* method description */
+				[/* text */ 't', `Sets the default locale for this instance of the Java Virtual Machine.
+ This does not affect the host locale.
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', `
+ If there is a security manager, its `],
+					[/* inline code block */ 'i', `checkPermission`],
+					[/* text */ 't', `
+ method is called with a `],
+					[/* inline code block */ 'i', `PropertyPermission("user.language", "write")`],
+					[/* text */ 't', `
+ permission before the default locale is changed.
+ `]
+				]],
+				[/* block */ 'b', `
+ The Java Virtual Machine sets the default locale during startup
+ based on the host environment. It is used by many locale-sensitive
+ methods if no locale is explicitly specified.
+ `],
+				[/* block */ 'b', `
+ Since changing the default locale may affect many different areas
+ of functionality, this method should only be used if the caller
+ is prepared to reinitialize locale-sensitive code running
+ within the same Java Virtual Machine.
+ `],
+				[/* block */ 'b', `
+ By setting the default locale with this method, all of the default
+ locales for each Category are also set to the specified default locale.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'newLocale', [/* parameter description */
+					[/* text */ 't', `the new default locale`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.lang.SecurityException', [/* throw description */
+					[/* text */ 't', `if a security manager exists and its
+        `],
+					[/* inline code block */ 'i', `checkPermission`],
+					[/* text */ 't', ` method doesn't allow the operation.`]
+				]],
+				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
+					[/* text */ 't', `if `],
+					[/* inline code block */ 'i', `newLocale`],
+					[/* text */ 't', ` is null`]
+				]]
+			],
+			/* return */ UDF
 		]]
 	],
 ]);

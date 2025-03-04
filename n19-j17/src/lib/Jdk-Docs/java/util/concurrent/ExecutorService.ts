@@ -160,82 +160,6 @@ DocsCollector.collect('java.util.concurrent.ExecutorService', [
 	/* fields */ UDF,
 	/* constructors */ UDF,
 	[/* methods */
-		[/* method */ 'shutdown()', [
-			[/* method description */
-				[/* text */ 't', `Initiates an orderly shutdown in which previously submitted
- tasks are executed, but no new tasks will be accepted.
- Invocation has no additional effect if already shut down.
-
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', `This method does not wait for previously submitted tasks to
- complete execution.  Use `],
-					[/* reference */ 'r', `#awaitTermination(long,java.util.concurrent.TimeUnit)`, `awaitTermination`],
-					[/* text */ 't', `
- to do that.`]
-				]]
-			],
-			/* parameters */ UDF,
-			[/* throws */
-				[/* throw */ 'java.lang.SecurityException', [/* throw description */
-					[/* text */ 't', `if a security manager exists and
-         shutting down this ExecutorService may manipulate
-         threads that the caller is not permitted to modify
-         because it does not hold `],
-					[/* reference */ 'r', `java.lang.RuntimePermission`],
-					[/* inline code block */ 'i', `("modifyThread")`],
-					[/* text */ 't', `,
-         or the security manager's `],
-					[/* inline code block */ 'i', `checkAccess`],
-					[/* text */ 't', ` method
-         denies access.`]
-				]]
-			],
-			/* return */ UDF
-		]],
-		[/* method */ 'isShutdown()', [
-			[/* method description */
-				[/* text */ 't', `Returns `],
-				[/* inline code block */ 'i', `true`],
-				[/* text */ 't', ` if this executor has been shut down.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* inline code block */ 'i', `true`],
-				[/* text */ 't', ` if this executor has been shut down`]
-			]
-		]],
-		[/* method */ 'submit(java.lang.Runnable)', [
-			[/* method description */
-				[/* text */ 't', `Submits a Runnable task for execution and returns a Future
- representing that task. The Future's `],
-				[/* inline code block */ 'i', `get`],
-				[/* text */ 't', ` method will
- return `],
-				[/* inline code block */ 'i', `null`],
-				[/* text */ 't', ` upon `],
-				[/* text */ 't', `successful`],
-				[/* text */ 't', ` completion.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'task', [/* parameter description */
-					[/* text */ 't', `the task to submit`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.util.concurrent.RejectedExecutionException', [/* throw description */
-					[/* text */ 't', `if the task cannot be
-         scheduled for execution`]
-				]],
-				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
-					[/* text */ 't', `if the task is null`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `a Future representing pending completion of the task`]
-			]
-		]],
 		[/* method */ 'submit(java.lang.Runnable,java.lang.Object)', [
 			[/* method description */
 				[/* text */ 't', `Submits a Runnable task for execution and returns a Future
@@ -313,6 +237,48 @@ DocsCollector.collect('java.util.concurrent.ExecutorService', [
 				[/* text */ 't', `a Future representing pending completion of the task`]
 			]
 		]],
+		[/* method */ 'invokeAll(java.util.Collection)', [
+			[/* method description */
+				[/* text */ 't', `Executes the given tasks, returning a list of Futures holding
+ their status and results when all complete.
+ `],
+				[/* reference */ 'r', `.Future#isDone()`],
+				[/* text */ 't', ` is `],
+				[/* inline code block */ 'i', `true`],
+				[/* text */ 't', ` for each
+ element of the returned list.
+ Note that a `],
+				[/* text */ 't', `completed`],
+				[/* text */ 't', ` task could have
+ terminated either normally or by throwing an exception.
+ The results of this method are undefined if the given
+ collection is modified while this operation is in progress.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'tasks', [/* parameter description */
+					[/* text */ 't', `the collection of tasks`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.lang.InterruptedException', [/* throw description */
+					[/* text */ 't', `if interrupted while waiting, in
+         which case unfinished tasks are cancelled`]
+				]],
+				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
+					[/* text */ 't', `if tasks or any of its elements are `],
+					[/* inline code block */ 'i', `null`]
+				]],
+				[/* throw */ 'java.util.concurrent.RejectedExecutionException', [/* throw description */
+					[/* text */ 't', `if any task cannot be
+         scheduled for execution`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `a list of Futures representing the tasks, in the same
+         sequential order as produced by the iterator for the
+         given task list, each of which has completed`]
+			]
+		]],
 		[/* method */ 'invokeAll(java.util.Collection,long,java.util.concurrent.TimeUnit)', [
 			[/* method description */
 				[/* text */ 't', `Executes the given tasks, returning a list of Futures holding
@@ -364,143 +330,6 @@ DocsCollector.collect('java.util.concurrent.ExecutorService', [
          given task list. If the operation did not time out,
          each task will have completed. If it did time out, some
          of these tasks will not have completed.`]
-			]
-		]],
-		[/* method */ 'invokeAll(java.util.Collection)', [
-			[/* method description */
-				[/* text */ 't', `Executes the given tasks, returning a list of Futures holding
- their status and results when all complete.
- `],
-				[/* reference */ 'r', `.Future#isDone()`],
-				[/* text */ 't', ` is `],
-				[/* inline code block */ 'i', `true`],
-				[/* text */ 't', ` for each
- element of the returned list.
- Note that a `],
-				[/* text */ 't', `completed`],
-				[/* text */ 't', ` task could have
- terminated either normally or by throwing an exception.
- The results of this method are undefined if the given
- collection is modified while this operation is in progress.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'tasks', [/* parameter description */
-					[/* text */ 't', `the collection of tasks`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.InterruptedException', [/* throw description */
-					[/* text */ 't', `if interrupted while waiting, in
-         which case unfinished tasks are cancelled`]
-				]],
-				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
-					[/* text */ 't', `if tasks or any of its elements are `],
-					[/* inline code block */ 'i', `null`]
-				]],
-				[/* throw */ 'java.util.concurrent.RejectedExecutionException', [/* throw description */
-					[/* text */ 't', `if any task cannot be
-         scheduled for execution`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `a list of Futures representing the tasks, in the same
-         sequential order as produced by the iterator for the
-         given task list, each of which has completed`]
-			]
-		]],
-		[/* method */ 'shutdownNow()', [
-			[/* method description */
-				[/* text */ 't', `Attempts to stop all actively executing tasks, halts the
- processing of waiting tasks, and returns a list of the tasks
- that were awaiting execution.
-
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', `This method does not wait for actively executing tasks to
- terminate.  Use `],
-					[/* reference */ 'r', `#awaitTermination(long,java.util.concurrent.TimeUnit)`, `awaitTermination`],
-					[/* text */ 't', ` to
- do that.
-
- `]
-				]],
-				[/* block */ 'b', [
-					[/* text */ 't', `There are no guarantees beyond best-effort attempts to stop
- processing actively executing tasks.  For example, typical
- implementations will cancel via `],
-					[/* reference */ 'r', `java.util.Thread#interrupt()`],
-					[/* text */ 't', `, so any
- task that fails to respond to interrupts may never terminate.`]
-				]]
-			],
-			/* parameters */ UDF,
-			[/* throws */
-				[/* throw */ 'java.lang.SecurityException', [/* throw description */
-					[/* text */ 't', `if a security manager exists and
-         shutting down this ExecutorService may manipulate
-         threads that the caller is not permitted to modify
-         because it does not hold `],
-					[/* reference */ 'r', `java.lang.RuntimePermission`],
-					[/* inline code block */ 'i', `("modifyThread")`],
-					[/* text */ 't', `,
-         or the security manager's `],
-					[/* inline code block */ 'i', `checkAccess`],
-					[/* text */ 't', ` method
-         denies access.`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `list of tasks that never commenced execution`]
-			]
-		]],
-		[/* method */ 'isTerminated()', [
-			[/* method description */
-				[/* text */ 't', `Returns `],
-				[/* inline code block */ 'i', `true`],
-				[/* text */ 't', ` if all tasks have completed following shut down.
- Note that `],
-				[/* inline code block */ 'i', `isTerminated`],
-				[/* text */ 't', ` is never `],
-				[/* inline code block */ 'i', `true`],
-				[/* text */ 't', ` unless
- either `],
-				[/* inline code block */ 'i', `shutdown`],
-				[/* text */ 't', ` or `],
-				[/* inline code block */ 'i', `shutdownNow`],
-				[/* text */ 't', ` was called first.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* inline code block */ 'i', `true`],
-				[/* text */ 't', ` if all tasks have completed following shut down`]
-			]
-		]],
-		[/* method */ 'awaitTermination(long,java.util.concurrent.TimeUnit)', [
-			[/* method description */
-				[/* text */ 't', `Blocks until all tasks have completed execution after a shutdown
- request, or the timeout occurs, or the current thread is
- interrupted, whichever happens first.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'timeout', [/* parameter description */
-					[/* text */ 't', `the maximum time to wait`]
-				]],
-				[/* parameter */ 'unit', [/* parameter description */
-					[/* text */ 't', `the time unit of the timeout argument`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.InterruptedException', [/* throw description */
-					[/* text */ 't', `if interrupted while waiting`]
-				]]
-			],
-			[/* return description */
-				[/* inline code block */ 'i', `true`],
-				[/* text */ 't', ` if this executor terminated and
-         `],
-				[/* inline code block */ 'i', `false`],
-				[/* text */ 't', ` if the timeout elapsed before termination`]
 			]
 		]],
 		[/* method */ 'invokeAny(java.util.Collection)', [
@@ -586,6 +415,177 @@ DocsCollector.collect('java.util.concurrent.ExecutorService', [
 			[/* return description */
 				[/* text */ 't', `the result returned by one of the tasks`]
 			]
+		]],
+		[/* method */ 'awaitTermination(long,java.util.concurrent.TimeUnit)', [
+			[/* method description */
+				[/* text */ 't', `Blocks until all tasks have completed execution after a shutdown
+ request, or the timeout occurs, or the current thread is
+ interrupted, whichever happens first.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'timeout', [/* parameter description */
+					[/* text */ 't', `the maximum time to wait`]
+				]],
+				[/* parameter */ 'unit', [/* parameter description */
+					[/* text */ 't', `the time unit of the timeout argument`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.lang.InterruptedException', [/* throw description */
+					[/* text */ 't', `if interrupted while waiting`]
+				]]
+			],
+			[/* return description */
+				[/* inline code block */ 'i', `true`],
+				[/* text */ 't', ` if this executor terminated and
+         `],
+				[/* inline code block */ 'i', `false`],
+				[/* text */ 't', ` if the timeout elapsed before termination`]
+			]
+		]],
+		[/* method */ 'isShutdown()', [
+			[/* method description */
+				[/* text */ 't', `Returns `],
+				[/* inline code block */ 'i', `true`],
+				[/* text */ 't', ` if this executor has been shut down.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* inline code block */ 'i', `true`],
+				[/* text */ 't', ` if this executor has been shut down`]
+			]
+		]],
+		[/* method */ 'isTerminated()', [
+			[/* method description */
+				[/* text */ 't', `Returns `],
+				[/* inline code block */ 'i', `true`],
+				[/* text */ 't', ` if all tasks have completed following shut down.
+ Note that `],
+				[/* inline code block */ 'i', `isTerminated`],
+				[/* text */ 't', ` is never `],
+				[/* inline code block */ 'i', `true`],
+				[/* text */ 't', ` unless
+ either `],
+				[/* inline code block */ 'i', `shutdown`],
+				[/* text */ 't', ` or `],
+				[/* inline code block */ 'i', `shutdownNow`],
+				[/* text */ 't', ` was called first.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* inline code block */ 'i', `true`],
+				[/* text */ 't', ` if all tasks have completed following shut down`]
+			]
+		]],
+		[/* method */ 'submit(java.lang.Runnable)', [
+			[/* method description */
+				[/* text */ 't', `Submits a Runnable task for execution and returns a Future
+ representing that task. The Future's `],
+				[/* inline code block */ 'i', `get`],
+				[/* text */ 't', ` method will
+ return `],
+				[/* inline code block */ 'i', `null`],
+				[/* text */ 't', ` upon `],
+				[/* text */ 't', `successful`],
+				[/* text */ 't', ` completion.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'task', [/* parameter description */
+					[/* text */ 't', `the task to submit`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.util.concurrent.RejectedExecutionException', [/* throw description */
+					[/* text */ 't', `if the task cannot be
+         scheduled for execution`]
+				]],
+				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
+					[/* text */ 't', `if the task is null`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `a Future representing pending completion of the task`]
+			]
+		]],
+		[/* method */ 'shutdownNow()', [
+			[/* method description */
+				[/* text */ 't', `Attempts to stop all actively executing tasks, halts the
+ processing of waiting tasks, and returns a list of the tasks
+ that were awaiting execution.
+
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', `This method does not wait for actively executing tasks to
+ terminate.  Use `],
+					[/* reference */ 'r', `#awaitTermination(long,java.util.concurrent.TimeUnit)`, `awaitTermination`],
+					[/* text */ 't', ` to
+ do that.
+
+ `]
+				]],
+				[/* block */ 'b', [
+					[/* text */ 't', `There are no guarantees beyond best-effort attempts to stop
+ processing actively executing tasks.  For example, typical
+ implementations will cancel via `],
+					[/* reference */ 'r', `java.util.Thread#interrupt()`],
+					[/* text */ 't', `, so any
+ task that fails to respond to interrupts may never terminate.`]
+				]]
+			],
+			/* parameters */ UDF,
+			[/* throws */
+				[/* throw */ 'java.lang.SecurityException', [/* throw description */
+					[/* text */ 't', `if a security manager exists and
+         shutting down this ExecutorService may manipulate
+         threads that the caller is not permitted to modify
+         because it does not hold `],
+					[/* reference */ 'r', `java.lang.RuntimePermission`],
+					[/* inline code block */ 'i', `("modifyThread")`],
+					[/* text */ 't', `,
+         or the security manager's `],
+					[/* inline code block */ 'i', `checkAccess`],
+					[/* text */ 't', ` method
+         denies access.`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `list of tasks that never commenced execution`]
+			]
+		]],
+		[/* method */ 'shutdown()', [
+			[/* method description */
+				[/* text */ 't', `Initiates an orderly shutdown in which previously submitted
+ tasks are executed, but no new tasks will be accepted.
+ Invocation has no additional effect if already shut down.
+
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', `This method does not wait for previously submitted tasks to
+ complete execution.  Use `],
+					[/* reference */ 'r', `#awaitTermination(long,java.util.concurrent.TimeUnit)`, `awaitTermination`],
+					[/* text */ 't', `
+ to do that.`]
+				]]
+			],
+			/* parameters */ UDF,
+			[/* throws */
+				[/* throw */ 'java.lang.SecurityException', [/* throw description */
+					[/* text */ 't', `if a security manager exists and
+         shutting down this ExecutorService may manipulate
+         threads that the caller is not permitted to modify
+         because it does not hold `],
+					[/* reference */ 'r', `java.lang.RuntimePermission`],
+					[/* inline code block */ 'i', `("modifyThread")`],
+					[/* text */ 't', `,
+         or the security manager's `],
+					[/* inline code block */ 'i', `checkAccess`],
+					[/* text */ 't', ` method
+         denies access.`]
+				]]
+			],
+			/* return */ UDF
 		]]
 	],
 ]);

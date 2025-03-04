@@ -96,84 +96,6 @@ DocsCollector.collect('java.time.chrono.HijrahChronology', [
 	],
 	/* constructors */ UDF,
 	[/* methods */
-		[/* method */ 'getId()', [
-			[/* method description */
-				[/* text */ 't', `Gets the ID of the chronology.
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', `
- The ID uniquely identifies the `],
-					[/* inline code block */ 'i', `Chronology`],
-					[/* text */ 't', `. It can be used to
- lookup the `],
-					[/* inline code block */ 'i', `Chronology`],
-					[/* text */ 't', ` using `],
-					[/* reference */ 'r', `.Chronology#of(java.lang.String)`],
-					[/* text */ 't', `.`]
-				]]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the chronology ID, non-null`]
-			]
-		]],
-		[/* method */ 'range(java.time.temporal.ChronoField)', [
-			[/* method description */
-				[/* block */ 'b', [
-					[/* text */ 't', `Gets the range of valid values for the specified field.
- `],
-					[/* block */ 'b', [
-						[/* text */ 't', `
- All fields can be expressed as a `],
-						[/* inline code block */ 'i', `long`],
-						[/* text */ 't', ` integer.
- This method returns an object that describes the valid range for that value.
- `]
-					]],
-					[/* block */ 'b', `
- Note that the result only describes the minimum and maximum valid values
- and it is important not to read too much into them. For example, there
- could be values within the range that are invalid for the field.
- `],
-					[/* block */ 'b', `
- This method will return a result whether or not the chronology supports the field.`]
-				]]
-			],
-			[/* parameters */
-				[/* parameter */ 'field', [/* parameter description */
-					[/* text */ 't', `the field to get the range for, not null`]
-				]]
-			],
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the range of valid values for the field, not null`]
-			]
-		]],
-		[/* method */ 'getCalendarType()', [
-			[/* method description */
-				[/* text */ 't', `Gets the calendar type of the Islamic calendar.
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', `
- The calendar type is an identifier defined by the
- `],
-					[/* text */ 't', `Unicode Locale Data Markup Language (LDML)`],
-					[/* text */ 't', ` specification.
- It can be used to lookup the `],
-					[/* inline code block */ 'i', `Chronology`],
-					[/* text */ 't', ` using `],
-					[/* reference */ 'r', `.Chronology#of(java.lang.String)`],
-					[/* text */ 't', `.`]
-				]]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the calendar system type; non-null if the calendar has
-    a standard type, otherwise null`]
-			]
-		]],
 		[/* method */ 'isLeapYear(long)', [
 			[/* method description */
 				[/* block */ 'b', [
@@ -208,6 +130,251 @@ DocsCollector.collect('java.time.chrono.HijrahChronology', [
 			/* throws */ UDF,
 			[/* return description */
 				[/* text */ 't', `true if the year is a leap year`]
+			]
+		]],
+		[/* method */ 'prolepticYear(java.time.chrono.Era,int)', [
+			[/* method description */
+				[/* block */ 'b', [
+					[/* text */ 't', `Calculates the proleptic-year given the era and year-of-era.
+ `],
+					[/* block */ 'b', `
+ This combines the era and year-of-era into the single proleptic-year field.
+ `],
+					[/* block */ 'b', [
+						[/* text */ 't', `
+ If the chronology makes active use of eras, such as `],
+						[/* inline code block */ 'i', `JapaneseChronology`],
+						[/* text */ 't', `
+ then the year-of-era will be validated against the era.
+ For other chronologies, validation is optional.`]
+					]]
+				]]
+			],
+			[/* parameters */
+				[/* parameter */ 'era', [/* parameter description */
+					[/* text */ 't', `the era of the correct type for the chronology, not null`]
+				]],
+				[/* parameter */ 'yearOfEra', [/* parameter description */
+					[/* text */ 't', `the chronology year-of-era`]
+				]]
+			],
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the proleptic-year`]
+			]
+		]],
+		[/* method */ 'getCalendarType()', [
+			[/* method description */
+				[/* text */ 't', `Gets the calendar type of the Islamic calendar.
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', `
+ The calendar type is an identifier defined by the
+ `],
+					[/* text */ 't', `Unicode Locale Data Markup Language (LDML)`],
+					[/* text */ 't', ` specification.
+ It can be used to lookup the `],
+					[/* inline code block */ 'i', `Chronology`],
+					[/* text */ 't', ` using `],
+					[/* reference */ 'r', `.Chronology#of(java.lang.String)`],
+					[/* text */ 't', `.`]
+				]]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the calendar system type; non-null if the calendar has
+    a standard type, otherwise null`]
+			]
+		]],
+		[/* method */ 'getId()', [
+			[/* method description */
+				[/* text */ 't', `Gets the ID of the chronology.
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', `
+ The ID uniquely identifies the `],
+					[/* inline code block */ 'i', `Chronology`],
+					[/* text */ 't', `. It can be used to
+ lookup the `],
+					[/* inline code block */ 'i', `Chronology`],
+					[/* text */ 't', ` using `],
+					[/* reference */ 'r', `.Chronology#of(java.lang.String)`],
+					[/* text */ 't', `.`]
+				]]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the chronology ID, non-null`]
+			]
+		]],
+		[/* method */ 'localDateTime(java.time.temporal.TemporalAccessor)', [
+			[/* method description */
+				[/* block */ 'b', [
+					[/* text */ 't', `Obtains a local date-time in this chronology from another temporal object.
+ `],
+					[/* block */ 'b', [
+						[/* text */ 't', `
+ This obtains a date-time in this chronology based on the specified temporal.
+ A `],
+						[/* inline code block */ 'i', `TemporalAccessor`],
+						[/* text */ 't', ` represents an arbitrary set of date and time information,
+ which this factory converts to an instance of `],
+						[/* inline code block */ 'i', `ChronoLocalDateTime`],
+						[/* text */ 't', `.
+ `]
+					]],
+					[/* block */ 'b', [
+						[/* text */ 't', `
+ The conversion extracts and combines the `],
+						[/* inline code block */ 'i', `ChronoLocalDate`],
+						[/* text */ 't', ` and the
+ `],
+						[/* inline code block */ 'i', `LocalTime`],
+						[/* text */ 't', ` from the temporal object.
+ Implementations are permitted to perform optimizations such as accessing
+ those fields that are equivalent to the relevant objects.
+ The result uses this chronology.
+ `]
+					]],
+					[/* block */ 'b', [
+						[/* text */ 't', `
+ This method matches the signature of the functional interface `],
+						[/* reference */ 'r', `java.time.temporal.TemporalQuery`],
+						[/* text */ 't', `
+ allowing it to be used as a query via method reference, `],
+						[/* inline code block */ 'i', `aChronology::localDateTime`],
+						[/* text */ 't', `.`]
+					]]
+				]]
+			],
+			[/* parameters */
+				[/* parameter */ 'temporal', [/* parameter description */
+					[/* text */ 't', `the temporal object to convert, not null`]
+				]]
+			],
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the local date-time in this chronology, not null`]
+			]
+		]],
+		[/* method */ 'zonedDateTime(java.time.Instant,java.time.ZoneId)', [
+			[/* method description */
+				[/* block */ 'b', [
+					[/* text */ 't', `Obtains a `],
+					[/* inline code block */ 'i', `ChronoZonedDateTime`],
+					[/* text */ 't', ` in this chronology from an `],
+					[/* inline code block */ 'i', `Instant`],
+					[/* text */ 't', `.
+ `],
+					[/* block */ 'b', `
+ This obtains a zoned date-time with the same instant as that specified.`]
+				]]
+			],
+			[/* parameters */
+				[/* parameter */ 'instant', [/* parameter description */
+					[/* text */ 't', `the instant to create the date-time from, not null`]
+				]],
+				[/* parameter */ 'zone', [/* parameter description */
+					[/* text */ 't', `the time-zone, not null`]
+				]]
+			],
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the zoned date-time, not null`]
+			]
+		]],
+		[/* method */ 'zonedDateTime(java.time.temporal.TemporalAccessor)', [
+			[/* method description */
+				[/* block */ 'b', [
+					[/* text */ 't', `Obtains a `],
+					[/* inline code block */ 'i', `ChronoZonedDateTime`],
+					[/* text */ 't', ` in this chronology from another temporal object.
+ `],
+					[/* block */ 'b', [
+						[/* text */ 't', `
+ This obtains a zoned date-time in this chronology based on the specified temporal.
+ A `],
+						[/* inline code block */ 'i', `TemporalAccessor`],
+						[/* text */ 't', ` represents an arbitrary set of date and time information,
+ which this factory converts to an instance of `],
+						[/* inline code block */ 'i', `ChronoZonedDateTime`],
+						[/* text */ 't', `.
+ `]
+					]],
+					[/* block */ 'b', [
+						[/* text */ 't', `
+ The conversion will first obtain a `],
+						[/* inline code block */ 'i', `ZoneId`],
+						[/* text */ 't', ` from the temporal object,
+ falling back to a `],
+						[/* inline code block */ 'i', `ZoneOffset`],
+						[/* text */ 't', ` if necessary. It will then try to obtain
+ an `],
+						[/* inline code block */ 'i', `Instant`],
+						[/* text */ 't', `, falling back to a `],
+						[/* inline code block */ 'i', `ChronoLocalDateTime`],
+						[/* text */ 't', ` if necessary.
+ The result will be either the combination of `],
+						[/* inline code block */ 'i', `ZoneId`],
+						[/* text */ 't', ` or `],
+						[/* inline code block */ 'i', `ZoneOffset`],
+						[/* text */ 't', `
+ with `],
+						[/* inline code block */ 'i', `Instant`],
+						[/* text */ 't', ` or `],
+						[/* inline code block */ 'i', `ChronoLocalDateTime`],
+						[/* text */ 't', `.
+ Implementations are permitted to perform optimizations such as accessing
+ those fields that are equivalent to the relevant objects.
+ The result uses this chronology.
+ `]
+					]],
+					[/* block */ 'b', [
+						[/* text */ 't', `
+ This method matches the signature of the functional interface `],
+						[/* reference */ 'r', `java.time.temporal.TemporalQuery`],
+						[/* text */ 't', `
+ allowing it to be used as a query via method reference, `],
+						[/* inline code block */ 'i', `aChronology::zonedDateTime`],
+						[/* text */ 't', `.`]
+					]]
+				]]
+			],
+			[/* parameters */
+				[/* parameter */ 'temporal', [/* parameter description */
+					[/* text */ 't', `the temporal object to convert, not null`]
+				]]
+			],
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the zoned date-time in this chronology, not null`]
+			]
+		]],
+		[/* method */ 'date(int,int,int)', [
+			[/* method description */
+				[/* text */ 't', `Obtains a local date in Hijrah calendar system from the
+ proleptic-year, month-of-year and day-of-month fields.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'prolepticYear', [/* parameter description */
+					[/* text */ 't', `the proleptic-year`]
+				]],
+				[/* parameter */ 'month', [/* parameter description */
+					[/* text */ 't', `the month-of-year`]
+				]],
+				[/* parameter */ 'dayOfMonth', [/* parameter description */
+					[/* text */ 't', `the day-of-month`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.time.DateTimeException', [/* throw description */
+					[/* text */ 't', `if unable to create the date`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `the Hijrah local date, not null`]
 			]
 		]],
 		[/* method */ 'date(java.time.chrono.Era,int,int,int)', [
@@ -289,31 +456,6 @@ DocsCollector.collect('java.time.chrono.HijrahChronology', [
 				[/* text */ 't', `the local date in this chronology, not null`]
 			]
 		]],
-		[/* method */ 'date(int,int,int)', [
-			[/* method description */
-				[/* text */ 't', `Obtains a local date in Hijrah calendar system from the
- proleptic-year, month-of-year and day-of-month fields.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'prolepticYear', [/* parameter description */
-					[/* text */ 't', `the proleptic-year`]
-				]],
-				[/* parameter */ 'month', [/* parameter description */
-					[/* text */ 't', `the month-of-year`]
-				]],
-				[/* parameter */ 'dayOfMonth', [/* parameter description */
-					[/* text */ 't', `the day-of-month`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.time.DateTimeException', [/* throw description */
-					[/* text */ 't', `if unable to create the date`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `the Hijrah local date, not null`]
-			]
-		]],
 		[/* method */ 'dateEpochDay(long)', [
 			[/* method description */
 				[/* text */ 't', `Obtains a local date in the Hijrah calendar system from the epoch-day.`]
@@ -326,91 +468,6 @@ DocsCollector.collect('java.time.chrono.HijrahChronology', [
 			[/* throws */
 				[/* throw */ 'java.time.DateTimeException', [/* throw description */
 					[/* text */ 't', `if unable to create the date`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `the Hijrah local date, not null`]
-			]
-		]],
-		[/* method */ 'prolepticYear(java.time.chrono.Era,int)', [
-			[/* method description */
-				[/* block */ 'b', [
-					[/* text */ 't', `Calculates the proleptic-year given the era and year-of-era.
- `],
-					[/* block */ 'b', `
- This combines the era and year-of-era into the single proleptic-year field.
- `],
-					[/* block */ 'b', [
-						[/* text */ 't', `
- If the chronology makes active use of eras, such as `],
-						[/* inline code block */ 'i', `JapaneseChronology`],
-						[/* text */ 't', `
- then the year-of-era will be validated against the era.
- For other chronologies, validation is optional.`]
-					]]
-				]]
-			],
-			[/* parameters */
-				[/* parameter */ 'era', [/* parameter description */
-					[/* text */ 't', `the era of the correct type for the chronology, not null`]
-				]],
-				[/* parameter */ 'yearOfEra', [/* parameter description */
-					[/* text */ 't', `the chronology year-of-era`]
-				]]
-			],
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the proleptic-year`]
-			]
-		]],
-		[/* method */ 'dateYearDay(java.time.chrono.Era,int,int)', [
-			[/* method description */
-				[/* text */ 't', `Obtains a local date in Hijrah calendar system from the
- era, year-of-era and day-of-year fields.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'era', [/* parameter description */
-					[/* text */ 't', `the Hijrah era, not null`]
-				]],
-				[/* parameter */ 'yearOfEra', [/* parameter description */
-					[/* text */ 't', `the year-of-era`]
-				]],
-				[/* parameter */ 'dayOfYear', [/* parameter description */
-					[/* text */ 't', `the day-of-year`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.time.DateTimeException', [/* throw description */
-					[/* text */ 't', `if unable to create the date`]
-				]],
-				[/* throw */ 'java.lang.ClassCastException', [/* throw description */
-					[/* text */ 't', `if the `],
-					[/* inline code block */ 'i', `era`],
-					[/* text */ 't', ` is not a `],
-					[/* inline code block */ 'i', `HijrahEra`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `the Hijrah local date, not null`]
-			]
-		]],
-		[/* method */ 'dateYearDay(int,int)', [
-			[/* method description */
-				[/* text */ 't', `Obtains a local date in Hijrah calendar system from the
- proleptic-year and day-of-year fields.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'prolepticYear', [/* parameter description */
-					[/* text */ 't', `the proleptic-year`]
-				]],
-				[/* parameter */ 'dayOfYear', [/* parameter description */
-					[/* text */ 't', `the day-of-year`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.time.DateTimeException', [/* throw description */
-					[/* text */ 't', `if the value of the year is out of range,
-  or if the day-of-year is invalid for the year`]
 				]]
 			],
 			[/* return description */
@@ -494,185 +551,58 @@ DocsCollector.collect('java.time.chrono.HijrahChronology', [
 				[/* text */ 't', `the current local date using the system clock, not null`]
 			]
 		]],
-		[/* method */ 'zonedDateTime(java.time.temporal.TemporalAccessor)', [
+		[/* method */ 'dateYearDay(int,int)', [
 			[/* method description */
-				[/* block */ 'b', [
-					[/* text */ 't', `Obtains a `],
-					[/* inline code block */ 'i', `ChronoZonedDateTime`],
-					[/* text */ 't', ` in this chronology from another temporal object.
- `],
-					[/* block */ 'b', [
-						[/* text */ 't', `
- This obtains a zoned date-time in this chronology based on the specified temporal.
- A `],
-						[/* inline code block */ 'i', `TemporalAccessor`],
-						[/* text */ 't', ` represents an arbitrary set of date and time information,
- which this factory converts to an instance of `],
-						[/* inline code block */ 'i', `ChronoZonedDateTime`],
-						[/* text */ 't', `.
- `]
-					]],
-					[/* block */ 'b', [
-						[/* text */ 't', `
- The conversion will first obtain a `],
-						[/* inline code block */ 'i', `ZoneId`],
-						[/* text */ 't', ` from the temporal object,
- falling back to a `],
-						[/* inline code block */ 'i', `ZoneOffset`],
-						[/* text */ 't', ` if necessary. It will then try to obtain
- an `],
-						[/* inline code block */ 'i', `Instant`],
-						[/* text */ 't', `, falling back to a `],
-						[/* inline code block */ 'i', `ChronoLocalDateTime`],
-						[/* text */ 't', ` if necessary.
- The result will be either the combination of `],
-						[/* inline code block */ 'i', `ZoneId`],
-						[/* text */ 't', ` or `],
-						[/* inline code block */ 'i', `ZoneOffset`],
-						[/* text */ 't', `
- with `],
-						[/* inline code block */ 'i', `Instant`],
-						[/* text */ 't', ` or `],
-						[/* inline code block */ 'i', `ChronoLocalDateTime`],
-						[/* text */ 't', `.
- Implementations are permitted to perform optimizations such as accessing
- those fields that are equivalent to the relevant objects.
- The result uses this chronology.
- `]
-					]],
-					[/* block */ 'b', [
-						[/* text */ 't', `
- This method matches the signature of the functional interface `],
-						[/* reference */ 'r', `java.time.temporal.TemporalQuery`],
-						[/* text */ 't', `
- allowing it to be used as a query via method reference, `],
-						[/* inline code block */ 'i', `aChronology::zonedDateTime`],
-						[/* text */ 't', `.`]
-					]]
-				]]
+				[/* text */ 't', `Obtains a local date in Hijrah calendar system from the
+ proleptic-year and day-of-year fields.`]
 			],
 			[/* parameters */
-				[/* parameter */ 'temporal', [/* parameter description */
-					[/* text */ 't', `the temporal object to convert, not null`]
-				]]
-			],
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the zoned date-time in this chronology, not null`]
-			]
-		]],
-		[/* method */ 'zonedDateTime(java.time.Instant,java.time.ZoneId)', [
-			[/* method description */
-				[/* block */ 'b', [
-					[/* text */ 't', `Obtains a `],
-					[/* inline code block */ 'i', `ChronoZonedDateTime`],
-					[/* text */ 't', ` in this chronology from an `],
-					[/* inline code block */ 'i', `Instant`],
-					[/* text */ 't', `.
- `],
-					[/* block */ 'b', `
- This obtains a zoned date-time with the same instant as that specified.`]
-				]]
-			],
-			[/* parameters */
-				[/* parameter */ 'instant', [/* parameter description */
-					[/* text */ 't', `the instant to create the date-time from, not null`]
+				[/* parameter */ 'prolepticYear', [/* parameter description */
+					[/* text */ 't', `the proleptic-year`]
 				]],
-				[/* parameter */ 'zone', [/* parameter description */
-					[/* text */ 't', `the time-zone, not null`]
-				]]
-			],
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the zoned date-time, not null`]
-			]
-		]],
-		[/* method */ 'localDateTime(java.time.temporal.TemporalAccessor)', [
-			[/* method description */
-				[/* block */ 'b', [
-					[/* text */ 't', `Obtains a local date-time in this chronology from another temporal object.
- `],
-					[/* block */ 'b', [
-						[/* text */ 't', `
- This obtains a date-time in this chronology based on the specified temporal.
- A `],
-						[/* inline code block */ 'i', `TemporalAccessor`],
-						[/* text */ 't', ` represents an arbitrary set of date and time information,
- which this factory converts to an instance of `],
-						[/* inline code block */ 'i', `ChronoLocalDateTime`],
-						[/* text */ 't', `.
- `]
-					]],
-					[/* block */ 'b', [
-						[/* text */ 't', `
- The conversion extracts and combines the `],
-						[/* inline code block */ 'i', `ChronoLocalDate`],
-						[/* text */ 't', ` and the
- `],
-						[/* inline code block */ 'i', `LocalTime`],
-						[/* text */ 't', ` from the temporal object.
- Implementations are permitted to perform optimizations such as accessing
- those fields that are equivalent to the relevant objects.
- The result uses this chronology.
- `]
-					]],
-					[/* block */ 'b', [
-						[/* text */ 't', `
- This method matches the signature of the functional interface `],
-						[/* reference */ 'r', `java.time.temporal.TemporalQuery`],
-						[/* text */ 't', `
- allowing it to be used as a query via method reference, `],
-						[/* inline code block */ 'i', `aChronology::localDateTime`],
-						[/* text */ 't', `.`]
-					]]
-				]]
-			],
-			[/* parameters */
-				[/* parameter */ 'temporal', [/* parameter description */
-					[/* text */ 't', `the temporal object to convert, not null`]
-				]]
-			],
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the local date-time in this chronology, not null`]
-			]
-		]],
-		[/* method */ 'eraOf(int)', [
-			[/* method description */
-				[/* text */ 't', `Creates the HijrahEra object from the numeric value.
- The Hijrah calendar system has only one era covering the
- proleptic years greater than zero.
- This method returns the singleton HijrahEra for the value 1.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'eraValue', [/* parameter description */
-					[/* text */ 't', `the era value`]
+				[/* parameter */ 'dayOfYear', [/* parameter description */
+					[/* text */ 't', `the day-of-year`]
 				]]
 			],
 			[/* throws */
 				[/* throw */ 'java.time.DateTimeException', [/* throw description */
-					[/* text */ 't', `if unable to create the era`]
+					[/* text */ 't', `if the value of the year is out of range,
+  or if the day-of-year is invalid for the year`]
 				]]
 			],
 			[/* return description */
-				[/* text */ 't', `the calendar system era, not null`]
+				[/* text */ 't', `the Hijrah local date, not null`]
 			]
 		]],
-		[/* method */ 'eras()', [
+		[/* method */ 'dateYearDay(java.time.chrono.Era,int,int)', [
 			[/* method description */
-				[/* block */ 'b', [
-					[/* text */ 't', `Gets the list of eras for the chronology.
- `],
-					[/* block */ 'b', `
- Most calendar systems have an era, within which the year has meaning.
- If the calendar system does not support the concept of eras, an empty
- list must be returned.`]
+				[/* text */ 't', `Obtains a local date in Hijrah calendar system from the
+ era, year-of-era and day-of-year fields.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'era', [/* parameter description */
+					[/* text */ 't', `the Hijrah era, not null`]
+				]],
+				[/* parameter */ 'yearOfEra', [/* parameter description */
+					[/* text */ 't', `the year-of-era`]
+				]],
+				[/* parameter */ 'dayOfYear', [/* parameter description */
+					[/* text */ 't', `the day-of-year`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			[/* throws */
+				[/* throw */ 'java.time.DateTimeException', [/* throw description */
+					[/* text */ 't', `if unable to create the date`]
+				]],
+				[/* throw */ 'java.lang.ClassCastException', [/* throw description */
+					[/* text */ 't', `if the `],
+					[/* inline code block */ 'i', `era`],
+					[/* text */ 't', ` is not a `],
+					[/* inline code block */ 'i', `HijrahEra`]
+				]]
+			],
 			[/* return description */
-				[/* text */ 't', `the list of eras for the chronology, may be immutable, not null`]
+				[/* text */ 't', `the Hijrah local date, not null`]
 			]
 		]],
 		[/* method */ 'resolveDate(java.util.Map,java.time.format.ResolverStyle)', [
@@ -891,6 +821,76 @@ DocsCollector.collect('java.time.chrono.HijrahChronology', [
 			/* throws */ UDF,
 			[/* return description */
 				[/* text */ 't', `the resolved date, null if insufficient information to create a date`]
+			]
+		]],
+		[/* method */ 'eraOf(int)', [
+			[/* method description */
+				[/* text */ 't', `Creates the HijrahEra object from the numeric value.
+ The Hijrah calendar system has only one era covering the
+ proleptic years greater than zero.
+ This method returns the singleton HijrahEra for the value 1.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'eraValue', [/* parameter description */
+					[/* text */ 't', `the era value`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.time.DateTimeException', [/* throw description */
+					[/* text */ 't', `if unable to create the era`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `the calendar system era, not null`]
+			]
+		]],
+		[/* method */ 'range(java.time.temporal.ChronoField)', [
+			[/* method description */
+				[/* block */ 'b', [
+					[/* text */ 't', `Gets the range of valid values for the specified field.
+ `],
+					[/* block */ 'b', [
+						[/* text */ 't', `
+ All fields can be expressed as a `],
+						[/* inline code block */ 'i', `long`],
+						[/* text */ 't', ` integer.
+ This method returns an object that describes the valid range for that value.
+ `]
+					]],
+					[/* block */ 'b', `
+ Note that the result only describes the minimum and maximum valid values
+ and it is important not to read too much into them. For example, there
+ could be values within the range that are invalid for the field.
+ `],
+					[/* block */ 'b', `
+ This method will return a result whether or not the chronology supports the field.`]
+				]]
+			],
+			[/* parameters */
+				[/* parameter */ 'field', [/* parameter description */
+					[/* text */ 't', `the field to get the range for, not null`]
+				]]
+			],
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the range of valid values for the field, not null`]
+			]
+		]],
+		[/* method */ 'eras()', [
+			[/* method description */
+				[/* block */ 'b', [
+					[/* text */ 't', `Gets the list of eras for the chronology.
+ `],
+					[/* block */ 'b', `
+ Most calendar systems have an era, within which the year has meaning.
+ If the calendar system does not support the concept of eras, an empty
+ list must be returned.`]
+				]]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the list of eras for the chronology, may be immutable, not null`]
 			]
 		]]
 	],

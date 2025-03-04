@@ -137,132 +137,6 @@ DocsCollector.collect('java.nio.channels.AsynchronousFileChannel', [
 		]]
 	],
 	[/* methods */
-		[/* method */ 'lock(long,long,boolean)', [
-			[/* method description */
-				[/* text */ 't', `Acquires a lock on the given region of this channel's file.
-
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', ` This method initiates an operation to acquire a lock on the given
- region of this channel's file.  The method behaves in exactly the same
- manner as the `],
-					[/* reference */ 'r', `#lock(long,long,boolean,A,java.nio.channels.CompletionHandler)`, `lock(long, long, boolean, Object, CompletionHandler)`],
-					[/* text */ 't', `
- method except that instead of specifying a completion handler, this
- method returns a `],
-					[/* inline code block */ 'i', `Future`],
-					[/* text */ 't', ` representing the pending result. The
- `],
-					[/* inline code block */ 'i', `Future`],
-					[/* text */ 't', `'s `],
-					[/* reference */ 'r', `java.nio.concurrent.Future#get()`],
-					[/* text */ 't', ` method returns the `],
-					[/* reference */ 'r', `java.nio.channels.FileLock`],
-					[/* text */ 't', ` on successful completion.`]
-				]]
-			],
-			[/* parameters */
-				[/* parameter */ 'position', [/* parameter description */
-					[/* text */ 't', `The position at which the locked region is to start; must be
-          non-negative`]
-				]],
-				[/* parameter */ 'size', [/* parameter description */
-					[/* text */ 't', `The size of the locked region; must be non-negative, and the sum
-          `],
-					[/* inline code block */ 'i', `position`],
-					[/* text */ 't', ` + `],
-					[/* inline code block */ 'i', `size`],
-					[/* text */ 't', ` must be non-negative`]
-				]],
-				[/* parameter */ 'shared', [/* parameter description */
-					[/* text */ 't', ``],
-					[/* inline code block */ 'i', `true`],
-					[/* text */ 't', ` to request a shared lock, in which case this
-          channel must be open for reading (and possibly writing);
-          `],
-					[/* inline code block */ 'i', `false`],
-					[/* text */ 't', ` to request an exclusive lock, in which case this
-          channel must be open for writing (and possibly reading)`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.nio.channels.OverlappingFileLockException', [/* throw description */
-					[/* text */ 't', `If a lock is already held by this Java virtual machine, or there
-          is already a pending attempt to lock a region`]
-				]],
-				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
-					[/* text */ 't', `If the preconditions on the parameters do not hold`]
-				]],
-				[/* throw */ 'java.nio.channels.NonReadableChannelException', [/* throw description */
-					[/* text */ 't', `If `],
-					[/* inline code block */ 'i', `shared`],
-					[/* text */ 't', ` is true but this channel was not opened for reading`]
-				]],
-				[/* throw */ 'java.nio.channels.NonWritableChannelException', [/* throw description */
-					[/* text */ 't', `If `],
-					[/* inline code block */ 'i', `shared`],
-					[/* text */ 't', ` is false but this channel was not opened for writing`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `a `],
-				[/* inline code block */ 'i', `Future`],
-				[/* text */ 't', ` object representing the pending result`]
-			]
-		]],
-		[/* method */ 'lock(java.lang.Object,java.nio.channels.CompletionHandler)', [
-			[/* method description */
-				[/* text */ 't', `Acquires an exclusive lock on this channel's file.
-
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', ` This method initiates an operation to acquire a lock on the given
- region of this channel's file. The `],
-					[/* inline code block */ 'i', `handler`],
-					[/* text */ 't', ` parameter is a
- completion handler that is invoked when the lock is acquired (or the
- operation fails). The result passed to the completion handler is the
- resulting `],
-					[/* inline code block */ 'i', `FileLock`],
-					[/* text */ 't', `.
-
- `]
-				]],
-				[/* block */ 'b', [
-					[/* text */ 't', ` An invocation of this method of the form `],
-					[/* inline code block */ 'i', `ch.lock(att,handler)`],
-					[/* text */ 't', `
- behaves in exactly the same way as the invocation
- `]
-				]],
-				[/* code block */ 'c', [
-					[/* text */ 't', `     ch.`],
-					[/* text */ 't', `lock`],
-					[/* text */ 't', `(0L, Long.MAX_VALUE, false, att, handler)
- `]
-				]],
-				[/* block */ 'b', '']
-			],
-			[/* parameters */
-				[/* parameter */ 'attachment', [/* parameter description */
-					[/* text */ 't', `The object to attach to the I/O operation; can be `],
-					[/* inline code block */ 'i', `null`]
-				]],
-				[/* parameter */ 'handler', [/* parameter description */
-					[/* text */ 't', `The handler for consuming the result`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.nio.channels.OverlappingFileLockException', [/* throw description */
-					[/* text */ 't', `If a lock is already held by this Java virtual machine, or there
-          is already a pending attempt to lock a region`]
-				]],
-				[/* throw */ 'java.nio.channels.NonWritableChannelException', [/* throw description */
-					[/* text */ 't', `If this channel was not opened for writing`]
-				]]
-			],
-			/* return */ UDF
-		]],
 		[/* method */ 'lock(long,long,boolean,java.lang.Object,java.nio.channels.CompletionHandler)', [
 			[/* method description */
 				[/* text */ 't', `Acquires a lock on the given region of this channel's file.
@@ -383,124 +257,57 @@ DocsCollector.collect('java.nio.channels.AsynchronousFileChannel', [
 			],
 			/* return */ UDF
 		]],
-		[/* method */ 'lock()', [
+		[/* method */ 'read(java.nio.ByteBuffer,long,java.lang.Object,java.nio.channels.CompletionHandler)', [
 			[/* method description */
-				[/* text */ 't', `Acquires an exclusive lock on this channel's file.
+				[/* text */ 't', `Reads a sequence of bytes from this channel into the given buffer,
+ starting at the given file position.
 
  `],
 				[/* block */ 'b', [
-					[/* text */ 't', ` This method initiates an operation to acquire an exclusive lock on this
- channel's file. The method returns a `],
-					[/* inline code block */ 'i', `Future`],
-					[/* text */ 't', ` representing the
- pending result of the operation. The `],
-					[/* inline code block */ 'i', `Future`],
-					[/* text */ 't', `'s `],
-					[/* reference */ 'r', `java.nio.concurrent.Future#get()`],
-					[/* text */ 't', ` method returns the `],
-					[/* reference */ 'r', `java.nio.channels.FileLock`],
-					[/* text */ 't', ` on successful completion.
-
- `]
-				]],
-				[/* block */ 'b', ` An invocation of this method behaves in exactly the same way as the
- invocation
- `],
-				[/* code block */ 'c', [
-					[/* text */ 't', `     ch.`],
-					[/* text */ 't', `lock`],
-					[/* text */ 't', `(0L, Long.MAX_VALUE, false)
- `]
-				]],
-				[/* block */ 'b', '']
-			],
-			/* parameters */ UDF,
-			[/* throws */
-				[/* throw */ 'java.nio.channels.OverlappingFileLockException', [/* throw description */
-					[/* text */ 't', `If a lock is already held by this Java virtual machine, or there
-          is already a pending attempt to lock a region`]
-				]],
-				[/* throw */ 'java.nio.channels.NonWritableChannelException', [/* throw description */
-					[/* text */ 't', `If this channel was not opened for writing`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `a `],
-				[/* inline code block */ 'i', `Future`],
-				[/* text */ 't', ` object representing the pending result`]
-			]
-		]],
-		[/* method */ 'size()', [
-			[/* method description */
-				[/* text */ 't', `Returns the current size of this channel's file.`]
-			],
-			/* parameters */ UDF,
-			[/* throws */
-				[/* throw */ 'java.nio.channels.ClosedChannelException', [/* throw description */
-					[/* text */ 't', `If this channel is closed`]
-				]],
-				[/* throw */ 'java.io.IOException', [/* throw description */
-					[/* text */ 't', `If some other I/O error occurs`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `The current size of this channel's file, measured in bytes`]
-			]
-		]],
-		[/* method */ 'write(java.nio.ByteBuffer,long)', [
-			[/* method description */
-				[/* text */ 't', `Writes a sequence of bytes to this channel from the given buffer, starting
- at the given file position.
-
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', ` This method initiates the writing of a sequence of bytes to this
- channel from the given buffer, starting at the given file position. The
- method returns a `],
-					[/* inline code block */ 'i', `Future`],
-					[/* text */ 't', ` representing the pending result of the
- write operation. The `],
-					[/* inline code block */ 'i', `Future`],
-					[/* text */ 't', `'s `],
-					[/* reference */ 'r', `java.nio.concurrent.Future#get()`],
-					[/* text */ 't', ` method
- returns the number of bytes written.
+					[/* text */ 't', ` This method initiates the reading of a sequence of bytes from this
+ channel into the given buffer, starting at the given file position. The
+ result of the read is the number of bytes read or `],
+					[/* inline code block */ 'i', `-1`],
+					[/* text */ 't', ` if the given
+ position is greater than or equal to the file's size at the time that the
+ read is attempted.
 
  `]
 				]],
 				[/* block */ 'b', [
 					[/* text */ 't', ` This method works in the same manner as the `],
-					[/* reference */ 'r', `.AsynchronousByteChannel#write(java.nio.ByteBuffer)`],
-					[/* text */ 't', ` method, except that bytes are
- written starting at the given file position. If the given position is
- greater than the file's size, at the time that the write is attempted,
- then the file will be grown to accommodate the new bytes; the values of
- any bytes between the previous end-of-file and the newly-written bytes
- are unspecified.`]
+					[/* reference */ 'r', `.AsynchronousByteChannel#read(java.nio.ByteBuffer,A,java.nio.channels.CompletionHandler)`],
+					[/* text */ 't', `
+ method, except that bytes are read starting at the given file position.
+ If the given file position is greater than the file's size at the time
+ that the read is attempted then no bytes are read.`]
 				]]
 			],
 			[/* parameters */
-				[/* parameter */ 'src', [/* parameter description */
-					[/* text */ 't', `The buffer from which bytes are to be transferred`]
+				[/* parameter */ 'dst', [/* parameter description */
+					[/* text */ 't', `The buffer into which bytes are to be transferred`]
 				]],
 				[/* parameter */ 'position', [/* parameter description */
 					[/* text */ 't', `The file position at which the transfer is to begin;
           must be non-negative`]
+				]],
+				[/* parameter */ 'attachment', [/* parameter description */
+					[/* text */ 't', `The object to attach to the I/O operation; can be `],
+					[/* inline code block */ 'i', `null`]
+				]],
+				[/* parameter */ 'handler', [/* parameter description */
+					[/* text */ 't', `The handler for consuming the result`]
 				]]
 			],
 			[/* throws */
 				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
-					[/* text */ 't', `If the position is negative`]
+					[/* text */ 't', `If the position is negative or the buffer is read-only`]
 				]],
-				[/* throw */ 'java.nio.channels.NonWritableChannelException', [/* throw description */
-					[/* text */ 't', `If this channel was not opened for writing`]
+				[/* throw */ 'java.nio.channels.NonReadableChannelException', [/* throw description */
+					[/* text */ 't', `If this channel was not opened for reading`]
 				]]
 			],
-			[/* return description */
-				[/* text */ 't', `A `],
-				[/* inline code block */ 'i', `Future`],
-				[/* text */ 't', ` object representing the pending result`]
-			]
+			/* return */ UDF
 		]],
 		[/* method */ 'write(java.nio.ByteBuffer,long,java.lang.Object,java.nio.channels.CompletionHandler)', [
 			[/* method description */
@@ -544,6 +351,111 @@ DocsCollector.collect('java.nio.channels.AsynchronousFileChannel', [
 				]]
 			],
 			/* return */ UDF
+		]],
+		[/* method */ 'truncate(long)', [
+			[/* method description */
+				[/* text */ 't', `Truncates this channel's file to the given size.
+
+ `],
+				[/* block */ 'b', ` If the given size is less than the file's current size then the file
+ is truncated, discarding any bytes beyond the new end of the file.  If
+ the given size is greater than or equal to the file's current size then
+ the file is not modified. `]
+			],
+			[/* parameters */
+				[/* parameter */ 'size', [/* parameter description */
+					[/* text */ 't', `The new size, a non-negative byte count`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.nio.channels.NonWritableChannelException', [/* throw description */
+					[/* text */ 't', `If this channel was not opened for writing`]
+				]],
+				[/* throw */ 'java.nio.channels.ClosedChannelException', [/* throw description */
+					[/* text */ 't', `If this channel is closed`]
+				]],
+				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
+					[/* text */ 't', `If the new size is negative`]
+				]],
+				[/* throw */ 'java.io.IOException', [/* throw description */
+					[/* text */ 't', `If some other I/O error occurs`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `This file channel`]
+			]
+		]],
+		[/* method */ 'tryLock(long,long,boolean)', [
+			[/* method description */
+				[/* text */ 't', `Attempts to acquire a lock on the given region of this channel's file.
+
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', ` This method does not block. An invocation always returns immediately,
+ either having acquired a lock on the requested region or having failed to
+ do so.  If it fails to acquire a lock because an overlapping lock is held
+ by another program then it returns `],
+					[/* inline code block */ 'i', `null`],
+					[/* text */ 't', `.  If it fails to acquire
+ a lock for any other reason then an appropriate exception is thrown.`]
+				]]
+			],
+			[/* parameters */
+				[/* parameter */ 'position', [/* parameter description */
+					[/* text */ 't', `The position at which the locked region is to start; must be
+         non-negative`]
+				]],
+				[/* parameter */ 'size', [/* parameter description */
+					[/* text */ 't', `The size of the locked region; must be non-negative, and the sum
+         `],
+					[/* inline code block */ 'i', `position`],
+					[/* text */ 't', ` + `],
+					[/* inline code block */ 'i', `size`],
+					[/* text */ 't', ` must be non-negative`]
+				]],
+				[/* parameter */ 'shared', [/* parameter description */
+					[/* text */ 't', ``],
+					[/* inline code block */ 'i', `true`],
+					[/* text */ 't', ` to request a shared lock,
+         `],
+					[/* inline code block */ 'i', `false`],
+					[/* text */ 't', ` to request an exclusive lock`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
+					[/* text */ 't', `If the preconditions on the parameters do not hold`]
+				]],
+				[/* throw */ 'java.nio.channels.ClosedChannelException', [/* throw description */
+					[/* text */ 't', `If this channel is closed`]
+				]],
+				[/* throw */ 'java.nio.channels.OverlappingFileLockException', [/* throw description */
+					[/* text */ 't', `If a lock that overlaps the requested region is already held by
+          this Java virtual machine, or if another thread is already
+          blocked in this method and is attempting to lock an overlapping
+          region of the same file`]
+				]],
+				[/* throw */ 'java.nio.channels.NonReadableChannelException', [/* throw description */
+					[/* text */ 't', `If `],
+					[/* inline code block */ 'i', `shared`],
+					[/* text */ 't', ` is true but this channel was not opened for reading`]
+				]],
+				[/* throw */ 'java.nio.channels.NonWritableChannelException', [/* throw description */
+					[/* text */ 't', `If `],
+					[/* inline code block */ 'i', `shared`],
+					[/* text */ 't', ` is false but this channel was not opened for writing`]
+				]],
+				[/* throw */ 'java.io.IOException', [/* throw description */
+					[/* text */ 't', `If some other I/O error occurs`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `A lock object representing the newly-acquired lock,
+          or `],
+				[/* inline code block */ 'i', `null`],
+				[/* text */ 't', ` if the lock could not be acquired
+          because another program holds an overlapping lock`]
+			]
 		]],
 		[/* method */ 'read(java.nio.ByteBuffer,long)', [
 			[/* method description */
@@ -601,40 +513,250 @@ DocsCollector.collect('java.nio.channels.AsynchronousFileChannel', [
 				[/* text */ 't', ` object representing the pending result`]
 			]
 		]],
-		[/* method */ 'read(java.nio.ByteBuffer,long,java.lang.Object,java.nio.channels.CompletionHandler)', [
+		[/* method */ 'write(java.nio.ByteBuffer,long)', [
 			[/* method description */
-				[/* text */ 't', `Reads a sequence of bytes from this channel into the given buffer,
- starting at the given file position.
+				[/* text */ 't', `Writes a sequence of bytes to this channel from the given buffer, starting
+ at the given file position.
 
  `],
 				[/* block */ 'b', [
-					[/* text */ 't', ` This method initiates the reading of a sequence of bytes from this
- channel into the given buffer, starting at the given file position. The
- result of the read is the number of bytes read or `],
-					[/* inline code block */ 'i', `-1`],
-					[/* text */ 't', ` if the given
- position is greater than or equal to the file's size at the time that the
- read is attempted.
+					[/* text */ 't', ` This method initiates the writing of a sequence of bytes to this
+ channel from the given buffer, starting at the given file position. The
+ method returns a `],
+					[/* inline code block */ 'i', `Future`],
+					[/* text */ 't', ` representing the pending result of the
+ write operation. The `],
+					[/* inline code block */ 'i', `Future`],
+					[/* text */ 't', `'s `],
+					[/* reference */ 'r', `java.nio.concurrent.Future#get()`],
+					[/* text */ 't', ` method
+ returns the number of bytes written.
 
  `]
 				]],
 				[/* block */ 'b', [
 					[/* text */ 't', ` This method works in the same manner as the `],
-					[/* reference */ 'r', `.AsynchronousByteChannel#read(java.nio.ByteBuffer,A,java.nio.channels.CompletionHandler)`],
-					[/* text */ 't', `
- method, except that bytes are read starting at the given file position.
- If the given file position is greater than the file's size at the time
- that the read is attempted then no bytes are read.`]
+					[/* reference */ 'r', `.AsynchronousByteChannel#write(java.nio.ByteBuffer)`],
+					[/* text */ 't', ` method, except that bytes are
+ written starting at the given file position. If the given position is
+ greater than the file's size, at the time that the write is attempted,
+ then the file will be grown to accommodate the new bytes; the values of
+ any bytes between the previous end-of-file and the newly-written bytes
+ are unspecified.`]
 				]]
 			],
 			[/* parameters */
-				[/* parameter */ 'dst', [/* parameter description */
-					[/* text */ 't', `The buffer into which bytes are to be transferred`]
+				[/* parameter */ 'src', [/* parameter description */
+					[/* text */ 't', `The buffer from which bytes are to be transferred`]
 				]],
 				[/* parameter */ 'position', [/* parameter description */
 					[/* text */ 't', `The file position at which the transfer is to begin;
           must be non-negative`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
+					[/* text */ 't', `If the position is negative`]
 				]],
+				[/* throw */ 'java.nio.channels.NonWritableChannelException', [/* throw description */
+					[/* text */ 't', `If this channel was not opened for writing`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `A `],
+				[/* inline code block */ 'i', `Future`],
+				[/* text */ 't', ` object representing the pending result`]
+			]
+		]],
+		[/* method */ 'lock(long,long,boolean)', [
+			[/* method description */
+				[/* text */ 't', `Acquires a lock on the given region of this channel's file.
+
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', ` This method initiates an operation to acquire a lock on the given
+ region of this channel's file.  The method behaves in exactly the same
+ manner as the `],
+					[/* reference */ 'r', `#lock(long,long,boolean,A,java.nio.channels.CompletionHandler)`, `lock(long, long, boolean, Object, CompletionHandler)`],
+					[/* text */ 't', `
+ method except that instead of specifying a completion handler, this
+ method returns a `],
+					[/* inline code block */ 'i', `Future`],
+					[/* text */ 't', ` representing the pending result. The
+ `],
+					[/* inline code block */ 'i', `Future`],
+					[/* text */ 't', `'s `],
+					[/* reference */ 'r', `java.nio.concurrent.Future#get()`],
+					[/* text */ 't', ` method returns the `],
+					[/* reference */ 'r', `java.nio.channels.FileLock`],
+					[/* text */ 't', ` on successful completion.`]
+				]]
+			],
+			[/* parameters */
+				[/* parameter */ 'position', [/* parameter description */
+					[/* text */ 't', `The position at which the locked region is to start; must be
+          non-negative`]
+				]],
+				[/* parameter */ 'size', [/* parameter description */
+					[/* text */ 't', `The size of the locked region; must be non-negative, and the sum
+          `],
+					[/* inline code block */ 'i', `position`],
+					[/* text */ 't', ` + `],
+					[/* inline code block */ 'i', `size`],
+					[/* text */ 't', ` must be non-negative`]
+				]],
+				[/* parameter */ 'shared', [/* parameter description */
+					[/* text */ 't', ``],
+					[/* inline code block */ 'i', `true`],
+					[/* text */ 't', ` to request a shared lock, in which case this
+          channel must be open for reading (and possibly writing);
+          `],
+					[/* inline code block */ 'i', `false`],
+					[/* text */ 't', ` to request an exclusive lock, in which case this
+          channel must be open for writing (and possibly reading)`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.nio.channels.OverlappingFileLockException', [/* throw description */
+					[/* text */ 't', `If a lock is already held by this Java virtual machine, or there
+          is already a pending attempt to lock a region`]
+				]],
+				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
+					[/* text */ 't', `If the preconditions on the parameters do not hold`]
+				]],
+				[/* throw */ 'java.nio.channels.NonReadableChannelException', [/* throw description */
+					[/* text */ 't', `If `],
+					[/* inline code block */ 'i', `shared`],
+					[/* text */ 't', ` is true but this channel was not opened for reading`]
+				]],
+				[/* throw */ 'java.nio.channels.NonWritableChannelException', [/* throw description */
+					[/* text */ 't', `If `],
+					[/* inline code block */ 'i', `shared`],
+					[/* text */ 't', ` is false but this channel was not opened for writing`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `a `],
+				[/* inline code block */ 'i', `Future`],
+				[/* text */ 't', ` object representing the pending result`]
+			]
+		]],
+		[/* method */ 'size()', [
+			[/* method description */
+				[/* text */ 't', `Returns the current size of this channel's file.`]
+			],
+			/* parameters */ UDF,
+			[/* throws */
+				[/* throw */ 'java.nio.channels.ClosedChannelException', [/* throw description */
+					[/* text */ 't', `If this channel is closed`]
+				]],
+				[/* throw */ 'java.io.IOException', [/* throw description */
+					[/* text */ 't', `If some other I/O error occurs`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `The current size of this channel's file, measured in bytes`]
+			]
+		]],
+		[/* method */ 'force(boolean)', [
+			[/* method description */
+				[/* text */ 't', `Forces any updates to this channel's file to be written to the storage
+ device that contains it.
+
+ `],
+				[/* block */ 'b', ` If this channel's file resides on a local storage device then when
+ this method returns it is guaranteed that all changes made to the file
+ since this channel was created, or since this method was last invoked,
+ will have been written to that device.  This is useful for ensuring that
+ critical information is not lost in the event of a system crash.
+
+ `],
+				[/* block */ 'b', ` If the file does not reside on a local device then no such guarantee
+ is made.
+
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', ` The `],
+					[/* inline code block */ 'i', `metaData`],
+					[/* text */ 't', ` parameter can be used to limit the number of
+ I/O operations that this method is required to perform.  Passing
+ `],
+					[/* inline code block */ 'i', `false`],
+					[/* text */ 't', ` for this parameter indicates that only updates to the
+ file's content need be written to storage; passing `],
+					[/* inline code block */ 'i', `true`],
+					[/* text */ 't', `
+ indicates that updates to both the file's content and metadata must be
+ written, which generally requires at least one more I/O operation.
+ Whether this parameter actually has any effect is dependent upon the
+ underlying operating system and is therefore unspecified.
+
+ `]
+				]],
+				[/* block */ 'b', ` Invoking this method may cause an I/O operation to occur even if the
+ channel was only opened for reading.  Some operating systems, for
+ example, maintain a last-access time as part of a file's metadata, and
+ this time is updated whenever the file is read.  Whether or not this is
+ actually done is system-dependent and is therefore unspecified.
+
+ `],
+				[/* block */ 'b', ` This method is only guaranteed to force changes that were made to
+ this channel's file via the methods defined in this class.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'metaData', [/* parameter description */
+					[/* text */ 't', `If `],
+					[/* inline code block */ 'i', `true`],
+					[/* text */ 't', ` then this method is required to force changes
+          to both the file's content and metadata to be written to
+          storage; otherwise, it need only force content changes to be
+          written`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.nio.channels.ClosedChannelException', [/* throw description */
+					[/* text */ 't', `If this channel is closed`]
+				]],
+				[/* throw */ 'java.io.IOException', [/* throw description */
+					[/* text */ 't', `If some other I/O error occurs`]
+				]]
+			],
+			/* return */ UDF
+		]],
+		[/* method */ 'lock(java.lang.Object,java.nio.channels.CompletionHandler)', [
+			[/* method description */
+				[/* text */ 't', `Acquires an exclusive lock on this channel's file.
+
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', ` This method initiates an operation to acquire a lock on the given
+ region of this channel's file. The `],
+					[/* inline code block */ 'i', `handler`],
+					[/* text */ 't', ` parameter is a
+ completion handler that is invoked when the lock is acquired (or the
+ operation fails). The result passed to the completion handler is the
+ resulting `],
+					[/* inline code block */ 'i', `FileLock`],
+					[/* text */ 't', `.
+
+ `]
+				]],
+				[/* block */ 'b', [
+					[/* text */ 't', ` An invocation of this method of the form `],
+					[/* inline code block */ 'i', `ch.lock(att,handler)`],
+					[/* text */ 't', `
+ behaves in exactly the same way as the invocation
+ `]
+				]],
+				[/* code block */ 'c', [
+					[/* text */ 't', `     ch.`],
+					[/* text */ 't', `lock`],
+					[/* text */ 't', `(0L, Long.MAX_VALUE, false, att, handler)
+ `]
+				]],
+				[/* block */ 'b', '']
+			],
+			[/* parameters */
 				[/* parameter */ 'attachment', [/* parameter description */
 					[/* text */ 't', `The object to attach to the I/O operation; can be `],
 					[/* inline code block */ 'i', `null`]
@@ -644,14 +766,186 @@ DocsCollector.collect('java.nio.channels.AsynchronousFileChannel', [
 				]]
 			],
 			[/* throws */
-				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
-					[/* text */ 't', `If the position is negative or the buffer is read-only`]
+				[/* throw */ 'java.nio.channels.OverlappingFileLockException', [/* throw description */
+					[/* text */ 't', `If a lock is already held by this Java virtual machine, or there
+          is already a pending attempt to lock a region`]
 				]],
-				[/* throw */ 'java.nio.channels.NonReadableChannelException', [/* throw description */
-					[/* text */ 't', `If this channel was not opened for reading`]
+				[/* throw */ 'java.nio.channels.NonWritableChannelException', [/* throw description */
+					[/* text */ 't', `If this channel was not opened for writing`]
 				]]
 			],
 			/* return */ UDF
+		]],
+		[/* method */ 'tryLock()', [
+			[/* method description */
+				[/* text */ 't', `Attempts to acquire an exclusive lock on this channel's file.
+
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', ` An invocation of this method of the form `],
+					[/* inline code block */ 'i', `ch.tryLock()`],
+					[/* text */ 't', `
+ behaves in exactly the same way as the invocation
+
+ `]
+				]],
+				[/* code block */ 'c', [
+					[/* text */ 't', `     ch.`],
+					[/* text */ 't', `tryLock`],
+					[/* text */ 't', `(0L, Long.MAX_VALUE, false) `]
+				]],
+				[/* block */ 'b', '']
+			],
+			/* parameters */ UDF,
+			[/* throws */
+				[/* throw */ 'java.nio.channels.ClosedChannelException', [/* throw description */
+					[/* text */ 't', `If this channel is closed`]
+				]],
+				[/* throw */ 'java.nio.channels.OverlappingFileLockException', [/* throw description */
+					[/* text */ 't', `If a lock that overlaps the requested region is already held by
+          this Java virtual machine, or if another thread is already
+          blocked in this method and is attempting to lock an overlapping
+          region`]
+				]],
+				[/* throw */ 'java.nio.channels.NonWritableChannelException', [/* throw description */
+					[/* text */ 't', `If `],
+					[/* inline code block */ 'i', `shared`],
+					[/* text */ 't', ` is false but this channel was not opened for writing`]
+				]],
+				[/* throw */ 'java.io.IOException', [/* throw description */
+					[/* text */ 't', `If some other I/O error occurs`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `A lock object representing the newly-acquired lock,
+          or `],
+				[/* inline code block */ 'i', `null`],
+				[/* text */ 't', ` if the lock could not be acquired
+          because another program holds an overlapping lock`]
+			]
+		]],
+		[/* method */ 'lock()', [
+			[/* method description */
+				[/* text */ 't', `Acquires an exclusive lock on this channel's file.
+
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', ` This method initiates an operation to acquire an exclusive lock on this
+ channel's file. The method returns a `],
+					[/* inline code block */ 'i', `Future`],
+					[/* text */ 't', ` representing the
+ pending result of the operation. The `],
+					[/* inline code block */ 'i', `Future`],
+					[/* text */ 't', `'s `],
+					[/* reference */ 'r', `java.nio.concurrent.Future#get()`],
+					[/* text */ 't', ` method returns the `],
+					[/* reference */ 'r', `java.nio.channels.FileLock`],
+					[/* text */ 't', ` on successful completion.
+
+ `]
+				]],
+				[/* block */ 'b', ` An invocation of this method behaves in exactly the same way as the
+ invocation
+ `],
+				[/* code block */ 'c', [
+					[/* text */ 't', `     ch.`],
+					[/* text */ 't', `lock`],
+					[/* text */ 't', `(0L, Long.MAX_VALUE, false)
+ `]
+				]],
+				[/* block */ 'b', '']
+			],
+			/* parameters */ UDF,
+			[/* throws */
+				[/* throw */ 'java.nio.channels.OverlappingFileLockException', [/* throw description */
+					[/* text */ 't', `If a lock is already held by this Java virtual machine, or there
+          is already a pending attempt to lock a region`]
+				]],
+				[/* throw */ 'java.nio.channels.NonWritableChannelException', [/* throw description */
+					[/* text */ 't', `If this channel was not opened for writing`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `a `],
+				[/* inline code block */ 'i', `Future`],
+				[/* text */ 't', ` object representing the pending result`]
+			]
+		]],
+		[/* method */ 'open(java.nio.file.Path,java.nio.file.OpenOption...)', [
+			[/* method description */
+				[/* text */ 't', `Opens or creates a file for reading and/or writing, returning an
+ asynchronous file channel to access the file.
+
+ `],
+				[/* block */ 'b', ` An invocation of this method behaves in exactly the same way as the
+ invocation
+ `],
+				[/* code block */ 'c', [
+					[/* text */ 't', `     ch.`],
+					[/* text */ 't', `open`],
+					[/* text */ 't', `(file, opts, null, new FileAttribute<?>[0]);
+ `]
+				]],
+				[/* text */ 't', `
+ where `],
+				[/* inline code block */ 'i', `opts`],
+				[/* text */ 't', ` is a `],
+				[/* inline code block */ 'i', `Set`],
+				[/* text */ 't', ` containing the options specified to
+ this method.
+
+ `],
+				[/* block */ 'b', ''],
+				[/* block */ 'b', ` The resulting channel is associated with default thread pool to which
+ tasks are submitted to handle I/O events and dispatch to completion
+ handlers that consume the result of asynchronous operations performed on
+ the resulting channel.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'file', [/* parameter description */
+					[/* text */ 't', `The path of the file to open or create`]
+				]],
+				[/* parameter */ 'options', [/* parameter description */
+					[/* text */ 't', `Options specifying how the file is opened`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
+					[/* text */ 't', `If the set contains an invalid combination of options`]
+				]],
+				[/* throw */ 'java.lang.UnsupportedOperationException', [/* throw description */
+					[/* text */ 't', `If the `],
+					[/* inline code block */ 'i', `file`],
+					[/* text */ 't', ` is associated with a provider that does not
+          support creating file channels, or an unsupported open option is
+          specified`]
+				]],
+				[/* throw */ 'java.nio.file.FileAlreadyExistsException', [/* throw description */
+					[/* text */ 't', `If a file of that name already exists and the `],
+					[/* reference */ 'r', `java.StandardOpenOption#CREATE_NEW`],
+					[/* text */ 't', ` option is specified
+          and the file is being opened for writing
+          `],
+					[/* text */ 't', `optional specific exception`]
+				]],
+				[/* throw */ 'java.io.IOException', [/* throw description */
+					[/* text */ 't', `If an I/O error occurs`]
+				]],
+				[/* throw */ 'java.lang.SecurityException', [/* throw description */
+					[/* text */ 't', `If a security manager is installed and it denies an
+          unspecified permission required by the implementation.
+          In the case of the default provider, the `],
+					[/* reference */ 'r', `java.nio.SecurityManager#checkRead(java.lang.String)`],
+					[/* text */ 't', ` method is invoked to check
+          read access if the file is opened for reading. The `],
+					[/* reference */ 'r', `java.nio.SecurityManager#checkWrite(java.lang.String)`],
+					[/* text */ 't', ` method is invoked to check
+          write access if the file is opened for writing`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `A new asynchronous file channel`]
+			]
 		]],
 		[/* method */ 'open(java.nio.file.Path,java.util.Set,java.util.concurrent.ExecutorService,java.nio.file.attribute.FileAttribute...)', [
 			[/* method description */
@@ -900,300 +1194,6 @@ DocsCollector.collect('java.nio.channels.AsynchronousFileChannel', [
 			],
 			[/* return description */
 				[/* text */ 't', `A new asynchronous file channel`]
-			]
-		]],
-		[/* method */ 'open(java.nio.file.Path,java.nio.file.OpenOption...)', [
-			[/* method description */
-				[/* text */ 't', `Opens or creates a file for reading and/or writing, returning an
- asynchronous file channel to access the file.
-
- `],
-				[/* block */ 'b', ` An invocation of this method behaves in exactly the same way as the
- invocation
- `],
-				[/* code block */ 'c', [
-					[/* text */ 't', `     ch.`],
-					[/* text */ 't', `open`],
-					[/* text */ 't', `(file, opts, null, new FileAttribute<?>[0]);
- `]
-				]],
-				[/* text */ 't', `
- where `],
-				[/* inline code block */ 'i', `opts`],
-				[/* text */ 't', ` is a `],
-				[/* inline code block */ 'i', `Set`],
-				[/* text */ 't', ` containing the options specified to
- this method.
-
- `],
-				[/* block */ 'b', ''],
-				[/* block */ 'b', ` The resulting channel is associated with default thread pool to which
- tasks are submitted to handle I/O events and dispatch to completion
- handlers that consume the result of asynchronous operations performed on
- the resulting channel.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'file', [/* parameter description */
-					[/* text */ 't', `The path of the file to open or create`]
-				]],
-				[/* parameter */ 'options', [/* parameter description */
-					[/* text */ 't', `Options specifying how the file is opened`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
-					[/* text */ 't', `If the set contains an invalid combination of options`]
-				]],
-				[/* throw */ 'java.lang.UnsupportedOperationException', [/* throw description */
-					[/* text */ 't', `If the `],
-					[/* inline code block */ 'i', `file`],
-					[/* text */ 't', ` is associated with a provider that does not
-          support creating file channels, or an unsupported open option is
-          specified`]
-				]],
-				[/* throw */ 'java.nio.file.FileAlreadyExistsException', [/* throw description */
-					[/* text */ 't', `If a file of that name already exists and the `],
-					[/* reference */ 'r', `java.StandardOpenOption#CREATE_NEW`],
-					[/* text */ 't', ` option is specified
-          and the file is being opened for writing
-          `],
-					[/* text */ 't', `optional specific exception`]
-				]],
-				[/* throw */ 'java.io.IOException', [/* throw description */
-					[/* text */ 't', `If an I/O error occurs`]
-				]],
-				[/* throw */ 'java.lang.SecurityException', [/* throw description */
-					[/* text */ 't', `If a security manager is installed and it denies an
-          unspecified permission required by the implementation.
-          In the case of the default provider, the `],
-					[/* reference */ 'r', `java.nio.SecurityManager#checkRead(java.lang.String)`],
-					[/* text */ 't', ` method is invoked to check
-          read access if the file is opened for reading. The `],
-					[/* reference */ 'r', `java.nio.SecurityManager#checkWrite(java.lang.String)`],
-					[/* text */ 't', ` method is invoked to check
-          write access if the file is opened for writing`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `A new asynchronous file channel`]
-			]
-		]],
-		[/* method */ 'tryLock()', [
-			[/* method description */
-				[/* text */ 't', `Attempts to acquire an exclusive lock on this channel's file.
-
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', ` An invocation of this method of the form `],
-					[/* inline code block */ 'i', `ch.tryLock()`],
-					[/* text */ 't', `
- behaves in exactly the same way as the invocation
-
- `]
-				]],
-				[/* code block */ 'c', [
-					[/* text */ 't', `     ch.`],
-					[/* text */ 't', `tryLock`],
-					[/* text */ 't', `(0L, Long.MAX_VALUE, false) `]
-				]],
-				[/* block */ 'b', '']
-			],
-			/* parameters */ UDF,
-			[/* throws */
-				[/* throw */ 'java.nio.channels.ClosedChannelException', [/* throw description */
-					[/* text */ 't', `If this channel is closed`]
-				]],
-				[/* throw */ 'java.nio.channels.OverlappingFileLockException', [/* throw description */
-					[/* text */ 't', `If a lock that overlaps the requested region is already held by
-          this Java virtual machine, or if another thread is already
-          blocked in this method and is attempting to lock an overlapping
-          region`]
-				]],
-				[/* throw */ 'java.nio.channels.NonWritableChannelException', [/* throw description */
-					[/* text */ 't', `If `],
-					[/* inline code block */ 'i', `shared`],
-					[/* text */ 't', ` is false but this channel was not opened for writing`]
-				]],
-				[/* throw */ 'java.io.IOException', [/* throw description */
-					[/* text */ 't', `If some other I/O error occurs`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `A lock object representing the newly-acquired lock,
-          or `],
-				[/* inline code block */ 'i', `null`],
-				[/* text */ 't', ` if the lock could not be acquired
-          because another program holds an overlapping lock`]
-			]
-		]],
-		[/* method */ 'tryLock(long,long,boolean)', [
-			[/* method description */
-				[/* text */ 't', `Attempts to acquire a lock on the given region of this channel's file.
-
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', ` This method does not block. An invocation always returns immediately,
- either having acquired a lock on the requested region or having failed to
- do so.  If it fails to acquire a lock because an overlapping lock is held
- by another program then it returns `],
-					[/* inline code block */ 'i', `null`],
-					[/* text */ 't', `.  If it fails to acquire
- a lock for any other reason then an appropriate exception is thrown.`]
-				]]
-			],
-			[/* parameters */
-				[/* parameter */ 'position', [/* parameter description */
-					[/* text */ 't', `The position at which the locked region is to start; must be
-         non-negative`]
-				]],
-				[/* parameter */ 'size', [/* parameter description */
-					[/* text */ 't', `The size of the locked region; must be non-negative, and the sum
-         `],
-					[/* inline code block */ 'i', `position`],
-					[/* text */ 't', ` + `],
-					[/* inline code block */ 'i', `size`],
-					[/* text */ 't', ` must be non-negative`]
-				]],
-				[/* parameter */ 'shared', [/* parameter description */
-					[/* text */ 't', ``],
-					[/* inline code block */ 'i', `true`],
-					[/* text */ 't', ` to request a shared lock,
-         `],
-					[/* inline code block */ 'i', `false`],
-					[/* text */ 't', ` to request an exclusive lock`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
-					[/* text */ 't', `If the preconditions on the parameters do not hold`]
-				]],
-				[/* throw */ 'java.nio.channels.ClosedChannelException', [/* throw description */
-					[/* text */ 't', `If this channel is closed`]
-				]],
-				[/* throw */ 'java.nio.channels.OverlappingFileLockException', [/* throw description */
-					[/* text */ 't', `If a lock that overlaps the requested region is already held by
-          this Java virtual machine, or if another thread is already
-          blocked in this method and is attempting to lock an overlapping
-          region of the same file`]
-				]],
-				[/* throw */ 'java.nio.channels.NonReadableChannelException', [/* throw description */
-					[/* text */ 't', `If `],
-					[/* inline code block */ 'i', `shared`],
-					[/* text */ 't', ` is true but this channel was not opened for reading`]
-				]],
-				[/* throw */ 'java.nio.channels.NonWritableChannelException', [/* throw description */
-					[/* text */ 't', `If `],
-					[/* inline code block */ 'i', `shared`],
-					[/* text */ 't', ` is false but this channel was not opened for writing`]
-				]],
-				[/* throw */ 'java.io.IOException', [/* throw description */
-					[/* text */ 't', `If some other I/O error occurs`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `A lock object representing the newly-acquired lock,
-          or `],
-				[/* inline code block */ 'i', `null`],
-				[/* text */ 't', ` if the lock could not be acquired
-          because another program holds an overlapping lock`]
-			]
-		]],
-		[/* method */ 'force(boolean)', [
-			[/* method description */
-				[/* text */ 't', `Forces any updates to this channel's file to be written to the storage
- device that contains it.
-
- `],
-				[/* block */ 'b', ` If this channel's file resides on a local storage device then when
- this method returns it is guaranteed that all changes made to the file
- since this channel was created, or since this method was last invoked,
- will have been written to that device.  This is useful for ensuring that
- critical information is not lost in the event of a system crash.
-
- `],
-				[/* block */ 'b', ` If the file does not reside on a local device then no such guarantee
- is made.
-
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', ` The `],
-					[/* inline code block */ 'i', `metaData`],
-					[/* text */ 't', ` parameter can be used to limit the number of
- I/O operations that this method is required to perform.  Passing
- `],
-					[/* inline code block */ 'i', `false`],
-					[/* text */ 't', ` for this parameter indicates that only updates to the
- file's content need be written to storage; passing `],
-					[/* inline code block */ 'i', `true`],
-					[/* text */ 't', `
- indicates that updates to both the file's content and metadata must be
- written, which generally requires at least one more I/O operation.
- Whether this parameter actually has any effect is dependent upon the
- underlying operating system and is therefore unspecified.
-
- `]
-				]],
-				[/* block */ 'b', ` Invoking this method may cause an I/O operation to occur even if the
- channel was only opened for reading.  Some operating systems, for
- example, maintain a last-access time as part of a file's metadata, and
- this time is updated whenever the file is read.  Whether or not this is
- actually done is system-dependent and is therefore unspecified.
-
- `],
-				[/* block */ 'b', ` This method is only guaranteed to force changes that were made to
- this channel's file via the methods defined in this class.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'metaData', [/* parameter description */
-					[/* text */ 't', `If `],
-					[/* inline code block */ 'i', `true`],
-					[/* text */ 't', ` then this method is required to force changes
-          to both the file's content and metadata to be written to
-          storage; otherwise, it need only force content changes to be
-          written`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.nio.channels.ClosedChannelException', [/* throw description */
-					[/* text */ 't', `If this channel is closed`]
-				]],
-				[/* throw */ 'java.io.IOException', [/* throw description */
-					[/* text */ 't', `If some other I/O error occurs`]
-				]]
-			],
-			/* return */ UDF
-		]],
-		[/* method */ 'truncate(long)', [
-			[/* method description */
-				[/* text */ 't', `Truncates this channel's file to the given size.
-
- `],
-				[/* block */ 'b', ` If the given size is less than the file's current size then the file
- is truncated, discarding any bytes beyond the new end of the file.  If
- the given size is greater than or equal to the file's current size then
- the file is not modified. `]
-			],
-			[/* parameters */
-				[/* parameter */ 'size', [/* parameter description */
-					[/* text */ 't', `The new size, a non-negative byte count`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.nio.channels.NonWritableChannelException', [/* throw description */
-					[/* text */ 't', `If this channel was not opened for writing`]
-				]],
-				[/* throw */ 'java.nio.channels.ClosedChannelException', [/* throw description */
-					[/* text */ 't', `If this channel is closed`]
-				]],
-				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
-					[/* text */ 't', `If the new size is negative`]
-				]],
-				[/* throw */ 'java.io.IOException', [/* throw description */
-					[/* text */ 't', `If some other I/O error occurs`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `This file channel`]
 			]
 		]]
 	],

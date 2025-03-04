@@ -545,6 +545,106 @@ DocsCollector.collect('java.util.ResourceBundle', [
 		]]
 	],
 	[/* methods */
+		[/* method */ 'handleGetObject(java.lang.String)', [
+			[/* method description */
+				[/* text */ 't', `Gets an object for the given key from this resource bundle.
+ Returns null if this resource bundle does not contain an
+ object for the given key.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'key', [/* parameter description */
+					[/* text */ 't', `the key for the desired object`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
+					[/* text */ 't', `if `],
+					[/* inline code block */ 'i', `key`],
+					[/* text */ 't', ` is `],
+					[/* inline code block */ 'i', `null`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `the object for the given key, or null`]
+			]
+		]],
+		[/* method */ 'handleKeySet()', [
+			[/* method description */
+				[/* text */ 't', `Returns a `],
+				[/* inline code block */ 'i', `Set`],
+				[/* text */ 't', ` of the keys contained `],
+				[/* text */ 't', `only`],
+				[/* text */ 't', `
+ in this `],
+				[/* inline code block */ 'i', `ResourceBundle`],
+				[/* text */ 't', `.
+
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', `The default implementation returns a `],
+					[/* inline code block */ 'i', `Set`],
+					[/* text */ 't', ` of the
+ keys returned by the `],
+					[/* reference */ 'r', `#getKeys()`, `getKeys`],
+					[/* text */ 't', ` method except
+ for the ones for which the `],
+					[/* reference */ 'r', `#handleGetObject(java.lang.String)`, `handleGetObject`],
+					[/* text */ 't', ` method returns `],
+					[/* inline code block */ 'i', `null`],
+					[/* text */ 't', `. Once the
+ `],
+					[/* inline code block */ 'i', `Set`],
+					[/* text */ 't', ` has been created, the value is kept in this
+ `],
+					[/* inline code block */ 'i', `ResourceBundle`],
+					[/* text */ 't', ` in order to avoid producing the
+ same `],
+					[/* inline code block */ 'i', `Set`],
+					[/* text */ 't', ` in subsequent calls. Subclasses can
+ override this method for faster handling.`]
+				]]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `a `],
+				[/* inline code block */ 'i', `Set`],
+				[/* text */ 't', ` of the keys contained only in this
+        `],
+				[/* inline code block */ 'i', `ResourceBundle`]
+			]
+		]],
+		[/* method */ 'setParent(java.util.ResourceBundle)', [
+			[/* method description */
+				[/* text */ 't', `Sets the parent bundle of this bundle.
+ The parent bundle is searched by `],
+				[/* reference */ 'r', `#getObject(java.lang.String)`, `getObject`],
+				[/* text */ 't', `
+ when this bundle does not contain a particular resource.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'parent', [/* parameter description */
+					[/* text */ 't', `this bundle's parent bundle.`]
+				]]
+			],
+			/* throws */ UDF,
+			/* return */ UDF
+		]],
+		[/* method */ 'getKeys()', [
+			[/* method description */
+				[/* text */ 't', `Returns an enumeration of the keys.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `an `],
+				[/* inline code block */ 'i', `Enumeration`],
+				[/* text */ 't', ` of the keys contained in
+         this `],
+				[/* inline code block */ 'i', `ResourceBundle`],
+				[/* text */ 't', ` and its parent bundles.`]
+			]
+		]],
 		[/* method */ 'containsKey(java.lang.String)', [
 			[/* method description */
 				[/* text */ 't', `Determines whether the given `],
@@ -580,42 +680,6 @@ DocsCollector.collect('java.util.ResourceBundle', [
 				[/* inline code block */ 'i', `false`],
 				[/* text */ 't', ` otherwise.`]
 			]
-		]],
-		[/* method */ 'keySet()', [
-			[/* method description */
-				[/* text */ 't', `Returns a `],
-				[/* inline code block */ 'i', `Set`],
-				[/* text */ 't', ` of all keys contained in this
- `],
-				[/* inline code block */ 'i', `ResourceBundle`],
-				[/* text */ 't', ` and its parent bundles.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `a `],
-				[/* inline code block */ 'i', `Set`],
-				[/* text */ 't', ` of all keys contained in this
-         `],
-				[/* inline code block */ 'i', `ResourceBundle`],
-				[/* text */ 't', ` and its parent bundles.`]
-			]
-		]],
-		[/* method */ 'setParent(java.util.ResourceBundle)', [
-			[/* method description */
-				[/* text */ 't', `Sets the parent bundle of this bundle.
- The parent bundle is searched by `],
-				[/* reference */ 'r', `#getObject(java.lang.String)`, `getObject`],
-				[/* text */ 't', `
- when this bundle does not contain a particular resource.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'parent', [/* parameter description */
-					[/* text */ 't', `this bundle's parent bundle.`]
-				]]
-			],
-			/* throws */ UDF,
-			/* return */ UDF
 		]],
 		[/* method */ 'getObject(java.lang.String)', [
 			[/* method description */
@@ -684,19 +748,38 @@ DocsCollector.collect('java.util.ResourceBundle', [
 				[/* text */ 't', `the string for the given key`]
 			]
 		]],
-		[/* method */ 'getKeys()', [
+		[/* method */ 'getStringArray(java.lang.String)', [
 			[/* method description */
-				[/* text */ 't', `Returns an enumeration of the keys.`]
+				[/* text */ 't', `Gets a string array for the given key from this resource bundle or one of its parents.
+ Calling this method is equivalent to calling
+ `],
+				[/* block */ 'b', [
+					[/* inline code block */ 'i', `(String[]) getObject(key)`],
+					[/* text */ 't', `.
+ `]
+				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			[/* parameters */
+				[/* parameter */ 'key', [/* parameter description */
+					[/* text */ 't', `the key for the desired string array`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
+					[/* text */ 't', `if `],
+					[/* inline code block */ 'i', `key`],
+					[/* text */ 't', ` is `],
+					[/* inline code block */ 'i', `null`]
+				]],
+				[/* throw */ 'java.util.MissingResourceException', [/* throw description */
+					[/* text */ 't', `if no object for the given key can be found`]
+				]],
+				[/* throw */ 'java.lang.ClassCastException', [/* throw description */
+					[/* text */ 't', `if the object found for the given key is not a string array`]
+				]]
+			],
 			[/* return description */
-				[/* text */ 't', `an `],
-				[/* inline code block */ 'i', `Enumeration`],
-				[/* text */ 't', ` of the keys contained in
-         this `],
-				[/* inline code block */ 'i', `ResourceBundle`],
-				[/* text */ 't', ` and its parent bundles.`]
+				[/* text */ 't', `the string array for the given key`]
 			]
 		]],
 		[/* method */ 'getBaseBundleName()', [
@@ -720,6 +803,318 @@ DocsCollector.collect('java.util.ResourceBundle', [
  by the `],
 				[/* inline code block */ 'i', `ResourceBundle.getBundle(...)`],
 				[/* text */ 't', ` methods.`]
+			]
+		]],
+		[/* method */ 'getLocale()', [
+			[/* method description */
+				[/* text */ 't', `Returns the locale of this resource bundle. This method can be used after a
+ call to getBundle() to determine whether the resource bundle returned really
+ corresponds to the requested locale or is a fallback.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the locale of this resource bundle`]
+			]
+		]],
+		[/* method */ 'keySet()', [
+			[/* method description */
+				[/* text */ 't', `Returns a `],
+				[/* inline code block */ 'i', `Set`],
+				[/* text */ 't', ` of all keys contained in this
+ `],
+				[/* inline code block */ 'i', `ResourceBundle`],
+				[/* text */ 't', ` and its parent bundles.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `a `],
+				[/* inline code block */ 'i', `Set`],
+				[/* text */ 't', ` of all keys contained in this
+         `],
+				[/* inline code block */ 'i', `ResourceBundle`],
+				[/* text */ 't', ` and its parent bundles.`]
+			]
+		]],
+		[/* method */ 'getBundle(java.lang.String)', [
+			[/* method description */
+				[/* text */ 't', `Gets a resource bundle using the specified base name, the default locale,
+ and the caller module. Calling this method is equivalent to calling
+ `],
+				[/* block */ 'b', [
+					[/* inline code block */ 'i', `getBundle(baseName, Locale.getDefault(), callerModule)`],
+					[/* text */ 't', `,
+ `]
+				]]
+			],
+			[/* parameters */
+				[/* parameter */ 'baseName', [/* parameter description */
+					[/* text */ 't', `the base name of the resource bundle, a fully qualified class name`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
+					[/* text */ 't', `if `],
+					[/* inline code block */ 'i', `baseName`],
+					[/* text */ 't', ` is `],
+					[/* inline code block */ 'i', `null`]
+				]],
+				[/* throw */ 'java.util.MissingResourceException', [/* throw description */
+					[/* text */ 't', `if no resource bundle for the specified base name can be found`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `a resource bundle for the given base name and the default locale`]
+			]
+		]],
+		[/* method */ 'getBundle(java.lang.String,java.util.Locale)', [
+			[/* method description */
+				[/* text */ 't', `Gets a resource bundle using the specified base name and locale,
+ and the caller module. Calling this method is equivalent to calling
+ `],
+				[/* block */ 'b', [
+					[/* inline code block */ 'i', `getBundle(baseName, locale, callerModule)`],
+					[/* text */ 't', `,
+ `]
+				]]
+			],
+			[/* parameters */
+				[/* parameter */ 'baseName', [/* parameter description */
+					[/* text */ 't', `the base name of the resource bundle, a fully qualified class name`]
+				]],
+				[/* parameter */ 'locale', [/* parameter description */
+					[/* text */ 't', `the locale for which a resource bundle is desired`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
+					[/* text */ 't', `if `],
+					[/* inline code block */ 'i', `baseName`],
+					[/* text */ 't', ` or `],
+					[/* inline code block */ 'i', `locale`],
+					[/* text */ 't', ` is `],
+					[/* inline code block */ 'i', `null`]
+				]],
+				[/* throw */ 'java.util.MissingResourceException', [/* throw description */
+					[/* text */ 't', `if no resource bundle for the specified base name can be found`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `a resource bundle for the given base name and locale`]
+			]
+		]],
+		[/* method */ 'getBundle(java.lang.String,java.util.Locale,java.util.ResourceBundle.Control)', [
+			[/* method description */
+				[/* text */ 't', `Returns a resource bundle using the specified base name, target
+ locale and control, and the caller's class loader. Calling this
+ method is equivalent to calling
+ `],
+				[/* code block */ 'c', ` getBundle(baseName, targetLocale, this.getClass().getClassLoader(),
+           control),
+ `],
+				[/* text */ 't', `
+ except that `],
+				[/* inline code block */ 'i', `getClassLoader()`],
+				[/* text */ 't', ` is run with the security
+ privileges of `],
+				[/* inline code block */ 'i', `ResourceBundle`],
+				[/* text */ 't', `.  See `],
+				[/* reference */ 'r', `#getBundle(java.lang.String,java.util.Locale,java.lang.ClassLoader,java.util.ResourceBundle.Control)`, `getBundle`],
+				[/* text */ 't', ` for the
+ complete description of the resource bundle loading process with a
+ `],
+				[/* inline code block */ 'i', `ResourceBundle.Control`],
+				[/* text */ 't', `.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'baseName', [/* parameter description */
+					[/* text */ 't', `the base name of the resource bundle, a fully qualified
+        class name`]
+				]],
+				[/* parameter */ 'targetLocale', [/* parameter description */
+					[/* text */ 't', `the locale for which a resource bundle is desired`]
+				]],
+				[/* parameter */ 'control', [/* parameter description */
+					[/* text */ 't', `the control which gives information for the resource
+        bundle loading process`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
+					[/* text */ 't', `if `],
+					[/* inline code block */ 'i', `baseName`],
+					[/* text */ 't', `, `],
+					[/* inline code block */ 'i', `locales`],
+					[/* text */ 't', ` or
+         `],
+					[/* inline code block */ 'i', `control`],
+					[/* text */ 't', ` is `],
+					[/* inline code block */ 'i', `null`]
+				]],
+				[/* throw */ 'java.util.MissingResourceException', [/* throw description */
+					[/* text */ 't', `if no resource bundle for the specified base name in any
+         of the `],
+					[/* inline code block */ 'i', `locales`],
+					[/* text */ 't', ` can be found.`]
+				]],
+				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
+					[/* text */ 't', `if the given `],
+					[/* inline code block */ 'i', `control`],
+					[/* text */ 't', ` doesn't perform properly
+         (e.g., `],
+					[/* inline code block */ 'i', `control.getCandidateLocales`],
+					[/* text */ 't', ` returns null.)
+         Note that validation of `],
+					[/* inline code block */ 'i', `control`],
+					[/* text */ 't', ` is performed as
+         needed.`]
+				]],
+				[/* throw */ 'java.lang.UnsupportedOperationException', [/* throw description */
+					[/* text */ 't', `if this method is called in a named module`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `a resource bundle for the given base name and a
+         `],
+				[/* inline code block */ 'i', `Locale`],
+				[/* text */ 't', ` in `],
+				[/* inline code block */ 'i', `locales`]
+			]
+		]],
+		[/* method */ 'getBundle(java.lang.String,java.util.ResourceBundle.Control)', [
+			[/* method description */
+				[/* text */ 't', `Returns a resource bundle using the specified base name, the
+ default locale and the specified control. Calling this method
+ is equivalent to calling
+ `],
+				[/* code block */ 'c', ` getBundle(baseName, Locale.getDefault(),
+           this.getClass().getClassLoader(), control),
+ `],
+				[/* text */ 't', `
+ except that `],
+				[/* inline code block */ 'i', `getClassLoader()`],
+				[/* text */ 't', ` is run with the security
+ privileges of `],
+				[/* inline code block */ 'i', `ResourceBundle`],
+				[/* text */ 't', `.  See `],
+				[/* reference */ 'r', `#getBundle(java.lang.String,java.util.Locale,java.lang.ClassLoader,java.util.ResourceBundle.Control)`, `getBundle`],
+				[/* text */ 't', ` for the
+ complete description of the resource bundle loading process with a
+ `],
+				[/* inline code block */ 'i', `ResourceBundle.Control`],
+				[/* text */ 't', `.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'baseName', [/* parameter description */
+					[/* text */ 't', `the base name of the resource bundle, a fully qualified class
+        name`]
+				]],
+				[/* parameter */ 'control', [/* parameter description */
+					[/* text */ 't', `the control which gives information for the resource bundle
+        loading process`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
+					[/* text */ 't', `if `],
+					[/* inline code block */ 'i', `baseName`],
+					[/* text */ 't', ` or `],
+					[/* inline code block */ 'i', `control`],
+					[/* text */ 't', ` is
+         `],
+					[/* inline code block */ 'i', `null`]
+				]],
+				[/* throw */ 'java.util.MissingResourceException', [/* throw description */
+					[/* text */ 't', `if no resource bundle for the specified base name can be found`]
+				]],
+				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
+					[/* text */ 't', `if the given `],
+					[/* inline code block */ 'i', `control`],
+					[/* text */ 't', ` doesn't perform properly
+         (e.g., `],
+					[/* inline code block */ 'i', `control.getCandidateLocales`],
+					[/* text */ 't', ` returns null.)
+         Note that validation of `],
+					[/* inline code block */ 'i', `control`],
+					[/* text */ 't', ` is performed as
+         needed.`]
+				]],
+				[/* throw */ 'java.lang.UnsupportedOperationException', [/* throw description */
+					[/* text */ 't', `if this method is called in a named module`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `a resource bundle for the given base name and the default locale`]
+			]
+		]],
+		[/* method */ 'clearCache()', [
+			[/* method description */
+				[/* text */ 't', `Removes all resource bundles from the cache that have been loaded
+ by the caller's module.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			/* return */ UDF
+		]],
+		[/* method */ 'clearCache(java.lang.ClassLoader)', [
+			[/* method description */
+				[/* text */ 't', `Removes all resource bundles from the cache that have been loaded
+ by the given class loader.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'loader', [/* parameter description */
+					[/* text */ 't', `the class loader`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
+					[/* text */ 't', `if `],
+					[/* inline code block */ 'i', `loader`],
+					[/* text */ 't', ` is null`]
+				]]
+			],
+			/* return */ UDF
+		]],
+		[/* method */ 'getBundle(java.lang.String,java.lang.Module)', [
+			[/* method description */
+				[/* text */ 't', `Gets a resource bundle using the specified base name and the default locale
+ on behalf of the specified module. This method is equivalent to calling
+ `],
+				[/* block */ 'b', [
+					[/* inline code block */ 'i', `getBundle(baseName, Locale.getDefault(), module)`]
+				]]
+			],
+			[/* parameters */
+				[/* parameter */ 'baseName', [/* parameter description */
+					[/* text */ 't', `the base name of the resource bundle,
+                 a fully qualified class name`]
+				]],
+				[/* parameter */ 'module', [/* parameter description */
+					[/* text */ 't', `the module for which the resource bundle is searched`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
+					[/* text */ 't', `if `],
+					[/* inline code block */ 'i', `baseName`],
+					[/* text */ 't', ` or `],
+					[/* inline code block */ 'i', `module`],
+					[/* text */ 't', ` is `],
+					[/* inline code block */ 'i', `null`]
+				]],
+				[/* throw */ 'java.lang.SecurityException', [/* throw description */
+					[/* text */ 't', `if a security manager exists and the caller is not the specified
+         module and doesn't have `],
+					[/* inline code block */ 'i', `RuntimePermission("getClassLoader")`]
+				]],
+				[/* throw */ 'java.util.MissingResourceException', [/* throw description */
+					[/* text */ 't', `if no resource bundle for the specified base name can be found in the
+         specified module`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `a resource bundle for the given base name and the default locale`]
 			]
 		]],
 		[/* method */ 'getBundle(java.lang.String,java.util.Locale,java.lang.ClassLoader)', [
@@ -1538,180 +1933,6 @@ DocsCollector.collect('java.util.ResourceBundle', [
 				[/* text */ 't', `a resource bundle for the given base name and locale`]
 			]
 		]],
-		[/* method */ 'getBundle(java.lang.String,java.util.ResourceBundle.Control)', [
-			[/* method description */
-				[/* text */ 't', `Returns a resource bundle using the specified base name, the
- default locale and the specified control. Calling this method
- is equivalent to calling
- `],
-				[/* code block */ 'c', ` getBundle(baseName, Locale.getDefault(),
-           this.getClass().getClassLoader(), control),
- `],
-				[/* text */ 't', `
- except that `],
-				[/* inline code block */ 'i', `getClassLoader()`],
-				[/* text */ 't', ` is run with the security
- privileges of `],
-				[/* inline code block */ 'i', `ResourceBundle`],
-				[/* text */ 't', `.  See `],
-				[/* reference */ 'r', `#getBundle(java.lang.String,java.util.Locale,java.lang.ClassLoader,java.util.ResourceBundle.Control)`, `getBundle`],
-				[/* text */ 't', ` for the
- complete description of the resource bundle loading process with a
- `],
-				[/* inline code block */ 'i', `ResourceBundle.Control`],
-				[/* text */ 't', `.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'baseName', [/* parameter description */
-					[/* text */ 't', `the base name of the resource bundle, a fully qualified class
-        name`]
-				]],
-				[/* parameter */ 'control', [/* parameter description */
-					[/* text */ 't', `the control which gives information for the resource bundle
-        loading process`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
-					[/* text */ 't', `if `],
-					[/* inline code block */ 'i', `baseName`],
-					[/* text */ 't', ` or `],
-					[/* inline code block */ 'i', `control`],
-					[/* text */ 't', ` is
-         `],
-					[/* inline code block */ 'i', `null`]
-				]],
-				[/* throw */ 'java.util.MissingResourceException', [/* throw description */
-					[/* text */ 't', `if no resource bundle for the specified base name can be found`]
-				]],
-				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
-					[/* text */ 't', `if the given `],
-					[/* inline code block */ 'i', `control`],
-					[/* text */ 't', ` doesn't perform properly
-         (e.g., `],
-					[/* inline code block */ 'i', `control.getCandidateLocales`],
-					[/* text */ 't', ` returns null.)
-         Note that validation of `],
-					[/* inline code block */ 'i', `control`],
-					[/* text */ 't', ` is performed as
-         needed.`]
-				]],
-				[/* throw */ 'java.lang.UnsupportedOperationException', [/* throw description */
-					[/* text */ 't', `if this method is called in a named module`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `a resource bundle for the given base name and the default locale`]
-			]
-		]],
-		[/* method */ 'getBundle(java.lang.String)', [
-			[/* method description */
-				[/* text */ 't', `Gets a resource bundle using the specified base name, the default locale,
- and the caller module. Calling this method is equivalent to calling
- `],
-				[/* block */ 'b', [
-					[/* inline code block */ 'i', `getBundle(baseName, Locale.getDefault(), callerModule)`],
-					[/* text */ 't', `,
- `]
-				]]
-			],
-			[/* parameters */
-				[/* parameter */ 'baseName', [/* parameter description */
-					[/* text */ 't', `the base name of the resource bundle, a fully qualified class name`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
-					[/* text */ 't', `if `],
-					[/* inline code block */ 'i', `baseName`],
-					[/* text */ 't', ` is `],
-					[/* inline code block */ 'i', `null`]
-				]],
-				[/* throw */ 'java.util.MissingResourceException', [/* throw description */
-					[/* text */ 't', `if no resource bundle for the specified base name can be found`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `a resource bundle for the given base name and the default locale`]
-			]
-		]],
-		[/* method */ 'getBundle(java.lang.String,java.util.Locale)', [
-			[/* method description */
-				[/* text */ 't', `Gets a resource bundle using the specified base name and locale,
- and the caller module. Calling this method is equivalent to calling
- `],
-				[/* block */ 'b', [
-					[/* inline code block */ 'i', `getBundle(baseName, locale, callerModule)`],
-					[/* text */ 't', `,
- `]
-				]]
-			],
-			[/* parameters */
-				[/* parameter */ 'baseName', [/* parameter description */
-					[/* text */ 't', `the base name of the resource bundle, a fully qualified class name`]
-				]],
-				[/* parameter */ 'locale', [/* parameter description */
-					[/* text */ 't', `the locale for which a resource bundle is desired`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
-					[/* text */ 't', `if `],
-					[/* inline code block */ 'i', `baseName`],
-					[/* text */ 't', ` or `],
-					[/* inline code block */ 'i', `locale`],
-					[/* text */ 't', ` is `],
-					[/* inline code block */ 'i', `null`]
-				]],
-				[/* throw */ 'java.util.MissingResourceException', [/* throw description */
-					[/* text */ 't', `if no resource bundle for the specified base name can be found`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `a resource bundle for the given base name and locale`]
-			]
-		]],
-		[/* method */ 'getBundle(java.lang.String,java.lang.Module)', [
-			[/* method description */
-				[/* text */ 't', `Gets a resource bundle using the specified base name and the default locale
- on behalf of the specified module. This method is equivalent to calling
- `],
-				[/* block */ 'b', [
-					[/* inline code block */ 'i', `getBundle(baseName, Locale.getDefault(), module)`]
-				]]
-			],
-			[/* parameters */
-				[/* parameter */ 'baseName', [/* parameter description */
-					[/* text */ 't', `the base name of the resource bundle,
-                 a fully qualified class name`]
-				]],
-				[/* parameter */ 'module', [/* parameter description */
-					[/* text */ 't', `the module for which the resource bundle is searched`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
-					[/* text */ 't', `if `],
-					[/* inline code block */ 'i', `baseName`],
-					[/* text */ 't', ` or `],
-					[/* inline code block */ 'i', `module`],
-					[/* text */ 't', ` is `],
-					[/* inline code block */ 'i', `null`]
-				]],
-				[/* throw */ 'java.lang.SecurityException', [/* throw description */
-					[/* text */ 't', `if a security manager exists and the caller is not the specified
-         module and doesn't have `],
-					[/* inline code block */ 'i', `RuntimePermission("getClassLoader")`]
-				]],
-				[/* throw */ 'java.util.MissingResourceException', [/* throw description */
-					[/* text */ 't', `if no resource bundle for the specified base name can be found in the
-         specified module`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `a resource bundle for the given base name and the default locale`]
-			]
-		]],
 		[/* method */ 'getBundle(java.lang.String,java.util.Locale,java.lang.Module)', [
 			[/* method description */
 				[/* text */ 't', `Gets a resource bundle using the specified base name and locale
@@ -1803,227 +2024,6 @@ DocsCollector.collect('java.util.ResourceBundle', [
 			[/* return description */
 				[/* text */ 't', `a resource bundle for the given base name and locale in the module`]
 			]
-		]],
-		[/* method */ 'getBundle(java.lang.String,java.util.Locale,java.util.ResourceBundle.Control)', [
-			[/* method description */
-				[/* text */ 't', `Returns a resource bundle using the specified base name, target
- locale and control, and the caller's class loader. Calling this
- method is equivalent to calling
- `],
-				[/* code block */ 'c', ` getBundle(baseName, targetLocale, this.getClass().getClassLoader(),
-           control),
- `],
-				[/* text */ 't', `
- except that `],
-				[/* inline code block */ 'i', `getClassLoader()`],
-				[/* text */ 't', ` is run with the security
- privileges of `],
-				[/* inline code block */ 'i', `ResourceBundle`],
-				[/* text */ 't', `.  See `],
-				[/* reference */ 'r', `#getBundle(java.lang.String,java.util.Locale,java.lang.ClassLoader,java.util.ResourceBundle.Control)`, `getBundle`],
-				[/* text */ 't', ` for the
- complete description of the resource bundle loading process with a
- `],
-				[/* inline code block */ 'i', `ResourceBundle.Control`],
-				[/* text */ 't', `.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'baseName', [/* parameter description */
-					[/* text */ 't', `the base name of the resource bundle, a fully qualified
-        class name`]
-				]],
-				[/* parameter */ 'targetLocale', [/* parameter description */
-					[/* text */ 't', `the locale for which a resource bundle is desired`]
-				]],
-				[/* parameter */ 'control', [/* parameter description */
-					[/* text */ 't', `the control which gives information for the resource
-        bundle loading process`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
-					[/* text */ 't', `if `],
-					[/* inline code block */ 'i', `baseName`],
-					[/* text */ 't', `, `],
-					[/* inline code block */ 'i', `locales`],
-					[/* text */ 't', ` or
-         `],
-					[/* inline code block */ 'i', `control`],
-					[/* text */ 't', ` is `],
-					[/* inline code block */ 'i', `null`]
-				]],
-				[/* throw */ 'java.util.MissingResourceException', [/* throw description */
-					[/* text */ 't', `if no resource bundle for the specified base name in any
-         of the `],
-					[/* inline code block */ 'i', `locales`],
-					[/* text */ 't', ` can be found.`]
-				]],
-				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
-					[/* text */ 't', `if the given `],
-					[/* inline code block */ 'i', `control`],
-					[/* text */ 't', ` doesn't perform properly
-         (e.g., `],
-					[/* inline code block */ 'i', `control.getCandidateLocales`],
-					[/* text */ 't', ` returns null.)
-         Note that validation of `],
-					[/* inline code block */ 'i', `control`],
-					[/* text */ 't', ` is performed as
-         needed.`]
-				]],
-				[/* throw */ 'java.lang.UnsupportedOperationException', [/* throw description */
-					[/* text */ 't', `if this method is called in a named module`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `a resource bundle for the given base name and a
-         `],
-				[/* inline code block */ 'i', `Locale`],
-				[/* text */ 't', ` in `],
-				[/* inline code block */ 'i', `locales`]
-			]
-		]],
-		[/* method */ 'getLocale()', [
-			[/* method description */
-				[/* text */ 't', `Returns the locale of this resource bundle. This method can be used after a
- call to getBundle() to determine whether the resource bundle returned really
- corresponds to the requested locale or is a fallback.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the locale of this resource bundle`]
-			]
-		]],
-		[/* method */ 'handleGetObject(java.lang.String)', [
-			[/* method description */
-				[/* text */ 't', `Gets an object for the given key from this resource bundle.
- Returns null if this resource bundle does not contain an
- object for the given key.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'key', [/* parameter description */
-					[/* text */ 't', `the key for the desired object`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
-					[/* text */ 't', `if `],
-					[/* inline code block */ 'i', `key`],
-					[/* text */ 't', ` is `],
-					[/* inline code block */ 'i', `null`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `the object for the given key, or null`]
-			]
-		]],
-		[/* method */ 'handleKeySet()', [
-			[/* method description */
-				[/* text */ 't', `Returns a `],
-				[/* inline code block */ 'i', `Set`],
-				[/* text */ 't', ` of the keys contained `],
-				[/* text */ 't', `only`],
-				[/* text */ 't', `
- in this `],
-				[/* inline code block */ 'i', `ResourceBundle`],
-				[/* text */ 't', `.
-
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', `The default implementation returns a `],
-					[/* inline code block */ 'i', `Set`],
-					[/* text */ 't', ` of the
- keys returned by the `],
-					[/* reference */ 'r', `#getKeys()`, `getKeys`],
-					[/* text */ 't', ` method except
- for the ones for which the `],
-					[/* reference */ 'r', `#handleGetObject(java.lang.String)`, `handleGetObject`],
-					[/* text */ 't', ` method returns `],
-					[/* inline code block */ 'i', `null`],
-					[/* text */ 't', `. Once the
- `],
-					[/* inline code block */ 'i', `Set`],
-					[/* text */ 't', ` has been created, the value is kept in this
- `],
-					[/* inline code block */ 'i', `ResourceBundle`],
-					[/* text */ 't', ` in order to avoid producing the
- same `],
-					[/* inline code block */ 'i', `Set`],
-					[/* text */ 't', ` in subsequent calls. Subclasses can
- override this method for faster handling.`]
-				]]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `a `],
-				[/* inline code block */ 'i', `Set`],
-				[/* text */ 't', ` of the keys contained only in this
-        `],
-				[/* inline code block */ 'i', `ResourceBundle`]
-			]
-		]],
-		[/* method */ 'getStringArray(java.lang.String)', [
-			[/* method description */
-				[/* text */ 't', `Gets a string array for the given key from this resource bundle or one of its parents.
- Calling this method is equivalent to calling
- `],
-				[/* block */ 'b', [
-					[/* inline code block */ 'i', `(String[]) getObject(key)`],
-					[/* text */ 't', `.
- `]
-				]]
-			],
-			[/* parameters */
-				[/* parameter */ 'key', [/* parameter description */
-					[/* text */ 't', `the key for the desired string array`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
-					[/* text */ 't', `if `],
-					[/* inline code block */ 'i', `key`],
-					[/* text */ 't', ` is `],
-					[/* inline code block */ 'i', `null`]
-				]],
-				[/* throw */ 'java.util.MissingResourceException', [/* throw description */
-					[/* text */ 't', `if no object for the given key can be found`]
-				]],
-				[/* throw */ 'java.lang.ClassCastException', [/* throw description */
-					[/* text */ 't', `if the object found for the given key is not a string array`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `the string array for the given key`]
-			]
-		]],
-		[/* method */ 'clearCache()', [
-			[/* method description */
-				[/* text */ 't', `Removes all resource bundles from the cache that have been loaded
- by the caller's module.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			/* return */ UDF
-		]],
-		[/* method */ 'clearCache(java.lang.ClassLoader)', [
-			[/* method description */
-				[/* text */ 't', `Removes all resource bundles from the cache that have been loaded
- by the given class loader.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'loader', [/* parameter description */
-					[/* text */ 't', `the class loader`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
-					[/* text */ 't', `if `],
-					[/* inline code block */ 'i', `loader`],
-					[/* text */ 't', ` is null`]
-				]]
-			],
-			/* return */ UDF
 		]]
 	],
 ]);

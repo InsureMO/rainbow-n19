@@ -11,33 +11,6 @@ DocsCollector.collect('java.lang.reflect.RecordComponent', [
 	/* fields */ UDF,
 	/* constructors */ UDF,
 	[/* methods */
-		[/* method */ 'getName()', [
-			[/* method description */
-				[/* text */ 't', `Returns the name of this record component.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the name of this record component`]
-			]
-		]],
-		[/* method */ 'toString()', [
-			[/* method description */
-				[/* text */ 't', `Returns a string describing this record component. The format is
- the record component type, followed by a space, followed by the name
- of the record component.
- For example:
- `],
-				[/* code block */ 'c', `    java.lang.String name
-    int age
- `]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `a string describing this record component`]
-			]
-		]],
 		[/* method */ 'getAnnotation(java.lang.Class)', [
 			[/* method description */
 				[/* text */ 't', `Returns this element's annotation for the specified type if
@@ -111,20 +84,59 @@ DocsCollector.collect('java.lang.reflect.RecordComponent', [
 				[/* text */ 't', `annotations directly present on this element`]
 			]
 		]],
-		[/* method */ 'getGenericSignature()', [
+		[/* method */ 'getDeclaringRecord()', [
+			[/* method description */
+				[/* text */ 't', `Returns the record class which declares this record component.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `The record class declaring this record component.`]
+			]
+		]],
+		[/* method */ 'getType()', [
 			[/* method description */
 				[/* text */ 't', `Returns a `],
-				[/* inline code block */ 'i', `String`],
-				[/* text */ 't', ` that describes the generic type signature for
- this record component.`]
+				[/* inline code block */ 'i', `Class`],
+				[/* text */ 't', ` that identifies the declared type for this
+ record component.`]
 			],
 			/* parameters */ UDF,
 			/* throws */ UDF,
 			[/* return description */
 				[/* text */ 't', `a `],
-				[/* inline code block */ 'i', `String`],
-				[/* text */ 't', ` that describes the generic type signature for
- this record component`]
+				[/* inline code block */ 'i', `Class`],
+				[/* text */ 't', ` identifying the declared type of the component
+ represented by this record component`]
+			]
+		]],
+		[/* method */ 'getAnnotatedType()', [
+			[/* method description */
+				[/* text */ 't', `Returns an `],
+				[/* inline code block */ 'i', `AnnotatedType`],
+				[/* text */ 't', ` object that represents the use of a type to specify
+ the declared type of this record component.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `an object representing the declared type of this record component`]
+			]
+		]],
+		[/* method */ 'getAccessor()', [
+			[/* method description */
+				[/* text */ 't', `Returns a `],
+				[/* inline code block */ 'i', `Method`],
+				[/* text */ 't', ` that represents the accessor for this record
+ component.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `a `],
+				[/* inline code block */ 'i', `Method`],
+				[/* text */ 't', ` that represents the accessor for this record
+ component`]
 			]
 		]],
 		[/* method */ 'getGenericType()', [
@@ -173,59 +185,47 @@ DocsCollector.collect('java.lang.reflect.RecordComponent', [
          this record component`]
 			]
 		]],
-		[/* method */ 'getType()', [
+		[/* method */ 'getGenericSignature()', [
 			[/* method description */
 				[/* text */ 't', `Returns a `],
-				[/* inline code block */ 'i', `Class`],
-				[/* text */ 't', ` that identifies the declared type for this
- record component.`]
+				[/* inline code block */ 'i', `String`],
+				[/* text */ 't', ` that describes the generic type signature for
+ this record component.`]
 			],
 			/* parameters */ UDF,
 			/* throws */ UDF,
 			[/* return description */
 				[/* text */ 't', `a `],
-				[/* inline code block */ 'i', `Class`],
-				[/* text */ 't', ` identifying the declared type of the component
- represented by this record component`]
+				[/* inline code block */ 'i', `String`],
+				[/* text */ 't', ` that describes the generic type signature for
+ this record component`]
 			]
 		]],
-		[/* method */ 'getAnnotatedType()', [
+		[/* method */ 'getName()', [
 			[/* method description */
-				[/* text */ 't', `Returns an `],
-				[/* inline code block */ 'i', `AnnotatedType`],
-				[/* text */ 't', ` object that represents the use of a type to specify
- the declared type of this record component.`]
+				[/* text */ 't', `Returns the name of this record component.`]
 			],
 			/* parameters */ UDF,
 			/* throws */ UDF,
 			[/* return description */
-				[/* text */ 't', `an object representing the declared type of this record component`]
+				[/* text */ 't', `the name of this record component`]
 			]
 		]],
-		[/* method */ 'getDeclaringRecord()', [
+		[/* method */ 'toString()', [
 			[/* method description */
-				[/* text */ 't', `Returns the record class which declares this record component.`]
+				[/* text */ 't', `Returns a string describing this record component. The format is
+ the record component type, followed by a space, followed by the name
+ of the record component.
+ For example:
+ `],
+				[/* code block */ 'c', `    java.lang.String name
+    int age
+ `]
 			],
 			/* parameters */ UDF,
 			/* throws */ UDF,
 			[/* return description */
-				[/* text */ 't', `The record class declaring this record component.`]
-			]
-		]],
-		[/* method */ 'getAccessor()', [
-			[/* method description */
-				[/* text */ 't', `Returns a `],
-				[/* inline code block */ 'i', `Method`],
-				[/* text */ 't', ` that represents the accessor for this record
- component.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `a `],
-				[/* inline code block */ 'i', `Method`],
-				[/* text */ 't', ` that represents the accessor for this record
- component`]
+				[/* text */ 't', `a string describing this record component`]
 			]
 		]]
 	],

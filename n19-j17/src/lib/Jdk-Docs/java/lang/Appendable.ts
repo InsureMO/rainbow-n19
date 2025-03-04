@@ -37,6 +37,27 @@ DocsCollector.collect('java.lang.Appendable', [
 	/* fields */ UDF,
 	/* constructors */ UDF,
 	[/* methods */
+		[/* method */ 'append(char)', [
+			[/* method description */
+				[/* text */ 't', `Appends the specified character to this `],
+				[/* inline code block */ 'i', `Appendable`],
+				[/* text */ 't', `.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'c', [/* parameter description */
+					[/* text */ 't', `The character to append`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.io.IOException', [/* throw description */
+					[/* text */ 't', `If an I/O error occurs`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `A reference to this `],
+				[/* inline code block */ 'i', `Appendable`]
+			]
+		]],
 		[/* method */ 'append(java.lang.CharSequence)', [
 			[/* method description */
 				[/* text */ 't', `Appends the specified character sequence to this `],
@@ -144,27 +165,6 @@ DocsCollector.collect('java.lang.Appendable', [
           `],
 					[/* inline code block */ 'i', `csq.length()`]
 				]],
-				[/* throw */ 'java.io.IOException', [/* throw description */
-					[/* text */ 't', `If an I/O error occurs`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `A reference to this `],
-				[/* inline code block */ 'i', `Appendable`]
-			]
-		]],
-		[/* method */ 'append(char)', [
-			[/* method description */
-				[/* text */ 't', `Appends the specified character to this `],
-				[/* inline code block */ 'i', `Appendable`],
-				[/* text */ 't', `.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'c', [/* parameter description */
-					[/* text */ 't', `The character to append`]
-				]]
-			],
-			[/* throws */
 				[/* throw */ 'java.io.IOException', [/* throw description */
 					[/* text */ 't', `If an I/O error occurs`]
 				]]

@@ -35,7 +35,6 @@ DocsCollector.collect('java.util.IllegalFormatConversionException', [
 		]]
 	],
 	[/* methods */
-		[/* method */ 'getMessage()', UDF],
 		[/* method */ 'getConversion()', [
 			[/* method description */
 				[/* text */ 't', `Returns the inapplicable conversion.`]
@@ -55,6 +54,7 @@ DocsCollector.collect('java.util.IllegalFormatConversionException', [
 			[/* return description */
 				[/* text */ 't', `The class of the mismatched argument`]
 			]
-		]]
+		]],
+		[/* method */ 'getMessage()', UDF]
 	],
 ]);

@@ -650,14 +650,14 @@ JdkClassCreateHelper.class('java.time.Year', [
 		]
 	],
 	[/* declared fields */
-		[/* public static final int java.time.Year.MIN_VALUE */
-			/* name */ 'MIN_VALUE',
+		[/* public static final int java.time.Year.MAX_VALUE */
+			/* name */ 'MAX_VALUE',
 			/* type */ 'int',
 			/* annotations */ UDF,
 			/* modifiers */ 25
 		],
-		[/* public static final int java.time.Year.MAX_VALUE */
-			/* name */ 'MAX_VALUE',
+		[/* public static final int java.time.Year.MIN_VALUE */
+			/* name */ 'MIN_VALUE',
 			/* type */ 'int',
 			/* annotations */ UDF,
 			/* modifiers */ 25

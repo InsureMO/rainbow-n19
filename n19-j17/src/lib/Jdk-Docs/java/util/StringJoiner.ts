@@ -139,33 +139,6 @@ DocsCollector.collect('java.util.StringJoiner', [
 		]]
 	],
 	[/* methods */
-		[/* method */ 'add(java.lang.CharSequence)', [
-			[/* method description */
-				[/* text */ 't', `Adds a copy of the given `],
-				[/* inline code block */ 'i', `CharSequence`],
-				[/* text */ 't', ` value as the next
- element of the `],
-				[/* inline code block */ 'i', `StringJoiner`],
-				[/* text */ 't', ` value. If `],
-				[/* inline code block */ 'i', `newElement`],
-				[/* text */ 't', ` is
- `],
-				[/* inline code block */ 'i', `null`],
-				[/* text */ 't', `, then `],
-				[/* inline code block */ 'i', `"null"`],
-				[/* text */ 't', ` is added.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'newElement', [/* parameter description */
-					[/* text */ 't', `The element to add`]
-				]]
-			],
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `a reference to this `],
-				[/* inline code block */ 'i', `StringJoiner`]
-			]
-		]],
 		[/* method */ 'length()', [
 			[/* method description */
 				[/* text */ 't', `Returns the length of the `],
@@ -215,6 +188,33 @@ DocsCollector.collect('java.util.StringJoiner', [
 			/* throws */ UDF,
 			[/* return description */
 				[/* text */ 't', `the string representation of this `],
+				[/* inline code block */ 'i', `StringJoiner`]
+			]
+		]],
+		[/* method */ 'add(java.lang.CharSequence)', [
+			[/* method description */
+				[/* text */ 't', `Adds a copy of the given `],
+				[/* inline code block */ 'i', `CharSequence`],
+				[/* text */ 't', ` value as the next
+ element of the `],
+				[/* inline code block */ 'i', `StringJoiner`],
+				[/* text */ 't', ` value. If `],
+				[/* inline code block */ 'i', `newElement`],
+				[/* text */ 't', ` is
+ `],
+				[/* inline code block */ 'i', `null`],
+				[/* text */ 't', `, then `],
+				[/* inline code block */ 'i', `"null"`],
+				[/* text */ 't', ` is added.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'newElement', [/* parameter description */
+					[/* text */ 't', `The element to add`]
+				]]
+			],
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `a reference to this `],
 				[/* inline code block */ 'i', `StringJoiner`]
 			]
 		]],

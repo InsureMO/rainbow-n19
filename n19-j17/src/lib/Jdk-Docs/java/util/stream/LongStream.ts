@@ -44,114 +44,6 @@ DocsCollector.collect('java.util.stream.LongStream', [
 	/* fields */ UDF,
 	/* constructors */ UDF,
 	[/* methods */
-		[/* method */ 'min()', [
-			[/* method description */
-				[/* text */ 't', `Returns an `],
-				[/* inline code block */ 'i', `OptionalLong`],
-				[/* text */ 't', ` describing the minimum element of this
- stream, or an empty optional if this stream is empty.  This is a special
- case of a `],
-				[/* reference */ 'r', `.package-summary#Reduction`],
-				[/* text */ 't', `
- and is equivalent to:
- `],
-				[/* code block */ 'c', [
-					[/* inline code block */ 'i', `return reduce(Long::min);`]
-				]],
-				[/* block */ 'b', [
-					[/* text */ 't', `This is a `],
-					[/* reference */ 'r', `.package-summary#StreamOps`],
-					[/* text */ 't', `.`]
-				]]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `an `],
-				[/* inline code block */ 'i', `OptionalLong`],
-				[/* text */ 't', ` containing the minimum element of this
- stream, or an empty `],
-				[/* inline code block */ 'i', `OptionalLong`],
-				[/* text */ 't', ` if the stream is empty`]
-			]
-		]],
-		[/* method */ 'max()', [
-			[/* method description */
-				[/* text */ 't', `Returns an `],
-				[/* inline code block */ 'i', `OptionalLong`],
-				[/* text */ 't', ` describing the maximum element of this
- stream, or an empty optional if this stream is empty.  This is a special
- case of a `],
-				[/* reference */ 'r', `.package-summary#Reduction`],
-				[/* text */ 't', `
- and is equivalent to:
- `],
-				[/* code block */ 'c', [
-					[/* inline code block */ 'i', `return reduce(Long::max);`]
-				]],
-				[/* block */ 'b', [
-					[/* text */ 't', `This is a `],
-					[/* reference */ 'r', `.package-summary#StreamOps`],
-					[/* text */ 't', `.`]
-				]]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `an `],
-				[/* inline code block */ 'i', `OptionalLong`],
-				[/* text */ 't', ` containing the maximum element of this
- stream, or an empty `],
-				[/* inline code block */ 'i', `OptionalLong`],
-				[/* text */ 't', ` if the stream is empty`]
-			]
-		]],
-		[/* method */ 'toArray()', [
-			[/* method description */
-				[/* text */ 't', `Returns an array containing the elements of this stream.
-
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', `This is a `],
-					[/* reference */ 'r', `.package-summary#StreamOps`],
-					[/* text */ 't', `.`]
-				]]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `an array containing the elements of this stream`]
-			]
-		]],
-		[/* method */ 'iterator()', UDF],
-		[/* method */ 'map(java.util.function.LongUnaryOperator)', [
-			[/* method description */
-				[/* text */ 't', `Returns a stream consisting of the results of applying the given
- function to the elements of this stream.
-
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', `This is an `],
-					[/* reference */ 'r', `.package-summary#StreamOps`],
-					[/* text */ 't', `.`]
-				]]
-			],
-			[/* parameters */
-				[/* parameter */ 'mapper', [/* parameter description */
-					[/* text */ 't', `a `],
-					[/* reference */ 'r', `.package-summary#NonInterference`],
-					[/* text */ 't', `,
-               `],
-					[/* reference */ 'r', `.package-summary#Statelessness`],
-					[/* text */ 't', `
-               function to apply to each element`]
-				]]
-			],
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the new stream`]
-			]
-		]],
 		[/* method */ 'collect(java.util.function.Supplier,java.util.function.ObjLongConsumer,java.util.function.BiConsumer)', [
 			[/* method description */
 				[/* text */ 't', `Performs a `],
@@ -227,137 +119,48 @@ DocsCollector.collect('java.util.stream.LongStream', [
 				[/* text */ 't', `the result of the reduction`]
 			]
 		]],
-		[/* method */ 'of(long)', [
+		[/* method */ 'mapToObj(java.util.function.LongFunction)', [
 			[/* method description */
-				[/* text */ 't', `Returns a sequential `],
-				[/* inline code block */ 'i', `LongStream`],
-				[/* text */ 't', ` containing a single element.`]
-			],
-			[/* parameters */
-				[/* parameter */ 't', [/* parameter description */
-					[/* text */ 't', `the single element`]
-				]]
-			],
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `a singleton sequential stream`]
-			]
-		]],
-		[/* method */ 'of(long...)', [
-			[/* method description */
-				[/* text */ 't', `Returns a sequential ordered stream whose elements are the specified values.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'values', [/* parameter description */
-					[/* text */ 't', `the elements of the new stream`]
-				]]
-			],
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the new stream`]
-			]
-		]],
-		[/* method */ 'count()', [
-			[/* method description */
-				[/* text */ 't', `Returns the count of elements in this stream.  This is a special case of
- a `],
-				[/* reference */ 'r', `.package-summary#Reduction`],
-				[/* text */ 't', ` and is
- equivalent to:
- `],
-				[/* code block */ 'c', [
-					[/* inline code block */ 'i', `return map(e -> 1L).sum();`]
-				]],
-				[/* block */ 'b', [
-					[/* text */ 't', `This is a `],
-					[/* reference */ 'r', `.package-summary#StreamOps`],
-					[/* text */ 't', `.`]
-				]]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the count of elements in this stream`]
-			]
-		]],
-		[/* method */ 'builder()', [
-			[/* method description */
-				[/* text */ 't', `Returns a builder for a `],
-				[/* inline code block */ 'i', `LongStream`],
-				[/* text */ 't', `.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `a stream builder`]
-			]
-		]],
-		[/* method */ 'concat(java.util.stream.LongStream,java.util.stream.LongStream)', [
-			[/* method description */
-				[/* text */ 't', `Creates a lazily concatenated stream whose elements are all the
- elements of the first stream followed by all the elements of the
- second stream.  The resulting stream is ordered if both
- of the input streams are ordered, and parallel if either of the input
- streams is parallel.  When the resulting stream is closed, the close
- handlers for both input streams are invoked.
-
- `],
-				[/* block */ 'b', `This method operates on the two input streams and binds each stream
- to its source.  As a result subsequent modifications to an input stream
- source may not be reflected in the concatenated stream result.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'a', [/* parameter description */
-					[/* text */ 't', `the first stream`]
-				]],
-				[/* parameter */ 'b', [/* parameter description */
-					[/* text */ 't', `the second stream`]
-				]]
-			],
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the concatenation of the two input streams`]
-			]
-		]],
-		[/* method */ 'limit(long)', [
-			[/* method description */
-				[/* text */ 't', `Returns a stream consisting of the elements of this stream, truncated
- to be no longer than `],
-				[/* inline code block */ 'i', `maxSize`],
-				[/* text */ 't', ` in length.
-
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', `This is a `],
-					[/* reference */ 'r', `.package-summary#StreamOps`],
-					[/* text */ 't', `.`]
-				]]
-			],
-			[/* parameters */
-				[/* parameter */ 'maxSize', [/* parameter description */
-					[/* text */ 't', `the number of elements the stream should be limited to`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
-					[/* text */ 't', `if `],
-					[/* inline code block */ 'i', `maxSize`],
-					[/* text */ 't', ` is negative`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `the new stream`]
-			]
-		]],
-		[/* method */ 'spliterator()', UDF],
-		[/* method */ 'filter(java.util.function.LongPredicate)', [
-			[/* method description */
-				[/* text */ 't', `Returns a stream consisting of the elements of this stream that match
- the given predicate.
+				[/* text */ 't', `Returns an object-valued `],
+				[/* inline code block */ 'i', `Stream`],
+				[/* text */ 't', ` consisting of the results of
+ applying the given function to the elements of this stream.
 
  `],
 				[/* block */ 'b', [
 					[/* text */ 't', `This is an `],
+					[/* reference */ 'r', `.package-summary#StreamOps`],
+					[/* text */ 't', `.`]
+				]]
+			],
+			[/* parameters */
+				[/* parameter */ 'mapper', [/* parameter description */
+					[/* text */ 't', `a `],
+					[/* reference */ 'r', `.package-summary#NonInterference`],
+					[/* text */ 't', `,
+               `],
+					[/* reference */ 'r', `.package-summary#Statelessness`],
+					[/* text */ 't', `
+               function to apply to each element`]
+				]]
+			],
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the new stream`]
+			]
+		]],
+		[/* method */ 'allMatch(java.util.function.LongPredicate)', [
+			[/* method description */
+				[/* text */ 't', `Returns whether all elements of this stream match the provided predicate.
+ May not evaluate the predicate on all elements if not necessary for
+ determining the result.  If the stream is empty then `],
+				[/* inline code block */ 'i', `true`],
+				[/* text */ 't', ` is
+ returned and the predicate is not evaluated.
+
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', `This is a `],
 					[/* reference */ 'r', `.package-summary#StreamOps`],
 					[/* text */ 't', `.`]
 				]]
@@ -370,25 +173,15 @@ DocsCollector.collect('java.util.stream.LongStream', [
                   `],
 					[/* reference */ 'r', `.package-summary#Statelessness`],
 					[/* text */ 't', `
-                  predicate to apply to each element to determine if it
-                  should be included`]
+                  predicate to apply to elements of this stream`]
 				]]
 			],
 			/* throws */ UDF,
 			[/* return description */
-				[/* text */ 't', `the new stream`]
-			]
-		]],
-		[/* method */ 'empty()', [
-			[/* method description */
-				[/* text */ 't', `Returns an empty sequential `],
-				[/* inline code block */ 'i', `LongStream`],
-				[/* text */ 't', `.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `an empty sequential stream`]
+				[/* inline code block */ 'i', `true`],
+				[/* text */ 't', ` if either all elements of the stream match the
+ provided predicate or the stream is empty, otherwise `],
+				[/* inline code block */ 'i', `false`]
 			]
 		]],
 		[/* method */ 'anyMatch(java.util.function.LongPredicate)', [
@@ -426,68 +219,93 @@ DocsCollector.collect('java.util.stream.LongStream', [
 				[/* inline code block */ 'i', `false`]
 			]
 		]],
-		[/* method */ 'flatMap(java.util.function.LongFunction)', [
+		[/* method */ 'noneMatch(java.util.function.LongPredicate)', [
 			[/* method description */
-				[/* text */ 't', `Returns a stream consisting of the results of replacing each element of
- this stream with the contents of a mapped stream produced by applying
- the provided mapping function to each element.  Each mapped stream is
- `],
-				[/* reference */ 'r', `.BaseStream#close()`],
-				[/* text */ 't', ` after its contents
- have been placed into this stream.  (If a mapped stream is `],
-				[/* inline code block */ 'i', `null`],
-				[/* text */ 't', `
- an empty stream is used, instead.)
-
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', `This is an `],
-					[/* reference */ 'r', `.package-summary#StreamOps`],
-					[/* text */ 't', `.`]
-				]]
-			],
-			[/* parameters */
-				[/* parameter */ 'mapper', [/* parameter description */
-					[/* text */ 't', `a `],
-					[/* reference */ 'r', `.package-summary#NonInterference`],
-					[/* text */ 't', `,
-               `],
-					[/* reference */ 'r', `.package-summary#Statelessness`],
-					[/* text */ 't', `
-               function to apply to each element which produces a
-               `],
-					[/* inline code block */ 'i', `LongStream`],
-					[/* text */ 't', ` of new values`]
-				]]
-			],
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the new stream`]
-			]
-		]],
-		[/* method */ 'forEach(java.util.function.LongConsumer)', [
-			[/* method description */
-				[/* text */ 't', `Performs an action for each element of this stream.
+				[/* text */ 't', `Returns whether no elements of this stream match the provided predicate.
+ May not evaluate the predicate on all elements if not necessary for
+ determining the result.  If the stream is empty then `],
+				[/* inline code block */ 'i', `true`],
+				[/* text */ 't', ` is
+ returned and the predicate is not evaluated.
 
  `],
 				[/* block */ 'b', [
 					[/* text */ 't', `This is a `],
 					[/* reference */ 'r', `.package-summary#StreamOps`],
-					[/* text */ 't', `.
-
- `]
-				]],
-				[/* block */ 'b', `not`]
+					[/* text */ 't', `.`]
+				]]
 			],
 			[/* parameters */
-				[/* parameter */ 'action', [/* parameter description */
+				[/* parameter */ 'predicate', [/* parameter description */
 					[/* text */ 't', `a `],
 					[/* reference */ 'r', `.package-summary#NonInterference`],
-					[/* text */ 't', ` action to perform on the elements`]
+					[/* text */ 't', `,
+                  `],
+					[/* reference */ 'r', `.package-summary#Statelessness`],
+					[/* text */ 't', `
+                  predicate to apply to elements of this stream`]
 				]]
 			],
 			/* throws */ UDF,
-			/* return */ UDF
+			[/* return description */
+				[/* inline code block */ 'i', `true`],
+				[/* text */ 't', ` if either no elements of the stream match the
+ provided predicate or the stream is empty, otherwise `],
+				[/* inline code block */ 'i', `false`]
+			]
+		]],
+		[/* method */ 'summaryStatistics()', [
+			[/* method description */
+				[/* text */ 't', `Returns a `],
+				[/* inline code block */ 'i', `LongSummaryStatistics`],
+				[/* text */ 't', ` describing various summary data
+ about the elements of this stream.  This is a special case of a
+ `],
+				[/* reference */ 'r', `.package-summary#Reduction`],
+				[/* text */ 't', `.
+
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', `This is a `],
+					[/* reference */ 'r', `.package-summary#StreamOps`],
+					[/* text */ 't', `.`]
+				]]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `a `],
+				[/* inline code block */ 'i', `LongSummaryStatistics`],
+				[/* text */ 't', ` describing various summary data
+ about the elements of this stream`]
+			]
+		]],
+		[/* method */ 'average()', [
+			[/* method description */
+				[/* text */ 't', `Returns an `],
+				[/* inline code block */ 'i', `OptionalDouble`],
+				[/* text */ 't', ` describing the arithmetic mean of elements of
+ this stream, or an empty optional if this stream is empty.  This is a
+ special case of a
+ `],
+				[/* reference */ 'r', `.package-summary#Reduction`],
+				[/* text */ 't', `.
+
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', `This is a `],
+					[/* reference */ 'r', `.package-summary#StreamOps`],
+					[/* text */ 't', `.`]
+				]]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `an `],
+				[/* inline code block */ 'i', `OptionalDouble`],
+				[/* text */ 't', ` containing the average element of this
+ stream, or an empty optional if the stream is empty`]
+			]
 		]],
 		[/* method */ 'findAny()', [
 			[/* method description */
@@ -527,16 +345,15 @@ DocsCollector.collect('java.util.stream.LongStream', [
 				[/* text */ 't', ` if the stream is empty`]
 			]
 		]],
-		[/* method */ 'skip(long)', [
+		[/* method */ 'findFirst()', [
 			[/* method description */
-				[/* text */ 't', `Returns a stream consisting of the remaining elements of this stream
- after discarding the first `],
-				[/* inline code block */ 'i', `n`],
-				[/* text */ 't', ` elements of the stream.
- If this stream contains fewer than `],
-				[/* inline code block */ 'i', `n`],
-				[/* text */ 't', ` elements then an
- empty stream will be returned.
+				[/* text */ 't', `Returns an `],
+				[/* reference */ 'r', `java.util.OptionalLong`],
+				[/* text */ 't', ` describing the first element of this
+ stream, or an empty `],
+				[/* inline code block */ 'i', `OptionalLong`],
+				[/* text */ 't', ` if the stream is empty.  If the
+ stream has no encounter order, then any element may be returned.
 
  `],
 				[/* block */ 'b', [
@@ -545,64 +362,30 @@ DocsCollector.collect('java.util.stream.LongStream', [
 					[/* text */ 't', `.`]
 				]]
 			],
-			[/* parameters */
-				[/* parameter */ 'n', [/* parameter description */
-					[/* text */ 't', `the number of leading elements to skip`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
-					[/* text */ 't', `if `],
-					[/* inline code block */ 'i', `n`],
-					[/* text */ 't', ` is negative`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `the new stream`]
-			]
-		]],
-		[/* method */ 'peek(java.util.function.LongConsumer)', [
-			[/* method description */
-				[/* text */ 't', `Returns a stream consisting of the elements of this stream, additionally
- performing the provided action on each element as elements are consumed
- from the resulting stream.
-
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', `This is an `],
-					[/* reference */ 'r', `.package-summary#StreamOps`],
-					[/* text */ 't', `.
-
- `]
-				]],
-				[/* block */ 'b', `For parallel stream pipelines, the action may be called at
- whatever time and in whatever thread the element is made available by the
- upstream operation.  If the action modifies shared state,
- it is responsible for providing the required synchronization.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'action', [/* parameter description */
-					[/* text */ 't', `a `],
-					[/* reference */ 'r', `.package-summary#NonInterference`],
-					[/* text */ 't', ` action to perform on the elements as
-               they are consumed from the stream`]
-				]]
-			],
+			/* parameters */ UDF,
 			/* throws */ UDF,
 			[/* return description */
-				[/* text */ 't', `the new stream`]
+				[/* text */ 't', `an `],
+				[/* inline code block */ 'i', `OptionalLong`],
+				[/* text */ 't', ` describing the first element of this
+ stream, or an empty `],
+				[/* inline code block */ 'i', `OptionalLong`],
+				[/* text */ 't', ` if the stream is empty`]
 			]
 		]],
-		[/* method */ 'sum()', [
+		[/* method */ 'max()', [
 			[/* method description */
-				[/* text */ 't', `Returns the sum of elements in this stream.  This is a special case
- of a `],
+				[/* text */ 't', `Returns an `],
+				[/* inline code block */ 'i', `OptionalLong`],
+				[/* text */ 't', ` describing the maximum element of this
+ stream, or an empty optional if this stream is empty.  This is a special
+ case of a `],
 				[/* reference */ 'r', `.package-summary#Reduction`],
 				[/* text */ 't', `
  and is equivalent to:
  `],
 				[/* code block */ 'c', [
-					[/* inline code block */ 'i', `return reduce(0, Long::sum);`]
+					[/* inline code block */ 'i', `return reduce(Long::max);`]
 				]],
 				[/* block */ 'b', [
 					[/* text */ 't', `This is a `],
@@ -613,7 +396,43 @@ DocsCollector.collect('java.util.stream.LongStream', [
 			/* parameters */ UDF,
 			/* throws */ UDF,
 			[/* return description */
-				[/* text */ 't', `the sum of elements in this stream`]
+				[/* text */ 't', `an `],
+				[/* inline code block */ 'i', `OptionalLong`],
+				[/* text */ 't', ` containing the maximum element of this
+ stream, or an empty `],
+				[/* inline code block */ 'i', `OptionalLong`],
+				[/* text */ 't', ` if the stream is empty`]
+			]
+		]],
+		[/* method */ 'min()', [
+			[/* method description */
+				[/* text */ 't', `Returns an `],
+				[/* inline code block */ 'i', `OptionalLong`],
+				[/* text */ 't', ` describing the minimum element of this
+ stream, or an empty optional if this stream is empty.  This is a special
+ case of a `],
+				[/* reference */ 'r', `.package-summary#Reduction`],
+				[/* text */ 't', `
+ and is equivalent to:
+ `],
+				[/* code block */ 'c', [
+					[/* inline code block */ 'i', `return reduce(Long::min);`]
+				]],
+				[/* block */ 'b', [
+					[/* text */ 't', `This is a `],
+					[/* reference */ 'r', `.package-summary#StreamOps`],
+					[/* text */ 't', `.`]
+				]]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `an `],
+				[/* inline code block */ 'i', `OptionalLong`],
+				[/* text */ 't', ` containing the minimum element of this
+ stream, or an empty `],
+				[/* inline code block */ 'i', `OptionalLong`],
+				[/* text */ 't', ` if the stream is empty`]
 			]
 		]],
 		[/* method */ 'reduce(java.util.function.LongBinaryOperator)', [
@@ -681,6 +500,372 @@ DocsCollector.collect('java.util.stream.LongStream', [
 			/* throws */ UDF,
 			[/* return description */
 				[/* text */ 't', `the result of the reduction`]
+			]
+		]],
+		[/* method */ 'iterator()', UDF],
+		[/* method */ 'spliterator()', UDF],
+		[/* method */ 'asDoubleStream()', [
+			[/* method description */
+				[/* text */ 't', `Returns a `],
+				[/* inline code block */ 'i', `DoubleStream`],
+				[/* text */ 't', ` consisting of the elements of this stream,
+ converted to `],
+				[/* inline code block */ 'i', `double`],
+				[/* text */ 't', `.
+
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', `This is an `],
+					[/* reference */ 'r', `.package-summary#StreamOps`],
+					[/* text */ 't', `.`]
+				]]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `a `],
+				[/* inline code block */ 'i', `DoubleStream`],
+				[/* text */ 't', ` consisting of the elements of this stream,
+ converted to `],
+				[/* inline code block */ 'i', `double`]
+			]
+		]],
+		[/* method */ 'mapToDouble(java.util.function.LongToDoubleFunction)', [
+			[/* method description */
+				[/* text */ 't', `Returns a `],
+				[/* inline code block */ 'i', `DoubleStream`],
+				[/* text */ 't', ` consisting of the results of applying the
+ given function to the elements of this stream.
+
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', `This is an `],
+					[/* reference */ 'r', `.package-summary#StreamOps`],
+					[/* text */ 't', `.`]
+				]]
+			],
+			[/* parameters */
+				[/* parameter */ 'mapper', [/* parameter description */
+					[/* text */ 't', `a `],
+					[/* reference */ 'r', `.package-summary#NonInterference`],
+					[/* text */ 't', `,
+               `],
+					[/* reference */ 'r', `.package-summary#Statelessness`],
+					[/* text */ 't', `
+               function to apply to each element`]
+				]]
+			],
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the new stream`]
+			]
+		]],
+		[/* method */ 'mapToInt(java.util.function.LongToIntFunction)', [
+			[/* method description */
+				[/* text */ 't', `Returns an `],
+				[/* inline code block */ 'i', `IntStream`],
+				[/* text */ 't', ` consisting of the results of applying the
+ given function to the elements of this stream.
+
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', `This is an `],
+					[/* reference */ 'r', `.package-summary#StreamOps`],
+					[/* text */ 't', `.`]
+				]]
+			],
+			[/* parameters */
+				[/* parameter */ 'mapper', [/* parameter description */
+					[/* text */ 't', `a `],
+					[/* reference */ 'r', `.package-summary#NonInterference`],
+					[/* text */ 't', `,
+               `],
+					[/* reference */ 'r', `.package-summary#Statelessness`],
+					[/* text */ 't', `
+               function to apply to each element`]
+				]]
+			],
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the new stream`]
+			]
+		]],
+		[/* method */ 'distinct()', [
+			[/* method description */
+				[/* text */ 't', `Returns a stream consisting of the distinct elements of this stream.
+
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', `This is a `],
+					[/* reference */ 'r', `.package-summary#StreamOps`],
+					[/* text */ 't', `.`]
+				]]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the new stream`]
+			]
+		]],
+		[/* method */ 'filter(java.util.function.LongPredicate)', [
+			[/* method description */
+				[/* text */ 't', `Returns a stream consisting of the elements of this stream that match
+ the given predicate.
+
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', `This is an `],
+					[/* reference */ 'r', `.package-summary#StreamOps`],
+					[/* text */ 't', `.`]
+				]]
+			],
+			[/* parameters */
+				[/* parameter */ 'predicate', [/* parameter description */
+					[/* text */ 't', `a `],
+					[/* reference */ 'r', `.package-summary#NonInterference`],
+					[/* text */ 't', `,
+                  `],
+					[/* reference */ 'r', `.package-summary#Statelessness`],
+					[/* text */ 't', `
+                  predicate to apply to each element to determine if it
+                  should be included`]
+				]]
+			],
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the new stream`]
+			]
+		]],
+		[/* method */ 'flatMap(java.util.function.LongFunction)', [
+			[/* method description */
+				[/* text */ 't', `Returns a stream consisting of the results of replacing each element of
+ this stream with the contents of a mapped stream produced by applying
+ the provided mapping function to each element.  Each mapped stream is
+ `],
+				[/* reference */ 'r', `.BaseStream#close()`],
+				[/* text */ 't', ` after its contents
+ have been placed into this stream.  (If a mapped stream is `],
+				[/* inline code block */ 'i', `null`],
+				[/* text */ 't', `
+ an empty stream is used, instead.)
+
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', `This is an `],
+					[/* reference */ 'r', `.package-summary#StreamOps`],
+					[/* text */ 't', `.`]
+				]]
+			],
+			[/* parameters */
+				[/* parameter */ 'mapper', [/* parameter description */
+					[/* text */ 't', `a `],
+					[/* reference */ 'r', `.package-summary#NonInterference`],
+					[/* text */ 't', `,
+               `],
+					[/* reference */ 'r', `.package-summary#Statelessness`],
+					[/* text */ 't', `
+               function to apply to each element which produces a
+               `],
+					[/* inline code block */ 'i', `LongStream`],
+					[/* text */ 't', ` of new values`]
+				]]
+			],
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the new stream`]
+			]
+		]],
+		[/* method */ 'limit(long)', [
+			[/* method description */
+				[/* text */ 't', `Returns a stream consisting of the elements of this stream, truncated
+ to be no longer than `],
+				[/* inline code block */ 'i', `maxSize`],
+				[/* text */ 't', ` in length.
+
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', `This is a `],
+					[/* reference */ 'r', `.package-summary#StreamOps`],
+					[/* text */ 't', `.`]
+				]]
+			],
+			[/* parameters */
+				[/* parameter */ 'maxSize', [/* parameter description */
+					[/* text */ 't', `the number of elements the stream should be limited to`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
+					[/* text */ 't', `if `],
+					[/* inline code block */ 'i', `maxSize`],
+					[/* text */ 't', ` is negative`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `the new stream`]
+			]
+		]],
+		[/* method */ 'map(java.util.function.LongUnaryOperator)', [
+			[/* method description */
+				[/* text */ 't', `Returns a stream consisting of the results of applying the given
+ function to the elements of this stream.
+
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', `This is an `],
+					[/* reference */ 'r', `.package-summary#StreamOps`],
+					[/* text */ 't', `.`]
+				]]
+			],
+			[/* parameters */
+				[/* parameter */ 'mapper', [/* parameter description */
+					[/* text */ 't', `a `],
+					[/* reference */ 'r', `.package-summary#NonInterference`],
+					[/* text */ 't', `,
+               `],
+					[/* reference */ 'r', `.package-summary#Statelessness`],
+					[/* text */ 't', `
+               function to apply to each element`]
+				]]
+			],
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the new stream`]
+			]
+		]],
+		[/* method */ 'parallel()', UDF],
+		[/* method */ 'peek(java.util.function.LongConsumer)', [
+			[/* method description */
+				[/* text */ 't', `Returns a stream consisting of the elements of this stream, additionally
+ performing the provided action on each element as elements are consumed
+ from the resulting stream.
+
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', `This is an `],
+					[/* reference */ 'r', `.package-summary#StreamOps`],
+					[/* text */ 't', `.
+
+ `]
+				]],
+				[/* block */ 'b', `For parallel stream pipelines, the action may be called at
+ whatever time and in whatever thread the element is made available by the
+ upstream operation.  If the action modifies shared state,
+ it is responsible for providing the required synchronization.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'action', [/* parameter description */
+					[/* text */ 't', `a `],
+					[/* reference */ 'r', `.package-summary#NonInterference`],
+					[/* text */ 't', ` action to perform on the elements as
+               they are consumed from the stream`]
+				]]
+			],
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the new stream`]
+			]
+		]],
+		[/* method */ 'sequential()', UDF],
+		[/* method */ 'skip(long)', [
+			[/* method description */
+				[/* text */ 't', `Returns a stream consisting of the remaining elements of this stream
+ after discarding the first `],
+				[/* inline code block */ 'i', `n`],
+				[/* text */ 't', ` elements of the stream.
+ If this stream contains fewer than `],
+				[/* inline code block */ 'i', `n`],
+				[/* text */ 't', ` elements then an
+ empty stream will be returned.
+
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', `This is a `],
+					[/* reference */ 'r', `.package-summary#StreamOps`],
+					[/* text */ 't', `.`]
+				]]
+			],
+			[/* parameters */
+				[/* parameter */ 'n', [/* parameter description */
+					[/* text */ 't', `the number of leading elements to skip`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
+					[/* text */ 't', `if `],
+					[/* inline code block */ 'i', `n`],
+					[/* text */ 't', ` is negative`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `the new stream`]
+			]
+		]],
+		[/* method */ 'sorted()', [
+			[/* method description */
+				[/* text */ 't', `Returns a stream consisting of the elements of this stream in sorted
+ order.
+
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', `This is a `],
+					[/* reference */ 'r', `.package-summary#StreamOps`],
+					[/* text */ 't', `.`]
+				]]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the new stream`]
+			]
+		]],
+		[/* method */ 'boxed()', [
+			[/* method description */
+				[/* text */ 't', `Returns a `],
+				[/* inline code block */ 'i', `Stream`],
+				[/* text */ 't', ` consisting of the elements of this stream,
+ each boxed to a `],
+				[/* inline code block */ 'i', `Long`],
+				[/* text */ 't', `.
+
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', `This is an `],
+					[/* reference */ 'r', `.package-summary#StreamOps`],
+					[/* text */ 't', `.`]
+				]]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `a `],
+				[/* inline code block */ 'i', `Stream`],
+				[/* text */ 't', ` consistent of the elements of this stream,
+ each boxed to `],
+				[/* inline code block */ 'i', `Long`]
+			]
+		]],
+		[/* method */ 'count()', [
+			[/* method description */
+				[/* text */ 't', `Returns the count of elements in this stream.  This is a special case of
+ a `],
+				[/* reference */ 'r', `.package-summary#Reduction`],
+				[/* text */ 't', ` and is
+ equivalent to:
+ `],
+				[/* code block */ 'c', [
+					[/* inline code block */ 'i', `return map(e -> 1L).sum();`]
+				]],
+				[/* block */ 'b', [
+					[/* text */ 't', `This is a `],
+					[/* reference */ 'r', `.package-summary#StreamOps`],
+					[/* text */ 't', `.`]
+				]]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the count of elements in this stream`]
 			]
 		]],
 		[/* method */ 'reduce(long,java.util.function.LongBinaryOperator)', [
@@ -755,9 +940,32 @@ DocsCollector.collect('java.util.stream.LongStream', [
 				[/* text */ 't', `the result of the reduction`]
 			]
 		]],
-		[/* method */ 'distinct()', [
+		[/* method */ 'sum()', [
 			[/* method description */
-				[/* text */ 't', `Returns a stream consisting of the distinct elements of this stream.
+				[/* text */ 't', `Returns the sum of elements in this stream.  This is a special case
+ of a `],
+				[/* reference */ 'r', `.package-summary#Reduction`],
+				[/* text */ 't', `
+ and is equivalent to:
+ `],
+				[/* code block */ 'c', [
+					[/* inline code block */ 'i', `return reduce(0, Long::sum);`]
+				]],
+				[/* block */ 'b', [
+					[/* text */ 't', `This is a `],
+					[/* reference */ 'r', `.package-summary#StreamOps`],
+					[/* text */ 't', `.`]
+				]]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the sum of elements in this stream`]
+			]
+		]],
+		[/* method */ 'toArray()', [
+			[/* method description */
+				[/* text */ 't', `Returns an array containing the elements of this stream.
 
  `],
 				[/* block */ 'b', [
@@ -769,18 +977,38 @@ DocsCollector.collect('java.util.stream.LongStream', [
 			/* parameters */ UDF,
 			/* throws */ UDF,
 			[/* return description */
-				[/* text */ 't', `the new stream`]
+				[/* text */ 't', `an array containing the elements of this stream`]
 			]
 		]],
-		[/* method */ 'findFirst()', [
+		[/* method */ 'forEach(java.util.function.LongConsumer)', [
 			[/* method description */
-				[/* text */ 't', `Returns an `],
-				[/* reference */ 'r', `java.util.OptionalLong`],
-				[/* text */ 't', ` describing the first element of this
- stream, or an empty `],
-				[/* inline code block */ 'i', `OptionalLong`],
-				[/* text */ 't', ` if the stream is empty.  If the
- stream has no encounter order, then any element may be returned.
+				[/* text */ 't', `Performs an action for each element of this stream.
+
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', `This is a `],
+					[/* reference */ 'r', `.package-summary#StreamOps`],
+					[/* text */ 't', `.
+
+ `]
+				]],
+				[/* block */ 'b', `not`]
+			],
+			[/* parameters */
+				[/* parameter */ 'action', [/* parameter description */
+					[/* text */ 't', `a `],
+					[/* reference */ 'r', `.package-summary#NonInterference`],
+					[/* text */ 't', ` action to perform on the elements`]
+				]]
+			],
+			/* throws */ UDF,
+			/* return */ UDF
+		]],
+		[/* method */ 'forEachOrdered(java.util.function.LongConsumer)', [
+			[/* method description */
+				[/* text */ 't', `Performs an action for each element of this stream, guaranteeing that
+ each element is processed in encounter order for streams that have a
+ defined encounter order.
 
  `],
 				[/* block */ 'b', [
@@ -789,25 +1017,43 @@ DocsCollector.collect('java.util.stream.LongStream', [
 					[/* text */ 't', `.`]
 				]]
 			],
-			/* parameters */ UDF,
+			[/* parameters */
+				[/* parameter */ 'action', [/* parameter description */
+					[/* text */ 't', `a `],
+					[/* reference */ 'r', `.package-summary#NonInterference`],
+					[/* text */ 't', ` action to perform on the elements`]
+				]]
+			],
 			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `an `],
-				[/* inline code block */ 'i', `OptionalLong`],
-				[/* text */ 't', ` describing the first element of this
- stream, or an empty `],
-				[/* inline code block */ 'i', `OptionalLong`],
-				[/* text */ 't', ` if the stream is empty`]
-			]
+			/* return */ UDF
 		]],
-		[/* method */ 'allMatch(java.util.function.LongPredicate)', [
+		[/* method */ 'dropWhile(java.util.function.LongPredicate)', [
 			[/* method description */
-				[/* text */ 't', `Returns whether all elements of this stream match the provided predicate.
- May not evaluate the predicate on all elements if not necessary for
- determining the result.  If the stream is empty then `],
-				[/* inline code block */ 'i', `true`],
-				[/* text */ 't', ` is
- returned and the predicate is not evaluated.
+				[/* text */ 't', `Returns, if this stream is ordered, a stream consisting of the remaining
+ elements of this stream after dropping the longest prefix of elements
+ that match the given predicate.  Otherwise returns, if this stream is
+ unordered, a stream consisting of the remaining elements of this stream
+ after dropping a subset of elements that match the given predicate.
+
+ `],
+				[/* block */ 'b', `If this stream is ordered then the longest prefix is a contiguous
+ sequence of elements of this stream that match the given predicate.  The
+ first element of the sequence is the first element of this stream, and
+ the element immediately following the last element of the sequence does
+ not match the given predicate.
+
+ `],
+				[/* block */ 'b', `If this stream is unordered, and some (but not all) elements of this
+ stream match the given predicate, then the behavior of this operation is
+ nondeterministic; it is free to drop any subset of matching elements
+ (which includes the empty set).
+
+ `],
+				[/* block */ 'b', `Independent of whether this stream is ordered or unordered if all
+ elements of this stream match the given predicate then this operation
+ drops all elements (the result is an empty stream), or if no elements of
+ the stream match the given predicate then no elements are dropped (the
+ result is the same as the input).
 
  `],
 				[/* block */ 'b', [
@@ -824,50 +1070,168 @@ DocsCollector.collect('java.util.stream.LongStream', [
                   `],
 					[/* reference */ 'r', `.package-summary#Statelessness`],
 					[/* text */ 't', `
-                  predicate to apply to elements of this stream`]
+                  predicate to apply to elements to determine the longest
+                  prefix of elements.`]
 				]]
 			],
 			/* throws */ UDF,
 			[/* return description */
-				[/* inline code block */ 'i', `true`],
-				[/* text */ 't', ` if either all elements of the stream match the
- provided predicate or the stream is empty, otherwise `],
-				[/* inline code block */ 'i', `false`]
+				[/* text */ 't', `the new stream`]
 			]
 		]],
-		[/* method */ 'range(long,long)', [
+		[/* method */ 'mapMulti(java.util.stream.LongStream.LongMapMultiConsumer)', [
 			[/* method description */
-				[/* text */ 't', `Returns a sequential ordered `],
-				[/* inline code block */ 'i', `LongStream`],
-				[/* text */ 't', ` from `],
-				[/* inline code block */ 'i', `startInclusive`],
-				[/* text */ 't', `
- (inclusive) to `],
-				[/* inline code block */ 'i', `endExclusive`],
-				[/* text */ 't', ` (exclusive) by an incremental step of
+				[/* text */ 't', `Returns a stream consisting of the results of replacing each element of
+ this stream with multiple elements, specifically zero or more elements.
+ Replacement is performed by applying the provided mapping function to each
+ element in conjunction with a `],
+				[/* reference */ 'r', `java.util.function.LongConsumer`],
+				[/* text */ 't', ` argument
+ that accepts replacement elements. The mapping function calls the consumer
+ zero or more times to provide the replacement elements.
+
  `],
-				[/* inline code block */ 'i', `1`],
-				[/* text */ 't', `.`]
+				[/* block */ 'b', [
+					[/* text */ 't', `This is an `],
+					[/* reference */ 'r', `.package-summary#StreamOps`],
+					[/* text */ 't', `.
+
+ `]
+				]],
+				[/* block */ 'b', [
+					[/* text */ 't', `If the `],
+					[/* reference */ 'r', `java.util.function.LongConsumer`],
+					[/* text */ 't', ` argument is used outside the scope of
+ its application to the mapping function, the results are undefined.`]
+				]]
 			],
 			[/* parameters */
-				[/* parameter */ 'startInclusive', [/* parameter description */
-					[/* text */ 't', `the (inclusive) initial value`]
-				]],
-				[/* parameter */ 'endExclusive', [/* parameter description */
-					[/* text */ 't', `the exclusive upper bound`]
+				[/* parameter */ 'mapper', [/* parameter description */
+					[/* text */ 't', `a `],
+					[/* reference */ 'r', `.package-summary#NonInterference`],
+					[/* text */ 't', `,
+               `],
+					[/* reference */ 'r', `.package-summary#Statelessness`],
+					[/* text */ 't', `
+               function that generates replacement elements`]
 				]]
 			],
 			/* throws */ UDF,
 			[/* return description */
-				[/* text */ 't', `a sequential `],
-				[/* inline code block */ 'i', `LongStream`],
-				[/* text */ 't', ` for the range of `],
-				[/* inline code block */ 'i', `long`],
-				[/* text */ 't', `
-         elements`]
+				[/* text */ 't', `the new stream`]
 			]
 		]],
-		[/* method */ 'parallel()', UDF],
+		[/* method */ 'takeWhile(java.util.function.LongPredicate)', [
+			[/* method description */
+				[/* text */ 't', `Returns, if this stream is ordered, a stream consisting of the longest
+ prefix of elements taken from this stream that match the given predicate.
+ Otherwise returns, if this stream is unordered, a stream consisting of a
+ subset of elements taken from this stream that match the given predicate.
+
+ `],
+				[/* block */ 'b', `If this stream is ordered then the longest prefix is a contiguous
+ sequence of elements of this stream that match the given predicate.  The
+ first element of the sequence is the first element of this stream, and
+ the element immediately following the last element of the sequence does
+ not match the given predicate.
+
+ `],
+				[/* block */ 'b', `If this stream is unordered, and some (but not all) elements of this
+ stream match the given predicate, then the behavior of this operation is
+ nondeterministic; it is free to take any subset of matching elements
+ (which includes the empty set).
+
+ `],
+				[/* block */ 'b', `Independent of whether this stream is ordered or unordered if all
+ elements of this stream match the given predicate then this operation
+ takes all elements (the result is the same as the input), or if no
+ elements of the stream match the given predicate then no elements are
+ taken (the result is an empty stream).
+
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', `This is a `],
+					[/* reference */ 'r', `.package-summary#StreamOps`],
+					[/* text */ 't', `.`]
+				]]
+			],
+			[/* parameters */
+				[/* parameter */ 'predicate', [/* parameter description */
+					[/* text */ 't', `a `],
+					[/* reference */ 'r', `.package-summary#NonInterference`],
+					[/* text */ 't', `,
+                  `],
+					[/* reference */ 'r', `.package-summary#Statelessness`],
+					[/* text */ 't', `
+                  predicate to apply to elements to determine the longest
+                  prefix of elements.`]
+				]]
+			],
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the new stream`]
+			]
+		]],
+		[/* method */ 'concat(java.util.stream.LongStream,java.util.stream.LongStream)', [
+			[/* method description */
+				[/* text */ 't', `Creates a lazily concatenated stream whose elements are all the
+ elements of the first stream followed by all the elements of the
+ second stream.  The resulting stream is ordered if both
+ of the input streams are ordered, and parallel if either of the input
+ streams is parallel.  When the resulting stream is closed, the close
+ handlers for both input streams are invoked.
+
+ `],
+				[/* block */ 'b', `This method operates on the two input streams and binds each stream
+ to its source.  As a result subsequent modifications to an input stream
+ source may not be reflected in the concatenated stream result.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'a', [/* parameter description */
+					[/* text */ 't', `the first stream`]
+				]],
+				[/* parameter */ 'b', [/* parameter description */
+					[/* text */ 't', `the second stream`]
+				]]
+			],
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the concatenation of the two input streams`]
+			]
+		]],
+		[/* method */ 'empty()', [
+			[/* method description */
+				[/* text */ 't', `Returns an empty sequential `],
+				[/* inline code block */ 'i', `LongStream`],
+				[/* text */ 't', `.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `an empty sequential stream`]
+			]
+		]],
+		[/* method */ 'generate(java.util.function.LongSupplier)', [
+			[/* method description */
+				[/* text */ 't', `Returns an infinite sequential unordered stream where each element is
+ generated by the provided `],
+				[/* inline code block */ 'i', `LongSupplier`],
+				[/* text */ 't', `.  This is suitable for
+ generating constant streams, streams of random elements, etc.`]
+			],
+			[/* parameters */
+				[/* parameter */ 's', [/* parameter description */
+					[/* text */ 't', `the `],
+					[/* inline code block */ 'i', `LongSupplier`],
+					[/* text */ 't', ` for generated elements`]
+				]]
+			],
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `a new infinite sequential unordered `],
+				[/* inline code block */ 'i', `LongStream`]
+			]
+		]],
 		[/* method */ 'iterate(long,java.util.function.LongPredicate,java.util.function.LongUnaryOperator)', [
 			[/* method description */
 				[/* text */ 't', `Returns a sequential ordered `],
@@ -1030,69 +1394,29 @@ DocsCollector.collect('java.util.stream.LongStream', [
 				[/* inline code block */ 'i', `LongStream`]
 			]
 		]],
-		[/* method */ 'sorted()', [
+		[/* method */ 'of(long)', [
 			[/* method description */
-				[/* text */ 't', `Returns a stream consisting of the elements of this stream in sorted
- order.
-
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', `This is a `],
-					[/* reference */ 'r', `.package-summary#StreamOps`],
-					[/* text */ 't', `.`]
-				]]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the new stream`]
-			]
-		]],
-		[/* method */ 'generate(java.util.function.LongSupplier)', [
-			[/* method description */
-				[/* text */ 't', `Returns an infinite sequential unordered stream where each element is
- generated by the provided `],
-				[/* inline code block */ 'i', `LongSupplier`],
-				[/* text */ 't', `.  This is suitable for
- generating constant streams, streams of random elements, etc.`]
+				[/* text */ 't', `Returns a sequential `],
+				[/* inline code block */ 'i', `LongStream`],
+				[/* text */ 't', ` containing a single element.`]
 			],
 			[/* parameters */
-				[/* parameter */ 's', [/* parameter description */
-					[/* text */ 't', `the `],
-					[/* inline code block */ 'i', `LongSupplier`],
-					[/* text */ 't', ` for generated elements`]
+				[/* parameter */ 't', [/* parameter description */
+					[/* text */ 't', `the single element`]
 				]]
 			],
 			/* throws */ UDF,
 			[/* return description */
-				[/* text */ 't', `a new infinite sequential unordered `],
-				[/* inline code block */ 'i', `LongStream`]
+				[/* text */ 't', `a singleton sequential stream`]
 			]
 		]],
-		[/* method */ 'sequential()', UDF],
-		[/* method */ 'mapToInt(java.util.function.LongToIntFunction)', [
+		[/* method */ 'of(long...)', [
 			[/* method description */
-				[/* text */ 't', `Returns an `],
-				[/* inline code block */ 'i', `IntStream`],
-				[/* text */ 't', ` consisting of the results of applying the
- given function to the elements of this stream.
-
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', `This is an `],
-					[/* reference */ 'r', `.package-summary#StreamOps`],
-					[/* text */ 't', `.`]
-				]]
+				[/* text */ 't', `Returns a sequential ordered stream whose elements are the specified values.`]
 			],
 			[/* parameters */
-				[/* parameter */ 'mapper', [/* parameter description */
-					[/* text */ 't', `a `],
-					[/* reference */ 'r', `.package-summary#NonInterference`],
-					[/* text */ 't', `,
-               `],
-					[/* reference */ 'r', `.package-summary#Statelessness`],
-					[/* text */ 't', `
-               function to apply to each element`]
+				[/* parameter */ 'values', [/* parameter description */
+					[/* text */ 't', `the elements of the new stream`]
 				]]
 			],
 			/* throws */ UDF,
@@ -1100,267 +1424,36 @@ DocsCollector.collect('java.util.stream.LongStream', [
 				[/* text */ 't', `the new stream`]
 			]
 		]],
-		[/* method */ 'mapToDouble(java.util.function.LongToDoubleFunction)', [
+		[/* method */ 'range(long,long)', [
 			[/* method description */
-				[/* text */ 't', `Returns a `],
-				[/* inline code block */ 'i', `DoubleStream`],
-				[/* text */ 't', ` consisting of the results of applying the
- given function to the elements of this stream.
-
+				[/* text */ 't', `Returns a sequential ordered `],
+				[/* inline code block */ 'i', `LongStream`],
+				[/* text */ 't', ` from `],
+				[/* inline code block */ 'i', `startInclusive`],
+				[/* text */ 't', `
+ (inclusive) to `],
+				[/* inline code block */ 'i', `endExclusive`],
+				[/* text */ 't', ` (exclusive) by an incremental step of
  `],
-				[/* block */ 'b', [
-					[/* text */ 't', `This is an `],
-					[/* reference */ 'r', `.package-summary#StreamOps`],
-					[/* text */ 't', `.`]
-				]]
+				[/* inline code block */ 'i', `1`],
+				[/* text */ 't', `.`]
 			],
 			[/* parameters */
-				[/* parameter */ 'mapper', [/* parameter description */
-					[/* text */ 't', `a `],
-					[/* reference */ 'r', `.package-summary#NonInterference`],
-					[/* text */ 't', `,
-               `],
-					[/* reference */ 'r', `.package-summary#Statelessness`],
-					[/* text */ 't', `
-               function to apply to each element`]
-				]]
-			],
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the new stream`]
-			]
-		]],
-		[/* method */ 'mapMulti(java.util.stream.LongStream.LongMapMultiConsumer)', [
-			[/* method description */
-				[/* text */ 't', `Returns a stream consisting of the results of replacing each element of
- this stream with multiple elements, specifically zero or more elements.
- Replacement is performed by applying the provided mapping function to each
- element in conjunction with a `],
-				[/* reference */ 'r', `java.util.function.LongConsumer`],
-				[/* text */ 't', ` argument
- that accepts replacement elements. The mapping function calls the consumer
- zero or more times to provide the replacement elements.
-
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', `This is an `],
-					[/* reference */ 'r', `.package-summary#StreamOps`],
-					[/* text */ 't', `.
-
- `]
+				[/* parameter */ 'startInclusive', [/* parameter description */
+					[/* text */ 't', `the (inclusive) initial value`]
 				]],
-				[/* block */ 'b', [
-					[/* text */ 't', `If the `],
-					[/* reference */ 'r', `java.util.function.LongConsumer`],
-					[/* text */ 't', ` argument is used outside the scope of
- its application to the mapping function, the results are undefined.`]
-				]]
-			],
-			[/* parameters */
-				[/* parameter */ 'mapper', [/* parameter description */
-					[/* text */ 't', `a `],
-					[/* reference */ 'r', `.package-summary#NonInterference`],
-					[/* text */ 't', `,
-               `],
-					[/* reference */ 'r', `.package-summary#Statelessness`],
-					[/* text */ 't', `
-               function that generates replacement elements`]
+				[/* parameter */ 'endExclusive', [/* parameter description */
+					[/* text */ 't', `the exclusive upper bound`]
 				]]
 			],
 			/* throws */ UDF,
 			[/* return description */
-				[/* text */ 't', `the new stream`]
-			]
-		]],
-		[/* method */ 'takeWhile(java.util.function.LongPredicate)', [
-			[/* method description */
-				[/* text */ 't', `Returns, if this stream is ordered, a stream consisting of the longest
- prefix of elements taken from this stream that match the given predicate.
- Otherwise returns, if this stream is unordered, a stream consisting of a
- subset of elements taken from this stream that match the given predicate.
-
- `],
-				[/* block */ 'b', `If this stream is ordered then the longest prefix is a contiguous
- sequence of elements of this stream that match the given predicate.  The
- first element of the sequence is the first element of this stream, and
- the element immediately following the last element of the sequence does
- not match the given predicate.
-
- `],
-				[/* block */ 'b', `If this stream is unordered, and some (but not all) elements of this
- stream match the given predicate, then the behavior of this operation is
- nondeterministic; it is free to take any subset of matching elements
- (which includes the empty set).
-
- `],
-				[/* block */ 'b', `Independent of whether this stream is ordered or unordered if all
- elements of this stream match the given predicate then this operation
- takes all elements (the result is the same as the input), or if no
- elements of the stream match the given predicate then no elements are
- taken (the result is an empty stream).
-
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', `This is a `],
-					[/* reference */ 'r', `.package-summary#StreamOps`],
-					[/* text */ 't', `.`]
-				]]
-			],
-			[/* parameters */
-				[/* parameter */ 'predicate', [/* parameter description */
-					[/* text */ 't', `a `],
-					[/* reference */ 'r', `.package-summary#NonInterference`],
-					[/* text */ 't', `,
-                  `],
-					[/* reference */ 'r', `.package-summary#Statelessness`],
-					[/* text */ 't', `
-                  predicate to apply to elements to determine the longest
-                  prefix of elements.`]
-				]]
-			],
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the new stream`]
-			]
-		]],
-		[/* method */ 'dropWhile(java.util.function.LongPredicate)', [
-			[/* method description */
-				[/* text */ 't', `Returns, if this stream is ordered, a stream consisting of the remaining
- elements of this stream after dropping the longest prefix of elements
- that match the given predicate.  Otherwise returns, if this stream is
- unordered, a stream consisting of the remaining elements of this stream
- after dropping a subset of elements that match the given predicate.
-
- `],
-				[/* block */ 'b', `If this stream is ordered then the longest prefix is a contiguous
- sequence of elements of this stream that match the given predicate.  The
- first element of the sequence is the first element of this stream, and
- the element immediately following the last element of the sequence does
- not match the given predicate.
-
- `],
-				[/* block */ 'b', `If this stream is unordered, and some (but not all) elements of this
- stream match the given predicate, then the behavior of this operation is
- nondeterministic; it is free to drop any subset of matching elements
- (which includes the empty set).
-
- `],
-				[/* block */ 'b', `Independent of whether this stream is ordered or unordered if all
- elements of this stream match the given predicate then this operation
- drops all elements (the result is an empty stream), or if no elements of
- the stream match the given predicate then no elements are dropped (the
- result is the same as the input).
-
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', `This is a `],
-					[/* reference */ 'r', `.package-summary#StreamOps`],
-					[/* text */ 't', `.`]
-				]]
-			],
-			[/* parameters */
-				[/* parameter */ 'predicate', [/* parameter description */
-					[/* text */ 't', `a `],
-					[/* reference */ 'r', `.package-summary#NonInterference`],
-					[/* text */ 't', `,
-                  `],
-					[/* reference */ 'r', `.package-summary#Statelessness`],
-					[/* text */ 't', `
-                  predicate to apply to elements to determine the longest
-                  prefix of elements.`]
-				]]
-			],
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the new stream`]
-			]
-		]],
-		[/* method */ 'forEachOrdered(java.util.function.LongConsumer)', [
-			[/* method description */
-				[/* text */ 't', `Performs an action for each element of this stream, guaranteeing that
- each element is processed in encounter order for streams that have a
- defined encounter order.
-
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', `This is a `],
-					[/* reference */ 'r', `.package-summary#StreamOps`],
-					[/* text */ 't', `.`]
-				]]
-			],
-			[/* parameters */
-				[/* parameter */ 'action', [/* parameter description */
-					[/* text */ 't', `a `],
-					[/* reference */ 'r', `.package-summary#NonInterference`],
-					[/* text */ 't', ` action to perform on the elements`]
-				]]
-			],
-			/* throws */ UDF,
-			/* return */ UDF
-		]],
-		[/* method */ 'noneMatch(java.util.function.LongPredicate)', [
-			[/* method description */
-				[/* text */ 't', `Returns whether no elements of this stream match the provided predicate.
- May not evaluate the predicate on all elements if not necessary for
- determining the result.  If the stream is empty then `],
-				[/* inline code block */ 'i', `true`],
-				[/* text */ 't', ` is
- returned and the predicate is not evaluated.
-
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', `This is a `],
-					[/* reference */ 'r', `.package-summary#StreamOps`],
-					[/* text */ 't', `.`]
-				]]
-			],
-			[/* parameters */
-				[/* parameter */ 'predicate', [/* parameter description */
-					[/* text */ 't', `a `],
-					[/* reference */ 'r', `.package-summary#NonInterference`],
-					[/* text */ 't', `,
-                  `],
-					[/* reference */ 'r', `.package-summary#Statelessness`],
-					[/* text */ 't', `
-                  predicate to apply to elements of this stream`]
-				]]
-			],
-			/* throws */ UDF,
-			[/* return description */
-				[/* inline code block */ 'i', `true`],
-				[/* text */ 't', ` if either no elements of the stream match the
- provided predicate or the stream is empty, otherwise `],
-				[/* inline code block */ 'i', `false`]
-			]
-		]],
-		[/* method */ 'mapToObj(java.util.function.LongFunction)', [
-			[/* method description */
-				[/* text */ 't', `Returns an object-valued `],
-				[/* inline code block */ 'i', `Stream`],
-				[/* text */ 't', ` consisting of the results of
- applying the given function to the elements of this stream.
-
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', `This is an `],
-					[/* reference */ 'r', `.package-summary#StreamOps`],
-					[/* text */ 't', `.`]
-				]]
-			],
-			[/* parameters */
-				[/* parameter */ 'mapper', [/* parameter description */
-					[/* text */ 't', `a `],
-					[/* reference */ 'r', `.package-summary#NonInterference`],
-					[/* text */ 't', `,
-               `],
-					[/* reference */ 'r', `.package-summary#Statelessness`],
-					[/* text */ 't', `
-               function to apply to each element`]
-				]]
-			],
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the new stream`]
+				[/* text */ 't', `a sequential `],
+				[/* inline code block */ 'i', `LongStream`],
+				[/* text */ 't', ` for the range of `],
+				[/* inline code block */ 'i', `long`],
+				[/* text */ 't', `
+         elements`]
 			]
 		]],
 		[/* method */ 'rangeClosed(long,long)', [
@@ -1395,109 +1488,16 @@ DocsCollector.collect('java.util.stream.LongStream', [
          elements`]
 			]
 		]],
-		[/* method */ 'average()', [
+		[/* method */ 'builder()', [
 			[/* method description */
-				[/* text */ 't', `Returns an `],
-				[/* inline code block */ 'i', `OptionalDouble`],
-				[/* text */ 't', ` describing the arithmetic mean of elements of
- this stream, or an empty optional if this stream is empty.  This is a
- special case of a
- `],
-				[/* reference */ 'r', `.package-summary#Reduction`],
-				[/* text */ 't', `.
-
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', `This is a `],
-					[/* reference */ 'r', `.package-summary#StreamOps`],
-					[/* text */ 't', `.`]
-				]]
+				[/* text */ 't', `Returns a builder for a `],
+				[/* inline code block */ 'i', `LongStream`],
+				[/* text */ 't', `.`]
 			],
 			/* parameters */ UDF,
 			/* throws */ UDF,
 			[/* return description */
-				[/* text */ 't', `an `],
-				[/* inline code block */ 'i', `OptionalDouble`],
-				[/* text */ 't', ` containing the average element of this
- stream, or an empty optional if the stream is empty`]
-			]
-		]],
-		[/* method */ 'summaryStatistics()', [
-			[/* method description */
-				[/* text */ 't', `Returns a `],
-				[/* inline code block */ 'i', `LongSummaryStatistics`],
-				[/* text */ 't', ` describing various summary data
- about the elements of this stream.  This is a special case of a
- `],
-				[/* reference */ 'r', `.package-summary#Reduction`],
-				[/* text */ 't', `.
-
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', `This is a `],
-					[/* reference */ 'r', `.package-summary#StreamOps`],
-					[/* text */ 't', `.`]
-				]]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `a `],
-				[/* inline code block */ 'i', `LongSummaryStatistics`],
-				[/* text */ 't', ` describing various summary data
- about the elements of this stream`]
-			]
-		]],
-		[/* method */ 'asDoubleStream()', [
-			[/* method description */
-				[/* text */ 't', `Returns a `],
-				[/* inline code block */ 'i', `DoubleStream`],
-				[/* text */ 't', ` consisting of the elements of this stream,
- converted to `],
-				[/* inline code block */ 'i', `double`],
-				[/* text */ 't', `.
-
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', `This is an `],
-					[/* reference */ 'r', `.package-summary#StreamOps`],
-					[/* text */ 't', `.`]
-				]]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `a `],
-				[/* inline code block */ 'i', `DoubleStream`],
-				[/* text */ 't', ` consisting of the elements of this stream,
- converted to `],
-				[/* inline code block */ 'i', `double`]
-			]
-		]],
-		[/* method */ 'boxed()', [
-			[/* method description */
-				[/* text */ 't', `Returns a `],
-				[/* inline code block */ 'i', `Stream`],
-				[/* text */ 't', ` consisting of the elements of this stream,
- each boxed to a `],
-				[/* inline code block */ 'i', `Long`],
-				[/* text */ 't', `.
-
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', `This is an `],
-					[/* reference */ 'r', `.package-summary#StreamOps`],
-					[/* text */ 't', `.`]
-				]]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `a `],
-				[/* inline code block */ 'i', `Stream`],
-				[/* text */ 't', ` consistent of the elements of this stream,
- each boxed to `],
-				[/* inline code block */ 'i', `Long`]
+				[/* text */ 't', `a stream builder`]
 			]
 		]]
 	],

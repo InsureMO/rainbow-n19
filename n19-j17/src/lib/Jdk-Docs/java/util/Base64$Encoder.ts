@@ -38,53 +38,6 @@ DocsCollector.collect('java.util.Base64$Encoder', [
 	/* fields */ UDF,
 	/* constructors */ UDF,
 	[/* methods */
-		[/* method */ 'wrap(java.io.OutputStream)', [
-			[/* method description */
-				[/* text */ 't', `Wraps an output stream for encoding byte data using the `],
-				[/* reference */ 'r', `java.util.Base64`],
-				[/* text */ 't', `
- encoding scheme.
-
- `],
-				[/* block */ 'b', ` It is recommended to promptly close the returned output stream after
- use, during which it will flush all possible leftover bytes to the underlying
- output stream. Closing the returned output stream will close the underlying
- output stream.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'os', [/* parameter description */
-					[/* text */ 't', `the output stream.`]
-				]]
-			],
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the output stream for encoding the byte data into the
-          specified Base64 encoded format`]
-			]
-		]],
-		[/* method */ 'encode(java.nio.ByteBuffer)', [
-			[/* method description */
-				[/* text */ 't', `Encodes all remaining bytes from the specified byte buffer into
- a newly-allocated ByteBuffer using the `],
-				[/* reference */ 'r', `java.util.Base64`],
-				[/* text */ 't', ` encoding
- scheme.
-
- Upon return, the source buffer's position will be updated to
- its limit; its limit will not have been changed. The returned
- output buffer's position will be zero and its limit will be the
- number of resulting encoded bytes.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'buffer', [/* parameter description */
-					[/* text */ 't', `the source ByteBuffer to encode`]
-				]]
-			],
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `A newly-allocated byte buffer containing the encoded bytes.`]
-			]
-		]],
 		[/* method */ 'encode(byte[])', [
 			[/* method description */
 				[/* text */ 't', `Encodes all bytes from the specified byte array into a newly-allocated
@@ -142,6 +95,30 @@ DocsCollector.collect('java.util.Base64$Encoder', [
 				[/* text */ 't', `The number of bytes written to the output byte array`]
 			]
 		]],
+		[/* method */ 'wrap(java.io.OutputStream)', [
+			[/* method description */
+				[/* text */ 't', `Wraps an output stream for encoding byte data using the `],
+				[/* reference */ 'r', `java.util.Base64`],
+				[/* text */ 't', `
+ encoding scheme.
+
+ `],
+				[/* block */ 'b', ` It is recommended to promptly close the returned output stream after
+ use, during which it will flush all possible leftover bytes to the underlying
+ output stream. Closing the returned output stream will close the underlying
+ output stream.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'os', [/* parameter description */
+					[/* text */ 't', `the output stream.`]
+				]]
+			],
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the output stream for encoding the byte data into the
+          specified Base64 encoded format`]
+			]
+		]],
 		[/* method */ 'encodeToString(byte[])', [
 			[/* method description */
 				[/* text */ 't', `Encodes the specified byte array into a String using the `],
@@ -175,6 +152,29 @@ DocsCollector.collect('java.util.Base64$Encoder', [
 			/* throws */ UDF,
 			[/* return description */
 				[/* text */ 't', `A String containing the resulting Base64 encoded characters`]
+			]
+		]],
+		[/* method */ 'encode(java.nio.ByteBuffer)', [
+			[/* method description */
+				[/* text */ 't', `Encodes all remaining bytes from the specified byte buffer into
+ a newly-allocated ByteBuffer using the `],
+				[/* reference */ 'r', `java.util.Base64`],
+				[/* text */ 't', ` encoding
+ scheme.
+
+ Upon return, the source buffer's position will be updated to
+ its limit; its limit will not have been changed. The returned
+ output buffer's position will be zero and its limit will be the
+ number of resulting encoded bytes.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'buffer', [/* parameter description */
+					[/* text */ 't', `the source ByteBuffer to encode`]
+				]]
+			],
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `A newly-allocated byte buffer containing the encoded bytes.`]
 			]
 		]],
 		[/* method */ 'withoutPadding()', [

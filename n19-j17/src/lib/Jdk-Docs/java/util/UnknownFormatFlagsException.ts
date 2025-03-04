@@ -30,7 +30,6 @@ DocsCollector.collect('java.util.UnknownFormatFlagsException', [
 		]]
 	],
 	[/* methods */
-		[/* method */ 'getMessage()', UDF],
 		[/* method */ 'getFlags()', [
 			[/* method description */
 				[/* text */ 't', `Returns the set of flags which contains an unknown flag.`]
@@ -40,6 +39,7 @@ DocsCollector.collect('java.util.UnknownFormatFlagsException', [
 			[/* return description */
 				[/* text */ 't', `The flags`]
 			]
-		]]
+		]],
+		[/* method */ 'getMessage()', UDF]
 	],
 ]);

@@ -72,36 +72,6 @@ DocsCollector.collect('java.util.random.RandomGenerator$StreamableGenerator', [
 	/* fields */ UDF,
 	/* constructors */ UDF,
 	[/* methods */
-		[/* method */ 'of(java.lang.String)', [
-			[/* method description */
-				[/* text */ 't', `Returns an instance of `],
-				[/* reference */ 'r', `java.util.random.RandomGenerator.StreamableGenerator`],
-				[/* text */ 't', ` that utilizes the
- `],
-				[/* inline code block */ 'i', `name`],
-				[/* reference */ 'r', `.package-summary#algorithms`],
-				[/* text */ 't', `.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'name', [/* parameter description */
-					[/* text */ 't', `Name of random number generator
-              `],
-					[/* reference */ 'r', `.package-summary#algorithms`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
-					[/* text */ 't', `if name is null`]
-				]],
-				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
-					[/* text */ 't', `if the named algorithm is not found`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `An instance of `],
-				[/* reference */ 'r', `java.util.random.RandomGenerator.StreamableGenerator`]
-			]
-		]],
 		[/* method */ 'rngs()', [
 			[/* method description */
 				[/* text */ 't', `Returns an effectively unlimited stream of objects, each of which
@@ -151,6 +121,36 @@ DocsCollector.collect('java.util.random.RandomGenerator$StreamableGenerator', [
 				[/* text */ 't', `a stream of objects that implement the `],
 				[/* reference */ 'r', `java.util.random.RandomGenerator`],
 				[/* text */ 't', ` interface`]
+			]
+		]],
+		[/* method */ 'of(java.lang.String)', [
+			[/* method description */
+				[/* text */ 't', `Returns an instance of `],
+				[/* reference */ 'r', `java.util.random.RandomGenerator.StreamableGenerator`],
+				[/* text */ 't', ` that utilizes the
+ `],
+				[/* inline code block */ 'i', `name`],
+				[/* reference */ 'r', `.package-summary#algorithms`],
+				[/* text */ 't', `.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'name', [/* parameter description */
+					[/* text */ 't', `Name of random number generator
+              `],
+					[/* reference */ 'r', `.package-summary#algorithms`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
+					[/* text */ 't', `if name is null`]
+				]],
+				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
+					[/* text */ 't', `if the named algorithm is not found`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `An instance of `],
+				[/* reference */ 'r', `java.util.random.RandomGenerator.StreamableGenerator`]
 			]
 		]]
 	],

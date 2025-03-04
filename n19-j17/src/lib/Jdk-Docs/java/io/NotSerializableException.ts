@@ -9,6 +9,13 @@ DocsCollector.collect('java.io.NotSerializableException', [
 	],
 	/* fields */ UDF,
 	[/* constructors */
+		[/* constructor */ '<init>()', [
+			[/* constructor description */
+				[/* text */ 't', `Constructs a NotSerializableException object.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF
+		]],
 		[/* constructor */ '<init>(java.lang.String)', [
 			[/* constructor description */
 				[/* text */ 't', `Constructs a NotSerializableException object with message string.`]
@@ -18,13 +25,6 @@ DocsCollector.collect('java.io.NotSerializableException', [
 					[/* text */ 't', `Class of the instance being serialized/deserialized.`]
 				]]
 			],
-			/* throws */ UDF
-		]],
-		[/* constructor */ '<init>()', [
-			[/* constructor description */
-				[/* text */ 't', `Constructs a NotSerializableException object.`]
-			],
-			/* parameters */ UDF,
 			/* throws */ UDF
 		]]
 	],

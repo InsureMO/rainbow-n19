@@ -134,6 +134,19 @@ DocsCollector.collect('java.text.CollationKey', [
 		]]
 	],
 	[/* methods */
+		[/* method */ 'toByteArray()', [
+			[/* method description */
+				[/* text */ 't', `Converts the CollationKey to a sequence of bits. If two CollationKeys
+ could be legitimately compared, then one could compare the byte arrays
+ for each of those keys to obtain the same result.  Byte arrays are
+ organized most significant byte first.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `a byte array representation of the CollationKey`]
+			]
+		]],
 		[/* method */ 'compareTo(java.text.CollationKey)', [
 			[/* method description */
 				[/* text */ 't', `Compare this CollationKey to the target CollationKey. The collation rules of the
@@ -152,19 +165,6 @@ DocsCollector.collect('java.text.CollationKey', [
 				[/* text */ 't', `Returns an integer value. Value is less than zero if this is less
  than target, value is zero if this and target are equal and value is greater than
  zero if this is greater than target.`]
-			]
-		]],
-		[/* method */ 'toByteArray()', [
-			[/* method description */
-				[/* text */ 't', `Converts the CollationKey to a sequence of bits. If two CollationKeys
- could be legitimately compared, then one could compare the byte arrays
- for each of those keys to obtain the same result.  Byte arrays are
- organized most significant byte first.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `a byte array representation of the CollationKey`]
 			]
 		]],
 		[/* method */ 'getSourceString()', [

@@ -526,80 +526,65 @@ DocsCollector.collect('java.util.Calendar', [
 		]]
 	],
 	[/* fields */
-		[/* field */ 'ERA', [
+		[/* field */ 'ALL_STYLES', [
 			[/* field description */
-				[/* text */ 't', `Field number for `],
-				[/* inline code block */ 'i', `get`],
-				[/* text */ 't', ` and `],
-				[/* inline code block */ 'i', `set`],
-				[/* text */ 't', ` indicating the
- era, e.g., AD or BC in the Julian calendar. This is a calendar-specific
- value; see subclass documentation.`]
+				[/* text */ 't', `A style specifier for `],
+				[/* reference */ 'r', `#getDisplayNames(int,int,java.util.Locale)`, `getDisplayNames`],
+				[/* text */ 't', ` indicating names in all styles, such as
+ "January" and "Jan".`]
 			],
 		]],
-		[/* field */ 'YEAR', [
+		[/* field */ 'AM', [
 			[/* field description */
-				[/* text */ 't', `Field number for `],
-				[/* inline code block */ 'i', `get`],
-				[/* text */ 't', ` and `],
-				[/* inline code block */ 'i', `set`],
-				[/* text */ 't', ` indicating the
- year. This is a calendar-specific value; see subclass documentation.`]
+				[/* text */ 't', `Value of the `],
+				[/* text */ 't', `AM_PM`],
+				[/* text */ 't', ` field indicating the
+ period of the day from midnight to just before noon.`]
 			],
 		]],
-		[/* field */ 'MONTH', [
+		[/* field */ 'AM_PM', [
 			[/* field description */
 				[/* text */ 't', `Field number for `],
 				[/* inline code block */ 'i', `get`],
 				[/* text */ 't', ` and `],
 				[/* inline code block */ 'i', `set`],
-				[/* text */ 't', ` indicating the
- month. This is a calendar-specific value. The first month of
- the year in the Gregorian and Julian calendars is
+				[/* text */ 't', ` indicating
+ whether the `],
+				[/* inline code block */ 'i', `HOUR`],
+				[/* text */ 't', ` is before or after noon.
+ E.g., at 10:04:15.250 PM the `],
+				[/* inline code block */ 'i', `AM_PM`],
+				[/* text */ 't', ` is `],
+				[/* inline code block */ 'i', `PM`],
+				[/* text */ 't', `.`]
+			],
+		]],
+		[/* field */ 'APRIL', [
+			[/* field description */
+				[/* text */ 't', `Value of the `],
+				[/* text */ 't', `MONTH`],
+				[/* text */ 't', ` field indicating the
+ fourth month of the year in the Gregorian and Julian calendars.`]
+			],
+		]],
+		[/* field */ 'areFieldsSet', [
+			[/* field description */
+				[/* text */ 't', `True if `],
+				[/* inline code block */ 'i', `fields[]`],
+				[/* text */ 't', ` are in sync with the currently set time.
+ If false, then the next attempt to get the value of a field will
+ force a recomputation of all fields from the current value of
  `],
-				[/* inline code block */ 'i', `JANUARY`],
-				[/* text */ 't', ` which is 0; the last depends on the number
- of months in a year.`]
+				[/* inline code block */ 'i', `time`],
+				[/* text */ 't', `.`]
 			],
 		]],
-		[/* field */ 'WEEK_OF_YEAR', [
+		[/* field */ 'AUGUST', [
 			[/* field description */
-				[/* text */ 't', `Field number for `],
-				[/* inline code block */ 'i', `get`],
-				[/* text */ 't', ` and `],
-				[/* inline code block */ 'i', `set`],
-				[/* text */ 't', ` indicating the
- week number within the current year.  The first week of the year, as
- defined by `],
-				[/* inline code block */ 'i', `getFirstDayOfWeek()`],
-				[/* text */ 't', ` and
- `],
-				[/* inline code block */ 'i', `getMinimalDaysInFirstWeek()`],
-				[/* text */ 't', `, has value 1.  Subclasses define
- the value of `],
-				[/* inline code block */ 'i', `WEEK_OF_YEAR`],
-				[/* text */ 't', ` for days before the first week of
- the year.`]
-			],
-		]],
-		[/* field */ 'WEEK_OF_MONTH', [
-			[/* field description */
-				[/* text */ 't', `Field number for `],
-				[/* inline code block */ 'i', `get`],
-				[/* text */ 't', ` and `],
-				[/* inline code block */ 'i', `set`],
-				[/* text */ 't', ` indicating the
- week number within the current month.  The first week of the month, as
- defined by `],
-				[/* inline code block */ 'i', `getFirstDayOfWeek()`],
-				[/* text */ 't', ` and
- `],
-				[/* inline code block */ 'i', `getMinimalDaysInFirstWeek()`],
-				[/* text */ 't', `, has value 1.  Subclasses define
- the value of `],
-				[/* inline code block */ 'i', `WEEK_OF_MONTH`],
-				[/* text */ 't', ` for days before the first week of
- the month.`]
+				[/* text */ 't', `Value of the `],
+				[/* text */ 't', `MONTH`],
+				[/* text */ 't', ` field indicating the
+ eighth month of the year in the Gregorian and Julian calendars.`]
 			],
 		]],
 		[/* field */ 'DATE', [
@@ -626,16 +611,6 @@ DocsCollector.collect('java.util.Calendar', [
 				[/* inline code block */ 'i', `DATE`],
 				[/* text */ 't', `.
  The first day of the month has value 1.`]
-			],
-		]],
-		[/* field */ 'DAY_OF_YEAR', [
-			[/* field description */
-				[/* text */ 't', `Field number for `],
-				[/* inline code block */ 'i', `get`],
-				[/* text */ 't', ` and `],
-				[/* inline code block */ 'i', `set`],
-				[/* text */ 't', ` indicating the day
- number within the current year.  The first day of the year has value 1.`]
 			],
 		]],
 		[/* field */ 'DAY_OF_WEEK', [
@@ -725,21 +700,96 @@ DocsCollector.collect('java.util.Calendar', [
 				[/* text */ 't', `.`]
 			],
 		]],
-		[/* field */ 'AM_PM', [
+		[/* field */ 'DAY_OF_YEAR', [
 			[/* field description */
 				[/* text */ 't', `Field number for `],
 				[/* inline code block */ 'i', `get`],
 				[/* text */ 't', ` and `],
 				[/* inline code block */ 'i', `set`],
-				[/* text */ 't', ` indicating
- whether the `],
-				[/* inline code block */ 'i', `HOUR`],
-				[/* text */ 't', ` is before or after noon.
- E.g., at 10:04:15.250 PM the `],
-				[/* inline code block */ 'i', `AM_PM`],
-				[/* text */ 't', ` is `],
-				[/* inline code block */ 'i', `PM`],
+				[/* text */ 't', ` indicating the day
+ number within the current year.  The first day of the year has value 1.`]
+			],
+		]],
+		[/* field */ 'DECEMBER', [
+			[/* field description */
+				[/* text */ 't', `Value of the `],
+				[/* text */ 't', `MONTH`],
+				[/* text */ 't', ` field indicating the
+ twelfth month of the year in the Gregorian and Julian calendars.`]
+			],
+		]],
+		[/* field */ 'DST_OFFSET', [
+			[/* field description */
+				[/* text */ 't', `Field number for `],
+				[/* inline code block */ 'i', `get`],
+				[/* text */ 't', ` and `],
+				[/* inline code block */ 'i', `set`],
+				[/* text */ 't', ` indicating the
+ daylight saving offset in milliseconds.
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', `
+ This field reflects the correct daylight saving offset value of
+ the time zone of this `],
+					[/* inline code block */ 'i', `Calendar`],
+					[/* text */ 't', ` if the
+ `],
+					[/* inline code block */ 'i', `TimeZone`],
+					[/* text */ 't', ` implementation subclass supports
+ historical Daylight Saving Time schedule changes.`]
+				]]
+			],
+		]],
+		[/* field */ 'ERA', [
+			[/* field description */
+				[/* text */ 't', `Field number for `],
+				[/* inline code block */ 'i', `get`],
+				[/* text */ 't', ` and `],
+				[/* inline code block */ 'i', `set`],
+				[/* text */ 't', ` indicating the
+ era, e.g., AD or BC in the Julian calendar. This is a calendar-specific
+ value; see subclass documentation.`]
+			],
+		]],
+		[/* field */ 'FEBRUARY', [
+			[/* field description */
+				[/* text */ 't', `Value of the `],
+				[/* text */ 't', `MONTH`],
+				[/* text */ 't', ` field indicating the
+ second month of the year in the Gregorian and Julian calendars.`]
+			],
+		]],
+		[/* field */ 'FIELD_COUNT', [
+			[/* field description */
+				[/* text */ 't', `The number of distinct fields recognized by `],
+				[/* inline code block */ 'i', `get`],
+				[/* text */ 't', ` and `],
+				[/* inline code block */ 'i', `set`],
+				[/* text */ 't', `.
+ Field numbers range from `],
+				[/* inline code block */ 'i', `0..FIELD_COUNT-1`],
 				[/* text */ 't', `.`]
+			],
+		]],
+		[/* field */ 'fields', [
+			[/* field description */
+				[/* text */ 't', `The calendar field values for the currently set time for this calendar.
+ This is an array of `],
+				[/* inline code block */ 'i', `FIELD_COUNT`],
+				[/* text */ 't', ` integers, with index values
+ `],
+				[/* inline code block */ 'i', `ERA`],
+				[/* text */ 't', ` through `],
+				[/* inline code block */ 'i', `DST_OFFSET`],
+				[/* text */ 't', `.`]
+			],
+		]],
+		[/* field */ 'FRIDAY', [
+			[/* field description */
+				[/* text */ 't', `Value of the `],
+				[/* text */ 't', `DAY_OF_WEEK`],
+				[/* text */ 't', ` field indicating
+ Friday.`]
 			],
 		]],
 		[/* field */ 'HOUR', [
@@ -773,30 +823,99 @@ DocsCollector.collect('java.util.Calendar', [
 				[/* text */ 't', ` is 22.`]
 			],
 		]],
-		[/* field */ 'MINUTE', [
+		[/* field */ 'isSet', [
 			[/* field description */
-				[/* text */ 't', `Field number for `],
-				[/* inline code block */ 'i', `get`],
-				[/* text */ 't', ` and `],
-				[/* inline code block */ 'i', `set`],
-				[/* text */ 't', ` indicating the
- minute within the hour.
- E.g., at 10:04:15.250 PM the `],
-				[/* inline code block */ 'i', `MINUTE`],
-				[/* text */ 't', ` is 4.`]
+				[/* text */ 't', `The flags which tell if a specified calendar field for the calendar is set.
+ A new object has no fields set.  After the first call to a method
+ which generates the fields, they all remain set after that.
+ This is an array of `],
+				[/* inline code block */ 'i', `FIELD_COUNT`],
+				[/* text */ 't', ` booleans, with index values
+ `],
+				[/* inline code block */ 'i', `ERA`],
+				[/* text */ 't', ` through `],
+				[/* inline code block */ 'i', `DST_OFFSET`],
+				[/* text */ 't', `.`]
 			],
 		]],
-		[/* field */ 'SECOND', [
+		[/* field */ 'isTimeSet', [
 			[/* field description */
-				[/* text */ 't', `Field number for `],
-				[/* inline code block */ 'i', `get`],
+				[/* text */ 't', `True if then the value of `],
+				[/* inline code block */ 'i', `time`],
+				[/* text */ 't', ` is valid.
+ The time is made invalid by a change to an item of `],
+				[/* inline code block */ 'i', `field[]`],
+				[/* text */ 't', `.`]
+			],
+		]],
+		[/* field */ 'JANUARY', [
+			[/* field description */
+				[/* text */ 't', `Value of the `],
+				[/* text */ 't', `MONTH`],
+				[/* text */ 't', ` field indicating the
+ first month of the year in the Gregorian and Julian calendars.`]
+			],
+		]],
+		[/* field */ 'JULY', [
+			[/* field description */
+				[/* text */ 't', `Value of the `],
+				[/* text */ 't', `MONTH`],
+				[/* text */ 't', ` field indicating the
+ seventh month of the year in the Gregorian and Julian calendars.`]
+			],
+		]],
+		[/* field */ 'JUNE', [
+			[/* field description */
+				[/* text */ 't', `Value of the `],
+				[/* text */ 't', `MONTH`],
+				[/* text */ 't', ` field indicating the
+ sixth month of the year in the Gregorian and Julian calendars.`]
+			],
+		]],
+		[/* field */ 'LONG', [
+			[/* field description */
+				[/* text */ 't', `A style specifier for `],
+				[/* reference */ 'r', `#getDisplayName(int,int,java.util.Locale)`, `getDisplayName`],
 				[/* text */ 't', ` and `],
-				[/* inline code block */ 'i', `set`],
-				[/* text */ 't', ` indicating the
- second within the minute.
- E.g., at 10:04:15.250 PM the `],
-				[/* inline code block */ 'i', `SECOND`],
-				[/* text */ 't', ` is 15.`]
+				[/* reference */ 'r', `#getDisplayNames(int,int,java.util.Locale)`, `getDisplayNames`],
+				[/* text */ 't', ` equivalent to `],
+				[/* text */ 't', `LONG_FORMAT`],
+				[/* text */ 't', `.`]
+			],
+		]],
+		[/* field */ 'LONG_FORMAT', [
+			[/* field description */
+				[/* text */ 't', `A style specifier for `],
+				[/* reference */ 'r', `#getDisplayName(int,int,java.util.Locale)`, `getDisplayName`],
+				[/* text */ 't', ` and `],
+				[/* reference */ 'r', `#getDisplayNames(int,int,java.util.Locale)`, `getDisplayNames`],
+				[/* text */ 't', ` indicating a long name used for format.`]
+			],
+		]],
+		[/* field */ 'LONG_STANDALONE', [
+			[/* field description */
+				[/* text */ 't', `A style specifier for `],
+				[/* reference */ 'r', `#getDisplayName(int,int,java.util.Locale)`, `getDisplayName`],
+				[/* text */ 't', ` and `],
+				[/* reference */ 'r', `#getDisplayNames(int,int,java.util.Locale)`, `getDisplayNames`],
+				[/* text */ 't', ` indicating a long name used independently,
+ such as a month name as calendar headers.`]
+			],
+		]],
+		[/* field */ 'MARCH', [
+			[/* field description */
+				[/* text */ 't', `Value of the `],
+				[/* text */ 't', `MONTH`],
+				[/* text */ 't', ` field indicating the
+ third month of the year in the Gregorian and Julian calendars.`]
+			],
+		]],
+		[/* field */ 'MAY', [
+			[/* field description */
+				[/* text */ 't', `Value of the `],
+				[/* text */ 't', `MONTH`],
+				[/* text */ 't', ` field indicating the
+ fifth month of the year in the Gregorian and Julian calendars.`]
 			],
 		]],
 		[/* field */ 'MILLISECOND', [
@@ -812,68 +931,17 @@ DocsCollector.collect('java.util.Calendar', [
 				[/* text */ 't', ` is 250.`]
 			],
 		]],
-		[/* field */ 'ZONE_OFFSET', [
-			[/* field description */
-				[/* text */ 't', `Field number for `],
-				[/* inline code block */ 'i', `get`],
-				[/* text */ 't', ` and `],
-				[/* inline code block */ 'i', `set`],
-				[/* text */ 't', `
- indicating the raw offset from GMT in milliseconds.
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', `
- This field reflects the correct GMT offset value of the time
- zone of this `],
-					[/* inline code block */ 'i', `Calendar`],
-					[/* text */ 't', ` if the
- `],
-					[/* inline code block */ 'i', `TimeZone`],
-					[/* text */ 't', ` implementation subclass supports
- historical GMT offset changes.`]
-				]]
-			],
-		]],
-		[/* field */ 'DST_OFFSET', [
+		[/* field */ 'MINUTE', [
 			[/* field description */
 				[/* text */ 't', `Field number for `],
 				[/* inline code block */ 'i', `get`],
 				[/* text */ 't', ` and `],
 				[/* inline code block */ 'i', `set`],
 				[/* text */ 't', ` indicating the
- daylight saving offset in milliseconds.
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', `
- This field reflects the correct daylight saving offset value of
- the time zone of this `],
-					[/* inline code block */ 'i', `Calendar`],
-					[/* text */ 't', ` if the
- `],
-					[/* inline code block */ 'i', `TimeZone`],
-					[/* text */ 't', ` implementation subclass supports
- historical Daylight Saving Time schedule changes.`]
-				]]
-			],
-		]],
-		[/* field */ 'FIELD_COUNT', [
-			[/* field description */
-				[/* text */ 't', `The number of distinct fields recognized by `],
-				[/* inline code block */ 'i', `get`],
-				[/* text */ 't', ` and `],
-				[/* inline code block */ 'i', `set`],
-				[/* text */ 't', `.
- Field numbers range from `],
-				[/* inline code block */ 'i', `0..FIELD_COUNT-1`],
-				[/* text */ 't', `.`]
-			],
-		]],
-		[/* field */ 'SUNDAY', [
-			[/* field description */
-				[/* text */ 't', `Value of the `],
-				[/* text */ 't', `DAY_OF_WEEK`],
-				[/* text */ 't', ` field indicating
- Sunday.`]
+ minute within the hour.
+ E.g., at 10:04:15.250 PM the `],
+				[/* inline code block */ 'i', `MINUTE`],
+				[/* text */ 't', ` is 4.`]
 			],
 		]],
 		[/* field */ 'MONDAY', [
@@ -884,197 +952,19 @@ DocsCollector.collect('java.util.Calendar', [
  Monday.`]
 			],
 		]],
-		[/* field */ 'TUESDAY', [
+		[/* field */ 'MONTH', [
 			[/* field description */
-				[/* text */ 't', `Value of the `],
-				[/* text */ 't', `DAY_OF_WEEK`],
-				[/* text */ 't', ` field indicating
- Tuesday.`]
-			],
-		]],
-		[/* field */ 'WEDNESDAY', [
-			[/* field description */
-				[/* text */ 't', `Value of the `],
-				[/* text */ 't', `DAY_OF_WEEK`],
-				[/* text */ 't', ` field indicating
- Wednesday.`]
-			],
-		]],
-		[/* field */ 'THURSDAY', [
-			[/* field description */
-				[/* text */ 't', `Value of the `],
-				[/* text */ 't', `DAY_OF_WEEK`],
-				[/* text */ 't', ` field indicating
- Thursday.`]
-			],
-		]],
-		[/* field */ 'FRIDAY', [
-			[/* field description */
-				[/* text */ 't', `Value of the `],
-				[/* text */ 't', `DAY_OF_WEEK`],
-				[/* text */ 't', ` field indicating
- Friday.`]
-			],
-		]],
-		[/* field */ 'SATURDAY', [
-			[/* field description */
-				[/* text */ 't', `Value of the `],
-				[/* text */ 't', `DAY_OF_WEEK`],
-				[/* text */ 't', ` field indicating
- Saturday.`]
-			],
-		]],
-		[/* field */ 'JANUARY', [
-			[/* field description */
-				[/* text */ 't', `Value of the `],
-				[/* text */ 't', `MONTH`],
-				[/* text */ 't', ` field indicating the
- first month of the year in the Gregorian and Julian calendars.`]
-			],
-		]],
-		[/* field */ 'FEBRUARY', [
-			[/* field description */
-				[/* text */ 't', `Value of the `],
-				[/* text */ 't', `MONTH`],
-				[/* text */ 't', ` field indicating the
- second month of the year in the Gregorian and Julian calendars.`]
-			],
-		]],
-		[/* field */ 'MARCH', [
-			[/* field description */
-				[/* text */ 't', `Value of the `],
-				[/* text */ 't', `MONTH`],
-				[/* text */ 't', ` field indicating the
- third month of the year in the Gregorian and Julian calendars.`]
-			],
-		]],
-		[/* field */ 'APRIL', [
-			[/* field description */
-				[/* text */ 't', `Value of the `],
-				[/* text */ 't', `MONTH`],
-				[/* text */ 't', ` field indicating the
- fourth month of the year in the Gregorian and Julian calendars.`]
-			],
-		]],
-		[/* field */ 'MAY', [
-			[/* field description */
-				[/* text */ 't', `Value of the `],
-				[/* text */ 't', `MONTH`],
-				[/* text */ 't', ` field indicating the
- fifth month of the year in the Gregorian and Julian calendars.`]
-			],
-		]],
-		[/* field */ 'JUNE', [
-			[/* field description */
-				[/* text */ 't', `Value of the `],
-				[/* text */ 't', `MONTH`],
-				[/* text */ 't', ` field indicating the
- sixth month of the year in the Gregorian and Julian calendars.`]
-			],
-		]],
-		[/* field */ 'JULY', [
-			[/* field description */
-				[/* text */ 't', `Value of the `],
-				[/* text */ 't', `MONTH`],
-				[/* text */ 't', ` field indicating the
- seventh month of the year in the Gregorian and Julian calendars.`]
-			],
-		]],
-		[/* field */ 'AUGUST', [
-			[/* field description */
-				[/* text */ 't', `Value of the `],
-				[/* text */ 't', `MONTH`],
-				[/* text */ 't', ` field indicating the
- eighth month of the year in the Gregorian and Julian calendars.`]
-			],
-		]],
-		[/* field */ 'SEPTEMBER', [
-			[/* field description */
-				[/* text */ 't', `Value of the `],
-				[/* text */ 't', `MONTH`],
-				[/* text */ 't', ` field indicating the
- ninth month of the year in the Gregorian and Julian calendars.`]
-			],
-		]],
-		[/* field */ 'OCTOBER', [
-			[/* field description */
-				[/* text */ 't', `Value of the `],
-				[/* text */ 't', `MONTH`],
-				[/* text */ 't', ` field indicating the
- tenth month of the year in the Gregorian and Julian calendars.`]
-			],
-		]],
-		[/* field */ 'NOVEMBER', [
-			[/* field description */
-				[/* text */ 't', `Value of the `],
-				[/* text */ 't', `MONTH`],
-				[/* text */ 't', ` field indicating the
- eleventh month of the year in the Gregorian and Julian calendars.`]
-			],
-		]],
-		[/* field */ 'DECEMBER', [
-			[/* field description */
-				[/* text */ 't', `Value of the `],
-				[/* text */ 't', `MONTH`],
-				[/* text */ 't', ` field indicating the
- twelfth month of the year in the Gregorian and Julian calendars.`]
-			],
-		]],
-		[/* field */ 'UNDECIMBER', [
-			[/* field description */
-				[/* text */ 't', `Value of the `],
-				[/* text */ 't', `MONTH`],
-				[/* text */ 't', ` field indicating the
- thirteenth month of the year. Although `],
-				[/* inline code block */ 'i', `GregorianCalendar`],
-				[/* text */ 't', `
- does not use this value, lunar calendars do.`]
-			],
-		]],
-		[/* field */ 'AM', [
-			[/* field description */
-				[/* text */ 't', `Value of the `],
-				[/* text */ 't', `AM_PM`],
-				[/* text */ 't', ` field indicating the
- period of the day from midnight to just before noon.`]
-			],
-		]],
-		[/* field */ 'PM', [
-			[/* field description */
-				[/* text */ 't', `Value of the `],
-				[/* text */ 't', `AM_PM`],
-				[/* text */ 't', ` field indicating the
- period of the day from noon to just before midnight.`]
-			],
-		]],
-		[/* field */ 'ALL_STYLES', [
-			[/* field description */
-				[/* text */ 't', `A style specifier for `],
-				[/* reference */ 'r', `#getDisplayNames(int,int,java.util.Locale)`, `getDisplayNames`],
-				[/* text */ 't', ` indicating names in all styles, such as
- "January" and "Jan".`]
-			],
-		]],
-		[/* field */ 'SHORT', [
-			[/* field description */
-				[/* text */ 't', `A style specifier for `],
-				[/* reference */ 'r', `#getDisplayName(int,int,java.util.Locale)`, `getDisplayName`],
+				[/* text */ 't', `Field number for `],
+				[/* inline code block */ 'i', `get`],
 				[/* text */ 't', ` and `],
-				[/* reference */ 'r', `#getDisplayNames(int,int,java.util.Locale)`, `getDisplayNames`],
-				[/* text */ 't', ` equivalent to `],
-				[/* text */ 't', `SHORT_FORMAT`],
-				[/* text */ 't', `.`]
-			],
-		]],
-		[/* field */ 'LONG', [
-			[/* field description */
-				[/* text */ 't', `A style specifier for `],
-				[/* reference */ 'r', `#getDisplayName(int,int,java.util.Locale)`, `getDisplayName`],
-				[/* text */ 't', ` and `],
-				[/* reference */ 'r', `#getDisplayNames(int,int,java.util.Locale)`, `getDisplayNames`],
-				[/* text */ 't', ` equivalent to `],
-				[/* text */ 't', `LONG_FORMAT`],
-				[/* text */ 't', `.`]
+				[/* inline code block */ 'i', `set`],
+				[/* text */ 't', ` indicating the
+ month. This is a calendar-specific value. The first month of
+ the year in the Gregorian and Julian calendars is
+ `],
+				[/* inline code block */ 'i', `JANUARY`],
+				[/* text */ 't', ` which is 0; the last depends on the number
+ of months in a year.`]
 			],
 		]],
 		[/* field */ 'NARROW_FORMAT', [
@@ -1097,6 +987,70 @@ DocsCollector.collect('java.util.Calendar', [
  are typically single character strings, such as "M" for Monday.`]
 			],
 		]],
+		[/* field */ 'NOVEMBER', [
+			[/* field description */
+				[/* text */ 't', `Value of the `],
+				[/* text */ 't', `MONTH`],
+				[/* text */ 't', ` field indicating the
+ eleventh month of the year in the Gregorian and Julian calendars.`]
+			],
+		]],
+		[/* field */ 'OCTOBER', [
+			[/* field description */
+				[/* text */ 't', `Value of the `],
+				[/* text */ 't', `MONTH`],
+				[/* text */ 't', ` field indicating the
+ tenth month of the year in the Gregorian and Julian calendars.`]
+			],
+		]],
+		[/* field */ 'PM', [
+			[/* field description */
+				[/* text */ 't', `Value of the `],
+				[/* text */ 't', `AM_PM`],
+				[/* text */ 't', ` field indicating the
+ period of the day from noon to just before midnight.`]
+			],
+		]],
+		[/* field */ 'SATURDAY', [
+			[/* field description */
+				[/* text */ 't', `Value of the `],
+				[/* text */ 't', `DAY_OF_WEEK`],
+				[/* text */ 't', ` field indicating
+ Saturday.`]
+			],
+		]],
+		[/* field */ 'SECOND', [
+			[/* field description */
+				[/* text */ 't', `Field number for `],
+				[/* inline code block */ 'i', `get`],
+				[/* text */ 't', ` and `],
+				[/* inline code block */ 'i', `set`],
+				[/* text */ 't', ` indicating the
+ second within the minute.
+ E.g., at 10:04:15.250 PM the `],
+				[/* inline code block */ 'i', `SECOND`],
+				[/* text */ 't', ` is 15.`]
+			],
+		]],
+		[/* field */ 'SEPTEMBER', [
+			[/* field description */
+				[/* text */ 't', `Value of the `],
+				[/* text */ 't', `MONTH`],
+				[/* text */ 't', ` field indicating the
+ ninth month of the year in the Gregorian and Julian calendars.`]
+			],
+		]],
+		[/* field */ 'SHORT', [
+			[/* field description */
+				[/* text */ 't', `A style specifier for `],
+				[/* reference */ 'r', `#getDisplayName(int,int,java.util.Locale)`, `getDisplayName`],
+				[/* text */ 't', ` and `],
+				[/* reference */ 'r', `#getDisplayNames(int,int,java.util.Locale)`, `getDisplayNames`],
+				[/* text */ 't', ` equivalent to `],
+				[/* text */ 't', `SHORT_FORMAT`],
+				[/* text */ 't', `.`]
+			],
+		]],
 		[/* field */ 'SHORT_FORMAT', [
 			[/* field description */
 				[/* text */ 't', `A style specifier for `],
@@ -1104,15 +1058,6 @@ DocsCollector.collect('java.util.Calendar', [
 				[/* text */ 't', ` and `],
 				[/* reference */ 'r', `#getDisplayNames(int,int,java.util.Locale)`, `getDisplayNames`],
 				[/* text */ 't', ` indicating a short name used for format.`]
-			],
-		]],
-		[/* field */ 'LONG_FORMAT', [
-			[/* field description */
-				[/* text */ 't', `A style specifier for `],
-				[/* reference */ 'r', `#getDisplayName(int,int,java.util.Locale)`, `getDisplayName`],
-				[/* text */ 't', ` and `],
-				[/* reference */ 'r', `#getDisplayNames(int,int,java.util.Locale)`, `getDisplayNames`],
-				[/* text */ 't', ` indicating a long name used for format.`]
 			],
 		]],
 		[/* field */ 'SHORT_STANDALONE', [
@@ -1125,42 +1070,20 @@ DocsCollector.collect('java.util.Calendar', [
  such as a month abbreviation as calendar headers.`]
 			],
 		]],
-		[/* field */ 'LONG_STANDALONE', [
+		[/* field */ 'SUNDAY', [
 			[/* field description */
-				[/* text */ 't', `A style specifier for `],
-				[/* reference */ 'r', `#getDisplayName(int,int,java.util.Locale)`, `getDisplayName`],
-				[/* text */ 't', ` and `],
-				[/* reference */ 'r', `#getDisplayNames(int,int,java.util.Locale)`, `getDisplayNames`],
-				[/* text */ 't', ` indicating a long name used independently,
- such as a month name as calendar headers.`]
+				[/* text */ 't', `Value of the `],
+				[/* text */ 't', `DAY_OF_WEEK`],
+				[/* text */ 't', ` field indicating
+ Sunday.`]
 			],
 		]],
-		[/* field */ 'fields', [
+		[/* field */ 'THURSDAY', [
 			[/* field description */
-				[/* text */ 't', `The calendar field values for the currently set time for this calendar.
- This is an array of `],
-				[/* inline code block */ 'i', `FIELD_COUNT`],
-				[/* text */ 't', ` integers, with index values
- `],
-				[/* inline code block */ 'i', `ERA`],
-				[/* text */ 't', ` through `],
-				[/* inline code block */ 'i', `DST_OFFSET`],
-				[/* text */ 't', `.`]
-			],
-		]],
-		[/* field */ 'isSet', [
-			[/* field description */
-				[/* text */ 't', `The flags which tell if a specified calendar field for the calendar is set.
- A new object has no fields set.  After the first call to a method
- which generates the fields, they all remain set after that.
- This is an array of `],
-				[/* inline code block */ 'i', `FIELD_COUNT`],
-				[/* text */ 't', ` booleans, with index values
- `],
-				[/* inline code block */ 'i', `ERA`],
-				[/* text */ 't', ` through `],
-				[/* inline code block */ 'i', `DST_OFFSET`],
-				[/* text */ 't', `.`]
+				[/* text */ 't', `Value of the `],
+				[/* text */ 't', `DAY_OF_WEEK`],
+				[/* text */ 't', ` field indicating
+ Thursday.`]
 			],
 		]],
 		[/* field */ 'time', [
@@ -1169,26 +1092,103 @@ DocsCollector.collect('java.util.Calendar', [
  January 1, 1970, 0:00:00 GMT.`]
 			],
 		]],
-		[/* field */ 'isTimeSet', [
+		[/* field */ 'TUESDAY', [
 			[/* field description */
-				[/* text */ 't', `True if then the value of `],
-				[/* inline code block */ 'i', `time`],
-				[/* text */ 't', ` is valid.
- The time is made invalid by a change to an item of `],
-				[/* inline code block */ 'i', `field[]`],
-				[/* text */ 't', `.`]
+				[/* text */ 't', `Value of the `],
+				[/* text */ 't', `DAY_OF_WEEK`],
+				[/* text */ 't', ` field indicating
+ Tuesday.`]
 			],
 		]],
-		[/* field */ 'areFieldsSet', [
+		[/* field */ 'UNDECIMBER', [
 			[/* field description */
-				[/* text */ 't', `True if `],
-				[/* inline code block */ 'i', `fields[]`],
-				[/* text */ 't', ` are in sync with the currently set time.
- If false, then the next attempt to get the value of a field will
- force a recomputation of all fields from the current value of
+				[/* text */ 't', `Value of the `],
+				[/* text */ 't', `MONTH`],
+				[/* text */ 't', ` field indicating the
+ thirteenth month of the year. Although `],
+				[/* inline code block */ 'i', `GregorianCalendar`],
+				[/* text */ 't', `
+ does not use this value, lunar calendars do.`]
+			],
+		]],
+		[/* field */ 'WEDNESDAY', [
+			[/* field description */
+				[/* text */ 't', `Value of the `],
+				[/* text */ 't', `DAY_OF_WEEK`],
+				[/* text */ 't', ` field indicating
+ Wednesday.`]
+			],
+		]],
+		[/* field */ 'WEEK_OF_MONTH', [
+			[/* field description */
+				[/* text */ 't', `Field number for `],
+				[/* inline code block */ 'i', `get`],
+				[/* text */ 't', ` and `],
+				[/* inline code block */ 'i', `set`],
+				[/* text */ 't', ` indicating the
+ week number within the current month.  The first week of the month, as
+ defined by `],
+				[/* inline code block */ 'i', `getFirstDayOfWeek()`],
+				[/* text */ 't', ` and
  `],
-				[/* inline code block */ 'i', `time`],
-				[/* text */ 't', `.`]
+				[/* inline code block */ 'i', `getMinimalDaysInFirstWeek()`],
+				[/* text */ 't', `, has value 1.  Subclasses define
+ the value of `],
+				[/* inline code block */ 'i', `WEEK_OF_MONTH`],
+				[/* text */ 't', ` for days before the first week of
+ the month.`]
+			],
+		]],
+		[/* field */ 'WEEK_OF_YEAR', [
+			[/* field description */
+				[/* text */ 't', `Field number for `],
+				[/* inline code block */ 'i', `get`],
+				[/* text */ 't', ` and `],
+				[/* inline code block */ 'i', `set`],
+				[/* text */ 't', ` indicating the
+ week number within the current year.  The first week of the year, as
+ defined by `],
+				[/* inline code block */ 'i', `getFirstDayOfWeek()`],
+				[/* text */ 't', ` and
+ `],
+				[/* inline code block */ 'i', `getMinimalDaysInFirstWeek()`],
+				[/* text */ 't', `, has value 1.  Subclasses define
+ the value of `],
+				[/* inline code block */ 'i', `WEEK_OF_YEAR`],
+				[/* text */ 't', ` for days before the first week of
+ the year.`]
+			],
+		]],
+		[/* field */ 'YEAR', [
+			[/* field description */
+				[/* text */ 't', `Field number for `],
+				[/* inline code block */ 'i', `get`],
+				[/* text */ 't', ` and `],
+				[/* inline code block */ 'i', `set`],
+				[/* text */ 't', ` indicating the
+ year. This is a calendar-specific value; see subclass documentation.`]
+			],
+		]],
+		[/* field */ 'ZONE_OFFSET', [
+			[/* field description */
+				[/* text */ 't', `Field number for `],
+				[/* inline code block */ 'i', `get`],
+				[/* text */ 't', ` and `],
+				[/* inline code block */ 'i', `set`],
+				[/* text */ 't', `
+ indicating the raw offset from GMT in milliseconds.
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', `
+ This field reflects the correct GMT offset value of the time
+ zone of this `],
+					[/* inline code block */ 'i', `Calendar`],
+					[/* text */ 't', ` if the
+ `],
+					[/* inline code block */ 'i', `TimeZone`],
+					[/* text */ 't', ` implementation subclass supports
+ historical GMT offset changes.`]
+				]]
 			],
 		]]
 	],
@@ -1220,6 +1220,169 @@ DocsCollector.collect('java.util.Calendar', [
 		]]
 	],
 	[/* methods */
+		[/* method */ 'computeFields()', [
+			[/* method description */
+				[/* text */ 't', `Converts the current millisecond time value `],
+				[/* text */ 't', `time`],
+				[/* text */ 't', `
+ to calendar field values in `],
+				[/* text */ 't', `fields[]`],
+				[/* text */ 't', `.
+ This allows you to sync up the calendar field values with
+ a new time that is set for the calendar.  The time is `],
+				[/* text */ 't', `not`],
+				[/* text */ 't', `
+ recomputed first; to recompute the time, then the fields, call the
+ `],
+				[/* reference */ 'r', `#complete()`, `complete()`],
+				[/* text */ 't', ` method.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			/* return */ UDF
+		]],
+		[/* method */ 'computeTime()', [
+			[/* method description */
+				[/* text */ 't', `Converts the current calendar field values in `],
+				[/* text */ 't', `fields[]`],
+				[/* text */ 't', `
+ to the millisecond time value
+ `],
+				[/* text */ 't', `time`],
+				[/* text */ 't', `.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			/* return */ UDF
+		]],
+		[/* method */ 'internalGet(int)', [
+			[/* method description */
+				[/* text */ 't', `Returns the value of the given calendar field. This method does
+ not involve normalization or validation of the field value.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'field', [/* parameter description */
+					[/* text */ 't', `the given calendar field.`]
+				]]
+			],
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the value for the given calendar field.`]
+			]
+		]],
+		[/* method */ 'complete()', [
+			[/* method description */
+				[/* text */ 't', `Fills in any unset fields in the calendar fields. First, the `],
+				[/* reference */ 'r', `#computeTime()`, `computeTime()`],
+				[/* text */ 't', ` method is called if the time value (millisecond offset
+ from the `],
+				[/* text */ 't', `Epoch`],
+				[/* text */ 't', `) has not been calculated from
+ calendar field values. Then, the `],
+				[/* reference */ 'r', `#computeFields()`, `computeFields()`],
+				[/* text */ 't', ` method is
+ called to calculate all calendar field values.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			/* return */ UDF
+		]],
+		[/* method */ 'getGreatestMinimum(int)', [
+			[/* method description */
+				[/* text */ 't', `Returns the highest minimum value for the given calendar field
+ of this `],
+				[/* inline code block */ 'i', `Calendar`],
+				[/* text */ 't', ` instance. The highest minimum
+ value is defined as the largest value returned by `],
+				[/* reference */ 'r', `#getActualMinimum(int)`, `getActualMinimum(int)`],
+				[/* text */ 't', ` for any possible time value. The
+ greatest minimum value depends on calendar system specific
+ parameters of the instance.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'field', [/* parameter description */
+					[/* text */ 't', `the calendar field.`]
+				]]
+			],
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the highest minimum value for the given calendar field.`]
+			]
+		]],
+		[/* method */ 'getLeastMaximum(int)', [
+			[/* method description */
+				[/* text */ 't', `Returns the lowest maximum value for the given calendar field
+ of this `],
+				[/* inline code block */ 'i', `Calendar`],
+				[/* text */ 't', ` instance. The lowest maximum
+ value is defined as the smallest value returned by `],
+				[/* reference */ 'r', `#getActualMaximum(int)`, `getActualMaximum(int)`],
+				[/* text */ 't', ` for any possible time value. The least
+ maximum value depends on calendar system specific parameters of
+ the instance. For example, a `],
+				[/* inline code block */ 'i', `Calendar`],
+				[/* text */ 't', ` for the
+ Gregorian calendar system returns 28 for the
+ `],
+				[/* inline code block */ 'i', `DAY_OF_MONTH`],
+				[/* text */ 't', ` field, because the 28th is the last
+ day of the shortest month of this calendar, February in a
+ common year.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'field', [/* parameter description */
+					[/* text */ 't', `the calendar field.`]
+				]]
+			],
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the lowest maximum value for the given calendar field.`]
+			]
+		]],
+		[/* method */ 'getMaximum(int)', [
+			[/* method description */
+				[/* text */ 't', `Returns the maximum value for the given calendar field of this
+ `],
+				[/* inline code block */ 'i', `Calendar`],
+				[/* text */ 't', ` instance. The maximum value is defined as
+ the largest value returned by the `],
+				[/* reference */ 'r', `#get(int)`, `get`],
+				[/* text */ 't', ` method
+ for any possible time value. The maximum value depends on
+ calendar system specific parameters of the instance.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'field', [/* parameter description */
+					[/* text */ 't', `the calendar field.`]
+				]]
+			],
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the maximum value for the given calendar field.`]
+			]
+		]],
+		[/* method */ 'getMinimum(int)', [
+			[/* method description */
+				[/* text */ 't', `Returns the minimum value for the given calendar field of this
+ `],
+				[/* inline code block */ 'i', `Calendar`],
+				[/* text */ 't', ` instance. The minimum value is defined as
+ the smallest value returned by the `],
+				[/* reference */ 'r', `#get(int)`, `get`],
+				[/* text */ 't', ` method
+ for any possible time value.  The minimum value depends on
+ calendar system specific parameters of the instance.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'field', [/* parameter description */
+					[/* text */ 't', `the calendar field.`]
+				]]
+			],
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the minimum value for the given calendar field.`]
+			]
+		]],
 		[/* method */ 'add(int,int)', [
 			[/* method description */
 				[/* text */ 't', `Adds or subtracts the specified amount of time to the given calendar field,
@@ -1242,33 +1405,124 @@ DocsCollector.collect('java.util.Calendar', [
 			/* throws */ UDF,
 			/* return */ UDF
 		]],
-		[/* method */ 'get(int)', [
+		[/* method */ 'roll(int,boolean)', [
 			[/* method description */
-				[/* text */ 't', `Returns the value of the given calendar field. In lenient mode,
- all calendar fields are normalized. In non-lenient mode, all
- calendar fields are validated and this method throws an
- exception if any calendar fields have out-of-range values. The
- normalization and validation are handled by the
+				[/* text */ 't', `Adds or subtracts (up/down) a single unit of time on the given time
+ field without changing larger fields. For example, to roll the current
+ date up by one day, you can achieve it by calling:
  `],
-				[/* reference */ 'r', `#complete()`, `complete()`],
-				[/* text */ 't', ` method, which process is calendar
- system dependent.`]
+				[/* block */ 'b', [
+					[/* text */ 't', `roll(Calendar.DATE, true).
+ When rolling on the year or Calendar.YEAR field, it will roll the year
+ value in the range between 1 and the value returned by calling
+ `],
+					[/* inline code block */ 'i', `getMaximum(Calendar.YEAR)`],
+					[/* text */ 't', `.
+ When rolling on the month or Calendar.MONTH field, other fields like
+ date might conflict and, need to be changed. For instance,
+ rolling the month on the date 01/31/96 will result in 02/29/96.
+ When rolling on the hour-in-day or Calendar.HOUR_OF_DAY field, it will
+ roll the hour value in the range between 0 and 23, which is zero-based.`]
+				]]
 			],
 			[/* parameters */
 				[/* parameter */ 'field', [/* parameter description */
-					[/* text */ 't', `the given calendar field.`]
+					[/* text */ 't', `the time field.`]
+				]],
+				[/* parameter */ 'up', [/* parameter description */
+					[/* text */ 't', `indicates if the value of the specified time field is to be
+ rolled up or rolled down. Use true if rolling up, false otherwise.`]
 				]]
 			],
-			[/* throws */
-				[/* throw */ 'java.lang.ArrayIndexOutOfBoundsException', [/* throw description */
-					[/* text */ 't', `if the specified field is out of range
-             (`],
-					[/* inline code block */ 'i', `field < 0 || field >= FIELD_COUNT`],
-					[/* text */ 't', `).`]
+			/* throws */ UDF,
+			/* return */ UDF
+		]],
+		[/* method */ 'after(java.lang.Object)', [
+			[/* method description */
+				[/* text */ 't', `Returns whether this `],
+				[/* inline code block */ 'i', `Calendar`],
+				[/* text */ 't', ` represents a time
+ after the time represented by the specified
+ `],
+				[/* inline code block */ 'i', `Object`],
+				[/* text */ 't', `. This method is equivalent to:
+ `],
+				[/* code block */ 'c', [
+					[/* inline code block */ 'i', `compareTo(when) > 0`]
+				]],
+				[/* text */ 't', `
+ if and only if `],
+				[/* inline code block */ 'i', `when`],
+				[/* text */ 't', ` is a `],
+				[/* inline code block */ 'i', `Calendar`],
+				[/* text */ 't', `
+ instance. Otherwise, the method returns `],
+				[/* inline code block */ 'i', `false`],
+				[/* text */ 't', `.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'when', [/* parameter description */
+					[/* text */ 't', `the `],
+					[/* inline code block */ 'i', `Object`],
+					[/* text */ 't', ` to be compared`]
 				]]
 			],
+			/* throws */ UDF,
 			[/* return description */
-				[/* text */ 't', `the value for the given calendar field.`]
+				[/* inline code block */ 'i', `true`],
+				[/* text */ 't', ` if the time of this `],
+				[/* inline code block */ 'i', `Calendar`],
+				[/* text */ 't', ` is
+ after the time represented by `],
+				[/* inline code block */ 'i', `when`],
+				[/* text */ 't', `; `],
+				[/* inline code block */ 'i', `false`],
+				[/* text */ 't', `
+ otherwise.`]
+			]
+		]],
+		[/* method */ 'before(java.lang.Object)', [
+			[/* method description */
+				[/* text */ 't', `Returns whether this `],
+				[/* inline code block */ 'i', `Calendar`],
+				[/* text */ 't', ` represents a time
+ before the time represented by the specified
+ `],
+				[/* inline code block */ 'i', `Object`],
+				[/* text */ 't', `. This method is equivalent to:
+ `],
+				[/* code block */ 'c', [
+					[/* inline code block */ 'i', `compareTo(when) < 0`]
+				]],
+				[/* text */ 't', `
+ if and only if `],
+				[/* inline code block */ 'i', `when`],
+				[/* text */ 't', ` is a `],
+				[/* inline code block */ 'i', `Calendar`],
+				[/* text */ 't', `
+ instance. Otherwise, the method returns `],
+				[/* inline code block */ 'i', `false`],
+				[/* text */ 't', `.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'when', [/* parameter description */
+					[/* text */ 't', `the `],
+					[/* inline code block */ 'i', `Object`],
+					[/* text */ 't', ` to be compared`]
+				]]
+			],
+			/* throws */ UDF,
+			[/* return description */
+				[/* inline code block */ 'i', `true`],
+				[/* text */ 't', ` if the time of this
+ `],
+				[/* inline code block */ 'i', `Calendar`],
+				[/* text */ 't', ` is before the time represented by
+ `],
+				[/* inline code block */ 'i', `when`],
+				[/* text */ 't', `; `],
+				[/* inline code block */ 'i', `false`],
+				[/* text */ 't', ` otherwise.`]
 			]
 		]],
 		[/* method */ 'equals(java.lang.Object)', [
@@ -1340,93 +1594,106 @@ DocsCollector.collect('java.util.Calendar', [
 				[/* text */ 't', ` otherwise.`]
 			]
 		]],
-		[/* method */ 'toString()', [
+		[/* method */ 'isLenient()', [
 			[/* method description */
-				[/* text */ 't', `Return a string representation of this calendar. This method
- is intended to be used only for debugging purposes, and the
- format of the returned string may vary between implementations.
- The returned string may be empty but may not be `],
-				[/* inline code block */ 'i', `null`],
-				[/* text */ 't', `.`]
+				[/* text */ 't', `Tells whether date/time interpretation is to be lenient.`]
 			],
 			/* parameters */ UDF,
 			/* throws */ UDF,
 			[/* return description */
-				[/* text */ 't', `a string representation of this calendar.`]
-			]
-		]],
-		[/* method */ 'hashCode()', [
-			[/* method description */
-				[/* text */ 't', `Returns a hash code for this calendar.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `a hash code value for this object.`]
-			]
-		]],
-		[/* method */ 'clone()', [
-			[/* method description */
-				[/* text */ 't', `Creates and returns a copy of this object.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `a copy of this object.`]
-			]
-		]],
-		[/* method */ 'compareTo(java.util.Calendar)', [
-			[/* method description */
-				[/* text */ 't', `Compares the time values (millisecond offsets from the `],
-				[/* text */ 't', `Epoch`],
-				[/* text */ 't', `) represented by two
+				[/* inline code block */ 'i', `true`],
+				[/* text */ 't', ` if the interpretation mode of this calendar is lenient;
  `],
+				[/* inline code block */ 'i', `false`],
+				[/* text */ 't', ` otherwise.`]
+			]
+		]],
+		[/* method */ 'isWeekDateSupported()', [
+			[/* method description */
+				[/* text */ 't', `Returns whether this `],
 				[/* inline code block */ 'i', `Calendar`],
-				[/* text */ 't', ` objects.`]
+				[/* text */ 't', ` supports week dates.
+
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', `The default implementation of this method returns `],
+					[/* inline code block */ 'i', `false`],
+					[/* text */ 't', `.`]
+				]]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* inline code block */ 'i', `true`],
+				[/* text */ 't', ` if this `],
+				[/* inline code block */ 'i', `Calendar`],
+				[/* text */ 't', ` supports week dates;
+         `],
+				[/* inline code block */ 'i', `false`],
+				[/* text */ 't', ` otherwise.`]
+			]
+		]],
+		[/* method */ 'isSet(int)', [
+			[/* method description */
+				[/* text */ 't', `Determines if the given calendar field has a value set,
+ including cases that the value has been set by internal fields
+ calculations triggered by a `],
+				[/* inline code block */ 'i', `get`],
+				[/* text */ 't', ` method call.`]
 			],
 			[/* parameters */
-				[/* parameter */ 'anotherCalendar', [/* parameter description */
-					[/* text */ 't', `the `],
-					[/* inline code block */ 'i', `Calendar`],
-					[/* text */ 't', ` to be compared.`]
+				[/* parameter */ 'field', [/* parameter description */
+					[/* text */ 't', `the calendar field to test`]
 				]]
 			],
-			[/* throws */
-				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
-					[/* text */ 't', `if the specified `],
-					[/* inline code block */ 'i', `Calendar`],
-					[/* text */ 't', ` is
-            `],
-					[/* inline code block */ 'i', `null`],
-					[/* text */ 't', `.`]
-				]],
-				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
-					[/* text */ 't', `if the time value of the
- specified `],
-					[/* inline code block */ 'i', `Calendar`],
-					[/* text */ 't', ` object can't be obtained due to
- any invalid calendar values.`]
-				]]
-			],
+			/* throws */ UDF,
 			[/* return description */
-				[/* text */ 't', `the value `],
-				[/* inline code block */ 'i', `0`],
-				[/* text */ 't', ` if the time represented by the argument
- is equal to the time represented by this `],
-				[/* inline code block */ 'i', `Calendar`],
-				[/* text */ 't', `; a value
- less than `],
-				[/* inline code block */ 'i', `0`],
-				[/* text */ 't', ` if the time of this `],
-				[/* inline code block */ 'i', `Calendar`],
-				[/* text */ 't', ` is
- before the time represented by the argument; and a value greater than
+				[/* inline code block */ 'i', `true`],
+				[/* text */ 't', ` if the given calendar field has a value set;
  `],
-				[/* inline code block */ 'i', `0`],
-				[/* text */ 't', ` if the time of this `],
+				[/* inline code block */ 'i', `false`],
+				[/* text */ 't', ` otherwise.`]
+			]
+		]],
+		[/* method */ 'toInstant()', [
+			[/* method description */
+				[/* text */ 't', `Converts this object to an `],
+				[/* reference */ 'r', `java.time.Instant`],
+				[/* text */ 't', `.
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', `
+ The conversion creates an `],
+					[/* inline code block */ 'i', `Instant`],
+					[/* text */ 't', ` that represents the
+ same point on the time-line as this `],
+					[/* inline code block */ 'i', `Calendar`],
+					[/* text */ 't', `.`]
+				]]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the instant representing the same point on the time-line`]
+			]
+		]],
+		[/* method */ 'getTime()', [
+			[/* method description */
+				[/* text */ 't', `Returns a `],
+				[/* inline code block */ 'i', `Date`],
+				[/* text */ 't', ` object representing this
+ `],
 				[/* inline code block */ 'i', `Calendar`],
-				[/* text */ 't', ` is after the
- time represented by the argument.`]
+				[/* text */ 't', `'s time value (millisecond offset from the `],
+				[/* text */ 't', `Epoch`],
+				[/* text */ 't', `").`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `a `],
+				[/* inline code block */ 'i', `Date`],
+				[/* text */ 't', ` representing the time value.`]
 			]
 		]],
 		[/* method */ 'clear()', [
@@ -1507,100 +1774,41 @@ DocsCollector.collect('java.util.Calendar', [
 			/* throws */ UDF,
 			/* return */ UDF
 		]],
-		[/* method */ 'getInstance()', [
+		[/* method */ 'set(int,int,int)', [
 			[/* method description */
-				[/* text */ 't', `Gets a calendar using the default time zone and locale. The
+				[/* text */ 't', `Sets the values for the calendar fields `],
+				[/* inline code block */ 'i', `YEAR`],
+				[/* text */ 't', `,
  `],
-				[/* inline code block */ 'i', `Calendar`],
-				[/* text */ 't', ` returned is based on the current time
- in the default time zone with the default
- `],
-				[/* reference */ 'r', `.Locale.Category#FORMAT`],
-				[/* text */ 't', ` locale.
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', `
- If the locale contains the time zone with "tz"
- `],
-					[/* reference */ 'r', `.Locale#def_locale_extension`],
-					[/* text */ 't', `,
- that time zone is used instead.`]
-				]]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `a Calendar.`]
-			]
-		]],
-		[/* method */ 'getInstance(java.util.Locale)', [
-			[/* method description */
-				[/* text */ 't', `Gets a calendar using the default time zone and specified locale.
- The `],
-				[/* inline code block */ 'i', `Calendar`],
-				[/* text */ 't', ` returned is based on the current time
- in the default time zone with the given locale.
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', `
- If the locale contains the time zone with "tz"
- `],
-					[/* reference */ 'r', `.Locale#def_locale_extension`],
-					[/* text */ 't', `,
- that time zone is used instead.`]
-				]]
+				[/* inline code block */ 'i', `MONTH`],
+				[/* text */ 't', `, and `],
+				[/* inline code block */ 'i', `DAY_OF_MONTH`],
+				[/* text */ 't', `.
+ Previous values of other calendar fields are retained.  If this is not desired,
+ call `],
+				[/* reference */ 'r', `#clear()`, `clear()`],
+				[/* text */ 't', ` first.`]
 			],
 			[/* parameters */
-				[/* parameter */ 'aLocale', [/* parameter description */
-					[/* text */ 't', `the locale for the week data`]
-				]]
-			],
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `a Calendar.`]
-			]
-		]],
-		[/* method */ 'getInstance(java.util.TimeZone,java.util.Locale)', [
-			[/* method description */
-				[/* text */ 't', `Gets a calendar with the specified time zone and locale.
- The `],
-				[/* inline code block */ 'i', `Calendar`],
-				[/* text */ 't', ` returned is based on the current time
- in the given time zone with the given locale.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'zone', [/* parameter description */
-					[/* text */ 't', `the time zone to use`]
+				[/* parameter */ 'year', [/* parameter description */
+					[/* text */ 't', `the value used to set the `],
+					[/* inline code block */ 'i', `YEAR`],
+					[/* text */ 't', ` calendar field.`]
 				]],
-				[/* parameter */ 'aLocale', [/* parameter description */
-					[/* text */ 't', `the locale for the week data`]
+				[/* parameter */ 'month', [/* parameter description */
+					[/* text */ 't', `the value used to set the `],
+					[/* inline code block */ 'i', `MONTH`],
+					[/* text */ 't', ` calendar field.
+ Month value is 0-based. e.g., 0 for January.`]
+				]],
+				[/* parameter */ 'date', [/* parameter description */
+					[/* text */ 't', `the value used to set the `],
+					[/* inline code block */ 'i', `DAY_OF_MONTH`],
+					[/* text */ 't', ` calendar field.`]
 				]]
 			],
 			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `a Calendar.`]
-			]
-		]],
-		[/* method */ 'getInstance(java.util.TimeZone)', [
-			[/* method description */
-				[/* text */ 't', `Gets a calendar using the specified time zone and default locale.
- The `],
-				[/* inline code block */ 'i', `Calendar`],
-				[/* text */ 't', ` returned is based on the current time
- in the given time zone with the default
- `],
-				[/* reference */ 'r', `.Locale.Category#FORMAT`],
-				[/* text */ 't', ` locale.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'zone', [/* parameter description */
-					[/* text */ 't', `the time zone to use`]
-				]]
-			],
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `a Calendar.`]
-			]
+			/* return */ UDF
 		]],
 		[/* method */ 'set(int,int,int,int,int)', [
 			[/* method description */
@@ -1711,234 +1919,6 @@ DocsCollector.collect('java.util.Calendar', [
 			/* throws */ UDF,
 			/* return */ UDF
 		]],
-		[/* method */ 'set(int,int,int)', [
-			[/* method description */
-				[/* text */ 't', `Sets the values for the calendar fields `],
-				[/* inline code block */ 'i', `YEAR`],
-				[/* text */ 't', `,
- `],
-				[/* inline code block */ 'i', `MONTH`],
-				[/* text */ 't', `, and `],
-				[/* inline code block */ 'i', `DAY_OF_MONTH`],
-				[/* text */ 't', `.
- Previous values of other calendar fields are retained.  If this is not desired,
- call `],
-				[/* reference */ 'r', `#clear()`, `clear()`],
-				[/* text */ 't', ` first.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'year', [/* parameter description */
-					[/* text */ 't', `the value used to set the `],
-					[/* inline code block */ 'i', `YEAR`],
-					[/* text */ 't', ` calendar field.`]
-				]],
-				[/* parameter */ 'month', [/* parameter description */
-					[/* text */ 't', `the value used to set the `],
-					[/* inline code block */ 'i', `MONTH`],
-					[/* text */ 't', ` calendar field.
- Month value is 0-based. e.g., 0 for January.`]
-				]],
-				[/* parameter */ 'date', [/* parameter description */
-					[/* text */ 't', `the value used to set the `],
-					[/* inline code block */ 'i', `DAY_OF_MONTH`],
-					[/* text */ 't', ` calendar field.`]
-				]]
-			],
-			/* throws */ UDF,
-			/* return */ UDF
-		]],
-		[/* method */ 'set(int,int)', [
-			[/* method description */
-				[/* text */ 't', `Sets the given calendar field to the given value. The value is not
- interpreted by this method regardless of the leniency mode.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'field', [/* parameter description */
-					[/* text */ 't', `the given calendar field.`]
-				]],
-				[/* parameter */ 'value', [/* parameter description */
-					[/* text */ 't', `the value to be set for the given calendar field.`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.ArrayIndexOutOfBoundsException', [/* throw description */
-					[/* text */ 't', `if the specified field is out of range
-             (`],
-					[/* inline code block */ 'i', `field < 0 || field >= FIELD_COUNT`],
-					[/* text */ 't', `).
- in non-lenient mode.`]
-				]]
-			],
-			/* return */ UDF
-		]],
-		[/* method */ 'isSet(int)', [
-			[/* method description */
-				[/* text */ 't', `Determines if the given calendar field has a value set,
- including cases that the value has been set by internal fields
- calculations triggered by a `],
-				[/* inline code block */ 'i', `get`],
-				[/* text */ 't', ` method call.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'field', [/* parameter description */
-					[/* text */ 't', `the calendar field to test`]
-				]]
-			],
-			/* throws */ UDF,
-			[/* return description */
-				[/* inline code block */ 'i', `true`],
-				[/* text */ 't', ` if the given calendar field has a value set;
- `],
-				[/* inline code block */ 'i', `false`],
-				[/* text */ 't', ` otherwise.`]
-			]
-		]],
-		[/* method */ 'before(java.lang.Object)', [
-			[/* method description */
-				[/* text */ 't', `Returns whether this `],
-				[/* inline code block */ 'i', `Calendar`],
-				[/* text */ 't', ` represents a time
- before the time represented by the specified
- `],
-				[/* inline code block */ 'i', `Object`],
-				[/* text */ 't', `. This method is equivalent to:
- `],
-				[/* code block */ 'c', [
-					[/* inline code block */ 'i', `compareTo(when) < 0`]
-				]],
-				[/* text */ 't', `
- if and only if `],
-				[/* inline code block */ 'i', `when`],
-				[/* text */ 't', ` is a `],
-				[/* inline code block */ 'i', `Calendar`],
-				[/* text */ 't', `
- instance. Otherwise, the method returns `],
-				[/* inline code block */ 'i', `false`],
-				[/* text */ 't', `.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'when', [/* parameter description */
-					[/* text */ 't', `the `],
-					[/* inline code block */ 'i', `Object`],
-					[/* text */ 't', ` to be compared`]
-				]]
-			],
-			/* throws */ UDF,
-			[/* return description */
-				[/* inline code block */ 'i', `true`],
-				[/* text */ 't', ` if the time of this
- `],
-				[/* inline code block */ 'i', `Calendar`],
-				[/* text */ 't', ` is before the time represented by
- `],
-				[/* inline code block */ 'i', `when`],
-				[/* text */ 't', `; `],
-				[/* inline code block */ 'i', `false`],
-				[/* text */ 't', ` otherwise.`]
-			]
-		]],
-		[/* method */ 'after(java.lang.Object)', [
-			[/* method description */
-				[/* text */ 't', `Returns whether this `],
-				[/* inline code block */ 'i', `Calendar`],
-				[/* text */ 't', ` represents a time
- after the time represented by the specified
- `],
-				[/* inline code block */ 'i', `Object`],
-				[/* text */ 't', `. This method is equivalent to:
- `],
-				[/* code block */ 'c', [
-					[/* inline code block */ 'i', `compareTo(when) > 0`]
-				]],
-				[/* text */ 't', `
- if and only if `],
-				[/* inline code block */ 'i', `when`],
-				[/* text */ 't', ` is a `],
-				[/* inline code block */ 'i', `Calendar`],
-				[/* text */ 't', `
- instance. Otherwise, the method returns `],
-				[/* inline code block */ 'i', `false`],
-				[/* text */ 't', `.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'when', [/* parameter description */
-					[/* text */ 't', `the `],
-					[/* inline code block */ 'i', `Object`],
-					[/* text */ 't', ` to be compared`]
-				]]
-			],
-			/* throws */ UDF,
-			[/* return description */
-				[/* inline code block */ 'i', `true`],
-				[/* text */ 't', ` if the time of this `],
-				[/* inline code block */ 'i', `Calendar`],
-				[/* text */ 't', ` is
- after the time represented by `],
-				[/* inline code block */ 'i', `when`],
-				[/* text */ 't', `; `],
-				[/* inline code block */ 'i', `false`],
-				[/* text */ 't', `
- otherwise.`]
-			]
-		]],
-		[/* method */ 'complete()', [
-			[/* method description */
-				[/* text */ 't', `Fills in any unset fields in the calendar fields. First, the `],
-				[/* reference */ 'r', `#computeTime()`, `computeTime()`],
-				[/* text */ 't', ` method is called if the time value (millisecond offset
- from the `],
-				[/* text */ 't', `Epoch`],
-				[/* text */ 't', `) has not been calculated from
- calendar field values. Then, the `],
-				[/* reference */ 'r', `#computeFields()`, `computeFields()`],
-				[/* text */ 't', ` method is
- called to calculate all calendar field values.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			/* return */ UDF
-		]],
-		[/* method */ 'getTime()', [
-			[/* method description */
-				[/* text */ 't', `Returns a `],
-				[/* inline code block */ 'i', `Date`],
-				[/* text */ 't', ` object representing this
- `],
-				[/* inline code block */ 'i', `Calendar`],
-				[/* text */ 't', `'s time value (millisecond offset from the `],
-				[/* text */ 't', `Epoch`],
-				[/* text */ 't', `").`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `a `],
-				[/* inline code block */ 'i', `Date`],
-				[/* text */ 't', ` representing the time value.`]
-			]
-		]],
-		[/* method */ 'toInstant()', [
-			[/* method description */
-				[/* text */ 't', `Converts this object to an `],
-				[/* reference */ 'r', `java.time.Instant`],
-				[/* text */ 't', `.
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', `
- The conversion creates an `],
-					[/* inline code block */ 'i', `Instant`],
-					[/* text */ 't', ` that represents the
- same point on the time-line as this `],
-					[/* inline code block */ 'i', `Calendar`],
-					[/* text */ 't', `.`]
-				]]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the instant representing the same point on the time-line`]
-			]
-		]],
 		[/* method */ 'setTime(java.util.Date)', [
 			[/* method description */
 				[/* text */ 't', `Sets this Calendar's time with the given `],
@@ -1974,6 +1954,287 @@ DocsCollector.collect('java.util.Calendar', [
 				]]
 			],
 			/* return */ UDF
+		]],
+		[/* method */ 'compareTo(java.util.Calendar)', [
+			[/* method description */
+				[/* text */ 't', `Compares the time values (millisecond offsets from the `],
+				[/* text */ 't', `Epoch`],
+				[/* text */ 't', `) represented by two
+ `],
+				[/* inline code block */ 'i', `Calendar`],
+				[/* text */ 't', ` objects.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'anotherCalendar', [/* parameter description */
+					[/* text */ 't', `the `],
+					[/* inline code block */ 'i', `Calendar`],
+					[/* text */ 't', ` to be compared.`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
+					[/* text */ 't', `if the specified `],
+					[/* inline code block */ 'i', `Calendar`],
+					[/* text */ 't', ` is
+            `],
+					[/* inline code block */ 'i', `null`],
+					[/* text */ 't', `.`]
+				]],
+				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
+					[/* text */ 't', `if the time value of the
+ specified `],
+					[/* inline code block */ 'i', `Calendar`],
+					[/* text */ 't', ` object can't be obtained due to
+ any invalid calendar values.`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `the value `],
+				[/* inline code block */ 'i', `0`],
+				[/* text */ 't', ` if the time represented by the argument
+ is equal to the time represented by this `],
+				[/* inline code block */ 'i', `Calendar`],
+				[/* text */ 't', `; a value
+ less than `],
+				[/* inline code block */ 'i', `0`],
+				[/* text */ 't', ` if the time of this `],
+				[/* inline code block */ 'i', `Calendar`],
+				[/* text */ 't', ` is
+ before the time represented by the argument; and a value greater than
+ `],
+				[/* inline code block */ 'i', `0`],
+				[/* text */ 't', ` if the time of this `],
+				[/* inline code block */ 'i', `Calendar`],
+				[/* text */ 't', ` is after the
+ time represented by the argument.`]
+			]
+		]],
+		[/* method */ 'get(int)', [
+			[/* method description */
+				[/* text */ 't', `Returns the value of the given calendar field. In lenient mode,
+ all calendar fields are normalized. In non-lenient mode, all
+ calendar fields are validated and this method throws an
+ exception if any calendar fields have out-of-range values. The
+ normalization and validation are handled by the
+ `],
+				[/* reference */ 'r', `#complete()`, `complete()`],
+				[/* text */ 't', ` method, which process is calendar
+ system dependent.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'field', [/* parameter description */
+					[/* text */ 't', `the given calendar field.`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.lang.ArrayIndexOutOfBoundsException', [/* throw description */
+					[/* text */ 't', `if the specified field is out of range
+             (`],
+					[/* inline code block */ 'i', `field < 0 || field >= FIELD_COUNT`],
+					[/* text */ 't', `).`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `the value for the given calendar field.`]
+			]
+		]],
+		[/* method */ 'getActualMaximum(int)', [
+			[/* method description */
+				[/* text */ 't', `Returns the maximum value that the specified calendar field
+ could have, given the time value of this
+ `],
+				[/* inline code block */ 'i', `Calendar`],
+				[/* text */ 't', `. For example, the actual maximum value of
+ the `],
+				[/* inline code block */ 'i', `MONTH`],
+				[/* text */ 't', ` field is 12 in some years, and 13 in
+ other years in the Hebrew calendar system.
+
+ `],
+				[/* block */ 'b', `The default implementation of this method uses an iterative
+ algorithm to determine the actual maximum value for the
+ calendar field. Subclasses should, if possible, override this
+ with a more efficient implementation.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'field', [/* parameter description */
+					[/* text */ 't', `the calendar field`]
+				]]
+			],
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the maximum of the given calendar field for the time
+ value of this `],
+				[/* inline code block */ 'i', `Calendar`]
+			]
+		]],
+		[/* method */ 'getActualMinimum(int)', [
+			[/* method description */
+				[/* text */ 't', `Returns the minimum value that the specified calendar field
+ could have, given the time value of this `],
+				[/* inline code block */ 'i', `Calendar`],
+				[/* text */ 't', `.
+
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', `The default implementation of this method uses an iterative
+ algorithm to determine the actual minimum value for the
+ calendar field. Subclasses should, if possible, override this
+ with a more efficient implementation - in many cases, they can
+ simply return `],
+					[/* inline code block */ 'i', `getMinimum()`],
+					[/* text */ 't', `.`]
+				]]
+			],
+			[/* parameters */
+				[/* parameter */ 'field', [/* parameter description */
+					[/* text */ 't', `the calendar field`]
+				]]
+			],
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the minimum of the given calendar field for the time
+ value of this `],
+				[/* inline code block */ 'i', `Calendar`]
+			]
+		]],
+		[/* method */ 'getFirstDayOfWeek()', [
+			[/* method description */
+				[/* text */ 't', `Gets what the first day of the week is; e.g., `],
+				[/* inline code block */ 'i', `SUNDAY`],
+				[/* text */ 't', ` in the U.S.,
+ `],
+				[/* inline code block */ 'i', `MONDAY`],
+				[/* text */ 't', ` in France.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the first day of the week.`]
+			]
+		]],
+		[/* method */ 'getMinimalDaysInFirstWeek()', [
+			[/* method description */
+				[/* text */ 't', `Gets what the minimal days required in the first week of the year are;
+ e.g., if the first week is defined as one that contains the first day
+ of the first month of a year, this method returns 1. If
+ the minimal days required must be a full week, this method
+ returns 7.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the minimal days required in the first week of the year.`]
+			]
+		]],
+		[/* method */ 'getWeeksInWeekYear()', [
+			[/* method description */
+				[/* text */ 't', `Returns the number of weeks in the week year represented by this
+ `],
+				[/* inline code block */ 'i', `Calendar`],
+				[/* text */ 't', `.
+
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', `The default implementation of this method throws an
+ `],
+					[/* inline code block */ 'i', `UnsupportedOperationException`],
+					[/* text */ 't', `.`]
+				]]
+			],
+			/* parameters */ UDF,
+			[/* throws */
+				[/* throw */ 'java.lang.UnsupportedOperationException', [/* throw description */
+					[/* text */ 't', `if any week year numbering isn't supported in this
+            `],
+					[/* inline code block */ 'i', `Calendar`],
+					[/* text */ 't', `.`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `the number of weeks in the week year.`]
+			]
+		]],
+		[/* method */ 'getWeekYear()', [
+			[/* method description */
+				[/* text */ 't', `Returns the week year represented by this `],
+				[/* inline code block */ 'i', `Calendar`],
+				[/* text */ 't', `. The
+ week year is in sync with the week cycle. The `],
+				[/* reference */ 'r', `#getFirstDayOfWeek()`, `first day of the first week`],
+				[/* text */ 't', ` is the first
+ day of the week year.
+
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', `The default implementation of this method throws an
+ `],
+					[/* reference */ 'r', `java.lang.UnsupportedOperationException`],
+					[/* text */ 't', `.`]
+				]]
+			],
+			/* parameters */ UDF,
+			[/* throws */
+				[/* throw */ 'java.lang.UnsupportedOperationException', [/* throw description */
+					[/* text */ 't', `if any week year numbering isn't supported
+            in this `],
+					[/* inline code block */ 'i', `Calendar`],
+					[/* text */ 't', `.`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `the week year of this `],
+				[/* inline code block */ 'i', `Calendar`]
+			]
+		]],
+		[/* method */ 'hashCode()', [
+			[/* method description */
+				[/* text */ 't', `Returns a hash code for this calendar.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `a hash code value for this object.`]
+			]
+		]],
+		[/* method */ 'clone()', [
+			[/* method description */
+				[/* text */ 't', `Creates and returns a copy of this object.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `a copy of this object.`]
+			]
+		]],
+		[/* method */ 'getCalendarType()', [
+			[/* method description */
+				[/* text */ 't', `Returns the calendar type of this `],
+				[/* inline code block */ 'i', `Calendar`],
+				[/* text */ 't', `. Calendar types are
+ defined by the `],
+				[/* text */ 't', `Unicode Locale Data Markup Language (LDML)`],
+				[/* text */ 't', `
+ specification.
+
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', `The default implementation of this method returns the class name of
+ this `],
+					[/* inline code block */ 'i', `Calendar`],
+					[/* text */ 't', ` instance. Any subclasses that implement
+ LDML-defined calendar systems should override this method to return
+ appropriate calendar types.`]
+				]]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the LDML-defined calendar type or the class name of this
+         `],
+				[/* inline code block */ 'i', `Calendar`],
+				[/* text */ 't', ` instance`]
+			]
 		]],
 		[/* method */ 'getDisplayName(int,int,java.util.Locale)', [
 			[/* method description */
@@ -2095,185 +2356,19 @@ DocsCollector.collect('java.util.Calendar', [
         applicable.`]
 			]
 		]],
-		[/* method */ 'getAvailableLocales()', [
+		[/* method */ 'toString()', [
 			[/* method description */
-				[/* text */ 't', `Returns an array of all locales for which the `],
-				[/* inline code block */ 'i', `getInstance`],
-				[/* text */ 't', `
- methods of this class can return localized instances.
- The array returned must contain at least a `],
-				[/* inline code block */ 'i', `Locale`],
-				[/* text */ 't', `
- instance equal to `],
-				[/* reference */ 'r', `.Locale#US`],
+				[/* text */ 't', `Return a string representation of this calendar. This method
+ is intended to be used only for debugging purposes, and the
+ format of the returned string may vary between implementations.
+ The returned string may be empty but may not be `],
+				[/* inline code block */ 'i', `null`],
 				[/* text */ 't', `.`]
 			],
 			/* parameters */ UDF,
 			/* throws */ UDF,
 			[/* return description */
-				[/* text */ 't', `An array of locales for which localized
-         `],
-				[/* inline code block */ 'i', `Calendar`],
-				[/* text */ 't', ` instances are available.`]
-			]
-		]],
-		[/* method */ 'getCalendarType()', [
-			[/* method description */
-				[/* text */ 't', `Returns the calendar type of this `],
-				[/* inline code block */ 'i', `Calendar`],
-				[/* text */ 't', `. Calendar types are
- defined by the `],
-				[/* text */ 't', `Unicode Locale Data Markup Language (LDML)`],
-				[/* text */ 't', `
- specification.
-
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', `The default implementation of this method returns the class name of
- this `],
-					[/* inline code block */ 'i', `Calendar`],
-					[/* text */ 't', ` instance. Any subclasses that implement
- LDML-defined calendar systems should override this method to return
- appropriate calendar types.`]
-				]]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the LDML-defined calendar type or the class name of this
-         `],
-				[/* inline code block */ 'i', `Calendar`],
-				[/* text */ 't', ` instance`]
-			]
-		]],
-		[/* method */ 'getMinimum(int)', [
-			[/* method description */
-				[/* text */ 't', `Returns the minimum value for the given calendar field of this
- `],
-				[/* inline code block */ 'i', `Calendar`],
-				[/* text */ 't', ` instance. The minimum value is defined as
- the smallest value returned by the `],
-				[/* reference */ 'r', `#get(int)`, `get`],
-				[/* text */ 't', ` method
- for any possible time value.  The minimum value depends on
- calendar system specific parameters of the instance.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'field', [/* parameter description */
-					[/* text */ 't', `the calendar field.`]
-				]]
-			],
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the minimum value for the given calendar field.`]
-			]
-		]],
-		[/* method */ 'getMaximum(int)', [
-			[/* method description */
-				[/* text */ 't', `Returns the maximum value for the given calendar field of this
- `],
-				[/* inline code block */ 'i', `Calendar`],
-				[/* text */ 't', ` instance. The maximum value is defined as
- the largest value returned by the `],
-				[/* reference */ 'r', `#get(int)`, `get`],
-				[/* text */ 't', ` method
- for any possible time value. The maximum value depends on
- calendar system specific parameters of the instance.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'field', [/* parameter description */
-					[/* text */ 't', `the calendar field.`]
-				]]
-			],
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the maximum value for the given calendar field.`]
-			]
-		]],
-		[/* method */ 'setTimeZone(java.util.TimeZone)', [
-			[/* method description */
-				[/* text */ 't', `Sets the time zone with the given time zone value.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'value', [/* parameter description */
-					[/* text */ 't', `the given time zone.`]
-				]]
-			],
-			/* throws */ UDF,
-			/* return */ UDF
-		]],
-		[/* method */ 'getTimeZone()', [
-			[/* method description */
-				[/* text */ 't', `Gets the time zone.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the time zone object associated with this calendar.`]
-			]
-		]],
-		[/* method */ 'setLenient(boolean)', [
-			[/* method description */
-				[/* text */ 't', `Specifies whether or not date/time interpretation is to be lenient.  With
- lenient interpretation, a date such as "February 942, 1996" will be
- treated as being equivalent to the 941st day after February 1, 1996.
- With strict (non-lenient) interpretation, such dates will cause an exception to be
- thrown. The default is lenient.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'lenient', [/* parameter description */
-					[/* text */ 't', ``],
-					[/* inline code block */ 'i', `true`],
-					[/* text */ 't', ` if the lenient mode is to be turned
- on; `],
-					[/* inline code block */ 'i', `false`],
-					[/* text */ 't', ` if it is to be turned off.`]
-				]]
-			],
-			/* throws */ UDF,
-			/* return */ UDF
-		]],
-		[/* method */ 'isLenient()', [
-			[/* method description */
-				[/* text */ 't', `Tells whether date/time interpretation is to be lenient.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* inline code block */ 'i', `true`],
-				[/* text */ 't', ` if the interpretation mode of this calendar is lenient;
- `],
-				[/* inline code block */ 'i', `false`],
-				[/* text */ 't', ` otherwise.`]
-			]
-		]],
-		[/* method */ 'getFirstDayOfWeek()', [
-			[/* method description */
-				[/* text */ 't', `Gets what the first day of the week is; e.g., `],
-				[/* inline code block */ 'i', `SUNDAY`],
-				[/* text */ 't', ` in the U.S.,
- `],
-				[/* inline code block */ 'i', `MONDAY`],
-				[/* text */ 't', ` in France.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the first day of the week.`]
-			]
-		]],
-		[/* method */ 'getMinimalDaysInFirstWeek()', [
-			[/* method description */
-				[/* text */ 't', `Gets what the minimal days required in the first week of the year are;
- e.g., if the first week is defined as one that contains the first day
- of the first month of a year, this method returns 1. If
- the minimal days required must be a full week, this method
- returns 7.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the minimal days required in the first week of the year.`]
+				[/* text */ 't', `a string representation of this calendar.`]
 			]
 		]],
 		[/* method */ 'getDisplayNames(int,int,java.util.Locale)', [
@@ -2414,103 +2509,14 @@ DocsCollector.collect('java.util.Calendar', [
 				[/* inline code block */ 'i', `field`]
 			]
 		]],
-		[/* method */ 'setTimeInMillis(long)', [
+		[/* method */ 'getTimeZone()', [
 			[/* method description */
-				[/* text */ 't', `Sets this Calendar's current time from the given long value.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'millis', [/* parameter description */
-					[/* text */ 't', `the new time in UTC milliseconds from the epoch.`]
-				]]
-			],
-			/* throws */ UDF,
-			/* return */ UDF
-		]],
-		[/* method */ 'isWeekDateSupported()', [
-			[/* method description */
-				[/* text */ 't', `Returns whether this `],
-				[/* inline code block */ 'i', `Calendar`],
-				[/* text */ 't', ` supports week dates.
-
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', `The default implementation of this method returns `],
-					[/* inline code block */ 'i', `false`],
-					[/* text */ 't', `.`]
-				]]
+				[/* text */ 't', `Gets the time zone.`]
 			],
 			/* parameters */ UDF,
 			/* throws */ UDF,
 			[/* return description */
-				[/* inline code block */ 'i', `true`],
-				[/* text */ 't', ` if this `],
-				[/* inline code block */ 'i', `Calendar`],
-				[/* text */ 't', ` supports week dates;
-         `],
-				[/* inline code block */ 'i', `false`],
-				[/* text */ 't', ` otherwise.`]
-			]
-		]],
-		[/* method */ 'getWeekYear()', [
-			[/* method description */
-				[/* text */ 't', `Returns the week year represented by this `],
-				[/* inline code block */ 'i', `Calendar`],
-				[/* text */ 't', `. The
- week year is in sync with the week cycle. The `],
-				[/* reference */ 'r', `#getFirstDayOfWeek()`, `first day of the first week`],
-				[/* text */ 't', ` is the first
- day of the week year.
-
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', `The default implementation of this method throws an
- `],
-					[/* reference */ 'r', `java.lang.UnsupportedOperationException`],
-					[/* text */ 't', `.`]
-				]]
-			],
-			/* parameters */ UDF,
-			[/* throws */
-				[/* throw */ 'java.lang.UnsupportedOperationException', [/* throw description */
-					[/* text */ 't', `if any week year numbering isn't supported
-            in this `],
-					[/* inline code block */ 'i', `Calendar`],
-					[/* text */ 't', `.`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `the week year of this `],
-				[/* inline code block */ 'i', `Calendar`]
-			]
-		]],
-		[/* method */ 'getLeastMaximum(int)', [
-			[/* method description */
-				[/* text */ 't', `Returns the lowest maximum value for the given calendar field
- of this `],
-				[/* inline code block */ 'i', `Calendar`],
-				[/* text */ 't', ` instance. The lowest maximum
- value is defined as the smallest value returned by `],
-				[/* reference */ 'r', `#getActualMaximum(int)`, `getActualMaximum(int)`],
-				[/* text */ 't', ` for any possible time value. The least
- maximum value depends on calendar system specific parameters of
- the instance. For example, a `],
-				[/* inline code block */ 'i', `Calendar`],
-				[/* text */ 't', ` for the
- Gregorian calendar system returns 28 for the
- `],
-				[/* inline code block */ 'i', `DAY_OF_MONTH`],
-				[/* text */ 't', ` field, because the 28th is the last
- day of the shortest month of this calendar, February in a
- common year.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'field', [/* parameter description */
-					[/* text */ 't', `the calendar field.`]
-				]]
-			],
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the lowest maximum value for the given calendar field.`]
+				[/* text */ 't', `the time zone object associated with this calendar.`]
 			]
 		]],
 		[/* method */ 'getTimeInMillis()', [
@@ -2523,73 +2529,153 @@ DocsCollector.collect('java.util.Calendar', [
 				[/* text */ 't', `the current time as UTC milliseconds from the epoch.`]
 			]
 		]],
-		[/* method */ 'computeFields()', [
+		[/* method */ 'getInstance()', [
 			[/* method description */
-				[/* text */ 't', `Converts the current millisecond time value `],
-				[/* text */ 't', `time`],
-				[/* text */ 't', `
- to calendar field values in `],
-				[/* text */ 't', `fields[]`],
-				[/* text */ 't', `.
- This allows you to sync up the calendar field values with
- a new time that is set for the calendar.  The time is `],
-				[/* text */ 't', `not`],
-				[/* text */ 't', `
- recomputed first; to recompute the time, then the fields, call the
+				[/* text */ 't', `Gets a calendar using the default time zone and locale. The
  `],
-				[/* reference */ 'r', `#complete()`, `complete()`],
-				[/* text */ 't', ` method.`]
+				[/* inline code block */ 'i', `Calendar`],
+				[/* text */ 't', ` returned is based on the current time
+ in the default time zone with the default
+ `],
+				[/* reference */ 'r', `.Locale.Category#FORMAT`],
+				[/* text */ 't', ` locale.
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', `
+ If the locale contains the time zone with "tz"
+ `],
+					[/* reference */ 'r', `.Locale#def_locale_extension`],
+					[/* text */ 't', `,
+ that time zone is used instead.`]
+				]]
 			],
 			/* parameters */ UDF,
 			/* throws */ UDF,
-			/* return */ UDF
+			[/* return description */
+				[/* text */ 't', `a Calendar.`]
+			]
 		]],
-		[/* method */ 'internalGet(int)', [
+		[/* method */ 'getInstance(java.util.Locale)', [
 			[/* method description */
-				[/* text */ 't', `Returns the value of the given calendar field. This method does
- not involve normalization or validation of the field value.`]
+				[/* text */ 't', `Gets a calendar using the default time zone and specified locale.
+ The `],
+				[/* inline code block */ 'i', `Calendar`],
+				[/* text */ 't', ` returned is based on the current time
+ in the default time zone with the given locale.
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', `
+ If the locale contains the time zone with "tz"
+ `],
+					[/* reference */ 'r', `.Locale#def_locale_extension`],
+					[/* text */ 't', `,
+ that time zone is used instead.`]
+				]]
 			],
 			[/* parameters */
-				[/* parameter */ 'field', [/* parameter description */
-					[/* text */ 't', `the given calendar field.`]
+				[/* parameter */ 'aLocale', [/* parameter description */
+					[/* text */ 't', `the locale for the week data`]
 				]]
 			],
 			/* throws */ UDF,
 			[/* return description */
-				[/* text */ 't', `the value for the given calendar field.`]
+				[/* text */ 't', `a Calendar.`]
 			]
 		]],
-		[/* method */ 'roll(int,boolean)', [
+		[/* method */ 'getInstance(java.util.TimeZone)', [
 			[/* method description */
-				[/* text */ 't', `Adds or subtracts (up/down) a single unit of time on the given time
- field without changing larger fields. For example, to roll the current
- date up by one day, you can achieve it by calling:
+				[/* text */ 't', `Gets a calendar using the specified time zone and default locale.
+ The `],
+				[/* inline code block */ 'i', `Calendar`],
+				[/* text */ 't', ` returned is based on the current time
+ in the given time zone with the default
  `],
-				[/* block */ 'b', [
-					[/* text */ 't', `roll(Calendar.DATE, true).
- When rolling on the year or Calendar.YEAR field, it will roll the year
- value in the range between 1 and the value returned by calling
- `],
-					[/* inline code block */ 'i', `getMaximum(Calendar.YEAR)`],
-					[/* text */ 't', `.
- When rolling on the month or Calendar.MONTH field, other fields like
- date might conflict and, need to be changed. For instance,
- rolling the month on the date 01/31/96 will result in 02/29/96.
- When rolling on the hour-in-day or Calendar.HOUR_OF_DAY field, it will
- roll the hour value in the range between 0 and 23, which is zero-based.`]
-				]]
+				[/* reference */ 'r', `.Locale.Category#FORMAT`],
+				[/* text */ 't', ` locale.`]
 			],
 			[/* parameters */
-				[/* parameter */ 'field', [/* parameter description */
-					[/* text */ 't', `the time field.`]
-				]],
-				[/* parameter */ 'up', [/* parameter description */
-					[/* text */ 't', `indicates if the value of the specified time field is to be
- rolled up or rolled down. Use true if rolling up, false otherwise.`]
+				[/* parameter */ 'zone', [/* parameter description */
+					[/* text */ 't', `the time zone to use`]
 				]]
 			],
 			/* throws */ UDF,
-			/* return */ UDF
+			[/* return description */
+				[/* text */ 't', `a Calendar.`]
+			]
+		]],
+		[/* method */ 'getInstance(java.util.TimeZone,java.util.Locale)', [
+			[/* method description */
+				[/* text */ 't', `Gets a calendar with the specified time zone and locale.
+ The `],
+				[/* inline code block */ 'i', `Calendar`],
+				[/* text */ 't', ` returned is based on the current time
+ in the given time zone with the given locale.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'zone', [/* parameter description */
+					[/* text */ 't', `the time zone to use`]
+				]],
+				[/* parameter */ 'aLocale', [/* parameter description */
+					[/* text */ 't', `the locale for the week data`]
+				]]
+			],
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `a Calendar.`]
+			]
+		]],
+		[/* method */ 'getAvailableCalendarTypes()', [
+			[/* method description */
+				[/* text */ 't', `Returns an unmodifiable `],
+				[/* inline code block */ 'i', `Set`],
+				[/* text */ 't', ` containing all calendar types
+ supported by `],
+				[/* inline code block */ 'i', `Calendar`],
+				[/* text */ 't', ` in the runtime environment. The available
+ calendar types can be used for the `],
+				[/* reference */ 'r', `.Locale#def_locale_extension`],
+				[/* text */ 't', `.
+ The `],
+				[/* inline code block */ 'i', `Set`],
+				[/* text */ 't', ` returned contains at least `],
+				[/* inline code block */ 'i', `"gregory"`],
+				[/* text */ 't', `. The
+ calendar types don't include aliases, such as `],
+				[/* inline code block */ 'i', `"gregorian"`],
+				[/* text */ 't', ` for
+ `],
+				[/* inline code block */ 'i', `"gregory"`],
+				[/* text */ 't', `.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `an unmodifiable `],
+				[/* inline code block */ 'i', `Set`],
+				[/* text */ 't', ` containing all available calendar types`]
+			]
+		]],
+		[/* method */ 'getAvailableLocales()', [
+			[/* method description */
+				[/* text */ 't', `Returns an array of all locales for which the `],
+				[/* inline code block */ 'i', `getInstance`],
+				[/* text */ 't', `
+ methods of this class can return localized instances.
+ The array returned must contain at least a `],
+				[/* inline code block */ 'i', `Locale`],
+				[/* text */ 't', `
+ instance equal to `],
+				[/* reference */ 'r', `.Locale#US`],
+				[/* text */ 't', `.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `An array of locales for which localized
+         `],
+				[/* inline code block */ 'i', `Calendar`],
+				[/* text */ 't', ` instances are available.`]
+			]
 		]],
 		[/* method */ 'roll(int,int)', [
 			[/* method description */
@@ -2628,72 +2714,29 @@ DocsCollector.collect('java.util.Calendar', [
 			/* throws */ UDF,
 			/* return */ UDF
 		]],
-		[/* method */ 'getGreatestMinimum(int)', [
+		[/* method */ 'set(int,int)', [
 			[/* method description */
-				[/* text */ 't', `Returns the highest minimum value for the given calendar field
- of this `],
-				[/* inline code block */ 'i', `Calendar`],
-				[/* text */ 't', ` instance. The highest minimum
- value is defined as the largest value returned by `],
-				[/* reference */ 'r', `#getActualMinimum(int)`, `getActualMinimum(int)`],
-				[/* text */ 't', ` for any possible time value. The
- greatest minimum value depends on calendar system specific
- parameters of the instance.`]
+				[/* text */ 't', `Sets the given calendar field to the given value. The value is not
+ interpreted by this method regardless of the leniency mode.`]
 			],
 			[/* parameters */
 				[/* parameter */ 'field', [/* parameter description */
-					[/* text */ 't', `the calendar field.`]
+					[/* text */ 't', `the given calendar field.`]
+				]],
+				[/* parameter */ 'value', [/* parameter description */
+					[/* text */ 't', `the value to be set for the given calendar field.`]
 				]]
 			],
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the highest minimum value for the given calendar field.`]
-			]
-		]],
-		[/* method */ 'computeTime()', [
-			[/* method description */
-				[/* text */ 't', `Converts the current calendar field values in `],
-				[/* text */ 't', `fields[]`],
-				[/* text */ 't', `
- to the millisecond time value
- `],
-				[/* text */ 't', `time`],
-				[/* text */ 't', `.`]
+			[/* throws */
+				[/* throw */ 'java.lang.ArrayIndexOutOfBoundsException', [/* throw description */
+					[/* text */ 't', `if the specified field is out of range
+             (`],
+					[/* inline code block */ 'i', `field < 0 || field >= FIELD_COUNT`],
+					[/* text */ 't', `).
+ in non-lenient mode.`]
+				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
 			/* return */ UDF
-		]],
-		[/* method */ 'getAvailableCalendarTypes()', [
-			[/* method description */
-				[/* text */ 't', `Returns an unmodifiable `],
-				[/* inline code block */ 'i', `Set`],
-				[/* text */ 't', ` containing all calendar types
- supported by `],
-				[/* inline code block */ 'i', `Calendar`],
-				[/* text */ 't', ` in the runtime environment. The available
- calendar types can be used for the `],
-				[/* reference */ 'r', `.Locale#def_locale_extension`],
-				[/* text */ 't', `.
- The `],
-				[/* inline code block */ 'i', `Set`],
-				[/* text */ 't', ` returned contains at least `],
-				[/* inline code block */ 'i', `"gregory"`],
-				[/* text */ 't', `. The
- calendar types don't include aliases, such as `],
-				[/* inline code block */ 'i', `"gregorian"`],
-				[/* text */ 't', ` for
- `],
-				[/* inline code block */ 'i', `"gregory"`],
-				[/* text */ 't', `.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `an unmodifiable `],
-				[/* inline code block */ 'i', `Set`],
-				[/* text */ 't', ` containing all available calendar types`]
-			]
 		]],
 		[/* method */ 'setFirstDayOfWeek(int)', [
 			[/* method description */
@@ -2712,6 +2755,27 @@ DocsCollector.collect('java.util.Calendar', [
 			/* throws */ UDF,
 			/* return */ UDF
 		]],
+		[/* method */ 'setLenient(boolean)', [
+			[/* method description */
+				[/* text */ 't', `Specifies whether or not date/time interpretation is to be lenient.  With
+ lenient interpretation, a date such as "February 942, 1996" will be
+ treated as being equivalent to the 941st day after February 1, 1996.
+ With strict (non-lenient) interpretation, such dates will cause an exception to be
+ thrown. The default is lenient.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'lenient', [/* parameter description */
+					[/* text */ 't', ``],
+					[/* inline code block */ 'i', `true`],
+					[/* text */ 't', ` if the lenient mode is to be turned
+ on; `],
+					[/* inline code block */ 'i', `false`],
+					[/* text */ 't', ` if it is to be turned off.`]
+				]]
+			],
+			/* throws */ UDF,
+			/* return */ UDF
+		]],
 		[/* method */ 'setMinimalDaysInFirstWeek(int)', [
 			[/* method description */
 				[/* text */ 't', `Sets what the minimal days required in the first week of the year are;
@@ -2723,6 +2787,30 @@ DocsCollector.collect('java.util.Calendar', [
 				[/* parameter */ 'value', [/* parameter description */
 					[/* text */ 't', `the given minimal days required in the first week
  of the year.`]
+				]]
+			],
+			/* throws */ UDF,
+			/* return */ UDF
+		]],
+		[/* method */ 'setTimeInMillis(long)', [
+			[/* method description */
+				[/* text */ 't', `Sets this Calendar's current time from the given long value.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'millis', [/* parameter description */
+					[/* text */ 't', `the new time in UTC milliseconds from the epoch.`]
+				]]
+			],
+			/* throws */ UDF,
+			/* return */ UDF
+		]],
+		[/* method */ 'setTimeZone(java.util.TimeZone)', [
+			[/* method description */
+				[/* text */ 't', `Sets the time zone with the given time zone value.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'value', [/* parameter description */
+					[/* text */ 't', `the given time zone.`]
 				]]
 			],
 			/* throws */ UDF,
@@ -2802,94 +2890,6 @@ DocsCollector.collect('java.util.Calendar', [
 				]]
 			],
 			/* return */ UDF
-		]],
-		[/* method */ 'getWeeksInWeekYear()', [
-			[/* method description */
-				[/* text */ 't', `Returns the number of weeks in the week year represented by this
- `],
-				[/* inline code block */ 'i', `Calendar`],
-				[/* text */ 't', `.
-
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', `The default implementation of this method throws an
- `],
-					[/* inline code block */ 'i', `UnsupportedOperationException`],
-					[/* text */ 't', `.`]
-				]]
-			],
-			/* parameters */ UDF,
-			[/* throws */
-				[/* throw */ 'java.lang.UnsupportedOperationException', [/* throw description */
-					[/* text */ 't', `if any week year numbering isn't supported in this
-            `],
-					[/* inline code block */ 'i', `Calendar`],
-					[/* text */ 't', `.`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `the number of weeks in the week year.`]
-			]
-		]],
-		[/* method */ 'getActualMinimum(int)', [
-			[/* method description */
-				[/* text */ 't', `Returns the minimum value that the specified calendar field
- could have, given the time value of this `],
-				[/* inline code block */ 'i', `Calendar`],
-				[/* text */ 't', `.
-
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', `The default implementation of this method uses an iterative
- algorithm to determine the actual minimum value for the
- calendar field. Subclasses should, if possible, override this
- with a more efficient implementation - in many cases, they can
- simply return `],
-					[/* inline code block */ 'i', `getMinimum()`],
-					[/* text */ 't', `.`]
-				]]
-			],
-			[/* parameters */
-				[/* parameter */ 'field', [/* parameter description */
-					[/* text */ 't', `the calendar field`]
-				]]
-			],
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the minimum of the given calendar field for the time
- value of this `],
-				[/* inline code block */ 'i', `Calendar`]
-			]
-		]],
-		[/* method */ 'getActualMaximum(int)', [
-			[/* method description */
-				[/* text */ 't', `Returns the maximum value that the specified calendar field
- could have, given the time value of this
- `],
-				[/* inline code block */ 'i', `Calendar`],
-				[/* text */ 't', `. For example, the actual maximum value of
- the `],
-				[/* inline code block */ 'i', `MONTH`],
-				[/* text */ 't', ` field is 12 in some years, and 13 in
- other years in the Hebrew calendar system.
-
- `],
-				[/* block */ 'b', `The default implementation of this method uses an iterative
- algorithm to determine the actual maximum value for the
- calendar field. Subclasses should, if possible, override this
- with a more efficient implementation.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'field', [/* parameter description */
-					[/* text */ 't', `the calendar field`]
-				]]
-			],
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the maximum of the given calendar field for the time
- value of this `],
-				[/* inline code block */ 'i', `Calendar`]
-			]
 		]]
 	],
 ]);

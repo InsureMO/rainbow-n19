@@ -19,48 +19,60 @@ DocsCollector.collect('java.io.LineNumberInputStream', [
 		]]
 	],
 	[/* methods */
-		[/* method */ 'read(byte[],int,int)', [
+		[/* method */ 'available()', [
 			[/* method description */
-				[/* text */ 't', `Reads up to `],
-				[/* inline code block */ 'i', `len`],
-				[/* text */ 't', ` bytes of data from this input stream
- into an array of bytes. This method blocks until some input is available.
+				[/* text */ 't', `Returns the number of bytes that can be read from this input
+ stream without blocking.
  `],
 				[/* block */ 'b', [
 					[/* text */ 't', `
- The `],
-					[/* inline code block */ 'i', `read`],
-					[/* text */ 't', ` method of
+ Note that if the underlying input stream is able to supply
+ `],
+					[/* text */ 't', `k`],
+					[/* text */ 't', ` input characters without blocking, the
  `],
 					[/* inline code block */ 'i', `LineNumberInputStream`],
-					[/* text */ 't', ` repeatedly calls the
+					[/* text */ 't', ` can guarantee only to provide
  `],
-					[/* inline code block */ 'i', `read`],
-					[/* text */ 't', ` method of zero arguments to fill in the byte array.`]
+					[/* text */ 't', `k`],
+					[/* text */ 't', `/2 characters without blocking, because the
+ `],
+					[/* text */ 't', `k`],
+					[/* text */ 't', ` characters from the underlying input stream might
+ consist of `],
+					[/* text */ 't', `k`],
+					[/* text */ 't', `/2 pairs of `],
+					[/* inline code block */ 'i', `'\\r'`],
+					[/* text */ 't', ` and
+ `],
+					[/* inline code block */ 'i', `'\\n'`],
+					[/* text */ 't', `, which are converted to just
+ `],
+					[/* text */ 't', `k`],
+					[/* text */ 't', `/2 `],
+					[/* inline code block */ 'i', `'\\n'`],
+					[/* text */ 't', ` characters.`]
 				]]
 			],
-			[/* parameters */
-				[/* parameter */ 'b', [/* parameter description */
-					[/* text */ 't', `the buffer into which the data is read.`]
-				]],
-				[/* parameter */ 'off', [/* parameter description */
-					[/* text */ 't', `the start offset of the data.`]
-				]],
-				[/* parameter */ 'len', [/* parameter description */
-					[/* text */ 't', `the maximum number of bytes read.`]
-				]]
-			],
+			/* parameters */ UDF,
 			[/* throws */
 				[/* throw */ 'java.io.IOException', [/* throw description */
 					[/* text */ 't', `if an I/O error occurs.`]
 				]]
 			],
 			[/* return description */
-				[/* text */ 't', `the total number of bytes read into the buffer, or
-             `],
-				[/* inline code block */ 'i', `-1`],
-				[/* text */ 't', ` if there is no more data because the end of
-             this stream has been reached.`]
+				[/* text */ 't', `the number of bytes that can be read from this input stream
+             without blocking.`]
+			]
+		]],
+		[/* method */ 'getLineNumber()', [
+			[/* method description */
+				[/* text */ 't', `Returns the current line number.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the current line number.`]
 			]
 		]],
 		[/* method */ 'read()', [
@@ -111,36 +123,49 @@ DocsCollector.collect('java.io.LineNumberInputStream', [
              stream is reached.`]
 			]
 		]],
-		[/* method */ 'mark(int)', [
+		[/* method */ 'read(byte[],int,int)', [
 			[/* method description */
-				[/* text */ 't', `Marks the current position in this input stream. A subsequent
- call to the `],
-				[/* inline code block */ 'i', `reset`],
-				[/* text */ 't', ` method repositions this stream at
- the last marked position so that subsequent reads re-read the same bytes.
+				[/* text */ 't', `Reads up to `],
+				[/* inline code block */ 'i', `len`],
+				[/* text */ 't', ` bytes of data from this input stream
+ into an array of bytes. This method blocks until some input is available.
  `],
 				[/* block */ 'b', [
 					[/* text */ 't', `
  The `],
-					[/* inline code block */ 'i', `mark`],
+					[/* inline code block */ 'i', `read`],
 					[/* text */ 't', ` method of
  `],
 					[/* inline code block */ 'i', `LineNumberInputStream`],
-					[/* text */ 't', ` remembers the current line
- number in a private variable, and then calls the `],
-					[/* inline code block */ 'i', `mark`],
-					[/* text */ 't', `
- method of the underlying input stream.`]
+					[/* text */ 't', ` repeatedly calls the
+ `],
+					[/* inline code block */ 'i', `read`],
+					[/* text */ 't', ` method of zero arguments to fill in the byte array.`]
 				]]
 			],
 			[/* parameters */
-				[/* parameter */ 'readlimit', [/* parameter description */
-					[/* text */ 't', `the maximum limit of bytes that can be read before
-                      the mark position becomes invalid.`]
+				[/* parameter */ 'b', [/* parameter description */
+					[/* text */ 't', `the buffer into which the data is read.`]
+				]],
+				[/* parameter */ 'off', [/* parameter description */
+					[/* text */ 't', `the start offset of the data.`]
+				]],
+				[/* parameter */ 'len', [/* parameter description */
+					[/* text */ 't', `the maximum number of bytes read.`]
 				]]
 			],
-			/* throws */ UDF,
-			/* return */ UDF
+			[/* throws */
+				[/* throw */ 'java.io.IOException', [/* throw description */
+					[/* text */ 't', `if an I/O error occurs.`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `the total number of bytes read into the buffer, or
+             `],
+				[/* inline code block */ 'i', `-1`],
+				[/* text */ 't', ` if there is no more data because the end of
+             this stream has been reached.`]
+			]
 		]],
 		[/* method */ 'skip(long)', [
 			[/* method description */
@@ -186,51 +211,36 @@ DocsCollector.collect('java.io.LineNumberInputStream', [
 				[/* text */ 't', `the actual number of bytes skipped.`]
 			]
 		]],
-		[/* method */ 'available()', [
+		[/* method */ 'mark(int)', [
 			[/* method description */
-				[/* text */ 't', `Returns the number of bytes that can be read from this input
- stream without blocking.
+				[/* text */ 't', `Marks the current position in this input stream. A subsequent
+ call to the `],
+				[/* inline code block */ 'i', `reset`],
+				[/* text */ 't', ` method repositions this stream at
+ the last marked position so that subsequent reads re-read the same bytes.
  `],
 				[/* block */ 'b', [
 					[/* text */ 't', `
- Note that if the underlying input stream is able to supply
- `],
-					[/* text */ 't', `k`],
-					[/* text */ 't', ` input characters without blocking, the
+ The `],
+					[/* inline code block */ 'i', `mark`],
+					[/* text */ 't', ` method of
  `],
 					[/* inline code block */ 'i', `LineNumberInputStream`],
-					[/* text */ 't', ` can guarantee only to provide
- `],
-					[/* text */ 't', `k`],
-					[/* text */ 't', `/2 characters without blocking, because the
- `],
-					[/* text */ 't', `k`],
-					[/* text */ 't', ` characters from the underlying input stream might
- consist of `],
-					[/* text */ 't', `k`],
-					[/* text */ 't', `/2 pairs of `],
-					[/* inline code block */ 'i', `'\\r'`],
-					[/* text */ 't', ` and
- `],
-					[/* inline code block */ 'i', `'\\n'`],
-					[/* text */ 't', `, which are converted to just
- `],
-					[/* text */ 't', `k`],
-					[/* text */ 't', `/2 `],
-					[/* inline code block */ 'i', `'\\n'`],
-					[/* text */ 't', ` characters.`]
+					[/* text */ 't', ` remembers the current line
+ number in a private variable, and then calls the `],
+					[/* inline code block */ 'i', `mark`],
+					[/* text */ 't', `
+ method of the underlying input stream.`]
 				]]
 			],
-			/* parameters */ UDF,
-			[/* throws */
-				[/* throw */ 'java.io.IOException', [/* throw description */
-					[/* text */ 't', `if an I/O error occurs.`]
+			[/* parameters */
+				[/* parameter */ 'readlimit', [/* parameter description */
+					[/* text */ 't', `the maximum limit of bytes that can be read before
+                      the mark position becomes invalid.`]
 				]]
 			],
-			[/* return description */
-				[/* text */ 't', `the number of bytes that can be read from this input stream
-             without blocking.`]
-			]
+			/* throws */ UDF,
+			/* return */ UDF
 		]],
 		[/* method */ 'reset()', [
 			[/* method description */
@@ -273,16 +283,6 @@ DocsCollector.collect('java.io.LineNumberInputStream', [
 				]]
 			],
 			/* return */ UDF
-		]],
-		[/* method */ 'getLineNumber()', [
-			[/* method description */
-				[/* text */ 't', `Returns the current line number.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the current line number.`]
-			]
 		]],
 		[/* method */ 'setLineNumber(int)', [
 			[/* method description */

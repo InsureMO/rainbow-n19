@@ -23,16 +23,495 @@ DocsCollector.collect('java.lang.reflect.Field', [
 	/* fields */ UDF,
 	/* constructors */ UDF,
 	[/* methods */
-		[/* method */ 'getName()', [
+		[/* method */ 'getAnnotation(java.lang.Class)', [
 			[/* method description */
-				[/* text */ 't', `Returns the name of the field represented by this `],
+				[/* text */ 't', `Returns this element's annotation for the specified type if
+ such an annotation is `],
+				[/* text */ 't', `present`],
+				[/* text */ 't', `, else null.
+
+ `],
+				[/* block */ 'b', ` Note that any annotation returned by this method is a
+ declaration annotation.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'annotationClass', [/* parameter description */
+					[/* text */ 't', `the Class object corresponding to the
+        annotation type`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
+					[/* text */ 't', `if the given annotation class is null`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `this element's annotation for the specified annotation type if
+     present on this element, else null`]
+			]
+		]],
+		[/* method */ 'getAnnotationsByType(java.lang.Class)', [
+			[/* method description */
+				[/* text */ 't', `Returns annotations that are `],
+				[/* text */ 't', `associated`],
+				[/* text */ 't', ` with this element.
+
+ If there are no annotations `],
+				[/* text */ 't', `associated`],
+				[/* text */ 't', ` with this element, the return
+ value is an array of length 0.
+
+ The difference between this method and `],
+				[/* reference */ 'r', `.AnnotatedElement#getAnnotation(java.lang.Class)`],
+				[/* text */ 't', `
+ is that this method detects if its argument is a `],
+				[/* text */ 't', `repeatable
+ annotation type`],
+				[/* text */ 't', ` (JLS `],
+				[/* external link */ 'a', `https://docs.oracle.com/javase/specs/jls/se17/html/jls-9.html#jls-9.6`, `9.6`],
+				[/* text */ 't', `), and if so, attempts to find one or
+ more annotations of that type by "looking through" a container
+ annotation.
+
+ The caller of this method is free to modify the returned array; it will
+ have no effect on the arrays returned to other callers.
+
+ `],
+				[/* block */ 'b', ` Note that any annotations returned by this method are
+ declaration annotations.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'annotationClass', [/* parameter description */
+					[/* text */ 't', `the Class object corresponding to the
+        annotation type`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
+					[/* text */ 't', `if the given annotation class is null`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `all this element's annotations for the specified annotation type if
+     associated with this element, else an array of length zero`]
+			]
+		]],
+		[/* method */ 'equals(java.lang.Object)', [
+			[/* method description */
+				[/* text */ 't', `Compares this `],
+				[/* inline code block */ 'i', `Field`],
+				[/* text */ 't', ` against the specified object.  Returns
+ true if the objects are the same.  Two `],
+				[/* inline code block */ 'i', `Field`],
+				[/* text */ 't', ` objects are the same if
+ they were declared by the same class and have the same name
+ and type.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'obj', [/* parameter description */
+					[/* text */ 't', `the reference object with which to compare.`]
+				]]
+			],
+			/* throws */ UDF,
+			[/* return description */
+				[/* inline code block */ 'i', `true`],
+				[/* text */ 't', ` if this object is the same as the obj
+          argument; `],
+				[/* inline code block */ 'i', `false`],
+				[/* text */ 't', ` otherwise.`]
+			]
+		]],
+		[/* method */ 'getBoolean(java.lang.Object)', [
+			[/* method description */
+				[/* text */ 't', `Gets the value of a static or instance `],
+				[/* inline code block */ 'i', `boolean`],
+				[/* text */ 't', ` field.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'obj', [/* parameter description */
+					[/* text */ 't', `the object to extract the `],
+					[/* inline code block */ 'i', `boolean`],
+					[/* text */ 't', ` value
+ from`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.lang.IllegalAccessException', [/* throw description */
+					[/* text */ 't', `if this `],
+					[/* inline code block */ 'i', `Field`],
+					[/* text */ 't', ` object
+              is enforcing Java language access control and the underlying
+              field is inaccessible.`]
+				]],
+				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
+					[/* text */ 't', `if the specified object is not
+              an instance of the class or interface declaring the
+              underlying field (or a subclass or implementor
+              thereof), or if the field value cannot be
+              converted to the type `],
+					[/* inline code block */ 'i', `boolean`],
+					[/* text */ 't', ` by a
+              widening conversion.`]
+				]],
+				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
+					[/* text */ 't', `if the specified object is null
+              and the field is an instance field.`]
+				]],
+				[/* throw */ 'java.lang.ExceptionInInitializerError', [/* throw description */
+					[/* text */ 't', `if the initialization provoked
+              by this method fails.`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `the value of the `],
+				[/* inline code block */ 'i', `boolean`],
+				[/* text */ 't', ` field`]
+			]
+		]],
+		[/* method */ 'isEnumConstant()', [
+			[/* method description */
+				[/* text */ 't', `Returns `],
+				[/* inline code block */ 'i', `true`],
+				[/* text */ 't', ` if this field represents an element of
+ an enumerated class; returns `],
+				[/* inline code block */ 'i', `false`],
+				[/* text */ 't', ` otherwise.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* inline code block */ 'i', `true`],
+				[/* text */ 't', ` if and only if this field represents an element of
+ an enumerated class.`]
+			]
+		]],
+		[/* method */ 'isSynthetic()', [
+			[/* method description */
+				[/* text */ 't', `Returns `],
+				[/* inline code block */ 'i', `true`],
+				[/* text */ 't', ` if this field is a synthetic
+ field; returns `],
+				[/* inline code block */ 'i', `false`],
+				[/* text */ 't', ` otherwise.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `true if and only if this field is a synthetic
+ field as defined by the Java Language Specification.`]
+			]
+		]],
+		[/* method */ 'getByte(java.lang.Object)', [
+			[/* method description */
+				[/* text */ 't', `Gets the value of a static or instance `],
+				[/* inline code block */ 'i', `byte`],
+				[/* text */ 't', ` field.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'obj', [/* parameter description */
+					[/* text */ 't', `the object to extract the `],
+					[/* inline code block */ 'i', `byte`],
+					[/* text */ 't', ` value
+ from`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.lang.IllegalAccessException', [/* throw description */
+					[/* text */ 't', `if this `],
+					[/* inline code block */ 'i', `Field`],
+					[/* text */ 't', ` object
+              is enforcing Java language access control and the underlying
+              field is inaccessible.`]
+				]],
+				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
+					[/* text */ 't', `if the specified object is not
+              an instance of the class or interface declaring the
+              underlying field (or a subclass or implementor
+              thereof), or if the field value cannot be
+              converted to the type `],
+					[/* inline code block */ 'i', `byte`],
+					[/* text */ 't', ` by a
+              widening conversion.`]
+				]],
+				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
+					[/* text */ 't', `if the specified object is null
+              and the field is an instance field.`]
+				]],
+				[/* throw */ 'java.lang.ExceptionInInitializerError', [/* throw description */
+					[/* text */ 't', `if the initialization provoked
+              by this method fails.`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `the value of the `],
+				[/* inline code block */ 'i', `byte`],
+				[/* text */ 't', ` field`]
+			]
+		]],
+		[/* method */ 'getChar(java.lang.Object)', [
+			[/* method description */
+				[/* text */ 't', `Gets the value of a static or instance field of type
+ `],
+				[/* inline code block */ 'i', `char`],
+				[/* text */ 't', ` or of another primitive type convertible to
+ type `],
+				[/* inline code block */ 'i', `char`],
+				[/* text */ 't', ` via a widening conversion.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'obj', [/* parameter description */
+					[/* text */ 't', `the object to extract the `],
+					[/* inline code block */ 'i', `char`],
+					[/* text */ 't', ` value
+ from`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.lang.IllegalAccessException', [/* throw description */
+					[/* text */ 't', `if this `],
+					[/* inline code block */ 'i', `Field`],
+					[/* text */ 't', ` object
+              is enforcing Java language access control and the underlying
+              field is inaccessible.`]
+				]],
+				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
+					[/* text */ 't', `if the specified object is not
+              an instance of the class or interface declaring the
+              underlying field (or a subclass or implementor
+              thereof), or if the field value cannot be
+              converted to the type `],
+					[/* inline code block */ 'i', `char`],
+					[/* text */ 't', ` by a
+              widening conversion.`]
+				]],
+				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
+					[/* text */ 't', `if the specified object is null
+              and the field is an instance field.`]
+				]],
+				[/* throw */ 'java.lang.ExceptionInInitializerError', [/* throw description */
+					[/* text */ 't', `if the initialization provoked
+              by this method fails.`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `the value of the field converted to type `],
+				[/* inline code block */ 'i', `char`]
+			]
+		]],
+		[/* method */ 'getDouble(java.lang.Object)', [
+			[/* method description */
+				[/* text */ 't', `Gets the value of a static or instance field of type
+ `],
+				[/* inline code block */ 'i', `double`],
+				[/* text */ 't', ` or of another primitive type convertible to
+ type `],
+				[/* inline code block */ 'i', `double`],
+				[/* text */ 't', ` via a widening conversion.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'obj', [/* parameter description */
+					[/* text */ 't', `the object to extract the `],
+					[/* inline code block */ 'i', `double`],
+					[/* text */ 't', ` value
+ from`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.lang.IllegalAccessException', [/* throw description */
+					[/* text */ 't', `if this `],
+					[/* inline code block */ 'i', `Field`],
+					[/* text */ 't', ` object
+              is enforcing Java language access control and the underlying
+              field is inaccessible.`]
+				]],
+				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
+					[/* text */ 't', `if the specified object is not
+              an instance of the class or interface declaring the
+              underlying field (or a subclass or implementor
+              thereof), or if the field value cannot be
+              converted to the type `],
+					[/* inline code block */ 'i', `double`],
+					[/* text */ 't', ` by a
+              widening conversion.`]
+				]],
+				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
+					[/* text */ 't', `if the specified object is null
+              and the field is an instance field.`]
+				]],
+				[/* throw */ 'java.lang.ExceptionInInitializerError', [/* throw description */
+					[/* text */ 't', `if the initialization provoked
+              by this method fails.`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `the value of the field converted to type `],
+				[/* inline code block */ 'i', `double`]
+			]
+		]],
+		[/* method */ 'getFloat(java.lang.Object)', [
+			[/* method description */
+				[/* text */ 't', `Gets the value of a static or instance field of type
+ `],
+				[/* inline code block */ 'i', `float`],
+				[/* text */ 't', ` or of another primitive type convertible to
+ type `],
+				[/* inline code block */ 'i', `float`],
+				[/* text */ 't', ` via a widening conversion.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'obj', [/* parameter description */
+					[/* text */ 't', `the object to extract the `],
+					[/* inline code block */ 'i', `float`],
+					[/* text */ 't', ` value
+ from`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.lang.IllegalAccessException', [/* throw description */
+					[/* text */ 't', `if this `],
+					[/* inline code block */ 'i', `Field`],
+					[/* text */ 't', ` object
+              is enforcing Java language access control and the underlying
+              field is inaccessible.`]
+				]],
+				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
+					[/* text */ 't', `if the specified object is not
+              an instance of the class or interface declaring the
+              underlying field (or a subclass or implementor
+              thereof), or if the field value cannot be
+              converted to the type `],
+					[/* inline code block */ 'i', `float`],
+					[/* text */ 't', ` by a
+              widening conversion.`]
+				]],
+				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
+					[/* text */ 't', `if the specified object is null
+              and the field is an instance field.`]
+				]],
+				[/* throw */ 'java.lang.ExceptionInInitializerError', [/* throw description */
+					[/* text */ 't', `if the initialization provoked
+              by this method fails.`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `the value of the field converted to type `],
+				[/* inline code block */ 'i', `float`]
+			]
+		]],
+		[/* method */ 'getInt(java.lang.Object)', [
+			[/* method description */
+				[/* text */ 't', `Gets the value of a static or instance field of type
+ `],
+				[/* inline code block */ 'i', `int`],
+				[/* text */ 't', ` or of another primitive type convertible to
+ type `],
+				[/* inline code block */ 'i', `int`],
+				[/* text */ 't', ` via a widening conversion.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'obj', [/* parameter description */
+					[/* text */ 't', `the object to extract the `],
+					[/* inline code block */ 'i', `int`],
+					[/* text */ 't', ` value
+ from`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.lang.IllegalAccessException', [/* throw description */
+					[/* text */ 't', `if this `],
+					[/* inline code block */ 'i', `Field`],
+					[/* text */ 't', ` object
+              is enforcing Java language access control and the underlying
+              field is inaccessible.`]
+				]],
+				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
+					[/* text */ 't', `if the specified object is not
+              an instance of the class or interface declaring the
+              underlying field (or a subclass or implementor
+              thereof), or if the field value cannot be
+              converted to the type `],
+					[/* inline code block */ 'i', `int`],
+					[/* text */ 't', ` by a
+              widening conversion.`]
+				]],
+				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
+					[/* text */ 't', `if the specified object is null
+              and the field is an instance field.`]
+				]],
+				[/* throw */ 'java.lang.ExceptionInInitializerError', [/* throw description */
+					[/* text */ 't', `if the initialization provoked
+              by this method fails.`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `the value of the field converted to type `],
+				[/* inline code block */ 'i', `int`]
+			]
+		]],
+		[/* method */ 'getModifiers()', [
+			[/* method description */
+				[/* text */ 't', `Returns the Java language modifiers for the field represented
+ by this `],
+				[/* inline code block */ 'i', `Field`],
+				[/* text */ 't', ` object, as an integer. The `],
+				[/* inline code block */ 'i', `Modifier`],
+				[/* text */ 't', ` class should
+ be used to decode the modifiers.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the Java language modifiers for the underlying member`]
+			]
+		]],
+		[/* method */ 'hashCode()', [
+			[/* method description */
+				[/* text */ 't', `Returns a hashcode for this `],
+				[/* inline code block */ 'i', `Field`],
+				[/* text */ 't', `.  This is computed as the
+ exclusive-or of the hashcodes for the underlying field's
+ declaring class name and its name.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `a hash code value for this object.`]
+			]
+		]],
+		[/* method */ 'getDeclaredAnnotations()', UDF],
+		[/* method */ 'getDeclaringClass()', [
+			[/* method description */
+				[/* text */ 't', `Returns the `],
+				[/* inline code block */ 'i', `Class`],
+				[/* text */ 't', ` object representing the class or interface
+ that declares the field represented by this `],
 				[/* inline code block */ 'i', `Field`],
 				[/* text */ 't', ` object.`]
 			],
 			/* parameters */ UDF,
 			/* throws */ UDF,
 			[/* return description */
-				[/* text */ 't', `the simple name of the underlying member`]
+				[/* text */ 't', `an object representing the declaring class of the
+ underlying member`]
+			]
+		]],
+		[/* method */ 'getType()', [
+			[/* method description */
+				[/* text */ 't', `Returns a `],
+				[/* inline code block */ 'i', `Class`],
+				[/* text */ 't', ` object that identifies the
+ declared type for the field represented by this
+ `],
+				[/* inline code block */ 'i', `Field`],
+				[/* text */ 't', ` object.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `a `],
+				[/* inline code block */ 'i', `Class`],
+				[/* text */ 't', ` object identifying the declared
+ type of the field represented by this object`]
 			]
 		]],
 		[/* method */ 'get(java.lang.Object)', [
@@ -132,29 +611,121 @@ DocsCollector.collect('java.lang.reflect.Field', [
  object before being returned`]
 			]
 		]],
-		[/* method */ 'equals(java.lang.Object)', [
+		[/* method */ 'getAnnotatedType()', [
 			[/* method description */
-				[/* text */ 't', `Compares this `],
-				[/* inline code block */ 'i', `Field`],
-				[/* text */ 't', ` against the specified object.  Returns
- true if the objects are the same.  Two `],
-				[/* inline code block */ 'i', `Field`],
-				[/* text */ 't', ` objects are the same if
- they were declared by the same class and have the same name
- and type.`]
+				[/* text */ 't', `Returns an AnnotatedType object that represents the use of a type to specify
+ the declared type of the field represented by this Field.`]
 			],
-			[/* parameters */
-				[/* parameter */ 'obj', [/* parameter description */
-					[/* text */ 't', `the reference object with which to compare.`]
-				]]
-			],
+			/* parameters */ UDF,
 			/* throws */ UDF,
 			[/* return description */
-				[/* inline code block */ 'i', `true`],
-				[/* text */ 't', ` if this object is the same as the obj
-          argument; `],
-				[/* inline code block */ 'i', `false`],
-				[/* text */ 't', ` otherwise.`]
+				[/* text */ 't', `an object representing the declared type of the field
+ represented by this Field`]
+			]
+		]],
+		[/* method */ 'getGenericType()', [
+			[/* method description */
+				[/* text */ 't', `Returns a `],
+				[/* inline code block */ 'i', `Type`],
+				[/* text */ 't', ` object that represents the declared type for
+ the field represented by this `],
+				[/* inline code block */ 'i', `Field`],
+				[/* text */ 't', ` object.
+
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', `If the declared type of the field is a parameterized type,
+ the `],
+					[/* inline code block */ 'i', `Type`],
+					[/* text */ 't', ` object returned must accurately reflect the
+ actual type arguments used in the source code.
+
+ `]
+				]],
+				[/* block */ 'b', `If the type of the underlying field is a type variable or a
+ parameterized type, it is created. Otherwise, it is resolved.`]
+			],
+			/* parameters */ UDF,
+			[/* throws */
+				[/* throw */ 'java.lang.reflect.GenericSignatureFormatError', [/* throw description */
+					[/* text */ 't', `if the generic field
+     signature does not conform to the format specified in
+     `],
+					[/* text */ 't', `The Java Virtual Machine Specification`]
+				]],
+				[/* throw */ 'java.lang.TypeNotPresentException', [/* throw description */
+					[/* text */ 't', `if the generic type
+     signature of the underlying field refers to a non-existent
+     class or interface declaration`]
+				]],
+				[/* throw */ 'java.lang.reflect.MalformedParameterizedTypeException', [/* throw description */
+					[/* text */ 't', `if the generic
+     signature of the underlying field refers to a parameterized type
+     that cannot be instantiated for any reason`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `a `],
+				[/* inline code block */ 'i', `Type`],
+				[/* text */ 't', ` object that represents the declared type for
+     the field represented by this `],
+				[/* inline code block */ 'i', `Field`],
+				[/* text */ 't', ` object`]
+			]
+		]],
+		[/* method */ 'getName()', [
+			[/* method description */
+				[/* text */ 't', `Returns the name of the field represented by this `],
+				[/* inline code block */ 'i', `Field`],
+				[/* text */ 't', ` object.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the simple name of the underlying member`]
+			]
+		]],
+		[/* method */ 'toGenericString()', [
+			[/* method description */
+				[/* text */ 't', `Returns a string describing this `],
+				[/* inline code block */ 'i', `Field`],
+				[/* text */ 't', `, including
+ its generic type.  The format is the access modifiers for the
+ field, if any, followed by the generic field type, followed by
+ a space, followed by the fully-qualified name of the class
+ declaring the field, followed by a period, followed by the name
+ of the field.
+
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', `The modifiers are placed in canonical order as specified by
+ "The Java Language Specification".  This is `],
+					[/* inline code block */ 'i', `public`],
+					[/* text */ 't', `,
+ `],
+					[/* inline code block */ 'i', `protected`],
+					[/* text */ 't', ` or `],
+					[/* inline code block */ 'i', `private`],
+					[/* text */ 't', ` first, and then other
+ modifiers in the following order: `],
+					[/* inline code block */ 'i', `static`],
+					[/* text */ 't', `, `],
+					[/* inline code block */ 'i', `final`],
+					[/* text */ 't', `,
+ `],
+					[/* inline code block */ 'i', `transient`],
+					[/* text */ 't', `, `],
+					[/* inline code block */ 'i', `volatile`],
+					[/* text */ 't', `.`]
+				]]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `a string describing this `],
+				[/* inline code block */ 'i', `Field`],
+				[/* text */ 't', `, including
+ its generic type`]
 			]
 		]],
 		[/* method */ 'toString()', [
@@ -198,280 +769,6 @@ DocsCollector.collect('java.lang.reflect.Field', [
 			[/* return description */
 				[/* text */ 't', `a string describing this `],
 				[/* inline code block */ 'i', `Field`]
-			]
-		]],
-		[/* method */ 'hashCode()', [
-			[/* method description */
-				[/* text */ 't', `Returns a hashcode for this `],
-				[/* inline code block */ 'i', `Field`],
-				[/* text */ 't', `.  This is computed as the
- exclusive-or of the hashcodes for the underlying field's
- declaring class name and its name.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `a hash code value for this object.`]
-			]
-		]],
-		[/* method */ 'getModifiers()', [
-			[/* method description */
-				[/* text */ 't', `Returns the Java language modifiers for the field represented
- by this `],
-				[/* inline code block */ 'i', `Field`],
-				[/* text */ 't', ` object, as an integer. The `],
-				[/* inline code block */ 'i', `Modifier`],
-				[/* text */ 't', ` class should
- be used to decode the modifiers.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the Java language modifiers for the underlying member`]
-			]
-		]],
-		[/* method */ 'getBoolean(java.lang.Object)', [
-			[/* method description */
-				[/* text */ 't', `Gets the value of a static or instance `],
-				[/* inline code block */ 'i', `boolean`],
-				[/* text */ 't', ` field.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'obj', [/* parameter description */
-					[/* text */ 't', `the object to extract the `],
-					[/* inline code block */ 'i', `boolean`],
-					[/* text */ 't', ` value
- from`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.IllegalAccessException', [/* throw description */
-					[/* text */ 't', `if this `],
-					[/* inline code block */ 'i', `Field`],
-					[/* text */ 't', ` object
-              is enforcing Java language access control and the underlying
-              field is inaccessible.`]
-				]],
-				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
-					[/* text */ 't', `if the specified object is not
-              an instance of the class or interface declaring the
-              underlying field (or a subclass or implementor
-              thereof), or if the field value cannot be
-              converted to the type `],
-					[/* inline code block */ 'i', `boolean`],
-					[/* text */ 't', ` by a
-              widening conversion.`]
-				]],
-				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
-					[/* text */ 't', `if the specified object is null
-              and the field is an instance field.`]
-				]],
-				[/* throw */ 'java.lang.ExceptionInInitializerError', [/* throw description */
-					[/* text */ 't', `if the initialization provoked
-              by this method fails.`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `the value of the `],
-				[/* inline code block */ 'i', `boolean`],
-				[/* text */ 't', ` field`]
-			]
-		]],
-		[/* method */ 'getByte(java.lang.Object)', [
-			[/* method description */
-				[/* text */ 't', `Gets the value of a static or instance `],
-				[/* inline code block */ 'i', `byte`],
-				[/* text */ 't', ` field.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'obj', [/* parameter description */
-					[/* text */ 't', `the object to extract the `],
-					[/* inline code block */ 'i', `byte`],
-					[/* text */ 't', ` value
- from`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.IllegalAccessException', [/* throw description */
-					[/* text */ 't', `if this `],
-					[/* inline code block */ 'i', `Field`],
-					[/* text */ 't', ` object
-              is enforcing Java language access control and the underlying
-              field is inaccessible.`]
-				]],
-				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
-					[/* text */ 't', `if the specified object is not
-              an instance of the class or interface declaring the
-              underlying field (or a subclass or implementor
-              thereof), or if the field value cannot be
-              converted to the type `],
-					[/* inline code block */ 'i', `byte`],
-					[/* text */ 't', ` by a
-              widening conversion.`]
-				]],
-				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
-					[/* text */ 't', `if the specified object is null
-              and the field is an instance field.`]
-				]],
-				[/* throw */ 'java.lang.ExceptionInInitializerError', [/* throw description */
-					[/* text */ 't', `if the initialization provoked
-              by this method fails.`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `the value of the `],
-				[/* inline code block */ 'i', `byte`],
-				[/* text */ 't', ` field`]
-			]
-		]],
-		[/* method */ 'getShort(java.lang.Object)', [
-			[/* method description */
-				[/* text */ 't', `Gets the value of a static or instance field of type
- `],
-				[/* inline code block */ 'i', `short`],
-				[/* text */ 't', ` or of another primitive type convertible to
- type `],
-				[/* inline code block */ 'i', `short`],
-				[/* text */ 't', ` via a widening conversion.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'obj', [/* parameter description */
-					[/* text */ 't', `the object to extract the `],
-					[/* inline code block */ 'i', `short`],
-					[/* text */ 't', ` value
- from`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.IllegalAccessException', [/* throw description */
-					[/* text */ 't', `if this `],
-					[/* inline code block */ 'i', `Field`],
-					[/* text */ 't', ` object
-              is enforcing Java language access control and the underlying
-              field is inaccessible.`]
-				]],
-				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
-					[/* text */ 't', `if the specified object is not
-              an instance of the class or interface declaring the
-              underlying field (or a subclass or implementor
-              thereof), or if the field value cannot be
-              converted to the type `],
-					[/* inline code block */ 'i', `short`],
-					[/* text */ 't', ` by a
-              widening conversion.`]
-				]],
-				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
-					[/* text */ 't', `if the specified object is null
-              and the field is an instance field.`]
-				]],
-				[/* throw */ 'java.lang.ExceptionInInitializerError', [/* throw description */
-					[/* text */ 't', `if the initialization provoked
-              by this method fails.`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `the value of the field converted to type `],
-				[/* inline code block */ 'i', `short`]
-			]
-		]],
-		[/* method */ 'getChar(java.lang.Object)', [
-			[/* method description */
-				[/* text */ 't', `Gets the value of a static or instance field of type
- `],
-				[/* inline code block */ 'i', `char`],
-				[/* text */ 't', ` or of another primitive type convertible to
- type `],
-				[/* inline code block */ 'i', `char`],
-				[/* text */ 't', ` via a widening conversion.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'obj', [/* parameter description */
-					[/* text */ 't', `the object to extract the `],
-					[/* inline code block */ 'i', `char`],
-					[/* text */ 't', ` value
- from`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.IllegalAccessException', [/* throw description */
-					[/* text */ 't', `if this `],
-					[/* inline code block */ 'i', `Field`],
-					[/* text */ 't', ` object
-              is enforcing Java language access control and the underlying
-              field is inaccessible.`]
-				]],
-				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
-					[/* text */ 't', `if the specified object is not
-              an instance of the class or interface declaring the
-              underlying field (or a subclass or implementor
-              thereof), or if the field value cannot be
-              converted to the type `],
-					[/* inline code block */ 'i', `char`],
-					[/* text */ 't', ` by a
-              widening conversion.`]
-				]],
-				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
-					[/* text */ 't', `if the specified object is null
-              and the field is an instance field.`]
-				]],
-				[/* throw */ 'java.lang.ExceptionInInitializerError', [/* throw description */
-					[/* text */ 't', `if the initialization provoked
-              by this method fails.`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `the value of the field converted to type `],
-				[/* inline code block */ 'i', `char`]
-			]
-		]],
-		[/* method */ 'getInt(java.lang.Object)', [
-			[/* method description */
-				[/* text */ 't', `Gets the value of a static or instance field of type
- `],
-				[/* inline code block */ 'i', `int`],
-				[/* text */ 't', ` or of another primitive type convertible to
- type `],
-				[/* inline code block */ 'i', `int`],
-				[/* text */ 't', ` via a widening conversion.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'obj', [/* parameter description */
-					[/* text */ 't', `the object to extract the `],
-					[/* inline code block */ 'i', `int`],
-					[/* text */ 't', ` value
- from`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.IllegalAccessException', [/* throw description */
-					[/* text */ 't', `if this `],
-					[/* inline code block */ 'i', `Field`],
-					[/* text */ 't', ` object
-              is enforcing Java language access control and the underlying
-              field is inaccessible.`]
-				]],
-				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
-					[/* text */ 't', `if the specified object is not
-              an instance of the class or interface declaring the
-              underlying field (or a subclass or implementor
-              thereof), or if the field value cannot be
-              converted to the type `],
-					[/* inline code block */ 'i', `int`],
-					[/* text */ 't', ` by a
-              widening conversion.`]
-				]],
-				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
-					[/* text */ 't', `if the specified object is null
-              and the field is an instance field.`]
-				]],
-				[/* throw */ 'java.lang.ExceptionInInitializerError', [/* throw description */
-					[/* text */ 't', `if the initialization provoked
-              by this method fails.`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `the value of the field converted to type `],
-				[/* inline code block */ 'i', `int`]
 			]
 		]],
 		[/* method */ 'getLong(java.lang.Object)', [
@@ -524,20 +821,20 @@ DocsCollector.collect('java.lang.reflect.Field', [
 				[/* inline code block */ 'i', `long`]
 			]
 		]],
-		[/* method */ 'getFloat(java.lang.Object)', [
+		[/* method */ 'getShort(java.lang.Object)', [
 			[/* method description */
 				[/* text */ 't', `Gets the value of a static or instance field of type
  `],
-				[/* inline code block */ 'i', `float`],
+				[/* inline code block */ 'i', `short`],
 				[/* text */ 't', ` or of another primitive type convertible to
  type `],
-				[/* inline code block */ 'i', `float`],
+				[/* inline code block */ 'i', `short`],
 				[/* text */ 't', ` via a widening conversion.`]
 			],
 			[/* parameters */
 				[/* parameter */ 'obj', [/* parameter description */
 					[/* text */ 't', `the object to extract the `],
-					[/* inline code block */ 'i', `float`],
+					[/* inline code block */ 'i', `short`],
 					[/* text */ 't', ` value
  from`]
 				]]
@@ -556,7 +853,7 @@ DocsCollector.collect('java.lang.reflect.Field', [
               underlying field (or a subclass or implementor
               thereof), or if the field value cannot be
               converted to the type `],
-					[/* inline code block */ 'i', `float`],
+					[/* inline code block */ 'i', `short`],
 					[/* text */ 't', ` by a
               widening conversion.`]
 				]],
@@ -571,208 +868,9 @@ DocsCollector.collect('java.lang.reflect.Field', [
 			],
 			[/* return description */
 				[/* text */ 't', `the value of the field converted to type `],
-				[/* inline code block */ 'i', `float`]
+				[/* inline code block */ 'i', `short`]
 			]
 		]],
-		[/* method */ 'getDouble(java.lang.Object)', [
-			[/* method description */
-				[/* text */ 't', `Gets the value of a static or instance field of type
- `],
-				[/* inline code block */ 'i', `double`],
-				[/* text */ 't', ` or of another primitive type convertible to
- type `],
-				[/* inline code block */ 'i', `double`],
-				[/* text */ 't', ` via a widening conversion.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'obj', [/* parameter description */
-					[/* text */ 't', `the object to extract the `],
-					[/* inline code block */ 'i', `double`],
-					[/* text */ 't', ` value
- from`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.IllegalAccessException', [/* throw description */
-					[/* text */ 't', `if this `],
-					[/* inline code block */ 'i', `Field`],
-					[/* text */ 't', ` object
-              is enforcing Java language access control and the underlying
-              field is inaccessible.`]
-				]],
-				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
-					[/* text */ 't', `if the specified object is not
-              an instance of the class or interface declaring the
-              underlying field (or a subclass or implementor
-              thereof), or if the field value cannot be
-              converted to the type `],
-					[/* inline code block */ 'i', `double`],
-					[/* text */ 't', ` by a
-              widening conversion.`]
-				]],
-				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
-					[/* text */ 't', `if the specified object is null
-              and the field is an instance field.`]
-				]],
-				[/* throw */ 'java.lang.ExceptionInInitializerError', [/* throw description */
-					[/* text */ 't', `if the initialization provoked
-              by this method fails.`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `the value of the field converted to type `],
-				[/* inline code block */ 'i', `double`]
-			]
-		]],
-		[/* method */ 'toGenericString()', [
-			[/* method description */
-				[/* text */ 't', `Returns a string describing this `],
-				[/* inline code block */ 'i', `Field`],
-				[/* text */ 't', `, including
- its generic type.  The format is the access modifiers for the
- field, if any, followed by the generic field type, followed by
- a space, followed by the fully-qualified name of the class
- declaring the field, followed by a period, followed by the name
- of the field.
-
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', `The modifiers are placed in canonical order as specified by
- "The Java Language Specification".  This is `],
-					[/* inline code block */ 'i', `public`],
-					[/* text */ 't', `,
- `],
-					[/* inline code block */ 'i', `protected`],
-					[/* text */ 't', ` or `],
-					[/* inline code block */ 'i', `private`],
-					[/* text */ 't', ` first, and then other
- modifiers in the following order: `],
-					[/* inline code block */ 'i', `static`],
-					[/* text */ 't', `, `],
-					[/* inline code block */ 'i', `final`],
-					[/* text */ 't', `,
- `],
-					[/* inline code block */ 'i', `transient`],
-					[/* text */ 't', `, `],
-					[/* inline code block */ 'i', `volatile`],
-					[/* text */ 't', `.`]
-				]]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `a string describing this `],
-				[/* inline code block */ 'i', `Field`],
-				[/* text */ 't', `, including
- its generic type`]
-			]
-		]],
-		[/* method */ 'isSynthetic()', [
-			[/* method description */
-				[/* text */ 't', `Returns `],
-				[/* inline code block */ 'i', `true`],
-				[/* text */ 't', ` if this field is a synthetic
- field; returns `],
-				[/* inline code block */ 'i', `false`],
-				[/* text */ 't', ` otherwise.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `true if and only if this field is a synthetic
- field as defined by the Java Language Specification.`]
-			]
-		]],
-		[/* method */ 'getDeclaringClass()', [
-			[/* method description */
-				[/* text */ 't', `Returns the `],
-				[/* inline code block */ 'i', `Class`],
-				[/* text */ 't', ` object representing the class or interface
- that declares the field represented by this `],
-				[/* inline code block */ 'i', `Field`],
-				[/* text */ 't', ` object.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `an object representing the declaring class of the
- underlying member`]
-			]
-		]],
-		[/* method */ 'getAnnotation(java.lang.Class)', [
-			[/* method description */
-				[/* text */ 't', `Returns this element's annotation for the specified type if
- such an annotation is `],
-				[/* text */ 't', `present`],
-				[/* text */ 't', `, else null.
-
- `],
-				[/* block */ 'b', ` Note that any annotation returned by this method is a
- declaration annotation.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'annotationClass', [/* parameter description */
-					[/* text */ 't', `the Class object corresponding to the
-        annotation type`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
-					[/* text */ 't', `if the given annotation class is null`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `this element's annotation for the specified annotation type if
-     present on this element, else null`]
-			]
-		]],
-		[/* method */ 'getAnnotationsByType(java.lang.Class)', [
-			[/* method description */
-				[/* text */ 't', `Returns annotations that are `],
-				[/* text */ 't', `associated`],
-				[/* text */ 't', ` with this element.
-
- If there are no annotations `],
-				[/* text */ 't', `associated`],
-				[/* text */ 't', ` with this element, the return
- value is an array of length 0.
-
- The difference between this method and `],
-				[/* reference */ 'r', `.AnnotatedElement#getAnnotation(java.lang.Class)`],
-				[/* text */ 't', `
- is that this method detects if its argument is a `],
-				[/* text */ 't', `repeatable
- annotation type`],
-				[/* text */ 't', ` (JLS `],
-				[/* external link */ 'a', `https://docs.oracle.com/javase/specs/jls/se17/html/jls-9.html#jls-9.6`, `9.6`],
-				[/* text */ 't', `), and if so, attempts to find one or
- more annotations of that type by "looking through" a container
- annotation.
-
- The caller of this method is free to modify the returned array; it will
- have no effect on the arrays returned to other callers.
-
- `],
-				[/* block */ 'b', ` Note that any annotations returned by this method are
- declaration annotations.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'annotationClass', [/* parameter description */
-					[/* text */ 't', `the Class object corresponding to the
-        annotation type`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
-					[/* text */ 't', `if the given annotation class is null`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `all this element's annotations for the specified annotation type if
-     associated with this element, else an array of length zero`]
-			]
-		]],
-		[/* method */ 'getDeclaredAnnotations()', UDF],
 		[/* method */ 'set(java.lang.Object,java.lang.Object)', [
 			[/* method description */
 				[/* text */ 't', `Sets the field represented by this `],
@@ -1093,75 +1191,6 @@ DocsCollector.collect('java.lang.reflect.Field', [
 			],
 			/* return */ UDF
 		]],
-		[/* method */ 'getGenericType()', [
-			[/* method description */
-				[/* text */ 't', `Returns a `],
-				[/* inline code block */ 'i', `Type`],
-				[/* text */ 't', ` object that represents the declared type for
- the field represented by this `],
-				[/* inline code block */ 'i', `Field`],
-				[/* text */ 't', ` object.
-
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', `If the declared type of the field is a parameterized type,
- the `],
-					[/* inline code block */ 'i', `Type`],
-					[/* text */ 't', ` object returned must accurately reflect the
- actual type arguments used in the source code.
-
- `]
-				]],
-				[/* block */ 'b', `If the type of the underlying field is a type variable or a
- parameterized type, it is created. Otherwise, it is resolved.`]
-			],
-			/* parameters */ UDF,
-			[/* throws */
-				[/* throw */ 'java.lang.reflect.GenericSignatureFormatError', [/* throw description */
-					[/* text */ 't', `if the generic field
-     signature does not conform to the format specified in
-     `],
-					[/* text */ 't', `The Java Virtual Machine Specification`]
-				]],
-				[/* throw */ 'java.lang.TypeNotPresentException', [/* throw description */
-					[/* text */ 't', `if the generic type
-     signature of the underlying field refers to a non-existent
-     class or interface declaration`]
-				]],
-				[/* throw */ 'java.lang.reflect.MalformedParameterizedTypeException', [/* throw description */
-					[/* text */ 't', `if the generic
-     signature of the underlying field refers to a parameterized type
-     that cannot be instantiated for any reason`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `a `],
-				[/* inline code block */ 'i', `Type`],
-				[/* text */ 't', ` object that represents the declared type for
-     the field represented by this `],
-				[/* inline code block */ 'i', `Field`],
-				[/* text */ 't', ` object`]
-			]
-		]],
-		[/* method */ 'getType()', [
-			[/* method description */
-				[/* text */ 't', `Returns a `],
-				[/* inline code block */ 'i', `Class`],
-				[/* text */ 't', ` object that identifies the
- declared type for the field represented by this
- `],
-				[/* inline code block */ 'i', `Field`],
-				[/* text */ 't', ` object.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `a `],
-				[/* inline code block */ 'i', `Class`],
-				[/* text */ 't', ` object identifying the declared
- type of the field represented by this object`]
-			]
-		]],
 		[/* method */ 'setBoolean(java.lang.Object,boolean)', [
 			[/* method description */
 				[/* text */ 't', `Sets the value of a field as a `],
@@ -1333,29 +1362,86 @@ DocsCollector.collect('java.lang.reflect.Field', [
 			],
 			/* return */ UDF
 		]],
-		[/* method */ 'setShort(java.lang.Object,short)', [
+		[/* method */ 'setDouble(java.lang.Object,double)', [
 			[/* method description */
 				[/* text */ 't', `Sets the value of a field as a `],
-				[/* inline code block */ 'i', `short`],
+				[/* inline code block */ 'i', `double`],
 				[/* text */ 't', ` on the specified object.
  This method is equivalent to
  `],
-				[/* inline code block */ 'i', `set(obj, sObj)`],
+				[/* inline code block */ 'i', `set(obj, dObj)`],
 				[/* text */ 't', `,
  where `],
-				[/* inline code block */ 'i', `sObj`],
+				[/* inline code block */ 'i', `dObj`],
 				[/* text */ 't', ` is a `],
-				[/* inline code block */ 'i', `Short`],
+				[/* inline code block */ 'i', `Double`],
 				[/* text */ 't', ` object and
  `],
-				[/* inline code block */ 'i', `sObj.shortValue() == s`],
+				[/* inline code block */ 'i', `dObj.doubleValue() == d`],
 				[/* text */ 't', `.`]
 			],
 			[/* parameters */
 				[/* parameter */ 'obj', [/* parameter description */
 					[/* text */ 't', `the object whose field should be modified`]
 				]],
-				[/* parameter */ 's', [/* parameter description */
+				[/* parameter */ 'd', [/* parameter description */
+					[/* text */ 't', `the new value for the field of `],
+					[/* inline code block */ 'i', `obj`],
+					[/* text */ 't', `
+ being modified`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.lang.IllegalAccessException', [/* throw description */
+					[/* text */ 't', `if this `],
+					[/* inline code block */ 'i', `Field`],
+					[/* text */ 't', ` object
+              is enforcing Java language access control and the underlying
+              field is either inaccessible or final;
+              or if this `],
+					[/* inline code block */ 'i', `Field`],
+					[/* text */ 't', ` object has no write access.`]
+				]],
+				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
+					[/* text */ 't', `if the specified object is not an
+              instance of the class or interface declaring the underlying
+              field (or a subclass or implementor thereof),
+              or if an unwrapping conversion fails.`]
+				]],
+				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
+					[/* text */ 't', `if the specified object is null
+              and the field is an instance field.`]
+				]],
+				[/* throw */ 'java.lang.ExceptionInInitializerError', [/* throw description */
+					[/* text */ 't', `if the initialization provoked
+              by this method fails.`]
+				]]
+			],
+			/* return */ UDF
+		]],
+		[/* method */ 'setFloat(java.lang.Object,float)', [
+			[/* method description */
+				[/* text */ 't', `Sets the value of a field as a `],
+				[/* inline code block */ 'i', `float`],
+				[/* text */ 't', ` on the specified object.
+ This method is equivalent to
+ `],
+				[/* inline code block */ 'i', `set(obj, fObj)`],
+				[/* text */ 't', `,
+ where `],
+				[/* inline code block */ 'i', `fObj`],
+				[/* text */ 't', ` is a `],
+				[/* inline code block */ 'i', `Float`],
+				[/* text */ 't', ` object and
+ `],
+				[/* inline code block */ 'i', `fObj.floatValue() == f`],
+				[/* text */ 't', `.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'obj', [/* parameter description */
+					[/* text */ 't', `the object whose field should be modified`]
+				]],
+				[/* parameter */ 'f', [/* parameter description */
 					[/* text */ 't', `the new value for the field of `],
 					[/* inline code block */ 'i', `obj`],
 					[/* text */ 't', `
@@ -1504,29 +1590,29 @@ DocsCollector.collect('java.lang.reflect.Field', [
 			],
 			/* return */ UDF
 		]],
-		[/* method */ 'setFloat(java.lang.Object,float)', [
+		[/* method */ 'setShort(java.lang.Object,short)', [
 			[/* method description */
 				[/* text */ 't', `Sets the value of a field as a `],
-				[/* inline code block */ 'i', `float`],
+				[/* inline code block */ 'i', `short`],
 				[/* text */ 't', ` on the specified object.
  This method is equivalent to
  `],
-				[/* inline code block */ 'i', `set(obj, fObj)`],
+				[/* inline code block */ 'i', `set(obj, sObj)`],
 				[/* text */ 't', `,
  where `],
-				[/* inline code block */ 'i', `fObj`],
+				[/* inline code block */ 'i', `sObj`],
 				[/* text */ 't', ` is a `],
-				[/* inline code block */ 'i', `Float`],
+				[/* inline code block */ 'i', `Short`],
 				[/* text */ 't', ` object and
  `],
-				[/* inline code block */ 'i', `fObj.floatValue() == f`],
+				[/* inline code block */ 'i', `sObj.shortValue() == s`],
 				[/* text */ 't', `.`]
 			],
 			[/* parameters */
 				[/* parameter */ 'obj', [/* parameter description */
 					[/* text */ 't', `the object whose field should be modified`]
 				]],
-				[/* parameter */ 'f', [/* parameter description */
+				[/* parameter */ 's', [/* parameter description */
 					[/* text */ 't', `the new value for the field of `],
 					[/* inline code block */ 'i', `obj`],
 					[/* text */ 't', `
@@ -1560,92 +1646,6 @@ DocsCollector.collect('java.lang.reflect.Field', [
 				]]
 			],
 			/* return */ UDF
-		]],
-		[/* method */ 'setDouble(java.lang.Object,double)', [
-			[/* method description */
-				[/* text */ 't', `Sets the value of a field as a `],
-				[/* inline code block */ 'i', `double`],
-				[/* text */ 't', ` on the specified object.
- This method is equivalent to
- `],
-				[/* inline code block */ 'i', `set(obj, dObj)`],
-				[/* text */ 't', `,
- where `],
-				[/* inline code block */ 'i', `dObj`],
-				[/* text */ 't', ` is a `],
-				[/* inline code block */ 'i', `Double`],
-				[/* text */ 't', ` object and
- `],
-				[/* inline code block */ 'i', `dObj.doubleValue() == d`],
-				[/* text */ 't', `.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'obj', [/* parameter description */
-					[/* text */ 't', `the object whose field should be modified`]
-				]],
-				[/* parameter */ 'd', [/* parameter description */
-					[/* text */ 't', `the new value for the field of `],
-					[/* inline code block */ 'i', `obj`],
-					[/* text */ 't', `
- being modified`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.IllegalAccessException', [/* throw description */
-					[/* text */ 't', `if this `],
-					[/* inline code block */ 'i', `Field`],
-					[/* text */ 't', ` object
-              is enforcing Java language access control and the underlying
-              field is either inaccessible or final;
-              or if this `],
-					[/* inline code block */ 'i', `Field`],
-					[/* text */ 't', ` object has no write access.`]
-				]],
-				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
-					[/* text */ 't', `if the specified object is not an
-              instance of the class or interface declaring the underlying
-              field (or a subclass or implementor thereof),
-              or if an unwrapping conversion fails.`]
-				]],
-				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
-					[/* text */ 't', `if the specified object is null
-              and the field is an instance field.`]
-				]],
-				[/* throw */ 'java.lang.ExceptionInInitializerError', [/* throw description */
-					[/* text */ 't', `if the initialization provoked
-              by this method fails.`]
-				]]
-			],
-			/* return */ UDF
-		]],
-		[/* method */ 'isEnumConstant()', [
-			[/* method description */
-				[/* text */ 't', `Returns `],
-				[/* inline code block */ 'i', `true`],
-				[/* text */ 't', ` if this field represents an element of
- an enumerated class; returns `],
-				[/* inline code block */ 'i', `false`],
-				[/* text */ 't', ` otherwise.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* inline code block */ 'i', `true`],
-				[/* text */ 't', ` if and only if this field represents an element of
- an enumerated class.`]
-			]
-		]],
-		[/* method */ 'getAnnotatedType()', [
-			[/* method description */
-				[/* text */ 't', `Returns an AnnotatedType object that represents the use of a type to specify
- the declared type of the field represented by this Field.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `an object representing the declared type of the field
- represented by this Field`]
-			]
 		]]
 	],
 ]);

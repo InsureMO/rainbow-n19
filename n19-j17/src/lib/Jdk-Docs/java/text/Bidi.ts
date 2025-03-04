@@ -25,16 +25,6 @@ DocsCollector.collect('java.text.Bidi', [
  level 2 represents left-to-right text embedded in a right-to-left run.`]
 	],
 	[/* fields */
-		[/* field */ 'DIRECTION_LEFT_TO_RIGHT', [
-			[/* field description */
-				[/* text */ 't', `Constant indicating base direction is left-to-right.`]
-			],
-		]],
-		[/* field */ 'DIRECTION_RIGHT_TO_LEFT', [
-			[/* field description */
-				[/* text */ 't', `Constant indicating base direction is right-to-left.`]
-			],
-		]],
 		[/* field */ 'DIRECTION_DEFAULT_LEFT_TO_RIGHT', [
 			[/* field description */
 				[/* text */ 't', `Constant indicating that the base direction depends on the first strong
@@ -49,6 +39,16 @@ DocsCollector.collect('java.text.Bidi', [
  directional character in the text according to the Unicode
  Bidirectional Algorithm.  If no strong directional character is present,
  the base direction is right-to-left.`]
+			],
+		]],
+		[/* field */ 'DIRECTION_LEFT_TO_RIGHT', [
+			[/* field description */
+				[/* text */ 't', `Constant indicating base direction is left-to-right.`]
+			],
+		]],
+		[/* field */ 'DIRECTION_RIGHT_TO_LEFT', [
+			[/* field description */
+				[/* text */ 't', `Constant indicating base direction is right-to-left.`]
 			],
 		]]
 	],
@@ -77,6 +77,23 @@ DocsCollector.collect('java.text.Bidi', [
 				]],
 				[/* parameter */ 'paragraphLength', [/* parameter description */
 					[/* text */ 't', `the length of the paragraph in the text and embeddings arrays.`]
+				]],
+				[/* parameter */ 'flags', [/* parameter description */
+					[/* text */ 't', `a collection of flags that control the algorithm.  The
+ algorithm understands the flags DIRECTION_LEFT_TO_RIGHT, DIRECTION_RIGHT_TO_LEFT,
+ DIRECTION_DEFAULT_LEFT_TO_RIGHT, and DIRECTION_DEFAULT_RIGHT_TO_LEFT.
+ Other values are reserved.`]
+				]]
+			],
+			/* throws */ UDF
+		]],
+		[/* constructor */ '<init>(java.lang.String,int)', [
+			[/* constructor description */
+				[/* text */ 't', `Create Bidi from the given paragraph of text and base direction.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'paragraph', [/* parameter description */
+					[/* text */ 't', `a paragraph of text`]
 				]],
 				[/* parameter */ 'flags', [/* parameter description */
 					[/* text */ 't', `a collection of flags that control the algorithm.  The
@@ -116,34 +133,58 @@ DocsCollector.collect('java.text.Bidi', [
 				]]
 			],
 			/* throws */ UDF
-		]],
-		[/* constructor */ '<init>(java.lang.String,int)', [
-			[/* constructor description */
-				[/* text */ 't', `Create Bidi from the given paragraph of text and base direction.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'paragraph', [/* parameter description */
-					[/* text */ 't', `a paragraph of text`]
-				]],
-				[/* parameter */ 'flags', [/* parameter description */
-					[/* text */ 't', `a collection of flags that control the algorithm.  The
- algorithm understands the flags DIRECTION_LEFT_TO_RIGHT, DIRECTION_RIGHT_TO_LEFT,
- DIRECTION_DEFAULT_LEFT_TO_RIGHT, and DIRECTION_DEFAULT_RIGHT_TO_LEFT.
- Other values are reserved.`]
-				]]
-			],
-			/* throws */ UDF
 		]]
 	],
 	[/* methods */
-		[/* method */ 'toString()', [
+		[/* method */ 'baseIsLeftToRight()', [
 			[/* method description */
-				[/* text */ 't', `Display the bidi internal state, used in debugging.`]
+				[/* text */ 't', `Return true if the base direction is left-to-right.`]
 			],
 			/* parameters */ UDF,
 			/* throws */ UDF,
 			[/* return description */
-				[/* text */ 't', `a string representation of the object.`]
+				[/* text */ 't', `true if the base direction is left-to-right`]
+			]
+		]],
+		[/* method */ 'isLeftToRight()', [
+			[/* method description */
+				[/* text */ 't', `Return true if the line is all left-to-right text and the base direction is left-to-right.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `true if the line is all left-to-right text and the base direction is left-to-right`]
+			]
+		]],
+		[/* method */ 'isMixed()', [
+			[/* method description */
+				[/* text */ 't', `Return true if the line is not left-to-right or right-to-left.  This means it either has mixed runs of left-to-right
+ and right-to-left text, or the base direction differs from the direction of the only run of text.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `true if the line is not left-to-right or right-to-left.`]
+			]
+		]],
+		[/* method */ 'isRightToLeft()', [
+			[/* method description */
+				[/* text */ 't', `Return true if the line is all right-to-left text, and the base direction is right-to-left.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `true if the line is all right-to-left text, and the base direction is right-to-left`]
+			]
+		]],
+		[/* method */ 'getBaseLevel()', [
+			[/* method description */
+				[/* text */ 't', `Return the base level (0 if left-to-right, 1 if right-to-left).`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the base level`]
 			]
 		]],
 		[/* method */ 'getLength()', [
@@ -156,10 +197,35 @@ DocsCollector.collect('java.text.Bidi', [
 				[/* text */ 't', `the length of text in the line`]
 			]
 		]],
-		[/* method */ 'getRunStart(int)', [
+		[/* method */ 'getLevelAt(int)', [
 			[/* method description */
-				[/* text */ 't', `Return the index of the character at the start of the nth logical run in this line, as
- an offset from the start of the line.`]
+				[/* text */ 't', `Return the resolved level of the character at offset.  If offset is
+ < 0 or ≥ the length of the line, return the base direction
+ level.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'offset', [/* parameter description */
+					[/* text */ 't', `the index of the character for which to return the level`]
+				]]
+			],
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the resolved level of the character at offset`]
+			]
+		]],
+		[/* method */ 'getRunCount()', [
+			[/* method description */
+				[/* text */ 't', `Return the number of level runs.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the number of level runs`]
+			]
+		]],
+		[/* method */ 'getRunLevel(int)', [
+			[/* method description */
+				[/* text */ 't', `Return the level of the nth logical run in this line.`]
 			],
 			[/* parameters */
 				[/* parameter */ 'run', [/* parameter description */
@@ -169,7 +235,7 @@ DocsCollector.collect('java.text.Bidi', [
 			],
 			/* throws */ UDF,
 			[/* return description */
-				[/* text */ 't', `the start of the run`]
+				[/* text */ 't', `the level of the run`]
 			]
 		]],
 		[/* method */ 'getRunLimit(int)', [
@@ -189,66 +255,10 @@ DocsCollector.collect('java.text.Bidi', [
 				[/* text */ 't', `limit the limit of the run`]
 			]
 		]],
-		[/* method */ 'isMixed()', [
+		[/* method */ 'getRunStart(int)', [
 			[/* method description */
-				[/* text */ 't', `Return true if the line is not left-to-right or right-to-left.  This means it either has mixed runs of left-to-right
- and right-to-left text, or the base direction differs from the direction of the only run of text.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `true if the line is not left-to-right or right-to-left.`]
-			]
-		]],
-		[/* method */ 'isLeftToRight()', [
-			[/* method description */
-				[/* text */ 't', `Return true if the line is all left-to-right text and the base direction is left-to-right.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `true if the line is all left-to-right text and the base direction is left-to-right`]
-			]
-		]],
-		[/* method */ 'isRightToLeft()', [
-			[/* method description */
-				[/* text */ 't', `Return true if the line is all right-to-left text, and the base direction is right-to-left.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `true if the line is all right-to-left text, and the base direction is right-to-left`]
-			]
-		]],
-		[/* method */ 'baseIsLeftToRight()', [
-			[/* method description */
-				[/* text */ 't', `Return true if the base direction is left-to-right.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `true if the base direction is left-to-right`]
-			]
-		]],
-		[/* method */ 'getLevelAt(int)', [
-			[/* method description */
-				[/* text */ 't', `Return the resolved level of the character at offset.  If offset is
- < 0 or ≥ the length of the line, return the base direction
- level.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'offset', [/* parameter description */
-					[/* text */ 't', `the index of the character for which to return the level`]
-				]]
-			],
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the resolved level of the character at offset`]
-			]
-		]],
-		[/* method */ 'getRunLevel(int)', [
-			[/* method description */
-				[/* text */ 't', `Return the level of the nth logical run in this line.`]
+				[/* text */ 't', `Return the index of the character at the start of the nth logical run in this line, as
+ an offset from the start of the line.`]
 			],
 			[/* parameters */
 				[/* parameter */ 'run', [/* parameter description */
@@ -258,7 +268,38 @@ DocsCollector.collect('java.text.Bidi', [
 			],
 			/* throws */ UDF,
 			[/* return description */
-				[/* text */ 't', `the level of the run`]
+				[/* text */ 't', `the start of the run`]
+			]
+		]],
+		[/* method */ 'toString()', [
+			[/* method description */
+				[/* text */ 't', `Display the bidi internal state, used in debugging.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `a string representation of the object.`]
+			]
+		]],
+		[/* method */ 'createLineBidi(int,int)', [
+			[/* method description */
+				[/* text */ 't', `Create a Bidi object representing the bidi information on a line of text within
+ the paragraph represented by the current Bidi.  This call is not required if the
+ entire paragraph fits on one line.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'lineStart', [/* parameter description */
+					[/* text */ 't', `the offset from the start of the paragraph to the start of the line.`]
+				]],
+				[/* parameter */ 'lineLimit', [/* parameter description */
+					[/* text */ 't', `the offset from the start of the paragraph to the limit of the line.`]
+				]]
+			],
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `a `],
+				[/* inline code block */ 'i', `Bidi`],
+				[/* text */ 't', ` object`]
 			]
 		]],
 		[/* method */ 'requiresBidi(char[],int,int)', [
@@ -322,47 +363,6 @@ DocsCollector.collect('java.text.Bidi', [
 			],
 			/* throws */ UDF,
 			/* return */ UDF
-		]],
-		[/* method */ 'createLineBidi(int,int)', [
-			[/* method description */
-				[/* text */ 't', `Create a Bidi object representing the bidi information on a line of text within
- the paragraph represented by the current Bidi.  This call is not required if the
- entire paragraph fits on one line.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'lineStart', [/* parameter description */
-					[/* text */ 't', `the offset from the start of the paragraph to the start of the line.`]
-				]],
-				[/* parameter */ 'lineLimit', [/* parameter description */
-					[/* text */ 't', `the offset from the start of the paragraph to the limit of the line.`]
-				]]
-			],
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `a `],
-				[/* inline code block */ 'i', `Bidi`],
-				[/* text */ 't', ` object`]
-			]
-		]],
-		[/* method */ 'getBaseLevel()', [
-			[/* method description */
-				[/* text */ 't', `Return the base level (0 if left-to-right, 1 if right-to-left).`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the base level`]
-			]
-		]],
-		[/* method */ 'getRunCount()', [
-			[/* method description */
-				[/* text */ 't', `Return the number of level runs.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the number of level runs`]
-			]
 		]]
 	],
 ]);

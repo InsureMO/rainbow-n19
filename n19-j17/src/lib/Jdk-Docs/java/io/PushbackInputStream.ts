@@ -95,6 +95,102 @@ DocsCollector.collect('java.io.PushbackInputStream', [
 		]]
 	],
 	[/* methods */
+		[/* method */ 'markSupported()', [
+			[/* method description */
+				[/* text */ 't', `Tests if this input stream supports the `],
+				[/* inline code block */ 'i', `mark`],
+				[/* text */ 't', ` and
+ `],
+				[/* inline code block */ 'i', `reset`],
+				[/* text */ 't', ` methods, which it does not.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* inline code block */ 'i', `false`],
+				[/* text */ 't', `, since this class does not support the
+           `],
+				[/* inline code block */ 'i', `mark`],
+				[/* text */ 't', ` and `],
+				[/* inline code block */ 'i', `reset`],
+				[/* text */ 't', ` methods.`]
+			]
+		]],
+		[/* method */ 'available()', [
+			[/* method description */
+				[/* text */ 't', `Returns an estimate of the number of bytes that can be read (or
+ skipped over) from this input stream without blocking by the next
+ invocation of a method for this input stream. The next invocation might be
+ the same thread or another thread.  A single read or skip of this
+ many bytes will not block, but may read or skip fewer bytes.
+
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', ` The method returns the sum of the number of bytes that have been
+ pushed back and the value returned by `],
+					[/* reference */ 'r', `.FilterInputStream#available()`],
+					[/* text */ 't', `.`]
+				]]
+			],
+			/* parameters */ UDF,
+			[/* throws */
+				[/* throw */ 'java.io.IOException', [/* throw description */
+					[/* text */ 't', `if this input stream has been closed by
+             invoking its `],
+					[/* reference */ 'r', `#close()`, `close()`],
+					[/* text */ 't', ` method,
+             or an I/O error occurs.`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `the number of bytes that can be read (or skipped over) from
+             the input stream without blocking.`]
+			]
+		]],
+		[/* method */ 'read()', [
+			[/* method description */
+				[/* text */ 't', `Reads the next byte of data from this input stream. The value
+ byte is returned as an `],
+				[/* inline code block */ 'i', `int`],
+				[/* text */ 't', ` in the range
+ `],
+				[/* inline code block */ 'i', `0`],
+				[/* text */ 't', ` to `],
+				[/* inline code block */ 'i', `255`],
+				[/* text */ 't', `. If no byte is available
+ because the end of the stream has been reached, the value
+ `],
+				[/* inline code block */ 'i', `-1`],
+				[/* text */ 't', ` is returned. This method blocks until input data
+ is available, the end of the stream is detected, or an exception
+ is thrown.
+
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', ` This method returns the most recently pushed-back byte, if there is
+ one, and otherwise calls the `],
+					[/* inline code block */ 'i', `read`],
+					[/* text */ 't', ` method of its underlying
+ input stream and returns whatever value that method returns.`]
+				]]
+			],
+			/* parameters */ UDF,
+			[/* throws */
+				[/* throw */ 'java.io.IOException', [/* throw description */
+					[/* text */ 't', `if this input stream has been closed by
+             invoking its `],
+					[/* reference */ 'r', `#close()`, `close()`],
+					[/* text */ 't', ` method,
+             or an I/O error occurs.`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `the next byte of data, or `],
+				[/* inline code block */ 'i', `-1`],
+				[/* text */ 't', ` if the end of the
+             stream has been reached.`]
+			]
+		]],
 		[/* method */ 'read(byte[],int,int)', [
 			[/* method description */
 				[/* text */ 't', `Reads up to `],
@@ -160,89 +256,6 @@ DocsCollector.collect('java.io.PushbackInputStream', [
              the stream has been reached.`]
 			]
 		]],
-		[/* method */ 'read()', [
-			[/* method description */
-				[/* text */ 't', `Reads the next byte of data from this input stream. The value
- byte is returned as an `],
-				[/* inline code block */ 'i', `int`],
-				[/* text */ 't', ` in the range
- `],
-				[/* inline code block */ 'i', `0`],
-				[/* text */ 't', ` to `],
-				[/* inline code block */ 'i', `255`],
-				[/* text */ 't', `. If no byte is available
- because the end of the stream has been reached, the value
- `],
-				[/* inline code block */ 'i', `-1`],
-				[/* text */ 't', ` is returned. This method blocks until input data
- is available, the end of the stream is detected, or an exception
- is thrown.
-
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', ` This method returns the most recently pushed-back byte, if there is
- one, and otherwise calls the `],
-					[/* inline code block */ 'i', `read`],
-					[/* text */ 't', ` method of its underlying
- input stream and returns whatever value that method returns.`]
-				]]
-			],
-			/* parameters */ UDF,
-			[/* throws */
-				[/* throw */ 'java.io.IOException', [/* throw description */
-					[/* text */ 't', `if this input stream has been closed by
-             invoking its `],
-					[/* reference */ 'r', `#close()`, `close()`],
-					[/* text */ 't', ` method,
-             or an I/O error occurs.`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `the next byte of data, or `],
-				[/* inline code block */ 'i', `-1`],
-				[/* text */ 't', ` if the end of the
-             stream has been reached.`]
-			]
-		]],
-		[/* method */ 'close()', [
-			[/* method description */
-				[/* text */ 't', `Closes this input stream and releases any system resources
- associated with the stream.
- Once the stream has been closed, further read(), unread(),
- available(), reset(), or skip() invocations will throw an IOException.
- Closing a previously closed stream has no effect.`]
-			],
-			/* parameters */ UDF,
-			[/* throws */
-				[/* throw */ 'java.io.IOException', [/* throw description */
-					[/* text */ 't', `if an I/O error occurs.`]
-				]]
-			],
-			/* return */ UDF
-		]],
-		[/* method */ 'mark(int)', [
-			[/* method description */
-				[/* text */ 't', `Marks the current position in this input stream.
-
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', ` The `],
-					[/* inline code block */ 'i', `mark`],
-					[/* text */ 't', ` method of `],
-					[/* inline code block */ 'i', `PushbackInputStream`],
-					[/* text */ 't', `
- does nothing.`]
-				]]
-			],
-			[/* parameters */
-				[/* parameter */ 'readlimit', [/* parameter description */
-					[/* text */ 't', `the maximum limit of bytes that can be read before
-                      the mark position becomes invalid.`]
-				]]
-			],
-			/* throws */ UDF,
-			/* return */ UDF
-		]],
 		[/* method */ 'skip(long)', [
 			[/* method description */
 				[/* text */ 't', `Skips over and discards `],
@@ -292,57 +305,44 @@ DocsCollector.collect('java.io.PushbackInputStream', [
 				[/* text */ 't', `the actual number of bytes skipped.`]
 			]
 		]],
-		[/* method */ 'available()', [
+		[/* method */ 'close()', [
 			[/* method description */
-				[/* text */ 't', `Returns an estimate of the number of bytes that can be read (or
- skipped over) from this input stream without blocking by the next
- invocation of a method for this input stream. The next invocation might be
- the same thread or another thread.  A single read or skip of this
- many bytes will not block, but may read or skip fewer bytes.
-
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', ` The method returns the sum of the number of bytes that have been
- pushed back and the value returned by `],
-					[/* reference */ 'r', `.FilterInputStream#available()`],
-					[/* text */ 't', `.`]
-				]]
+				[/* text */ 't', `Closes this input stream and releases any system resources
+ associated with the stream.
+ Once the stream has been closed, further read(), unread(),
+ available(), reset(), or skip() invocations will throw an IOException.
+ Closing a previously closed stream has no effect.`]
 			],
 			/* parameters */ UDF,
 			[/* throws */
 				[/* throw */ 'java.io.IOException', [/* throw description */
-					[/* text */ 't', `if this input stream has been closed by
-             invoking its `],
-					[/* reference */ 'r', `#close()`, `close()`],
-					[/* text */ 't', ` method,
-             or an I/O error occurs.`]
+					[/* text */ 't', `if an I/O error occurs.`]
 				]]
 			],
-			[/* return description */
-				[/* text */ 't', `the number of bytes that can be read (or skipped over) from
-             the input stream without blocking.`]
-			]
+			/* return */ UDF
 		]],
-		[/* method */ 'markSupported()', [
+		[/* method */ 'mark(int)', [
 			[/* method description */
-				[/* text */ 't', `Tests if this input stream supports the `],
-				[/* inline code block */ 'i', `mark`],
-				[/* text */ 't', ` and
+				[/* text */ 't', `Marks the current position in this input stream.
+
  `],
-				[/* inline code block */ 'i', `reset`],
-				[/* text */ 't', ` methods, which it does not.`]
+				[/* block */ 'b', [
+					[/* text */ 't', ` The `],
+					[/* inline code block */ 'i', `mark`],
+					[/* text */ 't', ` method of `],
+					[/* inline code block */ 'i', `PushbackInputStream`],
+					[/* text */ 't', `
+ does nothing.`]
+				]]
 			],
-			/* parameters */ UDF,
+			[/* parameters */
+				[/* parameter */ 'readlimit', [/* parameter description */
+					[/* text */ 't', `the maximum limit of bytes that can be read before
+                      the mark position becomes invalid.`]
+				]]
+			],
 			/* throws */ UDF,
-			[/* return description */
-				[/* inline code block */ 'i', `false`],
-				[/* text */ 't', `, since this class does not support the
-           `],
-				[/* inline code block */ 'i', `mark`],
-				[/* text */ 't', ` and `],
-				[/* inline code block */ 'i', `reset`],
-				[/* text */ 't', ` methods.`]
-			]
+			/* return */ UDF
 		]],
 		[/* method */ 'reset()', [
 			[/* method description */
@@ -407,33 +407,6 @@ DocsCollector.collect('java.io.PushbackInputStream', [
 			],
 			/* return */ UDF
 		]],
-		[/* method */ 'unread(int)', [
-			[/* method description */
-				[/* text */ 't', `Pushes back a byte by copying it to the front of the pushback buffer.
- After this method returns, the next byte to be read will have the value
- `],
-				[/* inline code block */ 'i', `(byte)b`],
-				[/* text */ 't', `.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'b', [/* parameter description */
-					[/* text */ 't', `the `],
-					[/* inline code block */ 'i', `int`],
-					[/* text */ 't', ` value whose low-order
-                  byte is to be pushed back.`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.io.IOException', [/* throw description */
-					[/* text */ 't', `If there is not enough room in the pushback
-            buffer for the byte, or this input stream has been closed by
-            invoking its `],
-					[/* reference */ 'r', `#close()`, `close()`],
-					[/* text */ 't', ` method.`]
-				]]
-			],
-			/* return */ UDF
-		]],
 		[/* method */ 'unread(byte[],int,int)', [
 			[/* method description */
 				[/* text */ 't', `Pushes back a portion of an array of bytes by copying it to the front
@@ -468,6 +441,33 @@ DocsCollector.collect('java.io.PushbackInputStream', [
 					[/* text */ 't', `If there is not enough room in the pushback
             buffer for the specified number of bytes,
             or this input stream has been closed by
+            invoking its `],
+					[/* reference */ 'r', `#close()`, `close()`],
+					[/* text */ 't', ` method.`]
+				]]
+			],
+			/* return */ UDF
+		]],
+		[/* method */ 'unread(int)', [
+			[/* method description */
+				[/* text */ 't', `Pushes back a byte by copying it to the front of the pushback buffer.
+ After this method returns, the next byte to be read will have the value
+ `],
+				[/* inline code block */ 'i', `(byte)b`],
+				[/* text */ 't', `.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'b', [/* parameter description */
+					[/* text */ 't', `the `],
+					[/* inline code block */ 'i', `int`],
+					[/* text */ 't', ` value whose low-order
+                  byte is to be pushed back.`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.io.IOException', [/* throw description */
+					[/* text */ 't', `If there is not enough room in the pushback
+            buffer for the byte, or this input stream has been closed by
             invoking its `],
 					[/* reference */ 'r', `#close()`, `close()`],
 					[/* text */ 't', ` method.`]

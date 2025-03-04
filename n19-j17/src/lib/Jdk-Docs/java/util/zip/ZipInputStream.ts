@@ -9,6 +9,25 @@ DocsCollector.collect('java.util.zip.ZipInputStream', [
 	],
 	/* fields */ UDF,
 	[/* constructors */
+		[/* constructor */ '<init>(java.io.InputStream)', [
+			[/* constructor description */
+				[/* text */ 't', `Creates a new ZIP input stream.
+
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', `The UTF-8 `],
+					[/* reference */ 'r', `java.nio.charset.Charset`],
+					[/* text */ 't', ` is used to
+ decode the entry names.`]
+				]]
+			],
+			[/* parameters */
+				[/* parameter */ 'in', [/* parameter description */
+					[/* text */ 't', `the actual input stream`]
+				]]
+			],
+			/* throws */ UDF
+		]],
 		[/* constructor */ '<init>(java.io.InputStream,java.nio.charset.Charset)', [
 			[/* constructor description */
 				[/* text */ 't', `Creates a new ZIP input stream.`]
@@ -29,28 +48,45 @@ DocsCollector.collect('java.util.zip.ZipInputStream', [
 				]]
 			],
 			/* throws */ UDF
-		]],
-		[/* constructor */ '<init>(java.io.InputStream)', [
-			[/* constructor description */
-				[/* text */ 't', `Creates a new ZIP input stream.
-
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', `The UTF-8 `],
-					[/* reference */ 'r', `java.nio.charset.Charset`],
-					[/* text */ 't', ` is used to
- decode the entry names.`]
-				]]
-			],
-			[/* parameters */
-				[/* parameter */ 'in', [/* parameter description */
-					[/* text */ 't', `the actual input stream`]
-				]]
-			],
-			/* throws */ UDF
 		]]
 	],
 	[/* methods */
+		[/* method */ 'createZipEntry(java.lang.String)', [
+			[/* method description */
+				[/* text */ 't', `Creates a new `],
+				[/* inline code block */ 'i', `ZipEntry`],
+				[/* text */ 't', ` object for the specified
+ entry name.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'name', [/* parameter description */
+					[/* text */ 't', `the ZIP file entry name`]
+				]]
+			],
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the ZipEntry just created`]
+			]
+		]],
+		[/* method */ 'available()', [
+			[/* method description */
+				[/* text */ 't', `Returns 0 after EOF has reached for the current entry data,
+ otherwise always return 1.
+ `],
+				[/* block */ 'b', `
+ Programs should not count on this method to return the actual number
+ of bytes that could be read without blocking.`]
+			],
+			/* parameters */ UDF,
+			[/* throws */
+				[/* throw */ 'java.io.IOException', [/* throw description */
+					[/* text */ 't', `if an I/O error occurs.`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `1 before EOF and 0 after EOF has reached for current entry.`]
+			]
+		]],
 		[/* method */ 'read(byte[],int,int)', [
 			[/* method description */
 				[/* text */ 't', `Reads from the current ZIP entry into an array of bytes.
@@ -106,18 +142,23 @@ DocsCollector.collect('java.util.zip.ZipInputStream', [
          entry is reached`]
 			]
 		]],
-		[/* method */ 'close()', [
+		[/* method */ 'getNextEntry()', [
 			[/* method description */
-				[/* text */ 't', `Closes this input stream and releases any system resources associated
- with the stream.`]
+				[/* text */ 't', `Reads the next ZIP file entry and positions the stream at the
+ beginning of the entry data.`]
 			],
 			/* parameters */ UDF,
 			[/* throws */
+				[/* throw */ 'java.util.zip.ZipException', [/* throw description */
+					[/* text */ 't', `if a ZIP file error has occurred`]
+				]],
 				[/* throw */ 'java.io.IOException', [/* throw description */
 					[/* text */ 't', `if an I/O error has occurred`]
 				]]
 			],
-			/* return */ UDF
+			[/* return description */
+				[/* text */ 't', `the next ZIP file entry, or null if there are no more entries`]
+			]
 		]],
 		[/* method */ 'skip(long)', [
 			[/* method description */
@@ -144,24 +185,18 @@ DocsCollector.collect('java.util.zip.ZipInputStream', [
 				[/* text */ 't', `the actual number of bytes skipped`]
 			]
 		]],
-		[/* method */ 'available()', [
+		[/* method */ 'close()', [
 			[/* method description */
-				[/* text */ 't', `Returns 0 after EOF has reached for the current entry data,
- otherwise always return 1.
- `],
-				[/* block */ 'b', `
- Programs should not count on this method to return the actual number
- of bytes that could be read without blocking.`]
+				[/* text */ 't', `Closes this input stream and releases any system resources associated
+ with the stream.`]
 			],
 			/* parameters */ UDF,
 			[/* throws */
 				[/* throw */ 'java.io.IOException', [/* throw description */
-					[/* text */ 't', `if an I/O error occurs.`]
+					[/* text */ 't', `if an I/O error has occurred`]
 				]]
 			],
-			[/* return description */
-				[/* text */ 't', `1 before EOF and 0 after EOF has reached for current entry.`]
-			]
+			/* return */ UDF
 		]],
 		[/* method */ 'closeEntry()', [
 			[/* method description */
@@ -178,41 +213,6 @@ DocsCollector.collect('java.util.zip.ZipInputStream', [
 				]]
 			],
 			/* return */ UDF
-		]],
-		[/* method */ 'createZipEntry(java.lang.String)', [
-			[/* method description */
-				[/* text */ 't', `Creates a new `],
-				[/* inline code block */ 'i', `ZipEntry`],
-				[/* text */ 't', ` object for the specified
- entry name.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'name', [/* parameter description */
-					[/* text */ 't', `the ZIP file entry name`]
-				]]
-			],
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the ZipEntry just created`]
-			]
-		]],
-		[/* method */ 'getNextEntry()', [
-			[/* method description */
-				[/* text */ 't', `Reads the next ZIP file entry and positions the stream at the
- beginning of the entry data.`]
-			],
-			/* parameters */ UDF,
-			[/* throws */
-				[/* throw */ 'java.util.zip.ZipException', [/* throw description */
-					[/* text */ 't', `if a ZIP file error has occurred`]
-				]],
-				[/* throw */ 'java.io.IOException', [/* throw description */
-					[/* text */ 't', `if an I/O error has occurred`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `the next ZIP file entry, or null if there are no more entries`]
-			]
 		]]
 	],
 ]);

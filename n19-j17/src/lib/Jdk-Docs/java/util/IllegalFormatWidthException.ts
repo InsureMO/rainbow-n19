@@ -29,7 +29,6 @@ DocsCollector.collect('java.util.IllegalFormatWidthException', [
 		]]
 	],
 	[/* methods */
-		[/* method */ 'getMessage()', UDF],
 		[/* method */ 'getWidth()', [
 			[/* method description */
 				[/* text */ 't', `Returns the width. If the width is not representable by an `],
@@ -44,6 +43,7 @@ DocsCollector.collect('java.util.IllegalFormatWidthException', [
 			[/* return description */
 				[/* text */ 't', `The width`]
 			]
-		]]
+		]],
+		[/* method */ 'getMessage()', UDF]
 	],
 ]);

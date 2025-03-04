@@ -8,6 +8,11 @@ DocsCollector.collect('java.lang.constant.DirectMethodHandleDesc$Kind', [
 		[/* text */ 't', `.`]
 	],
 	[/* fields */
+		[/* field */ 'isInterface', [
+			[/* field description */
+				[/* text */ 't', `Is this an interface`]
+			],
+		]],
 		[/* field */ 'refKind', [
 			[/* field description */
 				[/* text */ 't', `The corresponding `],
@@ -16,24 +21,39 @@ DocsCollector.collect('java.lang.constant.DirectMethodHandleDesc$Kind', [
  as defined by `],
 				[/* reference */ 'r', `java.lang.invoke.MethodHandleInfo`]
 			],
-		]],
-		[/* field */ 'isInterface', [
-			[/* field description */
-				[/* text */ 't', `Is this an interface`]
-			],
 		]]
 	],
 	/* constructors */ UDF,
 	[/* methods */
-		[/* method */ 'values()', [
+		[/* method */ 'valueOf(int)', [
 			[/* method description */
-				[/* text */ 't', `Returns an array containing the constants of this enum class, in
-the order they are declared.`]
+				[/* text */ 't', `Returns the enumeration member with the given `],
+				[/* inline code block */ 'i', `refKind`],
+				[/* text */ 't', ` field.
+ Behaves as if `],
+				[/* inline code block */ 'i', `valueOf(refKind, false)`],
+				[/* text */ 't', `.  As a special case,
+ if `],
+				[/* inline code block */ 'i', `refKind`],
+				[/* text */ 't', ` is `],
+				[/* inline code block */ 'i', `REF_invokeInterface`],
+				[/* text */ 't', ` (9) then the
+ `],
+				[/* inline code block */ 'i', `isInterface`],
+				[/* text */ 't', ` field will be true.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			[/* parameters */
+				[/* parameter */ 'refKind', [/* parameter description */
+					[/* text */ 't', `refKind of desired member`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
+					[/* text */ 't', `if there is no such member`]
+				]]
+			],
 			[/* return description */
-				[/* text */ 't', `an array containing the constants of this enum class, in the order they are declared`]
+				[/* text */ 't', `the matching enumeration member`]
 			]
 		]],
 		[/* method */ 'valueOf(int,boolean)', [
@@ -153,35 +173,15 @@ not permitted.)`]
 				[/* text */ 't', `the enum constant with the specified name`]
 			]
 		]],
-		[/* method */ 'valueOf(int)', [
+		[/* method */ 'values()', [
 			[/* method description */
-				[/* text */ 't', `Returns the enumeration member with the given `],
-				[/* inline code block */ 'i', `refKind`],
-				[/* text */ 't', ` field.
- Behaves as if `],
-				[/* inline code block */ 'i', `valueOf(refKind, false)`],
-				[/* text */ 't', `.  As a special case,
- if `],
-				[/* inline code block */ 'i', `refKind`],
-				[/* text */ 't', ` is `],
-				[/* inline code block */ 'i', `REF_invokeInterface`],
-				[/* text */ 't', ` (9) then the
- `],
-				[/* inline code block */ 'i', `isInterface`],
-				[/* text */ 't', ` field will be true.`]
+				[/* text */ 't', `Returns an array containing the constants of this enum class, in
+the order they are declared.`]
 			],
-			[/* parameters */
-				[/* parameter */ 'refKind', [/* parameter description */
-					[/* text */ 't', `refKind of desired member`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
-					[/* text */ 't', `if there is no such member`]
-				]]
-			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
 			[/* return description */
-				[/* text */ 't', `the matching enumeration member`]
+				[/* text */ 't', `an array containing the constants of this enum class, in the order they are declared`]
 			]
 		]]
 	],

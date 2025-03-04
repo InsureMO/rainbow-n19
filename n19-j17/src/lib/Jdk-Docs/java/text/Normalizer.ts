@@ -90,6 +90,44 @@ DocsCollector.collect('java.text.Normalizer', [
 	/* fields */ UDF,
 	/* constructors */ UDF,
 	[/* methods */
+		[/* method */ 'isNormalized(java.lang.CharSequence,java.text.Normalizer.Form)', [
+			[/* method description */
+				[/* text */ 't', `Determines if the given sequence of char values is normalized.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'src', [/* parameter description */
+					[/* text */ 't', `The sequence of char values to be checked.`]
+				]],
+				[/* parameter */ 'form', [/* parameter description */
+					[/* text */ 't', `The normalization form; one of
+                   `],
+					[/* reference */ 'r', `.Normalizer.Form#NFC`],
+					[/* text */ 't', `,
+                   `],
+					[/* reference */ 'r', `.Normalizer.Form#NFD`],
+					[/* text */ 't', `,
+                   `],
+					[/* reference */ 'r', `.Normalizer.Form#NFKC`],
+					[/* text */ 't', `,
+                   `],
+					[/* reference */ 'r', `.Normalizer.Form#NFKD`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
+					[/* text */ 't', `If `],
+					[/* inline code block */ 'i', `src`],
+					[/* text */ 't', ` or `],
+					[/* inline code block */ 'i', `form`],
+					[/* text */ 't', `
+ is null.`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `true if the sequence of char values is normalized;
+ false otherwise.`]
+			]
+		]],
 		[/* method */ 'normalize(java.lang.CharSequence,java.text.Normalizer.Form)', [
 			[/* method description */
 				[/* text */ 't', `Normalize a sequence of char values.
@@ -127,44 +165,6 @@ DocsCollector.collect('java.text.Normalizer', [
 			],
 			[/* return description */
 				[/* text */ 't', `The normalized String`]
-			]
-		]],
-		[/* method */ 'isNormalized(java.lang.CharSequence,java.text.Normalizer.Form)', [
-			[/* method description */
-				[/* text */ 't', `Determines if the given sequence of char values is normalized.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'src', [/* parameter description */
-					[/* text */ 't', `The sequence of char values to be checked.`]
-				]],
-				[/* parameter */ 'form', [/* parameter description */
-					[/* text */ 't', `The normalization form; one of
-                   `],
-					[/* reference */ 'r', `.Normalizer.Form#NFC`],
-					[/* text */ 't', `,
-                   `],
-					[/* reference */ 'r', `.Normalizer.Form#NFD`],
-					[/* text */ 't', `,
-                   `],
-					[/* reference */ 'r', `.Normalizer.Form#NFKC`],
-					[/* text */ 't', `,
-                   `],
-					[/* reference */ 'r', `.Normalizer.Form#NFKD`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
-					[/* text */ 't', `If `],
-					[/* inline code block */ 'i', `src`],
-					[/* text */ 't', ` or `],
-					[/* inline code block */ 'i', `form`],
-					[/* text */ 't', `
- is null.`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `true if the sequence of char values is normalized;
- false otherwise.`]
 			]
 		]]
 	],

@@ -1266,14 +1266,14 @@ JdkClassCreateHelper.class('java.time.OffsetDateTime', [
 		]
 	],
 	[/* declared fields */
-		[/* public static final java.time.OffsetDateTime java.time.OffsetDateTime.MIN */
-			/* name */ 'MIN',
+		[/* public static final java.time.OffsetDateTime java.time.OffsetDateTime.MAX */
+			/* name */ 'MAX',
 			/* type */ 'java.time.OffsetDateTime',
 			/* annotations */ UDF,
 			/* modifiers */ 25
 		],
-		[/* public static final java.time.OffsetDateTime java.time.OffsetDateTime.MAX */
-			/* name */ 'MAX',
+		[/* public static final java.time.OffsetDateTime java.time.OffsetDateTime.MIN */
+			/* name */ 'MIN',
 			/* type */ 'java.time.OffsetDateTime',
 			/* annotations */ UDF,
 			/* modifiers */ 25

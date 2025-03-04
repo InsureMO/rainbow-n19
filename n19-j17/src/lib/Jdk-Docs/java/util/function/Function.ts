@@ -32,14 +32,30 @@ DocsCollector.collect('java.util.function.Function', [
 				[/* text */ 't', `the function result`]
 			]
 		]],
-		[/* method */ 'identity()', [
+		[/* method */ 'andThen(java.util.function.Function)', [
 			[/* method description */
-				[/* text */ 't', `Returns a function that always returns its input argument.`]
+				[/* text */ 't', `Returns a composed function that first applies this function to
+ its input, and then applies the `],
+				[/* inline code block */ 'i', `after`],
+				[/* text */ 't', ` function to the result.
+ If evaluation of either function throws an exception, it is relayed to
+ the caller of the composed function.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			[/* parameters */
+				[/* parameter */ 'after', [/* parameter description */
+					[/* text */ 't', `the function to apply after this function is applied`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
+					[/* text */ 't', `if after is null`]
+				]]
+			],
 			[/* return description */
-				[/* text */ 't', `a function that always returns its input argument`]
+				[/* text */ 't', `a composed function that first applies this function and then
+ applies the `],
+				[/* inline code block */ 'i', `after`],
+				[/* text */ 't', ` function`]
 			]
 		]],
 		[/* method */ 'compose(java.util.function.Function)', [
@@ -68,30 +84,14 @@ DocsCollector.collect('java.util.function.Function', [
  function and then applies this function`]
 			]
 		]],
-		[/* method */ 'andThen(java.util.function.Function)', [
+		[/* method */ 'identity()', [
 			[/* method description */
-				[/* text */ 't', `Returns a composed function that first applies this function to
- its input, and then applies the `],
-				[/* inline code block */ 'i', `after`],
-				[/* text */ 't', ` function to the result.
- If evaluation of either function throws an exception, it is relayed to
- the caller of the composed function.`]
+				[/* text */ 't', `Returns a function that always returns its input argument.`]
 			],
-			[/* parameters */
-				[/* parameter */ 'after', [/* parameter description */
-					[/* text */ 't', `the function to apply after this function is applied`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
-					[/* text */ 't', `if after is null`]
-				]]
-			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
 			[/* return description */
-				[/* text */ 't', `a composed function that first applies this function and then
- applies the `],
-				[/* inline code block */ 'i', `after`],
-				[/* text */ 't', ` function`]
+				[/* text */ 't', `a function that always returns its input argument`]
 			]
 		]]
 	],

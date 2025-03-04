@@ -68,61 +68,6 @@ DocsCollector.collect('java.lang.ThreadLocal', [
 		]]
 	],
 	[/* methods */
-		[/* method */ 'remove()', [
-			[/* method description */
-				[/* text */ 't', `Removes the current thread's value for this thread-local
- variable.  If this thread-local variable is subsequently
- `],
-				[/* reference */ 'r', `#get()`, `read`],
-				[/* text */ 't', ` by the current thread, its value will be
- reinitialized by invoking its `],
-				[/* reference */ 'r', `#initialValue()`, `initialValue()`],
-				[/* text */ 't', ` method,
- unless its value is `],
-				[/* reference */ 'r', `#set(T)`, `set`],
-				[/* text */ 't', ` by the current thread
- in the interim.  This may result in multiple invocations of the
- `],
-				[/* inline code block */ 'i', `initialValue`],
-				[/* text */ 't', ` method in the current thread.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			/* return */ UDF
-		]],
-		[/* method */ 'get()', [
-			[/* method description */
-				[/* text */ 't', `Returns the value in the current thread's copy of this
- thread-local variable.  If the variable has no value for the
- current thread, it is first initialized to the value returned
- by an invocation of the `],
-				[/* reference */ 'r', `#initialValue()`, `initialValue()`],
-				[/* text */ 't', ` method.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the current thread's value of this thread-local`]
-			]
-		]],
-		[/* method */ 'set(java.lang.Object)', [
-			[/* method description */
-				[/* text */ 't', `Sets the current thread's copy of this thread-local variable
- to the specified value.  Most subclasses will have no need to
- override this method, relying solely on the `],
-				[/* reference */ 'r', `#initialValue()`, `initialValue()`],
-				[/* text */ 't', `
- method to set the values of thread-locals.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'value', [/* parameter description */
-					[/* text */ 't', `the value to be stored in the current thread's copy of
-        this thread-local.`]
-				]]
-			],
-			/* throws */ UDF,
-			/* return */ UDF
-		]],
 		[/* method */ 'initialValue()', [
 			[/* method description */
 				[/* text */ 't', `Returns the current thread's "initial value" for this
@@ -187,6 +132,61 @@ DocsCollector.collect('java.lang.ThreadLocal', [
 			[/* return description */
 				[/* text */ 't', `a new thread local variable`]
 			]
+		]],
+		[/* method */ 'get()', [
+			[/* method description */
+				[/* text */ 't', `Returns the value in the current thread's copy of this
+ thread-local variable.  If the variable has no value for the
+ current thread, it is first initialized to the value returned
+ by an invocation of the `],
+				[/* reference */ 'r', `#initialValue()`, `initialValue()`],
+				[/* text */ 't', ` method.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the current thread's value of this thread-local`]
+			]
+		]],
+		[/* method */ 'remove()', [
+			[/* method description */
+				[/* text */ 't', `Removes the current thread's value for this thread-local
+ variable.  If this thread-local variable is subsequently
+ `],
+				[/* reference */ 'r', `#get()`, `read`],
+				[/* text */ 't', ` by the current thread, its value will be
+ reinitialized by invoking its `],
+				[/* reference */ 'r', `#initialValue()`, `initialValue()`],
+				[/* text */ 't', ` method,
+ unless its value is `],
+				[/* reference */ 'r', `#set(T)`, `set`],
+				[/* text */ 't', ` by the current thread
+ in the interim.  This may result in multiple invocations of the
+ `],
+				[/* inline code block */ 'i', `initialValue`],
+				[/* text */ 't', ` method in the current thread.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			/* return */ UDF
+		]],
+		[/* method */ 'set(java.lang.Object)', [
+			[/* method description */
+				[/* text */ 't', `Sets the current thread's copy of this thread-local variable
+ to the specified value.  Most subclasses will have no need to
+ override this method, relying solely on the `],
+				[/* reference */ 'r', `#initialValue()`, `initialValue()`],
+				[/* text */ 't', `
+ method to set the values of thread-locals.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'value', [/* parameter description */
+					[/* text */ 't', `the value to be stored in the current thread's copy of
+        this thread-local.`]
+				]]
+			],
+			/* throws */ UDF,
+			/* return */ UDF
 		]]
 	],
 ]);

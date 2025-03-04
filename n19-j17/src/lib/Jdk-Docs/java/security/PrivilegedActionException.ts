@@ -36,7 +36,6 @@ DocsCollector.collect('java.security.PrivilegedActionException', [
 		]]
 	],
 	[/* methods */
-		[/* method */ 'toString()', UDF],
 		[/* method */ 'getException()', [
 			[/* method description */
 				[/* text */ 't', `Returns the exception thrown by the privileged computation that
@@ -52,6 +51,7 @@ DocsCollector.collect('java.security.PrivilegedActionException', [
 				[/* inline code block */ 'i', `PrivilegedActionException`],
 				[/* text */ 't', `.`]
 			]
-		]]
+		]],
+		[/* method */ 'toString()', UDF]
 	],
 ]);

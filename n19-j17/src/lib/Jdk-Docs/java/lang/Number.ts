@@ -55,10 +55,10 @@ DocsCollector.collect('java.lang.Number', [
 		]]
 	],
 	[/* methods */
-		[/* method */ 'byteValue()', [
+		[/* method */ 'doubleValue()', [
 			[/* method description */
 				[/* text */ 't', `Returns the value of the specified number as a `],
-				[/* inline code block */ 'i', `byte`],
+				[/* inline code block */ 'i', `double`],
 				[/* text */ 't', `.`]
 			],
 			/* parameters */ UDF,
@@ -66,14 +66,14 @@ DocsCollector.collect('java.lang.Number', [
 			[/* return description */
 				[/* text */ 't', `the numeric value represented by this object after conversion
           to type `],
-				[/* inline code block */ 'i', `byte`],
+				[/* inline code block */ 'i', `double`],
 				[/* text */ 't', `.`]
 			]
 		]],
-		[/* method */ 'shortValue()', [
+		[/* method */ 'floatValue()', [
 			[/* method description */
 				[/* text */ 't', `Returns the value of the specified number as a `],
-				[/* inline code block */ 'i', `short`],
+				[/* inline code block */ 'i', `float`],
 				[/* text */ 't', `.`]
 			],
 			/* parameters */ UDF,
@@ -81,7 +81,7 @@ DocsCollector.collect('java.lang.Number', [
 			[/* return description */
 				[/* text */ 't', `the numeric value represented by this object after conversion
           to type `],
-				[/* inline code block */ 'i', `short`],
+				[/* inline code block */ 'i', `float`],
 				[/* text */ 't', `.`]
 			]
 		]],
@@ -115,10 +115,10 @@ DocsCollector.collect('java.lang.Number', [
 				[/* text */ 't', `.`]
 			]
 		]],
-		[/* method */ 'floatValue()', [
+		[/* method */ 'byteValue()', [
 			[/* method description */
 				[/* text */ 't', `Returns the value of the specified number as a `],
-				[/* inline code block */ 'i', `float`],
+				[/* inline code block */ 'i', `byte`],
 				[/* text */ 't', `.`]
 			],
 			/* parameters */ UDF,
@@ -126,14 +126,14 @@ DocsCollector.collect('java.lang.Number', [
 			[/* return description */
 				[/* text */ 't', `the numeric value represented by this object after conversion
           to type `],
-				[/* inline code block */ 'i', `float`],
+				[/* inline code block */ 'i', `byte`],
 				[/* text */ 't', `.`]
 			]
 		]],
-		[/* method */ 'doubleValue()', [
+		[/* method */ 'shortValue()', [
 			[/* method description */
 				[/* text */ 't', `Returns the value of the specified number as a `],
-				[/* inline code block */ 'i', `double`],
+				[/* inline code block */ 'i', `short`],
 				[/* text */ 't', `.`]
 			],
 			/* parameters */ UDF,
@@ -141,7 +141,7 @@ DocsCollector.collect('java.lang.Number', [
 			[/* return description */
 				[/* text */ 't', `the numeric value represented by this object after conversion
           to type `],
-				[/* inline code block */ 'i', `double`],
+				[/* inline code block */ 'i', `short`],
 				[/* text */ 't', `.`]
 			]
 		]]

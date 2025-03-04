@@ -67,6 +67,85 @@ DocsCollector.collect('java.io.ByteArrayOutputStream', [
 		]]
 	],
 	[/* methods */
+		[/* method */ 'toByteArray()', [
+			[/* method description */
+				[/* text */ 't', `Creates a newly allocated byte array. Its size is the current
+ size of this output stream and the valid contents of the buffer
+ have been copied into it.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the current contents of this output stream, as a byte array.`]
+			]
+		]],
+		[/* method */ 'size()', [
+			[/* method description */
+				[/* text */ 't', `Returns the current size of the buffer.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the value of the `],
+				[/* inline code block */ 'i', `count`],
+				[/* text */ 't', ` field, which is the number
+          of valid bytes in this output stream.`]
+			]
+		]],
+		[/* method */ 'toString()', [
+			[/* method description */
+				[/* text */ 't', `Converts the buffer's contents into a string decoding bytes using the
+ platform's default character set. The length of the new `],
+				[/* inline code block */ 'i', `String`],
+				[/* text */ 't', `
+ is a function of the character set, and hence may not be equal to the
+ size of the buffer.
+
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', ` This method always replaces malformed-input and unmappable-character
+ sequences with the default replacement string for the platform's
+ default character set. The `],
+					[/* reference */ 'r', `java.nio.charset.CharsetDecoder`],
+					[/* text */ 't', `
+ class should be used when more control over the decoding process is
+ required.`]
+				]]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `String decoded from the buffer's contents.`]
+			]
+		]],
+		[/* method */ 'toString(int)', [
+			[/* method description */
+				[/* text */ 't', `Creates a newly allocated string. Its size is the current size of
+ the output stream and the valid contents of the buffer have been
+ copied into it. Each character `],
+				[/* text */ 't', `c`],
+				[/* text */ 't', ` in the resulting string is
+ constructed from the corresponding element `],
+				[/* text */ 't', `b`],
+				[/* text */ 't', ` in the byte
+ array such that:
+ `],
+				[/* block */ 'b', [
+					[/* code block */ 'c', [
+						[/* inline code block */ 'i', `c == (char)(((hibyte & 0xff) << 8) | (b & 0xff))`]
+					]]
+				]]
+			],
+			[/* parameters */
+				[/* parameter */ 'hibyte', [/* parameter description */
+					[/* text */ 't', `the high byte of each resulting Unicode character.`]
+				]]
+			],
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the current contents of the output stream, as a string.`]
+			]
+		]],
 		[/* method */ 'toString(java.lang.String)', [
 			[/* method description */
 				[/* text */ 't', `Converts the buffer's contents into a string by decoding the bytes using
@@ -153,84 +232,18 @@ DocsCollector.collect('java.io.ByteArrayOutputStream', [
 				[/* text */ 't', `String decoded from the buffer's contents.`]
 			]
 		]],
-		[/* method */ 'toString()', [
+		[/* method */ 'reset()', [
 			[/* method description */
-				[/* text */ 't', `Converts the buffer's contents into a string decoding bytes using the
- platform's default character set. The length of the new `],
-				[/* inline code block */ 'i', `String`],
-				[/* text */ 't', `
- is a function of the character set, and hence may not be equal to the
- size of the buffer.
-
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', ` This method always replaces malformed-input and unmappable-character
- sequences with the default replacement string for the platform's
- default character set. The `],
-					[/* reference */ 'r', `java.nio.charset.CharsetDecoder`],
-					[/* text */ 't', `
- class should be used when more control over the decoding process is
- required.`]
-				]]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `String decoded from the buffer's contents.`]
-			]
-		]],
-		[/* method */ 'toString(int)', [
-			[/* method description */
-				[/* text */ 't', `Creates a newly allocated string. Its size is the current size of
- the output stream and the valid contents of the buffer have been
- copied into it. Each character `],
-				[/* text */ 't', `c`],
-				[/* text */ 't', ` in the resulting string is
- constructed from the corresponding element `],
-				[/* text */ 't', `b`],
-				[/* text */ 't', ` in the byte
- array such that:
- `],
-				[/* block */ 'b', [
-					[/* code block */ 'c', [
-						[/* inline code block */ 'i', `c == (char)(((hibyte & 0xff) << 8) | (b & 0xff))`]
-					]]
-				]]
-			],
-			[/* parameters */
-				[/* parameter */ 'hibyte', [/* parameter description */
-					[/* text */ 't', `the high byte of each resulting Unicode character.`]
-				]]
-			],
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the current contents of the output stream, as a string.`]
-			]
-		]],
-		[/* method */ 'size()', [
-			[/* method description */
-				[/* text */ 't', `Returns the current size of the buffer.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the value of the `],
+				[/* text */ 't', `Resets the `],
 				[/* inline code block */ 'i', `count`],
-				[/* text */ 't', ` field, which is the number
-          of valid bytes in this output stream.`]
-			]
-		]],
-		[/* method */ 'write(int)', [
-			[/* method description */
-				[/* text */ 't', `Writes the specified byte to this `],
+				[/* text */ 't', ` field of this `],
 				[/* inline code block */ 'i', `ByteArrayOutputStream`],
-				[/* text */ 't', `.`]
+				[/* text */ 't', `
+ to zero, so that all currently accumulated output in the
+ output stream is discarded. The output stream can be used again,
+ reusing the already allocated buffer space.`]
 			],
-			[/* parameters */
-				[/* parameter */ 'b', [/* parameter description */
-					[/* text */ 't', `the byte to be written.`]
-				]]
-			],
+			/* parameters */ UDF,
 			/* throws */ UDF,
 			/* return */ UDF
 		]],
@@ -279,72 +292,18 @@ DocsCollector.collect('java.io.ByteArrayOutputStream', [
 			],
 			/* return */ UDF
 		]],
-		[/* method */ 'close()', [
+		[/* method */ 'write(int)', [
 			[/* method description */
-				[/* text */ 't', `Closing a `],
-				[/* inline code block */ 'i', `ByteArrayOutputStream`],
-				[/* text */ 't', ` has no effect. The methods in
- this class can be called after the stream has been closed without
- generating an `],
-				[/* inline code block */ 'i', `IOException`],
-				[/* text */ 't', `.`]
-			],
-			/* parameters */ UDF,
-			[/* throws */
-				[/* throw */ 'java.io.IOException', [/* throw description */
-					[/* text */ 't', `if an I/O error occurs.`]
-				]]
-			],
-			/* return */ UDF
-		]],
-		[/* method */ 'toByteArray()', [
-			[/* method description */
-				[/* text */ 't', `Creates a newly allocated byte array. Its size is the current
- size of this output stream and the valid contents of the buffer
- have been copied into it.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the current contents of this output stream, as a byte array.`]
-			]
-		]],
-		[/* method */ 'reset()', [
-			[/* method description */
-				[/* text */ 't', `Resets the `],
-				[/* inline code block */ 'i', `count`],
-				[/* text */ 't', ` field of this `],
-				[/* inline code block */ 'i', `ByteArrayOutputStream`],
-				[/* text */ 't', `
- to zero, so that all currently accumulated output in the
- output stream is discarded. The output stream can be used again,
- reusing the already allocated buffer space.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			/* return */ UDF
-		]],
-		[/* method */ 'writeBytes(byte[])', [
-			[/* method description */
-				[/* text */ 't', `Writes the complete contents of the specified byte array
- to this `],
+				[/* text */ 't', `Writes the specified byte to this `],
 				[/* inline code block */ 'i', `ByteArrayOutputStream`],
 				[/* text */ 't', `.`]
 			],
 			[/* parameters */
 				[/* parameter */ 'b', [/* parameter description */
-					[/* text */ 't', `the data.`]
+					[/* text */ 't', `the byte to be written.`]
 				]]
 			],
-			[/* throws */
-				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
-					[/* text */ 't', `if `],
-					[/* inline code block */ 'i', `b`],
-					[/* text */ 't', ` is `],
-					[/* inline code block */ 'i', `null`],
-					[/* text */ 't', `.`]
-				]]
-			],
+			/* throws */ UDF,
 			/* return */ UDF
 		]],
 		[/* method */ 'writeTo(java.io.OutputStream)', [
@@ -372,6 +331,47 @@ DocsCollector.collect('java.io.ByteArrayOutputStream', [
 				]],
 				[/* throw */ 'java.io.IOException', [/* throw description */
 					[/* text */ 't', `if an I/O error occurs.`]
+				]]
+			],
+			/* return */ UDF
+		]],
+		[/* method */ 'close()', [
+			[/* method description */
+				[/* text */ 't', `Closing a `],
+				[/* inline code block */ 'i', `ByteArrayOutputStream`],
+				[/* text */ 't', ` has no effect. The methods in
+ this class can be called after the stream has been closed without
+ generating an `],
+				[/* inline code block */ 'i', `IOException`],
+				[/* text */ 't', `.`]
+			],
+			/* parameters */ UDF,
+			[/* throws */
+				[/* throw */ 'java.io.IOException', [/* throw description */
+					[/* text */ 't', `if an I/O error occurs.`]
+				]]
+			],
+			/* return */ UDF
+		]],
+		[/* method */ 'writeBytes(byte[])', [
+			[/* method description */
+				[/* text */ 't', `Writes the complete contents of the specified byte array
+ to this `],
+				[/* inline code block */ 'i', `ByteArrayOutputStream`],
+				[/* text */ 't', `.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'b', [/* parameter description */
+					[/* text */ 't', `the data.`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
+					[/* text */ 't', `if `],
+					[/* inline code block */ 'i', `b`],
+					[/* text */ 't', ` is `],
+					[/* inline code block */ 'i', `null`],
+					[/* text */ 't', `.`]
 				]]
 			],
 			/* return */ UDF

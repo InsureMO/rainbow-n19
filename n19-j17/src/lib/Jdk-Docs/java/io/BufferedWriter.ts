@@ -75,9 +75,39 @@ DocsCollector.collect('java.io.BufferedWriter', [
 		]]
 	],
 	[/* methods */
+		[/* method */ 'close()', [
+			[/* method description */
+				[/* block */ 'b', `Closes the stream, flushing it first. Once the stream has been closed,
+ further write() or flush() invocations will cause an IOException to be
+ thrown. Closing a previously closed stream has no effect.`]
+			],
+			/* parameters */ UDF,
+			[/* throws */
+				[/* throw */ 'java.io.IOException', [/* throw description */
+					[/* text */ 't', `If an I/O error occurs`]
+				]]
+			],
+			/* return */ UDF
+		]],
 		[/* method */ 'flush()', [
 			[/* method description */
 				[/* text */ 't', `Flushes the stream.`]
+			],
+			/* parameters */ UDF,
+			[/* throws */
+				[/* throw */ 'java.io.IOException', [/* throw description */
+					[/* text */ 't', `If an I/O error occurs`]
+				]]
+			],
+			/* return */ UDF
+		]],
+		[/* method */ 'newLine()', [
+			[/* method description */
+				[/* text */ 't', `Writes a line separator.  The line separator string is defined by the
+ system property `],
+				[/* inline code block */ 'i', `line.separator`],
+				[/* text */ 't', `, and is not necessarily a single
+ newline ('\\n') character.`]
 			],
 			/* parameters */ UDF,
 			[/* throws */
@@ -132,6 +162,22 @@ DocsCollector.collect('java.io.BufferedWriter', [
 			],
 			/* return */ UDF
 		]],
+		[/* method */ 'write(int)', [
+			[/* method description */
+				[/* text */ 't', `Writes a single character.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'c', [/* parameter description */
+					[/* text */ 't', `int specifying a character to be written`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.io.IOException', [/* throw description */
+					[/* text */ 't', `If an I/O error occurs`]
+				]]
+			],
+			/* return */ UDF
+		]],
 		[/* method */ 'write(java.lang.String,int,int)', [
 			[/* method description */
 				[/* text */ 't', `Writes a portion of a String.`]
@@ -157,52 +203,6 @@ DocsCollector.collect('java.io.BufferedWriter', [
 					[/* text */ 't', ` is greater than the length
           of the given string`]
 				]],
-				[/* throw */ 'java.io.IOException', [/* throw description */
-					[/* text */ 't', `If an I/O error occurs`]
-				]]
-			],
-			/* return */ UDF
-		]],
-		[/* method */ 'write(int)', [
-			[/* method description */
-				[/* text */ 't', `Writes a single character.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'c', [/* parameter description */
-					[/* text */ 't', `int specifying a character to be written`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.io.IOException', [/* throw description */
-					[/* text */ 't', `If an I/O error occurs`]
-				]]
-			],
-			/* return */ UDF
-		]],
-		[/* method */ 'newLine()', [
-			[/* method description */
-				[/* text */ 't', `Writes a line separator.  The line separator string is defined by the
- system property `],
-				[/* inline code block */ 'i', `line.separator`],
-				[/* text */ 't', `, and is not necessarily a single
- newline ('\\n') character.`]
-			],
-			/* parameters */ UDF,
-			[/* throws */
-				[/* throw */ 'java.io.IOException', [/* throw description */
-					[/* text */ 't', `If an I/O error occurs`]
-				]]
-			],
-			/* return */ UDF
-		]],
-		[/* method */ 'close()', [
-			[/* method description */
-				[/* block */ 'b', `Closes the stream, flushing it first. Once the stream has been closed,
- further write() or flush() invocations will cause an IOException to be
- thrown. Closing a previously closed stream has no effect.`]
-			],
-			/* parameters */ UDF,
-			[/* throws */
 				[/* throw */ 'java.io.IOException', [/* throw description */
 					[/* text */ 't', `If an I/O error occurs`]
 				]]

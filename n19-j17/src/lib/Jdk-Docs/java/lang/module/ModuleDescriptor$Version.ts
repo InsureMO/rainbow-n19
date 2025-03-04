@@ -119,14 +119,21 @@ DocsCollector.collect('java.lang.module.ModuleDescriptor$Version', [
           reference that is equal to this module reference`]
 			]
 		]],
-		[/* method */ 'toString()', [
+		[/* method */ 'compareTo(java.lang.module.ModuleDescriptor.Version)', [
 			[/* method description */
-				[/* text */ 't', `Returns the string from which this version was parsed.`]
+				[/* text */ 't', `Compares this module version to another module version. Module
+ versions are compared as described in the class description.`]
 			],
-			/* parameters */ UDF,
+			[/* parameters */
+				[/* parameter */ 'that', [/* parameter description */
+					[/* text */ 't', `The module version to compare`]
+				]]
+			],
 			/* throws */ UDF,
 			[/* return description */
-				[/* text */ 't', `The string from which this version was parsed.`]
+				[/* text */ 't', `A negative integer, zero, or a positive integer as this
+         module version is less than, equal to, or greater than the
+         given module version`]
 			]
 		]],
 		[/* method */ 'hashCode()', [
@@ -147,21 +154,14 @@ DocsCollector.collect('java.lang.module.ModuleDescriptor$Version', [
 				[/* text */ 't', `The hash-code value for this module version`]
 			]
 		]],
-		[/* method */ 'compareTo(java.lang.module.ModuleDescriptor.Version)', [
+		[/* method */ 'toString()', [
 			[/* method description */
-				[/* text */ 't', `Compares this module version to another module version. Module
- versions are compared as described in the class description.`]
+				[/* text */ 't', `Returns the string from which this version was parsed.`]
 			],
-			[/* parameters */
-				[/* parameter */ 'that', [/* parameter description */
-					[/* text */ 't', `The module version to compare`]
-				]]
-			],
+			/* parameters */ UDF,
 			/* throws */ UDF,
 			[/* return description */
-				[/* text */ 't', `A negative integer, zero, or a positive integer as this
-         module version is less than, equal to, or greater than the
-         given module version`]
+				[/* text */ 't', `The string from which this version was parsed.`]
 			]
 		]],
 		[/* method */ 'parse(java.lang.String)', [

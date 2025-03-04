@@ -58,113 +58,6 @@ DocsCollector.collect('java.io.PrintWriter', [
 		]]
 	],
 	[/* constructors */
-		[/* constructor */ '<init>(java.lang.String)', [
-			[/* constructor description */
-				[/* text */ 't', `Creates a new PrintWriter, without automatic line flushing, with the
- specified file name.  This convenience constructor creates the necessary
- intermediate `],
-				[/* reference */ 'r', `java.io.OutputStreamWriter`],
-				[/* text */ 't', `,
- which will encode characters using the `],
-				[/* reference */ 'r', `java.charset.Charset#defaultCharset()`],
-				[/* text */ 't', ` for this
- instance of the Java virtual machine.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'fileName', [/* parameter description */
-					[/* text */ 't', `The name of the file to use as the destination of this writer.
-         If the file exists then it will be truncated to zero size;
-         otherwise, a new file will be created.  The output will be
-         written to the file and is buffered.`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.io.FileNotFoundException', [/* throw description */
-					[/* text */ 't', `If the given string does not denote an existing, writable
-          regular file and a new regular file of that name cannot be
-          created, or if some other error occurs while opening or
-          creating the file`]
-				]],
-				[/* throw */ 'java.lang.SecurityException', [/* throw description */
-					[/* text */ 't', `If a security manager is present and `],
-					[/* reference */ 'r', `java.SecurityManager#checkWrite(java.io.FileDescriptor)`],
-					[/* text */ 't', ` denies write
-          access to the file`]
-				]]
-			]
-		]],
-		[/* constructor */ '<init>(java.lang.String,java.lang.String)', [
-			[/* constructor description */
-				[/* text */ 't', `Creates a new PrintWriter, without automatic line flushing, with the
- specified file name and charset.  This convenience constructor creates
- the necessary intermediate `],
-				[/* reference */ 'r', `java.io.OutputStreamWriter`],
-				[/* text */ 't', `, which will encode characters using the provided
- charset.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'fileName', [/* parameter description */
-					[/* text */ 't', `The name of the file to use as the destination of this writer.
-         If the file exists then it will be truncated to zero size;
-         otherwise, a new file will be created.  The output will be
-         written to the file and is buffered.`]
-				]],
-				[/* parameter */ 'csn', [/* parameter description */
-					[/* text */ 't', `The name of a supported `],
-					[/* reference */ 'r', `java.nio.charset.Charset`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.io.FileNotFoundException', [/* throw description */
-					[/* text */ 't', `If the given string does not denote an existing, writable
-          regular file and a new regular file of that name cannot be
-          created, or if some other error occurs while opening or
-          creating the file`]
-				]],
-				[/* throw */ 'java.lang.SecurityException', [/* throw description */
-					[/* text */ 't', `If a security manager is present and `],
-					[/* reference */ 'r', `java.SecurityManager#checkWrite(java.io.FileDescriptor)`],
-					[/* text */ 't', ` denies write
-          access to the file`]
-				]],
-				[/* throw */ 'java.io.UnsupportedEncodingException', [/* throw description */
-					[/* text */ 't', `If the named charset is not supported`]
-				]]
-			]
-		]],
-		[/* constructor */ '<init>(java.lang.String,java.nio.charset.Charset)', [
-			[/* constructor description */
-				[/* text */ 't', `Creates a new PrintWriter, without automatic line flushing, with the
- specified file name and charset.  This convenience constructor creates
- the necessary intermediate `],
-				[/* reference */ 'r', `java.io.OutputStreamWriter`],
-				[/* text */ 't', `, which will encode characters using the provided
- charset.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'fileName', [/* parameter description */
-					[/* text */ 't', `The name of the file to use as the destination of this writer.
-         If the file exists then it will be truncated to zero size;
-         otherwise, a new file will be created.  The output will be
-         written to the file and is buffered.`]
-				]],
-				[/* parameter */ 'charset', [/* parameter description */
-					[/* text */ 't', `A `],
-					[/* reference */ 'r', `java.nio.charset.Charset`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.io.IOException', [/* throw description */
-					[/* text */ 't', `if an I/O error occurs while opening or creating the file`]
-				]],
-				[/* throw */ 'java.lang.SecurityException', [/* throw description */
-					[/* text */ 't', `If a security manager is present and `],
-					[/* reference */ 'r', `java.SecurityManager#checkWrite(java.io.FileDescriptor)`],
-					[/* text */ 't', ` denies write
-          access to the file`]
-				]]
-			]
-		]],
 		[/* constructor */ '<init>(java.io.File)', [
 			[/* constructor description */
 				[/* text */ 't', `Creates a new PrintWriter, without automatic line flushing, with the
@@ -272,24 +165,30 @@ DocsCollector.collect('java.io.PrintWriter', [
 				]]
 			]
 		]],
-		[/* constructor */ '<init>(java.io.Writer)', [
+		[/* constructor */ '<init>(java.io.OutputStream)', [
 			[/* constructor description */
-				[/* text */ 't', `Creates a new PrintWriter, without automatic line flushing.`]
+				[/* text */ 't', `Creates a new PrintWriter, without automatic line flushing, from an
+ existing OutputStream.  This convenience constructor creates the
+ necessary intermediate OutputStreamWriter, which will convert characters
+ into bytes using the default character encoding.`]
 			],
 			[/* parameters */
 				[/* parameter */ 'out', [/* parameter description */
-					[/* text */ 't', `A character-output stream`]
+					[/* text */ 't', `An output stream`]
 				]]
 			],
 			/* throws */ UDF
 		]],
-		[/* constructor */ '<init>(java.io.Writer,boolean)', [
+		[/* constructor */ '<init>(java.io.OutputStream,boolean)', [
 			[/* constructor description */
-				[/* text */ 't', `Creates a new PrintWriter.`]
+				[/* text */ 't', `Creates a new PrintWriter from an existing OutputStream.  This
+ convenience constructor creates the necessary intermediate
+ OutputStreamWriter, which will convert characters into bytes using the
+ default character encoding.`]
 			],
 			[/* parameters */
 				[/* parameter */ 'out', [/* parameter description */
-					[/* text */ 't', `A character-output stream`]
+					[/* text */ 't', `An output stream`]
 				]],
 				[/* parameter */ 'autoFlush', [/* parameter description */
 					[/* text */ 't', `A boolean; if true, the `],
@@ -334,16 +233,24 @@ DocsCollector.collect('java.io.PrintWriter', [
 			],
 			/* throws */ UDF
 		]],
-		[/* constructor */ '<init>(java.io.OutputStream,boolean)', [
+		[/* constructor */ '<init>(java.io.Writer)', [
 			[/* constructor description */
-				[/* text */ 't', `Creates a new PrintWriter from an existing OutputStream.  This
- convenience constructor creates the necessary intermediate
- OutputStreamWriter, which will convert characters into bytes using the
- default character encoding.`]
+				[/* text */ 't', `Creates a new PrintWriter, without automatic line flushing.`]
 			],
 			[/* parameters */
 				[/* parameter */ 'out', [/* parameter description */
-					[/* text */ 't', `An output stream`]
+					[/* text */ 't', `A character-output stream`]
+				]]
+			],
+			/* throws */ UDF
+		]],
+		[/* constructor */ '<init>(java.io.Writer,boolean)', [
+			[/* constructor description */
+				[/* text */ 't', `Creates a new PrintWriter.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'out', [/* parameter description */
+					[/* text */ 't', `A character-output stream`]
 				]],
 				[/* parameter */ 'autoFlush', [/* parameter description */
 					[/* text */ 't', `A boolean; if true, the `],
@@ -359,282 +266,165 @@ DocsCollector.collect('java.io.PrintWriter', [
 			],
 			/* throws */ UDF
 		]],
-		[/* constructor */ '<init>(java.io.OutputStream)', [
+		[/* constructor */ '<init>(java.lang.String)', [
 			[/* constructor description */
-				[/* text */ 't', `Creates a new PrintWriter, without automatic line flushing, from an
- existing OutputStream.  This convenience constructor creates the
- necessary intermediate OutputStreamWriter, which will convert characters
- into bytes using the default character encoding.`]
+				[/* text */ 't', `Creates a new PrintWriter, without automatic line flushing, with the
+ specified file name.  This convenience constructor creates the necessary
+ intermediate `],
+				[/* reference */ 'r', `java.io.OutputStreamWriter`],
+				[/* text */ 't', `,
+ which will encode characters using the `],
+				[/* reference */ 'r', `java.charset.Charset#defaultCharset()`],
+				[/* text */ 't', ` for this
+ instance of the Java virtual machine.`]
 			],
 			[/* parameters */
-				[/* parameter */ 'out', [/* parameter description */
-					[/* text */ 't', `An output stream`]
+				[/* parameter */ 'fileName', [/* parameter description */
+					[/* text */ 't', `The name of the file to use as the destination of this writer.
+         If the file exists then it will be truncated to zero size;
+         otherwise, a new file will be created.  The output will be
+         written to the file and is buffered.`]
 				]]
 			],
-			/* throws */ UDF
+			[/* throws */
+				[/* throw */ 'java.io.FileNotFoundException', [/* throw description */
+					[/* text */ 't', `If the given string does not denote an existing, writable
+          regular file and a new regular file of that name cannot be
+          created, or if some other error occurs while opening or
+          creating the file`]
+				]],
+				[/* throw */ 'java.lang.SecurityException', [/* throw description */
+					[/* text */ 't', `If a security manager is present and `],
+					[/* reference */ 'r', `java.SecurityManager#checkWrite(java.io.FileDescriptor)`],
+					[/* text */ 't', ` denies write
+          access to the file`]
+				]]
+			]
+		]],
+		[/* constructor */ '<init>(java.lang.String,java.lang.String)', [
+			[/* constructor description */
+				[/* text */ 't', `Creates a new PrintWriter, without automatic line flushing, with the
+ specified file name and charset.  This convenience constructor creates
+ the necessary intermediate `],
+				[/* reference */ 'r', `java.io.OutputStreamWriter`],
+				[/* text */ 't', `, which will encode characters using the provided
+ charset.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'fileName', [/* parameter description */
+					[/* text */ 't', `The name of the file to use as the destination of this writer.
+         If the file exists then it will be truncated to zero size;
+         otherwise, a new file will be created.  The output will be
+         written to the file and is buffered.`]
+				]],
+				[/* parameter */ 'csn', [/* parameter description */
+					[/* text */ 't', `The name of a supported `],
+					[/* reference */ 'r', `java.nio.charset.Charset`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.io.FileNotFoundException', [/* throw description */
+					[/* text */ 't', `If the given string does not denote an existing, writable
+          regular file and a new regular file of that name cannot be
+          created, or if some other error occurs while opening or
+          creating the file`]
+				]],
+				[/* throw */ 'java.lang.SecurityException', [/* throw description */
+					[/* text */ 't', `If a security manager is present and `],
+					[/* reference */ 'r', `java.SecurityManager#checkWrite(java.io.FileDescriptor)`],
+					[/* text */ 't', ` denies write
+          access to the file`]
+				]],
+				[/* throw */ 'java.io.UnsupportedEncodingException', [/* throw description */
+					[/* text */ 't', `If the named charset is not supported`]
+				]]
+			]
+		]],
+		[/* constructor */ '<init>(java.lang.String,java.nio.charset.Charset)', [
+			[/* constructor description */
+				[/* text */ 't', `Creates a new PrintWriter, without automatic line flushing, with the
+ specified file name and charset.  This convenience constructor creates
+ the necessary intermediate `],
+				[/* reference */ 'r', `java.io.OutputStreamWriter`],
+				[/* text */ 't', `, which will encode characters using the provided
+ charset.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'fileName', [/* parameter description */
+					[/* text */ 't', `The name of the file to use as the destination of this writer.
+         If the file exists then it will be truncated to zero size;
+         otherwise, a new file will be created.  The output will be
+         written to the file and is buffered.`]
+				]],
+				[/* parameter */ 'charset', [/* parameter description */
+					[/* text */ 't', `A `],
+					[/* reference */ 'r', `java.nio.charset.Charset`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.io.IOException', [/* throw description */
+					[/* text */ 't', `if an I/O error occurs while opening or creating the file`]
+				]],
+				[/* throw */ 'java.lang.SecurityException', [/* throw description */
+					[/* text */ 't', `If a security manager is present and `],
+					[/* reference */ 'r', `java.SecurityManager#checkWrite(java.io.FileDescriptor)`],
+					[/* text */ 't', ` denies write
+          access to the file`]
+				]]
+			]
 		]]
 	],
 	[/* methods */
-		[/* method */ 'println(char[])', [
+		[/* method */ 'clearError()', [
 			[/* method description */
-				[/* text */ 't', `Prints an array of characters and then terminates the line.  This method
- behaves as though it invokes `],
-				[/* reference */ 'r', `#print(java.lang.Object)`, `print(char[])`],
-				[/* text */ 't', ` and then
+				[/* text */ 't', `Clears the error state of this stream.
+
  `],
-				[/* reference */ 'r', `#println()`, `println()`],
-				[/* text */ 't', `.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'x', [/* parameter description */
-					[/* text */ 't', `the array of `],
-					[/* inline code block */ 'i', `char`],
-					[/* text */ 't', ` values to be printed`]
+				[/* block */ 'b', [
+					[/* text */ 't', ` This method will cause subsequent invocations of `],
+					[/* reference */ 'r', `#checkError()`, `checkError()`],
+					[/* text */ 't', ` to return `],
+					[/* inline code block */ 'i', `false`],
+					[/* text */ 't', ` until another write
+ operation fails and invokes `],
+					[/* reference */ 'r', `#setError()`, `setError()`],
+					[/* text */ 't', `.`]
 				]]
-			],
-			/* throws */ UDF,
-			/* return */ UDF
-		]],
-		[/* method */ 'println()', [
-			[/* method description */
-				[/* text */ 't', `Terminates the current line by writing the line separator string.  The
- line separator is `],
-				[/* reference */ 'r', `java.System#lineSeparator()`],
-				[/* text */ 't', ` and is not necessarily
- a single newline character (`],
-				[/* inline code block */ 'i', `'\\n'`],
-				[/* text */ 't', `).`]
 			],
 			/* parameters */ UDF,
 			/* throws */ UDF,
 			/* return */ UDF
 		]],
-		[/* method */ 'println(boolean)', [
+		[/* method */ 'setError()', [
 			[/* method description */
-				[/* text */ 't', `Prints a boolean value and then terminates the line.  This method behaves
- as though it invokes `],
-				[/* reference */ 'r', `#print(boolean)`, `print(boolean)`],
-				[/* text */ 't', ` and then
- `],
-				[/* reference */ 'r', `#println()`, `println()`],
-				[/* text */ 't', `.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'x', [/* parameter description */
-					[/* text */ 't', `the `],
-					[/* inline code block */ 'i', `boolean`],
-					[/* text */ 't', ` value to be printed`]
-				]]
-			],
-			/* throws */ UDF,
-			/* return */ UDF
-		]],
-		[/* method */ 'println(java.lang.String)', [
-			[/* method description */
-				[/* text */ 't', `Prints a String and then terminates the line.  This method behaves as
- though it invokes `],
-				[/* reference */ 'r', `#print(java.lang.Object)`, `print(String)`],
-				[/* text */ 't', ` and then
- `],
-				[/* reference */ 'r', `#println()`, `println()`],
-				[/* text */ 't', `.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'x', [/* parameter description */
-					[/* text */ 't', `the `],
-					[/* inline code block */ 'i', `String`],
-					[/* text */ 't', ` value to be printed`]
-				]]
-			],
-			/* throws */ UDF,
-			/* return */ UDF
-		]],
-		[/* method */ 'println(java.lang.Object)', [
-			[/* method description */
-				[/* text */ 't', `Prints an Object and then terminates the line.  This method calls
- at first String.valueOf(x) to get the printed object's string value,
- then behaves as
- though it invokes `],
-				[/* reference */ 'r', `#print(java.lang.Object)`, `print(String)`],
-				[/* text */ 't', ` and then
- `],
-				[/* reference */ 'r', `#println()`, `println()`],
-				[/* text */ 't', `.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'x', [/* parameter description */
-					[/* text */ 't', `The `],
-					[/* inline code block */ 'i', `Object`],
-					[/* text */ 't', ` to be printed.`]
-				]]
-			],
-			/* throws */ UDF,
-			/* return */ UDF
-		]],
-		[/* method */ 'println(double)', [
-			[/* method description */
-				[/* text */ 't', `Prints a double-precision floating-point number and then terminates the
- line.  This method behaves as though it invokes `],
-				[/* reference */ 'r', `#print(double)`, `print(double)`],
-				[/* text */ 't', ` and then `],
-				[/* reference */ 'r', `#println()`, `println()`],
-				[/* text */ 't', `.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'x', [/* parameter description */
-					[/* text */ 't', `the `],
-					[/* inline code block */ 'i', `double`],
-					[/* text */ 't', ` value to be printed`]
-				]]
-			],
-			/* throws */ UDF,
-			/* return */ UDF
-		]],
-		[/* method */ 'println(float)', [
-			[/* method description */
-				[/* text */ 't', `Prints a floating-point number and then terminates the line.  This method
- behaves as though it invokes `],
-				[/* reference */ 'r', `#print(double)`, `print(float)`],
-				[/* text */ 't', ` and then
- `],
-				[/* reference */ 'r', `#println()`, `println()`],
-				[/* text */ 't', `.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'x', [/* parameter description */
-					[/* text */ 't', `the `],
-					[/* inline code block */ 'i', `float`],
-					[/* text */ 't', ` value to be printed`]
-				]]
-			],
-			/* throws */ UDF,
-			/* return */ UDF
-		]],
-		[/* method */ 'println(long)', [
-			[/* method description */
-				[/* text */ 't', `Prints a long integer and then terminates the line.  This method behaves
- as though it invokes `],
-				[/* reference */ 'r', `#print(double)`, `print(long)`],
-				[/* text */ 't', ` and then
- `],
-				[/* reference */ 'r', `#println()`, `println()`],
-				[/* text */ 't', `.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'x', [/* parameter description */
-					[/* text */ 't', `the `],
-					[/* inline code block */ 'i', `long`],
-					[/* text */ 't', ` value to be printed`]
-				]]
-			],
-			/* throws */ UDF,
-			/* return */ UDF
-		]],
-		[/* method */ 'println(int)', [
-			[/* method description */
-				[/* text */ 't', `Prints an integer and then terminates the line.  This method behaves as
- though it invokes `],
-				[/* reference */ 'r', `#print(double)`, `print(int)`],
-				[/* text */ 't', ` and then `],
-				[/* reference */ 'r', `#println()`, `println()`],
-				[/* text */ 't', `.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'x', [/* parameter description */
-					[/* text */ 't', `the `],
-					[/* inline code block */ 'i', `int`],
-					[/* text */ 't', ` value to be printed`]
-				]]
-			],
-			/* throws */ UDF,
-			/* return */ UDF
-		]],
-		[/* method */ 'println(char)', [
-			[/* method description */
-				[/* text */ 't', `Prints a character and then terminates the line.  This method behaves as
- though it invokes `],
-				[/* reference */ 'r', `#print(double)`, `print(char)`],
-				[/* text */ 't', ` and then `],
-				[/* reference */ 'r', `#println()`, `println()`],
-				[/* text */ 't', `.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'x', [/* parameter description */
-					[/* text */ 't', `the `],
-					[/* inline code block */ 'i', `char`],
-					[/* text */ 't', ` value to be printed`]
-				]]
-			],
-			/* throws */ UDF,
-			/* return */ UDF
-		]],
-		[/* method */ 'append(java.lang.CharSequence,int,int)', [
-			[/* method description */
-				[/* text */ 't', `Appends a subsequence of the specified character sequence to this writer.
+				[/* text */ 't', `Indicates that an error has occurred.
 
  `],
 				[/* block */ 'b', [
-					[/* text */ 't', ` An invocation of this method of the form
- `],
-					[/* inline code block */ 'i', `out.append(csq, start, end)`],
-					[/* text */ 't', `
- when `],
-					[/* inline code block */ 'i', `csq`],
-					[/* text */ 't', ` is not `],
-					[/* inline code block */ 'i', `null`],
-					[/* text */ 't', `, behaves in
- exactly the same way as the invocation
-
- `]
-				]],
-				[/* code block */ 'c', [
-					[/* inline code block */ 'i', `out.write(csq.subSequence(start, end).toString())`]
-				]],
-				[/* block */ 'b', '']
-			],
-			[/* parameters */
-				[/* parameter */ 'csq', [/* parameter description */
-					[/* text */ 't', `The character sequence from which a subsequence will be
-         appended.  If `],
-					[/* inline code block */ 'i', `csq`],
-					[/* text */ 't', ` is `],
-					[/* inline code block */ 'i', `null`],
-					[/* text */ 't', `, then characters
-         will be appended as if `],
-					[/* inline code block */ 'i', `csq`],
-					[/* text */ 't', ` contained the four
-         characters `],
-					[/* inline code block */ 'i', `"null"`],
-					[/* text */ 't', `.`]
-				]],
-				[/* parameter */ 'start', [/* parameter description */
-					[/* text */ 't', `The index of the first character in the subsequence`]
-				]],
-				[/* parameter */ 'end', [/* parameter description */
-					[/* text */ 't', `The index of the character following the last character in the
-         subsequence`]
+					[/* text */ 't', ` This method will cause subsequent invocations of `],
+					[/* reference */ 'r', `#checkError()`, `checkError()`],
+					[/* text */ 't', ` to return `],
+					[/* inline code block */ 'i', `true`],
+					[/* text */ 't', ` until `],
+					[/* reference */ 'r', `#clearError()`, `clearError()`],
+					[/* text */ 't', ` is invoked.`]
 				]]
 			],
-			[/* throws */
-				[/* throw */ 'java.lang.IndexOutOfBoundsException', [/* throw description */
-					[/* text */ 't', `If `],
-					[/* inline code block */ 'i', `start`],
-					[/* text */ 't', ` or `],
-					[/* inline code block */ 'i', `end`],
-					[/* text */ 't', ` are negative, `],
-					[/* inline code block */ 'i', `start`],
-					[/* text */ 't', `
-          is greater than `],
-					[/* inline code block */ 'i', `end`],
-					[/* text */ 't', `, or `],
-					[/* inline code block */ 'i', `end`],
-					[/* text */ 't', ` is greater than
-          `],
-					[/* inline code block */ 'i', `csq.length()`]
-				]]
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			/* return */ UDF
+		]],
+		[/* method */ 'checkError()', [
+			[/* method description */
+				[/* text */ 't', `Flushes the stream if it's not closed and checks its error state.`]
 			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
 			[/* return description */
-				[/* text */ 't', `This writer`]
+				[/* inline code block */ 'i', `true`],
+				[/* text */ 't', ` if the print stream has encountered an error,
+          either on the underlying output stream or during a format
+          conversion.`]
 			]
 		]],
 		[/* method */ 'append(char)', [
@@ -714,13 +504,74 @@ DocsCollector.collect('java.io.PrintWriter', [
 				[/* text */ 't', `This writer`]
 			]
 		]],
-		[/* method */ 'flush()', [
+		[/* method */ 'append(java.lang.CharSequence,int,int)', [
 			[/* method description */
-				[/* text */ 't', `Flushes the stream.`]
+				[/* text */ 't', `Appends a subsequence of the specified character sequence to this writer.
+
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', ` An invocation of this method of the form
+ `],
+					[/* inline code block */ 'i', `out.append(csq, start, end)`],
+					[/* text */ 't', `
+ when `],
+					[/* inline code block */ 'i', `csq`],
+					[/* text */ 't', ` is not `],
+					[/* inline code block */ 'i', `null`],
+					[/* text */ 't', `, behaves in
+ exactly the same way as the invocation
+
+ `]
+				]],
+				[/* code block */ 'c', [
+					[/* inline code block */ 'i', `out.write(csq.subSequence(start, end).toString())`]
+				]],
+				[/* block */ 'b', '']
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			/* return */ UDF
+			[/* parameters */
+				[/* parameter */ 'csq', [/* parameter description */
+					[/* text */ 't', `The character sequence from which a subsequence will be
+         appended.  If `],
+					[/* inline code block */ 'i', `csq`],
+					[/* text */ 't', ` is `],
+					[/* inline code block */ 'i', `null`],
+					[/* text */ 't', `, then characters
+         will be appended as if `],
+					[/* inline code block */ 'i', `csq`],
+					[/* text */ 't', ` contained the four
+         characters `],
+					[/* inline code block */ 'i', `"null"`],
+					[/* text */ 't', `.`]
+				]],
+				[/* parameter */ 'start', [/* parameter description */
+					[/* text */ 't', `The index of the first character in the subsequence`]
+				]],
+				[/* parameter */ 'end', [/* parameter description */
+					[/* text */ 't', `The index of the character following the last character in the
+         subsequence`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.lang.IndexOutOfBoundsException', [/* throw description */
+					[/* text */ 't', `If `],
+					[/* inline code block */ 'i', `start`],
+					[/* text */ 't', ` or `],
+					[/* inline code block */ 'i', `end`],
+					[/* text */ 't', ` are negative, `],
+					[/* inline code block */ 'i', `start`],
+					[/* text */ 't', `
+          is greater than `],
+					[/* inline code block */ 'i', `end`],
+					[/* text */ 't', `, or `],
+					[/* inline code block */ 'i', `end`],
+					[/* text */ 't', ` is greater than
+          `],
+					[/* inline code block */ 'i', `csq.length()`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `This writer`]
+			]
 		]],
 		[/* method */ 'format(java.lang.String,java.lang.Object...)', [
 			[/* method description */
@@ -986,184 +837,20 @@ DocsCollector.collect('java.io.PrintWriter', [
 				[/* text */ 't', `This writer`]
 			]
 		]],
-		[/* method */ 'write(char[],int,int)', [
+		[/* method */ 'close()', [
 			[/* method description */
-				[/* text */ 't', `Writes A Portion of an array of characters.`]
+				[/* text */ 't', `Closes the stream and releases any system resources associated
+ with it. Closing a previously closed stream has no effect.`]
 			],
-			[/* parameters */
-				[/* parameter */ 'buf', [/* parameter description */
-					[/* text */ 't', `Array of characters`]
-				]],
-				[/* parameter */ 'off', [/* parameter description */
-					[/* text */ 't', `Offset from which to start writing characters`]
-				]],
-				[/* parameter */ 'len', [/* parameter description */
-					[/* text */ 't', `Number of characters to write`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.IndexOutOfBoundsException', [/* throw description */
-					[/* text */ 't', `If the values of the `],
-					[/* inline code block */ 'i', `off`],
-					[/* text */ 't', ` and `],
-					[/* inline code block */ 'i', `len`],
-					[/* text */ 't', ` parameters
-          cause the corresponding method of the underlying `],
-					[/* inline code block */ 'i', `Writer`],
-					[/* text */ 't', `
-          to throw an `],
-					[/* inline code block */ 'i', `IndexOutOfBoundsException`]
-				]]
-			],
-			/* return */ UDF
-		]],
-		[/* method */ 'write(java.lang.String)', [
-			[/* method description */
-				[/* text */ 't', `Writes a string.  This method cannot be inherited from the Writer class
- because it must suppress I/O exceptions.`]
-			],
-			[/* parameters */
-				[/* parameter */ 's', [/* parameter description */
-					[/* text */ 't', `String to be written`]
-				]]
-			],
+			/* parameters */ UDF,
 			/* throws */ UDF,
 			/* return */ UDF
 		]],
-		[/* method */ 'write(java.lang.String,int,int)', [
+		[/* method */ 'flush()', [
 			[/* method description */
-				[/* text */ 't', `Writes a portion of a string.`]
+				[/* text */ 't', `Flushes the stream.`]
 			],
-			[/* parameters */
-				[/* parameter */ 's', [/* parameter description */
-					[/* text */ 't', `A String`]
-				]],
-				[/* parameter */ 'off', [/* parameter description */
-					[/* text */ 't', `Offset from which to start writing characters`]
-				]],
-				[/* parameter */ 'len', [/* parameter description */
-					[/* text */ 't', `Number of characters to write`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.IndexOutOfBoundsException', [/* throw description */
-					[/* text */ 't', `If the values of the `],
-					[/* inline code block */ 'i', `off`],
-					[/* text */ 't', ` and `],
-					[/* inline code block */ 'i', `len`],
-					[/* text */ 't', ` parameters
-          cause the corresponding method of the underlying `],
-					[/* inline code block */ 'i', `Writer`],
-					[/* text */ 't', `
-          to throw an `],
-					[/* inline code block */ 'i', `IndexOutOfBoundsException`]
-				]]
-			],
-			/* return */ UDF
-		]],
-		[/* method */ 'write(char[])', [
-			[/* method description */
-				[/* text */ 't', `Writes an array of characters.  This method cannot be inherited from the
- Writer class because it must suppress I/O exceptions.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'buf', [/* parameter description */
-					[/* text */ 't', `Array of characters to be written`]
-				]]
-			],
-			/* throws */ UDF,
-			/* return */ UDF
-		]],
-		[/* method */ 'write(int)', [
-			[/* method description */
-				[/* text */ 't', `Writes a single character.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'c', [/* parameter description */
-					[/* text */ 't', `int specifying a character to be written.`]
-				]]
-			],
-			/* throws */ UDF,
-			/* return */ UDF
-		]],
-		[/* method */ 'print(float)', [
-			[/* method description */
-				[/* text */ 't', `Prints a floating-point number.  The string produced by `],
-				[/* reference */ 'r', `java.String#valueOf(double)`],
-				[/* text */ 't', ` is translated into bytes
- according to the platform's default character encoding, and these bytes
- are written in exactly the manner of the `],
-				[/* reference */ 'r', `#write(int)`, `write(int)`],
-				[/* text */ 't', `
- method.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'f', [/* parameter description */
-					[/* text */ 't', `The `],
-					[/* inline code block */ 'i', `float`],
-					[/* text */ 't', ` to be printed`]
-				]]
-			],
-			/* throws */ UDF,
-			/* return */ UDF
-		]],
-		[/* method */ 'print(long)', [
-			[/* method description */
-				[/* text */ 't', `Prints a long integer.  The string produced by `],
-				[/* reference */ 'r', `java.String#valueOf(double)`],
-				[/* text */ 't', ` is translated into bytes
- according to the platform's default character encoding, and these bytes
- are written in exactly the manner of the `],
-				[/* reference */ 'r', `#write(int)`, `write(int)`],
-				[/* text */ 't', `
- method.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'l', [/* parameter description */
-					[/* text */ 't', `The `],
-					[/* inline code block */ 'i', `long`],
-					[/* text */ 't', ` to be printed`]
-				]]
-			],
-			/* throws */ UDF,
-			/* return */ UDF
-		]],
-		[/* method */ 'print(int)', [
-			[/* method description */
-				[/* text */ 't', `Prints an integer.  The string produced by `],
-				[/* reference */ 'r', `java.String#valueOf(double)`],
-				[/* text */ 't', ` is translated into bytes according
- to the platform's default character encoding, and these bytes are
- written in exactly the manner of the `],
-				[/* reference */ 'r', `#write(int)`, `write(int)`],
-				[/* text */ 't', `
- method.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'i', [/* parameter description */
-					[/* text */ 't', `The `],
-					[/* inline code block */ 'i', `int`],
-					[/* text */ 't', ` to be printed`]
-				]]
-			],
-			/* throws */ UDF,
-			/* return */ UDF
-		]],
-		[/* method */ 'print(char)', [
-			[/* method description */
-				[/* text */ 't', `Prints a character.  The character is translated into one or more bytes
- according to the platform's default character encoding, and these bytes
- are written in exactly the manner of the `],
-				[/* reference */ 'r', `#write(int)`, `write(int)`],
-				[/* text */ 't', ` method.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'c', [/* parameter description */
-					[/* text */ 't', `The `],
-					[/* inline code block */ 'i', `char`],
-					[/* text */ 't', ` to be printed`]
-				]]
-			],
+			/* parameters */ UDF,
 			/* throws */ UDF,
 			/* return */ UDF
 		]],
@@ -1187,45 +874,18 @@ DocsCollector.collect('java.io.PrintWriter', [
 			/* throws */ UDF,
 			/* return */ UDF
 		]],
-		[/* method */ 'print(java.lang.Object)', [
+		[/* method */ 'print(char)', [
 			[/* method description */
-				[/* text */ 't', `Prints an object.  The string produced by the `],
-				[/* reference */ 'r', `java.String#valueOf(java.lang.Object)`],
-				[/* text */ 't', ` method is translated into bytes
+				[/* text */ 't', `Prints a character.  The character is translated into one or more bytes
  according to the platform's default character encoding, and these bytes
  are written in exactly the manner of the `],
-				[/* reference */ 'r', `#write(int)`, `write(int)`],
-				[/* text */ 't', `
- method.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'obj', [/* parameter description */
-					[/* text */ 't', `The `],
-					[/* inline code block */ 'i', `Object`],
-					[/* text */ 't', ` to be printed`]
-				]]
-			],
-			/* throws */ UDF,
-			/* return */ UDF
-		]],
-		[/* method */ 'print(java.lang.String)', [
-			[/* method description */
-				[/* text */ 't', `Prints a string.  If the argument is `],
-				[/* inline code block */ 'i', `null`],
-				[/* text */ 't', ` then the string
- `],
-				[/* inline code block */ 'i', `"null"`],
-				[/* text */ 't', ` is printed.  Otherwise, the string's characters are
- converted into bytes according to the platform's default character
- encoding, and these bytes are written in exactly the manner of the
- `],
 				[/* reference */ 'r', `#write(int)`, `write(int)`],
 				[/* text */ 't', ` method.`]
 			],
 			[/* parameters */
-				[/* parameter */ 's', [/* parameter description */
+				[/* parameter */ 'c', [/* parameter description */
 					[/* text */ 't', `The `],
-					[/* inline code block */ 'i', `String`],
+					[/* inline code block */ 'i', `char`],
 					[/* text */ 't', ` to be printed`]
 				]]
 			],
@@ -1277,65 +937,405 @@ DocsCollector.collect('java.io.PrintWriter', [
 			/* throws */ UDF,
 			/* return */ UDF
 		]],
-		[/* method */ 'close()', [
+		[/* method */ 'print(float)', [
 			[/* method description */
-				[/* text */ 't', `Closes the stream and releases any system resources associated
- with it. Closing a previously closed stream has no effect.`]
+				[/* text */ 't', `Prints a floating-point number.  The string produced by `],
+				[/* reference */ 'r', `java.String#valueOf(double)`],
+				[/* text */ 't', ` is translated into bytes
+ according to the platform's default character encoding, and these bytes
+ are written in exactly the manner of the `],
+				[/* reference */ 'r', `#write(int)`, `write(int)`],
+				[/* text */ 't', `
+ method.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'f', [/* parameter description */
+					[/* text */ 't', `The `],
+					[/* inline code block */ 'i', `float`],
+					[/* text */ 't', ` to be printed`]
+				]]
+			],
+			/* throws */ UDF,
+			/* return */ UDF
+		]],
+		[/* method */ 'print(int)', [
+			[/* method description */
+				[/* text */ 't', `Prints an integer.  The string produced by `],
+				[/* reference */ 'r', `java.String#valueOf(double)`],
+				[/* text */ 't', ` is translated into bytes according
+ to the platform's default character encoding, and these bytes are
+ written in exactly the manner of the `],
+				[/* reference */ 'r', `#write(int)`, `write(int)`],
+				[/* text */ 't', `
+ method.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'i', [/* parameter description */
+					[/* text */ 't', `The `],
+					[/* inline code block */ 'i', `int`],
+					[/* text */ 't', ` to be printed`]
+				]]
+			],
+			/* throws */ UDF,
+			/* return */ UDF
+		]],
+		[/* method */ 'print(java.lang.Object)', [
+			[/* method description */
+				[/* text */ 't', `Prints an object.  The string produced by the `],
+				[/* reference */ 'r', `java.String#valueOf(java.lang.Object)`],
+				[/* text */ 't', ` method is translated into bytes
+ according to the platform's default character encoding, and these bytes
+ are written in exactly the manner of the `],
+				[/* reference */ 'r', `#write(int)`, `write(int)`],
+				[/* text */ 't', `
+ method.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'obj', [/* parameter description */
+					[/* text */ 't', `The `],
+					[/* inline code block */ 'i', `Object`],
+					[/* text */ 't', ` to be printed`]
+				]]
+			],
+			/* throws */ UDF,
+			/* return */ UDF
+		]],
+		[/* method */ 'print(java.lang.String)', [
+			[/* method description */
+				[/* text */ 't', `Prints a string.  If the argument is `],
+				[/* inline code block */ 'i', `null`],
+				[/* text */ 't', ` then the string
+ `],
+				[/* inline code block */ 'i', `"null"`],
+				[/* text */ 't', ` is printed.  Otherwise, the string's characters are
+ converted into bytes according to the platform's default character
+ encoding, and these bytes are written in exactly the manner of the
+ `],
+				[/* reference */ 'r', `#write(int)`, `write(int)`],
+				[/* text */ 't', ` method.`]
+			],
+			[/* parameters */
+				[/* parameter */ 's', [/* parameter description */
+					[/* text */ 't', `The `],
+					[/* inline code block */ 'i', `String`],
+					[/* text */ 't', ` to be printed`]
+				]]
+			],
+			/* throws */ UDF,
+			/* return */ UDF
+		]],
+		[/* method */ 'print(long)', [
+			[/* method description */
+				[/* text */ 't', `Prints a long integer.  The string produced by `],
+				[/* reference */ 'r', `java.String#valueOf(double)`],
+				[/* text */ 't', ` is translated into bytes
+ according to the platform's default character encoding, and these bytes
+ are written in exactly the manner of the `],
+				[/* reference */ 'r', `#write(int)`, `write(int)`],
+				[/* text */ 't', `
+ method.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'l', [/* parameter description */
+					[/* text */ 't', `The `],
+					[/* inline code block */ 'i', `long`],
+					[/* text */ 't', ` to be printed`]
+				]]
+			],
+			/* throws */ UDF,
+			/* return */ UDF
+		]],
+		[/* method */ 'println()', [
+			[/* method description */
+				[/* text */ 't', `Terminates the current line by writing the line separator string.  The
+ line separator is `],
+				[/* reference */ 'r', `java.System#lineSeparator()`],
+				[/* text */ 't', ` and is not necessarily
+ a single newline character (`],
+				[/* inline code block */ 'i', `'\\n'`],
+				[/* text */ 't', `).`]
 			],
 			/* parameters */ UDF,
 			/* throws */ UDF,
 			/* return */ UDF
 		]],
-		[/* method */ 'checkError()', [
+		[/* method */ 'println(boolean)', [
 			[/* method description */
-				[/* text */ 't', `Flushes the stream if it's not closed and checks its error state.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* inline code block */ 'i', `true`],
-				[/* text */ 't', ` if the print stream has encountered an error,
-          either on the underlying output stream or during a format
-          conversion.`]
-			]
-		]],
-		[/* method */ 'setError()', [
-			[/* method description */
-				[/* text */ 't', `Indicates that an error has occurred.
-
+				[/* text */ 't', `Prints a boolean value and then terminates the line.  This method behaves
+ as though it invokes `],
+				[/* reference */ 'r', `#print(boolean)`, `print(boolean)`],
+				[/* text */ 't', ` and then
  `],
-				[/* block */ 'b', [
-					[/* text */ 't', ` This method will cause subsequent invocations of `],
-					[/* reference */ 'r', `#checkError()`, `checkError()`],
-					[/* text */ 't', ` to return `],
-					[/* inline code block */ 'i', `true`],
-					[/* text */ 't', ` until `],
-					[/* reference */ 'r', `#clearError()`, `clearError()`],
-					[/* text */ 't', ` is invoked.`]
+				[/* reference */ 'r', `#println()`, `println()`],
+				[/* text */ 't', `.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'x', [/* parameter description */
+					[/* text */ 't', `the `],
+					[/* inline code block */ 'i', `boolean`],
+					[/* text */ 't', ` value to be printed`]
 				]]
 			],
-			/* parameters */ UDF,
 			/* throws */ UDF,
 			/* return */ UDF
 		]],
-		[/* method */ 'clearError()', [
+		[/* method */ 'println(char)', [
 			[/* method description */
-				[/* text */ 't', `Clears the error state of this stream.
-
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', ` This method will cause subsequent invocations of `],
-					[/* reference */ 'r', `#checkError()`, `checkError()`],
-					[/* text */ 't', ` to return `],
-					[/* inline code block */ 'i', `false`],
-					[/* text */ 't', ` until another write
- operation fails and invokes `],
-					[/* reference */ 'r', `#setError()`, `setError()`],
-					[/* text */ 't', `.`]
+				[/* text */ 't', `Prints a character and then terminates the line.  This method behaves as
+ though it invokes `],
+				[/* reference */ 'r', `#print(double)`, `print(char)`],
+				[/* text */ 't', ` and then `],
+				[/* reference */ 'r', `#println()`, `println()`],
+				[/* text */ 't', `.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'x', [/* parameter description */
+					[/* text */ 't', `the `],
+					[/* inline code block */ 'i', `char`],
+					[/* text */ 't', ` value to be printed`]
 				]]
 			],
-			/* parameters */ UDF,
 			/* throws */ UDF,
+			/* return */ UDF
+		]],
+		[/* method */ 'println(char[])', [
+			[/* method description */
+				[/* text */ 't', `Prints an array of characters and then terminates the line.  This method
+ behaves as though it invokes `],
+				[/* reference */ 'r', `#print(java.lang.Object)`, `print(char[])`],
+				[/* text */ 't', ` and then
+ `],
+				[/* reference */ 'r', `#println()`, `println()`],
+				[/* text */ 't', `.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'x', [/* parameter description */
+					[/* text */ 't', `the array of `],
+					[/* inline code block */ 'i', `char`],
+					[/* text */ 't', ` values to be printed`]
+				]]
+			],
+			/* throws */ UDF,
+			/* return */ UDF
+		]],
+		[/* method */ 'println(double)', [
+			[/* method description */
+				[/* text */ 't', `Prints a double-precision floating-point number and then terminates the
+ line.  This method behaves as though it invokes `],
+				[/* reference */ 'r', `#print(double)`, `print(double)`],
+				[/* text */ 't', ` and then `],
+				[/* reference */ 'r', `#println()`, `println()`],
+				[/* text */ 't', `.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'x', [/* parameter description */
+					[/* text */ 't', `the `],
+					[/* inline code block */ 'i', `double`],
+					[/* text */ 't', ` value to be printed`]
+				]]
+			],
+			/* throws */ UDF,
+			/* return */ UDF
+		]],
+		[/* method */ 'println(float)', [
+			[/* method description */
+				[/* text */ 't', `Prints a floating-point number and then terminates the line.  This method
+ behaves as though it invokes `],
+				[/* reference */ 'r', `#print(double)`, `print(float)`],
+				[/* text */ 't', ` and then
+ `],
+				[/* reference */ 'r', `#println()`, `println()`],
+				[/* text */ 't', `.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'x', [/* parameter description */
+					[/* text */ 't', `the `],
+					[/* inline code block */ 'i', `float`],
+					[/* text */ 't', ` value to be printed`]
+				]]
+			],
+			/* throws */ UDF,
+			/* return */ UDF
+		]],
+		[/* method */ 'println(int)', [
+			[/* method description */
+				[/* text */ 't', `Prints an integer and then terminates the line.  This method behaves as
+ though it invokes `],
+				[/* reference */ 'r', `#print(double)`, `print(int)`],
+				[/* text */ 't', ` and then `],
+				[/* reference */ 'r', `#println()`, `println()`],
+				[/* text */ 't', `.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'x', [/* parameter description */
+					[/* text */ 't', `the `],
+					[/* inline code block */ 'i', `int`],
+					[/* text */ 't', ` value to be printed`]
+				]]
+			],
+			/* throws */ UDF,
+			/* return */ UDF
+		]],
+		[/* method */ 'println(java.lang.Object)', [
+			[/* method description */
+				[/* text */ 't', `Prints an Object and then terminates the line.  This method calls
+ at first String.valueOf(x) to get the printed object's string value,
+ then behaves as
+ though it invokes `],
+				[/* reference */ 'r', `#print(java.lang.Object)`, `print(String)`],
+				[/* text */ 't', ` and then
+ `],
+				[/* reference */ 'r', `#println()`, `println()`],
+				[/* text */ 't', `.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'x', [/* parameter description */
+					[/* text */ 't', `The `],
+					[/* inline code block */ 'i', `Object`],
+					[/* text */ 't', ` to be printed.`]
+				]]
+			],
+			/* throws */ UDF,
+			/* return */ UDF
+		]],
+		[/* method */ 'println(java.lang.String)', [
+			[/* method description */
+				[/* text */ 't', `Prints a String and then terminates the line.  This method behaves as
+ though it invokes `],
+				[/* reference */ 'r', `#print(java.lang.Object)`, `print(String)`],
+				[/* text */ 't', ` and then
+ `],
+				[/* reference */ 'r', `#println()`, `println()`],
+				[/* text */ 't', `.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'x', [/* parameter description */
+					[/* text */ 't', `the `],
+					[/* inline code block */ 'i', `String`],
+					[/* text */ 't', ` value to be printed`]
+				]]
+			],
+			/* throws */ UDF,
+			/* return */ UDF
+		]],
+		[/* method */ 'println(long)', [
+			[/* method description */
+				[/* text */ 't', `Prints a long integer and then terminates the line.  This method behaves
+ as though it invokes `],
+				[/* reference */ 'r', `#print(double)`, `print(long)`],
+				[/* text */ 't', ` and then
+ `],
+				[/* reference */ 'r', `#println()`, `println()`],
+				[/* text */ 't', `.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'x', [/* parameter description */
+					[/* text */ 't', `the `],
+					[/* inline code block */ 'i', `long`],
+					[/* text */ 't', ` value to be printed`]
+				]]
+			],
+			/* throws */ UDF,
+			/* return */ UDF
+		]],
+		[/* method */ 'write(char[])', [
+			[/* method description */
+				[/* text */ 't', `Writes an array of characters.  This method cannot be inherited from the
+ Writer class because it must suppress I/O exceptions.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'buf', [/* parameter description */
+					[/* text */ 't', `Array of characters to be written`]
+				]]
+			],
+			/* throws */ UDF,
+			/* return */ UDF
+		]],
+		[/* method */ 'write(char[],int,int)', [
+			[/* method description */
+				[/* text */ 't', `Writes A Portion of an array of characters.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'buf', [/* parameter description */
+					[/* text */ 't', `Array of characters`]
+				]],
+				[/* parameter */ 'off', [/* parameter description */
+					[/* text */ 't', `Offset from which to start writing characters`]
+				]],
+				[/* parameter */ 'len', [/* parameter description */
+					[/* text */ 't', `Number of characters to write`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.lang.IndexOutOfBoundsException', [/* throw description */
+					[/* text */ 't', `If the values of the `],
+					[/* inline code block */ 'i', `off`],
+					[/* text */ 't', ` and `],
+					[/* inline code block */ 'i', `len`],
+					[/* text */ 't', ` parameters
+          cause the corresponding method of the underlying `],
+					[/* inline code block */ 'i', `Writer`],
+					[/* text */ 't', `
+          to throw an `],
+					[/* inline code block */ 'i', `IndexOutOfBoundsException`]
+				]]
+			],
+			/* return */ UDF
+		]],
+		[/* method */ 'write(int)', [
+			[/* method description */
+				[/* text */ 't', `Writes a single character.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'c', [/* parameter description */
+					[/* text */ 't', `int specifying a character to be written.`]
+				]]
+			],
+			/* throws */ UDF,
+			/* return */ UDF
+		]],
+		[/* method */ 'write(java.lang.String)', [
+			[/* method description */
+				[/* text */ 't', `Writes a string.  This method cannot be inherited from the Writer class
+ because it must suppress I/O exceptions.`]
+			],
+			[/* parameters */
+				[/* parameter */ 's', [/* parameter description */
+					[/* text */ 't', `String to be written`]
+				]]
+			],
+			/* throws */ UDF,
+			/* return */ UDF
+		]],
+		[/* method */ 'write(java.lang.String,int,int)', [
+			[/* method description */
+				[/* text */ 't', `Writes a portion of a string.`]
+			],
+			[/* parameters */
+				[/* parameter */ 's', [/* parameter description */
+					[/* text */ 't', `A String`]
+				]],
+				[/* parameter */ 'off', [/* parameter description */
+					[/* text */ 't', `Offset from which to start writing characters`]
+				]],
+				[/* parameter */ 'len', [/* parameter description */
+					[/* text */ 't', `Number of characters to write`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.lang.IndexOutOfBoundsException', [/* throw description */
+					[/* text */ 't', `If the values of the `],
+					[/* inline code block */ 'i', `off`],
+					[/* text */ 't', ` and `],
+					[/* inline code block */ 'i', `len`],
+					[/* text */ 't', ` parameters
+          cause the corresponding method of the underlying `],
+					[/* inline code block */ 'i', `Writer`],
+					[/* text */ 't', `
+          to throw an `],
+					[/* inline code block */ 'i', `IndexOutOfBoundsException`]
+				]]
+			],
 			/* return */ UDF
 		]]
 	],

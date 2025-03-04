@@ -110,15 +110,27 @@ DocsCollector.collect('java.lang.invoke.SerializedLambda', [
 		]]
 	],
 	[/* methods */
-		[/* method */ 'toString()', UDF],
-		[/* method */ 'getImplMethodName()', [
+		[/* method */ 'getInstantiatedMethodType()', [
 			[/* method description */
-				[/* text */ 't', `Get the name of the implementation method.`]
+				[/* text */ 't', `Get the signature of the primary functional interface method
+ after type variables are substituted with their instantiation
+ from the capture site.`]
 			],
 			/* parameters */ UDF,
 			/* throws */ UDF,
 			[/* return description */
-				[/* text */ 't', `the name of the implementation method`]
+				[/* text */ 't', `the signature of the primary functional interface method
+ after type variable processing`]
+			]
+		]],
+		[/* method */ 'getCapturedArgCount()', [
+			[/* method description */
+				[/* text */ 't', `Get the count of dynamic arguments to the lambda capture site.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the count of dynamic arguments to the lambda capture site`]
 			]
 		]],
 		[/* method */ 'getImplMethodKind()', [
@@ -132,6 +144,30 @@ DocsCollector.collect('java.lang.invoke.SerializedLambda', [
 			/* throws */ UDF,
 			[/* return description */
 				[/* text */ 't', `the method handle kind of the implementation method`]
+			]
+		]],
+		[/* method */ 'getCapturedArg(int)', [
+			[/* method description */
+				[/* text */ 't', `Get a dynamic argument to the lambda capture site.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'i', [/* parameter description */
+					[/* text */ 't', `the argument to capture`]
+				]]
+			],
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `a dynamic argument to the lambda capture site`]
+			]
+		]],
+		[/* method */ 'getCapturingClass()', [
+			[/* method description */
+				[/* text */ 't', `Get the name of the class that captured this lambda.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the name of the class that captured this lambda`]
 			]
 		]],
 		[/* method */ 'getFunctionalInterfaceClass()', [
@@ -181,6 +217,16 @@ DocsCollector.collect('java.lang.invoke.SerializedLambda', [
  method`]
 			]
 		]],
+		[/* method */ 'getImplMethodName()', [
+			[/* method description */
+				[/* text */ 't', `Get the name of the implementation method.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the name of the implementation method`]
+			]
+		]],
 		[/* method */ 'getImplMethodSignature()', [
 			[/* method description */
 				[/* text */ 't', `Get the signature of the implementation method.`]
@@ -191,52 +237,6 @@ DocsCollector.collect('java.lang.invoke.SerializedLambda', [
 				[/* text */ 't', `the signature of the implementation method`]
 			]
 		]],
-		[/* method */ 'getCapturedArg(int)', [
-			[/* method description */
-				[/* text */ 't', `Get a dynamic argument to the lambda capture site.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'i', [/* parameter description */
-					[/* text */ 't', `the argument to capture`]
-				]]
-			],
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `a dynamic argument to the lambda capture site`]
-			]
-		]],
-		[/* method */ 'getCapturingClass()', [
-			[/* method description */
-				[/* text */ 't', `Get the name of the class that captured this lambda.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the name of the class that captured this lambda`]
-			]
-		]],
-		[/* method */ 'getInstantiatedMethodType()', [
-			[/* method description */
-				[/* text */ 't', `Get the signature of the primary functional interface method
- after type variables are substituted with their instantiation
- from the capture site.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the signature of the primary functional interface method
- after type variable processing`]
-			]
-		]],
-		[/* method */ 'getCapturedArgCount()', [
-			[/* method description */
-				[/* text */ 't', `Get the count of dynamic arguments to the lambda capture site.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the count of dynamic arguments to the lambda capture site`]
-			]
-		]]
+		[/* method */ 'toString()', UDF]
 	],
 ]);

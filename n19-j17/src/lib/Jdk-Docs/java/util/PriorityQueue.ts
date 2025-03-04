@@ -130,6 +130,43 @@ DocsCollector.collect('java.util.PriorityQueue', [
 	],
 	/* fields */ UDF,
 	[/* constructors */
+		[/* constructor */ '<init>()', [
+			[/* constructor description */
+				[/* text */ 't', `Creates a `],
+				[/* inline code block */ 'i', `PriorityQueue`],
+				[/* text */ 't', ` with the default initial
+ capacity (11) that orders its elements according to their
+ `],
+				[/* reference */ 'r', `java.lang.Comparable`],
+				[/* text */ 't', `.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF
+		]],
+		[/* constructor */ '<init>(int)', [
+			[/* constructor description */
+				[/* text */ 't', `Creates a `],
+				[/* inline code block */ 'i', `PriorityQueue`],
+				[/* text */ 't', ` with the specified initial
+ capacity that orders its elements according to their
+ `],
+				[/* reference */ 'r', `java.lang.Comparable`],
+				[/* text */ 't', `.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'initialCapacity', [/* parameter description */
+					[/* text */ 't', `the initial capacity for this priority queue`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
+					[/* text */ 't', `if `],
+					[/* inline code block */ 'i', `initialCapacity`],
+					[/* text */ 't', ` is less
+         than 1`]
+				]]
+			]
+		]],
 		[/* constructor */ '<init>(int,java.util.Comparator)', [
 			[/* constructor description */
 				[/* text */ 't', `Creates a `],
@@ -194,6 +231,25 @@ DocsCollector.collect('java.util.PriorityQueue', [
 				]]
 			]
 		]],
+		[/* constructor */ '<init>(java.util.Comparator)', [
+			[/* constructor description */
+				[/* text */ 't', `Creates a `],
+				[/* inline code block */ 'i', `PriorityQueue`],
+				[/* text */ 't', ` with the default initial capacity and
+ whose elements are ordered according to the specified comparator.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'comparator', [/* parameter description */
+					[/* text */ 't', `the comparator that will be used to order this
+         priority queue.  If `],
+					[/* inline code block */ 'i', `null`],
+					[/* text */ 't', `, the `],
+					[/* reference */ 'r', `java.lang.Comparable`],
+					[/* text */ 't', ` of the elements will be used.`]
+				]]
+			],
+			/* throws */ UDF
+		]],
 		[/* constructor */ '<init>(java.util.PriorityQueue)', [
 			[/* constructor description */
 				[/* text */ 't', `Creates a `],
@@ -250,144 +306,9 @@ DocsCollector.collect('java.util.PriorityQueue', [
          of its elements are null`]
 				]]
 			]
-		]],
-		[/* constructor */ '<init>()', [
-			[/* constructor description */
-				[/* text */ 't', `Creates a `],
-				[/* inline code block */ 'i', `PriorityQueue`],
-				[/* text */ 't', ` with the default initial
- capacity (11) that orders its elements according to their
- `],
-				[/* reference */ 'r', `java.lang.Comparable`],
-				[/* text */ 't', `.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF
-		]],
-		[/* constructor */ '<init>(int)', [
-			[/* constructor description */
-				[/* text */ 't', `Creates a `],
-				[/* inline code block */ 'i', `PriorityQueue`],
-				[/* text */ 't', ` with the specified initial
- capacity that orders its elements according to their
- `],
-				[/* reference */ 'r', `java.lang.Comparable`],
-				[/* text */ 't', `.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'initialCapacity', [/* parameter description */
-					[/* text */ 't', `the initial capacity for this priority queue`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
-					[/* text */ 't', `if `],
-					[/* inline code block */ 'i', `initialCapacity`],
-					[/* text */ 't', ` is less
-         than 1`]
-				]]
-			]
-		]],
-		[/* constructor */ '<init>(java.util.Comparator)', [
-			[/* constructor description */
-				[/* text */ 't', `Creates a `],
-				[/* inline code block */ 'i', `PriorityQueue`],
-				[/* text */ 't', ` with the default initial capacity and
- whose elements are ordered according to the specified comparator.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'comparator', [/* parameter description */
-					[/* text */ 't', `the comparator that will be used to order this
-         priority queue.  If `],
-					[/* inline code block */ 'i', `null`],
-					[/* text */ 't', `, the `],
-					[/* reference */ 'r', `java.lang.Comparable`],
-					[/* text */ 't', ` of the elements will be used.`]
-				]]
-			],
-			/* throws */ UDF
 		]]
 	],
 	[/* methods */
-		[/* method */ 'add(java.lang.Object)', [
-			[/* method description */
-				[/* text */ 't', `Inserts the specified element into this priority queue.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'e', [/* parameter description */
-					[/* text */ 't', `the element to add`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.ClassCastException', [/* throw description */
-					[/* text */ 't', `if the specified element cannot be
-         compared with elements currently in this priority queue
-         according to the priority queue's ordering`]
-				]],
-				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
-					[/* text */ 't', `if the specified element is null`]
-				]]
-			],
-			[/* return description */
-				[/* inline code block */ 'i', `true`],
-				[/* text */ 't', ` (as specified by `],
-				[/* reference */ 'r', `.Collection#add(E)`],
-				[/* text */ 't', `)`]
-			]
-		]],
-		[/* method */ 'remove(java.lang.Object)', [
-			[/* method description */
-				[/* text */ 't', `Removes a single instance of the specified element from this queue,
- if it is present.  More formally, removes an element `],
-				[/* inline code block */ 'i', `e`],
-				[/* text */ 't', ` such
- that `],
-				[/* inline code block */ 'i', `o.equals(e)`],
-				[/* text */ 't', `, if this queue contains one or more such
- elements.  Returns `],
-				[/* inline code block */ 'i', `true`],
-				[/* text */ 't', ` if and only if this queue contained
- the specified element (or equivalently, if this queue changed as a
- result of the call).`]
-			],
-			[/* parameters */
-				[/* parameter */ 'o', [/* parameter description */
-					[/* text */ 't', `element to be removed from this queue, if present`]
-				]]
-			],
-			/* throws */ UDF,
-			[/* return description */
-				[/* inline code block */ 'i', `true`],
-				[/* text */ 't', ` if this queue changed as a result of the call`]
-			]
-		]],
-		[/* method */ 'clear()', [
-			[/* method description */
-				[/* text */ 't', `Removes all of the elements from this priority queue.
- The queue will be empty after this call returns.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			/* return */ UDF
-		]],
-		[/* method */ 'size()', [
-			[/* method description */
-				[/* block */ 'b', [
-					[/* text */ 't', `Returns the number of elements in this collection.  If this collection
- contains more than `],
-					[/* inline code block */ 'i', `Integer.MAX_VALUE`],
-					[/* text */ 't', ` elements, returns
- `],
-					[/* inline code block */ 'i', `Integer.MAX_VALUE`],
-					[/* text */ 't', `.`]
-				]]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the number of elements in this collection`]
-			]
-		]],
 		[/* method */ 'toArray(java.lang.Object[])', [
 			[/* method description */
 				[/* text */ 't', `Returns an array containing all of the elements in this queue; the
@@ -463,35 +384,30 @@ DocsCollector.collect('java.util.PriorityQueue', [
 				[/* text */ 't', `an array containing all of the elements in this queue`]
 			]
 		]],
-		[/* method */ 'toArray()', [
+		[/* method */ 'add(java.lang.Object)', [
 			[/* method description */
-				[/* text */ 't', `Returns an array containing all of the elements in this queue.
- The elements are in no particular order.
-
- `],
-				[/* block */ 'b', `The returned array will be "safe" in that no references to it are
- maintained by this queue.  (In other words, this method must allocate
- a new array).  The caller is thus free to modify the returned array.
-
- `],
-				[/* block */ 'b', `This method acts as bridge between array-based and collection-based
- APIs.`]
+				[/* text */ 't', `Inserts the specified element into this priority queue.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `an array containing all of the elements in this queue`]
-			]
-		]],
-		[/* method */ 'iterator()', [
-			[/* method description */
-				[/* text */ 't', `Returns an iterator over the elements in this queue. The iterator
- does not return the elements in any particular order.`]
+			[/* parameters */
+				[/* parameter */ 'e', [/* parameter description */
+					[/* text */ 't', `the element to add`]
+				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			[/* throws */
+				[/* throw */ 'java.lang.ClassCastException', [/* throw description */
+					[/* text */ 't', `if the specified element cannot be
+         compared with elements currently in this priority queue
+         according to the priority queue's ordering`]
+				]],
+				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
+					[/* text */ 't', `if the specified element is null`]
+				]]
+			],
 			[/* return description */
-				[/* text */ 't', `an iterator over the elements in this queue`]
+				[/* inline code block */ 'i', `true`],
+				[/* text */ 't', ` (as specified by `],
+				[/* reference */ 'r', `.Collection#add(E)`],
+				[/* text */ 't', `)`]
 			]
 		]],
 		[/* method */ 'contains(java.lang.Object)', [
@@ -517,6 +433,173 @@ DocsCollector.collect('java.util.PriorityQueue', [
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if this queue contains the specified element`]
+			]
+		]],
+		[/* method */ 'offer(java.lang.Object)', [
+			[/* method description */
+				[/* text */ 't', `Inserts the specified element into this priority queue.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'e', [/* parameter description */
+					[/* text */ 't', `the element to add`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.lang.ClassCastException', [/* throw description */
+					[/* text */ 't', `if the specified element cannot be
+         compared with elements currently in this priority queue
+         according to the priority queue's ordering`]
+				]],
+				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
+					[/* text */ 't', `if the specified element is null`]
+				]]
+			],
+			[/* return description */
+				[/* inline code block */ 'i', `true`],
+				[/* text */ 't', ` (as specified by `],
+				[/* reference */ 'r', `.Queue#offer(E)`],
+				[/* text */ 't', `)`]
+			]
+		]],
+		[/* method */ 'remove(java.lang.Object)', [
+			[/* method description */
+				[/* text */ 't', `Removes a single instance of the specified element from this queue,
+ if it is present.  More formally, removes an element `],
+				[/* inline code block */ 'i', `e`],
+				[/* text */ 't', ` such
+ that `],
+				[/* inline code block */ 'i', `o.equals(e)`],
+				[/* text */ 't', `, if this queue contains one or more such
+ elements.  Returns `],
+				[/* inline code block */ 'i', `true`],
+				[/* text */ 't', ` if and only if this queue contained
+ the specified element (or equivalently, if this queue changed as a
+ result of the call).`]
+			],
+			[/* parameters */
+				[/* parameter */ 'o', [/* parameter description */
+					[/* text */ 't', `element to be removed from this queue, if present`]
+				]]
+			],
+			/* throws */ UDF,
+			[/* return description */
+				[/* inline code block */ 'i', `true`],
+				[/* text */ 't', ` if this queue changed as a result of the call`]
+			]
+		]],
+		[/* method */ 'removeAll(java.util.Collection)', [
+			[/* method description */
+				[/* block */ 'b', `Removes all of this collection's elements that are also contained in the
+ specified collection (optional operation).  After this call returns,
+ this collection will contain no elements in common with the specified
+ collection.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'c', [/* parameter description */
+					[/* text */ 't', `collection containing elements to be removed from this collection`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
+					[/* text */ 't', `if this collection contains one or more
+         null elements and the specified collection does not support
+         null elements
+         (`],
+					[/* text */ 't', `optional`],
+					[/* text */ 't', `),
+         or if the specified collection is null`]
+				]]
+			],
+			[/* return description */
+				[/* inline code block */ 'i', `true`],
+				[/* text */ 't', ` if this collection changed as a result of the
+         call`]
+			]
+		]],
+		[/* method */ 'removeIf(java.util.function.Predicate)', [
+			[/* method description */
+				[/* block */ 'b', `Removes all of the elements of this collection that satisfy the given
+ predicate.  Errors or runtime exceptions thrown during iteration or by
+ the predicate are relayed to the caller.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'filter', [/* parameter description */
+					[/* text */ 't', `a predicate which returns `],
+					[/* inline code block */ 'i', `true`],
+					[/* text */ 't', ` for elements to be
+        removed`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
+					[/* text */ 't', `if the specified filter is null`]
+				]]
+			],
+			[/* return description */
+				[/* inline code block */ 'i', `true`],
+				[/* text */ 't', ` if any elements were removed`]
+			]
+		]],
+		[/* method */ 'retainAll(java.util.Collection)', [
+			[/* method description */
+				[/* block */ 'b', `Retains only the elements in this collection that are contained in the
+ specified collection (optional operation).  In other words, removes from
+ this collection all of its elements that are not contained in the
+ specified collection.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'c', [/* parameter description */
+					[/* text */ 't', `collection containing elements to be retained in this collection`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
+					[/* text */ 't', `if this collection contains one or more
+         null elements and the specified collection does not permit null
+         elements
+         (`],
+					[/* text */ 't', `optional`],
+					[/* text */ 't', `),
+         or if the specified collection is null`]
+				]]
+			],
+			[/* return description */
+				[/* inline code block */ 'i', `true`],
+				[/* text */ 't', ` if this collection changed as a result of the call`]
+			]
+		]],
+		[/* method */ 'peek()', [
+			[/* method description */
+				[/* block */ 'b', [
+					[/* text */ 't', `Retrieves, but does not remove, the head of this queue,
+ or returns `],
+					[/* inline code block */ 'i', `null`],
+					[/* text */ 't', ` if this queue is empty.`]
+				]]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the head of this queue, or `],
+				[/* inline code block */ 'i', `null`],
+				[/* text */ 't', ` if this queue is empty`]
+			]
+		]],
+		[/* method */ 'poll()', [
+			[/* method description */
+				[/* block */ 'b', [
+					[/* text */ 't', `Retrieves and removes the head of this queue,
+ or returns `],
+					[/* inline code block */ 'i', `null`],
+					[/* text */ 't', ` if this queue is empty.`]
+				]]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the head of this queue, or `],
+				[/* inline code block */ 'i', `null`],
+				[/* text */ 't', ` if this queue is empty`]
 			]
 		]],
 		[/* method */ 'spliterator()', [
@@ -557,6 +640,84 @@ DocsCollector.collect('java.util.PriorityQueue', [
 				[/* text */ 't', ` over the elements in this queue`]
 			]
 		]],
+		[/* method */ 'size()', [
+			[/* method description */
+				[/* block */ 'b', [
+					[/* text */ 't', `Returns the number of elements in this collection.  If this collection
+ contains more than `],
+					[/* inline code block */ 'i', `Integer.MAX_VALUE`],
+					[/* text */ 't', ` elements, returns
+ `],
+					[/* inline code block */ 'i', `Integer.MAX_VALUE`],
+					[/* text */ 't', `.`]
+				]]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the number of elements in this collection`]
+			]
+		]],
+		[/* method */ 'toArray()', [
+			[/* method description */
+				[/* text */ 't', `Returns an array containing all of the elements in this queue.
+ The elements are in no particular order.
+
+ `],
+				[/* block */ 'b', `The returned array will be "safe" in that no references to it are
+ maintained by this queue.  (In other words, this method must allocate
+ a new array).  The caller is thus free to modify the returned array.
+
+ `],
+				[/* block */ 'b', `This method acts as bridge between array-based and collection-based
+ APIs.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `an array containing all of the elements in this queue`]
+			]
+		]],
+		[/* method */ 'comparator()', [
+			[/* method description */
+				[/* text */ 't', `Returns the comparator used to order the elements in this
+ queue, or `],
+				[/* inline code block */ 'i', `null`],
+				[/* text */ 't', ` if this queue is sorted according to
+ the `],
+				[/* reference */ 'r', `java.lang.Comparable`],
+				[/* text */ 't', ` of its elements.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the comparator used to order this queue, or
+         `],
+				[/* inline code block */ 'i', `null`],
+				[/* text */ 't', ` if this queue is sorted according to the
+         natural ordering of its elements`]
+			]
+		]],
+		[/* method */ 'iterator()', [
+			[/* method description */
+				[/* text */ 't', `Returns an iterator over the elements in this queue. The iterator
+ does not return the elements in any particular order.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `an iterator over the elements in this queue`]
+			]
+		]],
+		[/* method */ 'clear()', [
+			[/* method description */
+				[/* text */ 't', `Removes all of the elements from this priority queue.
+ The queue will be empty after this call returns.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			/* return */ UDF
+		]],
 		[/* method */ 'forEach(java.util.function.Consumer)', [
 			[/* method description */
 				[/* block */ 'b', [
@@ -585,167 +746,6 @@ DocsCollector.collect('java.util.PriorityQueue', [
 				]]
 			],
 			/* return */ UDF
-		]],
-		[/* method */ 'poll()', [
-			[/* method description */
-				[/* block */ 'b', [
-					[/* text */ 't', `Retrieves and removes the head of this queue,
- or returns `],
-					[/* inline code block */ 'i', `null`],
-					[/* text */ 't', ` if this queue is empty.`]
-				]]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the head of this queue, or `],
-				[/* inline code block */ 'i', `null`],
-				[/* text */ 't', ` if this queue is empty`]
-			]
-		]],
-		[/* method */ 'peek()', [
-			[/* method description */
-				[/* block */ 'b', [
-					[/* text */ 't', `Retrieves, but does not remove, the head of this queue,
- or returns `],
-					[/* inline code block */ 'i', `null`],
-					[/* text */ 't', ` if this queue is empty.`]
-				]]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the head of this queue, or `],
-				[/* inline code block */ 'i', `null`],
-				[/* text */ 't', ` if this queue is empty`]
-			]
-		]],
-		[/* method */ 'removeIf(java.util.function.Predicate)', [
-			[/* method description */
-				[/* block */ 'b', `Removes all of the elements of this collection that satisfy the given
- predicate.  Errors or runtime exceptions thrown during iteration or by
- the predicate are relayed to the caller.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'filter', [/* parameter description */
-					[/* text */ 't', `a predicate which returns `],
-					[/* inline code block */ 'i', `true`],
-					[/* text */ 't', ` for elements to be
-        removed`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
-					[/* text */ 't', `if the specified filter is null`]
-				]]
-			],
-			[/* return description */
-				[/* inline code block */ 'i', `true`],
-				[/* text */ 't', ` if any elements were removed`]
-			]
-		]],
-		[/* method */ 'removeAll(java.util.Collection)', [
-			[/* method description */
-				[/* block */ 'b', `Removes all of this collection's elements that are also contained in the
- specified collection (optional operation).  After this call returns,
- this collection will contain no elements in common with the specified
- collection.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'c', [/* parameter description */
-					[/* text */ 't', `collection containing elements to be removed from this collection`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
-					[/* text */ 't', `if this collection contains one or more
-         null elements and the specified collection does not support
-         null elements
-         (`],
-					[/* text */ 't', `optional`],
-					[/* text */ 't', `),
-         or if the specified collection is null`]
-				]]
-			],
-			[/* return description */
-				[/* inline code block */ 'i', `true`],
-				[/* text */ 't', ` if this collection changed as a result of the
-         call`]
-			]
-		]],
-		[/* method */ 'retainAll(java.util.Collection)', [
-			[/* method description */
-				[/* block */ 'b', `Retains only the elements in this collection that are contained in the
- specified collection (optional operation).  In other words, removes from
- this collection all of its elements that are not contained in the
- specified collection.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'c', [/* parameter description */
-					[/* text */ 't', `collection containing elements to be retained in this collection`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
-					[/* text */ 't', `if this collection contains one or more
-         null elements and the specified collection does not permit null
-         elements
-         (`],
-					[/* text */ 't', `optional`],
-					[/* text */ 't', `),
-         or if the specified collection is null`]
-				]]
-			],
-			[/* return description */
-				[/* inline code block */ 'i', `true`],
-				[/* text */ 't', ` if this collection changed as a result of the call`]
-			]
-		]],
-		[/* method */ 'comparator()', [
-			[/* method description */
-				[/* text */ 't', `Returns the comparator used to order the elements in this
- queue, or `],
-				[/* inline code block */ 'i', `null`],
-				[/* text */ 't', ` if this queue is sorted according to
- the `],
-				[/* reference */ 'r', `java.lang.Comparable`],
-				[/* text */ 't', ` of its elements.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the comparator used to order this queue, or
-         `],
-				[/* inline code block */ 'i', `null`],
-				[/* text */ 't', ` if this queue is sorted according to the
-         natural ordering of its elements`]
-			]
-		]],
-		[/* method */ 'offer(java.lang.Object)', [
-			[/* method description */
-				[/* text */ 't', `Inserts the specified element into this priority queue.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'e', [/* parameter description */
-					[/* text */ 't', `the element to add`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.ClassCastException', [/* throw description */
-					[/* text */ 't', `if the specified element cannot be
-         compared with elements currently in this priority queue
-         according to the priority queue's ordering`]
-				]],
-				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
-					[/* text */ 't', `if the specified element is null`]
-				]]
-			],
-			[/* return description */
-				[/* inline code block */ 'i', `true`],
-				[/* text */ 't', ` (as specified by `],
-				[/* reference */ 'r', `.Queue#offer(E)`],
-				[/* text */ 't', `)`]
-			]
 		]]
 	],
 ]);

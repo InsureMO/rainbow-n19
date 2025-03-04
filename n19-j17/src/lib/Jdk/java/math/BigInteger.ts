@@ -859,14 +859,14 @@ JdkClassCreateHelper.class('java.math.BigInteger', [
 		]
 	],
 	[/* declared fields */
-		[/* public static final java.math.BigInteger java.math.BigInteger.ZERO */
-			/* name */ 'ZERO',
+		[/* public static final java.math.BigInteger java.math.BigInteger.ONE */
+			/* name */ 'ONE',
 			/* type */ 'java.math.BigInteger',
 			/* annotations */ UDF,
 			/* modifiers */ 25
 		],
-		[/* public static final java.math.BigInteger java.math.BigInteger.ONE */
-			/* name */ 'ONE',
+		[/* public static final java.math.BigInteger java.math.BigInteger.TEN */
+			/* name */ 'TEN',
 			/* type */ 'java.math.BigInteger',
 			/* annotations */ UDF,
 			/* modifiers */ 25
@@ -877,8 +877,8 @@ JdkClassCreateHelper.class('java.math.BigInteger', [
 			/* annotations */ UDF,
 			/* modifiers */ 25
 		],
-		[/* public static final java.math.BigInteger java.math.BigInteger.TEN */
-			/* name */ 'TEN',
+		[/* public static final java.math.BigInteger java.math.BigInteger.ZERO */
+			/* name */ 'ZERO',
 			/* type */ 'java.math.BigInteger',
 			/* annotations */ UDF,
 			/* modifiers */ 25

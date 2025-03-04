@@ -8,6 +8,17 @@ DocsCollector.collect('java.io.PushbackReader', [
 	],
 	/* fields */ UDF,
 	[/* constructors */
+		[/* constructor */ '<init>(java.io.Reader)', [
+			[/* constructor description */
+				[/* text */ 't', `Creates a new pushback reader with a one-character pushback buffer.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'in', [/* parameter description */
+					[/* text */ 't', `The reader from which characters will be read`]
+				]]
+			],
+			/* throws */ UDF
+		]],
 		[/* constructor */ '<init>(java.io.Reader,int)', [
 			[/* constructor description */
 				[/* text */ 't', `Creates a new pushback reader with a pushback buffer of the given size.`]
@@ -26,20 +37,36 @@ DocsCollector.collect('java.io.PushbackReader', [
 					[/* inline code block */ 'i', `size <= 0`]
 				]]
 			]
-		]],
-		[/* constructor */ '<init>(java.io.Reader)', [
-			[/* constructor description */
-				[/* text */ 't', `Creates a new pushback reader with a one-character pushback buffer.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'in', [/* parameter description */
-					[/* text */ 't', `The reader from which characters will be read`]
-				]]
-			],
-			/* throws */ UDF
 		]]
 	],
 	[/* methods */
+		[/* method */ 'markSupported()', [
+			[/* method description */
+				[/* text */ 't', `Tells whether this stream supports the mark() operation, which it does
+ not.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `true if and only if this stream supports the mark operation.`]
+			]
+		]],
+		[/* method */ 'ready()', [
+			[/* method description */
+				[/* text */ 't', `Tells whether this stream is ready to be read.`]
+			],
+			/* parameters */ UDF,
+			[/* throws */
+				[/* throw */ 'java.io.IOException', [/* throw description */
+					[/* text */ 't', `If an I/O error occurs`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `True if the next read() is guaranteed not to block for input,
+ false otherwise.  Note that returning false does not guarantee that the
+ next read will block.`]
+			]
+		]],
 		[/* method */ 'read()', [
 			[/* method description */
 				[/* text */ 't', `Reads a single character.`]
@@ -56,6 +83,7 @@ DocsCollector.collect('java.io.PushbackReader', [
 			]
 		]],
 		[/* method */ 'read(char[],int,int)', UDF],
+		[/* method */ 'skip(long)', UDF],
 		[/* method */ 'close()', [
 			[/* method description */
 				[/* text */ 't', `Closes the stream and releases any system resources associated with
@@ -95,18 +123,6 @@ DocsCollector.collect('java.io.PushbackReader', [
 				]]
 			],
 			/* return */ UDF
-		]],
-		[/* method */ 'skip(long)', UDF],
-		[/* method */ 'markSupported()', [
-			[/* method description */
-				[/* text */ 't', `Tells whether this stream supports the mark() operation, which it does
- not.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `true if and only if this stream supports the mark operation.`]
-			]
 		]],
 		[/* method */ 'reset()', [
 			[/* method description */
@@ -200,22 +216,6 @@ DocsCollector.collect('java.io.PushbackReader', [
 				]]
 			],
 			/* return */ UDF
-		]],
-		[/* method */ 'ready()', [
-			[/* method description */
-				[/* text */ 't', `Tells whether this stream is ready to be read.`]
-			],
-			/* parameters */ UDF,
-			[/* throws */
-				[/* throw */ 'java.io.IOException', [/* throw description */
-					[/* text */ 't', `If an I/O error occurs`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `True if the next read() is guaranteed not to block for input,
- false otherwise.  Note that returning false does not guarantee that the
- next read will block.`]
-			]
 		]]
 	],
 ]);

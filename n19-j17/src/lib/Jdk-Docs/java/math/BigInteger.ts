@@ -134,14 +134,14 @@ DocsCollector.collect('java.math.BigInteger', [
 		]]
 	],
 	[/* fields */
-		[/* field */ 'ZERO', [
-			[/* field description */
-				[/* text */ 't', `The BigInteger constant zero.`]
-			],
-		]],
 		[/* field */ 'ONE', [
 			[/* field description */
 				[/* text */ 't', `The BigInteger constant one.`]
+			],
+		]],
+		[/* field */ 'TEN', [
+			[/* field description */
+				[/* text */ 't', `The BigInteger constant ten.`]
 			],
 		]],
 		[/* field */ 'TWO', [
@@ -149,171 +149,13 @@ DocsCollector.collect('java.math.BigInteger', [
 				[/* text */ 't', `The BigInteger constant two.`]
 			],
 		]],
-		[/* field */ 'TEN', [
+		[/* field */ 'ZERO', [
 			[/* field description */
-				[/* text */ 't', `The BigInteger constant ten.`]
+				[/* text */ 't', `The BigInteger constant zero.`]
 			],
 		]]
 	],
 	[/* constructors */
-		[/* constructor */ '<init>(int,java.util.Random)', [
-			[/* constructor description */
-				[/* text */ 't', `Constructs a randomly generated BigInteger, uniformly distributed over
- the range 0 to (2`],
-				[/* text */ 't', `numBits`, 'sup'],
-				[/* text */ 't', ` - 1), inclusive.
- The uniformity of the distribution assumes that a fair source of random
- bits is provided in `],
-				[/* inline code block */ 'i', `rnd`],
-				[/* text */ 't', `.  Note that this constructor always
- constructs a non-negative BigInteger.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'numBits', [/* parameter description */
-					[/* text */ 't', `maximum bitLength of the new BigInteger.`]
-				]],
-				[/* parameter */ 'rnd', [/* parameter description */
-					[/* text */ 't', `source of randomness to be used in computing the new
-         BigInteger.`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
-					[/* text */ 't', ``],
-					[/* inline code block */ 'i', `numBits`],
-					[/* text */ 't', ` is negative.`]
-				]]
-			]
-		]],
-		[/* constructor */ '<init>(java.lang.String)', [
-			[/* constructor description */
-				[/* text */ 't', `Translates the decimal String representation of a BigInteger
- into a BigInteger.  The String representation consists of an
- optional minus or plus sign followed by a sequence of one or
- more decimal digits.  The character-to-digit mapping is
- provided by `],
-				[/* reference */ 'r', `java.Character#digit(int,int)`],
-				[/* text */ 't', `.  The String may not contain any extraneous
- characters (whitespace, for example).`]
-			],
-			[/* parameters */
-				[/* parameter */ 'val', [/* parameter description */
-					[/* text */ 't', `decimal String representation of BigInteger.`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.NumberFormatException', [/* throw description */
-					[/* text */ 't', ``],
-					[/* inline code block */ 'i', `val`],
-					[/* text */ 't', ` is not a valid representation
-         of a BigInteger.`]
-				]]
-			]
-		]],
-		[/* constructor */ '<init>(int,int,java.util.Random)', [
-			[/* constructor description */
-				[/* text */ 't', `Constructs a randomly generated positive BigInteger that is probably
- prime, with the specified bitLength.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'bitLength', [/* parameter description */
-					[/* text */ 't', `bitLength of the returned BigInteger.`]
-				]],
-				[/* parameter */ 'certainty', [/* parameter description */
-					[/* text */ 't', `a measure of the uncertainty that the caller is
-         willing to tolerate.  The probability that the new BigInteger
-         represents a prime number will exceed
-         (1 - 1/2`],
-					[/* text */ 't', `certainty`, 'sup'],
-					[/* text */ 't', `).  The execution time of
-         this constructor is proportional to the value of this parameter.`]
-				]],
-				[/* parameter */ 'rnd', [/* parameter description */
-					[/* text */ 't', `source of random bits used to select candidates to be
-         tested for primality.`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.ArithmeticException', [/* throw description */
-					[/* text */ 't', ``],
-					[/* inline code block */ 'i', `bitLength < 2`],
-					[/* text */ 't', ` or `],
-					[/* inline code block */ 'i', `bitLength`],
-					[/* text */ 't', ` is too large.`]
-				]]
-			]
-		]],
-		[/* constructor */ '<init>(int,byte[],int,int)', [
-			[/* constructor description */
-				[/* text */ 't', `Translates the sign-magnitude representation of a BigInteger into a
- BigInteger.  The sign is represented as an integer signum value: -1 for
- negative, 0 for zero, or 1 for positive.  The magnitude is a sub-array of
- a byte array in `],
-				[/* text */ 't', `big-endian`],
-				[/* text */ 't', ` byte-order: the most significant byte
- is the element at index `],
-				[/* inline code block */ 'i', `off`],
-				[/* text */ 't', `.  A zero value of the length
- `],
-				[/* inline code block */ 'i', `len`],
-				[/* text */ 't', ` is permissible, and will result in a BigInteger value of 0,
- whether signum is -1, 0 or 1.  The `],
-				[/* inline code block */ 'i', `magnitude`],
-				[/* text */ 't', ` array is assumed to
- be unchanged for the duration of the constructor call.
-
- An `],
-				[/* inline code block */ 'i', `IndexOutOfBoundsException`],
-				[/* text */ 't', ` is thrown if the length of the array
- `],
-				[/* inline code block */ 'i', `magnitude`],
-				[/* text */ 't', ` is non-zero and either `],
-				[/* inline code block */ 'i', `off`],
-				[/* text */ 't', ` is negative,
- `],
-				[/* inline code block */ 'i', `len`],
-				[/* text */ 't', ` is negative, or `],
-				[/* inline code block */ 'i', `off+len`],
-				[/* text */ 't', ` is greater than the length of
- `],
-				[/* inline code block */ 'i', `magnitude`],
-				[/* text */ 't', `.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'signum', [/* parameter description */
-					[/* text */ 't', `signum of the number (-1 for negative, 0 for zero, 1
-         for positive).`]
-				]],
-				[/* parameter */ 'magnitude', [/* parameter description */
-					[/* text */ 't', `big-endian binary representation of the magnitude of
-         the number.`]
-				]],
-				[/* parameter */ 'off', [/* parameter description */
-					[/* text */ 't', `the start offset of the binary representation.`]
-				]],
-				[/* parameter */ 'len', [/* parameter description */
-					[/* text */ 't', `the number of bytes to use.`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.NumberFormatException', [/* throw description */
-					[/* text */ 't', ``],
-					[/* inline code block */ 'i', `signum`],
-					[/* text */ 't', ` is not one of the three
-         legal values (-1, 0, and 1), or `],
-					[/* inline code block */ 'i', `signum`],
-					[/* text */ 't', ` is 0 and
-         `],
-					[/* inline code block */ 'i', `magnitude`],
-					[/* text */ 't', ` contains one or more non-zero bytes.`]
-				]],
-				[/* throw */ 'java.lang.IndexOutOfBoundsException', [/* throw description */
-					[/* text */ 't', `if the provided array offset and
-         length would cause an index into the byte array to be
-         negative or greater than or equal to the array length.`]
-				]]
-			]
-		]],
 		[/* constructor */ '<init>(byte[])', [
 			[/* constructor description */
 				[/* text */ 't', `Translates a byte array containing the two's-complement binary
@@ -397,45 +239,6 @@ DocsCollector.collect('java.math.BigInteger', [
 				]]
 			]
 		]],
-		[/* constructor */ '<init>(java.lang.String,int)', [
-			[/* constructor description */
-				[/* text */ 't', `Translates the String representation of a BigInteger in the
- specified radix into a BigInteger.  The String representation
- consists of an optional minus or plus sign followed by a
- sequence of one or more digits in the specified radix.  The
- character-to-digit mapping is provided by `],
-				[/* reference */ 'r', `java.Character#digit(int,int)`],
-				[/* text */ 't', `.  The String may
- not contain any extraneous characters (whitespace, for
- example).`]
-			],
-			[/* parameters */
-				[/* parameter */ 'val', [/* parameter description */
-					[/* text */ 't', `String representation of BigInteger.`]
-				]],
-				[/* parameter */ 'radix', [/* parameter description */
-					[/* text */ 't', `radix to be used in interpreting `],
-					[/* inline code block */ 'i', `val`],
-					[/* text */ 't', `.`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.NumberFormatException', [/* throw description */
-					[/* text */ 't', ``],
-					[/* inline code block */ 'i', `val`],
-					[/* text */ 't', ` is not a valid representation
-         of a BigInteger in the specified radix, or `],
-					[/* inline code block */ 'i', `radix`],
-					[/* text */ 't', ` is
-         outside the range from `],
-					[/* reference */ 'r', `java.Character#MIN_RADIX`],
-					[/* text */ 't', ` to
-         `],
-					[/* reference */ 'r', `java.Character#MAX_RADIX`],
-					[/* text */ 't', `, inclusive.`]
-				]]
-			]
-		]],
 		[/* constructor */ '<init>(int,byte[])', [
 			[/* constructor description */
 				[/* text */ 't', `Translates the sign-magnitude representation of a BigInteger into a
@@ -474,38 +277,206 @@ DocsCollector.collect('java.math.BigInteger', [
 					[/* text */ 't', ` contains one or more non-zero bytes.`]
 				]]
 			]
-		]]
-	],
-	[/* methods */
-		[/* method */ 'add(java.math.BigInteger)', [
-			[/* method description */
-				[/* text */ 't', `Returns a BigInteger whose value is `],
-				[/* inline code block */ 'i', `(this + val)`],
+		]],
+		[/* constructor */ '<init>(int,byte[],int,int)', [
+			[/* constructor description */
+				[/* text */ 't', `Translates the sign-magnitude representation of a BigInteger into a
+ BigInteger.  The sign is represented as an integer signum value: -1 for
+ negative, 0 for zero, or 1 for positive.  The magnitude is a sub-array of
+ a byte array in `],
+				[/* text */ 't', `big-endian`],
+				[/* text */ 't', ` byte-order: the most significant byte
+ is the element at index `],
+				[/* inline code block */ 'i', `off`],
+				[/* text */ 't', `.  A zero value of the length
+ `],
+				[/* inline code block */ 'i', `len`],
+				[/* text */ 't', ` is permissible, and will result in a BigInteger value of 0,
+ whether signum is -1, 0 or 1.  The `],
+				[/* inline code block */ 'i', `magnitude`],
+				[/* text */ 't', ` array is assumed to
+ be unchanged for the duration of the constructor call.
+
+ An `],
+				[/* inline code block */ 'i', `IndexOutOfBoundsException`],
+				[/* text */ 't', ` is thrown if the length of the array
+ `],
+				[/* inline code block */ 'i', `magnitude`],
+				[/* text */ 't', ` is non-zero and either `],
+				[/* inline code block */ 'i', `off`],
+				[/* text */ 't', ` is negative,
+ `],
+				[/* inline code block */ 'i', `len`],
+				[/* text */ 't', ` is negative, or `],
+				[/* inline code block */ 'i', `off+len`],
+				[/* text */ 't', ` is greater than the length of
+ `],
+				[/* inline code block */ 'i', `magnitude`],
 				[/* text */ 't', `.`]
 			],
 			[/* parameters */
-				[/* parameter */ 'val', [/* parameter description */
-					[/* text */ 't', `value to be added to this BigInteger.`]
+				[/* parameter */ 'signum', [/* parameter description */
+					[/* text */ 't', `signum of the number (-1 for negative, 0 for zero, 1
+         for positive).`]
+				]],
+				[/* parameter */ 'magnitude', [/* parameter description */
+					[/* text */ 't', `big-endian binary representation of the magnitude of
+         the number.`]
+				]],
+				[/* parameter */ 'off', [/* parameter description */
+					[/* text */ 't', `the start offset of the binary representation.`]
+				]],
+				[/* parameter */ 'len', [/* parameter description */
+					[/* text */ 't', `the number of bytes to use.`]
 				]]
 			],
-			/* throws */ UDF,
-			[/* return description */
-				[/* inline code block */ 'i', `this + val`]
+			[/* throws */
+				[/* throw */ 'java.lang.NumberFormatException', [/* throw description */
+					[/* text */ 't', ``],
+					[/* inline code block */ 'i', `signum`],
+					[/* text */ 't', ` is not one of the three
+         legal values (-1, 0, and 1), or `],
+					[/* inline code block */ 'i', `signum`],
+					[/* text */ 't', ` is 0 and
+         `],
+					[/* inline code block */ 'i', `magnitude`],
+					[/* text */ 't', ` contains one or more non-zero bytes.`]
+				]],
+				[/* throw */ 'java.lang.IndexOutOfBoundsException', [/* throw description */
+					[/* text */ 't', `if the provided array offset and
+         length would cause an index into the byte array to be
+         negative or greater than or equal to the array length.`]
+				]]
 			]
 		]],
-		[/* method */ 'bitCount()', [
-			[/* method description */
-				[/* text */ 't', `Returns the number of bits in the two's complement representation
- of this BigInteger that differ from its sign bit.  This method is
- useful when implementing bit-vector style sets atop BigIntegers.`]
+		[/* constructor */ '<init>(int,int,java.util.Random)', [
+			[/* constructor description */
+				[/* text */ 't', `Constructs a randomly generated positive BigInteger that is probably
+ prime, with the specified bitLength.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `number of bits in the two's complement representation
-         of this BigInteger that differ from its sign bit.`]
+			[/* parameters */
+				[/* parameter */ 'bitLength', [/* parameter description */
+					[/* text */ 't', `bitLength of the returned BigInteger.`]
+				]],
+				[/* parameter */ 'certainty', [/* parameter description */
+					[/* text */ 't', `a measure of the uncertainty that the caller is
+         willing to tolerate.  The probability that the new BigInteger
+         represents a prime number will exceed
+         (1 - 1/2`],
+					[/* text */ 't', `certainty`, 'sup'],
+					[/* text */ 't', `).  The execution time of
+         this constructor is proportional to the value of this parameter.`]
+				]],
+				[/* parameter */ 'rnd', [/* parameter description */
+					[/* text */ 't', `source of random bits used to select candidates to be
+         tested for primality.`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.lang.ArithmeticException', [/* throw description */
+					[/* text */ 't', ``],
+					[/* inline code block */ 'i', `bitLength < 2`],
+					[/* text */ 't', ` or `],
+					[/* inline code block */ 'i', `bitLength`],
+					[/* text */ 't', ` is too large.`]
+				]]
 			]
 		]],
+		[/* constructor */ '<init>(int,java.util.Random)', [
+			[/* constructor description */
+				[/* text */ 't', `Constructs a randomly generated BigInteger, uniformly distributed over
+ the range 0 to (2`],
+				[/* text */ 't', `numBits`, 'sup'],
+				[/* text */ 't', ` - 1), inclusive.
+ The uniformity of the distribution assumes that a fair source of random
+ bits is provided in `],
+				[/* inline code block */ 'i', `rnd`],
+				[/* text */ 't', `.  Note that this constructor always
+ constructs a non-negative BigInteger.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'numBits', [/* parameter description */
+					[/* text */ 't', `maximum bitLength of the new BigInteger.`]
+				]],
+				[/* parameter */ 'rnd', [/* parameter description */
+					[/* text */ 't', `source of randomness to be used in computing the new
+         BigInteger.`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
+					[/* text */ 't', ``],
+					[/* inline code block */ 'i', `numBits`],
+					[/* text */ 't', ` is negative.`]
+				]]
+			]
+		]],
+		[/* constructor */ '<init>(java.lang.String)', [
+			[/* constructor description */
+				[/* text */ 't', `Translates the decimal String representation of a BigInteger
+ into a BigInteger.  The String representation consists of an
+ optional minus or plus sign followed by a sequence of one or
+ more decimal digits.  The character-to-digit mapping is
+ provided by `],
+				[/* reference */ 'r', `java.Character#digit(int,int)`],
+				[/* text */ 't', `.  The String may not contain any extraneous
+ characters (whitespace, for example).`]
+			],
+			[/* parameters */
+				[/* parameter */ 'val', [/* parameter description */
+					[/* text */ 't', `decimal String representation of BigInteger.`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.lang.NumberFormatException', [/* throw description */
+					[/* text */ 't', ``],
+					[/* inline code block */ 'i', `val`],
+					[/* text */ 't', ` is not a valid representation
+         of a BigInteger.`]
+				]]
+			]
+		]],
+		[/* constructor */ '<init>(java.lang.String,int)', [
+			[/* constructor description */
+				[/* text */ 't', `Translates the String representation of a BigInteger in the
+ specified radix into a BigInteger.  The String representation
+ consists of an optional minus or plus sign followed by a
+ sequence of one or more digits in the specified radix.  The
+ character-to-digit mapping is provided by `],
+				[/* reference */ 'r', `java.Character#digit(int,int)`],
+				[/* text */ 't', `.  The String may
+ not contain any extraneous characters (whitespace, for
+ example).`]
+			],
+			[/* parameters */
+				[/* parameter */ 'val', [/* parameter description */
+					[/* text */ 't', `String representation of BigInteger.`]
+				]],
+				[/* parameter */ 'radix', [/* parameter description */
+					[/* text */ 't', `radix to be used in interpreting `],
+					[/* inline code block */ 'i', `val`],
+					[/* text */ 't', `.`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.lang.NumberFormatException', [/* throw description */
+					[/* text */ 't', ``],
+					[/* inline code block */ 'i', `val`],
+					[/* text */ 't', ` is not a valid representation
+         of a BigInteger in the specified radix, or `],
+					[/* inline code block */ 'i', `radix`],
+					[/* text */ 't', ` is
+         outside the range from `],
+					[/* reference */ 'r', `java.Character#MIN_RADIX`],
+					[/* text */ 't', ` to
+         `],
+					[/* reference */ 'r', `java.Character#MAX_RADIX`],
+					[/* text */ 't', `, inclusive.`]
+				]]
+			]
+		]]
+	],
+	[/* methods */
 		[/* method */ 'equals(java.lang.Object)', [
 			[/* method description */
 				[/* text */ 't', `Compares this BigInteger with the specified Object for equality.`]
@@ -522,293 +493,162 @@ DocsCollector.collect('java.math.BigInteger', [
          BigInteger whose value is numerically equal to this BigInteger.`]
 			]
 		]],
-		[/* method */ 'toString(int)', [
+		[/* method */ 'isProbablePrime(int)', [
 			[/* method description */
-				[/* text */ 't', `Returns the String representation of this BigInteger in the
- given radix.  If the radix is outside the range from `],
-				[/* reference */ 'r', `java.Character#MIN_RADIX`],
-				[/* text */ 't', ` to `],
-				[/* reference */ 'r', `java.Character#MAX_RADIX`],
-				[/* text */ 't', ` inclusive,
- it will default to 10 (as is the case for
+				[/* text */ 't', `Returns `],
+				[/* inline code block */ 'i', `true`],
+				[/* text */ 't', ` if this BigInteger is probably prime,
  `],
-				[/* inline code block */ 'i', `Integer.toString`],
-				[/* text */ 't', `).  The digit-to-character mapping
- provided by `],
-				[/* inline code block */ 'i', `Character.forDigit`],
-				[/* text */ 't', ` is used, and a minus
- sign is prepended if appropriate.  (This representation is
- compatible with the `],
-				[/* reference */ 'r', `#%3Cinit%3E(java.lang.String,int)`, `(String, int)`],
-				[/* text */ 't', ` constructor.)`]
+				[/* inline code block */ 'i', `false`],
+				[/* text */ 't', ` if it's definitely composite.  If
+ `],
+				[/* inline code block */ 'i', `certainty`],
+				[/* text */ 't', ` is ≤ 0, `],
+				[/* inline code block */ 'i', `true`],
+				[/* text */ 't', ` is
+ returned.`]
 			],
 			[/* parameters */
-				[/* parameter */ 'radix', [/* parameter description */
-					[/* text */ 't', `radix of the String representation.`]
+				[/* parameter */ 'certainty', [/* parameter description */
+					[/* text */ 't', `a measure of the uncertainty that the caller is
+         willing to tolerate: if the call returns `],
+					[/* inline code block */ 'i', `true`],
+					[/* text */ 't', `
+         the probability that this BigInteger is prime exceeds
+         (1 - 1/2`],
+					[/* text */ 't', `certainty`, 'sup'],
+					[/* text */ 't', `).  The execution time of
+         this method is proportional to the value of this parameter.`]
 				]]
 			],
 			/* throws */ UDF,
 			[/* return description */
-				[/* text */ 't', `String representation of this BigInteger in the given radix.`]
-			]
-		]],
-		[/* method */ 'toString()', [
-			[/* method description */
-				[/* text */ 't', `Returns the decimal String representation of this BigInteger.
- The digit-to-character mapping provided by
- `],
-				[/* inline code block */ 'i', `Character.forDigit`],
-				[/* text */ 't', ` is used, and a minus sign is
- prepended if appropriate.  (This representation is compatible
- with the `],
-				[/* reference */ 'r', `#%3Cinit%3E(java.lang.String)`, `(String)`],
-				[/* text */ 't', ` constructor, and
- allows for String concatenation with Java's + operator.)`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `decimal String representation of this BigInteger.`]
-			]
-		]],
-		[/* method */ 'hashCode()', [
-			[/* method description */
-				[/* text */ 't', `Returns the hash code for this BigInteger.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `hash code for this BigInteger.`]
-			]
-		]],
-		[/* method */ 'abs()', [
-			[/* method description */
-				[/* text */ 't', `Returns a BigInteger whose value is the absolute value of this
- BigInteger.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* inline code block */ 'i', `abs(this)`]
-			]
-		]],
-		[/* method */ 'sqrt()', [
-			[/* method description */
-				[/* text */ 't', `Returns the integer square root of this BigInteger.  The integer square
- root of the corresponding mathematical integer `],
-				[/* inline code block */ 'i', `n`],
-				[/* text */ 't', ` is the largest
- mathematical integer `],
-				[/* inline code block */ 'i', `s`],
-				[/* text */ 't', ` such that `],
-				[/* inline code block */ 'i', `s*s <= n`],
-				[/* text */ 't', `.  It is equal
- to the value of `],
-				[/* inline code block */ 'i', `floor(sqrt(n))`],
-				[/* text */ 't', `, where `],
-				[/* inline code block */ 'i', `sqrt(n)`],
-				[/* text */ 't', ` denotes the
- real square root of `],
-				[/* inline code block */ 'i', `n`],
-				[/* text */ 't', ` treated as a real.  Note that the integer
- square root will be less than the real square root if the latter is not
- representable as an integral value.`]
-			],
-			/* parameters */ UDF,
-			[/* throws */
-				[/* throw */ 'java.lang.ArithmeticException', [/* throw description */
-					[/* text */ 't', `if `],
-					[/* inline code block */ 'i', `this`],
-					[/* text */ 't', ` is negative.  (The square
-         root of a negative integer `],
-					[/* inline code block */ 'i', `val`],
-					[/* text */ 't', ` is
+				[/* inline code block */ 'i', `true`],
+				[/* text */ 't', ` if this BigInteger is probably prime,
          `],
-					[/* inline code block */ 'i', `(i * sqrt(-val))`],
-					[/* text */ 't', ` where `],
-					[/* text */ 't', `i`],
-					[/* text */ 't', ` is the
-         `],
-					[/* text */ 't', `imaginary unit`],
-					[/* text */ 't', ` and is equal to
-         `],
-					[/* inline code block */ 'i', `sqrt(-1)`],
-					[/* text */ 't', `.)`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `the integer square root of `],
-				[/* inline code block */ 'i', `this`]
+				[/* inline code block */ 'i', `false`],
+				[/* text */ 't', ` if it's definitely composite.`]
 			]
 		]],
-		[/* method */ 'pow(int)', [
+		[/* method */ 'testBit(int)', [
 			[/* method description */
-				[/* text */ 't', `Returns a BigInteger whose value is `],
-				[/* inline code block */ 'i', `(thisexponent)`],
-				[/* text */ 't', `.
- Note that `],
-				[/* inline code block */ 'i', `exponent`],
-				[/* text */ 't', ` is an integer rather than a BigInteger.`]
+				[/* text */ 't', `Returns `],
+				[/* inline code block */ 'i', `true`],
+				[/* text */ 't', ` if and only if the designated bit is set.
+ (Computes `],
+				[/* inline code block */ 'i', `((this & (1<<n)) != 0)`],
+				[/* text */ 't', `.)`]
 			],
 			[/* parameters */
-				[/* parameter */ 'exponent', [/* parameter description */
-					[/* text */ 't', `exponent to which this BigInteger is to be raised.`]
+				[/* parameter */ 'n', [/* parameter description */
+					[/* text */ 't', `index of bit to test.`]
 				]]
 			],
 			[/* throws */
 				[/* throw */ 'java.lang.ArithmeticException', [/* throw description */
 					[/* text */ 't', ``],
-					[/* inline code block */ 'i', `exponent`],
-					[/* text */ 't', ` is negative.  (This would
-         cause the operation to yield a non-integer value.)`]
+					[/* inline code block */ 'i', `n`],
+					[/* text */ 't', ` is negative.`]
 				]]
 			],
 			[/* return description */
-				[/* inline code block */ 'i', `thisexponent`]
+				[/* inline code block */ 'i', `true`],
+				[/* text */ 't', ` if and only if the designated bit is set.`]
 			]
 		]],
-		[/* method */ 'min(java.math.BigInteger)', [
+		[/* method */ 'byteValueExact()', [
 			[/* method description */
-				[/* text */ 't', `Returns the minimum of this BigInteger and `],
-				[/* inline code block */ 'i', `val`],
+				[/* text */ 't', `Converts this `],
+				[/* inline code block */ 'i', `BigInteger`],
+				[/* text */ 't', ` to a `],
+				[/* inline code block */ 'i', `byte`],
+				[/* text */ 't', `, checking
+ for lost information.  If the value of this `],
+				[/* inline code block */ 'i', `BigInteger`],
+				[/* text */ 't', `
+ is out of the range of the `],
+				[/* inline code block */ 'i', `byte`],
+				[/* text */ 't', ` type, then an
+ `],
+				[/* inline code block */ 'i', `ArithmeticException`],
+				[/* text */ 't', ` is thrown.`]
+			],
+			/* parameters */ UDF,
+			[/* throws */
+				[/* throw */ 'java.lang.ArithmeticException', [/* throw description */
+					[/* text */ 't', `if the value of `],
+					[/* inline code block */ 'i', `this`],
+					[/* text */ 't', ` will
+ not exactly fit in a `],
+					[/* inline code block */ 'i', `byte`],
+					[/* text */ 't', `.`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `this `],
+				[/* inline code block */ 'i', `BigInteger`],
+				[/* text */ 't', ` converted to a `],
+				[/* inline code block */ 'i', `byte`],
 				[/* text */ 't', `.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'val', [/* parameter description */
-					[/* text */ 't', `value with which the minimum is to be computed.`]
-				]]
-			],
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the BigInteger whose value is the lesser of this BigInteger and
-         `],
-				[/* inline code block */ 'i', `val`],
-				[/* text */ 't', `.  If they are equal, either may be returned.`]
 			]
 		]],
-		[/* method */ 'max(java.math.BigInteger)', [
+		[/* method */ 'toByteArray()', [
 			[/* method description */
-				[/* text */ 't', `Returns the maximum of this BigInteger and `],
-				[/* inline code block */ 'i', `val`],
-				[/* text */ 't', `.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'val', [/* parameter description */
-					[/* text */ 't', `value with which the maximum is to be computed.`]
-				]]
-			],
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the BigInteger whose value is the greater of this and
-         `],
-				[/* inline code block */ 'i', `val`],
-				[/* text */ 't', `.  If they are equal, either may be returned.`]
-			]
-		]],
-		[/* method */ 'signum()', [
-			[/* method description */
-				[/* text */ 't', `Returns the signum function of this BigInteger.`]
+				[/* text */ 't', `Returns a byte array containing the two's-complement
+ representation of this BigInteger.  The byte array will be in
+ `],
+				[/* text */ 't', `big-endian`],
+				[/* text */ 't', ` byte-order: the most significant byte is in
+ the zeroth element.  The array will contain the minimum number
+ of bytes required to represent this BigInteger, including at
+ least one sign bit, which is `],
+				[/* inline code block */ 'i', `(ceil((this.bitLength() + 1)/8))`],
+				[/* text */ 't', `.  (This representation is compatible with the
+ `],
+				[/* reference */ 'r', `#%3Cinit%3E(byte%5B%5D)`, `(byte[])`],
+				[/* text */ 't', ` constructor.)`]
 			],
 			/* parameters */ UDF,
 			/* throws */ UDF,
 			[/* return description */
-				[/* text */ 't', `-1, 0 or 1 as the value of this BigInteger is negative, zero or
-         positive.`]
+				[/* text */ 't', `a byte array containing the two's-complement representation of
+         this BigInteger.`]
 			]
 		]],
-		[/* method */ 'compareTo(java.math.BigInteger)', [
-			[/* method description */
-				[/* text */ 't', `Compares this BigInteger with the specified BigInteger.  This
- method is provided in preference to individual methods for each
- of the six boolean comparison operators (<, ==,
- >, >=, !=, <=).  The suggested
- idiom for performing these comparisons is: `],
-				[/* inline code block */ 'i', `(x.compareTo(y)`],
-				[/* text */ 't', ` <`],
-				[/* text */ 't', `op`],
-				[/* text */ 't', `> `],
-				[/* inline code block */ 'i', `0)`],
-				[/* text */ 't', `, where
- <`],
-				[/* text */ 't', `op`],
-				[/* text */ 't', `> is one of the six comparison operators.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'val', [/* parameter description */
-					[/* text */ 't', `BigInteger to which this BigInteger is to be compared.`]
-				]]
-			],
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `-1, 0 or 1 as this BigInteger is numerically less than, equal
-         to, or greater than `],
-				[/* inline code block */ 'i', `val`],
-				[/* text */ 't', `.`]
-			]
-		]],
-		[/* method */ 'intValue()', [
-			[/* method description */
-				[/* text */ 't', `Converts this BigInteger to an `],
-				[/* inline code block */ 'i', `int`],
-				[/* text */ 't', `.  This
- conversion is analogous to a
- `],
-				[/* text */ 't', `narrowing primitive conversion`],
-				[/* text */ 't', ` from `],
-				[/* inline code block */ 'i', `long`],
-				[/* text */ 't', ` to
- `],
-				[/* inline code block */ 'i', `int`],
-				[/* text */ 't', ` as defined in
- `],
-				[/* text */ 't', `The Java Language Specification`],
-				[/* text */ 't', `:
- if this BigInteger is too big to fit in an
- `],
-				[/* inline code block */ 'i', `int`],
-				[/* text */ 't', `, only the low-order 32 bits are returned.
- Note that this conversion can lose information about the
- overall magnitude of the BigInteger value as well as return a
- result with the opposite sign.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `this BigInteger converted to an `],
-				[/* inline code block */ 'i', `int`],
-				[/* text */ 't', `.`]
-			]
-		]],
-		[/* method */ 'longValue()', [
+		[/* method */ 'doubleValue()', [
 			[/* method description */
 				[/* text */ 't', `Converts this BigInteger to a `],
-				[/* inline code block */ 'i', `long`],
+				[/* inline code block */ 'i', `double`],
 				[/* text */ 't', `.  This
- conversion is analogous to a
+ conversion is similar to the
  `],
 				[/* text */ 't', `narrowing primitive conversion`],
 				[/* text */ 't', ` from `],
-				[/* inline code block */ 'i', `long`],
+				[/* inline code block */ 'i', `double`],
 				[/* text */ 't', ` to
  `],
-				[/* inline code block */ 'i', `int`],
+				[/* inline code block */ 'i', `float`],
 				[/* text */ 't', ` as defined in
  `],
 				[/* text */ 't', `The Java Language Specification`],
 				[/* text */ 't', `:
- if this BigInteger is too big to fit in a
+ if this BigInteger has too great a magnitude
+ to represent as a `],
+				[/* inline code block */ 'i', `double`],
+				[/* text */ 't', `, it will be converted to
  `],
-				[/* inline code block */ 'i', `long`],
-				[/* text */ 't', `, only the low-order 64 bits are returned.
- Note that this conversion can lose information about the
- overall magnitude of the BigInteger value as well as return a
- result with the opposite sign.`]
+				[/* reference */ 'r', `java.Double#NEGATIVE_INFINITY`],
+				[/* text */ 't', ` or `],
+				[/* reference */ 'r', `java.Double#POSITIVE_INFINITY`],
+				[/* text */ 't', ` as appropriate.  Note that even when
+ the return value is finite, this conversion can lose
+ information about the precision of the BigInteger value.`]
 			],
 			/* parameters */ UDF,
 			/* throws */ UDF,
 			[/* return description */
 				[/* text */ 't', `this BigInteger converted to a `],
-				[/* inline code block */ 'i', `long`],
+				[/* inline code block */ 'i', `double`],
 				[/* text */ 't', `.`]
 			]
 		]],
@@ -849,346 +689,17 @@ DocsCollector.collect('java.math.BigInteger', [
 				[/* text */ 't', `.`]
 			]
 		]],
-		[/* method */ 'doubleValue()', [
+		[/* method */ 'bitCount()', [
 			[/* method description */
-				[/* text */ 't', `Converts this BigInteger to a `],
-				[/* inline code block */ 'i', `double`],
-				[/* text */ 't', `.  This
- conversion is similar to the
- `],
-				[/* text */ 't', `narrowing primitive conversion`],
-				[/* text */ 't', ` from `],
-				[/* inline code block */ 'i', `double`],
-				[/* text */ 't', ` to
- `],
-				[/* inline code block */ 'i', `float`],
-				[/* text */ 't', ` as defined in
- `],
-				[/* text */ 't', `The Java Language Specification`],
-				[/* text */ 't', `:
- if this BigInteger has too great a magnitude
- to represent as a `],
-				[/* inline code block */ 'i', `double`],
-				[/* text */ 't', `, it will be converted to
- `],
-				[/* reference */ 'r', `java.Double#NEGATIVE_INFINITY`],
-				[/* text */ 't', ` or `],
-				[/* reference */ 'r', `java.Double#POSITIVE_INFINITY`],
-				[/* text */ 't', ` as appropriate.  Note that even when
- the return value is finite, this conversion can lose
- information about the precision of the BigInteger value.`]
+				[/* text */ 't', `Returns the number of bits in the two's complement representation
+ of this BigInteger that differ from its sign bit.  This method is
+ useful when implementing bit-vector style sets atop BigIntegers.`]
 			],
 			/* parameters */ UDF,
 			/* throws */ UDF,
 			[/* return description */
-				[/* text */ 't', `this BigInteger converted to a `],
-				[/* inline code block */ 'i', `double`],
-				[/* text */ 't', `.`]
-			]
-		]],
-		[/* method */ 'valueOf(long)', [
-			[/* method description */
-				[/* text */ 't', `Returns a BigInteger whose value is equal to that of the
- specified `],
-				[/* inline code block */ 'i', `long`],
-				[/* text */ 't', `.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'val', [/* parameter description */
-					[/* text */ 't', `value of the BigInteger to return.`]
-				]]
-			],
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `a BigInteger with the specified value.`]
-			]
-		]],
-		[/* method */ 'toByteArray()', [
-			[/* method description */
-				[/* text */ 't', `Returns a byte array containing the two's-complement
- representation of this BigInteger.  The byte array will be in
- `],
-				[/* text */ 't', `big-endian`],
-				[/* text */ 't', ` byte-order: the most significant byte is in
- the zeroth element.  The array will contain the minimum number
- of bytes required to represent this BigInteger, including at
- least one sign bit, which is `],
-				[/* inline code block */ 'i', `(ceil((this.bitLength() + 1)/8))`],
-				[/* text */ 't', `.  (This representation is compatible with the
- `],
-				[/* reference */ 'r', `#%3Cinit%3E(byte%5B%5D)`, `(byte[])`],
-				[/* text */ 't', ` constructor.)`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `a byte array containing the two's-complement representation of
-         this BigInteger.`]
-			]
-		]],
-		[/* method */ 'mod(java.math.BigInteger)', [
-			[/* method description */
-				[/* text */ 't', `Returns a BigInteger whose value is `],
-				[/* inline code block */ 'i', `(this mod m`],
-				[/* text */ 't', `).  This method
- differs from `],
-				[/* inline code block */ 'i', `remainder`],
-				[/* text */ 't', ` in that it always returns a
- `],
-				[/* text */ 't', `non-negative`],
-				[/* text */ 't', ` BigInteger.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'm', [/* parameter description */
-					[/* text */ 't', `the modulus.`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.ArithmeticException', [/* throw description */
-					[/* text */ 't', ``],
-					[/* inline code block */ 'i', `m`],
-					[/* text */ 't', ` ≤ 0`]
-				]]
-			],
-			[/* return description */
-				[/* inline code block */ 'i', `this mod m`]
-			]
-		]],
-		[/* method */ 'setBit(int)', [
-			[/* method description */
-				[/* text */ 't', `Returns a BigInteger whose value is equivalent to this BigInteger
- with the designated bit set.  (Computes `],
-				[/* inline code block */ 'i', `(this | (1<<n))`],
-				[/* text */ 't', `.)`]
-			],
-			[/* parameters */
-				[/* parameter */ 'n', [/* parameter description */
-					[/* text */ 't', `index of bit to set.`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.ArithmeticException', [/* throw description */
-					[/* text */ 't', ``],
-					[/* inline code block */ 'i', `n`],
-					[/* text */ 't', ` is negative.`]
-				]]
-			],
-			[/* return description */
-				[/* inline code block */ 'i', `this | (1<<n)`]
-			]
-		]],
-		[/* method */ 'shiftLeft(int)', [
-			[/* method description */
-				[/* text */ 't', `Returns a BigInteger whose value is `],
-				[/* inline code block */ 'i', `(this << n)`],
-				[/* text */ 't', `.
- The shift distance, `],
-				[/* inline code block */ 'i', `n`],
-				[/* text */ 't', `, may be negative, in which case
- this method performs a right shift.
- (Computes `],
-				[/* inline code block */ 'i', `floor(this * 2n)`],
-				[/* text */ 't', `.)`]
-			],
-			[/* parameters */
-				[/* parameter */ 'n', [/* parameter description */
-					[/* text */ 't', `shift distance, in bits.`]
-				]]
-			],
-			/* throws */ UDF,
-			[/* return description */
-				[/* inline code block */ 'i', `this << n`]
-			]
-		]],
-		[/* method */ 'multiply(java.math.BigInteger)', [
-			[/* method description */
-				[/* text */ 't', `Returns a BigInteger whose value is `],
-				[/* inline code block */ 'i', `(this * val)`],
-				[/* text */ 't', `.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'val', [/* parameter description */
-					[/* text */ 't', `value to be multiplied by this BigInteger.`]
-				]]
-			],
-			/* throws */ UDF,
-			[/* return description */
-				[/* inline code block */ 'i', `this * val`]
-			]
-		]],
-		[/* method */ 'or(java.math.BigInteger)', [
-			[/* method description */
-				[/* text */ 't', `Returns a BigInteger whose value is `],
-				[/* inline code block */ 'i', `(this | val)`],
-				[/* text */ 't', `.  (This method
- returns a negative BigInteger if and only if either this or val is
- negative.)`]
-			],
-			[/* parameters */
-				[/* parameter */ 'val', [/* parameter description */
-					[/* text */ 't', `value to be OR'ed with this BigInteger.`]
-				]]
-			],
-			/* throws */ UDF,
-			[/* return description */
-				[/* inline code block */ 'i', `this | val`]
-			]
-		]],
-		[/* method */ 'negate()', [
-			[/* method description */
-				[/* text */ 't', `Returns a BigInteger whose value is `],
-				[/* inline code block */ 'i', `(-this)`],
-				[/* text */ 't', `.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* inline code block */ 'i', `-this`]
-			]
-		]],
-		[/* method */ 'and(java.math.BigInteger)', [
-			[/* method description */
-				[/* text */ 't', `Returns a BigInteger whose value is `],
-				[/* inline code block */ 'i', `(this & val)`],
-				[/* text */ 't', `.  (This
- method returns a negative BigInteger if and only if this and val are
- both negative.)`]
-			],
-			[/* parameters */
-				[/* parameter */ 'val', [/* parameter description */
-					[/* text */ 't', `value to be AND'ed with this BigInteger.`]
-				]]
-			],
-			/* throws */ UDF,
-			[/* return description */
-				[/* inline code block */ 'i', `this & val`]
-			]
-		]],
-		[/* method */ 'not()', [
-			[/* method description */
-				[/* text */ 't', `Returns a BigInteger whose value is `],
-				[/* inline code block */ 'i', `(~this)`],
-				[/* text */ 't', `.  (This method
- returns a negative value if and only if this BigInteger is
- non-negative.)`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* inline code block */ 'i', `~this`]
-			]
-		]],
-		[/* method */ 'remainder(java.math.BigInteger)', [
-			[/* method description */
-				[/* text */ 't', `Returns a BigInteger whose value is `],
-				[/* inline code block */ 'i', `(this % val)`],
-				[/* text */ 't', `.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'val', [/* parameter description */
-					[/* text */ 't', `value by which this BigInteger is to be divided, and the
-         remainder computed.`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.ArithmeticException', [/* throw description */
-					[/* text */ 't', `if `],
-					[/* inline code block */ 'i', `val`],
-					[/* text */ 't', ` is zero.`]
-				]]
-			],
-			[/* return description */
-				[/* inline code block */ 'i', `this % val`]
-			]
-		]],
-		[/* method */ 'divide(java.math.BigInteger)', [
-			[/* method description */
-				[/* text */ 't', `Returns a BigInteger whose value is `],
-				[/* inline code block */ 'i', `(this / val)`],
-				[/* text */ 't', `.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'val', [/* parameter description */
-					[/* text */ 't', `value by which this BigInteger is to be divided.`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.ArithmeticException', [/* throw description */
-					[/* text */ 't', `if `],
-					[/* inline code block */ 'i', `val`],
-					[/* text */ 't', ` is zero.`]
-				]]
-			],
-			[/* return description */
-				[/* inline code block */ 'i', `this / val`]
-			]
-		]],
-		[/* method */ 'longValueExact()', [
-			[/* method description */
-				[/* text */ 't', `Converts this `],
-				[/* inline code block */ 'i', `BigInteger`],
-				[/* text */ 't', ` to a `],
-				[/* inline code block */ 'i', `long`],
-				[/* text */ 't', `, checking
- for lost information.  If the value of this `],
-				[/* inline code block */ 'i', `BigInteger`],
-				[/* text */ 't', `
- is out of the range of the `],
-				[/* inline code block */ 'i', `long`],
-				[/* text */ 't', ` type, then an
- `],
-				[/* inline code block */ 'i', `ArithmeticException`],
-				[/* text */ 't', ` is thrown.`]
-			],
-			/* parameters */ UDF,
-			[/* throws */
-				[/* throw */ 'java.lang.ArithmeticException', [/* throw description */
-					[/* text */ 't', `if the value of `],
-					[/* inline code block */ 'i', `this`],
-					[/* text */ 't', ` will
- not exactly fit in a `],
-					[/* inline code block */ 'i', `long`],
-					[/* text */ 't', `.`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `this `],
-				[/* inline code block */ 'i', `BigInteger`],
-				[/* text */ 't', ` converted to a `],
-				[/* inline code block */ 'i', `long`],
-				[/* text */ 't', `.`]
-			]
-		]],
-		[/* method */ 'divideAndRemainder(java.math.BigInteger)', [
-			[/* method description */
-				[/* text */ 't', `Returns an array of two BigIntegers containing `],
-				[/* inline code block */ 'i', `(this / val)`],
-				[/* text */ 't', `
- followed by `],
-				[/* inline code block */ 'i', `(this % val)`],
-				[/* text */ 't', `.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'val', [/* parameter description */
-					[/* text */ 't', `value by which this BigInteger is to be divided, and the
-         remainder computed.`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.ArithmeticException', [/* throw description */
-					[/* text */ 't', `if `],
-					[/* inline code block */ 'i', `val`],
-					[/* text */ 't', ` is zero.`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `an array of two BigIntegers: the quotient `],
-				[/* inline code block */ 'i', `(this / val)`],
-				[/* text */ 't', `
-         is the initial element, and the remainder `],
-				[/* inline code block */ 'i', `(this % val)`],
-				[/* text */ 't', `
-         is the final element.`]
+				[/* text */ 't', `number of bits in the two's complement representation
+         of this BigInteger that differ from its sign bit.`]
 			]
 		]],
 		[/* method */ 'bitLength()', [
@@ -1214,69 +725,34 @@ DocsCollector.collect('java.math.BigInteger', [
 				[/* text */ 't', ` a sign bit.`]
 			]
 		]],
-		[/* method */ 'testBit(int)', [
+		[/* method */ 'compareTo(java.math.BigInteger)', [
 			[/* method description */
-				[/* text */ 't', `Returns `],
-				[/* inline code block */ 'i', `true`],
-				[/* text */ 't', ` if and only if the designated bit is set.
- (Computes `],
-				[/* inline code block */ 'i', `((this & (1<<n)) != 0)`],
-				[/* text */ 't', `.)`]
-			],
-			[/* parameters */
-				[/* parameter */ 'n', [/* parameter description */
-					[/* text */ 't', `index of bit to test.`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.ArithmeticException', [/* throw description */
-					[/* text */ 't', ``],
-					[/* inline code block */ 'i', `n`],
-					[/* text */ 't', ` is negative.`]
-				]]
-			],
-			[/* return description */
-				[/* inline code block */ 'i', `true`],
-				[/* text */ 't', ` if and only if the designated bit is set.`]
-			]
-		]],
-		[/* method */ 'subtract(java.math.BigInteger)', [
-			[/* method description */
-				[/* text */ 't', `Returns a BigInteger whose value is `],
-				[/* inline code block */ 'i', `(this - val)`],
-				[/* text */ 't', `.`]
+				[/* text */ 't', `Compares this BigInteger with the specified BigInteger.  This
+ method is provided in preference to individual methods for each
+ of the six boolean comparison operators (<, ==,
+ >, >=, !=, <=).  The suggested
+ idiom for performing these comparisons is: `],
+				[/* inline code block */ 'i', `(x.compareTo(y)`],
+				[/* text */ 't', ` <`],
+				[/* text */ 't', `op`],
+				[/* text */ 't', `> `],
+				[/* inline code block */ 'i', `0)`],
+				[/* text */ 't', `, where
+ <`],
+				[/* text */ 't', `op`],
+				[/* text */ 't', `> is one of the six comparison operators.`]
 			],
 			[/* parameters */
 				[/* parameter */ 'val', [/* parameter description */
-					[/* text */ 't', `value to be subtracted from this BigInteger.`]
+					[/* text */ 't', `BigInteger to which this BigInteger is to be compared.`]
 				]]
 			],
 			/* throws */ UDF,
 			[/* return description */
-				[/* inline code block */ 'i', `this - val`]
-			]
-		]],
-		[/* method */ 'shiftRight(int)', [
-			[/* method description */
-				[/* text */ 't', `Returns a BigInteger whose value is `],
-				[/* inline code block */ 'i', `(this >> n)`],
-				[/* text */ 't', `.  Sign
- extension is performed.  The shift distance, `],
-				[/* inline code block */ 'i', `n`],
-				[/* text */ 't', `, may be
- negative, in which case this method performs a left shift.
- (Computes `],
-				[/* inline code block */ 'i', `floor(this / 2n)`],
-				[/* text */ 't', `.)`]
-			],
-			[/* parameters */
-				[/* parameter */ 'n', [/* parameter description */
-					[/* text */ 't', `shift distance, in bits.`]
-				]]
-			],
-			/* throws */ UDF,
-			[/* return description */
-				[/* inline code block */ 'i', `this >> n`]
+				[/* text */ 't', `-1, 0 or 1 as this BigInteger is numerically less than, equal
+         to, or greater than `],
+				[/* inline code block */ 'i', `val`],
+				[/* text */ 't', `.`]
 			]
 		]],
 		[/* method */ 'getLowestSetBit()', [
@@ -1294,216 +770,188 @@ DocsCollector.collect('java.math.BigInteger', [
 				[/* text */ 't', `index of the rightmost one bit in this BigInteger.`]
 			]
 		]],
-		[/* method */ 'modPow(java.math.BigInteger,java.math.BigInteger)', [
+		[/* method */ 'hashCode()', [
 			[/* method description */
-				[/* text */ 't', `Returns a BigInteger whose value is
+				[/* text */ 't', `Returns the hash code for this BigInteger.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `hash code for this BigInteger.`]
+			]
+		]],
+		[/* method */ 'intValue()', [
+			[/* method description */
+				[/* text */ 't', `Converts this BigInteger to an `],
+				[/* inline code block */ 'i', `int`],
+				[/* text */ 't', `.  This
+ conversion is analogous to a
  `],
-				[/* inline code block */ 'i', `(thisexponent mod m)`],
-				[/* text */ 't', `.  (Unlike `],
-				[/* inline code block */ 'i', `pow`],
-				[/* text */ 't', `, this
- method permits negative exponents.)`]
+				[/* text */ 't', `narrowing primitive conversion`],
+				[/* text */ 't', ` from `],
+				[/* inline code block */ 'i', `long`],
+				[/* text */ 't', ` to
+ `],
+				[/* inline code block */ 'i', `int`],
+				[/* text */ 't', ` as defined in
+ `],
+				[/* text */ 't', `The Java Language Specification`],
+				[/* text */ 't', `:
+ if this BigInteger is too big to fit in an
+ `],
+				[/* inline code block */ 'i', `int`],
+				[/* text */ 't', `, only the low-order 32 bits are returned.
+ Note that this conversion can lose information about the
+ overall magnitude of the BigInteger value as well as return a
+ result with the opposite sign.`]
 			],
-			[/* parameters */
-				[/* parameter */ 'exponent', [/* parameter description */
-					[/* text */ 't', `the exponent.`]
-				]],
-				[/* parameter */ 'm', [/* parameter description */
-					[/* text */ 't', `the modulus.`]
-				]]
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `this BigInteger converted to an `],
+				[/* inline code block */ 'i', `int`],
+				[/* text */ 't', `.`]
+			]
+		]],
+		[/* method */ 'intValueExact()', [
+			[/* method description */
+				[/* text */ 't', `Converts this `],
+				[/* inline code block */ 'i', `BigInteger`],
+				[/* text */ 't', ` to an `],
+				[/* inline code block */ 'i', `int`],
+				[/* text */ 't', `, checking
+ for lost information.  If the value of this `],
+				[/* inline code block */ 'i', `BigInteger`],
+				[/* text */ 't', `
+ is out of the range of the `],
+				[/* inline code block */ 'i', `int`],
+				[/* text */ 't', ` type, then an
+ `],
+				[/* inline code block */ 'i', `ArithmeticException`],
+				[/* text */ 't', ` is thrown.`]
 			],
+			/* parameters */ UDF,
 			[/* throws */
 				[/* throw */ 'java.lang.ArithmeticException', [/* throw description */
-					[/* text */ 't', ``],
-					[/* inline code block */ 'i', `m`],
-					[/* text */ 't', ` ≤ 0 or the exponent is
-         negative and this BigInteger is not `],
-					[/* text */ 't', `relatively
-         prime`],
-					[/* text */ 't', ` to `],
-					[/* inline code block */ 'i', `m`],
+					[/* text */ 't', `if the value of `],
+					[/* inline code block */ 'i', `this`],
+					[/* text */ 't', ` will
+ not exactly fit in an `],
+					[/* inline code block */ 'i', `int`],
 					[/* text */ 't', `.`]
 				]]
 			],
 			[/* return description */
-				[/* inline code block */ 'i', `thisexponent mod m`]
-			]
-		]],
-		[/* method */ 'modInverse(java.math.BigInteger)', [
-			[/* method description */
-				[/* text */ 't', `Returns a BigInteger whose value is `],
-				[/* inline code block */ 'i', `(this`],
-				[/* text */ 't', `-1`, 'sup'],
-				[/* inline code block */ 'i', `mod m)`],
-				[/* text */ 't', `.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'm', [/* parameter description */
-					[/* text */ 't', `the modulus.`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.ArithmeticException', [/* throw description */
-					[/* text */ 't', ``],
-					[/* inline code block */ 'i', `m`],
-					[/* text */ 't', ` ≤ 0, or this BigInteger
-         has no multiplicative inverse mod m (that is, this BigInteger
-         is not `],
-					[/* text */ 't', `relatively prime`],
-					[/* text */ 't', ` to m).`]
-				]]
-			],
-			[/* return description */
-				[/* inline code block */ 'i', `this`],
-				[/* text */ 't', `-1`, 'sup'],
-				[/* inline code block */ 'i', `mod m`],
-				[/* text */ 't', `.`]
-			]
-		]],
-		[/* method */ 'probablePrime(int,java.util.Random)', [
-			[/* method description */
-				[/* text */ 't', `Returns a positive BigInteger that is probably prime, with the
- specified bitLength. The probability that a BigInteger returned
- by this method is composite does not exceed 2`],
-				[/* text */ 't', `-100`, 'sup'],
-				[/* text */ 't', `.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'bitLength', [/* parameter description */
-					[/* text */ 't', `bitLength of the returned BigInteger.`]
-				]],
-				[/* parameter */ 'rnd', [/* parameter description */
-					[/* text */ 't', `source of random bits used to select candidates to be
-         tested for primality.`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.ArithmeticException', [/* throw description */
-					[/* text */ 't', ``],
-					[/* inline code block */ 'i', `bitLength < 2`],
-					[/* text */ 't', ` or `],
-					[/* inline code block */ 'i', `bitLength`],
-					[/* text */ 't', ` is too large.`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `a BigInteger of `],
-				[/* inline code block */ 'i', `bitLength`],
-				[/* text */ 't', ` bits that is probably prime`]
-			]
-		]],
-		[/* method */ 'nextProbablePrime()', [
-			[/* method description */
-				[/* text */ 't', `Returns the first integer greater than this `],
+				[/* text */ 't', `this `],
 				[/* inline code block */ 'i', `BigInteger`],
-				[/* text */ 't', ` that
- is probably prime.  The probability that the number returned by this
- method is composite does not exceed 2`],
-				[/* text */ 't', `-100`, 'sup'],
-				[/* text */ 't', `. This method will
- never skip over a prime when searching: if it returns `],
-				[/* inline code block */ 'i', `p`],
-				[/* text */ 't', `, there
- is no prime `],
-				[/* inline code block */ 'i', `q`],
-				[/* text */ 't', ` such that `],
-				[/* inline code block */ 'i', `this < q < p`],
+				[/* text */ 't', ` converted to an `],
+				[/* inline code block */ 'i', `int`],
 				[/* text */ 't', `.`]
+			]
+		]],
+		[/* method */ 'signum()', [
+			[/* method description */
+				[/* text */ 't', `Returns the signum function of this BigInteger.`]
 			],
 			/* parameters */ UDF,
-			[/* throws */
-				[/* throw */ 'java.lang.ArithmeticException', [/* throw description */
-					[/* text */ 't', ``],
-					[/* inline code block */ 'i', `this < 0`],
-					[/* text */ 't', ` or `],
-					[/* inline code block */ 'i', `this`],
-					[/* text */ 't', ` is too large.`]
-				]]
-			],
+			/* throws */ UDF,
 			[/* return description */
-				[/* text */ 't', `the first integer greater than this `],
-				[/* inline code block */ 'i', `BigInteger`],
-				[/* text */ 't', ` that
-         is probably prime.`]
+				[/* text */ 't', `-1, 0 or 1 as the value of this BigInteger is negative, zero or
+         positive.`]
 			]
 		]],
-		[/* method */ 'sqrtAndRemainder()', [
+		[/* method */ 'toString()', [
 			[/* method description */
-				[/* text */ 't', `Returns an array of two BigIntegers containing the integer square root
+				[/* text */ 't', `Returns the decimal String representation of this BigInteger.
+ The digit-to-character mapping provided by
  `],
-				[/* inline code block */ 'i', `s`],
-				[/* text */ 't', ` of `],
-				[/* inline code block */ 'i', `this`],
-				[/* text */ 't', ` and its remainder `],
-				[/* inline code block */ 'i', `this - s*s`],
-				[/* text */ 't', `,
- respectively.`]
+				[/* inline code block */ 'i', `Character.forDigit`],
+				[/* text */ 't', ` is used, and a minus sign is
+ prepended if appropriate.  (This representation is compatible
+ with the `],
+				[/* reference */ 'r', `#%3Cinit%3E(java.lang.String)`, `(String)`],
+				[/* text */ 't', ` constructor, and
+ allows for String concatenation with Java's + operator.)`]
 			],
 			/* parameters */ UDF,
-			[/* throws */
-				[/* throw */ 'java.lang.ArithmeticException', [/* throw description */
-					[/* text */ 't', `if `],
-					[/* inline code block */ 'i', `this`],
-					[/* text */ 't', ` is negative.  (The square
-         root of a negative integer `],
-					[/* inline code block */ 'i', `val`],
-					[/* text */ 't', ` is
-         `],
-					[/* inline code block */ 'i', `(i * sqrt(-val))`],
-					[/* text */ 't', ` where `],
-					[/* text */ 't', `i`],
-					[/* text */ 't', ` is the
-         `],
-					[/* text */ 't', `imaginary unit`],
-					[/* text */ 't', ` and is equal to
-         `],
-					[/* inline code block */ 'i', `sqrt(-1)`],
-					[/* text */ 't', `.)`]
-				]]
-			],
+			/* throws */ UDF,
 			[/* return description */
-				[/* text */ 't', `an array of two BigIntegers with the integer square root at
-         offset 0 and the remainder at offset 1`]
+				[/* text */ 't', `decimal String representation of this BigInteger.`]
 			]
 		]],
-		[/* method */ 'gcd(java.math.BigInteger)', [
+		[/* method */ 'toString(int)', [
 			[/* method description */
-				[/* text */ 't', `Returns a BigInteger whose value is the greatest common divisor of
+				[/* text */ 't', `Returns the String representation of this BigInteger in the
+ given radix.  If the radix is outside the range from `],
+				[/* reference */ 'r', `java.Character#MIN_RADIX`],
+				[/* text */ 't', ` to `],
+				[/* reference */ 'r', `java.Character#MAX_RADIX`],
+				[/* text */ 't', ` inclusive,
+ it will default to 10 (as is the case for
  `],
-				[/* inline code block */ 'i', `abs(this)`],
-				[/* text */ 't', ` and `],
-				[/* inline code block */ 'i', `abs(val)`],
-				[/* text */ 't', `.  Returns 0 if
- `],
-				[/* inline code block */ 'i', `this == 0 && val == 0`],
-				[/* text */ 't', `.`]
+				[/* inline code block */ 'i', `Integer.toString`],
+				[/* text */ 't', `).  The digit-to-character mapping
+ provided by `],
+				[/* inline code block */ 'i', `Character.forDigit`],
+				[/* text */ 't', ` is used, and a minus
+ sign is prepended if appropriate.  (This representation is
+ compatible with the `],
+				[/* reference */ 'r', `#%3Cinit%3E(java.lang.String,int)`, `(String, int)`],
+				[/* text */ 't', ` constructor.)`]
 			],
 			[/* parameters */
-				[/* parameter */ 'val', [/* parameter description */
-					[/* text */ 't', `value with which the GCD is to be computed.`]
+				[/* parameter */ 'radix', [/* parameter description */
+					[/* text */ 't', `radix of the String representation.`]
 				]]
 			],
 			/* throws */ UDF,
 			[/* return description */
-				[/* inline code block */ 'i', `GCD(abs(this), abs(val))`]
+				[/* text */ 't', `String representation of this BigInteger in the given radix.`]
 			]
 		]],
-		[/* method */ 'xor(java.math.BigInteger)', [
+		[/* method */ 'abs()', [
+			[/* method description */
+				[/* text */ 't', `Returns a BigInteger whose value is the absolute value of this
+ BigInteger.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* inline code block */ 'i', `abs(this)`]
+			]
+		]],
+		[/* method */ 'add(java.math.BigInteger)', [
 			[/* method description */
 				[/* text */ 't', `Returns a BigInteger whose value is `],
-				[/* inline code block */ 'i', `(this ^ val)`],
-				[/* text */ 't', `.  (This method
- returns a negative BigInteger if and only if exactly one of this and
- val are negative.)`]
+				[/* inline code block */ 'i', `(this + val)`],
+				[/* text */ 't', `.`]
 			],
 			[/* parameters */
 				[/* parameter */ 'val', [/* parameter description */
-					[/* text */ 't', `value to be XOR'ed with this BigInteger.`]
+					[/* text */ 't', `value to be added to this BigInteger.`]
 				]]
 			],
 			/* throws */ UDF,
 			[/* return description */
-				[/* inline code block */ 'i', `this ^ val`]
+				[/* inline code block */ 'i', `this + val`]
+			]
+		]],
+		[/* method */ 'and(java.math.BigInteger)', [
+			[/* method description */
+				[/* text */ 't', `Returns a BigInteger whose value is `],
+				[/* inline code block */ 'i', `(this & val)`],
+				[/* text */ 't', `.  (This
+ method returns a negative BigInteger if and only if this and val are
+ both negative.)`]
+			],
+			[/* parameters */
+				[/* parameter */ 'val', [/* parameter description */
+					[/* text */ 't', `value to be AND'ed with this BigInteger.`]
+				]]
+			],
+			/* throws */ UDF,
+			[/* return description */
+				[/* inline code block */ 'i', `this & val`]
 			]
 		]],
 		[/* method */ 'andNot(java.math.BigInteger)', [
@@ -1556,6 +1004,28 @@ DocsCollector.collect('java.math.BigInteger', [
 				[/* inline code block */ 'i', `this & ~(1<<n)`]
 			]
 		]],
+		[/* method */ 'divide(java.math.BigInteger)', [
+			[/* method description */
+				[/* text */ 't', `Returns a BigInteger whose value is `],
+				[/* inline code block */ 'i', `(this / val)`],
+				[/* text */ 't', `.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'val', [/* parameter description */
+					[/* text */ 't', `value by which this BigInteger is to be divided.`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.lang.ArithmeticException', [/* throw description */
+					[/* text */ 't', `if `],
+					[/* inline code block */ 'i', `val`],
+					[/* text */ 't', ` is zero.`]
+				]]
+			],
+			[/* return description */
+				[/* inline code block */ 'i', `this / val`]
+			]
+		]],
 		[/* method */ 'flipBit(int)', [
 			[/* method description */
 				[/* text */ 't', `Returns a BigInteger whose value is equivalent to this BigInteger
@@ -1580,55 +1050,572 @@ DocsCollector.collect('java.math.BigInteger', [
 				[/* inline code block */ 'i', `this ^ (1<<n)`]
 			]
 		]],
-		[/* method */ 'isProbablePrime(int)', [
+		[/* method */ 'gcd(java.math.BigInteger)', [
 			[/* method description */
-				[/* text */ 't', `Returns `],
-				[/* inline code block */ 'i', `true`],
-				[/* text */ 't', ` if this BigInteger is probably prime,
+				[/* text */ 't', `Returns a BigInteger whose value is the greatest common divisor of
  `],
-				[/* inline code block */ 'i', `false`],
-				[/* text */ 't', ` if it's definitely composite.  If
+				[/* inline code block */ 'i', `abs(this)`],
+				[/* text */ 't', ` and `],
+				[/* inline code block */ 'i', `abs(val)`],
+				[/* text */ 't', `.  Returns 0 if
  `],
-				[/* inline code block */ 'i', `certainty`],
-				[/* text */ 't', ` is ≤ 0, `],
-				[/* inline code block */ 'i', `true`],
-				[/* text */ 't', ` is
- returned.`]
+				[/* inline code block */ 'i', `this == 0 && val == 0`],
+				[/* text */ 't', `.`]
 			],
 			[/* parameters */
-				[/* parameter */ 'certainty', [/* parameter description */
-					[/* text */ 't', `a measure of the uncertainty that the caller is
-         willing to tolerate: if the call returns `],
-					[/* inline code block */ 'i', `true`],
-					[/* text */ 't', `
-         the probability that this BigInteger is prime exceeds
-         (1 - 1/2`],
-					[/* text */ 't', `certainty`, 'sup'],
-					[/* text */ 't', `).  The execution time of
-         this method is proportional to the value of this parameter.`]
+				[/* parameter */ 'val', [/* parameter description */
+					[/* text */ 't', `value with which the GCD is to be computed.`]
 				]]
 			],
 			/* throws */ UDF,
 			[/* return description */
-				[/* inline code block */ 'i', `true`],
-				[/* text */ 't', ` if this BigInteger is probably prime,
-         `],
-				[/* inline code block */ 'i', `false`],
-				[/* text */ 't', ` if it's definitely composite.`]
+				[/* inline code block */ 'i', `GCD(abs(this), abs(val))`]
 			]
 		]],
-		[/* method */ 'intValueExact()', [
+		[/* method */ 'max(java.math.BigInteger)', [
+			[/* method description */
+				[/* text */ 't', `Returns the maximum of this BigInteger and `],
+				[/* inline code block */ 'i', `val`],
+				[/* text */ 't', `.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'val', [/* parameter description */
+					[/* text */ 't', `value with which the maximum is to be computed.`]
+				]]
+			],
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the BigInteger whose value is the greater of this and
+         `],
+				[/* inline code block */ 'i', `val`],
+				[/* text */ 't', `.  If they are equal, either may be returned.`]
+			]
+		]],
+		[/* method */ 'min(java.math.BigInteger)', [
+			[/* method description */
+				[/* text */ 't', `Returns the minimum of this BigInteger and `],
+				[/* inline code block */ 'i', `val`],
+				[/* text */ 't', `.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'val', [/* parameter description */
+					[/* text */ 't', `value with which the minimum is to be computed.`]
+				]]
+			],
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the BigInteger whose value is the lesser of this BigInteger and
+         `],
+				[/* inline code block */ 'i', `val`],
+				[/* text */ 't', `.  If they are equal, either may be returned.`]
+			]
+		]],
+		[/* method */ 'mod(java.math.BigInteger)', [
+			[/* method description */
+				[/* text */ 't', `Returns a BigInteger whose value is `],
+				[/* inline code block */ 'i', `(this mod m`],
+				[/* text */ 't', `).  This method
+ differs from `],
+				[/* inline code block */ 'i', `remainder`],
+				[/* text */ 't', ` in that it always returns a
+ `],
+				[/* text */ 't', `non-negative`],
+				[/* text */ 't', ` BigInteger.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'm', [/* parameter description */
+					[/* text */ 't', `the modulus.`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.lang.ArithmeticException', [/* throw description */
+					[/* text */ 't', ``],
+					[/* inline code block */ 'i', `m`],
+					[/* text */ 't', ` ≤ 0`]
+				]]
+			],
+			[/* return description */
+				[/* inline code block */ 'i', `this mod m`]
+			]
+		]],
+		[/* method */ 'modInverse(java.math.BigInteger)', [
+			[/* method description */
+				[/* text */ 't', `Returns a BigInteger whose value is `],
+				[/* inline code block */ 'i', `(this`],
+				[/* text */ 't', `-1`, 'sup'],
+				[/* inline code block */ 'i', `mod m)`],
+				[/* text */ 't', `.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'm', [/* parameter description */
+					[/* text */ 't', `the modulus.`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.lang.ArithmeticException', [/* throw description */
+					[/* text */ 't', ``],
+					[/* inline code block */ 'i', `m`],
+					[/* text */ 't', ` ≤ 0, or this BigInteger
+         has no multiplicative inverse mod m (that is, this BigInteger
+         is not `],
+					[/* text */ 't', `relatively prime`],
+					[/* text */ 't', ` to m).`]
+				]]
+			],
+			[/* return description */
+				[/* inline code block */ 'i', `this`],
+				[/* text */ 't', `-1`, 'sup'],
+				[/* inline code block */ 'i', `mod m`],
+				[/* text */ 't', `.`]
+			]
+		]],
+		[/* method */ 'modPow(java.math.BigInteger,java.math.BigInteger)', [
+			[/* method description */
+				[/* text */ 't', `Returns a BigInteger whose value is
+ `],
+				[/* inline code block */ 'i', `(thisexponent mod m)`],
+				[/* text */ 't', `.  (Unlike `],
+				[/* inline code block */ 'i', `pow`],
+				[/* text */ 't', `, this
+ method permits negative exponents.)`]
+			],
+			[/* parameters */
+				[/* parameter */ 'exponent', [/* parameter description */
+					[/* text */ 't', `the exponent.`]
+				]],
+				[/* parameter */ 'm', [/* parameter description */
+					[/* text */ 't', `the modulus.`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.lang.ArithmeticException', [/* throw description */
+					[/* text */ 't', ``],
+					[/* inline code block */ 'i', `m`],
+					[/* text */ 't', ` ≤ 0 or the exponent is
+         negative and this BigInteger is not `],
+					[/* text */ 't', `relatively
+         prime`],
+					[/* text */ 't', ` to `],
+					[/* inline code block */ 'i', `m`],
+					[/* text */ 't', `.`]
+				]]
+			],
+			[/* return description */
+				[/* inline code block */ 'i', `thisexponent mod m`]
+			]
+		]],
+		[/* method */ 'multiply(java.math.BigInteger)', [
+			[/* method description */
+				[/* text */ 't', `Returns a BigInteger whose value is `],
+				[/* inline code block */ 'i', `(this * val)`],
+				[/* text */ 't', `.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'val', [/* parameter description */
+					[/* text */ 't', `value to be multiplied by this BigInteger.`]
+				]]
+			],
+			/* throws */ UDF,
+			[/* return description */
+				[/* inline code block */ 'i', `this * val`]
+			]
+		]],
+		[/* method */ 'negate()', [
+			[/* method description */
+				[/* text */ 't', `Returns a BigInteger whose value is `],
+				[/* inline code block */ 'i', `(-this)`],
+				[/* text */ 't', `.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* inline code block */ 'i', `-this`]
+			]
+		]],
+		[/* method */ 'nextProbablePrime()', [
+			[/* method description */
+				[/* text */ 't', `Returns the first integer greater than this `],
+				[/* inline code block */ 'i', `BigInteger`],
+				[/* text */ 't', ` that
+ is probably prime.  The probability that the number returned by this
+ method is composite does not exceed 2`],
+				[/* text */ 't', `-100`, 'sup'],
+				[/* text */ 't', `. This method will
+ never skip over a prime when searching: if it returns `],
+				[/* inline code block */ 'i', `p`],
+				[/* text */ 't', `, there
+ is no prime `],
+				[/* inline code block */ 'i', `q`],
+				[/* text */ 't', ` such that `],
+				[/* inline code block */ 'i', `this < q < p`],
+				[/* text */ 't', `.`]
+			],
+			/* parameters */ UDF,
+			[/* throws */
+				[/* throw */ 'java.lang.ArithmeticException', [/* throw description */
+					[/* text */ 't', ``],
+					[/* inline code block */ 'i', `this < 0`],
+					[/* text */ 't', ` or `],
+					[/* inline code block */ 'i', `this`],
+					[/* text */ 't', ` is too large.`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `the first integer greater than this `],
+				[/* inline code block */ 'i', `BigInteger`],
+				[/* text */ 't', ` that
+         is probably prime.`]
+			]
+		]],
+		[/* method */ 'not()', [
+			[/* method description */
+				[/* text */ 't', `Returns a BigInteger whose value is `],
+				[/* inline code block */ 'i', `(~this)`],
+				[/* text */ 't', `.  (This method
+ returns a negative value if and only if this BigInteger is
+ non-negative.)`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* inline code block */ 'i', `~this`]
+			]
+		]],
+		[/* method */ 'or(java.math.BigInteger)', [
+			[/* method description */
+				[/* text */ 't', `Returns a BigInteger whose value is `],
+				[/* inline code block */ 'i', `(this | val)`],
+				[/* text */ 't', `.  (This method
+ returns a negative BigInteger if and only if either this or val is
+ negative.)`]
+			],
+			[/* parameters */
+				[/* parameter */ 'val', [/* parameter description */
+					[/* text */ 't', `value to be OR'ed with this BigInteger.`]
+				]]
+			],
+			/* throws */ UDF,
+			[/* return description */
+				[/* inline code block */ 'i', `this | val`]
+			]
+		]],
+		[/* method */ 'pow(int)', [
+			[/* method description */
+				[/* text */ 't', `Returns a BigInteger whose value is `],
+				[/* inline code block */ 'i', `(thisexponent)`],
+				[/* text */ 't', `.
+ Note that `],
+				[/* inline code block */ 'i', `exponent`],
+				[/* text */ 't', ` is an integer rather than a BigInteger.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'exponent', [/* parameter description */
+					[/* text */ 't', `exponent to which this BigInteger is to be raised.`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.lang.ArithmeticException', [/* throw description */
+					[/* text */ 't', ``],
+					[/* inline code block */ 'i', `exponent`],
+					[/* text */ 't', ` is negative.  (This would
+         cause the operation to yield a non-integer value.)`]
+				]]
+			],
+			[/* return description */
+				[/* inline code block */ 'i', `thisexponent`]
+			]
+		]],
+		[/* method */ 'remainder(java.math.BigInteger)', [
+			[/* method description */
+				[/* text */ 't', `Returns a BigInteger whose value is `],
+				[/* inline code block */ 'i', `(this % val)`],
+				[/* text */ 't', `.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'val', [/* parameter description */
+					[/* text */ 't', `value by which this BigInteger is to be divided, and the
+         remainder computed.`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.lang.ArithmeticException', [/* throw description */
+					[/* text */ 't', `if `],
+					[/* inline code block */ 'i', `val`],
+					[/* text */ 't', ` is zero.`]
+				]]
+			],
+			[/* return description */
+				[/* inline code block */ 'i', `this % val`]
+			]
+		]],
+		[/* method */ 'setBit(int)', [
+			[/* method description */
+				[/* text */ 't', `Returns a BigInteger whose value is equivalent to this BigInteger
+ with the designated bit set.  (Computes `],
+				[/* inline code block */ 'i', `(this | (1<<n))`],
+				[/* text */ 't', `.)`]
+			],
+			[/* parameters */
+				[/* parameter */ 'n', [/* parameter description */
+					[/* text */ 't', `index of bit to set.`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.lang.ArithmeticException', [/* throw description */
+					[/* text */ 't', ``],
+					[/* inline code block */ 'i', `n`],
+					[/* text */ 't', ` is negative.`]
+				]]
+			],
+			[/* return description */
+				[/* inline code block */ 'i', `this | (1<<n)`]
+			]
+		]],
+		[/* method */ 'shiftLeft(int)', [
+			[/* method description */
+				[/* text */ 't', `Returns a BigInteger whose value is `],
+				[/* inline code block */ 'i', `(this << n)`],
+				[/* text */ 't', `.
+ The shift distance, `],
+				[/* inline code block */ 'i', `n`],
+				[/* text */ 't', `, may be negative, in which case
+ this method performs a right shift.
+ (Computes `],
+				[/* inline code block */ 'i', `floor(this * 2n)`],
+				[/* text */ 't', `.)`]
+			],
+			[/* parameters */
+				[/* parameter */ 'n', [/* parameter description */
+					[/* text */ 't', `shift distance, in bits.`]
+				]]
+			],
+			/* throws */ UDF,
+			[/* return description */
+				[/* inline code block */ 'i', `this << n`]
+			]
+		]],
+		[/* method */ 'shiftRight(int)', [
+			[/* method description */
+				[/* text */ 't', `Returns a BigInteger whose value is `],
+				[/* inline code block */ 'i', `(this >> n)`],
+				[/* text */ 't', `.  Sign
+ extension is performed.  The shift distance, `],
+				[/* inline code block */ 'i', `n`],
+				[/* text */ 't', `, may be
+ negative, in which case this method performs a left shift.
+ (Computes `],
+				[/* inline code block */ 'i', `floor(this / 2n)`],
+				[/* text */ 't', `.)`]
+			],
+			[/* parameters */
+				[/* parameter */ 'n', [/* parameter description */
+					[/* text */ 't', `shift distance, in bits.`]
+				]]
+			],
+			/* throws */ UDF,
+			[/* return description */
+				[/* inline code block */ 'i', `this >> n`]
+			]
+		]],
+		[/* method */ 'sqrt()', [
+			[/* method description */
+				[/* text */ 't', `Returns the integer square root of this BigInteger.  The integer square
+ root of the corresponding mathematical integer `],
+				[/* inline code block */ 'i', `n`],
+				[/* text */ 't', ` is the largest
+ mathematical integer `],
+				[/* inline code block */ 'i', `s`],
+				[/* text */ 't', ` such that `],
+				[/* inline code block */ 'i', `s*s <= n`],
+				[/* text */ 't', `.  It is equal
+ to the value of `],
+				[/* inline code block */ 'i', `floor(sqrt(n))`],
+				[/* text */ 't', `, where `],
+				[/* inline code block */ 'i', `sqrt(n)`],
+				[/* text */ 't', ` denotes the
+ real square root of `],
+				[/* inline code block */ 'i', `n`],
+				[/* text */ 't', ` treated as a real.  Note that the integer
+ square root will be less than the real square root if the latter is not
+ representable as an integral value.`]
+			],
+			/* parameters */ UDF,
+			[/* throws */
+				[/* throw */ 'java.lang.ArithmeticException', [/* throw description */
+					[/* text */ 't', `if `],
+					[/* inline code block */ 'i', `this`],
+					[/* text */ 't', ` is negative.  (The square
+         root of a negative integer `],
+					[/* inline code block */ 'i', `val`],
+					[/* text */ 't', ` is
+         `],
+					[/* inline code block */ 'i', `(i * sqrt(-val))`],
+					[/* text */ 't', ` where `],
+					[/* text */ 't', `i`],
+					[/* text */ 't', ` is the
+         `],
+					[/* text */ 't', `imaginary unit`],
+					[/* text */ 't', ` and is equal to
+         `],
+					[/* inline code block */ 'i', `sqrt(-1)`],
+					[/* text */ 't', `.)`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `the integer square root of `],
+				[/* inline code block */ 'i', `this`]
+			]
+		]],
+		[/* method */ 'subtract(java.math.BigInteger)', [
+			[/* method description */
+				[/* text */ 't', `Returns a BigInteger whose value is `],
+				[/* inline code block */ 'i', `(this - val)`],
+				[/* text */ 't', `.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'val', [/* parameter description */
+					[/* text */ 't', `value to be subtracted from this BigInteger.`]
+				]]
+			],
+			/* throws */ UDF,
+			[/* return description */
+				[/* inline code block */ 'i', `this - val`]
+			]
+		]],
+		[/* method */ 'xor(java.math.BigInteger)', [
+			[/* method description */
+				[/* text */ 't', `Returns a BigInteger whose value is `],
+				[/* inline code block */ 'i', `(this ^ val)`],
+				[/* text */ 't', `.  (This method
+ returns a negative BigInteger if and only if exactly one of this and
+ val are negative.)`]
+			],
+			[/* parameters */
+				[/* parameter */ 'val', [/* parameter description */
+					[/* text */ 't', `value to be XOR'ed with this BigInteger.`]
+				]]
+			],
+			/* throws */ UDF,
+			[/* return description */
+				[/* inline code block */ 'i', `this ^ val`]
+			]
+		]],
+		[/* method */ 'divideAndRemainder(java.math.BigInteger)', [
+			[/* method description */
+				[/* text */ 't', `Returns an array of two BigIntegers containing `],
+				[/* inline code block */ 'i', `(this / val)`],
+				[/* text */ 't', `
+ followed by `],
+				[/* inline code block */ 'i', `(this % val)`],
+				[/* text */ 't', `.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'val', [/* parameter description */
+					[/* text */ 't', `value by which this BigInteger is to be divided, and the
+         remainder computed.`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.lang.ArithmeticException', [/* throw description */
+					[/* text */ 't', `if `],
+					[/* inline code block */ 'i', `val`],
+					[/* text */ 't', ` is zero.`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `an array of two BigIntegers: the quotient `],
+				[/* inline code block */ 'i', `(this / val)`],
+				[/* text */ 't', `
+         is the initial element, and the remainder `],
+				[/* inline code block */ 'i', `(this % val)`],
+				[/* text */ 't', `
+         is the final element.`]
+			]
+		]],
+		[/* method */ 'sqrtAndRemainder()', [
+			[/* method description */
+				[/* text */ 't', `Returns an array of two BigIntegers containing the integer square root
+ `],
+				[/* inline code block */ 'i', `s`],
+				[/* text */ 't', ` of `],
+				[/* inline code block */ 'i', `this`],
+				[/* text */ 't', ` and its remainder `],
+				[/* inline code block */ 'i', `this - s*s`],
+				[/* text */ 't', `,
+ respectively.`]
+			],
+			/* parameters */ UDF,
+			[/* throws */
+				[/* throw */ 'java.lang.ArithmeticException', [/* throw description */
+					[/* text */ 't', `if `],
+					[/* inline code block */ 'i', `this`],
+					[/* text */ 't', ` is negative.  (The square
+         root of a negative integer `],
+					[/* inline code block */ 'i', `val`],
+					[/* text */ 't', ` is
+         `],
+					[/* inline code block */ 'i', `(i * sqrt(-val))`],
+					[/* text */ 't', ` where `],
+					[/* text */ 't', `i`],
+					[/* text */ 't', ` is the
+         `],
+					[/* text */ 't', `imaginary unit`],
+					[/* text */ 't', ` and is equal to
+         `],
+					[/* inline code block */ 'i', `sqrt(-1)`],
+					[/* text */ 't', `.)`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `an array of two BigIntegers with the integer square root at
+         offset 0 and the remainder at offset 1`]
+			]
+		]],
+		[/* method */ 'longValue()', [
+			[/* method description */
+				[/* text */ 't', `Converts this BigInteger to a `],
+				[/* inline code block */ 'i', `long`],
+				[/* text */ 't', `.  This
+ conversion is analogous to a
+ `],
+				[/* text */ 't', `narrowing primitive conversion`],
+				[/* text */ 't', ` from `],
+				[/* inline code block */ 'i', `long`],
+				[/* text */ 't', ` to
+ `],
+				[/* inline code block */ 'i', `int`],
+				[/* text */ 't', ` as defined in
+ `],
+				[/* text */ 't', `The Java Language Specification`],
+				[/* text */ 't', `:
+ if this BigInteger is too big to fit in a
+ `],
+				[/* inline code block */ 'i', `long`],
+				[/* text */ 't', `, only the low-order 64 bits are returned.
+ Note that this conversion can lose information about the
+ overall magnitude of the BigInteger value as well as return a
+ result with the opposite sign.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `this BigInteger converted to a `],
+				[/* inline code block */ 'i', `long`],
+				[/* text */ 't', `.`]
+			]
+		]],
+		[/* method */ 'longValueExact()', [
 			[/* method description */
 				[/* text */ 't', `Converts this `],
 				[/* inline code block */ 'i', `BigInteger`],
-				[/* text */ 't', ` to an `],
-				[/* inline code block */ 'i', `int`],
+				[/* text */ 't', ` to a `],
+				[/* inline code block */ 'i', `long`],
 				[/* text */ 't', `, checking
  for lost information.  If the value of this `],
 				[/* inline code block */ 'i', `BigInteger`],
 				[/* text */ 't', `
  is out of the range of the `],
-				[/* inline code block */ 'i', `int`],
+				[/* inline code block */ 'i', `long`],
 				[/* text */ 't', ` type, then an
  `],
 				[/* inline code block */ 'i', `ArithmeticException`],
@@ -1640,16 +1627,16 @@ DocsCollector.collect('java.math.BigInteger', [
 					[/* text */ 't', `if the value of `],
 					[/* inline code block */ 'i', `this`],
 					[/* text */ 't', ` will
- not exactly fit in an `],
-					[/* inline code block */ 'i', `int`],
+ not exactly fit in a `],
+					[/* inline code block */ 'i', `long`],
 					[/* text */ 't', `.`]
 				]]
 			],
 			[/* return description */
 				[/* text */ 't', `this `],
 				[/* inline code block */ 'i', `BigInteger`],
-				[/* text */ 't', ` converted to an `],
-				[/* inline code block */ 'i', `int`],
+				[/* text */ 't', ` converted to a `],
+				[/* inline code block */ 'i', `long`],
 				[/* text */ 't', `.`]
 			]
 		]],
@@ -1689,40 +1676,53 @@ DocsCollector.collect('java.math.BigInteger', [
 				[/* text */ 't', `.`]
 			]
 		]],
-		[/* method */ 'byteValueExact()', [
+		[/* method */ 'probablePrime(int,java.util.Random)', [
 			[/* method description */
-				[/* text */ 't', `Converts this `],
-				[/* inline code block */ 'i', `BigInteger`],
-				[/* text */ 't', ` to a `],
-				[/* inline code block */ 'i', `byte`],
-				[/* text */ 't', `, checking
- for lost information.  If the value of this `],
-				[/* inline code block */ 'i', `BigInteger`],
-				[/* text */ 't', `
- is out of the range of the `],
-				[/* inline code block */ 'i', `byte`],
-				[/* text */ 't', ` type, then an
- `],
-				[/* inline code block */ 'i', `ArithmeticException`],
-				[/* text */ 't', ` is thrown.`]
+				[/* text */ 't', `Returns a positive BigInteger that is probably prime, with the
+ specified bitLength. The probability that a BigInteger returned
+ by this method is composite does not exceed 2`],
+				[/* text */ 't', `-100`, 'sup'],
+				[/* text */ 't', `.`]
 			],
-			/* parameters */ UDF,
+			[/* parameters */
+				[/* parameter */ 'bitLength', [/* parameter description */
+					[/* text */ 't', `bitLength of the returned BigInteger.`]
+				]],
+				[/* parameter */ 'rnd', [/* parameter description */
+					[/* text */ 't', `source of random bits used to select candidates to be
+         tested for primality.`]
+				]]
+			],
 			[/* throws */
 				[/* throw */ 'java.lang.ArithmeticException', [/* throw description */
-					[/* text */ 't', `if the value of `],
-					[/* inline code block */ 'i', `this`],
-					[/* text */ 't', ` will
- not exactly fit in a `],
-					[/* inline code block */ 'i', `byte`],
-					[/* text */ 't', `.`]
+					[/* text */ 't', ``],
+					[/* inline code block */ 'i', `bitLength < 2`],
+					[/* text */ 't', ` or `],
+					[/* inline code block */ 'i', `bitLength`],
+					[/* text */ 't', ` is too large.`]
 				]]
 			],
 			[/* return description */
-				[/* text */ 't', `this `],
-				[/* inline code block */ 'i', `BigInteger`],
-				[/* text */ 't', ` converted to a `],
-				[/* inline code block */ 'i', `byte`],
+				[/* text */ 't', `a BigInteger of `],
+				[/* inline code block */ 'i', `bitLength`],
+				[/* text */ 't', ` bits that is probably prime`]
+			]
+		]],
+		[/* method */ 'valueOf(long)', [
+			[/* method description */
+				[/* text */ 't', `Returns a BigInteger whose value is equal to that of the
+ specified `],
+				[/* inline code block */ 'i', `long`],
 				[/* text */ 't', `.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'val', [/* parameter description */
+					[/* text */ 't', `value of the BigInteger to return.`]
+				]]
+			],
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `a BigInteger with the specified value.`]
 			]
 		]]
 	],

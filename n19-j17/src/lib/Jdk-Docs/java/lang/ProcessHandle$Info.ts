@@ -15,18 +15,6 @@ DocsCollector.collect('java.lang.ProcessHandle$Info', [
 	/* fields */ UDF,
 	/* constructors */ UDF,
 	[/* methods */
-		[/* method */ 'arguments()', [
-			[/* method description */
-				[/* text */ 't', `Returns an array of Strings of the arguments of the process.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `an `],
-				[/* inline code block */ 'i', `Optional<String[]>`],
-				[/* text */ 't', ` of the arguments of the process`]
-			]
-		]],
 		[/* method */ 'command()', [
 			[/* method description */
 				[/* text */ 't', `Returns the executable pathname of the process.`]
@@ -38,18 +26,6 @@ DocsCollector.collect('java.lang.ProcessHandle$Info', [
 				[/* inline code block */ 'i', `Optional<String>`],
 				[/* text */ 't', ` of the executable pathname
          of the process`]
-			]
-		]],
-		[/* method */ 'user()', [
-			[/* method description */
-				[/* text */ 't', `Return the user of the process.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `an `],
-				[/* inline code block */ 'i', `Optional<String>`],
-				[/* text */ 't', ` for the user of the process`]
 			]
 		]],
 		[/* method */ 'commandLine()', [
@@ -77,16 +53,28 @@ DocsCollector.collect('java.lang.ProcessHandle$Info', [
          of the process`]
 			]
 		]],
-		[/* method */ 'startInstant()', [
+		[/* method */ 'user()', [
 			[/* method description */
-				[/* text */ 't', `Returns the start time of the process.`]
+				[/* text */ 't', `Return the user of the process.`]
 			],
 			/* parameters */ UDF,
 			/* throws */ UDF,
 			[/* return description */
 				[/* text */ 't', `an `],
-				[/* inline code block */ 'i', `Optional<Instant>`],
-				[/* text */ 't', ` of the start time of the process`]
+				[/* inline code block */ 'i', `Optional<String>`],
+				[/* text */ 't', ` for the user of the process`]
+			]
+		]],
+		[/* method */ 'arguments()', [
+			[/* method description */
+				[/* text */ 't', `Returns an array of Strings of the arguments of the process.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `an `],
+				[/* inline code block */ 'i', `Optional<String[]>`],
+				[/* text */ 't', ` of the arguments of the process`]
 			]
 		]],
 		[/* method */ 'totalCpuDuration()', [
@@ -99,6 +87,18 @@ DocsCollector.collect('java.lang.ProcessHandle$Info', [
 				[/* text */ 't', `an `],
 				[/* inline code block */ 'i', `Optional<Duration>`],
 				[/* text */ 't', ` for the accumulated total cputime`]
+			]
+		]],
+		[/* method */ 'startInstant()', [
+			[/* method description */
+				[/* text */ 't', `Returns the start time of the process.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `an `],
+				[/* inline code block */ 'i', `Optional<Instant>`],
+				[/* text */ 't', ` of the start time of the process`]
 			]
 		]]
 	],

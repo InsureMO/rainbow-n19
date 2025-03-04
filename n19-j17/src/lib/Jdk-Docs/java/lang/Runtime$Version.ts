@@ -252,46 +252,37 @@ DocsCollector.collect('java.lang.Runtime$Version', [
 				[/* inline code block */ 'i', `Version`]
 			]
 		]],
-		[/* method */ 'toString()', [
+		[/* method */ 'equalsIgnoreOptional(java.lang.Object)', [
 			[/* method description */
-				[/* text */ 't', `Returns a string representation of this version.`]
+				[/* text */ 't', `Determines whether this `],
+				[/* inline code block */ 'i', `Version`],
+				[/* text */ 't', ` is equal to another
+ disregarding optional build information.
+
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', ` Two `],
+					[/* inline code block */ 'i', `Version`],
+					[/* text */ 't', `s are equal if and only if they represent the
+ same version string disregarding the optional build information.`]
+				]]
 			],
-			/* parameters */ UDF,
+			[/* parameters */
+				[/* parameter */ 'obj', [/* parameter description */
+					[/* text */ 't', `The object to which this `],
+					[/* inline code block */ 'i', `Version`],
+					[/* text */ 't', ` is to be compared`]
+				]]
+			],
 			/* throws */ UDF,
 			[/* return description */
-				[/* text */ 't', `The version string`]
-			]
-		]],
-		[/* method */ 'version()', [
-			[/* method description */
-				[/* text */ 't', `Returns an unmodifiable `],
-				[/* reference */ 'r', `java.util.List`],
-				[/* text */ 't', ` of the integers
- represented in the `],
-				[/* text */ 't', `version number`],
-				[/* text */ 't', `.
- The `],
-				[/* inline code block */ 'i', `List`],
-				[/* text */ 't', ` always contains at least one element corresponding to
- the `],
-				[/* text */ 't', `feature version number`],
-				[/* text */ 't', `.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `An unmodifiable list of the integers
-          represented in the version number`]
-			]
-		]],
-		[/* method */ 'hashCode()', [
-			[/* method description */
-				[/* text */ 't', `Returns the hash code of this version.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `The hashcode of this version`]
+				[/* inline code block */ 'i', `true`],
+				[/* text */ 't', ` if, and only if, the given object is a `],
+				[/* inline code block */ 'i', `Version`],
+				[/* text */ 't', ` that is identical to this `],
+				[/* inline code block */ 'i', `Version`],
+				[/* text */ 't', `
+          ignoring the optional build information`]
 			]
 		]],
 		[/* method */ 'compareTo(java.lang.Runtime.Version)', [
@@ -342,195 +333,6 @@ DocsCollector.collect('java.lang.Runtime$Version', [
 				[/* inline code block */ 'i', `Version`]
 			]
 		]],
-		[/* method */ 'update()', [
-			[/* method description */
-				[/* text */ 't', `Returns the value of the `],
-				[/* text */ 't', `update`],
-				[/* text */ 't', ` element of the
- version number, or zero if it is absent.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `The value of the update element, or zero`]
-			]
-		]],
-		[/* method */ 'security()', [
-			[/* method description */
-				[/* text */ 't', `Returns the value of the security element of the version number, or
- zero if it is absent.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `The value of the update element, or zero`]
-			]
-		]],
-		[/* method */ 'pre()', [
-			[/* method description */
-				[/* text */ 't', `Returns the optional `],
-				[/* text */ 't', `pre-release`],
-				[/* text */ 't', ` information.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `The optional pre-release information as a String`]
-			]
-		]],
-		[/* method */ 'build()', [
-			[/* method description */
-				[/* text */ 't', `Returns the `],
-				[/* text */ 't', `build number`],
-				[/* text */ 't', `.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `The optional build number.`]
-			]
-		]],
-		[/* method */ 'optional()', [
-			[/* method description */
-				[/* text */ 't', `Returns `],
-				[/* text */ 't', `optional`],
-				[/* text */ 't', ` additional identifying build
- information.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `Additional build information as a String`]
-			]
-		]],
-		[/* method */ 'major()', [
-			[/* method description */
-				[/* text */ 't', `Returns the value of the major element of the version number.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `The value of the feature element`]
-			]
-		]],
-		[/* method */ 'minor()', [
-			[/* method description */
-				[/* text */ 't', `Returns the value of the minor element of the version number, or
- zero if it is absent.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `The value of the interim element, or zero`]
-			]
-		]],
-		[/* method */ 'parse(java.lang.String)', [
-			[/* method description */
-				[/* text */ 't', `Parses the given string as a valid
- `],
-				[/* text */ 't', `version string`],
-				[/* text */ 't', ` containing a
- `],
-				[/* text */ 't', `version number`],
-				[/* text */ 't', ` followed by pre-release and
- build information.`]
-			],
-			[/* parameters */
-				[/* parameter */ 's', [/* parameter description */
-					[/* text */ 't', `A string to interpret as a version`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
-					[/* text */ 't', `If the given string cannot be interpreted as a valid
-          version`]
-				]],
-				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
-					[/* text */ 't', `If the given string is `],
-					[/* inline code block */ 'i', `null`]
-				]],
-				[/* throw */ 'java.lang.NumberFormatException', [/* throw description */
-					[/* text */ 't', `If an element of the version number or the build number
-          cannot be represented as an `],
-					[/* reference */ 'r', `java.lang.Integer`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `The Version of the given string`]
-			]
-		]],
-		[/* method */ 'feature()', [
-			[/* method description */
-				[/* text */ 't', `Returns the value of the `],
-				[/* text */ 't', `feature`],
-				[/* text */ 't', ` element of
- the version number.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `The value of the feature element`]
-			]
-		]],
-		[/* method */ 'interim()', [
-			[/* method description */
-				[/* text */ 't', `Returns the value of the `],
-				[/* text */ 't', `interim`],
-				[/* text */ 't', ` element of
- the version number, or zero if it is absent.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `The value of the interim element, or zero`]
-			]
-		]],
-		[/* method */ 'equalsIgnoreOptional(java.lang.Object)', [
-			[/* method description */
-				[/* text */ 't', `Determines whether this `],
-				[/* inline code block */ 'i', `Version`],
-				[/* text */ 't', ` is equal to another
- disregarding optional build information.
-
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', ` Two `],
-					[/* inline code block */ 'i', `Version`],
-					[/* text */ 't', `s are equal if and only if they represent the
- same version string disregarding the optional build information.`]
-				]]
-			],
-			[/* parameters */
-				[/* parameter */ 'obj', [/* parameter description */
-					[/* text */ 't', `The object to which this `],
-					[/* inline code block */ 'i', `Version`],
-					[/* text */ 't', ` is to be compared`]
-				]]
-			],
-			/* throws */ UDF,
-			[/* return description */
-				[/* inline code block */ 'i', `true`],
-				[/* text */ 't', ` if, and only if, the given object is a `],
-				[/* inline code block */ 'i', `Version`],
-				[/* text */ 't', ` that is identical to this `],
-				[/* inline code block */ 'i', `Version`],
-				[/* text */ 't', `
-          ignoring the optional build information`]
-			]
-		]],
-		[/* method */ 'patch()', [
-			[/* method description */
-				[/* text */ 't', `Returns the value of the `],
-				[/* text */ 't', `patch`],
-				[/* text */ 't', ` element of the
- version number, or zero if it is absent.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `The value of the patch element, or zero`]
-			]
-		]],
 		[/* method */ 'compareToIgnoreOptional(java.lang.Runtime.Version)', [
 			[/* method description */
 				[/* text */ 't', `Compares this version to another disregarding optional build
@@ -569,6 +371,204 @@ DocsCollector.collect('java.lang.Runtime$Version', [
 				[/* text */ 't', ` is less than, equal to, or greater than the
           given `],
 				[/* inline code block */ 'i', `Version`]
+			]
+		]],
+		[/* method */ 'feature()', [
+			[/* method description */
+				[/* text */ 't', `Returns the value of the `],
+				[/* text */ 't', `feature`],
+				[/* text */ 't', ` element of
+ the version number.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `The value of the feature element`]
+			]
+		]],
+		[/* method */ 'hashCode()', [
+			[/* method description */
+				[/* text */ 't', `Returns the hash code of this version.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `The hashcode of this version`]
+			]
+		]],
+		[/* method */ 'interim()', [
+			[/* method description */
+				[/* text */ 't', `Returns the value of the `],
+				[/* text */ 't', `interim`],
+				[/* text */ 't', ` element of
+ the version number, or zero if it is absent.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `The value of the interim element, or zero`]
+			]
+		]],
+		[/* method */ 'major()', [
+			[/* method description */
+				[/* text */ 't', `Returns the value of the major element of the version number.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `The value of the feature element`]
+			]
+		]],
+		[/* method */ 'minor()', [
+			[/* method description */
+				[/* text */ 't', `Returns the value of the minor element of the version number, or
+ zero if it is absent.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `The value of the interim element, or zero`]
+			]
+		]],
+		[/* method */ 'patch()', [
+			[/* method description */
+				[/* text */ 't', `Returns the value of the `],
+				[/* text */ 't', `patch`],
+				[/* text */ 't', ` element of the
+ version number, or zero if it is absent.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `The value of the patch element, or zero`]
+			]
+		]],
+		[/* method */ 'security()', [
+			[/* method description */
+				[/* text */ 't', `Returns the value of the security element of the version number, or
+ zero if it is absent.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `The value of the update element, or zero`]
+			]
+		]],
+		[/* method */ 'update()', [
+			[/* method description */
+				[/* text */ 't', `Returns the value of the `],
+				[/* text */ 't', `update`],
+				[/* text */ 't', ` element of the
+ version number, or zero if it is absent.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `The value of the update element, or zero`]
+			]
+		]],
+		[/* method */ 'toString()', [
+			[/* method description */
+				[/* text */ 't', `Returns a string representation of this version.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `The version string`]
+			]
+		]],
+		[/* method */ 'version()', [
+			[/* method description */
+				[/* text */ 't', `Returns an unmodifiable `],
+				[/* reference */ 'r', `java.util.List`],
+				[/* text */ 't', ` of the integers
+ represented in the `],
+				[/* text */ 't', `version number`],
+				[/* text */ 't', `.
+ The `],
+				[/* inline code block */ 'i', `List`],
+				[/* text */ 't', ` always contains at least one element corresponding to
+ the `],
+				[/* text */ 't', `feature version number`],
+				[/* text */ 't', `.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `An unmodifiable list of the integers
+          represented in the version number`]
+			]
+		]],
+		[/* method */ 'build()', [
+			[/* method description */
+				[/* text */ 't', `Returns the `],
+				[/* text */ 't', `build number`],
+				[/* text */ 't', `.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `The optional build number.`]
+			]
+		]],
+		[/* method */ 'optional()', [
+			[/* method description */
+				[/* text */ 't', `Returns `],
+				[/* text */ 't', `optional`],
+				[/* text */ 't', ` additional identifying build
+ information.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `Additional build information as a String`]
+			]
+		]],
+		[/* method */ 'pre()', [
+			[/* method description */
+				[/* text */ 't', `Returns the optional `],
+				[/* text */ 't', `pre-release`],
+				[/* text */ 't', ` information.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `The optional pre-release information as a String`]
+			]
+		]],
+		[/* method */ 'parse(java.lang.String)', [
+			[/* method description */
+				[/* text */ 't', `Parses the given string as a valid
+ `],
+				[/* text */ 't', `version string`],
+				[/* text */ 't', ` containing a
+ `],
+				[/* text */ 't', `version number`],
+				[/* text */ 't', ` followed by pre-release and
+ build information.`]
+			],
+			[/* parameters */
+				[/* parameter */ 's', [/* parameter description */
+					[/* text */ 't', `A string to interpret as a version`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
+					[/* text */ 't', `If the given string cannot be interpreted as a valid
+          version`]
+				]],
+				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
+					[/* text */ 't', `If the given string is `],
+					[/* inline code block */ 'i', `null`]
+				]],
+				[/* throw */ 'java.lang.NumberFormatException', [/* throw description */
+					[/* text */ 't', `If an element of the version number or the build number
+          cannot be represented as an `],
+					[/* reference */ 'r', `java.lang.Integer`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `The Version of the given string`]
 			]
 		]]
 	],

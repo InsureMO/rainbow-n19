@@ -131,362 +131,6 @@ DocsCollector.collect('java.util.HexFormat', [
 	/* fields */ UDF,
 	/* constructors */ UDF,
 	[/* methods */
-		[/* method */ 'equals(java.lang.Object)', [
-			[/* method description */
-				[/* text */ 't', `Returns `],
-				[/* inline code block */ 'i', `true`],
-				[/* text */ 't', ` if the other object is a `],
-				[/* inline code block */ 'i', `HexFormat`],
-				[/* text */ 't', `
- with the same parameters.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'o', [/* parameter description */
-					[/* text */ 't', `an object, may be null`]
-				]]
-			],
-			/* throws */ UDF,
-			[/* return description */
-				[/* inline code block */ 'i', `true`],
-				[/* text */ 't', ` if the other object is a `],
-				[/* inline code block */ 'i', `HexFormat`],
-				[/* text */ 't', ` and the parameters
-         uppercase, delimiter, prefix, and suffix are equal;
-         otherwise `],
-				[/* inline code block */ 'i', `false`]
-			]
-		]],
-		[/* method */ 'toString()', [
-			[/* method description */
-				[/* text */ 't', `Returns a description of the formatter parameters for uppercase,
- delimiter, prefix, and suffix.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `a description of this `],
-				[/* inline code block */ 'i', `HexFormat`]
-			]
-		]],
-		[/* method */ 'hashCode()', [
-			[/* method description */
-				[/* text */ 't', `Returns a hashcode for this `],
-				[/* inline code block */ 'i', `HexFormat`],
-				[/* text */ 't', `.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `a hashcode for this `],
-				[/* inline code block */ 'i', `HexFormat`]
-			]
-		]],
-		[/* method */ 'isUpperCase()', [
-			[/* method description */
-				[/* text */ 't', `Returns `],
-				[/* inline code block */ 'i', `true`],
-				[/* text */ 't', ` if the hexadecimal digits are uppercase,
- otherwise `],
-				[/* inline code block */ 'i', `false`],
-				[/* text */ 't', `.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* inline code block */ 'i', `true`],
-				[/* text */ 't', ` if the hexadecimal digits are uppercase,
-          otherwise `],
-				[/* inline code block */ 'i', `false`]
-			]
-		]],
-		[/* method */ 'of()', [
-			[/* method description */
-				[/* text */ 't', `Returns a hexadecimal formatter with no delimiter and lowercase characters.
- The delimiter, prefix, and suffix are empty.
- The methods `],
-				[/* reference */ 'r', `#withDelimiter(java.lang.String)`, `withDelimiter`],
-				[/* text */ 't', `,
- `],
-				[/* reference */ 'r', `#withUpperCase()`, `withUpperCase`],
-				[/* text */ 't', `, `],
-				[/* reference */ 'r', `#withLowerCase()`, `withLowerCase`],
-				[/* text */ 't', `,
- `],
-				[/* reference */ 'r', `#withPrefix(java.lang.String)`, `withPrefix`],
-				[/* text */ 't', `, and `],
-				[/* reference */ 'r', `#withSuffix(java.lang.String)`, `withSuffix`],
-				[/* text */ 't', `
- return copies of formatters with new parameters.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `a hexadecimal formatter with no delimiter and lowercase characters`]
-			]
-		]],
-		[/* method */ 'prefix()', [
-			[/* method description */
-				[/* text */ 't', `Returns the prefix used for each hexadecimal value in formatted hexadecimal strings.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the prefix, non-null, may be empty `],
-				[/* inline code block */ 'i', `""`]
-			]
-		]],
-		[/* method */ 'suffix()', [
-			[/* method description */
-				[/* text */ 't', `Returns the suffix used for each hexadecimal value in formatted hexadecimal strings.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the suffix, non-null, may be empty `],
-				[/* inline code block */ 'i', `""`]
-			]
-		]],
-		[/* method */ 'delimiter()', [
-			[/* method description */
-				[/* text */ 't', `Returns the delimiter between hexadecimal values in formatted hexadecimal strings.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the delimiter, non-null, may be empty `],
-				[/* inline code block */ 'i', `""`]
-			]
-		]],
-		[/* method */ 'withUpperCase()', [
-			[/* method description */
-				[/* text */ 't', `Returns a copy of this `],
-				[/* inline code block */ 'i', `HexFormat`],
-				[/* text */ 't', ` to use uppercase hexadecimal characters.
- The uppercase hexadecimal characters are `],
-				[/* inline code block */ 'i', `"0-9", "A-F"`],
-				[/* text */ 't', `.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `a copy of this `],
-				[/* inline code block */ 'i', `HexFormat`],
-				[/* text */ 't', ` with uppercase hexadecimal characters`]
-			]
-		]],
-		[/* method */ 'toHexDigits(char)', [
-			[/* method description */
-				[/* text */ 't', `Returns the four hexadecimal characters for the `],
-				[/* inline code block */ 'i', `char`],
-				[/* text */ 't', ` value.
- Each nibble (4 bits) from most significant to least significant of the value
- is formatted as if by `],
-				[/* reference */ 'r', `#toLowHexDigit(int)`, `toLowHexDigit(nibble)`],
-				[/* text */ 't', `.
- The delimiter, prefix and suffix are not used.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'value', [/* parameter description */
-					[/* text */ 't', `a `],
-					[/* inline code block */ 'i', `char`],
-					[/* text */ 't', ` value`]
-				]]
-			],
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the four hexadecimal characters for the `],
-				[/* inline code block */ 'i', `char`],
-				[/* text */ 't', ` value`]
-			]
-		]],
-		[/* method */ 'toHexDigits(short)', [
-			[/* method description */
-				[/* text */ 't', `Returns the four hexadecimal characters for the `],
-				[/* inline code block */ 'i', `short`],
-				[/* text */ 't', ` value.
- Each nibble (4 bits) from most significant to least significant of the value
- is formatted as if by `],
-				[/* reference */ 'r', `#toLowHexDigit(int)`, `toLowHexDigit(nibble)`],
-				[/* text */ 't', `.
- The delimiter, prefix and suffix are not used.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'value', [/* parameter description */
-					[/* text */ 't', `a `],
-					[/* inline code block */ 'i', `short`],
-					[/* text */ 't', ` value`]
-				]]
-			],
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the four hexadecimal characters for the `],
-				[/* inline code block */ 'i', `short`],
-				[/* text */ 't', ` value`]
-			]
-		]],
-		[/* method */ 'toHexDigits(long)', [
-			[/* method description */
-				[/* text */ 't', `Returns the sixteen hexadecimal characters for the `],
-				[/* inline code block */ 'i', `long`],
-				[/* text */ 't', ` value.
- Each nibble (4 bits) from most significant to least significant of the value
- is formatted as if by `],
-				[/* reference */ 'r', `#toLowHexDigit(int)`, `toLowHexDigit(nibble)`],
-				[/* text */ 't', `.
- The delimiter, prefix and suffix are not used.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'value', [/* parameter description */
-					[/* text */ 't', `a `],
-					[/* inline code block */ 'i', `long`],
-					[/* text */ 't', ` value`]
-				]]
-			],
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the sixteen hexadecimal characters for the `],
-				[/* inline code block */ 'i', `long`],
-				[/* text */ 't', ` value`]
-			]
-		]],
-		[/* method */ 'toHexDigits(int)', [
-			[/* method description */
-				[/* text */ 't', `Returns the eight hexadecimal characters for the `],
-				[/* inline code block */ 'i', `int`],
-				[/* text */ 't', ` value.
- Each nibble (4 bits) from most significant to least significant of the value
- is formatted as if by `],
-				[/* reference */ 'r', `#toLowHexDigit(int)`, `toLowHexDigit(nibble)`],
-				[/* text */ 't', `.
- The delimiter, prefix and suffix are not used.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'value', [/* parameter description */
-					[/* text */ 't', `an `],
-					[/* inline code block */ 'i', `int`],
-					[/* text */ 't', ` value`]
-				]]
-			],
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the eight hexadecimal characters for the `],
-				[/* inline code block */ 'i', `int`],
-				[/* text */ 't', ` value`]
-			]
-		]],
-		[/* method */ 'toHexDigits(byte)', [
-			[/* method description */
-				[/* text */ 't', `Returns the two hexadecimal characters for the `],
-				[/* inline code block */ 'i', `byte`],
-				[/* text */ 't', ` value.
- Each nibble (4 bits) from most significant to least significant of the value
- is formatted as if by `],
-				[/* reference */ 'r', `#toLowHexDigit(int)`, `toLowHexDigit(nibble)`],
-				[/* text */ 't', `.
- The delimiter, prefix and suffix are not used.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'value', [/* parameter description */
-					[/* text */ 't', `a byte value`]
-				]]
-			],
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the two hexadecimal characters for the byte value`]
-			]
-		]],
-		[/* method */ 'toHexDigits(java.lang.Appendable,byte)', [
-			[/* method description */
-				[/* text */ 't', `Appends two hexadecimal characters for the byte value to the `],
-				[/* reference */ 'r', `java.lang.Appendable`],
-				[/* text */ 't', `.
- Each nibble (4 bits) from most significant to least significant of the value
- is formatted as if by `],
-				[/* reference */ 'r', `#toLowHexDigit(int)`, `toLowHexDigit(nibble)`],
-				[/* text */ 't', `.
- The hexadecimal characters are appended in one or more calls to the
- `],
-				[/* reference */ 'r', `java.lang.Appendable`],
-				[/* text */ 't', ` methods. The delimiter, prefix and suffix are not used.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'out', [/* parameter description */
-					[/* text */ 't', `an `],
-					[/* inline code block */ 'i', `Appendable`],
-					[/* text */ 't', `, non-null`]
-				]],
-				[/* parameter */ 'value', [/* parameter description */
-					[/* text */ 't', `a byte value`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.io.UncheckedIOException', [/* throw description */
-					[/* text */ 't', `if an I/O exception occurs appending to the output`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `the `],
-				[/* inline code block */ 'i', `Appendable`]
-			]
-		]],
-		[/* method */ 'toHexDigits(long,int)', [
-			[/* method description */
-				[/* text */ 't', `Returns up to sixteen hexadecimal characters for the `],
-				[/* inline code block */ 'i', `long`],
-				[/* text */ 't', ` value.
- Each nibble (4 bits) from most significant to least significant of the value
- is formatted as if by `],
-				[/* reference */ 'r', `#toLowHexDigit(int)`, `toLowHexDigit(nibble)`],
-				[/* text */ 't', `.
- The delimiter, prefix and suffix are not used.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'value', [/* parameter description */
-					[/* text */ 't', `a `],
-					[/* inline code block */ 'i', `long`],
-					[/* text */ 't', ` value`]
-				]],
-				[/* parameter */ 'digits', [/* parameter description */
-					[/* text */ 't', `the number of hexadecimal digits to return, 0 to 16`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
-					[/* text */ 't', `if `],
-					[/* inline code block */ 'i', `digits`],
-					[/* text */ 't', ` is negative or greater than 16`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `the hexadecimal characters for the `],
-				[/* inline code block */ 'i', `long`],
-				[/* text */ 't', ` value`]
-			]
-		]],
-		[/* method */ 'formatHex(byte[])', [
-			[/* method description */
-				[/* text */ 't', `Returns a hexadecimal string formatted from a byte array.
- Each byte value is formatted as the prefix, two hexadecimal characters
- `],
-				[/* reference */ 'r', `#isUpperCase()`, `selected from`],
-				[/* text */ 't', ` uppercase or lowercase digits, and the suffix.
- A delimiter follows each formatted value, except the last.
-
- The behavior is equivalent to
- `],
-				[/* reference */ 'r', `#formatHex(byte%5B%5D,int,int)`, `formatHex(bytes, 0, bytes.length))`],
-				[/* text */ 't', `.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'bytes', [/* parameter description */
-					[/* text */ 't', `a non-null array of bytes`]
-				]]
-			],
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `a string hexadecimal formatting of the byte array`]
-			]
-		]],
 		[/* method */ 'formatHex(java.lang.Appendable,byte[])', [
 			[/* method description */
 				[/* text */ 't', `Appends formatted hexadecimal strings from a byte array to the `],
@@ -564,33 +208,178 @@ DocsCollector.collect('java.util.HexFormat', [
 				[/* inline code block */ 'i', `Appendable`]
 			]
 		]],
-		[/* method */ 'formatHex(byte[],int,int)', [
+		[/* method */ 'toHexDigits(java.lang.Appendable,byte)', [
 			[/* method description */
-				[/* text */ 't', `Returns a hexadecimal string formatted from a byte array range.
- Each byte value is formatted as the prefix, two hexadecimal characters
+				[/* text */ 't', `Appends two hexadecimal characters for the byte value to the `],
+				[/* reference */ 'r', `java.lang.Appendable`],
+				[/* text */ 't', `.
+ Each nibble (4 bits) from most significant to least significant of the value
+ is formatted as if by `],
+				[/* reference */ 'r', `#toLowHexDigit(int)`, `toLowHexDigit(nibble)`],
+				[/* text */ 't', `.
+ The hexadecimal characters are appended in one or more calls to the
  `],
-				[/* reference */ 'r', `#isUpperCase()`, `selected from`],
-				[/* text */ 't', ` uppercase or lowercase digits, and the suffix.
- A delimiter follows each formatted value, except the last.`]
+				[/* reference */ 'r', `java.lang.Appendable`],
+				[/* text */ 't', ` methods. The delimiter, prefix and suffix are not used.`]
 			],
 			[/* parameters */
-				[/* parameter */ 'bytes', [/* parameter description */
-					[/* text */ 't', `a non-null array of bytes`]
+				[/* parameter */ 'out', [/* parameter description */
+					[/* text */ 't', `an `],
+					[/* inline code block */ 'i', `Appendable`],
+					[/* text */ 't', `, non-null`]
+				]],
+				[/* parameter */ 'value', [/* parameter description */
+					[/* text */ 't', `a byte value`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.io.UncheckedIOException', [/* throw description */
+					[/* text */ 't', `if an I/O exception occurs appending to the output`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `the `],
+				[/* inline code block */ 'i', `Appendable`]
+			]
+		]],
+		[/* method */ 'equals(java.lang.Object)', [
+			[/* method description */
+				[/* text */ 't', `Returns `],
+				[/* inline code block */ 'i', `true`],
+				[/* text */ 't', ` if the other object is a `],
+				[/* inline code block */ 'i', `HexFormat`],
+				[/* text */ 't', `
+ with the same parameters.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'o', [/* parameter description */
+					[/* text */ 't', `an object, may be null`]
+				]]
+			],
+			/* throws */ UDF,
+			[/* return description */
+				[/* inline code block */ 'i', `true`],
+				[/* text */ 't', ` if the other object is a `],
+				[/* inline code block */ 'i', `HexFormat`],
+				[/* text */ 't', ` and the parameters
+         uppercase, delimiter, prefix, and suffix are equal;
+         otherwise `],
+				[/* inline code block */ 'i', `false`]
+			]
+		]],
+		[/* method */ 'isUpperCase()', [
+			[/* method description */
+				[/* text */ 't', `Returns `],
+				[/* inline code block */ 'i', `true`],
+				[/* text */ 't', ` if the hexadecimal digits are uppercase,
+ otherwise `],
+				[/* inline code block */ 'i', `false`],
+				[/* text */ 't', `.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* inline code block */ 'i', `true`],
+				[/* text */ 't', ` if the hexadecimal digits are uppercase,
+          otherwise `],
+				[/* inline code block */ 'i', `false`]
+			]
+		]],
+		[/* method */ 'parseHex(char[],int,int)', [
+			[/* method description */
+				[/* text */ 't', `Returns a byte array containing hexadecimal values parsed from
+ a range of the character array.
+
+ Each byte value is parsed from the prefix, two case insensitive hexadecimal characters,
+ and the suffix. A delimiter follows each formatted value, except the last.
+ The delimiters, prefixes, and suffixes strings must be present; they may be empty strings.
+ A valid character array range consists only of the above format.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'chars', [/* parameter description */
+					[/* text */ 't', `a character array range containing an even number of hexadecimal digits,
+          delimiters, prefix, and suffix.`]
 				]],
 				[/* parameter */ 'fromIndex', [/* parameter description */
 					[/* text */ 't', `the initial index of the range, inclusive`]
 				]],
 				[/* parameter */ 'toIndex', [/* parameter description */
-					[/* text */ 't', `the final index of the range, exclusive`]
+					[/* text */ 't', `the final index of the range, exclusive.`]
 				]]
 			],
 			[/* throws */
+				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
+					[/* text */ 't', `if the prefix or suffix is not present for each byte value,
+          the byte values are not hexadecimal characters, or if the delimiter is not present
+          after all but the last byte value`]
+				]],
 				[/* throw */ 'java.lang.IndexOutOfBoundsException', [/* throw description */
-					[/* text */ 't', `if the array range is out of bounds`]
+					[/* text */ 't', `if the character array range is out of bounds`]
 				]]
 			],
 			[/* return description */
-				[/* text */ 't', `a string hexadecimal formatting each byte of the array range`]
+				[/* text */ 't', `a byte array with the values parsed from the character array range`]
+			]
+		]],
+		[/* method */ 'parseHex(java.lang.CharSequence)', [
+			[/* method description */
+				[/* text */ 't', `Returns a byte array containing hexadecimal values parsed from the string.
+
+ Each byte value is parsed from the prefix, two case insensitive hexadecimal characters,
+ and the suffix. A delimiter follows each formatted value, except the last.
+ The delimiters, prefixes, and suffixes strings must be present; they may be empty strings.
+ A valid string consists only of the above format.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'string', [/* parameter description */
+					[/* text */ 't', `a string containing the byte values with prefix, hexadecimal digits, suffix,
+            and delimiters`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
+					[/* text */ 't', `if the prefix or suffix is not present for each byte value,
+          the byte values are not hexadecimal characters, or if the delimiter is not present
+          after all but the last byte value`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `a byte array with the values parsed from the string`]
+			]
+		]],
+		[/* method */ 'parseHex(java.lang.CharSequence,int,int)', [
+			[/* method description */
+				[/* text */ 't', `Returns a byte array containing hexadecimal values parsed from a range of the string.
+
+ Each byte value is parsed from the prefix, two case insensitive hexadecimal characters,
+ and the suffix. A delimiter follows each formatted value, except the last.
+ The delimiters, prefixes, and suffixes strings must be present; they may be empty strings.
+ A valid string consists only of the above format.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'string', [/* parameter description */
+					[/* text */ 't', `a string range containing hexadecimal digits,
+           delimiters, prefix, and suffix.`]
+				]],
+				[/* parameter */ 'fromIndex', [/* parameter description */
+					[/* text */ 't', `the initial index of the range, inclusive`]
+				]],
+				[/* parameter */ 'toIndex', [/* parameter description */
+					[/* text */ 't', `the final index of the range, exclusive.`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
+					[/* text */ 't', `if the prefix or suffix is not present for each byte value,
+          the byte values are not hexadecimal characters, or if the delimiter is not present
+          after all but the last byte value`]
+				]],
+				[/* throw */ 'java.lang.IndexOutOfBoundsException', [/* throw description */
+					[/* text */ 't', `if the string range is out of bounds`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `a byte array with the values parsed from the string range`]
 			]
 		]],
 		[/* method */ 'toHighHexDigit(int)', [
@@ -665,174 +454,402 @@ DocsCollector.collect('java.util.HexFormat', [
 				[/* text */ 't', ` of the value`]
 			]
 		]],
-		[/* method */ 'parseHex(java.lang.CharSequence,int,int)', [
+		[/* method */ 'hashCode()', [
 			[/* method description */
-				[/* text */ 't', `Returns a byte array containing hexadecimal values parsed from a range of the string.
-
- Each byte value is parsed from the prefix, two case insensitive hexadecimal characters,
- and the suffix. A delimiter follows each formatted value, except the last.
- The delimiters, prefixes, and suffixes strings must be present; they may be empty strings.
- A valid string consists only of the above format.`]
+				[/* text */ 't', `Returns a hashcode for this `],
+				[/* inline code block */ 'i', `HexFormat`],
+				[/* text */ 't', `.`]
 			],
-			[/* parameters */
-				[/* parameter */ 'string', [/* parameter description */
-					[/* text */ 't', `a string range containing hexadecimal digits,
-           delimiters, prefix, and suffix.`]
-				]],
-				[/* parameter */ 'fromIndex', [/* parameter description */
-					[/* text */ 't', `the initial index of the range, inclusive`]
-				]],
-				[/* parameter */ 'toIndex', [/* parameter description */
-					[/* text */ 't', `the final index of the range, exclusive.`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
-					[/* text */ 't', `if the prefix or suffix is not present for each byte value,
-          the byte values are not hexadecimal characters, or if the delimiter is not present
-          after all but the last byte value`]
-				]],
-				[/* throw */ 'java.lang.IndexOutOfBoundsException', [/* throw description */
-					[/* text */ 't', `if the string range is out of bounds`]
-				]]
-			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
 			[/* return description */
-				[/* text */ 't', `a byte array with the values parsed from the string range`]
+				[/* text */ 't', `a hashcode for this `],
+				[/* inline code block */ 'i', `HexFormat`]
 			]
 		]],
-		[/* method */ 'parseHex(char[],int,int)', [
+		[/* method */ 'delimiter()', [
 			[/* method description */
-				[/* text */ 't', `Returns a byte array containing hexadecimal values parsed from
- a range of the character array.
-
- Each byte value is parsed from the prefix, two case insensitive hexadecimal characters,
- and the suffix. A delimiter follows each formatted value, except the last.
- The delimiters, prefixes, and suffixes strings must be present; they may be empty strings.
- A valid character array range consists only of the above format.`]
+				[/* text */ 't', `Returns the delimiter between hexadecimal values in formatted hexadecimal strings.`]
 			],
-			[/* parameters */
-				[/* parameter */ 'chars', [/* parameter description */
-					[/* text */ 't', `a character array range containing an even number of hexadecimal digits,
-          delimiters, prefix, and suffix.`]
-				]],
-				[/* parameter */ 'fromIndex', [/* parameter description */
-					[/* text */ 't', `the initial index of the range, inclusive`]
-				]],
-				[/* parameter */ 'toIndex', [/* parameter description */
-					[/* text */ 't', `the final index of the range, exclusive.`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
-					[/* text */ 't', `if the prefix or suffix is not present for each byte value,
-          the byte values are not hexadecimal characters, or if the delimiter is not present
-          after all but the last byte value`]
-				]],
-				[/* throw */ 'java.lang.IndexOutOfBoundsException', [/* throw description */
-					[/* text */ 't', `if the character array range is out of bounds`]
-				]]
-			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
 			[/* return description */
-				[/* text */ 't', `a byte array with the values parsed from the character array range`]
+				[/* text */ 't', `the delimiter, non-null, may be empty `],
+				[/* inline code block */ 'i', `""`]
 			]
 		]],
-		[/* method */ 'parseHex(java.lang.CharSequence)', [
+		[/* method */ 'formatHex(byte[])', [
 			[/* method description */
-				[/* text */ 't', `Returns a byte array containing hexadecimal values parsed from the string.
+				[/* text */ 't', `Returns a hexadecimal string formatted from a byte array.
+ Each byte value is formatted as the prefix, two hexadecimal characters
+ `],
+				[/* reference */ 'r', `#isUpperCase()`, `selected from`],
+				[/* text */ 't', ` uppercase or lowercase digits, and the suffix.
+ A delimiter follows each formatted value, except the last.
 
- Each byte value is parsed from the prefix, two case insensitive hexadecimal characters,
- and the suffix. A delimiter follows each formatted value, except the last.
- The delimiters, prefixes, and suffixes strings must be present; they may be empty strings.
- A valid string consists only of the above format.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'string', [/* parameter description */
-					[/* text */ 't', `a string containing the byte values with prefix, hexadecimal digits, suffix,
-            and delimiters`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
-					[/* text */ 't', `if the prefix or suffix is not present for each byte value,
-          the byte values are not hexadecimal characters, or if the delimiter is not present
-          after all but the last byte value`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `a byte array with the values parsed from the string`]
-			]
-		]],
-		[/* method */ 'fromHexDigits(java.lang.CharSequence,int,int)', [
-			[/* method description */
-				[/* text */ 't', `Returns the `],
-				[/* inline code block */ 'i', `int`],
-				[/* text */ 't', ` value parsed from a string range of up to eight hexadecimal
- characters.
- The characters in the range `],
-				[/* inline code block */ 'i', `fromIndex`],
-				[/* text */ 't', ` to `],
-				[/* inline code block */ 'i', `toIndex`],
-				[/* text */ 't', `, exclusive,
- are parsed from most significant to least significant
- using `],
-				[/* reference */ 'r', `#fromHexDigit(int)`, `fromHexDigit(int)`],
-				[/* text */ 't', ` to form an unsigned value.
- The value is zero extended to 32 bits and is returned as an `],
-				[/* inline code block */ 'i', `int`],
+ The behavior is equivalent to
+ `],
+				[/* reference */ 'r', `#formatHex(byte%5B%5D,int,int)`, `formatHex(bytes, 0, bytes.length))`],
 				[/* text */ 't', `.`]
 			],
 			[/* parameters */
-				[/* parameter */ 'string', [/* parameter description */
-					[/* text */ 't', `a CharSequence containing the characters`]
+				[/* parameter */ 'bytes', [/* parameter description */
+					[/* text */ 't', `a non-null array of bytes`]
+				]]
+			],
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `a string hexadecimal formatting of the byte array`]
+			]
+		]],
+		[/* method */ 'formatHex(byte[],int,int)', [
+			[/* method description */
+				[/* text */ 't', `Returns a hexadecimal string formatted from a byte array range.
+ Each byte value is formatted as the prefix, two hexadecimal characters
+ `],
+				[/* reference */ 'r', `#isUpperCase()`, `selected from`],
+				[/* text */ 't', ` uppercase or lowercase digits, and the suffix.
+ A delimiter follows each formatted value, except the last.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'bytes', [/* parameter description */
+					[/* text */ 't', `a non-null array of bytes`]
 				]],
 				[/* parameter */ 'fromIndex', [/* parameter description */
 					[/* text */ 't', `the initial index of the range, inclusive`]
 				]],
 				[/* parameter */ 'toIndex', [/* parameter description */
-					[/* text */ 't', `the final index of the range, exclusive.`]
+					[/* text */ 't', `the final index of the range, exclusive`]
 				]]
 			],
 			[/* throws */
 				[/* throw */ 'java.lang.IndexOutOfBoundsException', [/* throw description */
-					[/* text */ 't', `if the range is out of bounds
-          for the `],
-					[/* inline code block */ 'i', `CharSequence`]
-				]],
-				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
-					[/* text */ 't', `if length of the range is greater than eight (8) or
-          if any of the characters is not a hexadecimal character`]
+					[/* text */ 't', `if the array range is out of bounds`]
 				]]
 			],
 			[/* return description */
-				[/* text */ 't', `the value parsed from the string range`]
+				[/* text */ 't', `a string hexadecimal formatting each byte of the array range`]
 			]
 		]],
-		[/* method */ 'fromHexDigits(java.lang.CharSequence)', [
+		[/* method */ 'prefix()', [
 			[/* method description */
-				[/* text */ 't', `Returns the `],
-				[/* inline code block */ 'i', `int`],
-				[/* text */ 't', ` value parsed from a string of up to eight hexadecimal characters.
- The hexadecimal characters are parsed from most significant to least significant
- using `],
-				[/* reference */ 'r', `#fromHexDigit(int)`, `fromHexDigit(int)`],
-				[/* text */ 't', ` to form an unsigned value.
- The value is zero extended to 32 bits and is returned as an `],
-				[/* inline code block */ 'i', `int`],
-				[/* text */ 't', `.`]
+				[/* text */ 't', `Returns the prefix used for each hexadecimal value in formatted hexadecimal strings.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the prefix, non-null, may be empty `],
+				[/* inline code block */ 'i', `""`]
+			]
+		]],
+		[/* method */ 'suffix()', [
+			[/* method description */
+				[/* text */ 't', `Returns the suffix used for each hexadecimal value in formatted hexadecimal strings.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the suffix, non-null, may be empty `],
+				[/* inline code block */ 'i', `""`]
+			]
+		]],
+		[/* method */ 'toHexDigits(byte)', [
+			[/* method description */
+				[/* text */ 't', `Returns the two hexadecimal characters for the `],
+				[/* inline code block */ 'i', `byte`],
+				[/* text */ 't', ` value.
+ Each nibble (4 bits) from most significant to least significant of the value
+ is formatted as if by `],
+				[/* reference */ 'r', `#toLowHexDigit(int)`, `toLowHexDigit(nibble)`],
+				[/* text */ 't', `.
+ The delimiter, prefix and suffix are not used.`]
 			],
 			[/* parameters */
-				[/* parameter */ 'string', [/* parameter description */
-					[/* text */ 't', `a CharSequence containing up to eight hexadecimal characters`]
+				[/* parameter */ 'value', [/* parameter description */
+					[/* text */ 't', `a byte value`]
+				]]
+			],
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the two hexadecimal characters for the byte value`]
+			]
+		]],
+		[/* method */ 'toHexDigits(char)', [
+			[/* method description */
+				[/* text */ 't', `Returns the four hexadecimal characters for the `],
+				[/* inline code block */ 'i', `char`],
+				[/* text */ 't', ` value.
+ Each nibble (4 bits) from most significant to least significant of the value
+ is formatted as if by `],
+				[/* reference */ 'r', `#toLowHexDigit(int)`, `toLowHexDigit(nibble)`],
+				[/* text */ 't', `.
+ The delimiter, prefix and suffix are not used.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'value', [/* parameter description */
+					[/* text */ 't', `a `],
+					[/* inline code block */ 'i', `char`],
+					[/* text */ 't', ` value`]
+				]]
+			],
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the four hexadecimal characters for the `],
+				[/* inline code block */ 'i', `char`],
+				[/* text */ 't', ` value`]
+			]
+		]],
+		[/* method */ 'toHexDigits(int)', [
+			[/* method description */
+				[/* text */ 't', `Returns the eight hexadecimal characters for the `],
+				[/* inline code block */ 'i', `int`],
+				[/* text */ 't', ` value.
+ Each nibble (4 bits) from most significant to least significant of the value
+ is formatted as if by `],
+				[/* reference */ 'r', `#toLowHexDigit(int)`, `toLowHexDigit(nibble)`],
+				[/* text */ 't', `.
+ The delimiter, prefix and suffix are not used.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'value', [/* parameter description */
+					[/* text */ 't', `an `],
+					[/* inline code block */ 'i', `int`],
+					[/* text */ 't', ` value`]
+				]]
+			],
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the eight hexadecimal characters for the `],
+				[/* inline code block */ 'i', `int`],
+				[/* text */ 't', ` value`]
+			]
+		]],
+		[/* method */ 'toHexDigits(long)', [
+			[/* method description */
+				[/* text */ 't', `Returns the sixteen hexadecimal characters for the `],
+				[/* inline code block */ 'i', `long`],
+				[/* text */ 't', ` value.
+ Each nibble (4 bits) from most significant to least significant of the value
+ is formatted as if by `],
+				[/* reference */ 'r', `#toLowHexDigit(int)`, `toLowHexDigit(nibble)`],
+				[/* text */ 't', `.
+ The delimiter, prefix and suffix are not used.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'value', [/* parameter description */
+					[/* text */ 't', `a `],
+					[/* inline code block */ 'i', `long`],
+					[/* text */ 't', ` value`]
+				]]
+			],
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the sixteen hexadecimal characters for the `],
+				[/* inline code block */ 'i', `long`],
+				[/* text */ 't', ` value`]
+			]
+		]],
+		[/* method */ 'toHexDigits(long,int)', [
+			[/* method description */
+				[/* text */ 't', `Returns up to sixteen hexadecimal characters for the `],
+				[/* inline code block */ 'i', `long`],
+				[/* text */ 't', ` value.
+ Each nibble (4 bits) from most significant to least significant of the value
+ is formatted as if by `],
+				[/* reference */ 'r', `#toLowHexDigit(int)`, `toLowHexDigit(nibble)`],
+				[/* text */ 't', `.
+ The delimiter, prefix and suffix are not used.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'value', [/* parameter description */
+					[/* text */ 't', `a `],
+					[/* inline code block */ 'i', `long`],
+					[/* text */ 't', ` value`]
+				]],
+				[/* parameter */ 'digits', [/* parameter description */
+					[/* text */ 't', `the number of hexadecimal digits to return, 0 to 16`]
 				]]
 			],
 			[/* throws */
 				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
-					[/* text */ 't', `if the string length is greater than eight (8) or
-      if any of the characters is not a hexadecimal character`]
+					[/* text */ 't', `if `],
+					[/* inline code block */ 'i', `digits`],
+					[/* text */ 't', ` is negative or greater than 16`]
 				]]
 			],
 			[/* return description */
-				[/* text */ 't', `the value parsed from the string`]
+				[/* text */ 't', `the hexadecimal characters for the `],
+				[/* inline code block */ 'i', `long`],
+				[/* text */ 't', ` value`]
+			]
+		]],
+		[/* method */ 'toHexDigits(short)', [
+			[/* method description */
+				[/* text */ 't', `Returns the four hexadecimal characters for the `],
+				[/* inline code block */ 'i', `short`],
+				[/* text */ 't', ` value.
+ Each nibble (4 bits) from most significant to least significant of the value
+ is formatted as if by `],
+				[/* reference */ 'r', `#toLowHexDigit(int)`, `toLowHexDigit(nibble)`],
+				[/* text */ 't', `.
+ The delimiter, prefix and suffix are not used.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'value', [/* parameter description */
+					[/* text */ 't', `a `],
+					[/* inline code block */ 'i', `short`],
+					[/* text */ 't', ` value`]
+				]]
+			],
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the four hexadecimal characters for the `],
+				[/* inline code block */ 'i', `short`],
+				[/* text */ 't', ` value`]
+			]
+		]],
+		[/* method */ 'toString()', [
+			[/* method description */
+				[/* text */ 't', `Returns a description of the formatter parameters for uppercase,
+ delimiter, prefix, and suffix.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `a description of this `],
+				[/* inline code block */ 'i', `HexFormat`]
+			]
+		]],
+		[/* method */ 'withDelimiter(java.lang.String)', [
+			[/* method description */
+				[/* text */ 't', `Returns a copy of this `],
+				[/* inline code block */ 'i', `HexFormat`],
+				[/* text */ 't', ` with the delimiter.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'delimiter', [/* parameter description */
+					[/* text */ 't', `the delimiter, non-null, may be empty`]
+				]]
+			],
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `a copy of this `],
+				[/* inline code block */ 'i', `HexFormat`],
+				[/* text */ 't', ` with the delimiter`]
+			]
+		]],
+		[/* method */ 'withLowerCase()', [
+			[/* method description */
+				[/* text */ 't', `Returns a copy of this `],
+				[/* inline code block */ 'i', `HexFormat`],
+				[/* text */ 't', ` to use lowercase hexadecimal characters.
+ The lowercase hexadecimal characters are `],
+				[/* inline code block */ 'i', `"0-9", "a-f"`],
+				[/* text */ 't', `.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `a copy of this `],
+				[/* inline code block */ 'i', `HexFormat`],
+				[/* text */ 't', ` with lowercase hexadecimal characters`]
+			]
+		]],
+		[/* method */ 'withPrefix(java.lang.String)', [
+			[/* method description */
+				[/* text */ 't', `Returns a copy of this `],
+				[/* inline code block */ 'i', `HexFormat`],
+				[/* text */ 't', ` with the prefix.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'prefix', [/* parameter description */
+					[/* text */ 't', `a prefix, non-null, may be empty`]
+				]]
+			],
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `a copy of this `],
+				[/* inline code block */ 'i', `HexFormat`],
+				[/* text */ 't', ` with the prefix`]
+			]
+		]],
+		[/* method */ 'withSuffix(java.lang.String)', [
+			[/* method description */
+				[/* text */ 't', `Returns a copy of this `],
+				[/* inline code block */ 'i', `HexFormat`],
+				[/* text */ 't', ` with the suffix.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'suffix', [/* parameter description */
+					[/* text */ 't', `a suffix, non-null, may be empty`]
+				]]
+			],
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `a copy of this `],
+				[/* inline code block */ 'i', `HexFormat`],
+				[/* text */ 't', ` with the suffix`]
+			]
+		]],
+		[/* method */ 'withUpperCase()', [
+			[/* method description */
+				[/* text */ 't', `Returns a copy of this `],
+				[/* inline code block */ 'i', `HexFormat`],
+				[/* text */ 't', ` to use uppercase hexadecimal characters.
+ The uppercase hexadecimal characters are `],
+				[/* inline code block */ 'i', `"0-9", "A-F"`],
+				[/* text */ 't', `.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `a copy of this `],
+				[/* inline code block */ 'i', `HexFormat`],
+				[/* text */ 't', ` with uppercase hexadecimal characters`]
+			]
+		]],
+		[/* method */ 'isHexDigit(int)', [
+			[/* method description */
+				[/* text */ 't', `Returns `],
+				[/* inline code block */ 'i', `true`],
+				[/* text */ 't', ` if the character is a valid hexadecimal character or codepoint.
+ The valid hexadecimal characters are:
+ `],
+				[/* list */ 'l', [
+					[/* block */ 'b', [
+						[/* inline code block */ 'i', `'0' ('\\u0030')`],
+						[/* text */ 't', ` through `],
+						[/* inline code block */ 'i', `'9' ('\\u0039')`],
+						[/* text */ 't', ` inclusive,
+ `]
+					]],
+					[/* block */ 'b', [
+						[/* inline code block */ 'i', `'A' ('\\u0041')`],
+						[/* text */ 't', ` through `],
+						[/* inline code block */ 'i', `'F' ('\\u0046')`],
+						[/* text */ 't', ` inclusive, and
+ `]
+					]],
+					[/* block */ 'b', [
+						[/* inline code block */ 'i', `'a' ('\\u0061')`],
+						[/* text */ 't', ` through `],
+						[/* inline code block */ 'i', `'f' ('\\u0066')`],
+						[/* text */ 't', ` inclusive.
+ `]
+					]]
+				]]
+			],
+			[/* parameters */
+				[/* parameter */ 'ch', [/* parameter description */
+					[/* text */ 't', `a codepoint`]
+				]]
+			],
+			/* throws */ UDF,
+			[/* return description */
+				[/* inline code block */ 'i', `true`],
+				[/* text */ 't', ` if the character is valid a hexadecimal character,
+          otherwise `],
+				[/* inline code block */ 'i', `false`]
 			]
 		]],
 		[/* method */ 'fromHexDigit(int)', [
@@ -885,6 +902,161 @@ DocsCollector.collect('java.util.HexFormat', [
 				[/* inline code block */ 'i', `0-15`]
 			]
 		]],
+		[/* method */ 'fromHexDigits(java.lang.CharSequence)', [
+			[/* method description */
+				[/* text */ 't', `Returns the `],
+				[/* inline code block */ 'i', `int`],
+				[/* text */ 't', ` value parsed from a string of up to eight hexadecimal characters.
+ The hexadecimal characters are parsed from most significant to least significant
+ using `],
+				[/* reference */ 'r', `#fromHexDigit(int)`, `fromHexDigit(int)`],
+				[/* text */ 't', ` to form an unsigned value.
+ The value is zero extended to 32 bits and is returned as an `],
+				[/* inline code block */ 'i', `int`],
+				[/* text */ 't', `.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'string', [/* parameter description */
+					[/* text */ 't', `a CharSequence containing up to eight hexadecimal characters`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
+					[/* text */ 't', `if the string length is greater than eight (8) or
+      if any of the characters is not a hexadecimal character`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `the value parsed from the string`]
+			]
+		]],
+		[/* method */ 'fromHexDigits(java.lang.CharSequence,int,int)', [
+			[/* method description */
+				[/* text */ 't', `Returns the `],
+				[/* inline code block */ 'i', `int`],
+				[/* text */ 't', ` value parsed from a string range of up to eight hexadecimal
+ characters.
+ The characters in the range `],
+				[/* inline code block */ 'i', `fromIndex`],
+				[/* text */ 't', ` to `],
+				[/* inline code block */ 'i', `toIndex`],
+				[/* text */ 't', `, exclusive,
+ are parsed from most significant to least significant
+ using `],
+				[/* reference */ 'r', `#fromHexDigit(int)`, `fromHexDigit(int)`],
+				[/* text */ 't', ` to form an unsigned value.
+ The value is zero extended to 32 bits and is returned as an `],
+				[/* inline code block */ 'i', `int`],
+				[/* text */ 't', `.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'string', [/* parameter description */
+					[/* text */ 't', `a CharSequence containing the characters`]
+				]],
+				[/* parameter */ 'fromIndex', [/* parameter description */
+					[/* text */ 't', `the initial index of the range, inclusive`]
+				]],
+				[/* parameter */ 'toIndex', [/* parameter description */
+					[/* text */ 't', `the final index of the range, exclusive.`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.lang.IndexOutOfBoundsException', [/* throw description */
+					[/* text */ 't', `if the range is out of bounds
+          for the `],
+					[/* inline code block */ 'i', `CharSequence`]
+				]],
+				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
+					[/* text */ 't', `if length of the range is greater than eight (8) or
+          if any of the characters is not a hexadecimal character`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `the value parsed from the string range`]
+			]
+		]],
+		[/* method */ 'of()', [
+			[/* method description */
+				[/* text */ 't', `Returns a hexadecimal formatter with no delimiter and lowercase characters.
+ The delimiter, prefix, and suffix are empty.
+ The methods `],
+				[/* reference */ 'r', `#withDelimiter(java.lang.String)`, `withDelimiter`],
+				[/* text */ 't', `,
+ `],
+				[/* reference */ 'r', `#withUpperCase()`, `withUpperCase`],
+				[/* text */ 't', `, `],
+				[/* reference */ 'r', `#withLowerCase()`, `withLowerCase`],
+				[/* text */ 't', `,
+ `],
+				[/* reference */ 'r', `#withPrefix(java.lang.String)`, `withPrefix`],
+				[/* text */ 't', `, and `],
+				[/* reference */ 'r', `#withSuffix(java.lang.String)`, `withSuffix`],
+				[/* text */ 't', `
+ return copies of formatters with new parameters.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `a hexadecimal formatter with no delimiter and lowercase characters`]
+			]
+		]],
+		[/* method */ 'ofDelimiter(java.lang.String)', [
+			[/* method description */
+				[/* text */ 't', `Returns a hexadecimal formatter with the delimiter and lowercase characters.
+ The prefix and suffix are empty.
+ The methods `],
+				[/* reference */ 'r', `#withDelimiter(java.lang.String)`, `withDelimiter`],
+				[/* text */ 't', `,
+ `],
+				[/* reference */ 'r', `#withUpperCase()`, `withUpperCase`],
+				[/* text */ 't', `, `],
+				[/* reference */ 'r', `#withLowerCase()`, `withLowerCase`],
+				[/* text */ 't', `,
+ `],
+				[/* reference */ 'r', `#withPrefix(java.lang.String)`, `withPrefix`],
+				[/* text */ 't', `, and `],
+				[/* reference */ 'r', `#withSuffix(java.lang.String)`, `withSuffix`],
+				[/* text */ 't', `
+ return copies of formatters with new parameters.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'delimiter', [/* parameter description */
+					[/* text */ 't', `a delimiter, non-null, may be empty`]
+				]]
+			],
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `a `],
+				[/* reference */ 'r', `java.util.HexFormat`],
+				[/* text */ 't', ` with the delimiter and lowercase characters`]
+			]
+		]],
+		[/* method */ 'fromHexDigitsToLong(java.lang.CharSequence)', [
+			[/* method description */
+				[/* text */ 't', `Returns the long value parsed from a string of up to sixteen hexadecimal characters.
+ The hexadecimal characters are parsed from most significant to least significant
+ using `],
+				[/* reference */ 'r', `#fromHexDigit(int)`, `fromHexDigit(int)`],
+				[/* text */ 't', ` to form an unsigned value.
+ The value is zero extended to 64 bits and is returned as a `],
+				[/* inline code block */ 'i', `long`],
+				[/* text */ 't', `.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'string', [/* parameter description */
+					[/* text */ 't', `a CharSequence containing up to sixteen hexadecimal characters`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
+					[/* text */ 't', `if the string length is greater than sixteen (16) or
+         if any of the characters is not a hexadecimal character`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `the value parsed from the string`]
+			]
+		]],
 		[/* method */ 'fromHexDigitsToLong(java.lang.CharSequence,int,int)', [
 			[/* method description */
 				[/* text */ 't', `Returns the long value parsed from a string range of up to sixteen hexadecimal
@@ -926,178 +1098,6 @@ DocsCollector.collect('java.util.HexFormat', [
 			],
 			[/* return description */
 				[/* text */ 't', `the value parsed from the string range`]
-			]
-		]],
-		[/* method */ 'fromHexDigitsToLong(java.lang.CharSequence)', [
-			[/* method description */
-				[/* text */ 't', `Returns the long value parsed from a string of up to sixteen hexadecimal characters.
- The hexadecimal characters are parsed from most significant to least significant
- using `],
-				[/* reference */ 'r', `#fromHexDigit(int)`, `fromHexDigit(int)`],
-				[/* text */ 't', ` to form an unsigned value.
- The value is zero extended to 64 bits and is returned as a `],
-				[/* inline code block */ 'i', `long`],
-				[/* text */ 't', `.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'string', [/* parameter description */
-					[/* text */ 't', `a CharSequence containing up to sixteen hexadecimal characters`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
-					[/* text */ 't', `if the string length is greater than sixteen (16) or
-         if any of the characters is not a hexadecimal character`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `the value parsed from the string`]
-			]
-		]],
-		[/* method */ 'ofDelimiter(java.lang.String)', [
-			[/* method description */
-				[/* text */ 't', `Returns a hexadecimal formatter with the delimiter and lowercase characters.
- The prefix and suffix are empty.
- The methods `],
-				[/* reference */ 'r', `#withDelimiter(java.lang.String)`, `withDelimiter`],
-				[/* text */ 't', `,
- `],
-				[/* reference */ 'r', `#withUpperCase()`, `withUpperCase`],
-				[/* text */ 't', `, `],
-				[/* reference */ 'r', `#withLowerCase()`, `withLowerCase`],
-				[/* text */ 't', `,
- `],
-				[/* reference */ 'r', `#withPrefix(java.lang.String)`, `withPrefix`],
-				[/* text */ 't', `, and `],
-				[/* reference */ 'r', `#withSuffix(java.lang.String)`, `withSuffix`],
-				[/* text */ 't', `
- return copies of formatters with new parameters.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'delimiter', [/* parameter description */
-					[/* text */ 't', `a delimiter, non-null, may be empty`]
-				]]
-			],
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `a `],
-				[/* reference */ 'r', `java.util.HexFormat`],
-				[/* text */ 't', ` with the delimiter and lowercase characters`]
-			]
-		]],
-		[/* method */ 'withDelimiter(java.lang.String)', [
-			[/* method description */
-				[/* text */ 't', `Returns a copy of this `],
-				[/* inline code block */ 'i', `HexFormat`],
-				[/* text */ 't', ` with the delimiter.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'delimiter', [/* parameter description */
-					[/* text */ 't', `the delimiter, non-null, may be empty`]
-				]]
-			],
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `a copy of this `],
-				[/* inline code block */ 'i', `HexFormat`],
-				[/* text */ 't', ` with the delimiter`]
-			]
-		]],
-		[/* method */ 'withPrefix(java.lang.String)', [
-			[/* method description */
-				[/* text */ 't', `Returns a copy of this `],
-				[/* inline code block */ 'i', `HexFormat`],
-				[/* text */ 't', ` with the prefix.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'prefix', [/* parameter description */
-					[/* text */ 't', `a prefix, non-null, may be empty`]
-				]]
-			],
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `a copy of this `],
-				[/* inline code block */ 'i', `HexFormat`],
-				[/* text */ 't', ` with the prefix`]
-			]
-		]],
-		[/* method */ 'withSuffix(java.lang.String)', [
-			[/* method description */
-				[/* text */ 't', `Returns a copy of this `],
-				[/* inline code block */ 'i', `HexFormat`],
-				[/* text */ 't', ` with the suffix.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'suffix', [/* parameter description */
-					[/* text */ 't', `a suffix, non-null, may be empty`]
-				]]
-			],
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `a copy of this `],
-				[/* inline code block */ 'i', `HexFormat`],
-				[/* text */ 't', ` with the suffix`]
-			]
-		]],
-		[/* method */ 'withLowerCase()', [
-			[/* method description */
-				[/* text */ 't', `Returns a copy of this `],
-				[/* inline code block */ 'i', `HexFormat`],
-				[/* text */ 't', ` to use lowercase hexadecimal characters.
- The lowercase hexadecimal characters are `],
-				[/* inline code block */ 'i', `"0-9", "a-f"`],
-				[/* text */ 't', `.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `a copy of this `],
-				[/* inline code block */ 'i', `HexFormat`],
-				[/* text */ 't', ` with lowercase hexadecimal characters`]
-			]
-		]],
-		[/* method */ 'isHexDigit(int)', [
-			[/* method description */
-				[/* text */ 't', `Returns `],
-				[/* inline code block */ 'i', `true`],
-				[/* text */ 't', ` if the character is a valid hexadecimal character or codepoint.
- The valid hexadecimal characters are:
- `],
-				[/* list */ 'l', [
-					[/* block */ 'b', [
-						[/* inline code block */ 'i', `'0' ('\\u0030')`],
-						[/* text */ 't', ` through `],
-						[/* inline code block */ 'i', `'9' ('\\u0039')`],
-						[/* text */ 't', ` inclusive,
- `]
-					]],
-					[/* block */ 'b', [
-						[/* inline code block */ 'i', `'A' ('\\u0041')`],
-						[/* text */ 't', ` through `],
-						[/* inline code block */ 'i', `'F' ('\\u0046')`],
-						[/* text */ 't', ` inclusive, and
- `]
-					]],
-					[/* block */ 'b', [
-						[/* inline code block */ 'i', `'a' ('\\u0061')`],
-						[/* text */ 't', ` through `],
-						[/* inline code block */ 'i', `'f' ('\\u0066')`],
-						[/* text */ 't', ` inclusive.
- `]
-					]]
-				]]
-			],
-			[/* parameters */
-				[/* parameter */ 'ch', [/* parameter description */
-					[/* text */ 't', `a codepoint`]
-				]]
-			],
-			/* throws */ UDF,
-			[/* return description */
-				[/* inline code block */ 'i', `true`],
-				[/* text */ 't', ` if the character is valid a hexadecimal character,
-          otherwise `],
-				[/* inline code block */ 'i', `false`]
 			]
 		]]
 	],

@@ -49,245 +49,6 @@ DocsCollector.collect('java.util.Optional', [
 	/* fields */ UDF,
 	/* constructors */ UDF,
 	[/* methods */
-		[/* method */ 'get()', [
-			[/* method description */
-				[/* text */ 't', `If a value is present, returns the value, otherwise throws
- `],
-				[/* inline code block */ 'i', `NoSuchElementException`],
-				[/* text */ 't', `.`]
-			],
-			/* parameters */ UDF,
-			[/* throws */
-				[/* throw */ 'java.util.NoSuchElementException', [/* throw description */
-					[/* text */ 't', `if no value is present`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `the non-`],
-				[/* inline code block */ 'i', `null`],
-				[/* text */ 't', ` value described by this `],
-				[/* inline code block */ 'i', `Optional`]
-			]
-		]],
-		[/* method */ 'equals(java.lang.Object)', [
-			[/* method description */
-				[/* text */ 't', `Indicates whether some other object is "equal to" this `],
-				[/* inline code block */ 'i', `Optional`],
-				[/* text */ 't', `.
- The other object is considered equal if:
- `],
-				[/* list */ 'l', [
-					[/* block */ 'b', [
-						[/* text */ 't', `it is also an `],
-						[/* inline code block */ 'i', `Optional`],
-						[/* text */ 't', ` and;
- `]
-					]],
-					[/* block */ 'b', `both instances have no value present or;
- `],
-					[/* block */ 'b', [
-						[/* text */ 't', `the present values are "equal to" each other via `],
-						[/* inline code block */ 'i', `equals()`],
-						[/* text */ 't', `.
- `]
-					]]
-				]]
-			],
-			[/* parameters */
-				[/* parameter */ 'obj', [/* parameter description */
-					[/* text */ 't', `an object to be tested for equality`]
-				]]
-			],
-			/* throws */ UDF,
-			[/* return description */
-				[/* inline code block */ 'i', `true`],
-				[/* text */ 't', ` if the other object is "equal to" this object
-         otherwise `],
-				[/* inline code block */ 'i', `false`]
-			]
-		]],
-		[/* method */ 'toString()', [
-			[/* method description */
-				[/* text */ 't', `Returns a non-empty string representation of this `],
-				[/* inline code block */ 'i', `Optional`],
-				[/* text */ 't', `
- suitable for debugging.  The exact presentation format is unspecified and
- may vary between implementations and versions.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the string representation of this instance`]
-			]
-		]],
-		[/* method */ 'hashCode()', [
-			[/* method description */
-				[/* text */ 't', `Returns the hash code of the value, if present, otherwise `],
-				[/* inline code block */ 'i', `0`],
-				[/* text */ 't', `
- (zero) if no value is present.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `hash code value of the present value or `],
-				[/* inline code block */ 'i', `0`],
-				[/* text */ 't', ` if no value is
-         present`]
-			]
-		]],
-		[/* method */ 'isEmpty()', [
-			[/* method description */
-				[/* text */ 't', `If a value is  not present, returns `],
-				[/* inline code block */ 'i', `true`],
-				[/* text */ 't', `, otherwise
- `],
-				[/* inline code block */ 'i', `false`],
-				[/* text */ 't', `.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* inline code block */ 'i', `true`],
-				[/* text */ 't', ` if a value is not present, otherwise `],
-				[/* inline code block */ 'i', `false`]
-			]
-		]],
-		[/* method */ 'map(java.util.function.Function)', [
-			[/* method description */
-				[/* text */ 't', `If a value is present, returns an `],
-				[/* inline code block */ 'i', `Optional`],
-				[/* text */ 't', ` describing (as if by
- `],
-				[/* reference */ 'r', `#ofNullable(T)`, `ofNullable(T)`],
-				[/* text */ 't', `) the result of applying the given mapping function to
- the value, otherwise returns an empty `],
-				[/* inline code block */ 'i', `Optional`],
-				[/* text */ 't', `.
-
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', `If the mapping function returns a `],
-					[/* inline code block */ 'i', `null`],
-					[/* text */ 't', ` result then this method
- returns an empty `],
-					[/* inline code block */ 'i', `Optional`],
-					[/* text */ 't', `.`]
-				]]
-			],
-			[/* parameters */
-				[/* parameter */ 'mapper', [/* parameter description */
-					[/* text */ 't', `the mapping function to apply to a value, if present`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
-					[/* text */ 't', `if the mapping function is `],
-					[/* inline code block */ 'i', `null`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `an `],
-				[/* inline code block */ 'i', `Optional`],
-				[/* text */ 't', ` describing the result of applying a mapping
-         function to the value of this `],
-				[/* inline code block */ 'i', `Optional`],
-				[/* text */ 't', `, if a value is
-         present, otherwise an empty `],
-				[/* inline code block */ 'i', `Optional`]
-			]
-		]],
-		[/* method */ 'stream()', [
-			[/* method description */
-				[/* text */ 't', `If a value is present, returns a sequential `],
-				[/* reference */ 'r', `java.util.stream.Stream`],
-				[/* text */ 't', ` containing
- only that value, otherwise returns an empty `],
-				[/* inline code block */ 'i', `Stream`],
-				[/* text */ 't', `.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the optional value as a `],
-				[/* inline code block */ 'i', `Stream`]
-			]
-		]],
-		[/* method */ 'of(java.lang.Object)', [
-			[/* method description */
-				[/* text */ 't', `Returns an `],
-				[/* inline code block */ 'i', `Optional`],
-				[/* text */ 't', ` describing the given non-`],
-				[/* inline code block */ 'i', `null`],
-				[/* text */ 't', `
- value.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'value', [/* parameter description */
-					[/* text */ 't', `the value to describe, which must be non-`],
-					[/* inline code block */ 'i', `null`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
-					[/* text */ 't', `if value is `],
-					[/* inline code block */ 'i', `null`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `an `],
-				[/* inline code block */ 'i', `Optional`],
-				[/* text */ 't', ` with the value present`]
-			]
-		]],
-		[/* method */ 'filter(java.util.function.Predicate)', [
-			[/* method description */
-				[/* text */ 't', `If a value is present, and the value matches the given predicate,
- returns an `],
-				[/* inline code block */ 'i', `Optional`],
-				[/* text */ 't', ` describing the value, otherwise returns an
- empty `],
-				[/* inline code block */ 'i', `Optional`],
-				[/* text */ 't', `.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'predicate', [/* parameter description */
-					[/* text */ 't', `the predicate to apply to a value, if present`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
-					[/* text */ 't', `if the predicate is `],
-					[/* inline code block */ 'i', `null`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `an `],
-				[/* inline code block */ 'i', `Optional`],
-				[/* text */ 't', ` describing the value of this
-         `],
-				[/* inline code block */ 'i', `Optional`],
-				[/* text */ 't', `, if a value is present and the value matches the
-         given predicate, otherwise an empty `],
-				[/* inline code block */ 'i', `Optional`]
-			]
-		]],
-		[/* method */ 'empty()', [
-			[/* method description */
-				[/* text */ 't', `Returns an empty `],
-				[/* inline code block */ 'i', `Optional`],
-				[/* text */ 't', ` instance.  No value is present for this
- `],
-				[/* inline code block */ 'i', `Optional`],
-				[/* text */ 't', `.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `an empty `],
-				[/* inline code block */ 'i', `Optional`]
-			]
-		]],
 		[/* method */ 'flatMap(java.util.function.Function)', [
 			[/* method description */
 				[/* text */ 't', `If a value is present, returns the result of applying the given
@@ -340,41 +101,48 @@ DocsCollector.collect('java.util.Optional', [
 				[/* inline code block */ 'i', `Optional`]
 			]
 		]],
-		[/* method */ 'isPresent()', [
+		[/* method */ 'map(java.util.function.Function)', [
 			[/* method description */
-				[/* text */ 't', `If a value is present, returns `],
-				[/* inline code block */ 'i', `true`],
-				[/* text */ 't', `, otherwise `],
-				[/* inline code block */ 'i', `false`],
-				[/* text */ 't', `.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* inline code block */ 'i', `true`],
-				[/* text */ 't', ` if a value is present, otherwise `],
-				[/* inline code block */ 'i', `false`]
-			]
-		]],
-		[/* method */ 'orElse(java.lang.Object)', [
-			[/* method description */
-				[/* text */ 't', `If a value is present, returns the value, otherwise returns
+				[/* text */ 't', `If a value is present, returns an `],
+				[/* inline code block */ 'i', `Optional`],
+				[/* text */ 't', ` describing (as if by
  `],
-				[/* inline code block */ 'i', `other`],
-				[/* text */ 't', `.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'other', [/* parameter description */
-					[/* text */ 't', `the value to be returned, if no value is present.
-        May be `],
+				[/* reference */ 'r', `#ofNullable(T)`, `ofNullable(T)`],
+				[/* text */ 't', `) the result of applying the given mapping function to
+ the value, otherwise returns an empty `],
+				[/* inline code block */ 'i', `Optional`],
+				[/* text */ 't', `.
+
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', `If the mapping function returns a `],
 					[/* inline code block */ 'i', `null`],
+					[/* text */ 't', ` result then this method
+ returns an empty `],
+					[/* inline code block */ 'i', `Optional`],
 					[/* text */ 't', `.`]
 				]]
 			],
-			/* throws */ UDF,
+			[/* parameters */
+				[/* parameter */ 'mapper', [/* parameter description */
+					[/* text */ 't', `the mapping function to apply to a value, if present`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
+					[/* text */ 't', `if the mapping function is `],
+					[/* inline code block */ 'i', `null`]
+				]]
+			],
 			[/* return description */
-				[/* text */ 't', `the value, if present, otherwise `],
-				[/* inline code block */ 'i', `other`]
+				[/* text */ 't', `an `],
+				[/* inline code block */ 'i', `Optional`],
+				[/* text */ 't', ` describing the result of applying a mapping
+         function to the value of this `],
+				[/* inline code block */ 'i', `Optional`],
+				[/* text */ 't', `, if a value is
+         present, otherwise an empty `],
+				[/* inline code block */ 'i', `Optional`]
 			]
 		]],
 		[/* method */ 'orElseThrow(java.util.function.Supplier)', [
@@ -402,24 +170,234 @@ DocsCollector.collect('java.util.Optional', [
 				[/* text */ 't', `the value, if present`]
 			]
 		]],
-		[/* method */ 'orElseThrow()', [
+		[/* method */ 'equals(java.lang.Object)', [
 			[/* method description */
-				[/* text */ 't', `If a value is present, returns the value, otherwise throws
+				[/* text */ 't', `Indicates whether some other object is "equal to" this `],
+				[/* inline code block */ 'i', `Optional`],
+				[/* text */ 't', `.
+ The other object is considered equal if:
  `],
-				[/* inline code block */ 'i', `NoSuchElementException`],
+				[/* list */ 'l', [
+					[/* block */ 'b', [
+						[/* text */ 't', `it is also an `],
+						[/* inline code block */ 'i', `Optional`],
+						[/* text */ 't', ` and;
+ `]
+					]],
+					[/* block */ 'b', `both instances have no value present or;
+ `],
+					[/* block */ 'b', [
+						[/* text */ 't', `the present values are "equal to" each other via `],
+						[/* inline code block */ 'i', `equals()`],
+						[/* text */ 't', `.
+ `]
+					]]
+				]]
+			],
+			[/* parameters */
+				[/* parameter */ 'obj', [/* parameter description */
+					[/* text */ 't', `an object to be tested for equality`]
+				]]
+			],
+			/* throws */ UDF,
+			[/* return description */
+				[/* inline code block */ 'i', `true`],
+				[/* text */ 't', ` if the other object is "equal to" this object
+         otherwise `],
+				[/* inline code block */ 'i', `false`]
+			]
+		]],
+		[/* method */ 'isEmpty()', [
+			[/* method description */
+				[/* text */ 't', `If a value is  not present, returns `],
+				[/* inline code block */ 'i', `true`],
+				[/* text */ 't', `, otherwise
+ `],
+				[/* inline code block */ 'i', `false`],
 				[/* text */ 't', `.`]
 			],
 			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* inline code block */ 'i', `true`],
+				[/* text */ 't', ` if a value is not present, otherwise `],
+				[/* inline code block */ 'i', `false`]
+			]
+		]],
+		[/* method */ 'isPresent()', [
+			[/* method description */
+				[/* text */ 't', `If a value is present, returns `],
+				[/* inline code block */ 'i', `true`],
+				[/* text */ 't', `, otherwise `],
+				[/* inline code block */ 'i', `false`],
+				[/* text */ 't', `.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* inline code block */ 'i', `true`],
+				[/* text */ 't', ` if a value is present, otherwise `],
+				[/* inline code block */ 'i', `false`]
+			]
+		]],
+		[/* method */ 'hashCode()', [
+			[/* method description */
+				[/* text */ 't', `Returns the hash code of the value, if present, otherwise `],
+				[/* inline code block */ 'i', `0`],
+				[/* text */ 't', `
+ (zero) if no value is present.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `hash code value of the present value or `],
+				[/* inline code block */ 'i', `0`],
+				[/* text */ 't', ` if no value is
+         present`]
+			]
+		]],
+		[/* method */ 'toString()', [
+			[/* method description */
+				[/* text */ 't', `Returns a non-empty string representation of this `],
+				[/* inline code block */ 'i', `Optional`],
+				[/* text */ 't', `
+ suitable for debugging.  The exact presentation format is unspecified and
+ may vary between implementations and versions.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the string representation of this instance`]
+			]
+		]],
+		[/* method */ 'filter(java.util.function.Predicate)', [
+			[/* method description */
+				[/* text */ 't', `If a value is present, and the value matches the given predicate,
+ returns an `],
+				[/* inline code block */ 'i', `Optional`],
+				[/* text */ 't', ` describing the value, otherwise returns an
+ empty `],
+				[/* inline code block */ 'i', `Optional`],
+				[/* text */ 't', `.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'predicate', [/* parameter description */
+					[/* text */ 't', `the predicate to apply to a value, if present`]
+				]]
+			],
 			[/* throws */
-				[/* throw */ 'java.util.NoSuchElementException', [/* throw description */
-					[/* text */ 't', `if no value is present`]
+				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
+					[/* text */ 't', `if the predicate is `],
+					[/* inline code block */ 'i', `null`]
 				]]
 			],
 			[/* return description */
-				[/* text */ 't', `the non-`],
-				[/* inline code block */ 'i', `null`],
-				[/* text */ 't', ` value described by this `],
+				[/* text */ 't', `an `],
+				[/* inline code block */ 'i', `Optional`],
+				[/* text */ 't', ` describing the value of this
+         `],
+				[/* inline code block */ 'i', `Optional`],
+				[/* text */ 't', `, if a value is present and the value matches the
+         given predicate, otherwise an empty `],
 				[/* inline code block */ 'i', `Optional`]
+			]
+		]],
+		[/* method */ 'or(java.util.function.Supplier)', [
+			[/* method description */
+				[/* text */ 't', `If a value is present, returns an `],
+				[/* inline code block */ 'i', `Optional`],
+				[/* text */ 't', ` describing the value,
+ otherwise returns an `],
+				[/* inline code block */ 'i', `Optional`],
+				[/* text */ 't', ` produced by the supplying function.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'supplier', [/* parameter description */
+					[/* text */ 't', `the supplying function that produces an `],
+					[/* inline code block */ 'i', `Optional`],
+					[/* text */ 't', `
+        to be returned`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
+					[/* text */ 't', `if the supplying function is `],
+					[/* inline code block */ 'i', `null`],
+					[/* text */ 't', ` or
+         produces a `],
+					[/* inline code block */ 'i', `null`],
+					[/* text */ 't', ` result`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `returns an `],
+				[/* inline code block */ 'i', `Optional`],
+				[/* text */ 't', ` describing the value of this
+         `],
+				[/* inline code block */ 'i', `Optional`],
+				[/* text */ 't', `, if a value is present, otherwise an
+         `],
+				[/* inline code block */ 'i', `Optional`],
+				[/* text */ 't', ` produced by the supplying function.`]
+			]
+		]],
+		[/* method */ 'stream()', [
+			[/* method description */
+				[/* text */ 't', `If a value is present, returns a sequential `],
+				[/* reference */ 'r', `java.util.stream.Stream`],
+				[/* text */ 't', ` containing
+ only that value, otherwise returns an empty `],
+				[/* inline code block */ 'i', `Stream`],
+				[/* text */ 't', `.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the optional value as a `],
+				[/* inline code block */ 'i', `Stream`]
+			]
+		]],
+		[/* method */ 'empty()', [
+			[/* method description */
+				[/* text */ 't', `Returns an empty `],
+				[/* inline code block */ 'i', `Optional`],
+				[/* text */ 't', ` instance.  No value is present for this
+ `],
+				[/* inline code block */ 'i', `Optional`],
+				[/* text */ 't', `.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `an empty `],
+				[/* inline code block */ 'i', `Optional`]
+			]
+		]],
+		[/* method */ 'of(java.lang.Object)', [
+			[/* method description */
+				[/* text */ 't', `Returns an `],
+				[/* inline code block */ 'i', `Optional`],
+				[/* text */ 't', ` describing the given non-`],
+				[/* inline code block */ 'i', `null`],
+				[/* text */ 't', `
+ value.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'value', [/* parameter description */
+					[/* text */ 't', `the value to describe, which must be non-`],
+					[/* inline code block */ 'i', `null`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
+					[/* text */ 't', `if value is `],
+					[/* inline code block */ 'i', `null`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `an `],
+				[/* inline code block */ 'i', `Optional`],
+				[/* text */ 't', ` with the value present`]
 			]
 		]],
 		[/* method */ 'ofNullable(java.lang.Object)', [
@@ -448,6 +426,89 @@ DocsCollector.collect('java.util.Optional', [
          is non-`],
 				[/* inline code block */ 'i', `null`],
 				[/* text */ 't', `, otherwise an empty `],
+				[/* inline code block */ 'i', `Optional`]
+			]
+		]],
+		[/* method */ 'get()', [
+			[/* method description */
+				[/* text */ 't', `If a value is present, returns the value, otherwise throws
+ `],
+				[/* inline code block */ 'i', `NoSuchElementException`],
+				[/* text */ 't', `.`]
+			],
+			/* parameters */ UDF,
+			[/* throws */
+				[/* throw */ 'java.util.NoSuchElementException', [/* throw description */
+					[/* text */ 't', `if no value is present`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `the non-`],
+				[/* inline code block */ 'i', `null`],
+				[/* text */ 't', ` value described by this `],
+				[/* inline code block */ 'i', `Optional`]
+			]
+		]],
+		[/* method */ 'orElse(java.lang.Object)', [
+			[/* method description */
+				[/* text */ 't', `If a value is present, returns the value, otherwise returns
+ `],
+				[/* inline code block */ 'i', `other`],
+				[/* text */ 't', `.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'other', [/* parameter description */
+					[/* text */ 't', `the value to be returned, if no value is present.
+        May be `],
+					[/* inline code block */ 'i', `null`],
+					[/* text */ 't', `.`]
+				]]
+			],
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the value, if present, otherwise `],
+				[/* inline code block */ 'i', `other`]
+			]
+		]],
+		[/* method */ 'orElseGet(java.util.function.Supplier)', [
+			[/* method description */
+				[/* text */ 't', `If a value is present, returns the value, otherwise returns the result
+ produced by the supplying function.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'supplier', [/* parameter description */
+					[/* text */ 't', `the supplying function that produces a value to be returned`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
+					[/* text */ 't', `if no value is present and the supplying
+         function is `],
+					[/* inline code block */ 'i', `null`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `the value, if present, otherwise the result produced by the
+         supplying function`]
+			]
+		]],
+		[/* method */ 'orElseThrow()', [
+			[/* method description */
+				[/* text */ 't', `If a value is present, returns the value, otherwise throws
+ `],
+				[/* inline code block */ 'i', `NoSuchElementException`],
+				[/* text */ 't', `.`]
+			],
+			/* parameters */ UDF,
+			[/* throws */
+				[/* throw */ 'java.util.NoSuchElementException', [/* throw description */
+					[/* text */ 't', `if no value is present`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `the non-`],
+				[/* inline code block */ 'i', `null`],
+				[/* text */ 't', ` value described by this `],
 				[/* inline code block */ 'i', `Optional`]
 			]
 		]],
@@ -496,67 +557,6 @@ DocsCollector.collect('java.util.Optional', [
 				]]
 			],
 			/* return */ UDF
-		]],
-		[/* method */ 'or(java.util.function.Supplier)', [
-			[/* method description */
-				[/* text */ 't', `If a value is present, returns an `],
-				[/* inline code block */ 'i', `Optional`],
-				[/* text */ 't', ` describing the value,
- otherwise returns an `],
-				[/* inline code block */ 'i', `Optional`],
-				[/* text */ 't', ` produced by the supplying function.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'supplier', [/* parameter description */
-					[/* text */ 't', `the supplying function that produces an `],
-					[/* inline code block */ 'i', `Optional`],
-					[/* text */ 't', `
-        to be returned`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
-					[/* text */ 't', `if the supplying function is `],
-					[/* inline code block */ 'i', `null`],
-					[/* text */ 't', ` or
-         produces a `],
-					[/* inline code block */ 'i', `null`],
-					[/* text */ 't', ` result`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `returns an `],
-				[/* inline code block */ 'i', `Optional`],
-				[/* text */ 't', ` describing the value of this
-         `],
-				[/* inline code block */ 'i', `Optional`],
-				[/* text */ 't', `, if a value is present, otherwise an
-         `],
-				[/* inline code block */ 'i', `Optional`],
-				[/* text */ 't', ` produced by the supplying function.`]
-			]
-		]],
-		[/* method */ 'orElseGet(java.util.function.Supplier)', [
-			[/* method description */
-				[/* text */ 't', `If a value is present, returns the value, otherwise returns the result
- produced by the supplying function.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'supplier', [/* parameter description */
-					[/* text */ 't', `the supplying function that produces a value to be returned`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
-					[/* text */ 't', `if no value is present and the supplying
-         function is `],
-					[/* inline code block */ 'i', `null`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `the value, if present, otherwise the result produced by the
-         supplying function`]
-			]
 		]]
 	],
 ]);

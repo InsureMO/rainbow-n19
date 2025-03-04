@@ -63,59 +63,50 @@ DocsCollector.collect('java.lang.module.ModuleDescriptor$Builder', [
 	/* fields */ UDF,
 	/* constructors */ UDF,
 	[/* methods */
-		[/* method */ 'version(java.lang.String)', [
+		[/* method */ 'build()', [
 			[/* method description */
-				[/* text */ 't', `Sets the module version.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'vs', [/* parameter description */
-					[/* text */ 't', `The version string to parse`]
+				[/* text */ 't', `Builds and returns a `],
+				[/* inline code block */ 'i', `ModuleDescriptor`],
+				[/* text */ 't', ` from its components.
+
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', ` The module will require "`],
+					[/* inline code block */ 'i', `java.base`],
+					[/* text */ 't', `" even if the dependence
+ has not been declared (the exception is when building a module named
+ "`],
+					[/* inline code block */ 'i', `java.base`],
+					[/* text */ 't', `" as it cannot require itself). The dependence on
+ "`],
+					[/* inline code block */ 'i', `java.base`],
+					[/* text */ 't', `" will have the `],
+					[/* reference */ 'r', `.ModuleDescriptor.Requires.Modifier#MANDATED`],
+					[/* text */ 't', `
+ modifier if the dependence was not declared. `]
 				]]
 			],
-			[/* throws */
-				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
-					[/* text */ 't', `If `],
-					[/* inline code block */ 'i', `vs`],
-					[/* text */ 't', ` is `],
-					[/* inline code block */ 'i', `null`],
-					[/* text */ 't', ` or cannot be parsed as a
-         version string`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `This builder`]
-			]
-		]],
-		[/* method */ 'version(java.lang.module.ModuleDescriptor.Version)', [
-			[/* method description */
-				[/* text */ 't', `Sets the module version.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'v', [/* parameter description */
-					[/* text */ 't', `The version`]
-				]]
-			],
+			/* parameters */ UDF,
 			/* throws */ UDF,
 			[/* return description */
-				[/* text */ 't', `This builder`]
+				[/* text */ 't', `The module descriptor`]
 			]
 		]],
-		[/* method */ 'packages(java.util.Set)', [
+		[/* method */ 'exports(java.lang.module.ModuleDescriptor.Exports)', [
 			[/* method description */
-				[/* text */ 't', `Adds packages to the module. All packages in the set of package names
- that are not in the module are added to module.`]
+				[/* text */ 't', `Adds an exported package.`]
 			],
 			[/* parameters */
-				[/* parameter */ 'pns', [/* parameter description */
-					[/* text */ 't', `The (possibly empty) set of package names`]
+				[/* parameter */ 'e', [/* parameter description */
+					[/* text */ 't', `The export`]
 				]]
 			],
 			[/* throws */
-				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
-					[/* text */ 't', `If any of the package names is `],
-					[/* inline code block */ 'i', `null`],
-					[/* text */ 't', ` or is not a
-         legal package name`]
+				[/* throw */ 'java.lang.IllegalStateException', [/* throw description */
+					[/* text */ 't', `If the `],
+					[/* reference */ 'r', `.ModuleDescriptor.Exports#source()`],
+					[/* text */ 't', ` is already declared as
+         exported or this builder is for an automatic module`]
 				]]
 			],
 			[/* return description */
@@ -137,40 +128,6 @@ DocsCollector.collect('java.lang.module.ModuleDescriptor$Builder', [
 					[/* inline code block */ 'i', `null`],
 					[/* text */ 't', ` or is not a legal
          package name`]
-				]],
-				[/* throw */ 'java.lang.IllegalStateException', [/* throw description */
-					[/* text */ 't', `If the package is already declared as exported
-         or this builder is for an automatic module`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `This builder`]
-			]
-		]],
-		[/* method */ 'exports(java.util.Set,java.lang.String,java.util.Set)', [
-			[/* method description */
-				[/* text */ 't', `Adds an exported package with the given (and possibly empty) set of
- modifiers. The package is exported to a set of target modules.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'ms', [/* parameter description */
-					[/* text */ 't', `The set of modifiers`]
-				]],
-				[/* parameter */ 'pn', [/* parameter description */
-					[/* text */ 't', `The package name`]
-				]],
-				[/* parameter */ 'targets', [/* parameter description */
-					[/* text */ 't', `The set of target modules names`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
-					[/* text */ 't', `If the package name is `],
-					[/* inline code block */ 'i', `null`],
-					[/* text */ 't', ` or is not a legal
-         package name, the set of target modules is empty, or the set
-         of target modules contains a name that is not a legal module
-         name`]
 				]],
 				[/* throw */ 'java.lang.IllegalStateException', [/* throw description */
 					[/* text */ 't', `If the package is already declared as exported
@@ -241,21 +198,82 @@ DocsCollector.collect('java.lang.module.ModuleDescriptor$Builder', [
 				[/* text */ 't', `This builder`]
 			]
 		]],
-		[/* method */ 'exports(java.lang.module.ModuleDescriptor.Exports)', [
+		[/* method */ 'exports(java.util.Set,java.lang.String,java.util.Set)', [
 			[/* method description */
-				[/* text */ 't', `Adds an exported package.`]
+				[/* text */ 't', `Adds an exported package with the given (and possibly empty) set of
+ modifiers. The package is exported to a set of target modules.`]
 			],
 			[/* parameters */
-				[/* parameter */ 'e', [/* parameter description */
-					[/* text */ 't', `The export`]
+				[/* parameter */ 'ms', [/* parameter description */
+					[/* text */ 't', `The set of modifiers`]
+				]],
+				[/* parameter */ 'pn', [/* parameter description */
+					[/* text */ 't', `The package name`]
+				]],
+				[/* parameter */ 'targets', [/* parameter description */
+					[/* text */ 't', `The set of target modules names`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
+					[/* text */ 't', `If the package name is `],
+					[/* inline code block */ 'i', `null`],
+					[/* text */ 't', ` or is not a legal
+         package name, the set of target modules is empty, or the set
+         of target modules contains a name that is not a legal module
+         name`]
+				]],
+				[/* throw */ 'java.lang.IllegalStateException', [/* throw description */
+					[/* text */ 't', `If the package is already declared as exported
+         or this builder is for an automatic module`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `This builder`]
+			]
+		]],
+		[/* method */ 'mainClass(java.lang.String)', [
+			[/* method description */
+				[/* text */ 't', `Sets the module main class. The package for the main class is added
+ to the module if not already added. In other words, this method is
+ equivalent to first invoking this builder's `],
+				[/* reference */ 'r', `#packages(java.util.Set)`, `packages`],
+				[/* text */ 't', ` method to add the package name of the main class.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'mc', [/* parameter description */
+					[/* text */ 't', `The module main class`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
+					[/* text */ 't', `If `],
+					[/* inline code block */ 'i', `mainClass`],
+					[/* text */ 't', ` is `],
+					[/* inline code block */ 'i', `null`],
+					[/* text */ 't', ` or not a qualified
+         name of a class in a named package`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `This builder`]
+			]
+		]],
+		[/* method */ 'opens(java.lang.module.ModuleDescriptor.Opens)', [
+			[/* method description */
+				[/* text */ 't', `Adds an open package.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'obj', [/* parameter description */
+					[/* text */ 't', `The `],
+					[/* inline code block */ 'i', `Opens`],
+					[/* text */ 't', ` object`]
 				]]
 			],
 			[/* throws */
 				[/* throw */ 'java.lang.IllegalStateException', [/* throw description */
-					[/* text */ 't', `If the `],
-					[/* reference */ 'r', `.ModuleDescriptor.Exports#source()`],
-					[/* text */ 't', ` is already declared as
-         exported or this builder is for an automatic module`]
+					[/* text */ 't', `If the package is already declared as open, or this is a
+         builder for an open module or automatic module`]
 				]]
 			],
 			[/* return description */
@@ -267,6 +285,65 @@ DocsCollector.collect('java.lang.module.ModuleDescriptor$Builder', [
 				[/* text */ 't', `Adds an open package. The package is open to all modules.`]
 			],
 			[/* parameters */
+				[/* parameter */ 'pn', [/* parameter description */
+					[/* text */ 't', `The package name`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
+					[/* text */ 't', `If the package name is `],
+					[/* inline code block */ 'i', `null`],
+					[/* text */ 't', ` or is not a legal
+         package name`]
+				]],
+				[/* throw */ 'java.lang.IllegalStateException', [/* throw description */
+					[/* text */ 't', `If the package is already declared as open, or this is a
+         builder for an open module or automatic module`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `This builder`]
+			]
+		]],
+		[/* method */ 'opens(java.lang.String,java.util.Set)', [
+			[/* method description */
+				[/* text */ 't', `Adds an open package. The package is open to a set of target modules.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'pn', [/* parameter description */
+					[/* text */ 't', `The package name`]
+				]],
+				[/* parameter */ 'targets', [/* parameter description */
+					[/* text */ 't', `The set of target modules names`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
+					[/* text */ 't', `If the package name is `],
+					[/* inline code block */ 'i', `null`],
+					[/* text */ 't', ` or is not a legal
+         package name, the set of target modules is empty, or the set
+         of target modules contains a name that is not a legal module
+         name`]
+				]],
+				[/* throw */ 'java.lang.IllegalStateException', [/* throw description */
+					[/* text */ 't', `If the package is already declared as open, or this is a
+         builder for an open module or automatic module`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `This builder`]
+			]
+		]],
+		[/* method */ 'opens(java.util.Set,java.lang.String)', [
+			[/* method description */
+				[/* text */ 't', `Adds an open package with the given (and possibly empty) set of
+ modifiers. The package is open to all modules.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'ms', [/* parameter description */
+					[/* text */ 't', `The set of modifiers`]
+				]],
 				[/* parameter */ 'pn', [/* parameter description */
 					[/* text */ 't', `The package name`]
 				]]
@@ -321,105 +398,22 @@ DocsCollector.collect('java.lang.module.ModuleDescriptor$Builder', [
 				[/* text */ 't', `This builder`]
 			]
 		]],
-		[/* method */ 'opens(java.lang.String,java.util.Set)', [
+		[/* method */ 'packages(java.util.Set)', [
 			[/* method description */
-				[/* text */ 't', `Adds an open package. The package is open to a set of target modules.`]
+				[/* text */ 't', `Adds packages to the module. All packages in the set of package names
+ that are not in the module are added to module.`]
 			],
 			[/* parameters */
-				[/* parameter */ 'pn', [/* parameter description */
-					[/* text */ 't', `The package name`]
-				]],
-				[/* parameter */ 'targets', [/* parameter description */
-					[/* text */ 't', `The set of target modules names`]
+				[/* parameter */ 'pns', [/* parameter description */
+					[/* text */ 't', `The (possibly empty) set of package names`]
 				]]
 			],
 			[/* throws */
 				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
-					[/* text */ 't', `If the package name is `],
+					[/* text */ 't', `If any of the package names is `],
 					[/* inline code block */ 'i', `null`],
-					[/* text */ 't', ` or is not a legal
-         package name, the set of target modules is empty, or the set
-         of target modules contains a name that is not a legal module
-         name`]
-				]],
-				[/* throw */ 'java.lang.IllegalStateException', [/* throw description */
-					[/* text */ 't', `If the package is already declared as open, or this is a
-         builder for an open module or automatic module`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `This builder`]
-			]
-		]],
-		[/* method */ 'opens(java.lang.module.ModuleDescriptor.Opens)', [
-			[/* method description */
-				[/* text */ 't', `Adds an open package.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'obj', [/* parameter description */
-					[/* text */ 't', `The `],
-					[/* inline code block */ 'i', `Opens`],
-					[/* text */ 't', ` object`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.IllegalStateException', [/* throw description */
-					[/* text */ 't', `If the package is already declared as open, or this is a
-         builder for an open module or automatic module`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `This builder`]
-			]
-		]],
-		[/* method */ 'opens(java.util.Set,java.lang.String)', [
-			[/* method description */
-				[/* text */ 't', `Adds an open package with the given (and possibly empty) set of
- modifiers. The package is open to all modules.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'ms', [/* parameter description */
-					[/* text */ 't', `The set of modifiers`]
-				]],
-				[/* parameter */ 'pn', [/* parameter description */
-					[/* text */ 't', `The package name`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
-					[/* text */ 't', `If the package name is `],
-					[/* inline code block */ 'i', `null`],
-					[/* text */ 't', ` or is not a legal
-         package name`]
-				]],
-				[/* throw */ 'java.lang.IllegalStateException', [/* throw description */
-					[/* text */ 't', `If the package is already declared as open, or this is a
-         builder for an open module or automatic module`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `This builder`]
-			]
-		]],
-		[/* method */ 'uses(java.lang.String)', [
-			[/* method description */
-				[/* text */ 't', `Adds a service dependence.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'service', [/* parameter description */
-					[/* text */ 't', `The service type`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
-					[/* text */ 't', `If the service type is `],
-					[/* inline code block */ 'i', `null`],
-					[/* text */ 't', ` or not a qualified name of
-         a class in a named package`]
-				]],
-				[/* throw */ 'java.lang.IllegalStateException', [/* throw description */
-					[/* text */ 't', `If a dependency on the service type has already been declared
-         or this is a builder for an automatic module`]
+					[/* text */ 't', ` or is not a
+         legal package name`]
 				]]
 			],
 			[/* return description */
@@ -479,35 +473,6 @@ DocsCollector.collect('java.lang.module.ModuleDescriptor$Builder', [
 				[/* text */ 't', `This builder`]
 			]
 		]],
-		[/* method */ 'build()', [
-			[/* method description */
-				[/* text */ 't', `Builds and returns a `],
-				[/* inline code block */ 'i', `ModuleDescriptor`],
-				[/* text */ 't', ` from its components.
-
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', ` The module will require "`],
-					[/* inline code block */ 'i', `java.base`],
-					[/* text */ 't', `" even if the dependence
- has not been declared (the exception is when building a module named
- "`],
-					[/* inline code block */ 'i', `java.base`],
-					[/* text */ 't', `" as it cannot require itself). The dependence on
- "`],
-					[/* inline code block */ 'i', `java.base`],
-					[/* text */ 't', `" will have the `],
-					[/* reference */ 'r', `.ModuleDescriptor.Requires.Modifier#MANDATED`],
-					[/* text */ 't', `
- modifier if the dependence was not declared. `]
-				]]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `The module descriptor`]
-			]
-		]],
 		[/* method */ 'requires(java.lang.module.ModuleDescriptor.Requires)', [
 			[/* method description */
 				[/* text */ 't', `Adds a dependence on a module.`]
@@ -521,40 +486,6 @@ DocsCollector.collect('java.lang.module.ModuleDescriptor$Builder', [
 				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
 					[/* text */ 't', `If the dependence is on the module that this builder was
          initialized to build`]
-				]],
-				[/* throw */ 'java.lang.IllegalStateException', [/* throw description */
-					[/* text */ 't', `If the dependence on the module has already been declared
-         or this builder is for an automatic module`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `This builder`]
-			]
-		]],
-		[/* method */ 'requires(java.util.Set,java.lang.String,java.lang.module.ModuleDescriptor.Version)', [
-			[/* method description */
-				[/* text */ 't', `Adds a dependence on a module with the given (and possibly empty)
- set of modifiers. The dependence includes the version of the
- module that was recorded at compile-time.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'ms', [/* parameter description */
-					[/* text */ 't', `The set of modifiers`]
-				]],
-				[/* parameter */ 'mn', [/* parameter description */
-					[/* text */ 't', `The module name`]
-				]],
-				[/* parameter */ 'compiledVersion', [/* parameter description */
-					[/* text */ 't', `The version of the module recorded at compile-time`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
-					[/* text */ 't', `If the module name is `],
-					[/* inline code block */ 'i', `null`],
-					[/* text */ 't', `, is not a legal module
-         name, or is equal to the module name that this builder
-         was initialized to build`]
 				]],
 				[/* throw */ 'java.lang.IllegalStateException', [/* throw description */
 					[/* text */ 't', `If the dependence on the module has already been declared
@@ -621,27 +552,96 @@ DocsCollector.collect('java.lang.module.ModuleDescriptor$Builder', [
 				[/* text */ 't', `This builder`]
 			]
 		]],
-		[/* method */ 'mainClass(java.lang.String)', [
+		[/* method */ 'requires(java.util.Set,java.lang.String,java.lang.module.ModuleDescriptor.Version)', [
 			[/* method description */
-				[/* text */ 't', `Sets the module main class. The package for the main class is added
- to the module if not already added. In other words, this method is
- equivalent to first invoking this builder's `],
-				[/* reference */ 'r', `#packages(java.util.Set)`, `packages`],
-				[/* text */ 't', ` method to add the package name of the main class.`]
+				[/* text */ 't', `Adds a dependence on a module with the given (and possibly empty)
+ set of modifiers. The dependence includes the version of the
+ module that was recorded at compile-time.`]
 			],
 			[/* parameters */
-				[/* parameter */ 'mc', [/* parameter description */
-					[/* text */ 't', `The module main class`]
+				[/* parameter */ 'ms', [/* parameter description */
+					[/* text */ 't', `The set of modifiers`]
+				]],
+				[/* parameter */ 'mn', [/* parameter description */
+					[/* text */ 't', `The module name`]
+				]],
+				[/* parameter */ 'compiledVersion', [/* parameter description */
+					[/* text */ 't', `The version of the module recorded at compile-time`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
+					[/* text */ 't', `If the module name is `],
+					[/* inline code block */ 'i', `null`],
+					[/* text */ 't', `, is not a legal module
+         name, or is equal to the module name that this builder
+         was initialized to build`]
+				]],
+				[/* throw */ 'java.lang.IllegalStateException', [/* throw description */
+					[/* text */ 't', `If the dependence on the module has already been declared
+         or this builder is for an automatic module`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `This builder`]
+			]
+		]],
+		[/* method */ 'uses(java.lang.String)', [
+			[/* method description */
+				[/* text */ 't', `Adds a service dependence.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'service', [/* parameter description */
+					[/* text */ 't', `The service type`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
+					[/* text */ 't', `If the service type is `],
+					[/* inline code block */ 'i', `null`],
+					[/* text */ 't', ` or not a qualified name of
+         a class in a named package`]
+				]],
+				[/* throw */ 'java.lang.IllegalStateException', [/* throw description */
+					[/* text */ 't', `If a dependency on the service type has already been declared
+         or this is a builder for an automatic module`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `This builder`]
+			]
+		]],
+		[/* method */ 'version(java.lang.module.ModuleDescriptor.Version)', [
+			[/* method description */
+				[/* text */ 't', `Sets the module version.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'v', [/* parameter description */
+					[/* text */ 't', `The version`]
+				]]
+			],
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `This builder`]
+			]
+		]],
+		[/* method */ 'version(java.lang.String)', [
+			[/* method description */
+				[/* text */ 't', `Sets the module version.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'vs', [/* parameter description */
+					[/* text */ 't', `The version string to parse`]
 				]]
 			],
 			[/* throws */
 				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
 					[/* text */ 't', `If `],
-					[/* inline code block */ 'i', `mainClass`],
+					[/* inline code block */ 'i', `vs`],
 					[/* text */ 't', ` is `],
 					[/* inline code block */ 'i', `null`],
-					[/* text */ 't', ` or not a qualified
-         name of a class in a named package`]
+					[/* text */ 't', ` or cannot be parsed as a
+         version string`]
 				]]
 			],
 			[/* return description */

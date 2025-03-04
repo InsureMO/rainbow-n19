@@ -601,14 +601,14 @@ JdkClassCreateHelper.class('java.text.NumberFormat', [
 		]
 	],
 	[/* declared fields */
-		[/* public static final int java.text.NumberFormat.INTEGER_FIELD */
-			/* name */ 'INTEGER_FIELD',
+		[/* public static final int java.text.NumberFormat.FRACTION_FIELD */
+			/* name */ 'FRACTION_FIELD',
 			/* type */ 'int',
 			/* annotations */ UDF,
 			/* modifiers */ 25
 		],
-		[/* public static final int java.text.NumberFormat.FRACTION_FIELD */
-			/* name */ 'FRACTION_FIELD',
+		[/* public static final int java.text.NumberFormat.INTEGER_FIELD */
+			/* name */ 'INTEGER_FIELD',
 			/* type */ 'int',
 			/* annotations */ UDF,
 			/* modifiers */ 25

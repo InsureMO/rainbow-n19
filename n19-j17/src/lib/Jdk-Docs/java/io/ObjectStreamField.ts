@@ -55,28 +55,17 @@ DocsCollector.collect('java.io.ObjectStreamField', [
 		]]
 	],
 	[/* methods */
-		[/* method */ 'getName()', [
+		[/* method */ 'setOffset(int)', [
 			[/* method description */
-				[/* text */ 't', `Get the name of this field.`]
+				[/* text */ 't', `Offset within instance data.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `a `],
-				[/* inline code block */ 'i', `String`],
-				[/* text */ 't', ` representing the name of the serializable
-          field`]
-			]
-		]],
-		[/* method */ 'toString()', [
-			[/* method description */
-				[/* text */ 't', `Return a string that describes this field.`]
+			[/* parameters */
+				[/* parameter */ 'offset', [/* parameter description */
+					[/* text */ 't', `the offset of the field`]
+				]]
 			],
-			/* parameters */ UDF,
 			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `a string representation of the object.`]
-			]
+			/* return */ UDF
 		]],
 		[/* method */ 'isPrimitive()', [
 			[/* method description */
@@ -88,48 +77,16 @@ DocsCollector.collect('java.io.ObjectStreamField', [
 				[/* text */ 't', `true if and only if this field corresponds to a primitive type`]
 			]
 		]],
-		[/* method */ 'compareTo(java.lang.Object)', [
+		[/* method */ 'isUnshared()', [
 			[/* method description */
-				[/* text */ 't', `Compare this field with another `],
-				[/* inline code block */ 'i', `ObjectStreamField`],
-				[/* text */ 't', `.  Return
- -1 if this is smaller, 0 if equal, 1 if greater.  Types that are
- primitives are "smaller" than object types.  If equal, the field names
- are compared.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'obj', [/* parameter description */
-					[/* text */ 't', `the object to be compared.`]
-				]]
-			],
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `a negative integer, zero, or a positive integer as this object
-          is less than, equal to, or greater than the specified object.`]
-			]
-		]],
-		[/* method */ 'getType()', [
-			[/* method description */
-				[/* text */ 't', `Get the type of the field.  If the type is non-primitive and this
- `],
-				[/* inline code block */ 'i', `ObjectStreamField`],
-				[/* text */ 't', ` was obtained from a deserialized `],
-				[/* reference */ 'r', `java.io.ObjectStreamClass`],
-				[/* text */ 't', ` instance, then `],
-				[/* inline code block */ 'i', `Object.class`],
-				[/* text */ 't', ` is returned.
- Otherwise, the `],
-				[/* inline code block */ 'i', `Class`],
-				[/* text */ 't', ` object for the type of the field is
- returned.`]
+				[/* text */ 't', `Returns boolean value indicating whether or not the serializable field
+ represented by this ObjectStreamField instance is unshared.`]
 			],
 			/* parameters */ UDF,
 			/* throws */ UDF,
 			[/* return description */
-				[/* text */ 't', `a `],
-				[/* inline code block */ 'i', `Class`],
-				[/* text */ 't', ` object representing the type of the
-          serializable field`]
+				[/* inline code block */ 'i', `true`],
+				[/* text */ 't', ` if this field is unshared`]
 			]
 		]],
 		[/* method */ 'getTypeCode()', [
@@ -156,14 +113,24 @@ DocsCollector.collect('java.io.ObjectStreamField', [
 				[/* text */ 't', `the typecode of the serializable field`]
 			]
 		]],
-		[/* method */ 'getTypeString()', [
+		[/* method */ 'compareTo(java.lang.Object)', [
 			[/* method description */
-				[/* text */ 't', `Return the JVM type signature.`]
+				[/* text */ 't', `Compare this field with another `],
+				[/* inline code block */ 'i', `ObjectStreamField`],
+				[/* text */ 't', `.  Return
+ -1 if this is smaller, 0 if equal, 1 if greater.  Types that are
+ primitives are "smaller" than object types.  If equal, the field names
+ are compared.`]
 			],
-			/* parameters */ UDF,
+			[/* parameters */
+				[/* parameter */ 'obj', [/* parameter description */
+					[/* text */ 't', `the object to be compared.`]
+				]]
+			],
 			/* throws */ UDF,
 			[/* return description */
-				[/* text */ 't', `null if this field has a primitive type.`]
+				[/* text */ 't', `a negative integer, zero, or a positive integer as this object
+          is less than, equal to, or greater than the specified object.`]
 			]
 		]],
 		[/* method */ 'getOffset()', [
@@ -176,28 +143,61 @@ DocsCollector.collect('java.io.ObjectStreamField', [
 				[/* text */ 't', `the offset of this field`]
 			]
 		]],
-		[/* method */ 'setOffset(int)', [
+		[/* method */ 'getType()', [
 			[/* method description */
-				[/* text */ 't', `Offset within instance data.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'offset', [/* parameter description */
-					[/* text */ 't', `the offset of the field`]
-				]]
-			],
-			/* throws */ UDF,
-			/* return */ UDF
-		]],
-		[/* method */ 'isUnshared()', [
-			[/* method description */
-				[/* text */ 't', `Returns boolean value indicating whether or not the serializable field
- represented by this ObjectStreamField instance is unshared.`]
+				[/* text */ 't', `Get the type of the field.  If the type is non-primitive and this
+ `],
+				[/* inline code block */ 'i', `ObjectStreamField`],
+				[/* text */ 't', ` was obtained from a deserialized `],
+				[/* reference */ 'r', `java.io.ObjectStreamClass`],
+				[/* text */ 't', ` instance, then `],
+				[/* inline code block */ 'i', `Object.class`],
+				[/* text */ 't', ` is returned.
+ Otherwise, the `],
+				[/* inline code block */ 'i', `Class`],
+				[/* text */ 't', ` object for the type of the field is
+ returned.`]
 			],
 			/* parameters */ UDF,
 			/* throws */ UDF,
 			[/* return description */
-				[/* inline code block */ 'i', `true`],
-				[/* text */ 't', ` if this field is unshared`]
+				[/* text */ 't', `a `],
+				[/* inline code block */ 'i', `Class`],
+				[/* text */ 't', ` object representing the type of the
+          serializable field`]
+			]
+		]],
+		[/* method */ 'getName()', [
+			[/* method description */
+				[/* text */ 't', `Get the name of this field.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `a `],
+				[/* inline code block */ 'i', `String`],
+				[/* text */ 't', ` representing the name of the serializable
+          field`]
+			]
+		]],
+		[/* method */ 'getTypeString()', [
+			[/* method description */
+				[/* text */ 't', `Return the JVM type signature.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `null if this field has a primitive type.`]
+			]
+		]],
+		[/* method */ 'toString()', [
+			[/* method description */
+				[/* text */ 't', `Return a string that describes this field.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `a string representation of the object.`]
 			]
 		]]
 	],

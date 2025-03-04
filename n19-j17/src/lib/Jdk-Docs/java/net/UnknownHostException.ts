@@ -7,6 +7,16 @@ DocsCollector.collect('java.net.UnknownHostException', [
 	],
 	/* fields */ UDF,
 	[/* constructors */
+		[/* constructor */ '<init>()', [
+			[/* constructor description */
+				[/* text */ 't', `Constructs a new `],
+				[/* inline code block */ 'i', `UnknownHostException`],
+				[/* text */ 't', ` with no detail
+ message.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF
+		]],
 		[/* constructor */ '<init>(java.lang.String)', [
 			[/* constructor description */
 				[/* text */ 't', `Constructs a new `],
@@ -19,16 +29,6 @@ DocsCollector.collect('java.net.UnknownHostException', [
 					[/* text */ 't', `the detail message.`]
 				]]
 			],
-			/* throws */ UDF
-		]],
-		[/* constructor */ '<init>()', [
-			[/* constructor description */
-				[/* text */ 't', `Constructs a new `],
-				[/* inline code block */ 'i', `UnknownHostException`],
-				[/* text */ 't', ` with no detail
- message.`]
-			],
-			/* parameters */ UDF,
 			/* throws */ UDF
 		]]
 	],

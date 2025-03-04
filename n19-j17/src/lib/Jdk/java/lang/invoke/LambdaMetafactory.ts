@@ -103,8 +103,8 @@ JdkClassCreateHelper.class('java.lang.invoke.LambdaMetafactory', [
 		]
 	],
 	[/* declared fields */
-		[/* public static final int java.lang.invoke.LambdaMetafactory.FLAG_SERIALIZABLE */
-			/* name */ 'FLAG_SERIALIZABLE',
+		[/* public static final int java.lang.invoke.LambdaMetafactory.FLAG_BRIDGES */
+			/* name */ 'FLAG_BRIDGES',
 			/* type */ 'int',
 			/* annotations */ UDF,
 			/* modifiers */ 25
@@ -115,8 +115,8 @@ JdkClassCreateHelper.class('java.lang.invoke.LambdaMetafactory', [
 			/* annotations */ UDF,
 			/* modifiers */ 25
 		],
-		[/* public static final int java.lang.invoke.LambdaMetafactory.FLAG_BRIDGES */
-			/* name */ 'FLAG_BRIDGES',
+		[/* public static final int java.lang.invoke.LambdaMetafactory.FLAG_SERIALIZABLE */
+			/* name */ 'FLAG_SERIALIZABLE',
 			/* type */ 'int',
 			/* annotations */ UDF,
 			/* modifiers */ 25

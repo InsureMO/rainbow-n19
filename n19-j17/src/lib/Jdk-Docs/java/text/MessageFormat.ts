@@ -829,24 +829,53 @@ DocsCollector.collect('java.text.MessageFormat', [
 				[/* text */ 't', ` otherwise.`]
 			]
 		]],
-		[/* method */ 'hashCode()', [
+		[/* method */ 'format(java.lang.Object,java.lang.StringBuffer,java.text.FieldPosition)', [
 			[/* method description */
-				[/* text */ 't', `Generates a hash code for the message format object.`]
+				[/* text */ 't', `Formats an array of objects and appends the `],
+				[/* inline code block */ 'i', `MessageFormat`],
+				[/* text */ 't', `'s
+ pattern, with format elements replaced by the formatted objects, to the
+ provided `],
+				[/* inline code block */ 'i', `StringBuffer`],
+				[/* text */ 't', `.
+ This is equivalent to
+ `],
+				[/* block */ 'b', [
+					[/* inline code block */ 'i', `format((Object[]) arguments, result, pos)`]
+				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `a hash code value for this object.`]
-			]
-		]],
-		[/* method */ 'clone()', [
-			[/* method description */
-				[/* text */ 't', `Creates and returns a copy of this object.`]
+			[/* parameters */
+				[/* parameter */ 'arguments', [/* parameter description */
+					[/* text */ 't', `an array of objects to be formatted and substituted.`]
+				]],
+				[/* parameter */ 'result', [/* parameter description */
+					[/* text */ 't', `where text is appended.`]
+				]],
+				[/* parameter */ 'pos', [/* parameter description */
+					[/* text */ 't', `keeps track on the position of the first replaced argument
+            in the output string.`]
+				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			[/* throws */
+				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
+					[/* text */ 't', `if an argument in the
+            `],
+					[/* inline code block */ 'i', `arguments`],
+					[/* text */ 't', ` array is not of the type
+            expected by the format element(s) that use it.`]
+				]],
+				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
+					[/* text */ 't', `if `],
+					[/* inline code block */ 'i', `result`],
+					[/* text */ 't', ` is `],
+					[/* inline code block */ 'i', `null`]
+				]]
+			],
 			[/* return description */
-				[/* text */ 't', `a clone of this instance.`]
+				[/* text */ 't', `the string buffer passed in as `],
+				[/* inline code block */ 'i', `toAppendTo`],
+				[/* text */ 't', `,
+               with formatted text appended`]
 			]
 		]],
 		[/* method */ 'format(java.lang.Object[],java.lang.StringBuffer,java.text.FieldPosition)', [
@@ -1061,194 +1090,24 @@ DocsCollector.collect('java.text.MessageFormat', [
  text appended`]
 			]
 		]],
-		[/* method */ 'format(java.lang.String,java.lang.Object...)', [
+		[/* method */ 'hashCode()', [
 			[/* method description */
-				[/* text */ 't', `Creates a MessageFormat with the given pattern and uses it
- to format the given arguments. This is equivalent to
- `],
-				[/* block */ 'b', [
-					[/* inline code block */ 'i', `(new MessageFormat(pattern)).format(arguments, new StringBuffer(), null).toString()`]
-				]]
-			],
-			[/* parameters */
-				[/* parameter */ 'pattern', [/* parameter description */
-					[/* text */ 't', `the pattern string`]
-				]],
-				[/* parameter */ 'arguments', [/* parameter description */
-					[/* text */ 't', `object(s) to format`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
-					[/* text */ 't', `if the pattern is invalid,
-            or if an argument in the `],
-					[/* inline code block */ 'i', `arguments`],
-					[/* text */ 't', ` array
-            is not of the type expected by the format element(s)
-            that use it.`]
-				]],
-				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
-					[/* text */ 't', `if `],
-					[/* inline code block */ 'i', `pattern`],
-					[/* text */ 't', ` is `],
-					[/* inline code block */ 'i', `null`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `the formatted string`]
-			]
-		]],
-		[/* method */ 'format(java.lang.Object,java.lang.StringBuffer,java.text.FieldPosition)', [
-			[/* method description */
-				[/* text */ 't', `Formats an array of objects and appends the `],
-				[/* inline code block */ 'i', `MessageFormat`],
-				[/* text */ 't', `'s
- pattern, with format elements replaced by the formatted objects, to the
- provided `],
-				[/* inline code block */ 'i', `StringBuffer`],
-				[/* text */ 't', `.
- This is equivalent to
- `],
-				[/* block */ 'b', [
-					[/* inline code block */ 'i', `format((Object[]) arguments, result, pos)`]
-				]]
-			],
-			[/* parameters */
-				[/* parameter */ 'arguments', [/* parameter description */
-					[/* text */ 't', `an array of objects to be formatted and substituted.`]
-				]],
-				[/* parameter */ 'result', [/* parameter description */
-					[/* text */ 't', `where text is appended.`]
-				]],
-				[/* parameter */ 'pos', [/* parameter description */
-					[/* text */ 't', `keeps track on the position of the first replaced argument
-            in the output string.`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
-					[/* text */ 't', `if an argument in the
-            `],
-					[/* inline code block */ 'i', `arguments`],
-					[/* text */ 't', ` array is not of the type
-            expected by the format element(s) that use it.`]
-				]],
-				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
-					[/* text */ 't', `if `],
-					[/* inline code block */ 'i', `result`],
-					[/* text */ 't', ` is `],
-					[/* inline code block */ 'i', `null`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `the string buffer passed in as `],
-				[/* inline code block */ 'i', `toAppendTo`],
-				[/* text */ 't', `,
-               with formatted text appended`]
-			]
-		]],
-		[/* method */ 'parse(java.lang.String,java.text.ParsePosition)', [
-			[/* method description */
-				[/* text */ 't', `Parses the string.
-
- `],
-				[/* block */ 'b', `Caveats: The parse may fail in a number of circumstances.
- For example:
- `],
-				[/* list */ 'l', [
-					[/* block */ 'b', `If one of the arguments does not occur in the pattern.
- `],
-					[/* block */ 'b', `If the format of an argument loses information, such as
-     with a choice format where a large number formats to "many".
- `],
-					[/* block */ 'b', `Does not yet handle recursion (where
-     the substituted strings contain {n} references.)
- `],
-					[/* block */ 'b', `Will not always find a match (or the correct match)
-     if some part of the parse is ambiguous.
-     For example, if the pattern "{1},{2}" is used with the
-     string arguments {"a,b", "c"}, it will format as "a,b,c".
-     When the result is parsed, it will return {"a", "b,c"}.
- `],
-					[/* block */ 'b', `If a single argument is parsed more than once in the string,
-     then the later parse wins.
- `]
-				]],
-				[/* text */ 't', `
- When the parse fails, use ParsePosition.getErrorIndex() to find out
- where in the string the parsing failed.  The returned error
- index is the starting offset of the sub-patterns that the string
- is comparing with.  For example, if the parsing string "AAA {0} BBB"
- is comparing against the pattern "AAD {0} BBB", the error index is
- 0. When an error occurs, the call to this method will return null.
- If the source is null, return an empty array.`],
-				[/* block */ 'b', '']
-			],
-			[/* parameters */
-				[/* parameter */ 'source', [/* parameter description */
-					[/* text */ 't', `the string to parse`]
-				]],
-				[/* parameter */ 'pos', [/* parameter description */
-					[/* text */ 't', `the parse position`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
-					[/* text */ 't', `if `],
-					[/* inline code block */ 'i', `pos`],
-					[/* text */ 't', ` is `],
-					[/* inline code block */ 'i', `null`],
-					[/* text */ 't', `
-            for a non-null `],
-					[/* inline code block */ 'i', `source`],
-					[/* text */ 't', ` string.`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `an array of parsed objects`]
-			]
-		]],
-		[/* method */ 'parse(java.lang.String)', [
-			[/* method description */
-				[/* text */ 't', `Parses text from the beginning of the given string to produce an object
- array.
- The method may not use the entire text of the given string.
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', `
- See the `],
-					[/* reference */ 'r', `#parse(java.lang.String,java.text.ParsePosition)`, `parse(String, ParsePosition)`],
-					[/* text */ 't', ` method for more information
- on message parsing.`]
-				]]
-			],
-			[/* parameters */
-				[/* parameter */ 'source', [/* parameter description */
-					[/* text */ 't', `A `],
-					[/* inline code block */ 'i', `String`],
-					[/* text */ 't', ` whose beginning should be parsed.`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.text.ParseException', [/* throw description */
-					[/* text */ 't', `if the beginning of the specified string
-            cannot be parsed.`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `An `],
-				[/* inline code block */ 'i', `Object`],
-				[/* text */ 't', ` array parsed from the string.`]
-			]
-		]],
-		[/* method */ 'getLocale()', [
-			[/* method description */
-				[/* text */ 't', `Gets the locale that's used when creating or comparing subformats.`]
+				[/* text */ 't', `Generates a hash code for the message format object.`]
 			],
 			/* parameters */ UDF,
 			/* throws */ UDF,
 			[/* return description */
-				[/* text */ 't', `the locale used when creating or comparing subformats`]
+				[/* text */ 't', `a hash code value for this object.`]
+			]
+		]],
+		[/* method */ 'clone()', [
+			[/* method description */
+				[/* text */ 't', `Creates and returns a copy of this object.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `a clone of this instance.`]
 			]
 		]],
 		[/* method */ 'parseObject(java.lang.String,java.text.ParsePosition)', [
@@ -1312,6 +1171,112 @@ DocsCollector.collect('java.text.MessageFormat', [
 				[/* inline code block */ 'i', `Object`],
 				[/* text */ 't', ` array parsed from the string. In case of
          error, returns null.`]
+			]
+		]],
+		[/* method */ 'parse(java.lang.String)', [
+			[/* method description */
+				[/* text */ 't', `Parses text from the beginning of the given string to produce an object
+ array.
+ The method may not use the entire text of the given string.
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', `
+ See the `],
+					[/* reference */ 'r', `#parse(java.lang.String,java.text.ParsePosition)`, `parse(String, ParsePosition)`],
+					[/* text */ 't', ` method for more information
+ on message parsing.`]
+				]]
+			],
+			[/* parameters */
+				[/* parameter */ 'source', [/* parameter description */
+					[/* text */ 't', `A `],
+					[/* inline code block */ 'i', `String`],
+					[/* text */ 't', ` whose beginning should be parsed.`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.text.ParseException', [/* throw description */
+					[/* text */ 't', `if the beginning of the specified string
+            cannot be parsed.`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `An `],
+				[/* inline code block */ 'i', `Object`],
+				[/* text */ 't', ` array parsed from the string.`]
+			]
+		]],
+		[/* method */ 'parse(java.lang.String,java.text.ParsePosition)', [
+			[/* method description */
+				[/* text */ 't', `Parses the string.
+
+ `],
+				[/* block */ 'b', `Caveats: The parse may fail in a number of circumstances.
+ For example:
+ `],
+				[/* list */ 'l', [
+					[/* block */ 'b', `If one of the arguments does not occur in the pattern.
+ `],
+					[/* block */ 'b', `If the format of an argument loses information, such as
+     with a choice format where a large number formats to "many".
+ `],
+					[/* block */ 'b', `Does not yet handle recursion (where
+     the substituted strings contain {n} references.)
+ `],
+					[/* block */ 'b', `Will not always find a match (or the correct match)
+     if some part of the parse is ambiguous.
+     For example, if the pattern "{1},{2}" is used with the
+     string arguments {"a,b", "c"}, it will format as "a,b,c".
+     When the result is parsed, it will return {"a", "b,c"}.
+ `],
+					[/* block */ 'b', `If a single argument is parsed more than once in the string,
+     then the later parse wins.
+ `]
+				]],
+				[/* text */ 't', `
+ When the parse fails, use ParsePosition.getErrorIndex() to find out
+ where in the string the parsing failed.  The returned error
+ index is the starting offset of the sub-patterns that the string
+ is comparing with.  For example, if the parsing string "AAA {0} BBB"
+ is comparing against the pattern "AAD {0} BBB", the error index is
+ 0. When an error occurs, the call to this method will return null.
+ If the source is null, return an empty array.`],
+				[/* block */ 'b', '']
+			],
+			[/* parameters */
+				[/* parameter */ 'source', [/* parameter description */
+					[/* text */ 't', `the string to parse`]
+				]],
+				[/* parameter */ 'pos', [/* parameter description */
+					[/* text */ 't', `the parse position`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
+					[/* text */ 't', `if `],
+					[/* inline code block */ 'i', `pos`],
+					[/* text */ 't', ` is `],
+					[/* inline code block */ 'i', `null`],
+					[/* text */ 't', `
+            for a non-null `],
+					[/* inline code block */ 'i', `source`],
+					[/* text */ 't', ` string.`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `an array of parsed objects`]
+			]
+		]],
+		[/* method */ 'toPattern()', [
+			[/* method description */
+				[/* text */ 't', `Returns a pattern representing the current state of the message format.
+ The string is constructed from internal information and therefore
+ does not necessarily equal the previously applied pattern.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `a pattern representing the current state of the message format`]
 			]
 		]],
 		[/* method */ 'formatToCharacterIterator(java.lang.Object)', [
@@ -1399,89 +1364,6 @@ DocsCollector.collect('java.text.MessageFormat', [
 				[/* text */ 't', `AttributedCharacterIterator describing the formatted value.`]
 			]
 		]],
-		[/* method */ 'setLocale(java.util.Locale)', [
-			[/* method description */
-				[/* text */ 't', `Sets the locale to be used when creating or comparing subformats.
- This affects subsequent calls
- `],
-				[/* list */ 'l', [
-					[/* block */ 'b', [
-						[/* text */ 't', `to the `],
-						[/* reference */ 'r', `#applyPattern(java.lang.String)`, `applyPattern`],
-						[/* text */ 't', `
-     and `],
-						[/* reference */ 'r', `#toPattern()`, `toPattern`],
-						[/* text */ 't', ` methods if format elements specify
-     a format type and therefore have the subformats created in the
-     `],
-						[/* inline code block */ 'i', `applyPattern`],
-						[/* text */ 't', ` method, as well as
- `]
-					]],
-					[/* block */ 'b', [
-						[/* text */ 't', `to the `],
-						[/* inline code block */ 'i', `format`],
-						[/* text */ 't', ` and
-     `],
-						[/* reference */ 'r', `#formatToCharacterIterator(java.lang.Object)`, `formatToCharacterIterator`],
-						[/* text */ 't', ` methods
-     if format elements do not specify a format type and therefore have
-     the subformats created in the formatting methods.
- `]
-					]]
-				]],
-				[/* text */ 't', `
- Subformats that have already been created are not affected.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'locale', [/* parameter description */
-					[/* text */ 't', `the locale to be used when creating or comparing subformats`]
-				]]
-			],
-			/* throws */ UDF,
-			/* return */ UDF
-		]],
-		[/* method */ 'applyPattern(java.lang.String)', [
-			[/* method description */
-				[/* text */ 't', `Sets the pattern used by this message format.
- The method parses the pattern and creates a list of subformats
- for the format elements contained in it.
- Patterns and their interpretation are specified in the
- `],
-				[/* text */ 't', `class description`],
-				[/* text */ 't', `.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'pattern', [/* parameter description */
-					[/* text */ 't', `the pattern for this message format`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
-					[/* text */ 't', `if the pattern is invalid`]
-				]],
-				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
-					[/* text */ 't', `if `],
-					[/* inline code block */ 'i', `pattern`],
-					[/* text */ 't', ` is
-            `],
-					[/* inline code block */ 'i', `null`]
-				]]
-			],
-			/* return */ UDF
-		]],
-		[/* method */ 'toPattern()', [
-			[/* method description */
-				[/* text */ 't', `Returns a pattern representing the current state of the message format.
- The string is constructed from internal information and therefore
- does not necessarily equal the previously applied pattern.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `a pattern representing the current state of the message format`]
-			]
-		]],
 		[/* method */ 'getFormats()', [
 			[/* method description */
 				[/* text */ 't', `Gets the formats used for the format elements in the
@@ -1513,6 +1395,117 @@ DocsCollector.collect('java.text.MessageFormat', [
 			[/* return description */
 				[/* text */ 't', `the formats used for the format elements in the pattern`]
 			]
+		]],
+		[/* method */ 'getFormatsByArgumentIndex()', [
+			[/* method description */
+				[/* text */ 't', `Gets the formats used for the values passed into
+ `],
+				[/* inline code block */ 'i', `format`],
+				[/* text */ 't', ` methods or returned from `],
+				[/* inline code block */ 'i', `parse`],
+				[/* text */ 't', `
+ methods. The indices of elements in the returned array
+ correspond to the argument indices used in the previously set
+ pattern string.
+ The order of formats in the returned array thus corresponds to
+ the order of elements in the `],
+				[/* inline code block */ 'i', `arguments`],
+				[/* text */ 't', ` array passed
+ to the `],
+				[/* inline code block */ 'i', `format`],
+				[/* text */ 't', ` methods or the result array returned
+ by the `],
+				[/* inline code block */ 'i', `parse`],
+				[/* text */ 't', ` methods.
+ `],
+				[/* block */ 'b', `
+ If an argument index is used for more than one format element
+ in the pattern string, then the format used for the last such
+ format element is returned in the array. If an argument index
+ is not used for any format element in the pattern string, then
+ null is returned in the array.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the formats used for the arguments within the pattern`]
+			]
+		]],
+		[/* method */ 'getLocale()', [
+			[/* method description */
+				[/* text */ 't', `Gets the locale that's used when creating or comparing subformats.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the locale used when creating or comparing subformats`]
+			]
+		]],
+		[/* method */ 'format(java.lang.String,java.lang.Object...)', [
+			[/* method description */
+				[/* text */ 't', `Creates a MessageFormat with the given pattern and uses it
+ to format the given arguments. This is equivalent to
+ `],
+				[/* block */ 'b', [
+					[/* inline code block */ 'i', `(new MessageFormat(pattern)).format(arguments, new StringBuffer(), null).toString()`]
+				]]
+			],
+			[/* parameters */
+				[/* parameter */ 'pattern', [/* parameter description */
+					[/* text */ 't', `the pattern string`]
+				]],
+				[/* parameter */ 'arguments', [/* parameter description */
+					[/* text */ 't', `object(s) to format`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
+					[/* text */ 't', `if the pattern is invalid,
+            or if an argument in the `],
+					[/* inline code block */ 'i', `arguments`],
+					[/* text */ 't', ` array
+            is not of the type expected by the format element(s)
+            that use it.`]
+				]],
+				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
+					[/* text */ 't', `if `],
+					[/* inline code block */ 'i', `pattern`],
+					[/* text */ 't', ` is `],
+					[/* inline code block */ 'i', `null`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `the formatted string`]
+			]
+		]],
+		[/* method */ 'applyPattern(java.lang.String)', [
+			[/* method description */
+				[/* text */ 't', `Sets the pattern used by this message format.
+ The method parses the pattern and creates a list of subformats
+ for the format elements contained in it.
+ Patterns and their interpretation are specified in the
+ `],
+				[/* text */ 't', `class description`],
+				[/* text */ 't', `.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'pattern', [/* parameter description */
+					[/* text */ 't', `the pattern for this message format`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
+					[/* text */ 't', `if the pattern is invalid`]
+				]],
+				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
+					[/* text */ 't', `if `],
+					[/* inline code block */ 'i', `pattern`],
+					[/* text */ 't', ` is
+            `],
+					[/* inline code block */ 'i', `null`]
+				]]
+			],
+			/* return */ UDF
 		]],
 		[/* method */ 'setFormat(int,java.text.Format)', [
 			[/* method description */
@@ -1546,6 +1539,91 @@ DocsCollector.collect('java.text.MessageFormat', [
 					[/* inline code block */ 'i', `formatElementIndex`],
 					[/* text */ 't', ` is equal to or
             larger than the number of format elements in the pattern string`]
+				]]
+			],
+			/* return */ UDF
+		]],
+		[/* method */ 'setFormatByArgumentIndex(int,java.text.Format)', [
+			[/* method description */
+				[/* text */ 't', `Sets the format to use for the format elements within the
+ previously set pattern string that use the given argument
+ index.
+ The argument index is part of the format element definition and
+ represents an index into the `],
+				[/* inline code block */ 'i', `arguments`],
+				[/* text */ 't', ` array passed
+ to the `],
+				[/* inline code block */ 'i', `format`],
+				[/* text */ 't', ` methods or the result array returned
+ by the `],
+				[/* inline code block */ 'i', `parse`],
+				[/* text */ 't', ` methods.
+ `],
+				[/* block */ 'b', `
+ If the argument index is used for more than one format element
+ in the pattern string, then the new format is used for all such
+ format elements. If the argument index is not used for any format
+ element in the pattern string, then the new format is ignored.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'argumentIndex', [/* parameter description */
+					[/* text */ 't', `the argument index for which to use the new format`]
+				]],
+				[/* parameter */ 'newFormat', [/* parameter description */
+					[/* text */ 't', `the new format to use`]
+				]]
+			],
+			/* throws */ UDF,
+			/* return */ UDF
+		]],
+		[/* method */ 'setFormats(java.text.Format[])', [
+			[/* method description */
+				[/* text */ 't', `Sets the formats to use for the format elements in the
+ previously set pattern string.
+ The order of formats in `],
+				[/* inline code block */ 'i', `newFormats`],
+				[/* text */ 't', ` corresponds to
+ the order of format elements in the pattern string.
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', `
+ If more formats are provided than needed by the pattern string,
+ the remaining ones are ignored. If fewer formats are provided
+ than needed, then only the first `],
+					[/* inline code block */ 'i', `newFormats.length`],
+					[/* text */ 't', `
+ formats are replaced.
+ `]
+				]],
+				[/* block */ 'b', [
+					[/* text */ 't', `
+ Since the order of format elements in a pattern string often
+ changes during localization, it is generally better to use the
+ `],
+					[/* reference */ 'r', `#setFormatsByArgumentIndex(java.text.Format%5B%5D)`, `setFormatsByArgumentIndex`],
+					[/* text */ 't', `
+ method, which assumes an order of formats corresponding to the
+ order of elements in the `],
+					[/* inline code block */ 'i', `arguments`],
+					[/* text */ 't', ` array passed to
+ the `],
+					[/* inline code block */ 'i', `format`],
+					[/* text */ 't', ` methods or the result array returned by
+ the `],
+					[/* inline code block */ 'i', `parse`],
+					[/* text */ 't', ` methods.`]
+				]]
+			],
+			[/* parameters */
+				[/* parameter */ 'newFormats', [/* parameter description */
+					[/* text */ 't', `the new formats to use`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
+					[/* text */ 't', `if `],
+					[/* inline code block */ 'i', `newFormats`],
+					[/* text */ 't', ` is null`]
 				]]
 			],
 			/* return */ UDF
@@ -1603,125 +1681,47 @@ DocsCollector.collect('java.text.MessageFormat', [
 			],
 			/* return */ UDF
 		]],
-		[/* method */ 'setFormats(java.text.Format[])', [
+		[/* method */ 'setLocale(java.util.Locale)', [
 			[/* method description */
-				[/* text */ 't', `Sets the formats to use for the format elements in the
- previously set pattern string.
- The order of formats in `],
-				[/* inline code block */ 'i', `newFormats`],
-				[/* text */ 't', ` corresponds to
- the order of format elements in the pattern string.
+				[/* text */ 't', `Sets the locale to be used when creating or comparing subformats.
+ This affects subsequent calls
  `],
-				[/* block */ 'b', [
-					[/* text */ 't', `
- If more formats are provided than needed by the pattern string,
- the remaining ones are ignored. If fewer formats are provided
- than needed, then only the first `],
-					[/* inline code block */ 'i', `newFormats.length`],
-					[/* text */ 't', `
- formats are replaced.
+				[/* list */ 'l', [
+					[/* block */ 'b', [
+						[/* text */ 't', `to the `],
+						[/* reference */ 'r', `#applyPattern(java.lang.String)`, `applyPattern`],
+						[/* text */ 't', `
+     and `],
+						[/* reference */ 'r', `#toPattern()`, `toPattern`],
+						[/* text */ 't', ` methods if format elements specify
+     a format type and therefore have the subformats created in the
+     `],
+						[/* inline code block */ 'i', `applyPattern`],
+						[/* text */ 't', ` method, as well as
  `]
+					]],
+					[/* block */ 'b', [
+						[/* text */ 't', `to the `],
+						[/* inline code block */ 'i', `format`],
+						[/* text */ 't', ` and
+     `],
+						[/* reference */ 'r', `#formatToCharacterIterator(java.lang.Object)`, `formatToCharacterIterator`],
+						[/* text */ 't', ` methods
+     if format elements do not specify a format type and therefore have
+     the subformats created in the formatting methods.
+ `]
+					]]
 				]],
-				[/* block */ 'b', [
-					[/* text */ 't', `
- Since the order of format elements in a pattern string often
- changes during localization, it is generally better to use the
- `],
-					[/* reference */ 'r', `#setFormatsByArgumentIndex(java.text.Format%5B%5D)`, `setFormatsByArgumentIndex`],
-					[/* text */ 't', `
- method, which assumes an order of formats corresponding to the
- order of elements in the `],
-					[/* inline code block */ 'i', `arguments`],
-					[/* text */ 't', ` array passed to
- the `],
-					[/* inline code block */ 'i', `format`],
-					[/* text */ 't', ` methods or the result array returned by
- the `],
-					[/* inline code block */ 'i', `parse`],
-					[/* text */ 't', ` methods.`]
-				]]
-			],
-			[/* parameters */
-				[/* parameter */ 'newFormats', [/* parameter description */
-					[/* text */ 't', `the new formats to use`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
-					[/* text */ 't', `if `],
-					[/* inline code block */ 'i', `newFormats`],
-					[/* text */ 't', ` is null`]
-				]]
-			],
-			/* return */ UDF
-		]],
-		[/* method */ 'setFormatByArgumentIndex(int,java.text.Format)', [
-			[/* method description */
-				[/* text */ 't', `Sets the format to use for the format elements within the
- previously set pattern string that use the given argument
- index.
- The argument index is part of the format element definition and
- represents an index into the `],
-				[/* inline code block */ 'i', `arguments`],
-				[/* text */ 't', ` array passed
- to the `],
-				[/* inline code block */ 'i', `format`],
-				[/* text */ 't', ` methods or the result array returned
- by the `],
-				[/* inline code block */ 'i', `parse`],
-				[/* text */ 't', ` methods.
- `],
-				[/* block */ 'b', `
- If the argument index is used for more than one format element
- in the pattern string, then the new format is used for all such
- format elements. If the argument index is not used for any format
- element in the pattern string, then the new format is ignored.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'argumentIndex', [/* parameter description */
-					[/* text */ 't', `the argument index for which to use the new format`]
-				]],
-				[/* parameter */ 'newFormat', [/* parameter description */
-					[/* text */ 't', `the new format to use`]
-				]]
-			],
-			/* throws */ UDF,
-			/* return */ UDF
-		]],
-		[/* method */ 'getFormatsByArgumentIndex()', [
-			[/* method description */
-				[/* text */ 't', `Gets the formats used for the values passed into
- `],
-				[/* inline code block */ 'i', `format`],
-				[/* text */ 't', ` methods or returned from `],
-				[/* inline code block */ 'i', `parse`],
 				[/* text */ 't', `
- methods. The indices of elements in the returned array
- correspond to the argument indices used in the previously set
- pattern string.
- The order of formats in the returned array thus corresponds to
- the order of elements in the `],
-				[/* inline code block */ 'i', `arguments`],
-				[/* text */ 't', ` array passed
- to the `],
-				[/* inline code block */ 'i', `format`],
-				[/* text */ 't', ` methods or the result array returned
- by the `],
-				[/* inline code block */ 'i', `parse`],
-				[/* text */ 't', ` methods.
- `],
-				[/* block */ 'b', `
- If an argument index is used for more than one format element
- in the pattern string, then the format used for the last such
- format element is returned in the array. If an argument index
- is not used for any format element in the pattern string, then
- null is returned in the array.`]
+ Subformats that have already been created are not affected.`]
 			],
-			/* parameters */ UDF,
+			[/* parameters */
+				[/* parameter */ 'locale', [/* parameter description */
+					[/* text */ 't', `the locale to be used when creating or comparing subformats`]
+				]]
+			],
 			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the formats used for the arguments within the pattern`]
-			]
+			/* return */ UDF
 		]]
 	],
 ]);

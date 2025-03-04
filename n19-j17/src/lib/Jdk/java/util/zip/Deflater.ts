@@ -413,14 +413,8 @@ JdkClassCreateHelper.class('java.util.zip.Deflater', [
 		]
 	],
 	[/* declared fields */
-		[/* public static final int java.util.zip.Deflater.DEFLATED */
-			/* name */ 'DEFLATED',
-			/* type */ 'int',
-			/* annotations */ UDF,
-			/* modifiers */ 25
-		],
-		[/* public static final int java.util.zip.Deflater.NO_COMPRESSION */
-			/* name */ 'NO_COMPRESSION',
+		[/* public static final int java.util.zip.Deflater.BEST_COMPRESSION */
+			/* name */ 'BEST_COMPRESSION',
 			/* type */ 'int',
 			/* annotations */ UDF,
 			/* modifiers */ 25
@@ -431,14 +425,20 @@ JdkClassCreateHelper.class('java.util.zip.Deflater', [
 			/* annotations */ UDF,
 			/* modifiers */ 25
 		],
-		[/* public static final int java.util.zip.Deflater.BEST_COMPRESSION */
-			/* name */ 'BEST_COMPRESSION',
+		[/* public static final int java.util.zip.Deflater.DEFAULT_COMPRESSION */
+			/* name */ 'DEFAULT_COMPRESSION',
 			/* type */ 'int',
 			/* annotations */ UDF,
 			/* modifiers */ 25
 		],
-		[/* public static final int java.util.zip.Deflater.DEFAULT_COMPRESSION */
-			/* name */ 'DEFAULT_COMPRESSION',
+		[/* public static final int java.util.zip.Deflater.DEFAULT_STRATEGY */
+			/* name */ 'DEFAULT_STRATEGY',
+			/* type */ 'int',
+			/* annotations */ UDF,
+			/* modifiers */ 25
+		],
+		[/* public static final int java.util.zip.Deflater.DEFLATED */
+			/* name */ 'DEFLATED',
 			/* type */ 'int',
 			/* annotations */ UDF,
 			/* modifiers */ 25
@@ -449,14 +449,20 @@ JdkClassCreateHelper.class('java.util.zip.Deflater', [
 			/* annotations */ UDF,
 			/* modifiers */ 25
 		],
+		[/* public static final int java.util.zip.Deflater.FULL_FLUSH */
+			/* name */ 'FULL_FLUSH',
+			/* type */ 'int',
+			/* annotations */ UDF,
+			/* modifiers */ 25
+		],
 		[/* public static final int java.util.zip.Deflater.HUFFMAN_ONLY */
 			/* name */ 'HUFFMAN_ONLY',
 			/* type */ 'int',
 			/* annotations */ UDF,
 			/* modifiers */ 25
 		],
-		[/* public static final int java.util.zip.Deflater.DEFAULT_STRATEGY */
-			/* name */ 'DEFAULT_STRATEGY',
+		[/* public static final int java.util.zip.Deflater.NO_COMPRESSION */
+			/* name */ 'NO_COMPRESSION',
 			/* type */ 'int',
 			/* annotations */ UDF,
 			/* modifiers */ 25
@@ -469,12 +475,6 @@ JdkClassCreateHelper.class('java.util.zip.Deflater', [
 		],
 		[/* public static final int java.util.zip.Deflater.SYNC_FLUSH */
 			/* name */ 'SYNC_FLUSH',
-			/* type */ 'int',
-			/* annotations */ UDF,
-			/* modifiers */ 25
-		],
-		[/* public static final int java.util.zip.Deflater.FULL_FLUSH */
-			/* name */ 'FULL_FLUSH',
 			/* type */ 'int',
 			/* annotations */ UDF,
 			/* modifiers */ 25

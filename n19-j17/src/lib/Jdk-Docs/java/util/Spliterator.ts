@@ -203,107 +203,6 @@ DocsCollector.collect('java.util.Spliterator', [
 		]]
 	],
 	[/* fields */
-		[/* field */ 'ORDERED', [
-			[/* field description */
-				[/* text */ 't', `Characteristic value signifying that an encounter order is defined for
- elements. If so, this Spliterator guarantees that method
- `],
-				[/* reference */ 'r', `#trySplit()`, `trySplit()`],
-				[/* text */ 't', ` splits a strict prefix of elements, that method
- `],
-				[/* reference */ 'r', `#tryAdvance(java.util.function.Consumer)`, `tryAdvance(java.util.function.Consumer<? super T>)`],
-				[/* text */ 't', ` steps by one element in prefix order, and that
- `],
-				[/* reference */ 'r', `#forEachRemaining(java.util.function.Consumer)`, `forEachRemaining(java.util.function.Consumer<? super T>)`],
-				[/* text */ 't', ` performs actions in encounter order.
-
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', `A `],
-					[/* reference */ 'r', `java.util.Collection`],
-					[/* text */ 't', ` has an encounter order if the corresponding
- `],
-					[/* reference */ 'r', `.Collection#iterator()`],
-					[/* text */ 't', ` documents an order. If so, the encounter
- order is the same as the documented order. Otherwise, a collection does
- not have an encounter order.`]
-				]]
-			],
-		]],
-		[/* field */ 'DISTINCT', [
-			[/* field description */
-				[/* text */ 't', `Characteristic value signifying that, for each pair of
- encountered elements `],
-				[/* inline code block */ 'i', `x, y`],
-				[/* text */ 't', `, `],
-				[/* inline code block */ 'i', `!x.equals(y)`],
-				[/* text */ 't', `. This
- applies for example, to a Spliterator based on a `],
-				[/* reference */ 'r', `java.util.Set`],
-				[/* text */ 't', `.`]
-			],
-		]],
-		[/* field */ 'SORTED', [
-			[/* field description */
-				[/* text */ 't', `Characteristic value signifying that encounter order follows a defined
- sort order. If so, method `],
-				[/* reference */ 'r', `#getComparator()`, `getComparator()`],
-				[/* text */ 't', ` returns the associated
- Comparator, or `],
-				[/* inline code block */ 'i', `null`],
-				[/* text */ 't', ` if all elements are `],
-				[/* reference */ 'r', `java.lang.Comparable`],
-				[/* text */ 't', ` and
- are sorted by their natural ordering.
-
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', `A Spliterator that reports `],
-					[/* inline code block */ 'i', `SORTED`],
-					[/* text */ 't', ` must also report
- `],
-					[/* inline code block */ 'i', `ORDERED`],
-					[/* text */ 't', `.`]
-				]]
-			],
-		]],
-		[/* field */ 'SIZED', [
-			[/* field description */
-				[/* text */ 't', `Characteristic value signifying that the value returned from
- `],
-				[/* inline code block */ 'i', `estimateSize()`],
-				[/* text */ 't', ` prior to traversal or splitting represents a
- finite size that, in the absence of structural source modification,
- represents an exact count of the number of elements that would be
- encountered by a complete traversal.`]
-			],
-		]],
-		[/* field */ 'NONNULL', [
-			[/* field description */
-				[/* text */ 't', `Characteristic value signifying that the source guarantees that
- encountered elements will not be `],
-				[/* inline code block */ 'i', `null`],
-				[/* text */ 't', `. (This applies,
- for example, to most concurrent collections, queues, and maps.)`]
-			],
-		]],
-		[/* field */ 'IMMUTABLE', [
-			[/* field description */
-				[/* text */ 't', `Characteristic value signifying that the element source cannot be
- structurally modified; that is, elements cannot be added, replaced, or
- removed, so such changes cannot occur during traversal. A Spliterator
- that does not report `],
-				[/* inline code block */ 'i', `IMMUTABLE`],
-				[/* text */ 't', ` or `],
-				[/* inline code block */ 'i', `CONCURRENT`],
-				[/* text */ 't', ` is expected
- to have a documented policy (for example throwing
- `],
-				[/* reference */ 'r', `java.util.ConcurrentModificationException`],
-				[/* text */ 't', `) concerning structural
- interference detected during traversal.`]
-			],
-		]],
 		[/* field */ 'CONCURRENT', [
 			[/* field description */
 				[/* text */ 't', `Characteristic value signifying that the element source may be safely
@@ -345,6 +244,107 @@ DocsCollector.collect('java.util.Spliterator', [
 				]]
 			],
 		]],
+		[/* field */ 'DISTINCT', [
+			[/* field description */
+				[/* text */ 't', `Characteristic value signifying that, for each pair of
+ encountered elements `],
+				[/* inline code block */ 'i', `x, y`],
+				[/* text */ 't', `, `],
+				[/* inline code block */ 'i', `!x.equals(y)`],
+				[/* text */ 't', `. This
+ applies for example, to a Spliterator based on a `],
+				[/* reference */ 'r', `java.util.Set`],
+				[/* text */ 't', `.`]
+			],
+		]],
+		[/* field */ 'IMMUTABLE', [
+			[/* field description */
+				[/* text */ 't', `Characteristic value signifying that the element source cannot be
+ structurally modified; that is, elements cannot be added, replaced, or
+ removed, so such changes cannot occur during traversal. A Spliterator
+ that does not report `],
+				[/* inline code block */ 'i', `IMMUTABLE`],
+				[/* text */ 't', ` or `],
+				[/* inline code block */ 'i', `CONCURRENT`],
+				[/* text */ 't', ` is expected
+ to have a documented policy (for example throwing
+ `],
+				[/* reference */ 'r', `java.util.ConcurrentModificationException`],
+				[/* text */ 't', `) concerning structural
+ interference detected during traversal.`]
+			],
+		]],
+		[/* field */ 'NONNULL', [
+			[/* field description */
+				[/* text */ 't', `Characteristic value signifying that the source guarantees that
+ encountered elements will not be `],
+				[/* inline code block */ 'i', `null`],
+				[/* text */ 't', `. (This applies,
+ for example, to most concurrent collections, queues, and maps.)`]
+			],
+		]],
+		[/* field */ 'ORDERED', [
+			[/* field description */
+				[/* text */ 't', `Characteristic value signifying that an encounter order is defined for
+ elements. If so, this Spliterator guarantees that method
+ `],
+				[/* reference */ 'r', `#trySplit()`, `trySplit()`],
+				[/* text */ 't', ` splits a strict prefix of elements, that method
+ `],
+				[/* reference */ 'r', `#tryAdvance(java.util.function.Consumer)`, `tryAdvance(java.util.function.Consumer<? super T>)`],
+				[/* text */ 't', ` steps by one element in prefix order, and that
+ `],
+				[/* reference */ 'r', `#forEachRemaining(java.util.function.Consumer)`, `forEachRemaining(java.util.function.Consumer<? super T>)`],
+				[/* text */ 't', ` performs actions in encounter order.
+
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', `A `],
+					[/* reference */ 'r', `java.util.Collection`],
+					[/* text */ 't', ` has an encounter order if the corresponding
+ `],
+					[/* reference */ 'r', `.Collection#iterator()`],
+					[/* text */ 't', ` documents an order. If so, the encounter
+ order is the same as the documented order. Otherwise, a collection does
+ not have an encounter order.`]
+				]]
+			],
+		]],
+		[/* field */ 'SIZED', [
+			[/* field description */
+				[/* text */ 't', `Characteristic value signifying that the value returned from
+ `],
+				[/* inline code block */ 'i', `estimateSize()`],
+				[/* text */ 't', ` prior to traversal or splitting represents a
+ finite size that, in the absence of structural source modification,
+ represents an exact count of the number of elements that would be
+ encountered by a complete traversal.`]
+			],
+		]],
+		[/* field */ 'SORTED', [
+			[/* field description */
+				[/* text */ 't', `Characteristic value signifying that encounter order follows a defined
+ sort order. If so, method `],
+				[/* reference */ 'r', `#getComparator()`, `getComparator()`],
+				[/* text */ 't', ` returns the associated
+ Comparator, or `],
+				[/* inline code block */ 'i', `null`],
+				[/* text */ 't', ` if all elements are `],
+				[/* reference */ 'r', `java.lang.Comparable`],
+				[/* text */ 't', ` and
+ are sorted by their natural ordering.
+
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', `A Spliterator that reports `],
+					[/* inline code block */ 'i', `SORTED`],
+					[/* text */ 't', ` must also report
+ `],
+					[/* inline code block */ 'i', `ORDERED`],
+					[/* text */ 't', `.`]
+				]]
+			],
+		]],
 		[/* field */ 'SUBSIZED', [
 			[/* field description */
 				[/* text */ 't', `Characteristic value signifying that all Spliterators resulting from
@@ -375,15 +375,19 @@ DocsCollector.collect('java.util.Spliterator', [
 	],
 	/* constructors */ UDF,
 	[/* methods */
-		[/* method */ 'forEachRemaining(java.util.function.Consumer)', [
+		[/* method */ 'tryAdvance(java.util.function.Consumer)', [
 			[/* method description */
-				[/* text */ 't', `Performs the given action for each remaining element, sequentially in
- the current thread, until all elements have been processed or the action
- throws an exception.  If this Spliterator is `],
+				[/* text */ 't', `If a remaining element exists, performs the given action on it,
+ returning `],
+				[/* inline code block */ 'i', `true`],
+				[/* text */ 't', `; else returns `],
+				[/* inline code block */ 'i', `false`],
+				[/* text */ 't', `.  If this
+ Spliterator is `],
 				[/* text */ 't', `ORDERED`],
-				[/* text */ 't', `, actions
- are performed in encounter order.  Exceptions thrown by the action
- are relayed to the caller.
+				[/* text */ 't', ` the action is performed on the
+ next element in encounter order.  Exceptions thrown by the
+ action are relayed to the caller.
  `],
 				[/* block */ 'b', `
  Subsequent behavior of a spliterator is unspecified if the action throws
@@ -399,7 +403,13 @@ DocsCollector.collect('java.util.Spliterator', [
 					[/* text */ 't', `if the specified action is null`]
 				]]
 			],
-			/* return */ UDF
+			[/* return description */
+				[/* inline code block */ 'i', `false`],
+				[/* text */ 't', ` if no remaining elements existed
+ upon entry to this method, else `],
+				[/* inline code block */ 'i', `true`],
+				[/* text */ 't', `.`]
+			]
 		]],
 		[/* method */ 'characteristics()', [
 			[/* method description */
@@ -511,42 +521,6 @@ DocsCollector.collect('java.util.Spliterator', [
 				[/* text */ 't', ` if this spliterator cannot be split`]
 			]
 		]],
-		[/* method */ 'tryAdvance(java.util.function.Consumer)', [
-			[/* method description */
-				[/* text */ 't', `If a remaining element exists, performs the given action on it,
- returning `],
-				[/* inline code block */ 'i', `true`],
-				[/* text */ 't', `; else returns `],
-				[/* inline code block */ 'i', `false`],
-				[/* text */ 't', `.  If this
- Spliterator is `],
-				[/* text */ 't', `ORDERED`],
-				[/* text */ 't', ` the action is performed on the
- next element in encounter order.  Exceptions thrown by the
- action are relayed to the caller.
- `],
-				[/* block */ 'b', `
- Subsequent behavior of a spliterator is unspecified if the action throws
- an exception.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'action', [/* parameter description */
-					[/* text */ 't', `The action`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
-					[/* text */ 't', `if the specified action is null`]
-				]]
-			],
-			[/* return description */
-				[/* inline code block */ 'i', `false`],
-				[/* text */ 't', ` if no remaining elements existed
- upon entry to this method, else `],
-				[/* inline code block */ 'i', `true`],
-				[/* text */ 't', `.`]
-			]
-		]],
 		[/* method */ 'estimateSize()', [
 			[/* method description */
 				[/* text */ 't', `Returns an estimate of the number of elements that would be
@@ -579,25 +553,6 @@ DocsCollector.collect('java.util.Spliterator', [
 				[/* inline code block */ 'i', `Long.MAX_VALUE`],
 				[/* text */ 't', ` if infinite,
          unknown, or too expensive to compute.`]
-			]
-		]],
-		[/* method */ 'getExactSizeIfKnown()', [
-			[/* method description */
-				[/* text */ 't', `Convenience method that returns `],
-				[/* reference */ 'r', `#estimateSize()`, `estimateSize()`],
-				[/* text */ 't', ` if this
- Spliterator is `],
-				[/* text */ 't', `SIZED`],
-				[/* text */ 't', `, else `],
-				[/* inline code block */ 'i', `-1`],
-				[/* text */ 't', `.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the exact size, if known, else `],
-				[/* inline code block */ 'i', `-1`],
-				[/* text */ 't', `.`]
 			]
 		]],
 		[/* method */ 'hasCharacteristics(int)', [
@@ -659,6 +614,51 @@ DocsCollector.collect('java.util.Spliterator', [
 				[/* text */ 't', ` if the elements are sorted in the
  natural order.`]
 			]
+		]],
+		[/* method */ 'getExactSizeIfKnown()', [
+			[/* method description */
+				[/* text */ 't', `Convenience method that returns `],
+				[/* reference */ 'r', `#estimateSize()`, `estimateSize()`],
+				[/* text */ 't', ` if this
+ Spliterator is `],
+				[/* text */ 't', `SIZED`],
+				[/* text */ 't', `, else `],
+				[/* inline code block */ 'i', `-1`],
+				[/* text */ 't', `.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the exact size, if known, else `],
+				[/* inline code block */ 'i', `-1`],
+				[/* text */ 't', `.`]
+			]
+		]],
+		[/* method */ 'forEachRemaining(java.util.function.Consumer)', [
+			[/* method description */
+				[/* text */ 't', `Performs the given action for each remaining element, sequentially in
+ the current thread, until all elements have been processed or the action
+ throws an exception.  If this Spliterator is `],
+				[/* text */ 't', `ORDERED`],
+				[/* text */ 't', `, actions
+ are performed in encounter order.  Exceptions thrown by the action
+ are relayed to the caller.
+ `],
+				[/* block */ 'b', `
+ Subsequent behavior of a spliterator is unspecified if the action throws
+ an exception.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'action', [/* parameter description */
+					[/* text */ 't', `The action`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
+					[/* text */ 't', `if the specified action is null`]
+				]]
+			],
+			/* return */ UDF
 		]]
 	],
 ]);

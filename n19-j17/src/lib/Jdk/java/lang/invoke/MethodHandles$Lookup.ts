@@ -1128,8 +1128,20 @@ JdkClassCreateHelper.class('java.lang.invoke.MethodHandles$Lookup', [
 		]
 	],
 	[/* declared fields */
-		[/* public static final int java.lang.invoke.MethodHandles$Lookup.PUBLIC */
-			/* name */ 'PUBLIC',
+		[/* public static final int java.lang.invoke.MethodHandles$Lookup.MODULE */
+			/* name */ 'MODULE',
+			/* type */ 'int',
+			/* annotations */ UDF,
+			/* modifiers */ 25
+		],
+		[/* public static final int java.lang.invoke.MethodHandles$Lookup.ORIGINAL */
+			/* name */ 'ORIGINAL',
+			/* type */ 'int',
+			/* annotations */ UDF,
+			/* modifiers */ 25
+		],
+		[/* public static final int java.lang.invoke.MethodHandles$Lookup.PACKAGE */
+			/* name */ 'PACKAGE',
 			/* type */ 'int',
 			/* annotations */ UDF,
 			/* modifiers */ 25
@@ -1146,26 +1158,14 @@ JdkClassCreateHelper.class('java.lang.invoke.MethodHandles$Lookup', [
 			/* annotations */ UDF,
 			/* modifiers */ 25
 		],
-		[/* public static final int java.lang.invoke.MethodHandles$Lookup.PACKAGE */
-			/* name */ 'PACKAGE',
-			/* type */ 'int',
-			/* annotations */ UDF,
-			/* modifiers */ 25
-		],
-		[/* public static final int java.lang.invoke.MethodHandles$Lookup.MODULE */
-			/* name */ 'MODULE',
+		[/* public static final int java.lang.invoke.MethodHandles$Lookup.PUBLIC */
+			/* name */ 'PUBLIC',
 			/* type */ 'int',
 			/* annotations */ UDF,
 			/* modifiers */ 25
 		],
 		[/* public static final int java.lang.invoke.MethodHandles$Lookup.UNCONDITIONAL */
 			/* name */ 'UNCONDITIONAL',
-			/* type */ 'int',
-			/* annotations */ UDF,
-			/* modifiers */ 25
-		],
-		[/* public static final int java.lang.invoke.MethodHandles$Lookup.ORIGINAL */
-			/* name */ 'ORIGINAL',
 			/* type */ 'int',
 			/* annotations */ UDF,
 			/* modifiers */ 25

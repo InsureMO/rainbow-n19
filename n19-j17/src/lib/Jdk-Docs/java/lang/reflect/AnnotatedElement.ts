@@ -614,37 +614,6 @@ DocsCollector.collect('java.lang.reflect.AnnotatedElement', [
 	/* fields */ UDF,
 	/* constructors */ UDF,
 	[/* methods */
-		[/* method */ 'isAnnotationPresent(java.lang.Class)', [
-			[/* method description */
-				[/* text */ 't', `Returns true if an annotation for the specified type
- is `],
-				[/* text */ 't', `present`],
-				[/* text */ 't', ` on this element, else false.  This method
- is designed primarily for convenient access to marker annotations.
-
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', `The truth value returned by this method is equivalent to:
- `],
-					[/* inline code block */ 'i', `getAnnotation(annotationClass) != null`]
-				]]
-			],
-			[/* parameters */
-				[/* parameter */ 'annotationClass', [/* parameter description */
-					[/* text */ 't', `the Class object corresponding to the
-        annotation type`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
-					[/* text */ 't', `if the given annotation class is null`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `true if an annotation for the specified annotation
-     type is present on this element, else false`]
-			]
-		]],
 		[/* method */ 'getAnnotation(java.lang.Class)', [
 			[/* method description */
 				[/* text */ 't', `Returns this element's annotation for the specified type if
@@ -666,6 +635,73 @@ DocsCollector.collect('java.lang.reflect.AnnotatedElement', [
 			[/* return description */
 				[/* text */ 't', `this element's annotation for the specified annotation type if
      present on this element, else null`]
+			]
+		]],
+		[/* method */ 'getAnnotations()', [
+			[/* method description */
+				[/* text */ 't', `Returns annotations that are `],
+				[/* text */ 't', `present`],
+				[/* text */ 't', ` on this element.
+
+ If there are no annotations `],
+				[/* text */ 't', `present`],
+				[/* text */ 't', ` on this element, the return
+ value is an array of length 0.
+
+ The caller of this method is free to modify the returned array; it will
+ have no effect on the arrays returned to other callers.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `annotations present on this element`]
+			]
+		]],
+		[/* method */ 'getDeclaredAnnotations()', [
+			[/* method description */
+				[/* text */ 't', `Returns annotations that are `],
+				[/* text */ 't', `directly present`],
+				[/* text */ 't', ` on this element.
+ This method ignores inherited annotations.
+
+ If there are no annotations `],
+				[/* text */ 't', `directly present`],
+				[/* text */ 't', ` on this element,
+ the return value is an array of length 0.
+
+ The caller of this method is free to modify the returned array; it will
+ have no effect on the arrays returned to other callers.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `annotations directly present on this element`]
+			]
+		]],
+		[/* method */ 'getDeclaredAnnotation(java.lang.Class)', [
+			[/* method description */
+				[/* text */ 't', `Returns this element's annotation for the specified type if
+ such an annotation is `],
+				[/* text */ 't', `directly present`],
+				[/* text */ 't', `, else null.
+
+ This method ignores inherited annotations. (Returns null if no
+ annotations are directly present on this element.)`]
+			],
+			[/* parameters */
+				[/* parameter */ 'annotationClass', [/* parameter description */
+					[/* text */ 't', `the Class object corresponding to the
+        annotation type`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
+					[/* text */ 't', `if the given annotation class is null`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `this element's annotation for the specified annotation type if
+     directly present on this element, else null`]
 			]
 		]],
 		[/* method */ 'getAnnotationsByType(java.lang.Class)', [
@@ -708,52 +744,6 @@ DocsCollector.collect('java.lang.reflect.AnnotatedElement', [
 			[/* return description */
 				[/* text */ 't', `all this element's annotations for the specified annotation type if
      associated with this element, else an array of length zero`]
-			]
-		]],
-		[/* method */ 'getAnnotations()', [
-			[/* method description */
-				[/* text */ 't', `Returns annotations that are `],
-				[/* text */ 't', `present`],
-				[/* text */ 't', ` on this element.
-
- If there are no annotations `],
-				[/* text */ 't', `present`],
-				[/* text */ 't', ` on this element, the return
- value is an array of length 0.
-
- The caller of this method is free to modify the returned array; it will
- have no effect on the arrays returned to other callers.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `annotations present on this element`]
-			]
-		]],
-		[/* method */ 'getDeclaredAnnotation(java.lang.Class)', [
-			[/* method description */
-				[/* text */ 't', `Returns this element's annotation for the specified type if
- such an annotation is `],
-				[/* text */ 't', `directly present`],
-				[/* text */ 't', `, else null.
-
- This method ignores inherited annotations. (Returns null if no
- annotations are directly present on this element.)`]
-			],
-			[/* parameters */
-				[/* parameter */ 'annotationClass', [/* parameter description */
-					[/* text */ 't', `the Class object corresponding to the
-        annotation type`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
-					[/* text */ 't', `if the given annotation class is null`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `this element's annotation for the specified annotation type if
-     directly present on this element, else null`]
 			]
 		]],
 		[/* method */ 'getDeclaredAnnotationsByType(java.lang.Class)', [
@@ -801,25 +791,35 @@ DocsCollector.collect('java.lang.reflect.AnnotatedElement', [
      directly or indirectly present on this element, else an array of length zero`]
 			]
 		]],
-		[/* method */ 'getDeclaredAnnotations()', [
+		[/* method */ 'isAnnotationPresent(java.lang.Class)', [
 			[/* method description */
-				[/* text */ 't', `Returns annotations that are `],
-				[/* text */ 't', `directly present`],
-				[/* text */ 't', ` on this element.
- This method ignores inherited annotations.
+				[/* text */ 't', `Returns true if an annotation for the specified type
+ is `],
+				[/* text */ 't', `present`],
+				[/* text */ 't', ` on this element, else false.  This method
+ is designed primarily for convenient access to marker annotations.
 
- If there are no annotations `],
-				[/* text */ 't', `directly present`],
-				[/* text */ 't', ` on this element,
- the return value is an array of length 0.
-
- The caller of this method is free to modify the returned array; it will
- have no effect on the arrays returned to other callers.`]
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', `The truth value returned by this method is equivalent to:
+ `],
+					[/* inline code block */ 'i', `getAnnotation(annotationClass) != null`]
+				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			[/* parameters */
+				[/* parameter */ 'annotationClass', [/* parameter description */
+					[/* text */ 't', `the Class object corresponding to the
+        annotation type`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
+					[/* text */ 't', `if the given annotation class is null`]
+				]]
+			],
 			[/* return description */
-				[/* text */ 't', `annotations directly present on this element`]
+				[/* text */ 't', `true if an annotation for the specified annotation
+     type is present on this element, else false`]
 			]
 		]]
 	],

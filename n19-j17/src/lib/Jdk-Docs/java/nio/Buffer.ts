@@ -232,125 +232,6 @@ DocsCollector.collect('java.nio.Buffer', [
 	/* fields */ UDF,
 	/* constructors */ UDF,
 	[/* methods */
-		[/* method */ 'clear()', [
-			[/* method description */
-				[/* text */ 't', `Clears this buffer.  The position is set to zero, the limit is set to
- the capacity, and the mark is discarded.
-
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', ` Invoke this method before using a sequence of channel-read or
- `],
-					[/* text */ 't', `put`],
-					[/* text */ 't', ` operations to fill this buffer.  For example:
-
- `]
-				]],
-				[/* block */ 'b', [
-					[/* code block */ 'c', ` buf.clear();     // Prepare buffer for reading
- in.read(buf);    // Read data`]
-				]],
-				[/* block */ 'b', ''],
-				[/* block */ 'b', ` This method does not actually erase the data in the buffer, but it
- is named as if it did because it will most often be used in situations
- in which that might as well be the case. `]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `This buffer`]
-			]
-		]],
-		[/* method */ 'position()', [
-			[/* method description */
-				[/* text */ 't', `Returns this buffer's position.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `The position of this buffer`]
-			]
-		]],
-		[/* method */ 'position(int)', [
-			[/* method description */
-				[/* text */ 't', `Sets this buffer's position.  If the mark is defined and larger than the
- new position then it is discarded.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'newPosition', [/* parameter description */
-					[/* text */ 't', `The new position value; must be non-negative
-         and no larger than the current limit`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
-					[/* text */ 't', `If the preconditions on `],
-					[/* inline code block */ 'i', `newPosition`],
-					[/* text */ 't', ` do not hold`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `This buffer`]
-			]
-		]],
-		[/* method */ 'limit(int)', [
-			[/* method description */
-				[/* text */ 't', `Sets this buffer's limit.  If the position is larger than the new limit
- then it is set to the new limit.  If the mark is defined and larger than
- the new limit then it is discarded.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'newLimit', [/* parameter description */
-					[/* text */ 't', `The new limit value; must be non-negative
-         and no larger than this buffer's capacity`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
-					[/* text */ 't', `If the preconditions on `],
-					[/* inline code block */ 'i', `newLimit`],
-					[/* text */ 't', ` do not hold`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `This buffer`]
-			]
-		]],
-		[/* method */ 'limit()', [
-			[/* method description */
-				[/* text */ 't', `Returns this buffer's limit.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `The limit of this buffer`]
-			]
-		]],
-		[/* method */ 'remaining()', [
-			[/* method description */
-				[/* text */ 't', `Returns the number of elements between the current position and the
- limit.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `The number of elements remaining in this buffer`]
-			]
-		]],
-		[/* method */ 'isDirect()', [
-			[/* method description */
-				[/* text */ 't', `Tells whether or not this buffer is
- `],
-				[/* reference */ 'r', `.ByteBuffer#direct`],
-				[/* text */ 't', `.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* inline code block */ 'i', `true`],
-				[/* text */ 't', ` if, and only if, this buffer is direct`]
-			]
-		]],
 		[/* method */ 'hasArray()', [
 			[/* method description */
 				[/* text */ 't', `Tells whether or not this buffer is backed by an accessible
@@ -377,42 +258,29 @@ DocsCollector.collect('java.nio.Buffer', [
           is backed by an array and is not read-only`]
 			]
 		]],
-		[/* method */ 'array()', [
+		[/* method */ 'isDirect()', [
 			[/* method description */
-				[/* text */ 't', `Returns the array that backs this
- buffer  `],
-				[/* text */ 't', `(optional operation)`],
-				[/* text */ 't', `.
-
+				[/* text */ 't', `Tells whether or not this buffer is
  `],
-				[/* block */ 'b', ` This method is intended to allow array-backed buffers to be
- passed to native code more efficiently. Concrete subclasses
- provide more strongly-typed return values for this method.
-
- `],
-				[/* block */ 'b', ` Modifications to this buffer's content will cause the returned
- array's content to be modified, and vice versa.
-
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', ` Invoke the `],
-					[/* reference */ 'r', `#hasArray()`, `hasArray`],
-					[/* text */ 't', ` method before invoking this
- method in order to ensure that this buffer has an accessible backing
- array.  `]
-				]]
+				[/* reference */ 'r', `.ByteBuffer#direct`],
+				[/* text */ 't', `.`]
 			],
 			/* parameters */ UDF,
-			[/* throws */
-				[/* throw */ 'java.nio.ReadOnlyBufferException', [/* throw description */
-					[/* text */ 't', `If this buffer is backed by an array but is read-only`]
-				]],
-				[/* throw */ 'java.lang.UnsupportedOperationException', [/* throw description */
-					[/* text */ 't', `If this buffer is not backed by an accessible array`]
-				]]
-			],
+			/* throws */ UDF,
 			[/* return description */
-				[/* text */ 't', `The array that backs this buffer`]
+				[/* inline code block */ 'i', `true`],
+				[/* text */ 't', ` if, and only if, this buffer is direct`]
+			]
+		]],
+		[/* method */ 'isReadOnly()', [
+			[/* method description */
+				[/* text */ 't', `Tells whether or not this buffer is read-only.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* inline code block */ 'i', `true`],
+				[/* text */ 't', ` if, and only if, this buffer is read-only`]
 			]
 		]],
 		[/* method */ 'arrayOffset()', [
@@ -457,132 +325,88 @@ DocsCollector.collect('java.nio.Buffer', [
           of the first element of the buffer`]
 			]
 		]],
-		[/* method */ 'capacity()', [
+		[/* method */ 'array()', [
 			[/* method description */
-				[/* text */ 't', `Returns this buffer's capacity.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `The capacity of this buffer`]
-			]
-		]],
-		[/* method */ 'mark()', [
-			[/* method description */
-				[/* text */ 't', `Sets this buffer's mark at its position.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `This buffer`]
-			]
-		]],
-		[/* method */ 'reset()', [
-			[/* method description */
-				[/* text */ 't', `Resets this buffer's position to the previously-marked position.
+				[/* text */ 't', `Returns the array that backs this
+ buffer  `],
+				[/* text */ 't', `(optional operation)`],
+				[/* text */ 't', `.
 
  `],
-				[/* block */ 'b', ` Invoking this method neither changes nor discards the mark's
- value. `]
+				[/* block */ 'b', ` This method is intended to allow array-backed buffers to be
+ passed to native code more efficiently. Concrete subclasses
+ provide more strongly-typed return values for this method.
+
+ `],
+				[/* block */ 'b', ` Modifications to this buffer's content will cause the returned
+ array's content to be modified, and vice versa.
+
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', ` Invoke the `],
+					[/* reference */ 'r', `#hasArray()`, `hasArray`],
+					[/* text */ 't', ` method before invoking this
+ method in order to ensure that this buffer has an accessible backing
+ array.  `]
+				]]
 			],
 			/* parameters */ UDF,
 			[/* throws */
-				[/* throw */ 'java.nio.InvalidMarkException', [/* throw description */
-					[/* text */ 't', `If the mark has not been set`]
+				[/* throw */ 'java.nio.ReadOnlyBufferException', [/* throw description */
+					[/* text */ 't', `If this buffer is backed by an array but is read-only`]
+				]],
+				[/* throw */ 'java.lang.UnsupportedOperationException', [/* throw description */
+					[/* text */ 't', `If this buffer is not backed by an accessible array`]
 				]]
 			],
 			[/* return description */
-				[/* text */ 't', `This buffer`]
+				[/* text */ 't', `The array that backs this buffer`]
 			]
 		]],
-		[/* method */ 'flip()', [
+		[/* method */ 'duplicate()', [
 			[/* method description */
-				[/* text */ 't', `Flips this buffer.  The limit is set to the current position and then
- the position is set to zero.  If the mark is defined then it is
- discarded.
+				[/* text */ 't', `Creates a new buffer that shares this buffer's content.
 
  `],
-				[/* block */ 'b', [
-					[/* text */ 't', ` After a sequence of channel-read or `],
-					[/* text */ 't', `put`],
-					[/* text */ 't', ` operations, invoke
- this method to prepare for a sequence of channel-write or relative
- `],
-					[/* text */ 't', `get`],
-					[/* text */ 't', ` operations.  For example:
-
- `]
-				]],
-				[/* block */ 'b', [
-					[/* code block */ 'c', ` buf.put(magic);    // Prepend header
- in.read(buf);      // Read data into rest of buffer
- buf.flip();        // Flip buffer
- out.write(buf);    // Write header + data to channel`]
-				]],
-				[/* block */ 'b', ''],
-				[/* block */ 'b', [
-					[/* text */ 't', ` This method is often used in conjunction with the `],
-					[/* reference */ 'r', `.ByteBuffer#compact()`],
-					[/* text */ 't', ` method when transferring data from
- one place to another.  `]
-				]]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `This buffer`]
-			]
-		]],
-		[/* method */ 'rewind()', [
-			[/* method description */
-				[/* text */ 't', `Rewinds this buffer.  The position is set to zero and the mark is
- discarded.
+				[/* block */ 'b', ` The content of the new buffer will be that of this buffer.  Changes
+ to this buffer's content will be visible in the new buffer, and vice
+ versa; the two buffers' position, limit, and mark values will be
+ independent.
 
  `],
-				[/* block */ 'b', [
-					[/* text */ 't', ` Invoke this method before a sequence of channel-write or `],
-					[/* text */ 't', `get`],
-					[/* text */ 't', `
- operations, assuming that the limit has already been set
- appropriately.  For example:
+				[/* block */ 'b', ` The new buffer's capacity, limit, position and mark values will be
+ identical to those of this buffer. The new buffer will be direct if, and
+ only if, this buffer is direct, and it will be read-only if, and only if,
+ this buffer is read-only.  `]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `The new buffer`]
+			]
+		]],
+		[/* method */ 'slice()', [
+			[/* method description */
+				[/* text */ 't', `Creates a new buffer whose content is a shared subsequence of
+ this buffer's content.
 
- `]
-				]],
-				[/* block */ 'b', [
-					[/* code block */ 'c', ` out.write(buf);    // Write remaining data
- buf.rewind();      // Rewind buffer
- buf.get(array);    // Copy data into array`]
-				]],
-				[/* block */ 'b', '']
+ `],
+				[/* block */ 'b', ` The content of the new buffer will start at this buffer's current
+ position.  Changes to this buffer's content will be visible in the new
+ buffer, and vice versa; the two buffers' position, limit, and mark
+ values will be independent.
+
+ `],
+				[/* block */ 'b', ` The new buffer's position will be zero, its capacity and its limit
+ will be the number of elements remaining in this buffer, its mark will be
+ undefined. The new buffer will be direct if, and only if, this buffer is
+ direct, and it will be read-only if, and only if, this buffer is
+ read-only.  `]
 			],
 			/* parameters */ UDF,
 			/* throws */ UDF,
 			[/* return description */
-				[/* text */ 't', `This buffer`]
-			]
-		]],
-		[/* method */ 'hasRemaining()', [
-			[/* method description */
-				[/* text */ 't', `Tells whether there are any elements between the current position and
- the limit.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* inline code block */ 'i', `true`],
-				[/* text */ 't', ` if, and only if, there is at least one element
-          remaining in this buffer`]
-			]
-		]],
-		[/* method */ 'isReadOnly()', [
-			[/* method description */
-				[/* text */ 't', `Tells whether or not this buffer is read-only.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* inline code block */ 'i', `true`],
-				[/* text */ 't', ` if, and only if, this buffer is read-only`]
+				[/* text */ 't', `The new buffer`]
 			]
 		]],
 		[/* method */ 'slice(int,int)', [
@@ -642,50 +466,226 @@ DocsCollector.collect('java.nio.Buffer', [
 				[/* text */ 't', `The new buffer`]
 			]
 		]],
-		[/* method */ 'slice()', [
+		[/* method */ 'hasRemaining()', [
 			[/* method description */
-				[/* text */ 't', `Creates a new buffer whose content is a shared subsequence of
- this buffer's content.
-
- `],
-				[/* block */ 'b', ` The content of the new buffer will start at this buffer's current
- position.  Changes to this buffer's content will be visible in the new
- buffer, and vice versa; the two buffers' position, limit, and mark
- values will be independent.
-
- `],
-				[/* block */ 'b', ` The new buffer's position will be zero, its capacity and its limit
- will be the number of elements remaining in this buffer, its mark will be
- undefined. The new buffer will be direct if, and only if, this buffer is
- direct, and it will be read-only if, and only if, this buffer is
- read-only.  `]
+				[/* text */ 't', `Tells whether there are any elements between the current position and
+ the limit.`]
 			],
 			/* parameters */ UDF,
 			/* throws */ UDF,
 			[/* return description */
-				[/* text */ 't', `The new buffer`]
+				[/* inline code block */ 'i', `true`],
+				[/* text */ 't', ` if, and only if, there is at least one element
+          remaining in this buffer`]
 			]
 		]],
-		[/* method */ 'duplicate()', [
+		[/* method */ 'capacity()', [
 			[/* method description */
-				[/* text */ 't', `Creates a new buffer that shares this buffer's content.
-
- `],
-				[/* block */ 'b', ` The content of the new buffer will be that of this buffer.  Changes
- to this buffer's content will be visible in the new buffer, and vice
- versa; the two buffers' position, limit, and mark values will be
- independent.
-
- `],
-				[/* block */ 'b', ` The new buffer's capacity, limit, position and mark values will be
- identical to those of this buffer. The new buffer will be direct if, and
- only if, this buffer is direct, and it will be read-only if, and only if,
- this buffer is read-only.  `]
+				[/* text */ 't', `Returns this buffer's capacity.`]
 			],
 			/* parameters */ UDF,
 			/* throws */ UDF,
 			[/* return description */
-				[/* text */ 't', `The new buffer`]
+				[/* text */ 't', `The capacity of this buffer`]
+			]
+		]],
+		[/* method */ 'limit()', [
+			[/* method description */
+				[/* text */ 't', `Returns this buffer's limit.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `The limit of this buffer`]
+			]
+		]],
+		[/* method */ 'position()', [
+			[/* method description */
+				[/* text */ 't', `Returns this buffer's position.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `The position of this buffer`]
+			]
+		]],
+		[/* method */ 'remaining()', [
+			[/* method description */
+				[/* text */ 't', `Returns the number of elements between the current position and the
+ limit.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `The number of elements remaining in this buffer`]
+			]
+		]],
+		[/* method */ 'clear()', [
+			[/* method description */
+				[/* text */ 't', `Clears this buffer.  The position is set to zero, the limit is set to
+ the capacity, and the mark is discarded.
+
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', ` Invoke this method before using a sequence of channel-read or
+ `],
+					[/* text */ 't', `put`],
+					[/* text */ 't', ` operations to fill this buffer.  For example:
+
+ `]
+				]],
+				[/* block */ 'b', [
+					[/* code block */ 'c', ` buf.clear();     // Prepare buffer for reading
+ in.read(buf);    // Read data`]
+				]],
+				[/* block */ 'b', ''],
+				[/* block */ 'b', ` This method does not actually erase the data in the buffer, but it
+ is named as if it did because it will most often be used in situations
+ in which that might as well be the case. `]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `This buffer`]
+			]
+		]],
+		[/* method */ 'flip()', [
+			[/* method description */
+				[/* text */ 't', `Flips this buffer.  The limit is set to the current position and then
+ the position is set to zero.  If the mark is defined then it is
+ discarded.
+
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', ` After a sequence of channel-read or `],
+					[/* text */ 't', `put`],
+					[/* text */ 't', ` operations, invoke
+ this method to prepare for a sequence of channel-write or relative
+ `],
+					[/* text */ 't', `get`],
+					[/* text */ 't', ` operations.  For example:
+
+ `]
+				]],
+				[/* block */ 'b', [
+					[/* code block */ 'c', ` buf.put(magic);    // Prepend header
+ in.read(buf);      // Read data into rest of buffer
+ buf.flip();        // Flip buffer
+ out.write(buf);    // Write header + data to channel`]
+				]],
+				[/* block */ 'b', ''],
+				[/* block */ 'b', [
+					[/* text */ 't', ` This method is often used in conjunction with the `],
+					[/* reference */ 'r', `.ByteBuffer#compact()`],
+					[/* text */ 't', ` method when transferring data from
+ one place to another.  `]
+				]]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `This buffer`]
+			]
+		]],
+		[/* method */ 'limit(int)', [
+			[/* method description */
+				[/* text */ 't', `Sets this buffer's limit.  If the position is larger than the new limit
+ then it is set to the new limit.  If the mark is defined and larger than
+ the new limit then it is discarded.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'newLimit', [/* parameter description */
+					[/* text */ 't', `The new limit value; must be non-negative
+         and no larger than this buffer's capacity`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
+					[/* text */ 't', `If the preconditions on `],
+					[/* inline code block */ 'i', `newLimit`],
+					[/* text */ 't', ` do not hold`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `This buffer`]
+			]
+		]],
+		[/* method */ 'mark()', [
+			[/* method description */
+				[/* text */ 't', `Sets this buffer's mark at its position.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `This buffer`]
+			]
+		]],
+		[/* method */ 'position(int)', [
+			[/* method description */
+				[/* text */ 't', `Sets this buffer's position.  If the mark is defined and larger than the
+ new position then it is discarded.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'newPosition', [/* parameter description */
+					[/* text */ 't', `The new position value; must be non-negative
+         and no larger than the current limit`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
+					[/* text */ 't', `If the preconditions on `],
+					[/* inline code block */ 'i', `newPosition`],
+					[/* text */ 't', ` do not hold`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `This buffer`]
+			]
+		]],
+		[/* method */ 'reset()', [
+			[/* method description */
+				[/* text */ 't', `Resets this buffer's position to the previously-marked position.
+
+ `],
+				[/* block */ 'b', ` Invoking this method neither changes nor discards the mark's
+ value. `]
+			],
+			/* parameters */ UDF,
+			[/* throws */
+				[/* throw */ 'java.nio.InvalidMarkException', [/* throw description */
+					[/* text */ 't', `If the mark has not been set`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `This buffer`]
+			]
+		]],
+		[/* method */ 'rewind()', [
+			[/* method description */
+				[/* text */ 't', `Rewinds this buffer.  The position is set to zero and the mark is
+ discarded.
+
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', ` Invoke this method before a sequence of channel-write or `],
+					[/* text */ 't', `get`],
+					[/* text */ 't', `
+ operations, assuming that the limit has already been set
+ appropriately.  For example:
+
+ `]
+				]],
+				[/* block */ 'b', [
+					[/* code block */ 'c', ` out.write(buf);    // Write remaining data
+ buf.rewind();      // Rewind buffer
+ buf.get(array);    // Copy data into array`]
+				]],
+				[/* block */ 'b', '']
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `This buffer`]
 			]
 		]]
 	],

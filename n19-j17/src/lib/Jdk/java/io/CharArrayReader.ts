@@ -216,8 +216,8 @@ JdkClassCreateHelper.class('java.io.CharArrayReader', [
 			/* annotations */ UDF,
 			/* modifiers */ 4
 		],
-		[/* protected int java.io.CharArrayReader.pos */
-			/* name */ 'pos',
+		[/* protected int java.io.CharArrayReader.count */
+			/* name */ 'count',
 			/* type */ 'int',
 			/* annotations */ UDF,
 			/* modifiers */ 4
@@ -228,8 +228,8 @@ JdkClassCreateHelper.class('java.io.CharArrayReader', [
 			/* annotations */ UDF,
 			/* modifiers */ 4
 		],
-		[/* protected int java.io.CharArrayReader.count */
-			/* name */ 'count',
+		[/* protected int java.io.CharArrayReader.pos */
+			/* name */ 'pos',
 			/* type */ 'int',
 			/* annotations */ UDF,
 			/* modifiers */ 4

@@ -12,6 +12,20 @@ DocsCollector.collect('java.lang.ExceptionInInitializerError', [
 	],
 	/* fields */ UDF,
 	[/* constructors */
+		[/* constructor */ '<init>()', [
+			[/* constructor description */
+				[/* text */ 't', `Constructs an `],
+				[/* inline code block */ 'i', `ExceptionInInitializerError`],
+				[/* text */ 't', ` with
+ `],
+				[/* inline code block */ 'i', `null`],
+				[/* text */ 't', ` as its detail message string and with no saved
+ throwable object.
+ A detail message is a String that describes this particular exception.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF
+		]],
 		[/* constructor */ '<init>(java.lang.String)', [
 			[/* constructor description */
 				[/* text */ 't', `Constructs an `],
@@ -51,20 +65,6 @@ DocsCollector.collect('java.lang.ExceptionInInitializerError', [
 					[/* text */ 't', `The exception thrown`]
 				]]
 			],
-			/* throws */ UDF
-		]],
-		[/* constructor */ '<init>()', [
-			[/* constructor description */
-				[/* text */ 't', `Constructs an `],
-				[/* inline code block */ 'i', `ExceptionInInitializerError`],
-				[/* text */ 't', ` with
- `],
-				[/* inline code block */ 'i', `null`],
-				[/* text */ 't', ` as its detail message string and with no saved
- throwable object.
- A detail message is a String that describes this particular exception.`]
-			],
-			/* parameters */ UDF,
 			/* throws */ UDF
 		]]
 	],

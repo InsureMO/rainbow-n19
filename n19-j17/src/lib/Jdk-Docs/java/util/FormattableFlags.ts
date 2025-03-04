@@ -13,6 +13,24 @@ DocsCollector.collect('java.util.FormattableFlags', [
  responsible for interpreting and validating any flags.`]
 	],
 	[/* fields */
+		[/* field */ 'ALTERNATE', [
+			[/* field description */
+				[/* text */ 't', `Requires the output to use an alternate form.  The definition of the
+ form is specified by the `],
+				[/* inline code block */ 'i', `Formattable`],
+				[/* text */ 't', `.
+
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', ` This flag corresponds to `],
+					[/* inline code block */ 'i', `'#'`],
+					[/* text */ 't', ` (`],
+					[/* inline code block */ 'i', `'\\u0023'`],
+					[/* text */ 't', `) in
+ the format specifier.`]
+				]]
+			],
+		]],
 		[/* field */ 'LEFT_JUSTIFY', [
 			[/* field description */
 				[/* text */ 't', `Left-justifies the output.  Spaces (`],
@@ -52,24 +70,6 @@ DocsCollector.collect('java.util.FormattableFlags', [
 					[/* inline code block */ 'i', `'S'`],
 					[/* text */ 't', ` (`],
 					[/* inline code block */ 'i', `'\\u0053'`],
-					[/* text */ 't', `) in
- the format specifier.`]
-				]]
-			],
-		]],
-		[/* field */ 'ALTERNATE', [
-			[/* field description */
-				[/* text */ 't', `Requires the output to use an alternate form.  The definition of the
- form is specified by the `],
-				[/* inline code block */ 'i', `Formattable`],
-				[/* text */ 't', `.
-
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', ` This flag corresponds to `],
-					[/* inline code block */ 'i', `'#'`],
-					[/* text */ 't', ` (`],
-					[/* inline code block */ 'i', `'\\u0023'`],
 					[/* text */ 't', `) in
  the format specifier.`]
 				]]

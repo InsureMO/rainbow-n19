@@ -25,21 +25,60 @@ DocsCollector.collect('java.lang.StackWalker$StackFrame', [
 	/* fields */ UDF,
 	/* constructors */ UDF,
 	[/* methods */
-		[/* method */ 'getDescriptor()', [
+		[/* method */ 'isNativeMethod()', [
 			[/* method description */
-				[/* text */ 't', `Returns the `],
-				[/* text */ 't', `descriptor`],
-				[/* text */ 't', ` of the method represented by
- this stack frame as defined by
+				[/* text */ 't', `Returns `],
+				[/* inline code block */ 'i', `true`],
+				[/* text */ 't', ` if the method containing the execution point
+ represented by this stack frame is a native method.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* inline code block */ 'i', `true`],
+				[/* text */ 't', ` if the method containing the execution point
+         represented by this stack frame is a native method.`]
+			]
+		]],
+		[/* method */ 'getByteCodeIndex()', [
+			[/* method description */
+				[/* text */ 't', `Returns the index to the code array of the `],
+				[/* inline code block */ 'i', `Code`],
+				[/* text */ 't', ` attribute
+ containing the execution point represented by this stack frame.
+ The code array gives the actual bytes of Java Virtual Machine code
+ that implement the method.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the index to the code array of the `],
+				[/* inline code block */ 'i', `Code`],
+				[/* text */ 't', ` attribute
+         containing the execution point represented by this stack frame,
+         or a negative number if the method is native.`]
+			]
+		]],
+		[/* method */ 'getLineNumber()', [
+			[/* method description */
+				[/* text */ 't', `Returns the line number of the source line containing the execution
+ point represented by this stack frame.  Generally, this is
+ derived from the `],
+				[/* inline code block */ 'i', `LineNumberTable`],
+				[/* text */ 't', ` attribute of the relevant
  `],
-				[/* text */ 't', `The Java Virtual Machine Specification`],
+				[/* inline code block */ 'i', `class`],
+				[/* text */ 't', ` file as defined by `],
+				[/* text */ 't', `The Java Virtual Machine
+ Specification`],
 				[/* text */ 't', `.`]
 			],
 			/* parameters */ UDF,
 			/* throws */ UDF,
 			[/* return description */
-				[/* text */ 't', `the descriptor of the method represented by
-         this stack frame`]
+				[/* text */ 't', `the line number of the source line containing the execution
+         point represented by this stack frame, or a negative number if
+         this information is unavailable.`]
 			]
 		]],
 		[/* method */ 'getDeclaringClass()', [
@@ -67,43 +106,31 @@ DocsCollector.collect('java.lang.StackWalker$StackFrame', [
  this stack frame`]
 			]
 		]],
-		[/* method */ 'getMethodType()', [
+		[/* method */ 'toStackTraceElement()', [
 			[/* method description */
-				[/* text */ 't', `Returns the `],
-				[/* reference */ 'r', `java.lang.invoke.MethodType`],
-				[/* text */ 't', ` representing the parameter types and
- the return type for the method represented by this stack frame.`]
-			],
-			/* parameters */ UDF,
-			[/* throws */
-				[/* throw */ 'java.lang.UnsupportedOperationException', [/* throw description */
-					[/* text */ 't', `if this `],
-					[/* inline code block */ 'i', `StackWalker`],
-					[/* text */ 't', `
-         is not configured with `],
-					[/* reference */ 'r', `.StackWalker.Option#RETAIN_CLASS_REFERENCE`],
-					[/* text */ 't', `.`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `the `],
-				[/* inline code block */ 'i', `MethodType`],
-				[/* text */ 't', ` for this stack frame`]
-			]
-		]],
-		[/* method */ 'isNativeMethod()', [
-			[/* method description */
-				[/* text */ 't', `Returns `],
-				[/* inline code block */ 'i', `true`],
-				[/* text */ 't', ` if the method containing the execution point
- represented by this stack frame is a native method.`]
+				[/* text */ 't', `Gets a `],
+				[/* inline code block */ 'i', `StackTraceElement`],
+				[/* text */ 't', ` for this stack frame.`]
 			],
 			/* parameters */ UDF,
 			/* throws */ UDF,
 			[/* return description */
-				[/* inline code block */ 'i', `true`],
-				[/* text */ 't', ` if the method containing the execution point
-         represented by this stack frame is a native method.`]
+				[/* inline code block */ 'i', `StackTraceElement`],
+				[/* text */ 't', ` for this stack frame.`]
+			]
+		]],
+		[/* method */ 'getClassName()', [
+			[/* method description */
+				[/* text */ 't', `Gets the `],
+				[/* reference */ 'r', `.ClassLoader#binary-name`],
+				[/* text */ 't', `
+ of the declaring class of the method represented by this stack frame.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the binary name of the declaring class of the method
+         represented by this stack frame`]
 			]
 		]],
 		[/* method */ 'getFileName()', [
@@ -131,42 +158,6 @@ DocsCollector.collect('java.lang.StackWalker$StackFrame', [
          this information is unavailable.`]
 			]
 		]],
-		[/* method */ 'getLineNumber()', [
-			[/* method description */
-				[/* text */ 't', `Returns the line number of the source line containing the execution
- point represented by this stack frame.  Generally, this is
- derived from the `],
-				[/* inline code block */ 'i', `LineNumberTable`],
-				[/* text */ 't', ` attribute of the relevant
- `],
-				[/* inline code block */ 'i', `class`],
-				[/* text */ 't', ` file as defined by `],
-				[/* text */ 't', `The Java Virtual Machine
- Specification`],
-				[/* text */ 't', `.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the line number of the source line containing the execution
-         point represented by this stack frame, or a negative number if
-         this information is unavailable.`]
-			]
-		]],
-		[/* method */ 'getClassName()', [
-			[/* method description */
-				[/* text */ 't', `Gets the `],
-				[/* reference */ 'r', `.ClassLoader#binary-name`],
-				[/* text */ 't', `
- of the declaring class of the method represented by this stack frame.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the binary name of the declaring class of the method
-         represented by this stack frame`]
-			]
-		]],
 		[/* method */ 'getMethodName()', [
 			[/* method description */
 				[/* text */ 't', `Gets the name of the method represented by this stack frame.`]
@@ -177,36 +168,45 @@ DocsCollector.collect('java.lang.StackWalker$StackFrame', [
 				[/* text */ 't', `the name of the method represented by this stack frame`]
 			]
 		]],
-		[/* method */ 'toStackTraceElement()', [
+		[/* method */ 'getMethodType()', [
 			[/* method description */
-				[/* text */ 't', `Gets a `],
-				[/* inline code block */ 'i', `StackTraceElement`],
-				[/* text */ 't', ` for this stack frame.`]
+				[/* text */ 't', `Returns the `],
+				[/* reference */ 'r', `java.lang.invoke.MethodType`],
+				[/* text */ 't', ` representing the parameter types and
+ the return type for the method represented by this stack frame.`]
 			],
 			/* parameters */ UDF,
-			/* throws */ UDF,
+			[/* throws */
+				[/* throw */ 'java.lang.UnsupportedOperationException', [/* throw description */
+					[/* text */ 't', `if this `],
+					[/* inline code block */ 'i', `StackWalker`],
+					[/* text */ 't', `
+         is not configured with `],
+					[/* reference */ 'r', `.StackWalker.Option#RETAIN_CLASS_REFERENCE`],
+					[/* text */ 't', `.`]
+				]]
+			],
 			[/* return description */
-				[/* inline code block */ 'i', `StackTraceElement`],
-				[/* text */ 't', ` for this stack frame.`]
+				[/* text */ 't', `the `],
+				[/* inline code block */ 'i', `MethodType`],
+				[/* text */ 't', ` for this stack frame`]
 			]
 		]],
-		[/* method */ 'getByteCodeIndex()', [
+		[/* method */ 'getDescriptor()', [
 			[/* method description */
-				[/* text */ 't', `Returns the index to the code array of the `],
-				[/* inline code block */ 'i', `Code`],
-				[/* text */ 't', ` attribute
- containing the execution point represented by this stack frame.
- The code array gives the actual bytes of Java Virtual Machine code
- that implement the method.`]
+				[/* text */ 't', `Returns the `],
+				[/* text */ 't', `descriptor`],
+				[/* text */ 't', ` of the method represented by
+ this stack frame as defined by
+ `],
+				[/* text */ 't', `The Java Virtual Machine Specification`],
+				[/* text */ 't', `.`]
 			],
 			/* parameters */ UDF,
 			/* throws */ UDF,
 			[/* return description */
-				[/* text */ 't', `the index to the code array of the `],
-				[/* inline code block */ 'i', `Code`],
-				[/* text */ 't', ` attribute
-         containing the execution point represented by this stack frame,
-         or a negative number if the method is native.`]
+				[/* text */ 't', `the descriptor of the method represented by
+         this stack frame`]
 			]
 		]]
 	],

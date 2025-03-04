@@ -44,6 +44,12 @@ JdkClassCreateHelper.class('java.io.FileDescriptor', [
 		]
 	],
 	[/* declared fields */
+		[/* public static final java.io.FileDescriptor java.io.FileDescriptor.err */
+			/* name */ 'err',
+			/* type */ 'java.io.FileDescriptor',
+			/* annotations */ UDF,
+			/* modifiers */ 25
+		],
 		[/* public static final java.io.FileDescriptor java.io.FileDescriptor.in */
 			/* name */ 'in',
 			/* type */ 'java.io.FileDescriptor',
@@ -52,12 +58,6 @@ JdkClassCreateHelper.class('java.io.FileDescriptor', [
 		],
 		[/* public static final java.io.FileDescriptor java.io.FileDescriptor.out */
 			/* name */ 'out',
-			/* type */ 'java.io.FileDescriptor',
-			/* annotations */ UDF,
-			/* modifiers */ 25
-		],
-		[/* public static final java.io.FileDescriptor java.io.FileDescriptor.err */
-			/* name */ 'err',
 			/* type */ 'java.io.FileDescriptor',
 			/* annotations */ UDF,
 			/* modifiers */ 25

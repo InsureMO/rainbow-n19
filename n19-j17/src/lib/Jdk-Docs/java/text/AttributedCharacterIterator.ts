@@ -70,15 +70,104 @@ DocsCollector.collect('java.text.AttributedCharacterIterator', [
 	/* fields */ UDF,
 	/* constructors */ UDF,
 	[/* methods */
-		[/* method */ 'getAttributes()', [
+		[/* method */ 'getRunLimit()', [
 			[/* method description */
-				[/* text */ 't', `Returns a map with the attributes defined on the current
- character.`]
+				[/* text */ 't', `Returns the index of the first character following the run
+ with respect to all attributes containing the current character.
+
+ `],
+				[/* block */ 'b', `Any contiguous text segments having the same attributes (the
+ same set of attribute/value pairs) are treated as separate runs
+ if the attributes have been given to those text segments separately.`]
 			],
 			/* parameters */ UDF,
 			/* throws */ UDF,
 			[/* return description */
-				[/* text */ 't', `a map with the attributes defined on the current character`]
+				[/* text */ 't', `the index of the first character following the run`]
+			]
+		]],
+		[/* method */ 'getRunLimit(java.text.AttributedCharacterIterator.Attribute)', [
+			[/* method description */
+				[/* text */ 't', `Returns the index of the first character following the run
+ with respect to the given `],
+				[/* inline code block */ 'i', `attribute`],
+				[/* text */ 't', ` containing the current character.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'attribute', [/* parameter description */
+					[/* text */ 't', `the desired attribute`]
+				]]
+			],
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the index of the first character following the run`]
+			]
+		]],
+		[/* method */ 'getRunLimit(java.util.Set)', [
+			[/* method description */
+				[/* text */ 't', `Returns the index of the first character following the run
+ with respect to the given `],
+				[/* inline code block */ 'i', `attributes`],
+				[/* text */ 't', ` containing the current character.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'attributes', [/* parameter description */
+					[/* text */ 't', `a set of the desired attributes`]
+				]]
+			],
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the index of the first character following the run`]
+			]
+		]],
+		[/* method */ 'getRunStart()', [
+			[/* method description */
+				[/* text */ 't', `Returns the index of the first character of the run
+ with respect to all attributes containing the current character.
+
+ `],
+				[/* block */ 'b', `Any contiguous text segments having the same attributes (the
+ same set of attribute/value pairs) are treated as separate runs
+ if the attributes have been given to those text segments separately.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the index of the first character of the run`]
+			]
+		]],
+		[/* method */ 'getRunStart(java.text.AttributedCharacterIterator.Attribute)', [
+			[/* method description */
+				[/* text */ 't', `Returns the index of the first character of the run
+ with respect to the given `],
+				[/* inline code block */ 'i', `attribute`],
+				[/* text */ 't', ` containing the current character.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'attribute', [/* parameter description */
+					[/* text */ 't', `the desired attribute.`]
+				]]
+			],
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the index of the first character of the run`]
+			]
+		]],
+		[/* method */ 'getRunStart(java.util.Set)', [
+			[/* method description */
+				[/* text */ 't', `Returns the index of the first character of the run
+ with respect to the given `],
+				[/* inline code block */ 'i', `attributes`],
+				[/* text */ 't', ` containing the current character.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'attributes', [/* parameter description */
+					[/* text */ 't', `a set of the desired attributes.`]
+				]]
+			],
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the index of the first character of the run`]
 			]
 		]],
 		[/* method */ 'getAttribute(java.text.AttributedCharacterIterator.Attribute)', [
@@ -105,104 +194,15 @@ DocsCollector.collect('java.text.AttributedCharacterIterator', [
 				[/* inline code block */ 'i', `null`]
 			]
 		]],
-		[/* method */ 'getRunStart()', [
+		[/* method */ 'getAttributes()', [
 			[/* method description */
-				[/* text */ 't', `Returns the index of the first character of the run
- with respect to all attributes containing the current character.
-
- `],
-				[/* block */ 'b', `Any contiguous text segments having the same attributes (the
- same set of attribute/value pairs) are treated as separate runs
- if the attributes have been given to those text segments separately.`]
+				[/* text */ 't', `Returns a map with the attributes defined on the current
+ character.`]
 			],
 			/* parameters */ UDF,
 			/* throws */ UDF,
 			[/* return description */
-				[/* text */ 't', `the index of the first character of the run`]
-			]
-		]],
-		[/* method */ 'getRunStart(java.util.Set)', [
-			[/* method description */
-				[/* text */ 't', `Returns the index of the first character of the run
- with respect to the given `],
-				[/* inline code block */ 'i', `attributes`],
-				[/* text */ 't', ` containing the current character.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'attributes', [/* parameter description */
-					[/* text */ 't', `a set of the desired attributes.`]
-				]]
-			],
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the index of the first character of the run`]
-			]
-		]],
-		[/* method */ 'getRunStart(java.text.AttributedCharacterIterator.Attribute)', [
-			[/* method description */
-				[/* text */ 't', `Returns the index of the first character of the run
- with respect to the given `],
-				[/* inline code block */ 'i', `attribute`],
-				[/* text */ 't', ` containing the current character.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'attribute', [/* parameter description */
-					[/* text */ 't', `the desired attribute.`]
-				]]
-			],
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the index of the first character of the run`]
-			]
-		]],
-		[/* method */ 'getRunLimit(java.util.Set)', [
-			[/* method description */
-				[/* text */ 't', `Returns the index of the first character following the run
- with respect to the given `],
-				[/* inline code block */ 'i', `attributes`],
-				[/* text */ 't', ` containing the current character.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'attributes', [/* parameter description */
-					[/* text */ 't', `a set of the desired attributes`]
-				]]
-			],
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the index of the first character following the run`]
-			]
-		]],
-		[/* method */ 'getRunLimit(java.text.AttributedCharacterIterator.Attribute)', [
-			[/* method description */
-				[/* text */ 't', `Returns the index of the first character following the run
- with respect to the given `],
-				[/* inline code block */ 'i', `attribute`],
-				[/* text */ 't', ` containing the current character.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'attribute', [/* parameter description */
-					[/* text */ 't', `the desired attribute`]
-				]]
-			],
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the index of the first character following the run`]
-			]
-		]],
-		[/* method */ 'getRunLimit()', [
-			[/* method description */
-				[/* text */ 't', `Returns the index of the first character following the run
- with respect to all attributes containing the current character.
-
- `],
-				[/* block */ 'b', `Any contiguous text segments having the same attributes (the
- same set of attribute/value pairs) are treated as separate runs
- if the attributes have been given to those text segments separately.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the index of the first character following the run`]
+				[/* text */ 't', `a map with the attributes defined on the current character`]
 			]
 		]],
 		[/* method */ 'getAllAttributeKeys()', [

@@ -229,6 +229,83 @@ DocsCollector.collect('java.util.stream.Collector', [
 	/* fields */ UDF,
 	/* constructors */ UDF,
 	[/* methods */
+		[/* method */ 'accumulator()', [
+			[/* method description */
+				[/* text */ 't', `A function that folds a value into a mutable result container.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `a function which folds a value into a mutable result container`]
+			]
+		]],
+		[/* method */ 'combiner()', [
+			[/* method description */
+				[/* text */ 't', `A function that accepts two partial results and merges them.  The
+ combiner function may fold state from one argument into the other and
+ return that, or may return a new result container.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `a function which combines two partial results into a combined
+ result`]
+			]
+		]],
+		[/* method */ 'finisher()', [
+			[/* method description */
+				[/* text */ 't', `Perform the final transformation from the intermediate accumulation type
+ `],
+				[/* inline code block */ 'i', `A`],
+				[/* text */ 't', ` to the final result type `],
+				[/* inline code block */ 'i', `R`],
+				[/* text */ 't', `.
+
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', `If the characteristic `],
+					[/* inline code block */ 'i', `IDENTITY_FINISH`],
+					[/* text */ 't', ` is
+ set, this function may be presumed to be an identity transform with an
+ unchecked cast from `],
+					[/* inline code block */ 'i', `A`],
+					[/* text */ 't', ` to `],
+					[/* inline code block */ 'i', `R`],
+					[/* text */ 't', `.`]
+				]]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `a function which transforms the intermediate result to the final
+ result`]
+			]
+		]],
+		[/* method */ 'supplier()', [
+			[/* method description */
+				[/* text */ 't', `A function that creates and returns a new mutable result container.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `a function which returns a new, mutable result container`]
+			]
+		]],
+		[/* method */ 'characteristics()', [
+			[/* method description */
+				[/* text */ 't', `Returns a `],
+				[/* inline code block */ 'i', `Set`],
+				[/* text */ 't', ` of `],
+				[/* inline code block */ 'i', `Collector.Characteristics`],
+				[/* text */ 't', ` indicating
+ the characteristics of this Collector.  This set should be immutable.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `an immutable set of collector characteristics`]
+			]
+		]],
 		[/* method */ 'of(java.util.function.Supplier,java.util.function.BiConsumer,java.util.function.BinaryOperator,java.util.function.Function,java.util.stream.Collector.Characteristics...)', [
 			[/* method description */
 				[/* text */ 't', `Returns a new `],
@@ -314,83 +391,6 @@ DocsCollector.collect('java.util.stream.Collector', [
 			[/* return description */
 				[/* text */ 't', `the new `],
 				[/* inline code block */ 'i', `Collector`]
-			]
-		]],
-		[/* method */ 'characteristics()', [
-			[/* method description */
-				[/* text */ 't', `Returns a `],
-				[/* inline code block */ 'i', `Set`],
-				[/* text */ 't', ` of `],
-				[/* inline code block */ 'i', `Collector.Characteristics`],
-				[/* text */ 't', ` indicating
- the characteristics of this Collector.  This set should be immutable.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `an immutable set of collector characteristics`]
-			]
-		]],
-		[/* method */ 'combiner()', [
-			[/* method description */
-				[/* text */ 't', `A function that accepts two partial results and merges them.  The
- combiner function may fold state from one argument into the other and
- return that, or may return a new result container.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `a function which combines two partial results into a combined
- result`]
-			]
-		]],
-		[/* method */ 'supplier()', [
-			[/* method description */
-				[/* text */ 't', `A function that creates and returns a new mutable result container.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `a function which returns a new, mutable result container`]
-			]
-		]],
-		[/* method */ 'accumulator()', [
-			[/* method description */
-				[/* text */ 't', `A function that folds a value into a mutable result container.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `a function which folds a value into a mutable result container`]
-			]
-		]],
-		[/* method */ 'finisher()', [
-			[/* method description */
-				[/* text */ 't', `Perform the final transformation from the intermediate accumulation type
- `],
-				[/* inline code block */ 'i', `A`],
-				[/* text */ 't', ` to the final result type `],
-				[/* inline code block */ 'i', `R`],
-				[/* text */ 't', `.
-
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', `If the characteristic `],
-					[/* inline code block */ 'i', `IDENTITY_FINISH`],
-					[/* text */ 't', ` is
- set, this function may be presumed to be an identity transform with an
- unchecked cast from `],
-					[/* inline code block */ 'i', `A`],
-					[/* text */ 't', ` to `],
-					[/* inline code block */ 'i', `R`],
-					[/* text */ 't', `.`]
-				]]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `a function which transforms the intermediate result to the final
- result`]
 			]
 		]]
 	],

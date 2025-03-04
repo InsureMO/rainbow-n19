@@ -207,27 +207,15 @@ DocsCollector.collect('java.util.WeakHashMap', [
 	],
 	/* fields */ UDF,
 	[/* constructors */
-		[/* constructor */ '<init>(java.util.Map)', [
+		[/* constructor */ '<init>()', [
 			[/* constructor description */
-				[/* text */ 't', `Constructs a new `],
+				[/* text */ 't', `Constructs a new, empty `],
 				[/* inline code block */ 'i', `WeakHashMap`],
-				[/* text */ 't', ` with the same mappings as the
- specified map.  The `],
-				[/* inline code block */ 'i', `WeakHashMap`],
-				[/* text */ 't', ` is created with the default
- load factor (0.75) and an initial capacity sufficient to hold the
- mappings in the specified map.`]
+				[/* text */ 't', ` with the default initial
+ capacity (16) and load factor (0.75).`]
 			],
-			[/* parameters */
-				[/* parameter */ 'm', [/* parameter description */
-					[/* text */ 't', `the map whose mappings are to be placed in this map`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
-					[/* text */ 't', `if the specified map is null`]
-				]]
-			]
+			/* parameters */ UDF,
+			/* throws */ UDF
 		]],
 		[/* constructor */ '<init>(int)', [
 			[/* constructor description */
@@ -272,66 +260,216 @@ DocsCollector.collect('java.util.WeakHashMap', [
 				]]
 			]
 		]],
-		[/* constructor */ '<init>()', [
+		[/* constructor */ '<init>(java.util.Map)', [
 			[/* constructor description */
-				[/* text */ 't', `Constructs a new, empty `],
+				[/* text */ 't', `Constructs a new `],
 				[/* inline code block */ 'i', `WeakHashMap`],
-				[/* text */ 't', ` with the default initial
- capacity (16) and load factor (0.75).`]
+				[/* text */ 't', ` with the same mappings as the
+ specified map.  The `],
+				[/* inline code block */ 'i', `WeakHashMap`],
+				[/* text */ 't', ` is created with the default
+ load factor (0.75) and an initial capacity sufficient to hold the
+ mappings in the specified map.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF
+			[/* parameters */
+				[/* parameter */ 'm', [/* parameter description */
+					[/* text */ 't', `the map whose mappings are to be placed in this map`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
+					[/* text */ 't', `if the specified map is null`]
+				]]
+			]
 		]]
 	],
 	[/* methods */
-		[/* method */ 'remove(java.lang.Object)', [
+		[/* method */ 'containsKey(java.lang.Object)', [
 			[/* method description */
-				[/* text */ 't', `Removes the mapping for a key from this weak hash map if it is present.
- More formally, if this map contains a mapping from key `],
-				[/* inline code block */ 'i', `k`],
-				[/* text */ 't', ` to
- value `],
-				[/* inline code block */ 'i', `v`],
-				[/* text */ 't', ` such that `],
-				[/* inline code block */ 'i', `(key==null ? k==null : key.equals(k))`],
-				[/* text */ 't', `, that mapping is removed.  (The map can contain
- at most one such mapping.)
-
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', `Returns the value to which this map previously associated the key,
- or `],
-					[/* inline code block */ 'i', `null`],
-					[/* text */ 't', ` if the map contained no mapping for the key.  A
- return value of `],
-					[/* inline code block */ 'i', `null`],
-					[/* text */ 't', ` does not `],
-					[/* text */ 't', `necessarily`],
-					[/* text */ 't', ` indicate
- that the map contained no mapping for the key; it's also possible
- that the map explicitly mapped the key to `],
-					[/* inline code block */ 'i', `null`],
-					[/* text */ 't', `.
-
- `]
-				]],
-				[/* block */ 'b', `The map will not contain a mapping for the specified key once the
- call returns.`]
+				[/* text */ 't', `Returns `],
+				[/* inline code block */ 'i', `true`],
+				[/* text */ 't', ` if this map contains a mapping for the
+ specified key.`]
 			],
 			[/* parameters */
 				[/* parameter */ 'key', [/* parameter description */
-					[/* text */ 't', `key whose mapping is to be removed from the map`]
+					[/* text */ 't', `The key whose presence in this map is to be tested`]
 				]]
 			],
 			/* throws */ UDF,
 			[/* return description */
-				[/* text */ 't', `the previous value associated with `],
+				[/* inline code block */ 'i', `true`],
+				[/* text */ 't', ` if there is a mapping for `],
 				[/* inline code block */ 'i', `key`],
-				[/* text */ 't', `, or
+				[/* text */ 't', `;
          `],
-				[/* inline code block */ 'i', `null`],
-				[/* text */ 't', ` if there was no mapping for `],
-				[/* inline code block */ 'i', `key`]
+				[/* inline code block */ 'i', `false`],
+				[/* text */ 't', ` otherwise`]
+			]
+		]],
+		[/* method */ 'containsValue(java.lang.Object)', [
+			[/* method description */
+				[/* text */ 't', `Returns `],
+				[/* inline code block */ 'i', `true`],
+				[/* text */ 't', ` if this map maps one or more keys to the
+ specified value.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'value', [/* parameter description */
+					[/* text */ 't', `value whose presence in this map is to be tested`]
+				]]
+			],
+			/* throws */ UDF,
+			[/* return description */
+				[/* inline code block */ 'i', `true`],
+				[/* text */ 't', ` if this map maps one or more keys to the
+         specified value`]
+			]
+		]],
+		[/* method */ 'isEmpty()', [
+			[/* method description */
+				[/* text */ 't', `Returns `],
+				[/* inline code block */ 'i', `true`],
+				[/* text */ 't', ` if this map contains no key-value mappings.
+ This result is a snapshot, and may not reflect unprocessed
+ entries that will be removed before next attempted access
+ because they are no longer referenced.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* inline code block */ 'i', `true`],
+				[/* text */ 't', ` if this map contains no key-value mappings`]
+			]
+		]],
+		[/* method */ 'size()', [
+			[/* method description */
+				[/* text */ 't', `Returns the number of key-value mappings in this map.
+ This result is a snapshot, and may not reflect unprocessed
+ entries that will be removed before next attempted access
+ because they are no longer referenced.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the number of key-value mappings in this map`]
+			]
+		]],
+		[/* method */ 'values()', [
+			[/* method description */
+				[/* text */ 't', `Returns a `],
+				[/* reference */ 'r', `java.util.Collection`],
+				[/* text */ 't', ` view of the values contained in this map.
+ The collection is backed by the map, so changes to the map are
+ reflected in the collection, and vice-versa.  If the map is
+ modified while an iteration over the collection is in progress
+ (except through the iterator's own `],
+				[/* inline code block */ 'i', `remove`],
+				[/* text */ 't', ` operation),
+ the results of the iteration are undefined.  The collection
+ supports element removal, which removes the corresponding
+ mapping from the map, via the `],
+				[/* inline code block */ 'i', `Iterator.remove`],
+				[/* text */ 't', `,
+ `],
+				[/* inline code block */ 'i', `Collection.remove`],
+				[/* text */ 't', `, `],
+				[/* inline code block */ 'i', `removeAll`],
+				[/* text */ 't', `,
+ `],
+				[/* inline code block */ 'i', `retainAll`],
+				[/* text */ 't', ` and `],
+				[/* inline code block */ 'i', `clear`],
+				[/* text */ 't', ` operations.  It does not
+ support the `],
+				[/* inline code block */ 'i', `add`],
+				[/* text */ 't', ` or `],
+				[/* inline code block */ 'i', `addAll`],
+				[/* text */ 't', ` operations.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `a collection view of the values contained in this map`]
+			]
+		]],
+		[/* method */ 'entrySet()', [
+			[/* method description */
+				[/* text */ 't', `Returns a `],
+				[/* reference */ 'r', `java.util.Set`],
+				[/* text */ 't', ` view of the mappings contained in this map.
+ The set is backed by the map, so changes to the map are
+ reflected in the set, and vice-versa.  If the map is modified
+ while an iteration over the set is in progress (except through
+ the iterator's own `],
+				[/* inline code block */ 'i', `remove`],
+				[/* text */ 't', ` operation, or through the
+ `],
+				[/* inline code block */ 'i', `setValue`],
+				[/* text */ 't', ` operation on a map entry returned by the
+ iterator) the results of the iteration are undefined.  The set
+ supports element removal, which removes the corresponding
+ mapping from the map, via the `],
+				[/* inline code block */ 'i', `Iterator.remove`],
+				[/* text */ 't', `,
+ `],
+				[/* inline code block */ 'i', `Set.remove`],
+				[/* text */ 't', `, `],
+				[/* inline code block */ 'i', `removeAll`],
+				[/* text */ 't', `, `],
+				[/* inline code block */ 'i', `retainAll`],
+				[/* text */ 't', ` and
+ `],
+				[/* inline code block */ 'i', `clear`],
+				[/* text */ 't', ` operations.  It does not support the
+ `],
+				[/* inline code block */ 'i', `add`],
+				[/* text */ 't', ` or `],
+				[/* inline code block */ 'i', `addAll`],
+				[/* text */ 't', ` operations.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `a set view of the mappings contained in this map`]
+			]
+		]],
+		[/* method */ 'keySet()', [
+			[/* method description */
+				[/* text */ 't', `Returns a `],
+				[/* reference */ 'r', `java.util.Set`],
+				[/* text */ 't', ` view of the keys contained in this map.
+ The set is backed by the map, so changes to the map are
+ reflected in the set, and vice-versa.  If the map is modified
+ while an iteration over the set is in progress (except through
+ the iterator's own `],
+				[/* inline code block */ 'i', `remove`],
+				[/* text */ 't', ` operation), the results of
+ the iteration are undefined.  The set supports element removal,
+ which removes the corresponding mapping from the map, via the
+ `],
+				[/* inline code block */ 'i', `Iterator.remove`],
+				[/* text */ 't', `, `],
+				[/* inline code block */ 'i', `Set.remove`],
+				[/* text */ 't', `,
+ `],
+				[/* inline code block */ 'i', `removeAll`],
+				[/* text */ 't', `, `],
+				[/* inline code block */ 'i', `retainAll`],
+				[/* text */ 't', `, and `],
+				[/* inline code block */ 'i', `clear`],
+				[/* text */ 't', `
+ operations.  It does not support the `],
+				[/* inline code block */ 'i', `add`],
+				[/* text */ 't', ` or `],
+				[/* inline code block */ 'i', `addAll`],
+				[/* text */ 't', `
+ operations.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `a set view of the keys contained in this map`]
 			]
 		]],
 		[/* method */ 'get(java.lang.Object)', [
@@ -424,42 +562,54 @@ DocsCollector.collect('java.util.WeakHashMap', [
 				[/* text */ 't', `.)`]
 			]
 		]],
-		[/* method */ 'values()', [
+		[/* method */ 'remove(java.lang.Object)', [
 			[/* method description */
-				[/* text */ 't', `Returns a `],
-				[/* reference */ 'r', `java.util.Collection`],
-				[/* text */ 't', ` view of the values contained in this map.
- The collection is backed by the map, so changes to the map are
- reflected in the collection, and vice-versa.  If the map is
- modified while an iteration over the collection is in progress
- (except through the iterator's own `],
-				[/* inline code block */ 'i', `remove`],
-				[/* text */ 't', ` operation),
- the results of the iteration are undefined.  The collection
- supports element removal, which removes the corresponding
- mapping from the map, via the `],
-				[/* inline code block */ 'i', `Iterator.remove`],
-				[/* text */ 't', `,
+				[/* text */ 't', `Removes the mapping for a key from this weak hash map if it is present.
+ More formally, if this map contains a mapping from key `],
+				[/* inline code block */ 'i', `k`],
+				[/* text */ 't', ` to
+ value `],
+				[/* inline code block */ 'i', `v`],
+				[/* text */ 't', ` such that `],
+				[/* inline code block */ 'i', `(key==null ? k==null : key.equals(k))`],
+				[/* text */ 't', `, that mapping is removed.  (The map can contain
+ at most one such mapping.)
+
  `],
-				[/* inline code block */ 'i', `Collection.remove`],
-				[/* text */ 't', `, `],
-				[/* inline code block */ 'i', `removeAll`],
-				[/* text */ 't', `,
- `],
-				[/* inline code block */ 'i', `retainAll`],
-				[/* text */ 't', ` and `],
-				[/* inline code block */ 'i', `clear`],
-				[/* text */ 't', ` operations.  It does not
- support the `],
-				[/* inline code block */ 'i', `add`],
-				[/* text */ 't', ` or `],
-				[/* inline code block */ 'i', `addAll`],
-				[/* text */ 't', ` operations.`]
+				[/* block */ 'b', [
+					[/* text */ 't', `Returns the value to which this map previously associated the key,
+ or `],
+					[/* inline code block */ 'i', `null`],
+					[/* text */ 't', ` if the map contained no mapping for the key.  A
+ return value of `],
+					[/* inline code block */ 'i', `null`],
+					[/* text */ 't', ` does not `],
+					[/* text */ 't', `necessarily`],
+					[/* text */ 't', ` indicate
+ that the map contained no mapping for the key; it's also possible
+ that the map explicitly mapped the key to `],
+					[/* inline code block */ 'i', `null`],
+					[/* text */ 't', `.
+
+ `]
+				]],
+				[/* block */ 'b', `The map will not contain a mapping for the specified key once the
+ call returns.`]
 			],
-			/* parameters */ UDF,
+			[/* parameters */
+				[/* parameter */ 'key', [/* parameter description */
+					[/* text */ 't', `key whose mapping is to be removed from the map`]
+				]]
+			],
 			/* throws */ UDF,
 			[/* return description */
-				[/* text */ 't', `a collection view of the values contained in this map`]
+				[/* text */ 't', `the previous value associated with `],
+				[/* inline code block */ 'i', `key`],
+				[/* text */ 't', `, or
+         `],
+				[/* inline code block */ 'i', `null`],
+				[/* text */ 't', ` if there was no mapping for `],
+				[/* inline code block */ 'i', `key`]
 			]
 		]],
 		[/* method */ 'clear()', [
@@ -471,77 +621,7 @@ DocsCollector.collect('java.util.WeakHashMap', [
 			/* throws */ UDF,
 			/* return */ UDF
 		]],
-		[/* method */ 'isEmpty()', [
-			[/* method description */
-				[/* text */ 't', `Returns `],
-				[/* inline code block */ 'i', `true`],
-				[/* text */ 't', ` if this map contains no key-value mappings.
- This result is a snapshot, and may not reflect unprocessed
- entries that will be removed before next attempted access
- because they are no longer referenced.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* inline code block */ 'i', `true`],
-				[/* text */ 't', ` if this map contains no key-value mappings`]
-			]
-		]],
-		[/* method */ 'replaceAll(java.util.function.BiFunction)', UDF],
-		[/* method */ 'size()', [
-			[/* method description */
-				[/* text */ 't', `Returns the number of key-value mappings in this map.
- This result is a snapshot, and may not reflect unprocessed
- entries that will be removed before next attempted access
- because they are no longer referenced.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the number of key-value mappings in this map`]
-			]
-		]],
-		[/* method */ 'entrySet()', [
-			[/* method description */
-				[/* text */ 't', `Returns a `],
-				[/* reference */ 'r', `java.util.Set`],
-				[/* text */ 't', ` view of the mappings contained in this map.
- The set is backed by the map, so changes to the map are
- reflected in the set, and vice-versa.  If the map is modified
- while an iteration over the set is in progress (except through
- the iterator's own `],
-				[/* inline code block */ 'i', `remove`],
-				[/* text */ 't', ` operation, or through the
- `],
-				[/* inline code block */ 'i', `setValue`],
-				[/* text */ 't', ` operation on a map entry returned by the
- iterator) the results of the iteration are undefined.  The set
- supports element removal, which removes the corresponding
- mapping from the map, via the `],
-				[/* inline code block */ 'i', `Iterator.remove`],
-				[/* text */ 't', `,
- `],
-				[/* inline code block */ 'i', `Set.remove`],
-				[/* text */ 't', `, `],
-				[/* inline code block */ 'i', `removeAll`],
-				[/* text */ 't', `, `],
-				[/* inline code block */ 'i', `retainAll`],
-				[/* text */ 't', ` and
- `],
-				[/* inline code block */ 'i', `clear`],
-				[/* text */ 't', ` operations.  It does not support the
- `],
-				[/* inline code block */ 'i', `add`],
-				[/* text */ 't', ` or `],
-				[/* inline code block */ 'i', `addAll`],
-				[/* text */ 't', ` operations.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `a set view of the mappings contained in this map`]
-			]
-		]],
+		[/* method */ 'forEach(java.util.function.BiConsumer)', UDF],
 		[/* method */ 'putAll(java.util.Map)', [
 			[/* method description */
 				[/* text */ 't', `Copies all of the mappings from the specified map to this map.
@@ -560,86 +640,6 @@ DocsCollector.collect('java.util.WeakHashMap', [
 			],
 			/* return */ UDF
 		]],
-		[/* method */ 'forEach(java.util.function.BiConsumer)', UDF],
-		[/* method */ 'containsKey(java.lang.Object)', [
-			[/* method description */
-				[/* text */ 't', `Returns `],
-				[/* inline code block */ 'i', `true`],
-				[/* text */ 't', ` if this map contains a mapping for the
- specified key.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'key', [/* parameter description */
-					[/* text */ 't', `The key whose presence in this map is to be tested`]
-				]]
-			],
-			/* throws */ UDF,
-			[/* return description */
-				[/* inline code block */ 'i', `true`],
-				[/* text */ 't', ` if there is a mapping for `],
-				[/* inline code block */ 'i', `key`],
-				[/* text */ 't', `;
-         `],
-				[/* inline code block */ 'i', `false`],
-				[/* text */ 't', ` otherwise`]
-			]
-		]],
-		[/* method */ 'keySet()', [
-			[/* method description */
-				[/* text */ 't', `Returns a `],
-				[/* reference */ 'r', `java.util.Set`],
-				[/* text */ 't', ` view of the keys contained in this map.
- The set is backed by the map, so changes to the map are
- reflected in the set, and vice-versa.  If the map is modified
- while an iteration over the set is in progress (except through
- the iterator's own `],
-				[/* inline code block */ 'i', `remove`],
-				[/* text */ 't', ` operation), the results of
- the iteration are undefined.  The set supports element removal,
- which removes the corresponding mapping from the map, via the
- `],
-				[/* inline code block */ 'i', `Iterator.remove`],
-				[/* text */ 't', `, `],
-				[/* inline code block */ 'i', `Set.remove`],
-				[/* text */ 't', `,
- `],
-				[/* inline code block */ 'i', `removeAll`],
-				[/* text */ 't', `, `],
-				[/* inline code block */ 'i', `retainAll`],
-				[/* text */ 't', `, and `],
-				[/* inline code block */ 'i', `clear`],
-				[/* text */ 't', `
- operations.  It does not support the `],
-				[/* inline code block */ 'i', `add`],
-				[/* text */ 't', ` or `],
-				[/* inline code block */ 'i', `addAll`],
-				[/* text */ 't', `
- operations.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `a set view of the keys contained in this map`]
-			]
-		]],
-		[/* method */ 'containsValue(java.lang.Object)', [
-			[/* method description */
-				[/* text */ 't', `Returns `],
-				[/* inline code block */ 'i', `true`],
-				[/* text */ 't', ` if this map maps one or more keys to the
- specified value.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'value', [/* parameter description */
-					[/* text */ 't', `value whose presence in this map is to be tested`]
-				]]
-			],
-			/* throws */ UDF,
-			[/* return description */
-				[/* inline code block */ 'i', `true`],
-				[/* text */ 't', ` if this map maps one or more keys to the
-         specified value`]
-			]
-		]]
+		[/* method */ 'replaceAll(java.util.function.BiFunction)', UDF]
 	],
 ]);

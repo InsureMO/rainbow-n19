@@ -8,26 +8,33 @@ DocsCollector.collect('java.lang.ReflectiveOperationException', [
 	],
 	/* fields */ UDF,
 	[/* constructors */
-		[/* constructor */ '<init>(java.lang.Throwable)', [
+		[/* constructor */ '<init>()', [
 			[/* constructor description */
-				[/* text */ 't', `Constructs a new exception with the specified cause and a detail
- message of `],
-				[/* inline code block */ 'i', `(cause==null ? null : cause.toString())`],
-				[/* text */ 't', ` (which
- typically contains the class and detail message of `],
-				[/* inline code block */ 'i', `cause`],
-				[/* text */ 't', `).`]
+				[/* text */ 't', `Constructs a new exception with `],
+				[/* inline code block */ 'i', `null`],
+				[/* text */ 't', ` as its detail
+ message.  The cause is not initialized, and may subsequently be
+ initialized by a call to `],
+				[/* reference */ 'r', `.Throwable#initCause(java.lang.Throwable)`],
+				[/* text */ 't', `.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF
+		]],
+		[/* constructor */ '<init>(java.lang.String)', [
+			[/* constructor description */
+				[/* text */ 't', `Constructs a new exception with the specified detail message.
+ The cause is not initialized, and may subsequently be
+ initialized by a call to `],
+				[/* reference */ 'r', `.Throwable#initCause(java.lang.Throwable)`],
+				[/* text */ 't', `.`]
 			],
 			[/* parameters */
-				[/* parameter */ 'cause', [/* parameter description */
-					[/* text */ 't', `the cause (which is saved for later retrieval by the
-         `],
-					[/* reference */ 'r', `.Throwable#getCause()`],
-					[/* text */ 't', ` method).  (A `],
-					[/* inline code block */ 'i', `null`],
-					[/* text */ 't', ` value is
-         permitted, and indicates that the cause is nonexistent or
-         unknown.)`]
+				[/* parameter */ 'message', [/* parameter description */
+					[/* text */ 't', `the detail message. The detail message is saved for
+          later retrieval by the `],
+					[/* reference */ 'r', `.Throwable#getMessage()`],
+					[/* text */ 't', ` method.`]
 				]]
 			],
 			/* throws */ UDF
@@ -68,35 +75,28 @@ DocsCollector.collect('java.lang.ReflectiveOperationException', [
 			],
 			/* throws */ UDF
 		]],
-		[/* constructor */ '<init>(java.lang.String)', [
+		[/* constructor */ '<init>(java.lang.Throwable)', [
 			[/* constructor description */
-				[/* text */ 't', `Constructs a new exception with the specified detail message.
- The cause is not initialized, and may subsequently be
- initialized by a call to `],
-				[/* reference */ 'r', `.Throwable#initCause(java.lang.Throwable)`],
-				[/* text */ 't', `.`]
+				[/* text */ 't', `Constructs a new exception with the specified cause and a detail
+ message of `],
+				[/* inline code block */ 'i', `(cause==null ? null : cause.toString())`],
+				[/* text */ 't', ` (which
+ typically contains the class and detail message of `],
+				[/* inline code block */ 'i', `cause`],
+				[/* text */ 't', `).`]
 			],
 			[/* parameters */
-				[/* parameter */ 'message', [/* parameter description */
-					[/* text */ 't', `the detail message. The detail message is saved for
-          later retrieval by the `],
-					[/* reference */ 'r', `.Throwable#getMessage()`],
-					[/* text */ 't', ` method.`]
+				[/* parameter */ 'cause', [/* parameter description */
+					[/* text */ 't', `the cause (which is saved for later retrieval by the
+         `],
+					[/* reference */ 'r', `.Throwable#getCause()`],
+					[/* text */ 't', ` method).  (A `],
+					[/* inline code block */ 'i', `null`],
+					[/* text */ 't', ` value is
+         permitted, and indicates that the cause is nonexistent or
+         unknown.)`]
 				]]
 			],
-			/* throws */ UDF
-		]],
-		[/* constructor */ '<init>()', [
-			[/* constructor description */
-				[/* text */ 't', `Constructs a new exception with `],
-				[/* inline code block */ 'i', `null`],
-				[/* text */ 't', ` as its detail
- message.  The cause is not initialized, and may subsequently be
- initialized by a call to `],
-				[/* reference */ 'r', `.Throwable#initCause(java.lang.Throwable)`],
-				[/* text */ 't', `.`]
-			],
-			/* parameters */ UDF,
 			/* throws */ UDF
 		]]
 	],

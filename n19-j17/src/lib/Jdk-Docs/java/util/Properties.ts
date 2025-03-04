@@ -163,15 +163,11 @@ DocsCollector.collect('java.util.Properties', [
 		]]
 	],
 	[/* constructors */
-		[/* constructor */ '<init>(java.util.Properties)', [
+		[/* constructor */ '<init>()', [
 			[/* constructor description */
-				[/* text */ 't', `Creates an empty property list with the specified defaults.`]
+				[/* text */ 't', `Creates an empty property list with no default values.`]
 			],
-			[/* parameters */
-				[/* parameter */ 'defaults', [/* parameter description */
-					[/* text */ 't', `the defaults.`]
-				]]
-			],
+			/* parameters */ UDF,
 			/* throws */ UDF
 		]],
 		[/* constructor */ '<init>(int)', [
@@ -195,19 +191,27 @@ DocsCollector.collect('java.util.Properties', [
 				]]
 			]
 		]],
-		[/* constructor */ '<init>()', [
+		[/* constructor */ '<init>(java.util.Properties)', [
 			[/* constructor description */
-				[/* text */ 't', `Creates an empty property list with no default values.`]
+				[/* text */ 't', `Creates an empty property list with the specified defaults.`]
 			],
-			/* parameters */ UDF,
+			[/* parameters */
+				[/* parameter */ 'defaults', [/* parameter description */
+					[/* text */ 't', `the defaults.`]
+				]]
+			],
 			/* throws */ UDF
 		]]
 	],
 	[/* methods */
-		[/* method */ 'remove(java.lang.Object)', UDF],
-		[/* method */ 'remove(java.lang.Object,java.lang.Object)', UDF],
+		[/* method */ 'rehash()', UDF],
+		[/* method */ 'contains(java.lang.Object)', UDF],
+		[/* method */ 'containsKey(java.lang.Object)', UDF],
+		[/* method */ 'containsValue(java.lang.Object)', UDF],
+		[/* method */ 'isEmpty()', UDF],
+		[/* method */ 'size()', UDF],
 		[/* method */ 'get(java.lang.Object)', UDF],
-		[/* method */ 'put(java.lang.Object,java.lang.Object)', UDF],
+		[/* method */ 'getOrDefault(java.lang.Object,java.lang.Object)', UDF],
 		[/* method */ 'getProperty(java.lang.String)', [
 			[/* method description */
 				[/* text */ 't', `Searches for the property with the specified key in this property list.
@@ -247,11 +251,154 @@ DocsCollector.collect('java.util.Properties', [
 				[/* text */ 't', `the value in this property list with the specified key value.`]
 			]
 		]],
-		[/* method */ 'equals(java.lang.Object)', UDF],
-		[/* method */ 'toString()', UDF],
 		[/* method */ 'values()', UDF],
+		[/* method */ 'propertyNames()', [
+			[/* method description */
+				[/* text */ 't', `Returns an enumeration of all the keys in this property list,
+ including distinct keys in the default property list if a key
+ of the same name has not already been found from the main
+ properties list.`]
+			],
+			/* parameters */ UDF,
+			[/* throws */
+				[/* throw */ 'java.lang.ClassCastException', [/* throw description */
+					[/* text */ 't', `if any key in this property list
+          is not a string.`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `an enumeration of all the keys in this property list, including
+          the keys in the default property list.`]
+			]
+		]],
+		[/* method */ 'elements()', UDF],
+		[/* method */ 'keys()', UDF],
+		[/* method */ 'keySet()', UDF],
+		[/* method */ 'stringPropertyNames()', [
+			[/* method description */
+				[/* text */ 't', `Returns an unmodifiable set of keys from this property list
+ where the key and its corresponding value are strings,
+ including distinct keys in the default property list if a key
+ of the same name has not already been found from the main
+ properties list.  Properties whose key or value is not
+ of type `],
+				[/* inline code block */ 'i', `String`],
+				[/* text */ 't', ` are omitted.
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', `
+ The returned set is not backed by this `],
+					[/* inline code block */ 'i', `Properties`],
+					[/* text */ 't', ` object.
+ Changes to this `],
+					[/* inline code block */ 'i', `Properties`],
+					[/* text */ 't', ` object are not reflected in the
+ returned set.`]
+				]]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `an unmodifiable set of keys in this property list where
+          the key and its corresponding value are strings,
+          including the keys in the default property list.`]
+			]
+		]],
+		[/* method */ 'entrySet()', UDF],
+		[/* method */ 'equals(java.lang.Object)', UDF],
+		[/* method */ 'remove(java.lang.Object,java.lang.Object)', UDF],
+		[/* method */ 'replace(java.lang.Object,java.lang.Object,java.lang.Object)', UDF],
 		[/* method */ 'hashCode()', UDF],
 		[/* method */ 'clone()', UDF],
+		[/* method */ 'compute(java.lang.Object,java.util.function.BiFunction)', UDF],
+		[/* method */ 'computeIfAbsent(java.lang.Object,java.util.function.Function)', UDF],
+		[/* method */ 'computeIfPresent(java.lang.Object,java.util.function.BiFunction)', UDF],
+		[/* method */ 'merge(java.lang.Object,java.lang.Object,java.util.function.BiFunction)', UDF],
+		[/* method */ 'put(java.lang.Object,java.lang.Object)', UDF],
+		[/* method */ 'putIfAbsent(java.lang.Object,java.lang.Object)', UDF],
+		[/* method */ 'remove(java.lang.Object)', UDF],
+		[/* method */ 'replace(java.lang.Object,java.lang.Object)', UDF],
+		[/* method */ 'setProperty(java.lang.String,java.lang.String)', [
+			[/* method description */
+				[/* text */ 't', `Calls the `],
+				[/* inline code block */ 'i', `Hashtable`],
+				[/* text */ 't', ` method `],
+				[/* inline code block */ 'i', `put`],
+				[/* text */ 't', `. Provided for
+ parallelism with the `],
+				[/* inline code block */ 'i', `getProperty`],
+				[/* text */ 't', ` method. Enforces use of
+ strings for property keys and values. The value returned is the
+ result of the `],
+				[/* inline code block */ 'i', `Hashtable`],
+				[/* text */ 't', ` call to `],
+				[/* inline code block */ 'i', `put`],
+				[/* text */ 't', `.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'key', [/* parameter description */
+					[/* text */ 't', `the key to be placed into this property list.`]
+				]],
+				[/* parameter */ 'value', [/* parameter description */
+					[/* text */ 't', `the value corresponding to `],
+					[/* inline code block */ 'i', `key`],
+					[/* text */ 't', `.`]
+				]]
+			],
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the previous value of the specified key in this property
+             list, or `],
+				[/* inline code block */ 'i', `null`],
+				[/* text */ 't', ` if it did not have one.`]
+			]
+		]],
+		[/* method */ 'toString()', UDF],
+		[/* method */ 'clear()', UDF],
+		[/* method */ 'forEach(java.util.function.BiConsumer)', UDF],
+		[/* method */ 'load(java.io.InputStream)', [
+			[/* method description */
+				[/* text */ 't', `Reads a property list (key and element pairs) from the input
+ byte stream. The input stream is in a simple line-oriented
+ format as specified in
+ `],
+				[/* reference */ 'r', `#load(java.io.Reader)`, `load(Reader)`],
+				[/* text */ 't', ` and is assumed to use
+ the ISO 8859-1 character encoding; that is each byte is one Latin1
+ character. Characters not in Latin1, and certain special characters,
+ are represented in keys and elements using Unicode escapes as defined in
+ section `],
+				[/* external link */ 'a', `https://docs.oracle.com/javase/specs/jls/se17/html/jls-3.html#jls-3.3`, `3.3`],
+				[/* text */ 't', ` of
+ `],
+				[/* text */ 't', `The Java Language Specification`],
+				[/* text */ 't', `.
+ `],
+				[/* block */ 'b', `
+ The specified stream remains open after this method returns.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'inStream', [/* parameter description */
+					[/* text */ 't', `the input stream.`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.io.IOException', [/* throw description */
+					[/* text */ 't', `if an error occurred when reading from the
+             input stream.`]
+				]],
+				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
+					[/* text */ 't', `if the input stream contains a
+             malformed Unicode escape sequence.`]
+				]],
+				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
+					[/* text */ 't', `if `],
+					[/* inline code block */ 'i', `inStream`],
+					[/* text */ 't', ` is null.`]
+				]]
+			],
+			/* return */ UDF
+		]],
 		[/* method */ 'load(java.io.Reader)', [
 			[/* method description */
 				[/* text */ 't', `Reads a property list (key and element pairs) from the input
@@ -540,45 +687,126 @@ DocsCollector.collect('java.util.Properties', [
 			],
 			/* return */ UDF
 		]],
-		[/* method */ 'load(java.io.InputStream)', [
+		[/* method */ 'loadFromXML(java.io.InputStream)', [
 			[/* method description */
-				[/* text */ 't', `Reads a property list (key and element pairs) from the input
- byte stream. The input stream is in a simple line-oriented
- format as specified in
+				[/* text */ 't', `Loads all of the properties represented by the XML document on the
+ specified input stream into this properties table.
+
  `],
-				[/* reference */ 'r', `#load(java.io.Reader)`, `load(Reader)`],
-				[/* text */ 't', ` and is assumed to use
- the ISO 8859-1 character encoding; that is each byte is one Latin1
- character. Characters not in Latin1, and certain special characters,
- are represented in keys and elements using Unicode escapes as defined in
- section `],
-				[/* external link */ 'a', `https://docs.oracle.com/javase/specs/jls/se17/html/jls-3.html#jls-3.3`, `3.3`],
-				[/* text */ 't', ` of
+				[/* block */ 'b', `The XML document must have the following DOCTYPE declaration:
  `],
-				[/* text */ 't', `The Java Language Specification`],
-				[/* text */ 't', `.
+				[/* code block */ 'c', ` <!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
  `],
-				[/* block */ 'b', `
- The specified stream remains open after this method returns.`]
+				[/* text */ 't', `
+ Furthermore, the document must satisfy the properties DTD described
+ above.
+
+ `],
+				[/* block */ 'b', ''],
+				[/* block */ 'b', [
+					[/* text */ 't', ` An implementation is required to read XML documents that use the
+ "`],
+					[/* inline code block */ 'i', `UTF-8`],
+					[/* text */ 't', `" or "`],
+					[/* inline code block */ 'i', `UTF-16`],
+					[/* text */ 't', `" encoding. An implementation may
+ support additional encodings.
+
+ `]
+				]],
+				[/* block */ 'b', `The specified stream is closed after this method returns.`]
 			],
 			[/* parameters */
-				[/* parameter */ 'inStream', [/* parameter description */
-					[/* text */ 't', `the input stream.`]
+				[/* parameter */ 'in', [/* parameter description */
+					[/* text */ 't', `the input stream from which to read the XML document.`]
 				]]
 			],
 			[/* throws */
 				[/* throw */ 'java.io.IOException', [/* throw description */
-					[/* text */ 't', `if an error occurred when reading from the
-             input stream.`]
+					[/* text */ 't', `if reading from the specified input stream
+         results in an `],
+					[/* inline code block */ 'i', `IOException`],
+					[/* text */ 't', `.`]
 				]],
-				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
-					[/* text */ 't', `if the input stream contains a
-             malformed Unicode escape sequence.`]
+				[/* throw */ 'java.io.UnsupportedEncodingException', [/* throw description */
+					[/* text */ 't', `if the document's encoding
+         declaration can be read and it specifies an encoding that is not
+         supported`]
+				]],
+				[/* throw */ 'java.util.InvalidPropertiesFormatException', [/* throw description */
+					[/* text */ 't', `Data on input stream does not
+         constitute a valid XML document with the mandated document type.`]
 				]],
 				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
 					[/* text */ 't', `if `],
-					[/* inline code block */ 'i', `inStream`],
+					[/* inline code block */ 'i', `in`],
 					[/* text */ 't', ` is null.`]
+				]]
+			],
+			/* return */ UDF
+		]],
+		[/* method */ 'putAll(java.util.Map)', UDF],
+		[/* method */ 'replaceAll(java.util.function.BiFunction)', UDF],
+		[/* method */ 'list(java.io.PrintStream)', [
+			[/* method description */
+				[/* text */ 't', `Prints this property list out to the specified output stream.
+ This method is useful for debugging.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'out', [/* parameter description */
+					[/* text */ 't', `an output stream.`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.lang.ClassCastException', [/* throw description */
+					[/* text */ 't', `if any key in this property list
+          is not a string.`]
+				]]
+			],
+			/* return */ UDF
+		]],
+		[/* method */ 'list(java.io.PrintWriter)', [
+			[/* method description */
+				[/* text */ 't', `Prints this property list out to the specified output stream.
+ This method is useful for debugging.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'out', [/* parameter description */
+					[/* text */ 't', `an output stream.`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.lang.ClassCastException', [/* throw description */
+					[/* text */ 't', `if any key in this property list
+          is not a string.`]
+				]]
+			],
+			/* return */ UDF
+		]],
+		[/* method */ 'save(java.io.OutputStream,java.lang.String)', [
+			[/* method description */
+				[/* text */ 't', `Calls the `],
+				[/* inline code block */ 'i', `store(OutputStream out, String comments)`],
+				[/* text */ 't', ` method
+ and suppresses IOExceptions that were thrown.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'out', [/* parameter description */
+					[/* text */ 't', `an output stream.`]
+				]],
+				[/* parameter */ 'comments', [/* parameter description */
+					[/* text */ 't', `a description of the property list.`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.lang.ClassCastException', [/* throw description */
+					[/* text */ 't', `if this `],
+					[/* inline code block */ 'i', `Properties`],
+					[/* text */ 't', ` object
+             contains any keys or values that are not
+             `],
+					[/* inline code block */ 'i', `Strings`],
+					[/* text */ 't', `.`]
 				]]
 			],
 			/* return */ UDF
@@ -812,93 +1040,56 @@ DocsCollector.collect('java.util.Properties', [
 			],
 			/* return */ UDF
 		]],
-		[/* method */ 'clear()', UDF],
-		[/* method */ 'isEmpty()', UDF],
-		[/* method */ 'replace(java.lang.Object,java.lang.Object,java.lang.Object)', UDF],
-		[/* method */ 'replace(java.lang.Object,java.lang.Object)', UDF],
-		[/* method */ 'replaceAll(java.util.function.BiFunction)', UDF],
-		[/* method */ 'size()', UDF],
-		[/* method */ 'contains(java.lang.Object)', UDF],
-		[/* method */ 'list(java.io.PrintStream)', [
+		[/* method */ 'storeToXML(java.io.OutputStream,java.lang.String)', [
 			[/* method description */
-				[/* text */ 't', `Prints this property list out to the specified output stream.
- This method is useful for debugging.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'out', [/* parameter description */
-					[/* text */ 't', `an output stream.`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.ClassCastException', [/* throw description */
-					[/* text */ 't', `if any key in this property list
-          is not a string.`]
-				]]
-			],
-			/* return */ UDF
-		]],
-		[/* method */ 'list(java.io.PrintWriter)', [
-			[/* method description */
-				[/* text */ 't', `Prints this property list out to the specified output stream.
- This method is useful for debugging.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'out', [/* parameter description */
-					[/* text */ 't', `an output stream.`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.ClassCastException', [/* throw description */
-					[/* text */ 't', `if any key in this property list
-          is not a string.`]
-				]]
-			],
-			/* return */ UDF
-		]],
-		[/* method */ 'elements()', UDF],
-		[/* method */ 'merge(java.lang.Object,java.lang.Object,java.util.function.BiFunction)', UDF],
-		[/* method */ 'entrySet()', UDF],
-		[/* method */ 'putAll(java.util.Map)', UDF],
-		[/* method */ 'putIfAbsent(java.lang.Object,java.lang.Object)', UDF],
-		[/* method */ 'compute(java.lang.Object,java.util.function.BiFunction)', UDF],
-		[/* method */ 'setProperty(java.lang.String,java.lang.String)', [
-			[/* method description */
-				[/* text */ 't', `Calls the `],
-				[/* inline code block */ 'i', `Hashtable`],
-				[/* text */ 't', ` method `],
-				[/* inline code block */ 'i', `put`],
-				[/* text */ 't', `. Provided for
- parallelism with the `],
-				[/* inline code block */ 'i', `getProperty`],
-				[/* text */ 't', ` method. Enforces use of
- strings for property keys and values. The value returned is the
- result of the `],
-				[/* inline code block */ 'i', `Hashtable`],
-				[/* text */ 't', ` call to `],
-				[/* inline code block */ 'i', `put`],
-				[/* text */ 't', `.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'key', [/* parameter description */
-					[/* text */ 't', `the key to be placed into this property list.`]
-				]],
-				[/* parameter */ 'value', [/* parameter description */
-					[/* text */ 't', `the value corresponding to `],
-					[/* inline code block */ 'i', `key`],
+				[/* text */ 't', `Emits an XML document representing all of the properties contained
+ in this table.
+
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', ` An invocation of this method of the form `],
+					[/* inline code block */ 'i', `props.storeToXML(os, comment)`],
+					[/* text */ 't', ` behaves in exactly the same way as the invocation
+ `],
+					[/* inline code block */ 'i', `props.storeToXML(os, comment, "UTF-8");`],
 					[/* text */ 't', `.`]
 				]]
 			],
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the previous value of the specified key in this property
-             list, or `],
-				[/* inline code block */ 'i', `null`],
-				[/* text */ 't', ` if it did not have one.`]
-			]
+			[/* parameters */
+				[/* parameter */ 'os', [/* parameter description */
+					[/* text */ 't', `the output stream on which to emit the XML document.`]
+				]],
+				[/* parameter */ 'comment', [/* parameter description */
+					[/* text */ 't', `a description of the property list, or `],
+					[/* inline code block */ 'i', `null`],
+					[/* text */ 't', `
+        if no comment is desired.`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.io.IOException', [/* throw description */
+					[/* text */ 't', `if writing to the specified output stream
+         results in an `],
+					[/* inline code block */ 'i', `IOException`],
+					[/* text */ 't', `.`]
+				]],
+				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
+					[/* text */ 't', `if `],
+					[/* inline code block */ 'i', `os`],
+					[/* text */ 't', ` is null.`]
+				]],
+				[/* throw */ 'java.lang.ClassCastException', [/* throw description */
+					[/* text */ 't', `if this `],
+					[/* inline code block */ 'i', `Properties`],
+					[/* text */ 't', ` object
+         contains any keys or values that are not
+         `],
+					[/* inline code block */ 'i', `Strings`],
+					[/* text */ 't', `.`]
+				]]
+			],
+			/* return */ UDF
 		]],
-		[/* method */ 'forEach(java.util.function.BiConsumer)', UDF],
-		[/* method */ 'containsKey(java.lang.Object)', UDF],
-		[/* method */ 'computeIfAbsent(java.lang.Object,java.util.function.Function)', UDF],
 		[/* method */ 'storeToXML(java.io.OutputStream,java.lang.String,java.lang.String)', [
 			[/* method description */
 				[/* text */ 't', `Emits an XML document representing all of the properties contained
@@ -993,56 +1184,6 @@ DocsCollector.collect('java.util.Properties', [
 			],
 			/* return */ UDF
 		]],
-		[/* method */ 'storeToXML(java.io.OutputStream,java.lang.String)', [
-			[/* method description */
-				[/* text */ 't', `Emits an XML document representing all of the properties contained
- in this table.
-
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', ` An invocation of this method of the form `],
-					[/* inline code block */ 'i', `props.storeToXML(os, comment)`],
-					[/* text */ 't', ` behaves in exactly the same way as the invocation
- `],
-					[/* inline code block */ 'i', `props.storeToXML(os, comment, "UTF-8");`],
-					[/* text */ 't', `.`]
-				]]
-			],
-			[/* parameters */
-				[/* parameter */ 'os', [/* parameter description */
-					[/* text */ 't', `the output stream on which to emit the XML document.`]
-				]],
-				[/* parameter */ 'comment', [/* parameter description */
-					[/* text */ 't', `a description of the property list, or `],
-					[/* inline code block */ 'i', `null`],
-					[/* text */ 't', `
-        if no comment is desired.`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.io.IOException', [/* throw description */
-					[/* text */ 't', `if writing to the specified output stream
-         results in an `],
-					[/* inline code block */ 'i', `IOException`],
-					[/* text */ 't', `.`]
-				]],
-				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
-					[/* text */ 't', `if `],
-					[/* inline code block */ 'i', `os`],
-					[/* text */ 't', ` is null.`]
-				]],
-				[/* throw */ 'java.lang.ClassCastException', [/* throw description */
-					[/* text */ 't', `if this `],
-					[/* inline code block */ 'i', `Properties`],
-					[/* text */ 't', ` object
-         contains any keys or values that are not
-         `],
-					[/* inline code block */ 'i', `Strings`],
-					[/* text */ 't', `.`]
-				]]
-			],
-			/* return */ UDF
-		]],
 		[/* method */ 'storeToXML(java.io.OutputStream,java.lang.String,java.nio.charset.Charset)', [
 			[/* method description */
 				[/* text */ 't', `Emits an XML document representing all of the properties contained
@@ -1119,147 +1260,6 @@ DocsCollector.collect('java.util.Properties', [
 				]]
 			],
 			/* return */ UDF
-		]],
-		[/* method */ 'keys()', UDF],
-		[/* method */ 'keySet()', UDF],
-		[/* method */ 'containsValue(java.lang.Object)', UDF],
-		[/* method */ 'getOrDefault(java.lang.Object,java.lang.Object)', UDF],
-		[/* method */ 'computeIfPresent(java.lang.Object,java.util.function.BiFunction)', UDF],
-		[/* method */ 'save(java.io.OutputStream,java.lang.String)', [
-			[/* method description */
-				[/* text */ 't', `Calls the `],
-				[/* inline code block */ 'i', `store(OutputStream out, String comments)`],
-				[/* text */ 't', ` method
- and suppresses IOExceptions that were thrown.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'out', [/* parameter description */
-					[/* text */ 't', `an output stream.`]
-				]],
-				[/* parameter */ 'comments', [/* parameter description */
-					[/* text */ 't', `a description of the property list.`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.ClassCastException', [/* throw description */
-					[/* text */ 't', `if this `],
-					[/* inline code block */ 'i', `Properties`],
-					[/* text */ 't', ` object
-             contains any keys or values that are not
-             `],
-					[/* inline code block */ 'i', `Strings`],
-					[/* text */ 't', `.`]
-				]]
-			],
-			/* return */ UDF
-		]],
-		[/* method */ 'loadFromXML(java.io.InputStream)', [
-			[/* method description */
-				[/* text */ 't', `Loads all of the properties represented by the XML document on the
- specified input stream into this properties table.
-
- `],
-				[/* block */ 'b', `The XML document must have the following DOCTYPE declaration:
- `],
-				[/* code block */ 'c', ` <!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
- `],
-				[/* text */ 't', `
- Furthermore, the document must satisfy the properties DTD described
- above.
-
- `],
-				[/* block */ 'b', ''],
-				[/* block */ 'b', [
-					[/* text */ 't', ` An implementation is required to read XML documents that use the
- "`],
-					[/* inline code block */ 'i', `UTF-8`],
-					[/* text */ 't', `" or "`],
-					[/* inline code block */ 'i', `UTF-16`],
-					[/* text */ 't', `" encoding. An implementation may
- support additional encodings.
-
- `]
-				]],
-				[/* block */ 'b', `The specified stream is closed after this method returns.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'in', [/* parameter description */
-					[/* text */ 't', `the input stream from which to read the XML document.`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.io.IOException', [/* throw description */
-					[/* text */ 't', `if reading from the specified input stream
-         results in an `],
-					[/* inline code block */ 'i', `IOException`],
-					[/* text */ 't', `.`]
-				]],
-				[/* throw */ 'java.io.UnsupportedEncodingException', [/* throw description */
-					[/* text */ 't', `if the document's encoding
-         declaration can be read and it specifies an encoding that is not
-         supported`]
-				]],
-				[/* throw */ 'java.util.InvalidPropertiesFormatException', [/* throw description */
-					[/* text */ 't', `Data on input stream does not
-         constitute a valid XML document with the mandated document type.`]
-				]],
-				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
-					[/* text */ 't', `if `],
-					[/* inline code block */ 'i', `in`],
-					[/* text */ 't', ` is null.`]
-				]]
-			],
-			/* return */ UDF
-		]],
-		[/* method */ 'propertyNames()', [
-			[/* method description */
-				[/* text */ 't', `Returns an enumeration of all the keys in this property list,
- including distinct keys in the default property list if a key
- of the same name has not already been found from the main
- properties list.`]
-			],
-			/* parameters */ UDF,
-			[/* throws */
-				[/* throw */ 'java.lang.ClassCastException', [/* throw description */
-					[/* text */ 't', `if any key in this property list
-          is not a string.`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `an enumeration of all the keys in this property list, including
-          the keys in the default property list.`]
-			]
-		]],
-		[/* method */ 'stringPropertyNames()', [
-			[/* method description */
-				[/* text */ 't', `Returns an unmodifiable set of keys from this property list
- where the key and its corresponding value are strings,
- including distinct keys in the default property list if a key
- of the same name has not already been found from the main
- properties list.  Properties whose key or value is not
- of type `],
-				[/* inline code block */ 'i', `String`],
-				[/* text */ 't', ` are omitted.
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', `
- The returned set is not backed by this `],
-					[/* inline code block */ 'i', `Properties`],
-					[/* text */ 't', ` object.
- Changes to this `],
-					[/* inline code block */ 'i', `Properties`],
-					[/* text */ 't', ` object are not reflected in the
- returned set.`]
-				]]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `an unmodifiable set of keys in this property list where
-          the key and its corresponding value are strings,
-          including the keys in the default property list.`]
-			]
-		]],
-		[/* method */ 'rehash()', UDF]
+		]]
 	],
 ]);

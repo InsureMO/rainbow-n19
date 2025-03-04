@@ -9,14 +9,11 @@ DocsCollector.collect('java.io.UncheckedIOException', [
 	],
 	/* fields */ UDF,
 	[/* constructors */
-		[/* constructor */ '<init>(java.lang.String,java.io.IOException)', [
+		[/* constructor */ '<init>(java.io.IOException)', [
 			[/* constructor description */
 				[/* text */ 't', `Constructs an instance of this class.`]
 			],
 			[/* parameters */
-				[/* parameter */ 'message', [/* parameter description */
-					[/* text */ 't', `the detail message, can be null`]
-				]],
 				[/* parameter */ 'cause', [/* parameter description */
 					[/* text */ 't', `the `],
 					[/* inline code block */ 'i', `IOException`]
@@ -29,11 +26,14 @@ DocsCollector.collect('java.io.UncheckedIOException', [
 				]]
 			]
 		]],
-		[/* constructor */ '<init>(java.io.IOException)', [
+		[/* constructor */ '<init>(java.lang.String,java.io.IOException)', [
 			[/* constructor description */
 				[/* text */ 't', `Constructs an instance of this class.`]
 			],
 			[/* parameters */
+				[/* parameter */ 'message', [/* parameter description */
+					[/* text */ 't', `the detail message, can be null`]
+				]],
 				[/* parameter */ 'cause', [/* parameter description */
 					[/* text */ 't', `the `],
 					[/* inline code block */ 'i', `IOException`]

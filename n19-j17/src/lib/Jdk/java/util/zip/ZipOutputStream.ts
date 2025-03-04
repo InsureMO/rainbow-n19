@@ -194,14 +194,14 @@ JdkClassCreateHelper.class('java.util.zip.ZipOutputStream', [
 		]
 	],
 	[/* declared fields */
-		[/* public static final int java.util.zip.ZipOutputStream.STORED */
-			/* name */ 'STORED',
+		[/* public static final int java.util.zip.ZipOutputStream.DEFLATED */
+			/* name */ 'DEFLATED',
 			/* type */ 'int',
 			/* annotations */ UDF,
 			/* modifiers */ 25
 		],
-		[/* public static final int java.util.zip.ZipOutputStream.DEFLATED */
-			/* name */ 'DEFLATED',
+		[/* public static final int java.util.zip.ZipOutputStream.STORED */
+			/* name */ 'STORED',
 			/* type */ 'int',
 			/* annotations */ UDF,
 			/* modifiers */ 25

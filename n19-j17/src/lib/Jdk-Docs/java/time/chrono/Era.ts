@@ -34,130 +34,6 @@ DocsCollector.collect('java.time.chrono.Era', [
 	/* fields */ UDF,
 	/* constructors */ UDF,
 	[/* methods */
-		[/* method */ 'get(java.time.temporal.TemporalField)', [
-			[/* method description */
-				[/* text */ 't', `Gets the value of the specified field from this era as an `],
-				[/* inline code block */ 'i', `int`],
-				[/* text */ 't', `.
- `],
-				[/* block */ 'b', `
- This queries this era for the value of the specified field.
- The returned value will always be within the valid range of values for the field.
- If it is not possible to return the value, because the field is not supported
- or for some other reason, an exception is thrown.
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', `
- If the field is a `],
-					[/* reference */ 'r', `enum class in java.time.temporal.ChronoField`],
-					[/* text */ 't', ` then the query is implemented here.
- The `],
-					[/* inline code block */ 'i', `ERA`],
-					[/* text */ 't', ` field returns the value of the era.
- All other `],
-					[/* inline code block */ 'i', `ChronoField`],
-					[/* text */ 't', ` instances will throw an `],
-					[/* inline code block */ 'i', `UnsupportedTemporalTypeException`],
-					[/* text */ 't', `.
- `]
-				]],
-				[/* block */ 'b', [
-					[/* text */ 't', `
- If the field is not a `],
-					[/* inline code block */ 'i', `ChronoField`],
-					[/* text */ 't', `, then the result of this method
- is obtained by invoking `],
-					[/* inline code block */ 'i', `TemporalField.getFrom(TemporalAccessor)`],
-					[/* text */ 't', `
- passing `],
-					[/* inline code block */ 'i', `this`],
-					[/* text */ 't', ` as the argument. Whether the value can be obtained,
- and what the value represents, is determined by the field.`]
-				]]
-			],
-			[/* parameters */
-				[/* parameter */ 'field', [/* parameter description */
-					[/* text */ 't', `the field to get, not null`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.time.DateTimeException', [/* throw description */
-					[/* text */ 't', `if a value for the field cannot be obtained or
-         the value is outside the range of valid values for the field`]
-				]],
-				[/* throw */ 'java.time.temporal.UnsupportedTemporalTypeException', [/* throw description */
-					[/* text */ 't', `if the field is not supported or
-         the range of values exceeds an `],
-					[/* inline code block */ 'i', `int`]
-				]],
-				[/* throw */ 'java.lang.ArithmeticException', [/* throw description */
-					[/* text */ 't', `if numeric overflow occurs`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `the value for the field`]
-			]
-		]],
-		[/* method */ 'getLong(java.time.temporal.TemporalField)', [
-			[/* method description */
-				[/* text */ 't', `Gets the value of the specified field from this era as a `],
-				[/* inline code block */ 'i', `long`],
-				[/* text */ 't', `.
- `],
-				[/* block */ 'b', `
- This queries this era for the value of the specified field.
- If it is not possible to return the value, because the field is not supported
- or for some other reason, an exception is thrown.
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', `
- If the field is a `],
-					[/* reference */ 'r', `enum class in java.time.temporal.ChronoField`],
-					[/* text */ 't', ` then the query is implemented here.
- The `],
-					[/* inline code block */ 'i', `ERA`],
-					[/* text */ 't', ` field returns the value of the era.
- All other `],
-					[/* inline code block */ 'i', `ChronoField`],
-					[/* text */ 't', ` instances will throw an `],
-					[/* inline code block */ 'i', `UnsupportedTemporalTypeException`],
-					[/* text */ 't', `.
- `]
-				]],
-				[/* block */ 'b', [
-					[/* text */ 't', `
- If the field is not a `],
-					[/* inline code block */ 'i', `ChronoField`],
-					[/* text */ 't', `, then the result of this method
- is obtained by invoking `],
-					[/* inline code block */ 'i', `TemporalField.getFrom(TemporalAccessor)`],
-					[/* text */ 't', `
- passing `],
-					[/* inline code block */ 'i', `this`],
-					[/* text */ 't', ` as the argument. Whether the value can be obtained,
- and what the value represents, is determined by the field.`]
-				]]
-			],
-			[/* parameters */
-				[/* parameter */ 'field', [/* parameter description */
-					[/* text */ 't', `the field to get, not null`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.time.DateTimeException', [/* throw description */
-					[/* text */ 't', `if a value for the field cannot be obtained`]
-				]],
-				[/* throw */ 'java.time.temporal.UnsupportedTemporalTypeException', [/* throw description */
-					[/* text */ 't', `if the field is not supported`]
-				]],
-				[/* throw */ 'java.lang.ArithmeticException', [/* throw description */
-					[/* text */ 't', `if numeric overflow occurs`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `the value for the field`]
-			]
-		]],
 		[/* method */ 'getValue()', [
 			[/* method description */
 				[/* text */ 't', `Gets the numeric value associated with the era as defined by the chronology.
@@ -227,70 +103,6 @@ DocsCollector.collect('java.time.chrono.Era', [
 				[/* text */ 't', `the query result, null may be returned (defined by the query)`]
 			]
 		]],
-		[/* method */ 'range(java.time.temporal.TemporalField)', [
-			[/* method description */
-				[/* text */ 't', `Gets the range of valid values for the specified field.
- `],
-				[/* block */ 'b', `
- The range object expresses the minimum and maximum valid values for a field.
- This era is used to enhance the accuracy of the returned range.
- If it is not possible to return the range, because the field is not supported
- or for some other reason, an exception is thrown.
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', `
- If the field is a `],
-					[/* reference */ 'r', `enum class in java.time.temporal.ChronoField`],
-					[/* text */ 't', ` then the query is implemented here.
- The `],
-					[/* inline code block */ 'i', `ERA`],
-					[/* text */ 't', ` field returns the range.
- All other `],
-					[/* inline code block */ 'i', `ChronoField`],
-					[/* text */ 't', ` instances will throw an `],
-					[/* inline code block */ 'i', `UnsupportedTemporalTypeException`],
-					[/* text */ 't', `.
- `]
-				]],
-				[/* block */ 'b', [
-					[/* text */ 't', `
- If the field is not a `],
-					[/* inline code block */ 'i', `ChronoField`],
-					[/* text */ 't', `, then the result of this method
- is obtained by invoking `],
-					[/* inline code block */ 'i', `TemporalField.rangeRefinedBy(TemporalAccessor)`],
-					[/* text */ 't', `
- passing `],
-					[/* inline code block */ 'i', `this`],
-					[/* text */ 't', ` as the argument.
- Whether the range can be obtained is determined by the field.
- `]
-				]],
-				[/* block */ 'b', [
-					[/* text */ 't', `
- The default implementation must return a range for `],
-					[/* inline code block */ 'i', `ERA`],
-					[/* text */ 't', ` from
- zero to one, suitable for two era calendar systems such as ISO.`]
-				]]
-			],
-			[/* parameters */
-				[/* parameter */ 'field', [/* parameter description */
-					[/* text */ 't', `the field to query the range for, not null`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.time.DateTimeException', [/* throw description */
-					[/* text */ 't', `if the range for the field cannot be obtained`]
-				]],
-				[/* throw */ 'java.time.temporal.UnsupportedTemporalTypeException', [/* throw description */
-					[/* text */ 't', `if the unit is not supported`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `the range of valid values for the field, not null`]
-			]
-		]],
 		[/* method */ 'isSupported(java.time.temporal.TemporalField)', [
 			[/* method description */
 				[/* text */ 't', `Checks if the specified field is supported.
@@ -341,6 +153,70 @@ DocsCollector.collect('java.time.chrono.Era', [
 			/* throws */ UDF,
 			[/* return description */
 				[/* text */ 't', `true if the field is supported on this era, false if not`]
+			]
+		]],
+		[/* method */ 'get(java.time.temporal.TemporalField)', [
+			[/* method description */
+				[/* text */ 't', `Gets the value of the specified field from this era as an `],
+				[/* inline code block */ 'i', `int`],
+				[/* text */ 't', `.
+ `],
+				[/* block */ 'b', `
+ This queries this era for the value of the specified field.
+ The returned value will always be within the valid range of values for the field.
+ If it is not possible to return the value, because the field is not supported
+ or for some other reason, an exception is thrown.
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', `
+ If the field is a `],
+					[/* reference */ 'r', `enum class in java.time.temporal.ChronoField`],
+					[/* text */ 't', ` then the query is implemented here.
+ The `],
+					[/* inline code block */ 'i', `ERA`],
+					[/* text */ 't', ` field returns the value of the era.
+ All other `],
+					[/* inline code block */ 'i', `ChronoField`],
+					[/* text */ 't', ` instances will throw an `],
+					[/* inline code block */ 'i', `UnsupportedTemporalTypeException`],
+					[/* text */ 't', `.
+ `]
+				]],
+				[/* block */ 'b', [
+					[/* text */ 't', `
+ If the field is not a `],
+					[/* inline code block */ 'i', `ChronoField`],
+					[/* text */ 't', `, then the result of this method
+ is obtained by invoking `],
+					[/* inline code block */ 'i', `TemporalField.getFrom(TemporalAccessor)`],
+					[/* text */ 't', `
+ passing `],
+					[/* inline code block */ 'i', `this`],
+					[/* text */ 't', ` as the argument. Whether the value can be obtained,
+ and what the value represents, is determined by the field.`]
+				]]
+			],
+			[/* parameters */
+				[/* parameter */ 'field', [/* parameter description */
+					[/* text */ 't', `the field to get, not null`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.time.DateTimeException', [/* throw description */
+					[/* text */ 't', `if a value for the field cannot be obtained or
+         the value is outside the range of valid values for the field`]
+				]],
+				[/* throw */ 'java.time.temporal.UnsupportedTemporalTypeException', [/* throw description */
+					[/* text */ 't', `if the field is not supported or
+         the range of values exceeds an `],
+					[/* inline code block */ 'i', `int`]
+				]],
+				[/* throw */ 'java.lang.ArithmeticException', [/* throw description */
+					[/* text */ 't', `if numeric overflow occurs`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `the value for the field`]
 			]
 		]],
 		[/* method */ 'getDisplayName(java.time.format.TextStyle,java.util.Locale)', [
@@ -421,6 +297,130 @@ DocsCollector.collect('java.time.chrono.Era', [
 			],
 			[/* return description */
 				[/* text */ 't', `the adjusted object, not null`]
+			]
+		]],
+		[/* method */ 'range(java.time.temporal.TemporalField)', [
+			[/* method description */
+				[/* text */ 't', `Gets the range of valid values for the specified field.
+ `],
+				[/* block */ 'b', `
+ The range object expresses the minimum and maximum valid values for a field.
+ This era is used to enhance the accuracy of the returned range.
+ If it is not possible to return the range, because the field is not supported
+ or for some other reason, an exception is thrown.
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', `
+ If the field is a `],
+					[/* reference */ 'r', `enum class in java.time.temporal.ChronoField`],
+					[/* text */ 't', ` then the query is implemented here.
+ The `],
+					[/* inline code block */ 'i', `ERA`],
+					[/* text */ 't', ` field returns the range.
+ All other `],
+					[/* inline code block */ 'i', `ChronoField`],
+					[/* text */ 't', ` instances will throw an `],
+					[/* inline code block */ 'i', `UnsupportedTemporalTypeException`],
+					[/* text */ 't', `.
+ `]
+				]],
+				[/* block */ 'b', [
+					[/* text */ 't', `
+ If the field is not a `],
+					[/* inline code block */ 'i', `ChronoField`],
+					[/* text */ 't', `, then the result of this method
+ is obtained by invoking `],
+					[/* inline code block */ 'i', `TemporalField.rangeRefinedBy(TemporalAccessor)`],
+					[/* text */ 't', `
+ passing `],
+					[/* inline code block */ 'i', `this`],
+					[/* text */ 't', ` as the argument.
+ Whether the range can be obtained is determined by the field.
+ `]
+				]],
+				[/* block */ 'b', [
+					[/* text */ 't', `
+ The default implementation must return a range for `],
+					[/* inline code block */ 'i', `ERA`],
+					[/* text */ 't', ` from
+ zero to one, suitable for two era calendar systems such as ISO.`]
+				]]
+			],
+			[/* parameters */
+				[/* parameter */ 'field', [/* parameter description */
+					[/* text */ 't', `the field to query the range for, not null`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.time.DateTimeException', [/* throw description */
+					[/* text */ 't', `if the range for the field cannot be obtained`]
+				]],
+				[/* throw */ 'java.time.temporal.UnsupportedTemporalTypeException', [/* throw description */
+					[/* text */ 't', `if the unit is not supported`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `the range of valid values for the field, not null`]
+			]
+		]],
+		[/* method */ 'getLong(java.time.temporal.TemporalField)', [
+			[/* method description */
+				[/* text */ 't', `Gets the value of the specified field from this era as a `],
+				[/* inline code block */ 'i', `long`],
+				[/* text */ 't', `.
+ `],
+				[/* block */ 'b', `
+ This queries this era for the value of the specified field.
+ If it is not possible to return the value, because the field is not supported
+ or for some other reason, an exception is thrown.
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', `
+ If the field is a `],
+					[/* reference */ 'r', `enum class in java.time.temporal.ChronoField`],
+					[/* text */ 't', ` then the query is implemented here.
+ The `],
+					[/* inline code block */ 'i', `ERA`],
+					[/* text */ 't', ` field returns the value of the era.
+ All other `],
+					[/* inline code block */ 'i', `ChronoField`],
+					[/* text */ 't', ` instances will throw an `],
+					[/* inline code block */ 'i', `UnsupportedTemporalTypeException`],
+					[/* text */ 't', `.
+ `]
+				]],
+				[/* block */ 'b', [
+					[/* text */ 't', `
+ If the field is not a `],
+					[/* inline code block */ 'i', `ChronoField`],
+					[/* text */ 't', `, then the result of this method
+ is obtained by invoking `],
+					[/* inline code block */ 'i', `TemporalField.getFrom(TemporalAccessor)`],
+					[/* text */ 't', `
+ passing `],
+					[/* inline code block */ 'i', `this`],
+					[/* text */ 't', ` as the argument. Whether the value can be obtained,
+ and what the value represents, is determined by the field.`]
+				]]
+			],
+			[/* parameters */
+				[/* parameter */ 'field', [/* parameter description */
+					[/* text */ 't', `the field to get, not null`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.time.DateTimeException', [/* throw description */
+					[/* text */ 't', `if a value for the field cannot be obtained`]
+				]],
+				[/* throw */ 'java.time.temporal.UnsupportedTemporalTypeException', [/* throw description */
+					[/* text */ 't', `if the field is not supported`]
+				]],
+				[/* throw */ 'java.lang.ArithmeticException', [/* throw description */
+					[/* text */ 't', `if numeric overflow occurs`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `the value for the field`]
 			]
 		]]
 	],

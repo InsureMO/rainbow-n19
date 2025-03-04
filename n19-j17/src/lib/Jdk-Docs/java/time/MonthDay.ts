@@ -76,6 +76,194 @@ DocsCollector.collect('java.time.MonthDay', [
 	/* fields */ UDF,
 	/* constructors */ UDF,
 	[/* methods */
+		[/* method */ 'query(java.time.temporal.TemporalQuery)', [
+			[/* method description */
+				[/* text */ 't', `Queries this month-day using the specified query.
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', `
+ This queries this month-day using the specified query strategy object.
+ The `],
+					[/* inline code block */ 'i', `TemporalQuery`],
+					[/* text */ 't', ` object defines the logic to be used to
+ obtain the result. Read the documentation of the query to understand
+ what the result of this method will be.
+ `]
+				]],
+				[/* block */ 'b', [
+					[/* text */ 't', `
+ The result of this method is obtained by invoking the
+ `],
+					[/* reference */ 'r', `.TemporalQuery#queryFrom(java.time.temporal.TemporalAccessor)`],
+					[/* text */ 't', ` method on the
+ specified query passing `],
+					[/* inline code block */ 'i', `this`],
+					[/* text */ 't', ` as the argument.`]
+				]]
+			],
+			[/* parameters */
+				[/* parameter */ 'query', [/* parameter description */
+					[/* text */ 't', `the query to invoke, not null`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.time.DateTimeException', [/* throw description */
+					[/* text */ 't', `if unable to query (defined by the query)`]
+				]],
+				[/* throw */ 'java.lang.ArithmeticException', [/* throw description */
+					[/* text */ 't', `if numeric overflow occurs (defined by the query)`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `the query result, null may be returned (defined by the query)`]
+			]
+		]],
+		[/* method */ 'equals(java.lang.Object)', [
+			[/* method description */
+				[/* text */ 't', `Checks if this month-day is equal to another month-day.
+ `],
+				[/* block */ 'b', `
+ The comparison is based on the time-line position of the month-day within a year.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'obj', [/* parameter description */
+					[/* text */ 't', `the object to check, null returns false`]
+				]]
+			],
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `true if this is equal to the other month-day`]
+			]
+		]],
+		[/* method */ 'isAfter(java.time.MonthDay)', [
+			[/* method description */
+				[/* text */ 't', `Checks if this month-day is after the specified month-day.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'other', [/* parameter description */
+					[/* text */ 't', `the other month-day to compare to, not null`]
+				]]
+			],
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `true if this is after the specified month-day`]
+			]
+		]],
+		[/* method */ 'isBefore(java.time.MonthDay)', [
+			[/* method description */
+				[/* text */ 't', `Checks if this month-day is before the specified month-day.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'other', [/* parameter description */
+					[/* text */ 't', `the other month-day to compare to, not null`]
+				]]
+			],
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `true if this point is before the specified month-day`]
+			]
+		]],
+		[/* method */ 'isSupported(java.time.temporal.TemporalField)', [
+			[/* method description */
+				[/* text */ 't', `Checks if the specified field is supported.
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', `
+ This checks if this month-day can be queried for the specified field.
+ If false, then calling the `],
+					[/* reference */ 'r', `#range(java.time.temporal.TemporalField)`, `range`],
+					[/* text */ 't', ` and
+ `],
+					[/* reference */ 'r', `#get(java.time.temporal.TemporalField)`, `get`],
+					[/* text */ 't', ` methods will throw an exception.
+ `]
+				]],
+				[/* block */ 'b', [
+					[/* text */ 't', `
+ If the field is a `],
+					[/* reference */ 'r', `enum class in java.time.temporal.ChronoField`],
+					[/* text */ 't', ` then the query is implemented here.
+ The supported fields are:
+ `]
+				]],
+				[/* list */ 'l', [
+					[/* block */ 'b', [
+						[/* inline code block */ 'i', `MONTH_OF_YEAR`]
+					]],
+					[/* block */ 'b', [
+						[/* inline code block */ 'i', `YEAR`]
+					]]
+				]],
+				[/* text */ 't', `
+ All other `],
+				[/* inline code block */ 'i', `ChronoField`],
+				[/* text */ 't', ` instances will return false.
+ `],
+				[/* block */ 'b', ''],
+				[/* block */ 'b', [
+					[/* text */ 't', `
+ If the field is not a `],
+					[/* inline code block */ 'i', `ChronoField`],
+					[/* text */ 't', `, then the result of this method
+ is obtained by invoking `],
+					[/* inline code block */ 'i', `TemporalField.isSupportedBy(TemporalAccessor)`],
+					[/* text */ 't', `
+ passing `],
+					[/* inline code block */ 'i', `this`],
+					[/* text */ 't', ` as the argument.
+ Whether the field is supported is determined by the field.`]
+				]]
+			],
+			[/* parameters */
+				[/* parameter */ 'field', [/* parameter description */
+					[/* text */ 't', `the field to check, null returns false`]
+				]]
+			],
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `true if the field is supported on this month-day, false if not`]
+			]
+		]],
+		[/* method */ 'isValidYear(int)', [
+			[/* method description */
+				[/* text */ 't', `Checks if the year is valid for this month-day.
+ `],
+				[/* block */ 'b', `
+ This method checks whether this month and day and the input year form
+ a valid date. This can only return false for February 29th.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'year', [/* parameter description */
+					[/* text */ 't', `the year to validate`]
+				]]
+			],
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `true if the year is valid for this month-day`]
+			]
+		]],
+		[/* method */ 'compareTo(java.time.MonthDay)', [
+			[/* method description */
+				[/* text */ 't', `Compares this month-day to another month-day.
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', `
+ The comparison is based first on value of the month, then on the value of the day.
+ It is "consistent with equals", as defined by `],
+					[/* reference */ 'r', `java.lang.Comparable`],
+					[/* text */ 't', `.`]
+				]]
+			],
+			[/* parameters */
+				[/* parameter */ 'other', [/* parameter description */
+					[/* text */ 't', `the other month-day to compare to, not null`]
+				]]
+			],
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the comparator value, negative if less, positive if greater`]
+			]
+		]],
 		[/* method */ 'get(java.time.temporal.TemporalField)', [
 			[/* method description */
 				[/* text */ 't', `Gets the value of the specified field from this month-day as an `],
@@ -141,21 +329,75 @@ DocsCollector.collect('java.time.MonthDay', [
 				[/* text */ 't', `the value for the field`]
 			]
 		]],
-		[/* method */ 'equals(java.lang.Object)', [
+		[/* method */ 'getDayOfMonth()', [
 			[/* method description */
-				[/* text */ 't', `Checks if this month-day is equal to another month-day.
+				[/* text */ 't', `Gets the day-of-month field.
  `],
-				[/* block */ 'b', `
- The comparison is based on the time-line position of the month-day within a year.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'obj', [/* parameter description */
-					[/* text */ 't', `the object to check, null returns false`]
+				[/* block */ 'b', [
+					[/* text */ 't', `
+ This method returns the primitive `],
+					[/* inline code block */ 'i', `int`],
+					[/* text */ 't', ` value for the day-of-month.`]
 				]]
 			],
+			/* parameters */ UDF,
 			/* throws */ UDF,
 			[/* return description */
-				[/* text */ 't', `true if this is equal to the other month-day`]
+				[/* text */ 't', `the day-of-month, from 1 to 31`]
+			]
+		]],
+		[/* method */ 'getMonthValue()', [
+			[/* method description */
+				[/* text */ 't', `Gets the month-of-year field from 1 to 12.
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', `
+ This method returns the month as an `],
+					[/* inline code block */ 'i', `int`],
+					[/* text */ 't', ` from 1 to 12.
+ Application code is frequently clearer if the enum `],
+					[/* reference */ 'r', `enum class in java.time.Month`],
+					[/* text */ 't', `
+ is used by calling `],
+					[/* reference */ 'r', `#getMonth()`, `getMonth()`],
+					[/* text */ 't', `.`]
+				]]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the month-of-year, from 1 to 12`]
+			]
+		]],
+		[/* method */ 'hashCode()', [
+			[/* method description */
+				[/* text */ 't', `A hash code for this month-day.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `a suitable hash code`]
+			]
+		]],
+		[/* method */ 'format(java.time.format.DateTimeFormatter)', [
+			[/* method description */
+				[/* text */ 't', `Formats this month-day using the specified formatter.
+ `],
+				[/* block */ 'b', `
+ This month-day will be passed to the formatter to produce a string.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'formatter', [/* parameter description */
+					[/* text */ 't', `the formatter to use, not null`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.time.DateTimeException', [/* throw description */
+					[/* text */ 't', `if an error occurs during printing`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `the formatted month-day string, not null`]
 			]
 		]],
 		[/* method */ 'toString()', [
@@ -179,36 +421,267 @@ DocsCollector.collect('java.time.MonthDay', [
 				[/* text */ 't', `a string representation of this month-day, not null`]
 			]
 		]],
-		[/* method */ 'hashCode()', [
+		[/* method */ 'atYear(int)', [
 			[/* method description */
-				[/* text */ 't', `A hash code for this month-day.`]
+				[/* text */ 't', `Combines this month-day with a year to create a `],
+				[/* inline code block */ 'i', `LocalDate`],
+				[/* text */ 't', `.
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', `
+ This returns a `],
+					[/* inline code block */ 'i', `LocalDate`],
+					[/* text */ 't', ` formed from this month-day and the specified year.
+ `]
+				]],
+				[/* block */ 'b', `
+ A month-day of February 29th will be adjusted to February 28th in the resulting
+ date if the year is not a leap year.
+ `],
+				[/* block */ 'b', `
+ This instance is immutable and unaffected by this method call.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'year', [/* parameter description */
+					[/* text */ 't', `the year to use, from MIN_YEAR to MAX_YEAR`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.time.DateTimeException', [/* throw description */
+					[/* text */ 't', `if the year is outside the valid range of years`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `the local date formed from this month-day and the specified year, not null`]
+			]
+		]],
+		[/* method */ 'getMonth()', [
+			[/* method description */
+				[/* text */ 't', `Gets the month-of-year field using the `],
+				[/* inline code block */ 'i', `Month`],
+				[/* text */ 't', ` enum.
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', `
+ This method returns the enum `],
+					[/* reference */ 'r', `enum class in java.time.Month`],
+					[/* text */ 't', ` for the month.
+ This avoids confusion as to what `],
+					[/* inline code block */ 'i', `int`],
+					[/* text */ 't', ` values mean.
+ If you need access to the primitive `],
+					[/* inline code block */ 'i', `int`],
+					[/* text */ 't', ` value then the enum
+ provides the `],
+					[/* reference */ 'r', `.Month#getValue()`],
+					[/* text */ 't', `.`]
+				]]
 			],
 			/* parameters */ UDF,
 			/* throws */ UDF,
 			[/* return description */
-				[/* text */ 't', `a suitable hash code`]
+				[/* text */ 't', `the month-of-year, not null`]
 			]
 		]],
-		[/* method */ 'compareTo(java.time.MonthDay)', [
+		[/* method */ 'with(java.time.Month)', [
 			[/* method description */
-				[/* text */ 't', `Compares this month-day to another month-day.
+				[/* text */ 't', `Returns a copy of this `],
+				[/* inline code block */ 'i', `MonthDay`],
+				[/* text */ 't', ` with the month-of-year altered.
  `],
-				[/* block */ 'b', [
-					[/* text */ 't', `
- The comparison is based first on value of the month, then on the value of the day.
- It is "consistent with equals", as defined by `],
-					[/* reference */ 'r', `java.lang.Comparable`],
-					[/* text */ 't', `.`]
-				]]
+				[/* block */ 'b', `
+ This returns a month-day with the specified month.
+ If the day-of-month is invalid for the specified month, the day will
+ be adjusted to the last valid day-of-month.
+ `],
+				[/* block */ 'b', `
+ This instance is immutable and unaffected by this method call.`]
 			],
 			[/* parameters */
-				[/* parameter */ 'other', [/* parameter description */
-					[/* text */ 't', `the other month-day to compare to, not null`]
+				[/* parameter */ 'month', [/* parameter description */
+					[/* text */ 't', `the month-of-year to set in the returned month-day, not null`]
 				]]
 			],
 			/* throws */ UDF,
 			[/* return description */
-				[/* text */ 't', `the comparator value, negative if less, positive if greater`]
+				[/* text */ 't', `a `],
+				[/* inline code block */ 'i', `MonthDay`],
+				[/* text */ 't', ` based on this month-day with the requested month, not null`]
+			]
+		]],
+		[/* method */ 'withDayOfMonth(int)', [
+			[/* method description */
+				[/* text */ 't', `Returns a copy of this `],
+				[/* inline code block */ 'i', `MonthDay`],
+				[/* text */ 't', ` with the day-of-month altered.
+ `],
+				[/* block */ 'b', `
+ This returns a month-day with the specified day-of-month.
+ If the day-of-month is invalid for the month, an exception is thrown.
+ `],
+				[/* block */ 'b', `
+ This instance is immutable and unaffected by this method call.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'dayOfMonth', [/* parameter description */
+					[/* text */ 't', `the day-of-month to set in the return month-day, from 1 to 31`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.time.DateTimeException', [/* throw description */
+					[/* text */ 't', `if the day-of-month value is invalid,
+  or if the day-of-month is invalid for the month`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `a `],
+				[/* inline code block */ 'i', `MonthDay`],
+				[/* text */ 't', ` based on this month-day with the requested day, not null`]
+			]
+		]],
+		[/* method */ 'withMonth(int)', [
+			[/* method description */
+				[/* text */ 't', `Returns a copy of this `],
+				[/* inline code block */ 'i', `MonthDay`],
+				[/* text */ 't', ` with the month-of-year altered.
+ `],
+				[/* block */ 'b', `
+ This returns a month-day with the specified month.
+ If the day-of-month is invalid for the specified month, the day will
+ be adjusted to the last valid day-of-month.
+ `],
+				[/* block */ 'b', `
+ This instance is immutable and unaffected by this method call.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'month', [/* parameter description */
+					[/* text */ 't', `the month-of-year to set in the returned month-day, from 1 (January) to 12 (December)`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.time.DateTimeException', [/* throw description */
+					[/* text */ 't', `if the month-of-year value is invalid`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `a `],
+				[/* inline code block */ 'i', `MonthDay`],
+				[/* text */ 't', ` based on this month-day with the requested month, not null`]
+			]
+		]],
+		[/* method */ 'adjustInto(java.time.temporal.Temporal)', [
+			[/* method description */
+				[/* text */ 't', `Adjusts the specified temporal object to have this month-day.
+ `],
+				[/* block */ 'b', `
+ This returns a temporal object of the same observable type as the input
+ with the month and day-of-month changed to be the same as this.
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', `
+ The adjustment is equivalent to using `],
+					[/* reference */ 'r', `.Temporal#with(java.time.temporal.TemporalField,long)`],
+					[/* text */ 't', `
+ twice, passing `],
+					[/* reference */ 'r', `.ChronoField#MONTH_OF_YEAR`],
+					[/* text */ 't', ` and
+ `],
+					[/* reference */ 'r', `.ChronoField#DAY_OF_MONTH`],
+					[/* text */ 't', ` as the fields.
+ If the specified temporal object does not use the ISO calendar system then
+ a `],
+					[/* inline code block */ 'i', `DateTimeException`],
+					[/* text */ 't', ` is thrown.
+ `]
+				]],
+				[/* block */ 'b', [
+					[/* text */ 't', `
+ In most cases, it is clearer to reverse the calling pattern by using
+ `],
+					[/* reference */ 'r', `.Temporal#with(java.time.temporal.TemporalAdjuster)`],
+					[/* text */ 't', `:
+ `]
+				]],
+				[/* code block */ 'c', `   // these two lines are equivalent, but the second approach is recommended
+   temporal = thisMonthDay.adjustInto(temporal);
+   temporal = temporal.with(thisMonthDay);
+ `],
+				[/* block */ 'b', ''],
+				[/* block */ 'b', `
+ This instance is immutable and unaffected by this method call.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'temporal', [/* parameter description */
+					[/* text */ 't', `the target object to be adjusted, not null`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.time.DateTimeException', [/* throw description */
+					[/* text */ 't', `if unable to make the adjustment`]
+				]],
+				[/* throw */ 'java.lang.ArithmeticException', [/* throw description */
+					[/* text */ 't', `if numeric overflow occurs`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `the adjusted object, not null`]
+			]
+		]],
+		[/* method */ 'range(java.time.temporal.TemporalField)', [
+			[/* method description */
+				[/* text */ 't', `Gets the range of valid values for the specified field.
+ `],
+				[/* block */ 'b', `
+ The range object expresses the minimum and maximum valid values for a field.
+ This month-day is used to enhance the accuracy of the returned range.
+ If it is not possible to return the range, because the field is not supported
+ or for some other reason, an exception is thrown.
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', `
+ If the field is a `],
+					[/* reference */ 'r', `enum class in java.time.temporal.ChronoField`],
+					[/* text */ 't', ` then the query is implemented here.
+ The `],
+					[/* reference */ 'r', `#isSupported(java.time.temporal.TemporalField)`, `supported fields`],
+					[/* text */ 't', ` will return
+ appropriate range instances.
+ All other `],
+					[/* inline code block */ 'i', `ChronoField`],
+					[/* text */ 't', ` instances will throw an `],
+					[/* inline code block */ 'i', `UnsupportedTemporalTypeException`],
+					[/* text */ 't', `.
+ `]
+				]],
+				[/* block */ 'b', [
+					[/* text */ 't', `
+ If the field is not a `],
+					[/* inline code block */ 'i', `ChronoField`],
+					[/* text */ 't', `, then the result of this method
+ is obtained by invoking `],
+					[/* inline code block */ 'i', `TemporalField.rangeRefinedBy(TemporalAccessor)`],
+					[/* text */ 't', `
+ passing `],
+					[/* inline code block */ 'i', `this`],
+					[/* text */ 't', ` as the argument.
+ Whether the range can be obtained is determined by the field.`]
+				]]
+			],
+			[/* parameters */
+				[/* parameter */ 'field', [/* parameter description */
+					[/* text */ 't', `the field to query the range for, not null`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.time.DateTimeException', [/* throw description */
+					[/* text */ 't', `if the range for the field cannot be obtained`]
+				]],
+				[/* throw */ 'java.time.temporal.UnsupportedTemporalTypeException', [/* throw description */
+					[/* text */ 't', `if the field is not supported`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `the range of valid values for the field, not null`]
 			]
 		]],
 		[/* method */ 'getLong(java.time.temporal.TemporalField)', [
@@ -272,25 +745,131 @@ DocsCollector.collect('java.time.MonthDay', [
 				[/* text */ 't', `the value for the field`]
 			]
 		]],
-		[/* method */ 'format(java.time.format.DateTimeFormatter)', [
+		[/* method */ 'from(java.time.temporal.TemporalAccessor)', [
 			[/* method description */
-				[/* text */ 't', `Formats this month-day using the specified formatter.
+				[/* text */ 't', `Obtains an instance of `],
+				[/* inline code block */ 'i', `MonthDay`],
+				[/* text */ 't', ` from a temporal object.
  `],
-				[/* block */ 'b', `
- This month-day will be passed to the formatter to produce a string.`]
+				[/* block */ 'b', [
+					[/* text */ 't', `
+ This obtains a month-day based on the specified temporal.
+ A `],
+					[/* inline code block */ 'i', `TemporalAccessor`],
+					[/* text */ 't', ` represents an arbitrary set of date and time information,
+ which this factory converts to an instance of `],
+					[/* inline code block */ 'i', `MonthDay`],
+					[/* text */ 't', `.
+ `]
+				]],
+				[/* block */ 'b', [
+					[/* text */ 't', `
+ The conversion extracts the `],
+					[/* reference */ 'r', `.ChronoField#MONTH_OF_YEAR`],
+					[/* text */ 't', ` and
+ `],
+					[/* reference */ 'r', `.ChronoField#DAY_OF_MONTH`],
+					[/* text */ 't', ` fields.
+ The extraction is only permitted if the temporal object has an ISO
+ chronology, or can be converted to a `],
+					[/* inline code block */ 'i', `LocalDate`],
+					[/* text */ 't', `.
+ `]
+				]],
+				[/* block */ 'b', [
+					[/* text */ 't', `
+ This method matches the signature of the functional interface `],
+					[/* reference */ 'r', `java.time.temporal.TemporalQuery`],
+					[/* text */ 't', `
+ allowing it to be used as a query via method reference, `],
+					[/* inline code block */ 'i', `MonthDay::from`],
+					[/* text */ 't', `.`]
+				]]
 			],
 			[/* parameters */
-				[/* parameter */ 'formatter', [/* parameter description */
-					[/* text */ 't', `the formatter to use, not null`]
+				[/* parameter */ 'temporal', [/* parameter description */
+					[/* text */ 't', `the temporal object to convert, not null`]
 				]]
 			],
 			[/* throws */
 				[/* throw */ 'java.time.DateTimeException', [/* throw description */
-					[/* text */ 't', `if an error occurs during printing`]
+					[/* text */ 't', `if unable to convert to a `],
+					[/* inline code block */ 'i', `MonthDay`]
 				]]
 			],
 			[/* return description */
-				[/* text */ 't', `the formatted month-day string, not null`]
+				[/* text */ 't', `the month-day, not null`]
+			]
+		]],
+		[/* method */ 'now()', [
+			[/* method description */
+				[/* text */ 't', `Obtains the current month-day from the system clock in the default time-zone.
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', `
+ This will query the `],
+					[/* reference */ 'r', `.Clock#systemDefaultZone()`],
+					[/* text */ 't', ` in the default
+ time-zone to obtain the current month-day.
+ `]
+				]],
+				[/* block */ 'b', `
+ Using this method will prevent the ability to use an alternate clock for testing
+ because the clock is hard-coded.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the current month-day using the system clock and default time-zone, not null`]
+			]
+		]],
+		[/* method */ 'now(java.time.Clock)', [
+			[/* method description */
+				[/* text */ 't', `Obtains the current month-day from the specified clock.
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', `
+ This will query the specified clock to obtain the current month-day.
+ Using this method allows the use of an alternate clock for testing.
+ The alternate clock may be introduced using `],
+					[/* reference */ 'r', `java.time.Clock`],
+					[/* text */ 't', `.`]
+				]]
+			],
+			[/* parameters */
+				[/* parameter */ 'clock', [/* parameter description */
+					[/* text */ 't', `the clock to use, not null`]
+				]]
+			],
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the current month-day, not null`]
+			]
+		]],
+		[/* method */ 'now(java.time.ZoneId)', [
+			[/* method description */
+				[/* text */ 't', `Obtains the current month-day from the system clock in the specified time-zone.
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', `
+ This will query the `],
+					[/* reference */ 'r', `.Clock#system(java.time.ZoneId)`],
+					[/* text */ 't', ` to obtain the current month-day.
+ Specifying the time-zone avoids dependence on the default time-zone.
+ `]
+				]],
+				[/* block */ 'b', `
+ Using this method will prevent the ability to use an alternate clock for testing
+ because the clock is hard-coded.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'zone', [/* parameter description */
+					[/* text */ 't', `the zone ID to use, not null`]
+				]]
+			],
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the current month-day using the system clock, not null`]
 			]
 		]],
 		[/* method */ 'of(int,int)', [
@@ -359,248 +938,6 @@ DocsCollector.collect('java.time.MonthDay', [
 				[/* text */ 't', `the month-day, not null`]
 			]
 		]],
-		[/* method */ 'from(java.time.temporal.TemporalAccessor)', [
-			[/* method description */
-				[/* text */ 't', `Obtains an instance of `],
-				[/* inline code block */ 'i', `MonthDay`],
-				[/* text */ 't', ` from a temporal object.
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', `
- This obtains a month-day based on the specified temporal.
- A `],
-					[/* inline code block */ 'i', `TemporalAccessor`],
-					[/* text */ 't', ` represents an arbitrary set of date and time information,
- which this factory converts to an instance of `],
-					[/* inline code block */ 'i', `MonthDay`],
-					[/* text */ 't', `.
- `]
-				]],
-				[/* block */ 'b', [
-					[/* text */ 't', `
- The conversion extracts the `],
-					[/* reference */ 'r', `.ChronoField#MONTH_OF_YEAR`],
-					[/* text */ 't', ` and
- `],
-					[/* reference */ 'r', `.ChronoField#DAY_OF_MONTH`],
-					[/* text */ 't', ` fields.
- The extraction is only permitted if the temporal object has an ISO
- chronology, or can be converted to a `],
-					[/* inline code block */ 'i', `LocalDate`],
-					[/* text */ 't', `.
- `]
-				]],
-				[/* block */ 'b', [
-					[/* text */ 't', `
- This method matches the signature of the functional interface `],
-					[/* reference */ 'r', `java.time.temporal.TemporalQuery`],
-					[/* text */ 't', `
- allowing it to be used as a query via method reference, `],
-					[/* inline code block */ 'i', `MonthDay::from`],
-					[/* text */ 't', `.`]
-				]]
-			],
-			[/* parameters */
-				[/* parameter */ 'temporal', [/* parameter description */
-					[/* text */ 't', `the temporal object to convert, not null`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.time.DateTimeException', [/* throw description */
-					[/* text */ 't', `if unable to convert to a `],
-					[/* inline code block */ 'i', `MonthDay`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `the month-day, not null`]
-			]
-		]],
-		[/* method */ 'query(java.time.temporal.TemporalQuery)', [
-			[/* method description */
-				[/* text */ 't', `Queries this month-day using the specified query.
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', `
- This queries this month-day using the specified query strategy object.
- The `],
-					[/* inline code block */ 'i', `TemporalQuery`],
-					[/* text */ 't', ` object defines the logic to be used to
- obtain the result. Read the documentation of the query to understand
- what the result of this method will be.
- `]
-				]],
-				[/* block */ 'b', [
-					[/* text */ 't', `
- The result of this method is obtained by invoking the
- `],
-					[/* reference */ 'r', `.TemporalQuery#queryFrom(java.time.temporal.TemporalAccessor)`],
-					[/* text */ 't', ` method on the
- specified query passing `],
-					[/* inline code block */ 'i', `this`],
-					[/* text */ 't', ` as the argument.`]
-				]]
-			],
-			[/* parameters */
-				[/* parameter */ 'query', [/* parameter description */
-					[/* text */ 't', `the query to invoke, not null`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.time.DateTimeException', [/* throw description */
-					[/* text */ 't', `if unable to query (defined by the query)`]
-				]],
-				[/* throw */ 'java.lang.ArithmeticException', [/* throw description */
-					[/* text */ 't', `if numeric overflow occurs (defined by the query)`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `the query result, null may be returned (defined by the query)`]
-			]
-		]],
-		[/* method */ 'range(java.time.temporal.TemporalField)', [
-			[/* method description */
-				[/* text */ 't', `Gets the range of valid values for the specified field.
- `],
-				[/* block */ 'b', `
- The range object expresses the minimum and maximum valid values for a field.
- This month-day is used to enhance the accuracy of the returned range.
- If it is not possible to return the range, because the field is not supported
- or for some other reason, an exception is thrown.
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', `
- If the field is a `],
-					[/* reference */ 'r', `enum class in java.time.temporal.ChronoField`],
-					[/* text */ 't', ` then the query is implemented here.
- The `],
-					[/* reference */ 'r', `#isSupported(java.time.temporal.TemporalField)`, `supported fields`],
-					[/* text */ 't', ` will return
- appropriate range instances.
- All other `],
-					[/* inline code block */ 'i', `ChronoField`],
-					[/* text */ 't', ` instances will throw an `],
-					[/* inline code block */ 'i', `UnsupportedTemporalTypeException`],
-					[/* text */ 't', `.
- `]
-				]],
-				[/* block */ 'b', [
-					[/* text */ 't', `
- If the field is not a `],
-					[/* inline code block */ 'i', `ChronoField`],
-					[/* text */ 't', `, then the result of this method
- is obtained by invoking `],
-					[/* inline code block */ 'i', `TemporalField.rangeRefinedBy(TemporalAccessor)`],
-					[/* text */ 't', `
- passing `],
-					[/* inline code block */ 'i', `this`],
-					[/* text */ 't', ` as the argument.
- Whether the range can be obtained is determined by the field.`]
-				]]
-			],
-			[/* parameters */
-				[/* parameter */ 'field', [/* parameter description */
-					[/* text */ 't', `the field to query the range for, not null`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.time.DateTimeException', [/* throw description */
-					[/* text */ 't', `if the range for the field cannot be obtained`]
-				]],
-				[/* throw */ 'java.time.temporal.UnsupportedTemporalTypeException', [/* throw description */
-					[/* text */ 't', `if the field is not supported`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `the range of valid values for the field, not null`]
-			]
-		]],
-		[/* method */ 'isSupported(java.time.temporal.TemporalField)', [
-			[/* method description */
-				[/* text */ 't', `Checks if the specified field is supported.
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', `
- This checks if this month-day can be queried for the specified field.
- If false, then calling the `],
-					[/* reference */ 'r', `#range(java.time.temporal.TemporalField)`, `range`],
-					[/* text */ 't', ` and
- `],
-					[/* reference */ 'r', `#get(java.time.temporal.TemporalField)`, `get`],
-					[/* text */ 't', ` methods will throw an exception.
- `]
-				]],
-				[/* block */ 'b', [
-					[/* text */ 't', `
- If the field is a `],
-					[/* reference */ 'r', `enum class in java.time.temporal.ChronoField`],
-					[/* text */ 't', ` then the query is implemented here.
- The supported fields are:
- `]
-				]],
-				[/* list */ 'l', [
-					[/* block */ 'b', [
-						[/* inline code block */ 'i', `MONTH_OF_YEAR`]
-					]],
-					[/* block */ 'b', [
-						[/* inline code block */ 'i', `YEAR`]
-					]]
-				]],
-				[/* text */ 't', `
- All other `],
-				[/* inline code block */ 'i', `ChronoField`],
-				[/* text */ 't', ` instances will return false.
- `],
-				[/* block */ 'b', ''],
-				[/* block */ 'b', [
-					[/* text */ 't', `
- If the field is not a `],
-					[/* inline code block */ 'i', `ChronoField`],
-					[/* text */ 't', `, then the result of this method
- is obtained by invoking `],
-					[/* inline code block */ 'i', `TemporalField.isSupportedBy(TemporalAccessor)`],
-					[/* text */ 't', `
- passing `],
-					[/* inline code block */ 'i', `this`],
-					[/* text */ 't', ` as the argument.
- Whether the field is supported is determined by the field.`]
-				]]
-			],
-			[/* parameters */
-				[/* parameter */ 'field', [/* parameter description */
-					[/* text */ 't', `the field to check, null returns false`]
-				]]
-			],
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `true if the field is supported on this month-day, false if not`]
-			]
-		]],
-		[/* method */ 'parse(java.lang.CharSequence,java.time.format.DateTimeFormatter)', [
-			[/* method description */
-				[/* text */ 't', `Obtains an instance of `],
-				[/* inline code block */ 'i', `MonthDay`],
-				[/* text */ 't', ` from a text string using a specific formatter.
- `],
-				[/* block */ 'b', `
- The text is parsed using the formatter, returning a month-day.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'text', [/* parameter description */
-					[/* text */ 't', `the text to parse, not null`]
-				]],
-				[/* parameter */ 'formatter', [/* parameter description */
-					[/* text */ 't', `the formatter to use, not null`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.time.format.DateTimeParseException', [/* throw description */
-					[/* text */ 't', `if the text cannot be parsed`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `the parsed month-day, not null`]
-			]
-		]],
 		[/* method */ 'parse(java.lang.CharSequence)', [
 			[/* method description */
 				[/* text */ 't', `Obtains an instance of `],
@@ -631,367 +968,30 @@ DocsCollector.collect('java.time.MonthDay', [
 				[/* text */ 't', `the parsed month-day, not null`]
 			]
 		]],
-		[/* method */ 'getMonthValue()', [
+		[/* method */ 'parse(java.lang.CharSequence,java.time.format.DateTimeFormatter)', [
 			[/* method description */
-				[/* text */ 't', `Gets the month-of-year field from 1 to 12.
+				[/* text */ 't', `Obtains an instance of `],
+				[/* inline code block */ 'i', `MonthDay`],
+				[/* text */ 't', ` from a text string using a specific formatter.
  `],
-				[/* block */ 'b', [
-					[/* text */ 't', `
- This method returns the month as an `],
-					[/* inline code block */ 'i', `int`],
-					[/* text */ 't', ` from 1 to 12.
- Application code is frequently clearer if the enum `],
-					[/* reference */ 'r', `enum class in java.time.Month`],
-					[/* text */ 't', `
- is used by calling `],
-					[/* reference */ 'r', `#getMonth()`, `getMonth()`],
-					[/* text */ 't', `.`]
-				]]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the month-of-year, from 1 to 12`]
-			]
-		]],
-		[/* method */ 'getDayOfMonth()', [
-			[/* method description */
-				[/* text */ 't', `Gets the day-of-month field.
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', `
- This method returns the primitive `],
-					[/* inline code block */ 'i', `int`],
-					[/* text */ 't', ` value for the day-of-month.`]
-				]]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the day-of-month, from 1 to 31`]
-			]
-		]],
-		[/* method */ 'now()', [
-			[/* method description */
-				[/* text */ 't', `Obtains the current month-day from the system clock in the default time-zone.
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', `
- This will query the `],
-					[/* reference */ 'r', `.Clock#systemDefaultZone()`],
-					[/* text */ 't', ` in the default
- time-zone to obtain the current month-day.
- `]
-				]],
 				[/* block */ 'b', `
- Using this method will prevent the ability to use an alternate clock for testing
- because the clock is hard-coded.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the current month-day using the system clock and default time-zone, not null`]
-			]
-		]],
-		[/* method */ 'now(java.time.ZoneId)', [
-			[/* method description */
-				[/* text */ 't', `Obtains the current month-day from the system clock in the specified time-zone.
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', `
- This will query the `],
-					[/* reference */ 'r', `.Clock#system(java.time.ZoneId)`],
-					[/* text */ 't', ` to obtain the current month-day.
- Specifying the time-zone avoids dependence on the default time-zone.
- `]
-				]],
-				[/* block */ 'b', `
- Using this method will prevent the ability to use an alternate clock for testing
- because the clock is hard-coded.`]
+ The text is parsed using the formatter, returning a month-day.`]
 			],
 			[/* parameters */
-				[/* parameter */ 'zone', [/* parameter description */
-					[/* text */ 't', `the zone ID to use, not null`]
-				]]
-			],
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the current month-day using the system clock, not null`]
-			]
-		]],
-		[/* method */ 'now(java.time.Clock)', [
-			[/* method description */
-				[/* text */ 't', `Obtains the current month-day from the specified clock.
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', `
- This will query the specified clock to obtain the current month-day.
- Using this method allows the use of an alternate clock for testing.
- The alternate clock may be introduced using `],
-					[/* reference */ 'r', `java.time.Clock`],
-					[/* text */ 't', `.`]
-				]]
-			],
-			[/* parameters */
-				[/* parameter */ 'clock', [/* parameter description */
-					[/* text */ 't', `the clock to use, not null`]
-				]]
-			],
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the current month-day, not null`]
-			]
-		]],
-		[/* method */ 'adjustInto(java.time.temporal.Temporal)', [
-			[/* method description */
-				[/* text */ 't', `Adjusts the specified temporal object to have this month-day.
- `],
-				[/* block */ 'b', `
- This returns a temporal object of the same observable type as the input
- with the month and day-of-month changed to be the same as this.
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', `
- The adjustment is equivalent to using `],
-					[/* reference */ 'r', `.Temporal#with(java.time.temporal.TemporalField,long)`],
-					[/* text */ 't', `
- twice, passing `],
-					[/* reference */ 'r', `.ChronoField#MONTH_OF_YEAR`],
-					[/* text */ 't', ` and
- `],
-					[/* reference */ 'r', `.ChronoField#DAY_OF_MONTH`],
-					[/* text */ 't', ` as the fields.
- If the specified temporal object does not use the ISO calendar system then
- a `],
-					[/* inline code block */ 'i', `DateTimeException`],
-					[/* text */ 't', ` is thrown.
- `]
+				[/* parameter */ 'text', [/* parameter description */
+					[/* text */ 't', `the text to parse, not null`]
 				]],
-				[/* block */ 'b', [
-					[/* text */ 't', `
- In most cases, it is clearer to reverse the calling pattern by using
- `],
-					[/* reference */ 'r', `.Temporal#with(java.time.temporal.TemporalAdjuster)`],
-					[/* text */ 't', `:
- `]
-				]],
-				[/* code block */ 'c', `   // these two lines are equivalent, but the second approach is recommended
-   temporal = thisMonthDay.adjustInto(temporal);
-   temporal = temporal.with(thisMonthDay);
- `],
-				[/* block */ 'b', ''],
-				[/* block */ 'b', `
- This instance is immutable and unaffected by this method call.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'temporal', [/* parameter description */
-					[/* text */ 't', `the target object to be adjusted, not null`]
+				[/* parameter */ 'formatter', [/* parameter description */
+					[/* text */ 't', `the formatter to use, not null`]
 				]]
 			],
 			[/* throws */
-				[/* throw */ 'java.time.DateTimeException', [/* throw description */
-					[/* text */ 't', `if unable to make the adjustment`]
-				]],
-				[/* throw */ 'java.lang.ArithmeticException', [/* throw description */
-					[/* text */ 't', `if numeric overflow occurs`]
+				[/* throw */ 'java.time.format.DateTimeParseException', [/* throw description */
+					[/* text */ 't', `if the text cannot be parsed`]
 				]]
 			],
 			[/* return description */
-				[/* text */ 't', `the adjusted object, not null`]
-			]
-		]],
-		[/* method */ 'with(java.time.Month)', [
-			[/* method description */
-				[/* text */ 't', `Returns a copy of this `],
-				[/* inline code block */ 'i', `MonthDay`],
-				[/* text */ 't', ` with the month-of-year altered.
- `],
-				[/* block */ 'b', `
- This returns a month-day with the specified month.
- If the day-of-month is invalid for the specified month, the day will
- be adjusted to the last valid day-of-month.
- `],
-				[/* block */ 'b', `
- This instance is immutable and unaffected by this method call.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'month', [/* parameter description */
-					[/* text */ 't', `the month-of-year to set in the returned month-day, not null`]
-				]]
-			],
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `a `],
-				[/* inline code block */ 'i', `MonthDay`],
-				[/* text */ 't', ` based on this month-day with the requested month, not null`]
-			]
-		]],
-		[/* method */ 'isAfter(java.time.MonthDay)', [
-			[/* method description */
-				[/* text */ 't', `Checks if this month-day is after the specified month-day.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'other', [/* parameter description */
-					[/* text */ 't', `the other month-day to compare to, not null`]
-				]]
-			],
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `true if this is after the specified month-day`]
-			]
-		]],
-		[/* method */ 'isBefore(java.time.MonthDay)', [
-			[/* method description */
-				[/* text */ 't', `Checks if this month-day is before the specified month-day.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'other', [/* parameter description */
-					[/* text */ 't', `the other month-day to compare to, not null`]
-				]]
-			],
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `true if this point is before the specified month-day`]
-			]
-		]],
-		[/* method */ 'getMonth()', [
-			[/* method description */
-				[/* text */ 't', `Gets the month-of-year field using the `],
-				[/* inline code block */ 'i', `Month`],
-				[/* text */ 't', ` enum.
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', `
- This method returns the enum `],
-					[/* reference */ 'r', `enum class in java.time.Month`],
-					[/* text */ 't', ` for the month.
- This avoids confusion as to what `],
-					[/* inline code block */ 'i', `int`],
-					[/* text */ 't', ` values mean.
- If you need access to the primitive `],
-					[/* inline code block */ 'i', `int`],
-					[/* text */ 't', ` value then the enum
- provides the `],
-					[/* reference */ 'r', `.Month#getValue()`],
-					[/* text */ 't', `.`]
-				]]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the month-of-year, not null`]
-			]
-		]],
-		[/* method */ 'withMonth(int)', [
-			[/* method description */
-				[/* text */ 't', `Returns a copy of this `],
-				[/* inline code block */ 'i', `MonthDay`],
-				[/* text */ 't', ` with the month-of-year altered.
- `],
-				[/* block */ 'b', `
- This returns a month-day with the specified month.
- If the day-of-month is invalid for the specified month, the day will
- be adjusted to the last valid day-of-month.
- `],
-				[/* block */ 'b', `
- This instance is immutable and unaffected by this method call.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'month', [/* parameter description */
-					[/* text */ 't', `the month-of-year to set in the returned month-day, from 1 (January) to 12 (December)`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.time.DateTimeException', [/* throw description */
-					[/* text */ 't', `if the month-of-year value is invalid`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `a `],
-				[/* inline code block */ 'i', `MonthDay`],
-				[/* text */ 't', ` based on this month-day with the requested month, not null`]
-			]
-		]],
-		[/* method */ 'withDayOfMonth(int)', [
-			[/* method description */
-				[/* text */ 't', `Returns a copy of this `],
-				[/* inline code block */ 'i', `MonthDay`],
-				[/* text */ 't', ` with the day-of-month altered.
- `],
-				[/* block */ 'b', `
- This returns a month-day with the specified day-of-month.
- If the day-of-month is invalid for the month, an exception is thrown.
- `],
-				[/* block */ 'b', `
- This instance is immutable and unaffected by this method call.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'dayOfMonth', [/* parameter description */
-					[/* text */ 't', `the day-of-month to set in the return month-day, from 1 to 31`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.time.DateTimeException', [/* throw description */
-					[/* text */ 't', `if the day-of-month value is invalid,
-  or if the day-of-month is invalid for the month`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `a `],
-				[/* inline code block */ 'i', `MonthDay`],
-				[/* text */ 't', ` based on this month-day with the requested day, not null`]
-			]
-		]],
-		[/* method */ 'isValidYear(int)', [
-			[/* method description */
-				[/* text */ 't', `Checks if the year is valid for this month-day.
- `],
-				[/* block */ 'b', `
- This method checks whether this month and day and the input year form
- a valid date. This can only return false for February 29th.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'year', [/* parameter description */
-					[/* text */ 't', `the year to validate`]
-				]]
-			],
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `true if the year is valid for this month-day`]
-			]
-		]],
-		[/* method */ 'atYear(int)', [
-			[/* method description */
-				[/* text */ 't', `Combines this month-day with a year to create a `],
-				[/* inline code block */ 'i', `LocalDate`],
-				[/* text */ 't', `.
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', `
- This returns a `],
-					[/* inline code block */ 'i', `LocalDate`],
-					[/* text */ 't', ` formed from this month-day and the specified year.
- `]
-				]],
-				[/* block */ 'b', `
- A month-day of February 29th will be adjusted to February 28th in the resulting
- date if the year is not a leap year.
- `],
-				[/* block */ 'b', `
- This instance is immutable and unaffected by this method call.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'year', [/* parameter description */
-					[/* text */ 't', `the year to use, from MIN_YEAR to MAX_YEAR`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.time.DateTimeException', [/* throw description */
-					[/* text */ 't', `if the year is outside the valid range of years`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `the local date formed from this month-day and the specified year, not null`]
+				[/* text */ 't', `the parsed month-day, not null`]
 			]
 		]]
 	],

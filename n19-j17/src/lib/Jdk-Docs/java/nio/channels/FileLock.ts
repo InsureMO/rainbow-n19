@@ -149,41 +149,6 @@ DocsCollector.collect('java.nio.channels.FileLock', [
 	],
 	/* fields */ UDF,
 	[/* constructors */
-		[/* constructor */ '<init>(java.nio.channels.FileChannel,long,long,boolean)', [
-			[/* constructor description */
-				[/* text */ 't', `Initializes a new instance of this class.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'channel', [/* parameter description */
-					[/* text */ 't', `The file channel upon whose file this lock is held`]
-				]],
-				[/* parameter */ 'position', [/* parameter description */
-					[/* text */ 't', `The position within the file at which the locked region starts;
-         must be non-negative`]
-				]],
-				[/* parameter */ 'size', [/* parameter description */
-					[/* text */ 't', `The size of the locked region; must be non-negative, and the sum
-         `],
-					[/* inline code block */ 'i', `position`],
-					[/* text */ 't', ` + `],
-					[/* inline code block */ 'i', `size`],
-					[/* text */ 't', ` must be non-negative`]
-				]],
-				[/* parameter */ 'shared', [/* parameter description */
-					[/* text */ 't', ``],
-					[/* inline code block */ 'i', `true`],
-					[/* text */ 't', ` if this lock is shared,
-         `],
-					[/* inline code block */ 'i', `false`],
-					[/* text */ 't', ` if it is exclusive`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
-					[/* text */ 't', `If the preconditions on the parameters do not hold`]
-				]]
-			]
-		]],
 		[/* constructor */ '<init>(java.nio.channels.AsynchronousFileChannel,long,long,boolean)', [
 			[/* constructor description */
 				[/* text */ 't', `Initializes a new instance of this class.`]
@@ -218,9 +183,113 @@ DocsCollector.collect('java.nio.channels.FileLock', [
 					[/* text */ 't', `If the preconditions on the parameters do not hold`]
 				]]
 			]
+		]],
+		[/* constructor */ '<init>(java.nio.channels.FileChannel,long,long,boolean)', [
+			[/* constructor description */
+				[/* text */ 't', `Initializes a new instance of this class.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'channel', [/* parameter description */
+					[/* text */ 't', `The file channel upon whose file this lock is held`]
+				]],
+				[/* parameter */ 'position', [/* parameter description */
+					[/* text */ 't', `The position within the file at which the locked region starts;
+         must be non-negative`]
+				]],
+				[/* parameter */ 'size', [/* parameter description */
+					[/* text */ 't', `The size of the locked region; must be non-negative, and the sum
+         `],
+					[/* inline code block */ 'i', `position`],
+					[/* text */ 't', ` + `],
+					[/* inline code block */ 'i', `size`],
+					[/* text */ 't', ` must be non-negative`]
+				]],
+				[/* parameter */ 'shared', [/* parameter description */
+					[/* text */ 't', ``],
+					[/* inline code block */ 'i', `true`],
+					[/* text */ 't', ` if this lock is shared,
+         `],
+					[/* inline code block */ 'i', `false`],
+					[/* text */ 't', ` if it is exclusive`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
+					[/* text */ 't', `If the preconditions on the parameters do not hold`]
+				]]
+			]
 		]]
 	],
 	[/* methods */
+		[/* method */ 'isValid()', [
+			[/* method description */
+				[/* text */ 't', `Tells whether or not this lock is valid.
+
+ `],
+				[/* block */ 'b', ` A lock object remains valid until it is released or the associated
+ file channel is closed, whichever comes first.  `]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* inline code block */ 'i', `true`],
+				[/* text */ 't', ` if, and only if, this lock is valid`]
+			]
+		]],
+		[/* method */ 'release()', [
+			[/* method description */
+				[/* text */ 't', `Releases this lock.
+
+ `],
+				[/* block */ 'b', ` If this lock object is valid then invoking this method releases the
+ lock and renders the object invalid.  If this lock object is invalid
+ then invoking this method has no effect.  `]
+			],
+			/* parameters */ UDF,
+			[/* throws */
+				[/* throw */ 'java.nio.channels.ClosedChannelException', [/* throw description */
+					[/* text */ 't', `If the channel that was used to acquire this lock
+          is no longer open`]
+				]],
+				[/* throw */ 'java.io.IOException', [/* throw description */
+					[/* text */ 't', `If an I/O error occurs`]
+				]]
+			],
+			/* return */ UDF
+		]],
+		[/* method */ 'isShared()', [
+			[/* method description */
+				[/* text */ 't', `Tells whether this lock is shared.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* inline code block */ 'i', `true`],
+				[/* text */ 't', ` if lock is shared,
+         `],
+				[/* inline code block */ 'i', `false`],
+				[/* text */ 't', ` if it is exclusive`]
+			]
+		]],
+		[/* method */ 'overlaps(long,long)', [
+			[/* method description */
+				[/* text */ 't', `Tells whether or not this lock overlaps the given lock range.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'position', [/* parameter description */
+					[/* text */ 't', `The starting position of the lock range`]
+				]],
+				[/* parameter */ 'size', [/* parameter description */
+					[/* text */ 't', `The size of the lock range`]
+				]]
+			],
+			/* throws */ UDF,
+			[/* return description */
+				[/* inline code block */ 'i', `true`],
+				[/* text */ 't', ` if, and only if, this lock and the given lock
+          range overlap by at least one byte`]
+			]
+		]],
 		[/* method */ 'toString()', [
 			[/* method description */
 				[/* text */ 't', `Returns a string describing the range, type, and validity of this lock.`]
@@ -229,6 +298,27 @@ DocsCollector.collect('java.nio.channels.FileLock', [
 			/* throws */ UDF,
 			[/* return description */
 				[/* text */ 't', `A descriptive string`]
+			]
+		]],
+		[/* method */ 'channel()', [
+			[/* method description */
+				[/* text */ 't', `Returns the file channel upon whose file this lock was acquired.
+
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', ` This method has been superseded by the `],
+					[/* reference */ 'r', `#acquiredBy()`, `acquiredBy`],
+					[/* text */ 't', `
+ method.`]
+				]]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `The file channel, or `],
+				[/* inline code block */ 'i', `null`],
+				[/* text */ 't', ` if the file lock was not
+          acquired by a file channel.`]
 			]
 		]],
 		[/* method */ 'position()', [
@@ -276,63 +366,6 @@ DocsCollector.collect('java.nio.channels.FileLock', [
 			],
 			/* return */ UDF
 		]],
-		[/* method */ 'release()', [
-			[/* method description */
-				[/* text */ 't', `Releases this lock.
-
- `],
-				[/* block */ 'b', ` If this lock object is valid then invoking this method releases the
- lock and renders the object invalid.  If this lock object is invalid
- then invoking this method has no effect.  `]
-			],
-			/* parameters */ UDF,
-			[/* throws */
-				[/* throw */ 'java.nio.channels.ClosedChannelException', [/* throw description */
-					[/* text */ 't', `If the channel that was used to acquire this lock
-          is no longer open`]
-				]],
-				[/* throw */ 'java.io.IOException', [/* throw description */
-					[/* text */ 't', `If an I/O error occurs`]
-				]]
-			],
-			/* return */ UDF
-		]],
-		[/* method */ 'channel()', [
-			[/* method description */
-				[/* text */ 't', `Returns the file channel upon whose file this lock was acquired.
-
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', ` This method has been superseded by the `],
-					[/* reference */ 'r', `#acquiredBy()`, `acquiredBy`],
-					[/* text */ 't', `
- method.`]
-				]]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `The file channel, or `],
-				[/* inline code block */ 'i', `null`],
-				[/* text */ 't', ` if the file lock was not
-          acquired by a file channel.`]
-			]
-		]],
-		[/* method */ 'isValid()', [
-			[/* method description */
-				[/* text */ 't', `Tells whether or not this lock is valid.
-
- `],
-				[/* block */ 'b', ` A lock object remains valid until it is released or the associated
- file channel is closed, whichever comes first.  `]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* inline code block */ 'i', `true`],
-				[/* text */ 't', ` if, and only if, this lock is valid`]
-			]
-		]],
 		[/* method */ 'acquiredBy()', [
 			[/* method description */
 				[/* text */ 't', `Returns the channel upon whose file this lock was acquired.`]
@@ -341,39 +374,6 @@ DocsCollector.collect('java.nio.channels.FileLock', [
 			/* throws */ UDF,
 			[/* return description */
 				[/* text */ 't', `The channel upon whose file this lock was acquired.`]
-			]
-		]],
-		[/* method */ 'isShared()', [
-			[/* method description */
-				[/* text */ 't', `Tells whether this lock is shared.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* inline code block */ 'i', `true`],
-				[/* text */ 't', ` if lock is shared,
-         `],
-				[/* inline code block */ 'i', `false`],
-				[/* text */ 't', ` if it is exclusive`]
-			]
-		]],
-		[/* method */ 'overlaps(long,long)', [
-			[/* method description */
-				[/* text */ 't', `Tells whether or not this lock overlaps the given lock range.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'position', [/* parameter description */
-					[/* text */ 't', `The starting position of the lock range`]
-				]],
-				[/* parameter */ 'size', [/* parameter description */
-					[/* text */ 't', `The size of the lock range`]
-				]]
-			],
-			/* throws */ UDF,
-			[/* return description */
-				[/* inline code block */ 'i', `true`],
-				[/* text */ 't', ` if, and only if, this lock and the given lock
-          range overlap by at least one byte`]
 			]
 		]]
 	],

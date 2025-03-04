@@ -9,6 +9,30 @@ DocsCollector.collect('java.lang.LayerInstantiationException', [
 	],
 	/* fields */ UDF,
 	[/* constructors */
+		[/* constructor */ '<init>()', [
+			[/* constructor description */
+				[/* text */ 't', `Constructs a `],
+				[/* inline code block */ 'i', `LayerInstantiationException`],
+				[/* text */ 't', ` with no detail message.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF
+		]],
+		[/* constructor */ '<init>(java.lang.String)', [
+			[/* constructor description */
+				[/* text */ 't', `Constructs a `],
+				[/* inline code block */ 'i', `LayerInstantiationException`],
+				[/* text */ 't', ` with the given detail
+ message.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'msg', [/* parameter description */
+					[/* text */ 't', `The detail message; can be `],
+					[/* inline code block */ 'i', `null`]
+				]]
+			],
+			/* throws */ UDF
+		]],
 		[/* constructor */ '<init>(java.lang.String,java.lang.Throwable)', [
 			[/* constructor description */
 				[/* text */ 't', `Constructs a `],
@@ -40,30 +64,6 @@ DocsCollector.collect('java.lang.LayerInstantiationException', [
 					[/* inline code block */ 'i', `null`]
 				]]
 			],
-			/* throws */ UDF
-		]],
-		[/* constructor */ '<init>(java.lang.String)', [
-			[/* constructor description */
-				[/* text */ 't', `Constructs a `],
-				[/* inline code block */ 'i', `LayerInstantiationException`],
-				[/* text */ 't', ` with the given detail
- message.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'msg', [/* parameter description */
-					[/* text */ 't', `The detail message; can be `],
-					[/* inline code block */ 'i', `null`]
-				]]
-			],
-			/* throws */ UDF
-		]],
-		[/* constructor */ '<init>()', [
-			[/* constructor description */
-				[/* text */ 't', `Constructs a `],
-				[/* inline code block */ 'i', `LayerInstantiationException`],
-				[/* text */ 't', ` with no detail message.`]
-			],
-			/* parameters */ UDF,
 			/* throws */ UDF
 		]]
 	],

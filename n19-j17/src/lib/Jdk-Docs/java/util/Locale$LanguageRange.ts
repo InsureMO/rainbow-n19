@@ -192,6 +192,40 @@ DocsCollector.collect('java.util.Locale$LanguageRange', [
      otherwise.`]
 			]
 		]],
+		[/* method */ 'getWeight()', [
+			[/* method description */
+				[/* text */ 't', `Returns the weight of this `],
+				[/* inline code block */ 'i', `LanguageRange`],
+				[/* text */ 't', `.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the weight value.`]
+			]
+		]],
+		[/* method */ 'hashCode()', [
+			[/* method description */
+				[/* text */ 't', `Returns a hash code value for the object.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `a hash code value for this object.`]
+			]
+		]],
+		[/* method */ 'getRange()', [
+			[/* method description */
+				[/* text */ 't', `Returns the language range of this `],
+				[/* inline code block */ 'i', `LanguageRange`],
+				[/* text */ 't', `.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the language range.`]
+			]
+		]],
 		[/* method */ 'toString()', [
 			[/* method description */
 				[/* text */ 't', `Returns an informative string representation of this `],
@@ -208,14 +242,134 @@ DocsCollector.collect('java.util.Locale$LanguageRange', [
 				[/* text */ 't', ` object.`]
 			]
 		]],
-		[/* method */ 'hashCode()', [
+		[/* method */ 'mapEquivalents(java.util.List,java.util.Map)', [
 			[/* method description */
-				[/* text */ 't', `Returns a hash code value for the object.`]
+				[/* text */ 't', `Generates a new customized Language Priority List using the given
+ `],
+				[/* inline code block */ 'i', `priorityList`],
+				[/* text */ 't', ` and `],
+				[/* inline code block */ 'i', `map`],
+				[/* text */ 't', `. If the given `],
+				[/* inline code block */ 'i', `map`],
+				[/* text */ 't', ` is
+ empty, this method returns a copy of the given `],
+				[/* inline code block */ 'i', `priorityList`],
+				[/* text */ 't', `.
+
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', `In the map, a key represents a language range whereas a value is
+ a list of equivalents of it. `],
+					[/* inline code block */ 'i', `'*'`],
+					[/* text */ 't', ` cannot be used in the map.
+ Each equivalent language range has the same weight value as its
+ original language range.
+
+ `]
+				]],
+				[/* code block */ 'c', [
+					[/* text */ 't', `  An example of map:
+    `],
+					[/* text */ 't', `Key`],
+					[/* text */ 't', `Value`],
+					[/* text */ 't', `
+      "zh" (Chinese)                 "zh",
+                                     "zh-Hans"(Simplified Chinese)
+      "zh-HK" (Chinese, Hong Kong)   "zh-HK"
+      "zh-TW" (Chinese, Taiwan)      "zh-TW"
+ `]
+				]],
+				[/* text */ 't', `
+
+ The customization is performed after modification using the IANA
+ Language Subtag Registry.
+
+ `],
+				[/* block */ 'b', ''],
+				[/* block */ 'b', [
+					[/* text */ 't', `For example, if a user's Language Priority List consists of five
+ language ranges (`],
+					[/* inline code block */ 'i', `"zh"`],
+					[/* text */ 't', `, `],
+					[/* inline code block */ 'i', `"zh-CN"`],
+					[/* text */ 't', `, `],
+					[/* inline code block */ 'i', `"en"`],
+					[/* text */ 't', `,
+ `],
+					[/* inline code block */ 'i', `"zh-TW"`],
+					[/* text */ 't', `, and `],
+					[/* inline code block */ 'i', `"zh-HK"`],
+					[/* text */ 't', `), the newly generated Language
+ Priority List which is customized using the above map example will
+ consists of `],
+					[/* inline code block */ 'i', `"zh"`],
+					[/* text */ 't', `, `],
+					[/* inline code block */ 'i', `"zh-Hans"`],
+					[/* text */ 't', `, `],
+					[/* inline code block */ 'i', `"zh-CN"`],
+					[/* text */ 't', `,
+ `],
+					[/* inline code block */ 'i', `"zh-Hans-CN"`],
+					[/* text */ 't', `, `],
+					[/* inline code block */ 'i', `"en"`],
+					[/* text */ 't', `, `],
+					[/* inline code block */ 'i', `"zh-TW"`],
+					[/* text */ 't', `, and
+ `],
+					[/* inline code block */ 'i', `"zh-HK"`],
+					[/* text */ 't', `.
+
+ `]
+				]],
+				[/* block */ 'b', [
+					[/* inline code block */ 'i', `"zh-HK"`],
+					[/* text */ 't', ` and `],
+					[/* inline code block */ 'i', `"zh-TW"`],
+					[/* text */ 't', ` aren't converted to
+ `],
+					[/* inline code block */ 'i', `"zh-Hans-HK"`],
+					[/* text */ 't', ` nor `],
+					[/* inline code block */ 'i', `"zh-Hans-TW"`],
+					[/* text */ 't', ` even if they are
+ included in the Language Priority List. In this example, mapping
+ is used to clearly distinguish Simplified Chinese and Traditional
+ Chinese.
+
+ `]
+				]],
+				[/* block */ 'b', [
+					[/* text */ 't', `If the `],
+					[/* inline code block */ 'i', `"zh"`],
+					[/* text */ 't', `-to-`],
+					[/* inline code block */ 'i', `"zh"`],
+					[/* text */ 't', ` mapping isn't included in the
+ map, a simple replacement will be performed and the customized list
+ won't include `],
+					[/* inline code block */ 'i', `"zh"`],
+					[/* text */ 't', ` and `],
+					[/* inline code block */ 'i', `"zh-CN"`],
+					[/* text */ 't', `.`]
+				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			[/* parameters */
+				[/* parameter */ 'priorityList', [/* parameter description */
+					[/* text */ 't', `user's Language Priority List`]
+				]],
+				[/* parameter */ 'map', [/* parameter description */
+					[/* text */ 't', `a map containing information to customize language ranges`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
+					[/* text */ 't', `if `],
+					[/* inline code block */ 'i', `priorityList`],
+					[/* text */ 't', ` is `],
+					[/* inline code block */ 'i', `null`]
+				]]
+			],
 			[/* return description */
-				[/* text */ 't', `a hash code value for this object.`]
+				[/* text */ 't', `a new Language Priority List with customization. The list is
+     modifiable.`]
 			]
 		]],
 		[/* method */ 'parse(java.lang.String)', [
@@ -391,160 +545,6 @@ DocsCollector.collect('java.util.Locale$LanguageRange', [
 			[/* return description */
 				[/* text */ 't', `a Language Priority List with customization. The list is
      modifiable.`]
-			]
-		]],
-		[/* method */ 'getRange()', [
-			[/* method description */
-				[/* text */ 't', `Returns the language range of this `],
-				[/* inline code block */ 'i', `LanguageRange`],
-				[/* text */ 't', `.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the language range.`]
-			]
-		]],
-		[/* method */ 'mapEquivalents(java.util.List,java.util.Map)', [
-			[/* method description */
-				[/* text */ 't', `Generates a new customized Language Priority List using the given
- `],
-				[/* inline code block */ 'i', `priorityList`],
-				[/* text */ 't', ` and `],
-				[/* inline code block */ 'i', `map`],
-				[/* text */ 't', `. If the given `],
-				[/* inline code block */ 'i', `map`],
-				[/* text */ 't', ` is
- empty, this method returns a copy of the given `],
-				[/* inline code block */ 'i', `priorityList`],
-				[/* text */ 't', `.
-
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', `In the map, a key represents a language range whereas a value is
- a list of equivalents of it. `],
-					[/* inline code block */ 'i', `'*'`],
-					[/* text */ 't', ` cannot be used in the map.
- Each equivalent language range has the same weight value as its
- original language range.
-
- `]
-				]],
-				[/* code block */ 'c', [
-					[/* text */ 't', `  An example of map:
-    `],
-					[/* text */ 't', `Key`],
-					[/* text */ 't', `Value`],
-					[/* text */ 't', `
-      "zh" (Chinese)                 "zh",
-                                     "zh-Hans"(Simplified Chinese)
-      "zh-HK" (Chinese, Hong Kong)   "zh-HK"
-      "zh-TW" (Chinese, Taiwan)      "zh-TW"
- `]
-				]],
-				[/* text */ 't', `
-
- The customization is performed after modification using the IANA
- Language Subtag Registry.
-
- `],
-				[/* block */ 'b', ''],
-				[/* block */ 'b', [
-					[/* text */ 't', `For example, if a user's Language Priority List consists of five
- language ranges (`],
-					[/* inline code block */ 'i', `"zh"`],
-					[/* text */ 't', `, `],
-					[/* inline code block */ 'i', `"zh-CN"`],
-					[/* text */ 't', `, `],
-					[/* inline code block */ 'i', `"en"`],
-					[/* text */ 't', `,
- `],
-					[/* inline code block */ 'i', `"zh-TW"`],
-					[/* text */ 't', `, and `],
-					[/* inline code block */ 'i', `"zh-HK"`],
-					[/* text */ 't', `), the newly generated Language
- Priority List which is customized using the above map example will
- consists of `],
-					[/* inline code block */ 'i', `"zh"`],
-					[/* text */ 't', `, `],
-					[/* inline code block */ 'i', `"zh-Hans"`],
-					[/* text */ 't', `, `],
-					[/* inline code block */ 'i', `"zh-CN"`],
-					[/* text */ 't', `,
- `],
-					[/* inline code block */ 'i', `"zh-Hans-CN"`],
-					[/* text */ 't', `, `],
-					[/* inline code block */ 'i', `"en"`],
-					[/* text */ 't', `, `],
-					[/* inline code block */ 'i', `"zh-TW"`],
-					[/* text */ 't', `, and
- `],
-					[/* inline code block */ 'i', `"zh-HK"`],
-					[/* text */ 't', `.
-
- `]
-				]],
-				[/* block */ 'b', [
-					[/* inline code block */ 'i', `"zh-HK"`],
-					[/* text */ 't', ` and `],
-					[/* inline code block */ 'i', `"zh-TW"`],
-					[/* text */ 't', ` aren't converted to
- `],
-					[/* inline code block */ 'i', `"zh-Hans-HK"`],
-					[/* text */ 't', ` nor `],
-					[/* inline code block */ 'i', `"zh-Hans-TW"`],
-					[/* text */ 't', ` even if they are
- included in the Language Priority List. In this example, mapping
- is used to clearly distinguish Simplified Chinese and Traditional
- Chinese.
-
- `]
-				]],
-				[/* block */ 'b', [
-					[/* text */ 't', `If the `],
-					[/* inline code block */ 'i', `"zh"`],
-					[/* text */ 't', `-to-`],
-					[/* inline code block */ 'i', `"zh"`],
-					[/* text */ 't', ` mapping isn't included in the
- map, a simple replacement will be performed and the customized list
- won't include `],
-					[/* inline code block */ 'i', `"zh"`],
-					[/* text */ 't', ` and `],
-					[/* inline code block */ 'i', `"zh-CN"`],
-					[/* text */ 't', `.`]
-				]]
-			],
-			[/* parameters */
-				[/* parameter */ 'priorityList', [/* parameter description */
-					[/* text */ 't', `user's Language Priority List`]
-				]],
-				[/* parameter */ 'map', [/* parameter description */
-					[/* text */ 't', `a map containing information to customize language ranges`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
-					[/* text */ 't', `if `],
-					[/* inline code block */ 'i', `priorityList`],
-					[/* text */ 't', ` is `],
-					[/* inline code block */ 'i', `null`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `a new Language Priority List with customization. The list is
-     modifiable.`]
-			]
-		]],
-		[/* method */ 'getWeight()', [
-			[/* method description */
-				[/* text */ 't', `Returns the weight of this `],
-				[/* inline code block */ 'i', `LanguageRange`],
-				[/* text */ 't', `.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the weight value.`]
 			]
 		]]
 	],

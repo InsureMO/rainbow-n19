@@ -117,23 +117,6 @@ DocsCollector.collect('java.util.PropertyPermission', [
  actions as this PropertyPermission object.`]
 			]
 		]],
-		[/* method */ 'hashCode()', [
-			[/* method description */
-				[/* text */ 't', `Returns the hash code value for this object.
- The hash code used is the hash code of this permissions name, that is,
- `],
-				[/* inline code block */ 'i', `getName().hashCode()`],
-				[/* text */ 't', `, where `],
-				[/* inline code block */ 'i', `getName`],
-				[/* text */ 't', ` is
- from the Permission superclass.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `a hash code value for this object.`]
-			]
-		]],
 		[/* method */ 'implies(java.security.Permission)', [
 			[/* method description */
 				[/* text */ 't', `Checks if this PropertyPermission object "implies" the specified
@@ -172,6 +155,23 @@ DocsCollector.collect('java.util.PropertyPermission', [
 			[/* return description */
 				[/* text */ 't', `true if the specified permission is implied by this object,
  false if not.`]
+			]
+		]],
+		[/* method */ 'hashCode()', [
+			[/* method description */
+				[/* text */ 't', `Returns the hash code value for this object.
+ The hash code used is the hash code of this permissions name, that is,
+ `],
+				[/* inline code block */ 'i', `getName().hashCode()`],
+				[/* text */ 't', `, where `],
+				[/* inline code block */ 'i', `getName`],
+				[/* text */ 't', ` is
+ from the Permission superclass.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `a hash code value for this object.`]
 			]
 		]],
 		[/* method */ 'getActions()', [

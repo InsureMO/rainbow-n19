@@ -224,16 +224,16 @@ DocsCollector.collect('java.text.NumberFormat', [
  externally.`]
 	],
 	[/* fields */
-		[/* field */ 'INTEGER_FIELD', [
-			[/* field description */
-				[/* text */ 't', `Field constant used to construct a FieldPosition object. Signifies that
- the position of the integer part of a formatted number should be returned.`]
-			],
-		]],
 		[/* field */ 'FRACTION_FIELD', [
 			[/* field description */
 				[/* text */ 't', `Field constant used to construct a FieldPosition object. Signifies that
  the position of the fraction part of a formatted number should be returned.`]
+			],
+		]],
+		[/* field */ 'INTEGER_FIELD', [
+			[/* field description */
+				[/* text */ 't', `Field constant used to construct a FieldPosition object. Signifies that
+ the position of the integer part of a formatted number should be returned.`]
 			],
 		]]
 	],
@@ -248,42 +248,72 @@ DocsCollector.collect('java.text.NumberFormat', [
 		]]
 	],
 	[/* methods */
-		[/* method */ 'equals(java.lang.Object)', [
+		[/* method */ 'parse(java.lang.String,java.text.ParsePosition)', [
 			[/* method description */
-				[/* text */ 't', `Overrides equals.`]
+				[/* text */ 't', `Returns a Long if possible (e.g., within the range [Long.MIN_VALUE,
+ Long.MAX_VALUE] and with no decimals), otherwise a Double.
+ If IntegerOnly is set, will stop at a decimal
+ point (or equivalent; e.g., for rational numbers "1 2/3", will stop
+ after the 1).
+ Does not throw an exception; if no object can be parsed, index is
+ unchanged!`]
 			],
 			[/* parameters */
-				[/* parameter */ 'obj', [/* parameter description */
-					[/* text */ 't', `the reference object with which to compare.`]
+				[/* parameter */ 'source', [/* parameter description */
+					[/* text */ 't', `the String to parse`]
+				]],
+				[/* parameter */ 'parsePosition', [/* parameter description */
+					[/* text */ 't', `the parse position`]
 				]]
 			],
 			/* throws */ UDF,
 			[/* return description */
-				[/* inline code block */ 'i', `true`],
-				[/* text */ 't', ` if this object is the same as the obj
-          argument; `],
-				[/* inline code block */ 'i', `false`],
-				[/* text */ 't', ` otherwise.`]
+				[/* text */ 't', `the parsed value`]
 			]
 		]],
-		[/* method */ 'hashCode()', [
+		[/* method */ 'format(double,java.lang.StringBuffer,java.text.FieldPosition)', [
 			[/* method description */
-				[/* text */ 't', `Overrides hashCode.`]
+				[/* text */ 't', `Specialization of format.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `a hash code value for this object.`]
-			]
-		]],
-		[/* method */ 'clone()', [
-			[/* method description */
-				[/* text */ 't', `Overrides Cloneable.`]
+			[/* parameters */
+				[/* parameter */ 'number', [/* parameter description */
+					[/* text */ 't', `the double number to format`]
+				]],
+				[/* parameter */ 'toAppendTo', [/* parameter description */
+					[/* text */ 't', `the StringBuffer to which the formatted text is to be
+                   appended`]
+				]],
+				[/* parameter */ 'pos', [/* parameter description */
+					[/* text */ 't', `keeps track on the position of the field within the
+                   returned string. For example, for formatting a number
+                   `],
+					[/* inline code block */ 'i', `1234567.89`],
+					[/* text */ 't', ` in `],
+					[/* inline code block */ 'i', `Locale.US`],
+					[/* text */ 't', ` locale,
+                   if the given `],
+					[/* inline code block */ 'i', `fieldPosition`],
+					[/* text */ 't', ` is
+                   `],
+					[/* text */ 't', `INTEGER_FIELD`],
+					[/* text */ 't', `, the begin index
+                   and end index of `],
+					[/* inline code block */ 'i', `fieldPosition`],
+					[/* text */ 't', ` will be set
+                   to 0 and 9, respectively for the output string
+                   `],
+					[/* inline code block */ 'i', `1,234,567.89`],
+					[/* text */ 't', `.`]
+				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			[/* throws */
+				[/* throw */ 'java.lang.ArithmeticException', [/* throw description */
+					[/* text */ 't', `if rounding is needed with rounding
+                   mode being set to RoundingMode.UNNECESSARY`]
+				]]
+			],
 			[/* return description */
-				[/* text */ 't', `a clone of this instance.`]
+				[/* text */ 't', `the formatted StringBuffer`]
 			]
 		]],
 		[/* method */ 'format(long,java.lang.StringBuffer,java.text.FieldPosition)', [
@@ -331,39 +361,134 @@ DocsCollector.collect('java.text.NumberFormat', [
 				[/* text */ 't', `the formatted StringBuffer`]
 			]
 		]],
-		[/* method */ 'format(double,java.lang.StringBuffer,java.text.FieldPosition)', [
+		[/* method */ 'equals(java.lang.Object)', [
+			[/* method description */
+				[/* text */ 't', `Overrides equals.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'obj', [/* parameter description */
+					[/* text */ 't', `the reference object with which to compare.`]
+				]]
+			],
+			/* throws */ UDF,
+			[/* return description */
+				[/* inline code block */ 'i', `true`],
+				[/* text */ 't', ` if this object is the same as the obj
+          argument; `],
+				[/* inline code block */ 'i', `false`],
+				[/* text */ 't', ` otherwise.`]
+			]
+		]],
+		[/* method */ 'isGroupingUsed()', [
+			[/* method description */
+				[/* text */ 't', `Returns true if grouping is used in this format. For example, in the
+ English locale, with grouping on, the number 1234567 might be formatted
+ as "1,234,567". The grouping separator as well as the size of each group
+ is locale dependent and is determined by sub-classes of NumberFormat.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* inline code block */ 'i', `true`],
+				[/* text */ 't', ` if grouping is used;
+         `],
+				[/* inline code block */ 'i', `false`],
+				[/* text */ 't', ` otherwise`]
+			]
+		]],
+		[/* method */ 'isParseIntegerOnly()', [
+			[/* method description */
+				[/* text */ 't', `Returns true if this format will parse numbers as integers only.
+ For example in the English locale, with ParseIntegerOnly true, the
+ string "1234." would be parsed as the integer value 1234 and parsing
+ would stop at the "." character.  Of course, the exact format accepted
+ by the parse operation is locale dependent and determined by sub-classes
+ of NumberFormat.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* inline code block */ 'i', `true`],
+				[/* text */ 't', ` if numbers should be parsed as integers only;
+         `],
+				[/* inline code block */ 'i', `false`],
+				[/* text */ 't', ` otherwise`]
+			]
+		]],
+		[/* method */ 'parseObject(java.lang.String,java.text.ParsePosition)', [
+			[/* method description */
+				[/* text */ 't', `Parses text from a string to produce a `],
+				[/* inline code block */ 'i', `Number`],
+				[/* text */ 't', `.
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', `
+ The method attempts to parse text starting at the index given by
+ `],
+					[/* inline code block */ 'i', `pos`],
+					[/* text */ 't', `.
+ If parsing succeeds, then the index of `],
+					[/* inline code block */ 'i', `pos`],
+					[/* text */ 't', ` is updated
+ to the index after the last character used (parsing does not necessarily
+ use all characters up to the end of the string), and the parsed
+ number is returned. The updated `],
+					[/* inline code block */ 'i', `pos`],
+					[/* text */ 't', ` can be used to
+ indicate the starting point for the next call to this method.
+ If an error occurs, then the index of `],
+					[/* inline code block */ 'i', `pos`],
+					[/* text */ 't', ` is not
+ changed, the error index of `],
+					[/* inline code block */ 'i', `pos`],
+					[/* text */ 't', ` is set to the index of
+ the character where the error occurred, and null is returned.
+ `]
+				]],
+				[/* block */ 'b', [
+					[/* text */ 't', `
+ See the `],
+					[/* reference */ 'r', `#parse(java.lang.String,java.text.ParsePosition)`, `parse(String, ParsePosition)`],
+					[/* text */ 't', ` method for more information
+ on number parsing.`]
+				]]
+			],
+			[/* parameters */
+				[/* parameter */ 'source', [/* parameter description */
+					[/* text */ 't', `A `],
+					[/* inline code block */ 'i', `String`],
+					[/* text */ 't', `, part of which should be parsed.`]
+				]],
+				[/* parameter */ 'pos', [/* parameter description */
+					[/* text */ 't', `A `],
+					[/* inline code block */ 'i', `ParsePosition`],
+					[/* text */ 't', ` object with index and error
+            index information as described above.`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
+					[/* text */ 't', `if `],
+					[/* inline code block */ 'i', `source`],
+					[/* text */ 't', ` or `],
+					[/* inline code block */ 'i', `pos`],
+					[/* text */ 't', ` is null.`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `A `],
+				[/* inline code block */ 'i', `Number`],
+				[/* text */ 't', ` parsed from the string. In case of
+         error, returns null.`]
+			]
+		]],
+		[/* method */ 'format(double)', [
 			[/* method description */
 				[/* text */ 't', `Specialization of format.`]
 			],
 			[/* parameters */
 				[/* parameter */ 'number', [/* parameter description */
 					[/* text */ 't', `the double number to format`]
-				]],
-				[/* parameter */ 'toAppendTo', [/* parameter description */
-					[/* text */ 't', `the StringBuffer to which the formatted text is to be
-                   appended`]
-				]],
-				[/* parameter */ 'pos', [/* parameter description */
-					[/* text */ 't', `keeps track on the position of the field within the
-                   returned string. For example, for formatting a number
-                   `],
-					[/* inline code block */ 'i', `1234567.89`],
-					[/* text */ 't', ` in `],
-					[/* inline code block */ 'i', `Locale.US`],
-					[/* text */ 't', ` locale,
-                   if the given `],
-					[/* inline code block */ 'i', `fieldPosition`],
-					[/* text */ 't', ` is
-                   `],
-					[/* text */ 't', `INTEGER_FIELD`],
-					[/* text */ 't', `, the begin index
-                   and end index of `],
-					[/* inline code block */ 'i', `fieldPosition`],
-					[/* text */ 't', ` will be set
-                   to 0 and 9, respectively for the output string
-                   `],
-					[/* inline code block */ 'i', `1,234,567.89`],
-					[/* text */ 't', `.`]
 				]]
 			],
 			[/* throws */
@@ -373,7 +498,122 @@ DocsCollector.collect('java.text.NumberFormat', [
 				]]
 			],
 			[/* return description */
-				[/* text */ 't', `the formatted StringBuffer`]
+				[/* text */ 't', `the formatted String`]
+			]
+		]],
+		[/* method */ 'format(long)', [
+			[/* method description */
+				[/* text */ 't', `Specialization of format.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'number', [/* parameter description */
+					[/* text */ 't', `the long number to format`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.lang.ArithmeticException', [/* throw description */
+					[/* text */ 't', `if rounding is needed with rounding
+                   mode being set to RoundingMode.UNNECESSARY`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `the formatted String`]
+			]
+		]],
+		[/* method */ 'getMaximumFractionDigits()', [
+			[/* method description */
+				[/* text */ 't', `Returns the maximum number of digits allowed in the fraction portion of a
+ number.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the maximum number of digits.`]
+			]
+		]],
+		[/* method */ 'getMaximumIntegerDigits()', [
+			[/* method description */
+				[/* text */ 't', `Returns the maximum number of digits allowed in the integer portion of a
+ number.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the maximum number of digits`]
+			]
+		]],
+		[/* method */ 'getMinimumFractionDigits()', [
+			[/* method description */
+				[/* text */ 't', `Returns the minimum number of digits allowed in the fraction portion of a
+ number.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the minimum number of digits`]
+			]
+		]],
+		[/* method */ 'getMinimumIntegerDigits()', [
+			[/* method description */
+				[/* text */ 't', `Returns the minimum number of digits allowed in the integer portion of a
+ number.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the minimum number of digits`]
+			]
+		]],
+		[/* method */ 'hashCode()', [
+			[/* method description */
+				[/* text */ 't', `Overrides hashCode.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `a hash code value for this object.`]
+			]
+		]],
+		[/* method */ 'parse(java.lang.String)', [
+			[/* method description */
+				[/* text */ 't', `Parses text from the beginning of the given string to produce a number.
+ The method may not use the entire text of the given string.
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', `
+ See the `],
+					[/* reference */ 'r', `#parse(java.lang.String,java.text.ParsePosition)`, `parse(String, ParsePosition)`],
+					[/* text */ 't', ` method for more information
+ on number parsing.`]
+				]]
+			],
+			[/* parameters */
+				[/* parameter */ 'source', [/* parameter description */
+					[/* text */ 't', `A `],
+					[/* inline code block */ 'i', `String`],
+					[/* text */ 't', ` whose beginning should be parsed.`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.text.ParseException', [/* throw description */
+					[/* text */ 't', `if the beginning of the specified string
+            cannot be parsed.`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `A `],
+				[/* inline code block */ 'i', `Number`],
+				[/* text */ 't', ` parsed from the string.`]
+			]
+		]],
+		[/* method */ 'clone()', [
+			[/* method description */
+				[/* text */ 't', `Overrides Cloneable.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `a clone of this instance.`]
 			]
 		]],
 		[/* method */ 'format(java.lang.Object,java.lang.StringBuffer,java.text.FieldPosition)', [
@@ -477,168 +717,6 @@ DocsCollector.collect('java.text.NumberFormat', [
 				[/* inline code block */ 'i', `toAppendTo`]
 			]
 		]],
-		[/* method */ 'format(double)', [
-			[/* method description */
-				[/* text */ 't', `Specialization of format.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'number', [/* parameter description */
-					[/* text */ 't', `the double number to format`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.ArithmeticException', [/* throw description */
-					[/* text */ 't', `if rounding is needed with rounding
-                   mode being set to RoundingMode.UNNECESSARY`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `the formatted String`]
-			]
-		]],
-		[/* method */ 'format(long)', [
-			[/* method description */
-				[/* text */ 't', `Specialization of format.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'number', [/* parameter description */
-					[/* text */ 't', `the long number to format`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.ArithmeticException', [/* throw description */
-					[/* text */ 't', `if rounding is needed with rounding
-                   mode being set to RoundingMode.UNNECESSARY`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `the formatted String`]
-			]
-		]],
-		[/* method */ 'getInstance()', [
-			[/* method description */
-				[/* text */ 't', `Returns a general-purpose number format for the current default
- `],
-				[/* reference */ 'r', `java.Locale.Category#FORMAT`],
-				[/* text */ 't', ` locale.
- This is the same as calling
- `],
-				[/* reference */ 'r', `#getNumberInstance()`, `getNumberInstance()`],
-				[/* text */ 't', `.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the `],
-				[/* inline code block */ 'i', `NumberFormat`],
-				[/* text */ 't', ` instance for general-purpose number
- formatting`]
-			]
-		]],
-		[/* method */ 'getInstance(java.util.Locale)', [
-			[/* method description */
-				[/* text */ 't', `Returns a general-purpose number format for the specified locale.
- This is the same as calling
- `],
-				[/* reference */ 'r', `#getNumberInstance(java.util.Locale)`, `getNumberInstance(inLocale)`],
-				[/* text */ 't', `.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'inLocale', [/* parameter description */
-					[/* text */ 't', `the desired locale`]
-				]]
-			],
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the `],
-				[/* inline code block */ 'i', `NumberFormat`],
-				[/* text */ 't', ` instance for general-purpose number
- formatting`]
-			]
-		]],
-		[/* method */ 'parse(java.lang.String)', [
-			[/* method description */
-				[/* text */ 't', `Parses text from the beginning of the given string to produce a number.
- The method may not use the entire text of the given string.
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', `
- See the `],
-					[/* reference */ 'r', `#parse(java.lang.String,java.text.ParsePosition)`, `parse(String, ParsePosition)`],
-					[/* text */ 't', ` method for more information
- on number parsing.`]
-				]]
-			],
-			[/* parameters */
-				[/* parameter */ 'source', [/* parameter description */
-					[/* text */ 't', `A `],
-					[/* inline code block */ 'i', `String`],
-					[/* text */ 't', ` whose beginning should be parsed.`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.text.ParseException', [/* throw description */
-					[/* text */ 't', `if the beginning of the specified string
-            cannot be parsed.`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `A `],
-				[/* inline code block */ 'i', `Number`],
-				[/* text */ 't', ` parsed from the string.`]
-			]
-		]],
-		[/* method */ 'parse(java.lang.String,java.text.ParsePosition)', [
-			[/* method description */
-				[/* text */ 't', `Returns a Long if possible (e.g., within the range [Long.MIN_VALUE,
- Long.MAX_VALUE] and with no decimals), otherwise a Double.
- If IntegerOnly is set, will stop at a decimal
- point (or equivalent; e.g., for rational numbers "1 2/3", will stop
- after the 1).
- Does not throw an exception; if no object can be parsed, index is
- unchanged!`]
-			],
-			[/* parameters */
-				[/* parameter */ 'source', [/* parameter description */
-					[/* text */ 't', `the String to parse`]
-				]],
-				[/* parameter */ 'parsePosition', [/* parameter description */
-					[/* text */ 't', `the parse position`]
-				]]
-			],
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the parsed value`]
-			]
-		]],
-		[/* method */ 'getAvailableLocales()', [
-			[/* method description */
-				[/* text */ 't', `Returns an array of all locales for which the
- `],
-				[/* inline code block */ 'i', `get*Instance`],
-				[/* text */ 't', ` methods of this class can return
- localized instances.
- The returned array represents the union of locales supported by the Java
- runtime and by installed
- `],
-				[/* reference */ 'r', `java.text.spi.NumberFormatProvider`],
-				[/* text */ 't', ` implementations.
- It must contain at least a `],
-				[/* inline code block */ 'i', `Locale`],
-				[/* text */ 't', ` instance equal to
- `],
-				[/* reference */ 'r', `java.Locale#US`],
-				[/* text */ 't', `.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `An array of locales for which localized
-         `],
-				[/* inline code block */ 'i', `NumberFormat`],
-				[/* text */ 't', ` instances are available.`]
-			]
-		]],
 		[/* method */ 'getRoundingMode()', [
 			[/* method description */
 				[/* text */ 't', `Gets the `],
@@ -664,108 +742,34 @@ DocsCollector.collect('java.text.NumberFormat', [
 				[/* text */ 't', ` used for this NumberFormat.`]
 			]
 		]],
-		[/* method */ 'parseObject(java.lang.String,java.text.ParsePosition)', [
+		[/* method */ 'getCurrency()', [
 			[/* method description */
-				[/* text */ 't', `Parses text from a string to produce a `],
-				[/* inline code block */ 'i', `Number`],
+				[/* text */ 't', `Gets the currency used by this number format when formatting
+ currency values. The initial value is derived in a locale dependent
+ way. The returned value may be null if no valid
+ currency could be determined and no currency has been set using
+ `],
+				[/* reference */ 'r', `#setCurrency(java.util.Currency)`, `setCurrency`],
 				[/* text */ 't', `.
  `],
 				[/* block */ 'b', [
 					[/* text */ 't', `
- The method attempts to parse text starting at the index given by
+ The default implementation throws
  `],
-					[/* inline code block */ 'i', `pos`],
-					[/* text */ 't', `.
- If parsing succeeds, then the index of `],
-					[/* inline code block */ 'i', `pos`],
-					[/* text */ 't', ` is updated
- to the index after the last character used (parsing does not necessarily
- use all characters up to the end of the string), and the parsed
- number is returned. The updated `],
-					[/* inline code block */ 'i', `pos`],
-					[/* text */ 't', ` can be used to
- indicate the starting point for the next call to this method.
- If an error occurs, then the index of `],
-					[/* inline code block */ 'i', `pos`],
-					[/* text */ 't', ` is not
- changed, the error index of `],
-					[/* inline code block */ 'i', `pos`],
-					[/* text */ 't', ` is set to the index of
- the character where the error occurred, and null is returned.
- `]
-				]],
-				[/* block */ 'b', [
-					[/* text */ 't', `
- See the `],
-					[/* reference */ 'r', `#parse(java.lang.String,java.text.ParsePosition)`, `parse(String, ParsePosition)`],
-					[/* text */ 't', ` method for more information
- on number parsing.`]
+					[/* inline code block */ 'i', `UnsupportedOperationException`],
+					[/* text */ 't', `.`]
 				]]
 			],
-			[/* parameters */
-				[/* parameter */ 'source', [/* parameter description */
-					[/* text */ 't', `A `],
-					[/* inline code block */ 'i', `String`],
-					[/* text */ 't', `, part of which should be parsed.`]
-				]],
-				[/* parameter */ 'pos', [/* parameter description */
-					[/* text */ 't', `A `],
-					[/* inline code block */ 'i', `ParsePosition`],
-					[/* text */ 't', ` object with index and error
-            index information as described above.`]
-				]]
-			],
+			/* parameters */ UDF,
 			[/* throws */
-				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
-					[/* text */ 't', `if `],
-					[/* inline code block */ 'i', `source`],
-					[/* text */ 't', ` or `],
-					[/* inline code block */ 'i', `pos`],
-					[/* text */ 't', ` is null.`]
+				[/* throw */ 'java.lang.UnsupportedOperationException', [/* throw description */
+					[/* text */ 't', `if the number format class
+ doesn't implement currency formatting`]
 				]]
 			],
 			[/* return description */
-				[/* text */ 't', `A `],
-				[/* inline code block */ 'i', `Number`],
-				[/* text */ 't', ` parsed from the string. In case of
-         error, returns null.`]
-			]
-		]],
-		[/* method */ 'getCurrencyInstance(java.util.Locale)', [
-			[/* method description */
-				[/* text */ 't', `Returns a currency format for the specified locale.
-
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', `If the specified locale contains the "`],
-					[/* inline code block */ 'i', `cf`],
-					[/* text */ 't', `" (
- `],
-					[/* external link */ 'a', `https://www.unicode.org/reports/tr35/tr35.html#UnicodeCurrencyFormatIdentifier`, `currency format style`],
-					[/* text */ 't', `)
- `],
-					[/* reference */ 'r', `java.Locale#def_locale_extension`],
-					[/* text */ 't', `,
- the returned currency format uses the style if it is available.
- Otherwise, the style uses the default "`],
-					[/* inline code block */ 'i', `standard`],
-					[/* text */ 't', `" currency format.
- For example, if the style designates "`],
-					[/* inline code block */ 'i', `account`],
-					[/* text */ 't', `", negative
- currency amounts use a pair of parentheses in some locales.`]
-				]]
-			],
-			[/* parameters */
-				[/* parameter */ 'inLocale', [/* parameter description */
-					[/* text */ 't', `the desired locale`]
-				]]
-			],
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the `],
-				[/* inline code block */ 'i', `NumberFormat`],
-				[/* text */ 't', ` instance for currency formatting`]
+				[/* text */ 't', `the currency used by this number format, or `],
+				[/* inline code block */ 'i', `null`]
 			]
 		]],
 		[/* method */ 'getCurrencyInstance()', [
@@ -788,6 +792,26 @@ DocsCollector.collect('java.text.NumberFormat', [
 				[/* text */ 't', `the `],
 				[/* inline code block */ 'i', `NumberFormat`],
 				[/* text */ 't', ` instance for currency formatting`]
+			]
+		]],
+		[/* method */ 'getInstance()', [
+			[/* method description */
+				[/* text */ 't', `Returns a general-purpose number format for the current default
+ `],
+				[/* reference */ 'r', `java.Locale.Category#FORMAT`],
+				[/* text */ 't', ` locale.
+ This is the same as calling
+ `],
+				[/* reference */ 'r', `#getNumberInstance()`, `getNumberInstance()`],
+				[/* text */ 't', `.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the `],
+				[/* inline code block */ 'i', `NumberFormat`],
+				[/* text */ 't', ` instance for general-purpose number
+ formatting`]
 			]
 		]],
 		[/* method */ 'getIntegerInstance()', [
@@ -815,44 +839,6 @@ DocsCollector.collect('java.text.NumberFormat', [
 			/* throws */ UDF,
 			[/* return description */
 				[/* text */ 't', `a number format for integer values`]
-			]
-		]],
-		[/* method */ 'getIntegerInstance(java.util.Locale)', [
-			[/* method description */
-				[/* text */ 't', `Returns an integer number format for the specified locale. The
- returned number format is configured to round floating point numbers
- to the nearest integer using half-even rounding (see `],
-				[/* reference */ 'r', `java.RoundingMode#HALF_EVEN`],
-				[/* text */ 't', `) for formatting,
- and to parse only the integer part of an input string (see `],
-				[/* reference */ 'r', `#isParseIntegerOnly()`, `isParseIntegerOnly`],
-				[/* text */ 't', `).`]
-			],
-			[/* parameters */
-				[/* parameter */ 'inLocale', [/* parameter description */
-					[/* text */ 't', `the desired locale`]
-				]]
-			],
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `a number format for integer values`]
-			]
-		]],
-		[/* method */ 'getNumberInstance(java.util.Locale)', [
-			[/* method description */
-				[/* text */ 't', `Returns a general-purpose number format for the specified locale.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'inLocale', [/* parameter description */
-					[/* text */ 't', `the desired locale`]
-				]]
-			],
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the `],
-				[/* inline code block */ 'i', `NumberFormat`],
-				[/* text */ 't', ` instance for general-purpose number
- formatting`]
 			]
 		]],
 		[/* method */ 'getNumberInstance()', [
@@ -893,22 +879,6 @@ DocsCollector.collect('java.text.NumberFormat', [
 				]]
 			],
 			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the `],
-				[/* inline code block */ 'i', `NumberFormat`],
-				[/* text */ 't', ` instance for percentage formatting`]
-			]
-		]],
-		[/* method */ 'getPercentInstance(java.util.Locale)', [
-			[/* method description */
-				[/* text */ 't', `Returns a percentage format for the specified locale.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'inLocale', [/* parameter description */
-					[/* text */ 't', `the desired locale`]
-				]]
-			],
 			/* throws */ UDF,
 			[/* return description */
 				[/* text */ 't', `the `],
@@ -970,220 +940,144 @@ DocsCollector.collect('java.text.NumberFormat', [
          formatting`]
 			]
 		]],
-		[/* method */ 'setGroupingUsed(boolean)', [
+		[/* method */ 'getCurrencyInstance(java.util.Locale)', [
 			[/* method description */
-				[/* text */ 't', `Set whether or not grouping will be used in this format.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'newValue', [/* parameter description */
-					[/* text */ 't', ``],
-					[/* inline code block */ 'i', `true`],
-					[/* text */ 't', ` if grouping is used;
-                 `],
-					[/* inline code block */ 'i', `false`],
-					[/* text */ 't', ` otherwise`]
-				]]
-			],
-			/* throws */ UDF,
-			/* return */ UDF
-		]],
-		[/* method */ 'setMinimumIntegerDigits(int)', [
-			[/* method description */
-				[/* text */ 't', `Sets the minimum number of digits allowed in the integer portion of a
- number. minimumIntegerDigits must be ≤ maximumIntegerDigits.  If the
- new value for minimumIntegerDigits exceeds the current value
- of maximumIntegerDigits, then maximumIntegerDigits will also be set to
- the new value`]
-			],
-			[/* parameters */
-				[/* parameter */ 'newValue', [/* parameter description */
-					[/* text */ 't', `the minimum number of integer digits to be shown; if
- less than zero, then zero is used. The concrete subclass may enforce an
- upper limit to this value appropriate to the numeric type being formatted.`]
-				]]
-			],
-			/* throws */ UDF,
-			/* return */ UDF
-		]],
-		[/* method */ 'setMaximumIntegerDigits(int)', [
-			[/* method description */
-				[/* text */ 't', `Sets the maximum number of digits allowed in the integer portion of a
- number. maximumIntegerDigits must be ≥ minimumIntegerDigits.  If the
- new value for maximumIntegerDigits is less than the current value
- of minimumIntegerDigits, then minimumIntegerDigits will also be set to
- the new value.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'newValue', [/* parameter description */
-					[/* text */ 't', `the maximum number of integer digits to be shown; if
- less than zero, then zero is used. The concrete subclass may enforce an
- upper limit to this value appropriate to the numeric type being formatted.`]
-				]]
-			],
-			/* throws */ UDF,
-			/* return */ UDF
-		]],
-		[/* method */ 'isParseIntegerOnly()', [
-			[/* method description */
-				[/* text */ 't', `Returns true if this format will parse numbers as integers only.
- For example in the English locale, with ParseIntegerOnly true, the
- string "1234." would be parsed as the integer value 1234 and parsing
- would stop at the "." character.  Of course, the exact format accepted
- by the parse operation is locale dependent and determined by sub-classes
- of NumberFormat.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* inline code block */ 'i', `true`],
-				[/* text */ 't', ` if numbers should be parsed as integers only;
-         `],
-				[/* inline code block */ 'i', `false`],
-				[/* text */ 't', ` otherwise`]
-			]
-		]],
-		[/* method */ 'setParseIntegerOnly(boolean)', [
-			[/* method description */
-				[/* text */ 't', `Sets whether or not numbers should be parsed as integers only.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'value', [/* parameter description */
-					[/* text */ 't', ``],
-					[/* inline code block */ 'i', `true`],
-					[/* text */ 't', ` if numbers should be parsed as integers only;
-              `],
-					[/* inline code block */ 'i', `false`],
-					[/* text */ 't', ` otherwise`]
-				]]
-			],
-			/* throws */ UDF,
-			/* return */ UDF
-		]],
-		[/* method */ 'isGroupingUsed()', [
-			[/* method description */
-				[/* text */ 't', `Returns true if grouping is used in this format. For example, in the
- English locale, with grouping on, the number 1234567 might be formatted
- as "1,234,567". The grouping separator as well as the size of each group
- is locale dependent and is determined by sub-classes of NumberFormat.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* inline code block */ 'i', `true`],
-				[/* text */ 't', ` if grouping is used;
-         `],
-				[/* inline code block */ 'i', `false`],
-				[/* text */ 't', ` otherwise`]
-			]
-		]],
-		[/* method */ 'getMaximumIntegerDigits()', [
-			[/* method description */
-				[/* text */ 't', `Returns the maximum number of digits allowed in the integer portion of a
- number.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the maximum number of digits`]
-			]
-		]],
-		[/* method */ 'getMinimumIntegerDigits()', [
-			[/* method description */
-				[/* text */ 't', `Returns the minimum number of digits allowed in the integer portion of a
- number.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the minimum number of digits`]
-			]
-		]],
-		[/* method */ 'getMaximumFractionDigits()', [
-			[/* method description */
-				[/* text */ 't', `Returns the maximum number of digits allowed in the fraction portion of a
- number.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the maximum number of digits.`]
-			]
-		]],
-		[/* method */ 'setMaximumFractionDigits(int)', [
-			[/* method description */
-				[/* text */ 't', `Sets the maximum number of digits allowed in the fraction portion of a
- number. maximumFractionDigits must be ≥ minimumFractionDigits.  If the
- new value for maximumFractionDigits is less than the current value
- of minimumFractionDigits, then minimumFractionDigits will also be set to
- the new value.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'newValue', [/* parameter description */
-					[/* text */ 't', `the maximum number of fraction digits to be shown; if
- less than zero, then zero is used. The concrete subclass may enforce an
- upper limit to this value appropriate to the numeric type being formatted.`]
-				]]
-			],
-			/* throws */ UDF,
-			/* return */ UDF
-		]],
-		[/* method */ 'getMinimumFractionDigits()', [
-			[/* method description */
-				[/* text */ 't', `Returns the minimum number of digits allowed in the fraction portion of a
- number.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the minimum number of digits`]
-			]
-		]],
-		[/* method */ 'setMinimumFractionDigits(int)', [
-			[/* method description */
-				[/* text */ 't', `Sets the minimum number of digits allowed in the fraction portion of a
- number. minimumFractionDigits must be ≤ maximumFractionDigits.  If the
- new value for minimumFractionDigits exceeds the current value
- of maximumFractionDigits, then maximumFractionDigits will also be set to
- the new value`]
-			],
-			[/* parameters */
-				[/* parameter */ 'newValue', [/* parameter description */
-					[/* text */ 't', `the minimum number of fraction digits to be shown; if
- less than zero, then zero is used. The concrete subclass may enforce an
- upper limit to this value appropriate to the numeric type being formatted.`]
-				]]
-			],
-			/* throws */ UDF,
-			/* return */ UDF
-		]],
-		[/* method */ 'getCurrency()', [
-			[/* method description */
-				[/* text */ 't', `Gets the currency used by this number format when formatting
- currency values. The initial value is derived in a locale dependent
- way. The returned value may be null if no valid
- currency could be determined and no currency has been set using
- `],
-				[/* reference */ 'r', `#setCurrency(java.util.Currency)`, `setCurrency`],
-				[/* text */ 't', `.
+				[/* text */ 't', `Returns a currency format for the specified locale.
+
  `],
 				[/* block */ 'b', [
-					[/* text */ 't', `
- The default implementation throws
+					[/* text */ 't', `If the specified locale contains the "`],
+					[/* inline code block */ 'i', `cf`],
+					[/* text */ 't', `" (
  `],
-					[/* inline code block */ 'i', `UnsupportedOperationException`],
-					[/* text */ 't', `.`]
+					[/* external link */ 'a', `https://www.unicode.org/reports/tr35/tr35.html#UnicodeCurrencyFormatIdentifier`, `currency format style`],
+					[/* text */ 't', `)
+ `],
+					[/* reference */ 'r', `java.Locale#def_locale_extension`],
+					[/* text */ 't', `,
+ the returned currency format uses the style if it is available.
+ Otherwise, the style uses the default "`],
+					[/* inline code block */ 'i', `standard`],
+					[/* text */ 't', `" currency format.
+ For example, if the style designates "`],
+					[/* inline code block */ 'i', `account`],
+					[/* text */ 't', `", negative
+ currency amounts use a pair of parentheses in some locales.`]
 				]]
+			],
+			[/* parameters */
+				[/* parameter */ 'inLocale', [/* parameter description */
+					[/* text */ 't', `the desired locale`]
+				]]
+			],
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the `],
+				[/* inline code block */ 'i', `NumberFormat`],
+				[/* text */ 't', ` instance for currency formatting`]
+			]
+		]],
+		[/* method */ 'getInstance(java.util.Locale)', [
+			[/* method description */
+				[/* text */ 't', `Returns a general-purpose number format for the specified locale.
+ This is the same as calling
+ `],
+				[/* reference */ 'r', `#getNumberInstance(java.util.Locale)`, `getNumberInstance(inLocale)`],
+				[/* text */ 't', `.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'inLocale', [/* parameter description */
+					[/* text */ 't', `the desired locale`]
+				]]
+			],
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the `],
+				[/* inline code block */ 'i', `NumberFormat`],
+				[/* text */ 't', ` instance for general-purpose number
+ formatting`]
+			]
+		]],
+		[/* method */ 'getIntegerInstance(java.util.Locale)', [
+			[/* method description */
+				[/* text */ 't', `Returns an integer number format for the specified locale. The
+ returned number format is configured to round floating point numbers
+ to the nearest integer using half-even rounding (see `],
+				[/* reference */ 'r', `java.RoundingMode#HALF_EVEN`],
+				[/* text */ 't', `) for formatting,
+ and to parse only the integer part of an input string (see `],
+				[/* reference */ 'r', `#isParseIntegerOnly()`, `isParseIntegerOnly`],
+				[/* text */ 't', `).`]
+			],
+			[/* parameters */
+				[/* parameter */ 'inLocale', [/* parameter description */
+					[/* text */ 't', `the desired locale`]
+				]]
+			],
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `a number format for integer values`]
+			]
+		]],
+		[/* method */ 'getNumberInstance(java.util.Locale)', [
+			[/* method description */
+				[/* text */ 't', `Returns a general-purpose number format for the specified locale.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'inLocale', [/* parameter description */
+					[/* text */ 't', `the desired locale`]
+				]]
+			],
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the `],
+				[/* inline code block */ 'i', `NumberFormat`],
+				[/* text */ 't', ` instance for general-purpose number
+ formatting`]
+			]
+		]],
+		[/* method */ 'getPercentInstance(java.util.Locale)', [
+			[/* method description */
+				[/* text */ 't', `Returns a percentage format for the specified locale.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'inLocale', [/* parameter description */
+					[/* text */ 't', `the desired locale`]
+				]]
+			],
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the `],
+				[/* inline code block */ 'i', `NumberFormat`],
+				[/* text */ 't', ` instance for percentage formatting`]
+			]
+		]],
+		[/* method */ 'getAvailableLocales()', [
+			[/* method description */
+				[/* text */ 't', `Returns an array of all locales for which the
+ `],
+				[/* inline code block */ 'i', `get*Instance`],
+				[/* text */ 't', ` methods of this class can return
+ localized instances.
+ The returned array represents the union of locales supported by the Java
+ runtime and by installed
+ `],
+				[/* reference */ 'r', `java.text.spi.NumberFormatProvider`],
+				[/* text */ 't', ` implementations.
+ It must contain at least a `],
+				[/* inline code block */ 'i', `Locale`],
+				[/* text */ 't', ` instance equal to
+ `],
+				[/* reference */ 'r', `java.Locale#US`],
+				[/* text */ 't', `.`]
 			],
 			/* parameters */ UDF,
-			[/* throws */
-				[/* throw */ 'java.lang.UnsupportedOperationException', [/* throw description */
-					[/* text */ 't', `if the number format class
- doesn't implement currency formatting`]
-				]]
-			],
+			/* throws */ UDF,
 			[/* return description */
-				[/* text */ 't', `the currency used by this number format, or `],
-				[/* inline code block */ 'i', `null`]
+				[/* text */ 't', `An array of locales for which localized
+         `],
+				[/* inline code block */ 'i', `NumberFormat`],
+				[/* text */ 't', ` instances are available.`]
 			]
 		]],
 		[/* method */ 'setCurrency(java.util.Currency)', [
@@ -1216,6 +1110,112 @@ DocsCollector.collect('java.text.NumberFormat', [
 					[/* text */ 't', ` is null`]
 				]]
 			],
+			/* return */ UDF
+		]],
+		[/* method */ 'setGroupingUsed(boolean)', [
+			[/* method description */
+				[/* text */ 't', `Set whether or not grouping will be used in this format.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'newValue', [/* parameter description */
+					[/* text */ 't', ``],
+					[/* inline code block */ 'i', `true`],
+					[/* text */ 't', ` if grouping is used;
+                 `],
+					[/* inline code block */ 'i', `false`],
+					[/* text */ 't', ` otherwise`]
+				]]
+			],
+			/* throws */ UDF,
+			/* return */ UDF
+		]],
+		[/* method */ 'setMaximumFractionDigits(int)', [
+			[/* method description */
+				[/* text */ 't', `Sets the maximum number of digits allowed in the fraction portion of a
+ number. maximumFractionDigits must be ≥ minimumFractionDigits.  If the
+ new value for maximumFractionDigits is less than the current value
+ of minimumFractionDigits, then minimumFractionDigits will also be set to
+ the new value.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'newValue', [/* parameter description */
+					[/* text */ 't', `the maximum number of fraction digits to be shown; if
+ less than zero, then zero is used. The concrete subclass may enforce an
+ upper limit to this value appropriate to the numeric type being formatted.`]
+				]]
+			],
+			/* throws */ UDF,
+			/* return */ UDF
+		]],
+		[/* method */ 'setMaximumIntegerDigits(int)', [
+			[/* method description */
+				[/* text */ 't', `Sets the maximum number of digits allowed in the integer portion of a
+ number. maximumIntegerDigits must be ≥ minimumIntegerDigits.  If the
+ new value for maximumIntegerDigits is less than the current value
+ of minimumIntegerDigits, then minimumIntegerDigits will also be set to
+ the new value.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'newValue', [/* parameter description */
+					[/* text */ 't', `the maximum number of integer digits to be shown; if
+ less than zero, then zero is used. The concrete subclass may enforce an
+ upper limit to this value appropriate to the numeric type being formatted.`]
+				]]
+			],
+			/* throws */ UDF,
+			/* return */ UDF
+		]],
+		[/* method */ 'setMinimumFractionDigits(int)', [
+			[/* method description */
+				[/* text */ 't', `Sets the minimum number of digits allowed in the fraction portion of a
+ number. minimumFractionDigits must be ≤ maximumFractionDigits.  If the
+ new value for minimumFractionDigits exceeds the current value
+ of maximumFractionDigits, then maximumFractionDigits will also be set to
+ the new value`]
+			],
+			[/* parameters */
+				[/* parameter */ 'newValue', [/* parameter description */
+					[/* text */ 't', `the minimum number of fraction digits to be shown; if
+ less than zero, then zero is used. The concrete subclass may enforce an
+ upper limit to this value appropriate to the numeric type being formatted.`]
+				]]
+			],
+			/* throws */ UDF,
+			/* return */ UDF
+		]],
+		[/* method */ 'setMinimumIntegerDigits(int)', [
+			[/* method description */
+				[/* text */ 't', `Sets the minimum number of digits allowed in the integer portion of a
+ number. minimumIntegerDigits must be ≤ maximumIntegerDigits.  If the
+ new value for minimumIntegerDigits exceeds the current value
+ of maximumIntegerDigits, then maximumIntegerDigits will also be set to
+ the new value`]
+			],
+			[/* parameters */
+				[/* parameter */ 'newValue', [/* parameter description */
+					[/* text */ 't', `the minimum number of integer digits to be shown; if
+ less than zero, then zero is used. The concrete subclass may enforce an
+ upper limit to this value appropriate to the numeric type being formatted.`]
+				]]
+			],
+			/* throws */ UDF,
+			/* return */ UDF
+		]],
+		[/* method */ 'setParseIntegerOnly(boolean)', [
+			[/* method description */
+				[/* text */ 't', `Sets whether or not numbers should be parsed as integers only.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'value', [/* parameter description */
+					[/* text */ 't', ``],
+					[/* inline code block */ 'i', `true`],
+					[/* text */ 't', ` if numbers should be parsed as integers only;
+              `],
+					[/* inline code block */ 'i', `false`],
+					[/* text */ 't', ` otherwise`]
+				]]
+			],
+			/* throws */ UDF,
 			/* return */ UDF
 		]],
 		[/* method */ 'setRoundingMode(java.math.RoundingMode)', [

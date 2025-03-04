@@ -98,62 +98,20 @@ DocsCollector.collect('java.util.AbstractSequentialList', [
 		]]
 	],
 	[/* methods */
-		[/* method */ 'add(int,java.lang.Object)', [
+		[/* method */ 'listIterator(int)', [
 			[/* method description */
-				[/* text */ 't', `Inserts the specified element at the specified position in this list
- (optional operation).  Shifts the element currently at that position
- (if any) and any subsequent elements to the right (adds one to their
- indices).
-
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', `This implementation first gets a list iterator pointing to the
- indexed element (with `],
-					[/* inline code block */ 'i', `listIterator(index)`],
-					[/* text */ 't', `).  Then, it
- inserts the specified element with `],
-					[/* inline code block */ 'i', `ListIterator.add`],
-					[/* text */ 't', `.
-
- `]
-				]],
-				[/* block */ 'b', [
-					[/* text */ 't', `Note that this implementation will throw an
- `],
-					[/* inline code block */ 'i', `UnsupportedOperationException`],
-					[/* text */ 't', ` if the list iterator does not
- implement the `],
-					[/* inline code block */ 'i', `add`],
-					[/* text */ 't', ` operation.`]
-				]]
+				[/* text */ 't', `Returns a list iterator over the elements in this list (in proper
+ sequence).`]
 			],
 			[/* parameters */
 				[/* parameter */ 'index', [/* parameter description */
-					[/* text */ 't', `index at which the specified element is to be inserted`]
-				]],
-				[/* parameter */ 'element', [/* parameter description */
-					[/* text */ 't', `element to be inserted`]
+					[/* text */ 't', `index of first element to be returned from the list
+         iterator (by a call to the `],
+					[/* inline code block */ 'i', `next`],
+					[/* text */ 't', ` method)`]
 				]]
 			],
 			[/* throws */
-				[/* throw */ 'java.lang.UnsupportedOperationException', [/* throw description */
-					[/* text */ 't', `if the `],
-					[/* inline code block */ 'i', `add`],
-					[/* text */ 't', ` operation
-         is not supported by this list`]
-				]],
-				[/* throw */ 'java.lang.ClassCastException', [/* throw description */
-					[/* text */ 't', `if the class of the specified element
-         prevents it from being added to this list`]
-				]],
-				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
-					[/* text */ 't', `if the specified element is null and
-         this list does not permit null elements`]
-				]],
-				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
-					[/* text */ 't', `if some property of the specified
-         element prevents it from being added to this list`]
-				]],
 				[/* throw */ 'java.lang.IndexOutOfBoundsException', [/* throw description */
 					[/* text */ 't', `if the index is out of range
          (`],
@@ -161,104 +119,9 @@ DocsCollector.collect('java.util.AbstractSequentialList', [
 					[/* text */ 't', `)`]
 				]]
 			],
-			/* return */ UDF
-		]],
-		[/* method */ 'remove(int)', [
-			[/* method description */
-				[/* text */ 't', `Removes the element at the specified position in this list (optional
- operation).  Shifts any subsequent elements to the left (subtracts one
- from their indices).  Returns the element that was removed from the
- list.
-
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', `This implementation first gets a list iterator pointing to the
- indexed element (with `],
-					[/* inline code block */ 'i', `listIterator(index)`],
-					[/* text */ 't', `).  Then, it removes
- the element with `],
-					[/* inline code block */ 'i', `ListIterator.remove`],
-					[/* text */ 't', `.
-
- `]
-				]],
-				[/* block */ 'b', [
-					[/* text */ 't', `Note that this implementation will throw an
- `],
-					[/* inline code block */ 'i', `UnsupportedOperationException`],
-					[/* text */ 't', ` if the list iterator does not
- implement the `],
-					[/* inline code block */ 'i', `remove`],
-					[/* text */ 't', ` operation.`]
-				]]
-			],
-			[/* parameters */
-				[/* parameter */ 'index', [/* parameter description */
-					[/* text */ 't', `the index of the element to be removed`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.UnsupportedOperationException', [/* throw description */
-					[/* text */ 't', `if the `],
-					[/* inline code block */ 'i', `remove`],
-					[/* text */ 't', ` operation
-         is not supported by this list`]
-				]],
-				[/* throw */ 'java.lang.IndexOutOfBoundsException', [/* throw description */
-					[/* text */ 't', `if the index is out of range
-         (`],
-					[/* inline code block */ 'i', `index < 0 || index >= size()`],
-					[/* text */ 't', `)`]
-				]]
-			],
 			[/* return description */
-				[/* text */ 't', `the element previously at the specified position`]
-			]
-		]],
-		[/* method */ 'get(int)', [
-			[/* method description */
-				[/* text */ 't', `Returns the element at the specified position in this list.
-
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', `This implementation first gets a list iterator pointing to the
- indexed element (with `],
-					[/* inline code block */ 'i', `listIterator(index)`],
-					[/* text */ 't', `).  Then, it gets
- the element using `],
-					[/* inline code block */ 'i', `ListIterator.next`],
-					[/* text */ 't', ` and returns it.`]
-				]]
-			],
-			[/* parameters */
-				[/* parameter */ 'index', [/* parameter description */
-					[/* text */ 't', `index of the element to return`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.IndexOutOfBoundsException', [/* throw description */
-					[/* text */ 't', `if the index is out of range
-         (`],
-					[/* inline code block */ 'i', `index < 0 || index >= size()`],
-					[/* text */ 't', `)`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `the element at the specified position in this list`]
-			]
-		]],
-		[/* method */ 'iterator()', [
-			[/* method description */
-				[/* text */ 't', `Returns an iterator over the elements in this list (in proper
- sequence).`],
-				[/* block */ 'b', `
-
- This implementation merely returns a list iterator over the list.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `an iterator over the elements in this list (in proper sequence)`]
+				[/* text */ 't', `a list iterator over the elements in this list (in proper
+         sequence)`]
 			]
 		]],
 		[/* method */ 'addAll(int,java.util.Collection)', [
@@ -344,6 +207,90 @@ DocsCollector.collect('java.util.AbstractSequentialList', [
 				[/* text */ 't', ` if this list changed as a result of the call`]
 			]
 		]],
+		[/* method */ 'get(int)', [
+			[/* method description */
+				[/* text */ 't', `Returns the element at the specified position in this list.
+
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', `This implementation first gets a list iterator pointing to the
+ indexed element (with `],
+					[/* inline code block */ 'i', `listIterator(index)`],
+					[/* text */ 't', `).  Then, it gets
+ the element using `],
+					[/* inline code block */ 'i', `ListIterator.next`],
+					[/* text */ 't', ` and returns it.`]
+				]]
+			],
+			[/* parameters */
+				[/* parameter */ 'index', [/* parameter description */
+					[/* text */ 't', `index of the element to return`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.lang.IndexOutOfBoundsException', [/* throw description */
+					[/* text */ 't', `if the index is out of range
+         (`],
+					[/* inline code block */ 'i', `index < 0 || index >= size()`],
+					[/* text */ 't', `)`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `the element at the specified position in this list`]
+			]
+		]],
+		[/* method */ 'remove(int)', [
+			[/* method description */
+				[/* text */ 't', `Removes the element at the specified position in this list (optional
+ operation).  Shifts any subsequent elements to the left (subtracts one
+ from their indices).  Returns the element that was removed from the
+ list.
+
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', `This implementation first gets a list iterator pointing to the
+ indexed element (with `],
+					[/* inline code block */ 'i', `listIterator(index)`],
+					[/* text */ 't', `).  Then, it removes
+ the element with `],
+					[/* inline code block */ 'i', `ListIterator.remove`],
+					[/* text */ 't', `.
+
+ `]
+				]],
+				[/* block */ 'b', [
+					[/* text */ 't', `Note that this implementation will throw an
+ `],
+					[/* inline code block */ 'i', `UnsupportedOperationException`],
+					[/* text */ 't', ` if the list iterator does not
+ implement the `],
+					[/* inline code block */ 'i', `remove`],
+					[/* text */ 't', ` operation.`]
+				]]
+			],
+			[/* parameters */
+				[/* parameter */ 'index', [/* parameter description */
+					[/* text */ 't', `the index of the element to be removed`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.lang.UnsupportedOperationException', [/* throw description */
+					[/* text */ 't', `if the `],
+					[/* inline code block */ 'i', `remove`],
+					[/* text */ 't', ` operation
+         is not supported by this list`]
+				]],
+				[/* throw */ 'java.lang.IndexOutOfBoundsException', [/* throw description */
+					[/* text */ 't', `if the index is out of range
+         (`],
+					[/* inline code block */ 'i', `index < 0 || index >= size()`],
+					[/* text */ 't', `)`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `the element previously at the specified position`]
+			]
+		]],
 		[/* method */ 'set(int,java.lang.Object)', [
 			[/* method description */
 				[/* text */ 't', `Replaces the element at the specified position in this list with the
@@ -412,20 +359,76 @@ DocsCollector.collect('java.util.AbstractSequentialList', [
 				[/* text */ 't', `the element previously at the specified position`]
 			]
 		]],
-		[/* method */ 'listIterator(int)', [
+		[/* method */ 'iterator()', [
 			[/* method description */
-				[/* text */ 't', `Returns a list iterator over the elements in this list (in proper
- sequence).`]
+				[/* text */ 't', `Returns an iterator over the elements in this list (in proper
+ sequence).`],
+				[/* block */ 'b', `
+
+ This implementation merely returns a list iterator over the list.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `an iterator over the elements in this list (in proper sequence)`]
+			]
+		]],
+		[/* method */ 'add(int,java.lang.Object)', [
+			[/* method description */
+				[/* text */ 't', `Inserts the specified element at the specified position in this list
+ (optional operation).  Shifts the element currently at that position
+ (if any) and any subsequent elements to the right (adds one to their
+ indices).
+
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', `This implementation first gets a list iterator pointing to the
+ indexed element (with `],
+					[/* inline code block */ 'i', `listIterator(index)`],
+					[/* text */ 't', `).  Then, it
+ inserts the specified element with `],
+					[/* inline code block */ 'i', `ListIterator.add`],
+					[/* text */ 't', `.
+
+ `]
+				]],
+				[/* block */ 'b', [
+					[/* text */ 't', `Note that this implementation will throw an
+ `],
+					[/* inline code block */ 'i', `UnsupportedOperationException`],
+					[/* text */ 't', ` if the list iterator does not
+ implement the `],
+					[/* inline code block */ 'i', `add`],
+					[/* text */ 't', ` operation.`]
+				]]
 			],
 			[/* parameters */
 				[/* parameter */ 'index', [/* parameter description */
-					[/* text */ 't', `index of first element to be returned from the list
-         iterator (by a call to the `],
-					[/* inline code block */ 'i', `next`],
-					[/* text */ 't', ` method)`]
+					[/* text */ 't', `index at which the specified element is to be inserted`]
+				]],
+				[/* parameter */ 'element', [/* parameter description */
+					[/* text */ 't', `element to be inserted`]
 				]]
 			],
 			[/* throws */
+				[/* throw */ 'java.lang.UnsupportedOperationException', [/* throw description */
+					[/* text */ 't', `if the `],
+					[/* inline code block */ 'i', `add`],
+					[/* text */ 't', ` operation
+         is not supported by this list`]
+				]],
+				[/* throw */ 'java.lang.ClassCastException', [/* throw description */
+					[/* text */ 't', `if the class of the specified element
+         prevents it from being added to this list`]
+				]],
+				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
+					[/* text */ 't', `if the specified element is null and
+         this list does not permit null elements`]
+				]],
+				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
+					[/* text */ 't', `if some property of the specified
+         element prevents it from being added to this list`]
+				]],
 				[/* throw */ 'java.lang.IndexOutOfBoundsException', [/* throw description */
 					[/* text */ 't', `if the index is out of range
          (`],
@@ -433,10 +436,7 @@ DocsCollector.collect('java.util.AbstractSequentialList', [
 					[/* text */ 't', `)`]
 				]]
 			],
-			[/* return description */
-				[/* text */ 't', `a list iterator over the elements in this list (in proper
-         sequence)`]
-			]
+			/* return */ UDF
 		]]
 	],
 ]);

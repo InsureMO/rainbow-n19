@@ -55,6 +55,33 @@ DocsCollector.collect('java.io.FilterOutputStream', [
 		]]
 	],
 	[/* methods */
+		[/* method */ 'close()', [
+			[/* method description */
+				[/* text */ 't', `Closes this output stream and releases any system resources
+ associated with the stream.
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', `
+ When not already closed, the `],
+					[/* inline code block */ 'i', `close`],
+					[/* text */ 't', ` method of `],
+					[/* inline code block */ 'i', `FilterOutputStream`],
+					[/* text */ 't', ` calls its `],
+					[/* inline code block */ 'i', `flush`],
+					[/* text */ 't', ` method, and then
+ calls the `],
+					[/* inline code block */ 'i', `close`],
+					[/* text */ 't', ` method of its underlying output stream.`]
+				]]
+			],
+			/* parameters */ UDF,
+			[/* throws */
+				[/* throw */ 'java.io.IOException', [/* throw description */
+					[/* text */ 't', `if an I/O error occurs.`]
+				]]
+			],
+			/* return */ UDF
+		]],
 		[/* method */ 'flush()', [
 			[/* method description */
 				[/* text */ 't', `Flushes this output stream and forces any buffered output bytes
@@ -73,6 +100,55 @@ DocsCollector.collect('java.io.FilterOutputStream', [
 				]]
 			],
 			/* parameters */ UDF,
+			[/* throws */
+				[/* throw */ 'java.io.IOException', [/* throw description */
+					[/* text */ 't', `if an I/O error occurs.`]
+				]]
+			],
+			/* return */ UDF
+		]],
+		[/* method */ 'write(byte[])', [
+			[/* method description */
+				[/* text */ 't', `Writes `],
+				[/* inline code block */ 'i', `b.length`],
+				[/* text */ 't', ` bytes to this output stream.
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', `
+ The `],
+					[/* inline code block */ 'i', `write`],
+					[/* text */ 't', ` method of `],
+					[/* inline code block */ 'i', `FilterOutputStream`],
+					[/* text */ 't', `
+ calls its `],
+					[/* inline code block */ 'i', `write`],
+					[/* text */ 't', ` method of three arguments with the
+ arguments `],
+					[/* inline code block */ 'i', `b`],
+					[/* text */ 't', `, `],
+					[/* inline code block */ 'i', `0`],
+					[/* text */ 't', `, and
+ `],
+					[/* inline code block */ 'i', `b.length`],
+					[/* text */ 't', `.
+ `]
+				]],
+				[/* block */ 'b', [
+					[/* text */ 't', `
+ Note that this method does not call the one-argument
+ `],
+					[/* inline code block */ 'i', `write`],
+					[/* text */ 't', ` method of its underlying output stream with
+ the single argument `],
+					[/* inline code block */ 'i', `b`],
+					[/* text */ 't', `.`]
+				]]
+			],
+			[/* parameters */
+				[/* parameter */ 'b', [/* parameter description */
+					[/* text */ 't', `the data to be written.`]
+				]]
+			],
 			[/* throws */
 				[/* throw */ 'java.io.IOException', [/* throw description */
 					[/* text */ 't', `if an I/O error occurs.`]
@@ -137,55 +213,6 @@ DocsCollector.collect('java.io.FilterOutputStream', [
 			],
 			/* return */ UDF
 		]],
-		[/* method */ 'write(byte[])', [
-			[/* method description */
-				[/* text */ 't', `Writes `],
-				[/* inline code block */ 'i', `b.length`],
-				[/* text */ 't', ` bytes to this output stream.
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', `
- The `],
-					[/* inline code block */ 'i', `write`],
-					[/* text */ 't', ` method of `],
-					[/* inline code block */ 'i', `FilterOutputStream`],
-					[/* text */ 't', `
- calls its `],
-					[/* inline code block */ 'i', `write`],
-					[/* text */ 't', ` method of three arguments with the
- arguments `],
-					[/* inline code block */ 'i', `b`],
-					[/* text */ 't', `, `],
-					[/* inline code block */ 'i', `0`],
-					[/* text */ 't', `, and
- `],
-					[/* inline code block */ 'i', `b.length`],
-					[/* text */ 't', `.
- `]
-				]],
-				[/* block */ 'b', [
-					[/* text */ 't', `
- Note that this method does not call the one-argument
- `],
-					[/* inline code block */ 'i', `write`],
-					[/* text */ 't', ` method of its underlying output stream with
- the single argument `],
-					[/* inline code block */ 'i', `b`],
-					[/* text */ 't', `.`]
-				]]
-			],
-			[/* parameters */
-				[/* parameter */ 'b', [/* parameter description */
-					[/* text */ 't', `the data to be written.`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.io.IOException', [/* throw description */
-					[/* text */ 't', `if an I/O error occurs.`]
-				]]
-			],
-			/* return */ UDF
-		]],
 		[/* method */ 'write(int)', [
 			[/* method description */
 				[/* text */ 't', `Writes the specified `],
@@ -223,33 +250,6 @@ DocsCollector.collect('java.io.FilterOutputStream', [
 					[/* text */ 't', `.`]
 				]]
 			],
-			[/* throws */
-				[/* throw */ 'java.io.IOException', [/* throw description */
-					[/* text */ 't', `if an I/O error occurs.`]
-				]]
-			],
-			/* return */ UDF
-		]],
-		[/* method */ 'close()', [
-			[/* method description */
-				[/* text */ 't', `Closes this output stream and releases any system resources
- associated with the stream.
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', `
- When not already closed, the `],
-					[/* inline code block */ 'i', `close`],
-					[/* text */ 't', ` method of `],
-					[/* inline code block */ 'i', `FilterOutputStream`],
-					[/* text */ 't', ` calls its `],
-					[/* inline code block */ 'i', `flush`],
-					[/* text */ 't', ` method, and then
- calls the `],
-					[/* inline code block */ 'i', `close`],
-					[/* text */ 't', ` method of its underlying output stream.`]
-				]]
-			],
-			/* parameters */ UDF,
 			[/* throws */
 				[/* throw */ 'java.io.IOException', [/* throw description */
 					[/* text */ 't', `if an I/O error occurs.`]

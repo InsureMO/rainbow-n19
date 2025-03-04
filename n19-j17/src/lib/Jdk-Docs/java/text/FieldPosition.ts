@@ -73,6 +73,37 @@ DocsCollector.collect('java.text.FieldPosition', [
 	],
 	/* fields */ UDF,
 	[/* constructors */
+		[/* constructor */ '<init>(int)', [
+			[/* constructor description */
+				[/* text */ 't', `Creates a FieldPosition object for the given field.  Fields are
+ identified by constants, whose names typically end with _FIELD,
+ in the various subclasses of Format.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'field', [/* parameter description */
+					[/* text */ 't', `the field identifier`]
+				]]
+			],
+			/* throws */ UDF
+		]],
+		[/* constructor */ '<init>(java.text.Format.Field)', [
+			[/* constructor description */
+				[/* text */ 't', `Creates a FieldPosition object for the given field constant. Fields are
+ identified by constants defined in the various `],
+				[/* inline code block */ 'i', `Format`],
+				[/* text */ 't', `
+ subclasses. This is equivalent to calling
+ `],
+				[/* inline code block */ 'i', `new FieldPosition(attribute, -1)`],
+				[/* text */ 't', `.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'attribute', [/* parameter description */
+					[/* text */ 't', `Format.Field constant identifying a field`]
+				]]
+			],
+			/* throws */ UDF
+		]],
 		[/* constructor */ '<init>(java.text.Format.Field,int)', [
 			[/* constructor description */
 				[/* text */ 't', `Creates a `],
@@ -119,37 +150,6 @@ DocsCollector.collect('java.text.FieldPosition', [
 				]]
 			],
 			/* throws */ UDF
-		]],
-		[/* constructor */ '<init>(java.text.Format.Field)', [
-			[/* constructor description */
-				[/* text */ 't', `Creates a FieldPosition object for the given field constant. Fields are
- identified by constants defined in the various `],
-				[/* inline code block */ 'i', `Format`],
-				[/* text */ 't', `
- subclasses. This is equivalent to calling
- `],
-				[/* inline code block */ 'i', `new FieldPosition(attribute, -1)`],
-				[/* text */ 't', `.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'attribute', [/* parameter description */
-					[/* text */ 't', `Format.Field constant identifying a field`]
-				]]
-			],
-			/* throws */ UDF
-		]],
-		[/* constructor */ '<init>(int)', [
-			[/* constructor description */
-				[/* text */ 't', `Creates a FieldPosition object for the given field.  Fields are
- identified by constants, whose names typically end with _FIELD,
- in the various subclasses of Format.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'field', [/* parameter description */
-					[/* text */ 't', `the field identifier`]
-				]]
-			],
-			/* throws */ UDF
 		]]
 	],
 	[/* methods */
@@ -171,14 +171,35 @@ DocsCollector.collect('java.text.FieldPosition', [
 				[/* text */ 't', ` otherwise.`]
 			]
 		]],
-		[/* method */ 'toString()', [
+		[/* method */ 'getBeginIndex()', [
 			[/* method description */
-				[/* text */ 't', `Return a string representation of this FieldPosition.`]
+				[/* text */ 't', `Retrieves the index of the first character in the requested field.`]
 			],
 			/* parameters */ UDF,
 			/* throws */ UDF,
 			[/* return description */
-				[/* text */ 't', `a string representation of this object`]
+				[/* text */ 't', `the begin index`]
+			]
+		]],
+		[/* method */ 'getEndIndex()', [
+			[/* method description */
+				[/* text */ 't', `Retrieves the index of the character following the last character in the
+ requested field.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the end index`]
+			]
+		]],
+		[/* method */ 'getField()', [
+			[/* method description */
+				[/* text */ 't', `Retrieves the field identifier.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the field identifier`]
 			]
 		]],
 		[/* method */ 'hashCode()', [
@@ -191,14 +212,28 @@ DocsCollector.collect('java.text.FieldPosition', [
 				[/* text */ 't', `a hash code value for this object`]
 			]
 		]],
-		[/* method */ 'getField()', [
+		[/* method */ 'toString()', [
 			[/* method description */
-				[/* text */ 't', `Retrieves the field identifier.`]
+				[/* text */ 't', `Return a string representation of this FieldPosition.`]
 			],
 			/* parameters */ UDF,
 			/* throws */ UDF,
 			[/* return description */
-				[/* text */ 't', `the field identifier`]
+				[/* text */ 't', `a string representation of this object`]
+			]
+		]],
+		[/* method */ 'getFieldAttribute()', [
+			[/* method description */
+				[/* text */ 't', `Returns the field identifier as an attribute constant
+ from one of the `],
+				[/* inline code block */ 'i', `Field`],
+				[/* text */ 't', ` subclasses. May return null if
+ the field is specified only by an integer field ID.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `Identifier for the field`]
 			]
 		]],
 		[/* method */ 'setBeginIndex(int)', [
@@ -224,41 +259,6 @@ DocsCollector.collect('java.text.FieldPosition', [
 			],
 			/* throws */ UDF,
 			/* return */ UDF
-		]],
-		[/* method */ 'getFieldAttribute()', [
-			[/* method description */
-				[/* text */ 't', `Returns the field identifier as an attribute constant
- from one of the `],
-				[/* inline code block */ 'i', `Field`],
-				[/* text */ 't', ` subclasses. May return null if
- the field is specified only by an integer field ID.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `Identifier for the field`]
-			]
-		]],
-		[/* method */ 'getBeginIndex()', [
-			[/* method description */
-				[/* text */ 't', `Retrieves the index of the first character in the requested field.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the begin index`]
-			]
-		]],
-		[/* method */ 'getEndIndex()', [
-			[/* method description */
-				[/* text */ 't', `Retrieves the index of the character following the last character in the
- requested field.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the end index`]
-			]
 		]]
 	],
 ]);

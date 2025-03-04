@@ -54,6 +54,57 @@ DocsCollector.collect('java.nio.file.attribute.FileTime', [
 				[/* text */ 't', ` that represents the same time`]
 			]
 		]],
+		[/* method */ 'compareTo(java.nio.file.attribute.FileTime)', [
+			[/* method description */
+				[/* text */ 't', `Compares the value of two `],
+				[/* inline code block */ 'i', `FileTime`],
+				[/* text */ 't', ` objects for order.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'other', [/* parameter description */
+					[/* text */ 't', `the other `],
+					[/* inline code block */ 'i', `FileTime`],
+					[/* text */ 't', ` to be compared`]
+				]]
+			],
+			/* throws */ UDF,
+			[/* return description */
+				[/* inline code block */ 'i', `0`],
+				[/* text */ 't', ` if this `],
+				[/* inline code block */ 'i', `FileTime`],
+				[/* text */ 't', ` is equal to `],
+				[/* inline code block */ 'i', `other`],
+				[/* text */ 't', `, a
+          value less than 0 if this `],
+				[/* inline code block */ 'i', `FileTime`],
+				[/* text */ 't', ` represents a time
+          that is before `],
+				[/* inline code block */ 'i', `other`],
+				[/* text */ 't', `, and a value greater than 0 if this
+          `],
+				[/* inline code block */ 'i', `FileTime`],
+				[/* text */ 't', ` represents a time that is after `],
+				[/* inline code block */ 'i', `other`]
+			]
+		]],
+		[/* method */ 'hashCode()', [
+			[/* method description */
+				[/* text */ 't', `Computes a hash code for this file time.
+
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', ` The hash code is based upon the value represented, and satisfies the
+ general contract of the `],
+					[/* reference */ 'r', `java.nio.file.Object#hashCode()`],
+					[/* text */ 't', ` method.`]
+				]]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the hash-code value`]
+			]
+		]],
 		[/* method */ 'toString()', [
 			[/* method description */
 				[/* text */ 't', `Returns the string representation of this `],
@@ -112,149 +163,6 @@ DocsCollector.collect('java.nio.file.attribute.FileTime', [
 				[/* text */ 't', `the string representation of this file time`]
 			]
 		]],
-		[/* method */ 'hashCode()', [
-			[/* method description */
-				[/* text */ 't', `Computes a hash code for this file time.
-
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', ` The hash code is based upon the value represented, and satisfies the
- general contract of the `],
-					[/* reference */ 'r', `java.nio.file.Object#hashCode()`],
-					[/* text */ 't', ` method.`]
-				]]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the hash-code value`]
-			]
-		]],
-		[/* method */ 'compareTo(java.nio.file.attribute.FileTime)', [
-			[/* method description */
-				[/* text */ 't', `Compares the value of two `],
-				[/* inline code block */ 'i', `FileTime`],
-				[/* text */ 't', ` objects for order.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'other', [/* parameter description */
-					[/* text */ 't', `the other `],
-					[/* inline code block */ 'i', `FileTime`],
-					[/* text */ 't', ` to be compared`]
-				]]
-			],
-			/* throws */ UDF,
-			[/* return description */
-				[/* inline code block */ 'i', `0`],
-				[/* text */ 't', ` if this `],
-				[/* inline code block */ 'i', `FileTime`],
-				[/* text */ 't', ` is equal to `],
-				[/* inline code block */ 'i', `other`],
-				[/* text */ 't', `, a
-          value less than 0 if this `],
-				[/* inline code block */ 'i', `FileTime`],
-				[/* text */ 't', ` represents a time
-          that is before `],
-				[/* inline code block */ 'i', `other`],
-				[/* text */ 't', `, and a value greater than 0 if this
-          `],
-				[/* inline code block */ 'i', `FileTime`],
-				[/* text */ 't', ` represents a time that is after `],
-				[/* inline code block */ 'i', `other`]
-			]
-		]],
-		[/* method */ 'to(java.util.concurrent.TimeUnit)', [
-			[/* method description */
-				[/* text */ 't', `Returns the value at the given unit of granularity.
-
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', ` Conversion from a coarser granularity that would numerically overflow
- saturate to `],
-					[/* inline code block */ 'i', `Long.MIN_VALUE`],
-					[/* text */ 't', ` if negative or `],
-					[/* inline code block */ 'i', `Long.MAX_VALUE`],
-					[/* text */ 't', `
- if positive.`]
-				]]
-			],
-			[/* parameters */
-				[/* parameter */ 'unit', [/* parameter description */
-					[/* text */ 't', `the unit of granularity for the return value`]
-				]]
-			],
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `value in the given unit of granularity, since the epoch
-          since the epoch (1970-01-01T00:00:00Z); can be negative`]
-			]
-		]],
-		[/* method */ 'from(long,java.util.concurrent.TimeUnit)', [
-			[/* method description */
-				[/* text */ 't', `Returns a `],
-				[/* inline code block */ 'i', `FileTime`],
-				[/* text */ 't', ` representing a value at the given unit of
- granularity.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'value', [/* parameter description */
-					[/* text */ 't', `the value since the epoch (1970-01-01T00:00:00Z); can be
-          negative`]
-				]],
-				[/* parameter */ 'unit', [/* parameter description */
-					[/* text */ 't', `the unit of granularity to interpret the value`]
-				]]
-			],
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `a `],
-				[/* inline code block */ 'i', `FileTime`],
-				[/* text */ 't', ` representing the given value`]
-			]
-		]],
-		[/* method */ 'from(java.time.Instant)', [
-			[/* method description */
-				[/* text */ 't', `Returns a `],
-				[/* inline code block */ 'i', `FileTime`],
-				[/* text */ 't', ` representing the same point of time value
- on the time-line as the provided `],
-				[/* inline code block */ 'i', `Instant`],
-				[/* text */ 't', ` object.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'instant', [/* parameter description */
-					[/* text */ 't', `the instant to convert`]
-				]]
-			],
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `a `],
-				[/* inline code block */ 'i', `FileTime`],
-				[/* text */ 't', ` representing the same point on the time-line
-          as the provided instant`]
-			]
-		]],
-		[/* method */ 'toMillis()', [
-			[/* method description */
-				[/* text */ 't', `Returns the value in milliseconds.
-
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', ` Conversion from a coarser granularity that would numerically overflow
- saturate to `],
-					[/* inline code block */ 'i', `Long.MIN_VALUE`],
-					[/* text */ 't', ` if negative or `],
-					[/* inline code block */ 'i', `Long.MAX_VALUE`],
-					[/* text */ 't', `
- if positive.`]
-				]]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the value in milliseconds, since the epoch (1970-01-01T00:00:00Z)`]
-			]
-		]],
 		[/* method */ 'toInstant()', [
 			[/* method description */
 				[/* text */ 't', `Converts this `],
@@ -300,6 +208,98 @@ DocsCollector.collect('java.nio.file.attribute.FileTime', [
           this `],
 				[/* inline code block */ 'i', `FileTime`],
 				[/* text */ 't', ` object`]
+			]
+		]],
+		[/* method */ 'to(java.util.concurrent.TimeUnit)', [
+			[/* method description */
+				[/* text */ 't', `Returns the value at the given unit of granularity.
+
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', ` Conversion from a coarser granularity that would numerically overflow
+ saturate to `],
+					[/* inline code block */ 'i', `Long.MIN_VALUE`],
+					[/* text */ 't', ` if negative or `],
+					[/* inline code block */ 'i', `Long.MAX_VALUE`],
+					[/* text */ 't', `
+ if positive.`]
+				]]
+			],
+			[/* parameters */
+				[/* parameter */ 'unit', [/* parameter description */
+					[/* text */ 't', `the unit of granularity for the return value`]
+				]]
+			],
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `value in the given unit of granularity, since the epoch
+          since the epoch (1970-01-01T00:00:00Z); can be negative`]
+			]
+		]],
+		[/* method */ 'toMillis()', [
+			[/* method description */
+				[/* text */ 't', `Returns the value in milliseconds.
+
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', ` Conversion from a coarser granularity that would numerically overflow
+ saturate to `],
+					[/* inline code block */ 'i', `Long.MIN_VALUE`],
+					[/* text */ 't', ` if negative or `],
+					[/* inline code block */ 'i', `Long.MAX_VALUE`],
+					[/* text */ 't', `
+ if positive.`]
+				]]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the value in milliseconds, since the epoch (1970-01-01T00:00:00Z)`]
+			]
+		]],
+		[/* method */ 'from(java.time.Instant)', [
+			[/* method description */
+				[/* text */ 't', `Returns a `],
+				[/* inline code block */ 'i', `FileTime`],
+				[/* text */ 't', ` representing the same point of time value
+ on the time-line as the provided `],
+				[/* inline code block */ 'i', `Instant`],
+				[/* text */ 't', ` object.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'instant', [/* parameter description */
+					[/* text */ 't', `the instant to convert`]
+				]]
+			],
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `a `],
+				[/* inline code block */ 'i', `FileTime`],
+				[/* text */ 't', ` representing the same point on the time-line
+          as the provided instant`]
+			]
+		]],
+		[/* method */ 'from(long,java.util.concurrent.TimeUnit)', [
+			[/* method description */
+				[/* text */ 't', `Returns a `],
+				[/* inline code block */ 'i', `FileTime`],
+				[/* text */ 't', ` representing a value at the given unit of
+ granularity.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'value', [/* parameter description */
+					[/* text */ 't', `the value since the epoch (1970-01-01T00:00:00Z); can be
+          negative`]
+				]],
+				[/* parameter */ 'unit', [/* parameter description */
+					[/* text */ 't', `the unit of granularity to interpret the value`]
+				]]
+			],
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `a `],
+				[/* inline code block */ 'i', `FileTime`],
+				[/* text */ 't', ` representing the given value`]
 			]
 		]],
 		[/* method */ 'fromMillis(long)', [

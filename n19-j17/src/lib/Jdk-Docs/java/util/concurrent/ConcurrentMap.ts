@@ -167,18 +167,19 @@ DocsCollector.collect('java.util.concurrent.ConcurrentMap', [
 				[/* text */ 't', ` if the value was replaced`]
 			]
 		]],
-		[/* method */ 'replace(java.lang.Object,java.lang.Object)', [
+		[/* method */ 'putIfAbsent(java.lang.Object,java.lang.Object)', [
 			[/* method description */
-				[/* text */ 't', `Replaces the entry for a key only if currently mapped to some value.
+				[/* text */ 't', `If the specified key is not already associated
+ with a value, associates it with the given value.
  This is equivalent to, for this `],
 				[/* inline code block */ 'i', `map`],
 				[/* text */ 't', `:
  `],
 				[/* code block */ 'c', [
-					[/* inline code block */ 'i', `if (map.containsKey(key))
+					[/* inline code block */ 'i', `if (!map.containsKey(key))
    return map.put(key, value);
  else
-   return null;`]
+   return map.get(key);`]
 				]],
 				[/* text */ 't', `
 
@@ -186,7 +187,7 @@ DocsCollector.collect('java.util.concurrent.ConcurrentMap', [
 			],
 			[/* parameters */
 				[/* parameter */ 'key', [/* parameter description */
-					[/* text */ 't', `key with which the specified value is associated`]
+					[/* text */ 't', `key with which the specified value is to be associated`]
 				]],
 				[/* parameter */ 'value', [/* parameter description */
 					[/* text */ 't', `value to be associated with the specified key`]
@@ -226,140 +227,18 @@ DocsCollector.collect('java.util.concurrent.ConcurrentMap', [
          if the implementation supports null values.)`]
 			]
 		]],
-		[/* method */ 'replaceAll(java.util.function.BiFunction)', [
+		[/* method */ 'replace(java.lang.Object,java.lang.Object)', [
 			[/* method description */
-				[/* text */ 't', `Replaces each entry's value with the result of invoking the given
- function on that entry until all entries have been processed or the
- function throws an exception.  Exceptions thrown by the function are
- relayed to the caller.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'function', [/* parameter description */
-					[/* text */ 't', `the function to apply to each entry`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.UnsupportedOperationException', [/* throw description */
-					[/* text */ 't', `if the `],
-					[/* inline code block */ 'i', `set`],
-					[/* text */ 't', ` operation
- is not supported by this map's entry set iterator.`]
-				]],
-				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
-					[/* text */ 't', `if function or a replacement value is null,
-         and this map does not permit null keys or values
-         (`],
-					[/* text */ 't', `optional`],
-					[/* text */ 't', `)`]
-				]],
-				[/* throw */ 'java.lang.ClassCastException', [/* throw description */
-					[/* text */ 't', `if a replacement value is of an inappropriate
-         type for this map
-         (`],
-					[/* text */ 't', `optional`],
-					[/* text */ 't', `)`]
-				]],
-				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
-					[/* text */ 't', `if some property of a replacement value
-         prevents it from being stored in this map
-         (`],
-					[/* text */ 't', `optional`],
-					[/* text */ 't', `)`]
-				]]
-			],
-			/* return */ UDF
-		]],
-		[/* method */ 'merge(java.lang.Object,java.lang.Object,java.util.function.BiFunction)', [
-			[/* method description */
-				[/* text */ 't', `If the specified key is not already associated with a value or is
- associated with null, associates it with the given non-null value.
- Otherwise, replaces the associated value with the results of the given
- remapping function, or removes if the result is `],
-				[/* inline code block */ 'i', `null`],
-				[/* text */ 't', `. This
- method may be of use when combining multiple mapped values for a key.
- For example, to either create or append a `],
-				[/* inline code block */ 'i', `String msg`],
-				[/* text */ 't', ` to a
- value mapping:
-
- `],
-				[/* code block */ 'c', [
-					[/* inline code block */ 'i', `map.merge(key, msg, String::concat)`]
-				]],
-				[/* block */ 'b', [
-					[/* text */ 't', `If the remapping function returns `],
-					[/* inline code block */ 'i', `null`],
-					[/* text */ 't', `, the mapping is removed.
- If the remapping function itself throws an (unchecked) exception, the
- exception is rethrown, and the current mapping is left unchanged.
-
- `]
-				]],
-				[/* block */ 'b', `The remapping function should not modify this map during computation.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'key', [/* parameter description */
-					[/* text */ 't', `key with which the resulting value is to be associated`]
-				]],
-				[/* parameter */ 'value', [/* parameter description */
-					[/* text */ 't', `the non-null value to be merged with the existing value
-        associated with the key or, if no existing value or a null value
-        is associated with the key, to be associated with the key`]
-				]],
-				[/* parameter */ 'remappingFunction', [/* parameter description */
-					[/* text */ 't', `the remapping function to recompute a value if
-        present`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.UnsupportedOperationException', [/* throw description */
-					[/* text */ 't', `if the `],
-					[/* inline code block */ 'i', `put`],
-					[/* text */ 't', ` operation
-         is not supported by this map
-         (`],
-					[/* text */ 't', `optional`],
-					[/* text */ 't', `)`]
-				]],
-				[/* throw */ 'java.lang.ClassCastException', [/* throw description */
-					[/* text */ 't', `if the class of the specified key or value
-         prevents it from being stored in this map
-         (`],
-					[/* text */ 't', `optional`],
-					[/* text */ 't', `)`]
-				]],
-				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
-					[/* text */ 't', `if the specified key is null and this map
-         does not support null keys or the value or remappingFunction is
-         null`]
-				]],
-				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
-					[/* text */ 't', `if some property of the specified key
-         or value prevents it from being stored in this map
-         (`],
-					[/* text */ 't', `optional`],
-					[/* text */ 't', `)`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `the new value associated with the specified key, or null if no
-         value is associated with the key`]
-			]
-		]],
-		[/* method */ 'putIfAbsent(java.lang.Object,java.lang.Object)', [
-			[/* method description */
-				[/* text */ 't', `If the specified key is not already associated
- with a value, associates it with the given value.
+				[/* text */ 't', `Replaces the entry for a key only if currently mapped to some value.
  This is equivalent to, for this `],
 				[/* inline code block */ 'i', `map`],
 				[/* text */ 't', `:
  `],
 				[/* code block */ 'c', [
-					[/* inline code block */ 'i', `if (!map.containsKey(key))
+					[/* inline code block */ 'i', `if (map.containsKey(key))
    return map.put(key, value);
  else
-   return map.get(key);`]
+   return null;`]
 				]],
 				[/* text */ 't', `
 
@@ -367,7 +246,7 @@ DocsCollector.collect('java.util.concurrent.ConcurrentMap', [
 			],
 			[/* parameters */
 				[/* parameter */ 'key', [/* parameter description */
-					[/* text */ 't', `key with which the specified value is to be associated`]
+					[/* text */ 't', `key with which the specified value is associated`]
 				]],
 				[/* parameter */ 'value', [/* parameter description */
 					[/* text */ 't', `value to be associated with the specified key`]
@@ -482,26 +361,6 @@ DocsCollector.collect('java.util.concurrent.ConcurrentMap', [
 				[/* text */ 't', `the new value associated with the specified key, or null if none`]
 			]
 		]],
-		[/* method */ 'forEach(java.util.function.BiConsumer)', [
-			[/* method description */
-				[/* text */ 't', `Performs the given action for each entry in this map until all entries
- have been processed or the action throws an exception.   Unless
- otherwise specified by the implementing class, actions are performed in
- the order of entry set iteration (if an iteration order is specified.)
- Exceptions thrown by the action are relayed to the caller.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'action', [/* parameter description */
-					[/* text */ 't', `The action to be performed for each entry`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
-					[/* text */ 't', `if the specified action is null`]
-				]]
-			],
-			/* return */ UDF
-		]],
 		[/* method */ 'computeIfAbsent(java.lang.Object,java.util.function.Function)', [
 			[/* method description */
 				[/* text */ 't', `If the specified key is not already associated with a value (or is mapped
@@ -585,44 +444,6 @@ DocsCollector.collect('java.util.concurrent.ConcurrentMap', [
          the specified key, or null if the computed value is null`]
 			]
 		]],
-		[/* method */ 'getOrDefault(java.lang.Object,java.lang.Object)', [
-			[/* method description */
-				[/* text */ 't', `Returns the value to which the specified key is mapped, or
- `],
-				[/* inline code block */ 'i', `defaultValue`],
-				[/* text */ 't', ` if this map contains no mapping for the key.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'key', [/* parameter description */
-					[/* text */ 't', `the key whose associated value is to be returned`]
-				]],
-				[/* parameter */ 'defaultValue', [/* parameter description */
-					[/* text */ 't', `the default mapping of the key`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.ClassCastException', [/* throw description */
-					[/* text */ 't', `if the key is of an inappropriate type for
- this map
- (`],
-					[/* text */ 't', `optional`],
-					[/* text */ 't', `)`]
-				]],
-				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
-					[/* text */ 't', `if the specified key is null and this map
- does not permit null keys
- (`],
-					[/* text */ 't', `optional`],
-					[/* text */ 't', `)`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `the value to which the specified key is mapped, or
- `],
-				[/* inline code block */ 'i', `defaultValue`],
-				[/* text */ 't', ` if this map contains no mapping for the key`]
-			]
-		]],
 		[/* method */ 'computeIfPresent(java.lang.Object,java.util.function.BiFunction)', [
 			[/* method description */
 				[/* text */ 't', `If the value for the specified key is present and non-null, attempts to
@@ -681,6 +502,185 @@ DocsCollector.collect('java.util.concurrent.ConcurrentMap', [
 			[/* return description */
 				[/* text */ 't', `the new value associated with the specified key, or null if none`]
 			]
+		]],
+		[/* method */ 'getOrDefault(java.lang.Object,java.lang.Object)', [
+			[/* method description */
+				[/* text */ 't', `Returns the value to which the specified key is mapped, or
+ `],
+				[/* inline code block */ 'i', `defaultValue`],
+				[/* text */ 't', ` if this map contains no mapping for the key.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'key', [/* parameter description */
+					[/* text */ 't', `the key whose associated value is to be returned`]
+				]],
+				[/* parameter */ 'defaultValue', [/* parameter description */
+					[/* text */ 't', `the default mapping of the key`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.lang.ClassCastException', [/* throw description */
+					[/* text */ 't', `if the key is of an inappropriate type for
+ this map
+ (`],
+					[/* text */ 't', `optional`],
+					[/* text */ 't', `)`]
+				]],
+				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
+					[/* text */ 't', `if the specified key is null and this map
+ does not permit null keys
+ (`],
+					[/* text */ 't', `optional`],
+					[/* text */ 't', `)`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `the value to which the specified key is mapped, or
+ `],
+				[/* inline code block */ 'i', `defaultValue`],
+				[/* text */ 't', ` if this map contains no mapping for the key`]
+			]
+		]],
+		[/* method */ 'merge(java.lang.Object,java.lang.Object,java.util.function.BiFunction)', [
+			[/* method description */
+				[/* text */ 't', `If the specified key is not already associated with a value or is
+ associated with null, associates it with the given non-null value.
+ Otherwise, replaces the associated value with the results of the given
+ remapping function, or removes if the result is `],
+				[/* inline code block */ 'i', `null`],
+				[/* text */ 't', `. This
+ method may be of use when combining multiple mapped values for a key.
+ For example, to either create or append a `],
+				[/* inline code block */ 'i', `String msg`],
+				[/* text */ 't', ` to a
+ value mapping:
+
+ `],
+				[/* code block */ 'c', [
+					[/* inline code block */ 'i', `map.merge(key, msg, String::concat)`]
+				]],
+				[/* block */ 'b', [
+					[/* text */ 't', `If the remapping function returns `],
+					[/* inline code block */ 'i', `null`],
+					[/* text */ 't', `, the mapping is removed.
+ If the remapping function itself throws an (unchecked) exception, the
+ exception is rethrown, and the current mapping is left unchanged.
+
+ `]
+				]],
+				[/* block */ 'b', `The remapping function should not modify this map during computation.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'key', [/* parameter description */
+					[/* text */ 't', `key with which the resulting value is to be associated`]
+				]],
+				[/* parameter */ 'value', [/* parameter description */
+					[/* text */ 't', `the non-null value to be merged with the existing value
+        associated with the key or, if no existing value or a null value
+        is associated with the key, to be associated with the key`]
+				]],
+				[/* parameter */ 'remappingFunction', [/* parameter description */
+					[/* text */ 't', `the remapping function to recompute a value if
+        present`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.lang.UnsupportedOperationException', [/* throw description */
+					[/* text */ 't', `if the `],
+					[/* inline code block */ 'i', `put`],
+					[/* text */ 't', ` operation
+         is not supported by this map
+         (`],
+					[/* text */ 't', `optional`],
+					[/* text */ 't', `)`]
+				]],
+				[/* throw */ 'java.lang.ClassCastException', [/* throw description */
+					[/* text */ 't', `if the class of the specified key or value
+         prevents it from being stored in this map
+         (`],
+					[/* text */ 't', `optional`],
+					[/* text */ 't', `)`]
+				]],
+				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
+					[/* text */ 't', `if the specified key is null and this map
+         does not support null keys or the value or remappingFunction is
+         null`]
+				]],
+				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
+					[/* text */ 't', `if some property of the specified key
+         or value prevents it from being stored in this map
+         (`],
+					[/* text */ 't', `optional`],
+					[/* text */ 't', `)`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `the new value associated with the specified key, or null if no
+         value is associated with the key`]
+			]
+		]],
+		[/* method */ 'forEach(java.util.function.BiConsumer)', [
+			[/* method description */
+				[/* text */ 't', `Performs the given action for each entry in this map until all entries
+ have been processed or the action throws an exception.   Unless
+ otherwise specified by the implementing class, actions are performed in
+ the order of entry set iteration (if an iteration order is specified.)
+ Exceptions thrown by the action are relayed to the caller.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'action', [/* parameter description */
+					[/* text */ 't', `The action to be performed for each entry`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
+					[/* text */ 't', `if the specified action is null`]
+				]]
+			],
+			/* return */ UDF
+		]],
+		[/* method */ 'replaceAll(java.util.function.BiFunction)', [
+			[/* method description */
+				[/* text */ 't', `Replaces each entry's value with the result of invoking the given
+ function on that entry until all entries have been processed or the
+ function throws an exception.  Exceptions thrown by the function are
+ relayed to the caller.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'function', [/* parameter description */
+					[/* text */ 't', `the function to apply to each entry`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.lang.UnsupportedOperationException', [/* throw description */
+					[/* text */ 't', `if the `],
+					[/* inline code block */ 'i', `set`],
+					[/* text */ 't', ` operation
+ is not supported by this map's entry set iterator.`]
+				]],
+				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
+					[/* text */ 't', `if function or a replacement value is null,
+         and this map does not permit null keys or values
+         (`],
+					[/* text */ 't', `optional`],
+					[/* text */ 't', `)`]
+				]],
+				[/* throw */ 'java.lang.ClassCastException', [/* throw description */
+					[/* text */ 't', `if a replacement value is of an inappropriate
+         type for this map
+         (`],
+					[/* text */ 't', `optional`],
+					[/* text */ 't', `)`]
+				]],
+				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
+					[/* text */ 't', `if some property of a replacement value
+         prevents it from being stored in this map
+         (`],
+					[/* text */ 't', `optional`],
+					[/* text */ 't', `)`]
+				]]
+			],
+			/* return */ UDF
 		]]
 	],
 ]);

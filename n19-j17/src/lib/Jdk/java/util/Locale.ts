@@ -781,8 +781,38 @@ JdkClassCreateHelper.class('java.util.Locale', [
 		]
 	],
 	[/* declared fields */
+		[/* public static final java.util.Locale java.util.Locale.CANADA */
+			/* name */ 'CANADA',
+			/* type */ 'java.util.Locale',
+			/* annotations */ UDF,
+			/* modifiers */ 25
+		],
+		[/* public static final java.util.Locale java.util.Locale.CANADA_FRENCH */
+			/* name */ 'CANADA_FRENCH',
+			/* type */ 'java.util.Locale',
+			/* annotations */ UDF,
+			/* modifiers */ 25
+		],
+		[/* public static final java.util.Locale java.util.Locale.CHINA */
+			/* name */ 'CHINA',
+			/* type */ 'java.util.Locale',
+			/* annotations */ UDF,
+			/* modifiers */ 25
+		],
+		[/* public static final java.util.Locale java.util.Locale.CHINESE */
+			/* name */ 'CHINESE',
+			/* type */ 'java.util.Locale',
+			/* annotations */ UDF,
+			/* modifiers */ 25
+		],
 		[/* public static final java.util.Locale java.util.Locale.ENGLISH */
 			/* name */ 'ENGLISH',
+			/* type */ 'java.util.Locale',
+			/* annotations */ UDF,
+			/* modifiers */ 25
+		],
+		[/* public static final java.util.Locale java.util.Locale.FRANCE */
+			/* name */ 'FRANCE',
 			/* type */ 'java.util.Locale',
 			/* annotations */ UDF,
 			/* modifiers */ 25
@@ -799,50 +829,14 @@ JdkClassCreateHelper.class('java.util.Locale', [
 			/* annotations */ UDF,
 			/* modifiers */ 25
 		],
-		[/* public static final java.util.Locale java.util.Locale.ITALIAN */
-			/* name */ 'ITALIAN',
-			/* type */ 'java.util.Locale',
-			/* annotations */ UDF,
-			/* modifiers */ 25
-		],
-		[/* public static final java.util.Locale java.util.Locale.JAPANESE */
-			/* name */ 'JAPANESE',
-			/* type */ 'java.util.Locale',
-			/* annotations */ UDF,
-			/* modifiers */ 25
-		],
-		[/* public static final java.util.Locale java.util.Locale.KOREAN */
-			/* name */ 'KOREAN',
-			/* type */ 'java.util.Locale',
-			/* annotations */ UDF,
-			/* modifiers */ 25
-		],
-		[/* public static final java.util.Locale java.util.Locale.CHINESE */
-			/* name */ 'CHINESE',
-			/* type */ 'java.util.Locale',
-			/* annotations */ UDF,
-			/* modifiers */ 25
-		],
-		[/* public static final java.util.Locale java.util.Locale.SIMPLIFIED_CHINESE */
-			/* name */ 'SIMPLIFIED_CHINESE',
-			/* type */ 'java.util.Locale',
-			/* annotations */ UDF,
-			/* modifiers */ 25
-		],
-		[/* public static final java.util.Locale java.util.Locale.TRADITIONAL_CHINESE */
-			/* name */ 'TRADITIONAL_CHINESE',
-			/* type */ 'java.util.Locale',
-			/* annotations */ UDF,
-			/* modifiers */ 25
-		],
-		[/* public static final java.util.Locale java.util.Locale.FRANCE */
-			/* name */ 'FRANCE',
-			/* type */ 'java.util.Locale',
-			/* annotations */ UDF,
-			/* modifiers */ 25
-		],
 		[/* public static final java.util.Locale java.util.Locale.GERMANY */
 			/* name */ 'GERMANY',
+			/* type */ 'java.util.Locale',
+			/* annotations */ UDF,
+			/* modifiers */ 25
+		],
+		[/* public static final java.util.Locale java.util.Locale.ITALIAN */
+			/* name */ 'ITALIAN',
 			/* type */ 'java.util.Locale',
 			/* annotations */ UDF,
 			/* modifiers */ 25
@@ -859,44 +853,20 @@ JdkClassCreateHelper.class('java.util.Locale', [
 			/* annotations */ UDF,
 			/* modifiers */ 25
 		],
+		[/* public static final java.util.Locale java.util.Locale.JAPANESE */
+			/* name */ 'JAPANESE',
+			/* type */ 'java.util.Locale',
+			/* annotations */ UDF,
+			/* modifiers */ 25
+		],
 		[/* public static final java.util.Locale java.util.Locale.KOREA */
 			/* name */ 'KOREA',
 			/* type */ 'java.util.Locale',
 			/* annotations */ UDF,
 			/* modifiers */ 25
 		],
-		[/* public static final java.util.Locale java.util.Locale.UK */
-			/* name */ 'UK',
-			/* type */ 'java.util.Locale',
-			/* annotations */ UDF,
-			/* modifiers */ 25
-		],
-		[/* public static final java.util.Locale java.util.Locale.US */
-			/* name */ 'US',
-			/* type */ 'java.util.Locale',
-			/* annotations */ UDF,
-			/* modifiers */ 25
-		],
-		[/* public static final java.util.Locale java.util.Locale.CANADA */
-			/* name */ 'CANADA',
-			/* type */ 'java.util.Locale',
-			/* annotations */ UDF,
-			/* modifiers */ 25
-		],
-		[/* public static final java.util.Locale java.util.Locale.CANADA_FRENCH */
-			/* name */ 'CANADA_FRENCH',
-			/* type */ 'java.util.Locale',
-			/* annotations */ UDF,
-			/* modifiers */ 25
-		],
-		[/* public static final java.util.Locale java.util.Locale.ROOT */
-			/* name */ 'ROOT',
-			/* type */ 'java.util.Locale',
-			/* annotations */ UDF,
-			/* modifiers */ 25
-		],
-		[/* public static final java.util.Locale java.util.Locale.CHINA */
-			/* name */ 'CHINA',
+		[/* public static final java.util.Locale java.util.Locale.KOREAN */
+			/* name */ 'KOREAN',
 			/* type */ 'java.util.Locale',
 			/* annotations */ UDF,
 			/* modifiers */ 25
@@ -907,21 +877,51 @@ JdkClassCreateHelper.class('java.util.Locale', [
 			/* annotations */ UDF,
 			/* modifiers */ 25
 		],
-		[/* public static final java.util.Locale java.util.Locale.TAIWAN */
-			/* name */ 'TAIWAN',
-			/* type */ 'java.util.Locale',
-			/* annotations */ UDF,
-			/* modifiers */ 25
-		],
 		[/* public static final char java.util.Locale.PRIVATE_USE_EXTENSION */
 			/* name */ 'PRIVATE_USE_EXTENSION',
 			/* type */ 'char',
 			/* annotations */ UDF,
 			/* modifiers */ 25
 		],
+		[/* public static final java.util.Locale java.util.Locale.ROOT */
+			/* name */ 'ROOT',
+			/* type */ 'java.util.Locale',
+			/* annotations */ UDF,
+			/* modifiers */ 25
+		],
+		[/* public static final java.util.Locale java.util.Locale.SIMPLIFIED_CHINESE */
+			/* name */ 'SIMPLIFIED_CHINESE',
+			/* type */ 'java.util.Locale',
+			/* annotations */ UDF,
+			/* modifiers */ 25
+		],
+		[/* public static final java.util.Locale java.util.Locale.TAIWAN */
+			/* name */ 'TAIWAN',
+			/* type */ 'java.util.Locale',
+			/* annotations */ UDF,
+			/* modifiers */ 25
+		],
+		[/* public static final java.util.Locale java.util.Locale.TRADITIONAL_CHINESE */
+			/* name */ 'TRADITIONAL_CHINESE',
+			/* type */ 'java.util.Locale',
+			/* annotations */ UDF,
+			/* modifiers */ 25
+		],
+		[/* public static final java.util.Locale java.util.Locale.UK */
+			/* name */ 'UK',
+			/* type */ 'java.util.Locale',
+			/* annotations */ UDF,
+			/* modifiers */ 25
+		],
 		[/* public static final char java.util.Locale.UNICODE_LOCALE_EXTENSION */
 			/* name */ 'UNICODE_LOCALE_EXTENSION',
 			/* type */ 'char',
+			/* annotations */ UDF,
+			/* modifiers */ 25
+		],
+		[/* public static final java.util.Locale java.util.Locale.US */
+			/* name */ 'US',
+			/* type */ 'java.util.Locale',
 			/* annotations */ UDF,
 			/* modifiers */ 25
 		]

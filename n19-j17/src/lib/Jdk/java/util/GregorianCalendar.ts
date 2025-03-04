@@ -546,14 +546,14 @@ JdkClassCreateHelper.class('java.util.GregorianCalendar', [
 		]
 	],
 	[/* declared fields */
-		[/* public static final int java.util.GregorianCalendar.BC */
-			/* name */ 'BC',
+		[/* public static final int java.util.GregorianCalendar.AD */
+			/* name */ 'AD',
 			/* type */ 'int',
 			/* annotations */ UDF,
 			/* modifiers */ 25
 		],
-		[/* public static final int java.util.GregorianCalendar.AD */
-			/* name */ 'AD',
+		[/* public static final int java.util.GregorianCalendar.BC */
+			/* name */ 'BC',
 			/* type */ 'int',
 			/* annotations */ UDF,
 			/* modifiers */ 25

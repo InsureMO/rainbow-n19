@@ -450,15 +450,27 @@ JdkClassCreateHelper.class('java.lang.Short', [
 		]
 	],
 	[/* declared fields */
-		[/* public static final short java.lang.Short.MIN_VALUE */
-			/* name */ 'MIN_VALUE',
-			/* type */ 'short',
+		[/* public static final int java.lang.Short.BYTES */
+			/* name */ 'BYTES',
+			/* type */ 'int',
 			/* annotations */ UDF,
 			/* modifiers */ 25
 		],
 		[/* public static final short java.lang.Short.MAX_VALUE */
 			/* name */ 'MAX_VALUE',
 			/* type */ 'short',
+			/* annotations */ UDF,
+			/* modifiers */ 25
+		],
+		[/* public static final short java.lang.Short.MIN_VALUE */
+			/* name */ 'MIN_VALUE',
+			/* type */ 'short',
+			/* annotations */ UDF,
+			/* modifiers */ 25
+		],
+		[/* public static final int java.lang.Short.SIZE */
+			/* name */ 'SIZE',
+			/* type */ 'int',
 			/* annotations */ UDF,
 			/* modifiers */ 25
 		],
@@ -471,18 +483,6 @@ JdkClassCreateHelper.class('java.lang.Short', [
 				/* raw type */ 'java.lang.Class',
 				/* owner type */ UDF
 			]],
-			/* annotations */ UDF,
-			/* modifiers */ 25
-		],
-		[/* public static final int java.lang.Short.SIZE */
-			/* name */ 'SIZE',
-			/* type */ 'int',
-			/* annotations */ UDF,
-			/* modifiers */ 25
-		],
-		[/* public static final int java.lang.Short.BYTES */
-			/* name */ 'BYTES',
-			/* type */ 'int',
 			/* annotations */ UDF,
 			/* modifiers */ 25
 		]

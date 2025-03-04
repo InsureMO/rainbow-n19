@@ -24,9 +24,9 @@ JdkClassCreateHelper.class('java.time.temporal.IsoFields', [
 			/* annotations */ UDF,
 			/* modifiers */ 25
 		],
-		[/* public static final java.time.temporal.TemporalField java.time.temporal.IsoFields.WEEK_OF_WEEK_BASED_YEAR */
-			/* name */ 'WEEK_OF_WEEK_BASED_YEAR',
-			/* type */ 'java.time.temporal.TemporalField',
+		[/* public static final java.time.temporal.TemporalUnit java.time.temporal.IsoFields.QUARTER_YEARS */
+			/* name */ 'QUARTER_YEARS',
+			/* type */ 'java.time.temporal.TemporalUnit',
 			/* annotations */ UDF,
 			/* modifiers */ 25
 		],
@@ -42,9 +42,9 @@ JdkClassCreateHelper.class('java.time.temporal.IsoFields', [
 			/* annotations */ UDF,
 			/* modifiers */ 25
 		],
-		[/* public static final java.time.temporal.TemporalUnit java.time.temporal.IsoFields.QUARTER_YEARS */
-			/* name */ 'QUARTER_YEARS',
-			/* type */ 'java.time.temporal.TemporalUnit',
+		[/* public static final java.time.temporal.TemporalField java.time.temporal.IsoFields.WEEK_OF_WEEK_BASED_YEAR */
+			/* name */ 'WEEK_OF_WEEK_BASED_YEAR',
+			/* type */ 'java.time.temporal.TemporalField',
 			/* annotations */ UDF,
 			/* modifiers */ 25
 		]

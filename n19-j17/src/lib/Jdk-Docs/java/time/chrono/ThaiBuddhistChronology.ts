@@ -51,87 +51,6 @@ DocsCollector.collect('java.time.chrono.ThaiBuddhistChronology', [
 	],
 	/* constructors */ UDF,
 	[/* methods */
-		[/* method */ 'getId()', [
-			[/* method description */
-				[/* text */ 't', `Gets the ID of the chronology - 'ThaiBuddhist'.
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', `
- The ID uniquely identifies the `],
-					[/* inline code block */ 'i', `Chronology`],
-					[/* text */ 't', `.
- It can be used to lookup the `],
-					[/* inline code block */ 'i', `Chronology`],
-					[/* text */ 't', ` using `],
-					[/* reference */ 'r', `.Chronology#of(java.lang.String)`],
-					[/* text */ 't', `.`]
-				]]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the chronology ID - 'ThaiBuddhist'`]
-			]
-		]],
-		[/* method */ 'range(java.time.temporal.ChronoField)', [
-			[/* method description */
-				[/* block */ 'b', [
-					[/* text */ 't', `Gets the range of valid values for the specified field.
- `],
-					[/* block */ 'b', [
-						[/* text */ 't', `
- All fields can be expressed as a `],
-						[/* inline code block */ 'i', `long`],
-						[/* text */ 't', ` integer.
- This method returns an object that describes the valid range for that value.
- `]
-					]],
-					[/* block */ 'b', `
- Note that the result only describes the minimum and maximum valid values
- and it is important not to read too much into them. For example, there
- could be values within the range that are invalid for the field.
- `],
-					[/* block */ 'b', `
- This method will return a result whether or not the chronology supports the field.`]
-				]]
-			],
-			[/* parameters */
-				[/* parameter */ 'field', [/* parameter description */
-					[/* text */ 't', `the field to get the range for, not null`]
-				]]
-			],
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the range of valid values for the field, not null`]
-			]
-		]],
-		[/* method */ 'getCalendarType()', [
-			[/* method description */
-				[/* text */ 't', `Gets the calendar type of the underlying calendar system - 'buddhist'.
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', `
- The calendar type is an identifier defined by the
- `],
-					[/* text */ 't', `Unicode Locale Data Markup Language (LDML)`],
-					[/* text */ 't', ` specification.
- It can be used to lookup the `],
-					[/* inline code block */ 'i', `Chronology`],
-					[/* text */ 't', ` using `],
-					[/* reference */ 'r', `.Chronology#of(java.lang.String)`],
-					[/* text */ 't', `.
- It can also be used as part of a locale, accessible via
- `],
-					[/* reference */ 'r', `java.time.Locale#getUnicodeLocaleType(java.lang.String)`],
-					[/* text */ 't', ` with the key 'ca'.`]
-				]]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the calendar system type - 'buddhist'`]
-			]
-		]],
 		[/* method */ 'isLeapYear(long)', [
 			[/* method description */
 				[/* text */ 't', `Checks if the specified year is a leap year.
@@ -149,128 +68,6 @@ DocsCollector.collect('java.time.chrono.ThaiBuddhistChronology', [
 			/* throws */ UDF,
 			[/* return description */
 				[/* text */ 't', `true if the year is a leap year`]
-			]
-		]],
-		[/* method */ 'date(java.time.chrono.Era,int,int,int)', [
-			[/* method description */
-				[/* text */ 't', `Obtains a local date in Thai Buddhist calendar system from the
- era, year-of-era, month-of-year and day-of-month fields.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'era', [/* parameter description */
-					[/* text */ 't', `the Thai Buddhist era, not null`]
-				]],
-				[/* parameter */ 'yearOfEra', [/* parameter description */
-					[/* text */ 't', `the year-of-era`]
-				]],
-				[/* parameter */ 'month', [/* parameter description */
-					[/* text */ 't', `the month-of-year`]
-				]],
-				[/* parameter */ 'dayOfMonth', [/* parameter description */
-					[/* text */ 't', `the day-of-month`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.time.DateTimeException', [/* throw description */
-					[/* text */ 't', `if unable to create the date`]
-				]],
-				[/* throw */ 'java.lang.ClassCastException', [/* throw description */
-					[/* text */ 't', `if the `],
-					[/* inline code block */ 'i', `era`],
-					[/* text */ 't', ` is not a `],
-					[/* inline code block */ 'i', `ThaiBuddhistEra`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `the Thai Buddhist local date, not null`]
-			]
-		]],
-		[/* method */ 'date(java.time.temporal.TemporalAccessor)', [
-			[/* method description */
-				[/* block */ 'b', [
-					[/* text */ 't', `Obtains a local date in this chronology from another temporal object.
- `],
-					[/* block */ 'b', [
-						[/* text */ 't', `
- This obtains a date in this chronology based on the specified temporal.
- A `],
-						[/* inline code block */ 'i', `TemporalAccessor`],
-						[/* text */ 't', ` represents an arbitrary set of date and time information,
- which this factory converts to an instance of `],
-						[/* inline code block */ 'i', `ChronoLocalDate`],
-						[/* text */ 't', `.
- `]
-					]],
-					[/* block */ 'b', [
-						[/* text */ 't', `
- The conversion typically uses the `],
-						[/* reference */ 'r', `java.ChronoField#EPOCH_DAY`],
-						[/* text */ 't', `
- field, which is standardized across calendar systems.
- `]
-					]],
-					[/* block */ 'b', [
-						[/* text */ 't', `
- This method matches the signature of the functional interface `],
-						[/* reference */ 'r', `java.time.temporal.TemporalQuery`],
-						[/* text */ 't', `
- allowing it to be used as a query via method reference, `],
-						[/* inline code block */ 'i', `aChronology::date`],
-						[/* text */ 't', `.`]
-					]]
-				]]
-			],
-			[/* parameters */
-				[/* parameter */ 'temporal', [/* parameter description */
-					[/* text */ 't', `the temporal object to convert, not null`]
-				]]
-			],
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the local date in this chronology, not null`]
-			]
-		]],
-		[/* method */ 'date(int,int,int)', [
-			[/* method description */
-				[/* text */ 't', `Obtains a local date in Thai Buddhist calendar system from the
- proleptic-year, month-of-year and day-of-month fields.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'prolepticYear', [/* parameter description */
-					[/* text */ 't', `the proleptic-year`]
-				]],
-				[/* parameter */ 'month', [/* parameter description */
-					[/* text */ 't', `the month-of-year`]
-				]],
-				[/* parameter */ 'dayOfMonth', [/* parameter description */
-					[/* text */ 't', `the day-of-month`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.time.DateTimeException', [/* throw description */
-					[/* text */ 't', `if unable to create the date`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `the Thai Buddhist local date, not null`]
-			]
-		]],
-		[/* method */ 'dateEpochDay(long)', [
-			[/* method description */
-				[/* text */ 't', `Obtains a local date in the Thai Buddhist calendar system from the epoch-day.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'epochDay', [/* parameter description */
-					[/* text */ 't', `the epoch day`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.time.DateTimeException', [/* throw description */
-					[/* text */ 't', `if unable to create the date`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `the Thai Buddhist local date, not null`]
 			]
 		]],
 		[/* method */ 'prolepticYear(java.time.chrono.Era,int)', [
@@ -304,134 +101,103 @@ DocsCollector.collect('java.time.chrono.ThaiBuddhistChronology', [
 				[/* text */ 't', `the proleptic-year`]
 			]
 		]],
-		[/* method */ 'dateYearDay(int,int)', [
+		[/* method */ 'getCalendarType()', [
 			[/* method description */
-				[/* text */ 't', `Obtains a local date in Thai Buddhist calendar system from the
- proleptic-year and day-of-year fields.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'prolepticYear', [/* parameter description */
-					[/* text */ 't', `the proleptic-year`]
-				]],
-				[/* parameter */ 'dayOfYear', [/* parameter description */
-					[/* text */ 't', `the day-of-year`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.time.DateTimeException', [/* throw description */
-					[/* text */ 't', `if unable to create the date`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `the Thai Buddhist local date, not null`]
-			]
-		]],
-		[/* method */ 'dateYearDay(java.time.chrono.Era,int,int)', [
-			[/* method description */
-				[/* text */ 't', `Obtains a local date in Thai Buddhist calendar system from the
- era, year-of-era and day-of-year fields.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'era', [/* parameter description */
-					[/* text */ 't', `the Thai Buddhist era, not null`]
-				]],
-				[/* parameter */ 'yearOfEra', [/* parameter description */
-					[/* text */ 't', `the year-of-era`]
-				]],
-				[/* parameter */ 'dayOfYear', [/* parameter description */
-					[/* text */ 't', `the day-of-year`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.time.DateTimeException', [/* throw description */
-					[/* text */ 't', `if unable to create the date`]
-				]],
-				[/* throw */ 'java.lang.ClassCastException', [/* throw description */
-					[/* text */ 't', `if the `],
-					[/* inline code block */ 'i', `era`],
-					[/* text */ 't', ` is not a `],
-					[/* inline code block */ 'i', `ThaiBuddhistEra`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `the Thai Buddhist local date, not null`]
-			]
-		]],
-		[/* method */ 'dateNow()', [
-			[/* method description */
-				[/* block */ 'b', [
-					[/* text */ 't', `Obtains the current local date in this chronology from the system clock in the default time-zone.
+				[/* text */ 't', `Gets the calendar type of the underlying calendar system - 'buddhist'.
  `],
-					[/* block */ 'b', [
-						[/* text */ 't', `
- This will query the `],
-						[/* reference */ 'r', `java.Clock#systemDefaultZone()`],
-						[/* text */ 't', ` in the default
- time-zone to obtain the current date.
- `]
-					]],
-					[/* block */ 'b', `
- Using this method will prevent the ability to use an alternate clock for testing
- because the clock is hard-coded.`]
+				[/* block */ 'b', [
+					[/* text */ 't', `
+ The calendar type is an identifier defined by the
+ `],
+					[/* text */ 't', `Unicode Locale Data Markup Language (LDML)`],
+					[/* text */ 't', ` specification.
+ It can be used to lookup the `],
+					[/* inline code block */ 'i', `Chronology`],
+					[/* text */ 't', ` using `],
+					[/* reference */ 'r', `.Chronology#of(java.lang.String)`],
+					[/* text */ 't', `.
+ It can also be used as part of a locale, accessible via
+ `],
+					[/* reference */ 'r', `java.time.Locale#getUnicodeLocaleType(java.lang.String)`],
+					[/* text */ 't', ` with the key 'ca'.`]
 				]]
 			],
 			/* parameters */ UDF,
 			/* throws */ UDF,
 			[/* return description */
-				[/* text */ 't', `the current local date using the system clock and default time-zone, not null`]
+				[/* text */ 't', `the calendar system type - 'buddhist'`]
 			]
 		]],
-		[/* method */ 'dateNow(java.time.ZoneId)', [
+		[/* method */ 'getId()', [
 			[/* method description */
-				[/* block */ 'b', [
-					[/* text */ 't', `Obtains the current local date in this chronology from the system clock in the specified time-zone.
+				[/* text */ 't', `Gets the ID of the chronology - 'ThaiBuddhist'.
  `],
-					[/* block */ 'b', [
-						[/* text */ 't', `
- This will query the `],
-						[/* reference */ 'r', `java.Clock#system(java.time.ZoneId)`],
-						[/* text */ 't', ` to obtain the current date.
- Specifying the time-zone avoids dependence on the default time-zone.
- `]
-					]],
-					[/* block */ 'b', `
- Using this method will prevent the ability to use an alternate clock for testing
- because the clock is hard-coded.`]
+				[/* block */ 'b', [
+					[/* text */ 't', `
+ The ID uniquely identifies the `],
+					[/* inline code block */ 'i', `Chronology`],
+					[/* text */ 't', `.
+ It can be used to lookup the `],
+					[/* inline code block */ 'i', `Chronology`],
+					[/* text */ 't', ` using `],
+					[/* reference */ 'r', `.Chronology#of(java.lang.String)`],
+					[/* text */ 't', `.`]
 				]]
 			],
-			[/* parameters */
-				[/* parameter */ 'zone', [/* parameter description */
-					[/* text */ 't', `the zone ID to use, not null`]
-				]]
-			],
+			/* parameters */ UDF,
 			/* throws */ UDF,
 			[/* return description */
-				[/* text */ 't', `the current local date using the system clock, not null`]
+				[/* text */ 't', `the chronology ID - 'ThaiBuddhist'`]
 			]
 		]],
-		[/* method */ 'dateNow(java.time.Clock)', [
+		[/* method */ 'localDateTime(java.time.temporal.TemporalAccessor)', [
 			[/* method description */
 				[/* block */ 'b', [
-					[/* text */ 't', `Obtains the current local date in this chronology from the specified clock.
+					[/* text */ 't', `Obtains a local date-time in this chronology from another temporal object.
  `],
 					[/* block */ 'b', [
 						[/* text */ 't', `
- This will query the specified clock to obtain the current date - today.
- Using this method allows the use of an alternate clock for testing.
- The alternate clock may be introduced using `],
-						[/* reference */ 'r', `java.time.Clock`],
+ This obtains a date-time in this chronology based on the specified temporal.
+ A `],
+						[/* inline code block */ 'i', `TemporalAccessor`],
+						[/* text */ 't', ` represents an arbitrary set of date and time information,
+ which this factory converts to an instance of `],
+						[/* inline code block */ 'i', `ChronoLocalDateTime`],
+						[/* text */ 't', `.
+ `]
+					]],
+					[/* block */ 'b', [
+						[/* text */ 't', `
+ The conversion extracts and combines the `],
+						[/* inline code block */ 'i', `ChronoLocalDate`],
+						[/* text */ 't', ` and the
+ `],
+						[/* inline code block */ 'i', `LocalTime`],
+						[/* text */ 't', ` from the temporal object.
+ Implementations are permitted to perform optimizations such as accessing
+ those fields that are equivalent to the relevant objects.
+ The result uses this chronology.
+ `]
+					]],
+					[/* block */ 'b', [
+						[/* text */ 't', `
+ This method matches the signature of the functional interface `],
+						[/* reference */ 'r', `java.time.temporal.TemporalQuery`],
+						[/* text */ 't', `
+ allowing it to be used as a query via method reference, `],
+						[/* inline code block */ 'i', `aChronology::localDateTime`],
 						[/* text */ 't', `.`]
 					]]
 				]]
 			],
 			[/* parameters */
-				[/* parameter */ 'clock', [/* parameter description */
-					[/* text */ 't', `the clock to use, not null`]
+				[/* parameter */ 'temporal', [/* parameter description */
+					[/* text */ 't', `the temporal object to convert, not null`]
 				]]
 			],
 			/* throws */ UDF,
 			[/* return description */
-				[/* text */ 't', `the current local date, not null`]
+				[/* text */ 't', `the local date-time in this chronology, not null`]
 			]
 		]],
 		[/* method */ 'zonedDateTime(java.time.Instant,java.time.ZoneId)', [
@@ -527,33 +293,87 @@ DocsCollector.collect('java.time.chrono.ThaiBuddhistChronology', [
 				[/* text */ 't', `the zoned date-time in this chronology, not null`]
 			]
 		]],
-		[/* method */ 'localDateTime(java.time.temporal.TemporalAccessor)', [
+		[/* method */ 'date(int,int,int)', [
+			[/* method description */
+				[/* text */ 't', `Obtains a local date in Thai Buddhist calendar system from the
+ proleptic-year, month-of-year and day-of-month fields.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'prolepticYear', [/* parameter description */
+					[/* text */ 't', `the proleptic-year`]
+				]],
+				[/* parameter */ 'month', [/* parameter description */
+					[/* text */ 't', `the month-of-year`]
+				]],
+				[/* parameter */ 'dayOfMonth', [/* parameter description */
+					[/* text */ 't', `the day-of-month`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.time.DateTimeException', [/* throw description */
+					[/* text */ 't', `if unable to create the date`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `the Thai Buddhist local date, not null`]
+			]
+		]],
+		[/* method */ 'date(java.time.chrono.Era,int,int,int)', [
+			[/* method description */
+				[/* text */ 't', `Obtains a local date in Thai Buddhist calendar system from the
+ era, year-of-era, month-of-year and day-of-month fields.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'era', [/* parameter description */
+					[/* text */ 't', `the Thai Buddhist era, not null`]
+				]],
+				[/* parameter */ 'yearOfEra', [/* parameter description */
+					[/* text */ 't', `the year-of-era`]
+				]],
+				[/* parameter */ 'month', [/* parameter description */
+					[/* text */ 't', `the month-of-year`]
+				]],
+				[/* parameter */ 'dayOfMonth', [/* parameter description */
+					[/* text */ 't', `the day-of-month`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.time.DateTimeException', [/* throw description */
+					[/* text */ 't', `if unable to create the date`]
+				]],
+				[/* throw */ 'java.lang.ClassCastException', [/* throw description */
+					[/* text */ 't', `if the `],
+					[/* inline code block */ 'i', `era`],
+					[/* text */ 't', ` is not a `],
+					[/* inline code block */ 'i', `ThaiBuddhistEra`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `the Thai Buddhist local date, not null`]
+			]
+		]],
+		[/* method */ 'date(java.time.temporal.TemporalAccessor)', [
 			[/* method description */
 				[/* block */ 'b', [
-					[/* text */ 't', `Obtains a local date-time in this chronology from another temporal object.
+					[/* text */ 't', `Obtains a local date in this chronology from another temporal object.
  `],
 					[/* block */ 'b', [
 						[/* text */ 't', `
- This obtains a date-time in this chronology based on the specified temporal.
+ This obtains a date in this chronology based on the specified temporal.
  A `],
 						[/* inline code block */ 'i', `TemporalAccessor`],
 						[/* text */ 't', ` represents an arbitrary set of date and time information,
  which this factory converts to an instance of `],
-						[/* inline code block */ 'i', `ChronoLocalDateTime`],
+						[/* inline code block */ 'i', `ChronoLocalDate`],
 						[/* text */ 't', `.
  `]
 					]],
 					[/* block */ 'b', [
 						[/* text */ 't', `
- The conversion extracts and combines the `],
-						[/* inline code block */ 'i', `ChronoLocalDate`],
-						[/* text */ 't', ` and the
- `],
-						[/* inline code block */ 'i', `LocalTime`],
-						[/* text */ 't', ` from the temporal object.
- Implementations are permitted to perform optimizations such as accessing
- those fields that are equivalent to the relevant objects.
- The result uses this chronology.
+ The conversion typically uses the `],
+						[/* reference */ 'r', `java.ChronoField#EPOCH_DAY`],
+						[/* text */ 't', `
+ field, which is standardized across calendar systems.
  `]
 					]],
 					[/* block */ 'b', [
@@ -562,7 +382,7 @@ DocsCollector.collect('java.time.chrono.ThaiBuddhistChronology', [
 						[/* reference */ 'r', `java.time.temporal.TemporalQuery`],
 						[/* text */ 't', `
  allowing it to be used as a query via method reference, `],
-						[/* inline code block */ 'i', `aChronology::localDateTime`],
+						[/* inline code block */ 'i', `aChronology::date`],
 						[/* text */ 't', `.`]
 					]]
 				]]
@@ -574,55 +394,155 @@ DocsCollector.collect('java.time.chrono.ThaiBuddhistChronology', [
 			],
 			/* throws */ UDF,
 			[/* return description */
-				[/* text */ 't', `the local date-time in this chronology, not null`]
+				[/* text */ 't', `the local date in this chronology, not null`]
 			]
 		]],
-		[/* method */ 'eraOf(int)', [
+		[/* method */ 'dateEpochDay(long)', [
 			[/* method description */
-				[/* block */ 'b', [
-					[/* text */ 't', `Creates the chronology era object from the numeric value.
- `],
-					[/* block */ 'b', `
- The era is, conceptually, the largest division of the time-line.
- Most calendar systems have a single epoch dividing the time-line into two eras.
- However, some have multiple eras, such as one for the reign of each leader.
- The exact meaning is determined by the chronology according to the following constraints.
- `],
-					[/* block */ 'b', `
- The era in use at 1970-01-01 must have the value 1.
- Later eras must have sequentially higher values.
- Earlier eras must have sequentially lower values.
- Each chronology must refer to an enum or similar singleton to provide the era values.
- `],
-					[/* block */ 'b', `
- This method returns the singleton era of the correct type for the specified era value.`]
-				]]
+				[/* text */ 't', `Obtains a local date in the Thai Buddhist calendar system from the epoch-day.`]
 			],
 			[/* parameters */
-				[/* parameter */ 'eraValue', [/* parameter description */
-					[/* text */ 't', `the era value`]
+				[/* parameter */ 'epochDay', [/* parameter description */
+					[/* text */ 't', `the epoch day`]
 				]]
 			],
-			/* throws */ UDF,
+			[/* throws */
+				[/* throw */ 'java.time.DateTimeException', [/* throw description */
+					[/* text */ 't', `if unable to create the date`]
+				]]
+			],
 			[/* return description */
-				[/* text */ 't', `the calendar system era, not null`]
+				[/* text */ 't', `the Thai Buddhist local date, not null`]
 			]
 		]],
-		[/* method */ 'eras()', [
+		[/* method */ 'dateNow()', [
 			[/* method description */
 				[/* block */ 'b', [
-					[/* text */ 't', `Gets the list of eras for the chronology.
+					[/* text */ 't', `Obtains the current local date in this chronology from the system clock in the default time-zone.
  `],
+					[/* block */ 'b', [
+						[/* text */ 't', `
+ This will query the `],
+						[/* reference */ 'r', `java.Clock#systemDefaultZone()`],
+						[/* text */ 't', ` in the default
+ time-zone to obtain the current date.
+ `]
+					]],
 					[/* block */ 'b', `
- Most calendar systems have an era, within which the year has meaning.
- If the calendar system does not support the concept of eras, an empty
- list must be returned.`]
+ Using this method will prevent the ability to use an alternate clock for testing
+ because the clock is hard-coded.`]
 				]]
 			],
 			/* parameters */ UDF,
 			/* throws */ UDF,
 			[/* return description */
-				[/* text */ 't', `the list of eras for the chronology, may be immutable, not null`]
+				[/* text */ 't', `the current local date using the system clock and default time-zone, not null`]
+			]
+		]],
+		[/* method */ 'dateNow(java.time.Clock)', [
+			[/* method description */
+				[/* block */ 'b', [
+					[/* text */ 't', `Obtains the current local date in this chronology from the specified clock.
+ `],
+					[/* block */ 'b', [
+						[/* text */ 't', `
+ This will query the specified clock to obtain the current date - today.
+ Using this method allows the use of an alternate clock for testing.
+ The alternate clock may be introduced using `],
+						[/* reference */ 'r', `java.time.Clock`],
+						[/* text */ 't', `.`]
+					]]
+				]]
+			],
+			[/* parameters */
+				[/* parameter */ 'clock', [/* parameter description */
+					[/* text */ 't', `the clock to use, not null`]
+				]]
+			],
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the current local date, not null`]
+			]
+		]],
+		[/* method */ 'dateNow(java.time.ZoneId)', [
+			[/* method description */
+				[/* block */ 'b', [
+					[/* text */ 't', `Obtains the current local date in this chronology from the system clock in the specified time-zone.
+ `],
+					[/* block */ 'b', [
+						[/* text */ 't', `
+ This will query the `],
+						[/* reference */ 'r', `java.Clock#system(java.time.ZoneId)`],
+						[/* text */ 't', ` to obtain the current date.
+ Specifying the time-zone avoids dependence on the default time-zone.
+ `]
+					]],
+					[/* block */ 'b', `
+ Using this method will prevent the ability to use an alternate clock for testing
+ because the clock is hard-coded.`]
+				]]
+			],
+			[/* parameters */
+				[/* parameter */ 'zone', [/* parameter description */
+					[/* text */ 't', `the zone ID to use, not null`]
+				]]
+			],
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the current local date using the system clock, not null`]
+			]
+		]],
+		[/* method */ 'dateYearDay(int,int)', [
+			[/* method description */
+				[/* text */ 't', `Obtains a local date in Thai Buddhist calendar system from the
+ proleptic-year and day-of-year fields.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'prolepticYear', [/* parameter description */
+					[/* text */ 't', `the proleptic-year`]
+				]],
+				[/* parameter */ 'dayOfYear', [/* parameter description */
+					[/* text */ 't', `the day-of-year`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.time.DateTimeException', [/* throw description */
+					[/* text */ 't', `if unable to create the date`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `the Thai Buddhist local date, not null`]
+			]
+		]],
+		[/* method */ 'dateYearDay(java.time.chrono.Era,int,int)', [
+			[/* method description */
+				[/* text */ 't', `Obtains a local date in Thai Buddhist calendar system from the
+ era, year-of-era and day-of-year fields.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'era', [/* parameter description */
+					[/* text */ 't', `the Thai Buddhist era, not null`]
+				]],
+				[/* parameter */ 'yearOfEra', [/* parameter description */
+					[/* text */ 't', `the year-of-era`]
+				]],
+				[/* parameter */ 'dayOfYear', [/* parameter description */
+					[/* text */ 't', `the day-of-year`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.time.DateTimeException', [/* throw description */
+					[/* text */ 't', `if unable to create the date`]
+				]],
+				[/* throw */ 'java.lang.ClassCastException', [/* throw description */
+					[/* text */ 't', `if the `],
+					[/* inline code block */ 'i', `era`],
+					[/* text */ 't', ` is not a `],
+					[/* inline code block */ 'i', `ThaiBuddhistEra`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `the Thai Buddhist local date, not null`]
 			]
 		]],
 		[/* method */ 'resolveDate(java.util.Map,java.time.format.ResolverStyle)', [
@@ -841,6 +761,86 @@ DocsCollector.collect('java.time.chrono.ThaiBuddhistChronology', [
 			/* throws */ UDF,
 			[/* return description */
 				[/* text */ 't', `the resolved date, null if insufficient information to create a date`]
+			]
+		]],
+		[/* method */ 'eraOf(int)', [
+			[/* method description */
+				[/* block */ 'b', [
+					[/* text */ 't', `Creates the chronology era object from the numeric value.
+ `],
+					[/* block */ 'b', `
+ The era is, conceptually, the largest division of the time-line.
+ Most calendar systems have a single epoch dividing the time-line into two eras.
+ However, some have multiple eras, such as one for the reign of each leader.
+ The exact meaning is determined by the chronology according to the following constraints.
+ `],
+					[/* block */ 'b', `
+ The era in use at 1970-01-01 must have the value 1.
+ Later eras must have sequentially higher values.
+ Earlier eras must have sequentially lower values.
+ Each chronology must refer to an enum or similar singleton to provide the era values.
+ `],
+					[/* block */ 'b', `
+ This method returns the singleton era of the correct type for the specified era value.`]
+				]]
+			],
+			[/* parameters */
+				[/* parameter */ 'eraValue', [/* parameter description */
+					[/* text */ 't', `the era value`]
+				]]
+			],
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the calendar system era, not null`]
+			]
+		]],
+		[/* method */ 'range(java.time.temporal.ChronoField)', [
+			[/* method description */
+				[/* block */ 'b', [
+					[/* text */ 't', `Gets the range of valid values for the specified field.
+ `],
+					[/* block */ 'b', [
+						[/* text */ 't', `
+ All fields can be expressed as a `],
+						[/* inline code block */ 'i', `long`],
+						[/* text */ 't', ` integer.
+ This method returns an object that describes the valid range for that value.
+ `]
+					]],
+					[/* block */ 'b', `
+ Note that the result only describes the minimum and maximum valid values
+ and it is important not to read too much into them. For example, there
+ could be values within the range that are invalid for the field.
+ `],
+					[/* block */ 'b', `
+ This method will return a result whether or not the chronology supports the field.`]
+				]]
+			],
+			[/* parameters */
+				[/* parameter */ 'field', [/* parameter description */
+					[/* text */ 't', `the field to get the range for, not null`]
+				]]
+			],
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the range of valid values for the field, not null`]
+			]
+		]],
+		[/* method */ 'eras()', [
+			[/* method description */
+				[/* block */ 'b', [
+					[/* text */ 't', `Gets the list of eras for the chronology.
+ `],
+					[/* block */ 'b', `
+ Most calendar systems have an era, within which the year has meaning.
+ If the calendar system does not support the concept of eras, an empty
+ list must be returned.`]
+				]]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the list of eras for the chronology, may be immutable, not null`]
 			]
 		]]
 	],

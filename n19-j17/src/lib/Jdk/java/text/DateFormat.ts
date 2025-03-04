@@ -463,68 +463,20 @@ JdkClassCreateHelper.class('java.text.DateFormat', [
 		]
 	],
 	[/* declared fields */
+		[/* public static final int java.text.DateFormat.AM_PM_FIELD */
+			/* name */ 'AM_PM_FIELD',
+			/* type */ 'int',
+			/* annotations */ UDF,
+			/* modifiers */ 25
+		],
 		[/* protected java.util.Calendar java.text.DateFormat.calendar */
 			/* name */ 'calendar',
 			/* type */ 'java.util.Calendar',
 			/* annotations */ UDF,
 			/* modifiers */ 4
 		],
-		[/* protected java.text.NumberFormat java.text.DateFormat.numberFormat */
-			/* name */ 'numberFormat',
-			/* type */ 'java.text.NumberFormat',
-			/* annotations */ UDF,
-			/* modifiers */ 4
-		],
-		[/* public static final int java.text.DateFormat.ERA_FIELD */
-			/* name */ 'ERA_FIELD',
-			/* type */ 'int',
-			/* annotations */ UDF,
-			/* modifiers */ 25
-		],
-		[/* public static final int java.text.DateFormat.YEAR_FIELD */
-			/* name */ 'YEAR_FIELD',
-			/* type */ 'int',
-			/* annotations */ UDF,
-			/* modifiers */ 25
-		],
-		[/* public static final int java.text.DateFormat.MONTH_FIELD */
-			/* name */ 'MONTH_FIELD',
-			/* type */ 'int',
-			/* annotations */ UDF,
-			/* modifiers */ 25
-		],
 		[/* public static final int java.text.DateFormat.DATE_FIELD */
 			/* name */ 'DATE_FIELD',
-			/* type */ 'int',
-			/* annotations */ UDF,
-			/* modifiers */ 25
-		],
-		[/* public static final int java.text.DateFormat.HOUR_OF_DAY1_FIELD */
-			/* name */ 'HOUR_OF_DAY1_FIELD',
-			/* type */ 'int',
-			/* annotations */ UDF,
-			/* modifiers */ 25
-		],
-		[/* public static final int java.text.DateFormat.HOUR_OF_DAY0_FIELD */
-			/* name */ 'HOUR_OF_DAY0_FIELD',
-			/* type */ 'int',
-			/* annotations */ UDF,
-			/* modifiers */ 25
-		],
-		[/* public static final int java.text.DateFormat.MINUTE_FIELD */
-			/* name */ 'MINUTE_FIELD',
-			/* type */ 'int',
-			/* annotations */ UDF,
-			/* modifiers */ 25
-		],
-		[/* public static final int java.text.DateFormat.SECOND_FIELD */
-			/* name */ 'SECOND_FIELD',
-			/* type */ 'int',
-			/* annotations */ UDF,
-			/* modifiers */ 25
-		],
-		[/* public static final int java.text.DateFormat.MILLISECOND_FIELD */
-			/* name */ 'MILLISECOND_FIELD',
 			/* type */ 'int',
 			/* annotations */ UDF,
 			/* modifiers */ 25
@@ -535,38 +487,32 @@ JdkClassCreateHelper.class('java.text.DateFormat', [
 			/* annotations */ UDF,
 			/* modifiers */ 25
 		],
-		[/* public static final int java.text.DateFormat.DAY_OF_YEAR_FIELD */
-			/* name */ 'DAY_OF_YEAR_FIELD',
-			/* type */ 'int',
-			/* annotations */ UDF,
-			/* modifiers */ 25
-		],
 		[/* public static final int java.text.DateFormat.DAY_OF_WEEK_IN_MONTH_FIELD */
 			/* name */ 'DAY_OF_WEEK_IN_MONTH_FIELD',
 			/* type */ 'int',
 			/* annotations */ UDF,
 			/* modifiers */ 25
 		],
-		[/* public static final int java.text.DateFormat.WEEK_OF_YEAR_FIELD */
-			/* name */ 'WEEK_OF_YEAR_FIELD',
+		[/* public static final int java.text.DateFormat.DAY_OF_YEAR_FIELD */
+			/* name */ 'DAY_OF_YEAR_FIELD',
 			/* type */ 'int',
 			/* annotations */ UDF,
 			/* modifiers */ 25
 		],
-		[/* public static final int java.text.DateFormat.WEEK_OF_MONTH_FIELD */
-			/* name */ 'WEEK_OF_MONTH_FIELD',
+		[/* public static final int java.text.DateFormat.DEFAULT */
+			/* name */ 'DEFAULT',
 			/* type */ 'int',
 			/* annotations */ UDF,
 			/* modifiers */ 25
 		],
-		[/* public static final int java.text.DateFormat.AM_PM_FIELD */
-			/* name */ 'AM_PM_FIELD',
+		[/* public static final int java.text.DateFormat.ERA_FIELD */
+			/* name */ 'ERA_FIELD',
 			/* type */ 'int',
 			/* annotations */ UDF,
 			/* modifiers */ 25
 		],
-		[/* public static final int java.text.DateFormat.HOUR1_FIELD */
-			/* name */ 'HOUR1_FIELD',
+		[/* public static final int java.text.DateFormat.FULL */
+			/* name */ 'FULL',
 			/* type */ 'int',
 			/* annotations */ UDF,
 			/* modifiers */ 25
@@ -577,14 +523,20 @@ JdkClassCreateHelper.class('java.text.DateFormat', [
 			/* annotations */ UDF,
 			/* modifiers */ 25
 		],
-		[/* public static final int java.text.DateFormat.TIMEZONE_FIELD */
-			/* name */ 'TIMEZONE_FIELD',
+		[/* public static final int java.text.DateFormat.HOUR1_FIELD */
+			/* name */ 'HOUR1_FIELD',
 			/* type */ 'int',
 			/* annotations */ UDF,
 			/* modifiers */ 25
 		],
-		[/* public static final int java.text.DateFormat.FULL */
-			/* name */ 'FULL',
+		[/* public static final int java.text.DateFormat.HOUR_OF_DAY0_FIELD */
+			/* name */ 'HOUR_OF_DAY0_FIELD',
+			/* type */ 'int',
+			/* annotations */ UDF,
+			/* modifiers */ 25
+		],
+		[/* public static final int java.text.DateFormat.HOUR_OF_DAY1_FIELD */
+			/* name */ 'HOUR_OF_DAY1_FIELD',
 			/* type */ 'int',
 			/* annotations */ UDF,
 			/* modifiers */ 25
@@ -601,14 +553,62 @@ JdkClassCreateHelper.class('java.text.DateFormat', [
 			/* annotations */ UDF,
 			/* modifiers */ 25
 		],
+		[/* public static final int java.text.DateFormat.MILLISECOND_FIELD */
+			/* name */ 'MILLISECOND_FIELD',
+			/* type */ 'int',
+			/* annotations */ UDF,
+			/* modifiers */ 25
+		],
+		[/* public static final int java.text.DateFormat.MINUTE_FIELD */
+			/* name */ 'MINUTE_FIELD',
+			/* type */ 'int',
+			/* annotations */ UDF,
+			/* modifiers */ 25
+		],
+		[/* public static final int java.text.DateFormat.MONTH_FIELD */
+			/* name */ 'MONTH_FIELD',
+			/* type */ 'int',
+			/* annotations */ UDF,
+			/* modifiers */ 25
+		],
+		[/* protected java.text.NumberFormat java.text.DateFormat.numberFormat */
+			/* name */ 'numberFormat',
+			/* type */ 'java.text.NumberFormat',
+			/* annotations */ UDF,
+			/* modifiers */ 4
+		],
+		[/* public static final int java.text.DateFormat.SECOND_FIELD */
+			/* name */ 'SECOND_FIELD',
+			/* type */ 'int',
+			/* annotations */ UDF,
+			/* modifiers */ 25
+		],
 		[/* public static final int java.text.DateFormat.SHORT */
 			/* name */ 'SHORT',
 			/* type */ 'int',
 			/* annotations */ UDF,
 			/* modifiers */ 25
 		],
-		[/* public static final int java.text.DateFormat.DEFAULT */
-			/* name */ 'DEFAULT',
+		[/* public static final int java.text.DateFormat.TIMEZONE_FIELD */
+			/* name */ 'TIMEZONE_FIELD',
+			/* type */ 'int',
+			/* annotations */ UDF,
+			/* modifiers */ 25
+		],
+		[/* public static final int java.text.DateFormat.WEEK_OF_MONTH_FIELD */
+			/* name */ 'WEEK_OF_MONTH_FIELD',
+			/* type */ 'int',
+			/* annotations */ UDF,
+			/* modifiers */ 25
+		],
+		[/* public static final int java.text.DateFormat.WEEK_OF_YEAR_FIELD */
+			/* name */ 'WEEK_OF_YEAR_FIELD',
+			/* type */ 'int',
+			/* annotations */ UDF,
+			/* modifiers */ 25
+		],
+		[/* public static final int java.text.DateFormat.YEAR_FIELD */
+			/* name */ 'YEAR_FIELD',
 			/* type */ 'int',
 			/* annotations */ UDF,
 			/* modifiers */ 25

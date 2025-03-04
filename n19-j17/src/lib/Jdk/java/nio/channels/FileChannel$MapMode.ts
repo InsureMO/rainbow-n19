@@ -22,6 +22,12 @@ JdkClassCreateHelper.class('java.nio.channels.FileChannel$MapMode', [
 		]
 	],
 	[/* declared fields */
+		[/* public static final java.nio.channels.FileChannel$MapMode java.nio.channels.FileChannel$MapMode.PRIVATE */
+			/* name */ 'PRIVATE',
+			/* type */ 'java.nio.channels.FileChannel$MapMode',
+			/* annotations */ UDF,
+			/* modifiers */ 25
+		],
 		[/* public static final java.nio.channels.FileChannel$MapMode java.nio.channels.FileChannel$MapMode.READ_ONLY */
 			/* name */ 'READ_ONLY',
 			/* type */ 'java.nio.channels.FileChannel$MapMode',
@@ -30,12 +36,6 @@ JdkClassCreateHelper.class('java.nio.channels.FileChannel$MapMode', [
 		],
 		[/* public static final java.nio.channels.FileChannel$MapMode java.nio.channels.FileChannel$MapMode.READ_WRITE */
 			/* name */ 'READ_WRITE',
-			/* type */ 'java.nio.channels.FileChannel$MapMode',
-			/* annotations */ UDF,
-			/* modifiers */ 25
-		],
-		[/* public static final java.nio.channels.FileChannel$MapMode java.nio.channels.FileChannel$MapMode.PRIVATE */
-			/* name */ 'PRIVATE',
 			/* type */ 'java.nio.channels.FileChannel$MapMode',
 			/* annotations */ UDF,
 			/* modifiers */ 25

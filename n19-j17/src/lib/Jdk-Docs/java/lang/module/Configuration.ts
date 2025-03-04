@@ -85,29 +85,6 @@ DocsCollector.collect('java.lang.module.Configuration', [
 	/* fields */ UDF,
 	/* constructors */ UDF,
 	[/* methods */
-		[/* method */ 'toString()', [
-			[/* method description */
-				[/* text */ 't', `Returns a string describing this configuration.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `A possibly empty string describing this configuration`]
-			]
-		]],
-		[/* method */ 'empty()', [
-			[/* method description */
-				[/* text */ 't', `Returns the `],
-				[/* text */ 't', `empty`],
-				[/* text */ 't', ` configuration. There are no modules in the
- empty configuration. It has no parents.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `The empty configuration`]
-			]
-		]],
 		[/* method */ 'resolve(java.lang.module.ModuleFinder,java.lang.module.ModuleFinder,java.util.Collection)', [
 			[/* method description */
 				[/* text */ 't', `Resolves a collection of root modules, with this configuration as its
@@ -165,6 +142,140 @@ DocsCollector.collect('java.lang.module.Configuration', [
 			[/* return description */
 				[/* text */ 't', `The configuration that is the result of resolving the given
          root modules`]
+			]
+		]],
+		[/* method */ 'resolveAndBind(java.lang.module.ModuleFinder,java.lang.module.ModuleFinder,java.util.Collection)', [
+			[/* method description */
+				[/* text */ 't', `Resolves a collection of root modules, with service binding, and with
+ this configuration as its parent, to create a new configuration.
+ This method works exactly as specified by the static `],
+				[/* reference */ 'r', `#resolveAndBind(java.lang.module.ModuleFinder,java.util.List,java.lang.module.ModuleFinder,java.util.Collection)`, `resolveAndBind`],
+				[/* text */ 't', ` method when invoked with this configuration
+ as the parent. In other words, if this configuration is `],
+				[/* inline code block */ 'i', `cf`],
+				[/* text */ 't', ` then
+ this method is equivalent to invoking:
+ `],
+				[/* code block */ 'c', [
+					[/* inline code block */ 'i', `Configuration.resolveAndBind(before, List.of(cf), after, roots);`]
+				]]
+			],
+			[/* parameters */
+				[/* parameter */ 'before', [/* parameter description */
+					[/* text */ 't', `The `],
+					[/* text */ 't', `before`],
+					[/* text */ 't', ` module finder to find modules`]
+				]],
+				[/* parameter */ 'after', [/* parameter description */
+					[/* text */ 't', `The `],
+					[/* text */ 't', `after`],
+					[/* text */ 't', ` module finder to locate modules when not
+         located by the `],
+					[/* inline code block */ 'i', `before`],
+					[/* text */ 't', ` module finder or in parent
+         configurations`]
+				]],
+				[/* parameter */ 'roots', [/* parameter description */
+					[/* text */ 't', `The possibly-empty collection of module names of the modules
+         to resolve`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.lang.module.FindException', [/* throw description */
+					[/* text */ 't', `If resolution fails for any of the observability-related reasons
+         specified by the static `],
+					[/* inline code block */ 'i', `resolve`],
+					[/* text */ 't', ` method`]
+				]],
+				[/* throw */ 'java.lang.module.ResolutionException', [/* throw description */
+					[/* text */ 't', `If resolution fails any of the consistency checks specified by
+         the static `],
+					[/* inline code block */ 'i', `resolve`],
+					[/* text */ 't', ` method`]
+				]],
+				[/* throw */ 'java.lang.SecurityException', [/* throw description */
+					[/* text */ 't', `If locating a module is denied by the security manager`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `The configuration that is the result of resolving, with service
+         binding, the given root modules`]
+			]
+		]],
+		[/* method */ 'toString()', [
+			[/* method description */
+				[/* text */ 't', `Returns a string describing this configuration.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `A possibly empty string describing this configuration`]
+			]
+		]],
+		[/* method */ 'parents()', [
+			[/* method description */
+				[/* text */ 't', `Returns an unmodifiable list of this configuration's parents, in search
+ order. If this is the `],
+				[/* reference */ 'r', `#empty()`, `empty configuration`],
+				[/* text */ 't', ` then an
+ empty list is returned.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `A possibly-empty unmodifiable list of this parent configurations`]
+			]
+		]],
+		[/* method */ 'findModule(java.lang.String)', [
+			[/* method description */
+				[/* text */ 't', `Finds a resolved module in this configuration, or if not in this
+ configuration, the `],
+				[/* reference */ 'r', `#parents()`, `parent`],
+				[/* text */ 't', ` configurations.
+ Finding a module in parent configurations is equivalent to invoking
+ `],
+				[/* inline code block */ 'i', `findModule`],
+				[/* text */ 't', ` on each parent, in search order, until the module
+ is found or all parents have been searched. In a `],
+				[/* text */ 't', `tree of
+ configurations`],
+				[/* text */ 't', ` then this is equivalent to a depth-first search.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'name', [/* parameter description */
+					[/* text */ 't', `The module name of the resolved module to find`]
+				]]
+			],
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `The resolved module with the given name or an empty `],
+				[/* inline code block */ 'i', `Optional`],
+				[/* text */ 't', ` if there isn't a module with this name in this
+         configuration or any parent configurations`]
+			]
+		]],
+		[/* method */ 'modules()', [
+			[/* method description */
+				[/* text */ 't', `Returns an unmodifiable set of the resolved modules in this configuration.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `A possibly-empty unmodifiable set of the resolved modules
+         in this configuration`]
+			]
+		]],
+		[/* method */ 'empty()', [
+			[/* method description */
+				[/* text */ 't', `Returns the `],
+				[/* text */ 't', `empty`],
+				[/* text */ 't', ` configuration. There are no modules in the
+ empty configuration. It has no parents.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `The empty configuration`]
 			]
 		]],
 		[/* method */ 'resolve(java.lang.module.ModuleFinder,java.util.List,java.lang.module.ModuleFinder,java.util.Collection)', [
@@ -326,59 +437,6 @@ DocsCollector.collect('java.lang.module.Configuration', [
          root modules`]
 			]
 		]],
-		[/* method */ 'modules()', [
-			[/* method description */
-				[/* text */ 't', `Returns an unmodifiable set of the resolved modules in this configuration.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `A possibly-empty unmodifiable set of the resolved modules
-         in this configuration`]
-			]
-		]],
-		[/* method */ 'parents()', [
-			[/* method description */
-				[/* text */ 't', `Returns an unmodifiable list of this configuration's parents, in search
- order. If this is the `],
-				[/* reference */ 'r', `#empty()`, `empty configuration`],
-				[/* text */ 't', ` then an
- empty list is returned.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `A possibly-empty unmodifiable list of this parent configurations`]
-			]
-		]],
-		[/* method */ 'findModule(java.lang.String)', [
-			[/* method description */
-				[/* text */ 't', `Finds a resolved module in this configuration, or if not in this
- configuration, the `],
-				[/* reference */ 'r', `#parents()`, `parent`],
-				[/* text */ 't', ` configurations.
- Finding a module in parent configurations is equivalent to invoking
- `],
-				[/* inline code block */ 'i', `findModule`],
-				[/* text */ 't', ` on each parent, in search order, until the module
- is found or all parents have been searched. In a `],
-				[/* text */ 't', `tree of
- configurations`],
-				[/* text */ 't', ` then this is equivalent to a depth-first search.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'name', [/* parameter description */
-					[/* text */ 't', `The module name of the resolved module to find`]
-				]]
-			],
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `The resolved module with the given name or an empty `],
-				[/* inline code block */ 'i', `Optional`],
-				[/* text */ 't', ` if there isn't a module with this name in this
-         configuration or any parent configurations`]
-			]
-		]],
 		[/* method */ 'resolveAndBind(java.lang.module.ModuleFinder,java.util.List,java.lang.module.ModuleFinder,java.util.Collection)', [
 			[/* method description */
 				[/* text */ 't', `Resolves a collection of root modules, with service binding, to create
@@ -461,64 +519,6 @@ DocsCollector.collect('java.lang.module.Configuration', [
 					[/* text */ 't', `If the list of parents is empty, or the list has two or more
          parents with modules for different target operating systems,
          architectures, or versions`]
-				]],
-				[/* throw */ 'java.lang.SecurityException', [/* throw description */
-					[/* text */ 't', `If locating a module is denied by the security manager`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `The configuration that is the result of resolving, with service
-         binding, the given root modules`]
-			]
-		]],
-		[/* method */ 'resolveAndBind(java.lang.module.ModuleFinder,java.lang.module.ModuleFinder,java.util.Collection)', [
-			[/* method description */
-				[/* text */ 't', `Resolves a collection of root modules, with service binding, and with
- this configuration as its parent, to create a new configuration.
- This method works exactly as specified by the static `],
-				[/* reference */ 'r', `#resolveAndBind(java.lang.module.ModuleFinder,java.util.List,java.lang.module.ModuleFinder,java.util.Collection)`, `resolveAndBind`],
-				[/* text */ 't', ` method when invoked with this configuration
- as the parent. In other words, if this configuration is `],
-				[/* inline code block */ 'i', `cf`],
-				[/* text */ 't', ` then
- this method is equivalent to invoking:
- `],
-				[/* code block */ 'c', [
-					[/* inline code block */ 'i', `Configuration.resolveAndBind(before, List.of(cf), after, roots);`]
-				]]
-			],
-			[/* parameters */
-				[/* parameter */ 'before', [/* parameter description */
-					[/* text */ 't', `The `],
-					[/* text */ 't', `before`],
-					[/* text */ 't', ` module finder to find modules`]
-				]],
-				[/* parameter */ 'after', [/* parameter description */
-					[/* text */ 't', `The `],
-					[/* text */ 't', `after`],
-					[/* text */ 't', ` module finder to locate modules when not
-         located by the `],
-					[/* inline code block */ 'i', `before`],
-					[/* text */ 't', ` module finder or in parent
-         configurations`]
-				]],
-				[/* parameter */ 'roots', [/* parameter description */
-					[/* text */ 't', `The possibly-empty collection of module names of the modules
-         to resolve`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.module.FindException', [/* throw description */
-					[/* text */ 't', `If resolution fails for any of the observability-related reasons
-         specified by the static `],
-					[/* inline code block */ 'i', `resolve`],
-					[/* text */ 't', ` method`]
-				]],
-				[/* throw */ 'java.lang.module.ResolutionException', [/* throw description */
-					[/* text */ 't', `If resolution fails any of the consistency checks specified by
-         the static `],
-					[/* inline code block */ 'i', `resolve`],
-					[/* text */ 't', ` method`]
 				]],
 				[/* throw */ 'java.lang.SecurityException', [/* throw description */
 					[/* text */ 't', `If locating a module is denied by the security manager`]

@@ -43,6 +43,141 @@ DocsCollector.collect('java.time.temporal.TemporalUnit', [
 	/* fields */ UDF,
 	/* constructors */ UDF,
 	[/* methods */
+		[/* method */ 'addTo(java.time.temporal.Temporal,long)', [
+			[/* method description */
+				[/* text */ 't', `Returns a copy of the specified temporal object with the specified period added.
+ `],
+				[/* block */ 'b', `
+ The period added is a multiple of this unit. For example, this method
+ could be used to add "3 days" to a date by calling this method on the
+ instance representing "days", passing the date and the period "3".
+ The period to be added may be negative, which is equivalent to subtraction.
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', `
+ There are two equivalent ways of using this method.
+ The first is to invoke this method directly.
+ The second is to use `],
+					[/* reference */ 'r', `.Temporal#plus(long,java.time.temporal.TemporalUnit)`],
+					[/* text */ 't', `:
+ `]
+				]],
+				[/* code block */ 'c', `   // these two lines are equivalent, but the second approach is recommended
+   temporal = thisUnit.addTo(temporal);
+   temporal = temporal.plus(thisUnit);
+ `],
+				[/* text */ 't', `
+ It is recommended to use the second approach, `],
+				[/* inline code block */ 'i', `plus(TemporalUnit)`],
+				[/* text */ 't', `,
+ as it is a lot clearer to read in code.
+ `],
+				[/* block */ 'b', ''],
+				[/* block */ 'b', [
+					[/* text */ 't', `
+ Implementations should perform any queries or calculations using the units
+ available in `],
+					[/* reference */ 'r', `enum class in java.time.temporal.ChronoUnit`],
+					[/* text */ 't', ` or the fields available in `],
+					[/* reference */ 'r', `enum class in java.time.temporal.ChronoField`],
+					[/* text */ 't', `.
+ If the unit is not supported an `],
+					[/* inline code block */ 'i', `UnsupportedTemporalTypeException`],
+					[/* text */ 't', ` must be thrown.
+ `]
+				]],
+				[/* block */ 'b', `
+ Implementations must not alter the specified temporal object.
+ Instead, an adjusted copy of the original must be returned.
+ This provides equivalent, safe behavior for immutable and mutable implementations.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'temporal', [/* parameter description */
+					[/* text */ 't', `the temporal object to adjust, not null`]
+				]],
+				[/* parameter */ 'amount', [/* parameter description */
+					[/* text */ 't', `the amount of this unit to add, positive or negative`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.time.DateTimeException', [/* throw description */
+					[/* text */ 't', `if the amount cannot be added`]
+				]],
+				[/* throw */ 'java.time.temporal.UnsupportedTemporalTypeException', [/* throw description */
+					[/* text */ 't', `if the unit is not supported by the temporal`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `the adjusted temporal object, not null`]
+			]
+		]],
+		[/* method */ 'isDateBased()', [
+			[/* method description */
+				[/* text */ 't', `Checks if this unit represents a component of a date.
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', `
+ A date is time-based if it can be used to imply meaning from a date.
+ It must have a `],
+					[/* reference */ 'r', `#getDuration()`, `duration`],
+					[/* text */ 't', ` that is an integral
+ multiple of the length of a standard day.
+ Note that it is valid for both `],
+					[/* inline code block */ 'i', `isDateBased()`],
+					[/* text */ 't', ` and `],
+					[/* inline code block */ 'i', `isTimeBased()`],
+					[/* text */ 't', `
+ to return false, such as when representing a unit like 36 hours.`]
+				]]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `true if this unit is a component of a date`]
+			]
+		]],
+		[/* method */ 'isDurationEstimated()', [
+			[/* method description */
+				[/* text */ 't', `Checks if the duration of the unit is an estimate.
+ `],
+				[/* block */ 'b', `
+ All units have a duration, however the duration is not always accurate.
+ For example, days have an estimated duration due to the possibility of
+ daylight saving time changes.
+ This method returns true if the duration is an estimate and false if it is
+ accurate. Note that accurate/estimated ignores leap seconds.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `true if the duration is estimated, false if accurate`]
+			]
+		]],
+		[/* method */ 'isTimeBased()', [
+			[/* method description */
+				[/* text */ 't', `Checks if this unit represents a component of a time.
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', `
+ A unit is time-based if it can be used to imply meaning from a time.
+ It must have a `],
+					[/* reference */ 'r', `#getDuration()`, `duration`],
+					[/* text */ 't', ` that divides into
+ the length of a standard day without remainder.
+ Note that it is valid for both `],
+					[/* inline code block */ 'i', `isDateBased()`],
+					[/* text */ 't', ` and `],
+					[/* inline code block */ 'i', `isTimeBased()`],
+					[/* text */ 't', `
+ to return false, such as when representing a unit like 36 hours.`]
+				]]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `true if this unit is a component of a time`]
+			]
+		]],
 		[/* method */ 'toString()', [
 			[/* method description */
 				[/* text */ 't', `Gets a descriptive name for the unit.
@@ -54,6 +189,35 @@ DocsCollector.collect('java.time.temporal.TemporalUnit', [
 			/* throws */ UDF,
 			[/* return description */
 				[/* text */ 't', `the name of this unit, not null`]
+			]
+		]],
+		[/* method */ 'getDuration()', [
+			[/* method description */
+				[/* text */ 't', `Gets the duration of this unit, which may be an estimate.
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', `
+ All units return a duration measured in standard nanoseconds from this method.
+ The duration will be positive and non-zero.
+ For example, an hour has a duration of `],
+					[/* inline code block */ 'i', `60 * 60 * 1,000,000,000ns`],
+					[/* text */ 't', `.
+ `]
+				]],
+				[/* block */ 'b', [
+					[/* text */ 't', `
+ Some units may return an accurate duration while others return an estimate.
+ For example, days have an estimated duration due to the possibility of
+ daylight saving time changes.
+ To determine if the duration is an estimate, use `],
+					[/* reference */ 'r', `#isDurationEstimated()`, `isDurationEstimated()`],
+					[/* text */ 't', `.`]
+				]]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the duration of this unit, which may be an estimate, not null`]
 			]
 		]],
 		[/* method */ 'between(java.time.temporal.Temporal,java.time.temporal.Temporal)', [
@@ -145,56 +309,6 @@ DocsCollector.collect('java.time.temporal.TemporalUnit', [
   temporal1Inclusive, negative if earlier`]
 			]
 		]],
-		[/* method */ 'isDateBased()', [
-			[/* method description */
-				[/* text */ 't', `Checks if this unit represents a component of a date.
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', `
- A date is time-based if it can be used to imply meaning from a date.
- It must have a `],
-					[/* reference */ 'r', `#getDuration()`, `duration`],
-					[/* text */ 't', ` that is an integral
- multiple of the length of a standard day.
- Note that it is valid for both `],
-					[/* inline code block */ 'i', `isDateBased()`],
-					[/* text */ 't', ` and `],
-					[/* inline code block */ 'i', `isTimeBased()`],
-					[/* text */ 't', `
- to return false, such as when representing a unit like 36 hours.`]
-				]]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `true if this unit is a component of a date`]
-			]
-		]],
-		[/* method */ 'isTimeBased()', [
-			[/* method description */
-				[/* text */ 't', `Checks if this unit represents a component of a time.
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', `
- A unit is time-based if it can be used to imply meaning from a time.
- It must have a `],
-					[/* reference */ 'r', `#getDuration()`, `duration`],
-					[/* text */ 't', ` that divides into
- the length of a standard day without remainder.
- Note that it is valid for both `],
-					[/* inline code block */ 'i', `isDateBased()`],
-					[/* text */ 't', ` and `],
-					[/* inline code block */ 'i', `isTimeBased()`],
-					[/* text */ 't', `
- to return false, such as when representing a unit like 36 hours.`]
-				]]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `true if this unit is a component of a time`]
-			]
-		]],
 		[/* method */ 'isSupportedBy(java.time.temporal.Temporal)', [
 			[/* method description */
 				[/* text */ 't', `Checks if this unit is supported by the specified temporal object.
@@ -219,120 +333,6 @@ DocsCollector.collect('java.time.temporal.TemporalUnit', [
 			/* throws */ UDF,
 			[/* return description */
 				[/* text */ 't', `true if the unit is supported`]
-			]
-		]],
-		[/* method */ 'getDuration()', [
-			[/* method description */
-				[/* text */ 't', `Gets the duration of this unit, which may be an estimate.
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', `
- All units return a duration measured in standard nanoseconds from this method.
- The duration will be positive and non-zero.
- For example, an hour has a duration of `],
-					[/* inline code block */ 'i', `60 * 60 * 1,000,000,000ns`],
-					[/* text */ 't', `.
- `]
-				]],
-				[/* block */ 'b', [
-					[/* text */ 't', `
- Some units may return an accurate duration while others return an estimate.
- For example, days have an estimated duration due to the possibility of
- daylight saving time changes.
- To determine if the duration is an estimate, use `],
-					[/* reference */ 'r', `#isDurationEstimated()`, `isDurationEstimated()`],
-					[/* text */ 't', `.`]
-				]]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the duration of this unit, which may be an estimate, not null`]
-			]
-		]],
-		[/* method */ 'isDurationEstimated()', [
-			[/* method description */
-				[/* text */ 't', `Checks if the duration of the unit is an estimate.
- `],
-				[/* block */ 'b', `
- All units have a duration, however the duration is not always accurate.
- For example, days have an estimated duration due to the possibility of
- daylight saving time changes.
- This method returns true if the duration is an estimate and false if it is
- accurate. Note that accurate/estimated ignores leap seconds.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `true if the duration is estimated, false if accurate`]
-			]
-		]],
-		[/* method */ 'addTo(java.time.temporal.Temporal,long)', [
-			[/* method description */
-				[/* text */ 't', `Returns a copy of the specified temporal object with the specified period added.
- `],
-				[/* block */ 'b', `
- The period added is a multiple of this unit. For example, this method
- could be used to add "3 days" to a date by calling this method on the
- instance representing "days", passing the date and the period "3".
- The period to be added may be negative, which is equivalent to subtraction.
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', `
- There are two equivalent ways of using this method.
- The first is to invoke this method directly.
- The second is to use `],
-					[/* reference */ 'r', `.Temporal#plus(long,java.time.temporal.TemporalUnit)`],
-					[/* text */ 't', `:
- `]
-				]],
-				[/* code block */ 'c', `   // these two lines are equivalent, but the second approach is recommended
-   temporal = thisUnit.addTo(temporal);
-   temporal = temporal.plus(thisUnit);
- `],
-				[/* text */ 't', `
- It is recommended to use the second approach, `],
-				[/* inline code block */ 'i', `plus(TemporalUnit)`],
-				[/* text */ 't', `,
- as it is a lot clearer to read in code.
- `],
-				[/* block */ 'b', ''],
-				[/* block */ 'b', [
-					[/* text */ 't', `
- Implementations should perform any queries or calculations using the units
- available in `],
-					[/* reference */ 'r', `enum class in java.time.temporal.ChronoUnit`],
-					[/* text */ 't', ` or the fields available in `],
-					[/* reference */ 'r', `enum class in java.time.temporal.ChronoField`],
-					[/* text */ 't', `.
- If the unit is not supported an `],
-					[/* inline code block */ 'i', `UnsupportedTemporalTypeException`],
-					[/* text */ 't', ` must be thrown.
- `]
-				]],
-				[/* block */ 'b', `
- Implementations must not alter the specified temporal object.
- Instead, an adjusted copy of the original must be returned.
- This provides equivalent, safe behavior for immutable and mutable implementations.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'temporal', [/* parameter description */
-					[/* text */ 't', `the temporal object to adjust, not null`]
-				]],
-				[/* parameter */ 'amount', [/* parameter description */
-					[/* text */ 't', `the amount of this unit to add, positive or negative`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.time.DateTimeException', [/* throw description */
-					[/* text */ 't', `if the amount cannot be added`]
-				]],
-				[/* throw */ 'java.time.temporal.UnsupportedTemporalTypeException', [/* throw description */
-					[/* text */ 't', `if the unit is not supported by the temporal`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `the adjusted temporal object, not null`]
 			]
 		]]
 	],

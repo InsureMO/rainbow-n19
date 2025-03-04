@@ -185,16 +185,6 @@ DocsCollector.collect('java.io.FilePermission', [
 				[/* text */ 't', ` otherwise.`]
 			]
 		]],
-		[/* method */ 'hashCode()', [
-			[/* method description */
-				[/* text */ 't', `Returns the hash code value for this object.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `a hash code value for this object.`]
-			]
-		]],
 		[/* method */ 'implies(java.security.Permission)', [
 			[/* method description */
 				[/* text */ 't', `Checks if this FilePermission object "implies" the specified permission.
@@ -261,6 +251,16 @@ DocsCollector.collect('java.io.FilePermission', [
                   `],
 				[/* inline code block */ 'i', `false`],
 				[/* text */ 't', ` otherwise.`]
+			]
+		]],
+		[/* method */ 'hashCode()', [
+			[/* method description */
+				[/* text */ 't', `Returns the hash code value for this object.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `a hash code value for this object.`]
 			]
 		]],
 		[/* method */ 'getActions()', [

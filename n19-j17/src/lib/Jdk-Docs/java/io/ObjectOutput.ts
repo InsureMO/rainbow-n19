@@ -10,12 +10,43 @@ DocsCollector.collect('java.io.ObjectOutput', [
 	/* fields */ UDF,
 	/* constructors */ UDF,
 	[/* methods */
+		[/* method */ 'close()', [
+			[/* method description */
+				[/* text */ 't', `Closes the stream. This method must be called
+ to release any resources associated with the
+ stream.`]
+			],
+			/* parameters */ UDF,
+			[/* throws */
+				[/* throw */ 'java.io.IOException', [/* throw description */
+					[/* text */ 't', `If an I/O error has occurred.`]
+				]]
+			],
+			/* return */ UDF
+		]],
 		[/* method */ 'flush()', [
 			[/* method description */
 				[/* text */ 't', `Flushes the stream. This will write any buffered
  output bytes.`]
 			],
 			/* parameters */ UDF,
+			[/* throws */
+				[/* throw */ 'java.io.IOException', [/* throw description */
+					[/* text */ 't', `If an I/O error has occurred.`]
+				]]
+			],
+			/* return */ UDF
+		]],
+		[/* method */ 'write(byte[])', [
+			[/* method description */
+				[/* text */ 't', `Writes an array of bytes. This method will block until the bytes
+ are actually written.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'b', [/* parameter description */
+					[/* text */ 't', `the data to be written`]
+				]]
+			],
 			[/* throws */
 				[/* throw */ 'java.io.IOException', [/* throw description */
 					[/* text */ 't', `If an I/O error has occurred.`]
@@ -36,23 +67,6 @@ DocsCollector.collect('java.io.ObjectOutput', [
 				]],
 				[/* parameter */ 'len', [/* parameter description */
 					[/* text */ 't', `the number of bytes that are written`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.io.IOException', [/* throw description */
-					[/* text */ 't', `If an I/O error has occurred.`]
-				]]
-			],
-			/* return */ UDF
-		]],
-		[/* method */ 'write(byte[])', [
-			[/* method description */
-				[/* text */ 't', `Writes an array of bytes. This method will block until the bytes
- are actually written.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'b', [/* parameter description */
-					[/* text */ 't', `the data to be written`]
 				]]
 			],
 			[/* throws */
@@ -93,20 +107,6 @@ DocsCollector.collect('java.io.ObjectOutput', [
 			[/* throws */
 				[/* throw */ 'java.io.IOException', [/* throw description */
 					[/* text */ 't', `Any of the usual Input/Output related exceptions.`]
-				]]
-			],
-			/* return */ UDF
-		]],
-		[/* method */ 'close()', [
-			[/* method description */
-				[/* text */ 't', `Closes the stream. This method must be called
- to release any resources associated with the
- stream.`]
-			],
-			/* parameters */ UDF,
-			[/* throws */
-				[/* throw */ 'java.io.IOException', [/* throw description */
-					[/* text */ 't', `If an I/O error has occurred.`]
 				]]
 			],
 			/* return */ UDF

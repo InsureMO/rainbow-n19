@@ -48,6 +48,28 @@ DocsCollector.collect('java.util.ConcurrentModificationException', [
 	],
 	/* fields */ UDF,
 	[/* constructors */
+		[/* constructor */ '<init>()', [
+			[/* constructor description */
+				[/* text */ 't', `Constructs a ConcurrentModificationException with no
+ detail message.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF
+		]],
+		[/* constructor */ '<init>(java.lang.String)', [
+			[/* constructor description */
+				[/* text */ 't', `Constructs a `],
+				[/* inline code block */ 'i', `ConcurrentModificationException`],
+				[/* text */ 't', ` with the
+ specified detail message.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'message', [/* parameter description */
+					[/* text */ 't', `the detail message pertaining to this exception.`]
+				]]
+			],
+			/* throws */ UDF
+		]],
 		[/* constructor */ '<init>(java.lang.String,java.lang.Throwable)', [
 			[/* constructor description */
 				[/* text */ 't', `Constructs a new exception with the specified detail message and
@@ -106,28 +128,6 @@ DocsCollector.collect('java.util.ConcurrentModificationException', [
          unknown.)`]
 				]]
 			],
-			/* throws */ UDF
-		]],
-		[/* constructor */ '<init>(java.lang.String)', [
-			[/* constructor description */
-				[/* text */ 't', `Constructs a `],
-				[/* inline code block */ 'i', `ConcurrentModificationException`],
-				[/* text */ 't', ` with the
- specified detail message.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'message', [/* parameter description */
-					[/* text */ 't', `the detail message pertaining to this exception.`]
-				]]
-			],
-			/* throws */ UDF
-		]],
-		[/* constructor */ '<init>()', [
-			[/* constructor description */
-				[/* text */ 't', `Constructs a ConcurrentModificationException with no
- detail message.`]
-			],
-			/* parameters */ UDF,
 			/* throws */ UDF
 		]]
 	],

@@ -35,21 +35,6 @@ DocsCollector.collect('java.io.WriteAbortedException', [
 		]]
 	],
 	[/* methods */
-		[/* method */ 'getCause()', [
-			[/* method description */
-				[/* text */ 't', `Returns the exception that terminated the operation (the `],
-				[/* text */ 't', `cause`],
-				[/* text */ 't', `).`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the exception that terminated the operation (the `],
-				[/* text */ 't', `cause`],
-				[/* text */ 't', `),
-          which may be null.`]
-			]
-		]],
 		[/* method */ 'getMessage()', [
 			[/* method description */
 				[/* text */ 't', `Produce the message and include the message from the nested
@@ -64,6 +49,21 @@ DocsCollector.collect('java.io.WriteAbortedException', [
           (which may be `],
 				[/* inline code block */ 'i', `null`],
 				[/* text */ 't', `).`]
+			]
+		]],
+		[/* method */ 'getCause()', [
+			[/* method description */
+				[/* text */ 't', `Returns the exception that terminated the operation (the `],
+				[/* text */ 't', `cause`],
+				[/* text */ 't', `).`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the exception that terminated the operation (the `],
+				[/* text */ 't', `cause`],
+				[/* text */ 't', `),
+          which may be null.`]
 			]
 		]]
 	],

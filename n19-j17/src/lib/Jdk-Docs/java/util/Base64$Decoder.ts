@@ -58,6 +58,31 @@ DocsCollector.collect('java.util.Base64$Decoder', [
 	/* fields */ UDF,
 	/* constructors */ UDF,
 	[/* methods */
+		[/* method */ 'decode(byte[])', [
+			[/* method description */
+				[/* text */ 't', `Decodes all bytes from the input byte array using the `],
+				[/* reference */ 'r', `java.util.Base64`],
+				[/* text */ 't', `
+ encoding scheme, writing the results into a newly-allocated output
+ byte array. The returned byte array is of the length of the resulting
+ bytes.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'src', [/* parameter description */
+					[/* text */ 't', `the byte array to decode`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
+					[/* text */ 't', `if `],
+					[/* inline code block */ 'i', `src`],
+					[/* text */ 't', ` is not in valid Base64 scheme`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `A newly-allocated byte array containing the decoded bytes.`]
+			]
+		]],
 		[/* method */ 'decode(java.lang.String)', [
 			[/* method description */
 				[/* text */ 't', `Decodes a Base64 encoded String into a newly-allocated byte array
@@ -86,68 +111,6 @@ DocsCollector.collect('java.util.Base64$Decoder', [
 			],
 			[/* return description */
 				[/* text */ 't', `A newly-allocated byte array containing the decoded bytes.`]
-			]
-		]],
-		[/* method */ 'decode(byte[])', [
-			[/* method description */
-				[/* text */ 't', `Decodes all bytes from the input byte array using the `],
-				[/* reference */ 'r', `java.util.Base64`],
-				[/* text */ 't', `
- encoding scheme, writing the results into a newly-allocated output
- byte array. The returned byte array is of the length of the resulting
- bytes.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'src', [/* parameter description */
-					[/* text */ 't', `the byte array to decode`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
-					[/* text */ 't', `if `],
-					[/* inline code block */ 'i', `src`],
-					[/* text */ 't', ` is not in valid Base64 scheme`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `A newly-allocated byte array containing the decoded bytes.`]
-			]
-		]],
-		[/* method */ 'decode(java.nio.ByteBuffer)', [
-			[/* method description */
-				[/* text */ 't', `Decodes all bytes from the input byte buffer using the `],
-				[/* reference */ 'r', `java.util.Base64`],
-				[/* text */ 't', `
- encoding scheme, writing the results into a newly-allocated ByteBuffer.
-
- `],
-				[/* block */ 'b', ` Upon return, the source buffer's position will be updated to
- its limit; its limit will not have been changed. The returned
- output buffer's position will be zero and its limit will be the
- number of resulting decoded bytes
-
- `],
-				[/* block */ 'b', [
-					[/* inline code block */ 'i', `IllegalArgumentException`],
-					[/* text */ 't', ` is thrown if the input buffer
- is not in valid Base64 encoding scheme. The position of the input
- buffer will not be advanced in this case.`]
-				]]
-			],
-			[/* parameters */
-				[/* parameter */ 'buffer', [/* parameter description */
-					[/* text */ 't', `the ByteBuffer to decode`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
-					[/* text */ 't', `if `],
-					[/* inline code block */ 'i', `buffer`],
-					[/* text */ 't', ` is not in valid Base64 scheme`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `A newly-allocated byte buffer containing the decoded bytes`]
 			]
 		]],
 		[/* method */ 'decode(byte[],byte[])', [
@@ -226,6 +189,43 @@ DocsCollector.collect('java.util.Base64$Decoder', [
 			[/* return description */
 				[/* text */ 't', `the input stream for decoding the specified Base64 encoded
           byte stream`]
+			]
+		]],
+		[/* method */ 'decode(java.nio.ByteBuffer)', [
+			[/* method description */
+				[/* text */ 't', `Decodes all bytes from the input byte buffer using the `],
+				[/* reference */ 'r', `java.util.Base64`],
+				[/* text */ 't', `
+ encoding scheme, writing the results into a newly-allocated ByteBuffer.
+
+ `],
+				[/* block */ 'b', ` Upon return, the source buffer's position will be updated to
+ its limit; its limit will not have been changed. The returned
+ output buffer's position will be zero and its limit will be the
+ number of resulting decoded bytes
+
+ `],
+				[/* block */ 'b', [
+					[/* inline code block */ 'i', `IllegalArgumentException`],
+					[/* text */ 't', ` is thrown if the input buffer
+ is not in valid Base64 encoding scheme. The position of the input
+ buffer will not be advanced in this case.`]
+				]]
+			],
+			[/* parameters */
+				[/* parameter */ 'buffer', [/* parameter description */
+					[/* text */ 't', `the ByteBuffer to decode`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
+					[/* text */ 't', `if `],
+					[/* inline code block */ 'i', `buffer`],
+					[/* text */ 't', ` is not in valid Base64 scheme`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `A newly-allocated byte buffer containing the decoded bytes`]
 			]
 		]]
 	],

@@ -67,26 +67,6 @@ DocsCollector.collect('java.lang.module.ModuleDescriptor', [
 	/* fields */ UDF,
 	/* constructors */ UDF,
 	[/* methods */
-		[/* method */ 'modifiers()', [
-			[/* method description */
-				[/* block */ 'b', ` Returns the set of module modifiers. `]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `A possibly-empty unmodifiable set of modifiers`]
-			]
-		]],
-		[/* method */ 'name()', [
-			[/* method description */
-				[/* block */ 'b', ` Returns the module name. `]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `The module name`]
-			]
-		]],
 		[/* method */ 'equals(java.lang.Object)', [
 			[/* method description */
 				[/* text */ 't', `Tests this module descriptor for equality with the given object.
@@ -119,47 +99,48 @@ DocsCollector.collect('java.lang.module.ModuleDescriptor', [
           descriptor that is equal to this module descriptor`]
 			]
 		]],
-		[/* method */ 'toString()', [
+		[/* method */ 'isAutomatic()', [
 			[/* method description */
-				[/* block */ 'b', ` Returns a string describing the module. `]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `A string describing the module`]
-			]
-		]],
-		[/* method */ 'version()', [
-			[/* method description */
-				[/* block */ 'b', ` Returns the module version. `]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `This module's version, or an empty `],
-				[/* inline code block */ 'i', `Optional`],
-				[/* text */ 't', ` if the
-         module does not have a version or the version is
-         `],
-				[/* reference */ 'r', `.ModuleDescriptor.Version#parse(java.lang.String)`]
-			]
-		]],
-		[/* method */ 'hashCode()', [
-			[/* method description */
-				[/* text */ 't', `Computes a hash code for this module descriptor.
-
- `],
 				[/* block */ 'b', [
-					[/* text */ 't', ` The hash code is based upon the components of the module descriptor,
- and satisfies the general contract of the `],
-					[/* reference */ 'r', `java.Object#hashCode()`],
-					[/* text */ 't', ` method. `]
+					[/* text */ 't', ` Returns `],
+					[/* inline code block */ 'i', `true`],
+					[/* text */ 't', ` if this is an automatic module. `]
+				]],
+				[/* block */ 'b', [
+					[/* text */ 't', ` This method is equivalent to testing if the set of `],
+					[/* reference */ 'r', `#modifiers()`, `modifiers`],
+					[/* text */ 't', ` contains the `],
+					[/* reference */ 'r', `.ModuleDescriptor.Modifier#AUTOMATIC`],
+					[/* text */ 't', ` modifier. `]
 				]]
 			],
 			/* parameters */ UDF,
 			/* throws */ UDF,
 			[/* return description */
-				[/* text */ 't', `The hash-code value for this module descriptor`]
+				[/* inline code block */ 'i', `true`],
+				[/* text */ 't', ` if this is an automatic module`]
+			]
+		]],
+		[/* method */ 'isOpen()', [
+			[/* method description */
+				[/* block */ 'b', [
+					[/* text */ 't', ` Returns `],
+					[/* inline code block */ 'i', `true`],
+					[/* text */ 't', ` if this is an open module. `]
+				]],
+				[/* block */ 'b', [
+					[/* text */ 't', ` This method is equivalent to testing if the set of `],
+					[/* reference */ 'r', `#modifiers()`, `modifiers`],
+					[/* text */ 't', ` contains the `],
+					[/* reference */ 'r', `.ModuleDescriptor.Modifier#OPEN`],
+					[/* text */ 't', ` modifier. `]
+				]]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* inline code block */ 'i', `true`],
+				[/* text */ 't', ` if this is an open module`]
 			]
 		]],
 		[/* method */ 'compareTo(java.lang.module.ModuleDescriptor)', [
@@ -208,6 +189,184 @@ DocsCollector.collect('java.lang.module.ModuleDescriptor', [
          module descriptor`]
 			]
 		]],
+		[/* method */ 'hashCode()', [
+			[/* method description */
+				[/* text */ 't', `Computes a hash code for this module descriptor.
+
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', ` The hash code is based upon the components of the module descriptor,
+ and satisfies the general contract of the `],
+					[/* reference */ 'r', `java.Object#hashCode()`],
+					[/* text */ 't', ` method. `]
+				]]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `The hash-code value for this module descriptor`]
+			]
+		]],
+		[/* method */ 'name()', [
+			[/* method description */
+				[/* block */ 'b', ` Returns the module name. `]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `The module name`]
+			]
+		]],
+		[/* method */ 'toNameAndVersion()', [
+			[/* method description */
+				[/* block */ 'b', ` Returns a string containing the module name and, if present, its
+ version. `]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `A string containing the module name and, if present, its
+         version`]
+			]
+		]],
+		[/* method */ 'toString()', [
+			[/* method description */
+				[/* block */ 'b', ` Returns a string describing the module. `]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `A string describing the module`]
+			]
+		]],
+		[/* method */ 'version()', [
+			[/* method description */
+				[/* block */ 'b', ` Returns the module version. `]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `This module's version, or an empty `],
+				[/* inline code block */ 'i', `Optional`],
+				[/* text */ 't', ` if the
+         module does not have a version or the version is
+         `],
+				[/* reference */ 'r', `.ModuleDescriptor.Version#parse(java.lang.String)`]
+			]
+		]],
+		[/* method */ 'mainClass()', [
+			[/* method description */
+				[/* block */ 'b', ` Returns the module main class. `]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `The fully qualified class name of the module's main class`]
+			]
+		]],
+		[/* method */ 'rawVersion()', [
+			[/* method description */
+				[/* block */ 'b', ` Returns the string with the possibly-unparseable version of the
+ module. `]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `The string containing the version of the module or an empty
+         `],
+				[/* inline code block */ 'i', `Optional`],
+				[/* text */ 't', ` if the module does not have a version`]
+			]
+		]],
+		[/* method */ 'exports()', [
+			[/* method description */
+				[/* block */ 'b', [
+					[/* text */ 't', ` Returns the set of `],
+					[/* inline code block */ 'i', `Exports`],
+					[/* text */ 't', ` objects representing the exported
+ packages. `]
+				]],
+				[/* block */ 'b', ` If this module is an automatic module then the set of exports
+ is empty. `]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `A possibly-empty unmodifiable set of exported packages`]
+			]
+		]],
+		[/* method */ 'modifiers()', [
+			[/* method description */
+				[/* block */ 'b', ` Returns the set of module modifiers. `]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `A possibly-empty unmodifiable set of modifiers`]
+			]
+		]],
+		[/* method */ 'opens()', [
+			[/* method description */
+				[/* block */ 'b', [
+					[/* text */ 't', ` Returns the set of `],
+					[/* inline code block */ 'i', `Opens`],
+					[/* text */ 't', ` objects representing the open
+ packages. `]
+				]],
+				[/* block */ 'b', ` If this module is an open module or an automatic module then the
+ set of open packages is empty. `]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `A possibly-empty unmodifiable set of open packages`]
+			]
+		]],
+		[/* method */ 'provides()', [
+			[/* method description */
+				[/* block */ 'b', [
+					[/* text */ 't', ` Returns the set of `],
+					[/* inline code block */ 'i', `Provides`],
+					[/* text */ 't', ` objects representing the
+ services that the module provides. `]
+				]]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `The possibly-empty unmodifiable set of the services that this
+         module provides`]
+			]
+		]],
+		[/* method */ 'requires()', [
+			[/* method description */
+				[/* block */ 'b', [
+					[/* text */ 't', ` Returns the set of `],
+					[/* inline code block */ 'i', `Requires`],
+					[/* text */ 't', ` objects representing the module
+ dependences. `]
+				]],
+				[/* block */ 'b', [
+					[/* text */ 't', ` The set includes a dependency on "`],
+					[/* inline code block */ 'i', `java.base`],
+					[/* text */ 't', `" when this
+ module is not named "`],
+					[/* inline code block */ 'i', `java.base`],
+					[/* text */ 't', `". If this module is an automatic
+ module then it does not have a dependency on any module other than
+ "`],
+					[/* inline code block */ 'i', `java.base`],
+					[/* text */ 't', `". `]
+				]]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `A possibly-empty unmodifiable set of `],
+				[/* reference */ 'r', `java.lang.module.ModuleDescriptor.Requires`],
+				[/* text */ 't', ` objects`]
+			]
+		]],
 		[/* method */ 'packages()', [
 			[/* method description */
 				[/* text */ 't', `Returns the set of packages in the module.
@@ -223,26 +382,17 @@ DocsCollector.collect('java.lang.module.ModuleDescriptor', [
 				[/* text */ 't', `A possibly-empty unmodifiable set of the packages in the module`]
 			]
 		]],
-		[/* method */ 'isOpen()', [
+		[/* method */ 'uses()', [
 			[/* method description */
-				[/* block */ 'b', [
-					[/* text */ 't', ` Returns `],
-					[/* inline code block */ 'i', `true`],
-					[/* text */ 't', ` if this is an open module. `]
-				]],
-				[/* block */ 'b', [
-					[/* text */ 't', ` This method is equivalent to testing if the set of `],
-					[/* reference */ 'r', `#modifiers()`, `modifiers`],
-					[/* text */ 't', ` contains the `],
-					[/* reference */ 'r', `.ModuleDescriptor.Modifier#OPEN`],
-					[/* text */ 't', ` modifier. `]
-				]]
+				[/* block */ 'b', ` Returns the set of service dependences. `],
+				[/* block */ 'b', ` If this module is an automatic module then the set of service
+ dependences is empty. `]
 			],
 			/* parameters */ UDF,
 			/* throws */ UDF,
 			[/* return description */
-				[/* inline code block */ 'i', `true`],
-				[/* text */ 't', ` if this is an open module`]
+				[/* text */ 't', `A possibly-empty unmodifiable set of the fully qualified class
+          names of the service types used`]
 			]
 		]],
 		[/* method */ 'read(java.io.InputStream)', [
@@ -439,166 +589,24 @@ DocsCollector.collect('java.lang.module.ModuleDescriptor', [
 				[/* text */ 't', `The module descriptor`]
 			]
 		]],
-		[/* method */ 'exports()', [
+		[/* method */ 'newAutomaticModule(java.lang.String)', [
 			[/* method description */
-				[/* block */ 'b', [
-					[/* text */ 't', ` Returns the set of `],
-					[/* inline code block */ 'i', `Exports`],
-					[/* text */ 't', ` objects representing the exported
- packages. `]
-				]],
-				[/* block */ 'b', ` If this module is an automatic module then the set of exports
- is empty. `]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `A possibly-empty unmodifiable set of exported packages`]
-			]
-		]],
-		[/* method */ 'opens()', [
-			[/* method description */
-				[/* block */ 'b', [
-					[/* text */ 't', ` Returns the set of `],
-					[/* inline code block */ 'i', `Opens`],
-					[/* text */ 't', ` objects representing the open
- packages. `]
-				]],
-				[/* block */ 'b', ` If this module is an open module or an automatic module then the
- set of open packages is empty. `]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `A possibly-empty unmodifiable set of open packages`]
-			]
-		]],
-		[/* method */ 'isAutomatic()', [
-			[/* method description */
-				[/* block */ 'b', [
-					[/* text */ 't', ` Returns `],
-					[/* inline code block */ 'i', `true`],
-					[/* text */ 't', ` if this is an automatic module. `]
-				]],
-				[/* block */ 'b', [
-					[/* text */ 't', ` This method is equivalent to testing if the set of `],
-					[/* reference */ 'r', `#modifiers()`, `modifiers`],
-					[/* text */ 't', ` contains the `],
-					[/* reference */ 'r', `.ModuleDescriptor.Modifier#AUTOMATIC`],
-					[/* text */ 't', ` modifier. `]
-				]]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* inline code block */ 'i', `true`],
-				[/* text */ 't', ` if this is an automatic module`]
-			]
-		]],
-		[/* method */ 'uses()', [
-			[/* method description */
-				[/* block */ 'b', ` Returns the set of service dependences. `],
-				[/* block */ 'b', ` If this module is an automatic module then the set of service
- dependences is empty. `]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `A possibly-empty unmodifiable set of the fully qualified class
-          names of the service types used`]
-			]
-		]],
-		[/* method */ 'provides()', [
-			[/* method description */
-				[/* block */ 'b', [
-					[/* text */ 't', ` Returns the set of `],
-					[/* inline code block */ 'i', `Provides`],
-					[/* text */ 't', ` objects representing the
- services that the module provides. `]
-				]]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `The possibly-empty unmodifiable set of the services that this
-         module provides`]
-			]
-		]],
-		[/* method */ 'requires()', [
-			[/* method description */
-				[/* block */ 'b', [
-					[/* text */ 't', ` Returns the set of `],
-					[/* inline code block */ 'i', `Requires`],
-					[/* text */ 't', ` objects representing the module
- dependences. `]
-				]],
-				[/* block */ 'b', [
-					[/* text */ 't', ` The set includes a dependency on "`],
-					[/* inline code block */ 'i', `java.base`],
-					[/* text */ 't', `" when this
- module is not named "`],
-					[/* inline code block */ 'i', `java.base`],
-					[/* text */ 't', `". If this module is an automatic
- module then it does not have a dependency on any module other than
- "`],
-					[/* inline code block */ 'i', `java.base`],
-					[/* text */ 't', `". `]
-				]]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `A possibly-empty unmodifiable set of `],
-				[/* reference */ 'r', `java.lang.module.ModuleDescriptor.Requires`],
-				[/* text */ 't', ` objects`]
-			]
-		]],
-		[/* method */ 'mainClass()', [
-			[/* method description */
-				[/* block */ 'b', ` Returns the module main class. `]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `The fully qualified class name of the module's main class`]
-			]
-		]],
-		[/* method */ 'toNameAndVersion()', [
-			[/* method description */
-				[/* block */ 'b', ` Returns a string containing the module name and, if present, its
- version. `]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `A string containing the module name and, if present, its
-         version`]
-			]
-		]],
-		[/* method */ 'rawVersion()', [
-			[/* method description */
-				[/* block */ 'b', ` Returns the string with the possibly-unparseable version of the
- module. `]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `The string containing the version of the module or an empty
-         `],
-				[/* inline code block */ 'i', `Optional`],
-				[/* text */ 't', ` if the module does not have a version`]
-			]
-		]],
-		[/* method */ 'newModule(java.lang.String,java.util.Set)', [
-			[/* method description */
-				[/* text */ 't', `Instantiates a builder to build a module descriptor.`]
+				[/* text */ 't', `Instantiates a builder to build a module descriptor for an automatic
+ module. This method is equivalent to invoking `],
+				[/* reference */ 'r', `#newModule(java.lang.String,java.util.Set)`, `newModule`],
+				[/* text */ 't', ` with the `],
+				[/* reference */ 'r', `.ModuleDescriptor.Modifier#AUTOMATIC`],
+				[/* text */ 't', `
+ modifier.
+
+ `],
+				[/* block */ 'b', ` The builder for an automatic module cannot be used to declare module
+ or service dependences. It also cannot be used to declare any exported
+ or open packages. `]
 			],
 			[/* parameters */
 				[/* parameter */ 'name', [/* parameter description */
 					[/* text */ 't', `The module name`]
-				]],
-				[/* parameter */ 'ms', [/* parameter description */
-					[/* text */ 't', `The set of module modifiers`]
 				]]
 			],
 			[/* throws */
@@ -606,13 +614,11 @@ DocsCollector.collect('java.lang.module.ModuleDescriptor', [
 					[/* text */ 't', `If the module name is `],
 					[/* inline code block */ 'i', `null`],
 					[/* text */ 't', ` or is not a legal module
-         name, or the set of modifiers contains `],
-					[/* reference */ 'r', `.ModuleDescriptor.Modifier#AUTOMATIC`],
-					[/* text */ 't', ` with other modifiers`]
+         name`]
 				]]
 			],
 			[/* return description */
-				[/* text */ 't', `A new builder`]
+				[/* text */ 't', `A new builder that builds an automatic module`]
 			]
 		]],
 		[/* method */ 'newModule(java.lang.String)', [
@@ -637,6 +643,32 @@ DocsCollector.collect('java.lang.module.ModuleDescriptor', [
 					[/* inline code block */ 'i', `null`],
 					[/* text */ 't', ` or is not a legal module
          name`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `A new builder`]
+			]
+		]],
+		[/* method */ 'newModule(java.lang.String,java.util.Set)', [
+			[/* method description */
+				[/* text */ 't', `Instantiates a builder to build a module descriptor.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'name', [/* parameter description */
+					[/* text */ 't', `The module name`]
+				]],
+				[/* parameter */ 'ms', [/* parameter description */
+					[/* text */ 't', `The set of module modifiers`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
+					[/* text */ 't', `If the module name is `],
+					[/* inline code block */ 'i', `null`],
+					[/* text */ 't', ` or is not a legal module
+         name, or the set of modifiers contains `],
+					[/* reference */ 'r', `.ModuleDescriptor.Modifier#AUTOMATIC`],
+					[/* text */ 't', ` with other modifiers`]
 				]]
 			],
 			[/* return description */
@@ -671,38 +703,6 @@ DocsCollector.collect('java.lang.module.ModuleDescriptor', [
 			],
 			[/* return description */
 				[/* text */ 't', `A new builder that builds an open module`]
-			]
-		]],
-		[/* method */ 'newAutomaticModule(java.lang.String)', [
-			[/* method description */
-				[/* text */ 't', `Instantiates a builder to build a module descriptor for an automatic
- module. This method is equivalent to invoking `],
-				[/* reference */ 'r', `#newModule(java.lang.String,java.util.Set)`, `newModule`],
-				[/* text */ 't', ` with the `],
-				[/* reference */ 'r', `.ModuleDescriptor.Modifier#AUTOMATIC`],
-				[/* text */ 't', `
- modifier.
-
- `],
-				[/* block */ 'b', ` The builder for an automatic module cannot be used to declare module
- or service dependences. It also cannot be used to declare any exported
- or open packages. `]
-			],
-			[/* parameters */
-				[/* parameter */ 'name', [/* parameter description */
-					[/* text */ 't', `The module name`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
-					[/* text */ 't', `If the module name is `],
-					[/* inline code block */ 'i', `null`],
-					[/* text */ 't', ` or is not a legal module
-         name`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `A new builder that builds an automatic module`]
 			]
 		]]
 	],

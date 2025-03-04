@@ -80,14 +80,37 @@ DocsCollector.collect('java.text.CharacterIterator', [
 	],
 	/* constructors */ UDF,
 	[/* methods */
-		[/* method */ 'clone()', [
+		[/* method */ 'current()', [
 			[/* method description */
-				[/* text */ 't', `Create a copy of this iterator`]
+				[/* text */ 't', `Gets the character at the current position (as returned by getIndex()).`]
 			],
 			/* parameters */ UDF,
 			/* throws */ UDF,
 			[/* return description */
-				[/* text */ 't', `A copy of this`]
+				[/* text */ 't', `the character at the current position or DONE if the current
+ position is off the end of the text.`]
+			]
+		]],
+		[/* method */ 'first()', [
+			[/* method description */
+				[/* text */ 't', `Sets the position to getBeginIndex() and returns the character at that
+ position.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the first character in the text, or DONE if the text is empty`]
+			]
+		]],
+		[/* method */ 'last()', [
+			[/* method description */
+				[/* text */ 't', `Sets the position to getEndIndex()-1 (getEndIndex() if the text is empty)
+ and returns the character at that position.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the last character in the text, or DONE if the text is empty`]
 			]
 		]],
 		[/* method */ 'next()', [
@@ -104,39 +127,6 @@ DocsCollector.collect('java.text.CharacterIterator', [
  position is off the end of the text range.`]
 			]
 		]],
-		[/* method */ 'last()', [
-			[/* method description */
-				[/* text */ 't', `Sets the position to getEndIndex()-1 (getEndIndex() if the text is empty)
- and returns the character at that position.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the last character in the text, or DONE if the text is empty`]
-			]
-		]],
-		[/* method */ 'first()', [
-			[/* method description */
-				[/* text */ 't', `Sets the position to getBeginIndex() and returns the character at that
- position.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the first character in the text, or DONE if the text is empty`]
-			]
-		]],
-		[/* method */ 'current()', [
-			[/* method description */
-				[/* text */ 't', `Gets the character at the current position (as returned by getIndex()).`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the character at the current position or DONE if the current
- position is off the end of the text.`]
-			]
-		]],
 		[/* method */ 'previous()', [
 			[/* method description */
 				[/* text */ 't', `Decrements the iterator's index by one and returns the character
@@ -148,16 +138,6 @@ DocsCollector.collect('java.text.CharacterIterator', [
 			[/* return description */
 				[/* text */ 't', `the character at the new position or DONE if the current
  position is equal to getBeginIndex().`]
-			]
-		]],
-		[/* method */ 'getIndex()', [
-			[/* method description */
-				[/* text */ 't', `Returns the current index.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the current index.`]
 			]
 		]],
 		[/* method */ 'setIndex(int)', [
@@ -196,6 +176,26 @@ DocsCollector.collect('java.text.CharacterIterator', [
 			/* throws */ UDF,
 			[/* return description */
 				[/* text */ 't', `the index after the last character in the text`]
+			]
+		]],
+		[/* method */ 'getIndex()', [
+			[/* method description */
+				[/* text */ 't', `Returns the current index.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the current index.`]
+			]
+		]],
+		[/* method */ 'clone()', [
+			[/* method description */
+				[/* text */ 't', `Create a copy of this iterator`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `A copy of this`]
 			]
 		]]
 	],

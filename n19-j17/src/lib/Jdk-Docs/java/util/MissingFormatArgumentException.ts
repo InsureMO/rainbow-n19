@@ -33,7 +33,6 @@ DocsCollector.collect('java.util.MissingFormatArgumentException', [
 		]]
 	],
 	[/* methods */
-		[/* method */ 'getMessage()', UDF],
 		[/* method */ 'getFormatSpecifier()', [
 			[/* method description */
 				[/* text */ 't', `Returns the unmatched format specifier.`]
@@ -43,6 +42,7 @@ DocsCollector.collect('java.util.MissingFormatArgumentException', [
 			[/* return description */
 				[/* text */ 't', `The unmatched format specifier`]
 			]
-		]]
+		]],
+		[/* method */ 'getMessage()', UDF]
 	],
 ]);

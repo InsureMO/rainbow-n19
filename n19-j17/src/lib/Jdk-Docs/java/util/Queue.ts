@@ -261,72 +261,6 @@ DocsCollector.collect('java.util.Queue', [
 				[/* text */ 't', `)`]
 			]
 		]],
-		[/* method */ 'remove()', [
-			[/* method description */
-				[/* text */ 't', `Retrieves and removes the head of this queue.  This method differs
- from `],
-				[/* reference */ 'r', `#poll()`, `poll()`],
-				[/* text */ 't', ` only in that it throws an exception if
- this queue is empty.`]
-			],
-			/* parameters */ UDF,
-			[/* throws */
-				[/* throw */ 'java.util.NoSuchElementException', [/* throw description */
-					[/* text */ 't', `if this queue is empty`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `the head of this queue`]
-			]
-		]],
-		[/* method */ 'poll()', [
-			[/* method description */
-				[/* text */ 't', `Retrieves and removes the head of this queue,
- or returns `],
-				[/* inline code block */ 'i', `null`],
-				[/* text */ 't', ` if this queue is empty.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the head of this queue, or `],
-				[/* inline code block */ 'i', `null`],
-				[/* text */ 't', ` if this queue is empty`]
-			]
-		]],
-		[/* method */ 'peek()', [
-			[/* method description */
-				[/* text */ 't', `Retrieves, but does not remove, the head of this queue,
- or returns `],
-				[/* inline code block */ 'i', `null`],
-				[/* text */ 't', ` if this queue is empty.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the head of this queue, or `],
-				[/* inline code block */ 'i', `null`],
-				[/* text */ 't', ` if this queue is empty`]
-			]
-		]],
-		[/* method */ 'element()', [
-			[/* method description */
-				[/* text */ 't', `Retrieves, but does not remove, the head of this queue.  This method
- differs from `],
-				[/* reference */ 'r', `#peek()`, `peek`],
-				[/* text */ 't', ` only in that it throws an exception
- if this queue is empty.`]
-			],
-			/* parameters */ UDF,
-			[/* throws */
-				[/* throw */ 'java.util.NoSuchElementException', [/* throw description */
-					[/* text */ 't', `if this queue is empty`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `the head of this queue`]
-			]
-		]],
 		[/* method */ 'offer(java.lang.Object)', [
 			[/* method description */
 				[/* text */ 't', `Inserts the specified element into this queue if it is possible to do
@@ -361,6 +295,72 @@ DocsCollector.collect('java.util.Queue', [
 				[/* text */ 't', ` if the element was added to this queue, else
          `],
 				[/* inline code block */ 'i', `false`]
+			]
+		]],
+		[/* method */ 'element()', [
+			[/* method description */
+				[/* text */ 't', `Retrieves, but does not remove, the head of this queue.  This method
+ differs from `],
+				[/* reference */ 'r', `#peek()`, `peek`],
+				[/* text */ 't', ` only in that it throws an exception
+ if this queue is empty.`]
+			],
+			/* parameters */ UDF,
+			[/* throws */
+				[/* throw */ 'java.util.NoSuchElementException', [/* throw description */
+					[/* text */ 't', `if this queue is empty`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `the head of this queue`]
+			]
+		]],
+		[/* method */ 'peek()', [
+			[/* method description */
+				[/* text */ 't', `Retrieves, but does not remove, the head of this queue,
+ or returns `],
+				[/* inline code block */ 'i', `null`],
+				[/* text */ 't', ` if this queue is empty.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the head of this queue, or `],
+				[/* inline code block */ 'i', `null`],
+				[/* text */ 't', ` if this queue is empty`]
+			]
+		]],
+		[/* method */ 'poll()', [
+			[/* method description */
+				[/* text */ 't', `Retrieves and removes the head of this queue,
+ or returns `],
+				[/* inline code block */ 'i', `null`],
+				[/* text */ 't', ` if this queue is empty.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the head of this queue, or `],
+				[/* inline code block */ 'i', `null`],
+				[/* text */ 't', ` if this queue is empty`]
+			]
+		]],
+		[/* method */ 'remove()', [
+			[/* method description */
+				[/* text */ 't', `Retrieves and removes the head of this queue.  This method differs
+ from `],
+				[/* reference */ 'r', `#poll()`, `poll()`],
+				[/* text */ 't', ` only in that it throws an exception if
+ this queue is empty.`]
+			],
+			/* parameters */ UDF,
+			[/* throws */
+				[/* throw */ 'java.util.NoSuchElementException', [/* throw description */
+					[/* text */ 't', `if this queue is empty`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `the head of this queue`]
 			]
 		]]
 	],

@@ -113,14 +113,20 @@ JdkClassCreateHelper.class('java.time.chrono.JapaneseEra', [
 		]
 	],
 	[/* declared fields */
+		[/* public static final java.time.chrono.JapaneseEra java.time.chrono.JapaneseEra.HEISEI */
+			/* name */ 'HEISEI',
+			/* type */ 'java.time.chrono.JapaneseEra',
+			/* annotations */ UDF,
+			/* modifiers */ 25
+		],
 		[/* public static final java.time.chrono.JapaneseEra java.time.chrono.JapaneseEra.MEIJI */
 			/* name */ 'MEIJI',
 			/* type */ 'java.time.chrono.JapaneseEra',
 			/* annotations */ UDF,
 			/* modifiers */ 25
 		],
-		[/* public static final java.time.chrono.JapaneseEra java.time.chrono.JapaneseEra.TAISHO */
-			/* name */ 'TAISHO',
+		[/* public static final java.time.chrono.JapaneseEra java.time.chrono.JapaneseEra.REIWA */
+			/* name */ 'REIWA',
 			/* type */ 'java.time.chrono.JapaneseEra',
 			/* annotations */ UDF,
 			/* modifiers */ 25
@@ -131,14 +137,8 @@ JdkClassCreateHelper.class('java.time.chrono.JapaneseEra', [
 			/* annotations */ UDF,
 			/* modifiers */ 25
 		],
-		[/* public static final java.time.chrono.JapaneseEra java.time.chrono.JapaneseEra.HEISEI */
-			/* name */ 'HEISEI',
-			/* type */ 'java.time.chrono.JapaneseEra',
-			/* annotations */ UDF,
-			/* modifiers */ 25
-		],
-		[/* public static final java.time.chrono.JapaneseEra java.time.chrono.JapaneseEra.REIWA */
-			/* name */ 'REIWA',
+		[/* public static final java.time.chrono.JapaneseEra java.time.chrono.JapaneseEra.TAISHO */
+			/* name */ 'TAISHO',
 			/* type */ 'java.time.chrono.JapaneseEra',
 			/* annotations */ UDF,
 			/* modifiers */ 25

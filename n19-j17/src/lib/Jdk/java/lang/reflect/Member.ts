@@ -59,14 +59,14 @@ JdkClassCreateHelper.class('java.lang.reflect.Member', [
 		]
 	],
 	[/* declared fields */
-		[/* public static final int java.lang.reflect.Member.PUBLIC */
-			/* name */ 'PUBLIC',
+		[/* public static final int java.lang.reflect.Member.DECLARED */
+			/* name */ 'DECLARED',
 			/* type */ 'int',
 			/* annotations */ UDF,
 			/* modifiers */ 25
 		],
-		[/* public static final int java.lang.reflect.Member.DECLARED */
-			/* name */ 'DECLARED',
+		[/* public static final int java.lang.reflect.Member.PUBLIC */
+			/* name */ 'PUBLIC',
 			/* type */ 'int',
 			/* annotations */ UDF,
 			/* modifiers */ 25

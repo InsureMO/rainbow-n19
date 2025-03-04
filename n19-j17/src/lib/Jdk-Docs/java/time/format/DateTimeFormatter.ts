@@ -1309,27 +1309,24 @@ DocsCollector.collect('java.time.format.DateTimeFormatter', [
 		[/* block */ 'b', '']
 	],
 	[/* fields */
-		[/* field */ 'ISO_LOCAL_DATE', [
+		[/* field */ 'BASIC_ISO_DATE', [
 			[/* field description */
 				[/* text */ 't', `The ISO date formatter that formats or parses a date without an
- offset, such as '2011-12-03'.
+ offset, such as '20111203'.
  `],
 				[/* block */ 'b', `
  This returns an immutable formatter capable of formatting and parsing
- the ISO-8601 extended local date format.
+ the ISO-8601 basic local date format.
  The format consists of:
  `],
 				[/* list */ 'l', [
 					[/* block */ 'b', [
-						[/* text */ 't', `Four digits or more for the `],
+						[/* text */ 't', `Four digits for the `],
 						[/* reference */ 'r', `java.ChronoField#YEAR`],
 						[/* text */ 't', `.
- Years in the range 0000 to 9999 will be pre-padded by zero to ensure four digits.
- Years outside that range will have a prefixed positive or negative symbol.
+  Only years in the range 0000 to 9999 are supported.
  `]
 					]],
-					[/* block */ 'b', `A dash
- `],
 					[/* block */ 'b', [
 						[/* text */ 't', `Two digits for the `],
 						[/* reference */ 'r', `java.ChronoField#MONTH_OF_YEAR`],
@@ -1337,52 +1334,34 @@ DocsCollector.collect('java.time.format.DateTimeFormatter', [
   This is pre-padded by zero to ensure two digits.
  `]
 					]],
-					[/* block */ 'b', `A dash
- `],
 					[/* block */ 'b', [
 						[/* text */ 't', `Two digits for the `],
 						[/* reference */ 'r', `java.ChronoField#DAY_OF_MONTH`],
 						[/* text */ 't', `.
   This is pre-padded by zero to ensure two digits.
  `]
-					]]
-				]],
-				[/* block */ 'b', ''],
-				[/* block */ 'b', [
-					[/* text */ 't', `
- The returned formatter has a chronology of ISO set to ensure dates in
- other calendar systems are correctly converted.
- It has no override zone and uses the `],
-					[/* reference */ 'r', `.ResolverStyle#STRICT`],
-					[/* text */ 't', ` resolver style.`]
-				]]
-			],
-		]],
-		[/* field */ 'ISO_OFFSET_DATE', [
-			[/* field description */
-				[/* text */ 't', `The ISO date formatter that formats or parses a date with an
- offset, such as '2011-12-03+01:00'.
- `],
-				[/* block */ 'b', `
- This returns an immutable formatter capable of formatting and parsing
- the ISO-8601 extended offset date format.
- The format consists of:
- `],
-				[/* list */ 'l', [
-					[/* block */ 'b', [
-						[/* text */ 't', `The `],
-						[/* text */ 't', `ISO_LOCAL_DATE`]
 					]],
+					[/* block */ 'b', `If the offset is not available to format or parse then the format is complete.
+ `],
 					[/* block */ 'b', [
 						[/* text */ 't', `The `],
 						[/* reference */ 'r', `java.ZoneOffset#getId()`],
-						[/* text */ 't', `. If the offset has seconds then
-  they will be handled even though this is not part of the ISO-8601 standard.
+						[/* text */ 't', ` without colons. If the offset has
+  seconds then they will be handled even though this is not part of the ISO-8601 standard.
+  The offset parsing is lenient, which allows the minutes and seconds to be optional.
   Parsing is case insensitive.
  `]
 					]]
 				]],
 				[/* block */ 'b', ''],
+				[/* block */ 'b', [
+					[/* text */ 't', `
+ As this formatter has an optional element, it may be necessary to parse using
+ `],
+					[/* reference */ 'r', `#parseBest(java.lang.CharSequence,java.time.temporal.TemporalQuery...)`, `parseBest(java.lang.CharSequence, java.time.temporal.TemporalQuery<?>...)`],
+					[/* text */ 't', `.
+ `]
+				]],
 				[/* block */ 'b', [
 					[/* text */ 't', `
  The returned formatter has a chronology of ISO set to ensure dates in
@@ -1438,259 +1417,6 @@ DocsCollector.collect('java.time.format.DateTimeFormatter', [
 				]]
 			],
 		]],
-		[/* field */ 'ISO_LOCAL_TIME', [
-			[/* field description */
-				[/* text */ 't', `The ISO time formatter that formats or parses a time without an
- offset, such as '10:15' or '10:15:30'.
- `],
-				[/* block */ 'b', `
- This returns an immutable formatter capable of formatting and parsing
- the ISO-8601 extended local time format.
- The format consists of:
- `],
-				[/* list */ 'l', [
-					[/* block */ 'b', [
-						[/* text */ 't', `Two digits for the `],
-						[/* reference */ 'r', `java.ChronoField#HOUR_OF_DAY`],
-						[/* text */ 't', `.
-  This is pre-padded by zero to ensure two digits.
- `]
-					]],
-					[/* block */ 'b', `A colon
- `],
-					[/* block */ 'b', [
-						[/* text */ 't', `Two digits for the `],
-						[/* reference */ 'r', `java.ChronoField#MINUTE_OF_HOUR`],
-						[/* text */ 't', `.
-  This is pre-padded by zero to ensure two digits.
- `]
-					]],
-					[/* block */ 'b', `If the second-of-minute is not available then the format is complete.
- `],
-					[/* block */ 'b', `A colon
- `],
-					[/* block */ 'b', [
-						[/* text */ 't', `Two digits for the `],
-						[/* reference */ 'r', `java.ChronoField#SECOND_OF_MINUTE`],
-						[/* text */ 't', `.
-  This is pre-padded by zero to ensure two digits.
- `]
-					]],
-					[/* block */ 'b', `If the nano-of-second is zero or not available then the format is complete.
- `],
-					[/* block */ 'b', `A decimal point
- `],
-					[/* block */ 'b', [
-						[/* text */ 't', `One to nine digits for the `],
-						[/* reference */ 'r', `java.ChronoField#NANO_OF_SECOND`],
-						[/* text */ 't', `.
-  As many digits will be output as required.
- `]
-					]]
-				]],
-				[/* block */ 'b', ''],
-				[/* block */ 'b', [
-					[/* text */ 't', `
- The returned formatter has no override chronology or zone.
- It uses the `],
-					[/* reference */ 'r', `.ResolverStyle#STRICT`],
-					[/* text */ 't', ` resolver style.`]
-				]]
-			],
-		]],
-		[/* field */ 'ISO_OFFSET_TIME', [
-			[/* field description */
-				[/* text */ 't', `The ISO time formatter that formats or parses a time with an
- offset, such as '10:15+01:00' or '10:15:30+01:00'.
- `],
-				[/* block */ 'b', `
- This returns an immutable formatter capable of formatting and parsing
- the ISO-8601 extended offset time format.
- The format consists of:
- `],
-				[/* list */ 'l', [
-					[/* block */ 'b', [
-						[/* text */ 't', `The `],
-						[/* text */ 't', `ISO_LOCAL_TIME`]
-					]],
-					[/* block */ 'b', [
-						[/* text */ 't', `The `],
-						[/* reference */ 'r', `java.ZoneOffset#getId()`],
-						[/* text */ 't', `. If the offset has seconds then
-  they will be handled even though this is not part of the ISO-8601 standard.
-  Parsing is case insensitive.
- `]
-					]]
-				]],
-				[/* block */ 'b', ''],
-				[/* block */ 'b', [
-					[/* text */ 't', `
- The returned formatter has no override chronology or zone.
- It uses the `],
-					[/* reference */ 'r', `.ResolverStyle#STRICT`],
-					[/* text */ 't', ` resolver style.`]
-				]]
-			],
-		]],
-		[/* field */ 'ISO_TIME', [
-			[/* field description */
-				[/* text */ 't', `The ISO time formatter that formats or parses a time, with the
- offset if available, such as '10:15', '10:15:30' or '10:15:30+01:00'.
- `],
-				[/* block */ 'b', `
- This returns an immutable formatter capable of formatting and parsing
- the ISO-8601 extended offset time format.
- The format consists of:
- `],
-				[/* list */ 'l', [
-					[/* block */ 'b', [
-						[/* text */ 't', `The `],
-						[/* text */ 't', `ISO_LOCAL_TIME`]
-					]],
-					[/* block */ 'b', `If the offset is not available then the format is complete.
- `],
-					[/* block */ 'b', [
-						[/* text */ 't', `The `],
-						[/* reference */ 'r', `java.ZoneOffset#getId()`],
-						[/* text */ 't', `. If the offset has seconds then
-  they will be handled even though this is not part of the ISO-8601 standard.
-  Parsing is case insensitive.
- `]
-					]]
-				]],
-				[/* block */ 'b', ''],
-				[/* block */ 'b', [
-					[/* text */ 't', `
- As this formatter has an optional element, it may be necessary to parse using
- `],
-					[/* reference */ 'r', `#parseBest(java.lang.CharSequence,java.time.temporal.TemporalQuery...)`, `parseBest(java.lang.CharSequence, java.time.temporal.TemporalQuery<?>...)`],
-					[/* text */ 't', `.
- `]
-				]],
-				[/* block */ 'b', [
-					[/* text */ 't', `
- The returned formatter has no override chronology or zone.
- It uses the `],
-					[/* reference */ 'r', `.ResolverStyle#STRICT`],
-					[/* text */ 't', ` resolver style.`]
-				]]
-			],
-		]],
-		[/* field */ 'ISO_LOCAL_DATE_TIME', [
-			[/* field description */
-				[/* text */ 't', `The ISO date-time formatter that formats or parses a date-time without
- an offset, such as '2011-12-03T10:15:30'.
- `],
-				[/* block */ 'b', `
- This returns an immutable formatter capable of formatting and parsing
- the ISO-8601 extended offset date-time format.
- The format consists of:
- `],
-				[/* list */ 'l', [
-					[/* block */ 'b', [
-						[/* text */ 't', `The `],
-						[/* text */ 't', `ISO_LOCAL_DATE`]
-					]],
-					[/* block */ 'b', `The letter 'T'. Parsing is case insensitive.
- `],
-					[/* block */ 'b', [
-						[/* text */ 't', `The `],
-						[/* text */ 't', `ISO_LOCAL_TIME`]
-					]]
-				]],
-				[/* block */ 'b', ''],
-				[/* block */ 'b', [
-					[/* text */ 't', `
- The returned formatter has a chronology of ISO set to ensure dates in
- other calendar systems are correctly converted.
- It has no override zone and uses the `],
-					[/* reference */ 'r', `.ResolverStyle#STRICT`],
-					[/* text */ 't', ` resolver style.`]
-				]]
-			],
-		]],
-		[/* field */ 'ISO_OFFSET_DATE_TIME', [
-			[/* field description */
-				[/* text */ 't', `The ISO date-time formatter that formats or parses a date-time with an
- offset, such as '2011-12-03T10:15:30+01:00'.
- `],
-				[/* block */ 'b', `
- This returns an immutable formatter capable of formatting and parsing
- the ISO-8601 extended offset date-time format.
- The format consists of:
- `],
-				[/* list */ 'l', [
-					[/* block */ 'b', [
-						[/* text */ 't', `The `],
-						[/* text */ 't', `ISO_LOCAL_DATE_TIME`]
-					]],
-					[/* block */ 'b', [
-						[/* text */ 't', `The `],
-						[/* reference */ 'r', `java.ZoneOffset#getId()`],
-						[/* text */ 't', `. If the offset has seconds then
-  they will be handled even though this is not part of the ISO-8601 standard.
-  The offset parsing is lenient, which allows the minutes and seconds to be optional.
-  Parsing is case insensitive.
- `]
-					]]
-				]],
-				[/* block */ 'b', ''],
-				[/* block */ 'b', [
-					[/* text */ 't', `
- The returned formatter has a chronology of ISO set to ensure dates in
- other calendar systems are correctly converted.
- It has no override zone and uses the `],
-					[/* reference */ 'r', `.ResolverStyle#STRICT`],
-					[/* text */ 't', ` resolver style.`]
-				]]
-			],
-		]],
-		[/* field */ 'ISO_ZONED_DATE_TIME', [
-			[/* field description */
-				[/* text */ 't', `The ISO-like date-time formatter that formats or parses a date-time with
- offset and zone, such as '2011-12-03T10:15:30+01:00[Europe/Paris]'.
- `],
-				[/* block */ 'b', `
- This returns an immutable formatter capable of formatting and parsing
- a format that extends the ISO-8601 extended offset date-time format
- to add the time-zone.
- The section in square brackets is not part of the ISO-8601 standard.
- The format consists of:
- `],
-				[/* list */ 'l', [
-					[/* block */ 'b', [
-						[/* text */ 't', `The `],
-						[/* text */ 't', `ISO_OFFSET_DATE_TIME`]
-					]],
-					[/* block */ 'b', [
-						[/* text */ 't', `If the zone ID is not available or is a `],
-						[/* inline code block */ 'i', `ZoneOffset`],
-						[/* text */ 't', ` then the format is complete.
- `]
-					]],
-					[/* block */ 'b', `An open square bracket '['.
- `],
-					[/* block */ 'b', [
-						[/* text */ 't', `The `],
-						[/* reference */ 'r', `java.ZoneId#getId()`],
-						[/* text */ 't', `. This is not part of the ISO-8601 standard.
-  Parsing is case sensitive.
- `]
-					]],
-					[/* block */ 'b', `A close square bracket ']'.
- `]
-				]],
-				[/* block */ 'b', ''],
-				[/* block */ 'b', [
-					[/* text */ 't', `
- The returned formatter has a chronology of ISO set to ensure dates in
- other calendar systems are correctly converted.
- It has no override zone and uses the `],
-					[/* reference */ 'r', `.ResolverStyle#STRICT`],
-					[/* text */ 't', ` resolver style.`]
-				]]
-			],
-		]],
 		[/* field */ 'ISO_DATE_TIME', [
 			[/* field description */
 				[/* text */ 't', `The ISO-like date-time formatter that formats or parses a date-time with
@@ -1734,133 +1460,6 @@ DocsCollector.collect('java.time.format.DateTimeFormatter', [
 					]],
 					[/* block */ 'b', `A close square bracket ']'.
  `]
-				]],
-				[/* block */ 'b', ''],
-				[/* block */ 'b', [
-					[/* text */ 't', `
- As this formatter has an optional element, it may be necessary to parse using
- `],
-					[/* reference */ 'r', `#parseBest(java.lang.CharSequence,java.time.temporal.TemporalQuery...)`, `parseBest(java.lang.CharSequence, java.time.temporal.TemporalQuery<?>...)`],
-					[/* text */ 't', `.
- `]
-				]],
-				[/* block */ 'b', [
-					[/* text */ 't', `
- The returned formatter has a chronology of ISO set to ensure dates in
- other calendar systems are correctly converted.
- It has no override zone and uses the `],
-					[/* reference */ 'r', `.ResolverStyle#STRICT`],
-					[/* text */ 't', ` resolver style.`]
-				]]
-			],
-		]],
-		[/* field */ 'ISO_ORDINAL_DATE', [
-			[/* field description */
-				[/* text */ 't', `The ISO date formatter that formats or parses the ordinal date
- without an offset, such as '2012-337'.
- `],
-				[/* block */ 'b', `
- This returns an immutable formatter capable of formatting and parsing
- the ISO-8601 extended ordinal date format.
- The format consists of:
- `],
-				[/* list */ 'l', [
-					[/* block */ 'b', [
-						[/* text */ 't', `Four digits or more for the `],
-						[/* reference */ 'r', `java.ChronoField#YEAR`],
-						[/* text */ 't', `.
- Years in the range 0000 to 9999 will be pre-padded by zero to ensure four digits.
- Years outside that range will have a prefixed positive or negative symbol.
- `]
-					]],
-					[/* block */ 'b', `A dash
- `],
-					[/* block */ 'b', [
-						[/* text */ 't', `Three digits for the `],
-						[/* reference */ 'r', `java.ChronoField#DAY_OF_YEAR`],
-						[/* text */ 't', `.
-  This is pre-padded by zero to ensure three digits.
- `]
-					]],
-					[/* block */ 'b', `If the offset is not available to format or parse then the format is complete.
- `],
-					[/* block */ 'b', [
-						[/* text */ 't', `The `],
-						[/* reference */ 'r', `java.ZoneOffset#getId()`],
-						[/* text */ 't', `. If the offset has seconds then
-  they will be handled even though this is not part of the ISO-8601 standard.
-  Parsing is case insensitive.
- `]
-					]]
-				]],
-				[/* block */ 'b', ''],
-				[/* block */ 'b', [
-					[/* text */ 't', `
- As this formatter has an optional element, it may be necessary to parse using
- `],
-					[/* reference */ 'r', `#parseBest(java.lang.CharSequence,java.time.temporal.TemporalQuery...)`, `parseBest(java.lang.CharSequence, java.time.temporal.TemporalQuery<?>...)`],
-					[/* text */ 't', `.
- `]
-				]],
-				[/* block */ 'b', [
-					[/* text */ 't', `
- The returned formatter has a chronology of ISO set to ensure dates in
- other calendar systems are correctly converted.
- It has no override zone and uses the `],
-					[/* reference */ 'r', `.ResolverStyle#STRICT`],
-					[/* text */ 't', ` resolver style.`]
-				]]
-			],
-		]],
-		[/* field */ 'ISO_WEEK_DATE', [
-			[/* field description */
-				[/* text */ 't', `The ISO date formatter that formats or parses the week-based date
- without an offset, such as '2012-W48-6'.
- `],
-				[/* block */ 'b', `
- This returns an immutable formatter capable of formatting and parsing
- the ISO-8601 extended week-based date format.
- The format consists of:
- `],
-				[/* list */ 'l', [
-					[/* block */ 'b', [
-						[/* text */ 't', `Four digits or more for the `],
-						[/* reference */ 'r', `java.IsoFields#WEEK_BASED_YEAR`],
-						[/* text */ 't', `.
- Years in the range 0000 to 9999 will be pre-padded by zero to ensure four digits.
- Years outside that range will have a prefixed positive or negative symbol.
- `]
-					]],
-					[/* block */ 'b', `A dash
- `],
-					[/* block */ 'b', `The letter 'W'. Parsing is case insensitive.
- `],
-					[/* block */ 'b', [
-						[/* text */ 't', `Two digits for the `],
-						[/* reference */ 'r', `java.IsoFields#WEEK_OF_WEEK_BASED_YEAR`],
-						[/* text */ 't', `.
-  This is pre-padded by zero to ensure three digits.
- `]
-					]],
-					[/* block */ 'b', `A dash
- `],
-					[/* block */ 'b', [
-						[/* text */ 't', `One digit for the `],
-						[/* reference */ 'r', `java.ChronoField#DAY_OF_WEEK`],
-						[/* text */ 't', `.
-  The value run from Monday (1) to Sunday (7).
- `]
-					]],
-					[/* block */ 'b', `If the offset is not available to format or parse then the format is complete.
- `],
-					[/* block */ 'b', [
-						[/* text */ 't', `The `],
-						[/* reference */ 'r', `java.ZoneOffset#getId()`],
-						[/* text */ 't', `. If the offset has seconds then
-  they will be handled even though this is not part of the ISO-8601 standard.
-  Parsing is case insensitive.
- `]
-					]]
 				]],
 				[/* block */ 'b', ''],
 				[/* block */ 'b', [
@@ -1952,24 +1551,27 @@ DocsCollector.collect('java.time.format.DateTimeFormatter', [
 				]]
 			],
 		]],
-		[/* field */ 'BASIC_ISO_DATE', [
+		[/* field */ 'ISO_LOCAL_DATE', [
 			[/* field description */
 				[/* text */ 't', `The ISO date formatter that formats or parses a date without an
- offset, such as '20111203'.
+ offset, such as '2011-12-03'.
  `],
 				[/* block */ 'b', `
  This returns an immutable formatter capable of formatting and parsing
- the ISO-8601 basic local date format.
+ the ISO-8601 extended local date format.
  The format consists of:
  `],
 				[/* list */ 'l', [
 					[/* block */ 'b', [
-						[/* text */ 't', `Four digits for the `],
+						[/* text */ 't', `Four digits or more for the `],
 						[/* reference */ 'r', `java.ChronoField#YEAR`],
 						[/* text */ 't', `.
-  Only years in the range 0000 to 9999 are supported.
+ Years in the range 0000 to 9999 will be pre-padded by zero to ensure four digits.
+ Years outside that range will have a prefixed positive or negative symbol.
  `]
 					]],
+					[/* block */ 'b', `A dash
+ `],
 					[/* block */ 'b', [
 						[/* text */ 't', `Two digits for the `],
 						[/* reference */ 'r', `java.ChronoField#MONTH_OF_YEAR`],
@@ -1977,11 +1579,251 @@ DocsCollector.collect('java.time.format.DateTimeFormatter', [
   This is pre-padded by zero to ensure two digits.
  `]
 					]],
+					[/* block */ 'b', `A dash
+ `],
 					[/* block */ 'b', [
 						[/* text */ 't', `Two digits for the `],
 						[/* reference */ 'r', `java.ChronoField#DAY_OF_MONTH`],
 						[/* text */ 't', `.
   This is pre-padded by zero to ensure two digits.
+ `]
+					]]
+				]],
+				[/* block */ 'b', ''],
+				[/* block */ 'b', [
+					[/* text */ 't', `
+ The returned formatter has a chronology of ISO set to ensure dates in
+ other calendar systems are correctly converted.
+ It has no override zone and uses the `],
+					[/* reference */ 'r', `.ResolverStyle#STRICT`],
+					[/* text */ 't', ` resolver style.`]
+				]]
+			],
+		]],
+		[/* field */ 'ISO_LOCAL_DATE_TIME', [
+			[/* field description */
+				[/* text */ 't', `The ISO date-time formatter that formats or parses a date-time without
+ an offset, such as '2011-12-03T10:15:30'.
+ `],
+				[/* block */ 'b', `
+ This returns an immutable formatter capable of formatting and parsing
+ the ISO-8601 extended offset date-time format.
+ The format consists of:
+ `],
+				[/* list */ 'l', [
+					[/* block */ 'b', [
+						[/* text */ 't', `The `],
+						[/* text */ 't', `ISO_LOCAL_DATE`]
+					]],
+					[/* block */ 'b', `The letter 'T'. Parsing is case insensitive.
+ `],
+					[/* block */ 'b', [
+						[/* text */ 't', `The `],
+						[/* text */ 't', `ISO_LOCAL_TIME`]
+					]]
+				]],
+				[/* block */ 'b', ''],
+				[/* block */ 'b', [
+					[/* text */ 't', `
+ The returned formatter has a chronology of ISO set to ensure dates in
+ other calendar systems are correctly converted.
+ It has no override zone and uses the `],
+					[/* reference */ 'r', `.ResolverStyle#STRICT`],
+					[/* text */ 't', ` resolver style.`]
+				]]
+			],
+		]],
+		[/* field */ 'ISO_LOCAL_TIME', [
+			[/* field description */
+				[/* text */ 't', `The ISO time formatter that formats or parses a time without an
+ offset, such as '10:15' or '10:15:30'.
+ `],
+				[/* block */ 'b', `
+ This returns an immutable formatter capable of formatting and parsing
+ the ISO-8601 extended local time format.
+ The format consists of:
+ `],
+				[/* list */ 'l', [
+					[/* block */ 'b', [
+						[/* text */ 't', `Two digits for the `],
+						[/* reference */ 'r', `java.ChronoField#HOUR_OF_DAY`],
+						[/* text */ 't', `.
+  This is pre-padded by zero to ensure two digits.
+ `]
+					]],
+					[/* block */ 'b', `A colon
+ `],
+					[/* block */ 'b', [
+						[/* text */ 't', `Two digits for the `],
+						[/* reference */ 'r', `java.ChronoField#MINUTE_OF_HOUR`],
+						[/* text */ 't', `.
+  This is pre-padded by zero to ensure two digits.
+ `]
+					]],
+					[/* block */ 'b', `If the second-of-minute is not available then the format is complete.
+ `],
+					[/* block */ 'b', `A colon
+ `],
+					[/* block */ 'b', [
+						[/* text */ 't', `Two digits for the `],
+						[/* reference */ 'r', `java.ChronoField#SECOND_OF_MINUTE`],
+						[/* text */ 't', `.
+  This is pre-padded by zero to ensure two digits.
+ `]
+					]],
+					[/* block */ 'b', `If the nano-of-second is zero or not available then the format is complete.
+ `],
+					[/* block */ 'b', `A decimal point
+ `],
+					[/* block */ 'b', [
+						[/* text */ 't', `One to nine digits for the `],
+						[/* reference */ 'r', `java.ChronoField#NANO_OF_SECOND`],
+						[/* text */ 't', `.
+  As many digits will be output as required.
+ `]
+					]]
+				]],
+				[/* block */ 'b', ''],
+				[/* block */ 'b', [
+					[/* text */ 't', `
+ The returned formatter has no override chronology or zone.
+ It uses the `],
+					[/* reference */ 'r', `.ResolverStyle#STRICT`],
+					[/* text */ 't', ` resolver style.`]
+				]]
+			],
+		]],
+		[/* field */ 'ISO_OFFSET_DATE', [
+			[/* field description */
+				[/* text */ 't', `The ISO date formatter that formats or parses a date with an
+ offset, such as '2011-12-03+01:00'.
+ `],
+				[/* block */ 'b', `
+ This returns an immutable formatter capable of formatting and parsing
+ the ISO-8601 extended offset date format.
+ The format consists of:
+ `],
+				[/* list */ 'l', [
+					[/* block */ 'b', [
+						[/* text */ 't', `The `],
+						[/* text */ 't', `ISO_LOCAL_DATE`]
+					]],
+					[/* block */ 'b', [
+						[/* text */ 't', `The `],
+						[/* reference */ 'r', `java.ZoneOffset#getId()`],
+						[/* text */ 't', `. If the offset has seconds then
+  they will be handled even though this is not part of the ISO-8601 standard.
+  Parsing is case insensitive.
+ `]
+					]]
+				]],
+				[/* block */ 'b', ''],
+				[/* block */ 'b', [
+					[/* text */ 't', `
+ The returned formatter has a chronology of ISO set to ensure dates in
+ other calendar systems are correctly converted.
+ It has no override zone and uses the `],
+					[/* reference */ 'r', `.ResolverStyle#STRICT`],
+					[/* text */ 't', ` resolver style.`]
+				]]
+			],
+		]],
+		[/* field */ 'ISO_OFFSET_DATE_TIME', [
+			[/* field description */
+				[/* text */ 't', `The ISO date-time formatter that formats or parses a date-time with an
+ offset, such as '2011-12-03T10:15:30+01:00'.
+ `],
+				[/* block */ 'b', `
+ This returns an immutable formatter capable of formatting and parsing
+ the ISO-8601 extended offset date-time format.
+ The format consists of:
+ `],
+				[/* list */ 'l', [
+					[/* block */ 'b', [
+						[/* text */ 't', `The `],
+						[/* text */ 't', `ISO_LOCAL_DATE_TIME`]
+					]],
+					[/* block */ 'b', [
+						[/* text */ 't', `The `],
+						[/* reference */ 'r', `java.ZoneOffset#getId()`],
+						[/* text */ 't', `. If the offset has seconds then
+  they will be handled even though this is not part of the ISO-8601 standard.
+  The offset parsing is lenient, which allows the minutes and seconds to be optional.
+  Parsing is case insensitive.
+ `]
+					]]
+				]],
+				[/* block */ 'b', ''],
+				[/* block */ 'b', [
+					[/* text */ 't', `
+ The returned formatter has a chronology of ISO set to ensure dates in
+ other calendar systems are correctly converted.
+ It has no override zone and uses the `],
+					[/* reference */ 'r', `.ResolverStyle#STRICT`],
+					[/* text */ 't', ` resolver style.`]
+				]]
+			],
+		]],
+		[/* field */ 'ISO_OFFSET_TIME', [
+			[/* field description */
+				[/* text */ 't', `The ISO time formatter that formats or parses a time with an
+ offset, such as '10:15+01:00' or '10:15:30+01:00'.
+ `],
+				[/* block */ 'b', `
+ This returns an immutable formatter capable of formatting and parsing
+ the ISO-8601 extended offset time format.
+ The format consists of:
+ `],
+				[/* list */ 'l', [
+					[/* block */ 'b', [
+						[/* text */ 't', `The `],
+						[/* text */ 't', `ISO_LOCAL_TIME`]
+					]],
+					[/* block */ 'b', [
+						[/* text */ 't', `The `],
+						[/* reference */ 'r', `java.ZoneOffset#getId()`],
+						[/* text */ 't', `. If the offset has seconds then
+  they will be handled even though this is not part of the ISO-8601 standard.
+  Parsing is case insensitive.
+ `]
+					]]
+				]],
+				[/* block */ 'b', ''],
+				[/* block */ 'b', [
+					[/* text */ 't', `
+ The returned formatter has no override chronology or zone.
+ It uses the `],
+					[/* reference */ 'r', `.ResolverStyle#STRICT`],
+					[/* text */ 't', ` resolver style.`]
+				]]
+			],
+		]],
+		[/* field */ 'ISO_ORDINAL_DATE', [
+			[/* field description */
+				[/* text */ 't', `The ISO date formatter that formats or parses the ordinal date
+ without an offset, such as '2012-337'.
+ `],
+				[/* block */ 'b', `
+ This returns an immutable formatter capable of formatting and parsing
+ the ISO-8601 extended ordinal date format.
+ The format consists of:
+ `],
+				[/* list */ 'l', [
+					[/* block */ 'b', [
+						[/* text */ 't', `Four digits or more for the `],
+						[/* reference */ 'r', `java.ChronoField#YEAR`],
+						[/* text */ 't', `.
+ Years in the range 0000 to 9999 will be pre-padded by zero to ensure four digits.
+ Years outside that range will have a prefixed positive or negative symbol.
+ `]
+					]],
+					[/* block */ 'b', `A dash
+ `],
+					[/* block */ 'b', [
+						[/* text */ 't', `Three digits for the `],
+						[/* reference */ 'r', `java.ChronoField#DAY_OF_YEAR`],
+						[/* text */ 't', `.
+  This is pre-padded by zero to ensure three digits.
  `]
 					]],
 					[/* block */ 'b', `If the offset is not available to format or parse then the format is complete.
@@ -1989,9 +1831,8 @@ DocsCollector.collect('java.time.format.DateTimeFormatter', [
 					[/* block */ 'b', [
 						[/* text */ 't', `The `],
 						[/* reference */ 'r', `java.ZoneOffset#getId()`],
-						[/* text */ 't', ` without colons. If the offset has
-  seconds then they will be handled even though this is not part of the ISO-8601 standard.
-  The offset parsing is lenient, which allows the minutes and seconds to be optional.
+						[/* text */ 't', `. If the offset has seconds then
+  they will be handled even though this is not part of the ISO-8601 standard.
   Parsing is case insensitive.
  `]
 					]]
@@ -2005,6 +1846,165 @@ DocsCollector.collect('java.time.format.DateTimeFormatter', [
 					[/* text */ 't', `.
  `]
 				]],
+				[/* block */ 'b', [
+					[/* text */ 't', `
+ The returned formatter has a chronology of ISO set to ensure dates in
+ other calendar systems are correctly converted.
+ It has no override zone and uses the `],
+					[/* reference */ 'r', `.ResolverStyle#STRICT`],
+					[/* text */ 't', ` resolver style.`]
+				]]
+			],
+		]],
+		[/* field */ 'ISO_TIME', [
+			[/* field description */
+				[/* text */ 't', `The ISO time formatter that formats or parses a time, with the
+ offset if available, such as '10:15', '10:15:30' or '10:15:30+01:00'.
+ `],
+				[/* block */ 'b', `
+ This returns an immutable formatter capable of formatting and parsing
+ the ISO-8601 extended offset time format.
+ The format consists of:
+ `],
+				[/* list */ 'l', [
+					[/* block */ 'b', [
+						[/* text */ 't', `The `],
+						[/* text */ 't', `ISO_LOCAL_TIME`]
+					]],
+					[/* block */ 'b', `If the offset is not available then the format is complete.
+ `],
+					[/* block */ 'b', [
+						[/* text */ 't', `The `],
+						[/* reference */ 'r', `java.ZoneOffset#getId()`],
+						[/* text */ 't', `. If the offset has seconds then
+  they will be handled even though this is not part of the ISO-8601 standard.
+  Parsing is case insensitive.
+ `]
+					]]
+				]],
+				[/* block */ 'b', ''],
+				[/* block */ 'b', [
+					[/* text */ 't', `
+ As this formatter has an optional element, it may be necessary to parse using
+ `],
+					[/* reference */ 'r', `#parseBest(java.lang.CharSequence,java.time.temporal.TemporalQuery...)`, `parseBest(java.lang.CharSequence, java.time.temporal.TemporalQuery<?>...)`],
+					[/* text */ 't', `.
+ `]
+				]],
+				[/* block */ 'b', [
+					[/* text */ 't', `
+ The returned formatter has no override chronology or zone.
+ It uses the `],
+					[/* reference */ 'r', `.ResolverStyle#STRICT`],
+					[/* text */ 't', ` resolver style.`]
+				]]
+			],
+		]],
+		[/* field */ 'ISO_WEEK_DATE', [
+			[/* field description */
+				[/* text */ 't', `The ISO date formatter that formats or parses the week-based date
+ without an offset, such as '2012-W48-6'.
+ `],
+				[/* block */ 'b', `
+ This returns an immutable formatter capable of formatting and parsing
+ the ISO-8601 extended week-based date format.
+ The format consists of:
+ `],
+				[/* list */ 'l', [
+					[/* block */ 'b', [
+						[/* text */ 't', `Four digits or more for the `],
+						[/* reference */ 'r', `java.IsoFields#WEEK_BASED_YEAR`],
+						[/* text */ 't', `.
+ Years in the range 0000 to 9999 will be pre-padded by zero to ensure four digits.
+ Years outside that range will have a prefixed positive or negative symbol.
+ `]
+					]],
+					[/* block */ 'b', `A dash
+ `],
+					[/* block */ 'b', `The letter 'W'. Parsing is case insensitive.
+ `],
+					[/* block */ 'b', [
+						[/* text */ 't', `Two digits for the `],
+						[/* reference */ 'r', `java.IsoFields#WEEK_OF_WEEK_BASED_YEAR`],
+						[/* text */ 't', `.
+  This is pre-padded by zero to ensure three digits.
+ `]
+					]],
+					[/* block */ 'b', `A dash
+ `],
+					[/* block */ 'b', [
+						[/* text */ 't', `One digit for the `],
+						[/* reference */ 'r', `java.ChronoField#DAY_OF_WEEK`],
+						[/* text */ 't', `.
+  The value run from Monday (1) to Sunday (7).
+ `]
+					]],
+					[/* block */ 'b', `If the offset is not available to format or parse then the format is complete.
+ `],
+					[/* block */ 'b', [
+						[/* text */ 't', `The `],
+						[/* reference */ 'r', `java.ZoneOffset#getId()`],
+						[/* text */ 't', `. If the offset has seconds then
+  they will be handled even though this is not part of the ISO-8601 standard.
+  Parsing is case insensitive.
+ `]
+					]]
+				]],
+				[/* block */ 'b', ''],
+				[/* block */ 'b', [
+					[/* text */ 't', `
+ As this formatter has an optional element, it may be necessary to parse using
+ `],
+					[/* reference */ 'r', `#parseBest(java.lang.CharSequence,java.time.temporal.TemporalQuery...)`, `parseBest(java.lang.CharSequence, java.time.temporal.TemporalQuery<?>...)`],
+					[/* text */ 't', `.
+ `]
+				]],
+				[/* block */ 'b', [
+					[/* text */ 't', `
+ The returned formatter has a chronology of ISO set to ensure dates in
+ other calendar systems are correctly converted.
+ It has no override zone and uses the `],
+					[/* reference */ 'r', `.ResolverStyle#STRICT`],
+					[/* text */ 't', ` resolver style.`]
+				]]
+			],
+		]],
+		[/* field */ 'ISO_ZONED_DATE_TIME', [
+			[/* field description */
+				[/* text */ 't', `The ISO-like date-time formatter that formats or parses a date-time with
+ offset and zone, such as '2011-12-03T10:15:30+01:00[Europe/Paris]'.
+ `],
+				[/* block */ 'b', `
+ This returns an immutable formatter capable of formatting and parsing
+ a format that extends the ISO-8601 extended offset date-time format
+ to add the time-zone.
+ The section in square brackets is not part of the ISO-8601 standard.
+ The format consists of:
+ `],
+				[/* list */ 'l', [
+					[/* block */ 'b', [
+						[/* text */ 't', `The `],
+						[/* text */ 't', `ISO_OFFSET_DATE_TIME`]
+					]],
+					[/* block */ 'b', [
+						[/* text */ 't', `If the zone ID is not available or is a `],
+						[/* inline code block */ 'i', `ZoneOffset`],
+						[/* text */ 't', ` then the format is complete.
+ `]
+					]],
+					[/* block */ 'b', `An open square bracket '['.
+ `],
+					[/* block */ 'b', [
+						[/* text */ 't', `The `],
+						[/* reference */ 'r', `java.ZoneId#getId()`],
+						[/* text */ 't', `. This is not part of the ISO-8601 standard.
+  Parsing is case sensitive.
+ `]
+					]],
+					[/* block */ 'b', `A close square bracket ']'.
+ `]
+				]],
+				[/* block */ 'b', ''],
 				[/* block */ 'b', [
 					[/* text */ 't', `
  The returned formatter has a chronology of ISO set to ensure dates in
@@ -2122,140 +2122,6 @@ DocsCollector.collect('java.time.format.DateTimeFormatter', [
 	],
 	/* constructors */ UDF,
 	[/* methods */
-		[/* method */ 'toString()', [
-			[/* method description */
-				[/* text */ 't', `Returns a description of the underlying formatters.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `a description of this formatter, not null`]
-			]
-		]],
-		[/* method */ 'format(java.time.temporal.TemporalAccessor)', [
-			[/* method description */
-				[/* text */ 't', `Formats a date-time object using this formatter.
- `],
-				[/* block */ 'b', `
- This formats the date-time to a String using the rules of the formatter.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'temporal', [/* parameter description */
-					[/* text */ 't', `the temporal object to format, not null`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.time.DateTimeException', [/* throw description */
-					[/* text */ 't', `if an error occurs during formatting`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `the formatted string, not null`]
-			]
-		]],
-		[/* method */ 'parse(java.lang.CharSequence,java.text.ParsePosition)', [
-			[/* method description */
-				[/* text */ 't', `Parses the text using this formatter, providing control over the text position.
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', `
- This parses the text without requiring the parse to start from the beginning
- of the string or finish at the end.
- The result of this method is `],
-					[/* inline code block */ 'i', `TemporalAccessor`],
-					[/* text */ 't', ` which has been resolved,
- applying basic validation checks to help ensure a valid date-time.
- `]
-				]],
-				[/* block */ 'b', [
-					[/* text */ 't', `
- The text will be parsed from the specified start `],
-					[/* inline code block */ 'i', `ParsePosition`],
-					[/* text */ 't', `.
- The entire length of the text does not have to be parsed, the `],
-					[/* inline code block */ 'i', `ParsePosition`],
-					[/* text */ 't', `
- will be updated with the index at the end of parsing.
- `]
-				]],
-				[/* block */ 'b', [
-					[/* text */ 't', `
- The operation of this method is slightly different to similar methods using
- `],
-					[/* inline code block */ 'i', `ParsePosition`],
-					[/* text */ 't', ` on `],
-					[/* inline code block */ 'i', `java.text.Format`],
-					[/* text */ 't', `. That class will return
- errors using the error index on the `],
-					[/* inline code block */ 'i', `ParsePosition`],
-					[/* text */ 't', `. By contrast, this
- method will throw a `],
-					[/* reference */ 'r', `java.time.format.DateTimeParseException`],
-					[/* text */ 't', ` if an error occurs, with
- the exception containing the error index.
- This change in behavior is necessary due to the increased complexity of
- parsing and resolving dates/times in this API.
- `]
-				]],
-				[/* block */ 'b', `
- If the formatter parses the same field more than once with different values,
- the result will be an error.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'text', [/* parameter description */
-					[/* text */ 't', `the text to parse, not null`]
-				]],
-				[/* parameter */ 'position', [/* parameter description */
-					[/* text */ 't', `the position to parse from, updated with length parsed
-  and the index of any error, not null`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.time.format.DateTimeParseException', [/* throw description */
-					[/* text */ 't', `if unable to parse the requested result`]
-				]],
-				[/* throw */ 'java.lang.IndexOutOfBoundsException', [/* throw description */
-					[/* text */ 't', `if the position is invalid`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `the parsed temporal object, not null`]
-			]
-		]],
-		[/* method */ 'parse(java.lang.CharSequence)', [
-			[/* method description */
-				[/* text */ 't', `Fully parses the text producing a temporal object.
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', `
- This parses the entire text producing a temporal object.
- It is typically more useful to use `],
-					[/* reference */ 'r', `#parse(java.lang.CharSequence,java.time.temporal.TemporalQuery)`, `parse(CharSequence, TemporalQuery)`],
-					[/* text */ 't', `.
- The result of this method is `],
-					[/* inline code block */ 'i', `TemporalAccessor`],
-					[/* text */ 't', ` which has been resolved,
- applying basic validation checks to help ensure a valid date-time.
- `]
-				]],
-				[/* block */ 'b', `
- If the parse completes without reading the entire length of the text,
- or a problem occurs during parsing or merging, then an exception is thrown.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'text', [/* parameter description */
-					[/* text */ 't', `the text to parse, not null`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.time.format.DateTimeParseException', [/* throw description */
-					[/* text */ 't', `if unable to parse the requested result`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `the parsed temporal object, not null`]
-			]
-		]],
 		[/* method */ 'parse(java.lang.CharSequence,java.time.temporal.TemporalQuery)', [
 			[/* method description */
 				[/* text */ 't', `Fully parses the text producing an object of the specified type.
@@ -2294,62 +2160,16 @@ DocsCollector.collect('java.time.format.DateTimeFormatter', [
 				[/* text */ 't', `the parsed date-time, not null`]
 			]
 		]],
-		[/* method */ 'getLocale()', [
+		[/* method */ 'format(java.time.temporal.TemporalAccessor)', [
 			[/* method description */
-				[/* text */ 't', `Gets the locale to be used during formatting.
+				[/* text */ 't', `Formats a date-time object using this formatter.
  `],
 				[/* block */ 'b', `
- This is used to lookup any part of the formatter needing specific
- localization, such as the text or localized pattern.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the locale of this formatter, not null`]
-			]
-		]],
-		[/* method */ 'formatTo(java.time.temporal.TemporalAccessor,java.lang.Appendable)', [
-			[/* method description */
-				[/* text */ 't', `Formats a date-time object to an `],
-				[/* inline code block */ 'i', `Appendable`],
-				[/* text */ 't', ` using this formatter.
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', `
- This outputs the formatted date-time to the specified destination.
- `],
-					[/* reference */ 'r', `java.lang.Appendable`],
-					[/* text */ 't', ` is a general purpose interface that is implemented by all
- key character output classes including `],
-					[/* inline code block */ 'i', `StringBuffer`],
-					[/* text */ 't', `, `],
-					[/* inline code block */ 'i', `StringBuilder`],
-					[/* text */ 't', `,
- `],
-					[/* inline code block */ 'i', `PrintStream`],
-					[/* text */ 't', ` and `],
-					[/* inline code block */ 'i', `Writer`],
-					[/* text */ 't', `.
- `]
-				]],
-				[/* block */ 'b', [
-					[/* text */ 't', `
- Although `],
-					[/* inline code block */ 'i', `Appendable`],
-					[/* text */ 't', ` methods throw an `],
-					[/* inline code block */ 'i', `IOException`],
-					[/* text */ 't', `, this method does not.
- Instead, any `],
-					[/* inline code block */ 'i', `IOException`],
-					[/* text */ 't', ` is wrapped in a runtime exception.`]
-				]]
+ This formats the date-time to a String using the rules of the formatter.`]
 			],
 			[/* parameters */
 				[/* parameter */ 'temporal', [/* parameter description */
 					[/* text */ 't', `the temporal object to format, not null`]
-				]],
-				[/* parameter */ 'appendable', [/* parameter description */
-					[/* text */ 't', `the appendable to format to, not null`]
 				]]
 			],
 			[/* throws */
@@ -2357,518 +2177,119 @@ DocsCollector.collect('java.time.format.DateTimeFormatter', [
 					[/* text */ 't', `if an error occurs during formatting`]
 				]]
 			],
-			/* return */ UDF
-		]],
-		[/* method */ 'ofPattern(java.lang.String)', [
-			[/* method description */
-				[/* text */ 't', `Creates a formatter using the specified pattern.
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', `
- This method will create a formatter based on a simple
- `],
-					[/* text */ 't', `pattern of letters and symbols`],
-					[/* text */ 't', `
- as described in the class documentation.
- For example, `],
-					[/* inline code block */ 'i', `d MMM uuuu`],
-					[/* text */ 't', ` will format 2011-12-03 as '3 Dec 2011'.
- `]
-				]],
-				[/* block */ 'b', [
-					[/* text */ 't', `
- The formatter will use the `],
-					[/* reference */ 'r', `java.time.Locale#getDefault(java.util.Locale.Category)`],
-					[/* text */ 't', `.
- This can be changed using `],
-					[/* reference */ 'r', `#withLocale(java.util.Locale)`, `withLocale(Locale)`],
-					[/* text */ 't', ` on the returned formatter.
- Alternatively use the `],
-					[/* reference */ 'r', `#ofPattern(java.lang.String,java.util.Locale)`, `ofPattern(String, Locale)`],
-					[/* text */ 't', ` variant of this method.
- `]
-				]],
-				[/* block */ 'b', [
-					[/* text */ 't', `
- The returned formatter has no override chronology or zone.
- It uses `],
-					[/* reference */ 'r', `.ResolverStyle#SMART`],
-					[/* text */ 't', ` resolver style.`]
-				]]
-			],
-			[/* parameters */
-				[/* parameter */ 'pattern', [/* parameter description */
-					[/* text */ 't', `the pattern to use, not null`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
-					[/* text */ 't', `if the pattern is invalid`]
-				]]
-			],
 			[/* return description */
-				[/* text */ 't', `the formatter based on the pattern, not null`]
+				[/* text */ 't', `the formatted string, not null`]
 			]
 		]],
-		[/* method */ 'ofPattern(java.lang.String,java.util.Locale)', [
+		[/* method */ 'toString()', [
 			[/* method description */
-				[/* text */ 't', `Creates a formatter using the specified pattern and locale.
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', `
- This method will create a formatter based on a simple
- `],
-					[/* text */ 't', `pattern of letters and symbols`],
-					[/* text */ 't', `
- as described in the class documentation.
- For example, `],
-					[/* inline code block */ 'i', `d MMM uuuu`],
-					[/* text */ 't', ` will format 2011-12-03 as '3 Dec 2011'.
- `]
-				]],
-				[/* block */ 'b', [
-					[/* text */ 't', `
- The formatter will use the specified locale.
- This can be changed using `],
-					[/* reference */ 'r', `#withLocale(java.util.Locale)`, `withLocale(Locale)`],
-					[/* text */ 't', ` on the returned formatter.
- `]
-				]],
-				[/* block */ 'b', [
-					[/* text */ 't', `
- The returned formatter has no override chronology or zone.
- It uses `],
-					[/* reference */ 'r', `.ResolverStyle#SMART`],
-					[/* text */ 't', ` resolver style.`]
-				]]
-			],
-			[/* parameters */
-				[/* parameter */ 'pattern', [/* parameter description */
-					[/* text */ 't', `the pattern to use, not null`]
-				]],
-				[/* parameter */ 'locale', [/* parameter description */
-					[/* text */ 't', `the locale to use, not null`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
-					[/* text */ 't', `if the pattern is invalid`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `the formatter based on the pattern, not null`]
-			]
-		]],
-		[/* method */ 'ofLocalizedDate(java.time.format.FormatStyle)', [
-			[/* method description */
-				[/* text */ 't', `Returns a locale specific date format for the ISO chronology.
- `],
-				[/* block */ 'b', `
- This returns a formatter that will format or parse a date.
- The exact format pattern used varies by locale.
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', `
- The locale is determined from the formatter. The formatter returned directly by
- this method will use the `],
-					[/* reference */ 'r', `java.time.Locale#getDefault(java.util.Locale.Category)`],
-					[/* text */ 't', `.
- The locale can be controlled using `],
-					[/* reference */ 'r', `#withLocale(java.util.Locale)`, `withLocale(Locale)`],
-					[/* text */ 't', `
- on the result of this method.
- `]
-				]],
-				[/* block */ 'b', [
-					[/* text */ 't', `
- Note that the localized pattern is looked up lazily.
- This `],
-					[/* inline code block */ 'i', `DateTimeFormatter`],
-					[/* text */ 't', ` holds the style required and the locale,
- looking up the pattern required on demand.
- `]
-				]],
-				[/* block */ 'b', [
-					[/* text */ 't', `
- The returned formatter has a chronology of ISO set to ensure dates in
- other calendar systems are correctly converted.
- It has no override zone and uses the `],
-					[/* reference */ 'r', `.ResolverStyle#SMART`],
-					[/* text */ 't', ` resolver style.`]
-				]]
-			],
-			[/* parameters */
-				[/* parameter */ 'dateStyle', [/* parameter description */
-					[/* text */ 't', `the formatter style to obtain, not null`]
-				]]
-			],
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the date formatter, not null`]
-			]
-		]],
-		[/* method */ 'ofLocalizedTime(java.time.format.FormatStyle)', [
-			[/* method description */
-				[/* text */ 't', `Returns a locale specific time format for the ISO chronology.
- `],
-				[/* block */ 'b', `
- This returns a formatter that will format or parse a time.
- The exact format pattern used varies by locale.
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', `
- The locale is determined from the formatter. The formatter returned directly by
- this method will use the `],
-					[/* reference */ 'r', `java.time.Locale#getDefault(java.util.Locale.Category)`],
-					[/* text */ 't', `.
- The locale can be controlled using `],
-					[/* reference */ 'r', `#withLocale(java.util.Locale)`, `withLocale(Locale)`],
-					[/* text */ 't', `
- on the result of this method.
- `]
-				]],
-				[/* block */ 'b', [
-					[/* text */ 't', `
- Note that the localized pattern is looked up lazily.
- This `],
-					[/* inline code block */ 'i', `DateTimeFormatter`],
-					[/* text */ 't', ` holds the style required and the locale,
- looking up the pattern required on demand.
- `]
-				]],
-				[/* block */ 'b', [
-					[/* text */ 't', `
- The returned formatter has a chronology of ISO set to ensure dates in
- other calendar systems are correctly converted.
- It has no override zone and uses the `],
-					[/* reference */ 'r', `.ResolverStyle#SMART`],
-					[/* text */ 't', ` resolver style.
- The `],
-					[/* inline code block */ 'i', `FULL`],
-					[/* text */ 't', ` and `],
-					[/* inline code block */ 'i', `LONG`],
-					[/* text */ 't', ` styles typically require a time-zone.
- When formatting using these styles, a `],
-					[/* inline code block */ 'i', `ZoneId`],
-					[/* text */ 't', ` must be available,
- either by using `],
-					[/* inline code block */ 'i', `ZonedDateTime`],
-					[/* text */ 't', ` or `],
-					[/* reference */ 'r', `#withZone(java.time.ZoneId)`, `withZone(java.time.ZoneId)`],
-					[/* text */ 't', `.`]
-				]]
-			],
-			[/* parameters */
-				[/* parameter */ 'timeStyle', [/* parameter description */
-					[/* text */ 't', `the formatter style to obtain, not null`]
-				]]
-			],
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the time formatter, not null`]
-			]
-		]],
-		[/* method */ 'ofLocalizedDateTime(java.time.format.FormatStyle)', [
-			[/* method description */
-				[/* text */ 't', `Returns a locale specific date-time formatter for the ISO chronology.
- `],
-				[/* block */ 'b', `
- This returns a formatter that will format or parse a date-time.
- The exact format pattern used varies by locale.
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', `
- The locale is determined from the formatter. The formatter returned directly by
- this method will use the `],
-					[/* reference */ 'r', `java.time.Locale#getDefault(java.util.Locale.Category)`],
-					[/* text */ 't', `.
- The locale can be controlled using `],
-					[/* reference */ 'r', `#withLocale(java.util.Locale)`, `withLocale(Locale)`],
-					[/* text */ 't', `
- on the result of this method.
- `]
-				]],
-				[/* block */ 'b', [
-					[/* text */ 't', `
- Note that the localized pattern is looked up lazily.
- This `],
-					[/* inline code block */ 'i', `DateTimeFormatter`],
-					[/* text */ 't', ` holds the style required and the locale,
- looking up the pattern required on demand.
- `]
-				]],
-				[/* block */ 'b', [
-					[/* text */ 't', `
- The returned formatter has a chronology of ISO set to ensure dates in
- other calendar systems are correctly converted.
- It has no override zone and uses the `],
-					[/* reference */ 'r', `.ResolverStyle#SMART`],
-					[/* text */ 't', ` resolver style.
- The `],
-					[/* inline code block */ 'i', `FULL`],
-					[/* text */ 't', ` and `],
-					[/* inline code block */ 'i', `LONG`],
-					[/* text */ 't', ` styles typically require a time-zone.
- When formatting using these styles, a `],
-					[/* inline code block */ 'i', `ZoneId`],
-					[/* text */ 't', ` must be available,
- either by using `],
-					[/* inline code block */ 'i', `ZonedDateTime`],
-					[/* text */ 't', ` or `],
-					[/* reference */ 'r', `#withZone(java.time.ZoneId)`, `withZone(java.time.ZoneId)`],
-					[/* text */ 't', `.`]
-				]]
-			],
-			[/* parameters */
-				[/* parameter */ 'dateTimeStyle', [/* parameter description */
-					[/* text */ 't', `the formatter style to obtain, not null`]
-				]]
-			],
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the date-time formatter, not null`]
-			]
-		]],
-		[/* method */ 'ofLocalizedDateTime(java.time.format.FormatStyle,java.time.format.FormatStyle)', [
-			[/* method description */
-				[/* text */ 't', `Returns a locale specific date and time format for the ISO chronology.
- `],
-				[/* block */ 'b', `
- This returns a formatter that will format or parse a date-time.
- The exact format pattern used varies by locale.
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', `
- The locale is determined from the formatter. The formatter returned directly by
- this method will use the `],
-					[/* reference */ 'r', `java.time.Locale#getDefault()`],
-					[/* text */ 't', `.
- The locale can be controlled using `],
-					[/* reference */ 'r', `#withLocale(java.util.Locale)`, `withLocale(Locale)`],
-					[/* text */ 't', `
- on the result of this method.
- `]
-				]],
-				[/* block */ 'b', [
-					[/* text */ 't', `
- Note that the localized pattern is looked up lazily.
- This `],
-					[/* inline code block */ 'i', `DateTimeFormatter`],
-					[/* text */ 't', ` holds the style required and the locale,
- looking up the pattern required on demand.
- `]
-				]],
-				[/* block */ 'b', [
-					[/* text */ 't', `
- The returned formatter has a chronology of ISO set to ensure dates in
- other calendar systems are correctly converted.
- It has no override zone and uses the `],
-					[/* reference */ 'r', `.ResolverStyle#SMART`],
-					[/* text */ 't', ` resolver style.
- The `],
-					[/* inline code block */ 'i', `FULL`],
-					[/* text */ 't', ` and `],
-					[/* inline code block */ 'i', `LONG`],
-					[/* text */ 't', ` styles typically require a time-zone.
- When formatting using these styles, a `],
-					[/* inline code block */ 'i', `ZoneId`],
-					[/* text */ 't', ` must be available,
- either by using `],
-					[/* inline code block */ 'i', `ZonedDateTime`],
-					[/* text */ 't', ` or `],
-					[/* reference */ 'r', `#withZone(java.time.ZoneId)`, `withZone(java.time.ZoneId)`],
-					[/* text */ 't', `.`]
-				]]
-			],
-			[/* parameters */
-				[/* parameter */ 'dateStyle', [/* parameter description */
-					[/* text */ 't', `the date formatter style to obtain, not null`]
-				]],
-				[/* parameter */ 'timeStyle', [/* parameter description */
-					[/* text */ 't', `the time formatter style to obtain, not null`]
-				]]
-			],
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the date, time or date-time formatter, not null`]
-			]
-		]],
-		[/* method */ 'parsedExcessDays()', [
-			[/* method description */
-				[/* text */ 't', `A query that provides access to the excess days that were parsed.
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', `
- This returns a singleton `],
-					[/* reference */ 'r', `java.time.temporal.TemporalQuery`],
-					[/* text */ 't', ` that provides
- access to additional information from the parse. The query always returns
- a non-null period, with a zero period returned instead of null.
- `]
-				]],
-				[/* block */ 'b', `
- There are two situations where this query may return a non-zero period.
- `],
-				[/* list */ 'l', [
-					[/* block */ 'b', [
-						[/* text */ 't', `If the `],
-						[/* inline code block */ 'i', `ResolverStyle`],
-						[/* text */ 't', ` is `],
-						[/* inline code block */ 'i', `LENIENT`],
-						[/* text */ 't', ` and a time is parsed
-  without a date, then the complete result of the parse consists of a
-  `],
-						[/* inline code block */ 'i', `LocalTime`],
-						[/* text */ 't', ` and an excess `],
-						[/* inline code block */ 'i', `Period`],
-						[/* text */ 't', ` in days.
-
- `]
-					]],
-					[/* block */ 'b', [
-						[/* text */ 't', `If the `],
-						[/* inline code block */ 'i', `ResolverStyle`],
-						[/* text */ 't', ` is `],
-						[/* inline code block */ 'i', `SMART`],
-						[/* text */ 't', ` and a time is parsed
-  without a date where the time is 24:00:00, then the complete result of
-  the parse consists of a `],
-						[/* inline code block */ 'i', `LocalTime`],
-						[/* text */ 't', ` of 00:00:00 and an excess
-  `],
-						[/* inline code block */ 'i', `Period`],
-						[/* text */ 't', ` of one day.
- `]
-					]]
-				]],
-				[/* block */ 'b', ''],
-				[/* block */ 'b', [
-					[/* text */ 't', `
- In both cases, if a complete `],
-					[/* inline code block */ 'i', `ChronoLocalDateTime`],
-					[/* text */ 't', ` or `],
-					[/* inline code block */ 'i', `Instant`],
-					[/* text */ 't', `
- is parsed, then the excess days are added to the date part.
- As a result, this query will return a zero period.
- `]
-				]],
-				[/* block */ 'b', [
-					[/* text */ 't', `
- The `],
-					[/* inline code block */ 'i', `SMART`],
-					[/* text */ 't', ` behaviour handles the common "end of day" 24:00 value.
- Processing in `],
-					[/* inline code block */ 'i', `LENIENT`],
-					[/* text */ 't', ` mode also produces the same result:
- `]
-				]],
-				[/* code block */ 'c', `  Text to parse        Parsed object                         Excess days
-  "2012-12-03T00:00"   LocalDateTime.of(2012, 12, 3, 0, 0)   ZERO
-  "2012-12-03T24:00"   LocalDateTime.of(2012, 12, 4, 0, 0)   ZERO
-  "00:00"              LocalTime.of(0, 0)                    ZERO
-  "24:00"              LocalTime.of(0, 0)                    Period.ofDays(1)
- `],
-				[/* text */ 't', `
- The query can be used as follows:
- `],
-				[/* code block */ 'c', `  TemporalAccessor parsed = formatter.parse(str);
-  LocalTime time = parsed.query(LocalTime::from);
-  Period extraDays = parsed.query(DateTimeFormatter.parsedExcessDays());
- `],
-				[/* block */ 'b', '']
+				[/* text */ 't', `Returns a description of the underlying formatters.`]
 			],
 			/* parameters */ UDF,
 			/* throws */ UDF,
 			[/* return description */
-				[/* text */ 't', `a query that provides access to the excess days that were parsed`]
+				[/* text */ 't', `a description of this formatter, not null`]
 			]
 		]],
-		[/* method */ 'parsedLeapSecond()', [
+		[/* method */ 'toFormat()', [
 			[/* method description */
-				[/* text */ 't', `A query that provides access to whether a leap-second was parsed.
+				[/* text */ 't', `Returns this formatter as a `],
+				[/* inline code block */ 'i', `java.text.Format`],
+				[/* text */ 't', ` instance.
  `],
 				[/* block */ 'b', [
 					[/* text */ 't', `
- This returns a singleton `],
-					[/* reference */ 'r', `java.time.temporal.TemporalQuery`],
-					[/* text */ 't', ` that provides
- access to additional information from the parse. The query always returns
- a non-null boolean, true if parsing saw a leap-second, false if not.
+ The returned `],
+					[/* reference */ 'r', `java.text.Format`],
+					[/* text */ 't', ` instance will format any `],
+					[/* reference */ 'r', `java.time.temporal.TemporalAccessor`],
+					[/* text */ 't', `
+ and parses to a resolved `],
+					[/* reference */ 'r', `java.time.temporal.TemporalAccessor`],
+					[/* text */ 't', `.
  `]
 				]],
 				[/* block */ 'b', [
 					[/* text */ 't', `
- Instant parsing handles the special "leap second" time of '23:59:60'.
- Leap seconds occur at '23:59:60' in the UTC time-zone, but at other
- local times in different time-zones. To avoid this potential ambiguity,
- the handling of leap-seconds is limited to
+ Exceptions will follow the definitions of `],
+					[/* inline code block */ 'i', `Format`],
+					[/* text */ 't', `, see those methods
+ for details about `],
+					[/* inline code block */ 'i', `IllegalArgumentException`],
+					[/* text */ 't', ` during formatting and
  `],
-					[/* reference */ 'r', `.DateTimeFormatterBuilder#appendInstant()`],
-					[/* text */ 't', `, as that method
- always parses the instant with the UTC zone offset.
- `]
-				]],
-				[/* block */ 'b', [
-					[/* text */ 't', `
- If the time '23:59:60' is received, then a simple conversion is applied,
- replacing the second-of-minute of 60 with 59. This query can be used
- on the parse result to determine if the leap-second adjustment was made.
- The query will return `],
-					[/* inline code block */ 'i', `true`],
-					[/* text */ 't', ` if it did adjust to remove the
- leap-second, and `],
-					[/* inline code block */ 'i', `false`],
-					[/* text */ 't', ` if not. Note that applying a leap-second
- smoothing mechanism, such as UTC-SLS, is the responsibility of the
- application, as follows:
- `]
-				]],
-				[/* code block */ 'c', `  TemporalAccessor parsed = formatter.parse(str);
-  Instant instant = parsed.query(Instant::from);
-  if (parsed.query(DateTimeFormatter.parsedLeapSecond())) {
-    // validate leap-second is correct and apply correct smoothing
-  }
- `],
-				[/* block */ 'b', '']
+					[/* inline code block */ 'i', `ParseException`],
+					[/* text */ 't', ` or null during parsing.
+ The format does not support attributing of the returned format string.`]
+				]]
 			],
 			/* parameters */ UDF,
 			/* throws */ UDF,
 			[/* return description */
-				[/* text */ 't', `a query that provides access to whether a leap-second was parsed`]
+				[/* text */ 't', `this formatter as a classic format instance, not null`]
 			]
 		]],
-		[/* method */ 'withLocale(java.util.Locale)', [
+		[/* method */ 'toFormat(java.time.temporal.TemporalQuery)', [
 			[/* method description */
-				[/* text */ 't', `Returns a copy of this formatter with a new locale.
- `],
-				[/* block */ 'b', `
- This is used to lookup any part of the formatter needing specific
- localization, such as the text or localized pattern.
+				[/* text */ 't', `Returns this formatter as a `],
+				[/* inline code block */ 'i', `java.text.Format`],
+				[/* text */ 't', ` instance that will
+ parse using the specified query.
  `],
 				[/* block */ 'b', [
 					[/* text */ 't', `
- The locale is stored as passed in, without further processing.
- If the locale has `],
-					[/* reference */ 'r', `java.time.Locale#def_locale_extension`],
-					[/* text */ 't', `, they may be used later in text
- processing. To set the chronology, time-zone and decimal style from
- unicode extensions, see `],
-					[/* reference */ 'r', `#localizedBy(java.util.Locale)`, `localizedBy()`],
+ The returned `],
+					[/* reference */ 'r', `java.text.Format`],
+					[/* text */ 't', ` instance will format any `],
+					[/* reference */ 'r', `java.time.temporal.TemporalAccessor`],
+					[/* text */ 't', `
+ and parses to the type specified.
+ The type must be one that is supported by `],
+					[/* reference */ 'r', `#parse(java.lang.CharSequence)`, `parse(java.lang.CharSequence)`],
 					[/* text */ 't', `.
  `]
 				]],
-				[/* block */ 'b', `
- This instance is immutable and unaffected by this method call.`]
+				[/* block */ 'b', [
+					[/* text */ 't', `
+ Exceptions will follow the definitions of `],
+					[/* inline code block */ 'i', `Format`],
+					[/* text */ 't', `, see those methods
+ for details about `],
+					[/* inline code block */ 'i', `IllegalArgumentException`],
+					[/* text */ 't', ` during formatting and
+ `],
+					[/* inline code block */ 'i', `ParseException`],
+					[/* text */ 't', ` or null during parsing.
+ The format does not support attributing of the returned format string.`]
+				]]
 			],
 			[/* parameters */
-				[/* parameter */ 'locale', [/* parameter description */
-					[/* text */ 't', `the new locale, not null`]
+				[/* parameter */ 'parseQuery', [/* parameter description */
+					[/* text */ 't', `the query defining the type to parse to, not null`]
 				]]
 			],
 			/* throws */ UDF,
 			[/* return description */
-				[/* text */ 't', `a formatter based on this formatter with the requested locale, not null`]
+				[/* text */ 't', `this formatter as a classic format instance, not null`]
+			]
+		]],
+		[/* method */ 'getChronology()', [
+			[/* method description */
+				[/* text */ 't', `Gets the overriding chronology to be used during formatting.
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', `
+ This returns the override chronology, used to convert dates.
+ By default, a formatter has no override chronology, returning null.
+ See `],
+					[/* reference */ 'r', `#withChronology(java.time.chrono.Chronology)`, `withChronology(Chronology)`],
+					[/* text */ 't', ` for more details on overriding.`]
+				]]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the override chronology of this formatter, null if no override`]
 			]
 		]],
 		[/* method */ 'localizedBy(java.util.Locale)', [
@@ -2913,52 +2334,6 @@ DocsCollector.collect('java.time.format.DateTimeFormatter', [
 				[/* text */ 't', `a formatter based on this formatter with localized values of
       the calendar, decimal style and/or timezone, that supersede values in this
       formatter.`]
-			]
-		]],
-		[/* method */ 'getDecimalStyle()', [
-			[/* method description */
-				[/* text */ 't', `Gets the DecimalStyle to be used during formatting.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the locale of this formatter, not null`]
-			]
-		]],
-		[/* method */ 'withDecimalStyle(java.time.format.DecimalStyle)', [
-			[/* method description */
-				[/* text */ 't', `Returns a copy of this formatter with a new DecimalStyle.
- `],
-				[/* block */ 'b', `
- This instance is immutable and unaffected by this method call.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'decimalStyle', [/* parameter description */
-					[/* text */ 't', `the new DecimalStyle, not null`]
-				]]
-			],
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `a formatter based on this formatter with the requested DecimalStyle, not null`]
-			]
-		]],
-		[/* method */ 'getChronology()', [
-			[/* method description */
-				[/* text */ 't', `Gets the overriding chronology to be used during formatting.
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', `
- This returns the override chronology, used to convert dates.
- By default, a formatter has no override chronology, returning null.
- See `],
-					[/* reference */ 'r', `#withChronology(java.time.chrono.Chronology)`, `withChronology(Chronology)`],
-					[/* text */ 't', ` for more details on overriding.`]
-				]]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the override chronology of this formatter, null if no override`]
 			]
 		]],
 		[/* method */ 'withChronology(java.time.chrono.Chronology)', [
@@ -3024,167 +2399,54 @@ DocsCollector.collect('java.time.format.DateTimeFormatter', [
 				[/* text */ 't', `a formatter based on this formatter with the requested override chronology, not null`]
 			]
 		]],
-		[/* method */ 'getZone()', [
+		[/* method */ 'withDecimalStyle(java.time.format.DecimalStyle)', [
 			[/* method description */
-				[/* text */ 't', `Gets the overriding zone to be used during formatting.
+				[/* text */ 't', `Returns a copy of this formatter with a new DecimalStyle.
  `],
-				[/* block */ 'b', [
-					[/* text */ 't', `
- This returns the override zone, used to convert instants.
- By default, a formatter has no override zone, returning null.
- See `],
-					[/* reference */ 'r', `#withZone(java.time.ZoneId)`, `withZone(ZoneId)`],
-					[/* text */ 't', ` for more details on overriding.`]
+				[/* block */ 'b', `
+ This instance is immutable and unaffected by this method call.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'decimalStyle', [/* parameter description */
+					[/* text */ 't', `the new DecimalStyle, not null`]
 				]]
 			],
-			/* parameters */ UDF,
 			/* throws */ UDF,
 			[/* return description */
-				[/* text */ 't', `the override zone of this formatter, null if no override`]
+				[/* text */ 't', `a formatter based on this formatter with the requested DecimalStyle, not null`]
 			]
 		]],
-		[/* method */ 'withZone(java.time.ZoneId)', [
+		[/* method */ 'withLocale(java.util.Locale)', [
 			[/* method description */
-				[/* text */ 't', `Returns a copy of this formatter with a new override zone.
+				[/* text */ 't', `Returns a copy of this formatter with a new locale.
  `],
 				[/* block */ 'b', `
- This returns a formatter with similar state to this formatter but
- with the override zone set.
- By default, a formatter has no override zone, returning null.
- `],
-				[/* block */ 'b', `
- If an override is added, then any instant that is formatted or parsed will be affected.
+ This is used to lookup any part of the formatter needing specific
+ localization, such as the text or localized pattern.
  `],
 				[/* block */ 'b', [
 					[/* text */ 't', `
- When formatting, if the temporal object contains an instant, then it will
- be converted to a zoned date-time using the override zone.
- Whether the temporal is an instant is determined by querying the
- `],
-					[/* reference */ 'r', `java.ChronoField#INSTANT_SECONDS`],
-					[/* text */ 't', ` field.
- If the input has a chronology then it will be retained unless overridden.
- If the input does not have a chronology, such as `],
-					[/* inline code block */ 'i', `Instant`],
-					[/* text */ 't', `, then
- the ISO chronology will be used.
- `]
-				]],
-				[/* block */ 'b', [
-					[/* text */ 't', `
- If the temporal object does not contain an instant, but does contain
- an offset then an additional check is made. If the normalized override
- zone is an offset that differs from the offset of the temporal, then
- a `],
-					[/* inline code block */ 'i', `DateTimeException`],
-					[/* text */ 't', ` is thrown. In all other cases, the override
- zone is added to the temporal, replacing any previous zone, but without
- changing the date/time.
- `]
-				]],
-				[/* block */ 'b', [
-					[/* text */ 't', `
- When parsing, there are two distinct cases to consider.
- If a zone has been parsed directly from the text, perhaps because
- `],
-					[/* reference */ 'r', `.DateTimeFormatterBuilder#appendZoneId()`],
-					[/* text */ 't', ` was used, then
- this override zone has no effect.
- If no zone has been parsed, then this override zone will be included in
- the result of the parse where it can be used to build instants and date-times.
+ The locale is stored as passed in, without further processing.
+ If the locale has `],
+					[/* reference */ 'r', `java.time.Locale#def_locale_extension`],
+					[/* text */ 't', `, they may be used later in text
+ processing. To set the chronology, time-zone and decimal style from
+ unicode extensions, see `],
+					[/* reference */ 'r', `#localizedBy(java.util.Locale)`, `localizedBy()`],
+					[/* text */ 't', `.
  `]
 				]],
 				[/* block */ 'b', `
  This instance is immutable and unaffected by this method call.`]
 			],
 			[/* parameters */
-				[/* parameter */ 'zone', [/* parameter description */
-					[/* text */ 't', `the new override zone, null if no override`]
+				[/* parameter */ 'locale', [/* parameter description */
+					[/* text */ 't', `the new locale, not null`]
 				]]
 			],
 			/* throws */ UDF,
 			[/* return description */
-				[/* text */ 't', `a formatter based on this formatter with the requested override zone, not null`]
-			]
-		]],
-		[/* method */ 'getResolverStyle()', [
-			[/* method description */
-				[/* text */ 't', `Gets the resolver style to use during parsing.
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', `
- This returns the resolver style, used during the second phase of parsing
- when fields are resolved into dates and times.
- By default, a formatter has the `],
-					[/* reference */ 'r', `.ResolverStyle#SMART`],
-					[/* text */ 't', ` resolver style.
- See `],
-					[/* reference */ 'r', `#withResolverStyle(java.time.format.ResolverStyle)`, `withResolverStyle(ResolverStyle)`],
-					[/* text */ 't', ` for more details.`]
-				]]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the resolver style of this formatter, not null`]
-			]
-		]],
-		[/* method */ 'withResolverStyle(java.time.format.ResolverStyle)', [
-			[/* method description */
-				[/* text */ 't', `Returns a copy of this formatter with a new resolver style.
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', `
- This returns a formatter with similar state to this formatter but
- with the resolver style set. By default, a formatter has the
- `],
-					[/* reference */ 'r', `.ResolverStyle#SMART`],
-					[/* text */ 't', ` resolver style.
- `]
-				]],
-				[/* block */ 'b', [
-					[/* text */ 't', `
- Changing the resolver style only has an effect during parsing.
- Parsing a text string occurs in two phases.
- Phase 1 is a basic text parse according to the fields added to the builder.
- Phase 2 resolves the parsed field-value pairs into date and/or time objects.
- The resolver style is used to control how phase 2, resolving, happens.
- See `],
-					[/* inline code block */ 'i', `ResolverStyle`],
-					[/* text */ 't', ` for more information on the options available.
- `]
-				]],
-				[/* block */ 'b', `
- This instance is immutable and unaffected by this method call.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'resolverStyle', [/* parameter description */
-					[/* text */ 't', `the new resolver style, not null`]
-				]]
-			],
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `a formatter based on this formatter with the requested resolver style, not null`]
-			]
-		]],
-		[/* method */ 'getResolverFields()', [
-			[/* method description */
-				[/* text */ 't', `Gets the resolver fields to use during parsing.
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', `
- This returns the resolver fields, used during the second phase of parsing
- when fields are resolved into dates and times.
- By default, a formatter has no resolver fields, and thus returns null.
- See `],
-					[/* reference */ 'r', `#withResolverFields(java.util.Set)`, `withResolverFields(Set)`],
-					[/* text */ 't', ` for more details.`]
-				]]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the immutable set of resolver fields of this formatter, null if no fields`]
+				[/* text */ 't', `a formatter based on this formatter with the requested locale, not null`]
 			]
 		]],
 		[/* method */ 'withResolverFields(java.time.temporal.TemporalField...)', [
@@ -3319,6 +2581,243 @@ DocsCollector.collect('java.time.format.DateTimeFormatter', [
 			/* throws */ UDF,
 			[/* return description */
 				[/* text */ 't', `a formatter based on this formatter with the requested resolver style, not null`]
+			]
+		]],
+		[/* method */ 'withResolverStyle(java.time.format.ResolverStyle)', [
+			[/* method description */
+				[/* text */ 't', `Returns a copy of this formatter with a new resolver style.
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', `
+ This returns a formatter with similar state to this formatter but
+ with the resolver style set. By default, a formatter has the
+ `],
+					[/* reference */ 'r', `.ResolverStyle#SMART`],
+					[/* text */ 't', ` resolver style.
+ `]
+				]],
+				[/* block */ 'b', [
+					[/* text */ 't', `
+ Changing the resolver style only has an effect during parsing.
+ Parsing a text string occurs in two phases.
+ Phase 1 is a basic text parse according to the fields added to the builder.
+ Phase 2 resolves the parsed field-value pairs into date and/or time objects.
+ The resolver style is used to control how phase 2, resolving, happens.
+ See `],
+					[/* inline code block */ 'i', `ResolverStyle`],
+					[/* text */ 't', ` for more information on the options available.
+ `]
+				]],
+				[/* block */ 'b', `
+ This instance is immutable and unaffected by this method call.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'resolverStyle', [/* parameter description */
+					[/* text */ 't', `the new resolver style, not null`]
+				]]
+			],
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `a formatter based on this formatter with the requested resolver style, not null`]
+			]
+		]],
+		[/* method */ 'withZone(java.time.ZoneId)', [
+			[/* method description */
+				[/* text */ 't', `Returns a copy of this formatter with a new override zone.
+ `],
+				[/* block */ 'b', `
+ This returns a formatter with similar state to this formatter but
+ with the override zone set.
+ By default, a formatter has no override zone, returning null.
+ `],
+				[/* block */ 'b', `
+ If an override is added, then any instant that is formatted or parsed will be affected.
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', `
+ When formatting, if the temporal object contains an instant, then it will
+ be converted to a zoned date-time using the override zone.
+ Whether the temporal is an instant is determined by querying the
+ `],
+					[/* reference */ 'r', `java.ChronoField#INSTANT_SECONDS`],
+					[/* text */ 't', ` field.
+ If the input has a chronology then it will be retained unless overridden.
+ If the input does not have a chronology, such as `],
+					[/* inline code block */ 'i', `Instant`],
+					[/* text */ 't', `, then
+ the ISO chronology will be used.
+ `]
+				]],
+				[/* block */ 'b', [
+					[/* text */ 't', `
+ If the temporal object does not contain an instant, but does contain
+ an offset then an additional check is made. If the normalized override
+ zone is an offset that differs from the offset of the temporal, then
+ a `],
+					[/* inline code block */ 'i', `DateTimeException`],
+					[/* text */ 't', ` is thrown. In all other cases, the override
+ zone is added to the temporal, replacing any previous zone, but without
+ changing the date/time.
+ `]
+				]],
+				[/* block */ 'b', [
+					[/* text */ 't', `
+ When parsing, there are two distinct cases to consider.
+ If a zone has been parsed directly from the text, perhaps because
+ `],
+					[/* reference */ 'r', `.DateTimeFormatterBuilder#appendZoneId()`],
+					[/* text */ 't', ` was used, then
+ this override zone has no effect.
+ If no zone has been parsed, then this override zone will be included in
+ the result of the parse where it can be used to build instants and date-times.
+ `]
+				]],
+				[/* block */ 'b', `
+ This instance is immutable and unaffected by this method call.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'zone', [/* parameter description */
+					[/* text */ 't', `the new override zone, null if no override`]
+				]]
+			],
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `a formatter based on this formatter with the requested override zone, not null`]
+			]
+		]],
+		[/* method */ 'getDecimalStyle()', [
+			[/* method description */
+				[/* text */ 't', `Gets the DecimalStyle to be used during formatting.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the locale of this formatter, not null`]
+			]
+		]],
+		[/* method */ 'getResolverStyle()', [
+			[/* method description */
+				[/* text */ 't', `Gets the resolver style to use during parsing.
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', `
+ This returns the resolver style, used during the second phase of parsing
+ when fields are resolved into dates and times.
+ By default, a formatter has the `],
+					[/* reference */ 'r', `.ResolverStyle#SMART`],
+					[/* text */ 't', ` resolver style.
+ See `],
+					[/* reference */ 'r', `#withResolverStyle(java.time.format.ResolverStyle)`, `withResolverStyle(ResolverStyle)`],
+					[/* text */ 't', ` for more details.`]
+				]]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the resolver style of this formatter, not null`]
+			]
+		]],
+		[/* method */ 'parse(java.lang.CharSequence)', [
+			[/* method description */
+				[/* text */ 't', `Fully parses the text producing a temporal object.
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', `
+ This parses the entire text producing a temporal object.
+ It is typically more useful to use `],
+					[/* reference */ 'r', `#parse(java.lang.CharSequence,java.time.temporal.TemporalQuery)`, `parse(CharSequence, TemporalQuery)`],
+					[/* text */ 't', `.
+ The result of this method is `],
+					[/* inline code block */ 'i', `TemporalAccessor`],
+					[/* text */ 't', ` which has been resolved,
+ applying basic validation checks to help ensure a valid date-time.
+ `]
+				]],
+				[/* block */ 'b', `
+ If the parse completes without reading the entire length of the text,
+ or a problem occurs during parsing or merging, then an exception is thrown.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'text', [/* parameter description */
+					[/* text */ 't', `the text to parse, not null`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.time.format.DateTimeParseException', [/* throw description */
+					[/* text */ 't', `if unable to parse the requested result`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `the parsed temporal object, not null`]
+			]
+		]],
+		[/* method */ 'parse(java.lang.CharSequence,java.text.ParsePosition)', [
+			[/* method description */
+				[/* text */ 't', `Parses the text using this formatter, providing control over the text position.
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', `
+ This parses the text without requiring the parse to start from the beginning
+ of the string or finish at the end.
+ The result of this method is `],
+					[/* inline code block */ 'i', `TemporalAccessor`],
+					[/* text */ 't', ` which has been resolved,
+ applying basic validation checks to help ensure a valid date-time.
+ `]
+				]],
+				[/* block */ 'b', [
+					[/* text */ 't', `
+ The text will be parsed from the specified start `],
+					[/* inline code block */ 'i', `ParsePosition`],
+					[/* text */ 't', `.
+ The entire length of the text does not have to be parsed, the `],
+					[/* inline code block */ 'i', `ParsePosition`],
+					[/* text */ 't', `
+ will be updated with the index at the end of parsing.
+ `]
+				]],
+				[/* block */ 'b', [
+					[/* text */ 't', `
+ The operation of this method is slightly different to similar methods using
+ `],
+					[/* inline code block */ 'i', `ParsePosition`],
+					[/* text */ 't', ` on `],
+					[/* inline code block */ 'i', `java.text.Format`],
+					[/* text */ 't', `. That class will return
+ errors using the error index on the `],
+					[/* inline code block */ 'i', `ParsePosition`],
+					[/* text */ 't', `. By contrast, this
+ method will throw a `],
+					[/* reference */ 'r', `java.time.format.DateTimeParseException`],
+					[/* text */ 't', ` if an error occurs, with
+ the exception containing the error index.
+ This change in behavior is necessary due to the increased complexity of
+ parsing and resolving dates/times in this API.
+ `]
+				]],
+				[/* block */ 'b', `
+ If the formatter parses the same field more than once with different values,
+ the result will be an error.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'text', [/* parameter description */
+					[/* text */ 't', `the text to parse, not null`]
+				]],
+				[/* parameter */ 'position', [/* parameter description */
+					[/* text */ 't', `the position to parse from, updated with length parsed
+  and the index of any error, not null`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.time.format.DateTimeParseException', [/* throw description */
+					[/* text */ 't', `if unable to parse the requested result`]
+				]],
+				[/* throw */ 'java.lang.IndexOutOfBoundsException', [/* throw description */
+					[/* text */ 't', `if the position is invalid`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `the parsed temporal object, not null`]
 			]
 		]],
 		[/* method */ 'parseBest(java.lang.CharSequence,java.time.temporal.TemporalQuery...)', [
@@ -3475,87 +2974,588 @@ DocsCollector.collect('java.time.format.DateTimeFormatter', [
 				[/* text */ 't', `the parsed text, null if the parse results in an error`]
 			]
 		]],
-		[/* method */ 'toFormat(java.time.temporal.TemporalQuery)', [
+		[/* method */ 'getZone()', [
 			[/* method description */
-				[/* text */ 't', `Returns this formatter as a `],
-				[/* inline code block */ 'i', `java.text.Format`],
-				[/* text */ 't', ` instance that will
- parse using the specified query.
+				[/* text */ 't', `Gets the overriding zone to be used during formatting.
  `],
 				[/* block */ 'b', [
 					[/* text */ 't', `
- The returned `],
-					[/* reference */ 'r', `java.text.Format`],
-					[/* text */ 't', ` instance will format any `],
-					[/* reference */ 'r', `java.time.temporal.TemporalAccessor`],
-					[/* text */ 't', `
- and parses to the type specified.
- The type must be one that is supported by `],
-					[/* reference */ 'r', `#parse(java.lang.CharSequence)`, `parse(java.lang.CharSequence)`],
-					[/* text */ 't', `.
- `]
-				]],
-				[/* block */ 'b', [
-					[/* text */ 't', `
- Exceptions will follow the definitions of `],
-					[/* inline code block */ 'i', `Format`],
-					[/* text */ 't', `, see those methods
- for details about `],
-					[/* inline code block */ 'i', `IllegalArgumentException`],
-					[/* text */ 't', ` during formatting and
- `],
-					[/* inline code block */ 'i', `ParseException`],
-					[/* text */ 't', ` or null during parsing.
- The format does not support attributing of the returned format string.`]
-				]]
-			],
-			[/* parameters */
-				[/* parameter */ 'parseQuery', [/* parameter description */
-					[/* text */ 't', `the query defining the type to parse to, not null`]
-				]]
-			],
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `this formatter as a classic format instance, not null`]
-			]
-		]],
-		[/* method */ 'toFormat()', [
-			[/* method description */
-				[/* text */ 't', `Returns this formatter as a `],
-				[/* inline code block */ 'i', `java.text.Format`],
-				[/* text */ 't', ` instance.
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', `
- The returned `],
-					[/* reference */ 'r', `java.text.Format`],
-					[/* text */ 't', ` instance will format any `],
-					[/* reference */ 'r', `java.time.temporal.TemporalAccessor`],
-					[/* text */ 't', `
- and parses to a resolved `],
-					[/* reference */ 'r', `java.time.temporal.TemporalAccessor`],
-					[/* text */ 't', `.
- `]
-				]],
-				[/* block */ 'b', [
-					[/* text */ 't', `
- Exceptions will follow the definitions of `],
-					[/* inline code block */ 'i', `Format`],
-					[/* text */ 't', `, see those methods
- for details about `],
-					[/* inline code block */ 'i', `IllegalArgumentException`],
-					[/* text */ 't', ` during formatting and
- `],
-					[/* inline code block */ 'i', `ParseException`],
-					[/* text */ 't', ` or null during parsing.
- The format does not support attributing of the returned format string.`]
+ This returns the override zone, used to convert instants.
+ By default, a formatter has no override zone, returning null.
+ See `],
+					[/* reference */ 'r', `#withZone(java.time.ZoneId)`, `withZone(ZoneId)`],
+					[/* text */ 't', ` for more details on overriding.`]
 				]]
 			],
 			/* parameters */ UDF,
 			/* throws */ UDF,
 			[/* return description */
-				[/* text */ 't', `this formatter as a classic format instance, not null`]
+				[/* text */ 't', `the override zone of this formatter, null if no override`]
 			]
+		]],
+		[/* method */ 'getLocale()', [
+			[/* method description */
+				[/* text */ 't', `Gets the locale to be used during formatting.
+ `],
+				[/* block */ 'b', `
+ This is used to lookup any part of the formatter needing specific
+ localization, such as the text or localized pattern.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the locale of this formatter, not null`]
+			]
+		]],
+		[/* method */ 'getResolverFields()', [
+			[/* method description */
+				[/* text */ 't', `Gets the resolver fields to use during parsing.
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', `
+ This returns the resolver fields, used during the second phase of parsing
+ when fields are resolved into dates and times.
+ By default, a formatter has no resolver fields, and thus returns null.
+ See `],
+					[/* reference */ 'r', `#withResolverFields(java.util.Set)`, `withResolverFields(Set)`],
+					[/* text */ 't', ` for more details.`]
+				]]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the immutable set of resolver fields of this formatter, null if no fields`]
+			]
+		]],
+		[/* method */ 'parsedLeapSecond()', [
+			[/* method description */
+				[/* text */ 't', `A query that provides access to whether a leap-second was parsed.
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', `
+ This returns a singleton `],
+					[/* reference */ 'r', `java.time.temporal.TemporalQuery`],
+					[/* text */ 't', ` that provides
+ access to additional information from the parse. The query always returns
+ a non-null boolean, true if parsing saw a leap-second, false if not.
+ `]
+				]],
+				[/* block */ 'b', [
+					[/* text */ 't', `
+ Instant parsing handles the special "leap second" time of '23:59:60'.
+ Leap seconds occur at '23:59:60' in the UTC time-zone, but at other
+ local times in different time-zones. To avoid this potential ambiguity,
+ the handling of leap-seconds is limited to
+ `],
+					[/* reference */ 'r', `.DateTimeFormatterBuilder#appendInstant()`],
+					[/* text */ 't', `, as that method
+ always parses the instant with the UTC zone offset.
+ `]
+				]],
+				[/* block */ 'b', [
+					[/* text */ 't', `
+ If the time '23:59:60' is received, then a simple conversion is applied,
+ replacing the second-of-minute of 60 with 59. This query can be used
+ on the parse result to determine if the leap-second adjustment was made.
+ The query will return `],
+					[/* inline code block */ 'i', `true`],
+					[/* text */ 't', ` if it did adjust to remove the
+ leap-second, and `],
+					[/* inline code block */ 'i', `false`],
+					[/* text */ 't', ` if not. Note that applying a leap-second
+ smoothing mechanism, such as UTC-SLS, is the responsibility of the
+ application, as follows:
+ `]
+				]],
+				[/* code block */ 'c', `  TemporalAccessor parsed = formatter.parse(str);
+  Instant instant = parsed.query(Instant::from);
+  if (parsed.query(DateTimeFormatter.parsedLeapSecond())) {
+    // validate leap-second is correct and apply correct smoothing
+  }
+ `],
+				[/* block */ 'b', '']
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `a query that provides access to whether a leap-second was parsed`]
+			]
+		]],
+		[/* method */ 'parsedExcessDays()', [
+			[/* method description */
+				[/* text */ 't', `A query that provides access to the excess days that were parsed.
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', `
+ This returns a singleton `],
+					[/* reference */ 'r', `java.time.temporal.TemporalQuery`],
+					[/* text */ 't', ` that provides
+ access to additional information from the parse. The query always returns
+ a non-null period, with a zero period returned instead of null.
+ `]
+				]],
+				[/* block */ 'b', `
+ There are two situations where this query may return a non-zero period.
+ `],
+				[/* list */ 'l', [
+					[/* block */ 'b', [
+						[/* text */ 't', `If the `],
+						[/* inline code block */ 'i', `ResolverStyle`],
+						[/* text */ 't', ` is `],
+						[/* inline code block */ 'i', `LENIENT`],
+						[/* text */ 't', ` and a time is parsed
+  without a date, then the complete result of the parse consists of a
+  `],
+						[/* inline code block */ 'i', `LocalTime`],
+						[/* text */ 't', ` and an excess `],
+						[/* inline code block */ 'i', `Period`],
+						[/* text */ 't', ` in days.
+
+ `]
+					]],
+					[/* block */ 'b', [
+						[/* text */ 't', `If the `],
+						[/* inline code block */ 'i', `ResolverStyle`],
+						[/* text */ 't', ` is `],
+						[/* inline code block */ 'i', `SMART`],
+						[/* text */ 't', ` and a time is parsed
+  without a date where the time is 24:00:00, then the complete result of
+  the parse consists of a `],
+						[/* inline code block */ 'i', `LocalTime`],
+						[/* text */ 't', ` of 00:00:00 and an excess
+  `],
+						[/* inline code block */ 'i', `Period`],
+						[/* text */ 't', ` of one day.
+ `]
+					]]
+				]],
+				[/* block */ 'b', ''],
+				[/* block */ 'b', [
+					[/* text */ 't', `
+ In both cases, if a complete `],
+					[/* inline code block */ 'i', `ChronoLocalDateTime`],
+					[/* text */ 't', ` or `],
+					[/* inline code block */ 'i', `Instant`],
+					[/* text */ 't', `
+ is parsed, then the excess days are added to the date part.
+ As a result, this query will return a zero period.
+ `]
+				]],
+				[/* block */ 'b', [
+					[/* text */ 't', `
+ The `],
+					[/* inline code block */ 'i', `SMART`],
+					[/* text */ 't', ` behaviour handles the common "end of day" 24:00 value.
+ Processing in `],
+					[/* inline code block */ 'i', `LENIENT`],
+					[/* text */ 't', ` mode also produces the same result:
+ `]
+				]],
+				[/* code block */ 'c', `  Text to parse        Parsed object                         Excess days
+  "2012-12-03T00:00"   LocalDateTime.of(2012, 12, 3, 0, 0)   ZERO
+  "2012-12-03T24:00"   LocalDateTime.of(2012, 12, 4, 0, 0)   ZERO
+  "00:00"              LocalTime.of(0, 0)                    ZERO
+  "24:00"              LocalTime.of(0, 0)                    Period.ofDays(1)
+ `],
+				[/* text */ 't', `
+ The query can be used as follows:
+ `],
+				[/* code block */ 'c', `  TemporalAccessor parsed = formatter.parse(str);
+  LocalTime time = parsed.query(LocalTime::from);
+  Period extraDays = parsed.query(DateTimeFormatter.parsedExcessDays());
+ `],
+				[/* block */ 'b', '']
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `a query that provides access to the excess days that were parsed`]
+			]
+		]],
+		[/* method */ 'ofLocalizedDate(java.time.format.FormatStyle)', [
+			[/* method description */
+				[/* text */ 't', `Returns a locale specific date format for the ISO chronology.
+ `],
+				[/* block */ 'b', `
+ This returns a formatter that will format or parse a date.
+ The exact format pattern used varies by locale.
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', `
+ The locale is determined from the formatter. The formatter returned directly by
+ this method will use the `],
+					[/* reference */ 'r', `java.time.Locale#getDefault(java.util.Locale.Category)`],
+					[/* text */ 't', `.
+ The locale can be controlled using `],
+					[/* reference */ 'r', `#withLocale(java.util.Locale)`, `withLocale(Locale)`],
+					[/* text */ 't', `
+ on the result of this method.
+ `]
+				]],
+				[/* block */ 'b', [
+					[/* text */ 't', `
+ Note that the localized pattern is looked up lazily.
+ This `],
+					[/* inline code block */ 'i', `DateTimeFormatter`],
+					[/* text */ 't', ` holds the style required and the locale,
+ looking up the pattern required on demand.
+ `]
+				]],
+				[/* block */ 'b', [
+					[/* text */ 't', `
+ The returned formatter has a chronology of ISO set to ensure dates in
+ other calendar systems are correctly converted.
+ It has no override zone and uses the `],
+					[/* reference */ 'r', `.ResolverStyle#SMART`],
+					[/* text */ 't', ` resolver style.`]
+				]]
+			],
+			[/* parameters */
+				[/* parameter */ 'dateStyle', [/* parameter description */
+					[/* text */ 't', `the formatter style to obtain, not null`]
+				]]
+			],
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the date formatter, not null`]
+			]
+		]],
+		[/* method */ 'ofLocalizedDateTime(java.time.format.FormatStyle)', [
+			[/* method description */
+				[/* text */ 't', `Returns a locale specific date-time formatter for the ISO chronology.
+ `],
+				[/* block */ 'b', `
+ This returns a formatter that will format or parse a date-time.
+ The exact format pattern used varies by locale.
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', `
+ The locale is determined from the formatter. The formatter returned directly by
+ this method will use the `],
+					[/* reference */ 'r', `java.time.Locale#getDefault(java.util.Locale.Category)`],
+					[/* text */ 't', `.
+ The locale can be controlled using `],
+					[/* reference */ 'r', `#withLocale(java.util.Locale)`, `withLocale(Locale)`],
+					[/* text */ 't', `
+ on the result of this method.
+ `]
+				]],
+				[/* block */ 'b', [
+					[/* text */ 't', `
+ Note that the localized pattern is looked up lazily.
+ This `],
+					[/* inline code block */ 'i', `DateTimeFormatter`],
+					[/* text */ 't', ` holds the style required and the locale,
+ looking up the pattern required on demand.
+ `]
+				]],
+				[/* block */ 'b', [
+					[/* text */ 't', `
+ The returned formatter has a chronology of ISO set to ensure dates in
+ other calendar systems are correctly converted.
+ It has no override zone and uses the `],
+					[/* reference */ 'r', `.ResolverStyle#SMART`],
+					[/* text */ 't', ` resolver style.
+ The `],
+					[/* inline code block */ 'i', `FULL`],
+					[/* text */ 't', ` and `],
+					[/* inline code block */ 'i', `LONG`],
+					[/* text */ 't', ` styles typically require a time-zone.
+ When formatting using these styles, a `],
+					[/* inline code block */ 'i', `ZoneId`],
+					[/* text */ 't', ` must be available,
+ either by using `],
+					[/* inline code block */ 'i', `ZonedDateTime`],
+					[/* text */ 't', ` or `],
+					[/* reference */ 'r', `#withZone(java.time.ZoneId)`, `withZone(java.time.ZoneId)`],
+					[/* text */ 't', `.`]
+				]]
+			],
+			[/* parameters */
+				[/* parameter */ 'dateTimeStyle', [/* parameter description */
+					[/* text */ 't', `the formatter style to obtain, not null`]
+				]]
+			],
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the date-time formatter, not null`]
+			]
+		]],
+		[/* method */ 'ofLocalizedDateTime(java.time.format.FormatStyle,java.time.format.FormatStyle)', [
+			[/* method description */
+				[/* text */ 't', `Returns a locale specific date and time format for the ISO chronology.
+ `],
+				[/* block */ 'b', `
+ This returns a formatter that will format or parse a date-time.
+ The exact format pattern used varies by locale.
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', `
+ The locale is determined from the formatter. The formatter returned directly by
+ this method will use the `],
+					[/* reference */ 'r', `java.time.Locale#getDefault()`],
+					[/* text */ 't', `.
+ The locale can be controlled using `],
+					[/* reference */ 'r', `#withLocale(java.util.Locale)`, `withLocale(Locale)`],
+					[/* text */ 't', `
+ on the result of this method.
+ `]
+				]],
+				[/* block */ 'b', [
+					[/* text */ 't', `
+ Note that the localized pattern is looked up lazily.
+ This `],
+					[/* inline code block */ 'i', `DateTimeFormatter`],
+					[/* text */ 't', ` holds the style required and the locale,
+ looking up the pattern required on demand.
+ `]
+				]],
+				[/* block */ 'b', [
+					[/* text */ 't', `
+ The returned formatter has a chronology of ISO set to ensure dates in
+ other calendar systems are correctly converted.
+ It has no override zone and uses the `],
+					[/* reference */ 'r', `.ResolverStyle#SMART`],
+					[/* text */ 't', ` resolver style.
+ The `],
+					[/* inline code block */ 'i', `FULL`],
+					[/* text */ 't', ` and `],
+					[/* inline code block */ 'i', `LONG`],
+					[/* text */ 't', ` styles typically require a time-zone.
+ When formatting using these styles, a `],
+					[/* inline code block */ 'i', `ZoneId`],
+					[/* text */ 't', ` must be available,
+ either by using `],
+					[/* inline code block */ 'i', `ZonedDateTime`],
+					[/* text */ 't', ` or `],
+					[/* reference */ 'r', `#withZone(java.time.ZoneId)`, `withZone(java.time.ZoneId)`],
+					[/* text */ 't', `.`]
+				]]
+			],
+			[/* parameters */
+				[/* parameter */ 'dateStyle', [/* parameter description */
+					[/* text */ 't', `the date formatter style to obtain, not null`]
+				]],
+				[/* parameter */ 'timeStyle', [/* parameter description */
+					[/* text */ 't', `the time formatter style to obtain, not null`]
+				]]
+			],
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the date, time or date-time formatter, not null`]
+			]
+		]],
+		[/* method */ 'ofLocalizedTime(java.time.format.FormatStyle)', [
+			[/* method description */
+				[/* text */ 't', `Returns a locale specific time format for the ISO chronology.
+ `],
+				[/* block */ 'b', `
+ This returns a formatter that will format or parse a time.
+ The exact format pattern used varies by locale.
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', `
+ The locale is determined from the formatter. The formatter returned directly by
+ this method will use the `],
+					[/* reference */ 'r', `java.time.Locale#getDefault(java.util.Locale.Category)`],
+					[/* text */ 't', `.
+ The locale can be controlled using `],
+					[/* reference */ 'r', `#withLocale(java.util.Locale)`, `withLocale(Locale)`],
+					[/* text */ 't', `
+ on the result of this method.
+ `]
+				]],
+				[/* block */ 'b', [
+					[/* text */ 't', `
+ Note that the localized pattern is looked up lazily.
+ This `],
+					[/* inline code block */ 'i', `DateTimeFormatter`],
+					[/* text */ 't', ` holds the style required and the locale,
+ looking up the pattern required on demand.
+ `]
+				]],
+				[/* block */ 'b', [
+					[/* text */ 't', `
+ The returned formatter has a chronology of ISO set to ensure dates in
+ other calendar systems are correctly converted.
+ It has no override zone and uses the `],
+					[/* reference */ 'r', `.ResolverStyle#SMART`],
+					[/* text */ 't', ` resolver style.
+ The `],
+					[/* inline code block */ 'i', `FULL`],
+					[/* text */ 't', ` and `],
+					[/* inline code block */ 'i', `LONG`],
+					[/* text */ 't', ` styles typically require a time-zone.
+ When formatting using these styles, a `],
+					[/* inline code block */ 'i', `ZoneId`],
+					[/* text */ 't', ` must be available,
+ either by using `],
+					[/* inline code block */ 'i', `ZonedDateTime`],
+					[/* text */ 't', ` or `],
+					[/* reference */ 'r', `#withZone(java.time.ZoneId)`, `withZone(java.time.ZoneId)`],
+					[/* text */ 't', `.`]
+				]]
+			],
+			[/* parameters */
+				[/* parameter */ 'timeStyle', [/* parameter description */
+					[/* text */ 't', `the formatter style to obtain, not null`]
+				]]
+			],
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the time formatter, not null`]
+			]
+		]],
+		[/* method */ 'ofPattern(java.lang.String)', [
+			[/* method description */
+				[/* text */ 't', `Creates a formatter using the specified pattern.
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', `
+ This method will create a formatter based on a simple
+ `],
+					[/* text */ 't', `pattern of letters and symbols`],
+					[/* text */ 't', `
+ as described in the class documentation.
+ For example, `],
+					[/* inline code block */ 'i', `d MMM uuuu`],
+					[/* text */ 't', ` will format 2011-12-03 as '3 Dec 2011'.
+ `]
+				]],
+				[/* block */ 'b', [
+					[/* text */ 't', `
+ The formatter will use the `],
+					[/* reference */ 'r', `java.time.Locale#getDefault(java.util.Locale.Category)`],
+					[/* text */ 't', `.
+ This can be changed using `],
+					[/* reference */ 'r', `#withLocale(java.util.Locale)`, `withLocale(Locale)`],
+					[/* text */ 't', ` on the returned formatter.
+ Alternatively use the `],
+					[/* reference */ 'r', `#ofPattern(java.lang.String,java.util.Locale)`, `ofPattern(String, Locale)`],
+					[/* text */ 't', ` variant of this method.
+ `]
+				]],
+				[/* block */ 'b', [
+					[/* text */ 't', `
+ The returned formatter has no override chronology or zone.
+ It uses `],
+					[/* reference */ 'r', `.ResolverStyle#SMART`],
+					[/* text */ 't', ` resolver style.`]
+				]]
+			],
+			[/* parameters */
+				[/* parameter */ 'pattern', [/* parameter description */
+					[/* text */ 't', `the pattern to use, not null`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
+					[/* text */ 't', `if the pattern is invalid`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `the formatter based on the pattern, not null`]
+			]
+		]],
+		[/* method */ 'ofPattern(java.lang.String,java.util.Locale)', [
+			[/* method description */
+				[/* text */ 't', `Creates a formatter using the specified pattern and locale.
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', `
+ This method will create a formatter based on a simple
+ `],
+					[/* text */ 't', `pattern of letters and symbols`],
+					[/* text */ 't', `
+ as described in the class documentation.
+ For example, `],
+					[/* inline code block */ 'i', `d MMM uuuu`],
+					[/* text */ 't', ` will format 2011-12-03 as '3 Dec 2011'.
+ `]
+				]],
+				[/* block */ 'b', [
+					[/* text */ 't', `
+ The formatter will use the specified locale.
+ This can be changed using `],
+					[/* reference */ 'r', `#withLocale(java.util.Locale)`, `withLocale(Locale)`],
+					[/* text */ 't', ` on the returned formatter.
+ `]
+				]],
+				[/* block */ 'b', [
+					[/* text */ 't', `
+ The returned formatter has no override chronology or zone.
+ It uses `],
+					[/* reference */ 'r', `.ResolverStyle#SMART`],
+					[/* text */ 't', ` resolver style.`]
+				]]
+			],
+			[/* parameters */
+				[/* parameter */ 'pattern', [/* parameter description */
+					[/* text */ 't', `the pattern to use, not null`]
+				]],
+				[/* parameter */ 'locale', [/* parameter description */
+					[/* text */ 't', `the locale to use, not null`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
+					[/* text */ 't', `if the pattern is invalid`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `the formatter based on the pattern, not null`]
+			]
+		]],
+		[/* method */ 'formatTo(java.time.temporal.TemporalAccessor,java.lang.Appendable)', [
+			[/* method description */
+				[/* text */ 't', `Formats a date-time object to an `],
+				[/* inline code block */ 'i', `Appendable`],
+				[/* text */ 't', ` using this formatter.
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', `
+ This outputs the formatted date-time to the specified destination.
+ `],
+					[/* reference */ 'r', `java.lang.Appendable`],
+					[/* text */ 't', ` is a general purpose interface that is implemented by all
+ key character output classes including `],
+					[/* inline code block */ 'i', `StringBuffer`],
+					[/* text */ 't', `, `],
+					[/* inline code block */ 'i', `StringBuilder`],
+					[/* text */ 't', `,
+ `],
+					[/* inline code block */ 'i', `PrintStream`],
+					[/* text */ 't', ` and `],
+					[/* inline code block */ 'i', `Writer`],
+					[/* text */ 't', `.
+ `]
+				]],
+				[/* block */ 'b', [
+					[/* text */ 't', `
+ Although `],
+					[/* inline code block */ 'i', `Appendable`],
+					[/* text */ 't', ` methods throw an `],
+					[/* inline code block */ 'i', `IOException`],
+					[/* text */ 't', `, this method does not.
+ Instead, any `],
+					[/* inline code block */ 'i', `IOException`],
+					[/* text */ 't', ` is wrapped in a runtime exception.`]
+				]]
+			],
+			[/* parameters */
+				[/* parameter */ 'temporal', [/* parameter description */
+					[/* text */ 't', `the temporal object to format, not null`]
+				]],
+				[/* parameter */ 'appendable', [/* parameter description */
+					[/* text */ 't', `the appendable to format to, not null`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.time.DateTimeException', [/* throw description */
+					[/* text */ 't', `if an error occurs during formatting`]
+				]]
+			],
+			/* return */ UDF
 		]]
 	],
 ]);

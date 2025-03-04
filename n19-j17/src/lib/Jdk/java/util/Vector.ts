@@ -991,9 +991,9 @@ JdkClassCreateHelper.class('java.util.Vector', [
 		]
 	],
 	[/* declared fields */
-		[/* protected java.lang.Object[] java.util.Vector.elementData */
-			/* name */ 'elementData',
-			/* type */ '[Ljava.lang.Object;',
+		[/* protected int java.util.Vector.capacityIncrement */
+			/* name */ 'capacityIncrement',
+			/* type */ 'int',
 			/* annotations */ UDF,
 			/* modifiers */ 4
 		],
@@ -1003,9 +1003,9 @@ JdkClassCreateHelper.class('java.util.Vector', [
 			/* annotations */ UDF,
 			/* modifiers */ 4
 		],
-		[/* protected int java.util.Vector.capacityIncrement */
-			/* name */ 'capacityIncrement',
-			/* type */ 'int',
+		[/* protected java.lang.Object[] java.util.Vector.elementData */
+			/* name */ 'elementData',
+			/* type */ '[Ljava.lang.Object;',
 			/* annotations */ UDF,
 			/* modifiers */ 4
 		]

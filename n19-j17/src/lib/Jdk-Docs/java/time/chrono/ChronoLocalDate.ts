@@ -281,6 +281,29 @@ DocsCollector.collect('java.time.chrono.ChronoLocalDate', [
 				[/* text */ 't', `true if this is equal to the other date`]
 			]
 		]],
+		[/* method */ 'hashCode()', [
+			[/* method description */
+				[/* text */ 't', `A hash code for this date.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `a suitable hash code`]
+			]
+		]],
+		[/* method */ 'lengthOfMonth()', [
+			[/* method description */
+				[/* text */ 't', `Returns the length of the month represented by this date, as defined by the calendar system.
+ `],
+				[/* block */ 'b', `
+ This returns the length of the month in days.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the length of the month in days`]
+			]
+		]],
 		[/* method */ 'toString()', [
 			[/* method description */
 				[/* text */ 't', `Outputs this date as a `],
@@ -294,329 +317,6 @@ DocsCollector.collect('java.time.chrono.ChronoLocalDate', [
 			/* throws */ UDF,
 			[/* return description */
 				[/* text */ 't', `the formatted date, not null`]
-			]
-		]],
-		[/* method */ 'hashCode()', [
-			[/* method description */
-				[/* text */ 't', `A hash code for this date.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `a suitable hash code`]
-			]
-		]],
-		[/* method */ 'compareTo(java.time.chrono.ChronoLocalDate)', [
-			[/* method description */
-				[/* text */ 't', `Compares this date to another date, including the chronology.
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', `
- The comparison is based first on the underlying time-line date, then
- on the chronology.
- It is "consistent with equals", as defined by `],
-					[/* reference */ 'r', `java.lang.Comparable`],
-					[/* text */ 't', `.
- `]
-				]],
-				[/* block */ 'b', `
- For example, the following is the comparator order:
- `],
-				[/* list */ 'l', [
-					[/* block */ 'b', [
-						[/* inline code block */ 'i', `2012-12-03 (ISO)`]
-					]],
-					[/* block */ 'b', [
-						[/* inline code block */ 'i', `2012-12-04 (ISO)`]
-					]],
-					[/* block */ 'b', [
-						[/* inline code block */ 'i', `2555-12-04 (ThaiBuddhist)`]
-					]],
-					[/* block */ 'b', [
-						[/* inline code block */ 'i', `2012-12-05 (ISO)`]
-					]]
-				]],
-				[/* text */ 't', `
- Values #2 and #3 represent the same date on the time-line.
- When two values represent the same date, the chronology ID is compared to distinguish them.
- This step is needed to make the ordering "consistent with equals".
- `],
-				[/* block */ 'b', ''],
-				[/* block */ 'b', [
-					[/* text */ 't', `
- If all the date objects being compared are in the same chronology, then the
- additional chronology stage is not required and only the local date is used.
- To compare the dates of two `],
-					[/* inline code block */ 'i', `TemporalAccessor`],
-					[/* text */ 't', ` instances, including dates
- in two different chronologies, use `],
-					[/* reference */ 'r', `java.ChronoField#EPOCH_DAY`],
-					[/* text */ 't', ` as a comparator.
- `]
-				]],
-				[/* block */ 'b', `
- This default implementation performs the comparison defined above.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'other', [/* parameter description */
-					[/* text */ 't', `the other date to compare to, not null`]
-				]]
-			],
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the comparator value, negative if less, positive if greater`]
-			]
-		]],
-		[/* method */ 'format(java.time.format.DateTimeFormatter)', [
-			[/* method description */
-				[/* text */ 't', `Formats this date using the specified formatter.
- `],
-				[/* block */ 'b', `
- This date will be passed to the formatter to produce a string.
- `],
-				[/* block */ 'b', `
- The default implementation must behave as follows:
- `],
-				[/* code block */ 'c', `  return formatter.format(this);
- `],
-				[/* block */ 'b', '']
-			],
-			[/* parameters */
-				[/* parameter */ 'formatter', [/* parameter description */
-					[/* text */ 't', `the formatter to use, not null`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.time.DateTimeException', [/* throw description */
-					[/* text */ 't', `if an error occurs during printing`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `the formatted date string, not null`]
-			]
-		]],
-		[/* method */ 'from(java.time.temporal.TemporalAccessor)', [
-			[/* method description */
-				[/* text */ 't', `Obtains an instance of `],
-				[/* inline code block */ 'i', `ChronoLocalDate`],
-				[/* text */ 't', ` from a temporal object.
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', `
- This obtains a local date based on the specified temporal.
- A `],
-					[/* inline code block */ 'i', `TemporalAccessor`],
-					[/* text */ 't', ` represents an arbitrary set of date and time information,
- which this factory converts to an instance of `],
-					[/* inline code block */ 'i', `ChronoLocalDate`],
-					[/* text */ 't', `.
- `]
-				]],
-				[/* block */ 'b', [
-					[/* text */ 't', `
- The conversion extracts and combines the chronology and the date
- from the temporal object. The behavior is equivalent to using
- `],
-					[/* reference */ 'r', `.Chronology#date(java.time.temporal.TemporalAccessor)`],
-					[/* text */ 't', ` with the extracted chronology.
- Implementations are permitted to perform optimizations such as accessing
- those fields that are equivalent to the relevant objects.
- `]
-				]],
-				[/* block */ 'b', [
-					[/* text */ 't', `
- This method matches the signature of the functional interface `],
-					[/* reference */ 'r', `java.time.temporal.TemporalQuery`],
-					[/* text */ 't', `
- allowing it to be used as a query via method reference, `],
-					[/* inline code block */ 'i', `ChronoLocalDate::from`],
-					[/* text */ 't', `.`]
-				]]
-			],
-			[/* parameters */
-				[/* parameter */ 'temporal', [/* parameter description */
-					[/* text */ 't', `the temporal object to convert, not null`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.time.DateTimeException', [/* throw description */
-					[/* text */ 't', `if unable to convert to a `],
-					[/* inline code block */ 'i', `ChronoLocalDate`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `the date, not null`]
-			]
-		]],
-		[/* method */ 'query(java.time.temporal.TemporalQuery)', [
-			[/* method description */
-				[/* text */ 't', `Queries this date using the specified query.
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', `
- This queries this date using the specified query strategy object.
- The `],
-					[/* inline code block */ 'i', `TemporalQuery`],
-					[/* text */ 't', ` object defines the logic to be used to
- obtain the result. Read the documentation of the query to understand
- what the result of this method will be.
- `]
-				]],
-				[/* block */ 'b', [
-					[/* text */ 't', `
- The result of this method is obtained by invoking the
- `],
-					[/* reference */ 'r', `java.TemporalQuery#queryFrom(java.time.temporal.TemporalAccessor)`],
-					[/* text */ 't', ` method on the
- specified query passing `],
-					[/* inline code block */ 'i', `this`],
-					[/* text */ 't', ` as the argument.`]
-				]]
-			],
-			[/* parameters */
-				[/* parameter */ 'query', [/* parameter description */
-					[/* text */ 't', `the query to invoke, not null`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.time.DateTimeException', [/* throw description */
-					[/* text */ 't', `if unable to query (defined by the query)`]
-				]],
-				[/* throw */ 'java.lang.ArithmeticException', [/* throw description */
-					[/* text */ 't', `if numeric overflow occurs (defined by the query)`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `the query result, null may be returned (defined by the query)`]
-			]
-		]],
-		[/* method */ 'isSupported(java.time.temporal.TemporalUnit)', [
-			[/* method description */
-				[/* text */ 't', `Checks if the specified unit is supported.
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', `
- This checks if the specified unit can be added to or subtracted from this date.
- If false, then calling the `],
-					[/* reference */ 'r', `#plus(long,java.time.temporal.TemporalUnit)`, `plus(long, TemporalUnit)`],
-					[/* text */ 't', ` and
- `],
-					[/* reference */ 'r', `#minus(long,java.time.temporal.TemporalUnit)`, `minus`],
-					[/* text */ 't', ` methods will throw an exception.
- `]
-				]],
-				[/* block */ 'b', [
-					[/* text */ 't', `
- The set of supported units is defined by the chronology and normally includes
- all `],
-					[/* inline code block */ 'i', `ChronoUnit`],
-					[/* text */ 't', ` date units except `],
-					[/* inline code block */ 'i', `FOREVER`],
-					[/* text */ 't', `.
- `]
-				]],
-				[/* block */ 'b', [
-					[/* text */ 't', `
- If the unit is not a `],
-					[/* inline code block */ 'i', `ChronoUnit`],
-					[/* text */ 't', `, then the result of this method
- is obtained by invoking `],
-					[/* inline code block */ 'i', `TemporalUnit.isSupportedBy(Temporal)`],
-					[/* text */ 't', `
- passing `],
-					[/* inline code block */ 'i', `this`],
-					[/* text */ 't', ` as the argument.
- Whether the unit is supported is determined by the unit.`]
-				]]
-			],
-			[/* parameters */
-				[/* parameter */ 'unit', [/* parameter description */
-					[/* text */ 't', `the unit to check, null returns false`]
-				]]
-			],
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `true if the unit can be added/subtracted, false if not`]
-			]
-		]],
-		[/* method */ 'isSupported(java.time.temporal.TemporalField)', [
-			[/* method description */
-				[/* text */ 't', `Checks if the specified field is supported.
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', `
- This checks if the specified field can be queried on this date.
- If false, then calling the `],
-					[/* reference */ 'r', `java.TemporalAccessor#range(java.time.temporal.TemporalField)`],
-					[/* text */ 't', `,
- `],
-					[/* reference */ 'r', `java.TemporalAccessor#get(java.time.temporal.TemporalField)`],
-					[/* text */ 't', ` and `],
-					[/* reference */ 'r', `#with(java.time.temporal.TemporalField,long)`, `with(TemporalField, long)`],
-					[/* text */ 't', `
- methods will throw an exception.
- `]
-				]],
-				[/* block */ 'b', [
-					[/* text */ 't', `
- The set of supported fields is defined by the chronology and normally includes
- all `],
-					[/* inline code block */ 'i', `ChronoField`],
-					[/* text */ 't', ` date fields.
- `]
-				]],
-				[/* block */ 'b', [
-					[/* text */ 't', `
- If the field is not a `],
-					[/* inline code block */ 'i', `ChronoField`],
-					[/* text */ 't', `, then the result of this method
- is obtained by invoking `],
-					[/* inline code block */ 'i', `TemporalField.isSupportedBy(TemporalAccessor)`],
-					[/* text */ 't', `
- passing `],
-					[/* inline code block */ 'i', `this`],
-					[/* text */ 't', ` as the argument.
- Whether the field is supported is determined by the field.`]
-				]]
-			],
-			[/* parameters */
-				[/* parameter */ 'field', [/* parameter description */
-					[/* text */ 't', `the field to check, null returns false`]
-				]]
-			],
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `true if the field can be queried, false if not`]
-			]
-		]],
-		[/* method */ 'isEqual(java.time.chrono.ChronoLocalDate)', [
-			[/* method description */
-				[/* text */ 't', `Checks if this date is equal to the specified date ignoring the chronology.
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', `
- This method differs from the comparison in `],
-					[/* reference */ 'r', `#compareTo(java.time.chrono.ChronoLocalDate)`, `compareTo(java.time.chrono.ChronoLocalDate)`],
-					[/* text */ 't', ` in that it
- only compares the underlying date and not the chronology.
- This allows dates in different calendar systems to be compared based
- on the time-line position.
- This is equivalent to using `],
-					[/* inline code block */ 'i', `date1.toEpochDay() == date2.toEpochDay()`],
-					[/* text */ 't', `.
- `]
-				]],
-				[/* block */ 'b', `
- This default implementation performs the comparison based on the epoch-day.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'other', [/* parameter description */
-					[/* text */ 't', `the other date to compare to, not null`]
-				]]
-			],
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `true if the underlying date is equal to the specified date`]
 			]
 		]],
 		[/* method */ 'getChronology()', [
@@ -639,232 +339,52 @@ DocsCollector.collect('java.time.chrono.ChronoLocalDate', [
 				[/* text */ 't', `the chronology, not null`]
 			]
 		]],
-		[/* method */ 'adjustInto(java.time.temporal.Temporal)', [
+		[/* method */ 'until(java.time.chrono.ChronoLocalDate)', [
 			[/* method description */
-				[/* text */ 't', `Adjusts the specified temporal object to have the same date as this object.
+				[/* text */ 't', `Calculates the period between this date and another date as a `],
+				[/* inline code block */ 'i', `ChronoPeriod`],
+				[/* text */ 't', `.
  `],
+				[/* block */ 'b', [
+					[/* text */ 't', `
+ This calculates the period between two dates. All supplied chronologies
+ calculate the period using years, months and days, however the
+ `],
+					[/* inline code block */ 'i', `ChronoPeriod`],
+					[/* text */ 't', ` API allows the period to be represented using other units.
+ `]
+				]],
+				[/* block */ 'b', [
+					[/* text */ 't', `
+ The start and end points are `],
+					[/* inline code block */ 'i', `this`],
+					[/* text */ 't', ` and the specified date.
+ The result will be negative if the end is before the start.
+ The negative sign will be the same in each of year, month and day.
+ `]
+				]],
 				[/* block */ 'b', `
- This returns a temporal object of the same observable type as the input
- with the date changed to be the same as this.
+ The calculation is performed using the chronology of this date.
+ If necessary, the input date will be converted to match.
  `],
-				[/* block */ 'b', [
-					[/* text */ 't', `
- The adjustment is equivalent to using `],
-					[/* reference */ 'r', `java.Temporal#with(java.time.temporal.TemporalField,long)`],
-					[/* text */ 't', `
- passing `],
-					[/* reference */ 'r', `java.ChronoField#EPOCH_DAY`],
-					[/* text */ 't', ` as the field.
- `]
-				]],
-				[/* block */ 'b', [
-					[/* text */ 't', `
- In most cases, it is clearer to reverse the calling pattern by using
- `],
-					[/* reference */ 'r', `java.Temporal#with(java.time.temporal.TemporalAdjuster)`],
-					[/* text */ 't', `:
- `]
-				]],
-				[/* code block */ 'c', `   // these two lines are equivalent, but the second approach is recommended
-   temporal = thisLocalDate.adjustInto(temporal);
-   temporal = temporal.with(thisLocalDate);
- `],
-				[/* block */ 'b', ''],
 				[/* block */ 'b', `
  This instance is immutable and unaffected by this method call.`]
 			],
 			[/* parameters */
-				[/* parameter */ 'temporal', [/* parameter description */
-					[/* text */ 't', `the target object to be adjusted, not null`]
+				[/* parameter */ 'endDateExclusive', [/* parameter description */
+					[/* text */ 't', `the end date, exclusive, which may be in any chronology, not null`]
 				]]
 			],
 			[/* throws */
 				[/* throw */ 'java.time.DateTimeException', [/* throw description */
-					[/* text */ 't', `if unable to make the adjustment`]
+					[/* text */ 't', `if the period cannot be calculated`]
 				]],
 				[/* throw */ 'java.lang.ArithmeticException', [/* throw description */
 					[/* text */ 't', `if numeric overflow occurs`]
 				]]
 			],
 			[/* return description */
-				[/* text */ 't', `the adjusted object, not null`]
-			]
-		]],
-		[/* method */ 'with(java.time.temporal.TemporalAdjuster)', [
-			[/* method description */
-				[/* text */ 't', `Returns an adjusted object of the same type as this object with the adjustment made.
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', `
- This adjusts this date-time according to the rules of the specified adjuster.
- A simple adjuster might simply set the one of the fields, such as the year field.
- A more complex adjuster might set the date to the last day of the month.
- A selection of common adjustments is provided in
- `],
-					[/* reference */ 'r', `java.time.temporal.TemporalAdjusters`],
-					[/* text */ 't', `.
- These include finding the "last day of the month" and "next Wednesday".
- The adjuster is responsible for handling special cases, such as the varying
- lengths of month and leap years.
- `]
-				]],
-				[/* block */ 'b', `
- Some example code indicating how and why this method is used:
- `],
-				[/* code block */ 'c', `  date = date.with(Month.JULY);        // most key classes implement TemporalAdjuster
-  date = date.with(lastDayOfMonth());  // static import from Adjusters
-  date = date.with(next(WEDNESDAY));   // static import from Adjusters and DayOfWeek
- `],
-				[/* block */ 'b', '']
-			],
-			[/* parameters */
-				[/* parameter */ 'adjuster', [/* parameter description */
-					[/* text */ 't', `the adjuster to use, not null`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.time.DateTimeException', [/* throw description */
-					[/* text */ 't', `if unable to make the adjustment`]
-				]],
-				[/* throw */ 'java.lang.ArithmeticException', [/* throw description */
-					[/* text */ 't', `if numeric overflow occurs`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `an object of the same type with the specified adjustment made, not null`]
-			]
-		]],
-		[/* method */ 'with(java.time.temporal.TemporalField,long)', [
-			[/* method description */
-				[/* text */ 't', `Returns an object of the same type as this object with the specified field altered.
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', `
- This returns a new object based on this one with the value for the specified field changed.
- For example, on a `],
-					[/* inline code block */ 'i', `LocalDate`],
-					[/* text */ 't', `, this could be used to set the year, month or day-of-month.
- The returned object will have the same observable type as this object.
- `]
-				]],
-				[/* block */ 'b', `
- In some cases, changing a field is not fully defined. For example, if the target object is
- a date representing the 31st January, then changing the month to February would be unclear.
- In cases like this, the field is responsible for resolving the result. Typically it will choose
- the previous valid date, which would be the last valid day of February in this example.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'field', [/* parameter description */
-					[/* text */ 't', `the field to set in the result, not null`]
-				]],
-				[/* parameter */ 'newValue', [/* parameter description */
-					[/* text */ 't', `the new value of the field in the result`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.time.DateTimeException', [/* throw description */
-					[/* text */ 't', `if the field cannot be set`]
-				]],
-				[/* throw */ 'java.time.temporal.UnsupportedTemporalTypeException', [/* throw description */
-					[/* text */ 't', `if the field is not supported`]
-				]],
-				[/* throw */ 'java.lang.ArithmeticException', [/* throw description */
-					[/* text */ 't', `if numeric overflow occurs`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `an object of the same type with the specified field set, not null`]
-			]
-		]],
-		[/* method */ 'plus(java.time.temporal.TemporalAmount)', [
-			[/* method description */
-				[/* text */ 't', `Returns an object of the same type as this object with an amount added.
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', `
- This adjusts this temporal, adding according to the rules of the specified amount.
- The amount is typically a `],
-					[/* reference */ 'r', `java.time.Period`],
-					[/* text */ 't', ` but may be any other type implementing
- the `],
-					[/* reference */ 'r', `java.time.temporal.TemporalAmount`],
-					[/* text */ 't', ` interface, such as `],
-					[/* reference */ 'r', `java.time.Duration`],
-					[/* text */ 't', `.
- `]
-				]],
-				[/* block */ 'b', `
- Some example code indicating how and why this method is used:
- `],
-				[/* code block */ 'c', `  date = date.plus(period);                // add a Period instance
-  date = date.plus(duration);              // add a Duration instance
-  date = date.plus(workingDays(6));        // example user-written workingDays method
- `],
-				[/* block */ 'b', ''],
-				[/* block */ 'b', [
-					[/* text */ 't', `
- Note that calling `],
-					[/* inline code block */ 'i', `plus`],
-					[/* text */ 't', ` followed by `],
-					[/* inline code block */ 'i', `minus`],
-					[/* text */ 't', ` is not guaranteed to
- return the same date-time.`]
-				]]
-			],
-			[/* parameters */
-				[/* parameter */ 'amount', [/* parameter description */
-					[/* text */ 't', `the amount to add, not null`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.time.DateTimeException', [/* throw description */
-					[/* text */ 't', `if the addition cannot be made`]
-				]],
-				[/* throw */ 'java.lang.ArithmeticException', [/* throw description */
-					[/* text */ 't', `if numeric overflow occurs`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `an object of the same type with the specified adjustment made, not null`]
-			]
-		]],
-		[/* method */ 'plus(long,java.time.temporal.TemporalUnit)', [
-			[/* method description */
-				[/* text */ 't', `Returns an object of the same type as this object with the specified period added.
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', `
- This method returns a new object based on this one with the specified period added.
- For example, on a `],
-					[/* inline code block */ 'i', `LocalDate`],
-					[/* text */ 't', `, this could be used to add a number of years, months or days.
- The returned object will have the same observable type as this object.
- `]
-				]],
-				[/* block */ 'b', `
- In some cases, changing a field is not fully defined. For example, if the target object is
- a date representing the 31st January, then adding one month would be unclear.
- In cases like this, the field is responsible for resolving the result. Typically it will choose
- the previous valid date, which would be the last valid day of February in this example.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'amountToAdd', [/* parameter description */
-					[/* text */ 't', `the amount of the specified unit to add, may be negative`]
-				]],
-				[/* parameter */ 'unit', [/* parameter description */
-					[/* text */ 't', `the unit of the amount to add, not null`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.time.DateTimeException', [/* throw description */
-					[/* text */ 't', `if the unit cannot be added`]
-				]],
-				[/* throw */ 'java.lang.ArithmeticException', [/* throw description */
-					[/* text */ 't', `if numeric overflow occurs`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `an object of the same type with the specified period added, not null`]
+				[/* text */ 't', `the period between this date and the end date, not null`]
 			]
 		]],
 		[/* method */ 'until(java.time.temporal.Temporal,java.time.temporal.TemporalUnit)', [
@@ -990,52 +510,366 @@ DocsCollector.collect('java.time.chrono.ChronoLocalDate', [
 				[/* text */ 't', `the amount of time between this date and the end date`]
 			]
 		]],
-		[/* method */ 'until(java.time.chrono.ChronoLocalDate)', [
+		[/* method */ 'query(java.time.temporal.TemporalQuery)', [
 			[/* method description */
-				[/* text */ 't', `Calculates the period between this date and another date as a `],
-				[/* inline code block */ 'i', `ChronoPeriod`],
-				[/* text */ 't', `.
+				[/* text */ 't', `Queries this date using the specified query.
  `],
 				[/* block */ 'b', [
 					[/* text */ 't', `
- This calculates the period between two dates. All supplied chronologies
- calculate the period using years, months and days, however the
- `],
-					[/* inline code block */ 'i', `ChronoPeriod`],
-					[/* text */ 't', ` API allows the period to be represented using other units.
+ This queries this date using the specified query strategy object.
+ The `],
+					[/* inline code block */ 'i', `TemporalQuery`],
+					[/* text */ 't', ` object defines the logic to be used to
+ obtain the result. Read the documentation of the query to understand
+ what the result of this method will be.
  `]
 				]],
 				[/* block */ 'b', [
 					[/* text */ 't', `
- The start and end points are `],
+ The result of this method is obtained by invoking the
+ `],
+					[/* reference */ 'r', `java.TemporalQuery#queryFrom(java.time.temporal.TemporalAccessor)`],
+					[/* text */ 't', ` method on the
+ specified query passing `],
 					[/* inline code block */ 'i', `this`],
-					[/* text */ 't', ` and the specified date.
- The result will be negative if the end is before the start.
- The negative sign will be the same in each of year, month and day.
- `]
-				]],
-				[/* block */ 'b', `
- The calculation is performed using the chronology of this date.
- If necessary, the input date will be converted to match.
- `],
-				[/* block */ 'b', `
- This instance is immutable and unaffected by this method call.`]
+					[/* text */ 't', ` as the argument.`]
+				]]
 			],
 			[/* parameters */
-				[/* parameter */ 'endDateExclusive', [/* parameter description */
-					[/* text */ 't', `the end date, exclusive, which may be in any chronology, not null`]
+				[/* parameter */ 'query', [/* parameter description */
+					[/* text */ 't', `the query to invoke, not null`]
 				]]
 			],
 			[/* throws */
 				[/* throw */ 'java.time.DateTimeException', [/* throw description */
-					[/* text */ 't', `if the period cannot be calculated`]
+					[/* text */ 't', `if unable to query (defined by the query)`]
 				]],
 				[/* throw */ 'java.lang.ArithmeticException', [/* throw description */
-					[/* text */ 't', `if numeric overflow occurs`]
+					[/* text */ 't', `if numeric overflow occurs (defined by the query)`]
 				]]
 			],
 			[/* return description */
-				[/* text */ 't', `the period between this date and the end date, not null`]
+				[/* text */ 't', `the query result, null may be returned (defined by the query)`]
+			]
+		]],
+		[/* method */ 'isAfter(java.time.chrono.ChronoLocalDate)', [
+			[/* method description */
+				[/* text */ 't', `Checks if this date is after the specified date ignoring the chronology.
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', `
+ This method differs from the comparison in `],
+					[/* reference */ 'r', `#compareTo(java.time.chrono.ChronoLocalDate)`, `compareTo(java.time.chrono.ChronoLocalDate)`],
+					[/* text */ 't', ` in that it
+ only compares the underlying date and not the chronology.
+ This allows dates in different calendar systems to be compared based
+ on the time-line position.
+ This is equivalent to using `],
+					[/* inline code block */ 'i', `date1.toEpochDay() > date2.toEpochDay()`],
+					[/* text */ 't', `.
+ `]
+				]],
+				[/* block */ 'b', `
+ This default implementation performs the comparison based on the epoch-day.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'other', [/* parameter description */
+					[/* text */ 't', `the other date to compare to, not null`]
+				]]
+			],
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `true if this is after the specified date`]
+			]
+		]],
+		[/* method */ 'isBefore(java.time.chrono.ChronoLocalDate)', [
+			[/* method description */
+				[/* text */ 't', `Checks if this date is before the specified date ignoring the chronology.
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', `
+ This method differs from the comparison in `],
+					[/* reference */ 'r', `#compareTo(java.time.chrono.ChronoLocalDate)`, `compareTo(java.time.chrono.ChronoLocalDate)`],
+					[/* text */ 't', ` in that it
+ only compares the underlying date and not the chronology.
+ This allows dates in different calendar systems to be compared based
+ on the time-line position.
+ This is equivalent to using `],
+					[/* inline code block */ 'i', `date1.toEpochDay() < date2.toEpochDay()`],
+					[/* text */ 't', `.
+ `]
+				]],
+				[/* block */ 'b', `
+ This default implementation performs the comparison based on the epoch-day.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'other', [/* parameter description */
+					[/* text */ 't', `the other date to compare to, not null`]
+				]]
+			],
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `true if this is before the specified date`]
+			]
+		]],
+		[/* method */ 'isEqual(java.time.chrono.ChronoLocalDate)', [
+			[/* method description */
+				[/* text */ 't', `Checks if this date is equal to the specified date ignoring the chronology.
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', `
+ This method differs from the comparison in `],
+					[/* reference */ 'r', `#compareTo(java.time.chrono.ChronoLocalDate)`, `compareTo(java.time.chrono.ChronoLocalDate)`],
+					[/* text */ 't', ` in that it
+ only compares the underlying date and not the chronology.
+ This allows dates in different calendar systems to be compared based
+ on the time-line position.
+ This is equivalent to using `],
+					[/* inline code block */ 'i', `date1.toEpochDay() == date2.toEpochDay()`],
+					[/* text */ 't', `.
+ `]
+				]],
+				[/* block */ 'b', `
+ This default implementation performs the comparison based on the epoch-day.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'other', [/* parameter description */
+					[/* text */ 't', `the other date to compare to, not null`]
+				]]
+			],
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `true if the underlying date is equal to the specified date`]
+			]
+		]],
+		[/* method */ 'isLeapYear()', [
+			[/* method description */
+				[/* text */ 't', `Checks if the year is a leap year, as defined by the calendar system.
+ `],
+				[/* block */ 'b', `
+ A leap-year is a year of a longer length than normal.
+ The exact meaning is determined by the chronology with the constraint that
+ a leap-year must imply a year-length longer than a non leap-year.
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', `
+ This default implementation uses `],
+					[/* reference */ 'r', `.Chronology#isLeapYear(long)`],
+					[/* text */ 't', `.`]
+				]]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `true if this date is in a leap year, false otherwise`]
+			]
+		]],
+		[/* method */ 'isSupported(java.time.temporal.TemporalField)', [
+			[/* method description */
+				[/* text */ 't', `Checks if the specified field is supported.
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', `
+ This checks if the specified field can be queried on this date.
+ If false, then calling the `],
+					[/* reference */ 'r', `java.TemporalAccessor#range(java.time.temporal.TemporalField)`],
+					[/* text */ 't', `,
+ `],
+					[/* reference */ 'r', `java.TemporalAccessor#get(java.time.temporal.TemporalField)`],
+					[/* text */ 't', ` and `],
+					[/* reference */ 'r', `#with(java.time.temporal.TemporalField,long)`, `with(TemporalField, long)`],
+					[/* text */ 't', `
+ methods will throw an exception.
+ `]
+				]],
+				[/* block */ 'b', [
+					[/* text */ 't', `
+ The set of supported fields is defined by the chronology and normally includes
+ all `],
+					[/* inline code block */ 'i', `ChronoField`],
+					[/* text */ 't', ` date fields.
+ `]
+				]],
+				[/* block */ 'b', [
+					[/* text */ 't', `
+ If the field is not a `],
+					[/* inline code block */ 'i', `ChronoField`],
+					[/* text */ 't', `, then the result of this method
+ is obtained by invoking `],
+					[/* inline code block */ 'i', `TemporalField.isSupportedBy(TemporalAccessor)`],
+					[/* text */ 't', `
+ passing `],
+					[/* inline code block */ 'i', `this`],
+					[/* text */ 't', ` as the argument.
+ Whether the field is supported is determined by the field.`]
+				]]
+			],
+			[/* parameters */
+				[/* parameter */ 'field', [/* parameter description */
+					[/* text */ 't', `the field to check, null returns false`]
+				]]
+			],
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `true if the field can be queried, false if not`]
+			]
+		]],
+		[/* method */ 'isSupported(java.time.temporal.TemporalUnit)', [
+			[/* method description */
+				[/* text */ 't', `Checks if the specified unit is supported.
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', `
+ This checks if the specified unit can be added to or subtracted from this date.
+ If false, then calling the `],
+					[/* reference */ 'r', `#plus(long,java.time.temporal.TemporalUnit)`, `plus(long, TemporalUnit)`],
+					[/* text */ 't', ` and
+ `],
+					[/* reference */ 'r', `#minus(long,java.time.temporal.TemporalUnit)`, `minus`],
+					[/* text */ 't', ` methods will throw an exception.
+ `]
+				]],
+				[/* block */ 'b', [
+					[/* text */ 't', `
+ The set of supported units is defined by the chronology and normally includes
+ all `],
+					[/* inline code block */ 'i', `ChronoUnit`],
+					[/* text */ 't', ` date units except `],
+					[/* inline code block */ 'i', `FOREVER`],
+					[/* text */ 't', `.
+ `]
+				]],
+				[/* block */ 'b', [
+					[/* text */ 't', `
+ If the unit is not a `],
+					[/* inline code block */ 'i', `ChronoUnit`],
+					[/* text */ 't', `, then the result of this method
+ is obtained by invoking `],
+					[/* inline code block */ 'i', `TemporalUnit.isSupportedBy(Temporal)`],
+					[/* text */ 't', `
+ passing `],
+					[/* inline code block */ 'i', `this`],
+					[/* text */ 't', ` as the argument.
+ Whether the unit is supported is determined by the unit.`]
+				]]
+			],
+			[/* parameters */
+				[/* parameter */ 'unit', [/* parameter description */
+					[/* text */ 't', `the unit to check, null returns false`]
+				]]
+			],
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `true if the unit can be added/subtracted, false if not`]
+			]
+		]],
+		[/* method */ 'compareTo(java.time.chrono.ChronoLocalDate)', [
+			[/* method description */
+				[/* text */ 't', `Compares this date to another date, including the chronology.
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', `
+ The comparison is based first on the underlying time-line date, then
+ on the chronology.
+ It is "consistent with equals", as defined by `],
+					[/* reference */ 'r', `java.lang.Comparable`],
+					[/* text */ 't', `.
+ `]
+				]],
+				[/* block */ 'b', `
+ For example, the following is the comparator order:
+ `],
+				[/* list */ 'l', [
+					[/* block */ 'b', [
+						[/* inline code block */ 'i', `2012-12-03 (ISO)`]
+					]],
+					[/* block */ 'b', [
+						[/* inline code block */ 'i', `2012-12-04 (ISO)`]
+					]],
+					[/* block */ 'b', [
+						[/* inline code block */ 'i', `2555-12-04 (ThaiBuddhist)`]
+					]],
+					[/* block */ 'b', [
+						[/* inline code block */ 'i', `2012-12-05 (ISO)`]
+					]]
+				]],
+				[/* text */ 't', `
+ Values #2 and #3 represent the same date on the time-line.
+ When two values represent the same date, the chronology ID is compared to distinguish them.
+ This step is needed to make the ordering "consistent with equals".
+ `],
+				[/* block */ 'b', ''],
+				[/* block */ 'b', [
+					[/* text */ 't', `
+ If all the date objects being compared are in the same chronology, then the
+ additional chronology stage is not required and only the local date is used.
+ To compare the dates of two `],
+					[/* inline code block */ 'i', `TemporalAccessor`],
+					[/* text */ 't', ` instances, including dates
+ in two different chronologies, use `],
+					[/* reference */ 'r', `java.ChronoField#EPOCH_DAY`],
+					[/* text */ 't', ` as a comparator.
+ `]
+				]],
+				[/* block */ 'b', `
+ This default implementation performs the comparison defined above.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'other', [/* parameter description */
+					[/* text */ 't', `the other date to compare to, not null`]
+				]]
+			],
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the comparator value, negative if less, positive if greater`]
+			]
+		]],
+		[/* method */ 'lengthOfYear()', [
+			[/* method description */
+				[/* text */ 't', `Returns the length of the year represented by this date, as defined by the calendar system.
+ `],
+				[/* block */ 'b', `
+ This returns the length of the year in days.
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', `
+ The default implementation uses `],
+					[/* reference */ 'r', `#isLeapYear()`, `isLeapYear()`],
+					[/* text */ 't', ` and returns 365 or 366.`]
+				]]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the length of the year in days`]
+			]
+		]],
+		[/* method */ 'format(java.time.format.DateTimeFormatter)', [
+			[/* method description */
+				[/* text */ 't', `Formats this date using the specified formatter.
+ `],
+				[/* block */ 'b', `
+ This date will be passed to the formatter to produce a string.
+ `],
+				[/* block */ 'b', `
+ The default implementation must behave as follows:
+ `],
+				[/* code block */ 'c', `  return formatter.format(this);
+ `],
+				[/* block */ 'b', '']
+			],
+			[/* parameters */
+				[/* parameter */ 'formatter', [/* parameter description */
+					[/* text */ 't', `the formatter to use, not null`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.time.DateTimeException', [/* throw description */
+					[/* text */ 't', `if an error occurs during printing`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `the formatted date string, not null`]
 			]
 		]],
 		[/* method */ 'minus(java.time.temporal.TemporalAmount)', [
@@ -1132,26 +966,181 @@ DocsCollector.collect('java.time.chrono.ChronoLocalDate', [
 				[/* text */ 't', `an object of the same type with the specified period subtracted, not null`]
 			]
 		]],
-		[/* method */ 'isLeapYear()', [
+		[/* method */ 'plus(java.time.temporal.TemporalAmount)', [
 			[/* method description */
-				[/* text */ 't', `Checks if the year is a leap year, as defined by the calendar system.
- `],
-				[/* block */ 'b', `
- A leap-year is a year of a longer length than normal.
- The exact meaning is determined by the chronology with the constraint that
- a leap-year must imply a year-length longer than a non leap-year.
+				[/* text */ 't', `Returns an object of the same type as this object with an amount added.
  `],
 				[/* block */ 'b', [
 					[/* text */ 't', `
- This default implementation uses `],
-					[/* reference */ 'r', `.Chronology#isLeapYear(long)`],
-					[/* text */ 't', `.`]
+ This adjusts this temporal, adding according to the rules of the specified amount.
+ The amount is typically a `],
+					[/* reference */ 'r', `java.time.Period`],
+					[/* text */ 't', ` but may be any other type implementing
+ the `],
+					[/* reference */ 'r', `java.time.temporal.TemporalAmount`],
+					[/* text */ 't', ` interface, such as `],
+					[/* reference */ 'r', `java.time.Duration`],
+					[/* text */ 't', `.
+ `]
+				]],
+				[/* block */ 'b', `
+ Some example code indicating how and why this method is used:
+ `],
+				[/* code block */ 'c', `  date = date.plus(period);                // add a Period instance
+  date = date.plus(duration);              // add a Duration instance
+  date = date.plus(workingDays(6));        // example user-written workingDays method
+ `],
+				[/* block */ 'b', ''],
+				[/* block */ 'b', [
+					[/* text */ 't', `
+ Note that calling `],
+					[/* inline code block */ 'i', `plus`],
+					[/* text */ 't', ` followed by `],
+					[/* inline code block */ 'i', `minus`],
+					[/* text */ 't', ` is not guaranteed to
+ return the same date-time.`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			[/* parameters */
+				[/* parameter */ 'amount', [/* parameter description */
+					[/* text */ 't', `the amount to add, not null`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.time.DateTimeException', [/* throw description */
+					[/* text */ 't', `if the addition cannot be made`]
+				]],
+				[/* throw */ 'java.lang.ArithmeticException', [/* throw description */
+					[/* text */ 't', `if numeric overflow occurs`]
+				]]
+			],
 			[/* return description */
-				[/* text */ 't', `true if this date is in a leap year, false otherwise`]
+				[/* text */ 't', `an object of the same type with the specified adjustment made, not null`]
+			]
+		]],
+		[/* method */ 'plus(long,java.time.temporal.TemporalUnit)', [
+			[/* method description */
+				[/* text */ 't', `Returns an object of the same type as this object with the specified period added.
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', `
+ This method returns a new object based on this one with the specified period added.
+ For example, on a `],
+					[/* inline code block */ 'i', `LocalDate`],
+					[/* text */ 't', `, this could be used to add a number of years, months or days.
+ The returned object will have the same observable type as this object.
+ `]
+				]],
+				[/* block */ 'b', `
+ In some cases, changing a field is not fully defined. For example, if the target object is
+ a date representing the 31st January, then adding one month would be unclear.
+ In cases like this, the field is responsible for resolving the result. Typically it will choose
+ the previous valid date, which would be the last valid day of February in this example.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'amountToAdd', [/* parameter description */
+					[/* text */ 't', `the amount of the specified unit to add, may be negative`]
+				]],
+				[/* parameter */ 'unit', [/* parameter description */
+					[/* text */ 't', `the unit of the amount to add, not null`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.time.DateTimeException', [/* throw description */
+					[/* text */ 't', `if the unit cannot be added`]
+				]],
+				[/* throw */ 'java.lang.ArithmeticException', [/* throw description */
+					[/* text */ 't', `if numeric overflow occurs`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `an object of the same type with the specified period added, not null`]
+			]
+		]],
+		[/* method */ 'with(java.time.temporal.TemporalAdjuster)', [
+			[/* method description */
+				[/* text */ 't', `Returns an adjusted object of the same type as this object with the adjustment made.
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', `
+ This adjusts this date-time according to the rules of the specified adjuster.
+ A simple adjuster might simply set the one of the fields, such as the year field.
+ A more complex adjuster might set the date to the last day of the month.
+ A selection of common adjustments is provided in
+ `],
+					[/* reference */ 'r', `java.time.temporal.TemporalAdjusters`],
+					[/* text */ 't', `.
+ These include finding the "last day of the month" and "next Wednesday".
+ The adjuster is responsible for handling special cases, such as the varying
+ lengths of month and leap years.
+ `]
+				]],
+				[/* block */ 'b', `
+ Some example code indicating how and why this method is used:
+ `],
+				[/* code block */ 'c', `  date = date.with(Month.JULY);        // most key classes implement TemporalAdjuster
+  date = date.with(lastDayOfMonth());  // static import from Adjusters
+  date = date.with(next(WEDNESDAY));   // static import from Adjusters and DayOfWeek
+ `],
+				[/* block */ 'b', '']
+			],
+			[/* parameters */
+				[/* parameter */ 'adjuster', [/* parameter description */
+					[/* text */ 't', `the adjuster to use, not null`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.time.DateTimeException', [/* throw description */
+					[/* text */ 't', `if unable to make the adjustment`]
+				]],
+				[/* throw */ 'java.lang.ArithmeticException', [/* throw description */
+					[/* text */ 't', `if numeric overflow occurs`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `an object of the same type with the specified adjustment made, not null`]
+			]
+		]],
+		[/* method */ 'with(java.time.temporal.TemporalField,long)', [
+			[/* method description */
+				[/* text */ 't', `Returns an object of the same type as this object with the specified field altered.
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', `
+ This returns a new object based on this one with the value for the specified field changed.
+ For example, on a `],
+					[/* inline code block */ 'i', `LocalDate`],
+					[/* text */ 't', `, this could be used to set the year, month or day-of-month.
+ The returned object will have the same observable type as this object.
+ `]
+				]],
+				[/* block */ 'b', `
+ In some cases, changing a field is not fully defined. For example, if the target object is
+ a date representing the 31st January, then changing the month to February would be unclear.
+ In cases like this, the field is responsible for resolving the result. Typically it will choose
+ the previous valid date, which would be the last valid day of February in this example.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'field', [/* parameter description */
+					[/* text */ 't', `the field to set in the result, not null`]
+				]],
+				[/* parameter */ 'newValue', [/* parameter description */
+					[/* text */ 't', `the new value of the field in the result`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.time.DateTimeException', [/* throw description */
+					[/* text */ 't', `if the field cannot be set`]
+				]],
+				[/* throw */ 'java.time.temporal.UnsupportedTemporalTypeException', [/* throw description */
+					[/* text */ 't', `if the field is not supported`]
+				]],
+				[/* throw */ 'java.lang.ArithmeticException', [/* throw description */
+					[/* text */ 't', `if numeric overflow occurs`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `an object of the same type with the specified field set, not null`]
 			]
 		]],
 		[/* method */ 'atTime(java.time.LocalTime)', [
@@ -1176,32 +1165,6 @@ DocsCollector.collect('java.time.chrono.ChronoLocalDate', [
 			/* throws */ UDF,
 			[/* return description */
 				[/* text */ 't', `the local date-time formed from this date and the specified time, not null`]
-			]
-		]],
-		[/* method */ 'toEpochDay()', [
-			[/* method description */
-				[/* text */ 't', `Converts this date to the Epoch Day.
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', `
- The `],
-					[/* reference */ 'r', `java.ChronoField#EPOCH_DAY`],
-					[/* text */ 't', ` is a simple
- incrementing count of days where day 0 is 1970-01-01 (ISO).
- This definition is the same for all chronologies, enabling conversion.
- `]
-				]],
-				[/* block */ 'b', [
-					[/* text */ 't', `
- This default implementation queries the `],
-					[/* inline code block */ 'i', `EPOCH_DAY`],
-					[/* text */ 't', ` field.`]
-				]]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the Epoch Day equivalent to this date`]
 			]
 		]],
 		[/* method */ 'getEra()', [
@@ -1241,64 +1204,134 @@ DocsCollector.collect('java.time.chrono.ChronoLocalDate', [
 				[/* text */ 't', `the chronology specific era constant applicable at this date, not null`]
 			]
 		]],
-		[/* method */ 'isAfter(java.time.chrono.ChronoLocalDate)', [
+		[/* method */ 'adjustInto(java.time.temporal.Temporal)', [
 			[/* method description */
-				[/* text */ 't', `Checks if this date is after the specified date ignoring the chronology.
+				[/* text */ 't', `Adjusts the specified temporal object to have the same date as this object.
+ `],
+				[/* block */ 'b', `
+ This returns a temporal object of the same observable type as the input
+ with the date changed to be the same as this.
  `],
 				[/* block */ 'b', [
 					[/* text */ 't', `
- This method differs from the comparison in `],
-					[/* reference */ 'r', `#compareTo(java.time.chrono.ChronoLocalDate)`, `compareTo(java.time.chrono.ChronoLocalDate)`],
-					[/* text */ 't', ` in that it
- only compares the underlying date and not the chronology.
- This allows dates in different calendar systems to be compared based
- on the time-line position.
- This is equivalent to using `],
-					[/* inline code block */ 'i', `date1.toEpochDay() > date2.toEpochDay()`],
-					[/* text */ 't', `.
+ The adjustment is equivalent to using `],
+					[/* reference */ 'r', `java.Temporal#with(java.time.temporal.TemporalField,long)`],
+					[/* text */ 't', `
+ passing `],
+					[/* reference */ 'r', `java.ChronoField#EPOCH_DAY`],
+					[/* text */ 't', ` as the field.
  `]
 				]],
+				[/* block */ 'b', [
+					[/* text */ 't', `
+ In most cases, it is clearer to reverse the calling pattern by using
+ `],
+					[/* reference */ 'r', `java.Temporal#with(java.time.temporal.TemporalAdjuster)`],
+					[/* text */ 't', `:
+ `]
+				]],
+				[/* code block */ 'c', `   // these two lines are equivalent, but the second approach is recommended
+   temporal = thisLocalDate.adjustInto(temporal);
+   temporal = temporal.with(thisLocalDate);
+ `],
+				[/* block */ 'b', ''],
 				[/* block */ 'b', `
- This default implementation performs the comparison based on the epoch-day.`]
+ This instance is immutable and unaffected by this method call.`]
 			],
 			[/* parameters */
-				[/* parameter */ 'other', [/* parameter description */
-					[/* text */ 't', `the other date to compare to, not null`]
+				[/* parameter */ 'temporal', [/* parameter description */
+					[/* text */ 't', `the target object to be adjusted, not null`]
 				]]
 			],
-			/* throws */ UDF,
+			[/* throws */
+				[/* throw */ 'java.time.DateTimeException', [/* throw description */
+					[/* text */ 't', `if unable to make the adjustment`]
+				]],
+				[/* throw */ 'java.lang.ArithmeticException', [/* throw description */
+					[/* text */ 't', `if numeric overflow occurs`]
+				]]
+			],
 			[/* return description */
-				[/* text */ 't', `true if this is after the specified date`]
+				[/* text */ 't', `the adjusted object, not null`]
 			]
 		]],
-		[/* method */ 'isBefore(java.time.chrono.ChronoLocalDate)', [
+		[/* method */ 'toEpochDay()', [
 			[/* method description */
-				[/* text */ 't', `Checks if this date is before the specified date ignoring the chronology.
+				[/* text */ 't', `Converts this date to the Epoch Day.
  `],
 				[/* block */ 'b', [
 					[/* text */ 't', `
- This method differs from the comparison in `],
-					[/* reference */ 'r', `#compareTo(java.time.chrono.ChronoLocalDate)`, `compareTo(java.time.chrono.ChronoLocalDate)`],
-					[/* text */ 't', ` in that it
- only compares the underlying date and not the chronology.
- This allows dates in different calendar systems to be compared based
- on the time-line position.
- This is equivalent to using `],
-					[/* inline code block */ 'i', `date1.toEpochDay() < date2.toEpochDay()`],
+ The `],
+					[/* reference */ 'r', `java.ChronoField#EPOCH_DAY`],
+					[/* text */ 't', ` is a simple
+ incrementing count of days where day 0 is 1970-01-01 (ISO).
+ This definition is the same for all chronologies, enabling conversion.
+ `]
+				]],
+				[/* block */ 'b', [
+					[/* text */ 't', `
+ This default implementation queries the `],
+					[/* inline code block */ 'i', `EPOCH_DAY`],
+					[/* text */ 't', ` field.`]
+				]]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the Epoch Day equivalent to this date`]
+			]
+		]],
+		[/* method */ 'from(java.time.temporal.TemporalAccessor)', [
+			[/* method description */
+				[/* text */ 't', `Obtains an instance of `],
+				[/* inline code block */ 'i', `ChronoLocalDate`],
+				[/* text */ 't', ` from a temporal object.
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', `
+ This obtains a local date based on the specified temporal.
+ A `],
+					[/* inline code block */ 'i', `TemporalAccessor`],
+					[/* text */ 't', ` represents an arbitrary set of date and time information,
+ which this factory converts to an instance of `],
+					[/* inline code block */ 'i', `ChronoLocalDate`],
 					[/* text */ 't', `.
  `]
 				]],
-				[/* block */ 'b', `
- This default implementation performs the comparison based on the epoch-day.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'other', [/* parameter description */
-					[/* text */ 't', `the other date to compare to, not null`]
+				[/* block */ 'b', [
+					[/* text */ 't', `
+ The conversion extracts and combines the chronology and the date
+ from the temporal object. The behavior is equivalent to using
+ `],
+					[/* reference */ 'r', `.Chronology#date(java.time.temporal.TemporalAccessor)`],
+					[/* text */ 't', ` with the extracted chronology.
+ Implementations are permitted to perform optimizations such as accessing
+ those fields that are equivalent to the relevant objects.
+ `]
+				]],
+				[/* block */ 'b', [
+					[/* text */ 't', `
+ This method matches the signature of the functional interface `],
+					[/* reference */ 'r', `java.time.temporal.TemporalQuery`],
+					[/* text */ 't', `
+ allowing it to be used as a query via method reference, `],
+					[/* inline code block */ 'i', `ChronoLocalDate::from`],
+					[/* text */ 't', `.`]
 				]]
 			],
-			/* throws */ UDF,
+			[/* parameters */
+				[/* parameter */ 'temporal', [/* parameter description */
+					[/* text */ 't', `the temporal object to convert, not null`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.time.DateTimeException', [/* throw description */
+					[/* text */ 't', `if unable to convert to a `],
+					[/* inline code block */ 'i', `ChronoLocalDate`]
+				]]
+			],
 			[/* return description */
-				[/* text */ 't', `true if this is before the specified date`]
+				[/* text */ 't', `the date, not null`]
 			]
 		]],
 		[/* method */ 'timeLineOrder()', [
@@ -1323,39 +1356,6 @@ DocsCollector.collect('java.time.chrono.ChronoLocalDate', [
 			/* throws */ UDF,
 			[/* return description */
 				[/* text */ 't', `a comparator that compares in time-line order ignoring the chronology`]
-			]
-		]],
-		[/* method */ 'lengthOfMonth()', [
-			[/* method description */
-				[/* text */ 't', `Returns the length of the month represented by this date, as defined by the calendar system.
- `],
-				[/* block */ 'b', `
- This returns the length of the month in days.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the length of the month in days`]
-			]
-		]],
-		[/* method */ 'lengthOfYear()', [
-			[/* method description */
-				[/* text */ 't', `Returns the length of the year represented by this date, as defined by the calendar system.
- `],
-				[/* block */ 'b', `
- This returns the length of the year in days.
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', `
- The default implementation uses `],
-					[/* reference */ 'r', `#isLeapYear()`, `isLeapYear()`],
-					[/* text */ 't', ` and returns 365 or 366.`]
-				]]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the length of the year in days`]
 			]
 		]]
 	],

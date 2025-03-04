@@ -8,14 +8,14 @@ DocsCollector.collect('java.util.zip.InflaterInputStream', [
  decompression filters, such as GZIPInputStream.`]
 	],
 	[/* fields */
-		[/* field */ 'inf', [
-			[/* field description */
-				[/* text */ 't', `Decompressor for this stream.`]
-			],
-		]],
 		[/* field */ 'buf', [
 			[/* field description */
 				[/* text */ 't', `Input buffer for decompression.`]
+			],
+		]],
+		[/* field */ 'inf', [
+			[/* field description */
+				[/* text */ 't', `Decompressor for this stream.`]
 			],
 		]],
 		[/* field */ 'len', [
@@ -25,6 +25,17 @@ DocsCollector.collect('java.util.zip.InflaterInputStream', [
 		]]
 	],
 	[/* constructors */
+		[/* constructor */ '<init>(java.io.InputStream)', [
+			[/* constructor description */
+				[/* text */ 't', `Creates a new input stream with a default decompressor and buffer size.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'in', [/* parameter description */
+					[/* text */ 't', `the input stream`]
+				]]
+			],
+			/* throws */ UDF
+		]],
 		[/* constructor */ '<init>(java.io.InputStream,java.util.zip.Inflater)', [
 			[/* constructor description */
 				[/* text */ 't', `Creates a new input stream with the specified decompressor and a
@@ -62,17 +73,6 @@ DocsCollector.collect('java.util.zip.InflaterInputStream', [
 					[/* inline code block */ 'i', `size <= 0`]
 				]]
 			]
-		]],
-		[/* constructor */ '<init>(java.io.InputStream)', [
-			[/* constructor description */
-				[/* text */ 't', `Creates a new input stream with a default decompressor and buffer size.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'in', [/* parameter description */
-					[/* text */ 't', `the input stream`]
-				]]
-			],
-			/* throws */ UDF
 		]]
 	],
 	[/* methods */
@@ -87,6 +87,54 @@ DocsCollector.collect('java.util.zip.InflaterInputStream', [
 				]]
 			],
 			/* return */ UDF
+		]],
+		[/* method */ 'markSupported()', [
+			[/* method description */
+				[/* text */ 't', `Tests if this input stream supports the `],
+				[/* inline code block */ 'i', `mark`],
+				[/* text */ 't', ` and
+ `],
+				[/* inline code block */ 'i', `reset`],
+				[/* text */ 't', ` methods. The `],
+				[/* inline code block */ 'i', `markSupported`],
+				[/* text */ 't', `
+ method of `],
+				[/* inline code block */ 'i', `InflaterInputStream`],
+				[/* text */ 't', ` returns
+ `],
+				[/* inline code block */ 'i', `false`],
+				[/* text */ 't', `.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `a `],
+				[/* inline code block */ 'i', `boolean`],
+				[/* text */ 't', ` indicating if this stream type supports
+          the `],
+				[/* inline code block */ 'i', `mark`],
+				[/* text */ 't', ` and `],
+				[/* inline code block */ 'i', `reset`],
+				[/* text */ 't', ` methods.`]
+			]
+		]],
+		[/* method */ 'available()', [
+			[/* method description */
+				[/* text */ 't', `Returns 0 after EOF has been reached, otherwise always return 1.
+ `],
+				[/* block */ 'b', `
+ Programs should not count on this method to return the actual number
+ of bytes that could be read without blocking.`]
+			],
+			/* parameters */ UDF,
+			[/* throws */
+				[/* throw */ 'java.io.IOException', [/* throw description */
+					[/* text */ 't', `if an I/O error occurs.`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `1 before EOF and 0 after EOF.`]
+			]
 		]],
 		[/* method */ 'read()', [
 			[/* method description */
@@ -157,18 +205,27 @@ DocsCollector.collect('java.util.zip.InflaterInputStream', [
          compressed input is reached or a preset dictionary is needed`]
 			]
 		]],
-		[/* method */ 'close()', [
+		[/* method */ 'skip(long)', [
 			[/* method description */
-				[/* text */ 't', `Closes this input stream and releases any system resources associated
- with the stream.`]
+				[/* text */ 't', `Skips specified number of bytes of uncompressed data.`]
 			],
-			/* parameters */ UDF,
+			[/* parameters */
+				[/* parameter */ 'n', [/* parameter description */
+					[/* text */ 't', `the number of bytes to skip`]
+				]]
+			],
 			[/* throws */
 				[/* throw */ 'java.io.IOException', [/* throw description */
 					[/* text */ 't', `if an I/O error has occurred`]
+				]],
+				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
+					[/* text */ 't', `if `],
+					[/* inline code block */ 'i', `n < 0`]
 				]]
 			],
-			/* return */ UDF
+			[/* return description */
+				[/* text */ 't', `the actual number of bytes skipped.`]
+			]
 		]],
 		[/* method */ 'mark(int)', [
 			[/* method description */
@@ -192,76 +249,6 @@ DocsCollector.collect('java.util.zip.InflaterInputStream', [
 			],
 			/* throws */ UDF,
 			/* return */ UDF
-		]],
-		[/* method */ 'skip(long)', [
-			[/* method description */
-				[/* text */ 't', `Skips specified number of bytes of uncompressed data.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'n', [/* parameter description */
-					[/* text */ 't', `the number of bytes to skip`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.io.IOException', [/* throw description */
-					[/* text */ 't', `if an I/O error has occurred`]
-				]],
-				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
-					[/* text */ 't', `if `],
-					[/* inline code block */ 'i', `n < 0`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `the actual number of bytes skipped.`]
-			]
-		]],
-		[/* method */ 'available()', [
-			[/* method description */
-				[/* text */ 't', `Returns 0 after EOF has been reached, otherwise always return 1.
- `],
-				[/* block */ 'b', `
- Programs should not count on this method to return the actual number
- of bytes that could be read without blocking.`]
-			],
-			/* parameters */ UDF,
-			[/* throws */
-				[/* throw */ 'java.io.IOException', [/* throw description */
-					[/* text */ 't', `if an I/O error occurs.`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `1 before EOF and 0 after EOF.`]
-			]
-		]],
-		[/* method */ 'markSupported()', [
-			[/* method description */
-				[/* text */ 't', `Tests if this input stream supports the `],
-				[/* inline code block */ 'i', `mark`],
-				[/* text */ 't', ` and
- `],
-				[/* inline code block */ 'i', `reset`],
-				[/* text */ 't', ` methods. The `],
-				[/* inline code block */ 'i', `markSupported`],
-				[/* text */ 't', `
- method of `],
-				[/* inline code block */ 'i', `InflaterInputStream`],
-				[/* text */ 't', ` returns
- `],
-				[/* inline code block */ 'i', `false`],
-				[/* text */ 't', `.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `a `],
-				[/* inline code block */ 'i', `boolean`],
-				[/* text */ 't', ` indicating if this stream type supports
-          the `],
-				[/* inline code block */ 'i', `mark`],
-				[/* text */ 't', ` and `],
-				[/* inline code block */ 'i', `reset`],
-				[/* text */ 't', ` methods.`]
-			]
 		]],
 		[/* method */ 'reset()', [
 			[/* method description */
@@ -287,6 +274,19 @@ DocsCollector.collect('java.util.zip.InflaterInputStream', [
 			[/* throws */
 				[/* throw */ 'java.io.IOException', [/* throw description */
 					[/* text */ 't', `if this method is invoked.`]
+				]]
+			],
+			/* return */ UDF
+		]],
+		[/* method */ 'close()', [
+			[/* method description */
+				[/* text */ 't', `Closes this input stream and releases any system resources associated
+ with the stream.`]
+			],
+			/* parameters */ UDF,
+			[/* throws */
+				[/* throw */ 'java.io.IOException', [/* throw description */
+					[/* text */ 't', `if an I/O error has occurred`]
 				]]
 			],
 			/* return */ UDF

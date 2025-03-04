@@ -61,38 +61,29 @@ DocsCollector.collect('java.io.BufferedInputStream', [
  from the underlying  input stream.`]
 			],
 		]],
-		[/* field */ 'pos', [
+		[/* field */ 'marklimit', [
 			[/* field description */
-				[/* text */ 't', `The current position in the buffer. This is the index of the next
- character to be read from the `],
-				[/* inline code block */ 'i', `buf`],
-				[/* text */ 't', ` array.
+				[/* text */ 't', `The maximum read ahead allowed after a call to the
  `],
-				[/* block */ 'b', [
-					[/* text */ 't', `
- This value is always in the range `],
-					[/* inline code block */ 'i', `0`],
-					[/* text */ 't', `
- through `],
-					[/* inline code block */ 'i', `count`],
-					[/* text */ 't', `. If it is less
- than `],
-					[/* inline code block */ 'i', `count`],
-					[/* text */ 't', `, then  `],
-					[/* inline code block */ 'i', `buf[pos]`],
-					[/* text */ 't', `
- is the next byte to be supplied as input;
- if it is equal to `],
-					[/* inline code block */ 'i', `count`],
-					[/* text */ 't', `, then
- the  next `],
-					[/* inline code block */ 'i', `read`],
-					[/* text */ 't', ` or `],
-					[/* inline code block */ 'i', `skip`],
-					[/* text */ 't', `
- operation will require more bytes to be
- read from the contained  input stream.`]
-				]]
+				[/* inline code block */ 'i', `mark`],
+				[/* text */ 't', ` method before subsequent calls to the
+ `],
+				[/* inline code block */ 'i', `reset`],
+				[/* text */ 't', ` method fail.
+ Whenever the difference between `],
+				[/* inline code block */ 'i', `pos`],
+				[/* text */ 't', `
+ and `],
+				[/* inline code block */ 'i', `markpos`],
+				[/* text */ 't', ` exceeds `],
+				[/* inline code block */ 'i', `marklimit`],
+				[/* text */ 't', `,
+ then the  mark may be dropped by setting
+ `],
+				[/* inline code block */ 'i', `markpos`],
+				[/* text */ 't', ` to `],
+				[/* inline code block */ 'i', `-1`],
+				[/* text */ 't', `.`]
 			],
 		]],
 		[/* field */ 'markpos', [
@@ -158,33 +149,62 @@ DocsCollector.collect('java.io.BufferedInputStream', [
 				]]
 			],
 		]],
-		[/* field */ 'marklimit', [
+		[/* field */ 'pos', [
 			[/* field description */
-				[/* text */ 't', `The maximum read ahead allowed after a call to the
+				[/* text */ 't', `The current position in the buffer. This is the index of the next
+ character to be read from the `],
+				[/* inline code block */ 'i', `buf`],
+				[/* text */ 't', ` array.
  `],
-				[/* inline code block */ 'i', `mark`],
-				[/* text */ 't', ` method before subsequent calls to the
- `],
-				[/* inline code block */ 'i', `reset`],
-				[/* text */ 't', ` method fail.
- Whenever the difference between `],
-				[/* inline code block */ 'i', `pos`],
-				[/* text */ 't', `
- and `],
-				[/* inline code block */ 'i', `markpos`],
-				[/* text */ 't', ` exceeds `],
-				[/* inline code block */ 'i', `marklimit`],
-				[/* text */ 't', `,
- then the  mark may be dropped by setting
- `],
-				[/* inline code block */ 'i', `markpos`],
-				[/* text */ 't', ` to `],
-				[/* inline code block */ 'i', `-1`],
-				[/* text */ 't', `.`]
+				[/* block */ 'b', [
+					[/* text */ 't', `
+ This value is always in the range `],
+					[/* inline code block */ 'i', `0`],
+					[/* text */ 't', `
+ through `],
+					[/* inline code block */ 'i', `count`],
+					[/* text */ 't', `. If it is less
+ than `],
+					[/* inline code block */ 'i', `count`],
+					[/* text */ 't', `, then  `],
+					[/* inline code block */ 'i', `buf[pos]`],
+					[/* text */ 't', `
+ is the next byte to be supplied as input;
+ if it is equal to `],
+					[/* inline code block */ 'i', `count`],
+					[/* text */ 't', `, then
+ the  next `],
+					[/* inline code block */ 'i', `read`],
+					[/* text */ 't', ` or `],
+					[/* inline code block */ 'i', `skip`],
+					[/* text */ 't', `
+ operation will require more bytes to be
+ read from the contained  input stream.`]
+				]]
 			],
 		]]
 	],
 	[/* constructors */
+		[/* constructor */ '<init>(java.io.InputStream)', [
+			[/* constructor description */
+				[/* text */ 't', `Creates a `],
+				[/* inline code block */ 'i', `BufferedInputStream`],
+				[/* text */ 't', `
+ and saves its  argument, the input stream
+ `],
+				[/* inline code block */ 'i', `in`],
+				[/* text */ 't', `, for later use. An internal
+ buffer array is created and  stored in `],
+				[/* inline code block */ 'i', `buf`],
+				[/* text */ 't', `.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'in', [/* parameter description */
+					[/* text */ 't', `the underlying input stream.`]
+				]]
+			],
+			/* throws */ UDF
+		]],
 		[/* constructor */ '<init>(java.io.InputStream,int)', [
 			[/* constructor description */
 				[/* text */ 't', `Creates a `],
@@ -217,29 +237,101 @@ DocsCollector.collect('java.io.BufferedInputStream', [
 					[/* text */ 't', `.`]
 				]]
 			]
-		]],
-		[/* constructor */ '<init>(java.io.InputStream)', [
-			[/* constructor description */
-				[/* text */ 't', `Creates a `],
-				[/* inline code block */ 'i', `BufferedInputStream`],
-				[/* text */ 't', `
- and saves its  argument, the input stream
- `],
-				[/* inline code block */ 'i', `in`],
-				[/* text */ 't', `, for later use. An internal
- buffer array is created and  stored in `],
-				[/* inline code block */ 'i', `buf`],
-				[/* text */ 't', `.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'in', [/* parameter description */
-					[/* text */ 't', `the underlying input stream.`]
-				]]
-			],
-			/* throws */ UDF
 		]]
 	],
 	[/* methods */
+		[/* method */ 'markSupported()', [
+			[/* method description */
+				[/* text */ 't', `Tests if this input stream supports the `],
+				[/* inline code block */ 'i', `mark`],
+				[/* text */ 't', `
+ and `],
+				[/* inline code block */ 'i', `reset`],
+				[/* text */ 't', ` methods. The `],
+				[/* inline code block */ 'i', `markSupported`],
+				[/* text */ 't', `
+ method of `],
+				[/* inline code block */ 'i', `BufferedInputStream`],
+				[/* text */ 't', ` returns
+ `],
+				[/* inline code block */ 'i', `true`],
+				[/* text */ 't', `.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `a `],
+				[/* inline code block */ 'i', `boolean`],
+				[/* text */ 't', ` indicating if this stream type supports
+          the `],
+				[/* inline code block */ 'i', `mark`],
+				[/* text */ 't', ` and `],
+				[/* inline code block */ 'i', `reset`],
+				[/* text */ 't', ` methods.`]
+			]
+		]],
+		[/* method */ 'available()', [
+			[/* method description */
+				[/* text */ 't', `Returns an estimate of the number of bytes that can be read (or
+ skipped over) from this input stream without blocking by the next
+ invocation of a method for this input stream. The next invocation might be
+ the same thread or another thread.  A single read or skip of this
+ many bytes will not block, but may read or skip fewer bytes.
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', `
+ This method returns the sum of the number of bytes remaining to be read in
+ the buffer (`],
+					[/* inline code block */ 'i', `count - pos`],
+					[/* text */ 't', `) and the result of calling the
+ `],
+					[/* reference */ 'r', `.FilterInputStream#in`],
+					[/* inline code block */ 'i', `.available()`],
+					[/* text */ 't', `.`]
+				]]
+			],
+			/* parameters */ UDF,
+			[/* throws */
+				[/* throw */ 'java.io.IOException', [/* throw description */
+					[/* text */ 't', `if this input stream has been closed by
+                          invoking its `],
+					[/* reference */ 'r', `#close()`, `close()`],
+					[/* text */ 't', ` method,
+                          or an I/O error occurs.`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `an estimate of the number of bytes that can be read (or skipped
+             over) from this input stream without blocking.`]
+			]
+		]],
+		[/* method */ 'read()', [
+			[/* method description */
+				[/* text */ 't', `See
+ the general contract of the `],
+				[/* inline code block */ 'i', `read`],
+				[/* text */ 't', `
+ method of `],
+				[/* inline code block */ 'i', `InputStream`],
+				[/* text */ 't', `.`]
+			],
+			/* parameters */ UDF,
+			[/* throws */
+				[/* throw */ 'java.io.IOException', [/* throw description */
+					[/* text */ 't', `if this input stream has been closed by
+                          invoking its `],
+					[/* reference */ 'r', `#close()`, `close()`],
+					[/* text */ 't', ` method,
+                          or an I/O error occurs.`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `the next byte of data, or `],
+				[/* inline code block */ 'i', `-1`],
+				[/* text */ 't', ` if the end of the
+             stream is reached.`]
+			]
+		]],
 		[/* method */ 'read(byte[],int,int)', [
 			[/* method description */
 				[/* text */ 't', `Reads bytes from this byte-input stream into the specified byte array,
@@ -329,67 +421,6 @@ DocsCollector.collect('java.io.BufferedInputStream', [
              the stream has been reached.`]
 			]
 		]],
-		[/* method */ 'read()', [
-			[/* method description */
-				[/* text */ 't', `See
- the general contract of the `],
-				[/* inline code block */ 'i', `read`],
-				[/* text */ 't', `
- method of `],
-				[/* inline code block */ 'i', `InputStream`],
-				[/* text */ 't', `.`]
-			],
-			/* parameters */ UDF,
-			[/* throws */
-				[/* throw */ 'java.io.IOException', [/* throw description */
-					[/* text */ 't', `if this input stream has been closed by
-                          invoking its `],
-					[/* reference */ 'r', `#close()`, `close()`],
-					[/* text */ 't', ` method,
-                          or an I/O error occurs.`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `the next byte of data, or `],
-				[/* inline code block */ 'i', `-1`],
-				[/* text */ 't', ` if the end of the
-             stream is reached.`]
-			]
-		]],
-		[/* method */ 'close()', [
-			[/* method description */
-				[/* text */ 't', `Closes this input stream and releases any system resources
- associated with the stream.
- Once the stream has been closed, further read(), available(), reset(),
- or skip() invocations will throw an IOException.
- Closing a previously closed stream has no effect.`]
-			],
-			/* parameters */ UDF,
-			[/* throws */
-				[/* throw */ 'java.io.IOException', [/* throw description */
-					[/* text */ 't', `if an I/O error occurs.`]
-				]]
-			],
-			/* return */ UDF
-		]],
-		[/* method */ 'mark(int)', [
-			[/* method description */
-				[/* text */ 't', `See the general contract of the `],
-				[/* inline code block */ 'i', `mark`],
-				[/* text */ 't', `
- method of `],
-				[/* inline code block */ 'i', `InputStream`],
-				[/* text */ 't', `.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'readlimit', [/* parameter description */
-					[/* text */ 't', `the maximum limit of bytes that can be read before
-                      the mark position becomes invalid.`]
-				]]
-			],
-			/* throws */ UDF,
-			/* return */ UDF
-		]],
 		[/* method */ 'skip(long)', [
 			[/* method description */
 				[/* text */ 't', `See the general contract of the `],
@@ -420,70 +451,23 @@ DocsCollector.collect('java.io.BufferedInputStream', [
 				[/* text */ 't', `the actual number of bytes skipped.`]
 			]
 		]],
-		[/* method */ 'available()', [
+		[/* method */ 'mark(int)', [
 			[/* method description */
-				[/* text */ 't', `Returns an estimate of the number of bytes that can be read (or
- skipped over) from this input stream without blocking by the next
- invocation of a method for this input stream. The next invocation might be
- the same thread or another thread.  A single read or skip of this
- many bytes will not block, but may read or skip fewer bytes.
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', `
- This method returns the sum of the number of bytes remaining to be read in
- the buffer (`],
-					[/* inline code block */ 'i', `count - pos`],
-					[/* text */ 't', `) and the result of calling the
- `],
-					[/* reference */ 'r', `.FilterInputStream#in`],
-					[/* inline code block */ 'i', `.available()`],
-					[/* text */ 't', `.`]
-				]]
-			],
-			/* parameters */ UDF,
-			[/* throws */
-				[/* throw */ 'java.io.IOException', [/* throw description */
-					[/* text */ 't', `if this input stream has been closed by
-                          invoking its `],
-					[/* reference */ 'r', `#close()`, `close()`],
-					[/* text */ 't', ` method,
-                          or an I/O error occurs.`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `an estimate of the number of bytes that can be read (or skipped
-             over) from this input stream without blocking.`]
-			]
-		]],
-		[/* method */ 'markSupported()', [
-			[/* method description */
-				[/* text */ 't', `Tests if this input stream supports the `],
+				[/* text */ 't', `See the general contract of the `],
 				[/* inline code block */ 'i', `mark`],
-				[/* text */ 't', `
- and `],
-				[/* inline code block */ 'i', `reset`],
-				[/* text */ 't', ` methods. The `],
-				[/* inline code block */ 'i', `markSupported`],
 				[/* text */ 't', `
  method of `],
-				[/* inline code block */ 'i', `BufferedInputStream`],
-				[/* text */ 't', ` returns
- `],
-				[/* inline code block */ 'i', `true`],
+				[/* inline code block */ 'i', `InputStream`],
 				[/* text */ 't', `.`]
 			],
-			/* parameters */ UDF,
+			[/* parameters */
+				[/* parameter */ 'readlimit', [/* parameter description */
+					[/* text */ 't', `the maximum limit of bytes that can be read before
+                      the mark position becomes invalid.`]
+				]]
+			],
 			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `a `],
-				[/* inline code block */ 'i', `boolean`],
-				[/* text */ 't', ` indicating if this stream type supports
-          the `],
-				[/* inline code block */ 'i', `mark`],
-				[/* text */ 't', ` and `],
-				[/* inline code block */ 'i', `reset`],
-				[/* text */ 't', ` methods.`]
-			]
+			/* return */ UDF
 		]],
 		[/* method */ 'reset()', [
 			[/* method description */
@@ -522,6 +506,22 @@ DocsCollector.collect('java.io.BufferedInputStream', [
 					[/* reference */ 'r', `#close()`, `close()`],
 					[/* text */ 't', `
                   method, or an I/O error occurs.`]
+				]]
+			],
+			/* return */ UDF
+		]],
+		[/* method */ 'close()', [
+			[/* method description */
+				[/* text */ 't', `Closes this input stream and releases any system resources
+ associated with the stream.
+ Once the stream has been closed, further read(), available(), reset(),
+ or skip() invocations will throw an IOException.
+ Closing a previously closed stream has no effect.`]
+			],
+			/* parameters */ UDF,
+			[/* throws */
+				[/* throw */ 'java.io.IOException', [/* throw description */
+					[/* text */ 't', `if an I/O error occurs.`]
 				]]
 			],
 			/* return */ UDF

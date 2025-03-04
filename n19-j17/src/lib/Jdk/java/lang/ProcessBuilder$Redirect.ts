@@ -104,8 +104,8 @@ JdkClassCreateHelper.class('java.lang.ProcessBuilder$Redirect', [
 		]
 	],
 	[/* declared fields */
-		[/* public static final java.lang.ProcessBuilder$Redirect java.lang.ProcessBuilder$Redirect.PIPE */
-			/* name */ 'PIPE',
+		[/* public static final java.lang.ProcessBuilder$Redirect java.lang.ProcessBuilder$Redirect.DISCARD */
+			/* name */ 'DISCARD',
 			/* type */ 'java.lang.ProcessBuilder$Redirect',
 			/* annotations */ UDF,
 			/* modifiers */ 25
@@ -116,8 +116,8 @@ JdkClassCreateHelper.class('java.lang.ProcessBuilder$Redirect', [
 			/* annotations */ UDF,
 			/* modifiers */ 25
 		],
-		[/* public static final java.lang.ProcessBuilder$Redirect java.lang.ProcessBuilder$Redirect.DISCARD */
-			/* name */ 'DISCARD',
+		[/* public static final java.lang.ProcessBuilder$Redirect java.lang.ProcessBuilder$Redirect.PIPE */
+			/* name */ 'PIPE',
 			/* type */ 'java.lang.ProcessBuilder$Redirect',
 			/* annotations */ UDF,
 			/* modifiers */ 25

@@ -176,6 +176,35 @@ DocsCollector.collect('java.util.Random', [
          generator's sequence`]
 			]
 		]],
+		[/* method */ 'nextBoolean()', [
+			[/* method description */
+				[/* text */ 't', `Returns the next pseudorandom, uniformly distributed
+ `],
+				[/* inline code block */ 'i', `boolean`],
+				[/* text */ 't', ` value from this random number generator's
+ sequence. The general contract of `],
+				[/* inline code block */ 'i', `nextBoolean`],
+				[/* text */ 't', ` is that one
+ `],
+				[/* inline code block */ 'i', `boolean`],
+				[/* text */ 't', ` value is pseudorandomly generated and returned.  The
+ values `],
+				[/* inline code block */ 'i', `true`],
+				[/* text */ 't', ` and `],
+				[/* inline code block */ 'i', `false`],
+				[/* text */ 't', ` are produced with
+ (approximately) equal probability.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the next pseudorandom, uniformly distributed
+         `],
+				[/* inline code block */ 'i', `boolean`],
+				[/* text */ 't', ` value from this random number generator's
+         sequence`]
+			]
+		]],
 		[/* method */ 'nextDouble()', [
 			[/* method description */
 				[/* text */ 't', `Returns the next pseudorandom, uniformly distributed
@@ -209,6 +238,63 @@ DocsCollector.collect('java.util.Random', [
 			[/* return description */
 				[/* text */ 't', `the next pseudorandom, uniformly distributed `],
 				[/* inline code block */ 'i', `double`],
+				[/* text */ 't', `
+         value between `],
+				[/* inline code block */ 'i', `0.0`],
+				[/* text */ 't', ` and `],
+				[/* inline code block */ 'i', `1.0`],
+				[/* text */ 't', ` from this
+         random number generator's sequence`]
+			]
+		]],
+		[/* method */ 'nextFloat()', [
+			[/* method description */
+				[/* text */ 't', `Returns the next pseudorandom, uniformly distributed `],
+				[/* inline code block */ 'i', `float`],
+				[/* text */ 't', `
+ value between `],
+				[/* inline code block */ 'i', `0.0`],
+				[/* text */ 't', ` and `],
+				[/* inline code block */ 'i', `1.0`],
+				[/* text */ 't', ` from this random
+ number generator's sequence.
+
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', `The general contract of `],
+					[/* inline code block */ 'i', `nextFloat`],
+					[/* text */ 't', ` is that one
+ `],
+					[/* inline code block */ 'i', `float`],
+					[/* text */ 't', ` value, chosen (approximately) uniformly from the
+ range `],
+					[/* inline code block */ 'i', `0.0f`],
+					[/* text */ 't', ` (inclusive) to `],
+					[/* inline code block */ 'i', `1.0f`],
+					[/* text */ 't', ` (exclusive), is
+ pseudorandomly generated and returned. All 2`],
+					[/* text */ 't', `24`, 'sup'],
+					[/* text */ 't', ` possible
+ `],
+					[/* inline code block */ 'i', `float`],
+					[/* text */ 't', ` values of the form `],
+					[/* text */ 't', `m x `],
+					[/* text */ 't', `2`],
+					[/* text */ 't', `-24`, 'sup'],
+					[/* text */ 't', `,
+ where `],
+					[/* text */ 't', `m`],
+					[/* text */ 't', ` is a positive integer less than 2`],
+					[/* text */ 't', `24`, 'sup'],
+					[/* text */ 't', `, are
+ produced with (approximately) equal probability.`]
+				]]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the next pseudorandom, uniformly distributed `],
+				[/* inline code block */ 'i', `float`],
 				[/* text */ 't', `
          value between `],
 				[/* inline code block */ 'i', `0.0`],
@@ -283,6 +369,81 @@ DocsCollector.collect('java.util.Random', [
 				[/* inline code block */ 'i', `bound`],
 				[/* text */ 't', ` (exclusive)
          from this random number generator's sequence`]
+			]
+		]],
+		[/* method */ 'doubles()', [
+			[/* method description */
+				[/* text */ 't', `Returns an effectively unlimited stream of pseudorandom `],
+				[/* inline code block */ 'i', `double`],
+				[/* text */ 't', ` values, each between zero (inclusive) and one
+ (exclusive).
+
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', `A pseudorandom `],
+					[/* inline code block */ 'i', `double`],
+					[/* text */ 't', ` value is generated as if it's the result
+ of calling the method `],
+					[/* reference */ 'r', `#nextDouble()`, `nextDouble()`],
+					[/* text */ 't', `.`]
+				]]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `a stream of pseudorandom `],
+				[/* inline code block */ 'i', `double`],
+				[/* text */ 't', ` values`]
+			]
+		]],
+		[/* method */ 'doubles(double,double)', [
+			[/* method description */
+				[/* text */ 't', `Returns an effectively unlimited stream of pseudorandom `],
+				[/* inline code block */ 'i', `double`],
+				[/* text */ 't', ` values, each conforming to the given origin (inclusive) and bound
+ (exclusive).
+
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', `A pseudorandom `],
+					[/* inline code block */ 'i', `double`],
+					[/* text */ 't', ` value is generated as if it's the result
+ of calling the following method with the origin and bound:
+ `]
+				]],
+				[/* code block */ 'c', [
+					[/* inline code block */ 'i', `double nextDouble(double origin, double bound) {
+   double r = nextDouble();
+   r = r * (bound - origin) + origin;
+   if (r >= bound) // correct for rounding
+     r = Math.nextDown(bound);
+   return r;
+ }`]
+				]],
+				[/* block */ 'b', '']
+			],
+			[/* parameters */
+				[/* parameter */ 'randomNumberOrigin', [/* parameter description */
+					[/* text */ 't', `the origin (inclusive) of each random value`]
+				]],
+				[/* parameter */ 'randomNumberBound', [/* parameter description */
+					[/* text */ 't', `the bound (exclusive) of each random value`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
+					[/* text */ 't', `if `],
+					[/* inline code block */ 'i', `randomNumberOrigin`],
+					[/* text */ 't', `
+         is greater than or equal to `],
+					[/* inline code block */ 'i', `randomNumberBound`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `a stream of pseudorandom `],
+				[/* inline code block */ 'i', `double`],
+				[/* text */ 't', ` values,
+         each with the given origin (inclusive) and bound (exclusive)`]
 			]
 		]],
 		[/* method */ 'doubles(long)', [
@@ -388,119 +549,6 @@ DocsCollector.collect('java.util.Random', [
          each with the given origin (inclusive) and bound (exclusive)`]
 			]
 		]],
-		[/* method */ 'doubles()', [
-			[/* method description */
-				[/* text */ 't', `Returns an effectively unlimited stream of pseudorandom `],
-				[/* inline code block */ 'i', `double`],
-				[/* text */ 't', ` values, each between zero (inclusive) and one
- (exclusive).
-
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', `A pseudorandom `],
-					[/* inline code block */ 'i', `double`],
-					[/* text */ 't', ` value is generated as if it's the result
- of calling the method `],
-					[/* reference */ 'r', `#nextDouble()`, `nextDouble()`],
-					[/* text */ 't', `.`]
-				]]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `a stream of pseudorandom `],
-				[/* inline code block */ 'i', `double`],
-				[/* text */ 't', ` values`]
-			]
-		]],
-		[/* method */ 'doubles(double,double)', [
-			[/* method description */
-				[/* text */ 't', `Returns an effectively unlimited stream of pseudorandom `],
-				[/* inline code block */ 'i', `double`],
-				[/* text */ 't', ` values, each conforming to the given origin (inclusive) and bound
- (exclusive).
-
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', `A pseudorandom `],
-					[/* inline code block */ 'i', `double`],
-					[/* text */ 't', ` value is generated as if it's the result
- of calling the following method with the origin and bound:
- `]
-				]],
-				[/* code block */ 'c', [
-					[/* inline code block */ 'i', `double nextDouble(double origin, double bound) {
-   double r = nextDouble();
-   r = r * (bound - origin) + origin;
-   if (r >= bound) // correct for rounding
-     r = Math.nextDown(bound);
-   return r;
- }`]
-				]],
-				[/* block */ 'b', '']
-			],
-			[/* parameters */
-				[/* parameter */ 'randomNumberOrigin', [/* parameter description */
-					[/* text */ 't', `the origin (inclusive) of each random value`]
-				]],
-				[/* parameter */ 'randomNumberBound', [/* parameter description */
-					[/* text */ 't', `the bound (exclusive) of each random value`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
-					[/* text */ 't', `if `],
-					[/* inline code block */ 'i', `randomNumberOrigin`],
-					[/* text */ 't', `
-         is greater than or equal to `],
-					[/* inline code block */ 'i', `randomNumberBound`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `a stream of pseudorandom `],
-				[/* inline code block */ 'i', `double`],
-				[/* text */ 't', ` values,
-         each with the given origin (inclusive) and bound (exclusive)`]
-			]
-		]],
-		[/* method */ 'ints(long)', [
-			[/* method description */
-				[/* text */ 't', `Returns a stream producing the given `],
-				[/* inline code block */ 'i', `streamSize`],
-				[/* text */ 't', ` number of
- pseudorandom `],
-				[/* inline code block */ 'i', `int`],
-				[/* text */ 't', ` values.
-
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', `A pseudorandom `],
-					[/* inline code block */ 'i', `int`],
-					[/* text */ 't', ` value is generated as if it's the result of
- calling the method `],
-					[/* reference */ 'r', `#nextInt()`, `nextInt()`],
-					[/* text */ 't', `.`]
-				]]
-			],
-			[/* parameters */
-				[/* parameter */ 'streamSize', [/* parameter description */
-					[/* text */ 't', `the number of values to generate`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
-					[/* text */ 't', `if `],
-					[/* inline code block */ 'i', `streamSize`],
-					[/* text */ 't', ` is
-         less than zero`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `a stream of pseudorandom `],
-				[/* inline code block */ 'i', `int`],
-				[/* text */ 't', ` values`]
-			]
-		]],
 		[/* method */ 'ints()', [
 			[/* method description */
 				[/* text */ 't', `Returns an effectively unlimited stream of pseudorandom `],
@@ -582,6 +630,44 @@ DocsCollector.collect('java.util.Random', [
          each with the given origin (inclusive) and bound (exclusive)`]
 			]
 		]],
+		[/* method */ 'ints(long)', [
+			[/* method description */
+				[/* text */ 't', `Returns a stream producing the given `],
+				[/* inline code block */ 'i', `streamSize`],
+				[/* text */ 't', ` number of
+ pseudorandom `],
+				[/* inline code block */ 'i', `int`],
+				[/* text */ 't', ` values.
+
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', `A pseudorandom `],
+					[/* inline code block */ 'i', `int`],
+					[/* text */ 't', ` value is generated as if it's the result of
+ calling the method `],
+					[/* reference */ 'r', `#nextInt()`, `nextInt()`],
+					[/* text */ 't', `.`]
+				]]
+			],
+			[/* parameters */
+				[/* parameter */ 'streamSize', [/* parameter description */
+					[/* text */ 't', `the number of values to generate`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
+					[/* text */ 't', `if `],
+					[/* inline code block */ 'i', `streamSize`],
+					[/* text */ 't', ` is
+         less than zero`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `a stream of pseudorandom `],
+				[/* inline code block */ 'i', `int`],
+				[/* text */ 't', ` values`]
+			]
+		]],
 		[/* method */ 'ints(long,int,int)', [
 			[/* method description */
 				[/* text */ 't', `Returns a stream producing the given `],
@@ -643,6 +729,130 @@ DocsCollector.collect('java.util.Random', [
 			[/* return description */
 				[/* text */ 't', `a stream of pseudorandom `],
 				[/* inline code block */ 'i', `int`],
+				[/* text */ 't', ` values,
+         each with the given origin (inclusive) and bound (exclusive)`]
+			]
+		]],
+		[/* method */ 'longs()', [
+			[/* method description */
+				[/* text */ 't', `Returns an effectively unlimited stream of pseudorandom `],
+				[/* inline code block */ 'i', `long`],
+				[/* text */ 't', `
+ values.
+
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', `A pseudorandom `],
+					[/* inline code block */ 'i', `long`],
+					[/* text */ 't', ` value is generated as if it's the result
+ of calling the method `],
+					[/* reference */ 'r', `#nextLong()`, `nextLong()`],
+					[/* text */ 't', `.`]
+				]]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `a stream of pseudorandom `],
+				[/* inline code block */ 'i', `long`],
+				[/* text */ 't', ` values`]
+			]
+		]],
+		[/* method */ 'longs(long)', [
+			[/* method description */
+				[/* text */ 't', `Returns a stream producing the given `],
+				[/* inline code block */ 'i', `streamSize`],
+				[/* text */ 't', ` number of
+ pseudorandom `],
+				[/* inline code block */ 'i', `long`],
+				[/* text */ 't', ` values.
+
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', `A pseudorandom `],
+					[/* inline code block */ 'i', `long`],
+					[/* text */ 't', ` value is generated as if it's the result
+ of calling the method `],
+					[/* reference */ 'r', `#nextLong()`, `nextLong()`],
+					[/* text */ 't', `.`]
+				]]
+			],
+			[/* parameters */
+				[/* parameter */ 'streamSize', [/* parameter description */
+					[/* text */ 't', `the number of values to generate`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
+					[/* text */ 't', `if `],
+					[/* inline code block */ 'i', `streamSize`],
+					[/* text */ 't', ` is
+         less than zero`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `a stream of pseudorandom `],
+				[/* inline code block */ 'i', `long`],
+				[/* text */ 't', ` values`]
+			]
+		]],
+		[/* method */ 'longs(long,long)', [
+			[/* method description */
+				[/* text */ 't', `Returns an effectively unlimited stream of pseudorandom `],
+				[/* inline code block */ 'i', `long`],
+				[/* text */ 't', ` values, each conforming to the given origin (inclusive) and bound
+ (exclusive).
+
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', `A pseudorandom `],
+					[/* inline code block */ 'i', `long`],
+					[/* text */ 't', ` value is generated as if it's the result
+ of calling the following method with the origin and bound:
+ `]
+				]],
+				[/* code block */ 'c', [
+					[/* inline code block */ 'i', `long nextLong(long origin, long bound) {
+   long r = nextLong();
+   long n = bound - origin, m = n - 1;
+   if ((n & m) == 0L)  // power of two
+     r = (r & m) + origin;
+   else if (n > 0L) {  // reject over-represented candidates
+     for (long u = r >>> 1;            // ensure nonnegative
+          u + m - (r = u % n) < 0L;    // rejection check
+          u = nextLong() >>> 1) // retry
+         ;
+     r += origin;
+   }
+   else {              // range not representable as long
+     while (r < origin || r >= bound)
+       r = nextLong();
+   }
+   return r;
+ }`]
+				]],
+				[/* block */ 'b', '']
+			],
+			[/* parameters */
+				[/* parameter */ 'randomNumberOrigin', [/* parameter description */
+					[/* text */ 't', `the origin (inclusive) of each random value`]
+				]],
+				[/* parameter */ 'randomNumberBound', [/* parameter description */
+					[/* text */ 't', `the bound (exclusive) of each random value`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
+					[/* text */ 't', `if `],
+					[/* inline code block */ 'i', `randomNumberOrigin`],
+					[/* text */ 't', `
+         is greater than or equal to `],
+					[/* inline code block */ 'i', `randomNumberBound`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `a stream of pseudorandom `],
+				[/* inline code block */ 'i', `long`],
 				[/* text */ 't', ` values,
          each with the given origin (inclusive) and bound (exclusive)`]
 			]
@@ -717,130 +927,6 @@ DocsCollector.collect('java.util.Random', [
          each with the given origin (inclusive) and bound (exclusive)`]
 			]
 		]],
-		[/* method */ 'longs(long)', [
-			[/* method description */
-				[/* text */ 't', `Returns a stream producing the given `],
-				[/* inline code block */ 'i', `streamSize`],
-				[/* text */ 't', ` number of
- pseudorandom `],
-				[/* inline code block */ 'i', `long`],
-				[/* text */ 't', ` values.
-
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', `A pseudorandom `],
-					[/* inline code block */ 'i', `long`],
-					[/* text */ 't', ` value is generated as if it's the result
- of calling the method `],
-					[/* reference */ 'r', `#nextLong()`, `nextLong()`],
-					[/* text */ 't', `.`]
-				]]
-			],
-			[/* parameters */
-				[/* parameter */ 'streamSize', [/* parameter description */
-					[/* text */ 't', `the number of values to generate`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
-					[/* text */ 't', `if `],
-					[/* inline code block */ 'i', `streamSize`],
-					[/* text */ 't', ` is
-         less than zero`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `a stream of pseudorandom `],
-				[/* inline code block */ 'i', `long`],
-				[/* text */ 't', ` values`]
-			]
-		]],
-		[/* method */ 'longs()', [
-			[/* method description */
-				[/* text */ 't', `Returns an effectively unlimited stream of pseudorandom `],
-				[/* inline code block */ 'i', `long`],
-				[/* text */ 't', `
- values.
-
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', `A pseudorandom `],
-					[/* inline code block */ 'i', `long`],
-					[/* text */ 't', ` value is generated as if it's the result
- of calling the method `],
-					[/* reference */ 'r', `#nextLong()`, `nextLong()`],
-					[/* text */ 't', `.`]
-				]]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `a stream of pseudorandom `],
-				[/* inline code block */ 'i', `long`],
-				[/* text */ 't', ` values`]
-			]
-		]],
-		[/* method */ 'longs(long,long)', [
-			[/* method description */
-				[/* text */ 't', `Returns an effectively unlimited stream of pseudorandom `],
-				[/* inline code block */ 'i', `long`],
-				[/* text */ 't', ` values, each conforming to the given origin (inclusive) and bound
- (exclusive).
-
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', `A pseudorandom `],
-					[/* inline code block */ 'i', `long`],
-					[/* text */ 't', ` value is generated as if it's the result
- of calling the following method with the origin and bound:
- `]
-				]],
-				[/* code block */ 'c', [
-					[/* inline code block */ 'i', `long nextLong(long origin, long bound) {
-   long r = nextLong();
-   long n = bound - origin, m = n - 1;
-   if ((n & m) == 0L)  // power of two
-     r = (r & m) + origin;
-   else if (n > 0L) {  // reject over-represented candidates
-     for (long u = r >>> 1;            // ensure nonnegative
-          u + m - (r = u % n) < 0L;    // rejection check
-          u = nextLong() >>> 1) // retry
-         ;
-     r += origin;
-   }
-   else {              // range not representable as long
-     while (r < origin || r >= bound)
-       r = nextLong();
-   }
-   return r;
- }`]
-				]],
-				[/* block */ 'b', '']
-			],
-			[/* parameters */
-				[/* parameter */ 'randomNumberOrigin', [/* parameter description */
-					[/* text */ 't', `the origin (inclusive) of each random value`]
-				]],
-				[/* parameter */ 'randomNumberBound', [/* parameter description */
-					[/* text */ 't', `the bound (exclusive) of each random value`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
-					[/* text */ 't', `if `],
-					[/* inline code block */ 'i', `randomNumberOrigin`],
-					[/* text */ 't', `
-         is greater than or equal to `],
-					[/* inline code block */ 'i', `randomNumberBound`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `a stream of pseudorandom `],
-				[/* inline code block */ 'i', `long`],
-				[/* text */ 't', ` values,
-         each with the given origin (inclusive) and bound (exclusive)`]
-			]
-		]],
 		[/* method */ 'nextLong()', [
 			[/* method description */
 				[/* text */ 't', `Returns the next pseudorandom, uniformly distributed `],
@@ -861,110 +947,6 @@ DocsCollector.collect('java.util.Random', [
 				[/* inline code block */ 'i', `long`],
 				[/* text */ 't', `
          value from this random number generator's sequence`]
-			]
-		]],
-		[/* method */ 'nextBoolean()', [
-			[/* method description */
-				[/* text */ 't', `Returns the next pseudorandom, uniformly distributed
- `],
-				[/* inline code block */ 'i', `boolean`],
-				[/* text */ 't', ` value from this random number generator's
- sequence. The general contract of `],
-				[/* inline code block */ 'i', `nextBoolean`],
-				[/* text */ 't', ` is that one
- `],
-				[/* inline code block */ 'i', `boolean`],
-				[/* text */ 't', ` value is pseudorandomly generated and returned.  The
- values `],
-				[/* inline code block */ 'i', `true`],
-				[/* text */ 't', ` and `],
-				[/* inline code block */ 'i', `false`],
-				[/* text */ 't', ` are produced with
- (approximately) equal probability.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the next pseudorandom, uniformly distributed
-         `],
-				[/* inline code block */ 'i', `boolean`],
-				[/* text */ 't', ` value from this random number generator's
-         sequence`]
-			]
-		]],
-		[/* method */ 'nextBytes(byte[])', [
-			[/* method description */
-				[/* text */ 't', `Generates random bytes and places them into a user-supplied
- byte array.  The number of random bytes produced is equal to
- the length of the byte array.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'bytes', [/* parameter description */
-					[/* text */ 't', `the byte array to fill with random bytes`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
-					[/* text */ 't', `if the byte array is null`]
-				]]
-			],
-			/* return */ UDF
-		]],
-		[/* method */ 'nextFloat()', [
-			[/* method description */
-				[/* text */ 't', `Returns the next pseudorandom, uniformly distributed `],
-				[/* inline code block */ 'i', `float`],
-				[/* text */ 't', `
- value between `],
-				[/* inline code block */ 'i', `0.0`],
-				[/* text */ 't', ` and `],
-				[/* inline code block */ 'i', `1.0`],
-				[/* text */ 't', ` from this random
- number generator's sequence.
-
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', `The general contract of `],
-					[/* inline code block */ 'i', `nextFloat`],
-					[/* text */ 't', ` is that one
- `],
-					[/* inline code block */ 'i', `float`],
-					[/* text */ 't', ` value, chosen (approximately) uniformly from the
- range `],
-					[/* inline code block */ 'i', `0.0f`],
-					[/* text */ 't', ` (inclusive) to `],
-					[/* inline code block */ 'i', `1.0f`],
-					[/* text */ 't', ` (exclusive), is
- pseudorandomly generated and returned. All 2`],
-					[/* text */ 't', `24`, 'sup'],
-					[/* text */ 't', ` possible
- `],
-					[/* inline code block */ 'i', `float`],
-					[/* text */ 't', ` values of the form `],
-					[/* text */ 't', `m x `],
-					[/* text */ 't', `2`],
-					[/* text */ 't', `-24`, 'sup'],
-					[/* text */ 't', `,
- where `],
-					[/* text */ 't', `m`],
-					[/* text */ 't', ` is a positive integer less than 2`],
-					[/* text */ 't', `24`, 'sup'],
-					[/* text */ 't', `, are
- produced with (approximately) equal probability.`]
-				]]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the next pseudorandom, uniformly distributed `],
-				[/* inline code block */ 'i', `float`],
-				[/* text */ 't', `
-         value between `],
-				[/* inline code block */ 'i', `0.0`],
-				[/* text */ 't', ` and `],
-				[/* inline code block */ 'i', `1.0`],
-				[/* text */ 't', ` from this
-         random number generator's sequence`]
 			]
 		]],
 		[/* method */ 'nextGaussian()', [
@@ -1060,6 +1042,24 @@ DocsCollector.collect('java.util.Random', [
 				]]
 			],
 			/* throws */ UDF,
+			/* return */ UDF
+		]],
+		[/* method */ 'nextBytes(byte[])', [
+			[/* method description */
+				[/* text */ 't', `Generates random bytes and places them into a user-supplied
+ byte array.  The number of random bytes produced is equal to
+ the length of the byte array.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'bytes', [/* parameter description */
+					[/* text */ 't', `the byte array to fill with random bytes`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
+					[/* text */ 't', `if the byte array is null`]
+				]]
+			],
 			/* return */ UDF
 		]]
 	],

@@ -323,9 +323,312 @@ DocsCollector.collect('java.io.RandomAccessFile', [
 		]]
 	],
 	[/* methods */
-		[/* method */ 'length()', [
+		[/* method */ 'readBoolean()', [
 			[/* method description */
-				[/* text */ 't', `Returns the length of this file.`]
+				[/* text */ 't', `Reads a `],
+				[/* inline code block */ 'i', `boolean`],
+				[/* text */ 't', ` from this file. This method reads a
+ single byte from the file, starting at the current file pointer.
+ A value of `],
+				[/* inline code block */ 'i', `0`],
+				[/* text */ 't', ` represents
+ `],
+				[/* inline code block */ 'i', `false`],
+				[/* text */ 't', `. Any other value represents `],
+				[/* inline code block */ 'i', `true`],
+				[/* text */ 't', `.
+ This method blocks until the byte is read, the end of the stream
+ is detected, or an exception is thrown.`]
+			],
+			/* parameters */ UDF,
+			[/* throws */
+				[/* throw */ 'java.io.EOFException', [/* throw description */
+					[/* text */ 't', `if this file has reached the end.`]
+				]],
+				[/* throw */ 'java.io.IOException', [/* throw description */
+					[/* text */ 't', `if an I/O error occurs.`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `the `],
+				[/* inline code block */ 'i', `boolean`],
+				[/* text */ 't', ` value read.`]
+			]
+		]],
+		[/* method */ 'readByte()', [
+			[/* method description */
+				[/* text */ 't', `Reads a signed eight-bit value from this file. This method reads a
+ byte from the file, starting from the current file pointer.
+ If the byte read is `],
+				[/* inline code block */ 'i', `b`],
+				[/* text */ 't', `, where
+ `],
+				[/* inline code block */ 'i', `0 <= b <= 255`],
+				[/* text */ 't', `,
+ then the result is:
+ `],
+				[/* block */ 'b', [
+					[/* code block */ 'c', `     (byte)(b)
+ `]
+				]],
+				[/* block */ 'b', `
+ This method blocks until the byte is read, the end of the stream
+ is detected, or an exception is thrown.`]
+			],
+			/* parameters */ UDF,
+			[/* throws */
+				[/* throw */ 'java.io.EOFException', [/* throw description */
+					[/* text */ 't', `if this file has reached the end.`]
+				]],
+				[/* throw */ 'java.io.IOException', [/* throw description */
+					[/* text */ 't', `if an I/O error occurs.`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `the next byte of this file as a signed eight-bit
+             `],
+				[/* inline code block */ 'i', `byte`],
+				[/* text */ 't', `.`]
+			]
+		]],
+		[/* method */ 'readChar()', [
+			[/* method description */
+				[/* text */ 't', `Reads a character from this file. This method reads two
+ bytes from the file, starting at the current file pointer.
+ If the bytes read, in order, are
+ `],
+				[/* inline code block */ 'i', `b1`],
+				[/* text */ 't', ` and `],
+				[/* inline code block */ 'i', `b2`],
+				[/* text */ 't', `, where
+ `],
+				[/* inline code block */ 'i', `0 <= b1, b2 <= 255`],
+				[/* text */ 't', `,
+ then the result is equal to:
+ `],
+				[/* block */ 'b', [
+					[/* code block */ 'c', `     (char)((b1 << 8) | b2)
+ `]
+				]],
+				[/* block */ 'b', `
+ This method blocks until the two bytes are read, the end of the
+ stream is detected, or an exception is thrown.`]
+			],
+			/* parameters */ UDF,
+			[/* throws */
+				[/* throw */ 'java.io.EOFException', [/* throw description */
+					[/* text */ 't', `if this file reaches the end before reading
+               two bytes.`]
+				]],
+				[/* throw */ 'java.io.IOException', [/* throw description */
+					[/* text */ 't', `if an I/O error occurs.`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `the next two bytes of this file, interpreted as a
+                  `],
+				[/* inline code block */ 'i', `char`],
+				[/* text */ 't', `.`]
+			]
+		]],
+		[/* method */ 'readDouble()', [
+			[/* method description */
+				[/* text */ 't', `Reads a `],
+				[/* inline code block */ 'i', `double`],
+				[/* text */ 't', ` from this file. This method reads a
+ `],
+				[/* inline code block */ 'i', `long`],
+				[/* text */ 't', ` value, starting at the current file pointer,
+ as if by the `],
+				[/* inline code block */ 'i', `readLong`],
+				[/* text */ 't', ` method
+ and then converts that `],
+				[/* inline code block */ 'i', `long`],
+				[/* text */ 't', ` to a `],
+				[/* inline code block */ 'i', `double`],
+				[/* text */ 't', `
+ using the `],
+				[/* inline code block */ 'i', `longBitsToDouble`],
+				[/* text */ 't', ` method in
+ class `],
+				[/* inline code block */ 'i', `Double`],
+				[/* text */ 't', `.
+ `],
+				[/* block */ 'b', `
+ This method blocks until the eight bytes are read, the end of the
+ stream is detected, or an exception is thrown.`]
+			],
+			/* parameters */ UDF,
+			[/* throws */
+				[/* throw */ 'java.io.EOFException', [/* throw description */
+					[/* text */ 't', `if this file reaches the end before reading
+             eight bytes.`]
+				]],
+				[/* throw */ 'java.io.IOException', [/* throw description */
+					[/* text */ 't', `if an I/O error occurs.`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `the next eight bytes of this file, interpreted as a
+             `],
+				[/* inline code block */ 'i', `double`],
+				[/* text */ 't', `.`]
+			]
+		]],
+		[/* method */ 'readFloat()', [
+			[/* method description */
+				[/* text */ 't', `Reads a `],
+				[/* inline code block */ 'i', `float`],
+				[/* text */ 't', ` from this file. This method reads an
+ `],
+				[/* inline code block */ 'i', `int`],
+				[/* text */ 't', ` value, starting at the current file pointer,
+ as if by the `],
+				[/* inline code block */ 'i', `readInt`],
+				[/* text */ 't', ` method
+ and then converts that `],
+				[/* inline code block */ 'i', `int`],
+				[/* text */ 't', ` to a `],
+				[/* inline code block */ 'i', `float`],
+				[/* text */ 't', `
+ using the `],
+				[/* inline code block */ 'i', `intBitsToFloat`],
+				[/* text */ 't', ` method in class
+ `],
+				[/* inline code block */ 'i', `Float`],
+				[/* text */ 't', `.
+ `],
+				[/* block */ 'b', `
+ This method blocks until the four bytes are read, the end of the
+ stream is detected, or an exception is thrown.`]
+			],
+			/* parameters */ UDF,
+			[/* throws */
+				[/* throw */ 'java.io.EOFException', [/* throw description */
+					[/* text */ 't', `if this file reaches the end before reading
+             four bytes.`]
+				]],
+				[/* throw */ 'java.io.IOException', [/* throw description */
+					[/* text */ 't', `if an I/O error occurs.`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `the next four bytes of this file, interpreted as a
+             `],
+				[/* inline code block */ 'i', `float`],
+				[/* text */ 't', `.`]
+			]
+		]],
+		[/* method */ 'readInt()', [
+			[/* method description */
+				[/* text */ 't', `Reads a signed 32-bit integer from this file. This method reads 4
+ bytes from the file, starting at the current file pointer.
+ If the bytes read, in order, are `],
+				[/* inline code block */ 'i', `b1`],
+				[/* text */ 't', `,
+ `],
+				[/* inline code block */ 'i', `b2`],
+				[/* text */ 't', `, `],
+				[/* inline code block */ 'i', `b3`],
+				[/* text */ 't', `, and `],
+				[/* inline code block */ 'i', `b4`],
+				[/* text */ 't', `, where
+ `],
+				[/* inline code block */ 'i', `0 <= b1, b2, b3, b4 <= 255`],
+				[/* text */ 't', `,
+ then the result is equal to:
+ `],
+				[/* block */ 'b', [
+					[/* code block */ 'c', `     (b1 << 24) | (b2 << 16) + (b3 << 8) + b4
+ `]
+				]],
+				[/* block */ 'b', `
+ This method blocks until the four bytes are read, the end of the
+ stream is detected, or an exception is thrown.`]
+			],
+			/* parameters */ UDF,
+			[/* throws */
+				[/* throw */ 'java.io.EOFException', [/* throw description */
+					[/* text */ 't', `if this file reaches the end before reading
+               four bytes.`]
+				]],
+				[/* throw */ 'java.io.IOException', [/* throw description */
+					[/* text */ 't', `if an I/O error occurs.`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `the next four bytes of this file, interpreted as an
+             `],
+				[/* inline code block */ 'i', `int`],
+				[/* text */ 't', `.`]
+			]
+		]],
+		[/* method */ 'readUnsignedByte()', [
+			[/* method description */
+				[/* text */ 't', `Reads an unsigned eight-bit number from this file. This method reads
+ a byte from this file, starting at the current file pointer,
+ and returns that byte.
+ `],
+				[/* block */ 'b', `
+ This method blocks until the byte is read, the end of the stream
+ is detected, or an exception is thrown.`]
+			],
+			/* parameters */ UDF,
+			[/* throws */
+				[/* throw */ 'java.io.EOFException', [/* throw description */
+					[/* text */ 't', `if this file has reached the end.`]
+				]],
+				[/* throw */ 'java.io.IOException', [/* throw description */
+					[/* text */ 't', `if an I/O error occurs.`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `the next byte of this file, interpreted as an unsigned
+             eight-bit number.`]
+			]
+		]],
+		[/* method */ 'readUnsignedShort()', [
+			[/* method description */
+				[/* text */ 't', `Reads an unsigned 16-bit number from this file. This method reads
+ two bytes from the file, starting at the current file pointer.
+ If the bytes read, in order, are
+ `],
+				[/* inline code block */ 'i', `b1`],
+				[/* text */ 't', ` and `],
+				[/* inline code block */ 'i', `b2`],
+				[/* text */ 't', `, where
+ `],
+				[/* inline code block */ 'i', `0 <= b1, b2 <= 255`],
+				[/* text */ 't', `,
+ then the result is equal to:
+ `],
+				[/* block */ 'b', [
+					[/* code block */ 'c', `     (b1 << 8) | b2
+ `]
+				]],
+				[/* block */ 'b', `
+ This method blocks until the two bytes are read, the end of the
+ stream is detected, or an exception is thrown.`]
+			],
+			/* parameters */ UDF,
+			[/* throws */
+				[/* throw */ 'java.io.EOFException', [/* throw description */
+					[/* text */ 't', `if this file reaches the end before reading
+               two bytes.`]
+				]],
+				[/* throw */ 'java.io.IOException', [/* throw description */
+					[/* text */ 't', `if an I/O error occurs.`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `the next two bytes of this file, interpreted as an unsigned
+             16-bit integer.`]
+			]
+		]],
+		[/* method */ 'getFD()', [
+			[/* method description */
+				[/* text */ 't', `Returns the opaque file descriptor object associated with this
+ stream.`]
 			],
 			/* parameters */ UDF,
 			[/* throws */
@@ -334,18 +637,495 @@ DocsCollector.collect('java.io.RandomAccessFile', [
 				]]
 			],
 			[/* return description */
-				[/* text */ 't', `the length of this file, measured in bytes.`]
+				[/* text */ 't', `the file descriptor object associated with this stream.`]
 			]
 		]],
-		[/* method */ 'write(int)', [
+		[/* method */ 'readLine()', [
 			[/* method description */
-				[/* text */ 't', `Writes the specified byte to this file. The write starts at
- the current file pointer.`]
+				[/* text */ 't', `Reads the next line of text from this file.  This method successively
+ reads bytes from the file, starting at the current file pointer,
+ until it reaches a line terminator or the end
+ of the file.  Each byte is converted into a character by taking the
+ byte's value for the lower eight bits of the character and setting the
+ high eight bits of the character to zero.  This method does not,
+ therefore, support the full Unicode character set.
+
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', ` A line of text is terminated by a carriage-return character
+ (`],
+					[/* inline code block */ 'i', `'\\r'`],
+					[/* text */ 't', `), a newline character (`],
+					[/* inline code block */ 'i', `'\\n'`],
+					[/* text */ 't', `), a
+ carriage-return character immediately followed by a newline character,
+ or the end of the file.  Line-terminating characters are discarded and
+ are not included as part of the string returned.
+
+ `]
+				]],
+				[/* block */ 'b', ` This method blocks until a newline character is read, a carriage
+ return and the byte following it are read (to see if it is a newline),
+ the end of the file is reached, or an exception is thrown.`]
+			],
+			/* parameters */ UDF,
+			[/* throws */
+				[/* throw */ 'java.io.IOException', [/* throw description */
+					[/* text */ 't', `if an I/O error occurs.`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `the next line of text from this file, or null if end
+             of file is encountered before even one byte is read.`]
+			]
+		]],
+		[/* method */ 'readUTF()', [
+			[/* method description */
+				[/* text */ 't', `Reads in a string from this file. The string has been encoded
+ using a
+ `],
+				[/* reference */ 'r', `.DataInput#modified-utf-8`],
+				[/* text */ 't', `
+ format.
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', `
+ The first two bytes are read, starting from the current file
+ pointer, as if by
+ `],
+					[/* inline code block */ 'i', `readUnsignedShort`],
+					[/* text */ 't', `. This value gives the number of
+ following bytes that are in the encoded string, not
+ the length of the resulting string. The following bytes are then
+ interpreted as bytes encoding characters in the modified UTF-8 format
+ and are converted into characters.
+ `]
+				]],
+				[/* block */ 'b', `
+ This method blocks until all the bytes are read, the end of the
+ stream is detected, or an exception is thrown.`]
+			],
+			/* parameters */ UDF,
+			[/* throws */
+				[/* throw */ 'java.io.EOFException', [/* throw description */
+					[/* text */ 't', `if this file reaches the end before
+               reading all the bytes.`]
+				]],
+				[/* throw */ 'java.io.IOException', [/* throw description */
+					[/* text */ 't', `if an I/O error occurs.`]
+				]],
+				[/* throw */ 'java.io.UTFDataFormatException', [/* throw description */
+					[/* text */ 't', `if the bytes do not represent
+               valid modified UTF-8 encoding of a Unicode string.`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `a Unicode string.`]
+			]
+		]],
+		[/* method */ 'getChannel()', [
+			[/* method description */
+				[/* text */ 't', `Returns the unique `],
+				[/* reference */ 'r', `java.nio.channels.FileChannel`],
+				[/* text */ 't', `
+ object associated with this file.
+
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', ` The `],
+					[/* reference */ 'r', `java.channels.FileChannel#position()`],
+					[/* text */ 't', ` of the returned channel will always be equal to
+ this object's file-pointer offset as returned by the `],
+					[/* reference */ 'r', `#getFilePointer()`, `getFilePointer`],
+					[/* text */ 't', ` method.  Changing this object's
+ file-pointer offset, whether explicitly or by reading or writing bytes,
+ will change the position of the channel, and vice versa.  Changing the
+ file's length via this object will change the length seen via the file
+ channel, and vice versa.`]
+				]]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the file channel associated with this file`]
+			]
+		]],
+		[/* method */ 'readLong()', [
+			[/* method description */
+				[/* text */ 't', `Reads a signed 64-bit integer from this file. This method reads eight
+ bytes from the file, starting at the current file pointer.
+ If the bytes read, in order, are
+ `],
+				[/* inline code block */ 'i', `b1`],
+				[/* text */ 't', `, `],
+				[/* inline code block */ 'i', `b2`],
+				[/* text */ 't', `, `],
+				[/* inline code block */ 'i', `b3`],
+				[/* text */ 't', `,
+ `],
+				[/* inline code block */ 'i', `b4`],
+				[/* text */ 't', `, `],
+				[/* inline code block */ 'i', `b5`],
+				[/* text */ 't', `, `],
+				[/* inline code block */ 'i', `b6`],
+				[/* text */ 't', `,
+ `],
+				[/* inline code block */ 'i', `b7`],
+				[/* text */ 't', `, and `],
+				[/* inline code block */ 'i', `b8,`],
+				[/* text */ 't', ` where:
+ `],
+				[/* block */ 'b', [
+					[/* code block */ 'c', `     0 <= b1, b2, b3, b4, b5, b6, b7, b8 <=255,
+ `]
+				]],
+				[/* block */ 'b', `
+ then the result is equal to:
+ `],
+				[/* block */ 'b', [
+					[/* code block */ 'c', `     ((long)b1 << 56) + ((long)b2 << 48)
+     + ((long)b3 << 40) + ((long)b4 << 32)
+     + ((long)b5 << 24) + ((long)b6 << 16)
+     + ((long)b7 << 8) + b8
+ `]
+				]],
+				[/* block */ 'b', ''],
+				[/* block */ 'b', `
+ This method blocks until the eight bytes are read, the end of the
+ stream is detected, or an exception is thrown.`]
+			],
+			/* parameters */ UDF,
+			[/* throws */
+				[/* throw */ 'java.io.EOFException', [/* throw description */
+					[/* text */ 't', `if this file reaches the end before reading
+               eight bytes.`]
+				]],
+				[/* throw */ 'java.io.IOException', [/* throw description */
+					[/* text */ 't', `if an I/O error occurs.`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `the next eight bytes of this file, interpreted as a
+             `],
+				[/* inline code block */ 'i', `long`],
+				[/* text */ 't', `.`]
+			]
+		]],
+		[/* method */ 'readShort()', [
+			[/* method description */
+				[/* text */ 't', `Reads a signed 16-bit number from this file. The method reads two
+ bytes from this file, starting at the current file pointer.
+ If the two bytes read, in order, are
+ `],
+				[/* inline code block */ 'i', `b1`],
+				[/* text */ 't', ` and `],
+				[/* inline code block */ 'i', `b2`],
+				[/* text */ 't', `, where each of the two values is
+ between `],
+				[/* inline code block */ 'i', `0`],
+				[/* text */ 't', ` and `],
+				[/* inline code block */ 'i', `255`],
+				[/* text */ 't', `, inclusive, then the
+ result is equal to:
+ `],
+				[/* block */ 'b', [
+					[/* code block */ 'c', `     (short)((b1 << 8) | b2)
+ `]
+				]],
+				[/* block */ 'b', `
+ This method blocks until the two bytes are read, the end of the
+ stream is detected, or an exception is thrown.`]
+			],
+			/* parameters */ UDF,
+			[/* throws */
+				[/* throw */ 'java.io.EOFException', [/* throw description */
+					[/* text */ 't', `if this file reaches the end before reading
+               two bytes.`]
+				]],
+				[/* throw */ 'java.io.IOException', [/* throw description */
+					[/* text */ 't', `if an I/O error occurs.`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `the next two bytes of this file, interpreted as a signed
+             16-bit number.`]
+			]
+		]],
+		[/* method */ 'readFully(byte[])', [
+			[/* method description */
+				[/* text */ 't', `Reads `],
+				[/* inline code block */ 'i', `b.length`],
+				[/* text */ 't', ` bytes from this file into the byte
+ array, starting at the current file pointer. This method reads
+ repeatedly from the file until the requested number of bytes are
+ read. This method blocks until the requested number of bytes are
+ read, the end of the stream is detected, or an exception is thrown.`]
 			],
 			[/* parameters */
 				[/* parameter */ 'b', [/* parameter description */
-					[/* text */ 't', `the `],
+					[/* text */ 't', `the buffer into which the data is read.`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
+					[/* text */ 't', `if `],
+					[/* inline code block */ 'i', `b`],
+					[/* text */ 't', ` is `],
+					[/* inline code block */ 'i', `null`],
+					[/* text */ 't', `.`]
+				]],
+				[/* throw */ 'java.io.EOFException', [/* throw description */
+					[/* text */ 't', `if this file reaches the end before reading
+              all the bytes.`]
+				]],
+				[/* throw */ 'java.io.IOException', [/* throw description */
+					[/* text */ 't', `if an I/O error occurs.`]
+				]]
+			],
+			/* return */ UDF
+		]],
+		[/* method */ 'readFully(byte[],int,int)', [
+			[/* method description */
+				[/* text */ 't', `Reads exactly `],
+				[/* inline code block */ 'i', `len`],
+				[/* text */ 't', ` bytes from this file into the byte
+ array, starting at the current file pointer. This method reads
+ repeatedly from the file until the requested number of bytes are
+ read. This method blocks until the requested number of bytes are
+ read, the end of the stream is detected, or an exception is thrown.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'b', [/* parameter description */
+					[/* text */ 't', `the buffer into which the data is read.`]
+				]],
+				[/* parameter */ 'off', [/* parameter description */
+					[/* text */ 't', `the start offset into the data array `],
+					[/* inline code block */ 'i', `b`],
+					[/* text */ 't', `.`]
+				]],
+				[/* parameter */ 'len', [/* parameter description */
+					[/* text */ 't', `the number of bytes to read.`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
+					[/* text */ 't', `if `],
+					[/* inline code block */ 'i', `b`],
+					[/* text */ 't', ` is `],
+					[/* inline code block */ 'i', `null`],
+					[/* text */ 't', `.`]
+				]],
+				[/* throw */ 'java.lang.IndexOutOfBoundsException', [/* throw description */
+					[/* text */ 't', `if `],
+					[/* inline code block */ 'i', `off`],
+					[/* text */ 't', ` is negative,
+                `],
+					[/* inline code block */ 'i', `len`],
+					[/* text */ 't', ` is negative, or `],
+					[/* inline code block */ 'i', `len`],
+					[/* text */ 't', ` is greater than
+                `],
+					[/* inline code block */ 'i', `b.length - off`],
+					[/* text */ 't', `.`]
+				]],
+				[/* throw */ 'java.io.EOFException', [/* throw description */
+					[/* text */ 't', `if this file reaches the end before reading
+                all the bytes.`]
+				]],
+				[/* throw */ 'java.io.IOException', [/* throw description */
+					[/* text */ 't', `if an I/O error occurs.`]
+				]]
+			],
+			/* return */ UDF
+		]],
+		[/* method */ 'writeBoolean(boolean)', [
+			[/* method description */
+				[/* text */ 't', `Writes a `],
+				[/* inline code block */ 'i', `boolean`],
+				[/* text */ 't', ` to the file as a one-byte value. The
+ value `],
+				[/* inline code block */ 'i', `true`],
+				[/* text */ 't', ` is written out as the value
+ `],
+				[/* inline code block */ 'i', `(byte)1`],
+				[/* text */ 't', `; the value `],
+				[/* inline code block */ 'i', `false`],
+				[/* text */ 't', ` is written out
+ as the value `],
+				[/* inline code block */ 'i', `(byte)0`],
+				[/* text */ 't', `. The write starts at
+ the current position of the file pointer.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'v', [/* parameter description */
+					[/* text */ 't', `a `],
+					[/* inline code block */ 'i', `boolean`],
+					[/* text */ 't', ` value to be written.`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.io.IOException', [/* throw description */
+					[/* text */ 't', `if an I/O error occurs.`]
+				]]
+			],
+			/* return */ UDF
+		]],
+		[/* method */ 'writeByte(int)', [
+			[/* method description */
+				[/* text */ 't', `Writes a `],
+				[/* inline code block */ 'i', `byte`],
+				[/* text */ 't', ` to the file as a one-byte value. The
+ write starts at the current position of the file pointer.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'v', [/* parameter description */
+					[/* text */ 't', `a `],
 					[/* inline code block */ 'i', `byte`],
+					[/* text */ 't', ` value to be written.`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.io.IOException', [/* throw description */
+					[/* text */ 't', `if an I/O error occurs.`]
+				]]
+			],
+			/* return */ UDF
+		]],
+		[/* method */ 'writeBytes(java.lang.String)', [
+			[/* method description */
+				[/* text */ 't', `Writes the string to the file as a sequence of bytes. Each
+ character in the string is written out, in sequence, by discarding
+ its high eight bits. The write starts at the current position of
+ the file pointer.`]
+			],
+			[/* parameters */
+				[/* parameter */ 's', [/* parameter description */
+					[/* text */ 't', `a string of bytes to be written.`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.io.IOException', [/* throw description */
+					[/* text */ 't', `if an I/O error occurs.`]
+				]]
+			],
+			/* return */ UDF
+		]],
+		[/* method */ 'writeChar(int)', [
+			[/* method description */
+				[/* text */ 't', `Writes a `],
+				[/* inline code block */ 'i', `char`],
+				[/* text */ 't', ` to the file as a two-byte value, high
+ byte first. The write starts at the current position of the
+ file pointer.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'v', [/* parameter description */
+					[/* text */ 't', `a `],
+					[/* inline code block */ 'i', `char`],
+					[/* text */ 't', ` value to be written.`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.io.IOException', [/* throw description */
+					[/* text */ 't', `if an I/O error occurs.`]
+				]]
+			],
+			/* return */ UDF
+		]],
+		[/* method */ 'writeChars(java.lang.String)', [
+			[/* method description */
+				[/* text */ 't', `Writes a string to the file as a sequence of characters. Each
+ character is written to the data output stream as if by the
+ `],
+				[/* inline code block */ 'i', `writeChar`],
+				[/* text */ 't', ` method. The write starts at the current
+ position of the file pointer.`]
+			],
+			[/* parameters */
+				[/* parameter */ 's', [/* parameter description */
+					[/* text */ 't', `a `],
+					[/* inline code block */ 'i', `String`],
+					[/* text */ 't', ` value to be written.`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.io.IOException', [/* throw description */
+					[/* text */ 't', `if an I/O error occurs.`]
+				]]
+			],
+			/* return */ UDF
+		]],
+		[/* method */ 'writeDouble(double)', [
+			[/* method description */
+				[/* text */ 't', `Converts the double argument to a `],
+				[/* inline code block */ 'i', `long`],
+				[/* text */ 't', ` using the
+ `],
+				[/* inline code block */ 'i', `doubleToLongBits`],
+				[/* text */ 't', ` method in class `],
+				[/* inline code block */ 'i', `Double`],
+				[/* text */ 't', `,
+ and then writes that `],
+				[/* inline code block */ 'i', `long`],
+				[/* text */ 't', ` value to the file as an
+ eight-byte quantity, high byte first. The write starts at the current
+ position of the file pointer.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'v', [/* parameter description */
+					[/* text */ 't', `a `],
+					[/* inline code block */ 'i', `double`],
+					[/* text */ 't', ` value to be written.`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.io.IOException', [/* throw description */
+					[/* text */ 't', `if an I/O error occurs.`]
+				]]
+			],
+			/* return */ UDF
+		]],
+		[/* method */ 'writeFloat(float)', [
+			[/* method description */
+				[/* text */ 't', `Converts the float argument to an `],
+				[/* inline code block */ 'i', `int`],
+				[/* text */ 't', ` using the
+ `],
+				[/* inline code block */ 'i', `floatToIntBits`],
+				[/* text */ 't', ` method in class `],
+				[/* inline code block */ 'i', `Float`],
+				[/* text */ 't', `,
+ and then writes that `],
+				[/* inline code block */ 'i', `int`],
+				[/* text */ 't', ` value to the file as a
+ four-byte quantity, high byte first. The write starts at the
+ current position of the file pointer.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'v', [/* parameter description */
+					[/* text */ 't', `a `],
+					[/* inline code block */ 'i', `float`],
+					[/* text */ 't', ` value to be written.`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.io.IOException', [/* throw description */
+					[/* text */ 't', `if an I/O error occurs.`]
+				]]
+			],
+			/* return */ UDF
+		]],
+		[/* method */ 'writeInt(int)', [
+			[/* method description */
+				[/* text */ 't', `Writes an `],
+				[/* inline code block */ 'i', `int`],
+				[/* text */ 't', ` to the file as four bytes, high byte first.
+ The write starts at the current position of the file pointer.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'v', [/* parameter description */
+					[/* text */ 't', `an `],
+					[/* inline code block */ 'i', `int`],
 					[/* text */ 't', ` to be written.`]
 				]]
 			],
@@ -356,24 +1136,18 @@ DocsCollector.collect('java.io.RandomAccessFile', [
 			],
 			/* return */ UDF
 		]],
-		[/* method */ 'write(byte[],int,int)', [
+		[/* method */ 'writeLong(long)', [
 			[/* method description */
-				[/* text */ 't', `Writes `],
-				[/* inline code block */ 'i', `len`],
-				[/* text */ 't', ` bytes from the specified byte array
- starting at offset `],
-				[/* inline code block */ 'i', `off`],
-				[/* text */ 't', ` to this file.`]
+				[/* text */ 't', `Writes a `],
+				[/* inline code block */ 'i', `long`],
+				[/* text */ 't', ` to the file as eight bytes, high byte first.
+ The write starts at the current position of the file pointer.`]
 			],
 			[/* parameters */
-				[/* parameter */ 'b', [/* parameter description */
-					[/* text */ 't', `the data.`]
-				]],
-				[/* parameter */ 'off', [/* parameter description */
-					[/* text */ 't', `the start offset in the data.`]
-				]],
-				[/* parameter */ 'len', [/* parameter description */
-					[/* text */ 't', `the number of bytes to write.`]
+				[/* parameter */ 'v', [/* parameter description */
+					[/* text */ 't', `a `],
+					[/* inline code block */ 'i', `long`],
+					[/* text */ 't', ` to be written.`]
 				]]
 			],
 			[/* throws */
@@ -383,16 +1157,18 @@ DocsCollector.collect('java.io.RandomAccessFile', [
 			],
 			/* return */ UDF
 		]],
-		[/* method */ 'write(byte[])', [
+		[/* method */ 'writeShort(int)', [
 			[/* method description */
-				[/* text */ 't', `Writes `],
-				[/* inline code block */ 'i', `b.length`],
-				[/* text */ 't', ` bytes from the specified byte array
- to this file, starting at the current file pointer.`]
+				[/* text */ 't', `Writes a `],
+				[/* inline code block */ 'i', `short`],
+				[/* text */ 't', ` to the file as two bytes, high byte first.
+ The write starts at the current position of the file pointer.`]
 			],
 			[/* parameters */
-				[/* parameter */ 'b', [/* parameter description */
-					[/* text */ 't', `the data.`]
+				[/* parameter */ 'v', [/* parameter description */
+					[/* text */ 't', `a `],
+					[/* inline code block */ 'i', `short`],
+					[/* text */ 't', ` to be written.`]
 				]]
 			],
 			[/* throws */
@@ -401,6 +1177,128 @@ DocsCollector.collect('java.io.RandomAccessFile', [
 				]]
 			],
 			/* return */ UDF
+		]],
+		[/* method */ 'writeUTF(java.lang.String)', [
+			[/* method description */
+				[/* text */ 't', `Writes a string to the file using
+ `],
+				[/* reference */ 'r', `.DataInput#modified-utf-8`],
+				[/* text */ 't', `
+ encoding in a machine-independent manner.
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', `
+ First, two bytes are written to the file, starting at the
+ current file pointer, as if by the
+ `],
+					[/* inline code block */ 'i', `writeShort`],
+					[/* text */ 't', ` method giving the number of bytes to
+ follow. This value is the number of bytes actually written out,
+ not the length of the string. Following the length, each character
+ of the string is output, in sequence, using the modified UTF-8 encoding
+ for each character.`]
+				]]
+			],
+			[/* parameters */
+				[/* parameter */ 'str', [/* parameter description */
+					[/* text */ 't', `a string to be written.`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.io.IOException', [/* throw description */
+					[/* text */ 't', `if an I/O error occurs.`]
+				]]
+			],
+			/* return */ UDF
+		]],
+		[/* method */ 'read()', [
+			[/* method description */
+				[/* text */ 't', `Reads a byte of data from this file. The byte is returned as an
+ integer in the range 0 to 255 (`],
+				[/* inline code block */ 'i', `0x00-0x0ff`],
+				[/* text */ 't', `). This
+ method blocks if no input is yet available.
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', `
+ Although `],
+					[/* inline code block */ 'i', `RandomAccessFile`],
+					[/* text */ 't', ` is not a subclass of
+ `],
+					[/* inline code block */ 'i', `InputStream`],
+					[/* text */ 't', `, this method behaves in exactly the same
+ way as the `],
+					[/* reference */ 'r', `.InputStream#read()`],
+					[/* text */ 't', ` method of
+ `],
+					[/* inline code block */ 'i', `InputStream`],
+					[/* text */ 't', `.`]
+				]]
+			],
+			/* parameters */ UDF,
+			[/* throws */
+				[/* throw */ 'java.io.IOException', [/* throw description */
+					[/* text */ 't', `if an I/O error occurs. Not thrown if
+                          end-of-file has been reached.`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `the next byte of data, or `],
+				[/* inline code block */ 'i', `-1`],
+				[/* text */ 't', ` if the end of the
+             file has been reached.`]
+			]
+		]],
+		[/* method */ 'read(byte[])', [
+			[/* method description */
+				[/* text */ 't', `Reads up to `],
+				[/* inline code block */ 'i', `b.length`],
+				[/* text */ 't', ` bytes of data from this file
+ into an array of bytes. This method blocks until at least one byte
+ of input is available.
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', `
+ Although `],
+					[/* inline code block */ 'i', `RandomAccessFile`],
+					[/* text */ 't', ` is not a subclass of
+ `],
+					[/* inline code block */ 'i', `InputStream`],
+					[/* text */ 't', `, this method behaves in exactly the
+ same way as the `],
+					[/* reference */ 'r', `.InputStream#read(byte[])`],
+					[/* text */ 't', ` method of
+ `],
+					[/* inline code block */ 'i', `InputStream`],
+					[/* text */ 't', `.`]
+				]]
+			],
+			[/* parameters */
+				[/* parameter */ 'b', [/* parameter description */
+					[/* text */ 't', `the buffer into which the data is read.`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.io.IOException', [/* throw description */
+					[/* text */ 't', `If the first byte cannot be read for any reason
+             other than end of file, or if the random access file has been closed,
+             or if some other I/O error occurs.`]
+				]],
+				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
+					[/* text */ 't', `If `],
+					[/* inline code block */ 'i', `b`],
+					[/* text */ 't', ` is `],
+					[/* inline code block */ 'i', `null`],
+					[/* text */ 't', `.`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `the total number of bytes read into the buffer, or
+             `],
+				[/* inline code block */ 'i', `-1`],
+				[/* text */ 't', ` if there is no more data because the end of
+             this file has been reached.`]
+			]
 		]],
 		[/* method */ 'read(byte[],int,int)', [
 			[/* method description */
@@ -474,122 +1372,47 @@ DocsCollector.collect('java.io.RandomAccessFile', [
              the file has been reached.`]
 			]
 		]],
-		[/* method */ 'read(byte[])', [
+		[/* method */ 'skipBytes(int)', [
 			[/* method description */
-				[/* text */ 't', `Reads up to `],
-				[/* inline code block */ 'i', `b.length`],
-				[/* text */ 't', ` bytes of data from this file
- into an array of bytes. This method blocks until at least one byte
- of input is available.
+				[/* text */ 't', `Attempts to skip over `],
+				[/* inline code block */ 'i', `n`],
+				[/* text */ 't', ` bytes of input discarding the
+ skipped bytes.
  `],
 				[/* block */ 'b', [
 					[/* text */ 't', `
- Although `],
-					[/* inline code block */ 'i', `RandomAccessFile`],
-					[/* text */ 't', ` is not a subclass of
- `],
-					[/* inline code block */ 'i', `InputStream`],
-					[/* text */ 't', `, this method behaves in exactly the
- same way as the `],
-					[/* reference */ 'r', `.InputStream#read(byte[])`],
-					[/* text */ 't', ` method of
- `],
-					[/* inline code block */ 'i', `InputStream`],
-					[/* text */ 't', `.`]
+
+ This method may skip over some smaller number of bytes, possibly zero.
+ This may result from any of a number of conditions; reaching end of
+ file before `],
+					[/* inline code block */ 'i', `n`],
+					[/* text */ 't', ` bytes have been skipped is only one
+ possibility. This method never throws an `],
+					[/* inline code block */ 'i', `EOFException`],
+					[/* text */ 't', `.
+ The actual number of bytes skipped is returned.  If `],
+					[/* inline code block */ 'i', `n`],
+					[/* text */ 't', `
+ is negative, no bytes are skipped.`]
 				]]
 			],
 			[/* parameters */
-				[/* parameter */ 'b', [/* parameter description */
-					[/* text */ 't', `the buffer into which the data is read.`]
+				[/* parameter */ 'n', [/* parameter description */
+					[/* text */ 't', `the number of bytes to be skipped.`]
 				]]
 			],
 			[/* throws */
 				[/* throw */ 'java.io.IOException', [/* throw description */
-					[/* text */ 't', `If the first byte cannot be read for any reason
-             other than end of file, or if the random access file has been closed,
-             or if some other I/O error occurs.`]
-				]],
-				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
-					[/* text */ 't', `If `],
-					[/* inline code block */ 'i', `b`],
-					[/* text */ 't', ` is `],
-					[/* inline code block */ 'i', `null`],
-					[/* text */ 't', `.`]
+					[/* text */ 't', `if an I/O error occurs.`]
 				]]
 			],
 			[/* return description */
-				[/* text */ 't', `the total number of bytes read into the buffer, or
-             `],
-				[/* inline code block */ 'i', `-1`],
-				[/* text */ 't', ` if there is no more data because the end of
-             this file has been reached.`]
+				[/* text */ 't', `the actual number of bytes skipped.`]
 			]
 		]],
-		[/* method */ 'read()', [
+		[/* method */ 'getFilePointer()', [
 			[/* method description */
-				[/* text */ 't', `Reads a byte of data from this file. The byte is returned as an
- integer in the range 0 to 255 (`],
-				[/* inline code block */ 'i', `0x00-0x0ff`],
-				[/* text */ 't', `). This
- method blocks if no input is yet available.
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', `
- Although `],
-					[/* inline code block */ 'i', `RandomAccessFile`],
-					[/* text */ 't', ` is not a subclass of
- `],
-					[/* inline code block */ 'i', `InputStream`],
-					[/* text */ 't', `, this method behaves in exactly the same
- way as the `],
-					[/* reference */ 'r', `.InputStream#read()`],
-					[/* text */ 't', ` method of
- `],
-					[/* inline code block */ 'i', `InputStream`],
-					[/* text */ 't', `.`]
-				]]
-			],
-			/* parameters */ UDF,
-			[/* throws */
-				[/* throw */ 'java.io.IOException', [/* throw description */
-					[/* text */ 't', `if an I/O error occurs. Not thrown if
-                          end-of-file has been reached.`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `the next byte of data, or `],
-				[/* inline code block */ 'i', `-1`],
-				[/* text */ 't', ` if the end of the
-             file has been reached.`]
-			]
-		]],
-		[/* method */ 'readLine()', [
-			[/* method description */
-				[/* text */ 't', `Reads the next line of text from this file.  This method successively
- reads bytes from the file, starting at the current file pointer,
- until it reaches a line terminator or the end
- of the file.  Each byte is converted into a character by taking the
- byte's value for the lower eight bits of the character and setting the
- high eight bits of the character to zero.  This method does not,
- therefore, support the full Unicode character set.
-
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', ` A line of text is terminated by a carriage-return character
- (`],
-					[/* inline code block */ 'i', `'\\r'`],
-					[/* text */ 't', `), a newline character (`],
-					[/* inline code block */ 'i', `'\\n'`],
-					[/* text */ 't', `), a
- carriage-return character immediately followed by a newline character,
- or the end of the file.  Line-terminating characters are discarded and
- are not included as part of the string returned.
-
- `]
-				]],
-				[/* block */ 'b', ` This method blocks until a newline character is read, a carriage
- return and the byte following it are read (to see if it is a newline),
- the end of the file is reached, or an exception is thrown.`]
+				[/* text */ 't', `Returns the current offset in this file.`]
 			],
 			/* parameters */ UDF,
 			[/* throws */
@@ -598,8 +1421,22 @@ DocsCollector.collect('java.io.RandomAccessFile', [
 				]]
 			],
 			[/* return description */
-				[/* text */ 't', `the next line of text from this file, or null if end
-             of file is encountered before even one byte is read.`]
+				[/* text */ 't', `the offset from the beginning of the file, in bytes,
+             at which the next read or write occurs.`]
+			]
+		]],
+		[/* method */ 'length()', [
+			[/* method description */
+				[/* text */ 't', `Returns the length of this file.`]
+			],
+			/* parameters */ UDF,
+			[/* throws */
+				[/* throw */ 'java.io.IOException', [/* throw description */
+					[/* text */ 't', `if an I/O error occurs.`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `the length of this file, measured in bytes.`]
 			]
 		]],
 		[/* method */ 'setLength(long)', [
@@ -669,520 +1506,6 @@ DocsCollector.collect('java.io.RandomAccessFile', [
 			],
 			/* return */ UDF
 		]],
-		[/* method */ 'writeInt(int)', [
-			[/* method description */
-				[/* text */ 't', `Writes an `],
-				[/* inline code block */ 'i', `int`],
-				[/* text */ 't', ` to the file as four bytes, high byte first.
- The write starts at the current position of the file pointer.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'v', [/* parameter description */
-					[/* text */ 't', `an `],
-					[/* inline code block */ 'i', `int`],
-					[/* text */ 't', ` to be written.`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.io.IOException', [/* throw description */
-					[/* text */ 't', `if an I/O error occurs.`]
-				]]
-			],
-			/* return */ UDF
-		]],
-		[/* method */ 'readInt()', [
-			[/* method description */
-				[/* text */ 't', `Reads a signed 32-bit integer from this file. This method reads 4
- bytes from the file, starting at the current file pointer.
- If the bytes read, in order, are `],
-				[/* inline code block */ 'i', `b1`],
-				[/* text */ 't', `,
- `],
-				[/* inline code block */ 'i', `b2`],
-				[/* text */ 't', `, `],
-				[/* inline code block */ 'i', `b3`],
-				[/* text */ 't', `, and `],
-				[/* inline code block */ 'i', `b4`],
-				[/* text */ 't', `, where
- `],
-				[/* inline code block */ 'i', `0 <= b1, b2, b3, b4 <= 255`],
-				[/* text */ 't', `,
- then the result is equal to:
- `],
-				[/* block */ 'b', [
-					[/* code block */ 'c', `     (b1 << 24) | (b2 << 16) + (b3 << 8) + b4
- `]
-				]],
-				[/* block */ 'b', `
- This method blocks until the four bytes are read, the end of the
- stream is detected, or an exception is thrown.`]
-			],
-			/* parameters */ UDF,
-			[/* throws */
-				[/* throw */ 'java.io.EOFException', [/* throw description */
-					[/* text */ 't', `if this file reaches the end before reading
-               four bytes.`]
-				]],
-				[/* throw */ 'java.io.IOException', [/* throw description */
-					[/* text */ 't', `if an I/O error occurs.`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `the next four bytes of this file, interpreted as an
-             `],
-				[/* inline code block */ 'i', `int`],
-				[/* text */ 't', `.`]
-			]
-		]],
-		[/* method */ 'writeUTF(java.lang.String)', [
-			[/* method description */
-				[/* text */ 't', `Writes a string to the file using
- `],
-				[/* reference */ 'r', `.DataInput#modified-utf-8`],
-				[/* text */ 't', `
- encoding in a machine-independent manner.
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', `
- First, two bytes are written to the file, starting at the
- current file pointer, as if by the
- `],
-					[/* inline code block */ 'i', `writeShort`],
-					[/* text */ 't', ` method giving the number of bytes to
- follow. This value is the number of bytes actually written out,
- not the length of the string. Following the length, each character
- of the string is output, in sequence, using the modified UTF-8 encoding
- for each character.`]
-				]]
-			],
-			[/* parameters */
-				[/* parameter */ 'str', [/* parameter description */
-					[/* text */ 't', `a string to be written.`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.io.IOException', [/* throw description */
-					[/* text */ 't', `if an I/O error occurs.`]
-				]]
-			],
-			/* return */ UDF
-		]],
-		[/* method */ 'readUTF()', [
-			[/* method description */
-				[/* text */ 't', `Reads in a string from this file. The string has been encoded
- using a
- `],
-				[/* reference */ 'r', `.DataInput#modified-utf-8`],
-				[/* text */ 't', `
- format.
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', `
- The first two bytes are read, starting from the current file
- pointer, as if by
- `],
-					[/* inline code block */ 'i', `readUnsignedShort`],
-					[/* text */ 't', `. This value gives the number of
- following bytes that are in the encoded string, not
- the length of the resulting string. The following bytes are then
- interpreted as bytes encoding characters in the modified UTF-8 format
- and are converted into characters.
- `]
-				]],
-				[/* block */ 'b', `
- This method blocks until all the bytes are read, the end of the
- stream is detected, or an exception is thrown.`]
-			],
-			/* parameters */ UDF,
-			[/* throws */
-				[/* throw */ 'java.io.EOFException', [/* throw description */
-					[/* text */ 't', `if this file reaches the end before
-               reading all the bytes.`]
-				]],
-				[/* throw */ 'java.io.IOException', [/* throw description */
-					[/* text */ 't', `if an I/O error occurs.`]
-				]],
-				[/* throw */ 'java.io.UTFDataFormatException', [/* throw description */
-					[/* text */ 't', `if the bytes do not represent
-               valid modified UTF-8 encoding of a Unicode string.`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `a Unicode string.`]
-			]
-		]],
-		[/* method */ 'getFD()', [
-			[/* method description */
-				[/* text */ 't', `Returns the opaque file descriptor object associated with this
- stream.`]
-			],
-			/* parameters */ UDF,
-			[/* throws */
-				[/* throw */ 'java.io.IOException', [/* throw description */
-					[/* text */ 't', `if an I/O error occurs.`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `the file descriptor object associated with this stream.`]
-			]
-		]],
-		[/* method */ 'getChannel()', [
-			[/* method description */
-				[/* text */ 't', `Returns the unique `],
-				[/* reference */ 'r', `java.nio.channels.FileChannel`],
-				[/* text */ 't', `
- object associated with this file.
-
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', ` The `],
-					[/* reference */ 'r', `java.channels.FileChannel#position()`],
-					[/* text */ 't', ` of the returned channel will always be equal to
- this object's file-pointer offset as returned by the `],
-					[/* reference */ 'r', `#getFilePointer()`, `getFilePointer`],
-					[/* text */ 't', ` method.  Changing this object's
- file-pointer offset, whether explicitly or by reading or writing bytes,
- will change the position of the channel, and vice versa.  Changing the
- file's length via this object will change the length seen via the file
- channel, and vice versa.`]
-				]]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the file channel associated with this file`]
-			]
-		]],
-		[/* method */ 'writeBytes(java.lang.String)', [
-			[/* method description */
-				[/* text */ 't', `Writes the string to the file as a sequence of bytes. Each
- character in the string is written out, in sequence, by discarding
- its high eight bits. The write starts at the current position of
- the file pointer.`]
-			],
-			[/* parameters */
-				[/* parameter */ 's', [/* parameter description */
-					[/* text */ 't', `a string of bytes to be written.`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.io.IOException', [/* throw description */
-					[/* text */ 't', `if an I/O error occurs.`]
-				]]
-			],
-			/* return */ UDF
-		]],
-		[/* method */ 'writeChar(int)', [
-			[/* method description */
-				[/* text */ 't', `Writes a `],
-				[/* inline code block */ 'i', `char`],
-				[/* text */ 't', ` to the file as a two-byte value, high
- byte first. The write starts at the current position of the
- file pointer.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'v', [/* parameter description */
-					[/* text */ 't', `a `],
-					[/* inline code block */ 'i', `char`],
-					[/* text */ 't', ` value to be written.`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.io.IOException', [/* throw description */
-					[/* text */ 't', `if an I/O error occurs.`]
-				]]
-			],
-			/* return */ UDF
-		]],
-		[/* method */ 'readChar()', [
-			[/* method description */
-				[/* text */ 't', `Reads a character from this file. This method reads two
- bytes from the file, starting at the current file pointer.
- If the bytes read, in order, are
- `],
-				[/* inline code block */ 'i', `b1`],
-				[/* text */ 't', ` and `],
-				[/* inline code block */ 'i', `b2`],
-				[/* text */ 't', `, where
- `],
-				[/* inline code block */ 'i', `0 <= b1, b2 <= 255`],
-				[/* text */ 't', `,
- then the result is equal to:
- `],
-				[/* block */ 'b', [
-					[/* code block */ 'c', `     (char)((b1 << 8) | b2)
- `]
-				]],
-				[/* block */ 'b', `
- This method blocks until the two bytes are read, the end of the
- stream is detected, or an exception is thrown.`]
-			],
-			/* parameters */ UDF,
-			[/* throws */
-				[/* throw */ 'java.io.EOFException', [/* throw description */
-					[/* text */ 't', `if this file reaches the end before reading
-               two bytes.`]
-				]],
-				[/* throw */ 'java.io.IOException', [/* throw description */
-					[/* text */ 't', `if an I/O error occurs.`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `the next two bytes of this file, interpreted as a
-                  `],
-				[/* inline code block */ 'i', `char`],
-				[/* text */ 't', `.`]
-			]
-		]],
-		[/* method */ 'writeFloat(float)', [
-			[/* method description */
-				[/* text */ 't', `Converts the float argument to an `],
-				[/* inline code block */ 'i', `int`],
-				[/* text */ 't', ` using the
- `],
-				[/* inline code block */ 'i', `floatToIntBits`],
-				[/* text */ 't', ` method in class `],
-				[/* inline code block */ 'i', `Float`],
-				[/* text */ 't', `,
- and then writes that `],
-				[/* inline code block */ 'i', `int`],
-				[/* text */ 't', ` value to the file as a
- four-byte quantity, high byte first. The write starts at the
- current position of the file pointer.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'v', [/* parameter description */
-					[/* text */ 't', `a `],
-					[/* inline code block */ 'i', `float`],
-					[/* text */ 't', ` value to be written.`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.io.IOException', [/* throw description */
-					[/* text */ 't', `if an I/O error occurs.`]
-				]]
-			],
-			/* return */ UDF
-		]],
-		[/* method */ 'readFloat()', [
-			[/* method description */
-				[/* text */ 't', `Reads a `],
-				[/* inline code block */ 'i', `float`],
-				[/* text */ 't', ` from this file. This method reads an
- `],
-				[/* inline code block */ 'i', `int`],
-				[/* text */ 't', ` value, starting at the current file pointer,
- as if by the `],
-				[/* inline code block */ 'i', `readInt`],
-				[/* text */ 't', ` method
- and then converts that `],
-				[/* inline code block */ 'i', `int`],
-				[/* text */ 't', ` to a `],
-				[/* inline code block */ 'i', `float`],
-				[/* text */ 't', `
- using the `],
-				[/* inline code block */ 'i', `intBitsToFloat`],
-				[/* text */ 't', ` method in class
- `],
-				[/* inline code block */ 'i', `Float`],
-				[/* text */ 't', `.
- `],
-				[/* block */ 'b', `
- This method blocks until the four bytes are read, the end of the
- stream is detected, or an exception is thrown.`]
-			],
-			/* parameters */ UDF,
-			[/* throws */
-				[/* throw */ 'java.io.EOFException', [/* throw description */
-					[/* text */ 't', `if this file reaches the end before reading
-             four bytes.`]
-				]],
-				[/* throw */ 'java.io.IOException', [/* throw description */
-					[/* text */ 't', `if an I/O error occurs.`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `the next four bytes of this file, interpreted as a
-             `],
-				[/* inline code block */ 'i', `float`],
-				[/* text */ 't', `.`]
-			]
-		]],
-		[/* method */ 'readUnsignedShort()', [
-			[/* method description */
-				[/* text */ 't', `Reads an unsigned 16-bit number from this file. This method reads
- two bytes from the file, starting at the current file pointer.
- If the bytes read, in order, are
- `],
-				[/* inline code block */ 'i', `b1`],
-				[/* text */ 't', ` and `],
-				[/* inline code block */ 'i', `b2`],
-				[/* text */ 't', `, where
- `],
-				[/* inline code block */ 'i', `0 <= b1, b2 <= 255`],
-				[/* text */ 't', `,
- then the result is equal to:
- `],
-				[/* block */ 'b', [
-					[/* code block */ 'c', `     (b1 << 8) | b2
- `]
-				]],
-				[/* block */ 'b', `
- This method blocks until the two bytes are read, the end of the
- stream is detected, or an exception is thrown.`]
-			],
-			/* parameters */ UDF,
-			[/* throws */
-				[/* throw */ 'java.io.EOFException', [/* throw description */
-					[/* text */ 't', `if this file reaches the end before reading
-               two bytes.`]
-				]],
-				[/* throw */ 'java.io.IOException', [/* throw description */
-					[/* text */ 't', `if an I/O error occurs.`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `the next two bytes of this file, interpreted as an unsigned
-             16-bit integer.`]
-			]
-		]],
-		[/* method */ 'readLong()', [
-			[/* method description */
-				[/* text */ 't', `Reads a signed 64-bit integer from this file. This method reads eight
- bytes from the file, starting at the current file pointer.
- If the bytes read, in order, are
- `],
-				[/* inline code block */ 'i', `b1`],
-				[/* text */ 't', `, `],
-				[/* inline code block */ 'i', `b2`],
-				[/* text */ 't', `, `],
-				[/* inline code block */ 'i', `b3`],
-				[/* text */ 't', `,
- `],
-				[/* inline code block */ 'i', `b4`],
-				[/* text */ 't', `, `],
-				[/* inline code block */ 'i', `b5`],
-				[/* text */ 't', `, `],
-				[/* inline code block */ 'i', `b6`],
-				[/* text */ 't', `,
- `],
-				[/* inline code block */ 'i', `b7`],
-				[/* text */ 't', `, and `],
-				[/* inline code block */ 'i', `b8,`],
-				[/* text */ 't', ` where:
- `],
-				[/* block */ 'b', [
-					[/* code block */ 'c', `     0 <= b1, b2, b3, b4, b5, b6, b7, b8 <=255,
- `]
-				]],
-				[/* block */ 'b', `
- then the result is equal to:
- `],
-				[/* block */ 'b', [
-					[/* code block */ 'c', `     ((long)b1 << 56) + ((long)b2 << 48)
-     + ((long)b3 << 40) + ((long)b4 << 32)
-     + ((long)b5 << 24) + ((long)b6 << 16)
-     + ((long)b7 << 8) + b8
- `]
-				]],
-				[/* block */ 'b', ''],
-				[/* block */ 'b', `
- This method blocks until the eight bytes are read, the end of the
- stream is detected, or an exception is thrown.`]
-			],
-			/* parameters */ UDF,
-			[/* throws */
-				[/* throw */ 'java.io.EOFException', [/* throw description */
-					[/* text */ 't', `if this file reaches the end before reading
-               eight bytes.`]
-				]],
-				[/* throw */ 'java.io.IOException', [/* throw description */
-					[/* text */ 't', `if an I/O error occurs.`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `the next eight bytes of this file, interpreted as a
-             `],
-				[/* inline code block */ 'i', `long`],
-				[/* text */ 't', `.`]
-			]
-		]],
-		[/* method */ 'readByte()', [
-			[/* method description */
-				[/* text */ 't', `Reads a signed eight-bit value from this file. This method reads a
- byte from the file, starting from the current file pointer.
- If the byte read is `],
-				[/* inline code block */ 'i', `b`],
-				[/* text */ 't', `, where
- `],
-				[/* inline code block */ 'i', `0 <= b <= 255`],
-				[/* text */ 't', `,
- then the result is:
- `],
-				[/* block */ 'b', [
-					[/* code block */ 'c', `     (byte)(b)
- `]
-				]],
-				[/* block */ 'b', `
- This method blocks until the byte is read, the end of the stream
- is detected, or an exception is thrown.`]
-			],
-			/* parameters */ UDF,
-			[/* throws */
-				[/* throw */ 'java.io.EOFException', [/* throw description */
-					[/* text */ 't', `if this file has reached the end.`]
-				]],
-				[/* throw */ 'java.io.IOException', [/* throw description */
-					[/* text */ 't', `if an I/O error occurs.`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `the next byte of this file as a signed eight-bit
-             `],
-				[/* inline code block */ 'i', `byte`],
-				[/* text */ 't', `.`]
-			]
-		]],
-		[/* method */ 'readShort()', [
-			[/* method description */
-				[/* text */ 't', `Reads a signed 16-bit number from this file. The method reads two
- bytes from this file, starting at the current file pointer.
- If the two bytes read, in order, are
- `],
-				[/* inline code block */ 'i', `b1`],
-				[/* text */ 't', ` and `],
-				[/* inline code block */ 'i', `b2`],
-				[/* text */ 't', `, where each of the two values is
- between `],
-				[/* inline code block */ 'i', `0`],
-				[/* text */ 't', ` and `],
-				[/* inline code block */ 'i', `255`],
-				[/* text */ 't', `, inclusive, then the
- result is equal to:
- `],
-				[/* block */ 'b', [
-					[/* code block */ 'c', `     (short)((b1 << 8) | b2)
- `]
-				]],
-				[/* block */ 'b', `
- This method blocks until the two bytes are read, the end of the
- stream is detected, or an exception is thrown.`]
-			],
-			/* parameters */ UDF,
-			[/* throws */
-				[/* throw */ 'java.io.EOFException', [/* throw description */
-					[/* text */ 't', `if this file reaches the end before reading
-               two bytes.`]
-				]],
-				[/* throw */ 'java.io.IOException', [/* throw description */
-					[/* text */ 't', `if an I/O error occurs.`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `the next two bytes of this file, interpreted as a signed
-             16-bit number.`]
-			]
-		]],
 		[/* method */ 'seek(long)', [
 			[/* method description */
 				[/* text */ 't', `Sets the file-pointer offset, measured from the beginning of this
@@ -1211,157 +1534,61 @@ DocsCollector.collect('java.io.RandomAccessFile', [
 			],
 			/* return */ UDF
 		]],
-		[/* method */ 'readFully(byte[],int,int)', [
+		[/* method */ 'write(byte[])', [
 			[/* method description */
-				[/* text */ 't', `Reads exactly `],
-				[/* inline code block */ 'i', `len`],
-				[/* text */ 't', ` bytes from this file into the byte
- array, starting at the current file pointer. This method reads
- repeatedly from the file until the requested number of bytes are
- read. This method blocks until the requested number of bytes are
- read, the end of the stream is detected, or an exception is thrown.`]
+				[/* text */ 't', `Writes `],
+				[/* inline code block */ 'i', `b.length`],
+				[/* text */ 't', ` bytes from the specified byte array
+ to this file, starting at the current file pointer.`]
 			],
 			[/* parameters */
 				[/* parameter */ 'b', [/* parameter description */
-					[/* text */ 't', `the buffer into which the data is read.`]
+					[/* text */ 't', `the data.`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.io.IOException', [/* throw description */
+					[/* text */ 't', `if an I/O error occurs.`]
+				]]
+			],
+			/* return */ UDF
+		]],
+		[/* method */ 'write(byte[],int,int)', [
+			[/* method description */
+				[/* text */ 't', `Writes `],
+				[/* inline code block */ 'i', `len`],
+				[/* text */ 't', ` bytes from the specified byte array
+ starting at offset `],
+				[/* inline code block */ 'i', `off`],
+				[/* text */ 't', ` to this file.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'b', [/* parameter description */
+					[/* text */ 't', `the data.`]
 				]],
 				[/* parameter */ 'off', [/* parameter description */
-					[/* text */ 't', `the start offset into the data array `],
-					[/* inline code block */ 'i', `b`],
-					[/* text */ 't', `.`]
+					[/* text */ 't', `the start offset in the data.`]
 				]],
 				[/* parameter */ 'len', [/* parameter description */
-					[/* text */ 't', `the number of bytes to read.`]
+					[/* text */ 't', `the number of bytes to write.`]
 				]]
 			],
 			[/* throws */
-				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
-					[/* text */ 't', `if `],
-					[/* inline code block */ 'i', `b`],
-					[/* text */ 't', ` is `],
-					[/* inline code block */ 'i', `null`],
-					[/* text */ 't', `.`]
-				]],
-				[/* throw */ 'java.lang.IndexOutOfBoundsException', [/* throw description */
-					[/* text */ 't', `if `],
-					[/* inline code block */ 'i', `off`],
-					[/* text */ 't', ` is negative,
-                `],
-					[/* inline code block */ 'i', `len`],
-					[/* text */ 't', ` is negative, or `],
-					[/* inline code block */ 'i', `len`],
-					[/* text */ 't', ` is greater than
-                `],
-					[/* inline code block */ 'i', `b.length - off`],
-					[/* text */ 't', `.`]
-				]],
-				[/* throw */ 'java.io.EOFException', [/* throw description */
-					[/* text */ 't', `if this file reaches the end before reading
-                all the bytes.`]
-				]],
 				[/* throw */ 'java.io.IOException', [/* throw description */
 					[/* text */ 't', `if an I/O error occurs.`]
 				]]
 			],
 			/* return */ UDF
 		]],
-		[/* method */ 'readFully(byte[])', [
+		[/* method */ 'write(int)', [
 			[/* method description */
-				[/* text */ 't', `Reads `],
-				[/* inline code block */ 'i', `b.length`],
-				[/* text */ 't', ` bytes from this file into the byte
- array, starting at the current file pointer. This method reads
- repeatedly from the file until the requested number of bytes are
- read. This method blocks until the requested number of bytes are
- read, the end of the stream is detected, or an exception is thrown.`]
+				[/* text */ 't', `Writes the specified byte to this file. The write starts at
+ the current file pointer.`]
 			],
 			[/* parameters */
 				[/* parameter */ 'b', [/* parameter description */
-					[/* text */ 't', `the buffer into which the data is read.`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
-					[/* text */ 't', `if `],
-					[/* inline code block */ 'i', `b`],
-					[/* text */ 't', ` is `],
-					[/* inline code block */ 'i', `null`],
-					[/* text */ 't', `.`]
-				]],
-				[/* throw */ 'java.io.EOFException', [/* throw description */
-					[/* text */ 't', `if this file reaches the end before reading
-              all the bytes.`]
-				]],
-				[/* throw */ 'java.io.IOException', [/* throw description */
-					[/* text */ 't', `if an I/O error occurs.`]
-				]]
-			],
-			/* return */ UDF
-		]],
-		[/* method */ 'writeBoolean(boolean)', [
-			[/* method description */
-				[/* text */ 't', `Writes a `],
-				[/* inline code block */ 'i', `boolean`],
-				[/* text */ 't', ` to the file as a one-byte value. The
- value `],
-				[/* inline code block */ 'i', `true`],
-				[/* text */ 't', ` is written out as the value
- `],
-				[/* inline code block */ 'i', `(byte)1`],
-				[/* text */ 't', `; the value `],
-				[/* inline code block */ 'i', `false`],
-				[/* text */ 't', ` is written out
- as the value `],
-				[/* inline code block */ 'i', `(byte)0`],
-				[/* text */ 't', `. The write starts at
- the current position of the file pointer.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'v', [/* parameter description */
-					[/* text */ 't', `a `],
-					[/* inline code block */ 'i', `boolean`],
-					[/* text */ 't', ` value to be written.`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.io.IOException', [/* throw description */
-					[/* text */ 't', `if an I/O error occurs.`]
-				]]
-			],
-			/* return */ UDF
-		]],
-		[/* method */ 'writeByte(int)', [
-			[/* method description */
-				[/* text */ 't', `Writes a `],
-				[/* inline code block */ 'i', `byte`],
-				[/* text */ 't', ` to the file as a one-byte value. The
- write starts at the current position of the file pointer.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'v', [/* parameter description */
-					[/* text */ 't', `a `],
+					[/* text */ 't', `the `],
 					[/* inline code block */ 'i', `byte`],
-					[/* text */ 't', ` value to be written.`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.io.IOException', [/* throw description */
-					[/* text */ 't', `if an I/O error occurs.`]
-				]]
-			],
-			/* return */ UDF
-		]],
-		[/* method */ 'writeShort(int)', [
-			[/* method description */
-				[/* text */ 't', `Writes a `],
-				[/* inline code block */ 'i', `short`],
-				[/* text */ 't', ` to the file as two bytes, high byte first.
- The write starts at the current position of the file pointer.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'v', [/* parameter description */
-					[/* text */ 't', `a `],
-					[/* inline code block */ 'i', `short`],
 					[/* text */ 't', ` to be written.`]
 				]]
 			],
@@ -1371,233 +1598,6 @@ DocsCollector.collect('java.io.RandomAccessFile', [
 				]]
 			],
 			/* return */ UDF
-		]],
-		[/* method */ 'writeLong(long)', [
-			[/* method description */
-				[/* text */ 't', `Writes a `],
-				[/* inline code block */ 'i', `long`],
-				[/* text */ 't', ` to the file as eight bytes, high byte first.
- The write starts at the current position of the file pointer.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'v', [/* parameter description */
-					[/* text */ 't', `a `],
-					[/* inline code block */ 'i', `long`],
-					[/* text */ 't', ` to be written.`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.io.IOException', [/* throw description */
-					[/* text */ 't', `if an I/O error occurs.`]
-				]]
-			],
-			/* return */ UDF
-		]],
-		[/* method */ 'writeDouble(double)', [
-			[/* method description */
-				[/* text */ 't', `Converts the double argument to a `],
-				[/* inline code block */ 'i', `long`],
-				[/* text */ 't', ` using the
- `],
-				[/* inline code block */ 'i', `doubleToLongBits`],
-				[/* text */ 't', ` method in class `],
-				[/* inline code block */ 'i', `Double`],
-				[/* text */ 't', `,
- and then writes that `],
-				[/* inline code block */ 'i', `long`],
-				[/* text */ 't', ` value to the file as an
- eight-byte quantity, high byte first. The write starts at the current
- position of the file pointer.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'v', [/* parameter description */
-					[/* text */ 't', `a `],
-					[/* inline code block */ 'i', `double`],
-					[/* text */ 't', ` value to be written.`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.io.IOException', [/* throw description */
-					[/* text */ 't', `if an I/O error occurs.`]
-				]]
-			],
-			/* return */ UDF
-		]],
-		[/* method */ 'writeChars(java.lang.String)', [
-			[/* method description */
-				[/* text */ 't', `Writes a string to the file as a sequence of characters. Each
- character is written to the data output stream as if by the
- `],
-				[/* inline code block */ 'i', `writeChar`],
-				[/* text */ 't', ` method. The write starts at the current
- position of the file pointer.`]
-			],
-			[/* parameters */
-				[/* parameter */ 's', [/* parameter description */
-					[/* text */ 't', `a `],
-					[/* inline code block */ 'i', `String`],
-					[/* text */ 't', ` value to be written.`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.io.IOException', [/* throw description */
-					[/* text */ 't', `if an I/O error occurs.`]
-				]]
-			],
-			/* return */ UDF
-		]],
-		[/* method */ 'skipBytes(int)', [
-			[/* method description */
-				[/* text */ 't', `Attempts to skip over `],
-				[/* inline code block */ 'i', `n`],
-				[/* text */ 't', ` bytes of input discarding the
- skipped bytes.
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', `
-
- This method may skip over some smaller number of bytes, possibly zero.
- This may result from any of a number of conditions; reaching end of
- file before `],
-					[/* inline code block */ 'i', `n`],
-					[/* text */ 't', ` bytes have been skipped is only one
- possibility. This method never throws an `],
-					[/* inline code block */ 'i', `EOFException`],
-					[/* text */ 't', `.
- The actual number of bytes skipped is returned.  If `],
-					[/* inline code block */ 'i', `n`],
-					[/* text */ 't', `
- is negative, no bytes are skipped.`]
-				]]
-			],
-			[/* parameters */
-				[/* parameter */ 'n', [/* parameter description */
-					[/* text */ 't', `the number of bytes to be skipped.`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.io.IOException', [/* throw description */
-					[/* text */ 't', `if an I/O error occurs.`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `the actual number of bytes skipped.`]
-			]
-		]],
-		[/* method */ 'readBoolean()', [
-			[/* method description */
-				[/* text */ 't', `Reads a `],
-				[/* inline code block */ 'i', `boolean`],
-				[/* text */ 't', ` from this file. This method reads a
- single byte from the file, starting at the current file pointer.
- A value of `],
-				[/* inline code block */ 'i', `0`],
-				[/* text */ 't', ` represents
- `],
-				[/* inline code block */ 'i', `false`],
-				[/* text */ 't', `. Any other value represents `],
-				[/* inline code block */ 'i', `true`],
-				[/* text */ 't', `.
- This method blocks until the byte is read, the end of the stream
- is detected, or an exception is thrown.`]
-			],
-			/* parameters */ UDF,
-			[/* throws */
-				[/* throw */ 'java.io.EOFException', [/* throw description */
-					[/* text */ 't', `if this file has reached the end.`]
-				]],
-				[/* throw */ 'java.io.IOException', [/* throw description */
-					[/* text */ 't', `if an I/O error occurs.`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `the `],
-				[/* inline code block */ 'i', `boolean`],
-				[/* text */ 't', ` value read.`]
-			]
-		]],
-		[/* method */ 'readUnsignedByte()', [
-			[/* method description */
-				[/* text */ 't', `Reads an unsigned eight-bit number from this file. This method reads
- a byte from this file, starting at the current file pointer,
- and returns that byte.
- `],
-				[/* block */ 'b', `
- This method blocks until the byte is read, the end of the stream
- is detected, or an exception is thrown.`]
-			],
-			/* parameters */ UDF,
-			[/* throws */
-				[/* throw */ 'java.io.EOFException', [/* throw description */
-					[/* text */ 't', `if this file has reached the end.`]
-				]],
-				[/* throw */ 'java.io.IOException', [/* throw description */
-					[/* text */ 't', `if an I/O error occurs.`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `the next byte of this file, interpreted as an unsigned
-             eight-bit number.`]
-			]
-		]],
-		[/* method */ 'readDouble()', [
-			[/* method description */
-				[/* text */ 't', `Reads a `],
-				[/* inline code block */ 'i', `double`],
-				[/* text */ 't', ` from this file. This method reads a
- `],
-				[/* inline code block */ 'i', `long`],
-				[/* text */ 't', ` value, starting at the current file pointer,
- as if by the `],
-				[/* inline code block */ 'i', `readLong`],
-				[/* text */ 't', ` method
- and then converts that `],
-				[/* inline code block */ 'i', `long`],
-				[/* text */ 't', ` to a `],
-				[/* inline code block */ 'i', `double`],
-				[/* text */ 't', `
- using the `],
-				[/* inline code block */ 'i', `longBitsToDouble`],
-				[/* text */ 't', ` method in
- class `],
-				[/* inline code block */ 'i', `Double`],
-				[/* text */ 't', `.
- `],
-				[/* block */ 'b', `
- This method blocks until the eight bytes are read, the end of the
- stream is detected, or an exception is thrown.`]
-			],
-			/* parameters */ UDF,
-			[/* throws */
-				[/* throw */ 'java.io.EOFException', [/* throw description */
-					[/* text */ 't', `if this file reaches the end before reading
-             eight bytes.`]
-				]],
-				[/* throw */ 'java.io.IOException', [/* throw description */
-					[/* text */ 't', `if an I/O error occurs.`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `the next eight bytes of this file, interpreted as a
-             `],
-				[/* inline code block */ 'i', `double`],
-				[/* text */ 't', `.`]
-			]
-		]],
-		[/* method */ 'getFilePointer()', [
-			[/* method description */
-				[/* text */ 't', `Returns the current offset in this file.`]
-			],
-			/* parameters */ UDF,
-			[/* throws */
-				[/* throw */ 'java.io.IOException', [/* throw description */
-					[/* text */ 't', `if an I/O error occurs.`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `the offset from the beginning of the file, in bytes,
-             at which the next read or write occurs.`]
-			]
 		]]
 	],
 ]);

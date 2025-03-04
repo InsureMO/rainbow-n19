@@ -718,14 +718,8 @@ JdkClassCreateHelper.class('java.io.File', [
 		]
 	],
 	[/* declared fields */
-		[/* public static final char java.io.File.separatorChar */
-			/* name */ 'separatorChar',
-			/* type */ 'char',
-			/* annotations */ UDF,
-			/* modifiers */ 25
-		],
-		[/* public static final java.lang.String java.io.File.separator */
-			/* name */ 'separator',
+		[/* public static final java.lang.String java.io.File.pathSeparator */
+			/* name */ 'pathSeparator',
 			/* type */ 'java.lang.String',
 			/* annotations */ UDF,
 			/* modifiers */ 25
@@ -736,9 +730,15 @@ JdkClassCreateHelper.class('java.io.File', [
 			/* annotations */ UDF,
 			/* modifiers */ 25
 		],
-		[/* public static final java.lang.String java.io.File.pathSeparator */
-			/* name */ 'pathSeparator',
+		[/* public static final java.lang.String java.io.File.separator */
+			/* name */ 'separator',
 			/* type */ 'java.lang.String',
+			/* annotations */ UDF,
+			/* modifiers */ 25
+		],
+		[/* public static final char java.io.File.separatorChar */
+			/* name */ 'separatorChar',
+			/* type */ 'char',
 			/* annotations */ UDF,
 			/* modifiers */ 25
 		]

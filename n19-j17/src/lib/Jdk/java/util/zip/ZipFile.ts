@@ -283,14 +283,14 @@ JdkClassCreateHelper.class('java.util.zip.ZipFile', [
 		]
 	],
 	[/* declared fields */
-		[/* public static final int java.util.zip.ZipFile.OPEN_READ */
-			/* name */ 'OPEN_READ',
+		[/* public static final int java.util.zip.ZipFile.OPEN_DELETE */
+			/* name */ 'OPEN_DELETE',
 			/* type */ 'int',
 			/* annotations */ UDF,
 			/* modifiers */ 25
 		],
-		[/* public static final int java.util.zip.ZipFile.OPEN_DELETE */
-			/* name */ 'OPEN_DELETE',
+		[/* public static final int java.util.zip.ZipFile.OPEN_READ */
+			/* name */ 'OPEN_READ',
 			/* type */ 'int',
 			/* annotations */ UDF,
 			/* modifiers */ 25

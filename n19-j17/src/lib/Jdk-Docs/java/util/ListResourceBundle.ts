@@ -108,40 +108,25 @@ DocsCollector.collect('java.util.ListResourceBundle', [
 		]]
 	],
 	[/* methods */
-		[/* method */ 'getKeys()', [
+		[/* method */ 'getContents()', [
 			[/* method description */
-				[/* text */ 't', `Returns an `],
-				[/* inline code block */ 'i', `Enumeration`],
-				[/* text */ 't', ` of the keys contained in
- this `],
-				[/* inline code block */ 'i', `ResourceBundle`],
-				[/* text */ 't', ` and its parent bundles.`]
+				[/* text */ 't', `Returns an array in which each item is a pair of objects in an
+ `],
+				[/* inline code block */ 'i', `Object`],
+				[/* text */ 't', ` array. The first element of each pair is
+ the key, which must be a `],
+				[/* inline code block */ 'i', `String`],
+				[/* text */ 't', `, and the second
+ element is the value associated with that key.  See the class
+ description for details.`]
 			],
 			/* parameters */ UDF,
 			/* throws */ UDF,
 			[/* return description */
-				[/* text */ 't', `an `],
-				[/* inline code block */ 'i', `Enumeration`],
-				[/* text */ 't', ` of the keys contained in
-         this `],
-				[/* inline code block */ 'i', `ResourceBundle`],
-				[/* text */ 't', ` and its parent bundles.`]
-			]
-		]],
-		[/* method */ 'handleGetObject(java.lang.String)', [
-			[/* method description */
-				[/* block */ 'b', `Gets an object for the given key from this resource bundle.
- Returns null if this resource bundle does not contain an
- object for the given key.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'key', [/* parameter description */
-					[/* text */ 't', `the key for the desired object`]
-				]]
-			],
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the object for the given key, or null`]
+				[/* text */ 't', `an array of an `],
+				[/* inline code block */ 'i', `Object`],
+				[/* text */ 't', ` array representing a
+ key-value pair.`]
 			]
 		]],
 		[/* method */ 'handleKeySet()', [
@@ -165,25 +150,40 @@ DocsCollector.collect('java.util.ListResourceBundle', [
 				[/* inline code block */ 'i', `ResourceBundle`]
 			]
 		]],
-		[/* method */ 'getContents()', [
+		[/* method */ 'handleGetObject(java.lang.String)', [
 			[/* method description */
-				[/* text */ 't', `Returns an array in which each item is a pair of objects in an
- `],
-				[/* inline code block */ 'i', `Object`],
-				[/* text */ 't', ` array. The first element of each pair is
- the key, which must be a `],
-				[/* inline code block */ 'i', `String`],
-				[/* text */ 't', `, and the second
- element is the value associated with that key.  See the class
- description for details.`]
+				[/* block */ 'b', `Gets an object for the given key from this resource bundle.
+ Returns null if this resource bundle does not contain an
+ object for the given key.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'key', [/* parameter description */
+					[/* text */ 't', `the key for the desired object`]
+				]]
+			],
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the object for the given key, or null`]
+			]
+		]],
+		[/* method */ 'getKeys()', [
+			[/* method description */
+				[/* text */ 't', `Returns an `],
+				[/* inline code block */ 'i', `Enumeration`],
+				[/* text */ 't', ` of the keys contained in
+ this `],
+				[/* inline code block */ 'i', `ResourceBundle`],
+				[/* text */ 't', ` and its parent bundles.`]
 			],
 			/* parameters */ UDF,
 			/* throws */ UDF,
 			[/* return description */
-				[/* text */ 't', `an array of an `],
-				[/* inline code block */ 'i', `Object`],
-				[/* text */ 't', ` array representing a
- key-value pair.`]
+				[/* text */ 't', `an `],
+				[/* inline code block */ 'i', `Enumeration`],
+				[/* text */ 't', ` of the keys contained in
+         this `],
+				[/* inline code block */ 'i', `ResourceBundle`],
+				[/* text */ 't', ` and its parent bundles.`]
 			]
 		]]
 	],

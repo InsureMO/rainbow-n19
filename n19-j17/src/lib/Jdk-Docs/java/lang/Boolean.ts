@@ -47,16 +47,6 @@ DocsCollector.collect('java.lang.Boolean', [
 		]]
 	],
 	[/* fields */
-		[/* field */ 'TRUE', [
-			[/* field description */
-				[/* text */ 't', `The `],
-				[/* inline code block */ 'i', `Boolean`],
-				[/* text */ 't', ` object corresponding to the primitive
- value `],
-				[/* inline code block */ 'i', `true`],
-				[/* text */ 't', `.`]
-			],
-		]],
 		[/* field */ 'FALSE', [
 			[/* field description */
 				[/* text */ 't', `The `],
@@ -64,6 +54,16 @@ DocsCollector.collect('java.lang.Boolean', [
 				[/* text */ 't', ` object corresponding to the primitive
  value `],
 				[/* inline code block */ 'i', `false`],
+				[/* text */ 't', `.`]
+			],
+		]],
+		[/* field */ 'TRUE', [
+			[/* field description */
+				[/* text */ 't', `The `],
+				[/* inline code block */ 'i', `Boolean`],
+				[/* text */ 't', ` object corresponding to the primitive
+ value `],
+				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', `.`]
 			],
 		]],
@@ -123,6 +123,21 @@ DocsCollector.collect('java.lang.Boolean', [
 		]]
 	],
 	[/* methods */
+		[/* method */ 'booleanValue()', [
+			[/* method description */
+				[/* text */ 't', `Returns the value of this `],
+				[/* inline code block */ 'i', `Boolean`],
+				[/* text */ 't', ` object as a boolean
+ primitive.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the primitive `],
+				[/* inline code block */ 'i', `boolean`],
+				[/* text */ 't', ` value of this object.`]
+			]
+		]],
 		[/* method */ 'equals(java.lang.Object)', [
 			[/* method description */
 				[/* text */ 't', `Returns `],
@@ -151,96 +166,6 @@ DocsCollector.collect('java.lang.Boolean', [
 				[/* text */ 't', ` otherwise.`]
 			]
 		]],
-		[/* method */ 'toString()', [
-			[/* method description */
-				[/* text */ 't', `Returns a `],
-				[/* inline code block */ 'i', `String`],
-				[/* text */ 't', ` object representing this Boolean's
- value.  If this object represents the value `],
-				[/* inline code block */ 'i', `true`],
-				[/* text */ 't', `,
- a string equal to `],
-				[/* inline code block */ 'i', `"true"`],
-				[/* text */ 't', ` is returned. Otherwise, a
- string equal to `],
-				[/* inline code block */ 'i', `"false"`],
-				[/* text */ 't', ` is returned.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `a string representation of this object.`]
-			]
-		]],
-		[/* method */ 'toString(boolean)', [
-			[/* method description */
-				[/* text */ 't', `Returns a `],
-				[/* inline code block */ 'i', `String`],
-				[/* text */ 't', ` object representing the specified
- boolean.  If the specified boolean is `],
-				[/* inline code block */ 'i', `true`],
-				[/* text */ 't', `, then
- the string `],
-				[/* inline code block */ 'i', `"true"`],
-				[/* text */ 't', ` will be returned, otherwise the
- string `],
-				[/* inline code block */ 'i', `"false"`],
-				[/* text */ 't', ` will be returned.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'b', [/* parameter description */
-					[/* text */ 't', `the boolean to be converted`]
-				]]
-			],
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the string representation of the specified `],
-				[/* inline code block */ 'i', `boolean`]
-			]
-		]],
-		[/* method */ 'hashCode()', [
-			[/* method description */
-				[/* text */ 't', `Returns a hash code for this `],
-				[/* inline code block */ 'i', `Boolean`],
-				[/* text */ 't', ` object.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the integer `],
-				[/* inline code block */ 'i', `1231`],
-				[/* text */ 't', ` if this object represents
- `],
-				[/* inline code block */ 'i', `true`],
-				[/* text */ 't', `; returns the integer `],
-				[/* inline code block */ 'i', `1237`],
-				[/* text */ 't', ` if this
- object represents `],
-				[/* inline code block */ 'i', `false`],
-				[/* text */ 't', `.`]
-			]
-		]],
-		[/* method */ 'hashCode(boolean)', [
-			[/* method description */
-				[/* text */ 't', `Returns a hash code for a `],
-				[/* inline code block */ 'i', `boolean`],
-				[/* text */ 't', ` value; compatible with
- `],
-				[/* inline code block */ 'i', `Boolean.hashCode()`],
-				[/* text */ 't', `.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'value', [/* parameter description */
-					[/* text */ 't', `the value to hash`]
-				]]
-			],
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `a hash code value for a `],
-				[/* inline code block */ 'i', `boolean`],
-				[/* text */ 't', ` value.`]
-			]
-		]],
 		[/* method */ 'compareTo(java.lang.Boolean)', [
 			[/* method description */
 				[/* text */ 't', `Compares this `],
@@ -265,6 +190,66 @@ DocsCollector.collect('java.lang.Boolean', [
           argument; a positive value if this object represents true
           and the argument represents false; and a negative value if
           this object represents false and the argument represents true`]
+			]
+		]],
+		[/* method */ 'hashCode()', [
+			[/* method description */
+				[/* text */ 't', `Returns a hash code for this `],
+				[/* inline code block */ 'i', `Boolean`],
+				[/* text */ 't', ` object.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the integer `],
+				[/* inline code block */ 'i', `1231`],
+				[/* text */ 't', ` if this object represents
+ `],
+				[/* inline code block */ 'i', `true`],
+				[/* text */ 't', `; returns the integer `],
+				[/* inline code block */ 'i', `1237`],
+				[/* text */ 't', ` if this
+ object represents `],
+				[/* inline code block */ 'i', `false`],
+				[/* text */ 't', `.`]
+			]
+		]],
+		[/* method */ 'toString()', [
+			[/* method description */
+				[/* text */ 't', `Returns a `],
+				[/* inline code block */ 'i', `String`],
+				[/* text */ 't', ` object representing this Boolean's
+ value.  If this object represents the value `],
+				[/* inline code block */ 'i', `true`],
+				[/* text */ 't', `,
+ a string equal to `],
+				[/* inline code block */ 'i', `"true"`],
+				[/* text */ 't', ` is returned. Otherwise, a
+ string equal to `],
+				[/* inline code block */ 'i', `"false"`],
+				[/* text */ 't', ` is returned.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `a string representation of this object.`]
+			]
+		]],
+		[/* method */ 'describeConstable()', [
+			[/* method description */
+				[/* text */ 't', `Returns an `],
+				[/* reference */ 'r', `java.util.Optional`],
+				[/* text */ 't', ` containing the nominal descriptor for this
+ instance.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `an `],
+				[/* reference */ 'r', `java.util.Optional`],
+				[/* text */ 't', ` describing the `],
+				[/* reference */ 'r', `java.lang.Boolean`],
+				[/* text */ 't', ` instance`]
 			]
 		]],
 		[/* method */ 'getBoolean(java.lang.String)', [
@@ -306,195 +291,6 @@ DocsCollector.collect('java.lang.Boolean', [
 				[/* text */ 't', `the `],
 				[/* inline code block */ 'i', `boolean`],
 				[/* text */ 't', ` value of the system property.`]
-			]
-		]],
-		[/* method */ 'compare(boolean,boolean)', [
-			[/* method description */
-				[/* text */ 't', `Compares two `],
-				[/* inline code block */ 'i', `boolean`],
-				[/* text */ 't', ` values.
- The value returned is identical to what would be returned by:
- `],
-				[/* code block */ 'c', `    Boolean.valueOf(x).compareTo(Boolean.valueOf(y))
- `]
-			],
-			[/* parameters */
-				[/* parameter */ 'x', [/* parameter description */
-					[/* text */ 't', `the first `],
-					[/* inline code block */ 'i', `boolean`],
-					[/* text */ 't', ` to compare`]
-				]],
-				[/* parameter */ 'y', [/* parameter description */
-					[/* text */ 't', `the second `],
-					[/* inline code block */ 'i', `boolean`],
-					[/* text */ 't', ` to compare`]
-				]]
-			],
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the value `],
-				[/* inline code block */ 'i', `0`],
-				[/* text */ 't', ` if `],
-				[/* inline code block */ 'i', `x == y`],
-				[/* text */ 't', `;
-         a value less than `],
-				[/* inline code block */ 'i', `0`],
-				[/* text */ 't', ` if `],
-				[/* inline code block */ 'i', `!x && y`],
-				[/* text */ 't', `; and
-         a value greater than `],
-				[/* inline code block */ 'i', `0`],
-				[/* text */ 't', ` if `],
-				[/* inline code block */ 'i', `x && !y`]
-			]
-		]],
-		[/* method */ 'booleanValue()', [
-			[/* method description */
-				[/* text */ 't', `Returns the value of this `],
-				[/* inline code block */ 'i', `Boolean`],
-				[/* text */ 't', ` object as a boolean
- primitive.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the primitive `],
-				[/* inline code block */ 'i', `boolean`],
-				[/* text */ 't', ` value of this object.`]
-			]
-		]],
-		[/* method */ 'valueOf(java.lang.String)', [
-			[/* method description */
-				[/* text */ 't', `Returns a `],
-				[/* inline code block */ 'i', `Boolean`],
-				[/* text */ 't', ` with a value represented by the
- specified string.  The `],
-				[/* inline code block */ 'i', `Boolean`],
-				[/* text */ 't', ` returned represents a
- true value if the string argument is not `],
-				[/* inline code block */ 'i', `null`],
-				[/* text */ 't', `
- and is equal, ignoring case, to the string `],
-				[/* inline code block */ 'i', `"true"`],
-				[/* text */ 't', `.
- Otherwise, a false value is returned, including for a null
- argument.`]
-			],
-			[/* parameters */
-				[/* parameter */ 's', [/* parameter description */
-					[/* text */ 't', `a string.`]
-				]]
-			],
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the `],
-				[/* inline code block */ 'i', `Boolean`],
-				[/* text */ 't', ` value represented by the string.`]
-			]
-		]],
-		[/* method */ 'valueOf(boolean)', [
-			[/* method description */
-				[/* text */ 't', `Returns a `],
-				[/* inline code block */ 'i', `Boolean`],
-				[/* text */ 't', ` instance representing the specified
- `],
-				[/* inline code block */ 'i', `boolean`],
-				[/* text */ 't', ` value.  If the specified `],
-				[/* inline code block */ 'i', `boolean`],
-				[/* text */ 't', ` value
- is `],
-				[/* inline code block */ 'i', `true`],
-				[/* text */ 't', `, this method returns `],
-				[/* inline code block */ 'i', `Boolean.TRUE`],
-				[/* text */ 't', `;
- if it is `],
-				[/* inline code block */ 'i', `false`],
-				[/* text */ 't', `, this method returns `],
-				[/* inline code block */ 'i', `Boolean.FALSE`],
-				[/* text */ 't', `.
- If a new `],
-				[/* inline code block */ 'i', `Boolean`],
-				[/* text */ 't', ` instance is not required, this method
- should generally be used in preference to the constructor
- `],
-				[/* reference */ 'r', `#%3Cinit%3E(boolean)`, `Boolean(boolean)`],
-				[/* text */ 't', `, as this method is likely to yield
- significantly better space and time performance.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'b', [/* parameter description */
-					[/* text */ 't', `a boolean value.`]
-				]]
-			],
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `a `],
-				[/* inline code block */ 'i', `Boolean`],
-				[/* text */ 't', ` instance representing `],
-				[/* inline code block */ 'i', `b`],
-				[/* text */ 't', `.`]
-			]
-		]],
-		[/* method */ 'describeConstable()', [
-			[/* method description */
-				[/* text */ 't', `Returns an `],
-				[/* reference */ 'r', `java.util.Optional`],
-				[/* text */ 't', ` containing the nominal descriptor for this
- instance.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `an `],
-				[/* reference */ 'r', `java.util.Optional`],
-				[/* text */ 't', ` describing the `],
-				[/* reference */ 'r', `java.lang.Boolean`],
-				[/* text */ 't', ` instance`]
-			]
-		]],
-		[/* method */ 'parseBoolean(java.lang.String)', [
-			[/* method description */
-				[/* text */ 't', `Parses the string argument as a boolean.  The `],
-				[/* inline code block */ 'i', `boolean`],
-				[/* text */ 't', `
- returned represents the value `],
-				[/* inline code block */ 'i', `true`],
-				[/* text */ 't', ` if the string argument
- is not `],
-				[/* inline code block */ 'i', `null`],
-				[/* text */ 't', ` and is equal, ignoring case, to the string
- `],
-				[/* inline code block */ 'i', `"true"`],
-				[/* text */ 't', `.
- Otherwise, a false value is returned, including for a null
- argument.`],
-				[/* block */ 'b', [
-					[/* text */ 't', `
- Example: `],
-					[/* inline code block */ 'i', `Boolean.parseBoolean("True")`],
-					[/* text */ 't', ` returns `],
-					[/* inline code block */ 'i', `true`],
-					[/* text */ 't', `.`],
-					[/* new line */ 'n'],
-					[/* text */ 't', `
- Example: `],
-					[/* inline code block */ 'i', `Boolean.parseBoolean("yes")`],
-					[/* text */ 't', ` returns `],
-					[/* inline code block */ 'i', `false`],
-					[/* text */ 't', `.`]
-				]]
-			],
-			[/* parameters */
-				[/* parameter */ 's', [/* parameter description */
-					[/* text */ 't', `the `],
-					[/* inline code block */ 'i', `String`],
-					[/* text */ 't', ` containing the boolean
-                 representation to be parsed`]
-				]]
-			],
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the boolean represented by the string argument`]
 			]
 		]],
 		[/* method */ 'logicalAnd(boolean,boolean)', [
@@ -564,6 +360,210 @@ DocsCollector.collect('java.lang.Boolean', [
 				[/* inline code block */ 'i', `a`],
 				[/* text */ 't', ` and `],
 				[/* inline code block */ 'i', `b`]
+			]
+		]],
+		[/* method */ 'parseBoolean(java.lang.String)', [
+			[/* method description */
+				[/* text */ 't', `Parses the string argument as a boolean.  The `],
+				[/* inline code block */ 'i', `boolean`],
+				[/* text */ 't', `
+ returned represents the value `],
+				[/* inline code block */ 'i', `true`],
+				[/* text */ 't', ` if the string argument
+ is not `],
+				[/* inline code block */ 'i', `null`],
+				[/* text */ 't', ` and is equal, ignoring case, to the string
+ `],
+				[/* inline code block */ 'i', `"true"`],
+				[/* text */ 't', `.
+ Otherwise, a false value is returned, including for a null
+ argument.`],
+				[/* block */ 'b', [
+					[/* text */ 't', `
+ Example: `],
+					[/* inline code block */ 'i', `Boolean.parseBoolean("True")`],
+					[/* text */ 't', ` returns `],
+					[/* inline code block */ 'i', `true`],
+					[/* text */ 't', `.`],
+					[/* new line */ 'n'],
+					[/* text */ 't', `
+ Example: `],
+					[/* inline code block */ 'i', `Boolean.parseBoolean("yes")`],
+					[/* text */ 't', ` returns `],
+					[/* inline code block */ 'i', `false`],
+					[/* text */ 't', `.`]
+				]]
+			],
+			[/* parameters */
+				[/* parameter */ 's', [/* parameter description */
+					[/* text */ 't', `the `],
+					[/* inline code block */ 'i', `String`],
+					[/* text */ 't', ` containing the boolean
+                 representation to be parsed`]
+				]]
+			],
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the boolean represented by the string argument`]
+			]
+		]],
+		[/* method */ 'compare(boolean,boolean)', [
+			[/* method description */
+				[/* text */ 't', `Compares two `],
+				[/* inline code block */ 'i', `boolean`],
+				[/* text */ 't', ` values.
+ The value returned is identical to what would be returned by:
+ `],
+				[/* code block */ 'c', `    Boolean.valueOf(x).compareTo(Boolean.valueOf(y))
+ `]
+			],
+			[/* parameters */
+				[/* parameter */ 'x', [/* parameter description */
+					[/* text */ 't', `the first `],
+					[/* inline code block */ 'i', `boolean`],
+					[/* text */ 't', ` to compare`]
+				]],
+				[/* parameter */ 'y', [/* parameter description */
+					[/* text */ 't', `the second `],
+					[/* inline code block */ 'i', `boolean`],
+					[/* text */ 't', ` to compare`]
+				]]
+			],
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the value `],
+				[/* inline code block */ 'i', `0`],
+				[/* text */ 't', ` if `],
+				[/* inline code block */ 'i', `x == y`],
+				[/* text */ 't', `;
+         a value less than `],
+				[/* inline code block */ 'i', `0`],
+				[/* text */ 't', ` if `],
+				[/* inline code block */ 'i', `!x && y`],
+				[/* text */ 't', `; and
+         a value greater than `],
+				[/* inline code block */ 'i', `0`],
+				[/* text */ 't', ` if `],
+				[/* inline code block */ 'i', `x && !y`]
+			]
+		]],
+		[/* method */ 'hashCode(boolean)', [
+			[/* method description */
+				[/* text */ 't', `Returns a hash code for a `],
+				[/* inline code block */ 'i', `boolean`],
+				[/* text */ 't', ` value; compatible with
+ `],
+				[/* inline code block */ 'i', `Boolean.hashCode()`],
+				[/* text */ 't', `.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'value', [/* parameter description */
+					[/* text */ 't', `the value to hash`]
+				]]
+			],
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `a hash code value for a `],
+				[/* inline code block */ 'i', `boolean`],
+				[/* text */ 't', ` value.`]
+			]
+		]],
+		[/* method */ 'valueOf(boolean)', [
+			[/* method description */
+				[/* text */ 't', `Returns a `],
+				[/* inline code block */ 'i', `Boolean`],
+				[/* text */ 't', ` instance representing the specified
+ `],
+				[/* inline code block */ 'i', `boolean`],
+				[/* text */ 't', ` value.  If the specified `],
+				[/* inline code block */ 'i', `boolean`],
+				[/* text */ 't', ` value
+ is `],
+				[/* inline code block */ 'i', `true`],
+				[/* text */ 't', `, this method returns `],
+				[/* inline code block */ 'i', `Boolean.TRUE`],
+				[/* text */ 't', `;
+ if it is `],
+				[/* inline code block */ 'i', `false`],
+				[/* text */ 't', `, this method returns `],
+				[/* inline code block */ 'i', `Boolean.FALSE`],
+				[/* text */ 't', `.
+ If a new `],
+				[/* inline code block */ 'i', `Boolean`],
+				[/* text */ 't', ` instance is not required, this method
+ should generally be used in preference to the constructor
+ `],
+				[/* reference */ 'r', `#%3Cinit%3E(boolean)`, `Boolean(boolean)`],
+				[/* text */ 't', `, as this method is likely to yield
+ significantly better space and time performance.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'b', [/* parameter description */
+					[/* text */ 't', `a boolean value.`]
+				]]
+			],
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `a `],
+				[/* inline code block */ 'i', `Boolean`],
+				[/* text */ 't', ` instance representing `],
+				[/* inline code block */ 'i', `b`],
+				[/* text */ 't', `.`]
+			]
+		]],
+		[/* method */ 'valueOf(java.lang.String)', [
+			[/* method description */
+				[/* text */ 't', `Returns a `],
+				[/* inline code block */ 'i', `Boolean`],
+				[/* text */ 't', ` with a value represented by the
+ specified string.  The `],
+				[/* inline code block */ 'i', `Boolean`],
+				[/* text */ 't', ` returned represents a
+ true value if the string argument is not `],
+				[/* inline code block */ 'i', `null`],
+				[/* text */ 't', `
+ and is equal, ignoring case, to the string `],
+				[/* inline code block */ 'i', `"true"`],
+				[/* text */ 't', `.
+ Otherwise, a false value is returned, including for a null
+ argument.`]
+			],
+			[/* parameters */
+				[/* parameter */ 's', [/* parameter description */
+					[/* text */ 't', `a string.`]
+				]]
+			],
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the `],
+				[/* inline code block */ 'i', `Boolean`],
+				[/* text */ 't', ` value represented by the string.`]
+			]
+		]],
+		[/* method */ 'toString(boolean)', [
+			[/* method description */
+				[/* text */ 't', `Returns a `],
+				[/* inline code block */ 'i', `String`],
+				[/* text */ 't', ` object representing the specified
+ boolean.  If the specified boolean is `],
+				[/* inline code block */ 'i', `true`],
+				[/* text */ 't', `, then
+ the string `],
+				[/* inline code block */ 'i', `"true"`],
+				[/* text */ 't', ` will be returned, otherwise the
+ string `],
+				[/* inline code block */ 'i', `"false"`],
+				[/* text */ 't', ` will be returned.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'b', [/* parameter description */
+					[/* text */ 't', `the boolean to be converted`]
+				]]
+			],
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the string representation of the specified `],
+				[/* inline code block */ 'i', `boolean`]
 			]
 		]]
 	],

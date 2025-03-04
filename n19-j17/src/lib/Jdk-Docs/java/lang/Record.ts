@@ -113,6 +113,24 @@ DocsCollector.collect('java.lang.Record', [
 				[/* text */ 't', ` otherwise.`]
 			]
 		]],
+		[/* method */ 'hashCode()', [
+			[/* method description */
+				[/* text */ 't', `Returns a hash code value for the record.
+ Obeys the general contract of `],
+				[/* reference */ 'r', `.Object#hashCode()`],
+				[/* text */ 't', `.
+ For records, hashing behavior is constrained by the refined contract
+ of `],
+				[/* reference */ 'r', `#equals(java.lang.Object)`, `Record.equals`],
+				[/* text */ 't', `, so that any two records
+ created from the same components must have the same hash code.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `a hash code value for this record.`]
+			]
+		]],
 		[/* method */ 'toString()', [
 			[/* method description */
 				[/* text */ 't', `Returns a string representation of the record.
@@ -142,24 +160,6 @@ DocsCollector.collect('java.lang.Record', [
 			/* throws */ UDF,
 			[/* return description */
 				[/* text */ 't', `a string representation of the object.`]
-			]
-		]],
-		[/* method */ 'hashCode()', [
-			[/* method description */
-				[/* text */ 't', `Returns a hash code value for the record.
- Obeys the general contract of `],
-				[/* reference */ 'r', `.Object#hashCode()`],
-				[/* text */ 't', `.
- For records, hashing behavior is constrained by the refined contract
- of `],
-				[/* reference */ 'r', `#equals(java.lang.Object)`, `Record.equals`],
-				[/* text */ 't', `, so that any two records
- created from the same components must have the same hash code.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `a hash code value for this record.`]
 			]
 		]]
 	],

@@ -11,22 +11,13 @@ DocsCollector.collect('java.lang.IndexOutOfBoundsException', [
 	],
 	/* fields */ UDF,
 	[/* constructors */
-		[/* constructor */ '<init>(long)', [
+		[/* constructor */ '<init>()', [
 			[/* constructor description */
-				[/* text */ 't', `Constructs a new `],
+				[/* text */ 't', `Constructs an `],
 				[/* inline code block */ 'i', `IndexOutOfBoundsException`],
-				[/* text */ 't', ` class with an
- argument indicating the illegal index.
-
- `],
-				[/* block */ 'b', `The index is included in this exception's detail message.  The
- exact presentation format of the detail message is unspecified.`]
+				[/* text */ 't', ` with no detail message.`]
 			],
-			[/* parameters */
-				[/* parameter */ 'index', [/* parameter description */
-					[/* text */ 't', `the illegal index.`]
-				]]
-			],
+			/* parameters */ UDF,
 			/* throws */ UDF
 		]],
 		[/* constructor */ '<init>(int)', [
@@ -61,13 +52,22 @@ DocsCollector.collect('java.lang.IndexOutOfBoundsException', [
 			],
 			/* throws */ UDF
 		]],
-		[/* constructor */ '<init>()', [
+		[/* constructor */ '<init>(long)', [
 			[/* constructor description */
-				[/* text */ 't', `Constructs an `],
+				[/* text */ 't', `Constructs a new `],
 				[/* inline code block */ 'i', `IndexOutOfBoundsException`],
-				[/* text */ 't', ` with no detail message.`]
+				[/* text */ 't', ` class with an
+ argument indicating the illegal index.
+
+ `],
+				[/* block */ 'b', `The index is included in this exception's detail message.  The
+ exact presentation format of the detail message is unspecified.`]
 			],
-			/* parameters */ UDF,
+			[/* parameters */
+				[/* parameter */ 'index', [/* parameter description */
+					[/* text */ 't', `the illegal index.`]
+				]]
+			],
 			/* throws */ UDF
 		]]
 	],

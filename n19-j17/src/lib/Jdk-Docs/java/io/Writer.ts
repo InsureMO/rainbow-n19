@@ -22,6 +22,14 @@ DocsCollector.collect('java.io.Writer', [
 		]]
 	],
 	[/* constructors */
+		[/* constructor */ '<init>()', [
+			[/* constructor description */
+				[/* text */ 't', `Creates a new character-stream writer whose critical sections will
+ synchronize on the writer itself.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF
+		]],
 		[/* constructor */ '<init>(java.lang.Object)', [
 			[/* constructor description */
 				[/* text */ 't', `Creates a new character-stream writer whose critical sections will
@@ -33,91 +41,79 @@ DocsCollector.collect('java.io.Writer', [
 				]]
 			],
 			/* throws */ UDF
-		]],
-		[/* constructor */ '<init>()', [
-			[/* constructor description */
-				[/* text */ 't', `Creates a new character-stream writer whose critical sections will
- synchronize on the writer itself.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF
 		]]
 	],
 	[/* methods */
-		[/* method */ 'append(java.lang.CharSequence,int,int)', [
+		[/* method */ 'close()', [
 			[/* method description */
-				[/* text */ 't', `Appends a subsequence of the specified character sequence to this writer.
- `],
-				[/* inline code block */ 'i', `Appendable`],
-				[/* text */ 't', `.
+				[/* text */ 't', `Closes the stream, flushing it first. Once the stream has been closed,
+ further write() or flush() invocations will cause an IOException to be
+ thrown. Closing a previously closed stream has no effect.`]
+			],
+			/* parameters */ UDF,
+			[/* throws */
+				[/* throw */ 'java.io.IOException', [/* throw description */
+					[/* text */ 't', `If an I/O error occurs`]
+				]]
+			],
+			/* return */ UDF
+		]],
+		[/* method */ 'flush()', [
+			[/* method description */
+				[/* text */ 't', `Flushes the stream.  If the stream has saved any characters from the
+ various write() methods in a buffer, write them immediately to their
+ intended destination.  Then, if that destination is another character or
+ byte stream, flush it.  Thus one flush() invocation will flush all the
+ buffers in a chain of Writers and OutputStreams.
 
  `],
-				[/* block */ 'b', [
-					[/* text */ 't', ` An invocation of this method of the form
- `],
-					[/* inline code block */ 'i', `out.append(csq, start, end)`],
-					[/* text */ 't', ` when `],
-					[/* inline code block */ 'i', `csq`],
-					[/* text */ 't', `
- is not `],
-					[/* inline code block */ 'i', `null`],
-					[/* text */ 't', ` behaves in exactly the
- same way as the invocation
-
- `]
-				]],
-				[/* code block */ 'c', [
-					[/* inline code block */ 'i', `out.write(csq.subSequence(start, end).toString())`]
-				]],
-				[/* block */ 'b', '']
+				[/* block */ 'b', ` If the intended destination of this stream is an abstraction provided
+ by the underlying operating system, for example a file, then flushing the
+ stream guarantees only that bytes previously written to the stream are
+ passed to the operating system for writing; it does not guarantee that
+ they are actually written to a physical device such as a disk drive.`]
+			],
+			/* parameters */ UDF,
+			[/* throws */
+				[/* throw */ 'java.io.IOException', [/* throw description */
+					[/* text */ 't', `If an I/O error occurs`]
+				]]
+			],
+			/* return */ UDF
+		]],
+		[/* method */ 'write(char[],int,int)', [
+			[/* method description */
+				[/* text */ 't', `Writes a portion of an array of characters.`]
 			],
 			[/* parameters */
-				[/* parameter */ 'csq', [/* parameter description */
-					[/* text */ 't', `The character sequence from which a subsequence will be
-         appended.  If `],
-					[/* inline code block */ 'i', `csq`],
-					[/* text */ 't', ` is `],
-					[/* inline code block */ 'i', `null`],
-					[/* text */ 't', `, then characters
-         will be appended as if `],
-					[/* inline code block */ 'i', `csq`],
-					[/* text */ 't', ` contained the four
-         characters `],
-					[/* inline code block */ 'i', `"null"`],
-					[/* text */ 't', `.`]
+				[/* parameter */ 'cbuf', [/* parameter description */
+					[/* text */ 't', `Array of characters`]
 				]],
-				[/* parameter */ 'start', [/* parameter description */
-					[/* text */ 't', `The index of the first character in the subsequence`]
+				[/* parameter */ 'off', [/* parameter description */
+					[/* text */ 't', `Offset from which to start writing characters`]
 				]],
-				[/* parameter */ 'end', [/* parameter description */
-					[/* text */ 't', `The index of the character following the last character in the
-         subsequence`]
+				[/* parameter */ 'len', [/* parameter description */
+					[/* text */ 't', `Number of characters to write`]
 				]]
 			],
 			[/* throws */
 				[/* throw */ 'java.lang.IndexOutOfBoundsException', [/* throw description */
-					[/* text */ 't', `If `],
-					[/* inline code block */ 'i', `start`],
-					[/* text */ 't', ` or `],
-					[/* inline code block */ 'i', `end`],
-					[/* text */ 't', ` are negative, `],
-					[/* inline code block */ 'i', `start`],
-					[/* text */ 't', `
-          is greater than `],
-					[/* inline code block */ 'i', `end`],
-					[/* text */ 't', `, or `],
-					[/* inline code block */ 'i', `end`],
-					[/* text */ 't', ` is greater than
-          `],
-					[/* inline code block */ 'i', `csq.length()`]
+					[/* text */ 't', `Implementations should throw this exception
+          if `],
+					[/* inline code block */ 'i', `off`],
+					[/* text */ 't', ` is negative, or `],
+					[/* inline code block */ 'i', `len`],
+					[/* text */ 't', ` is negative,
+          or `],
+					[/* inline code block */ 'i', `off + len`],
+					[/* text */ 't', ` is negative or greater than the length
+          of the given array`]
 				]],
 				[/* throw */ 'java.io.IOException', [/* throw description */
 					[/* text */ 't', `If an I/O error occurs`]
 				]]
 			],
-			[/* return description */
-				[/* text */ 't', `This writer`]
-			]
+			/* return */ UDF
 		]],
 		[/* method */ 'append(char)', [
 			[/* method description */
@@ -200,164 +196,80 @@ DocsCollector.collect('java.io.Writer', [
 				[/* text */ 't', `This writer`]
 			]
 		]],
-		[/* method */ 'flush()', [
+		[/* method */ 'append(java.lang.CharSequence,int,int)', [
 			[/* method description */
-				[/* text */ 't', `Flushes the stream.  If the stream has saved any characters from the
- various write() methods in a buffer, write them immediately to their
- intended destination.  Then, if that destination is another character or
- byte stream, flush it.  Thus one flush() invocation will flush all the
- buffers in a chain of Writers and OutputStreams.
+				[/* text */ 't', `Appends a subsequence of the specified character sequence to this writer.
+ `],
+				[/* inline code block */ 'i', `Appendable`],
+				[/* text */ 't', `.
 
  `],
-				[/* block */ 'b', ` If the intended destination of this stream is an abstraction provided
- by the underlying operating system, for example a file, then flushing the
- stream guarantees only that bytes previously written to the stream are
- passed to the operating system for writing; it does not guarantee that
- they are actually written to a physical device such as a disk drive.`]
-			],
-			/* parameters */ UDF,
-			[/* throws */
-				[/* throw */ 'java.io.IOException', [/* throw description */
-					[/* text */ 't', `If an I/O error occurs`]
-				]]
-			],
-			/* return */ UDF
-		]],
-		[/* method */ 'write(java.lang.String,int,int)', [
-			[/* method description */
-				[/* text */ 't', `Writes a portion of a string.`]
+				[/* block */ 'b', [
+					[/* text */ 't', ` An invocation of this method of the form
+ `],
+					[/* inline code block */ 'i', `out.append(csq, start, end)`],
+					[/* text */ 't', ` when `],
+					[/* inline code block */ 'i', `csq`],
+					[/* text */ 't', `
+ is not `],
+					[/* inline code block */ 'i', `null`],
+					[/* text */ 't', ` behaves in exactly the
+ same way as the invocation
+
+ `]
+				]],
+				[/* code block */ 'c', [
+					[/* inline code block */ 'i', `out.write(csq.subSequence(start, end).toString())`]
+				]],
+				[/* block */ 'b', '']
 			],
 			[/* parameters */
-				[/* parameter */ 'str', [/* parameter description */
-					[/* text */ 't', `A String`]
+				[/* parameter */ 'csq', [/* parameter description */
+					[/* text */ 't', `The character sequence from which a subsequence will be
+         appended.  If `],
+					[/* inline code block */ 'i', `csq`],
+					[/* text */ 't', ` is `],
+					[/* inline code block */ 'i', `null`],
+					[/* text */ 't', `, then characters
+         will be appended as if `],
+					[/* inline code block */ 'i', `csq`],
+					[/* text */ 't', ` contained the four
+         characters `],
+					[/* inline code block */ 'i', `"null"`],
+					[/* text */ 't', `.`]
 				]],
-				[/* parameter */ 'off', [/* parameter description */
-					[/* text */ 't', `Offset from which to start writing characters`]
+				[/* parameter */ 'start', [/* parameter description */
+					[/* text */ 't', `The index of the first character in the subsequence`]
 				]],
-				[/* parameter */ 'len', [/* parameter description */
-					[/* text */ 't', `Number of characters to write`]
+				[/* parameter */ 'end', [/* parameter description */
+					[/* text */ 't', `The index of the character following the last character in the
+         subsequence`]
 				]]
 			],
 			[/* throws */
 				[/* throw */ 'java.lang.IndexOutOfBoundsException', [/* throw description */
-					[/* text */ 't', `Implementations should throw this exception
-          if `],
-					[/* inline code block */ 'i', `off`],
-					[/* text */ 't', ` is negative, or `],
-					[/* inline code block */ 'i', `len`],
-					[/* text */ 't', ` is negative,
-          or `],
-					[/* inline code block */ 'i', `off + len`],
-					[/* text */ 't', ` is negative or greater than the length
-          of the given string`]
+					[/* text */ 't', `If `],
+					[/* inline code block */ 'i', `start`],
+					[/* text */ 't', ` or `],
+					[/* inline code block */ 'i', `end`],
+					[/* text */ 't', ` are negative, `],
+					[/* inline code block */ 'i', `start`],
+					[/* text */ 't', `
+          is greater than `],
+					[/* inline code block */ 'i', `end`],
+					[/* text */ 't', `, or `],
+					[/* inline code block */ 'i', `end`],
+					[/* text */ 't', ` is greater than
+          `],
+					[/* inline code block */ 'i', `csq.length()`]
 				]],
 				[/* throw */ 'java.io.IOException', [/* throw description */
 					[/* text */ 't', `If an I/O error occurs`]
 				]]
 			],
-			/* return */ UDF
-		]],
-		[/* method */ 'write(int)', [
-			[/* method description */
-				[/* text */ 't', `Writes a single character.  The character to be written is contained in
- the 16 low-order bits of the given integer value; the 16 high-order bits
- are ignored.
-
- `],
-				[/* block */ 'b', ` Subclasses that intend to support efficient single-character output
- should override this method.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'c', [/* parameter description */
-					[/* text */ 't', `int specifying a character to be written`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.io.IOException', [/* throw description */
-					[/* text */ 't', `If an I/O error occurs`]
-				]]
-			],
-			/* return */ UDF
-		]],
-		[/* method */ 'write(java.lang.String)', [
-			[/* method description */
-				[/* text */ 't', `Writes a string.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'str', [/* parameter description */
-					[/* text */ 't', `String to be written`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.io.IOException', [/* throw description */
-					[/* text */ 't', `If an I/O error occurs`]
-				]]
-			],
-			/* return */ UDF
-		]],
-		[/* method */ 'write(char[],int,int)', [
-			[/* method description */
-				[/* text */ 't', `Writes a portion of an array of characters.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'cbuf', [/* parameter description */
-					[/* text */ 't', `Array of characters`]
-				]],
-				[/* parameter */ 'off', [/* parameter description */
-					[/* text */ 't', `Offset from which to start writing characters`]
-				]],
-				[/* parameter */ 'len', [/* parameter description */
-					[/* text */ 't', `Number of characters to write`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.IndexOutOfBoundsException', [/* throw description */
-					[/* text */ 't', `Implementations should throw this exception
-          if `],
-					[/* inline code block */ 'i', `off`],
-					[/* text */ 't', ` is negative, or `],
-					[/* inline code block */ 'i', `len`],
-					[/* text */ 't', ` is negative,
-          or `],
-					[/* inline code block */ 'i', `off + len`],
-					[/* text */ 't', ` is negative or greater than the length
-          of the given array`]
-				]],
-				[/* throw */ 'java.io.IOException', [/* throw description */
-					[/* text */ 't', `If an I/O error occurs`]
-				]]
-			],
-			/* return */ UDF
-		]],
-		[/* method */ 'write(char[])', [
-			[/* method description */
-				[/* text */ 't', `Writes an array of characters.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'cbuf', [/* parameter description */
-					[/* text */ 't', `Array of characters to be written`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.io.IOException', [/* throw description */
-					[/* text */ 't', `If an I/O error occurs`]
-				]]
-			],
-			/* return */ UDF
-		]],
-		[/* method */ 'close()', [
-			[/* method description */
-				[/* text */ 't', `Closes the stream, flushing it first. Once the stream has been closed,
- further write() or flush() invocations will cause an IOException to be
- thrown. Closing a previously closed stream has no effect.`]
-			],
-			/* parameters */ UDF,
-			[/* throws */
-				[/* throw */ 'java.io.IOException', [/* throw description */
-					[/* text */ 't', `If an I/O error occurs`]
-				]]
-			],
-			/* return */ UDF
+			[/* return description */
+				[/* text */ 't', `This writer`]
+			]
 		]],
 		[/* method */ 'nullWriter()', [
 			[/* method description */
@@ -413,6 +325,94 @@ DocsCollector.collect('java.io.Writer', [
 				[/* inline code block */ 'i', `Writer`],
 				[/* text */ 't', ` which discards all characters`]
 			]
+		]],
+		[/* method */ 'write(char[])', [
+			[/* method description */
+				[/* text */ 't', `Writes an array of characters.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'cbuf', [/* parameter description */
+					[/* text */ 't', `Array of characters to be written`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.io.IOException', [/* throw description */
+					[/* text */ 't', `If an I/O error occurs`]
+				]]
+			],
+			/* return */ UDF
+		]],
+		[/* method */ 'write(int)', [
+			[/* method description */
+				[/* text */ 't', `Writes a single character.  The character to be written is contained in
+ the 16 low-order bits of the given integer value; the 16 high-order bits
+ are ignored.
+
+ `],
+				[/* block */ 'b', ` Subclasses that intend to support efficient single-character output
+ should override this method.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'c', [/* parameter description */
+					[/* text */ 't', `int specifying a character to be written`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.io.IOException', [/* throw description */
+					[/* text */ 't', `If an I/O error occurs`]
+				]]
+			],
+			/* return */ UDF
+		]],
+		[/* method */ 'write(java.lang.String)', [
+			[/* method description */
+				[/* text */ 't', `Writes a string.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'str', [/* parameter description */
+					[/* text */ 't', `String to be written`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.io.IOException', [/* throw description */
+					[/* text */ 't', `If an I/O error occurs`]
+				]]
+			],
+			/* return */ UDF
+		]],
+		[/* method */ 'write(java.lang.String,int,int)', [
+			[/* method description */
+				[/* text */ 't', `Writes a portion of a string.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'str', [/* parameter description */
+					[/* text */ 't', `A String`]
+				]],
+				[/* parameter */ 'off', [/* parameter description */
+					[/* text */ 't', `Offset from which to start writing characters`]
+				]],
+				[/* parameter */ 'len', [/* parameter description */
+					[/* text */ 't', `Number of characters to write`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.lang.IndexOutOfBoundsException', [/* throw description */
+					[/* text */ 't', `Implementations should throw this exception
+          if `],
+					[/* inline code block */ 'i', `off`],
+					[/* text */ 't', ` is negative, or `],
+					[/* inline code block */ 'i', `len`],
+					[/* text */ 't', ` is negative,
+          or `],
+					[/* inline code block */ 'i', `off + len`],
+					[/* text */ 't', ` is negative or greater than the length
+          of the given string`]
+				]],
+				[/* throw */ 'java.io.IOException', [/* throw description */
+					[/* text */ 't', `If an I/O error occurs`]
+				]]
+			],
+			/* return */ UDF
 		]]
 	],
 ]);

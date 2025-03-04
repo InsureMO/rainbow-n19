@@ -14,6 +14,53 @@ DocsCollector.collect('java.lang.StackTraceElement', [
 	],
 	/* fields */ UDF,
 	[/* constructors */
+		[/* constructor */ '<init>(java.lang.String,java.lang.String,java.lang.String,int)', [
+			[/* constructor description */
+				[/* text */ 't', `Creates a stack trace element representing the specified execution
+ point. The `],
+				[/* reference */ 'r', `#getModuleName()`, `module name`],
+				[/* text */ 't', ` and `],
+				[/* reference */ 'r', `#getModuleVersion()`, `module version`],
+				[/* text */ 't', ` of the stack trace element will
+ be `],
+				[/* inline code block */ 'i', `null`],
+				[/* text */ 't', `.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'declaringClass', [/* parameter description */
+					[/* text */ 't', `the fully qualified name of the class containing
+        the execution point represented by the stack trace element`]
+				]],
+				[/* parameter */ 'methodName', [/* parameter description */
+					[/* text */ 't', `the name of the method containing the execution point
+        represented by the stack trace element`]
+				]],
+				[/* parameter */ 'fileName', [/* parameter description */
+					[/* text */ 't', `the name of the file containing the execution point
+         represented by the stack trace element, or `],
+					[/* inline code block */ 'i', `null`],
+					[/* text */ 't', ` if
+         this information is unavailable`]
+				]],
+				[/* parameter */ 'lineNumber', [/* parameter description */
+					[/* text */ 't', `the line number of the source line containing the
+         execution point represented by this stack trace element, or
+         a negative number if this information is unavailable. A value
+         of -2 indicates that the method containing the execution point
+         is a native method`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
+					[/* text */ 't', `if `],
+					[/* inline code block */ 'i', `declaringClass`],
+					[/* text */ 't', ` or
+         `],
+					[/* inline code block */ 'i', `methodName`],
+					[/* text */ 't', ` is null`]
+				]]
+			]
+		]],
 		[/* constructor */ '<init>(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,int)', [
 			[/* constructor description */
 				[/* text */ 't', `Creates a stack trace element representing the specified execution
@@ -74,53 +121,6 @@ DocsCollector.collect('java.lang.StackTraceElement', [
 					[/* inline code block */ 'i', `null`]
 				]]
 			]
-		]],
-		[/* constructor */ '<init>(java.lang.String,java.lang.String,java.lang.String,int)', [
-			[/* constructor description */
-				[/* text */ 't', `Creates a stack trace element representing the specified execution
- point. The `],
-				[/* reference */ 'r', `#getModuleName()`, `module name`],
-				[/* text */ 't', ` and `],
-				[/* reference */ 'r', `#getModuleVersion()`, `module version`],
-				[/* text */ 't', ` of the stack trace element will
- be `],
-				[/* inline code block */ 'i', `null`],
-				[/* text */ 't', `.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'declaringClass', [/* parameter description */
-					[/* text */ 't', `the fully qualified name of the class containing
-        the execution point represented by the stack trace element`]
-				]],
-				[/* parameter */ 'methodName', [/* parameter description */
-					[/* text */ 't', `the name of the method containing the execution point
-        represented by the stack trace element`]
-				]],
-				[/* parameter */ 'fileName', [/* parameter description */
-					[/* text */ 't', `the name of the file containing the execution point
-         represented by the stack trace element, or `],
-					[/* inline code block */ 'i', `null`],
-					[/* text */ 't', ` if
-         this information is unavailable`]
-				]],
-				[/* parameter */ 'lineNumber', [/* parameter description */
-					[/* text */ 't', `the line number of the source line containing the
-         execution point represented by this stack trace element, or
-         a negative number if this information is unavailable. A value
-         of -2 indicates that the method containing the execution point
-         is a native method`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
-					[/* text */ 't', `if `],
-					[/* inline code block */ 'i', `declaringClass`],
-					[/* text */ 't', ` or
-         `],
-					[/* inline code block */ 'i', `methodName`],
-					[/* text */ 't', ` is null`]
-				]]
-			]
 		]]
 	],
 	[/* methods */
@@ -167,14 +167,41 @@ DocsCollector.collect('java.lang.StackTraceElement', [
          execution point as this instance.`]
 			]
 		]],
-		[/* method */ 'toString()', [
+		[/* method */ 'isNativeMethod()', [
 			[/* method description */
-				[/* text */ 't', `Returns a string representation of this stack trace element.`]
+				[/* text */ 't', `Returns true if the method containing the execution point
+ represented by this stack trace element is a native method.`]
 			],
 			/* parameters */ UDF,
 			/* throws */ UDF,
 			[/* return description */
-				[/* text */ 't', `a string representation of the object.`]
+				[/* inline code block */ 'i', `true`],
+				[/* text */ 't', ` if the method containing the execution point
+         represented by this stack trace element is a native method.`]
+			]
+		]],
+		[/* method */ 'getLineNumber()', [
+			[/* method description */
+				[/* text */ 't', `Returns the line number of the source line containing the execution
+ point represented by this stack trace element.  Generally, this is
+ derived from the `],
+				[/* inline code block */ 'i', `LineNumberTable`],
+				[/* text */ 't', ` attribute of the relevant
+ `],
+				[/* inline code block */ 'i', `class`],
+				[/* text */ 't', ` file (as per `],
+				[/* text */ 't', `The Java Virtual Machine
+ Specification`],
+				[/* text */ 't', `, Section `],
+				[/* external link */ 'a', `https://docs.oracle.com/javase/specs/jvms/se17/html/jvms-4.html#jvms-4.7.8`, `4.7.8`],
+				[/* text */ 't', `).`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the line number of the source line containing the execution
+         point represented by this stack trace element, or a negative
+         number if this information is unavailable.`]
 			]
 		]],
 		[/* method */ 'hashCode()', [
@@ -187,17 +214,33 @@ DocsCollector.collect('java.lang.StackTraceElement', [
 				[/* text */ 't', `a hash code value for this object.`]
 			]
 		]],
-		[/* method */ 'isNativeMethod()', [
+		[/* method */ 'getClassLoaderName()', [
 			[/* method description */
-				[/* text */ 't', `Returns true if the method containing the execution point
- represented by this stack trace element is a native method.`]
+				[/* text */ 't', `Returns the name of the class loader of the class containing the
+ execution point represented by this stack trace element.`]
 			],
 			/* parameters */ UDF,
 			/* throws */ UDF,
 			[/* return description */
-				[/* inline code block */ 'i', `true`],
-				[/* text */ 't', ` if the method containing the execution point
-         represented by this stack trace element is a native method.`]
+				[/* text */ 't', `the name of the class loader of the class containing the execution
+         point represented by this stack trace element; `],
+				[/* inline code block */ 'i', `null`],
+				[/* text */ 't', `
+         if the class loader is not named.`]
+			]
+		]],
+		[/* method */ 'getClassName()', [
+			[/* method description */
+				[/* text */ 't', `Returns the fully qualified name of the class containing the
+ execution point represented by this stack trace element.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the fully qualified name of the `],
+				[/* inline code block */ 'i', `Class`],
+				[/* text */ 't', ` containing
+         the execution point represented by this stack trace element.`]
 			]
 		]],
 		[/* method */ 'getFileName()', [
@@ -227,28 +270,30 @@ DocsCollector.collect('java.lang.StackTraceElement', [
          this information is unavailable.`]
 			]
 		]],
-		[/* method */ 'getLineNumber()', [
+		[/* method */ 'getMethodName()', [
 			[/* method description */
-				[/* text */ 't', `Returns the line number of the source line containing the execution
- point represented by this stack trace element.  Generally, this is
- derived from the `],
-				[/* inline code block */ 'i', `LineNumberTable`],
-				[/* text */ 't', ` attribute of the relevant
+				[/* text */ 't', `Returns the name of the method containing the execution point
+ represented by this stack trace element.  If the execution point is
+ contained in an instance or class initializer, this method will return
+ the appropriate `],
+				[/* text */ 't', `special method name`],
+				[/* text */ 't', `, `],
+				[/* inline code block */ 'i', `<init>`],
+				[/* text */ 't', ` or
  `],
-				[/* inline code block */ 'i', `class`],
-				[/* text */ 't', ` file (as per `],
-				[/* text */ 't', `The Java Virtual Machine
- Specification`],
-				[/* text */ 't', `, Section `],
-				[/* external link */ 'a', `https://docs.oracle.com/javase/specs/jvms/se17/html/jvms-4.html#jvms-4.7.8`, `4.7.8`],
-				[/* text */ 't', `).`]
+				[/* inline code block */ 'i', `<clinit>`],
+				[/* text */ 't', `, as per Section `],
+				[/* external link */ 'a', `https://docs.oracle.com/javase/specs/jvms/se17/html/jvms-3.html#jvms-3.9`, `3.9`],
+				[/* text */ 't', ` of `],
+				[/* text */ 't', `The Java Virtual
+ Machine Specification`],
+				[/* text */ 't', `.`]
 			],
 			/* parameters */ UDF,
 			/* throws */ UDF,
 			[/* return description */
-				[/* text */ 't', `the line number of the source line containing the execution
-         point represented by this stack trace element, or a negative
-         number if this information is unavailable.`]
+				[/* text */ 't', `the name of the method containing the execution point
+         represented by this stack trace element.`]
 			]
 		]],
 		[/* method */ 'getModuleName()', [
@@ -285,59 +330,14 @@ DocsCollector.collect('java.lang.StackTraceElement', [
          if the module version is not available.`]
 			]
 		]],
-		[/* method */ 'getClassLoaderName()', [
+		[/* method */ 'toString()', [
 			[/* method description */
-				[/* text */ 't', `Returns the name of the class loader of the class containing the
- execution point represented by this stack trace element.`]
+				[/* text */ 't', `Returns a string representation of this stack trace element.`]
 			],
 			/* parameters */ UDF,
 			/* throws */ UDF,
 			[/* return description */
-				[/* text */ 't', `the name of the class loader of the class containing the execution
-         point represented by this stack trace element; `],
-				[/* inline code block */ 'i', `null`],
-				[/* text */ 't', `
-         if the class loader is not named.`]
-			]
-		]],
-		[/* method */ 'getClassName()', [
-			[/* method description */
-				[/* text */ 't', `Returns the fully qualified name of the class containing the
- execution point represented by this stack trace element.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the fully qualified name of the `],
-				[/* inline code block */ 'i', `Class`],
-				[/* text */ 't', ` containing
-         the execution point represented by this stack trace element.`]
-			]
-		]],
-		[/* method */ 'getMethodName()', [
-			[/* method description */
-				[/* text */ 't', `Returns the name of the method containing the execution point
- represented by this stack trace element.  If the execution point is
- contained in an instance or class initializer, this method will return
- the appropriate `],
-				[/* text */ 't', `special method name`],
-				[/* text */ 't', `, `],
-				[/* inline code block */ 'i', `<init>`],
-				[/* text */ 't', ` or
- `],
-				[/* inline code block */ 'i', `<clinit>`],
-				[/* text */ 't', `, as per Section `],
-				[/* external link */ 'a', `https://docs.oracle.com/javase/specs/jvms/se17/html/jvms-3.html#jvms-3.9`, `3.9`],
-				[/* text */ 't', ` of `],
-				[/* text */ 't', `The Java Virtual
- Machine Specification`],
-				[/* text */ 't', `.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the name of the method containing the execution point
-         represented by this stack trace element.`]
+				[/* text */ 't', `a string representation of the object.`]
 			]
 		]]
 	],

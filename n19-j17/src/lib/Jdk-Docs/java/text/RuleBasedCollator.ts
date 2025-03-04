@@ -341,36 +341,6 @@ DocsCollector.collect('java.text.RuleBasedCollator', [
 				[/* text */ 't', `a clone of this instance.`]
 			]
 		]],
-		[/* method */ 'compare(java.lang.String,java.lang.String)', [
-			[/* method description */
-				[/* text */ 't', `Compares the character data stored in two different strings based on the
- collation rules.  Returns information about whether a string is less
- than, greater than or equal to another string in a language.
- This can be overridden in a subclass.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'source', [/* parameter description */
-					[/* text */ 't', `the source string.`]
-				]],
-				[/* parameter */ 'target', [/* parameter description */
-					[/* text */ 't', `the target string.`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
-					[/* text */ 't', `if `],
-					[/* inline code block */ 'i', `source`],
-					[/* text */ 't', ` or `],
-					[/* inline code block */ 'i', `target`],
-					[/* text */ 't', ` is null.`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `Returns an integer value. Value is less than zero if source is less than
- target, value is zero if source and target are equal, value is greater than zero
- if source is greater than target.`]
-			]
-		]],
 		[/* method */ 'getRules()', [
 			[/* method description */
 				[/* text */ 't', `Gets the table-based rules for the collation object.`]
@@ -412,6 +382,36 @@ DocsCollector.collect('java.text.RuleBasedCollator', [
 				[/* text */ 't', `a `],
 				[/* inline code block */ 'i', `CollationElementIterator`],
 				[/* text */ 't', ` object`]
+			]
+		]],
+		[/* method */ 'compare(java.lang.String,java.lang.String)', [
+			[/* method description */
+				[/* text */ 't', `Compares the character data stored in two different strings based on the
+ collation rules.  Returns information about whether a string is less
+ than, greater than or equal to another string in a language.
+ This can be overridden in a subclass.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'source', [/* parameter description */
+					[/* text */ 't', `the source string.`]
+				]],
+				[/* parameter */ 'target', [/* parameter description */
+					[/* text */ 't', `the target string.`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
+					[/* text */ 't', `if `],
+					[/* inline code block */ 'i', `source`],
+					[/* text */ 't', ` or `],
+					[/* inline code block */ 'i', `target`],
+					[/* text */ 't', ` is null.`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `Returns an integer value. Value is less than zero if source is less than
+ target, value is zero if source and target are equal, value is greater than zero
+ if source is greater than target.`]
 			]
 		]],
 		[/* method */ 'getCollationKey(java.lang.String)', [

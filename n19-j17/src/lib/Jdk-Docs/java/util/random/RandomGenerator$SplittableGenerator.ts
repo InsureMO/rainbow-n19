@@ -48,6 +48,31 @@ DocsCollector.collect('java.util.random.RandomGenerator$SplittableGenerator', [
 	/* fields */ UDF,
 	/* constructors */ UDF,
 	[/* methods */
+		[/* method */ 'split()', [
+			[/* method description */
+				[/* text */ 't', `Returns a new pseudorandom number generator, split off from this one,
+ that implements the `],
+				[/* reference */ 'r', `java.util.random.RandomGenerator`],
+				[/* text */ 't', ` and
+ `],
+				[/* reference */ 'r', `java.util.random.RandomGenerator.SplittableGenerator`],
+				[/* text */ 't', ` interfaces.
+
+ `],
+				[/* block */ 'b', ` This pseudorandom number generator may be used as a source of
+ pseudorandom bits used to initialize the state of the new one.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `a new object that implements the `],
+				[/* reference */ 'r', `java.util.random.RandomGenerator`],
+				[/* text */ 't', ` and
+         `],
+				[/* reference */ 'r', `java.util.random.RandomGenerator.SplittableGenerator`],
+				[/* text */ 't', ` interfaces`]
+			]
+		]],
 		[/* method */ 'split(java.util.random.RandomGenerator.SplittableGenerator)', [
 			[/* method description */
 				[/* text */ 't', `Returns a new pseudorandom number generator, split off from this one,
@@ -81,108 +106,6 @@ DocsCollector.collect('java.util.random.RandomGenerator$SplittableGenerator', [
 				[/* text */ 't', ` interfaces`]
 			]
 		]],
-		[/* method */ 'split()', [
-			[/* method description */
-				[/* text */ 't', `Returns a new pseudorandom number generator, split off from this one,
- that implements the `],
-				[/* reference */ 'r', `java.util.random.RandomGenerator`],
-				[/* text */ 't', ` and
- `],
-				[/* reference */ 'r', `java.util.random.RandomGenerator.SplittableGenerator`],
-				[/* text */ 't', ` interfaces.
-
- `],
-				[/* block */ 'b', ` This pseudorandom number generator may be used as a source of
- pseudorandom bits used to initialize the state of the new one.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `a new object that implements the `],
-				[/* reference */ 'r', `java.util.random.RandomGenerator`],
-				[/* text */ 't', ` and
-         `],
-				[/* reference */ 'r', `java.util.random.RandomGenerator.SplittableGenerator`],
-				[/* text */ 't', ` interfaces`]
-			]
-		]],
-		[/* method */ 'of(java.lang.String)', [
-			[/* method description */
-				[/* text */ 't', `Returns an instance of `],
-				[/* reference */ 'r', `java.util.random.RandomGenerator.SplittableGenerator`],
-				[/* text */ 't', ` that utilizes the
- `],
-				[/* inline code block */ 'i', `name`],
-				[/* reference */ 'r', `.package-summary#algorithms`],
-				[/* text */ 't', `.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'name', [/* parameter description */
-					[/* text */ 't', `Name of random number generator
-              `],
-					[/* reference */ 'r', `.package-summary#algorithms`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
-					[/* text */ 't', `if name is null`]
-				]],
-				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
-					[/* text */ 't', `if the named algorithm is not found`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `An instance of `],
-				[/* reference */ 'r', `java.util.random.RandomGenerator.SplittableGenerator`]
-			]
-		]],
-		[/* method */ 'rngs(long)', [
-			[/* method description */
-				[/* text */ 't', `Returns a stream producing the given `],
-				[/* inline code block */ 'i', `streamSize`],
-				[/* text */ 't', ` number of new
- pseudorandom number generators, each of which implements the
- `],
-				[/* reference */ 'r', `java.util.random.RandomGenerator`],
-				[/* text */ 't', ` interface. Ideally the generators in the
- stream will appear to be statistically independent.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'streamSize', [/* parameter description */
-					[/* text */ 't', `the number of generators to generate`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
-					[/* text */ 't', `if `],
-					[/* inline code block */ 'i', `streamSize`],
-					[/* text */ 't', ` is
-         less than zero`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `a stream of objects that implement the `],
-				[/* reference */ 'r', `java.util.random.RandomGenerator`],
-				[/* text */ 't', ` interface`]
-			]
-		]],
-		[/* method */ 'rngs()', [
-			[/* method description */
-				[/* text */ 't', `Returns an effectively unlimited stream of new pseudorandom number
- generators, each of which implements the `],
-				[/* reference */ 'r', `java.util.random.RandomGenerator`],
-				[/* text */ 't', `
- interface. Ideally the generators in the stream will appear to be
- statistically independent.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `a stream of objects that implement the `],
-				[/* reference */ 'r', `java.util.random.RandomGenerator`],
-				[/* text */ 't', ` interface`]
-			]
-		]],
 		[/* method */ 'splits(java.util.random.RandomGenerator.SplittableGenerator)', [
 			[/* method description */
 				[/* text */ 't', `Returns an effectively unlimited stream of new pseudorandom number
@@ -205,26 +128,6 @@ DocsCollector.collect('java.util.random.RandomGenerator$SplittableGenerator', [
 					[/* text */ 't', `if source is null`]
 				]]
 			],
-			[/* return description */
-				[/* text */ 't', `a stream of `],
-				[/* reference */ 'r', `java.util.random.RandomGenerator.SplittableGenerator`],
-				[/* text */ 't', ` objects`]
-			]
-		]],
-		[/* method */ 'splits()', [
-			[/* method description */
-				[/* text */ 't', `Returns an effectively unlimited stream of new pseudorandom number
- generators, each of which implements the `],
-				[/* reference */ 'r', `java.util.random.RandomGenerator.SplittableGenerator`],
-				[/* text */ 't', `
- interface.
-
- `],
-				[/* block */ 'b', ` This pseudorandom number generator may be used as a source of
- pseudorandom bits used to initialize the state the new ones.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
 			[/* return description */
 				[/* text */ 't', `a stream of `],
 				[/* reference */ 'r', `java.util.random.RandomGenerator.SplittableGenerator`],
@@ -301,6 +204,103 @@ DocsCollector.collect('java.util.random.RandomGenerator$SplittableGenerator', [
 				[/* text */ 't', `a stream of `],
 				[/* reference */ 'r', `java.util.random.RandomGenerator.SplittableGenerator`],
 				[/* text */ 't', ` objects`]
+			]
+		]],
+		[/* method */ 'splits()', [
+			[/* method description */
+				[/* text */ 't', `Returns an effectively unlimited stream of new pseudorandom number
+ generators, each of which implements the `],
+				[/* reference */ 'r', `java.util.random.RandomGenerator.SplittableGenerator`],
+				[/* text */ 't', `
+ interface.
+
+ `],
+				[/* block */ 'b', ` This pseudorandom number generator may be used as a source of
+ pseudorandom bits used to initialize the state the new ones.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `a stream of `],
+				[/* reference */ 'r', `java.util.random.RandomGenerator.SplittableGenerator`],
+				[/* text */ 't', ` objects`]
+			]
+		]],
+		[/* method */ 'rngs()', [
+			[/* method description */
+				[/* text */ 't', `Returns an effectively unlimited stream of new pseudorandom number
+ generators, each of which implements the `],
+				[/* reference */ 'r', `java.util.random.RandomGenerator`],
+				[/* text */ 't', `
+ interface. Ideally the generators in the stream will appear to be
+ statistically independent.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `a stream of objects that implement the `],
+				[/* reference */ 'r', `java.util.random.RandomGenerator`],
+				[/* text */ 't', ` interface`]
+			]
+		]],
+		[/* method */ 'rngs(long)', [
+			[/* method description */
+				[/* text */ 't', `Returns a stream producing the given `],
+				[/* inline code block */ 'i', `streamSize`],
+				[/* text */ 't', ` number of new
+ pseudorandom number generators, each of which implements the
+ `],
+				[/* reference */ 'r', `java.util.random.RandomGenerator`],
+				[/* text */ 't', ` interface. Ideally the generators in the
+ stream will appear to be statistically independent.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'streamSize', [/* parameter description */
+					[/* text */ 't', `the number of generators to generate`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
+					[/* text */ 't', `if `],
+					[/* inline code block */ 'i', `streamSize`],
+					[/* text */ 't', ` is
+         less than zero`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `a stream of objects that implement the `],
+				[/* reference */ 'r', `java.util.random.RandomGenerator`],
+				[/* text */ 't', ` interface`]
+			]
+		]],
+		[/* method */ 'of(java.lang.String)', [
+			[/* method description */
+				[/* text */ 't', `Returns an instance of `],
+				[/* reference */ 'r', `java.util.random.RandomGenerator.SplittableGenerator`],
+				[/* text */ 't', ` that utilizes the
+ `],
+				[/* inline code block */ 'i', `name`],
+				[/* reference */ 'r', `.package-summary#algorithms`],
+				[/* text */ 't', `.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'name', [/* parameter description */
+					[/* text */ 't', `Name of random number generator
+              `],
+					[/* reference */ 'r', `.package-summary#algorithms`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
+					[/* text */ 't', `if name is null`]
+				]],
+				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
+					[/* text */ 't', `if the named algorithm is not found`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `An instance of `],
+				[/* reference */ 'r', `java.util.random.RandomGenerator.SplittableGenerator`]
 			]
 		]]
 	],

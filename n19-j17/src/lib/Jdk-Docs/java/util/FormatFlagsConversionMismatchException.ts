@@ -34,7 +34,16 @@ DocsCollector.collect('java.util.FormatFlagsConversionMismatchException', [
 		]]
 	],
 	[/* methods */
-		[/* method */ 'getMessage()', UDF],
+		[/* method */ 'getConversion()', [
+			[/* method description */
+				[/* text */ 't', `Returns the incompatible conversion.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `The conversion`]
+			]
+		]],
 		[/* method */ 'getFlags()', [
 			[/* method description */
 				[/* text */ 't', `Returns the incompatible flag.`]
@@ -45,15 +54,6 @@ DocsCollector.collect('java.util.FormatFlagsConversionMismatchException', [
 				[/* text */ 't', `The flag`]
 			]
 		]],
-		[/* method */ 'getConversion()', [
-			[/* method description */
-				[/* text */ 't', `Returns the incompatible conversion.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `The conversion`]
-			]
-		]]
+		[/* method */ 'getMessage()', UDF]
 	],
 ]);

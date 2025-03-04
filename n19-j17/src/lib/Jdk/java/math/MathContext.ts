@@ -116,8 +116,8 @@ JdkClassCreateHelper.class('java.math.MathContext', [
 		]
 	],
 	[/* declared fields */
-		[/* public static final java.math.MathContext java.math.MathContext.UNLIMITED */
-			/* name */ 'UNLIMITED',
+		[/* public static final java.math.MathContext java.math.MathContext.DECIMAL128 */
+			/* name */ 'DECIMAL128',
 			/* type */ 'java.math.MathContext',
 			/* annotations */ UDF,
 			/* modifiers */ 25
@@ -134,8 +134,8 @@ JdkClassCreateHelper.class('java.math.MathContext', [
 			/* annotations */ UDF,
 			/* modifiers */ 25
 		],
-		[/* public static final java.math.MathContext java.math.MathContext.DECIMAL128 */
-			/* name */ 'DECIMAL128',
+		[/* public static final java.math.MathContext java.math.MathContext.UNLIMITED */
+			/* name */ 'UNLIMITED',
 			/* type */ 'java.math.MathContext',
 			/* annotations */ UDF,
 			/* modifiers */ 25

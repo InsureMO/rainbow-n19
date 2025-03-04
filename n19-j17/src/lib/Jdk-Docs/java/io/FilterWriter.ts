@@ -42,9 +42,11 @@ DocsCollector.collect('java.io.FilterWriter', [
 		]]
 	],
 	[/* methods */
-		[/* method */ 'flush()', [
+		[/* method */ 'close()', [
 			[/* method description */
-				[/* text */ 't', `Flushes the stream.`]
+				[/* block */ 'b', `Closes the stream, flushing it first. Once the stream has been closed,
+ further write() or flush() invocations will cause an IOException to be
+ thrown. Closing a previously closed stream has no effect.`]
 			],
 			/* parameters */ UDF,
 			[/* throws */
@@ -54,34 +56,12 @@ DocsCollector.collect('java.io.FilterWriter', [
 			],
 			/* return */ UDF
 		]],
-		[/* method */ 'write(java.lang.String,int,int)', [
+		[/* method */ 'flush()', [
 			[/* method description */
-				[/* text */ 't', `Writes a portion of a string.`]
+				[/* text */ 't', `Flushes the stream.`]
 			],
-			[/* parameters */
-				[/* parameter */ 'str', [/* parameter description */
-					[/* text */ 't', `String to be written`]
-				]],
-				[/* parameter */ 'off', [/* parameter description */
-					[/* text */ 't', `Offset from which to start reading characters`]
-				]],
-				[/* parameter */ 'len', [/* parameter description */
-					[/* text */ 't', `Number of characters to be written`]
-				]]
-			],
+			/* parameters */ UDF,
 			[/* throws */
-				[/* throw */ 'java.lang.IndexOutOfBoundsException', [/* throw description */
-					[/* text */ 't', `If the values of the `],
-					[/* inline code block */ 'i', `off`],
-					[/* text */ 't', ` and `],
-					[/* inline code block */ 'i', `len`],
-					[/* text */ 't', ` parameters
-          cause the corresponding method of the underlying `],
-					[/* inline code block */ 'i', `Writer`],
-					[/* text */ 't', `
-          to throw an `],
-					[/* inline code block */ 'i', `IndexOutOfBoundsException`]
-				]],
 				[/* throw */ 'java.io.IOException', [/* throw description */
 					[/* text */ 't', `If an I/O error occurs`]
 				]]
@@ -138,14 +118,34 @@ DocsCollector.collect('java.io.FilterWriter', [
 			],
 			/* return */ UDF
 		]],
-		[/* method */ 'close()', [
+		[/* method */ 'write(java.lang.String,int,int)', [
 			[/* method description */
-				[/* block */ 'b', `Closes the stream, flushing it first. Once the stream has been closed,
- further write() or flush() invocations will cause an IOException to be
- thrown. Closing a previously closed stream has no effect.`]
+				[/* text */ 't', `Writes a portion of a string.`]
 			],
-			/* parameters */ UDF,
+			[/* parameters */
+				[/* parameter */ 'str', [/* parameter description */
+					[/* text */ 't', `String to be written`]
+				]],
+				[/* parameter */ 'off', [/* parameter description */
+					[/* text */ 't', `Offset from which to start reading characters`]
+				]],
+				[/* parameter */ 'len', [/* parameter description */
+					[/* text */ 't', `Number of characters to be written`]
+				]]
+			],
 			[/* throws */
+				[/* throw */ 'java.lang.IndexOutOfBoundsException', [/* throw description */
+					[/* text */ 't', `If the values of the `],
+					[/* inline code block */ 'i', `off`],
+					[/* text */ 't', ` and `],
+					[/* inline code block */ 'i', `len`],
+					[/* text */ 't', ` parameters
+          cause the corresponding method of the underlying `],
+					[/* inline code block */ 'i', `Writer`],
+					[/* text */ 't', `
+          to throw an `],
+					[/* inline code block */ 'i', `IndexOutOfBoundsException`]
+				]],
 				[/* throw */ 'java.io.IOException', [/* throw description */
 					[/* text */ 't', `If an I/O error occurs`]
 				]]

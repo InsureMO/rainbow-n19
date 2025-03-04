@@ -138,6 +138,38 @@ DocsCollector.collect('java.io.ObjectOutputStream', [
 	],
 	/* fields */ UDF,
 	[/* constructors */
+		[/* constructor */ '<init>()', [
+			[/* constructor description */
+				[/* text */ 't', `Provide a way for subclasses that are completely reimplementing
+ ObjectOutputStream to not have to allocate private data just used by
+ this implementation of ObjectOutputStream.
+
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', `If there is a security manager installed, this method first calls the
+ security manager's `],
+					[/* inline code block */ 'i', `checkPermission`],
+					[/* text */ 't', ` method with a
+ `],
+					[/* inline code block */ 'i', `SerializablePermission("enableSubclassImplementation")`],
+					[/* text */ 't', `
+ permission to ensure it's ok to enable subclassing.`]
+				]]
+			],
+			/* parameters */ UDF,
+			[/* throws */
+				[/* throw */ 'java.lang.SecurityException', [/* throw description */
+					[/* text */ 't', `if a security manager exists and its
+          `],
+					[/* inline code block */ 'i', `checkPermission`],
+					[/* text */ 't', ` method denies enabling
+          subclassing.`]
+				]],
+				[/* throw */ 'java.io.IOException', [/* throw description */
+					[/* text */ 't', `if an I/O error occurs while creating this stream`]
+				]]
+			]
+		]],
 		[/* constructor */ '<init>(java.io.OutputStream)', [
 			[/* constructor description */
 				[/* text */ 't', `Creates an ObjectOutputStream that writes to the specified OutputStream.
@@ -173,123 +205,270 @@ DocsCollector.collect('java.io.ObjectOutputStream', [
 					[/* inline code block */ 'i', `null`]
 				]]
 			]
-		]],
-		[/* constructor */ '<init>()', [
-			[/* constructor description */
-				[/* text */ 't', `Provide a way for subclasses that are completely reimplementing
- ObjectOutputStream to not have to allocate private data just used by
- this implementation of ObjectOutputStream.
+		]]
+	],
+	[/* methods */
+		[/* method */ 'enableReplaceObject(boolean)', [
+			[/* method description */
+				[/* text */ 't', `Enables the stream to do replacement of objects written to the stream.  When
+ enabled, the `],
+				[/* reference */ 'r', `#replaceObject(java.lang.Object)`, `replaceObject(java.lang.Object)`],
+				[/* text */ 't', ` method is called for every object being
+ serialized.
 
  `],
 				[/* block */ 'b', [
-					[/* text */ 't', `If there is a security manager installed, this method first calls the
- security manager's `],
-					[/* inline code block */ 'i', `checkPermission`],
-					[/* text */ 't', ` method with a
+					[/* text */ 't', `If object replacement is currently not enabled, and
  `],
-					[/* inline code block */ 'i', `SerializablePermission("enableSubclassImplementation")`],
-					[/* text */ 't', `
- permission to ensure it's ok to enable subclassing.`]
+					[/* inline code block */ 'i', `enable`],
+					[/* text */ 't', ` is true, and there is a security manager installed,
+ this method first calls the security manager's
+ `],
+					[/* inline code block */ 'i', `checkPermission`],
+					[/* text */ 't', ` method with the
+ `],
+					[/* inline code block */ 'i', `SerializablePermission("enableSubstitution")`],
+					[/* text */ 't', ` permission to
+ ensure that the caller is permitted to enable the stream to do replacement
+ of objects written to the stream.`]
 				]]
 			],
-			/* parameters */ UDF,
+			[/* parameters */
+				[/* parameter */ 'enable', [/* parameter description */
+					[/* text */ 't', `true for enabling use of `],
+					[/* inline code block */ 'i', `replaceObject`],
+					[/* text */ 't', ` for
+          every object being serialized`]
+				]]
+			],
 			[/* throws */
 				[/* throw */ 'java.lang.SecurityException', [/* throw description */
 					[/* text */ 't', `if a security manager exists and its
           `],
 					[/* inline code block */ 'i', `checkPermission`],
-					[/* text */ 't', ` method denies enabling
-          subclassing.`]
-				]],
-				[/* throw */ 'java.io.IOException', [/* throw description */
-					[/* text */ 't', `if an I/O error occurs while creating this stream`]
+					[/* text */ 't', ` method denies enabling the stream
+          to do replacement of objects written to the stream.`]
 				]]
+			],
+			[/* return description */
+				[/* text */ 't', `the previous setting before this method was invoked`]
 			]
-		]]
-	],
-	[/* methods */
-		[/* method */ 'flush()', [
+		]],
+		[/* method */ 'replaceObject(java.lang.Object)', [
 			[/* method description */
-				[/* text */ 't', `Flushes the stream. This will write any buffered output bytes and flush
- through to the underlying stream.`]
+				[/* text */ 't', `This method will allow trusted subclasses of ObjectOutputStream to
+ substitute one object for another during serialization. Replacing
+ objects is disabled until enableReplaceObject is called. The
+ enableReplaceObject method checks that the stream requesting to do
+ replacement can be trusted.  The first occurrence of each object written
+ into the serialization stream is passed to replaceObject.  Subsequent
+ references to the object are replaced by the object returned by the
+ original call to replaceObject.  To ensure that the private state of
+ objects is not unintentionally exposed, only trusted streams may use
+ replaceObject.
+
+ `],
+				[/* block */ 'b', `The ObjectOutputStream.writeObject method takes a parameter of type
+ Object (as opposed to type Serializable) to allow for cases where
+ non-serializable objects are replaced by serializable ones.
+
+ `],
+				[/* block */ 'b', `When a subclass is replacing objects it must insure that either a
+ complementary substitution must be made during deserialization or that
+ the substituted object is compatible with every field where the
+ reference will be stored.  Objects whose type is not a subclass of the
+ type of the field or array element abort the serialization by raising an
+ exception and the object is not be stored.
+
+ `],
+				[/* block */ 'b', `This method is called only once when each object is first
+ encountered.  All subsequent references to the object will be redirected
+ to the new object. This method should return the object to be
+ substituted or the original object.
+
+ `],
+				[/* block */ 'b', `Null can be returned as the object to be substituted, but may cause
+ NullReferenceException in classes that contain references to the
+ original object since they may be expecting an object instead of
+ null.`]
 			],
-			/* parameters */ UDF,
+			[/* parameters */
+				[/* parameter */ 'obj', [/* parameter description */
+					[/* text */ 't', `the object to be replaced`]
+				]]
+			],
 			[/* throws */
 				[/* throw */ 'java.io.IOException', [/* throw description */
-					[/* text */ 't', `If an I/O error has occurred.`]
+					[/* text */ 't', `Any exception thrown by the underlying
+          OutputStream.`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `the alternate object that replaced the specified one`]
+			]
+		]],
+		[/* method */ 'annotateClass(java.lang.Class)', [
+			[/* method description */
+				[/* text */ 't', `Subclasses may implement this method to allow class data to be stored in
+ the stream. By default this method does nothing.  The corresponding
+ method in ObjectInputStream is resolveClass.  This method is called
+ exactly once for each unique class in the stream.  The class name and
+ signature will have already been written to the stream.  This method may
+ make free use of the ObjectOutputStream to save any representation of
+ the class it deems suitable (for example, the bytes of the class file).
+ The resolveClass method in the corresponding subclass of
+ ObjectInputStream must read and use any data or objects written by
+ annotateClass.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'cl', [/* parameter description */
+					[/* text */ 't', `the class to annotate custom data for`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.io.IOException', [/* throw description */
+					[/* text */ 't', `Any exception thrown by the underlying
+          OutputStream.`]
 				]]
 			],
 			/* return */ UDF
 		]],
-		[/* method */ 'write(int)', [
+		[/* method */ 'annotateProxyClass(java.lang.Class)', [
 			[/* method description */
-				[/* text */ 't', `Writes a byte. This method will block until the byte is actually
- written.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'val', [/* parameter description */
-					[/* text */ 't', `the byte to be written to the stream`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.io.IOException', [/* throw description */
-					[/* text */ 't', `If an I/O error has occurred.`]
-				]]
-			],
-			/* return */ UDF
-		]],
-		[/* method */ 'write(byte[])', [
-			[/* method description */
-				[/* text */ 't', `Writes an array of bytes. This method will block until the bytes are
- actually written.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'buf', [/* parameter description */
-					[/* text */ 't', `the data to be written`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.io.IOException', [/* throw description */
-					[/* text */ 't', `If an I/O error has occurred.`]
-				]]
-			],
-			/* return */ UDF
-		]],
-		[/* method */ 'write(byte[],int,int)', [
-			[/* method description */
-				[/* text */ 't', `Writes a sub array of bytes.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'buf', [/* parameter description */
-					[/* text */ 't', `the data to be written`]
+				[/* text */ 't', `Subclasses may implement this method to store custom data in the stream
+ along with descriptors for dynamic proxy classes.
+
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', `This method is called exactly once for each unique proxy class
+ descriptor in the stream.  The default implementation of this method in
+ `],
+					[/* inline code block */ 'i', `ObjectOutputStream`],
+					[/* text */ 't', ` does nothing.
+
+ `]
 				]],
-				[/* parameter */ 'off', [/* parameter description */
-					[/* text */ 't', `the start offset in the data`]
-				]],
-				[/* parameter */ 'len', [/* parameter description */
-					[/* text */ 't', `the number of bytes that are written`]
+				[/* block */ 'b', [
+					[/* text */ 't', `The corresponding method in `],
+					[/* inline code block */ 'i', `ObjectInputStream`],
+					[/* text */ 't', ` is
+ `],
+					[/* inline code block */ 'i', `resolveProxyClass`],
+					[/* text */ 't', `.  For a given subclass of
+ `],
+					[/* inline code block */ 'i', `ObjectOutputStream`],
+					[/* text */ 't', ` that overrides this method, the
+ `],
+					[/* inline code block */ 'i', `resolveProxyClass`],
+					[/* text */ 't', ` method in the corresponding subclass of
+ `],
+					[/* inline code block */ 'i', `ObjectInputStream`],
+					[/* text */ 't', ` must read any data or objects written by
+ `],
+					[/* inline code block */ 'i', `annotateProxyClass`],
+					[/* text */ 't', `.`]
+				]]
+			],
+			[/* parameters */
+				[/* parameter */ 'cl', [/* parameter description */
+					[/* text */ 't', `the proxy class to annotate custom data for`]
 				]]
 			],
 			[/* throws */
 				[/* throw */ 'java.io.IOException', [/* throw description */
-					[/* text */ 't', `If an I/O error has occurred.`]
+					[/* text */ 't', `any exception thrown by the underlying
+          `],
+					[/* inline code block */ 'i', `OutputStream`]
 				]]
 			],
 			/* return */ UDF
 		]],
-		[/* method */ 'defaultWriteObject()', [
+		[/* method */ 'drain()', [
 			[/* method description */
-				[/* text */ 't', `Write the non-static and non-transient fields of the current class to
- this stream.  This may only be called from the writeObject method of the
- class being serialized. It will throw the NotActiveException if it is
- called otherwise.`]
+				[/* text */ 't', `Drain any buffered data in ObjectOutputStream.  Similar to flush but
+ does not propagate the flush to the underlying stream.`]
 			],
 			/* parameters */ UDF,
 			[/* throws */
 				[/* throw */ 'java.io.IOException', [/* throw description */
 					[/* text */ 't', `if I/O errors occur while writing to the underlying
-          `],
-					[/* inline code block */ 'i', `OutputStream`]
+          stream`]
+				]]
+			],
+			/* return */ UDF
+		]],
+		[/* method */ 'writeClassDescriptor(java.io.ObjectStreamClass)', [
+			[/* method description */
+				[/* text */ 't', `Write the specified class descriptor to the ObjectOutputStream.  Class
+ descriptors are used to identify the classes of objects written to the
+ stream.  Subclasses of ObjectOutputStream may override this method to
+ customize the way in which class descriptors are written to the
+ serialization stream.  The corresponding method in ObjectInputStream,
+ `],
+				[/* inline code block */ 'i', `readClassDescriptor`],
+				[/* text */ 't', `, should then be overridden to
+ reconstitute the class descriptor from its custom stream representation.
+ By default, this method writes class descriptors according to the format
+ defined in the Object Serialization specification.
+
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', `Note that this method will only be called if the ObjectOutputStream
+ is not using the old serialization stream format (set by calling
+ ObjectOutputStream's `],
+					[/* inline code block */ 'i', `useProtocolVersion`],
+					[/* text */ 't', ` method).  If this
+ serialization stream is using the old format
+ (`],
+					[/* inline code block */ 'i', `PROTOCOL_VERSION_1`],
+					[/* text */ 't', `), the class descriptor will be written
+ internally in a manner that cannot be overridden or customized.`]
+				]]
+			],
+			[/* parameters */
+				[/* parameter */ 'desc', [/* parameter description */
+					[/* text */ 't', `class descriptor to write to the stream`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.io.IOException', [/* throw description */
+					[/* text */ 't', `If an I/O error has occurred.`]
+				]]
+			],
+			/* return */ UDF
+		]],
+		[/* method */ 'writeObjectOverride(java.lang.Object)', [
+			[/* method description */
+				[/* text */ 't', `Method used by subclasses to override the default writeObject method.
+ This method is called by trusted subclasses of ObjectOutputStream that
+ constructed ObjectOutputStream using the protected no-arg constructor.
+ The subclass is expected to provide an override method with the modifier
+ "final".`]
+			],
+			[/* parameters */
+				[/* parameter */ 'obj', [/* parameter description */
+					[/* text */ 't', `object to be written to the underlying stream`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.io.IOException', [/* throw description */
+					[/* text */ 't', `if there are I/O errors while writing to the
+          underlying stream`]
+				]]
+			],
+			/* return */ UDF
+		]],
+		[/* method */ 'writeStreamHeader()', [
+			[/* method description */
+				[/* text */ 't', `The writeStreamHeader method is provided so subclasses can append or
+ prepend their own header to the stream.  It writes the magic number and
+ version to the stream.`]
+			],
+			/* parameters */ UDF,
+			[/* throws */
+				[/* throw */ 'java.io.IOException', [/* throw description */
+					[/* text */ 't', `if I/O errors occur while writing to the underlying
+          stream`]
 				]]
 			],
 			/* return */ UDF
@@ -348,23 +527,6 @@ DocsCollector.collect('java.io.ObjectOutputStream', [
           fields`]
 			]
 		]],
-		[/* method */ 'writeFields()', [
-			[/* method description */
-				[/* text */ 't', `Write the buffered fields to the stream.`]
-			],
-			/* parameters */ UDF,
-			[/* throws */
-				[/* throw */ 'java.io.IOException', [/* throw description */
-					[/* text */ 't', `if I/O errors occur while writing to the underlying
-          stream`]
-				]],
-				[/* throw */ 'java.io.NotActiveException', [/* throw description */
-					[/* text */ 't', `Called when a classes writeObject method was
-          not called to write the state of the object.`]
-				]]
-			],
-			/* return */ UDF
-		]],
 		[/* method */ 'close()', [
 			[/* method description */
 				[/* text */ 't', `Closes the stream. This method must be called to release any resources
@@ -378,19 +540,32 @@ DocsCollector.collect('java.io.ObjectOutputStream', [
 			],
 			/* return */ UDF
 		]],
-		[/* method */ 'writeInt(int)', [
+		[/* method */ 'defaultWriteObject()', [
 			[/* method description */
-				[/* text */ 't', `Writes a 32 bit int.`]
+				[/* text */ 't', `Write the non-static and non-transient fields of the current class to
+ this stream.  This may only be called from the writeObject method of the
+ class being serialized. It will throw the NotActiveException if it is
+ called otherwise.`]
 			],
-			[/* parameters */
-				[/* parameter */ 'val', [/* parameter description */
-					[/* text */ 't', `the integer value to be written`]
-				]]
-			],
+			/* parameters */ UDF,
 			[/* throws */
 				[/* throw */ 'java.io.IOException', [/* throw description */
 					[/* text */ 't', `if I/O errors occur while writing to the underlying
-          stream`]
+          `],
+					[/* inline code block */ 'i', `OutputStream`]
+				]]
+			],
+			/* return */ UDF
+		]],
+		[/* method */ 'flush()', [
+			[/* method description */
+				[/* text */ 't', `Flushes the stream. This will write any buffered output bytes and flush
+ through to the underlying stream.`]
+			],
+			/* parameters */ UDF,
+			[/* throws */
+				[/* throw */ 'java.io.IOException', [/* throw description */
+					[/* text */ 't', `If an I/O error has occurred.`]
 				]]
 			],
 			/* return */ UDF
@@ -412,21 +587,119 @@ DocsCollector.collect('java.io.ObjectOutputStream', [
 			],
 			/* return */ UDF
 		]],
-		[/* method */ 'writeUTF(java.lang.String)', [
+		[/* method */ 'useProtocolVersion(int)', [
 			[/* method description */
-				[/* text */ 't', `Primitive data write of this String in
+				[/* text */ 't', `Specify stream protocol version to use when writing the stream.
+
  `],
-				[/* reference */ 'r', `.DataInput#modified-utf-8`],
-				[/* text */ 't', `
- format.  Note that there is a
- significant difference between writing a String into the stream as
- primitive data or as an Object. A String instance written by writeObject
- is written into the stream as a String initially. Future writeObject()
- calls write references to the string into the stream.`]
+				[/* block */ 'b', `This routine provides a hook to enable the current version of
+ Serialization to write in a format that is backwards compatible to a
+ previous version of the stream format.
+
+ `],
+				[/* block */ 'b', `Every effort will be made to avoid introducing additional
+ backwards incompatibilities; however, sometimes there is no
+ other alternative.`]
 			],
 			[/* parameters */
-				[/* parameter */ 'str', [/* parameter description */
-					[/* text */ 't', `the String to be written`]
+				[/* parameter */ 'version', [/* parameter description */
+					[/* text */ 't', `use ProtocolVersion from java.io.ObjectStreamConstants.`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.lang.IllegalStateException', [/* throw description */
+					[/* text */ 't', `if called after any objects
+          have been serialized.`]
+				]],
+				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
+					[/* text */ 't', `if invalid version is passed in.`]
+				]],
+				[/* throw */ 'java.io.IOException', [/* throw description */
+					[/* text */ 't', `if I/O errors occur`]
+				]]
+			],
+			/* return */ UDF
+		]],
+		[/* method */ 'write(byte[])', [
+			[/* method description */
+				[/* text */ 't', `Writes an array of bytes. This method will block until the bytes are
+ actually written.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'buf', [/* parameter description */
+					[/* text */ 't', `the data to be written`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.io.IOException', [/* throw description */
+					[/* text */ 't', `If an I/O error has occurred.`]
+				]]
+			],
+			/* return */ UDF
+		]],
+		[/* method */ 'write(byte[],int,int)', [
+			[/* method description */
+				[/* text */ 't', `Writes a sub array of bytes.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'buf', [/* parameter description */
+					[/* text */ 't', `the data to be written`]
+				]],
+				[/* parameter */ 'off', [/* parameter description */
+					[/* text */ 't', `the start offset in the data`]
+				]],
+				[/* parameter */ 'len', [/* parameter description */
+					[/* text */ 't', `the number of bytes that are written`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.io.IOException', [/* throw description */
+					[/* text */ 't', `If an I/O error has occurred.`]
+				]]
+			],
+			/* return */ UDF
+		]],
+		[/* method */ 'write(int)', [
+			[/* method description */
+				[/* text */ 't', `Writes a byte. This method will block until the byte is actually
+ written.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'val', [/* parameter description */
+					[/* text */ 't', `the byte to be written to the stream`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.io.IOException', [/* throw description */
+					[/* text */ 't', `If an I/O error has occurred.`]
+				]]
+			],
+			/* return */ UDF
+		]],
+		[/* method */ 'writeBoolean(boolean)', [
+			[/* method description */
+				[/* text */ 't', `Writes a boolean.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'val', [/* parameter description */
+					[/* text */ 't', `the boolean to be written`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.io.IOException', [/* throw description */
+					[/* text */ 't', `if I/O errors occur while writing to the underlying
+          stream`]
+				]]
+			],
+			/* return */ UDF
+		]],
+		[/* method */ 'writeByte(int)', [
+			[/* method description */
+				[/* text */ 't', `Writes an 8 bit byte.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'val', [/* parameter description */
+					[/* text */ 't', `the byte value to be written`]
 				]]
 			],
 			[/* throws */
@@ -471,81 +744,13 @@ DocsCollector.collect('java.io.ObjectOutputStream', [
 			],
 			/* return */ UDF
 		]],
-		[/* method */ 'writeFloat(float)', [
+		[/* method */ 'writeChars(java.lang.String)', [
 			[/* method description */
-				[/* text */ 't', `Writes a 32 bit float.`]
+				[/* text */ 't', `Writes a String as a sequence of chars.`]
 			],
 			[/* parameters */
-				[/* parameter */ 'val', [/* parameter description */
-					[/* text */ 't', `the float value to be written`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.io.IOException', [/* throw description */
-					[/* text */ 't', `if I/O errors occur while writing to the underlying
-          stream`]
-				]]
-			],
-			/* return */ UDF
-		]],
-		[/* method */ 'writeBoolean(boolean)', [
-			[/* method description */
-				[/* text */ 't', `Writes a boolean.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'val', [/* parameter description */
-					[/* text */ 't', `the boolean to be written`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.io.IOException', [/* throw description */
-					[/* text */ 't', `if I/O errors occur while writing to the underlying
-          stream`]
-				]]
-			],
-			/* return */ UDF
-		]],
-		[/* method */ 'writeByte(int)', [
-			[/* method description */
-				[/* text */ 't', `Writes an 8 bit byte.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'val', [/* parameter description */
-					[/* text */ 't', `the byte value to be written`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.io.IOException', [/* throw description */
-					[/* text */ 't', `if I/O errors occur while writing to the underlying
-          stream`]
-				]]
-			],
-			/* return */ UDF
-		]],
-		[/* method */ 'writeShort(int)', [
-			[/* method description */
-				[/* text */ 't', `Writes a 16 bit short.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'val', [/* parameter description */
-					[/* text */ 't', `the short value to be written`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.io.IOException', [/* throw description */
-					[/* text */ 't', `if I/O errors occur while writing to the underlying
-          stream`]
-				]]
-			],
-			/* return */ UDF
-		]],
-		[/* method */ 'writeLong(long)', [
-			[/* method description */
-				[/* text */ 't', `Writes a 64 bit long.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'val', [/* parameter description */
-					[/* text */ 't', `the long value to be written`]
+				[/* parameter */ 'str', [/* parameter description */
+					[/* text */ 't', `the String of chars to be written`]
 				]]
 			],
 			[/* throws */
@@ -573,257 +778,87 @@ DocsCollector.collect('java.io.ObjectOutputStream', [
 			],
 			/* return */ UDF
 		]],
-		[/* method */ 'writeChars(java.lang.String)', [
+		[/* method */ 'writeFields()', [
 			[/* method description */
-				[/* text */ 't', `Writes a String as a sequence of chars.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'str', [/* parameter description */
-					[/* text */ 't', `the String of chars to be written`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.io.IOException', [/* throw description */
-					[/* text */ 't', `if I/O errors occur while writing to the underlying
-          stream`]
-				]]
-			],
-			/* return */ UDF
-		]],
-		[/* method */ 'writeStreamHeader()', [
-			[/* method description */
-				[/* text */ 't', `The writeStreamHeader method is provided so subclasses can append or
- prepend their own header to the stream.  It writes the magic number and
- version to the stream.`]
+				[/* text */ 't', `Write the buffered fields to the stream.`]
 			],
 			/* parameters */ UDF,
 			[/* throws */
 				[/* throw */ 'java.io.IOException', [/* throw description */
 					[/* text */ 't', `if I/O errors occur while writing to the underlying
           stream`]
-				]]
-			],
-			/* return */ UDF
-		]],
-		[/* method */ 'writeObjectOverride(java.lang.Object)', [
-			[/* method description */
-				[/* text */ 't', `Method used by subclasses to override the default writeObject method.
- This method is called by trusted subclasses of ObjectOutputStream that
- constructed ObjectOutputStream using the protected no-arg constructor.
- The subclass is expected to provide an override method with the modifier
- "final".`]
-			],
-			[/* parameters */
-				[/* parameter */ 'obj', [/* parameter description */
-					[/* text */ 't', `object to be written to the underlying stream`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.io.IOException', [/* throw description */
-					[/* text */ 't', `if there are I/O errors while writing to the
-          underlying stream`]
-				]]
-			],
-			/* return */ UDF
-		]],
-		[/* method */ 'replaceObject(java.lang.Object)', [
-			[/* method description */
-				[/* text */ 't', `This method will allow trusted subclasses of ObjectOutputStream to
- substitute one object for another during serialization. Replacing
- objects is disabled until enableReplaceObject is called. The
- enableReplaceObject method checks that the stream requesting to do
- replacement can be trusted.  The first occurrence of each object written
- into the serialization stream is passed to replaceObject.  Subsequent
- references to the object are replaced by the object returned by the
- original call to replaceObject.  To ensure that the private state of
- objects is not unintentionally exposed, only trusted streams may use
- replaceObject.
-
- `],
-				[/* block */ 'b', `The ObjectOutputStream.writeObject method takes a parameter of type
- Object (as opposed to type Serializable) to allow for cases where
- non-serializable objects are replaced by serializable ones.
-
- `],
-				[/* block */ 'b', `When a subclass is replacing objects it must insure that either a
- complementary substitution must be made during deserialization or that
- the substituted object is compatible with every field where the
- reference will be stored.  Objects whose type is not a subclass of the
- type of the field or array element abort the serialization by raising an
- exception and the object is not be stored.
-
- `],
-				[/* block */ 'b', `This method is called only once when each object is first
- encountered.  All subsequent references to the object will be redirected
- to the new object. This method should return the object to be
- substituted or the original object.
-
- `],
-				[/* block */ 'b', `Null can be returned as the object to be substituted, but may cause
- NullReferenceException in classes that contain references to the
- original object since they may be expecting an object instead of
- null.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'obj', [/* parameter description */
-					[/* text */ 't', `the object to be replaced`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.io.IOException', [/* throw description */
-					[/* text */ 't', `Any exception thrown by the underlying
-          OutputStream.`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `the alternate object that replaced the specified one`]
-			]
-		]],
-		[/* method */ 'annotateProxyClass(java.lang.Class)', [
-			[/* method description */
-				[/* text */ 't', `Subclasses may implement this method to store custom data in the stream
- along with descriptors for dynamic proxy classes.
-
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', `This method is called exactly once for each unique proxy class
- descriptor in the stream.  The default implementation of this method in
- `],
-					[/* inline code block */ 'i', `ObjectOutputStream`],
-					[/* text */ 't', ` does nothing.
-
- `]
 				]],
-				[/* block */ 'b', [
-					[/* text */ 't', `The corresponding method in `],
-					[/* inline code block */ 'i', `ObjectInputStream`],
-					[/* text */ 't', ` is
- `],
-					[/* inline code block */ 'i', `resolveProxyClass`],
-					[/* text */ 't', `.  For a given subclass of
- `],
-					[/* inline code block */ 'i', `ObjectOutputStream`],
-					[/* text */ 't', ` that overrides this method, the
- `],
-					[/* inline code block */ 'i', `resolveProxyClass`],
-					[/* text */ 't', ` method in the corresponding subclass of
- `],
-					[/* inline code block */ 'i', `ObjectInputStream`],
-					[/* text */ 't', ` must read any data or objects written by
- `],
-					[/* inline code block */ 'i', `annotateProxyClass`],
-					[/* text */ 't', `.`]
-				]]
-			],
-			[/* parameters */
-				[/* parameter */ 'cl', [/* parameter description */
-					[/* text */ 't', `the proxy class to annotate custom data for`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.io.IOException', [/* throw description */
-					[/* text */ 't', `any exception thrown by the underlying
-          `],
-					[/* inline code block */ 'i', `OutputStream`]
+				[/* throw */ 'java.io.NotActiveException', [/* throw description */
+					[/* text */ 't', `Called when a classes writeObject method was
+          not called to write the state of the object.`]
 				]]
 			],
 			/* return */ UDF
 		]],
-		[/* method */ 'writeClassDescriptor(java.io.ObjectStreamClass)', [
+		[/* method */ 'writeFloat(float)', [
 			[/* method description */
-				[/* text */ 't', `Write the specified class descriptor to the ObjectOutputStream.  Class
- descriptors are used to identify the classes of objects written to the
- stream.  Subclasses of ObjectOutputStream may override this method to
- customize the way in which class descriptors are written to the
- serialization stream.  The corresponding method in ObjectInputStream,
- `],
-				[/* inline code block */ 'i', `readClassDescriptor`],
-				[/* text */ 't', `, should then be overridden to
- reconstitute the class descriptor from its custom stream representation.
- By default, this method writes class descriptors according to the format
- defined in the Object Serialization specification.
-
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', `Note that this method will only be called if the ObjectOutputStream
- is not using the old serialization stream format (set by calling
- ObjectOutputStream's `],
-					[/* inline code block */ 'i', `useProtocolVersion`],
-					[/* text */ 't', ` method).  If this
- serialization stream is using the old format
- (`],
-					[/* inline code block */ 'i', `PROTOCOL_VERSION_1`],
-					[/* text */ 't', `), the class descriptor will be written
- internally in a manner that cannot be overridden or customized.`]
-				]]
+				[/* text */ 't', `Writes a 32 bit float.`]
 			],
 			[/* parameters */
-				[/* parameter */ 'desc', [/* parameter description */
-					[/* text */ 't', `class descriptor to write to the stream`]
+				[/* parameter */ 'val', [/* parameter description */
+					[/* text */ 't', `the float value to be written`]
 				]]
 			],
 			[/* throws */
 				[/* throw */ 'java.io.IOException', [/* throw description */
-					[/* text */ 't', `If an I/O error has occurred.`]
+					[/* text */ 't', `if I/O errors occur while writing to the underlying
+          stream`]
 				]]
 			],
 			/* return */ UDF
 		]],
-		[/* method */ 'annotateClass(java.lang.Class)', [
+		[/* method */ 'writeInt(int)', [
 			[/* method description */
-				[/* text */ 't', `Subclasses may implement this method to allow class data to be stored in
- the stream. By default this method does nothing.  The corresponding
- method in ObjectInputStream is resolveClass.  This method is called
- exactly once for each unique class in the stream.  The class name and
- signature will have already been written to the stream.  This method may
- make free use of the ObjectOutputStream to save any representation of
- the class it deems suitable (for example, the bytes of the class file).
- The resolveClass method in the corresponding subclass of
- ObjectInputStream must read and use any data or objects written by
- annotateClass.`]
+				[/* text */ 't', `Writes a 32 bit int.`]
 			],
 			[/* parameters */
-				[/* parameter */ 'cl', [/* parameter description */
-					[/* text */ 't', `the class to annotate custom data for`]
+				[/* parameter */ 'val', [/* parameter description */
+					[/* text */ 't', `the integer value to be written`]
 				]]
 			],
 			[/* throws */
 				[/* throw */ 'java.io.IOException', [/* throw description */
-					[/* text */ 't', `Any exception thrown by the underlying
-          OutputStream.`]
+					[/* text */ 't', `if I/O errors occur while writing to the underlying
+          stream`]
 				]]
 			],
 			/* return */ UDF
 		]],
-		[/* method */ 'useProtocolVersion(int)', [
+		[/* method */ 'writeLong(long)', [
 			[/* method description */
-				[/* text */ 't', `Specify stream protocol version to use when writing the stream.
-
- `],
-				[/* block */ 'b', `This routine provides a hook to enable the current version of
- Serialization to write in a format that is backwards compatible to a
- previous version of the stream format.
-
- `],
-				[/* block */ 'b', `Every effort will be made to avoid introducing additional
- backwards incompatibilities; however, sometimes there is no
- other alternative.`]
+				[/* text */ 't', `Writes a 64 bit long.`]
 			],
 			[/* parameters */
-				[/* parameter */ 'version', [/* parameter description */
-					[/* text */ 't', `use ProtocolVersion from java.io.ObjectStreamConstants.`]
+				[/* parameter */ 'val', [/* parameter description */
+					[/* text */ 't', `the long value to be written`]
 				]]
 			],
 			[/* throws */
-				[/* throw */ 'java.lang.IllegalStateException', [/* throw description */
-					[/* text */ 't', `if called after any objects
-          have been serialized.`]
-				]],
-				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
-					[/* text */ 't', `if invalid version is passed in.`]
-				]],
 				[/* throw */ 'java.io.IOException', [/* throw description */
-					[/* text */ 't', `if I/O errors occur`]
+					[/* text */ 't', `if I/O errors occur while writing to the underlying
+          stream`]
+				]]
+			],
+			/* return */ UDF
+		]],
+		[/* method */ 'writeShort(int)', [
+			[/* method description */
+				[/* text */ 't', `Writes a 16 bit short.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'val', [/* parameter description */
+					[/* text */ 't', `the short value to be written`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.io.IOException', [/* throw description */
+					[/* text */ 't', `if I/O errors occur while writing to the underlying
+          stream`]
 				]]
 			],
 			/* return */ UDF
@@ -885,58 +920,23 @@ DocsCollector.collect('java.io.ObjectOutputStream', [
 			],
 			/* return */ UDF
 		]],
-		[/* method */ 'enableReplaceObject(boolean)', [
+		[/* method */ 'writeUTF(java.lang.String)', [
 			[/* method description */
-				[/* text */ 't', `Enables the stream to do replacement of objects written to the stream.  When
- enabled, the `],
-				[/* reference */ 'r', `#replaceObject(java.lang.Object)`, `replaceObject(java.lang.Object)`],
-				[/* text */ 't', ` method is called for every object being
- serialized.
-
+				[/* text */ 't', `Primitive data write of this String in
  `],
-				[/* block */ 'b', [
-					[/* text */ 't', `If object replacement is currently not enabled, and
- `],
-					[/* inline code block */ 'i', `enable`],
-					[/* text */ 't', ` is true, and there is a security manager installed,
- this method first calls the security manager's
- `],
-					[/* inline code block */ 'i', `checkPermission`],
-					[/* text */ 't', ` method with the
- `],
-					[/* inline code block */ 'i', `SerializablePermission("enableSubstitution")`],
-					[/* text */ 't', ` permission to
- ensure that the caller is permitted to enable the stream to do replacement
- of objects written to the stream.`]
-				]]
+				[/* reference */ 'r', `.DataInput#modified-utf-8`],
+				[/* text */ 't', `
+ format.  Note that there is a
+ significant difference between writing a String into the stream as
+ primitive data or as an Object. A String instance written by writeObject
+ is written into the stream as a String initially. Future writeObject()
+ calls write references to the string into the stream.`]
 			],
 			[/* parameters */
-				[/* parameter */ 'enable', [/* parameter description */
-					[/* text */ 't', `true for enabling use of `],
-					[/* inline code block */ 'i', `replaceObject`],
-					[/* text */ 't', ` for
-          every object being serialized`]
+				[/* parameter */ 'str', [/* parameter description */
+					[/* text */ 't', `the String to be written`]
 				]]
 			],
-			[/* throws */
-				[/* throw */ 'java.lang.SecurityException', [/* throw description */
-					[/* text */ 't', `if a security manager exists and its
-          `],
-					[/* inline code block */ 'i', `checkPermission`],
-					[/* text */ 't', ` method denies enabling the stream
-          to do replacement of objects written to the stream.`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `the previous setting before this method was invoked`]
-			]
-		]],
-		[/* method */ 'drain()', [
-			[/* method description */
-				[/* text */ 't', `Drain any buffered data in ObjectOutputStream.  Similar to flush but
- does not propagate the flush to the underlying stream.`]
-			],
-			/* parameters */ UDF,
 			[/* throws */
 				[/* throw */ 'java.io.IOException', [/* throw description */
 					[/* text */ 't', `if I/O errors occur while writing to the underlying

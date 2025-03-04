@@ -39,7 +39,6 @@ DocsCollector.collect('java.util.IllegalFormatCodePointException', [
 		]]
 	],
 	[/* methods */
-		[/* method */ 'getMessage()', UDF],
 		[/* method */ 'getCodePoint()', [
 			[/* method description */
 				[/* text */ 't', `Returns the illegal code point as defined by `],
@@ -51,6 +50,7 @@ DocsCollector.collect('java.util.IllegalFormatCodePointException', [
 			[/* return description */
 				[/* text */ 't', `The illegal Unicode code point`]
 			]
-		]]
+		]],
+		[/* method */ 'getMessage()', UDF]
 	],
 ]);

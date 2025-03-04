@@ -59,21 +59,28 @@ DocsCollector.collect('java.lang.Enum', [
 		]]
 	],
 	[/* methods */
-		[/* method */ 'name()', [
+		[/* method */ 'clone()', [
 			[/* method description */
-				[/* text */ 't', `Returns the name of this enum constant, exactly as declared in its
- enum declaration.
-
- `],
-				[/* reference */ 'r', `#toString()`, `toString()`],
-				[/* text */ 't', `  This method is designed primarily for
- use in specialized situations where correctness depends on getting the
- exact name, which will not vary from release to release.`]
+				[/* text */ 't', `Throws CloneNotSupportedException.  This guarantees that enums
+ are never cloned, which is necessary to preserve their "singleton"
+ status.`]
 			],
 			/* parameters */ UDF,
-			/* throws */ UDF,
+			[/* throws */
+				[/* throw */ 'java.lang.CloneNotSupportedException', [/* throw description */
+					[/* text */ 't', `if the object's class does not
+               support the `],
+					[/* inline code block */ 'i', `Cloneable`],
+					[/* text */ 't', ` interface. Subclasses
+               that override the `],
+					[/* inline code block */ 'i', `clone`],
+					[/* text */ 't', ` method can also
+               throw this exception to indicate that an instance cannot
+               be cloned.`]
+				]]
+			],
 			[/* return description */
-				[/* text */ 't', `the name of this enum constant`]
+				[/* text */ 't', `(never returns)`]
 			]
 		]],
 		[/* method */ 'finalize()', [
@@ -100,53 +107,6 @@ DocsCollector.collect('java.lang.Enum', [
           enum constant.`]
 			]
 		]],
-		[/* method */ 'toString()', [
-			[/* method description */
-				[/* text */ 't', `Returns the name of this enum constant, as contained in the
- declaration.  This method may be overridden, though it typically
- isn't necessary or desirable.  An enum class should override this
- method when a more "programmer-friendly" string form exists.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the name of this enum constant`]
-			]
-		]],
-		[/* method */ 'hashCode()', [
-			[/* method description */
-				[/* text */ 't', `Returns a hash code for this enum constant.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `a hash code for this enum constant.`]
-			]
-		]],
-		[/* method */ 'clone()', [
-			[/* method description */
-				[/* text */ 't', `Throws CloneNotSupportedException.  This guarantees that enums
- are never cloned, which is necessary to preserve their "singleton"
- status.`]
-			],
-			/* parameters */ UDF,
-			[/* throws */
-				[/* throw */ 'java.lang.CloneNotSupportedException', [/* throw description */
-					[/* text */ 't', `if the object's class does not
-               support the `],
-					[/* inline code block */ 'i', `Cloneable`],
-					[/* text */ 't', ` interface. Subclasses
-               that override the `],
-					[/* inline code block */ 'i', `clone`],
-					[/* text */ 't', ` method can also
-               throw this exception to indicate that an instance cannot
-               be cloned.`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `(never returns)`]
-			]
-		]],
 		[/* method */ 'compareTo(java.lang.Enum)', [
 			[/* method description */
 				[/* text */ 't', `Compares this enum with the specified object for order.  Returns a
@@ -166,6 +126,105 @@ DocsCollector.collect('java.lang.Enum', [
 			[/* return description */
 				[/* text */ 't', `a negative integer, zero, or a positive integer as this object
           is less than, equal to, or greater than the specified object.`]
+			]
+		]],
+		[/* method */ 'hashCode()', [
+			[/* method description */
+				[/* text */ 't', `Returns a hash code for this enum constant.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `a hash code for this enum constant.`]
+			]
+		]],
+		[/* method */ 'ordinal()', [
+			[/* method description */
+				[/* text */ 't', `Returns the ordinal of this enumeration constant (its position
+ in its enum declaration, where the initial constant is assigned
+ an ordinal of zero).
+
+ Most programmers will have no use for this method.  It is
+ designed for use by sophisticated enum-based data structures, such
+ as `],
+				[/* reference */ 'r', `java.util.EnumSet`],
+				[/* text */ 't', ` and `],
+				[/* reference */ 'r', `java.util.EnumMap`],
+				[/* text */ 't', `.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the ordinal of this enumeration constant`]
+			]
+		]],
+		[/* method */ 'getDeclaringClass()', [
+			[/* method description */
+				[/* text */ 't', `Returns the Class object corresponding to this enum constant's
+ enum type.  Two enum constants e1 and  e2 are of the
+ same enum type if and only if
+   e1.getDeclaringClass() == e2.getDeclaringClass().
+ (The value returned by this method may differ from the one returned
+ by the `],
+				[/* reference */ 'r', `.Object#getClass()`],
+				[/* text */ 't', ` method for enum constants with
+ constant-specific class bodies.)`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the Class object corresponding to this enum constant's
+     enum type`]
+			]
+		]],
+		[/* method */ 'name()', [
+			[/* method description */
+				[/* text */ 't', `Returns the name of this enum constant, exactly as declared in its
+ enum declaration.
+
+ `],
+				[/* reference */ 'r', `#toString()`, `toString()`],
+				[/* text */ 't', `  This method is designed primarily for
+ use in specialized situations where correctness depends on getting the
+ exact name, which will not vary from release to release.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the name of this enum constant`]
+			]
+		]],
+		[/* method */ 'describeConstable()', [
+			[/* method description */
+				[/* text */ 't', `Returns an enum descriptor `],
+				[/* inline code block */ 'i', `EnumDesc`],
+				[/* text */ 't', ` for this instance, if one can be
+ constructed, or an empty `],
+				[/* reference */ 'r', `java.util.Optional`],
+				[/* text */ 't', ` if one cannot be.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `An `],
+				[/* reference */ 'r', `java.util.Optional`],
+				[/* text */ 't', ` containing the resulting nominal descriptor,
+ or an empty `],
+				[/* reference */ 'r', `java.util.Optional`],
+				[/* text */ 't', ` if one cannot be constructed.`]
+			]
+		]],
+		[/* method */ 'toString()', [
+			[/* method description */
+				[/* text */ 't', `Returns the name of this enum constant, as contained in the
+ declaration.  This method may be overridden, though it typically
+ isn't necessary or desirable.  An enum class should override this
+ method when a more "programmer-friendly" string form exists.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the name of this enum constant`]
 			]
 		]],
 		[/* method */ 'valueOf(java.lang.Class,java.lang.String)', [
@@ -221,65 +280,6 @@ DocsCollector.collect('java.lang.Enum', [
 			[/* return description */
 				[/* text */ 't', `the enum constant of the specified enum class with the
       specified name`]
-			]
-		]],
-		[/* method */ 'describeConstable()', [
-			[/* method description */
-				[/* text */ 't', `Returns an enum descriptor `],
-				[/* inline code block */ 'i', `EnumDesc`],
-				[/* text */ 't', ` for this instance, if one can be
- constructed, or an empty `],
-				[/* reference */ 'r', `java.util.Optional`],
-				[/* text */ 't', ` if one cannot be.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `An `],
-				[/* reference */ 'r', `java.util.Optional`],
-				[/* text */ 't', ` containing the resulting nominal descriptor,
- or an empty `],
-				[/* reference */ 'r', `java.util.Optional`],
-				[/* text */ 't', ` if one cannot be constructed.`]
-			]
-		]],
-		[/* method */ 'getDeclaringClass()', [
-			[/* method description */
-				[/* text */ 't', `Returns the Class object corresponding to this enum constant's
- enum type.  Two enum constants e1 and  e2 are of the
- same enum type if and only if
-   e1.getDeclaringClass() == e2.getDeclaringClass().
- (The value returned by this method may differ from the one returned
- by the `],
-				[/* reference */ 'r', `.Object#getClass()`],
-				[/* text */ 't', ` method for enum constants with
- constant-specific class bodies.)`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the Class object corresponding to this enum constant's
-     enum type`]
-			]
-		]],
-		[/* method */ 'ordinal()', [
-			[/* method description */
-				[/* text */ 't', `Returns the ordinal of this enumeration constant (its position
- in its enum declaration, where the initial constant is assigned
- an ordinal of zero).
-
- Most programmers will have no use for this method.  It is
- designed for use by sophisticated enum-based data structures, such
- as `],
-				[/* reference */ 'r', `java.util.EnumSet`],
-				[/* text */ 't', ` and `],
-				[/* reference */ 'r', `java.util.EnumMap`],
-				[/* text */ 't', `.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the ordinal of this enumeration constant`]
 			]
 		]]
 	],

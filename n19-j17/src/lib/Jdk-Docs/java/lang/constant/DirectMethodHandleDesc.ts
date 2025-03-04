@@ -18,17 +18,14 @@ DocsCollector.collect('java.lang.constant.DirectMethodHandleDesc', [
 	/* fields */ UDF,
 	/* constructors */ UDF,
 	[/* methods */
-		[/* method */ 'methodName()', [
+		[/* method */ 'isOwnerInterface()', [
 			[/* method description */
-				[/* text */ 't', `Returns the name of the method or field described by this nominal descriptor.
- For constructors, returns the reserved name `],
-				[/* inline code block */ 'i', `"<init>"`],
-				[/* text */ 't', `.`]
+				[/* text */ 't', `Indicates if the method is declared by an interface`]
 			],
 			/* parameters */ UDF,
 			/* throws */ UDF,
 			[/* return description */
-				[/* text */ 't', `the name of the method or field`]
+				[/* text */ 't', `true if the method is declared by an interface`]
 			]
 		]],
 		[/* method */ 'refKind()', [
@@ -46,6 +43,19 @@ DocsCollector.collect('java.lang.constant.DirectMethodHandleDesc', [
 				[/* text */ 't', `the reference kind`]
 			]
 		]],
+		[/* method */ 'owner()', [
+			[/* method description */
+				[/* text */ 't', `Returns a `],
+				[/* reference */ 'r', `java.lang.constant.ClassDesc`],
+				[/* text */ 't', ` describing the class declaring the
+ method or field described by this nominal descriptor.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the class declaring the method or field`]
+			]
+		]],
 		[/* method */ 'kind()', [
 			[/* method description */
 				[/* text */ 't', `Returns the `],
@@ -58,19 +68,6 @@ DocsCollector.collect('java.lang.constant.DirectMethodHandleDesc', [
 			[/* return description */
 				[/* text */ 't', `the `],
 				[/* reference */ 'r', `enum class in java.lang.constant.DirectMethodHandleDesc.Kind`]
-			]
-		]],
-		[/* method */ 'owner()', [
-			[/* method description */
-				[/* text */ 't', `Returns a `],
-				[/* reference */ 'r', `java.lang.constant.ClassDesc`],
-				[/* text */ 't', ` describing the class declaring the
- method or field described by this nominal descriptor.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the class declaring the method or field`]
 			]
 		]],
 		[/* method */ 'lookupDescriptor()', [
@@ -89,14 +86,17 @@ DocsCollector.collect('java.lang.constant.DirectMethodHandleDesc', [
 				[/* text */ 't', `the lookup descriptor string`]
 			]
 		]],
-		[/* method */ 'isOwnerInterface()', [
+		[/* method */ 'methodName()', [
 			[/* method description */
-				[/* text */ 't', `Indicates if the method is declared by an interface`]
+				[/* text */ 't', `Returns the name of the method or field described by this nominal descriptor.
+ For constructors, returns the reserved name `],
+				[/* inline code block */ 'i', `"<init>"`],
+				[/* text */ 't', `.`]
 			],
 			/* parameters */ UDF,
 			/* throws */ UDF,
 			[/* return description */
-				[/* text */ 't', `true if the method is declared by an interface`]
+				[/* text */ 't', `the name of the method or field`]
 			]
 		]]
 	],

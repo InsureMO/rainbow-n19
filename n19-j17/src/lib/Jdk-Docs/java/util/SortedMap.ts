@@ -221,6 +221,25 @@ DocsCollector.collect('java.util.SortedMap', [
          sorted in ascending key order`]
 			]
 		]],
+		[/* method */ 'comparator()', [
+			[/* method description */
+				[/* text */ 't', `Returns the comparator used to order the keys in this map, or
+ `],
+				[/* inline code block */ 'i', `null`],
+				[/* text */ 't', ` if this map uses the `],
+				[/* reference */ 'r', `java.lang.Comparable`],
+				[/* text */ 't', ` of its keys.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the comparator used to order the keys in this map,
+         or `],
+				[/* inline code block */ 'i', `null`],
+				[/* text */ 't', ` if this map uses the natural ordering
+         of its keys`]
+			]
+		]],
 		[/* method */ 'entrySet()', [
 			[/* method description */
 				[/* text */ 't', `Returns a `],
@@ -304,51 +323,64 @@ DocsCollector.collect('java.util.SortedMap', [
          ascending order`]
 			]
 		]],
-		[/* method */ 'comparator()', [
+		[/* method */ 'headMap(java.lang.Object)', [
 			[/* method description */
-				[/* text */ 't', `Returns the comparator used to order the keys in this map, or
+				[/* text */ 't', `Returns a view of the portion of this map whose keys are
+ strictly less than `],
+				[/* inline code block */ 'i', `toKey`],
+				[/* text */ 't', `.  The returned map is backed
+ by this map, so changes in the returned map are reflected in
+ this map, and vice-versa.  The returned map supports all
+ optional map operations that this map supports.
+
  `],
-				[/* inline code block */ 'i', `null`],
-				[/* text */ 't', ` if this map uses the `],
-				[/* reference */ 'r', `java.lang.Comparable`],
-				[/* text */ 't', ` of its keys.`]
+				[/* block */ 'b', [
+					[/* text */ 't', `The returned map will throw an `],
+					[/* inline code block */ 'i', `IllegalArgumentException`],
+					[/* text */ 't', `
+ on an attempt to insert a key outside its range.`]
+				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the comparator used to order the keys in this map,
-         or `],
-				[/* inline code block */ 'i', `null`],
-				[/* text */ 't', ` if this map uses the natural ordering
-         of its keys`]
-			]
-		]],
-		[/* method */ 'firstKey()', [
-			[/* method description */
-				[/* text */ 't', `Returns the first (lowest) key currently in this map.`]
+			[/* parameters */
+				[/* parameter */ 'toKey', [/* parameter description */
+					[/* text */ 't', `high endpoint (exclusive) of the keys in the returned map`]
+				]]
 			],
-			/* parameters */ UDF,
 			[/* throws */
-				[/* throw */ 'java.util.NoSuchElementException', [/* throw description */
-					[/* text */ 't', `if this map is empty`]
+				[/* throw */ 'java.lang.ClassCastException', [/* throw description */
+					[/* text */ 't', `if `],
+					[/* inline code block */ 'i', `toKey`],
+					[/* text */ 't', ` is not compatible
+         with this map's comparator (or, if the map has no comparator,
+         if `],
+					[/* inline code block */ 'i', `toKey`],
+					[/* text */ 't', ` does not implement `],
+					[/* reference */ 'r', `java.lang.Comparable`],
+					[/* text */ 't', `).
+         Implementations may, but are not required to, throw this
+         exception if `],
+					[/* inline code block */ 'i', `toKey`],
+					[/* text */ 't', ` cannot be compared to keys
+         currently in the map.`]
+				]],
+				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
+					[/* text */ 't', `if `],
+					[/* inline code block */ 'i', `toKey`],
+					[/* text */ 't', ` is null and
+         this map does not permit null keys`]
+				]],
+				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
+					[/* text */ 't', `if this map itself has a
+         restricted range, and `],
+					[/* inline code block */ 'i', `toKey`],
+					[/* text */ 't', ` lies outside the
+         bounds of the range`]
 				]]
 			],
 			[/* return description */
-				[/* text */ 't', `the first (lowest) key currently in this map`]
-			]
-		]],
-		[/* method */ 'lastKey()', [
-			[/* method description */
-				[/* text */ 't', `Returns the last (highest) key currently in this map.`]
-			],
-			/* parameters */ UDF,
-			[/* throws */
-				[/* throw */ 'java.util.NoSuchElementException', [/* throw description */
-					[/* text */ 't', `if this map is empty`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `the last (highest) key currently in this map`]
+				[/* text */ 't', `a view of the portion of this map whose keys are strictly
+         less than `],
+				[/* inline code block */ 'i', `toKey`]
 			]
 		]],
 		[/* method */ 'subMap(java.lang.Object,java.lang.Object)', [
@@ -434,66 +466,6 @@ DocsCollector.collect('java.util.SortedMap', [
 				[/* text */ 't', `, exclusive`]
 			]
 		]],
-		[/* method */ 'headMap(java.lang.Object)', [
-			[/* method description */
-				[/* text */ 't', `Returns a view of the portion of this map whose keys are
- strictly less than `],
-				[/* inline code block */ 'i', `toKey`],
-				[/* text */ 't', `.  The returned map is backed
- by this map, so changes in the returned map are reflected in
- this map, and vice-versa.  The returned map supports all
- optional map operations that this map supports.
-
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', `The returned map will throw an `],
-					[/* inline code block */ 'i', `IllegalArgumentException`],
-					[/* text */ 't', `
- on an attempt to insert a key outside its range.`]
-				]]
-			],
-			[/* parameters */
-				[/* parameter */ 'toKey', [/* parameter description */
-					[/* text */ 't', `high endpoint (exclusive) of the keys in the returned map`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.ClassCastException', [/* throw description */
-					[/* text */ 't', `if `],
-					[/* inline code block */ 'i', `toKey`],
-					[/* text */ 't', ` is not compatible
-         with this map's comparator (or, if the map has no comparator,
-         if `],
-					[/* inline code block */ 'i', `toKey`],
-					[/* text */ 't', ` does not implement `],
-					[/* reference */ 'r', `java.lang.Comparable`],
-					[/* text */ 't', `).
-         Implementations may, but are not required to, throw this
-         exception if `],
-					[/* inline code block */ 'i', `toKey`],
-					[/* text */ 't', ` cannot be compared to keys
-         currently in the map.`]
-				]],
-				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
-					[/* text */ 't', `if `],
-					[/* inline code block */ 'i', `toKey`],
-					[/* text */ 't', ` is null and
-         this map does not permit null keys`]
-				]],
-				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
-					[/* text */ 't', `if this map itself has a
-         restricted range, and `],
-					[/* inline code block */ 'i', `toKey`],
-					[/* text */ 't', ` lies outside the
-         bounds of the range`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `a view of the portion of this map whose keys are strictly
-         less than `],
-				[/* inline code block */ 'i', `toKey`]
-			]
-		]],
 		[/* method */ 'tailMap(java.lang.Object)', [
 			[/* method description */
 				[/* text */ 't', `Returns a view of the portion of this map whose keys are
@@ -552,6 +524,34 @@ DocsCollector.collect('java.util.SortedMap', [
 				[/* text */ 't', `a view of the portion of this map whose keys are greater
          than or equal to `],
 				[/* inline code block */ 'i', `fromKey`]
+			]
+		]],
+		[/* method */ 'firstKey()', [
+			[/* method description */
+				[/* text */ 't', `Returns the first (lowest) key currently in this map.`]
+			],
+			/* parameters */ UDF,
+			[/* throws */
+				[/* throw */ 'java.util.NoSuchElementException', [/* throw description */
+					[/* text */ 't', `if this map is empty`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `the first (lowest) key currently in this map`]
+			]
+		]],
+		[/* method */ 'lastKey()', [
+			[/* method description */
+				[/* text */ 't', `Returns the last (highest) key currently in this map.`]
+			],
+			/* parameters */ UDF,
+			[/* throws */
+				[/* throw */ 'java.util.NoSuchElementException', [/* throw description */
+					[/* text */ 't', `if this map is empty`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `the last (highest) key currently in this map`]
 			]
 		]]
 	],

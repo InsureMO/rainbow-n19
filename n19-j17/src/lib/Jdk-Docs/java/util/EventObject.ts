@@ -36,16 +36,6 @@ DocsCollector.collect('java.util.EventObject', [
 		]]
 	],
 	[/* methods */
-		[/* method */ 'toString()', [
-			[/* method description */
-				[/* text */ 't', `Returns a String representation of this EventObject.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `a String representation of this EventObject`]
-			]
-		]],
 		[/* method */ 'getSource()', [
 			[/* method description */
 				[/* text */ 't', `The object on which the Event initially occurred.`]
@@ -54,6 +44,16 @@ DocsCollector.collect('java.util.EventObject', [
 			/* throws */ UDF,
 			[/* return description */
 				[/* text */ 't', `the object on which the Event initially occurred`]
+			]
+		]],
+		[/* method */ 'toString()', [
+			[/* method description */
+				[/* text */ 't', `Returns a String representation of this EventObject.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `a String representation of this EventObject`]
 			]
 		]]
 	],

@@ -91,32 +91,6 @@ DocsCollector.collect('java.text.DateFormatSymbols', [
 	],
 	/* fields */ UDF,
 	[/* constructors */
-		[/* constructor */ '<init>(java.util.Locale)', [
-			[/* constructor description */
-				[/* text */ 't', `Construct a DateFormatSymbols object by loading format data from
- resources for the given locale. This constructor can only
- construct instances for the locales supported by the Java
- runtime environment, not for those supported by installed
- `],
-				[/* reference */ 'r', `java.text.spi.DateFormatSymbolsProvider`],
-				[/* text */ 't', `
- implementations. For full locale coverage, use the
- `],
-				[/* reference */ 'r', `#getInstance(java.util.Locale)`, `getInstance`],
-				[/* text */ 't', ` method.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'locale', [/* parameter description */
-					[/* text */ 't', `the desired locale`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.util.MissingResourceException', [/* throw description */
-					[/* text */ 't', `if the resources for the specified locale cannot be
-             found or cannot be loaded.`]
-				]]
-			]
-		]],
 		[/* constructor */ '<init>()', [
 			[/* constructor description */
 				[/* text */ 't', `Construct a DateFormatSymbols object by loading format data from
@@ -145,6 +119,32 @@ DocsCollector.collect('java.text.DateFormatSymbols', [
 			[/* throws */
 				[/* throw */ 'java.util.MissingResourceException', [/* throw description */
 					[/* text */ 't', `if the resources for the default locale cannot be
+             found or cannot be loaded.`]
+				]]
+			]
+		]],
+		[/* constructor */ '<init>(java.util.Locale)', [
+			[/* constructor description */
+				[/* text */ 't', `Construct a DateFormatSymbols object by loading format data from
+ resources for the given locale. This constructor can only
+ construct instances for the locales supported by the Java
+ runtime environment, not for those supported by installed
+ `],
+				[/* reference */ 'r', `java.text.spi.DateFormatSymbolsProvider`],
+				[/* text */ 't', `
+ implementations. For full locale coverage, use the
+ `],
+				[/* reference */ 'r', `#getInstance(java.util.Locale)`, `getInstance`],
+				[/* text */ 't', ` method.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'locale', [/* parameter description */
+					[/* text */ 't', `the desired locale`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.util.MissingResourceException', [/* throw description */
+					[/* text */ 't', `if the resources for the specified locale cannot be
              found or cannot be loaded.`]
 				]]
 			]
@@ -190,94 +190,34 @@ DocsCollector.collect('java.text.DateFormatSymbols', [
 				[/* text */ 't', `a clone of this instance.`]
 			]
 		]],
-		[/* method */ 'getInstance()', [
+		[/* method */ 'getLocalPatternChars()', [
 			[/* method description */
-				[/* text */ 't', `Gets the `],
-				[/* inline code block */ 'i', `DateFormatSymbols`],
-				[/* text */ 't', ` instance for the default
- locale.  This method provides access to `],
-				[/* inline code block */ 'i', `DateFormatSymbols`],
-				[/* text */ 't', `
- instances for locales supported by the Java runtime itself as well
- as for those supported by installed
- `],
-				[/* reference */ 'r', `java.text.spi.DateFormatSymbolsProvider`],
-				[/* text */ 't', `
- implementations.
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', `This is equivalent to calling `],
-					[/* reference */ 'r', `#getInstance(java.util.Locale)`, `getInstance(Locale.getDefault(Locale.Category.FORMAT))`],
-					[/* text */ 't', `.`]
-				]]
+				[/* text */ 't', `Gets localized date-time pattern characters. For example: 'u', 't', etc.`]
 			],
 			/* parameters */ UDF,
 			/* throws */ UDF,
 			[/* return description */
-				[/* text */ 't', `a `],
-				[/* inline code block */ 'i', `DateFormatSymbols`],
-				[/* text */ 't', ` instance.`]
+				[/* text */ 't', `the localized date-time pattern characters.`]
 			]
 		]],
-		[/* method */ 'getInstance(java.util.Locale)', [
+		[/* method */ 'getAmPmStrings()', [
 			[/* method description */
-				[/* text */ 't', `Gets the `],
-				[/* inline code block */ 'i', `DateFormatSymbols`],
-				[/* text */ 't', ` instance for the specified
- locale.  This method provides access to `],
-				[/* inline code block */ 'i', `DateFormatSymbols`],
-				[/* text */ 't', `
- instances for locales supported by the Java runtime itself as well
- as for those supported by installed
- `],
-				[/* reference */ 'r', `java.text.spi.DateFormatSymbolsProvider`],
-				[/* text */ 't', `
- implementations.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'locale', [/* parameter description */
-					[/* text */ 't', `the given locale.`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
-					[/* text */ 't', `if `],
-					[/* inline code block */ 'i', `locale`],
-					[/* text */ 't', ` is null`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `a `],
-				[/* inline code block */ 'i', `DateFormatSymbols`],
-				[/* text */ 't', ` instance.`]
-			]
-		]],
-		[/* method */ 'getAvailableLocales()', [
-			[/* method description */
-				[/* text */ 't', `Returns an array of all locales for which the
- `],
-				[/* inline code block */ 'i', `getInstance`],
-				[/* text */ 't', ` methods of this class can return
- localized instances.
- The returned array represents the union of locales supported by the
- Java runtime and by installed
- `],
-				[/* reference */ 'r', `java.text.spi.DateFormatSymbolsProvider`],
-				[/* text */ 't', `
- implementations.  It must contain at least a `],
-				[/* inline code block */ 'i', `Locale`],
-				[/* text */ 't', `
- instance equal to `],
-				[/* reference */ 'r', `java.Locale#US`],
-				[/* text */ 't', `.`]
+				[/* text */ 't', `Gets ampm strings. For example: "AM" and "PM".`]
 			],
 			/* parameters */ UDF,
 			/* throws */ UDF,
 			[/* return description */
-				[/* text */ 't', `An array of locales for which localized
-         `],
-				[/* inline code block */ 'i', `DateFormatSymbols`],
-				[/* text */ 't', ` instances are available.`]
+				[/* text */ 't', `the ampm strings.`]
+			]
+		]],
+		[/* method */ 'getEras()', [
+			[/* method description */
+				[/* text */ 't', `Gets era strings. For example: "AD" and "BC".`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the era strings.`]
 			]
 		]],
 		[/* method */ 'getMonths()', [
@@ -321,16 +261,6 @@ DocsCollector.collect('java.text.DateFormatSymbols', [
 				[/* text */ 't', `the month strings.`]
 			]
 		]],
-		[/* method */ 'getEras()', [
-			[/* method description */
-				[/* text */ 't', `Gets era strings. For example: "AD" and "BC".`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the era strings.`]
-			]
-		]],
 		[/* method */ 'getShortMonths()', [
 			[/* method description */
 				[/* text */ 't', `Gets short month strings. For example: "Jan", "Feb", etc.
@@ -372,23 +302,6 @@ DocsCollector.collect('java.text.DateFormatSymbols', [
 				[/* text */ 't', `the short month strings.`]
 			]
 		]],
-		[/* method */ 'getWeekdays()', [
-			[/* method description */
-				[/* text */ 't', `Gets weekday strings. For example: "Sunday", "Monday", etc.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the weekday strings. Use
- `],
-				[/* reference */ 'r', `java.Calendar#SUNDAY`],
-				[/* text */ 't', `,
- `],
-				[/* reference */ 'r', `java.Calendar#MONDAY`],
-				[/* text */ 't', `, etc. to index
- the result array.`]
-			]
-		]],
 		[/* method */ 'getShortWeekdays()', [
 			[/* method description */
 				[/* text */ 't', `Gets short weekday strings. For example: "Sun", "Mon", etc.`]
@@ -406,37 +319,22 @@ DocsCollector.collect('java.text.DateFormatSymbols', [
  the result array.`]
 			]
 		]],
-		[/* method */ 'getAmPmStrings()', [
+		[/* method */ 'getWeekdays()', [
 			[/* method description */
-				[/* text */ 't', `Gets ampm strings. For example: "AM" and "PM".`]
+				[/* text */ 't', `Gets weekday strings. For example: "Sunday", "Monday", etc.`]
 			],
 			/* parameters */ UDF,
 			/* throws */ UDF,
 			[/* return description */
-				[/* text */ 't', `the ampm strings.`]
+				[/* text */ 't', `the weekday strings. Use
+ `],
+				[/* reference */ 'r', `java.Calendar#SUNDAY`],
+				[/* text */ 't', `,
+ `],
+				[/* reference */ 'r', `java.Calendar#MONDAY`],
+				[/* text */ 't', `, etc. to index
+ the result array.`]
 			]
-		]],
-		[/* method */ 'getLocalPatternChars()', [
-			[/* method description */
-				[/* text */ 't', `Gets localized date-time pattern characters. For example: 'u', 't', etc.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the localized date-time pattern characters.`]
-			]
-		]],
-		[/* method */ 'setEras(java.lang.String[])', [
-			[/* method description */
-				[/* text */ 't', `Sets era strings. For example: "AD" and "BC".`]
-			],
-			[/* parameters */
-				[/* parameter */ 'newEras', [/* parameter description */
-					[/* text */ 't', `the new era strings.`]
-				]]
-			],
-			/* throws */ UDF,
-			/* return */ UDF
 		]],
 		[/* method */ 'getZoneStrings()', [
 			[/* method description */
@@ -532,6 +430,133 @@ DocsCollector.collect('java.text.DateFormatSymbols', [
 				[/* text */ 't', `the time zone strings.`]
 			]
 		]],
+		[/* method */ 'getInstance()', [
+			[/* method description */
+				[/* text */ 't', `Gets the `],
+				[/* inline code block */ 'i', `DateFormatSymbols`],
+				[/* text */ 't', ` instance for the default
+ locale.  This method provides access to `],
+				[/* inline code block */ 'i', `DateFormatSymbols`],
+				[/* text */ 't', `
+ instances for locales supported by the Java runtime itself as well
+ as for those supported by installed
+ `],
+				[/* reference */ 'r', `java.text.spi.DateFormatSymbolsProvider`],
+				[/* text */ 't', `
+ implementations.
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', `This is equivalent to calling `],
+					[/* reference */ 'r', `#getInstance(java.util.Locale)`, `getInstance(Locale.getDefault(Locale.Category.FORMAT))`],
+					[/* text */ 't', `.`]
+				]]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `a `],
+				[/* inline code block */ 'i', `DateFormatSymbols`],
+				[/* text */ 't', ` instance.`]
+			]
+		]],
+		[/* method */ 'getInstance(java.util.Locale)', [
+			[/* method description */
+				[/* text */ 't', `Gets the `],
+				[/* inline code block */ 'i', `DateFormatSymbols`],
+				[/* text */ 't', ` instance for the specified
+ locale.  This method provides access to `],
+				[/* inline code block */ 'i', `DateFormatSymbols`],
+				[/* text */ 't', `
+ instances for locales supported by the Java runtime itself as well
+ as for those supported by installed
+ `],
+				[/* reference */ 'r', `java.text.spi.DateFormatSymbolsProvider`],
+				[/* text */ 't', `
+ implementations.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'locale', [/* parameter description */
+					[/* text */ 't', `the given locale.`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
+					[/* text */ 't', `if `],
+					[/* inline code block */ 'i', `locale`],
+					[/* text */ 't', ` is null`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `a `],
+				[/* inline code block */ 'i', `DateFormatSymbols`],
+				[/* text */ 't', ` instance.`]
+			]
+		]],
+		[/* method */ 'getAvailableLocales()', [
+			[/* method description */
+				[/* text */ 't', `Returns an array of all locales for which the
+ `],
+				[/* inline code block */ 'i', `getInstance`],
+				[/* text */ 't', ` methods of this class can return
+ localized instances.
+ The returned array represents the union of locales supported by the
+ Java runtime and by installed
+ `],
+				[/* reference */ 'r', `java.text.spi.DateFormatSymbolsProvider`],
+				[/* text */ 't', `
+ implementations.  It must contain at least a `],
+				[/* inline code block */ 'i', `Locale`],
+				[/* text */ 't', `
+ instance equal to `],
+				[/* reference */ 'r', `java.Locale#US`],
+				[/* text */ 't', `.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `An array of locales for which localized
+         `],
+				[/* inline code block */ 'i', `DateFormatSymbols`],
+				[/* text */ 't', ` instances are available.`]
+			]
+		]],
+		[/* method */ 'setAmPmStrings(java.lang.String[])', [
+			[/* method description */
+				[/* text */ 't', `Sets ampm strings. For example: "AM" and "PM".`]
+			],
+			[/* parameters */
+				[/* parameter */ 'newAmpms', [/* parameter description */
+					[/* text */ 't', `the new ampm strings.`]
+				]]
+			],
+			/* throws */ UDF,
+			/* return */ UDF
+		]],
+		[/* method */ 'setEras(java.lang.String[])', [
+			[/* method description */
+				[/* text */ 't', `Sets era strings. For example: "AD" and "BC".`]
+			],
+			[/* parameters */
+				[/* parameter */ 'newEras', [/* parameter description */
+					[/* text */ 't', `the new era strings.`]
+				]]
+			],
+			/* throws */ UDF,
+			/* return */ UDF
+		]],
+		[/* method */ 'setLocalPatternChars(java.lang.String)', [
+			[/* method description */
+				[/* text */ 't', `Sets localized date-time pattern characters. For example: 'u', 't', etc.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'newLocalPatternChars', [/* parameter description */
+					[/* text */ 't', `the new localized date-time
+ pattern characters.`]
+				]]
+			],
+			/* throws */ UDF,
+			/* return */ UDF
+		]],
 		[/* method */ 'setMonths(java.lang.String[])', [
 			[/* method description */
 				[/* text */ 't', `Sets month strings. For example: "January", "February", etc.`]
@@ -568,24 +593,6 @@ DocsCollector.collect('java.text.DateFormatSymbols', [
 			/* throws */ UDF,
 			/* return */ UDF
 		]],
-		[/* method */ 'setWeekdays(java.lang.String[])', [
-			[/* method description */
-				[/* text */ 't', `Sets weekday strings. For example: "Sunday", "Monday", etc.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'newWeekdays', [/* parameter description */
-					[/* text */ 't', `the new weekday strings. The array should
- be indexed by `],
-					[/* reference */ 'r', `java.Calendar#SUNDAY`],
-					[/* text */ 't', `,
- `],
-					[/* reference */ 'r', `java.Calendar#MONDAY`],
-					[/* text */ 't', `, etc.`]
-				]]
-			],
-			/* throws */ UDF,
-			/* return */ UDF
-		]],
 		[/* method */ 'setShortWeekdays(java.lang.String[])', [
 			[/* method description */
 				[/* text */ 't', `Sets short weekday strings. For example: "Sun", "Mon", etc.`]
@@ -604,13 +611,19 @@ DocsCollector.collect('java.text.DateFormatSymbols', [
 			/* throws */ UDF,
 			/* return */ UDF
 		]],
-		[/* method */ 'setAmPmStrings(java.lang.String[])', [
+		[/* method */ 'setWeekdays(java.lang.String[])', [
 			[/* method description */
-				[/* text */ 't', `Sets ampm strings. For example: "AM" and "PM".`]
+				[/* text */ 't', `Sets weekday strings. For example: "Sunday", "Monday", etc.`]
 			],
 			[/* parameters */
-				[/* parameter */ 'newAmpms', [/* parameter description */
-					[/* text */ 't', `the new ampm strings.`]
+				[/* parameter */ 'newWeekdays', [/* parameter description */
+					[/* text */ 't', `the new weekday strings. The array should
+ be indexed by `],
+					[/* reference */ 'r', `java.Calendar#SUNDAY`],
+					[/* text */ 't', `,
+ `],
+					[/* reference */ 'r', `java.Calendar#MONDAY`],
+					[/* text */ 't', `, etc.`]
 				]]
 			],
 			/* throws */ UDF,
@@ -695,19 +708,6 @@ DocsCollector.collect('java.text.DateFormatSymbols', [
 					[/* text */ 't', ` is null`]
 				]]
 			],
-			/* return */ UDF
-		]],
-		[/* method */ 'setLocalPatternChars(java.lang.String)', [
-			[/* method description */
-				[/* text */ 't', `Sets localized date-time pattern characters. For example: 'u', 't', etc.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'newLocalPatternChars', [/* parameter description */
-					[/* text */ 't', `the new localized date-time
- pattern characters.`]
-				]]
-			],
-			/* throws */ UDF,
 			/* return */ UDF
 		]]
 	],

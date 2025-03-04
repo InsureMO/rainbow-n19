@@ -125,21 +125,38 @@ DocsCollector.collect('java.util.TreeSet', [
 	],
 	/* fields */ UDF,
 	[/* constructors */
-		[/* constructor */ '<init>(java.util.SortedSet)', [
+		[/* constructor */ '<init>()', [
 			[/* constructor description */
-				[/* text */ 't', `Constructs a new tree set containing the same elements and
- using the same ordering as the specified sorted set.`]
+				[/* text */ 't', `Constructs a new, empty tree set, sorted according to the
+ natural ordering of its elements.  All elements inserted into
+ the set must implement the `],
+				[/* reference */ 'r', `java.lang.Comparable`],
+				[/* text */ 't', ` interface.
+ Furthermore, all such elements must be `],
+				[/* text */ 't', `mutually
+ comparable`],
+				[/* text */ 't', `: `],
+				[/* inline code block */ 'i', `e1.compareTo(e2)`],
+				[/* text */ 't', ` must not throw a
+ `],
+				[/* inline code block */ 'i', `ClassCastException`],
+				[/* text */ 't', ` for any elements `],
+				[/* inline code block */ 'i', `e1`],
+				[/* text */ 't', ` and
+ `],
+				[/* inline code block */ 'i', `e2`],
+				[/* text */ 't', ` in the set.  If the user attempts to add an element
+ to the set that violates this constraint (for example, the user
+ attempts to add a string element to a set whose elements are
+ integers), the `],
+				[/* inline code block */ 'i', `add`],
+				[/* text */ 't', ` call will throw a
+ `],
+				[/* inline code block */ 'i', `ClassCastException`],
+				[/* text */ 't', `.`]
 			],
-			[/* parameters */
-				[/* parameter */ 's', [/* parameter description */
-					[/* text */ 't', `sorted set whose elements will comprise the new set`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
-					[/* text */ 't', `if the specified sorted set is null`]
-				]]
-			]
+			/* parameters */ UDF,
+			/* throws */ UDF
 		]],
 		[/* constructor */ '<init>(java.util.Collection)', [
 			[/* constructor description */
@@ -219,38 +236,21 @@ DocsCollector.collect('java.util.TreeSet', [
 			],
 			/* throws */ UDF
 		]],
-		[/* constructor */ '<init>()', [
+		[/* constructor */ '<init>(java.util.SortedSet)', [
 			[/* constructor description */
-				[/* text */ 't', `Constructs a new, empty tree set, sorted according to the
- natural ordering of its elements.  All elements inserted into
- the set must implement the `],
-				[/* reference */ 'r', `java.lang.Comparable`],
-				[/* text */ 't', ` interface.
- Furthermore, all such elements must be `],
-				[/* text */ 't', `mutually
- comparable`],
-				[/* text */ 't', `: `],
-				[/* inline code block */ 'i', `e1.compareTo(e2)`],
-				[/* text */ 't', ` must not throw a
- `],
-				[/* inline code block */ 'i', `ClassCastException`],
-				[/* text */ 't', ` for any elements `],
-				[/* inline code block */ 'i', `e1`],
-				[/* text */ 't', ` and
- `],
-				[/* inline code block */ 'i', `e2`],
-				[/* text */ 't', ` in the set.  If the user attempts to add an element
- to the set that violates this constraint (for example, the user
- attempts to add a string element to a set whose elements are
- integers), the `],
-				[/* inline code block */ 'i', `add`],
-				[/* text */ 't', ` call will throw a
- `],
-				[/* inline code block */ 'i', `ClassCastException`],
-				[/* text */ 't', `.`]
+				[/* text */ 't', `Constructs a new tree set containing the same elements and
+ using the same ordering as the specified sorted set.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF
+			[/* parameters */
+				[/* parameter */ 's', [/* parameter description */
+					[/* text */ 't', `sorted set whose elements will comprise the new set`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
+					[/* text */ 't', `if the specified sorted set is null`]
+				]]
+			]
 		]]
 	],
 	[/* methods */
@@ -293,130 +293,29 @@ DocsCollector.collect('java.util.TreeSet', [
          element`]
 			]
 		]],
-		[/* method */ 'remove(java.lang.Object)', [
+		[/* method */ 'addAll(java.util.Collection)', [
 			[/* method description */
-				[/* text */ 't', `Removes the specified element from this set if it is present.
- More formally, removes an element `],
-				[/* inline code block */ 'i', `e`],
-				[/* text */ 't', ` such that
- `],
-				[/* inline code block */ 'i', `Objects.equals(o, e)`],
-				[/* text */ 't', `,
- if this set contains such an element.  Returns `],
-				[/* inline code block */ 'i', `true`],
-				[/* text */ 't', ` if
- this set contained the element (or equivalently, if this set
- changed as a result of the call).  (This set will not contain the
- element once the call returns.)`]
+				[/* text */ 't', `Adds all of the elements in the specified collection to this set.`]
 			],
 			[/* parameters */
-				[/* parameter */ 'o', [/* parameter description */
-					[/* text */ 't', `object to be removed from this set, if present`]
+				[/* parameter */ 'c', [/* parameter description */
+					[/* text */ 't', `collection containing elements to be added to this set`]
 				]]
 			],
 			[/* throws */
 				[/* throw */ 'java.lang.ClassCastException', [/* throw description */
-					[/* text */ 't', `if the specified object cannot be compared
-         with the elements currently in this set`]
+					[/* text */ 't', `if the elements provided cannot be compared
+         with the elements currently in the set`]
 				]],
 				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
-					[/* text */ 't', `if the specified element is null
-         and this set uses natural ordering, or its comparator
-         does not permit null elements`]
+					[/* text */ 't', `if the specified collection is null or
+         if any element is null and this set uses natural ordering, or
+         its comparator does not permit null elements`]
 				]]
 			],
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
-				[/* text */ 't', ` if this set contained the specified element`]
-			]
-		]],
-		[/* method */ 'clone()', [
-			[/* method description */
-				[/* text */ 't', `Returns a shallow copy of this `],
-				[/* inline code block */ 'i', `TreeSet`],
-				[/* text */ 't', ` instance. (The elements
- themselves are not cloned.)`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `a shallow copy of this set`]
-			]
-		]],
-		[/* method */ 'floor(java.lang.Object)', [
-			[/* method description */
-				[/* block */ 'b', [
-					[/* text */ 't', `Returns the greatest element in this set less than or equal to
- the given element, or `],
-					[/* inline code block */ 'i', `null`],
-					[/* text */ 't', ` if there is no such element.`]
-				]]
-			],
-			[/* parameters */
-				[/* parameter */ 'e', [/* parameter description */
-					[/* text */ 't', `the value to match`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.ClassCastException', [/* throw description */
-					[/* text */ 't', `if the specified element cannot be
-         compared with the elements currently in the set`]
-				]],
-				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
-					[/* text */ 't', `if the specified element is null
-         and this set uses natural ordering, or its comparator
-         does not permit null elements`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `the greatest element less than or equal to `],
-				[/* inline code block */ 'i', `e`],
-				[/* text */ 't', `,
-         or `],
-				[/* inline code block */ 'i', `null`],
-				[/* text */ 't', ` if there is no such element`]
-			]
-		]],
-		[/* method */ 'clear()', [
-			[/* method description */
-				[/* text */ 't', `Removes all of the elements from this set.
- The set will be empty after this call returns.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			/* return */ UDF
-		]],
-		[/* method */ 'isEmpty()', [
-			[/* method description */
-				[/* text */ 't', `Returns `],
-				[/* inline code block */ 'i', `true`],
-				[/* text */ 't', ` if this set contains no elements.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* inline code block */ 'i', `true`],
-				[/* text */ 't', ` if this set contains no elements`]
-			]
-		]],
-		[/* method */ 'size()', [
-			[/* method description */
-				[/* text */ 't', `Returns the number of elements in this set (its cardinality).`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the number of elements in this set (its cardinality)`]
-			]
-		]],
-		[/* method */ 'iterator()', [
-			[/* method description */
-				[/* text */ 't', `Returns an iterator over the elements in this set in ascending order.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `an iterator over the elements in this set in ascending order`]
+				[/* text */ 't', ` if this set changed as a result of the call`]
 			]
 		]],
 		[/* method */ 'contains(java.lang.Object)', [
@@ -455,97 +354,88 @@ DocsCollector.collect('java.util.TreeSet', [
 				[/* text */ 't', ` if this set contains the specified element`]
 			]
 		]],
-		[/* method */ 'last()', [
+		[/* method */ 'isEmpty()', [
 			[/* method description */
-				[/* block */ 'b', `Returns the last (highest) element currently in this set.`]
-			],
-			/* parameters */ UDF,
-			[/* throws */
-				[/* throw */ 'java.util.NoSuchElementException', [/* throw description */
-					[/* text */ 't', `if this set is empty`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `the last (highest) element currently in this set`]
-			]
-		]],
-		[/* method */ 'spliterator()', [
-			[/* method description */
-				[/* text */ 't', `Creates a `],
-				[/* reference */ 'r', `.Spliterator#binding`],
-				[/* text */ 't', `
- and `],
-				[/* text */ 't', `fail-fast`],
-				[/* reference */ 'r', `java.util.Spliterator`],
-				[/* text */ 't', ` over the elements in this
- set.
-
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', `The `],
-					[/* inline code block */ 'i', `Spliterator`],
-					[/* text */ 't', ` reports `],
-					[/* reference */ 'r', `.Spliterator#SIZED`],
-					[/* text */ 't', `,
- `],
-					[/* reference */ 'r', `.Spliterator#DISTINCT`],
-					[/* text */ 't', `, `],
-					[/* reference */ 'r', `.Spliterator#SORTED`],
-					[/* text */ 't', `, and
- `],
-					[/* reference */ 'r', `.Spliterator#ORDERED`],
-					[/* text */ 't', `.  Overriding implementations should document
- the reporting of additional characteristic values.
-
- `]
-				]],
-				[/* block */ 'b', [
-					[/* text */ 't', `The spliterator's comparator (see
- `],
-					[/* reference */ 'r', `.Spliterator#getComparator()`],
-					[/* text */ 't', `) is `],
-					[/* inline code block */ 'i', `null`],
-					[/* text */ 't', ` if
- the tree set's comparator (see `],
-					[/* reference */ 'r', `#comparator()`, `comparator()`],
-					[/* text */ 't', `) is `],
-					[/* inline code block */ 'i', `null`],
-					[/* text */ 't', `.
- Otherwise, the spliterator's comparator is the same as or imposes the
- same total ordering as the tree set's comparator.`]
-				]]
+				[/* text */ 't', `Returns `],
+				[/* inline code block */ 'i', `true`],
+				[/* text */ 't', ` if this set contains no elements.`]
 			],
 			/* parameters */ UDF,
 			/* throws */ UDF,
 			[/* return description */
-				[/* text */ 't', `a `],
-				[/* inline code block */ 'i', `Spliterator`],
-				[/* text */ 't', ` over the elements in this set`]
+				[/* inline code block */ 'i', `true`],
+				[/* text */ 't', ` if this set contains no elements`]
 			]
 		]],
-		[/* method */ 'addAll(java.util.Collection)', [
+		[/* method */ 'remove(java.lang.Object)', [
 			[/* method description */
-				[/* text */ 't', `Adds all of the elements in the specified collection to this set.`]
+				[/* text */ 't', `Removes the specified element from this set if it is present.
+ More formally, removes an element `],
+				[/* inline code block */ 'i', `e`],
+				[/* text */ 't', ` such that
+ `],
+				[/* inline code block */ 'i', `Objects.equals(o, e)`],
+				[/* text */ 't', `,
+ if this set contains such an element.  Returns `],
+				[/* inline code block */ 'i', `true`],
+				[/* text */ 't', ` if
+ this set contained the element (or equivalently, if this set
+ changed as a result of the call).  (This set will not contain the
+ element once the call returns.)`]
 			],
 			[/* parameters */
-				[/* parameter */ 'c', [/* parameter description */
-					[/* text */ 't', `collection containing elements to be added to this set`]
+				[/* parameter */ 'o', [/* parameter description */
+					[/* text */ 't', `object to be removed from this set, if present`]
 				]]
 			],
 			[/* throws */
 				[/* throw */ 'java.lang.ClassCastException', [/* throw description */
-					[/* text */ 't', `if the elements provided cannot be compared
-         with the elements currently in the set`]
+					[/* text */ 't', `if the specified object cannot be compared
+         with the elements currently in this set`]
 				]],
 				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
-					[/* text */ 't', `if the specified collection is null or
-         if any element is null and this set uses natural ordering, or
-         its comparator does not permit null elements`]
+					[/* text */ 't', `if the specified element is null
+         and this set uses natural ordering, or its comparator
+         does not permit null elements`]
 				]]
 			],
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
-				[/* text */ 't', ` if this set changed as a result of the call`]
+				[/* text */ 't', ` if this set contained the specified element`]
+			]
+		]],
+		[/* method */ 'ceiling(java.lang.Object)', [
+			[/* method description */
+				[/* block */ 'b', [
+					[/* text */ 't', `Returns the least element in this set greater than or equal to
+ the given element, or `],
+					[/* inline code block */ 'i', `null`],
+					[/* text */ 't', ` if there is no such element.`]
+				]]
+			],
+			[/* parameters */
+				[/* parameter */ 'e', [/* parameter description */
+					[/* text */ 't', `the value to match`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.lang.ClassCastException', [/* throw description */
+					[/* text */ 't', `if the specified element cannot be
+         compared with the elements currently in the set`]
+				]],
+				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
+					[/* text */ 't', `if the specified element is null
+         and this set uses natural ordering, or its comparator
+         does not permit null elements`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `the least element greater than or equal to `],
+				[/* inline code block */ 'i', `e`],
+				[/* text */ 't', `,
+         or `],
+				[/* inline code block */ 'i', `null`],
+				[/* text */ 't', ` if there is no such element`]
 			]
 		]],
 		[/* method */ 'first()', [
@@ -560,6 +450,88 @@ DocsCollector.collect('java.util.TreeSet', [
 			],
 			[/* return description */
 				[/* text */ 't', `the first (lowest) element currently in this set`]
+			]
+		]],
+		[/* method */ 'floor(java.lang.Object)', [
+			[/* method description */
+				[/* block */ 'b', [
+					[/* text */ 't', `Returns the greatest element in this set less than or equal to
+ the given element, or `],
+					[/* inline code block */ 'i', `null`],
+					[/* text */ 't', ` if there is no such element.`]
+				]]
+			],
+			[/* parameters */
+				[/* parameter */ 'e', [/* parameter description */
+					[/* text */ 't', `the value to match`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.lang.ClassCastException', [/* throw description */
+					[/* text */ 't', `if the specified element cannot be
+         compared with the elements currently in the set`]
+				]],
+				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
+					[/* text */ 't', `if the specified element is null
+         and this set uses natural ordering, or its comparator
+         does not permit null elements`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `the greatest element less than or equal to `],
+				[/* inline code block */ 'i', `e`],
+				[/* text */ 't', `,
+         or `],
+				[/* inline code block */ 'i', `null`],
+				[/* text */ 't', ` if there is no such element`]
+			]
+		]],
+		[/* method */ 'higher(java.lang.Object)', [
+			[/* method description */
+				[/* block */ 'b', [
+					[/* text */ 't', `Returns the least element in this set strictly greater than the
+ given element, or `],
+					[/* inline code block */ 'i', `null`],
+					[/* text */ 't', ` if there is no such element.`]
+				]]
+			],
+			[/* parameters */
+				[/* parameter */ 'e', [/* parameter description */
+					[/* text */ 't', `the value to match`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.lang.ClassCastException', [/* throw description */
+					[/* text */ 't', `if the specified element cannot be
+         compared with the elements currently in the set`]
+				]],
+				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
+					[/* text */ 't', `if the specified element is null
+         and this set uses natural ordering, or its comparator
+         does not permit null elements`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `the least element greater than `],
+				[/* inline code block */ 'i', `e`],
+				[/* text */ 't', `,
+         or `],
+				[/* inline code block */ 'i', `null`],
+				[/* text */ 't', ` if there is no such element`]
+			]
+		]],
+		[/* method */ 'last()', [
+			[/* method description */
+				[/* block */ 'b', `Returns the last (highest) element currently in this set.`]
+			],
+			/* parameters */ UDF,
+			[/* throws */
+				[/* throw */ 'java.util.NoSuchElementException', [/* throw description */
+					[/* text */ 't', `if this set is empty`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `the last (highest) element currently in this set`]
 			]
 		]],
 		[/* method */ 'lower(java.lang.Object)', [
@@ -596,27 +568,6 @@ DocsCollector.collect('java.util.TreeSet', [
 				[/* text */ 't', ` if there is no such element`]
 			]
 		]],
-		[/* method */ 'comparator()', [
-			[/* method description */
-				[/* block */ 'b', [
-					[/* text */ 't', `Returns the comparator used to order the elements in this set,
- or `],
-					[/* inline code block */ 'i', `null`],
-					[/* text */ 't', ` if this set uses the `],
-					[/* reference */ 'r', `java.lang.Comparable`],
-					[/* text */ 't', ` of its elements.`]
-				]]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the comparator used to order the elements in this set,
-         or `],
-				[/* inline code block */ 'i', `null`],
-				[/* text */ 't', ` if this set uses the natural ordering
-         of its elements`]
-			]
-		]],
 		[/* method */ 'pollFirst()', [
 			[/* method description */
 				[/* block */ 'b', [
@@ -651,6 +602,50 @@ DocsCollector.collect('java.util.TreeSet', [
 				[/* text */ 't', ` if this set is empty`]
 			]
 		]],
+		[/* method */ 'size()', [
+			[/* method description */
+				[/* text */ 't', `Returns the number of elements in this set (its cardinality).`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the number of elements in this set (its cardinality)`]
+			]
+		]],
+		[/* method */ 'clone()', [
+			[/* method description */
+				[/* text */ 't', `Returns a shallow copy of this `],
+				[/* inline code block */ 'i', `TreeSet`],
+				[/* text */ 't', ` instance. (The elements
+ themselves are not cloned.)`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `a shallow copy of this set`]
+			]
+		]],
+		[/* method */ 'comparator()', [
+			[/* method description */
+				[/* block */ 'b', [
+					[/* text */ 't', `Returns the comparator used to order the elements in this set,
+ or `],
+					[/* inline code block */ 'i', `null`],
+					[/* text */ 't', ` if this set uses the `],
+					[/* reference */ 'r', `java.lang.Comparable`],
+					[/* text */ 't', ` of its elements.`]
+				]]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the comparator used to order the elements in this set,
+         or `],
+				[/* inline code block */ 'i', `null`],
+				[/* text */ 't', ` if this set uses the natural ordering
+         of its elements`]
+			]
+		]],
 		[/* method */ 'descendingIterator()', [
 			[/* method description */
 				[/* text */ 't', `Returns an iterator over the elements in this set in descending order.`]
@@ -661,23 +656,63 @@ DocsCollector.collect('java.util.TreeSet', [
 				[/* text */ 't', `an iterator over the elements in this set in descending order`]
 			]
 		]],
-		[/* method */ 'subSet(java.lang.Object,java.lang.Object)', [
+		[/* method */ 'iterator()', [
+			[/* method description */
+				[/* text */ 't', `Returns an iterator over the elements in this set in ascending order.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `an iterator over the elements in this set in ascending order`]
+			]
+		]],
+		[/* method */ 'descendingSet()', [
 			[/* method description */
 				[/* block */ 'b', [
-					[/* text */ 't', `Returns a view of the portion of this set whose elements range
- from `],
-					[/* inline code block */ 'i', `fromElement`],
-					[/* text */ 't', `, inclusive, to `],
+					[/* text */ 't', `Returns a reverse order view of the elements contained in this set.
+ The descending set is backed by this set, so changes to the set are
+ reflected in the descending set, and vice-versa.  If either set is
+ modified while an iteration over either set is in progress (except
+ through the iterator's own `],
+					[/* inline code block */ 'i', `remove`],
+					[/* text */ 't', ` operation), the results of
+ the iteration are undefined.
+
+ `],
+					[/* block */ 'b', [
+						[/* text */ 't', `The returned set has an ordering equivalent to
+ `],
+						[/* reference */ 'r', `.Collections#reverseOrder(java.util.Comparator)`],
+						[/* inline code block */ 'i', `(comparator())`],
+						[/* text */ 't', `.
+ The expression `],
+						[/* inline code block */ 'i', `s.descendingSet().descendingSet()`],
+						[/* text */ 't', ` returns a
+ view of `],
+						[/* inline code block */ 'i', `s`],
+						[/* text */ 't', ` essentially equivalent to `],
+						[/* inline code block */ 'i', `s`],
+						[/* text */ 't', `.`]
+					]]
+				]]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `a reverse order view of this set`]
+			]
+		]],
+		[/* method */ 'headSet(java.lang.Object,boolean)', [
+			[/* method description */
+				[/* block */ 'b', [
+					[/* text */ 't', `Returns a view of the portion of this set whose elements are less than
+ (or equal to, if `],
+					[/* inline code block */ 'i', `inclusive`],
+					[/* text */ 't', ` is true) `],
 					[/* inline code block */ 'i', `toElement`],
-					[/* text */ 't', `,
- exclusive.  (If `],
-					[/* inline code block */ 'i', `fromElement`],
-					[/* text */ 't', ` and `],
-					[/* inline code block */ 'i', `toElement`],
-					[/* text */ 't', ` are
- equal, the returned set is empty.)  The returned set is backed
- by this set, so changes in the returned set are reflected in
- this set, and vice-versa.  The returned set supports all
+					[/* text */ 't', `.  The
+ returned set is backed by this set, so changes in the returned set are
+ reflected in this set, and vice-versa.  The returned set supports all
  optional set operations that this set supports.
 
  `],
@@ -685,74 +720,59 @@ DocsCollector.collect('java.util.TreeSet', [
 						[/* text */ 't', `The returned set will throw an `],
 						[/* inline code block */ 'i', `IllegalArgumentException`],
 						[/* text */ 't', `
- on an attempt to insert an element outside its range.
-
- `]
-					]],
-					[/* block */ 'b', [
-						[/* text */ 't', `Equivalent to `],
-						[/* inline code block */ 'i', `subSet(fromElement, true, toElement, false)`],
-						[/* text */ 't', `.`]
+ on an attempt to insert an element outside its range.`]
 					]]
 				]]
 			],
 			[/* parameters */
-				[/* parameter */ 'fromElement', [/* parameter description */
-					[/* text */ 't', `low endpoint (inclusive) of the returned set`]
-				]],
 				[/* parameter */ 'toElement', [/* parameter description */
-					[/* text */ 't', `high endpoint (exclusive) of the returned set`]
+					[/* text */ 't', `high endpoint of the returned set`]
+				]],
+				[/* parameter */ 'inclusive', [/* parameter description */
+					[/* text */ 't', ``],
+					[/* inline code block */ 'i', `true`],
+					[/* text */ 't', ` if the high endpoint
+        is to be included in the returned view`]
 				]]
 			],
 			[/* throws */
 				[/* throw */ 'java.lang.ClassCastException', [/* throw description */
 					[/* text */ 't', `if `],
-					[/* inline code block */ 'i', `fromElement`],
-					[/* text */ 't', ` and
-         `],
 					[/* inline code block */ 'i', `toElement`],
-					[/* text */ 't', ` cannot be compared to one another using this
-         set's comparator (or, if the set has no comparator, using
-         natural ordering).  Implementations may, but are not required
-         to, throw this exception if `],
-					[/* inline code block */ 'i', `fromElement`],
-					[/* text */ 't', ` or
-         `],
+					[/* text */ 't', ` is not compatible
+         with this set's comparator (or, if the set has no comparator,
+         if `],
 					[/* inline code block */ 'i', `toElement`],
-					[/* text */ 't', ` cannot be compared to elements currently in
-         the set.`]
+					[/* text */ 't', ` does not implement `],
+					[/* reference */ 'r', `java.lang.Comparable`],
+					[/* text */ 't', `).
+         Implementations may, but are not required to, throw this
+         exception if `],
+					[/* inline code block */ 'i', `toElement`],
+					[/* text */ 't', ` cannot be compared to elements
+         currently in the set.`]
 				]],
 				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
 					[/* text */ 't', `if `],
-					[/* inline code block */ 'i', `fromElement`],
-					[/* text */ 't', ` or
-         `],
 					[/* inline code block */ 'i', `toElement`],
-					[/* text */ 't', ` is null and this set uses natural ordering,
-         or its comparator does not permit null elements`]
+					[/* text */ 't', ` is null and
+         this set uses natural ordering, or its comparator does
+         not permit null elements`]
 				]],
 				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
-					[/* text */ 't', `if `],
-					[/* inline code block */ 'i', `fromElement`],
-					[/* text */ 't', ` is
-         greater than `],
+					[/* text */ 't', `if this set itself has a
+         restricted range, and `],
 					[/* inline code block */ 'i', `toElement`],
-					[/* text */ 't', `; or if this set itself
-         has a restricted range, and `],
-					[/* inline code block */ 'i', `fromElement`],
-					[/* text */ 't', ` or
-         `],
-					[/* inline code block */ 'i', `toElement`],
-					[/* text */ 't', ` lies outside the bounds of the range`]
+					[/* text */ 't', ` lies outside the
+         bounds of the range`]
 				]]
 			],
 			[/* return description */
-				[/* text */ 't', `a view of the portion of this set whose elements range from
-         `],
-				[/* inline code block */ 'i', `fromElement`],
-				[/* text */ 't', `, inclusive, to `],
-				[/* inline code block */ 'i', `toElement`],
-				[/* text */ 't', `, exclusive`]
+				[/* text */ 't', `a view of the portion of this set whose elements are less than
+         (or equal to, if `],
+				[/* inline code block */ 'i', `inclusive`],
+				[/* text */ 't', ` is true) `],
+				[/* inline code block */ 'i', `toElement`]
 			]
 		]],
 		[/* method */ 'subSet(java.lang.Object,boolean,java.lang.Object,boolean)', [
@@ -857,6 +877,77 @@ DocsCollector.collect('java.util.TreeSet', [
 				[/* text */ 't', `, exclusive`]
 			]
 		]],
+		[/* method */ 'tailSet(java.lang.Object,boolean)', [
+			[/* method description */
+				[/* block */ 'b', [
+					[/* text */ 't', `Returns a view of the portion of this set whose elements are greater
+ than (or equal to, if `],
+					[/* inline code block */ 'i', `inclusive`],
+					[/* text */ 't', ` is true) `],
+					[/* inline code block */ 'i', `fromElement`],
+					[/* text */ 't', `.
+ The returned set is backed by this set, so changes in the returned set
+ are reflected in this set, and vice-versa.  The returned set supports
+ all optional set operations that this set supports.
+
+ `],
+					[/* block */ 'b', [
+						[/* text */ 't', `The returned set will throw an `],
+						[/* inline code block */ 'i', `IllegalArgumentException`],
+						[/* text */ 't', `
+ on an attempt to insert an element outside its range.`]
+					]]
+				]]
+			],
+			[/* parameters */
+				[/* parameter */ 'fromElement', [/* parameter description */
+					[/* text */ 't', `low endpoint of the returned set`]
+				]],
+				[/* parameter */ 'inclusive', [/* parameter description */
+					[/* text */ 't', ``],
+					[/* inline code block */ 'i', `true`],
+					[/* text */ 't', ` if the low endpoint
+        is to be included in the returned view`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.lang.ClassCastException', [/* throw description */
+					[/* text */ 't', `if `],
+					[/* inline code block */ 'i', `fromElement`],
+					[/* text */ 't', ` is not compatible
+         with this set's comparator (or, if the set has no comparator,
+         if `],
+					[/* inline code block */ 'i', `fromElement`],
+					[/* text */ 't', ` does not implement `],
+					[/* reference */ 'r', `java.lang.Comparable`],
+					[/* text */ 't', `).
+         Implementations may, but are not required to, throw this
+         exception if `],
+					[/* inline code block */ 'i', `fromElement`],
+					[/* text */ 't', ` cannot be compared to elements
+         currently in the set.`]
+				]],
+				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
+					[/* text */ 't', `if `],
+					[/* inline code block */ 'i', `fromElement`],
+					[/* text */ 't', ` is null and
+         this set uses natural ordering, or its comparator does
+         not permit null elements`]
+				]],
+				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
+					[/* text */ 't', `if this set itself has a
+         restricted range, and `],
+					[/* inline code block */ 'i', `fromElement`],
+					[/* text */ 't', ` lies outside the
+         bounds of the range`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `a view of the portion of this set whose elements are greater
+         than or equal to `],
+				[/* inline code block */ 'i', `fromElement`]
+			]
+		]],
 		[/* method */ 'headSet(java.lang.Object)', [
 			[/* method description */
 				[/* block */ 'b', [
@@ -927,17 +1018,23 @@ DocsCollector.collect('java.util.TreeSet', [
 				[/* inline code block */ 'i', `toElement`]
 			]
 		]],
-		[/* method */ 'headSet(java.lang.Object,boolean)', [
+		[/* method */ 'subSet(java.lang.Object,java.lang.Object)', [
 			[/* method description */
 				[/* block */ 'b', [
-					[/* text */ 't', `Returns a view of the portion of this set whose elements are less than
- (or equal to, if `],
-					[/* inline code block */ 'i', `inclusive`],
-					[/* text */ 't', ` is true) `],
+					[/* text */ 't', `Returns a view of the portion of this set whose elements range
+ from `],
+					[/* inline code block */ 'i', `fromElement`],
+					[/* text */ 't', `, inclusive, to `],
 					[/* inline code block */ 'i', `toElement`],
-					[/* text */ 't', `.  The
- returned set is backed by this set, so changes in the returned set are
- reflected in this set, and vice-versa.  The returned set supports all
+					[/* text */ 't', `,
+ exclusive.  (If `],
+					[/* inline code block */ 'i', `fromElement`],
+					[/* text */ 't', ` and `],
+					[/* inline code block */ 'i', `toElement`],
+					[/* text */ 't', ` are
+ equal, the returned set is empty.)  The returned set is backed
+ by this set, so changes in the returned set are reflected in
+ this set, and vice-versa.  The returned set supports all
  optional set operations that this set supports.
 
  `],
@@ -945,130 +1042,74 @@ DocsCollector.collect('java.util.TreeSet', [
 						[/* text */ 't', `The returned set will throw an `],
 						[/* inline code block */ 'i', `IllegalArgumentException`],
 						[/* text */ 't', `
- on an attempt to insert an element outside its range.`]
-					]]
-				]]
-			],
-			[/* parameters */
-				[/* parameter */ 'toElement', [/* parameter description */
-					[/* text */ 't', `high endpoint of the returned set`]
-				]],
-				[/* parameter */ 'inclusive', [/* parameter description */
-					[/* text */ 't', ``],
-					[/* inline code block */ 'i', `true`],
-					[/* text */ 't', ` if the high endpoint
-        is to be included in the returned view`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.ClassCastException', [/* throw description */
-					[/* text */ 't', `if `],
-					[/* inline code block */ 'i', `toElement`],
-					[/* text */ 't', ` is not compatible
-         with this set's comparator (or, if the set has no comparator,
-         if `],
-					[/* inline code block */ 'i', `toElement`],
-					[/* text */ 't', ` does not implement `],
-					[/* reference */ 'r', `java.lang.Comparable`],
-					[/* text */ 't', `).
-         Implementations may, but are not required to, throw this
-         exception if `],
-					[/* inline code block */ 'i', `toElement`],
-					[/* text */ 't', ` cannot be compared to elements
-         currently in the set.`]
-				]],
-				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
-					[/* text */ 't', `if `],
-					[/* inline code block */ 'i', `toElement`],
-					[/* text */ 't', ` is null and
-         this set uses natural ordering, or its comparator does
-         not permit null elements`]
-				]],
-				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
-					[/* text */ 't', `if this set itself has a
-         restricted range, and `],
-					[/* inline code block */ 'i', `toElement`],
-					[/* text */ 't', ` lies outside the
-         bounds of the range`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `a view of the portion of this set whose elements are less than
-         (or equal to, if `],
-				[/* inline code block */ 'i', `inclusive`],
-				[/* text */ 't', ` is true) `],
-				[/* inline code block */ 'i', `toElement`]
-			]
-		]],
-		[/* method */ 'tailSet(java.lang.Object,boolean)', [
-			[/* method description */
-				[/* block */ 'b', [
-					[/* text */ 't', `Returns a view of the portion of this set whose elements are greater
- than (or equal to, if `],
-					[/* inline code block */ 'i', `inclusive`],
-					[/* text */ 't', ` is true) `],
-					[/* inline code block */ 'i', `fromElement`],
-					[/* text */ 't', `.
- The returned set is backed by this set, so changes in the returned set
- are reflected in this set, and vice-versa.  The returned set supports
- all optional set operations that this set supports.
+ on an attempt to insert an element outside its range.
 
- `],
+ `]
+					]],
 					[/* block */ 'b', [
-						[/* text */ 't', `The returned set will throw an `],
-						[/* inline code block */ 'i', `IllegalArgumentException`],
-						[/* text */ 't', `
- on an attempt to insert an element outside its range.`]
+						[/* text */ 't', `Equivalent to `],
+						[/* inline code block */ 'i', `subSet(fromElement, true, toElement, false)`],
+						[/* text */ 't', `.`]
 					]]
 				]]
 			],
 			[/* parameters */
 				[/* parameter */ 'fromElement', [/* parameter description */
-					[/* text */ 't', `low endpoint of the returned set`]
+					[/* text */ 't', `low endpoint (inclusive) of the returned set`]
 				]],
-				[/* parameter */ 'inclusive', [/* parameter description */
-					[/* text */ 't', ``],
-					[/* inline code block */ 'i', `true`],
-					[/* text */ 't', ` if the low endpoint
-        is to be included in the returned view`]
+				[/* parameter */ 'toElement', [/* parameter description */
+					[/* text */ 't', `high endpoint (exclusive) of the returned set`]
 				]]
 			],
 			[/* throws */
 				[/* throw */ 'java.lang.ClassCastException', [/* throw description */
 					[/* text */ 't', `if `],
 					[/* inline code block */ 'i', `fromElement`],
-					[/* text */ 't', ` is not compatible
-         with this set's comparator (or, if the set has no comparator,
-         if `],
+					[/* text */ 't', ` and
+         `],
+					[/* inline code block */ 'i', `toElement`],
+					[/* text */ 't', ` cannot be compared to one another using this
+         set's comparator (or, if the set has no comparator, using
+         natural ordering).  Implementations may, but are not required
+         to, throw this exception if `],
 					[/* inline code block */ 'i', `fromElement`],
-					[/* text */ 't', ` does not implement `],
-					[/* reference */ 'r', `java.lang.Comparable`],
-					[/* text */ 't', `).
-         Implementations may, but are not required to, throw this
-         exception if `],
-					[/* inline code block */ 'i', `fromElement`],
-					[/* text */ 't', ` cannot be compared to elements
-         currently in the set.`]
+					[/* text */ 't', ` or
+         `],
+					[/* inline code block */ 'i', `toElement`],
+					[/* text */ 't', ` cannot be compared to elements currently in
+         the set.`]
 				]],
 				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
 					[/* text */ 't', `if `],
 					[/* inline code block */ 'i', `fromElement`],
-					[/* text */ 't', ` is null and
-         this set uses natural ordering, or its comparator does
-         not permit null elements`]
+					[/* text */ 't', ` or
+         `],
+					[/* inline code block */ 'i', `toElement`],
+					[/* text */ 't', ` is null and this set uses natural ordering,
+         or its comparator does not permit null elements`]
 				]],
 				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
-					[/* text */ 't', `if this set itself has a
-         restricted range, and `],
+					[/* text */ 't', `if `],
 					[/* inline code block */ 'i', `fromElement`],
-					[/* text */ 't', ` lies outside the
-         bounds of the range`]
+					[/* text */ 't', ` is
+         greater than `],
+					[/* inline code block */ 'i', `toElement`],
+					[/* text */ 't', `; or if this set itself
+         has a restricted range, and `],
+					[/* inline code block */ 'i', `fromElement`],
+					[/* text */ 't', ` or
+         `],
+					[/* inline code block */ 'i', `toElement`],
+					[/* text */ 't', ` lies outside the bounds of the range`]
 				]]
 			],
 			[/* return description */
-				[/* text */ 't', `a view of the portion of this set whose elements are greater
-         than or equal to `],
-				[/* inline code block */ 'i', `fromElement`]
+				[/* text */ 't', `a view of the portion of this set whose elements range from
+         `],
+				[/* inline code block */ 'i', `fromElement`],
+				[/* text */ 't', `, inclusive, to `],
+				[/* inline code block */ 'i', `toElement`],
+				[/* text */ 't', `, exclusive`]
 			]
 		]],
 		[/* method */ 'tailSet(java.lang.Object)', [
@@ -1141,109 +1182,68 @@ DocsCollector.collect('java.util.TreeSet', [
 				[/* inline code block */ 'i', `fromElement`]
 			]
 		]],
-		[/* method */ 'ceiling(java.lang.Object)', [
+		[/* method */ 'spliterator()', [
 			[/* method description */
-				[/* block */ 'b', [
-					[/* text */ 't', `Returns the least element in this set greater than or equal to
- the given element, or `],
-					[/* inline code block */ 'i', `null`],
-					[/* text */ 't', ` if there is no such element.`]
-				]]
-			],
-			[/* parameters */
-				[/* parameter */ 'e', [/* parameter description */
-					[/* text */ 't', `the value to match`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.ClassCastException', [/* throw description */
-					[/* text */ 't', `if the specified element cannot be
-         compared with the elements currently in the set`]
-				]],
-				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
-					[/* text */ 't', `if the specified element is null
-         and this set uses natural ordering, or its comparator
-         does not permit null elements`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `the least element greater than or equal to `],
-				[/* inline code block */ 'i', `e`],
-				[/* text */ 't', `,
-         or `],
-				[/* inline code block */ 'i', `null`],
-				[/* text */ 't', ` if there is no such element`]
-			]
-		]],
-		[/* method */ 'higher(java.lang.Object)', [
-			[/* method description */
-				[/* block */ 'b', [
-					[/* text */ 't', `Returns the least element in this set strictly greater than the
- given element, or `],
-					[/* inline code block */ 'i', `null`],
-					[/* text */ 't', ` if there is no such element.`]
-				]]
-			],
-			[/* parameters */
-				[/* parameter */ 'e', [/* parameter description */
-					[/* text */ 't', `the value to match`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.ClassCastException', [/* throw description */
-					[/* text */ 't', `if the specified element cannot be
-         compared with the elements currently in the set`]
-				]],
-				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
-					[/* text */ 't', `if the specified element is null
-         and this set uses natural ordering, or its comparator
-         does not permit null elements`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `the least element greater than `],
-				[/* inline code block */ 'i', `e`],
-				[/* text */ 't', `,
-         or `],
-				[/* inline code block */ 'i', `null`],
-				[/* text */ 't', ` if there is no such element`]
-			]
-		]],
-		[/* method */ 'descendingSet()', [
-			[/* method description */
-				[/* block */ 'b', [
-					[/* text */ 't', `Returns a reverse order view of the elements contained in this set.
- The descending set is backed by this set, so changes to the set are
- reflected in the descending set, and vice-versa.  If either set is
- modified while an iteration over either set is in progress (except
- through the iterator's own `],
-					[/* inline code block */ 'i', `remove`],
-					[/* text */ 't', ` operation), the results of
- the iteration are undefined.
+				[/* text */ 't', `Creates a `],
+				[/* reference */ 'r', `.Spliterator#binding`],
+				[/* text */ 't', `
+ and `],
+				[/* text */ 't', `fail-fast`],
+				[/* reference */ 'r', `java.util.Spliterator`],
+				[/* text */ 't', ` over the elements in this
+ set.
 
  `],
-					[/* block */ 'b', [
-						[/* text */ 't', `The returned set has an ordering equivalent to
+				[/* block */ 'b', [
+					[/* text */ 't', `The `],
+					[/* inline code block */ 'i', `Spliterator`],
+					[/* text */ 't', ` reports `],
+					[/* reference */ 'r', `.Spliterator#SIZED`],
+					[/* text */ 't', `,
  `],
-						[/* reference */ 'r', `.Collections#reverseOrder(java.util.Comparator)`],
-						[/* inline code block */ 'i', `(comparator())`],
-						[/* text */ 't', `.
- The expression `],
-						[/* inline code block */ 'i', `s.descendingSet().descendingSet()`],
-						[/* text */ 't', ` returns a
- view of `],
-						[/* inline code block */ 'i', `s`],
-						[/* text */ 't', ` essentially equivalent to `],
-						[/* inline code block */ 'i', `s`],
-						[/* text */ 't', `.`]
-					]]
+					[/* reference */ 'r', `.Spliterator#DISTINCT`],
+					[/* text */ 't', `, `],
+					[/* reference */ 'r', `.Spliterator#SORTED`],
+					[/* text */ 't', `, and
+ `],
+					[/* reference */ 'r', `.Spliterator#ORDERED`],
+					[/* text */ 't', `.  Overriding implementations should document
+ the reporting of additional characteristic values.
+
+ `]
+				]],
+				[/* block */ 'b', [
+					[/* text */ 't', `The spliterator's comparator (see
+ `],
+					[/* reference */ 'r', `.Spliterator#getComparator()`],
+					[/* text */ 't', `) is `],
+					[/* inline code block */ 'i', `null`],
+					[/* text */ 't', ` if
+ the tree set's comparator (see `],
+					[/* reference */ 'r', `#comparator()`, `comparator()`],
+					[/* text */ 't', `) is `],
+					[/* inline code block */ 'i', `null`],
+					[/* text */ 't', `.
+ Otherwise, the spliterator's comparator is the same as or imposes the
+ same total ordering as the tree set's comparator.`]
 				]]
 			],
 			/* parameters */ UDF,
 			/* throws */ UDF,
 			[/* return description */
-				[/* text */ 't', `a reverse order view of this set`]
+				[/* text */ 't', `a `],
+				[/* inline code block */ 'i', `Spliterator`],
+				[/* text */ 't', ` over the elements in this set`]
 			]
+		]],
+		[/* method */ 'clear()', [
+			[/* method description */
+				[/* text */ 't', `Removes all of the elements from this set.
+ The set will be empty after this call returns.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			/* return */ UDF
 		]]
 	],
 ]);

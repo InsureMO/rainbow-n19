@@ -68,6 +68,35 @@ DocsCollector.collect('java.lang.module.ModuleReader', [
 	/* fields */ UDF,
 	/* constructors */ UDF,
 	[/* methods */
+		[/* method */ 'find(java.lang.String)', [
+			[/* method description */
+				[/* text */ 't', `Finds a resource, returning a URI to the resource in the module.
+
+ `],
+				[/* block */ 'b', ` If the module reader can determine that the name locates a directory
+ then the resulting URI will end with a slash ('/'). `]
+			],
+			[/* parameters */
+				[/* parameter */ 'name', [/* parameter description */
+					[/* text */ 't', `The name of the resource to open for reading`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.io.IOException', [/* throw description */
+					[/* text */ 't', `If an I/O error occurs or the module reader is closed`]
+				]],
+				[/* throw */ 'java.lang.SecurityException', [/* throw description */
+					[/* text */ 't', `If denied by the security manager`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `A URI to the resource; an empty `],
+				[/* inline code block */ 'i', `Optional`],
+				[/* text */ 't', ` if the resource
+         is not found or a URI cannot be constructed to locate the
+         resource`]
+			]
+		]],
 		[/* method */ 'list()', [
 			[/* method description */
 				[/* text */ 't', `Lists the contents of the module, returning a stream of elements that
@@ -107,76 +136,6 @@ DocsCollector.collect('java.lang.module.ModuleReader', [
 			[/* return description */
 				[/* text */ 't', `A stream of elements that are the names of all resources
          in the module`]
-			]
-		]],
-		[/* method */ 'find(java.lang.String)', [
-			[/* method description */
-				[/* text */ 't', `Finds a resource, returning a URI to the resource in the module.
-
- `],
-				[/* block */ 'b', ` If the module reader can determine that the name locates a directory
- then the resulting URI will end with a slash ('/'). `]
-			],
-			[/* parameters */
-				[/* parameter */ 'name', [/* parameter description */
-					[/* text */ 't', `The name of the resource to open for reading`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.io.IOException', [/* throw description */
-					[/* text */ 't', `If an I/O error occurs or the module reader is closed`]
-				]],
-				[/* throw */ 'java.lang.SecurityException', [/* throw description */
-					[/* text */ 't', `If denied by the security manager`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `A URI to the resource; an empty `],
-				[/* inline code block */ 'i', `Optional`],
-				[/* text */ 't', ` if the resource
-         is not found or a URI cannot be constructed to locate the
-         resource`]
-			]
-		]],
-		[/* method */ 'read(java.lang.String)', [
-			[/* method description */
-				[/* text */ 't', `Reads a resource, returning a byte buffer with the contents of the
- resource.
-
- The element at the returned buffer's position is the first byte of the
- resource, the element at the buffer's limit is the last byte of the
- resource. Once consumed, the `],
-				[/* reference */ 'r', `#release(java.nio.ByteBuffer)`, `release`],
-				[/* text */ 't', ` method
- must be invoked. Failure to invoke the `],
-				[/* inline code block */ 'i', `release`],
-				[/* text */ 't', ` method may result
- in a resource leak.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'name', [/* parameter description */
-					[/* text */ 't', `The name of the resource to read`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.io.IOException', [/* throw description */
-					[/* text */ 't', `If an I/O error occurs or the module reader is closed`]
-				]],
-				[/* throw */ 'java.lang.SecurityException', [/* throw description */
-					[/* text */ 't', `If denied by the security manager`]
-				]],
-				[/* throw */ 'java.lang.OutOfMemoryError', [/* throw description */
-					[/* text */ 't', `If the resource is larger than `],
-					[/* inline code block */ 'i', `Integer.MAX_VALUE`],
-					[/* text */ 't', `,
-         the maximum capacity of a byte buffer`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `A byte buffer containing the contents of the resource or an
-         empty `],
-				[/* inline code block */ 'i', `Optional`],
-				[/* text */ 't', ` if not found`]
 			]
 		]],
 		[/* method */ 'close()', [
@@ -224,6 +183,47 @@ DocsCollector.collect('java.lang.module.ModuleReader', [
 			[/* return description */
 				[/* text */ 't', `An input stream to read the resource or an empty
          `],
+				[/* inline code block */ 'i', `Optional`],
+				[/* text */ 't', ` if not found`]
+			]
+		]],
+		[/* method */ 'read(java.lang.String)', [
+			[/* method description */
+				[/* text */ 't', `Reads a resource, returning a byte buffer with the contents of the
+ resource.
+
+ The element at the returned buffer's position is the first byte of the
+ resource, the element at the buffer's limit is the last byte of the
+ resource. Once consumed, the `],
+				[/* reference */ 'r', `#release(java.nio.ByteBuffer)`, `release`],
+				[/* text */ 't', ` method
+ must be invoked. Failure to invoke the `],
+				[/* inline code block */ 'i', `release`],
+				[/* text */ 't', ` method may result
+ in a resource leak.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'name', [/* parameter description */
+					[/* text */ 't', `The name of the resource to read`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.io.IOException', [/* throw description */
+					[/* text */ 't', `If an I/O error occurs or the module reader is closed`]
+				]],
+				[/* throw */ 'java.lang.SecurityException', [/* throw description */
+					[/* text */ 't', `If denied by the security manager`]
+				]],
+				[/* throw */ 'java.lang.OutOfMemoryError', [/* throw description */
+					[/* text */ 't', `If the resource is larger than `],
+					[/* inline code block */ 'i', `Integer.MAX_VALUE`],
+					[/* text */ 't', `,
+         the maximum capacity of a byte buffer`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `A byte buffer containing the contents of the resource or an
+         empty `],
 				[/* inline code block */ 'i', `Optional`],
 				[/* text */ 't', ` if not found`]
 			]

@@ -69,15 +69,9 @@ DocsCollector.collect('java.util.zip.Deflater', [
 		[/* block */ 'b', '']
 	],
 	[/* fields */
-		[/* field */ 'DEFLATED', [
+		[/* field */ 'BEST_COMPRESSION', [
 			[/* field description */
-				[/* text */ 't', `Compression method for the deflate algorithm (the only one currently
- supported).`]
-			],
-		]],
-		[/* field */ 'NO_COMPRESSION', [
-			[/* field description */
-				[/* text */ 't', `Compression level for no compression.`]
+				[/* text */ 't', `Compression level for best compression.`]
 			],
 		]],
 		[/* field */ 'BEST_SPEED', [
@@ -85,14 +79,20 @@ DocsCollector.collect('java.util.zip.Deflater', [
 				[/* text */ 't', `Compression level for fastest compression.`]
 			],
 		]],
-		[/* field */ 'BEST_COMPRESSION', [
-			[/* field description */
-				[/* text */ 't', `Compression level for best compression.`]
-			],
-		]],
 		[/* field */ 'DEFAULT_COMPRESSION', [
 			[/* field description */
 				[/* text */ 't', `Default compression level.`]
+			],
+		]],
+		[/* field */ 'DEFAULT_STRATEGY', [
+			[/* field description */
+				[/* text */ 't', `Default compression strategy.`]
+			],
+		]],
+		[/* field */ 'DEFLATED', [
+			[/* field description */
+				[/* text */ 't', `Compression method for the deflate algorithm (the only one currently
+ supported).`]
 			],
 		]],
 		[/* field */ 'FILTERED', [
@@ -102,14 +102,21 @@ DocsCollector.collect('java.util.zip.Deflater', [
  and less string matching.`]
 			],
 		]],
+		[/* field */ 'FULL_FLUSH', [
+			[/* field description */
+				[/* text */ 't', `Compression flush mode used to flush out all pending output and
+ reset the deflater. Using this mode too often can seriously degrade
+ compression.`]
+			],
+		]],
 		[/* field */ 'HUFFMAN_ONLY', [
 			[/* field description */
 				[/* text */ 't', `Compression strategy for Huffman coding only.`]
 			],
 		]],
-		[/* field */ 'DEFAULT_STRATEGY', [
+		[/* field */ 'NO_COMPRESSION', [
 			[/* field description */
-				[/* text */ 't', `Default compression strategy.`]
+				[/* text */ 't', `Compression level for no compression.`]
 			],
 		]],
 		[/* field */ 'NO_FLUSH', [
@@ -121,13 +128,6 @@ DocsCollector.collect('java.util.zip.Deflater', [
 			[/* field description */
 				[/* text */ 't', `Compression flush mode used to flush out all pending output; may
  degrade compression for some compression algorithms.`]
-			],
-		]],
-		[/* field */ 'FULL_FLUSH', [
-			[/* field description */
-				[/* text */ 't', `Compression flush mode used to flush out all pending output and
- reset the deflater. Using this mode too often can seriously degrade
- compression.`]
 			],
 		]]
 	],
@@ -171,36 +171,6 @@ DocsCollector.collect('java.util.zip.Deflater', [
 		]]
 	],
 	[/* methods */
-		[/* method */ 'end()', [
-			[/* method description */
-				[/* text */ 't', `Closes the compressor and discards any unprocessed input.
-
- This method should be called when the compressor is no longer
- being used. Once this method is called, the behavior of the
- Deflater object is undefined.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			/* return */ UDF
-		]],
-		[/* method */ 'reset()', [
-			[/* method description */
-				[/* text */ 't', `Resets deflater so that a new set of input data can be processed.
- Keeps current compression level and strategy settings.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			/* return */ UDF
-		]],
-		[/* method */ 'finish()', [
-			[/* method description */
-				[/* text */ 't', `When called, indicates that compression should end with the current
- contents of the input buffer.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			/* return */ UDF
-		]],
 		[/* method */ 'finished()', [
 			[/* method description */
 				[/* text */ 't', `Returns true if the end of the compressed data output stream has
@@ -228,354 +198,38 @@ DocsCollector.collect('java.util.zip.Deflater', [
  should be called in order to provide more input`]
 			]
 		]],
-		[/* method */ 'setInput(byte[],int,int)', [
+		[/* method */ 'deflate(byte[])', [
 			[/* method description */
-				[/* text */ 't', `Sets input data for compression.
+				[/* text */ 't', `Compresses the input data and fills specified buffer with compressed
+ data. Returns actual number of bytes of compressed data. A return value
+ of 0 indicates that `],
+				[/* reference */ 'r', `#needsInput()`, `needsInput`],
+				[/* text */ 't', ` should be called
+ in order to determine if more input data is required.
+
  `],
 				[/* block */ 'b', [
+					[/* text */ 't', `This method uses `],
+					[/* text */ 't', `NO_FLUSH`],
+					[/* text */ 't', ` as its compression flush mode.
+ An invocation of this method of the form `],
+					[/* inline code block */ 'i', `deflater.deflate(b)`],
 					[/* text */ 't', `
- One of the `],
-					[/* inline code block */ 'i', `setInput()`],
-					[/* text */ 't', ` methods should be called whenever
+ yields the same result as the invocation of
  `],
-					[/* inline code block */ 'i', `needsInput()`],
-					[/* text */ 't', ` returns true indicating that more input data
- is required.`]
-				]]
-			],
-			[/* parameters */
-				[/* parameter */ 'input', [/* parameter description */
-					[/* text */ 't', `the input data bytes`]
-				]],
-				[/* parameter */ 'off', [/* parameter description */
-					[/* text */ 't', `the start offset of the data`]
-				]],
-				[/* parameter */ 'len', [/* parameter description */
-					[/* text */ 't', `the length of the data`]
-				]]
-			],
-			/* throws */ UDF,
-			/* return */ UDF
-		]],
-		[/* method */ 'setInput(byte[])', [
-			[/* method description */
-				[/* text */ 't', `Sets input data for compression.
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', `
- One of the `],
-					[/* inline code block */ 'i', `setInput()`],
-					[/* text */ 't', ` methods should be called whenever
- `],
-					[/* inline code block */ 'i', `needsInput()`],
-					[/* text */ 't', ` returns true indicating that more input data
- is required.`]
-				]]
-			],
-			[/* parameters */
-				[/* parameter */ 'input', [/* parameter description */
-					[/* text */ 't', `the input data bytes`]
-				]]
-			],
-			/* throws */ UDF,
-			/* return */ UDF
-		]],
-		[/* method */ 'setInput(java.nio.ByteBuffer)', [
-			[/* method description */
-				[/* text */ 't', `Sets input data for compression.
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', `
- One of the `],
-					[/* inline code block */ 'i', `setInput()`],
-					[/* text */ 't', ` methods should be called whenever
- `],
-					[/* inline code block */ 'i', `needsInput()`],
-					[/* text */ 't', ` returns true indicating that more input data
- is required.
- `]
-				]],
-				[/* block */ 'b', `
- The given buffer's position will be advanced as deflate
- operations are performed, up to the buffer's limit.
- The input buffer may be modified (refilled) between deflate
- operations; doing so is equivalent to creating a new buffer
- and setting it with this method.
- `],
-				[/* block */ 'b', `
- Modifying the input buffer's contents, position, or limit
- concurrently with an deflate operation will result in
- undefined behavior, which may include incorrect operation
- results or operation failure.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'input', [/* parameter description */
-					[/* text */ 't', `the input data bytes`]
-				]]
-			],
-			/* throws */ UDF,
-			/* return */ UDF
-		]],
-		[/* method */ 'getBytesWritten()', [
-			[/* method description */
-				[/* text */ 't', `Returns the total number of compressed bytes output so far.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the total (non-negative) number of compressed bytes output so far`]
-			]
-		]],
-		[/* method */ 'setDictionary(byte[])', [
-			[/* method description */
-				[/* text */ 't', `Sets preset dictionary for compression. A preset dictionary is used
- when the history buffer can be predetermined. When the data is later
- uncompressed with Inflater.inflate(), Inflater.getAdler() can be called
- in order to get the Adler-32 value of the dictionary required for
- decompression.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'dictionary', [/* parameter description */
-					[/* text */ 't', `the dictionary data bytes`]
-				]]
-			],
-			/* throws */ UDF,
-			/* return */ UDF
-		]],
-		[/* method */ 'setDictionary(byte[],int,int)', [
-			[/* method description */
-				[/* text */ 't', `Sets preset dictionary for compression. A preset dictionary is used
- when the history buffer can be predetermined. When the data is later
- uncompressed with Inflater.inflate(), Inflater.getAdler() can be called
- in order to get the Adler-32 value of the dictionary required for
- decompression.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'dictionary', [/* parameter description */
-					[/* text */ 't', `the dictionary data bytes`]
-				]],
-				[/* parameter */ 'off', [/* parameter description */
-					[/* text */ 't', `the start offset of the data`]
-				]],
-				[/* parameter */ 'len', [/* parameter description */
-					[/* text */ 't', `the length of the data`]
-				]]
-			],
-			/* throws */ UDF,
-			/* return */ UDF
-		]],
-		[/* method */ 'setDictionary(java.nio.ByteBuffer)', [
-			[/* method description */
-				[/* text */ 't', `Sets preset dictionary for compression. A preset dictionary is used
- when the history buffer can be predetermined. When the data is later
- uncompressed with Inflater.inflate(), Inflater.getAdler() can be called
- in order to get the Adler-32 value of the dictionary required for
- decompression.
- `],
-				[/* block */ 'b', `
- The bytes in given byte buffer will be fully consumed by this method.  On
- return, its position will equal its limit.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'dictionary', [/* parameter description */
-					[/* text */ 't', `the dictionary data bytes`]
-				]]
-			],
-			/* throws */ UDF,
-			/* return */ UDF
-		]],
-		[/* method */ 'getAdler()', [
-			[/* method description */
-				[/* text */ 't', `Returns the ADLER-32 value of the uncompressed data.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the ADLER-32 value of the uncompressed data`]
-			]
-		]],
-		[/* method */ 'getBytesRead()', [
-			[/* method description */
-				[/* text */ 't', `Returns the total number of uncompressed bytes input so far.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the total (non-negative) number of uncompressed bytes input so far`]
-			]
-		]],
-		[/* method */ 'getTotalIn()', [
-			[/* method description */
-				[/* text */ 't', `Returns the total number of uncompressed bytes input so far.
-
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', `Since the number of bytes may be greater than
- Integer.MAX_VALUE, the `],
-					[/* reference */ 'r', `#getBytesRead()`, `getBytesRead()`],
-					[/* text */ 't', ` method is now
- the preferred means of obtaining this information.`]
-				]]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the total number of uncompressed bytes input so far`]
-			]
-		]],
-		[/* method */ 'getTotalOut()', [
-			[/* method description */
-				[/* text */ 't', `Returns the total number of compressed bytes output so far.
-
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', `Since the number of bytes may be greater than
- Integer.MAX_VALUE, the `],
-					[/* reference */ 'r', `#getBytesWritten()`, `getBytesWritten()`],
-					[/* text */ 't', ` method is now
- the preferred means of obtaining this information.`]
-				]]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the total number of compressed bytes output so far`]
-			]
-		]],
-		[/* method */ 'setLevel(int)', [
-			[/* method description */
-				[/* text */ 't', `Sets the compression level to the specified value.
-
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', ` If the compression level is changed, the next invocation
- of `],
-					[/* inline code block */ 'i', `deflate`],
-					[/* text */ 't', ` will compress the input available so far
- with the old level (and may be flushed); the new level will
- take effect only after that invocation.`]
-				]]
-			],
-			[/* parameters */
-				[/* parameter */ 'level', [/* parameter description */
-					[/* text */ 't', `the new compression level (0-9)`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
-					[/* text */ 't', `if the compression level is invalid`]
-				]]
-			],
-			/* return */ UDF
-		]],
-		[/* method */ 'deflate(java.nio.ByteBuffer,int)', [
-			[/* method description */
-				[/* text */ 't', `Compresses the input data and fills the specified buffer with compressed
- data. Returns actual number of bytes of data compressed.
-
- `],
-				[/* block */ 'b', `Compression flush mode is one of the following three modes:
-
- `],
-				[/* list */ 'l', [
-					[/* block */ 'b', [
-						[/* text */ 't', `NO_FLUSH`],
-						[/* text */ 't', `: allows the deflater to decide how much data
- to accumulate, before producing output, in order to achieve the best
- compression (should be used in normal use scenario). A return value
- of 0 in this flush mode indicates that `],
-						[/* reference */ 'r', `#needsInput()`, `needsInput()`],
-						[/* text */ 't', ` should
- be called in order to determine if more input data is required.
-
- `]
-					]],
-					[/* block */ 'b', [
-						[/* text */ 't', `SYNC_FLUSH`],
-						[/* text */ 't', `: all pending output in the deflater is flushed,
- to the specified output buffer, so that an inflater that works on
- compressed data can get all input data available so far (In particular
- the `],
-						[/* reference */ 'r', `#needsInput()`, `needsInput()`],
-						[/* text */ 't', ` returns `],
-						[/* inline code block */ 'i', `true`],
-						[/* text */ 't', ` after this invocation
- if enough output space is provided). Flushing with `],
-						[/* text */ 't', `SYNC_FLUSH`],
-						[/* text */ 't', `
- may degrade compression for some compression algorithms and so it
- should be used only when necessary.
-
- `]
-					]],
-					[/* block */ 'b', [
-						[/* text */ 't', `FULL_FLUSH`],
-						[/* text */ 't', `: all pending output is flushed out as with
- `],
-						[/* text */ 't', `SYNC_FLUSH`],
-						[/* text */ 't', `. The compression state is reset so that the inflater
- that works on the compressed output data can restart from this point
- if previous compressed data has been damaged or if random access is
- desired. Using `],
-						[/* text */ 't', `FULL_FLUSH`],
-						[/* text */ 't', ` too often can seriously degrade
- compression.
- `]
-					]]
-				]],
-				[/* block */ 'b', ''],
-				[/* block */ 'b', [
-					[/* text */ 't', `In the case of `],
-					[/* text */ 't', `FULL_FLUSH`],
-					[/* text */ 't', ` or `],
-					[/* text */ 't', `SYNC_FLUSH`],
-					[/* text */ 't', `, if
- the return value is equal to the `],
-					[/* reference */ 'r', `java.util.Buffer#remaining()`],
-					[/* text */ 't', `
- of the buffer, this method should be invoked again with the same
- `],
-					[/* inline code block */ 'i', `flush`],
-					[/* text */ 't', ` parameter and more output space. Make sure that
- the buffer has at least 6 bytes of remaining space to avoid the
- flush marker (5 bytes) being repeatedly output to the output buffer
- every time this method is invoked.
-
- `]
-				]],
-				[/* block */ 'b', [
-					[/* text */ 't', `On success, the position of the given `],
-					[/* inline code block */ 'i', `output`],
-					[/* text */ 't', ` byte buffer will be
- advanced by as many bytes as were produced by the operation, which is equal
- to the number returned by this method.
-
- `]
-				]],
-				[/* block */ 'b', [
-					[/* text */ 't', `If the `],
-					[/* reference */ 'r', `#setInput(java.nio.ByteBuffer)`, `setInput(ByteBuffer)`],
-					[/* text */ 't', ` method was called to provide a buffer
- for input, the input buffer's position will be advanced by the number of bytes
- consumed by this operation.`]
+					[/* inline code block */ 'i', `deflater.deflate(b, 0, b.length, Deflater.NO_FLUSH)`],
+					[/* text */ 't', `.`]
 				]]
 			],
 			[/* parameters */
 				[/* parameter */ 'output', [/* parameter description */
 					[/* text */ 't', `the buffer for the compressed data`]
-				]],
-				[/* parameter */ 'flush', [/* parameter description */
-					[/* text */ 't', `the compression flush mode`]
 				]]
 			],
-			[/* throws */
-				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
-					[/* text */ 't', `if the flush mode is invalid`]
-				]]
-			],
+			/* throws */ UDF,
 			[/* return description */
-				[/* text */ 't', `the actual number of bytes of compressed data written to
-         the output buffer`]
+				[/* text */ 't', `the actual number of bytes of compressed data written to the
+         output buffer`]
 			]
 		]],
 		[/* method */ 'deflate(byte[],int,int)', [
@@ -610,40 +264,6 @@ DocsCollector.collect('java.util.zip.Deflater', [
 				]],
 				[/* parameter */ 'len', [/* parameter description */
 					[/* text */ 't', `the maximum number of bytes of compressed data`]
-				]]
-			],
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the actual number of bytes of compressed data written to the
-         output buffer`]
-			]
-		]],
-		[/* method */ 'deflate(byte[])', [
-			[/* method description */
-				[/* text */ 't', `Compresses the input data and fills specified buffer with compressed
- data. Returns actual number of bytes of compressed data. A return value
- of 0 indicates that `],
-				[/* reference */ 'r', `#needsInput()`, `needsInput`],
-				[/* text */ 't', ` should be called
- in order to determine if more input data is required.
-
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', `This method uses `],
-					[/* text */ 't', `NO_FLUSH`],
-					[/* text */ 't', ` as its compression flush mode.
- An invocation of this method of the form `],
-					[/* inline code block */ 'i', `deflater.deflate(b)`],
-					[/* text */ 't', `
- yields the same result as the invocation of
- `],
-					[/* inline code block */ 'i', `deflater.deflate(b, 0, b.length, Deflater.NO_FLUSH)`],
-					[/* text */ 't', `.`]
-				]]
-			],
-			[/* parameters */
-				[/* parameter */ 'output', [/* parameter description */
-					[/* text */ 't', `the buffer for the compressed data`]
 				]]
 			],
 			/* throws */ UDF,
@@ -796,6 +416,386 @@ DocsCollector.collect('java.util.zip.Deflater', [
 				[/* text */ 't', `the actual number of bytes of compressed data written to the
          output buffer`]
 			]
+		]],
+		[/* method */ 'deflate(java.nio.ByteBuffer,int)', [
+			[/* method description */
+				[/* text */ 't', `Compresses the input data and fills the specified buffer with compressed
+ data. Returns actual number of bytes of data compressed.
+
+ `],
+				[/* block */ 'b', `Compression flush mode is one of the following three modes:
+
+ `],
+				[/* list */ 'l', [
+					[/* block */ 'b', [
+						[/* text */ 't', `NO_FLUSH`],
+						[/* text */ 't', `: allows the deflater to decide how much data
+ to accumulate, before producing output, in order to achieve the best
+ compression (should be used in normal use scenario). A return value
+ of 0 in this flush mode indicates that `],
+						[/* reference */ 'r', `#needsInput()`, `needsInput()`],
+						[/* text */ 't', ` should
+ be called in order to determine if more input data is required.
+
+ `]
+					]],
+					[/* block */ 'b', [
+						[/* text */ 't', `SYNC_FLUSH`],
+						[/* text */ 't', `: all pending output in the deflater is flushed,
+ to the specified output buffer, so that an inflater that works on
+ compressed data can get all input data available so far (In particular
+ the `],
+						[/* reference */ 'r', `#needsInput()`, `needsInput()`],
+						[/* text */ 't', ` returns `],
+						[/* inline code block */ 'i', `true`],
+						[/* text */ 't', ` after this invocation
+ if enough output space is provided). Flushing with `],
+						[/* text */ 't', `SYNC_FLUSH`],
+						[/* text */ 't', `
+ may degrade compression for some compression algorithms and so it
+ should be used only when necessary.
+
+ `]
+					]],
+					[/* block */ 'b', [
+						[/* text */ 't', `FULL_FLUSH`],
+						[/* text */ 't', `: all pending output is flushed out as with
+ `],
+						[/* text */ 't', `SYNC_FLUSH`],
+						[/* text */ 't', `. The compression state is reset so that the inflater
+ that works on the compressed output data can restart from this point
+ if previous compressed data has been damaged or if random access is
+ desired. Using `],
+						[/* text */ 't', `FULL_FLUSH`],
+						[/* text */ 't', ` too often can seriously degrade
+ compression.
+ `]
+					]]
+				]],
+				[/* block */ 'b', ''],
+				[/* block */ 'b', [
+					[/* text */ 't', `In the case of `],
+					[/* text */ 't', `FULL_FLUSH`],
+					[/* text */ 't', ` or `],
+					[/* text */ 't', `SYNC_FLUSH`],
+					[/* text */ 't', `, if
+ the return value is equal to the `],
+					[/* reference */ 'r', `java.util.Buffer#remaining()`],
+					[/* text */ 't', `
+ of the buffer, this method should be invoked again with the same
+ `],
+					[/* inline code block */ 'i', `flush`],
+					[/* text */ 't', ` parameter and more output space. Make sure that
+ the buffer has at least 6 bytes of remaining space to avoid the
+ flush marker (5 bytes) being repeatedly output to the output buffer
+ every time this method is invoked.
+
+ `]
+				]],
+				[/* block */ 'b', [
+					[/* text */ 't', `On success, the position of the given `],
+					[/* inline code block */ 'i', `output`],
+					[/* text */ 't', ` byte buffer will be
+ advanced by as many bytes as were produced by the operation, which is equal
+ to the number returned by this method.
+
+ `]
+				]],
+				[/* block */ 'b', [
+					[/* text */ 't', `If the `],
+					[/* reference */ 'r', `#setInput(java.nio.ByteBuffer)`, `setInput(ByteBuffer)`],
+					[/* text */ 't', ` method was called to provide a buffer
+ for input, the input buffer's position will be advanced by the number of bytes
+ consumed by this operation.`]
+				]]
+			],
+			[/* parameters */
+				[/* parameter */ 'output', [/* parameter description */
+					[/* text */ 't', `the buffer for the compressed data`]
+				]],
+				[/* parameter */ 'flush', [/* parameter description */
+					[/* text */ 't', `the compression flush mode`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
+					[/* text */ 't', `if the flush mode is invalid`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `the actual number of bytes of compressed data written to
+         the output buffer`]
+			]
+		]],
+		[/* method */ 'getAdler()', [
+			[/* method description */
+				[/* text */ 't', `Returns the ADLER-32 value of the uncompressed data.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the ADLER-32 value of the uncompressed data`]
+			]
+		]],
+		[/* method */ 'getTotalIn()', [
+			[/* method description */
+				[/* text */ 't', `Returns the total number of uncompressed bytes input so far.
+
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', `Since the number of bytes may be greater than
+ Integer.MAX_VALUE, the `],
+					[/* reference */ 'r', `#getBytesRead()`, `getBytesRead()`],
+					[/* text */ 't', ` method is now
+ the preferred means of obtaining this information.`]
+				]]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the total number of uncompressed bytes input so far`]
+			]
+		]],
+		[/* method */ 'getTotalOut()', [
+			[/* method description */
+				[/* text */ 't', `Returns the total number of compressed bytes output so far.
+
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', `Since the number of bytes may be greater than
+ Integer.MAX_VALUE, the `],
+					[/* reference */ 'r', `#getBytesWritten()`, `getBytesWritten()`],
+					[/* text */ 't', ` method is now
+ the preferred means of obtaining this information.`]
+				]]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the total number of compressed bytes output so far`]
+			]
+		]],
+		[/* method */ 'getBytesRead()', [
+			[/* method description */
+				[/* text */ 't', `Returns the total number of uncompressed bytes input so far.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the total (non-negative) number of uncompressed bytes input so far`]
+			]
+		]],
+		[/* method */ 'getBytesWritten()', [
+			[/* method description */
+				[/* text */ 't', `Returns the total number of compressed bytes output so far.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the total (non-negative) number of compressed bytes output so far`]
+			]
+		]],
+		[/* method */ 'end()', [
+			[/* method description */
+				[/* text */ 't', `Closes the compressor and discards any unprocessed input.
+
+ This method should be called when the compressor is no longer
+ being used. Once this method is called, the behavior of the
+ Deflater object is undefined.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			/* return */ UDF
+		]],
+		[/* method */ 'finish()', [
+			[/* method description */
+				[/* text */ 't', `When called, indicates that compression should end with the current
+ contents of the input buffer.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			/* return */ UDF
+		]],
+		[/* method */ 'reset()', [
+			[/* method description */
+				[/* text */ 't', `Resets deflater so that a new set of input data can be processed.
+ Keeps current compression level and strategy settings.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			/* return */ UDF
+		]],
+		[/* method */ 'setDictionary(byte[])', [
+			[/* method description */
+				[/* text */ 't', `Sets preset dictionary for compression. A preset dictionary is used
+ when the history buffer can be predetermined. When the data is later
+ uncompressed with Inflater.inflate(), Inflater.getAdler() can be called
+ in order to get the Adler-32 value of the dictionary required for
+ decompression.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'dictionary', [/* parameter description */
+					[/* text */ 't', `the dictionary data bytes`]
+				]]
+			],
+			/* throws */ UDF,
+			/* return */ UDF
+		]],
+		[/* method */ 'setDictionary(byte[],int,int)', [
+			[/* method description */
+				[/* text */ 't', `Sets preset dictionary for compression. A preset dictionary is used
+ when the history buffer can be predetermined. When the data is later
+ uncompressed with Inflater.inflate(), Inflater.getAdler() can be called
+ in order to get the Adler-32 value of the dictionary required for
+ decompression.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'dictionary', [/* parameter description */
+					[/* text */ 't', `the dictionary data bytes`]
+				]],
+				[/* parameter */ 'off', [/* parameter description */
+					[/* text */ 't', `the start offset of the data`]
+				]],
+				[/* parameter */ 'len', [/* parameter description */
+					[/* text */ 't', `the length of the data`]
+				]]
+			],
+			/* throws */ UDF,
+			/* return */ UDF
+		]],
+		[/* method */ 'setDictionary(java.nio.ByteBuffer)', [
+			[/* method description */
+				[/* text */ 't', `Sets preset dictionary for compression. A preset dictionary is used
+ when the history buffer can be predetermined. When the data is later
+ uncompressed with Inflater.inflate(), Inflater.getAdler() can be called
+ in order to get the Adler-32 value of the dictionary required for
+ decompression.
+ `],
+				[/* block */ 'b', `
+ The bytes in given byte buffer will be fully consumed by this method.  On
+ return, its position will equal its limit.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'dictionary', [/* parameter description */
+					[/* text */ 't', `the dictionary data bytes`]
+				]]
+			],
+			/* throws */ UDF,
+			/* return */ UDF
+		]],
+		[/* method */ 'setInput(byte[])', [
+			[/* method description */
+				[/* text */ 't', `Sets input data for compression.
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', `
+ One of the `],
+					[/* inline code block */ 'i', `setInput()`],
+					[/* text */ 't', ` methods should be called whenever
+ `],
+					[/* inline code block */ 'i', `needsInput()`],
+					[/* text */ 't', ` returns true indicating that more input data
+ is required.`]
+				]]
+			],
+			[/* parameters */
+				[/* parameter */ 'input', [/* parameter description */
+					[/* text */ 't', `the input data bytes`]
+				]]
+			],
+			/* throws */ UDF,
+			/* return */ UDF
+		]],
+		[/* method */ 'setInput(byte[],int,int)', [
+			[/* method description */
+				[/* text */ 't', `Sets input data for compression.
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', `
+ One of the `],
+					[/* inline code block */ 'i', `setInput()`],
+					[/* text */ 't', ` methods should be called whenever
+ `],
+					[/* inline code block */ 'i', `needsInput()`],
+					[/* text */ 't', ` returns true indicating that more input data
+ is required.`]
+				]]
+			],
+			[/* parameters */
+				[/* parameter */ 'input', [/* parameter description */
+					[/* text */ 't', `the input data bytes`]
+				]],
+				[/* parameter */ 'off', [/* parameter description */
+					[/* text */ 't', `the start offset of the data`]
+				]],
+				[/* parameter */ 'len', [/* parameter description */
+					[/* text */ 't', `the length of the data`]
+				]]
+			],
+			/* throws */ UDF,
+			/* return */ UDF
+		]],
+		[/* method */ 'setInput(java.nio.ByteBuffer)', [
+			[/* method description */
+				[/* text */ 't', `Sets input data for compression.
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', `
+ One of the `],
+					[/* inline code block */ 'i', `setInput()`],
+					[/* text */ 't', ` methods should be called whenever
+ `],
+					[/* inline code block */ 'i', `needsInput()`],
+					[/* text */ 't', ` returns true indicating that more input data
+ is required.
+ `]
+				]],
+				[/* block */ 'b', `
+ The given buffer's position will be advanced as deflate
+ operations are performed, up to the buffer's limit.
+ The input buffer may be modified (refilled) between deflate
+ operations; doing so is equivalent to creating a new buffer
+ and setting it with this method.
+ `],
+				[/* block */ 'b', `
+ Modifying the input buffer's contents, position, or limit
+ concurrently with an deflate operation will result in
+ undefined behavior, which may include incorrect operation
+ results or operation failure.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'input', [/* parameter description */
+					[/* text */ 't', `the input data bytes`]
+				]]
+			],
+			/* throws */ UDF,
+			/* return */ UDF
+		]],
+		[/* method */ 'setLevel(int)', [
+			[/* method description */
+				[/* text */ 't', `Sets the compression level to the specified value.
+
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', ` If the compression level is changed, the next invocation
+ of `],
+					[/* inline code block */ 'i', `deflate`],
+					[/* text */ 't', ` will compress the input available so far
+ with the old level (and may be flushed); the new level will
+ take effect only after that invocation.`]
+				]]
+			],
+			[/* parameters */
+				[/* parameter */ 'level', [/* parameter description */
+					[/* text */ 't', `the new compression level (0-9)`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
+					[/* text */ 't', `if the compression level is invalid`]
+				]]
+			],
+			/* return */ UDF
 		]],
 		[/* method */ 'setStrategy(int)', [
 			[/* method description */

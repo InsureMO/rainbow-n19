@@ -168,6 +168,37 @@ DocsCollector.collect('java.nio.charset.CharsetEncoder', [
 	],
 	/* fields */ UDF,
 	[/* constructors */
+		[/* constructor */ '<init>(java.nio.charset.Charset,float,float)', [
+			[/* constructor description */
+				[/* text */ 't', `Initializes a new encoder.  The new encoder will have the given
+ bytes-per-char values and its replacement will be the
+ byte array `],
+				[/* inline code block */ 'i', `{`],
+				[/* text */ 't', ` `],
+				[/* inline code block */ 'i', `(byte)'?'`],
+				[/* text */ 't', ` `],
+				[/* inline code block */ 'i', `}`],
+				[/* text */ 't', `.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'cs', [/* parameter description */
+					[/* text */ 't', `The charset that created this encoder`]
+				]],
+				[/* parameter */ 'averageBytesPerChar', [/* parameter description */
+					[/* text */ 't', `A positive float value indicating the expected number of
+         bytes that will be produced for each input character`]
+				]],
+				[/* parameter */ 'maxBytesPerChar', [/* parameter description */
+					[/* text */ 't', `A positive float value indicating the maximum number of
+         bytes that will be produced for each input character`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
+					[/* text */ 't', `If the preconditions on the parameters do not hold`]
+				]]
+			]
+		]],
 		[/* constructor */ '<init>(java.nio.charset.Charset,float,float,byte[])', [
 			[/* constructor description */
 				[/* text */ 't', `Initializes a new encoder.  The new encoder will have the given
@@ -199,40 +230,376 @@ DocsCollector.collect('java.nio.charset.CharsetEncoder', [
 					[/* text */ 't', `If the preconditions on the parameters do not hold`]
 				]]
 			]
-		]],
-		[/* constructor */ '<init>(java.nio.charset.Charset,float,float)', [
-			[/* constructor description */
-				[/* text */ 't', `Initializes a new encoder.  The new encoder will have the given
- bytes-per-char values and its replacement will be the
- byte array `],
-				[/* inline code block */ 'i', `{`],
-				[/* text */ 't', ` `],
-				[/* inline code block */ 'i', `(byte)'?'`],
-				[/* text */ 't', ` `],
-				[/* inline code block */ 'i', `}`],
-				[/* text */ 't', `.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'cs', [/* parameter description */
-					[/* text */ 't', `The charset that created this encoder`]
-				]],
-				[/* parameter */ 'averageBytesPerChar', [/* parameter description */
-					[/* text */ 't', `A positive float value indicating the expected number of
-         bytes that will be produced for each input character`]
-				]],
-				[/* parameter */ 'maxBytesPerChar', [/* parameter description */
-					[/* text */ 't', `A positive float value indicating the maximum number of
-         bytes that will be produced for each input character`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
-					[/* text */ 't', `If the preconditions on the parameters do not hold`]
-				]]
-			]
 		]]
 	],
 	[/* methods */
+		[/* method */ 'encodeLoop(java.nio.CharBuffer,java.nio.ByteBuffer)', [
+			[/* method description */
+				[/* text */ 't', `Encodes one or more characters into one or more bytes.
+
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', ` This method encapsulates the basic encoding loop, encoding as many
+ characters as possible until it either runs out of input, runs out of room
+ in the output buffer, or encounters an encoding error.  This method is
+ invoked by the `],
+					[/* reference */ 'r', `#encode(java.nio.CharBuffer,java.nio.ByteBuffer,boolean)`, `encode`],
+					[/* text */ 't', ` method, which handles result
+ interpretation and error recovery.
+
+ `]
+				]],
+				[/* block */ 'b', [
+					[/* text */ 't', ` The buffers are read from, and written to, starting at their current
+ positions.  At most `],
+					[/* reference */ 'r', `java.Buffer#remaining()`],
+					[/* text */ 't', ` characters
+ will be read, and at most `],
+					[/* reference */ 'r', `java.Buffer#remaining()`],
+					[/* text */ 't', `
+ bytes will be written.  The buffers' positions will be advanced to
+ reflect the characters read and the bytes written, but their marks and
+ limits will not be modified.
+
+ `]
+				]],
+				[/* block */ 'b', [
+					[/* text */ 't', ` This method returns a `],
+					[/* reference */ 'r', `java.nio.charset.CoderResult`],
+					[/* text */ 't', ` object to describe its
+ reason for termination, in the same manner as the `],
+					[/* reference */ 'r', `#encode(java.nio.CharBuffer,java.nio.ByteBuffer,boolean)`, `encode`],
+					[/* text */ 't', `
+ method.  Most implementations of this method will handle encoding errors
+ by returning an appropriate result object for interpretation by the
+ `],
+					[/* reference */ 'r', `#encode(java.nio.CharBuffer,java.nio.ByteBuffer,boolean)`, `encode`],
+					[/* text */ 't', ` method.  An optimized implementation may instead
+ examine the relevant error action and implement that action itself.
+
+ `]
+				]],
+				[/* block */ 'b', [
+					[/* text */ 't', ` An implementation of this method may perform arbitrary lookahead by
+ returning `],
+					[/* reference */ 'r', `.CoderResult#UNDERFLOW`],
+					[/* text */ 't', ` until it receives sufficient
+ input.  `]
+				]]
+			],
+			[/* parameters */
+				[/* parameter */ 'in', [/* parameter description */
+					[/* text */ 't', `The input character buffer`]
+				]],
+				[/* parameter */ 'out', [/* parameter description */
+					[/* text */ 't', `The output byte buffer`]
+				]]
+			],
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `A coder-result object describing the reason for termination`]
+			]
+		]],
+		[/* method */ 'implFlush(java.nio.ByteBuffer)', [
+			[/* method description */
+				[/* text */ 't', `Flushes this encoder.
+
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', ` The default implementation of this method does nothing, and always
+ returns `],
+					[/* reference */ 'r', `.CoderResult#UNDERFLOW`],
+					[/* text */ 't', `.  This method should be overridden
+ by encoders that may need to write final bytes to the output buffer
+ once the entire input sequence has been read. `]
+				]]
+			],
+			[/* parameters */
+				[/* parameter */ 'out', [/* parameter description */
+					[/* text */ 't', `The output byte buffer`]
+				]]
+			],
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `A coder-result object, either `],
+				[/* reference */ 'r', `.CoderResult#UNDERFLOW`],
+				[/* text */ 't', ` or
+          `],
+				[/* reference */ 'r', `.CoderResult#OVERFLOW`]
+			]
+		]],
+		[/* method */ 'implOnMalformedInput(java.nio.charset.CodingErrorAction)', [
+			[/* method description */
+				[/* text */ 't', `Reports a change to this encoder's malformed-input action.
+
+ `],
+				[/* block */ 'b', ` The default implementation of this method does nothing.  This method
+ should be overridden by encoders that require notification of changes to
+ the malformed-input action.  `]
+			],
+			[/* parameters */
+				[/* parameter */ 'newAction', [/* parameter description */
+					[/* text */ 't', `The new action`]
+				]]
+			],
+			/* throws */ UDF,
+			/* return */ UDF
+		]],
+		[/* method */ 'implOnUnmappableCharacter(java.nio.charset.CodingErrorAction)', [
+			[/* method description */
+				[/* text */ 't', `Reports a change to this encoder's unmappable-character action.
+
+ `],
+				[/* block */ 'b', ` The default implementation of this method does nothing.  This method
+ should be overridden by encoders that require notification of changes to
+ the unmappable-character action.  `]
+			],
+			[/* parameters */
+				[/* parameter */ 'newAction', [/* parameter description */
+					[/* text */ 't', `The new action`]
+				]]
+			],
+			/* throws */ UDF,
+			/* return */ UDF
+		]],
+		[/* method */ 'implReplaceWith(byte[])', [
+			[/* method description */
+				[/* text */ 't', `Reports a change to this encoder's replacement value.
+
+ `],
+				[/* block */ 'b', ` The default implementation of this method does nothing.  This method
+ should be overridden by encoders that require notification of changes to
+ the replacement.  `]
+			],
+			[/* parameters */
+				[/* parameter */ 'newReplacement', [/* parameter description */
+					[/* text */ 't', `The replacement value`]
+				]]
+			],
+			/* throws */ UDF,
+			/* return */ UDF
+		]],
+		[/* method */ 'implReset()', [
+			[/* method description */
+				[/* text */ 't', `Resets this encoder, clearing any charset-specific internal state.
+
+ `],
+				[/* block */ 'b', ` The default implementation of this method does nothing.  This method
+ should be overridden by encoders that maintain internal state.  `]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			/* return */ UDF
+		]],
+		[/* method */ 'canEncode(char)', [
+			[/* method description */
+				[/* text */ 't', `Tells whether or not this encoder can encode the given character.
+
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', ` This method returns `],
+					[/* inline code block */ 'i', `false`],
+					[/* text */ 't', ` if the given character is a
+ surrogate character; such characters can be interpreted only when they
+ are members of a pair consisting of a high surrogate followed by a low
+ surrogate.  The `],
+					[/* reference */ 'r', `#canEncode(java.lang.CharSequence)`, `canEncode(CharSequence)`],
+					[/* text */ 't', ` method may be used to test whether or not a
+ character sequence can be encoded.
+
+ `]
+				]],
+				[/* block */ 'b', [
+					[/* text */ 't', ` This method may modify this encoder's state; it should therefore not
+ be invoked if an `],
+					[/* text */ 't', `encoding operation`],
+					[/* text */ 't', ` is already in
+ progress.
+
+ `]
+				]],
+				[/* block */ 'b', ` The default implementation of this method is not very efficient; it
+ should generally be overridden to improve performance.  `]
+			],
+			[/* parameters */
+				[/* parameter */ 'c', [/* parameter description */
+					[/* text */ 't', `The given character`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.lang.IllegalStateException', [/* throw description */
+					[/* text */ 't', `If an encoding operation is already in progress`]
+				]]
+			],
+			[/* return description */
+				[/* inline code block */ 'i', `true`],
+				[/* text */ 't', ` if, and only if, this encoder can encode
+          the given character`]
+			]
+		]],
+		[/* method */ 'canEncode(java.lang.CharSequence)', [
+			[/* method description */
+				[/* text */ 't', `Tells whether or not this encoder can encode the given character
+ sequence.
+
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', ` If this method returns `],
+					[/* inline code block */ 'i', `false`],
+					[/* text */ 't', ` for a particular character
+ sequence then more information about why the sequence cannot be encoded
+ may be obtained by performing a full `],
+					[/* text */ 't', `encoding operation`],
+					[/* text */ 't', `.
+
+ `]
+				]],
+				[/* block */ 'b', ` This method may modify this encoder's state; it should therefore not
+ be invoked if an encoding operation is already in progress.
+
+ `],
+				[/* block */ 'b', ` The default implementation of this method is not very efficient; it
+ should generally be overridden to improve performance.  `]
+			],
+			[/* parameters */
+				[/* parameter */ 'cs', [/* parameter description */
+					[/* text */ 't', `The given character sequence`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.lang.IllegalStateException', [/* throw description */
+					[/* text */ 't', `If an encoding operation is already in progress`]
+				]]
+			],
+			[/* return description */
+				[/* inline code block */ 'i', `true`],
+				[/* text */ 't', ` if, and only if, this encoder can encode
+          the given character without throwing any exceptions and without
+          performing any replacements`]
+			]
+		]],
+		[/* method */ 'isLegalReplacement(byte[])', [
+			[/* method description */
+				[/* text */ 't', `Tells whether or not the given byte array is a legal replacement value
+ for this encoder.
+
+ `],
+				[/* block */ 'b', ` A replacement is legal if, and only if, it is a legal sequence of
+ bytes in this encoder's charset; that is, it must be possible to decode
+ the replacement into one or more sixteen-bit Unicode characters.
+
+ `],
+				[/* block */ 'b', ` The default implementation of this method is not very efficient; it
+ should generally be overridden to improve performance.  `]
+			],
+			[/* parameters */
+				[/* parameter */ 'repl', [/* parameter description */
+					[/* text */ 't', `The byte array to be tested`]
+				]]
+			],
+			/* throws */ UDF,
+			[/* return description */
+				[/* inline code block */ 'i', `true`],
+				[/* text */ 't', ` if, and only if, the given byte array
+          is a legal replacement value for this encoder`]
+			]
+		]],
+		[/* method */ 'replacement()', [
+			[/* method description */
+				[/* text */ 't', `Returns this encoder's replacement value.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `This encoder's current replacement,
+          which is never `],
+				[/* inline code block */ 'i', `null`],
+				[/* text */ 't', ` and is never empty`]
+			]
+		]],
+		[/* method */ 'averageBytesPerChar()', [
+			[/* method description */
+				[/* text */ 't', `Returns the average number of bytes that will be produced for each
+ character of input.  This heuristic value may be used to estimate the size
+ of the output buffer required for a given input sequence.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `The average number of bytes produced
+          per character of input`]
+			]
+		]],
+		[/* method */ 'maxBytesPerChar()', [
+			[/* method description */
+				[/* text */ 't', `Returns the maximum number of bytes that will be produced for each
+ character of input.  This value may be used to compute the worst-case size
+ of the output buffer required for a given input sequence. This value
+ accounts for any necessary content-independent prefix or suffix
+
+ bytes, such as byte-order marks.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `The maximum number of bytes that will be produced per
+          character of input`]
+			]
+		]],
+		[/* method */ 'encode(java.nio.CharBuffer)', [
+			[/* method description */
+				[/* text */ 't', `Convenience method that encodes the remaining content of a single input
+ character buffer into a newly-allocated byte buffer.
+
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', ` This method implements an entire `],
+					[/* text */ 't', `encoding operation`],
+					[/* text */ 't', `; that is, it resets this encoder, then it encodes the
+ characters in the given character buffer, and finally it flushes this
+ encoder.  This method should therefore not be invoked if an encoding
+ operation is already in progress.  `]
+				]]
+			],
+			[/* parameters */
+				[/* parameter */ 'in', [/* parameter description */
+					[/* text */ 't', `The input character buffer`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.lang.IllegalStateException', [/* throw description */
+					[/* text */ 't', `If an encoding operation is already in progress`]
+				]],
+				[/* throw */ 'java.nio.charset.MalformedInputException', [/* throw description */
+					[/* text */ 't', `If the character sequence starting at the input buffer's current
+          position is not a legal sixteen-bit Unicode sequence and the current malformed-input action
+          is `],
+					[/* reference */ 'r', `.CodingErrorAction#REPORT`]
+				]],
+				[/* throw */ 'java.nio.charset.UnmappableCharacterException', [/* throw description */
+					[/* text */ 't', `If the character sequence starting at the input buffer's current
+          position cannot be mapped to an equivalent byte sequence and
+          the current unmappable-character action is `],
+					[/* reference */ 'r', `.CodingErrorAction#REPORT`]
+				]],
+				[/* throw */ 'java.nio.charset.CharacterCodingException', UDF]
+			],
+			[/* return description */
+				[/* text */ 't', `A newly-allocated byte buffer containing the result of the
+         encoding operation.  The buffer's position will be zero and its
+         limit will follow the last byte written.`]
+			]
+		]],
+		[/* method */ 'charset()', [
+			[/* method description */
+				[/* text */ 't', `Returns the charset that created this encoder.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `This encoder's charset`]
+			]
+		]],
 		[/* method */ 'onMalformedInput(java.nio.charset.CodingErrorAction)', [
 			[/* method description */
 				[/* text */ 't', `Changes this encoder's action for malformed-input errors.
@@ -285,20 +652,64 @@ DocsCollector.collect('java.nio.charset.CharsetEncoder', [
 				[/* text */ 't', `This encoder`]
 			]
 		]],
-		[/* method */ 'maxBytesPerChar()', [
+		[/* method */ 'replaceWith(byte[])', [
 			[/* method description */
-				[/* text */ 't', `Returns the maximum number of bytes that will be produced for each
- character of input.  This value may be used to compute the worst-case size
- of the output buffer required for a given input sequence. This value
- accounts for any necessary content-independent prefix or suffix
+				[/* text */ 't', `Changes this encoder's replacement value.
 
- bytes, such as byte-order marks.`]
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', ` This method invokes the `],
+					[/* reference */ 'r', `#implReplaceWith(byte%5B%5D)`, `implReplaceWith`],
+					[/* text */ 't', `
+ method, passing the new replacement, after checking that the new
+ replacement is acceptable.  `]
+				]]
+			],
+			[/* parameters */
+				[/* parameter */ 'newReplacement', [/* parameter description */
+					[/* text */ 't', `The new replacement; must not be
+         `],
+					[/* inline code block */ 'i', `null`],
+					[/* text */ 't', `, must have non-zero length,
+
+
+
+
+
+         must not be longer than the value returned by the
+         `],
+					[/* reference */ 'r', `#maxBytesPerChar()`, `maxBytesPerChar`],
+					[/* text */ 't', ` method, and
+         must be `],
+					[/* reference */ 'r', `#isLegalReplacement(byte%5B%5D)`, `legal`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
+					[/* text */ 't', `If the preconditions on the parameter do not hold`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `This encoder`]
+			]
+		]],
+		[/* method */ 'reset()', [
+			[/* method description */
+				[/* text */ 't', `Resets this encoder, clearing any internal state.
+
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', ` This method resets charset-independent state and also invokes the
+ `],
+					[/* reference */ 'r', `#implReset()`, `implReset`],
+					[/* text */ 't', ` method in order to perform any
+ charset-specific reset actions.  `]
+				]]
 			],
 			/* parameters */ UDF,
 			/* throws */ UDF,
 			[/* return description */
-				[/* text */ 't', `The maximum number of bytes that will be produced per
-          character of input`]
+				[/* text */ 't', `This encoder`]
 			]
 		]],
 		[/* method */ 'encode(java.nio.CharBuffer,java.nio.ByteBuffer,boolean)', [
@@ -478,50 +889,6 @@ DocsCollector.collect('java.nio.charset.CharsetEncoder', [
 				[/* text */ 't', `A coder-result object describing the reason for termination`]
 			]
 		]],
-		[/* method */ 'encode(java.nio.CharBuffer)', [
-			[/* method description */
-				[/* text */ 't', `Convenience method that encodes the remaining content of a single input
- character buffer into a newly-allocated byte buffer.
-
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', ` This method implements an entire `],
-					[/* text */ 't', `encoding operation`],
-					[/* text */ 't', `; that is, it resets this encoder, then it encodes the
- characters in the given character buffer, and finally it flushes this
- encoder.  This method should therefore not be invoked if an encoding
- operation is already in progress.  `]
-				]]
-			],
-			[/* parameters */
-				[/* parameter */ 'in', [/* parameter description */
-					[/* text */ 't', `The input character buffer`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.IllegalStateException', [/* throw description */
-					[/* text */ 't', `If an encoding operation is already in progress`]
-				]],
-				[/* throw */ 'java.nio.charset.MalformedInputException', [/* throw description */
-					[/* text */ 't', `If the character sequence starting at the input buffer's current
-          position is not a legal sixteen-bit Unicode sequence and the current malformed-input action
-          is `],
-					[/* reference */ 'r', `.CodingErrorAction#REPORT`]
-				]],
-				[/* throw */ 'java.nio.charset.UnmappableCharacterException', [/* throw description */
-					[/* text */ 't', `If the character sequence starting at the input buffer's current
-          position cannot be mapped to an equivalent byte sequence and
-          the current unmappable-character action is `],
-					[/* reference */ 'r', `.CodingErrorAction#REPORT`]
-				]],
-				[/* throw */ 'java.nio.charset.CharacterCodingException', UDF]
-			],
-			[/* return description */
-				[/* text */ 't', `A newly-allocated byte buffer containing the result of the
-         encoding operation.  The buffer's position will be zero and its
-         limit will follow the last byte written.`]
-			]
-		]],
 		[/* method */ 'flush(java.nio.ByteBuffer)', [
 			[/* method description */
 				[/* text */ 't', `Flushes this encoder.
@@ -597,256 +964,6 @@ DocsCollector.collect('java.nio.charset.CharsetEncoder', [
 				[/* reference */ 'r', `.CoderResult#OVERFLOW`]
 			]
 		]],
-		[/* method */ 'canEncode(java.lang.CharSequence)', [
-			[/* method description */
-				[/* text */ 't', `Tells whether or not this encoder can encode the given character
- sequence.
-
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', ` If this method returns `],
-					[/* inline code block */ 'i', `false`],
-					[/* text */ 't', ` for a particular character
- sequence then more information about why the sequence cannot be encoded
- may be obtained by performing a full `],
-					[/* text */ 't', `encoding operation`],
-					[/* text */ 't', `.
-
- `]
-				]],
-				[/* block */ 'b', ` This method may modify this encoder's state; it should therefore not
- be invoked if an encoding operation is already in progress.
-
- `],
-				[/* block */ 'b', ` The default implementation of this method is not very efficient; it
- should generally be overridden to improve performance.  `]
-			],
-			[/* parameters */
-				[/* parameter */ 'cs', [/* parameter description */
-					[/* text */ 't', `The given character sequence`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.IllegalStateException', [/* throw description */
-					[/* text */ 't', `If an encoding operation is already in progress`]
-				]]
-			],
-			[/* return description */
-				[/* inline code block */ 'i', `true`],
-				[/* text */ 't', ` if, and only if, this encoder can encode
-          the given character without throwing any exceptions and without
-          performing any replacements`]
-			]
-		]],
-		[/* method */ 'canEncode(char)', [
-			[/* method description */
-				[/* text */ 't', `Tells whether or not this encoder can encode the given character.
-
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', ` This method returns `],
-					[/* inline code block */ 'i', `false`],
-					[/* text */ 't', ` if the given character is a
- surrogate character; such characters can be interpreted only when they
- are members of a pair consisting of a high surrogate followed by a low
- surrogate.  The `],
-					[/* reference */ 'r', `#canEncode(java.lang.CharSequence)`, `canEncode(CharSequence)`],
-					[/* text */ 't', ` method may be used to test whether or not a
- character sequence can be encoded.
-
- `]
-				]],
-				[/* block */ 'b', [
-					[/* text */ 't', ` This method may modify this encoder's state; it should therefore not
- be invoked if an `],
-					[/* text */ 't', `encoding operation`],
-					[/* text */ 't', ` is already in
- progress.
-
- `]
-				]],
-				[/* block */ 'b', ` The default implementation of this method is not very efficient; it
- should generally be overridden to improve performance.  `]
-			],
-			[/* parameters */
-				[/* parameter */ 'c', [/* parameter description */
-					[/* text */ 't', `The given character`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.IllegalStateException', [/* throw description */
-					[/* text */ 't', `If an encoding operation is already in progress`]
-				]]
-			],
-			[/* return description */
-				[/* inline code block */ 'i', `true`],
-				[/* text */ 't', ` if, and only if, this encoder can encode
-          the given character`]
-			]
-		]],
-		[/* method */ 'charset()', [
-			[/* method description */
-				[/* text */ 't', `Returns the charset that created this encoder.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `This encoder's charset`]
-			]
-		]],
-		[/* method */ 'replacement()', [
-			[/* method description */
-				[/* text */ 't', `Returns this encoder's replacement value.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `This encoder's current replacement,
-          which is never `],
-				[/* inline code block */ 'i', `null`],
-				[/* text */ 't', ` and is never empty`]
-			]
-		]],
-		[/* method */ 'reset()', [
-			[/* method description */
-				[/* text */ 't', `Resets this encoder, clearing any internal state.
-
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', ` This method resets charset-independent state and also invokes the
- `],
-					[/* reference */ 'r', `#implReset()`, `implReset`],
-					[/* text */ 't', ` method in order to perform any
- charset-specific reset actions.  `]
-				]]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `This encoder`]
-			]
-		]],
-		[/* method */ 'implFlush(java.nio.ByteBuffer)', [
-			[/* method description */
-				[/* text */ 't', `Flushes this encoder.
-
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', ` The default implementation of this method does nothing, and always
- returns `],
-					[/* reference */ 'r', `.CoderResult#UNDERFLOW`],
-					[/* text */ 't', `.  This method should be overridden
- by encoders that may need to write final bytes to the output buffer
- once the entire input sequence has been read. `]
-				]]
-			],
-			[/* parameters */
-				[/* parameter */ 'out', [/* parameter description */
-					[/* text */ 't', `The output byte buffer`]
-				]]
-			],
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `A coder-result object, either `],
-				[/* reference */ 'r', `.CoderResult#UNDERFLOW`],
-				[/* text */ 't', ` or
-          `],
-				[/* reference */ 'r', `.CoderResult#OVERFLOW`]
-			]
-		]],
-		[/* method */ 'isLegalReplacement(byte[])', [
-			[/* method description */
-				[/* text */ 't', `Tells whether or not the given byte array is a legal replacement value
- for this encoder.
-
- `],
-				[/* block */ 'b', ` A replacement is legal if, and only if, it is a legal sequence of
- bytes in this encoder's charset; that is, it must be possible to decode
- the replacement into one or more sixteen-bit Unicode characters.
-
- `],
-				[/* block */ 'b', ` The default implementation of this method is not very efficient; it
- should generally be overridden to improve performance.  `]
-			],
-			[/* parameters */
-				[/* parameter */ 'repl', [/* parameter description */
-					[/* text */ 't', `The byte array to be tested`]
-				]]
-			],
-			/* throws */ UDF,
-			[/* return description */
-				[/* inline code block */ 'i', `true`],
-				[/* text */ 't', ` if, and only if, the given byte array
-          is a legal replacement value for this encoder`]
-			]
-		]],
-		[/* method */ 'encodeLoop(java.nio.CharBuffer,java.nio.ByteBuffer)', [
-			[/* method description */
-				[/* text */ 't', `Encodes one or more characters into one or more bytes.
-
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', ` This method encapsulates the basic encoding loop, encoding as many
- characters as possible until it either runs out of input, runs out of room
- in the output buffer, or encounters an encoding error.  This method is
- invoked by the `],
-					[/* reference */ 'r', `#encode(java.nio.CharBuffer,java.nio.ByteBuffer,boolean)`, `encode`],
-					[/* text */ 't', ` method, which handles result
- interpretation and error recovery.
-
- `]
-				]],
-				[/* block */ 'b', [
-					[/* text */ 't', ` The buffers are read from, and written to, starting at their current
- positions.  At most `],
-					[/* reference */ 'r', `java.Buffer#remaining()`],
-					[/* text */ 't', ` characters
- will be read, and at most `],
-					[/* reference */ 'r', `java.Buffer#remaining()`],
-					[/* text */ 't', `
- bytes will be written.  The buffers' positions will be advanced to
- reflect the characters read and the bytes written, but their marks and
- limits will not be modified.
-
- `]
-				]],
-				[/* block */ 'b', [
-					[/* text */ 't', ` This method returns a `],
-					[/* reference */ 'r', `java.nio.charset.CoderResult`],
-					[/* text */ 't', ` object to describe its
- reason for termination, in the same manner as the `],
-					[/* reference */ 'r', `#encode(java.nio.CharBuffer,java.nio.ByteBuffer,boolean)`, `encode`],
-					[/* text */ 't', `
- method.  Most implementations of this method will handle encoding errors
- by returning an appropriate result object for interpretation by the
- `],
-					[/* reference */ 'r', `#encode(java.nio.CharBuffer,java.nio.ByteBuffer,boolean)`, `encode`],
-					[/* text */ 't', ` method.  An optimized implementation may instead
- examine the relevant error action and implement that action itself.
-
- `]
-				]],
-				[/* block */ 'b', [
-					[/* text */ 't', ` An implementation of this method may perform arbitrary lookahead by
- returning `],
-					[/* reference */ 'r', `.CoderResult#UNDERFLOW`],
-					[/* text */ 't', ` until it receives sufficient
- input.  `]
-				]]
-			],
-			[/* parameters */
-				[/* parameter */ 'in', [/* parameter description */
-					[/* text */ 't', `The input character buffer`]
-				]],
-				[/* parameter */ 'out', [/* parameter description */
-					[/* text */ 't', `The output byte buffer`]
-				]]
-			],
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `A coder-result object describing the reason for termination`]
-			]
-		]],
 		[/* method */ 'malformedInputAction()', [
 			[/* method description */
 				[/* text */ 't', `Returns this encoder's current action for malformed-input errors.`]
@@ -869,123 +986,6 @@ DocsCollector.collect('java.nio.charset.CharsetEncoder', [
          `],
 				[/* inline code block */ 'i', `null`]
 			]
-		]],
-		[/* method */ 'averageBytesPerChar()', [
-			[/* method description */
-				[/* text */ 't', `Returns the average number of bytes that will be produced for each
- character of input.  This heuristic value may be used to estimate the size
- of the output buffer required for a given input sequence.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `The average number of bytes produced
-          per character of input`]
-			]
-		]],
-		[/* method */ 'replaceWith(byte[])', [
-			[/* method description */
-				[/* text */ 't', `Changes this encoder's replacement value.
-
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', ` This method invokes the `],
-					[/* reference */ 'r', `#implReplaceWith(byte%5B%5D)`, `implReplaceWith`],
-					[/* text */ 't', `
- method, passing the new replacement, after checking that the new
- replacement is acceptable.  `]
-				]]
-			],
-			[/* parameters */
-				[/* parameter */ 'newReplacement', [/* parameter description */
-					[/* text */ 't', `The new replacement; must not be
-         `],
-					[/* inline code block */ 'i', `null`],
-					[/* text */ 't', `, must have non-zero length,
-
-
-
-
-
-         must not be longer than the value returned by the
-         `],
-					[/* reference */ 'r', `#maxBytesPerChar()`, `maxBytesPerChar`],
-					[/* text */ 't', ` method, and
-         must be `],
-					[/* reference */ 'r', `#isLegalReplacement(byte%5B%5D)`, `legal`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
-					[/* text */ 't', `If the preconditions on the parameter do not hold`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `This encoder`]
-			]
-		]],
-		[/* method */ 'implReplaceWith(byte[])', [
-			[/* method description */
-				[/* text */ 't', `Reports a change to this encoder's replacement value.
-
- `],
-				[/* block */ 'b', ` The default implementation of this method does nothing.  This method
- should be overridden by encoders that require notification of changes to
- the replacement.  `]
-			],
-			[/* parameters */
-				[/* parameter */ 'newReplacement', [/* parameter description */
-					[/* text */ 't', `The replacement value`]
-				]]
-			],
-			/* throws */ UDF,
-			/* return */ UDF
-		]],
-		[/* method */ 'implOnMalformedInput(java.nio.charset.CodingErrorAction)', [
-			[/* method description */
-				[/* text */ 't', `Reports a change to this encoder's malformed-input action.
-
- `],
-				[/* block */ 'b', ` The default implementation of this method does nothing.  This method
- should be overridden by encoders that require notification of changes to
- the malformed-input action.  `]
-			],
-			[/* parameters */
-				[/* parameter */ 'newAction', [/* parameter description */
-					[/* text */ 't', `The new action`]
-				]]
-			],
-			/* throws */ UDF,
-			/* return */ UDF
-		]],
-		[/* method */ 'implOnUnmappableCharacter(java.nio.charset.CodingErrorAction)', [
-			[/* method description */
-				[/* text */ 't', `Reports a change to this encoder's unmappable-character action.
-
- `],
-				[/* block */ 'b', ` The default implementation of this method does nothing.  This method
- should be overridden by encoders that require notification of changes to
- the unmappable-character action.  `]
-			],
-			[/* parameters */
-				[/* parameter */ 'newAction', [/* parameter description */
-					[/* text */ 't', `The new action`]
-				]]
-			],
-			/* throws */ UDF,
-			/* return */ UDF
-		]],
-		[/* method */ 'implReset()', [
-			[/* method description */
-				[/* text */ 't', `Resets this encoder, clearing any charset-specific internal state.
-
- `],
-				[/* block */ 'b', ` The default implementation of this method does nothing.  This method
- should be overridden by encoders that maintain internal state.  `]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			/* return */ UDF
 		]]
 	],
 ]);

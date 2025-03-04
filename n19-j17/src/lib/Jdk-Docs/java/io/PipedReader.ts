@@ -7,6 +7,23 @@ DocsCollector.collect('java.io.PipedReader', [
 	],
 	/* fields */ UDF,
 	[/* constructors */
+		[/* constructor */ '<init>()', [
+			[/* constructor description */
+				[/* text */ 't', `Creates a `],
+				[/* inline code block */ 'i', `PipedReader`],
+				[/* text */ 't', ` so
+ that it is not yet `],
+				[/* reference */ 'r', `#connect(java.io.PipedWriter)`, `connected`],
+				[/* text */ 't', `. It must be `],
+				[/* reference */ 'r', `.PipedWriter#connect(java.io.PipedReader)`],
+				[/* text */ 't', ` to a `],
+				[/* inline code block */ 'i', `PipedWriter`],
+				[/* text */ 't', `
+ before being used.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF
+		]],
 		[/* constructor */ '<init>(int)', [
 			[/* constructor description */
 				[/* text */ 't', `Creates a `],
@@ -36,22 +53,29 @@ DocsCollector.collect('java.io.PipedReader', [
 				]]
 			]
 		]],
-		[/* constructor */ '<init>()', [
+		[/* constructor */ '<init>(java.io.PipedWriter)', [
 			[/* constructor description */
 				[/* text */ 't', `Creates a `],
 				[/* inline code block */ 'i', `PipedReader`],
 				[/* text */ 't', ` so
- that it is not yet `],
-				[/* reference */ 'r', `#connect(java.io.PipedWriter)`, `connected`],
-				[/* text */ 't', `. It must be `],
-				[/* reference */ 'r', `.PipedWriter#connect(java.io.PipedReader)`],
-				[/* text */ 't', ` to a `],
-				[/* inline code block */ 'i', `PipedWriter`],
+ that it is connected to the piped writer
+ `],
+				[/* inline code block */ 'i', `src`],
+				[/* text */ 't', `. Data written to `],
+				[/* inline code block */ 'i', `src`],
 				[/* text */ 't', `
- before being used.`]
+ will then be available as input from this stream.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF
+			[/* parameters */
+				[/* parameter */ 'src', [/* parameter description */
+					[/* text */ 't', `the stream to connect to.`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.io.IOException', [/* throw description */
+					[/* text */ 't', `if an I/O error occurs.`]
+				]]
+			]
 		]],
 		[/* constructor */ '<init>(java.io.PipedWriter,int)', [
 			[/* constructor description */
@@ -84,33 +108,32 @@ DocsCollector.collect('java.io.PipedReader', [
 					[/* text */ 't', `.`]
 				]]
 			]
-		]],
-		[/* constructor */ '<init>(java.io.PipedWriter)', [
-			[/* constructor description */
-				[/* text */ 't', `Creates a `],
-				[/* inline code block */ 'i', `PipedReader`],
-				[/* text */ 't', ` so
- that it is connected to the piped writer
- `],
-				[/* inline code block */ 'i', `src`],
-				[/* text */ 't', `. Data written to `],
-				[/* inline code block */ 'i', `src`],
-				[/* text */ 't', `
- will then be available as input from this stream.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'src', [/* parameter description */
-					[/* text */ 't', `the stream to connect to.`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.io.IOException', [/* throw description */
-					[/* text */ 't', `if an I/O error occurs.`]
-				]]
-			]
 		]]
 	],
 	[/* methods */
+		[/* method */ 'ready()', [
+			[/* method description */
+				[/* text */ 't', `Tell whether this stream is ready to be read.  A piped character
+ stream is ready if the circular buffer is not empty.`]
+			],
+			/* parameters */ UDF,
+			[/* throws */
+				[/* throw */ 'java.io.IOException', [/* throw description */
+					[/* text */ 't', `if the pipe is
+             `],
+					[/* reference */ 'r', `.PipedInputStream#BROKEN`],
+					[/* text */ 't', `,
+             `],
+					[/* reference */ 'r', `#connect(java.io.PipedWriter)`, `unconnected`],
+					[/* text */ 't', `, or closed.`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `True if the next read() is guaranteed not to block for input,
+ false otherwise.  Note that returning false does not guarantee that the
+ next read will block.`]
+			]
+		]],
 		[/* method */ 'read()', [
 			[/* method description */
 				[/* text */ 't', `Reads the next character of data from this piped stream.
@@ -213,6 +236,19 @@ DocsCollector.collect('java.io.PipedReader', [
              stream has been reached`]
 			]
 		]],
+		[/* method */ 'close()', [
+			[/* method description */
+				[/* text */ 't', `Closes this piped stream and releases any system resources
+ associated with the stream.`]
+			],
+			/* parameters */ UDF,
+			[/* throws */
+				[/* throw */ 'java.io.IOException', [/* throw description */
+					[/* text */ 't', `if an I/O error occurs.`]
+				]]
+			],
+			/* return */ UDF
+		]],
 		[/* method */ 'connect(java.io.PipedWriter)', [
 			[/* method description */
 				[/* text */ 't', `Causes this piped reader to be connected
@@ -264,42 +300,6 @@ DocsCollector.collect('java.io.PipedReader', [
 				]]
 			],
 			/* return */ UDF
-		]],
-		[/* method */ 'close()', [
-			[/* method description */
-				[/* text */ 't', `Closes this piped stream and releases any system resources
- associated with the stream.`]
-			],
-			/* parameters */ UDF,
-			[/* throws */
-				[/* throw */ 'java.io.IOException', [/* throw description */
-					[/* text */ 't', `if an I/O error occurs.`]
-				]]
-			],
-			/* return */ UDF
-		]],
-		[/* method */ 'ready()', [
-			[/* method description */
-				[/* text */ 't', `Tell whether this stream is ready to be read.  A piped character
- stream is ready if the circular buffer is not empty.`]
-			],
-			/* parameters */ UDF,
-			[/* throws */
-				[/* throw */ 'java.io.IOException', [/* throw description */
-					[/* text */ 't', `if the pipe is
-             `],
-					[/* reference */ 'r', `.PipedInputStream#BROKEN`],
-					[/* text */ 't', `,
-             `],
-					[/* reference */ 'r', `#connect(java.io.PipedWriter)`, `unconnected`],
-					[/* text */ 't', `, or closed.`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `True if the next read() is guaranteed not to block for input,
- false otherwise.  Note that returning false does not guarantee that the
- next read will block.`]
-			]
 		]]
 	],
 ]);

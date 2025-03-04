@@ -12,6 +12,12 @@ JdkClassCreateHelper.class('java.util.FormattableFlags', [
 	/* declared constructors */,
 	/* declared methods */,
 	[/* declared fields */
+		[/* public static final int java.util.FormattableFlags.ALTERNATE */
+			/* name */ 'ALTERNATE',
+			/* type */ 'int',
+			/* annotations */ UDF,
+			/* modifiers */ 25
+		],
 		[/* public static final int java.util.FormattableFlags.LEFT_JUSTIFY */
 			/* name */ 'LEFT_JUSTIFY',
 			/* type */ 'int',
@@ -20,12 +26,6 @@ JdkClassCreateHelper.class('java.util.FormattableFlags', [
 		],
 		[/* public static final int java.util.FormattableFlags.UPPERCASE */
 			/* name */ 'UPPERCASE',
-			/* type */ 'int',
-			/* annotations */ UDF,
-			/* modifiers */ 25
-		],
-		[/* public static final int java.util.FormattableFlags.ALTERNATE */
-			/* name */ 'ALTERNATE',
 			/* type */ 'int',
 			/* annotations */ UDF,
 			/* modifiers */ 25

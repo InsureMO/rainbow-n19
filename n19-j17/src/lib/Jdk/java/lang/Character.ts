@@ -1626,9 +1626,261 @@ JdkClassCreateHelper.class('java.lang.Character', [
 		]
 	],
 	[/* declared fields */
-		[/* public static final int java.lang.Character.MIN_RADIX */
-			/* name */ 'MIN_RADIX',
+		[/* public static final int java.lang.Character.BYTES */
+			/* name */ 'BYTES',
 			/* type */ 'int',
+			/* annotations */ UDF,
+			/* modifiers */ 25
+		],
+		[/* public static final byte java.lang.Character.COMBINING_SPACING_MARK */
+			/* name */ 'COMBINING_SPACING_MARK',
+			/* type */ 'byte',
+			/* annotations */ UDF,
+			/* modifiers */ 25
+		],
+		[/* public static final byte java.lang.Character.CONNECTOR_PUNCTUATION */
+			/* name */ 'CONNECTOR_PUNCTUATION',
+			/* type */ 'byte',
+			/* annotations */ UDF,
+			/* modifiers */ 25
+		],
+		[/* public static final byte java.lang.Character.CONTROL */
+			/* name */ 'CONTROL',
+			/* type */ 'byte',
+			/* annotations */ UDF,
+			/* modifiers */ 25
+		],
+		[/* public static final byte java.lang.Character.CURRENCY_SYMBOL */
+			/* name */ 'CURRENCY_SYMBOL',
+			/* type */ 'byte',
+			/* annotations */ UDF,
+			/* modifiers */ 25
+		],
+		[/* public static final byte java.lang.Character.DASH_PUNCTUATION */
+			/* name */ 'DASH_PUNCTUATION',
+			/* type */ 'byte',
+			/* annotations */ UDF,
+			/* modifiers */ 25
+		],
+		[/* public static final byte java.lang.Character.DECIMAL_DIGIT_NUMBER */
+			/* name */ 'DECIMAL_DIGIT_NUMBER',
+			/* type */ 'byte',
+			/* annotations */ UDF,
+			/* modifiers */ 25
+		],
+		[/* public static final byte java.lang.Character.DIRECTIONALITY_ARABIC_NUMBER */
+			/* name */ 'DIRECTIONALITY_ARABIC_NUMBER',
+			/* type */ 'byte',
+			/* annotations */ UDF,
+			/* modifiers */ 25
+		],
+		[/* public static final byte java.lang.Character.DIRECTIONALITY_BOUNDARY_NEUTRAL */
+			/* name */ 'DIRECTIONALITY_BOUNDARY_NEUTRAL',
+			/* type */ 'byte',
+			/* annotations */ UDF,
+			/* modifiers */ 25
+		],
+		[/* public static final byte java.lang.Character.DIRECTIONALITY_COMMON_NUMBER_SEPARATOR */
+			/* name */ 'DIRECTIONALITY_COMMON_NUMBER_SEPARATOR',
+			/* type */ 'byte',
+			/* annotations */ UDF,
+			/* modifiers */ 25
+		],
+		[/* public static final byte java.lang.Character.DIRECTIONALITY_EUROPEAN_NUMBER */
+			/* name */ 'DIRECTIONALITY_EUROPEAN_NUMBER',
+			/* type */ 'byte',
+			/* annotations */ UDF,
+			/* modifiers */ 25
+		],
+		[/* public static final byte java.lang.Character.DIRECTIONALITY_EUROPEAN_NUMBER_SEPARATOR */
+			/* name */ 'DIRECTIONALITY_EUROPEAN_NUMBER_SEPARATOR',
+			/* type */ 'byte',
+			/* annotations */ UDF,
+			/* modifiers */ 25
+		],
+		[/* public static final byte java.lang.Character.DIRECTIONALITY_EUROPEAN_NUMBER_TERMINATOR */
+			/* name */ 'DIRECTIONALITY_EUROPEAN_NUMBER_TERMINATOR',
+			/* type */ 'byte',
+			/* annotations */ UDF,
+			/* modifiers */ 25
+		],
+		[/* public static final byte java.lang.Character.DIRECTIONALITY_FIRST_STRONG_ISOLATE */
+			/* name */ 'DIRECTIONALITY_FIRST_STRONG_ISOLATE',
+			/* type */ 'byte',
+			/* annotations */ UDF,
+			/* modifiers */ 25
+		],
+		[/* public static final byte java.lang.Character.DIRECTIONALITY_LEFT_TO_RIGHT */
+			/* name */ 'DIRECTIONALITY_LEFT_TO_RIGHT',
+			/* type */ 'byte',
+			/* annotations */ UDF,
+			/* modifiers */ 25
+		],
+		[/* public static final byte java.lang.Character.DIRECTIONALITY_LEFT_TO_RIGHT_EMBEDDING */
+			/* name */ 'DIRECTIONALITY_LEFT_TO_RIGHT_EMBEDDING',
+			/* type */ 'byte',
+			/* annotations */ UDF,
+			/* modifiers */ 25
+		],
+		[/* public static final byte java.lang.Character.DIRECTIONALITY_LEFT_TO_RIGHT_ISOLATE */
+			/* name */ 'DIRECTIONALITY_LEFT_TO_RIGHT_ISOLATE',
+			/* type */ 'byte',
+			/* annotations */ UDF,
+			/* modifiers */ 25
+		],
+		[/* public static final byte java.lang.Character.DIRECTIONALITY_LEFT_TO_RIGHT_OVERRIDE */
+			/* name */ 'DIRECTIONALITY_LEFT_TO_RIGHT_OVERRIDE',
+			/* type */ 'byte',
+			/* annotations */ UDF,
+			/* modifiers */ 25
+		],
+		[/* public static final byte java.lang.Character.DIRECTIONALITY_NONSPACING_MARK */
+			/* name */ 'DIRECTIONALITY_NONSPACING_MARK',
+			/* type */ 'byte',
+			/* annotations */ UDF,
+			/* modifiers */ 25
+		],
+		[/* public static final byte java.lang.Character.DIRECTIONALITY_OTHER_NEUTRALS */
+			/* name */ 'DIRECTIONALITY_OTHER_NEUTRALS',
+			/* type */ 'byte',
+			/* annotations */ UDF,
+			/* modifiers */ 25
+		],
+		[/* public static final byte java.lang.Character.DIRECTIONALITY_PARAGRAPH_SEPARATOR */
+			/* name */ 'DIRECTIONALITY_PARAGRAPH_SEPARATOR',
+			/* type */ 'byte',
+			/* annotations */ UDF,
+			/* modifiers */ 25
+		],
+		[/* public static final byte java.lang.Character.DIRECTIONALITY_POP_DIRECTIONAL_FORMAT */
+			/* name */ 'DIRECTIONALITY_POP_DIRECTIONAL_FORMAT',
+			/* type */ 'byte',
+			/* annotations */ UDF,
+			/* modifiers */ 25
+		],
+		[/* public static final byte java.lang.Character.DIRECTIONALITY_POP_DIRECTIONAL_ISOLATE */
+			/* name */ 'DIRECTIONALITY_POP_DIRECTIONAL_ISOLATE',
+			/* type */ 'byte',
+			/* annotations */ UDF,
+			/* modifiers */ 25
+		],
+		[/* public static final byte java.lang.Character.DIRECTIONALITY_RIGHT_TO_LEFT */
+			/* name */ 'DIRECTIONALITY_RIGHT_TO_LEFT',
+			/* type */ 'byte',
+			/* annotations */ UDF,
+			/* modifiers */ 25
+		],
+		[/* public static final byte java.lang.Character.DIRECTIONALITY_RIGHT_TO_LEFT_ARABIC */
+			/* name */ 'DIRECTIONALITY_RIGHT_TO_LEFT_ARABIC',
+			/* type */ 'byte',
+			/* annotations */ UDF,
+			/* modifiers */ 25
+		],
+		[/* public static final byte java.lang.Character.DIRECTIONALITY_RIGHT_TO_LEFT_EMBEDDING */
+			/* name */ 'DIRECTIONALITY_RIGHT_TO_LEFT_EMBEDDING',
+			/* type */ 'byte',
+			/* annotations */ UDF,
+			/* modifiers */ 25
+		],
+		[/* public static final byte java.lang.Character.DIRECTIONALITY_RIGHT_TO_LEFT_ISOLATE */
+			/* name */ 'DIRECTIONALITY_RIGHT_TO_LEFT_ISOLATE',
+			/* type */ 'byte',
+			/* annotations */ UDF,
+			/* modifiers */ 25
+		],
+		[/* public static final byte java.lang.Character.DIRECTIONALITY_RIGHT_TO_LEFT_OVERRIDE */
+			/* name */ 'DIRECTIONALITY_RIGHT_TO_LEFT_OVERRIDE',
+			/* type */ 'byte',
+			/* annotations */ UDF,
+			/* modifiers */ 25
+		],
+		[/* public static final byte java.lang.Character.DIRECTIONALITY_SEGMENT_SEPARATOR */
+			/* name */ 'DIRECTIONALITY_SEGMENT_SEPARATOR',
+			/* type */ 'byte',
+			/* annotations */ UDF,
+			/* modifiers */ 25
+		],
+		[/* public static final byte java.lang.Character.DIRECTIONALITY_UNDEFINED */
+			/* name */ 'DIRECTIONALITY_UNDEFINED',
+			/* type */ 'byte',
+			/* annotations */ UDF,
+			/* modifiers */ 25
+		],
+		[/* public static final byte java.lang.Character.DIRECTIONALITY_WHITESPACE */
+			/* name */ 'DIRECTIONALITY_WHITESPACE',
+			/* type */ 'byte',
+			/* annotations */ UDF,
+			/* modifiers */ 25
+		],
+		[/* public static final byte java.lang.Character.ENCLOSING_MARK */
+			/* name */ 'ENCLOSING_MARK',
+			/* type */ 'byte',
+			/* annotations */ UDF,
+			/* modifiers */ 25
+		],
+		[/* public static final byte java.lang.Character.END_PUNCTUATION */
+			/* name */ 'END_PUNCTUATION',
+			/* type */ 'byte',
+			/* annotations */ UDF,
+			/* modifiers */ 25
+		],
+		[/* public static final byte java.lang.Character.FINAL_QUOTE_PUNCTUATION */
+			/* name */ 'FINAL_QUOTE_PUNCTUATION',
+			/* type */ 'byte',
+			/* annotations */ UDF,
+			/* modifiers */ 25
+		],
+		[/* public static final byte java.lang.Character.FORMAT */
+			/* name */ 'FORMAT',
+			/* type */ 'byte',
+			/* annotations */ UDF,
+			/* modifiers */ 25
+		],
+		[/* public static final byte java.lang.Character.INITIAL_QUOTE_PUNCTUATION */
+			/* name */ 'INITIAL_QUOTE_PUNCTUATION',
+			/* type */ 'byte',
+			/* annotations */ UDF,
+			/* modifiers */ 25
+		],
+		[/* public static final byte java.lang.Character.LETTER_NUMBER */
+			/* name */ 'LETTER_NUMBER',
+			/* type */ 'byte',
+			/* annotations */ UDF,
+			/* modifiers */ 25
+		],
+		[/* public static final byte java.lang.Character.LINE_SEPARATOR */
+			/* name */ 'LINE_SEPARATOR',
+			/* type */ 'byte',
+			/* annotations */ UDF,
+			/* modifiers */ 25
+		],
+		[/* public static final byte java.lang.Character.LOWERCASE_LETTER */
+			/* name */ 'LOWERCASE_LETTER',
+			/* type */ 'byte',
+			/* annotations */ UDF,
+			/* modifiers */ 25
+		],
+		[/* public static final byte java.lang.Character.MATH_SYMBOL */
+			/* name */ 'MATH_SYMBOL',
+			/* type */ 'byte',
+			/* annotations */ UDF,
+			/* modifiers */ 25
+		],
+		[/* public static final int java.lang.Character.MAX_CODE_POINT */
+			/* name */ 'MAX_CODE_POINT',
+			/* type */ 'int',
+			/* annotations */ UDF,
+			/* modifiers */ 25
+		],
+		[/* public static final char java.lang.Character.MAX_HIGH_SURROGATE */
+			/* name */ 'MAX_HIGH_SURROGATE',
+			/* type */ 'char',
+			/* annotations */ UDF,
+			/* modifiers */ 25
+		],
+		[/* public static final char java.lang.Character.MAX_LOW_SURROGATE */
+			/* name */ 'MAX_LOW_SURROGATE',
+			/* type */ 'char',
 			/* annotations */ UDF,
 			/* modifiers */ 25
 		],
@@ -1638,8 +1890,8 @@ JdkClassCreateHelper.class('java.lang.Character', [
 			/* annotations */ UDF,
 			/* modifiers */ 25
 		],
-		[/* public static final char java.lang.Character.MIN_VALUE */
-			/* name */ 'MIN_VALUE',
+		[/* public static final char java.lang.Character.MAX_SURROGATE */
+			/* name */ 'MAX_SURROGATE',
 			/* type */ 'char',
 			/* annotations */ UDF,
 			/* modifiers */ 25
@@ -1647,6 +1899,132 @@ JdkClassCreateHelper.class('java.lang.Character', [
 		[/* public static final char java.lang.Character.MAX_VALUE */
 			/* name */ 'MAX_VALUE',
 			/* type */ 'char',
+			/* annotations */ UDF,
+			/* modifiers */ 25
+		],
+		[/* public static final int java.lang.Character.MIN_CODE_POINT */
+			/* name */ 'MIN_CODE_POINT',
+			/* type */ 'int',
+			/* annotations */ UDF,
+			/* modifiers */ 25
+		],
+		[/* public static final char java.lang.Character.MIN_HIGH_SURROGATE */
+			/* name */ 'MIN_HIGH_SURROGATE',
+			/* type */ 'char',
+			/* annotations */ UDF,
+			/* modifiers */ 25
+		],
+		[/* public static final char java.lang.Character.MIN_LOW_SURROGATE */
+			/* name */ 'MIN_LOW_SURROGATE',
+			/* type */ 'char',
+			/* annotations */ UDF,
+			/* modifiers */ 25
+		],
+		[/* public static final int java.lang.Character.MIN_RADIX */
+			/* name */ 'MIN_RADIX',
+			/* type */ 'int',
+			/* annotations */ UDF,
+			/* modifiers */ 25
+		],
+		[/* public static final int java.lang.Character.MIN_SUPPLEMENTARY_CODE_POINT */
+			/* name */ 'MIN_SUPPLEMENTARY_CODE_POINT',
+			/* type */ 'int',
+			/* annotations */ UDF,
+			/* modifiers */ 25
+		],
+		[/* public static final char java.lang.Character.MIN_SURROGATE */
+			/* name */ 'MIN_SURROGATE',
+			/* type */ 'char',
+			/* annotations */ UDF,
+			/* modifiers */ 25
+		],
+		[/* public static final char java.lang.Character.MIN_VALUE */
+			/* name */ 'MIN_VALUE',
+			/* type */ 'char',
+			/* annotations */ UDF,
+			/* modifiers */ 25
+		],
+		[/* public static final byte java.lang.Character.MODIFIER_LETTER */
+			/* name */ 'MODIFIER_LETTER',
+			/* type */ 'byte',
+			/* annotations */ UDF,
+			/* modifiers */ 25
+		],
+		[/* public static final byte java.lang.Character.MODIFIER_SYMBOL */
+			/* name */ 'MODIFIER_SYMBOL',
+			/* type */ 'byte',
+			/* annotations */ UDF,
+			/* modifiers */ 25
+		],
+		[/* public static final byte java.lang.Character.NON_SPACING_MARK */
+			/* name */ 'NON_SPACING_MARK',
+			/* type */ 'byte',
+			/* annotations */ UDF,
+			/* modifiers */ 25
+		],
+		[/* public static final byte java.lang.Character.OTHER_LETTER */
+			/* name */ 'OTHER_LETTER',
+			/* type */ 'byte',
+			/* annotations */ UDF,
+			/* modifiers */ 25
+		],
+		[/* public static final byte java.lang.Character.OTHER_NUMBER */
+			/* name */ 'OTHER_NUMBER',
+			/* type */ 'byte',
+			/* annotations */ UDF,
+			/* modifiers */ 25
+		],
+		[/* public static final byte java.lang.Character.OTHER_PUNCTUATION */
+			/* name */ 'OTHER_PUNCTUATION',
+			/* type */ 'byte',
+			/* annotations */ UDF,
+			/* modifiers */ 25
+		],
+		[/* public static final byte java.lang.Character.OTHER_SYMBOL */
+			/* name */ 'OTHER_SYMBOL',
+			/* type */ 'byte',
+			/* annotations */ UDF,
+			/* modifiers */ 25
+		],
+		[/* public static final byte java.lang.Character.PARAGRAPH_SEPARATOR */
+			/* name */ 'PARAGRAPH_SEPARATOR',
+			/* type */ 'byte',
+			/* annotations */ UDF,
+			/* modifiers */ 25
+		],
+		[/* public static final byte java.lang.Character.PRIVATE_USE */
+			/* name */ 'PRIVATE_USE',
+			/* type */ 'byte',
+			/* annotations */ UDF,
+			/* modifiers */ 25
+		],
+		[/* public static final int java.lang.Character.SIZE */
+			/* name */ 'SIZE',
+			/* type */ 'int',
+			/* annotations */ UDF,
+			/* modifiers */ 25
+		],
+		[/* public static final byte java.lang.Character.SPACE_SEPARATOR */
+			/* name */ 'SPACE_SEPARATOR',
+			/* type */ 'byte',
+			/* annotations */ UDF,
+			/* modifiers */ 25
+		],
+		[/* public static final byte java.lang.Character.START_PUNCTUATION */
+			/* name */ 'START_PUNCTUATION',
+			/* type */ 'byte',
+			/* annotations */ UDF,
+			/* modifiers */ 25
+		],
+		[/* public static final byte java.lang.Character.SURROGATE */
+			/* name */ 'SURROGATE',
+			/* type */ 'byte',
+			/* annotations */ UDF,
+			/* modifiers */ 25
+		],
+		[/* public static final byte java.lang.Character.TITLECASE_LETTER */
+			/* name */ 'TITLECASE_LETTER',
+			/* type */ 'byte',
 			/* annotations */ UDF,
 			/* modifiers */ 25
 		],
@@ -1671,384 +2049,6 @@ JdkClassCreateHelper.class('java.lang.Character', [
 		[/* public static final byte java.lang.Character.UPPERCASE_LETTER */
 			/* name */ 'UPPERCASE_LETTER',
 			/* type */ 'byte',
-			/* annotations */ UDF,
-			/* modifiers */ 25
-		],
-		[/* public static final byte java.lang.Character.LOWERCASE_LETTER */
-			/* name */ 'LOWERCASE_LETTER',
-			/* type */ 'byte',
-			/* annotations */ UDF,
-			/* modifiers */ 25
-		],
-		[/* public static final byte java.lang.Character.TITLECASE_LETTER */
-			/* name */ 'TITLECASE_LETTER',
-			/* type */ 'byte',
-			/* annotations */ UDF,
-			/* modifiers */ 25
-		],
-		[/* public static final byte java.lang.Character.MODIFIER_LETTER */
-			/* name */ 'MODIFIER_LETTER',
-			/* type */ 'byte',
-			/* annotations */ UDF,
-			/* modifiers */ 25
-		],
-		[/* public static final byte java.lang.Character.OTHER_LETTER */
-			/* name */ 'OTHER_LETTER',
-			/* type */ 'byte',
-			/* annotations */ UDF,
-			/* modifiers */ 25
-		],
-		[/* public static final byte java.lang.Character.NON_SPACING_MARK */
-			/* name */ 'NON_SPACING_MARK',
-			/* type */ 'byte',
-			/* annotations */ UDF,
-			/* modifiers */ 25
-		],
-		[/* public static final byte java.lang.Character.ENCLOSING_MARK */
-			/* name */ 'ENCLOSING_MARK',
-			/* type */ 'byte',
-			/* annotations */ UDF,
-			/* modifiers */ 25
-		],
-		[/* public static final byte java.lang.Character.COMBINING_SPACING_MARK */
-			/* name */ 'COMBINING_SPACING_MARK',
-			/* type */ 'byte',
-			/* annotations */ UDF,
-			/* modifiers */ 25
-		],
-		[/* public static final byte java.lang.Character.DECIMAL_DIGIT_NUMBER */
-			/* name */ 'DECIMAL_DIGIT_NUMBER',
-			/* type */ 'byte',
-			/* annotations */ UDF,
-			/* modifiers */ 25
-		],
-		[/* public static final byte java.lang.Character.LETTER_NUMBER */
-			/* name */ 'LETTER_NUMBER',
-			/* type */ 'byte',
-			/* annotations */ UDF,
-			/* modifiers */ 25
-		],
-		[/* public static final byte java.lang.Character.OTHER_NUMBER */
-			/* name */ 'OTHER_NUMBER',
-			/* type */ 'byte',
-			/* annotations */ UDF,
-			/* modifiers */ 25
-		],
-		[/* public static final byte java.lang.Character.SPACE_SEPARATOR */
-			/* name */ 'SPACE_SEPARATOR',
-			/* type */ 'byte',
-			/* annotations */ UDF,
-			/* modifiers */ 25
-		],
-		[/* public static final byte java.lang.Character.LINE_SEPARATOR */
-			/* name */ 'LINE_SEPARATOR',
-			/* type */ 'byte',
-			/* annotations */ UDF,
-			/* modifiers */ 25
-		],
-		[/* public static final byte java.lang.Character.PARAGRAPH_SEPARATOR */
-			/* name */ 'PARAGRAPH_SEPARATOR',
-			/* type */ 'byte',
-			/* annotations */ UDF,
-			/* modifiers */ 25
-		],
-		[/* public static final byte java.lang.Character.CONTROL */
-			/* name */ 'CONTROL',
-			/* type */ 'byte',
-			/* annotations */ UDF,
-			/* modifiers */ 25
-		],
-		[/* public static final byte java.lang.Character.FORMAT */
-			/* name */ 'FORMAT',
-			/* type */ 'byte',
-			/* annotations */ UDF,
-			/* modifiers */ 25
-		],
-		[/* public static final byte java.lang.Character.PRIVATE_USE */
-			/* name */ 'PRIVATE_USE',
-			/* type */ 'byte',
-			/* annotations */ UDF,
-			/* modifiers */ 25
-		],
-		[/* public static final byte java.lang.Character.SURROGATE */
-			/* name */ 'SURROGATE',
-			/* type */ 'byte',
-			/* annotations */ UDF,
-			/* modifiers */ 25
-		],
-		[/* public static final byte java.lang.Character.DASH_PUNCTUATION */
-			/* name */ 'DASH_PUNCTUATION',
-			/* type */ 'byte',
-			/* annotations */ UDF,
-			/* modifiers */ 25
-		],
-		[/* public static final byte java.lang.Character.START_PUNCTUATION */
-			/* name */ 'START_PUNCTUATION',
-			/* type */ 'byte',
-			/* annotations */ UDF,
-			/* modifiers */ 25
-		],
-		[/* public static final byte java.lang.Character.END_PUNCTUATION */
-			/* name */ 'END_PUNCTUATION',
-			/* type */ 'byte',
-			/* annotations */ UDF,
-			/* modifiers */ 25
-		],
-		[/* public static final byte java.lang.Character.CONNECTOR_PUNCTUATION */
-			/* name */ 'CONNECTOR_PUNCTUATION',
-			/* type */ 'byte',
-			/* annotations */ UDF,
-			/* modifiers */ 25
-		],
-		[/* public static final byte java.lang.Character.OTHER_PUNCTUATION */
-			/* name */ 'OTHER_PUNCTUATION',
-			/* type */ 'byte',
-			/* annotations */ UDF,
-			/* modifiers */ 25
-		],
-		[/* public static final byte java.lang.Character.MATH_SYMBOL */
-			/* name */ 'MATH_SYMBOL',
-			/* type */ 'byte',
-			/* annotations */ UDF,
-			/* modifiers */ 25
-		],
-		[/* public static final byte java.lang.Character.CURRENCY_SYMBOL */
-			/* name */ 'CURRENCY_SYMBOL',
-			/* type */ 'byte',
-			/* annotations */ UDF,
-			/* modifiers */ 25
-		],
-		[/* public static final byte java.lang.Character.MODIFIER_SYMBOL */
-			/* name */ 'MODIFIER_SYMBOL',
-			/* type */ 'byte',
-			/* annotations */ UDF,
-			/* modifiers */ 25
-		],
-		[/* public static final byte java.lang.Character.OTHER_SYMBOL */
-			/* name */ 'OTHER_SYMBOL',
-			/* type */ 'byte',
-			/* annotations */ UDF,
-			/* modifiers */ 25
-		],
-		[/* public static final byte java.lang.Character.INITIAL_QUOTE_PUNCTUATION */
-			/* name */ 'INITIAL_QUOTE_PUNCTUATION',
-			/* type */ 'byte',
-			/* annotations */ UDF,
-			/* modifiers */ 25
-		],
-		[/* public static final byte java.lang.Character.FINAL_QUOTE_PUNCTUATION */
-			/* name */ 'FINAL_QUOTE_PUNCTUATION',
-			/* type */ 'byte',
-			/* annotations */ UDF,
-			/* modifiers */ 25
-		],
-		[/* public static final byte java.lang.Character.DIRECTIONALITY_UNDEFINED */
-			/* name */ 'DIRECTIONALITY_UNDEFINED',
-			/* type */ 'byte',
-			/* annotations */ UDF,
-			/* modifiers */ 25
-		],
-		[/* public static final byte java.lang.Character.DIRECTIONALITY_LEFT_TO_RIGHT */
-			/* name */ 'DIRECTIONALITY_LEFT_TO_RIGHT',
-			/* type */ 'byte',
-			/* annotations */ UDF,
-			/* modifiers */ 25
-		],
-		[/* public static final byte java.lang.Character.DIRECTIONALITY_RIGHT_TO_LEFT */
-			/* name */ 'DIRECTIONALITY_RIGHT_TO_LEFT',
-			/* type */ 'byte',
-			/* annotations */ UDF,
-			/* modifiers */ 25
-		],
-		[/* public static final byte java.lang.Character.DIRECTIONALITY_RIGHT_TO_LEFT_ARABIC */
-			/* name */ 'DIRECTIONALITY_RIGHT_TO_LEFT_ARABIC',
-			/* type */ 'byte',
-			/* annotations */ UDF,
-			/* modifiers */ 25
-		],
-		[/* public static final byte java.lang.Character.DIRECTIONALITY_EUROPEAN_NUMBER */
-			/* name */ 'DIRECTIONALITY_EUROPEAN_NUMBER',
-			/* type */ 'byte',
-			/* annotations */ UDF,
-			/* modifiers */ 25
-		],
-		[/* public static final byte java.lang.Character.DIRECTIONALITY_EUROPEAN_NUMBER_SEPARATOR */
-			/* name */ 'DIRECTIONALITY_EUROPEAN_NUMBER_SEPARATOR',
-			/* type */ 'byte',
-			/* annotations */ UDF,
-			/* modifiers */ 25
-		],
-		[/* public static final byte java.lang.Character.DIRECTIONALITY_EUROPEAN_NUMBER_TERMINATOR */
-			/* name */ 'DIRECTIONALITY_EUROPEAN_NUMBER_TERMINATOR',
-			/* type */ 'byte',
-			/* annotations */ UDF,
-			/* modifiers */ 25
-		],
-		[/* public static final byte java.lang.Character.DIRECTIONALITY_ARABIC_NUMBER */
-			/* name */ 'DIRECTIONALITY_ARABIC_NUMBER',
-			/* type */ 'byte',
-			/* annotations */ UDF,
-			/* modifiers */ 25
-		],
-		[/* public static final byte java.lang.Character.DIRECTIONALITY_COMMON_NUMBER_SEPARATOR */
-			/* name */ 'DIRECTIONALITY_COMMON_NUMBER_SEPARATOR',
-			/* type */ 'byte',
-			/* annotations */ UDF,
-			/* modifiers */ 25
-		],
-		[/* public static final byte java.lang.Character.DIRECTIONALITY_NONSPACING_MARK */
-			/* name */ 'DIRECTIONALITY_NONSPACING_MARK',
-			/* type */ 'byte',
-			/* annotations */ UDF,
-			/* modifiers */ 25
-		],
-		[/* public static final byte java.lang.Character.DIRECTIONALITY_BOUNDARY_NEUTRAL */
-			/* name */ 'DIRECTIONALITY_BOUNDARY_NEUTRAL',
-			/* type */ 'byte',
-			/* annotations */ UDF,
-			/* modifiers */ 25
-		],
-		[/* public static final byte java.lang.Character.DIRECTIONALITY_PARAGRAPH_SEPARATOR */
-			/* name */ 'DIRECTIONALITY_PARAGRAPH_SEPARATOR',
-			/* type */ 'byte',
-			/* annotations */ UDF,
-			/* modifiers */ 25
-		],
-		[/* public static final byte java.lang.Character.DIRECTIONALITY_SEGMENT_SEPARATOR */
-			/* name */ 'DIRECTIONALITY_SEGMENT_SEPARATOR',
-			/* type */ 'byte',
-			/* annotations */ UDF,
-			/* modifiers */ 25
-		],
-		[/* public static final byte java.lang.Character.DIRECTIONALITY_WHITESPACE */
-			/* name */ 'DIRECTIONALITY_WHITESPACE',
-			/* type */ 'byte',
-			/* annotations */ UDF,
-			/* modifiers */ 25
-		],
-		[/* public static final byte java.lang.Character.DIRECTIONALITY_OTHER_NEUTRALS */
-			/* name */ 'DIRECTIONALITY_OTHER_NEUTRALS',
-			/* type */ 'byte',
-			/* annotations */ UDF,
-			/* modifiers */ 25
-		],
-		[/* public static final byte java.lang.Character.DIRECTIONALITY_LEFT_TO_RIGHT_EMBEDDING */
-			/* name */ 'DIRECTIONALITY_LEFT_TO_RIGHT_EMBEDDING',
-			/* type */ 'byte',
-			/* annotations */ UDF,
-			/* modifiers */ 25
-		],
-		[/* public static final byte java.lang.Character.DIRECTIONALITY_LEFT_TO_RIGHT_OVERRIDE */
-			/* name */ 'DIRECTIONALITY_LEFT_TO_RIGHT_OVERRIDE',
-			/* type */ 'byte',
-			/* annotations */ UDF,
-			/* modifiers */ 25
-		],
-		[/* public static final byte java.lang.Character.DIRECTIONALITY_RIGHT_TO_LEFT_EMBEDDING */
-			/* name */ 'DIRECTIONALITY_RIGHT_TO_LEFT_EMBEDDING',
-			/* type */ 'byte',
-			/* annotations */ UDF,
-			/* modifiers */ 25
-		],
-		[/* public static final byte java.lang.Character.DIRECTIONALITY_RIGHT_TO_LEFT_OVERRIDE */
-			/* name */ 'DIRECTIONALITY_RIGHT_TO_LEFT_OVERRIDE',
-			/* type */ 'byte',
-			/* annotations */ UDF,
-			/* modifiers */ 25
-		],
-		[/* public static final byte java.lang.Character.DIRECTIONALITY_POP_DIRECTIONAL_FORMAT */
-			/* name */ 'DIRECTIONALITY_POP_DIRECTIONAL_FORMAT',
-			/* type */ 'byte',
-			/* annotations */ UDF,
-			/* modifiers */ 25
-		],
-		[/* public static final byte java.lang.Character.DIRECTIONALITY_LEFT_TO_RIGHT_ISOLATE */
-			/* name */ 'DIRECTIONALITY_LEFT_TO_RIGHT_ISOLATE',
-			/* type */ 'byte',
-			/* annotations */ UDF,
-			/* modifiers */ 25
-		],
-		[/* public static final byte java.lang.Character.DIRECTIONALITY_RIGHT_TO_LEFT_ISOLATE */
-			/* name */ 'DIRECTIONALITY_RIGHT_TO_LEFT_ISOLATE',
-			/* type */ 'byte',
-			/* annotations */ UDF,
-			/* modifiers */ 25
-		],
-		[/* public static final byte java.lang.Character.DIRECTIONALITY_FIRST_STRONG_ISOLATE */
-			/* name */ 'DIRECTIONALITY_FIRST_STRONG_ISOLATE',
-			/* type */ 'byte',
-			/* annotations */ UDF,
-			/* modifiers */ 25
-		],
-		[/* public static final byte java.lang.Character.DIRECTIONALITY_POP_DIRECTIONAL_ISOLATE */
-			/* name */ 'DIRECTIONALITY_POP_DIRECTIONAL_ISOLATE',
-			/* type */ 'byte',
-			/* annotations */ UDF,
-			/* modifiers */ 25
-		],
-		[/* public static final char java.lang.Character.MIN_HIGH_SURROGATE */
-			/* name */ 'MIN_HIGH_SURROGATE',
-			/* type */ 'char',
-			/* annotations */ UDF,
-			/* modifiers */ 25
-		],
-		[/* public static final char java.lang.Character.MAX_HIGH_SURROGATE */
-			/* name */ 'MAX_HIGH_SURROGATE',
-			/* type */ 'char',
-			/* annotations */ UDF,
-			/* modifiers */ 25
-		],
-		[/* public static final char java.lang.Character.MIN_LOW_SURROGATE */
-			/* name */ 'MIN_LOW_SURROGATE',
-			/* type */ 'char',
-			/* annotations */ UDF,
-			/* modifiers */ 25
-		],
-		[/* public static final char java.lang.Character.MAX_LOW_SURROGATE */
-			/* name */ 'MAX_LOW_SURROGATE',
-			/* type */ 'char',
-			/* annotations */ UDF,
-			/* modifiers */ 25
-		],
-		[/* public static final char java.lang.Character.MIN_SURROGATE */
-			/* name */ 'MIN_SURROGATE',
-			/* type */ 'char',
-			/* annotations */ UDF,
-			/* modifiers */ 25
-		],
-		[/* public static final char java.lang.Character.MAX_SURROGATE */
-			/* name */ 'MAX_SURROGATE',
-			/* type */ 'char',
-			/* annotations */ UDF,
-			/* modifiers */ 25
-		],
-		[/* public static final int java.lang.Character.MIN_SUPPLEMENTARY_CODE_POINT */
-			/* name */ 'MIN_SUPPLEMENTARY_CODE_POINT',
-			/* type */ 'int',
-			/* annotations */ UDF,
-			/* modifiers */ 25
-		],
-		[/* public static final int java.lang.Character.MIN_CODE_POINT */
-			/* name */ 'MIN_CODE_POINT',
-			/* type */ 'int',
-			/* annotations */ UDF,
-			/* modifiers */ 25
-		],
-		[/* public static final int java.lang.Character.MAX_CODE_POINT */
-			/* name */ 'MAX_CODE_POINT',
-			/* type */ 'int',
-			/* annotations */ UDF,
-			/* modifiers */ 25
-		],
-		[/* public static final int java.lang.Character.SIZE */
-			/* name */ 'SIZE',
-			/* type */ 'int',
-			/* annotations */ UDF,
-			/* modifiers */ 25
-		],
-		[/* public static final int java.lang.Character.BYTES */
-			/* name */ 'BYTES',
-			/* type */ 'int',
 			/* annotations */ UDF,
 			/* modifiers */ 25
 		]

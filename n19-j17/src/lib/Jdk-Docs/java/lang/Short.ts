@@ -46,14 +46,12 @@ DocsCollector.collect('java.lang.Short', [
 		]]
 	],
 	[/* fields */
-		[/* field */ 'MIN_VALUE', [
+		[/* field */ 'BYTES', [
 			[/* field description */
-				[/* text */ 't', `A constant holding the minimum value a `],
+				[/* text */ 't', `The number of bytes used to represent a `],
 				[/* inline code block */ 'i', `short`],
-				[/* text */ 't', ` can
- have, -2`],
-				[/* text */ 't', `15`, 'sup'],
-				[/* text */ 't', `.`]
+				[/* text */ 't', ` value in two's
+ complement binary form.`]
 			],
 		]],
 		[/* field */ 'MAX_VALUE', [
@@ -66,13 +64,13 @@ DocsCollector.collect('java.lang.Short', [
 				[/* text */ 't', `-1.`]
 			],
 		]],
-		[/* field */ 'TYPE', [
+		[/* field */ 'MIN_VALUE', [
 			[/* field description */
-				[/* text */ 't', `The `],
-				[/* inline code block */ 'i', `Class`],
-				[/* text */ 't', ` instance representing the primitive type
- `],
+				[/* text */ 't', `A constant holding the minimum value a `],
 				[/* inline code block */ 'i', `short`],
+				[/* text */ 't', ` can
+ have, -2`],
+				[/* text */ 't', `15`, 'sup'],
 				[/* text */ 't', `.`]
 			],
 		]],
@@ -84,35 +82,18 @@ DocsCollector.collect('java.lang.Short', [
  complement binary form.`]
 			],
 		]],
-		[/* field */ 'BYTES', [
+		[/* field */ 'TYPE', [
 			[/* field description */
-				[/* text */ 't', `The number of bytes used to represent a `],
+				[/* text */ 't', `The `],
+				[/* inline code block */ 'i', `Class`],
+				[/* text */ 't', ` instance representing the primitive type
+ `],
 				[/* inline code block */ 'i', `short`],
-				[/* text */ 't', ` value in two's
- complement binary form.`]
+				[/* text */ 't', `.`]
 			],
 		]]
 	],
 	[/* constructors */
-		[/* constructor */ '<init>(short)', [
-			[/* constructor description */
-				[/* text */ 't', `Constructs a newly allocated `],
-				[/* inline code block */ 'i', `Short`],
-				[/* text */ 't', ` object that
- represents the specified `],
-				[/* inline code block */ 'i', `short`],
-				[/* text */ 't', ` value.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'value', [/* parameter description */
-					[/* text */ 't', `the value to be represented by the
-                  `],
-					[/* inline code block */ 'i', `Short`],
-					[/* text */ 't', `.`]
-				]]
-			],
-			/* throws */ UDF
-		]],
 		[/* constructor */ '<init>(java.lang.String)', [
 			[/* constructor description */
 				[/* text */ 't', `Constructs a newly allocated `],
@@ -150,6 +131,25 @@ DocsCollector.collect('java.lang.Short', [
 					[/* text */ 't', `.`]
 				]]
 			]
+		]],
+		[/* constructor */ '<init>(short)', [
+			[/* constructor description */
+				[/* text */ 't', `Constructs a newly allocated `],
+				[/* inline code block */ 'i', `Short`],
+				[/* text */ 't', ` object that
+ represents the specified `],
+				[/* inline code block */ 'i', `short`],
+				[/* text */ 't', ` value.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'value', [/* parameter description */
+					[/* text */ 't', `the value to be represented by the
+                  `],
+					[/* inline code block */ 'i', `Short`],
+					[/* text */ 't', `.`]
+				]]
+			],
+			/* throws */ UDF
 		]]
 	],
 	[/* methods */
@@ -182,106 +182,58 @@ DocsCollector.collect('java.lang.Short', [
 				[/* text */ 't', ` otherwise.`]
 			]
 		]],
-		[/* method */ 'toString()', [
+		[/* method */ 'byteValue()', [
 			[/* method description */
-				[/* text */ 't', `Returns a `],
-				[/* inline code block */ 'i', `String`],
-				[/* text */ 't', ` object representing this
- `],
+				[/* text */ 't', `Returns the value of this `],
 				[/* inline code block */ 'i', `Short`],
-				[/* text */ 't', `'s value.  The value is converted to signed
- decimal representation and returned as a string, exactly as if
- the `],
-				[/* inline code block */ 'i', `short`],
-				[/* text */ 't', ` value were given as an argument to the
- `],
-				[/* reference */ 'r', `#toString(short)`, `toString(short)`],
-				[/* text */ 't', ` method.`]
+				[/* text */ 't', ` as a `],
+				[/* inline code block */ 'i', `byte`],
+				[/* text */ 't', ` after
+ a narrowing primitive conversion.`]
 			],
 			/* parameters */ UDF,
 			/* throws */ UDF,
 			[/* return description */
-				[/* text */ 't', `a string representation of the value of this object in
-          base 10.`]
-			]
-		]],
-		[/* method */ 'toString(short)', [
-			[/* method description */
-				[/* text */ 't', `Returns a new `],
-				[/* inline code block */ 'i', `String`],
-				[/* text */ 't', ` object representing the
- specified `],
-				[/* inline code block */ 'i', `short`],
-				[/* text */ 't', `. The radix is assumed to be 10.`]
-			],
-			[/* parameters */
-				[/* parameter */ 's', [/* parameter description */
-					[/* text */ 't', `the `],
-					[/* inline code block */ 'i', `short`],
-					[/* text */ 't', ` to be converted`]
-				]]
-			],
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the string representation of the specified `],
-				[/* inline code block */ 'i', `short`]
-			]
-		]],
-		[/* method */ 'hashCode()', [
-			[/* method description */
-				[/* text */ 't', `Returns a hash code for this `],
-				[/* inline code block */ 'i', `Short`],
-				[/* text */ 't', `; equal to the result
- of invoking `],
-				[/* inline code block */ 'i', `intValue()`],
+				[/* text */ 't', `the numeric value represented by this object after conversion
+          to type `],
+				[/* inline code block */ 'i', `byte`],
 				[/* text */ 't', `.`]
+			]
+		]],
+		[/* method */ 'doubleValue()', [
+			[/* method description */
+				[/* text */ 't', `Returns the value of this `],
+				[/* inline code block */ 'i', `Short`],
+				[/* text */ 't', ` as a `],
+				[/* inline code block */ 'i', `double`],
+				[/* text */ 't', `
+ after a widening primitive conversion.`]
 			],
 			/* parameters */ UDF,
 			/* throws */ UDF,
 			[/* return description */
-				[/* text */ 't', `a hash code value for this `],
-				[/* inline code block */ 'i', `Short`]
-			]
-		]],
-		[/* method */ 'hashCode(short)', [
-			[/* method description */
-				[/* text */ 't', `Returns a hash code for a `],
-				[/* inline code block */ 'i', `short`],
-				[/* text */ 't', ` value; compatible with
- `],
-				[/* inline code block */ 'i', `Short.hashCode()`],
+				[/* text */ 't', `the numeric value represented by this object after conversion
+          to type `],
+				[/* inline code block */ 'i', `double`],
 				[/* text */ 't', `.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'value', [/* parameter description */
-					[/* text */ 't', `the value to hash`]
-				]]
-			],
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `a hash code value for a `],
-				[/* inline code block */ 'i', `short`],
-				[/* text */ 't', ` value.`]
 			]
 		]],
-		[/* method */ 'reverseBytes(short)', [
+		[/* method */ 'floatValue()', [
 			[/* method description */
-				[/* text */ 't', `Returns the value obtained by reversing the order of the bytes in the
- two's complement representation of the specified `],
-				[/* inline code block */ 'i', `short`],
-				[/* text */ 't', ` value.`]
+				[/* text */ 't', `Returns the value of this `],
+				[/* inline code block */ 'i', `Short`],
+				[/* text */ 't', ` as a `],
+				[/* inline code block */ 'i', `float`],
+				[/* text */ 't', `
+ after a widening primitive conversion.`]
 			],
-			[/* parameters */
-				[/* parameter */ 'i', [/* parameter description */
-					[/* text */ 't', `the value whose bytes are to be reversed`]
-				]]
-			],
+			/* parameters */ UDF,
 			/* throws */ UDF,
 			[/* return description */
-				[/* text */ 't', `the value obtained by reversing (or, equivalently, swapping)
-     the bytes in the specified `],
-				[/* inline code block */ 'i', `short`],
-				[/* text */ 't', ` value.`]
+				[/* text */ 't', `the numeric value represented by this object after conversion
+          to type `],
+				[/* inline code block */ 'i', `float`],
+				[/* text */ 't', `.`]
 			]
 		]],
 		[/* method */ 'compareTo(java.lang.Short)', [
@@ -326,6 +278,116 @@ DocsCollector.collect('java.lang.Short', [
            comparison).`]
 			]
 		]],
+		[/* method */ 'hashCode()', [
+			[/* method description */
+				[/* text */ 't', `Returns a hash code for this `],
+				[/* inline code block */ 'i', `Short`],
+				[/* text */ 't', `; equal to the result
+ of invoking `],
+				[/* inline code block */ 'i', `intValue()`],
+				[/* text */ 't', `.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `a hash code value for this `],
+				[/* inline code block */ 'i', `Short`]
+			]
+		]],
+		[/* method */ 'intValue()', [
+			[/* method description */
+				[/* text */ 't', `Returns the value of this `],
+				[/* inline code block */ 'i', `Short`],
+				[/* text */ 't', ` as an `],
+				[/* inline code block */ 'i', `int`],
+				[/* text */ 't', ` after
+ a widening primitive conversion.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the numeric value represented by this object after conversion
+          to type `],
+				[/* inline code block */ 'i', `int`],
+				[/* text */ 't', `.`]
+			]
+		]],
+		[/* method */ 'toString()', [
+			[/* method description */
+				[/* text */ 't', `Returns a `],
+				[/* inline code block */ 'i', `String`],
+				[/* text */ 't', ` object representing this
+ `],
+				[/* inline code block */ 'i', `Short`],
+				[/* text */ 't', `'s value.  The value is converted to signed
+ decimal representation and returned as a string, exactly as if
+ the `],
+				[/* inline code block */ 'i', `short`],
+				[/* text */ 't', ` value were given as an argument to the
+ `],
+				[/* reference */ 'r', `#toString(short)`, `toString(short)`],
+				[/* text */ 't', ` method.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `a string representation of the value of this object in
+          base 10.`]
+			]
+		]],
+		[/* method */ 'describeConstable()', [
+			[/* method description */
+				[/* text */ 't', `Returns an `],
+				[/* reference */ 'r', `java.util.Optional`],
+				[/* text */ 't', ` containing the nominal descriptor for this
+ instance.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `an `],
+				[/* reference */ 'r', `java.util.Optional`],
+				[/* text */ 't', ` describing the `],
+				[/* reference */ 'r', `java.lang.Short`],
+				[/* text */ 't', ` instance`]
+			]
+		]],
+		[/* method */ 'longValue()', [
+			[/* method description */
+				[/* text */ 't', `Returns the value of this `],
+				[/* inline code block */ 'i', `Short`],
+				[/* text */ 't', ` as a `],
+				[/* inline code block */ 'i', `long`],
+				[/* text */ 't', ` after
+ a widening primitive conversion.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the numeric value represented by this object after conversion
+          to type `],
+				[/* inline code block */ 'i', `long`],
+				[/* text */ 't', `.`]
+			]
+		]],
+		[/* method */ 'shortValue()', [
+			[/* method description */
+				[/* text */ 't', `Returns the value of this `],
+				[/* inline code block */ 'i', `Short`],
+				[/* text */ 't', ` as a
+ `],
+				[/* inline code block */ 'i', `short`],
+				[/* text */ 't', `.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the numeric value represented by this object after conversion
+          to type `],
+				[/* inline code block */ 'i', `short`],
+				[/* text */ 't', `.`]
+			]
+		]],
 		[/* method */ 'compare(short,short)', [
 			[/* method description */
 				[/* text */ 't', `Compares two `],
@@ -366,112 +428,250 @@ DocsCollector.collect('java.lang.Short', [
 				[/* inline code block */ 'i', `x > y`]
 			]
 		]],
-		[/* method */ 'byteValue()', [
+		[/* method */ 'compareUnsigned(short,short)', [
 			[/* method description */
-				[/* text */ 't', `Returns the value of this `],
-				[/* inline code block */ 'i', `Short`],
-				[/* text */ 't', ` as a `],
-				[/* inline code block */ 'i', `byte`],
-				[/* text */ 't', ` after
- a narrowing primitive conversion.`]
+				[/* text */ 't', `Compares two `],
+				[/* inline code block */ 'i', `short`],
+				[/* text */ 't', ` values numerically treating the values
+ as unsigned.`]
 			],
-			/* parameters */ UDF,
+			[/* parameters */
+				[/* parameter */ 'x', [/* parameter description */
+					[/* text */ 't', `the first `],
+					[/* inline code block */ 'i', `short`],
+					[/* text */ 't', ` to compare`]
+				]],
+				[/* parameter */ 'y', [/* parameter description */
+					[/* text */ 't', `the second `],
+					[/* inline code block */ 'i', `short`],
+					[/* text */ 't', ` to compare`]
+				]]
+			],
 			/* throws */ UDF,
 			[/* return description */
-				[/* text */ 't', `the numeric value represented by this object after conversion
-          to type `],
-				[/* inline code block */ 'i', `byte`],
-				[/* text */ 't', `.`]
+				[/* text */ 't', `the value `],
+				[/* inline code block */ 'i', `0`],
+				[/* text */ 't', ` if `],
+				[/* inline code block */ 'i', `x == y`],
+				[/* text */ 't', `; a value less
+         than `],
+				[/* inline code block */ 'i', `0`],
+				[/* text */ 't', ` if `],
+				[/* inline code block */ 'i', `x < y`],
+				[/* text */ 't', ` as unsigned values; and
+         a value greater than `],
+				[/* inline code block */ 'i', `0`],
+				[/* text */ 't', ` if `],
+				[/* inline code block */ 'i', `x > y`],
+				[/* text */ 't', ` as
+         unsigned values`]
 			]
 		]],
-		[/* method */ 'shortValue()', [
+		[/* method */ 'hashCode(short)', [
 			[/* method description */
-				[/* text */ 't', `Returns the value of this `],
-				[/* inline code block */ 'i', `Short`],
-				[/* text */ 't', ` as a
+				[/* text */ 't', `Returns a hash code for a `],
+				[/* inline code block */ 'i', `short`],
+				[/* text */ 't', ` value; compatible with
  `],
+				[/* inline code block */ 'i', `Short.hashCode()`],
+				[/* text */ 't', `.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'value', [/* parameter description */
+					[/* text */ 't', `the value to hash`]
+				]]
+			],
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `a hash code value for a `],
 				[/* inline code block */ 'i', `short`],
-				[/* text */ 't', `.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the numeric value represented by this object after conversion
-          to type `],
+				[/* text */ 't', ` value.`]
+			]
+		]],
+		[/* method */ 'toUnsignedInt(short)', [
+			[/* method description */
+				[/* text */ 't', `Converts the argument to an `],
+				[/* inline code block */ 'i', `int`],
+				[/* text */ 't', ` by an unsigned
+ conversion.  In an unsigned conversion to an `],
+				[/* inline code block */ 'i', `int`],
+				[/* text */ 't', `, the
+ high-order 16 bits of the `],
+				[/* inline code block */ 'i', `int`],
+				[/* text */ 't', ` are zero and the
+ low-order 16 bits are equal to the bits of the `],
 				[/* inline code block */ 'i', `short`],
-				[/* text */ 't', `.`]
-			]
-		]],
-		[/* method */ 'intValue()', [
-			[/* method description */
-				[/* text */ 't', `Returns the value of this `],
-				[/* inline code block */ 'i', `Short`],
-				[/* text */ 't', ` as an `],
+				[/* text */ 't', ` argument.
+
+ Consequently, zero and positive `],
+				[/* inline code block */ 'i', `short`],
+				[/* text */ 't', ` values are mapped
+ to a numerically equal `],
 				[/* inline code block */ 'i', `int`],
-				[/* text */ 't', ` after
- a widening primitive conversion.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the numeric value represented by this object after conversion
-          to type `],
+				[/* text */ 't', ` value and negative `],
+				[/* inline code block */ 'i', `short`],
+				[/* text */ 't', ` values are mapped to an `],
 				[/* inline code block */ 'i', `int`],
+				[/* text */ 't', ` value equal to the
+ input plus 2`],
+				[/* text */ 't', `16`, 'sup'],
 				[/* text */ 't', `.`]
-			]
-		]],
-		[/* method */ 'longValue()', [
-			[/* method description */
-				[/* text */ 't', `Returns the value of this `],
-				[/* inline code block */ 'i', `Short`],
-				[/* text */ 't', ` as a `],
-				[/* inline code block */ 'i', `long`],
-				[/* text */ 't', ` after
- a widening primitive conversion.`]
 			],
-			/* parameters */ UDF,
+			[/* parameters */
+				[/* parameter */ 'x', [/* parameter description */
+					[/* text */ 't', `the value to convert to an unsigned `],
+					[/* inline code block */ 'i', `int`]
+				]]
+			],
 			/* throws */ UDF,
 			[/* return description */
-				[/* text */ 't', `the numeric value represented by this object after conversion
-          to type `],
-				[/* inline code block */ 'i', `long`],
-				[/* text */ 't', `.`]
+				[/* text */ 't', `the argument converted to `],
+				[/* inline code block */ 'i', `int`],
+				[/* text */ 't', ` by an unsigned
+         conversion`]
 			]
 		]],
-		[/* method */ 'floatValue()', [
+		[/* method */ 'decode(java.lang.String)', [
 			[/* method description */
-				[/* text */ 't', `Returns the value of this `],
+				[/* text */ 't', `Decodes a `],
+				[/* inline code block */ 'i', `String`],
+				[/* text */ 't', ` into a `],
 				[/* inline code block */ 'i', `Short`],
-				[/* text */ 't', ` as a `],
-				[/* inline code block */ 'i', `float`],
+				[/* text */ 't', `.
+ Accepts decimal, hexadecimal, and octal numbers given by
+ the following grammar:
+
+ `],
+				[/* block */ 'b', [
+					[/* dl */ 'dl', [
+						[/* dt */ 'dt', [
+							[/* text */ 't', `DecodableString:`],
+							[/* text */ 't', `
+ `]
+						]],
+						[/* dd */ 'dd', [
+							[/* text */ 't', `opt`, 'sub'],
+							[/* text */ 't', `
+ `]
+						]],
+						[/* dd */ 'dd', [
+							[/* text */ 't', `opt`, 'sub'],
+							[/* text */ 't', ` `],
+							[/* inline code block */ 'i', `0x`],
+							[/* text */ 't', ` `],
+							[/* text */ 't', `HexDigits`],
+							[/* text */ 't', `
+ `]
+						]],
+						[/* dd */ 'dd', [
+							[/* text */ 't', `opt`, 'sub'],
+							[/* text */ 't', ` `],
+							[/* inline code block */ 'i', `0X`],
+							[/* text */ 't', ` `],
+							[/* text */ 't', `HexDigits`],
+							[/* text */ 't', `
+ `]
+						]],
+						[/* dd */ 'dd', [
+							[/* text */ 't', `opt`, 'sub'],
+							[/* text */ 't', ` `],
+							[/* inline code block */ 'i', `#`],
+							[/* text */ 't', ` `],
+							[/* text */ 't', `HexDigits`],
+							[/* text */ 't', `
+ `]
+						]],
+						[/* dd */ 'dd', [
+							[/* text */ 't', `opt`, 'sub'],
+							[/* text */ 't', ` `],
+							[/* inline code block */ 'i', `0`],
+							[/* text */ 't', ` `],
+							[/* text */ 't', `OctalDigits`],
+							[/* text */ 't', `
+
+ `]
+						]],
+						[/* dt */ 'dt', [
+							[/* text */ 't', `Sign:`],
+							[/* text */ 't', `
+ `]
+						]],
+						[/* dd */ 'dd', [
+							[/* inline code block */ 'i', `-`],
+							[/* text */ 't', `
+ `]
+						]],
+						[/* dd */ 'dd', [
+							[/* inline code block */ 'i', `+`],
+							[/* text */ 't', `
+ `]
+						]]
+					]]
+				]],
+				[/* text */ 't', `DecimalNumeral`],
+				[/* text */ 't', `, `],
+				[/* text */ 't', `HexDigits`],
+				[/* text */ 't', `, and `],
+				[/* text */ 't', `OctalDigits`],
 				[/* text */ 't', `
- after a widening primitive conversion.`]
+ are as defined in section `],
+				[/* external link */ 'a', `https://docs.oracle.com/javase/specs/jls/se17/html/jls-3.html#jls-3.10.1`, `3.10.1`],
+				[/* text */ 't', ` of
+ `],
+				[/* text */ 't', `The Java Language Specification`],
+				[/* text */ 't', `,
+ except that underscores are not accepted between digits.
+
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', `The sequence of characters following an optional
+ sign and/or radix specifier ("`],
+					[/* inline code block */ 'i', `0x`],
+					[/* text */ 't', `", "`],
+					[/* inline code block */ 'i', `0X`],
+					[/* text */ 't', `",
+ "`],
+					[/* inline code block */ 'i', `#`],
+					[/* text */ 't', `", or leading zero) is parsed as by the `],
+					[/* inline code block */ 'i', `Short.parseShort`],
+					[/* text */ 't', ` method with the indicated radix (10, 16, or
+ 8).  This sequence of characters must represent a positive
+ value or a `],
+					[/* reference */ 'r', `java.lang.NumberFormatException`],
+					[/* text */ 't', ` will be thrown.  The
+ result is negated if first character of the specified `],
+					[/* inline code block */ 'i', `String`],
+					[/* text */ 't', ` is the minus sign.  No whitespace characters are
+ permitted in the `],
+					[/* inline code block */ 'i', `String`],
+					[/* text */ 't', `.`]
+				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			[/* parameters */
+				[/* parameter */ 'nm', [/* parameter description */
+					[/* text */ 't', `the `],
+					[/* inline code block */ 'i', `String`],
+					[/* text */ 't', ` to decode.`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.lang.NumberFormatException', [/* throw description */
+					[/* text */ 't', `if the `],
+					[/* inline code block */ 'i', `String`],
+					[/* text */ 't', ` does not
+            contain a parsable `],
+					[/* inline code block */ 'i', `short`],
+					[/* text */ 't', `.`]
+				]]
+			],
 			[/* return description */
-				[/* text */ 't', `the numeric value represented by this object after conversion
-          to type `],
-				[/* inline code block */ 'i', `float`],
-				[/* text */ 't', `.`]
-			]
-		]],
-		[/* method */ 'doubleValue()', [
-			[/* method description */
-				[/* text */ 't', `Returns the value of this `],
+				[/* text */ 't', `a `],
 				[/* inline code block */ 'i', `Short`],
-				[/* text */ 't', ` as a `],
-				[/* inline code block */ 'i', `double`],
+				[/* text */ 't', ` object holding the `],
+				[/* inline code block */ 'i', `short`],
 				[/* text */ 't', `
- after a widening primitive conversion.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the numeric value represented by this object after conversion
-          to type `],
-				[/* inline code block */ 'i', `double`],
-				[/* text */ 't', `.`]
+            value represented by `],
+				[/* inline code block */ 'i', `nm`]
 			]
 		]],
 		[/* method */ 'valueOf(java.lang.String)', [
@@ -630,164 +830,26 @@ DocsCollector.collect('java.lang.Short', [
 				[/* text */ 't', `.`]
 			]
 		]],
-		[/* method */ 'decode(java.lang.String)', [
+		[/* method */ 'toString(short)', [
 			[/* method description */
-				[/* text */ 't', `Decodes a `],
+				[/* text */ 't', `Returns a new `],
 				[/* inline code block */ 'i', `String`],
-				[/* text */ 't', ` into a `],
-				[/* inline code block */ 'i', `Short`],
-				[/* text */ 't', `.
- Accepts decimal, hexadecimal, and octal numbers given by
- the following grammar:
-
- `],
-				[/* block */ 'b', [
-					[/* dl */ 'dl', [
-						[/* dt */ 'dt', [
-							[/* text */ 't', `DecodableString:`],
-							[/* text */ 't', `
- `]
-						]],
-						[/* dd */ 'dd', [
-							[/* text */ 't', `opt`, 'sub'],
-							[/* text */ 't', `
- `]
-						]],
-						[/* dd */ 'dd', [
-							[/* text */ 't', `opt`, 'sub'],
-							[/* text */ 't', ` `],
-							[/* inline code block */ 'i', `0x`],
-							[/* text */ 't', ` `],
-							[/* text */ 't', `HexDigits`],
-							[/* text */ 't', `
- `]
-						]],
-						[/* dd */ 'dd', [
-							[/* text */ 't', `opt`, 'sub'],
-							[/* text */ 't', ` `],
-							[/* inline code block */ 'i', `0X`],
-							[/* text */ 't', ` `],
-							[/* text */ 't', `HexDigits`],
-							[/* text */ 't', `
- `]
-						]],
-						[/* dd */ 'dd', [
-							[/* text */ 't', `opt`, 'sub'],
-							[/* text */ 't', ` `],
-							[/* inline code block */ 'i', `#`],
-							[/* text */ 't', ` `],
-							[/* text */ 't', `HexDigits`],
-							[/* text */ 't', `
- `]
-						]],
-						[/* dd */ 'dd', [
-							[/* text */ 't', `opt`, 'sub'],
-							[/* text */ 't', ` `],
-							[/* inline code block */ 'i', `0`],
-							[/* text */ 't', ` `],
-							[/* text */ 't', `OctalDigits`],
-							[/* text */ 't', `
-
- `]
-						]],
-						[/* dt */ 'dt', [
-							[/* text */ 't', `Sign:`],
-							[/* text */ 't', `
- `]
-						]],
-						[/* dd */ 'dd', [
-							[/* inline code block */ 'i', `-`],
-							[/* text */ 't', `
- `]
-						]],
-						[/* dd */ 'dd', [
-							[/* inline code block */ 'i', `+`],
-							[/* text */ 't', `
- `]
-						]]
-					]]
-				]],
-				[/* text */ 't', `DecimalNumeral`],
-				[/* text */ 't', `, `],
-				[/* text */ 't', `HexDigits`],
-				[/* text */ 't', `, and `],
-				[/* text */ 't', `OctalDigits`],
-				[/* text */ 't', `
- are as defined in section `],
-				[/* external link */ 'a', `https://docs.oracle.com/javase/specs/jls/se17/html/jls-3.html#jls-3.10.1`, `3.10.1`],
-				[/* text */ 't', ` of
- `],
-				[/* text */ 't', `The Java Language Specification`],
-				[/* text */ 't', `,
- except that underscores are not accepted between digits.
-
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', `The sequence of characters following an optional
- sign and/or radix specifier ("`],
-					[/* inline code block */ 'i', `0x`],
-					[/* text */ 't', `", "`],
-					[/* inline code block */ 'i', `0X`],
-					[/* text */ 't', `",
- "`],
-					[/* inline code block */ 'i', `#`],
-					[/* text */ 't', `", or leading zero) is parsed as by the `],
-					[/* inline code block */ 'i', `Short.parseShort`],
-					[/* text */ 't', ` method with the indicated radix (10, 16, or
- 8).  This sequence of characters must represent a positive
- value or a `],
-					[/* reference */ 'r', `java.lang.NumberFormatException`],
-					[/* text */ 't', ` will be thrown.  The
- result is negated if first character of the specified `],
-					[/* inline code block */ 'i', `String`],
-					[/* text */ 't', ` is the minus sign.  No whitespace characters are
- permitted in the `],
-					[/* inline code block */ 'i', `String`],
-					[/* text */ 't', `.`]
-				]]
+				[/* text */ 't', ` object representing the
+ specified `],
+				[/* inline code block */ 'i', `short`],
+				[/* text */ 't', `. The radix is assumed to be 10.`]
 			],
 			[/* parameters */
-				[/* parameter */ 'nm', [/* parameter description */
+				[/* parameter */ 's', [/* parameter description */
 					[/* text */ 't', `the `],
-					[/* inline code block */ 'i', `String`],
-					[/* text */ 't', ` to decode.`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.NumberFormatException', [/* throw description */
-					[/* text */ 't', `if the `],
-					[/* inline code block */ 'i', `String`],
-					[/* text */ 't', ` does not
-            contain a parsable `],
 					[/* inline code block */ 'i', `short`],
-					[/* text */ 't', `.`]
+					[/* text */ 't', ` to be converted`]
 				]]
 			],
-			[/* return description */
-				[/* text */ 't', `a `],
-				[/* inline code block */ 'i', `Short`],
-				[/* text */ 't', ` object holding the `],
-				[/* inline code block */ 'i', `short`],
-				[/* text */ 't', `
-            value represented by `],
-				[/* inline code block */ 'i', `nm`]
-			]
-		]],
-		[/* method */ 'describeConstable()', [
-			[/* method description */
-				[/* text */ 't', `Returns an `],
-				[/* reference */ 'r', `java.util.Optional`],
-				[/* text */ 't', ` containing the nominal descriptor for this
- instance.`]
-			],
-			/* parameters */ UDF,
 			/* throws */ UDF,
 			[/* return description */
-				[/* text */ 't', `an `],
-				[/* reference */ 'r', `java.util.Optional`],
-				[/* text */ 't', ` describing the `],
-				[/* reference */ 'r', `java.lang.Short`],
-				[/* text */ 't', ` instance`]
+				[/* text */ 't', `the string representation of the specified `],
+				[/* inline code block */ 'i', `short`]
 			]
 		]],
 		[/* method */ 'toUnsignedLong(short)', [
@@ -833,86 +895,53 @@ DocsCollector.collect('java.lang.Short', [
          conversion`]
 			]
 		]],
-		[/* method */ 'toUnsignedInt(short)', [
+		[/* method */ 'parseShort(java.lang.String)', [
 			[/* method description */
-				[/* text */ 't', `Converts the argument to an `],
-				[/* inline code block */ 'i', `int`],
-				[/* text */ 't', ` by an unsigned
- conversion.  In an unsigned conversion to an `],
-				[/* inline code block */ 'i', `int`],
-				[/* text */ 't', `, the
- high-order 16 bits of the `],
-				[/* inline code block */ 'i', `int`],
-				[/* text */ 't', ` are zero and the
- low-order 16 bits are equal to the bits of the `],
+				[/* text */ 't', `Parses the string argument as a signed decimal `],
 				[/* inline code block */ 'i', `short`],
-				[/* text */ 't', ` argument.
-
- Consequently, zero and positive `],
+				[/* text */ 't', `. The characters in the string must all be decimal
+ digits, except that the first character may be an ASCII minus
+ sign `],
+				[/* inline code block */ 'i', `'-'`],
+				[/* text */ 't', ` (`],
+				[/* inline code block */ 'i', `'\\u002D'`],
+				[/* text */ 't', `) to indicate a
+ negative value or an ASCII plus sign `],
+				[/* inline code block */ 'i', `'+'`],
+				[/* text */ 't', `
+ (`],
+				[/* inline code block */ 'i', `'\\u002B'`],
+				[/* text */ 't', `) to indicate a positive value.  The
+ resulting `],
 				[/* inline code block */ 'i', `short`],
-				[/* text */ 't', ` values are mapped
- to a numerically equal `],
-				[/* inline code block */ 'i', `int`],
-				[/* text */ 't', ` value and negative `],
-				[/* inline code block */ 'i', `short`],
-				[/* text */ 't', ` values are mapped to an `],
-				[/* inline code block */ 'i', `int`],
-				[/* text */ 't', ` value equal to the
- input plus 2`],
-				[/* text */ 't', `16`, 'sup'],
-				[/* text */ 't', `.`]
+				[/* text */ 't', ` value is returned, exactly as if the
+ argument and the radix 10 were given as arguments to the `],
+				[/* reference */ 'r', `#parseShort(java.lang.String,int)`, `parseShort(java.lang.String, int)`],
+				[/* text */ 't', ` method.`]
 			],
 			[/* parameters */
-				[/* parameter */ 'x', [/* parameter description */
-					[/* text */ 't', `the value to convert to an unsigned `],
-					[/* inline code block */ 'i', `int`]
+				[/* parameter */ 's', [/* parameter description */
+					[/* text */ 't', `a `],
+					[/* inline code block */ 'i', `String`],
+					[/* text */ 't', ` containing the `],
+					[/* inline code block */ 'i', `short`],
+					[/* text */ 't', `
+          representation to be parsed`]
 				]]
 			],
-			/* throws */ UDF,
+			[/* throws */
+				[/* throw */ 'java.lang.NumberFormatException', [/* throw description */
+					[/* text */ 't', `If the string does not
+          contain a parsable `],
+					[/* inline code block */ 'i', `short`],
+					[/* text */ 't', `.`]
+				]]
+			],
 			[/* return description */
-				[/* text */ 't', `the argument converted to `],
-				[/* inline code block */ 'i', `int`],
-				[/* text */ 't', ` by an unsigned
-         conversion`]
-			]
-		]],
-		[/* method */ 'compareUnsigned(short,short)', [
-			[/* method description */
-				[/* text */ 't', `Compares two `],
+				[/* text */ 't', `the `],
 				[/* inline code block */ 'i', `short`],
-				[/* text */ 't', ` values numerically treating the values
- as unsigned.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'x', [/* parameter description */
-					[/* text */ 't', `the first `],
-					[/* inline code block */ 'i', `short`],
-					[/* text */ 't', ` to compare`]
-				]],
-				[/* parameter */ 'y', [/* parameter description */
-					[/* text */ 't', `the second `],
-					[/* inline code block */ 'i', `short`],
-					[/* text */ 't', ` to compare`]
-				]]
-			],
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the value `],
-				[/* inline code block */ 'i', `0`],
-				[/* text */ 't', ` if `],
-				[/* inline code block */ 'i', `x == y`],
-				[/* text */ 't', `; a value less
-         than `],
-				[/* inline code block */ 'i', `0`],
-				[/* text */ 't', ` if `],
-				[/* inline code block */ 'i', `x < y`],
-				[/* text */ 't', ` as unsigned values; and
-         a value greater than `],
-				[/* inline code block */ 'i', `0`],
-				[/* text */ 't', ` if `],
-				[/* inline code block */ 'i', `x > y`],
-				[/* text */ 't', ` as
-         unsigned values`]
+				[/* text */ 't', ` value represented by the
+          argument in decimal.`]
 			]
 		]],
 		[/* method */ 'parseShort(java.lang.String,int)', [
@@ -1025,53 +1054,24 @@ DocsCollector.collect('java.lang.Short', [
                   argument in the specified radix.`]
 			]
 		]],
-		[/* method */ 'parseShort(java.lang.String)', [
+		[/* method */ 'reverseBytes(short)', [
 			[/* method description */
-				[/* text */ 't', `Parses the string argument as a signed decimal `],
+				[/* text */ 't', `Returns the value obtained by reversing the order of the bytes in the
+ two's complement representation of the specified `],
 				[/* inline code block */ 'i', `short`],
-				[/* text */ 't', `. The characters in the string must all be decimal
- digits, except that the first character may be an ASCII minus
- sign `],
-				[/* inline code block */ 'i', `'-'`],
-				[/* text */ 't', ` (`],
-				[/* inline code block */ 'i', `'\\u002D'`],
-				[/* text */ 't', `) to indicate a
- negative value or an ASCII plus sign `],
-				[/* inline code block */ 'i', `'+'`],
-				[/* text */ 't', `
- (`],
-				[/* inline code block */ 'i', `'\\u002B'`],
-				[/* text */ 't', `) to indicate a positive value.  The
- resulting `],
-				[/* inline code block */ 'i', `short`],
-				[/* text */ 't', ` value is returned, exactly as if the
- argument and the radix 10 were given as arguments to the `],
-				[/* reference */ 'r', `#parseShort(java.lang.String,int)`, `parseShort(java.lang.String, int)`],
-				[/* text */ 't', ` method.`]
+				[/* text */ 't', ` value.`]
 			],
 			[/* parameters */
-				[/* parameter */ 's', [/* parameter description */
-					[/* text */ 't', `a `],
-					[/* inline code block */ 'i', `String`],
-					[/* text */ 't', ` containing the `],
-					[/* inline code block */ 'i', `short`],
-					[/* text */ 't', `
-          representation to be parsed`]
+				[/* parameter */ 'i', [/* parameter description */
+					[/* text */ 't', `the value whose bytes are to be reversed`]
 				]]
 			],
-			[/* throws */
-				[/* throw */ 'java.lang.NumberFormatException', [/* throw description */
-					[/* text */ 't', `If the string does not
-          contain a parsable `],
-					[/* inline code block */ 'i', `short`],
-					[/* text */ 't', `.`]
-				]]
-			],
+			/* throws */ UDF,
 			[/* return description */
-				[/* text */ 't', `the `],
+				[/* text */ 't', `the value obtained by reversing (or, equivalently, swapping)
+     the bytes in the specified `],
 				[/* inline code block */ 'i', `short`],
-				[/* text */ 't', ` value represented by the
-          argument in decimal.`]
+				[/* text */ 't', ` value.`]
 			]
 		]]
 	],

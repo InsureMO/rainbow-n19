@@ -365,14 +365,14 @@ JdkClassCreateHelper.class('java.util.zip.ZipEntry', [
 		]
 	],
 	[/* declared fields */
-		[/* public static final int java.util.zip.ZipEntry.STORED */
-			/* name */ 'STORED',
+		[/* public static final int java.util.zip.ZipEntry.DEFLATED */
+			/* name */ 'DEFLATED',
 			/* type */ 'int',
 			/* annotations */ UDF,
 			/* modifiers */ 25
 		],
-		[/* public static final int java.util.zip.ZipEntry.DEFLATED */
-			/* name */ 'DEFLATED',
+		[/* public static final int java.util.zip.ZipEntry.STORED */
+			/* name */ 'STORED',
 			/* type */ 'int',
 			/* annotations */ UDF,
 			/* modifiers */ 25

@@ -119,60 +119,70 @@ DocsCollector.collect('java.util.DoubleSummaryStatistics', [
 		]]
 	],
 	[/* methods */
-		[/* method */ 'toString()', [
+		[/* method */ 'getAverage()', [
 			[/* method description */
-				[/* text */ 't', `Returns a non-empty string representation of this object suitable for
- debugging. The exact presentation format is unspecified and may vary
- between implementations and versions.`]
+				[/* text */ 't', `Returns the arithmetic mean of values recorded, or zero if no
+ values have been recorded.
+
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', ` The computed average can vary numerically and have the
+ special case behavior as computing the sum; see `],
+					[/* reference */ 'r', `#getSum()`, `getSum()`],
+					[/* text */ 't', `
+ for details.`]
+				]]
 			],
 			/* parameters */ UDF,
 			/* throws */ UDF,
 			[/* return description */
-				[/* text */ 't', `a string representation of the object.`]
+				[/* text */ 't', `the arithmetic mean of values, or zero if none`]
 			]
 		]],
-		[/* method */ 'accept(double)', [
+		[/* method */ 'getMax()', [
 			[/* method description */
-				[/* text */ 't', `Records another value into the summary information.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'value', [/* parameter description */
-					[/* text */ 't', `the input value`]
-				]]
-			],
-			/* throws */ UDF,
-			/* return */ UDF
-		]],
-		[/* method */ 'combine(java.util.DoubleSummaryStatistics)', [
-			[/* method description */
-				[/* text */ 't', `Combines the state of another `],
-				[/* inline code block */ 'i', `DoubleSummaryStatistics`],
-				[/* text */ 't', ` into this
- one.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'other', [/* parameter description */
-					[/* text */ 't', `another `],
-					[/* inline code block */ 'i', `DoubleSummaryStatistics`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
-					[/* text */ 't', `if `],
-					[/* inline code block */ 'i', `other`],
-					[/* text */ 't', ` is null`]
-				]]
-			],
-			/* return */ UDF
-		]],
-		[/* method */ 'getCount()', [
-			[/* method description */
-				[/* text */ 't', `Return the count of values recorded.`]
+				[/* text */ 't', `Returns the maximum recorded value, `],
+				[/* inline code block */ 'i', `Double.NaN`],
+				[/* text */ 't', ` if any recorded
+ value was NaN or `],
+				[/* inline code block */ 'i', `Double.NEGATIVE_INFINITY`],
+				[/* text */ 't', ` if no values were
+ recorded. Unlike the numerical comparison operators, this method
+ considers negative zero to be strictly smaller than positive zero.`]
 			],
 			/* parameters */ UDF,
 			/* throws */ UDF,
 			[/* return description */
-				[/* text */ 't', `the count of values`]
+				[/* text */ 't', `the maximum recorded value, `],
+				[/* inline code block */ 'i', `Double.NaN`],
+				[/* text */ 't', ` if any recorded
+ value was NaN or `],
+				[/* inline code block */ 'i', `Double.NEGATIVE_INFINITY`],
+				[/* text */ 't', ` if no values were
+ recorded`]
+			]
+		]],
+		[/* method */ 'getMin()', [
+			[/* method description */
+				[/* text */ 't', `Returns the minimum recorded value, `],
+				[/* inline code block */ 'i', `Double.NaN`],
+				[/* text */ 't', ` if any recorded
+ value was NaN or `],
+				[/* inline code block */ 'i', `Double.POSITIVE_INFINITY`],
+				[/* text */ 't', ` if no values were
+ recorded. Unlike the numerical comparison operators, this method
+ considers negative zero to be strictly smaller than positive zero.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the minimum recorded value, `],
+				[/* inline code block */ 'i', `Double.NaN`],
+				[/* text */ 't', ` if any recorded
+ value was NaN or `],
+				[/* inline code block */ 'i', `Double.POSITIVE_INFINITY`],
+				[/* text */ 't', ` if no values were
+ recorded`]
 			]
 		]],
 		[/* method */ 'getSum()', [
@@ -249,71 +259,61 @@ DocsCollector.collect('java.util.DoubleSummaryStatistics', [
 				[/* text */ 't', `the sum of values, or zero if none`]
 			]
 		]],
-		[/* method */ 'getMin()', [
+		[/* method */ 'getCount()', [
 			[/* method description */
-				[/* text */ 't', `Returns the minimum recorded value, `],
-				[/* inline code block */ 'i', `Double.NaN`],
-				[/* text */ 't', ` if any recorded
- value was NaN or `],
-				[/* inline code block */ 'i', `Double.POSITIVE_INFINITY`],
-				[/* text */ 't', ` if no values were
- recorded. Unlike the numerical comparison operators, this method
- considers negative zero to be strictly smaller than positive zero.`]
+				[/* text */ 't', `Return the count of values recorded.`]
 			],
 			/* parameters */ UDF,
 			/* throws */ UDF,
 			[/* return description */
-				[/* text */ 't', `the minimum recorded value, `],
-				[/* inline code block */ 'i', `Double.NaN`],
-				[/* text */ 't', ` if any recorded
- value was NaN or `],
-				[/* inline code block */ 'i', `Double.POSITIVE_INFINITY`],
-				[/* text */ 't', ` if no values were
- recorded`]
+				[/* text */ 't', `the count of values`]
 			]
 		]],
-		[/* method */ 'getAverage()', [
+		[/* method */ 'toString()', [
 			[/* method description */
-				[/* text */ 't', `Returns the arithmetic mean of values recorded, or zero if no
- values have been recorded.
-
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', ` The computed average can vary numerically and have the
- special case behavior as computing the sum; see `],
-					[/* reference */ 'r', `#getSum()`, `getSum()`],
-					[/* text */ 't', `
- for details.`]
+				[/* text */ 't', `Returns a non-empty string representation of this object suitable for
+ debugging. The exact presentation format is unspecified and may vary
+ between implementations and versions.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `a string representation of the object.`]
+			]
+		]],
+		[/* method */ 'accept(double)', [
+			[/* method description */
+				[/* text */ 't', `Records another value into the summary information.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'value', [/* parameter description */
+					[/* text */ 't', `the input value`]
 				]]
 			],
-			/* parameters */ UDF,
 			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the arithmetic mean of values, or zero if none`]
-			]
+			/* return */ UDF
 		]],
-		[/* method */ 'getMax()', [
+		[/* method */ 'combine(java.util.DoubleSummaryStatistics)', [
 			[/* method description */
-				[/* text */ 't', `Returns the maximum recorded value, `],
-				[/* inline code block */ 'i', `Double.NaN`],
-				[/* text */ 't', ` if any recorded
- value was NaN or `],
-				[/* inline code block */ 'i', `Double.NEGATIVE_INFINITY`],
-				[/* text */ 't', ` if no values were
- recorded. Unlike the numerical comparison operators, this method
- considers negative zero to be strictly smaller than positive zero.`]
+				[/* text */ 't', `Combines the state of another `],
+				[/* inline code block */ 'i', `DoubleSummaryStatistics`],
+				[/* text */ 't', ` into this
+ one.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the maximum recorded value, `],
-				[/* inline code block */ 'i', `Double.NaN`],
-				[/* text */ 't', ` if any recorded
- value was NaN or `],
-				[/* inline code block */ 'i', `Double.NEGATIVE_INFINITY`],
-				[/* text */ 't', ` if no values were
- recorded`]
-			]
+			[/* parameters */
+				[/* parameter */ 'other', [/* parameter description */
+					[/* text */ 't', `another `],
+					[/* inline code block */ 'i', `DoubleSummaryStatistics`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
+					[/* text */ 't', `if `],
+					[/* inline code block */ 'i', `other`],
+					[/* text */ 't', ` is null`]
+				]]
+			],
+			/* return */ UDF
 		]]
 	],
 ]);

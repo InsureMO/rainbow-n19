@@ -63,16 +63,6 @@ DocsCollector.collect('java.net.Proxy', [
 		]]
 	],
 	[/* methods */
-		[/* method */ 'type()', [
-			[/* method description */
-				[/* text */ 't', `Returns the proxy type.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `a Type representing the proxy type`]
-			]
-		]],
 		[/* method */ 'equals(java.lang.Object)', [
 			[/* method description */
 				[/* text */ 't', `Compares this object against the specified object.
@@ -106,6 +96,16 @@ DocsCollector.collect('java.net.Proxy', [
 				[/* text */ 't', ` otherwise.`]
 			]
 		]],
+		[/* method */ 'hashCode()', [
+			[/* method description */
+				[/* text */ 't', `Returns a hashcode for this Proxy.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `a hash code value for this Proxy.`]
+			]
+		]],
 		[/* method */ 'toString()', [
 			[/* method description */
 				[/* text */ 't', `Constructs a string representation of this Proxy.
@@ -121,14 +121,14 @@ DocsCollector.collect('java.net.Proxy', [
 				[/* text */ 't', `a string representation of this object.`]
 			]
 		]],
-		[/* method */ 'hashCode()', [
+		[/* method */ 'type()', [
 			[/* method description */
-				[/* text */ 't', `Returns a hashcode for this Proxy.`]
+				[/* text */ 't', `Returns the proxy type.`]
 			],
 			/* parameters */ UDF,
 			/* throws */ UDF,
 			[/* return description */
-				[/* text */ 't', `a hash code value for this Proxy.`]
+				[/* text */ 't', `a Type representing the proxy type`]
 			]
 		]],
 		[/* method */ 'address()', [

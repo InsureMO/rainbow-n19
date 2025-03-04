@@ -39,25 +39,6 @@ DocsCollector.collect('java.io.Externalizable', [
 	/* fields */ UDF,
 	/* constructors */ UDF,
 	[/* methods */
-		[/* method */ 'writeExternal(java.io.ObjectOutput)', [
-			[/* method description */
-				[/* text */ 't', `The object implements the writeExternal method to save its contents
- by calling the methods of DataOutput for its primitive values or
- calling the writeObject method of ObjectOutput for objects, strings,
- and arrays.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'out', [/* parameter description */
-					[/* text */ 't', `the stream to write the object to`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.io.IOException', [/* throw description */
-					[/* text */ 't', `Includes any I/O exceptions that may occur`]
-				]]
-			],
-			/* return */ UDF
-		]],
 		[/* method */ 'readExternal(java.io.ObjectInput)', [
 			[/* method description */
 				[/* text */ 't', `The object implements the readExternal method to restore its
@@ -78,6 +59,25 @@ DocsCollector.collect('java.io.Externalizable', [
 				[/* throw */ 'java.lang.ClassNotFoundException', [/* throw description */
 					[/* text */ 't', `If the class for an object being
             restored cannot be found.`]
+				]]
+			],
+			/* return */ UDF
+		]],
+		[/* method */ 'writeExternal(java.io.ObjectOutput)', [
+			[/* method description */
+				[/* text */ 't', `The object implements the writeExternal method to save its contents
+ by calling the methods of DataOutput for its primitive values or
+ calling the writeObject method of ObjectOutput for objects, strings,
+ and arrays.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'out', [/* parameter description */
+					[/* text */ 't', `the stream to write the object to`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.io.IOException', [/* throw description */
+					[/* text */ 't', `Includes any I/O exceptions that may occur`]
 				]]
 			],
 			/* return */ UDF

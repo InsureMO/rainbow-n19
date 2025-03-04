@@ -35,6 +35,18 @@ DocsCollector.collect('java.io.BufferedReader', [
 	],
 	/* fields */ UDF,
 	[/* constructors */
+		[/* constructor */ '<init>(java.io.Reader)', [
+			[/* constructor description */
+				[/* text */ 't', `Creates a buffering character-input stream that uses a default-sized
+ input buffer.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'in', [/* parameter description */
+					[/* text */ 't', `A Reader`]
+				]]
+			],
+			/* throws */ UDF
+		]],
 		[/* constructor */ '<init>(java.io.Reader,int)', [
 			[/* constructor description */
 				[/* text */ 't', `Creates a buffering character-input stream that uses an input buffer of
@@ -54,72 +66,35 @@ DocsCollector.collect('java.io.BufferedReader', [
 					[/* inline code block */ 'i', `sz <= 0`]
 				]]
 			]
-		]],
-		[/* constructor */ '<init>(java.io.Reader)', [
-			[/* constructor description */
-				[/* text */ 't', `Creates a buffering character-input stream that uses a default-sized
- input buffer.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'in', [/* parameter description */
-					[/* text */ 't', `A Reader`]
-				]]
-			],
-			/* throws */ UDF
 		]]
 	],
 	[/* methods */
-		[/* method */ 'lines()', [
+		[/* method */ 'markSupported()', [
 			[/* method description */
-				[/* text */ 't', `Returns a `],
-				[/* inline code block */ 'i', `Stream`],
-				[/* text */ 't', `, the elements of which are lines read from
- this `],
-				[/* inline code block */ 'i', `BufferedReader`],
-				[/* text */ 't', `.  The `],
-				[/* reference */ 'r', `java.util.stream.Stream`],
-				[/* text */ 't', ` is lazily populated,
- i.e., read only occurs during the
- `],
-				[/* text */ 't', `terminal stream operation`],
-				[/* text */ 't', `.
-
- `],
-				[/* block */ 'b', ` The reader must not be operated on during the execution of the
- terminal stream operation. Otherwise, the result of the terminal stream
- operation is undefined.
-
- `],
-				[/* block */ 'b', ` After execution of the terminal stream operation there are no
- guarantees that the reader will be at a specific position from which to
- read the next character or line.
-
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', ` If an `],
-					[/* reference */ 'r', `java.io.IOException`],
-					[/* text */ 't', ` is thrown when accessing the underlying
- `],
-					[/* inline code block */ 'i', `BufferedReader`],
-					[/* text */ 't', `, it is wrapped in an `],
-					[/* reference */ 'r', `java.io.UncheckedIOException`],
-					[/* text */ 't', ` which will be thrown from the `],
-					[/* inline code block */ 'i', `Stream`],
-					[/* text */ 't', `
- method that caused the read to take place. This method will return a
- Stream if invoked on a BufferedReader that is closed. Any operation on
- that stream that requires reading from the BufferedReader after it is
- closed, will cause an UncheckedIOException to be thrown.`]
-				]]
+				[/* text */ 't', `Tells whether this stream supports the mark() operation, which it does.`]
 			],
 			/* parameters */ UDF,
 			/* throws */ UDF,
 			[/* return description */
-				[/* text */ 't', `a `],
-				[/* inline code block */ 'i', `Stream<String>`],
-				[/* text */ 't', ` providing the lines of text
-         described by this `],
-				[/* inline code block */ 'i', `BufferedReader`]
+				[/* text */ 't', `true if and only if this stream supports the mark operation.`]
+			]
+		]],
+		[/* method */ 'ready()', [
+			[/* method description */
+				[/* text */ 't', `Tells whether this stream is ready to be read.  A buffered character
+ stream is ready if the buffer is not empty, or if the underlying
+ character stream is ready.`]
+			],
+			/* parameters */ UDF,
+			[/* throws */
+				[/* throw */ 'java.io.IOException', [/* throw description */
+					[/* text */ 't', `If an I/O error occurs`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `True if the next read() is guaranteed not to block for input,
+ false otherwise.  Note that returning false does not guarantee that the
+ next read will block.`]
 			]
 		]],
 		[/* method */ 'read()', [
@@ -270,6 +245,60 @@ DocsCollector.collect('java.io.BufferedReader', [
              stream has been reached without reading any characters`]
 			]
 		]],
+		[/* method */ 'lines()', [
+			[/* method description */
+				[/* text */ 't', `Returns a `],
+				[/* inline code block */ 'i', `Stream`],
+				[/* text */ 't', `, the elements of which are lines read from
+ this `],
+				[/* inline code block */ 'i', `BufferedReader`],
+				[/* text */ 't', `.  The `],
+				[/* reference */ 'r', `java.util.stream.Stream`],
+				[/* text */ 't', ` is lazily populated,
+ i.e., read only occurs during the
+ `],
+				[/* text */ 't', `terminal stream operation`],
+				[/* text */ 't', `.
+
+ `],
+				[/* block */ 'b', ` The reader must not be operated on during the execution of the
+ terminal stream operation. Otherwise, the result of the terminal stream
+ operation is undefined.
+
+ `],
+				[/* block */ 'b', ` After execution of the terminal stream operation there are no
+ guarantees that the reader will be at a specific position from which to
+ read the next character or line.
+
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', ` If an `],
+					[/* reference */ 'r', `java.io.IOException`],
+					[/* text */ 't', ` is thrown when accessing the underlying
+ `],
+					[/* inline code block */ 'i', `BufferedReader`],
+					[/* text */ 't', `, it is wrapped in an `],
+					[/* reference */ 'r', `java.io.UncheckedIOException`],
+					[/* text */ 't', ` which will be thrown from the `],
+					[/* inline code block */ 'i', `Stream`],
+					[/* text */ 't', `
+ method that caused the read to take place. This method will return a
+ Stream if invoked on a BufferedReader that is closed. Any operation on
+ that stream that requires reading from the BufferedReader after it is
+ closed, will cause an UncheckedIOException to be thrown.`]
+				]]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `a `],
+				[/* inline code block */ 'i', `Stream<String>`],
+				[/* text */ 't', ` providing the lines of text
+         described by this `],
+				[/* inline code block */ 'i', `BufferedReader`]
+			]
+		]],
+		[/* method */ 'skip(long)', UDF],
 		[/* method */ 'close()', [
 			[/* method description */
 				[/* block */ 'b', `Closes the stream and releases any system resources associated with
@@ -313,17 +342,6 @@ DocsCollector.collect('java.io.BufferedReader', [
 			],
 			/* return */ UDF
 		]],
-		[/* method */ 'skip(long)', UDF],
-		[/* method */ 'markSupported()', [
-			[/* method description */
-				[/* text */ 't', `Tells whether this stream supports the mark() operation, which it does.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `true if and only if this stream supports the mark operation.`]
-			]
-		]],
 		[/* method */ 'reset()', [
 			[/* method description */
 				[/* text */ 't', `Resets the stream to the most recent mark.`]
@@ -336,24 +354,6 @@ DocsCollector.collect('java.io.BufferedReader', [
 				]]
 			],
 			/* return */ UDF
-		]],
-		[/* method */ 'ready()', [
-			[/* method description */
-				[/* text */ 't', `Tells whether this stream is ready to be read.  A buffered character
- stream is ready if the buffer is not empty, or if the underlying
- character stream is ready.`]
-			],
-			/* parameters */ UDF,
-			[/* throws */
-				[/* throw */ 'java.io.IOException', [/* throw description */
-					[/* text */ 't', `If an I/O error occurs`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `True if the next read() is guaranteed not to block for input,
- false otherwise.  Note that returning false does not guarantee that the
- next read will block.`]
-			]
 		]]
 	],
 ]);

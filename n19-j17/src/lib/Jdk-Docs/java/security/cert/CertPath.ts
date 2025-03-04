@@ -230,6 +230,105 @@ DocsCollector.collect('java.security.cert.CertPath', [
 		]]
 	],
 	[/* methods */
+		[/* method */ 'writeReplace()', [
+			[/* method description */
+				[/* text */ 't', `Replaces the `],
+				[/* inline code block */ 'i', `CertPath`],
+				[/* text */ 't', ` to be serialized with a
+ `],
+				[/* inline code block */ 'i', `CertPathRep`],
+				[/* text */ 't', ` object.`]
+			],
+			/* parameters */ UDF,
+			[/* throws */
+				[/* throw */ 'java.io.ObjectStreamException', [/* throw description */
+					[/* text */ 't', `if a `],
+					[/* inline code block */ 'i', `CertPathRep`],
+					[/* text */ 't', ` object
+ representing this certification path could not be created`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `the `],
+				[/* inline code block */ 'i', `CertPathRep`],
+				[/* text */ 't', ` to be serialized`]
+			]
+		]],
+		[/* method */ 'getEncoded()', [
+			[/* method description */
+				[/* text */ 't', `Returns the encoded form of this certification path, using the default
+ encoding.`]
+			],
+			/* parameters */ UDF,
+			[/* throws */
+				[/* throw */ 'java.security.cert.CertificateEncodingException', [/* throw description */
+					[/* text */ 't', `if an encoding error occurs`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `the encoded bytes`]
+			]
+		]],
+		[/* method */ 'getEncoded(java.lang.String)', [
+			[/* method description */
+				[/* text */ 't', `Returns the encoded form of this certification path, using the
+ specified encoding.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'encoding', [/* parameter description */
+					[/* text */ 't', `the name of the encoding to use`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.security.cert.CertificateEncodingException', [/* throw description */
+					[/* text */ 't', `if an encoding error occurs or
+   the encoding requested is not supported`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `the encoded bytes`]
+			]
+		]],
+		[/* method */ 'getEncodings()', [
+			[/* method description */
+				[/* text */ 't', `Returns an iteration of the encodings supported by this certification
+ path, with the default encoding first. Attempts to modify the returned
+ `],
+				[/* inline code block */ 'i', `Iterator`],
+				[/* text */ 't', ` via its `],
+				[/* inline code block */ 'i', `remove`],
+				[/* text */ 't', ` method result in an
+ `],
+				[/* inline code block */ 'i', `UnsupportedOperationException`],
+				[/* text */ 't', `.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `an `],
+				[/* inline code block */ 'i', `Iterator`],
+				[/* text */ 't', ` over the names of the supported
+         encodings (as Strings)`]
+			]
+		]],
+		[/* method */ 'getCertificates()', [
+			[/* method description */
+				[/* text */ 't', `Returns the list of certificates in this certification path.
+ The `],
+				[/* inline code block */ 'i', `List`],
+				[/* text */ 't', ` returned must be immutable and thread-safe.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `an immutable `],
+				[/* inline code block */ 'i', `List`],
+				[/* text */ 't', ` of `],
+				[/* inline code block */ 'i', `Certificate`],
+				[/* text */ 't', `s
+         (may be empty, but not null)`]
+			]
+		]],
 		[/* method */ 'equals(java.lang.Object)', [
 			[/* method description */
 				[/* text */ 't', `Compares this certification path for equality with the specified
@@ -266,22 +365,6 @@ DocsCollector.collect('java.security.cert.CertPath', [
  false otherwise`]
 			]
 		]],
-		[/* method */ 'toString()', [
-			[/* method description */
-				[/* text */ 't', `Returns a string representation of this certification path.
- This calls the `],
-				[/* inline code block */ 'i', `toString`],
-				[/* text */ 't', ` method on each of the
- `],
-				[/* inline code block */ 'i', `Certificate`],
-				[/* text */ 't', `s in the path.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `a string representation of this certification path`]
-			]
-		]],
 		[/* method */ 'hashCode()', [
 			[/* method description */
 				[/* text */ 't', `Returns the hashcode for this certification path. The hash code of
@@ -314,24 +397,6 @@ DocsCollector.collect('java.security.cert.CertPath', [
 				[/* text */ 't', `the hashcode value for this certification path`]
 			]
 		]],
-		[/* method */ 'getCertificates()', [
-			[/* method description */
-				[/* text */ 't', `Returns the list of certificates in this certification path.
- The `],
-				[/* inline code block */ 'i', `List`],
-				[/* text */ 't', ` returned must be immutable and thread-safe.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `an immutable `],
-				[/* inline code block */ 'i', `List`],
-				[/* text */ 't', ` of `],
-				[/* inline code block */ 'i', `Certificate`],
-				[/* text */ 't', `s
-         (may be empty, but not null)`]
-			]
-		]],
 		[/* method */ 'getType()', [
 			[/* method description */
 				[/* text */ 't', `Returns the type of `],
@@ -354,85 +419,20 @@ DocsCollector.collect('java.security.cert.CertPath', [
  path (never null)`]
 			]
 		]],
-		[/* method */ 'getEncoded(java.lang.String)', [
+		[/* method */ 'toString()', [
 			[/* method description */
-				[/* text */ 't', `Returns the encoded form of this certification path, using the
- specified encoding.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'encoding', [/* parameter description */
-					[/* text */ 't', `the name of the encoding to use`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.security.cert.CertificateEncodingException', [/* throw description */
-					[/* text */ 't', `if an encoding error occurs or
-   the encoding requested is not supported`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `the encoded bytes`]
-			]
-		]],
-		[/* method */ 'getEncoded()', [
-			[/* method description */
-				[/* text */ 't', `Returns the encoded form of this certification path, using the default
- encoding.`]
-			],
-			/* parameters */ UDF,
-			[/* throws */
-				[/* throw */ 'java.security.cert.CertificateEncodingException', [/* throw description */
-					[/* text */ 't', `if an encoding error occurs`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `the encoded bytes`]
-			]
-		]],
-		[/* method */ 'writeReplace()', [
-			[/* method description */
-				[/* text */ 't', `Replaces the `],
-				[/* inline code block */ 'i', `CertPath`],
-				[/* text */ 't', ` to be serialized with a
+				[/* text */ 't', `Returns a string representation of this certification path.
+ This calls the `],
+				[/* inline code block */ 'i', `toString`],
+				[/* text */ 't', ` method on each of the
  `],
-				[/* inline code block */ 'i', `CertPathRep`],
-				[/* text */ 't', ` object.`]
-			],
-			/* parameters */ UDF,
-			[/* throws */
-				[/* throw */ 'java.io.ObjectStreamException', [/* throw description */
-					[/* text */ 't', `if a `],
-					[/* inline code block */ 'i', `CertPathRep`],
-					[/* text */ 't', ` object
- representing this certification path could not be created`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `the `],
-				[/* inline code block */ 'i', `CertPathRep`],
-				[/* text */ 't', ` to be serialized`]
-			]
-		]],
-		[/* method */ 'getEncodings()', [
-			[/* method description */
-				[/* text */ 't', `Returns an iteration of the encodings supported by this certification
- path, with the default encoding first. Attempts to modify the returned
- `],
-				[/* inline code block */ 'i', `Iterator`],
-				[/* text */ 't', ` via its `],
-				[/* inline code block */ 'i', `remove`],
-				[/* text */ 't', ` method result in an
- `],
-				[/* inline code block */ 'i', `UnsupportedOperationException`],
-				[/* text */ 't', `.`]
+				[/* inline code block */ 'i', `Certificate`],
+				[/* text */ 't', `s in the path.`]
 			],
 			/* parameters */ UDF,
 			/* throws */ UDF,
 			[/* return description */
-				[/* text */ 't', `an `],
-				[/* inline code block */ 'i', `Iterator`],
-				[/* text */ 't', ` over the names of the supported
-         encodings (as Strings)`]
+				[/* text */ 't', `a string representation of this certification path`]
 			]
 		]]
 	],

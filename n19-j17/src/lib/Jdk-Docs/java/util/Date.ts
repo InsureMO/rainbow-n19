@@ -138,22 +138,80 @@ DocsCollector.collect('java.util.Date', [
 	],
 	/* fields */ UDF,
 	[/* constructors */
-		[/* constructor */ '<init>(java.lang.String)', [
+		[/* constructor */ '<init>()', [
 			[/* constructor description */
 				[/* text */ 't', `Allocates a `],
 				[/* inline code block */ 'i', `Date`],
 				[/* text */ 't', ` object and initializes it so that
- it represents the date and time indicated by the string
+ it represents the time at which it was allocated, measured to the
+ nearest millisecond.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF
+		]],
+		[/* constructor */ '<init>(int,int,int)', [
+			[/* constructor description */
+				[/* text */ 't', `Allocates a `],
+				[/* inline code block */ 'i', `Date`],
+				[/* text */ 't', ` object and initializes it so that
+ it represents midnight, local time, at the beginning of the day
+ specified by the `],
+				[/* inline code block */ 'i', `year`],
+				[/* text */ 't', `, `],
+				[/* inline code block */ 'i', `month`],
+				[/* text */ 't', `, and
  `],
-				[/* inline code block */ 'i', `s`],
-				[/* text */ 't', `, which is interpreted as if by the
- `],
-				[/* reference */ 'r', `#parse(java.lang.String)`, `parse(java.lang.String)`],
-				[/* text */ 't', ` method.`]
+				[/* inline code block */ 'i', `date`],
+				[/* text */ 't', ` arguments.`]
 			],
 			[/* parameters */
-				[/* parameter */ 's', [/* parameter description */
-					[/* text */ 't', `a string representation of the date.`]
+				[/* parameter */ 'year', [/* parameter description */
+					[/* text */ 't', `the year minus 1900.`]
+				]],
+				[/* parameter */ 'month', [/* parameter description */
+					[/* text */ 't', `the month between 0-11.`]
+				]],
+				[/* parameter */ 'date', [/* parameter description */
+					[/* text */ 't', `the day of the month between 1-31.`]
+				]]
+			],
+			/* throws */ UDF
+		]],
+		[/* constructor */ '<init>(int,int,int,int,int)', [
+			[/* constructor description */
+				[/* text */ 't', `Allocates a `],
+				[/* inline code block */ 'i', `Date`],
+				[/* text */ 't', ` object and initializes it so that
+ it represents the instant at the start of the minute specified by
+ the `],
+				[/* inline code block */ 'i', `year`],
+				[/* text */ 't', `, `],
+				[/* inline code block */ 'i', `month`],
+				[/* text */ 't', `, `],
+				[/* inline code block */ 'i', `date`],
+				[/* text */ 't', `,
+ `],
+				[/* inline code block */ 'i', `hrs`],
+				[/* text */ 't', `, and `],
+				[/* inline code block */ 'i', `min`],
+				[/* text */ 't', ` arguments, in the local
+ time zone.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'year', [/* parameter description */
+					[/* text */ 't', `the year minus 1900.`]
+				]],
+				[/* parameter */ 'month', [/* parameter description */
+					[/* text */ 't', `the month between 0-11.`]
+				]],
+				[/* parameter */ 'date', [/* parameter description */
+					[/* text */ 't', `the day of the month between 1-31.`]
+				]],
+				[/* parameter */ 'hrs', [/* parameter description */
+					[/* text */ 't', `the hours between 0-23.`]
+				]],
+				[/* parameter */ 'min', [/* parameter description */
+					[/* text */ 't', `the minutes between 0-59.`]
 				]]
 			],
 			/* throws */ UDF
@@ -202,54 +260,24 @@ DocsCollector.collect('java.util.Date', [
 			],
 			/* throws */ UDF
 		]],
-		[/* constructor */ '<init>(int,int,int,int,int)', [
+		[/* constructor */ '<init>(java.lang.String)', [
 			[/* constructor description */
 				[/* text */ 't', `Allocates a `],
 				[/* inline code block */ 'i', `Date`],
 				[/* text */ 't', ` object and initializes it so that
- it represents the instant at the start of the minute specified by
- the `],
-				[/* inline code block */ 'i', `year`],
-				[/* text */ 't', `, `],
-				[/* inline code block */ 'i', `month`],
-				[/* text */ 't', `, `],
-				[/* inline code block */ 'i', `date`],
-				[/* text */ 't', `,
+ it represents the date and time indicated by the string
  `],
-				[/* inline code block */ 'i', `hrs`],
-				[/* text */ 't', `, and `],
-				[/* inline code block */ 'i', `min`],
-				[/* text */ 't', ` arguments, in the local
- time zone.`]
+				[/* inline code block */ 'i', `s`],
+				[/* text */ 't', `, which is interpreted as if by the
+ `],
+				[/* reference */ 'r', `#parse(java.lang.String)`, `parse(java.lang.String)`],
+				[/* text */ 't', ` method.`]
 			],
 			[/* parameters */
-				[/* parameter */ 'year', [/* parameter description */
-					[/* text */ 't', `the year minus 1900.`]
-				]],
-				[/* parameter */ 'month', [/* parameter description */
-					[/* text */ 't', `the month between 0-11.`]
-				]],
-				[/* parameter */ 'date', [/* parameter description */
-					[/* text */ 't', `the day of the month between 1-31.`]
-				]],
-				[/* parameter */ 'hrs', [/* parameter description */
-					[/* text */ 't', `the hours between 0-23.`]
-				]],
-				[/* parameter */ 'min', [/* parameter description */
-					[/* text */ 't', `the minutes between 0-59.`]
+				[/* parameter */ 's', [/* parameter description */
+					[/* text */ 't', `a string representation of the date.`]
 				]]
 			],
-			/* throws */ UDF
-		]],
-		[/* constructor */ '<init>()', [
-			[/* constructor description */
-				[/* text */ 't', `Allocates a `],
-				[/* inline code block */ 'i', `Date`],
-				[/* text */ 't', ` object and initializes it so that
- it represents the time at which it was allocated, measured to the
- nearest millisecond.`]
-			],
-			/* parameters */ UDF,
 			/* throws */ UDF
 		]],
 		[/* constructor */ '<init>(long)', [
@@ -267,37 +295,69 @@ DocsCollector.collect('java.util.Date', [
 				]]
 			],
 			/* throws */ UDF
-		]],
-		[/* constructor */ '<init>(int,int,int)', [
-			[/* constructor description */
-				[/* text */ 't', `Allocates a `],
-				[/* inline code block */ 'i', `Date`],
-				[/* text */ 't', ` object and initializes it so that
- it represents midnight, local time, at the beginning of the day
- specified by the `],
-				[/* inline code block */ 'i', `year`],
-				[/* text */ 't', `, `],
-				[/* inline code block */ 'i', `month`],
-				[/* text */ 't', `, and
- `],
-				[/* inline code block */ 'i', `date`],
-				[/* text */ 't', ` arguments.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'year', [/* parameter description */
-					[/* text */ 't', `the year minus 1900.`]
-				]],
-				[/* parameter */ 'month', [/* parameter description */
-					[/* text */ 't', `the month between 0-11.`]
-				]],
-				[/* parameter */ 'date', [/* parameter description */
-					[/* text */ 't', `the day of the month between 1-31.`]
-				]]
-			],
-			/* throws */ UDF
 		]]
 	],
 	[/* methods */
+		[/* method */ 'after(java.util.Date)', [
+			[/* method description */
+				[/* text */ 't', `Tests if this date is after the specified date.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'when', [/* parameter description */
+					[/* text */ 't', `a date.`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
+					[/* text */ 't', `if `],
+					[/* inline code block */ 'i', `when`],
+					[/* text */ 't', ` is null.`]
+				]]
+			],
+			[/* return description */
+				[/* inline code block */ 'i', `true`],
+				[/* text */ 't', ` if and only if the instant represented
+          by this `],
+				[/* inline code block */ 'i', `Date`],
+				[/* text */ 't', ` object is strictly later than the
+          instant represented by `],
+				[/* inline code block */ 'i', `when`],
+				[/* text */ 't', `;
+          `],
+				[/* inline code block */ 'i', `false`],
+				[/* text */ 't', ` otherwise.`]
+			]
+		]],
+		[/* method */ 'before(java.util.Date)', [
+			[/* method description */
+				[/* text */ 't', `Tests if this date is before the specified date.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'when', [/* parameter description */
+					[/* text */ 't', `a date.`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
+					[/* text */ 't', `if `],
+					[/* inline code block */ 'i', `when`],
+					[/* text */ 't', ` is null.`]
+				]]
+			],
+			[/* return description */
+				[/* inline code block */ 'i', `true`],
+				[/* text */ 't', ` if and only if the instant of time
+            represented by this `],
+				[/* inline code block */ 'i', `Date`],
+				[/* text */ 't', ` object is strictly
+            earlier than the instant represented by `],
+				[/* inline code block */ 'i', `when`],
+				[/* text */ 't', `;
+          `],
+				[/* inline code block */ 'i', `false`],
+				[/* text */ 't', ` otherwise.`]
+			]
+		]],
 		[/* method */ 'equals(java.lang.Object)', [
 			[/* method description */
 				[/* text */ 't', `Compares two dates for equality.
@@ -336,6 +396,370 @@ DocsCollector.collect('java.util.Date', [
           `],
 				[/* inline code block */ 'i', `false`],
 				[/* text */ 't', ` otherwise.`]
+			]
+		]],
+		[/* method */ 'compareTo(java.util.Date)', [
+			[/* method description */
+				[/* text */ 't', `Compares two Dates for ordering.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'anotherDate', [/* parameter description */
+					[/* text */ 't', `the `],
+					[/* inline code block */ 'i', `Date`],
+					[/* text */ 't', ` to be compared.`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
+					[/* text */ 't', `if `],
+					[/* inline code block */ 'i', `anotherDate`],
+					[/* text */ 't', ` is null.`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `the value `],
+				[/* inline code block */ 'i', `0`],
+				[/* text */ 't', ` if the argument Date is equal to
+          this Date; a value less than `],
+				[/* inline code block */ 'i', `0`],
+				[/* text */ 't', ` if this Date
+          is before the Date argument; and a value greater than
+      `],
+				[/* inline code block */ 'i', `0`],
+				[/* text */ 't', ` if this Date is after the Date argument.`]
+			]
+		]],
+		[/* method */ 'getDate()', [
+			[/* method description */
+				[/* text */ 't', `Returns the day of the month represented by this `],
+				[/* inline code block */ 'i', `Date`],
+				[/* text */ 't', ` object.
+ The value returned is between `],
+				[/* inline code block */ 'i', `1`],
+				[/* text */ 't', ` and `],
+				[/* inline code block */ 'i', `31`],
+				[/* text */ 't', `
+ representing the day of the month that contains or begins with the
+ instant in time represented by this `],
+				[/* inline code block */ 'i', `Date`],
+				[/* text */ 't', ` object, as
+ interpreted in the local time zone.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the day of the month represented by this date.`]
+			]
+		]],
+		[/* method */ 'getDay()', [
+			[/* method description */
+				[/* text */ 't', `Returns the day of the week represented by this date. The
+ returned value (`],
+				[/* inline code block */ 'i', `0`],
+				[/* text */ 't', ` = Sunday, `],
+				[/* inline code block */ 'i', `1`],
+				[/* text */ 't', ` = Monday,
+ `],
+				[/* inline code block */ 'i', `2`],
+				[/* text */ 't', ` = Tuesday, `],
+				[/* inline code block */ 'i', `3`],
+				[/* text */ 't', ` = Wednesday, `],
+				[/* inline code block */ 'i', `4`],
+				[/* text */ 't', ` =
+ Thursday, `],
+				[/* inline code block */ 'i', `5`],
+				[/* text */ 't', ` = Friday, `],
+				[/* inline code block */ 'i', `6`],
+				[/* text */ 't', ` = Saturday)
+ represents the day of the week that contains or begins with
+ the instant in time represented by this `],
+				[/* inline code block */ 'i', `Date`],
+				[/* text */ 't', ` object,
+ as interpreted in the local time zone.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the day of the week represented by this date.`]
+			]
+		]],
+		[/* method */ 'getHours()', [
+			[/* method description */
+				[/* text */ 't', `Returns the hour represented by this `],
+				[/* inline code block */ 'i', `Date`],
+				[/* text */ 't', ` object. The
+ returned value is a number (`],
+				[/* inline code block */ 'i', `0`],
+				[/* text */ 't', ` through `],
+				[/* inline code block */ 'i', `23`],
+				[/* text */ 't', `)
+ representing the hour within the day that contains or begins
+ with the instant in time represented by this `],
+				[/* inline code block */ 'i', `Date`],
+				[/* text */ 't', `
+ object, as interpreted in the local time zone.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the hour represented by this date.`]
+			]
+		]],
+		[/* method */ 'getMinutes()', [
+			[/* method description */
+				[/* text */ 't', `Returns the number of minutes past the hour represented by this date,
+ as interpreted in the local time zone.
+ The value returned is between `],
+				[/* inline code block */ 'i', `0`],
+				[/* text */ 't', ` and `],
+				[/* inline code block */ 'i', `59`],
+				[/* text */ 't', `.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the number of minutes past the hour represented by this date.`]
+			]
+		]],
+		[/* method */ 'getMonth()', [
+			[/* method description */
+				[/* text */ 't', `Returns a number representing the month that contains or begins
+ with the instant in time represented by this `],
+				[/* inline code block */ 'i', `Date`],
+				[/* text */ 't', ` object.
+ The value returned is between `],
+				[/* inline code block */ 'i', `0`],
+				[/* text */ 't', ` and `],
+				[/* inline code block */ 'i', `11`],
+				[/* text */ 't', `,
+ with the value `],
+				[/* inline code block */ 'i', `0`],
+				[/* text */ 't', ` representing January.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the month represented by this date.`]
+			]
+		]],
+		[/* method */ 'getSeconds()', [
+			[/* method description */
+				[/* text */ 't', `Returns the number of seconds past the minute represented by this date.
+ The value returned is between `],
+				[/* inline code block */ 'i', `0`],
+				[/* text */ 't', ` and `],
+				[/* inline code block */ 'i', `61`],
+				[/* text */ 't', `. The
+ values `],
+				[/* inline code block */ 'i', `60`],
+				[/* text */ 't', ` and `],
+				[/* inline code block */ 'i', `61`],
+				[/* text */ 't', ` can only occur on those
+ Java Virtual Machines that take leap seconds into account.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the number of seconds past the minute represented by this date.`]
+			]
+		]],
+		[/* method */ 'getTimezoneOffset()', [
+			[/* method description */
+				[/* text */ 't', `Returns the offset, measured in minutes, for the local time zone
+ relative to UTC that is appropriate for the time represented by
+ this `],
+				[/* inline code block */ 'i', `Date`],
+				[/* text */ 't', ` object.
+ `],
+				[/* block */ 'b', `
+ For example, in Massachusetts, five time zones west of Greenwich:
+ `],
+				[/* block */ 'b', [
+					[/* code block */ 'c', ` new Date(96, 1, 14).getTimezoneOffset() returns 300`]
+				]],
+				[/* text */ 't', `
+ because on February 14, 1996, standard time (Eastern Standard Time)
+ is in use, which is offset five hours from UTC; but:
+ `],
+				[/* block */ 'b', [
+					[/* code block */ 'c', ` new Date(96, 5, 1).getTimezoneOffset() returns 240`]
+				]],
+				[/* text */ 't', `
+ because on June 1, 1996, daylight saving time (Eastern Daylight Time)
+ is in use, which is offset only four hours from UTC.`],
+				[/* block */ 'b', ''],
+				[/* block */ 'b', `
+ This method produces the same result as if it computed:
+ `],
+				[/* block */ 'b', [
+					[/* code block */ 'c', ` (this.getTime() - UTC(this.getYear(),
+                       this.getMonth(),
+                       this.getDate(),
+                       this.getHours(),
+                       this.getMinutes(),
+                       this.getSeconds())) / (60 * 1000)
+ `]
+				]],
+				[/* block */ 'b', '']
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the time-zone offset, in minutes, for the current time zone.`]
+			]
+		]],
+		[/* method */ 'getYear()', [
+			[/* method description */
+				[/* text */ 't', `Returns a value that is the result of subtracting 1900 from the
+ year that contains or begins with the instant in time represented
+ by this `],
+				[/* inline code block */ 'i', `Date`],
+				[/* text */ 't', ` object, as interpreted in the local
+ time zone.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the year represented by this date, minus 1900.`]
+			]
+		]],
+		[/* method */ 'hashCode()', [
+			[/* method description */
+				[/* text */ 't', `Returns a hash code value for this object. The result is the
+ exclusive OR of the two halves of the primitive `],
+				[/* inline code block */ 'i', `long`],
+				[/* text */ 't', `
+ value returned by the `],
+				[/* reference */ 'r', `#getTime()`, `getTime()`],
+				[/* text */ 't', `
+ method. That is, the hash code is the value of the expression:
+ `],
+				[/* block */ 'b', [
+					[/* code block */ 'c', [
+						[/* inline code block */ 'i', `(int)(this.getTime()^(this.getTime() >>> 32))`]
+					]]
+				]]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `a hash code value for this object.`]
+			]
+		]],
+		[/* method */ 'clone()', [
+			[/* method description */
+				[/* text */ 't', `Return a copy of this object.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `a clone of this instance.`]
+			]
+		]],
+		[/* method */ 'toGMTString()', [
+			[/* method description */
+				[/* text */ 't', `Creates a string representation of this `],
+				[/* inline code block */ 'i', `Date`],
+				[/* text */ 't', ` object of
+ the form:
+ `],
+				[/* block */ 'b', [
+					[/* code block */ 'c', ` d mon yyyy hh:mm:ss GMT`]
+				]],
+				[/* text */ 't', `
+ where:`],
+				[/* list */ 'l', [
+					[/* block */ 'b', [
+						[/* text */ 't', `d`],
+						[/* text */ 't', ` is the day of the month (`],
+						[/* inline code block */ 'i', `1`],
+						[/* text */ 't', ` through `],
+						[/* inline code block */ 'i', `31`],
+						[/* text */ 't', `),
+     as one or two decimal digits.
+ `]
+					]],
+					[/* block */ 'b', [
+						[/* text */ 't', `mon`],
+						[/* text */ 't', ` is the month (`],
+						[/* inline code block */ 'i', `Jan, Feb, Mar, Apr, May, Jun, Jul, Aug, Sep, Oct, Nov, Dec`],
+						[/* text */ 't', `).
+ `]
+					]],
+					[/* block */ 'b', [
+						[/* text */ 't', `yyyy`],
+						[/* text */ 't', ` is the year, as four decimal digits.
+ `]
+					]],
+					[/* block */ 'b', [
+						[/* text */ 't', `hh`],
+						[/* text */ 't', ` is the hour of the day (`],
+						[/* inline code block */ 'i', `00`],
+						[/* text */ 't', ` through `],
+						[/* inline code block */ 'i', `23`],
+						[/* text */ 't', `),
+     as two decimal digits.
+ `]
+					]],
+					[/* block */ 'b', [
+						[/* text */ 't', `mm`],
+						[/* text */ 't', ` is the minute within the hour (`],
+						[/* inline code block */ 'i', `00`],
+						[/* text */ 't', ` through
+     `],
+						[/* inline code block */ 'i', `59`],
+						[/* text */ 't', `), as two decimal digits.
+ `]
+					]],
+					[/* block */ 'b', [
+						[/* text */ 't', `ss`],
+						[/* text */ 't', ` is the second within the minute (`],
+						[/* inline code block */ 'i', `00`],
+						[/* text */ 't', ` through
+     `],
+						[/* inline code block */ 'i', `61`],
+						[/* text */ 't', `), as two decimal digits.
+ `]
+					]],
+					[/* block */ 'b', [
+						[/* text */ 't', `GMT`],
+						[/* text */ 't', ` is exactly the ASCII letters "`],
+						[/* inline code block */ 'i', `GMT`],
+						[/* text */ 't', `" to indicate
+     Greenwich Mean Time.
+ `]
+					]]
+				]],
+				[/* block */ 'b', `
+ The result does not depend on the local time zone.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `a string representation of this date, using the Internet GMT
+          conventions.`]
+			]
+		]],
+		[/* method */ 'toLocaleString()', [
+			[/* method description */
+				[/* text */ 't', `Creates a string representation of this `],
+				[/* inline code block */ 'i', `Date`],
+				[/* text */ 't', ` object in an
+ implementation-dependent form. The intent is that the form should
+ be familiar to the user of the Java application, wherever it may
+ happen to be running. The intent is comparable to that of the
+ "`],
+				[/* inline code block */ 'i', `%c`],
+				[/* text */ 't', `" format supported by the `],
+				[/* inline code block */ 'i', `strftime()`],
+				[/* text */ 't', `
+ function of ISO C.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `a string representation of this date, using the locale
+          conventions.`]
 			]
 		]],
 		[/* method */ 'toString()', [
@@ -433,68 +857,45 @@ DocsCollector.collect('java.util.Date', [
 				[/* text */ 't', `a string representation of this date.`]
 			]
 		]],
-		[/* method */ 'hashCode()', [
+		[/* method */ 'toInstant()', [
 			[/* method description */
-				[/* text */ 't', `Returns a hash code value for this object. The result is the
- exclusive OR of the two halves of the primitive `],
-				[/* inline code block */ 'i', `long`],
-				[/* text */ 't', `
- value returned by the `],
-				[/* reference */ 'r', `#getTime()`, `getTime()`],
-				[/* text */ 't', `
- method. That is, the hash code is the value of the expression:
+				[/* text */ 't', `Converts this `],
+				[/* inline code block */ 'i', `Date`],
+				[/* text */ 't', ` object to an `],
+				[/* inline code block */ 'i', `Instant`],
+				[/* text */ 't', `.
  `],
 				[/* block */ 'b', [
-					[/* code block */ 'c', [
-						[/* inline code block */ 'i', `(int)(this.getTime()^(this.getTime() >>> 32))`]
-					]]
-				]]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `a hash code value for this object.`]
-			]
-		]],
-		[/* method */ 'clone()', [
-			[/* method description */
-				[/* text */ 't', `Return a copy of this object.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `a clone of this instance.`]
-			]
-		]],
-		[/* method */ 'compareTo(java.util.Date)', [
-			[/* method description */
-				[/* text */ 't', `Compares two Dates for ordering.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'anotherDate', [/* parameter description */
-					[/* text */ 't', `the `],
+					[/* text */ 't', `
+ The conversion creates an `],
+					[/* inline code block */ 'i', `Instant`],
+					[/* text */ 't', ` that represents the same
+ point on the time-line as this `],
 					[/* inline code block */ 'i', `Date`],
-					[/* text */ 't', ` to be compared.`]
+					[/* text */ 't', `.`]
 				]]
 			],
-			[/* throws */
-				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
-					[/* text */ 't', `if `],
-					[/* inline code block */ 'i', `anotherDate`],
-					[/* text */ 't', ` is null.`]
-				]]
-			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
 			[/* return description */
-				[/* text */ 't', `the value `],
-				[/* inline code block */ 'i', `0`],
-				[/* text */ 't', ` if the argument Date is equal to
-          this Date; a value less than `],
-				[/* inline code block */ 'i', `0`],
-				[/* text */ 't', ` if this Date
-          is before the Date argument; and a value greater than
-      `],
-				[/* inline code block */ 'i', `0`],
-				[/* text */ 't', ` if this Date is after the Date argument.`]
+				[/* text */ 't', `an instant representing the same point on the time-line as
+  this `],
+				[/* inline code block */ 'i', `Date`],
+				[/* text */ 't', ` object`]
+			]
+		]],
+		[/* method */ 'getTime()', [
+			[/* method description */
+				[/* text */ 't', `Returns the number of milliseconds since January 1, 1970, 00:00:00 GMT
+ represented by this `],
+				[/* inline code block */ 'i', `Date`],
+				[/* text */ 't', ` object.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the number of milliseconds since January 1, 1970, 00:00:00 GMT
+          represented by this date.`]
 			]
 		]],
 		[/* method */ 'from(java.time.Instant)', [
@@ -546,66 +947,6 @@ DocsCollector.collect('java.util.Date', [
 				[/* inline code block */ 'i', `Date`],
 				[/* text */ 't', ` representing the same point on the time-line as
   the provided instant`]
-			]
-		]],
-		[/* method */ 'before(java.util.Date)', [
-			[/* method description */
-				[/* text */ 't', `Tests if this date is before the specified date.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'when', [/* parameter description */
-					[/* text */ 't', `a date.`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
-					[/* text */ 't', `if `],
-					[/* inline code block */ 'i', `when`],
-					[/* text */ 't', ` is null.`]
-				]]
-			],
-			[/* return description */
-				[/* inline code block */ 'i', `true`],
-				[/* text */ 't', ` if and only if the instant of time
-            represented by this `],
-				[/* inline code block */ 'i', `Date`],
-				[/* text */ 't', ` object is strictly
-            earlier than the instant represented by `],
-				[/* inline code block */ 'i', `when`],
-				[/* text */ 't', `;
-          `],
-				[/* inline code block */ 'i', `false`],
-				[/* text */ 't', ` otherwise.`]
-			]
-		]],
-		[/* method */ 'after(java.util.Date)', [
-			[/* method description */
-				[/* text */ 't', `Tests if this date is after the specified date.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'when', [/* parameter description */
-					[/* text */ 't', `a date.`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
-					[/* text */ 't', `if `],
-					[/* inline code block */ 'i', `when`],
-					[/* text */ 't', ` is null.`]
-				]]
-			],
-			[/* return description */
-				[/* inline code block */ 'i', `true`],
-				[/* text */ 't', ` if and only if the instant represented
-          by this `],
-				[/* inline code block */ 'i', `Date`],
-				[/* text */ 't', ` object is strictly later than the
-          instant represented by `],
-				[/* inline code block */ 'i', `when`],
-				[/* text */ 't', `;
-          `],
-				[/* inline code block */ 'i', `false`],
-				[/* text */ 't', ` otherwise.`]
 			]
 		]],
 		[/* method */ 'parse(java.lang.String)', [
@@ -861,83 +1202,6 @@ DocsCollector.collect('java.util.Date', [
           represented by the string argument.`]
 			]
 		]],
-		[/* method */ 'getTime()', [
-			[/* method description */
-				[/* text */ 't', `Returns the number of milliseconds since January 1, 1970, 00:00:00 GMT
- represented by this `],
-				[/* inline code block */ 'i', `Date`],
-				[/* text */ 't', ` object.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the number of milliseconds since January 1, 1970, 00:00:00 GMT
-          represented by this date.`]
-			]
-		]],
-		[/* method */ 'getYear()', [
-			[/* method description */
-				[/* text */ 't', `Returns a value that is the result of subtracting 1900 from the
- year that contains or begins with the instant in time represented
- by this `],
-				[/* inline code block */ 'i', `Date`],
-				[/* text */ 't', ` object, as interpreted in the local
- time zone.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the year represented by this date, minus 1900.`]
-			]
-		]],
-		[/* method */ 'getSeconds()', [
-			[/* method description */
-				[/* text */ 't', `Returns the number of seconds past the minute represented by this date.
- The value returned is between `],
-				[/* inline code block */ 'i', `0`],
-				[/* text */ 't', ` and `],
-				[/* inline code block */ 'i', `61`],
-				[/* text */ 't', `. The
- values `],
-				[/* inline code block */ 'i', `60`],
-				[/* text */ 't', ` and `],
-				[/* inline code block */ 'i', `61`],
-				[/* text */ 't', ` can only occur on those
- Java Virtual Machines that take leap seconds into account.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the number of seconds past the minute represented by this date.`]
-			]
-		]],
-		[/* method */ 'toInstant()', [
-			[/* method description */
-				[/* text */ 't', `Converts this `],
-				[/* inline code block */ 'i', `Date`],
-				[/* text */ 't', ` object to an `],
-				[/* inline code block */ 'i', `Instant`],
-				[/* text */ 't', `.
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', `
- The conversion creates an `],
-					[/* inline code block */ 'i', `Instant`],
-					[/* text */ 't', ` that represents the same
- point on the time-line as this `],
-					[/* inline code block */ 'i', `Date`],
-					[/* text */ 't', `.`]
-				]]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `an instant representing the same point on the time-line as
-  this `],
-				[/* inline code block */ 'i', `Date`],
-				[/* text */ 't', ` object`]
-			]
-		]],
 		[/* method */ 'UTC(int,int,int,int,int,int)', [
 			[/* method description */
 				[/* text */ 't', `Determines the date and time based on the arguments. The
@@ -975,44 +1239,6 @@ DocsCollector.collect('java.util.Date', [
 			[/* return description */
 				[/* text */ 't', `the number of milliseconds since January 1, 1970, 00:00:00 GMT for
           the date and time specified by the arguments.`]
-			]
-		]],
-		[/* method */ 'setTime(long)', [
-			[/* method description */
-				[/* text */ 't', `Sets this `],
-				[/* inline code block */ 'i', `Date`],
-				[/* text */ 't', ` object to represent a point in time that is
- `],
-				[/* inline code block */ 'i', `time`],
-				[/* text */ 't', ` milliseconds after January 1, 1970 00:00:00 GMT.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'time', [/* parameter description */
-					[/* text */ 't', `the number of milliseconds.`]
-				]]
-			],
-			/* throws */ UDF,
-			/* return */ UDF
-		]],
-		[/* method */ 'getMonth()', [
-			[/* method description */
-				[/* text */ 't', `Returns a number representing the month that contains or begins
- with the instant in time represented by this `],
-				[/* inline code block */ 'i', `Date`],
-				[/* text */ 't', ` object.
- The value returned is between `],
-				[/* inline code block */ 'i', `0`],
-				[/* text */ 't', ` and `],
-				[/* inline code block */ 'i', `11`],
-				[/* text */ 't', `,
- with the value `],
-				[/* inline code block */ 'i', `0`],
-				[/* text */ 't', ` representing January.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the month represented by this date.`]
 			]
 		]],
 		[/* method */ 'setDate(int)', [
@@ -1058,44 +1284,6 @@ DocsCollector.collect('java.util.Date', [
 			/* throws */ UDF,
 			/* return */ UDF
 		]],
-		[/* method */ 'getHours()', [
-			[/* method description */
-				[/* text */ 't', `Returns the hour represented by this `],
-				[/* inline code block */ 'i', `Date`],
-				[/* text */ 't', ` object. The
- returned value is a number (`],
-				[/* inline code block */ 'i', `0`],
-				[/* text */ 't', ` through `],
-				[/* inline code block */ 'i', `23`],
-				[/* text */ 't', `)
- representing the hour within the day that contains or begins
- with the instant in time represented by this `],
-				[/* inline code block */ 'i', `Date`],
-				[/* text */ 't', `
- object, as interpreted in the local time zone.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the hour represented by this date.`]
-			]
-		]],
-		[/* method */ 'getMinutes()', [
-			[/* method description */
-				[/* text */ 't', `Returns the number of minutes past the hour represented by this date,
- as interpreted in the local time zone.
- The value returned is between `],
-				[/* inline code block */ 'i', `0`],
-				[/* text */ 't', ` and `],
-				[/* inline code block */ 'i', `59`],
-				[/* text */ 't', `.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the number of minutes past the hour represented by this date.`]
-			]
-		]],
 		[/* method */ 'setMinutes(int)', [
 			[/* method description */
 				[/* text */ 't', `Sets the minutes of this `],
@@ -1111,6 +1299,26 @@ DocsCollector.collect('java.util.Date', [
 			[/* parameters */
 				[/* parameter */ 'minutes', [/* parameter description */
 					[/* text */ 't', `the value of the minutes.`]
+				]]
+			],
+			/* throws */ UDF,
+			/* return */ UDF
+		]],
+		[/* method */ 'setMonth(int)', [
+			[/* method description */
+				[/* text */ 't', `Sets the month of this date to the specified value. This
+ `],
+				[/* inline code block */ 'i', `Date`],
+				[/* text */ 't', ` object is modified so that it represents a point
+ in time within the specified month, with the year, date, hour,
+ minute, and second the same as before, as interpreted in the
+ local time zone. If the date was October 31, for example, and
+ the month is set to June, then the new date will be treated as
+ if it were on July 1, because June has only 30 days.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'month', [/* parameter description */
+					[/* text */ 't', `the month value between 0-11.`]
 				]]
 			],
 			/* throws */ UDF,
@@ -1136,21 +1344,18 @@ DocsCollector.collect('java.util.Date', [
 			/* throws */ UDF,
 			/* return */ UDF
 		]],
-		[/* method */ 'setMonth(int)', [
+		[/* method */ 'setTime(long)', [
 			[/* method description */
-				[/* text */ 't', `Sets the month of this date to the specified value. This
- `],
+				[/* text */ 't', `Sets this `],
 				[/* inline code block */ 'i', `Date`],
-				[/* text */ 't', ` object is modified so that it represents a point
- in time within the specified month, with the year, date, hour,
- minute, and second the same as before, as interpreted in the
- local time zone. If the date was October 31, for example, and
- the month is set to June, then the new date will be treated as
- if it were on July 1, because June has only 30 days.`]
+				[/* text */ 't', ` object to represent a point in time that is
+ `],
+				[/* inline code block */ 'i', `time`],
+				[/* text */ 't', ` milliseconds after January 1, 1970 00:00:00 GMT.`]
 			],
 			[/* parameters */
-				[/* parameter */ 'month', [/* parameter description */
-					[/* text */ 't', `the month value between 0-11.`]
+				[/* parameter */ 'time', [/* parameter description */
+					[/* text */ 't', `the number of milliseconds.`]
 				]]
 			],
 			/* throws */ UDF,
@@ -1178,211 +1383,6 @@ DocsCollector.collect('java.util.Date', [
 			],
 			/* throws */ UDF,
 			/* return */ UDF
-		]],
-		[/* method */ 'getDate()', [
-			[/* method description */
-				[/* text */ 't', `Returns the day of the month represented by this `],
-				[/* inline code block */ 'i', `Date`],
-				[/* text */ 't', ` object.
- The value returned is between `],
-				[/* inline code block */ 'i', `1`],
-				[/* text */ 't', ` and `],
-				[/* inline code block */ 'i', `31`],
-				[/* text */ 't', `
- representing the day of the month that contains or begins with the
- instant in time represented by this `],
-				[/* inline code block */ 'i', `Date`],
-				[/* text */ 't', ` object, as
- interpreted in the local time zone.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the day of the month represented by this date.`]
-			]
-		]],
-		[/* method */ 'getDay()', [
-			[/* method description */
-				[/* text */ 't', `Returns the day of the week represented by this date. The
- returned value (`],
-				[/* inline code block */ 'i', `0`],
-				[/* text */ 't', ` = Sunday, `],
-				[/* inline code block */ 'i', `1`],
-				[/* text */ 't', ` = Monday,
- `],
-				[/* inline code block */ 'i', `2`],
-				[/* text */ 't', ` = Tuesday, `],
-				[/* inline code block */ 'i', `3`],
-				[/* text */ 't', ` = Wednesday, `],
-				[/* inline code block */ 'i', `4`],
-				[/* text */ 't', ` =
- Thursday, `],
-				[/* inline code block */ 'i', `5`],
-				[/* text */ 't', ` = Friday, `],
-				[/* inline code block */ 'i', `6`],
-				[/* text */ 't', ` = Saturday)
- represents the day of the week that contains or begins with
- the instant in time represented by this `],
-				[/* inline code block */ 'i', `Date`],
-				[/* text */ 't', ` object,
- as interpreted in the local time zone.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the day of the week represented by this date.`]
-			]
-		]],
-		[/* method */ 'toLocaleString()', [
-			[/* method description */
-				[/* text */ 't', `Creates a string representation of this `],
-				[/* inline code block */ 'i', `Date`],
-				[/* text */ 't', ` object in an
- implementation-dependent form. The intent is that the form should
- be familiar to the user of the Java application, wherever it may
- happen to be running. The intent is comparable to that of the
- "`],
-				[/* inline code block */ 'i', `%c`],
-				[/* text */ 't', `" format supported by the `],
-				[/* inline code block */ 'i', `strftime()`],
-				[/* text */ 't', `
- function of ISO C.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `a string representation of this date, using the locale
-          conventions.`]
-			]
-		]],
-		[/* method */ 'toGMTString()', [
-			[/* method description */
-				[/* text */ 't', `Creates a string representation of this `],
-				[/* inline code block */ 'i', `Date`],
-				[/* text */ 't', ` object of
- the form:
- `],
-				[/* block */ 'b', [
-					[/* code block */ 'c', ` d mon yyyy hh:mm:ss GMT`]
-				]],
-				[/* text */ 't', `
- where:`],
-				[/* list */ 'l', [
-					[/* block */ 'b', [
-						[/* text */ 't', `d`],
-						[/* text */ 't', ` is the day of the month (`],
-						[/* inline code block */ 'i', `1`],
-						[/* text */ 't', ` through `],
-						[/* inline code block */ 'i', `31`],
-						[/* text */ 't', `),
-     as one or two decimal digits.
- `]
-					]],
-					[/* block */ 'b', [
-						[/* text */ 't', `mon`],
-						[/* text */ 't', ` is the month (`],
-						[/* inline code block */ 'i', `Jan, Feb, Mar, Apr, May, Jun, Jul, Aug, Sep, Oct, Nov, Dec`],
-						[/* text */ 't', `).
- `]
-					]],
-					[/* block */ 'b', [
-						[/* text */ 't', `yyyy`],
-						[/* text */ 't', ` is the year, as four decimal digits.
- `]
-					]],
-					[/* block */ 'b', [
-						[/* text */ 't', `hh`],
-						[/* text */ 't', ` is the hour of the day (`],
-						[/* inline code block */ 'i', `00`],
-						[/* text */ 't', ` through `],
-						[/* inline code block */ 'i', `23`],
-						[/* text */ 't', `),
-     as two decimal digits.
- `]
-					]],
-					[/* block */ 'b', [
-						[/* text */ 't', `mm`],
-						[/* text */ 't', ` is the minute within the hour (`],
-						[/* inline code block */ 'i', `00`],
-						[/* text */ 't', ` through
-     `],
-						[/* inline code block */ 'i', `59`],
-						[/* text */ 't', `), as two decimal digits.
- `]
-					]],
-					[/* block */ 'b', [
-						[/* text */ 't', `ss`],
-						[/* text */ 't', ` is the second within the minute (`],
-						[/* inline code block */ 'i', `00`],
-						[/* text */ 't', ` through
-     `],
-						[/* inline code block */ 'i', `61`],
-						[/* text */ 't', `), as two decimal digits.
- `]
-					]],
-					[/* block */ 'b', [
-						[/* text */ 't', `GMT`],
-						[/* text */ 't', ` is exactly the ASCII letters "`],
-						[/* inline code block */ 'i', `GMT`],
-						[/* text */ 't', `" to indicate
-     Greenwich Mean Time.
- `]
-					]]
-				]],
-				[/* block */ 'b', `
- The result does not depend on the local time zone.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `a string representation of this date, using the Internet GMT
-          conventions.`]
-			]
-		]],
-		[/* method */ 'getTimezoneOffset()', [
-			[/* method description */
-				[/* text */ 't', `Returns the offset, measured in minutes, for the local time zone
- relative to UTC that is appropriate for the time represented by
- this `],
-				[/* inline code block */ 'i', `Date`],
-				[/* text */ 't', ` object.
- `],
-				[/* block */ 'b', `
- For example, in Massachusetts, five time zones west of Greenwich:
- `],
-				[/* block */ 'b', [
-					[/* code block */ 'c', ` new Date(96, 1, 14).getTimezoneOffset() returns 300`]
-				]],
-				[/* text */ 't', `
- because on February 14, 1996, standard time (Eastern Standard Time)
- is in use, which is offset five hours from UTC; but:
- `],
-				[/* block */ 'b', [
-					[/* code block */ 'c', ` new Date(96, 5, 1).getTimezoneOffset() returns 240`]
-				]],
-				[/* text */ 't', `
- because on June 1, 1996, daylight saving time (Eastern Daylight Time)
- is in use, which is offset only four hours from UTC.`],
-				[/* block */ 'b', ''],
-				[/* block */ 'b', `
- This method produces the same result as if it computed:
- `],
-				[/* block */ 'b', [
-					[/* code block */ 'c', ` (this.getTime() - UTC(this.getYear(),
-                       this.getMonth(),
-                       this.getDate(),
-                       this.getHours(),
-                       this.getMinutes(),
-                       this.getSeconds())) / (60 * 1000)
- `]
-				]],
-				[/* block */ 'b', '']
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the time-zone offset, in minutes, for the current time zone.`]
-			]
 		]]
 	],
 ]);

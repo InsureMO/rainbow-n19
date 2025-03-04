@@ -10,24 +10,55 @@ DocsCollector.collect('java.io.ObjectInput', [
 	/* fields */ UDF,
 	/* constructors */ UDF,
 	[/* methods */
-		[/* method */ 'readObject()', [
+		[/* method */ 'available()', [
 			[/* method description */
-				[/* text */ 't', `Read and return an object. The class that implements this interface
- defines where the object is "read" from.`]
+				[/* text */ 't', `Returns the number of bytes that can be read
+ without blocking.`]
 			],
 			/* parameters */ UDF,
 			[/* throws */
-				[/* throw */ 'java.lang.ClassNotFoundException', [/* throw description */
-					[/* text */ 't', `If the class of a serialized
-            object cannot be found.`]
-				]],
 				[/* throw */ 'java.io.IOException', [/* throw description */
-					[/* text */ 't', `If any of the usual Input/Output
-            related exceptions occur.`]
+					[/* text */ 't', `If an I/O error has occurred.`]
 				]]
 			],
 			[/* return description */
-				[/* text */ 't', `the object read from the stream`]
+				[/* text */ 't', `the number of available bytes.`]
+			]
+		]],
+		[/* method */ 'read()', [
+			[/* method description */
+				[/* text */ 't', `Reads a byte of data. This method will block if no input is
+ available.`]
+			],
+			/* parameters */ UDF,
+			[/* throws */
+				[/* throw */ 'java.io.IOException', [/* throw description */
+					[/* text */ 't', `If an I/O error has occurred.`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `the byte read, or -1 if the end of the
+          stream is reached.`]
+			]
+		]],
+		[/* method */ 'read(byte[])', [
+			[/* method description */
+				[/* text */ 't', `Reads into an array of bytes.  This method will
+ block until some input is available.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'b', [/* parameter description */
+					[/* text */ 't', `the buffer into which the data is read`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.io.IOException', [/* throw description */
+					[/* text */ 't', `If an I/O error has occurred.`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `the actual number of bytes read, -1 is
+          returned when the end of the stream is reached.`]
 			]
 		]],
 		[/* method */ 'read(byte[],int,int)', [
@@ -56,55 +87,25 @@ DocsCollector.collect('java.io.ObjectInput', [
           returned when the end of the stream is reached.`]
 			]
 		]],
-		[/* method */ 'read(byte[])', [
+		[/* method */ 'readObject()', [
 			[/* method description */
-				[/* text */ 't', `Reads into an array of bytes.  This method will
- block until some input is available.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'b', [/* parameter description */
-					[/* text */ 't', `the buffer into which the data is read`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.io.IOException', [/* throw description */
-					[/* text */ 't', `If an I/O error has occurred.`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `the actual number of bytes read, -1 is
-          returned when the end of the stream is reached.`]
-			]
-		]],
-		[/* method */ 'read()', [
-			[/* method description */
-				[/* text */ 't', `Reads a byte of data. This method will block if no input is
- available.`]
+				[/* text */ 't', `Read and return an object. The class that implements this interface
+ defines where the object is "read" from.`]
 			],
 			/* parameters */ UDF,
 			[/* throws */
+				[/* throw */ 'java.lang.ClassNotFoundException', [/* throw description */
+					[/* text */ 't', `If the class of a serialized
+            object cannot be found.`]
+				]],
 				[/* throw */ 'java.io.IOException', [/* throw description */
-					[/* text */ 't', `If an I/O error has occurred.`]
+					[/* text */ 't', `If any of the usual Input/Output
+            related exceptions occur.`]
 				]]
 			],
 			[/* return description */
-				[/* text */ 't', `the byte read, or -1 if the end of the
-          stream is reached.`]
+				[/* text */ 't', `the object read from the stream`]
 			]
-		]],
-		[/* method */ 'close()', [
-			[/* method description */
-				[/* text */ 't', `Closes the input stream. Must be called
- to release any resources associated with
- the stream.`]
-			],
-			/* parameters */ UDF,
-			[/* throws */
-				[/* throw */ 'java.io.IOException', [/* throw description */
-					[/* text */ 't', `If an I/O error has occurred.`]
-				]]
-			],
-			/* return */ UDF
 		]],
 		[/* method */ 'skip(long)', [
 			[/* method description */
@@ -124,10 +125,11 @@ DocsCollector.collect('java.io.ObjectInput', [
 				[/* text */ 't', `the actual number of bytes skipped.`]
 			]
 		]],
-		[/* method */ 'available()', [
+		[/* method */ 'close()', [
 			[/* method description */
-				[/* text */ 't', `Returns the number of bytes that can be read
- without blocking.`]
+				[/* text */ 't', `Closes the input stream. Must be called
+ to release any resources associated with
+ the stream.`]
 			],
 			/* parameters */ UDF,
 			[/* throws */
@@ -135,9 +137,7 @@ DocsCollector.collect('java.io.ObjectInput', [
 					[/* text */ 't', `If an I/O error has occurred.`]
 				]]
 			],
-			[/* return description */
-				[/* text */ 't', `the number of available bytes.`]
-			]
+			/* return */ UDF
 		]]
 	],
 ]);

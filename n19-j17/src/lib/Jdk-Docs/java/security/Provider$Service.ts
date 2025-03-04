@@ -72,14 +72,109 @@ DocsCollector.collect('java.security.Provider$Service', [
 		]]
 	],
 	[/* methods */
-		[/* method */ 'toString()', [
+		[/* method */ 'supportsParameter(java.lang.Object)', [
 			[/* method description */
-				[/* text */ 't', `Return a String representation of this service.`]
+				[/* text */ 't', `Test whether this Service can use the specified parameter.
+ Returns false if this service cannot use the parameter. Returns
+ true if this service can use the parameter, if a fast test is
+ infeasible, or if the status is unknown.
+
+ `],
+				[/* block */ 'b', `The security provider framework uses this method with
+ some types of services to quickly exclude non-matching
+ implementations for consideration.
+ Applications will typically not need to call it.
+
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', `For details and the values of parameter that are valid for the
+ various types of services see the top of this class and the
+ `],
+					[/* external link */ 'a', `https://docs.oracle.com/pls/topic/lookup?ctx=javase17&id=security_guide_jca`, `Java Cryptography Architecture (JCA) Reference Guide`],
+					[/* text */ 't', `.
+ Security providers can override it to implement their own test.`]
+				]]
+			],
+			[/* parameters */
+				[/* parameter */ 'parameter', [/* parameter description */
+					[/* text */ 't', `the parameter to test`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.security.InvalidParameterException', [/* throw description */
+					[/* text */ 't', `if the value of parameter is
+ invalid for this type of service or if this method cannot be
+ used with this type of service`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `false if this service cannot use the specified
+ parameter; true if it can possibly use the parameter`]
+			]
+		]],
+		[/* method */ 'getAlgorithm()', [
+			[/* method description */
+				[/* text */ 't', `Return the name of the algorithm of this service. For example,
+ `],
+				[/* inline code block */ 'i', `SHA-1`],
+				[/* text */ 't', `.`]
 			],
 			/* parameters */ UDF,
 			/* throws */ UDF,
 			[/* return description */
-				[/* text */ 't', `a String representation of this service.`]
+				[/* text */ 't', `the algorithm of this service`]
+			]
+		]],
+		[/* method */ 'getAttribute(java.lang.String)', [
+			[/* method description */
+				[/* text */ 't', `Return the value of the specified attribute or null if this
+ attribute is not set for this Service.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'name', [/* parameter description */
+					[/* text */ 't', `the name of the requested attribute`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
+					[/* text */ 't', `if name is null`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `the value of the specified attribute or null if the
+         attribute is not present`]
+			]
+		]],
+		[/* method */ 'getClassName()', [
+			[/* method description */
+				[/* text */ 't', `Return the name of the class implementing this service.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the name of the class implementing this service`]
+			]
+		]],
+		[/* method */ 'getType()', [
+			[/* method description */
+				[/* text */ 't', `Get the type of this service. For example, `],
+				[/* inline code block */ 'i', `MessageDigest`],
+				[/* text */ 't', `.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the type of this service`]
+			]
+		]],
+		[/* method */ 'getProvider()', [
+			[/* method description */
+				[/* text */ 't', `Return the Provider of this service.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the Provider of this service`]
 			]
 		]],
 		[/* method */ 'newInstance(java.lang.Object)', [
@@ -122,109 +217,14 @@ DocsCollector.collect('java.security.Provider$Service', [
 				[/* text */ 't', `a new implementation of this service`]
 			]
 		]],
-		[/* method */ 'getType()', [
+		[/* method */ 'toString()', [
 			[/* method description */
-				[/* text */ 't', `Get the type of this service. For example, `],
-				[/* inline code block */ 'i', `MessageDigest`],
-				[/* text */ 't', `.`]
+				[/* text */ 't', `Return a String representation of this service.`]
 			],
 			/* parameters */ UDF,
 			/* throws */ UDF,
 			[/* return description */
-				[/* text */ 't', `the type of this service`]
-			]
-		]],
-		[/* method */ 'getClassName()', [
-			[/* method description */
-				[/* text */ 't', `Return the name of the class implementing this service.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the name of the class implementing this service`]
-			]
-		]],
-		[/* method */ 'getAttribute(java.lang.String)', [
-			[/* method description */
-				[/* text */ 't', `Return the value of the specified attribute or null if this
- attribute is not set for this Service.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'name', [/* parameter description */
-					[/* text */ 't', `the name of the requested attribute`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
-					[/* text */ 't', `if name is null`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `the value of the specified attribute or null if the
-         attribute is not present`]
-			]
-		]],
-		[/* method */ 'getProvider()', [
-			[/* method description */
-				[/* text */ 't', `Return the Provider of this service.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the Provider of this service`]
-			]
-		]],
-		[/* method */ 'getAlgorithm()', [
-			[/* method description */
-				[/* text */ 't', `Return the name of the algorithm of this service. For example,
- `],
-				[/* inline code block */ 'i', `SHA-1`],
-				[/* text */ 't', `.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the algorithm of this service`]
-			]
-		]],
-		[/* method */ 'supportsParameter(java.lang.Object)', [
-			[/* method description */
-				[/* text */ 't', `Test whether this Service can use the specified parameter.
- Returns false if this service cannot use the parameter. Returns
- true if this service can use the parameter, if a fast test is
- infeasible, or if the status is unknown.
-
- `],
-				[/* block */ 'b', `The security provider framework uses this method with
- some types of services to quickly exclude non-matching
- implementations for consideration.
- Applications will typically not need to call it.
-
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', `For details and the values of parameter that are valid for the
- various types of services see the top of this class and the
- `],
-					[/* external link */ 'a', `https://docs.oracle.com/pls/topic/lookup?ctx=javase17&id=security_guide_jca`, `Java Cryptography Architecture (JCA) Reference Guide`],
-					[/* text */ 't', `.
- Security providers can override it to implement their own test.`]
-				]]
-			],
-			[/* parameters */
-				[/* parameter */ 'parameter', [/* parameter description */
-					[/* text */ 't', `the parameter to test`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.security.InvalidParameterException', [/* throw description */
-					[/* text */ 't', `if the value of parameter is
- invalid for this type of service or if this method cannot be
- used with this type of service`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `false if this service cannot use the specified
- parameter; true if it can possibly use the parameter`]
+				[/* text */ 't', `a String representation of this service.`]
 			]
 		]]
 	],

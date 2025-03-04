@@ -158,6 +158,11 @@ DocsCollector.collect('java.lang.Thread', [
 		]]
 	],
 	[/* fields */
+		[/* field */ 'MAX_PRIORITY', [
+			[/* field description */
+				[/* text */ 't', `The maximum priority that a thread can have.`]
+			],
+		]],
 		[/* field */ 'MIN_PRIORITY', [
 			[/* field description */
 				[/* text */ 't', `The minimum priority that a thread can have.`]
@@ -167,117 +172,9 @@ DocsCollector.collect('java.lang.Thread', [
 			[/* field description */
 				[/* text */ 't', `The default priority that is assigned to a thread.`]
 			],
-		]],
-		[/* field */ 'MAX_PRIORITY', [
-			[/* field description */
-				[/* text */ 't', `The maximum priority that a thread can have.`]
-			],
 		]]
 	],
 	[/* constructors */
-		[/* constructor */ '<init>(java.lang.ThreadGroup,java.lang.Runnable)', [
-			[/* constructor description */
-				[/* text */ 't', `Allocates a new `],
-				[/* inline code block */ 'i', `Thread`],
-				[/* text */ 't', ` object. This constructor has the same
- effect as `],
-				[/* reference */ 'r', `#%3Cinit%3E(java.lang.ThreadGroup,java.lang.Runnable,java.lang.String)`, `Thread`],
-				[/* inline code block */ 'i', `(group, target, gname)`],
-				[/* text */ 't', ` ,where `],
-				[/* inline code block */ 'i', `gname`],
-				[/* text */ 't', ` is a newly generated
- name. Automatically generated names are of the form
- `],
-				[/* inline code block */ 'i', `"Thread-"+`],
-				[/* text */ 't', `n`],
-				[/* text */ 't', `, where `],
-				[/* text */ 't', `n`],
-				[/* text */ 't', ` is an integer.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'group', [/* parameter description */
-					[/* text */ 't', `the thread group. If `],
-					[/* inline code block */ 'i', `null`],
-					[/* text */ 't', ` and there is a security
-         manager, the group is determined by `],
-					[/* reference */ 'r', `.SecurityManager#getThreadGroup()`],
-					[/* text */ 't', `.
-         If there is not a security manager or `],
-					[/* inline code block */ 'i', `SecurityManager.getThreadGroup()`],
-					[/* text */ 't', ` returns `],
-					[/* inline code block */ 'i', `null`],
-					[/* text */ 't', `, the group
-         is set to the current thread's thread group.`]
-				]],
-				[/* parameter */ 'target', [/* parameter description */
-					[/* text */ 't', `the object whose `],
-					[/* inline code block */ 'i', `run`],
-					[/* text */ 't', ` method is invoked when this thread
-         is started. If `],
-					[/* inline code block */ 'i', `null`],
-					[/* text */ 't', `, this thread's run method is invoked.`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.SecurityException', [/* throw description */
-					[/* text */ 't', `if the current thread cannot create a thread in the specified
-          thread group`]
-				]]
-			]
-		]],
-		[/* constructor */ '<init>(java.lang.String)', [
-			[/* constructor description */
-				[/* text */ 't', `Allocates a new `],
-				[/* inline code block */ 'i', `Thread`],
-				[/* text */ 't', ` object. This constructor has the same
- effect as `],
-				[/* reference */ 'r', `#%3Cinit%3E(java.lang.ThreadGroup,java.lang.Runnable,java.lang.String)`, `Thread`],
-				[/* inline code block */ 'i', `(null, null, name)`],
-				[/* text */ 't', `.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'name', [/* parameter description */
-					[/* text */ 't', `the name of the new thread`]
-				]]
-			],
-			/* throws */ UDF
-		]],
-		[/* constructor */ '<init>(java.lang.ThreadGroup,java.lang.String)', [
-			[/* constructor description */
-				[/* text */ 't', `Allocates a new `],
-				[/* inline code block */ 'i', `Thread`],
-				[/* text */ 't', ` object. This constructor has the same
- effect as `],
-				[/* reference */ 'r', `#%3Cinit%3E(java.lang.ThreadGroup,java.lang.Runnable,java.lang.String)`, `Thread`],
-				[/* inline code block */ 'i', `(group, null, name)`],
-				[/* text */ 't', `.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'group', [/* parameter description */
-					[/* text */ 't', `the thread group. If `],
-					[/* inline code block */ 'i', `null`],
-					[/* text */ 't', ` and there is a security
-         manager, the group is determined by `],
-					[/* reference */ 'r', `.SecurityManager#getThreadGroup()`],
-					[/* text */ 't', `.
-         If there is not a security manager or `],
-					[/* inline code block */ 'i', `SecurityManager.getThreadGroup()`],
-					[/* text */ 't', ` returns `],
-					[/* inline code block */ 'i', `null`],
-					[/* text */ 't', `, the group
-         is set to the current thread's thread group.`]
-				]],
-				[/* parameter */ 'name', [/* parameter description */
-					[/* text */ 't', `the name of the new thread`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.SecurityException', [/* throw description */
-					[/* text */ 't', `if the current thread cannot create a thread in the specified
-          thread group`]
-				]]
-			]
-		]],
 		[/* constructor */ '<init>()', [
 			[/* constructor description */
 				[/* text */ 't', `Allocates a new `],
@@ -334,7 +231,99 @@ DocsCollector.collect('java.lang.Thread', [
 			],
 			/* throws */ UDF
 		]],
-		[/* constructor */ '<init>(java.lang.ThreadGroup,java.lang.Runnable,java.lang.String,long,boolean)', [
+		[/* constructor */ '<init>(java.lang.Runnable,java.lang.String)', [
+			[/* constructor description */
+				[/* text */ 't', `Allocates a new `],
+				[/* inline code block */ 'i', `Thread`],
+				[/* text */ 't', ` object. This constructor has the same
+ effect as `],
+				[/* reference */ 'r', `#%3Cinit%3E(java.lang.ThreadGroup,java.lang.Runnable,java.lang.String)`, `Thread`],
+				[/* inline code block */ 'i', `(null, target, name)`],
+				[/* text */ 't', `.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'target', [/* parameter description */
+					[/* text */ 't', `the object whose `],
+					[/* inline code block */ 'i', `run`],
+					[/* text */ 't', ` method is invoked when this thread
+         is started. If `],
+					[/* inline code block */ 'i', `null`],
+					[/* text */ 't', `, this thread's run method is invoked.`]
+				]],
+				[/* parameter */ 'name', [/* parameter description */
+					[/* text */ 't', `the name of the new thread`]
+				]]
+			],
+			/* throws */ UDF
+		]],
+		[/* constructor */ '<init>(java.lang.String)', [
+			[/* constructor description */
+				[/* text */ 't', `Allocates a new `],
+				[/* inline code block */ 'i', `Thread`],
+				[/* text */ 't', ` object. This constructor has the same
+ effect as `],
+				[/* reference */ 'r', `#%3Cinit%3E(java.lang.ThreadGroup,java.lang.Runnable,java.lang.String)`, `Thread`],
+				[/* inline code block */ 'i', `(null, null, name)`],
+				[/* text */ 't', `.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'name', [/* parameter description */
+					[/* text */ 't', `the name of the new thread`]
+				]]
+			],
+			/* throws */ UDF
+		]],
+		[/* constructor */ '<init>(java.lang.ThreadGroup,java.lang.Runnable)', [
+			[/* constructor description */
+				[/* text */ 't', `Allocates a new `],
+				[/* inline code block */ 'i', `Thread`],
+				[/* text */ 't', ` object. This constructor has the same
+ effect as `],
+				[/* reference */ 'r', `#%3Cinit%3E(java.lang.ThreadGroup,java.lang.Runnable,java.lang.String)`, `Thread`],
+				[/* inline code block */ 'i', `(group, target, gname)`],
+				[/* text */ 't', ` ,where `],
+				[/* inline code block */ 'i', `gname`],
+				[/* text */ 't', ` is a newly generated
+ name. Automatically generated names are of the form
+ `],
+				[/* inline code block */ 'i', `"Thread-"+`],
+				[/* text */ 't', `n`],
+				[/* text */ 't', `, where `],
+				[/* text */ 't', `n`],
+				[/* text */ 't', ` is an integer.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'group', [/* parameter description */
+					[/* text */ 't', `the thread group. If `],
+					[/* inline code block */ 'i', `null`],
+					[/* text */ 't', ` and there is a security
+         manager, the group is determined by `],
+					[/* reference */ 'r', `.SecurityManager#getThreadGroup()`],
+					[/* text */ 't', `.
+         If there is not a security manager or `],
+					[/* inline code block */ 'i', `SecurityManager.getThreadGroup()`],
+					[/* text */ 't', ` returns `],
+					[/* inline code block */ 'i', `null`],
+					[/* text */ 't', `, the group
+         is set to the current thread's thread group.`]
+				]],
+				[/* parameter */ 'target', [/* parameter description */
+					[/* text */ 't', `the object whose `],
+					[/* inline code block */ 'i', `run`],
+					[/* text */ 't', ` method is invoked when this thread
+         is started. If `],
+					[/* inline code block */ 'i', `null`],
+					[/* text */ 't', `, this thread's run method is invoked.`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.lang.SecurityException', [/* throw description */
+					[/* text */ 't', `if the current thread cannot create a thread in the specified
+          thread group`]
+				]]
+			]
+		]],
+		[/* constructor */ '<init>(java.lang.ThreadGroup,java.lang.Runnable,java.lang.String)', [
 			[/* constructor description */
 				[/* text */ 't', `Allocates a new `],
 				[/* inline code block */ 'i', `Thread`],
@@ -344,49 +333,54 @@ DocsCollector.collect('java.lang.Thread', [
  as its run object, has the specified `],
 				[/* inline code block */ 'i', `name`],
 				[/* text */ 't', ` as its name,
- belongs to the thread group referred to by `],
+ and belongs to the thread group referred to by `],
 				[/* inline code block */ 'i', `group`],
-				[/* text */ 't', `, has
- the specified `],
-				[/* inline code block */ 'i', `stackSize`],
-				[/* text */ 't', `, and inherits initial values for
- `],
-				[/* reference */ 'r', `java.lang.InheritableThreadLocal`],
-				[/* text */ 't', ` variables
- if `],
-				[/* inline code block */ 'i', `inheritThreadLocals`],
-				[/* text */ 't', ` is `],
-				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', `.
 
  `],
 				[/* block */ 'b', [
-					[/* text */ 't', ` This constructor is identical to `],
-					[/* reference */ 'r', `#%3Cinit%3E(java.lang.ThreadGroup,java.lang.Runnable,java.lang.String,long)`, `Thread(ThreadGroup,Runnable,String,long)`],
-					[/* text */ 't', ` with the added ability to
- suppress, or not, the inheriting of initial values for inheritable
- thread-local variables from the constructing thread. This allows for
- finer grain control over inheritable thread-locals. Care must be taken
- when passing a value of `],
-					[/* inline code block */ 'i', `false`],
-					[/* text */ 't', ` for `],
-					[/* inline code block */ 'i', `inheritThreadLocals`],
-					[/* text */ 't', `,
- as it may lead to unexpected behavior if the new thread executes code
- that expects a specific thread-local value to be inherited.
+					[/* text */ 't', `If there is a security manager, its
+ `],
+					[/* reference */ 'r', `.SecurityManager#checkAccess(java.lang.ThreadGroup)`],
+					[/* text */ 't', `
+ method is invoked with the ThreadGroup as its argument.
 
  `]
 				]],
 				[/* block */ 'b', [
-					[/* text */ 't', ` Specifying a value of `],
-					[/* inline code block */ 'i', `true`],
-					[/* text */ 't', ` for the `],
-					[/* inline code block */ 'i', `inheritThreadLocals`],
+					[/* text */ 't', `In addition, its `],
+					[/* inline code block */ 'i', `checkPermission`],
+					[/* text */ 't', ` method is invoked with
+ the `],
+					[/* inline code block */ 'i', `RuntimePermission("enableContextClassLoaderOverride")`],
 					[/* text */ 't', `
- parameter will cause this constructor to behave exactly like the
- `],
-					[/* inline code block */ 'i', `Thread(ThreadGroup, Runnable, String, long)`],
-					[/* text */ 't', ` constructor.`]
+ permission when invoked directly or indirectly by the constructor
+ of a subclass which overrides the `],
+					[/* inline code block */ 'i', `getContextClassLoader`],
+					[/* text */ 't', `
+ or `],
+					[/* inline code block */ 'i', `setContextClassLoader`],
+					[/* text */ 't', ` methods.
+
+ `]
+				]],
+				[/* block */ 'b', [
+					[/* text */ 't', `The priority of the newly created thread is set equal to the
+ priority of the thread creating it, that is, the currently running
+ thread. The method `],
+					[/* reference */ 'r', `#setPriority(int)`, `setPriority`],
+					[/* text */ 't', ` may be
+ used to change the priority to a new value.
+
+ `]
+				]],
+				[/* block */ 'b', [
+					[/* text */ 't', `The newly created thread is initially marked as being a daemon
+ thread if and only if the thread creating it is currently marked
+ as a daemon thread. The method `],
+					[/* reference */ 'r', `#setDaemon(boolean)`, `setDaemon`],
+					[/* text */ 't', `
+ may be used to change whether or not a thread is a daemon.`]
 				]]
 			],
 			[/* parameters */
@@ -414,23 +408,12 @@ DocsCollector.collect('java.lang.Thread', [
 				]],
 				[/* parameter */ 'name', [/* parameter description */
 					[/* text */ 't', `the name of the new thread`]
-				]],
-				[/* parameter */ 'stackSize', [/* parameter description */
-					[/* text */ 't', `the desired stack size for the new thread, or zero to indicate
-         that this parameter is to be ignored`]
-				]],
-				[/* parameter */ 'inheritThreadLocals', [/* parameter description */
-					[/* text */ 't', `if `],
-					[/* inline code block */ 'i', `true`],
-					[/* text */ 't', `, inherit initial values for inheritable
-         thread-locals from the constructing thread, otherwise no initial
-         values are inherited`]
 				]]
 			],
 			[/* throws */
 				[/* throw */ 'java.lang.SecurityException', [/* throw description */
 					[/* text */ 't', `if the current thread cannot create a thread in the specified
-          thread group`]
+          thread group or cannot override the context class loader methods.`]
 				]]
 			]
 		]],
@@ -559,7 +542,7 @@ DocsCollector.collect('java.lang.Thread', [
 				]]
 			]
 		]],
-		[/* constructor */ '<init>(java.lang.ThreadGroup,java.lang.Runnable,java.lang.String)', [
+		[/* constructor */ '<init>(java.lang.ThreadGroup,java.lang.Runnable,java.lang.String,long,boolean)', [
 			[/* constructor description */
 				[/* text */ 't', `Allocates a new `],
 				[/* inline code block */ 'i', `Thread`],
@@ -569,54 +552,49 @@ DocsCollector.collect('java.lang.Thread', [
  as its run object, has the specified `],
 				[/* inline code block */ 'i', `name`],
 				[/* text */ 't', ` as its name,
- and belongs to the thread group referred to by `],
+ belongs to the thread group referred to by `],
 				[/* inline code block */ 'i', `group`],
+				[/* text */ 't', `, has
+ the specified `],
+				[/* inline code block */ 'i', `stackSize`],
+				[/* text */ 't', `, and inherits initial values for
+ `],
+				[/* reference */ 'r', `java.lang.InheritableThreadLocal`],
+				[/* text */ 't', ` variables
+ if `],
+				[/* inline code block */ 'i', `inheritThreadLocals`],
+				[/* text */ 't', ` is `],
+				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', `.
 
  `],
 				[/* block */ 'b', [
-					[/* text */ 't', `If there is a security manager, its
+					[/* text */ 't', ` This constructor is identical to `],
+					[/* reference */ 'r', `#%3Cinit%3E(java.lang.ThreadGroup,java.lang.Runnable,java.lang.String,long)`, `Thread(ThreadGroup,Runnable,String,long)`],
+					[/* text */ 't', ` with the added ability to
+ suppress, or not, the inheriting of initial values for inheritable
+ thread-local variables from the constructing thread. This allows for
+ finer grain control over inheritable thread-locals. Care must be taken
+ when passing a value of `],
+					[/* inline code block */ 'i', `false`],
+					[/* text */ 't', ` for `],
+					[/* inline code block */ 'i', `inheritThreadLocals`],
+					[/* text */ 't', `,
+ as it may lead to unexpected behavior if the new thread executes code
+ that expects a specific thread-local value to be inherited.
+
+ `]
+				]],
+				[/* block */ 'b', [
+					[/* text */ 't', ` Specifying a value of `],
+					[/* inline code block */ 'i', `true`],
+					[/* text */ 't', ` for the `],
+					[/* inline code block */ 'i', `inheritThreadLocals`],
+					[/* text */ 't', `
+ parameter will cause this constructor to behave exactly like the
  `],
-					[/* reference */ 'r', `.SecurityManager#checkAccess(java.lang.ThreadGroup)`],
-					[/* text */ 't', `
- method is invoked with the ThreadGroup as its argument.
-
- `]
-				]],
-				[/* block */ 'b', [
-					[/* text */ 't', `In addition, its `],
-					[/* inline code block */ 'i', `checkPermission`],
-					[/* text */ 't', ` method is invoked with
- the `],
-					[/* inline code block */ 'i', `RuntimePermission("enableContextClassLoaderOverride")`],
-					[/* text */ 't', `
- permission when invoked directly or indirectly by the constructor
- of a subclass which overrides the `],
-					[/* inline code block */ 'i', `getContextClassLoader`],
-					[/* text */ 't', `
- or `],
-					[/* inline code block */ 'i', `setContextClassLoader`],
-					[/* text */ 't', ` methods.
-
- `]
-				]],
-				[/* block */ 'b', [
-					[/* text */ 't', `The priority of the newly created thread is set equal to the
- priority of the thread creating it, that is, the currently running
- thread. The method `],
-					[/* reference */ 'r', `#setPriority(int)`, `setPriority`],
-					[/* text */ 't', ` may be
- used to change the priority to a new value.
-
- `]
-				]],
-				[/* block */ 'b', [
-					[/* text */ 't', `The newly created thread is initially marked as being a daemon
- thread if and only if the thread creating it is currently marked
- as a daemon thread. The method `],
-					[/* reference */ 'r', `#setDaemon(boolean)`, `setDaemon`],
-					[/* text */ 't', `
- may be used to change whether or not a thread is a daemon.`]
+					[/* inline code block */ 'i', `Thread(ThreadGroup, Runnable, String, long)`],
+					[/* text */ 't', ` constructor.`]
 				]]
 			],
 			[/* parameters */
@@ -644,87 +622,64 @@ DocsCollector.collect('java.lang.Thread', [
 				]],
 				[/* parameter */ 'name', [/* parameter description */
 					[/* text */ 't', `the name of the new thread`]
+				]],
+				[/* parameter */ 'stackSize', [/* parameter description */
+					[/* text */ 't', `the desired stack size for the new thread, or zero to indicate
+         that this parameter is to be ignored`]
+				]],
+				[/* parameter */ 'inheritThreadLocals', [/* parameter description */
+					[/* text */ 't', `if `],
+					[/* inline code block */ 'i', `true`],
+					[/* text */ 't', `, inherit initial values for inheritable
+         thread-locals from the constructing thread, otherwise no initial
+         values are inherited`]
 				]]
 			],
 			[/* throws */
 				[/* throw */ 'java.lang.SecurityException', [/* throw description */
 					[/* text */ 't', `if the current thread cannot create a thread in the specified
-          thread group or cannot override the context class loader methods.`]
+          thread group`]
 				]]
 			]
 		]],
-		[/* constructor */ '<init>(java.lang.Runnable,java.lang.String)', [
+		[/* constructor */ '<init>(java.lang.ThreadGroup,java.lang.String)', [
 			[/* constructor description */
 				[/* text */ 't', `Allocates a new `],
 				[/* inline code block */ 'i', `Thread`],
 				[/* text */ 't', ` object. This constructor has the same
  effect as `],
 				[/* reference */ 'r', `#%3Cinit%3E(java.lang.ThreadGroup,java.lang.Runnable,java.lang.String)`, `Thread`],
-				[/* inline code block */ 'i', `(null, target, name)`],
+				[/* inline code block */ 'i', `(group, null, name)`],
 				[/* text */ 't', `.`]
 			],
 			[/* parameters */
-				[/* parameter */ 'target', [/* parameter description */
-					[/* text */ 't', `the object whose `],
-					[/* inline code block */ 'i', `run`],
-					[/* text */ 't', ` method is invoked when this thread
-         is started. If `],
+				[/* parameter */ 'group', [/* parameter description */
+					[/* text */ 't', `the thread group. If `],
 					[/* inline code block */ 'i', `null`],
-					[/* text */ 't', `, this thread's run method is invoked.`]
+					[/* text */ 't', ` and there is a security
+         manager, the group is determined by `],
+					[/* reference */ 'r', `.SecurityManager#getThreadGroup()`],
+					[/* text */ 't', `.
+         If there is not a security manager or `],
+					[/* inline code block */ 'i', `SecurityManager.getThreadGroup()`],
+					[/* text */ 't', ` returns `],
+					[/* inline code block */ 'i', `null`],
+					[/* text */ 't', `, the group
+         is set to the current thread's thread group.`]
 				]],
 				[/* parameter */ 'name', [/* parameter description */
 					[/* text */ 't', `the name of the new thread`]
 				]]
 			],
-			/* throws */ UDF
+			[/* throws */
+				[/* throw */ 'java.lang.SecurityException', [/* throw description */
+					[/* text */ 't', `if the current thread cannot create a thread in the specified
+          thread group`]
+				]]
+			]
 		]]
 	],
 	[/* methods */
-		[/* method */ 'getName()', [
-			[/* method description */
-				[/* text */ 't', `Returns this thread's name.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `this thread's name.`]
-			]
-		]],
-		[/* method */ 'run()', [
-			[/* method description */
-				[/* text */ 't', `If this thread was constructed using a separate
- `],
-				[/* inline code block */ 'i', `Runnable`],
-				[/* text */ 't', ` run object, then that
- `],
-				[/* inline code block */ 'i', `Runnable`],
-				[/* text */ 't', ` object's `],
-				[/* inline code block */ 'i', `run`],
-				[/* text */ 't', ` method is called;
- otherwise, this method does nothing and returns.
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', `
- Subclasses of `],
-					[/* inline code block */ 'i', `Thread`],
-					[/* text */ 't', ` should override this method.`]
-				]]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			/* return */ UDF
-		]],
-		[/* method */ 'toString()', [
-			[/* method description */
-				[/* text */ 't', `Returns a string representation of this thread, including the
- thread's name, priority, and thread group.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `a string representation of this thread.`]
-			]
-		]],
 		[/* method */ 'clone()', [
 			[/* method description */
 				[/* text */ 't', `Throws CloneNotSupportedException as a Thread can not be meaningfully
@@ -740,46 +695,127 @@ DocsCollector.collect('java.lang.Thread', [
 				[/* text */ 't', `a clone of this instance.`]
 			]
 		]],
-		[/* method */ 'currentThread()', [
+		[/* method */ 'isInterrupted()', [
 			[/* method description */
-				[/* text */ 't', `Returns a reference to the currently executing thread object.`]
+				[/* text */ 't', `Tests whether this thread has been interrupted.  The `],
+				[/* text */ 't', `interrupted
+ status`],
+				[/* text */ 't', ` of the thread is unaffected by this method.`]
 			],
 			/* parameters */ UDF,
 			/* throws */ UDF,
 			[/* return description */
-				[/* text */ 't', `the currently executing thread.`]
+				[/* inline code block */ 'i', `true`],
+				[/* text */ 't', ` if this thread has been interrupted;
+          `],
+				[/* inline code block */ 'i', `false`],
+				[/* text */ 't', ` otherwise.`]
 			]
 		]],
-		[/* method */ 'onSpinWait()', [
+		[/* method */ 'isDaemon()', [
 			[/* method description */
-				[/* text */ 't', `Indicates that the caller is momentarily unable to progress, until the
- occurrence of one or more actions on the part of other activities. By
- invoking this method within each iteration of a spin-wait loop construct,
- the calling thread indicates to the runtime that it is busy-waiting.
- The runtime may take action to improve the performance of invoking
- spin-wait loop constructions.`]
+				[/* text */ 't', `Tests if this thread is a daemon thread.`]
 			],
 			/* parameters */ UDF,
 			/* throws */ UDF,
-			/* return */ UDF
+			[/* return description */
+				[/* inline code block */ 'i', `true`],
+				[/* text */ 't', ` if this thread is a daemon thread;
+          `],
+				[/* inline code block */ 'i', `false`],
+				[/* text */ 't', ` otherwise.`]
+			]
 		]],
-		[/* method */ 'join()', [
+		[/* method */ 'getPriority()', [
 			[/* method description */
-				[/* text */ 't', `Waits for this thread to die.
-
- `],
-				[/* block */ 'b', ` An invocation of this method behaves in exactly the same
- way as the invocation
+				[/* text */ 't', `Returns this thread's priority.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `this thread's priority.`]
+			]
+		]],
+		[/* method */ 'getName()', [
+			[/* method description */
+				[/* text */ 't', `Returns this thread's name.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `this thread's name.`]
+			]
+		]],
+		[/* method */ 'getThreadGroup()', [
+			[/* method description */
+				[/* text */ 't', `Returns the thread group to which this thread belongs.
+ This method returns null if this thread has died
+ (been stopped).`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `this thread's thread group.`]
+			]
+		]],
+		[/* method */ 'isAlive()', [
+			[/* method description */
+				[/* text */ 't', `Tests if this thread is alive. A thread is alive if it has
+ been started and has not yet died.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* inline code block */ 'i', `true`],
+				[/* text */ 't', ` if this thread is alive;
+          `],
+				[/* inline code block */ 'i', `false`],
+				[/* text */ 't', ` otherwise.`]
+			]
+		]],
+		[/* method */ 'join(long)', [
+			[/* method description */
+				[/* text */ 't', `Waits at most `],
+				[/* inline code block */ 'i', `millis`],
+				[/* text */ 't', ` milliseconds for this thread to
+ die. A timeout of `],
+				[/* inline code block */ 'i', `0`],
+				[/* text */ 't', ` means to wait forever.
 
  `],
 				[/* block */ 'b', [
-					[/* reference */ 'r', `#join(long)`, `join`],
-					[/* inline code block */ 'i', `(0)`]
-				]],
-				[/* block */ 'b', '']
+					[/* text */ 't', ` This implementation uses a loop of `],
+					[/* inline code block */ 'i', `this.wait`],
+					[/* text */ 't', ` calls
+ conditioned on `],
+					[/* inline code block */ 'i', `this.isAlive`],
+					[/* text */ 't', `. As a thread terminates the
+ `],
+					[/* inline code block */ 'i', `this.notifyAll`],
+					[/* text */ 't', ` method is invoked. It is recommended that
+ applications not use `],
+					[/* inline code block */ 'i', `wait`],
+					[/* text */ 't', `, `],
+					[/* inline code block */ 'i', `notify`],
+					[/* text */ 't', `, or
+ `],
+					[/* inline code block */ 'i', `notifyAll`],
+					[/* text */ 't', ` on `],
+					[/* inline code block */ 'i', `Thread`],
+					[/* text */ 't', ` instances.`]
+				]]
 			],
-			/* parameters */ UDF,
+			[/* parameters */
+				[/* parameter */ 'millis', [/* parameter description */
+					[/* text */ 't', `the time to wait in milliseconds`]
+				]]
+			],
 			[/* throws */
+				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
+					[/* text */ 't', `if the value of `],
+					[/* inline code block */ 'i', `millis`],
+					[/* text */ 't', ` is negative`]
+				]],
 				[/* throw */ 'java.lang.InterruptedException', [/* throw description */
 					[/* text */ 't', `if any thread has interrupted the current thread. The
           `],
@@ -855,218 +891,35 @@ DocsCollector.collect('java.lang.Thread', [
 			],
 			/* return */ UDF
 		]],
-		[/* method */ 'join(long)', [
+		[/* method */ 'setName(java.lang.String)', [
 			[/* method description */
-				[/* text */ 't', `Waits at most `],
-				[/* inline code block */ 'i', `millis`],
-				[/* text */ 't', ` milliseconds for this thread to
- die. A timeout of `],
-				[/* inline code block */ 'i', `0`],
-				[/* text */ 't', ` means to wait forever.
-
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', ` This implementation uses a loop of `],
-					[/* inline code block */ 'i', `this.wait`],
-					[/* text */ 't', ` calls
- conditioned on `],
-					[/* inline code block */ 'i', `this.isAlive`],
-					[/* text */ 't', `. As a thread terminates the
- `],
-					[/* inline code block */ 'i', `this.notifyAll`],
-					[/* text */ 't', ` method is invoked. It is recommended that
- applications not use `],
-					[/* inline code block */ 'i', `wait`],
-					[/* text */ 't', `, `],
-					[/* inline code block */ 'i', `notify`],
-					[/* text */ 't', `, or
- `],
-					[/* inline code block */ 'i', `notifyAll`],
-					[/* text */ 't', ` on `],
-					[/* inline code block */ 'i', `Thread`],
-					[/* text */ 't', ` instances.`]
-				]]
-			],
-			[/* parameters */
-				[/* parameter */ 'millis', [/* parameter description */
-					[/* text */ 't', `the time to wait in milliseconds`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
-					[/* text */ 't', `if the value of `],
-					[/* inline code block */ 'i', `millis`],
-					[/* text */ 't', ` is negative`]
-				]],
-				[/* throw */ 'java.lang.InterruptedException', [/* throw description */
-					[/* text */ 't', `if any thread has interrupted the current thread. The
-          `],
-					[/* text */ 't', `interrupted status`],
-					[/* text */ 't', ` of the current thread is
-          cleared when this exception is thrown.`]
-				]]
-			],
-			/* return */ UDF
-		]],
-		[/* method */ 'start()', [
-			[/* method description */
-				[/* text */ 't', `Causes this thread to begin execution; the Java Virtual Machine
- calls the `],
-				[/* inline code block */ 'i', `run`],
-				[/* text */ 't', ` method of this thread.
+				[/* text */ 't', `Changes the name of this thread to be equal to the argument `],
+				[/* inline code block */ 'i', `name`],
+				[/* text */ 't', `.
  `],
 				[/* block */ 'b', [
 					[/* text */ 't', `
- The result is that two threads are running concurrently: the
- current thread (which returns from the call to the
+ First the `],
+					[/* inline code block */ 'i', `checkAccess`],
+					[/* text */ 't', ` method of this thread is called
+ with no arguments. This may result in throwing a
  `],
-					[/* inline code block */ 'i', `start`],
-					[/* text */ 't', ` method) and the other thread (which executes its
- `],
-					[/* inline code block */ 'i', `run`],
-					[/* text */ 't', ` method).
- `]
-				]],
-				[/* block */ 'b', `
- It is never legal to start a thread more than once.
- In particular, a thread may not be restarted once it has completed
- execution.`]
-			],
-			/* parameters */ UDF,
-			[/* throws */
-				[/* throw */ 'java.lang.IllegalThreadStateException', [/* throw description */
-					[/* text */ 't', `if the thread was already started.`]
-				]]
-			],
-			/* return */ UDF
-		]],
-		[/* method */ 'getThreadGroup()', [
-			[/* method description */
-				[/* text */ 't', `Returns the thread group to which this thread belongs.
- This method returns null if this thread has died
- (been stopped).`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `this thread's thread group.`]
-			]
-		]],
-		[/* method */ 'setContextClassLoader(java.lang.ClassLoader)', [
-			[/* method description */
-				[/* text */ 't', `Sets the context ClassLoader for this Thread. The context
- ClassLoader can be set when a thread is created, and allows
- the creator of the thread to provide the appropriate class loader,
- through `],
-				[/* inline code block */ 'i', `getContextClassLoader`],
-				[/* text */ 't', `, to code running in the thread
- when loading classes and resources.
-
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', `If a security manager is present, its `],
-					[/* reference */ 'r', `.SecurityManager#checkPermission(java.security.Permission)`],
-					[/* text */ 't', `
- method is invoked with a `],
-					[/* reference */ 'r', `java.lang.RuntimePermission`],
-					[/* inline code block */ 'i', `("setContextClassLoader")`],
-					[/* text */ 't', ` permission to see if setting the context
- ClassLoader is permitted.`]
+					[/* inline code block */ 'i', `SecurityException`],
+					[/* text */ 't', `.`]
 				]]
 			],
 			[/* parameters */
-				[/* parameter */ 'cl', [/* parameter description */
-					[/* text */ 't', `the context ClassLoader for this Thread, or null  indicating the
-         system class loader (or, failing that, the bootstrap class loader)`]
+				[/* parameter */ 'name', [/* parameter description */
+					[/* text */ 't', `the new name for this thread.`]
 				]]
 			],
 			[/* throws */
 				[/* throw */ 'java.lang.SecurityException', [/* throw description */
-					[/* text */ 't', `if the current thread cannot set the context ClassLoader`]
+					[/* text */ 't', `if the current thread cannot modify this
+             thread.`]
 				]]
 			],
 			/* return */ UDF
-		]],
-		[/* method */ 'holdsLock(java.lang.Object)', [
-			[/* method description */
-				[/* text */ 't', `Returns `],
-				[/* inline code block */ 'i', `true`],
-				[/* text */ 't', ` if and only if the current thread holds the
- monitor lock on the specified object.
-
- `],
-				[/* block */ 'b', `This method is designed to allow a program to assert that
- the current thread already holds a specified lock:
- `],
-				[/* code block */ 'c', `     assert Thread.holdsLock(obj);
- `],
-				[/* block */ 'b', '']
-			],
-			[/* parameters */
-				[/* parameter */ 'obj', [/* parameter description */
-					[/* text */ 't', `the object on which to test lock ownership`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
-					[/* text */ 't', `if obj is `],
-					[/* inline code block */ 'i', `null`]
-				]]
-			],
-			[/* return description */
-				[/* inline code block */ 'i', `true`],
-				[/* text */ 't', ` if the current thread holds the monitor lock on
-         the specified object.`]
-			]
-		]],
-		[/* method */ 'getStackTrace()', [
-			[/* method description */
-				[/* text */ 't', `Returns an array of stack trace elements representing the stack dump
- of this thread.  This method will return a zero-length array if
- this thread has not started, has started but has not yet been
- scheduled to run by the system, or has terminated.
- If the returned array is of non-zero length then the first element of
- the array represents the top of the stack, which is the most recent
- method invocation in the sequence.  The last element of the array
- represents the bottom of the stack, which is the least recent method
- invocation in the sequence.
-
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', `If there is a security manager, and this thread is not
- the current thread, then the security manager's
- `],
-					[/* inline code block */ 'i', `checkPermission`],
-					[/* text */ 't', ` method is called with a
- `],
-					[/* inline code block */ 'i', `RuntimePermission("getStackTrace")`],
-					[/* text */ 't', ` permission
- to see if it's ok to get the stack trace.
-
- `]
-				]],
-				[/* block */ 'b', `Some virtual machines may, under some circumstances, omit one
- or more stack frames from the stack trace.  In the extreme case,
- a virtual machine that has no stack trace information concerning
- this thread is permitted to return a zero-length array from this
- method.`]
-			],
-			/* parameters */ UDF,
-			[/* throws */
-				[/* throw */ 'java.lang.SecurityException', [/* throw description */
-					[/* text */ 't', `if a security manager exists and its
-        `],
-					[/* inline code block */ 'i', `checkPermission`],
-					[/* text */ 't', ` method doesn't allow
-        getting the stack trace of thread.`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `an array of `],
-				[/* inline code block */ 'i', `StackTraceElement`],
-				[/* text */ 't', `,
- each represents one stack frame.`]
-			]
 		]],
 		[/* method */ 'checkAccess()', [
 			[/* method description */
@@ -1093,13 +946,91 @@ DocsCollector.collect('java.lang.Thread', [
 			],
 			/* return */ UDF
 		]],
-		[/* method */ 'dumpStack()', [
+		[/* method */ 'join()', [
 			[/* method description */
-				[/* text */ 't', `Prints a stack trace of the current thread to the standard error stream.
- This method is used only for debugging.`]
+				[/* text */ 't', `Waits for this thread to die.
+
+ `],
+				[/* block */ 'b', ` An invocation of this method behaves in exactly the same
+ way as the invocation
+
+ `],
+				[/* block */ 'b', [
+					[/* reference */ 'r', `#join(long)`, `join`],
+					[/* inline code block */ 'i', `(0)`]
+				]],
+				[/* block */ 'b', '']
 			],
 			/* parameters */ UDF,
-			/* throws */ UDF,
+			[/* throws */
+				[/* throw */ 'java.lang.InterruptedException', [/* throw description */
+					[/* text */ 't', `if any thread has interrupted the current thread. The
+          `],
+					[/* text */ 't', `interrupted status`],
+					[/* text */ 't', ` of the current thread is
+          cleared when this exception is thrown.`]
+				]]
+			],
+			/* return */ UDF
+		]],
+		[/* method */ 'resume()', [
+			[/* method description */
+				[/* text */ 't', `Resumes a suspended thread.
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', `
+ First, the `],
+					[/* inline code block */ 'i', `checkAccess`],
+					[/* text */ 't', ` method of this thread is called
+ with no arguments. This may result in throwing a
+ `],
+					[/* inline code block */ 'i', `SecurityException`],
+					[/* text */ 't', ` (in the current thread).
+ `]
+				]],
+				[/* block */ 'b', `
+ If the thread is alive but suspended, it is resumed and is
+ permitted to make progress in its execution.`]
+			],
+			/* parameters */ UDF,
+			[/* throws */
+				[/* throw */ 'java.lang.SecurityException', [/* throw description */
+					[/* text */ 't', `if the current thread cannot modify this
+             thread.`]
+				]]
+			],
+			/* return */ UDF
+		]],
+		[/* method */ 'setDaemon(boolean)', [
+			[/* method description */
+				[/* text */ 't', `Marks this thread as either a `],
+				[/* reference */ 'r', `#isDaemon()`, `daemon`],
+				[/* text */ 't', ` thread
+ or a user thread. The Java Virtual Machine exits when the only
+ threads running are all daemon threads.
+
+ `],
+				[/* block */ 'b', ` This method must be invoked before the thread is started.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'on', [/* parameter description */
+					[/* text */ 't', `if `],
+					[/* inline code block */ 'i', `true`],
+					[/* text */ 't', `, marks this thread as a daemon thread`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.lang.IllegalThreadStateException', [/* throw description */
+					[/* text */ 't', `if this thread is `],
+					[/* reference */ 'r', `#isAlive()`, `alive`]
+				]],
+				[/* throw */ 'java.lang.SecurityException', [/* throw description */
+					[/* text */ 't', `if `],
+					[/* reference */ 'r', `#checkAccess()`, `checkAccess()`],
+					[/* text */ 't', ` determines that the current
+          thread cannot modify this thread`]
+				]]
+			],
 			/* return */ UDF
 		]],
 		[/* method */ 'setPriority(int)', [
@@ -1145,487 +1076,6 @@ DocsCollector.collect('java.lang.Thread', [
                this thread.`]
 				]]
 			],
-			/* return */ UDF
-		]],
-		[/* method */ 'setDaemon(boolean)', [
-			[/* method description */
-				[/* text */ 't', `Marks this thread as either a `],
-				[/* reference */ 'r', `#isDaemon()`, `daemon`],
-				[/* text */ 't', ` thread
- or a user thread. The Java Virtual Machine exits when the only
- threads running are all daemon threads.
-
- `],
-				[/* block */ 'b', ` This method must be invoked before the thread is started.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'on', [/* parameter description */
-					[/* text */ 't', `if `],
-					[/* inline code block */ 'i', `true`],
-					[/* text */ 't', `, marks this thread as a daemon thread`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.IllegalThreadStateException', [/* throw description */
-					[/* text */ 't', `if this thread is `],
-					[/* reference */ 'r', `#isAlive()`, `alive`]
-				]],
-				[/* throw */ 'java.lang.SecurityException', [/* throw description */
-					[/* text */ 't', `if `],
-					[/* reference */ 'r', `#checkAccess()`, `checkAccess()`],
-					[/* text */ 't', ` determines that the current
-          thread cannot modify this thread`]
-				]]
-			],
-			/* return */ UDF
-		]],
-		[/* method */ 'sleep(long)', [
-			[/* method description */
-				[/* text */ 't', `Causes the currently executing thread to sleep (temporarily cease
- execution) for the specified number of milliseconds, subject to
- the precision and accuracy of system timers and schedulers. The thread
- does not lose ownership of any monitors.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'millis', [/* parameter description */
-					[/* text */ 't', `the length of time to sleep in milliseconds`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
-					[/* text */ 't', `if the value of `],
-					[/* inline code block */ 'i', `millis`],
-					[/* text */ 't', ` is negative`]
-				]],
-				[/* throw */ 'java.lang.InterruptedException', [/* throw description */
-					[/* text */ 't', `if any thread has interrupted the current thread. The
-          `],
-					[/* text */ 't', `interrupted status`],
-					[/* text */ 't', ` of the current thread is
-          cleared when this exception is thrown.`]
-				]]
-			],
-			/* return */ UDF
-		]],
-		[/* method */ 'sleep(long,int)', [
-			[/* method description */
-				[/* text */ 't', `Causes the currently executing thread to sleep (temporarily cease
- execution) for the specified number of milliseconds plus the specified
- number of nanoseconds, subject to the precision and accuracy of system
- timers and schedulers. The thread does not lose ownership of any
- monitors.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'millis', [/* parameter description */
-					[/* text */ 't', `the length of time to sleep in milliseconds`]
-				]],
-				[/* parameter */ 'nanos', [/* parameter description */
-					[/* text */ 't', ``],
-					[/* inline code block */ 'i', `0-999999`],
-					[/* text */ 't', ` additional nanoseconds to sleep`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
-					[/* text */ 't', `if the value of `],
-					[/* inline code block */ 'i', `millis`],
-					[/* text */ 't', ` is negative, or the value of
-          `],
-					[/* inline code block */ 'i', `nanos`],
-					[/* text */ 't', ` is not in the range `],
-					[/* inline code block */ 'i', `0-999999`]
-				]],
-				[/* throw */ 'java.lang.InterruptedException', [/* throw description */
-					[/* text */ 't', `if any thread has interrupted the current thread. The
-          `],
-					[/* text */ 't', `interrupted status`],
-					[/* text */ 't', ` of the current thread is
-          cleared when this exception is thrown.`]
-				]]
-			],
-			/* return */ UDF
-		]],
-		[/* method */ 'isDaemon()', [
-			[/* method description */
-				[/* text */ 't', `Tests if this thread is a daemon thread.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* inline code block */ 'i', `true`],
-				[/* text */ 't', ` if this thread is a daemon thread;
-          `],
-				[/* inline code block */ 'i', `false`],
-				[/* text */ 't', ` otherwise.`]
-			]
-		]],
-		[/* method */ 'getPriority()', [
-			[/* method description */
-				[/* text */ 't', `Returns this thread's priority.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `this thread's priority.`]
-			]
-		]],
-		[/* method */ 'getContextClassLoader()', [
-			[/* method description */
-				[/* text */ 't', `Returns the context `],
-				[/* inline code block */ 'i', `ClassLoader`],
-				[/* text */ 't', ` for this thread. The context
- `],
-				[/* inline code block */ 'i', `ClassLoader`],
-				[/* text */ 't', ` is provided by the creator of the thread for use
- by code running in this thread when loading classes and resources.
- If not `],
-				[/* reference */ 'r', `#setContextClassLoader(java.lang.ClassLoader)`, `set`],
-				[/* text */ 't', `, the default is the
- `],
-				[/* inline code block */ 'i', `ClassLoader`],
-				[/* text */ 't', ` context of the parent thread. The context
- `],
-				[/* inline code block */ 'i', `ClassLoader`],
-				[/* text */ 't', ` of the
- primordial thread is typically set to the class loader used to load the
- application.`]
-			],
-			/* parameters */ UDF,
-			[/* throws */
-				[/* throw */ 'java.lang.SecurityException', [/* throw description */
-					[/* text */ 't', `if a security manager is present, and the caller's class loader
-          is not `],
-					[/* inline code block */ 'i', `null`],
-					[/* text */ 't', ` and is not the same as or an ancestor of the
-          context class loader, and the caller does not have the
-          `],
-					[/* reference */ 'r', `java.lang.RuntimePermission`],
-					[/* inline code block */ 'i', `("getClassLoader")`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `the context `],
-				[/* inline code block */ 'i', `ClassLoader`],
-				[/* text */ 't', ` for this thread, or `],
-				[/* inline code block */ 'i', `null`],
-				[/* text */ 't', `
-          indicating the system class loader (or, failing that, the
-          bootstrap class loader)`]
-			]
-		]],
-		[/* method */ 'resume()', [
-			[/* method description */
-				[/* text */ 't', `Resumes a suspended thread.
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', `
- First, the `],
-					[/* inline code block */ 'i', `checkAccess`],
-					[/* text */ 't', ` method of this thread is called
- with no arguments. This may result in throwing a
- `],
-					[/* inline code block */ 'i', `SecurityException`],
-					[/* text */ 't', ` (in the current thread).
- `]
-				]],
-				[/* block */ 'b', `
- If the thread is alive but suspended, it is resumed and is
- permitted to make progress in its execution.`]
-			],
-			/* parameters */ UDF,
-			[/* throws */
-				[/* throw */ 'java.lang.SecurityException', [/* throw description */
-					[/* text */ 't', `if the current thread cannot modify this
-             thread.`]
-				]]
-			],
-			/* return */ UDF
-		]],
-		[/* method */ 'interrupted()', [
-			[/* method description */
-				[/* text */ 't', `Tests whether the current thread has been interrupted.  The
- `],
-				[/* text */ 't', `interrupted status`],
-				[/* text */ 't', ` of the thread is cleared by this method.  In
- other words, if this method were to be called twice in succession, the
- second call would return false (unless the current thread were
- interrupted again, after the first call had cleared its interrupted
- status and before the second call had examined it).`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* inline code block */ 'i', `true`],
-				[/* text */ 't', ` if the current thread has been interrupted;
-          `],
-				[/* inline code block */ 'i', `false`],
-				[/* text */ 't', ` otherwise.`]
-			]
-		]],
-		[/* method */ 'interrupt()', [
-			[/* method description */
-				[/* text */ 't', `Interrupts this thread.
-
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', ` Unless the current thread is interrupting itself, which is
- always permitted, the `],
-					[/* reference */ 'r', `#checkAccess()`, `checkAccess`],
-					[/* text */ 't', ` method
- of this thread is invoked, which may cause a `],
-					[/* reference */ 'r', `java.lang.SecurityException`],
-					[/* text */ 't', ` to be thrown.
-
- `]
-				]],
-				[/* block */ 'b', [
-					[/* text */ 't', ` If this thread is blocked in an invocation of the `],
-					[/* reference */ 'r', `.Object#wait()`],
-					[/* text */ 't', `, `],
-					[/* reference */ 'r', `.Object#wait(long)`],
-					[/* text */ 't', `, or `],
-					[/* reference */ 'r', `.Object#wait(long,int)`],
-					[/* text */ 't', ` methods of the `],
-					[/* reference */ 'r', `java.lang.Object`],
-					[/* text */ 't', `
- class, or of the `],
-					[/* reference */ 'r', `#join()`, `join()`],
-					[/* text */ 't', `, `],
-					[/* reference */ 'r', `#join(long)`, `join(long)`],
-					[/* text */ 't', `, `],
-					[/* reference */ 'r', `#join(long,int)`, `join(long, int)`],
-					[/* text */ 't', `, `],
-					[/* reference */ 'r', `#sleep(long)`, `sleep(long)`],
-					[/* text */ 't', `, or `],
-					[/* reference */ 'r', `#sleep(long,int)`, `sleep(long, int)`],
-					[/* text */ 't', `
- methods of this class, then its interrupt status will be cleared and it
- will receive an `],
-					[/* reference */ 'r', `java.lang.InterruptedException`],
-					[/* text */ 't', `.
-
- `]
-				]],
-				[/* block */ 'b', [
-					[/* text */ 't', ` If this thread is blocked in an I/O operation upon an `],
-					[/* reference */ 'r', `java.nio.channels.InterruptibleChannel`],
-					[/* text */ 't', `
- then the channel will be closed, the thread's interrupt
- status will be set, and the thread will receive a `],
-					[/* reference */ 'r', `java.nio.channels.ClosedByInterruptException`],
-					[/* text */ 't', `.
-
- `]
-				]],
-				[/* block */ 'b', [
-					[/* text */ 't', ` If this thread is blocked in a `],
-					[/* reference */ 'r', `java.nio.channels.Selector`],
-					[/* text */ 't', `
- then the thread's interrupt status will be set and it will return
- immediately from the selection operation, possibly with a non-zero
- value, just as if the selector's `],
-					[/* reference */ 'r', `java.channels.Selector#wakeup()`],
-					[/* text */ 't', ` method were invoked.
-
- `]
-				]],
-				[/* block */ 'b', ` If none of the previous conditions hold then this thread's interrupt
- status will be set. `],
-				[/* block */ 'b', ` Interrupting a thread that is not alive need not have any effect.`]
-			],
-			/* parameters */ UDF,
-			[/* throws */
-				[/* throw */ 'java.lang.SecurityException', [/* throw description */
-					[/* text */ 't', `if the current thread cannot modify this thread`]
-				]]
-			],
-			/* return */ UDF
-		]],
-		[/* method */ 'activeCount()', [
-			[/* method description */
-				[/* text */ 't', `Returns an estimate of the number of active threads in the current
- thread's `],
-				[/* reference */ 'r', `java.lang.ThreadGroup`],
-				[/* text */ 't', ` and its
- subgroups. Recursively iterates over all subgroups in the current
- thread's thread group.
-
- `],
-				[/* block */ 'b', ` The value returned is only an estimate because the number of
- threads may change dynamically while this method traverses internal
- data structures, and might be affected by the presence of certain
- system threads. This method is intended primarily for debugging
- and monitoring purposes.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `an estimate of the number of active threads in the current
-          thread's thread group and in any other thread group that
-          has the current thread's thread group as an ancestor`]
-			]
-		]],
-		[/* method */ 'enumerate(java.lang.Thread[])', [
-			[/* method description */
-				[/* text */ 't', `Copies into the specified array every active thread in the current
- thread's thread group and its subgroups. This method simply
- invokes the `],
-				[/* reference */ 'r', `.ThreadGroup#enumerate(java.lang.Thread[])`],
-				[/* text */ 't', `
- method of the current thread's thread group.
-
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', ` An application might use the `],
-					[/* reference */ 'r', `#activeCount()`, `activeCount`],
-					[/* text */ 't', `
- method to get an estimate of how big the array should be, however
- `],
-					[/* text */ 't', `if the array is too short to hold all the threads, the extra threads
- are silently ignored.`],
-					[/* text */ 't', `  If it is critical to obtain every active
- thread in the current thread's thread group and its subgroups, the
- invoker should verify that the returned int value is strictly less
- than the length of `],
-					[/* inline code block */ 'i', `tarray`],
-					[/* text */ 't', `.
-
- `]
-				]],
-				[/* block */ 'b', ` Due to the inherent race condition in this method, it is recommended
- that the method only be used for debugging and monitoring purposes.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'tarray', [/* parameter description */
-					[/* text */ 't', `an array into which to put the list of threads`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.SecurityException', [/* throw description */
-					[/* text */ 't', `if `],
-					[/* reference */ 'r', `.ThreadGroup#checkAccess()`],
-					[/* text */ 't', ` determines that
-          the current thread cannot access its thread group`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `the number of threads put into the array`]
-			]
-		]],
-		[/* method */ 'isAlive()', [
-			[/* method description */
-				[/* text */ 't', `Tests if this thread is alive. A thread is alive if it has
- been started and has not yet died.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* inline code block */ 'i', `true`],
-				[/* text */ 't', ` if this thread is alive;
-          `],
-				[/* inline code block */ 'i', `false`],
-				[/* text */ 't', ` otherwise.`]
-			]
-		]],
-		[/* method */ 'setDefaultUncaughtExceptionHandler(java.lang.Thread.UncaughtExceptionHandler)', [
-			[/* method description */
-				[/* text */ 't', `Set the default handler invoked when a thread abruptly terminates
- due to an uncaught exception, and no other handler has been defined
- for that thread.
-
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', `Uncaught exception handling is controlled first by the thread, then
- by the thread's `],
-					[/* reference */ 'r', `java.lang.ThreadGroup`],
-					[/* text */ 't', ` object and finally by the default
- uncaught exception handler. If the thread does not have an explicit
- uncaught exception handler set, and the thread's thread group
- (including parent thread groups)  does not specialize its
- `],
-					[/* inline code block */ 'i', `uncaughtException`],
-					[/* text */ 't', ` method, then the default handler's
- `],
-					[/* inline code block */ 'i', `uncaughtException`],
-					[/* text */ 't', ` method will be invoked.
- `]
-				]],
-				[/* block */ 'b', `By setting the default uncaught exception handler, an application
- can change the way in which uncaught exceptions are handled (such as
- logging to a specific device, or file) for those threads that would
- already accept whatever "default" behavior the system
- provided.
-
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', `Note that the default uncaught exception handler should not usually
- defer to the thread's `],
-					[/* inline code block */ 'i', `ThreadGroup`],
-					[/* text */ 't', ` object, as that could cause
- infinite recursion.`]
-				]]
-			],
-			[/* parameters */
-				[/* parameter */ 'eh', [/* parameter description */
-					[/* text */ 't', `the object to use as the default uncaught exception handler.
- If `],
-					[/* inline code block */ 'i', `null`],
-					[/* text */ 't', ` then there is no default handler.`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.SecurityException', [/* throw description */
-					[/* text */ 't', `if a security manager is present and it denies
-         `],
-					[/* reference */ 'r', `java.lang.RuntimePermission`],
-					[/* inline code block */ 'i', `("setDefaultUncaughtExceptionHandler")`]
-				]]
-			],
-			/* return */ UDF
-		]],
-		[/* method */ 'getUncaughtExceptionHandler()', [
-			[/* method description */
-				[/* text */ 't', `Returns the handler invoked when this thread abruptly terminates
- due to an uncaught exception. If this thread has not had an
- uncaught exception handler explicitly set then this thread's
- `],
-				[/* inline code block */ 'i', `ThreadGroup`],
-				[/* text */ 't', ` object is returned, unless this thread
- has terminated, in which case `],
-				[/* inline code block */ 'i', `null`],
-				[/* text */ 't', ` is returned.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the uncaught exception handler for this thread`]
-			]
-		]],
-		[/* method */ 'yield()', [
-			[/* method description */
-				[/* text */ 't', `A hint to the scheduler that the current thread is willing to yield
- its current use of a processor. The scheduler is free to ignore this
- hint.
-
- `],
-				[/* block */ 'b', ` Yield is a heuristic attempt to improve relative progression
- between threads that would otherwise over-utilise a CPU. Its use
- should be combined with detailed profiling and benchmarking to
- ensure that it actually has the desired effect.
-
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', ` It is rarely appropriate to use this method. It may be useful
- for debugging or testing purposes, where it may help to reproduce
- bugs due to race conditions. It may also be useful when designing
- concurrency control constructs such as the ones in the
- `],
-					[/* text */ 't', `java.util.concurrent.locks`],
-					[/* text */ 't', ` package.`]
-				]]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
 			/* return */ UDF
 		]],
 		[/* method */ 'stop()', [
@@ -1719,23 +1169,6 @@ DocsCollector.collect('java.lang.Thread', [
 			],
 			/* return */ UDF
 		]],
-		[/* method */ 'isInterrupted()', [
-			[/* method description */
-				[/* text */ 't', `Tests whether this thread has been interrupted.  The `],
-				[/* text */ 't', `interrupted
- status`],
-				[/* text */ 't', ` of the thread is unaffected by this method.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* inline code block */ 'i', `true`],
-				[/* text */ 't', ` if this thread has been interrupted;
-          `],
-				[/* inline code block */ 'i', `false`],
-				[/* text */ 't', ` otherwise.`]
-			]
-		]],
 		[/* method */ 'suspend()', [
 			[/* method description */
 				[/* text */ 't', `Suspends this thread.
@@ -1764,36 +1197,6 @@ DocsCollector.collect('java.lang.Thread', [
 			],
 			/* return */ UDF
 		]],
-		[/* method */ 'setName(java.lang.String)', [
-			[/* method description */
-				[/* text */ 't', `Changes the name of this thread to be equal to the argument `],
-				[/* inline code block */ 'i', `name`],
-				[/* text */ 't', `.
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', `
- First the `],
-					[/* inline code block */ 'i', `checkAccess`],
-					[/* text */ 't', ` method of this thread is called
- with no arguments. This may result in throwing a
- `],
-					[/* inline code block */ 'i', `SecurityException`],
-					[/* text */ 't', `.`]
-				]]
-			],
-			[/* parameters */
-				[/* parameter */ 'name', [/* parameter description */
-					[/* text */ 't', `the new name for this thread.`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.SecurityException', [/* throw description */
-					[/* text */ 't', `if the current thread cannot modify this
-             thread.`]
-				]]
-			],
-			/* return */ UDF
-		]],
 		[/* method */ 'countStackFrames()', [
 			[/* method description */
 				[/* text */ 't', `Throws `],
@@ -1804,6 +1207,261 @@ DocsCollector.collect('java.lang.Thread', [
 			/* throws */ UDF,
 			[/* return description */
 				[/* text */ 't', `nothing`]
+			]
+		]],
+		[/* method */ 'getContextClassLoader()', [
+			[/* method description */
+				[/* text */ 't', `Returns the context `],
+				[/* inline code block */ 'i', `ClassLoader`],
+				[/* text */ 't', ` for this thread. The context
+ `],
+				[/* inline code block */ 'i', `ClassLoader`],
+				[/* text */ 't', ` is provided by the creator of the thread for use
+ by code running in this thread when loading classes and resources.
+ If not `],
+				[/* reference */ 'r', `#setContextClassLoader(java.lang.ClassLoader)`, `set`],
+				[/* text */ 't', `, the default is the
+ `],
+				[/* inline code block */ 'i', `ClassLoader`],
+				[/* text */ 't', ` context of the parent thread. The context
+ `],
+				[/* inline code block */ 'i', `ClassLoader`],
+				[/* text */ 't', ` of the
+ primordial thread is typically set to the class loader used to load the
+ application.`]
+			],
+			/* parameters */ UDF,
+			[/* throws */
+				[/* throw */ 'java.lang.SecurityException', [/* throw description */
+					[/* text */ 't', `if a security manager is present, and the caller's class loader
+          is not `],
+					[/* inline code block */ 'i', `null`],
+					[/* text */ 't', ` and is not the same as or an ancestor of the
+          context class loader, and the caller does not have the
+          `],
+					[/* reference */ 'r', `java.lang.RuntimePermission`],
+					[/* inline code block */ 'i', `("getClassLoader")`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `the context `],
+				[/* inline code block */ 'i', `ClassLoader`],
+				[/* text */ 't', ` for this thread, or `],
+				[/* inline code block */ 'i', `null`],
+				[/* text */ 't', `
+          indicating the system class loader (or, failing that, the
+          bootstrap class loader)`]
+			]
+		]],
+		[/* method */ 'getStackTrace()', [
+			[/* method description */
+				[/* text */ 't', `Returns an array of stack trace elements representing the stack dump
+ of this thread.  This method will return a zero-length array if
+ this thread has not started, has started but has not yet been
+ scheduled to run by the system, or has terminated.
+ If the returned array is of non-zero length then the first element of
+ the array represents the top of the stack, which is the most recent
+ method invocation in the sequence.  The last element of the array
+ represents the bottom of the stack, which is the least recent method
+ invocation in the sequence.
+
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', `If there is a security manager, and this thread is not
+ the current thread, then the security manager's
+ `],
+					[/* inline code block */ 'i', `checkPermission`],
+					[/* text */ 't', ` method is called with a
+ `],
+					[/* inline code block */ 'i', `RuntimePermission("getStackTrace")`],
+					[/* text */ 't', ` permission
+ to see if it's ok to get the stack trace.
+
+ `]
+				]],
+				[/* block */ 'b', `Some virtual machines may, under some circumstances, omit one
+ or more stack frames from the stack trace.  In the extreme case,
+ a virtual machine that has no stack trace information concerning
+ this thread is permitted to return a zero-length array from this
+ method.`]
+			],
+			/* parameters */ UDF,
+			[/* throws */
+				[/* throw */ 'java.lang.SecurityException', [/* throw description */
+					[/* text */ 't', `if a security manager exists and its
+        `],
+					[/* inline code block */ 'i', `checkPermission`],
+					[/* text */ 't', ` method doesn't allow
+        getting the stack trace of thread.`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `an array of `],
+				[/* inline code block */ 'i', `StackTraceElement`],
+				[/* text */ 't', `,
+ each represents one stack frame.`]
+			]
+		]],
+		[/* method */ 'toString()', [
+			[/* method description */
+				[/* text */ 't', `Returns a string representation of this thread, including the
+ thread's name, priority, and thread group.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `a string representation of this thread.`]
+			]
+		]],
+		[/* method */ 'getState()', [
+			[/* method description */
+				[/* text */ 't', `Returns the state of this thread.
+ This method is designed for use in monitoring of the system state,
+ not for synchronization control.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `this thread's state.`]
+			]
+		]],
+		[/* method */ 'getUncaughtExceptionHandler()', [
+			[/* method description */
+				[/* text */ 't', `Returns the handler invoked when this thread abruptly terminates
+ due to an uncaught exception. If this thread has not had an
+ uncaught exception handler explicitly set then this thread's
+ `],
+				[/* inline code block */ 'i', `ThreadGroup`],
+				[/* text */ 't', ` object is returned, unless this thread
+ has terminated, in which case `],
+				[/* inline code block */ 'i', `null`],
+				[/* text */ 't', ` is returned.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the uncaught exception handler for this thread`]
+			]
+		]],
+		[/* method */ 'getId()', [
+			[/* method description */
+				[/* text */ 't', `Returns the identifier of this Thread.  The thread ID is a positive
+ `],
+				[/* inline code block */ 'i', `long`],
+				[/* text */ 't', ` number generated when this thread was created.
+ The thread ID is unique and remains unchanged during its lifetime.
+ When a thread is terminated, this thread ID may be reused.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `this thread's ID.`]
+			]
+		]],
+		[/* method */ 'interrupted()', [
+			[/* method description */
+				[/* text */ 't', `Tests whether the current thread has been interrupted.  The
+ `],
+				[/* text */ 't', `interrupted status`],
+				[/* text */ 't', ` of the thread is cleared by this method.  In
+ other words, if this method were to be called twice in succession, the
+ second call would return false (unless the current thread were
+ interrupted again, after the first call had cleared its interrupted
+ status and before the second call had examined it).`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* inline code block */ 'i', `true`],
+				[/* text */ 't', ` if the current thread has been interrupted;
+          `],
+				[/* inline code block */ 'i', `false`],
+				[/* text */ 't', ` otherwise.`]
+			]
+		]],
+		[/* method */ 'activeCount()', [
+			[/* method description */
+				[/* text */ 't', `Returns an estimate of the number of active threads in the current
+ thread's `],
+				[/* reference */ 'r', `java.lang.ThreadGroup`],
+				[/* text */ 't', ` and its
+ subgroups. Recursively iterates over all subgroups in the current
+ thread's thread group.
+
+ `],
+				[/* block */ 'b', ` The value returned is only an estimate because the number of
+ threads may change dynamically while this method traverses internal
+ data structures, and might be affected by the presence of certain
+ system threads. This method is intended primarily for debugging
+ and monitoring purposes.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `an estimate of the number of active threads in the current
+          thread's thread group and in any other thread group that
+          has the current thread's thread group as an ancestor`]
+			]
+		]],
+		[/* method */ 'enumerate(java.lang.Thread[])', [
+			[/* method description */
+				[/* text */ 't', `Copies into the specified array every active thread in the current
+ thread's thread group and its subgroups. This method simply
+ invokes the `],
+				[/* reference */ 'r', `.ThreadGroup#enumerate(java.lang.Thread[])`],
+				[/* text */ 't', `
+ method of the current thread's thread group.
+
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', ` An application might use the `],
+					[/* reference */ 'r', `#activeCount()`, `activeCount`],
+					[/* text */ 't', `
+ method to get an estimate of how big the array should be, however
+ `],
+					[/* text */ 't', `if the array is too short to hold all the threads, the extra threads
+ are silently ignored.`],
+					[/* text */ 't', `  If it is critical to obtain every active
+ thread in the current thread's thread group and its subgroups, the
+ invoker should verify that the returned int value is strictly less
+ than the length of `],
+					[/* inline code block */ 'i', `tarray`],
+					[/* text */ 't', `.
+
+ `]
+				]],
+				[/* block */ 'b', ` Due to the inherent race condition in this method, it is recommended
+ that the method only be used for debugging and monitoring purposes.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'tarray', [/* parameter description */
+					[/* text */ 't', `an array into which to put the list of threads`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.lang.SecurityException', [/* throw description */
+					[/* text */ 't', `if `],
+					[/* reference */ 'r', `.ThreadGroup#checkAccess()`],
+					[/* text */ 't', ` determines that
+          the current thread cannot access its thread group`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `the number of threads put into the array`]
+			]
+		]],
+		[/* method */ 'getDefaultUncaughtExceptionHandler()', [
+			[/* method description */
+				[/* text */ 't', `Returns the default handler invoked when a thread abruptly terminates
+ due to an uncaught exception. If the returned value is `],
+				[/* inline code block */ 'i', `null`],
+				[/* text */ 't', `,
+ there is no default.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the default uncaught exception handler for all threads`]
 			]
 		]],
 		[/* method */ 'getAllStackTraces()', [
@@ -1865,46 +1523,388 @@ DocsCollector.collect('java.lang.Thread', [
  the corresponding thread.`]
 			]
 		]],
-		[/* method */ 'getId()', [
+		[/* method */ 'holdsLock(java.lang.Object)', [
 			[/* method description */
-				[/* text */ 't', `Returns the identifier of this Thread.  The thread ID is a positive
+				[/* text */ 't', `Returns `],
+				[/* inline code block */ 'i', `true`],
+				[/* text */ 't', ` if and only if the current thread holds the
+ monitor lock on the specified object.
+
  `],
-				[/* inline code block */ 'i', `long`],
-				[/* text */ 't', ` number generated when this thread was created.
- The thread ID is unique and remains unchanged during its lifetime.
- When a thread is terminated, this thread ID may be reused.`]
+				[/* block */ 'b', `This method is designed to allow a program to assert that
+ the current thread already holds a specified lock:
+ `],
+				[/* code block */ 'c', `     assert Thread.holdsLock(obj);
+ `],
+				[/* block */ 'b', '']
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			[/* parameters */
+				[/* parameter */ 'obj', [/* parameter description */
+					[/* text */ 't', `the object on which to test lock ownership`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
+					[/* text */ 't', `if obj is `],
+					[/* inline code block */ 'i', `null`]
+				]]
+			],
 			[/* return description */
-				[/* text */ 't', `this thread's ID.`]
+				[/* inline code block */ 'i', `true`],
+				[/* text */ 't', ` if the current thread holds the monitor lock on
+         the specified object.`]
 			]
 		]],
-		[/* method */ 'getState()', [
+		[/* method */ 'currentThread()', [
 			[/* method description */
-				[/* text */ 't', `Returns the state of this thread.
- This method is designed for use in monitoring of the system state,
- not for synchronization control.`]
+				[/* text */ 't', `Returns a reference to the currently executing thread object.`]
 			],
 			/* parameters */ UDF,
 			/* throws */ UDF,
 			[/* return description */
-				[/* text */ 't', `this thread's state.`]
+				[/* text */ 't', `the currently executing thread.`]
 			]
 		]],
-		[/* method */ 'getDefaultUncaughtExceptionHandler()', [
+		[/* method */ 'sleep(long)', [
 			[/* method description */
-				[/* text */ 't', `Returns the default handler invoked when a thread abruptly terminates
- due to an uncaught exception. If the returned value is `],
-				[/* inline code block */ 'i', `null`],
-				[/* text */ 't', `,
- there is no default.`]
+				[/* text */ 't', `Causes the currently executing thread to sleep (temporarily cease
+ execution) for the specified number of milliseconds, subject to
+ the precision and accuracy of system timers and schedulers. The thread
+ does not lose ownership of any monitors.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'millis', [/* parameter description */
+					[/* text */ 't', `the length of time to sleep in milliseconds`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
+					[/* text */ 't', `if the value of `],
+					[/* inline code block */ 'i', `millis`],
+					[/* text */ 't', ` is negative`]
+				]],
+				[/* throw */ 'java.lang.InterruptedException', [/* throw description */
+					[/* text */ 't', `if any thread has interrupted the current thread. The
+          `],
+					[/* text */ 't', `interrupted status`],
+					[/* text */ 't', ` of the current thread is
+          cleared when this exception is thrown.`]
+				]]
+			],
+			/* return */ UDF
+		]],
+		[/* method */ 'yield()', [
+			[/* method description */
+				[/* text */ 't', `A hint to the scheduler that the current thread is willing to yield
+ its current use of a processor. The scheduler is free to ignore this
+ hint.
+
+ `],
+				[/* block */ 'b', ` Yield is a heuristic attempt to improve relative progression
+ between threads that would otherwise over-utilise a CPU. Its use
+ should be combined with detailed profiling and benchmarking to
+ ensure that it actually has the desired effect.
+
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', ` It is rarely appropriate to use this method. It may be useful
+ for debugging or testing purposes, where it may help to reproduce
+ bugs due to race conditions. It may also be useful when designing
+ concurrency control constructs such as the ones in the
+ `],
+					[/* text */ 't', `java.util.concurrent.locks`],
+					[/* text */ 't', ` package.`]
+				]]
 			],
 			/* parameters */ UDF,
 			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the default uncaught exception handler for all threads`]
-			]
+			/* return */ UDF
+		]],
+		[/* method */ 'dumpStack()', [
+			[/* method description */
+				[/* text */ 't', `Prints a stack trace of the current thread to the standard error stream.
+ This method is used only for debugging.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			/* return */ UDF
+		]],
+		[/* method */ 'onSpinWait()', [
+			[/* method description */
+				[/* text */ 't', `Indicates that the caller is momentarily unable to progress, until the
+ occurrence of one or more actions on the part of other activities. By
+ invoking this method within each iteration of a spin-wait loop construct,
+ the calling thread indicates to the runtime that it is busy-waiting.
+ The runtime may take action to improve the performance of invoking
+ spin-wait loop constructions.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			/* return */ UDF
+		]],
+		[/* method */ 'setDefaultUncaughtExceptionHandler(java.lang.Thread.UncaughtExceptionHandler)', [
+			[/* method description */
+				[/* text */ 't', `Set the default handler invoked when a thread abruptly terminates
+ due to an uncaught exception, and no other handler has been defined
+ for that thread.
+
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', `Uncaught exception handling is controlled first by the thread, then
+ by the thread's `],
+					[/* reference */ 'r', `java.lang.ThreadGroup`],
+					[/* text */ 't', ` object and finally by the default
+ uncaught exception handler. If the thread does not have an explicit
+ uncaught exception handler set, and the thread's thread group
+ (including parent thread groups)  does not specialize its
+ `],
+					[/* inline code block */ 'i', `uncaughtException`],
+					[/* text */ 't', ` method, then the default handler's
+ `],
+					[/* inline code block */ 'i', `uncaughtException`],
+					[/* text */ 't', ` method will be invoked.
+ `]
+				]],
+				[/* block */ 'b', `By setting the default uncaught exception handler, an application
+ can change the way in which uncaught exceptions are handled (such as
+ logging to a specific device, or file) for those threads that would
+ already accept whatever "default" behavior the system
+ provided.
+
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', `Note that the default uncaught exception handler should not usually
+ defer to the thread's `],
+					[/* inline code block */ 'i', `ThreadGroup`],
+					[/* text */ 't', ` object, as that could cause
+ infinite recursion.`]
+				]]
+			],
+			[/* parameters */
+				[/* parameter */ 'eh', [/* parameter description */
+					[/* text */ 't', `the object to use as the default uncaught exception handler.
+ If `],
+					[/* inline code block */ 'i', `null`],
+					[/* text */ 't', ` then there is no default handler.`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.lang.SecurityException', [/* throw description */
+					[/* text */ 't', `if a security manager is present and it denies
+         `],
+					[/* reference */ 'r', `java.lang.RuntimePermission`],
+					[/* inline code block */ 'i', `("setDefaultUncaughtExceptionHandler")`]
+				]]
+			],
+			/* return */ UDF
+		]],
+		[/* method */ 'sleep(long,int)', [
+			[/* method description */
+				[/* text */ 't', `Causes the currently executing thread to sleep (temporarily cease
+ execution) for the specified number of milliseconds plus the specified
+ number of nanoseconds, subject to the precision and accuracy of system
+ timers and schedulers. The thread does not lose ownership of any
+ monitors.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'millis', [/* parameter description */
+					[/* text */ 't', `the length of time to sleep in milliseconds`]
+				]],
+				[/* parameter */ 'nanos', [/* parameter description */
+					[/* text */ 't', ``],
+					[/* inline code block */ 'i', `0-999999`],
+					[/* text */ 't', ` additional nanoseconds to sleep`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
+					[/* text */ 't', `if the value of `],
+					[/* inline code block */ 'i', `millis`],
+					[/* text */ 't', ` is negative, or the value of
+          `],
+					[/* inline code block */ 'i', `nanos`],
+					[/* text */ 't', ` is not in the range `],
+					[/* inline code block */ 'i', `0-999999`]
+				]],
+				[/* throw */ 'java.lang.InterruptedException', [/* throw description */
+					[/* text */ 't', `if any thread has interrupted the current thread. The
+          `],
+					[/* text */ 't', `interrupted status`],
+					[/* text */ 't', ` of the current thread is
+          cleared when this exception is thrown.`]
+				]]
+			],
+			/* return */ UDF
+		]],
+		[/* method */ 'start()', [
+			[/* method description */
+				[/* text */ 't', `Causes this thread to begin execution; the Java Virtual Machine
+ calls the `],
+				[/* inline code block */ 'i', `run`],
+				[/* text */ 't', ` method of this thread.
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', `
+ The result is that two threads are running concurrently: the
+ current thread (which returns from the call to the
+ `],
+					[/* inline code block */ 'i', `start`],
+					[/* text */ 't', ` method) and the other thread (which executes its
+ `],
+					[/* inline code block */ 'i', `run`],
+					[/* text */ 't', ` method).
+ `]
+				]],
+				[/* block */ 'b', `
+ It is never legal to start a thread more than once.
+ In particular, a thread may not be restarted once it has completed
+ execution.`]
+			],
+			/* parameters */ UDF,
+			[/* throws */
+				[/* throw */ 'java.lang.IllegalThreadStateException', [/* throw description */
+					[/* text */ 't', `if the thread was already started.`]
+				]]
+			],
+			/* return */ UDF
+		]],
+		[/* method */ 'interrupt()', [
+			[/* method description */
+				[/* text */ 't', `Interrupts this thread.
+
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', ` Unless the current thread is interrupting itself, which is
+ always permitted, the `],
+					[/* reference */ 'r', `#checkAccess()`, `checkAccess`],
+					[/* text */ 't', ` method
+ of this thread is invoked, which may cause a `],
+					[/* reference */ 'r', `java.lang.SecurityException`],
+					[/* text */ 't', ` to be thrown.
+
+ `]
+				]],
+				[/* block */ 'b', [
+					[/* text */ 't', ` If this thread is blocked in an invocation of the `],
+					[/* reference */ 'r', `.Object#wait()`],
+					[/* text */ 't', `, `],
+					[/* reference */ 'r', `.Object#wait(long)`],
+					[/* text */ 't', `, or `],
+					[/* reference */ 'r', `.Object#wait(long,int)`],
+					[/* text */ 't', ` methods of the `],
+					[/* reference */ 'r', `java.lang.Object`],
+					[/* text */ 't', `
+ class, or of the `],
+					[/* reference */ 'r', `#join()`, `join()`],
+					[/* text */ 't', `, `],
+					[/* reference */ 'r', `#join(long)`, `join(long)`],
+					[/* text */ 't', `, `],
+					[/* reference */ 'r', `#join(long,int)`, `join(long, int)`],
+					[/* text */ 't', `, `],
+					[/* reference */ 'r', `#sleep(long)`, `sleep(long)`],
+					[/* text */ 't', `, or `],
+					[/* reference */ 'r', `#sleep(long,int)`, `sleep(long, int)`],
+					[/* text */ 't', `
+ methods of this class, then its interrupt status will be cleared and it
+ will receive an `],
+					[/* reference */ 'r', `java.lang.InterruptedException`],
+					[/* text */ 't', `.
+
+ `]
+				]],
+				[/* block */ 'b', [
+					[/* text */ 't', ` If this thread is blocked in an I/O operation upon an `],
+					[/* reference */ 'r', `java.nio.channels.InterruptibleChannel`],
+					[/* text */ 't', `
+ then the channel will be closed, the thread's interrupt
+ status will be set, and the thread will receive a `],
+					[/* reference */ 'r', `java.nio.channels.ClosedByInterruptException`],
+					[/* text */ 't', `.
+
+ `]
+				]],
+				[/* block */ 'b', [
+					[/* text */ 't', ` If this thread is blocked in a `],
+					[/* reference */ 'r', `java.nio.channels.Selector`],
+					[/* text */ 't', `
+ then the thread's interrupt status will be set and it will return
+ immediately from the selection operation, possibly with a non-zero
+ value, just as if the selector's `],
+					[/* reference */ 'r', `java.channels.Selector#wakeup()`],
+					[/* text */ 't', ` method were invoked.
+
+ `]
+				]],
+				[/* block */ 'b', ` If none of the previous conditions hold then this thread's interrupt
+ status will be set. `],
+				[/* block */ 'b', ` Interrupting a thread that is not alive need not have any effect.`]
+			],
+			/* parameters */ UDF,
+			[/* throws */
+				[/* throw */ 'java.lang.SecurityException', [/* throw description */
+					[/* text */ 't', `if the current thread cannot modify this thread`]
+				]]
+			],
+			/* return */ UDF
+		]],
+		[/* method */ 'run()', [
+			[/* method description */
+				[/* text */ 't', `If this thread was constructed using a separate
+ `],
+				[/* inline code block */ 'i', `Runnable`],
+				[/* text */ 't', ` run object, then that
+ `],
+				[/* inline code block */ 'i', `Runnable`],
+				[/* text */ 't', ` object's `],
+				[/* inline code block */ 'i', `run`],
+				[/* text */ 't', ` method is called;
+ otherwise, this method does nothing and returns.
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', `
+ Subclasses of `],
+					[/* inline code block */ 'i', `Thread`],
+					[/* text */ 't', ` should override this method.`]
+				]]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			/* return */ UDF
+		]],
+		[/* method */ 'setContextClassLoader(java.lang.ClassLoader)', [
+			[/* method description */
+				[/* text */ 't', `Sets the context ClassLoader for this Thread. The context
+ ClassLoader can be set when a thread is created, and allows
+ the creator of the thread to provide the appropriate class loader,
+ through `],
+				[/* inline code block */ 'i', `getContextClassLoader`],
+				[/* text */ 't', `, to code running in the thread
+ when loading classes and resources.
+
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', `If a security manager is present, its `],
+					[/* reference */ 'r', `.SecurityManager#checkPermission(java.security.Permission)`],
+					[/* text */ 't', `
+ method is invoked with a `],
+					[/* reference */ 'r', `java.lang.RuntimePermission`],
+					[/* inline code block */ 'i', `("setContextClassLoader")`],
+					[/* text */ 't', ` permission to see if setting the context
+ ClassLoader is permitted.`]
+				]]
+			],
+			[/* parameters */
+				[/* parameter */ 'cl', [/* parameter description */
+					[/* text */ 't', `the context ClassLoader for this Thread, or null  indicating the
+         system class loader (or, failing that, the bootstrap class loader)`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.lang.SecurityException', [/* throw description */
+					[/* text */ 't', `if the current thread cannot set the context ClassLoader`]
+				]]
+			],
+			/* return */ UDF
 		]],
 		[/* method */ 'setUncaughtExceptionHandler(java.lang.Thread.UncaughtExceptionHandler)', [
 			[/* method description */

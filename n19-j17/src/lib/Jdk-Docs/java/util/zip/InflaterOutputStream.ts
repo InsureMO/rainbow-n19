@@ -7,18 +7,36 @@ DocsCollector.collect('java.util.zip.InflaterOutputStream', [
  "deflate" compression format.`]
 	],
 	[/* fields */
-		[/* field */ 'inf', [
-			[/* field description */
-				[/* text */ 't', `Decompressor for this stream.`]
-			],
-		]],
 		[/* field */ 'buf', [
 			[/* field description */
 				[/* text */ 't', `Output buffer for writing uncompressed data.`]
 			],
+		]],
+		[/* field */ 'inf', [
+			[/* field description */
+				[/* text */ 't', `Decompressor for this stream.`]
+			],
 		]]
 	],
 	[/* constructors */
+		[/* constructor */ '<init>(java.io.OutputStream)', [
+			[/* constructor description */
+				[/* text */ 't', `Creates a new output stream with a default decompressor and buffer
+ size.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'out', [/* parameter description */
+					[/* text */ 't', `output stream to write the uncompressed data to`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
+					[/* text */ 't', `if `],
+					[/* inline code block */ 'i', `out`],
+					[/* text */ 't', ` is null`]
+				]]
+			]
+		]],
 		[/* constructor */ '<init>(java.io.OutputStream,java.util.zip.Inflater)', [
 			[/* constructor description */
 				[/* text */ 't', `Creates a new output stream with the specified decompressor and a
@@ -38,24 +56,6 @@ DocsCollector.collect('java.util.zip.InflaterOutputStream', [
 					[/* inline code block */ 'i', `out`],
 					[/* text */ 't', ` or `],
 					[/* inline code block */ 'i', `infl`],
-					[/* text */ 't', ` is null`]
-				]]
-			]
-		]],
-		[/* constructor */ '<init>(java.io.OutputStream)', [
-			[/* constructor description */
-				[/* text */ 't', `Creates a new output stream with a default decompressor and buffer
- size.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'out', [/* parameter description */
-					[/* text */ 't', `output stream to write the uncompressed data to`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
-					[/* text */ 't', `if `],
-					[/* inline code block */ 'i', `out`],
 					[/* text */ 't', ` is null`]
 				]]
 			]
@@ -92,10 +92,24 @@ DocsCollector.collect('java.util.zip.InflaterOutputStream', [
 		]]
 	],
 	[/* methods */
-		[/* method */ 'flush()', [
+		[/* method */ 'close()', [
 			[/* method description */
-				[/* text */ 't', `Flushes this output stream, forcing any pending buffered output bytes to be
- written.`]
+				[/* text */ 't', `Writes any remaining uncompressed data to the output stream and closes
+ the underlying output stream.`]
+			],
+			/* parameters */ UDF,
+			[/* throws */
+				[/* throw */ 'java.io.IOException', [/* throw description */
+					[/* text */ 't', `if an I/O error occurs`]
+				]]
+			],
+			/* return */ UDF
+		]],
+		[/* method */ 'finish()', [
+			[/* method description */
+				[/* text */ 't', `Finishes writing uncompressed data to the output stream without closing
+ the underlying stream.  Use this method when applying multiple filters in
+ succession to the same output stream.`]
 			],
 			/* parameters */ UDF,
 			[/* throws */
@@ -106,23 +120,16 @@ DocsCollector.collect('java.util.zip.InflaterOutputStream', [
 			],
 			/* return */ UDF
 		]],
-		[/* method */ 'write(int)', [
+		[/* method */ 'flush()', [
 			[/* method description */
-				[/* text */ 't', `Writes a byte to the uncompressed output stream.`]
+				[/* text */ 't', `Flushes this output stream, forcing any pending buffered output bytes to be
+ written.`]
 			],
-			[/* parameters */
-				[/* parameter */ 'b', [/* parameter description */
-					[/* text */ 't', `a single byte of compressed data to decompress and write to
- the output stream`]
-				]]
-			],
+			/* parameters */ UDF,
 			[/* throws */
 				[/* throw */ 'java.io.IOException', [/* throw description */
 					[/* text */ 't', `if an I/O error occurs or this stream is already
  closed`]
-				]],
-				[/* throw */ 'java.util.zip.ZipException', [/* throw description */
-					[/* text */ 't', `if a compression (ZIP) format error occurs`]
 				]]
 			],
 			/* return */ UDF
@@ -170,30 +177,23 @@ DocsCollector.collect('java.util.zip.InflaterOutputStream', [
 			],
 			/* return */ UDF
 		]],
-		[/* method */ 'close()', [
+		[/* method */ 'write(int)', [
 			[/* method description */
-				[/* text */ 't', `Writes any remaining uncompressed data to the output stream and closes
- the underlying output stream.`]
+				[/* text */ 't', `Writes a byte to the uncompressed output stream.`]
 			],
-			/* parameters */ UDF,
-			[/* throws */
-				[/* throw */ 'java.io.IOException', [/* throw description */
-					[/* text */ 't', `if an I/O error occurs`]
+			[/* parameters */
+				[/* parameter */ 'b', [/* parameter description */
+					[/* text */ 't', `a single byte of compressed data to decompress and write to
+ the output stream`]
 				]]
 			],
-			/* return */ UDF
-		]],
-		[/* method */ 'finish()', [
-			[/* method description */
-				[/* text */ 't', `Finishes writing uncompressed data to the output stream without closing
- the underlying stream.  Use this method when applying multiple filters in
- succession to the same output stream.`]
-			],
-			/* parameters */ UDF,
 			[/* throws */
 				[/* throw */ 'java.io.IOException', [/* throw description */
 					[/* text */ 't', `if an I/O error occurs or this stream is already
  closed`]
+				]],
+				[/* throw */ 'java.util.zip.ZipException', [/* throw description */
+					[/* text */ 't', `if a compression (ZIP) format error occurs`]
 				]]
 			],
 			/* return */ UDF

@@ -23,6 +23,107 @@ DocsCollector.collect('java.lang.ClassValue', [
 		]]
 	],
 	[/* methods */
+		[/* method */ 'computeValue(java.lang.Class)', [
+			[/* method description */
+				[/* text */ 't', `Computes the given class's derived value for this `],
+				[/* inline code block */ 'i', `ClassValue`],
+				[/* text */ 't', `.
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', `
+ This method will be invoked within the first thread that accesses
+ the value with the `],
+					[/* reference */ 'r', `#get(java.lang.Class)`, `get`],
+					[/* text */ 't', ` method.
+ `]
+				]],
+				[/* block */ 'b', [
+					[/* text */ 't', `
+ Normally, this method is invoked at most once per class,
+ but it may be invoked again if there has been a call to
+ `],
+					[/* reference */ 'r', `#remove(java.lang.Class)`, `remove`],
+					[/* text */ 't', `.
+ `]
+				]],
+				[/* block */ 'b', [
+					[/* text */ 't', `
+ If this method throws an exception, the corresponding call to `],
+					[/* inline code block */ 'i', `get`],
+					[/* text */ 't', `
+ will terminate abnormally with that exception, and no class value will be recorded.`]
+				]]
+			],
+			[/* parameters */
+				[/* parameter */ 'type', [/* parameter description */
+					[/* text */ 't', `the type whose class value must be computed`]
+				]]
+			],
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the newly computed value associated with this `],
+				[/* inline code block */ 'i', `ClassValue`],
+				[/* text */ 't', `, for the given class or interface`]
+			]
+		]],
+		[/* method */ 'get(java.lang.Class)', [
+			[/* method description */
+				[/* text */ 't', `Returns the value for the given class.
+ If no value has yet been computed, it is obtained by
+ an invocation of the `],
+				[/* reference */ 'r', `#computeValue(java.lang.Class)`, `computeValue`],
+				[/* text */ 't', ` method.
+ `],
+				[/* block */ 'b', `
+ The actual installation of the value on the class
+ is performed atomically.
+ At that point, if several racing threads have
+ computed values, one is chosen, and returned to
+ all the racing threads.
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', `
+ The `],
+					[/* inline code block */ 'i', `type`],
+					[/* text */ 't', ` parameter is typically a class, but it may be any type,
+ such as an interface, a primitive type (like `],
+					[/* inline code block */ 'i', `int.class`],
+					[/* text */ 't', `), or `],
+					[/* inline code block */ 'i', `void.class`],
+					[/* text */ 't', `.
+ `]
+				]],
+				[/* block */ 'b', [
+					[/* text */ 't', `
+ In the absence of `],
+					[/* inline code block */ 'i', `remove`],
+					[/* text */ 't', ` calls, a class value has a simple
+ state diagram:  uninitialized and initialized.
+ When `],
+					[/* inline code block */ 'i', `remove`],
+					[/* text */ 't', ` calls are made,
+ the rules for value observation are more complex.
+ See the documentation for `],
+					[/* reference */ 'r', `#remove(java.lang.Class)`, `remove`],
+					[/* text */ 't', ` for more information.`]
+				]]
+			],
+			[/* parameters */
+				[/* parameter */ 'type', [/* parameter description */
+					[/* text */ 't', `the type whose class value must be computed or retrieved`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
+					[/* text */ 't', `if the argument is null`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `the current value associated with this `],
+				[/* inline code block */ 'i', `ClassValue`],
+				[/* text */ 't', `, for the given class or interface`]
+			]
+		]],
 		[/* method */ 'remove(java.lang.Class)', [
 			[/* method description */
 				[/* text */ 't', `Removes the associated value for the given class.
@@ -206,107 +307,6 @@ DocsCollector.collect('java.lang.ClassValue', [
 				]]
 			],
 			/* return */ UDF
-		]],
-		[/* method */ 'get(java.lang.Class)', [
-			[/* method description */
-				[/* text */ 't', `Returns the value for the given class.
- If no value has yet been computed, it is obtained by
- an invocation of the `],
-				[/* reference */ 'r', `#computeValue(java.lang.Class)`, `computeValue`],
-				[/* text */ 't', ` method.
- `],
-				[/* block */ 'b', `
- The actual installation of the value on the class
- is performed atomically.
- At that point, if several racing threads have
- computed values, one is chosen, and returned to
- all the racing threads.
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', `
- The `],
-					[/* inline code block */ 'i', `type`],
-					[/* text */ 't', ` parameter is typically a class, but it may be any type,
- such as an interface, a primitive type (like `],
-					[/* inline code block */ 'i', `int.class`],
-					[/* text */ 't', `), or `],
-					[/* inline code block */ 'i', `void.class`],
-					[/* text */ 't', `.
- `]
-				]],
-				[/* block */ 'b', [
-					[/* text */ 't', `
- In the absence of `],
-					[/* inline code block */ 'i', `remove`],
-					[/* text */ 't', ` calls, a class value has a simple
- state diagram:  uninitialized and initialized.
- When `],
-					[/* inline code block */ 'i', `remove`],
-					[/* text */ 't', ` calls are made,
- the rules for value observation are more complex.
- See the documentation for `],
-					[/* reference */ 'r', `#remove(java.lang.Class)`, `remove`],
-					[/* text */ 't', ` for more information.`]
-				]]
-			],
-			[/* parameters */
-				[/* parameter */ 'type', [/* parameter description */
-					[/* text */ 't', `the type whose class value must be computed or retrieved`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
-					[/* text */ 't', `if the argument is null`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `the current value associated with this `],
-				[/* inline code block */ 'i', `ClassValue`],
-				[/* text */ 't', `, for the given class or interface`]
-			]
-		]],
-		[/* method */ 'computeValue(java.lang.Class)', [
-			[/* method description */
-				[/* text */ 't', `Computes the given class's derived value for this `],
-				[/* inline code block */ 'i', `ClassValue`],
-				[/* text */ 't', `.
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', `
- This method will be invoked within the first thread that accesses
- the value with the `],
-					[/* reference */ 'r', `#get(java.lang.Class)`, `get`],
-					[/* text */ 't', ` method.
- `]
-				]],
-				[/* block */ 'b', [
-					[/* text */ 't', `
- Normally, this method is invoked at most once per class,
- but it may be invoked again if there has been a call to
- `],
-					[/* reference */ 'r', `#remove(java.lang.Class)`, `remove`],
-					[/* text */ 't', `.
- `]
-				]],
-				[/* block */ 'b', [
-					[/* text */ 't', `
- If this method throws an exception, the corresponding call to `],
-					[/* inline code block */ 'i', `get`],
-					[/* text */ 't', `
- will terminate abnormally with that exception, and no class value will be recorded.`]
-				]]
-			],
-			[/* parameters */
-				[/* parameter */ 'type', [/* parameter description */
-					[/* text */ 't', `the type whose class value must be computed`]
-				]]
-			],
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the newly computed value associated with this `],
-				[/* inline code block */ 'i', `ClassValue`],
-				[/* text */ 't', `, for the given class or interface`]
-			]
 		]]
 	],
 ]);

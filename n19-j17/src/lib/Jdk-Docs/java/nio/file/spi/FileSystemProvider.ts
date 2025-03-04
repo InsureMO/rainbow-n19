@@ -95,6 +95,75 @@ DocsCollector.collect('java.nio.file.spi.FileSystemProvider', [
 		]]
 	],
 	[/* methods */
+		[/* method */ 'readAttributes(java.nio.file.Path,java.lang.Class,java.nio.file.LinkOption...)', [
+			[/* method description */
+				[/* text */ 't', `Reads a file's attributes as a bulk operation. This method works in
+ exactly the manner specified by the `],
+				[/* reference */ 'r', `java.Files#readAttributes(java.nio.file.Path,java.lang.Class,java.nio.file.LinkOption...)`],
+				[/* text */ 't', ` method.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'path', [/* parameter description */
+					[/* text */ 't', `the path to the file`]
+				]],
+				[/* parameter */ 'type', [/* parameter description */
+					[/* text */ 't', `the `],
+					[/* inline code block */ 'i', `Class`],
+					[/* text */ 't', ` of the file attributes required
+          to read`]
+				]],
+				[/* parameter */ 'options', [/* parameter description */
+					[/* text */ 't', `options indicating how symbolic links are handled`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.lang.UnsupportedOperationException', [/* throw description */
+					[/* text */ 't', `if an attributes of the given type are not supported`]
+				]],
+				[/* throw */ 'java.io.IOException', [/* throw description */
+					[/* text */ 't', `if an I/O error occurs`]
+				]],
+				[/* throw */ 'java.lang.SecurityException', [/* throw description */
+					[/* text */ 't', `In the case of the default provider, a security manager is
+          installed, its `],
+					[/* reference */ 'r', `java.nio.file.SecurityManager#checkRead(java.lang.String)`],
+					[/* text */ 't', `
+          method is invoked to check read access to the file`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `the file attributes`]
+			]
+		]],
+		[/* method */ 'getFileAttributeView(java.nio.file.Path,java.lang.Class,java.nio.file.LinkOption...)', [
+			[/* method description */
+				[/* text */ 't', `Returns a file attribute view of a given type. This method works in
+ exactly the manner specified by the `],
+				[/* reference */ 'r', `java.Files#getFileAttributeView(java.nio.file.Path,java.lang.Class,java.nio.file.LinkOption...)`],
+				[/* text */ 't', `
+ method.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'path', [/* parameter description */
+					[/* text */ 't', `the path to the file`]
+				]],
+				[/* parameter */ 'type', [/* parameter description */
+					[/* text */ 't', `the `],
+					[/* inline code block */ 'i', `Class`],
+					[/* text */ 't', ` object corresponding to the file attribute view`]
+				]],
+				[/* parameter */ 'options', [/* parameter description */
+					[/* text */ 't', `options indicating how symbolic links are handled`]
+				]]
+			],
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `a file attribute view of the specified type, or `],
+				[/* inline code block */ 'i', `null`],
+				[/* text */ 't', ` if
+          the attribute view type is not available`]
+			]
+		]],
 		[/* method */ 'isHidden(java.nio.file.Path)', [
 			[/* method description */
 				[/* text */ 't', `Tells whether or not a file is considered `],
@@ -134,28 +203,82 @@ DocsCollector.collect('java.nio.file.spi.FileSystemProvider', [
 				[/* text */ 't', ` if the file is considered hidden`]
 			]
 		]],
-		[/* method */ 'delete(java.nio.file.Path)', [
+		[/* method */ 'isSameFile(java.nio.file.Path,java.nio.file.Path)', [
 			[/* method description */
-				[/* text */ 't', `Deletes a file. This method works in exactly the  manner specified by the
- `],
-				[/* reference */ 'r', `java.Files#delete(java.nio.file.Path)`],
+				[/* text */ 't', `Tests if two paths locate the same file. This method works in exactly the
+ manner specified by the `],
+				[/* reference */ 'r', `java.Files#isSameFile(java.nio.file.Path,java.nio.file.Path)`],
 				[/* text */ 't', ` method.`]
 			],
 			[/* parameters */
 				[/* parameter */ 'path', [/* parameter description */
-					[/* text */ 't', `the path to the file to delete`]
+					[/* text */ 't', `one path to the file`]
+				]],
+				[/* parameter */ 'path2', [/* parameter description */
+					[/* text */ 't', `the other path`]
 				]]
 			],
 			[/* throws */
-				[/* throw */ 'java.nio.file.NoSuchFileException', [/* throw description */
-					[/* text */ 't', `if the file does not exist `],
-					[/* text */ 't', `(optional specific exception)`]
+				[/* throw */ 'java.io.IOException', [/* throw description */
+					[/* text */ 't', `if an I/O error occurs`]
 				]],
-				[/* throw */ 'java.nio.file.DirectoryNotEmptyException', [/* throw description */
-					[/* text */ 't', `if the file is a directory and could not otherwise be deleted
-          because the directory is not empty `],
-					[/* text */ 't', `(optional specific
-          exception)`]
+				[/* throw */ 'java.lang.SecurityException', [/* throw description */
+					[/* text */ 't', `In the case of the default provider, and a security manager is
+          installed, the `],
+					[/* reference */ 'r', `java.nio.file.SecurityManager#checkRead(java.lang.String)`],
+					[/* text */ 't', `
+          method is invoked to check read access to both files.`]
+				]]
+			],
+			[/* return description */
+				[/* inline code block */ 'i', `true`],
+				[/* text */ 't', ` if, and only if, the two paths locate the same file`]
+			]
+		]],
+		[/* method */ 'getScheme()', [
+			[/* method description */
+				[/* text */ 't', `Returns the URI scheme that identifies this provider.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `The URI scheme`]
+			]
+		]],
+		[/* method */ 'newByteChannel(java.nio.file.Path,java.util.Set,java.nio.file.attribute.FileAttribute...)', [
+			[/* method description */
+				[/* text */ 't', `Opens or creates a file, returning a seekable byte channel to access the
+ file. This method works in exactly the manner specified by the `],
+				[/* reference */ 'r', `java.Files#newByteChannel(java.nio.file.Path,java.util.Set,java.nio.file.attribute.FileAttribute...)`],
+				[/* text */ 't', ` method.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'path', [/* parameter description */
+					[/* text */ 't', `the path to the file to open or create`]
+				]],
+				[/* parameter */ 'options', [/* parameter description */
+					[/* text */ 't', `options specifying how the file is opened`]
+				]],
+				[/* parameter */ 'attrs', [/* parameter description */
+					[/* text */ 't', `an optional list of file attributes to set atomically when
+          creating the file`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
+					[/* text */ 't', `if the set contains an invalid combination of options`]
+				]],
+				[/* throw */ 'java.lang.UnsupportedOperationException', [/* throw description */
+					[/* text */ 't', `if an unsupported open option is specified or the array contains
+          attributes that cannot be set atomically when creating the file`]
+				]],
+				[/* throw */ 'java.nio.file.FileAlreadyExistsException', [/* throw description */
+					[/* text */ 't', `If a file of that name already exists and the `],
+					[/* reference */ 'r', `java.StandardOpenOption#CREATE_NEW`],
+					[/* text */ 't', ` option is specified
+          and the file is being opened for writing
+          `],
+					[/* text */ 't', `(optional specific exception)`]
 				]],
 				[/* throw */ 'java.io.IOException', [/* throw description */
 					[/* text */ 't', `if an I/O error occurs`]
@@ -163,12 +286,354 @@ DocsCollector.collect('java.nio.file.spi.FileSystemProvider', [
 				[/* throw */ 'java.lang.SecurityException', [/* throw description */
 					[/* text */ 't', `In the case of the default provider, and a security manager is
           installed, the `],
+					[/* reference */ 'r', `java.nio.file.SecurityManager#checkRead(java.lang.String)`],
+					[/* text */ 't', `
+          method is invoked to check read access to the path if the file is
+          opened for reading. The `],
+					[/* reference */ 'r', `java.nio.file.SecurityManager#checkWrite(java.lang.String)`],
+					[/* text */ 't', ` method is invoked to check write access to the path
+          if the file is opened for writing. The `],
 					[/* reference */ 'r', `java.nio.file.SecurityManager#checkDelete(java.lang.String)`],
-					[/* text */ 't', ` method
-          is invoked to check delete access to the file`]
+					[/* text */ 't', ` method is
+          invoked to check delete access if the file is opened with the
+          `],
+					[/* inline code block */ 'i', `DELETE_ON_CLOSE`],
+					[/* text */ 't', ` option.`]
 				]]
 			],
-			/* return */ UDF
+			[/* return description */
+				[/* text */ 't', `a new seekable byte channel`]
+			]
+		]],
+		[/* method */ 'newDirectoryStream(java.nio.file.Path,java.nio.file.DirectoryStream.Filter)', [
+			[/* method description */
+				[/* text */ 't', `Opens a directory, returning a `],
+				[/* inline code block */ 'i', `DirectoryStream`],
+				[/* text */ 't', ` to iterate over
+ the entries in the directory. This method works in exactly the manner
+ specified by the `],
+				[/* reference */ 'r', `java.Files#newDirectoryStream(java.nio.file.Path,java.nio.file.DirectoryStream.Filter)`],
+				[/* text */ 't', `
+ method.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'dir', [/* parameter description */
+					[/* text */ 't', `the path to the directory`]
+				]],
+				[/* parameter */ 'filter', [/* parameter description */
+					[/* text */ 't', `the directory stream filter`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.nio.file.NotDirectoryException', [/* throw description */
+					[/* text */ 't', `if the file could not otherwise be opened because it is not
+          a directory `],
+					[/* text */ 't', `(optional specific exception)`]
+				]],
+				[/* throw */ 'java.io.IOException', [/* throw description */
+					[/* text */ 't', `if an I/O error occurs`]
+				]],
+				[/* throw */ 'java.lang.SecurityException', [/* throw description */
+					[/* text */ 't', `In the case of the default provider, and a security manager is
+          installed, the `],
+					[/* reference */ 'r', `java.nio.file.SecurityManager#checkRead(java.lang.String)`],
+					[/* text */ 't', `
+          method is invoked to check read access to the directory.`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `a new and open `],
+				[/* inline code block */ 'i', `DirectoryStream`],
+				[/* text */ 't', ` object`]
+			]
+		]],
+		[/* method */ 'getFileStore(java.nio.file.Path)', [
+			[/* method description */
+				[/* text */ 't', `Returns the `],
+				[/* reference */ 'r', `java.nio.file.FileStore`],
+				[/* text */ 't', ` representing the file store where a file
+ is located. This method works in exactly the manner specified by the
+ `],
+				[/* reference */ 'r', `java.Files#getFileStore(java.nio.file.Path)`],
+				[/* text */ 't', ` method.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'path', [/* parameter description */
+					[/* text */ 't', `the path to the file`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.io.IOException', [/* throw description */
+					[/* text */ 't', `if an I/O error occurs`]
+				]],
+				[/* throw */ 'java.lang.SecurityException', [/* throw description */
+					[/* text */ 't', `In the case of the default provider, and a security manager is
+          installed, the `],
+					[/* reference */ 'r', `java.nio.file.SecurityManager#checkRead(java.lang.String)`],
+					[/* text */ 't', `
+          method is invoked to check read access to the file, and in
+          addition it checks
+          `],
+					[/* reference */ 'r', `java.lang.RuntimePermission`],
+					[/* inline code block */ 'i', `("getFileStoreAttributes")`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `the file store where the file is stored`]
+			]
+		]],
+		[/* method */ 'getFileSystem(java.net.URI)', [
+			[/* method description */
+				[/* text */ 't', `Returns an existing `],
+				[/* inline code block */ 'i', `FileSystem`],
+				[/* text */ 't', ` created by this provider.
+
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', ` This method returns a reference to a `],
+					[/* inline code block */ 'i', `FileSystem`],
+					[/* text */ 't', ` that was
+ created by invoking the `],
+					[/* reference */ 'r', `#newFileSystem(java.net.URI,java.util.Map)`, `newFileSystem(URI,Map)`],
+					[/* text */ 't', `
+ method. File systems created the `],
+					[/* reference */ 'r', `#newFileSystem(java.nio.file.Path,java.util.Map)`, `newFileSystem(Path,Map)`],
+					[/* text */ 't', ` method are not returned by this method.
+ The file system is identified by its `],
+					[/* inline code block */ 'i', `URI`],
+					[/* text */ 't', `. Its exact form
+ is highly provider dependent. In the case of the default provider the URI's
+ path component is `],
+					[/* inline code block */ 'i', `"/"`],
+					[/* text */ 't', ` and the authority, query and fragment components
+ are undefined (Undefined components are represented by `],
+					[/* inline code block */ 'i', `null`],
+					[/* text */ 't', `).
+
+ `]
+				]],
+				[/* block */ 'b', [
+					[/* text */ 't', ` Once a file system created by this provider is `],
+					[/* reference */ 'r', `java.FileSystem#close()`],
+					[/* text */ 't', ` it is provider-dependent if this
+ method returns a reference to the closed file system or throws `],
+					[/* reference */ 'r', `java.nio.file.FileSystemNotFoundException`],
+					[/* text */ 't', `. If the provider allows a new file system to
+ be created with the same URI as a file system it previously created then
+ this method throws the exception if invoked after the file system is
+ closed (and before a new instance is created by the `],
+					[/* reference */ 'r', `#newFileSystem(java.net.URI,java.util.Map)`, `newFileSystem`],
+					[/* text */ 't', ` method).
+
+ `]
+				]],
+				[/* block */ 'b', [
+					[/* text */ 't', ` If a security manager is installed then a provider implementation
+ may require to check a permission before returning a reference to an
+ existing file system. In the case of the `],
+					[/* reference */ 'r', `java.FileSystems#getDefault()`],
+					[/* text */ 't', ` file system, no permission check is required.`]
+				]]
+			],
+			[/* parameters */
+				[/* parameter */ 'uri', [/* parameter description */
+					[/* text */ 't', `URI reference`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
+					[/* text */ 't', `If the pre-conditions for the `],
+					[/* inline code block */ 'i', `uri`],
+					[/* text */ 't', ` parameter aren't met`]
+				]],
+				[/* throw */ 'java.nio.file.FileSystemNotFoundException', [/* throw description */
+					[/* text */ 't', `If the file system does not exist`]
+				]],
+				[/* throw */ 'java.lang.SecurityException', [/* throw description */
+					[/* text */ 't', `If a security manager is installed and it denies an unspecified
+          permission.`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `The file system`]
+			]
+		]],
+		[/* method */ 'newFileSystem(java.net.URI,java.util.Map)', [
+			[/* method description */
+				[/* text */ 't', `Constructs a new `],
+				[/* inline code block */ 'i', `FileSystem`],
+				[/* text */ 't', ` object identified by a URI. This
+ method is invoked by the `],
+				[/* reference */ 'r', `java.FileSystems#newFileSystem(java.net.URI,java.util.Map)`],
+				[/* text */ 't', `
+ method to open a new file system identified by a URI.
+
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', ` The `],
+					[/* inline code block */ 'i', `uri`],
+					[/* text */ 't', ` parameter is an absolute, hierarchical URI, with a
+ scheme equal (without regard to case) to the scheme supported by this
+ provider. The exact form of the URI is highly provider dependent. The
+ `],
+					[/* inline code block */ 'i', `env`],
+					[/* text */ 't', ` parameter is a map of provider specific properties to configure
+ the file system.
+
+ `]
+				]],
+				[/* block */ 'b', [
+					[/* text */ 't', ` This method throws `],
+					[/* reference */ 'r', `java.nio.file.FileSystemAlreadyExistsException`],
+					[/* text */ 't', ` if the
+ file system already exists because it was previously created by an
+ invocation of this method. Once a file system is `],
+					[/* reference */ 'r', `java.FileSystem#close()`],
+					[/* text */ 't', ` it is provider-dependent if the
+ provider allows a new file system to be created with the same URI as a
+ file system it previously created.`]
+				]]
+			],
+			[/* parameters */
+				[/* parameter */ 'uri', [/* parameter description */
+					[/* text */ 't', `URI reference`]
+				]],
+				[/* parameter */ 'env', [/* parameter description */
+					[/* text */ 't', `A map of provider specific properties to configure the file system;
+          may be empty`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
+					[/* text */ 't', `If the pre-conditions for the `],
+					[/* inline code block */ 'i', `uri`],
+					[/* text */ 't', ` parameter aren't met,
+          or the `],
+					[/* inline code block */ 'i', `env`],
+					[/* text */ 't', ` parameter does not contain properties required
+          by the provider, or a property value is invalid`]
+				]],
+				[/* throw */ 'java.io.IOException', [/* throw description */
+					[/* text */ 't', `An I/O error occurs creating the file system`]
+				]],
+				[/* throw */ 'java.lang.SecurityException', [/* throw description */
+					[/* text */ 't', `If a security manager is installed and it denies an unspecified
+          permission required by the file system provider implementation`]
+				]],
+				[/* throw */ 'java.nio.file.FileSystemAlreadyExistsException', [/* throw description */
+					[/* text */ 't', `If the file system has already been created`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `A new file system`]
+			]
+		]],
+		[/* method */ 'getPath(java.net.URI)', [
+			[/* method description */
+				[/* text */ 't', `Return a `],
+				[/* inline code block */ 'i', `Path`],
+				[/* text */ 't', ` object by converting the given `],
+				[/* reference */ 'r', `java.net.URI`],
+				[/* text */ 't', `. The
+ resulting `],
+				[/* inline code block */ 'i', `Path`],
+				[/* text */ 't', ` is associated with a `],
+				[/* reference */ 'r', `java.nio.file.FileSystem`],
+				[/* text */ 't', ` that
+ already exists or is constructed automatically.
+
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', ` The exact form of the URI is file system provider dependent. In the
+ case of the default provider, the URI scheme is `],
+					[/* inline code block */ 'i', `"file"`],
+					[/* text */ 't', ` and the
+ given URI has a non-empty path component, and undefined query, and
+ fragment components. The resulting `],
+					[/* inline code block */ 'i', `Path`],
+					[/* text */ 't', ` is associated with the
+ default `],
+					[/* reference */ 'r', `java.FileSystems#getDefault()`],
+					[/* inline code block */ 'i', `FileSystem`],
+					[/* text */ 't', `.
+
+ `]
+				]],
+				[/* block */ 'b', [
+					[/* text */ 't', ` If a security manager is installed then a provider implementation
+ may require to check a permission. In the case of the `],
+					[/* reference */ 'r', `java.FileSystems#getDefault()`],
+					[/* text */ 't', ` file system, no permission check is
+ required.`]
+				]]
+			],
+			[/* parameters */
+				[/* parameter */ 'uri', [/* parameter description */
+					[/* text */ 't', `The URI to convert`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
+					[/* text */ 't', `If the URI scheme does not identify this provider or other
+          preconditions on the uri parameter do not hold`]
+				]],
+				[/* throw */ 'java.nio.file.FileSystemNotFoundException', [/* throw description */
+					[/* text */ 't', `The file system, identified by the URI, does not exist and
+          cannot be created automatically`]
+				]],
+				[/* throw */ 'java.lang.SecurityException', [/* throw description */
+					[/* text */ 't', `If a security manager is installed and it denies an unspecified
+          permission.`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `The resulting `],
+				[/* inline code block */ 'i', `Path`]
+			]
+		]],
+		[/* method */ 'readAttributes(java.nio.file.Path,java.lang.String,java.nio.file.LinkOption...)', [
+			[/* method description */
+				[/* text */ 't', `Reads a set of file attributes as a bulk operation. This method works in
+ exactly the manner specified by the `],
+				[/* reference */ 'r', `java.Files#readAttributes(java.nio.file.Path,java.lang.String,java.nio.file.LinkOption...)`],
+				[/* text */ 't', ` method.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'path', [/* parameter description */
+					[/* text */ 't', `the path to the file`]
+				]],
+				[/* parameter */ 'attributes', [/* parameter description */
+					[/* text */ 't', `the attributes to read`]
+				]],
+				[/* parameter */ 'options', [/* parameter description */
+					[/* text */ 't', `options indicating how symbolic links are handled`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.lang.UnsupportedOperationException', [/* throw description */
+					[/* text */ 't', `if the attribute view is not available`]
+				]],
+				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
+					[/* text */ 't', `if no attributes are specified or an unrecognized attributes is
+          specified`]
+				]],
+				[/* throw */ 'java.io.IOException', [/* throw description */
+					[/* text */ 't', `If an I/O error occurs`]
+				]],
+				[/* throw */ 'java.lang.SecurityException', [/* throw description */
+					[/* text */ 't', `In the case of the default provider, and a security manager is
+          installed, its `],
+					[/* reference */ 'r', `java.nio.file.SecurityManager#checkRead(java.lang.String)`],
+					[/* text */ 't', `
+          method denies read access to the file. If this method is invoked
+          to read security sensitive attributes then the security manager
+          may be invoke to check for additional permissions.`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `a map of the attributes returned; may be empty. The map's keys
+          are the attribute names, its values are the attribute values`]
+			]
 		]],
 		[/* method */ 'checkAccess(java.nio.file.Path,java.nio.file.AccessMode...)', [
 			[/* method description */
@@ -384,79 +849,6 @@ DocsCollector.collect('java.nio.file.spi.FileSystemProvider', [
 			],
 			/* return */ UDF
 		]],
-		[/* method */ 'getScheme()', [
-			[/* method description */
-				[/* text */ 't', `Returns the URI scheme that identifies this provider.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `The URI scheme`]
-			]
-		]],
-		[/* method */ 'getPath(java.net.URI)', [
-			[/* method description */
-				[/* text */ 't', `Return a `],
-				[/* inline code block */ 'i', `Path`],
-				[/* text */ 't', ` object by converting the given `],
-				[/* reference */ 'r', `java.net.URI`],
-				[/* text */ 't', `. The
- resulting `],
-				[/* inline code block */ 'i', `Path`],
-				[/* text */ 't', ` is associated with a `],
-				[/* reference */ 'r', `java.nio.file.FileSystem`],
-				[/* text */ 't', ` that
- already exists or is constructed automatically.
-
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', ` The exact form of the URI is file system provider dependent. In the
- case of the default provider, the URI scheme is `],
-					[/* inline code block */ 'i', `"file"`],
-					[/* text */ 't', ` and the
- given URI has a non-empty path component, and undefined query, and
- fragment components. The resulting `],
-					[/* inline code block */ 'i', `Path`],
-					[/* text */ 't', ` is associated with the
- default `],
-					[/* reference */ 'r', `java.FileSystems#getDefault()`],
-					[/* inline code block */ 'i', `FileSystem`],
-					[/* text */ 't', `.
-
- `]
-				]],
-				[/* block */ 'b', [
-					[/* text */ 't', ` If a security manager is installed then a provider implementation
- may require to check a permission. In the case of the `],
-					[/* reference */ 'r', `java.FileSystems#getDefault()`],
-					[/* text */ 't', ` file system, no permission check is
- required.`]
-				]]
-			],
-			[/* parameters */
-				[/* parameter */ 'uri', [/* parameter description */
-					[/* text */ 't', `The URI to convert`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
-					[/* text */ 't', `If the URI scheme does not identify this provider or other
-          preconditions on the uri parameter do not hold`]
-				]],
-				[/* throw */ 'java.nio.file.FileSystemNotFoundException', [/* throw description */
-					[/* text */ 't', `The file system, identified by the URI, does not exist and
-          cannot be created automatically`]
-				]],
-				[/* throw */ 'java.lang.SecurityException', [/* throw description */
-					[/* text */ 't', `If a security manager is installed and it denies an unspecified
-          permission.`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `The resulting `],
-				[/* inline code block */ 'i', `Path`]
-			]
-		]],
 		[/* method */ 'createDirectory(java.nio.file.Path,java.nio.file.attribute.FileAttribute...)', [
 			[/* method description */
 				[/* text */ 't', `Creates a new directory. This method works in exactly the manner
@@ -496,273 +888,28 @@ DocsCollector.collect('java.nio.file.spi.FileSystemProvider', [
 			],
 			/* return */ UDF
 		]],
-		[/* method */ 'getFileSystem(java.net.URI)', [
+		[/* method */ 'delete(java.nio.file.Path)', [
 			[/* method description */
-				[/* text */ 't', `Returns an existing `],
-				[/* inline code block */ 'i', `FileSystem`],
-				[/* text */ 't', ` created by this provider.
-
+				[/* text */ 't', `Deletes a file. This method works in exactly the  manner specified by the
  `],
-				[/* block */ 'b', [
-					[/* text */ 't', ` This method returns a reference to a `],
-					[/* inline code block */ 'i', `FileSystem`],
-					[/* text */ 't', ` that was
- created by invoking the `],
-					[/* reference */ 'r', `#newFileSystem(java.net.URI,java.util.Map)`, `newFileSystem(URI,Map)`],
-					[/* text */ 't', `
- method. File systems created the `],
-					[/* reference */ 'r', `#newFileSystem(java.nio.file.Path,java.util.Map)`, `newFileSystem(Path,Map)`],
-					[/* text */ 't', ` method are not returned by this method.
- The file system is identified by its `],
-					[/* inline code block */ 'i', `URI`],
-					[/* text */ 't', `. Its exact form
- is highly provider dependent. In the case of the default provider the URI's
- path component is `],
-					[/* inline code block */ 'i', `"/"`],
-					[/* text */ 't', ` and the authority, query and fragment components
- are undefined (Undefined components are represented by `],
-					[/* inline code block */ 'i', `null`],
-					[/* text */ 't', `).
-
- `]
-				]],
-				[/* block */ 'b', [
-					[/* text */ 't', ` Once a file system created by this provider is `],
-					[/* reference */ 'r', `java.FileSystem#close()`],
-					[/* text */ 't', ` it is provider-dependent if this
- method returns a reference to the closed file system or throws `],
-					[/* reference */ 'r', `java.nio.file.FileSystemNotFoundException`],
-					[/* text */ 't', `. If the provider allows a new file system to
- be created with the same URI as a file system it previously created then
- this method throws the exception if invoked after the file system is
- closed (and before a new instance is created by the `],
-					[/* reference */ 'r', `#newFileSystem(java.net.URI,java.util.Map)`, `newFileSystem`],
-					[/* text */ 't', ` method).
-
- `]
-				]],
-				[/* block */ 'b', [
-					[/* text */ 't', ` If a security manager is installed then a provider implementation
- may require to check a permission before returning a reference to an
- existing file system. In the case of the `],
-					[/* reference */ 'r', `java.FileSystems#getDefault()`],
-					[/* text */ 't', ` file system, no permission check is required.`]
-				]]
-			],
-			[/* parameters */
-				[/* parameter */ 'uri', [/* parameter description */
-					[/* text */ 't', `URI reference`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
-					[/* text */ 't', `If the pre-conditions for the `],
-					[/* inline code block */ 'i', `uri`],
-					[/* text */ 't', ` parameter aren't met`]
-				]],
-				[/* throw */ 'java.nio.file.FileSystemNotFoundException', [/* throw description */
-					[/* text */ 't', `If the file system does not exist`]
-				]],
-				[/* throw */ 'java.lang.SecurityException', [/* throw description */
-					[/* text */ 't', `If a security manager is installed and it denies an unspecified
-          permission.`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `The file system`]
-			]
-		]],
-		[/* method */ 'installedProviders()', [
-			[/* method description */
-				[/* text */ 't', `Returns a list of the installed file system providers.
-
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', ` The first invocation of this method causes the default provider to be
- initialized (if not already initialized) and loads any other installed
- providers as described by the `],
-					[/* reference */ 'r', `java.nio.file.FileSystems`],
-					[/* text */ 't', ` class.`]
-				]]
-			],
-			/* parameters */ UDF,
-			[/* throws */
-				[/* throw */ 'java.util.ServiceConfigurationError', [/* throw description */
-					[/* text */ 't', `When an error occurs while loading a service provider`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `An unmodifiable list of the installed file system providers. The
-          list contains at least one element, that is the default file
-          system provider`]
-			]
-		]],
-		[/* method */ 'newFileSystem(java.net.URI,java.util.Map)', [
-			[/* method description */
-				[/* text */ 't', `Constructs a new `],
-				[/* inline code block */ 'i', `FileSystem`],
-				[/* text */ 't', ` object identified by a URI. This
- method is invoked by the `],
-				[/* reference */ 'r', `java.FileSystems#newFileSystem(java.net.URI,java.util.Map)`],
-				[/* text */ 't', `
- method to open a new file system identified by a URI.
-
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', ` The `],
-					[/* inline code block */ 'i', `uri`],
-					[/* text */ 't', ` parameter is an absolute, hierarchical URI, with a
- scheme equal (without regard to case) to the scheme supported by this
- provider. The exact form of the URI is highly provider dependent. The
- `],
-					[/* inline code block */ 'i', `env`],
-					[/* text */ 't', ` parameter is a map of provider specific properties to configure
- the file system.
-
- `]
-				]],
-				[/* block */ 'b', [
-					[/* text */ 't', ` This method throws `],
-					[/* reference */ 'r', `java.nio.file.FileSystemAlreadyExistsException`],
-					[/* text */ 't', ` if the
- file system already exists because it was previously created by an
- invocation of this method. Once a file system is `],
-					[/* reference */ 'r', `java.FileSystem#close()`],
-					[/* text */ 't', ` it is provider-dependent if the
- provider allows a new file system to be created with the same URI as a
- file system it previously created.`]
-				]]
-			],
-			[/* parameters */
-				[/* parameter */ 'uri', [/* parameter description */
-					[/* text */ 't', `URI reference`]
-				]],
-				[/* parameter */ 'env', [/* parameter description */
-					[/* text */ 't', `A map of provider specific properties to configure the file system;
-          may be empty`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
-					[/* text */ 't', `If the pre-conditions for the `],
-					[/* inline code block */ 'i', `uri`],
-					[/* text */ 't', ` parameter aren't met,
-          or the `],
-					[/* inline code block */ 'i', `env`],
-					[/* text */ 't', ` parameter does not contain properties required
-          by the provider, or a property value is invalid`]
-				]],
-				[/* throw */ 'java.io.IOException', [/* throw description */
-					[/* text */ 't', `An I/O error occurs creating the file system`]
-				]],
-				[/* throw */ 'java.lang.SecurityException', [/* throw description */
-					[/* text */ 't', `If a security manager is installed and it denies an unspecified
-          permission required by the file system provider implementation`]
-				]],
-				[/* throw */ 'java.nio.file.FileSystemAlreadyExistsException', [/* throw description */
-					[/* text */ 't', `If the file system has already been created`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `A new file system`]
-			]
-		]],
-		[/* method */ 'newFileSystem(java.nio.file.Path,java.util.Map)', [
-			[/* method description */
-				[/* text */ 't', `Constructs a new `],
-				[/* inline code block */ 'i', `FileSystem`],
-				[/* text */ 't', ` to access the contents of a file as a
- file system.
-
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', ` This method is intended for specialized providers of pseudo file
- systems where the contents of one or more files is treated as a file
- system. The `],
-					[/* inline code block */ 'i', `env`],
-					[/* text */ 't', ` parameter is a map of provider specific properties
- to configure the file system.
-
- `]
-				]],
-				[/* block */ 'b', [
-					[/* text */ 't', ` If this provider does not support the creation of such file systems
- or if the provider does not recognize the file type of the given file then
- it throws `],
-					[/* inline code block */ 'i', `UnsupportedOperationException`],
-					[/* text */ 't', `. The default implementation
- of this method throws `],
-					[/* inline code block */ 'i', `UnsupportedOperationException`],
-					[/* text */ 't', `.`]
-				]]
-			],
-			[/* parameters */
-				[/* parameter */ 'path', [/* parameter description */
-					[/* text */ 't', `The path to the file`]
-				]],
-				[/* parameter */ 'env', [/* parameter description */
-					[/* text */ 't', `A map of provider specific properties to configure the file system;
-          may be empty`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.UnsupportedOperationException', [/* throw description */
-					[/* text */ 't', `If this provider does not support access to the contents as a
-          file system or it does not recognize the file type of the
-          given file`]
-				]],
-				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
-					[/* text */ 't', `If the `],
-					[/* inline code block */ 'i', `env`],
-					[/* text */ 't', ` parameter does not contain properties required
-          by the provider, or a property value is invalid`]
-				]],
-				[/* throw */ 'java.io.IOException', [/* throw description */
-					[/* text */ 't', `If an I/O error occurs`]
-				]],
-				[/* throw */ 'java.lang.SecurityException', [/* throw description */
-					[/* text */ 't', `If a security manager is installed and it denies an unspecified
-          permission.`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `A new file system`]
-			]
-		]],
-		[/* method */ 'newByteChannel(java.nio.file.Path,java.util.Set,java.nio.file.attribute.FileAttribute...)', [
-			[/* method description */
-				[/* text */ 't', `Opens or creates a file, returning a seekable byte channel to access the
- file. This method works in exactly the manner specified by the `],
-				[/* reference */ 'r', `java.Files#newByteChannel(java.nio.file.Path,java.util.Set,java.nio.file.attribute.FileAttribute...)`],
+				[/* reference */ 'r', `java.Files#delete(java.nio.file.Path)`],
 				[/* text */ 't', ` method.`]
 			],
 			[/* parameters */
 				[/* parameter */ 'path', [/* parameter description */
-					[/* text */ 't', `the path to the file to open or create`]
-				]],
-				[/* parameter */ 'options', [/* parameter description */
-					[/* text */ 't', `options specifying how the file is opened`]
-				]],
-				[/* parameter */ 'attrs', [/* parameter description */
-					[/* text */ 't', `an optional list of file attributes to set atomically when
-          creating the file`]
+					[/* text */ 't', `the path to the file to delete`]
 				]]
 			],
 			[/* throws */
-				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
-					[/* text */ 't', `if the set contains an invalid combination of options`]
-				]],
-				[/* throw */ 'java.lang.UnsupportedOperationException', [/* throw description */
-					[/* text */ 't', `if an unsupported open option is specified or the array contains
-          attributes that cannot be set atomically when creating the file`]
-				]],
-				[/* throw */ 'java.nio.file.FileAlreadyExistsException', [/* throw description */
-					[/* text */ 't', `If a file of that name already exists and the `],
-					[/* reference */ 'r', `java.StandardOpenOption#CREATE_NEW`],
-					[/* text */ 't', ` option is specified
-          and the file is being opened for writing
-          `],
+				[/* throw */ 'java.nio.file.NoSuchFileException', [/* throw description */
+					[/* text */ 't', `if the file does not exist `],
 					[/* text */ 't', `(optional specific exception)`]
+				]],
+				[/* throw */ 'java.nio.file.DirectoryNotEmptyException', [/* throw description */
+					[/* text */ 't', `if the file is a directory and could not otherwise be deleted
+          because the directory is not empty `],
+					[/* text */ 't', `(optional specific
+          exception)`]
 				]],
 				[/* throw */ 'java.io.IOException', [/* throw description */
 					[/* text */ 't', `if an I/O error occurs`]
@@ -770,23 +917,168 @@ DocsCollector.collect('java.nio.file.spi.FileSystemProvider', [
 				[/* throw */ 'java.lang.SecurityException', [/* throw description */
 					[/* text */ 't', `In the case of the default provider, and a security manager is
           installed, the `],
-					[/* reference */ 'r', `java.nio.file.SecurityManager#checkRead(java.lang.String)`],
-					[/* text */ 't', `
-          method is invoked to check read access to the path if the file is
-          opened for reading. The `],
-					[/* reference */ 'r', `java.nio.file.SecurityManager#checkWrite(java.lang.String)`],
-					[/* text */ 't', ` method is invoked to check write access to the path
-          if the file is opened for writing. The `],
 					[/* reference */ 'r', `java.nio.file.SecurityManager#checkDelete(java.lang.String)`],
-					[/* text */ 't', ` method is
-          invoked to check delete access if the file is opened with the
+					[/* text */ 't', ` method
+          is invoked to check delete access to the file`]
+				]]
+			],
+			/* return */ UDF
+		]],
+		[/* method */ 'move(java.nio.file.Path,java.nio.file.Path,java.nio.file.CopyOption...)', [
+			[/* method description */
+				[/* text */ 't', `Move or rename a file to a target file. This method works in exactly the
+ manner specified by the `],
+				[/* reference */ 'r', `java.Files#move(java.nio.file.Path,java.nio.file.Path,java.nio.file.CopyOption...)`],
+				[/* text */ 't', ` method except that both the
+ source and target paths must be associated with this provider.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'source', [/* parameter description */
+					[/* text */ 't', `the path to the file to move`]
+				]],
+				[/* parameter */ 'target', [/* parameter description */
+					[/* text */ 't', `the path to the target file`]
+				]],
+				[/* parameter */ 'options', [/* parameter description */
+					[/* text */ 't', `options specifying how the move should be done`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.lang.UnsupportedOperationException', [/* throw description */
+					[/* text */ 't', `if the array contains a copy option that is not supported`]
+				]],
+				[/* throw */ 'java.nio.file.FileAlreadyExistsException', [/* throw description */
+					[/* text */ 't', `if the target file exists but cannot be replaced because the
           `],
-					[/* inline code block */ 'i', `DELETE_ON_CLOSE`],
-					[/* text */ 't', ` option.`]
+					[/* inline code block */ 'i', `REPLACE_EXISTING`],
+					[/* text */ 't', ` option is not specified `],
+					[/* text */ 't', `(optional
+          specific exception)`]
+				]],
+				[/* throw */ 'java.nio.file.DirectoryNotEmptyException', [/* throw description */
+					[/* text */ 't', `the `],
+					[/* inline code block */ 'i', `REPLACE_EXISTING`],
+					[/* text */ 't', ` option is specified but the file
+          cannot be replaced because it is a non-empty directory
+          `],
+					[/* text */ 't', `(optional specific exception)`]
+				]],
+				[/* throw */ 'java.nio.file.AtomicMoveNotSupportedException', [/* throw description */
+					[/* text */ 't', `if the options array contains the `],
+					[/* inline code block */ 'i', `ATOMIC_MOVE`],
+					[/* text */ 't', ` option but
+          the file cannot be moved as an atomic file system operation.`]
+				]],
+				[/* throw */ 'java.io.IOException', [/* throw description */
+					[/* text */ 't', `if an I/O error occurs`]
+				]],
+				[/* throw */ 'java.lang.SecurityException', [/* throw description */
+					[/* text */ 't', `In the case of the default provider, and a security manager is
+          installed, the `],
+					[/* reference */ 'r', `java.nio.file.SecurityManager#checkWrite(java.lang.String)`],
+					[/* text */ 't', `
+          method is invoked to check write access to both the source and
+          target file.`]
+				]]
+			],
+			/* return */ UDF
+		]],
+		[/* method */ 'setAttribute(java.nio.file.Path,java.lang.String,java.lang.Object,java.nio.file.LinkOption...)', [
+			[/* method description */
+				[/* text */ 't', `Sets the value of a file attribute. This method works in exactly the
+ manner specified by the `],
+				[/* reference */ 'r', `java.Files#setAttribute(java.nio.file.Path,java.lang.String,java.lang.Object,java.nio.file.LinkOption...)`],
+				[/* text */ 't', ` method.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'path', [/* parameter description */
+					[/* text */ 't', `the path to the file`]
+				]],
+				[/* parameter */ 'attribute', [/* parameter description */
+					[/* text */ 't', `the attribute to set`]
+				]],
+				[/* parameter */ 'value', [/* parameter description */
+					[/* text */ 't', `the attribute value`]
+				]],
+				[/* parameter */ 'options', [/* parameter description */
+					[/* text */ 't', `options indicating how symbolic links are handled`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.lang.UnsupportedOperationException', [/* throw description */
+					[/* text */ 't', `if the attribute view is not available`]
+				]],
+				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
+					[/* text */ 't', `if the attribute name is not specified, or is not recognized, or
+          the attribute value is of the correct type but has an
+          inappropriate value`]
+				]],
+				[/* throw */ 'java.lang.ClassCastException', [/* throw description */
+					[/* text */ 't', `If the attribute value is not of the expected type or is a
+          collection containing elements that are not of the expected
+          type`]
+				]],
+				[/* throw */ 'java.io.IOException', [/* throw description */
+					[/* text */ 't', `If an I/O error occurs`]
+				]],
+				[/* throw */ 'java.lang.SecurityException', [/* throw description */
+					[/* text */ 't', `In the case of the default provider, and a security manager is
+          installed, its `],
+					[/* reference */ 'r', `java.nio.file.SecurityManager#checkWrite(java.lang.String)`],
+					[/* text */ 't', `
+          method denies write access to the file. If this method is invoked
+          to set security sensitive attributes then the security manager
+          may be invoked to check for additional permissions.`]
+				]]
+			],
+			/* return */ UDF
+		]],
+		[/* method */ 'deleteIfExists(java.nio.file.Path)', [
+			[/* method description */
+				[/* text */ 't', `Deletes a file if it exists. This method works in exactly the manner
+ specified by the `],
+				[/* reference */ 'r', `java.Files#deleteIfExists(java.nio.file.Path)`],
+				[/* text */ 't', ` method.
+
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', ` The default implementation of this method simply invokes `],
+					[/* reference */ 'r', `#delete(java.nio.file.Path)`, `delete(java.nio.file.Path)`],
+					[/* text */ 't', ` ignoring the `],
+					[/* inline code block */ 'i', `NoSuchFileException`],
+					[/* text */ 't', ` when the file does not
+ exist. It may be overridden where appropriate.`]
+				]]
+			],
+			[/* parameters */
+				[/* parameter */ 'path', [/* parameter description */
+					[/* text */ 't', `the path to the file to delete`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.nio.file.DirectoryNotEmptyException', [/* throw description */
+					[/* text */ 't', `if the file is a directory and could not otherwise be deleted
+          because the directory is not empty `],
+					[/* text */ 't', `(optional specific
+          exception)`]
+				]],
+				[/* throw */ 'java.io.IOException', [/* throw description */
+					[/* text */ 't', `if an I/O error occurs`]
+				]],
+				[/* throw */ 'java.lang.SecurityException', [/* throw description */
+					[/* text */ 't', `In the case of the default provider, and a security manager is
+          installed, the `],
+					[/* reference */ 'r', `java.nio.file.SecurityManager#checkDelete(java.lang.String)`],
+					[/* text */ 't', ` method
+          is invoked to check delete access to the file`]
 				]]
 			],
 			[/* return description */
-				[/* text */ 't', `a new seekable byte channel`]
+				[/* inline code block */ 'i', `true`],
+				[/* text */ 't', ` if the file was deleted by this method; `],
+				[/* inline code block */ 'i', `false`],
+				[/* text */ 't', ` if the file could not be deleted because it did not
+          exist`]
 			]
 		]],
 		[/* method */ 'newInputStream(java.nio.file.Path,java.nio.file.OpenOption...)', [
@@ -899,66 +1191,6 @@ DocsCollector.collect('java.nio.file.spi.FileSystemProvider', [
 				[/* text */ 't', `a new output stream`]
 			]
 		]],
-		[/* method */ 'newFileChannel(java.nio.file.Path,java.util.Set,java.nio.file.attribute.FileAttribute...)', [
-			[/* method description */
-				[/* text */ 't', `Opens or creates a file for reading and/or writing, returning a file
- channel to access the file. This method works in exactly the manner
- specified by the `],
-				[/* reference */ 'r', `java.nio.FileChannel#open(java.nio.file.Path,java.util.Set,java.nio.file.attribute.FileAttribute...)`],
-				[/* text */ 't', ` method. A provider that does not support all the
- features required to construct a file channel throws `],
-				[/* inline code block */ 'i', `UnsupportedOperationException`],
-				[/* text */ 't', `. The default provider is required to
- support the creation of file channels. When not overridden, the default
- implementation throws `],
-				[/* inline code block */ 'i', `UnsupportedOperationException`],
-				[/* text */ 't', `.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'path', [/* parameter description */
-					[/* text */ 't', `the path of the file to open or create`]
-				]],
-				[/* parameter */ 'options', [/* parameter description */
-					[/* text */ 't', `options specifying how the file is opened`]
-				]],
-				[/* parameter */ 'attrs', [/* parameter description */
-					[/* text */ 't', `an optional list of file attributes to set atomically when
-          creating the file`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
-					[/* text */ 't', `If the set contains an invalid combination of options`]
-				]],
-				[/* throw */ 'java.lang.UnsupportedOperationException', [/* throw description */
-					[/* text */ 't', `If this provider that does not support creating file channels,
-          or an unsupported open option or file attribute is specified`]
-				]],
-				[/* throw */ 'java.nio.file.FileAlreadyExistsException', [/* throw description */
-					[/* text */ 't', `If a file of that name already exists and the `],
-					[/* reference */ 'r', `java.StandardOpenOption#CREATE_NEW`],
-					[/* text */ 't', ` option is specified
-          and the file is being opened for writing
-          `],
-					[/* text */ 't', `(optional specific exception)`]
-				]],
-				[/* throw */ 'java.io.IOException', [/* throw description */
-					[/* text */ 't', `If an I/O error occurs`]
-				]],
-				[/* throw */ 'java.lang.SecurityException', [/* throw description */
-					[/* text */ 't', `In the case of the default file system, the `],
-					[/* reference */ 'r', `java.nio.file.SecurityManager#checkRead(java.lang.String)`],
-					[/* text */ 't', ` method is invoked to check
-          read access if the file is opened for reading. The `],
-					[/* reference */ 'r', `java.nio.file.SecurityManager#checkWrite(java.lang.String)`],
-					[/* text */ 't', ` method is invoked to check
-          write access if the file is opened for writing`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `a new file channel`]
-			]
-		]],
 		[/* method */ 'newAsynchronousFileChannel(java.nio.file.Path,java.util.Set,java.util.concurrent.ExecutorService,java.nio.file.attribute.FileAttribute...)', [
 			[/* method description */
 				[/* text */ 't', `Opens or creates a file for reading and/or writing, returning an
@@ -1028,53 +1260,133 @@ DocsCollector.collect('java.nio.file.spi.FileSystemProvider', [
 				[/* text */ 't', `a new asynchronous file channel`]
 			]
 		]],
-		[/* method */ 'newDirectoryStream(java.nio.file.Path,java.nio.file.DirectoryStream.Filter)', [
+		[/* method */ 'newFileChannel(java.nio.file.Path,java.util.Set,java.nio.file.attribute.FileAttribute...)', [
 			[/* method description */
-				[/* text */ 't', `Opens a directory, returning a `],
-				[/* inline code block */ 'i', `DirectoryStream`],
-				[/* text */ 't', ` to iterate over
- the entries in the directory. This method works in exactly the manner
+				[/* text */ 't', `Opens or creates a file for reading and/or writing, returning a file
+ channel to access the file. This method works in exactly the manner
  specified by the `],
-				[/* reference */ 'r', `java.Files#newDirectoryStream(java.nio.file.Path,java.nio.file.DirectoryStream.Filter)`],
-				[/* text */ 't', `
- method.`]
+				[/* reference */ 'r', `java.nio.FileChannel#open(java.nio.file.Path,java.util.Set,java.nio.file.attribute.FileAttribute...)`],
+				[/* text */ 't', ` method. A provider that does not support all the
+ features required to construct a file channel throws `],
+				[/* inline code block */ 'i', `UnsupportedOperationException`],
+				[/* text */ 't', `. The default provider is required to
+ support the creation of file channels. When not overridden, the default
+ implementation throws `],
+				[/* inline code block */ 'i', `UnsupportedOperationException`],
+				[/* text */ 't', `.`]
 			],
 			[/* parameters */
-				[/* parameter */ 'dir', [/* parameter description */
-					[/* text */ 't', `the path to the directory`]
+				[/* parameter */ 'path', [/* parameter description */
+					[/* text */ 't', `the path of the file to open or create`]
 				]],
-				[/* parameter */ 'filter', [/* parameter description */
-					[/* text */ 't', `the directory stream filter`]
+				[/* parameter */ 'options', [/* parameter description */
+					[/* text */ 't', `options specifying how the file is opened`]
+				]],
+				[/* parameter */ 'attrs', [/* parameter description */
+					[/* text */ 't', `an optional list of file attributes to set atomically when
+          creating the file`]
 				]]
 			],
 			[/* throws */
-				[/* throw */ 'java.nio.file.NotDirectoryException', [/* throw description */
-					[/* text */ 't', `if the file could not otherwise be opened because it is not
-          a directory `],
+				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
+					[/* text */ 't', `If the set contains an invalid combination of options`]
+				]],
+				[/* throw */ 'java.lang.UnsupportedOperationException', [/* throw description */
+					[/* text */ 't', `If this provider that does not support creating file channels,
+          or an unsupported open option or file attribute is specified`]
+				]],
+				[/* throw */ 'java.nio.file.FileAlreadyExistsException', [/* throw description */
+					[/* text */ 't', `If a file of that name already exists and the `],
+					[/* reference */ 'r', `java.StandardOpenOption#CREATE_NEW`],
+					[/* text */ 't', ` option is specified
+          and the file is being opened for writing
+          `],
 					[/* text */ 't', `(optional specific exception)`]
 				]],
 				[/* throw */ 'java.io.IOException', [/* throw description */
-					[/* text */ 't', `if an I/O error occurs`]
+					[/* text */ 't', `If an I/O error occurs`]
 				]],
 				[/* throw */ 'java.lang.SecurityException', [/* throw description */
-					[/* text */ 't', `In the case of the default provider, and a security manager is
-          installed, the `],
+					[/* text */ 't', `In the case of the default file system, the `],
 					[/* reference */ 'r', `java.nio.file.SecurityManager#checkRead(java.lang.String)`],
-					[/* text */ 't', `
-          method is invoked to check read access to the directory.`]
+					[/* text */ 't', ` method is invoked to check
+          read access if the file is opened for reading. The `],
+					[/* reference */ 'r', `java.nio.file.SecurityManager#checkWrite(java.lang.String)`],
+					[/* text */ 't', ` method is invoked to check
+          write access if the file is opened for writing`]
 				]]
 			],
 			[/* return description */
-				[/* text */ 't', `a new and open `],
-				[/* inline code block */ 'i', `DirectoryStream`],
-				[/* text */ 't', ` object`]
+				[/* text */ 't', `a new file channel`]
 			]
 		]],
-		[/* method */ 'createSymbolicLink(java.nio.file.Path,java.nio.file.Path,java.nio.file.attribute.FileAttribute...)', [
+		[/* method */ 'newFileSystem(java.nio.file.Path,java.util.Map)', [
 			[/* method description */
-				[/* text */ 't', `Creates a symbolic link to a target. This method works in exactly the
+				[/* text */ 't', `Constructs a new `],
+				[/* inline code block */ 'i', `FileSystem`],
+				[/* text */ 't', ` to access the contents of a file as a
+ file system.
+
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', ` This method is intended for specialized providers of pseudo file
+ systems where the contents of one or more files is treated as a file
+ system. The `],
+					[/* inline code block */ 'i', `env`],
+					[/* text */ 't', ` parameter is a map of provider specific properties
+ to configure the file system.
+
+ `]
+				]],
+				[/* block */ 'b', [
+					[/* text */ 't', ` If this provider does not support the creation of such file systems
+ or if the provider does not recognize the file type of the given file then
+ it throws `],
+					[/* inline code block */ 'i', `UnsupportedOperationException`],
+					[/* text */ 't', `. The default implementation
+ of this method throws `],
+					[/* inline code block */ 'i', `UnsupportedOperationException`],
+					[/* text */ 't', `.`]
+				]]
+			],
+			[/* parameters */
+				[/* parameter */ 'path', [/* parameter description */
+					[/* text */ 't', `The path to the file`]
+				]],
+				[/* parameter */ 'env', [/* parameter description */
+					[/* text */ 't', `A map of provider specific properties to configure the file system;
+          may be empty`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.lang.UnsupportedOperationException', [/* throw description */
+					[/* text */ 't', `If this provider does not support access to the contents as a
+          file system or it does not recognize the file type of the
+          given file`]
+				]],
+				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
+					[/* text */ 't', `If the `],
+					[/* inline code block */ 'i', `env`],
+					[/* text */ 't', ` parameter does not contain properties required
+          by the provider, or a property value is invalid`]
+				]],
+				[/* throw */ 'java.io.IOException', [/* throw description */
+					[/* text */ 't', `If an I/O error occurs`]
+				]],
+				[/* throw */ 'java.lang.SecurityException', [/* throw description */
+					[/* text */ 't', `If a security manager is installed and it denies an unspecified
+          permission.`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `A new file system`]
+			]
+		]],
+		[/* method */ 'readSymbolicLink(java.nio.file.Path)', [
+			[/* method description */
+				[/* text */ 't', `Reads the target of a symbolic link. This method works in exactly the
  manner specified by the `],
-				[/* reference */ 'r', `java.Files#createSymbolicLink(java.nio.file.Path,java.nio.file.Path,java.nio.file.attribute.FileAttribute...)`],
+				[/* reference */ 'r', `java.Files#readSymbolicLink(java.nio.file.Path)`],
 				[/* text */ 't', ` method.
 
  `],
@@ -1086,43 +1398,59 @@ DocsCollector.collect('java.nio.file.spi.FileSystemProvider', [
 			],
 			[/* parameters */
 				[/* parameter */ 'link', [/* parameter description */
-					[/* text */ 't', `the path of the symbolic link to create`]
-				]],
-				[/* parameter */ 'target', [/* parameter description */
-					[/* text */ 't', `the target of the symbolic link`]
-				]],
-				[/* parameter */ 'attrs', [/* parameter description */
-					[/* text */ 't', `the array of attributes to set atomically when creating the
-          symbolic link`]
+					[/* text */ 't', `the path to the symbolic link`]
 				]]
 			],
 			[/* throws */
 				[/* throw */ 'java.lang.UnsupportedOperationException', [/* throw description */
-					[/* text */ 't', `if the implementation does not support symbolic links or the
-          array contains an attribute that cannot be set atomically when
-          creating the symbolic link`]
+					[/* text */ 't', `if the implementation does not support symbolic links`]
 				]],
-				[/* throw */ 'java.nio.file.FileAlreadyExistsException', [/* throw description */
-					[/* text */ 't', `if a file with the name already exists `],
-					[/* text */ 't', `(optional specific
-          exception)`]
+				[/* throw */ 'java.nio.file.NotLinkException', [/* throw description */
+					[/* text */ 't', `if the target could otherwise not be read because the file
+          is not a symbolic link `],
+					[/* text */ 't', `(optional specific exception)`]
 				]],
 				[/* throw */ 'java.io.IOException', [/* throw description */
 					[/* text */ 't', `if an I/O error occurs`]
 				]],
 				[/* throw */ 'java.lang.SecurityException', [/* throw description */
 					[/* text */ 't', `In the case of the default provider, and a security manager
-          is installed, it denies `],
-					[/* reference */ 'r', `java.nio.file.LinkPermission`],
-					[/* inline code block */ 'i', `("symbolic")`],
-					[/* text */ 't', `
-          or its `],
-					[/* reference */ 'r', `java.nio.file.SecurityManager#checkWrite(java.lang.String)`],
-					[/* text */ 't', `
-          method denies write access to the path of the symbolic link.`]
+          is installed, it checks that `],
+					[/* inline code block */ 'i', `FilePermission`],
+					[/* text */ 't', ` has been
+          granted with the "`],
+					[/* inline code block */ 'i', `readlink`],
+					[/* text */ 't', `" action to read the link.`]
 				]]
 			],
-			/* return */ UDF
+			[/* return description */
+				[/* text */ 't', `The target of the symbolic link`]
+			]
+		]],
+		[/* method */ 'installedProviders()', [
+			[/* method description */
+				[/* text */ 't', `Returns a list of the installed file system providers.
+
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', ` The first invocation of this method causes the default provider to be
+ initialized (if not already initialized) and loads any other installed
+ providers as described by the `],
+					[/* reference */ 'r', `java.nio.file.FileSystems`],
+					[/* text */ 't', ` class.`]
+				]]
+			],
+			/* parameters */ UDF,
+			[/* throws */
+				[/* throw */ 'java.util.ServiceConfigurationError', [/* throw description */
+					[/* text */ 't', `When an error occurs while loading a service provider`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `An unmodifiable list of the installed file system providers. The
+          list contains at least one element, that is the default file
+          system provider`]
+			]
 		]],
 		[/* method */ 'createLink(java.nio.file.Path,java.nio.file.Path)', [
 			[/* method description */
@@ -1175,59 +1503,11 @@ DocsCollector.collect('java.nio.file.spi.FileSystemProvider', [
 			],
 			/* return */ UDF
 		]],
-		[/* method */ 'deleteIfExists(java.nio.file.Path)', [
+		[/* method */ 'createSymbolicLink(java.nio.file.Path,java.nio.file.Path,java.nio.file.attribute.FileAttribute...)', [
 			[/* method description */
-				[/* text */ 't', `Deletes a file if it exists. This method works in exactly the manner
- specified by the `],
-				[/* reference */ 'r', `java.Files#deleteIfExists(java.nio.file.Path)`],
-				[/* text */ 't', ` method.
-
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', ` The default implementation of this method simply invokes `],
-					[/* reference */ 'r', `#delete(java.nio.file.Path)`, `delete(java.nio.file.Path)`],
-					[/* text */ 't', ` ignoring the `],
-					[/* inline code block */ 'i', `NoSuchFileException`],
-					[/* text */ 't', ` when the file does not
- exist. It may be overridden where appropriate.`]
-				]]
-			],
-			[/* parameters */
-				[/* parameter */ 'path', [/* parameter description */
-					[/* text */ 't', `the path to the file to delete`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.nio.file.DirectoryNotEmptyException', [/* throw description */
-					[/* text */ 't', `if the file is a directory and could not otherwise be deleted
-          because the directory is not empty `],
-					[/* text */ 't', `(optional specific
-          exception)`]
-				]],
-				[/* throw */ 'java.io.IOException', [/* throw description */
-					[/* text */ 't', `if an I/O error occurs`]
-				]],
-				[/* throw */ 'java.lang.SecurityException', [/* throw description */
-					[/* text */ 't', `In the case of the default provider, and a security manager is
-          installed, the `],
-					[/* reference */ 'r', `java.nio.file.SecurityManager#checkDelete(java.lang.String)`],
-					[/* text */ 't', ` method
-          is invoked to check delete access to the file`]
-				]]
-			],
-			[/* return description */
-				[/* inline code block */ 'i', `true`],
-				[/* text */ 't', ` if the file was deleted by this method; `],
-				[/* inline code block */ 'i', `false`],
-				[/* text */ 't', ` if the file could not be deleted because it did not
-          exist`]
-			]
-		]],
-		[/* method */ 'readSymbolicLink(java.nio.file.Path)', [
-			[/* method description */
-				[/* text */ 't', `Reads the target of a symbolic link. This method works in exactly the
+				[/* text */ 't', `Creates a symbolic link to a target. This method works in exactly the
  manner specified by the `],
-				[/* reference */ 'r', `java.Files#readSymbolicLink(java.nio.file.Path)`],
+				[/* reference */ 'r', `java.Files#createSymbolicLink(java.nio.file.Path,java.nio.file.Path,java.nio.file.attribute.FileAttribute...)`],
 				[/* text */ 't', ` method.
 
  `],
@@ -1239,320 +1519,40 @@ DocsCollector.collect('java.nio.file.spi.FileSystemProvider', [
 			],
 			[/* parameters */
 				[/* parameter */ 'link', [/* parameter description */
-					[/* text */ 't', `the path to the symbolic link`]
+					[/* text */ 't', `the path of the symbolic link to create`]
+				]],
+				[/* parameter */ 'target', [/* parameter description */
+					[/* text */ 't', `the target of the symbolic link`]
+				]],
+				[/* parameter */ 'attrs', [/* parameter description */
+					[/* text */ 't', `the array of attributes to set atomically when creating the
+          symbolic link`]
 				]]
 			],
 			[/* throws */
 				[/* throw */ 'java.lang.UnsupportedOperationException', [/* throw description */
-					[/* text */ 't', `if the implementation does not support symbolic links`]
+					[/* text */ 't', `if the implementation does not support symbolic links or the
+          array contains an attribute that cannot be set atomically when
+          creating the symbolic link`]
 				]],
-				[/* throw */ 'java.nio.file.NotLinkException', [/* throw description */
-					[/* text */ 't', `if the target could otherwise not be read because the file
-          is not a symbolic link `],
-					[/* text */ 't', `(optional specific exception)`]
+				[/* throw */ 'java.nio.file.FileAlreadyExistsException', [/* throw description */
+					[/* text */ 't', `if a file with the name already exists `],
+					[/* text */ 't', `(optional specific
+          exception)`]
 				]],
 				[/* throw */ 'java.io.IOException', [/* throw description */
 					[/* text */ 't', `if an I/O error occurs`]
 				]],
 				[/* throw */ 'java.lang.SecurityException', [/* throw description */
 					[/* text */ 't', `In the case of the default provider, and a security manager
-          is installed, it checks that `],
-					[/* inline code block */ 'i', `FilePermission`],
-					[/* text */ 't', ` has been
-          granted with the "`],
-					[/* inline code block */ 'i', `readlink`],
-					[/* text */ 't', `" action to read the link.`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `The target of the symbolic link`]
-			]
-		]],
-		[/* method */ 'move(java.nio.file.Path,java.nio.file.Path,java.nio.file.CopyOption...)', [
-			[/* method description */
-				[/* text */ 't', `Move or rename a file to a target file. This method works in exactly the
- manner specified by the `],
-				[/* reference */ 'r', `java.Files#move(java.nio.file.Path,java.nio.file.Path,java.nio.file.CopyOption...)`],
-				[/* text */ 't', ` method except that both the
- source and target paths must be associated with this provider.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'source', [/* parameter description */
-					[/* text */ 't', `the path to the file to move`]
-				]],
-				[/* parameter */ 'target', [/* parameter description */
-					[/* text */ 't', `the path to the target file`]
-				]],
-				[/* parameter */ 'options', [/* parameter description */
-					[/* text */ 't', `options specifying how the move should be done`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.UnsupportedOperationException', [/* throw description */
-					[/* text */ 't', `if the array contains a copy option that is not supported`]
-				]],
-				[/* throw */ 'java.nio.file.FileAlreadyExistsException', [/* throw description */
-					[/* text */ 't', `if the target file exists but cannot be replaced because the
-          `],
-					[/* inline code block */ 'i', `REPLACE_EXISTING`],
-					[/* text */ 't', ` option is not specified `],
-					[/* text */ 't', `(optional
-          specific exception)`]
-				]],
-				[/* throw */ 'java.nio.file.DirectoryNotEmptyException', [/* throw description */
-					[/* text */ 't', `the `],
-					[/* inline code block */ 'i', `REPLACE_EXISTING`],
-					[/* text */ 't', ` option is specified but the file
-          cannot be replaced because it is a non-empty directory
-          `],
-					[/* text */ 't', `(optional specific exception)`]
-				]],
-				[/* throw */ 'java.nio.file.AtomicMoveNotSupportedException', [/* throw description */
-					[/* text */ 't', `if the options array contains the `],
-					[/* inline code block */ 'i', `ATOMIC_MOVE`],
-					[/* text */ 't', ` option but
-          the file cannot be moved as an atomic file system operation.`]
-				]],
-				[/* throw */ 'java.io.IOException', [/* throw description */
-					[/* text */ 't', `if an I/O error occurs`]
-				]],
-				[/* throw */ 'java.lang.SecurityException', [/* throw description */
-					[/* text */ 't', `In the case of the default provider, and a security manager is
-          installed, the `],
+          is installed, it denies `],
+					[/* reference */ 'r', `java.nio.file.LinkPermission`],
+					[/* inline code block */ 'i', `("symbolic")`],
+					[/* text */ 't', `
+          or its `],
 					[/* reference */ 'r', `java.nio.file.SecurityManager#checkWrite(java.lang.String)`],
 					[/* text */ 't', `
-          method is invoked to check write access to both the source and
-          target file.`]
-				]]
-			],
-			/* return */ UDF
-		]],
-		[/* method */ 'isSameFile(java.nio.file.Path,java.nio.file.Path)', [
-			[/* method description */
-				[/* text */ 't', `Tests if two paths locate the same file. This method works in exactly the
- manner specified by the `],
-				[/* reference */ 'r', `java.Files#isSameFile(java.nio.file.Path,java.nio.file.Path)`],
-				[/* text */ 't', ` method.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'path', [/* parameter description */
-					[/* text */ 't', `one path to the file`]
-				]],
-				[/* parameter */ 'path2', [/* parameter description */
-					[/* text */ 't', `the other path`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.io.IOException', [/* throw description */
-					[/* text */ 't', `if an I/O error occurs`]
-				]],
-				[/* throw */ 'java.lang.SecurityException', [/* throw description */
-					[/* text */ 't', `In the case of the default provider, and a security manager is
-          installed, the `],
-					[/* reference */ 'r', `java.nio.file.SecurityManager#checkRead(java.lang.String)`],
-					[/* text */ 't', `
-          method is invoked to check read access to both files.`]
-				]]
-			],
-			[/* return description */
-				[/* inline code block */ 'i', `true`],
-				[/* text */ 't', ` if, and only if, the two paths locate the same file`]
-			]
-		]],
-		[/* method */ 'getFileStore(java.nio.file.Path)', [
-			[/* method description */
-				[/* text */ 't', `Returns the `],
-				[/* reference */ 'r', `java.nio.file.FileStore`],
-				[/* text */ 't', ` representing the file store where a file
- is located. This method works in exactly the manner specified by the
- `],
-				[/* reference */ 'r', `java.Files#getFileStore(java.nio.file.Path)`],
-				[/* text */ 't', ` method.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'path', [/* parameter description */
-					[/* text */ 't', `the path to the file`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.io.IOException', [/* throw description */
-					[/* text */ 't', `if an I/O error occurs`]
-				]],
-				[/* throw */ 'java.lang.SecurityException', [/* throw description */
-					[/* text */ 't', `In the case of the default provider, and a security manager is
-          installed, the `],
-					[/* reference */ 'r', `java.nio.file.SecurityManager#checkRead(java.lang.String)`],
-					[/* text */ 't', `
-          method is invoked to check read access to the file, and in
-          addition it checks
-          `],
-					[/* reference */ 'r', `java.lang.RuntimePermission`],
-					[/* inline code block */ 'i', `("getFileStoreAttributes")`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `the file store where the file is stored`]
-			]
-		]],
-		[/* method */ 'getFileAttributeView(java.nio.file.Path,java.lang.Class,java.nio.file.LinkOption...)', [
-			[/* method description */
-				[/* text */ 't', `Returns a file attribute view of a given type. This method works in
- exactly the manner specified by the `],
-				[/* reference */ 'r', `java.Files#getFileAttributeView(java.nio.file.Path,java.lang.Class,java.nio.file.LinkOption...)`],
-				[/* text */ 't', `
- method.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'path', [/* parameter description */
-					[/* text */ 't', `the path to the file`]
-				]],
-				[/* parameter */ 'type', [/* parameter description */
-					[/* text */ 't', `the `],
-					[/* inline code block */ 'i', `Class`],
-					[/* text */ 't', ` object corresponding to the file attribute view`]
-				]],
-				[/* parameter */ 'options', [/* parameter description */
-					[/* text */ 't', `options indicating how symbolic links are handled`]
-				]]
-			],
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `a file attribute view of the specified type, or `],
-				[/* inline code block */ 'i', `null`],
-				[/* text */ 't', ` if
-          the attribute view type is not available`]
-			]
-		]],
-		[/* method */ 'readAttributes(java.nio.file.Path,java.lang.Class,java.nio.file.LinkOption...)', [
-			[/* method description */
-				[/* text */ 't', `Reads a file's attributes as a bulk operation. This method works in
- exactly the manner specified by the `],
-				[/* reference */ 'r', `java.Files#readAttributes(java.nio.file.Path,java.lang.Class,java.nio.file.LinkOption...)`],
-				[/* text */ 't', ` method.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'path', [/* parameter description */
-					[/* text */ 't', `the path to the file`]
-				]],
-				[/* parameter */ 'type', [/* parameter description */
-					[/* text */ 't', `the `],
-					[/* inline code block */ 'i', `Class`],
-					[/* text */ 't', ` of the file attributes required
-          to read`]
-				]],
-				[/* parameter */ 'options', [/* parameter description */
-					[/* text */ 't', `options indicating how symbolic links are handled`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.UnsupportedOperationException', [/* throw description */
-					[/* text */ 't', `if an attributes of the given type are not supported`]
-				]],
-				[/* throw */ 'java.io.IOException', [/* throw description */
-					[/* text */ 't', `if an I/O error occurs`]
-				]],
-				[/* throw */ 'java.lang.SecurityException', [/* throw description */
-					[/* text */ 't', `In the case of the default provider, a security manager is
-          installed, its `],
-					[/* reference */ 'r', `java.nio.file.SecurityManager#checkRead(java.lang.String)`],
-					[/* text */ 't', `
-          method is invoked to check read access to the file`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `the file attributes`]
-			]
-		]],
-		[/* method */ 'readAttributes(java.nio.file.Path,java.lang.String,java.nio.file.LinkOption...)', [
-			[/* method description */
-				[/* text */ 't', `Reads a set of file attributes as a bulk operation. This method works in
- exactly the manner specified by the `],
-				[/* reference */ 'r', `java.Files#readAttributes(java.nio.file.Path,java.lang.String,java.nio.file.LinkOption...)`],
-				[/* text */ 't', ` method.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'path', [/* parameter description */
-					[/* text */ 't', `the path to the file`]
-				]],
-				[/* parameter */ 'attributes', [/* parameter description */
-					[/* text */ 't', `the attributes to read`]
-				]],
-				[/* parameter */ 'options', [/* parameter description */
-					[/* text */ 't', `options indicating how symbolic links are handled`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.UnsupportedOperationException', [/* throw description */
-					[/* text */ 't', `if the attribute view is not available`]
-				]],
-				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
-					[/* text */ 't', `if no attributes are specified or an unrecognized attributes is
-          specified`]
-				]],
-				[/* throw */ 'java.io.IOException', [/* throw description */
-					[/* text */ 't', `If an I/O error occurs`]
-				]],
-				[/* throw */ 'java.lang.SecurityException', [/* throw description */
-					[/* text */ 't', `In the case of the default provider, and a security manager is
-          installed, its `],
-					[/* reference */ 'r', `java.nio.file.SecurityManager#checkRead(java.lang.String)`],
-					[/* text */ 't', `
-          method denies read access to the file. If this method is invoked
-          to read security sensitive attributes then the security manager
-          may be invoke to check for additional permissions.`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `a map of the attributes returned; may be empty. The map's keys
-          are the attribute names, its values are the attribute values`]
-			]
-		]],
-		[/* method */ 'setAttribute(java.nio.file.Path,java.lang.String,java.lang.Object,java.nio.file.LinkOption...)', [
-			[/* method description */
-				[/* text */ 't', `Sets the value of a file attribute. This method works in exactly the
- manner specified by the `],
-				[/* reference */ 'r', `java.Files#setAttribute(java.nio.file.Path,java.lang.String,java.lang.Object,java.nio.file.LinkOption...)`],
-				[/* text */ 't', ` method.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'path', [/* parameter description */
-					[/* text */ 't', `the path to the file`]
-				]],
-				[/* parameter */ 'attribute', [/* parameter description */
-					[/* text */ 't', `the attribute to set`]
-				]],
-				[/* parameter */ 'value', [/* parameter description */
-					[/* text */ 't', `the attribute value`]
-				]],
-				[/* parameter */ 'options', [/* parameter description */
-					[/* text */ 't', `options indicating how symbolic links are handled`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.UnsupportedOperationException', [/* throw description */
-					[/* text */ 't', `if the attribute view is not available`]
-				]],
-				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
-					[/* text */ 't', `if the attribute name is not specified, or is not recognized, or
-          the attribute value is of the correct type but has an
-          inappropriate value`]
-				]],
-				[/* throw */ 'java.lang.ClassCastException', [/* throw description */
-					[/* text */ 't', `If the attribute value is not of the expected type or is a
-          collection containing elements that are not of the expected
-          type`]
-				]],
-				[/* throw */ 'java.io.IOException', [/* throw description */
-					[/* text */ 't', `If an I/O error occurs`]
-				]],
-				[/* throw */ 'java.lang.SecurityException', [/* throw description */
-					[/* text */ 't', `In the case of the default provider, and a security manager is
-          installed, its `],
-					[/* reference */ 'r', `java.nio.file.SecurityManager#checkWrite(java.lang.String)`],
-					[/* text */ 't', `
-          method denies write access to the file. If this method is invoked
-          to set security sensitive attributes then the security manager
-          may be invoked to check for additional permissions.`]
+          method denies write access to the path of the symbolic link.`]
 				]]
 			],
 			/* return */ UDF

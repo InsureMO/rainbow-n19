@@ -163,48 +163,68 @@ DocsCollector.collect('java.util.AbstractList', [
 		]]
 	],
 	[/* methods */
-		[/* method */ 'add(int,java.lang.Object)', [
+		[/* method */ 'removeRange(int,int)', [
 			[/* method description */
-				[/* text */ 't', `Inserts the specified element at the specified position in this list
- (optional operation).  Shifts the element currently at that position
- (if any) and any subsequent elements to the right (adds one to their
- indices).`]
+				[/* text */ 't', `Removes from this list all of the elements whose index is between
+ `],
+				[/* inline code block */ 'i', `fromIndex`],
+				[/* text */ 't', `, inclusive, and `],
+				[/* inline code block */ 'i', `toIndex`],
+				[/* text */ 't', `, exclusive.
+ Shifts any succeeding elements to the left (reduces their index).
+ This call shortens the list by `],
+				[/* inline code block */ 'i', `(toIndex - fromIndex)`],
+				[/* text */ 't', ` elements.
+ (If `],
+				[/* inline code block */ 'i', `toIndex==fromIndex`],
+				[/* text */ 't', `, this operation has no effect.)
+
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', `This method is called by the `],
+					[/* inline code block */ 'i', `clear`],
+					[/* text */ 't', ` operation on this list
+ and its subLists.  Overriding this method to take advantage of
+ the internals of the list implementation can `],
+					[/* text */ 't', `substantially`],
+					[/* text */ 't', `
+ improve the performance of the `],
+					[/* inline code block */ 'i', `clear`],
+					[/* text */ 't', ` operation on this list
+ and its subLists.`]
+				]]
+			],
+			[/* parameters */
+				[/* parameter */ 'fromIndex', [/* parameter description */
+					[/* text */ 't', `index of first element to be removed`]
+				]],
+				[/* parameter */ 'toIndex', [/* parameter description */
+					[/* text */ 't', `index after last element to be removed`]
+				]]
+			],
+			/* throws */ UDF,
+			/* return */ UDF
+		]],
+		[/* method */ 'get(int)', [
+			[/* method description */
+				[/* text */ 't', `Returns the element at the specified position in this list.`]
 			],
 			[/* parameters */
 				[/* parameter */ 'index', [/* parameter description */
-					[/* text */ 't', `index at which the specified element is to be inserted`]
-				]],
-				[/* parameter */ 'element', [/* parameter description */
-					[/* text */ 't', `element to be inserted`]
+					[/* text */ 't', `index of the element to return`]
 				]]
 			],
 			[/* throws */
-				[/* throw */ 'java.lang.UnsupportedOperationException', [/* throw description */
-					[/* text */ 't', `if the `],
-					[/* inline code block */ 'i', `add`],
-					[/* text */ 't', ` operation
-         is not supported by this list`]
-				]],
-				[/* throw */ 'java.lang.ClassCastException', [/* throw description */
-					[/* text */ 't', `if the class of the specified element
-         prevents it from being added to this list`]
-				]],
-				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
-					[/* text */ 't', `if the specified element is null and
-         this list does not permit null elements`]
-				]],
-				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
-					[/* text */ 't', `if some property of the specified
-         element prevents it from being added to this list`]
-				]],
 				[/* throw */ 'java.lang.IndexOutOfBoundsException', [/* throw description */
 					[/* text */ 't', `if the index is out of range
          (`],
-					[/* inline code block */ 'i', `index < 0 || index > size()`],
+					[/* inline code block */ 'i', `index < 0 || index >= size()`],
 					[/* text */ 't', `)`]
 				]]
 			],
-			/* return */ UDF
+			[/* return description */
+				[/* text */ 't', `the element at the specified position in this list`]
+			]
 		]],
 		[/* method */ 'add(java.lang.Object)', [
 			[/* method description */
@@ -251,55 +271,57 @@ DocsCollector.collect('java.util.AbstractList', [
 				[/* text */ 't', `)`]
 			]
 		]],
-		[/* method */ 'remove(int)', [
+		[/* method */ 'addAll(int,java.util.Collection)', [
 			[/* method description */
-				[/* text */ 't', `Removes the element at the specified position in this list (optional
- operation).  Shifts any subsequent elements to the left (subtracts one
- from their indices).  Returns the element that was removed from the
- list.`]
+				[/* text */ 't', `Inserts all of the elements in the specified collection into this
+ list at the specified position (optional operation).  Shifts the
+ element currently at that position (if any) and any subsequent
+ elements to the right (increases their indices).  The new elements
+ will appear in this list in the order that they are returned by the
+ specified collection's iterator.  The behavior of this operation is
+ undefined if the specified collection is modified while the
+ operation is in progress.  (Note that this will occur if the specified
+ collection is this list, and it's nonempty.)`]
 			],
 			[/* parameters */
 				[/* parameter */ 'index', [/* parameter description */
-					[/* text */ 't', `the index of the element to be removed`]
+					[/* text */ 't', `index at which to insert the first element from the
+              specified collection`]
+				]],
+				[/* parameter */ 'c', [/* parameter description */
+					[/* text */ 't', `collection containing elements to be added to this list`]
 				]]
 			],
 			[/* throws */
 				[/* throw */ 'java.lang.UnsupportedOperationException', [/* throw description */
 					[/* text */ 't', `if the `],
-					[/* inline code block */ 'i', `remove`],
+					[/* inline code block */ 'i', `addAll`],
 					[/* text */ 't', ` operation
          is not supported by this list`]
+				]],
+				[/* throw */ 'java.lang.ClassCastException', [/* throw description */
+					[/* text */ 't', `if the class of an element of the specified
+         collection prevents it from being added to this list`]
+				]],
+				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
+					[/* text */ 't', `if the specified collection contains one
+         or more null elements and this list does not permit null
+         elements, or if the specified collection is null`]
+				]],
+				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
+					[/* text */ 't', `if some property of an element of the
+         specified collection prevents it from being added to this list`]
 				]],
 				[/* throw */ 'java.lang.IndexOutOfBoundsException', [/* throw description */
 					[/* text */ 't', `if the index is out of range
          (`],
-					[/* inline code block */ 'i', `index < 0 || index >= size()`],
+					[/* inline code block */ 'i', `index < 0 || index > size()`],
 					[/* text */ 't', `)`]
 				]]
 			],
 			[/* return description */
-				[/* text */ 't', `the element previously at the specified position`]
-			]
-		]],
-		[/* method */ 'get(int)', [
-			[/* method description */
-				[/* text */ 't', `Returns the element at the specified position in this list.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'index', [/* parameter description */
-					[/* text */ 't', `index of the element to return`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.IndexOutOfBoundsException', [/* throw description */
-					[/* text */ 't', `if the index is out of range
-         (`],
-					[/* inline code block */ 'i', `index < 0 || index >= size()`],
-					[/* text */ 't', `)`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `the element at the specified position in this list`]
+				[/* inline code block */ 'i', `true`],
+				[/* text */ 't', ` if this list changed as a result of the call`]
 			]
 		]],
 		[/* method */ 'equals(java.lang.Object)', [
@@ -332,6 +354,79 @@ DocsCollector.collect('java.util.AbstractList', [
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if the specified object is equal to this list`]
+			]
+		]],
+		[/* method */ 'remove(int)', [
+			[/* method description */
+				[/* text */ 't', `Removes the element at the specified position in this list (optional
+ operation).  Shifts any subsequent elements to the left (subtracts one
+ from their indices).  Returns the element that was removed from the
+ list.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'index', [/* parameter description */
+					[/* text */ 't', `the index of the element to be removed`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.lang.UnsupportedOperationException', [/* throw description */
+					[/* text */ 't', `if the `],
+					[/* inline code block */ 'i', `remove`],
+					[/* text */ 't', ` operation
+         is not supported by this list`]
+				]],
+				[/* throw */ 'java.lang.IndexOutOfBoundsException', [/* throw description */
+					[/* text */ 't', `if the index is out of range
+         (`],
+					[/* inline code block */ 'i', `index < 0 || index >= size()`],
+					[/* text */ 't', `)`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `the element previously at the specified position`]
+			]
+		]],
+		[/* method */ 'set(int,java.lang.Object)', [
+			[/* method description */
+				[/* text */ 't', `Replaces the element at the specified position in this list with the
+ specified element (optional operation).`]
+			],
+			[/* parameters */
+				[/* parameter */ 'index', [/* parameter description */
+					[/* text */ 't', `index of the element to replace`]
+				]],
+				[/* parameter */ 'element', [/* parameter description */
+					[/* text */ 't', `element to be stored at the specified position`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.lang.UnsupportedOperationException', [/* throw description */
+					[/* text */ 't', `if the `],
+					[/* inline code block */ 'i', `set`],
+					[/* text */ 't', ` operation
+         is not supported by this list`]
+				]],
+				[/* throw */ 'java.lang.ClassCastException', [/* throw description */
+					[/* text */ 't', `if the class of the specified element
+         prevents it from being added to this list`]
+				]],
+				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
+					[/* text */ 't', `if the specified element is null and
+         this list does not permit null elements`]
+				]],
+				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
+					[/* text */ 't', `if some property of the specified
+         element prevents it from being added to this list`]
+				]],
+				[/* throw */ 'java.lang.IndexOutOfBoundsException', [/* throw description */
+					[/* text */ 't', `if the index is out of range
+         (`],
+					[/* inline code block */ 'i', `index < 0 || index >= size()`],
+					[/* text */ 't', `)`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `the element previously at the specified position`]
 			]
 		]],
 		[/* method */ 'hashCode()', [
@@ -382,22 +477,6 @@ DocsCollector.collect('java.util.AbstractList', [
          this list, or -1 if this list does not contain the element`]
 			]
 		]],
-		[/* method */ 'clear()', [
-			[/* method description */
-				[/* text */ 't', `Removes all of the elements from this list (optional operation).
- The list will be empty after this call returns.`]
-			],
-			/* parameters */ UDF,
-			[/* throws */
-				[/* throw */ 'java.lang.UnsupportedOperationException', [/* throw description */
-					[/* text */ 't', `if the `],
-					[/* inline code block */ 'i', `clear`],
-					[/* text */ 't', ` operation
-         is not supported by this list`]
-				]]
-			],
-			/* return */ UDF
-		]],
 		[/* method */ 'lastIndexOf(java.lang.Object)', [
 			[/* method description */
 				[/* text */ 't', `Returns the index of the last occurrence of the specified element
@@ -434,6 +513,16 @@ DocsCollector.collect('java.util.AbstractList', [
 			[/* return description */
 				[/* text */ 't', `the index of the last occurrence of the specified element in
          this list, or -1 if this list does not contain the element`]
+			]
+		]],
+		[/* method */ 'iterator()', [
+			[/* method description */
+				[/* text */ 't', `Returns an iterator over the elements in this list in proper sequence.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `an iterator over the elements in this list in proper sequence`]
 			]
 		]],
 		[/* method */ 'subList(int,int)', [
@@ -511,154 +600,6 @@ DocsCollector.collect('java.util.AbstractList', [
 				[/* text */ 't', `a view of the specified range within this list`]
 			]
 		]],
-		[/* method */ 'iterator()', [
-			[/* method description */
-				[/* text */ 't', `Returns an iterator over the elements in this list in proper sequence.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `an iterator over the elements in this list in proper sequence`]
-			]
-		]],
-		[/* method */ 'addAll(int,java.util.Collection)', [
-			[/* method description */
-				[/* text */ 't', `Inserts all of the elements in the specified collection into this
- list at the specified position (optional operation).  Shifts the
- element currently at that position (if any) and any subsequent
- elements to the right (increases their indices).  The new elements
- will appear in this list in the order that they are returned by the
- specified collection's iterator.  The behavior of this operation is
- undefined if the specified collection is modified while the
- operation is in progress.  (Note that this will occur if the specified
- collection is this list, and it's nonempty.)`]
-			],
-			[/* parameters */
-				[/* parameter */ 'index', [/* parameter description */
-					[/* text */ 't', `index at which to insert the first element from the
-              specified collection`]
-				]],
-				[/* parameter */ 'c', [/* parameter description */
-					[/* text */ 't', `collection containing elements to be added to this list`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.UnsupportedOperationException', [/* throw description */
-					[/* text */ 't', `if the `],
-					[/* inline code block */ 'i', `addAll`],
-					[/* text */ 't', ` operation
-         is not supported by this list`]
-				]],
-				[/* throw */ 'java.lang.ClassCastException', [/* throw description */
-					[/* text */ 't', `if the class of an element of the specified
-         collection prevents it from being added to this list`]
-				]],
-				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
-					[/* text */ 't', `if the specified collection contains one
-         or more null elements and this list does not permit null
-         elements, or if the specified collection is null`]
-				]],
-				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
-					[/* text */ 't', `if some property of an element of the
-         specified collection prevents it from being added to this list`]
-				]],
-				[/* throw */ 'java.lang.IndexOutOfBoundsException', [/* throw description */
-					[/* text */ 't', `if the index is out of range
-         (`],
-					[/* inline code block */ 'i', `index < 0 || index > size()`],
-					[/* text */ 't', `)`]
-				]]
-			],
-			[/* return description */
-				[/* inline code block */ 'i', `true`],
-				[/* text */ 't', ` if this list changed as a result of the call`]
-			]
-		]],
-		[/* method */ 'set(int,java.lang.Object)', [
-			[/* method description */
-				[/* text */ 't', `Replaces the element at the specified position in this list with the
- specified element (optional operation).`]
-			],
-			[/* parameters */
-				[/* parameter */ 'index', [/* parameter description */
-					[/* text */ 't', `index of the element to replace`]
-				]],
-				[/* parameter */ 'element', [/* parameter description */
-					[/* text */ 't', `element to be stored at the specified position`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.UnsupportedOperationException', [/* throw description */
-					[/* text */ 't', `if the `],
-					[/* inline code block */ 'i', `set`],
-					[/* text */ 't', ` operation
-         is not supported by this list`]
-				]],
-				[/* throw */ 'java.lang.ClassCastException', [/* throw description */
-					[/* text */ 't', `if the class of the specified element
-         prevents it from being added to this list`]
-				]],
-				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
-					[/* text */ 't', `if the specified element is null and
-         this list does not permit null elements`]
-				]],
-				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
-					[/* text */ 't', `if some property of the specified
-         element prevents it from being added to this list`]
-				]],
-				[/* throw */ 'java.lang.IndexOutOfBoundsException', [/* throw description */
-					[/* text */ 't', `if the index is out of range
-         (`],
-					[/* inline code block */ 'i', `index < 0 || index >= size()`],
-					[/* text */ 't', `)`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `the element previously at the specified position`]
-			]
-		]],
-		[/* method */ 'removeRange(int,int)', [
-			[/* method description */
-				[/* text */ 't', `Removes from this list all of the elements whose index is between
- `],
-				[/* inline code block */ 'i', `fromIndex`],
-				[/* text */ 't', `, inclusive, and `],
-				[/* inline code block */ 'i', `toIndex`],
-				[/* text */ 't', `, exclusive.
- Shifts any succeeding elements to the left (reduces their index).
- This call shortens the list by `],
-				[/* inline code block */ 'i', `(toIndex - fromIndex)`],
-				[/* text */ 't', ` elements.
- (If `],
-				[/* inline code block */ 'i', `toIndex==fromIndex`],
-				[/* text */ 't', `, this operation has no effect.)
-
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', `This method is called by the `],
-					[/* inline code block */ 'i', `clear`],
-					[/* text */ 't', ` operation on this list
- and its subLists.  Overriding this method to take advantage of
- the internals of the list implementation can `],
-					[/* text */ 't', `substantially`],
-					[/* text */ 't', `
- improve the performance of the `],
-					[/* inline code block */ 'i', `clear`],
-					[/* text */ 't', ` operation on this list
- and its subLists.`]
-				]]
-			],
-			[/* parameters */
-				[/* parameter */ 'fromIndex', [/* parameter description */
-					[/* text */ 't', `index of first element to be removed`]
-				]],
-				[/* parameter */ 'toIndex', [/* parameter description */
-					[/* text */ 't', `index after last element to be removed`]
-				]]
-			],
-			/* throws */ UDF,
-			/* return */ UDF
-		]],
 		[/* method */ 'listIterator()', [
 			[/* method description */
 				[/* text */ 't', `Returns a list iterator over the elements in this list (in proper
@@ -704,6 +645,65 @@ DocsCollector.collect('java.util.AbstractList', [
 				[/* text */ 't', `a list iterator over the elements in this list (in proper
          sequence), starting at the specified position in the list`]
 			]
+		]],
+		[/* method */ 'add(int,java.lang.Object)', [
+			[/* method description */
+				[/* text */ 't', `Inserts the specified element at the specified position in this list
+ (optional operation).  Shifts the element currently at that position
+ (if any) and any subsequent elements to the right (adds one to their
+ indices).`]
+			],
+			[/* parameters */
+				[/* parameter */ 'index', [/* parameter description */
+					[/* text */ 't', `index at which the specified element is to be inserted`]
+				]],
+				[/* parameter */ 'element', [/* parameter description */
+					[/* text */ 't', `element to be inserted`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.lang.UnsupportedOperationException', [/* throw description */
+					[/* text */ 't', `if the `],
+					[/* inline code block */ 'i', `add`],
+					[/* text */ 't', ` operation
+         is not supported by this list`]
+				]],
+				[/* throw */ 'java.lang.ClassCastException', [/* throw description */
+					[/* text */ 't', `if the class of the specified element
+         prevents it from being added to this list`]
+				]],
+				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
+					[/* text */ 't', `if the specified element is null and
+         this list does not permit null elements`]
+				]],
+				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
+					[/* text */ 't', `if some property of the specified
+         element prevents it from being added to this list`]
+				]],
+				[/* throw */ 'java.lang.IndexOutOfBoundsException', [/* throw description */
+					[/* text */ 't', `if the index is out of range
+         (`],
+					[/* inline code block */ 'i', `index < 0 || index > size()`],
+					[/* text */ 't', `)`]
+				]]
+			],
+			/* return */ UDF
+		]],
+		[/* method */ 'clear()', [
+			[/* method description */
+				[/* text */ 't', `Removes all of the elements from this list (optional operation).
+ The list will be empty after this call returns.`]
+			],
+			/* parameters */ UDF,
+			[/* throws */
+				[/* throw */ 'java.lang.UnsupportedOperationException', [/* throw description */
+					[/* text */ 't', `if the `],
+					[/* inline code block */ 'i', `clear`],
+					[/* text */ 't', ` operation
+         is not supported by this list`]
+				]]
+			],
+			/* return */ UDF
 		]]
 	],
 ]);

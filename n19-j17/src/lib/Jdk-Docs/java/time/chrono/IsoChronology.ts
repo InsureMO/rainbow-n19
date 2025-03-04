@@ -49,87 +49,6 @@ DocsCollector.collect('java.time.chrono.IsoChronology', [
 	],
 	/* constructors */ UDF,
 	[/* methods */
-		[/* method */ 'getId()', [
-			[/* method description */
-				[/* text */ 't', `Gets the ID of the chronology - 'ISO'.
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', `
- The ID uniquely identifies the `],
-					[/* inline code block */ 'i', `Chronology`],
-					[/* text */ 't', `.
- It can be used to lookup the `],
-					[/* inline code block */ 'i', `Chronology`],
-					[/* text */ 't', ` using `],
-					[/* reference */ 'r', `.Chronology#of(java.lang.String)`],
-					[/* text */ 't', `.`]
-				]]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the chronology ID - 'ISO'`]
-			]
-		]],
-		[/* method */ 'range(java.time.temporal.ChronoField)', [
-			[/* method description */
-				[/* block */ 'b', [
-					[/* text */ 't', `Gets the range of valid values for the specified field.
- `],
-					[/* block */ 'b', [
-						[/* text */ 't', `
- All fields can be expressed as a `],
-						[/* inline code block */ 'i', `long`],
-						[/* text */ 't', ` integer.
- This method returns an object that describes the valid range for that value.
- `]
-					]],
-					[/* block */ 'b', `
- Note that the result only describes the minimum and maximum valid values
- and it is important not to read too much into them. For example, there
- could be values within the range that are invalid for the field.
- `],
-					[/* block */ 'b', `
- This method will return a result whether or not the chronology supports the field.`]
-				]]
-			],
-			[/* parameters */
-				[/* parameter */ 'field', [/* parameter description */
-					[/* text */ 't', `the field to get the range for, not null`]
-				]]
-			],
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the range of valid values for the field, not null`]
-			]
-		]],
-		[/* method */ 'getCalendarType()', [
-			[/* method description */
-				[/* text */ 't', `Gets the calendar type of the underlying calendar system - 'iso8601'.
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', `
- The calendar type is an identifier defined by the
- `],
-					[/* text */ 't', `Unicode Locale Data Markup Language (LDML)`],
-					[/* text */ 't', ` specification.
- It can be used to lookup the `],
-					[/* inline code block */ 'i', `Chronology`],
-					[/* text */ 't', ` using `],
-					[/* reference */ 'r', `.Chronology#of(java.lang.String)`],
-					[/* text */ 't', `.
- It can also be used as part of a locale, accessible via
- `],
-					[/* reference */ 'r', `java.time.Locale#getUnicodeLocaleType(java.lang.String)`],
-					[/* text */ 't', ` with the key 'ca'.`]
-				]]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the calendar system type - 'iso8601'`]
-			]
-		]],
 		[/* method */ 'isLeapYear(long)', [
 			[/* method description */
 				[/* text */ 't', `Checks if the year is a leap year, according to the ISO proleptic
@@ -160,20 +79,138 @@ DocsCollector.collect('java.time.chrono.IsoChronology', [
 				[/* text */ 't', `true if the year is leap, false otherwise`]
 			]
 		]],
-		[/* method */ 'date(java.time.temporal.TemporalAccessor)', [
+		[/* method */ 'prolepticYear(java.time.chrono.Era,int)', [
 			[/* method description */
-				[/* text */ 't', `Obtains an ISO local date from another date-time object.
+				[/* block */ 'b', [
+					[/* text */ 't', `Calculates the proleptic-year given the era and year-of-era.
+ `],
+					[/* block */ 'b', `
+ This combines the era and year-of-era into the single proleptic-year field.
+ `],
+					[/* block */ 'b', [
+						[/* text */ 't', `
+ If the chronology makes active use of eras, such as `],
+						[/* inline code block */ 'i', `JapaneseChronology`],
+						[/* text */ 't', `
+ then the year-of-era will be validated against the era.
+ For other chronologies, validation is optional.`]
+					]]
+				]]
+			],
+			[/* parameters */
+				[/* parameter */ 'era', [/* parameter description */
+					[/* text */ 't', `the era of the correct type for the chronology, not null`]
+				]],
+				[/* parameter */ 'yearOfEra', [/* parameter description */
+					[/* text */ 't', `the chronology year-of-era`]
+				]]
+			],
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the proleptic-year`]
+			]
+		]],
+		[/* method */ 'getCalendarType()', [
+			[/* method description */
+				[/* text */ 't', `Gets the calendar type of the underlying calendar system - 'iso8601'.
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', `
+ The calendar type is an identifier defined by the
+ `],
+					[/* text */ 't', `Unicode Locale Data Markup Language (LDML)`],
+					[/* text */ 't', ` specification.
+ It can be used to lookup the `],
+					[/* inline code block */ 'i', `Chronology`],
+					[/* text */ 't', ` using `],
+					[/* reference */ 'r', `.Chronology#of(java.lang.String)`],
+					[/* text */ 't', `.
+ It can also be used as part of a locale, accessible via
+ `],
+					[/* reference */ 'r', `java.time.Locale#getUnicodeLocaleType(java.lang.String)`],
+					[/* text */ 't', ` with the key 'ca'.`]
+				]]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the calendar system type - 'iso8601'`]
+			]
+		]],
+		[/* method */ 'getId()', [
+			[/* method description */
+				[/* text */ 't', `Gets the ID of the chronology - 'ISO'.
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', `
+ The ID uniquely identifies the `],
+					[/* inline code block */ 'i', `Chronology`],
+					[/* text */ 't', `.
+ It can be used to lookup the `],
+					[/* inline code block */ 'i', `Chronology`],
+					[/* text */ 't', ` using `],
+					[/* reference */ 'r', `.Chronology#of(java.lang.String)`],
+					[/* text */ 't', `.`]
+				]]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the chronology ID - 'ISO'`]
+			]
+		]],
+		[/* method */ 'eraOf(int)', [
+			[/* method description */
+				[/* block */ 'b', [
+					[/* text */ 't', `Creates the chronology era object from the numeric value.
+ `],
+					[/* block */ 'b', `
+ The era is, conceptually, the largest division of the time-line.
+ Most calendar systems have a single epoch dividing the time-line into two eras.
+ However, some have multiple eras, such as one for the reign of each leader.
+ The exact meaning is determined by the chronology according to the following constraints.
+ `],
+					[/* block */ 'b', `
+ The era in use at 1970-01-01 must have the value 1.
+ Later eras must have sequentially higher values.
+ Earlier eras must have sequentially lower values.
+ Each chronology must refer to an enum or similar singleton to provide the era values.
+ `],
+					[/* block */ 'b', `
+ This method returns the singleton era of the correct type for the specified era value.`]
+				]]
+			],
+			[/* parameters */
+				[/* parameter */ 'eraValue', [/* parameter description */
+					[/* text */ 't', `the era value`]
+				]]
+			],
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the calendar system era, not null`]
+			]
+		]],
+		[/* method */ 'date(int,int,int)', [
+			[/* method description */
+				[/* text */ 't', `Obtains an ISO local date from the proleptic-year, month-of-year
+ and day-of-month fields.
  `],
 				[/* block */ 'b', [
 					[/* text */ 't', `
  This is equivalent to `],
-					[/* reference */ 'r', `java.LocalDate#from(java.time.temporal.TemporalAccessor)`],
+					[/* reference */ 'r', `java.LocalDate#of(int,int,int)`],
 					[/* text */ 't', `.`]
 				]]
 			],
 			[/* parameters */
-				[/* parameter */ 'temporal', [/* parameter description */
-					[/* text */ 't', `the date-time object to convert, not null`]
+				[/* parameter */ 'prolepticYear', [/* parameter description */
+					[/* text */ 't', `the ISO proleptic-year`]
+				]],
+				[/* parameter */ 'month', [/* parameter description */
+					[/* text */ 't', `the ISO month-of-year`]
+				]],
+				[/* parameter */ 'dayOfMonth', [/* parameter description */
+					[/* text */ 't', `the ISO day-of-month`]
 				]]
 			],
 			[/* throws */
@@ -219,27 +256,20 @@ DocsCollector.collect('java.time.chrono.IsoChronology', [
 				[/* text */ 't', `the ISO local date, not null`]
 			]
 		]],
-		[/* method */ 'date(int,int,int)', [
+		[/* method */ 'date(java.time.temporal.TemporalAccessor)', [
 			[/* method description */
-				[/* text */ 't', `Obtains an ISO local date from the proleptic-year, month-of-year
- and day-of-month fields.
+				[/* text */ 't', `Obtains an ISO local date from another date-time object.
  `],
 				[/* block */ 'b', [
 					[/* text */ 't', `
  This is equivalent to `],
-					[/* reference */ 'r', `java.LocalDate#of(int,int,int)`],
+					[/* reference */ 'r', `java.LocalDate#from(java.time.temporal.TemporalAccessor)`],
 					[/* text */ 't', `.`]
 				]]
 			],
 			[/* parameters */
-				[/* parameter */ 'prolepticYear', [/* parameter description */
-					[/* text */ 't', `the ISO proleptic-year`]
-				]],
-				[/* parameter */ 'month', [/* parameter description */
-					[/* text */ 't', `the ISO month-of-year`]
-				]],
-				[/* parameter */ 'dayOfMonth', [/* parameter description */
-					[/* text */ 't', `the ISO day-of-month`]
+				[/* parameter */ 'temporal', [/* parameter description */
+					[/* text */ 't', `the date-time object to convert, not null`]
 				]]
 			],
 			[/* throws */
@@ -274,119 +304,6 @@ DocsCollector.collect('java.time.chrono.IsoChronology', [
 			],
 			[/* return description */
 				[/* text */ 't', `the ISO local date, not null`]
-			]
-		]],
-		[/* method */ 'prolepticYear(java.time.chrono.Era,int)', [
-			[/* method description */
-				[/* block */ 'b', [
-					[/* text */ 't', `Calculates the proleptic-year given the era and year-of-era.
- `],
-					[/* block */ 'b', `
- This combines the era and year-of-era into the single proleptic-year field.
- `],
-					[/* block */ 'b', [
-						[/* text */ 't', `
- If the chronology makes active use of eras, such as `],
-						[/* inline code block */ 'i', `JapaneseChronology`],
-						[/* text */ 't', `
- then the year-of-era will be validated against the era.
- For other chronologies, validation is optional.`]
-					]]
-				]]
-			],
-			[/* parameters */
-				[/* parameter */ 'era', [/* parameter description */
-					[/* text */ 't', `the era of the correct type for the chronology, not null`]
-				]],
-				[/* parameter */ 'yearOfEra', [/* parameter description */
-					[/* text */ 't', `the chronology year-of-era`]
-				]]
-			],
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the proleptic-year`]
-			]
-		]],
-		[/* method */ 'dateYearDay(java.time.chrono.Era,int,int)', [
-			[/* method description */
-				[/* text */ 't', `Obtains an ISO local date from the era, year-of-era and day-of-year fields.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'era', [/* parameter description */
-					[/* text */ 't', `the ISO era, not null`]
-				]],
-				[/* parameter */ 'yearOfEra', [/* parameter description */
-					[/* text */ 't', `the ISO year-of-era`]
-				]],
-				[/* parameter */ 'dayOfYear', [/* parameter description */
-					[/* text */ 't', `the ISO day-of-year`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.time.DateTimeException', [/* throw description */
-					[/* text */ 't', `if unable to create the date`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `the ISO local date, not null`]
-			]
-		]],
-		[/* method */ 'dateYearDay(int,int)', [
-			[/* method description */
-				[/* text */ 't', `Obtains an ISO local date from the proleptic-year and day-of-year fields.
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', `
- This is equivalent to `],
-					[/* reference */ 'r', `java.LocalDate#ofYearDay(int,int)`],
-					[/* text */ 't', `.`]
-				]]
-			],
-			[/* parameters */
-				[/* parameter */ 'prolepticYear', [/* parameter description */
-					[/* text */ 't', `the ISO proleptic-year`]
-				]],
-				[/* parameter */ 'dayOfYear', [/* parameter description */
-					[/* text */ 't', `the ISO day-of-year`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.time.DateTimeException', [/* throw description */
-					[/* text */ 't', `if unable to create the date`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `the ISO local date, not null`]
-			]
-		]],
-		[/* method */ 'dateNow(java.time.ZoneId)', [
-			[/* method description */
-				[/* text */ 't', `Obtains the current ISO local date from the system clock in the specified time-zone.
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', `
- This will query the `],
-					[/* reference */ 'r', `java.Clock#system(java.time.ZoneId)`],
-					[/* text */ 't', ` to obtain the current date.
- Specifying the time-zone avoids dependence on the default time-zone.
- `]
-				]],
-				[/* block */ 'b', `
- Using this method will prevent the ability to use an alternate clock for testing
- because the clock is hard-coded.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'zone', [/* parameter description */
-					[/* text */ 't', `the zone ID to use, not null`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.time.DateTimeException', [/* throw description */
-					[/* text */ 't', `if unable to create the date`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `the current ISO local date using the system clock, not null`]
 			]
 		]],
 		[/* method */ 'dateNow()', [
@@ -442,173 +359,86 @@ DocsCollector.collect('java.time.chrono.IsoChronology', [
 				[/* text */ 't', `the current ISO local date, not null`]
 			]
 		]],
-		[/* method */ 'zonedDateTime(java.time.Instant,java.time.ZoneId)', [
+		[/* method */ 'dateNow(java.time.ZoneId)', [
 			[/* method description */
-				[/* text */ 't', `Obtains an ISO zoned date-time in this chronology from an `],
-				[/* inline code block */ 'i', `Instant`],
-				[/* text */ 't', `.
+				[/* text */ 't', `Obtains the current ISO local date from the system clock in the specified time-zone.
  `],
 				[/* block */ 'b', [
 					[/* text */ 't', `
- This is equivalent to `],
-					[/* reference */ 'r', `java.ZonedDateTime#ofInstant(java.time.Instant,java.time.ZoneId)`],
-					[/* text */ 't', `.`]
-				]]
-			],
-			[/* parameters */
-				[/* parameter */ 'instant', [/* parameter description */
-					[/* text */ 't', `the instant to create the date-time from, not null`]
+ This will query the `],
+					[/* reference */ 'r', `java.Clock#system(java.time.ZoneId)`],
+					[/* text */ 't', ` to obtain the current date.
+ Specifying the time-zone avoids dependence on the default time-zone.
+ `]
 				]],
-				[/* parameter */ 'zone', [/* parameter description */
-					[/* text */ 't', `the time-zone, not null`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.time.DateTimeException', [/* throw description */
-					[/* text */ 't', `if the result exceeds the supported range`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `the zoned date-time, not null`]
-			]
-		]],
-		[/* method */ 'zonedDateTime(java.time.temporal.TemporalAccessor)', [
-			[/* method description */
-				[/* text */ 't', `Obtains an ISO zoned date-time from another date-time object.
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', `
- This is equivalent to `],
-					[/* reference */ 'r', `java.ZonedDateTime#from(java.time.temporal.TemporalAccessor)`],
-					[/* text */ 't', `.`]
-				]]
-			],
-			[/* parameters */
-				[/* parameter */ 'temporal', [/* parameter description */
-					[/* text */ 't', `the date-time object to convert, not null`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.time.DateTimeException', [/* throw description */
-					[/* text */ 't', `if unable to create the date-time`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `the ISO zoned date-time, not null`]
-			]
-		]],
-		[/* method */ 'localDateTime(java.time.temporal.TemporalAccessor)', [
-			[/* method description */
-				[/* text */ 't', `Obtains an ISO local date-time from another date-time object.
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', `
- This is equivalent to `],
-					[/* reference */ 'r', `java.LocalDateTime#from(java.time.temporal.TemporalAccessor)`],
-					[/* text */ 't', `.`]
-				]]
-			],
-			[/* parameters */
-				[/* parameter */ 'temporal', [/* parameter description */
-					[/* text */ 't', `the date-time object to convert, not null`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.time.DateTimeException', [/* throw description */
-					[/* text */ 't', `if unable to create the date-time`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `the ISO local date-time, not null`]
-			]
-		]],
-		[/* method */ 'epochSecond(int,int,int,int,int,int,java.time.ZoneOffset)', [
-			[/* method description */
-				[/* text */ 't', `Gets the number of seconds from the epoch of 1970-01-01T00:00:00Z.
- `],
 				[/* block */ 'b', `
- The number of seconds is calculated using the year,
- month, day-of-month, hour, minute, second, and zoneOffset.`]
+ Using this method will prevent the ability to use an alternate clock for testing
+ because the clock is hard-coded.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'zone', [/* parameter description */
+					[/* text */ 't', `the zone ID to use, not null`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.time.DateTimeException', [/* throw description */
+					[/* text */ 't', `if unable to create the date`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `the current ISO local date using the system clock, not null`]
+			]
+		]],
+		[/* method */ 'dateYearDay(int,int)', [
+			[/* method description */
+				[/* text */ 't', `Obtains an ISO local date from the proleptic-year and day-of-year fields.
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', `
+ This is equivalent to `],
+					[/* reference */ 'r', `java.LocalDate#ofYearDay(int,int)`],
+					[/* text */ 't', `.`]
+				]]
 			],
 			[/* parameters */
 				[/* parameter */ 'prolepticYear', [/* parameter description */
-					[/* text */ 't', `the year, from MIN_YEAR to MAX_YEAR`]
+					[/* text */ 't', `the ISO proleptic-year`]
 				]],
-				[/* parameter */ 'month', [/* parameter description */
-					[/* text */ 't', `the month-of-year, from 1 to 12`]
-				]],
-				[/* parameter */ 'dayOfMonth', [/* parameter description */
-					[/* text */ 't', `the day-of-month, from 1 to 31`]
-				]],
-				[/* parameter */ 'hour', [/* parameter description */
-					[/* text */ 't', `the hour-of-day, from 0 to 23`]
-				]],
-				[/* parameter */ 'minute', [/* parameter description */
-					[/* text */ 't', `the minute-of-hour, from 0 to 59`]
-				]],
-				[/* parameter */ 'second', [/* parameter description */
-					[/* text */ 't', `the second-of-minute, from 0 to 59`]
-				]],
-				[/* parameter */ 'zoneOffset', [/* parameter description */
-					[/* text */ 't', `the zone offset, not null`]
+				[/* parameter */ 'dayOfYear', [/* parameter description */
+					[/* text */ 't', `the ISO day-of-year`]
 				]]
 			],
 			[/* throws */
 				[/* throw */ 'java.time.DateTimeException', [/* throw description */
-					[/* text */ 't', `if the value of any argument is out of range,
-         or if the day-of-month is invalid for the month-of-year`]
+					[/* text */ 't', `if unable to create the date`]
 				]]
 			],
 			[/* return description */
-				[/* text */ 't', `the number of seconds relative to 1970-01-01T00:00:00Z, may be negative`]
+				[/* text */ 't', `the ISO local date, not null`]
 			]
 		]],
-		[/* method */ 'eraOf(int)', [
+		[/* method */ 'dateYearDay(java.time.chrono.Era,int,int)', [
 			[/* method description */
-				[/* block */ 'b', [
-					[/* text */ 't', `Creates the chronology era object from the numeric value.
- `],
-					[/* block */ 'b', `
- The era is, conceptually, the largest division of the time-line.
- Most calendar systems have a single epoch dividing the time-line into two eras.
- However, some have multiple eras, such as one for the reign of each leader.
- The exact meaning is determined by the chronology according to the following constraints.
- `],
-					[/* block */ 'b', `
- The era in use at 1970-01-01 must have the value 1.
- Later eras must have sequentially higher values.
- Earlier eras must have sequentially lower values.
- Each chronology must refer to an enum or similar singleton to provide the era values.
- `],
-					[/* block */ 'b', `
- This method returns the singleton era of the correct type for the specified era value.`]
-				]]
+				[/* text */ 't', `Obtains an ISO local date from the era, year-of-era and day-of-year fields.`]
 			],
 			[/* parameters */
-				[/* parameter */ 'eraValue', [/* parameter description */
-					[/* text */ 't', `the era value`]
+				[/* parameter */ 'era', [/* parameter description */
+					[/* text */ 't', `the ISO era, not null`]
+				]],
+				[/* parameter */ 'yearOfEra', [/* parameter description */
+					[/* text */ 't', `the ISO year-of-era`]
+				]],
+				[/* parameter */ 'dayOfYear', [/* parameter description */
+					[/* text */ 't', `the ISO day-of-year`]
 				]]
 			],
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the calendar system era, not null`]
-			]
-		]],
-		[/* method */ 'eras()', [
-			[/* method description */
-				[/* block */ 'b', [
-					[/* text */ 't', `Gets the list of eras for the chronology.
- `],
-					[/* block */ 'b', `
- Most calendar systems have an era, within which the year has meaning.
- If the calendar system does not support the concept of eras, an empty
- list must be returned.`]
+			[/* throws */
+				[/* throw */ 'java.time.DateTimeException', [/* throw description */
+					[/* text */ 't', `if unable to create the date`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
 			[/* return description */
-				[/* text */ 't', `the list of eras for the chronology, may be immutable, not null`]
+				[/* text */ 't', `the ISO local date, not null`]
 			]
 		]],
 		[/* method */ 'resolveDate(java.util.Map,java.time.format.ResolverStyle)', [
@@ -831,6 +661,31 @@ DocsCollector.collect('java.time.chrono.IsoChronology', [
 				[/* text */ 't', `the resolved date, null if insufficient information to create a date`]
 			]
 		]],
+		[/* method */ 'localDateTime(java.time.temporal.TemporalAccessor)', [
+			[/* method description */
+				[/* text */ 't', `Obtains an ISO local date-time from another date-time object.
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', `
+ This is equivalent to `],
+					[/* reference */ 'r', `java.LocalDateTime#from(java.time.temporal.TemporalAccessor)`],
+					[/* text */ 't', `.`]
+				]]
+			],
+			[/* parameters */
+				[/* parameter */ 'temporal', [/* parameter description */
+					[/* text */ 't', `the date-time object to convert, not null`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.time.DateTimeException', [/* throw description */
+					[/* text */ 't', `if unable to create the date-time`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `the ISO local date-time, not null`]
+			]
+		]],
 		[/* method */ 'period(int,int,int)', [
 			[/* method description */
 				[/* text */ 't', `Obtains a period for this chronology based on years, months and days.
@@ -857,6 +712,151 @@ DocsCollector.collect('java.time.chrono.IsoChronology', [
 			/* throws */ UDF,
 			[/* return description */
 				[/* text */ 't', `the ISO period, not null`]
+			]
+		]],
+		[/* method */ 'range(java.time.temporal.ChronoField)', [
+			[/* method description */
+				[/* block */ 'b', [
+					[/* text */ 't', `Gets the range of valid values for the specified field.
+ `],
+					[/* block */ 'b', [
+						[/* text */ 't', `
+ All fields can be expressed as a `],
+						[/* inline code block */ 'i', `long`],
+						[/* text */ 't', ` integer.
+ This method returns an object that describes the valid range for that value.
+ `]
+					]],
+					[/* block */ 'b', `
+ Note that the result only describes the minimum and maximum valid values
+ and it is important not to read too much into them. For example, there
+ could be values within the range that are invalid for the field.
+ `],
+					[/* block */ 'b', `
+ This method will return a result whether or not the chronology supports the field.`]
+				]]
+			],
+			[/* parameters */
+				[/* parameter */ 'field', [/* parameter description */
+					[/* text */ 't', `the field to get the range for, not null`]
+				]]
+			],
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the range of valid values for the field, not null`]
+			]
+		]],
+		[/* method */ 'zonedDateTime(java.time.Instant,java.time.ZoneId)', [
+			[/* method description */
+				[/* text */ 't', `Obtains an ISO zoned date-time in this chronology from an `],
+				[/* inline code block */ 'i', `Instant`],
+				[/* text */ 't', `.
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', `
+ This is equivalent to `],
+					[/* reference */ 'r', `java.ZonedDateTime#ofInstant(java.time.Instant,java.time.ZoneId)`],
+					[/* text */ 't', `.`]
+				]]
+			],
+			[/* parameters */
+				[/* parameter */ 'instant', [/* parameter description */
+					[/* text */ 't', `the instant to create the date-time from, not null`]
+				]],
+				[/* parameter */ 'zone', [/* parameter description */
+					[/* text */ 't', `the time-zone, not null`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.time.DateTimeException', [/* throw description */
+					[/* text */ 't', `if the result exceeds the supported range`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `the zoned date-time, not null`]
+			]
+		]],
+		[/* method */ 'zonedDateTime(java.time.temporal.TemporalAccessor)', [
+			[/* method description */
+				[/* text */ 't', `Obtains an ISO zoned date-time from another date-time object.
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', `
+ This is equivalent to `],
+					[/* reference */ 'r', `java.ZonedDateTime#from(java.time.temporal.TemporalAccessor)`],
+					[/* text */ 't', `.`]
+				]]
+			],
+			[/* parameters */
+				[/* parameter */ 'temporal', [/* parameter description */
+					[/* text */ 't', `the date-time object to convert, not null`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.time.DateTimeException', [/* throw description */
+					[/* text */ 't', `if unable to create the date-time`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `the ISO zoned date-time, not null`]
+			]
+		]],
+		[/* method */ 'eras()', [
+			[/* method description */
+				[/* block */ 'b', [
+					[/* text */ 't', `Gets the list of eras for the chronology.
+ `],
+					[/* block */ 'b', `
+ Most calendar systems have an era, within which the year has meaning.
+ If the calendar system does not support the concept of eras, an empty
+ list must be returned.`]
+				]]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the list of eras for the chronology, may be immutable, not null`]
+			]
+		]],
+		[/* method */ 'epochSecond(int,int,int,int,int,int,java.time.ZoneOffset)', [
+			[/* method description */
+				[/* text */ 't', `Gets the number of seconds from the epoch of 1970-01-01T00:00:00Z.
+ `],
+				[/* block */ 'b', `
+ The number of seconds is calculated using the year,
+ month, day-of-month, hour, minute, second, and zoneOffset.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'prolepticYear', [/* parameter description */
+					[/* text */ 't', `the year, from MIN_YEAR to MAX_YEAR`]
+				]],
+				[/* parameter */ 'month', [/* parameter description */
+					[/* text */ 't', `the month-of-year, from 1 to 12`]
+				]],
+				[/* parameter */ 'dayOfMonth', [/* parameter description */
+					[/* text */ 't', `the day-of-month, from 1 to 31`]
+				]],
+				[/* parameter */ 'hour', [/* parameter description */
+					[/* text */ 't', `the hour-of-day, from 0 to 23`]
+				]],
+				[/* parameter */ 'minute', [/* parameter description */
+					[/* text */ 't', `the minute-of-hour, from 0 to 59`]
+				]],
+				[/* parameter */ 'second', [/* parameter description */
+					[/* text */ 't', `the second-of-minute, from 0 to 59`]
+				]],
+				[/* parameter */ 'zoneOffset', [/* parameter description */
+					[/* text */ 't', `the zone offset, not null`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.time.DateTimeException', [/* throw description */
+					[/* text */ 't', `if the value of any argument is out of range,
+         or if the day-of-month is invalid for the month-of-year`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `the number of seconds relative to 1970-01-01T00:00:00Z, may be negative`]
 			]
 		]]
 	],

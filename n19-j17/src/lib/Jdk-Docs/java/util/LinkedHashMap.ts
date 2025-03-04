@@ -256,36 +256,6 @@ DocsCollector.collect('java.util.LinkedHashMap', [
 	],
 	/* fields */ UDF,
 	[/* constructors */
-		[/* constructor */ '<init>(int,float,boolean)', [
-			[/* constructor description */
-				[/* text */ 't', `Constructs an empty `],
-				[/* inline code block */ 'i', `LinkedHashMap`],
-				[/* text */ 't', ` instance with the
- specified initial capacity, load factor and ordering mode.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'initialCapacity', [/* parameter description */
-					[/* text */ 't', `the initial capacity`]
-				]],
-				[/* parameter */ 'loadFactor', [/* parameter description */
-					[/* text */ 't', `the load factor`]
-				]],
-				[/* parameter */ 'accessOrder', [/* parameter description */
-					[/* text */ 't', `the ordering mode - `],
-					[/* inline code block */ 'i', `true`],
-					[/* text */ 't', ` for
-         access-order, `],
-					[/* inline code block */ 'i', `false`],
-					[/* text */ 't', ` for insertion-order`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
-					[/* text */ 't', `if the initial capacity is negative
-         or the load factor is nonpositive`]
-				]]
-			]
-		]],
 		[/* constructor */ '<init>()', [
 			[/* constructor description */
 				[/* text */ 't', `Constructs an empty insertion-ordered `],
@@ -336,6 +306,36 @@ DocsCollector.collect('java.util.LinkedHashMap', [
 				]]
 			]
 		]],
+		[/* constructor */ '<init>(int,float,boolean)', [
+			[/* constructor description */
+				[/* text */ 't', `Constructs an empty `],
+				[/* inline code block */ 'i', `LinkedHashMap`],
+				[/* text */ 't', ` instance with the
+ specified initial capacity, load factor and ordering mode.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'initialCapacity', [/* parameter description */
+					[/* text */ 't', `the initial capacity`]
+				]],
+				[/* parameter */ 'loadFactor', [/* parameter description */
+					[/* text */ 't', `the load factor`]
+				]],
+				[/* parameter */ 'accessOrder', [/* parameter description */
+					[/* text */ 't', `the ordering mode - `],
+					[/* inline code block */ 'i', `true`],
+					[/* text */ 't', ` for
+         access-order, `],
+					[/* inline code block */ 'i', `false`],
+					[/* text */ 't', ` for insertion-order`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
+					[/* text */ 't', `if the initial capacity is negative
+         or the load factor is nonpositive`]
+				]]
+			]
+		]],
 		[/* constructor */ '<init>(java.util.Map)', [
 			[/* constructor description */
 				[/* text */ 't', `Constructs an insertion-ordered `],
@@ -360,229 +360,6 @@ DocsCollector.collect('java.util.LinkedHashMap', [
 		]]
 	],
 	[/* methods */
-		[/* method */ 'get(java.lang.Object)', [
-			[/* method description */
-				[/* text */ 't', `Returns the value to which the specified key is mapped,
- or `],
-				[/* inline code block */ 'i', `null`],
-				[/* text */ 't', ` if this map contains no mapping for the key.
-
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', `More formally, if this map contains a mapping from a key
- `],
-					[/* inline code block */ 'i', `k`],
-					[/* text */ 't', ` to a value `],
-					[/* inline code block */ 'i', `v`],
-					[/* text */ 't', ` such that `],
-					[/* inline code block */ 'i', `(key==null ? k==null : key.equals(k))`],
-					[/* text */ 't', `, then this method returns `],
-					[/* inline code block */ 'i', `v`],
-					[/* text */ 't', `; otherwise
- it returns `],
-					[/* inline code block */ 'i', `null`],
-					[/* text */ 't', `.  (There can be at most one such mapping.)
-
- `]
-				]],
-				[/* block */ 'b', [
-					[/* text */ 't', `A return value of `],
-					[/* inline code block */ 'i', `null`],
-					[/* text */ 't', ` does not `],
-					[/* text */ 't', `necessarily`],
-					[/* text */ 't', `
- indicate that the map contains no mapping for the key; it's also
- possible that the map explicitly maps the key to `],
-					[/* inline code block */ 'i', `null`],
-					[/* text */ 't', `.
- The `],
-					[/* reference */ 'r', `.HashMap#containsKey(java.lang.Object)`],
-					[/* text */ 't', ` operation may be used to
- distinguish these two cases.`]
-				]]
-			],
-			[/* parameters */
-				[/* parameter */ 'key', [/* parameter description */
-					[/* text */ 't', `the key whose associated value is to be returned`]
-				]]
-			],
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the value to which the specified key is mapped, or
-         `],
-				[/* inline code block */ 'i', `null`],
-				[/* text */ 't', ` if this map contains no mapping for the key`]
-			]
-		]],
-		[/* method */ 'values()', [
-			[/* method description */
-				[/* text */ 't', `Returns a `],
-				[/* reference */ 'r', `java.util.Collection`],
-				[/* text */ 't', ` view of the values contained in this map.
- The collection is backed by the map, so changes to the map are
- reflected in the collection, and vice-versa.  If the map is
- modified while an iteration over the collection is in progress
- (except through the iterator's own `],
-				[/* inline code block */ 'i', `remove`],
-				[/* text */ 't', ` operation),
- the results of the iteration are undefined.  The collection
- supports element removal, which removes the corresponding
- mapping from the map, via the `],
-				[/* inline code block */ 'i', `Iterator.remove`],
-				[/* text */ 't', `,
- `],
-				[/* inline code block */ 'i', `Collection.remove`],
-				[/* text */ 't', `, `],
-				[/* inline code block */ 'i', `removeAll`],
-				[/* text */ 't', `,
- `],
-				[/* inline code block */ 'i', `retainAll`],
-				[/* text */ 't', ` and `],
-				[/* inline code block */ 'i', `clear`],
-				[/* text */ 't', ` operations.  It does not
- support the `],
-				[/* inline code block */ 'i', `add`],
-				[/* text */ 't', ` or `],
-				[/* inline code block */ 'i', `addAll`],
-				[/* text */ 't', ` operations.
- Its `],
-				[/* reference */ 'r', `java.util.Spliterator`],
-				[/* text */ 't', ` typically provides faster sequential
- performance but much poorer parallel performance than that of
- `],
-				[/* inline code block */ 'i', `HashMap`],
-				[/* text */ 't', `.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `a view of the values contained in this map`]
-			]
-		]],
-		[/* method */ 'clear()', [
-			[/* method description */
-				[/* text */ 't', `Removes all of the mappings from this map.
- The map will be empty after this call returns.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			/* return */ UDF
-		]],
-		[/* method */ 'replaceAll(java.util.function.BiFunction)', UDF],
-		[/* method */ 'entrySet()', [
-			[/* method description */
-				[/* text */ 't', `Returns a `],
-				[/* reference */ 'r', `java.util.Set`],
-				[/* text */ 't', ` view of the mappings contained in this map.
- The set is backed by the map, so changes to the map are
- reflected in the set, and vice-versa.  If the map is modified
- while an iteration over the set is in progress (except through
- the iterator's own `],
-				[/* inline code block */ 'i', `remove`],
-				[/* text */ 't', ` operation, or through the
- `],
-				[/* inline code block */ 'i', `setValue`],
-				[/* text */ 't', ` operation on a map entry returned by the
- iterator) the results of the iteration are undefined.  The set
- supports element removal, which removes the corresponding
- mapping from the map, via the `],
-				[/* inline code block */ 'i', `Iterator.remove`],
-				[/* text */ 't', `,
- `],
-				[/* inline code block */ 'i', `Set.remove`],
-				[/* text */ 't', `, `],
-				[/* inline code block */ 'i', `removeAll`],
-				[/* text */ 't', `, `],
-				[/* inline code block */ 'i', `retainAll`],
-				[/* text */ 't', ` and
- `],
-				[/* inline code block */ 'i', `clear`],
-				[/* text */ 't', ` operations.  It does not support the
- `],
-				[/* inline code block */ 'i', `add`],
-				[/* text */ 't', ` or `],
-				[/* inline code block */ 'i', `addAll`],
-				[/* text */ 't', ` operations.
- Its `],
-				[/* reference */ 'r', `java.util.Spliterator`],
-				[/* text */ 't', ` typically provides faster sequential
- performance but much poorer parallel performance than that of
- `],
-				[/* inline code block */ 'i', `HashMap`],
-				[/* text */ 't', `.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `a set view of the mappings contained in this map`]
-			]
-		]],
-		[/* method */ 'forEach(java.util.function.BiConsumer)', UDF],
-		[/* method */ 'keySet()', [
-			[/* method description */
-				[/* text */ 't', `Returns a `],
-				[/* reference */ 'r', `java.util.Set`],
-				[/* text */ 't', ` view of the keys contained in this map.
- The set is backed by the map, so changes to the map are
- reflected in the set, and vice-versa.  If the map is modified
- while an iteration over the set is in progress (except through
- the iterator's own `],
-				[/* inline code block */ 'i', `remove`],
-				[/* text */ 't', ` operation), the results of
- the iteration are undefined.  The set supports element removal,
- which removes the corresponding mapping from the map, via the
- `],
-				[/* inline code block */ 'i', `Iterator.remove`],
-				[/* text */ 't', `, `],
-				[/* inline code block */ 'i', `Set.remove`],
-				[/* text */ 't', `,
- `],
-				[/* inline code block */ 'i', `removeAll`],
-				[/* text */ 't', `, `],
-				[/* inline code block */ 'i', `retainAll`],
-				[/* text */ 't', `, and `],
-				[/* inline code block */ 'i', `clear`],
-				[/* text */ 't', `
- operations.  It does not support the `],
-				[/* inline code block */ 'i', `add`],
-				[/* text */ 't', ` or `],
-				[/* inline code block */ 'i', `addAll`],
-				[/* text */ 't', `
- operations.
- Its `],
-				[/* reference */ 'r', `java.util.Spliterator`],
-				[/* text */ 't', ` typically provides faster sequential
- performance but much poorer parallel performance than that of
- `],
-				[/* inline code block */ 'i', `HashMap`],
-				[/* text */ 't', `.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `a set view of the keys contained in this map`]
-			]
-		]],
-		[/* method */ 'containsValue(java.lang.Object)', [
-			[/* method description */
-				[/* text */ 't', `Returns `],
-				[/* inline code block */ 'i', `true`],
-				[/* text */ 't', ` if this map maps one or more keys to the
- specified value.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'value', [/* parameter description */
-					[/* text */ 't', `value whose presence in this map is to be tested`]
-				]]
-			],
-			/* throws */ UDF,
-			[/* return description */
-				[/* inline code block */ 'i', `true`],
-				[/* text */ 't', ` if this map maps one or more keys to the
-         specified value`]
-			]
-		]],
-		[/* method */ 'getOrDefault(java.lang.Object,java.lang.Object)', UDF],
 		[/* method */ 'removeEldestEntry(java.util.Map.Entry)', [
 			[/* method description */
 				[/* text */ 't', `Returns `],
@@ -662,6 +439,229 @@ DocsCollector.collect('java.util.LinkedHashMap', [
 				[/* inline code block */ 'i', `false`],
 				[/* text */ 't', ` if it should be retained.`]
 			]
-		]]
+		]],
+		[/* method */ 'containsValue(java.lang.Object)', [
+			[/* method description */
+				[/* text */ 't', `Returns `],
+				[/* inline code block */ 'i', `true`],
+				[/* text */ 't', ` if this map maps one or more keys to the
+ specified value.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'value', [/* parameter description */
+					[/* text */ 't', `value whose presence in this map is to be tested`]
+				]]
+			],
+			/* throws */ UDF,
+			[/* return description */
+				[/* inline code block */ 'i', `true`],
+				[/* text */ 't', ` if this map maps one or more keys to the
+         specified value`]
+			]
+		]],
+		[/* method */ 'values()', [
+			[/* method description */
+				[/* text */ 't', `Returns a `],
+				[/* reference */ 'r', `java.util.Collection`],
+				[/* text */ 't', ` view of the values contained in this map.
+ The collection is backed by the map, so changes to the map are
+ reflected in the collection, and vice-versa.  If the map is
+ modified while an iteration over the collection is in progress
+ (except through the iterator's own `],
+				[/* inline code block */ 'i', `remove`],
+				[/* text */ 't', ` operation),
+ the results of the iteration are undefined.  The collection
+ supports element removal, which removes the corresponding
+ mapping from the map, via the `],
+				[/* inline code block */ 'i', `Iterator.remove`],
+				[/* text */ 't', `,
+ `],
+				[/* inline code block */ 'i', `Collection.remove`],
+				[/* text */ 't', `, `],
+				[/* inline code block */ 'i', `removeAll`],
+				[/* text */ 't', `,
+ `],
+				[/* inline code block */ 'i', `retainAll`],
+				[/* text */ 't', ` and `],
+				[/* inline code block */ 'i', `clear`],
+				[/* text */ 't', ` operations.  It does not
+ support the `],
+				[/* inline code block */ 'i', `add`],
+				[/* text */ 't', ` or `],
+				[/* inline code block */ 'i', `addAll`],
+				[/* text */ 't', ` operations.
+ Its `],
+				[/* reference */ 'r', `java.util.Spliterator`],
+				[/* text */ 't', ` typically provides faster sequential
+ performance but much poorer parallel performance than that of
+ `],
+				[/* inline code block */ 'i', `HashMap`],
+				[/* text */ 't', `.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `a view of the values contained in this map`]
+			]
+		]],
+		[/* method */ 'entrySet()', [
+			[/* method description */
+				[/* text */ 't', `Returns a `],
+				[/* reference */ 'r', `java.util.Set`],
+				[/* text */ 't', ` view of the mappings contained in this map.
+ The set is backed by the map, so changes to the map are
+ reflected in the set, and vice-versa.  If the map is modified
+ while an iteration over the set is in progress (except through
+ the iterator's own `],
+				[/* inline code block */ 'i', `remove`],
+				[/* text */ 't', ` operation, or through the
+ `],
+				[/* inline code block */ 'i', `setValue`],
+				[/* text */ 't', ` operation on a map entry returned by the
+ iterator) the results of the iteration are undefined.  The set
+ supports element removal, which removes the corresponding
+ mapping from the map, via the `],
+				[/* inline code block */ 'i', `Iterator.remove`],
+				[/* text */ 't', `,
+ `],
+				[/* inline code block */ 'i', `Set.remove`],
+				[/* text */ 't', `, `],
+				[/* inline code block */ 'i', `removeAll`],
+				[/* text */ 't', `, `],
+				[/* inline code block */ 'i', `retainAll`],
+				[/* text */ 't', ` and
+ `],
+				[/* inline code block */ 'i', `clear`],
+				[/* text */ 't', ` operations.  It does not support the
+ `],
+				[/* inline code block */ 'i', `add`],
+				[/* text */ 't', ` or `],
+				[/* inline code block */ 'i', `addAll`],
+				[/* text */ 't', ` operations.
+ Its `],
+				[/* reference */ 'r', `java.util.Spliterator`],
+				[/* text */ 't', ` typically provides faster sequential
+ performance but much poorer parallel performance than that of
+ `],
+				[/* inline code block */ 'i', `HashMap`],
+				[/* text */ 't', `.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `a set view of the mappings contained in this map`]
+			]
+		]],
+		[/* method */ 'keySet()', [
+			[/* method description */
+				[/* text */ 't', `Returns a `],
+				[/* reference */ 'r', `java.util.Set`],
+				[/* text */ 't', ` view of the keys contained in this map.
+ The set is backed by the map, so changes to the map are
+ reflected in the set, and vice-versa.  If the map is modified
+ while an iteration over the set is in progress (except through
+ the iterator's own `],
+				[/* inline code block */ 'i', `remove`],
+				[/* text */ 't', ` operation), the results of
+ the iteration are undefined.  The set supports element removal,
+ which removes the corresponding mapping from the map, via the
+ `],
+				[/* inline code block */ 'i', `Iterator.remove`],
+				[/* text */ 't', `, `],
+				[/* inline code block */ 'i', `Set.remove`],
+				[/* text */ 't', `,
+ `],
+				[/* inline code block */ 'i', `removeAll`],
+				[/* text */ 't', `, `],
+				[/* inline code block */ 'i', `retainAll`],
+				[/* text */ 't', `, and `],
+				[/* inline code block */ 'i', `clear`],
+				[/* text */ 't', `
+ operations.  It does not support the `],
+				[/* inline code block */ 'i', `add`],
+				[/* text */ 't', ` or `],
+				[/* inline code block */ 'i', `addAll`],
+				[/* text */ 't', `
+ operations.
+ Its `],
+				[/* reference */ 'r', `java.util.Spliterator`],
+				[/* text */ 't', ` typically provides faster sequential
+ performance but much poorer parallel performance than that of
+ `],
+				[/* inline code block */ 'i', `HashMap`],
+				[/* text */ 't', `.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `a set view of the keys contained in this map`]
+			]
+		]],
+		[/* method */ 'get(java.lang.Object)', [
+			[/* method description */
+				[/* text */ 't', `Returns the value to which the specified key is mapped,
+ or `],
+				[/* inline code block */ 'i', `null`],
+				[/* text */ 't', ` if this map contains no mapping for the key.
+
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', `More formally, if this map contains a mapping from a key
+ `],
+					[/* inline code block */ 'i', `k`],
+					[/* text */ 't', ` to a value `],
+					[/* inline code block */ 'i', `v`],
+					[/* text */ 't', ` such that `],
+					[/* inline code block */ 'i', `(key==null ? k==null : key.equals(k))`],
+					[/* text */ 't', `, then this method returns `],
+					[/* inline code block */ 'i', `v`],
+					[/* text */ 't', `; otherwise
+ it returns `],
+					[/* inline code block */ 'i', `null`],
+					[/* text */ 't', `.  (There can be at most one such mapping.)
+
+ `]
+				]],
+				[/* block */ 'b', [
+					[/* text */ 't', `A return value of `],
+					[/* inline code block */ 'i', `null`],
+					[/* text */ 't', ` does not `],
+					[/* text */ 't', `necessarily`],
+					[/* text */ 't', `
+ indicate that the map contains no mapping for the key; it's also
+ possible that the map explicitly maps the key to `],
+					[/* inline code block */ 'i', `null`],
+					[/* text */ 't', `.
+ The `],
+					[/* reference */ 'r', `.HashMap#containsKey(java.lang.Object)`],
+					[/* text */ 't', ` operation may be used to
+ distinguish these two cases.`]
+				]]
+			],
+			[/* parameters */
+				[/* parameter */ 'key', [/* parameter description */
+					[/* text */ 't', `the key whose associated value is to be returned`]
+				]]
+			],
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the value to which the specified key is mapped, or
+         `],
+				[/* inline code block */ 'i', `null`],
+				[/* text */ 't', ` if this map contains no mapping for the key`]
+			]
+		]],
+		[/* method */ 'getOrDefault(java.lang.Object,java.lang.Object)', UDF],
+		[/* method */ 'clear()', [
+			[/* method description */
+				[/* text */ 't', `Removes all of the mappings from this map.
+ The map will be empty after this call returns.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			/* return */ UDF
+		]],
+		[/* method */ 'forEach(java.util.function.BiConsumer)', UDF],
+		[/* method */ 'replaceAll(java.util.function.BiFunction)', UDF]
 	],
 ]);

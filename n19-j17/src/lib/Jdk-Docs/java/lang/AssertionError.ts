@@ -34,11 +34,38 @@ DocsCollector.collect('java.lang.AssertionError', [
 	],
 	/* fields */ UDF,
 	[/* constructors */
-		[/* constructor */ '<init>(int)', [
+		[/* constructor */ '<init>()', [
+			[/* constructor description */
+				[/* text */ 't', `Constructs an AssertionError with no detail message.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF
+		]],
+		[/* constructor */ '<init>(boolean)', [
 			[/* constructor description */
 				[/* text */ 't', `Constructs an AssertionError with its detail message derived
  from the specified `],
-				[/* inline code block */ 'i', `int`],
+				[/* inline code block */ 'i', `boolean`],
+				[/* text */ 't', `, which is converted to
+ a string as defined in section `],
+				[/* external link */ 'a', `https://docs.oracle.com/javase/specs/jls/se17/html/jls-5.html#jls-5.1.11`, `5.1.11`],
+				[/* text */ 't', ` of
+ `],
+				[/* text */ 't', `The Java Language Specification`],
+				[/* text */ 't', `.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'detailMessage', [/* parameter description */
+					[/* text */ 't', `value to be used in constructing detail message`]
+				]]
+			],
+			/* throws */ UDF
+		]],
+		[/* constructor */ '<init>(char)', [
+			[/* constructor description */
+				[/* text */ 't', `Constructs an AssertionError with its detail message derived
+ from the specified `],
+				[/* inline code block */ 'i', `char`],
 				[/* text */ 't', `, which is converted to a
  string as defined in section `],
 				[/* external link */ 'a', `https://docs.oracle.com/javase/specs/jls/se17/html/jls-5.html#jls-5.1.11`, `5.1.11`],
@@ -54,11 +81,11 @@ DocsCollector.collect('java.lang.AssertionError', [
 			],
 			/* throws */ UDF
 		]],
-		[/* constructor */ '<init>(long)', [
+		[/* constructor */ '<init>(double)', [
 			[/* constructor description */
 				[/* text */ 't', `Constructs an AssertionError with its detail message derived
  from the specified `],
-				[/* inline code block */ 'i', `long`],
+				[/* inline code block */ 'i', `double`],
 				[/* text */ 't', `, which is converted to a
  string as defined in section `],
 				[/* external link */ 'a', `https://docs.oracle.com/javase/specs/jls/se17/html/jls-5.html#jls-5.1.11`, `5.1.11`],
@@ -94,11 +121,11 @@ DocsCollector.collect('java.lang.AssertionError', [
 			],
 			/* throws */ UDF
 		]],
-		[/* constructor */ '<init>(double)', [
+		[/* constructor */ '<init>(int)', [
 			[/* constructor description */
 				[/* text */ 't', `Constructs an AssertionError with its detail message derived
  from the specified `],
-				[/* inline code block */ 'i', `double`],
+				[/* inline code block */ 'i', `int`],
 				[/* text */ 't', `, which is converted to a
  string as defined in section `],
 				[/* external link */ 'a', `https://docs.oracle.com/javase/specs/jls/se17/html/jls-5.html#jls-5.1.11`, `5.1.11`],
@@ -106,6 +133,34 @@ DocsCollector.collect('java.lang.AssertionError', [
  `],
 				[/* text */ 't', `The Java Language Specification`],
 				[/* text */ 't', `.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'detailMessage', [/* parameter description */
+					[/* text */ 't', `value to be used in constructing detail message`]
+				]]
+			],
+			/* throws */ UDF
+		]],
+		[/* constructor */ '<init>(java.lang.Object)', [
+			[/* constructor description */
+				[/* text */ 't', `Constructs an AssertionError with its detail message derived
+ from the specified object, which is converted to a string as
+ defined in section `],
+				[/* external link */ 'a', `https://docs.oracle.com/javase/specs/jls/se17/html/jls-5.html#jls-5.1.11`, `5.1.11`],
+				[/* text */ 't', ` of
+ `],
+				[/* text */ 't', `The Java Language Specification`],
+				[/* text */ 't', `.
+`],
+				[/* block */ 'b', [
+					[/* text */ 't', `
+ If the specified object is an instance of `],
+					[/* inline code block */ 'i', `Throwable`],
+					[/* text */ 't', `, it
+ becomes the `],
+					[/* text */ 't', `cause`],
+					[/* text */ 't', ` of the newly constructed assertion error.`]
+				]]
 			],
 			[/* parameters */
 				[/* parameter */ 'detailMessage', [/* parameter description */
@@ -144,66 +199,11 @@ DocsCollector.collect('java.lang.AssertionError', [
 			],
 			/* throws */ UDF
 		]],
-		[/* constructor */ '<init>()', [
-			[/* constructor description */
-				[/* text */ 't', `Constructs an AssertionError with no detail message.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF
-		]],
-		[/* constructor */ '<init>(java.lang.Object)', [
-			[/* constructor description */
-				[/* text */ 't', `Constructs an AssertionError with its detail message derived
- from the specified object, which is converted to a string as
- defined in section `],
-				[/* external link */ 'a', `https://docs.oracle.com/javase/specs/jls/se17/html/jls-5.html#jls-5.1.11`, `5.1.11`],
-				[/* text */ 't', ` of
- `],
-				[/* text */ 't', `The Java Language Specification`],
-				[/* text */ 't', `.
-`],
-				[/* block */ 'b', [
-					[/* text */ 't', `
- If the specified object is an instance of `],
-					[/* inline code block */ 'i', `Throwable`],
-					[/* text */ 't', `, it
- becomes the `],
-					[/* text */ 't', `cause`],
-					[/* text */ 't', ` of the newly constructed assertion error.`]
-				]]
-			],
-			[/* parameters */
-				[/* parameter */ 'detailMessage', [/* parameter description */
-					[/* text */ 't', `value to be used in constructing detail message`]
-				]]
-			],
-			/* throws */ UDF
-		]],
-		[/* constructor */ '<init>(boolean)', [
+		[/* constructor */ '<init>(long)', [
 			[/* constructor description */
 				[/* text */ 't', `Constructs an AssertionError with its detail message derived
  from the specified `],
-				[/* inline code block */ 'i', `boolean`],
-				[/* text */ 't', `, which is converted to
- a string as defined in section `],
-				[/* external link */ 'a', `https://docs.oracle.com/javase/specs/jls/se17/html/jls-5.html#jls-5.1.11`, `5.1.11`],
-				[/* text */ 't', ` of
- `],
-				[/* text */ 't', `The Java Language Specification`],
-				[/* text */ 't', `.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'detailMessage', [/* parameter description */
-					[/* text */ 't', `value to be used in constructing detail message`]
-				]]
-			],
-			/* throws */ UDF
-		]],
-		[/* constructor */ '<init>(char)', [
-			[/* constructor description */
-				[/* text */ 't', `Constructs an AssertionError with its detail message derived
- from the specified `],
-				[/* inline code block */ 'i', `char`],
+				[/* inline code block */ 'i', `long`],
 				[/* text */ 't', `, which is converted to a
  string as defined in section `],
 				[/* external link */ 'a', `https://docs.oracle.com/javase/specs/jls/se17/html/jls-5.html#jls-5.1.11`, `5.1.11`],

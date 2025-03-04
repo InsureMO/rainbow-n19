@@ -99,6 +99,52 @@ DocsCollector.collect('java.util.EnumSet', [
 				[/* text */ 't', `a copy of this set`]
 			]
 		]],
+		[/* method */ 'allOf(java.lang.Class)', [
+			[/* method description */
+				[/* text */ 't', `Creates an enum set containing all of the elements in the specified
+ element type.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'elementType', [/* parameter description */
+					[/* text */ 't', `the class object of the element type for this enum
+     set`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
+					[/* text */ 't', `if `],
+					[/* inline code block */ 'i', `elementType`],
+					[/* text */ 't', ` is null`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `An enum set containing all the elements in the specified type.`]
+			]
+		]],
+		[/* method */ 'complementOf(java.util.EnumSet)', [
+			[/* method description */
+				[/* text */ 't', `Creates an enum set with the same element type as the specified enum
+ set, initially containing all the elements of this type that are
+ `],
+				[/* text */ 't', `not`],
+				[/* text */ 't', ` contained in the specified set.`]
+			],
+			[/* parameters */
+				[/* parameter */ 's', [/* parameter description */
+					[/* text */ 't', `the enum set from whose complement to initialize this enum set`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
+					[/* text */ 't', `if `],
+					[/* inline code block */ 'i', `s`],
+					[/* text */ 't', ` is null`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `The complement of the specified set in this set`]
+			]
+		]],
 		[/* method */ 'copyOf(java.util.Collection)', [
 			[/* method description */
 				[/* text */ 't', `Creates an enum set initialized from the specified collection.  If
@@ -156,6 +202,80 @@ DocsCollector.collect('java.util.EnumSet', [
 				[/* text */ 't', `A copy of the specified enum set.`]
 			]
 		]],
+		[/* method */ 'noneOf(java.lang.Class)', [
+			[/* method description */
+				[/* text */ 't', `Creates an empty enum set with the specified element type.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'elementType', [/* parameter description */
+					[/* text */ 't', `the class object of the element type for this enum
+     set`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
+					[/* text */ 't', `if `],
+					[/* inline code block */ 'i', `elementType`],
+					[/* text */ 't', ` is null`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `An empty enum set of the specified type.`]
+			]
+		]],
+		[/* method */ 'of(java.lang.Enum)', [
+			[/* method description */
+				[/* text */ 't', `Creates an enum set initially containing the specified element.
+
+ Overloadings of this method exist to initialize an enum set with
+ one through five elements.  A sixth overloading is provided that
+ uses the varargs feature.  This overloading may be used to create
+ an enum set initially containing an arbitrary number of elements, but
+ is likely to run slower than the overloadings that do not use varargs.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'e', [/* parameter description */
+					[/* text */ 't', `the element that this set is to contain initially`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
+					[/* text */ 't', `if `],
+					[/* inline code block */ 'i', `e`],
+					[/* text */ 't', ` is null`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `an enum set initially containing the specified element`]
+			]
+		]],
+		[/* method */ 'of(java.lang.Enum,java.lang.Enum)', [
+			[/* method description */
+				[/* text */ 't', `Creates an enum set initially containing the specified elements.
+
+ Overloadings of this method exist to initialize an enum set with
+ one through five elements.  A sixth overloading is provided that
+ uses the varargs feature.  This overloading may be used to create
+ an enum set initially containing an arbitrary number of elements, but
+ is likely to run slower than the overloadings that do not use varargs.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'e1', [/* parameter description */
+					[/* text */ 't', `an element that this set is to contain initially`]
+				]],
+				[/* parameter */ 'e2', [/* parameter description */
+					[/* text */ 't', `another element that this set is to contain initially`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
+					[/* text */ 't', `if any parameters are null`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `an enum set initially containing the specified elements`]
+			]
+		]],
 		[/* method */ 'of(java.lang.Enum,java.lang.Enum,java.lang.Enum)', [
 			[/* method description */
 				[/* text */ 't', `Creates an enum set initially containing the specified elements.
@@ -174,33 +294,6 @@ DocsCollector.collect('java.util.EnumSet', [
 					[/* text */ 't', `another element that this set is to contain initially`]
 				]],
 				[/* parameter */ 'e3', [/* parameter description */
-					[/* text */ 't', `another element that this set is to contain initially`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
-					[/* text */ 't', `if any parameters are null`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `an enum set initially containing the specified elements`]
-			]
-		]],
-		[/* method */ 'of(java.lang.Enum,java.lang.Enum)', [
-			[/* method description */
-				[/* text */ 't', `Creates an enum set initially containing the specified elements.
-
- Overloadings of this method exist to initialize an enum set with
- one through five elements.  A sixth overloading is provided that
- uses the varargs feature.  This overloading may be used to create
- an enum set initially containing an arbitrary number of elements, but
- is likely to run slower than the overloadings that do not use varargs.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'e1', [/* parameter description */
-					[/* text */ 't', `an element that this set is to contain initially`]
-				]],
-				[/* parameter */ 'e2', [/* parameter description */
 					[/* text */ 't', `another element that this set is to contain initially`]
 				]]
 			],
@@ -246,33 +339,6 @@ DocsCollector.collect('java.util.EnumSet', [
 				[/* text */ 't', `an enum set initially containing the specified elements`]
 			]
 		]],
-		[/* method */ 'of(java.lang.Enum,java.lang.Enum...)', UDF],
-		[/* method */ 'of(java.lang.Enum)', [
-			[/* method description */
-				[/* text */ 't', `Creates an enum set initially containing the specified element.
-
- Overloadings of this method exist to initialize an enum set with
- one through five elements.  A sixth overloading is provided that
- uses the varargs feature.  This overloading may be used to create
- an enum set initially containing an arbitrary number of elements, but
- is likely to run slower than the overloadings that do not use varargs.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'e', [/* parameter description */
-					[/* text */ 't', `the element that this set is to contain initially`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
-					[/* text */ 't', `if `],
-					[/* inline code block */ 'i', `e`],
-					[/* text */ 't', ` is null`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `an enum set initially containing the specified element`]
-			]
-		]],
 		[/* method */ 'of(java.lang.Enum,java.lang.Enum,java.lang.Enum,java.lang.Enum,java.lang.Enum)', [
 			[/* method description */
 				[/* text */ 't', `Creates an enum set initially containing the specified elements.
@@ -309,27 +375,7 @@ DocsCollector.collect('java.util.EnumSet', [
 				[/* text */ 't', `an enum set initially containing the specified elements`]
 			]
 		]],
-		[/* method */ 'noneOf(java.lang.Class)', [
-			[/* method description */
-				[/* text */ 't', `Creates an empty enum set with the specified element type.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'elementType', [/* parameter description */
-					[/* text */ 't', `the class object of the element type for this enum
-     set`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
-					[/* text */ 't', `if `],
-					[/* inline code block */ 'i', `elementType`],
-					[/* text */ 't', ` is null`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `An empty enum set of the specified type.`]
-			]
-		]],
+		[/* method */ 'of(java.lang.Enum,java.lang.Enum...)', UDF],
 		[/* method */ 'range(java.lang.Enum,java.lang.Enum)', [
 			[/* method description */
 				[/* text */ 't', `Creates an enum set initially containing all of the elements in the
@@ -361,52 +407,6 @@ DocsCollector.collect('java.util.EnumSet', [
 			[/* return description */
 				[/* text */ 't', `an enum set initially containing all of the elements in the
          range defined by the two specified endpoints`]
-			]
-		]],
-		[/* method */ 'allOf(java.lang.Class)', [
-			[/* method description */
-				[/* text */ 't', `Creates an enum set containing all of the elements in the specified
- element type.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'elementType', [/* parameter description */
-					[/* text */ 't', `the class object of the element type for this enum
-     set`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
-					[/* text */ 't', `if `],
-					[/* inline code block */ 'i', `elementType`],
-					[/* text */ 't', ` is null`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `An enum set containing all the elements in the specified type.`]
-			]
-		]],
-		[/* method */ 'complementOf(java.util.EnumSet)', [
-			[/* method description */
-				[/* text */ 't', `Creates an enum set with the same element type as the specified enum
- set, initially containing all the elements of this type that are
- `],
-				[/* text */ 't', `not`],
-				[/* text */ 't', ` contained in the specified set.`]
-			],
-			[/* parameters */
-				[/* parameter */ 's', [/* parameter description */
-					[/* text */ 't', `the enum set from whose complement to initialize this enum set`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
-					[/* text */ 't', `if `],
-					[/* inline code block */ 'i', `s`],
-					[/* text */ 't', ` is null`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `The complement of the specified set in this set`]
 			]
 		]]
 	],

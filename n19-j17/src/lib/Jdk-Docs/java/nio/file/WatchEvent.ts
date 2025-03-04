@@ -29,6 +29,29 @@ DocsCollector.collect('java.nio.file.WatchEvent', [
 	/* fields */ UDF,
 	/* constructors */ UDF,
 	[/* methods */
+		[/* method */ 'count()', [
+			[/* method description */
+				[/* text */ 't', `Returns the event count. If the event count is greater than `],
+				[/* inline code block */ 'i', `1`],
+				[/* text */ 't', `
+ then this is a repeated event.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the event count`]
+			]
+		]],
+		[/* method */ 'kind()', [
+			[/* method description */
+				[/* text */ 't', `Returns the event kind.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the event kind`]
+			]
+		]],
 		[/* method */ 'context()', [
 			[/* method description */
 				[/* text */ 't', `Returns the context for the event.
@@ -57,29 +80,6 @@ DocsCollector.collect('java.nio.file.WatchEvent', [
 			[/* return description */
 				[/* text */ 't', `the event context; may be `],
 				[/* inline code block */ 'i', `null`]
-			]
-		]],
-		[/* method */ 'count()', [
-			[/* method description */
-				[/* text */ 't', `Returns the event count. If the event count is greater than `],
-				[/* inline code block */ 'i', `1`],
-				[/* text */ 't', `
- then this is a repeated event.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the event count`]
-			]
-		]],
-		[/* method */ 'kind()', [
-			[/* method description */
-				[/* text */ 't', `Returns the event kind.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the event kind`]
 			]
 		]]
 	],

@@ -30,7 +30,6 @@ DocsCollector.collect('java.util.UnknownFormatConversionException', [
 		]]
 	],
 	[/* methods */
-		[/* method */ 'getMessage()', UDF],
 		[/* method */ 'getConversion()', [
 			[/* method description */
 				[/* text */ 't', `Returns the unknown conversion.`]
@@ -40,6 +39,7 @@ DocsCollector.collect('java.util.UnknownFormatConversionException', [
 			[/* return description */
 				[/* text */ 't', `The unknown conversion.`]
 			]
-		]]
+		]],
+		[/* method */ 'getMessage()', UDF]
 	],
 ]);

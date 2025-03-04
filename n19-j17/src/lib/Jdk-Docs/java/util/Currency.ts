@@ -96,6 +96,188 @@ DocsCollector.collect('java.util.Currency', [
 	/* fields */ UDF,
 	/* constructors */ UDF,
 	[/* methods */
+		[/* method */ 'getDefaultFractionDigits()', [
+			[/* method description */
+				[/* text */ 't', `Gets the default number of fraction digits used with this currency.
+ Note that the number of fraction digits is the same as ISO 4217's
+ minor unit for the currency.
+ For example, the default number of fraction digits for the Euro is 2,
+ while for the Japanese Yen it's 0.
+ In the case of pseudo-currencies, such as IMF Special Drawing Rights,
+ -1 is returned.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the default number of fraction digits used with this currency`]
+			]
+		]],
+		[/* method */ 'getNumericCode()', [
+			[/* method description */
+				[/* text */ 't', `Returns the ISO 4217 numeric code of this currency.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the ISO 4217 numeric code of this currency`]
+			]
+		]],
+		[/* method */ 'getCurrencyCode()', [
+			[/* method description */
+				[/* text */ 't', `Gets the ISO 4217 currency code of this currency.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the ISO 4217 currency code of this currency.`]
+			]
+		]],
+		[/* method */ 'getDisplayName()', [
+			[/* method description */
+				[/* text */ 't', `Gets the name that is suitable for displaying this currency for
+ the default `],
+				[/* reference */ 'r', `.Locale.Category#DISPLAY`],
+				[/* text */ 't', ` locale.
+ If there is no suitable display name found
+ for the default locale, the ISO 4217 currency code is returned.
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', `
+ This is equivalent to calling
+ `],
+					[/* reference */ 'r', `#getDisplayName(java.util.Locale)`, `getDisplayName(Locale.getDefault(Locale.Category.DISPLAY))`],
+					[/* text */ 't', `.`]
+				]]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the display name of this currency for the default
+     `],
+				[/* reference */ 'r', `.Locale.Category#DISPLAY`],
+				[/* text */ 't', ` locale`]
+			]
+		]],
+		[/* method */ 'getDisplayName(java.util.Locale)', [
+			[/* method description */
+				[/* text */ 't', `Gets the name that is suitable for displaying this currency for
+ the specified locale.  If there is no suitable display name found
+ for the specified locale, the ISO 4217 currency code is returned.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'locale', [/* parameter description */
+					[/* text */ 't', `the locale for which a display name for this currency is
+ needed`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
+					[/* text */ 't', `if `],
+					[/* inline code block */ 'i', `locale`],
+					[/* text */ 't', ` is null`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `the display name of this currency for the specified locale`]
+			]
+		]],
+		[/* method */ 'getNumericCodeAsString()', [
+			[/* method description */
+				[/* text */ 't', `Returns the 3 digit ISO 4217 numeric code of this currency as a `],
+				[/* inline code block */ 'i', `String`],
+				[/* text */ 't', `.
+ Unlike `],
+				[/* reference */ 'r', `#getNumericCode()`, `getNumericCode()`],
+				[/* text */ 't', `, which returns the numeric code as `],
+				[/* inline code block */ 'i', `int`],
+				[/* text */ 't', `,
+ this method always returns the numeric code as a 3 digit string.
+ e.g. a numeric value of 32 would be returned as "032",
+ and a numeric value of 6 would be returned as "006".`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the 3 digit ISO 4217 numeric code of this currency as a `],
+				[/* inline code block */ 'i', `String`]
+			]
+		]],
+		[/* method */ 'getSymbol()', [
+			[/* method description */
+				[/* text */ 't', `Gets the symbol of this currency for the default
+ `],
+				[/* reference */ 'r', `.Locale.Category#DISPLAY`],
+				[/* text */ 't', ` locale.
+ For example, for the US Dollar, the symbol is "$" if the default
+ locale is the US, while for other locales it may be "US$". If no
+ symbol can be determined, the ISO 4217 currency code is returned.
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', `
+ If the default `],
+					[/* reference */ 'r', `.Locale.Category#DISPLAY`],
+					[/* text */ 't', ` locale
+ contains "rg" (region override)
+ `],
+					[/* reference */ 'r', `.Locale#def_locale_extension`],
+					[/* text */ 't', `,
+ the symbol returned from this method reflects
+ the value specified with that extension.
+ `]
+				]],
+				[/* block */ 'b', [
+					[/* text */ 't', `
+ This is equivalent to calling
+ `],
+					[/* reference */ 'r', `#getSymbol(java.util.Locale)`, `getSymbol(Locale.getDefault(Locale.Category.DISPLAY))`],
+					[/* text */ 't', `.`]
+				]]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the symbol of this currency for the default
+     `],
+				[/* reference */ 'r', `.Locale.Category#DISPLAY`],
+				[/* text */ 't', ` locale`]
+			]
+		]],
+		[/* method */ 'getSymbol(java.util.Locale)', [
+			[/* method description */
+				[/* text */ 't', `Gets the symbol of this currency for the specified locale.
+ For example, for the US Dollar, the symbol is "$" if the specified
+ locale is the US, while for other locales it may be "US$". If no
+ symbol can be determined, the ISO 4217 currency code is returned.
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', `
+ If the specified `],
+					[/* inline code block */ 'i', `locale`],
+					[/* text */ 't', ` contains "rg" (region override)
+ `],
+					[/* reference */ 'r', `.Locale#def_locale_extension`],
+					[/* text */ 't', `,
+ the symbol returned from this method reflects
+ the value specified with that extension.`]
+				]]
+			],
+			[/* parameters */
+				[/* parameter */ 'locale', [/* parameter description */
+					[/* text */ 't', `the locale for which a display name for this currency is
+ needed`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
+					[/* text */ 't', `if `],
+					[/* inline code block */ 'i', `locale`],
+					[/* text */ 't', ` is null`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `the symbol of this currency for the specified locale`]
+			]
+		]],
 		[/* method */ 'toString()', [
 			[/* method description */
 				[/* text */ 't', `Returns the ISO 4217 currency code of this currency.`]
@@ -201,157 +383,6 @@ DocsCollector.collect('java.util.Currency', [
 				[/* inline code block */ 'i', `null`]
 			]
 		]],
-		[/* method */ 'getDisplayName(java.util.Locale)', [
-			[/* method description */
-				[/* text */ 't', `Gets the name that is suitable for displaying this currency for
- the specified locale.  If there is no suitable display name found
- for the specified locale, the ISO 4217 currency code is returned.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'locale', [/* parameter description */
-					[/* text */ 't', `the locale for which a display name for this currency is
- needed`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
-					[/* text */ 't', `if `],
-					[/* inline code block */ 'i', `locale`],
-					[/* text */ 't', ` is null`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `the display name of this currency for the specified locale`]
-			]
-		]],
-		[/* method */ 'getDisplayName()', [
-			[/* method description */
-				[/* text */ 't', `Gets the name that is suitable for displaying this currency for
- the default `],
-				[/* reference */ 'r', `.Locale.Category#DISPLAY`],
-				[/* text */ 't', ` locale.
- If there is no suitable display name found
- for the default locale, the ISO 4217 currency code is returned.
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', `
- This is equivalent to calling
- `],
-					[/* reference */ 'r', `#getDisplayName(java.util.Locale)`, `getDisplayName(Locale.getDefault(Locale.Category.DISPLAY))`],
-					[/* text */ 't', `.`]
-				]]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the display name of this currency for the default
-     `],
-				[/* reference */ 'r', `.Locale.Category#DISPLAY`],
-				[/* text */ 't', ` locale`]
-			]
-		]],
-		[/* method */ 'getSymbol()', [
-			[/* method description */
-				[/* text */ 't', `Gets the symbol of this currency for the default
- `],
-				[/* reference */ 'r', `.Locale.Category#DISPLAY`],
-				[/* text */ 't', ` locale.
- For example, for the US Dollar, the symbol is "$" if the default
- locale is the US, while for other locales it may be "US$". If no
- symbol can be determined, the ISO 4217 currency code is returned.
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', `
- If the default `],
-					[/* reference */ 'r', `.Locale.Category#DISPLAY`],
-					[/* text */ 't', ` locale
- contains "rg" (region override)
- `],
-					[/* reference */ 'r', `.Locale#def_locale_extension`],
-					[/* text */ 't', `,
- the symbol returned from this method reflects
- the value specified with that extension.
- `]
-				]],
-				[/* block */ 'b', [
-					[/* text */ 't', `
- This is equivalent to calling
- `],
-					[/* reference */ 'r', `#getSymbol(java.util.Locale)`, `getSymbol(Locale.getDefault(Locale.Category.DISPLAY))`],
-					[/* text */ 't', `.`]
-				]]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the symbol of this currency for the default
-     `],
-				[/* reference */ 'r', `.Locale.Category#DISPLAY`],
-				[/* text */ 't', ` locale`]
-			]
-		]],
-		[/* method */ 'getSymbol(java.util.Locale)', [
-			[/* method description */
-				[/* text */ 't', `Gets the symbol of this currency for the specified locale.
- For example, for the US Dollar, the symbol is "$" if the specified
- locale is the US, while for other locales it may be "US$". If no
- symbol can be determined, the ISO 4217 currency code is returned.
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', `
- If the specified `],
-					[/* inline code block */ 'i', `locale`],
-					[/* text */ 't', ` contains "rg" (region override)
- `],
-					[/* reference */ 'r', `.Locale#def_locale_extension`],
-					[/* text */ 't', `,
- the symbol returned from this method reflects
- the value specified with that extension.`]
-				]]
-			],
-			[/* parameters */
-				[/* parameter */ 'locale', [/* parameter description */
-					[/* text */ 't', `the locale for which a display name for this currency is
- needed`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
-					[/* text */ 't', `if `],
-					[/* inline code block */ 'i', `locale`],
-					[/* text */ 't', ` is null`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `the symbol of this currency for the specified locale`]
-			]
-		]],
-		[/* method */ 'getDefaultFractionDigits()', [
-			[/* method description */
-				[/* text */ 't', `Gets the default number of fraction digits used with this currency.
- Note that the number of fraction digits is the same as ISO 4217's
- minor unit for the currency.
- For example, the default number of fraction digits for the Euro is 2,
- while for the Japanese Yen it's 0.
- In the case of pseudo-currencies, such as IMF Special Drawing Rights,
- -1 is returned.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the default number of fraction digits used with this currency`]
-			]
-		]],
-		[/* method */ 'getCurrencyCode()', [
-			[/* method description */
-				[/* text */ 't', `Gets the ISO 4217 currency code of this currency.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the ISO 4217 currency code of this currency.`]
-			]
-		]],
 		[/* method */ 'getAvailableCurrencies()', [
 			[/* method description */
 				[/* text */ 't', `Gets the set of available currencies.  The returned set of currencies
@@ -364,37 +395,6 @@ DocsCollector.collect('java.util.Currency', [
 			[/* return description */
 				[/* text */ 't', `the set of available currencies.  If there is no currency
     available in the runtime, the returned set is empty.`]
-			]
-		]],
-		[/* method */ 'getNumericCode()', [
-			[/* method description */
-				[/* text */ 't', `Returns the ISO 4217 numeric code of this currency.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the ISO 4217 numeric code of this currency`]
-			]
-		]],
-		[/* method */ 'getNumericCodeAsString()', [
-			[/* method description */
-				[/* text */ 't', `Returns the 3 digit ISO 4217 numeric code of this currency as a `],
-				[/* inline code block */ 'i', `String`],
-				[/* text */ 't', `.
- Unlike `],
-				[/* reference */ 'r', `#getNumericCode()`, `getNumericCode()`],
-				[/* text */ 't', `, which returns the numeric code as `],
-				[/* inline code block */ 'i', `int`],
-				[/* text */ 't', `,
- this method always returns the numeric code as a 3 digit string.
- e.g. a numeric value of 32 would be returned as "032",
- and a numeric value of 6 would be returned as "006".`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the 3 digit ISO 4217 numeric code of this currency as a `],
-				[/* inline code block */ 'i', `String`]
 			]
 		]]
 	],

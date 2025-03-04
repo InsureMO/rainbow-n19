@@ -656,14 +656,14 @@ JdkClassCreateHelper.class('java.time.Instant', [
 			/* annotations */ UDF,
 			/* modifiers */ 25
 		],
-		[/* public static final java.time.Instant java.time.Instant.MIN */
-			/* name */ 'MIN',
+		[/* public static final java.time.Instant java.time.Instant.MAX */
+			/* name */ 'MAX',
 			/* type */ 'java.time.Instant',
 			/* annotations */ UDF,
 			/* modifiers */ 25
 		],
-		[/* public static final java.time.Instant java.time.Instant.MAX */
-			/* name */ 'MAX',
+		[/* public static final java.time.Instant java.time.Instant.MIN */
+			/* name */ 'MIN',
 			/* type */ 'java.time.Instant',
 			/* annotations */ UDF,
 			/* modifiers */ 25

@@ -15,17 +15,6 @@ DocsCollector.collect('java.lang.invoke.TypeDescriptor$OfMethod', [
 	/* fields */ UDF,
 	/* constructors */ UDF,
 	[/* methods */
-		[/* method */ 'returnType()', [
-			[/* method description */
-				[/* text */ 't', `Return a field descriptor describing the return type of the method type described
- by this descriptor`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `a field descriptor for the return type`]
-			]
-		]],
 		[/* method */ 'parameterType(int)', [
 			[/* method description */
 				[/* text */ 't', `Return a field descriptor describing the requested parameter of the method type
@@ -46,7 +35,76 @@ DocsCollector.collect('java.lang.invoke.TypeDescriptor$OfMethod', [
 				[/* text */ 't', `a field descriptor for the requested parameter type`]
 			]
 		]],
-		[/* method */ 'insertParameterTypes(int,java.lang.invoke.TypeDescriptor.OfField...)', UDF],
+		[/* method */ 'returnType()', [
+			[/* method description */
+				[/* text */ 't', `Return a field descriptor describing the return type of the method type described
+ by this descriptor`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `a field descriptor for the return type`]
+			]
+		]],
+		[/* method */ 'parameterArray()', [
+			[/* method description */
+				[/* text */ 't', `Return an array of field descriptors for the parameter types of the method type
+ described by this descriptor`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `field descriptors for the parameter types`]
+			]
+		]],
+		[/* method */ 'parameterCount()', [
+			[/* method description */
+				[/* text */ 't', `Return the number of parameters in the method type`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the number of parameters`]
+			]
+		]],
+		[/* method */ 'parameterList()', [
+			[/* method description */
+				[/* text */ 't', `Return an immutable list of field descriptors for the parameter types of the method type
+ described by this descriptor`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `field descriptors for the parameter types`]
+			]
+		]],
+		[/* method */ 'changeParameterType(int,java.lang.invoke.TypeDescriptor.OfField)', [
+			[/* method description */
+				[/* text */ 't', `Return a method descriptor that is identical to this one,
+ except that a single parameter type has been changed to the specified type.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'index', [/* parameter description */
+					[/* text */ 't', `the index of the parameter to change`]
+				]],
+				[/* parameter */ 'paramType', [/* parameter description */
+					[/* text */ 't', `a field descriptor describing the new parameter type`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
+					[/* text */ 't', `if any argument is `],
+					[/* inline code block */ 'i', `null`]
+				]],
+				[/* throw */ 'java.lang.IndexOutOfBoundsException', [/* throw description */
+					[/* text */ 't', `if the index is outside the half-open
+ range {[0, parameterCount)}`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `the new method descriptor`]
+			]
+		]],
 		[/* method */ 'changeReturnType(java.lang.invoke.TypeDescriptor.OfField)', [
 			[/* method description */
 				[/* text */ 't', `Return a method descriptor that is identical to this one, except that the return
@@ -100,64 +158,6 @@ DocsCollector.collect('java.lang.invoke.TypeDescriptor$OfMethod', [
 				[/* text */ 't', `the new method descriptor`]
 			]
 		]],
-		[/* method */ 'parameterCount()', [
-			[/* method description */
-				[/* text */ 't', `Return the number of parameters in the method type`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the number of parameters`]
-			]
-		]],
-		[/* method */ 'parameterList()', [
-			[/* method description */
-				[/* text */ 't', `Return an immutable list of field descriptors for the parameter types of the method type
- described by this descriptor`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `field descriptors for the parameter types`]
-			]
-		]],
-		[/* method */ 'parameterArray()', [
-			[/* method description */
-				[/* text */ 't', `Return an array of field descriptors for the parameter types of the method type
- described by this descriptor`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `field descriptors for the parameter types`]
-			]
-		]],
-		[/* method */ 'changeParameterType(int,java.lang.invoke.TypeDescriptor.OfField)', [
-			[/* method description */
-				[/* text */ 't', `Return a method descriptor that is identical to this one,
- except that a single parameter type has been changed to the specified type.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'index', [/* parameter description */
-					[/* text */ 't', `the index of the parameter to change`]
-				]],
-				[/* parameter */ 'paramType', [/* parameter description */
-					[/* text */ 't', `a field descriptor describing the new parameter type`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
-					[/* text */ 't', `if any argument is `],
-					[/* inline code block */ 'i', `null`]
-				]],
-				[/* throw */ 'java.lang.IndexOutOfBoundsException', [/* throw description */
-					[/* text */ 't', `if the index is outside the half-open
- range {[0, parameterCount)}`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `the new method descriptor`]
-			]
-		]]
+		[/* method */ 'insertParameterTypes(int,java.lang.invoke.TypeDescriptor.OfField...)', UDF]
 	],
 ]);

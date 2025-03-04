@@ -7,48 +7,18 @@ DocsCollector.collect('java.util.zip.DeflaterInputStream', [
  compression format.`]
 	],
 	[/* fields */
-		[/* field */ 'def', [
-			[/* field description */
-				[/* text */ 't', `Compressor for this stream.`]
-			],
-		]],
 		[/* field */ 'buf', [
 			[/* field description */
 				[/* text */ 't', `Input buffer for reading compressed data.`]
 			],
+		]],
+		[/* field */ 'def', [
+			[/* field description */
+				[/* text */ 't', `Compressor for this stream.`]
+			],
 		]]
 	],
 	[/* constructors */
-		[/* constructor */ '<init>(java.io.InputStream,java.util.zip.Deflater,int)', [
-			[/* constructor description */
-				[/* text */ 't', `Creates a new input stream with the specified compressor and buffer
- size.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'in', [/* parameter description */
-					[/* text */ 't', `input stream to read the uncompressed data to`]
-				]],
-				[/* parameter */ 'defl', [/* parameter description */
-					[/* text */ 't', `compressor ("deflater") for this stream`]
-				]],
-				[/* parameter */ 'bufLen', [/* parameter description */
-					[/* text */ 't', `compression buffer size`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
-					[/* text */ 't', `if `],
-					[/* inline code block */ 'i', `bufLen <= 0`]
-				]],
-				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
-					[/* text */ 't', `if `],
-					[/* inline code block */ 'i', `in`],
-					[/* text */ 't', ` or `],
-					[/* inline code block */ 'i', `defl`],
-					[/* text */ 't', ` is null`]
-				]]
-			]
-		]],
 		[/* constructor */ '<init>(java.io.InputStream)', [
 			[/* constructor description */
 				[/* text */ 't', `Creates a new input stream with a default compressor and buffer
@@ -89,9 +59,76 @@ DocsCollector.collect('java.util.zip.DeflaterInputStream', [
 					[/* text */ 't', ` is null`]
 				]]
 			]
+		]],
+		[/* constructor */ '<init>(java.io.InputStream,java.util.zip.Deflater,int)', [
+			[/* constructor description */
+				[/* text */ 't', `Creates a new input stream with the specified compressor and buffer
+ size.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'in', [/* parameter description */
+					[/* text */ 't', `input stream to read the uncompressed data to`]
+				]],
+				[/* parameter */ 'defl', [/* parameter description */
+					[/* text */ 't', `compressor ("deflater") for this stream`]
+				]],
+				[/* parameter */ 'bufLen', [/* parameter description */
+					[/* text */ 't', `compression buffer size`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
+					[/* text */ 't', `if `],
+					[/* inline code block */ 'i', `bufLen <= 0`]
+				]],
+				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
+					[/* text */ 't', `if `],
+					[/* inline code block */ 'i', `in`],
+					[/* text */ 't', ` or `],
+					[/* inline code block */ 'i', `defl`],
+					[/* text */ 't', ` is null`]
+				]]
+			]
 		]]
 	],
 	[/* methods */
+		[/* method */ 'markSupported()', [
+			[/* method description */
+				[/* text */ 't', `Always returns `],
+				[/* inline code block */ 'i', `false`],
+				[/* text */ 't', ` because this input stream does not support
+ the `],
+				[/* reference */ 'r', `#mark(int)`, `mark()`],
+				[/* text */ 't', ` and `],
+				[/* reference */ 'r', `#reset()`, `reset()`],
+				[/* text */ 't', ` methods.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `false, always`]
+			]
+		]],
+		[/* method */ 'available()', [
+			[/* method description */
+				[/* text */ 't', `Returns 0 after EOF has been reached, otherwise always return 1.
+ `],
+				[/* block */ 'b', `
+ Programs should not count on this method to return the actual number
+ of bytes that could be read without blocking`]
+			],
+			/* parameters */ UDF,
+			[/* throws */
+				[/* throw */ 'java.io.IOException', [/* throw description */
+					[/* text */ 't', `if an I/O error occurs or if this stream is
+ already closed`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `zero after the end of the underlying input stream has been
+ reached, otherwise always returns 1`]
+			]
+		]],
 		[/* method */ 'read()', [
 			[/* method description */
 				[/* text */ 't', `Reads a single byte of compressed data from the input stream.
@@ -142,32 +179,6 @@ DocsCollector.collect('java.util.zip.DeflaterInputStream', [
  uncompressed input stream is reached`]
 			]
 		]],
-		[/* method */ 'close()', [
-			[/* method description */
-				[/* text */ 't', `Closes this input stream and its underlying input stream, discarding
- any pending uncompressed data.`]
-			],
-			/* parameters */ UDF,
-			[/* throws */
-				[/* throw */ 'java.io.IOException', [/* throw description */
-					[/* text */ 't', `if an I/O error occurs`]
-				]]
-			],
-			/* return */ UDF
-		]],
-		[/* method */ 'mark(int)', [
-			[/* method description */
-				[/* text */ 't', `This operation is not supported`],
-				[/* text */ 't', `.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'limit', [/* parameter description */
-					[/* text */ 't', `maximum bytes that can be read before invalidating the position marker`]
-				]]
-			],
-			/* throws */ UDF,
-			/* return */ UDF
-		]],
 		[/* method */ 'skip(long)', [
 			[/* method description */
 				[/* text */ 't', `Skips over and discards data from the input stream.
@@ -199,42 +210,31 @@ DocsCollector.collect('java.util.zip.DeflaterInputStream', [
 				[/* text */ 't', `the actual number of bytes skipped`]
 			]
 		]],
-		[/* method */ 'available()', [
+		[/* method */ 'close()', [
 			[/* method description */
-				[/* text */ 't', `Returns 0 after EOF has been reached, otherwise always return 1.
- `],
-				[/* block */ 'b', `
- Programs should not count on this method to return the actual number
- of bytes that could be read without blocking`]
+				[/* text */ 't', `Closes this input stream and its underlying input stream, discarding
+ any pending uncompressed data.`]
 			],
 			/* parameters */ UDF,
 			[/* throws */
 				[/* throw */ 'java.io.IOException', [/* throw description */
-					[/* text */ 't', `if an I/O error occurs or if this stream is
- already closed`]
+					[/* text */ 't', `if an I/O error occurs`]
 				]]
 			],
-			[/* return description */
-				[/* text */ 't', `zero after the end of the underlying input stream has been
- reached, otherwise always returns 1`]
-			]
+			/* return */ UDF
 		]],
-		[/* method */ 'markSupported()', [
+		[/* method */ 'mark(int)', [
 			[/* method description */
-				[/* text */ 't', `Always returns `],
-				[/* inline code block */ 'i', `false`],
-				[/* text */ 't', ` because this input stream does not support
- the `],
-				[/* reference */ 'r', `#mark(int)`, `mark()`],
-				[/* text */ 't', ` and `],
-				[/* reference */ 'r', `#reset()`, `reset()`],
-				[/* text */ 't', ` methods.`]
+				[/* text */ 't', `This operation is not supported`],
+				[/* text */ 't', `.`]
 			],
-			/* parameters */ UDF,
+			[/* parameters */
+				[/* parameter */ 'limit', [/* parameter description */
+					[/* text */ 't', `maximum bytes that can be read before invalidating the position marker`]
+				]]
+			],
 			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `false, always`]
-			]
+			/* return */ UDF
 		]],
 		[/* method */ 'reset()', [
 			[/* method description */

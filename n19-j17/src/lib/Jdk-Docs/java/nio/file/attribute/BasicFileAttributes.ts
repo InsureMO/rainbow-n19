@@ -20,21 +20,6 @@ DocsCollector.collect('java.nio.file.attribute.BasicFileAttributes', [
 	/* fields */ UDF,
 	/* constructors */ UDF,
 	[/* methods */
-		[/* method */ 'size()', [
-			[/* method description */
-				[/* text */ 't', `Returns the size of the file (in bytes). The size may differ from the
- actual size on the file system due to compression, support for sparse
- files, or other reasons. The size of files that are not `],
-				[/* reference */ 'r', `#isRegularFile()`, `regular`],
-				[/* text */ 't', ` files is implementation specific and
- therefore unspecified.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the file size, in bytes`]
-			]
-		]],
 		[/* method */ 'isDirectory()', [
 			[/* method description */
 				[/* text */ 't', `Tells whether the file is a directory.`]
@@ -44,6 +29,19 @@ DocsCollector.collect('java.nio.file.attribute.BasicFileAttributes', [
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if the file is a directory`]
+			]
+		]],
+		[/* method */ 'isOther()', [
+			[/* method description */
+				[/* text */ 't', `Tells whether the file is something other than a regular file, directory,
+ or symbolic link.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* inline code block */ 'i', `true`],
+				[/* text */ 't', ` if the file something other than a regular file,
+         directory or symbolic link`]
 			]
 		]],
 		[/* method */ 'isRegularFile()', [
@@ -66,91 +64,6 @@ DocsCollector.collect('java.nio.file.attribute.BasicFileAttributes', [
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if the file is a symbolic link`]
-			]
-		]],
-		[/* method */ 'lastModifiedTime()', [
-			[/* method description */
-				[/* text */ 't', `Returns the time of last modification.
-
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', ` If the file system implementation does not support a time stamp
- to indicate the time of last modification then this method returns an
- implementation specific default value, typically a `],
-					[/* inline code block */ 'i', `FileTime`],
-					[/* text */ 't', `
- representing the epoch (1970-01-01T00:00:00Z).`]
-				]]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `a `],
-				[/* inline code block */ 'i', `FileTime`],
-				[/* text */ 't', ` representing the time the file was last
-          modified`]
-			]
-		]],
-		[/* method */ 'lastAccessTime()', [
-			[/* method description */
-				[/* text */ 't', `Returns the time of last access.
-
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', ` If the file system implementation does not support a time stamp
- to indicate the time of last access then this method returns
- an implementation specific default value, typically the `],
-					[/* reference */ 'r', `#lastModifiedTime()`, `last-modified-time`],
-					[/* text */ 't', ` or a `],
-					[/* inline code block */ 'i', `FileTime`],
-					[/* text */ 't', `
- representing the epoch (1970-01-01T00:00:00Z).`]
-				]]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `a `],
-				[/* inline code block */ 'i', `FileTime`],
-				[/* text */ 't', ` representing the time of last access`]
-			]
-		]],
-		[/* method */ 'creationTime()', [
-			[/* method description */
-				[/* text */ 't', `Returns the creation time. The creation time is the time that the file
- was created.
-
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', ` If the file system implementation does not support a time stamp
- to indicate the time when the file was created then this method returns
- an implementation specific default value, typically the `],
-					[/* reference */ 'r', `#lastModifiedTime()`, `last-modified-time`],
-					[/* text */ 't', ` or a `],
-					[/* inline code block */ 'i', `FileTime`],
-					[/* text */ 't', `
- representing the epoch (1970-01-01T00:00:00Z).`]
-				]]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `a `],
-				[/* inline code block */ 'i', `FileTime`],
-				[/* text */ 't', ` representing the time the file was created`]
-			]
-		]],
-		[/* method */ 'isOther()', [
-			[/* method description */
-				[/* text */ 't', `Tells whether the file is something other than a regular file, directory,
- or symbolic link.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* inline code block */ 'i', `true`],
-				[/* text */ 't', ` if the file something other than a regular file,
-         directory or symbolic link`]
 			]
 		]],
 		[/* method */ 'fileKey()', [
@@ -194,6 +107,93 @@ DocsCollector.collect('java.nio.file.attribute.BasicFileAttributes', [
 			[/* return description */
 				[/* text */ 't', `an object that uniquely identifies the given file, or `],
 				[/* inline code block */ 'i', `null`]
+			]
+		]],
+		[/* method */ 'creationTime()', [
+			[/* method description */
+				[/* text */ 't', `Returns the creation time. The creation time is the time that the file
+ was created.
+
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', ` If the file system implementation does not support a time stamp
+ to indicate the time when the file was created then this method returns
+ an implementation specific default value, typically the `],
+					[/* reference */ 'r', `#lastModifiedTime()`, `last-modified-time`],
+					[/* text */ 't', ` or a `],
+					[/* inline code block */ 'i', `FileTime`],
+					[/* text */ 't', `
+ representing the epoch (1970-01-01T00:00:00Z).`]
+				]]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `a `],
+				[/* inline code block */ 'i', `FileTime`],
+				[/* text */ 't', ` representing the time the file was created`]
+			]
+		]],
+		[/* method */ 'lastAccessTime()', [
+			[/* method description */
+				[/* text */ 't', `Returns the time of last access.
+
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', ` If the file system implementation does not support a time stamp
+ to indicate the time of last access then this method returns
+ an implementation specific default value, typically the `],
+					[/* reference */ 'r', `#lastModifiedTime()`, `last-modified-time`],
+					[/* text */ 't', ` or a `],
+					[/* inline code block */ 'i', `FileTime`],
+					[/* text */ 't', `
+ representing the epoch (1970-01-01T00:00:00Z).`]
+				]]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `a `],
+				[/* inline code block */ 'i', `FileTime`],
+				[/* text */ 't', ` representing the time of last access`]
+			]
+		]],
+		[/* method */ 'lastModifiedTime()', [
+			[/* method description */
+				[/* text */ 't', `Returns the time of last modification.
+
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', ` If the file system implementation does not support a time stamp
+ to indicate the time of last modification then this method returns an
+ implementation specific default value, typically a `],
+					[/* inline code block */ 'i', `FileTime`],
+					[/* text */ 't', `
+ representing the epoch (1970-01-01T00:00:00Z).`]
+				]]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `a `],
+				[/* inline code block */ 'i', `FileTime`],
+				[/* text */ 't', ` representing the time the file was last
+          modified`]
+			]
+		]],
+		[/* method */ 'size()', [
+			[/* method description */
+				[/* text */ 't', `Returns the size of the file (in bytes). The size may differ from the
+ actual size on the file system due to compression, support for sparse
+ files, or other reasons. The size of files that are not `],
+				[/* reference */ 'r', `#isRegularFile()`, `regular`],
+				[/* text */ 't', ` files is implementation specific and
+ therefore unspecified.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the file size, in bytes`]
 			]
 		]]
 	],

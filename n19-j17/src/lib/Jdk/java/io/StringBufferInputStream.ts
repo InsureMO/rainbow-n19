@@ -111,14 +111,14 @@ JdkClassCreateHelper.class('java.io.StringBufferInputStream', [
 			/* annotations */ UDF,
 			/* modifiers */ 4
 		],
-		[/* protected int java.io.StringBufferInputStream.pos */
-			/* name */ 'pos',
+		[/* protected int java.io.StringBufferInputStream.count */
+			/* name */ 'count',
 			/* type */ 'int',
 			/* annotations */ UDF,
 			/* modifiers */ 4
 		],
-		[/* protected int java.io.StringBufferInputStream.count */
-			/* name */ 'count',
+		[/* protected int java.io.StringBufferInputStream.pos */
+			/* name */ 'pos',
 			/* type */ 'int',
 			/* annotations */ UDF,
 			/* modifiers */ 4

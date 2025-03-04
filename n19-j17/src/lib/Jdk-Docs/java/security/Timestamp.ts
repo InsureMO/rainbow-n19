@@ -46,17 +46,6 @@ DocsCollector.collect('java.security.Timestamp', [
 				[/* text */ 't', `true if the timestamp are considered equal, false otherwise.`]
 			]
 		]],
-		[/* method */ 'toString()', [
-			[/* method description */
-				[/* text */ 't', `Returns a string describing this timestamp.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `A string comprising the date and time of the timestamp and
-         its signer's certificate.`]
-			]
-		]],
 		[/* method */ 'hashCode()', [
 			[/* method description */
 				[/* text */ 't', `Returns the hash code value for this timestamp.
@@ -67,6 +56,17 @@ DocsCollector.collect('java.security.Timestamp', [
 			/* throws */ UDF,
 			[/* return description */
 				[/* text */ 't', `a hash code value for this timestamp.`]
+			]
+		]],
+		[/* method */ 'toString()', [
+			[/* method description */
+				[/* text */ 't', `Returns a string describing this timestamp.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `A string comprising the date and time of the timestamp and
+         its signer's certificate.`]
 			]
 		]],
 		[/* method */ 'getSignerCertPath()', [

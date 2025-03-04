@@ -913,32 +913,38 @@ JdkClassCreateHelper.class('java.util.Calendar', [
 		]
 	],
 	[/* declared fields */
-		[/* public static final int java.util.Calendar.ERA */
-			/* name */ 'ERA',
+		[/* public static final int java.util.Calendar.ALL_STYLES */
+			/* name */ 'ALL_STYLES',
 			/* type */ 'int',
 			/* annotations */ UDF,
 			/* modifiers */ 25
 		],
-		[/* public static final int java.util.Calendar.YEAR */
-			/* name */ 'YEAR',
+		[/* public static final int java.util.Calendar.AM */
+			/* name */ 'AM',
 			/* type */ 'int',
 			/* annotations */ UDF,
 			/* modifiers */ 25
 		],
-		[/* public static final int java.util.Calendar.MONTH */
-			/* name */ 'MONTH',
+		[/* public static final int java.util.Calendar.AM_PM */
+			/* name */ 'AM_PM',
 			/* type */ 'int',
 			/* annotations */ UDF,
 			/* modifiers */ 25
 		],
-		[/* public static final int java.util.Calendar.WEEK_OF_YEAR */
-			/* name */ 'WEEK_OF_YEAR',
+		[/* public static final int java.util.Calendar.APRIL */
+			/* name */ 'APRIL',
 			/* type */ 'int',
 			/* annotations */ UDF,
 			/* modifiers */ 25
 		],
-		[/* public static final int java.util.Calendar.WEEK_OF_MONTH */
-			/* name */ 'WEEK_OF_MONTH',
+		[/* protected boolean java.util.Calendar.areFieldsSet */
+			/* name */ 'areFieldsSet',
+			/* type */ 'boolean',
+			/* annotations */ UDF,
+			/* modifiers */ 4
+		],
+		[/* public static final int java.util.Calendar.AUGUST */
+			/* name */ 'AUGUST',
 			/* type */ 'int',
 			/* annotations */ UDF,
 			/* modifiers */ 25
@@ -955,12 +961,6 @@ JdkClassCreateHelper.class('java.util.Calendar', [
 			/* annotations */ UDF,
 			/* modifiers */ 25
 		],
-		[/* public static final int java.util.Calendar.DAY_OF_YEAR */
-			/* name */ 'DAY_OF_YEAR',
-			/* type */ 'int',
-			/* annotations */ UDF,
-			/* modifiers */ 25
-		],
 		[/* public static final int java.util.Calendar.DAY_OF_WEEK */
 			/* name */ 'DAY_OF_WEEK',
 			/* type */ 'int',
@@ -973,8 +973,50 @@ JdkClassCreateHelper.class('java.util.Calendar', [
 			/* annotations */ UDF,
 			/* modifiers */ 25
 		],
-		[/* public static final int java.util.Calendar.AM_PM */
-			/* name */ 'AM_PM',
+		[/* public static final int java.util.Calendar.DAY_OF_YEAR */
+			/* name */ 'DAY_OF_YEAR',
+			/* type */ 'int',
+			/* annotations */ UDF,
+			/* modifiers */ 25
+		],
+		[/* public static final int java.util.Calendar.DECEMBER */
+			/* name */ 'DECEMBER',
+			/* type */ 'int',
+			/* annotations */ UDF,
+			/* modifiers */ 25
+		],
+		[/* public static final int java.util.Calendar.DST_OFFSET */
+			/* name */ 'DST_OFFSET',
+			/* type */ 'int',
+			/* annotations */ UDF,
+			/* modifiers */ 25
+		],
+		[/* public static final int java.util.Calendar.ERA */
+			/* name */ 'ERA',
+			/* type */ 'int',
+			/* annotations */ UDF,
+			/* modifiers */ 25
+		],
+		[/* public static final int java.util.Calendar.FEBRUARY */
+			/* name */ 'FEBRUARY',
+			/* type */ 'int',
+			/* annotations */ UDF,
+			/* modifiers */ 25
+		],
+		[/* public static final int java.util.Calendar.FIELD_COUNT */
+			/* name */ 'FIELD_COUNT',
+			/* type */ 'int',
+			/* annotations */ UDF,
+			/* modifiers */ 25
+		],
+		[/* protected int[] java.util.Calendar.fields */
+			/* name */ 'fields',
+			/* type */ '[I',
+			/* annotations */ UDF,
+			/* modifiers */ 4
+		],
+		[/* public static final int java.util.Calendar.FRIDAY */
+			/* name */ 'FRIDAY',
 			/* type */ 'int',
 			/* annotations */ UDF,
 			/* modifiers */ 25
@@ -991,116 +1033,20 @@ JdkClassCreateHelper.class('java.util.Calendar', [
 			/* annotations */ UDF,
 			/* modifiers */ 25
 		],
-		[/* public static final int java.util.Calendar.MINUTE */
-			/* name */ 'MINUTE',
-			/* type */ 'int',
+		[/* protected boolean[] java.util.Calendar.isSet */
+			/* name */ 'isSet',
+			/* type */ '[Z',
 			/* annotations */ UDF,
-			/* modifiers */ 25
+			/* modifiers */ 4
 		],
-		[/* public static final int java.util.Calendar.SECOND */
-			/* name */ 'SECOND',
-			/* type */ 'int',
+		[/* protected boolean java.util.Calendar.isTimeSet */
+			/* name */ 'isTimeSet',
+			/* type */ 'boolean',
 			/* annotations */ UDF,
-			/* modifiers */ 25
-		],
-		[/* public static final int java.util.Calendar.MILLISECOND */
-			/* name */ 'MILLISECOND',
-			/* type */ 'int',
-			/* annotations */ UDF,
-			/* modifiers */ 25
-		],
-		[/* public static final int java.util.Calendar.ZONE_OFFSET */
-			/* name */ 'ZONE_OFFSET',
-			/* type */ 'int',
-			/* annotations */ UDF,
-			/* modifiers */ 25
-		],
-		[/* public static final int java.util.Calendar.DST_OFFSET */
-			/* name */ 'DST_OFFSET',
-			/* type */ 'int',
-			/* annotations */ UDF,
-			/* modifiers */ 25
-		],
-		[/* public static final int java.util.Calendar.FIELD_COUNT */
-			/* name */ 'FIELD_COUNT',
-			/* type */ 'int',
-			/* annotations */ UDF,
-			/* modifiers */ 25
-		],
-		[/* public static final int java.util.Calendar.SUNDAY */
-			/* name */ 'SUNDAY',
-			/* type */ 'int',
-			/* annotations */ UDF,
-			/* modifiers */ 25
-		],
-		[/* public static final int java.util.Calendar.MONDAY */
-			/* name */ 'MONDAY',
-			/* type */ 'int',
-			/* annotations */ UDF,
-			/* modifiers */ 25
-		],
-		[/* public static final int java.util.Calendar.TUESDAY */
-			/* name */ 'TUESDAY',
-			/* type */ 'int',
-			/* annotations */ UDF,
-			/* modifiers */ 25
-		],
-		[/* public static final int java.util.Calendar.WEDNESDAY */
-			/* name */ 'WEDNESDAY',
-			/* type */ 'int',
-			/* annotations */ UDF,
-			/* modifiers */ 25
-		],
-		[/* public static final int java.util.Calendar.THURSDAY */
-			/* name */ 'THURSDAY',
-			/* type */ 'int',
-			/* annotations */ UDF,
-			/* modifiers */ 25
-		],
-		[/* public static final int java.util.Calendar.FRIDAY */
-			/* name */ 'FRIDAY',
-			/* type */ 'int',
-			/* annotations */ UDF,
-			/* modifiers */ 25
-		],
-		[/* public static final int java.util.Calendar.SATURDAY */
-			/* name */ 'SATURDAY',
-			/* type */ 'int',
-			/* annotations */ UDF,
-			/* modifiers */ 25
+			/* modifiers */ 4
 		],
 		[/* public static final int java.util.Calendar.JANUARY */
 			/* name */ 'JANUARY',
-			/* type */ 'int',
-			/* annotations */ UDF,
-			/* modifiers */ 25
-		],
-		[/* public static final int java.util.Calendar.FEBRUARY */
-			/* name */ 'FEBRUARY',
-			/* type */ 'int',
-			/* annotations */ UDF,
-			/* modifiers */ 25
-		],
-		[/* public static final int java.util.Calendar.MARCH */
-			/* name */ 'MARCH',
-			/* type */ 'int',
-			/* annotations */ UDF,
-			/* modifiers */ 25
-		],
-		[/* public static final int java.util.Calendar.APRIL */
-			/* name */ 'APRIL',
-			/* type */ 'int',
-			/* annotations */ UDF,
-			/* modifiers */ 25
-		],
-		[/* public static final int java.util.Calendar.MAY */
-			/* name */ 'MAY',
-			/* type */ 'int',
-			/* annotations */ UDF,
-			/* modifiers */ 25
-		],
-		[/* public static final int java.util.Calendar.JUNE */
-			/* name */ 'JUNE',
 			/* type */ 'int',
 			/* annotations */ UDF,
 			/* modifiers */ 25
@@ -1111,68 +1057,62 @@ JdkClassCreateHelper.class('java.util.Calendar', [
 			/* annotations */ UDF,
 			/* modifiers */ 25
 		],
-		[/* public static final int java.util.Calendar.AUGUST */
-			/* name */ 'AUGUST',
-			/* type */ 'int',
-			/* annotations */ UDF,
-			/* modifiers */ 25
-		],
-		[/* public static final int java.util.Calendar.SEPTEMBER */
-			/* name */ 'SEPTEMBER',
-			/* type */ 'int',
-			/* annotations */ UDF,
-			/* modifiers */ 25
-		],
-		[/* public static final int java.util.Calendar.OCTOBER */
-			/* name */ 'OCTOBER',
-			/* type */ 'int',
-			/* annotations */ UDF,
-			/* modifiers */ 25
-		],
-		[/* public static final int java.util.Calendar.NOVEMBER */
-			/* name */ 'NOVEMBER',
-			/* type */ 'int',
-			/* annotations */ UDF,
-			/* modifiers */ 25
-		],
-		[/* public static final int java.util.Calendar.DECEMBER */
-			/* name */ 'DECEMBER',
-			/* type */ 'int',
-			/* annotations */ UDF,
-			/* modifiers */ 25
-		],
-		[/* public static final int java.util.Calendar.UNDECIMBER */
-			/* name */ 'UNDECIMBER',
-			/* type */ 'int',
-			/* annotations */ UDF,
-			/* modifiers */ 25
-		],
-		[/* public static final int java.util.Calendar.AM */
-			/* name */ 'AM',
-			/* type */ 'int',
-			/* annotations */ UDF,
-			/* modifiers */ 25
-		],
-		[/* public static final int java.util.Calendar.PM */
-			/* name */ 'PM',
-			/* type */ 'int',
-			/* annotations */ UDF,
-			/* modifiers */ 25
-		],
-		[/* public static final int java.util.Calendar.ALL_STYLES */
-			/* name */ 'ALL_STYLES',
-			/* type */ 'int',
-			/* annotations */ UDF,
-			/* modifiers */ 25
-		],
-		[/* public static final int java.util.Calendar.SHORT */
-			/* name */ 'SHORT',
+		[/* public static final int java.util.Calendar.JUNE */
+			/* name */ 'JUNE',
 			/* type */ 'int',
 			/* annotations */ UDF,
 			/* modifiers */ 25
 		],
 		[/* public static final int java.util.Calendar.LONG */
 			/* name */ 'LONG',
+			/* type */ 'int',
+			/* annotations */ UDF,
+			/* modifiers */ 25
+		],
+		[/* public static final int java.util.Calendar.LONG_FORMAT */
+			/* name */ 'LONG_FORMAT',
+			/* type */ 'int',
+			/* annotations */ UDF,
+			/* modifiers */ 25
+		],
+		[/* public static final int java.util.Calendar.LONG_STANDALONE */
+			/* name */ 'LONG_STANDALONE',
+			/* type */ 'int',
+			/* annotations */ UDF,
+			/* modifiers */ 25
+		],
+		[/* public static final int java.util.Calendar.MARCH */
+			/* name */ 'MARCH',
+			/* type */ 'int',
+			/* annotations */ UDF,
+			/* modifiers */ 25
+		],
+		[/* public static final int java.util.Calendar.MAY */
+			/* name */ 'MAY',
+			/* type */ 'int',
+			/* annotations */ UDF,
+			/* modifiers */ 25
+		],
+		[/* public static final int java.util.Calendar.MILLISECOND */
+			/* name */ 'MILLISECOND',
+			/* type */ 'int',
+			/* annotations */ UDF,
+			/* modifiers */ 25
+		],
+		[/* public static final int java.util.Calendar.MINUTE */
+			/* name */ 'MINUTE',
+			/* type */ 'int',
+			/* annotations */ UDF,
+			/* modifiers */ 25
+		],
+		[/* public static final int java.util.Calendar.MONDAY */
+			/* name */ 'MONDAY',
+			/* type */ 'int',
+			/* annotations */ UDF,
+			/* modifiers */ 25
+		],
+		[/* public static final int java.util.Calendar.MONTH */
+			/* name */ 'MONTH',
 			/* type */ 'int',
 			/* annotations */ UDF,
 			/* modifiers */ 25
@@ -1189,14 +1129,50 @@ JdkClassCreateHelper.class('java.util.Calendar', [
 			/* annotations */ UDF,
 			/* modifiers */ 25
 		],
-		[/* public static final int java.util.Calendar.SHORT_FORMAT */
-			/* name */ 'SHORT_FORMAT',
+		[/* public static final int java.util.Calendar.NOVEMBER */
+			/* name */ 'NOVEMBER',
 			/* type */ 'int',
 			/* annotations */ UDF,
 			/* modifiers */ 25
 		],
-		[/* public static final int java.util.Calendar.LONG_FORMAT */
-			/* name */ 'LONG_FORMAT',
+		[/* public static final int java.util.Calendar.OCTOBER */
+			/* name */ 'OCTOBER',
+			/* type */ 'int',
+			/* annotations */ UDF,
+			/* modifiers */ 25
+		],
+		[/* public static final int java.util.Calendar.PM */
+			/* name */ 'PM',
+			/* type */ 'int',
+			/* annotations */ UDF,
+			/* modifiers */ 25
+		],
+		[/* public static final int java.util.Calendar.SATURDAY */
+			/* name */ 'SATURDAY',
+			/* type */ 'int',
+			/* annotations */ UDF,
+			/* modifiers */ 25
+		],
+		[/* public static final int java.util.Calendar.SECOND */
+			/* name */ 'SECOND',
+			/* type */ 'int',
+			/* annotations */ UDF,
+			/* modifiers */ 25
+		],
+		[/* public static final int java.util.Calendar.SEPTEMBER */
+			/* name */ 'SEPTEMBER',
+			/* type */ 'int',
+			/* annotations */ UDF,
+			/* modifiers */ 25
+		],
+		[/* public static final int java.util.Calendar.SHORT */
+			/* name */ 'SHORT',
+			/* type */ 'int',
+			/* annotations */ UDF,
+			/* modifiers */ 25
+		],
+		[/* public static final int java.util.Calendar.SHORT_FORMAT */
+			/* name */ 'SHORT_FORMAT',
 			/* type */ 'int',
 			/* annotations */ UDF,
 			/* modifiers */ 25
@@ -1207,23 +1183,17 @@ JdkClassCreateHelper.class('java.util.Calendar', [
 			/* annotations */ UDF,
 			/* modifiers */ 25
 		],
-		[/* public static final int java.util.Calendar.LONG_STANDALONE */
-			/* name */ 'LONG_STANDALONE',
+		[/* public static final int java.util.Calendar.SUNDAY */
+			/* name */ 'SUNDAY',
 			/* type */ 'int',
 			/* annotations */ UDF,
 			/* modifiers */ 25
 		],
-		[/* protected int[] java.util.Calendar.fields */
-			/* name */ 'fields',
-			/* type */ '[I',
+		[/* public static final int java.util.Calendar.THURSDAY */
+			/* name */ 'THURSDAY',
+			/* type */ 'int',
 			/* annotations */ UDF,
-			/* modifiers */ 4
-		],
-		[/* protected boolean[] java.util.Calendar.isSet */
-			/* name */ 'isSet',
-			/* type */ '[Z',
-			/* annotations */ UDF,
-			/* modifiers */ 4
+			/* modifiers */ 25
 		],
 		[/* protected long java.util.Calendar.time */
 			/* name */ 'time',
@@ -1231,17 +1201,47 @@ JdkClassCreateHelper.class('java.util.Calendar', [
 			/* annotations */ UDF,
 			/* modifiers */ 4
 		],
-		[/* protected boolean java.util.Calendar.isTimeSet */
-			/* name */ 'isTimeSet',
-			/* type */ 'boolean',
+		[/* public static final int java.util.Calendar.TUESDAY */
+			/* name */ 'TUESDAY',
+			/* type */ 'int',
 			/* annotations */ UDF,
-			/* modifiers */ 4
+			/* modifiers */ 25
 		],
-		[/* protected boolean java.util.Calendar.areFieldsSet */
-			/* name */ 'areFieldsSet',
-			/* type */ 'boolean',
+		[/* public static final int java.util.Calendar.UNDECIMBER */
+			/* name */ 'UNDECIMBER',
+			/* type */ 'int',
 			/* annotations */ UDF,
-			/* modifiers */ 4
+			/* modifiers */ 25
+		],
+		[/* public static final int java.util.Calendar.WEDNESDAY */
+			/* name */ 'WEDNESDAY',
+			/* type */ 'int',
+			/* annotations */ UDF,
+			/* modifiers */ 25
+		],
+		[/* public static final int java.util.Calendar.WEEK_OF_MONTH */
+			/* name */ 'WEEK_OF_MONTH',
+			/* type */ 'int',
+			/* annotations */ UDF,
+			/* modifiers */ 25
+		],
+		[/* public static final int java.util.Calendar.WEEK_OF_YEAR */
+			/* name */ 'WEEK_OF_YEAR',
+			/* type */ 'int',
+			/* annotations */ UDF,
+			/* modifiers */ 25
+		],
+		[/* public static final int java.util.Calendar.YEAR */
+			/* name */ 'YEAR',
+			/* type */ 'int',
+			/* annotations */ UDF,
+			/* modifiers */ 25
+		],
+		[/* public static final int java.util.Calendar.ZONE_OFFSET */
+			/* name */ 'ZONE_OFFSET',
+			/* type */ 'int',
+			/* annotations */ UDF,
+			/* modifiers */ 25
 		]
 	],
 	/* enum values */ UDF

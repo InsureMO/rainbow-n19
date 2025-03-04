@@ -10,16 +10,6 @@ DocsCollector.collect('java.security.Principal', [
 	/* fields */ UDF,
 	/* constructors */ UDF,
 	[/* methods */
-		[/* method */ 'getName()', [
-			[/* method description */
-				[/* text */ 't', `Returns the name of this principal.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the name of this principal.`]
-			]
-		]],
 		[/* method */ 'equals(java.lang.Object)', [
 			[/* method description */
 				[/* text */ 't', `Compares this principal to the specified object.  Returns true
@@ -37,16 +27,6 @@ DocsCollector.collect('java.security.Principal', [
  encapsulated by this principal, and false otherwise.`]
 			]
 		]],
-		[/* method */ 'toString()', [
-			[/* method description */
-				[/* text */ 't', `Returns a string representation of this principal.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `a string representation of this principal.`]
-			]
-		]],
 		[/* method */ 'hashCode()', [
 			[/* method description */
 				[/* text */ 't', `Returns a hashcode for this principal.`]
@@ -55,6 +35,26 @@ DocsCollector.collect('java.security.Principal', [
 			/* throws */ UDF,
 			[/* return description */
 				[/* text */ 't', `a hashcode for this principal.`]
+			]
+		]],
+		[/* method */ 'getName()', [
+			[/* method description */
+				[/* text */ 't', `Returns the name of this principal.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the name of this principal.`]
+			]
+		]],
+		[/* method */ 'toString()', [
+			[/* method description */
+				[/* text */ 't', `Returns a string representation of this principal.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `a string representation of this principal.`]
 			]
 		]],
 		[/* method */ 'implies(javax.security.auth.Subject)', [

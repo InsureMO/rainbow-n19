@@ -224,8 +224,8 @@ JdkClassCreateHelper.class('java.util.regex.Pattern', [
 		]
 	],
 	[/* declared fields */
-		[/* public static final int java.util.regex.Pattern.UNIX_LINES */
-			/* name */ 'UNIX_LINES',
+		[/* public static final int java.util.regex.Pattern.CANON_EQ */
+			/* name */ 'CANON_EQ',
 			/* type */ 'int',
 			/* annotations */ UDF,
 			/* modifiers */ 25
@@ -242,8 +242,8 @@ JdkClassCreateHelper.class('java.util.regex.Pattern', [
 			/* annotations */ UDF,
 			/* modifiers */ 25
 		],
-		[/* public static final int java.util.regex.Pattern.MULTILINE */
-			/* name */ 'MULTILINE',
+		[/* public static final int java.util.regex.Pattern.DOTALL */
+			/* name */ 'DOTALL',
 			/* type */ 'int',
 			/* annotations */ UDF,
 			/* modifiers */ 25
@@ -254,8 +254,8 @@ JdkClassCreateHelper.class('java.util.regex.Pattern', [
 			/* annotations */ UDF,
 			/* modifiers */ 25
 		],
-		[/* public static final int java.util.regex.Pattern.DOTALL */
-			/* name */ 'DOTALL',
+		[/* public static final int java.util.regex.Pattern.MULTILINE */
+			/* name */ 'MULTILINE',
 			/* type */ 'int',
 			/* annotations */ UDF,
 			/* modifiers */ 25
@@ -266,14 +266,14 @@ JdkClassCreateHelper.class('java.util.regex.Pattern', [
 			/* annotations */ UDF,
 			/* modifiers */ 25
 		],
-		[/* public static final int java.util.regex.Pattern.CANON_EQ */
-			/* name */ 'CANON_EQ',
+		[/* public static final int java.util.regex.Pattern.UNICODE_CHARACTER_CLASS */
+			/* name */ 'UNICODE_CHARACTER_CLASS',
 			/* type */ 'int',
 			/* annotations */ UDF,
 			/* modifiers */ 25
 		],
-		[/* public static final int java.util.regex.Pattern.UNICODE_CHARACTER_CLASS */
-			/* name */ 'UNICODE_CHARACTER_CLASS',
+		[/* public static final int java.util.regex.Pattern.UNIX_LINES */
+			/* name */ 'UNIX_LINES',
 			/* type */ 'int',
 			/* annotations */ UDF,
 			/* modifiers */ 25

@@ -105,6 +105,24 @@ DocsCollector.collect('java.util.EnumMap', [
 				]]
 			]
 		]],
+		[/* constructor */ '<init>(java.util.EnumMap)', [
+			[/* constructor description */
+				[/* text */ 't', `Creates an enum map with the same key type as the specified enum
+ map, initially containing the same mappings (if any).`]
+			],
+			[/* parameters */
+				[/* parameter */ 'm', [/* parameter description */
+					[/* text */ 't', `the enum map from which to initialize this enum map`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
+					[/* text */ 't', `if `],
+					[/* inline code block */ 'i', `m`],
+					[/* text */ 't', ` is null`]
+				]]
+			]
+		]],
 		[/* constructor */ '<init>(java.util.Map)', [
 			[/* constructor description */
 				[/* text */ 't', `Creates an enum map initialized from the specified map.  If the
@@ -137,48 +155,152 @@ DocsCollector.collect('java.util.EnumMap', [
 					[/* text */ 't', ` is null`]
 				]]
 			]
-		]],
-		[/* constructor */ '<init>(java.util.EnumMap)', [
-			[/* constructor description */
-				[/* text */ 't', `Creates an enum map with the same key type as the specified enum
- map, initially containing the same mappings (if any).`]
-			],
-			[/* parameters */
-				[/* parameter */ 'm', [/* parameter description */
-					[/* text */ 't', `the enum map from which to initialize this enum map`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
-					[/* text */ 't', `if `],
-					[/* inline code block */ 'i', `m`],
-					[/* text */ 't', ` is null`]
-				]]
-			]
 		]]
 	],
 	[/* methods */
-		[/* method */ 'remove(java.lang.Object)', [
+		[/* method */ 'containsKey(java.lang.Object)', [
 			[/* method description */
-				[/* text */ 't', `Removes the mapping for this key from this map if present.`]
+				[/* text */ 't', `Returns `],
+				[/* inline code block */ 'i', `true`],
+				[/* text */ 't', ` if this map contains a mapping for the specified
+ key.`]
 			],
 			[/* parameters */
 				[/* parameter */ 'key', [/* parameter description */
-					[/* text */ 't', `the key whose mapping is to be removed from the map`]
+					[/* text */ 't', `the key whose presence in this map is to be tested`]
 				]]
 			],
 			/* throws */ UDF,
 			[/* return description */
-				[/* text */ 't', `the previous value associated with specified key, or
-     `],
-				[/* inline code block */ 'i', `null`],
-				[/* text */ 't', ` if there was no entry for key.  (A `],
-				[/* inline code block */ 'i', `null`],
-				[/* text */ 't', `
-     return can also indicate that the map previously associated
-     `],
-				[/* inline code block */ 'i', `null`],
-				[/* text */ 't', ` with the specified key.)`]
+				[/* inline code block */ 'i', `true`],
+				[/* text */ 't', ` if this map contains a mapping for the specified
+            key`]
+			]
+		]],
+		[/* method */ 'containsValue(java.lang.Object)', [
+			[/* method description */
+				[/* text */ 't', `Returns `],
+				[/* inline code block */ 'i', `true`],
+				[/* text */ 't', ` if this map maps one or more keys to the
+ specified value.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'value', [/* parameter description */
+					[/* text */ 't', `the value whose presence in this map is to be tested`]
+				]]
+			],
+			/* throws */ UDF,
+			[/* return description */
+				[/* inline code block */ 'i', `true`],
+				[/* text */ 't', ` if this map maps one or more keys to this value`]
+			]
+		]],
+		[/* method */ 'equals(java.lang.Object)', [
+			[/* method description */
+				[/* text */ 't', `Compares the specified object with this map for equality.  Returns
+ `],
+				[/* inline code block */ 'i', `true`],
+				[/* text */ 't', ` if the given object is also a map and the two maps
+ represent the same mappings, as specified in the `],
+				[/* reference */ 'r', `.Map#equals(java.lang.Object)`],
+				[/* text */ 't', ` contract.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'o', [/* parameter description */
+					[/* text */ 't', `the object to be compared for equality with this map`]
+				]]
+			],
+			/* throws */ UDF,
+			[/* return description */
+				[/* inline code block */ 'i', `true`],
+				[/* text */ 't', ` if the specified object is equal to this map`]
+			]
+		]],
+		[/* method */ 'hashCode()', [
+			[/* method description */
+				[/* text */ 't', `Returns the hash code value for this map.  The hash code of a map is
+ defined to be the sum of the hash codes of each entry in the map.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the hash code value for this map`]
+			]
+		]],
+		[/* method */ 'size()', [
+			[/* method description */
+				[/* text */ 't', `Returns the number of key-value mappings in this map.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the number of key-value mappings in this map`]
+			]
+		]],
+		[/* method */ 'values()', [
+			[/* method description */
+				[/* text */ 't', `Returns a `],
+				[/* reference */ 'r', `java.util.Collection`],
+				[/* text */ 't', ` view of the values contained in this map.
+ The returned collection obeys the general contract outlined in
+ `],
+				[/* reference */ 'r', `.Map#values()`],
+				[/* text */ 't', `.  The collection's iterator will return the
+ values in the order their corresponding keys appear in map,
+ which is their natural order (the order in which the enum constants
+ are declared).`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `a collection view of the values contained in this map`]
+			]
+		]],
+		[/* method */ 'clone()', [
+			[/* method description */
+				[/* text */ 't', `Returns a shallow copy of this enum map. The values themselves
+ are not cloned.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `a shallow copy of this enum map`]
+			]
+		]],
+		[/* method */ 'entrySet()', [
+			[/* method description */
+				[/* text */ 't', `Returns a `],
+				[/* reference */ 'r', `java.util.Set`],
+				[/* text */ 't', ` view of the mappings contained in this map.
+ The returned set obeys the general contract outlined in
+ `],
+				[/* reference */ 'r', `.Map#keySet()`],
+				[/* text */ 't', `.  The set's iterator will return the
+ mappings in the order their keys appear in map, which is their
+ natural order (the order in which the enum constants are declared).`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `a set view of the mappings contained in this enum map`]
+			]
+		]],
+		[/* method */ 'keySet()', [
+			[/* method description */
+				[/* text */ 't', `Returns a `],
+				[/* reference */ 'r', `java.util.Set`],
+				[/* text */ 't', ` view of the keys contained in this map.
+ The returned set obeys the general contract outlined in
+ `],
+				[/* reference */ 'r', `.Map#keySet()`],
+				[/* text */ 't', `.  The set's iterator will return the keys
+ in their natural order (the order in which the enum constants
+ are declared).`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `a set view of the keys contained in this enum map`]
 			]
 		]],
 		[/* method */ 'get(java.lang.Object)', [
@@ -268,66 +390,27 @@ DocsCollector.collect('java.util.EnumMap', [
 				[/* text */ 't', ` with the specified key.)`]
 			]
 		]],
-		[/* method */ 'equals(java.lang.Object)', [
+		[/* method */ 'remove(java.lang.Object)', [
 			[/* method description */
-				[/* text */ 't', `Compares the specified object with this map for equality.  Returns
- `],
-				[/* inline code block */ 'i', `true`],
-				[/* text */ 't', ` if the given object is also a map and the two maps
- represent the same mappings, as specified in the `],
-				[/* reference */ 'r', `.Map#equals(java.lang.Object)`],
-				[/* text */ 't', ` contract.`]
+				[/* text */ 't', `Removes the mapping for this key from this map if present.`]
 			],
 			[/* parameters */
-				[/* parameter */ 'o', [/* parameter description */
-					[/* text */ 't', `the object to be compared for equality with this map`]
+				[/* parameter */ 'key', [/* parameter description */
+					[/* text */ 't', `the key whose mapping is to be removed from the map`]
 				]]
 			],
 			/* throws */ UDF,
 			[/* return description */
-				[/* inline code block */ 'i', `true`],
-				[/* text */ 't', ` if the specified object is equal to this map`]
-			]
-		]],
-		[/* method */ 'values()', [
-			[/* method description */
-				[/* text */ 't', `Returns a `],
-				[/* reference */ 'r', `java.util.Collection`],
-				[/* text */ 't', ` view of the values contained in this map.
- The returned collection obeys the general contract outlined in
- `],
-				[/* reference */ 'r', `.Map#values()`],
-				[/* text */ 't', `.  The collection's iterator will return the
- values in the order their corresponding keys appear in map,
- which is their natural order (the order in which the enum constants
- are declared).`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `a collection view of the values contained in this map`]
-			]
-		]],
-		[/* method */ 'hashCode()', [
-			[/* method description */
-				[/* text */ 't', `Returns the hash code value for this map.  The hash code of a map is
- defined to be the sum of the hash codes of each entry in the map.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the hash code value for this map`]
-			]
-		]],
-		[/* method */ 'clone()', [
-			[/* method description */
-				[/* text */ 't', `Returns a shallow copy of this enum map. The values themselves
- are not cloned.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `a shallow copy of this enum map`]
+				[/* text */ 't', `the previous value associated with specified key, or
+     `],
+				[/* inline code block */ 'i', `null`],
+				[/* text */ 't', ` if there was no entry for key.  (A `],
+				[/* inline code block */ 'i', `null`],
+				[/* text */ 't', `
+     return can also indicate that the map previously associated
+     `],
+				[/* inline code block */ 'i', `null`],
+				[/* text */ 't', ` with the specified key.)`]
 			]
 		]],
 		[/* method */ 'clear()', [
@@ -337,34 +420,6 @@ DocsCollector.collect('java.util.EnumMap', [
 			/* parameters */ UDF,
 			/* throws */ UDF,
 			/* return */ UDF
-		]],
-		[/* method */ 'size()', [
-			[/* method description */
-				[/* text */ 't', `Returns the number of key-value mappings in this map.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the number of key-value mappings in this map`]
-			]
-		]],
-		[/* method */ 'entrySet()', [
-			[/* method description */
-				[/* text */ 't', `Returns a `],
-				[/* reference */ 'r', `java.util.Set`],
-				[/* text */ 't', ` view of the mappings contained in this map.
- The returned set obeys the general contract outlined in
- `],
-				[/* reference */ 'r', `.Map#keySet()`],
-				[/* text */ 't', `.  The set's iterator will return the
- mappings in the order their keys appear in map, which is their
- natural order (the order in which the enum constants are declared).`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `a set view of the mappings contained in this enum map`]
-			]
 		]],
 		[/* method */ 'putAll(java.util.Map)', [
 			[/* method description */
@@ -384,61 +439,6 @@ DocsCollector.collect('java.util.EnumMap', [
 				]]
 			],
 			/* return */ UDF
-		]],
-		[/* method */ 'containsKey(java.lang.Object)', [
-			[/* method description */
-				[/* text */ 't', `Returns `],
-				[/* inline code block */ 'i', `true`],
-				[/* text */ 't', ` if this map contains a mapping for the specified
- key.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'key', [/* parameter description */
-					[/* text */ 't', `the key whose presence in this map is to be tested`]
-				]]
-			],
-			/* throws */ UDF,
-			[/* return description */
-				[/* inline code block */ 'i', `true`],
-				[/* text */ 't', ` if this map contains a mapping for the specified
-            key`]
-			]
-		]],
-		[/* method */ 'keySet()', [
-			[/* method description */
-				[/* text */ 't', `Returns a `],
-				[/* reference */ 'r', `java.util.Set`],
-				[/* text */ 't', ` view of the keys contained in this map.
- The returned set obeys the general contract outlined in
- `],
-				[/* reference */ 'r', `.Map#keySet()`],
-				[/* text */ 't', `.  The set's iterator will return the keys
- in their natural order (the order in which the enum constants
- are declared).`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `a set view of the keys contained in this enum map`]
-			]
-		]],
-		[/* method */ 'containsValue(java.lang.Object)', [
-			[/* method description */
-				[/* text */ 't', `Returns `],
-				[/* inline code block */ 'i', `true`],
-				[/* text */ 't', ` if this map maps one or more keys to the
- specified value.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'value', [/* parameter description */
-					[/* text */ 't', `the value whose presence in this map is to be tested`]
-				]]
-			],
-			/* throws */ UDF,
-			[/* return description */
-				[/* inline code block */ 'i', `true`],
-				[/* text */ 't', ` if this map maps one or more keys to this value`]
-			]
 		]]
 	],
 ]);

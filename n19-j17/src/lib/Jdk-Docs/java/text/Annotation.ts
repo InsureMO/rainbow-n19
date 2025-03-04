@@ -48,6 +48,16 @@ DocsCollector.collect('java.text.Annotation', [
 		]]
 	],
 	[/* methods */
+		[/* method */ 'getValue()', [
+			[/* method description */
+				[/* text */ 't', `Returns the value of the attribute, which may be null.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the value of the attribute`]
+			]
+		]],
 		[/* method */ 'toString()', [
 			[/* method description */
 				[/* text */ 't', `Returns the String representation of this Annotation.`]
@@ -59,16 +69,6 @@ DocsCollector.collect('java.text.Annotation', [
 				[/* inline code block */ 'i', `String`],
 				[/* text */ 't', ` representation of this `],
 				[/* inline code block */ 'i', `Annotation`]
-			]
-		]],
-		[/* method */ 'getValue()', [
-			[/* method description */
-				[/* text */ 't', `Returns the value of the attribute, which may be null.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the value of the attribute`]
 			]
 		]]
 	],

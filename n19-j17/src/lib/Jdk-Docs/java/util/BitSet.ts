@@ -55,6 +55,15 @@ DocsCollector.collect('java.util.BitSet', [
 	],
 	/* fields */ UDF,
 	[/* constructors */
+		[/* constructor */ '<init>()', [
+			[/* constructor description */
+				[/* text */ 't', `Creates a new bit set. All bits are initially `],
+				[/* inline code block */ 'i', `false`],
+				[/* text */ 't', `.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF
+		]],
 		[/* constructor */ '<init>(int)', [
 			[/* constructor description */
 				[/* text */ 't', `Creates a bit set whose initial size is large enough to explicitly
@@ -78,89 +87,9 @@ DocsCollector.collect('java.util.BitSet', [
          is negative`]
 				]]
 			]
-		]],
-		[/* constructor */ '<init>()', [
-			[/* constructor description */
-				[/* text */ 't', `Creates a new bit set. All bits are initially `],
-				[/* inline code block */ 'i', `false`],
-				[/* text */ 't', `.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF
 		]]
 	],
 	[/* methods */
-		[/* method */ 'get(int,int)', [
-			[/* method description */
-				[/* text */ 't', `Returns a new `],
-				[/* inline code block */ 'i', `BitSet`],
-				[/* text */ 't', ` composed of bits from this `],
-				[/* inline code block */ 'i', `BitSet`],
-				[/* text */ 't', `
- from `],
-				[/* inline code block */ 'i', `fromIndex`],
-				[/* text */ 't', ` (inclusive) to `],
-				[/* inline code block */ 'i', `toIndex`],
-				[/* text */ 't', ` (exclusive).`]
-			],
-			[/* parameters */
-				[/* parameter */ 'fromIndex', [/* parameter description */
-					[/* text */ 't', `index of the first bit to include`]
-				]],
-				[/* parameter */ 'toIndex', [/* parameter description */
-					[/* text */ 't', `index after the last bit to include`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.IndexOutOfBoundsException', [/* throw description */
-					[/* text */ 't', `if `],
-					[/* inline code block */ 'i', `fromIndex`],
-					[/* text */ 't', ` is negative,
-         or `],
-					[/* inline code block */ 'i', `toIndex`],
-					[/* text */ 't', ` is negative, or `],
-					[/* inline code block */ 'i', `fromIndex`],
-					[/* text */ 't', ` is
-         larger than `],
-					[/* inline code block */ 'i', `toIndex`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `a new `],
-				[/* inline code block */ 'i', `BitSet`],
-				[/* text */ 't', ` from a range of this `],
-				[/* inline code block */ 'i', `BitSet`]
-			]
-		]],
-		[/* method */ 'get(int)', [
-			[/* method description */
-				[/* text */ 't', `Returns the value of the bit with the specified index. The value
- is `],
-				[/* inline code block */ 'i', `true`],
-				[/* text */ 't', ` if the bit with the index `],
-				[/* inline code block */ 'i', `bitIndex`],
-				[/* text */ 't', `
- is currently set in this `],
-				[/* inline code block */ 'i', `BitSet`],
-				[/* text */ 't', `; otherwise, the result
- is `],
-				[/* inline code block */ 'i', `false`],
-				[/* text */ 't', `.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'bitIndex', [/* parameter description */
-					[/* text */ 't', `the bit index`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.IndexOutOfBoundsException', [/* throw description */
-					[/* text */ 't', `if the specified index is negative`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `the value of the bit with the specified index`]
-			]
-		]],
 		[/* method */ 'equals(java.lang.Object)', [
 			[/* method description */
 				[/* text */ 't', `Compares this object against the specified object.
@@ -199,6 +128,158 @@ DocsCollector.collect('java.util.BitSet', [
 				[/* text */ 't', ` otherwise`]
 			]
 		]],
+		[/* method */ 'get(int)', [
+			[/* method description */
+				[/* text */ 't', `Returns the value of the bit with the specified index. The value
+ is `],
+				[/* inline code block */ 'i', `true`],
+				[/* text */ 't', ` if the bit with the index `],
+				[/* inline code block */ 'i', `bitIndex`],
+				[/* text */ 't', `
+ is currently set in this `],
+				[/* inline code block */ 'i', `BitSet`],
+				[/* text */ 't', `; otherwise, the result
+ is `],
+				[/* inline code block */ 'i', `false`],
+				[/* text */ 't', `.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'bitIndex', [/* parameter description */
+					[/* text */ 't', `the bit index`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.lang.IndexOutOfBoundsException', [/* throw description */
+					[/* text */ 't', `if the specified index is negative`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `the value of the bit with the specified index`]
+			]
+		]],
+		[/* method */ 'intersects(java.util.BitSet)', [
+			[/* method description */
+				[/* text */ 't', `Returns true if the specified `],
+				[/* inline code block */ 'i', `BitSet`],
+				[/* text */ 't', ` has any bits set to
+ `],
+				[/* inline code block */ 'i', `true`],
+				[/* text */ 't', ` that are also set to `],
+				[/* inline code block */ 'i', `true`],
+				[/* text */ 't', ` in this `],
+				[/* inline code block */ 'i', `BitSet`],
+				[/* text */ 't', `.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'set', [/* parameter description */
+					[/* text */ 't', ``],
+					[/* inline code block */ 'i', `BitSet`],
+					[/* text */ 't', ` to intersect with`]
+				]]
+			],
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `boolean indicating whether this `],
+				[/* inline code block */ 'i', `BitSet`],
+				[/* text */ 't', ` intersects
+         the specified `],
+				[/* inline code block */ 'i', `BitSet`]
+			]
+		]],
+		[/* method */ 'isEmpty()', [
+			[/* method description */
+				[/* text */ 't', `Returns true if this `],
+				[/* inline code block */ 'i', `BitSet`],
+				[/* text */ 't', ` contains no bits that are set
+ to `],
+				[/* inline code block */ 'i', `true`],
+				[/* text */ 't', `.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `boolean indicating whether this `],
+				[/* inline code block */ 'i', `BitSet`],
+				[/* text */ 't', ` is empty`]
+			]
+		]],
+		[/* method */ 'toByteArray()', [
+			[/* method description */
+				[/* text */ 't', `Returns a new byte array containing all the bits in this bit set.
+
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', `More precisely, if
+ `],
+					[/* new line */ 'n'],
+					[/* inline code block */ 'i', `byte[] bytes = s.toByteArray();`],
+					[/* new line */ 'n'],
+					[/* text */ 't', `then `],
+					[/* inline code block */ 'i', `bytes.length == (s.length()+7)/8`],
+					[/* text */ 't', ` and
+ `],
+					[/* new line */ 'n'],
+					[/* inline code block */ 'i', `s.get(n) == ((bytes[n/8] & (1<<(n%8))) != 0)`],
+					[/* new line */ 'n'],
+					[/* text */ 't', `for all `],
+					[/* inline code block */ 'i', `n < 8 * bytes.length`],
+					[/* text */ 't', `.`]
+				]]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `a byte array containing a little-endian representation
+         of all the bits in this bit set`]
+			]
+		]],
+		[/* method */ 'cardinality()', [
+			[/* method description */
+				[/* text */ 't', `Returns the number of bits set to `],
+				[/* inline code block */ 'i', `true`],
+				[/* text */ 't', ` in this `],
+				[/* inline code block */ 'i', `BitSet`],
+				[/* text */ 't', `.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the number of bits set to `],
+				[/* inline code block */ 'i', `true`],
+				[/* text */ 't', ` in this `],
+				[/* inline code block */ 'i', `BitSet`]
+			]
+		]],
+		[/* method */ 'hashCode()', [
+			[/* method description */
+				[/* text */ 't', `Returns the hash code value for this bit set. The hash code depends
+ only on which bits are set within this `],
+				[/* inline code block */ 'i', `BitSet`],
+				[/* text */ 't', `.
+
+ `],
+				[/* block */ 'b', `The hash code is defined to be the result of the following
+ calculation:
+  `],
+				[/* code block */ 'c', [
+					[/* inline code block */ 'i', `public int hashCode() {
+     long h = 1234;
+     long[] words = toLongArray();
+     for (int i = words.length; --i >= 0; )
+         h ^= words[i] * (i + 1);
+     return (int)((h >> 32) ^ h);
+ }`]
+				]],
+				[/* text */ 't', `
+ Note that the hash code changes if the set of bits is altered.`],
+				[/* block */ 'b', '']
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the hash code value for this bit set`]
+			]
+		]],
 		[/* method */ 'length()', [
 			[/* method description */
 				[/* text */ 't', `Returns the "logical size" of this `],
@@ -216,6 +297,190 @@ DocsCollector.collect('java.util.BitSet', [
 			[/* return description */
 				[/* text */ 't', `the logical size of this `],
 				[/* inline code block */ 'i', `BitSet`]
+			]
+		]],
+		[/* method */ 'nextClearBit(int)', [
+			[/* method description */
+				[/* text */ 't', `Returns the index of the first bit that is set to `],
+				[/* inline code block */ 'i', `false`],
+				[/* text */ 't', `
+ that occurs on or after the specified starting index.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'fromIndex', [/* parameter description */
+					[/* text */ 't', `the index to start checking from (inclusive)`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.lang.IndexOutOfBoundsException', [/* throw description */
+					[/* text */ 't', `if the specified index is negative`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `the index of the next clear bit`]
+			]
+		]],
+		[/* method */ 'nextSetBit(int)', [
+			[/* method description */
+				[/* text */ 't', `Returns the index of the first bit that is set to `],
+				[/* inline code block */ 'i', `true`],
+				[/* text */ 't', `
+ that occurs on or after the specified starting index. If no such
+ bit exists then `],
+				[/* inline code block */ 'i', `-1`],
+				[/* text */ 't', ` is returned.
+
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', `To iterate over the `],
+					[/* inline code block */ 'i', `true`],
+					[/* text */ 't', ` bits in a `],
+					[/* inline code block */ 'i', `BitSet`],
+					[/* text */ 't', `,
+ use the following loop:
+
+  `]
+				]],
+				[/* code block */ 'c', [
+					[/* inline code block */ 'i', `for (int i = bs.nextSetBit(0); i >= 0; i = bs.nextSetBit(i+1)) {
+     // operate on index i here
+     if (i == Integer.MAX_VALUE) {
+         break; // or (i+1) would overflow
+     }
+ }`]
+				]],
+				[/* block */ 'b', '']
+			],
+			[/* parameters */
+				[/* parameter */ 'fromIndex', [/* parameter description */
+					[/* text */ 't', `the index to start checking from (inclusive)`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.lang.IndexOutOfBoundsException', [/* throw description */
+					[/* text */ 't', `if the specified index is negative`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `the index of the next set bit, or `],
+				[/* inline code block */ 'i', `-1`],
+				[/* text */ 't', ` if there
+         is no such bit`]
+			]
+		]],
+		[/* method */ 'previousClearBit(int)', [
+			[/* method description */
+				[/* text */ 't', `Returns the index of the nearest bit that is set to `],
+				[/* inline code block */ 'i', `false`],
+				[/* text */ 't', `
+ that occurs on or before the specified starting index.
+ If no such bit exists, or if `],
+				[/* inline code block */ 'i', `-1`],
+				[/* text */ 't', ` is given as the
+ starting index, then `],
+				[/* inline code block */ 'i', `-1`],
+				[/* text */ 't', ` is returned.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'fromIndex', [/* parameter description */
+					[/* text */ 't', `the index to start checking from (inclusive)`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.lang.IndexOutOfBoundsException', [/* throw description */
+					[/* text */ 't', `if the specified index is less
+         than `],
+					[/* inline code block */ 'i', `-1`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `the index of the previous clear bit, or `],
+				[/* inline code block */ 'i', `-1`],
+				[/* text */ 't', ` if there
+         is no such bit`]
+			]
+		]],
+		[/* method */ 'previousSetBit(int)', [
+			[/* method description */
+				[/* text */ 't', `Returns the index of the nearest bit that is set to `],
+				[/* inline code block */ 'i', `true`],
+				[/* text */ 't', `
+ that occurs on or before the specified starting index.
+ If no such bit exists, or if `],
+				[/* inline code block */ 'i', `-1`],
+				[/* text */ 't', ` is given as the
+ starting index, then `],
+				[/* inline code block */ 'i', `-1`],
+				[/* text */ 't', ` is returned.
+
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', `To iterate over the `],
+					[/* inline code block */ 'i', `true`],
+					[/* text */ 't', ` bits in a `],
+					[/* inline code block */ 'i', `BitSet`],
+					[/* text */ 't', `,
+ use the following loop:
+
+  `]
+				]],
+				[/* code block */ 'c', [
+					[/* inline code block */ 'i', `for (int i = bs.length(); (i = bs.previousSetBit(i-1)) >= 0; ) {
+     // operate on index i here
+ }`]
+				]],
+				[/* block */ 'b', '']
+			],
+			[/* parameters */
+				[/* parameter */ 'fromIndex', [/* parameter description */
+					[/* text */ 't', `the index to start checking from (inclusive)`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.lang.IndexOutOfBoundsException', [/* throw description */
+					[/* text */ 't', `if the specified index is less
+         than `],
+					[/* inline code block */ 'i', `-1`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `the index of the previous set bit, or `],
+				[/* inline code block */ 'i', `-1`],
+				[/* text */ 't', ` if there
+         is no such bit`]
+			]
+		]],
+		[/* method */ 'size()', [
+			[/* method description */
+				[/* text */ 't', `Returns the number of bits of space actually in use by this
+ `],
+				[/* inline code block */ 'i', `BitSet`],
+				[/* text */ 't', ` to represent bit values.
+ The maximum element in the set is the size - 1st element.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the number of bits currently in this bit set`]
+			]
+		]],
+		[/* method */ 'clone()', [
+			[/* method description */
+				[/* text */ 't', `Cloning this `],
+				[/* inline code block */ 'i', `BitSet`],
+				[/* text */ 't', ` produces a new `],
+				[/* inline code block */ 'i', `BitSet`],
+				[/* text */ 't', `
+ that is equal to it.
+ The clone of the bit set is another bit set that has exactly the
+ same bits set to `],
+				[/* inline code block */ 'i', `true`],
+				[/* text */ 't', ` as this bit set.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `a clone of this bit set`]
 			]
 		]],
 		[/* method */ 'toString()', [
@@ -265,127 +530,104 @@ DocsCollector.collect('java.util.BitSet', [
 				[/* text */ 't', `a string representation of this bit set`]
 			]
 		]],
-		[/* method */ 'hashCode()', [
+		[/* method */ 'get(int,int)', [
 			[/* method description */
-				[/* text */ 't', `Returns the hash code value for this bit set. The hash code depends
- only on which bits are set within this `],
+				[/* text */ 't', `Returns a new `],
 				[/* inline code block */ 'i', `BitSet`],
-				[/* text */ 't', `.
-
- `],
-				[/* block */ 'b', `The hash code is defined to be the result of the following
- calculation:
-  `],
-				[/* code block */ 'c', [
-					[/* inline code block */ 'i', `public int hashCode() {
-     long h = 1234;
-     long[] words = toLongArray();
-     for (int i = words.length; --i >= 0; )
-         h ^= words[i] * (i + 1);
-     return (int)((h >> 32) ^ h);
- }`]
+				[/* text */ 't', ` composed of bits from this `],
+				[/* inline code block */ 'i', `BitSet`],
+				[/* text */ 't', `
+ from `],
+				[/* inline code block */ 'i', `fromIndex`],
+				[/* text */ 't', ` (inclusive) to `],
+				[/* inline code block */ 'i', `toIndex`],
+				[/* text */ 't', ` (exclusive).`]
+			],
+			[/* parameters */
+				[/* parameter */ 'fromIndex', [/* parameter description */
+					[/* text */ 't', `index of the first bit to include`]
 				]],
-				[/* text */ 't', `
- Note that the hash code changes if the set of bits is altered.`],
-				[/* block */ 'b', '']
+				[/* parameter */ 'toIndex', [/* parameter description */
+					[/* text */ 't', `index after the last bit to include`]
+				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			[/* throws */
+				[/* throw */ 'java.lang.IndexOutOfBoundsException', [/* throw description */
+					[/* text */ 't', `if `],
+					[/* inline code block */ 'i', `fromIndex`],
+					[/* text */ 't', ` is negative,
+         or `],
+					[/* inline code block */ 'i', `toIndex`],
+					[/* text */ 't', ` is negative, or `],
+					[/* inline code block */ 'i', `fromIndex`],
+					[/* text */ 't', ` is
+         larger than `],
+					[/* inline code block */ 'i', `toIndex`]
+				]]
+			],
 			[/* return description */
-				[/* text */ 't', `the hash code value for this bit set`]
+				[/* text */ 't', `a new `],
+				[/* inline code block */ 'i', `BitSet`],
+				[/* text */ 't', ` from a range of this `],
+				[/* inline code block */ 'i', `BitSet`]
 			]
 		]],
-		[/* method */ 'clone()', [
+		[/* method */ 'stream()', [
 			[/* method description */
-				[/* text */ 't', `Cloning this `],
-				[/* inline code block */ 'i', `BitSet`],
-				[/* text */ 't', ` produces a new `],
+				[/* text */ 't', `Returns a stream of indices for which this `],
 				[/* inline code block */ 'i', `BitSet`],
 				[/* text */ 't', `
- that is equal to it.
- The clone of the bit set is another bit set that has exactly the
- same bits set to `],
-				[/* inline code block */ 'i', `true`],
-				[/* text */ 't', ` as this bit set.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `a clone of this bit set`]
-			]
-		]],
-		[/* method */ 'valueOf(long[])', [
-			[/* method description */
-				[/* text */ 't', `Returns a new bit set containing all the bits in the given long array.
+ contains a bit in the set state. The indices are returned
+ in order, from lowest to highest. The size of the stream
+ is the number of bits in the set state, equal to the value
+ returned by the `],
+				[/* reference */ 'r', `#cardinality()`, `cardinality()`],
+				[/* text */ 't', ` method.
 
  `],
 				[/* block */ 'b', [
-					[/* text */ 't', `More precisely,
+					[/* text */ 't', `The stream binds to this bit set when the terminal stream operation
+ commences (specifically, the spliterator for the stream is
+ `],
+					[/* reference */ 'r', `.Spliterator#binding`],
+					[/* text */ 't', `).  If the
+ bit set is modified during that operation then the result is undefined.`]
+				]]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `a stream of integers representing set indices`]
+			]
+		]],
+		[/* method */ 'toLongArray()', [
+			[/* method description */
+				[/* text */ 't', `Returns a new long array containing all the bits in this bit set.
+
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', `More precisely, if
  `],
 					[/* new line */ 'n'],
-					[/* inline code block */ 'i', `BitSet.valueOf(longs).get(n) == ((longs[n/64] & (1L<<(n%64))) != 0)`],
+					[/* inline code block */ 'i', `long[] longs = s.toLongArray();`],
+					[/* new line */ 'n'],
+					[/* text */ 't', `then `],
+					[/* inline code block */ 'i', `longs.length == (s.length()+63)/64`],
+					[/* text */ 't', ` and
+ `],
+					[/* new line */ 'n'],
+					[/* inline code block */ 'i', `s.get(n) == ((longs[n/64] & (1L<<(n%64))) != 0)`],
 					[/* new line */ 'n'],
 					[/* text */ 't', `for all `],
 					[/* inline code block */ 'i', `n < 64 * longs.length`],
-					[/* text */ 't', `.
-
- `]
-				]],
-				[/* block */ 'b', [
-					[/* text */ 't', `This method is equivalent to
- `],
-					[/* inline code block */ 'i', `BitSet.valueOf(LongBuffer.wrap(longs))`],
 					[/* text */ 't', `.`]
 				]]
 			],
-			[/* parameters */
-				[/* parameter */ 'longs', [/* parameter description */
-					[/* text */ 't', `a long array containing a little-endian representation
-        of a sequence of bits to be used as the initial bits of the
-        new bit set`]
-				]]
-			],
+			/* parameters */ UDF,
 			/* throws */ UDF,
 			[/* return description */
-				[/* text */ 't', `a `],
-				[/* inline code block */ 'i', `BitSet`],
-				[/* text */ 't', ` containing all the bits in the long array`]
-			]
-		]],
-		[/* method */ 'valueOf(java.nio.LongBuffer)', [
-			[/* method description */
-				[/* text */ 't', `Returns a new bit set containing all the bits in the given long
- buffer between its position and limit.
-
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', `More precisely,
- `],
-					[/* new line */ 'n'],
-					[/* inline code block */ 'i', `BitSet.valueOf(lb).get(n) == ((lb.get(lb.position()+n/64) & (1L<<(n%64))) != 0)`],
-					[/* new line */ 'n'],
-					[/* text */ 't', `for all `],
-					[/* inline code block */ 'i', `n < 64 * lb.remaining()`],
-					[/* text */ 't', `.
-
- `]
-				]],
-				[/* block */ 'b', `The long buffer is not modified by this method, and no
- reference to the buffer is retained by the bit set.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'lb', [/* parameter description */
-					[/* text */ 't', `a long buffer containing a little-endian representation
-        of a sequence of bits between its position and limit, to be
-        used as the initial bits of the new bit set`]
-				]]
-			],
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `a `],
-				[/* inline code block */ 'i', `BitSet`],
-				[/* text */ 't', ` containing all the bits in the buffer in the
-         specified range`]
+				[/* text */ 't', `a long array containing a little-endian representation
+         of all the bits in this bit set`]
 			]
 		]],
 		[/* method */ 'valueOf(byte[])', [
@@ -462,6 +704,153 @@ DocsCollector.collect('java.util.BitSet', [
          specified range`]
 			]
 		]],
+		[/* method */ 'valueOf(java.nio.LongBuffer)', [
+			[/* method description */
+				[/* text */ 't', `Returns a new bit set containing all the bits in the given long
+ buffer between its position and limit.
+
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', `More precisely,
+ `],
+					[/* new line */ 'n'],
+					[/* inline code block */ 'i', `BitSet.valueOf(lb).get(n) == ((lb.get(lb.position()+n/64) & (1L<<(n%64))) != 0)`],
+					[/* new line */ 'n'],
+					[/* text */ 't', `for all `],
+					[/* inline code block */ 'i', `n < 64 * lb.remaining()`],
+					[/* text */ 't', `.
+
+ `]
+				]],
+				[/* block */ 'b', `The long buffer is not modified by this method, and no
+ reference to the buffer is retained by the bit set.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'lb', [/* parameter description */
+					[/* text */ 't', `a long buffer containing a little-endian representation
+        of a sequence of bits between its position and limit, to be
+        used as the initial bits of the new bit set`]
+				]]
+			],
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `a `],
+				[/* inline code block */ 'i', `BitSet`],
+				[/* text */ 't', ` containing all the bits in the buffer in the
+         specified range`]
+			]
+		]],
+		[/* method */ 'valueOf(long[])', [
+			[/* method description */
+				[/* text */ 't', `Returns a new bit set containing all the bits in the given long array.
+
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', `More precisely,
+ `],
+					[/* new line */ 'n'],
+					[/* inline code block */ 'i', `BitSet.valueOf(longs).get(n) == ((longs[n/64] & (1L<<(n%64))) != 0)`],
+					[/* new line */ 'n'],
+					[/* text */ 't', `for all `],
+					[/* inline code block */ 'i', `n < 64 * longs.length`],
+					[/* text */ 't', `.
+
+ `]
+				]],
+				[/* block */ 'b', [
+					[/* text */ 't', `This method is equivalent to
+ `],
+					[/* inline code block */ 'i', `BitSet.valueOf(LongBuffer.wrap(longs))`],
+					[/* text */ 't', `.`]
+				]]
+			],
+			[/* parameters */
+				[/* parameter */ 'longs', [/* parameter description */
+					[/* text */ 't', `a long array containing a little-endian representation
+        of a sequence of bits to be used as the initial bits of the
+        new bit set`]
+				]]
+			],
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `a `],
+				[/* inline code block */ 'i', `BitSet`],
+				[/* text */ 't', ` containing all the bits in the long array`]
+			]
+		]],
+		[/* method */ 'and(java.util.BitSet)', [
+			[/* method description */
+				[/* text */ 't', `Performs a logical `],
+				[/* text */ 't', `AND`],
+				[/* text */ 't', ` of this target bit set with the
+ argument bit set. This bit set is modified so that each bit in it
+ has the value `],
+				[/* inline code block */ 'i', `true`],
+				[/* text */ 't', ` if and only if it both initially
+ had the value `],
+				[/* inline code block */ 'i', `true`],
+				[/* text */ 't', ` and the corresponding bit in the
+ bit set argument also had the value `],
+				[/* inline code block */ 'i', `true`],
+				[/* text */ 't', `.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'set', [/* parameter description */
+					[/* text */ 't', `a bit set`]
+				]]
+			],
+			/* throws */ UDF,
+			/* return */ UDF
+		]],
+		[/* method */ 'andNot(java.util.BitSet)', [
+			[/* method description */
+				[/* text */ 't', `Clears all of the bits in this `],
+				[/* inline code block */ 'i', `BitSet`],
+				[/* text */ 't', ` whose corresponding
+ bit is set in the specified `],
+				[/* inline code block */ 'i', `BitSet`],
+				[/* text */ 't', `.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'set', [/* parameter description */
+					[/* text */ 't', `the `],
+					[/* inline code block */ 'i', `BitSet`],
+					[/* text */ 't', ` with which to mask this
+         `],
+					[/* inline code block */ 'i', `BitSet`]
+				]]
+			],
+			/* throws */ UDF,
+			/* return */ UDF
+		]],
+		[/* method */ 'clear()', [
+			[/* method description */
+				[/* text */ 't', `Sets all of the bits in this BitSet to `],
+				[/* inline code block */ 'i', `false`],
+				[/* text */ 't', `.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			/* return */ UDF
+		]],
+		[/* method */ 'clear(int)', [
+			[/* method description */
+				[/* text */ 't', `Sets the bit specified by the index to `],
+				[/* inline code block */ 'i', `false`],
+				[/* text */ 't', `.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'bitIndex', [/* parameter description */
+					[/* text */ 't', `the index of the bit to be cleared`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.lang.IndexOutOfBoundsException', [/* throw description */
+					[/* text */ 't', `if the specified index is negative`]
+				]]
+			],
+			/* return */ UDF
+		]],
 		[/* method */ 'clear(int,int)', [
 			[/* method description */
 				[/* text */ 't', `Sets the bits from the specified `],
@@ -497,15 +886,14 @@ DocsCollector.collect('java.util.BitSet', [
 			],
 			/* return */ UDF
 		]],
-		[/* method */ 'clear(int)', [
+		[/* method */ 'flip(int)', [
 			[/* method description */
-				[/* text */ 't', `Sets the bit specified by the index to `],
-				[/* inline code block */ 'i', `false`],
-				[/* text */ 't', `.`]
+				[/* text */ 't', `Sets the bit at the specified index to the complement of its
+ current value.`]
 			],
 			[/* parameters */
 				[/* parameter */ 'bitIndex', [/* parameter description */
-					[/* text */ 't', `the index of the bit to be cleared`]
+					[/* text */ 't', `the index of the bit to flip`]
 				]]
 			],
 			[/* throws */
@@ -515,74 +903,63 @@ DocsCollector.collect('java.util.BitSet', [
 			],
 			/* return */ UDF
 		]],
-		[/* method */ 'clear()', [
+		[/* method */ 'flip(int,int)', [
 			[/* method description */
-				[/* text */ 't', `Sets all of the bits in this BitSet to `],
-				[/* inline code block */ 'i', `false`],
-				[/* text */ 't', `.`]
+				[/* text */ 't', `Sets each bit from the specified `],
+				[/* inline code block */ 'i', `fromIndex`],
+				[/* text */ 't', ` (inclusive) to the
+ specified `],
+				[/* inline code block */ 'i', `toIndex`],
+				[/* text */ 't', ` (exclusive) to the complement of its current
+ value.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			[/* parameters */
+				[/* parameter */ 'fromIndex', [/* parameter description */
+					[/* text */ 't', `index of the first bit to flip`]
+				]],
+				[/* parameter */ 'toIndex', [/* parameter description */
+					[/* text */ 't', `index after the last bit to flip`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.lang.IndexOutOfBoundsException', [/* throw description */
+					[/* text */ 't', `if `],
+					[/* inline code block */ 'i', `fromIndex`],
+					[/* text */ 't', ` is negative,
+         or `],
+					[/* inline code block */ 'i', `toIndex`],
+					[/* text */ 't', ` is negative, or `],
+					[/* inline code block */ 'i', `fromIndex`],
+					[/* text */ 't', ` is
+         larger than `],
+					[/* inline code block */ 'i', `toIndex`]
+				]]
+			],
 			/* return */ UDF
 		]],
-		[/* method */ 'isEmpty()', [
+		[/* method */ 'or(java.util.BitSet)', [
 			[/* method description */
-				[/* text */ 't', `Returns true if this `],
-				[/* inline code block */ 'i', `BitSet`],
-				[/* text */ 't', ` contains no bits that are set
- to `],
+				[/* text */ 't', `Performs a logical `],
+				[/* text */ 't', `OR`],
+				[/* text */ 't', ` of this bit set with the bit set
+ argument. This bit set is modified so that a bit in it has the
+ value `],
+				[/* inline code block */ 'i', `true`],
+				[/* text */ 't', ` if and only if it either already had the
+ value `],
+				[/* inline code block */ 'i', `true`],
+				[/* text */ 't', ` or the corresponding bit in the bit set
+ argument has the value `],
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', `.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `boolean indicating whether this `],
-				[/* inline code block */ 'i', `BitSet`],
-				[/* text */ 't', ` is empty`]
-			]
-		]],
-		[/* method */ 'size()', [
-			[/* method description */
-				[/* text */ 't', `Returns the number of bits of space actually in use by this
- `],
-				[/* inline code block */ 'i', `BitSet`],
-				[/* text */ 't', ` to represent bit values.
- The maximum element in the set is the size - 1st element.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the number of bits currently in this bit set`]
-			]
-		]],
-		[/* method */ 'stream()', [
-			[/* method description */
-				[/* text */ 't', `Returns a stream of indices for which this `],
-				[/* inline code block */ 'i', `BitSet`],
-				[/* text */ 't', `
- contains a bit in the set state. The indices are returned
- in order, from lowest to highest. The size of the stream
- is the number of bits in the set state, equal to the value
- returned by the `],
-				[/* reference */ 'r', `#cardinality()`, `cardinality()`],
-				[/* text */ 't', ` method.
-
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', `The stream binds to this bit set when the terminal stream operation
- commences (specifically, the spliterator for the stream is
- `],
-					[/* reference */ 'r', `.Spliterator#binding`],
-					[/* text */ 't', `).  If the
- bit set is modified during that operation then the result is undefined.`]
+			[/* parameters */
+				[/* parameter */ 'set', [/* parameter description */
+					[/* text */ 't', `a bit set`]
 				]]
 			],
-			/* parameters */ UDF,
 			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `a stream of integers representing set indices`]
-			]
+			/* return */ UDF
 		]],
 		[/* method */ 'set(int)', [
 			[/* method description */
@@ -692,156 +1069,6 @@ DocsCollector.collect('java.util.BitSet', [
 			],
 			/* return */ UDF
 		]],
-		[/* method */ 'toByteArray()', [
-			[/* method description */
-				[/* text */ 't', `Returns a new byte array containing all the bits in this bit set.
-
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', `More precisely, if
- `],
-					[/* new line */ 'n'],
-					[/* inline code block */ 'i', `byte[] bytes = s.toByteArray();`],
-					[/* new line */ 'n'],
-					[/* text */ 't', `then `],
-					[/* inline code block */ 'i', `bytes.length == (s.length()+7)/8`],
-					[/* text */ 't', ` and
- `],
-					[/* new line */ 'n'],
-					[/* inline code block */ 'i', `s.get(n) == ((bytes[n/8] & (1<<(n%8))) != 0)`],
-					[/* new line */ 'n'],
-					[/* text */ 't', `for all `],
-					[/* inline code block */ 'i', `n < 8 * bytes.length`],
-					[/* text */ 't', `.`]
-				]]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `a byte array containing a little-endian representation
-         of all the bits in this bit set`]
-			]
-		]],
-		[/* method */ 'flip(int)', [
-			[/* method description */
-				[/* text */ 't', `Sets the bit at the specified index to the complement of its
- current value.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'bitIndex', [/* parameter description */
-					[/* text */ 't', `the index of the bit to flip`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.IndexOutOfBoundsException', [/* throw description */
-					[/* text */ 't', `if the specified index is negative`]
-				]]
-			],
-			/* return */ UDF
-		]],
-		[/* method */ 'flip(int,int)', [
-			[/* method description */
-				[/* text */ 't', `Sets each bit from the specified `],
-				[/* inline code block */ 'i', `fromIndex`],
-				[/* text */ 't', ` (inclusive) to the
- specified `],
-				[/* inline code block */ 'i', `toIndex`],
-				[/* text */ 't', ` (exclusive) to the complement of its current
- value.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'fromIndex', [/* parameter description */
-					[/* text */ 't', `index of the first bit to flip`]
-				]],
-				[/* parameter */ 'toIndex', [/* parameter description */
-					[/* text */ 't', `index after the last bit to flip`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.IndexOutOfBoundsException', [/* throw description */
-					[/* text */ 't', `if `],
-					[/* inline code block */ 'i', `fromIndex`],
-					[/* text */ 't', ` is negative,
-         or `],
-					[/* inline code block */ 'i', `toIndex`],
-					[/* text */ 't', ` is negative, or `],
-					[/* inline code block */ 'i', `fromIndex`],
-					[/* text */ 't', ` is
-         larger than `],
-					[/* inline code block */ 'i', `toIndex`]
-				]]
-			],
-			/* return */ UDF
-		]],
-		[/* method */ 'nextClearBit(int)', [
-			[/* method description */
-				[/* text */ 't', `Returns the index of the first bit that is set to `],
-				[/* inline code block */ 'i', `false`],
-				[/* text */ 't', `
- that occurs on or after the specified starting index.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'fromIndex', [/* parameter description */
-					[/* text */ 't', `the index to start checking from (inclusive)`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.IndexOutOfBoundsException', [/* throw description */
-					[/* text */ 't', `if the specified index is negative`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `the index of the next clear bit`]
-			]
-		]],
-		[/* method */ 'or(java.util.BitSet)', [
-			[/* method description */
-				[/* text */ 't', `Performs a logical `],
-				[/* text */ 't', `OR`],
-				[/* text */ 't', ` of this bit set with the bit set
- argument. This bit set is modified so that a bit in it has the
- value `],
-				[/* inline code block */ 'i', `true`],
-				[/* text */ 't', ` if and only if it either already had the
- value `],
-				[/* inline code block */ 'i', `true`],
-				[/* text */ 't', ` or the corresponding bit in the bit set
- argument has the value `],
-				[/* inline code block */ 'i', `true`],
-				[/* text */ 't', `.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'set', [/* parameter description */
-					[/* text */ 't', `a bit set`]
-				]]
-			],
-			/* throws */ UDF,
-			/* return */ UDF
-		]],
-		[/* method */ 'and(java.util.BitSet)', [
-			[/* method description */
-				[/* text */ 't', `Performs a logical `],
-				[/* text */ 't', `AND`],
-				[/* text */ 't', ` of this target bit set with the
- argument bit set. This bit set is modified so that each bit in it
- has the value `],
-				[/* inline code block */ 'i', `true`],
-				[/* text */ 't', ` if and only if it both initially
- had the value `],
-				[/* inline code block */ 'i', `true`],
-				[/* text */ 't', ` and the corresponding bit in the
- bit set argument also had the value `],
-				[/* inline code block */ 'i', `true`],
-				[/* text */ 't', `.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'set', [/* parameter description */
-					[/* text */ 't', `a bit set`]
-				]]
-			],
-			/* throws */ UDF,
-			/* return */ UDF
-		]],
 		[/* method */ 'xor(java.util.BitSet)', [
 			[/* method description */
 				[/* text */ 't', `Performs a logical `],
@@ -881,233 +1108,6 @@ DocsCollector.collect('java.util.BitSet', [
 			],
 			/* throws */ UDF,
 			/* return */ UDF
-		]],
-		[/* method */ 'andNot(java.util.BitSet)', [
-			[/* method description */
-				[/* text */ 't', `Clears all of the bits in this `],
-				[/* inline code block */ 'i', `BitSet`],
-				[/* text */ 't', ` whose corresponding
- bit is set in the specified `],
-				[/* inline code block */ 'i', `BitSet`],
-				[/* text */ 't', `.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'set', [/* parameter description */
-					[/* text */ 't', `the `],
-					[/* inline code block */ 'i', `BitSet`],
-					[/* text */ 't', ` with which to mask this
-         `],
-					[/* inline code block */ 'i', `BitSet`]
-				]]
-			],
-			/* throws */ UDF,
-			/* return */ UDF
-		]],
-		[/* method */ 'toLongArray()', [
-			[/* method description */
-				[/* text */ 't', `Returns a new long array containing all the bits in this bit set.
-
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', `More precisely, if
- `],
-					[/* new line */ 'n'],
-					[/* inline code block */ 'i', `long[] longs = s.toLongArray();`],
-					[/* new line */ 'n'],
-					[/* text */ 't', `then `],
-					[/* inline code block */ 'i', `longs.length == (s.length()+63)/64`],
-					[/* text */ 't', ` and
- `],
-					[/* new line */ 'n'],
-					[/* inline code block */ 'i', `s.get(n) == ((longs[n/64] & (1L<<(n%64))) != 0)`],
-					[/* new line */ 'n'],
-					[/* text */ 't', `for all `],
-					[/* inline code block */ 'i', `n < 64 * longs.length`],
-					[/* text */ 't', `.`]
-				]]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `a long array containing a little-endian representation
-         of all the bits in this bit set`]
-			]
-		]],
-		[/* method */ 'cardinality()', [
-			[/* method description */
-				[/* text */ 't', `Returns the number of bits set to `],
-				[/* inline code block */ 'i', `true`],
-				[/* text */ 't', ` in this `],
-				[/* inline code block */ 'i', `BitSet`],
-				[/* text */ 't', `.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the number of bits set to `],
-				[/* inline code block */ 'i', `true`],
-				[/* text */ 't', ` in this `],
-				[/* inline code block */ 'i', `BitSet`]
-			]
-		]],
-		[/* method */ 'nextSetBit(int)', [
-			[/* method description */
-				[/* text */ 't', `Returns the index of the first bit that is set to `],
-				[/* inline code block */ 'i', `true`],
-				[/* text */ 't', `
- that occurs on or after the specified starting index. If no such
- bit exists then `],
-				[/* inline code block */ 'i', `-1`],
-				[/* text */ 't', ` is returned.
-
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', `To iterate over the `],
-					[/* inline code block */ 'i', `true`],
-					[/* text */ 't', ` bits in a `],
-					[/* inline code block */ 'i', `BitSet`],
-					[/* text */ 't', `,
- use the following loop:
-
-  `]
-				]],
-				[/* code block */ 'c', [
-					[/* inline code block */ 'i', `for (int i = bs.nextSetBit(0); i >= 0; i = bs.nextSetBit(i+1)) {
-     // operate on index i here
-     if (i == Integer.MAX_VALUE) {
-         break; // or (i+1) would overflow
-     }
- }`]
-				]],
-				[/* block */ 'b', '']
-			],
-			[/* parameters */
-				[/* parameter */ 'fromIndex', [/* parameter description */
-					[/* text */ 't', `the index to start checking from (inclusive)`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.IndexOutOfBoundsException', [/* throw description */
-					[/* text */ 't', `if the specified index is negative`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `the index of the next set bit, or `],
-				[/* inline code block */ 'i', `-1`],
-				[/* text */ 't', ` if there
-         is no such bit`]
-			]
-		]],
-		[/* method */ 'previousSetBit(int)', [
-			[/* method description */
-				[/* text */ 't', `Returns the index of the nearest bit that is set to `],
-				[/* inline code block */ 'i', `true`],
-				[/* text */ 't', `
- that occurs on or before the specified starting index.
- If no such bit exists, or if `],
-				[/* inline code block */ 'i', `-1`],
-				[/* text */ 't', ` is given as the
- starting index, then `],
-				[/* inline code block */ 'i', `-1`],
-				[/* text */ 't', ` is returned.
-
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', `To iterate over the `],
-					[/* inline code block */ 'i', `true`],
-					[/* text */ 't', ` bits in a `],
-					[/* inline code block */ 'i', `BitSet`],
-					[/* text */ 't', `,
- use the following loop:
-
-  `]
-				]],
-				[/* code block */ 'c', [
-					[/* inline code block */ 'i', `for (int i = bs.length(); (i = bs.previousSetBit(i-1)) >= 0; ) {
-     // operate on index i here
- }`]
-				]],
-				[/* block */ 'b', '']
-			],
-			[/* parameters */
-				[/* parameter */ 'fromIndex', [/* parameter description */
-					[/* text */ 't', `the index to start checking from (inclusive)`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.IndexOutOfBoundsException', [/* throw description */
-					[/* text */ 't', `if the specified index is less
-         than `],
-					[/* inline code block */ 'i', `-1`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `the index of the previous set bit, or `],
-				[/* inline code block */ 'i', `-1`],
-				[/* text */ 't', ` if there
-         is no such bit`]
-			]
-		]],
-		[/* method */ 'previousClearBit(int)', [
-			[/* method description */
-				[/* text */ 't', `Returns the index of the nearest bit that is set to `],
-				[/* inline code block */ 'i', `false`],
-				[/* text */ 't', `
- that occurs on or before the specified starting index.
- If no such bit exists, or if `],
-				[/* inline code block */ 'i', `-1`],
-				[/* text */ 't', ` is given as the
- starting index, then `],
-				[/* inline code block */ 'i', `-1`],
-				[/* text */ 't', ` is returned.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'fromIndex', [/* parameter description */
-					[/* text */ 't', `the index to start checking from (inclusive)`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.IndexOutOfBoundsException', [/* throw description */
-					[/* text */ 't', `if the specified index is less
-         than `],
-					[/* inline code block */ 'i', `-1`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `the index of the previous clear bit, or `],
-				[/* inline code block */ 'i', `-1`],
-				[/* text */ 't', ` if there
-         is no such bit`]
-			]
-		]],
-		[/* method */ 'intersects(java.util.BitSet)', [
-			[/* method description */
-				[/* text */ 't', `Returns true if the specified `],
-				[/* inline code block */ 'i', `BitSet`],
-				[/* text */ 't', ` has any bits set to
- `],
-				[/* inline code block */ 'i', `true`],
-				[/* text */ 't', ` that are also set to `],
-				[/* inline code block */ 'i', `true`],
-				[/* text */ 't', ` in this `],
-				[/* inline code block */ 'i', `BitSet`],
-				[/* text */ 't', `.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'set', [/* parameter description */
-					[/* text */ 't', ``],
-					[/* inline code block */ 'i', `BitSet`],
-					[/* text */ 't', ` to intersect with`]
-				]]
-			],
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `boolean indicating whether this `],
-				[/* inline code block */ 'i', `BitSet`],
-				[/* text */ 't', ` intersects
-         the specified `],
-				[/* inline code block */ 'i', `BitSet`]
-			]
 		]]
 	],
 ]);

@@ -8,19 +8,16 @@ DocsCollector.collect('java.lang.reflect.InvocationTargetException', [
 	],
 	/* fields */ UDF,
 	[/* constructors */
-		[/* constructor */ '<init>(java.lang.Throwable,java.lang.String)', [
+		[/* constructor */ '<init>()', [
 			[/* constructor description */
-				[/* text */ 't', `Constructs a InvocationTargetException with a target exception
- and a detail message.`]
+				[/* text */ 't', `Constructs an `],
+				[/* inline code block */ 'i', `InvocationTargetException`],
+				[/* text */ 't', ` with
+ `],
+				[/* inline code block */ 'i', `null`],
+				[/* text */ 't', ` as the target exception.`]
 			],
-			[/* parameters */
-				[/* parameter */ 'target', [/* parameter description */
-					[/* text */ 't', `the target exception`]
-				]],
-				[/* parameter */ 's', [/* parameter description */
-					[/* text */ 't', `the detail message`]
-				]]
-			],
+			/* parameters */ UDF,
 			/* throws */ UDF
 		]],
 		[/* constructor */ '<init>(java.lang.Throwable)', [
@@ -34,16 +31,19 @@ DocsCollector.collect('java.lang.reflect.InvocationTargetException', [
 			],
 			/* throws */ UDF
 		]],
-		[/* constructor */ '<init>()', [
+		[/* constructor */ '<init>(java.lang.Throwable,java.lang.String)', [
 			[/* constructor description */
-				[/* text */ 't', `Constructs an `],
-				[/* inline code block */ 'i', `InvocationTargetException`],
-				[/* text */ 't', ` with
- `],
-				[/* inline code block */ 'i', `null`],
-				[/* text */ 't', ` as the target exception.`]
+				[/* text */ 't', `Constructs a InvocationTargetException with a target exception
+ and a detail message.`]
 			],
-			/* parameters */ UDF,
+			[/* parameters */
+				[/* parameter */ 'target', [/* parameter description */
+					[/* text */ 't', `the target exception`]
+				]],
+				[/* parameter */ 's', [/* parameter description */
+					[/* text */ 't', `the detail message`]
+				]]
+			],
 			/* throws */ UDF
 		]]
 	],

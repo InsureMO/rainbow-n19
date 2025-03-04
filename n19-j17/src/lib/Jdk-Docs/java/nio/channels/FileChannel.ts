@@ -206,54 +206,270 @@ DocsCollector.collect('java.nio.channels.FileChannel', [
 		]]
 	],
 	[/* methods */
-		[/* method */ 'lock()', [
+		[/* method */ 'read(java.nio.ByteBuffer)', [
 			[/* method description */
-				[/* text */ 't', `Acquires an exclusive lock on this channel's file.
+				[/* text */ 't', `Reads a sequence of bytes from this channel into the given buffer.
 
  `],
 				[/* block */ 'b', [
-					[/* text */ 't', ` An invocation of this method of the form `],
-					[/* inline code block */ 'i', `fc.lock()`],
-					[/* text */ 't', ` behaves
- in exactly the same way as the invocation
-
- `]
-				]],
-				[/* code block */ 'c', [
-					[/* text */ 't', `     fc.`],
-					[/* text */ 't', `lock`],
-					[/* text */ 't', `(0L, Long.MAX_VALUE, false) `]
-				]],
-				[/* block */ 'b', '']
+					[/* text */ 't', ` Bytes are read starting at this channel's current file position, and
+ then the file position is updated with the number of bytes actually
+ read.  Otherwise this method behaves exactly as specified in the `],
+					[/* reference */ 'r', `java.nio.channels.ReadableByteChannel`],
+					[/* text */ 't', ` interface. `]
+				]]
 			],
-			/* parameters */ UDF,
+			[/* parameters */
+				[/* parameter */ 'dst', [/* parameter description */
+					[/* text */ 't', `The buffer into which bytes are to be transferred`]
+				]]
+			],
 			[/* throws */
 				[/* throw */ 'java.nio.channels.ClosedChannelException', [/* throw description */
 					[/* text */ 't', `If this channel is closed`]
 				]],
 				[/* throw */ 'java.nio.channels.AsynchronousCloseException', [/* throw description */
-					[/* text */ 't', `If another thread closes this channel while the invoking
-          thread is blocked in this method`]
+					[/* text */ 't', `If another thread closes this channel
+          while the read operation is in progress`]
 				]],
-				[/* throw */ 'java.nio.channels.FileLockInterruptionException', [/* throw description */
-					[/* text */ 't', `If the invoking thread is interrupted while blocked in this
-          method`]
-				]],
-				[/* throw */ 'java.nio.channels.OverlappingFileLockException', [/* throw description */
-					[/* text */ 't', `If a lock that overlaps the requested region is already held by
-          this Java virtual machine, or if another thread is already
-          blocked in this method and is attempting to lock an overlapping
-          region of the same file`]
-				]],
-				[/* throw */ 'java.nio.channels.NonWritableChannelException', [/* throw description */
-					[/* text */ 't', `If this channel was not opened for writing`]
+				[/* throw */ 'java.nio.channels.ClosedByInterruptException', [/* throw description */
+					[/* text */ 't', `If another thread interrupts the current thread
+          while the read operation is in progress, thereby
+          closing the channel and setting the current thread's
+          interrupt status`]
 				]],
 				[/* throw */ 'java.io.IOException', [/* throw description */
 					[/* text */ 't', `If some other I/O error occurs`]
 				]]
 			],
 			[/* return description */
-				[/* text */ 't', `A lock object representing the newly-acquired lock`]
+				[/* text */ 't', `The number of bytes read, possibly zero, or `],
+				[/* inline code block */ 'i', `-1`],
+				[/* text */ 't', ` if the
+          channel has reached end-of-stream`]
+			]
+		]],
+		[/* method */ 'read(java.nio.ByteBuffer,long)', [
+			[/* method description */
+				[/* text */ 't', `Reads a sequence of bytes from this channel into the given buffer,
+ starting at the given file position.
+
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', ` This method works in the same manner as the `],
+					[/* reference */ 'r', `#read(java.nio.ByteBuffer)`, `read(ByteBuffer)`],
+					[/* text */ 't', ` method, except that bytes are read starting at the
+ given file position rather than at the channel's current position.  This
+ method does not modify this channel's position.  If the given position
+ is greater than the file's current size then no bytes are read.  `]
+				]]
+			],
+			[/* parameters */
+				[/* parameter */ 'dst', [/* parameter description */
+					[/* text */ 't', `The buffer into which bytes are to be transferred`]
+				]],
+				[/* parameter */ 'position', [/* parameter description */
+					[/* text */ 't', `The file position at which the transfer is to begin;
+         must be non-negative`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
+					[/* text */ 't', `If the position is negative or the buffer is read-only`]
+				]],
+				[/* throw */ 'java.nio.channels.NonReadableChannelException', [/* throw description */
+					[/* text */ 't', `If this channel was not opened for reading`]
+				]],
+				[/* throw */ 'java.nio.channels.ClosedChannelException', [/* throw description */
+					[/* text */ 't', `If this channel is closed`]
+				]],
+				[/* throw */ 'java.nio.channels.AsynchronousCloseException', [/* throw description */
+					[/* text */ 't', `If another thread closes this channel
+          while the read operation is in progress`]
+				]],
+				[/* throw */ 'java.nio.channels.ClosedByInterruptException', [/* throw description */
+					[/* text */ 't', `If another thread interrupts the current thread
+          while the read operation is in progress, thereby
+          closing the channel and setting the current thread's
+          interrupt status`]
+				]],
+				[/* throw */ 'java.io.IOException', [/* throw description */
+					[/* text */ 't', `If some other I/O error occurs`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `The number of bytes read, possibly zero, or `],
+				[/* inline code block */ 'i', `-1`],
+				[/* text */ 't', ` if the
+          given position is greater than or equal to the file's current
+          size`]
+			]
+		]],
+		[/* method */ 'write(java.nio.ByteBuffer)', [
+			[/* method description */
+				[/* text */ 't', `Writes a sequence of bytes to this channel from the given buffer.
+
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', ` Bytes are written starting at this channel's current file position
+ unless the channel is in append mode, in which case the position is
+ first advanced to the end of the file.  The file is grown, if necessary,
+ to accommodate the written bytes, and then the file position is updated
+ with the number of bytes actually written.  Otherwise this method
+ behaves exactly as specified by the `],
+					[/* reference */ 'r', `java.nio.channels.WritableByteChannel`],
+					[/* text */ 't', `
+ interface. `]
+				]]
+			],
+			[/* parameters */
+				[/* parameter */ 'src', [/* parameter description */
+					[/* text */ 't', `The buffer from which bytes are to be retrieved`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.nio.channels.ClosedChannelException', [/* throw description */
+					[/* text */ 't', `If this channel is closed`]
+				]],
+				[/* throw */ 'java.nio.channels.AsynchronousCloseException', [/* throw description */
+					[/* text */ 't', `If another thread closes this channel
+          while the write operation is in progress`]
+				]],
+				[/* throw */ 'java.nio.channels.ClosedByInterruptException', [/* throw description */
+					[/* text */ 't', `If another thread interrupts the current thread
+          while the write operation is in progress, thereby
+          closing the channel and setting the current thread's
+          interrupt status`]
+				]],
+				[/* throw */ 'java.io.IOException', [/* throw description */
+					[/* text */ 't', `If some other I/O error occurs`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `The number of bytes written, possibly zero`]
+			]
+		]],
+		[/* method */ 'write(java.nio.ByteBuffer,long)', [
+			[/* method description */
+				[/* text */ 't', `Writes a sequence of bytes to this channel from the given buffer,
+ starting at the given file position.
+
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', ` This method works in the same manner as the `],
+					[/* reference */ 'r', `#write(java.nio.ByteBuffer)`, `write(ByteBuffer)`],
+					[/* text */ 't', ` method, except that bytes are written starting at
+ the given file position rather than at the channel's current position.
+ This method does not modify this channel's position.  If the given
+ position is greater than the file's current size then the file will be
+ grown to accommodate the new bytes; the values of any bytes between the
+ previous end-of-file and the newly-written bytes are unspecified.  `]
+				]]
+			],
+			[/* parameters */
+				[/* parameter */ 'src', [/* parameter description */
+					[/* text */ 't', `The buffer from which bytes are to be transferred`]
+				]],
+				[/* parameter */ 'position', [/* parameter description */
+					[/* text */ 't', `The file position at which the transfer is to begin;
+         must be non-negative`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
+					[/* text */ 't', `If the position is negative`]
+				]],
+				[/* throw */ 'java.nio.channels.NonWritableChannelException', [/* throw description */
+					[/* text */ 't', `If this channel was not opened for writing`]
+				]],
+				[/* throw */ 'java.nio.channels.ClosedChannelException', [/* throw description */
+					[/* text */ 't', `If this channel is closed`]
+				]],
+				[/* throw */ 'java.nio.channels.AsynchronousCloseException', [/* throw description */
+					[/* text */ 't', `If another thread closes this channel
+          while the write operation is in progress`]
+				]],
+				[/* throw */ 'java.nio.channels.ClosedByInterruptException', [/* throw description */
+					[/* text */ 't', `If another thread interrupts the current thread
+          while the write operation is in progress, thereby
+          closing the channel and setting the current thread's
+          interrupt status`]
+				]],
+				[/* throw */ 'java.io.IOException', [/* throw description */
+					[/* text */ 't', `If some other I/O error occurs`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `The number of bytes written, possibly zero`]
+			]
+		]],
+		[/* method */ 'position(long)', [
+			[/* method description */
+				[/* text */ 't', `Sets this channel's file position.
+
+ `],
+				[/* block */ 'b', ` Setting the position to a value that is greater than the file's
+ current size is legal but does not change the size of the file.  A later
+ attempt to read bytes at such a position will immediately return an
+ end-of-file indication.  A later attempt to write bytes at such a
+ position will cause the file to be grown to accommodate the new bytes;
+ the values of any bytes between the previous end-of-file and the
+ newly-written bytes are unspecified.  `]
+			],
+			[/* parameters */
+				[/* parameter */ 'newPosition', [/* parameter description */
+					[/* text */ 't', `The new position, a non-negative integer counting
+         the number of bytes from the beginning of the file`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.nio.channels.ClosedChannelException', [/* throw description */
+					[/* text */ 't', `If this channel is closed`]
+				]],
+				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
+					[/* text */ 't', `If the new position is negative`]
+				]],
+				[/* throw */ 'java.io.IOException', [/* throw description */
+					[/* text */ 't', `If some other I/O error occurs`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `This file channel`]
+			]
+		]],
+		[/* method */ 'truncate(long)', [
+			[/* method description */
+				[/* text */ 't', `Truncates this channel's file to the given size.
+
+ `],
+				[/* block */ 'b', ` If the given size is less than the file's current size then the file
+ is truncated, discarding any bytes beyond the new end of the file.  If
+ the given size is greater than or equal to the file's current size then
+ the file is not modified.  In either case, if this channel's file
+ position is greater than the given size then it is set to that size.
+ `]
+			],
+			[/* parameters */
+				[/* parameter */ 'size', [/* parameter description */
+					[/* text */ 't', `The new size, a non-negative byte count`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.nio.channels.NonWritableChannelException', [/* throw description */
+					[/* text */ 't', `If this channel was not opened for writing`]
+				]],
+				[/* throw */ 'java.nio.channels.ClosedChannelException', [/* throw description */
+					[/* text */ 't', `If this channel is closed`]
+				]],
+				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
+					[/* text */ 't', `If the new size is negative`]
+				]],
+				[/* throw */ 'java.io.IOException', [/* throw description */
+					[/* text */ 't', `If some other I/O error occurs`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `This file channel`]
 			]
 		]],
 		[/* method */ 'lock(long,long,boolean)', [
@@ -389,75 +605,103 @@ DocsCollector.collect('java.nio.channels.FileChannel', [
 				[/* text */ 't', `A lock object representing the newly-acquired lock`]
 			]
 		]],
-		[/* method */ 'position()', [
+		[/* method */ 'tryLock(long,long,boolean)', [
 			[/* method description */
-				[/* text */ 't', `Returns this channel's file position.`]
-			],
-			/* parameters */ UDF,
-			[/* throws */
-				[/* throw */ 'java.nio.channels.ClosedChannelException', [/* throw description */
-					[/* text */ 't', `If this channel is closed`]
-				]],
-				[/* throw */ 'java.io.IOException', [/* throw description */
-					[/* text */ 't', `If some other I/O error occurs`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `This channel's file position,
-          a non-negative integer counting the number of bytes
-          from the beginning of the file to the current position`]
-			]
-		]],
-		[/* method */ 'position(long)', [
-			[/* method description */
-				[/* text */ 't', `Sets this channel's file position.
+				[/* text */ 't', `Attempts to acquire a lock on the given region of this channel's file.
 
  `],
-				[/* block */ 'b', ` Setting the position to a value that is greater than the file's
- current size is legal but does not change the size of the file.  A later
- attempt to read bytes at such a position will immediately return an
- end-of-file indication.  A later attempt to write bytes at such a
- position will cause the file to be grown to accommodate the new bytes;
- the values of any bytes between the previous end-of-file and the
- newly-written bytes are unspecified.  `]
+				[/* block */ 'b', [
+					[/* text */ 't', ` This method does not block.  An invocation always returns
+ immediately, either having acquired a lock on the requested region or
+ having failed to do so.  If it fails to acquire a lock because an
+ overlapping lock is held by another program then it returns
+ `],
+					[/* inline code block */ 'i', `null`],
+					[/* text */ 't', `.  If it fails to acquire a lock for any other reason then
+ an appropriate exception is thrown.
+
+ `]
+				]],
+				[/* block */ 'b', [
+					[/* text */ 't', ` The region specified by the `],
+					[/* inline code block */ 'i', `position`],
+					[/* text */ 't', ` and `],
+					[/* inline code block */ 'i', `size`],
+					[/* text */ 't', `
+ parameters need not be contained within, or even overlap, the actual
+ underlying file.  Lock regions are fixed in size; if a locked region
+ initially contains the end of the file and the file grows beyond the
+ region then the new portion of the file will not be covered by the lock.
+ If a file is expected to grow in size and a lock on the entire file is
+ required then a region starting at zero, and no smaller than the
+ expected maximum size of the file, should be locked.  The zero-argument
+ `],
+					[/* reference */ 'r', `#tryLock()`, `tryLock()`],
+					[/* text */ 't', ` method simply locks a region of size `],
+					[/* reference */ 'r', `java.nio.Long#MAX_VALUE`],
+					[/* text */ 't', `.
+
+ `]
+				]],
+				[/* block */ 'b', [
+					[/* text */ 't', ` Some operating systems do not support shared locks, in which case a
+ request for a shared lock is automatically converted into a request for
+ an exclusive lock.  Whether the newly-acquired lock is shared or
+ exclusive may be tested by invoking the resulting lock object's `],
+					[/* reference */ 'r', `.FileLock#isShared()`],
+					[/* text */ 't', ` method.
+
+ `]
+				]],
+				[/* block */ 'b', ` File locks are held on behalf of the entire Java virtual machine.
+ They are not suitable for controlling access to a file by multiple
+ threads within the same virtual machine.  `]
 			],
 			[/* parameters */
-				[/* parameter */ 'newPosition', [/* parameter description */
-					[/* text */ 't', `The new position, a non-negative integer counting
-         the number of bytes from the beginning of the file`]
+				[/* parameter */ 'position', [/* parameter description */
+					[/* text */ 't', `The position at which the locked region is to start; must be
+         non-negative`]
+				]],
+				[/* parameter */ 'size', [/* parameter description */
+					[/* text */ 't', `The size of the locked region; must be non-negative, and the sum
+         `],
+					[/* inline code block */ 'i', `position`],
+					[/* text */ 't', ` + `],
+					[/* inline code block */ 'i', `size`],
+					[/* text */ 't', ` must be non-negative`]
+				]],
+				[/* parameter */ 'shared', [/* parameter description */
+					[/* text */ 't', ``],
+					[/* inline code block */ 'i', `true`],
+					[/* text */ 't', ` to request a shared lock,
+         `],
+					[/* inline code block */ 'i', `false`],
+					[/* text */ 't', ` to request an exclusive lock`]
 				]]
 			],
 			[/* throws */
-				[/* throw */ 'java.nio.channels.ClosedChannelException', [/* throw description */
-					[/* text */ 't', `If this channel is closed`]
-				]],
 				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
-					[/* text */ 't', `If the new position is negative`]
+					[/* text */ 't', `If the preconditions on the parameters do not hold`]
 				]],
-				[/* throw */ 'java.io.IOException', [/* throw description */
-					[/* text */ 't', `If some other I/O error occurs`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `This file channel`]
-			]
-		]],
-		[/* method */ 'size()', [
-			[/* method description */
-				[/* text */ 't', `Returns the current size of this channel's file.`]
-			],
-			/* parameters */ UDF,
-			[/* throws */
 				[/* throw */ 'java.nio.channels.ClosedChannelException', [/* throw description */
 					[/* text */ 't', `If this channel is closed`]
 				]],
+				[/* throw */ 'java.nio.channels.OverlappingFileLockException', [/* throw description */
+					[/* text */ 't', `If a lock that overlaps the requested region is already held by
+          this Java virtual machine, or if another thread is already
+          blocked in this method and is attempting to lock an overlapping
+          region of the same file`]
+				]],
 				[/* throw */ 'java.io.IOException', [/* throw description */
 					[/* text */ 't', `If some other I/O error occurs`]
 				]]
 			],
 			[/* return description */
-				[/* text */ 't', `The current size of this channel's file,
-          measured in bytes`]
+				[/* text */ 't', `A lock object representing the newly-acquired lock,
+          or `],
+				[/* inline code block */ 'i', `null`],
+				[/* text */ 't', ` if the lock could not be acquired
+          because another program holds an overlapping lock`]
 			]
 		]],
 		[/* method */ 'map(java.nio.channels.FileChannel.MapMode,long,long)', [
@@ -617,102 +861,268 @@ DocsCollector.collect('java.nio.channels.FileChannel', [
 				[/* text */ 't', `The mapped byte buffer`]
 			]
 		]],
-		[/* method */ 'write(java.nio.ByteBuffer,long)', [
+		[/* method */ 'position()', [
 			[/* method description */
-				[/* text */ 't', `Writes a sequence of bytes to this channel from the given buffer,
- starting at the given file position.
+				[/* text */ 't', `Returns this channel's file position.`]
+			],
+			/* parameters */ UDF,
+			[/* throws */
+				[/* throw */ 'java.nio.channels.ClosedChannelException', [/* throw description */
+					[/* text */ 't', `If this channel is closed`]
+				]],
+				[/* throw */ 'java.io.IOException', [/* throw description */
+					[/* text */ 't', `If some other I/O error occurs`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `This channel's file position,
+          a non-negative integer counting the number of bytes
+          from the beginning of the file to the current position`]
+			]
+		]],
+		[/* method */ 'read(java.nio.ByteBuffer[],int,int)', [
+			[/* method description */
+				[/* text */ 't', `Reads a sequence of bytes from this channel into a subsequence of the
+ given buffers.
 
  `],
 				[/* block */ 'b', [
-					[/* text */ 't', ` This method works in the same manner as the `],
-					[/* reference */ 'r', `#write(java.nio.ByteBuffer)`, `write(ByteBuffer)`],
-					[/* text */ 't', ` method, except that bytes are written starting at
- the given file position rather than at the channel's current position.
- This method does not modify this channel's position.  If the given
- position is greater than the file's current size then the file will be
- grown to accommodate the new bytes; the values of any bytes between the
- previous end-of-file and the newly-written bytes are unspecified.  `]
+					[/* text */ 't', ` Bytes are read starting at this channel's current file position, and
+ then the file position is updated with the number of bytes actually
+ read.  Otherwise this method behaves exactly as specified in the `],
+					[/* reference */ 'r', `java.nio.channels.ScatteringByteChannel`],
+					[/* text */ 't', ` interface.  `]
 				]]
 			],
 			[/* parameters */
+				[/* parameter */ 'dsts', [/* parameter description */
+					[/* text */ 't', `The buffers into which bytes are to be transferred`]
+				]],
+				[/* parameter */ 'offset', [/* parameter description */
+					[/* text */ 't', `The offset within the buffer array of the first buffer into
+         which bytes are to be transferred; must be non-negative and no
+         larger than `],
+					[/* inline code block */ 'i', `dsts.length`]
+				]],
+				[/* parameter */ 'length', [/* parameter description */
+					[/* text */ 't', `The maximum number of buffers to be accessed; must be
+         non-negative and no larger than
+         `],
+					[/* inline code block */ 'i', `dsts.length`],
+					[/* text */ 't', ``],
+					[/* inline code block */ 'i', `offset`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.nio.channels.ClosedChannelException', [/* throw description */
+					[/* text */ 't', `If this channel is closed`]
+				]],
+				[/* throw */ 'java.nio.channels.AsynchronousCloseException', [/* throw description */
+					[/* text */ 't', `If another thread closes this channel
+          while the read operation is in progress`]
+				]],
+				[/* throw */ 'java.nio.channels.ClosedByInterruptException', [/* throw description */
+					[/* text */ 't', `If another thread interrupts the current thread
+          while the read operation is in progress, thereby
+          closing the channel and setting the current thread's
+          interrupt status`]
+				]],
+				[/* throw */ 'java.io.IOException', [/* throw description */
+					[/* text */ 't', `If some other I/O error occurs`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `The number of bytes read, possibly zero,
+         or `],
+				[/* inline code block */ 'i', `-1`],
+				[/* text */ 't', ` if the channel has reached end-of-stream`]
+			]
+		]],
+		[/* method */ 'size()', [
+			[/* method description */
+				[/* text */ 't', `Returns the current size of this channel's file.`]
+			],
+			/* parameters */ UDF,
+			[/* throws */
+				[/* throw */ 'java.nio.channels.ClosedChannelException', [/* throw description */
+					[/* text */ 't', `If this channel is closed`]
+				]],
+				[/* throw */ 'java.io.IOException', [/* throw description */
+					[/* text */ 't', `If some other I/O error occurs`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `The current size of this channel's file,
+          measured in bytes`]
+			]
+		]],
+		[/* method */ 'transferFrom(java.nio.channels.ReadableByteChannel,long,long)', [
+			[/* method description */
+				[/* text */ 't', `Transfers bytes into this channel's file from the given readable byte
+ channel.
+
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', ` An attempt is made to read up to `],
+					[/* inline code block */ 'i', `count`],
+					[/* text */ 't', ` bytes from the
+ source channel and write them to this channel's file starting at the
+ given `],
+					[/* inline code block */ 'i', `position`],
+					[/* text */ 't', `.  An invocation of this method may or may not
+ transfer all of the requested bytes; whether or not it does so depends
+ upon the natures and states of the channels.  Fewer than the requested
+ number of bytes will be transferred if the source channel has fewer than
+ `],
+					[/* inline code block */ 'i', `count`],
+					[/* text */ 't', ` bytes remaining, or if the source channel is non-blocking
+ and has fewer than `],
+					[/* inline code block */ 'i', `count`],
+					[/* text */ 't', ` bytes immediately available in its
+ input buffer. No bytes are transferred, and zero is returned, if the
+ source has reached end-of-stream.
+
+ `]
+				]],
+				[/* block */ 'b', ` This method does not modify this channel's position.  If the given
+ position is greater than the file's current size then no bytes are
+ transferred.  If the source channel has a position then bytes are read
+ starting at that position and then the position is incremented by the
+ number of bytes read.
+
+ `],
+				[/* block */ 'b', ` This method is potentially much more efficient than a simple loop
+ that reads from the source channel and writes to this channel.  Many
+ operating systems can transfer bytes directly from the source channel
+ into the filesystem cache without actually copying them.  `]
+			],
+			[/* parameters */
 				[/* parameter */ 'src', [/* parameter description */
-					[/* text */ 't', `The buffer from which bytes are to be transferred`]
+					[/* text */ 't', `The source channel`]
 				]],
 				[/* parameter */ 'position', [/* parameter description */
-					[/* text */ 't', `The file position at which the transfer is to begin;
+					[/* text */ 't', `The position within the file at which the transfer is to begin;
          must be non-negative`]
+				]],
+				[/* parameter */ 'count', [/* parameter description */
+					[/* text */ 't', `The maximum number of bytes to be transferred; must be
+         non-negative`]
 				]]
 			],
 			[/* throws */
 				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
-					[/* text */ 't', `If the position is negative`]
+					[/* text */ 't', `If the preconditions on the parameters do not hold`]
+				]],
+				[/* throw */ 'java.nio.channels.NonReadableChannelException', [/* throw description */
+					[/* text */ 't', `If the source channel was not opened for reading`]
 				]],
 				[/* throw */ 'java.nio.channels.NonWritableChannelException', [/* throw description */
 					[/* text */ 't', `If this channel was not opened for writing`]
 				]],
 				[/* throw */ 'java.nio.channels.ClosedChannelException', [/* throw description */
-					[/* text */ 't', `If this channel is closed`]
+					[/* text */ 't', `If either this channel or the source channel is closed`]
 				]],
 				[/* throw */ 'java.nio.channels.AsynchronousCloseException', [/* throw description */
-					[/* text */ 't', `If another thread closes this channel
-          while the write operation is in progress`]
+					[/* text */ 't', `If another thread closes either channel
+          while the transfer is in progress`]
 				]],
 				[/* throw */ 'java.nio.channels.ClosedByInterruptException', [/* throw description */
-					[/* text */ 't', `If another thread interrupts the current thread
-          while the write operation is in progress, thereby
-          closing the channel and setting the current thread's
-          interrupt status`]
+					[/* text */ 't', `If another thread interrupts the current thread while the
+          transfer is in progress, thereby closing both channels and
+          setting the current thread's interrupt status`]
 				]],
 				[/* throw */ 'java.io.IOException', [/* throw description */
 					[/* text */ 't', `If some other I/O error occurs`]
 				]]
 			],
 			[/* return description */
-				[/* text */ 't', `The number of bytes written, possibly zero`]
+				[/* text */ 't', `The number of bytes, possibly zero,
+          that were actually transferred`]
 			]
 		]],
-		[/* method */ 'write(java.nio.ByteBuffer)', [
+		[/* method */ 'transferTo(long,long,java.nio.channels.WritableByteChannel)', [
 			[/* method description */
-				[/* text */ 't', `Writes a sequence of bytes to this channel from the given buffer.
+				[/* text */ 't', `Transfers bytes from this channel's file to the given writable byte
+ channel.
 
  `],
 				[/* block */ 'b', [
-					[/* text */ 't', ` Bytes are written starting at this channel's current file position
- unless the channel is in append mode, in which case the position is
- first advanced to the end of the file.  The file is grown, if necessary,
- to accommodate the written bytes, and then the file position is updated
- with the number of bytes actually written.  Otherwise this method
- behaves exactly as specified by the `],
-					[/* reference */ 'r', `java.nio.channels.WritableByteChannel`],
+					[/* text */ 't', ` An attempt is made to read up to `],
+					[/* inline code block */ 'i', `count`],
+					[/* text */ 't', ` bytes starting at
+ the given `],
+					[/* inline code block */ 'i', `position`],
+					[/* text */ 't', ` in this channel's file and write them to the
+ target channel.  An invocation of this method may or may not transfer
+ all of the requested bytes; whether or not it does so depends upon the
+ natures and states of the channels.  Fewer than the requested number of
+ bytes are transferred if this channel's file contains fewer than
+ `],
+					[/* inline code block */ 'i', `count`],
+					[/* text */ 't', ` bytes starting at the given `],
+					[/* inline code block */ 'i', `position`],
+					[/* text */ 't', `, or if the
+ target channel is non-blocking and it has fewer than `],
+					[/* inline code block */ 'i', `count`],
 					[/* text */ 't', `
- interface. `]
-				]]
+ bytes free in its output buffer.
+
+ `]
+				]],
+				[/* block */ 'b', ` This method does not modify this channel's position.  If the given
+ position is greater than the file's current size then no bytes are
+ transferred.  If the target channel has a position then bytes are
+ written starting at that position and then the position is incremented
+ by the number of bytes written.
+
+ `],
+				[/* block */ 'b', ` This method is potentially much more efficient than a simple loop
+ that reads from this channel and writes to the target channel.  Many
+ operating systems can transfer bytes directly from the filesystem cache
+ to the target channel without actually copying them.  `]
 			],
 			[/* parameters */
-				[/* parameter */ 'src', [/* parameter description */
-					[/* text */ 't', `The buffer from which bytes are to be retrieved`]
+				[/* parameter */ 'position', [/* parameter description */
+					[/* text */ 't', `The position within the file at which the transfer is to begin;
+         must be non-negative`]
+				]],
+				[/* parameter */ 'count', [/* parameter description */
+					[/* text */ 't', `The maximum number of bytes to be transferred; must be
+         non-negative`]
+				]],
+				[/* parameter */ 'target', [/* parameter description */
+					[/* text */ 't', `The target channel`]
 				]]
 			],
 			[/* throws */
+				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
+					[/* text */ 't', `If the preconditions on the parameters do not hold`]
+				]],
+				[/* throw */ 'java.nio.channels.NonReadableChannelException', [/* throw description */
+					[/* text */ 't', `If this channel was not opened for reading`]
+				]],
+				[/* throw */ 'java.nio.channels.NonWritableChannelException', [/* throw description */
+					[/* text */ 't', `If the target channel was not opened for writing`]
+				]],
 				[/* throw */ 'java.nio.channels.ClosedChannelException', [/* throw description */
-					[/* text */ 't', `If this channel is closed`]
+					[/* text */ 't', `If either this channel or the target channel is closed`]
 				]],
 				[/* throw */ 'java.nio.channels.AsynchronousCloseException', [/* throw description */
-					[/* text */ 't', `If another thread closes this channel
-          while the write operation is in progress`]
+					[/* text */ 't', `If another thread closes either channel
+          while the transfer is in progress`]
 				]],
 				[/* throw */ 'java.nio.channels.ClosedByInterruptException', [/* throw description */
-					[/* text */ 't', `If another thread interrupts the current thread
-          while the write operation is in progress, thereby
-          closing the channel and setting the current thread's
-          interrupt status`]
+					[/* text */ 't', `If another thread interrupts the current thread while the
+          transfer is in progress, thereby closing both channels and
+          setting the current thread's interrupt status`]
 				]],
 				[/* throw */ 'java.io.IOException', [/* throw description */
 					[/* text */ 't', `If some other I/O error occurs`]
 				]]
 			],
 			[/* return description */
-				[/* text */ 't', `The number of bytes written, possibly zero`]
+				[/* text */ 't', `The number of bytes, possibly zero,
+          that were actually transferred`]
 			]
 		]],
 		[/* method */ 'write(java.nio.ByteBuffer[],int,int)', [
@@ -774,147 +1184,174 @@ DocsCollector.collect('java.nio.channels.FileChannel', [
 				[/* text */ 't', `The number of bytes written, possibly zero`]
 			]
 		]],
-		[/* method */ 'write(java.nio.ByteBuffer[])', [
+		[/* method */ 'force(boolean)', [
 			[/* method description */
-				[/* text */ 't', `Writes a sequence of bytes to this channel from the given buffers.
+				[/* text */ 't', `Forces any updates to this channel's file to be written to the storage
+ device that contains it.
+
+ `],
+				[/* block */ 'b', ` If this channel's file resides on a local storage device then when
+ this method returns it is guaranteed that all changes made to the file
+ since this channel was created, or since this method was last invoked,
+ will have been written to that device.  This is useful for ensuring that
+ critical information is not lost in the event of a system crash.
+
+ `],
+				[/* block */ 'b', ` If the file does not reside on a local device then no such guarantee
+ is made.
 
  `],
 				[/* block */ 'b', [
-					[/* text */ 't', ` Bytes are written starting at this channel's current file position
- unless the channel is in append mode, in which case the position is
- first advanced to the end of the file.  The file is grown, if necessary,
- to accommodate the written bytes, and then the file position is updated
- with the number of bytes actually written.  Otherwise this method
- behaves exactly as specified in the `],
-					[/* reference */ 'r', `java.nio.channels.GatheringByteChannel`],
+					[/* text */ 't', ` The `],
+					[/* inline code block */ 'i', `metaData`],
+					[/* text */ 't', ` parameter can be used to limit the number of
+ I/O operations that this method is required to perform.  Passing
+ `],
+					[/* inline code block */ 'i', `false`],
+					[/* text */ 't', ` for this parameter indicates that only updates to the
+ file's content need be written to storage; passing `],
+					[/* inline code block */ 'i', `true`],
 					[/* text */ 't', `
- interface.  `]
-				]]
-			],
-			[/* parameters */
-				[/* parameter */ 'srcs', [/* parameter description */
-					[/* text */ 't', `The buffers from which bytes are to be retrieved`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.nio.channels.ClosedChannelException', [/* throw description */
-					[/* text */ 't', `If this channel is closed`]
+ indicates that updates to both the file's content and metadata must be
+ written, which generally requires at least one more I/O operation.
+ Whether this parameter actually has any effect is dependent upon the
+ underlying operating system and is therefore unspecified.
+
+ `]
 				]],
-				[/* throw */ 'java.nio.channels.AsynchronousCloseException', [/* throw description */
-					[/* text */ 't', `If another thread closes this channel
-          while the write operation is in progress`]
-				]],
-				[/* throw */ 'java.nio.channels.ClosedByInterruptException', [/* throw description */
-					[/* text */ 't', `If another thread interrupts the current thread
-          while the write operation is in progress, thereby
-          closing the channel and setting the current thread's
-          interrupt status`]
-				]],
-				[/* throw */ 'java.io.IOException', [/* throw description */
-					[/* text */ 't', `If some other I/O error occurs`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `The number of bytes written, possibly zero`]
-			]
-		]],
-		[/* method */ 'read(java.nio.ByteBuffer)', [
-			[/* method description */
-				[/* text */ 't', `Reads a sequence of bytes from this channel into the given buffer.
+				[/* block */ 'b', ` Invoking this method may cause an I/O operation to occur even if the
+ channel was only opened for reading.  Some operating systems, for
+ example, maintain a last-access time as part of a file's metadata, and
+ this time is updated whenever the file is read.  Whether or not this is
+ actually done is system-dependent and is therefore unspecified.
 
  `],
 				[/* block */ 'b', [
-					[/* text */ 't', ` Bytes are read starting at this channel's current file position, and
- then the file position is updated with the number of bytes actually
- read.  Otherwise this method behaves exactly as specified in the `],
-					[/* reference */ 'r', `java.nio.channels.ReadableByteChannel`],
-					[/* text */ 't', ` interface. `]
+					[/* text */ 't', ` This method is only guaranteed to force changes that were made to
+ this channel's file via the methods defined in this class.  It may or
+ may not force changes that were made by modifying the content of a
+ `],
+					[/* reference */ 'r', `java.nio.MappedByteBuffer`],
+					[/* text */ 't', ` obtained by
+ invoking the `],
+					[/* reference */ 'r', `#map(java.nio.channels.FileChannel.MapMode,long,long)`, `map`],
+					[/* text */ 't', ` method.  Invoking the `],
+					[/* reference */ 'r', `java.MappedByteBuffer#force()`],
+					[/* text */ 't', ` method of the mapped byte buffer will
+ force changes made to the buffer's content to be written.  `]
 				]]
 			],
 			[/* parameters */
-				[/* parameter */ 'dst', [/* parameter description */
-					[/* text */ 't', `The buffer into which bytes are to be transferred`]
+				[/* parameter */ 'metaData', [/* parameter description */
+					[/* text */ 't', `If `],
+					[/* inline code block */ 'i', `true`],
+					[/* text */ 't', ` then this method is required to force changes
+          to both the file's content and metadata to be written to
+          storage; otherwise, it need only force content changes to be
+          written`]
 				]]
 			],
 			[/* throws */
 				[/* throw */ 'java.nio.channels.ClosedChannelException', [/* throw description */
 					[/* text */ 't', `If this channel is closed`]
 				]],
-				[/* throw */ 'java.nio.channels.AsynchronousCloseException', [/* throw description */
-					[/* text */ 't', `If another thread closes this channel
-          while the read operation is in progress`]
-				]],
-				[/* throw */ 'java.nio.channels.ClosedByInterruptException', [/* throw description */
-					[/* text */ 't', `If another thread interrupts the current thread
-          while the read operation is in progress, thereby
-          closing the channel and setting the current thread's
-          interrupt status`]
-				]],
 				[/* throw */ 'java.io.IOException', [/* throw description */
 					[/* text */ 't', `If some other I/O error occurs`]
 				]]
 			],
-			[/* return description */
-				[/* text */ 't', `The number of bytes read, possibly zero, or `],
-				[/* inline code block */ 'i', `-1`],
-				[/* text */ 't', ` if the
-          channel has reached end-of-stream`]
-			]
+			/* return */ UDF
 		]],
-		[/* method */ 'read(java.nio.ByteBuffer,long)', [
+		[/* method */ 'lock()', [
 			[/* method description */
-				[/* text */ 't', `Reads a sequence of bytes from this channel into the given buffer,
- starting at the given file position.
+				[/* text */ 't', `Acquires an exclusive lock on this channel's file.
 
  `],
 				[/* block */ 'b', [
-					[/* text */ 't', ` This method works in the same manner as the `],
-					[/* reference */ 'r', `#read(java.nio.ByteBuffer)`, `read(ByteBuffer)`],
-					[/* text */ 't', ` method, except that bytes are read starting at the
- given file position rather than at the channel's current position.  This
- method does not modify this channel's position.  If the given position
- is greater than the file's current size then no bytes are read.  `]
-				]]
-			],
-			[/* parameters */
-				[/* parameter */ 'dst', [/* parameter description */
-					[/* text */ 't', `The buffer into which bytes are to be transferred`]
+					[/* text */ 't', ` An invocation of this method of the form `],
+					[/* inline code block */ 'i', `fc.lock()`],
+					[/* text */ 't', ` behaves
+ in exactly the same way as the invocation
+
+ `]
 				]],
-				[/* parameter */ 'position', [/* parameter description */
-					[/* text */ 't', `The file position at which the transfer is to begin;
-         must be non-negative`]
-				]]
+				[/* code block */ 'c', [
+					[/* text */ 't', `     fc.`],
+					[/* text */ 't', `lock`],
+					[/* text */ 't', `(0L, Long.MAX_VALUE, false) `]
+				]],
+				[/* block */ 'b', '']
 			],
+			/* parameters */ UDF,
 			[/* throws */
-				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
-					[/* text */ 't', `If the position is negative or the buffer is read-only`]
-				]],
-				[/* throw */ 'java.nio.channels.NonReadableChannelException', [/* throw description */
-					[/* text */ 't', `If this channel was not opened for reading`]
-				]],
 				[/* throw */ 'java.nio.channels.ClosedChannelException', [/* throw description */
 					[/* text */ 't', `If this channel is closed`]
 				]],
 				[/* throw */ 'java.nio.channels.AsynchronousCloseException', [/* throw description */
-					[/* text */ 't', `If another thread closes this channel
-          while the read operation is in progress`]
+					[/* text */ 't', `If another thread closes this channel while the invoking
+          thread is blocked in this method`]
 				]],
-				[/* throw */ 'java.nio.channels.ClosedByInterruptException', [/* throw description */
-					[/* text */ 't', `If another thread interrupts the current thread
-          while the read operation is in progress, thereby
-          closing the channel and setting the current thread's
-          interrupt status`]
+				[/* throw */ 'java.nio.channels.FileLockInterruptionException', [/* throw description */
+					[/* text */ 't', `If the invoking thread is interrupted while blocked in this
+          method`]
+				]],
+				[/* throw */ 'java.nio.channels.OverlappingFileLockException', [/* throw description */
+					[/* text */ 't', `If a lock that overlaps the requested region is already held by
+          this Java virtual machine, or if another thread is already
+          blocked in this method and is attempting to lock an overlapping
+          region of the same file`]
+				]],
+				[/* throw */ 'java.nio.channels.NonWritableChannelException', [/* throw description */
+					[/* text */ 't', `If this channel was not opened for writing`]
 				]],
 				[/* throw */ 'java.io.IOException', [/* throw description */
 					[/* text */ 't', `If some other I/O error occurs`]
 				]]
 			],
 			[/* return description */
-				[/* text */ 't', `The number of bytes read, possibly zero, or `],
-				[/* inline code block */ 'i', `-1`],
-				[/* text */ 't', ` if the
-          given position is greater than or equal to the file's current
-          size`]
+				[/* text */ 't', `A lock object representing the newly-acquired lock`]
+			]
+		]],
+		[/* method */ 'tryLock()', [
+			[/* method description */
+				[/* text */ 't', `Attempts to acquire an exclusive lock on this channel's file.
+
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', ` An invocation of this method of the form `],
+					[/* inline code block */ 'i', `fc.tryLock()`],
+					[/* text */ 't', `
+ behaves in exactly the same way as the invocation
+
+ `]
+				]],
+				[/* code block */ 'c', [
+					[/* text */ 't', `     fc.`],
+					[/* text */ 't', `tryLock`],
+					[/* text */ 't', `(0L, Long.MAX_VALUE, false) `]
+				]],
+				[/* block */ 'b', '']
+			],
+			/* parameters */ UDF,
+			[/* throws */
+				[/* throw */ 'java.nio.channels.ClosedChannelException', [/* throw description */
+					[/* text */ 't', `If this channel is closed`]
+				]],
+				[/* throw */ 'java.nio.channels.OverlappingFileLockException', [/* throw description */
+					[/* text */ 't', `If a lock that overlaps the requested region is already held by
+          this Java virtual machine, or if another thread is already
+          blocked in this method and is attempting to lock an overlapping
+          region`]
+				]],
+				[/* throw */ 'java.io.IOException', [/* throw description */
+					[/* text */ 't', `If some other I/O error occurs`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `A lock object representing the newly-acquired lock,
+          or `],
+				[/* inline code block */ 'i', `null`],
+				[/* text */ 't', ` if the lock could not be acquired
+          because another program holds an overlapping lock`]
 			]
 		]],
 		[/* method */ 'read(java.nio.ByteBuffer[])', [
@@ -960,37 +1397,26 @@ DocsCollector.collect('java.nio.channels.FileChannel', [
 				[/* text */ 't', ` if the channel has reached end-of-stream`]
 			]
 		]],
-		[/* method */ 'read(java.nio.ByteBuffer[],int,int)', [
+		[/* method */ 'write(java.nio.ByteBuffer[])', [
 			[/* method description */
-				[/* text */ 't', `Reads a sequence of bytes from this channel into a subsequence of the
- given buffers.
+				[/* text */ 't', `Writes a sequence of bytes to this channel from the given buffers.
 
  `],
 				[/* block */ 'b', [
-					[/* text */ 't', ` Bytes are read starting at this channel's current file position, and
- then the file position is updated with the number of bytes actually
- read.  Otherwise this method behaves exactly as specified in the `],
-					[/* reference */ 'r', `java.nio.channels.ScatteringByteChannel`],
-					[/* text */ 't', ` interface.  `]
+					[/* text */ 't', ` Bytes are written starting at this channel's current file position
+ unless the channel is in append mode, in which case the position is
+ first advanced to the end of the file.  The file is grown, if necessary,
+ to accommodate the written bytes, and then the file position is updated
+ with the number of bytes actually written.  Otherwise this method
+ behaves exactly as specified in the `],
+					[/* reference */ 'r', `java.nio.channels.GatheringByteChannel`],
+					[/* text */ 't', `
+ interface.  `]
 				]]
 			],
 			[/* parameters */
-				[/* parameter */ 'dsts', [/* parameter description */
-					[/* text */ 't', `The buffers into which bytes are to be transferred`]
-				]],
-				[/* parameter */ 'offset', [/* parameter description */
-					[/* text */ 't', `The offset within the buffer array of the first buffer into
-         which bytes are to be transferred; must be non-negative and no
-         larger than `],
-					[/* inline code block */ 'i', `dsts.length`]
-				]],
-				[/* parameter */ 'length', [/* parameter description */
-					[/* text */ 't', `The maximum number of buffers to be accessed; must be
-         non-negative and no larger than
-         `],
-					[/* inline code block */ 'i', `dsts.length`],
-					[/* text */ 't', ``],
-					[/* inline code block */ 'i', `offset`]
+				[/* parameter */ 'srcs', [/* parameter description */
+					[/* text */ 't', `The buffers from which bytes are to be retrieved`]
 				]]
 			],
 			[/* throws */
@@ -999,11 +1425,11 @@ DocsCollector.collect('java.nio.channels.FileChannel', [
 				]],
 				[/* throw */ 'java.nio.channels.AsynchronousCloseException', [/* throw description */
 					[/* text */ 't', `If another thread closes this channel
-          while the read operation is in progress`]
+          while the write operation is in progress`]
 				]],
 				[/* throw */ 'java.nio.channels.ClosedByInterruptException', [/* throw description */
 					[/* text */ 't', `If another thread interrupts the current thread
-          while the read operation is in progress, thereby
+          while the write operation is in progress, thereby
           closing the channel and setting the current thread's
           interrupt status`]
 				]],
@@ -1012,10 +1438,75 @@ DocsCollector.collect('java.nio.channels.FileChannel', [
 				]]
 			],
 			[/* return description */
-				[/* text */ 't', `The number of bytes read, possibly zero,
-         or `],
-				[/* inline code block */ 'i', `-1`],
-				[/* text */ 't', ` if the channel has reached end-of-stream`]
+				[/* text */ 't', `The number of bytes written, possibly zero`]
+			]
+		]],
+		[/* method */ 'open(java.nio.file.Path,java.nio.file.OpenOption...)', [
+			[/* method description */
+				[/* text */ 't', `Opens or creates a file, returning a file channel to access the file.
+
+ `],
+				[/* block */ 'b', ` An invocation of this method behaves in exactly the same way as the
+ invocation
+ `],
+				[/* code block */ 'c', [
+					[/* text */ 't', `     fc.`],
+					[/* text */ 't', `open`],
+					[/* text */ 't', `(file, opts, new FileAttribute<?>[0]);
+ `]
+				]],
+				[/* text */ 't', `
+ where `],
+				[/* inline code block */ 'i', `opts`],
+				[/* text */ 't', ` is a set of the options specified in the `],
+				[/* inline code block */ 'i', `options`],
+				[/* text */ 't', ` array.`],
+				[/* block */ 'b', '']
+			],
+			[/* parameters */
+				[/* parameter */ 'path', [/* parameter description */
+					[/* text */ 't', `The path of the file to open or create`]
+				]],
+				[/* parameter */ 'options', [/* parameter description */
+					[/* text */ 't', `Options specifying how the file is opened`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
+					[/* text */ 't', `If the set contains an invalid combination of options`]
+				]],
+				[/* throw */ 'java.lang.UnsupportedOperationException', [/* throw description */
+					[/* text */ 't', `If the `],
+					[/* inline code block */ 'i', `path`],
+					[/* text */ 't', ` is associated with a provider that does not
+          support creating file channels, or an unsupported open option is
+          specified`]
+				]],
+				[/* throw */ 'java.nio.file.FileAlreadyExistsException', [/* throw description */
+					[/* text */ 't', `If a file of that name already exists and the `],
+					[/* reference */ 'r', `java.StandardOpenOption#CREATE_NEW`],
+					[/* text */ 't', ` option is specified
+          and the file is being opened for writing
+          `],
+					[/* text */ 't', `optional specific exception`]
+				]],
+				[/* throw */ 'java.io.IOException', [/* throw description */
+					[/* text */ 't', `If an I/O error occurs`]
+				]],
+				[/* throw */ 'java.lang.SecurityException', [/* throw description */
+					[/* text */ 't', `If a security manager is installed and it denies an
+          unspecified permission required by the implementation.
+          In the case of the default provider, the `],
+					[/* reference */ 'r', `java.nio.SecurityManager#checkRead(java.lang.String)`],
+					[/* text */ 't', ` method is invoked to check
+          read access if the file is opened for reading. The `],
+					[/* reference */ 'r', `java.nio.SecurityManager#checkWrite(java.lang.String)`],
+					[/* text */ 't', ` method is invoked to check
+          write access if the file is opened for writing`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `A new file channel`]
 			]
 		]],
 		[/* method */ 'open(java.nio.file.Path,java.util.Set,java.nio.file.attribute.FileAttribute...)', [
@@ -1262,497 +1753,6 @@ DocsCollector.collect('java.nio.channels.FileChannel', [
 			],
 			[/* return description */
 				[/* text */ 't', `A new file channel`]
-			]
-		]],
-		[/* method */ 'open(java.nio.file.Path,java.nio.file.OpenOption...)', [
-			[/* method description */
-				[/* text */ 't', `Opens or creates a file, returning a file channel to access the file.
-
- `],
-				[/* block */ 'b', ` An invocation of this method behaves in exactly the same way as the
- invocation
- `],
-				[/* code block */ 'c', [
-					[/* text */ 't', `     fc.`],
-					[/* text */ 't', `open`],
-					[/* text */ 't', `(file, opts, new FileAttribute<?>[0]);
- `]
-				]],
-				[/* text */ 't', `
- where `],
-				[/* inline code block */ 'i', `opts`],
-				[/* text */ 't', ` is a set of the options specified in the `],
-				[/* inline code block */ 'i', `options`],
-				[/* text */ 't', ` array.`],
-				[/* block */ 'b', '']
-			],
-			[/* parameters */
-				[/* parameter */ 'path', [/* parameter description */
-					[/* text */ 't', `The path of the file to open or create`]
-				]],
-				[/* parameter */ 'options', [/* parameter description */
-					[/* text */ 't', `Options specifying how the file is opened`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
-					[/* text */ 't', `If the set contains an invalid combination of options`]
-				]],
-				[/* throw */ 'java.lang.UnsupportedOperationException', [/* throw description */
-					[/* text */ 't', `If the `],
-					[/* inline code block */ 'i', `path`],
-					[/* text */ 't', ` is associated with a provider that does not
-          support creating file channels, or an unsupported open option is
-          specified`]
-				]],
-				[/* throw */ 'java.nio.file.FileAlreadyExistsException', [/* throw description */
-					[/* text */ 't', `If a file of that name already exists and the `],
-					[/* reference */ 'r', `java.StandardOpenOption#CREATE_NEW`],
-					[/* text */ 't', ` option is specified
-          and the file is being opened for writing
-          `],
-					[/* text */ 't', `optional specific exception`]
-				]],
-				[/* throw */ 'java.io.IOException', [/* throw description */
-					[/* text */ 't', `If an I/O error occurs`]
-				]],
-				[/* throw */ 'java.lang.SecurityException', [/* throw description */
-					[/* text */ 't', `If a security manager is installed and it denies an
-          unspecified permission required by the implementation.
-          In the case of the default provider, the `],
-					[/* reference */ 'r', `java.nio.SecurityManager#checkRead(java.lang.String)`],
-					[/* text */ 't', ` method is invoked to check
-          read access if the file is opened for reading. The `],
-					[/* reference */ 'r', `java.nio.SecurityManager#checkWrite(java.lang.String)`],
-					[/* text */ 't', ` method is invoked to check
-          write access if the file is opened for writing`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `A new file channel`]
-			]
-		]],
-		[/* method */ 'transferTo(long,long,java.nio.channels.WritableByteChannel)', [
-			[/* method description */
-				[/* text */ 't', `Transfers bytes from this channel's file to the given writable byte
- channel.
-
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', ` An attempt is made to read up to `],
-					[/* inline code block */ 'i', `count`],
-					[/* text */ 't', ` bytes starting at
- the given `],
-					[/* inline code block */ 'i', `position`],
-					[/* text */ 't', ` in this channel's file and write them to the
- target channel.  An invocation of this method may or may not transfer
- all of the requested bytes; whether or not it does so depends upon the
- natures and states of the channels.  Fewer than the requested number of
- bytes are transferred if this channel's file contains fewer than
- `],
-					[/* inline code block */ 'i', `count`],
-					[/* text */ 't', ` bytes starting at the given `],
-					[/* inline code block */ 'i', `position`],
-					[/* text */ 't', `, or if the
- target channel is non-blocking and it has fewer than `],
-					[/* inline code block */ 'i', `count`],
-					[/* text */ 't', `
- bytes free in its output buffer.
-
- `]
-				]],
-				[/* block */ 'b', ` This method does not modify this channel's position.  If the given
- position is greater than the file's current size then no bytes are
- transferred.  If the target channel has a position then bytes are
- written starting at that position and then the position is incremented
- by the number of bytes written.
-
- `],
-				[/* block */ 'b', ` This method is potentially much more efficient than a simple loop
- that reads from this channel and writes to the target channel.  Many
- operating systems can transfer bytes directly from the filesystem cache
- to the target channel without actually copying them.  `]
-			],
-			[/* parameters */
-				[/* parameter */ 'position', [/* parameter description */
-					[/* text */ 't', `The position within the file at which the transfer is to begin;
-         must be non-negative`]
-				]],
-				[/* parameter */ 'count', [/* parameter description */
-					[/* text */ 't', `The maximum number of bytes to be transferred; must be
-         non-negative`]
-				]],
-				[/* parameter */ 'target', [/* parameter description */
-					[/* text */ 't', `The target channel`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
-					[/* text */ 't', `If the preconditions on the parameters do not hold`]
-				]],
-				[/* throw */ 'java.nio.channels.NonReadableChannelException', [/* throw description */
-					[/* text */ 't', `If this channel was not opened for reading`]
-				]],
-				[/* throw */ 'java.nio.channels.NonWritableChannelException', [/* throw description */
-					[/* text */ 't', `If the target channel was not opened for writing`]
-				]],
-				[/* throw */ 'java.nio.channels.ClosedChannelException', [/* throw description */
-					[/* text */ 't', `If either this channel or the target channel is closed`]
-				]],
-				[/* throw */ 'java.nio.channels.AsynchronousCloseException', [/* throw description */
-					[/* text */ 't', `If another thread closes either channel
-          while the transfer is in progress`]
-				]],
-				[/* throw */ 'java.nio.channels.ClosedByInterruptException', [/* throw description */
-					[/* text */ 't', `If another thread interrupts the current thread while the
-          transfer is in progress, thereby closing both channels and
-          setting the current thread's interrupt status`]
-				]],
-				[/* throw */ 'java.io.IOException', [/* throw description */
-					[/* text */ 't', `If some other I/O error occurs`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `The number of bytes, possibly zero,
-          that were actually transferred`]
-			]
-		]],
-		[/* method */ 'tryLock(long,long,boolean)', [
-			[/* method description */
-				[/* text */ 't', `Attempts to acquire a lock on the given region of this channel's file.
-
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', ` This method does not block.  An invocation always returns
- immediately, either having acquired a lock on the requested region or
- having failed to do so.  If it fails to acquire a lock because an
- overlapping lock is held by another program then it returns
- `],
-					[/* inline code block */ 'i', `null`],
-					[/* text */ 't', `.  If it fails to acquire a lock for any other reason then
- an appropriate exception is thrown.
-
- `]
-				]],
-				[/* block */ 'b', [
-					[/* text */ 't', ` The region specified by the `],
-					[/* inline code block */ 'i', `position`],
-					[/* text */ 't', ` and `],
-					[/* inline code block */ 'i', `size`],
-					[/* text */ 't', `
- parameters need not be contained within, or even overlap, the actual
- underlying file.  Lock regions are fixed in size; if a locked region
- initially contains the end of the file and the file grows beyond the
- region then the new portion of the file will not be covered by the lock.
- If a file is expected to grow in size and a lock on the entire file is
- required then a region starting at zero, and no smaller than the
- expected maximum size of the file, should be locked.  The zero-argument
- `],
-					[/* reference */ 'r', `#tryLock()`, `tryLock()`],
-					[/* text */ 't', ` method simply locks a region of size `],
-					[/* reference */ 'r', `java.nio.Long#MAX_VALUE`],
-					[/* text */ 't', `.
-
- `]
-				]],
-				[/* block */ 'b', [
-					[/* text */ 't', ` Some operating systems do not support shared locks, in which case a
- request for a shared lock is automatically converted into a request for
- an exclusive lock.  Whether the newly-acquired lock is shared or
- exclusive may be tested by invoking the resulting lock object's `],
-					[/* reference */ 'r', `.FileLock#isShared()`],
-					[/* text */ 't', ` method.
-
- `]
-				]],
-				[/* block */ 'b', ` File locks are held on behalf of the entire Java virtual machine.
- They are not suitable for controlling access to a file by multiple
- threads within the same virtual machine.  `]
-			],
-			[/* parameters */
-				[/* parameter */ 'position', [/* parameter description */
-					[/* text */ 't', `The position at which the locked region is to start; must be
-         non-negative`]
-				]],
-				[/* parameter */ 'size', [/* parameter description */
-					[/* text */ 't', `The size of the locked region; must be non-negative, and the sum
-         `],
-					[/* inline code block */ 'i', `position`],
-					[/* text */ 't', ` + `],
-					[/* inline code block */ 'i', `size`],
-					[/* text */ 't', ` must be non-negative`]
-				]],
-				[/* parameter */ 'shared', [/* parameter description */
-					[/* text */ 't', ``],
-					[/* inline code block */ 'i', `true`],
-					[/* text */ 't', ` to request a shared lock,
-         `],
-					[/* inline code block */ 'i', `false`],
-					[/* text */ 't', ` to request an exclusive lock`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
-					[/* text */ 't', `If the preconditions on the parameters do not hold`]
-				]],
-				[/* throw */ 'java.nio.channels.ClosedChannelException', [/* throw description */
-					[/* text */ 't', `If this channel is closed`]
-				]],
-				[/* throw */ 'java.nio.channels.OverlappingFileLockException', [/* throw description */
-					[/* text */ 't', `If a lock that overlaps the requested region is already held by
-          this Java virtual machine, or if another thread is already
-          blocked in this method and is attempting to lock an overlapping
-          region of the same file`]
-				]],
-				[/* throw */ 'java.io.IOException', [/* throw description */
-					[/* text */ 't', `If some other I/O error occurs`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `A lock object representing the newly-acquired lock,
-          or `],
-				[/* inline code block */ 'i', `null`],
-				[/* text */ 't', ` if the lock could not be acquired
-          because another program holds an overlapping lock`]
-			]
-		]],
-		[/* method */ 'tryLock()', [
-			[/* method description */
-				[/* text */ 't', `Attempts to acquire an exclusive lock on this channel's file.
-
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', ` An invocation of this method of the form `],
-					[/* inline code block */ 'i', `fc.tryLock()`],
-					[/* text */ 't', `
- behaves in exactly the same way as the invocation
-
- `]
-				]],
-				[/* code block */ 'c', [
-					[/* text */ 't', `     fc.`],
-					[/* text */ 't', `tryLock`],
-					[/* text */ 't', `(0L, Long.MAX_VALUE, false) `]
-				]],
-				[/* block */ 'b', '']
-			],
-			/* parameters */ UDF,
-			[/* throws */
-				[/* throw */ 'java.nio.channels.ClosedChannelException', [/* throw description */
-					[/* text */ 't', `If this channel is closed`]
-				]],
-				[/* throw */ 'java.nio.channels.OverlappingFileLockException', [/* throw description */
-					[/* text */ 't', `If a lock that overlaps the requested region is already held by
-          this Java virtual machine, or if another thread is already
-          blocked in this method and is attempting to lock an overlapping
-          region`]
-				]],
-				[/* throw */ 'java.io.IOException', [/* throw description */
-					[/* text */ 't', `If some other I/O error occurs`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `A lock object representing the newly-acquired lock,
-          or `],
-				[/* inline code block */ 'i', `null`],
-				[/* text */ 't', ` if the lock could not be acquired
-          because another program holds an overlapping lock`]
-			]
-		]],
-		[/* method */ 'force(boolean)', [
-			[/* method description */
-				[/* text */ 't', `Forces any updates to this channel's file to be written to the storage
- device that contains it.
-
- `],
-				[/* block */ 'b', ` If this channel's file resides on a local storage device then when
- this method returns it is guaranteed that all changes made to the file
- since this channel was created, or since this method was last invoked,
- will have been written to that device.  This is useful for ensuring that
- critical information is not lost in the event of a system crash.
-
- `],
-				[/* block */ 'b', ` If the file does not reside on a local device then no such guarantee
- is made.
-
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', ` The `],
-					[/* inline code block */ 'i', `metaData`],
-					[/* text */ 't', ` parameter can be used to limit the number of
- I/O operations that this method is required to perform.  Passing
- `],
-					[/* inline code block */ 'i', `false`],
-					[/* text */ 't', ` for this parameter indicates that only updates to the
- file's content need be written to storage; passing `],
-					[/* inline code block */ 'i', `true`],
-					[/* text */ 't', `
- indicates that updates to both the file's content and metadata must be
- written, which generally requires at least one more I/O operation.
- Whether this parameter actually has any effect is dependent upon the
- underlying operating system and is therefore unspecified.
-
- `]
-				]],
-				[/* block */ 'b', ` Invoking this method may cause an I/O operation to occur even if the
- channel was only opened for reading.  Some operating systems, for
- example, maintain a last-access time as part of a file's metadata, and
- this time is updated whenever the file is read.  Whether or not this is
- actually done is system-dependent and is therefore unspecified.
-
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', ` This method is only guaranteed to force changes that were made to
- this channel's file via the methods defined in this class.  It may or
- may not force changes that were made by modifying the content of a
- `],
-					[/* reference */ 'r', `java.nio.MappedByteBuffer`],
-					[/* text */ 't', ` obtained by
- invoking the `],
-					[/* reference */ 'r', `#map(java.nio.channels.FileChannel.MapMode,long,long)`, `map`],
-					[/* text */ 't', ` method.  Invoking the `],
-					[/* reference */ 'r', `java.MappedByteBuffer#force()`],
-					[/* text */ 't', ` method of the mapped byte buffer will
- force changes made to the buffer's content to be written.  `]
-				]]
-			],
-			[/* parameters */
-				[/* parameter */ 'metaData', [/* parameter description */
-					[/* text */ 't', `If `],
-					[/* inline code block */ 'i', `true`],
-					[/* text */ 't', ` then this method is required to force changes
-          to both the file's content and metadata to be written to
-          storage; otherwise, it need only force content changes to be
-          written`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.nio.channels.ClosedChannelException', [/* throw description */
-					[/* text */ 't', `If this channel is closed`]
-				]],
-				[/* throw */ 'java.io.IOException', [/* throw description */
-					[/* text */ 't', `If some other I/O error occurs`]
-				]]
-			],
-			/* return */ UDF
-		]],
-		[/* method */ 'truncate(long)', [
-			[/* method description */
-				[/* text */ 't', `Truncates this channel's file to the given size.
-
- `],
-				[/* block */ 'b', ` If the given size is less than the file's current size then the file
- is truncated, discarding any bytes beyond the new end of the file.  If
- the given size is greater than or equal to the file's current size then
- the file is not modified.  In either case, if this channel's file
- position is greater than the given size then it is set to that size.
- `]
-			],
-			[/* parameters */
-				[/* parameter */ 'size', [/* parameter description */
-					[/* text */ 't', `The new size, a non-negative byte count`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.nio.channels.NonWritableChannelException', [/* throw description */
-					[/* text */ 't', `If this channel was not opened for writing`]
-				]],
-				[/* throw */ 'java.nio.channels.ClosedChannelException', [/* throw description */
-					[/* text */ 't', `If this channel is closed`]
-				]],
-				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
-					[/* text */ 't', `If the new size is negative`]
-				]],
-				[/* throw */ 'java.io.IOException', [/* throw description */
-					[/* text */ 't', `If some other I/O error occurs`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `This file channel`]
-			]
-		]],
-		[/* method */ 'transferFrom(java.nio.channels.ReadableByteChannel,long,long)', [
-			[/* method description */
-				[/* text */ 't', `Transfers bytes into this channel's file from the given readable byte
- channel.
-
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', ` An attempt is made to read up to `],
-					[/* inline code block */ 'i', `count`],
-					[/* text */ 't', ` bytes from the
- source channel and write them to this channel's file starting at the
- given `],
-					[/* inline code block */ 'i', `position`],
-					[/* text */ 't', `.  An invocation of this method may or may not
- transfer all of the requested bytes; whether or not it does so depends
- upon the natures and states of the channels.  Fewer than the requested
- number of bytes will be transferred if the source channel has fewer than
- `],
-					[/* inline code block */ 'i', `count`],
-					[/* text */ 't', ` bytes remaining, or if the source channel is non-blocking
- and has fewer than `],
-					[/* inline code block */ 'i', `count`],
-					[/* text */ 't', ` bytes immediately available in its
- input buffer. No bytes are transferred, and zero is returned, if the
- source has reached end-of-stream.
-
- `]
-				]],
-				[/* block */ 'b', ` This method does not modify this channel's position.  If the given
- position is greater than the file's current size then no bytes are
- transferred.  If the source channel has a position then bytes are read
- starting at that position and then the position is incremented by the
- number of bytes read.
-
- `],
-				[/* block */ 'b', ` This method is potentially much more efficient than a simple loop
- that reads from the source channel and writes to this channel.  Many
- operating systems can transfer bytes directly from the source channel
- into the filesystem cache without actually copying them.  `]
-			],
-			[/* parameters */
-				[/* parameter */ 'src', [/* parameter description */
-					[/* text */ 't', `The source channel`]
-				]],
-				[/* parameter */ 'position', [/* parameter description */
-					[/* text */ 't', `The position within the file at which the transfer is to begin;
-         must be non-negative`]
-				]],
-				[/* parameter */ 'count', [/* parameter description */
-					[/* text */ 't', `The maximum number of bytes to be transferred; must be
-         non-negative`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
-					[/* text */ 't', `If the preconditions on the parameters do not hold`]
-				]],
-				[/* throw */ 'java.nio.channels.NonReadableChannelException', [/* throw description */
-					[/* text */ 't', `If the source channel was not opened for reading`]
-				]],
-				[/* throw */ 'java.nio.channels.NonWritableChannelException', [/* throw description */
-					[/* text */ 't', `If this channel was not opened for writing`]
-				]],
-				[/* throw */ 'java.nio.channels.ClosedChannelException', [/* throw description */
-					[/* text */ 't', `If either this channel or the source channel is closed`]
-				]],
-				[/* throw */ 'java.nio.channels.AsynchronousCloseException', [/* throw description */
-					[/* text */ 't', `If another thread closes either channel
-          while the transfer is in progress`]
-				]],
-				[/* throw */ 'java.nio.channels.ClosedByInterruptException', [/* throw description */
-					[/* text */ 't', `If another thread interrupts the current thread while the
-          transfer is in progress, thereby closing both channels and
-          setting the current thread's interrupt status`]
-				]],
-				[/* throw */ 'java.io.IOException', [/* throw description */
-					[/* text */ 't', `If some other I/O error occurs`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `The number of bytes, possibly zero,
-          that were actually transferred`]
 			]
 		]]
 	],

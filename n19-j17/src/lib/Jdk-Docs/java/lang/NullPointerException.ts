@@ -86,7 +86,6 @@ DocsCollector.collect('java.lang.NullPointerException', [
 		]]
 	],
 	[/* methods */
-		[/* method */ 'fillInStackTrace()', UDF],
 		[/* method */ 'getMessage()', [
 			[/* method description */
 				[/* text */ 't', `Returns the detail message string of this throwable.
@@ -107,6 +106,7 @@ DocsCollector.collect('java.lang.NullPointerException', [
 				[/* inline code block */ 'i', `null`],
 				[/* text */ 't', `.`]
 			]
-		]]
+		]],
+		[/* method */ 'fillInStackTrace()', UDF]
 	],
 ]);

@@ -27,6 +27,114 @@ DocsCollector.collect('java.io.OutputStream', [
 		]]
 	],
 	[/* methods */
+		[/* method */ 'write(int)', [
+			[/* method description */
+				[/* text */ 't', `Writes the specified byte to this output stream. The general
+ contract for `],
+				[/* inline code block */ 'i', `write`],
+				[/* text */ 't', ` is that one byte is written
+ to the output stream. The byte to be written is the eight
+ low-order bits of the argument `],
+				[/* inline code block */ 'i', `b`],
+				[/* text */ 't', `. The 24
+ high-order bits of `],
+				[/* inline code block */ 'i', `b`],
+				[/* text */ 't', ` are ignored.
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', `
+ Subclasses of `],
+					[/* inline code block */ 'i', `OutputStream`],
+					[/* text */ 't', ` must provide an
+ implementation for this method.`]
+				]]
+			],
+			[/* parameters */
+				[/* parameter */ 'b', [/* parameter description */
+					[/* text */ 't', `the `],
+					[/* inline code block */ 'i', `byte`],
+					[/* text */ 't', `.`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.io.IOException', [/* throw description */
+					[/* text */ 't', `if an I/O error occurs. In particular,
+             an `],
+					[/* inline code block */ 'i', `IOException`],
+					[/* text */ 't', ` may be thrown if the
+             output stream has been closed.`]
+				]]
+			],
+			/* return */ UDF
+		]],
+		[/* method */ 'nullOutputStream()', [
+			[/* method description */
+				[/* text */ 't', `Returns a new `],
+				[/* inline code block */ 'i', `OutputStream`],
+				[/* text */ 't', ` which discards all bytes.  The
+ returned stream is initially open.  The stream is closed by calling
+ the `],
+				[/* inline code block */ 'i', `close()`],
+				[/* text */ 't', ` method.  Subsequent calls to `],
+				[/* inline code block */ 'i', `close()`],
+				[/* text */ 't', ` have
+ no effect.
+
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', ` While the stream is open, the `],
+					[/* inline code block */ 'i', `write(int)`],
+					[/* text */ 't', `, `],
+					[/* inline code block */ 'i', `write(byte[])`],
+					[/* text */ 't', `, and `],
+					[/* inline code block */ 'i', `write(byte[], int, int)`],
+					[/* text */ 't', ` methods do nothing.
+ After the stream has been closed, these methods all throw `],
+					[/* inline code block */ 'i', `IOException`],
+					[/* text */ 't', `.
+
+ `]
+				]],
+				[/* block */ 'b', [
+					[/* text */ 't', ` The `],
+					[/* inline code block */ 'i', `flush()`],
+					[/* text */ 't', ` method does nothing.`]
+				]]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `an `],
+				[/* inline code block */ 'i', `OutputStream`],
+				[/* text */ 't', ` which discards all bytes`]
+			]
+		]],
+		[/* method */ 'close()', [
+			[/* method description */
+				[/* text */ 't', `Closes this output stream and releases any system resources
+ associated with this stream. The general contract of `],
+				[/* inline code block */ 'i', `close`],
+				[/* text */ 't', `
+ is that it closes the output stream. A closed stream cannot perform
+ output operations and cannot be reopened.
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', `
+ The `],
+					[/* inline code block */ 'i', `close`],
+					[/* text */ 't', ` method of `],
+					[/* inline code block */ 'i', `OutputStream`],
+					[/* text */ 't', ` does nothing.`]
+				]]
+			],
+			/* parameters */ UDF,
+			[/* throws */
+				[/* throw */ 'java.io.IOException', [/* throw description */
+					[/* text */ 't', `if an I/O error occurs.`]
+				]]
+			],
+			/* return */ UDF
+		]],
 		[/* method */ 'flush()', [
 			[/* method description */
 				[/* text */ 't', `Flushes this output stream and forces any buffered output bytes
@@ -171,114 +279,6 @@ DocsCollector.collect('java.io.OutputStream', [
 				]]
 			],
 			/* return */ UDF
-		]],
-		[/* method */ 'write(int)', [
-			[/* method description */
-				[/* text */ 't', `Writes the specified byte to this output stream. The general
- contract for `],
-				[/* inline code block */ 'i', `write`],
-				[/* text */ 't', ` is that one byte is written
- to the output stream. The byte to be written is the eight
- low-order bits of the argument `],
-				[/* inline code block */ 'i', `b`],
-				[/* text */ 't', `. The 24
- high-order bits of `],
-				[/* inline code block */ 'i', `b`],
-				[/* text */ 't', ` are ignored.
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', `
- Subclasses of `],
-					[/* inline code block */ 'i', `OutputStream`],
-					[/* text */ 't', ` must provide an
- implementation for this method.`]
-				]]
-			],
-			[/* parameters */
-				[/* parameter */ 'b', [/* parameter description */
-					[/* text */ 't', `the `],
-					[/* inline code block */ 'i', `byte`],
-					[/* text */ 't', `.`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.io.IOException', [/* throw description */
-					[/* text */ 't', `if an I/O error occurs. In particular,
-             an `],
-					[/* inline code block */ 'i', `IOException`],
-					[/* text */ 't', ` may be thrown if the
-             output stream has been closed.`]
-				]]
-			],
-			/* return */ UDF
-		]],
-		[/* method */ 'close()', [
-			[/* method description */
-				[/* text */ 't', `Closes this output stream and releases any system resources
- associated with this stream. The general contract of `],
-				[/* inline code block */ 'i', `close`],
-				[/* text */ 't', `
- is that it closes the output stream. A closed stream cannot perform
- output operations and cannot be reopened.
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', `
- The `],
-					[/* inline code block */ 'i', `close`],
-					[/* text */ 't', ` method of `],
-					[/* inline code block */ 'i', `OutputStream`],
-					[/* text */ 't', ` does nothing.`]
-				]]
-			],
-			/* parameters */ UDF,
-			[/* throws */
-				[/* throw */ 'java.io.IOException', [/* throw description */
-					[/* text */ 't', `if an I/O error occurs.`]
-				]]
-			],
-			/* return */ UDF
-		]],
-		[/* method */ 'nullOutputStream()', [
-			[/* method description */
-				[/* text */ 't', `Returns a new `],
-				[/* inline code block */ 'i', `OutputStream`],
-				[/* text */ 't', ` which discards all bytes.  The
- returned stream is initially open.  The stream is closed by calling
- the `],
-				[/* inline code block */ 'i', `close()`],
-				[/* text */ 't', ` method.  Subsequent calls to `],
-				[/* inline code block */ 'i', `close()`],
-				[/* text */ 't', ` have
- no effect.
-
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', ` While the stream is open, the `],
-					[/* inline code block */ 'i', `write(int)`],
-					[/* text */ 't', `, `],
-					[/* inline code block */ 'i', `write(byte[])`],
-					[/* text */ 't', `, and `],
-					[/* inline code block */ 'i', `write(byte[], int, int)`],
-					[/* text */ 't', ` methods do nothing.
- After the stream has been closed, these methods all throw `],
-					[/* inline code block */ 'i', `IOException`],
-					[/* text */ 't', `.
-
- `]
-				]],
-				[/* block */ 'b', [
-					[/* text */ 't', ` The `],
-					[/* inline code block */ 'i', `flush()`],
-					[/* text */ 't', ` method does nothing.`]
-				]]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `an `],
-				[/* inline code block */ 'i', `OutputStream`],
-				[/* text */ 't', ` which discards all bytes`]
-			]
 		]]
 	],
 ]);

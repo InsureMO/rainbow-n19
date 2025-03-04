@@ -22,24 +22,24 @@ DocsCollector.collect('java.util.stream.IntStream$Builder', [
 	/* fields */ UDF,
 	/* constructors */ UDF,
 	[/* methods */
-		[/* method */ 'add(int)', [
+		[/* method */ 'build()', [
 			[/* method description */
-				[/* text */ 't', `Adds an element to the stream being built.`]
+				[/* text */ 't', `Builds the stream, transitioning this builder to the built state.
+ An `],
+				[/* inline code block */ 'i', `IllegalStateException`],
+				[/* text */ 't', ` is thrown if there are further
+ attempts to operate on the builder after it has entered the built
+ state.`]
 			],
-			[/* parameters */
-				[/* parameter */ 't', [/* parameter description */
-					[/* text */ 't', `the element to add`]
-				]]
-			],
+			/* parameters */ UDF,
 			[/* throws */
 				[/* throw */ 'java.lang.IllegalStateException', [/* throw description */
-					[/* text */ 't', `if the builder has already transitioned
- to the built state`]
+					[/* text */ 't', `if the builder has already transitioned to
+ the built state`]
 				]]
 			],
 			[/* return description */
-				[/* inline code block */ 'i', `this`],
-				[/* text */ 't', ` builder`]
+				[/* text */ 't', `the built stream`]
 			]
 		]],
 		[/* method */ 'accept(int)', [
@@ -59,24 +59,24 @@ DocsCollector.collect('java.util.stream.IntStream$Builder', [
 			],
 			/* return */ UDF
 		]],
-		[/* method */ 'build()', [
+		[/* method */ 'add(int)', [
 			[/* method description */
-				[/* text */ 't', `Builds the stream, transitioning this builder to the built state.
- An `],
-				[/* inline code block */ 'i', `IllegalStateException`],
-				[/* text */ 't', ` is thrown if there are further
- attempts to operate on the builder after it has entered the built
- state.`]
+				[/* text */ 't', `Adds an element to the stream being built.`]
 			],
-			/* parameters */ UDF,
+			[/* parameters */
+				[/* parameter */ 't', [/* parameter description */
+					[/* text */ 't', `the element to add`]
+				]]
+			],
 			[/* throws */
 				[/* throw */ 'java.lang.IllegalStateException', [/* throw description */
-					[/* text */ 't', `if the builder has already transitioned to
- the built state`]
+					[/* text */ 't', `if the builder has already transitioned
+ to the built state`]
 				]]
 			],
 			[/* return description */
-				[/* text */ 't', `the built stream`]
+				[/* inline code block */ 'i', `this`],
+				[/* text */ 't', ` builder`]
 			]
 		]]
 	],

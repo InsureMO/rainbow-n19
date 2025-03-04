@@ -17,6 +17,15 @@ DocsCollector.collect('java.lang.invoke.WrongMethodTypeException', [
 	],
 	/* fields */ UDF,
 	[/* constructors */
+		[/* constructor */ '<init>()', [
+			[/* constructor description */
+				[/* text */ 't', `Constructs a `],
+				[/* inline code block */ 'i', `WrongMethodTypeException`],
+				[/* text */ 't', ` with no detail message.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF
+		]],
 		[/* constructor */ '<init>(java.lang.String)', [
 			[/* constructor description */
 				[/* text */ 't', `Constructs a `],
@@ -29,15 +38,6 @@ DocsCollector.collect('java.lang.invoke.WrongMethodTypeException', [
 					[/* text */ 't', `the detail message.`]
 				]]
 			],
-			/* throws */ UDF
-		]],
-		[/* constructor */ '<init>()', [
-			[/* constructor description */
-				[/* text */ 't', `Constructs a `],
-				[/* inline code block */ 'i', `WrongMethodTypeException`],
-				[/* text */ 't', ` with no detail message.`]
-			],
-			/* parameters */ UDF,
 			/* throws */ UDF
 		]]
 	],

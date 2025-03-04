@@ -52,215 +52,147 @@ DocsCollector.collect('java.lang.Module', [
 	/* fields */ UDF,
 	/* constructors */ UDF,
 	[/* methods */
-		[/* method */ 'getName()', [
+		[/* method */ 'getAnnotation(java.lang.Class)', [
 			[/* method description */
-				[/* text */ 't', `Returns the module name or `],
+				[/* text */ 't', `Returns this element's annotation for the specified type if
+ such an annotation is `],
+				[/* text */ 't', `present`],
+				[/* text */ 't', `, else null.
+ This method returns `],
 				[/* inline code block */ 'i', `null`],
-				[/* text */ 't', ` if this module is an unnamed
- module.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `The module name`]
-			]
-		]],
-		[/* method */ 'toString()', [
-			[/* method description */
-				[/* text */ 't', `Returns the string representation of this module. For a named module,
- the representation is the string `],
-				[/* inline code block */ 'i', `"module"`],
-				[/* text */ 't', `, followed by a space,
- and then the module name. For an unnamed module, the representation is
- the string `],
-				[/* inline code block */ 'i', `"unnamed module"`],
-				[/* text */ 't', `, followed by a space, and then an
- implementation specific string that identifies the unnamed module.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `The string representation of this module`]
-			]
-		]],
-		[/* method */ 'addReads(java.lang.Module)', [
-			[/* method description */
-				[/* text */ 't', `If the caller's module is this module then update this module to read
- the given module.
+				[/* text */ 't', ` when invoked on an unnamed module.
 
- This method is a no-op if `],
-				[/* inline code block */ 'i', `other`],
-				[/* text */ 't', ` is this module (all modules read
- themselves), this module is an unnamed module (as unnamed modules read
- all modules), or this module already reads `],
-				[/* inline code block */ 'i', `other`],
-				[/* text */ 't', `.`]
+ `],
+				[/* block */ 'b', ` Note that any annotation returned by this method is a
+ declaration annotation.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'annotationClass', [/* parameter description */
+					[/* text */ 't', `the Class object corresponding to the
+        annotation type`]
+				]]
+			],
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `this element's annotation for the specified annotation type if
+     present on this element, else null`]
+			]
+		]],
+		[/* method */ 'canRead(java.lang.Module)', [
+			[/* method description */
+				[/* text */ 't', `Indicates if this module reads the given module. This method returns
+ `],
+				[/* inline code block */ 'i', `true`],
+				[/* text */ 't', ` if invoked to test if this module reads itself. It also
+ returns `],
+				[/* inline code block */ 'i', `true`],
+				[/* text */ 't', ` if invoked on an unnamed module (as unnamed
+ modules read all modules).`]
 			],
 			[/* parameters */
 				[/* parameter */ 'other', [/* parameter description */
 					[/* text */ 't', `The other module`]
 				]]
 			],
-			[/* throws */
-				[/* throw */ 'java.lang.IllegalCallerException', [/* throw description */
-					[/* text */ 't', `If this is a named module and the caller's module is not this
-         module`]
-				]]
-			],
+			/* throws */ UDF,
 			[/* return description */
-				[/* text */ 't', `this module`]
+				[/* inline code block */ 'i', `true`],
+				[/* text */ 't', ` if this module reads `],
+				[/* inline code block */ 'i', `other`]
 			]
 		]],
-		[/* method */ 'addExports(java.lang.String,java.lang.Module)', [
+		[/* method */ 'canUse(java.lang.Class)', [
 			[/* method description */
-				[/* text */ 't', `If the caller's module is this module then update this module to export
- the given package to the given module.
-
- `],
-				[/* block */ 'b', `open`]
-			],
-			[/* parameters */
-				[/* parameter */ 'pn', [/* parameter description */
-					[/* text */ 't', `The package name`]
-				]],
-				[/* parameter */ 'other', [/* parameter description */
-					[/* text */ 't', `The module`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
-					[/* text */ 't', `If `],
-					[/* inline code block */ 'i', `pn`],
-					[/* text */ 't', ` is `],
-					[/* inline code block */ 'i', `null`],
-					[/* text */ 't', `, or this is a named module and the
-         package `],
-					[/* inline code block */ 'i', `pn`],
-					[/* text */ 't', ` is not a package in this module`]
-				]],
-				[/* throw */ 'java.lang.IllegalCallerException', [/* throw description */
-					[/* text */ 't', `If this is a named module and the caller's module is not this
-         module`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `this module`]
-			]
-		]],
-		[/* method */ 'addOpens(java.lang.String,java.lang.Module)', [
-			[/* method description */
-				[/* text */ 't', `If this module has `],
-				[/* text */ 't', `opened`],
-				[/* text */ 't', ` a package to at least the caller
- module then update this module to open the package to the given module.
- Opening a package with this method allows all types in the package,
- and all their members, not just public types and their public members,
- to be reflected on by the given module when using APIs that support
- private access or a way to bypass or suppress default Java language
- access control checks.
-
- `],
-				[/* block */ 'b', `open`]
-			],
-			[/* parameters */
-				[/* parameter */ 'pn', [/* parameter description */
-					[/* text */ 't', `The package name`]
-				]],
-				[/* parameter */ 'other', [/* parameter description */
-					[/* text */ 't', `The module`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
-					[/* text */ 't', `If `],
-					[/* inline code block */ 'i', `pn`],
-					[/* text */ 't', ` is `],
-					[/* inline code block */ 'i', `null`],
-					[/* text */ 't', `, or this is a named module and the
-         package `],
-					[/* inline code block */ 'i', `pn`],
-					[/* text */ 't', ` is not a package in this module`]
-				]],
-				[/* throw */ 'java.lang.IllegalCallerException', [/* throw description */
-					[/* text */ 't', `If this is a named module and this module has not opened the
-         package to at least the caller's module`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `this module`]
-			]
-		]],
-		[/* method */ 'addUses(java.lang.Class)', [
-			[/* method description */
-				[/* text */ 't', `If the caller's module is this module then update this module to add a
- service dependence on the given service type. This method is intended
- for use by frameworks that invoke `],
-				[/* reference */ 'r', `java.util.ServiceLoader`],
-				[/* text */ 't', ` on behalf of other modules or where the framework is
- passed a reference to the service type by other code. This method is
- a no-op when invoked on an unnamed module or an automatic module.
-
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', ` This method does not cause `],
-					[/* reference */ 'r', `.Configuration#resolveAndBind(java.lang.module.ModuleFinder,java.lang.module.ModuleFinder,java.util.Collection)`],
-					[/* text */ 't', ` to be re-run. `]
-				]]
+				[/* text */ 't', `Indicates if this module has a service dependence on the given service
+ type. This method always returns `],
+				[/* inline code block */ 'i', `true`],
+				[/* text */ 't', ` when invoked on an unnamed
+ module or an automatic module.`]
 			],
 			[/* parameters */
 				[/* parameter */ 'service', [/* parameter description */
 					[/* text */ 't', `The service type`]
 				]]
 			],
-			[/* throws */
-				[/* throw */ 'java.lang.IllegalCallerException', [/* throw description */
-					[/* text */ 't', `If this is a named module and the caller's module is not this
-         module`]
-				]]
-			],
+			/* throws */ UDF,
 			[/* return description */
-				[/* text */ 't', `this module`]
+				[/* inline code block */ 'i', `true`],
+				[/* text */ 't', ` if this module uses service type `],
+				[/* inline code block */ 'i', `st`]
 			]
 		]],
-		[/* method */ 'getClassLoader()', [
+		[/* method */ 'isExported(java.lang.String)', [
 			[/* method description */
-				[/* text */ 't', `Returns the `],
-				[/* inline code block */ 'i', `ClassLoader`],
-				[/* text */ 't', ` for this module.
+				[/* text */ 't', `Returns `],
+				[/* inline code block */ 'i', `true`],
+				[/* text */ 't', ` if this module exports the given package
+ unconditionally.
 
  `],
 				[/* block */ 'b', [
-					[/* text */ 't', ` If there is a security manager then its `],
-					[/* inline code block */ 'i', `checkPermission`],
-					[/* text */ 't', `
- method if first called with a `],
-					[/* inline code block */ 'i', `RuntimePermission("getClassLoader")`],
-					[/* text */ 't', `
- permission to check that the caller is allowed to get access to the
- class loader. `]
+					[/* text */ 't', ` This method always returns `],
+					[/* inline code block */ 'i', `true`],
+					[/* text */ 't', ` when invoked on an unnamed
+ module. A package that is `],
+					[/* reference */ 'r', `#isOpen(java.lang.String)`, `opened`],
+					[/* text */ 't', ` unconditionally
+ is considered exported unconditionally at run-time and so this method
+ returns `],
+					[/* inline code block */ 'i', `true`],
+					[/* text */ 't', ` if the package is opened unconditionally. `]
+				]],
+				[/* block */ 'b', ` This method does not check if the given module reads this module. `]
+			],
+			[/* parameters */
+				[/* parameter */ 'pn', [/* parameter description */
+					[/* text */ 't', `The package name`]
 				]]
 			],
-			/* parameters */ UDF,
-			[/* throws */
-				[/* throw */ 'java.lang.SecurityException', [/* throw description */
-					[/* text */ 't', `If denied by the security manager`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `The class loader for this module`]
-			]
-		]],
-		[/* method */ 'getDescriptor()', [
-			[/* method description */
-				[/* text */ 't', `Returns the module descriptor for this module or `],
-				[/* inline code block */ 'i', `null`],
-				[/* text */ 't', ` if this
- module is an unnamed module.`]
-			],
-			/* parameters */ UDF,
 			/* throws */ UDF,
 			[/* return description */
-				[/* text */ 't', `The module descriptor for this module`]
+				[/* inline code block */ 'i', `true`],
+				[/* text */ 't', ` if this module exports the package unconditionally`]
+			]
+		]],
+		[/* method */ 'isExported(java.lang.String,java.lang.Module)', [
+			[/* method description */
+				[/* text */ 't', `Returns `],
+				[/* inline code block */ 'i', `true`],
+				[/* text */ 't', ` if this module exports the given package to at
+ least the given module.
+
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', ` This method returns `],
+					[/* inline code block */ 'i', `true`],
+					[/* text */ 't', ` if invoked to test if a package in
+ this module is exported to itself. It always returns `],
+					[/* inline code block */ 'i', `true`],
+					[/* text */ 't', ` when
+ invoked on an unnamed module. A package that is `],
+					[/* reference */ 'r', `#isOpen(java.lang.String,java.lang.Module)`, `open`],
+					[/* text */ 't', ` to
+ the given module is considered exported to that module at run-time and
+ so this method returns `],
+					[/* inline code block */ 'i', `true`],
+					[/* text */ 't', ` if the package is open to the given
+ module. `]
+				]],
+				[/* block */ 'b', ` This method does not check if the given module reads this module. `]
+			],
+			[/* parameters */
+				[/* parameter */ 'pn', [/* parameter description */
+					[/* text */ 't', `The package name`]
+				]],
+				[/* parameter */ 'other', [/* parameter description */
+					[/* text */ 't', `The other module`]
+				]]
+			],
+			/* throws */ UDF,
+			[/* return description */
+				[/* inline code block */ 'i', `true`],
+				[/* text */ 't', ` if this module exports the package to at least the
+         given module`]
 			]
 		]],
 		[/* method */ 'isNamed()', [
@@ -274,6 +206,87 @@ DocsCollector.collect('java.lang.Module', [
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if this is a named module`]
+			]
+		]],
+		[/* method */ 'isOpen(java.lang.String)', [
+			[/* method description */
+				[/* text */ 't', `Returns `],
+				[/* inline code block */ 'i', `true`],
+				[/* text */ 't', ` if this module has `],
+				[/* text */ 't', `opened`],
+				[/* text */ 't', ` a package
+ unconditionally.
+
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', ` This method always returns `],
+					[/* inline code block */ 'i', `true`],
+					[/* text */ 't', ` when invoked on an unnamed
+ module. Additionally, it always returns `],
+					[/* inline code block */ 'i', `true`],
+					[/* text */ 't', ` when invoked on an
+ `],
+					[/* reference */ 'r', `.ModuleDescriptor#isOpen()`],
+					[/* text */ 't', ` module with a package in the
+ module. `]
+				]],
+				[/* block */ 'b', ` This method does not check if the given module reads this module. `]
+			],
+			[/* parameters */
+				[/* parameter */ 'pn', [/* parameter description */
+					[/* text */ 't', `The package name`]
+				]]
+			],
+			/* throws */ UDF,
+			[/* return description */
+				[/* inline code block */ 'i', `true`],
+				[/* text */ 't', ` if this module has `],
+				[/* text */ 't', `opened`],
+				[/* text */ 't', ` the package
+         unconditionally`]
+			]
+		]],
+		[/* method */ 'isOpen(java.lang.String,java.lang.Module)', [
+			[/* method description */
+				[/* text */ 't', `Returns `],
+				[/* inline code block */ 'i', `true`],
+				[/* text */ 't', ` if this module has `],
+				[/* text */ 't', `opened`],
+				[/* text */ 't', ` a package to at
+ least the given module.
+
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', ` This method returns `],
+					[/* inline code block */ 'i', `true`],
+					[/* text */ 't', ` if invoked to test if a package in
+ this module is open to itself. It returns `],
+					[/* inline code block */ 'i', `true`],
+					[/* text */ 't', ` when invoked on an
+ `],
+					[/* reference */ 'r', `.ModuleDescriptor#isOpen()`],
+					[/* text */ 't', ` module with a package in the module.
+ It always returns `],
+					[/* inline code block */ 'i', `true`],
+					[/* text */ 't', ` when invoked on an unnamed module. `]
+				]],
+				[/* block */ 'b', ` This method does not check if the given module reads this module. `]
+			],
+			[/* parameters */
+				[/* parameter */ 'pn', [/* parameter description */
+					[/* text */ 't', `The package name`]
+				]],
+				[/* parameter */ 'other', [/* parameter description */
+					[/* text */ 't', `The other module`]
+				]]
+			],
+			/* throws */ UDF,
+			[/* return description */
+				[/* inline code block */ 'i', `true`],
+				[/* text */ 't', ` if this module has `],
+				[/* text */ 't', `opened`],
+				[/* text */ 't', ` the package
+         to at least the given module`]
 			]
 		]],
 		[/* method */ 'getResourceAsStream(java.lang.String)', [
@@ -369,113 +382,6 @@ DocsCollector.collect('java.lang.Module', [
 				[/* inline code block */ 'i', `null`]
 			]
 		]],
-		[/* method */ 'isOpen(java.lang.String)', [
-			[/* method description */
-				[/* text */ 't', `Returns `],
-				[/* inline code block */ 'i', `true`],
-				[/* text */ 't', ` if this module has `],
-				[/* text */ 't', `opened`],
-				[/* text */ 't', ` a package
- unconditionally.
-
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', ` This method always returns `],
-					[/* inline code block */ 'i', `true`],
-					[/* text */ 't', ` when invoked on an unnamed
- module. Additionally, it always returns `],
-					[/* inline code block */ 'i', `true`],
-					[/* text */ 't', ` when invoked on an
- `],
-					[/* reference */ 'r', `.ModuleDescriptor#isOpen()`],
-					[/* text */ 't', ` module with a package in the
- module. `]
-				]],
-				[/* block */ 'b', ` This method does not check if the given module reads this module. `]
-			],
-			[/* parameters */
-				[/* parameter */ 'pn', [/* parameter description */
-					[/* text */ 't', `The package name`]
-				]]
-			],
-			/* throws */ UDF,
-			[/* return description */
-				[/* inline code block */ 'i', `true`],
-				[/* text */ 't', ` if this module has `],
-				[/* text */ 't', `opened`],
-				[/* text */ 't', ` the package
-         unconditionally`]
-			]
-		]],
-		[/* method */ 'isOpen(java.lang.String,java.lang.Module)', [
-			[/* method description */
-				[/* text */ 't', `Returns `],
-				[/* inline code block */ 'i', `true`],
-				[/* text */ 't', ` if this module has `],
-				[/* text */ 't', `opened`],
-				[/* text */ 't', ` a package to at
- least the given module.
-
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', ` This method returns `],
-					[/* inline code block */ 'i', `true`],
-					[/* text */ 't', ` if invoked to test if a package in
- this module is open to itself. It returns `],
-					[/* inline code block */ 'i', `true`],
-					[/* text */ 't', ` when invoked on an
- `],
-					[/* reference */ 'r', `.ModuleDescriptor#isOpen()`],
-					[/* text */ 't', ` module with a package in the module.
- It always returns `],
-					[/* inline code block */ 'i', `true`],
-					[/* text */ 't', ` when invoked on an unnamed module. `]
-				]],
-				[/* block */ 'b', ` This method does not check if the given module reads this module. `]
-			],
-			[/* parameters */
-				[/* parameter */ 'pn', [/* parameter description */
-					[/* text */ 't', `The package name`]
-				]],
-				[/* parameter */ 'other', [/* parameter description */
-					[/* text */ 't', `The other module`]
-				]]
-			],
-			/* throws */ UDF,
-			[/* return description */
-				[/* inline code block */ 'i', `true`],
-				[/* text */ 't', ` if this module has `],
-				[/* text */ 't', `opened`],
-				[/* text */ 't', ` the package
-         to at least the given module`]
-			]
-		]],
-		[/* method */ 'getAnnotation(java.lang.Class)', [
-			[/* method description */
-				[/* text */ 't', `Returns this element's annotation for the specified type if
- such an annotation is `],
-				[/* text */ 't', `present`],
-				[/* text */ 't', `, else null.
- This method returns `],
-				[/* inline code block */ 'i', `null`],
-				[/* text */ 't', ` when invoked on an unnamed module.
-
- `],
-				[/* block */ 'b', ` Note that any annotation returned by this method is a
- declaration annotation.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'annotationClass', [/* parameter description */
-					[/* text */ 't', `the Class object corresponding to the
-        annotation type`]
-				]]
-			],
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `this element's annotation for the specified annotation type if
-     present on this element, else null`]
-			]
-		]],
 		[/* method */ 'getAnnotations()', [
 			[/* method description */
 				[/* text */ 't', `Returns annotations that are `],
@@ -527,68 +433,184 @@ DocsCollector.collect('java.lang.Module', [
 				[/* text */ 't', `annotations directly present on this element`]
 			]
 		]],
-		[/* method */ 'getPackages()', [
+		[/* method */ 'getClassLoader()', [
 			[/* method description */
-				[/* text */ 't', `Returns the set of package names for the packages in this module.
+				[/* text */ 't', `Returns the `],
+				[/* inline code block */ 'i', `ClassLoader`],
+				[/* text */ 't', ` for this module.
 
  `],
-				[/* block */ 'b', ` For named modules, the returned set contains an element for each
- package in the module. `],
 				[/* block */ 'b', [
-					[/* text */ 't', ` For unnamed modules, the returned set contains an element for
- each package that `],
-					[/* reference */ 'r', `.ClassLoader#getDefinedPackages()`],
+					[/* text */ 't', ` If there is a security manager then its `],
+					[/* inline code block */ 'i', `checkPermission`],
 					[/* text */ 't', `
- in the unnamed module.`]
+ method if first called with a `],
+					[/* inline code block */ 'i', `RuntimePermission("getClassLoader")`],
+					[/* text */ 't', `
+ permission to check that the caller is allowed to get access to the
+ class loader. `]
 				]]
 			],
 			/* parameters */ UDF,
-			/* throws */ UDF,
+			[/* throws */
+				[/* throw */ 'java.lang.SecurityException', [/* throw description */
+					[/* text */ 't', `If denied by the security manager`]
+				]]
+			],
 			[/* return description */
-				[/* text */ 't', `the set of the package names of the packages in this module`]
+				[/* text */ 't', `The class loader for this module`]
 			]
 		]],
-		[/* method */ 'canRead(java.lang.Module)', [
+		[/* method */ 'addExports(java.lang.String,java.lang.Module)', [
 			[/* method description */
-				[/* text */ 't', `Indicates if this module reads the given module. This method returns
+				[/* text */ 't', `If the caller's module is this module then update this module to export
+ the given package to the given module.
+
  `],
-				[/* inline code block */ 'i', `true`],
-				[/* text */ 't', ` if invoked to test if this module reads itself. It also
- returns `],
-				[/* inline code block */ 'i', `true`],
-				[/* text */ 't', ` if invoked on an unnamed module (as unnamed
- modules read all modules).`]
+				[/* block */ 'b', `open`]
+			],
+			[/* parameters */
+				[/* parameter */ 'pn', [/* parameter description */
+					[/* text */ 't', `The package name`]
+				]],
+				[/* parameter */ 'other', [/* parameter description */
+					[/* text */ 't', `The module`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
+					[/* text */ 't', `If `],
+					[/* inline code block */ 'i', `pn`],
+					[/* text */ 't', ` is `],
+					[/* inline code block */ 'i', `null`],
+					[/* text */ 't', `, or this is a named module and the
+         package `],
+					[/* inline code block */ 'i', `pn`],
+					[/* text */ 't', ` is not a package in this module`]
+				]],
+				[/* throw */ 'java.lang.IllegalCallerException', [/* throw description */
+					[/* text */ 't', `If this is a named module and the caller's module is not this
+         module`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `this module`]
+			]
+		]],
+		[/* method */ 'addOpens(java.lang.String,java.lang.Module)', [
+			[/* method description */
+				[/* text */ 't', `If this module has `],
+				[/* text */ 't', `opened`],
+				[/* text */ 't', ` a package to at least the caller
+ module then update this module to open the package to the given module.
+ Opening a package with this method allows all types in the package,
+ and all their members, not just public types and their public members,
+ to be reflected on by the given module when using APIs that support
+ private access or a way to bypass or suppress default Java language
+ access control checks.
+
+ `],
+				[/* block */ 'b', `open`]
+			],
+			[/* parameters */
+				[/* parameter */ 'pn', [/* parameter description */
+					[/* text */ 't', `The package name`]
+				]],
+				[/* parameter */ 'other', [/* parameter description */
+					[/* text */ 't', `The module`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
+					[/* text */ 't', `If `],
+					[/* inline code block */ 'i', `pn`],
+					[/* text */ 't', ` is `],
+					[/* inline code block */ 'i', `null`],
+					[/* text */ 't', `, or this is a named module and the
+         package `],
+					[/* inline code block */ 'i', `pn`],
+					[/* text */ 't', ` is not a package in this module`]
+				]],
+				[/* throw */ 'java.lang.IllegalCallerException', [/* throw description */
+					[/* text */ 't', `If this is a named module and this module has not opened the
+         package to at least the caller's module`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `this module`]
+			]
+		]],
+		[/* method */ 'addReads(java.lang.Module)', [
+			[/* method description */
+				[/* text */ 't', `If the caller's module is this module then update this module to read
+ the given module.
+
+ This method is a no-op if `],
+				[/* inline code block */ 'i', `other`],
+				[/* text */ 't', ` is this module (all modules read
+ themselves), this module is an unnamed module (as unnamed modules read
+ all modules), or this module already reads `],
+				[/* inline code block */ 'i', `other`],
+				[/* text */ 't', `.`]
 			],
 			[/* parameters */
 				[/* parameter */ 'other', [/* parameter description */
 					[/* text */ 't', `The other module`]
 				]]
 			],
-			/* throws */ UDF,
+			[/* throws */
+				[/* throw */ 'java.lang.IllegalCallerException', [/* throw description */
+					[/* text */ 't', `If this is a named module and the caller's module is not this
+         module`]
+				]]
+			],
 			[/* return description */
-				[/* inline code block */ 'i', `true`],
-				[/* text */ 't', ` if this module reads `],
-				[/* inline code block */ 'i', `other`]
+				[/* text */ 't', `this module`]
 			]
 		]],
-		[/* method */ 'canUse(java.lang.Class)', [
+		[/* method */ 'addUses(java.lang.Class)', [
 			[/* method description */
-				[/* text */ 't', `Indicates if this module has a service dependence on the given service
- type. This method always returns `],
-				[/* inline code block */ 'i', `true`],
-				[/* text */ 't', ` when invoked on an unnamed
- module or an automatic module.`]
+				[/* text */ 't', `If the caller's module is this module then update this module to add a
+ service dependence on the given service type. This method is intended
+ for use by frameworks that invoke `],
+				[/* reference */ 'r', `java.util.ServiceLoader`],
+				[/* text */ 't', ` on behalf of other modules or where the framework is
+ passed a reference to the service type by other code. This method is
+ a no-op when invoked on an unnamed module or an automatic module.
+
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', ` This method does not cause `],
+					[/* reference */ 'r', `.Configuration#resolveAndBind(java.lang.module.ModuleFinder,java.lang.module.ModuleFinder,java.util.Collection)`],
+					[/* text */ 't', ` to be re-run. `]
+				]]
 			],
 			[/* parameters */
 				[/* parameter */ 'service', [/* parameter description */
 					[/* text */ 't', `The service type`]
 				]]
 			],
+			[/* throws */
+				[/* throw */ 'java.lang.IllegalCallerException', [/* throw description */
+					[/* text */ 't', `If this is a named module and the caller's module is not this
+         module`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `this module`]
+			]
+		]],
+		[/* method */ 'getDescriptor()', [
+			[/* method description */
+				[/* text */ 't', `Returns the module descriptor for this module or `],
+				[/* inline code block */ 'i', `null`],
+				[/* text */ 't', ` if this
+ module is an unnamed module.`]
+			],
+			/* parameters */ UDF,
 			/* throws */ UDF,
 			[/* return description */
-				[/* inline code block */ 'i', `true`],
-				[/* text */ 't', ` if this module uses service type `],
-				[/* inline code block */ 'i', `st`]
+				[/* text */ 't', `The module descriptor for this module`]
 			]
 		]],
 		[/* method */ 'getLayer()', [
@@ -617,78 +639,56 @@ DocsCollector.collect('java.lang.Module', [
 				[/* text */ 't', `The module layer that contains this module`]
 			]
 		]],
-		[/* method */ 'isExported(java.lang.String,java.lang.Module)', [
+		[/* method */ 'getName()', [
 			[/* method description */
-				[/* text */ 't', `Returns `],
-				[/* inline code block */ 'i', `true`],
-				[/* text */ 't', ` if this module exports the given package to at
- least the given module.
-
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', ` This method returns `],
-					[/* inline code block */ 'i', `true`],
-					[/* text */ 't', ` if invoked to test if a package in
- this module is exported to itself. It always returns `],
-					[/* inline code block */ 'i', `true`],
-					[/* text */ 't', ` when
- invoked on an unnamed module. A package that is `],
-					[/* reference */ 'r', `#isOpen(java.lang.String,java.lang.Module)`, `open`],
-					[/* text */ 't', ` to
- the given module is considered exported to that module at run-time and
- so this method returns `],
-					[/* inline code block */ 'i', `true`],
-					[/* text */ 't', ` if the package is open to the given
- module. `]
-				]],
-				[/* block */ 'b', ` This method does not check if the given module reads this module. `]
+				[/* text */ 't', `Returns the module name or `],
+				[/* inline code block */ 'i', `null`],
+				[/* text */ 't', ` if this module is an unnamed
+ module.`]
 			],
-			[/* parameters */
-				[/* parameter */ 'pn', [/* parameter description */
-					[/* text */ 't', `The package name`]
-				]],
-				[/* parameter */ 'other', [/* parameter description */
-					[/* text */ 't', `The other module`]
-				]]
-			],
+			/* parameters */ UDF,
 			/* throws */ UDF,
 			[/* return description */
-				[/* inline code block */ 'i', `true`],
-				[/* text */ 't', ` if this module exports the package to at least the
-         given module`]
+				[/* text */ 't', `The module name`]
 			]
 		]],
-		[/* method */ 'isExported(java.lang.String)', [
+		[/* method */ 'toString()', [
 			[/* method description */
-				[/* text */ 't', `Returns `],
-				[/* inline code block */ 'i', `true`],
-				[/* text */ 't', ` if this module exports the given package
- unconditionally.
-
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', ` This method always returns `],
-					[/* inline code block */ 'i', `true`],
-					[/* text */ 't', ` when invoked on an unnamed
- module. A package that is `],
-					[/* reference */ 'r', `#isOpen(java.lang.String)`, `opened`],
-					[/* text */ 't', ` unconditionally
- is considered exported unconditionally at run-time and so this method
- returns `],
-					[/* inline code block */ 'i', `true`],
-					[/* text */ 't', ` if the package is opened unconditionally. `]
-				]],
-				[/* block */ 'b', ` This method does not check if the given module reads this module. `]
+				[/* text */ 't', `Returns the string representation of this module. For a named module,
+ the representation is the string `],
+				[/* inline code block */ 'i', `"module"`],
+				[/* text */ 't', `, followed by a space,
+ and then the module name. For an unnamed module, the representation is
+ the string `],
+				[/* inline code block */ 'i', `"unnamed module"`],
+				[/* text */ 't', `, followed by a space, and then an
+ implementation specific string that identifies the unnamed module.`]
 			],
-			[/* parameters */
-				[/* parameter */ 'pn', [/* parameter description */
-					[/* text */ 't', `The package name`]
-				]]
-			],
+			/* parameters */ UDF,
 			/* throws */ UDF,
 			[/* return description */
-				[/* inline code block */ 'i', `true`],
-				[/* text */ 't', ` if this module exports the package unconditionally`]
+				[/* text */ 't', `The string representation of this module`]
+			]
+		]],
+		[/* method */ 'getPackages()', [
+			[/* method description */
+				[/* text */ 't', `Returns the set of package names for the packages in this module.
+
+ `],
+				[/* block */ 'b', ` For named modules, the returned set contains an element for each
+ package in the module. `],
+				[/* block */ 'b', [
+					[/* text */ 't', ` For unnamed modules, the returned set contains an element for
+ each package that `],
+					[/* reference */ 'r', `.ClassLoader#getDefinedPackages()`],
+					[/* text */ 't', `
+ in the unnamed module.`]
+				]]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the set of the package names of the packages in this module`]
 			]
 		]]
 	],

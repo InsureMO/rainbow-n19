@@ -102,6 +102,40 @@ DocsCollector.collect('java.text.CollationElementIterator', [
 	],
 	/* constructors */ UDF,
 	[/* methods */
+		[/* method */ 'getMaxExpansion(int)', [
+			[/* method description */
+				[/* text */ 't', `Return the maximum length of any expansion sequences that end
+ with the specified comparison order.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'order', [/* parameter description */
+					[/* text */ 't', `a collation order returned by previous or next.`]
+				]]
+			],
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the maximum length of any expansion sequences ending
+         with the specified order.`]
+			]
+		]],
+		[/* method */ 'getOffset()', [
+			[/* method description */
+				[/* text */ 't', `Returns the character offset in the original text corresponding to the next
+ collation element.  (That is, getOffset() returns the position in the text
+ corresponding to the collation element that will be returned by the next
+ call to next().)  This value will always be the index of the FIRST character
+ corresponding to the collation element (a contracting character sequence is
+ when two or more characters all correspond to the same collation element).
+ This means if you do setOffset(x) followed immediately by getOffset(), getOffset()
+ won't necessarily return x.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `The character offset in the original text corresponding to the collation
+ element that will be returned by the next call to next().`]
+			]
+		]],
 		[/* method */ 'next()', [
 			[/* method description */
 				[/* text */ 't', `Get the next collation element in the string.  `],
@@ -123,15 +157,6 @@ DocsCollector.collect('java.text.CollationElementIterator', [
 			[/* return description */
 				[/* text */ 't', `the next collation element`]
 			]
-		]],
-		[/* method */ 'reset()', [
-			[/* method description */
-				[/* text */ 't', `Resets the cursor to the beginning of the string.  The next call
- to next() will return the first collation element in the string.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			/* return */ UDF
 		]],
 		[/* method */ 'previous()', [
 			[/* method description */
@@ -155,23 +180,56 @@ DocsCollector.collect('java.text.CollationElementIterator', [
 				[/* text */ 't', `the previous collation element`]
 			]
 		]],
-		[/* method */ 'getOffset()', [
+		[/* method */ 'primaryOrder(int)', [
 			[/* method description */
-				[/* text */ 't', `Returns the character offset in the original text corresponding to the next
- collation element.  (That is, getOffset() returns the position in the text
- corresponding to the collation element that will be returned by the next
- call to next().)  This value will always be the index of the FIRST character
- corresponding to the collation element (a contracting character sequence is
- when two or more characters all correspond to the same collation element).
- This means if you do setOffset(x) followed immediately by getOffset(), getOffset()
- won't necessarily return x.`]
+				[/* text */ 't', `Return the primary component of a collation element.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'order', [/* parameter description */
+					[/* text */ 't', `the collation element`]
+				]]
+			],
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the element's primary component`]
+			]
+		]],
+		[/* method */ 'secondaryOrder(int)', [
+			[/* method description */
+				[/* text */ 't', `Return the secondary component of a collation element.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'order', [/* parameter description */
+					[/* text */ 't', `the collation element`]
+				]]
+			],
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the element's secondary component`]
+			]
+		]],
+		[/* method */ 'tertiaryOrder(int)', [
+			[/* method description */
+				[/* text */ 't', `Return the tertiary component of a collation element.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'order', [/* parameter description */
+					[/* text */ 't', `the collation element`]
+				]]
+			],
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the element's tertiary component`]
+			]
+		]],
+		[/* method */ 'reset()', [
+			[/* method description */
+				[/* text */ 't', `Resets the cursor to the beginning of the string.  The next call
+ to next() will return the first collation element in the string.`]
 			],
 			/* parameters */ UDF,
 			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `The character offset in the original text corresponding to the collation
- element that will be returned by the next call to next().`]
-			]
+			/* return */ UDF
 		]],
 		[/* method */ 'setOffset(int)', [
 			[/* method description */
@@ -217,64 +275,6 @@ DocsCollector.collect('java.text.CollationElementIterator', [
 			],
 			/* throws */ UDF,
 			/* return */ UDF
-		]],
-		[/* method */ 'getMaxExpansion(int)', [
-			[/* method description */
-				[/* text */ 't', `Return the maximum length of any expansion sequences that end
- with the specified comparison order.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'order', [/* parameter description */
-					[/* text */ 't', `a collation order returned by previous or next.`]
-				]]
-			],
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the maximum length of any expansion sequences ending
-         with the specified order.`]
-			]
-		]],
-		[/* method */ 'primaryOrder(int)', [
-			[/* method description */
-				[/* text */ 't', `Return the primary component of a collation element.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'order', [/* parameter description */
-					[/* text */ 't', `the collation element`]
-				]]
-			],
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the element's primary component`]
-			]
-		]],
-		[/* method */ 'secondaryOrder(int)', [
-			[/* method description */
-				[/* text */ 't', `Return the secondary component of a collation element.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'order', [/* parameter description */
-					[/* text */ 't', `the collation element`]
-				]]
-			],
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the element's secondary component`]
-			]
-		]],
-		[/* method */ 'tertiaryOrder(int)', [
-			[/* method description */
-				[/* text */ 't', `Return the tertiary component of a collation element.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'order', [/* parameter description */
-					[/* text */ 't', `the collation element`]
-				]]
-			],
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the element's tertiary component`]
-			]
 		]]
 	],
 ]);

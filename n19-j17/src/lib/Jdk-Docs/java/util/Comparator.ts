@@ -318,6 +318,201 @@ DocsCollector.collect('java.util.Comparator', [
          second.`]
 			]
 		]],
+		[/* method */ 'thenComparing(java.util.function.Function)', [
+			[/* method description */
+				[/* text */ 't', `Returns a lexicographic-order comparator with a function that
+ extracts a `],
+				[/* inline code block */ 'i', `Comparable`],
+				[/* text */ 't', ` sort key.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'keyExtractor', [/* parameter description */
+					[/* text */ 't', `the function used to extract the `],
+					[/* reference */ 'r', `java.lang.Comparable`],
+					[/* text */ 't', ` sort key`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
+					[/* text */ 't', `if the argument is null.`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `a lexicographic-order comparator composed of this and then the
+         `],
+				[/* reference */ 'r', `java.lang.Comparable`],
+				[/* text */ 't', ` sort key.`]
+			]
+		]],
+		[/* method */ 'thenComparing(java.util.function.Function,java.util.Comparator)', [
+			[/* method description */
+				[/* text */ 't', `Returns a lexicographic-order comparator with a function that
+ extracts a key to be compared with the given `],
+				[/* inline code block */ 'i', `Comparator`],
+				[/* text */ 't', `.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'keyExtractor', [/* parameter description */
+					[/* text */ 't', `the function used to extract the sort key`]
+				]],
+				[/* parameter */ 'keyComparator', [/* parameter description */
+					[/* text */ 't', `the `],
+					[/* inline code block */ 'i', `Comparator`],
+					[/* text */ 't', ` used to compare the sort key`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
+					[/* text */ 't', `if either argument is null.`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `a lexicographic-order comparator composed of this comparator
+         and then comparing on the key extracted by the keyExtractor function`]
+			]
+		]],
+		[/* method */ 'reversed()', [
+			[/* method description */
+				[/* text */ 't', `Returns a comparator that imposes the reverse ordering of this
+ comparator.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `a comparator that imposes the reverse ordering of this
+         comparator.`]
+			]
+		]],
+		[/* method */ 'thenComparing(java.util.Comparator)', [
+			[/* method description */
+				[/* text */ 't', `Returns a lexicographic-order comparator with another comparator.
+ If this `],
+				[/* inline code block */ 'i', `Comparator`],
+				[/* text */ 't', ` considers two elements equal, i.e.
+ `],
+				[/* inline code block */ 'i', `compare(a, b) == 0`],
+				[/* text */ 't', `, `],
+				[/* inline code block */ 'i', `other`],
+				[/* text */ 't', ` is used to determine the order.
+
+ `],
+				[/* block */ 'b', `The returned comparator is serializable if the specified comparator
+ is also serializable.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'other', [/* parameter description */
+					[/* text */ 't', `the other comparator to be used when this comparator
+         compares two objects that are equal.`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
+					[/* text */ 't', `if the argument is null.`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `a lexicographic-order comparator composed of this and then the
+         other comparator`]
+			]
+		]],
+		[/* method */ 'thenComparingDouble(java.util.function.ToDoubleFunction)', [
+			[/* method description */
+				[/* text */ 't', `Returns a lexicographic-order comparator with a function that
+ extracts a `],
+				[/* inline code block */ 'i', `double`],
+				[/* text */ 't', ` sort key.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'keyExtractor', [/* parameter description */
+					[/* text */ 't', `the function used to extract the double sort key`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
+					[/* text */ 't', `if the argument is null.`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `a lexicographic-order comparator composed of this and then the
+         `],
+				[/* inline code block */ 'i', `double`],
+				[/* text */ 't', ` sort key`]
+			]
+		]],
+		[/* method */ 'thenComparingInt(java.util.function.ToIntFunction)', [
+			[/* method description */
+				[/* text */ 't', `Returns a lexicographic-order comparator with a function that
+ extracts an `],
+				[/* inline code block */ 'i', `int`],
+				[/* text */ 't', ` sort key.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'keyExtractor', [/* parameter description */
+					[/* text */ 't', `the function used to extract the integer sort key`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
+					[/* text */ 't', `if the argument is null.`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `a lexicographic-order comparator composed of this and then the
+         `],
+				[/* inline code block */ 'i', `int`],
+				[/* text */ 't', ` sort key`]
+			]
+		]],
+		[/* method */ 'thenComparingLong(java.util.function.ToLongFunction)', [
+			[/* method description */
+				[/* text */ 't', `Returns a lexicographic-order comparator with a function that
+ extracts a `],
+				[/* inline code block */ 'i', `long`],
+				[/* text */ 't', ` sort key.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'keyExtractor', [/* parameter description */
+					[/* text */ 't', `the function used to extract the long sort key`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
+					[/* text */ 't', `if the argument is null.`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `a lexicographic-order comparator composed of this and then the
+         `],
+				[/* inline code block */ 'i', `long`],
+				[/* text */ 't', ` sort key`]
+			]
+		]],
+		[/* method */ 'naturalOrder()', [
+			[/* method description */
+				[/* text */ 't', `Returns a comparator that compares `],
+				[/* reference */ 'r', `java.lang.Comparable`],
+				[/* text */ 't', ` objects in natural
+ order.
+
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', `The returned comparator is serializable and throws `],
+					[/* reference */ 'r', `java.lang.NullPointerException`],
+					[/* text */ 't', ` when comparing `],
+					[/* inline code block */ 'i', `null`],
+					[/* text */ 't', `.`]
+				]]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `a comparator that imposes the `],
+				[/* text */ 't', `natural ordering`],
+				[/* text */ 't', ` on `],
+				[/* inline code block */ 'i', `Comparable`],
+				[/* text */ 't', ` objects.`]
+			]
+		]],
 		[/* method */ 'reverseOrder()', [
 			[/* method description */
 				[/* text */ 't', `Returns a comparator that imposes the reverse of the `],
@@ -412,89 +607,34 @@ DocsCollector.collect('java.util.Comparator', [
 				[/* inline code block */ 'i', `Comparator`]
 			]
 		]],
-		[/* method */ 'thenComparing(java.util.Comparator)', [
+		[/* method */ 'comparingDouble(java.util.function.ToDoubleFunction)', [
 			[/* method description */
-				[/* text */ 't', `Returns a lexicographic-order comparator with another comparator.
- If this `],
-				[/* inline code block */ 'i', `Comparator`],
-				[/* text */ 't', ` considers two elements equal, i.e.
+				[/* text */ 't', `Accepts a function that extracts a `],
+				[/* inline code block */ 'i', `double`],
+				[/* text */ 't', ` sort key from a type
  `],
-				[/* inline code block */ 'i', `compare(a, b) == 0`],
-				[/* text */ 't', `, `],
-				[/* inline code block */ 'i', `other`],
-				[/* text */ 't', ` is used to determine the order.
+				[/* inline code block */ 'i', `T`],
+				[/* text */ 't', `, and returns a `],
+				[/* inline code block */ 'i', `Comparator<T>`],
+				[/* text */ 't', ` that compares by that
+ sort key.
 
  `],
-				[/* block */ 'b', `The returned comparator is serializable if the specified comparator
+				[/* block */ 'b', `The returned comparator is serializable if the specified function
  is also serializable.`]
 			],
 			[/* parameters */
-				[/* parameter */ 'other', [/* parameter description */
-					[/* text */ 't', `the other comparator to be used when this comparator
-         compares two objects that are equal.`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
-					[/* text */ 't', `if the argument is null.`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `a lexicographic-order comparator composed of this and then the
-         other comparator`]
-			]
-		]],
-		[/* method */ 'thenComparing(java.util.function.Function,java.util.Comparator)', [
-			[/* method description */
-				[/* text */ 't', `Returns a lexicographic-order comparator with a function that
- extracts a key to be compared with the given `],
-				[/* inline code block */ 'i', `Comparator`],
-				[/* text */ 't', `.`]
-			],
-			[/* parameters */
 				[/* parameter */ 'keyExtractor', [/* parameter description */
-					[/* text */ 't', `the function used to extract the sort key`]
-				]],
-				[/* parameter */ 'keyComparator', [/* parameter description */
-					[/* text */ 't', `the `],
-					[/* inline code block */ 'i', `Comparator`],
-					[/* text */ 't', ` used to compare the sort key`]
+					[/* text */ 't', `the function used to extract the double sort key`]
 				]]
 			],
 			[/* throws */
 				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
-					[/* text */ 't', `if either argument is null.`]
+					[/* text */ 't', `if the argument is null`]
 				]]
 			],
 			[/* return description */
-				[/* text */ 't', `a lexicographic-order comparator composed of this comparator
-         and then comparing on the key extracted by the keyExtractor function`]
-			]
-		]],
-		[/* method */ 'thenComparing(java.util.function.Function)', [
-			[/* method description */
-				[/* text */ 't', `Returns a lexicographic-order comparator with a function that
- extracts a `],
-				[/* inline code block */ 'i', `Comparable`],
-				[/* text */ 't', ` sort key.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'keyExtractor', [/* parameter description */
-					[/* text */ 't', `the function used to extract the `],
-					[/* reference */ 'r', `java.lang.Comparable`],
-					[/* text */ 't', ` sort key`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
-					[/* text */ 't', `if the argument is null.`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `a lexicographic-order comparator composed of this and then the
-         `],
-				[/* reference */ 'r', `java.lang.Comparable`],
-				[/* text */ 't', ` sort key.`]
+				[/* text */ 't', `a comparator that compares by an extracted key`]
 			]
 		]],
 		[/* method */ 'comparingInt(java.util.function.ToIntFunction)', [
@@ -555,146 +695,6 @@ DocsCollector.collect('java.util.Comparator', [
 			],
 			[/* return description */
 				[/* text */ 't', `a comparator that compares by an extracted key`]
-			]
-		]],
-		[/* method */ 'comparingDouble(java.util.function.ToDoubleFunction)', [
-			[/* method description */
-				[/* text */ 't', `Accepts a function that extracts a `],
-				[/* inline code block */ 'i', `double`],
-				[/* text */ 't', ` sort key from a type
- `],
-				[/* inline code block */ 'i', `T`],
-				[/* text */ 't', `, and returns a `],
-				[/* inline code block */ 'i', `Comparator<T>`],
-				[/* text */ 't', ` that compares by that
- sort key.
-
- `],
-				[/* block */ 'b', `The returned comparator is serializable if the specified function
- is also serializable.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'keyExtractor', [/* parameter description */
-					[/* text */ 't', `the function used to extract the double sort key`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
-					[/* text */ 't', `if the argument is null`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `a comparator that compares by an extracted key`]
-			]
-		]],
-		[/* method */ 'reversed()', [
-			[/* method description */
-				[/* text */ 't', `Returns a comparator that imposes the reverse ordering of this
- comparator.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `a comparator that imposes the reverse ordering of this
-         comparator.`]
-			]
-		]],
-		[/* method */ 'thenComparingInt(java.util.function.ToIntFunction)', [
-			[/* method description */
-				[/* text */ 't', `Returns a lexicographic-order comparator with a function that
- extracts an `],
-				[/* inline code block */ 'i', `int`],
-				[/* text */ 't', ` sort key.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'keyExtractor', [/* parameter description */
-					[/* text */ 't', `the function used to extract the integer sort key`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
-					[/* text */ 't', `if the argument is null.`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `a lexicographic-order comparator composed of this and then the
-         `],
-				[/* inline code block */ 'i', `int`],
-				[/* text */ 't', ` sort key`]
-			]
-		]],
-		[/* method */ 'thenComparingLong(java.util.function.ToLongFunction)', [
-			[/* method description */
-				[/* text */ 't', `Returns a lexicographic-order comparator with a function that
- extracts a `],
-				[/* inline code block */ 'i', `long`],
-				[/* text */ 't', ` sort key.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'keyExtractor', [/* parameter description */
-					[/* text */ 't', `the function used to extract the long sort key`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
-					[/* text */ 't', `if the argument is null.`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `a lexicographic-order comparator composed of this and then the
-         `],
-				[/* inline code block */ 'i', `long`],
-				[/* text */ 't', ` sort key`]
-			]
-		]],
-		[/* method */ 'thenComparingDouble(java.util.function.ToDoubleFunction)', [
-			[/* method description */
-				[/* text */ 't', `Returns a lexicographic-order comparator with a function that
- extracts a `],
-				[/* inline code block */ 'i', `double`],
-				[/* text */ 't', ` sort key.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'keyExtractor', [/* parameter description */
-					[/* text */ 't', `the function used to extract the double sort key`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
-					[/* text */ 't', `if the argument is null.`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `a lexicographic-order comparator composed of this and then the
-         `],
-				[/* inline code block */ 'i', `double`],
-				[/* text */ 't', ` sort key`]
-			]
-		]],
-		[/* method */ 'naturalOrder()', [
-			[/* method description */
-				[/* text */ 't', `Returns a comparator that compares `],
-				[/* reference */ 'r', `java.lang.Comparable`],
-				[/* text */ 't', ` objects in natural
- order.
-
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', `The returned comparator is serializable and throws `],
-					[/* reference */ 'r', `java.lang.NullPointerException`],
-					[/* text */ 't', ` when comparing `],
-					[/* inline code block */ 'i', `null`],
-					[/* text */ 't', `.`]
-				]]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `a comparator that imposes the `],
-				[/* text */ 't', `natural ordering`],
-				[/* text */ 't', ` on `],
-				[/* inline code block */ 'i', `Comparable`],
-				[/* text */ 't', ` objects.`]
 			]
 		]],
 		[/* method */ 'nullsFirst(java.util.Comparator)', [

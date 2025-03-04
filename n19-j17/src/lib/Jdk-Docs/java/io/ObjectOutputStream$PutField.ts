@@ -17,133 +17,6 @@ DocsCollector.collect('java.io.ObjectOutputStream$PutField', [
 		]]
 	],
 	[/* methods */
-		[/* method */ 'put(java.lang.String,float)', [
-			[/* method description */
-				[/* text */ 't', `Put the value of the named float field into the persistent field.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'name', [/* parameter description */
-					[/* text */ 't', `the name of the serializable field`]
-				]],
-				[/* parameter */ 'val', [/* parameter description */
-					[/* text */ 't', `the value to assign to the field`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
-					[/* text */ 't', `if `],
-					[/* inline code block */ 'i', `name`],
-					[/* text */ 't', ` does not
- match the name of a serializable field for the class whose fields
- are being written, or if the type of the named field is not
- `],
-					[/* inline code block */ 'i', `float`]
-				]]
-			],
-			/* return */ UDF
-		]],
-		[/* method */ 'put(java.lang.String,long)', [
-			[/* method description */
-				[/* text */ 't', `Put the value of the named long field into the persistent field.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'name', [/* parameter description */
-					[/* text */ 't', `the name of the serializable field`]
-				]],
-				[/* parameter */ 'val', [/* parameter description */
-					[/* text */ 't', `the value to assign to the field`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
-					[/* text */ 't', `if `],
-					[/* inline code block */ 'i', `name`],
-					[/* text */ 't', ` does not
- match the name of a serializable field for the class whose fields
- are being written, or if the type of the named field is not
- `],
-					[/* inline code block */ 'i', `long`]
-				]]
-			],
-			/* return */ UDF
-		]],
-		[/* method */ 'put(java.lang.String,int)', [
-			[/* method description */
-				[/* text */ 't', `Put the value of the named int field into the persistent field.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'name', [/* parameter description */
-					[/* text */ 't', `the name of the serializable field`]
-				]],
-				[/* parameter */ 'val', [/* parameter description */
-					[/* text */ 't', `the value to assign to the field`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
-					[/* text */ 't', `if `],
-					[/* inline code block */ 'i', `name`],
-					[/* text */ 't', ` does not
- match the name of a serializable field for the class whose fields
- are being written, or if the type of the named field is not
- `],
-					[/* inline code block */ 'i', `int`]
-				]]
-			],
-			/* return */ UDF
-		]],
-		[/* method */ 'put(java.lang.String,double)', [
-			[/* method description */
-				[/* text */ 't', `Put the value of the named double field into the persistent field.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'name', [/* parameter description */
-					[/* text */ 't', `the name of the serializable field`]
-				]],
-				[/* parameter */ 'val', [/* parameter description */
-					[/* text */ 't', `the value to assign to the field`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
-					[/* text */ 't', `if `],
-					[/* inline code block */ 'i', `name`],
-					[/* text */ 't', ` does not
- match the name of a serializable field for the class whose fields
- are being written, or if the type of the named field is not
- `],
-					[/* inline code block */ 'i', `double`]
-				]]
-			],
-			/* return */ UDF
-		]],
-		[/* method */ 'put(java.lang.String,java.lang.Object)', [
-			[/* method description */
-				[/* text */ 't', `Put the value of the named Object field into the persistent field.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'name', [/* parameter description */
-					[/* text */ 't', `the name of the serializable field`]
-				]],
-				[/* parameter */ 'val', [/* parameter description */
-					[/* text */ 't', `the value to assign to the field
-         (which may be `],
-					[/* inline code block */ 'i', `null`],
-					[/* text */ 't', `)`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
-					[/* text */ 't', `if `],
-					[/* inline code block */ 'i', `name`],
-					[/* text */ 't', ` does not
- match the name of a serializable field for the class whose fields
- are being written, or if the type of the named field is not a
- reference type`]
-				]]
-			],
-			/* return */ UDF
-		]],
 		[/* method */ 'put(java.lang.String,boolean)', [
 			[/* method description */
 				[/* text */ 't', `Put the value of the named boolean field into the persistent field.`]
@@ -215,6 +88,133 @@ DocsCollector.collect('java.io.ObjectOutputStream$PutField', [
  are being written, or if the type of the named field is not
  `],
 					[/* inline code block */ 'i', `char`]
+				]]
+			],
+			/* return */ UDF
+		]],
+		[/* method */ 'put(java.lang.String,double)', [
+			[/* method description */
+				[/* text */ 't', `Put the value of the named double field into the persistent field.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'name', [/* parameter description */
+					[/* text */ 't', `the name of the serializable field`]
+				]],
+				[/* parameter */ 'val', [/* parameter description */
+					[/* text */ 't', `the value to assign to the field`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
+					[/* text */ 't', `if `],
+					[/* inline code block */ 'i', `name`],
+					[/* text */ 't', ` does not
+ match the name of a serializable field for the class whose fields
+ are being written, or if the type of the named field is not
+ `],
+					[/* inline code block */ 'i', `double`]
+				]]
+			],
+			/* return */ UDF
+		]],
+		[/* method */ 'put(java.lang.String,float)', [
+			[/* method description */
+				[/* text */ 't', `Put the value of the named float field into the persistent field.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'name', [/* parameter description */
+					[/* text */ 't', `the name of the serializable field`]
+				]],
+				[/* parameter */ 'val', [/* parameter description */
+					[/* text */ 't', `the value to assign to the field`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
+					[/* text */ 't', `if `],
+					[/* inline code block */ 'i', `name`],
+					[/* text */ 't', ` does not
+ match the name of a serializable field for the class whose fields
+ are being written, or if the type of the named field is not
+ `],
+					[/* inline code block */ 'i', `float`]
+				]]
+			],
+			/* return */ UDF
+		]],
+		[/* method */ 'put(java.lang.String,int)', [
+			[/* method description */
+				[/* text */ 't', `Put the value of the named int field into the persistent field.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'name', [/* parameter description */
+					[/* text */ 't', `the name of the serializable field`]
+				]],
+				[/* parameter */ 'val', [/* parameter description */
+					[/* text */ 't', `the value to assign to the field`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
+					[/* text */ 't', `if `],
+					[/* inline code block */ 'i', `name`],
+					[/* text */ 't', ` does not
+ match the name of a serializable field for the class whose fields
+ are being written, or if the type of the named field is not
+ `],
+					[/* inline code block */ 'i', `int`]
+				]]
+			],
+			/* return */ UDF
+		]],
+		[/* method */ 'put(java.lang.String,java.lang.Object)', [
+			[/* method description */
+				[/* text */ 't', `Put the value of the named Object field into the persistent field.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'name', [/* parameter description */
+					[/* text */ 't', `the name of the serializable field`]
+				]],
+				[/* parameter */ 'val', [/* parameter description */
+					[/* text */ 't', `the value to assign to the field
+         (which may be `],
+					[/* inline code block */ 'i', `null`],
+					[/* text */ 't', `)`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
+					[/* text */ 't', `if `],
+					[/* inline code block */ 'i', `name`],
+					[/* text */ 't', ` does not
+ match the name of a serializable field for the class whose fields
+ are being written, or if the type of the named field is not a
+ reference type`]
+				]]
+			],
+			/* return */ UDF
+		]],
+		[/* method */ 'put(java.lang.String,long)', [
+			[/* method description */
+				[/* text */ 't', `Put the value of the named long field into the persistent field.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'name', [/* parameter description */
+					[/* text */ 't', `the name of the serializable field`]
+				]],
+				[/* parameter */ 'val', [/* parameter description */
+					[/* text */ 't', `the value to assign to the field`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
+					[/* text */ 't', `if `],
+					[/* inline code block */ 'i', `name`],
+					[/* text */ 't', ` does not
+ match the name of a serializable field for the class whose fields
+ are being written, or if the type of the named field is not
+ `],
+					[/* inline code block */ 'i', `long`]
 				]]
 			],
 			/* return */ UDF

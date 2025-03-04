@@ -21,350 +21,6 @@ DocsCollector.collect('java.lang.reflect.Array', [
 	/* fields */ UDF,
 	/* constructors */ UDF,
 	[/* methods */
-		[/* method */ 'get(java.lang.Object,int)', [
-			[/* method description */
-				[/* text */ 't', `Returns the value of the indexed component in the specified
- array object.  The value is automatically wrapped in an object
- if it has a primitive type.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'array', [/* parameter description */
-					[/* text */ 't', `the array`]
-				]],
-				[/* parameter */ 'index', [/* parameter description */
-					[/* text */ 't', `the index`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
-					[/* text */ 't', `If the specified object is null`]
-				]],
-				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
-					[/* text */ 't', `If the specified object is not
- an array`]
-				]],
-				[/* throw */ 'java.lang.ArrayIndexOutOfBoundsException', [/* throw description */
-					[/* text */ 't', `If the specified `],
-					[/* inline code block */ 'i', `index`],
-					[/* text */ 't', `
- argument is negative, or if it is greater than or equal to the
- length of the specified array`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `the (possibly wrapped) value of the indexed component in
- the specified array`]
-			]
-		]],
-		[/* method */ 'getLength(java.lang.Object)', [
-			[/* method description */
-				[/* text */ 't', `Returns the length of the specified array object, as an `],
-				[/* inline code block */ 'i', `int`],
-				[/* text */ 't', `.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'array', [/* parameter description */
-					[/* text */ 't', `the array`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
-					[/* text */ 't', `if the object argument is not
- an array`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `the length of the array`]
-			]
-		]],
-		[/* method */ 'getBoolean(java.lang.Object,int)', [
-			[/* method description */
-				[/* text */ 't', `Returns the value of the indexed component in the specified
- array object, as a `],
-				[/* inline code block */ 'i', `boolean`],
-				[/* text */ 't', `.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'array', [/* parameter description */
-					[/* text */ 't', `the array`]
-				]],
-				[/* parameter */ 'index', [/* parameter description */
-					[/* text */ 't', `the index`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
-					[/* text */ 't', `If the specified object is null`]
-				]],
-				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
-					[/* text */ 't', `If the specified object is not
- an array, or if the indexed element cannot be converted to the
- return type by an identity or widening conversion`]
-				]],
-				[/* throw */ 'java.lang.ArrayIndexOutOfBoundsException', [/* throw description */
-					[/* text */ 't', `If the specified `],
-					[/* inline code block */ 'i', `index`],
-					[/* text */ 't', `
- argument is negative, or if it is greater than or equal to the
- length of the specified array`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `the value of the indexed component in the specified array`]
-			]
-		]],
-		[/* method */ 'getByte(java.lang.Object,int)', [
-			[/* method description */
-				[/* text */ 't', `Returns the value of the indexed component in the specified
- array object, as a `],
-				[/* inline code block */ 'i', `byte`],
-				[/* text */ 't', `.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'array', [/* parameter description */
-					[/* text */ 't', `the array`]
-				]],
-				[/* parameter */ 'index', [/* parameter description */
-					[/* text */ 't', `the index`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
-					[/* text */ 't', `If the specified object is null`]
-				]],
-				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
-					[/* text */ 't', `If the specified object is not
- an array, or if the indexed element cannot be converted to the
- return type by an identity or widening conversion`]
-				]],
-				[/* throw */ 'java.lang.ArrayIndexOutOfBoundsException', [/* throw description */
-					[/* text */ 't', `If the specified `],
-					[/* inline code block */ 'i', `index`],
-					[/* text */ 't', `
- argument is negative, or if it is greater than or equal to the
- length of the specified array`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `the value of the indexed component in the specified array`]
-			]
-		]],
-		[/* method */ 'getShort(java.lang.Object,int)', [
-			[/* method description */
-				[/* text */ 't', `Returns the value of the indexed component in the specified
- array object, as a `],
-				[/* inline code block */ 'i', `short`],
-				[/* text */ 't', `.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'array', [/* parameter description */
-					[/* text */ 't', `the array`]
-				]],
-				[/* parameter */ 'index', [/* parameter description */
-					[/* text */ 't', `the index`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
-					[/* text */ 't', `If the specified object is null`]
-				]],
-				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
-					[/* text */ 't', `If the specified object is not
- an array, or if the indexed element cannot be converted to the
- return type by an identity or widening conversion`]
-				]],
-				[/* throw */ 'java.lang.ArrayIndexOutOfBoundsException', [/* throw description */
-					[/* text */ 't', `If the specified `],
-					[/* inline code block */ 'i', `index`],
-					[/* text */ 't', `
- argument is negative, or if it is greater than or equal to the
- length of the specified array`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `the value of the indexed component in the specified array`]
-			]
-		]],
-		[/* method */ 'getChar(java.lang.Object,int)', [
-			[/* method description */
-				[/* text */ 't', `Returns the value of the indexed component in the specified
- array object, as a `],
-				[/* inline code block */ 'i', `char`],
-				[/* text */ 't', `.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'array', [/* parameter description */
-					[/* text */ 't', `the array`]
-				]],
-				[/* parameter */ 'index', [/* parameter description */
-					[/* text */ 't', `the index`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
-					[/* text */ 't', `If the specified object is null`]
-				]],
-				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
-					[/* text */ 't', `If the specified object is not
- an array, or if the indexed element cannot be converted to the
- return type by an identity or widening conversion`]
-				]],
-				[/* throw */ 'java.lang.ArrayIndexOutOfBoundsException', [/* throw description */
-					[/* text */ 't', `If the specified `],
-					[/* inline code block */ 'i', `index`],
-					[/* text */ 't', `
- argument is negative, or if it is greater than or equal to the
- length of the specified array`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `the value of the indexed component in the specified array`]
-			]
-		]],
-		[/* method */ 'getInt(java.lang.Object,int)', [
-			[/* method description */
-				[/* text */ 't', `Returns the value of the indexed component in the specified
- array object, as an `],
-				[/* inline code block */ 'i', `int`],
-				[/* text */ 't', `.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'array', [/* parameter description */
-					[/* text */ 't', `the array`]
-				]],
-				[/* parameter */ 'index', [/* parameter description */
-					[/* text */ 't', `the index`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
-					[/* text */ 't', `If the specified object is null`]
-				]],
-				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
-					[/* text */ 't', `If the specified object is not
- an array, or if the indexed element cannot be converted to the
- return type by an identity or widening conversion`]
-				]],
-				[/* throw */ 'java.lang.ArrayIndexOutOfBoundsException', [/* throw description */
-					[/* text */ 't', `If the specified `],
-					[/* inline code block */ 'i', `index`],
-					[/* text */ 't', `
- argument is negative, or if it is greater than or equal to the
- length of the specified array`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `the value of the indexed component in the specified array`]
-			]
-		]],
-		[/* method */ 'getLong(java.lang.Object,int)', [
-			[/* method description */
-				[/* text */ 't', `Returns the value of the indexed component in the specified
- array object, as a `],
-				[/* inline code block */ 'i', `long`],
-				[/* text */ 't', `.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'array', [/* parameter description */
-					[/* text */ 't', `the array`]
-				]],
-				[/* parameter */ 'index', [/* parameter description */
-					[/* text */ 't', `the index`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
-					[/* text */ 't', `If the specified object is null`]
-				]],
-				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
-					[/* text */ 't', `If the specified object is not
- an array, or if the indexed element cannot be converted to the
- return type by an identity or widening conversion`]
-				]],
-				[/* throw */ 'java.lang.ArrayIndexOutOfBoundsException', [/* throw description */
-					[/* text */ 't', `If the specified `],
-					[/* inline code block */ 'i', `index`],
-					[/* text */ 't', `
- argument is negative, or if it is greater than or equal to the
- length of the specified array`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `the value of the indexed component in the specified array`]
-			]
-		]],
-		[/* method */ 'getFloat(java.lang.Object,int)', [
-			[/* method description */
-				[/* text */ 't', `Returns the value of the indexed component in the specified
- array object, as a `],
-				[/* inline code block */ 'i', `float`],
-				[/* text */ 't', `.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'array', [/* parameter description */
-					[/* text */ 't', `the array`]
-				]],
-				[/* parameter */ 'index', [/* parameter description */
-					[/* text */ 't', `the index`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
-					[/* text */ 't', `If the specified object is null`]
-				]],
-				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
-					[/* text */ 't', `If the specified object is not
- an array, or if the indexed element cannot be converted to the
- return type by an identity or widening conversion`]
-				]],
-				[/* throw */ 'java.lang.ArrayIndexOutOfBoundsException', [/* throw description */
-					[/* text */ 't', `If the specified `],
-					[/* inline code block */ 'i', `index`],
-					[/* text */ 't', `
- argument is negative, or if it is greater than or equal to the
- length of the specified array`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `the value of the indexed component in the specified array`]
-			]
-		]],
-		[/* method */ 'getDouble(java.lang.Object,int)', [
-			[/* method description */
-				[/* text */ 't', `Returns the value of the indexed component in the specified
- array object, as a `],
-				[/* inline code block */ 'i', `double`],
-				[/* text */ 't', `.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'array', [/* parameter description */
-					[/* text */ 't', `the array`]
-				]],
-				[/* parameter */ 'index', [/* parameter description */
-					[/* text */ 't', `the index`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
-					[/* text */ 't', `If the specified object is null`]
-				]],
-				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
-					[/* text */ 't', `If the specified object is not
- an array, or if the indexed element cannot be converted to the
- return type by an identity or widening conversion`]
-				]],
-				[/* throw */ 'java.lang.ArrayIndexOutOfBoundsException', [/* throw description */
-					[/* text */ 't', `If the specified `],
-					[/* inline code block */ 'i', `index`],
-					[/* text */ 't', `
- argument is negative, or if it is greater than or equal to the
- length of the specified array`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `the value of the indexed component in the specified array`]
-			]
-		]],
 		[/* method */ 'newInstance(java.lang.Class,int)', [
 			[/* method description */
 				[/* text */ 't', `Creates a new array with the specified component type and
@@ -487,6 +143,350 @@ DocsCollector.collect('java.lang.reflect.Array', [
 			],
 			[/* return description */
 				[/* text */ 't', `the new array`]
+			]
+		]],
+		[/* method */ 'getBoolean(java.lang.Object,int)', [
+			[/* method description */
+				[/* text */ 't', `Returns the value of the indexed component in the specified
+ array object, as a `],
+				[/* inline code block */ 'i', `boolean`],
+				[/* text */ 't', `.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'array', [/* parameter description */
+					[/* text */ 't', `the array`]
+				]],
+				[/* parameter */ 'index', [/* parameter description */
+					[/* text */ 't', `the index`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
+					[/* text */ 't', `If the specified object is null`]
+				]],
+				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
+					[/* text */ 't', `If the specified object is not
+ an array, or if the indexed element cannot be converted to the
+ return type by an identity or widening conversion`]
+				]],
+				[/* throw */ 'java.lang.ArrayIndexOutOfBoundsException', [/* throw description */
+					[/* text */ 't', `If the specified `],
+					[/* inline code block */ 'i', `index`],
+					[/* text */ 't', `
+ argument is negative, or if it is greater than or equal to the
+ length of the specified array`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `the value of the indexed component in the specified array`]
+			]
+		]],
+		[/* method */ 'getByte(java.lang.Object,int)', [
+			[/* method description */
+				[/* text */ 't', `Returns the value of the indexed component in the specified
+ array object, as a `],
+				[/* inline code block */ 'i', `byte`],
+				[/* text */ 't', `.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'array', [/* parameter description */
+					[/* text */ 't', `the array`]
+				]],
+				[/* parameter */ 'index', [/* parameter description */
+					[/* text */ 't', `the index`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
+					[/* text */ 't', `If the specified object is null`]
+				]],
+				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
+					[/* text */ 't', `If the specified object is not
+ an array, or if the indexed element cannot be converted to the
+ return type by an identity or widening conversion`]
+				]],
+				[/* throw */ 'java.lang.ArrayIndexOutOfBoundsException', [/* throw description */
+					[/* text */ 't', `If the specified `],
+					[/* inline code block */ 'i', `index`],
+					[/* text */ 't', `
+ argument is negative, or if it is greater than or equal to the
+ length of the specified array`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `the value of the indexed component in the specified array`]
+			]
+		]],
+		[/* method */ 'getChar(java.lang.Object,int)', [
+			[/* method description */
+				[/* text */ 't', `Returns the value of the indexed component in the specified
+ array object, as a `],
+				[/* inline code block */ 'i', `char`],
+				[/* text */ 't', `.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'array', [/* parameter description */
+					[/* text */ 't', `the array`]
+				]],
+				[/* parameter */ 'index', [/* parameter description */
+					[/* text */ 't', `the index`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
+					[/* text */ 't', `If the specified object is null`]
+				]],
+				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
+					[/* text */ 't', `If the specified object is not
+ an array, or if the indexed element cannot be converted to the
+ return type by an identity or widening conversion`]
+				]],
+				[/* throw */ 'java.lang.ArrayIndexOutOfBoundsException', [/* throw description */
+					[/* text */ 't', `If the specified `],
+					[/* inline code block */ 'i', `index`],
+					[/* text */ 't', `
+ argument is negative, or if it is greater than or equal to the
+ length of the specified array`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `the value of the indexed component in the specified array`]
+			]
+		]],
+		[/* method */ 'getDouble(java.lang.Object,int)', [
+			[/* method description */
+				[/* text */ 't', `Returns the value of the indexed component in the specified
+ array object, as a `],
+				[/* inline code block */ 'i', `double`],
+				[/* text */ 't', `.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'array', [/* parameter description */
+					[/* text */ 't', `the array`]
+				]],
+				[/* parameter */ 'index', [/* parameter description */
+					[/* text */ 't', `the index`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
+					[/* text */ 't', `If the specified object is null`]
+				]],
+				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
+					[/* text */ 't', `If the specified object is not
+ an array, or if the indexed element cannot be converted to the
+ return type by an identity or widening conversion`]
+				]],
+				[/* throw */ 'java.lang.ArrayIndexOutOfBoundsException', [/* throw description */
+					[/* text */ 't', `If the specified `],
+					[/* inline code block */ 'i', `index`],
+					[/* text */ 't', `
+ argument is negative, or if it is greater than or equal to the
+ length of the specified array`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `the value of the indexed component in the specified array`]
+			]
+		]],
+		[/* method */ 'getFloat(java.lang.Object,int)', [
+			[/* method description */
+				[/* text */ 't', `Returns the value of the indexed component in the specified
+ array object, as a `],
+				[/* inline code block */ 'i', `float`],
+				[/* text */ 't', `.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'array', [/* parameter description */
+					[/* text */ 't', `the array`]
+				]],
+				[/* parameter */ 'index', [/* parameter description */
+					[/* text */ 't', `the index`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
+					[/* text */ 't', `If the specified object is null`]
+				]],
+				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
+					[/* text */ 't', `If the specified object is not
+ an array, or if the indexed element cannot be converted to the
+ return type by an identity or widening conversion`]
+				]],
+				[/* throw */ 'java.lang.ArrayIndexOutOfBoundsException', [/* throw description */
+					[/* text */ 't', `If the specified `],
+					[/* inline code block */ 'i', `index`],
+					[/* text */ 't', `
+ argument is negative, or if it is greater than or equal to the
+ length of the specified array`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `the value of the indexed component in the specified array`]
+			]
+		]],
+		[/* method */ 'getInt(java.lang.Object,int)', [
+			[/* method description */
+				[/* text */ 't', `Returns the value of the indexed component in the specified
+ array object, as an `],
+				[/* inline code block */ 'i', `int`],
+				[/* text */ 't', `.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'array', [/* parameter description */
+					[/* text */ 't', `the array`]
+				]],
+				[/* parameter */ 'index', [/* parameter description */
+					[/* text */ 't', `the index`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
+					[/* text */ 't', `If the specified object is null`]
+				]],
+				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
+					[/* text */ 't', `If the specified object is not
+ an array, or if the indexed element cannot be converted to the
+ return type by an identity or widening conversion`]
+				]],
+				[/* throw */ 'java.lang.ArrayIndexOutOfBoundsException', [/* throw description */
+					[/* text */ 't', `If the specified `],
+					[/* inline code block */ 'i', `index`],
+					[/* text */ 't', `
+ argument is negative, or if it is greater than or equal to the
+ length of the specified array`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `the value of the indexed component in the specified array`]
+			]
+		]],
+		[/* method */ 'getLength(java.lang.Object)', [
+			[/* method description */
+				[/* text */ 't', `Returns the length of the specified array object, as an `],
+				[/* inline code block */ 'i', `int`],
+				[/* text */ 't', `.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'array', [/* parameter description */
+					[/* text */ 't', `the array`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
+					[/* text */ 't', `if the object argument is not
+ an array`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `the length of the array`]
+			]
+		]],
+		[/* method */ 'get(java.lang.Object,int)', [
+			[/* method description */
+				[/* text */ 't', `Returns the value of the indexed component in the specified
+ array object.  The value is automatically wrapped in an object
+ if it has a primitive type.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'array', [/* parameter description */
+					[/* text */ 't', `the array`]
+				]],
+				[/* parameter */ 'index', [/* parameter description */
+					[/* text */ 't', `the index`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
+					[/* text */ 't', `If the specified object is null`]
+				]],
+				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
+					[/* text */ 't', `If the specified object is not
+ an array`]
+				]],
+				[/* throw */ 'java.lang.ArrayIndexOutOfBoundsException', [/* throw description */
+					[/* text */ 't', `If the specified `],
+					[/* inline code block */ 'i', `index`],
+					[/* text */ 't', `
+ argument is negative, or if it is greater than or equal to the
+ length of the specified array`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `the (possibly wrapped) value of the indexed component in
+ the specified array`]
+			]
+		]],
+		[/* method */ 'getLong(java.lang.Object,int)', [
+			[/* method description */
+				[/* text */ 't', `Returns the value of the indexed component in the specified
+ array object, as a `],
+				[/* inline code block */ 'i', `long`],
+				[/* text */ 't', `.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'array', [/* parameter description */
+					[/* text */ 't', `the array`]
+				]],
+				[/* parameter */ 'index', [/* parameter description */
+					[/* text */ 't', `the index`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
+					[/* text */ 't', `If the specified object is null`]
+				]],
+				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
+					[/* text */ 't', `If the specified object is not
+ an array, or if the indexed element cannot be converted to the
+ return type by an identity or widening conversion`]
+				]],
+				[/* throw */ 'java.lang.ArrayIndexOutOfBoundsException', [/* throw description */
+					[/* text */ 't', `If the specified `],
+					[/* inline code block */ 'i', `index`],
+					[/* text */ 't', `
+ argument is negative, or if it is greater than or equal to the
+ length of the specified array`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `the value of the indexed component in the specified array`]
+			]
+		]],
+		[/* method */ 'getShort(java.lang.Object,int)', [
+			[/* method description */
+				[/* text */ 't', `Returns the value of the indexed component in the specified
+ array object, as a `],
+				[/* inline code block */ 'i', `short`],
+				[/* text */ 't', `.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'array', [/* parameter description */
+					[/* text */ 't', `the array`]
+				]],
+				[/* parameter */ 'index', [/* parameter description */
+					[/* text */ 't', `the index`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
+					[/* text */ 't', `If the specified object is null`]
+				]],
+				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
+					[/* text */ 't', `If the specified object is not
+ an array, or if the indexed element cannot be converted to the
+ return type by an identity or widening conversion`]
+				]],
+				[/* throw */ 'java.lang.ArrayIndexOutOfBoundsException', [/* throw description */
+					[/* text */ 't', `If the specified `],
+					[/* inline code block */ 'i', `index`],
+					[/* text */ 't', `
+ argument is negative, or if it is greater than or equal to the
+ length of the specified array`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `the value of the indexed component in the specified array`]
 			]
 		]],
 		[/* method */ 'set(java.lang.Object,int,java.lang.Object)', [
@@ -644,11 +644,11 @@ DocsCollector.collect('java.lang.reflect.Array', [
 			],
 			/* return */ UDF
 		]],
-		[/* method */ 'setShort(java.lang.Object,int,short)', [
+		[/* method */ 'setDouble(java.lang.Object,int,double)', [
 			[/* method description */
 				[/* text */ 't', `Sets the value of the indexed component of the specified array
  object to the specified `],
-				[/* inline code block */ 'i', `short`],
+				[/* inline code block */ 'i', `double`],
 				[/* text */ 't', ` value.`]
 			],
 			[/* parameters */
@@ -658,7 +658,46 @@ DocsCollector.collect('java.lang.reflect.Array', [
 				[/* parameter */ 'index', [/* parameter description */
 					[/* text */ 't', `the index into the array`]
 				]],
-				[/* parameter */ 's', [/* parameter description */
+				[/* parameter */ 'd', [/* parameter description */
+					[/* text */ 't', `the new value of the indexed component`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
+					[/* text */ 't', `If the specified object argument
+ is null`]
+				]],
+				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
+					[/* text */ 't', `If the specified object argument
+ is not an array, or if the specified value cannot be converted
+ to the underlying array's component type by an identity or a
+ primitive widening conversion`]
+				]],
+				[/* throw */ 'java.lang.ArrayIndexOutOfBoundsException', [/* throw description */
+					[/* text */ 't', `If the specified `],
+					[/* inline code block */ 'i', `index`],
+					[/* text */ 't', `
+ argument is negative, or if it is greater than or equal to
+ the length of the specified array`]
+				]]
+			],
+			/* return */ UDF
+		]],
+		[/* method */ 'setFloat(java.lang.Object,int,float)', [
+			[/* method description */
+				[/* text */ 't', `Sets the value of the indexed component of the specified array
+ object to the specified `],
+				[/* inline code block */ 'i', `float`],
+				[/* text */ 't', ` value.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'array', [/* parameter description */
+					[/* text */ 't', `the array`]
+				]],
+				[/* parameter */ 'index', [/* parameter description */
+					[/* text */ 't', `the index into the array`]
+				]],
+				[/* parameter */ 'f', [/* parameter description */
 					[/* text */ 't', `the new value of the indexed component`]
 				]]
 			],
@@ -761,11 +800,11 @@ DocsCollector.collect('java.lang.reflect.Array', [
 			],
 			/* return */ UDF
 		]],
-		[/* method */ 'setFloat(java.lang.Object,int,float)', [
+		[/* method */ 'setShort(java.lang.Object,int,short)', [
 			[/* method description */
 				[/* text */ 't', `Sets the value of the indexed component of the specified array
  object to the specified `],
-				[/* inline code block */ 'i', `float`],
+				[/* inline code block */ 'i', `short`],
 				[/* text */ 't', ` value.`]
 			],
 			[/* parameters */
@@ -775,46 +814,7 @@ DocsCollector.collect('java.lang.reflect.Array', [
 				[/* parameter */ 'index', [/* parameter description */
 					[/* text */ 't', `the index into the array`]
 				]],
-				[/* parameter */ 'f', [/* parameter description */
-					[/* text */ 't', `the new value of the indexed component`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
-					[/* text */ 't', `If the specified object argument
- is null`]
-				]],
-				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
-					[/* text */ 't', `If the specified object argument
- is not an array, or if the specified value cannot be converted
- to the underlying array's component type by an identity or a
- primitive widening conversion`]
-				]],
-				[/* throw */ 'java.lang.ArrayIndexOutOfBoundsException', [/* throw description */
-					[/* text */ 't', `If the specified `],
-					[/* inline code block */ 'i', `index`],
-					[/* text */ 't', `
- argument is negative, or if it is greater than or equal to
- the length of the specified array`]
-				]]
-			],
-			/* return */ UDF
-		]],
-		[/* method */ 'setDouble(java.lang.Object,int,double)', [
-			[/* method description */
-				[/* text */ 't', `Sets the value of the indexed component of the specified array
- object to the specified `],
-				[/* inline code block */ 'i', `double`],
-				[/* text */ 't', ` value.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'array', [/* parameter description */
-					[/* text */ 't', `the array`]
-				]],
-				[/* parameter */ 'index', [/* parameter description */
-					[/* text */ 't', `the index into the array`]
-				]],
-				[/* parameter */ 'd', [/* parameter description */
+				[/* parameter */ 's', [/* parameter description */
 					[/* text */ 't', `the new value of the indexed component`]
 				]]
 			],

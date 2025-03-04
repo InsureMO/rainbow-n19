@@ -79,6 +79,22 @@ assertEquals("Wilma, dear?", (String) worker2.invokeExact());`]
 	],
 	/* fields */ UDF,
 	[/* constructors */
+		[/* constructor */ '<init>(java.lang.invoke.MethodHandle)', [
+			[/* constructor description */
+				[/* text */ 't', `Creates a call site object with an initial target method handle.
+ The type of the call site is permanently set to the initial target's type.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'target', [/* parameter description */
+					[/* text */ 't', `the method handle that will be the initial target of the call site`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
+					[/* text */ 't', `if the proposed target is null`]
+				]]
+			]
+		]],
 		[/* constructor */ '<init>(java.lang.invoke.MethodType)', [
 			[/* constructor description */
 				[/* text */ 't', `Creates a blank call site object with the given method type.
@@ -110,22 +126,6 @@ assertEquals("Wilma, dear?", (String) worker2.invokeExact());`]
 			[/* throws */
 				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
 					[/* text */ 't', `if the proposed type is null`]
-				]]
-			]
-		]],
-		[/* constructor */ '<init>(java.lang.invoke.MethodHandle)', [
-			[/* constructor description */
-				[/* text */ 't', `Creates a call site object with an initial target method handle.
- The type of the call site is permanently set to the initial target's type.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'target', [/* parameter description */
-					[/* text */ 't', `the method handle that will be the initial target of the call site`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
-					[/* text */ 't', `if the proposed target is null`]
 				]]
 			]
 		]]
@@ -181,39 +181,6 @@ assertEquals("Wilma, dear?", (String) worker2.invokeExact());`]
 			[/* return description */
 				[/* text */ 't', `the linkage state of this call site, a method handle which can change over time`]
 			]
-		]],
-		[/* method */ 'setTarget(java.lang.invoke.MethodHandle)', [
-			[/* method description */
-				[/* text */ 't', `Updates the target method of this call site, as a normal variable.
- The type of the new target must agree with the type of the old target.
- `],
-				[/* block */ 'b', `
- The interactions with memory are the same
- as of a write to an ordinary variable, such as an array element or a
- non-volatile, non-final field.
- `],
-				[/* block */ 'b', `
- In particular, unrelated threads may fail to see the updated target
- until they perform a read from memory.
- Stronger guarantees can be created by putting appropriate operations
- into the bootstrap method and/or the target methods used
- at any given call site.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'newTarget', [/* parameter description */
-					[/* text */ 't', `the new target`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
-					[/* text */ 't', `if the proposed new target is null`]
-				]],
-				[/* throw */ 'java.lang.invoke.WrongMethodTypeException', [/* throw description */
-					[/* text */ 't', `if the proposed new target
-         has a method type that differs from the previous target`]
-				]]
-			],
-			/* return */ UDF
 		]],
 		[/* method */ 'syncAll(java.lang.invoke.MutableCallSite[])', [
 			[/* method description */
@@ -456,6 +423,39 @@ assertEquals("Wilma, dear?", (String) worker2.invokeExact());`]
 					[/* inline code block */ 'i', `sites`],
 					[/* text */ 't', ` array reference is null
                               or the array contains a null`]
+				]]
+			],
+			/* return */ UDF
+		]],
+		[/* method */ 'setTarget(java.lang.invoke.MethodHandle)', [
+			[/* method description */
+				[/* text */ 't', `Updates the target method of this call site, as a normal variable.
+ The type of the new target must agree with the type of the old target.
+ `],
+				[/* block */ 'b', `
+ The interactions with memory are the same
+ as of a write to an ordinary variable, such as an array element or a
+ non-volatile, non-final field.
+ `],
+				[/* block */ 'b', `
+ In particular, unrelated threads may fail to see the updated target
+ until they perform a read from memory.
+ Stronger guarantees can be created by putting appropriate operations
+ into the bootstrap method and/or the target methods used
+ at any given call site.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'newTarget', [/* parameter description */
+					[/* text */ 't', `the new target`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
+					[/* text */ 't', `if the proposed new target is null`]
+				]],
+				[/* throw */ 'java.lang.invoke.WrongMethodTypeException', [/* throw description */
+					[/* text */ 't', `if the proposed new target
+         has a method type that differs from the previous target`]
 				]]
 			],
 			/* return */ UDF

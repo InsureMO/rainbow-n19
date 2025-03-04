@@ -9,14 +9,14 @@ DocsCollector.collect('java.io.StringBufferInputStream', [
 				[/* text */ 't', `The string from which bytes are read.`]
 			],
 		]],
-		[/* field */ 'pos', [
-			[/* field description */
-				[/* text */ 't', `The index of the next character to read from the input stream buffer.`]
-			],
-		]],
 		[/* field */ 'count', [
 			[/* field description */
 				[/* text */ 't', `The number of valid characters in the input stream buffer.`]
+			],
+		]],
+		[/* field */ 'pos', [
+			[/* field description */
+				[/* text */ 't', `The index of the next character to read from the input stream buffer.`]
 			],
 		]]
 	],
@@ -34,6 +34,56 @@ DocsCollector.collect('java.io.StringBufferInputStream', [
 		]]
 	],
 	[/* methods */
+		[/* method */ 'available()', [
+			[/* method description */
+				[/* text */ 't', `Returns the number of bytes that can be read from the input
+ stream without blocking.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the value of `],
+				[/* inline code block */ 'i', `count - pos`],
+				[/* text */ 't', `, which is the
+             number of bytes remaining to be read from the input buffer.`]
+			]
+		]],
+		[/* method */ 'read()', [
+			[/* method description */
+				[/* text */ 't', `Reads the next byte of data from this input stream. The value
+ byte is returned as an `],
+				[/* inline code block */ 'i', `int`],
+				[/* text */ 't', ` in the range
+ `],
+				[/* inline code block */ 'i', `0`],
+				[/* text */ 't', ` to `],
+				[/* inline code block */ 'i', `255`],
+				[/* text */ 't', `. If no byte is available
+ because the end of the stream has been reached, the value
+ `],
+				[/* inline code block */ 'i', `-1`],
+				[/* text */ 't', ` is returned.
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', `
+ The `],
+					[/* inline code block */ 'i', `read`],
+					[/* text */ 't', ` method of
+ `],
+					[/* inline code block */ 'i', `StringBufferInputStream`],
+					[/* text */ 't', ` cannot block. It returns the
+ low eight bits of the next character in this input stream's buffer.`]
+				]]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the next byte of data, or `],
+				[/* inline code block */ 'i', `-1`],
+				[/* text */ 't', ` if the end of the
+             stream is reached.`]
+			]
+		]],
 		[/* method */ 'read(byte[],int,int)', [
 			[/* method description */
 				[/* text */ 't', `Reads up to `],
@@ -73,42 +123,6 @@ DocsCollector.collect('java.io.StringBufferInputStream', [
              the stream has been reached.`]
 			]
 		]],
-		[/* method */ 'read()', [
-			[/* method description */
-				[/* text */ 't', `Reads the next byte of data from this input stream. The value
- byte is returned as an `],
-				[/* inline code block */ 'i', `int`],
-				[/* text */ 't', ` in the range
- `],
-				[/* inline code block */ 'i', `0`],
-				[/* text */ 't', ` to `],
-				[/* inline code block */ 'i', `255`],
-				[/* text */ 't', `. If no byte is available
- because the end of the stream has been reached, the value
- `],
-				[/* inline code block */ 'i', `-1`],
-				[/* text */ 't', ` is returned.
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', `
- The `],
-					[/* inline code block */ 'i', `read`],
-					[/* text */ 't', ` method of
- `],
-					[/* inline code block */ 'i', `StringBufferInputStream`],
-					[/* text */ 't', ` cannot block. It returns the
- low eight bits of the next character in this input stream's buffer.`]
-				]]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the next byte of data, or `],
-				[/* inline code block */ 'i', `-1`],
-				[/* text */ 't', ` if the end of the
-             stream is reached.`]
-			]
-		]],
 		[/* method */ 'skip(long)', [
 			[/* method description */
 				[/* text */ 't', `Skips `],
@@ -124,20 +138,6 @@ DocsCollector.collect('java.io.StringBufferInputStream', [
 			/* throws */ UDF,
 			[/* return description */
 				[/* text */ 't', `the actual number of bytes skipped.`]
-			]
-		]],
-		[/* method */ 'available()', [
-			[/* method description */
-				[/* text */ 't', `Returns the number of bytes that can be read from the input
- stream without blocking.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the value of `],
-				[/* inline code block */ 'i', `count - pos`],
-				[/* text */ 't', `, which is the
-             number of bytes remaining to be read from the input buffer.`]
 			]
 		]],
 		[/* method */ 'reset()', [

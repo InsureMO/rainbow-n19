@@ -57,40 +57,6 @@ DocsCollector.collect('java.time.temporal.TemporalAmount', [
 	/* fields */ UDF,
 	/* constructors */ UDF,
 	[/* methods */
-		[/* method */ 'get(java.time.temporal.TemporalUnit)', [
-			[/* method description */
-				[/* text */ 't', `Returns the value of the requested unit.
- The units returned from `],
-				[/* reference */ 'r', `#getUnits()`, `getUnits()`],
-				[/* text */ 't', ` uniquely define the
- value of the `],
-				[/* inline code block */ 'i', `TemporalAmount`],
-				[/* text */ 't', `.  A value must be returned
- for each unit listed in `],
-				[/* inline code block */ 'i', `getUnits`],
-				[/* text */ 't', `.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'unit', [/* parameter description */
-					[/* text */ 't', `the `],
-					[/* inline code block */ 'i', `TemporalUnit`],
-					[/* text */ 't', ` for which to return the value`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.time.DateTimeException', [/* throw description */
-					[/* text */ 't', `if a value for the unit cannot be obtained`]
-				]],
-				[/* throw */ 'java.time.temporal.UnsupportedTemporalTypeException', [/* throw description */
-					[/* text */ 't', `if the `],
-					[/* inline code block */ 'i', `unit`],
-					[/* text */ 't', ` is not supported`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `the long value of the unit`]
-			]
-		]],
 		[/* method */ 'addTo(java.time.temporal.Temporal)', [
 			[/* method description */
 				[/* text */ 't', `Adds to the specified temporal object.
@@ -136,27 +102,6 @@ DocsCollector.collect('java.time.temporal.TemporalAmount', [
 				[/* text */ 't', `an object of the same observable type with the addition made, not null`]
 			]
 		]],
-		[/* method */ 'getUnits()', [
-			[/* method description */
-				[/* text */ 't', `Returns the list of units uniquely defining the value of this TemporalAmount.
- The list of `],
-				[/* inline code block */ 'i', `TemporalUnits`],
-				[/* text */ 't', ` is defined by the implementation class.
- The list is a snapshot of the units at the time `],
-				[/* inline code block */ 'i', `getUnits`],
-				[/* text */ 't', `
- is called and is not mutable.
- The units are ordered from longest duration to the shortest duration
- of the unit.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the List of `],
-				[/* inline code block */ 'i', `TemporalUnits`],
-				[/* text */ 't', `; not null`]
-			]
-		]],
 		[/* method */ 'subtractFrom(java.time.temporal.Temporal)', [
 			[/* method description */
 				[/* text */ 't', `Subtracts this object from the specified temporal object.
@@ -200,6 +145,61 @@ DocsCollector.collect('java.time.temporal.TemporalAmount', [
 			],
 			[/* return description */
 				[/* text */ 't', `an object of the same observable type with the subtraction made, not null`]
+			]
+		]],
+		[/* method */ 'getUnits()', [
+			[/* method description */
+				[/* text */ 't', `Returns the list of units uniquely defining the value of this TemporalAmount.
+ The list of `],
+				[/* inline code block */ 'i', `TemporalUnits`],
+				[/* text */ 't', ` is defined by the implementation class.
+ The list is a snapshot of the units at the time `],
+				[/* inline code block */ 'i', `getUnits`],
+				[/* text */ 't', `
+ is called and is not mutable.
+ The units are ordered from longest duration to the shortest duration
+ of the unit.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the List of `],
+				[/* inline code block */ 'i', `TemporalUnits`],
+				[/* text */ 't', `; not null`]
+			]
+		]],
+		[/* method */ 'get(java.time.temporal.TemporalUnit)', [
+			[/* method description */
+				[/* text */ 't', `Returns the value of the requested unit.
+ The units returned from `],
+				[/* reference */ 'r', `#getUnits()`, `getUnits()`],
+				[/* text */ 't', ` uniquely define the
+ value of the `],
+				[/* inline code block */ 'i', `TemporalAmount`],
+				[/* text */ 't', `.  A value must be returned
+ for each unit listed in `],
+				[/* inline code block */ 'i', `getUnits`],
+				[/* text */ 't', `.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'unit', [/* parameter description */
+					[/* text */ 't', `the `],
+					[/* inline code block */ 'i', `TemporalUnit`],
+					[/* text */ 't', ` for which to return the value`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.time.DateTimeException', [/* throw description */
+					[/* text */ 't', `if a value for the unit cannot be obtained`]
+				]],
+				[/* throw */ 'java.time.temporal.UnsupportedTemporalTypeException', [/* throw description */
+					[/* text */ 't', `if the `],
+					[/* inline code block */ 'i', `unit`],
+					[/* text */ 't', ` is not supported`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `the long value of the unit`]
 			]
 		]]
 	],

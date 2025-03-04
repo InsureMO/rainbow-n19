@@ -370,14 +370,14 @@ JdkClassCreateHelper.class('java.util.TimeZone', [
 		]
 	],
 	[/* declared fields */
-		[/* public static final int java.util.TimeZone.SHORT */
-			/* name */ 'SHORT',
+		[/* public static final int java.util.TimeZone.LONG */
+			/* name */ 'LONG',
 			/* type */ 'int',
 			/* annotations */ UDF,
 			/* modifiers */ 25
 		],
-		[/* public static final int java.util.TimeZone.LONG */
-			/* name */ 'LONG',
+		[/* public static final int java.util.TimeZone.SHORT */
+			/* name */ 'SHORT',
 			/* type */ 'int',
 			/* annotations */ UDF,
 			/* modifiers */ 25

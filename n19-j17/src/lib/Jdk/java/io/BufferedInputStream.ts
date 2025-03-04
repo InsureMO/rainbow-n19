@@ -195,8 +195,8 @@ JdkClassCreateHelper.class('java.io.BufferedInputStream', [
 			/* annotations */ UDF,
 			/* modifiers */ 4
 		],
-		[/* protected int java.io.BufferedInputStream.pos */
-			/* name */ 'pos',
+		[/* protected int java.io.BufferedInputStream.marklimit */
+			/* name */ 'marklimit',
 			/* type */ 'int',
 			/* annotations */ UDF,
 			/* modifiers */ 4
@@ -207,8 +207,8 @@ JdkClassCreateHelper.class('java.io.BufferedInputStream', [
 			/* annotations */ UDF,
 			/* modifiers */ 4
 		],
-		[/* protected int java.io.BufferedInputStream.marklimit */
-			/* name */ 'marklimit',
+		[/* protected int java.io.BufferedInputStream.pos */
+			/* name */ 'pos',
 			/* type */ 'int',
 			/* annotations */ UDF,
 			/* modifiers */ 4

@@ -307,6 +307,381 @@ DocsCollector.collect('java.io.DataInput', [
 	/* fields */ UDF,
 	/* constructors */ UDF,
 	[/* methods */
+		[/* method */ 'readBoolean()', [
+			[/* method description */
+				[/* text */ 't', `Reads one input byte and returns
+ `],
+				[/* inline code block */ 'i', `true`],
+				[/* text */ 't', ` if that byte is nonzero,
+ `],
+				[/* inline code block */ 'i', `false`],
+				[/* text */ 't', ` if that byte is zero.
+ This method is suitable for reading
+ the byte written by the `],
+				[/* inline code block */ 'i', `writeBoolean`],
+				[/* text */ 't', `
+ method of interface `],
+				[/* inline code block */ 'i', `DataOutput`],
+				[/* text */ 't', `.`]
+			],
+			/* parameters */ UDF,
+			[/* throws */
+				[/* throw */ 'java.io.EOFException', [/* throw description */
+					[/* text */ 't', `if this stream reaches the end before reading
+               all the bytes.`]
+				]],
+				[/* throw */ 'java.io.IOException', [/* throw description */
+					[/* text */ 't', `if an I/O error occurs.`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `the `],
+				[/* inline code block */ 'i', `boolean`],
+				[/* text */ 't', ` value read.`]
+			]
+		]],
+		[/* method */ 'readByte()', [
+			[/* method description */
+				[/* text */ 't', `Reads and returns one input byte.
+ The byte is treated as a signed value in
+ the range `],
+				[/* inline code block */ 'i', `-128`],
+				[/* text */ 't', ` through `],
+				[/* inline code block */ 'i', `127`],
+				[/* text */ 't', `,
+ inclusive.
+ This method is suitable for
+ reading the byte written by the `],
+				[/* inline code block */ 'i', `writeByte`],
+				[/* text */ 't', `
+ method of interface `],
+				[/* inline code block */ 'i', `DataOutput`],
+				[/* text */ 't', `.`]
+			],
+			/* parameters */ UDF,
+			[/* throws */
+				[/* throw */ 'java.io.EOFException', [/* throw description */
+					[/* text */ 't', `if this stream reaches the end before reading
+               all the bytes.`]
+				]],
+				[/* throw */ 'java.io.IOException', [/* throw description */
+					[/* text */ 't', `if an I/O error occurs.`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `the 8-bit value read.`]
+			]
+		]],
+		[/* method */ 'readChar()', [
+			[/* method description */
+				[/* text */ 't', `Reads two input bytes and returns a `],
+				[/* inline code block */ 'i', `char`],
+				[/* text */ 't', ` value.
+ Let `],
+				[/* inline code block */ 'i', `a`],
+				[/* text */ 't', `
+ be the first byte read and `],
+				[/* inline code block */ 'i', `b`],
+				[/* text */ 't', `
+ be the second byte. The value
+ returned is:
+ `],
+				[/* code block */ 'c', [
+					[/* inline code block */ 'i', `(char)((a << 8) | (b & 0xff))`]
+				]],
+				[/* text */ 't', `
+ This method
+ is suitable for reading bytes written by
+ the `],
+				[/* inline code block */ 'i', `writeChar`],
+				[/* text */ 't', ` method of interface
+ `],
+				[/* inline code block */ 'i', `DataOutput`],
+				[/* text */ 't', `.`]
+			],
+			/* parameters */ UDF,
+			[/* throws */
+				[/* throw */ 'java.io.EOFException', [/* throw description */
+					[/* text */ 't', `if this stream reaches the end before reading
+               all the bytes.`]
+				]],
+				[/* throw */ 'java.io.IOException', [/* throw description */
+					[/* text */ 't', `if an I/O error occurs.`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `the `],
+				[/* inline code block */ 'i', `char`],
+				[/* text */ 't', ` value read.`]
+			]
+		]],
+		[/* method */ 'readDouble()', [
+			[/* method description */
+				[/* text */ 't', `Reads eight input bytes and returns
+ a `],
+				[/* inline code block */ 'i', `double`],
+				[/* text */ 't', ` value. It does this
+ by first constructing a `],
+				[/* inline code block */ 'i', `long`],
+				[/* text */ 't', `
+ value in exactly the manner
+ of the `],
+				[/* inline code block */ 'i', `readLong`],
+				[/* text */ 't', `
+ method, then converting this `],
+				[/* inline code block */ 'i', `long`],
+				[/* text */ 't', `
+ value to a `],
+				[/* inline code block */ 'i', `double`],
+				[/* text */ 't', ` in exactly
+ the manner of the method `],
+				[/* inline code block */ 'i', `Double.longBitsToDouble`],
+				[/* text */ 't', `.
+ This method is suitable for reading
+ bytes written by the `],
+				[/* inline code block */ 'i', `writeDouble`],
+				[/* text */ 't', `
+ method of interface `],
+				[/* inline code block */ 'i', `DataOutput`],
+				[/* text */ 't', `.`]
+			],
+			/* parameters */ UDF,
+			[/* throws */
+				[/* throw */ 'java.io.EOFException', [/* throw description */
+					[/* text */ 't', `if this stream reaches the end before reading
+               all the bytes.`]
+				]],
+				[/* throw */ 'java.io.IOException', [/* throw description */
+					[/* text */ 't', `if an I/O error occurs.`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `the `],
+				[/* inline code block */ 'i', `double`],
+				[/* text */ 't', ` value read.`]
+			]
+		]],
+		[/* method */ 'readFloat()', [
+			[/* method description */
+				[/* text */ 't', `Reads four input bytes and returns
+ a `],
+				[/* inline code block */ 'i', `float`],
+				[/* text */ 't', ` value. It does this
+ by first constructing an `],
+				[/* inline code block */ 'i', `int`],
+				[/* text */ 't', `
+ value in exactly the manner
+ of the `],
+				[/* inline code block */ 'i', `readInt`],
+				[/* text */ 't', `
+ method, then converting this `],
+				[/* inline code block */ 'i', `int`],
+				[/* text */ 't', `
+ value to a `],
+				[/* inline code block */ 'i', `float`],
+				[/* text */ 't', ` in
+ exactly the manner of the method `],
+				[/* inline code block */ 'i', `Float.intBitsToFloat`],
+				[/* text */ 't', `.
+ This method is suitable for reading
+ bytes written by the `],
+				[/* inline code block */ 'i', `writeFloat`],
+				[/* text */ 't', `
+ method of interface `],
+				[/* inline code block */ 'i', `DataOutput`],
+				[/* text */ 't', `.`]
+			],
+			/* parameters */ UDF,
+			[/* throws */
+				[/* throw */ 'java.io.EOFException', [/* throw description */
+					[/* text */ 't', `if this stream reaches the end before reading
+               all the bytes.`]
+				]],
+				[/* throw */ 'java.io.IOException', [/* throw description */
+					[/* text */ 't', `if an I/O error occurs.`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `the `],
+				[/* inline code block */ 'i', `float`],
+				[/* text */ 't', ` value read.`]
+			]
+		]],
+		[/* method */ 'readInt()', [
+			[/* method description */
+				[/* text */ 't', `Reads four input bytes and returns an
+ `],
+				[/* inline code block */ 'i', `int`],
+				[/* text */ 't', ` value. Let `],
+				[/* inline code block */ 'i', `a-d`],
+				[/* text */ 't', `
+ be the first through fourth bytes read. The value returned is:
+ `],
+				[/* code block */ 'c', [
+					[/* inline code block */ 'i', `(((a & 0xff) << 24) | ((b & 0xff) << 16) |
+  ((c & 0xff) <<  8) | (d & 0xff))`]
+				]],
+				[/* text */ 't', `
+ This method is suitable
+ for reading bytes written by the `],
+				[/* inline code block */ 'i', `writeInt`],
+				[/* text */ 't', `
+ method of interface `],
+				[/* inline code block */ 'i', `DataOutput`],
+				[/* text */ 't', `.`]
+			],
+			/* parameters */ UDF,
+			[/* throws */
+				[/* throw */ 'java.io.EOFException', [/* throw description */
+					[/* text */ 't', `if this stream reaches the end before reading
+               all the bytes.`]
+				]],
+				[/* throw */ 'java.io.IOException', [/* throw description */
+					[/* text */ 't', `if an I/O error occurs.`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `the `],
+				[/* inline code block */ 'i', `int`],
+				[/* text */ 't', ` value read.`]
+			]
+		]],
+		[/* method */ 'readUnsignedByte()', [
+			[/* method description */
+				[/* text */ 't', `Reads one input byte, zero-extends
+ it to type `],
+				[/* inline code block */ 'i', `int`],
+				[/* text */ 't', `, and returns
+ the result, which is therefore in the range
+ `],
+				[/* inline code block */ 'i', `0`],
+				[/* text */ 't', `
+ through `],
+				[/* inline code block */ 'i', `255`],
+				[/* text */ 't', `.
+ This method is suitable for reading
+ the byte written by the `],
+				[/* inline code block */ 'i', `writeByte`],
+				[/* text */ 't', `
+ method of interface `],
+				[/* inline code block */ 'i', `DataOutput`],
+				[/* text */ 't', `
+ if the argument to `],
+				[/* inline code block */ 'i', `writeByte`],
+				[/* text */ 't', `
+ was intended to be a value in the range
+ `],
+				[/* inline code block */ 'i', `0`],
+				[/* text */ 't', ` through `],
+				[/* inline code block */ 'i', `255`],
+				[/* text */ 't', `.`]
+			],
+			/* parameters */ UDF,
+			[/* throws */
+				[/* throw */ 'java.io.EOFException', [/* throw description */
+					[/* text */ 't', `if this stream reaches the end before reading
+               all the bytes.`]
+				]],
+				[/* throw */ 'java.io.IOException', [/* throw description */
+					[/* text */ 't', `if an I/O error occurs.`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `the unsigned 8-bit value read.`]
+			]
+		]],
+		[/* method */ 'readUnsignedShort()', [
+			[/* method description */
+				[/* text */ 't', `Reads two input bytes and returns
+ an `],
+				[/* inline code block */ 'i', `int`],
+				[/* text */ 't', ` value in the range `],
+				[/* inline code block */ 'i', `0`],
+				[/* text */ 't', `
+ through `],
+				[/* inline code block */ 'i', `65535`],
+				[/* text */ 't', `. Let `],
+				[/* inline code block */ 'i', `a`],
+				[/* text */ 't', `
+ be the first byte read and
+ `],
+				[/* inline code block */ 'i', `b`],
+				[/* text */ 't', `
+ be the second byte. The value returned is:
+ `],
+				[/* code block */ 'c', [
+					[/* inline code block */ 'i', `(((a & 0xff) << 8) | (b & 0xff))`]
+				]],
+				[/* text */ 't', `
+ This method is suitable for reading the bytes
+ written by the `],
+				[/* inline code block */ 'i', `writeShort`],
+				[/* text */ 't', ` method
+ of interface `],
+				[/* inline code block */ 'i', `DataOutput`],
+				[/* text */ 't', `  if
+ the argument to `],
+				[/* inline code block */ 'i', `writeShort`],
+				[/* text */ 't', `
+ was intended to be a value in the range
+ `],
+				[/* inline code block */ 'i', `0`],
+				[/* text */ 't', ` through `],
+				[/* inline code block */ 'i', `65535`],
+				[/* text */ 't', `.`]
+			],
+			/* parameters */ UDF,
+			[/* throws */
+				[/* throw */ 'java.io.EOFException', [/* throw description */
+					[/* text */ 't', `if this stream reaches the end before reading
+               all the bytes.`]
+				]],
+				[/* throw */ 'java.io.IOException', [/* throw description */
+					[/* text */ 't', `if an I/O error occurs.`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `the unsigned 16-bit value read.`]
+			]
+		]],
+		[/* method */ 'skipBytes(int)', [
+			[/* method description */
+				[/* text */ 't', `Makes an attempt to skip over
+ `],
+				[/* inline code block */ 'i', `n`],
+				[/* text */ 't', ` bytes
+ of data from the input
+ stream, discarding the skipped bytes. However,
+ it may skip
+ over some smaller number of
+ bytes, possibly zero. This may result from
+ any of a
+ number of conditions; reaching
+ end of file before `],
+				[/* inline code block */ 'i', `n`],
+				[/* text */ 't', ` bytes
+ have been skipped is
+ only one possibility.
+ This method never throws an `],
+				[/* inline code block */ 'i', `EOFException`],
+				[/* text */ 't', `.
+ The actual
+ number of bytes skipped is returned.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'n', [/* parameter description */
+					[/* text */ 't', `the number of bytes to be skipped.`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.io.IOException', [/* throw description */
+					[/* text */ 't', `if an I/O error occurs.`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `the number of bytes actually skipped.`]
+			]
+		]],
 		[/* method */ 'readLine()', [
 			[/* method description */
 				[/* text */ 't', `Reads the next line of text from the input stream.
@@ -379,45 +754,6 @@ DocsCollector.collect('java.io.DataInput', [
 				[/* inline code block */ 'i', `null`],
 				[/* text */ 't', ` if the end of file is
          encountered before a byte can be read.`]
-			]
-		]],
-		[/* method */ 'readInt()', [
-			[/* method description */
-				[/* text */ 't', `Reads four input bytes and returns an
- `],
-				[/* inline code block */ 'i', `int`],
-				[/* text */ 't', ` value. Let `],
-				[/* inline code block */ 'i', `a-d`],
-				[/* text */ 't', `
- be the first through fourth bytes read. The value returned is:
- `],
-				[/* code block */ 'c', [
-					[/* inline code block */ 'i', `(((a & 0xff) << 24) | ((b & 0xff) << 16) |
-  ((c & 0xff) <<  8) | (d & 0xff))`]
-				]],
-				[/* text */ 't', `
- This method is suitable
- for reading bytes written by the `],
-				[/* inline code block */ 'i', `writeInt`],
-				[/* text */ 't', `
- method of interface `],
-				[/* inline code block */ 'i', `DataOutput`],
-				[/* text */ 't', `.`]
-			],
-			/* parameters */ UDF,
-			[/* throws */
-				[/* throw */ 'java.io.EOFException', [/* throw description */
-					[/* text */ 't', `if this stream reaches the end before reading
-               all the bytes.`]
-				]],
-				[/* throw */ 'java.io.IOException', [/* throw description */
-					[/* text */ 't', `if an I/O error occurs.`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `the `],
-				[/* inline code block */ 'i', `int`],
-				[/* text */ 't', ` value read.`]
 			]
 		]],
 		[/* method */ 'readUTF()', [
@@ -610,149 +946,6 @@ DocsCollector.collect('java.io.DataInput', [
 				[/* text */ 't', `a Unicode string.`]
 			]
 		]],
-		[/* method */ 'readChar()', [
-			[/* method description */
-				[/* text */ 't', `Reads two input bytes and returns a `],
-				[/* inline code block */ 'i', `char`],
-				[/* text */ 't', ` value.
- Let `],
-				[/* inline code block */ 'i', `a`],
-				[/* text */ 't', `
- be the first byte read and `],
-				[/* inline code block */ 'i', `b`],
-				[/* text */ 't', `
- be the second byte. The value
- returned is:
- `],
-				[/* code block */ 'c', [
-					[/* inline code block */ 'i', `(char)((a << 8) | (b & 0xff))`]
-				]],
-				[/* text */ 't', `
- This method
- is suitable for reading bytes written by
- the `],
-				[/* inline code block */ 'i', `writeChar`],
-				[/* text */ 't', ` method of interface
- `],
-				[/* inline code block */ 'i', `DataOutput`],
-				[/* text */ 't', `.`]
-			],
-			/* parameters */ UDF,
-			[/* throws */
-				[/* throw */ 'java.io.EOFException', [/* throw description */
-					[/* text */ 't', `if this stream reaches the end before reading
-               all the bytes.`]
-				]],
-				[/* throw */ 'java.io.IOException', [/* throw description */
-					[/* text */ 't', `if an I/O error occurs.`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `the `],
-				[/* inline code block */ 'i', `char`],
-				[/* text */ 't', ` value read.`]
-			]
-		]],
-		[/* method */ 'readFloat()', [
-			[/* method description */
-				[/* text */ 't', `Reads four input bytes and returns
- a `],
-				[/* inline code block */ 'i', `float`],
-				[/* text */ 't', ` value. It does this
- by first constructing an `],
-				[/* inline code block */ 'i', `int`],
-				[/* text */ 't', `
- value in exactly the manner
- of the `],
-				[/* inline code block */ 'i', `readInt`],
-				[/* text */ 't', `
- method, then converting this `],
-				[/* inline code block */ 'i', `int`],
-				[/* text */ 't', `
- value to a `],
-				[/* inline code block */ 'i', `float`],
-				[/* text */ 't', ` in
- exactly the manner of the method `],
-				[/* inline code block */ 'i', `Float.intBitsToFloat`],
-				[/* text */ 't', `.
- This method is suitable for reading
- bytes written by the `],
-				[/* inline code block */ 'i', `writeFloat`],
-				[/* text */ 't', `
- method of interface `],
-				[/* inline code block */ 'i', `DataOutput`],
-				[/* text */ 't', `.`]
-			],
-			/* parameters */ UDF,
-			[/* throws */
-				[/* throw */ 'java.io.EOFException', [/* throw description */
-					[/* text */ 't', `if this stream reaches the end before reading
-               all the bytes.`]
-				]],
-				[/* throw */ 'java.io.IOException', [/* throw description */
-					[/* text */ 't', `if an I/O error occurs.`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `the `],
-				[/* inline code block */ 'i', `float`],
-				[/* text */ 't', ` value read.`]
-			]
-		]],
-		[/* method */ 'readUnsignedShort()', [
-			[/* method description */
-				[/* text */ 't', `Reads two input bytes and returns
- an `],
-				[/* inline code block */ 'i', `int`],
-				[/* text */ 't', ` value in the range `],
-				[/* inline code block */ 'i', `0`],
-				[/* text */ 't', `
- through `],
-				[/* inline code block */ 'i', `65535`],
-				[/* text */ 't', `. Let `],
-				[/* inline code block */ 'i', `a`],
-				[/* text */ 't', `
- be the first byte read and
- `],
-				[/* inline code block */ 'i', `b`],
-				[/* text */ 't', `
- be the second byte. The value returned is:
- `],
-				[/* code block */ 'c', [
-					[/* inline code block */ 'i', `(((a & 0xff) << 8) | (b & 0xff))`]
-				]],
-				[/* text */ 't', `
- This method is suitable for reading the bytes
- written by the `],
-				[/* inline code block */ 'i', `writeShort`],
-				[/* text */ 't', ` method
- of interface `],
-				[/* inline code block */ 'i', `DataOutput`],
-				[/* text */ 't', `  if
- the argument to `],
-				[/* inline code block */ 'i', `writeShort`],
-				[/* text */ 't', `
- was intended to be a value in the range
- `],
-				[/* inline code block */ 'i', `0`],
-				[/* text */ 't', ` through `],
-				[/* inline code block */ 'i', `65535`],
-				[/* text */ 't', `.`]
-			],
-			/* parameters */ UDF,
-			[/* throws */
-				[/* throw */ 'java.io.EOFException', [/* throw description */
-					[/* text */ 't', `if this stream reaches the end before reading
-               all the bytes.`]
-				]],
-				[/* throw */ 'java.io.IOException', [/* throw description */
-					[/* text */ 't', `if an I/O error occurs.`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `the unsigned 16-bit value read.`]
-			]
-		]],
 		[/* method */ 'readLong()', [
 			[/* method description */
 				[/* text */ 't', `Reads eight input bytes and returns
@@ -799,38 +992,6 @@ DocsCollector.collect('java.io.DataInput', [
 				[/* text */ 't', `the `],
 				[/* inline code block */ 'i', `long`],
 				[/* text */ 't', ` value read.`]
-			]
-		]],
-		[/* method */ 'readByte()', [
-			[/* method description */
-				[/* text */ 't', `Reads and returns one input byte.
- The byte is treated as a signed value in
- the range `],
-				[/* inline code block */ 'i', `-128`],
-				[/* text */ 't', ` through `],
-				[/* inline code block */ 'i', `127`],
-				[/* text */ 't', `,
- inclusive.
- This method is suitable for
- reading the byte written by the `],
-				[/* inline code block */ 'i', `writeByte`],
-				[/* text */ 't', `
- method of interface `],
-				[/* inline code block */ 'i', `DataOutput`],
-				[/* text */ 't', `.`]
-			],
-			/* parameters */ UDF,
-			[/* throws */
-				[/* throw */ 'java.io.EOFException', [/* throw description */
-					[/* text */ 't', `if this stream reaches the end before reading
-               all the bytes.`]
-				]],
-				[/* throw */ 'java.io.IOException', [/* throw description */
-					[/* text */ 't', `if an I/O error occurs.`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `the 8-bit value read.`]
 			]
 		]],
 		[/* method */ 'readShort()', [
@@ -1100,167 +1261,6 @@ DocsCollector.collect('java.io.DataInput', [
 				]]
 			],
 			/* return */ UDF
-		]],
-		[/* method */ 'skipBytes(int)', [
-			[/* method description */
-				[/* text */ 't', `Makes an attempt to skip over
- `],
-				[/* inline code block */ 'i', `n`],
-				[/* text */ 't', ` bytes
- of data from the input
- stream, discarding the skipped bytes. However,
- it may skip
- over some smaller number of
- bytes, possibly zero. This may result from
- any of a
- number of conditions; reaching
- end of file before `],
-				[/* inline code block */ 'i', `n`],
-				[/* text */ 't', ` bytes
- have been skipped is
- only one possibility.
- This method never throws an `],
-				[/* inline code block */ 'i', `EOFException`],
-				[/* text */ 't', `.
- The actual
- number of bytes skipped is returned.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'n', [/* parameter description */
-					[/* text */ 't', `the number of bytes to be skipped.`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.io.IOException', [/* throw description */
-					[/* text */ 't', `if an I/O error occurs.`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `the number of bytes actually skipped.`]
-			]
-		]],
-		[/* method */ 'readBoolean()', [
-			[/* method description */
-				[/* text */ 't', `Reads one input byte and returns
- `],
-				[/* inline code block */ 'i', `true`],
-				[/* text */ 't', ` if that byte is nonzero,
- `],
-				[/* inline code block */ 'i', `false`],
-				[/* text */ 't', ` if that byte is zero.
- This method is suitable for reading
- the byte written by the `],
-				[/* inline code block */ 'i', `writeBoolean`],
-				[/* text */ 't', `
- method of interface `],
-				[/* inline code block */ 'i', `DataOutput`],
-				[/* text */ 't', `.`]
-			],
-			/* parameters */ UDF,
-			[/* throws */
-				[/* throw */ 'java.io.EOFException', [/* throw description */
-					[/* text */ 't', `if this stream reaches the end before reading
-               all the bytes.`]
-				]],
-				[/* throw */ 'java.io.IOException', [/* throw description */
-					[/* text */ 't', `if an I/O error occurs.`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `the `],
-				[/* inline code block */ 'i', `boolean`],
-				[/* text */ 't', ` value read.`]
-			]
-		]],
-		[/* method */ 'readUnsignedByte()', [
-			[/* method description */
-				[/* text */ 't', `Reads one input byte, zero-extends
- it to type `],
-				[/* inline code block */ 'i', `int`],
-				[/* text */ 't', `, and returns
- the result, which is therefore in the range
- `],
-				[/* inline code block */ 'i', `0`],
-				[/* text */ 't', `
- through `],
-				[/* inline code block */ 'i', `255`],
-				[/* text */ 't', `.
- This method is suitable for reading
- the byte written by the `],
-				[/* inline code block */ 'i', `writeByte`],
-				[/* text */ 't', `
- method of interface `],
-				[/* inline code block */ 'i', `DataOutput`],
-				[/* text */ 't', `
- if the argument to `],
-				[/* inline code block */ 'i', `writeByte`],
-				[/* text */ 't', `
- was intended to be a value in the range
- `],
-				[/* inline code block */ 'i', `0`],
-				[/* text */ 't', ` through `],
-				[/* inline code block */ 'i', `255`],
-				[/* text */ 't', `.`]
-			],
-			/* parameters */ UDF,
-			[/* throws */
-				[/* throw */ 'java.io.EOFException', [/* throw description */
-					[/* text */ 't', `if this stream reaches the end before reading
-               all the bytes.`]
-				]],
-				[/* throw */ 'java.io.IOException', [/* throw description */
-					[/* text */ 't', `if an I/O error occurs.`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `the unsigned 8-bit value read.`]
-			]
-		]],
-		[/* method */ 'readDouble()', [
-			[/* method description */
-				[/* text */ 't', `Reads eight input bytes and returns
- a `],
-				[/* inline code block */ 'i', `double`],
-				[/* text */ 't', ` value. It does this
- by first constructing a `],
-				[/* inline code block */ 'i', `long`],
-				[/* text */ 't', `
- value in exactly the manner
- of the `],
-				[/* inline code block */ 'i', `readLong`],
-				[/* text */ 't', `
- method, then converting this `],
-				[/* inline code block */ 'i', `long`],
-				[/* text */ 't', `
- value to a `],
-				[/* inline code block */ 'i', `double`],
-				[/* text */ 't', ` in exactly
- the manner of the method `],
-				[/* inline code block */ 'i', `Double.longBitsToDouble`],
-				[/* text */ 't', `.
- This method is suitable for reading
- bytes written by the `],
-				[/* inline code block */ 'i', `writeDouble`],
-				[/* text */ 't', `
- method of interface `],
-				[/* inline code block */ 'i', `DataOutput`],
-				[/* text */ 't', `.`]
-			],
-			/* parameters */ UDF,
-			[/* throws */
-				[/* throw */ 'java.io.EOFException', [/* throw description */
-					[/* text */ 't', `if this stream reaches the end before reading
-               all the bytes.`]
-				]],
-				[/* throw */ 'java.io.IOException', [/* throw description */
-					[/* text */ 't', `if an I/O error occurs.`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `the `],
-				[/* inline code block */ 'i', `double`],
-				[/* text */ 't', ` value read.`]
-			]
 		]]
 	],
 ]);

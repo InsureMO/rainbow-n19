@@ -74,39 +74,29 @@ DocsCollector.collect('java.time.temporal.TemporalAccessor', [
 	/* fields */ UDF,
 	/* constructors */ UDF,
 	[/* methods */
-		[/* method */ 'get(java.time.temporal.TemporalField)', [
+		[/* method */ 'isSupported(java.time.temporal.TemporalField)', [
 			[/* method description */
-				[/* text */ 't', `Gets the value of the specified field as an `],
-				[/* inline code block */ 'i', `int`],
-				[/* text */ 't', `.
+				[/* text */ 't', `Checks if the specified field is supported.
  `],
-				[/* block */ 'b', `
- This queries the date-time for the value of the specified field.
- The returned value will always be within the valid range of values for the field.
- If the date-time cannot return the value, because the field is unsupported or for
- some other reason, an exception will be thrown.`]
+				[/* block */ 'b', [
+					[/* text */ 't', `
+ This checks if the date-time can be queried for the specified field.
+ If false, then calling the `],
+					[/* reference */ 'r', `#range(java.time.temporal.TemporalField)`, `range`],
+					[/* text */ 't', ` and `],
+					[/* reference */ 'r', `#get(java.time.temporal.TemporalField)`, `get`],
+					[/* text */ 't', `
+ methods will throw an exception.`]
+				]]
 			],
 			[/* parameters */
 				[/* parameter */ 'field', [/* parameter description */
-					[/* text */ 't', `the field to get, not null`]
+					[/* text */ 't', `the field to check, null returns false`]
 				]]
 			],
-			[/* throws */
-				[/* throw */ 'java.time.DateTimeException', [/* throw description */
-					[/* text */ 't', `if a value for the field cannot be obtained or
-         the value is outside the range of valid values for the field`]
-				]],
-				[/* throw */ 'java.time.temporal.UnsupportedTemporalTypeException', [/* throw description */
-					[/* text */ 't', `if the field is not supported or
-         the range of values exceeds an `],
-					[/* inline code block */ 'i', `int`]
-				]],
-				[/* throw */ 'java.lang.ArithmeticException', [/* throw description */
-					[/* text */ 't', `if numeric overflow occurs`]
-				]]
-			],
+			/* throws */ UDF,
 			[/* return description */
-				[/* text */ 't', `the value for the field, within the valid range of values`]
+				[/* text */ 't', `true if this date-time can be queried for the field, false if not`]
 			]
 		]],
 		[/* method */ 'getLong(java.time.temporal.TemporalField)', [
@@ -185,6 +175,41 @@ DocsCollector.collect('java.time.temporal.TemporalAccessor', [
 				[/* text */ 't', `the query result, null may be returned (defined by the query)`]
 			]
 		]],
+		[/* method */ 'get(java.time.temporal.TemporalField)', [
+			[/* method description */
+				[/* text */ 't', `Gets the value of the specified field as an `],
+				[/* inline code block */ 'i', `int`],
+				[/* text */ 't', `.
+ `],
+				[/* block */ 'b', `
+ This queries the date-time for the value of the specified field.
+ The returned value will always be within the valid range of values for the field.
+ If the date-time cannot return the value, because the field is unsupported or for
+ some other reason, an exception will be thrown.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'field', [/* parameter description */
+					[/* text */ 't', `the field to get, not null`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.time.DateTimeException', [/* throw description */
+					[/* text */ 't', `if a value for the field cannot be obtained or
+         the value is outside the range of valid values for the field`]
+				]],
+				[/* throw */ 'java.time.temporal.UnsupportedTemporalTypeException', [/* throw description */
+					[/* text */ 't', `if the field is not supported or
+         the range of values exceeds an `],
+					[/* inline code block */ 'i', `int`]
+				]],
+				[/* throw */ 'java.lang.ArithmeticException', [/* throw description */
+					[/* text */ 't', `if numeric overflow occurs`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `the value for the field, within the valid range of values`]
+			]
+		]],
 		[/* method */ 'range(java.time.temporal.TemporalField)', [
 			[/* method description */
 				[/* text */ 't', `Gets the range of valid values for the specified field.
@@ -220,31 +245,6 @@ DocsCollector.collect('java.time.temporal.TemporalAccessor', [
 			],
 			[/* return description */
 				[/* text */ 't', `the range of valid values for the field, not null`]
-			]
-		]],
-		[/* method */ 'isSupported(java.time.temporal.TemporalField)', [
-			[/* method description */
-				[/* text */ 't', `Checks if the specified field is supported.
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', `
- This checks if the date-time can be queried for the specified field.
- If false, then calling the `],
-					[/* reference */ 'r', `#range(java.time.temporal.TemporalField)`, `range`],
-					[/* text */ 't', ` and `],
-					[/* reference */ 'r', `#get(java.time.temporal.TemporalField)`, `get`],
-					[/* text */ 't', `
- methods will throw an exception.`]
-				]]
-			],
-			[/* parameters */
-				[/* parameter */ 'field', [/* parameter description */
-					[/* text */ 't', `the field to check, null returns false`]
-				]]
-			],
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `true if this date-time can be queried for the field, false if not`]
 			]
 		]]
 	],

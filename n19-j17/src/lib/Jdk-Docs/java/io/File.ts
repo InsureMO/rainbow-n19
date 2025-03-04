@@ -223,26 +223,12 @@ DocsCollector.collect('java.io.File', [
 		]]
 	],
 	[/* fields */
-		[/* field */ 'separatorChar', [
+		[/* field */ 'pathSeparator', [
 			[/* field description */
-				[/* text */ 't', `The system-dependent default name-separator character.  This field is
- initialized to contain the first character of the value of the system
- property `],
-				[/* inline code block */ 'i', `file.separator`],
-				[/* text */ 't', `.  On UNIX systems the value of this
- field is `],
-				[/* inline code block */ 'i', `'/'`],
-				[/* text */ 't', `; on Microsoft Windows systems it is `],
-				[/* inline code block */ 'i', `'\\\\'`],
-				[/* text */ 't', `.`]
-			],
-		]],
-		[/* field */ 'separator', [
-			[/* field description */
-				[/* text */ 't', `The system-dependent default name-separator character, represented as a
- string for convenience.  This string contains a single character, namely
+				[/* text */ 't', `The system-dependent path-separator character, represented as a string
+ for convenience.  This string contains a single character, namely
  `],
-				[/* text */ 't', `separatorChar`],
+				[/* text */ 't', `pathSeparatorChar`],
 				[/* text */ 't', `.`]
 			],
 		]],
@@ -264,17 +250,99 @@ DocsCollector.collect('java.io.File', [
 				[/* text */ 't', `.`]
 			],
 		]],
-		[/* field */ 'pathSeparator', [
+		[/* field */ 'separator', [
 			[/* field description */
-				[/* text */ 't', `The system-dependent path-separator character, represented as a string
- for convenience.  This string contains a single character, namely
+				[/* text */ 't', `The system-dependent default name-separator character, represented as a
+ string for convenience.  This string contains a single character, namely
  `],
-				[/* text */ 't', `pathSeparatorChar`],
+				[/* text */ 't', `separatorChar`],
+				[/* text */ 't', `.`]
+			],
+		]],
+		[/* field */ 'separatorChar', [
+			[/* field description */
+				[/* text */ 't', `The system-dependent default name-separator character.  This field is
+ initialized to contain the first character of the value of the system
+ property `],
+				[/* inline code block */ 'i', `file.separator`],
+				[/* text */ 't', `.  On UNIX systems the value of this
+ field is `],
+				[/* inline code block */ 'i', `'/'`],
+				[/* text */ 't', `; on Microsoft Windows systems it is `],
+				[/* inline code block */ 'i', `'\\\\'`],
 				[/* text */ 't', `.`]
 			],
 		]]
 	],
 	[/* constructors */
+		[/* constructor */ '<init>(java.io.File,java.lang.String)', [
+			[/* constructor description */
+				[/* text */ 't', `Creates a new `],
+				[/* inline code block */ 'i', `File`],
+				[/* text */ 't', ` instance from a parent abstract
+ pathname and a child pathname string.
+
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', ` If `],
+					[/* inline code block */ 'i', `parent`],
+					[/* text */ 't', ` is `],
+					[/* inline code block */ 'i', `null`],
+					[/* text */ 't', ` then the new
+ `],
+					[/* inline code block */ 'i', `File`],
+					[/* text */ 't', ` instance is created as if by invoking the
+ single-argument `],
+					[/* inline code block */ 'i', `File`],
+					[/* text */ 't', ` constructor on the given
+ `],
+					[/* inline code block */ 'i', `child`],
+					[/* text */ 't', ` pathname string.
+
+ `]
+				]],
+				[/* block */ 'b', [
+					[/* text */ 't', ` Otherwise the `],
+					[/* inline code block */ 'i', `parent`],
+					[/* text */ 't', ` abstract pathname is taken to
+ denote a directory, and the `],
+					[/* inline code block */ 'i', `child`],
+					[/* text */ 't', ` pathname string is taken
+ to denote either a directory or a file.  If the `],
+					[/* inline code block */ 'i', `child`],
+					[/* text */ 't', `
+ pathname string is absolute then it is converted into a relative
+ pathname in a system-dependent way.  If `],
+					[/* inline code block */ 'i', `parent`],
+					[/* text */ 't', ` is the empty
+ abstract pathname then the new `],
+					[/* inline code block */ 'i', `File`],
+					[/* text */ 't', ` instance is created by
+ converting `],
+					[/* inline code block */ 'i', `child`],
+					[/* text */ 't', ` into an abstract pathname and resolving
+ the result against a system-dependent default directory.  Otherwise each
+ pathname string is converted into an abstract pathname and the child
+ abstract pathname is resolved against the parent.`]
+				]]
+			],
+			[/* parameters */
+				[/* parameter */ 'parent', [/* parameter description */
+					[/* text */ 't', `The parent abstract pathname`]
+				]],
+				[/* parameter */ 'child', [/* parameter description */
+					[/* text */ 't', `The child pathname string`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
+					[/* text */ 't', `If `],
+					[/* inline code block */ 'i', `child`],
+					[/* text */ 't', ` is `],
+					[/* inline code block */ 'i', `null`]
+				]]
+			]
+		]],
 		[/* constructor */ '<init>(java.lang.String)', [
 			[/* constructor description */
 				[/* text */ 't', `Creates a new `],
@@ -430,452 +498,34 @@ DocsCollector.collect('java.io.File', [
 					[/* text */ 't', `If the preconditions on the parameter do not hold`]
 				]]
 			]
-		]],
-		[/* constructor */ '<init>(java.io.File,java.lang.String)', [
-			[/* constructor description */
-				[/* text */ 't', `Creates a new `],
-				[/* inline code block */ 'i', `File`],
-				[/* text */ 't', ` instance from a parent abstract
- pathname and a child pathname string.
-
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', ` If `],
-					[/* inline code block */ 'i', `parent`],
-					[/* text */ 't', ` is `],
-					[/* inline code block */ 'i', `null`],
-					[/* text */ 't', ` then the new
- `],
-					[/* inline code block */ 'i', `File`],
-					[/* text */ 't', ` instance is created as if by invoking the
- single-argument `],
-					[/* inline code block */ 'i', `File`],
-					[/* text */ 't', ` constructor on the given
- `],
-					[/* inline code block */ 'i', `child`],
-					[/* text */ 't', ` pathname string.
-
- `]
-				]],
-				[/* block */ 'b', [
-					[/* text */ 't', ` Otherwise the `],
-					[/* inline code block */ 'i', `parent`],
-					[/* text */ 't', ` abstract pathname is taken to
- denote a directory, and the `],
-					[/* inline code block */ 'i', `child`],
-					[/* text */ 't', ` pathname string is taken
- to denote either a directory or a file.  If the `],
-					[/* inline code block */ 'i', `child`],
-					[/* text */ 't', `
- pathname string is absolute then it is converted into a relative
- pathname in a system-dependent way.  If `],
-					[/* inline code block */ 'i', `parent`],
-					[/* text */ 't', ` is the empty
- abstract pathname then the new `],
-					[/* inline code block */ 'i', `File`],
-					[/* text */ 't', ` instance is created by
- converting `],
-					[/* inline code block */ 'i', `child`],
-					[/* text */ 't', ` into an abstract pathname and resolving
- the result against a system-dependent default directory.  Otherwise each
- pathname string is converted into an abstract pathname and the child
- abstract pathname is resolved against the parent.`]
-				]]
-			],
-			[/* parameters */
-				[/* parameter */ 'parent', [/* parameter description */
-					[/* text */ 't', `The parent abstract pathname`]
-				]],
-				[/* parameter */ 'child', [/* parameter description */
-					[/* text */ 't', `The child pathname string`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
-					[/* text */ 't', `If `],
-					[/* inline code block */ 'i', `child`],
-					[/* text */ 't', ` is `],
-					[/* inline code block */ 'i', `null`]
-				]]
-			]
 		]]
 	],
 	[/* methods */
-		[/* method */ 'getName()', [
+		[/* method */ 'canExecute()', [
 			[/* method description */
-				[/* text */ 't', `Returns the name of the file or directory denoted by this abstract
- pathname.  This is just the last name in the pathname's name
- sequence.  If the pathname's name sequence is empty, then the empty
- string is returned.`]
+				[/* text */ 't', `Tests whether the application can execute the file denoted by this
+ abstract pathname. On some platforms it may be possible to start the
+ Java virtual machine with special privileges that allow it to execute
+ files that are not marked executable. Consequently this method may return
+ `],
+				[/* inline code block */ 'i', `true`],
+				[/* text */ 't', ` even though the file does not have execute permissions.`]
 			],
 			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `The name of the file or directory denoted by this abstract
-          pathname, or the empty string if this pathname's name sequence
-          is empty`]
-			]
-		]],
-		[/* method */ 'equals(java.lang.Object)', [
-			[/* method description */
-				[/* text */ 't', `Tests this abstract pathname for equality with the given object.
- Returns `],
-				[/* inline code block */ 'i', `true`],
-				[/* text */ 't', ` if and only if the argument is not
- `],
-				[/* inline code block */ 'i', `null`],
-				[/* text */ 't', ` and is an abstract pathname that is the same as this
- abstract pathname.  Whether or not two abstract
- pathnames are equal depends upon the underlying operating system.
- On UNIX systems, alphabetic case is significant in comparing pathnames;
- on Microsoft Windows systems it is not.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'obj', [/* parameter description */
-					[/* text */ 't', `The object to be compared with this abstract pathname`]
+			[/* throws */
+				[/* throw */ 'java.lang.SecurityException', [/* throw description */
+					[/* text */ 't', `If a security manager exists and its `],
+					[/* reference */ 'r', `java.SecurityManager#checkExec(java.lang.String)`],
+					[/* text */ 't', `
+          method denies execute access to the file`]
 				]]
 			],
-			/* throws */ UDF,
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
-				[/* text */ 't', ` if and only if the objects are the same;
+				[/* text */ 't', ` if and only if the abstract pathname exists
           `],
-				[/* inline code block */ 'i', `false`],
-				[/* text */ 't', ` otherwise`]
-			]
-		]],
-		[/* method */ 'length()', [
-			[/* method description */
-				[/* text */ 't', `Returns the length of the file denoted by this abstract pathname.
- The return value is unspecified if this pathname denotes a directory.
-
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', ` Where it is required to distinguish an I/O exception from the case
- that `],
-					[/* inline code block */ 'i', `0L`],
-					[/* text */ 't', ` is returned, or where several attributes of the same file
- are required at the same time, then the `],
-					[/* reference */ 'r', `java.file.Files#readAttributes(java.nio.file.Path,java.lang.Class,java.nio.file.LinkOption...)`],
-					[/* text */ 't', ` method may be used.`]
-				]]
-			],
-			/* parameters */ UDF,
-			[/* throws */
-				[/* throw */ 'java.lang.SecurityException', [/* throw description */
-					[/* text */ 't', `If a security manager exists and its `],
-					[/* reference */ 'r', `java.SecurityManager#checkRead(java.lang.String)`],
-					[/* text */ 't', `
-          method denies read access to the file`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `The length, in bytes, of the file denoted by this abstract
-          pathname, or `],
-				[/* inline code block */ 'i', `0L`],
-				[/* text */ 't', ` if the file does not exist.  Some
-          operating systems may return `],
-				[/* inline code block */ 'i', `0L`],
-				[/* text */ 't', ` for pathnames
-          denoting system-dependent entities such as devices or pipes.`]
-			]
-		]],
-		[/* method */ 'toString()', [
-			[/* method description */
-				[/* text */ 't', `Returns the pathname string of this abstract pathname.  This is just the
- string returned by the `],
-				[/* reference */ 'r', `#getPath()`, `getPath()`],
-				[/* text */ 't', ` method.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `The string form of this abstract pathname`]
-			]
-		]],
-		[/* method */ 'hashCode()', [
-			[/* method description */
-				[/* text */ 't', `Computes a hash code for this abstract pathname.  Because equality of
- abstract pathnames is inherently system-dependent, so is the computation
- of their hash codes.  On UNIX systems, the hash code of an abstract
- pathname is equal to the exclusive `],
-				[/* text */ 't', `or`],
-				[/* text */ 't', ` of the hash code
- of its pathname string and the decimal value
- `],
-				[/* inline code block */ 'i', `1234321`],
-				[/* text */ 't', `.  On Microsoft Windows systems, the hash
- code is equal to the exclusive `],
-				[/* text */ 't', `or`],
-				[/* text */ 't', ` of the hash code of
- its pathname string converted to lower case and the decimal
- value `],
-				[/* inline code block */ 'i', `1234321`],
-				[/* text */ 't', `.  Locale is not taken into account on
- lowercasing the pathname string.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `A hash code for this abstract pathname`]
-			]
-		]],
-		[/* method */ 'isHidden()', [
-			[/* method description */
-				[/* text */ 't', `Tests whether the file named by this abstract pathname is a hidden
- file.  The exact definition of `],
-				[/* text */ 't', `hidden`],
-				[/* text */ 't', ` is system-dependent.  On
- UNIX systems, a file is considered to be hidden if its name begins with
- a period character (`],
-				[/* inline code block */ 'i', `'.'`],
-				[/* text */ 't', `).  On Microsoft Windows systems, a file is
- considered to be hidden if it has been marked as such in the filesystem.`]
-			],
-			/* parameters */ UDF,
-			[/* throws */
-				[/* throw */ 'java.lang.SecurityException', [/* throw description */
-					[/* text */ 't', `If a security manager exists and its `],
-					[/* reference */ 'r', `java.SecurityManager#checkRead(java.lang.String)`],
-					[/* text */ 't', `
-          method denies read access to the file`]
-				]]
-			],
-			[/* return description */
-				[/* inline code block */ 'i', `true`],
-				[/* text */ 't', ` if and only if the file denoted by this
-          abstract pathname is hidden according to the conventions of the
-          underlying platform`]
-			]
-		]],
-		[/* method */ 'compareTo(java.io.File)', [
-			[/* method description */
-				[/* text */ 't', `Compares two abstract pathnames lexicographically.  The ordering
- defined by this method depends upon the underlying system.  On UNIX
- systems, alphabetic case is significant in comparing pathnames; on
- Microsoft Windows systems it is not.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'pathname', [/* parameter description */
-					[/* text */ 't', `The abstract pathname to be compared to this abstract
-                    pathname`]
-				]]
-			],
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `Zero if the argument is equal to this abstract pathname, a
-          value less than zero if this abstract pathname is
-          lexicographically less than the argument, or a value greater
-          than zero if this abstract pathname is lexicographically
-          greater than the argument`]
-			]
-		]],
-		[/* method */ 'list()', [
-			[/* method description */
-				[/* text */ 't', `Returns an array of strings naming the files and directories in the
- directory denoted by this abstract pathname.
-
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', ` If this abstract pathname does not denote a directory, then this
- method returns `],
-					[/* inline code block */ 'i', `null`],
-					[/* text */ 't', `.  Otherwise an array of strings is
- returned, one for each file or directory in the directory.  Names
- denoting the directory itself and the directory's parent directory are
- not included in the result.  Each string is a file name rather than a
- complete path.
-
- `]
-				]],
-				[/* block */ 'b', ` There is no guarantee that the name strings in the resulting array
- will appear in any specific order; they are not, in particular,
- guaranteed to appear in alphabetical order.
-
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', ` Note that the `],
-					[/* reference */ 'r', `java.nio.file.Files`],
-					[/* text */ 't', ` class defines the `],
-					[/* reference */ 'r', `java.file.Files#newDirectoryStream(java.nio.file.Path)`],
-					[/* text */ 't', ` method to
- open a directory and iterate over the names of the files in the directory.
- This may use less resources when working with very large directories, and
- may be more responsive when working with remote directories.`]
-				]]
-			],
-			/* parameters */ UDF,
-			[/* throws */
-				[/* throw */ 'java.lang.SecurityException', [/* throw description */
-					[/* text */ 't', `If a security manager exists and its `],
-					[/* reference */ 'r', `java.SecurityManager#checkRead(java.lang.String)`],
-					[/* text */ 't', ` method denies read access to
-          the directory`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `An array of strings naming the files and directories in the
-          directory denoted by this abstract pathname.  The array will be
-          empty if the directory is empty.  Returns `],
-				[/* inline code block */ 'i', `null`],
-				[/* text */ 't', ` if
-          this abstract pathname does not denote a directory, or if an
-          I/O error occurs.`]
-			]
-		]],
-		[/* method */ 'list(java.io.FilenameFilter)', [
-			[/* method description */
-				[/* text */ 't', `Returns an array of strings naming the files and directories in the
- directory denoted by this abstract pathname that satisfy the specified
- filter.  The behavior of this method is the same as that of the
- `],
-				[/* reference */ 'r', `#list()`, `list()`],
-				[/* text */ 't', ` method, except that the strings in the returned array
- must satisfy the filter.  If the given `],
-				[/* inline code block */ 'i', `filter`],
-				[/* text */ 't', ` is `],
-				[/* inline code block */ 'i', `null`],
-				[/* text */ 't', `
- then all names are accepted.  Otherwise, a name satisfies the filter if
- and only if the value `],
-				[/* inline code block */ 'i', `true`],
-				[/* text */ 't', ` results when the `],
-				[/* reference */ 'r', `.FilenameFilter#accept(java.io.File,java.lang.String)`],
-				[/* text */ 't', ` method
- of the filter is invoked on this abstract pathname and the name of a
- file or directory in the directory that it denotes.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'filter', [/* parameter description */
-					[/* text */ 't', `A filename filter`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.SecurityException', [/* throw description */
-					[/* text */ 't', `If a security manager exists and its `],
-					[/* reference */ 'r', `java.SecurityManager#checkRead(java.lang.String)`],
-					[/* text */ 't', ` method denies read access to
-          the directory`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `An array of strings naming the files and directories in the
-          directory denoted by this abstract pathname that were accepted
-          by the given `],
-				[/* inline code block */ 'i', `filter`],
-				[/* text */ 't', `.  The array will be empty if the
-          directory is empty or if no names were accepted by the filter.
-          Returns `],
-				[/* inline code block */ 'i', `null`],
-				[/* text */ 't', ` if this abstract pathname does not denote
-          a directory, or if an I/O error occurs.`]
-			]
-		]],
-		[/* method */ 'isAbsolute()', [
-			[/* method description */
-				[/* text */ 't', `Tests whether this abstract pathname is absolute.  The definition of
- absolute pathname is system dependent.  On UNIX systems, a pathname is
- absolute if its prefix is `],
-				[/* inline code block */ 'i', `"/"`],
-				[/* text */ 't', `.  On Microsoft Windows systems, a
- pathname is absolute if its prefix is a drive specifier followed by
- `],
-				[/* inline code block */ 'i', `"\\\\"`],
-				[/* text */ 't', `, or if its prefix is `],
-				[/* inline code block */ 'i', `"\\\\\\\\"`],
-				[/* text */ 't', `.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* inline code block */ 'i', `true`],
-				[/* text */ 't', ` if this abstract pathname is absolute,
-          `],
-				[/* inline code block */ 'i', `false`],
-				[/* text */ 't', ` otherwise`]
-			]
-		]],
-		[/* method */ 'getParent()', [
-			[/* method description */
-				[/* text */ 't', `Returns the pathname string of this abstract pathname's parent, or
- `],
-				[/* inline code block */ 'i', `null`],
-				[/* text */ 't', ` if this pathname does not name a parent directory.
-
- `],
-				[/* block */ 'b', `parent`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `The pathname string of the parent directory named by this
-          abstract pathname, or `],
-				[/* inline code block */ 'i', `null`],
-				[/* text */ 't', ` if this pathname
-          does not name a parent`]
-			]
-		]],
-		[/* method */ 'delete()', [
-			[/* method description */
-				[/* text */ 't', `Deletes the file or directory denoted by this abstract pathname.  If
- this pathname denotes a directory, then the directory must be empty in
- order to be deleted.
-
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', ` Note that the `],
-					[/* reference */ 'r', `java.nio.file.Files`],
-					[/* text */ 't', ` class defines the `],
-					[/* reference */ 'r', `java.file.Files#delete(java.nio.file.Path)`],
-					[/* text */ 't', ` method to throw an `],
-					[/* reference */ 'r', `java.io.IOException`],
-					[/* text */ 't', `
- when a file cannot be deleted. This is useful for error reporting and to
- diagnose why a file cannot be deleted.`]
-				]]
-			],
-			/* parameters */ UDF,
-			[/* throws */
-				[/* throw */ 'java.lang.SecurityException', [/* throw description */
-					[/* text */ 't', `If a security manager exists and its `],
-					[/* reference */ 'r', `java.SecurityManager#checkDelete(java.lang.String)`],
-					[/* text */ 't', ` method denies
-          delete access to the file`]
-				]]
-			],
-			[/* return description */
-				[/* inline code block */ 'i', `true`],
-				[/* text */ 't', ` if and only if the file or directory is
-          successfully deleted; `],
-				[/* inline code block */ 'i', `false`],
-				[/* text */ 't', ` otherwise`]
-			]
-		]],
-		[/* method */ 'setReadOnly()', [
-			[/* method description */
-				[/* text */ 't', `Marks the file or directory named by this abstract pathname so that
- only read operations are allowed. After invoking this method the file
- or directory will not change until it is either deleted or marked
- to allow write access. On some platforms it may be possible to start the
- Java virtual machine with special privileges that allow it to modify
- files that are marked read-only. Whether or not a read-only file or
- directory may be deleted depends upon the underlying system.`]
-			],
-			/* parameters */ UDF,
-			[/* throws */
-				[/* throw */ 'java.lang.SecurityException', [/* throw description */
-					[/* text */ 't', `If a security manager exists and its `],
-					[/* reference */ 'r', `java.SecurityManager#checkWrite(java.lang.String)`],
-					[/* text */ 't', `
-          method denies write access to the named file`]
-				]]
-			],
-			[/* return description */
-				[/* inline code block */ 'i', `true`],
-				[/* text */ 't', ` if and only if the operation succeeded;
-          `],
-				[/* inline code block */ 'i', `false`],
-				[/* text */ 't', ` otherwise`]
+				[/* text */ 't', `and`],
+				[/* text */ 't', ` the application is allowed to execute the file`]
 			]
 		]],
 		[/* method */ 'canRead()', [
@@ -908,138 +558,35 @@ DocsCollector.collect('java.io.File', [
 				[/* text */ 't', ` otherwise`]
 			]
 		]],
-		[/* method */ 'getPath()', [
+		[/* method */ 'canWrite()', [
 			[/* method description */
-				[/* text */ 't', `Converts this abstract pathname into a pathname string.  The resulting
- string uses the `],
-				[/* text */ 't', `default name-separator character`],
-				[/* text */ 't', ` to
- separate the names in the name sequence.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `The string form of this abstract pathname`]
-			]
-		]],
-		[/* method */ 'toURI()', [
-			[/* method description */
-				[/* text */ 't', `Constructs a `],
-				[/* inline code block */ 'i', `file:`],
-				[/* text */ 't', ` URI that represents this abstract pathname.
-
+				[/* text */ 't', `Tests whether the application can modify the file denoted by this
+ abstract pathname. On some platforms it may be possible to start the
+ Java virtual machine with special privileges that allow it to modify
+ files that are marked read-only. Consequently this method may return
  `],
-				[/* block */ 'b', ` The exact form of the URI is system-dependent.  If it can be
- determined that the file denoted by this abstract pathname is a
- directory, then the resulting URI will end with a slash.
-
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', ` For a given abstract pathname `],
-					[/* text */ 't', `f`],
-					[/* text */ 't', `, it is guaranteed that
-
- `]
-				]],
-				[/* block */ 'b', [
-					[/* inline code block */ 'i', `new File(`],
-					[/* text */ 't', ` f`],
-					[/* inline code block */ 'i', `.toURI()).equals(`],
-					[/* text */ 't', ` f`],
-					[/* inline code block */ 'i', `.getAbsoluteFile())`]
-				]],
-				[/* text */ 't', `
-
- so long as the original abstract pathname, the URI, and the new abstract
- pathname are all created in (possibly different invocations of) the same
- Java virtual machine.  Due to the system-dependent nature of abstract
- pathnames, however, this relationship typically does not hold when a
- `],
-				[/* inline code block */ 'i', `file:`],
-				[/* text */ 't', ` URI that is created in a virtual machine on one operating
- system is converted into an abstract pathname in a virtual machine on a
- different operating system.
-
- `],
-				[/* block */ 'b', ''],
-				[/* block */ 'b', [
-					[/* text */ 't', ` Note that when this abstract pathname represents a UNC pathname then
- all components of the UNC (including the server name component) are encoded
- in the `],
-					[/* inline code block */ 'i', `URI`],
-					[/* text */ 't', ` path. The authority component is undefined, meaning
- that it is represented as `],
-					[/* inline code block */ 'i', `null`],
-					[/* text */ 't', `. The `],
-					[/* reference */ 'r', `java.nio.file.Path`],
-					[/* text */ 't', ` class defines the
- `],
-					[/* reference */ 'r', `java.file.Path#toUri()`],
-					[/* text */ 't', ` method to encode the server name in the authority
- component of the resulting `],
-					[/* inline code block */ 'i', `URI`],
-					[/* text */ 't', `. The `],
-					[/* reference */ 'r', `#toPath()`, `toPath`],
-					[/* text */ 't', ` method
- may be used to obtain a `],
-					[/* inline code block */ 'i', `Path`],
-					[/* text */ 't', ` representing this abstract pathname.`]
-				]]
-			],
-			/* parameters */ UDF,
-			[/* throws */
-				[/* throw */ 'java.lang.SecurityException', [/* throw description */
-					[/* text */ 't', `If a required system property value cannot
- be accessed.`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `An absolute, hierarchical URI with a scheme equal to
-          `],
-				[/* inline code block */ 'i', `"file"`],
-				[/* text */ 't', `, a path representing this abstract pathname,
-          and undefined authority, query, and fragment components`]
-			]
-		]],
-		[/* method */ 'toURL()', [
-			[/* method description */
-				[/* text */ 't', `Converts this abstract pathname into a `],
-				[/* inline code block */ 'i', `file:`],
-				[/* text */ 't', ` URL.  The
- exact form of the URL is system-dependent.  If it can be determined that
- the file denoted by this abstract pathname is a directory, then the
- resulting URL will end with a slash.`]
-			],
-			/* parameters */ UDF,
-			[/* throws */
-				[/* throw */ 'java.net.MalformedURLException', [/* throw description */
-					[/* text */ 't', `If the path cannot be parsed as a URL`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `A URL object representing the equivalent file URL`]
-			]
-		]],
-		[/* method */ 'exists()', [
-			[/* method description */
-				[/* text */ 't', `Tests whether the file or directory denoted by this abstract pathname
- exists.`]
+				[/* inline code block */ 'i', `true`],
+				[/* text */ 't', ` even though the file is marked read-only.`]
 			],
 			/* parameters */ UDF,
 			[/* throws */
 				[/* throw */ 'java.lang.SecurityException', [/* throw description */
 					[/* text */ 't', `If a security manager exists and its `],
-					[/* reference */ 'r', `java.SecurityManager#checkRead(java.lang.String)`],
+					[/* reference */ 'r', `java.SecurityManager#checkWrite(java.lang.String)`],
 					[/* text */ 't', `
-          method denies read access to the file or directory`]
+          method denies write access to the file`]
 				]]
 			],
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
-				[/* text */ 't', ` if and only if the file or directory denoted
-          by this abstract pathname exists; `],
+				[/* text */ 't', ` if and only if the file system actually
+          contains a file denoted by this abstract pathname `],
+				[/* text */ 't', `and`],
+				[/* text */ 't', `
+          the application is allowed to write to the file;
+          `],
 				[/* inline code block */ 'i', `false`],
-				[/* text */ 't', ` otherwise`]
+				[/* text */ 't', ` otherwise.`]
 			]
 		]],
 		[/* method */ 'createNewFile()', [
@@ -1081,6 +628,268 @@ DocsCollector.collect('java.io.File', [
 				[/* inline code block */ 'i', `false`],
 				[/* text */ 't', ` if the named file
           already exists`]
+			]
+		]],
+		[/* method */ 'delete()', [
+			[/* method description */
+				[/* text */ 't', `Deletes the file or directory denoted by this abstract pathname.  If
+ this pathname denotes a directory, then the directory must be empty in
+ order to be deleted.
+
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', ` Note that the `],
+					[/* reference */ 'r', `java.nio.file.Files`],
+					[/* text */ 't', ` class defines the `],
+					[/* reference */ 'r', `java.file.Files#delete(java.nio.file.Path)`],
+					[/* text */ 't', ` method to throw an `],
+					[/* reference */ 'r', `java.io.IOException`],
+					[/* text */ 't', `
+ when a file cannot be deleted. This is useful for error reporting and to
+ diagnose why a file cannot be deleted.`]
+				]]
+			],
+			/* parameters */ UDF,
+			[/* throws */
+				[/* throw */ 'java.lang.SecurityException', [/* throw description */
+					[/* text */ 't', `If a security manager exists and its `],
+					[/* reference */ 'r', `java.SecurityManager#checkDelete(java.lang.String)`],
+					[/* text */ 't', ` method denies
+          delete access to the file`]
+				]]
+			],
+			[/* return description */
+				[/* inline code block */ 'i', `true`],
+				[/* text */ 't', ` if and only if the file or directory is
+          successfully deleted; `],
+				[/* inline code block */ 'i', `false`],
+				[/* text */ 't', ` otherwise`]
+			]
+		]],
+		[/* method */ 'equals(java.lang.Object)', [
+			[/* method description */
+				[/* text */ 't', `Tests this abstract pathname for equality with the given object.
+ Returns `],
+				[/* inline code block */ 'i', `true`],
+				[/* text */ 't', ` if and only if the argument is not
+ `],
+				[/* inline code block */ 'i', `null`],
+				[/* text */ 't', ` and is an abstract pathname that is the same as this
+ abstract pathname.  Whether or not two abstract
+ pathnames are equal depends upon the underlying operating system.
+ On UNIX systems, alphabetic case is significant in comparing pathnames;
+ on Microsoft Windows systems it is not.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'obj', [/* parameter description */
+					[/* text */ 't', `The object to be compared with this abstract pathname`]
+				]]
+			],
+			/* throws */ UDF,
+			[/* return description */
+				[/* inline code block */ 'i', `true`],
+				[/* text */ 't', ` if and only if the objects are the same;
+          `],
+				[/* inline code block */ 'i', `false`],
+				[/* text */ 't', ` otherwise`]
+			]
+		]],
+		[/* method */ 'exists()', [
+			[/* method description */
+				[/* text */ 't', `Tests whether the file or directory denoted by this abstract pathname
+ exists.`]
+			],
+			/* parameters */ UDF,
+			[/* throws */
+				[/* throw */ 'java.lang.SecurityException', [/* throw description */
+					[/* text */ 't', `If a security manager exists and its `],
+					[/* reference */ 'r', `java.SecurityManager#checkRead(java.lang.String)`],
+					[/* text */ 't', `
+          method denies read access to the file or directory`]
+				]]
+			],
+			[/* return description */
+				[/* inline code block */ 'i', `true`],
+				[/* text */ 't', ` if and only if the file or directory denoted
+          by this abstract pathname exists; `],
+				[/* inline code block */ 'i', `false`],
+				[/* text */ 't', ` otherwise`]
+			]
+		]],
+		[/* method */ 'isAbsolute()', [
+			[/* method description */
+				[/* text */ 't', `Tests whether this abstract pathname is absolute.  The definition of
+ absolute pathname is system dependent.  On UNIX systems, a pathname is
+ absolute if its prefix is `],
+				[/* inline code block */ 'i', `"/"`],
+				[/* text */ 't', `.  On Microsoft Windows systems, a
+ pathname is absolute if its prefix is a drive specifier followed by
+ `],
+				[/* inline code block */ 'i', `"\\\\"`],
+				[/* text */ 't', `, or if its prefix is `],
+				[/* inline code block */ 'i', `"\\\\\\\\"`],
+				[/* text */ 't', `.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* inline code block */ 'i', `true`],
+				[/* text */ 't', ` if this abstract pathname is absolute,
+          `],
+				[/* inline code block */ 'i', `false`],
+				[/* text */ 't', ` otherwise`]
+			]
+		]],
+		[/* method */ 'isDirectory()', [
+			[/* method description */
+				[/* text */ 't', `Tests whether the file denoted by this abstract pathname is a
+ directory.
+
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', ` Where it is required to distinguish an I/O exception from the case
+ that the file is not a directory, or where several attributes of the
+ same file are required at the same time, then the `],
+					[/* reference */ 'r', `java.file.Files#readAttributes(java.nio.file.Path,java.lang.Class,java.nio.file.LinkOption...)`],
+					[/* text */ 't', ` method may be used.`]
+				]]
+			],
+			/* parameters */ UDF,
+			[/* throws */
+				[/* throw */ 'java.lang.SecurityException', [/* throw description */
+					[/* text */ 't', `If a security manager exists and its `],
+					[/* reference */ 'r', `java.SecurityManager#checkRead(java.lang.String)`],
+					[/* text */ 't', `
+          method denies read access to the file`]
+				]]
+			],
+			[/* return description */
+				[/* inline code block */ 'i', `true`],
+				[/* text */ 't', ` if and only if the file denoted by this
+          abstract pathname exists `],
+				[/* text */ 't', `and`],
+				[/* text */ 't', ` is a directory;
+          `],
+				[/* inline code block */ 'i', `false`],
+				[/* text */ 't', ` otherwise`]
+			]
+		]],
+		[/* method */ 'isFile()', [
+			[/* method description */
+				[/* text */ 't', `Tests whether the file denoted by this abstract pathname is a normal
+ file.  A file is `],
+				[/* text */ 't', `normal`],
+				[/* text */ 't', ` if it is not a directory and, in
+ addition, satisfies other system-dependent criteria.  Any non-directory
+ file created by a Java application is guaranteed to be a normal file.
+
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', ` Where it is required to distinguish an I/O exception from the case
+ that the file is not a normal file, or where several attributes of the
+ same file are required at the same time, then the `],
+					[/* reference */ 'r', `java.file.Files#readAttributes(java.nio.file.Path,java.lang.Class,java.nio.file.LinkOption...)`],
+					[/* text */ 't', ` method may be used.`]
+				]]
+			],
+			/* parameters */ UDF,
+			[/* throws */
+				[/* throw */ 'java.lang.SecurityException', [/* throw description */
+					[/* text */ 't', `If a security manager exists and its `],
+					[/* reference */ 'r', `java.SecurityManager#checkRead(java.lang.String)`],
+					[/* text */ 't', `
+          method denies read access to the file`]
+				]]
+			],
+			[/* return description */
+				[/* inline code block */ 'i', `true`],
+				[/* text */ 't', ` if and only if the file denoted by this
+          abstract pathname exists `],
+				[/* text */ 't', `and`],
+				[/* text */ 't', ` is a normal file;
+          `],
+				[/* inline code block */ 'i', `false`],
+				[/* text */ 't', ` otherwise`]
+			]
+		]],
+		[/* method */ 'isHidden()', [
+			[/* method description */
+				[/* text */ 't', `Tests whether the file named by this abstract pathname is a hidden
+ file.  The exact definition of `],
+				[/* text */ 't', `hidden`],
+				[/* text */ 't', ` is system-dependent.  On
+ UNIX systems, a file is considered to be hidden if its name begins with
+ a period character (`],
+				[/* inline code block */ 'i', `'.'`],
+				[/* text */ 't', `).  On Microsoft Windows systems, a file is
+ considered to be hidden if it has been marked as such in the filesystem.`]
+			],
+			/* parameters */ UDF,
+			[/* throws */
+				[/* throw */ 'java.lang.SecurityException', [/* throw description */
+					[/* text */ 't', `If a security manager exists and its `],
+					[/* reference */ 'r', `java.SecurityManager#checkRead(java.lang.String)`],
+					[/* text */ 't', `
+          method denies read access to the file`]
+				]]
+			],
+			[/* return description */
+				[/* inline code block */ 'i', `true`],
+				[/* text */ 't', ` if and only if the file denoted by this
+          abstract pathname is hidden according to the conventions of the
+          underlying platform`]
+			]
+		]],
+		[/* method */ 'mkdir()', [
+			[/* method description */
+				[/* text */ 't', `Creates the directory named by this abstract pathname.`]
+			],
+			/* parameters */ UDF,
+			[/* throws */
+				[/* throw */ 'java.lang.SecurityException', [/* throw description */
+					[/* text */ 't', `If a security manager exists and its `],
+					[/* reference */ 'r', `java.SecurityManager#checkWrite(java.lang.String)`],
+					[/* text */ 't', `
+          method does not permit the named directory to be created`]
+				]]
+			],
+			[/* return description */
+				[/* inline code block */ 'i', `true`],
+				[/* text */ 't', ` if and only if the directory was
+          created; `],
+				[/* inline code block */ 'i', `false`],
+				[/* text */ 't', ` otherwise`]
+			]
+		]],
+		[/* method */ 'mkdirs()', [
+			[/* method description */
+				[/* text */ 't', `Creates the directory named by this abstract pathname, including any
+ necessary but nonexistent parent directories.  Note that if this
+ operation fails it may have succeeded in creating some of the necessary
+ parent directories.`]
+			],
+			/* parameters */ UDF,
+			[/* throws */
+				[/* throw */ 'java.lang.SecurityException', [/* throw description */
+					[/* text */ 't', `If a security manager exists and its `],
+					[/* reference */ 'r', `java.SecurityManager#checkRead(java.lang.String)`],
+					[/* text */ 't', `
+          method does not permit verification of the existence of the
+          named directory and all necessary parent directories; or if
+          the `],
+					[/* reference */ 'r', `java.SecurityManager#checkWrite(java.lang.String)`],
+					[/* text */ 't', `
+          method does not permit the named directory and all necessary
+          parent directories to be created`]
+				]]
+			],
+			[/* return description */
+				[/* inline code block */ 'i', `true`],
+				[/* text */ 't', ` if and only if the directory was created,
+          along with all necessary parent directories; `],
+				[/* inline code block */ 'i', `false`],
+				[/* text */ 't', `
+          otherwise`]
 			]
 		]],
 		[/* method */ 'renameTo(java.io.File)', [
@@ -1138,273 +947,92 @@ DocsCollector.collect('java.io.File', [
 				[/* text */ 't', ` otherwise`]
 			]
 		]],
-		[/* method */ 'getAbsolutePath()', [
+		[/* method */ 'setExecutable(boolean)', [
 			[/* method description */
-				[/* text */ 't', `Returns the absolute pathname string of this abstract pathname.
+				[/* text */ 't', `A convenience method to set the owner's execute permission for this
+ abstract pathname. On some platforms it may be possible to start the Java
+ virtual machine with special privileges that allow it to execute files
+ that are not marked executable.
 
  `],
 				[/* block */ 'b', [
-					[/* text */ 't', ` If this abstract pathname is already absolute, then the pathname
- string is simply returned as if by the `],
-					[/* reference */ 'r', `#getPath()`, `getPath()`],
-					[/* text */ 't', `
- method.  If this abstract pathname is the empty abstract pathname then
- the pathname string of the current user directory, which is named by the
- system property `],
-					[/* inline code block */ 'i', `user.dir`],
-					[/* text */ 't', `, is returned.  Otherwise this
- pathname is resolved in a system-dependent way.  On UNIX systems, a
- relative pathname is made absolute by resolving it against the current
- user directory.  On Microsoft Windows systems, a relative pathname is made absolute
- by resolving it against the current directory of the drive named by the
- pathname, if any; if not, it is resolved against the current user
- directory.`]
-				]]
-			],
-			/* parameters */ UDF,
-			[/* throws */
-				[/* throw */ 'java.lang.SecurityException', [/* throw description */
-					[/* text */ 't', `If a required system property value cannot be accessed.`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `The absolute pathname string denoting the same file or
-          directory as this abstract pathname`]
-			]
-		]],
-		[/* method */ 'getCanonicalPath()', [
-			[/* method description */
-				[/* text */ 't', `Returns the canonical pathname string of this abstract pathname.
-
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', ` A canonical pathname is both absolute and unique.  The precise
- definition of canonical form is system-dependent.  This method first
- converts this pathname to absolute form if necessary, as if by invoking the
- `],
-					[/* reference */ 'r', `#getAbsolutePath()`, `getAbsolutePath()`],
-					[/* text */ 't', ` method, and then maps it to its unique form in a
- system-dependent way.  This typically involves removing redundant names
- such as `],
-					[/* inline code block */ 'i', `"."`],
-					[/* text */ 't', ` and `],
-					[/* inline code block */ 'i', `".."`],
-					[/* text */ 't', ` from the pathname, resolving
- symbolic links (on UNIX platforms), and converting drive letters to a
- standard case (on Microsoft Windows platforms).
-
- `]
-				]],
-				[/* block */ 'b', ` Every pathname that denotes an existing file or directory has a
- unique canonical form.  Every pathname that denotes a nonexistent file
- or directory also has a unique canonical form.  The canonical form of
- the pathname of a nonexistent file or directory may be different from
- the canonical form of the same pathname after the file or directory is
- created.  Similarly, the canonical form of the pathname of an existing
- file or directory may be different from the canonical form of the same
- pathname after the file or directory is deleted.`]
-			],
-			/* parameters */ UDF,
-			[/* throws */
-				[/* throw */ 'java.io.IOException', [/* throw description */
-					[/* text */ 't', `If an I/O error occurs, which is possible because the
-          construction of the canonical pathname may require
-          filesystem queries`]
-				]],
-				[/* throw */ 'java.lang.SecurityException', [/* throw description */
-					[/* text */ 't', `If a required system property value cannot be accessed, or
-          if a security manager exists and its `],
-					[/* reference */ 'r', `java.SecurityManager#checkRead(java.io.FileDescriptor)`],
-					[/* text */ 't', ` method denies
-          read access to the file`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `The canonical pathname string denoting the same file or
-          directory as this abstract pathname`]
-			]
-		]],
-		[/* method */ 'isDirectory()', [
-			[/* method description */
-				[/* text */ 't', `Tests whether the file denoted by this abstract pathname is a
- directory.
-
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', ` Where it is required to distinguish an I/O exception from the case
- that the file is not a directory, or where several attributes of the
- same file are required at the same time, then the `],
-					[/* reference */ 'r', `java.file.Files#readAttributes(java.nio.file.Path,java.lang.Class,java.nio.file.LinkOption...)`],
-					[/* text */ 't', ` method may be used.`]
-				]]
-			],
-			/* parameters */ UDF,
-			[/* throws */
-				[/* throw */ 'java.lang.SecurityException', [/* throw description */
-					[/* text */ 't', `If a security manager exists and its `],
-					[/* reference */ 'r', `java.SecurityManager#checkRead(java.lang.String)`],
-					[/* text */ 't', `
-          method denies read access to the file`]
-				]]
-			],
-			[/* return description */
-				[/* inline code block */ 'i', `true`],
-				[/* text */ 't', ` if and only if the file denoted by this
-          abstract pathname exists `],
-				[/* text */ 't', `and`],
-				[/* text */ 't', ` is a directory;
-          `],
-				[/* inline code block */ 'i', `false`],
-				[/* text */ 't', ` otherwise`]
-			]
-		]],
-		[/* method */ 'getAbsoluteFile()', [
-			[/* method description */
-				[/* text */ 't', `Returns the absolute form of this abstract pathname.  Equivalent to
- `],
-				[/* inline code block */ 'i', `new File(this.getAbsolutePath())`],
-				[/* text */ 't', `.`]
-			],
-			/* parameters */ UDF,
-			[/* throws */
-				[/* throw */ 'java.lang.SecurityException', [/* throw description */
-					[/* text */ 't', `If a required system property value cannot be accessed.`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `The absolute abstract pathname denoting the same file or
-          directory as this abstract pathname`]
-			]
-		]],
-		[/* method */ 'mkdir()', [
-			[/* method description */
-				[/* text */ 't', `Creates the directory named by this abstract pathname.`]
-			],
-			/* parameters */ UDF,
-			[/* throws */
-				[/* throw */ 'java.lang.SecurityException', [/* throw description */
-					[/* text */ 't', `If a security manager exists and its `],
-					[/* reference */ 'r', `java.SecurityManager#checkWrite(java.lang.String)`],
-					[/* text */ 't', `
-          method does not permit the named directory to be created`]
-				]]
-			],
-			[/* return description */
-				[/* inline code block */ 'i', `true`],
-				[/* text */ 't', ` if and only if the directory was
-          created; `],
-				[/* inline code block */ 'i', `false`],
-				[/* text */ 't', ` otherwise`]
-			]
-		]],
-		[/* method */ 'getCanonicalFile()', [
-			[/* method description */
-				[/* text */ 't', `Returns the canonical form of this abstract pathname.  Equivalent to
- `],
-				[/* inline code block */ 'i', `new File(this.getCanonicalPath())`],
-				[/* text */ 't', `.`]
-			],
-			/* parameters */ UDF,
-			[/* throws */
-				[/* throw */ 'java.io.IOException', [/* throw description */
-					[/* text */ 't', `If an I/O error occurs, which is possible because the
-          construction of the canonical pathname may require
-          filesystem queries`]
-				]],
-				[/* throw */ 'java.lang.SecurityException', [/* throw description */
-					[/* text */ 't', `If a required system property value cannot be accessed, or
-          if a security manager exists and its `],
-					[/* reference */ 'r', `java.SecurityManager#checkRead(java.io.FileDescriptor)`],
-					[/* text */ 't', ` method denies
-          read access to the file`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `The canonical pathname string denoting the same file or
-          directory as this abstract pathname`]
-			]
-		]],
-		[/* method */ 'getParentFile()', [
-			[/* method description */
-				[/* text */ 't', `Returns the abstract pathname of this abstract pathname's parent,
- or `],
-				[/* inline code block */ 'i', `null`],
-				[/* text */ 't', ` if this pathname does not name a parent
- directory.
-
- `],
-				[/* block */ 'b', `parent`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `The abstract pathname of the parent directory named by this
-          abstract pathname, or `],
-				[/* inline code block */ 'i', `null`],
-				[/* text */ 't', ` if this pathname
-          does not name a parent`]
-			]
-		]],
-		[/* method */ 'mkdirs()', [
-			[/* method description */
-				[/* text */ 't', `Creates the directory named by this abstract pathname, including any
- necessary but nonexistent parent directories.  Note that if this
- operation fails it may have succeeded in creating some of the necessary
- parent directories.`]
-			],
-			/* parameters */ UDF,
-			[/* throws */
-				[/* throw */ 'java.lang.SecurityException', [/* throw description */
-					[/* text */ 't', `If a security manager exists and its `],
-					[/* reference */ 'r', `java.SecurityManager#checkRead(java.lang.String)`],
-					[/* text */ 't', `
-          method does not permit verification of the existence of the
-          named directory and all necessary parent directories; or if
-          the `],
-					[/* reference */ 'r', `java.SecurityManager#checkWrite(java.lang.String)`],
-					[/* text */ 't', `
-          method does not permit the named directory and all necessary
-          parent directories to be created`]
-				]]
-			],
-			[/* return description */
-				[/* inline code block */ 'i', `true`],
-				[/* text */ 't', ` if and only if the directory was created,
-          along with all necessary parent directories; `],
-				[/* inline code block */ 'i', `false`],
-				[/* text */ 't', `
-          otherwise`]
-			]
-		]],
-		[/* method */ 'setWritable(boolean)', [
-			[/* method description */
-				[/* text */ 't', `A convenience method to set the owner's write permission for this abstract
- pathname. On some platforms it may be possible to start the Java virtual
- machine with special privileges that allow it to modify files that
- disallow write operations.
-
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', ` An invocation of this method of the form `],
-					[/* inline code block */ 'i', `file.setWritable(arg)`],
+					[/* text */ 't', `An invocation of this method of the form `],
+					[/* inline code block */ 'i', `file.setExcutable(arg)`],
 					[/* text */ 't', `
  behaves in exactly the same way as the invocation
 
  `]
 				]],
 				[/* code block */ 'c', [
-					[/* inline code block */ 'i', `file.setWritable(arg, true)`]
+					[/* inline code block */ 'i', `file.setExecutable(arg, true)`]
 				]],
 				[/* block */ 'b', '']
 			],
 			[/* parameters */
-				[/* parameter */ 'writable', [/* parameter description */
+				[/* parameter */ 'executable', [/* parameter description */
 					[/* text */ 't', `If `],
 					[/* inline code block */ 'i', `true`],
-					[/* text */ 't', `, sets the access permission to allow write
+					[/* text */ 't', `, sets the access permission to allow execute
           operations; if `],
 					[/* inline code block */ 'i', `false`],
-					[/* text */ 't', ` to disallow write operations`]
+					[/* text */ 't', ` to disallow execute operations`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.lang.SecurityException', [/* throw description */
+					[/* text */ 't', `If a security manager exists and its `],
+					[/* reference */ 'r', `java.SecurityManager#checkWrite(java.lang.String)`],
+					[/* text */ 't', `
+          method denies write access to the file`]
+				]]
+			],
+			[/* return description */
+				[/* inline code block */ 'i', `true`],
+				[/* text */ 't', ` if and only if the operation succeeded.  The
+           operation will fail if the user does not have permission to
+           change the access permissions of this abstract pathname.  If
+           `],
+				[/* inline code block */ 'i', `executable`],
+				[/* text */ 't', ` is `],
+				[/* inline code block */ 'i', `false`],
+				[/* text */ 't', ` and the underlying
+           file system does not implement an execute permission, then the
+           operation will fail.`]
+			]
+		]],
+		[/* method */ 'setExecutable(boolean,boolean)', [
+			[/* method description */
+				[/* text */ 't', `Sets the owner's or everybody's execute permission for this abstract
+ pathname. On some platforms it may be possible to start the Java virtual
+ machine with special privileges that allow it to execute files that are
+ not marked executable.
+
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', ` The `],
+					[/* reference */ 'r', `java.nio.file.Files`],
+					[/* text */ 't', ` class defines methods that operate on
+ file attributes including file permissions. This may be used when finer
+ manipulation of file permissions is required.`]
+				]]
+			],
+			[/* parameters */
+				[/* parameter */ 'executable', [/* parameter description */
+					[/* text */ 't', `If `],
+					[/* inline code block */ 'i', `true`],
+					[/* text */ 't', `, sets the access permission to allow execute
+          operations; if `],
+					[/* inline code block */ 'i', `false`],
+					[/* text */ 't', ` to disallow execute operations`]
+				]],
+				[/* parameter */ 'ownerOnly', [/* parameter description */
+					[/* text */ 't', `If `],
+					[/* inline code block */ 'i', `true`],
+					[/* text */ 't', `, the execute permission applies only to the
+          owner's execute permission; otherwise, it applies to everybody.
+          If the underlying file system can not distinguish the owner's
+          execute permission from that of others, then the permission will
+          apply to everybody, regardless of this value.`]
 				]]
 			],
 			[/* throws */
@@ -1419,45 +1047,45 @@ DocsCollector.collect('java.io.File', [
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if and only if the operation succeeded.  The
           operation will fail if the user does not have permission to
-          change the access permissions of this abstract pathname.`]
+          change the access permissions of this abstract pathname.  If
+          `],
+				[/* inline code block */ 'i', `executable`],
+				[/* text */ 't', ` is `],
+				[/* inline code block */ 'i', `false`],
+				[/* text */ 't', ` and the underlying
+          file system does not implement an execute permission, then the
+          operation will fail.`]
 			]
 		]],
-		[/* method */ 'setWritable(boolean,boolean)', [
+		[/* method */ 'setLastModified(long)', [
 			[/* method description */
-				[/* text */ 't', `Sets the owner's or everybody's write permission for this abstract
- pathname. On some platforms it may be possible to start the Java virtual
- machine with special privileges that allow it to modify files that
- disallow write operations.
+				[/* text */ 't', `Sets the last-modified time of the file or directory named by this
+ abstract pathname.
 
  `],
 				[/* block */ 'b', [
-					[/* text */ 't', ` The `],
-					[/* reference */ 'r', `java.nio.file.Files`],
-					[/* text */ 't', ` class defines methods that operate on
- file attributes including file permissions. This may be used when finer
- manipulation of file permissions is required.`]
+					[/* text */ 't', ` All platforms support file-modification times to the nearest second,
+ but some provide more precision.  The argument will be truncated to fit
+ the supported precision.  If the operation succeeds and no intervening
+ operations on the file take place, then the next invocation of the
+ `],
+					[/* reference */ 'r', `#lastModified()`, `lastModified()`],
+					[/* text */ 't', ` method will return the (possibly
+ truncated) `],
+					[/* inline code block */ 'i', `time`],
+					[/* text */ 't', ` argument that was passed to this method.`]
 				]]
 			],
 			[/* parameters */
-				[/* parameter */ 'writable', [/* parameter description */
-					[/* text */ 't', `If `],
-					[/* inline code block */ 'i', `true`],
-					[/* text */ 't', `, sets the access permission to allow write
-          operations; if `],
-					[/* inline code block */ 'i', `false`],
-					[/* text */ 't', ` to disallow write operations`]
-				]],
-				[/* parameter */ 'ownerOnly', [/* parameter description */
-					[/* text */ 't', `If `],
-					[/* inline code block */ 'i', `true`],
-					[/* text */ 't', `, the write permission applies only to the
-          owner's write permission; otherwise, it applies to everybody.  If
-          the underlying file system can not distinguish the owner's write
-          permission from that of others, then the permission will apply to
-          everybody, regardless of this value.`]
+				[/* parameter */ 'time', [/* parameter description */
+					[/* text */ 't', `The new last-modified time, measured in milliseconds since
+               the epoch (00:00:00 GMT, January 1, 1970)`]
 				]]
 			],
 			[/* throws */
+				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
+					[/* text */ 't', `If the argument is negative`]
+				]],
 				[/* throw */ 'java.lang.SecurityException', [/* throw description */
 					[/* text */ 't', `If a security manager exists and its `],
 					[/* reference */ 'r', `java.SecurityManager#checkWrite(java.lang.String)`],
@@ -1467,9 +1095,10 @@ DocsCollector.collect('java.io.File', [
 			],
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
-				[/* text */ 't', ` if and only if the operation succeeded. The
-          operation will fail if the user does not have permission to change
-          the access permissions of this abstract pathname.`]
+				[/* text */ 't', ` if and only if the operation succeeded;
+          `],
+				[/* inline code block */ 'i', `false`],
+				[/* text */ 't', ` otherwise`]
 			]
 		]],
 		[/* method */ 'setReadable(boolean)', [
@@ -1582,39 +1211,62 @@ DocsCollector.collect('java.io.File', [
           operation will fail.`]
 			]
 		]],
-		[/* method */ 'setExecutable(boolean,boolean)', [
+		[/* method */ 'setReadOnly()', [
 			[/* method description */
-				[/* text */ 't', `Sets the owner's or everybody's execute permission for this abstract
+				[/* text */ 't', `Marks the file or directory named by this abstract pathname so that
+ only read operations are allowed. After invoking this method the file
+ or directory will not change until it is either deleted or marked
+ to allow write access. On some platforms it may be possible to start the
+ Java virtual machine with special privileges that allow it to modify
+ files that are marked read-only. Whether or not a read-only file or
+ directory may be deleted depends upon the underlying system.`]
+			],
+			/* parameters */ UDF,
+			[/* throws */
+				[/* throw */ 'java.lang.SecurityException', [/* throw description */
+					[/* text */ 't', `If a security manager exists and its `],
+					[/* reference */ 'r', `java.SecurityManager#checkWrite(java.lang.String)`],
+					[/* text */ 't', `
+          method denies write access to the named file`]
+				]]
+			],
+			[/* return description */
+				[/* inline code block */ 'i', `true`],
+				[/* text */ 't', ` if and only if the operation succeeded;
+          `],
+				[/* inline code block */ 'i', `false`],
+				[/* text */ 't', ` otherwise`]
+			]
+		]],
+		[/* method */ 'setWritable(boolean)', [
+			[/* method description */
+				[/* text */ 't', `A convenience method to set the owner's write permission for this abstract
  pathname. On some platforms it may be possible to start the Java virtual
- machine with special privileges that allow it to execute files that are
- not marked executable.
+ machine with special privileges that allow it to modify files that
+ disallow write operations.
 
  `],
 				[/* block */ 'b', [
-					[/* text */ 't', ` The `],
-					[/* reference */ 'r', `java.nio.file.Files`],
-					[/* text */ 't', ` class defines methods that operate on
- file attributes including file permissions. This may be used when finer
- manipulation of file permissions is required.`]
-				]]
+					[/* text */ 't', ` An invocation of this method of the form `],
+					[/* inline code block */ 'i', `file.setWritable(arg)`],
+					[/* text */ 't', `
+ behaves in exactly the same way as the invocation
+
+ `]
+				]],
+				[/* code block */ 'c', [
+					[/* inline code block */ 'i', `file.setWritable(arg, true)`]
+				]],
+				[/* block */ 'b', '']
 			],
 			[/* parameters */
-				[/* parameter */ 'executable', [/* parameter description */
+				[/* parameter */ 'writable', [/* parameter description */
 					[/* text */ 't', `If `],
 					[/* inline code block */ 'i', `true`],
-					[/* text */ 't', `, sets the access permission to allow execute
+					[/* text */ 't', `, sets the access permission to allow write
           operations; if `],
 					[/* inline code block */ 'i', `false`],
-					[/* text */ 't', ` to disallow execute operations`]
-				]],
-				[/* parameter */ 'ownerOnly', [/* parameter description */
-					[/* text */ 't', `If `],
-					[/* inline code block */ 'i', `true`],
-					[/* text */ 't', `, the execute permission applies only to the
-          owner's execute permission; otherwise, it applies to everybody.
-          If the underlying file system can not distinguish the owner's
-          execute permission from that of others, then the permission will
-          apply to everybody, regardless of this value.`]
+					[/* text */ 't', ` to disallow write operations`]
 				]]
 			],
 			[/* throws */
@@ -1629,45 +1281,42 @@ DocsCollector.collect('java.io.File', [
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if and only if the operation succeeded.  The
           operation will fail if the user does not have permission to
-          change the access permissions of this abstract pathname.  If
-          `],
-				[/* inline code block */ 'i', `executable`],
-				[/* text */ 't', ` is `],
-				[/* inline code block */ 'i', `false`],
-				[/* text */ 't', ` and the underlying
-          file system does not implement an execute permission, then the
-          operation will fail.`]
+          change the access permissions of this abstract pathname.`]
 			]
 		]],
-		[/* method */ 'setExecutable(boolean)', [
+		[/* method */ 'setWritable(boolean,boolean)', [
 			[/* method description */
-				[/* text */ 't', `A convenience method to set the owner's execute permission for this
- abstract pathname. On some platforms it may be possible to start the Java
- virtual machine with special privileges that allow it to execute files
- that are not marked executable.
+				[/* text */ 't', `Sets the owner's or everybody's write permission for this abstract
+ pathname. On some platforms it may be possible to start the Java virtual
+ machine with special privileges that allow it to modify files that
+ disallow write operations.
 
  `],
 				[/* block */ 'b', [
-					[/* text */ 't', `An invocation of this method of the form `],
-					[/* inline code block */ 'i', `file.setExcutable(arg)`],
-					[/* text */ 't', `
- behaves in exactly the same way as the invocation
-
- `]
-				]],
-				[/* code block */ 'c', [
-					[/* inline code block */ 'i', `file.setExecutable(arg, true)`]
-				]],
-				[/* block */ 'b', '']
+					[/* text */ 't', ` The `],
+					[/* reference */ 'r', `java.nio.file.Files`],
+					[/* text */ 't', ` class defines methods that operate on
+ file attributes including file permissions. This may be used when finer
+ manipulation of file permissions is required.`]
+				]]
 			],
 			[/* parameters */
-				[/* parameter */ 'executable', [/* parameter description */
+				[/* parameter */ 'writable', [/* parameter description */
 					[/* text */ 't', `If `],
 					[/* inline code block */ 'i', `true`],
-					[/* text */ 't', `, sets the access permission to allow execute
+					[/* text */ 't', `, sets the access permission to allow write
           operations; if `],
 					[/* inline code block */ 'i', `false`],
-					[/* text */ 't', ` to disallow execute operations`]
+					[/* text */ 't', ` to disallow write operations`]
+				]],
+				[/* parameter */ 'ownerOnly', [/* parameter description */
+					[/* text */ 't', `If `],
+					[/* inline code block */ 'i', `true`],
+					[/* text */ 't', `, the write permission applies only to the
+          owner's write permission; otherwise, it applies to everybody.  If
+          the underlying file system can not distinguish the owner's write
+          permission from that of others, then the permission will apply to
+          everybody, regardless of this value.`]
 				]]
 			],
 			[/* throws */
@@ -1675,92 +1324,940 @@ DocsCollector.collect('java.io.File', [
 					[/* text */ 't', `If a security manager exists and its `],
 					[/* reference */ 'r', `java.SecurityManager#checkWrite(java.lang.String)`],
 					[/* text */ 't', `
-          method denies write access to the file`]
+          method denies write access to the named file`]
 				]]
 			],
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
-				[/* text */ 't', ` if and only if the operation succeeded.  The
-           operation will fail if the user does not have permission to
-           change the access permissions of this abstract pathname.  If
-           `],
-				[/* inline code block */ 'i', `executable`],
-				[/* text */ 't', ` is `],
-				[/* inline code block */ 'i', `false`],
-				[/* text */ 't', ` and the underlying
-           file system does not implement an execute permission, then the
-           operation will fail.`]
+				[/* text */ 't', ` if and only if the operation succeeded. The
+          operation will fail if the user does not have permission to change
+          the access permissions of this abstract pathname.`]
 			]
 		]],
-		[/* method */ 'listRoots()', [
+		[/* method */ 'compareTo(java.io.File)', [
 			[/* method description */
-				[/* text */ 't', `List the available filesystem roots.
-
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', ` A particular Java platform may support zero or more
- hierarchically-organized file systems.  Each file system has a
- `],
-					[/* inline code block */ 'i', `root`],
-					[/* text */ 't', ` directory from which all other files in that file system
- can be reached.  Windows platforms, for example, have a root directory
- for each active drive; UNIX platforms have a single root directory,
- namely `],
-					[/* inline code block */ 'i', `"/"`],
-					[/* text */ 't', `.  The set of available filesystem roots is affected
- by various system-level operations such as the insertion or ejection of
- removable media and the disconnecting or unmounting of physical or
- virtual disk drives.
-
- `]
-				]],
-				[/* block */ 'b', [
-					[/* text */ 't', ` This method returns an array of `],
-					[/* inline code block */ 'i', `File`],
-					[/* text */ 't', ` objects that denote the
- root directories of the available filesystem roots.  It is guaranteed
- that the canonical pathname of any file physically present on the local
- machine will begin with one of the roots returned by this method.
-
- `]
-				]],
-				[/* block */ 'b', [
-					[/* text */ 't', ` The canonical pathname of a file that resides on some other machine
- and is accessed via a remote-filesystem protocol such as SMB or NFS may
- or may not begin with one of the roots returned by this method.  If the
- pathname of a remote file is syntactically indistinguishable from the
- pathname of a local file then it will begin with one of the roots
- returned by this method.  Thus, for example, `],
-					[/* inline code block */ 'i', `File`],
-					[/* text */ 't', ` objects
- denoting the root directories of the mapped network drives of a Windows
- platform will be returned by this method, while `],
-					[/* inline code block */ 'i', `File`],
-					[/* text */ 't', ` objects
- containing UNC pathnames will not be returned by this method.
-
- `]
-				]],
-				[/* block */ 'b', [
-					[/* text */ 't', ` Unlike most methods in this class, this method does not throw
- security exceptions.  If a security manager exists and its `],
-					[/* reference */ 'r', `java.SecurityManager#checkRead(java.lang.String)`],
-					[/* text */ 't', ` method denies read access to a
- particular root directory, then that directory will not appear in the
- result.`]
+				[/* text */ 't', `Compares two abstract pathnames lexicographically.  The ordering
+ defined by this method depends upon the underlying system.  On UNIX
+ systems, alphabetic case is significant in comparing pathnames; on
+ Microsoft Windows systems it is not.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'pathname', [/* parameter description */
+					[/* text */ 't', `The abstract pathname to be compared to this abstract
+                    pathname`]
 				]]
+			],
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `Zero if the argument is equal to this abstract pathname, a
+          value less than zero if this abstract pathname is
+          lexicographically less than the argument, or a value greater
+          than zero if this abstract pathname is lexicographically
+          greater than the argument`]
+			]
+		]],
+		[/* method */ 'hashCode()', [
+			[/* method description */
+				[/* text */ 't', `Computes a hash code for this abstract pathname.  Because equality of
+ abstract pathnames is inherently system-dependent, so is the computation
+ of their hash codes.  On UNIX systems, the hash code of an abstract
+ pathname is equal to the exclusive `],
+				[/* text */ 't', `or`],
+				[/* text */ 't', ` of the hash code
+ of its pathname string and the decimal value
+ `],
+				[/* inline code block */ 'i', `1234321`],
+				[/* text */ 't', `.  On Microsoft Windows systems, the hash
+ code is equal to the exclusive `],
+				[/* text */ 't', `or`],
+				[/* text */ 't', ` of the hash code of
+ its pathname string converted to lower case and the decimal
+ value `],
+				[/* inline code block */ 'i', `1234321`],
+				[/* text */ 't', `.  Locale is not taken into account on
+ lowercasing the pathname string.`]
 			],
 			/* parameters */ UDF,
 			/* throws */ UDF,
 			[/* return description */
-				[/* text */ 't', `An array of `],
-				[/* inline code block */ 'i', `File`],
-				[/* text */ 't', ` objects denoting the available
-          filesystem roots, or `],
+				[/* text */ 't', `A hash code for this abstract pathname`]
+			]
+		]],
+		[/* method */ 'getAbsoluteFile()', [
+			[/* method description */
+				[/* text */ 't', `Returns the absolute form of this abstract pathname.  Equivalent to
+ `],
+				[/* inline code block */ 'i', `new File(this.getAbsolutePath())`],
+				[/* text */ 't', `.`]
+			],
+			/* parameters */ UDF,
+			[/* throws */
+				[/* throw */ 'java.lang.SecurityException', [/* throw description */
+					[/* text */ 't', `If a required system property value cannot be accessed.`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `The absolute abstract pathname denoting the same file or
+          directory as this abstract pathname`]
+			]
+		]],
+		[/* method */ 'getCanonicalFile()', [
+			[/* method description */
+				[/* text */ 't', `Returns the canonical form of this abstract pathname.  Equivalent to
+ `],
+				[/* inline code block */ 'i', `new File(this.getCanonicalPath())`],
+				[/* text */ 't', `.`]
+			],
+			/* parameters */ UDF,
+			[/* throws */
+				[/* throw */ 'java.io.IOException', [/* throw description */
+					[/* text */ 't', `If an I/O error occurs, which is possible because the
+          construction of the canonical pathname may require
+          filesystem queries`]
+				]],
+				[/* throw */ 'java.lang.SecurityException', [/* throw description */
+					[/* text */ 't', `If a required system property value cannot be accessed, or
+          if a security manager exists and its `],
+					[/* reference */ 'r', `java.SecurityManager#checkRead(java.io.FileDescriptor)`],
+					[/* text */ 't', ` method denies
+          read access to the file`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `The canonical pathname string denoting the same file or
+          directory as this abstract pathname`]
+			]
+		]],
+		[/* method */ 'getParentFile()', [
+			[/* method description */
+				[/* text */ 't', `Returns the abstract pathname of this abstract pathname's parent,
+ or `],
 				[/* inline code block */ 'i', `null`],
-				[/* text */ 't', ` if the set of roots could not
-          be determined.  The array will be empty if there are no
-          filesystem roots.`]
+				[/* text */ 't', ` if this pathname does not name a parent
+ directory.
+
+ `],
+				[/* block */ 'b', `parent`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `The abstract pathname of the parent directory named by this
+          abstract pathname, or `],
+				[/* inline code block */ 'i', `null`],
+				[/* text */ 't', ` if this pathname
+          does not name a parent`]
+			]
+		]],
+		[/* method */ 'listFiles()', [
+			[/* method description */
+				[/* text */ 't', `Returns an array of abstract pathnames denoting the files in the
+ directory denoted by this abstract pathname.
+
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', ` If this abstract pathname does not denote a directory, then this
+ method returns `],
+					[/* inline code block */ 'i', `null`],
+					[/* text */ 't', `.  Otherwise an array of `],
+					[/* inline code block */ 'i', `File`],
+					[/* text */ 't', ` objects
+ is returned, one for each file or directory in the directory.  Pathnames
+ denoting the directory itself and the directory's parent directory are
+ not included in the result.  Each resulting abstract pathname is
+ constructed from this abstract pathname using the `],
+					[/* reference */ 'r', `#%3Cinit%3E(java.io.File,java.lang.String)`, `File(File, String)`],
+					[/* text */ 't', ` constructor.  Therefore if this
+ pathname is absolute then each resulting pathname is absolute; if this
+ pathname is relative then each resulting pathname will be relative to
+ the same directory.
+
+ `]
+				]],
+				[/* block */ 'b', ` There is no guarantee that the name strings in the resulting array
+ will appear in any specific order; they are not, in particular,
+ guaranteed to appear in alphabetical order.
+
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', ` Note that the `],
+					[/* reference */ 'r', `java.nio.file.Files`],
+					[/* text */ 't', ` class defines the `],
+					[/* reference */ 'r', `java.file.Files#newDirectoryStream(java.nio.file.Path)`],
+					[/* text */ 't', ` method
+ to open a directory and iterate over the names of the files in the
+ directory. This may use less resources when working with very large
+ directories.`]
+				]]
+			],
+			/* parameters */ UDF,
+			[/* throws */
+				[/* throw */ 'java.lang.SecurityException', [/* throw description */
+					[/* text */ 't', `If a security manager exists and its `],
+					[/* reference */ 'r', `java.SecurityManager#checkRead(java.lang.String)`],
+					[/* text */ 't', ` method denies read access to
+          the directory`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `An array of abstract pathnames denoting the files and
+          directories in the directory denoted by this abstract pathname.
+          The array will be empty if the directory is empty.  Returns
+          `],
+				[/* inline code block */ 'i', `null`],
+				[/* text */ 't', ` if this abstract pathname does not denote a
+          directory, or if an I/O error occurs.`]
+			]
+		]],
+		[/* method */ 'listFiles(java.io.FileFilter)', [
+			[/* method description */
+				[/* text */ 't', `Returns an array of abstract pathnames denoting the files and
+ directories in the directory denoted by this abstract pathname that
+ satisfy the specified filter.  The behavior of this method is the same
+ as that of the `],
+				[/* reference */ 'r', `#listFiles()`, `listFiles()`],
+				[/* text */ 't', ` method, except that the pathnames in
+ the returned array must satisfy the filter.  If the given `],
+				[/* inline code block */ 'i', `filter`],
+				[/* text */ 't', `
+ is `],
+				[/* inline code block */ 'i', `null`],
+				[/* text */ 't', ` then all pathnames are accepted.  Otherwise, a pathname
+ satisfies the filter if and only if the value `],
+				[/* inline code block */ 'i', `true`],
+				[/* text */ 't', ` results when
+ the `],
+				[/* reference */ 'r', `.FileFilter#accept(java.io.File)`],
+				[/* text */ 't', ` method of the
+ filter is invoked on the pathname.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'filter', [/* parameter description */
+					[/* text */ 't', `A file filter`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.lang.SecurityException', [/* throw description */
+					[/* text */ 't', `If a security manager exists and its `],
+					[/* reference */ 'r', `java.SecurityManager#checkRead(java.lang.String)`],
+					[/* text */ 't', ` method denies read access to
+          the directory`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `An array of abstract pathnames denoting the files and
+          directories in the directory denoted by this abstract pathname.
+          The array will be empty if the directory is empty.  Returns
+          `],
+				[/* inline code block */ 'i', `null`],
+				[/* text */ 't', ` if this abstract pathname does not denote a
+          directory, or if an I/O error occurs.`]
+			]
+		]],
+		[/* method */ 'listFiles(java.io.FilenameFilter)', [
+			[/* method description */
+				[/* text */ 't', `Returns an array of abstract pathnames denoting the files and
+ directories in the directory denoted by this abstract pathname that
+ satisfy the specified filter.  The behavior of this method is the same
+ as that of the `],
+				[/* reference */ 'r', `#listFiles()`, `listFiles()`],
+				[/* text */ 't', ` method, except that the pathnames in
+ the returned array must satisfy the filter.  If the given `],
+				[/* inline code block */ 'i', `filter`],
+				[/* text */ 't', `
+ is `],
+				[/* inline code block */ 'i', `null`],
+				[/* text */ 't', ` then all pathnames are accepted.  Otherwise, a pathname
+ satisfies the filter if and only if the value `],
+				[/* inline code block */ 'i', `true`],
+				[/* text */ 't', ` results when
+ the `],
+				[/* reference */ 'r', `.FilenameFilter#accept(java.io.File,java.lang.String)`],
+				[/* text */ 't', ` method of the filter is
+ invoked on this abstract pathname and the name of a file or directory in
+ the directory that it denotes.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'filter', [/* parameter description */
+					[/* text */ 't', `A filename filter`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.lang.SecurityException', [/* throw description */
+					[/* text */ 't', `If a security manager exists and its `],
+					[/* reference */ 'r', `java.SecurityManager#checkRead(java.lang.String)`],
+					[/* text */ 't', ` method denies read access to
+          the directory`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `An array of abstract pathnames denoting the files and
+          directories in the directory denoted by this abstract pathname.
+          The array will be empty if the directory is empty.  Returns
+          `],
+				[/* inline code block */ 'i', `null`],
+				[/* text */ 't', ` if this abstract pathname does not denote a
+          directory, or if an I/O error occurs.`]
+			]
+		]],
+		[/* method */ 'getAbsolutePath()', [
+			[/* method description */
+				[/* text */ 't', `Returns the absolute pathname string of this abstract pathname.
+
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', ` If this abstract pathname is already absolute, then the pathname
+ string is simply returned as if by the `],
+					[/* reference */ 'r', `#getPath()`, `getPath()`],
+					[/* text */ 't', `
+ method.  If this abstract pathname is the empty abstract pathname then
+ the pathname string of the current user directory, which is named by the
+ system property `],
+					[/* inline code block */ 'i', `user.dir`],
+					[/* text */ 't', `, is returned.  Otherwise this
+ pathname is resolved in a system-dependent way.  On UNIX systems, a
+ relative pathname is made absolute by resolving it against the current
+ user directory.  On Microsoft Windows systems, a relative pathname is made absolute
+ by resolving it against the current directory of the drive named by the
+ pathname, if any; if not, it is resolved against the current user
+ directory.`]
+				]]
+			],
+			/* parameters */ UDF,
+			[/* throws */
+				[/* throw */ 'java.lang.SecurityException', [/* throw description */
+					[/* text */ 't', `If a required system property value cannot be accessed.`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `The absolute pathname string denoting the same file or
+          directory as this abstract pathname`]
+			]
+		]],
+		[/* method */ 'getCanonicalPath()', [
+			[/* method description */
+				[/* text */ 't', `Returns the canonical pathname string of this abstract pathname.
+
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', ` A canonical pathname is both absolute and unique.  The precise
+ definition of canonical form is system-dependent.  This method first
+ converts this pathname to absolute form if necessary, as if by invoking the
+ `],
+					[/* reference */ 'r', `#getAbsolutePath()`, `getAbsolutePath()`],
+					[/* text */ 't', ` method, and then maps it to its unique form in a
+ system-dependent way.  This typically involves removing redundant names
+ such as `],
+					[/* inline code block */ 'i', `"."`],
+					[/* text */ 't', ` and `],
+					[/* inline code block */ 'i', `".."`],
+					[/* text */ 't', ` from the pathname, resolving
+ symbolic links (on UNIX platforms), and converting drive letters to a
+ standard case (on Microsoft Windows platforms).
+
+ `]
+				]],
+				[/* block */ 'b', ` Every pathname that denotes an existing file or directory has a
+ unique canonical form.  Every pathname that denotes a nonexistent file
+ or directory also has a unique canonical form.  The canonical form of
+ the pathname of a nonexistent file or directory may be different from
+ the canonical form of the same pathname after the file or directory is
+ created.  Similarly, the canonical form of the pathname of an existing
+ file or directory may be different from the canonical form of the same
+ pathname after the file or directory is deleted.`]
+			],
+			/* parameters */ UDF,
+			[/* throws */
+				[/* throw */ 'java.io.IOException', [/* throw description */
+					[/* text */ 't', `If an I/O error occurs, which is possible because the
+          construction of the canonical pathname may require
+          filesystem queries`]
+				]],
+				[/* throw */ 'java.lang.SecurityException', [/* throw description */
+					[/* text */ 't', `If a required system property value cannot be accessed, or
+          if a security manager exists and its `],
+					[/* reference */ 'r', `java.SecurityManager#checkRead(java.io.FileDescriptor)`],
+					[/* text */ 't', ` method denies
+          read access to the file`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `The canonical pathname string denoting the same file or
+          directory as this abstract pathname`]
+			]
+		]],
+		[/* method */ 'getName()', [
+			[/* method description */
+				[/* text */ 't', `Returns the name of the file or directory denoted by this abstract
+ pathname.  This is just the last name in the pathname's name
+ sequence.  If the pathname's name sequence is empty, then the empty
+ string is returned.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `The name of the file or directory denoted by this abstract
+          pathname, or the empty string if this pathname's name sequence
+          is empty`]
+			]
+		]],
+		[/* method */ 'getParent()', [
+			[/* method description */
+				[/* text */ 't', `Returns the pathname string of this abstract pathname's parent, or
+ `],
+				[/* inline code block */ 'i', `null`],
+				[/* text */ 't', ` if this pathname does not name a parent directory.
+
+ `],
+				[/* block */ 'b', `parent`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `The pathname string of the parent directory named by this
+          abstract pathname, or `],
+				[/* inline code block */ 'i', `null`],
+				[/* text */ 't', ` if this pathname
+          does not name a parent`]
+			]
+		]],
+		[/* method */ 'getPath()', [
+			[/* method description */
+				[/* text */ 't', `Converts this abstract pathname into a pathname string.  The resulting
+ string uses the `],
+				[/* text */ 't', `default name-separator character`],
+				[/* text */ 't', ` to
+ separate the names in the name sequence.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `The string form of this abstract pathname`]
+			]
+		]],
+		[/* method */ 'toString()', [
+			[/* method description */
+				[/* text */ 't', `Returns the pathname string of this abstract pathname.  This is just the
+ string returned by the `],
+				[/* reference */ 'r', `#getPath()`, `getPath()`],
+				[/* text */ 't', ` method.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `The string form of this abstract pathname`]
+			]
+		]],
+		[/* method */ 'list()', [
+			[/* method description */
+				[/* text */ 't', `Returns an array of strings naming the files and directories in the
+ directory denoted by this abstract pathname.
+
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', ` If this abstract pathname does not denote a directory, then this
+ method returns `],
+					[/* inline code block */ 'i', `null`],
+					[/* text */ 't', `.  Otherwise an array of strings is
+ returned, one for each file or directory in the directory.  Names
+ denoting the directory itself and the directory's parent directory are
+ not included in the result.  Each string is a file name rather than a
+ complete path.
+
+ `]
+				]],
+				[/* block */ 'b', ` There is no guarantee that the name strings in the resulting array
+ will appear in any specific order; they are not, in particular,
+ guaranteed to appear in alphabetical order.
+
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', ` Note that the `],
+					[/* reference */ 'r', `java.nio.file.Files`],
+					[/* text */ 't', ` class defines the `],
+					[/* reference */ 'r', `java.file.Files#newDirectoryStream(java.nio.file.Path)`],
+					[/* text */ 't', ` method to
+ open a directory and iterate over the names of the files in the directory.
+ This may use less resources when working with very large directories, and
+ may be more responsive when working with remote directories.`]
+				]]
+			],
+			/* parameters */ UDF,
+			[/* throws */
+				[/* throw */ 'java.lang.SecurityException', [/* throw description */
+					[/* text */ 't', `If a security manager exists and its `],
+					[/* reference */ 'r', `java.SecurityManager#checkRead(java.lang.String)`],
+					[/* text */ 't', ` method denies read access to
+          the directory`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `An array of strings naming the files and directories in the
+          directory denoted by this abstract pathname.  The array will be
+          empty if the directory is empty.  Returns `],
+				[/* inline code block */ 'i', `null`],
+				[/* text */ 't', ` if
+          this abstract pathname does not denote a directory, or if an
+          I/O error occurs.`]
+			]
+		]],
+		[/* method */ 'list(java.io.FilenameFilter)', [
+			[/* method description */
+				[/* text */ 't', `Returns an array of strings naming the files and directories in the
+ directory denoted by this abstract pathname that satisfy the specified
+ filter.  The behavior of this method is the same as that of the
+ `],
+				[/* reference */ 'r', `#list()`, `list()`],
+				[/* text */ 't', ` method, except that the strings in the returned array
+ must satisfy the filter.  If the given `],
+				[/* inline code block */ 'i', `filter`],
+				[/* text */ 't', ` is `],
+				[/* inline code block */ 'i', `null`],
+				[/* text */ 't', `
+ then all names are accepted.  Otherwise, a name satisfies the filter if
+ and only if the value `],
+				[/* inline code block */ 'i', `true`],
+				[/* text */ 't', ` results when the `],
+				[/* reference */ 'r', `.FilenameFilter#accept(java.io.File,java.lang.String)`],
+				[/* text */ 't', ` method
+ of the filter is invoked on this abstract pathname and the name of a
+ file or directory in the directory that it denotes.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'filter', [/* parameter description */
+					[/* text */ 't', `A filename filter`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.lang.SecurityException', [/* throw description */
+					[/* text */ 't', `If a security manager exists and its `],
+					[/* reference */ 'r', `java.SecurityManager#checkRead(java.lang.String)`],
+					[/* text */ 't', ` method denies read access to
+          the directory`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `An array of strings naming the files and directories in the
+          directory denoted by this abstract pathname that were accepted
+          by the given `],
+				[/* inline code block */ 'i', `filter`],
+				[/* text */ 't', `.  The array will be empty if the
+          directory is empty or if no names were accepted by the filter.
+          Returns `],
+				[/* inline code block */ 'i', `null`],
+				[/* text */ 't', ` if this abstract pathname does not denote
+          a directory, or if an I/O error occurs.`]
+			]
+		]],
+		[/* method */ 'toURI()', [
+			[/* method description */
+				[/* text */ 't', `Constructs a `],
+				[/* inline code block */ 'i', `file:`],
+				[/* text */ 't', ` URI that represents this abstract pathname.
+
+ `],
+				[/* block */ 'b', ` The exact form of the URI is system-dependent.  If it can be
+ determined that the file denoted by this abstract pathname is a
+ directory, then the resulting URI will end with a slash.
+
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', ` For a given abstract pathname `],
+					[/* text */ 't', `f`],
+					[/* text */ 't', `, it is guaranteed that
+
+ `]
+				]],
+				[/* block */ 'b', [
+					[/* inline code block */ 'i', `new File(`],
+					[/* text */ 't', ` f`],
+					[/* inline code block */ 'i', `.toURI()).equals(`],
+					[/* text */ 't', ` f`],
+					[/* inline code block */ 'i', `.getAbsoluteFile())`]
+				]],
+				[/* text */ 't', `
+
+ so long as the original abstract pathname, the URI, and the new abstract
+ pathname are all created in (possibly different invocations of) the same
+ Java virtual machine.  Due to the system-dependent nature of abstract
+ pathnames, however, this relationship typically does not hold when a
+ `],
+				[/* inline code block */ 'i', `file:`],
+				[/* text */ 't', ` URI that is created in a virtual machine on one operating
+ system is converted into an abstract pathname in a virtual machine on a
+ different operating system.
+
+ `],
+				[/* block */ 'b', ''],
+				[/* block */ 'b', [
+					[/* text */ 't', ` Note that when this abstract pathname represents a UNC pathname then
+ all components of the UNC (including the server name component) are encoded
+ in the `],
+					[/* inline code block */ 'i', `URI`],
+					[/* text */ 't', ` path. The authority component is undefined, meaning
+ that it is represented as `],
+					[/* inline code block */ 'i', `null`],
+					[/* text */ 't', `. The `],
+					[/* reference */ 'r', `java.nio.file.Path`],
+					[/* text */ 't', ` class defines the
+ `],
+					[/* reference */ 'r', `java.file.Path#toUri()`],
+					[/* text */ 't', ` method to encode the server name in the authority
+ component of the resulting `],
+					[/* inline code block */ 'i', `URI`],
+					[/* text */ 't', `. The `],
+					[/* reference */ 'r', `#toPath()`, `toPath`],
+					[/* text */ 't', ` method
+ may be used to obtain a `],
+					[/* inline code block */ 'i', `Path`],
+					[/* text */ 't', ` representing this abstract pathname.`]
+				]]
+			],
+			/* parameters */ UDF,
+			[/* throws */
+				[/* throw */ 'java.lang.SecurityException', [/* throw description */
+					[/* text */ 't', `If a required system property value cannot
+ be accessed.`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `An absolute, hierarchical URI with a scheme equal to
+          `],
+				[/* inline code block */ 'i', `"file"`],
+				[/* text */ 't', `, a path representing this abstract pathname,
+          and undefined authority, query, and fragment components`]
+			]
+		]],
+		[/* method */ 'toURL()', [
+			[/* method description */
+				[/* text */ 't', `Converts this abstract pathname into a `],
+				[/* inline code block */ 'i', `file:`],
+				[/* text */ 't', ` URL.  The
+ exact form of the URL is system-dependent.  If it can be determined that
+ the file denoted by this abstract pathname is a directory, then the
+ resulting URL will end with a slash.`]
+			],
+			/* parameters */ UDF,
+			[/* throws */
+				[/* throw */ 'java.net.MalformedURLException', [/* throw description */
+					[/* text */ 't', `If the path cannot be parsed as a URL`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `A URL object representing the equivalent file URL`]
+			]
+		]],
+		[/* method */ 'toPath()', [
+			[/* method description */
+				[/* text */ 't', `Returns a `],
+				[/* reference */ 'r', `java.nio.file.Path`],
+				[/* text */ 't', ` object constructed from
+ this abstract path. The resulting `],
+				[/* inline code block */ 'i', `Path`],
+				[/* text */ 't', ` is associated with the
+ `],
+				[/* reference */ 'r', `java.file.FileSystems#getDefault()`],
+				[/* text */ 't', `.
+
+ `],
+				[/* block */ 'b', ` The first invocation of this method works as if invoking it were
+ equivalent to evaluating the expression:
+ `],
+				[/* block */ 'b', [
+					[/* code block */ 'c', [
+						[/* text */ 't', `FileSystems.getDefault`],
+						[/* text */ 't', `().`],
+						[/* text */ 't', `getPath`],
+						[/* text */ 't', `(this.`],
+						[/* text */ 't', `getPath`],
+						[/* text */ 't', `());
+ `]
+					]]
+				]],
+				[/* text */ 't', `
+ Subsequent invocations of this method return the same `],
+				[/* inline code block */ 'i', `Path`],
+				[/* text */ 't', `.
+
+ `],
+				[/* block */ 'b', ''],
+				[/* block */ 'b', [
+					[/* text */ 't', ` If this abstract pathname is the empty abstract pathname then this
+ method returns a `],
+					[/* inline code block */ 'i', `Path`],
+					[/* text */ 't', ` that may be used to access the current
+ user directory.`]
+				]]
+			],
+			/* parameters */ UDF,
+			[/* throws */
+				[/* throw */ 'java.nio.file.InvalidPathException', [/* throw description */
+					[/* text */ 't', `if a `],
+					[/* inline code block */ 'i', `Path`],
+					[/* text */ 't', ` object cannot be constructed from the abstract
+          path (see `],
+					[/* reference */ 'r', `java.file.FileSystem#getPath(java.lang.String,java.lang.String...)`],
+					[/* text */ 't', `)`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `a `],
+				[/* inline code block */ 'i', `Path`],
+				[/* text */ 't', ` constructed from this abstract path`]
+			]
+		]],
+		[/* method */ 'getFreeSpace()', [
+			[/* method description */
+				[/* text */ 't', `Returns the number of unallocated bytes in the partition `],
+				[/* text */ 't', `named`],
+				[/* text */ 't', ` by this abstract path name.  If the
+ number of unallocated bytes in the partition is greater than
+ `],
+				[/* reference */ 'r', `java.Long#MAX_VALUE`],
+				[/* text */ 't', `, then `],
+				[/* inline code block */ 'i', `Long.MAX_VALUE`],
+				[/* text */ 't', ` will be returned.
+
+ `],
+				[/* block */ 'b', ` The returned number of unallocated bytes is a hint, but not
+ a guarantee, that it is possible to use most or any of these
+ bytes.  The number of unallocated bytes is most likely to be
+ accurate immediately after this call.  It is likely to be made
+ inaccurate by any external I/O operations including those made
+ on the system outside of this virtual machine.  This method
+ makes no guarantee that write operations to this file system
+ will succeed.`]
+			],
+			/* parameters */ UDF,
+			[/* throws */
+				[/* throw */ 'java.lang.SecurityException', [/* throw description */
+					[/* text */ 't', `If a security manager has been installed and it denies
+          `],
+					[/* reference */ 'r', `java.lang.RuntimePermission`],
+					[/* inline code block */ 'i', `("getFileSystemAttributes")`],
+					[/* text */ 't', `
+          or its `],
+					[/* reference */ 'r', `java.SecurityManager#checkRead(java.lang.String)`],
+					[/* text */ 't', ` method denies
+          read access to the file named by this abstract pathname`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `The number of unallocated bytes on the partition or `],
+				[/* inline code block */ 'i', `0L`],
+				[/* text */ 't', `
+          if the abstract pathname does not name a partition or if this
+          number cannot be obtained.  This value will be less than or
+          equal to the total file system size returned by
+          `],
+				[/* reference */ 'r', `#getTotalSpace()`, `getTotalSpace()`],
+				[/* text */ 't', `.`]
+			]
+		]],
+		[/* method */ 'getTotalSpace()', [
+			[/* method description */
+				[/* text */ 't', `Returns the size of the partition `],
+				[/* text */ 't', `named`],
+				[/* text */ 't', ` by this
+ abstract pathname. If the total number of bytes in the partition is
+ greater than `],
+				[/* reference */ 'r', `java.Long#MAX_VALUE`],
+				[/* text */ 't', `, then `],
+				[/* inline code block */ 'i', `Long.MAX_VALUE`],
+				[/* text */ 't', ` will be
+ returned.`]
+			],
+			/* parameters */ UDF,
+			[/* throws */
+				[/* throw */ 'java.lang.SecurityException', [/* throw description */
+					[/* text */ 't', `If a security manager has been installed and it denies
+          `],
+					[/* reference */ 'r', `java.lang.RuntimePermission`],
+					[/* inline code block */ 'i', `("getFileSystemAttributes")`],
+					[/* text */ 't', `
+          or its `],
+					[/* reference */ 'r', `java.SecurityManager#checkRead(java.lang.String)`],
+					[/* text */ 't', ` method denies
+          read access to the file named by this abstract pathname`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `The size, in bytes, of the partition or `],
+				[/* inline code block */ 'i', `0L`],
+				[/* text */ 't', ` if this
+          abstract pathname does not name a partition or if the size
+          cannot be obtained`]
+			]
+		]],
+		[/* method */ 'getUsableSpace()', [
+			[/* method description */
+				[/* text */ 't', `Returns the number of bytes available to this virtual machine on the
+ partition `],
+				[/* text */ 't', `named`],
+				[/* text */ 't', ` by this abstract pathname.  If
+ the number of available bytes in the partition is greater than
+ `],
+				[/* reference */ 'r', `java.Long#MAX_VALUE`],
+				[/* text */ 't', `, then `],
+				[/* inline code block */ 'i', `Long.MAX_VALUE`],
+				[/* text */ 't', ` will be returned.
+ When possible, this method checks for write permissions and other
+ operating system restrictions and will therefore usually provide a more
+ accurate estimate of how much new data can actually be written than
+ `],
+				[/* reference */ 'r', `#getFreeSpace()`, `getFreeSpace()`],
+				[/* text */ 't', `.
+
+ `],
+				[/* block */ 'b', ` The returned number of available bytes is a hint, but not a
+ guarantee, that it is possible to use most or any of these bytes.  The
+ number of available bytes is most likely to be accurate immediately
+ after this call.  It is likely to be made inaccurate by any external
+ I/O operations including those made on the system outside of this
+ virtual machine.  This method makes no guarantee that write operations
+ to this file system will succeed.`]
+			],
+			/* parameters */ UDF,
+			[/* throws */
+				[/* throw */ 'java.lang.SecurityException', [/* throw description */
+					[/* text */ 't', `If a security manager has been installed and it denies
+          `],
+					[/* reference */ 'r', `java.lang.RuntimePermission`],
+					[/* inline code block */ 'i', `("getFileSystemAttributes")`],
+					[/* text */ 't', `
+          or its `],
+					[/* reference */ 'r', `java.SecurityManager#checkRead(java.lang.String)`],
+					[/* text */ 't', ` method denies
+          read access to the file named by this abstract pathname`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `The number of available bytes on the partition or `],
+				[/* inline code block */ 'i', `0L`],
+				[/* text */ 't', `
+          if the abstract pathname does not name a partition or if this
+          number cannot be obtained.  On systems where this information
+          is not available, this method will be equivalent to a call to
+          `],
+				[/* reference */ 'r', `#getFreeSpace()`, `getFreeSpace()`],
+				[/* text */ 't', `.`]
+			]
+		]],
+		[/* method */ 'lastModified()', [
+			[/* method description */
+				[/* text */ 't', `Returns the time that the file denoted by this abstract pathname was
+ last modified.`]
+			],
+			/* parameters */ UDF,
+			[/* throws */
+				[/* throw */ 'java.lang.SecurityException', [/* throw description */
+					[/* text */ 't', `If a security manager exists and its `],
+					[/* reference */ 'r', `java.SecurityManager#checkRead(java.lang.String)`],
+					[/* text */ 't', `
+          method denies read access to the file`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `A `],
+				[/* inline code block */ 'i', `long`],
+				[/* text */ 't', ` value representing the time the file was
+          last modified, measured in milliseconds since the epoch
+          (00:00:00 GMT, January 1, 1970), or `],
+				[/* inline code block */ 'i', `0L`],
+				[/* text */ 't', ` if the
+          file does not exist or if an I/O error occurs.  The value may
+          be negative indicating the number of milliseconds before the
+          epoch`]
+			]
+		]],
+		[/* method */ 'length()', [
+			[/* method description */
+				[/* text */ 't', `Returns the length of the file denoted by this abstract pathname.
+ The return value is unspecified if this pathname denotes a directory.
+
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', ` Where it is required to distinguish an I/O exception from the case
+ that `],
+					[/* inline code block */ 'i', `0L`],
+					[/* text */ 't', ` is returned, or where several attributes of the same file
+ are required at the same time, then the `],
+					[/* reference */ 'r', `java.file.Files#readAttributes(java.nio.file.Path,java.lang.Class,java.nio.file.LinkOption...)`],
+					[/* text */ 't', ` method may be used.`]
+				]]
+			],
+			/* parameters */ UDF,
+			[/* throws */
+				[/* throw */ 'java.lang.SecurityException', [/* throw description */
+					[/* text */ 't', `If a security manager exists and its `],
+					[/* reference */ 'r', `java.SecurityManager#checkRead(java.lang.String)`],
+					[/* text */ 't', `
+          method denies read access to the file`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `The length, in bytes, of the file denoted by this abstract
+          pathname, or `],
+				[/* inline code block */ 'i', `0L`],
+				[/* text */ 't', ` if the file does not exist.  Some
+          operating systems may return `],
+				[/* inline code block */ 'i', `0L`],
+				[/* text */ 't', ` for pathnames
+          denoting system-dependent entities such as devices or pipes.`]
+			]
+		]],
+		[/* method */ 'createTempFile(java.lang.String,java.lang.String)', [
+			[/* method description */
+				[/* text */ 't', `Creates an empty file in the default temporary-file directory, using
+ the given prefix and suffix to generate its name. Invoking this method
+ is equivalent to invoking `],
+				[/* reference */ 'r', `#createTempFile(java.lang.String,java.lang.String,java.io.File)`, `createTempFile(prefix, suffix, null)`],
+				[/* text */ 't', `.
+
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', ` The `],
+					[/* reference */ 'r', `java.file.Files#createTempFile(java.lang.String,java.lang.String,java.nio.file.attribute.FileAttribute...)`],
+					[/* text */ 't', ` method provides an alternative method to create an
+ empty file in the temporary-file directory. Files created by that method
+ may have more restrictive access permissions to files created by this
+ method and so may be more suited to security-sensitive applications.`]
+				]]
+			],
+			[/* parameters */
+				[/* parameter */ 'prefix', [/* parameter description */
+					[/* text */ 't', `The prefix string to be used in generating the file's
+                    name; must be at least three characters long`]
+				]],
+				[/* parameter */ 'suffix', [/* parameter description */
+					[/* text */ 't', `The suffix string to be used in generating the file's
+                    name; may be `],
+					[/* inline code block */ 'i', `null`],
+					[/* text */ 't', `, in which case the
+                    suffix `],
+					[/* inline code block */ 'i', `".tmp"`],
+					[/* text */ 't', ` will be used`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
+					[/* text */ 't', `If the `],
+					[/* inline code block */ 'i', `prefix`],
+					[/* text */ 't', ` argument contains fewer than three
+          characters`]
+				]],
+				[/* throw */ 'java.io.IOException', [/* throw description */
+					[/* text */ 't', `If a file could not be created`]
+				]],
+				[/* throw */ 'java.lang.SecurityException', [/* throw description */
+					[/* text */ 't', `If a security manager exists and its `],
+					[/* reference */ 'r', `java.SecurityManager#checkWrite(java.lang.String)`],
+					[/* text */ 't', `
+          method does not allow a file to be created`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `An abstract pathname denoting a newly-created empty file`]
 			]
 		]],
 		[/* method */ 'createTempFile(java.lang.String,java.lang.String,java.io.File)', [
@@ -1892,154 +2389,75 @@ DocsCollector.collect('java.io.File', [
 				[/* text */ 't', `An abstract pathname denoting a newly-created empty file`]
 			]
 		]],
-		[/* method */ 'createTempFile(java.lang.String,java.lang.String)', [
+		[/* method */ 'listRoots()', [
 			[/* method description */
-				[/* text */ 't', `Creates an empty file in the default temporary-file directory, using
- the given prefix and suffix to generate its name. Invoking this method
- is equivalent to invoking `],
-				[/* reference */ 'r', `#createTempFile(java.lang.String,java.lang.String,java.io.File)`, `createTempFile(prefix, suffix, null)`],
-				[/* text */ 't', `.
+				[/* text */ 't', `List the available filesystem roots.
 
  `],
 				[/* block */ 'b', [
-					[/* text */ 't', ` The `],
-					[/* reference */ 'r', `java.file.Files#createTempFile(java.lang.String,java.lang.String,java.nio.file.attribute.FileAttribute...)`],
-					[/* text */ 't', ` method provides an alternative method to create an
- empty file in the temporary-file directory. Files created by that method
- may have more restrictive access permissions to files created by this
- method and so may be more suited to security-sensitive applications.`]
-				]]
-			],
-			[/* parameters */
-				[/* parameter */ 'prefix', [/* parameter description */
-					[/* text */ 't', `The prefix string to be used in generating the file's
-                    name; must be at least three characters long`]
-				]],
-				[/* parameter */ 'suffix', [/* parameter description */
-					[/* text */ 't', `The suffix string to be used in generating the file's
-                    name; may be `],
-					[/* inline code block */ 'i', `null`],
-					[/* text */ 't', `, in which case the
-                    suffix `],
-					[/* inline code block */ 'i', `".tmp"`],
-					[/* text */ 't', ` will be used`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
-					[/* text */ 't', `If the `],
-					[/* inline code block */ 'i', `prefix`],
-					[/* text */ 't', ` argument contains fewer than three
-          characters`]
-				]],
-				[/* throw */ 'java.io.IOException', [/* throw description */
-					[/* text */ 't', `If a file could not be created`]
-				]],
-				[/* throw */ 'java.lang.SecurityException', [/* throw description */
-					[/* text */ 't', `If a security manager exists and its `],
-					[/* reference */ 'r', `java.SecurityManager#checkWrite(java.lang.String)`],
-					[/* text */ 't', `
-          method does not allow a file to be created`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `An abstract pathname denoting a newly-created empty file`]
-			]
-		]],
-		[/* method */ 'canWrite()', [
-			[/* method description */
-				[/* text */ 't', `Tests whether the application can modify the file denoted by this
- abstract pathname. On some platforms it may be possible to start the
- Java virtual machine with special privileges that allow it to modify
- files that are marked read-only. Consequently this method may return
+					[/* text */ 't', ` A particular Java platform may support zero or more
+ hierarchically-organized file systems.  Each file system has a
  `],
-				[/* inline code block */ 'i', `true`],
-				[/* text */ 't', ` even though the file is marked read-only.`]
-			],
-			/* parameters */ UDF,
-			[/* throws */
-				[/* throw */ 'java.lang.SecurityException', [/* throw description */
-					[/* text */ 't', `If a security manager exists and its `],
-					[/* reference */ 'r', `java.SecurityManager#checkWrite(java.lang.String)`],
-					[/* text */ 't', `
-          method denies write access to the file`]
-				]]
-			],
-			[/* return description */
-				[/* inline code block */ 'i', `true`],
-				[/* text */ 't', ` if and only if the file system actually
-          contains a file denoted by this abstract pathname `],
-				[/* text */ 't', `and`],
-				[/* text */ 't', `
-          the application is allowed to write to the file;
-          `],
-				[/* inline code block */ 'i', `false`],
-				[/* text */ 't', ` otherwise.`]
-			]
-		]],
-		[/* method */ 'isFile()', [
-			[/* method description */
-				[/* text */ 't', `Tests whether the file denoted by this abstract pathname is a normal
- file.  A file is `],
-				[/* text */ 't', `normal`],
-				[/* text */ 't', ` if it is not a directory and, in
- addition, satisfies other system-dependent criteria.  Any non-directory
- file created by a Java application is guaranteed to be a normal file.
+					[/* inline code block */ 'i', `root`],
+					[/* text */ 't', ` directory from which all other files in that file system
+ can be reached.  Windows platforms, for example, have a root directory
+ for each active drive; UNIX platforms have a single root directory,
+ namely `],
+					[/* inline code block */ 'i', `"/"`],
+					[/* text */ 't', `.  The set of available filesystem roots is affected
+ by various system-level operations such as the insertion or ejection of
+ removable media and the disconnecting or unmounting of physical or
+ virtual disk drives.
 
- `],
+ `]
+				]],
 				[/* block */ 'b', [
-					[/* text */ 't', ` Where it is required to distinguish an I/O exception from the case
- that the file is not a normal file, or where several attributes of the
- same file are required at the same time, then the `],
-					[/* reference */ 'r', `java.file.Files#readAttributes(java.nio.file.Path,java.lang.Class,java.nio.file.LinkOption...)`],
-					[/* text */ 't', ` method may be used.`]
+					[/* text */ 't', ` This method returns an array of `],
+					[/* inline code block */ 'i', `File`],
+					[/* text */ 't', ` objects that denote the
+ root directories of the available filesystem roots.  It is guaranteed
+ that the canonical pathname of any file physically present on the local
+ machine will begin with one of the roots returned by this method.
+
+ `]
+				]],
+				[/* block */ 'b', [
+					[/* text */ 't', ` The canonical pathname of a file that resides on some other machine
+ and is accessed via a remote-filesystem protocol such as SMB or NFS may
+ or may not begin with one of the roots returned by this method.  If the
+ pathname of a remote file is syntactically indistinguishable from the
+ pathname of a local file then it will begin with one of the roots
+ returned by this method.  Thus, for example, `],
+					[/* inline code block */ 'i', `File`],
+					[/* text */ 't', ` objects
+ denoting the root directories of the mapped network drives of a Windows
+ platform will be returned by this method, while `],
+					[/* inline code block */ 'i', `File`],
+					[/* text */ 't', ` objects
+ containing UNC pathnames will not be returned by this method.
+
+ `]
+				]],
+				[/* block */ 'b', [
+					[/* text */ 't', ` Unlike most methods in this class, this method does not throw
+ security exceptions.  If a security manager exists and its `],
+					[/* reference */ 'r', `java.SecurityManager#checkRead(java.lang.String)`],
+					[/* text */ 't', ` method denies read access to a
+ particular root directory, then that directory will not appear in the
+ result.`]
 				]]
 			],
 			/* parameters */ UDF,
-			[/* throws */
-				[/* throw */ 'java.lang.SecurityException', [/* throw description */
-					[/* text */ 't', `If a security manager exists and its `],
-					[/* reference */ 'r', `java.SecurityManager#checkRead(java.lang.String)`],
-					[/* text */ 't', `
-          method denies read access to the file`]
-				]]
-			],
+			/* throws */ UDF,
 			[/* return description */
-				[/* inline code block */ 'i', `true`],
-				[/* text */ 't', ` if and only if the file denoted by this
-          abstract pathname exists `],
-				[/* text */ 't', `and`],
-				[/* text */ 't', ` is a normal file;
-          `],
-				[/* inline code block */ 'i', `false`],
-				[/* text */ 't', ` otherwise`]
-			]
-		]],
-		[/* method */ 'lastModified()', [
-			[/* method description */
-				[/* text */ 't', `Returns the time that the file denoted by this abstract pathname was
- last modified.`]
-			],
-			/* parameters */ UDF,
-			[/* throws */
-				[/* throw */ 'java.lang.SecurityException', [/* throw description */
-					[/* text */ 't', `If a security manager exists and its `],
-					[/* reference */ 'r', `java.SecurityManager#checkRead(java.lang.String)`],
-					[/* text */ 't', `
-          method denies read access to the file`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `A `],
-				[/* inline code block */ 'i', `long`],
-				[/* text */ 't', ` value representing the time the file was
-          last modified, measured in milliseconds since the epoch
-          (00:00:00 GMT, January 1, 1970), or `],
-				[/* inline code block */ 'i', `0L`],
-				[/* text */ 't', ` if the
-          file does not exist or if an I/O error occurs.  The value may
-          be negative indicating the number of milliseconds before the
-          epoch`]
+				[/* text */ 't', `An array of `],
+				[/* inline code block */ 'i', `File`],
+				[/* text */ 't', ` objects denoting the available
+          filesystem roots, or `],
+				[/* inline code block */ 'i', `null`],
+				[/* text */ 't', ` if the set of roots could not
+          be determined.  The array will be empty if there are no
+          filesystem roots.`]
 			]
 		]],
 		[/* method */ 'deleteOnExit()', [
@@ -2079,424 +2497,6 @@ DocsCollector.collect('java.io.File', [
 				]]
 			],
 			/* return */ UDF
-		]],
-		[/* method */ 'listFiles(java.io.FilenameFilter)', [
-			[/* method description */
-				[/* text */ 't', `Returns an array of abstract pathnames denoting the files and
- directories in the directory denoted by this abstract pathname that
- satisfy the specified filter.  The behavior of this method is the same
- as that of the `],
-				[/* reference */ 'r', `#listFiles()`, `listFiles()`],
-				[/* text */ 't', ` method, except that the pathnames in
- the returned array must satisfy the filter.  If the given `],
-				[/* inline code block */ 'i', `filter`],
-				[/* text */ 't', `
- is `],
-				[/* inline code block */ 'i', `null`],
-				[/* text */ 't', ` then all pathnames are accepted.  Otherwise, a pathname
- satisfies the filter if and only if the value `],
-				[/* inline code block */ 'i', `true`],
-				[/* text */ 't', ` results when
- the `],
-				[/* reference */ 'r', `.FilenameFilter#accept(java.io.File,java.lang.String)`],
-				[/* text */ 't', ` method of the filter is
- invoked on this abstract pathname and the name of a file or directory in
- the directory that it denotes.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'filter', [/* parameter description */
-					[/* text */ 't', `A filename filter`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.SecurityException', [/* throw description */
-					[/* text */ 't', `If a security manager exists and its `],
-					[/* reference */ 'r', `java.SecurityManager#checkRead(java.lang.String)`],
-					[/* text */ 't', ` method denies read access to
-          the directory`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `An array of abstract pathnames denoting the files and
-          directories in the directory denoted by this abstract pathname.
-          The array will be empty if the directory is empty.  Returns
-          `],
-				[/* inline code block */ 'i', `null`],
-				[/* text */ 't', ` if this abstract pathname does not denote a
-          directory, or if an I/O error occurs.`]
-			]
-		]],
-		[/* method */ 'listFiles(java.io.FileFilter)', [
-			[/* method description */
-				[/* text */ 't', `Returns an array of abstract pathnames denoting the files and
- directories in the directory denoted by this abstract pathname that
- satisfy the specified filter.  The behavior of this method is the same
- as that of the `],
-				[/* reference */ 'r', `#listFiles()`, `listFiles()`],
-				[/* text */ 't', ` method, except that the pathnames in
- the returned array must satisfy the filter.  If the given `],
-				[/* inline code block */ 'i', `filter`],
-				[/* text */ 't', `
- is `],
-				[/* inline code block */ 'i', `null`],
-				[/* text */ 't', ` then all pathnames are accepted.  Otherwise, a pathname
- satisfies the filter if and only if the value `],
-				[/* inline code block */ 'i', `true`],
-				[/* text */ 't', ` results when
- the `],
-				[/* reference */ 'r', `.FileFilter#accept(java.io.File)`],
-				[/* text */ 't', ` method of the
- filter is invoked on the pathname.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'filter', [/* parameter description */
-					[/* text */ 't', `A file filter`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.SecurityException', [/* throw description */
-					[/* text */ 't', `If a security manager exists and its `],
-					[/* reference */ 'r', `java.SecurityManager#checkRead(java.lang.String)`],
-					[/* text */ 't', ` method denies read access to
-          the directory`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `An array of abstract pathnames denoting the files and
-          directories in the directory denoted by this abstract pathname.
-          The array will be empty if the directory is empty.  Returns
-          `],
-				[/* inline code block */ 'i', `null`],
-				[/* text */ 't', ` if this abstract pathname does not denote a
-          directory, or if an I/O error occurs.`]
-			]
-		]],
-		[/* method */ 'listFiles()', [
-			[/* method description */
-				[/* text */ 't', `Returns an array of abstract pathnames denoting the files in the
- directory denoted by this abstract pathname.
-
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', ` If this abstract pathname does not denote a directory, then this
- method returns `],
-					[/* inline code block */ 'i', `null`],
-					[/* text */ 't', `.  Otherwise an array of `],
-					[/* inline code block */ 'i', `File`],
-					[/* text */ 't', ` objects
- is returned, one for each file or directory in the directory.  Pathnames
- denoting the directory itself and the directory's parent directory are
- not included in the result.  Each resulting abstract pathname is
- constructed from this abstract pathname using the `],
-					[/* reference */ 'r', `#%3Cinit%3E(java.io.File,java.lang.String)`, `File(File, String)`],
-					[/* text */ 't', ` constructor.  Therefore if this
- pathname is absolute then each resulting pathname is absolute; if this
- pathname is relative then each resulting pathname will be relative to
- the same directory.
-
- `]
-				]],
-				[/* block */ 'b', ` There is no guarantee that the name strings in the resulting array
- will appear in any specific order; they are not, in particular,
- guaranteed to appear in alphabetical order.
-
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', ` Note that the `],
-					[/* reference */ 'r', `java.nio.file.Files`],
-					[/* text */ 't', ` class defines the `],
-					[/* reference */ 'r', `java.file.Files#newDirectoryStream(java.nio.file.Path)`],
-					[/* text */ 't', ` method
- to open a directory and iterate over the names of the files in the
- directory. This may use less resources when working with very large
- directories.`]
-				]]
-			],
-			/* parameters */ UDF,
-			[/* throws */
-				[/* throw */ 'java.lang.SecurityException', [/* throw description */
-					[/* text */ 't', `If a security manager exists and its `],
-					[/* reference */ 'r', `java.SecurityManager#checkRead(java.lang.String)`],
-					[/* text */ 't', ` method denies read access to
-          the directory`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `An array of abstract pathnames denoting the files and
-          directories in the directory denoted by this abstract pathname.
-          The array will be empty if the directory is empty.  Returns
-          `],
-				[/* inline code block */ 'i', `null`],
-				[/* text */ 't', ` if this abstract pathname does not denote a
-          directory, or if an I/O error occurs.`]
-			]
-		]],
-		[/* method */ 'setLastModified(long)', [
-			[/* method description */
-				[/* text */ 't', `Sets the last-modified time of the file or directory named by this
- abstract pathname.
-
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', ` All platforms support file-modification times to the nearest second,
- but some provide more precision.  The argument will be truncated to fit
- the supported precision.  If the operation succeeds and no intervening
- operations on the file take place, then the next invocation of the
- `],
-					[/* reference */ 'r', `#lastModified()`, `lastModified()`],
-					[/* text */ 't', ` method will return the (possibly
- truncated) `],
-					[/* inline code block */ 'i', `time`],
-					[/* text */ 't', ` argument that was passed to this method.`]
-				]]
-			],
-			[/* parameters */
-				[/* parameter */ 'time', [/* parameter description */
-					[/* text */ 't', `The new last-modified time, measured in milliseconds since
-               the epoch (00:00:00 GMT, January 1, 1970)`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
-					[/* text */ 't', `If the argument is negative`]
-				]],
-				[/* throw */ 'java.lang.SecurityException', [/* throw description */
-					[/* text */ 't', `If a security manager exists and its `],
-					[/* reference */ 'r', `java.SecurityManager#checkWrite(java.lang.String)`],
-					[/* text */ 't', `
-          method denies write access to the named file`]
-				]]
-			],
-			[/* return description */
-				[/* inline code block */ 'i', `true`],
-				[/* text */ 't', ` if and only if the operation succeeded;
-          `],
-				[/* inline code block */ 'i', `false`],
-				[/* text */ 't', ` otherwise`]
-			]
-		]],
-		[/* method */ 'canExecute()', [
-			[/* method description */
-				[/* text */ 't', `Tests whether the application can execute the file denoted by this
- abstract pathname. On some platforms it may be possible to start the
- Java virtual machine with special privileges that allow it to execute
- files that are not marked executable. Consequently this method may return
- `],
-				[/* inline code block */ 'i', `true`],
-				[/* text */ 't', ` even though the file does not have execute permissions.`]
-			],
-			/* parameters */ UDF,
-			[/* throws */
-				[/* throw */ 'java.lang.SecurityException', [/* throw description */
-					[/* text */ 't', `If a security manager exists and its `],
-					[/* reference */ 'r', `java.SecurityManager#checkExec(java.lang.String)`],
-					[/* text */ 't', `
-          method denies execute access to the file`]
-				]]
-			],
-			[/* return description */
-				[/* inline code block */ 'i', `true`],
-				[/* text */ 't', ` if and only if the abstract pathname exists
-          `],
-				[/* text */ 't', `and`],
-				[/* text */ 't', ` the application is allowed to execute the file`]
-			]
-		]],
-		[/* method */ 'getTotalSpace()', [
-			[/* method description */
-				[/* text */ 't', `Returns the size of the partition `],
-				[/* text */ 't', `named`],
-				[/* text */ 't', ` by this
- abstract pathname. If the total number of bytes in the partition is
- greater than `],
-				[/* reference */ 'r', `java.Long#MAX_VALUE`],
-				[/* text */ 't', `, then `],
-				[/* inline code block */ 'i', `Long.MAX_VALUE`],
-				[/* text */ 't', ` will be
- returned.`]
-			],
-			/* parameters */ UDF,
-			[/* throws */
-				[/* throw */ 'java.lang.SecurityException', [/* throw description */
-					[/* text */ 't', `If a security manager has been installed and it denies
-          `],
-					[/* reference */ 'r', `java.lang.RuntimePermission`],
-					[/* inline code block */ 'i', `("getFileSystemAttributes")`],
-					[/* text */ 't', `
-          or its `],
-					[/* reference */ 'r', `java.SecurityManager#checkRead(java.lang.String)`],
-					[/* text */ 't', ` method denies
-          read access to the file named by this abstract pathname`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `The size, in bytes, of the partition or `],
-				[/* inline code block */ 'i', `0L`],
-				[/* text */ 't', ` if this
-          abstract pathname does not name a partition or if the size
-          cannot be obtained`]
-			]
-		]],
-		[/* method */ 'getFreeSpace()', [
-			[/* method description */
-				[/* text */ 't', `Returns the number of unallocated bytes in the partition `],
-				[/* text */ 't', `named`],
-				[/* text */ 't', ` by this abstract path name.  If the
- number of unallocated bytes in the partition is greater than
- `],
-				[/* reference */ 'r', `java.Long#MAX_VALUE`],
-				[/* text */ 't', `, then `],
-				[/* inline code block */ 'i', `Long.MAX_VALUE`],
-				[/* text */ 't', ` will be returned.
-
- `],
-				[/* block */ 'b', ` The returned number of unallocated bytes is a hint, but not
- a guarantee, that it is possible to use most or any of these
- bytes.  The number of unallocated bytes is most likely to be
- accurate immediately after this call.  It is likely to be made
- inaccurate by any external I/O operations including those made
- on the system outside of this virtual machine.  This method
- makes no guarantee that write operations to this file system
- will succeed.`]
-			],
-			/* parameters */ UDF,
-			[/* throws */
-				[/* throw */ 'java.lang.SecurityException', [/* throw description */
-					[/* text */ 't', `If a security manager has been installed and it denies
-          `],
-					[/* reference */ 'r', `java.lang.RuntimePermission`],
-					[/* inline code block */ 'i', `("getFileSystemAttributes")`],
-					[/* text */ 't', `
-          or its `],
-					[/* reference */ 'r', `java.SecurityManager#checkRead(java.lang.String)`],
-					[/* text */ 't', ` method denies
-          read access to the file named by this abstract pathname`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `The number of unallocated bytes on the partition or `],
-				[/* inline code block */ 'i', `0L`],
-				[/* text */ 't', `
-          if the abstract pathname does not name a partition or if this
-          number cannot be obtained.  This value will be less than or
-          equal to the total file system size returned by
-          `],
-				[/* reference */ 'r', `#getTotalSpace()`, `getTotalSpace()`],
-				[/* text */ 't', `.`]
-			]
-		]],
-		[/* method */ 'getUsableSpace()', [
-			[/* method description */
-				[/* text */ 't', `Returns the number of bytes available to this virtual machine on the
- partition `],
-				[/* text */ 't', `named`],
-				[/* text */ 't', ` by this abstract pathname.  If
- the number of available bytes in the partition is greater than
- `],
-				[/* reference */ 'r', `java.Long#MAX_VALUE`],
-				[/* text */ 't', `, then `],
-				[/* inline code block */ 'i', `Long.MAX_VALUE`],
-				[/* text */ 't', ` will be returned.
- When possible, this method checks for write permissions and other
- operating system restrictions and will therefore usually provide a more
- accurate estimate of how much new data can actually be written than
- `],
-				[/* reference */ 'r', `#getFreeSpace()`, `getFreeSpace()`],
-				[/* text */ 't', `.
-
- `],
-				[/* block */ 'b', ` The returned number of available bytes is a hint, but not a
- guarantee, that it is possible to use most or any of these bytes.  The
- number of available bytes is most likely to be accurate immediately
- after this call.  It is likely to be made inaccurate by any external
- I/O operations including those made on the system outside of this
- virtual machine.  This method makes no guarantee that write operations
- to this file system will succeed.`]
-			],
-			/* parameters */ UDF,
-			[/* throws */
-				[/* throw */ 'java.lang.SecurityException', [/* throw description */
-					[/* text */ 't', `If a security manager has been installed and it denies
-          `],
-					[/* reference */ 'r', `java.lang.RuntimePermission`],
-					[/* inline code block */ 'i', `("getFileSystemAttributes")`],
-					[/* text */ 't', `
-          or its `],
-					[/* reference */ 'r', `java.SecurityManager#checkRead(java.lang.String)`],
-					[/* text */ 't', ` method denies
-          read access to the file named by this abstract pathname`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `The number of available bytes on the partition or `],
-				[/* inline code block */ 'i', `0L`],
-				[/* text */ 't', `
-          if the abstract pathname does not name a partition or if this
-          number cannot be obtained.  On systems where this information
-          is not available, this method will be equivalent to a call to
-          `],
-				[/* reference */ 'r', `#getFreeSpace()`, `getFreeSpace()`],
-				[/* text */ 't', `.`]
-			]
-		]],
-		[/* method */ 'toPath()', [
-			[/* method description */
-				[/* text */ 't', `Returns a `],
-				[/* reference */ 'r', `java.nio.file.Path`],
-				[/* text */ 't', ` object constructed from
- this abstract path. The resulting `],
-				[/* inline code block */ 'i', `Path`],
-				[/* text */ 't', ` is associated with the
- `],
-				[/* reference */ 'r', `java.file.FileSystems#getDefault()`],
-				[/* text */ 't', `.
-
- `],
-				[/* block */ 'b', ` The first invocation of this method works as if invoking it were
- equivalent to evaluating the expression:
- `],
-				[/* block */ 'b', [
-					[/* code block */ 'c', [
-						[/* text */ 't', `FileSystems.getDefault`],
-						[/* text */ 't', `().`],
-						[/* text */ 't', `getPath`],
-						[/* text */ 't', `(this.`],
-						[/* text */ 't', `getPath`],
-						[/* text */ 't', `());
- `]
-					]]
-				]],
-				[/* text */ 't', `
- Subsequent invocations of this method return the same `],
-				[/* inline code block */ 'i', `Path`],
-				[/* text */ 't', `.
-
- `],
-				[/* block */ 'b', ''],
-				[/* block */ 'b', [
-					[/* text */ 't', ` If this abstract pathname is the empty abstract pathname then this
- method returns a `],
-					[/* inline code block */ 'i', `Path`],
-					[/* text */ 't', ` that may be used to access the current
- user directory.`]
-				]]
-			],
-			/* parameters */ UDF,
-			[/* throws */
-				[/* throw */ 'java.nio.file.InvalidPathException', [/* throw description */
-					[/* text */ 't', `if a `],
-					[/* inline code block */ 'i', `Path`],
-					[/* text */ 't', ` object cannot be constructed from the abstract
-          path (see `],
-					[/* reference */ 'r', `java.file.FileSystem#getPath(java.lang.String,java.lang.String...)`],
-					[/* text */ 't', `)`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `a `],
-				[/* inline code block */ 'i', `Path`],
-				[/* text */ 't', ` constructed from this abstract path`]
-			]
 		]]
 	],
 ]);

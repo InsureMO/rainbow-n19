@@ -209,15 +209,15 @@ JdkClassCreateHelper.class('java.util.zip.DeflaterInputStream', [
 		]
 	],
 	[/* declared fields */
-		[/* protected final java.util.zip.Deflater java.util.zip.DeflaterInputStream.def */
-			/* name */ 'def',
-			/* type */ 'java.util.zip.Deflater',
-			/* annotations */ UDF,
-			/* modifiers */ 20
-		],
 		[/* protected final byte[] java.util.zip.DeflaterInputStream.buf */
 			/* name */ 'buf',
 			/* type */ '[B',
+			/* annotations */ UDF,
+			/* modifiers */ 20
+		],
+		[/* protected final java.util.zip.Deflater java.util.zip.DeflaterInputStream.def */
+			/* name */ 'def',
+			/* type */ 'java.util.zip.Deflater',
 			/* annotations */ UDF,
 			/* modifiers */ 20
 		]

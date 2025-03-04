@@ -8,6 +8,28 @@ DocsCollector.collect('java.net.URISyntaxException', [
 	],
 	/* fields */ UDF,
 	[/* constructors */
+		[/* constructor */ '<init>(java.lang.String,java.lang.String)', [
+			[/* constructor description */
+				[/* text */ 't', `Constructs an instance from the given input string and reason.  The
+ resulting object will have an error index of `],
+				[/* inline code block */ 'i', `-1`],
+				[/* text */ 't', `.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'input', [/* parameter description */
+					[/* text */ 't', `The input string`]
+				]],
+				[/* parameter */ 'reason', [/* parameter description */
+					[/* text */ 't', `A string explaining why the input could not be parsed`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
+					[/* text */ 't', `If either the input or reason strings are `],
+					[/* inline code block */ 'i', `null`]
+				]]
+			]
+		]],
 		[/* constructor */ '<init>(java.lang.String,java.lang.String,int)', [
 			[/* constructor description */
 				[/* text */ 't', `Constructs an instance from the given input string, reason, and error
@@ -37,31 +59,32 @@ DocsCollector.collect('java.net.URISyntaxException', [
 					[/* inline code block */ 'i', `-1`]
 				]]
 			]
-		]],
-		[/* constructor */ '<init>(java.lang.String,java.lang.String)', [
-			[/* constructor description */
-				[/* text */ 't', `Constructs an instance from the given input string and reason.  The
- resulting object will have an error index of `],
-				[/* inline code block */ 'i', `-1`],
-				[/* text */ 't', `.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'input', [/* parameter description */
-					[/* text */ 't', `The input string`]
-				]],
-				[/* parameter */ 'reason', [/* parameter description */
-					[/* text */ 't', `A string explaining why the input could not be parsed`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
-					[/* text */ 't', `If either the input or reason strings are `],
-					[/* inline code block */ 'i', `null`]
-				]]
-			]
 		]]
 	],
 	[/* methods */
+		[/* method */ 'getIndex()', [
+			[/* method description */
+				[/* text */ 't', `Returns an index into the input string of the position at which the
+ parse error occurred, or `],
+				[/* inline code block */ 'i', `-1`],
+				[/* text */ 't', ` if this position is not known.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `The error index`]
+			]
+		]],
+		[/* method */ 'getInput()', [
+			[/* method description */
+				[/* text */ 't', `Returns the input string.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `The input string`]
+			]
+		]],
 		[/* method */ 'getMessage()', [
 			[/* method description */
 				[/* text */ 't', `Returns a string describing the parse error.  The resulting string
@@ -81,19 +104,6 @@ DocsCollector.collect('java.net.URISyntaxException', [
 				[/* text */ 't', `A string describing the parse error`]
 			]
 		]],
-		[/* method */ 'getIndex()', [
-			[/* method description */
-				[/* text */ 't', `Returns an index into the input string of the position at which the
- parse error occurred, or `],
-				[/* inline code block */ 'i', `-1`],
-				[/* text */ 't', ` if this position is not known.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `The error index`]
-			]
-		]],
 		[/* method */ 'getReason()', [
 			[/* method description */
 				[/* text */ 't', `Returns a string explaining why the input string could not be parsed.`]
@@ -102,16 +112,6 @@ DocsCollector.collect('java.net.URISyntaxException', [
 			/* throws */ UDF,
 			[/* return description */
 				[/* text */ 't', `The reason string`]
-			]
-		]],
-		[/* method */ 'getInput()', [
-			[/* method description */
-				[/* text */ 't', `Returns the input string.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `The input string`]
 			]
 		]]
 	],

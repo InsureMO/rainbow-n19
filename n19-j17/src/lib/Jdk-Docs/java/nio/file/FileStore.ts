@@ -37,39 +37,35 @@ DocsCollector.collect('java.nio.file.FileStore', [
 		]]
 	],
 	[/* methods */
-		[/* method */ 'name()', [
+		[/* method */ 'getFileStoreAttributeView(java.lang.Class)', [
 			[/* method description */
-				[/* text */ 't', `Returns the name of this file store. The format of the name is highly
- implementation specific. It will typically be the name of the storage
- pool or volume.
+				[/* text */ 't', `Returns a `],
+				[/* inline code block */ 'i', `FileStoreAttributeView`],
+				[/* text */ 't', ` of the given type.
 
  `],
 				[/* block */ 'b', [
-					[/* text */ 't', ` The string returned by this method may differ from the string
- returned by the `],
-					[/* reference */ 'r', `java.nio.Object#toString()`],
-					[/* text */ 't', ` method.`]
+					[/* text */ 't', ` This method is intended to be used where the file store attribute
+ view defines type-safe methods to read or update the file store attributes.
+ The `],
+					[/* inline code block */ 'i', `type`],
+					[/* text */ 't', ` parameter is the type of the attribute view required and
+ the method returns an instance of that type if supported.`]
 				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the name of this file store`]
-			]
-		]],
-		[/* method */ 'type()', [
-			[/* method description */
-				[/* text */ 't', `Returns the `],
-				[/* text */ 't', `type`],
-				[/* text */ 't', ` of this file store. The format of the string
- returned by this method is highly implementation specific. It may
- indicate, for example, the format used or if the file store is local
- or remote.`]
+			[/* parameters */
+				[/* parameter */ 'type', [/* parameter description */
+					[/* text */ 't', `the `],
+					[/* inline code block */ 'i', `Class`],
+					[/* text */ 't', ` object corresponding to the attribute view`]
+				]]
 			],
-			/* parameters */ UDF,
 			/* throws */ UDF,
 			[/* return description */
-				[/* text */ 't', `a string representing the type of this file store`]
+				[/* text */ 't', `a file store attribute view of the specified type or
+          `],
+				[/* inline code block */ 'i', `null`],
+				[/* text */ 't', ` if the attribute view is not available`]
 			]
 		]],
 		[/* method */ 'isReadOnly()', [
@@ -88,52 +84,67 @@ DocsCollector.collect('java.nio.file.FileStore', [
 				[/* text */ 't', ` if, and only if, this file store is read-only`]
 			]
 		]],
-		[/* method */ 'getTotalSpace()', [
+		[/* method */ 'supportsFileAttributeView(java.lang.Class)', [
 			[/* method description */
-				[/* text */ 't', `Returns the size, in bytes, of the file store. If the total number of
- bytes in the file store is greater than `],
-				[/* reference */ 'r', `java.nio.Long#MAX_VALUE`],
-				[/* text */ 't', `, then
- `],
-				[/* inline code block */ 'i', `Long.MAX_VALUE`],
-				[/* text */ 't', ` will be returned.`]
-			],
-			/* parameters */ UDF,
-			[/* throws */
-				[/* throw */ 'java.io.IOException', [/* throw description */
-					[/* text */ 't', `if an I/O error occurs`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `the size of the file store, in bytes`]
-			]
-		]],
-		[/* method */ 'getUsableSpace()', [
-			[/* method description */
-				[/* text */ 't', `Returns the number of bytes available to this Java virtual machine on the
- file store.  If the number of bytes available is greater than
- `],
-				[/* reference */ 'r', `java.nio.Long#MAX_VALUE`],
-				[/* text */ 't', `, then `],
-				[/* inline code block */ 'i', `Long.MAX_VALUE`],
-				[/* text */ 't', ` will be returned.
+				[/* text */ 't', `Tells whether or not this file store supports the file attributes
+ identified by the given file attribute view.
 
  `],
-				[/* block */ 'b', ` The returned number of available bytes is a hint, but not a
- guarantee, that it is possible to use most or any of these bytes.  The
- number of usable bytes is most likely to be accurate immediately
- after the space attributes are obtained. It is likely to be made inaccurate
- by any external I/O operations including those made on the system outside
- of this Java virtual machine.`]
-			],
-			/* parameters */ UDF,
-			[/* throws */
-				[/* throw */ 'java.io.IOException', [/* throw description */
-					[/* text */ 't', `if an I/O error occurs`]
+				[/* block */ 'b', [
+					[/* text */ 't', ` Invoking this method to test if the file store supports `],
+					[/* reference */ 'r', `java.nio.file.attribute.BasicFileAttributeView`],
+					[/* text */ 't', ` will always return `],
+					[/* inline code block */ 'i', `true`],
+					[/* text */ 't', `. In the case of
+ the default provider, this method cannot guarantee to give the correct
+ result when the file store is not a local storage device. The reasons for
+ this are implementation specific and therefore unspecified.`]
 				]]
 			],
+			[/* parameters */
+				[/* parameter */ 'type', [/* parameter description */
+					[/* text */ 't', `the file attribute view type`]
+				]]
+			],
+			/* throws */ UDF,
 			[/* return description */
-				[/* text */ 't', `the number of bytes available`]
+				[/* inline code block */ 'i', `true`],
+				[/* text */ 't', ` if, and only if, the file attribute view is
+          supported`]
+			]
+		]],
+		[/* method */ 'supportsFileAttributeView(java.lang.String)', [
+			[/* method description */
+				[/* text */ 't', `Tells whether or not this file store supports the file attributes
+ identified by the given file attribute view.
+
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', ` Invoking this method to test if the file store supports `],
+					[/* reference */ 'r', `java.nio.file.attribute.BasicFileAttributeView`],
+					[/* text */ 't', `, identified by the name "`],
+					[/* inline code block */ 'i', `basic`],
+					[/* text */ 't', `" will
+ always return `],
+					[/* inline code block */ 'i', `true`],
+					[/* text */ 't', `. In the case of the default provider, this
+ method cannot guarantee to give the correct result when the file store is
+ not a local storage device. The reasons for this are implementation
+ specific and therefore unspecified.`]
+				]]
+			],
+			[/* parameters */
+				[/* parameter */ 'name', [/* parameter description */
+					[/* text */ 't', `the `],
+					[/* reference */ 'r', `.AttributeView#name()`],
+					[/* text */ 't', ` of file attribute view`]
+				]]
+			],
+			/* throws */ UDF,
+			[/* return description */
+				[/* inline code block */ 'i', `true`],
+				[/* text */ 't', ` if, and only if, the file attribute view is
+          supported`]
 			]
 		]],
 		[/* method */ 'getAttribute(java.lang.String)', [
@@ -200,6 +211,61 @@ DocsCollector.collect('java.nio.file.FileStore', [
           attributes`]
 			]
 		]],
+		[/* method */ 'name()', [
+			[/* method description */
+				[/* text */ 't', `Returns the name of this file store. The format of the name is highly
+ implementation specific. It will typically be the name of the storage
+ pool or volume.
+
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', ` The string returned by this method may differ from the string
+ returned by the `],
+					[/* reference */ 'r', `java.nio.Object#toString()`],
+					[/* text */ 't', ` method.`]
+				]]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the name of this file store`]
+			]
+		]],
+		[/* method */ 'type()', [
+			[/* method description */
+				[/* text */ 't', `Returns the `],
+				[/* text */ 't', `type`],
+				[/* text */ 't', ` of this file store. The format of the string
+ returned by this method is highly implementation specific. It may
+ indicate, for example, the format used or if the file store is local
+ or remote.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `a string representing the type of this file store`]
+			]
+		]],
+		[/* method */ 'getTotalSpace()', [
+			[/* method description */
+				[/* text */ 't', `Returns the size, in bytes, of the file store. If the total number of
+ bytes in the file store is greater than `],
+				[/* reference */ 'r', `java.nio.Long#MAX_VALUE`],
+				[/* text */ 't', `, then
+ `],
+				[/* inline code block */ 'i', `Long.MAX_VALUE`],
+				[/* text */ 't', ` will be returned.`]
+			],
+			/* parameters */ UDF,
+			[/* throws */
+				[/* throw */ 'java.io.IOException', [/* throw description */
+					[/* text */ 't', `if an I/O error occurs`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `the size of the file store, in bytes`]
+			]
+		]],
 		[/* method */ 'getUnallocatedSpace()', [
 			[/* method description */
 				[/* text */ 't', `Returns the number of unallocated bytes in the file store.
@@ -228,98 +294,32 @@ DocsCollector.collect('java.nio.file.FileStore', [
 				[/* text */ 't', `the number of unallocated bytes`]
 			]
 		]],
-		[/* method */ 'supportsFileAttributeView(java.lang.String)', [
+		[/* method */ 'getUsableSpace()', [
 			[/* method description */
-				[/* text */ 't', `Tells whether or not this file store supports the file attributes
- identified by the given file attribute view.
+				[/* text */ 't', `Returns the number of bytes available to this Java virtual machine on the
+ file store.  If the number of bytes available is greater than
+ `],
+				[/* reference */ 'r', `java.nio.Long#MAX_VALUE`],
+				[/* text */ 't', `, then `],
+				[/* inline code block */ 'i', `Long.MAX_VALUE`],
+				[/* text */ 't', ` will be returned.
 
  `],
-				[/* block */ 'b', [
-					[/* text */ 't', ` Invoking this method to test if the file store supports `],
-					[/* reference */ 'r', `java.nio.file.attribute.BasicFileAttributeView`],
-					[/* text */ 't', `, identified by the name "`],
-					[/* inline code block */ 'i', `basic`],
-					[/* text */ 't', `" will
- always return `],
-					[/* inline code block */ 'i', `true`],
-					[/* text */ 't', `. In the case of the default provider, this
- method cannot guarantee to give the correct result when the file store is
- not a local storage device. The reasons for this are implementation
- specific and therefore unspecified.`]
+				[/* block */ 'b', ` The returned number of available bytes is a hint, but not a
+ guarantee, that it is possible to use most or any of these bytes.  The
+ number of usable bytes is most likely to be accurate immediately
+ after the space attributes are obtained. It is likely to be made inaccurate
+ by any external I/O operations including those made on the system outside
+ of this Java virtual machine.`]
+			],
+			/* parameters */ UDF,
+			[/* throws */
+				[/* throw */ 'java.io.IOException', [/* throw description */
+					[/* text */ 't', `if an I/O error occurs`]
 				]]
 			],
-			[/* parameters */
-				[/* parameter */ 'name', [/* parameter description */
-					[/* text */ 't', `the `],
-					[/* reference */ 'r', `.AttributeView#name()`],
-					[/* text */ 't', ` of file attribute view`]
-				]]
-			],
-			/* throws */ UDF,
 			[/* return description */
-				[/* inline code block */ 'i', `true`],
-				[/* text */ 't', ` if, and only if, the file attribute view is
-          supported`]
-			]
-		]],
-		[/* method */ 'supportsFileAttributeView(java.lang.Class)', [
-			[/* method description */
-				[/* text */ 't', `Tells whether or not this file store supports the file attributes
- identified by the given file attribute view.
-
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', ` Invoking this method to test if the file store supports `],
-					[/* reference */ 'r', `java.nio.file.attribute.BasicFileAttributeView`],
-					[/* text */ 't', ` will always return `],
-					[/* inline code block */ 'i', `true`],
-					[/* text */ 't', `. In the case of
- the default provider, this method cannot guarantee to give the correct
- result when the file store is not a local storage device. The reasons for
- this are implementation specific and therefore unspecified.`]
-				]]
-			],
-			[/* parameters */
-				[/* parameter */ 'type', [/* parameter description */
-					[/* text */ 't', `the file attribute view type`]
-				]]
-			],
-			/* throws */ UDF,
-			[/* return description */
-				[/* inline code block */ 'i', `true`],
-				[/* text */ 't', ` if, and only if, the file attribute view is
-          supported`]
-			]
-		]],
-		[/* method */ 'getFileStoreAttributeView(java.lang.Class)', [
-			[/* method description */
-				[/* text */ 't', `Returns a `],
-				[/* inline code block */ 'i', `FileStoreAttributeView`],
-				[/* text */ 't', ` of the given type.
-
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', ` This method is intended to be used where the file store attribute
- view defines type-safe methods to read or update the file store attributes.
- The `],
-					[/* inline code block */ 'i', `type`],
-					[/* text */ 't', ` parameter is the type of the attribute view required and
- the method returns an instance of that type if supported.`]
-				]]
-			],
-			[/* parameters */
-				[/* parameter */ 'type', [/* parameter description */
-					[/* text */ 't', `the `],
-					[/* inline code block */ 'i', `Class`],
-					[/* text */ 't', ` object corresponding to the attribute view`]
-				]]
-			],
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `a file store attribute view of the specified type or
-          `],
-				[/* inline code block */ 'i', `null`],
-				[/* text */ 't', ` if the attribute view is not available`]
+				[/* text */ 't', `the number of bytes available`]
 			]
 		]],
 		[/* method */ 'getBlockSize()', [

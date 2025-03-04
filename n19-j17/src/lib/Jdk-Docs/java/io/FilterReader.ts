@@ -42,6 +42,50 @@ DocsCollector.collect('java.io.FilterReader', [
 		]]
 	],
 	[/* methods */
+		[/* method */ 'markSupported()', [
+			[/* method description */
+				[/* text */ 't', `Tells whether this stream supports the mark() operation.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `true if and only if this stream supports the mark operation.`]
+			]
+		]],
+		[/* method */ 'ready()', [
+			[/* method description */
+				[/* text */ 't', `Tells whether this stream is ready to be read.`]
+			],
+			/* parameters */ UDF,
+			[/* throws */
+				[/* throw */ 'java.io.IOException', [/* throw description */
+					[/* text */ 't', `If an I/O error occurs`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `True if the next read() is guaranteed not to block for input,
+ false otherwise.  Note that returning false does not guarantee that the
+ next read will block.`]
+			]
+		]],
+		[/* method */ 'read()', [
+			[/* method description */
+				[/* text */ 't', `Reads a single character.`]
+			],
+			/* parameters */ UDF,
+			[/* throws */
+				[/* throw */ 'java.io.IOException', [/* throw description */
+					[/* text */ 't', `If an I/O error occurs`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `The character read, as an integer in the range 0 to 65535
+             (`],
+				[/* inline code block */ 'i', `0x00-0xffff`],
+				[/* text */ 't', `), or -1 if the end of the stream has
+             been reached`]
+			]
+		]],
 		[/* method */ 'read(char[],int,int)', [
 			[/* method description */
 				[/* text */ 't', `Reads characters into a portion of an array.  This method will block
@@ -97,22 +141,36 @@ DocsCollector.collect('java.io.FilterReader', [
              stream has been reached`]
 			]
 		]],
-		[/* method */ 'read()', [
+		[/* method */ 'skip(long)', [
 			[/* method description */
-				[/* text */ 't', `Reads a single character.`]
+				[/* text */ 't', `Skips characters.  This method will block until some characters are
+ available, an I/O error occurs, or the end of the stream is reached.
+ If the stream is already at its end before this method is invoked,
+ then no characters are skipped and zero is returned.`]
 			],
-			/* parameters */ UDF,
+			[/* parameters */
+				[/* parameter */ 'n', [/* parameter description */
+					[/* text */ 't', `The number of characters to skip`]
+				]]
+			],
 			[/* throws */
+				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
+					[/* text */ 't', `If `],
+					[/* inline code block */ 'i', `n`],
+					[/* text */ 't', ` is negative and the
+             contained `],
+					[/* inline code block */ 'i', `Reader`],
+					[/* text */ 't', `'s `],
+					[/* inline code block */ 'i', `skip`],
+					[/* text */ 't', ` method throws an
+             IllegalArgumentException for a negative parameter`]
+				]],
 				[/* throw */ 'java.io.IOException', [/* throw description */
 					[/* text */ 't', `If an I/O error occurs`]
 				]]
 			],
 			[/* return description */
-				[/* text */ 't', `The character read, as an integer in the range 0 to 65535
-             (`],
-				[/* inline code block */ 'i', `0x00-0xffff`],
-				[/* text */ 't', `), or -1 if the end of the stream has
-             been reached`]
+				[/* text */ 't', `The number of characters actually skipped`]
 			]
 		]],
 		[/* method */ 'close()', [
@@ -149,48 +207,6 @@ DocsCollector.collect('java.io.FilterReader', [
 			],
 			/* return */ UDF
 		]],
-		[/* method */ 'skip(long)', [
-			[/* method description */
-				[/* text */ 't', `Skips characters.  This method will block until some characters are
- available, an I/O error occurs, or the end of the stream is reached.
- If the stream is already at its end before this method is invoked,
- then no characters are skipped and zero is returned.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'n', [/* parameter description */
-					[/* text */ 't', `The number of characters to skip`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
-					[/* text */ 't', `If `],
-					[/* inline code block */ 'i', `n`],
-					[/* text */ 't', ` is negative and the
-             contained `],
-					[/* inline code block */ 'i', `Reader`],
-					[/* text */ 't', `'s `],
-					[/* inline code block */ 'i', `skip`],
-					[/* text */ 't', ` method throws an
-             IllegalArgumentException for a negative parameter`]
-				]],
-				[/* throw */ 'java.io.IOException', [/* throw description */
-					[/* text */ 't', `If an I/O error occurs`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `The number of characters actually skipped`]
-			]
-		]],
-		[/* method */ 'markSupported()', [
-			[/* method description */
-				[/* text */ 't', `Tells whether this stream supports the mark() operation.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `true if and only if this stream supports the mark operation.`]
-			]
-		]],
 		[/* method */ 'reset()', [
 			[/* method description */
 				[/* text */ 't', `Resets the stream.`]
@@ -202,22 +218,6 @@ DocsCollector.collect('java.io.FilterReader', [
 				]]
 			],
 			/* return */ UDF
-		]],
-		[/* method */ 'ready()', [
-			[/* method description */
-				[/* text */ 't', `Tells whether this stream is ready to be read.`]
-			],
-			/* parameters */ UDF,
-			[/* throws */
-				[/* throw */ 'java.io.IOException', [/* throw description */
-					[/* text */ 't', `If an I/O error occurs`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `True if the next read() is guaranteed not to block for input,
- false otherwise.  Note that returning false does not guarantee that the
- next read will block.`]
-			]
 		]]
 	],
 ]);

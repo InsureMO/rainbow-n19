@@ -328,14 +328,14 @@ JdkClassCreateHelper.class('java.lang.Boolean', [
 		]
 	],
 	[/* declared fields */
-		[/* public static final java.lang.Boolean java.lang.Boolean.TRUE */
-			/* name */ 'TRUE',
+		[/* public static final java.lang.Boolean java.lang.Boolean.FALSE */
+			/* name */ 'FALSE',
 			/* type */ 'java.lang.Boolean',
 			/* annotations */ UDF,
 			/* modifiers */ 25
 		],
-		[/* public static final java.lang.Boolean java.lang.Boolean.FALSE */
-			/* name */ 'FALSE',
+		[/* public static final java.lang.Boolean java.lang.Boolean.TRUE */
+			/* name */ 'TRUE',
 			/* type */ 'java.lang.Boolean',
 			/* annotations */ UDF,
 			/* modifiers */ 25

@@ -7,6 +7,15 @@ DocsCollector.collect('java.io.PipedWriter', [
 	],
 	/* fields */ UDF,
 	[/* constructors */
+		[/* constructor */ '<init>()', [
+			[/* constructor description */
+				[/* text */ 't', `Creates a piped writer that is not yet connected to a
+ piped reader. It must be connected to a piped reader,
+ either by the receiver or the sender, before being used.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF
+		]],
 		[/* constructor */ '<init>(java.io.PipedReader)', [
 			[/* constructor description */
 				[/* text */ 't', `Creates a piped writer connected to the specified piped
@@ -25,18 +34,53 @@ DocsCollector.collect('java.io.PipedWriter', [
 					[/* text */ 't', `if an I/O error occurs.`]
 				]]
 			]
-		]],
-		[/* constructor */ '<init>()', [
-			[/* constructor description */
-				[/* text */ 't', `Creates a piped writer that is not yet connected to a
- piped reader. It must be connected to a piped reader,
- either by the receiver or the sender, before being used.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF
 		]]
 	],
 	[/* methods */
+		[/* method */ 'connect(java.io.PipedReader)', [
+			[/* method description */
+				[/* text */ 't', `Connects this piped writer to a receiver. If this object
+ is already connected to some other piped reader, an
+ `],
+				[/* inline code block */ 'i', `IOException`],
+				[/* text */ 't', ` is thrown.
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', `
+ If `],
+					[/* inline code block */ 'i', `snk`],
+					[/* text */ 't', ` is an unconnected piped reader and
+ `],
+					[/* inline code block */ 'i', `src`],
+					[/* text */ 't', ` is an unconnected piped writer, they may
+ be connected by either the call:
+ `]
+				]],
+				[/* block */ 'b', [
+					[/* code block */ 'c', ` src.connect(snk)`]
+				]],
+				[/* text */ 't', `
+ or the call:
+ `],
+				[/* block */ 'b', [
+					[/* code block */ 'c', ` snk.connect(src)`]
+				]],
+				[/* text */ 't', `
+ The two calls have the same effect.`],
+				[/* block */ 'b', '']
+			],
+			[/* parameters */
+				[/* parameter */ 'snk', [/* parameter description */
+					[/* text */ 't', `the piped reader to connect to.`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.io.IOException', [/* throw description */
+					[/* text */ 't', `if an I/O error occurs.`]
+				]]
+			],
+			/* return */ UDF
+		]],
 		[/* method */ 'flush()', [
 			[/* method description */
 				[/* text */ 't', `Flushes this output stream and forces any buffered output characters
@@ -47,6 +91,20 @@ DocsCollector.collect('java.io.PipedWriter', [
 			[/* throws */
 				[/* throw */ 'java.io.IOException', [/* throw description */
 					[/* text */ 't', `if the pipe is closed, or an I/O error occurs.`]
+				]]
+			],
+			/* return */ UDF
+		]],
+		[/* method */ 'close()', [
+			[/* method description */
+				[/* text */ 't', `Closes this piped output stream and releases any system resources
+ associated with this stream. This stream may no longer be used for
+ writing characters.`]
+			],
+			/* parameters */ UDF,
+			[/* throws */
+				[/* throw */ 'java.io.IOException', [/* throw description */
+					[/* text */ 't', `if an I/O error occurs.`]
 				]]
 			],
 			/* return */ UDF
@@ -140,64 +198,6 @@ DocsCollector.collect('java.io.PipedWriter', [
 					[/* reference */ 'r', `#connect(java.io.PipedReader)`, `unconnected`],
 					[/* text */ 't', `, closed
           or an I/O error occurs.`]
-				]]
-			],
-			/* return */ UDF
-		]],
-		[/* method */ 'connect(java.io.PipedReader)', [
-			[/* method description */
-				[/* text */ 't', `Connects this piped writer to a receiver. If this object
- is already connected to some other piped reader, an
- `],
-				[/* inline code block */ 'i', `IOException`],
-				[/* text */ 't', ` is thrown.
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', `
- If `],
-					[/* inline code block */ 'i', `snk`],
-					[/* text */ 't', ` is an unconnected piped reader and
- `],
-					[/* inline code block */ 'i', `src`],
-					[/* text */ 't', ` is an unconnected piped writer, they may
- be connected by either the call:
- `]
-				]],
-				[/* block */ 'b', [
-					[/* code block */ 'c', ` src.connect(snk)`]
-				]],
-				[/* text */ 't', `
- or the call:
- `],
-				[/* block */ 'b', [
-					[/* code block */ 'c', ` snk.connect(src)`]
-				]],
-				[/* text */ 't', `
- The two calls have the same effect.`],
-				[/* block */ 'b', '']
-			],
-			[/* parameters */
-				[/* parameter */ 'snk', [/* parameter description */
-					[/* text */ 't', `the piped reader to connect to.`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.io.IOException', [/* throw description */
-					[/* text */ 't', `if an I/O error occurs.`]
-				]]
-			],
-			/* return */ UDF
-		]],
-		[/* method */ 'close()', [
-			[/* method description */
-				[/* text */ 't', `Closes this piped output stream and releases any system resources
- associated with this stream. This stream may no longer be used for
- writing characters.`]
-			],
-			/* parameters */ UDF,
-			[/* throws */
-				[/* throw */ 'java.io.IOException', [/* throw description */
-					[/* text */ 't', `if an I/O error occurs.`]
 				]]
 			],
 			/* return */ UDF

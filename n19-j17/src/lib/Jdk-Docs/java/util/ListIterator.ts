@@ -58,6 +58,134 @@ DocsCollector.collect('java.util.ListIterator', [
 	/* fields */ UDF,
 	/* constructors */ UDF,
 	[/* methods */
+		[/* method */ 'hasNext()', [
+			[/* method description */
+				[/* text */ 't', `Returns `],
+				[/* inline code block */ 'i', `true`],
+				[/* text */ 't', ` if this list iterator has more elements when
+ traversing the list in the forward direction. (In other words,
+ returns `],
+				[/* inline code block */ 'i', `true`],
+				[/* text */ 't', ` if `],
+				[/* reference */ 'r', `#next()`, `next()`],
+				[/* text */ 't', ` would return an element rather
+ than throwing an exception.)`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* inline code block */ 'i', `true`],
+				[/* text */ 't', ` if the list iterator has more elements when
+         traversing the list in the forward direction`]
+			]
+		]],
+		[/* method */ 'hasPrevious()', [
+			[/* method description */
+				[/* text */ 't', `Returns `],
+				[/* inline code block */ 'i', `true`],
+				[/* text */ 't', ` if this list iterator has more elements when
+ traversing the list in the reverse direction.  (In other words,
+ returns `],
+				[/* inline code block */ 'i', `true`],
+				[/* text */ 't', ` if `],
+				[/* reference */ 'r', `#previous()`, `previous()`],
+				[/* text */ 't', ` would return an element
+ rather than throwing an exception.)`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* inline code block */ 'i', `true`],
+				[/* text */ 't', ` if the list iterator has more elements when
+         traversing the list in the reverse direction`]
+			]
+		]],
+		[/* method */ 'next()', [
+			[/* method description */
+				[/* text */ 't', `Returns the next element in the list and advances the cursor position.
+ This method may be called repeatedly to iterate through the list,
+ or intermixed with calls to `],
+				[/* reference */ 'r', `#previous()`, `previous()`],
+				[/* text */ 't', ` to go back and forth.
+ (Note that alternating calls to `],
+				[/* inline code block */ 'i', `next`],
+				[/* text */ 't', ` and `],
+				[/* inline code block */ 'i', `previous`],
+				[/* text */ 't', `
+ will return the same element repeatedly.)`]
+			],
+			/* parameters */ UDF,
+			[/* throws */
+				[/* throw */ 'java.util.NoSuchElementException', [/* throw description */
+					[/* text */ 't', `if the iteration has no next element`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `the next element in the list`]
+			]
+		]],
+		[/* method */ 'previous()', [
+			[/* method description */
+				[/* text */ 't', `Returns the previous element in the list and moves the cursor
+ position backwards.  This method may be called repeatedly to
+ iterate through the list backwards, or intermixed with calls to
+ `],
+				[/* reference */ 'r', `#next()`, `next()`],
+				[/* text */ 't', ` to go back and forth.  (Note that alternating calls
+ to `],
+				[/* inline code block */ 'i', `next`],
+				[/* text */ 't', ` and `],
+				[/* inline code block */ 'i', `previous`],
+				[/* text */ 't', ` will return the same
+ element repeatedly.)`]
+			],
+			/* parameters */ UDF,
+			[/* throws */
+				[/* throw */ 'java.util.NoSuchElementException', [/* throw description */
+					[/* text */ 't', `if the iteration has no previous
+         element`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `the previous element in the list`]
+			]
+		]],
+		[/* method */ 'nextIndex()', [
+			[/* method description */
+				[/* text */ 't', `Returns the index of the element that would be returned by a
+ subsequent call to `],
+				[/* reference */ 'r', `#next()`, `next()`],
+				[/* text */ 't', `. (Returns list size if the list
+ iterator is at the end of the list.)`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the index of the element that would be returned by a
+         subsequent call to `],
+				[/* inline code block */ 'i', `next`],
+				[/* text */ 't', `, or list size if the list
+         iterator is at the end of the list`]
+			]
+		]],
+		[/* method */ 'previousIndex()', [
+			[/* method description */
+				[/* text */ 't', `Returns the index of the element that would be returned by a
+ subsequent call to `],
+				[/* reference */ 'r', `#previous()`, `previous()`],
+				[/* text */ 't', `. (Returns -1 if the list
+ iterator is at the beginning of the list.)`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the index of the element that would be returned by a
+         subsequent call to `],
+				[/* inline code block */ 'i', `previous`],
+				[/* text */ 't', `, or -1 if the list
+         iterator is at the beginning of the list`]
+			]
+		]],
 		[/* method */ 'add(java.lang.Object)', [
 			[/* method description */
 				[/* text */ 't', `Inserts the specified element into the list (optional operation).
@@ -155,51 +283,6 @@ DocsCollector.collect('java.util.ListIterator', [
 			],
 			/* return */ UDF
 		]],
-		[/* method */ 'hasNext()', [
-			[/* method description */
-				[/* text */ 't', `Returns `],
-				[/* inline code block */ 'i', `true`],
-				[/* text */ 't', ` if this list iterator has more elements when
- traversing the list in the forward direction. (In other words,
- returns `],
-				[/* inline code block */ 'i', `true`],
-				[/* text */ 't', ` if `],
-				[/* reference */ 'r', `#next()`, `next()`],
-				[/* text */ 't', ` would return an element rather
- than throwing an exception.)`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* inline code block */ 'i', `true`],
-				[/* text */ 't', ` if the list iterator has more elements when
-         traversing the list in the forward direction`]
-			]
-		]],
-		[/* method */ 'next()', [
-			[/* method description */
-				[/* text */ 't', `Returns the next element in the list and advances the cursor position.
- This method may be called repeatedly to iterate through the list,
- or intermixed with calls to `],
-				[/* reference */ 'r', `#previous()`, `previous()`],
-				[/* text */ 't', ` to go back and forth.
- (Note that alternating calls to `],
-				[/* inline code block */ 'i', `next`],
-				[/* text */ 't', ` and `],
-				[/* inline code block */ 'i', `previous`],
-				[/* text */ 't', `
- will return the same element repeatedly.)`]
-			],
-			/* parameters */ UDF,
-			[/* throws */
-				[/* throw */ 'java.util.NoSuchElementException', [/* throw description */
-					[/* text */ 't', `if the iteration has no next element`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `the next element in the list`]
-			]
-		]],
 		[/* method */ 'set(java.lang.Object)', [
 			[/* method description */
 				[/* text */ 't', `Replaces the last element returned by `],
@@ -262,89 +345,6 @@ DocsCollector.collect('java.util.ListIterator', [
 				]]
 			],
 			/* return */ UDF
-		]],
-		[/* method */ 'nextIndex()', [
-			[/* method description */
-				[/* text */ 't', `Returns the index of the element that would be returned by a
- subsequent call to `],
-				[/* reference */ 'r', `#next()`, `next()`],
-				[/* text */ 't', `. (Returns list size if the list
- iterator is at the end of the list.)`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the index of the element that would be returned by a
-         subsequent call to `],
-				[/* inline code block */ 'i', `next`],
-				[/* text */ 't', `, or list size if the list
-         iterator is at the end of the list`]
-			]
-		]],
-		[/* method */ 'previousIndex()', [
-			[/* method description */
-				[/* text */ 't', `Returns the index of the element that would be returned by a
- subsequent call to `],
-				[/* reference */ 'r', `#previous()`, `previous()`],
-				[/* text */ 't', `. (Returns -1 if the list
- iterator is at the beginning of the list.)`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the index of the element that would be returned by a
-         subsequent call to `],
-				[/* inline code block */ 'i', `previous`],
-				[/* text */ 't', `, or -1 if the list
-         iterator is at the beginning of the list`]
-			]
-		]],
-		[/* method */ 'hasPrevious()', [
-			[/* method description */
-				[/* text */ 't', `Returns `],
-				[/* inline code block */ 'i', `true`],
-				[/* text */ 't', ` if this list iterator has more elements when
- traversing the list in the reverse direction.  (In other words,
- returns `],
-				[/* inline code block */ 'i', `true`],
-				[/* text */ 't', ` if `],
-				[/* reference */ 'r', `#previous()`, `previous()`],
-				[/* text */ 't', ` would return an element
- rather than throwing an exception.)`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* inline code block */ 'i', `true`],
-				[/* text */ 't', ` if the list iterator has more elements when
-         traversing the list in the reverse direction`]
-			]
-		]],
-		[/* method */ 'previous()', [
-			[/* method description */
-				[/* text */ 't', `Returns the previous element in the list and moves the cursor
- position backwards.  This method may be called repeatedly to
- iterate through the list backwards, or intermixed with calls to
- `],
-				[/* reference */ 'r', `#next()`, `next()`],
-				[/* text */ 't', ` to go back and forth.  (Note that alternating calls
- to `],
-				[/* inline code block */ 'i', `next`],
-				[/* text */ 't', ` and `],
-				[/* inline code block */ 'i', `previous`],
-				[/* text */ 't', ` will return the same
- element repeatedly.)`]
-			],
-			/* parameters */ UDF,
-			[/* throws */
-				[/* throw */ 'java.util.NoSuchElementException', [/* throw description */
-					[/* text */ 't', `if the iteration has no previous
-         element`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `the previous element in the list`]
-			]
 		]]
 	],
 ]);

@@ -76,6 +76,128 @@ DocsCollector.collect('java.lang.module.ModuleFinder', [
 	/* fields */ UDF,
 	/* constructors */ UDF,
 	[/* methods */
+		[/* method */ 'find(java.lang.String)', [
+			[/* method description */
+				[/* text */ 't', `Finds a reference to a module of a given name.
+
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', ` A `],
+					[/* inline code block */ 'i', `ModuleFinder`],
+					[/* text */ 't', ` provides a consistent view of the
+ modules that it locates. If `],
+					[/* inline code block */ 'i', `find`],
+					[/* text */ 't', ` is invoked several times to
+ locate the same module (by name) then it will return the same result
+ each time. If a module is located then it is guaranteed to be a member
+ of the set of modules returned by the `],
+					[/* reference */ 'r', `#findAll()`, `findAll`],
+					[/* text */ 't', `
+ method. `]
+				]]
+			],
+			[/* parameters */
+				[/* parameter */ 'name', [/* parameter description */
+					[/* text */ 't', `The name of the module to find`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.lang.module.FindException', [/* throw description */
+					[/* text */ 't', `If an error occurs finding the module`]
+				]],
+				[/* throw */ 'java.lang.SecurityException', [/* throw description */
+					[/* text */ 't', `If denied by the security manager`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `A reference to a module with the given name or an empty
+         `],
+				[/* inline code block */ 'i', `Optional`],
+				[/* text */ 't', ` if not found`]
+			]
+		]],
+		[/* method */ 'findAll()', [
+			[/* method description */
+				[/* text */ 't', `Returns the set of all module references that this finder can locate.
+
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', ` A `],
+					[/* inline code block */ 'i', `ModuleFinder`],
+					[/* text */ 't', ` provides a consistent view of the modules
+ that it locates. If `],
+					[/* reference */ 'r', `#findAll()`, `findAll`],
+					[/* text */ 't', ` is invoked several times
+ then it will return the same (equals) result each time. For each `],
+					[/* inline code block */ 'i', `ModuleReference`],
+					[/* text */ 't', ` element in the returned set then it is guaranteed that
+ `],
+					[/* reference */ 'r', `#find(java.lang.String)`, `find`],
+					[/* text */ 't', ` will locate the `],
+					[/* inline code block */ 'i', `ModuleReference`],
+					[/* text */ 't', ` if invoked
+ to find that module. `]
+				]]
+			],
+			/* parameters */ UDF,
+			[/* throws */
+				[/* throw */ 'java.lang.module.FindException', [/* throw description */
+					[/* text */ 't', `If an error occurs finding all modules`]
+				]],
+				[/* throw */ 'java.lang.SecurityException', [/* throw description */
+					[/* text */ 't', `If denied by the security manager`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `The set of all module references that this finder locates`]
+			]
+		]],
+		[/* method */ 'compose(java.lang.module.ModuleFinder...)', [
+			[/* method description */
+				[/* text */ 't', `Returns a module finder that is composed from a sequence of zero or more
+ module finders. The `],
+				[/* reference */ 'r', `#find(java.lang.String)`, `find`],
+				[/* text */ 't', ` method of the resulting
+ module finder will locate a module by invoking the `],
+				[/* inline code block */ 'i', `find`],
+				[/* text */ 't', ` method
+ of each module finder, in array index order, until either the module is
+ found or all module finders have been searched. The `],
+				[/* reference */ 'r', `#findAll()`, `findAll`],
+				[/* text */ 't', ` method of the resulting module finder will return a set of
+ modules that includes all modules located by the first module finder.
+ The set of modules will include all modules located by the second or
+ subsequent module finder that are not located by previous module finders
+ in the sequence.
+
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', ` When locating modules then any exceptions or errors thrown by the
+ `],
+					[/* inline code block */ 'i', `find`],
+					[/* text */ 't', ` or `],
+					[/* inline code block */ 'i', `findAll`],
+					[/* text */ 't', ` methods of the underlying module finders
+ will be propagated to the caller of the resulting module finder's
+ `],
+					[/* inline code block */ 'i', `find`],
+					[/* text */ 't', ` or `],
+					[/* inline code block */ 'i', `findAll`],
+					[/* text */ 't', ` methods. `]
+				]]
+			],
+			[/* parameters */
+				[/* parameter */ 'finders', [/* parameter description */
+					[/* text */ 't', `The array of module finders`]
+				]]
+			],
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `A `],
+				[/* inline code block */ 'i', `ModuleFinder`],
+				[/* text */ 't', ` that composes a sequence of module finders`]
+			]
+		]],
 		[/* method */ 'of(java.nio.file.Path...)', [
 			[/* method description */
 				[/* text */ 't', `Returns a module finder that locates modules on the file system by
@@ -342,46 +464,6 @@ DocsCollector.collect('java.lang.module.ModuleFinder', [
 				[/* text */ 't', ` that locates modules on the file system`]
 			]
 		]],
-		[/* method */ 'find(java.lang.String)', [
-			[/* method description */
-				[/* text */ 't', `Finds a reference to a module of a given name.
-
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', ` A `],
-					[/* inline code block */ 'i', `ModuleFinder`],
-					[/* text */ 't', ` provides a consistent view of the
- modules that it locates. If `],
-					[/* inline code block */ 'i', `find`],
-					[/* text */ 't', ` is invoked several times to
- locate the same module (by name) then it will return the same result
- each time. If a module is located then it is guaranteed to be a member
- of the set of modules returned by the `],
-					[/* reference */ 'r', `#findAll()`, `findAll`],
-					[/* text */ 't', `
- method. `]
-				]]
-			],
-			[/* parameters */
-				[/* parameter */ 'name', [/* parameter description */
-					[/* text */ 't', `The name of the module to find`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.module.FindException', [/* throw description */
-					[/* text */ 't', `If an error occurs finding the module`]
-				]],
-				[/* throw */ 'java.lang.SecurityException', [/* throw description */
-					[/* text */ 't', `If denied by the security manager`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `A reference to a module with the given name or an empty
-         `],
-				[/* inline code block */ 'i', `Optional`],
-				[/* text */ 't', ` if not found`]
-			]
-		]],
 		[/* method */ 'ofSystem()', [
 			[/* method description */
 				[/* text */ 't', `Returns a module finder that locates the `],
@@ -414,88 +496,6 @@ DocsCollector.collect('java.lang.module.ModuleFinder', [
 				[/* text */ 't', `A `],
 				[/* inline code block */ 'i', `ModuleFinder`],
 				[/* text */ 't', ` that locates the system modules`]
-			]
-		]],
-		[/* method */ 'compose(java.lang.module.ModuleFinder...)', [
-			[/* method description */
-				[/* text */ 't', `Returns a module finder that is composed from a sequence of zero or more
- module finders. The `],
-				[/* reference */ 'r', `#find(java.lang.String)`, `find`],
-				[/* text */ 't', ` method of the resulting
- module finder will locate a module by invoking the `],
-				[/* inline code block */ 'i', `find`],
-				[/* text */ 't', ` method
- of each module finder, in array index order, until either the module is
- found or all module finders have been searched. The `],
-				[/* reference */ 'r', `#findAll()`, `findAll`],
-				[/* text */ 't', ` method of the resulting module finder will return a set of
- modules that includes all modules located by the first module finder.
- The set of modules will include all modules located by the second or
- subsequent module finder that are not located by previous module finders
- in the sequence.
-
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', ` When locating modules then any exceptions or errors thrown by the
- `],
-					[/* inline code block */ 'i', `find`],
-					[/* text */ 't', ` or `],
-					[/* inline code block */ 'i', `findAll`],
-					[/* text */ 't', ` methods of the underlying module finders
- will be propagated to the caller of the resulting module finder's
- `],
-					[/* inline code block */ 'i', `find`],
-					[/* text */ 't', ` or `],
-					[/* inline code block */ 'i', `findAll`],
-					[/* text */ 't', ` methods. `]
-				]]
-			],
-			[/* parameters */
-				[/* parameter */ 'finders', [/* parameter description */
-					[/* text */ 't', `The array of module finders`]
-				]]
-			],
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `A `],
-				[/* inline code block */ 'i', `ModuleFinder`],
-				[/* text */ 't', ` that composes a sequence of module finders`]
-			]
-		]],
-		[/* method */ 'findAll()', [
-			[/* method description */
-				[/* text */ 't', `Returns the set of all module references that this finder can locate.
-
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', ` A `],
-					[/* inline code block */ 'i', `ModuleFinder`],
-					[/* text */ 't', ` provides a consistent view of the modules
- that it locates. If `],
-					[/* reference */ 'r', `#findAll()`, `findAll`],
-					[/* text */ 't', ` is invoked several times
- then it will return the same (equals) result each time. For each `],
-					[/* inline code block */ 'i', `ModuleReference`],
-					[/* text */ 't', ` element in the returned set then it is guaranteed that
- `],
-					[/* reference */ 'r', `#find(java.lang.String)`, `find`],
-					[/* text */ 't', ` will locate the `],
-					[/* inline code block */ 'i', `ModuleReference`],
-					[/* text */ 't', ` if invoked
- to find that module. `]
-				]]
-			],
-			/* parameters */ UDF,
-			[/* throws */
-				[/* throw */ 'java.lang.module.FindException', [/* throw description */
-					[/* text */ 't', `If an error occurs finding all modules`]
-				]],
-				[/* throw */ 'java.lang.SecurityException', [/* throw description */
-					[/* text */ 't', `If denied by the security manager`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `The set of all module references that this finder locates`]
 			]
 		]]
 	],

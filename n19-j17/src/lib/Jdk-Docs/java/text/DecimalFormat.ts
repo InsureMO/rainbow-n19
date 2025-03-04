@@ -716,35 +716,23 @@ DocsCollector.collect('java.text.DecimalFormat', [
 	],
 	/* fields */ UDF,
 	[/* constructors */
-		[/* constructor */ '<init>(java.lang.String,java.text.DecimalFormatSymbols)', [
+		[/* constructor */ '<init>()', [
 			[/* constructor description */
-				[/* text */ 't', `Creates a DecimalFormat using the given pattern and symbols.
- Use this constructor when you need to completely customize the
- behavior of the format.
+				[/* text */ 't', `Creates a DecimalFormat using the default pattern and symbols
+ for the default `],
+				[/* reference */ 'r', `java.Locale.Category#FORMAT`],
+				[/* text */ 't', ` locale.
+ This is a convenient way to obtain a
+ DecimalFormat when internationalization is not the main concern.
  `],
 				[/* block */ 'b', `
- To obtain standard formats for a given
- locale, use the factory methods on NumberFormat such as
- getInstance or getCurrencyInstance. If you need only minor adjustments
- to a standard format, you can modify the format returned by
- a NumberFormat factory method.`]
+ To obtain standard formats for a given locale, use the factory methods
+ on NumberFormat such as getNumberInstance. These factories will
+ return the most appropriate sub-class of NumberFormat for a given
+ locale.`]
 			],
-			[/* parameters */
-				[/* parameter */ 'pattern', [/* parameter description */
-					[/* text */ 't', `a non-localized pattern string`]
-				]],
-				[/* parameter */ 'symbols', [/* parameter description */
-					[/* text */ 't', `the set of symbols to be used`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
-					[/* text */ 't', `if any of the given arguments is null`]
-				]],
-				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
-					[/* text */ 't', `if the given pattern is invalid`]
-				]]
-			]
+			/* parameters */ UDF,
+			/* throws */ UDF
 		]],
 		[/* constructor */ '<init>(java.lang.String)', [
 			[/* constructor description */
@@ -777,23 +765,35 @@ DocsCollector.collect('java.text.DecimalFormat', [
 				]]
 			]
 		]],
-		[/* constructor */ '<init>()', [
+		[/* constructor */ '<init>(java.lang.String,java.text.DecimalFormatSymbols)', [
 			[/* constructor description */
-				[/* text */ 't', `Creates a DecimalFormat using the default pattern and symbols
- for the default `],
-				[/* reference */ 'r', `java.Locale.Category#FORMAT`],
-				[/* text */ 't', ` locale.
- This is a convenient way to obtain a
- DecimalFormat when internationalization is not the main concern.
+				[/* text */ 't', `Creates a DecimalFormat using the given pattern and symbols.
+ Use this constructor when you need to completely customize the
+ behavior of the format.
  `],
 				[/* block */ 'b', `
- To obtain standard formats for a given locale, use the factory methods
- on NumberFormat such as getNumberInstance. These factories will
- return the most appropriate sub-class of NumberFormat for a given
- locale.`]
+ To obtain standard formats for a given
+ locale, use the factory methods on NumberFormat such as
+ getInstance or getCurrencyInstance. If you need only minor adjustments
+ to a standard format, you can modify the format returned by
+ a NumberFormat factory method.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF
+			[/* parameters */
+				[/* parameter */ 'pattern', [/* parameter description */
+					[/* text */ 't', `a non-localized pattern string`]
+				]],
+				[/* parameter */ 'symbols', [/* parameter description */
+					[/* text */ 't', `the set of symbols to be used`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
+					[/* text */ 't', `if any of the given arguments is null`]
+				]],
+				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
+					[/* text */ 't', `if the given pattern is invalid`]
+				]]
+			]
 		]]
 	],
 	[/* methods */
@@ -815,77 +815,40 @@ DocsCollector.collect('java.text.DecimalFormat', [
 				[/* text */ 't', ` otherwise.`]
 			]
 		]],
-		[/* method */ 'hashCode()', [
+		[/* method */ 'isDecimalSeparatorAlwaysShown()', [
 			[/* method description */
-				[/* text */ 't', `Overrides hashCode`]
+				[/* text */ 't', `Allows you to get the behavior of the decimal separator with integers.
+ (The decimal separator will always appear with decimals.)
+ `],
+				[/* block */ 'b', `Example: Decimal ON: 12345 → 12345.; OFF: 12345 → 12345`]
 			],
 			/* parameters */ UDF,
 			/* throws */ UDF,
 			[/* return description */
-				[/* text */ 't', `a hash code value for this object.`]
+				[/* inline code block */ 'i', `true`],
+				[/* text */ 't', ` if the decimal separator is always shown;
+         `],
+				[/* inline code block */ 'i', `false`],
+				[/* text */ 't', ` otherwise`]
 			]
 		]],
-		[/* method */ 'clone()', [
+		[/* method */ 'isParseBigDecimal()', [
 			[/* method description */
-				[/* text */ 't', `Standard override; no change in semantics.`]
+				[/* text */ 't', `Returns whether the `],
+				[/* reference */ 'r', `#parse(java.lang.String,java.text.ParsePosition)`, `parse(java.lang.String, java.text.ParsePosition)`],
+				[/* text */ 't', `
+ method returns `],
+				[/* inline code block */ 'i', `BigDecimal`],
+				[/* text */ 't', `. The default value is false.`]
 			],
 			/* parameters */ UDF,
 			/* throws */ UDF,
 			[/* return description */
-				[/* text */ 't', `a clone of this instance.`]
-			]
-		]],
-		[/* method */ 'format(double,java.lang.StringBuffer,java.text.FieldPosition)', [
-			[/* method description */
-				[/* text */ 't', `Formats a double to produce a string.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'number', [/* parameter description */
-					[/* text */ 't', `The double to format`]
-				]],
-				[/* parameter */ 'result', [/* parameter description */
-					[/* text */ 't', `where the text is to be appended`]
-				]],
-				[/* parameter */ 'fieldPosition', [/* parameter description */
-					[/* text */ 't', `keeps track on the position of the field within
-                         the returned string. For example, for formatting
-                         a number `],
-					[/* inline code block */ 'i', `1234567.89`],
-					[/* text */ 't', ` in `],
-					[/* inline code block */ 'i', `Locale.US`],
-					[/* text */ 't', `
-                         locale, if the given `],
-					[/* inline code block */ 'i', `fieldPosition`],
-					[/* text */ 't', ` is
-                         `],
-					[/* reference */ 'r', `.NumberFormat#INTEGER_FIELD`],
-					[/* text */ 't', `, the begin index
-                         and end index of `],
-					[/* inline code block */ 'i', `fieldPosition`],
-					[/* text */ 't', ` will be set
-                         to 0 and 9, respectively for the output string
-                         `],
-					[/* inline code block */ 'i', `1,234,567.89`],
-					[/* text */ 't', `.`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
-					[/* text */ 't', `if `],
-					[/* inline code block */ 'i', `result`],
-					[/* text */ 't', ` or
-            `],
-					[/* inline code block */ 'i', `fieldPosition`],
-					[/* text */ 't', ` is `],
-					[/* inline code block */ 'i', `null`]
-				]],
-				[/* throw */ 'java.lang.ArithmeticException', [/* throw description */
-					[/* text */ 't', `if rounding is needed with rounding
-            mode being set to RoundingMode.UNNECESSARY`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `The formatted number string`]
+				[/* inline code block */ 'i', `true`],
+				[/* text */ 't', ` if the parse method returns BigDecimal;
+         `],
+				[/* inline code block */ 'i', `false`],
+				[/* text */ 't', ` otherwise`]
 			]
 		]],
 		[/* method */ 'format(java.lang.Object,java.lang.StringBuffer,java.text.FieldPosition)', [
@@ -959,57 +922,113 @@ DocsCollector.collect('java.text.DecimalFormat', [
 				[/* inline code block */ 'i', `toAppendTo`]
 			]
 		]],
-		[/* method */ 'format(long,java.lang.StringBuffer,java.text.FieldPosition)', [
+		[/* method */ 'getGroupingSize()', [
 			[/* method description */
-				[/* text */ 't', `Format a long to produce a string.`]
+				[/* text */ 't', `Return the grouping size. Grouping size is the number of digits between
+ grouping separators in the integer portion of a number.  For example,
+ in the number "123,456.78", the grouping size is 3. Grouping size of
+ zero designates that grouping is not used, which provides the same
+ formatting as if calling `],
+				[/* reference */ 'r', `.NumberFormat#setGroupingUsed(boolean)`],
+				[/* text */ 't', `.`]
 			],
-			[/* parameters */
-				[/* parameter */ 'number', [/* parameter description */
-					[/* text */ 't', `The long to format`]
-				]],
-				[/* parameter */ 'result', [/* parameter description */
-					[/* text */ 't', `where the text is to be appended`]
-				]],
-				[/* parameter */ 'fieldPosition', [/* parameter description */
-					[/* text */ 't', `keeps track on the position of the field within
-                         the returned string. For example, for formatting
-                         a number `],
-					[/* inline code block */ 'i', `123456789`],
-					[/* text */ 't', ` in `],
-					[/* inline code block */ 'i', `Locale.US`],
-					[/* text */ 't', `
-                         locale, if the given `],
-					[/* inline code block */ 'i', `fieldPosition`],
-					[/* text */ 't', ` is
-                         `],
-					[/* reference */ 'r', `.NumberFormat#INTEGER_FIELD`],
-					[/* text */ 't', `, the begin index
-                         and end index of `],
-					[/* inline code block */ 'i', `fieldPosition`],
-					[/* text */ 't', ` will be set
-                         to 0 and 11, respectively for the output string
-                         `],
-					[/* inline code block */ 'i', `123,456,789`],
-					[/* text */ 't', `.`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
-					[/* text */ 't', `if `],
-					[/* inline code block */ 'i', `result`],
-					[/* text */ 't', ` or
-                  `],
-					[/* inline code block */ 'i', `fieldPosition`],
-					[/* text */ 't', ` is `],
-					[/* inline code block */ 'i', `null`]
-				]],
-				[/* throw */ 'java.lang.ArithmeticException', [/* throw description */
-					[/* text */ 't', `if rounding is needed with rounding
-                  mode being set to RoundingMode.UNNECESSARY`]
-				]]
-			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
 			[/* return description */
-				[/* text */ 't', `The formatted number string`]
+				[/* text */ 't', `the grouping size`]
+			]
+		]],
+		[/* method */ 'getMaximumFractionDigits()', [
+			[/* method description */
+				[/* text */ 't', `Gets the maximum number of digits allowed in the fraction portion of a
+ number.
+ For formatting numbers other than `],
+				[/* inline code block */ 'i', `BigInteger`],
+				[/* text */ 't', ` and
+ `],
+				[/* inline code block */ 'i', `BigDecimal`],
+				[/* text */ 't', ` objects, the lower of the return value and
+ 340 is used.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the maximum number of digits.`]
+			]
+		]],
+		[/* method */ 'getMaximumIntegerDigits()', [
+			[/* method description */
+				[/* text */ 't', `Gets the maximum number of digits allowed in the integer portion of a
+ number.
+ For formatting numbers other than `],
+				[/* inline code block */ 'i', `BigInteger`],
+				[/* text */ 't', ` and
+ `],
+				[/* inline code block */ 'i', `BigDecimal`],
+				[/* text */ 't', ` objects, the lower of the return value and
+ 309 is used.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the maximum number of digits`]
+			]
+		]],
+		[/* method */ 'getMinimumFractionDigits()', [
+			[/* method description */
+				[/* text */ 't', `Gets the minimum number of digits allowed in the fraction portion of a
+ number.
+ For formatting numbers other than `],
+				[/* inline code block */ 'i', `BigInteger`],
+				[/* text */ 't', ` and
+ `],
+				[/* inline code block */ 'i', `BigDecimal`],
+				[/* text */ 't', ` objects, the lower of the return value and
+ 340 is used.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the minimum number of digits`]
+			]
+		]],
+		[/* method */ 'getMinimumIntegerDigits()', [
+			[/* method description */
+				[/* text */ 't', `Gets the minimum number of digits allowed in the integer portion of a
+ number.
+ For formatting numbers other than `],
+				[/* inline code block */ 'i', `BigInteger`],
+				[/* text */ 't', ` and
+ `],
+				[/* inline code block */ 'i', `BigDecimal`],
+				[/* text */ 't', ` objects, the lower of the return value and
+ 309 is used.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the minimum number of digits`]
+			]
+		]],
+		[/* method */ 'getMultiplier()', [
+			[/* method description */
+				[/* text */ 't', `Gets the multiplier for use in percent, per mille, and similar
+ formats.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the multiplier`]
+			]
+		]],
+		[/* method */ 'hashCode()', [
+			[/* method description */
+				[/* text */ 't', `Overrides hashCode`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `a hash code value for this object.`]
 			]
 		]],
 		[/* method */ 'parse(java.lang.String,java.text.ParsePosition)', [
@@ -1171,6 +1190,192 @@ DocsCollector.collect('java.text.DecimalFormat', [
 				[/* text */ 't', ` if the parse fails`]
 			]
 		]],
+		[/* method */ 'clone()', [
+			[/* method description */
+				[/* text */ 't', `Standard override; no change in semantics.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `a clone of this instance.`]
+			]
+		]],
+		[/* method */ 'getNegativePrefix()', [
+			[/* method description */
+				[/* text */ 't', `Get the negative prefix.
+ `],
+				[/* block */ 'b', `Examples: -123, ($123) (with negative suffix), sFr-123`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the negative prefix`]
+			]
+		]],
+		[/* method */ 'getNegativeSuffix()', [
+			[/* method description */
+				[/* text */ 't', `Get the negative suffix.
+ `],
+				[/* block */ 'b', `Examples: -123%, ($123) (with positive suffixes)`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the negative suffix`]
+			]
+		]],
+		[/* method */ 'getPositivePrefix()', [
+			[/* method description */
+				[/* text */ 't', `Get the positive prefix.
+ `],
+				[/* block */ 'b', `Examples: +123, $123, sFr123`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the positive prefix`]
+			]
+		]],
+		[/* method */ 'getPositiveSuffix()', [
+			[/* method description */
+				[/* text */ 't', `Get the positive suffix.
+ `],
+				[/* block */ 'b', `Example: 123%`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the positive suffix`]
+			]
+		]],
+		[/* method */ 'toLocalizedPattern()', [
+			[/* method description */
+				[/* text */ 't', `Synthesizes a localized pattern string that represents the current
+ state of this Format object.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `a localized pattern string`]
+			]
+		]],
+		[/* method */ 'toPattern()', [
+			[/* method description */
+				[/* text */ 't', `Synthesizes a pattern string that represents the current state
+ of this Format object.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `a pattern string`]
+			]
+		]],
+		[/* method */ 'format(double,java.lang.StringBuffer,java.text.FieldPosition)', [
+			[/* method description */
+				[/* text */ 't', `Formats a double to produce a string.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'number', [/* parameter description */
+					[/* text */ 't', `The double to format`]
+				]],
+				[/* parameter */ 'result', [/* parameter description */
+					[/* text */ 't', `where the text is to be appended`]
+				]],
+				[/* parameter */ 'fieldPosition', [/* parameter description */
+					[/* text */ 't', `keeps track on the position of the field within
+                         the returned string. For example, for formatting
+                         a number `],
+					[/* inline code block */ 'i', `1234567.89`],
+					[/* text */ 't', ` in `],
+					[/* inline code block */ 'i', `Locale.US`],
+					[/* text */ 't', `
+                         locale, if the given `],
+					[/* inline code block */ 'i', `fieldPosition`],
+					[/* text */ 't', ` is
+                         `],
+					[/* reference */ 'r', `.NumberFormat#INTEGER_FIELD`],
+					[/* text */ 't', `, the begin index
+                         and end index of `],
+					[/* inline code block */ 'i', `fieldPosition`],
+					[/* text */ 't', ` will be set
+                         to 0 and 9, respectively for the output string
+                         `],
+					[/* inline code block */ 'i', `1,234,567.89`],
+					[/* text */ 't', `.`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
+					[/* text */ 't', `if `],
+					[/* inline code block */ 'i', `result`],
+					[/* text */ 't', ` or
+            `],
+					[/* inline code block */ 'i', `fieldPosition`],
+					[/* text */ 't', ` is `],
+					[/* inline code block */ 'i', `null`]
+				]],
+				[/* throw */ 'java.lang.ArithmeticException', [/* throw description */
+					[/* text */ 't', `if rounding is needed with rounding
+            mode being set to RoundingMode.UNNECESSARY`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `The formatted number string`]
+			]
+		]],
+		[/* method */ 'format(long,java.lang.StringBuffer,java.text.FieldPosition)', [
+			[/* method description */
+				[/* text */ 't', `Format a long to produce a string.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'number', [/* parameter description */
+					[/* text */ 't', `The long to format`]
+				]],
+				[/* parameter */ 'result', [/* parameter description */
+					[/* text */ 't', `where the text is to be appended`]
+				]],
+				[/* parameter */ 'fieldPosition', [/* parameter description */
+					[/* text */ 't', `keeps track on the position of the field within
+                         the returned string. For example, for formatting
+                         a number `],
+					[/* inline code block */ 'i', `123456789`],
+					[/* text */ 't', ` in `],
+					[/* inline code block */ 'i', `Locale.US`],
+					[/* text */ 't', `
+                         locale, if the given `],
+					[/* inline code block */ 'i', `fieldPosition`],
+					[/* text */ 't', ` is
+                         `],
+					[/* reference */ 'r', `.NumberFormat#INTEGER_FIELD`],
+					[/* text */ 't', `, the begin index
+                         and end index of `],
+					[/* inline code block */ 'i', `fieldPosition`],
+					[/* text */ 't', ` will be set
+                         to 0 and 11, respectively for the output string
+                         `],
+					[/* inline code block */ 'i', `123,456,789`],
+					[/* text */ 't', `.`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
+					[/* text */ 't', `if `],
+					[/* inline code block */ 'i', `result`],
+					[/* text */ 't', ` or
+                  `],
+					[/* inline code block */ 'i', `fieldPosition`],
+					[/* text */ 't', ` is `],
+					[/* inline code block */ 'i', `null`]
+				]],
+				[/* throw */ 'java.lang.ArithmeticException', [/* throw description */
+					[/* text */ 't', `if rounding is needed with rounding
+                  mode being set to RoundingMode.UNNECESSARY`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `The formatted number string`]
+			]
+		]],
 		[/* method */ 'getRoundingMode()', [
 			[/* method description */
 				[/* text */ 't', `Gets the `],
@@ -1227,56 +1432,6 @@ DocsCollector.collect('java.text.DecimalFormat', [
 				[/* text */ 't', `AttributedCharacterIterator describing the formatted value.`]
 			]
 		]],
-		[/* method */ 'applyPattern(java.lang.String)', [
-			[/* method description */
-				[/* text */ 't', `Apply the given pattern to this Format object.  A pattern is a
- short-hand specification for the various formatting properties.
- These properties can also be changed individually through the
- various setter methods.
- `],
-				[/* block */ 'b', `
- There is no limit to integer digits set
- by this routine, since that is the typical end-user desire;
- use setMaximumInteger if you want to set a real value.
- For negative numbers, use a second pattern, separated by a semicolon
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', `Example `],
-					[/* inline code block */ 'i', `"#,#00.0#"`],
-					[/* text */ 't', ` → 1,234.56
- `]
-				]],
-				[/* block */ 'b', `This means a minimum of 2 integer digits, 1 fraction digit, and
- a maximum of 2 fraction digits.
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', `Example: `],
-					[/* inline code block */ 'i', `"#,#00.0#;(#,#00.0#)"`],
-					[/* text */ 't', ` for negatives in
- parentheses.
- `]
-				]],
-				[/* block */ 'b', `In negative patterns, the minimum and maximum counts are ignored;
- these are presumed to be set in the positive pattern.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'pattern', [/* parameter description */
-					[/* text */ 't', `a new pattern`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
-					[/* text */ 't', `if `],
-					[/* inline code block */ 'i', `pattern`],
-					[/* text */ 't', ` is null`]
-				]],
-				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
-					[/* text */ 't', `if the given pattern is invalid.`]
-				]]
-			],
-			/* return */ UDF
-		]],
-		[/* method */ 'setGroupingUsed(boolean)', UDF],
 		[/* method */ 'getDecimalFormatSymbols()', [
 			[/* method description */
 				[/* text */ 't', `Returns a copy of the decimal format symbols, which is generally not
@@ -1288,74 +1443,21 @@ DocsCollector.collect('java.text.DecimalFormat', [
 				[/* text */ 't', `a copy of the desired DecimalFormatSymbols`]
 			]
 		]],
-		[/* method */ 'setMinimumIntegerDigits(int)', [
+		[/* method */ 'getCurrency()', [
 			[/* method description */
-				[/* text */ 't', `Sets the minimum number of digits allowed in the integer portion of a
- number.
- For formatting numbers other than `],
-				[/* inline code block */ 'i', `BigInteger`],
-				[/* text */ 't', ` and
+				[/* text */ 't', `Gets the currency used by this decimal format when formatting
+ currency values.
+ The currency is obtained by calling
  `],
-				[/* inline code block */ 'i', `BigDecimal`],
-				[/* text */ 't', ` objects, the lower of `],
-				[/* inline code block */ 'i', `newValue`],
-				[/* text */ 't', ` and
- 309 is used. Negative input values are replaced with 0.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'newValue', [/* parameter description */
-					[/* text */ 't', `the minimum number of integer digits to be shown; if
- less than zero, then zero is used. The concrete subclass may enforce an
- upper limit to this value appropriate to the numeric type being formatted.`]
-				]]
-			],
-			/* throws */ UDF,
-			/* return */ UDF
-		]],
-		[/* method */ 'setMaximumIntegerDigits(int)', [
-			[/* method description */
-				[/* text */ 't', `Sets the maximum number of digits allowed in the integer portion of a
- number.
- For formatting numbers other than `],
-				[/* inline code block */ 'i', `BigInteger`],
-				[/* text */ 't', ` and
- `],
-				[/* inline code block */ 'i', `BigDecimal`],
-				[/* text */ 't', ` objects, the lower of `],
-				[/* inline code block */ 'i', `newValue`],
-				[/* text */ 't', ` and
- 309 is used. Negative input values are replaced with 0.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'newValue', [/* parameter description */
-					[/* text */ 't', `the maximum number of integer digits to be shown; if
- less than zero, then zero is used. The concrete subclass may enforce an
- upper limit to this value appropriate to the numeric type being formatted.`]
-				]]
-			],
-			/* throws */ UDF,
-			/* return */ UDF
-		]],
-		[/* method */ 'toPattern()', [
-			[/* method description */
-				[/* text */ 't', `Synthesizes a pattern string that represents the current state
- of this Format object.`]
+				[/* reference */ 'r', `.DecimalFormatSymbols#getCurrency()`],
+				[/* text */ 't', `
+ on this number format's symbols.`]
 			],
 			/* parameters */ UDF,
 			/* throws */ UDF,
 			[/* return description */
-				[/* text */ 't', `a pattern string`]
-			]
-		]],
-		[/* method */ 'toLocalizedPattern()', [
-			[/* method description */
-				[/* text */ 't', `Synthesizes a localized pattern string that represents the current
- state of this Format object.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `a localized pattern string`]
+				[/* text */ 't', `the currency used by this decimal format, or `],
+				[/* inline code block */ 'i', `null`]
 			]
 		]],
 		[/* method */ 'applyLocalizedPattern(java.lang.String)', [
@@ -1408,142 +1510,54 @@ DocsCollector.collect('java.text.DecimalFormat', [
 			],
 			/* return */ UDF
 		]],
-		[/* method */ 'getMaximumIntegerDigits()', [
+		[/* method */ 'applyPattern(java.lang.String)', [
 			[/* method description */
-				[/* text */ 't', `Gets the maximum number of digits allowed in the integer portion of a
- number.
- For formatting numbers other than `],
-				[/* inline code block */ 'i', `BigInteger`],
-				[/* text */ 't', ` and
+				[/* text */ 't', `Apply the given pattern to this Format object.  A pattern is a
+ short-hand specification for the various formatting properties.
+ These properties can also be changed individually through the
+ various setter methods.
  `],
-				[/* inline code block */ 'i', `BigDecimal`],
-				[/* text */ 't', ` objects, the lower of the return value and
- 309 is used.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the maximum number of digits`]
-			]
-		]],
-		[/* method */ 'getMinimumIntegerDigits()', [
-			[/* method description */
-				[/* text */ 't', `Gets the minimum number of digits allowed in the integer portion of a
- number.
- For formatting numbers other than `],
-				[/* inline code block */ 'i', `BigInteger`],
-				[/* text */ 't', ` and
+				[/* block */ 'b', `
+ There is no limit to integer digits set
+ by this routine, since that is the typical end-user desire;
+ use setMaximumInteger if you want to set a real value.
+ For negative numbers, use a second pattern, separated by a semicolon
  `],
-				[/* inline code block */ 'i', `BigDecimal`],
-				[/* text */ 't', ` objects, the lower of the return value and
- 309 is used.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the minimum number of digits`]
-			]
-		]],
-		[/* method */ 'getMaximumFractionDigits()', [
-			[/* method description */
-				[/* text */ 't', `Gets the maximum number of digits allowed in the fraction portion of a
- number.
- For formatting numbers other than `],
-				[/* inline code block */ 'i', `BigInteger`],
-				[/* text */ 't', ` and
+				[/* block */ 'b', [
+					[/* text */ 't', `Example `],
+					[/* inline code block */ 'i', `"#,#00.0#"`],
+					[/* text */ 't', ` → 1,234.56
+ `]
+				]],
+				[/* block */ 'b', `This means a minimum of 2 integer digits, 1 fraction digit, and
+ a maximum of 2 fraction digits.
  `],
-				[/* inline code block */ 'i', `BigDecimal`],
-				[/* text */ 't', ` objects, the lower of the return value and
- 340 is used.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the maximum number of digits.`]
-			]
-		]],
-		[/* method */ 'setMaximumFractionDigits(int)', [
-			[/* method description */
-				[/* text */ 't', `Sets the maximum number of digits allowed in the fraction portion of a
- number.
- For formatting numbers other than `],
-				[/* inline code block */ 'i', `BigInteger`],
-				[/* text */ 't', ` and
- `],
-				[/* inline code block */ 'i', `BigDecimal`],
-				[/* text */ 't', ` objects, the lower of `],
-				[/* inline code block */ 'i', `newValue`],
-				[/* text */ 't', ` and
- 340 is used. Negative input values are replaced with 0.`]
+				[/* block */ 'b', [
+					[/* text */ 't', `Example: `],
+					[/* inline code block */ 'i', `"#,#00.0#;(#,#00.0#)"`],
+					[/* text */ 't', ` for negatives in
+ parentheses.
+ `]
+				]],
+				[/* block */ 'b', `In negative patterns, the minimum and maximum counts are ignored;
+ these are presumed to be set in the positive pattern.`]
 			],
 			[/* parameters */
-				[/* parameter */ 'newValue', [/* parameter description */
-					[/* text */ 't', `the maximum number of fraction digits to be shown; if
- less than zero, then zero is used. The concrete subclass may enforce an
- upper limit to this value appropriate to the numeric type being formatted.`]
+				[/* parameter */ 'pattern', [/* parameter description */
+					[/* text */ 't', `a new pattern`]
 				]]
 			],
-			/* throws */ UDF,
-			/* return */ UDF
-		]],
-		[/* method */ 'getMinimumFractionDigits()', [
-			[/* method description */
-				[/* text */ 't', `Gets the minimum number of digits allowed in the fraction portion of a
- number.
- For formatting numbers other than `],
-				[/* inline code block */ 'i', `BigInteger`],
-				[/* text */ 't', ` and
- `],
-				[/* inline code block */ 'i', `BigDecimal`],
-				[/* text */ 't', ` objects, the lower of the return value and
- 340 is used.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the minimum number of digits`]
-			]
-		]],
-		[/* method */ 'setMinimumFractionDigits(int)', [
-			[/* method description */
-				[/* text */ 't', `Sets the minimum number of digits allowed in the fraction portion of a
- number.
- For formatting numbers other than `],
-				[/* inline code block */ 'i', `BigInteger`],
-				[/* text */ 't', ` and
- `],
-				[/* inline code block */ 'i', `BigDecimal`],
-				[/* text */ 't', ` objects, the lower of `],
-				[/* inline code block */ 'i', `newValue`],
-				[/* text */ 't', ` and
- 340 is used. Negative input values are replaced with 0.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'newValue', [/* parameter description */
-					[/* text */ 't', `the minimum number of fraction digits to be shown; if
- less than zero, then zero is used. The concrete subclass may enforce an
- upper limit to this value appropriate to the numeric type being formatted.`]
+			[/* throws */
+				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
+					[/* text */ 't', `if `],
+					[/* inline code block */ 'i', `pattern`],
+					[/* text */ 't', ` is null`]
+				]],
+				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
+					[/* text */ 't', `if the given pattern is invalid.`]
 				]]
 			],
-			/* throws */ UDF,
 			/* return */ UDF
-		]],
-		[/* method */ 'getCurrency()', [
-			[/* method description */
-				[/* text */ 't', `Gets the currency used by this decimal format when formatting
- currency values.
- The currency is obtained by calling
- `],
-				[/* reference */ 'r', `.DecimalFormatSymbols#getCurrency()`],
-				[/* text */ 't', `
- on this number format's symbols.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the currency used by this decimal format, or `],
-				[/* inline code block */ 'i', `null`]
-			]
 		]],
 		[/* method */ 'setCurrency(java.util.Currency)', [
 			[/* method description */
@@ -1570,26 +1584,17 @@ DocsCollector.collect('java.text.DecimalFormat', [
 			],
 			/* return */ UDF
 		]],
-		[/* method */ 'setRoundingMode(java.math.RoundingMode)', [
+		[/* method */ 'setDecimalFormatSymbols(java.text.DecimalFormatSymbols)', [
 			[/* method description */
-				[/* text */ 't', `Sets the `],
-				[/* reference */ 'r', `enum class in java.math.RoundingMode`],
-				[/* text */ 't', ` used in this DecimalFormat.`]
+				[/* text */ 't', `Sets the decimal format symbols, which is generally not changed
+ by the programmer or user.`]
 			],
 			[/* parameters */
-				[/* parameter */ 'roundingMode', [/* parameter description */
-					[/* text */ 't', `The `],
-					[/* inline code block */ 'i', `RoundingMode`],
-					[/* text */ 't', ` to be used`]
+				[/* parameter */ 'newSymbols', [/* parameter description */
+					[/* text */ 't', `desired DecimalFormatSymbols`]
 				]]
 			],
-			[/* throws */
-				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
-					[/* text */ 't', `if `],
-					[/* inline code block */ 'i', `roundingMode`],
-					[/* text */ 't', ` is null.`]
-				]]
-			],
+			/* throws */ UDF,
 			/* return */ UDF
 		]],
 		[/* method */ 'setDecimalSeparatorAlwaysShown(boolean)', [
@@ -1611,190 +1616,6 @@ DocsCollector.collect('java.text.DecimalFormat', [
 			],
 			/* throws */ UDF,
 			/* return */ UDF
-		]],
-		[/* method */ 'isParseBigDecimal()', [
-			[/* method description */
-				[/* text */ 't', `Returns whether the `],
-				[/* reference */ 'r', `#parse(java.lang.String,java.text.ParsePosition)`, `parse(java.lang.String, java.text.ParsePosition)`],
-				[/* text */ 't', `
- method returns `],
-				[/* inline code block */ 'i', `BigDecimal`],
-				[/* text */ 't', `. The default value is false.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* inline code block */ 'i', `true`],
-				[/* text */ 't', ` if the parse method returns BigDecimal;
-         `],
-				[/* inline code block */ 'i', `false`],
-				[/* text */ 't', ` otherwise`]
-			]
-		]],
-		[/* method */ 'setDecimalFormatSymbols(java.text.DecimalFormatSymbols)', [
-			[/* method description */
-				[/* text */ 't', `Sets the decimal format symbols, which is generally not changed
- by the programmer or user.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'newSymbols', [/* parameter description */
-					[/* text */ 't', `desired DecimalFormatSymbols`]
-				]]
-			],
-			/* throws */ UDF,
-			/* return */ UDF
-		]],
-		[/* method */ 'getPositivePrefix()', [
-			[/* method description */
-				[/* text */ 't', `Get the positive prefix.
- `],
-				[/* block */ 'b', `Examples: +123, $123, sFr123`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the positive prefix`]
-			]
-		]],
-		[/* method */ 'setPositivePrefix(java.lang.String)', [
-			[/* method description */
-				[/* text */ 't', `Set the positive prefix.
- `],
-				[/* block */ 'b', `Examples: +123, $123, sFr123`]
-			],
-			[/* parameters */
-				[/* parameter */ 'newValue', [/* parameter description */
-					[/* text */ 't', `the new positive prefix`]
-				]]
-			],
-			/* throws */ UDF,
-			/* return */ UDF
-		]],
-		[/* method */ 'getNegativePrefix()', [
-			[/* method description */
-				[/* text */ 't', `Get the negative prefix.
- `],
-				[/* block */ 'b', `Examples: -123, ($123) (with negative suffix), sFr-123`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the negative prefix`]
-			]
-		]],
-		[/* method */ 'setNegativePrefix(java.lang.String)', [
-			[/* method description */
-				[/* text */ 't', `Set the negative prefix.
- `],
-				[/* block */ 'b', `Examples: -123, ($123) (with negative suffix), sFr-123`]
-			],
-			[/* parameters */
-				[/* parameter */ 'newValue', [/* parameter description */
-					[/* text */ 't', `the new negative prefix`]
-				]]
-			],
-			/* throws */ UDF,
-			/* return */ UDF
-		]],
-		[/* method */ 'getPositiveSuffix()', [
-			[/* method description */
-				[/* text */ 't', `Get the positive suffix.
- `],
-				[/* block */ 'b', `Example: 123%`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the positive suffix`]
-			]
-		]],
-		[/* method */ 'setPositiveSuffix(java.lang.String)', [
-			[/* method description */
-				[/* text */ 't', `Set the positive suffix.
- `],
-				[/* block */ 'b', `Example: 123%`]
-			],
-			[/* parameters */
-				[/* parameter */ 'newValue', [/* parameter description */
-					[/* text */ 't', `the new positive suffix`]
-				]]
-			],
-			/* throws */ UDF,
-			/* return */ UDF
-		]],
-		[/* method */ 'getNegativeSuffix()', [
-			[/* method description */
-				[/* text */ 't', `Get the negative suffix.
- `],
-				[/* block */ 'b', `Examples: -123%, ($123) (with positive suffixes)`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the negative suffix`]
-			]
-		]],
-		[/* method */ 'setNegativeSuffix(java.lang.String)', [
-			[/* method description */
-				[/* text */ 't', `Set the negative suffix.
- `],
-				[/* block */ 'b', `Examples: 123%`]
-			],
-			[/* parameters */
-				[/* parameter */ 'newValue', [/* parameter description */
-					[/* text */ 't', `the new negative suffix`]
-				]]
-			],
-			/* throws */ UDF,
-			/* return */ UDF
-		]],
-		[/* method */ 'getMultiplier()', [
-			[/* method description */
-				[/* text */ 't', `Gets the multiplier for use in percent, per mille, and similar
- formats.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the multiplier`]
-			]
-		]],
-		[/* method */ 'setMultiplier(int)', [
-			[/* method description */
-				[/* text */ 't', `Sets the multiplier for use in percent, per mille, and similar
- formats.
- For a percent format, set the multiplier to 100 and the suffixes to
- have '%' (for Arabic, use the Arabic percent sign).
- For a per mille format, set the multiplier to 1000 and the suffixes to
- have '\\u2030'.
-
- `],
-				[/* block */ 'b', `Example: with multiplier 100, 1.23 is formatted as "123", and
- "123" is parsed into 1.23.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'newValue', [/* parameter description */
-					[/* text */ 't', `the new multiplier`]
-				]]
-			],
-			/* throws */ UDF,
-			/* return */ UDF
-		]],
-		[/* method */ 'getGroupingSize()', [
-			[/* method description */
-				[/* text */ 't', `Return the grouping size. Grouping size is the number of digits between
- grouping separators in the integer portion of a number.  For example,
- in the number "123,456.78", the grouping size is 3. Grouping size of
- zero designates that grouping is not used, which provides the same
- formatting as if calling `],
-				[/* reference */ 'r', `.NumberFormat#setGroupingUsed(boolean)`],
-				[/* text */ 't', `.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the grouping size`]
-			]
 		]],
 		[/* method */ 'setGroupingSize(int)', [
 			[/* method description */
@@ -1834,22 +1655,151 @@ DocsCollector.collect('java.text.DecimalFormat', [
 			],
 			/* return */ UDF
 		]],
-		[/* method */ 'isDecimalSeparatorAlwaysShown()', [
+		[/* method */ 'setGroupingUsed(boolean)', UDF],
+		[/* method */ 'setMaximumFractionDigits(int)', [
 			[/* method description */
-				[/* text */ 't', `Allows you to get the behavior of the decimal separator with integers.
- (The decimal separator will always appear with decimals.)
+				[/* text */ 't', `Sets the maximum number of digits allowed in the fraction portion of a
+ number.
+ For formatting numbers other than `],
+				[/* inline code block */ 'i', `BigInteger`],
+				[/* text */ 't', ` and
  `],
-				[/* block */ 'b', `Example: Decimal ON: 12345 → 12345.; OFF: 12345 → 12345`]
+				[/* inline code block */ 'i', `BigDecimal`],
+				[/* text */ 't', ` objects, the lower of `],
+				[/* inline code block */ 'i', `newValue`],
+				[/* text */ 't', ` and
+ 340 is used. Negative input values are replaced with 0.`]
 			],
-			/* parameters */ UDF,
+			[/* parameters */
+				[/* parameter */ 'newValue', [/* parameter description */
+					[/* text */ 't', `the maximum number of fraction digits to be shown; if
+ less than zero, then zero is used. The concrete subclass may enforce an
+ upper limit to this value appropriate to the numeric type being formatted.`]
+				]]
+			],
 			/* throws */ UDF,
-			[/* return description */
-				[/* inline code block */ 'i', `true`],
-				[/* text */ 't', ` if the decimal separator is always shown;
-         `],
-				[/* inline code block */ 'i', `false`],
-				[/* text */ 't', ` otherwise`]
-			]
+			/* return */ UDF
+		]],
+		[/* method */ 'setMaximumIntegerDigits(int)', [
+			[/* method description */
+				[/* text */ 't', `Sets the maximum number of digits allowed in the integer portion of a
+ number.
+ For formatting numbers other than `],
+				[/* inline code block */ 'i', `BigInteger`],
+				[/* text */ 't', ` and
+ `],
+				[/* inline code block */ 'i', `BigDecimal`],
+				[/* text */ 't', ` objects, the lower of `],
+				[/* inline code block */ 'i', `newValue`],
+				[/* text */ 't', ` and
+ 309 is used. Negative input values are replaced with 0.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'newValue', [/* parameter description */
+					[/* text */ 't', `the maximum number of integer digits to be shown; if
+ less than zero, then zero is used. The concrete subclass may enforce an
+ upper limit to this value appropriate to the numeric type being formatted.`]
+				]]
+			],
+			/* throws */ UDF,
+			/* return */ UDF
+		]],
+		[/* method */ 'setMinimumFractionDigits(int)', [
+			[/* method description */
+				[/* text */ 't', `Sets the minimum number of digits allowed in the fraction portion of a
+ number.
+ For formatting numbers other than `],
+				[/* inline code block */ 'i', `BigInteger`],
+				[/* text */ 't', ` and
+ `],
+				[/* inline code block */ 'i', `BigDecimal`],
+				[/* text */ 't', ` objects, the lower of `],
+				[/* inline code block */ 'i', `newValue`],
+				[/* text */ 't', ` and
+ 340 is used. Negative input values are replaced with 0.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'newValue', [/* parameter description */
+					[/* text */ 't', `the minimum number of fraction digits to be shown; if
+ less than zero, then zero is used. The concrete subclass may enforce an
+ upper limit to this value appropriate to the numeric type being formatted.`]
+				]]
+			],
+			/* throws */ UDF,
+			/* return */ UDF
+		]],
+		[/* method */ 'setMinimumIntegerDigits(int)', [
+			[/* method description */
+				[/* text */ 't', `Sets the minimum number of digits allowed in the integer portion of a
+ number.
+ For formatting numbers other than `],
+				[/* inline code block */ 'i', `BigInteger`],
+				[/* text */ 't', ` and
+ `],
+				[/* inline code block */ 'i', `BigDecimal`],
+				[/* text */ 't', ` objects, the lower of `],
+				[/* inline code block */ 'i', `newValue`],
+				[/* text */ 't', ` and
+ 309 is used. Negative input values are replaced with 0.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'newValue', [/* parameter description */
+					[/* text */ 't', `the minimum number of integer digits to be shown; if
+ less than zero, then zero is used. The concrete subclass may enforce an
+ upper limit to this value appropriate to the numeric type being formatted.`]
+				]]
+			],
+			/* throws */ UDF,
+			/* return */ UDF
+		]],
+		[/* method */ 'setMultiplier(int)', [
+			[/* method description */
+				[/* text */ 't', `Sets the multiplier for use in percent, per mille, and similar
+ formats.
+ For a percent format, set the multiplier to 100 and the suffixes to
+ have '%' (for Arabic, use the Arabic percent sign).
+ For a per mille format, set the multiplier to 1000 and the suffixes to
+ have '\\u2030'.
+
+ `],
+				[/* block */ 'b', `Example: with multiplier 100, 1.23 is formatted as "123", and
+ "123" is parsed into 1.23.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'newValue', [/* parameter description */
+					[/* text */ 't', `the new multiplier`]
+				]]
+			],
+			/* throws */ UDF,
+			/* return */ UDF
+		]],
+		[/* method */ 'setNegativePrefix(java.lang.String)', [
+			[/* method description */
+				[/* text */ 't', `Set the negative prefix.
+ `],
+				[/* block */ 'b', `Examples: -123, ($123) (with negative suffix), sFr-123`]
+			],
+			[/* parameters */
+				[/* parameter */ 'newValue', [/* parameter description */
+					[/* text */ 't', `the new negative prefix`]
+				]]
+			],
+			/* throws */ UDF,
+			/* return */ UDF
+		]],
+		[/* method */ 'setNegativeSuffix(java.lang.String)', [
+			[/* method description */
+				[/* text */ 't', `Set the negative suffix.
+ `],
+				[/* block */ 'b', `Examples: 123%`]
+			],
+			[/* parameters */
+				[/* parameter */ 'newValue', [/* parameter description */
+					[/* text */ 't', `the new negative suffix`]
+				]]
+			],
+			/* throws */ UDF,
+			/* return */ UDF
 		]],
 		[/* method */ 'setParseBigDecimal(boolean)', [
 			[/* method description */
@@ -1871,6 +1821,56 @@ DocsCollector.collect('java.text.DecimalFormat', [
 				]]
 			],
 			/* throws */ UDF,
+			/* return */ UDF
+		]],
+		[/* method */ 'setPositivePrefix(java.lang.String)', [
+			[/* method description */
+				[/* text */ 't', `Set the positive prefix.
+ `],
+				[/* block */ 'b', `Examples: +123, $123, sFr123`]
+			],
+			[/* parameters */
+				[/* parameter */ 'newValue', [/* parameter description */
+					[/* text */ 't', `the new positive prefix`]
+				]]
+			],
+			/* throws */ UDF,
+			/* return */ UDF
+		]],
+		[/* method */ 'setPositiveSuffix(java.lang.String)', [
+			[/* method description */
+				[/* text */ 't', `Set the positive suffix.
+ `],
+				[/* block */ 'b', `Example: 123%`]
+			],
+			[/* parameters */
+				[/* parameter */ 'newValue', [/* parameter description */
+					[/* text */ 't', `the new positive suffix`]
+				]]
+			],
+			/* throws */ UDF,
+			/* return */ UDF
+		]],
+		[/* method */ 'setRoundingMode(java.math.RoundingMode)', [
+			[/* method description */
+				[/* text */ 't', `Sets the `],
+				[/* reference */ 'r', `enum class in java.math.RoundingMode`],
+				[/* text */ 't', ` used in this DecimalFormat.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'roundingMode', [/* parameter description */
+					[/* text */ 't', `The `],
+					[/* inline code block */ 'i', `RoundingMode`],
+					[/* text */ 't', ` to be used`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
+					[/* text */ 't', `if `],
+					[/* inline code block */ 'i', `roundingMode`],
+					[/* text */ 't', ` is null.`]
+				]]
+			],
 			/* return */ UDF
 		]]
 	],

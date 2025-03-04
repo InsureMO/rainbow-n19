@@ -374,100 +374,6 @@ DocsCollector.collect('java.io.ObjectInputFilter', [
 	/* fields */ UDF,
 	/* constructors */ UDF,
 	[/* methods */
-		[/* method */ 'merge(java.io.ObjectInputFilter,java.io.ObjectInputFilter)', [
-			[/* method description */
-				[/* text */ 't', `Returns a filter that merges the status of a filter and another filter.
- If `],
-				[/* inline code block */ 'i', `another`],
-				[/* text */ 't', ` filter is `],
-				[/* inline code block */ 'i', `null`],
-				[/* text */ 't', `, the `],
-				[/* inline code block */ 'i', `filter`],
-				[/* text */ 't', ` is returned.
- Otherwise, a `],
-				[/* inline code block */ 'i', `filter`],
-				[/* text */ 't', ` is returned to merge the pair of `],
-				[/* inline code block */ 'i', `non-null`],
-				[/* text */ 't', ` filters.
-
- The filter returned implements the `],
-				[/* reference */ 'r', `#checkInput(java.io.ObjectInputFilter.FilterInfo)`, `checkInput(FilterInfo)`],
-				[/* text */ 't', ` method
- as follows:
- `],
-				[/* list */ 'l', [
-					[/* block */ 'b', [
-						[/* text */ 't', `Invoke `],
-						[/* inline code block */ 'i', `filter`],
-						[/* text */ 't', ` on the `],
-						[/* inline code block */ 'i', `FilterInfo`],
-						[/* text */ 't', ` to get its `],
-						[/* inline code block */ 'i', `status`],
-						[/* text */ 't', `;
-     `]
-					]],
-					[/* block */ 'b', [
-						[/* text */ 't', `Return `],
-						[/* inline code block */ 'i', `REJECTED`],
-						[/* text */ 't', ` if the `],
-						[/* inline code block */ 'i', `status`],
-						[/* text */ 't', ` is `],
-						[/* inline code block */ 'i', `REJECTED`],
-						[/* text */ 't', `;
-     `]
-					]],
-					[/* block */ 'b', [
-						[/* text */ 't', `Invoke `],
-						[/* inline code block */ 'i', `anotherFilter`],
-						[/* text */ 't', ` to get the `],
-						[/* inline code block */ 'i', `otherStatus`],
-						[/* text */ 't', `;
-     `]
-					]],
-					[/* block */ 'b', [
-						[/* text */ 't', `Return `],
-						[/* inline code block */ 'i', `REJECTED`],
-						[/* text */ 't', ` if the `],
-						[/* inline code block */ 'i', `otherStatus`],
-						[/* text */ 't', ` is `],
-						[/* inline code block */ 'i', `REJECTED`],
-						[/* text */ 't', `;
-     `]
-					]],
-					[/* block */ 'b', [
-						[/* text */ 't', `Return `],
-						[/* inline code block */ 'i', `ALLOWED`],
-						[/* text */ 't', `, if either `],
-						[/* inline code block */ 'i', `status`],
-						[/* text */ 't', ` or `],
-						[/* inline code block */ 'i', `otherStatus`],
-						[/* text */ 't', `
-          is `],
-						[/* inline code block */ 'i', `ALLOWED`],
-						[/* text */ 't', `, `]
-					]],
-					[/* block */ 'b', [
-						[/* text */ 't', `Otherwise, return `],
-						[/* inline code block */ 'i', `UNDECIDED`]
-					]]
-				]]
-			],
-			[/* parameters */
-				[/* parameter */ 'filter', [/* parameter description */
-					[/* text */ 't', `a filter`]
-				]],
-				[/* parameter */ 'anotherFilter', [/* parameter description */
-					[/* text */ 't', `a filter to be merged with the filter, may be `],
-					[/* inline code block */ 'i', `null`]
-				]]
-			],
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `an `],
-				[/* reference */ 'r', `java.io.ObjectInputFilter`],
-				[/* text */ 't', ` that merges the status of the filter and another filter`]
-			]
-		]],
 		[/* method */ 'checkInput(java.io.ObjectInputFilter.FilterInfo)', [
 			[/* method description */
 				[/* text */ 't', `Check the class, array length, number of object references, depth,
@@ -598,6 +504,100 @@ DocsCollector.collect('java.io.ObjectInputFilter', [
 				[/* text */ 't', ` if the predicate
           on the class is `],
 				[/* inline code block */ 'i', `true`]
+			]
+		]],
+		[/* method */ 'merge(java.io.ObjectInputFilter,java.io.ObjectInputFilter)', [
+			[/* method description */
+				[/* text */ 't', `Returns a filter that merges the status of a filter and another filter.
+ If `],
+				[/* inline code block */ 'i', `another`],
+				[/* text */ 't', ` filter is `],
+				[/* inline code block */ 'i', `null`],
+				[/* text */ 't', `, the `],
+				[/* inline code block */ 'i', `filter`],
+				[/* text */ 't', ` is returned.
+ Otherwise, a `],
+				[/* inline code block */ 'i', `filter`],
+				[/* text */ 't', ` is returned to merge the pair of `],
+				[/* inline code block */ 'i', `non-null`],
+				[/* text */ 't', ` filters.
+
+ The filter returned implements the `],
+				[/* reference */ 'r', `#checkInput(java.io.ObjectInputFilter.FilterInfo)`, `checkInput(FilterInfo)`],
+				[/* text */ 't', ` method
+ as follows:
+ `],
+				[/* list */ 'l', [
+					[/* block */ 'b', [
+						[/* text */ 't', `Invoke `],
+						[/* inline code block */ 'i', `filter`],
+						[/* text */ 't', ` on the `],
+						[/* inline code block */ 'i', `FilterInfo`],
+						[/* text */ 't', ` to get its `],
+						[/* inline code block */ 'i', `status`],
+						[/* text */ 't', `;
+     `]
+					]],
+					[/* block */ 'b', [
+						[/* text */ 't', `Return `],
+						[/* inline code block */ 'i', `REJECTED`],
+						[/* text */ 't', ` if the `],
+						[/* inline code block */ 'i', `status`],
+						[/* text */ 't', ` is `],
+						[/* inline code block */ 'i', `REJECTED`],
+						[/* text */ 't', `;
+     `]
+					]],
+					[/* block */ 'b', [
+						[/* text */ 't', `Invoke `],
+						[/* inline code block */ 'i', `anotherFilter`],
+						[/* text */ 't', ` to get the `],
+						[/* inline code block */ 'i', `otherStatus`],
+						[/* text */ 't', `;
+     `]
+					]],
+					[/* block */ 'b', [
+						[/* text */ 't', `Return `],
+						[/* inline code block */ 'i', `REJECTED`],
+						[/* text */ 't', ` if the `],
+						[/* inline code block */ 'i', `otherStatus`],
+						[/* text */ 't', ` is `],
+						[/* inline code block */ 'i', `REJECTED`],
+						[/* text */ 't', `;
+     `]
+					]],
+					[/* block */ 'b', [
+						[/* text */ 't', `Return `],
+						[/* inline code block */ 'i', `ALLOWED`],
+						[/* text */ 't', `, if either `],
+						[/* inline code block */ 'i', `status`],
+						[/* text */ 't', ` or `],
+						[/* inline code block */ 'i', `otherStatus`],
+						[/* text */ 't', `
+          is `],
+						[/* inline code block */ 'i', `ALLOWED`],
+						[/* text */ 't', `, `]
+					]],
+					[/* block */ 'b', [
+						[/* text */ 't', `Otherwise, return `],
+						[/* inline code block */ 'i', `UNDECIDED`]
+					]]
+				]]
+			],
+			[/* parameters */
+				[/* parameter */ 'filter', [/* parameter description */
+					[/* text */ 't', `a filter`]
+				]],
+				[/* parameter */ 'anotherFilter', [/* parameter description */
+					[/* text */ 't', `a filter to be merged with the filter, may be `],
+					[/* inline code block */ 'i', `null`]
+				]]
+			],
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `an `],
+				[/* reference */ 'r', `java.io.ObjectInputFilter`],
+				[/* text */ 't', ` that merges the status of the filter and another filter`]
 			]
 		]],
 		[/* method */ 'rejectFilter(java.util.function.Predicate,java.io.ObjectInputFilter.Status)', [

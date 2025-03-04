@@ -35,14 +35,60 @@ DocsCollector.collect('java.time.format.DecimalStyle', [
 				[/* text */ 't', `true if this is equal to the other date`]
 			]
 		]],
-		[/* method */ 'toString()', [
+		[/* method */ 'getDecimalSeparator()', [
 			[/* method description */
-				[/* text */ 't', `Returns a string describing this DecimalStyle.`]
+				[/* text */ 't', `Gets the character that represents the decimal point.
+ `],
+				[/* block */ 'b', `
+ The character used to represent a decimal point may vary by culture.
+ This method specifies the character to use.`]
 			],
 			/* parameters */ UDF,
 			/* throws */ UDF,
 			[/* return description */
-				[/* text */ 't', `a string description, not null`]
+				[/* text */ 't', `the character for the decimal point`]
+			]
+		]],
+		[/* method */ 'getNegativeSign()', [
+			[/* method description */
+				[/* text */ 't', `Gets the character that represents the negative sign.
+ `],
+				[/* block */ 'b', `
+ The character used to represent a negative number may vary by culture.
+ This method specifies the character to use.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the character for the negative sign`]
+			]
+		]],
+		[/* method */ 'getPositiveSign()', [
+			[/* method description */
+				[/* text */ 't', `Gets the character that represents the positive sign.
+ `],
+				[/* block */ 'b', `
+ The character used to represent a positive number may vary by culture.
+ This method specifies the character to use.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the character for the positive sign`]
+			]
+		]],
+		[/* method */ 'getZeroDigit()', [
+			[/* method description */
+				[/* text */ 't', `Gets the character that represents zero.
+ `],
+				[/* block */ 'b', `
+ The character used to represent digits may vary by culture.
+ This method specifies the zero character to use, which implies the characters for one to nine.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the character for zero`]
 			]
 		]],
 		[/* method */ 'hashCode()', [
@@ -53,6 +99,88 @@ DocsCollector.collect('java.time.format.DecimalStyle', [
 			/* throws */ UDF,
 			[/* return description */
 				[/* text */ 't', `a suitable hash code`]
+			]
+		]],
+		[/* method */ 'toString()', [
+			[/* method description */
+				[/* text */ 't', `Returns a string describing this DecimalStyle.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `a string description, not null`]
+			]
+		]],
+		[/* method */ 'withDecimalSeparator(char)', [
+			[/* method description */
+				[/* text */ 't', `Returns a copy of the info with a new character that represents the decimal point.
+ `],
+				[/* block */ 'b', `
+ The character used to represent a decimal point may vary by culture.
+ This method specifies the character to use.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'decimalSeparator', [/* parameter description */
+					[/* text */ 't', `the character for the decimal point`]
+				]]
+			],
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `a copy with a new character that represents the decimal point, not null`]
+			]
+		]],
+		[/* method */ 'withNegativeSign(char)', [
+			[/* method description */
+				[/* text */ 't', `Returns a copy of the info with a new character that represents the negative sign.
+ `],
+				[/* block */ 'b', `
+ The character used to represent a negative number may vary by culture.
+ This method specifies the character to use.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'negativeSign', [/* parameter description */
+					[/* text */ 't', `the character for the negative sign`]
+				]]
+			],
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `a copy with a new character that represents the negative sign, not null`]
+			]
+		]],
+		[/* method */ 'withPositiveSign(char)', [
+			[/* method description */
+				[/* text */ 't', `Returns a copy of the info with a new character that represents the positive sign.
+ `],
+				[/* block */ 'b', `
+ The character used to represent a positive number may vary by culture.
+ This method specifies the character to use.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'positiveSign', [/* parameter description */
+					[/* text */ 't', `the character for the positive sign`]
+				]]
+			],
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `a copy with a new character that represents the positive sign, not null`]
+			]
+		]],
+		[/* method */ 'withZeroDigit(char)', [
+			[/* method description */
+				[/* text */ 't', `Returns a copy of the info with a new character that represents zero.
+ `],
+				[/* block */ 'b', `
+ The character used to represent digits may vary by culture.
+ This method specifies the zero character to use, which implies the characters for one to nine.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'zeroDigit', [/* parameter description */
+					[/* text */ 't', `the character for zero`]
+				]]
+			],
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `a copy with a new character that represents zero, not null`]
 			]
 		]],
 		[/* method */ 'of(java.util.Locale)', [
@@ -80,75 +208,6 @@ DocsCollector.collect('java.time.format.DecimalStyle', [
 				[/* text */ 't', `the decimal style, not null`]
 			]
 		]],
-		[/* method */ 'getAvailableLocales()', [
-			[/* method description */
-				[/* text */ 't', `Lists all the locales that are supported.
- `],
-				[/* block */ 'b', `
- The locale 'en_US' will always be present.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `a Set of Locales for which localization is supported`]
-			]
-		]],
-		[/* method */ 'getPositiveSign()', [
-			[/* method description */
-				[/* text */ 't', `Gets the character that represents the positive sign.
- `],
-				[/* block */ 'b', `
- The character used to represent a positive number may vary by culture.
- This method specifies the character to use.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the character for the positive sign`]
-			]
-		]],
-		[/* method */ 'getNegativeSign()', [
-			[/* method description */
-				[/* text */ 't', `Gets the character that represents the negative sign.
- `],
-				[/* block */ 'b', `
- The character used to represent a negative number may vary by culture.
- This method specifies the character to use.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the character for the negative sign`]
-			]
-		]],
-		[/* method */ 'getZeroDigit()', [
-			[/* method description */
-				[/* text */ 't', `Gets the character that represents zero.
- `],
-				[/* block */ 'b', `
- The character used to represent digits may vary by culture.
- This method specifies the zero character to use, which implies the characters for one to nine.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the character for zero`]
-			]
-		]],
-		[/* method */ 'getDecimalSeparator()', [
-			[/* method description */
-				[/* text */ 't', `Gets the character that represents the decimal point.
- `],
-				[/* block */ 'b', `
- The character used to represent a decimal point may vary by culture.
- This method specifies the character to use.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the character for the decimal point`]
-			]
-		]],
 		[/* method */ 'ofDefaultLocale()', [
 			[/* method description */
 				[/* text */ 't', `Obtains the DecimalStyle for the default
@@ -173,76 +232,17 @@ DocsCollector.collect('java.time.format.DecimalStyle', [
 				[/* text */ 't', `the decimal style, not null`]
 			]
 		]],
-		[/* method */ 'withZeroDigit(char)', [
+		[/* method */ 'getAvailableLocales()', [
 			[/* method description */
-				[/* text */ 't', `Returns a copy of the info with a new character that represents zero.
+				[/* text */ 't', `Lists all the locales that are supported.
  `],
 				[/* block */ 'b', `
- The character used to represent digits may vary by culture.
- This method specifies the zero character to use, which implies the characters for one to nine.`]
+ The locale 'en_US' will always be present.`]
 			],
-			[/* parameters */
-				[/* parameter */ 'zeroDigit', [/* parameter description */
-					[/* text */ 't', `the character for zero`]
-				]]
-			],
+			/* parameters */ UDF,
 			/* throws */ UDF,
 			[/* return description */
-				[/* text */ 't', `a copy with a new character that represents zero, not null`]
-			]
-		]],
-		[/* method */ 'withPositiveSign(char)', [
-			[/* method description */
-				[/* text */ 't', `Returns a copy of the info with a new character that represents the positive sign.
- `],
-				[/* block */ 'b', `
- The character used to represent a positive number may vary by culture.
- This method specifies the character to use.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'positiveSign', [/* parameter description */
-					[/* text */ 't', `the character for the positive sign`]
-				]]
-			],
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `a copy with a new character that represents the positive sign, not null`]
-			]
-		]],
-		[/* method */ 'withNegativeSign(char)', [
-			[/* method description */
-				[/* text */ 't', `Returns a copy of the info with a new character that represents the negative sign.
- `],
-				[/* block */ 'b', `
- The character used to represent a negative number may vary by culture.
- This method specifies the character to use.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'negativeSign', [/* parameter description */
-					[/* text */ 't', `the character for the negative sign`]
-				]]
-			],
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `a copy with a new character that represents the negative sign, not null`]
-			]
-		]],
-		[/* method */ 'withDecimalSeparator(char)', [
-			[/* method description */
-				[/* text */ 't', `Returns a copy of the info with a new character that represents the decimal point.
- `],
-				[/* block */ 'b', `
- The character used to represent a decimal point may vary by culture.
- This method specifies the character to use.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'decimalSeparator', [/* parameter description */
-					[/* text */ 't', `the character for the decimal point`]
-				]]
-			],
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `a copy with a new character that represents the decimal point, not null`]
+				[/* text */ 't', `a Set of Locales for which localization is supported`]
 			]
 		]]
 	],

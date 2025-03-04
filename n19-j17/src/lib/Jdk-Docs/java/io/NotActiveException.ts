@@ -7,6 +7,13 @@ DocsCollector.collect('java.io.NotActiveException', [
 	],
 	/* fields */ UDF,
 	[/* constructors */
+		[/* constructor */ '<init>()', [
+			[/* constructor description */
+				[/* text */ 't', `Constructor to create a new NotActiveException without a reason.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF
+		]],
 		[/* constructor */ '<init>(java.lang.String)', [
 			[/* constructor description */
 				[/* text */ 't', `Constructor to create a new NotActiveException with the reason given.`]
@@ -16,13 +23,6 @@ DocsCollector.collect('java.io.NotActiveException', [
 					[/* text */ 't', `a String describing the reason for the exception.`]
 				]]
 			],
-			/* throws */ UDF
-		]],
-		[/* constructor */ '<init>()', [
-			[/* constructor description */
-				[/* text */ 't', `Constructor to create a new NotActiveException without a reason.`]
-			],
-			/* parameters */ UDF,
 			/* throws */ UDF
 		]]
 	],

@@ -23,22 +23,6 @@ DocsCollector.collect('java.lang.module.ResolvedModule', [
 	/* fields */ UDF,
 	/* constructors */ UDF,
 	[/* methods */
-		[/* method */ 'name()', [
-			[/* method description */
-				[/* text */ 't', `Returns the module name.
-
- This convenience method is the equivalent to invoking:
- `],
-				[/* code block */ 'c', [
-					[/* inline code block */ 'i', `reference().descriptor().name()`]
-				]]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `The module name`]
-			]
-		]],
 		[/* method */ 'equals(java.lang.Object)', [
 			[/* method description */
 				[/* text */ 't', `Tests this resolved module for equality with the given object.
@@ -74,16 +58,6 @@ DocsCollector.collect('java.lang.module.ResolvedModule', [
           reference that is equal to this module reference`]
 			]
 		]],
-		[/* method */ 'toString()', [
-			[/* method description */
-				[/* text */ 't', `Returns a string describing this resolved module.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `A string describing this resolved module`]
-			]
-		]],
 		[/* method */ 'hashCode()', [
 			[/* method description */
 				[/* text */ 't', `Computes a hash code for this resolved module.
@@ -102,15 +76,14 @@ DocsCollector.collect('java.lang.module.ResolvedModule', [
 				[/* text */ 't', `The hash-code value for this resolved module`]
 			]
 		]],
-		[/* method */ 'reads()', [
+		[/* method */ 'configuration()', [
 			[/* method description */
-				[/* text */ 't', `Returns the set of resolved modules that this resolved module reads.`]
+				[/* text */ 't', `Returns the configuration that this resolved module is in.`]
 			],
 			/* parameters */ UDF,
 			/* throws */ UDF,
 			[/* return description */
-				[/* text */ 't', `A possibly-empty unmodifiable set of resolved modules that
-         this resolved module reads`]
+				[/* text */ 't', `The configuration that this resolved module is in`]
 			]
 		]],
 		[/* method */ 'reference()', [
@@ -123,14 +96,41 @@ DocsCollector.collect('java.lang.module.ResolvedModule', [
 				[/* text */ 't', `The reference to the module's content`]
 			]
 		]],
-		[/* method */ 'configuration()', [
+		[/* method */ 'name()', [
 			[/* method description */
-				[/* text */ 't', `Returns the configuration that this resolved module is in.`]
+				[/* text */ 't', `Returns the module name.
+
+ This convenience method is the equivalent to invoking:
+ `],
+				[/* code block */ 'c', [
+					[/* inline code block */ 'i', `reference().descriptor().name()`]
+				]]
 			],
 			/* parameters */ UDF,
 			/* throws */ UDF,
 			[/* return description */
-				[/* text */ 't', `The configuration that this resolved module is in`]
+				[/* text */ 't', `The module name`]
+			]
+		]],
+		[/* method */ 'toString()', [
+			[/* method description */
+				[/* text */ 't', `Returns a string describing this resolved module.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `A string describing this resolved module`]
+			]
+		]],
+		[/* method */ 'reads()', [
+			[/* method description */
+				[/* text */ 't', `Returns the set of resolved modules that this resolved module reads.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `A possibly-empty unmodifiable set of resolved modules that
+         this resolved module reads`]
 			]
 		]]
 	],

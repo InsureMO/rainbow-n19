@@ -77,6 +77,138 @@ DocsCollector.collect('java.lang.invoke.StringConcatFactory', [
 	/* fields */ UDF,
 	/* constructors */ UDF,
 	[/* methods */
+		[/* method */ 'makeConcat(java.lang.invoke.MethodHandles.Lookup,java.lang.String,java.lang.invoke.MethodType)', [
+			[/* method description */
+				[/* text */ 't', `Facilitates the creation of optimized String concatenation methods, that
+ can be used to efficiently concatenate a known number of arguments of
+ known types, possibly after type adaptation and partial evaluation of
+ arguments. Typically used as a `],
+				[/* text */ 't', `bootstrap method`],
+				[/* text */ 't', ` for `],
+				[/* inline code block */ 'i', `invokedynamic`],
+				[/* text */ 't', ` call sites, to support the `],
+				[/* text */ 't', `string concatenation`],
+				[/* text */ 't', `
+ feature of the Java Programming Language.
+
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', `When the target of the `],
+					[/* inline code block */ 'i', `CallSite`],
+					[/* text */ 't', ` returned from this method is
+ invoked, it returns the result of String concatenation, taking all
+ function arguments passed to the linkage method as inputs for
+ concatenation. The target signature is given by `],
+					[/* inline code block */ 'i', `concatType`],
+					[/* text */ 't', `.
+ For a target accepting:
+ `]
+				]],
+				[/* list */ 'l', [
+					[/* block */ 'b', `zero inputs, concatenation results in an empty string;`],
+					[/* block */ 'b', `one input, concatenation results in the single
+     input converted as per JLS 5.1.11 "String Conversion"; otherwise`],
+					[/* block */ 'b', `two or more inputs, the inputs are concatenated as per
+     requirements stated in JLS 15.18.1 "String Concatenation Operator +".
+     The inputs are converted as per JLS 5.1.11 "String Conversion",
+     and combined from left to right.`]
+				]],
+				[/* block */ 'b', ''],
+				[/* block */ 'b', `Assume the linkage arguments are as follows:
+
+ `],
+				[/* list */ 'l', [
+					[/* block */ 'b', [
+						[/* inline code block */ 'i', `concatType`],
+						[/* text */ 't', `, describing the `],
+						[/* inline code block */ 'i', `CallSite`],
+						[/* text */ 't', ` signature`]
+					]]
+				]],
+				[/* block */ 'b', ''],
+				[/* block */ 'b', `Then the following linkage invariants must hold:
+
+ `],
+				[/* list */ 'l', [
+					[/* block */ 'b', [
+						[/* text */ 't', `The number of parameter slots in `],
+						[/* inline code block */ 'i', `concatType`],
+						[/* text */ 't', ` is
+         less than or equal to 200`]
+					]],
+					[/* block */ 'b', [
+						[/* text */ 't', `The return type in `],
+						[/* inline code block */ 'i', `concatType`],
+						[/* text */ 't', ` is assignable from `],
+						[/* reference */ 'r', `java.lang.String`]
+					]]
+				]],
+				[/* block */ 'b', '']
+			],
+			[/* parameters */
+				[/* parameter */ 'lookup', [/* parameter description */
+					[/* text */ 't', `Represents a lookup context with the accessibility
+                 privileges of the caller. Specifically, the lookup
+                 context must have
+                 `],
+					[/* reference */ 'r', `.MethodHandles.Lookup#hasFullPrivilegeAccess()`],
+					[/* text */ 't', `.
+                 When used with `],
+					[/* inline code block */ 'i', `invokedynamic`],
+					[/* text */ 't', `, this is stacked
+                 automatically by the VM.`]
+				]],
+				[/* parameter */ 'name', [/* parameter description */
+					[/* text */ 't', `The name of the method to implement. This name is
+                 arbitrary, and has no meaning for this linkage method.
+                 When used with `],
+					[/* inline code block */ 'i', `invokedynamic`],
+					[/* text */ 't', `, this is provided by
+                 the `],
+					[/* inline code block */ 'i', `NameAndType`],
+					[/* text */ 't', ` of the `],
+					[/* inline code block */ 'i', `InvokeDynamic`],
+					[/* text */ 't', `
+                 structure and is stacked automatically by the VM.`]
+				]],
+				[/* parameter */ 'concatType', [/* parameter description */
+					[/* text */ 't', `The expected signature of the `],
+					[/* inline code block */ 'i', `CallSite`],
+					[/* text */ 't', `.  The
+                   parameter types represent the types of concatenation
+                   arguments; the return type is always assignable from `],
+					[/* reference */ 'r', `java.lang.String`],
+					[/* text */ 't', `.  When used with `],
+					[/* inline code block */ 'i', `invokedynamic`],
+					[/* text */ 't', `,
+                   this is provided by the `],
+					[/* inline code block */ 'i', `NameAndType`],
+					[/* text */ 't', ` of the `],
+					[/* inline code block */ 'i', `InvokeDynamic`],
+					[/* text */ 't', ` structure and is stacked automatically by
+                   the VM.`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.lang.invoke.StringConcatException', [/* throw description */
+					[/* text */ 't', `If any of the linkage invariants described
+                               here are violated, or the lookup context
+                               does not have private access privileges.`]
+				]],
+				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
+					[/* text */ 't', `If any of the incoming arguments is null.
+                              This will never happen when a bootstrap method
+                              is called with invokedynamic.`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `a CallSite whose target can be used to perform String
+ concatenation, with dynamic concatenation arguments described by the given
+ `],
+				[/* inline code block */ 'i', `concatType`],
+				[/* text */ 't', `.`]
+			]
+		]],
 		[/* method */ 'makeConcatWithConstants(java.lang.invoke.MethodHandles.Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object...)', [
 			[/* method description */
 				[/* text */ 't', `Facilitates the creation of optimized String concatenation methods, that
@@ -256,138 +388,6 @@ DocsCollector.collect('java.lang.invoke.StringConcatFactory', [
                               any constant in `],
 					[/* inline code block */ 'i', `recipe`],
 					[/* text */ 't', ` is null.
-                              This will never happen when a bootstrap method
-                              is called with invokedynamic.`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `a CallSite whose target can be used to perform String
- concatenation, with dynamic concatenation arguments described by the given
- `],
-				[/* inline code block */ 'i', `concatType`],
-				[/* text */ 't', `.`]
-			]
-		]],
-		[/* method */ 'makeConcat(java.lang.invoke.MethodHandles.Lookup,java.lang.String,java.lang.invoke.MethodType)', [
-			[/* method description */
-				[/* text */ 't', `Facilitates the creation of optimized String concatenation methods, that
- can be used to efficiently concatenate a known number of arguments of
- known types, possibly after type adaptation and partial evaluation of
- arguments. Typically used as a `],
-				[/* text */ 't', `bootstrap method`],
-				[/* text */ 't', ` for `],
-				[/* inline code block */ 'i', `invokedynamic`],
-				[/* text */ 't', ` call sites, to support the `],
-				[/* text */ 't', `string concatenation`],
-				[/* text */ 't', `
- feature of the Java Programming Language.
-
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', `When the target of the `],
-					[/* inline code block */ 'i', `CallSite`],
-					[/* text */ 't', ` returned from this method is
- invoked, it returns the result of String concatenation, taking all
- function arguments passed to the linkage method as inputs for
- concatenation. The target signature is given by `],
-					[/* inline code block */ 'i', `concatType`],
-					[/* text */ 't', `.
- For a target accepting:
- `]
-				]],
-				[/* list */ 'l', [
-					[/* block */ 'b', `zero inputs, concatenation results in an empty string;`],
-					[/* block */ 'b', `one input, concatenation results in the single
-     input converted as per JLS 5.1.11 "String Conversion"; otherwise`],
-					[/* block */ 'b', `two or more inputs, the inputs are concatenated as per
-     requirements stated in JLS 15.18.1 "String Concatenation Operator +".
-     The inputs are converted as per JLS 5.1.11 "String Conversion",
-     and combined from left to right.`]
-				]],
-				[/* block */ 'b', ''],
-				[/* block */ 'b', `Assume the linkage arguments are as follows:
-
- `],
-				[/* list */ 'l', [
-					[/* block */ 'b', [
-						[/* inline code block */ 'i', `concatType`],
-						[/* text */ 't', `, describing the `],
-						[/* inline code block */ 'i', `CallSite`],
-						[/* text */ 't', ` signature`]
-					]]
-				]],
-				[/* block */ 'b', ''],
-				[/* block */ 'b', `Then the following linkage invariants must hold:
-
- `],
-				[/* list */ 'l', [
-					[/* block */ 'b', [
-						[/* text */ 't', `The number of parameter slots in `],
-						[/* inline code block */ 'i', `concatType`],
-						[/* text */ 't', ` is
-         less than or equal to 200`]
-					]],
-					[/* block */ 'b', [
-						[/* text */ 't', `The return type in `],
-						[/* inline code block */ 'i', `concatType`],
-						[/* text */ 't', ` is assignable from `],
-						[/* reference */ 'r', `java.lang.String`]
-					]]
-				]],
-				[/* block */ 'b', '']
-			],
-			[/* parameters */
-				[/* parameter */ 'lookup', [/* parameter description */
-					[/* text */ 't', `Represents a lookup context with the accessibility
-                 privileges of the caller. Specifically, the lookup
-                 context must have
-                 `],
-					[/* reference */ 'r', `.MethodHandles.Lookup#hasFullPrivilegeAccess()`],
-					[/* text */ 't', `.
-                 When used with `],
-					[/* inline code block */ 'i', `invokedynamic`],
-					[/* text */ 't', `, this is stacked
-                 automatically by the VM.`]
-				]],
-				[/* parameter */ 'name', [/* parameter description */
-					[/* text */ 't', `The name of the method to implement. This name is
-                 arbitrary, and has no meaning for this linkage method.
-                 When used with `],
-					[/* inline code block */ 'i', `invokedynamic`],
-					[/* text */ 't', `, this is provided by
-                 the `],
-					[/* inline code block */ 'i', `NameAndType`],
-					[/* text */ 't', ` of the `],
-					[/* inline code block */ 'i', `InvokeDynamic`],
-					[/* text */ 't', `
-                 structure and is stacked automatically by the VM.`]
-				]],
-				[/* parameter */ 'concatType', [/* parameter description */
-					[/* text */ 't', `The expected signature of the `],
-					[/* inline code block */ 'i', `CallSite`],
-					[/* text */ 't', `.  The
-                   parameter types represent the types of concatenation
-                   arguments; the return type is always assignable from `],
-					[/* reference */ 'r', `java.lang.String`],
-					[/* text */ 't', `.  When used with `],
-					[/* inline code block */ 'i', `invokedynamic`],
-					[/* text */ 't', `,
-                   this is provided by the `],
-					[/* inline code block */ 'i', `NameAndType`],
-					[/* text */ 't', ` of the `],
-					[/* inline code block */ 'i', `InvokeDynamic`],
-					[/* text */ 't', ` structure and is stacked automatically by
-                   the VM.`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.invoke.StringConcatException', [/* throw description */
-					[/* text */ 't', `If any of the linkage invariants described
-                               here are violated, or the lookup context
-                               does not have private access privileges.`]
-				]],
-				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
-					[/* text */ 't', `If any of the incoming arguments is null.
                               This will never happen when a bootstrap method
                               is called with invokedynamic.`]
 				]]

@@ -43,34 +43,6 @@ DocsCollector.collect('java.nio.file.attribute.UserPrincipalLookupService', [
 		]]
 	],
 	[/* methods */
-		[/* method */ 'lookupPrincipalByName(java.lang.String)', [
-			[/* method description */
-				[/* text */ 't', `Lookup a user principal by name.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'name', [/* parameter description */
-					[/* text */ 't', `the string representation of the user principal to lookup`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.nio.file.attribute.UserPrincipalNotFoundException', [/* throw description */
-					[/* text */ 't', `the principal does not exist`]
-				]],
-				[/* throw */ 'java.io.IOException', [/* throw description */
-					[/* text */ 't', `if an I/O error occurs`]
-				]],
-				[/* throw */ 'java.lang.SecurityException', [/* throw description */
-					[/* text */ 't', `In the case of the default provider, and a security manager is
-          installed, it checks
-          `],
-					[/* reference */ 'r', `java.lang.RuntimePermission`],
-					[/* inline code block */ 'i', `("lookupUserInformation")`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `a user principal`]
-			]
-		]],
 		[/* method */ 'lookupPrincipalByGroupName(java.lang.String)', [
 			[/* method description */
 				[/* text */ 't', `Lookup a group principal by group name.
@@ -109,6 +81,34 @@ DocsCollector.collect('java.nio.file.attribute.UserPrincipalLookupService', [
 			],
 			[/* return description */
 				[/* text */ 't', `a group principal`]
+			]
+		]],
+		[/* method */ 'lookupPrincipalByName(java.lang.String)', [
+			[/* method description */
+				[/* text */ 't', `Lookup a user principal by name.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'name', [/* parameter description */
+					[/* text */ 't', `the string representation of the user principal to lookup`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.nio.file.attribute.UserPrincipalNotFoundException', [/* throw description */
+					[/* text */ 't', `the principal does not exist`]
+				]],
+				[/* throw */ 'java.io.IOException', [/* throw description */
+					[/* text */ 't', `if an I/O error occurs`]
+				]],
+				[/* throw */ 'java.lang.SecurityException', [/* throw description */
+					[/* text */ 't', `In the case of the default provider, and a security manager is
+          installed, it checks
+          `],
+					[/* reference */ 'r', `java.lang.RuntimePermission`],
+					[/* inline code block */ 'i', `("lookupUserInformation")`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `a user principal`]
 			]
 		]]
 	],

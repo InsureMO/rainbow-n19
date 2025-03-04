@@ -34,14 +34,19 @@ DocsCollector.collect('java.math.MathContext', [
 		[/* block */ 'b', '']
 	],
 	[/* fields */
-		[/* field */ 'UNLIMITED', [
+		[/* field */ 'DECIMAL128', [
 			[/* field description */
 				[/* text */ 't', `A `],
 				[/* inline code block */ 'i', `MathContext`],
-				[/* text */ 't', ` object whose settings have the values
- required for unlimited precision arithmetic.
- The values of the settings are: `],
-				[/* inline code block */ 'i', `precision=0 roundingMode=HALF_UP`]
+				[/* text */ 't', ` object with a precision setting
+ matching the precision of the IEEE 754-2019 decimal128 format, 34 digits, and a
+ rounding mode of `],
+				[/* reference */ 'r', `.RoundingMode#HALF_EVEN`],
+				[/* text */ 't', `.
+ Note the exponent range of decimal64 is `],
+				[/* text */ 't', `not`],
+				[/* text */ 't', ` used for
+ rounding.`]
 			],
 		]],
 		[/* field */ 'DECIMAL32', [
@@ -74,23 +79,74 @@ DocsCollector.collect('java.math.MathContext', [
  rounding.`]
 			],
 		]],
-		[/* field */ 'DECIMAL128', [
+		[/* field */ 'UNLIMITED', [
 			[/* field description */
 				[/* text */ 't', `A `],
 				[/* inline code block */ 'i', `MathContext`],
-				[/* text */ 't', ` object with a precision setting
- matching the precision of the IEEE 754-2019 decimal128 format, 34 digits, and a
- rounding mode of `],
-				[/* reference */ 'r', `.RoundingMode#HALF_EVEN`],
-				[/* text */ 't', `.
- Note the exponent range of decimal64 is `],
-				[/* text */ 't', `not`],
-				[/* text */ 't', ` used for
- rounding.`]
+				[/* text */ 't', ` object whose settings have the values
+ required for unlimited precision arithmetic.
+ The values of the settings are: `],
+				[/* inline code block */ 'i', `precision=0 roundingMode=HALF_UP`]
 			],
 		]]
 	],
 	[/* constructors */
+		[/* constructor */ '<init>(int)', [
+			[/* constructor description */
+				[/* text */ 't', `Constructs a new `],
+				[/* inline code block */ 'i', `MathContext`],
+				[/* text */ 't', ` with the specified
+ precision and the `],
+				[/* reference */ 'r', `.RoundingMode#HALF_UP`],
+				[/* text */ 't', ` rounding
+ mode.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'setPrecision', [/* parameter description */
+					[/* text */ 't', `The non-negative `],
+					[/* inline code block */ 'i', `int`],
+					[/* text */ 't', ` precision setting.`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
+					[/* text */ 't', `if the `],
+					[/* inline code block */ 'i', `setPrecision`],
+					[/* text */ 't', ` parameter is less
+         than zero.`]
+				]]
+			]
+		]],
+		[/* constructor */ '<init>(int,java.math.RoundingMode)', [
+			[/* constructor description */
+				[/* text */ 't', `Constructs a new `],
+				[/* inline code block */ 'i', `MathContext`],
+				[/* text */ 't', ` with a specified
+ precision and rounding mode.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'setPrecision', [/* parameter description */
+					[/* text */ 't', `The non-negative `],
+					[/* inline code block */ 'i', `int`],
+					[/* text */ 't', ` precision setting.`]
+				]],
+				[/* parameter */ 'setRoundingMode', [/* parameter description */
+					[/* text */ 't', `The rounding mode to use.`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
+					[/* text */ 't', `if the `],
+					[/* inline code block */ 'i', `setPrecision`],
+					[/* text */ 't', ` parameter is less
+         than zero.`]
+				]],
+				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
+					[/* text */ 't', `if the rounding mode argument is `],
+					[/* inline code block */ 'i', `null`]
+				]]
+			]
+		]],
 		[/* constructor */ '<init>(java.lang.String)', [
 			[/* constructor description */
 				[/* text */ 't', `Constructs a new `],
@@ -130,62 +186,6 @@ DocsCollector.collect('java.math.MathContext', [
 					[/* inline code block */ 'i', `null`]
 				]]
 			]
-		]],
-		[/* constructor */ '<init>(int,java.math.RoundingMode)', [
-			[/* constructor description */
-				[/* text */ 't', `Constructs a new `],
-				[/* inline code block */ 'i', `MathContext`],
-				[/* text */ 't', ` with a specified
- precision and rounding mode.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'setPrecision', [/* parameter description */
-					[/* text */ 't', `The non-negative `],
-					[/* inline code block */ 'i', `int`],
-					[/* text */ 't', ` precision setting.`]
-				]],
-				[/* parameter */ 'setRoundingMode', [/* parameter description */
-					[/* text */ 't', `The rounding mode to use.`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
-					[/* text */ 't', `if the `],
-					[/* inline code block */ 'i', `setPrecision`],
-					[/* text */ 't', ` parameter is less
-         than zero.`]
-				]],
-				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
-					[/* text */ 't', `if the rounding mode argument is `],
-					[/* inline code block */ 'i', `null`]
-				]]
-			]
-		]],
-		[/* constructor */ '<init>(int)', [
-			[/* constructor description */
-				[/* text */ 't', `Constructs a new `],
-				[/* inline code block */ 'i', `MathContext`],
-				[/* text */ 't', ` with the specified
- precision and the `],
-				[/* reference */ 'r', `.RoundingMode#HALF_UP`],
-				[/* text */ 't', ` rounding
- mode.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'setPrecision', [/* parameter description */
-					[/* text */ 't', `The non-negative `],
-					[/* inline code block */ 'i', `int`],
-					[/* text */ 't', ` precision setting.`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
-					[/* text */ 't', `if the `],
-					[/* inline code block */ 'i', `setPrecision`],
-					[/* text */ 't', ` parameter is less
-         than zero.`]
-				]]
-			]
 		]]
 	],
 	[/* methods */
@@ -218,6 +218,37 @@ DocsCollector.collect('java.math.MathContext', [
 				[/* inline code block */ 'i', `MathContext`],
 				[/* text */ 't', ` object which has exactly the same
          settings as this object`]
+			]
+		]],
+		[/* method */ 'getPrecision()', [
+			[/* method description */
+				[/* text */ 't', `Returns the `],
+				[/* inline code block */ 'i', `precision`],
+				[/* text */ 't', ` setting.
+ This value is always non-negative.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `an `],
+				[/* inline code block */ 'i', `int`],
+				[/* text */ 't', ` which is the value of the `],
+				[/* inline code block */ 'i', `precision`],
+				[/* text */ 't', `
+         setting`]
+			]
+		]],
+		[/* method */ 'hashCode()', [
+			[/* method description */
+				[/* text */ 't', `Returns the hash code for this `],
+				[/* inline code block */ 'i', `MathContext`],
+				[/* text */ 't', `.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `hash code for this `],
+				[/* inline code block */ 'i', `MathContext`]
 			]
 		]],
 		[/* method */ 'toString()', [
@@ -286,37 +317,6 @@ DocsCollector.collect('java.math.MathContext', [
 				[/* text */ 't', `a `],
 				[/* inline code block */ 'i', `String`],
 				[/* text */ 't', ` representing the context settings`]
-			]
-		]],
-		[/* method */ 'hashCode()', [
-			[/* method description */
-				[/* text */ 't', `Returns the hash code for this `],
-				[/* inline code block */ 'i', `MathContext`],
-				[/* text */ 't', `.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `hash code for this `],
-				[/* inline code block */ 'i', `MathContext`]
-			]
-		]],
-		[/* method */ 'getPrecision()', [
-			[/* method description */
-				[/* text */ 't', `Returns the `],
-				[/* inline code block */ 'i', `precision`],
-				[/* text */ 't', ` setting.
- This value is always non-negative.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `an `],
-				[/* inline code block */ 'i', `int`],
-				[/* text */ 't', ` which is the value of the `],
-				[/* inline code block */ 'i', `precision`],
-				[/* text */ 't', `
-         setting`]
 			]
 		]],
 		[/* method */ 'getRoundingMode()', [

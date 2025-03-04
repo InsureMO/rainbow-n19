@@ -67,14 +67,74 @@ DocsCollector.collect('java.time.zone.ZoneRules', [
 				[/* text */ 't', `true if this rules is the same as that specified`]
 			]
 		]],
-		[/* method */ 'toString()', [
+		[/* method */ 'isDaylightSavings(java.time.Instant)', [
 			[/* method description */
-				[/* text */ 't', `Returns a string describing this object.`]
+				[/* text */ 't', `Checks if the specified instant is in daylight savings.
+ `],
+				[/* block */ 'b', `
+ This checks if the standard offset and the actual offset are the same
+ for the specified instant.
+ If they are not, it is assumed that daylight savings is in operation.
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', `
+ This default implementation compares the `],
+					[/* reference */ 'r', `#getOffset(java.time.Instant)`, `actual`],
+					[/* text */ 't', `
+ and `],
+					[/* reference */ 'r', `#getStandardOffset(java.time.Instant)`, `standard`],
+					[/* text */ 't', ` offsets.`]
+				]]
+			],
+			[/* parameters */
+				[/* parameter */ 'instant', [/* parameter description */
+					[/* text */ 't', `the instant to find the offset information for, not null, but null
+  may be ignored if the rules have a single offset for all instants`]
+				]]
+			],
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the standard offset, not null`]
+			]
+		]],
+		[/* method */ 'isFixedOffset()', [
+			[/* method description */
+				[/* text */ 't', `Checks of the zone rules are fixed, such that the offset never varies.`]
 			],
 			/* parameters */ UDF,
 			/* throws */ UDF,
 			[/* return description */
-				[/* text */ 't', `a string for debugging, not null`]
+				[/* text */ 't', `true if the time-zone is fixed and the offset never changes`]
+			]
+		]],
+		[/* method */ 'isValidOffset(java.time.LocalDateTime,java.time.ZoneOffset)', [
+			[/* method description */
+				[/* text */ 't', `Checks if the offset date-time is valid for these rules.
+ `],
+				[/* block */ 'b', `
+ To be valid, the local date-time must not be in a gap and the offset
+ must match one of the valid offsets.
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', `
+ This default implementation checks if `],
+					[/* reference */ 'r', `#getValidOffsets(java.time.LocalDateTime)`, `getValidOffsets(java.time.LocalDateTime)`],
+					[/* text */ 't', `
+ contains the specified offset.`]
+				]]
+			],
+			[/* parameters */
+				[/* parameter */ 'localDateTime', [/* parameter description */
+					[/* text */ 't', `the date-time to check, not null, but null
+  may be ignored if the rules have a single offset for all instants`]
+				]],
+				[/* parameter */ 'offset', [/* parameter description */
+					[/* text */ 't', `the offset to check, null returns false`]
+				]]
+			],
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `true if the offset date-time is valid for these rules`]
 			]
 		]],
 		[/* method */ 'hashCode()', [
@@ -89,202 +149,47 @@ DocsCollector.collect('java.time.zone.ZoneRules', [
 				[/* text */ 't', `the hash code`]
 			]
 		]],
-		[/* method */ 'of(java.time.ZoneOffset,java.time.ZoneOffset,java.util.List,java.util.List,java.util.List)', [
+		[/* method */ 'toString()', [
 			[/* method description */
-				[/* text */ 't', `Obtains an instance of a ZoneRules.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'baseStandardOffset', [/* parameter description */
-					[/* text */ 't', `the standard offset to use before legal rules were set, not null`]
-				]],
-				[/* parameter */ 'baseWallOffset', [/* parameter description */
-					[/* text */ 't', `the wall offset to use before legal rules were set, not null`]
-				]],
-				[/* parameter */ 'standardOffsetTransitionList', [/* parameter description */
-					[/* text */ 't', `the list of changes to the standard offset, not null`]
-				]],
-				[/* parameter */ 'transitionList', [/* parameter description */
-					[/* text */ 't', `the list of transitions, not null`]
-				]],
-				[/* parameter */ 'lastRules', [/* parameter description */
-					[/* text */ 't', `the recurring last rules, size 16 or less, not null`]
-				]]
-			],
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the zone rules, not null`]
-			]
-		]],
-		[/* method */ 'of(java.time.ZoneOffset)', [
-			[/* method description */
-				[/* text */ 't', `Obtains an instance of ZoneRules that has fixed zone rules.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'offset', [/* parameter description */
-					[/* text */ 't', `the offset this fixed zone rules is based on, not null`]
-				]]
-			],
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the zone rules, not null`]
-			]
-		]],
-		[/* method */ 'getOffset(java.time.LocalDateTime)', [
-			[/* method description */
-				[/* text */ 't', `Gets a suitable offset for the specified local date-time in these rules.
- `],
-				[/* block */ 'b', `
- The mapping from a local date-time to an offset is not straightforward.
- There are three cases:
- `],
-				[/* list */ 'l', [
-					[/* block */ 'b', `Normal, with one valid offset. For the vast majority of the year, the normal
-  case applies, where there is a single valid offset for the local date-time.`],
-					[/* block */ 'b', `Gap, with zero valid offsets. This is when clocks jump forward typically
-  due to the spring daylight savings change from "winter" to "summer".
-  In a gap there are local date-time values with no valid offset.`],
-					[/* block */ 'b', `Overlap, with two valid offsets. This is when clocks are set back typically
-  due to the autumn daylight savings change from "summer" to "winter".
-  In an overlap there are local date-time values with two valid offsets.`]
-				]],
-				[/* text */ 't', `
- Thus, for any given local date-time there can be zero, one or two valid offsets.
- This method returns the single offset in the Normal case, and in the Gap or Overlap
- case it returns the offset before the transition.
- `],
-				[/* block */ 'b', ''],
-				[/* block */ 'b', [
-					[/* text */ 't', `
- Since, in the case of Gap and Overlap, the offset returned is a "best" value, rather
- than the "correct" value, it should be treated with care. Applications that care
- about the correct offset should use a combination of this method,
- `],
-					[/* reference */ 'r', `#getValidOffsets(java.time.LocalDateTime)`, `getValidOffsets(LocalDateTime)`],
-					[/* text */ 't', ` and `],
-					[/* reference */ 'r', `#getTransition(java.time.LocalDateTime)`, `getTransition(LocalDateTime)`],
-					[/* text */ 't', `.`]
-				]]
-			],
-			[/* parameters */
-				[/* parameter */ 'localDateTime', [/* parameter description */
-					[/* text */ 't', `the local date-time to query, not null, but null
-  may be ignored if the rules have a single offset for all instants`]
-				]]
-			],
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the best available offset for the local date-time, not null`]
-			]
-		]],
-		[/* method */ 'getOffset(java.time.Instant)', [
-			[/* method description */
-				[/* text */ 't', `Gets the offset applicable at the specified instant in these rules.
- `],
-				[/* block */ 'b', `
- The mapping from an instant to an offset is simple, there is only
- one valid offset for each instant.
- This method returns that offset.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'instant', [/* parameter description */
-					[/* text */ 't', `the instant to find the offset for, not null, but null
-  may be ignored if the rules have a single offset for all instants`]
-				]]
-			],
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the offset, not null`]
-			]
-		]],
-		[/* method */ 'isFixedOffset()', [
-			[/* method description */
-				[/* text */ 't', `Checks of the zone rules are fixed, such that the offset never varies.`]
+				[/* text */ 't', `Returns a string describing this object.`]
 			],
 			/* parameters */ UDF,
 			/* throws */ UDF,
 			[/* return description */
-				[/* text */ 't', `true if the time-zone is fixed and the offset never changes`]
+				[/* text */ 't', `a string for debugging, not null`]
 			]
 		]],
-		[/* method */ 'getValidOffsets(java.time.LocalDateTime)', [
+		[/* method */ 'getDaylightSavings(java.time.Instant)', [
 			[/* method description */
-				[/* text */ 't', `Gets the offset applicable at the specified local date-time in these rules.
+				[/* text */ 't', `Gets the amount of daylight savings in use for the specified instant in this zone.
  `],
 				[/* block */ 'b', `
- The mapping from a local date-time to an offset is not straightforward.
- There are three cases:
+ This provides access to historic information on how the amount of daylight
+ savings has changed over time.
+ This is the difference between the standard offset and the actual offset.
+ Typically the amount is zero during winter and one hour during summer.
+ Time-zones are second-based, so the nanosecond part of the duration will be zero.
  `],
-				[/* list */ 'l', [
-					[/* block */ 'b', `Normal, with one valid offset. For the vast majority of the year, the normal
-  case applies, where there is a single valid offset for the local date-time.`],
-					[/* block */ 'b', `Gap, with zero valid offsets. This is when clocks jump forward typically
-  due to the spring daylight savings change from "winter" to "summer".
-  In a gap there are local date-time values with no valid offset.`],
-					[/* block */ 'b', `Overlap, with two valid offsets. This is when clocks are set back typically
-  due to the autumn daylight savings change from "summer" to "winter".
-  In an overlap there are local date-time values with two valid offsets.`]
-				]],
-				[/* text */ 't', `
- Thus, for any given local date-time there can be zero, one or two valid offsets.
- This method returns that list of valid offsets, which is a list of size 0, 1 or 2.
- In the case where there are two offsets, the earlier offset is returned at index 0
- and the later offset at index 1.
- `],
-				[/* block */ 'b', ''],
 				[/* block */ 'b', [
 					[/* text */ 't', `
- There are various ways to handle the conversion from a `],
-					[/* inline code block */ 'i', `LocalDateTime`],
-					[/* text */ 't', `.
- One technique, using this method, would be:
- `]
-				]],
-				[/* code block */ 'c', `  List<ZoneOffset> validOffsets = rules.getValidOffsets(localDT);
-  if (validOffsets.size() == 1) {
-    // Normal case: only one valid offset
-    zoneOffset = validOffsets.get(0);
-  } else {
-    // Gap or Overlap: determine what to do from transition (which will be non-null)
-    ZoneOffsetTransition trans = rules.getTransition(localDT);
-  }
+ This default implementation calculates the duration from the
  `],
-				[/* block */ 'b', ''],
-				[/* block */ 'b', `
- In theory, it is possible for there to be more than two valid offsets.
- This would happen if clocks to be put back more than once in quick succession.
- This has never happened in the history of time-zones and thus has no special handling.
- However, if it were to happen, then the list would return more than 2 entries.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'localDateTime', [/* parameter description */
-					[/* text */ 't', `the local date-time to query for valid offsets, not null, but null
-  may be ignored if the rules have a single offset for all instants`]
+					[/* reference */ 'r', `#getOffset(java.time.Instant)`, `actual`],
+					[/* text */ 't', ` and
+ `],
+					[/* reference */ 'r', `#getStandardOffset(java.time.Instant)`, `standard`],
+					[/* text */ 't', ` offsets.`]
 				]]
-			],
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the list of valid offsets, may be immutable, not null`]
-			]
-		]],
-		[/* method */ 'getStandardOffset(java.time.Instant)', [
-			[/* method description */
-				[/* text */ 't', `Gets the standard offset for the specified instant in this zone.
- `],
-				[/* block */ 'b', `
- This provides access to historic information on how the standard offset
- has changed over time.
- The standard offset is the offset before any daylight saving time is applied.
- This is typically the offset applicable during winter.`]
 			],
 			[/* parameters */
 				[/* parameter */ 'instant', [/* parameter description */
-					[/* text */ 't', `the instant to find the offset information for, not null, but null
+					[/* text */ 't', `the instant to find the daylight savings for, not null, but null
   may be ignored if the rules have a single offset for all instants`]
 				]]
 			],
 			/* throws */ UDF,
 			[/* return description */
-				[/* text */ 't', `the standard offset, not null`]
+				[/* text */ 't', `the difference between the standard and actual offset, not null`]
 			]
 		]],
 		[/* method */ 'getTransition(java.time.LocalDateTime)', [
@@ -339,99 +244,6 @@ DocsCollector.collect('java.time.zone.ZoneRules', [
 				[/* text */ 't', `the offset transition, null if the local date-time is not in transition`]
 			]
 		]],
-		[/* method */ 'getDaylightSavings(java.time.Instant)', [
-			[/* method description */
-				[/* text */ 't', `Gets the amount of daylight savings in use for the specified instant in this zone.
- `],
-				[/* block */ 'b', `
- This provides access to historic information on how the amount of daylight
- savings has changed over time.
- This is the difference between the standard offset and the actual offset.
- Typically the amount is zero during winter and one hour during summer.
- Time-zones are second-based, so the nanosecond part of the duration will be zero.
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', `
- This default implementation calculates the duration from the
- `],
-					[/* reference */ 'r', `#getOffset(java.time.Instant)`, `actual`],
-					[/* text */ 't', ` and
- `],
-					[/* reference */ 'r', `#getStandardOffset(java.time.Instant)`, `standard`],
-					[/* text */ 't', ` offsets.`]
-				]]
-			],
-			[/* parameters */
-				[/* parameter */ 'instant', [/* parameter description */
-					[/* text */ 't', `the instant to find the daylight savings for, not null, but null
-  may be ignored if the rules have a single offset for all instants`]
-				]]
-			],
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the difference between the standard and actual offset, not null`]
-			]
-		]],
-		[/* method */ 'isDaylightSavings(java.time.Instant)', [
-			[/* method description */
-				[/* text */ 't', `Checks if the specified instant is in daylight savings.
- `],
-				[/* block */ 'b', `
- This checks if the standard offset and the actual offset are the same
- for the specified instant.
- If they are not, it is assumed that daylight savings is in operation.
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', `
- This default implementation compares the `],
-					[/* reference */ 'r', `#getOffset(java.time.Instant)`, `actual`],
-					[/* text */ 't', `
- and `],
-					[/* reference */ 'r', `#getStandardOffset(java.time.Instant)`, `standard`],
-					[/* text */ 't', ` offsets.`]
-				]]
-			],
-			[/* parameters */
-				[/* parameter */ 'instant', [/* parameter description */
-					[/* text */ 't', `the instant to find the offset information for, not null, but null
-  may be ignored if the rules have a single offset for all instants`]
-				]]
-			],
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the standard offset, not null`]
-			]
-		]],
-		[/* method */ 'isValidOffset(java.time.LocalDateTime,java.time.ZoneOffset)', [
-			[/* method description */
-				[/* text */ 't', `Checks if the offset date-time is valid for these rules.
- `],
-				[/* block */ 'b', `
- To be valid, the local date-time must not be in a gap and the offset
- must match one of the valid offsets.
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', `
- This default implementation checks if `],
-					[/* reference */ 'r', `#getValidOffsets(java.time.LocalDateTime)`, `getValidOffsets(java.time.LocalDateTime)`],
-					[/* text */ 't', `
- contains the specified offset.`]
-				]]
-			],
-			[/* parameters */
-				[/* parameter */ 'localDateTime', [/* parameter description */
-					[/* text */ 't', `the date-time to check, not null, but null
-  may be ignored if the rules have a single offset for all instants`]
-				]],
-				[/* parameter */ 'offset', [/* parameter description */
-					[/* text */ 't', `the offset to check, null returns false`]
-				]]
-			],
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `true if the offset date-time is valid for these rules`]
-			]
-		]],
 		[/* method */ 'nextTransition(java.time.Instant)', [
 			[/* method description */
 				[/* text */ 't', `Gets the next transition after the specified instant.
@@ -470,6 +282,94 @@ DocsCollector.collect('java.time.zone.ZoneRules', [
 			/* throws */ UDF,
 			[/* return description */
 				[/* text */ 't', `the previous transition before the specified instant, null if this is before the first transition`]
+			]
+		]],
+		[/* method */ 'getOffset(java.time.Instant)', [
+			[/* method description */
+				[/* text */ 't', `Gets the offset applicable at the specified instant in these rules.
+ `],
+				[/* block */ 'b', `
+ The mapping from an instant to an offset is simple, there is only
+ one valid offset for each instant.
+ This method returns that offset.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'instant', [/* parameter description */
+					[/* text */ 't', `the instant to find the offset for, not null, but null
+  may be ignored if the rules have a single offset for all instants`]
+				]]
+			],
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the offset, not null`]
+			]
+		]],
+		[/* method */ 'getOffset(java.time.LocalDateTime)', [
+			[/* method description */
+				[/* text */ 't', `Gets a suitable offset for the specified local date-time in these rules.
+ `],
+				[/* block */ 'b', `
+ The mapping from a local date-time to an offset is not straightforward.
+ There are three cases:
+ `],
+				[/* list */ 'l', [
+					[/* block */ 'b', `Normal, with one valid offset. For the vast majority of the year, the normal
+  case applies, where there is a single valid offset for the local date-time.`],
+					[/* block */ 'b', `Gap, with zero valid offsets. This is when clocks jump forward typically
+  due to the spring daylight savings change from "winter" to "summer".
+  In a gap there are local date-time values with no valid offset.`],
+					[/* block */ 'b', `Overlap, with two valid offsets. This is when clocks are set back typically
+  due to the autumn daylight savings change from "summer" to "winter".
+  In an overlap there are local date-time values with two valid offsets.`]
+				]],
+				[/* text */ 't', `
+ Thus, for any given local date-time there can be zero, one or two valid offsets.
+ This method returns the single offset in the Normal case, and in the Gap or Overlap
+ case it returns the offset before the transition.
+ `],
+				[/* block */ 'b', ''],
+				[/* block */ 'b', [
+					[/* text */ 't', `
+ Since, in the case of Gap and Overlap, the offset returned is a "best" value, rather
+ than the "correct" value, it should be treated with care. Applications that care
+ about the correct offset should use a combination of this method,
+ `],
+					[/* reference */ 'r', `#getValidOffsets(java.time.LocalDateTime)`, `getValidOffsets(LocalDateTime)`],
+					[/* text */ 't', ` and `],
+					[/* reference */ 'r', `#getTransition(java.time.LocalDateTime)`, `getTransition(LocalDateTime)`],
+					[/* text */ 't', `.`]
+				]]
+			],
+			[/* parameters */
+				[/* parameter */ 'localDateTime', [/* parameter description */
+					[/* text */ 't', `the local date-time to query, not null, but null
+  may be ignored if the rules have a single offset for all instants`]
+				]]
+			],
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the best available offset for the local date-time, not null`]
+			]
+		]],
+		[/* method */ 'getStandardOffset(java.time.Instant)', [
+			[/* method description */
+				[/* text */ 't', `Gets the standard offset for the specified instant in this zone.
+ `],
+				[/* block */ 'b', `
+ This provides access to historic information on how the standard offset
+ has changed over time.
+ The standard offset is the offset before any daylight saving time is applied.
+ This is typically the offset applicable during winter.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'instant', [/* parameter description */
+					[/* text */ 't', `the instant to find the offset information for, not null, but null
+  may be ignored if the rules have a single offset for all instants`]
+				]]
+			],
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the standard offset, not null`]
 			]
 		]],
 		[/* method */ 'getTransitions()', [
@@ -533,6 +433,106 @@ DocsCollector.collect('java.time.zone.ZoneRules', [
 			/* throws */ UDF,
 			[/* return description */
 				[/* text */ 't', `an immutable list of transition rules, not null`]
+			]
+		]],
+		[/* method */ 'getValidOffsets(java.time.LocalDateTime)', [
+			[/* method description */
+				[/* text */ 't', `Gets the offset applicable at the specified local date-time in these rules.
+ `],
+				[/* block */ 'b', `
+ The mapping from a local date-time to an offset is not straightforward.
+ There are three cases:
+ `],
+				[/* list */ 'l', [
+					[/* block */ 'b', `Normal, with one valid offset. For the vast majority of the year, the normal
+  case applies, where there is a single valid offset for the local date-time.`],
+					[/* block */ 'b', `Gap, with zero valid offsets. This is when clocks jump forward typically
+  due to the spring daylight savings change from "winter" to "summer".
+  In a gap there are local date-time values with no valid offset.`],
+					[/* block */ 'b', `Overlap, with two valid offsets. This is when clocks are set back typically
+  due to the autumn daylight savings change from "summer" to "winter".
+  In an overlap there are local date-time values with two valid offsets.`]
+				]],
+				[/* text */ 't', `
+ Thus, for any given local date-time there can be zero, one or two valid offsets.
+ This method returns that list of valid offsets, which is a list of size 0, 1 or 2.
+ In the case where there are two offsets, the earlier offset is returned at index 0
+ and the later offset at index 1.
+ `],
+				[/* block */ 'b', ''],
+				[/* block */ 'b', [
+					[/* text */ 't', `
+ There are various ways to handle the conversion from a `],
+					[/* inline code block */ 'i', `LocalDateTime`],
+					[/* text */ 't', `.
+ One technique, using this method, would be:
+ `]
+				]],
+				[/* code block */ 'c', `  List<ZoneOffset> validOffsets = rules.getValidOffsets(localDT);
+  if (validOffsets.size() == 1) {
+    // Normal case: only one valid offset
+    zoneOffset = validOffsets.get(0);
+  } else {
+    // Gap or Overlap: determine what to do from transition (which will be non-null)
+    ZoneOffsetTransition trans = rules.getTransition(localDT);
+  }
+ `],
+				[/* block */ 'b', ''],
+				[/* block */ 'b', `
+ In theory, it is possible for there to be more than two valid offsets.
+ This would happen if clocks to be put back more than once in quick succession.
+ This has never happened in the history of time-zones and thus has no special handling.
+ However, if it were to happen, then the list would return more than 2 entries.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'localDateTime', [/* parameter description */
+					[/* text */ 't', `the local date-time to query for valid offsets, not null, but null
+  may be ignored if the rules have a single offset for all instants`]
+				]]
+			],
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the list of valid offsets, may be immutable, not null`]
+			]
+		]],
+		[/* method */ 'of(java.time.ZoneOffset)', [
+			[/* method description */
+				[/* text */ 't', `Obtains an instance of ZoneRules that has fixed zone rules.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'offset', [/* parameter description */
+					[/* text */ 't', `the offset this fixed zone rules is based on, not null`]
+				]]
+			],
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the zone rules, not null`]
+			]
+		]],
+		[/* method */ 'of(java.time.ZoneOffset,java.time.ZoneOffset,java.util.List,java.util.List,java.util.List)', [
+			[/* method description */
+				[/* text */ 't', `Obtains an instance of a ZoneRules.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'baseStandardOffset', [/* parameter description */
+					[/* text */ 't', `the standard offset to use before legal rules were set, not null`]
+				]],
+				[/* parameter */ 'baseWallOffset', [/* parameter description */
+					[/* text */ 't', `the wall offset to use before legal rules were set, not null`]
+				]],
+				[/* parameter */ 'standardOffsetTransitionList', [/* parameter description */
+					[/* text */ 't', `the list of changes to the standard offset, not null`]
+				]],
+				[/* parameter */ 'transitionList', [/* parameter description */
+					[/* text */ 't', `the list of transitions, not null`]
+				]],
+				[/* parameter */ 'lastRules', [/* parameter description */
+					[/* text */ 't', `the recurring last rules, size 16 or less, not null`]
+				]]
+			],
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the zone rules, not null`]
 			]
 		]]
 	],

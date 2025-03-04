@@ -340,31 +340,7 @@ DocsCollector.collect('java.lang.invoke.MethodHandleInfo', [
 				[/* text */ 't', `.`]
 			],
 		]],
-		[/* field */ 'REF_putField', [
-			[/* field description */
-				[/* text */ 't', `A direct method handle reference kind,
- as defined in the `],
-				[/* reference */ 'r', `.MethodHandleInfo#refkinds`],
-				[/* text */ 't', `.`]
-			],
-		]],
-		[/* field */ 'REF_putStatic', [
-			[/* field description */
-				[/* text */ 't', `A direct method handle reference kind,
- as defined in the `],
-				[/* reference */ 'r', `.MethodHandleInfo#refkinds`],
-				[/* text */ 't', `.`]
-			],
-		]],
-		[/* field */ 'REF_invokeVirtual', [
-			[/* field description */
-				[/* text */ 't', `A direct method handle reference kind,
- as defined in the `],
-				[/* reference */ 'r', `.MethodHandleInfo#refkinds`],
-				[/* text */ 't', `.`]
-			],
-		]],
-		[/* field */ 'REF_invokeStatic', [
+		[/* field */ 'REF_invokeInterface', [
 			[/* field description */
 				[/* text */ 't', `A direct method handle reference kind,
  as defined in the `],
@@ -380,6 +356,22 @@ DocsCollector.collect('java.lang.invoke.MethodHandleInfo', [
 				[/* text */ 't', `.`]
 			],
 		]],
+		[/* field */ 'REF_invokeStatic', [
+			[/* field description */
+				[/* text */ 't', `A direct method handle reference kind,
+ as defined in the `],
+				[/* reference */ 'r', `.MethodHandleInfo#refkinds`],
+				[/* text */ 't', `.`]
+			],
+		]],
+		[/* field */ 'REF_invokeVirtual', [
+			[/* field description */
+				[/* text */ 't', `A direct method handle reference kind,
+ as defined in the `],
+				[/* reference */ 'r', `.MethodHandleInfo#refkinds`],
+				[/* text */ 't', `.`]
+			],
+		]],
 		[/* field */ 'REF_newInvokeSpecial', [
 			[/* field description */
 				[/* text */ 't', `A direct method handle reference kind,
@@ -388,7 +380,15 @@ DocsCollector.collect('java.lang.invoke.MethodHandleInfo', [
 				[/* text */ 't', `.`]
 			],
 		]],
-		[/* field */ 'REF_invokeInterface', [
+		[/* field */ 'REF_putField', [
+			[/* field description */
+				[/* text */ 't', `A direct method handle reference kind,
+ as defined in the `],
+				[/* reference */ 'r', `.MethodHandleInfo#refkinds`],
+				[/* text */ 't', `.`]
+			],
+		]],
+		[/* field */ 'REF_putStatic', [
 			[/* field description */
 				[/* text */ 't', `A direct method handle reference kind,
  as defined in the `],
@@ -399,6 +399,126 @@ DocsCollector.collect('java.lang.invoke.MethodHandleInfo', [
 	],
 	/* constructors */ UDF,
 	[/* methods */
+		[/* method */ 'reflectAs(java.lang.Class,java.lang.invoke.MethodHandles.Lookup)', [
+			[/* method description */
+				[/* text */ 't', `Reflects the underlying member as a method, constructor, or field object.
+ If the underlying member is public, it is reflected as if by
+ `],
+				[/* inline code block */ 'i', `getMethod`],
+				[/* text */ 't', `, `],
+				[/* inline code block */ 'i', `getConstructor`],
+				[/* text */ 't', `, or `],
+				[/* inline code block */ 'i', `getField`],
+				[/* text */ 't', `.
+ Otherwise, it is reflected as if by
+ `],
+				[/* inline code block */ 'i', `getDeclaredMethod`],
+				[/* text */ 't', `, `],
+				[/* inline code block */ 'i', `getDeclaredConstructor`],
+				[/* text */ 't', `, or `],
+				[/* inline code block */ 'i', `getDeclaredField`],
+				[/* text */ 't', `.
+ The underlying member must be accessible to the given lookup object.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'expected', [/* parameter description */
+					[/* text */ 't', `a class object representing the desired result type `],
+					[/* inline code block */ 'i', `T`]
+				]],
+				[/* parameter */ 'lookup', [/* parameter description */
+					[/* text */ 't', `the lookup object that created this MethodHandleInfo, or one with equivalent access privileges`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.lang.ClassCastException', [/* throw description */
+					[/* text */ 't', `if the member is not of the expected type`]
+				]],
+				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
+					[/* text */ 't', `if either argument is `],
+					[/* inline code block */ 'i', `null`]
+				]],
+				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
+					[/* text */ 't', `if the underlying member is not accessible to the given lookup object`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `a reference to the method, constructor, or field object`]
+			]
+		]],
+		[/* method */ 'getModifiers()', [
+			[/* method description */
+				[/* text */ 't', `Returns the access modifiers of the underlying member.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the Java language modifiers for underlying member,
+         or -1 if the member cannot be accessed`]
+			]
+		]],
+		[/* method */ 'getReferenceKind()', [
+			[/* method description */
+				[/* text */ 't', `Returns the reference kind of the cracked method handle, which in turn
+ determines whether the method handle's underlying member was a constructor, method, or field.
+ See the `],
+				[/* reference */ 'r', `.MethodHandleInfo#refkinds`],
+				[/* text */ 't', ` for definitions.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the integer code for the kind of reference used to access the underlying member`]
+			]
+		]],
+		[/* method */ 'getDeclaringClass()', [
+			[/* method description */
+				[/* text */ 't', `Returns the class in which the cracked method handle's underlying member was defined.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the declaring class of the underlying member`]
+			]
+		]],
+		[/* method */ 'getMethodType()', [
+			[/* method description */
+				[/* text */ 't', `Returns the nominal type of the cracked symbolic reference, expressed as a method type.
+ If the reference is to a constructor, the return type will be `],
+				[/* inline code block */ 'i', `void`],
+				[/* text */ 't', `.
+ If it is to a non-static method, the method type will not mention the `],
+				[/* inline code block */ 'i', `this`],
+				[/* text */ 't', ` parameter.
+ If it is to a field and the requested access is to read the field,
+ the method type will have no parameters and return the field type.
+ If it is to a field and the requested access is to write the field,
+ the method type will have one parameter of the field type and return `],
+				[/* inline code block */ 'i', `void`],
+				[/* text */ 't', `.
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', `
+ Note that original direct method handle may include a leading `],
+					[/* inline code block */ 'i', `this`],
+					[/* text */ 't', ` parameter,
+ or (in the case of a constructor) will replace the `],
+					[/* inline code block */ 'i', `void`],
+					[/* text */ 't', ` return type
+ with the constructed class.
+ The nominal type does not include any `],
+					[/* inline code block */ 'i', `this`],
+					[/* text */ 't', ` parameter,
+ and (in the case of a constructor) will return `],
+					[/* inline code block */ 'i', `void`],
+					[/* text */ 't', `.`]
+				]]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the type of the underlying member, expressed as a method type`]
+			]
+		]],
 		[/* method */ 'getName()', [
 			[/* method description */
 				[/* text */ 't', `Returns the name of the cracked method handle's underlying member.
@@ -411,6 +531,43 @@ DocsCollector.collect('java.lang.invoke.MethodHandleInfo', [
 			/* throws */ UDF,
 			[/* return description */
 				[/* text */ 't', `the simple name of the underlying member`]
+			]
+		]],
+		[/* method */ 'isVarArgs()', [
+			[/* method description */
+				[/* text */ 't', `Determines if the underlying member was a variable arity method or constructor.
+ Such members are represented by method handles that are varargs collectors.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* inline code block */ 'i', `true`],
+				[/* text */ 't', ` if and only if the underlying member was declared with variable arity.`]
+			]
+		]],
+		[/* method */ 'referenceKindToString(int)', [
+			[/* method description */
+				[/* text */ 't', `Returns the descriptive name of the given reference kind,
+ as defined in the `],
+				[/* reference */ 'r', `.MethodHandleInfo#refkinds`],
+				[/* text */ 't', `.
+ The conventional prefix "REF_" is omitted.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'referenceKind', [/* parameter description */
+					[/* text */ 't', `an integer code for a kind of reference used to access a class member`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
+					[/* text */ 't', `if the argument is not a valid
+            `],
+					[/* reference */ 'r', `.MethodHandleInfo#refkinds`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `a mixed-case string such as `],
+				[/* inline code block */ 'i', `"getField"`]
 			]
 		]],
 		[/* method */ 'toString(int,java.lang.Class,java.lang.String,java.lang.invoke.MethodType)', [
@@ -497,163 +654,6 @@ DocsCollector.collect('java.lang.invoke.MethodHandleInfo', [
 			[/* return description */
 				[/* text */ 't', `a string of the form `],
 				[/* inline code block */ 'i', `"RK C.N:MT"`]
-			]
-		]],
-		[/* method */ 'getModifiers()', [
-			[/* method description */
-				[/* text */ 't', `Returns the access modifiers of the underlying member.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the Java language modifiers for underlying member,
-         or -1 if the member cannot be accessed`]
-			]
-		]],
-		[/* method */ 'getDeclaringClass()', [
-			[/* method description */
-				[/* text */ 't', `Returns the class in which the cracked method handle's underlying member was defined.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the declaring class of the underlying member`]
-			]
-		]],
-		[/* method */ 'isVarArgs()', [
-			[/* method description */
-				[/* text */ 't', `Determines if the underlying member was a variable arity method or constructor.
- Such members are represented by method handles that are varargs collectors.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* inline code block */ 'i', `true`],
-				[/* text */ 't', ` if and only if the underlying member was declared with variable arity.`]
-			]
-		]],
-		[/* method */ 'getReferenceKind()', [
-			[/* method description */
-				[/* text */ 't', `Returns the reference kind of the cracked method handle, which in turn
- determines whether the method handle's underlying member was a constructor, method, or field.
- See the `],
-				[/* reference */ 'r', `.MethodHandleInfo#refkinds`],
-				[/* text */ 't', ` for definitions.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the integer code for the kind of reference used to access the underlying member`]
-			]
-		]],
-		[/* method */ 'getMethodType()', [
-			[/* method description */
-				[/* text */ 't', `Returns the nominal type of the cracked symbolic reference, expressed as a method type.
- If the reference is to a constructor, the return type will be `],
-				[/* inline code block */ 'i', `void`],
-				[/* text */ 't', `.
- If it is to a non-static method, the method type will not mention the `],
-				[/* inline code block */ 'i', `this`],
-				[/* text */ 't', ` parameter.
- If it is to a field and the requested access is to read the field,
- the method type will have no parameters and return the field type.
- If it is to a field and the requested access is to write the field,
- the method type will have one parameter of the field type and return `],
-				[/* inline code block */ 'i', `void`],
-				[/* text */ 't', `.
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', `
- Note that original direct method handle may include a leading `],
-					[/* inline code block */ 'i', `this`],
-					[/* text */ 't', ` parameter,
- or (in the case of a constructor) will replace the `],
-					[/* inline code block */ 'i', `void`],
-					[/* text */ 't', ` return type
- with the constructed class.
- The nominal type does not include any `],
-					[/* inline code block */ 'i', `this`],
-					[/* text */ 't', ` parameter,
- and (in the case of a constructor) will return `],
-					[/* inline code block */ 'i', `void`],
-					[/* text */ 't', `.`]
-				]]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the type of the underlying member, expressed as a method type`]
-			]
-		]],
-		[/* method */ 'reflectAs(java.lang.Class,java.lang.invoke.MethodHandles.Lookup)', [
-			[/* method description */
-				[/* text */ 't', `Reflects the underlying member as a method, constructor, or field object.
- If the underlying member is public, it is reflected as if by
- `],
-				[/* inline code block */ 'i', `getMethod`],
-				[/* text */ 't', `, `],
-				[/* inline code block */ 'i', `getConstructor`],
-				[/* text */ 't', `, or `],
-				[/* inline code block */ 'i', `getField`],
-				[/* text */ 't', `.
- Otherwise, it is reflected as if by
- `],
-				[/* inline code block */ 'i', `getDeclaredMethod`],
-				[/* text */ 't', `, `],
-				[/* inline code block */ 'i', `getDeclaredConstructor`],
-				[/* text */ 't', `, or `],
-				[/* inline code block */ 'i', `getDeclaredField`],
-				[/* text */ 't', `.
- The underlying member must be accessible to the given lookup object.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'expected', [/* parameter description */
-					[/* text */ 't', `a class object representing the desired result type `],
-					[/* inline code block */ 'i', `T`]
-				]],
-				[/* parameter */ 'lookup', [/* parameter description */
-					[/* text */ 't', `the lookup object that created this MethodHandleInfo, or one with equivalent access privileges`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.ClassCastException', [/* throw description */
-					[/* text */ 't', `if the member is not of the expected type`]
-				]],
-				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
-					[/* text */ 't', `if either argument is `],
-					[/* inline code block */ 'i', `null`]
-				]],
-				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
-					[/* text */ 't', `if the underlying member is not accessible to the given lookup object`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `a reference to the method, constructor, or field object`]
-			]
-		]],
-		[/* method */ 'referenceKindToString(int)', [
-			[/* method description */
-				[/* text */ 't', `Returns the descriptive name of the given reference kind,
- as defined in the `],
-				[/* reference */ 'r', `.MethodHandleInfo#refkinds`],
-				[/* text */ 't', `.
- The conventional prefix "REF_" is omitted.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'referenceKind', [/* parameter description */
-					[/* text */ 't', `an integer code for a kind of reference used to access a class member`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
-					[/* text */ 't', `if the argument is not a valid
-            `],
-					[/* reference */ 'r', `.MethodHandleInfo#refkinds`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `a mixed-case string such as `],
-				[/* inline code block */ 'i', `"getField"`]
 			]
 		]]
 	],

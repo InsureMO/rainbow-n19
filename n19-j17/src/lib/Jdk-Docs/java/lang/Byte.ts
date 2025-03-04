@@ -46,14 +46,12 @@ DocsCollector.collect('java.lang.Byte', [
 		]]
 	],
 	[/* fields */
-		[/* field */ 'MIN_VALUE', [
+		[/* field */ 'BYTES', [
 			[/* field description */
-				[/* text */ 't', `A constant holding the minimum value a `],
+				[/* text */ 't', `The number of bytes used to represent a `],
 				[/* inline code block */ 'i', `byte`],
-				[/* text */ 't', ` can
- have, -2`],
-				[/* text */ 't', `7`, 'sup'],
-				[/* text */ 't', `.`]
+				[/* text */ 't', ` value in two's
+ complement binary form.`]
 			],
 		]],
 		[/* field */ 'MAX_VALUE', [
@@ -66,13 +64,13 @@ DocsCollector.collect('java.lang.Byte', [
 				[/* text */ 't', `-1.`]
 			],
 		]],
-		[/* field */ 'TYPE', [
+		[/* field */ 'MIN_VALUE', [
 			[/* field description */
-				[/* text */ 't', `The `],
-				[/* inline code block */ 'i', `Class`],
-				[/* text */ 't', ` instance representing the primitive type
- `],
+				[/* text */ 't', `A constant holding the minimum value a `],
 				[/* inline code block */ 'i', `byte`],
+				[/* text */ 't', ` can
+ have, -2`],
+				[/* text */ 't', `7`, 'sup'],
 				[/* text */ 't', `.`]
 			],
 		]],
@@ -84,12 +82,14 @@ DocsCollector.collect('java.lang.Byte', [
  complement binary form.`]
 			],
 		]],
-		[/* field */ 'BYTES', [
+		[/* field */ 'TYPE', [
 			[/* field description */
-				[/* text */ 't', `The number of bytes used to represent a `],
+				[/* text */ 't', `The `],
+				[/* inline code block */ 'i', `Class`],
+				[/* text */ 't', ` instance representing the primitive type
+ `],
 				[/* inline code block */ 'i', `byte`],
-				[/* text */ 't', ` value in two's
- complement binary form.`]
+				[/* text */ 't', `.`]
 			],
 		]]
 	],
@@ -182,86 +182,58 @@ DocsCollector.collect('java.lang.Byte', [
 				[/* text */ 't', ` otherwise.`]
 			]
 		]],
-		[/* method */ 'toString()', [
+		[/* method */ 'byteValue()', [
 			[/* method description */
-				[/* text */ 't', `Returns a `],
-				[/* inline code block */ 'i', `String`],
-				[/* text */ 't', ` object representing this
- `],
+				[/* text */ 't', `Returns the value of this `],
 				[/* inline code block */ 'i', `Byte`],
-				[/* text */ 't', `'s value.  The value is converted to signed
- decimal representation and returned as a string, exactly as if
- the `],
-				[/* inline code block */ 'i', `byte`],
-				[/* text */ 't', ` value were given as an argument to the
+				[/* text */ 't', ` as a
  `],
-				[/* reference */ 'r', `#toString(byte)`, `toString(byte)`],
-				[/* text */ 't', ` method.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `a string representation of the value of this object in
-          base 10.`]
-			]
-		]],
-		[/* method */ 'toString(byte)', [
-			[/* method description */
-				[/* text */ 't', `Returns a new `],
-				[/* inline code block */ 'i', `String`],
-				[/* text */ 't', ` object representing the
- specified `],
 				[/* inline code block */ 'i', `byte`],
-				[/* text */ 't', `. The radix is assumed to be 10.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'b', [/* parameter description */
-					[/* text */ 't', `the `],
-					[/* inline code block */ 'i', `byte`],
-					[/* text */ 't', ` to be converted`]
-				]]
-			],
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the string representation of the specified `],
-				[/* inline code block */ 'i', `byte`]
-			]
-		]],
-		[/* method */ 'hashCode()', [
-			[/* method description */
-				[/* text */ 't', `Returns a hash code for this `],
-				[/* inline code block */ 'i', `Byte`],
-				[/* text */ 't', `; equal to the result
- of invoking `],
-				[/* inline code block */ 'i', `intValue()`],
 				[/* text */ 't', `.`]
 			],
 			/* parameters */ UDF,
 			/* throws */ UDF,
 			[/* return description */
-				[/* text */ 't', `a hash code value for this `],
-				[/* inline code block */ 'i', `Byte`]
+				[/* text */ 't', `the numeric value represented by this object after conversion
+          to type `],
+				[/* inline code block */ 'i', `byte`],
+				[/* text */ 't', `.`]
 			]
 		]],
-		[/* method */ 'hashCode(byte)', [
+		[/* method */ 'doubleValue()', [
 			[/* method description */
-				[/* text */ 't', `Returns a hash code for a `],
-				[/* inline code block */ 'i', `byte`],
-				[/* text */ 't', ` value; compatible with
- `],
-				[/* inline code block */ 'i', `Byte.hashCode()`],
-				[/* text */ 't', `.`]
+				[/* text */ 't', `Returns the value of this `],
+				[/* inline code block */ 'i', `Byte`],
+				[/* text */ 't', ` as a `],
+				[/* inline code block */ 'i', `double`],
+				[/* text */ 't', `
+ after a widening primitive conversion.`]
 			],
-			[/* parameters */
-				[/* parameter */ 'value', [/* parameter description */
-					[/* text */ 't', `the value to hash`]
-				]]
-			],
+			/* parameters */ UDF,
 			/* throws */ UDF,
 			[/* return description */
-				[/* text */ 't', `a hash code value for a `],
-				[/* inline code block */ 'i', `byte`],
-				[/* text */ 't', ` value.`]
+				[/* text */ 't', `the numeric value represented by this object after conversion
+          to type `],
+				[/* inline code block */ 'i', `double`],
+				[/* text */ 't', `.`]
+			]
+		]],
+		[/* method */ 'floatValue()', [
+			[/* method description */
+				[/* text */ 't', `Returns the value of this `],
+				[/* inline code block */ 'i', `Byte`],
+				[/* text */ 't', ` as a `],
+				[/* inline code block */ 'i', `float`],
+				[/* text */ 't', ` after
+ a widening primitive conversion.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the numeric value represented by this object after conversion
+          to type `],
+				[/* inline code block */ 'i', `float`],
+				[/* text */ 't', `.`]
 			]
 		]],
 		[/* method */ 'compareTo(java.lang.Byte)', [
@@ -306,80 +278,20 @@ DocsCollector.collect('java.lang.Byte', [
            comparison).`]
 			]
 		]],
-		[/* method */ 'compare(byte,byte)', [
+		[/* method */ 'hashCode()', [
 			[/* method description */
-				[/* text */ 't', `Compares two `],
-				[/* inline code block */ 'i', `byte`],
-				[/* text */ 't', ` values numerically.
- The value returned is identical to what would be returned by:
- `],
-				[/* code block */ 'c', `    Byte.valueOf(x).compareTo(Byte.valueOf(y))
- `]
-			],
-			[/* parameters */
-				[/* parameter */ 'x', [/* parameter description */
-					[/* text */ 't', `the first `],
-					[/* inline code block */ 'i', `byte`],
-					[/* text */ 't', ` to compare`]
-				]],
-				[/* parameter */ 'y', [/* parameter description */
-					[/* text */ 't', `the second `],
-					[/* inline code block */ 'i', `byte`],
-					[/* text */ 't', ` to compare`]
-				]]
-			],
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the value `],
-				[/* inline code block */ 'i', `0`],
-				[/* text */ 't', ` if `],
-				[/* inline code block */ 'i', `x == y`],
-				[/* text */ 't', `;
-         a value less than `],
-				[/* inline code block */ 'i', `0`],
-				[/* text */ 't', ` if `],
-				[/* inline code block */ 'i', `x < y`],
-				[/* text */ 't', `; and
-         a value greater than `],
-				[/* inline code block */ 'i', `0`],
-				[/* text */ 't', ` if `],
-				[/* inline code block */ 'i', `x > y`]
-			]
-		]],
-		[/* method */ 'byteValue()', [
-			[/* method description */
-				[/* text */ 't', `Returns the value of this `],
+				[/* text */ 't', `Returns a hash code for this `],
 				[/* inline code block */ 'i', `Byte`],
-				[/* text */ 't', ` as a
- `],
-				[/* inline code block */ 'i', `byte`],
+				[/* text */ 't', `; equal to the result
+ of invoking `],
+				[/* inline code block */ 'i', `intValue()`],
 				[/* text */ 't', `.`]
 			],
 			/* parameters */ UDF,
 			/* throws */ UDF,
 			[/* return description */
-				[/* text */ 't', `the numeric value represented by this object after conversion
-          to type `],
-				[/* inline code block */ 'i', `byte`],
-				[/* text */ 't', `.`]
-			]
-		]],
-		[/* method */ 'shortValue()', [
-			[/* method description */
-				[/* text */ 't', `Returns the value of this `],
-				[/* inline code block */ 'i', `Byte`],
-				[/* text */ 't', ` as a `],
-				[/* inline code block */ 'i', `short`],
-				[/* text */ 't', ` after
- a widening primitive conversion.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the numeric value represented by this object after conversion
-          to type `],
-				[/* inline code block */ 'i', `short`],
-				[/* text */ 't', `.`]
+				[/* text */ 't', `a hash code value for this `],
+				[/* inline code block */ 'i', `Byte`]
 			]
 		]],
 		[/* method */ 'intValue()', [
@@ -400,354 +312,27 @@ DocsCollector.collect('java.lang.Byte', [
 				[/* text */ 't', `.`]
 			]
 		]],
-		[/* method */ 'longValue()', [
+		[/* method */ 'toString()', [
 			[/* method description */
-				[/* text */ 't', `Returns the value of this `],
+				[/* text */ 't', `Returns a `],
+				[/* inline code block */ 'i', `String`],
+				[/* text */ 't', ` object representing this
+ `],
 				[/* inline code block */ 'i', `Byte`],
-				[/* text */ 't', ` as a `],
-				[/* inline code block */ 'i', `long`],
-				[/* text */ 't', ` after
- a widening primitive conversion.`]
+				[/* text */ 't', `'s value.  The value is converted to signed
+ decimal representation and returned as a string, exactly as if
+ the `],
+				[/* inline code block */ 'i', `byte`],
+				[/* text */ 't', ` value were given as an argument to the
+ `],
+				[/* reference */ 'r', `#toString(byte)`, `toString(byte)`],
+				[/* text */ 't', ` method.`]
 			],
 			/* parameters */ UDF,
 			/* throws */ UDF,
 			[/* return description */
-				[/* text */ 't', `the numeric value represented by this object after conversion
-          to type `],
-				[/* inline code block */ 'i', `long`],
-				[/* text */ 't', `.`]
-			]
-		]],
-		[/* method */ 'floatValue()', [
-			[/* method description */
-				[/* text */ 't', `Returns the value of this `],
-				[/* inline code block */ 'i', `Byte`],
-				[/* text */ 't', ` as a `],
-				[/* inline code block */ 'i', `float`],
-				[/* text */ 't', ` after
- a widening primitive conversion.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the numeric value represented by this object after conversion
-          to type `],
-				[/* inline code block */ 'i', `float`],
-				[/* text */ 't', `.`]
-			]
-		]],
-		[/* method */ 'doubleValue()', [
-			[/* method description */
-				[/* text */ 't', `Returns the value of this `],
-				[/* inline code block */ 'i', `Byte`],
-				[/* text */ 't', ` as a `],
-				[/* inline code block */ 'i', `double`],
-				[/* text */ 't', `
- after a widening primitive conversion.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the numeric value represented by this object after conversion
-          to type `],
-				[/* inline code block */ 'i', `double`],
-				[/* text */ 't', `.`]
-			]
-		]],
-		[/* method */ 'valueOf(java.lang.String)', [
-			[/* method description */
-				[/* text */ 't', `Returns a `],
-				[/* inline code block */ 'i', `Byte`],
-				[/* text */ 't', ` object holding the value
- given by the specified `],
-				[/* inline code block */ 'i', `String`],
-				[/* text */ 't', `. The argument is
- interpreted as representing a signed decimal `],
-				[/* inline code block */ 'i', `byte`],
-				[/* text */ 't', `,
- exactly as if the argument were given to the `],
-				[/* reference */ 'r', `#parseByte(java.lang.String)`, `parseByte(java.lang.String)`],
-				[/* text */ 't', ` method. The result is a
- `],
-				[/* inline code block */ 'i', `Byte`],
-				[/* text */ 't', ` object that represents the `],
-				[/* inline code block */ 'i', `byte`],
-				[/* text */ 't', `
- value specified by the string.
-
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', ` In other words, this method returns a `],
-					[/* inline code block */ 'i', `Byte`],
-					[/* text */ 't', ` object
- equal to the value of:
-
- `]
-				]],
-				[/* block */ 'b', [
-					[/* inline code block */ 'i', `new Byte(Byte.parseByte(s))`]
-				]],
-				[/* block */ 'b', '']
-			],
-			[/* parameters */
-				[/* parameter */ 's', [/* parameter description */
-					[/* text */ 't', `the string to be parsed`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.NumberFormatException', [/* throw description */
-					[/* text */ 't', `If the `],
-					[/* inline code block */ 'i', `String`],
-					[/* text */ 't', ` does
-                  not contain a parsable `],
-					[/* inline code block */ 'i', `byte`],
-					[/* text */ 't', `.`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `a `],
-				[/* inline code block */ 'i', `Byte`],
-				[/* text */ 't', ` object holding the value
-                  represented by the string argument`]
-			]
-		]],
-		[/* method */ 'valueOf(byte)', [
-			[/* method description */
-				[/* text */ 't', `Returns a `],
-				[/* inline code block */ 'i', `Byte`],
-				[/* text */ 't', ` instance representing the specified
- `],
-				[/* inline code block */ 'i', `byte`],
-				[/* text */ 't', ` value.
- If a new `],
-				[/* inline code block */ 'i', `Byte`],
-				[/* text */ 't', ` instance is not required, this method
- should generally be used in preference to the constructor
- `],
-				[/* reference */ 'r', `#%3Cinit%3E(byte)`, `Byte(byte)`],
-				[/* text */ 't', `, as this method is likely to yield
- significantly better space and time performance since
- all byte values are cached.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'b', [/* parameter description */
-					[/* text */ 't', `a byte value.`]
-				]]
-			],
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `a `],
-				[/* inline code block */ 'i', `Byte`],
-				[/* text */ 't', ` instance representing `],
-				[/* inline code block */ 'i', `b`],
-				[/* text */ 't', `.`]
-			]
-		]],
-		[/* method */ 'valueOf(java.lang.String,int)', [
-			[/* method description */
-				[/* text */ 't', `Returns a `],
-				[/* inline code block */ 'i', `Byte`],
-				[/* text */ 't', ` object holding the value
- extracted from the specified `],
-				[/* inline code block */ 'i', `String`],
-				[/* text */ 't', ` when parsed
- with the radix given by the second argument. The first argument
- is interpreted as representing a signed `],
-				[/* inline code block */ 'i', `byte`],
-				[/* text */ 't', ` in
- the radix specified by the second argument, exactly as if the
- argument were given to the `],
-				[/* reference */ 'r', `#parseByte(java.lang.String,int)`, `parseByte(java.lang.String, int)`],
-				[/* text */ 't', ` method. The result is a `],
-				[/* inline code block */ 'i', `Byte`],
-				[/* text */ 't', ` object that
- represents the `],
-				[/* inline code block */ 'i', `byte`],
-				[/* text */ 't', ` value specified by the string.
-
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', ` In other words, this method returns a `],
-					[/* inline code block */ 'i', `Byte`],
-					[/* text */ 't', ` object
- equal to the value of:
-
- `]
-				]],
-				[/* block */ 'b', [
-					[/* inline code block */ 'i', `new Byte(Byte.parseByte(s, radix))`]
-				]],
-				[/* block */ 'b', '']
-			],
-			[/* parameters */
-				[/* parameter */ 's', [/* parameter description */
-					[/* text */ 't', `the string to be parsed`]
-				]],
-				[/* parameter */ 'radix', [/* parameter description */
-					[/* text */ 't', `the radix to be used in interpreting `],
-					[/* inline code block */ 'i', `s`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.NumberFormatException', [/* throw description */
-					[/* text */ 't', `If the `],
-					[/* inline code block */ 'i', `String`],
-					[/* text */ 't', ` does
-                  not contain a parsable `],
-					[/* inline code block */ 'i', `byte`],
-					[/* text */ 't', `.`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `a `],
-				[/* inline code block */ 'i', `Byte`],
-				[/* text */ 't', ` object holding the value
-                  represented by the string argument in the
-                  specified radix.`]
-			]
-		]],
-		[/* method */ 'decode(java.lang.String)', [
-			[/* method description */
-				[/* text */ 't', `Decodes a `],
-				[/* inline code block */ 'i', `String`],
-				[/* text */ 't', ` into a `],
-				[/* inline code block */ 'i', `Byte`],
-				[/* text */ 't', `.
- Accepts decimal, hexadecimal, and octal numbers given by
- the following grammar:
-
- `],
-				[/* block */ 'b', [
-					[/* dl */ 'dl', [
-						[/* dt */ 'dt', [
-							[/* text */ 't', `DecodableString:`],
-							[/* text */ 't', `
- `]
-						]],
-						[/* dd */ 'dd', [
-							[/* text */ 't', `opt`, 'sub'],
-							[/* text */ 't', `
- `]
-						]],
-						[/* dd */ 'dd', [
-							[/* text */ 't', `opt`, 'sub'],
-							[/* text */ 't', ` `],
-							[/* inline code block */ 'i', `0x`],
-							[/* text */ 't', ` `],
-							[/* text */ 't', `HexDigits`],
-							[/* text */ 't', `
- `]
-						]],
-						[/* dd */ 'dd', [
-							[/* text */ 't', `opt`, 'sub'],
-							[/* text */ 't', ` `],
-							[/* inline code block */ 'i', `0X`],
-							[/* text */ 't', ` `],
-							[/* text */ 't', `HexDigits`],
-							[/* text */ 't', `
- `]
-						]],
-						[/* dd */ 'dd', [
-							[/* text */ 't', `opt`, 'sub'],
-							[/* text */ 't', ` `],
-							[/* inline code block */ 'i', `#`],
-							[/* text */ 't', ` `],
-							[/* text */ 't', `HexDigits`],
-							[/* text */ 't', `
- `]
-						]],
-						[/* dd */ 'dd', [
-							[/* text */ 't', `opt`, 'sub'],
-							[/* text */ 't', ` `],
-							[/* inline code block */ 'i', `0`],
-							[/* text */ 't', ` `],
-							[/* text */ 't', `OctalDigits`],
-							[/* text */ 't', `
-
- `]
-						]],
-						[/* dt */ 'dt', [
-							[/* text */ 't', `Sign:`],
-							[/* text */ 't', `
- `]
-						]],
-						[/* dd */ 'dd', [
-							[/* inline code block */ 'i', `-`],
-							[/* text */ 't', `
- `]
-						]],
-						[/* dd */ 'dd', [
-							[/* inline code block */ 'i', `+`],
-							[/* text */ 't', `
- `]
-						]]
-					]]
-				]],
-				[/* text */ 't', `DecimalNumeral`],
-				[/* text */ 't', `, `],
-				[/* text */ 't', `HexDigits`],
-				[/* text */ 't', `, and `],
-				[/* text */ 't', `OctalDigits`],
-				[/* text */ 't', `
- are as defined in section `],
-				[/* external link */ 'a', `https://docs.oracle.com/javase/specs/jls/se17/html/jls-3.html#jls-3.10.1`, `3.10.1`],
-				[/* text */ 't', ` of
- `],
-				[/* text */ 't', `The Java Language Specification`],
-				[/* text */ 't', `,
- except that underscores are not accepted between digits.
-
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', `The sequence of characters following an optional
- sign and/or radix specifier ("`],
-					[/* inline code block */ 'i', `0x`],
-					[/* text */ 't', `", "`],
-					[/* inline code block */ 'i', `0X`],
-					[/* text */ 't', `",
- "`],
-					[/* inline code block */ 'i', `#`],
-					[/* text */ 't', `", or leading zero) is parsed as by the `],
-					[/* inline code block */ 'i', `Byte.parseByte`],
-					[/* text */ 't', ` method with the indicated radix (10, 16, or 8).
- This sequence of characters must represent a positive value or
- a `],
-					[/* reference */ 'r', `java.lang.NumberFormatException`],
-					[/* text */ 't', ` will be thrown.  The result is
- negated if first character of the specified `],
-					[/* inline code block */ 'i', `String`],
-					[/* text */ 't', ` is
- the minus sign.  No whitespace characters are permitted in the
- `],
-					[/* inline code block */ 'i', `String`],
-					[/* text */ 't', `.`]
-				]]
-			],
-			[/* parameters */
-				[/* parameter */ 'nm', [/* parameter description */
-					[/* text */ 't', `the `],
-					[/* inline code block */ 'i', `String`],
-					[/* text */ 't', ` to decode.`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.NumberFormatException', [/* throw description */
-					[/* text */ 't', `if the `],
-					[/* inline code block */ 'i', `String`],
-					[/* text */ 't', ` does not
-            contain a parsable `],
-					[/* inline code block */ 'i', `byte`],
-					[/* text */ 't', `.`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `a `],
-				[/* inline code block */ 'i', `Byte`],
-				[/* text */ 't', ` object holding the `],
-				[/* inline code block */ 'i', `byte`],
-				[/* text */ 't', `
-          value represented by `],
-				[/* inline code block */ 'i', `nm`]
+				[/* text */ 't', `a string representation of the value of this object in
+          base 10.`]
 			]
 		]],
 		[/* method */ 'describeConstable()', [
@@ -767,90 +352,40 @@ DocsCollector.collect('java.lang.Byte', [
 				[/* text */ 't', ` instance`]
 			]
 		]],
-		[/* method */ 'toUnsignedLong(byte)', [
+		[/* method */ 'longValue()', [
 			[/* method description */
-				[/* text */ 't', `Converts the argument to a `],
+				[/* text */ 't', `Returns the value of this `],
+				[/* inline code block */ 'i', `Byte`],
+				[/* text */ 't', ` as a `],
 				[/* inline code block */ 'i', `long`],
-				[/* text */ 't', ` by an unsigned
- conversion.  In an unsigned conversion to a `],
-				[/* inline code block */ 'i', `long`],
-				[/* text */ 't', `, the
- high-order 56 bits of the `],
-				[/* inline code block */ 'i', `long`],
-				[/* text */ 't', ` are zero and the
- low-order 8 bits are equal to the bits of the `],
-				[/* inline code block */ 'i', `byte`],
-				[/* text */ 't', ` argument.
-
- Consequently, zero and positive `],
-				[/* inline code block */ 'i', `byte`],
-				[/* text */ 't', ` values are mapped
- to a numerically equal `],
-				[/* inline code block */ 'i', `long`],
-				[/* text */ 't', ` value and negative `],
-				[/* inline code block */ 'i', `byte`],
-				[/* text */ 't', ` values are mapped to a `],
-				[/* inline code block */ 'i', `long`],
-				[/* text */ 't', ` value equal to the
- input plus 2`],
-				[/* text */ 't', `8`, 'sup'],
-				[/* text */ 't', `.`]
+				[/* text */ 't', ` after
+ a widening primitive conversion.`]
 			],
-			[/* parameters */
-				[/* parameter */ 'x', [/* parameter description */
-					[/* text */ 't', `the value to convert to an unsigned `],
-					[/* inline code block */ 'i', `long`]
-				]]
-			],
+			/* parameters */ UDF,
 			/* throws */ UDF,
 			[/* return description */
-				[/* text */ 't', `the argument converted to `],
+				[/* text */ 't', `the numeric value represented by this object after conversion
+          to type `],
 				[/* inline code block */ 'i', `long`],
-				[/* text */ 't', ` by an unsigned
-         conversion`]
+				[/* text */ 't', `.`]
 			]
 		]],
-		[/* method */ 'toUnsignedInt(byte)', [
+		[/* method */ 'shortValue()', [
 			[/* method description */
-				[/* text */ 't', `Converts the argument to an `],
-				[/* inline code block */ 'i', `int`],
-				[/* text */ 't', ` by an unsigned
- conversion.  In an unsigned conversion to an `],
-				[/* inline code block */ 'i', `int`],
-				[/* text */ 't', `, the
- high-order 24 bits of the `],
-				[/* inline code block */ 'i', `int`],
-				[/* text */ 't', ` are zero and the
- low-order 8 bits are equal to the bits of the `],
-				[/* inline code block */ 'i', `byte`],
-				[/* text */ 't', ` argument.
-
- Consequently, zero and positive `],
-				[/* inline code block */ 'i', `byte`],
-				[/* text */ 't', ` values are mapped
- to a numerically equal `],
-				[/* inline code block */ 'i', `int`],
-				[/* text */ 't', ` value and negative `],
-				[/* inline code block */ 'i', `byte`],
-				[/* text */ 't', ` values are mapped to an `],
-				[/* inline code block */ 'i', `int`],
-				[/* text */ 't', ` value equal to the
- input plus 2`],
-				[/* text */ 't', `8`, 'sup'],
-				[/* text */ 't', `.`]
+				[/* text */ 't', `Returns the value of this `],
+				[/* inline code block */ 'i', `Byte`],
+				[/* text */ 't', ` as a `],
+				[/* inline code block */ 'i', `short`],
+				[/* text */ 't', ` after
+ a widening primitive conversion.`]
 			],
-			[/* parameters */
-				[/* parameter */ 'x', [/* parameter description */
-					[/* text */ 't', `the value to convert to an unsigned `],
-					[/* inline code block */ 'i', `int`]
-				]]
-			],
+			/* parameters */ UDF,
 			/* throws */ UDF,
 			[/* return description */
-				[/* text */ 't', `the argument converted to `],
-				[/* inline code block */ 'i', `int`],
-				[/* text */ 't', ` by an unsigned
-         conversion`]
+				[/* text */ 't', `the numeric value represented by this object after conversion
+          to type `],
+				[/* inline code block */ 'i', `short`],
+				[/* text */ 't', `.`]
 			]
 		]],
 		[/* method */ 'parseByte(java.lang.String)', [
@@ -1011,6 +546,46 @@ DocsCollector.collect('java.lang.Byte', [
                    argument in the specified radix`]
 			]
 		]],
+		[/* method */ 'compare(byte,byte)', [
+			[/* method description */
+				[/* text */ 't', `Compares two `],
+				[/* inline code block */ 'i', `byte`],
+				[/* text */ 't', ` values numerically.
+ The value returned is identical to what would be returned by:
+ `],
+				[/* code block */ 'c', `    Byte.valueOf(x).compareTo(Byte.valueOf(y))
+ `]
+			],
+			[/* parameters */
+				[/* parameter */ 'x', [/* parameter description */
+					[/* text */ 't', `the first `],
+					[/* inline code block */ 'i', `byte`],
+					[/* text */ 't', ` to compare`]
+				]],
+				[/* parameter */ 'y', [/* parameter description */
+					[/* text */ 't', `the second `],
+					[/* inline code block */ 'i', `byte`],
+					[/* text */ 't', ` to compare`]
+				]]
+			],
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the value `],
+				[/* inline code block */ 'i', `0`],
+				[/* text */ 't', ` if `],
+				[/* inline code block */ 'i', `x == y`],
+				[/* text */ 't', `;
+         a value less than `],
+				[/* inline code block */ 'i', `0`],
+				[/* text */ 't', ` if `],
+				[/* inline code block */ 'i', `x < y`],
+				[/* text */ 't', `; and
+         a value greater than `],
+				[/* inline code block */ 'i', `0`],
+				[/* text */ 't', ` if `],
+				[/* inline code block */ 'i', `x > y`]
+			]
+		]],
 		[/* method */ 'compareUnsigned(byte,byte)', [
 			[/* method description */
 				[/* text */ 't', `Compares two `],
@@ -1048,6 +623,431 @@ DocsCollector.collect('java.lang.Byte', [
 				[/* inline code block */ 'i', `x > y`],
 				[/* text */ 't', ` as
          unsigned values`]
+			]
+		]],
+		[/* method */ 'hashCode(byte)', [
+			[/* method description */
+				[/* text */ 't', `Returns a hash code for a `],
+				[/* inline code block */ 'i', `byte`],
+				[/* text */ 't', ` value; compatible with
+ `],
+				[/* inline code block */ 'i', `Byte.hashCode()`],
+				[/* text */ 't', `.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'value', [/* parameter description */
+					[/* text */ 't', `the value to hash`]
+				]]
+			],
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `a hash code value for a `],
+				[/* inline code block */ 'i', `byte`],
+				[/* text */ 't', ` value.`]
+			]
+		]],
+		[/* method */ 'toUnsignedInt(byte)', [
+			[/* method description */
+				[/* text */ 't', `Converts the argument to an `],
+				[/* inline code block */ 'i', `int`],
+				[/* text */ 't', ` by an unsigned
+ conversion.  In an unsigned conversion to an `],
+				[/* inline code block */ 'i', `int`],
+				[/* text */ 't', `, the
+ high-order 24 bits of the `],
+				[/* inline code block */ 'i', `int`],
+				[/* text */ 't', ` are zero and the
+ low-order 8 bits are equal to the bits of the `],
+				[/* inline code block */ 'i', `byte`],
+				[/* text */ 't', ` argument.
+
+ Consequently, zero and positive `],
+				[/* inline code block */ 'i', `byte`],
+				[/* text */ 't', ` values are mapped
+ to a numerically equal `],
+				[/* inline code block */ 'i', `int`],
+				[/* text */ 't', ` value and negative `],
+				[/* inline code block */ 'i', `byte`],
+				[/* text */ 't', ` values are mapped to an `],
+				[/* inline code block */ 'i', `int`],
+				[/* text */ 't', ` value equal to the
+ input plus 2`],
+				[/* text */ 't', `8`, 'sup'],
+				[/* text */ 't', `.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'x', [/* parameter description */
+					[/* text */ 't', `the value to convert to an unsigned `],
+					[/* inline code block */ 'i', `int`]
+				]]
+			],
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the argument converted to `],
+				[/* inline code block */ 'i', `int`],
+				[/* text */ 't', ` by an unsigned
+         conversion`]
+			]
+		]],
+		[/* method */ 'decode(java.lang.String)', [
+			[/* method description */
+				[/* text */ 't', `Decodes a `],
+				[/* inline code block */ 'i', `String`],
+				[/* text */ 't', ` into a `],
+				[/* inline code block */ 'i', `Byte`],
+				[/* text */ 't', `.
+ Accepts decimal, hexadecimal, and octal numbers given by
+ the following grammar:
+
+ `],
+				[/* block */ 'b', [
+					[/* dl */ 'dl', [
+						[/* dt */ 'dt', [
+							[/* text */ 't', `DecodableString:`],
+							[/* text */ 't', `
+ `]
+						]],
+						[/* dd */ 'dd', [
+							[/* text */ 't', `opt`, 'sub'],
+							[/* text */ 't', `
+ `]
+						]],
+						[/* dd */ 'dd', [
+							[/* text */ 't', `opt`, 'sub'],
+							[/* text */ 't', ` `],
+							[/* inline code block */ 'i', `0x`],
+							[/* text */ 't', ` `],
+							[/* text */ 't', `HexDigits`],
+							[/* text */ 't', `
+ `]
+						]],
+						[/* dd */ 'dd', [
+							[/* text */ 't', `opt`, 'sub'],
+							[/* text */ 't', ` `],
+							[/* inline code block */ 'i', `0X`],
+							[/* text */ 't', ` `],
+							[/* text */ 't', `HexDigits`],
+							[/* text */ 't', `
+ `]
+						]],
+						[/* dd */ 'dd', [
+							[/* text */ 't', `opt`, 'sub'],
+							[/* text */ 't', ` `],
+							[/* inline code block */ 'i', `#`],
+							[/* text */ 't', ` `],
+							[/* text */ 't', `HexDigits`],
+							[/* text */ 't', `
+ `]
+						]],
+						[/* dd */ 'dd', [
+							[/* text */ 't', `opt`, 'sub'],
+							[/* text */ 't', ` `],
+							[/* inline code block */ 'i', `0`],
+							[/* text */ 't', ` `],
+							[/* text */ 't', `OctalDigits`],
+							[/* text */ 't', `
+
+ `]
+						]],
+						[/* dt */ 'dt', [
+							[/* text */ 't', `Sign:`],
+							[/* text */ 't', `
+ `]
+						]],
+						[/* dd */ 'dd', [
+							[/* inline code block */ 'i', `-`],
+							[/* text */ 't', `
+ `]
+						]],
+						[/* dd */ 'dd', [
+							[/* inline code block */ 'i', `+`],
+							[/* text */ 't', `
+ `]
+						]]
+					]]
+				]],
+				[/* text */ 't', `DecimalNumeral`],
+				[/* text */ 't', `, `],
+				[/* text */ 't', `HexDigits`],
+				[/* text */ 't', `, and `],
+				[/* text */ 't', `OctalDigits`],
+				[/* text */ 't', `
+ are as defined in section `],
+				[/* external link */ 'a', `https://docs.oracle.com/javase/specs/jls/se17/html/jls-3.html#jls-3.10.1`, `3.10.1`],
+				[/* text */ 't', ` of
+ `],
+				[/* text */ 't', `The Java Language Specification`],
+				[/* text */ 't', `,
+ except that underscores are not accepted between digits.
+
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', `The sequence of characters following an optional
+ sign and/or radix specifier ("`],
+					[/* inline code block */ 'i', `0x`],
+					[/* text */ 't', `", "`],
+					[/* inline code block */ 'i', `0X`],
+					[/* text */ 't', `",
+ "`],
+					[/* inline code block */ 'i', `#`],
+					[/* text */ 't', `", or leading zero) is parsed as by the `],
+					[/* inline code block */ 'i', `Byte.parseByte`],
+					[/* text */ 't', ` method with the indicated radix (10, 16, or 8).
+ This sequence of characters must represent a positive value or
+ a `],
+					[/* reference */ 'r', `java.lang.NumberFormatException`],
+					[/* text */ 't', ` will be thrown.  The result is
+ negated if first character of the specified `],
+					[/* inline code block */ 'i', `String`],
+					[/* text */ 't', ` is
+ the minus sign.  No whitespace characters are permitted in the
+ `],
+					[/* inline code block */ 'i', `String`],
+					[/* text */ 't', `.`]
+				]]
+			],
+			[/* parameters */
+				[/* parameter */ 'nm', [/* parameter description */
+					[/* text */ 't', `the `],
+					[/* inline code block */ 'i', `String`],
+					[/* text */ 't', ` to decode.`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.lang.NumberFormatException', [/* throw description */
+					[/* text */ 't', `if the `],
+					[/* inline code block */ 'i', `String`],
+					[/* text */ 't', ` does not
+            contain a parsable `],
+					[/* inline code block */ 'i', `byte`],
+					[/* text */ 't', `.`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `a `],
+				[/* inline code block */ 'i', `Byte`],
+				[/* text */ 't', ` object holding the `],
+				[/* inline code block */ 'i', `byte`],
+				[/* text */ 't', `
+          value represented by `],
+				[/* inline code block */ 'i', `nm`]
+			]
+		]],
+		[/* method */ 'valueOf(byte)', [
+			[/* method description */
+				[/* text */ 't', `Returns a `],
+				[/* inline code block */ 'i', `Byte`],
+				[/* text */ 't', ` instance representing the specified
+ `],
+				[/* inline code block */ 'i', `byte`],
+				[/* text */ 't', ` value.
+ If a new `],
+				[/* inline code block */ 'i', `Byte`],
+				[/* text */ 't', ` instance is not required, this method
+ should generally be used in preference to the constructor
+ `],
+				[/* reference */ 'r', `#%3Cinit%3E(byte)`, `Byte(byte)`],
+				[/* text */ 't', `, as this method is likely to yield
+ significantly better space and time performance since
+ all byte values are cached.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'b', [/* parameter description */
+					[/* text */ 't', `a byte value.`]
+				]]
+			],
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `a `],
+				[/* inline code block */ 'i', `Byte`],
+				[/* text */ 't', ` instance representing `],
+				[/* inline code block */ 'i', `b`],
+				[/* text */ 't', `.`]
+			]
+		]],
+		[/* method */ 'valueOf(java.lang.String)', [
+			[/* method description */
+				[/* text */ 't', `Returns a `],
+				[/* inline code block */ 'i', `Byte`],
+				[/* text */ 't', ` object holding the value
+ given by the specified `],
+				[/* inline code block */ 'i', `String`],
+				[/* text */ 't', `. The argument is
+ interpreted as representing a signed decimal `],
+				[/* inline code block */ 'i', `byte`],
+				[/* text */ 't', `,
+ exactly as if the argument were given to the `],
+				[/* reference */ 'r', `#parseByte(java.lang.String)`, `parseByte(java.lang.String)`],
+				[/* text */ 't', ` method. The result is a
+ `],
+				[/* inline code block */ 'i', `Byte`],
+				[/* text */ 't', ` object that represents the `],
+				[/* inline code block */ 'i', `byte`],
+				[/* text */ 't', `
+ value specified by the string.
+
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', ` In other words, this method returns a `],
+					[/* inline code block */ 'i', `Byte`],
+					[/* text */ 't', ` object
+ equal to the value of:
+
+ `]
+				]],
+				[/* block */ 'b', [
+					[/* inline code block */ 'i', `new Byte(Byte.parseByte(s))`]
+				]],
+				[/* block */ 'b', '']
+			],
+			[/* parameters */
+				[/* parameter */ 's', [/* parameter description */
+					[/* text */ 't', `the string to be parsed`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.lang.NumberFormatException', [/* throw description */
+					[/* text */ 't', `If the `],
+					[/* inline code block */ 'i', `String`],
+					[/* text */ 't', ` does
+                  not contain a parsable `],
+					[/* inline code block */ 'i', `byte`],
+					[/* text */ 't', `.`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `a `],
+				[/* inline code block */ 'i', `Byte`],
+				[/* text */ 't', ` object holding the value
+                  represented by the string argument`]
+			]
+		]],
+		[/* method */ 'valueOf(java.lang.String,int)', [
+			[/* method description */
+				[/* text */ 't', `Returns a `],
+				[/* inline code block */ 'i', `Byte`],
+				[/* text */ 't', ` object holding the value
+ extracted from the specified `],
+				[/* inline code block */ 'i', `String`],
+				[/* text */ 't', ` when parsed
+ with the radix given by the second argument. The first argument
+ is interpreted as representing a signed `],
+				[/* inline code block */ 'i', `byte`],
+				[/* text */ 't', ` in
+ the radix specified by the second argument, exactly as if the
+ argument were given to the `],
+				[/* reference */ 'r', `#parseByte(java.lang.String,int)`, `parseByte(java.lang.String, int)`],
+				[/* text */ 't', ` method. The result is a `],
+				[/* inline code block */ 'i', `Byte`],
+				[/* text */ 't', ` object that
+ represents the `],
+				[/* inline code block */ 'i', `byte`],
+				[/* text */ 't', ` value specified by the string.
+
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', ` In other words, this method returns a `],
+					[/* inline code block */ 'i', `Byte`],
+					[/* text */ 't', ` object
+ equal to the value of:
+
+ `]
+				]],
+				[/* block */ 'b', [
+					[/* inline code block */ 'i', `new Byte(Byte.parseByte(s, radix))`]
+				]],
+				[/* block */ 'b', '']
+			],
+			[/* parameters */
+				[/* parameter */ 's', [/* parameter description */
+					[/* text */ 't', `the string to be parsed`]
+				]],
+				[/* parameter */ 'radix', [/* parameter description */
+					[/* text */ 't', `the radix to be used in interpreting `],
+					[/* inline code block */ 'i', `s`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.lang.NumberFormatException', [/* throw description */
+					[/* text */ 't', `If the `],
+					[/* inline code block */ 'i', `String`],
+					[/* text */ 't', ` does
+                  not contain a parsable `],
+					[/* inline code block */ 'i', `byte`],
+					[/* text */ 't', `.`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `a `],
+				[/* inline code block */ 'i', `Byte`],
+				[/* text */ 't', ` object holding the value
+                  represented by the string argument in the
+                  specified radix.`]
+			]
+		]],
+		[/* method */ 'toString(byte)', [
+			[/* method description */
+				[/* text */ 't', `Returns a new `],
+				[/* inline code block */ 'i', `String`],
+				[/* text */ 't', ` object representing the
+ specified `],
+				[/* inline code block */ 'i', `byte`],
+				[/* text */ 't', `. The radix is assumed to be 10.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'b', [/* parameter description */
+					[/* text */ 't', `the `],
+					[/* inline code block */ 'i', `byte`],
+					[/* text */ 't', ` to be converted`]
+				]]
+			],
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the string representation of the specified `],
+				[/* inline code block */ 'i', `byte`]
+			]
+		]],
+		[/* method */ 'toUnsignedLong(byte)', [
+			[/* method description */
+				[/* text */ 't', `Converts the argument to a `],
+				[/* inline code block */ 'i', `long`],
+				[/* text */ 't', ` by an unsigned
+ conversion.  In an unsigned conversion to a `],
+				[/* inline code block */ 'i', `long`],
+				[/* text */ 't', `, the
+ high-order 56 bits of the `],
+				[/* inline code block */ 'i', `long`],
+				[/* text */ 't', ` are zero and the
+ low-order 8 bits are equal to the bits of the `],
+				[/* inline code block */ 'i', `byte`],
+				[/* text */ 't', ` argument.
+
+ Consequently, zero and positive `],
+				[/* inline code block */ 'i', `byte`],
+				[/* text */ 't', ` values are mapped
+ to a numerically equal `],
+				[/* inline code block */ 'i', `long`],
+				[/* text */ 't', ` value and negative `],
+				[/* inline code block */ 'i', `byte`],
+				[/* text */ 't', ` values are mapped to a `],
+				[/* inline code block */ 'i', `long`],
+				[/* text */ 't', ` value equal to the
+ input plus 2`],
+				[/* text */ 't', `8`, 'sup'],
+				[/* text */ 't', `.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'x', [/* parameter description */
+					[/* text */ 't', `the value to convert to an unsigned `],
+					[/* inline code block */ 'i', `long`]
+				]]
+			],
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the argument converted to `],
+				[/* inline code block */ 'i', `long`],
+				[/* text */ 't', ` by an unsigned
+         conversion`]
 			]
 		]]
 	],

@@ -13,16 +13,6 @@ DocsCollector.collect('java.net.NetworkInterface', [
 	/* fields */ UDF,
 	/* constructors */ UDF,
 	[/* methods */
-		[/* method */ 'getName()', [
-			[/* method description */
-				[/* text */ 't', `Get the name of this network interface.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the name of this network interface`]
-			]
-		]],
 		[/* method */ 'equals(java.lang.Object)', [
 			[/* method description */
 				[/* text */ 't', `Compares this object against the specified object.
@@ -59,51 +49,109 @@ DocsCollector.collect('java.net.NetworkInterface', [
 				[/* text */ 't', ` otherwise.`]
 			]
 		]],
-		[/* method */ 'toString()', UDF],
-		[/* method */ 'hashCode()', UDF],
-		[/* method */ 'getParent()', [
+		[/* method */ 'isLoopback()', [
 			[/* method description */
-				[/* text */ 't', `Returns the parent NetworkInterface of this interface if this is
- a subinterface, or `],
-				[/* inline code block */ 'i', `null`],
-				[/* text */ 't', ` if it is a physical
- (non virtual) interface or has no parent.`]
+				[/* text */ 't', `Returns whether a network interface is a loopback interface.`]
+			],
+			/* parameters */ UDF,
+			[/* throws */
+				[/* throw */ 'java.net.SocketException', [/* throw description */
+					[/* text */ 't', `if an I/O error occurs.`]
+				]]
+			],
+			[/* return description */
+				[/* inline code block */ 'i', `true`],
+				[/* text */ 't', ` if the interface is a loopback interface.`]
+			]
+		]],
+		[/* method */ 'isPointToPoint()', [
+			[/* method description */
+				[/* text */ 't', `Returns whether a network interface is a point to point interface.
+ A typical point to point interface would be a PPP connection through
+ a modem.`]
+			],
+			/* parameters */ UDF,
+			[/* throws */
+				[/* throw */ 'java.net.SocketException', [/* throw description */
+					[/* text */ 't', `if an I/O error occurs.`]
+				]]
+			],
+			[/* return description */
+				[/* inline code block */ 'i', `true`],
+				[/* text */ 't', ` if the interface is a point to point
+          interface.`]
+			]
+		]],
+		[/* method */ 'isUp()', [
+			[/* method description */
+				[/* text */ 't', `Returns whether a network interface is up and running.`]
+			],
+			/* parameters */ UDF,
+			[/* throws */
+				[/* throw */ 'java.net.SocketException', [/* throw description */
+					[/* text */ 't', `if an I/O error occurs.`]
+				]]
+			],
+			[/* return description */
+				[/* inline code block */ 'i', `true`],
+				[/* text */ 't', ` if the interface is up and running.`]
+			]
+		]],
+		[/* method */ 'isVirtual()', [
+			[/* method description */
+				[/* text */ 't', `Returns whether this interface is a virtual interface (also called
+ subinterface).
+ Virtual interfaces are, on some systems, interfaces created as a child
+ of a physical interface and given different settings (like address or
+ MTU). Usually the name of the interface will the name of the parent
+ followed by a colon (:) and a number identifying the child since there
+ can be several virtual interfaces attached to a single physical
+ interface.`]
 			],
 			/* parameters */ UDF,
 			/* throws */ UDF,
 			[/* return description */
-				[/* text */ 't', `The `],
-				[/* inline code block */ 'i', `NetworkInterface`],
-				[/* text */ 't', ` this interface is attached to.`]
+				[/* inline code block */ 'i', `true`],
+				[/* text */ 't', ` if this interface is a virtual interface.`]
 			]
 		]],
-		[/* method */ 'getByName(java.lang.String)', [
+		[/* method */ 'supportsMulticast()', [
 			[/* method description */
-				[/* text */ 't', `Searches for the network interface with the specified name.`]
+				[/* text */ 't', `Returns whether a network interface supports multicasting or not.`]
 			],
-			[/* parameters */
-				[/* parameter */ 'name', [/* parameter description */
-					[/* text */ 't', `The name of the network interface.`]
-				]]
-			],
+			/* parameters */ UDF,
 			[/* throws */
 				[/* throw */ 'java.net.SocketException', [/* throw description */
-					[/* text */ 't', `If an I/O error occurs.`]
-				]],
-				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
-					[/* text */ 't', `If the specified name is `],
-					[/* inline code block */ 'i', `null`],
-					[/* text */ 't', `.`]
+					[/* text */ 't', `if an I/O error occurs.`]
 				]]
 			],
 			[/* return description */
-				[/* text */ 't', `A `],
-				[/* inline code block */ 'i', `NetworkInterface`],
-				[/* text */ 't', ` with the specified name,
-          or `],
+				[/* inline code block */ 'i', `true`],
+				[/* text */ 't', ` if the interface supports Multicasting.`]
+			]
+		]],
+		[/* method */ 'getHardwareAddress()', [
+			[/* method description */
+				[/* text */ 't', `Returns the hardware address (usually MAC) of the interface if it
+ has one and if it can be accessed given the current privileges.
+ If a security manager is set, then the caller must have
+ the permission `],
+				[/* reference */ 'r', `java.net.NetPermission`],
+				[/* text */ 't', `("getNetworkInformation").`]
+			],
+			/* parameters */ UDF,
+			[/* throws */
+				[/* throw */ 'java.net.SocketException', [/* throw description */
+					[/* text */ 't', `if an I/O error occurs.`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `a byte array containing the address, or `],
 				[/* inline code block */ 'i', `null`],
-				[/* text */ 't', ` if there is no network interface
-          with the specified name.`]
+				[/* text */ 't', ` if
+          the address doesn't exist, is not accessible or a security
+          manager is set and the caller does not have the permission
+          NetPermission("getNetworkInformation")`]
 			]
 		]],
 		[/* method */ 'getIndex()', [
@@ -124,57 +172,21 @@ DocsCollector.collect('java.net.NetworkInterface', [
          unknown`]
 			]
 		]],
-		[/* method */ 'networkInterfaces()', [
+		[/* method */ 'getMTU()', [
 			[/* method description */
-				[/* text */ 't', `Returns a `],
-				[/* inline code block */ 'i', `Stream`],
-				[/* text */ 't', ` of all the interfaces on this machine.  The
- `],
-				[/* inline code block */ 'i', `Stream`],
-				[/* text */ 't', ` contains at least one interface, possibly representing a
- loopback interface that only supports communication between entities on
- this machine.`]
+				[/* text */ 't', `Returns the Maximum Transmission Unit (MTU) of this interface.`]
 			],
 			/* parameters */ UDF,
 			[/* throws */
 				[/* throw */ 'java.net.SocketException', [/* throw description */
-					[/* text */ 't', `if an I/O error occurs,
-             or if the platform does not have at least one configured
-             network interface.`]
+					[/* text */ 't', `if an I/O error occurs.`]
 				]]
 			],
 			[/* return description */
-				[/* text */ 't', `a Stream of NetworkInterfaces found on this machine`]
+				[/* text */ 't', `the value of the MTU for that interface.`]
 			]
 		]],
-		[/* method */ 'inetAddresses()', [
-			[/* method description */
-				[/* text */ 't', `Get a Stream of all or a subset of the InetAddresses bound to this
- network interface.
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', `
- If there is a security manager, its `],
-					[/* inline code block */ 'i', `checkConnect`],
-					[/* text */ 't', `
- method is called for each InetAddress. Only InetAddresses where
- the `],
-					[/* inline code block */ 'i', `checkConnect`],
-					[/* text */ 't', ` doesn't throw a SecurityException will be
- returned in the Stream. However, if the caller has the
- `],
-					[/* reference */ 'r', `java.net.NetPermission`],
-					[/* text */ 't', `("getNetworkInformation") permission, then all
- InetAddresses are returned.`]
-				]]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `a Stream object with all or a subset of the InetAddresses
- bound to this network interface`]
-			]
-		]],
+		[/* method */ 'hashCode()', UDF],
 		[/* method */ 'getDisplayName()', [
 			[/* method description */
 				[/* text */ 't', `Get the display name of this network interface.
@@ -186,6 +198,33 @@ DocsCollector.collect('java.net.NetworkInterface', [
 			[/* return description */
 				[/* text */ 't', `a non-empty string representing the display name of this network
          interface, or null if no display name is available.`]
+			]
+		]],
+		[/* method */ 'getName()', [
+			[/* method description */
+				[/* text */ 't', `Get the name of this network interface.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the name of this network interface`]
+			]
+		]],
+		[/* method */ 'toString()', UDF],
+		[/* method */ 'getParent()', [
+			[/* method description */
+				[/* text */ 't', `Returns the parent NetworkInterface of this interface if this is
+ a subinterface, or `],
+				[/* inline code block */ 'i', `null`],
+				[/* text */ 't', ` if it is a physical
+ (non virtual) interface or has no parent.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `The `],
+				[/* inline code block */ 'i', `NetworkInterface`],
+				[/* text */ 't', ` this interface is attached to.`]
 			]
 		]],
 		[/* method */ 'getInetAddresses()', [
@@ -216,6 +255,21 @@ DocsCollector.collect('java.net.NetworkInterface', [
  bound to this network interface`]
 			]
 		]],
+		[/* method */ 'getSubInterfaces()', [
+			[/* method description */
+				[/* text */ 't', `Get an Enumeration with all the subinterfaces (also known as virtual
+ interfaces) attached to this network interface.
+ `],
+				[/* block */ 'b', `
+ For instance eth0:1 will be a subinterface to eth0.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `an Enumeration object with all of the subinterfaces
+ of this network interface`]
+			]
+		]],
 		[/* method */ 'getInterfaceAddresses()', [
 			[/* method description */
 				[/* text */ 't', `Get a List of all or a subset of the `],
@@ -244,19 +298,32 @@ DocsCollector.collect('java.net.NetworkInterface', [
          InterfaceAddress of this network interface`]
 			]
 		]],
-		[/* method */ 'getSubInterfaces()', [
+		[/* method */ 'inetAddresses()', [
 			[/* method description */
-				[/* text */ 't', `Get an Enumeration with all the subinterfaces (also known as virtual
- interfaces) attached to this network interface.
+				[/* text */ 't', `Get a Stream of all or a subset of the InetAddresses bound to this
+ network interface.
  `],
-				[/* block */ 'b', `
- For instance eth0:1 will be a subinterface to eth0.`]
+				[/* block */ 'b', [
+					[/* text */ 't', `
+ If there is a security manager, its `],
+					[/* inline code block */ 'i', `checkConnect`],
+					[/* text */ 't', `
+ method is called for each InetAddress. Only InetAddresses where
+ the `],
+					[/* inline code block */ 'i', `checkConnect`],
+					[/* text */ 't', ` doesn't throw a SecurityException will be
+ returned in the Stream. However, if the caller has the
+ `],
+					[/* reference */ 'r', `java.net.NetPermission`],
+					[/* text */ 't', `("getNetworkInformation") permission, then all
+ InetAddresses are returned.`]
+				]]
 			],
 			/* parameters */ UDF,
 			/* throws */ UDF,
 			[/* return description */
-				[/* text */ 't', `an Enumeration object with all of the subinterfaces
- of this network interface`]
+				[/* text */ 't', `a Stream object with all or a subset of the InetAddresses
+ bound to this network interface`]
 			]
 		]],
 		[/* method */ 'subInterfaces()', [
@@ -333,6 +400,35 @@ DocsCollector.collect('java.net.NetworkInterface', [
           with the specified IP address.`]
 			]
 		]],
+		[/* method */ 'getByName(java.lang.String)', [
+			[/* method description */
+				[/* text */ 't', `Searches for the network interface with the specified name.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'name', [/* parameter description */
+					[/* text */ 't', `The name of the network interface.`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.net.SocketException', [/* throw description */
+					[/* text */ 't', `If an I/O error occurs.`]
+				]],
+				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
+					[/* text */ 't', `If the specified name is `],
+					[/* inline code block */ 'i', `null`],
+					[/* text */ 't', `.`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `A `],
+				[/* inline code block */ 'i', `NetworkInterface`],
+				[/* text */ 't', ` with the specified name,
+          or `],
+				[/* inline code block */ 'i', `null`],
+				[/* text */ 't', ` if there is no network interface
+          with the specified name.`]
+			]
+		]],
 		[/* method */ 'getNetworkInterfaces()', [
 			[/* method description */
 				[/* text */ 't', `Returns an `],
@@ -356,123 +452,27 @@ DocsCollector.collect('java.net.NetworkInterface', [
 				[/* text */ 't', `an Enumeration of NetworkInterfaces found on this machine`]
 			]
 		]],
-		[/* method */ 'isUp()', [
+		[/* method */ 'networkInterfaces()', [
 			[/* method description */
-				[/* text */ 't', `Returns whether a network interface is up and running.`]
+				[/* text */ 't', `Returns a `],
+				[/* inline code block */ 'i', `Stream`],
+				[/* text */ 't', ` of all the interfaces on this machine.  The
+ `],
+				[/* inline code block */ 'i', `Stream`],
+				[/* text */ 't', ` contains at least one interface, possibly representing a
+ loopback interface that only supports communication between entities on
+ this machine.`]
 			],
 			/* parameters */ UDF,
 			[/* throws */
 				[/* throw */ 'java.net.SocketException', [/* throw description */
-					[/* text */ 't', `if an I/O error occurs.`]
+					[/* text */ 't', `if an I/O error occurs,
+             or if the platform does not have at least one configured
+             network interface.`]
 				]]
 			],
 			[/* return description */
-				[/* inline code block */ 'i', `true`],
-				[/* text */ 't', ` if the interface is up and running.`]
-			]
-		]],
-		[/* method */ 'isLoopback()', [
-			[/* method description */
-				[/* text */ 't', `Returns whether a network interface is a loopback interface.`]
-			],
-			/* parameters */ UDF,
-			[/* throws */
-				[/* throw */ 'java.net.SocketException', [/* throw description */
-					[/* text */ 't', `if an I/O error occurs.`]
-				]]
-			],
-			[/* return description */
-				[/* inline code block */ 'i', `true`],
-				[/* text */ 't', ` if the interface is a loopback interface.`]
-			]
-		]],
-		[/* method */ 'isPointToPoint()', [
-			[/* method description */
-				[/* text */ 't', `Returns whether a network interface is a point to point interface.
- A typical point to point interface would be a PPP connection through
- a modem.`]
-			],
-			/* parameters */ UDF,
-			[/* throws */
-				[/* throw */ 'java.net.SocketException', [/* throw description */
-					[/* text */ 't', `if an I/O error occurs.`]
-				]]
-			],
-			[/* return description */
-				[/* inline code block */ 'i', `true`],
-				[/* text */ 't', ` if the interface is a point to point
-          interface.`]
-			]
-		]],
-		[/* method */ 'supportsMulticast()', [
-			[/* method description */
-				[/* text */ 't', `Returns whether a network interface supports multicasting or not.`]
-			],
-			/* parameters */ UDF,
-			[/* throws */
-				[/* throw */ 'java.net.SocketException', [/* throw description */
-					[/* text */ 't', `if an I/O error occurs.`]
-				]]
-			],
-			[/* return description */
-				[/* inline code block */ 'i', `true`],
-				[/* text */ 't', ` if the interface supports Multicasting.`]
-			]
-		]],
-		[/* method */ 'getHardwareAddress()', [
-			[/* method description */
-				[/* text */ 't', `Returns the hardware address (usually MAC) of the interface if it
- has one and if it can be accessed given the current privileges.
- If a security manager is set, then the caller must have
- the permission `],
-				[/* reference */ 'r', `java.net.NetPermission`],
-				[/* text */ 't', `("getNetworkInformation").`]
-			],
-			/* parameters */ UDF,
-			[/* throws */
-				[/* throw */ 'java.net.SocketException', [/* throw description */
-					[/* text */ 't', `if an I/O error occurs.`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `a byte array containing the address, or `],
-				[/* inline code block */ 'i', `null`],
-				[/* text */ 't', ` if
-          the address doesn't exist, is not accessible or a security
-          manager is set and the caller does not have the permission
-          NetPermission("getNetworkInformation")`]
-			]
-		]],
-		[/* method */ 'getMTU()', [
-			[/* method description */
-				[/* text */ 't', `Returns the Maximum Transmission Unit (MTU) of this interface.`]
-			],
-			/* parameters */ UDF,
-			[/* throws */
-				[/* throw */ 'java.net.SocketException', [/* throw description */
-					[/* text */ 't', `if an I/O error occurs.`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `the value of the MTU for that interface.`]
-			]
-		]],
-		[/* method */ 'isVirtual()', [
-			[/* method description */
-				[/* text */ 't', `Returns whether this interface is a virtual interface (also called
- subinterface).
- Virtual interfaces are, on some systems, interfaces created as a child
- of a physical interface and given different settings (like address or
- MTU). Usually the name of the interface will the name of the parent
- followed by a colon (:) and a number identifying the child since there
- can be several virtual interfaces attached to a single physical
- interface.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* inline code block */ 'i', `true`],
-				[/* text */ 't', ` if this interface is a virtual interface.`]
+				[/* text */ 't', `a Stream of NetworkInterfaces found on this machine`]
 			]
 		]]
 	],

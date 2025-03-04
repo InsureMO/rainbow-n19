@@ -71,6 +71,16 @@ DocsCollector.collect('java.io.LineNumberReader', [
 		]]
 	],
 	[/* methods */
+		[/* method */ 'getLineNumber()', [
+			[/* method description */
+				[/* text */ 't', `Get the current line number.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `The current line number`]
+			]
+		]],
 		[/* method */ 'read()', [
 			[/* method description */
 				[/* text */ 't', `Read a single character.  `],
@@ -182,6 +192,7 @@ DocsCollector.collect('java.io.LineNumberReader', [
 				[/* text */ 't', ` if the end of the stream has been reached`]
 			]
 		]],
+		[/* method */ 'skip(long)', UDF],
 		[/* method */ 'mark(int)', [
 			[/* method description */
 				[/* text */ 't', `Mark the present position in the stream.  Subsequent calls to reset()
@@ -202,7 +213,6 @@ DocsCollector.collect('java.io.LineNumberReader', [
 			],
 			/* return */ UDF
 		]],
-		[/* method */ 'skip(long)', UDF],
 		[/* method */ 'reset()', [
 			[/* method description */
 				[/* text */ 't', `Reset the stream to the most recent mark.`]
@@ -215,16 +225,6 @@ DocsCollector.collect('java.io.LineNumberReader', [
 				]]
 			],
 			/* return */ UDF
-		]],
-		[/* method */ 'getLineNumber()', [
-			[/* method description */
-				[/* text */ 't', `Get the current line number.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `The current line number`]
-			]
 		]],
 		[/* method */ 'setLineNumber(int)', [
 			[/* method description */

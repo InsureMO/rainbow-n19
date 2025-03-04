@@ -198,6 +198,32 @@ DocsCollector.collect('java.lang.invoke.MethodHandleProxies', [
 				[/* inline code block */ 'i', `asInterfaceInstance`]
 			]
 		]],
+		[/* method */ 'wrapperInstanceType(java.lang.Object)', [
+			[/* method description */
+				[/* text */ 't', `Recovers the unique single-method interface type for which this wrapper instance was created.
+ The object `],
+				[/* inline code block */ 'i', `x`],
+				[/* text */ 't', ` must have been produced by a call to `],
+				[/* reference */ 'r', `#asInterfaceInstance(java.lang.Class,java.lang.invoke.MethodHandle)`, `asInterfaceInstance`],
+				[/* text */ 't', `.
+ This requirement may be tested via `],
+				[/* reference */ 'r', `#isWrapperInstance(java.lang.Object)`, `isWrapperInstance`],
+				[/* text */ 't', `.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'x', [/* parameter description */
+					[/* text */ 't', `any reference`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
+					[/* text */ 't', `if the reference x is not to a wrapper instance`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `the single-method interface type for which the wrapper was created`]
+			]
+		]],
 		[/* method */ 'wrapperInstanceTarget(java.lang.Object)', [
 			[/* method description */
 				[/* text */ 't', `Produces or recovers a target method handle which is behaviorally
@@ -223,32 +249,6 @@ DocsCollector.collect('java.lang.invoke.MethodHandleProxies', [
 			],
 			[/* return description */
 				[/* text */ 't', `a method handle implementing the unique method`]
-			]
-		]],
-		[/* method */ 'wrapperInstanceType(java.lang.Object)', [
-			[/* method description */
-				[/* text */ 't', `Recovers the unique single-method interface type for which this wrapper instance was created.
- The object `],
-				[/* inline code block */ 'i', `x`],
-				[/* text */ 't', ` must have been produced by a call to `],
-				[/* reference */ 'r', `#asInterfaceInstance(java.lang.Class,java.lang.invoke.MethodHandle)`, `asInterfaceInstance`],
-				[/* text */ 't', `.
- This requirement may be tested via `],
-				[/* reference */ 'r', `#isWrapperInstance(java.lang.Object)`, `isWrapperInstance`],
-				[/* text */ 't', `.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'x', [/* parameter description */
-					[/* text */ 't', `any reference`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
-					[/* text */ 't', `if the reference x is not to a wrapper instance`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `the single-method interface type for which the wrapper was created`]
 			]
 		]]
 	],

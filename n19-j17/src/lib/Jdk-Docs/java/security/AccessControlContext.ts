@@ -116,6 +116,36 @@ DocsCollector.collect('java.security.AccessControlContext', [
 				[/* text */ 't', `a hash code value for this context.`]
 			]
 		]],
+		[/* method */ 'getDomainCombiner()', [
+			[/* method description */
+				[/* text */ 't', `Get the `],
+				[/* inline code block */ 'i', `DomainCombiner`],
+				[/* text */ 't', ` associated with this
+ `],
+				[/* inline code block */ 'i', `AccessControlContext`],
+				[/* text */ 't', `.`]
+			],
+			/* parameters */ UDF,
+			[/* throws */
+				[/* throw */ 'java.lang.SecurityException', [/* throw description */
+					[/* text */ 't', `if a security manager is installed and
+          the caller does not have the "getDomainCombiner"
+          `],
+					[/* reference */ 'r', `java.security.SecurityPermission`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `the `],
+				[/* inline code block */ 'i', `DomainCombiner`],
+				[/* text */ 't', ` associated with this
+          `],
+				[/* inline code block */ 'i', `AccessControlContext`],
+				[/* text */ 't', `, or `],
+				[/* inline code block */ 'i', `null`],
+				[/* text */ 't', `
+          if there is none.`]
+			]
+		]],
 		[/* method */ 'checkPermission(java.security.Permission)', [
 			[/* method description */
 				[/* text */ 't', `Determines whether the access request indicated by the
@@ -146,36 +176,6 @@ DocsCollector.collect('java.security.AccessControlContext', [
 				]]
 			],
 			/* return */ UDF
-		]],
-		[/* method */ 'getDomainCombiner()', [
-			[/* method description */
-				[/* text */ 't', `Get the `],
-				[/* inline code block */ 'i', `DomainCombiner`],
-				[/* text */ 't', ` associated with this
- `],
-				[/* inline code block */ 'i', `AccessControlContext`],
-				[/* text */ 't', `.`]
-			],
-			/* parameters */ UDF,
-			[/* throws */
-				[/* throw */ 'java.lang.SecurityException', [/* throw description */
-					[/* text */ 't', `if a security manager is installed and
-          the caller does not have the "getDomainCombiner"
-          `],
-					[/* reference */ 'r', `java.security.SecurityPermission`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `the `],
-				[/* inline code block */ 'i', `DomainCombiner`],
-				[/* text */ 't', ` associated with this
-          `],
-				[/* inline code block */ 'i', `AccessControlContext`],
-				[/* text */ 't', `, or `],
-				[/* inline code block */ 'i', `null`],
-				[/* text */ 't', `
-          if there is none.`]
-			]
 		]]
 	],
 ]);

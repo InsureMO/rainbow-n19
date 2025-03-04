@@ -11,6 +11,20 @@ DocsCollector.collect('java.text.AttributedCharacterIterator$Attribute', [
 		[/* text */ 't', `.`]
 	],
 	[/* fields */
+		[/* field */ 'INPUT_METHOD_SEGMENT', [
+			[/* field description */
+				[/* text */ 't', `Attribute key for input method segments. Input methods often break
+ up text into segments, which usually correspond to words.
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', `Values are instances of `],
+					[/* reference */ 'r', `java.text.Annotation`],
+					[/* text */ 't', ` holding a `],
+					[/* inline code block */ 'i', `null`],
+					[/* text */ 't', ` reference.`]
+				]]
+			],
+		]],
 		[/* field */ 'LANGUAGE', [
 			[/* field description */
 				[/* text */ 't', `Attribute key for the language of some text.
@@ -37,20 +51,6 @@ DocsCollector.collect('java.text.AttributedCharacterIterator$Attribute', [
 					[/* text */ 't', `.`]
 				]]
 			],
-		]],
-		[/* field */ 'INPUT_METHOD_SEGMENT', [
-			[/* field description */
-				[/* text */ 't', `Attribute key for input method segments. Input methods often break
- up text into segments, which usually correspond to words.
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', `Values are instances of `],
-					[/* reference */ 'r', `java.text.Annotation`],
-					[/* text */ 't', ` holding a `],
-					[/* inline code block */ 'i', `null`],
-					[/* text */ 't', ` reference.`]
-				]]
-			],
 		]]
 	],
 	[/* constructors */
@@ -70,6 +70,24 @@ DocsCollector.collect('java.text.AttributedCharacterIterator$Attribute', [
 		]]
 	],
 	[/* methods */
+		[/* method */ 'readResolve()', [
+			[/* method description */
+				[/* text */ 't', `Resolves instances being deserialized to the predefined constants.`]
+			],
+			/* parameters */ UDF,
+			[/* throws */
+				[/* throw */ 'java.io.InvalidObjectException', [/* throw description */
+					[/* text */ 't', `if the object to resolve is not
+                                an instance of `],
+					[/* inline code block */ 'i', `Attribute`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `the resolved `],
+				[/* inline code block */ 'i', `Attribute`],
+				[/* text */ 't', ` object`]
+			]
+		]],
 		[/* method */ 'getName()', [
 			[/* method description */
 				[/* text */ 't', `Returns the name of the attribute.`]
@@ -107,6 +125,19 @@ DocsCollector.collect('java.text.AttributedCharacterIterator$Attribute', [
 				[/* text */ 't', ` otherwise.`]
 			]
 		]],
+		[/* method */ 'hashCode()', [
+			[/* method description */
+				[/* text */ 't', `Returns a hash code value for the object. This version is identical to
+ the one in `],
+				[/* inline code block */ 'i', `Object`],
+				[/* text */ 't', `, but is also final.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `a hash code value for this object.`]
+			]
+		]],
 		[/* method */ 'toString()', [
 			[/* method description */
 				[/* text */ 't', `Returns a string representation of the object. This version returns the
@@ -121,37 +152,6 @@ DocsCollector.collect('java.text.AttributedCharacterIterator$Attribute', [
 			/* throws */ UDF,
 			[/* return description */
 				[/* text */ 't', `a string representation of the object.`]
-			]
-		]],
-		[/* method */ 'hashCode()', [
-			[/* method description */
-				[/* text */ 't', `Returns a hash code value for the object. This version is identical to
- the one in `],
-				[/* inline code block */ 'i', `Object`],
-				[/* text */ 't', `, but is also final.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `a hash code value for this object.`]
-			]
-		]],
-		[/* method */ 'readResolve()', [
-			[/* method description */
-				[/* text */ 't', `Resolves instances being deserialized to the predefined constants.`]
-			],
-			/* parameters */ UDF,
-			[/* throws */
-				[/* throw */ 'java.io.InvalidObjectException', [/* throw description */
-					[/* text */ 't', `if the object to resolve is not
-                                an instance of `],
-					[/* inline code block */ 'i', `Attribute`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `the resolved `],
-				[/* inline code block */ 'i', `Attribute`],
-				[/* text */ 't', ` object`]
 			]
 		]]
 	],

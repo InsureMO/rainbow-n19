@@ -24,6 +24,60 @@ DocsCollector.collect('java.nio.channels.ScatteringByteChannel', [
 	/* fields */ UDF,
 	/* constructors */ UDF,
 	[/* methods */
+		[/* method */ 'read(java.nio.ByteBuffer[])', [
+			[/* method description */
+				[/* text */ 't', `Reads a sequence of bytes from this channel into the given buffers.
+
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', ` An invocation of this method of the form `],
+					[/* inline code block */ 'i', `c.read(dsts)`],
+					[/* text */ 't', `
+ behaves in exactly the same manner as the invocation
+
+ `]
+				]],
+				[/* block */ 'b', [
+					[/* code block */ 'c', ` c.read(dsts, 0, dsts.length);`]
+				]],
+				[/* block */ 'b', '']
+			],
+			[/* parameters */
+				[/* parameter */ 'dsts', [/* parameter description */
+					[/* text */ 't', `The buffers into which bytes are to be transferred`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
+					[/* text */ 't', `If any of the buffers is read-only`]
+				]],
+				[/* throw */ 'java.nio.channels.NonReadableChannelException', [/* throw description */
+					[/* text */ 't', `If this channel was not opened for reading`]
+				]],
+				[/* throw */ 'java.nio.channels.ClosedChannelException', [/* throw description */
+					[/* text */ 't', `If this channel is closed`]
+				]],
+				[/* throw */ 'java.nio.channels.AsynchronousCloseException', [/* throw description */
+					[/* text */ 't', `If another thread closes this channel
+          while the read operation is in progress`]
+				]],
+				[/* throw */ 'java.nio.channels.ClosedByInterruptException', [/* throw description */
+					[/* text */ 't', `If another thread interrupts the current thread
+          while the read operation is in progress, thereby
+          closing the channel and setting the current thread's
+          interrupt status`]
+				]],
+				[/* throw */ 'java.io.IOException', [/* throw description */
+					[/* text */ 't', `If some other I/O error occurs`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `The number of bytes read, possibly zero,
+         or `],
+				[/* inline code block */ 'i', `-1`],
+				[/* text */ 't', ` if the channel has reached end-of-stream`]
+			]
+		]],
 		[/* method */ 'read(java.nio.ByteBuffer[],int,int)', [
 			[/* method description */
 				[/* text */ 't', `Reads a sequence of bytes from this channel into a subsequence of the
@@ -119,60 +173,6 @@ DocsCollector.collect('java.nio.channels.ScatteringByteChannel', [
 					[/* text */ 't', `
           parameters do not hold`]
 				]],
-				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
-					[/* text */ 't', `If any of the buffers is read-only`]
-				]],
-				[/* throw */ 'java.nio.channels.NonReadableChannelException', [/* throw description */
-					[/* text */ 't', `If this channel was not opened for reading`]
-				]],
-				[/* throw */ 'java.nio.channels.ClosedChannelException', [/* throw description */
-					[/* text */ 't', `If this channel is closed`]
-				]],
-				[/* throw */ 'java.nio.channels.AsynchronousCloseException', [/* throw description */
-					[/* text */ 't', `If another thread closes this channel
-          while the read operation is in progress`]
-				]],
-				[/* throw */ 'java.nio.channels.ClosedByInterruptException', [/* throw description */
-					[/* text */ 't', `If another thread interrupts the current thread
-          while the read operation is in progress, thereby
-          closing the channel and setting the current thread's
-          interrupt status`]
-				]],
-				[/* throw */ 'java.io.IOException', [/* throw description */
-					[/* text */ 't', `If some other I/O error occurs`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `The number of bytes read, possibly zero,
-         or `],
-				[/* inline code block */ 'i', `-1`],
-				[/* text */ 't', ` if the channel has reached end-of-stream`]
-			]
-		]],
-		[/* method */ 'read(java.nio.ByteBuffer[])', [
-			[/* method description */
-				[/* text */ 't', `Reads a sequence of bytes from this channel into the given buffers.
-
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', ` An invocation of this method of the form `],
-					[/* inline code block */ 'i', `c.read(dsts)`],
-					[/* text */ 't', `
- behaves in exactly the same manner as the invocation
-
- `]
-				]],
-				[/* block */ 'b', [
-					[/* code block */ 'c', ` c.read(dsts, 0, dsts.length);`]
-				]],
-				[/* block */ 'b', '']
-			],
-			[/* parameters */
-				[/* parameter */ 'dsts', [/* parameter description */
-					[/* text */ 't', `The buffers into which bytes are to be transferred`]
-				]]
-			],
-			[/* throws */
 				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
 					[/* text */ 't', `If any of the buffers is read-only`]
 				]],

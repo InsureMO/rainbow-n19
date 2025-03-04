@@ -34,6 +34,51 @@ DocsCollector.collect('java.lang.constant.MethodHandleDesc', [
 				[/* text */ 't', `whether this descriptor is equal to the other object`]
 			]
 		]],
+		[/* method */ 'invocationType()', [
+			[/* method description */
+				[/* text */ 't', `Returns a `],
+				[/* reference */ 'r', `java.lang.constant.MethodTypeDesc`],
+				[/* text */ 't', ` describing the invocation type of the
+ method handle described by this nominal descriptor.  The invocation type
+ describes the full set of stack values that are consumed by the invocation
+ (including the receiver, if any).`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `a `],
+				[/* reference */ 'r', `java.lang.constant.MethodHandleDesc`],
+				[/* text */ 't', ` describing the method handle type`]
+			]
+		]],
+		[/* method */ 'asType(java.lang.constant.MethodTypeDesc)', [
+			[/* method description */
+				[/* text */ 't', `Returns a `],
+				[/* reference */ 'r', `java.lang.constant.MethodHandleDesc`],
+				[/* text */ 't', ` that describes this method handle
+ adapted to a different type, as if by `],
+				[/* reference */ 'r', `java.MethodHandle#asType(java.lang.invoke.MethodType)`],
+				[/* text */ 't', `.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'type', [/* parameter description */
+					[/* text */ 't', `a `],
+					[/* reference */ 'r', `java.lang.constant.MethodHandleDesc`],
+					[/* text */ 't', ` describing the new method type`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
+					[/* text */ 't', `if the argument is `],
+					[/* inline code block */ 'i', `null`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `a `],
+				[/* reference */ 'r', `java.lang.constant.MethodHandleDesc`],
+				[/* text */ 't', ` for the adapted method handle`]
+			]
+		]],
 		[/* method */ 'of(java.lang.constant.DirectMethodHandleDesc.Kind,java.lang.constant.ClassDesc,java.lang.String,java.lang.String)', [
 			[/* method description */
 				[/* text */ 't', `Creates a `],
@@ -107,32 +152,35 @@ DocsCollector.collect('java.lang.constant.MethodHandleDesc', [
 				[/* reference */ 'r', `java.lang.constant.MethodHandleDesc`]
 			]
 		]],
-		[/* method */ 'asType(java.lang.constant.MethodTypeDesc)', [
+		[/* method */ 'ofConstructor(java.lang.constant.ClassDesc,java.lang.constant.ClassDesc...)', [
 			[/* method description */
 				[/* text */ 't', `Returns a `],
 				[/* reference */ 'r', `java.lang.constant.MethodHandleDesc`],
-				[/* text */ 't', ` that describes this method handle
- adapted to a different type, as if by `],
-				[/* reference */ 'r', `java.MethodHandle#asType(java.lang.invoke.MethodType)`],
-				[/* text */ 't', `.`]
+				[/* text */ 't', ` corresponding to invocation of a constructor`]
 			],
 			[/* parameters */
-				[/* parameter */ 'type', [/* parameter description */
+				[/* parameter */ 'owner', [/* parameter description */
 					[/* text */ 't', `a `],
-					[/* reference */ 'r', `java.lang.constant.MethodHandleDesc`],
-					[/* text */ 't', ` describing the new method type`]
+					[/* reference */ 'r', `java.lang.constant.ClassDesc`],
+					[/* text */ 't', ` describing the class containing the
+              constructor`]
+				]],
+				[/* parameter */ 'paramTypes', [/* parameter description */
+					[/* text */ 't', ``],
+					[/* reference */ 'r', `java.lang.constant.ClassDesc`],
+					[/* text */ 't', `s describing the parameter types of
+                   the constructor`]
 				]]
 			],
 			[/* throws */
 				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
-					[/* text */ 't', `if the argument is `],
+					[/* text */ 't', `if any argument or its contents is `],
 					[/* inline code block */ 'i', `null`]
 				]]
 			],
 			[/* return description */
-				[/* text */ 't', `a `],
-				[/* reference */ 'r', `java.lang.constant.MethodHandleDesc`],
-				[/* text */ 't', ` for the adapted method handle`]
+				[/* text */ 't', `the `],
+				[/* reference */ 'r', `java.lang.constant.MethodHandleDesc`]
 			]
 		]],
 		[/* method */ 'ofField(java.lang.constant.DirectMethodHandleDesc.Kind,java.lang.constant.ClassDesc,java.lang.String,java.lang.constant.ClassDesc)', [
@@ -246,54 +294,6 @@ DocsCollector.collect('java.lang.constant.MethodHandleDesc', [
 					[/* inline code block */ 'i', `name`],
 					[/* text */ 't', ` has the incorrect
  format, or the kind is invalid`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `the `],
-				[/* reference */ 'r', `java.lang.constant.MethodHandleDesc`]
-			]
-		]],
-		[/* method */ 'invocationType()', [
-			[/* method description */
-				[/* text */ 't', `Returns a `],
-				[/* reference */ 'r', `java.lang.constant.MethodTypeDesc`],
-				[/* text */ 't', ` describing the invocation type of the
- method handle described by this nominal descriptor.  The invocation type
- describes the full set of stack values that are consumed by the invocation
- (including the receiver, if any).`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `a `],
-				[/* reference */ 'r', `java.lang.constant.MethodHandleDesc`],
-				[/* text */ 't', ` describing the method handle type`]
-			]
-		]],
-		[/* method */ 'ofConstructor(java.lang.constant.ClassDesc,java.lang.constant.ClassDesc...)', [
-			[/* method description */
-				[/* text */ 't', `Returns a `],
-				[/* reference */ 'r', `java.lang.constant.MethodHandleDesc`],
-				[/* text */ 't', ` corresponding to invocation of a constructor`]
-			],
-			[/* parameters */
-				[/* parameter */ 'owner', [/* parameter description */
-					[/* text */ 't', `a `],
-					[/* reference */ 'r', `java.lang.constant.ClassDesc`],
-					[/* text */ 't', ` describing the class containing the
-              constructor`]
-				]],
-				[/* parameter */ 'paramTypes', [/* parameter description */
-					[/* text */ 't', ``],
-					[/* reference */ 'r', `java.lang.constant.ClassDesc`],
-					[/* text */ 't', `s describing the parameter types of
-                   the constructor`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
-					[/* text */ 't', `if any argument or its contents is `],
-					[/* inline code block */ 'i', `null`]
 				]]
 			],
 			[/* return description */

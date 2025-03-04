@@ -89,154 +89,6 @@ DocsCollector.collect('java.time.temporal.TemporalQueries', [
 	/* fields */ UDF,
 	/* constructors */ UDF,
 	[/* methods */
-		[/* method */ 'offset()', [
-			[/* method description */
-				[/* text */ 't', `A query for `],
-				[/* inline code block */ 'i', `ZoneOffset`],
-				[/* text */ 't', ` returning null if not found.
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', `
- This returns a `],
-					[/* inline code block */ 'i', `TemporalQuery`],
-					[/* text */ 't', ` that can be used to query a temporal
- object for the offset. The query will return null if the temporal
- object cannot supply an offset.
- `]
-				]],
-				[/* block */ 'b', [
-					[/* text */ 't', `
- The query implementation examines the `],
-					[/* reference */ 'r', `.ChronoField#OFFSET_SECONDS`],
-					[/* text */ 't', `
- field and uses it to create a `],
-					[/* inline code block */ 'i', `ZoneOffset`],
-					[/* text */ 't', `.
- `]
-				]],
-				[/* block */ 'b', [
-					[/* text */ 't', `
- The method `],
-					[/* reference */ 'r', `java.ZoneOffset#from(java.time.temporal.TemporalAccessor)`],
-					[/* text */ 't', ` can be used as a
- `],
-					[/* inline code block */ 'i', `TemporalQuery`],
-					[/* text */ 't', ` via a method reference, `],
-					[/* inline code block */ 'i', `ZoneOffset::from`],
-					[/* text */ 't', `.
- This query and `],
-					[/* inline code block */ 'i', `ZoneOffset::from`],
-					[/* text */ 't', ` will return the same result if the
- temporal object contains an offset. If the temporal object does not contain
- an offset, then the method reference will throw an exception, whereas this
- query will return null.`]
-				]]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `a query that can obtain the offset of a temporal, not null`]
-			]
-		]],
-		[/* method */ 'zoneId()', [
-			[/* method description */
-				[/* text */ 't', `A strict query for the `],
-				[/* inline code block */ 'i', `ZoneId`],
-				[/* text */ 't', `.
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', `
- This queries a `],
-					[/* inline code block */ 'i', `TemporalAccessor`],
-					[/* text */ 't', ` for the zone.
- The zone is only returned if the date-time conceptually contains a `],
-					[/* inline code block */ 'i', `ZoneId`],
-					[/* text */ 't', `.
- It will not be returned if the date-time only conceptually has an `],
-					[/* inline code block */ 'i', `ZoneOffset`],
-					[/* text */ 't', `.
- Thus a `],
-					[/* reference */ 'r', `java.time.ZonedDateTime`],
-					[/* text */ 't', ` will return the result of `],
-					[/* inline code block */ 'i', `getZone()`],
-					[/* text */ 't', `,
- but an `],
-					[/* reference */ 'r', `java.time.OffsetDateTime`],
-					[/* text */ 't', ` will return null.
- `]
-				]],
-				[/* block */ 'b', [
-					[/* text */ 't', `
- In most cases, applications should use `],
-					[/* reference */ 'r', `#zone()`, `zone()`],
-					[/* text */ 't', ` as this query is too strict.
- `]
-				]],
-				[/* block */ 'b', [
-					[/* text */ 't', `
- The result from JDK classes implementing `],
-					[/* inline code block */ 'i', `TemporalAccessor`],
-					[/* text */ 't', ` is as follows:`],
-					[/* new line */ 'n'],
-					[/* inline code block */ 'i', `LocalDate`],
-					[/* text */ 't', ` returns null`],
-					[/* new line */ 'n'],
-					[/* inline code block */ 'i', `LocalTime`],
-					[/* text */ 't', ` returns null`],
-					[/* new line */ 'n'],
-					[/* inline code block */ 'i', `LocalDateTime`],
-					[/* text */ 't', ` returns null`],
-					[/* new line */ 'n'],
-					[/* inline code block */ 'i', `ZonedDateTime`],
-					[/* text */ 't', ` returns the associated zone`],
-					[/* new line */ 'n'],
-					[/* inline code block */ 'i', `OffsetTime`],
-					[/* text */ 't', ` returns null`],
-					[/* new line */ 'n'],
-					[/* inline code block */ 'i', `OffsetDateTime`],
-					[/* text */ 't', ` returns null`],
-					[/* new line */ 'n'],
-					[/* inline code block */ 'i', `ChronoLocalDate`],
-					[/* text */ 't', ` returns null`],
-					[/* new line */ 'n'],
-					[/* inline code block */ 'i', `ChronoLocalDateTime`],
-					[/* text */ 't', ` returns null`],
-					[/* new line */ 'n'],
-					[/* inline code block */ 'i', `ChronoZonedDateTime`],
-					[/* text */ 't', ` returns the associated zone`],
-					[/* new line */ 'n'],
-					[/* inline code block */ 'i', `Era`],
-					[/* text */ 't', ` returns null`],
-					[/* new line */ 'n'],
-					[/* inline code block */ 'i', `DayOfWeek`],
-					[/* text */ 't', ` returns null`],
-					[/* new line */ 'n'],
-					[/* inline code block */ 'i', `Month`],
-					[/* text */ 't', ` returns null`],
-					[/* new line */ 'n'],
-					[/* inline code block */ 'i', `Year`],
-					[/* text */ 't', ` returns null`],
-					[/* new line */ 'n'],
-					[/* inline code block */ 'i', `YearMonth`],
-					[/* text */ 't', ` returns null`],
-					[/* new line */ 'n'],
-					[/* inline code block */ 'i', `MonthDay`],
-					[/* text */ 't', ` returns null`],
-					[/* new line */ 'n'],
-					[/* inline code block */ 'i', `ZoneOffset`],
-					[/* text */ 't', ` returns null`],
-					[/* new line */ 'n'],
-					[/* inline code block */ 'i', `Instant`],
-					[/* text */ 't', ` returns null`],
-					[/* new line */ 'n']
-				]]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `a query that can obtain the zone ID of a temporal, not null`]
-			]
-		]],
 		[/* method */ 'chronology()', [
 			[/* method description */
 				[/* text */ 't', `A query for the `],
@@ -342,6 +194,104 @@ DocsCollector.collect('java.time.temporal.TemporalQueries', [
 			/* throws */ UDF,
 			[/* return description */
 				[/* text */ 't', `a query that can obtain the chronology of a temporal, not null`]
+			]
+		]],
+		[/* method */ 'localDate()', [
+			[/* method description */
+				[/* text */ 't', `A query for `],
+				[/* inline code block */ 'i', `LocalDate`],
+				[/* text */ 't', ` returning null if not found.
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', `
+ This returns a `],
+					[/* inline code block */ 'i', `TemporalQuery`],
+					[/* text */ 't', ` that can be used to query a temporal
+ object for the local date. The query will return null if the temporal
+ object cannot supply a local date.
+ `]
+				]],
+				[/* block */ 'b', [
+					[/* text */ 't', `
+ The query implementation examines the `],
+					[/* reference */ 'r', `.ChronoField#EPOCH_DAY`],
+					[/* text */ 't', `
+ field and uses it to create a `],
+					[/* inline code block */ 'i', `LocalDate`],
+					[/* text */ 't', `.
+ `]
+				]],
+				[/* block */ 'b', [
+					[/* text */ 't', `
+ The method `],
+					[/* reference */ 'r', `java.ZoneOffset#from(java.time.temporal.TemporalAccessor)`],
+					[/* text */ 't', ` can be used as a
+ `],
+					[/* inline code block */ 'i', `TemporalQuery`],
+					[/* text */ 't', ` via a method reference, `],
+					[/* inline code block */ 'i', `LocalDate::from`],
+					[/* text */ 't', `.
+ This query and `],
+					[/* inline code block */ 'i', `LocalDate::from`],
+					[/* text */ 't', ` will return the same result if the
+ temporal object contains a date. If the temporal object does not contain
+ a date, then the method reference will throw an exception, whereas this
+ query will return null.`]
+				]]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `a query that can obtain the date of a temporal, not null`]
+			]
+		]],
+		[/* method */ 'localTime()', [
+			[/* method description */
+				[/* text */ 't', `A query for `],
+				[/* inline code block */ 'i', `LocalTime`],
+				[/* text */ 't', ` returning null if not found.
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', `
+ This returns a `],
+					[/* inline code block */ 'i', `TemporalQuery`],
+					[/* text */ 't', ` that can be used to query a temporal
+ object for the local time. The query will return null if the temporal
+ object cannot supply a local time.
+ `]
+				]],
+				[/* block */ 'b', [
+					[/* text */ 't', `
+ The query implementation examines the `],
+					[/* reference */ 'r', `.ChronoField#NANO_OF_DAY`],
+					[/* text */ 't', `
+ field and uses it to create a `],
+					[/* inline code block */ 'i', `LocalTime`],
+					[/* text */ 't', `.
+ `]
+				]],
+				[/* block */ 'b', [
+					[/* text */ 't', `
+ The method `],
+					[/* reference */ 'r', `java.ZoneOffset#from(java.time.temporal.TemporalAccessor)`],
+					[/* text */ 't', ` can be used as a
+ `],
+					[/* inline code block */ 'i', `TemporalQuery`],
+					[/* text */ 't', ` via a method reference, `],
+					[/* inline code block */ 'i', `LocalTime::from`],
+					[/* text */ 't', `.
+ This query and `],
+					[/* inline code block */ 'i', `LocalTime::from`],
+					[/* text */ 't', ` will return the same result if the
+ temporal object contains a time. If the temporal object does not contain
+ a time, then the method reference will throw an exception, whereas this
+ query will return null.`]
+				]]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `a query that can obtain the time of a temporal, not null`]
 			]
 		]],
 		[/* method */ 'precision()', [
@@ -512,59 +462,109 @@ DocsCollector.collect('java.time.temporal.TemporalQueries', [
 				[/* text */ 't', `a query that can obtain the zone ID or offset of a temporal, not null`]
 			]
 		]],
-		[/* method */ 'localTime()', [
+		[/* method */ 'zoneId()', [
 			[/* method description */
-				[/* text */ 't', `A query for `],
-				[/* inline code block */ 'i', `LocalTime`],
-				[/* text */ 't', ` returning null if not found.
+				[/* text */ 't', `A strict query for the `],
+				[/* inline code block */ 'i', `ZoneId`],
+				[/* text */ 't', `.
  `],
 				[/* block */ 'b', [
 					[/* text */ 't', `
- This returns a `],
-					[/* inline code block */ 'i', `TemporalQuery`],
-					[/* text */ 't', ` that can be used to query a temporal
- object for the local time. The query will return null if the temporal
- object cannot supply a local time.
+ This queries a `],
+					[/* inline code block */ 'i', `TemporalAccessor`],
+					[/* text */ 't', ` for the zone.
+ The zone is only returned if the date-time conceptually contains a `],
+					[/* inline code block */ 'i', `ZoneId`],
+					[/* text */ 't', `.
+ It will not be returned if the date-time only conceptually has an `],
+					[/* inline code block */ 'i', `ZoneOffset`],
+					[/* text */ 't', `.
+ Thus a `],
+					[/* reference */ 'r', `java.time.ZonedDateTime`],
+					[/* text */ 't', ` will return the result of `],
+					[/* inline code block */ 'i', `getZone()`],
+					[/* text */ 't', `,
+ but an `],
+					[/* reference */ 'r', `java.time.OffsetDateTime`],
+					[/* text */ 't', ` will return null.
  `]
 				]],
 				[/* block */ 'b', [
 					[/* text */ 't', `
- The query implementation examines the `],
-					[/* reference */ 'r', `.ChronoField#NANO_OF_DAY`],
+ In most cases, applications should use `],
+					[/* reference */ 'r', `#zone()`, `zone()`],
+					[/* text */ 't', ` as this query is too strict.
+ `]
+				]],
+				[/* block */ 'b', [
 					[/* text */ 't', `
- field and uses it to create a `],
+ The result from JDK classes implementing `],
+					[/* inline code block */ 'i', `TemporalAccessor`],
+					[/* text */ 't', ` is as follows:`],
+					[/* new line */ 'n'],
+					[/* inline code block */ 'i', `LocalDate`],
+					[/* text */ 't', ` returns null`],
+					[/* new line */ 'n'],
 					[/* inline code block */ 'i', `LocalTime`],
-					[/* text */ 't', `.
- `]
-				]],
-				[/* block */ 'b', [
-					[/* text */ 't', `
- The method `],
-					[/* reference */ 'r', `java.ZoneOffset#from(java.time.temporal.TemporalAccessor)`],
-					[/* text */ 't', ` can be used as a
- `],
-					[/* inline code block */ 'i', `TemporalQuery`],
-					[/* text */ 't', ` via a method reference, `],
-					[/* inline code block */ 'i', `LocalTime::from`],
-					[/* text */ 't', `.
- This query and `],
-					[/* inline code block */ 'i', `LocalTime::from`],
-					[/* text */ 't', ` will return the same result if the
- temporal object contains a time. If the temporal object does not contain
- a time, then the method reference will throw an exception, whereas this
- query will return null.`]
+					[/* text */ 't', ` returns null`],
+					[/* new line */ 'n'],
+					[/* inline code block */ 'i', `LocalDateTime`],
+					[/* text */ 't', ` returns null`],
+					[/* new line */ 'n'],
+					[/* inline code block */ 'i', `ZonedDateTime`],
+					[/* text */ 't', ` returns the associated zone`],
+					[/* new line */ 'n'],
+					[/* inline code block */ 'i', `OffsetTime`],
+					[/* text */ 't', ` returns null`],
+					[/* new line */ 'n'],
+					[/* inline code block */ 'i', `OffsetDateTime`],
+					[/* text */ 't', ` returns null`],
+					[/* new line */ 'n'],
+					[/* inline code block */ 'i', `ChronoLocalDate`],
+					[/* text */ 't', ` returns null`],
+					[/* new line */ 'n'],
+					[/* inline code block */ 'i', `ChronoLocalDateTime`],
+					[/* text */ 't', ` returns null`],
+					[/* new line */ 'n'],
+					[/* inline code block */ 'i', `ChronoZonedDateTime`],
+					[/* text */ 't', ` returns the associated zone`],
+					[/* new line */ 'n'],
+					[/* inline code block */ 'i', `Era`],
+					[/* text */ 't', ` returns null`],
+					[/* new line */ 'n'],
+					[/* inline code block */ 'i', `DayOfWeek`],
+					[/* text */ 't', ` returns null`],
+					[/* new line */ 'n'],
+					[/* inline code block */ 'i', `Month`],
+					[/* text */ 't', ` returns null`],
+					[/* new line */ 'n'],
+					[/* inline code block */ 'i', `Year`],
+					[/* text */ 't', ` returns null`],
+					[/* new line */ 'n'],
+					[/* inline code block */ 'i', `YearMonth`],
+					[/* text */ 't', ` returns null`],
+					[/* new line */ 'n'],
+					[/* inline code block */ 'i', `MonthDay`],
+					[/* text */ 't', ` returns null`],
+					[/* new line */ 'n'],
+					[/* inline code block */ 'i', `ZoneOffset`],
+					[/* text */ 't', ` returns null`],
+					[/* new line */ 'n'],
+					[/* inline code block */ 'i', `Instant`],
+					[/* text */ 't', ` returns null`],
+					[/* new line */ 'n']
 				]]
 			],
 			/* parameters */ UDF,
 			/* throws */ UDF,
 			[/* return description */
-				[/* text */ 't', `a query that can obtain the time of a temporal, not null`]
+				[/* text */ 't', `a query that can obtain the zone ID of a temporal, not null`]
 			]
 		]],
-		[/* method */ 'localDate()', [
+		[/* method */ 'offset()', [
 			[/* method description */
 				[/* text */ 't', `A query for `],
-				[/* inline code block */ 'i', `LocalDate`],
+				[/* inline code block */ 'i', `ZoneOffset`],
 				[/* text */ 't', ` returning null if not found.
  `],
 				[/* block */ 'b', [
@@ -572,17 +572,17 @@ DocsCollector.collect('java.time.temporal.TemporalQueries', [
  This returns a `],
 					[/* inline code block */ 'i', `TemporalQuery`],
 					[/* text */ 't', ` that can be used to query a temporal
- object for the local date. The query will return null if the temporal
- object cannot supply a local date.
+ object for the offset. The query will return null if the temporal
+ object cannot supply an offset.
  `]
 				]],
 				[/* block */ 'b', [
 					[/* text */ 't', `
  The query implementation examines the `],
-					[/* reference */ 'r', `.ChronoField#EPOCH_DAY`],
+					[/* reference */ 'r', `.ChronoField#OFFSET_SECONDS`],
 					[/* text */ 't', `
  field and uses it to create a `],
-					[/* inline code block */ 'i', `LocalDate`],
+					[/* inline code block */ 'i', `ZoneOffset`],
 					[/* text */ 't', `.
  `]
 				]],
@@ -594,20 +594,20 @@ DocsCollector.collect('java.time.temporal.TemporalQueries', [
  `],
 					[/* inline code block */ 'i', `TemporalQuery`],
 					[/* text */ 't', ` via a method reference, `],
-					[/* inline code block */ 'i', `LocalDate::from`],
+					[/* inline code block */ 'i', `ZoneOffset::from`],
 					[/* text */ 't', `.
  This query and `],
-					[/* inline code block */ 'i', `LocalDate::from`],
+					[/* inline code block */ 'i', `ZoneOffset::from`],
 					[/* text */ 't', ` will return the same result if the
- temporal object contains a date. If the temporal object does not contain
- a date, then the method reference will throw an exception, whereas this
+ temporal object contains an offset. If the temporal object does not contain
+ an offset, then the method reference will throw an exception, whereas this
  query will return null.`]
 				]]
 			],
 			/* parameters */ UDF,
 			/* throws */ UDF,
 			[/* return description */
-				[/* text */ 't', `a query that can obtain the date of a temporal, not null`]
+				[/* text */ 't', `a query that can obtain the offset of a temporal, not null`]
 			]
 		]]
 	],

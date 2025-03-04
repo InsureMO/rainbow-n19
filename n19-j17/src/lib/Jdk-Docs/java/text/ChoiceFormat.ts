@@ -231,6 +231,16 @@ DocsCollector.collect('java.text.ChoiceFormat', [
 				[/* text */ 't', ` otherwise.`]
 			]
 		]],
+		[/* method */ 'getLimits()', [
+			[/* method description */
+				[/* text */ 't', `Get the limits passed in the constructor.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the limits.`]
+			]
+		]],
 		[/* method */ 'hashCode()', [
 			[/* method description */
 				[/* text */ 't', `Generates a hash code for the message format object.`]
@@ -241,6 +251,43 @@ DocsCollector.collect('java.text.ChoiceFormat', [
 				[/* text */ 't', `a hash code value for this object.`]
 			]
 		]],
+		[/* method */ 'parse(java.lang.String,java.text.ParsePosition)', [
+			[/* method description */
+				[/* text */ 't', `Parses a Number from the input text.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'text', [/* parameter description */
+					[/* text */ 't', `the source text.`]
+				]],
+				[/* parameter */ 'status', [/* parameter description */
+					[/* text */ 't', `an input-output parameter.  On input, the
+ status.index field indicates the first character of the
+ source text that should be parsed.  On exit, if no error
+ occurred, status.index is set to the first unparsed character
+ in the source text.  On exit, if an error did occur,
+ status.index is unchanged and status.errorIndex is set to the
+ first index of the character that caused the parse to fail.`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
+					[/* text */ 't', `if `],
+					[/* inline code block */ 'i', `status`],
+					[/* text */ 't', ` is `],
+					[/* inline code block */ 'i', `null`],
+					[/* text */ 't', `
+            or if `],
+					[/* inline code block */ 'i', `text`],
+					[/* text */ 't', ` is `],
+					[/* inline code block */ 'i', `null`],
+					[/* text */ 't', ` and the list of
+            choice strings is not empty.`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `A Number representing the value of the number parsed.`]
+			]
+		]],
 		[/* method */ 'clone()', [
 			[/* method description */
 				[/* text */ 't', `Overrides Cloneable`]
@@ -249,6 +296,26 @@ DocsCollector.collect('java.text.ChoiceFormat', [
 			/* throws */ UDF,
 			[/* return description */
 				[/* text */ 't', `a clone of this instance.`]
+			]
+		]],
+		[/* method */ 'getFormats()', [
+			[/* method description */
+				[/* text */ 't', `Get the formats passed in the constructor.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the formats.`]
+			]
+		]],
+		[/* method */ 'toPattern()', [
+			[/* method description */
+				[/* text */ 't', `Gets the pattern.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the pattern string`]
 			]
 		]],
 		[/* method */ 'format(double,java.lang.StringBuffer,java.text.FieldPosition)', [
@@ -325,28 +392,6 @@ DocsCollector.collect('java.text.ChoiceFormat', [
 				[/* text */ 't', `the formatted StringBuffer`]
 			]
 		]],
-		[/* method */ 'nextDouble(double)', [
-			[/* method description */
-				[/* text */ 't', `Finds the least double greater than `],
-				[/* inline code block */ 'i', `d`],
-				[/* text */ 't', `.
- If `],
-				[/* inline code block */ 'i', `NaN`],
-				[/* text */ 't', `, returns same value.
- `],
-				[/* block */ 'b', `Used to make half-open intervals.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'd', [/* parameter description */
-					[/* text */ 't', `the reference value`]
-				]]
-			],
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the least double value greather than `],
-				[/* inline code block */ 'i', `d`]
-			]
-		]],
 		[/* method */ 'nextDouble(double,boolean)', [
 			[/* method description */
 				[/* text */ 't', `Finds the least double greater than `],
@@ -386,81 +431,26 @@ DocsCollector.collect('java.text.ChoiceFormat', [
 				[/* text */ 't', `the least or greater double value`]
 			]
 		]],
-		[/* method */ 'parse(java.lang.String,java.text.ParsePosition)', [
+		[/* method */ 'nextDouble(double)', [
 			[/* method description */
-				[/* text */ 't', `Parses a Number from the input text.`]
+				[/* text */ 't', `Finds the least double greater than `],
+				[/* inline code block */ 'i', `d`],
+				[/* text */ 't', `.
+ If `],
+				[/* inline code block */ 'i', `NaN`],
+				[/* text */ 't', `, returns same value.
+ `],
+				[/* block */ 'b', `Used to make half-open intervals.`]
 			],
 			[/* parameters */
-				[/* parameter */ 'text', [/* parameter description */
-					[/* text */ 't', `the source text.`]
-				]],
-				[/* parameter */ 'status', [/* parameter description */
-					[/* text */ 't', `an input-output parameter.  On input, the
- status.index field indicates the first character of the
- source text that should be parsed.  On exit, if no error
- occurred, status.index is set to the first unparsed character
- in the source text.  On exit, if an error did occur,
- status.index is unchanged and status.errorIndex is set to the
- first index of the character that caused the parse to fail.`]
+				[/* parameter */ 'd', [/* parameter description */
+					[/* text */ 't', `the reference value`]
 				]]
 			],
-			[/* throws */
-				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
-					[/* text */ 't', `if `],
-					[/* inline code block */ 'i', `status`],
-					[/* text */ 't', ` is `],
-					[/* inline code block */ 'i', `null`],
-					[/* text */ 't', `
-            or if `],
-					[/* inline code block */ 'i', `text`],
-					[/* text */ 't', ` is `],
-					[/* inline code block */ 'i', `null`],
-					[/* text */ 't', ` and the list of
-            choice strings is not empty.`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `A Number representing the value of the number parsed.`]
-			]
-		]],
-		[/* method */ 'applyPattern(java.lang.String)', [
-			[/* method description */
-				[/* text */ 't', `Sets the pattern.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'newPattern', [/* parameter description */
-					[/* text */ 't', `See the class description.`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
-					[/* text */ 't', `if `],
-					[/* inline code block */ 'i', `newPattern`],
-					[/* text */ 't', `
-            is `],
-					[/* inline code block */ 'i', `null`]
-				]]
-			],
-			/* return */ UDF
-		]],
-		[/* method */ 'toPattern()', [
-			[/* method description */
-				[/* text */ 't', `Gets the pattern.`]
-			],
-			/* parameters */ UDF,
 			/* throws */ UDF,
 			[/* return description */
-				[/* text */ 't', `the pattern string`]
-			]
-		]],
-		[/* method */ 'getFormats()', [
-			[/* method description */
-				[/* text */ 't', `Get the formats passed in the constructor.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the formats.`]
+				[/* text */ 't', `the least double value greather than `],
+				[/* inline code block */ 'i', `d`]
 			]
 		]],
 		[/* method */ 'previousDouble(double)', [
@@ -482,6 +472,26 @@ DocsCollector.collect('java.text.ChoiceFormat', [
 				[/* text */ 't', `the greatest double value less than `],
 				[/* inline code block */ 'i', `d`]
 			]
+		]],
+		[/* method */ 'applyPattern(java.lang.String)', [
+			[/* method description */
+				[/* text */ 't', `Sets the pattern.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'newPattern', [/* parameter description */
+					[/* text */ 't', `See the class description.`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
+					[/* text */ 't', `if `],
+					[/* inline code block */ 'i', `newPattern`],
+					[/* text */ 't', `
+            is `],
+					[/* inline code block */ 'i', `null`]
+				]]
+			],
+			/* return */ UDF
 		]],
 		[/* method */ 'setChoices(double[],java.lang.String[])', [
 			[/* method description */
@@ -516,16 +526,6 @@ DocsCollector.collect('java.text.ChoiceFormat', [
 				]]
 			],
 			/* return */ UDF
-		]],
-		[/* method */ 'getLimits()', [
-			[/* method description */
-				[/* text */ 't', `Get the limits passed in the constructor.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the limits.`]
-			]
 		]]
 	],
 ]);

@@ -25,6 +25,16 @@ DocsCollector.collect('java.util.zip.CheckedOutputStream', [
 		]]
 	],
 	[/* methods */
+		[/* method */ 'getChecksum()', [
+			[/* method description */
+				[/* text */ 't', `Returns the Checksum for this output stream.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the Checksum`]
+			]
+		]],
 		[/* method */ 'write(byte[],int,int)', [
 			[/* method description */
 				[/* text */ 't', `Writes an array of bytes. Will block until the bytes are
@@ -63,16 +73,6 @@ DocsCollector.collect('java.util.zip.CheckedOutputStream', [
 				]]
 			],
 			/* return */ UDF
-		]],
-		[/* method */ 'getChecksum()', [
-			[/* method description */
-				[/* text */ 't', `Returns the Checksum for this output stream.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the Checksum`]
-			]
 		]]
 	],
 ]);

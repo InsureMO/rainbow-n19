@@ -40,6 +40,22 @@ DocsCollector.collect('java.lang.invoke.VolatileCallSite', [
 	],
 	/* fields */ UDF,
 	[/* constructors */
+		[/* constructor */ '<init>(java.lang.invoke.MethodHandle)', [
+			[/* constructor description */
+				[/* text */ 't', `Creates a call site with a volatile binding to its target.
+ The target is set to the given value.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'target', [/* parameter description */
+					[/* text */ 't', `the method handle that will be the initial target of the call site`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
+					[/* text */ 't', `if the proposed target is null`]
+				]]
+			]
+		]],
 		[/* constructor */ '<init>(java.lang.invoke.MethodType)', [
 			[/* constructor description */
 				[/* text */ 't', `Creates a call site with a volatile binding to its target.
@@ -56,22 +72,6 @@ DocsCollector.collect('java.lang.invoke.VolatileCallSite', [
 			[/* throws */
 				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
 					[/* text */ 't', `if the proposed type is null`]
-				]]
-			]
-		]],
-		[/* constructor */ '<init>(java.lang.invoke.MethodHandle)', [
-			[/* constructor description */
-				[/* text */ 't', `Creates a call site with a volatile binding to its target.
- The target is set to the given value.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'target', [/* parameter description */
-					[/* text */ 't', `the method handle that will be the initial target of the call site`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
-					[/* text */ 't', `if the proposed target is null`]
 				]]
 			]
 		]]

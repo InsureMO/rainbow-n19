@@ -11,6 +11,16 @@ DocsCollector.collect('java.lang.reflect.AnnotatedArrayType', [
 	/* fields */ UDF,
 	/* constructors */ UDF,
 	[/* methods */
+		[/* method */ 'getAnnotatedGenericComponentType()', [
+			[/* method description */
+				[/* text */ 't', `Returns the potentially annotated generic component type of this array type.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the potentially annotated generic component type of this array type`]
+			]
+		]],
 		[/* method */ 'getAnnotatedOwnerType()', [
 			[/* method description */
 				[/* text */ 't', `Returns the potentially annotated type that this type is a member of, if
@@ -37,16 +47,6 @@ DocsCollector.collect('java.lang.reflect.AnnotatedArrayType', [
 			/* throws */ UDF,
 			[/* return description */
 				[/* inline code block */ 'i', `null`]
-			]
-		]],
-		[/* method */ 'getAnnotatedGenericComponentType()', [
-			[/* method description */
-				[/* text */ 't', `Returns the potentially annotated generic component type of this array type.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the potentially annotated generic component type of this array type`]
 			]
 		]]
 	],

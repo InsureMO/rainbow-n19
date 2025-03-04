@@ -1005,14 +1005,26 @@ JdkClassCreateHelper.class('java.lang.Integer', [
 		]
 	],
 	[/* declared fields */
-		[/* public static final int java.lang.Integer.MIN_VALUE */
-			/* name */ 'MIN_VALUE',
+		[/* public static final int java.lang.Integer.BYTES */
+			/* name */ 'BYTES',
 			/* type */ 'int',
 			/* annotations */ UDF,
 			/* modifiers */ 25
 		],
 		[/* public static final int java.lang.Integer.MAX_VALUE */
 			/* name */ 'MAX_VALUE',
+			/* type */ 'int',
+			/* annotations */ UDF,
+			/* modifiers */ 25
+		],
+		[/* public static final int java.lang.Integer.MIN_VALUE */
+			/* name */ 'MIN_VALUE',
+			/* type */ 'int',
+			/* annotations */ UDF,
+			/* modifiers */ 25
+		],
+		[/* public static final int java.lang.Integer.SIZE */
+			/* name */ 'SIZE',
 			/* type */ 'int',
 			/* annotations */ UDF,
 			/* modifiers */ 25
@@ -1026,18 +1038,6 @@ JdkClassCreateHelper.class('java.lang.Integer', [
 				/* raw type */ 'java.lang.Class',
 				/* owner type */ UDF
 			]],
-			/* annotations */ UDF,
-			/* modifiers */ 25
-		],
-		[/* public static final int java.lang.Integer.SIZE */
-			/* name */ 'SIZE',
-			/* type */ 'int',
-			/* annotations */ UDF,
-			/* modifiers */ 25
-		],
-		[/* public static final int java.lang.Integer.BYTES */
-			/* name */ 'BYTES',
-			/* type */ 'int',
 			/* annotations */ UDF,
 			/* modifiers */ 25
 		]

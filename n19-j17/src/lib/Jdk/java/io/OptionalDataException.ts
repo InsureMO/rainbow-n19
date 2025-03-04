@@ -12,15 +12,15 @@ JdkClassCreateHelper.class('java.io.OptionalDataException', [
 	/* declared constructors */,
 	/* declared methods */,
 	[/* declared fields */
-		[/* public int java.io.OptionalDataException.length */
-			/* name */ 'length',
-			/* type */ 'int',
-			/* annotations */ UDF,
-			/* modifiers */ 1
-		],
 		[/* public boolean java.io.OptionalDataException.eof */
 			/* name */ 'eof',
 			/* type */ 'boolean',
+			/* annotations */ UDF,
+			/* modifiers */ 1
+		],
+		[/* public int java.io.OptionalDataException.length */
+			/* name */ 'length',
+			/* type */ 'int',
 			/* annotations */ UDF,
 			/* modifiers */ 1
 		]

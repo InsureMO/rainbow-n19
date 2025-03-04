@@ -756,6 +756,45 @@ mh.invokeExact(System.out, "Hello, world.");
 	/* fields */ UDF,
 	/* constructors */ UDF,
 	[/* methods */
+		[/* method */ 'isVarargsCollector()', [
+			[/* method description */
+				[/* text */ 't', `Determines if this method handle
+ supports `],
+				[/* reference */ 'r', `#asVarargsCollector(java.lang.Class)`, `variable arity`],
+				[/* text */ 't', ` calls.
+ Such method handles arise from the following sources:
+ `],
+				[/* list */ 'l', [
+					[/* block */ 'b', [
+						[/* text */ 't', `a call to `],
+						[/* reference */ 'r', `#asVarargsCollector(java.lang.Class)`, `asVarargsCollector`]
+					]],
+					[/* block */ 'b', [
+						[/* text */ 't', `a call to a `],
+						[/* reference */ 'r', `java.lang.invoke.MethodHandles.Lookup`],
+						[/* text */ 't', `
+     which resolves to a variable arity Java method or constructor
+ `]
+					]],
+					[/* block */ 'b', [
+						[/* text */ 't', `an `],
+						[/* inline code block */ 'i', `ldc`],
+						[/* text */ 't', ` instruction of a `],
+						[/* inline code block */ 'i', `CONSTANT_MethodHandle`],
+						[/* text */ 't', `
+     which resolves to a variable arity Java method or constructor
+ `]
+					]]
+				]]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `true if this method handle accepts more than one arity of plain, inexact `],
+				[/* inline code block */ 'i', `invoke`],
+				[/* text */ 't', ` calls`]
+			]
+		]],
 		[/* method */ 'invoke(java.lang.Object...)', [
 			[/* method description */
 				[/* text */ 't', `Invokes the method handle, allowing any caller type descriptor,
@@ -890,57 +929,547 @@ mh.invokeExact(System.out, "Hello, world.");
 				[/* inline code block */ 'i', `Object`]
 			]
 		]],
-		[/* method */ 'type()', [
+		[/* method */ 'asCollector(int,java.lang.Class,int)', [
 			[/* method description */
-				[/* text */ 't', `Reports the type of this method handle.
- Every invocation of this method handle via `],
-				[/* inline code block */ 'i', `invokeExact`],
-				[/* text */ 't', ` must exactly match this type.`]
+				[/* text */ 't', `Makes an `],
+				[/* text */ 't', `array-collecting`],
+				[/* text */ 't', ` method handle, which accepts a given number of positional arguments starting
+ at a given position, and collects them into an array argument. The new method handle adapts, as its
+ `],
+				[/* text */ 't', `target`],
+				[/* text */ 't', `, the current method handle. The type of the adapter will be the same as the type of the target,
+ except that the parameter at the position indicated by `],
+				[/* inline code block */ 'i', `collectArgPos`],
+				[/* text */ 't', ` (usually of type `],
+				[/* inline code block */ 'i', `arrayType`],
+				[/* text */ 't', `)
+ is replaced by `],
+				[/* inline code block */ 'i', `arrayLength`],
+				[/* text */ 't', ` parameters whose type is element type of `],
+				[/* inline code block */ 'i', `arrayType`],
+				[/* text */ 't', `.
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', `
+ This method behaves very much like `],
+					[/* reference */ 'r', `#asCollector(java.lang.Class,int)`, `asCollector(Class, int)`],
+					[/* text */ 't', `, but differs in that its `],
+					[/* inline code block */ 'i', `collectArgPos`],
+					[/* text */ 't', ` argument indicates at which position in the parameter list arguments should be collected. This
+ index is zero-based.`]
+				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			[/* parameters */
+				[/* parameter */ 'collectArgPos', [/* parameter description */
+					[/* text */ 't', `the zero-based position in the parameter list at which to start collecting.`]
+				]],
+				[/* parameter */ 'arrayType', [/* parameter description */
+					[/* text */ 't', `often `],
+					[/* inline code block */ 'i', `Object[]`],
+					[/* text */ 't', `, the type of the array argument which will collect the arguments`]
+				]],
+				[/* parameter */ 'arrayLength', [/* parameter description */
+					[/* text */ 't', `the number of arguments to collect into a new array argument`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
+					[/* text */ 't', `if `],
+					[/* inline code block */ 'i', `arrayType`],
+					[/* text */ 't', ` is a null reference`]
+				]],
+				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
+					[/* text */ 't', `if `],
+					[/* inline code block */ 'i', `arrayType`],
+					[/* text */ 't', ` is not an array type
+         or `],
+					[/* inline code block */ 'i', `arrayType`],
+					[/* text */ 't', ` is not assignable to this method handle's array parameter type,
+         or `],
+					[/* inline code block */ 'i', `arrayLength`],
+					[/* text */ 't', ` is not a legal array size,
+         or `],
+					[/* inline code block */ 'i', `collectArgPos`],
+					[/* text */ 't', ` has an illegal value (negative, or greater than the number of arguments),
+         or the resulting method handle's type would have
+         `],
+					[/* reference */ 'r', `.MethodHandle#maxarity`]
+				]],
+				[/* throw */ 'java.lang.invoke.WrongMethodTypeException', [/* throw description */
+					[/* text */ 't', `if the implied `],
+					[/* inline code block */ 'i', `asType`],
+					[/* text */ 't', ` call fails`]
+				]]
+			],
 			[/* return description */
-				[/* text */ 't', `the method handle type`]
+				[/* text */ 't', `a new method handle which collects some arguments
+         into an array, before calling the original method handle`]
 			]
 		]],
-		[/* method */ 'toString()', [
+		[/* method */ 'asCollector(java.lang.Class,int)', [
 			[/* method description */
-				[/* text */ 't', `Returns a string representation of the method handle,
- starting with the string `],
-				[/* inline code block */ 'i', `"MethodHandle"`],
-				[/* text */ 't', ` and
- ending with the string representation of the method handle's type.
- In other words, this method returns a string equal to the value of:
+				[/* text */ 't', `Makes an `],
+				[/* text */ 't', `array-collecting`],
+				[/* text */ 't', ` method handle, which accepts a given number of trailing
+ positional arguments and collects them into an array argument.
+ The new method handle adapts, as its `],
+				[/* text */ 't', `target`],
+				[/* text */ 't', `,
+ the current method handle.  The type of the adapter will be
+ the same as the type of the target, except that a single trailing
+ parameter (usually of type `],
+				[/* inline code block */ 'i', `arrayType`],
+				[/* text */ 't', `) is replaced by
+ `],
+				[/* inline code block */ 'i', `arrayLength`],
+				[/* text */ 't', ` parameters whose type is element type of `],
+				[/* inline code block */ 'i', `arrayType`],
+				[/* text */ 't', `.
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', `
+ If the array type differs from the final argument type on the original target,
+ the original target is adapted to take the array type directly,
+ as if by a call to `],
+					[/* reference */ 'r', `#asType(java.lang.invoke.MethodType)`, `asType`],
+					[/* text */ 't', `.
+ `]
+				]],
+				[/* block */ 'b', [
+					[/* text */ 't', `
+ When called, the adapter replaces its trailing `],
+					[/* inline code block */ 'i', `arrayLength`],
+					[/* text */ 't', `
+ arguments by a single new array of type `],
+					[/* inline code block */ 'i', `arrayType`],
+					[/* text */ 't', `, whose elements
+ comprise (in order) the replaced arguments.
+ Finally the target is called.
+ What the target eventually returns is returned unchanged by the adapter.
+ `]
+				]],
+				[/* block */ 'b', [
+					[/* text */ 't', `
+ (The array may also be a shared constant when `],
+					[/* inline code block */ 'i', `arrayLength`],
+					[/* text */ 't', ` is zero.)
+ `]
+				]],
+				[/* block */ 'b', [
+					[/* text */ 't', `
+ (`],
+					[/* text */ 't', `Note:`],
+					[/* text */ 't', ` The `],
+					[/* inline code block */ 'i', `arrayType`],
+					[/* text */ 't', ` is often identical to the
+ `],
+					[/* reference */ 'r', `.MethodType#lastParameterType()`],
+					[/* text */ 't', `
+ of the original target.
+ It is an explicit argument for symmetry with `],
+					[/* inline code block */ 'i', `asSpreader`],
+					[/* text */ 't', `, and also
+ to allow the target to use a simple `],
+					[/* inline code block */ 'i', `Object`],
+					[/* text */ 't', ` as its last parameter type.)
+ `]
+				]],
+				[/* block */ 'b', [
+					[/* text */ 't', `
+ In order to create a collecting adapter which is not restricted to a particular
+ number of collected arguments, use `],
+					[/* reference */ 'r', `#asVarargsCollector(java.lang.Class)`, `asVarargsCollector`],
+					[/* text */ 't', `
+ or `],
+					[/* reference */ 'r', `#withVarargs(boolean)`, `withVarargs`],
+					[/* text */ 't', ` instead.
+ `]
+				]],
+				[/* block */ 'b', `
+ Here are some examples of array-collecting method handles:
  `],
 				[/* block */ 'b', [
 					[/* code block */ 'c', [
-						[/* inline code block */ 'i', `"MethodHandle" + type().toString()`]
+						[/* inline code block */ 'i', `MethodHandle deepToString = publicLookup()
+  .findStatic(Arrays.class, "deepToString", methodType(String.class, Object[].class));
+assertEquals("[won]",   (String) deepToString.invokeExact(new Object[]{"won"}));
+MethodHandle ts1 = deepToString.asCollector(Object[].class, 1);
+assertEquals(methodType(String.class, Object.class), ts1.type());
+//assertEquals("[won]", (String) ts1.invokeExact(         new Object[]{"won"})); //FAIL
+assertEquals("[[won]]", (String) ts1.invokeExact((Object) new Object[]{"won"}));
+// arrayType can be a subtype of Object[]
+MethodHandle ts2 = deepToString.asCollector(String[].class, 2);
+assertEquals(methodType(String.class, String.class, String.class), ts2.type());
+assertEquals("[two, too]", (String) ts2.invokeExact("two", "too"));
+MethodHandle ts0 = deepToString.asCollector(Object[].class, 0);
+assertEquals("[]", (String) ts0.invokeExact());
+// collectors can be nested, Lisp-style
+MethodHandle ts22 = deepToString.asCollector(Object[].class, 3).asCollector(String[].class, 2);
+assertEquals("[A, B, [C, D]]", ((String) ts22.invokeExact((Object)'A', (Object)"B", "C", "D")));
+// arrayType can be any primitive array type
+MethodHandle bytesToString = publicLookup()
+  .findStatic(Arrays.class, "toString", methodType(String.class, byte[].class))
+  .asCollector(byte[].class, 3);
+assertEquals("[1, 2, 3]", (String) bytesToString.invokeExact((byte)1, (byte)2, (byte)3));
+MethodHandle longsToString = publicLookup()
+  .findStatic(Arrays.class, "toString", methodType(String.class, long[].class))
+  .asCollector(long[].class, 1);
+assertEquals("[123]", (String) longsToString.invokeExact((long)123));`]
 					]]
 				]],
-				[/* block */ 'b', `Note:`]
+				[/* block */ 'b', ''],
+				[/* block */ 'b', [
+					[/* text */ 't', `Note:`],
+					[/* text */ 't', ` The resulting adapter is never a `],
+					[/* reference */ 'r', `#asVarargsCollector(java.lang.Class)`, `variable-arity method handle`],
+					[/* text */ 't', `, even if the original target method handle was.`]
+				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			[/* parameters */
+				[/* parameter */ 'arrayType', [/* parameter description */
+					[/* text */ 't', `often `],
+					[/* inline code block */ 'i', `Object[]`],
+					[/* text */ 't', `, the type of the array argument which will collect the arguments`]
+				]],
+				[/* parameter */ 'arrayLength', [/* parameter description */
+					[/* text */ 't', `the number of arguments to collect into a new array argument`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
+					[/* text */ 't', `if `],
+					[/* inline code block */ 'i', `arrayType`],
+					[/* text */ 't', ` is a null reference`]
+				]],
+				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
+					[/* text */ 't', `if `],
+					[/* inline code block */ 'i', `arrayType`],
+					[/* text */ 't', ` is not an array type
+         or `],
+					[/* inline code block */ 'i', `arrayType`],
+					[/* text */ 't', ` is not assignable to this method handle's trailing parameter type,
+         or `],
+					[/* inline code block */ 'i', `arrayLength`],
+					[/* text */ 't', ` is not a legal array size,
+         or the resulting method handle's type would have
+         `],
+					[/* reference */ 'r', `.MethodHandle#maxarity`]
+				]],
+				[/* throw */ 'java.lang.invoke.WrongMethodTypeException', [/* throw description */
+					[/* text */ 't', `if the implied `],
+					[/* inline code block */ 'i', `asType`],
+					[/* text */ 't', ` call fails`]
+				]]
+			],
 			[/* return description */
-				[/* text */ 't', `a string representation of the method handle`]
+				[/* text */ 't', `a new method handle which collects some trailing argument
+         into an array, before calling the original method handle`]
 			]
 		]],
-		[/* method */ 'describeConstable()', [
+		[/* method */ 'asFixedArity()', [
 			[/* method description */
-				[/* text */ 't', `Return a nominal descriptor for this instance, if one can be
- constructed, or an empty `],
-				[/* reference */ 'r', `java.util.Optional`],
-				[/* text */ 't', ` if one cannot be.`]
+				[/* text */ 't', `Makes a `],
+				[/* text */ 't', `fixed arity`],
+				[/* text */ 't', ` method handle which is otherwise
+ equivalent to the current method handle.
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', `
+ If the current method handle is not of
+ `],
+					[/* reference */ 'r', `#asVarargsCollector(java.lang.Class)`, `variable arity`],
+					[/* text */ 't', `,
+ the current method handle is returned.
+ This is true even if the current method handle
+ could not be a valid input to `],
+					[/* inline code block */ 'i', `asVarargsCollector`],
+					[/* text */ 't', `.
+ `]
+				]],
+				[/* block */ 'b', [
+					[/* text */ 't', `
+ Otherwise, the resulting fixed-arity method handle has the same
+ type and behavior of the current method handle,
+ except that `],
+					[/* reference */ 'r', `#isVarargsCollector()`, `isVarargsCollector`],
+					[/* text */ 't', `
+ will be false.
+ The fixed-arity method handle may (or may not) be the
+ a previous argument to `],
+					[/* inline code block */ 'i', `asVarargsCollector`],
+					[/* text */ 't', `.
+ `]
+				]],
+				[/* block */ 'b', `
+ Here is an example, of a list-making variable arity method handle:
+ `],
+				[/* block */ 'b', [
+					[/* code block */ 'c', [
+						[/* inline code block */ 'i', `MethodHandle asListVar = publicLookup()
+  .findStatic(Arrays.class, "asList", methodType(List.class, Object[].class))
+  .asVarargsCollector(Object[].class);
+MethodHandle asListFix = asListVar.asFixedArity();
+assertEquals("[1]", asListVar.invoke(1).toString());
+Exception caught = null;
+try { asListFix.invoke((Object)1); }
+catch (Exception ex) { caught = ex; }
+assert(caught instanceof ClassCastException);
+assertEquals("[two, too]", asListVar.invoke("two", "too").toString());
+try { asListFix.invoke("two", "too"); }
+catch (Exception ex) { caught = ex; }
+assert(caught instanceof WrongMethodTypeException);
+Object[] argv = { "three", "thee", "tee" };
+assertEquals("[three, thee, tee]", asListVar.invoke(argv).toString());
+assertEquals("[three, thee, tee]", asListFix.invoke(argv).toString());
+assertEquals(1, ((List) asListVar.invoke((Object)argv)).size());
+assertEquals("[three, thee, tee]", asListFix.invoke((Object)argv).toString());`]
+					]]
+				]],
+				[/* block */ 'b', '']
 			],
 			/* parameters */ UDF,
 			/* throws */ UDF,
 			[/* return description */
-				[/* text */ 't', `An `],
-				[/* reference */ 'r', `java.util.Optional`],
-				[/* text */ 't', ` containing the resulting nominal descriptor,
- or an empty `],
-				[/* reference */ 'r', `java.util.Optional`],
-				[/* text */ 't', ` if one cannot be constructed.`]
+				[/* text */ 't', `a new method handle which accepts only a fixed number of arguments`]
+			]
+		]],
+		[/* method */ 'asSpreader(int,java.lang.Class,int)', [
+			[/* method description */
+				[/* text */ 't', `Makes an `],
+				[/* text */ 't', `array-spreading`],
+				[/* text */ 't', ` method handle, which accepts an array argument at a given position and spreads
+ its elements as positional arguments in place of the array. The new method handle adapts, as its `],
+				[/* text */ 't', `target`],
+				[/* text */ 't', `,
+ the current method handle. The type of the adapter will be the same as the type of the target, except that the
+ `],
+				[/* inline code block */ 'i', `arrayLength`],
+				[/* text */ 't', ` parameters of the target's type, starting at the zero-based position `],
+				[/* inline code block */ 'i', `spreadArgPos`],
+				[/* text */ 't', `,
+ are replaced by a single array parameter of type `],
+				[/* inline code block */ 'i', `arrayType`],
+				[/* text */ 't', `.
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', `
+ This method behaves very much like `],
+					[/* reference */ 'r', `#asSpreader(java.lang.Class,int)`, `asSpreader(Class, int)`],
+					[/* text */ 't', `, but accepts an additional `],
+					[/* inline code block */ 'i', `spreadArgPos`],
+					[/* text */ 't', `
+ argument to indicate at which position in the parameter list the spreading should take place.`]
+				]]
+			],
+			[/* parameters */
+				[/* parameter */ 'spreadArgPos', [/* parameter description */
+					[/* text */ 't', `the position (zero-based index) in the argument list at which spreading should start.`]
+				]],
+				[/* parameter */ 'arrayType', [/* parameter description */
+					[/* text */ 't', `usually `],
+					[/* inline code block */ 'i', `Object[]`],
+					[/* text */ 't', `, the type of the array argument from which to extract the spread arguments`]
+				]],
+				[/* parameter */ 'arrayLength', [/* parameter description */
+					[/* text */ 't', `the number of arguments to spread from an incoming array argument`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
+					[/* text */ 't', `if `],
+					[/* inline code block */ 'i', `arrayType`],
+					[/* text */ 't', ` is a null reference`]
+				]],
+				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
+					[/* text */ 't', `if `],
+					[/* inline code block */ 'i', `arrayType`],
+					[/* text */ 't', ` is not an array type,
+         or if target does not have at least
+         `],
+					[/* inline code block */ 'i', `arrayLength`],
+					[/* text */ 't', ` parameter types,
+         or if `],
+					[/* inline code block */ 'i', `arrayLength`],
+					[/* text */ 't', ` is negative,
+         or if `],
+					[/* inline code block */ 'i', `spreadArgPos`],
+					[/* text */ 't', ` has an illegal value (negative, or together with arrayLength exceeding the
+         number of arguments),
+         or if the resulting method handle's type would have
+         `],
+					[/* reference */ 'r', `.MethodHandle#maxarity`]
+				]],
+				[/* throw */ 'java.lang.invoke.WrongMethodTypeException', [/* throw description */
+					[/* text */ 't', `if the implied `],
+					[/* inline code block */ 'i', `asType`],
+					[/* text */ 't', ` call fails`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `a new method handle which spreads an array argument at a given position,
+         before calling the original method handle`]
+			]
+		]],
+		[/* method */ 'asSpreader(java.lang.Class,int)', [
+			[/* method description */
+				[/* text */ 't', `Makes an `],
+				[/* text */ 't', `array-spreading`],
+				[/* text */ 't', ` method handle, which accepts a trailing array argument
+ and spreads its elements as positional arguments.
+ The new method handle adapts, as its `],
+				[/* text */ 't', `target`],
+				[/* text */ 't', `,
+ the current method handle.  The type of the adapter will be
+ the same as the type of the target, except that the final
+ `],
+				[/* inline code block */ 'i', `arrayLength`],
+				[/* text */ 't', ` parameters of the target's type are replaced
+ by a single array parameter of type `],
+				[/* inline code block */ 'i', `arrayType`],
+				[/* text */ 't', `.
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', `
+ If the array element type differs from any of the corresponding
+ argument types on the original target,
+ the original target is adapted to take the array elements directly,
+ as if by a call to `],
+					[/* reference */ 'r', `#asType(java.lang.invoke.MethodType)`, `asType`],
+					[/* text */ 't', `.
+ `]
+				]],
+				[/* block */ 'b', `
+ When called, the adapter replaces a trailing array argument
+ by the array's elements, each as its own argument to the target.
+ (The order of the arguments is preserved.)
+ They are converted pairwise by casting and/or unboxing
+ to the types of the trailing parameters of the target.
+ Finally the target is called.
+ What the target eventually returns is returned unchanged by the adapter.
+ `],
+				[/* block */ 'b', `
+ Before calling the target, the adapter verifies that the array
+ contains exactly enough elements to provide a correct argument count
+ to the target method handle.
+ (The array may also be null when zero elements are required.)
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', `
+ When the adapter is called, the length of the supplied `],
+					[/* inline code block */ 'i', `array`],
+					[/* text */ 't', `
+ argument is queried as if by `],
+					[/* inline code block */ 'i', `array.length`],
+					[/* text */ 't', ` or `],
+					[/* inline code block */ 'i', `arraylength`],
+					[/* text */ 't', `
+ bytecode. If the adapter accepts a zero-length trailing array argument,
+ the supplied `],
+					[/* inline code block */ 'i', `array`],
+					[/* text */ 't', ` argument can either be a zero-length array or
+ `],
+					[/* inline code block */ 'i', `null`],
+					[/* text */ 't', `; otherwise, the adapter will throw a `],
+					[/* inline code block */ 'i', `NullPointerException`],
+					[/* text */ 't', `
+ if the array is `],
+					[/* inline code block */ 'i', `null`],
+					[/* text */ 't', ` and throw an `],
+					[/* reference */ 'r', `java.lang.IllegalArgumentException`],
+					[/* text */ 't', `
+ if the array does not have the correct number of elements.
+ `]
+				]],
+				[/* block */ 'b', `
+ Here are some simple examples of array-spreading method handles:
+ `],
+				[/* block */ 'b', [
+					[/* code block */ 'c', [
+						[/* inline code block */ 'i', `MethodHandle equals = publicLookup()
+  .findVirtual(String.class, "equals", methodType(boolean.class, Object.class));
+assert( (boolean) equals.invokeExact("me", (Object)"me"));
+assert(!(boolean) equals.invokeExact("me", (Object)"thee"));
+// spread both arguments from a 2-array:
+MethodHandle eq2 = equals.asSpreader(Object[].class, 2);
+assert( (boolean) eq2.invokeExact(new Object[]{ "me", "me" }));
+assert(!(boolean) eq2.invokeExact(new Object[]{ "me", "thee" }));
+// try to spread from anything but a 2-array:
+for (int n = 0; n <= 10; n++) {
+  Object[] badArityArgs = (n == 2 ? new Object[0] : new Object[n]);
+  try { assert((boolean) eq2.invokeExact(badArityArgs) && false); }
+  catch (IllegalArgumentException ex) { } // OK
+}
+// spread both arguments from a String array:
+MethodHandle eq2s = equals.asSpreader(String[].class, 2);
+assert( (boolean) eq2s.invokeExact(new String[]{ "me", "me" }));
+assert(!(boolean) eq2s.invokeExact(new String[]{ "me", "thee" }));
+// spread second arguments from a 1-array:
+MethodHandle eq1 = equals.asSpreader(Object[].class, 1);
+assert( (boolean) eq1.invokeExact("me", new Object[]{ "me" }));
+assert(!(boolean) eq1.invokeExact("me", new Object[]{ "thee" }));
+// spread no arguments from a 0-array or null:
+MethodHandle eq0 = equals.asSpreader(Object[].class, 0);
+assert( (boolean) eq0.invokeExact("me", (Object)"me", new Object[0]));
+assert(!(boolean) eq0.invokeExact("me", (Object)"thee", (Object[])null));
+// asSpreader and asCollector are approximate inverses:
+for (int n = 0; n <= 2; n++) {
+    for (Class<?> a : new Class<?>[]{Object[].class, String[].class, CharSequence[].class}) {
+        MethodHandle equals2 = equals.asSpreader(a, n).asCollector(a, n);
+        assert( (boolean) equals2.invokeWithArguments("me", "me"));
+        assert(!(boolean) equals2.invokeWithArguments("me", "thee"));
+    }
+}
+MethodHandle caToString = publicLookup()
+  .findStatic(Arrays.class, "toString", methodType(String.class, char[].class));
+assertEquals("[A, B, C]", (String) caToString.invokeExact("ABC".toCharArray()));
+MethodHandle caString3 = caToString.asCollector(char[].class, 3);
+assertEquals("[A, B, C]", (String) caString3.invokeExact('A', 'B', 'C'));
+MethodHandle caToString2 = caString3.asSpreader(char[].class, 2);
+assertEquals("[A, B, C]", (String) caToString2.invokeExact('A', "BC".toCharArray()));`]
+					]]
+				]],
+				[/* block */ 'b', '']
+			],
+			[/* parameters */
+				[/* parameter */ 'arrayType', [/* parameter description */
+					[/* text */ 't', `usually `],
+					[/* inline code block */ 'i', `Object[]`],
+					[/* text */ 't', `, the type of the array argument from which to extract the spread arguments`]
+				]],
+				[/* parameter */ 'arrayLength', [/* parameter description */
+					[/* text */ 't', `the number of arguments to spread from an incoming array argument`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
+					[/* text */ 't', `if `],
+					[/* inline code block */ 'i', `arrayType`],
+					[/* text */ 't', ` is a null reference`]
+				]],
+				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
+					[/* text */ 't', `if `],
+					[/* inline code block */ 'i', `arrayType`],
+					[/* text */ 't', ` is not an array type,
+         or if target does not have at least
+         `],
+					[/* inline code block */ 'i', `arrayLength`],
+					[/* text */ 't', ` parameter types,
+         or if `],
+					[/* inline code block */ 'i', `arrayLength`],
+					[/* text */ 't', ` is negative,
+         or if the resulting method handle's type would have
+         `],
+					[/* reference */ 'r', `.MethodHandle#maxarity`]
+				]],
+				[/* throw */ 'java.lang.invoke.WrongMethodTypeException', [/* throw description */
+					[/* text */ 't', `if the implied `],
+					[/* inline code block */ 'i', `asType`],
+					[/* text */ 't', ` call fails`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `a new method handle which spreads its final array argument,
+         before calling the original method handle`]
 			]
 		]],
 		[/* method */ 'asType(java.lang.invoke.MethodType)', [
@@ -1196,6 +1725,394 @@ mh.invokeExact(System.out, "Hello, world.");
 				[/* text */ 't', ` after performing
            any necessary argument conversions, and arranges for any
            necessary return value conversions`]
+			]
+		]],
+		[/* method */ 'asVarargsCollector(java.lang.Class)', [
+			[/* method description */
+				[/* text */ 't', `Makes a `],
+				[/* text */ 't', `variable arity`],
+				[/* text */ 't', ` adapter which is able to accept
+ any number of trailing positional arguments and collect them
+ into an array argument.
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', `
+ The type and behavior of the adapter will be the same as
+ the type and behavior of the target, except that certain
+ `],
+					[/* inline code block */ 'i', `invoke`],
+					[/* text */ 't', ` and `],
+					[/* inline code block */ 'i', `asType`],
+					[/* text */ 't', ` requests can lead to
+ trailing positional arguments being collected into target's
+ trailing parameter.
+ Also, the
+ `],
+					[/* reference */ 'r', `.MethodType#lastParameterType()`],
+					[/* text */ 't', `
+ of the adapter will be
+ `],
+					[/* inline code block */ 'i', `arrayType`],
+					[/* text */ 't', `, even if the target has a different
+ last parameter type.
+ `]
+				]],
+				[/* block */ 'b', [
+					[/* text */ 't', `
+ This transformation may return `],
+					[/* inline code block */ 'i', `this`],
+					[/* text */ 't', ` if the method handle is
+ already of variable arity and its trailing parameter type
+ is identical to `],
+					[/* inline code block */ 'i', `arrayType`],
+					[/* text */ 't', `.
+ `]
+				]],
+				[/* block */ 'b', [
+					[/* text */ 't', `
+ When called with `],
+					[/* reference */ 'r', `#invokeExact(java.lang.Object...)`, `invokeExact`],
+					[/* text */ 't', `, the adapter invokes
+ the target with no argument changes.
+ (`],
+					[/* text */ 't', `Note:`],
+					[/* text */ 't', ` This behavior is different from a
+ `],
+					[/* reference */ 'r', `#asCollector(java.lang.Class,int)`, `fixed arity collector`],
+					[/* text */ 't', `,
+ since it accepts a whole array of indeterminate length,
+ rather than a fixed number of arguments.)
+ `]
+				]],
+				[/* block */ 'b', [
+					[/* text */ 't', `
+ When called with plain, inexact `],
+					[/* reference */ 'r', `#invoke(java.lang.Object...)`, `invoke`],
+					[/* text */ 't', `, if the caller
+ type is the same as the adapter, the adapter invokes the target as with
+ `],
+					[/* inline code block */ 'i', `invokeExact`],
+					[/* text */ 't', `.
+ (This is the normal behavior for `],
+					[/* inline code block */ 'i', `invoke`],
+					[/* text */ 't', ` when types match.)
+ `]
+				]],
+				[/* block */ 'b', [
+					[/* text */ 't', `
+ Otherwise, if the caller and adapter arity are the same, and the
+ trailing parameter type of the caller is a reference type identical to
+ or assignable to the trailing parameter type of the adapter,
+ the arguments and return values are converted pairwise,
+ as if by `],
+					[/* reference */ 'r', `#asType(java.lang.invoke.MethodType)`, `asType`],
+					[/* text */ 't', ` on a fixed arity
+ method handle.
+ `]
+				]],
+				[/* block */ 'b', [
+					[/* text */ 't', `
+ Otherwise, the arities differ, or the adapter's trailing parameter
+ type is not assignable from the corresponding caller type.
+ In this case, the adapter replaces all trailing arguments from
+ the original trailing argument position onward, by
+ a new array of type `],
+					[/* inline code block */ 'i', `arrayType`],
+					[/* text */ 't', `, whose elements
+ comprise (in order) the replaced arguments.
+ `]
+				]],
+				[/* block */ 'b', [
+					[/* text */ 't', `
+ The caller type must provides as least enough arguments,
+ and of the correct type, to satisfy the target's requirement for
+ positional arguments before the trailing array argument.
+ Thus, the caller must supply, at a minimum, `],
+					[/* inline code block */ 'i', `N-1`],
+					[/* text */ 't', ` arguments,
+ where `],
+					[/* inline code block */ 'i', `N`],
+					[/* text */ 't', ` is the arity of the target.
+ Also, there must exist conversions from the incoming arguments
+ to the target's arguments.
+ As with other uses of plain `],
+					[/* inline code block */ 'i', `invoke`],
+					[/* text */ 't', `, if these basic
+ requirements are not fulfilled, a `],
+					[/* inline code block */ 'i', `WrongMethodTypeException`],
+					[/* text */ 't', `
+ may be thrown.
+ `]
+				]],
+				[/* block */ 'b', `
+ In all cases, what the target eventually returns is returned unchanged by the adapter.
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', `
+ In the final case, it is exactly as if the target method handle were
+ temporarily adapted with a `],
+					[/* reference */ 'r', `#asCollector(java.lang.Class,int)`, `fixed arity collector`],
+					[/* text */ 't', `
+ to the arity required by the caller type.
+ (As with `],
+					[/* inline code block */ 'i', `asCollector`],
+					[/* text */ 't', `, if the array length is zero,
+ a shared constant may be used instead of a new array.
+ If the implied call to `],
+					[/* inline code block */ 'i', `asCollector`],
+					[/* text */ 't', ` would throw
+ an `],
+					[/* inline code block */ 'i', `IllegalArgumentException`],
+					[/* text */ 't', ` or `],
+					[/* inline code block */ 'i', `WrongMethodTypeException`],
+					[/* text */ 't', `,
+ the call to the variable arity adapter must throw
+ `],
+					[/* inline code block */ 'i', `WrongMethodTypeException`],
+					[/* text */ 't', `.)
+ `]
+				]],
+				[/* block */ 'b', [
+					[/* text */ 't', `
+ The behavior of `],
+					[/* reference */ 'r', `#asType(java.lang.invoke.MethodType)`, `asType`],
+					[/* text */ 't', ` is also specialized for
+ variable arity adapters, to maintain the invariant that
+ plain, inexact `],
+					[/* inline code block */ 'i', `invoke`],
+					[/* text */ 't', ` is always equivalent to an `],
+					[/* inline code block */ 'i', `asType`],
+					[/* text */ 't', `
+ call to adjust the target type, followed by `],
+					[/* inline code block */ 'i', `invokeExact`],
+					[/* text */ 't', `.
+ Therefore, a variable arity adapter responds
+ to an `],
+					[/* inline code block */ 'i', `asType`],
+					[/* text */ 't', ` request by building a fixed arity collector,
+ if and only if the adapter and requested type differ either
+ in arity or trailing argument type.
+ The resulting fixed arity collector has its type further adjusted
+ (if necessary) to the requested type by pairwise conversion,
+ as if by another application of `],
+					[/* inline code block */ 'i', `asType`],
+					[/* text */ 't', `.
+ `]
+				]],
+				[/* block */ 'b', [
+					[/* text */ 't', `
+ When a method handle is obtained by executing an `],
+					[/* inline code block */ 'i', `ldc`],
+					[/* text */ 't', ` instruction
+ of a `],
+					[/* inline code block */ 'i', `CONSTANT_MethodHandle`],
+					[/* text */ 't', ` constant, and the target method is marked
+ as a variable arity method (with the modifier bit `],
+					[/* inline code block */ 'i', `0x0080`],
+					[/* text */ 't', `),
+ the method handle will accept multiple arities, as if the method handle
+ constant were created by means of a call to `],
+					[/* inline code block */ 'i', `asVarargsCollector`],
+					[/* text */ 't', `.
+ `]
+				]],
+				[/* block */ 'b', [
+					[/* text */ 't', `
+ In order to create a collecting adapter which collects a predetermined
+ number of arguments, and whose type reflects this predetermined number,
+ use `],
+					[/* reference */ 'r', `#asCollector(java.lang.Class,int)`, `asCollector`],
+					[/* text */ 't', ` instead.
+ `]
+				]],
+				[/* block */ 'b', [
+					[/* text */ 't', `
+ No method handle transformations produce new method handles with
+ variable arity, unless they are documented as doing so.
+ Therefore, besides `],
+					[/* inline code block */ 'i', `asVarargsCollector`],
+					[/* text */ 't', ` and `],
+					[/* inline code block */ 'i', `withVarargs`],
+					[/* text */ 't', `,
+ all methods in `],
+					[/* inline code block */ 'i', `MethodHandle`],
+					[/* text */ 't', ` and `],
+					[/* inline code block */ 'i', `MethodHandles`],
+					[/* text */ 't', `
+ will return a method handle with fixed arity,
+ except in the cases where they are specified to return their original
+ operand (e.g., `],
+					[/* inline code block */ 'i', `asType`],
+					[/* text */ 't', ` of the method handle's own type).
+ `]
+				]],
+				[/* block */ 'b', [
+					[/* text */ 't', `
+ Calling `],
+					[/* inline code block */ 'i', `asVarargsCollector`],
+					[/* text */ 't', ` on a method handle which is already
+ of variable arity will produce a method handle with the same type and behavior.
+ It may (or may not) return the original variable arity method handle.
+ `]
+				]],
+				[/* block */ 'b', `
+ Here is an example, of a list-making variable arity method handle:
+ `],
+				[/* block */ 'b', [
+					[/* code block */ 'c', [
+						[/* inline code block */ 'i', `MethodHandle deepToString = publicLookup()
+  .findStatic(Arrays.class, "deepToString", methodType(String.class, Object[].class));
+MethodHandle ts1 = deepToString.asVarargsCollector(Object[].class);
+assertEquals("[won]",   (String) ts1.invokeExact(    new Object[]{"won"}));
+assertEquals("[won]",   (String) ts1.invoke(         new Object[]{"won"}));
+assertEquals("[won]",   (String) ts1.invoke(                      "won" ));
+assertEquals("[[won]]", (String) ts1.invoke((Object) new Object[]{"won"}));
+// findStatic of Arrays.asList(...) produces a variable arity method handle:
+MethodHandle asList = publicLookup()
+  .findStatic(Arrays.class, "asList", methodType(List.class, Object[].class));
+assertEquals(methodType(List.class, Object[].class), asList.type());
+assert(asList.isVarargsCollector());
+assertEquals("[]", asList.invoke().toString());
+assertEquals("[1]", asList.invoke(1).toString());
+assertEquals("[two, too]", asList.invoke("two", "too").toString());
+String[] argv = { "three", "thee", "tee" };
+assertEquals("[three, thee, tee]", asList.invoke(argv).toString());
+assertEquals("[three, thee, tee]", asList.invoke((Object[])argv).toString());
+List ls = (List) asList.invoke((Object)argv);
+assertEquals(1, ls.size());
+assertEquals("[three, thee, tee]", Arrays.toString((Object[])ls.get(0)));`]
+					]]
+				]],
+				[/* block */ 'b', ''],
+				[/* block */ 'b', `Discussion:`]
+			],
+			[/* parameters */
+				[/* parameter */ 'arrayType', [/* parameter description */
+					[/* text */ 't', `often `],
+					[/* inline code block */ 'i', `Object[]`],
+					[/* text */ 't', `, the type of the array argument which will collect the arguments`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
+					[/* text */ 't', `if `],
+					[/* inline code block */ 'i', `arrayType`],
+					[/* text */ 't', ` is a null reference`]
+				]],
+				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
+					[/* text */ 't', `if `],
+					[/* inline code block */ 'i', `arrayType`],
+					[/* text */ 't', ` is not an array type
+         or `],
+					[/* inline code block */ 'i', `arrayType`],
+					[/* text */ 't', ` is not assignable to this method handle's trailing parameter type`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `a new method handle which can collect any number of trailing arguments
+         into an array, before calling the original method handle`]
+			]
+		]],
+		[/* method */ 'bindTo(java.lang.Object)', [
+			[/* method description */
+				[/* text */ 't', `Binds a value `],
+				[/* inline code block */ 'i', `x`],
+				[/* text */ 't', ` to the first argument of a method handle, without invoking it.
+ The new method handle adapts, as its `],
+				[/* text */ 't', `target`],
+				[/* text */ 't', `,
+ the current method handle by binding it to the given argument.
+ The type of the bound handle will be
+ the same as the type of the target, except that a single leading
+ reference parameter will be omitted.
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', `
+ When called, the bound handle inserts the given value `],
+					[/* inline code block */ 'i', `x`],
+					[/* text */ 't', `
+ as a new leading argument to the target.  The other arguments are
+ also passed unchanged.
+ What the target eventually returns is returned unchanged by the bound handle.
+ `]
+				]],
+				[/* block */ 'b', [
+					[/* text */ 't', `
+ The reference `],
+					[/* inline code block */ 'i', `x`],
+					[/* text */ 't', ` must be convertible to the first parameter
+ type of the target.
+ `]
+				]],
+				[/* block */ 'b', `Note:`],
+				[/* block */ 'b', [
+					[/* text */ 't', `Note:`],
+					[/* text */ 't', ` The resulting adapter is never a `],
+					[/* reference */ 'r', `#asVarargsCollector(java.lang.Class)`, `variable-arity method handle`],
+					[/* text */ 't', `, even if the original target method handle was.`]
+				]]
+			],
+			[/* parameters */
+				[/* parameter */ 'x', [/* parameter description */
+					[/* text */ 't', `the value to bind to the first argument of the target`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
+					[/* text */ 't', `if the target does not have a
+         leading parameter type that is a reference type`]
+				]],
+				[/* throw */ 'java.lang.ClassCastException', [/* throw description */
+					[/* text */ 't', `if `],
+					[/* inline code block */ 'i', `x`],
+					[/* text */ 't', ` cannot be converted
+         to the leading parameter type of the target`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `a new method handle which prepends the given value to the incoming
+         argument list, before calling the original method handle`]
+			]
+		]],
+		[/* method */ 'withVarargs(boolean)', [
+			[/* method description */
+				[/* text */ 't', `Adapts this method handle to be `],
+				[/* reference */ 'r', `#asVarargsCollector(java.lang.Class)`, `variable arity`],
+				[/* text */ 't', `
+ if the boolean flag is true, else `],
+				[/* reference */ 'r', `#asFixedArity()`, `fixed arity`],
+				[/* text */ 't', `.
+ If the method handle is already of the proper arity mode, it is returned
+ unchanged.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'makeVarargs', [/* parameter description */
+					[/* text */ 't', `true if the return method handle should have variable arity behavior`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
+					[/* text */ 't', `if `],
+					[/* inline code block */ 'i', `makeVarargs`],
+					[/* text */ 't', ` is true and
+         this method handle does not have a trailing array parameter`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `a method handle of the same type, with possibly adjusted variable arity behavior`]
+			]
+		]],
+		[/* method */ 'type()', [
+			[/* method description */
+				[/* text */ 't', `Reports the type of this method handle.
+ Every invocation of this method handle via `],
+				[/* inline code block */ 'i', `invokeExact`],
+				[/* text */ 't', ` must exactly match this type.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the method handle type`]
 			]
 		]],
 		[/* method */ 'invokeWithArguments(java.lang.Object...)', [
@@ -1513,961 +2430,44 @@ mh.invokeExact(System.out, "Hello, world.");
 				[/* text */ 't', `the result returned by the target`]
 			]
 		]],
-		[/* method */ 'asSpreader(int,java.lang.Class,int)', [
+		[/* method */ 'toString()', [
 			[/* method description */
-				[/* text */ 't', `Makes an `],
-				[/* text */ 't', `array-spreading`],
-				[/* text */ 't', ` method handle, which accepts an array argument at a given position and spreads
- its elements as positional arguments in place of the array. The new method handle adapts, as its `],
-				[/* text */ 't', `target`],
-				[/* text */ 't', `,
- the current method handle. The type of the adapter will be the same as the type of the target, except that the
- `],
-				[/* inline code block */ 'i', `arrayLength`],
-				[/* text */ 't', ` parameters of the target's type, starting at the zero-based position `],
-				[/* inline code block */ 'i', `spreadArgPos`],
-				[/* text */ 't', `,
- are replaced by a single array parameter of type `],
-				[/* inline code block */ 'i', `arrayType`],
-				[/* text */ 't', `.
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', `
- This method behaves very much like `],
-					[/* reference */ 'r', `#asSpreader(java.lang.Class,int)`, `asSpreader(Class, int)`],
-					[/* text */ 't', `, but accepts an additional `],
-					[/* inline code block */ 'i', `spreadArgPos`],
-					[/* text */ 't', `
- argument to indicate at which position in the parameter list the spreading should take place.`]
-				]]
-			],
-			[/* parameters */
-				[/* parameter */ 'spreadArgPos', [/* parameter description */
-					[/* text */ 't', `the position (zero-based index) in the argument list at which spreading should start.`]
-				]],
-				[/* parameter */ 'arrayType', [/* parameter description */
-					[/* text */ 't', `usually `],
-					[/* inline code block */ 'i', `Object[]`],
-					[/* text */ 't', `, the type of the array argument from which to extract the spread arguments`]
-				]],
-				[/* parameter */ 'arrayLength', [/* parameter description */
-					[/* text */ 't', `the number of arguments to spread from an incoming array argument`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
-					[/* text */ 't', `if `],
-					[/* inline code block */ 'i', `arrayType`],
-					[/* text */ 't', ` is a null reference`]
-				]],
-				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
-					[/* text */ 't', `if `],
-					[/* inline code block */ 'i', `arrayType`],
-					[/* text */ 't', ` is not an array type,
-         or if target does not have at least
-         `],
-					[/* inline code block */ 'i', `arrayLength`],
-					[/* text */ 't', ` parameter types,
-         or if `],
-					[/* inline code block */ 'i', `arrayLength`],
-					[/* text */ 't', ` is negative,
-         or if `],
-					[/* inline code block */ 'i', `spreadArgPos`],
-					[/* text */ 't', ` has an illegal value (negative, or together with arrayLength exceeding the
-         number of arguments),
-         or if the resulting method handle's type would have
-         `],
-					[/* reference */ 'r', `.MethodHandle#maxarity`]
-				]],
-				[/* throw */ 'java.lang.invoke.WrongMethodTypeException', [/* throw description */
-					[/* text */ 't', `if the implied `],
-					[/* inline code block */ 'i', `asType`],
-					[/* text */ 't', ` call fails`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `a new method handle which spreads an array argument at a given position,
-         before calling the original method handle`]
-			]
-		]],
-		[/* method */ 'asSpreader(java.lang.Class,int)', [
-			[/* method description */
-				[/* text */ 't', `Makes an `],
-				[/* text */ 't', `array-spreading`],
-				[/* text */ 't', ` method handle, which accepts a trailing array argument
- and spreads its elements as positional arguments.
- The new method handle adapts, as its `],
-				[/* text */ 't', `target`],
-				[/* text */ 't', `,
- the current method handle.  The type of the adapter will be
- the same as the type of the target, except that the final
- `],
-				[/* inline code block */ 'i', `arrayLength`],
-				[/* text */ 't', ` parameters of the target's type are replaced
- by a single array parameter of type `],
-				[/* inline code block */ 'i', `arrayType`],
-				[/* text */ 't', `.
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', `
- If the array element type differs from any of the corresponding
- argument types on the original target,
- the original target is adapted to take the array elements directly,
- as if by a call to `],
-					[/* reference */ 'r', `#asType(java.lang.invoke.MethodType)`, `asType`],
-					[/* text */ 't', `.
- `]
-				]],
-				[/* block */ 'b', `
- When called, the adapter replaces a trailing array argument
- by the array's elements, each as its own argument to the target.
- (The order of the arguments is preserved.)
- They are converted pairwise by casting and/or unboxing
- to the types of the trailing parameters of the target.
- Finally the target is called.
- What the target eventually returns is returned unchanged by the adapter.
- `],
-				[/* block */ 'b', `
- Before calling the target, the adapter verifies that the array
- contains exactly enough elements to provide a correct argument count
- to the target method handle.
- (The array may also be null when zero elements are required.)
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', `
- When the adapter is called, the length of the supplied `],
-					[/* inline code block */ 'i', `array`],
-					[/* text */ 't', `
- argument is queried as if by `],
-					[/* inline code block */ 'i', `array.length`],
-					[/* text */ 't', ` or `],
-					[/* inline code block */ 'i', `arraylength`],
-					[/* text */ 't', `
- bytecode. If the adapter accepts a zero-length trailing array argument,
- the supplied `],
-					[/* inline code block */ 'i', `array`],
-					[/* text */ 't', ` argument can either be a zero-length array or
- `],
-					[/* inline code block */ 'i', `null`],
-					[/* text */ 't', `; otherwise, the adapter will throw a `],
-					[/* inline code block */ 'i', `NullPointerException`],
-					[/* text */ 't', `
- if the array is `],
-					[/* inline code block */ 'i', `null`],
-					[/* text */ 't', ` and throw an `],
-					[/* reference */ 'r', `java.lang.IllegalArgumentException`],
-					[/* text */ 't', `
- if the array does not have the correct number of elements.
- `]
-				]],
-				[/* block */ 'b', `
- Here are some simple examples of array-spreading method handles:
+				[/* text */ 't', `Returns a string representation of the method handle,
+ starting with the string `],
+				[/* inline code block */ 'i', `"MethodHandle"`],
+				[/* text */ 't', ` and
+ ending with the string representation of the method handle's type.
+ In other words, this method returns a string equal to the value of:
  `],
 				[/* block */ 'b', [
 					[/* code block */ 'c', [
-						[/* inline code block */ 'i', `MethodHandle equals = publicLookup()
-  .findVirtual(String.class, "equals", methodType(boolean.class, Object.class));
-assert( (boolean) equals.invokeExact("me", (Object)"me"));
-assert(!(boolean) equals.invokeExact("me", (Object)"thee"));
-// spread both arguments from a 2-array:
-MethodHandle eq2 = equals.asSpreader(Object[].class, 2);
-assert( (boolean) eq2.invokeExact(new Object[]{ "me", "me" }));
-assert(!(boolean) eq2.invokeExact(new Object[]{ "me", "thee" }));
-// try to spread from anything but a 2-array:
-for (int n = 0; n <= 10; n++) {
-  Object[] badArityArgs = (n == 2 ? new Object[0] : new Object[n]);
-  try { assert((boolean) eq2.invokeExact(badArityArgs) && false); }
-  catch (IllegalArgumentException ex) { } // OK
-}
-// spread both arguments from a String array:
-MethodHandle eq2s = equals.asSpreader(String[].class, 2);
-assert( (boolean) eq2s.invokeExact(new String[]{ "me", "me" }));
-assert(!(boolean) eq2s.invokeExact(new String[]{ "me", "thee" }));
-// spread second arguments from a 1-array:
-MethodHandle eq1 = equals.asSpreader(Object[].class, 1);
-assert( (boolean) eq1.invokeExact("me", new Object[]{ "me" }));
-assert(!(boolean) eq1.invokeExact("me", new Object[]{ "thee" }));
-// spread no arguments from a 0-array or null:
-MethodHandle eq0 = equals.asSpreader(Object[].class, 0);
-assert( (boolean) eq0.invokeExact("me", (Object)"me", new Object[0]));
-assert(!(boolean) eq0.invokeExact("me", (Object)"thee", (Object[])null));
-// asSpreader and asCollector are approximate inverses:
-for (int n = 0; n <= 2; n++) {
-    for (Class<?> a : new Class<?>[]{Object[].class, String[].class, CharSequence[].class}) {
-        MethodHandle equals2 = equals.asSpreader(a, n).asCollector(a, n);
-        assert( (boolean) equals2.invokeWithArguments("me", "me"));
-        assert(!(boolean) equals2.invokeWithArguments("me", "thee"));
-    }
-}
-MethodHandle caToString = publicLookup()
-  .findStatic(Arrays.class, "toString", methodType(String.class, char[].class));
-assertEquals("[A, B, C]", (String) caToString.invokeExact("ABC".toCharArray()));
-MethodHandle caString3 = caToString.asCollector(char[].class, 3);
-assertEquals("[A, B, C]", (String) caString3.invokeExact('A', 'B', 'C'));
-MethodHandle caToString2 = caString3.asSpreader(char[].class, 2);
-assertEquals("[A, B, C]", (String) caToString2.invokeExact('A', "BC".toCharArray()));`]
+						[/* inline code block */ 'i', `"MethodHandle" + type().toString()`]
 					]]
 				]],
-				[/* block */ 'b', '']
-			],
-			[/* parameters */
-				[/* parameter */ 'arrayType', [/* parameter description */
-					[/* text */ 't', `usually `],
-					[/* inline code block */ 'i', `Object[]`],
-					[/* text */ 't', `, the type of the array argument from which to extract the spread arguments`]
-				]],
-				[/* parameter */ 'arrayLength', [/* parameter description */
-					[/* text */ 't', `the number of arguments to spread from an incoming array argument`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
-					[/* text */ 't', `if `],
-					[/* inline code block */ 'i', `arrayType`],
-					[/* text */ 't', ` is a null reference`]
-				]],
-				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
-					[/* text */ 't', `if `],
-					[/* inline code block */ 'i', `arrayType`],
-					[/* text */ 't', ` is not an array type,
-         or if target does not have at least
-         `],
-					[/* inline code block */ 'i', `arrayLength`],
-					[/* text */ 't', ` parameter types,
-         or if `],
-					[/* inline code block */ 'i', `arrayLength`],
-					[/* text */ 't', ` is negative,
-         or if the resulting method handle's type would have
-         `],
-					[/* reference */ 'r', `.MethodHandle#maxarity`]
-				]],
-				[/* throw */ 'java.lang.invoke.WrongMethodTypeException', [/* throw description */
-					[/* text */ 't', `if the implied `],
-					[/* inline code block */ 'i', `asType`],
-					[/* text */ 't', ` call fails`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `a new method handle which spreads its final array argument,
-         before calling the original method handle`]
-			]
-		]],
-		[/* method */ 'isVarargsCollector()', [
-			[/* method description */
-				[/* text */ 't', `Determines if this method handle
- supports `],
-				[/* reference */ 'r', `#asVarargsCollector(java.lang.Class)`, `variable arity`],
-				[/* text */ 't', ` calls.
- Such method handles arise from the following sources:
- `],
-				[/* list */ 'l', [
-					[/* block */ 'b', [
-						[/* text */ 't', `a call to `],
-						[/* reference */ 'r', `#asVarargsCollector(java.lang.Class)`, `asVarargsCollector`]
-					]],
-					[/* block */ 'b', [
-						[/* text */ 't', `a call to a `],
-						[/* reference */ 'r', `java.lang.invoke.MethodHandles.Lookup`],
-						[/* text */ 't', `
-     which resolves to a variable arity Java method or constructor
- `]
-					]],
-					[/* block */ 'b', [
-						[/* text */ 't', `an `],
-						[/* inline code block */ 'i', `ldc`],
-						[/* text */ 't', ` instruction of a `],
-						[/* inline code block */ 'i', `CONSTANT_MethodHandle`],
-						[/* text */ 't', `
-     which resolves to a variable arity Java method or constructor
- `]
-					]]
-				]]
+				[/* block */ 'b', `Note:`]
 			],
 			/* parameters */ UDF,
 			/* throws */ UDF,
 			[/* return description */
-				[/* text */ 't', `true if this method handle accepts more than one arity of plain, inexact `],
-				[/* inline code block */ 'i', `invoke`],
-				[/* text */ 't', ` calls`]
+				[/* text */ 't', `a string representation of the method handle`]
 			]
 		]],
-		[/* method */ 'asVarargsCollector(java.lang.Class)', [
+		[/* method */ 'describeConstable()', [
 			[/* method description */
-				[/* text */ 't', `Makes a `],
-				[/* text */ 't', `variable arity`],
-				[/* text */ 't', ` adapter which is able to accept
- any number of trailing positional arguments and collect them
- into an array argument.
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', `
- The type and behavior of the adapter will be the same as
- the type and behavior of the target, except that certain
- `],
-					[/* inline code block */ 'i', `invoke`],
-					[/* text */ 't', ` and `],
-					[/* inline code block */ 'i', `asType`],
-					[/* text */ 't', ` requests can lead to
- trailing positional arguments being collected into target's
- trailing parameter.
- Also, the
- `],
-					[/* reference */ 'r', `.MethodType#lastParameterType()`],
-					[/* text */ 't', `
- of the adapter will be
- `],
-					[/* inline code block */ 'i', `arrayType`],
-					[/* text */ 't', `, even if the target has a different
- last parameter type.
- `]
-				]],
-				[/* block */ 'b', [
-					[/* text */ 't', `
- This transformation may return `],
-					[/* inline code block */ 'i', `this`],
-					[/* text */ 't', ` if the method handle is
- already of variable arity and its trailing parameter type
- is identical to `],
-					[/* inline code block */ 'i', `arrayType`],
-					[/* text */ 't', `.
- `]
-				]],
-				[/* block */ 'b', [
-					[/* text */ 't', `
- When called with `],
-					[/* reference */ 'r', `#invokeExact(java.lang.Object...)`, `invokeExact`],
-					[/* text */ 't', `, the adapter invokes
- the target with no argument changes.
- (`],
-					[/* text */ 't', `Note:`],
-					[/* text */ 't', ` This behavior is different from a
- `],
-					[/* reference */ 'r', `#asCollector(java.lang.Class,int)`, `fixed arity collector`],
-					[/* text */ 't', `,
- since it accepts a whole array of indeterminate length,
- rather than a fixed number of arguments.)
- `]
-				]],
-				[/* block */ 'b', [
-					[/* text */ 't', `
- When called with plain, inexact `],
-					[/* reference */ 'r', `#invoke(java.lang.Object...)`, `invoke`],
-					[/* text */ 't', `, if the caller
- type is the same as the adapter, the adapter invokes the target as with
- `],
-					[/* inline code block */ 'i', `invokeExact`],
-					[/* text */ 't', `.
- (This is the normal behavior for `],
-					[/* inline code block */ 'i', `invoke`],
-					[/* text */ 't', ` when types match.)
- `]
-				]],
-				[/* block */ 'b', [
-					[/* text */ 't', `
- Otherwise, if the caller and adapter arity are the same, and the
- trailing parameter type of the caller is a reference type identical to
- or assignable to the trailing parameter type of the adapter,
- the arguments and return values are converted pairwise,
- as if by `],
-					[/* reference */ 'r', `#asType(java.lang.invoke.MethodType)`, `asType`],
-					[/* text */ 't', ` on a fixed arity
- method handle.
- `]
-				]],
-				[/* block */ 'b', [
-					[/* text */ 't', `
- Otherwise, the arities differ, or the adapter's trailing parameter
- type is not assignable from the corresponding caller type.
- In this case, the adapter replaces all trailing arguments from
- the original trailing argument position onward, by
- a new array of type `],
-					[/* inline code block */ 'i', `arrayType`],
-					[/* text */ 't', `, whose elements
- comprise (in order) the replaced arguments.
- `]
-				]],
-				[/* block */ 'b', [
-					[/* text */ 't', `
- The caller type must provides as least enough arguments,
- and of the correct type, to satisfy the target's requirement for
- positional arguments before the trailing array argument.
- Thus, the caller must supply, at a minimum, `],
-					[/* inline code block */ 'i', `N-1`],
-					[/* text */ 't', ` arguments,
- where `],
-					[/* inline code block */ 'i', `N`],
-					[/* text */ 't', ` is the arity of the target.
- Also, there must exist conversions from the incoming arguments
- to the target's arguments.
- As with other uses of plain `],
-					[/* inline code block */ 'i', `invoke`],
-					[/* text */ 't', `, if these basic
- requirements are not fulfilled, a `],
-					[/* inline code block */ 'i', `WrongMethodTypeException`],
-					[/* text */ 't', `
- may be thrown.
- `]
-				]],
-				[/* block */ 'b', `
- In all cases, what the target eventually returns is returned unchanged by the adapter.
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', `
- In the final case, it is exactly as if the target method handle were
- temporarily adapted with a `],
-					[/* reference */ 'r', `#asCollector(java.lang.Class,int)`, `fixed arity collector`],
-					[/* text */ 't', `
- to the arity required by the caller type.
- (As with `],
-					[/* inline code block */ 'i', `asCollector`],
-					[/* text */ 't', `, if the array length is zero,
- a shared constant may be used instead of a new array.
- If the implied call to `],
-					[/* inline code block */ 'i', `asCollector`],
-					[/* text */ 't', ` would throw
- an `],
-					[/* inline code block */ 'i', `IllegalArgumentException`],
-					[/* text */ 't', ` or `],
-					[/* inline code block */ 'i', `WrongMethodTypeException`],
-					[/* text */ 't', `,
- the call to the variable arity adapter must throw
- `],
-					[/* inline code block */ 'i', `WrongMethodTypeException`],
-					[/* text */ 't', `.)
- `]
-				]],
-				[/* block */ 'b', [
-					[/* text */ 't', `
- The behavior of `],
-					[/* reference */ 'r', `#asType(java.lang.invoke.MethodType)`, `asType`],
-					[/* text */ 't', ` is also specialized for
- variable arity adapters, to maintain the invariant that
- plain, inexact `],
-					[/* inline code block */ 'i', `invoke`],
-					[/* text */ 't', ` is always equivalent to an `],
-					[/* inline code block */ 'i', `asType`],
-					[/* text */ 't', `
- call to adjust the target type, followed by `],
-					[/* inline code block */ 'i', `invokeExact`],
-					[/* text */ 't', `.
- Therefore, a variable arity adapter responds
- to an `],
-					[/* inline code block */ 'i', `asType`],
-					[/* text */ 't', ` request by building a fixed arity collector,
- if and only if the adapter and requested type differ either
- in arity or trailing argument type.
- The resulting fixed arity collector has its type further adjusted
- (if necessary) to the requested type by pairwise conversion,
- as if by another application of `],
-					[/* inline code block */ 'i', `asType`],
-					[/* text */ 't', `.
- `]
-				]],
-				[/* block */ 'b', [
-					[/* text */ 't', `
- When a method handle is obtained by executing an `],
-					[/* inline code block */ 'i', `ldc`],
-					[/* text */ 't', ` instruction
- of a `],
-					[/* inline code block */ 'i', `CONSTANT_MethodHandle`],
-					[/* text */ 't', ` constant, and the target method is marked
- as a variable arity method (with the modifier bit `],
-					[/* inline code block */ 'i', `0x0080`],
-					[/* text */ 't', `),
- the method handle will accept multiple arities, as if the method handle
- constant were created by means of a call to `],
-					[/* inline code block */ 'i', `asVarargsCollector`],
-					[/* text */ 't', `.
- `]
-				]],
-				[/* block */ 'b', [
-					[/* text */ 't', `
- In order to create a collecting adapter which collects a predetermined
- number of arguments, and whose type reflects this predetermined number,
- use `],
-					[/* reference */ 'r', `#asCollector(java.lang.Class,int)`, `asCollector`],
-					[/* text */ 't', ` instead.
- `]
-				]],
-				[/* block */ 'b', [
-					[/* text */ 't', `
- No method handle transformations produce new method handles with
- variable arity, unless they are documented as doing so.
- Therefore, besides `],
-					[/* inline code block */ 'i', `asVarargsCollector`],
-					[/* text */ 't', ` and `],
-					[/* inline code block */ 'i', `withVarargs`],
-					[/* text */ 't', `,
- all methods in `],
-					[/* inline code block */ 'i', `MethodHandle`],
-					[/* text */ 't', ` and `],
-					[/* inline code block */ 'i', `MethodHandles`],
-					[/* text */ 't', `
- will return a method handle with fixed arity,
- except in the cases where they are specified to return their original
- operand (e.g., `],
-					[/* inline code block */ 'i', `asType`],
-					[/* text */ 't', ` of the method handle's own type).
- `]
-				]],
-				[/* block */ 'b', [
-					[/* text */ 't', `
- Calling `],
-					[/* inline code block */ 'i', `asVarargsCollector`],
-					[/* text */ 't', ` on a method handle which is already
- of variable arity will produce a method handle with the same type and behavior.
- It may (or may not) return the original variable arity method handle.
- `]
-				]],
-				[/* block */ 'b', `
- Here is an example, of a list-making variable arity method handle:
- `],
-				[/* block */ 'b', [
-					[/* code block */ 'c', [
-						[/* inline code block */ 'i', `MethodHandle deepToString = publicLookup()
-  .findStatic(Arrays.class, "deepToString", methodType(String.class, Object[].class));
-MethodHandle ts1 = deepToString.asVarargsCollector(Object[].class);
-assertEquals("[won]",   (String) ts1.invokeExact(    new Object[]{"won"}));
-assertEquals("[won]",   (String) ts1.invoke(         new Object[]{"won"}));
-assertEquals("[won]",   (String) ts1.invoke(                      "won" ));
-assertEquals("[[won]]", (String) ts1.invoke((Object) new Object[]{"won"}));
-// findStatic of Arrays.asList(...) produces a variable arity method handle:
-MethodHandle asList = publicLookup()
-  .findStatic(Arrays.class, "asList", methodType(List.class, Object[].class));
-assertEquals(methodType(List.class, Object[].class), asList.type());
-assert(asList.isVarargsCollector());
-assertEquals("[]", asList.invoke().toString());
-assertEquals("[1]", asList.invoke(1).toString());
-assertEquals("[two, too]", asList.invoke("two", "too").toString());
-String[] argv = { "three", "thee", "tee" };
-assertEquals("[three, thee, tee]", asList.invoke(argv).toString());
-assertEquals("[three, thee, tee]", asList.invoke((Object[])argv).toString());
-List ls = (List) asList.invoke((Object)argv);
-assertEquals(1, ls.size());
-assertEquals("[three, thee, tee]", Arrays.toString((Object[])ls.get(0)));`]
-					]]
-				]],
-				[/* block */ 'b', ''],
-				[/* block */ 'b', `Discussion:`]
-			],
-			[/* parameters */
-				[/* parameter */ 'arrayType', [/* parameter description */
-					[/* text */ 't', `often `],
-					[/* inline code block */ 'i', `Object[]`],
-					[/* text */ 't', `, the type of the array argument which will collect the arguments`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
-					[/* text */ 't', `if `],
-					[/* inline code block */ 'i', `arrayType`],
-					[/* text */ 't', ` is a null reference`]
-				]],
-				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
-					[/* text */ 't', `if `],
-					[/* inline code block */ 'i', `arrayType`],
-					[/* text */ 't', ` is not an array type
-         or `],
-					[/* inline code block */ 'i', `arrayType`],
-					[/* text */ 't', ` is not assignable to this method handle's trailing parameter type`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `a new method handle which can collect any number of trailing arguments
-         into an array, before calling the original method handle`]
-			]
-		]],
-		[/* method */ 'asCollector(java.lang.Class,int)', [
-			[/* method description */
-				[/* text */ 't', `Makes an `],
-				[/* text */ 't', `array-collecting`],
-				[/* text */ 't', ` method handle, which accepts a given number of trailing
- positional arguments and collects them into an array argument.
- The new method handle adapts, as its `],
-				[/* text */ 't', `target`],
-				[/* text */ 't', `,
- the current method handle.  The type of the adapter will be
- the same as the type of the target, except that a single trailing
- parameter (usually of type `],
-				[/* inline code block */ 'i', `arrayType`],
-				[/* text */ 't', `) is replaced by
- `],
-				[/* inline code block */ 'i', `arrayLength`],
-				[/* text */ 't', ` parameters whose type is element type of `],
-				[/* inline code block */ 'i', `arrayType`],
-				[/* text */ 't', `.
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', `
- If the array type differs from the final argument type on the original target,
- the original target is adapted to take the array type directly,
- as if by a call to `],
-					[/* reference */ 'r', `#asType(java.lang.invoke.MethodType)`, `asType`],
-					[/* text */ 't', `.
- `]
-				]],
-				[/* block */ 'b', [
-					[/* text */ 't', `
- When called, the adapter replaces its trailing `],
-					[/* inline code block */ 'i', `arrayLength`],
-					[/* text */ 't', `
- arguments by a single new array of type `],
-					[/* inline code block */ 'i', `arrayType`],
-					[/* text */ 't', `, whose elements
- comprise (in order) the replaced arguments.
- Finally the target is called.
- What the target eventually returns is returned unchanged by the adapter.
- `]
-				]],
-				[/* block */ 'b', [
-					[/* text */ 't', `
- (The array may also be a shared constant when `],
-					[/* inline code block */ 'i', `arrayLength`],
-					[/* text */ 't', ` is zero.)
- `]
-				]],
-				[/* block */ 'b', [
-					[/* text */ 't', `
- (`],
-					[/* text */ 't', `Note:`],
-					[/* text */ 't', ` The `],
-					[/* inline code block */ 'i', `arrayType`],
-					[/* text */ 't', ` is often identical to the
- `],
-					[/* reference */ 'r', `.MethodType#lastParameterType()`],
-					[/* text */ 't', `
- of the original target.
- It is an explicit argument for symmetry with `],
-					[/* inline code block */ 'i', `asSpreader`],
-					[/* text */ 't', `, and also
- to allow the target to use a simple `],
-					[/* inline code block */ 'i', `Object`],
-					[/* text */ 't', ` as its last parameter type.)
- `]
-				]],
-				[/* block */ 'b', [
-					[/* text */ 't', `
- In order to create a collecting adapter which is not restricted to a particular
- number of collected arguments, use `],
-					[/* reference */ 'r', `#asVarargsCollector(java.lang.Class)`, `asVarargsCollector`],
-					[/* text */ 't', `
- or `],
-					[/* reference */ 'r', `#withVarargs(boolean)`, `withVarargs`],
-					[/* text */ 't', ` instead.
- `]
-				]],
-				[/* block */ 'b', `
- Here are some examples of array-collecting method handles:
- `],
-				[/* block */ 'b', [
-					[/* code block */ 'c', [
-						[/* inline code block */ 'i', `MethodHandle deepToString = publicLookup()
-  .findStatic(Arrays.class, "deepToString", methodType(String.class, Object[].class));
-assertEquals("[won]",   (String) deepToString.invokeExact(new Object[]{"won"}));
-MethodHandle ts1 = deepToString.asCollector(Object[].class, 1);
-assertEquals(methodType(String.class, Object.class), ts1.type());
-//assertEquals("[won]", (String) ts1.invokeExact(         new Object[]{"won"})); //FAIL
-assertEquals("[[won]]", (String) ts1.invokeExact((Object) new Object[]{"won"}));
-// arrayType can be a subtype of Object[]
-MethodHandle ts2 = deepToString.asCollector(String[].class, 2);
-assertEquals(methodType(String.class, String.class, String.class), ts2.type());
-assertEquals("[two, too]", (String) ts2.invokeExact("two", "too"));
-MethodHandle ts0 = deepToString.asCollector(Object[].class, 0);
-assertEquals("[]", (String) ts0.invokeExact());
-// collectors can be nested, Lisp-style
-MethodHandle ts22 = deepToString.asCollector(Object[].class, 3).asCollector(String[].class, 2);
-assertEquals("[A, B, [C, D]]", ((String) ts22.invokeExact((Object)'A', (Object)"B", "C", "D")));
-// arrayType can be any primitive array type
-MethodHandle bytesToString = publicLookup()
-  .findStatic(Arrays.class, "toString", methodType(String.class, byte[].class))
-  .asCollector(byte[].class, 3);
-assertEquals("[1, 2, 3]", (String) bytesToString.invokeExact((byte)1, (byte)2, (byte)3));
-MethodHandle longsToString = publicLookup()
-  .findStatic(Arrays.class, "toString", methodType(String.class, long[].class))
-  .asCollector(long[].class, 1);
-assertEquals("[123]", (String) longsToString.invokeExact((long)123));`]
-					]]
-				]],
-				[/* block */ 'b', ''],
-				[/* block */ 'b', [
-					[/* text */ 't', `Note:`],
-					[/* text */ 't', ` The resulting adapter is never a `],
-					[/* reference */ 'r', `#asVarargsCollector(java.lang.Class)`, `variable-arity method handle`],
-					[/* text */ 't', `, even if the original target method handle was.`]
-				]]
-			],
-			[/* parameters */
-				[/* parameter */ 'arrayType', [/* parameter description */
-					[/* text */ 't', `often `],
-					[/* inline code block */ 'i', `Object[]`],
-					[/* text */ 't', `, the type of the array argument which will collect the arguments`]
-				]],
-				[/* parameter */ 'arrayLength', [/* parameter description */
-					[/* text */ 't', `the number of arguments to collect into a new array argument`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
-					[/* text */ 't', `if `],
-					[/* inline code block */ 'i', `arrayType`],
-					[/* text */ 't', ` is a null reference`]
-				]],
-				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
-					[/* text */ 't', `if `],
-					[/* inline code block */ 'i', `arrayType`],
-					[/* text */ 't', ` is not an array type
-         or `],
-					[/* inline code block */ 'i', `arrayType`],
-					[/* text */ 't', ` is not assignable to this method handle's trailing parameter type,
-         or `],
-					[/* inline code block */ 'i', `arrayLength`],
-					[/* text */ 't', ` is not a legal array size,
-         or the resulting method handle's type would have
-         `],
-					[/* reference */ 'r', `.MethodHandle#maxarity`]
-				]],
-				[/* throw */ 'java.lang.invoke.WrongMethodTypeException', [/* throw description */
-					[/* text */ 't', `if the implied `],
-					[/* inline code block */ 'i', `asType`],
-					[/* text */ 't', ` call fails`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `a new method handle which collects some trailing argument
-         into an array, before calling the original method handle`]
-			]
-		]],
-		[/* method */ 'asCollector(int,java.lang.Class,int)', [
-			[/* method description */
-				[/* text */ 't', `Makes an `],
-				[/* text */ 't', `array-collecting`],
-				[/* text */ 't', ` method handle, which accepts a given number of positional arguments starting
- at a given position, and collects them into an array argument. The new method handle adapts, as its
- `],
-				[/* text */ 't', `target`],
-				[/* text */ 't', `, the current method handle. The type of the adapter will be the same as the type of the target,
- except that the parameter at the position indicated by `],
-				[/* inline code block */ 'i', `collectArgPos`],
-				[/* text */ 't', ` (usually of type `],
-				[/* inline code block */ 'i', `arrayType`],
-				[/* text */ 't', `)
- is replaced by `],
-				[/* inline code block */ 'i', `arrayLength`],
-				[/* text */ 't', ` parameters whose type is element type of `],
-				[/* inline code block */ 'i', `arrayType`],
-				[/* text */ 't', `.
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', `
- This method behaves very much like `],
-					[/* reference */ 'r', `#asCollector(java.lang.Class,int)`, `asCollector(Class, int)`],
-					[/* text */ 't', `, but differs in that its `],
-					[/* inline code block */ 'i', `collectArgPos`],
-					[/* text */ 't', ` argument indicates at which position in the parameter list arguments should be collected. This
- index is zero-based.`]
-				]]
-			],
-			[/* parameters */
-				[/* parameter */ 'collectArgPos', [/* parameter description */
-					[/* text */ 't', `the zero-based position in the parameter list at which to start collecting.`]
-				]],
-				[/* parameter */ 'arrayType', [/* parameter description */
-					[/* text */ 't', `often `],
-					[/* inline code block */ 'i', `Object[]`],
-					[/* text */ 't', `, the type of the array argument which will collect the arguments`]
-				]],
-				[/* parameter */ 'arrayLength', [/* parameter description */
-					[/* text */ 't', `the number of arguments to collect into a new array argument`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
-					[/* text */ 't', `if `],
-					[/* inline code block */ 'i', `arrayType`],
-					[/* text */ 't', ` is a null reference`]
-				]],
-				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
-					[/* text */ 't', `if `],
-					[/* inline code block */ 'i', `arrayType`],
-					[/* text */ 't', ` is not an array type
-         or `],
-					[/* inline code block */ 'i', `arrayType`],
-					[/* text */ 't', ` is not assignable to this method handle's array parameter type,
-         or `],
-					[/* inline code block */ 'i', `arrayLength`],
-					[/* text */ 't', ` is not a legal array size,
-         or `],
-					[/* inline code block */ 'i', `collectArgPos`],
-					[/* text */ 't', ` has an illegal value (negative, or greater than the number of arguments),
-         or the resulting method handle's type would have
-         `],
-					[/* reference */ 'r', `.MethodHandle#maxarity`]
-				]],
-				[/* throw */ 'java.lang.invoke.WrongMethodTypeException', [/* throw description */
-					[/* text */ 't', `if the implied `],
-					[/* inline code block */ 'i', `asType`],
-					[/* text */ 't', ` call fails`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `a new method handle which collects some arguments
-         into an array, before calling the original method handle`]
-			]
-		]],
-		[/* method */ 'withVarargs(boolean)', [
-			[/* method description */
-				[/* text */ 't', `Adapts this method handle to be `],
-				[/* reference */ 'r', `#asVarargsCollector(java.lang.Class)`, `variable arity`],
-				[/* text */ 't', `
- if the boolean flag is true, else `],
-				[/* reference */ 'r', `#asFixedArity()`, `fixed arity`],
-				[/* text */ 't', `.
- If the method handle is already of the proper arity mode, it is returned
- unchanged.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'makeVarargs', [/* parameter description */
-					[/* text */ 't', `true if the return method handle should have variable arity behavior`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
-					[/* text */ 't', `if `],
-					[/* inline code block */ 'i', `makeVarargs`],
-					[/* text */ 't', ` is true and
-         this method handle does not have a trailing array parameter`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `a method handle of the same type, with possibly adjusted variable arity behavior`]
-			]
-		]],
-		[/* method */ 'asFixedArity()', [
-			[/* method description */
-				[/* text */ 't', `Makes a `],
-				[/* text */ 't', `fixed arity`],
-				[/* text */ 't', ` method handle which is otherwise
- equivalent to the current method handle.
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', `
- If the current method handle is not of
- `],
-					[/* reference */ 'r', `#asVarargsCollector(java.lang.Class)`, `variable arity`],
-					[/* text */ 't', `,
- the current method handle is returned.
- This is true even if the current method handle
- could not be a valid input to `],
-					[/* inline code block */ 'i', `asVarargsCollector`],
-					[/* text */ 't', `.
- `]
-				]],
-				[/* block */ 'b', [
-					[/* text */ 't', `
- Otherwise, the resulting fixed-arity method handle has the same
- type and behavior of the current method handle,
- except that `],
-					[/* reference */ 'r', `#isVarargsCollector()`, `isVarargsCollector`],
-					[/* text */ 't', `
- will be false.
- The fixed-arity method handle may (or may not) be the
- a previous argument to `],
-					[/* inline code block */ 'i', `asVarargsCollector`],
-					[/* text */ 't', `.
- `]
-				]],
-				[/* block */ 'b', `
- Here is an example, of a list-making variable arity method handle:
- `],
-				[/* block */ 'b', [
-					[/* code block */ 'c', [
-						[/* inline code block */ 'i', `MethodHandle asListVar = publicLookup()
-  .findStatic(Arrays.class, "asList", methodType(List.class, Object[].class))
-  .asVarargsCollector(Object[].class);
-MethodHandle asListFix = asListVar.asFixedArity();
-assertEquals("[1]", asListVar.invoke(1).toString());
-Exception caught = null;
-try { asListFix.invoke((Object)1); }
-catch (Exception ex) { caught = ex; }
-assert(caught instanceof ClassCastException);
-assertEquals("[two, too]", asListVar.invoke("two", "too").toString());
-try { asListFix.invoke("two", "too"); }
-catch (Exception ex) { caught = ex; }
-assert(caught instanceof WrongMethodTypeException);
-Object[] argv = { "three", "thee", "tee" };
-assertEquals("[three, thee, tee]", asListVar.invoke(argv).toString());
-assertEquals("[three, thee, tee]", asListFix.invoke(argv).toString());
-assertEquals(1, ((List) asListVar.invoke((Object)argv)).size());
-assertEquals("[three, thee, tee]", asListFix.invoke((Object)argv).toString());`]
-					]]
-				]],
-				[/* block */ 'b', '']
+				[/* text */ 't', `Return a nominal descriptor for this instance, if one can be
+ constructed, or an empty `],
+				[/* reference */ 'r', `java.util.Optional`],
+				[/* text */ 't', ` if one cannot be.`]
 			],
 			/* parameters */ UDF,
 			/* throws */ UDF,
 			[/* return description */
-				[/* text */ 't', `a new method handle which accepts only a fixed number of arguments`]
-			]
-		]],
-		[/* method */ 'bindTo(java.lang.Object)', [
-			[/* method description */
-				[/* text */ 't', `Binds a value `],
-				[/* inline code block */ 'i', `x`],
-				[/* text */ 't', ` to the first argument of a method handle, without invoking it.
- The new method handle adapts, as its `],
-				[/* text */ 't', `target`],
-				[/* text */ 't', `,
- the current method handle by binding it to the given argument.
- The type of the bound handle will be
- the same as the type of the target, except that a single leading
- reference parameter will be omitted.
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', `
- When called, the bound handle inserts the given value `],
-					[/* inline code block */ 'i', `x`],
-					[/* text */ 't', `
- as a new leading argument to the target.  The other arguments are
- also passed unchanged.
- What the target eventually returns is returned unchanged by the bound handle.
- `]
-				]],
-				[/* block */ 'b', [
-					[/* text */ 't', `
- The reference `],
-					[/* inline code block */ 'i', `x`],
-					[/* text */ 't', ` must be convertible to the first parameter
- type of the target.
- `]
-				]],
-				[/* block */ 'b', `Note:`],
-				[/* block */ 'b', [
-					[/* text */ 't', `Note:`],
-					[/* text */ 't', ` The resulting adapter is never a `],
-					[/* reference */ 'r', `#asVarargsCollector(java.lang.Class)`, `variable-arity method handle`],
-					[/* text */ 't', `, even if the original target method handle was.`]
-				]]
-			],
-			[/* parameters */
-				[/* parameter */ 'x', [/* parameter description */
-					[/* text */ 't', `the value to bind to the first argument of the target`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
-					[/* text */ 't', `if the target does not have a
-         leading parameter type that is a reference type`]
-				]],
-				[/* throw */ 'java.lang.ClassCastException', [/* throw description */
-					[/* text */ 't', `if `],
-					[/* inline code block */ 'i', `x`],
-					[/* text */ 't', ` cannot be converted
-         to the leading parameter type of the target`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `a new method handle which prepends the given value to the incoming
-         argument list, before calling the original method handle`]
+				[/* text */ 't', `An `],
+				[/* reference */ 'r', `java.util.Optional`],
+				[/* text */ 't', ` containing the resulting nominal descriptor,
+ or an empty `],
+				[/* reference */ 'r', `java.util.Optional`],
+				[/* text */ 't', ` if one cannot be constructed.`]
 			]
 		]]
 	],

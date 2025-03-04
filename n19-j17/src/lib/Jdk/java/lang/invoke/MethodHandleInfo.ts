@@ -186,26 +186,8 @@ JdkClassCreateHelper.class('java.lang.invoke.MethodHandleInfo', [
 			/* annotations */ UDF,
 			/* modifiers */ 25
 		],
-		[/* public static final int java.lang.invoke.MethodHandleInfo.REF_putField */
-			/* name */ 'REF_putField',
-			/* type */ 'int',
-			/* annotations */ UDF,
-			/* modifiers */ 25
-		],
-		[/* public static final int java.lang.invoke.MethodHandleInfo.REF_putStatic */
-			/* name */ 'REF_putStatic',
-			/* type */ 'int',
-			/* annotations */ UDF,
-			/* modifiers */ 25
-		],
-		[/* public static final int java.lang.invoke.MethodHandleInfo.REF_invokeVirtual */
-			/* name */ 'REF_invokeVirtual',
-			/* type */ 'int',
-			/* annotations */ UDF,
-			/* modifiers */ 25
-		],
-		[/* public static final int java.lang.invoke.MethodHandleInfo.REF_invokeStatic */
-			/* name */ 'REF_invokeStatic',
+		[/* public static final int java.lang.invoke.MethodHandleInfo.REF_invokeInterface */
+			/* name */ 'REF_invokeInterface',
 			/* type */ 'int',
 			/* annotations */ UDF,
 			/* modifiers */ 25
@@ -216,14 +198,32 @@ JdkClassCreateHelper.class('java.lang.invoke.MethodHandleInfo', [
 			/* annotations */ UDF,
 			/* modifiers */ 25
 		],
+		[/* public static final int java.lang.invoke.MethodHandleInfo.REF_invokeStatic */
+			/* name */ 'REF_invokeStatic',
+			/* type */ 'int',
+			/* annotations */ UDF,
+			/* modifiers */ 25
+		],
+		[/* public static final int java.lang.invoke.MethodHandleInfo.REF_invokeVirtual */
+			/* name */ 'REF_invokeVirtual',
+			/* type */ 'int',
+			/* annotations */ UDF,
+			/* modifiers */ 25
+		],
 		[/* public static final int java.lang.invoke.MethodHandleInfo.REF_newInvokeSpecial */
 			/* name */ 'REF_newInvokeSpecial',
 			/* type */ 'int',
 			/* annotations */ UDF,
 			/* modifiers */ 25
 		],
-		[/* public static final int java.lang.invoke.MethodHandleInfo.REF_invokeInterface */
-			/* name */ 'REF_invokeInterface',
+		[/* public static final int java.lang.invoke.MethodHandleInfo.REF_putField */
+			/* name */ 'REF_putField',
+			/* type */ 'int',
+			/* annotations */ UDF,
+			/* modifiers */ 25
+		],
+		[/* public static final int java.lang.invoke.MethodHandleInfo.REF_putStatic */
+			/* name */ 'REF_putStatic',
 			/* type */ 'int',
 			/* annotations */ UDF,
 			/* modifiers */ 25

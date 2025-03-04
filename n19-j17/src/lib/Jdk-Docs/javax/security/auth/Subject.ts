@@ -256,194 +256,6 @@ DocsCollector.collect('javax.security.auth.Subject', [
 		]]
 	],
 	[/* methods */
-		[/* method */ 'equals(java.lang.Object)', [
-			[/* method description */
-				[/* text */ 't', `Compares the specified Object with this `],
-				[/* inline code block */ 'i', `Subject`],
-				[/* text */ 't', `
- for equality.  Returns true if the given object is also a Subject
- and the two `],
-				[/* inline code block */ 'i', `Subject`],
-				[/* text */ 't', ` instances are equivalent.
- More formally, two `],
-				[/* inline code block */ 'i', `Subject`],
-				[/* text */ 't', ` instances are
- equal if their `],
-				[/* inline code block */ 'i', `Principal`],
-				[/* text */ 't', ` and `],
-				[/* inline code block */ 'i', `Credential`],
-				[/* text */ 't', `
- Sets are equal.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'o', [/* parameter description */
-					[/* text */ 't', `Object to be compared for equality with this
-          `],
-					[/* inline code block */ 'i', `Subject`],
-					[/* text */ 't', `.`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.SecurityException', [/* throw description */
-					[/* text */ 't', `if a security manager is installed and the
-         caller does not have a `],
-					[/* reference */ 'r', `javax.security.auth.PrivateCredentialPermission`],
-					[/* text */ 't', `
-         permission to access the private credentials for this
-         `],
-					[/* inline code block */ 'i', `Subject`],
-					[/* text */ 't', ` or the provided `],
-					[/* inline code block */ 'i', `Subject`],
-					[/* text */ 't', `.`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `true if the specified Object is equal to this
-          `],
-				[/* inline code block */ 'i', `Subject`],
-				[/* text */ 't', `.`]
-			]
-		]],
-		[/* method */ 'toString()', [
-			[/* method description */
-				[/* text */ 't', `Return the String representation of this `],
-				[/* inline code block */ 'i', `Subject`],
-				[/* text */ 't', `.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the String representation of this `],
-				[/* inline code block */ 'i', `Subject`],
-				[/* text */ 't', `.`]
-			]
-		]],
-		[/* method */ 'hashCode()', [
-			[/* method description */
-				[/* text */ 't', `Returns a hashcode for this `],
-				[/* inline code block */ 'i', `Subject`],
-				[/* text */ 't', `.`]
-			],
-			/* parameters */ UDF,
-			[/* throws */
-				[/* throw */ 'java.lang.SecurityException', [/* throw description */
-					[/* text */ 't', `if a security manager is installed and the
-         caller does not have a `],
-					[/* reference */ 'r', `javax.security.auth.PrivateCredentialPermission`],
-					[/* text */ 't', `
-         permission to access this Subject's private credentials.`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `a hashcode for this `],
-				[/* inline code block */ 'i', `Subject`],
-				[/* text */ 't', `.`]
-			]
-		]],
-		[/* method */ 'setReadOnly()', [
-			[/* method description */
-				[/* text */ 't', `Set this `],
-				[/* inline code block */ 'i', `Subject`],
-				[/* text */ 't', ` to be read-only.
-
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', ` Modifications (additions and removals) to this Subject's
- `],
-					[/* inline code block */ 'i', `Principal`],
-					[/* inline code block */ 'i', `Set`],
-					[/* text */ 't', ` and
- credential Sets will be disallowed.
- The `],
-					[/* inline code block */ 'i', `destroy`],
-					[/* text */ 't', ` operation on this Subject's credentials will
- still be permitted.
-
- `]
-				]],
-				[/* block */ 'b', [
-					[/* text */ 't', ` Subsequent attempts to modify the Subject's `],
-					[/* inline code block */ 'i', `Principal`],
-					[/* text */ 't', `
- and credential Sets will result in an
- `],
-					[/* inline code block */ 'i', `IllegalStateException`],
-					[/* text */ 't', ` being thrown.
- Also, once a `],
-					[/* inline code block */ 'i', `Subject`],
-					[/* text */ 't', ` is read-only,
- it can not be reset to being writable again.`]
-				]]
-			],
-			/* parameters */ UDF,
-			[/* throws */
-				[/* throw */ 'java.lang.SecurityException', [/* throw description */
-					[/* text */ 't', `if a security manager is installed and the
-         caller does not have an
-         `],
-					[/* reference */ 'r', `.AuthPermission#<init>(java.lang.String)`],
-					[/* text */ 't', ` permission to set this
-         `],
-					[/* inline code block */ 'i', `Subject`],
-					[/* text */ 't', ` to be read-only.`]
-				]]
-			],
-			/* return */ UDF
-		]],
-		[/* method */ 'getPrincipals()', [
-			[/* method description */
-				[/* text */ 't', `Return the `],
-				[/* inline code block */ 'i', `Set`],
-				[/* text */ 't', ` of Principals associated with this
- `],
-				[/* inline code block */ 'i', `Subject`],
-				[/* text */ 't', `.  Each `],
-				[/* inline code block */ 'i', `Principal`],
-				[/* text */ 't', ` represents
- an identity for this `],
-				[/* inline code block */ 'i', `Subject`],
-				[/* text */ 't', `.
-
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', ` The returned `],
-					[/* inline code block */ 'i', `Set`],
-					[/* text */ 't', ` is backed by this Subject's
- internal `],
-					[/* inline code block */ 'i', `Principal`],
-					[/* inline code block */ 'i', `Set`],
-					[/* text */ 't', `.  Any modification
- to the returned `],
-					[/* inline code block */ 'i', `Set`],
-					[/* text */ 't', ` affects the internal
- `],
-					[/* inline code block */ 'i', `Principal`],
-					[/* inline code block */ 'i', `Set`],
-					[/* text */ 't', ` as well.
-
- `]
-				]],
-				[/* block */ 'b', [
-					[/* text */ 't', ` If a security manager is installed, the caller must have a
- `],
-					[/* reference */ 'r', `.AuthPermission#<init>(java.lang.String)`],
-					[/* text */ 't', ` permission to modify
- the returned set, or a `],
-					[/* inline code block */ 'i', `SecurityException`],
-					[/* text */ 't', ` will be thrown.`]
-				]]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the `],
-				[/* inline code block */ 'i', `Set`],
-				[/* text */ 't', ` of Principals associated with this
-          `],
-				[/* inline code block */ 'i', `Subject`],
-				[/* text */ 't', `.`]
-			]
-		]],
 		[/* method */ 'getPrincipals(java.lang.Class)', [
 			[/* method description */
 				[/* text */ 't', `Return a `],
@@ -504,6 +316,181 @@ DocsCollector.collect('javax.security.auth.Subject', [
 				[/* text */ 't', `.`]
 			]
 		]],
+		[/* method */ 'getPrivateCredentials(java.lang.Class)', [
+			[/* method description */
+				[/* text */ 't', `Return a `],
+				[/* inline code block */ 'i', `Set`],
+				[/* text */ 't', ` of private credentials associated with this
+ `],
+				[/* inline code block */ 'i', `Subject`],
+				[/* text */ 't', ` that are instances or subclasses of the specified
+ `],
+				[/* inline code block */ 'i', `Class`],
+				[/* text */ 't', `.
+
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', ` If a security manager is installed, the caller must have a
+ `],
+					[/* reference */ 'r', `javax.security.auth.PrivateCredentialPermission`],
+					[/* text */ 't', ` to access all of the requested
+ Credentials, or a `],
+					[/* inline code block */ 'i', `SecurityException`],
+					[/* text */ 't', ` will be thrown.
+
+ `]
+				]],
+				[/* block */ 'b', [
+					[/* text */ 't', ` The returned `],
+					[/* inline code block */ 'i', `Set`],
+					[/* text */ 't', ` is not backed by this Subject's
+ internal private Credential `],
+					[/* inline code block */ 'i', `Set`],
+					[/* text */ 't', `.  A new
+ `],
+					[/* inline code block */ 'i', `Set`],
+					[/* text */ 't', ` is created and returned for each method invocation.
+ Modifications to the returned `],
+					[/* inline code block */ 'i', `Set`],
+					[/* text */ 't', `
+ will not affect the internal private Credential `],
+					[/* inline code block */ 'i', `Set`],
+					[/* text */ 't', `.`]
+				]]
+			],
+			[/* parameters */
+				[/* parameter */ 'c', [/* parameter description */
+					[/* text */ 't', `the returned `],
+					[/* inline code block */ 'i', `Set`],
+					[/* text */ 't', ` of private credentials will all be
+          instances of this class.`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
+					[/* text */ 't', `if the specified `],
+					[/* inline code block */ 'i', `Class`],
+					[/* text */ 't', `
+          is `],
+					[/* inline code block */ 'i', `null`],
+					[/* text */ 't', `.`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `a `],
+				[/* inline code block */ 'i', `Set`],
+				[/* text */ 't', ` of private credentials that are instances
+          of the  specified `],
+				[/* inline code block */ 'i', `Class`],
+				[/* text */ 't', `.`]
+			]
+		]],
+		[/* method */ 'getPublicCredentials(java.lang.Class)', [
+			[/* method description */
+				[/* text */ 't', `Return a `],
+				[/* inline code block */ 'i', `Set`],
+				[/* text */ 't', ` of public credentials associated with this
+ `],
+				[/* inline code block */ 'i', `Subject`],
+				[/* text */ 't', ` that are instances or subclasses of the specified
+ `],
+				[/* inline code block */ 'i', `Class`],
+				[/* text */ 't', `.
+
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', ` The returned `],
+					[/* inline code block */ 'i', `Set`],
+					[/* text */ 't', ` is not backed by this Subject's
+ internal public Credential `],
+					[/* inline code block */ 'i', `Set`],
+					[/* text */ 't', `.  A new
+ `],
+					[/* inline code block */ 'i', `Set`],
+					[/* text */ 't', ` is created and returned for each method invocation.
+ Modifications to the returned `],
+					[/* inline code block */ 'i', `Set`],
+					[/* text */ 't', `
+ will not affect the internal public Credential `],
+					[/* inline code block */ 'i', `Set`],
+					[/* text */ 't', `.`]
+				]]
+			],
+			[/* parameters */
+				[/* parameter */ 'c', [/* parameter description */
+					[/* text */ 't', `the returned `],
+					[/* inline code block */ 'i', `Set`],
+					[/* text */ 't', ` of public credentials will all be
+          instances of this class.`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
+					[/* text */ 't', `if the specified `],
+					[/* inline code block */ 'i', `Class`],
+					[/* text */ 't', `
+          is `],
+					[/* inline code block */ 'i', `null`],
+					[/* text */ 't', `.`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `a `],
+				[/* inline code block */ 'i', `Set`],
+				[/* text */ 't', ` of public credentials that are instances
+          of the  specified `],
+				[/* inline code block */ 'i', `Class`],
+				[/* text */ 't', `.`]
+			]
+		]],
+		[/* method */ 'equals(java.lang.Object)', [
+			[/* method description */
+				[/* text */ 't', `Compares the specified Object with this `],
+				[/* inline code block */ 'i', `Subject`],
+				[/* text */ 't', `
+ for equality.  Returns true if the given object is also a Subject
+ and the two `],
+				[/* inline code block */ 'i', `Subject`],
+				[/* text */ 't', ` instances are equivalent.
+ More formally, two `],
+				[/* inline code block */ 'i', `Subject`],
+				[/* text */ 't', ` instances are
+ equal if their `],
+				[/* inline code block */ 'i', `Principal`],
+				[/* text */ 't', ` and `],
+				[/* inline code block */ 'i', `Credential`],
+				[/* text */ 't', `
+ Sets are equal.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'o', [/* parameter description */
+					[/* text */ 't', `Object to be compared for equality with this
+          `],
+					[/* inline code block */ 'i', `Subject`],
+					[/* text */ 't', `.`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.lang.SecurityException', [/* throw description */
+					[/* text */ 't', `if a security manager is installed and the
+         caller does not have a `],
+					[/* reference */ 'r', `javax.security.auth.PrivateCredentialPermission`],
+					[/* text */ 't', `
+         permission to access the private credentials for this
+         `],
+					[/* inline code block */ 'i', `Subject`],
+					[/* text */ 't', ` or the provided `],
+					[/* inline code block */ 'i', `Subject`],
+					[/* text */ 't', `.`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `true if the specified Object is equal to this
+          `],
+				[/* inline code block */ 'i', `Subject`],
+				[/* text */ 't', `.`]
+			]
+		]],
 		[/* method */ 'isReadOnly()', [
 			[/* method description */
 				[/* text */ 't', `Query whether this `],
@@ -518,75 +505,206 @@ DocsCollector.collect('javax.security.auth.Subject', [
 				[/* text */ 't', ` is read-only, false otherwise.`]
 			]
 		]],
-		[/* method */ 'getSubject(java.security.AccessControlContext)', [
+		[/* method */ 'hashCode()', [
 			[/* method description */
-				[/* text */ 't', `Get the `],
+				[/* text */ 't', `Returns a hashcode for this `],
 				[/* inline code block */ 'i', `Subject`],
-				[/* text */ 't', ` associated with the provided
+				[/* text */ 't', `.`]
+			],
+			/* parameters */ UDF,
+			[/* throws */
+				[/* throw */ 'java.lang.SecurityException', [/* throw description */
+					[/* text */ 't', `if a security manager is installed and the
+         caller does not have a `],
+					[/* reference */ 'r', `javax.security.auth.PrivateCredentialPermission`],
+					[/* text */ 't', `
+         permission to access this Subject's private credentials.`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `a hashcode for this `],
+				[/* inline code block */ 'i', `Subject`],
+				[/* text */ 't', `.`]
+			]
+		]],
+		[/* method */ 'toString()', [
+			[/* method description */
+				[/* text */ 't', `Return the String representation of this `],
+				[/* inline code block */ 'i', `Subject`],
+				[/* text */ 't', `.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the String representation of this `],
+				[/* inline code block */ 'i', `Subject`],
+				[/* text */ 't', `.`]
+			]
+		]],
+		[/* method */ 'getPrivateCredentials()', [
+			[/* method description */
+				[/* text */ 't', `Return the `],
+				[/* inline code block */ 'i', `Set`],
+				[/* text */ 't', ` of private credentials held by this
  `],
-				[/* inline code block */ 'i', `AccessControlContext`],
+				[/* inline code block */ 'i', `Subject`],
 				[/* text */ 't', `.
 
  `],
 				[/* block */ 'b', [
-					[/* text */ 't', ` The `],
-					[/* inline code block */ 'i', `AccessControlContext`],
-					[/* text */ 't', ` may contain many
- Subjects (from nested `],
-					[/* inline code block */ 'i', `doAs`],
-					[/* text */ 't', ` calls).
- In this situation, the most recent `],
-					[/* inline code block */ 'i', `Subject`],
-					[/* text */ 't', ` associated
- with the `],
-					[/* inline code block */ 'i', `AccessControlContext`],
-					[/* text */ 't', ` is returned.`]
-				]]
-			],
-			[/* parameters */
-				[/* parameter */ 'acc', [/* parameter description */
-					[/* text */ 't', `the `],
-					[/* inline code block */ 'i', `AccessControlContext`],
-					[/* text */ 't', ` from which to retrieve
-          the `],
-					[/* inline code block */ 'i', `Subject`],
-					[/* text */ 't', `.`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.SecurityException', [/* throw description */
-					[/* text */ 't', `if a security manager is installed and the
-          caller does not have an
-          `],
-					[/* reference */ 'r', `.AuthPermission#<init>(java.lang.String)`],
-					[/* text */ 't', ` permission to get the
-          `],
-					[/* inline code block */ 'i', `Subject`],
-					[/* text */ 't', `.`]
+					[/* text */ 't', ` The returned `],
+					[/* inline code block */ 'i', `Set`],
+					[/* text */ 't', ` is backed by this Subject's
+ internal private Credential `],
+					[/* inline code block */ 'i', `Set`],
+					[/* text */ 't', `.  Any modification
+ to the returned `],
+					[/* inline code block */ 'i', `Set`],
+					[/* text */ 't', ` affects the internal private
+ Credential `],
+					[/* inline code block */ 'i', `Set`],
+					[/* text */ 't', ` as well.
+
+ `]
 				]],
-				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
-					[/* text */ 't', `if the provided
-          `],
-					[/* inline code block */ 'i', `AccessControlContext`],
-					[/* text */ 't', ` is `],
-					[/* inline code block */ 'i', `null`],
+				[/* block */ 'b', [
+					[/* text */ 't', ` If a security manager is installed, the caller must have a
+ `],
+					[/* reference */ 'r', `.AuthPermission#<init>(java.lang.String)`],
+					[/* text */ 't', ` permission to modify
+ the returned set, or a `],
+					[/* inline code block */ 'i', `SecurityException`],
+					[/* text */ 't', ` will be thrown.
+
+ `]
+				]],
+				[/* block */ 'b', [
+					[/* text */ 't', ` While iterating through the `],
+					[/* inline code block */ 'i', `Set`],
+					[/* text */ 't', `,
+ a `],
+					[/* inline code block */ 'i', `SecurityException`],
+					[/* text */ 't', ` is thrown if a security manager is installed
+ and the caller does not have a `],
+					[/* reference */ 'r', `javax.security.auth.PrivateCredentialPermission`],
+					[/* text */ 't', `
+ to access a particular Credential.  The `],
+					[/* inline code block */ 'i', `Iterator`],
+					[/* text */ 't', `
+ is nevertheless advanced to the next element in the `],
+					[/* inline code block */ 'i', `Set`],
 					[/* text */ 't', `.`]
 				]]
 			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `a `],
+				[/* inline code block */ 'i', `Set`],
+				[/* text */ 't', ` of private credentials held by this
+          `],
+				[/* inline code block */ 'i', `Subject`],
+				[/* text */ 't', `.`]
+			]
+		]],
+		[/* method */ 'getPublicCredentials()', [
+			[/* method description */
+				[/* text */ 't', `Return the `],
+				[/* inline code block */ 'i', `Set`],
+				[/* text */ 't', ` of public credentials held by this
+ `],
+				[/* inline code block */ 'i', `Subject`],
+				[/* text */ 't', `.
+
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', ` The returned `],
+					[/* inline code block */ 'i', `Set`],
+					[/* text */ 't', ` is backed by this Subject's
+ internal public Credential `],
+					[/* inline code block */ 'i', `Set`],
+					[/* text */ 't', `.  Any modification
+ to the returned `],
+					[/* inline code block */ 'i', `Set`],
+					[/* text */ 't', ` affects the internal public
+ Credential `],
+					[/* inline code block */ 'i', `Set`],
+					[/* text */ 't', ` as well.
+
+ `]
+				]],
+				[/* block */ 'b', [
+					[/* text */ 't', ` If a security manager is installed, the caller must have a
+ `],
+					[/* reference */ 'r', `.AuthPermission#<init>(java.lang.String)`],
+					[/* text */ 't', ` permission to modify
+ the returned set, or a `],
+					[/* inline code block */ 'i', `SecurityException`],
+					[/* text */ 't', ` will be thrown.`]
+				]]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `a `],
+				[/* inline code block */ 'i', `Set`],
+				[/* text */ 't', ` of public credentials held by this
+          `],
+				[/* inline code block */ 'i', `Subject`],
+				[/* text */ 't', `.`]
+			]
+		]],
+		[/* method */ 'getPrincipals()', [
+			[/* method description */
+				[/* text */ 't', `Return the `],
+				[/* inline code block */ 'i', `Set`],
+				[/* text */ 't', ` of Principals associated with this
+ `],
+				[/* inline code block */ 'i', `Subject`],
+				[/* text */ 't', `.  Each `],
+				[/* inline code block */ 'i', `Principal`],
+				[/* text */ 't', ` represents
+ an identity for this `],
+				[/* inline code block */ 'i', `Subject`],
+				[/* text */ 't', `.
+
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', ` The returned `],
+					[/* inline code block */ 'i', `Set`],
+					[/* text */ 't', ` is backed by this Subject's
+ internal `],
+					[/* inline code block */ 'i', `Principal`],
+					[/* inline code block */ 'i', `Set`],
+					[/* text */ 't', `.  Any modification
+ to the returned `],
+					[/* inline code block */ 'i', `Set`],
+					[/* text */ 't', ` affects the internal
+ `],
+					[/* inline code block */ 'i', `Principal`],
+					[/* inline code block */ 'i', `Set`],
+					[/* text */ 't', ` as well.
+
+ `]
+				]],
+				[/* block */ 'b', [
+					[/* text */ 't', ` If a security manager is installed, the caller must have a
+ `],
+					[/* reference */ 'r', `.AuthPermission#<init>(java.lang.String)`],
+					[/* text */ 't', ` permission to modify
+ the returned set, or a `],
+					[/* inline code block */ 'i', `SecurityException`],
+					[/* text */ 't', ` will be thrown.`]
+				]]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
 			[/* return description */
 				[/* text */ 't', `the `],
-				[/* inline code block */ 'i', `Subject`],
-				[/* text */ 't', ` associated with the provided
+				[/* inline code block */ 'i', `Set`],
+				[/* text */ 't', ` of Principals associated with this
           `],
-				[/* inline code block */ 'i', `AccessControlContext`],
-				[/* text */ 't', `, or `],
-				[/* inline code block */ 'i', `null`],
-				[/* text */ 't', `
-          if no `],
 				[/* inline code block */ 'i', `Subject`],
-				[/* text */ 't', ` is associated
-          with the provided `],
-				[/* inline code block */ 'i', `AccessControlContext`],
 				[/* text */ 't', `.`]
 			]
 		]],
@@ -932,245 +1050,127 @@ DocsCollector.collect('javax.security.auth.Subject', [
 				[/* text */ 't', ` method.`]
 			]
 		]],
-		[/* method */ 'getPublicCredentials()', [
+		[/* method */ 'getSubject(java.security.AccessControlContext)', [
 			[/* method description */
-				[/* text */ 't', `Return the `],
-				[/* inline code block */ 'i', `Set`],
-				[/* text */ 't', ` of public credentials held by this
- `],
+				[/* text */ 't', `Get the `],
 				[/* inline code block */ 'i', `Subject`],
+				[/* text */ 't', ` associated with the provided
+ `],
+				[/* inline code block */ 'i', `AccessControlContext`],
 				[/* text */ 't', `.
 
  `],
 				[/* block */ 'b', [
-					[/* text */ 't', ` The returned `],
-					[/* inline code block */ 'i', `Set`],
-					[/* text */ 't', ` is backed by this Subject's
- internal public Credential `],
-					[/* inline code block */ 'i', `Set`],
-					[/* text */ 't', `.  Any modification
- to the returned `],
-					[/* inline code block */ 'i', `Set`],
-					[/* text */ 't', ` affects the internal public
- Credential `],
-					[/* inline code block */ 'i', `Set`],
-					[/* text */ 't', ` as well.
-
- `]
-				]],
-				[/* block */ 'b', [
-					[/* text */ 't', ` If a security manager is installed, the caller must have a
- `],
-					[/* reference */ 'r', `.AuthPermission#<init>(java.lang.String)`],
-					[/* text */ 't', ` permission to modify
- the returned set, or a `],
-					[/* inline code block */ 'i', `SecurityException`],
-					[/* text */ 't', ` will be thrown.`]
-				]]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `a `],
-				[/* inline code block */ 'i', `Set`],
-				[/* text */ 't', ` of public credentials held by this
-          `],
-				[/* inline code block */ 'i', `Subject`],
-				[/* text */ 't', `.`]
-			]
-		]],
-		[/* method */ 'getPublicCredentials(java.lang.Class)', [
-			[/* method description */
-				[/* text */ 't', `Return a `],
-				[/* inline code block */ 'i', `Set`],
-				[/* text */ 't', ` of public credentials associated with this
- `],
-				[/* inline code block */ 'i', `Subject`],
-				[/* text */ 't', ` that are instances or subclasses of the specified
- `],
-				[/* inline code block */ 'i', `Class`],
-				[/* text */ 't', `.
-
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', ` The returned `],
-					[/* inline code block */ 'i', `Set`],
-					[/* text */ 't', ` is not backed by this Subject's
- internal public Credential `],
-					[/* inline code block */ 'i', `Set`],
-					[/* text */ 't', `.  A new
- `],
-					[/* inline code block */ 'i', `Set`],
-					[/* text */ 't', ` is created and returned for each method invocation.
- Modifications to the returned `],
-					[/* inline code block */ 'i', `Set`],
-					[/* text */ 't', `
- will not affect the internal public Credential `],
-					[/* inline code block */ 'i', `Set`],
-					[/* text */ 't', `.`]
+					[/* text */ 't', ` The `],
+					[/* inline code block */ 'i', `AccessControlContext`],
+					[/* text */ 't', ` may contain many
+ Subjects (from nested `],
+					[/* inline code block */ 'i', `doAs`],
+					[/* text */ 't', ` calls).
+ In this situation, the most recent `],
+					[/* inline code block */ 'i', `Subject`],
+					[/* text */ 't', ` associated
+ with the `],
+					[/* inline code block */ 'i', `AccessControlContext`],
+					[/* text */ 't', ` is returned.`]
 				]]
 			],
 			[/* parameters */
-				[/* parameter */ 'c', [/* parameter description */
-					[/* text */ 't', `the returned `],
-					[/* inline code block */ 'i', `Set`],
-					[/* text */ 't', ` of public credentials will all be
-          instances of this class.`]
+				[/* parameter */ 'acc', [/* parameter description */
+					[/* text */ 't', `the `],
+					[/* inline code block */ 'i', `AccessControlContext`],
+					[/* text */ 't', ` from which to retrieve
+          the `],
+					[/* inline code block */ 'i', `Subject`],
+					[/* text */ 't', `.`]
 				]]
 			],
 			[/* throws */
+				[/* throw */ 'java.lang.SecurityException', [/* throw description */
+					[/* text */ 't', `if a security manager is installed and the
+          caller does not have an
+          `],
+					[/* reference */ 'r', `.AuthPermission#<init>(java.lang.String)`],
+					[/* text */ 't', ` permission to get the
+          `],
+					[/* inline code block */ 'i', `Subject`],
+					[/* text */ 't', `.`]
+				]],
 				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
-					[/* text */ 't', `if the specified `],
-					[/* inline code block */ 'i', `Class`],
-					[/* text */ 't', `
-          is `],
+					[/* text */ 't', `if the provided
+          `],
+					[/* inline code block */ 'i', `AccessControlContext`],
+					[/* text */ 't', ` is `],
 					[/* inline code block */ 'i', `null`],
 					[/* text */ 't', `.`]
 				]]
 			],
 			[/* return description */
-				[/* text */ 't', `a `],
-				[/* inline code block */ 'i', `Set`],
-				[/* text */ 't', ` of public credentials that are instances
-          of the  specified `],
-				[/* inline code block */ 'i', `Class`],
+				[/* text */ 't', `the `],
+				[/* inline code block */ 'i', `Subject`],
+				[/* text */ 't', ` associated with the provided
+          `],
+				[/* inline code block */ 'i', `AccessControlContext`],
+				[/* text */ 't', `, or `],
+				[/* inline code block */ 'i', `null`],
+				[/* text */ 't', `
+          if no `],
+				[/* inline code block */ 'i', `Subject`],
+				[/* text */ 't', ` is associated
+          with the provided `],
+				[/* inline code block */ 'i', `AccessControlContext`],
 				[/* text */ 't', `.`]
 			]
 		]],
-		[/* method */ 'getPrivateCredentials(java.lang.Class)', [
+		[/* method */ 'setReadOnly()', [
 			[/* method description */
-				[/* text */ 't', `Return a `],
-				[/* inline code block */ 'i', `Set`],
-				[/* text */ 't', ` of private credentials associated with this
- `],
+				[/* text */ 't', `Set this `],
 				[/* inline code block */ 'i', `Subject`],
-				[/* text */ 't', ` that are instances or subclasses of the specified
- `],
-				[/* inline code block */ 'i', `Class`],
-				[/* text */ 't', `.
+				[/* text */ 't', ` to be read-only.
 
  `],
 				[/* block */ 'b', [
-					[/* text */ 't', ` If a security manager is installed, the caller must have a
+					[/* text */ 't', ` Modifications (additions and removals) to this Subject's
  `],
-					[/* reference */ 'r', `javax.security.auth.PrivateCredentialPermission`],
-					[/* text */ 't', ` to access all of the requested
- Credentials, or a `],
-					[/* inline code block */ 'i', `SecurityException`],
-					[/* text */ 't', ` will be thrown.
-
- `]
-				]],
-				[/* block */ 'b', [
-					[/* text */ 't', ` The returned `],
+					[/* inline code block */ 'i', `Principal`],
 					[/* inline code block */ 'i', `Set`],
-					[/* text */ 't', ` is not backed by this Subject's
- internal private Credential `],
-					[/* inline code block */ 'i', `Set`],
-					[/* text */ 't', `.  A new
- `],
-					[/* inline code block */ 'i', `Set`],
-					[/* text */ 't', ` is created and returned for each method invocation.
- Modifications to the returned `],
-					[/* inline code block */ 'i', `Set`],
-					[/* text */ 't', `
- will not affect the internal private Credential `],
-					[/* inline code block */ 'i', `Set`],
-					[/* text */ 't', `.`]
-				]]
-			],
-			[/* parameters */
-				[/* parameter */ 'c', [/* parameter description */
-					[/* text */ 't', `the returned `],
-					[/* inline code block */ 'i', `Set`],
-					[/* text */ 't', ` of private credentials will all be
-          instances of this class.`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
-					[/* text */ 't', `if the specified `],
-					[/* inline code block */ 'i', `Class`],
-					[/* text */ 't', `
-          is `],
-					[/* inline code block */ 'i', `null`],
-					[/* text */ 't', `.`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `a `],
-				[/* inline code block */ 'i', `Set`],
-				[/* text */ 't', ` of private credentials that are instances
-          of the  specified `],
-				[/* inline code block */ 'i', `Class`],
-				[/* text */ 't', `.`]
-			]
-		]],
-		[/* method */ 'getPrivateCredentials()', [
-			[/* method description */
-				[/* text */ 't', `Return the `],
-				[/* inline code block */ 'i', `Set`],
-				[/* text */ 't', ` of private credentials held by this
- `],
-				[/* inline code block */ 'i', `Subject`],
-				[/* text */ 't', `.
-
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', ` The returned `],
-					[/* inline code block */ 'i', `Set`],
-					[/* text */ 't', ` is backed by this Subject's
- internal private Credential `],
-					[/* inline code block */ 'i', `Set`],
-					[/* text */ 't', `.  Any modification
- to the returned `],
-					[/* inline code block */ 'i', `Set`],
-					[/* text */ 't', ` affects the internal private
- Credential `],
-					[/* inline code block */ 'i', `Set`],
-					[/* text */ 't', ` as well.
+					[/* text */ 't', ` and
+ credential Sets will be disallowed.
+ The `],
+					[/* inline code block */ 'i', `destroy`],
+					[/* text */ 't', ` operation on this Subject's credentials will
+ still be permitted.
 
  `]
 				]],
 				[/* block */ 'b', [
-					[/* text */ 't', ` If a security manager is installed, the caller must have a
+					[/* text */ 't', ` Subsequent attempts to modify the Subject's `],
+					[/* inline code block */ 'i', `Principal`],
+					[/* text */ 't', `
+ and credential Sets will result in an
  `],
-					[/* reference */ 'r', `.AuthPermission#<init>(java.lang.String)`],
-					[/* text */ 't', ` permission to modify
- the returned set, or a `],
-					[/* inline code block */ 'i', `SecurityException`],
-					[/* text */ 't', ` will be thrown.
-
- `]
-				]],
-				[/* block */ 'b', [
-					[/* text */ 't', ` While iterating through the `],
-					[/* inline code block */ 'i', `Set`],
-					[/* text */ 't', `,
- a `],
-					[/* inline code block */ 'i', `SecurityException`],
-					[/* text */ 't', ` is thrown if a security manager is installed
- and the caller does not have a `],
-					[/* reference */ 'r', `javax.security.auth.PrivateCredentialPermission`],
-					[/* text */ 't', `
- to access a particular Credential.  The `],
-					[/* inline code block */ 'i', `Iterator`],
-					[/* text */ 't', `
- is nevertheless advanced to the next element in the `],
-					[/* inline code block */ 'i', `Set`],
-					[/* text */ 't', `.`]
+					[/* inline code block */ 'i', `IllegalStateException`],
+					[/* text */ 't', ` being thrown.
+ Also, once a `],
+					[/* inline code block */ 'i', `Subject`],
+					[/* text */ 't', ` is read-only,
+ it can not be reset to being writable again.`]
 				]]
 			],
 			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `a `],
-				[/* inline code block */ 'i', `Set`],
-				[/* text */ 't', ` of private credentials held by this
-          `],
-				[/* inline code block */ 'i', `Subject`],
-				[/* text */ 't', `.`]
-			]
+			[/* throws */
+				[/* throw */ 'java.lang.SecurityException', [/* throw description */
+					[/* text */ 't', `if a security manager is installed and the
+         caller does not have an
+         `],
+					[/* reference */ 'r', `.AuthPermission#<init>(java.lang.String)`],
+					[/* text */ 't', ` permission to set this
+         `],
+					[/* inline code block */ 'i', `Subject`],
+					[/* text */ 't', ` to be read-only.`]
+				]]
+			],
+			/* return */ UDF
 		]]
 	],
 ]);

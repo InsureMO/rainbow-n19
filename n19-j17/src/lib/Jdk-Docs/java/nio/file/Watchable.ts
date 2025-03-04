@@ -28,6 +28,54 @@ DocsCollector.collect('java.nio.file.Watchable', [
 	/* fields */ UDF,
 	/* constructors */ UDF,
 	[/* methods */
+		[/* method */ 'register(java.nio.file.WatchService,java.nio.file.WatchEvent.Kind...)', [
+			[/* method description */
+				[/* text */ 't', `Registers an object with a watch service.
+
+ `],
+				[/* block */ 'b', ` An invocation of this method behaves in exactly the same way as the
+ invocation
+ `],
+				[/* code block */ 'c', [
+					[/* text */ 't', `     watchable.`],
+					[/* text */ 't', `register`],
+					[/* text */ 't', `(watcher, events, new WatchEvent.Modifier[0]);
+ `]
+				]],
+				[/* block */ 'b', '']
+			],
+			[/* parameters */
+				[/* parameter */ 'watcher', [/* parameter description */
+					[/* text */ 't', `the watch service to which this object is to be registered`]
+				]],
+				[/* parameter */ 'events', [/* parameter description */
+					[/* text */ 't', `the events for which this object should be registered`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.lang.UnsupportedOperationException', [/* throw description */
+					[/* text */ 't', `if unsupported events are specified`]
+				]],
+				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
+					[/* text */ 't', `if an invalid of combination of events are specified`]
+				]],
+				[/* throw */ 'java.nio.file.ClosedWatchServiceException', [/* throw description */
+					[/* text */ 't', `if the watch service is closed`]
+				]],
+				[/* throw */ 'java.io.IOException', [/* throw description */
+					[/* text */ 't', `if an I/O error occurs`]
+				]],
+				[/* throw */ 'java.lang.SecurityException', [/* throw description */
+					[/* text */ 't', `if a security manager is installed and it denies an unspecified
+          permission required to monitor this object. Implementations of
+          this interface should specify the permission checks.`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `a key representing the registration of this object with the
+          given watch service`]
+			]
+		]],
 		[/* method */ 'register(java.nio.file.WatchService,java.nio.file.WatchEvent.Kind[],java.nio.file.WatchEvent.Modifier...)', [
 			[/* method description */
 				[/* text */ 't', `Registers an object with a watch service.
@@ -75,54 +123,6 @@ DocsCollector.collect('java.nio.file.Watchable', [
 				]],
 				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
 					[/* text */ 't', `if an invalid of combination of events are modifiers are specified`]
-				]],
-				[/* throw */ 'java.nio.file.ClosedWatchServiceException', [/* throw description */
-					[/* text */ 't', `if the watch service is closed`]
-				]],
-				[/* throw */ 'java.io.IOException', [/* throw description */
-					[/* text */ 't', `if an I/O error occurs`]
-				]],
-				[/* throw */ 'java.lang.SecurityException', [/* throw description */
-					[/* text */ 't', `if a security manager is installed and it denies an unspecified
-          permission required to monitor this object. Implementations of
-          this interface should specify the permission checks.`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `a key representing the registration of this object with the
-          given watch service`]
-			]
-		]],
-		[/* method */ 'register(java.nio.file.WatchService,java.nio.file.WatchEvent.Kind...)', [
-			[/* method description */
-				[/* text */ 't', `Registers an object with a watch service.
-
- `],
-				[/* block */ 'b', ` An invocation of this method behaves in exactly the same way as the
- invocation
- `],
-				[/* code block */ 'c', [
-					[/* text */ 't', `     watchable.`],
-					[/* text */ 't', `register`],
-					[/* text */ 't', `(watcher, events, new WatchEvent.Modifier[0]);
- `]
-				]],
-				[/* block */ 'b', '']
-			],
-			[/* parameters */
-				[/* parameter */ 'watcher', [/* parameter description */
-					[/* text */ 't', `the watch service to which this object is to be registered`]
-				]],
-				[/* parameter */ 'events', [/* parameter description */
-					[/* text */ 't', `the events for which this object should be registered`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.UnsupportedOperationException', [/* throw description */
-					[/* text */ 't', `if unsupported events are specified`]
-				]],
-				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
-					[/* text */ 't', `if an invalid of combination of events are specified`]
 				]],
 				[/* throw */ 'java.nio.file.ClosedWatchServiceException', [/* throw description */
 					[/* text */ 't', `if the watch service is closed`]

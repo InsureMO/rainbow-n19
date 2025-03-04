@@ -38,22 +38,13 @@ DocsCollector.collect('java.lang.ClassNotFoundException', [
 	],
 	/* fields */ UDF,
 	[/* constructors */
-		[/* constructor */ '<init>(java.lang.String,java.lang.Throwable)', [
+		[/* constructor */ '<init>()', [
 			[/* constructor description */
 				[/* text */ 't', `Constructs a `],
 				[/* inline code block */ 'i', `ClassNotFoundException`],
-				[/* text */ 't', ` with the
- specified detail message and optional exception that was
- raised while loading the class.`]
+				[/* text */ 't', ` with no detail message.`]
 			],
-			[/* parameters */
-				[/* parameter */ 's', [/* parameter description */
-					[/* text */ 't', `the detail message`]
-				]],
-				[/* parameter */ 'ex', [/* parameter description */
-					[/* text */ 't', `the exception that was raised while loading the class`]
-				]]
-			],
+			/* parameters */ UDF,
 			/* throws */ UDF
 		]],
 		[/* constructor */ '<init>(java.lang.String)', [
@@ -70,13 +61,22 @@ DocsCollector.collect('java.lang.ClassNotFoundException', [
 			],
 			/* throws */ UDF
 		]],
-		[/* constructor */ '<init>()', [
+		[/* constructor */ '<init>(java.lang.String,java.lang.Throwable)', [
 			[/* constructor description */
 				[/* text */ 't', `Constructs a `],
 				[/* inline code block */ 'i', `ClassNotFoundException`],
-				[/* text */ 't', ` with no detail message.`]
+				[/* text */ 't', ` with the
+ specified detail message and optional exception that was
+ raised while loading the class.`]
 			],
-			/* parameters */ UDF,
+			[/* parameters */
+				[/* parameter */ 's', [/* parameter description */
+					[/* text */ 't', `the detail message`]
+				]],
+				[/* parameter */ 'ex', [/* parameter description */
+					[/* text */ 't', `the exception that was raised while loading the class`]
+				]]
+			],
 			/* throws */ UDF
 		]]
 	],

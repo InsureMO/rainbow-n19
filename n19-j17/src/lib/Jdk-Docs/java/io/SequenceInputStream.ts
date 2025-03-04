@@ -16,6 +16,33 @@ DocsCollector.collect('java.io.SequenceInputStream', [
 	],
 	/* fields */ UDF,
 	[/* constructors */
+		[/* constructor */ '<init>(java.io.InputStream,java.io.InputStream)', [
+			[/* constructor description */
+				[/* text */ 't', `Initializes a newly
+ created `],
+				[/* inline code block */ 'i', `SequenceInputStream`],
+				[/* text */ 't', `
+ by remembering the two arguments, which
+ will be read in order, first `],
+				[/* inline code block */ 'i', `s1`],
+				[/* text */ 't', `
+ and then `],
+				[/* inline code block */ 'i', `s2`],
+				[/* text */ 't', `, to provide the
+ bytes to be read from this `],
+				[/* inline code block */ 'i', `SequenceInputStream`],
+				[/* text */ 't', `.`]
+			],
+			[/* parameters */
+				[/* parameter */ 's1', [/* parameter description */
+					[/* text */ 't', `the first input stream to read.`]
+				]],
+				[/* parameter */ 's2', [/* parameter description */
+					[/* text */ 't', `the second input stream to read.`]
+				]]
+			],
+			/* throws */ UDF
+		]],
 		[/* constructor */ '<init>(java.util.Enumeration)', [
 			[/* constructor description */
 				[/* text */ 't', `Initializes a newly created `],
@@ -46,36 +73,43 @@ DocsCollector.collect('java.io.SequenceInputStream', [
 				]]
 			],
 			/* throws */ UDF
-		]],
-		[/* constructor */ '<init>(java.io.InputStream,java.io.InputStream)', [
-			[/* constructor description */
-				[/* text */ 't', `Initializes a newly
- created `],
-				[/* inline code block */ 'i', `SequenceInputStream`],
-				[/* text */ 't', `
- by remembering the two arguments, which
- will be read in order, first `],
-				[/* inline code block */ 'i', `s1`],
-				[/* text */ 't', `
- and then `],
-				[/* inline code block */ 'i', `s2`],
-				[/* text */ 't', `, to provide the
- bytes to be read from this `],
-				[/* inline code block */ 'i', `SequenceInputStream`],
-				[/* text */ 't', `.`]
-			],
-			[/* parameters */
-				[/* parameter */ 's1', [/* parameter description */
-					[/* text */ 't', `the first input stream to read.`]
-				]],
-				[/* parameter */ 's2', [/* parameter description */
-					[/* text */ 't', `the second input stream to read.`]
-				]]
-			],
-			/* throws */ UDF
 		]]
 	],
 	[/* methods */
+		[/* method */ 'available()', [
+			[/* method description */
+				[/* text */ 't', `Returns an estimate of the number of bytes that can be read (or
+ skipped over) from the current underlying input stream without
+ blocking by the next invocation of a method for the current
+ underlying input stream. The next invocation might be
+ the same thread or another thread.  A single read or skip of this
+ many bytes will not block, but may read or skip fewer bytes.
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', `
+ This method simply calls `],
+					[/* inline code block */ 'i', `available`],
+					[/* text */ 't', ` of the current underlying
+ input stream and returns the result.`]
+				]]
+			],
+			/* parameters */ UDF,
+			[/* throws */
+				[/* throw */ 'java.io.IOException', [/* throw description */
+					[/* text */ 't', `if an I/O error occurs.`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `an estimate of the number of bytes that can be read (or
+           skipped over) from the current underlying input stream
+           without blocking or `],
+				[/* inline code block */ 'i', `0`],
+				[/* text */ 't', ` if this input stream
+           has been closed by invoking its `],
+				[/* reference */ 'r', `#close()`, `close()`],
+				[/* text */ 't', ` method`]
+			]
+		]],
 		[/* method */ 'read()', [
 			[/* method description */
 				[/* text */ 't', `Reads the next byte of data from this input stream. The byte is
@@ -214,40 +248,6 @@ DocsCollector.collect('java.io.SequenceInputStream', [
 				]]
 			],
 			/* return */ UDF
-		]],
-		[/* method */ 'available()', [
-			[/* method description */
-				[/* text */ 't', `Returns an estimate of the number of bytes that can be read (or
- skipped over) from the current underlying input stream without
- blocking by the next invocation of a method for the current
- underlying input stream. The next invocation might be
- the same thread or another thread.  A single read or skip of this
- many bytes will not block, but may read or skip fewer bytes.
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', `
- This method simply calls `],
-					[/* inline code block */ 'i', `available`],
-					[/* text */ 't', ` of the current underlying
- input stream and returns the result.`]
-				]]
-			],
-			/* parameters */ UDF,
-			[/* throws */
-				[/* throw */ 'java.io.IOException', [/* throw description */
-					[/* text */ 't', `if an I/O error occurs.`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `an estimate of the number of bytes that can be read (or
-           skipped over) from the current underlying input stream
-           without blocking or `],
-				[/* inline code block */ 'i', `0`],
-				[/* text */ 't', ` if this input stream
-           has been closed by invoking its `],
-				[/* reference */ 'r', `#close()`, `close()`],
-				[/* text */ 't', ` method`]
-			]
 		]]
 	],
 ]);

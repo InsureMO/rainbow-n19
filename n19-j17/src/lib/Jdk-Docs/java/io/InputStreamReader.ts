@@ -31,30 +31,16 @@ DocsCollector.collect('java.io.InputStreamReader', [
 	],
 	/* fields */ UDF,
 	[/* constructors */
-		[/* constructor */ '<init>(java.io.InputStream,java.nio.charset.CharsetDecoder)', [
+		[/* constructor */ '<init>(java.io.InputStream)', [
 			[/* constructor description */
-				[/* text */ 't', `Creates an InputStreamReader that uses the given charset decoder.`]
+				[/* text */ 't', `Creates an InputStreamReader that uses the
+ `],
+				[/* reference */ 'r', `java.charset.Charset#defaultCharset()`],
+				[/* text */ 't', `.`]
 			],
 			[/* parameters */
 				[/* parameter */ 'in', [/* parameter description */
 					[/* text */ 't', `An InputStream`]
-				]],
-				[/* parameter */ 'dec', [/* parameter description */
-					[/* text */ 't', `A charset decoder`]
-				]]
-			],
-			/* throws */ UDF
-		]],
-		[/* constructor */ '<init>(java.io.InputStream,java.nio.charset.Charset)', [
-			[/* constructor description */
-				[/* text */ 't', `Creates an InputStreamReader that uses the given charset.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'in', [/* parameter description */
-					[/* text */ 't', `An InputStream`]
-				]],
-				[/* parameter */ 'cs', [/* parameter description */
-					[/* text */ 't', `A charset`]
 				]]
 			],
 			/* throws */ UDF
@@ -79,22 +65,54 @@ DocsCollector.collect('java.io.InputStreamReader', [
 				]]
 			]
 		]],
-		[/* constructor */ '<init>(java.io.InputStream)', [
+		[/* constructor */ '<init>(java.io.InputStream,java.nio.charset.Charset)', [
 			[/* constructor description */
-				[/* text */ 't', `Creates an InputStreamReader that uses the
- `],
-				[/* reference */ 'r', `java.charset.Charset#defaultCharset()`],
-				[/* text */ 't', `.`]
+				[/* text */ 't', `Creates an InputStreamReader that uses the given charset.`]
 			],
 			[/* parameters */
 				[/* parameter */ 'in', [/* parameter description */
 					[/* text */ 't', `An InputStream`]
+				]],
+				[/* parameter */ 'cs', [/* parameter description */
+					[/* text */ 't', `A charset`]
+				]]
+			],
+			/* throws */ UDF
+		]],
+		[/* constructor */ '<init>(java.io.InputStream,java.nio.charset.CharsetDecoder)', [
+			[/* constructor description */
+				[/* text */ 't', `Creates an InputStreamReader that uses the given charset decoder.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'in', [/* parameter description */
+					[/* text */ 't', `An InputStream`]
+				]],
+				[/* parameter */ 'dec', [/* parameter description */
+					[/* text */ 't', `A charset decoder`]
 				]]
 			],
 			/* throws */ UDF
 		]]
 	],
 	[/* methods */
+		[/* method */ 'ready()', [
+			[/* method description */
+				[/* text */ 't', `Tells whether this stream is ready to be read.  An InputStreamReader is
+ ready if its input buffer is not empty, or if bytes are available to be
+ read from the underlying byte stream.`]
+			],
+			/* parameters */ UDF,
+			[/* throws */
+				[/* throw */ 'java.io.IOException', [/* throw description */
+					[/* text */ 't', `If an I/O error occurs`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `True if the next read() is guaranteed not to block for input,
+ false otherwise.  Note that returning false does not guarantee that the
+ next read will block.`]
+			]
+		]],
 		[/* method */ 'read()', [
 			[/* method description */
 				[/* text */ 't', `Reads a single character.`]
@@ -166,21 +184,6 @@ DocsCollector.collect('java.io.InputStreamReader', [
 			]
 		]],
 		[/* method */ 'read(java.nio.CharBuffer)', UDF],
-		[/* method */ 'close()', [
-			[/* method description */
-				[/* block */ 'b', `Closes the stream and releases any system resources associated with
- it.  Once the stream has been closed, further read(), ready(),
- mark(), reset(), or skip() invocations will throw an IOException.
- Closing a previously closed stream has no effect.`]
-			],
-			/* parameters */ UDF,
-			[/* throws */
-				[/* throw */ 'java.io.IOException', [/* throw description */
-					[/* text */ 't', `If an I/O error occurs`]
-				]]
-			],
-			/* return */ UDF
-		]],
 		[/* method */ 'getEncoding()', [
 			[/* method description */
 				[/* text */ 't', `Returns the name of the character encoding being used by this stream.
@@ -211,11 +214,12 @@ DocsCollector.collect('java.io.InputStreamReader', [
 				[/* text */ 't', ` if the stream has been closed`]
 			]
 		]],
-		[/* method */ 'ready()', [
+		[/* method */ 'close()', [
 			[/* method description */
-				[/* text */ 't', `Tells whether this stream is ready to be read.  An InputStreamReader is
- ready if its input buffer is not empty, or if bytes are available to be
- read from the underlying byte stream.`]
+				[/* block */ 'b', `Closes the stream and releases any system resources associated with
+ it.  Once the stream has been closed, further read(), ready(),
+ mark(), reset(), or skip() invocations will throw an IOException.
+ Closing a previously closed stream has no effect.`]
 			],
 			/* parameters */ UDF,
 			[/* throws */
@@ -223,11 +227,7 @@ DocsCollector.collect('java.io.InputStreamReader', [
 					[/* text */ 't', `If an I/O error occurs`]
 				]]
 			],
-			[/* return description */
-				[/* text */ 't', `True if the next read() is guaranteed not to block for input,
- false otherwise.  Note that returning false does not guarantee that the
- next read will block.`]
-			]
+			/* return */ UDF
 		]]
 	],
 ]);

@@ -82,15 +82,15 @@ JdkClassCreateHelper.class('java.lang.constant.DirectMethodHandleDesc$Kind', [
 		]
 	],
 	[/* declared fields */
-		[/* public final int java.lang.constant.DirectMethodHandleDesc$Kind.refKind */
-			/* name */ 'refKind',
-			/* type */ 'int',
-			/* annotations */ UDF,
-			/* modifiers */ 17
-		],
 		[/* public final boolean java.lang.constant.DirectMethodHandleDesc$Kind.isInterface */
 			/* name */ 'isInterface',
 			/* type */ 'boolean',
+			/* annotations */ UDF,
+			/* modifiers */ 17
+		],
+		[/* public final int java.lang.constant.DirectMethodHandleDesc$Kind.refKind */
+			/* name */ 'refKind',
+			/* type */ 'int',
 			/* annotations */ UDF,
 			/* modifiers */ 17
 		]

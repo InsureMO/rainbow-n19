@@ -27,16 +27,6 @@ DocsCollector.collect('java.util.MissingResourceException', [
 		]]
 	],
 	[/* methods */
-		[/* method */ 'getKey()', [
-			[/* method description */
-				[/* text */ 't', `Gets parameter passed by constructor.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the key for the missing resource`]
-			]
-		]],
 		[/* method */ 'getClassName()', [
 			[/* method description */
 				[/* text */ 't', `Gets parameter passed by constructor.`]
@@ -45,6 +35,16 @@ DocsCollector.collect('java.util.MissingResourceException', [
 			/* throws */ UDF,
 			[/* return description */
 				[/* text */ 't', `the name of the resource class`]
+			]
+		]],
+		[/* method */ 'getKey()', [
+			[/* method description */
+				[/* text */ 't', `Gets parameter passed by constructor.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the key for the missing resource`]
 			]
 		]]
 	],

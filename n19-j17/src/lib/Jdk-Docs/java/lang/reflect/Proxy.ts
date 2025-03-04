@@ -532,6 +532,88 @@ DocsCollector.collect('java.lang.reflect.Proxy', [
 				[/* text */ 't', ` otherwise`]
 			]
 		]],
+		[/* method */ 'getProxyClass(java.lang.ClassLoader,java.lang.Class...)', [
+			[/* method description */
+				[/* text */ 't', `Returns the `],
+				[/* inline code block */ 'i', `java.lang.Class`],
+				[/* text */ 't', ` object for a proxy class
+ given a class loader and an array of interfaces.  The proxy class
+ will be defined by the specified class loader and will implement
+ all of the supplied interfaces.  If any of the given interfaces
+ is non-public, the proxy class will be non-public. If a proxy class
+ for the same permutation of interfaces has already been defined by the
+ class loader, then the existing proxy class will be returned; otherwise,
+ a proxy class for those interfaces will be generated dynamically
+ and defined by the class loader.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'loader', [/* parameter description */
+					[/* text */ 't', `the class loader to define the proxy class`]
+				]],
+				[/* parameter */ 'interfaces', [/* parameter description */
+					[/* text */ 't', `the list of interfaces for the proxy class
+          to implement`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
+					[/* text */ 't', `if any of the `],
+					[/* text */ 't', `restrictions`],
+					[/* text */ 't', ` on the parameters are violated`]
+				]],
+				[/* throw */ 'java.lang.SecurityException', [/* throw description */
+					[/* text */ 't', `if a security manager, `],
+					[/* text */ 't', `s`],
+					[/* text */ 't', `, is present
+          and any of the following conditions is met:
+          `],
+					[/* list */ 'l', [
+						[/* block */ 'b', [
+							[/* text */ 't', ` the given `],
+							[/* inline code block */ 'i', `loader`],
+							[/* text */ 't', ` is `],
+							[/* inline code block */ 'i', `null`],
+							[/* text */ 't', ` and
+             the caller's class loader is not `],
+							[/* inline code block */ 'i', `null`],
+							[/* text */ 't', ` and the
+             invocation of `],
+							[/* reference */ 'r', `java.SecurityManager#checkPermission(java.security.Permission)`],
+							[/* text */ 't', ` with
+             `],
+							[/* inline code block */ 'i', `RuntimePermission("getClassLoader")`],
+							[/* text */ 't', ` permission
+             denies access.`]
+						]],
+						[/* block */ 'b', [
+							[/* text */ 't', ` for each proxy interface, `],
+							[/* inline code block */ 'i', `intf`],
+							[/* text */ 't', `,
+             the caller's class loader is not the same as or an
+             ancestor of the class loader for `],
+							[/* inline code block */ 'i', `intf`],
+							[/* text */ 't', ` and
+             invocation of `],
+							[/* reference */ 'r', `java.SecurityManager#checkPackageAccess(java.lang.String)`],
+							[/* text */ 't', ` denies access to `],
+							[/* inline code block */ 'i', `intf`],
+							[/* text */ 't', `.`]
+						]]
+					]]
+				]],
+				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
+					[/* text */ 't', `if the `],
+					[/* inline code block */ 'i', `interfaces`],
+					[/* text */ 't', ` array
+          argument or any of its elements are `],
+					[/* inline code block */ 'i', `null`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `a proxy class that is defined in the specified class loader
+          and that implements the specified interfaces`]
+			]
+		]],
 		[/* method */ 'newProxyInstance(java.lang.ClassLoader,java.lang.Class[],java.lang.reflect.InvocationHandler)', [
 			[/* method description */
 				[/* text */ 't', `Returns a proxy instance for the specified interfaces
@@ -748,88 +830,6 @@ DocsCollector.collect('java.lang.reflect.Proxy', [
 			],
 			[/* return description */
 				[/* text */ 't', `the invocation handler for the proxy instance`]
-			]
-		]],
-		[/* method */ 'getProxyClass(java.lang.ClassLoader,java.lang.Class...)', [
-			[/* method description */
-				[/* text */ 't', `Returns the `],
-				[/* inline code block */ 'i', `java.lang.Class`],
-				[/* text */ 't', ` object for a proxy class
- given a class loader and an array of interfaces.  The proxy class
- will be defined by the specified class loader and will implement
- all of the supplied interfaces.  If any of the given interfaces
- is non-public, the proxy class will be non-public. If a proxy class
- for the same permutation of interfaces has already been defined by the
- class loader, then the existing proxy class will be returned; otherwise,
- a proxy class for those interfaces will be generated dynamically
- and defined by the class loader.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'loader', [/* parameter description */
-					[/* text */ 't', `the class loader to define the proxy class`]
-				]],
-				[/* parameter */ 'interfaces', [/* parameter description */
-					[/* text */ 't', `the list of interfaces for the proxy class
-          to implement`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
-					[/* text */ 't', `if any of the `],
-					[/* text */ 't', `restrictions`],
-					[/* text */ 't', ` on the parameters are violated`]
-				]],
-				[/* throw */ 'java.lang.SecurityException', [/* throw description */
-					[/* text */ 't', `if a security manager, `],
-					[/* text */ 't', `s`],
-					[/* text */ 't', `, is present
-          and any of the following conditions is met:
-          `],
-					[/* list */ 'l', [
-						[/* block */ 'b', [
-							[/* text */ 't', ` the given `],
-							[/* inline code block */ 'i', `loader`],
-							[/* text */ 't', ` is `],
-							[/* inline code block */ 'i', `null`],
-							[/* text */ 't', ` and
-             the caller's class loader is not `],
-							[/* inline code block */ 'i', `null`],
-							[/* text */ 't', ` and the
-             invocation of `],
-							[/* reference */ 'r', `java.SecurityManager#checkPermission(java.security.Permission)`],
-							[/* text */ 't', ` with
-             `],
-							[/* inline code block */ 'i', `RuntimePermission("getClassLoader")`],
-							[/* text */ 't', ` permission
-             denies access.`]
-						]],
-						[/* block */ 'b', [
-							[/* text */ 't', ` for each proxy interface, `],
-							[/* inline code block */ 'i', `intf`],
-							[/* text */ 't', `,
-             the caller's class loader is not the same as or an
-             ancestor of the class loader for `],
-							[/* inline code block */ 'i', `intf`],
-							[/* text */ 't', ` and
-             invocation of `],
-							[/* reference */ 'r', `java.SecurityManager#checkPackageAccess(java.lang.String)`],
-							[/* text */ 't', ` denies access to `],
-							[/* inline code block */ 'i', `intf`],
-							[/* text */ 't', `.`]
-						]]
-					]]
-				]],
-				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
-					[/* text */ 't', `if the `],
-					[/* inline code block */ 'i', `interfaces`],
-					[/* text */ 't', ` array
-          argument or any of its elements are `],
-					[/* inline code block */ 'i', `null`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `a proxy class that is defined in the specified class loader
-          and that implements the specified interfaces`]
 			]
 		]]
 	],

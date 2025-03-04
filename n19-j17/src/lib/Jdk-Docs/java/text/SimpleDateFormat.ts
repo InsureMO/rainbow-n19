@@ -1100,6 +1100,64 @@ DocsCollector.collect('java.text.SimpleDateFormat', [
 	],
 	/* fields */ UDF,
 	[/* constructors */
+		[/* constructor */ '<init>()', [
+			[/* constructor description */
+				[/* text */ 't', `Constructs a `],
+				[/* inline code block */ 'i', `SimpleDateFormat`],
+				[/* text */ 't', ` using the default pattern and
+ date format symbols for the default
+ `],
+				[/* reference */ 'r', `java.Locale.Category#FORMAT`],
+				[/* text */ 't', ` locale.
+ `],
+				[/* text */ 't', `Note:`],
+				[/* text */ 't', ` This constructor may not support all locales.
+ For full coverage, use the factory methods in the `],
+				[/* reference */ 'r', `java.text.DateFormat`],
+				[/* text */ 't', `
+ class.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF
+		]],
+		[/* constructor */ '<init>(java.lang.String)', [
+			[/* constructor description */
+				[/* text */ 't', `Constructs a `],
+				[/* inline code block */ 'i', `SimpleDateFormat`],
+				[/* text */ 't', ` using the given pattern and
+ the default date format symbols for the default
+ `],
+				[/* reference */ 'r', `java.Locale.Category#FORMAT`],
+				[/* text */ 't', ` locale.
+ `],
+				[/* text */ 't', `Note:`],
+				[/* text */ 't', ` This constructor may not support all locales.
+ For full coverage, use the factory methods in the `],
+				[/* reference */ 'r', `java.text.DateFormat`],
+				[/* text */ 't', `
+ class.
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', `This is equivalent to calling
+ `],
+					[/* reference */ 'r', `#%3Cinit%3E(java.lang.String,java.util.Locale)`, `SimpleDateFormat(pattern, Locale.getDefault(Locale.Category.FORMAT))`],
+					[/* text */ 't', `.`]
+				]]
+			],
+			[/* parameters */
+				[/* parameter */ 'pattern', [/* parameter description */
+					[/* text */ 't', `the pattern describing the date and time format`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
+					[/* text */ 't', `if the given pattern is null`]
+				]],
+				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
+					[/* text */ 't', `if the given pattern is invalid`]
+				]]
+			]
+		]],
 		[/* constructor */ '<init>(java.lang.String,java.text.DateFormatSymbols)', [
 			[/* constructor description */
 				[/* text */ 't', `Constructs a `],
@@ -1154,64 +1212,6 @@ DocsCollector.collect('java.text.SimpleDateFormat', [
 					[/* text */ 't', `if the given pattern is invalid`]
 				]]
 			]
-		]],
-		[/* constructor */ '<init>(java.lang.String)', [
-			[/* constructor description */
-				[/* text */ 't', `Constructs a `],
-				[/* inline code block */ 'i', `SimpleDateFormat`],
-				[/* text */ 't', ` using the given pattern and
- the default date format symbols for the default
- `],
-				[/* reference */ 'r', `java.Locale.Category#FORMAT`],
-				[/* text */ 't', ` locale.
- `],
-				[/* text */ 't', `Note:`],
-				[/* text */ 't', ` This constructor may not support all locales.
- For full coverage, use the factory methods in the `],
-				[/* reference */ 'r', `java.text.DateFormat`],
-				[/* text */ 't', `
- class.
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', `This is equivalent to calling
- `],
-					[/* reference */ 'r', `#%3Cinit%3E(java.lang.String,java.util.Locale)`, `SimpleDateFormat(pattern, Locale.getDefault(Locale.Category.FORMAT))`],
-					[/* text */ 't', `.`]
-				]]
-			],
-			[/* parameters */
-				[/* parameter */ 'pattern', [/* parameter description */
-					[/* text */ 't', `the pattern describing the date and time format`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
-					[/* text */ 't', `if the given pattern is null`]
-				]],
-				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
-					[/* text */ 't', `if the given pattern is invalid`]
-				]]
-			]
-		]],
-		[/* constructor */ '<init>()', [
-			[/* constructor description */
-				[/* text */ 't', `Constructs a `],
-				[/* inline code block */ 'i', `SimpleDateFormat`],
-				[/* text */ 't', ` using the default pattern and
- date format symbols for the default
- `],
-				[/* reference */ 'r', `java.Locale.Category#FORMAT`],
-				[/* text */ 't', ` locale.
- `],
-				[/* text */ 't', `Note:`],
-				[/* text */ 't', ` This constructor may not support all locales.
- For full coverage, use the factory methods in the `],
-				[/* reference */ 'r', `java.text.DateFormat`],
-				[/* text */ 't', `
- class.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF
 		]]
 	],
 	[/* methods */
@@ -1260,6 +1260,26 @@ DocsCollector.collect('java.text.SimpleDateFormat', [
 			[/* return description */
 				[/* text */ 't', `a clone of this `],
 				[/* inline code block */ 'i', `SimpleDateFormat`]
+			]
+		]],
+		[/* method */ 'toLocalizedPattern()', [
+			[/* method description */
+				[/* text */ 't', `Returns a localized pattern string describing this date format.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `a localized pattern string describing this date format.`]
+			]
+		]],
+		[/* method */ 'toPattern()', [
+			[/* method description */
+				[/* text */ 't', `Returns a pattern string describing this date format.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `a pattern string describing this date format.`]
 			]
 		]],
 		[/* method */ 'format(java.util.Date,java.lang.StringBuffer,java.text.FieldPosition)', [
@@ -1325,6 +1345,66 @@ DocsCollector.collect('java.text.SimpleDateFormat', [
 			],
 			[/* return description */
 				[/* text */ 't', `the formatted date-time string.`]
+			]
+		]],
+		[/* method */ 'formatToCharacterIterator(java.lang.Object)', [
+			[/* method description */
+				[/* text */ 't', `Formats an Object producing an `],
+				[/* inline code block */ 'i', `AttributedCharacterIterator`],
+				[/* text */ 't', `.
+ You can use the returned `],
+				[/* inline code block */ 'i', `AttributedCharacterIterator`],
+				[/* text */ 't', `
+ to build the resulting String, as well as to determine information
+ about the resulting String.
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', `
+ Each attribute key of the AttributedCharacterIterator will be of type
+ `],
+					[/* inline code block */ 'i', `DateFormat.Field`],
+					[/* text */ 't', `, with the corresponding attribute value
+ being the same as the attribute key.`]
+				]]
+			],
+			[/* parameters */
+				[/* parameter */ 'obj', [/* parameter description */
+					[/* text */ 't', `The object to format`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
+					[/* text */ 't', `if obj is null.`]
+				]],
+				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
+					[/* text */ 't', `if the Format cannot format the
+            given object, or if the Format's pattern string is invalid.`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `AttributedCharacterIterator describing the formatted value.`]
+			]
+		]],
+		[/* method */ 'getDateFormatSymbols()', [
+			[/* method description */
+				[/* text */ 't', `Gets a copy of the date and time format symbols of this date format.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the date and time format symbols of this date format`]
+			]
+		]],
+		[/* method */ 'get2DigitYearStart()', [
+			[/* method description */
+				[/* text */ 't', `Returns the beginning date of the 100-year period 2-digit years are interpreted
+ as being within.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the start of the 100-year period into which two digit years are
+ parsed`]
 			]
 		]],
 		[/* method */ 'parse(java.lang.String,java.text.ParsePosition)', [
@@ -1420,43 +1500,25 @@ DocsCollector.collect('java.text.SimpleDateFormat', [
          error, returns null.`]
 			]
 		]],
-		[/* method */ 'formatToCharacterIterator(java.lang.Object)', [
+		[/* method */ 'applyLocalizedPattern(java.lang.String)', [
 			[/* method description */
-				[/* text */ 't', `Formats an Object producing an `],
-				[/* inline code block */ 'i', `AttributedCharacterIterator`],
-				[/* text */ 't', `.
- You can use the returned `],
-				[/* inline code block */ 'i', `AttributedCharacterIterator`],
-				[/* text */ 't', `
- to build the resulting String, as well as to determine information
- about the resulting String.
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', `
- Each attribute key of the AttributedCharacterIterator will be of type
- `],
-					[/* inline code block */ 'i', `DateFormat.Field`],
-					[/* text */ 't', `, with the corresponding attribute value
- being the same as the attribute key.`]
-				]]
+				[/* text */ 't', `Applies the given localized pattern string to this date format.`]
 			],
 			[/* parameters */
-				[/* parameter */ 'obj', [/* parameter description */
-					[/* text */ 't', `The object to format`]
+				[/* parameter */ 'pattern', [/* parameter description */
+					[/* text */ 't', `a String to be mapped to the new date and time format
+        pattern for this format`]
 				]]
 			],
 			[/* throws */
 				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
-					[/* text */ 't', `if obj is null.`]
+					[/* text */ 't', `if the given pattern is null`]
 				]],
 				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
-					[/* text */ 't', `if the Format cannot format the
-            given object, or if the Format's pattern string is invalid.`]
+					[/* text */ 't', `if the given pattern is invalid`]
 				]]
 			],
-			[/* return description */
-				[/* text */ 't', `AttributedCharacterIterator describing the formatted value.`]
-			]
+			/* return */ UDF
 		]],
 		[/* method */ 'applyPattern(java.lang.String)', [
 			[/* method description */
@@ -1476,16 +1538,6 @@ DocsCollector.collect('java.text.SimpleDateFormat', [
 				]]
 			],
 			/* return */ UDF
-		]],
-		[/* method */ 'toPattern()', [
-			[/* method description */
-				[/* text */ 't', `Returns a pattern string describing this date format.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `a pattern string describing this date format.`]
-			]
 		]],
 		[/* method */ 'set2DigitYearStart(java.util.Date)', [
 			[/* method description */
@@ -1512,58 +1564,6 @@ DocsCollector.collect('java.text.SimpleDateFormat', [
 				]]
 			],
 			/* return */ UDF
-		]],
-		[/* method */ 'get2DigitYearStart()', [
-			[/* method description */
-				[/* text */ 't', `Returns the beginning date of the 100-year period 2-digit years are interpreted
- as being within.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the start of the 100-year period into which two digit years are
- parsed`]
-			]
-		]],
-		[/* method */ 'toLocalizedPattern()', [
-			[/* method description */
-				[/* text */ 't', `Returns a localized pattern string describing this date format.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `a localized pattern string describing this date format.`]
-			]
-		]],
-		[/* method */ 'applyLocalizedPattern(java.lang.String)', [
-			[/* method description */
-				[/* text */ 't', `Applies the given localized pattern string to this date format.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'pattern', [/* parameter description */
-					[/* text */ 't', `a String to be mapped to the new date and time format
-        pattern for this format`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
-					[/* text */ 't', `if the given pattern is null`]
-				]],
-				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
-					[/* text */ 't', `if the given pattern is invalid`]
-				]]
-			],
-			/* return */ UDF
-		]],
-		[/* method */ 'getDateFormatSymbols()', [
-			[/* method description */
-				[/* text */ 't', `Gets a copy of the date and time format symbols of this date format.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the date and time format symbols of this date format`]
-			]
 		]],
 		[/* method */ 'setDateFormatSymbols(java.text.DateFormatSymbols)', [
 			[/* method description */

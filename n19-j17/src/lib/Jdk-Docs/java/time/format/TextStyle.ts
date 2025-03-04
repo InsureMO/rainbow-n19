@@ -25,15 +25,34 @@ DocsCollector.collect('java.time.format.TextStyle', [
 	/* fields */ UDF,
 	/* constructors */ UDF,
 	[/* methods */
-		[/* method */ 'values()', [
+		[/* method */ 'isStandalone()', [
 			[/* method description */
-				[/* text */ 't', `Returns an array containing the constants of this enum class, in
-the order they are declared.`]
+				[/* text */ 't', `Returns true if the Style is a stand-alone style.`]
 			],
 			/* parameters */ UDF,
 			/* throws */ UDF,
 			[/* return description */
-				[/* text */ 't', `an array containing the constants of this enum class, in the order they are declared`]
+				[/* text */ 't', `true if the style is a stand-alone style.`]
+			]
+		]],
+		[/* method */ 'asNormal()', [
+			[/* method description */
+				[/* text */ 't', `Returns the normal style with the same size.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the normal style with the same size`]
+			]
+		]],
+		[/* method */ 'asStandalone()', [
+			[/* method description */
+				[/* text */ 't', `Returns the stand-alone style with the same size.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the stand-alone style with the same size`]
 			]
 		]],
 		[/* method */ 'valueOf(java.lang.String)', [
@@ -62,34 +81,15 @@ not permitted.)`]
 				[/* text */ 't', `the enum constant with the specified name`]
 			]
 		]],
-		[/* method */ 'isStandalone()', [
+		[/* method */ 'values()', [
 			[/* method description */
-				[/* text */ 't', `Returns true if the Style is a stand-alone style.`]
+				[/* text */ 't', `Returns an array containing the constants of this enum class, in
+the order they are declared.`]
 			],
 			/* parameters */ UDF,
 			/* throws */ UDF,
 			[/* return description */
-				[/* text */ 't', `true if the style is a stand-alone style.`]
-			]
-		]],
-		[/* method */ 'asStandalone()', [
-			[/* method description */
-				[/* text */ 't', `Returns the stand-alone style with the same size.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the stand-alone style with the same size`]
-			]
-		]],
-		[/* method */ 'asNormal()', [
-			[/* method description */
-				[/* text */ 't', `Returns the normal style with the same size.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the normal style with the same size`]
+				[/* text */ 't', `an array containing the constants of this enum class, in the order they are declared`]
 			]
 		]]
 	],

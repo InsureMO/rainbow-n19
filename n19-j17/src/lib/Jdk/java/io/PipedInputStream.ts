@@ -196,12 +196,6 @@ JdkClassCreateHelper.class('java.io.PipedInputStream', [
 		]
 	],
 	[/* declared fields */
-		[/* protected static final int java.io.PipedInputStream.PIPE_SIZE */
-			/* name */ 'PIPE_SIZE',
-			/* type */ 'int',
-			/* annotations */ UDF,
-			/* modifiers */ 28
-		],
 		[/* protected byte[] java.io.PipedInputStream.buffer */
 			/* name */ 'buffer',
 			/* type */ '[B',
@@ -219,6 +213,12 @@ JdkClassCreateHelper.class('java.io.PipedInputStream', [
 			/* type */ 'int',
 			/* annotations */ UDF,
 			/* modifiers */ 4
+		],
+		[/* protected static final int java.io.PipedInputStream.PIPE_SIZE */
+			/* name */ 'PIPE_SIZE',
+			/* type */ 'int',
+			/* annotations */ UDF,
+			/* modifiers */ 28
 		]
 	],
 	/* enum values */ UDF

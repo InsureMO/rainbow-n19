@@ -189,14 +189,61 @@ DocsCollector.collect('java.text.Format', [
 		]]
 	],
 	[/* methods */
-		[/* method */ 'clone()', [
+		[/* method */ 'parseObject(java.lang.String,java.text.ParsePosition)', [
 			[/* method description */
-				[/* text */ 't', `Creates and returns a copy of this object.`]
+				[/* text */ 't', `Parses text from a string to produce an object.
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', `
+ The method attempts to parse text starting at the index given by
+ `],
+					[/* inline code block */ 'i', `pos`],
+					[/* text */ 't', `.
+ If parsing succeeds, then the index of `],
+					[/* inline code block */ 'i', `pos`],
+					[/* text */ 't', ` is updated
+ to the index after the last character used (parsing does not necessarily
+ use all characters up to the end of the string), and the parsed
+ object is returned. The updated `],
+					[/* inline code block */ 'i', `pos`],
+					[/* text */ 't', ` can be used to
+ indicate the starting point for the next call to this method.
+ If an error occurs, then the index of `],
+					[/* inline code block */ 'i', `pos`],
+					[/* text */ 't', ` is not
+ changed, the error index of `],
+					[/* inline code block */ 'i', `pos`],
+					[/* text */ 't', ` is set to the index of
+ the character where the error occurred, and null is returned.`]
+				]]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			[/* parameters */
+				[/* parameter */ 'source', [/* parameter description */
+					[/* text */ 't', `A `],
+					[/* inline code block */ 'i', `String`],
+					[/* text */ 't', `, part of which should be parsed.`]
+				]],
+				[/* parameter */ 'pos', [/* parameter description */
+					[/* text */ 't', `A `],
+					[/* inline code block */ 'i', `ParsePosition`],
+					[/* text */ 't', ` object with index and error
+            index information as described above.`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
+					[/* text */ 't', `if `],
+					[/* inline code block */ 'i', `source`],
+					[/* text */ 't', ` or `],
+					[/* inline code block */ 'i', `pos`],
+					[/* text */ 't', ` is null.`]
+				]]
+			],
 			[/* return description */
-				[/* text */ 't', `a clone of this instance.`]
+				[/* text */ 't', `An `],
+				[/* inline code block */ 'i', `Object`],
+				[/* text */ 't', ` parsed from the string. In case of
+         error, returns null.`]
 			]
 		]],
 		[/* method */ 'format(java.lang.Object,java.lang.StringBuffer,java.text.FieldPosition)', [
@@ -268,6 +315,16 @@ DocsCollector.collect('java.text.Format', [
 				[/* text */ 't', `Formatted string.`]
 			]
 		]],
+		[/* method */ 'clone()', [
+			[/* method description */
+				[/* text */ 't', `Creates and returns a copy of this object.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `a clone of this instance.`]
+			]
+		]],
 		[/* method */ 'parseObject(java.lang.String)', [
 			[/* method description */
 				[/* text */ 't', `Parses text from the beginning of the given string to produce an object.
@@ -295,63 +352,6 @@ DocsCollector.collect('java.text.Format', [
 				[/* text */ 't', `An `],
 				[/* inline code block */ 'i', `Object`],
 				[/* text */ 't', ` parsed from the string.`]
-			]
-		]],
-		[/* method */ 'parseObject(java.lang.String,java.text.ParsePosition)', [
-			[/* method description */
-				[/* text */ 't', `Parses text from a string to produce an object.
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', `
- The method attempts to parse text starting at the index given by
- `],
-					[/* inline code block */ 'i', `pos`],
-					[/* text */ 't', `.
- If parsing succeeds, then the index of `],
-					[/* inline code block */ 'i', `pos`],
-					[/* text */ 't', ` is updated
- to the index after the last character used (parsing does not necessarily
- use all characters up to the end of the string), and the parsed
- object is returned. The updated `],
-					[/* inline code block */ 'i', `pos`],
-					[/* text */ 't', ` can be used to
- indicate the starting point for the next call to this method.
- If an error occurs, then the index of `],
-					[/* inline code block */ 'i', `pos`],
-					[/* text */ 't', ` is not
- changed, the error index of `],
-					[/* inline code block */ 'i', `pos`],
-					[/* text */ 't', ` is set to the index of
- the character where the error occurred, and null is returned.`]
-				]]
-			],
-			[/* parameters */
-				[/* parameter */ 'source', [/* parameter description */
-					[/* text */ 't', `A `],
-					[/* inline code block */ 'i', `String`],
-					[/* text */ 't', `, part of which should be parsed.`]
-				]],
-				[/* parameter */ 'pos', [/* parameter description */
-					[/* text */ 't', `A `],
-					[/* inline code block */ 'i', `ParsePosition`],
-					[/* text */ 't', ` object with index and error
-            index information as described above.`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
-					[/* text */ 't', `if `],
-					[/* inline code block */ 'i', `source`],
-					[/* text */ 't', ` or `],
-					[/* inline code block */ 'i', `pos`],
-					[/* text */ 't', ` is null.`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `An `],
-				[/* inline code block */ 'i', `Object`],
-				[/* text */ 't', ` parsed from the string. In case of
-         error, returns null.`]
 			]
 		]],
 		[/* method */ 'formatToCharacterIterator(java.lang.Object)', [
