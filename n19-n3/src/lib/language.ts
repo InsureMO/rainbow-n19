@@ -3,8 +3,15 @@ import {Extension, Facet} from '@codemirror/state';
 import {EditingClassLoader} from '@rainbow-n19/n2';
 import {AutoCompletionPlugin} from './auto-completion';
 import {GroovyDecorationOptions, GroovyDecorationPlugin} from './decorations';
-import {DefaultGroovyFacetParsedCache, GroovyFacet, GroovyFacetData, GroovyFacetParsedCache} from './facet';
+import {
+	ClassDocsToggleHandler,
+	DefaultGroovyFacetParsedCache,
+	GroovyFacet,
+	GroovyFacetData,
+	GroovyFacetParsedCache
+} from './facet';
 import {FoldServicePlugin} from './fold-service';
+import {HelpServicePlugin} from './help-service';
 import {KeymapServicePlugin} from './keymap-service';
 import {GroovyLanguageServerOptions} from './language-server';
 import {LinterPlugin} from './lint';
@@ -17,6 +24,7 @@ export interface GroovyExtensionOptions {
 	decorations?: GroovyDecorationOptions;
 	parsedCache?: GroovyFacetParsedCache;
 	classLoader: EditingClassLoader | (() => EditingClassLoader);
+	classDocs: ClassDocsToggleHandler;
 }
 
 export const createGroovyLanguage = (options: GroovyParserOptions) => {
@@ -25,7 +33,12 @@ export const createGroovyLanguage = (options: GroovyParserOptions) => {
 
 export const createGroovyExtensions = (options: GroovyExtensionOptions): Extension => {
 	const parsedCache = options.parsedCache ?? new DefaultGroovyFacetParsedCache();
-	const facet = GroovyFacet.of({...(options?.facetData ?? {}), parsedCache, classLoader: options.classLoader});
+	const facet = GroovyFacet.of({
+		...(options?.facetData ?? {}),
+		parsedCache,
+		classLoader: options.classLoader,
+		classDocs: options.classDocs
+	});
 	// const facetData: GroovyFacetData = facet.
 	const language = createGroovyLanguage({...(options?.languageServer ?? {}), parsedCache});
 	return [
@@ -36,7 +49,8 @@ export const createGroovyExtensions = (options: GroovyExtensionOptions): Extensi
 			KeymapServicePlugin,
 			AutoCompletionPlugin,
 			LinterPlugin,
-			RefClickablePlugin
+			RefClickablePlugin,
+			HelpServicePlugin
 		])
 	];
 };

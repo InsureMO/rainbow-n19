@@ -24,24 +24,28 @@ import {
 	lineNumbers,
 	rectangularSelection
 } from '@codemirror/view';
+import {EditingClassDocs, EditingClassLoader, Optional} from '@rainbow-n19/n2';
 import {createGroovyExtensions} from '@rainbow-n19/n3';
-import {useEffect, useRef, useState} from 'react';
-import {CodeEditorState, GroovyEditorProps} from './types';
+import {MutableRefObject, useEffect, useRef, useState} from 'react';
+import {CodeEditorClassDocs, CodeEditorState, GroovyEditorProps} from './types';
 
 export interface UseInitEditorOptions {
 	contentChanged: GroovyEditorProps['contentChanged'];
 	classLoader?: GroovyEditorProps['classLoader'];
+	classDocs?: GroovyEditorProps['classDocs'];
 	theme?: GroovyEditorProps['theme'];
 }
 
 class EditorContext {
 	private _contentChanged: GroovyEditorProps['contentChanged'];
 	private _classLoader: GroovyEditorProps['classLoader'];
-	private _theme: GroovyEditorProps['theme'];
+	private _classDocs?: GroovyEditorProps['classDocs'];
+	private _theme?: GroovyEditorProps['theme'];
 
 	constructor(options: UseInitEditorOptions) {
 		this._contentChanged = options.contentChanged;
 		this._classLoader = options.classLoader;
+		this._classDocs = options.classDocs;
 		this._theme = options.theme;
 	}
 
@@ -61,7 +65,15 @@ class EditorContext {
 		this._classLoader = value;
 	}
 
-	get theme(): GroovyEditorProps['theme'] {
+	get classDocs(): Optional<GroovyEditorProps['classDocs']> {
+		return this._classDocs;
+	}
+
+	set classDocs(value: GroovyEditorProps['classDocs']) {
+		this._classDocs = value;
+	}
+
+	get theme(): Optional<GroovyEditorProps['theme']> {
 		return this._theme;
 	}
 
@@ -70,9 +82,45 @@ class EditorContext {
 	}
 }
 
+export class EditorClassDocs implements CodeEditorClassDocs {
+	private _context: MutableRefObject<EditorContext>;
+	private _opened: boolean = false;
+	private _handlers: Array<(open: boolean) => Promise<void>> = [];
+
+	constructor(context: MutableRefObject<EditorContext>) {
+		this._context = context;
+	}
+
+	toggle(): void {
+		this._opened = !this._opened;
+		this._handlers.forEach(handler => handler(this._opened));
+	}
+
+	addToggleHandler(handler: (open: boolean) => Promise<void>): void {
+		if (!this._handlers.includes(handler)) {
+			this._handlers.push(handler);
+		}
+	}
+
+	removeToggleHandler(handler: (open: boolean) => Promise<void>): void {
+		const index = this._handlers.indexOf(handler);
+		if (index !== -1) {
+			this._handlers.splice(index, 1);
+		}
+	}
+
+	classLoader(): EditingClassLoader {
+		return this._context.current.classLoader;
+	}
+
+	docs(): Optional<EditingClassDocs> {
+		return this._context.current.classDocs;
+	}
+}
+
 export const useInitEditor = (options: UseInitEditorOptions) => {
-	const [state, setState] = useState<CodeEditorState>({});
 	const context = useRef(new EditorContext(options));
+	const [state, setState] = useState<CodeEditorState>({});
 
 	const ref = useRef<HTMLDivElement>(null);
 
@@ -83,6 +131,7 @@ export const useInitEditor = (options: UseInitEditorOptions) => {
 
 		const changeListener = new Compartment();
 		const themeListener = new Compartment();
+		const classDocs = new EditorClassDocs(context);
 		const editor = new EditorView({
 			state: CodeMirrorState.create({
 				doc: '',
@@ -126,7 +175,8 @@ export const useInitEditor = (options: UseInitEditorOptions) => {
 							// ruleProcessingLogsEnabled: true,
 							// timeSpentLogEnabled: true,
 						},
-						classLoader: () => context.current.classLoader
+						classLoader: () => context.current.classLoader,
+						classDocs
 					}),
 					changeListener.of(EditorView.updateListener.of((update) => {
 						if (update.docChanged) {
@@ -138,9 +188,16 @@ export const useInitEditor = (options: UseInitEditorOptions) => {
 			}),
 			parent: ref.current
 		});
-		setState(state => ({...state, editor, changeListener, themeListener}));
+		setState(state => {
+			return {
+				...state,
+				editor, changeListener, themeListener, classDocs
+			};
+		});
 		return () => {
 			editor.destroy();
+			// clear state
+			setState({});
 		};
 	}, []);
 	useEffect(() => {
@@ -149,6 +206,9 @@ export const useInitEditor = (options: UseInitEditorOptions) => {
 	useEffect(() => {
 		context.current.classLoader = options.classLoader;
 	}, [options.classLoader]);
+	useEffect(() => {
+		context.current.classDocs = options.classDocs;
+	}, [options.classDocs]);
 	useEffect(() => {
 		if (options.theme != null) {
 			state.editor.dispatch({effects: state.themeListener.reconfigure(options.theme())});

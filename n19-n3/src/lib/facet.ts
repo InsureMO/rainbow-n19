@@ -13,14 +13,20 @@ export interface GroovyFacetParsedCache {
 	findPositionedNode(decorated: Parsed.DecoratedNode): Optional<Parsed.PositionedNode>;
 }
 
+export interface ClassDocsToggleHandler {
+	toggle(): void;
+}
+
 export interface GroovyFacetInputData {
 	parsedCache: GroovyFacetParsedCache;
 	classLoader: EditingClassLoader | (() => EditingClassLoader);
+	classDocs?: ClassDocsToggleHandler;
 }
 
 export interface GroovyFacetData {
 	parsedCache: GroovyFacetParsedCache;
 	classLoader: EditingClassLoader;
+	classDocs?: ClassDocsToggleHandler;
 }
 
 /**

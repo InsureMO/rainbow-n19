@@ -2,6 +2,7 @@ export * from './auto-completion';
 export * from './decorations';
 export * from './facet';
 export * from './fold-service';
+export * from './help-service';
 export * from './keymap-service';
 export * from './language';
 export * from './language-server';
