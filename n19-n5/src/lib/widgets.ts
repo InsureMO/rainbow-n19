@@ -291,13 +291,26 @@ export const HelpItemGroupTitle = styled.div.attrs({
         margin-right: 0.8em;
     }
 
-    > span:last-child {
+    > span:nth-child(2) { // , > span:nth-child(3) > span {
         cursor: pointer;
 
         &:hover {
             text-decoration: underline;
         }
     }
+
+    //> span:nth-child(3) {
+    //    display: flex;
+    //    flex-grow: 1;
+    //    justify-content: flex-end;
+    //    font-size: var(--groovy-editor-help-item-group-title-back-font-size, 12px);
+    //    font-weight: var(--groovy-editor-help-item-group-title-back-font-weight, 400);
+    //    opacity: 0.5;
+    //
+    //    > span {
+    //        margin-top: calc(var(--groovy-editor-help-item-group-title-back-font-size, 12px) / 2);
+    //    }
+    //}
 `;
 export const HelpItemList = styled.div.attrs({
 	// @ts-expect-error for avoid attribute name rule

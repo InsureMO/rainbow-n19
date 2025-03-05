@@ -152,9 +152,10 @@ const getAllClasses = (classloader: IClassLoader, group: PackageGroup): Array<It
 	return sortGroups(Object.values(groups));
 };
 const getAllClassesInPackage = (pkg: IPackage, classloader: IClassLoader): Array<ItemGroup> => {
+	const parent = pkg.name + '.';
 	const subPackages = {
 		name: 'Sub packages',
-		items: classloader.allPackages().filter(({name}) => pkg.name !== name && name.startsWith(pkg.name)),
+		items: classloader.allPackages().filter(({name}) => name.startsWith(parent)),
 		expanded: false
 	};
 	return [
@@ -241,11 +242,15 @@ export const Help = (props: HelpProps) => {
 		setState(state => {
 			return {
 				mode: HelpStateMode.PACKAGE,
+				packageName: pkg.name,
 				items: getAllClassesInPackage(pkg, classDocs.classLoader().parent()),
 				packageGroup: state.packageGroup
 			};
 		});
 	};
+	// const onBackToPackageClicked = () => {
+	// 	onPackageClicked(classDocs.classLoader().findPackage(state.packageName));
+	// };
 	const onClassClicked = (cls: IClass) => {
 		// TODO
 	};
@@ -283,8 +288,16 @@ export const Help = (props: HelpProps) => {
 							return <HelpItemGroup key={group.name}>
 								<HelpItemGroupTitle data-expanded={group.expanded}>
 									<span>{group.expanded ? '⊖' : '⊕'}</span>
-									<span
-										onClick={onGroupTitleClicked(group)}>{group.name} ({group.items.length})</span>
+									<span onClick={onGroupTitleClicked(group)}>
+										{group.name} ({group.items.length})
+									</span>
+									{/*{state.packageName != null*/}
+									{/*	? <span>*/}
+									{/*		<span onClick={onBackToPackageClicked}>*/}
+									{/*			Back to {state.packageName}*/}
+									{/*		</span>*/}
+									{/*	</span>*/}
+									{/*	: null}*/}
 								</HelpItemGroupTitle>
 								<HelpItemList data-item-count={group.items.length}>
 									{group.items.map(item => {
