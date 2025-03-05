@@ -94,6 +94,8 @@ export const EditorContainer = styled.div.attrs({
                 justify-content: center;
                 height: var(--groovy-editor-search-button-height, var(--groovy-editor-search-input-height, 28px));
                 width: var(--groovy-editor-search-button-height, var(--groovy-editor-search-input-height, 28px));
+                top: unset;
+                right: unset;
                 margin: var(--groovy-editor-search-button-margin, 0 -8px 0 0);
                 border: var(--groovy-editor-search-close-button-border, 1px solid transparent);
                 border-radius: var(--groovy-editor-search-close-button-border-radius, 100%);
@@ -139,6 +141,7 @@ export const HelpContainer = styled.div.attrs({
     position: absolute;
     width: var(--groovy-editor-help-width, 50%);
     height: var(--groovy-editor-help-height, 100%);
+    top: 0;
     right: var(--groovy-editor-help-open-right, 0);
     border: var(--groovy-editor-help-border);
     border-left: var(--groovy-editor-help-border, 1px solid #ddd);
@@ -147,6 +150,7 @@ export const HelpContainer = styled.div.attrs({
     grid-template-columns: var(--groovy-editor-help-columns, 1fr auto 32px);
     grid-column-gap: var(--groovy-editor-help-column-gap, 16px);
     grid-template-rows: var(--groovy-editor-help-rows, 32px 1fr);
+    grid-row-gap: var(--groovy-editor-help-row-gap, 8px);
     align-items: center;
     padding: var(--groovy-editor-help-padding, 14px 16px 16px);
     transition: var(--groovy-editor-help-open-transition, right 300ms ease-in-out);
@@ -197,8 +201,91 @@ export const HelpShortcut = styled.button.attrs({
     background-image: var(--groovy-editor-help-shortcut-bg, none);
     text-transform: capitalize;
     cursor: pointer;
+    transition: var(--groovy-editor-help-shortcut-transition, all 300ms ease-in-out);
+
+    &[data-active=true] {
+        background-color: var(--groovy-editor-help-shortcut-active-bg-color, rgb(214, 226, 252));
+        cursor: default;
+
+        &:active {
+            background-image: none;
+        }
+    }
 
     &:active {
         background-image: var(--groovy-editor-help-shortcut-active-bg, linear-gradient(#b4b4b4, #d0d3d6));
+    }
+`;
+// noinspection CssUnresolvedCustomProperty
+export const HelpClose = styled.button.attrs({
+	// @ts-expect-error for avoid attribute name rule
+	'data-w': 'groovy-editor-help-close'
+})`
+    display: flex;
+    position: relative;
+    align-items: center;
+    justify-self: end;
+    justify-content: center;
+    height: var(--groovy-editor-help-close-height, var(--groovy-editor-help-search-height, 28px));
+    width: var(--groovy-editor-help-close-height, var(--groovy-editor-help-search-height, 28px));
+    margin: var(--groovy-editor-help-close-margin, 0 -8px 0 0);
+    border: var(--groovy-editor-help-close-border, 1px solid transparent);
+    border-radius: var(--groovy-editor-help-close-border-radius, 100%);
+    font-size: var(--groovy-editor-help-close-font-size, 20px);
+    background-color: inherit;
+    cursor: pointer;
+    transition: var(--groovy-editor-help-close-transition, border 300ms ease-in-out);
+
+    &:hover {
+        border: var(--groovy-editor-help-close-hover-border, 1px solid #ddd);
+    }
+`;
+// noinspection CssUnresolvedCustomProperty
+export const HelpContent = styled.div.attrs({
+	// @ts-expect-error for avoid attribute name rule
+	'data-w': 'groovy-editor-help-content'
+})`
+    display: block;
+    position: relative;
+    grid-column: span 3;
+    align-self: stretch;
+    width: 100%;
+    border: var(--groovy-editor-help-content-border, 0);
+    border-top: var(--groovy-editor-help-content-border-top, 1px solid #ddd);
+    padding: var(--groovy-editor-help-content-padding, 16px 0 0);
+    overflow: auto;
+`;
+export const HelpPackages = styled.div.attrs({
+	// @ts-expect-error for avoid attribute name rule
+	'data-w': 'groovy-editor-help-packages'
+})`
+    display: flex;
+    position: relative;
+    width: 100%;
+    flex-direction: column;
+`;
+// noinspection CssUnresolvedCustomProperty
+export const HelpPackage = styled.div.attrs({
+	// @ts-expect-error for avoid attribute name rule
+	'data-w': 'groovy-editor-help-package'
+})`
+    display: flex;
+    position: relative;
+    align-items: center;
+    height: var(--groovy-editor-help-list-item-height, 28px);
+    line-height: calc(var(--groovy-editor-help-list-item-height, 28px) * 7 / 8);
+    font-size: var(--groovy-editor-help-list-item-font-size, 14px);
+
+    > span:first-child {
+        opacity: 0.5;
+        margin-right: 0.8em;
+    }
+
+    > span:last-child {
+        cursor: pointer;
+
+        &:hover {
+            text-decoration: underline;
+        }
     }
 `;
