@@ -27,7 +27,7 @@ export interface HelpProps {
 }
 
 enum HelpStateMode {
-	CLASS, PACKAGES, CLASSES
+	PACKAGE, CLASS, PACKAGES, CLASSES
 }
 
 interface ItemGroup {
@@ -135,20 +135,36 @@ const getAllPackages = (classloader: IClassLoader, group: PackageGroup): Array<I
 	}, {} as { [key: string]: ItemGroup });
 	return sortGroups(Object.values(groups));
 };
+const createClassesGroup = (group: PackageGroup) => (groups: { [key: string]: ItemGroup }, cls: IClass) => {
+	const groupName = group(cls.packageName, {java: true, groovy: true});
+	const g = groups[groupName];
+	if (g == null) {
+		groups[groupName] = {name: groupName, items: [cls], expanded: false};
+	} else {
+		g.items.push(cls);
+	}
+	return groups;
+};
 const getAllClasses = (classloader: IClassLoader, group: PackageGroup): Array<ItemGroup> => {
 	const groups = classloader.allClasses()
 		.filter(cls => !cls.isArray && !cls.isPrimitive)
-		.reduce((groups, cls) => {
-			const groupName = group(cls.packageName, {java: true, groovy: true});
-			const g = groups[groupName];
-			if (g == null) {
-				groups[groupName] = {name: groupName, items: [cls], expanded: false};
-			} else {
-				g.items.push(cls);
-			}
-			return groups;
-		}, {} as { [key: string]: ItemGroup });
+		.reduce(createClassesGroup(group), {} as { [key: string]: ItemGroup });
 	return sortGroups(Object.values(groups));
+};
+const getAllClassesInPackage = (pkg: IPackage, classloader: IClassLoader): Array<ItemGroup> => {
+	const subPackages = {
+		name: 'Sub packages',
+		items: classloader.allPackages().filter(({name}) => pkg.name !== name && name.startsWith(pkg.name)),
+		expanded: false
+	};
+	return [
+		...(subPackages.items.length !== 0 ? [subPackages] : []),
+		{
+			name: 'Classes',
+			items: classloader.findClassesOfPackage(pkg.name).filter(cls => !cls.isArray && !cls.isPrimitive),
+			expanded: true
+		}
+	];
 };
 
 export const Help = (props: HelpProps) => {
@@ -221,6 +237,27 @@ export const Help = (props: HelpProps) => {
 		group.expanded = !group.expanded;
 		forceUpdate();
 	};
+	const onPackageClicked = (pkg: IPackage) => {
+		setState(state => {
+			return {
+				mode: HelpStateMode.PACKAGE,
+				items: getAllClassesInPackage(pkg, classDocs.classLoader().parent()),
+				packageGroup: state.packageGroup
+			};
+		});
+	};
+	const onClassClicked = (cls: IClass) => {
+		// TODO
+	};
+	const onItemClicked = (item: IPackage | IClass) => () => {
+		if ((item as IClass).isArray == null) {
+			// is package
+			onPackageClicked(item as IPackage);
+		} else {
+			// is class
+			onClassClicked(item as IClass);
+		}
+	};
 
 	return <HelpContainer data-visible={opened} ref={containerRef}>
 		<HelpSearchInput placeholder="Press Enter to start searching…"/>
@@ -234,7 +271,9 @@ export const Help = (props: HelpProps) => {
 		</HelpShortcuts>
 		<HelpClose onClick={onCloseClicked}>×</HelpClose>
 		<HelpContent>
-			{(state.mode === HelpStateMode.PACKAGES || state.mode === HelpStateMode.CLASSES)
+			{(state.mode === HelpStateMode.PACKAGES
+				|| state.mode === HelpStateMode.CLASSES
+				|| state.mode === HelpStateMode.PACKAGE)
 				? <>
 					{(state.items == null || state.items.length === 0)
 						? <HelpNoItemAvailable>
@@ -248,10 +287,10 @@ export const Help = (props: HelpProps) => {
 										onClick={onGroupTitleClicked(group)}>{group.name} ({group.items.length})</span>
 								</HelpItemGroupTitle>
 								<HelpItemList data-item-count={group.items.length}>
-									{group.items.map((item: ItemGroup) => {
+									{group.items.map(item => {
 										return <HelpItem key={item.name}>
 											<span>⁃</span>
-											<span>{item.name}</span>
+											<span onClick={onItemClicked(item)}>{item.name}</span>
 										</HelpItem>;
 									})}
 								</HelpItemList>
