@@ -255,9 +255,10 @@ export const HelpContent = styled.div.attrs({
     padding: var(--groovy-editor-help-content-padding, 16px 0 0);
     overflow: auto;
 `;
-export const HelpPackages = styled.div.attrs({
+// noinspection CssUnresolvedCustomProperty
+export const HelpItemGroup = styled.div.attrs({
 	// @ts-expect-error for avoid attribute name rule
-	'data-w': 'groovy-editor-help-packages'
+	'data-w': 'groovy-editor-help-item-group'
 })`
     display: flex;
     position: relative;
@@ -265,16 +266,25 @@ export const HelpPackages = styled.div.attrs({
     flex-direction: column;
 `;
 // noinspection CssUnresolvedCustomProperty
-export const HelpPackage = styled.div.attrs({
+export const HelpItemGroupTitle = styled.div.attrs({
 	// @ts-expect-error for avoid attribute name rule
-	'data-w': 'groovy-editor-help-package'
+	'data-w': 'groovy-editor-help-item-group-title'
 })`
     display: flex;
     position: relative;
-    align-items: center;
-    height: var(--groovy-editor-help-list-item-height, 28px);
-    line-height: calc(var(--groovy-editor-help-list-item-height, 28px) * 7 / 8);
-    font-size: var(--groovy-editor-help-list-item-font-size, 14px);
+    width: 100%;
+    height: var(--groovy-editor-help-item-group-title-height, 40px);
+    line-height: calc(var(--groovy-editor-help-item-group-title-height, 40px) * 7 / 8);
+    font-size: var(--groovy-editor-help-item-group-title-font-size, 16px);
+    font-weight: var(--groovy-editor-help-item-group-title-font-weight, 600);
+    border: var(--groovy-editor-help-item-group-title-border, 1px solid transparent);
+    border-bottom: var(--groovy-editor-help-item-group-title-border, 1px solid #e3e3e3);
+
+    &[data-expanded=false] {
+        + div {
+            height: 0;
+        }
+    }
 
     > span:first-child {
         opacity: 0.5;
@@ -288,4 +298,55 @@ export const HelpPackage = styled.div.attrs({
             text-decoration: underline;
         }
     }
+`;
+export const HelpItemList = styled.div.attrs({
+	// @ts-expect-error for avoid attribute name rule
+	'data-w': 'groovy-editor-help-item-list',
+})`
+    display: flex;
+    position: relative;
+    width: 100%;
+    /*noinspection CssUnresolvedCustomProperty*/
+    height: calc(var(--groovy-editor-help-list-item-height, 28px) * var(--item-count));
+    flex-direction: column;
+    transition: height 300ms ease-in-out;
+    overflow: hidden;
+`;
+// noinspection CssUnresolvedCustomProperty
+export const HelpItem = styled.div.attrs({
+	// @ts-expect-error for avoid attribute name rule
+	'data-w': 'groovy-editor-help-list-item'
+})`
+    display: flex;
+    position: relative;
+    align-items: center;
+    height: var(--groovy-editor-help-list-item-height, 28px);
+    min-height: var(--groovy-editor-help-list-item-height, 28px);
+    line-height: calc(var(--groovy-editor-help-list-item-height, 28px) * 7 / 8);
+    font-size: var(--groovy-editor-help-list-item-font-size, 14px);
+
+    > span:first-child {
+        opacity: 0.3;
+        margin-right: 0.8em;
+    }
+
+    > span:last-child {
+        cursor: pointer;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+`;
+// noinspection CssUnresolvedCustomProperty
+export const HelpNoItemAvailable = styled.div.attrs({
+	// @ts-expect-error for avoid attribute name rule
+	'data-w': 'groovy-editor-help-no-item'
+})`
+    display: flex;
+    position: relative;
+    align-items: center;
+    height: var(--groovy-editor-help-list-no-item-height, 32px);
+    line-height: calc(var(--groovy-editor-help-list-no-item-height, 32px) * 7 / 8);
+    font-size: var(--groovy-editor-help-list-no-item-font-size, 16px);
 `;

@@ -81,6 +81,12 @@ export abstract class AbstractClassLoader implements IClassLoader {
 		}, new Map<PackageName, IPackage>()).values()];
 	}
 
+	allClasses(): Array<IClass> {
+		const myClasses = this._classes.values();
+		const classesFomAncestors = this._parent?.allClasses() ?? [];
+		return [...myClasses, ...classesFomAncestors];
+	}
+
 	addClass(clazz: IClass): void {
 		const className = clazz.name;
 		const originalClass = this._classes.get(className);
@@ -205,7 +211,7 @@ export abstract class AbstractClassLoader implements IClassLoader {
 		return this._classes.has(className);
 	}
 
-	allClasses(): Array<IClass> {
+	allMyClasses(): Array<IClass> {
 		return [...this._classes.values()];
 	}
 }

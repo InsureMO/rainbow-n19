@@ -13,6 +13,6 @@ export class GroovyClassLoader extends Groovy.GroovyClassLoader {
 export const GroovyClassCreateHelper = Java.ClassCreateHelper.intermediary();
 export const createGroovyClassLoader = (parent: Java.JREClassLoader): GroovyClassLoader => {
 	const classLoader = new GroovyClassLoader(parent);
-	GroovyClassCreateHelper.passAllClassesTo(classLoader);
+	GroovyClassCreateHelper.passAllMyClassesTo(classLoader);
 	return classLoader;
 }

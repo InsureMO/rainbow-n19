@@ -321,7 +321,7 @@ export class ClassCreateHelper {
 		return clazz;
 	}
 
-	passAllClassesTo(another: IClassLoader): void {
-		this._classLoader.allClasses().forEach(clazz => another.addClass(clazz));
+	passAllMyClassesTo(another: IClassLoader): void {
+		this._classLoader.allMyClasses().forEach(clazz => another.addClass(clazz));
 	}
 }

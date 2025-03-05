@@ -1,9 +1,10 @@
 import {Compartment, Extension} from '@codemirror/state';
 import {EditorView} from '@codemirror/view';
-import {EditingClassDocs, EditingClassLoader, Optional} from '@rainbow-n19/n2';
+import {EditingClassDocs, EditingClassLoader, Java, Optional} from '@rainbow-n19/n2';
 import {ClassDocsToggleHandler} from '@rainbow-n19/n3';
 
 export type GroovyEditorThemeCreate = () => Extension;
+export type GroovyEditorPackageGroup = (packageName: Java.PackageName) => string;
 
 export interface GroovyEditorProps {
 	initContent?: string;
@@ -11,6 +12,7 @@ export interface GroovyEditorProps {
 	classLoader: EditingClassLoader;
 	classDocs?: EditingClassDocs;
 	theme?: GroovyEditorThemeCreate;
+	packageGroup?: GroovyEditorPackageGroup;
 }
 
 export interface CodeEditorClassDocs extends ClassDocsToggleHandler {

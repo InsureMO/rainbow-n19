@@ -19,7 +19,11 @@ export interface IClassLoader {
 	 * including packages from ancestors, only packages have classes are returned
 	 */
 	allPackages(): Array<IPackage>;
+	/**
+	 * including classes from ancestors
+	 */
+	allClasses(): Array<IClass>;
 	addClass(clazz: IClass): void;
 	removeClass(className: ClassName): void;
-	allClasses(): Array<IClass>;
+	allMyClasses(): Array<IClass>;
 }
