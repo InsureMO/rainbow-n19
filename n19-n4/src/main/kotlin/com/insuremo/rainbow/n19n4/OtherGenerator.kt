@@ -25,7 +25,7 @@ private fun createClassLoaderFile(targetDir: String, name: String) {
 			"export const ${name}ClassCreateHelper = Java.ClassCreateHelper.intermediary();\n" +
 			"export const create${name}ClassLoader = (parent: Java.JREClassLoader | Groovy.GroovyClassLoader | DependenciesClassLoader): ${name}ClassLoader => {\n" +
 			"\tconst classLoader = new ${name}ClassLoader(parent);\n" +
-			"\t${name}ClassCreateHelper.passAllClassesTo(classLoader);\n" +
+			"\t${name}ClassCreateHelper.passAllMyClassesTo(classLoader);\n" +
 			"\treturn classLoader;\n" +
 			"}\n"
 	writeFile(targetDir + File.separator + "${name}ClassLoader.ts", content)
