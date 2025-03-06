@@ -9,9 +9,10 @@ export type DocSegmentInlineCodeBlock = ['i', DocSegmentContent];
 /** reference, could be class/field/method/constructor */
 export type DocSegmentReference =
 	| ['r', DocSegmentContent] // link
-	| ['r', DocSegmentContent, DocSegmentContent]; // link, text
+	| ['r', DocSegmentContent, DocSegmentContent] // link, text
+	| ['r', '#-id', DocSegmentContent, DocSegmentContent]; // id, text
 /** code block */
-export type DocSegmentCodeBlock = ['c', DocSegmentContent | Array<DocSegmentText | DocSegmentInlineCodeBlock>];
+export type DocSegmentCodeBlock = ['c', DocSegmentContent | Array<DocSegmentText | DocSegmentInlineCodeBlock | DocSegmentReference>];
 /** external link */
 export type DocSegmentExternalLink = ['a', DocSegmentContent, DocSegmentContent];
 /** list */

@@ -779,9 +779,13 @@ private class ClassGenerator(
 				link.substring(link.indexOf("/java.base/") + 11).replace(".html", "").replace("/", ".")
 			} else if (link.startsWith("../")) {
 				// another package
-				myPackageName.take(myPackageName.size - (link.split("../").size - 1)).joinToString(".") +
-						"." +
-						link.replace("../", "").replace(".html", "").replace("/", ".")
+				val prePackages =
+					myPackageName.take(myPackageName.size - (link.split("../").size - 1)).joinToString(".")
+				if (prePackages.isEmpty()) {
+					link.replace("../", "").replace(".html", "").replace("/", ".")
+				} else {
+					prePackages + "." + link.replace("../", "").replace(".html", "").replace("/", ".")
+				}
 			} else if (link.startsWith("./")) {
 				"${clazz.packageName}." + link.replace("./", "").replace(".html", "").replace("/", ".")
 			} else {

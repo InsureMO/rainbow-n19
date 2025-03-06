@@ -283,7 +283,8 @@ object Envs {
 			"Inet4Address.html",
 			"Inet6Address.html",
 			"System.html#EnvironmentVSSystemProperties",
-			"DateTimeFormatter.html#patterns"
+			"DateTimeFormatter.html#patterns",
+			"org/codehaus/groovy/runtime/DefaultGroovyMethods.html"
 		)
 	}
 
