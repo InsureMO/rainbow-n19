@@ -53,12 +53,12 @@ DocsCollector.collect('groovy.lang.IntRange', [
 		[/* block */ 'b', [
 			[/* text */ 't', `
  Note: This class is a copy of `],
-			[/* reference */ 'r', `groovy.lang.ObjectRange`],
+			[/* reference */ 'r', `groovy.lang.ObjectRange`, `ObjectRange`],
 			[/* text */ 't', ` optimized for `],
 			[/* inline code block */ 'i', `int`],
 			[/* text */ 't', `. If you make any
  changes to this class, you might consider making parallel changes to `],
-			[/* reference */ 'r', `groovy.lang.ObjectRange`],
+			[/* reference */ 'r', `groovy.lang.ObjectRange`, `ObjectRange`],
 			[/* text */ 't', `.`]
 		]]
 	],
@@ -242,9 +242,9 @@ DocsCollector.collect('groovy.lang.IntRange', [
 		[/* method */ 'equals(groovy.lang.IntRange)', [
 			[/* method description */
 				[/* text */ 't', `Compares an `],
-				[/* reference */ 'r', `groovy.lang.IntRange`],
+				[/* reference */ 'r', `groovy.lang.IntRange`, `IntRange`],
 				[/* text */ 't', ` to another `],
-				[/* reference */ 'r', `groovy.lang.IntRange`],
+				[/* reference */ 'r', `groovy.lang.IntRange`, `IntRange`],
 				[/* text */ 't', `.`]
 			],
 			[/* parameters */
@@ -267,7 +267,7 @@ DocsCollector.collect('groovy.lang.IntRange', [
 				[/* inline code block */ 'i', `that`],
 				[/* text */ 't', ` is anything
  other than an `],
-				[/* reference */ 'r', `groovy.lang.IntRange`],
+				[/* reference */ 'r', `groovy.lang.IntRange`, `IntRange`],
 				[/* text */ 't', `.
  `],
 				[/* block */ 'b', [
@@ -283,7 +283,7 @@ DocsCollector.collect('groovy.lang.IntRange', [
 				[/* block */ 'b', [
 					[/* text */ 't', `
  Note that equals is generally handled by `],
-					[/* reference */ 'r', `groovy.lang.codehaus.groovy.runtime.DefaultGroovyMethods#equals(java.util.List,java.util.List)`],
+					[/* reference */ 'r', `groovy.lang.codehaus.groovy.runtime.DefaultGroovyMethods#equals(java.util.List,java.util.List)`, `DefaultGroovyMethods.equals(List, List)`],
 					[/* text */ 't', `
  instead of this method.`]
 				]]
@@ -403,9 +403,9 @@ DocsCollector.collect('groovy.lang.IntRange', [
 				[/* text */ 't', `the verbose `],
 				[/* external link */ 'a', `https://docs.oracle.com/javase/8/docs/api/java/lang/String.html`, `String`],
 				[/* text */ 't', ` representation of this `],
-				[/* reference */ 'r', `groovy.lang.Range`],
+				[/* reference */ 'r', `groovy.lang.Range`, `Range`],
 				[/* text */ 't', ` as would be typed into a console to create the `],
-				[/* reference */ 'r', `groovy.lang.Range`],
+				[/* reference */ 'r', `groovy.lang.Range`, `Range`],
 				[/* text */ 't', ` instance`]
 			]
 		]],
@@ -451,7 +451,7 @@ DocsCollector.collect('groovy.lang.IntRange', [
 				]],
 				[/* parameter */ 'closure', [/* parameter description */
 					[/* text */ 't', `the `],
-					[/* reference */ 'r', `groovy.lang.Closure`],
+					[/* reference */ 'r', `groovy.lang.Closure`, `Closure`],
 					[/* text */ 't', ` to call`]
 				]]
 			],

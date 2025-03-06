@@ -14,7 +14,7 @@ DocsCollector.collect('groovy.lang.NumberRange', [
 		[/* constructor */ '<init>(java.lang.Number,java.lang.Number,java.lang.Number)', [
 			[/* constructor description */
 				[/* text */ 't', `Creates an inclusive `],
-				[/* reference */ 'r', `groovy.lang.NumberRange`],
+				[/* reference */ 'r', `groovy.lang.NumberRange`, `NumberRange`],
 				[/* text */ 't', `.
  Creates a reversed range if `],
 				[/* inline code block */ 'i', `from`],
@@ -38,7 +38,7 @@ DocsCollector.collect('groovy.lang.NumberRange', [
 		[/* constructor */ '<init>(java.lang.Number,java.lang.Number,boolean,boolean)', [
 			[/* constructor description */
 				[/* text */ 't', `Creates a `],
-				[/* reference */ 'r', `groovy.lang.NumberRange`],
+				[/* reference */ 'r', `groovy.lang.NumberRange`, `NumberRange`],
 				[/* text */ 't', `.
  Creates a reversed range if `],
 				[/* inline code block */ 'i', `from`],
@@ -65,7 +65,7 @@ DocsCollector.collect('groovy.lang.NumberRange', [
 		[/* constructor */ '<init>(java.lang.Number,java.lang.Number,java.lang.Number,boolean)', [
 			[/* constructor description */
 				[/* text */ 't', `Creates a `],
-				[/* reference */ 'r', `groovy.lang.NumberRange`],
+				[/* reference */ 'r', `groovy.lang.NumberRange`, `NumberRange`],
 				[/* text */ 't', `.
  Creates a reversed range if `],
 				[/* inline code block */ 'i', `from`],
@@ -92,7 +92,7 @@ DocsCollector.collect('groovy.lang.NumberRange', [
 		[/* constructor */ '<init>(java.lang.Number,java.lang.Number,java.lang.Number,boolean,boolean)', [
 			[/* constructor description */
 				[/* text */ 't', `Creates a `],
-				[/* reference */ 'r', `groovy.lang.NumberRange`],
+				[/* reference */ 'r', `groovy.lang.NumberRange`, `NumberRange`],
 				[/* text */ 't', `.
  Creates a reversed range if `],
 				[/* inline code block */ 'i', `from`],
@@ -122,7 +122,7 @@ DocsCollector.collect('groovy.lang.NumberRange', [
 		[/* constructor */ '<init>(java.lang.Number,java.lang.Number)', [
 			[/* constructor description */
 				[/* text */ 't', `Creates an inclusive `],
-				[/* reference */ 'r', `groovy.lang.NumberRange`],
+				[/* reference */ 'r', `groovy.lang.NumberRange`, `NumberRange`],
 				[/* text */ 't', ` with step size 1.
  Creates a reversed range if `],
 				[/* inline code block */ 'i', `from`],
@@ -143,7 +143,7 @@ DocsCollector.collect('groovy.lang.NumberRange', [
 		[/* constructor */ '<init>(java.lang.Number,java.lang.Number,boolean)', [
 			[/* constructor description */
 				[/* text */ 't', `Creates a new `],
-				[/* reference */ 'r', `groovy.lang.NumberRange`],
+				[/* reference */ 'r', `groovy.lang.NumberRange`, `NumberRange`],
 				[/* text */ 't', ` with step size 1.
  Creates a reversed range if `],
 				[/* inline code block */ 'i', `from`],
@@ -230,9 +230,9 @@ DocsCollector.collect('groovy.lang.NumberRange', [
 		[/* method */ 'fastEquals(groovy.lang.NumberRange)', [
 			[/* method description */
 				[/* text */ 't', `Compares a `],
-				[/* reference */ 'r', `groovy.lang.NumberRange`],
+				[/* reference */ 'r', `groovy.lang.NumberRange`, `NumberRange`],
 				[/* text */ 't', ` to another `],
-				[/* reference */ 'r', `groovy.lang.NumberRange`],
+				[/* reference */ 'r', `groovy.lang.NumberRange`, `NumberRange`],
 				[/* text */ 't', ` using only a strict comparison
  of the NumberRange properties. This won't return true for some ranges which represent the same
  discrete items, use equals instead for that but will be much faster for large lists.`]
@@ -316,9 +316,9 @@ DocsCollector.collect('groovy.lang.NumberRange', [
 				[/* text */ 't', `the verbose `],
 				[/* external link */ 'a', `https://docs.oracle.com/javase/8/docs/api/java/lang/String.html`, `String`],
 				[/* text */ 't', ` representation of this `],
-				[/* reference */ 'r', `groovy.lang.Range`],
+				[/* reference */ 'r', `groovy.lang.Range`, `Range`],
 				[/* text */ 't', ` as would be typed into a console to create the `],
-				[/* reference */ 'r', `groovy.lang.Range`],
+				[/* reference */ 'r', `groovy.lang.Range`, `Range`],
 				[/* text */ 't', ` instance`]
 			]
 		]],
@@ -364,7 +364,7 @@ DocsCollector.collect('groovy.lang.NumberRange', [
 				]],
 				[/* parameter */ 'closure', [/* parameter description */
 					[/* text */ 't', `the `],
-					[/* reference */ 'r', `groovy.lang.Closure`],
+					[/* reference */ 'r', `groovy.lang.Closure`, `Closure`],
 					[/* text */ 't', ` to call`]
 				]]
 			],

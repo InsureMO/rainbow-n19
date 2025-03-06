@@ -18,7 +18,7 @@ DocsCollector.collect('groovy.lang.EmptyRange', [
 		[/* constructor */ '<init>(java.lang.Comparable)', [
 			[/* constructor description */
 				[/* text */ 't', `Creates a new `],
-				[/* reference */ 'r', `groovy.lang.EmptyRange`],
+				[/* reference */ 'r', `groovy.lang.EmptyRange`, `EmptyRange`],
 				[/* text */ 't', `.`]
 			],
 			[/* parameters */
@@ -148,9 +148,9 @@ DocsCollector.collect('groovy.lang.EmptyRange', [
 				[/* text */ 't', `the verbose `],
 				[/* external link */ 'a', `https://docs.oracle.com/javase/8/docs/api/java/lang/String.html`, `String`],
 				[/* text */ 't', ` representation of this `],
-				[/* reference */ 'r', `groovy.lang.Range`],
+				[/* reference */ 'r', `groovy.lang.Range`, `Range`],
 				[/* text */ 't', ` as would be typed into a console to create the `],
-				[/* reference */ 'r', `groovy.lang.Range`],
+				[/* reference */ 'r', `groovy.lang.Range`, `Range`],
 				[/* text */ 't', ` instance`]
 			]
 		]],
@@ -242,7 +242,7 @@ DocsCollector.collect('groovy.lang.EmptyRange', [
 				]],
 				[/* parameter */ 'closure', [/* parameter description */
 					[/* text */ 't', `the `],
-					[/* reference */ 'r', `groovy.lang.Closure`],
+					[/* reference */ 'r', `groovy.lang.Closure`, `Closure`],
 					[/* text */ 't', ` to call`]
 				]]
 			],

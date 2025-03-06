@@ -9,10 +9,10 @@ DocsCollector.collect('groovy.lang.ObjectRange', [
 		[/* block */ 'b', [
 			[/* text */ 't', `
  Note: This class is similar to `],
-			[/* reference */ 'r', `groovy.lang.IntRange`],
+			[/* reference */ 'r', `groovy.lang.IntRange`, `IntRange`],
 			[/* text */ 't', `. If you make any changes to this
  class, you might consider making parallel changes to `],
-			[/* reference */ 'r', `groovy.lang.IntRange`],
+			[/* reference */ 'r', `groovy.lang.IntRange`, `IntRange`],
 			[/* text */ 't', `.`]
 		]]
 	],
@@ -21,7 +21,7 @@ DocsCollector.collect('groovy.lang.ObjectRange', [
 		[/* constructor */ '<init>(java.lang.Comparable,java.lang.Comparable)', [
 			[/* constructor description */
 				[/* text */ 't', `Creates a new `],
-				[/* reference */ 'r', `groovy.lang.ObjectRange`],
+				[/* reference */ 'r', `groovy.lang.ObjectRange`, `ObjectRange`],
 				[/* text */ 't', `. Creates a reversed range if
  `],
 				[/* inline code block */ 'i', `from`],
@@ -42,7 +42,7 @@ DocsCollector.collect('groovy.lang.ObjectRange', [
 		[/* constructor */ '<init>(java.lang.Comparable,java.lang.Comparable,boolean)', [
 			[/* constructor description */
 				[/* text */ 't', `Creates a new `],
-				[/* reference */ 'r', `groovy.lang.ObjectRange`],
+				[/* reference */ 'r', `groovy.lang.ObjectRange`, `ObjectRange`],
 				[/* text */ 't', ` assumes smaller <= larger, else behavior is undefined.
  Caution: Prefer the other constructor when in doubt.
  `],
@@ -122,9 +122,9 @@ DocsCollector.collect('groovy.lang.ObjectRange', [
 		[/* method */ 'equals(groovy.lang.ObjectRange)', [
 			[/* method description */
 				[/* text */ 't', `Compares an `],
-				[/* reference */ 'r', `groovy.lang.ObjectRange`],
+				[/* reference */ 'r', `groovy.lang.ObjectRange`, `ObjectRange`],
 				[/* text */ 't', ` to another `],
-				[/* reference */ 'r', `groovy.lang.ObjectRange`],
+				[/* reference */ 'r', `groovy.lang.ObjectRange`, `ObjectRange`],
 				[/* text */ 't', `.`]
 			],
 			[/* parameters */
@@ -196,9 +196,9 @@ DocsCollector.collect('groovy.lang.ObjectRange', [
 				[/* text */ 't', `the verbose `],
 				[/* external link */ 'a', `https://docs.oracle.com/javase/8/docs/api/java/lang/String.html`, `String`],
 				[/* text */ 't', ` representation of this `],
-				[/* reference */ 'r', `groovy.lang.Range`],
+				[/* reference */ 'r', `groovy.lang.Range`, `Range`],
 				[/* text */ 't', ` as would be typed into a console to create the `],
-				[/* reference */ 'r', `groovy.lang.Range`],
+				[/* reference */ 'r', `groovy.lang.Range`, `Range`],
 				[/* text */ 't', ` instance`]
 			]
 		]],
@@ -244,7 +244,7 @@ DocsCollector.collect('groovy.lang.ObjectRange', [
 				]],
 				[/* parameter */ 'closure', [/* parameter description */
 					[/* text */ 't', `the `],
-					[/* reference */ 'r', `groovy.lang.Closure`],
+					[/* reference */ 'r', `groovy.lang.Closure`, `Closure`],
 					[/* text */ 't', ` to call`]
 				]]
 			],
