@@ -1,6 +1,5 @@
 package com.insuremo.rainbow.n19n4
 
-import groovy.sql.SqlWhereVisitor
 import java.io.File
 
 object Summary {
