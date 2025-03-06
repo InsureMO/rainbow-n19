@@ -252,8 +252,26 @@ export const HelpContent = styled.div.attrs({
     width: 100%;
     border: var(--groovy-editor-help-content-border, 0);
     border-top: var(--groovy-editor-help-content-border-top, 1px solid #ddd);
-    padding: var(--groovy-editor-help-content-padding, 16px 0 0);
+    margin: var(--groovy-editor-help-content-margin, 16px 0 0);
     overflow: auto;
+`;
+// noinspection CssUnresolvedCustomProperty
+export const HelpContentTitle = styled.div.attrs({
+	// @ts-expect-error for avoid attribute name rule
+	'data-w': 'groovy-editor-help-title'
+})`
+    display: flex;
+    position: sticky;
+    top: 0;
+    width: 100%;
+    height: var(--groovy-editor-help-content-title-height, 40px);
+    line-height: calc(var(--groovy-editor-help-content-title-height, 40px) * 7 / 8);
+    font-size: var(--groovy-editor-help-content-title-font-size, 16px);
+    font-weight: var(--groovy-editor-help-content-title-font-weight, 600);
+    border: var(--groovy-editor-help-content-title-border, 1px solid transparent);
+    border-bottom: var(--groovy-editor-help-content-title-border, 2px solid #e1e1e1);
+    background-color: var(--groovy-editor-help-background-color, #f5f5f5);
+    z-index: 1;
 `;
 // noinspection CssUnresolvedCustomProperty
 export const HelpItemGroup = styled.div.attrs({
@@ -276,7 +294,7 @@ export const HelpItemGroupTitle = styled.div.attrs({
     height: var(--groovy-editor-help-item-group-title-height, 40px);
     line-height: calc(var(--groovy-editor-help-item-group-title-height, 40px) * 7 / 8);
     font-size: var(--groovy-editor-help-item-group-title-font-size, 16px);
-    font-weight: var(--groovy-editor-help-item-group-title-font-weight, 600);
+    font-weight: var(--groovy-editor-help-item-group-title-font-weight, 500);
     border: var(--groovy-editor-help-item-group-title-border, 1px solid transparent);
     border-bottom: var(--groovy-editor-help-item-group-title-border, 1px solid #e3e3e3);
 
@@ -291,26 +309,13 @@ export const HelpItemGroupTitle = styled.div.attrs({
         margin-right: 0.8em;
     }
 
-    > span:nth-child(2) { // , > span:nth-child(3) > span {
+    > span:nth-child(2) {
         cursor: pointer;
 
         &:hover {
             text-decoration: underline;
         }
     }
-
-    //> span:nth-child(3) {
-    //    display: flex;
-    //    flex-grow: 1;
-    //    justify-content: flex-end;
-    //    font-size: var(--groovy-editor-help-item-group-title-back-font-size, 12px);
-    //    font-weight: var(--groovy-editor-help-item-group-title-back-font-weight, 400);
-    //    opacity: 0.5;
-    //
-    //    > span {
-    //        margin-top: calc(var(--groovy-editor-help-item-group-title-back-font-size, 12px) / 2);
-    //    }
-    //}
 `;
 export const HelpItemList = styled.div.attrs({
 	// @ts-expect-error for avoid attribute name rule

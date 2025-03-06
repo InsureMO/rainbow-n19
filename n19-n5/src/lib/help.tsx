@@ -1,10 +1,11 @@
-import {Java} from '@rainbow-n19/n2';
+import {Java, Optional} from '@rainbow-n19/n2';
 import React, {useEffect, useReducer, useRef, useState} from 'react';
 import {CodeEditorClassDocs, GroovyEditorPackageGroup} from './types';
 import {
 	HelpClose,
 	HelpContainer,
 	HelpContent,
+	HelpContentTitle,
 	HelpItem,
 	HelpItemGroup,
 	HelpItemGroupTitle,
@@ -20,6 +21,8 @@ type IPackage = Java.IPackage;
 type ClassName = Java.ClassName;
 type IClass = Java.IClass;
 type IClassLoader = Java.IClassLoader;
+// const Modifier = Java.Modifier;
+type ClassDoc = Java.ClassDoc;
 
 export interface HelpProps {
 	classDocs: CodeEditorClassDocs;
@@ -168,6 +171,60 @@ const getAllClassesInPackage = (pkg: IPackage, classloader: IClassLoader): Array
 	];
 };
 
+class ClassDocDetails {
+	private readonly _doc: Optional<ClassDoc>;
+
+	private readonly _available: boolean;
+	private readonly _classDocAvailable: boolean;
+	private readonly _fieldsDocAvailable: boolean;
+	private readonly _constructorsDocAvailable: boolean;
+	private readonly _methodsDocAvailable: boolean;
+
+	constructor(className: Optional<ClassName>,
+	            classDocs: CodeEditorClassDocs,
+	            mode: HelpStateMode) {
+		if (mode !== HelpStateMode.CLASS || this._doc == null) {
+			this._available = false;
+			this._classDocAvailable = false;
+			this._fieldsDocAvailable = false;
+			this._constructorsDocAvailable = false;
+			this._methodsDocAvailable = false;
+		} else {
+			this._doc = classDocs.docs().findDoc(className);
+			this._classDocAvailable = this._doc.description != null && this._doc.description.length > 0;
+			this._fieldsDocAvailable = this._doc.fields != null && this._doc.fields.length > 0;
+			this._constructorsDocAvailable = this._doc.constructors != null && this._doc.constructors.length > 0;
+			this._methodsDocAvailable = this._doc.methods != null && this._doc.methods.length > 0;
+			this._available = this._classDocAvailable
+				|| this._fieldsDocAvailable || this._constructorsDocAvailable || this._methodsDocAvailable;
+		}
+	}
+
+	get doc(): Optional<ClassDoc> {
+		return this._doc;
+	}
+
+	get available(): boolean {
+		return this._available;
+	}
+
+	get classDocAvailable(): boolean {
+		return this._classDocAvailable;
+	}
+
+	get fieldsDocAvailable(): boolean {
+		return this._fieldsDocAvailable;
+	}
+
+	get constructorsDocAvailable(): boolean {
+		return this._constructorsDocAvailable;
+	}
+
+	get methodsDocAvailable(): boolean {
+		return this._methodsDocAvailable;
+	}
+}
+
 export const Help = (props: HelpProps) => {
 	const {classDocs, packageGroup} = props;
 
@@ -234,6 +291,22 @@ export const Help = (props: HelpProps) => {
 	const onCloseClicked = () => {
 		classDocs?.toggle();
 	};
+	const getClassTypeForContentTitle = (className: ClassName): string => {
+		const cls = classDocs.classLoader().findClass(className);
+		if (cls == null) {
+			return '';
+		} else if (cls.isInterface) {
+			return 'interface ';
+		} else if (cls.isEnum) {
+			return 'enum ';
+		} else if (cls.isAnnotation) {
+			return 'annotation ';
+		} else if (cls.isAbstract) {
+			return 'abstract class ';
+		} else {
+			return 'class ';
+		}
+	};
 	const onGroupTitleClicked = (group: ItemGroup) => () => {
 		group.expanded = !group.expanded;
 		forceUpdate();
@@ -248,11 +321,14 @@ export const Help = (props: HelpProps) => {
 			};
 		});
 	};
-	// const onBackToPackageClicked = () => {
-	// 	onPackageClicked(classDocs.classLoader().findPackage(state.packageName));
-	// };
 	const onClassClicked = (cls: IClass) => {
-		// TODO
+		setState(state => {
+			return {
+				mode: HelpStateMode.CLASS,
+				className: cls.name,
+				packageGroup: state.packageGroup
+			};
+		});
 	};
 	const onItemClicked = (item: IPackage | IClass) => () => {
 		if ((item as IClass).isArray == null) {
@@ -263,6 +339,8 @@ export const Help = (props: HelpProps) => {
 			onClassClicked(item as IClass);
 		}
 	};
+
+	const classDoc = new ClassDocDetails(state.className, classDocs, state.mode);
 
 	return <HelpContainer data-visible={opened} ref={containerRef}>
 		<HelpSearchInput placeholder="Press Enter to start searching…"/>
@@ -276,13 +354,29 @@ export const Help = (props: HelpProps) => {
 		</HelpShortcuts>
 		<HelpClose onClick={onCloseClicked}>×</HelpClose>
 		<HelpContent>
+			{state.mode === HelpStateMode.PACKAGES
+				? <HelpContentTitle>All Packages</HelpContentTitle>
+				: null}
+			{state.mode === HelpStateMode.CLASSES
+				? <HelpContentTitle>All Classes</HelpContentTitle>
+				: null}
+			{state.mode === HelpStateMode.PACKAGE
+				? <HelpContentTitle>Package {state.packageName}</HelpContentTitle>
+				: null}
+			{state.mode === HelpStateMode.CLASS
+				? <HelpContentTitle>
+					{getClassTypeForContentTitle(state.className)}{state.className}
+				</HelpContentTitle>
+				: null}
 			{(state.mode === HelpStateMode.PACKAGES
 				|| state.mode === HelpStateMode.CLASSES
 				|| state.mode === HelpStateMode.PACKAGE)
 				? <>
 					{(state.items == null || state.items.length === 0)
 						? <HelpNoItemAvailable>
-							{state.mode === HelpStateMode.PACKAGES ? 'No packages available' : 'No classes available'}
+							{state.mode === HelpStateMode.PACKAGES
+								? 'No packages available.'
+								: (state.mode === HelpStateMode.CLASSES ? 'No classes available.' : 'No items available.')}
 						</HelpNoItemAvailable>
 						: state.items.map(group => {
 							return <HelpItemGroup key={group.name}>
@@ -291,13 +385,6 @@ export const Help = (props: HelpProps) => {
 									<span onClick={onGroupTitleClicked(group)}>
 										{group.name} ({group.items.length})
 									</span>
-									{/*{state.packageName != null*/}
-									{/*	? <span>*/}
-									{/*		<span onClick={onBackToPackageClicked}>*/}
-									{/*			Back to {state.packageName}*/}
-									{/*		</span>*/}
-									{/*	</span>*/}
-									{/*	: null}*/}
 								</HelpItemGroupTitle>
 								<HelpItemList data-item-count={group.items.length}>
 									{group.items.map(item => {
@@ -309,6 +396,13 @@ export const Help = (props: HelpProps) => {
 								</HelpItemList>
 							</HelpItemGroup>;
 						})}
+				</>
+				: null}
+			{state.mode === HelpStateMode.CLASS
+				? <>
+					{!classDoc.available
+						? <HelpNoItemAvailable>No documentation available.</HelpNoItemAvailable>
+						: null}
 				</>
 				: null}
 		</HelpContent>
