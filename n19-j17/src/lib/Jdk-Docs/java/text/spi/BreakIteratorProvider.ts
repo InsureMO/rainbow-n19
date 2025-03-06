@@ -6,7 +6,7 @@ DocsCollector.collect('java.text.spi.BreakIteratorProvider', [
 		[/* text */ 't', `An abstract class for service providers that
  provide concrete implementations of the
  `],
-		[/* reference */ 'r', `java.text.BreakIterator`],
+		[/* reference */ 'r', `java.text.BreakIterator`, `BreakIterator`],
 		[/* text */ 't', ` class.`]
 	],
 	/* fields */ UDF,
@@ -27,7 +27,7 @@ DocsCollector.collect('java.text.spi.BreakIteratorProvider', [
 				[/* inline code block */ 'i', `BreakIterator`],
 				[/* text */ 't', ` instance
  for `],
-				[/* reference */ 'r', `java.BreakIterator#character`],
+				[/* reference */ 'r', `java.text.BreakIterator#character`, `character breaks`],
 				[/* text */ 't', `
  for the given locale.`]
 			],
@@ -48,7 +48,7 @@ DocsCollector.collect('java.text.spi.BreakIteratorProvider', [
 					[/* text */ 't', ` isn't
      one of the locales returned from
      `],
-					[/* reference */ 'r', `java.text.spi.LocaleServiceProvider#getAvailableLocales()`],
+					[/* reference */ 'r', `java.util.spi.LocaleServiceProvider#getAvailableLocales()`, `getAvailableLocales()`],
 					[/* text */ 't', `.`]
 				]]
 			],
@@ -62,7 +62,7 @@ DocsCollector.collect('java.text.spi.BreakIteratorProvider', [
 				[/* inline code block */ 'i', `BreakIterator`],
 				[/* text */ 't', ` instance
  for `],
-				[/* reference */ 'r', `java.BreakIterator#line`],
+				[/* reference */ 'r', `java.text.BreakIterator#line`, `line breaks`],
 				[/* text */ 't', `
  for the given locale.`]
 			],
@@ -83,7 +83,7 @@ DocsCollector.collect('java.text.spi.BreakIteratorProvider', [
 					[/* text */ 't', ` isn't
      one of the locales returned from
      `],
-					[/* reference */ 'r', `java.text.spi.LocaleServiceProvider#getAvailableLocales()`],
+					[/* reference */ 'r', `java.util.spi.LocaleServiceProvider#getAvailableLocales()`, `getAvailableLocales()`],
 					[/* text */ 't', `.`]
 				]]
 			],
@@ -97,7 +97,7 @@ DocsCollector.collect('java.text.spi.BreakIteratorProvider', [
 				[/* inline code block */ 'i', `BreakIterator`],
 				[/* text */ 't', ` instance
  for `],
-				[/* reference */ 'r', `java.BreakIterator#sentence`],
+				[/* reference */ 'r', `java.text.BreakIterator#sentence`, `sentence breaks`],
 				[/* text */ 't', `
  for the given locale.`]
 			],
@@ -118,7 +118,7 @@ DocsCollector.collect('java.text.spi.BreakIteratorProvider', [
 					[/* text */ 't', ` isn't
      one of the locales returned from
      `],
-					[/* reference */ 'r', `java.text.spi.LocaleServiceProvider#getAvailableLocales()`],
+					[/* reference */ 'r', `java.util.spi.LocaleServiceProvider#getAvailableLocales()`, `getAvailableLocales()`],
 					[/* text */ 't', `.`]
 				]]
 			],
@@ -132,7 +132,7 @@ DocsCollector.collect('java.text.spi.BreakIteratorProvider', [
 				[/* inline code block */ 'i', `BreakIterator`],
 				[/* text */ 't', ` instance
  for `],
-				[/* reference */ 'r', `java.BreakIterator#word`],
+				[/* reference */ 'r', `java.text.BreakIterator#word`, `word breaks`],
 				[/* text */ 't', `
  for the given locale.`]
 			],
@@ -153,7 +153,7 @@ DocsCollector.collect('java.text.spi.BreakIteratorProvider', [
 					[/* text */ 't', ` isn't
      one of the locales returned from
      `],
-					[/* reference */ 'r', `java.text.spi.LocaleServiceProvider#getAvailableLocales()`],
+					[/* reference */ 'r', `java.util.spi.LocaleServiceProvider#getAvailableLocales()`, `getAvailableLocales()`],
 					[/* text */ 't', `.`]
 				]]
 			],

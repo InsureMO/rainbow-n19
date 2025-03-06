@@ -70,10 +70,10 @@ DocsCollector.collect('java.security.ProtectionDomain', [
 					[/* text */ 't', `
  This constructor is typically used by
  `],
-					[/* reference */ 'r', `java.security.SecureClassLoader`],
+					[/* reference */ 'r', `java.security.SecureClassLoader`, `ClassLoaders`],
 					[/* text */ 't', `
  and `],
-					[/* reference */ 'r', `java.security.DomainCombiner`],
+					[/* reference */ 'r', `java.security.DomainCombiner`, `DomainCombiners`],
 					[/* text */ 't', ` which delegate to
  `],
 					[/* inline code block */ 'i', `Policy`],

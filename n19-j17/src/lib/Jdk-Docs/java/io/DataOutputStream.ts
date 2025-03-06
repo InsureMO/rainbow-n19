@@ -349,7 +349,7 @@ DocsCollector.collect('java.io.DataOutputStream', [
 			[/* method description */
 				[/* text */ 't', `Writes a string to the underlying output stream using
  `],
-				[/* reference */ 'r', `.DataInput#modified-utf-8`],
+				[/* reference */ 'r', `java.io.DataInput#modified-utf-8`, `modified UTF-8`],
 				[/* text */ 't', `
  encoding in a machine-independent manner.
  `],

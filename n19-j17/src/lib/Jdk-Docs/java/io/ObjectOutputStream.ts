@@ -132,7 +132,7 @@ DocsCollector.collect('java.io.ObjectOutputStream', [
 		[/* block */ 'b', [
 			[/* text */ 't', `Records are serialized differently than ordinary serializable or externalizable
  objects, see `],
-			[/* reference */ 'r', `.ObjectInputStream#record-serialization`],
+			[/* reference */ 'r', `java.io.ObjectInputStream#record-serialization`, `record serialization`],
 			[/* text */ 't', `.`]
 		]]
 	],
@@ -924,7 +924,7 @@ DocsCollector.collect('java.io.ObjectOutputStream', [
 			[/* method description */
 				[/* text */ 't', `Primitive data write of this String in
  `],
-				[/* reference */ 'r', `.DataInput#modified-utf-8`],
+				[/* reference */ 'r', `java.io.DataInput#modified-utf-8`, `modified UTF-8`],
 				[/* text */ 't', `
  format.  Note that there is a
  significant difference between writing a String into the stream as

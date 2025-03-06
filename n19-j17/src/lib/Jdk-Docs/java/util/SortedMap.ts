@@ -4,14 +4,14 @@ import {DocsCollector} from '../../DocsCollector';
 DocsCollector.collect('java.util.SortedMap', [
 	[/* class description */
 		[/* text */ 't', `A `],
-		[/* reference */ 'r', `java.util.Map`],
+		[/* reference */ 'r', `java.util.Map`, `Map`],
 		[/* text */ 't', ` that further provides a `],
 		[/* text */ 't', `total ordering`],
 		[/* text */ 't', ` on its keys.
  The map is ordered according to the `],
-		[/* reference */ 'r', `java.lang.Comparable`],
+		[/* reference */ 'r', `java.lang.Comparable`, `natural ordering`],
 		[/* text */ 't', ` of its keys, or by a `],
-		[/* reference */ 'r', `java.util.Comparator`],
+		[/* reference */ 'r', `java.util.Comparator`, `Comparator`],
 		[/* text */ 't', ` typically
  provided at sorted map creation time.  This order is reflected when
  iterating over the sorted map's collection views (returned by the
@@ -24,7 +24,7 @@ DocsCollector.collect('java.util.SortedMap', [
 		[/* text */ 't', ` methods).
  Several additional operations are provided to take advantage of the
  ordering.  (This interface is the map analogue of `],
-		[/* reference */ 'r', `java.util.SortedSet`],
+		[/* reference */ 'r', `java.util.SortedSet`, `SortedSet`],
 		[/* text */ 't', `.)
 
  `],
@@ -183,7 +183,7 @@ DocsCollector.collect('java.util.SortedMap', [
 		[/* method */ 'values()', [
 			[/* method description */
 				[/* text */ 't', `Returns a `],
-				[/* reference */ 'r', `java.util.Collection`],
+				[/* reference */ 'r', `java.util.Collection`, `Collection`],
 				[/* text */ 't', ` view of the values contained in this map.
  The collection's iterator returns the values in ascending order
  of the corresponding keys.
@@ -227,7 +227,7 @@ DocsCollector.collect('java.util.SortedMap', [
  `],
 				[/* inline code block */ 'i', `null`],
 				[/* text */ 't', ` if this map uses the `],
-				[/* reference */ 'r', `java.lang.Comparable`],
+				[/* reference */ 'r', `java.lang.Comparable`, `natural ordering`],
 				[/* text */ 't', ` of its keys.`]
 			],
 			/* parameters */ UDF,
@@ -243,7 +243,7 @@ DocsCollector.collect('java.util.SortedMap', [
 		[/* method */ 'entrySet()', [
 			[/* method description */
 				[/* text */ 't', `Returns a `],
-				[/* reference */ 'r', `java.util.Set`],
+				[/* reference */ 'r', `java.util.Set`, `Set`],
 				[/* text */ 't', ` view of the mappings contained in this map.
  The set's iterator returns the entries in ascending key order.
  The set is backed by the map, so changes to the map are
@@ -286,7 +286,7 @@ DocsCollector.collect('java.util.SortedMap', [
 		[/* method */ 'keySet()', [
 			[/* method description */
 				[/* text */ 't', `Returns a `],
-				[/* reference */ 'r', `java.util.Set`],
+				[/* reference */ 'r', `java.util.Set`, `Set`],
 				[/* text */ 't', ` view of the keys contained in this map.
  The set's iterator returns the keys in ascending order.
  The set is backed by the map, so changes to the map are
@@ -355,7 +355,7 @@ DocsCollector.collect('java.util.SortedMap', [
          if `],
 					[/* inline code block */ 'i', `toKey`],
 					[/* text */ 't', ` does not implement `],
-					[/* reference */ 'r', `java.lang.Comparable`],
+					[/* reference */ 'r', `java.lang.Comparable`, `Comparable`],
 					[/* text */ 't', `).
          Implementations may, but are not required to, throw this
          exception if `],
@@ -498,7 +498,7 @@ DocsCollector.collect('java.util.SortedMap', [
          if `],
 					[/* inline code block */ 'i', `fromKey`],
 					[/* text */ 't', ` does not implement `],
-					[/* reference */ 'r', `java.lang.Comparable`],
+					[/* reference */ 'r', `java.lang.Comparable`, `Comparable`],
 					[/* text */ 't', `).
          Implementations may, but are not required to, throw this
          exception if `],

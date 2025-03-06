@@ -598,7 +598,7 @@ DocsCollector.collect('java.util.Properties', [
  `],
 				[/* block */ 'b', ''],
 				[/* block */ 'b', [
-					[/* text */ 't', ``],
+					[/* anchor */ 'r', '#-id', `unicodeescapes`, ``],
 					[/* text */ 't', `
  Characters in keys and elements can be represented in escape
  sequences similar to those used for character and string literals
@@ -1129,7 +1129,7 @@ DocsCollector.collect('java.util.Properties', [
 					[/* reference */ 'r', `#storeToXML(java.io.OutputStream,java.lang.String,java.nio.charset.Charset)`, `storeToXML(OutputStream os, String comment, Charset charset)`],
 					[/* text */ 't', `
  except that it will `],
-					[/* reference */ 'r', `java.charset.Charset#forName(java.lang.String)`],
+					[/* reference */ 'r', `java.nio.charset.Charset#forName(java.lang.String)`, `look up the charset`],
 					[/* text */ 't', `
  using the given encoding name.`]
 				]]

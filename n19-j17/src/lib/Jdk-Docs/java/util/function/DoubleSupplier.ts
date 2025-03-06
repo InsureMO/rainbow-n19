@@ -9,7 +9,7 @@ DocsCollector.collect('java.util.function.DoubleSupplier', [
  `],
 		[/* inline code block */ 'i', `double`],
 		[/* text */ 't', `-producing primitive specialization of `],
-		[/* reference */ 'r', `java.util.function.Supplier`],
+		[/* reference */ 'r', `java.util.function.Supplier`, `Supplier`],
 		[/* text */ 't', `.
 
  `],
@@ -19,7 +19,7 @@ DocsCollector.collect('java.util.function.DoubleSupplier', [
  `],
 		[/* block */ 'b', [
 			[/* text */ 't', `This is a `],
-			[/* reference */ 'r', `.package-summary`],
+			[/* text */ 't', `functional interface`],
 			[/* text */ 't', `
  whose functional method is `],
 			[/* reference */ 'r', `#getAsDouble()`, `getAsDouble()`],

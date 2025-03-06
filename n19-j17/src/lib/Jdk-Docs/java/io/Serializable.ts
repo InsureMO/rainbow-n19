@@ -162,7 +162,7 @@ DocsCollector.collect('java.io.Serializable', [
  If the receiver has loaded a class for the object that has a different
  serialVersionUID than that of the corresponding sender's class, then
  deserialization will result in an `],
-			[/* reference */ 'r', `java.io.InvalidClassException`],
+			[/* reference */ 'r', `java.io.InvalidClassException`, `InvalidClassException`],
 			[/* text */ 't', `.  A
  serializable class can declare its own serialVersionUID explicitly by
  declaring a field named `],

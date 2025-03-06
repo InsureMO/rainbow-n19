@@ -52,7 +52,7 @@ DocsCollector.collect('java.util.zip.DeflaterOutputStream', [
 					[/* text */ 't', ` method of this
         instance flushes the compressor with flush mode
         `],
-					[/* reference */ 'r', `.Deflater#SYNC_FLUSH`],
+					[/* reference */ 'r', `java.util.zip.Deflater#SYNC_FLUSH`, `Deflater.SYNC_FLUSH`],
 					[/* text */ 't', ` before flushing the output
         stream, otherwise only flushes the output stream`]
 				]]
@@ -98,7 +98,7 @@ DocsCollector.collect('java.util.zip.DeflaterOutputStream', [
 					[/* text */ 't', ` method of this
         instance flushes the compressor with flush mode
         `],
-					[/* reference */ 'r', `.Deflater#SYNC_FLUSH`],
+					[/* reference */ 'r', `java.util.zip.Deflater#SYNC_FLUSH`, `Deflater.SYNC_FLUSH`],
 					[/* text */ 't', ` before flushing the output
         stream, otherwise only flushes the output stream`]
 				]]
@@ -155,7 +155,7 @@ DocsCollector.collect('java.util.zip.DeflaterOutputStream', [
 					[/* text */ 't', ` method of this
         instance flushes the compressor with flush mode
         `],
-					[/* reference */ 'r', `.Deflater#SYNC_FLUSH`],
+					[/* reference */ 'r', `java.util.zip.Deflater#SYNC_FLUSH`, `Deflater.SYNC_FLUSH`],
 					[/* text */ 't', ` before flushing the output
         stream, otherwise only flushes the output stream`]
 				]]
@@ -221,7 +221,7 @@ DocsCollector.collect('java.util.zip.DeflaterOutputStream', [
 				[/* inline code block */ 'i', `compressor`],
 				[/* text */ 't', `
  with the flush mode `],
-				[/* reference */ 'r', `.Deflater#SYNC_FLUSH`],
+				[/* reference */ 'r', `java.util.zip.Deflater#SYNC_FLUSH`, `Deflater.SYNC_FLUSH`],
 				[/* text */ 't', ` to force
  all pending data to be flushed out to the output stream and then
  flushes the output stream. Otherwise this method only flushes the

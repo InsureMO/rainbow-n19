@@ -4,9 +4,9 @@ import {DocsCollector} from '../../DocsCollector';
 DocsCollector.collect('java.util.IllformedLocaleException', [
 	[/* class description */
 		[/* text */ 't', `Thrown by methods in `],
-		[/* reference */ 'r', `java.util.Locale`],
+		[/* reference */ 'r', `java.util.Locale`, `Locale`],
 		[/* text */ 't', ` and `],
-		[/* reference */ 'r', `java.util.Locale.Builder`],
+		[/* reference */ 'r', `java.util.Locale.Builder`, `Locale.Builder`],
 		[/* text */ 't', ` to
  indicate that an argument is not a well-formed BCP 47 tag.`]
 	],

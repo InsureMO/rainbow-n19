@@ -19,7 +19,7 @@ DocsCollector.collect('java.time.temporal.TemporalAdjuster', [
 			[/* text */ 't', `.
  The first is to invoke the method on this interface directly.
  The second is to use `],
-			[/* reference */ 'r', `.Temporal#with(java.time.temporal.TemporalAdjuster)`],
+			[/* reference */ 'r', `java.time.temporal.Temporal#with(java.time.temporal.TemporalAdjuster)`, `Temporal.with(TemporalAdjuster)`],
 			[/* text */ 't', `:
  `]
 		]],
@@ -37,7 +37,7 @@ DocsCollector.collect('java.time.temporal.TemporalAdjuster', [
 		[/* block */ 'b', [
 			[/* text */ 't', `
  The `],
-			[/* reference */ 'r', `java.time.temporal.TemporalAdjusters`],
+			[/* reference */ 'r', `java.time.temporal.TemporalAdjusters`, `TemporalAdjusters`],
 			[/* text */ 't', ` class contains a standard set of adjusters,
  available as static methods.
  These include:
@@ -77,7 +77,7 @@ DocsCollector.collect('java.time.temporal.TemporalAdjuster', [
  There are two equivalent ways of using this method.
  The first is to invoke this method directly.
  The second is to use `],
-					[/* reference */ 'r', `.Temporal#with(java.time.temporal.TemporalAdjuster)`],
+					[/* reference */ 'r', `java.time.temporal.Temporal#with(java.time.temporal.TemporalAdjuster)`, `Temporal.with(TemporalAdjuster)`],
 					[/* text */ 't', `:
  `]
 				]],

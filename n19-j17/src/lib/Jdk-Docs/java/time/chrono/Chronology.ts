@@ -15,7 +15,7 @@ DocsCollector.collect('java.time.chrono.Chronology', [
  Most other calendar systems also operate on the shared concepts of year, month and day,
  linked to the cycles of the Earth around the Sun, and the Moon around the Earth.
  These shared concepts are defined by `],
-			[/* reference */ 'r', `enum class in java.time.temporal.ChronoField`],
+			[/* reference */ 'r', `enum class in java.time.temporal.ChronoField`, `ChronoField`],
 			[/* text */ 't', ` and are available
  for use by any `],
 			[/* inline code block */ 'i', `Chronology`],
@@ -35,7 +35,7 @@ DocsCollector.collect('java.time.chrono.Chronology', [
 		[/* inline code block */ 'i', `ChronoField`],
 		[/* text */ 't', `.
  For a full discussion of the implications of this, see `],
-		[/* reference */ 'r', `java.time.chrono.ChronoLocalDate`],
+		[/* reference */ 'r', `java.time.chrono.ChronoLocalDate`, `ChronoLocalDate`],
 		[/* text */ 't', `.
  In general, the advice is to use the known ISO-based `],
 		[/* inline code block */ 'i', `LocalDate`],
@@ -131,7 +131,7 @@ DocsCollector.collect('java.time.chrono.Chronology', [
 		[/* block */ 'b', [
 			[/* text */ 't', `
  To permit the discovery of additional chronologies, the `],
-			[/* reference */ 'r', `java.util.ServiceLoader`],
+			[/* reference */ 'r', `java.util.ServiceLoader`, `ServiceLoader`],
 			[/* text */ 't', `
  is used. A file must be added to the `],
 			[/* inline code block */ 'i', `META-INF/services`],
@@ -211,7 +211,7 @@ DocsCollector.collect('java.time.chrono.Chronology', [
  The comparison order first by the chronology ID string, then by any
  additional information specific to the subclass.
  It is "consistent with equals", as defined by `],
-					[/* reference */ 'r', `java.lang.Comparable`],
+					[/* reference */ 'r', `java.lang.Comparable`, `Comparable`],
 					[/* text */ 't', `.`]
 				]]
 			],
@@ -385,7 +385,7 @@ DocsCollector.collect('java.time.chrono.Chronology', [
 				[/* block */ 'b', [
 					[/* text */ 't', `
  The conversion typically uses the `],
-					[/* reference */ 'r', `java.ChronoField#EPOCH_DAY`],
+					[/* reference */ 'r', `java.time.temporal.ChronoField#EPOCH_DAY`, `EPOCH_DAY`],
 					[/* text */ 't', `
  field, which is standardized across calendar systems.
  `]
@@ -393,7 +393,7 @@ DocsCollector.collect('java.time.chrono.Chronology', [
 				[/* block */ 'b', [
 					[/* text */ 't', `
  This method matches the signature of the functional interface `],
-					[/* reference */ 'r', `java.time.temporal.TemporalQuery`],
+					[/* reference */ 'r', `java.time.temporal.TemporalQuery`, `TemporalQuery`],
 					[/* text */ 't', `
  allowing it to be used as a query via method reference, `],
 					[/* inline code block */ 'i', `aChronology::date`],
@@ -421,7 +421,7 @@ DocsCollector.collect('java.time.chrono.Chronology', [
 				[/* block */ 'b', [
 					[/* text */ 't', `
  The definition of `],
-					[/* reference */ 'r', `java.ChronoField#EPOCH_DAY`],
+					[/* reference */ 'r', `java.time.temporal.ChronoField#EPOCH_DAY`, `EPOCH_DAY`],
 					[/* text */ 't', ` is the same
  for all calendar systems, thus it can be used for conversion.`]
 				]]
@@ -487,7 +487,7 @@ DocsCollector.collect('java.time.chrono.Chronology', [
 					[/* text */ 't', `
  The default implementation, which explains typical resolve behaviour,
  is provided in `],
-					[/* reference */ 'r', `java.time.chrono.AbstractChronology`],
+					[/* reference */ 'r', `java.time.chrono.AbstractChronology`, `AbstractChronology`],
 					[/* text */ 't', `.`]
 				]]
 			],
@@ -653,7 +653,7 @@ DocsCollector.collect('java.time.chrono.Chronology', [
 				[/* block */ 'b', [
 					[/* text */ 't', `
  This will query the `],
-					[/* reference */ 'r', `java.Clock#systemDefaultZone()`],
+					[/* reference */ 'r', `java.time.Clock#systemDefaultZone()`, `system clock`],
 					[/* text */ 't', ` in the default
  time-zone to obtain the current date.
  `]
@@ -681,7 +681,7 @@ DocsCollector.collect('java.time.chrono.Chronology', [
  This will query the specified clock to obtain the current date - today.
  Using this method allows the use of an alternate clock for testing.
  The alternate clock may be introduced using `],
-					[/* reference */ 'r', `java.time.Clock`],
+					[/* reference */ 'r', `java.time.Clock`, `dependency injection`],
 					[/* text */ 't', `.`]
 				]]
 			],
@@ -706,7 +706,7 @@ DocsCollector.collect('java.time.chrono.Chronology', [
 				[/* block */ 'b', [
 					[/* text */ 't', `
  This will query the `],
-					[/* reference */ 'r', `java.Clock#system(java.time.ZoneId)`],
+					[/* reference */ 'r', `java.time.Clock#system(java.time.ZoneId)`, `system clock`],
 					[/* text */ 't', ` to obtain the current date.
  Specifying the time-zone avoids dependence on the default time-zone.
  `]
@@ -790,7 +790,7 @@ DocsCollector.collect('java.time.chrono.Chronology', [
 				[/* block */ 'b', [
 					[/* text */ 't', `
  This method matches the signature of the functional interface `],
-					[/* reference */ 'r', `java.time.temporal.TemporalQuery`],
+					[/* reference */ 'r', `java.time.temporal.TemporalQuery`, `TemporalQuery`],
 					[/* text */ 't', `
  allowing it to be used as a query via method reference, `],
 					[/* inline code block */ 'i', `aChronology::localDateTime`],
@@ -917,7 +917,7 @@ DocsCollector.collect('java.time.chrono.Chronology', [
 				[/* block */ 'b', [
 					[/* text */ 't', `
  This method matches the signature of the functional interface `],
-					[/* reference */ 'r', `java.time.temporal.TemporalQuery`],
+					[/* reference */ 'r', `java.time.temporal.TemporalQuery`, `TemporalQuery`],
 					[/* text */ 't', `
  allowing it to be used as a query via method reference, `],
 					[/* inline code block */ 'i', `aChronology::zonedDateTime`],
@@ -1041,17 +1041,17 @@ DocsCollector.collect('java.time.chrono.Chronology', [
 				[/* block */ 'b', [
 					[/* text */ 't', `
  The conversion will obtain the chronology using `],
-					[/* reference */ 'r', `java.TemporalQueries#chronology()`],
+					[/* reference */ 'r', `java.time.temporal.TemporalQueries#chronology()`, `TemporalQueries.chronology()`],
 					[/* text */ 't', `.
  If the specified temporal object does not have a chronology, `],
-					[/* reference */ 'r', `java.time.chrono.IsoChronology`],
+					[/* reference */ 'r', `java.time.chrono.IsoChronology`, `IsoChronology`],
 					[/* text */ 't', ` is returned.
  `]
 				]],
 				[/* block */ 'b', [
 					[/* text */ 't', `
  This method matches the signature of the functional interface `],
-					[/* reference */ 'r', `java.time.temporal.TemporalQuery`],
+					[/* reference */ 'r', `java.time.temporal.TemporalQuery`, `TemporalQuery`],
 					[/* text */ 't', `
  allowing it to be used as a query via method reference, `],
 					[/* inline code block */ 'i', `Chronology::from`],
@@ -1135,7 +1135,7 @@ DocsCollector.collect('java.time.chrono.Chronology', [
 				[/* block */ 'b', [
 					[/* text */ 't', `
  The `],
-					[/* reference */ 'r', `java.util.Locale`],
+					[/* reference */ 'r', `java.util.Locale`, `Locale`],
 					[/* text */ 't', ` class provide access to a range of information useful
  for localizing an application. This includes the language and region,
  such as "en-GB" for English as used in Great Britain.
@@ -1156,7 +1156,7 @@ DocsCollector.collect('java.time.chrono.Chronology', [
 					[/* text */ 't', `
  This method finds the desired calendar system in a manner equivalent
  to passing "ca" to `],
-					[/* reference */ 'r', `java.time.Locale#getUnicodeLocaleType(java.lang.String)`],
+					[/* reference */ 'r', `java.util.Locale#getUnicodeLocaleType(java.lang.String)`, `Locale.getUnicodeLocaleType(String)`],
 					[/* text */ 't', `.
  If the "ca" key is not present, then `],
 					[/* inline code block */ 'i', `IsoChronology`],
@@ -1167,7 +1167,7 @@ DocsCollector.collect('java.time.chrono.Chronology', [
 					[/* text */ 't', `
  Note that the behavior of this method differs from the older
  `],
-					[/* reference */ 'r', `java.time.Calendar#getInstance(java.util.Locale)`],
+					[/* reference */ 'r', `java.util.Calendar#getInstance(java.util.Locale)`, `Calendar.getInstance(Locale)`],
 					[/* text */ 't', ` method.
  If that method receives a locale of "th_TH" it will return `],
 					[/* inline code block */ 'i', `BuddhistCalendar`],

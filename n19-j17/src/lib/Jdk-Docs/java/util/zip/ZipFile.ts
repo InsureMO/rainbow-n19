@@ -11,7 +11,7 @@ DocsCollector.collect('java.util.zip.ZipFile', [
 			[/* inline code block */ 'i', `null`],
 			[/* text */ 't', ` argument to a constructor
  or method in this class will cause a `],
-			[/* reference */ 'r', `java.lang.NullPointerException`],
+			[/* reference */ 'r', `java.lang.NullPointerException`, `NullPointerException`],
 			[/* text */ 't', ` to be
  thrown.`]
 		]]
@@ -42,7 +42,7 @@ DocsCollector.collect('java.util.zip.ZipFile', [
  `],
 				[/* block */ 'b', [
 					[/* text */ 't', `The UTF-8 `],
-					[/* reference */ 'r', `java.nio.charset.Charset`],
+					[/* reference */ 'r', `java.nio.charset.Charset`, `charset`],
 					[/* text */ 't', ` is used to
  decode the entry names and comments.`]
 				]]
@@ -89,7 +89,7 @@ DocsCollector.collect('java.util.zip.ZipFile', [
 				]],
 				[/* block */ 'b', [
 					[/* text */ 't', `The UTF-8 `],
-					[/* reference */ 'r', `java.nio.charset.Charset`],
+					[/* reference */ 'r', `java.nio.charset.Charset`, `charset`],
 					[/* text */ 't', ` is used to
  decode the entry names and comments`]
 				]]
@@ -163,7 +163,7 @@ DocsCollector.collect('java.util.zip.ZipFile', [
 				]],
 				[/* parameter */ 'charset', [/* parameter description */
 					[/* text */ 't', `the `],
-					[/* reference */ 'r', `java.nio.charset.Charset`],
+					[/* reference */ 'r', `java.nio.charset.Charset`, `charset`],
 					[/* text */ 't', ` to
         be used to decode the ZIP entry name and comment that are not
         encoded by using UTF-8 encoding (indicated by entry's general
@@ -206,11 +206,11 @@ DocsCollector.collect('java.util.zip.ZipFile', [
 				]],
 				[/* parameter */ 'charset', [/* parameter description */
 					[/* text */ 't', `The `],
-					[/* reference */ 'r', `java.nio.charset.Charset`],
+					[/* reference */ 'r', `java.nio.charset.Charset`, `charset`],
 					[/* text */ 't', ` to be
         used to decode the ZIP entry name and comment (ignored if
         the `],
-					[/* reference */ 'r', `.package-summary#lang_encoding`],
+					[/* text */ 't', `language encoding bit`],
 					[/* text */ 't', ` of the ZIP entry's general purpose bit
         flag is set).`]
 				]]
@@ -242,7 +242,7 @@ DocsCollector.collect('java.util.zip.ZipFile', [
 				]],
 				[/* block */ 'b', [
 					[/* text */ 't', `The UTF-8 `],
-					[/* reference */ 'r', `java.nio.charset.Charset`],
+					[/* reference */ 'r', `java.nio.charset.Charset`, `charset`],
 					[/* text */ 't', ` is used to
  decode the entry names and comments.`]
 				]]
@@ -288,7 +288,7 @@ DocsCollector.collect('java.util.zip.ZipFile', [
 				]],
 				[/* parameter */ 'charset', [/* parameter description */
 					[/* text */ 't', `the `],
-					[/* reference */ 'r', `java.nio.charset.Charset`],
+					[/* reference */ 'r', `java.nio.charset.Charset`, `charset`],
 					[/* text */ 't', ` to
         be used to decode the ZIP entry name and comment that are not
         encoded by using UTF-8 encoding (indicated by entry's general

@@ -60,7 +60,7 @@ DocsCollector.collect('java.util.TimeZone', [
  `],
 		[/* block */ 'b', [
 			[/* code block */ 'c', [
-				[/* text */ 't', `CustomID:`],
+				[/* anchor */ 'r', '#-id', `CustomID`, `CustomID:`],
 				[/* inline code block */ 'i', `GMT`],
 				[/* text */ 't', `Sign`],
 				[/* text */ 't', `Hours`],
@@ -119,7 +119,7 @@ DocsCollector.collect('java.util.TimeZone', [
 		]],
 		[/* block */ 'b', [
 			[/* code block */ 'c', [
-				[/* text */ 't', `NormalizedCustomID:`],
+				[/* anchor */ 'r', '#-id', `NormalizedCustomID`, `NormalizedCustomID:`],
 				[/* inline code block */ 'i', `GMT`],
 				[/* text */ 't', `Sign`],
 				[/* text */ 't', `TwoDigitHours`],
@@ -552,13 +552,13 @@ DocsCollector.collect('java.util.TimeZone', [
 				[/* block */ 'b', [
 					[/* text */ 't', `If the amount of saving time at any given time stamp is
  required, construct a `],
-					[/* reference */ 'r', `java.util.Calendar`],
+					[/* reference */ 'r', `java.util.Calendar`, `Calendar`],
 					[/* text */ 't', ` with this `],
 					[/* inline code block */ 'i', `TimeZone`],
 					[/* text */ 't', ` and the time stamp, and call `],
-					[/* reference */ 'r', `.Calendar#get(int)`],
+					[/* reference */ 'r', `java.util.Calendar#get(int)`, `Calendar.get`],
 					[/* inline code block */ 'i', `(`],
-					[/* reference */ 'r', `.Calendar#DST_OFFSET`],
+					[/* reference */ 'r', `java.util.Calendar#DST_OFFSET`, `Calendar.DST_OFFSET`],
 					[/* inline code block */ 'i', `)`],
 					[/* text */ 't', `.`]
 				]]
@@ -627,17 +627,17 @@ DocsCollector.collect('java.util.TimeZone', [
  `],
 				[/* block */ 'b', [
 					[/* text */ 't', `When looking up a time zone name, the `],
-					[/* reference */ 'r', `.ResourceBundle.Control#getCandidateLocales(java.lang.String,java.util.Locale)`],
+					[/* reference */ 'r', `java.util.ResourceBundle.Control#getCandidateLocales(java.lang.String,java.util.Locale)`, `default Locale search path of ResourceBundle`],
 					[/* text */ 't', ` derived
  from the specified `],
 					[/* inline code block */ 'i', `locale`],
 					[/* text */ 't', ` is used. (No `],
-					[/* reference */ 'r', `.ResourceBundle.Control#getFallbackLocale(java.lang.String,java.util.Locale)`],
+					[/* reference */ 'r', `java.util.ResourceBundle.Control#getFallbackLocale(java.lang.String,java.util.Locale)`, `fallback Locale`],
 					[/* text */ 't', ` search is performed.) If a time zone name in any
  `],
 					[/* inline code block */ 'i', `Locale`],
 					[/* text */ 't', ` of the search path, including `],
-					[/* reference */ 'r', `.Locale#ROOT`],
+					[/* reference */ 'r', `java.util.Locale#ROOT`, `Locale.ROOT`],
 					[/* text */ 't', `, is
  found, the name is returned. Otherwise, a string in the
  `],
@@ -766,7 +766,7 @@ DocsCollector.collect('java.util.TimeZone', [
 			[/* parameters */
 				[/* parameter */ 'zoneId', [/* parameter description */
 					[/* text */ 't', `a `],
-					[/* reference */ 'r', `java.time.ZoneId`],
+					[/* reference */ 'r', `java.time.ZoneId`, `ZoneId`],
 					[/* text */ 't', ` from which the time zone ID is obtained`]
 				]]
 			],

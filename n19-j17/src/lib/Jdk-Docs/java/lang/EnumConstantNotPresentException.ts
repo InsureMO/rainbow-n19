@@ -6,7 +6,7 @@ DocsCollector.collect('java.lang.EnumConstantNotPresentException', [
 		[/* text */ 't', `Thrown when an application tries to access an enum constant by name
  and the enum type contains no constant with the specified name.
  This exception can be thrown by the `],
-		[/* reference */ 'r', `java.lang.reflect.AnnotatedElement`],
+		[/* reference */ 'r', `java.lang.reflect.AnnotatedElement`, `API used to read annotations reflectively`],
 		[/* text */ 't', `.`]
 	],
 	/* fields */ UDF,

@@ -59,7 +59,7 @@ DocsCollector.collect('java.text.NumberFormat', [
 		[/* block */ 'b', [
 			[/* text */ 't', `If the locale contains "nu" (numbers) and/or "rg" (region override)
  `],
-			[/* reference */ 'r', `java.Locale#def_locale_extension`],
+			[/* reference */ 'r', `java.util.Locale#def_locale_extension`, `Unicode extensions`],
 			[/* text */ 't', `,
  the decimal digits, and/or the country used for formatting are overridden.
  If both "nu" and "rg" are specified, the decimal digits from the "nu"
@@ -100,7 +100,7 @@ DocsCollector.collect('java.text.NumberFormat', [
 		[/* inline code block */ 'i', `"2K"`],
 		[/* text */ 't', ` in
  `],
-		[/* reference */ 'r', `java.Locale#US`],
+		[/* reference */ 'r', `java.util.Locale#US`, `US locale`],
 		[/* text */ 't', `. Use `],
 		[/* inline code block */ 'i', `getPercentInstance`],
 		[/* text */ 't', `
@@ -215,7 +215,7 @@ DocsCollector.collect('java.text.NumberFormat', [
 		]],
 		[/* block */ 'b', ''],
 		[/* block */ 'b', [
-			[/* text */ 't', `Synchronization`]
+			[/* anchor */ 'r', '#-id', `synchronization`, `Synchronization`]
 		]],
 		[/* block */ 'b', `
  Number formats are generally not synchronized.
@@ -621,14 +621,14 @@ DocsCollector.collect('java.text.NumberFormat', [
 				[/* text */ 't', `Formats a number and appends the resulting text to the given string
  buffer.
  The number can be of any subclass of `],
-				[/* reference */ 'r', `java.lang.Number`],
+				[/* reference */ 'r', `java.lang.Number`, `Number`],
 				[/* text */ 't', `.
  `],
 				[/* block */ 'b', [
 					[/* text */ 't', `
  This implementation extracts the number's value using
  `],
-					[/* reference */ 'r', `java.Number#longValue()`],
+					[/* reference */ 'r', `java.lang.Number#longValue()`, `Number.longValue()`],
 					[/* text */ 't', ` for all integral type values that
  can be converted to `],
 					[/* inline code block */ 'i', `long`],
@@ -637,10 +637,10 @@ DocsCollector.collect('java.text.NumberFormat', [
 					[/* inline code block */ 'i', `BigInteger`],
 					[/* text */ 't', ` values with a
  `],
-					[/* reference */ 'r', `java.BigInteger#bitLength()`],
+					[/* reference */ 'r', `java.math.BigInteger#bitLength()`, `bit length`],
 					[/* text */ 't', ` of less than 64,
  and `],
-					[/* reference */ 'r', `java.Number#doubleValue()`],
+					[/* reference */ 'r', `java.lang.Number#doubleValue()`, `Number.doubleValue()`],
 					[/* text */ 't', ` for all other types. It
  then calls
  `],
@@ -720,11 +720,11 @@ DocsCollector.collect('java.text.NumberFormat', [
 		[/* method */ 'getRoundingMode()', [
 			[/* method description */
 				[/* text */ 't', `Gets the `],
-				[/* reference */ 'r', `enum class in java.math.RoundingMode`],
+				[/* reference */ 'r', `enum class in java.math.RoundingMode`, `RoundingMode`],
 				[/* text */ 't', ` used in this NumberFormat.
  The default implementation of this method in NumberFormat
  always throws `],
-				[/* reference */ 'r', `java.lang.UnsupportedOperationException`],
+				[/* reference */ 'r', `java.lang.UnsupportedOperationException`, `UnsupportedOperationException`],
 				[/* text */ 't', `.
  Subclasses which handle different rounding modes should override
  this method.`]
@@ -776,7 +776,7 @@ DocsCollector.collect('java.text.NumberFormat', [
 			[/* method description */
 				[/* text */ 't', `Returns a currency format for the current default
  `],
-				[/* reference */ 'r', `java.Locale.Category#FORMAT`],
+				[/* reference */ 'r', `java.util.Locale.Category#FORMAT`, `FORMAT`],
 				[/* text */ 't', ` locale.
  `],
 				[/* block */ 'b', [
@@ -798,7 +798,7 @@ DocsCollector.collect('java.text.NumberFormat', [
 			[/* method description */
 				[/* text */ 't', `Returns a general-purpose number format for the current default
  `],
-				[/* reference */ 'r', `java.Locale.Category#FORMAT`],
+				[/* reference */ 'r', `java.util.Locale.Category#FORMAT`, `FORMAT`],
 				[/* text */ 't', ` locale.
  This is the same as calling
  `],
@@ -818,11 +818,11 @@ DocsCollector.collect('java.text.NumberFormat', [
 			[/* method description */
 				[/* text */ 't', `Returns an integer number format for the current default
  `],
-				[/* reference */ 'r', `java.Locale.Category#FORMAT`],
+				[/* reference */ 'r', `java.util.Locale.Category#FORMAT`, `FORMAT`],
 				[/* text */ 't', ` locale. The
  returned number format is configured to round floating point numbers
  to the nearest integer using half-even rounding (see `],
-				[/* reference */ 'r', `java.RoundingMode#HALF_EVEN`],
+				[/* reference */ 'r', `java.math.RoundingMode#HALF_EVEN`, `RoundingMode.HALF_EVEN`],
 				[/* text */ 't', `) for formatting,
  and to parse only the integer part of an input string (see `],
 				[/* reference */ 'r', `#isParseIntegerOnly()`, `isParseIntegerOnly`],
@@ -845,7 +845,7 @@ DocsCollector.collect('java.text.NumberFormat', [
 			[/* method description */
 				[/* text */ 't', `Returns a general-purpose number format for the current default
  `],
-				[/* reference */ 'r', `java.Locale.Category#FORMAT`],
+				[/* reference */ 'r', `java.util.Locale.Category#FORMAT`, `FORMAT`],
 				[/* text */ 't', ` locale.
  `],
 				[/* block */ 'b', [
@@ -868,7 +868,7 @@ DocsCollector.collect('java.text.NumberFormat', [
 			[/* method description */
 				[/* text */ 't', `Returns a percentage format for the current default
  `],
-				[/* reference */ 'r', `java.Locale.Category#FORMAT`],
+				[/* reference */ 'r', `java.util.Locale.Category#FORMAT`, `FORMAT`],
 				[/* text */ 't', ` locale.
  `],
 				[/* block */ 'b', [
@@ -890,10 +890,10 @@ DocsCollector.collect('java.text.NumberFormat', [
 			[/* method description */
 				[/* text */ 't', `Returns a compact number format for the default
  `],
-				[/* reference */ 'r', `java.Locale.Category#FORMAT`],
+				[/* reference */ 'r', `java.util.Locale.Category#FORMAT`, `FORMAT`],
 				[/* text */ 't', ` locale with
  `],
-				[/* reference */ 'r', `.NumberFormat.Style#SHORT`],
+				[/* reference */ 'r', `java.text.NumberFormat.Style#SHORT`, `"SHORT"`],
 				[/* text */ 't', ` format style.`]
 			],
 			/* parameters */ UDF,
@@ -908,10 +908,10 @@ DocsCollector.collect('java.text.NumberFormat', [
 		[/* method */ 'getCompactNumberInstance(java.util.Locale,java.text.NumberFormat.Style)', [
 			[/* method description */
 				[/* text */ 't', `Returns a compact number format for the specified `],
-				[/* reference */ 'r', `java.util.Locale`],
+				[/* reference */ 'r', `java.util.Locale`, `locale`],
 				[/* text */ 't', `
  and `],
-				[/* reference */ 'r', `enum class in java.text.NumberFormat.Style`],
+				[/* reference */ 'r', `enum class in java.text.NumberFormat.Style`, `formatStyle`],
 				[/* text */ 't', `.`]
 			],
 			[/* parameters */
@@ -953,7 +953,7 @@ DocsCollector.collect('java.text.NumberFormat', [
 					[/* external link */ 'a', `https://www.unicode.org/reports/tr35/tr35.html#UnicodeCurrencyFormatIdentifier`, `currency format style`],
 					[/* text */ 't', `)
  `],
-					[/* reference */ 'r', `java.Locale#def_locale_extension`],
+					[/* reference */ 'r', `java.util.Locale#def_locale_extension`, `Unicode extension`],
 					[/* text */ 't', `,
  the returned currency format uses the style if it is available.
  Otherwise, the style uses the default "`],
@@ -1003,7 +1003,7 @@ DocsCollector.collect('java.text.NumberFormat', [
 				[/* text */ 't', `Returns an integer number format for the specified locale. The
  returned number format is configured to round floating point numbers
  to the nearest integer using half-even rounding (see `],
-				[/* reference */ 'r', `java.RoundingMode#HALF_EVEN`],
+				[/* reference */ 'r', `java.math.RoundingMode#HALF_EVEN`, `RoundingMode.HALF_EVEN`],
 				[/* text */ 't', `) for formatting,
  and to parse only the integer part of an input string (see `],
 				[/* reference */ 'r', `#isParseIntegerOnly()`, `isParseIntegerOnly`],
@@ -1062,13 +1062,13 @@ DocsCollector.collect('java.text.NumberFormat', [
  The returned array represents the union of locales supported by the Java
  runtime and by installed
  `],
-				[/* reference */ 'r', `java.text.spi.NumberFormatProvider`],
+				[/* reference */ 'r', `java.text.spi.NumberFormatProvider`, `NumberFormatProvider`],
 				[/* text */ 't', ` implementations.
  It must contain at least a `],
 				[/* inline code block */ 'i', `Locale`],
 				[/* text */ 't', ` instance equal to
  `],
-				[/* reference */ 'r', `java.Locale#US`],
+				[/* reference */ 'r', `java.util.Locale#US`, `Locale.US`],
 				[/* text */ 't', `.`]
 			],
 			/* parameters */ UDF,
@@ -1221,11 +1221,11 @@ DocsCollector.collect('java.text.NumberFormat', [
 		[/* method */ 'setRoundingMode(java.math.RoundingMode)', [
 			[/* method description */
 				[/* text */ 't', `Sets the `],
-				[/* reference */ 'r', `enum class in java.math.RoundingMode`],
+				[/* reference */ 'r', `enum class in java.math.RoundingMode`, `RoundingMode`],
 				[/* text */ 't', ` used in this NumberFormat.
  The default implementation of this method in NumberFormat always
  throws `],
-				[/* reference */ 'r', `java.lang.UnsupportedOperationException`],
+				[/* reference */ 'r', `java.lang.UnsupportedOperationException`, `UnsupportedOperationException`],
 				[/* text */ 't', `.
  Subclasses which handle different rounding modes should override
  this method.`]

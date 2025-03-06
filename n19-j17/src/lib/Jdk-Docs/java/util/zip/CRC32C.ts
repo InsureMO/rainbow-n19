@@ -19,7 +19,7 @@ DocsCollector.collect('java.util.zip.CRC32C', [
 			[/* inline code block */ 'i', `null`],
 			[/* text */ 't', ` argument to a method in this class will cause a
  `],
-			[/* reference */ 'r', `java.lang.NullPointerException`],
+			[/* reference */ 'r', `java.lang.NullPointerException`, `NullPointerException`],
 			[/* text */ 't', ` to be thrown.
  `]
 		]]

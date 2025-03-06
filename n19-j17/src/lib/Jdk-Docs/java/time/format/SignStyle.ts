@@ -10,7 +10,7 @@ DocsCollector.collect('java.time.format.SignStyle', [
  The formatting engine allows the positive and negative signs of numbers
  to be controlled using this enum.
  See `],
-			[/* reference */ 'r', `java.time.format.DateTimeFormatterBuilder`],
+			[/* reference */ 'r', `java.time.format.DateTimeFormatterBuilder`, `DateTimeFormatterBuilder`],
 			[/* text */ 't', ` for usage.`]
 		]]
 	],

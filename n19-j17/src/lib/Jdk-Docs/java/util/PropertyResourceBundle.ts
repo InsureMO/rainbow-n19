@@ -10,7 +10,7 @@ DocsCollector.collect('java.util.PropertyResourceBundle', [
 		[/* text */ 't', ` that manages resources for a locale
  using a set of static strings from a property file. See
  `],
-		[/* reference */ 'r', `java.util.ResourceBundle`],
+		[/* reference */ 'r', `java.util.ResourceBundle`, `ResourceBundle`],
 		[/* text */ 't', ` for more information about resource
  bundles.
 
@@ -29,7 +29,7 @@ DocsCollector.collect('java.util.PropertyResourceBundle', [
 			[/* inline code block */ 'i', `PropertyResourceBundle`],
 			[/* text */ 't', ` that refers to it. See
  `],
-			[/* reference */ 'r', `.ResourceBundle#getBundle(java.lang.String,java.util.Locale,java.lang.ClassLoader)`],
+			[/* reference */ 'r', `java.util.ResourceBundle#getBundle(java.lang.String,java.util.Locale,java.lang.ClassLoader)`, `ResourceBundle.getBundle`],
 			[/* text */ 't', `
  for a complete description of the search and instantiation strategy.
 
@@ -38,7 +38,7 @@ DocsCollector.collect('java.util.PropertyResourceBundle', [
 		[/* block */ 'b', [
 			[/* text */ 't', `
  The following `],
-			[/* text */ 't', `example`],
+			[/* anchor */ 'r', '#-id', `sample`, `example`],
 			[/* text */ 't', ` shows a member of a resource
  bundle family with the base name "MyResources".
  The text defines the bundle "MyResources_de",
@@ -48,7 +48,7 @@ DocsCollector.collect('java.util.PropertyResourceBundle', [
 			[/* text */ 't', `, and the text
  therefore is the content of the file "MyResources_de.properties"
  (a related `],
-			[/* reference */ 'r', `.ListResourceBundle#sample`],
+			[/* reference */ 'r', `java.util.ListResourceBundle#sample`, `example`],
 			[/* text */ 't', ` shows
  how you can add bundles to this family that are implemented as subclasses
  of `],
@@ -90,13 +90,13 @@ DocsCollector.collect('java.util.PropertyResourceBundle', [
 		[/* constructor */ '<init>(java.io.InputStream)', [
 			[/* constructor description */
 				[/* text */ 't', `Creates a property resource bundle from an `],
-				[/* reference */ 'r', `java.io.InputStream`],
+				[/* reference */ 'r', `java.io.InputStream`, `InputStream`],
 				[/* text */ 't', `. This constructor reads the property file in UTF-8 by default.
  If a `],
-				[/* reference */ 'r', `java.nio.charset.MalformedInputException`],
+				[/* reference */ 'r', `java.nio.charset.MalformedInputException`, `MalformedInputException`],
 				[/* text */ 't', ` or an
  `],
-				[/* reference */ 'r', `java.nio.charset.UnmappableCharacterException`],
+				[/* reference */ 'r', `java.nio.charset.UnmappableCharacterException`, `UnmappableCharacterException`],
 				[/* text */ 't', ` occurs on reading the
  input stream, then the PropertyResourceBundle instance resets to the state
  before the exception, re-reads the input stream in `],
@@ -156,7 +156,7 @@ DocsCollector.collect('java.util.PropertyResourceBundle', [
 		[/* constructor */ '<init>(java.io.Reader)', [
 			[/* constructor description */
 				[/* text */ 't', `Creates a property resource bundle from a `],
-				[/* reference */ 'r', `java.io.Reader`],
+				[/* reference */ 'r', `java.io.Reader`, `Reader`],
 				[/* text */ 't', `.  Unlike the constructor
  `],
 				[/* reference */ 'r', `#%3Cinit%3E(java.io.InputStream)`, `PropertyResourceBundle(InputStream)`],

@@ -7,7 +7,7 @@ DocsCollector.collect('java.lang.ProcessHandle', [
  individual process can be monitored for liveness, list its children,
  get information about the process or destroy it.
  By comparison, `],
-		[/* reference */ 'r', `java.lang.Process`],
+		[/* reference */ 'r', `java.lang.Process`, `Process`],
 		[/* text */ 't', ` instances were started
  by the current process and additionally provide access to the process
  input, output, and error streams.
@@ -50,9 +50,9 @@ DocsCollector.collect('java.lang.ProcessHandle', [
 		[/* block */ 'b', [
 			[/* text */ 't', `
  The `],
-			[/* reference */ 'r', `java.lang.Process`],
+			[/* reference */ 'r', `java.lang.Process`, `Process`],
 			[/* text */ 't', ` instances created by `],
-			[/* reference */ 'r', `java.lang.ProcessBuilder`],
+			[/* reference */ 'r', `java.lang.ProcessBuilder`, `ProcessBuilder`],
 			[/* text */ 't', ` can be queried
  for a ProcessHandle that provides information about the Process.
  ProcessHandle references should not be freely distributed.
@@ -62,7 +62,7 @@ DocsCollector.collect('java.lang.ProcessHandle', [
 		[/* block */ 'b', [
 			[/* text */ 't', `
  A `],
-			[/* reference */ 'r', `java.util.concurrent.CompletableFuture`],
+			[/* reference */ 'r', `java.util.concurrent.CompletableFuture`, `CompletableFuture`],
 			[/* text */ 't', ` available from `],
 			[/* reference */ 'r', `#onExit()`, `onExit()`],
 			[/* text */ 't', `
@@ -74,7 +74,7 @@ DocsCollector.collect('java.lang.ProcessHandle', [
 			[/* text */ 't', `
  The factory methods limit access to ProcessHandles using the
  SecurityManager checking the `],
-			[/* reference */ 'r', `java.lang.RuntimePermission`],
+			[/* reference */ 'r', `java.lang.RuntimePermission`, `RuntimePermission("manageProcess")`],
 			[/* text */ 't', `.
  The ability to control processes is also restricted by the native system,
  ProcessHandle provides no more access to, or control over, the native process
@@ -103,12 +103,12 @@ DocsCollector.collect('java.lang.ProcessHandle', [
 				[/* block */ 'b', [
 					[/* text */ 't', `
  The `],
-					[/* reference */ 'r', `java.util.concurrent.CompletableFuture`],
+					[/* reference */ 'r', `java.util.concurrent.CompletableFuture`, `CompletableFuture`],
 					[/* text */ 't', ` from `],
 					[/* reference */ 'r', `#onExit()`, `onExit()`],
 					[/* text */ 't', ` is
  `],
-					[/* reference */ 'r', `java.concurrent.CompletableFuture#complete(T)`],
+					[/* reference */ 'r', `java.util.concurrent.CompletableFuture#complete(T)`, `completed`],
 					[/* text */ 't', `
  when the process has terminated.
  `]
@@ -153,12 +153,12 @@ DocsCollector.collect('java.lang.ProcessHandle', [
 				[/* block */ 'b', [
 					[/* text */ 't', `
  The `],
-					[/* reference */ 'r', `java.util.concurrent.CompletableFuture`],
+					[/* reference */ 'r', `java.util.concurrent.CompletableFuture`, `CompletableFuture`],
 					[/* text */ 't', ` from `],
 					[/* reference */ 'r', `#onExit()`, `onExit()`],
 					[/* text */ 't', ` is
  `],
-					[/* reference */ 'r', `java.concurrent.CompletableFuture#complete(T)`],
+					[/* reference */ 'r', `java.util.concurrent.CompletableFuture#complete(T)`, `completed`],
 					[/* text */ 't', `
  when the process has terminated.
  `]
@@ -265,7 +265,7 @@ DocsCollector.collect('java.lang.ProcessHandle', [
 			[/* method description */
 				[/* text */ 't', `Compares this ProcessHandle with the specified ProcessHandle for order.
  The order is not specified, but is consistent with `],
-				[/* reference */ 'r', `.Object#equals(java.lang.Object)`],
+				[/* reference */ 'r', `java.lang.Object#equals(java.lang.Object)`, `Object.equals(java.lang.Object)`],
 				[/* text */ 't', `,
  which returns `],
 				[/* inline code block */ 'i', `true`],
@@ -274,9 +274,9 @@ DocsCollector.collect('java.lang.ProcessHandle', [
  Comparison is only supported among objects of same implementation.
  If attempt is made to mutually compare two different implementations
  of `],
-				[/* reference */ 'r', `java.lang.ProcessHandle`],
+				[/* reference */ 'r', `java.lang.ProcessHandle`, `ProcessHandle`],
 				[/* text */ 't', `s, `],
-				[/* reference */ 'r', `java.lang.ClassCastException`],
+				[/* reference */ 'r', `java.lang.ClassCastException`, `ClassCastException`],
 				[/* text */ 't', ` is thrown.`]
 			],
 			[/* parameters */
@@ -302,7 +302,7 @@ DocsCollector.collect('java.lang.ProcessHandle', [
 			[/* method description */
 				[/* text */ 't', `Returns a hash code value for this ProcessHandle.
  The hashcode value follows the general contract for `],
-				[/* reference */ 'r', `.Object#hashCode()`],
+				[/* reference */ 'r', `java.lang.Object#hashCode()`, `Object.hashCode()`],
 				[/* text */ 't', `.
  The value is a function of the `],
 				[/* reference */ 'r', `#pid()`, `pid()`],
@@ -327,7 +327,7 @@ DocsCollector.collect('java.lang.ProcessHandle', [
  `],
 				[/* block */ 'b', [
 					[/* text */ 't', ` A `],
-					[/* reference */ 'r', `java.lang.ProcessHandle.Info`],
+					[/* reference */ 'r', `java.lang.ProcessHandle.Info`, `ProcessHandle.Info`],
 					[/* text */ 't', ` instance has accessor methods that return
  information about the process if it is available.`]
 				]]
@@ -345,13 +345,13 @@ DocsCollector.collect('java.lang.ProcessHandle', [
 				[/* text */ 't', ` for the termination
  of the process.
  The `],
-				[/* reference */ 'r', `java.util.concurrent.CompletableFuture`],
+				[/* reference */ 'r', `java.util.concurrent.CompletableFuture`, `CompletableFuture`],
 				[/* text */ 't', ` provides the ability
  to trigger dependent functions or actions that may be run synchronously
  or asynchronously upon process termination.
  When the process has terminated the CompletableFuture is
  `],
-				[/* reference */ 'r', `java.concurrent.CompletableFuture#complete(T)`],
+				[/* reference */ 'r', `java.util.concurrent.CompletableFuture#complete(T)`, `completed`],
 				[/* text */ 't', ` regardless
  of the exit status of the process.
  The `],
@@ -366,13 +366,13 @@ DocsCollector.collect('java.lang.ProcessHandle', [
 					[/* text */ 't', ` waits for the process to terminate and returns
  the ProcessHandle. The future can be used to check if the process is
  `],
-					[/* reference */ 'r', `java.concurrent.CompletableFuture#isDone()`],
+					[/* reference */ 'r', `java.util.concurrent.CompletableFuture#isDone()`, `done`],
 					[/* text */ 't', ` or to
  `],
-					[/* reference */ 'r', `java.concurrent.Future#get()`],
+					[/* reference */ 'r', `java.util.concurrent.Future#get()`, `wait`],
 					[/* text */ 't', ` for it to terminate.
  `],
-					[/* reference */ 'r', `java.concurrent.Future#cancel(boolean)`],
+					[/* reference */ 'r', `java.util.concurrent.Future#cancel(boolean)`, `Cancelling`],
 					[/* text */ 't', `
  the CompleteableFuture does not affect the Process.`]
 				]]
@@ -499,7 +499,7 @@ DocsCollector.collect('java.lang.ProcessHandle', [
 			[/* method description */
 				[/* text */ 't', `Returns a ProcessHandle for the current process. The ProcessHandle cannot be
  used to destroy the current process, use `],
-				[/* reference */ 'r', `.System#exit(int)`],
+				[/* reference */ 'r', `java.lang.System#exit(int)`, `System.exit`],
 				[/* text */ 't', ` instead.`]
 			],
 			/* parameters */ UDF,

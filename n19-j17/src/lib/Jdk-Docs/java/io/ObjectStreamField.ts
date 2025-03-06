@@ -149,7 +149,7 @@ DocsCollector.collect('java.io.ObjectStreamField', [
  `],
 				[/* inline code block */ 'i', `ObjectStreamField`],
 				[/* text */ 't', ` was obtained from a deserialized `],
-				[/* reference */ 'r', `java.io.ObjectStreamClass`],
+				[/* reference */ 'r', `java.io.ObjectStreamClass`, `ObjectStreamClass`],
 				[/* text */ 't', ` instance, then `],
 				[/* inline code block */ 'i', `Object.class`],
 				[/* text */ 't', ` is returned.

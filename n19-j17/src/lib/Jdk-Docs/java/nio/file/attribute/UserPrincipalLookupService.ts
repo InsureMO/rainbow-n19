@@ -4,11 +4,11 @@ import {DocsCollector} from '../../../../DocsCollector';
 DocsCollector.collect('java.nio.file.attribute.UserPrincipalLookupService', [
 	[/* class description */
 		[/* text */ 't', `An object to lookup user and group principals by name. A `],
-		[/* reference */ 'r', `java.nio.file.attribute.UserPrincipal`],
+		[/* reference */ 'r', `java.nio.file.attribute.UserPrincipal`, `UserPrincipal`],
 		[/* text */ 't', `
  represents an identity that may be used to determine access rights to objects
  in a file system. A `],
-		[/* reference */ 'r', `java.nio.file.attribute.GroupPrincipal`],
+		[/* reference */ 'r', `java.nio.file.attribute.GroupPrincipal`, `GroupPrincipal`],
 		[/* text */ 't', ` represents a `],
 		[/* text */ 't', `group identity`],
 		[/* text */ 't', `.
@@ -51,7 +51,7 @@ DocsCollector.collect('java.nio.file.attribute.UserPrincipalLookupService', [
 				[/* block */ 'b', [
 					[/* text */ 't', ` Where an implementation does not support any notion of group then
  this method always throws `],
-					[/* reference */ 'r', `java.nio.file.attribute.UserPrincipalNotFoundException`],
+					[/* reference */ 'r', `java.nio.file.attribute.UserPrincipalNotFoundException`, `UserPrincipalNotFoundException`],
 					[/* text */ 't', `. Where
  the namespace for user accounts and groups is the same, then this method
  is identical to invoking `],
@@ -75,7 +75,7 @@ DocsCollector.collect('java.nio.file.attribute.UserPrincipalLookupService', [
 					[/* text */ 't', `In the case of the default provider, and a security manager is
           installed, it checks
           `],
-					[/* reference */ 'r', `java.lang.RuntimePermission`],
+					[/* reference */ 'r', `java.lang.RuntimePermission`, `RuntimePermission`],
 					[/* inline code block */ 'i', `("lookupUserInformation")`]
 				]]
 			],
@@ -103,7 +103,7 @@ DocsCollector.collect('java.nio.file.attribute.UserPrincipalLookupService', [
 					[/* text */ 't', `In the case of the default provider, and a security manager is
           installed, it checks
           `],
-					[/* reference */ 'r', `java.lang.RuntimePermission`],
+					[/* reference */ 'r', `java.lang.RuntimePermission`, `RuntimePermission`],
 					[/* inline code block */ 'i', `("lookupUserInformation")`]
 				]]
 			],

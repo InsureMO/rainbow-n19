@@ -4,10 +4,10 @@ import {DocsCollector} from '../../../DocsCollector';
 DocsCollector.collect('java.util.concurrent.CompletableFuture', [
 	[/* class description */
 		[/* text */ 't', `A `],
-		[/* reference */ 'r', `java.util.concurrent.Future`],
+		[/* reference */ 'r', `java.util.concurrent.Future`, `Future`],
 		[/* text */ 't', ` that may be explicitly completed (setting its
  value and status), and may be used as a `],
-		[/* reference */ 'r', `java.util.concurrent.CompletionStage`],
+		[/* reference */ 'r', `java.util.concurrent.CompletionStage`, `CompletionStage`],
 		[/* text */ 't', `,
  supporting dependent functions and actions that trigger upon its
  completion.
@@ -32,7 +32,7 @@ DocsCollector.collect('java.util.concurrent.CompletableFuture', [
 			[/* text */ 't', `In addition to these and related methods for directly
  manipulating status and results, CompletableFuture implements
  interface `],
-			[/* reference */ 'r', `java.util.concurrent.CompletionStage`],
+			[/* reference */ 'r', `java.util.concurrent.CompletionStage`, `CompletionStage`],
 			[/* text */ 't', ` with the following policies: `]
 		]],
 		[/* list */ 'l', [
@@ -51,7 +51,7 @@ DocsCollector.collect('java.util.concurrent.CompletableFuture', [
 				[/* text */ 't', `async`],
 				[/* text */ 't', ` methods without an explicit Executor
  argument are performed using the `],
-				[/* reference */ 'r', `.ForkJoinPool#commonPool()`],
+				[/* reference */ 'r', `java.util.concurrent.ForkJoinPool#commonPool()`, `ForkJoinPool.commonPool()`],
 				[/* text */ 't', `
  (unless it does not support a parallelism level of at least two, in
  which case, a new Thread is created to run each task).  This may be
@@ -61,7 +61,7 @@ DocsCollector.collect('java.util.concurrent.CompletableFuture', [
 				[/* text */ 't', `. To simplify monitoring, debugging,
  and tracking, all generated asynchronous tasks are instances of the
  marker interface `],
-				[/* reference */ 'r', `java.util.concurrent.CompletableFuture.AsynchronousCompletionTask`],
+				[/* reference */ 'r', `java.util.concurrent.CompletableFuture.AsynchronousCompletionTask`, `CompletableFuture.AsynchronousCompletionTask`],
 				[/* text */ 't', `.  Operations
  with time-delays can use adapter methods defined in this class, for
  example: `],
@@ -93,14 +93,14 @@ DocsCollector.collect('java.util.concurrent.CompletableFuture', [
 		[/* block */ 'b', ''],
 		[/* block */ 'b', [
 			[/* text */ 't', `CompletableFuture also implements `],
-			[/* reference */ 'r', `java.util.concurrent.Future`],
+			[/* reference */ 'r', `java.util.concurrent.Future`, `Future`],
 			[/* text */ 't', ` with the following
  policies: `]
 		]],
 		[/* list */ 'l', [
 			[/* block */ 'b', [
 				[/* text */ 't', `Since (unlike `],
-				[/* reference */ 'r', `java.util.concurrent.FutureTask`],
+				[/* reference */ 'r', `java.util.concurrent.FutureTask`, `FutureTask`],
 				[/* text */ 't', `) this class has no direct
  control over the computation that causes it to be completed,
  cancellation is treated as just another form of exceptional
@@ -125,7 +125,7 @@ DocsCollector.collect('java.util.concurrent.CompletableFuture', [
 				[/* reference */ 'r', `#get(long,java.util.concurrent.TimeUnit)`, `get(long, TimeUnit)`],
 				[/* text */ 't', ` throw an
  `],
-				[/* reference */ 'r', `java.util.concurrent.ExecutionException`],
+				[/* reference */ 'r', `java.util.concurrent.ExecutionException`, `ExecutionException`],
 				[/* text */ 't', ` with the same cause as held in the
  corresponding CompletionException.  To simplify usage in most
  contexts, this class also defines methods `],
@@ -146,7 +146,7 @@ DocsCollector.collect('java.util.concurrent.CompletableFuture', [
 			[/* text */ 't', `) for methods accepting them may be
  null, but passing a null value for any other parameter will result
  in a `],
-			[/* reference */ 'r', `java.lang.NullPointerException`],
+			[/* reference */ 'r', `java.lang.NullPointerException`, `NullPointerException`],
 			[/* text */ 't', ` being thrown.
 
  `]
@@ -199,7 +199,7 @@ DocsCollector.collect('java.util.concurrent.CompletableFuture', [
  results as arguments to the supplied function.
 
  See the `],
-					[/* reference */ 'r', `java.util.concurrent.CompletionStage`],
+					[/* reference */ 'r', `java.util.concurrent.CompletionStage`, `CompletionStage`],
 					[/* text */ 't', ` documentation for rules
  covering exceptional completion.`]
 				]]
@@ -227,7 +227,7 @@ DocsCollector.collect('java.util.concurrent.CompletableFuture', [
  results as arguments to the supplied function.
 
  See the `],
-					[/* reference */ 'r', `java.util.concurrent.CompletionStage`],
+					[/* reference */ 'r', `java.util.concurrent.CompletionStage`, `CompletionStage`],
 					[/* text */ 't', ` documentation for rules
  covering exceptional completion.`]
 				]]
@@ -255,7 +255,7 @@ DocsCollector.collect('java.util.concurrent.CompletableFuture', [
  supplied function.
 
  See the `],
-					[/* reference */ 'r', `java.util.concurrent.CompletionStage`],
+					[/* reference */ 'r', `java.util.concurrent.CompletionStage`, `CompletionStage`],
 					[/* text */ 't', ` documentation for rules
  covering exceptional completion.`]
 				]]
@@ -285,7 +285,7 @@ DocsCollector.collect('java.util.concurrent.CompletableFuture', [
  results as arguments to the supplied action.
 
  See the `],
-					[/* reference */ 'r', `java.util.concurrent.CompletionStage`],
+					[/* reference */ 'r', `java.util.concurrent.CompletionStage`, `CompletionStage`],
 					[/* text */ 't', ` documentation for rules
  covering exceptional completion.`]
 				]]
@@ -313,7 +313,7 @@ DocsCollector.collect('java.util.concurrent.CompletableFuture', [
  results as arguments to the supplied action.
 
  See the `],
-					[/* reference */ 'r', `java.util.concurrent.CompletionStage`],
+					[/* reference */ 'r', `java.util.concurrent.CompletionStage`, `CompletionStage`],
 					[/* text */ 't', ` documentation for rules
  covering exceptional completion.`]
 				]]
@@ -341,7 +341,7 @@ DocsCollector.collect('java.util.concurrent.CompletableFuture', [
  supplied action.
 
  See the `],
-					[/* reference */ 'r', `java.util.concurrent.CompletionStage`],
+					[/* reference */ 'r', `java.util.concurrent.CompletionStage`, `CompletionStage`],
 					[/* text */ 't', ` documentation for rules
  covering exceptional completion.`]
 				]]
@@ -371,7 +371,7 @@ DocsCollector.collect('java.util.concurrent.CompletableFuture', [
  corresponding result as argument to the supplied function.
 
  See the `],
-					[/* reference */ 'r', `java.util.concurrent.CompletionStage`],
+					[/* reference */ 'r', `java.util.concurrent.CompletionStage`, `CompletionStage`],
 					[/* text */ 't', ` documentation for rules
  covering exceptional completion.`]
 				]]
@@ -399,7 +399,7 @@ DocsCollector.collect('java.util.concurrent.CompletableFuture', [
  corresponding result as argument to the supplied function.
 
  See the `],
-					[/* reference */ 'r', `java.util.concurrent.CompletionStage`],
+					[/* reference */ 'r', `java.util.concurrent.CompletionStage`, `CompletionStage`],
 					[/* text */ 't', ` documentation for rules
  covering exceptional completion.`]
 				]]
@@ -427,7 +427,7 @@ DocsCollector.collect('java.util.concurrent.CompletableFuture', [
  the supplied function.
 
  See the `],
-					[/* reference */ 'r', `java.util.concurrent.CompletionStage`],
+					[/* reference */ 'r', `java.util.concurrent.CompletionStage`, `CompletionStage`],
 					[/* text */ 't', ` documentation for rules
  covering exceptional completion.`]
 				]]
@@ -572,17 +572,17 @@ DocsCollector.collect('java.util.concurrent.CompletableFuture', [
 					[/* block */ 'b', [
 						[/* text */ 't', `This method is analogous to
  `],
-						[/* reference */ 'r', `java.Optional#map(java.util.function.Function)`],
+						[/* reference */ 'r', `java.util.Optional#map(java.util.function.Function)`, `Optional.map`],
 						[/* text */ 't', ` and
  `],
-						[/* reference */ 'r', `java.Stream#map(java.util.function.Function)`],
+						[/* reference */ 'r', `java.util.stream.Stream#map(java.util.function.Function)`, `Stream.map`],
 						[/* text */ 't', `.
 
  `]
 					]],
 					[/* block */ 'b', [
 						[/* text */ 't', `See the `],
-						[/* reference */ 'r', `java.util.concurrent.CompletionStage`],
+						[/* reference */ 'r', `java.util.concurrent.CompletionStage`, `CompletionStage`],
 						[/* text */ 't', ` documentation for rules
  covering exceptional completion.`]
 					]]
@@ -608,7 +608,7 @@ DocsCollector.collect('java.util.concurrent.CompletableFuture', [
  the supplied function.
 
  See the `],
-					[/* reference */ 'r', `java.util.concurrent.CompletionStage`],
+					[/* reference */ 'r', `java.util.concurrent.CompletionStage`, `CompletionStage`],
 					[/* text */ 't', ` documentation for rules
  covering exceptional completion.`]
 				]]
@@ -632,7 +632,7 @@ DocsCollector.collect('java.util.concurrent.CompletableFuture', [
  stage's result as the argument to the supplied function.
 
  See the `],
-					[/* reference */ 'r', `java.util.concurrent.CompletionStage`],
+					[/* reference */ 'r', `java.util.concurrent.CompletionStage`, `CompletionStage`],
 					[/* text */ 't', ` documentation for rules
  covering exceptional completion.`]
 				]]
@@ -672,17 +672,17 @@ DocsCollector.collect('java.util.concurrent.CompletableFuture', [
 					[/* block */ 'b', [
 						[/* text */ 't', `This method is analogous to
  `],
-						[/* reference */ 'r', `java.Optional#flatMap(java.util.function.Function)`],
+						[/* reference */ 'r', `java.util.Optional#flatMap(java.util.function.Function)`, `Optional.flatMap`],
 						[/* text */ 't', ` and
  `],
-						[/* reference */ 'r', `java.Stream#flatMap(java.util.function.Function)`],
+						[/* reference */ 'r', `java.util.stream.Stream#flatMap(java.util.function.Function)`, `Stream.flatMap`],
 						[/* text */ 't', `.
 
  `]
 					]],
 					[/* block */ 'b', [
 						[/* text */ 't', `See the `],
-						[/* reference */ 'r', `java.util.concurrent.CompletionStage`],
+						[/* reference */ 'r', `java.util.concurrent.CompletionStage`, `CompletionStage`],
 						[/* text */ 't', ` documentation for rules
  covering exceptional completion.`]
 					]]
@@ -720,7 +720,7 @@ DocsCollector.collect('java.util.concurrent.CompletableFuture', [
  `],
 					[/* block */ 'b', [
 						[/* text */ 't', `See the `],
-						[/* reference */ 'r', `java.util.concurrent.CompletionStage`],
+						[/* reference */ 'r', `java.util.concurrent.CompletionStage`, `CompletionStage`],
 						[/* text */ 't', ` documentation for rules
  covering exceptional completion.`]
 					]]
@@ -757,7 +757,7 @@ DocsCollector.collect('java.util.concurrent.CompletableFuture', [
  `],
 					[/* block */ 'b', [
 						[/* text */ 't', `See the `],
-						[/* reference */ 'r', `java.util.concurrent.CompletionStage`],
+						[/* reference */ 'r', `java.util.concurrent.CompletionStage`, `CompletionStage`],
 						[/* text */ 't', ` documentation for rules
  covering exceptional completion.`]
 					]]
@@ -780,11 +780,11 @@ DocsCollector.collect('java.util.concurrent.CompletableFuture', [
 			[/* method description */
 				[/* text */ 't', `If not already completed, completes this CompletableFuture with
  a `],
-				[/* reference */ 'r', `java.util.concurrent.CancellationException`],
+				[/* reference */ 'r', `java.util.concurrent.CancellationException`, `CancellationException`],
 				[/* text */ 't', `. Dependent CompletableFutures
  that have not already completed will also complete
  exceptionally, with a `],
-				[/* reference */ 'r', `java.util.concurrent.CompletionException`],
+				[/* reference */ 'r', `java.util.concurrent.CompletionException`, `CompletionException`],
 				[/* text */ 't', ` caused by
  this `],
 				[/* inline code block */ 'i', `CancellationException`],
@@ -930,7 +930,7 @@ DocsCollector.collect('java.util.concurrent.CompletableFuture', [
  corresponding result as argument to the supplied action.
 
  See the `],
-					[/* reference */ 'r', `java.util.concurrent.CompletionStage`],
+					[/* reference */ 'r', `java.util.concurrent.CompletionStage`, `CompletionStage`],
 					[/* text */ 't', ` documentation for rules
  covering exceptional completion.`]
 				]]
@@ -958,7 +958,7 @@ DocsCollector.collect('java.util.concurrent.CompletableFuture', [
  corresponding result as argument to the supplied action.
 
  See the `],
-					[/* reference */ 'r', `java.util.concurrent.CompletionStage`],
+					[/* reference */ 'r', `java.util.concurrent.CompletionStage`, `CompletionStage`],
 					[/* text */ 't', ` documentation for rules
  covering exceptional completion.`]
 				]]
@@ -986,7 +986,7 @@ DocsCollector.collect('java.util.concurrent.CompletableFuture', [
  the supplied action.
 
  See the `],
-					[/* reference */ 'r', `java.util.concurrent.CompletionStage`],
+					[/* reference */ 'r', `java.util.concurrent.CompletionStage`, `CompletionStage`],
 					[/* text */ 't', ` documentation for rules
  covering exceptional completion.`]
 				]]
@@ -1015,7 +1015,7 @@ DocsCollector.collect('java.util.concurrent.CompletableFuture', [
  given stage both complete normally, executes the given action.
 
  See the `],
-					[/* reference */ 'r', `java.util.concurrent.CompletionStage`],
+					[/* reference */ 'r', `java.util.concurrent.CompletionStage`, `CompletionStage`],
 					[/* text */ 't', ` documentation for rules
  covering exceptional completion.`]
 				]]
@@ -1042,7 +1042,7 @@ DocsCollector.collect('java.util.concurrent.CompletableFuture', [
  using this stage's default asynchronous execution facility.
 
  See the `],
-					[/* reference */ 'r', `java.util.concurrent.CompletionStage`],
+					[/* reference */ 'r', `java.util.concurrent.CompletionStage`, `CompletionStage`],
 					[/* text */ 't', ` documentation for rules
  covering exceptional completion.`]
 				]]
@@ -1069,7 +1069,7 @@ DocsCollector.collect('java.util.concurrent.CompletableFuture', [
  using the supplied executor.
 
  See the `],
-					[/* reference */ 'r', `java.util.concurrent.CompletionStage`],
+					[/* reference */ 'r', `java.util.concurrent.CompletionStage`, `CompletionStage`],
 					[/* text */ 't', ` documentation for rules
  covering exceptional completion.`]
 				]]
@@ -1098,7 +1098,7 @@ DocsCollector.collect('java.util.concurrent.CompletableFuture', [
  other given stage complete normally, executes the given action.
 
  See the `],
-					[/* reference */ 'r', `java.util.concurrent.CompletionStage`],
+					[/* reference */ 'r', `java.util.concurrent.CompletionStage`, `CompletionStage`],
 					[/* text */ 't', ` documentation for rules
  covering exceptional completion.`]
 				]]
@@ -1125,7 +1125,7 @@ DocsCollector.collect('java.util.concurrent.CompletableFuture', [
  using this stage's default asynchronous execution facility.
 
  See the `],
-					[/* reference */ 'r', `java.util.concurrent.CompletionStage`],
+					[/* reference */ 'r', `java.util.concurrent.CompletionStage`, `CompletionStage`],
 					[/* text */ 't', ` documentation for rules
  covering exceptional completion.`]
 				]]
@@ -1152,7 +1152,7 @@ DocsCollector.collect('java.util.concurrent.CompletableFuture', [
  using the supplied executor.
 
  See the `],
-					[/* reference */ 'r', `java.util.concurrent.CompletionStage`],
+					[/* reference */ 'r', `java.util.concurrent.CompletionStage`, `CompletionStage`],
 					[/* text */ 't', ` documentation for rules
  covering exceptional completion.`]
 				]]
@@ -1182,7 +1182,7 @@ DocsCollector.collect('java.util.concurrent.CompletableFuture', [
  to the supplied action.
 
  See the `],
-					[/* reference */ 'r', `java.util.concurrent.CompletionStage`],
+					[/* reference */ 'r', `java.util.concurrent.CompletionStage`, `CompletionStage`],
 					[/* text */ 't', ` documentation for rules
  covering exceptional completion.`]
 				]]
@@ -1207,7 +1207,7 @@ DocsCollector.collect('java.util.concurrent.CompletableFuture', [
  the supplied action.
 
  See the `],
-					[/* reference */ 'r', `java.util.concurrent.CompletionStage`],
+					[/* reference */ 'r', `java.util.concurrent.CompletionStage`, `CompletionStage`],
 					[/* text */ 't', ` documentation for rules
  covering exceptional completion.`]
 				]]
@@ -1231,7 +1231,7 @@ DocsCollector.collect('java.util.concurrent.CompletableFuture', [
  stage's result as the argument to the supplied action.
 
  See the `],
-					[/* reference */ 'r', `java.util.concurrent.CompletionStage`],
+					[/* reference */ 'r', `java.util.concurrent.CompletionStage`, `CompletionStage`],
 					[/* text */ 't', ` documentation for rules
  covering exceptional completion.`]
 				]]
@@ -1257,7 +1257,7 @@ DocsCollector.collect('java.util.concurrent.CompletableFuture', [
  normally, executes the given action.
 
  See the `],
-					[/* reference */ 'r', `java.util.concurrent.CompletionStage`],
+					[/* reference */ 'r', `java.util.concurrent.CompletionStage`, `CompletionStage`],
 					[/* text */ 't', ` documentation for rules
  covering exceptional completion.`]
 				]]
@@ -1281,7 +1281,7 @@ DocsCollector.collect('java.util.concurrent.CompletableFuture', [
  asynchronous execution facility.
 
  See the `],
-					[/* reference */ 'r', `java.util.concurrent.CompletionStage`],
+					[/* reference */ 'r', `java.util.concurrent.CompletionStage`, `CompletionStage`],
 					[/* text */ 't', ` documentation for rules
  covering exceptional completion.`]
 				]]
@@ -1304,7 +1304,7 @@ DocsCollector.collect('java.util.concurrent.CompletableFuture', [
  normally, executes the given action using the supplied Executor.
 
  See the `],
-					[/* reference */ 'r', `java.util.concurrent.CompletionStage`],
+					[/* reference */ 'r', `java.util.concurrent.CompletionStage`, `CompletionStage`],
 					[/* text */ 't', ` documentation for rules
  covering exceptional completion.`]
 				]]
@@ -1437,7 +1437,7 @@ DocsCollector.collect('java.util.concurrent.CompletableFuture', [
 			[/* method description */
 				[/* text */ 't', `Exceptionally completes this CompletableFuture with
  a `],
-				[/* reference */ 'r', `java.util.concurrent.TimeoutException`],
+				[/* reference */ 'r', `java.util.concurrent.TimeoutException`, `TimeoutException`],
 				[/* text */ 't', ` if not otherwise completed
  before the given timeout.`]
 			],
@@ -1492,7 +1492,7 @@ DocsCollector.collect('java.util.concurrent.CompletableFuture', [
 					]],
 					[/* block */ 'b', [
 						[/* text */ 't', `Unlike method `],
-						[/* reference */ 'r', `.CompletionStage#handle(java.util.function.BiFunction)`],
+						[/* reference */ 'r', `java.util.concurrent.CompletionStage#handle(java.util.function.BiFunction)`, `handle`],
 						[/* text */ 't', `,
  this method is not designed to translate completion outcomes,
  so the supplied action should not throw an exception. However,
@@ -1537,7 +1537,7 @@ DocsCollector.collect('java.util.concurrent.CompletableFuture', [
 					]],
 					[/* block */ 'b', [
 						[/* text */ 't', `Unlike method `],
-						[/* reference */ 'r', `.CompletionStage#handleAsync(java.util.function.BiFunction)`],
+						[/* reference */ 'r', `java.util.concurrent.CompletionStage#handleAsync(java.util.function.BiFunction)`, `handleAsync`],
 						[/* text */ 't', `,
  this method is not designed to translate completion outcomes,
  so the supplied action should not throw an exception. However,
@@ -1582,7 +1582,7 @@ DocsCollector.collect('java.util.concurrent.CompletableFuture', [
 					]],
 					[/* block */ 'b', [
 						[/* text */ 't', `Unlike method `],
-						[/* reference */ 'r', `.CompletionStage#handleAsync(java.util.function.BiFunction,java.util.concurrent.Executor)`],
+						[/* reference */ 'r', `java.util.concurrent.CompletionStage#handleAsync(java.util.function.BiFunction,java.util.concurrent.Executor)`, `handleAsync`],
 						[/* text */ 't', `,
  this method is not designed to translate completion outcomes,
  so the supplied action should not throw an exception. However,
@@ -1614,7 +1614,7 @@ DocsCollector.collect('java.util.concurrent.CompletableFuture', [
  the same value as this CompletableFuture when it completes
  normally, and cannot be independently completed or otherwise
  used in ways not defined by the methods of interface `],
-				[/* reference */ 'r', `java.util.concurrent.CompletionStage`],
+				[/* reference */ 'r', `java.util.concurrent.CompletionStage`, `CompletionStage`],
 				[/* text */ 't', `.  If this CompletableFuture completes
  exceptionally, then the returned CompletionStage completes
  exceptionally with a CompletionException with this exception as
@@ -1646,7 +1646,7 @@ DocsCollector.collect('java.util.concurrent.CompletableFuture', [
 			[/* method description */
 				[/* text */ 't', `Returns the default Executor used for async methods that do not
  specify an Executor. This class uses the `],
-				[/* reference */ 'r', `.ForkJoinPool#commonPool()`],
+				[/* reference */ 'r', `java.util.concurrent.ForkJoinPool#commonPool()`, `ForkJoinPool.commonPool()`],
 				[/* text */ 't', ` if it supports more than one
  parallel thread, or else an Executor using one thread per async
  task.  This method may be overridden in subclasses to return
@@ -1692,7 +1692,7 @@ DocsCollector.collect('java.util.concurrent.CompletableFuture', [
 			[/* method description */
 				[/* text */ 't', `Returns a new CompletableFuture that is asynchronously completed
  by a task running in the `],
-				[/* reference */ 'r', `.ForkJoinPool#commonPool()`],
+				[/* reference */ 'r', `java.util.concurrent.ForkJoinPool#commonPool()`, `ForkJoinPool.commonPool()`],
 				[/* text */ 't', ` with
  the value obtained by calling the given Supplier.`]
 			],
@@ -1732,7 +1732,7 @@ DocsCollector.collect('java.util.concurrent.CompletableFuture', [
 				[/* text */ 't', `Returns a new CompletionStage that is already completed with
  the given value and supports only those methods in
  interface `],
-				[/* reference */ 'r', `java.util.concurrent.CompletionStage`],
+				[/* reference */ 'r', `java.util.concurrent.CompletionStage`, `CompletionStage`],
 				[/* text */ 't', `.`]
 			],
 			[/* parameters */
@@ -1750,7 +1750,7 @@ DocsCollector.collect('java.util.concurrent.CompletableFuture', [
 				[/* text */ 't', `Returns a new CompletionStage that is already completed
  exceptionally with the given exception and supports only those
  methods in interface `],
-				[/* reference */ 'r', `java.util.concurrent.CompletionStage`],
+				[/* reference */ 'r', `java.util.concurrent.CompletionStage`, `CompletionStage`],
 				[/* text */ 't', `.`]
 			],
 			[/* parameters */
@@ -1835,7 +1835,7 @@ DocsCollector.collect('java.util.concurrent.CompletableFuture', [
 			[/* method description */
 				[/* text */ 't', `Returns a new CompletableFuture that is asynchronously completed
  by a task running in the `],
-				[/* reference */ 'r', `.ForkJoinPool#commonPool()`],
+				[/* reference */ 'r', `java.util.concurrent.ForkJoinPool#commonPool()`, `ForkJoinPool.commonPool()`],
 				[/* text */ 't', ` after
  it runs the given action.`]
 			],
@@ -2014,7 +2014,7 @@ DocsCollector.collect('java.util.concurrent.CompletableFuture', [
  computation involved in the completion of this
  CompletableFuture threw an exception, this method throws an
  (unchecked) `],
-				[/* reference */ 'r', `java.util.concurrent.CompletionException`],
+				[/* reference */ 'r', `java.util.concurrent.CompletionException`, `CompletionException`],
 				[/* text */ 't', ` with the underlying
  exception as its cause.`]
 			],

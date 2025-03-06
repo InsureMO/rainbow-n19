@@ -5,7 +5,7 @@ DocsCollector.collect('java.util.TimerTask', [
 	[/* class description */
 		[/* text */ 't', `A task that can be scheduled for one-time or repeated execution by a
  `],
-		[/* reference */ 'r', `java.util.Timer`],
+		[/* reference */ 'r', `java.util.Timer`, `Timer`],
 		[/* text */ 't', `.
 
  `],

@@ -8,7 +8,7 @@ DocsCollector.collect('java.util.function.Function', [
  `],
 		[/* block */ 'b', [
 			[/* text */ 't', `This is a `],
-			[/* reference */ 'r', `.package-summary`],
+			[/* text */ 't', `functional interface`],
 			[/* text */ 't', `
  whose functional method is `],
 			[/* reference */ 'r', `#apply(T)`, `apply(Object)`],

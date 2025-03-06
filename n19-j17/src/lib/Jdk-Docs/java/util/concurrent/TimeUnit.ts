@@ -25,7 +25,7 @@ DocsCollector.collect('java.util.concurrent.TimeUnit', [
 			[/* text */ 't', ` is mainly used to inform time-based methods
  how a given timing parameter should be interpreted. For example,
  the following code will timeout in 50 milliseconds if the `],
-			[/* reference */ 'r', `java.util.concurrent.locks.Lock`],
+			[/* reference */ 'r', `java.util.concurrent.locks.Lock`, `lock`],
 			[/* text */ 't', ` is not available:
 
  `]
@@ -386,7 +386,7 @@ the order they are declared.`]
 		[/* method */ 'sleep(long)', [
 			[/* method description */
 				[/* text */ 't', `Performs a `],
-				[/* reference */ 'r', `java.util.Thread#sleep(long,int)`],
+				[/* reference */ 'r', `java.lang.Thread#sleep(long,int)`, `Thread.sleep`],
 				[/* text */ 't', ` using
  this time unit.
  This is a convenience method that converts time arguments into the
@@ -410,7 +410,7 @@ the order they are declared.`]
 		[/* method */ 'timedJoin(java.lang.Thread,long)', [
 			[/* method description */
 				[/* text */ 't', `Performs a timed `],
-				[/* reference */ 'r', `java.util.Thread#join(long,int)`],
+				[/* reference */ 'r', `java.lang.Thread#join(long,int)`, `Thread.join`],
 				[/* text */ 't', `
  using this time unit.
  This is a convenience method that converts time arguments into the
@@ -437,7 +437,7 @@ the order they are declared.`]
 		[/* method */ 'timedWait(java.lang.Object,long)', [
 			[/* method description */
 				[/* text */ 't', `Performs a timed `],
-				[/* reference */ 'r', `java.util.Object#wait(long,int)`],
+				[/* reference */ 'r', `java.lang.Object#wait(long,int)`, `Object.wait`],
 				[/* text */ 't', `
  using this time unit.
  This is a convenience method that converts timeout arguments
@@ -451,7 +451,7 @@ the order they are declared.`]
 					[/* inline code block */ 'i', `poll`],
 					[/* text */ 't', ` method
  (see `],
-					[/* reference */ 'r', `.BlockingQueue#poll(long,java.util.concurrent.TimeUnit)`],
+					[/* reference */ 'r', `java.util.concurrent.BlockingQueue#poll(long,java.util.concurrent.TimeUnit)`, `BlockingQueue.poll`],
 					[/* text */ 't', `)
  using:
 

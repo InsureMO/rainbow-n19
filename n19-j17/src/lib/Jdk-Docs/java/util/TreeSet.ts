@@ -4,14 +4,14 @@ import {DocsCollector} from '../../DocsCollector';
 DocsCollector.collect('java.util.TreeSet', [
 	[/* class description */
 		[/* text */ 't', `A `],
-		[/* reference */ 'r', `java.util.NavigableSet`],
+		[/* reference */ 'r', `java.util.NavigableSet`, `NavigableSet`],
 		[/* text */ 't', ` implementation based on a `],
-		[/* reference */ 'r', `java.util.TreeMap`],
+		[/* reference */ 'r', `java.util.TreeMap`, `TreeMap`],
 		[/* text */ 't', `.
  The elements are ordered using their `],
-		[/* reference */ 'r', `java.lang.Comparable`],
+		[/* reference */ 'r', `java.lang.Comparable`, `natural ordering`],
 		[/* text */ 't', `, or by a `],
-		[/* reference */ 'r', `java.util.Comparator`],
+		[/* reference */ 'r', `java.util.Comparator`, `Comparator`],
 		[/* text */ 't', ` provided at set creation
  time, depending on which constructor is used.
 
@@ -78,7 +78,7 @@ DocsCollector.collect('java.util.TreeSet', [
  object that naturally encapsulates the set.
  If no such object exists, the set should be "wrapped" using the
  `],
-			[/* reference */ 'r', `.Collections#synchronizedSortedSet(java.util.SortedSet)`],
+			[/* reference */ 'r', `java.util.Collections#synchronizedSortedSet(java.util.SortedSet)`, `Collections.synchronizedSortedSet`],
 			[/* text */ 't', `
  method.  This is best done at creation time, to prevent accidental
  unsynchronized access to the set: `]
@@ -96,7 +96,7 @@ DocsCollector.collect('java.util.TreeSet', [
 			[/* inline code block */ 'i', `remove`],
 			[/* text */ 't', `
  method, the iterator will throw a `],
-			[/* reference */ 'r', `java.util.ConcurrentModificationException`],
+			[/* reference */ 'r', `java.util.ConcurrentModificationException`, `ConcurrentModificationException`],
 			[/* text */ 't', `.
  Thus, in the face of concurrent modification, the iterator fails quickly
  and cleanly, rather than risking arbitrary, non-deterministic behavior at
@@ -130,7 +130,7 @@ DocsCollector.collect('java.util.TreeSet', [
 				[/* text */ 't', `Constructs a new, empty tree set, sorted according to the
  natural ordering of its elements.  All elements inserted into
  the set must implement the `],
-				[/* reference */ 'r', `java.lang.Comparable`],
+				[/* reference */ 'r', `java.lang.Comparable`, `Comparable`],
 				[/* text */ 't', ` interface.
  Furthermore, all such elements must be `],
 				[/* text */ 't', `mutually
@@ -166,7 +166,7 @@ DocsCollector.collect('java.util.TreeSet', [
 				[/* text */ 't', ` of its
  elements.  All elements inserted into the set must implement the
  `],
-				[/* reference */ 'r', `java.lang.Comparable`],
+				[/* reference */ 'r', `java.lang.Comparable`, `Comparable`],
 				[/* text */ 't', ` interface.  Furthermore, all such elements must be
  `],
 				[/* text */ 't', `mutually comparable`],
@@ -193,7 +193,7 @@ DocsCollector.collect('java.util.TreeSet', [
 					[/* inline code block */ 'i', `c`],
 					[/* text */ 't', ` are
          not `],
-					[/* reference */ 'r', `java.lang.Comparable`],
+					[/* reference */ 'r', `java.lang.Comparable`, `Comparable`],
 					[/* text */ 't', `, or are not mutually comparable`]
 				]],
 				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
@@ -230,7 +230,7 @@ DocsCollector.collect('java.util.TreeSet', [
         If `],
 					[/* inline code block */ 'i', `null`],
 					[/* text */ 't', `, the `],
-					[/* reference */ 'r', `java.lang.Comparable`],
+					[/* reference */ 'r', `java.lang.Comparable`, `natural ordering`],
 					[/* text */ 't', ` of the elements will be used.`]
 				]]
 			],
@@ -632,7 +632,7 @@ DocsCollector.collect('java.util.TreeSet', [
  or `],
 					[/* inline code block */ 'i', `null`],
 					[/* text */ 't', ` if this set uses the `],
-					[/* reference */ 'r', `java.lang.Comparable`],
+					[/* reference */ 'r', `java.lang.Comparable`, `natural ordering`],
 					[/* text */ 't', ` of its elements.`]
 				]]
 			],
@@ -682,7 +682,7 @@ DocsCollector.collect('java.util.TreeSet', [
 					[/* block */ 'b', [
 						[/* text */ 't', `The returned set has an ordering equivalent to
  `],
-						[/* reference */ 'r', `.Collections#reverseOrder(java.util.Comparator)`],
+						[/* reference */ 'r', `java.util.Collections#reverseOrder(java.util.Comparator)`, `Collections.reverseOrder`],
 						[/* inline code block */ 'i', `(comparator())`],
 						[/* text */ 't', `.
  The expression `],
@@ -744,7 +744,7 @@ DocsCollector.collect('java.util.TreeSet', [
          if `],
 					[/* inline code block */ 'i', `toElement`],
 					[/* text */ 't', ` does not implement `],
-					[/* reference */ 'r', `java.lang.Comparable`],
+					[/* reference */ 'r', `java.lang.Comparable`, `Comparable`],
 					[/* text */ 't', `).
          Implementations may, but are not required to, throw this
          exception if `],
@@ -919,7 +919,7 @@ DocsCollector.collect('java.util.TreeSet', [
          if `],
 					[/* inline code block */ 'i', `fromElement`],
 					[/* text */ 't', ` does not implement `],
-					[/* reference */ 'r', `java.lang.Comparable`],
+					[/* reference */ 'r', `java.lang.Comparable`, `Comparable`],
 					[/* text */ 't', `).
          Implementations may, but are not required to, throw this
          exception if `],
@@ -989,7 +989,7 @@ DocsCollector.collect('java.util.TreeSet', [
          if `],
 					[/* inline code block */ 'i', `toElement`],
 					[/* text */ 't', ` does not implement `],
-					[/* reference */ 'r', `java.lang.Comparable`],
+					[/* reference */ 'r', `java.lang.Comparable`, `Comparable`],
 					[/* text */ 't', `).
          Implementations may, but are not required to, throw this
          exception if `],
@@ -1153,7 +1153,7 @@ DocsCollector.collect('java.util.TreeSet', [
          if `],
 					[/* inline code block */ 'i', `fromElement`],
 					[/* text */ 't', ` does not implement `],
-					[/* reference */ 'r', `java.lang.Comparable`],
+					[/* reference */ 'r', `java.lang.Comparable`, `Comparable`],
 					[/* text */ 't', `).
          Implementations may, but are not required to, throw this
          exception if `],
@@ -1185,11 +1185,11 @@ DocsCollector.collect('java.util.TreeSet', [
 		[/* method */ 'spliterator()', [
 			[/* method description */
 				[/* text */ 't', `Creates a `],
-				[/* reference */ 'r', `.Spliterator#binding`],
+				[/* reference */ 'r', `java.util.Spliterator#binding`, `late-binding`],
 				[/* text */ 't', `
  and `],
 				[/* text */ 't', `fail-fast`],
-				[/* reference */ 'r', `java.util.Spliterator`],
+				[/* reference */ 'r', `java.util.Spliterator`, `Spliterator`],
 				[/* text */ 't', ` over the elements in this
  set.
 
@@ -1198,15 +1198,15 @@ DocsCollector.collect('java.util.TreeSet', [
 					[/* text */ 't', `The `],
 					[/* inline code block */ 'i', `Spliterator`],
 					[/* text */ 't', ` reports `],
-					[/* reference */ 'r', `.Spliterator#SIZED`],
+					[/* reference */ 'r', `java.util.Spliterator#SIZED`, `Spliterator.SIZED`],
 					[/* text */ 't', `,
  `],
-					[/* reference */ 'r', `.Spliterator#DISTINCT`],
+					[/* reference */ 'r', `java.util.Spliterator#DISTINCT`, `Spliterator.DISTINCT`],
 					[/* text */ 't', `, `],
-					[/* reference */ 'r', `.Spliterator#SORTED`],
+					[/* reference */ 'r', `java.util.Spliterator#SORTED`, `Spliterator.SORTED`],
 					[/* text */ 't', `, and
  `],
-					[/* reference */ 'r', `.Spliterator#ORDERED`],
+					[/* reference */ 'r', `java.util.Spliterator#ORDERED`, `Spliterator.ORDERED`],
 					[/* text */ 't', `.  Overriding implementations should document
  the reporting of additional characteristic values.
 
@@ -1215,7 +1215,7 @@ DocsCollector.collect('java.util.TreeSet', [
 				[/* block */ 'b', [
 					[/* text */ 't', `The spliterator's comparator (see
  `],
-					[/* reference */ 'r', `.Spliterator#getComparator()`],
+					[/* reference */ 'r', `java.util.Spliterator#getComparator()`, `Spliterator.getComparator()`],
 					[/* text */ 't', `) is `],
 					[/* inline code block */ 'i', `null`],
 					[/* text */ 't', ` if

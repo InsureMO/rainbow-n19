@@ -78,7 +78,7 @@ DocsCollector.collect('java.util.Set', [
  `]
 		]],
 		[/* block */ 'b', [
-			[/* text */ 't', `Unmodifiable Sets`]
+			[/* anchor */ 'r', '#-id', `unmodifiable`, `Unmodifiable Sets`]
 		]],
 		[/* block */ 'b', [
 			[/* text */ 't', `The `],
@@ -97,7 +97,7 @@ DocsCollector.collect('java.util.Set', [
 		[/* list */ 'l', [
 			[/* block */ 'b', [
 				[/* text */ 't', `They are `],
-				[/* reference */ 'r', `.Collection#unmodifiable`],
+				[/* reference */ 'r', `java.util.Collection#unmodifiable`, `unmodifiable`],
 				[/* text */ 't', `. Elements cannot
  be added or removed. Calling any mutator method on the Set
  will always cause `],
@@ -272,7 +272,7 @@ DocsCollector.collect('java.util.Set', [
 					[/* inline code block */ 'i', `null`],
 					[/* text */ 't', `, and throw an exception, as described in the
  specification for `],
-					[/* reference */ 'r', `.Collection#add(E)`],
+					[/* reference */ 'r', `java.util.Collection#add(E)`, `Collection.add`],
 					[/* text */ 't', `.
  Individual set implementations should clearly document any
  restrictions on the elements that they may contain.`]
@@ -378,14 +378,14 @@ DocsCollector.collect('java.util.Set', [
 					[/* text */ 't', `if the type of the specified element
          is incompatible with this set
  (`],
-					[/* reference */ 'r', `.Collection#optional-restrictions`],
+					[/* reference */ 'r', `java.util.Collection#optional-restrictions`, `optional`],
 					[/* text */ 't', `)`]
 				]],
 				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
 					[/* text */ 't', `if the specified element is null and this
          set does not permit null elements
  (`],
-					[/* reference */ 'r', `.Collection#optional-restrictions`],
+					[/* reference */ 'r', `java.util.Collection#optional-restrictions`, `optional`],
 					[/* text */ 't', `)`]
 				]]
 			],
@@ -417,7 +417,7 @@ DocsCollector.collect('java.util.Set', [
          in the specified collection are incompatible with this
          set
  (`],
-					[/* reference */ 'r', `.Collection#optional-restrictions`],
+					[/* reference */ 'r', `java.util.Collection#optional-restrictions`, `optional`],
 					[/* text */ 't', `)`]
 				]],
 				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
@@ -425,7 +425,7 @@ DocsCollector.collect('java.util.Set', [
          or more null elements and this set does not permit null
          elements
  (`],
-					[/* reference */ 'r', `.Collection#optional-restrictions`],
+					[/* reference */ 'r', `java.util.Collection#optional-restrictions`, `optional`],
 					[/* text */ 't', `),
          or if the specified collection is null`]
 				]]
@@ -499,14 +499,14 @@ DocsCollector.collect('java.util.Set', [
 					[/* text */ 't', `if the type of the specified element
          is incompatible with this set
  (`],
-					[/* reference */ 'r', `.Collection#optional-restrictions`],
+					[/* reference */ 'r', `java.util.Collection#optional-restrictions`, `optional`],
 					[/* text */ 't', `)`]
 				]],
 				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
 					[/* text */ 't', `if the specified element is null and this
          set does not permit null elements
  (`],
-					[/* reference */ 'r', `.Collection#optional-restrictions`],
+					[/* reference */ 'r', `java.util.Collection#optional-restrictions`, `optional`],
 					[/* text */ 't', `)`]
 				]],
 				[/* throw */ 'java.lang.UnsupportedOperationException', [/* throw description */
@@ -547,14 +547,14 @@ DocsCollector.collect('java.util.Set', [
 					[/* text */ 't', `if the class of an element of this set
          is incompatible with the specified collection
  (`],
-					[/* reference */ 'r', `.Collection#optional-restrictions`],
+					[/* reference */ 'r', `java.util.Collection#optional-restrictions`, `optional`],
 					[/* text */ 't', `)`]
 				]],
 				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
 					[/* text */ 't', `if this set contains a null element and the
          specified collection does not permit null elements
          (`],
-					[/* reference */ 'r', `.Collection#optional-restrictions`],
+					[/* reference */ 'r', `java.util.Collection#optional-restrictions`, `optional`],
 					[/* text */ 't', `),
          or if the specified collection is null`]
 				]]
@@ -591,14 +591,14 @@ DocsCollector.collect('java.util.Set', [
 					[/* text */ 't', `if the class of an element of this set
          is incompatible with the specified collection
  (`],
-					[/* reference */ 'r', `.Collection#optional-restrictions`],
+					[/* reference */ 'r', `java.util.Collection#optional-restrictions`, `optional`],
 					[/* text */ 't', `)`]
 				]],
 				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
 					[/* text */ 't', `if this set contains a null element and the
          specified collection does not permit null elements
          (`],
-					[/* reference */ 'r', `.Collection#optional-restrictions`],
+					[/* reference */ 'r', `java.util.Collection#optional-restrictions`, `optional`],
 					[/* text */ 't', `),
          or if the specified collection is null`]
 				]]
@@ -627,7 +627,7 @@ DocsCollector.collect('java.util.Set', [
 				[/* inline code block */ 'i', `s2`],
 				[/* text */ 't', `, as required by the general contract of
  `],
-				[/* reference */ 'r', `java.Object#hashCode()`],
+				[/* reference */ 'r', `java.lang.Object#hashCode()`, `Object.hashCode()`],
 				[/* text */ 't', `.`]
 			],
 			/* parameters */ UDF,
@@ -714,7 +714,7 @@ DocsCollector.collect('java.util.Set', [
 					[/* text */ 't', `The `],
 					[/* inline code block */ 'i', `Spliterator`],
 					[/* text */ 't', ` reports `],
-					[/* reference */ 'r', `.Spliterator#DISTINCT`],
+					[/* reference */ 'r', `java.util.Spliterator#DISTINCT`, `Spliterator.DISTINCT`],
 					[/* text */ 't', `.
  Implementations should document the reporting of additional
  characteristic values.`]

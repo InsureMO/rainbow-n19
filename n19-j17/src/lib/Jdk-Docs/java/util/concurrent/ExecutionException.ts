@@ -6,7 +6,7 @@ DocsCollector.collect('java.util.concurrent.ExecutionException', [
 		[/* text */ 't', `Exception thrown when attempting to retrieve the result of a task
  that aborted by throwing an exception. This exception can be
  inspected using the `],
-		[/* reference */ 'r', `java.util.Throwable#getCause()`],
+		[/* reference */ 'r', `java.lang.Throwable#getCause()`, `Throwable.getCause()`],
 		[/* text */ 't', ` method.`]
 	],
 	/* fields */ UDF,
@@ -18,7 +18,7 @@ DocsCollector.collect('java.util.concurrent.ExecutionException', [
 				[/* text */ 't', ` with no detail message.
  The cause is not initialized, and may subsequently be
  initialized by a call to `],
-				[/* reference */ 'r', `java.util.Throwable#initCause(java.lang.Throwable)`],
+				[/* reference */ 'r', `java.lang.Throwable#initCause(java.lang.Throwable)`, `initCause`],
 				[/* text */ 't', `.`]
 			],
 			/* parameters */ UDF,
@@ -31,7 +31,7 @@ DocsCollector.collect('java.util.concurrent.ExecutionException', [
 				[/* text */ 't', ` with the specified detail
  message. The cause is not initialized, and may subsequently be
  initialized by a call to `],
-				[/* reference */ 'r', `java.util.Throwable#initCause(java.lang.Throwable)`],
+				[/* reference */ 'r', `java.lang.Throwable#initCause(java.lang.Throwable)`, `initCause`],
 				[/* text */ 't', `.`]
 			],
 			[/* parameters */
@@ -55,7 +55,7 @@ DocsCollector.collect('java.util.concurrent.ExecutionException', [
 				[/* parameter */ 'cause', [/* parameter description */
 					[/* text */ 't', `the cause (which is saved for later retrieval by the
          `],
-					[/* reference */ 'r', `java.util.Throwable#getCause()`],
+					[/* reference */ 'r', `java.lang.Throwable#getCause()`, `Throwable.getCause()`],
 					[/* text */ 't', ` method)`]
 				]]
 			],
@@ -77,7 +77,7 @@ DocsCollector.collect('java.util.concurrent.ExecutionException', [
 				[/* parameter */ 'cause', [/* parameter description */
 					[/* text */ 't', `the cause (which is saved for later retrieval by the
          `],
-					[/* reference */ 'r', `java.util.Throwable#getCause()`],
+					[/* reference */ 'r', `java.lang.Throwable#getCause()`, `Throwable.getCause()`],
 					[/* text */ 't', ` method)`]
 				]]
 			],

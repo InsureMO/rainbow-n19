@@ -4,7 +4,7 @@ import {DocsCollector} from '../../DocsCollector';
 DocsCollector.collect('java.util.NavigableMap', [
 	[/* class description */
 		[/* text */ 't', `A `],
-		[/* reference */ 'r', `java.util.SortedMap`],
+		[/* reference */ 'r', `java.util.SortedMap`, `SortedMap`],
 		[/* text */ 't', ` extended with navigation methods returning the
  closest matches for given search targets. Methods
  `],
@@ -131,9 +131,9 @@ DocsCollector.collect('java.util.NavigableMap', [
 			[/* inline code block */ 'i', `NavigableMap`],
 			[/* text */ 't', `.  Similarly,
  `],
-			[/* reference */ 'r', `.SortedMap#keySet()`],
+			[/* reference */ 'r', `java.util.SortedMap#keySet()`, `SortedMap.keySet()`],
 			[/* text */ 't', ` can be overridden to return `],
-			[/* reference */ 'r', `java.util.NavigableSet`],
+			[/* reference */ 'r', `java.util.NavigableSet`, `NavigableSet`],
 			[/* text */ 't', `.
 
  `]
@@ -355,7 +355,7 @@ DocsCollector.collect('java.util.NavigableMap', [
 				[/* block */ 'b', [
 					[/* text */ 't', `The returned map has an ordering equivalent to
  `],
-					[/* reference */ 'r', `.Collections#reverseOrder(java.util.Comparator)`],
+					[/* reference */ 'r', `java.util.Collections#reverseOrder(java.util.Comparator)`, `Collections.reverseOrder`],
 					[/* inline code block */ 'i', `(comparator())`],
 					[/* text */ 't', `.
  The expression `],
@@ -414,7 +414,7 @@ DocsCollector.collect('java.util.NavigableMap', [
          if `],
 					[/* inline code block */ 'i', `toKey`],
 					[/* text */ 't', ` does not implement `],
-					[/* reference */ 'r', `java.lang.Comparable`],
+					[/* reference */ 'r', `java.lang.Comparable`, `Comparable`],
 					[/* text */ 't', `).
          Implementations may, but are not required to, throw this
          exception if `],
@@ -583,7 +583,7 @@ DocsCollector.collect('java.util.NavigableMap', [
          if `],
 					[/* inline code block */ 'i', `fromKey`],
 					[/* text */ 't', ` does not implement `],
-					[/* reference */ 'r', `java.lang.Comparable`],
+					[/* reference */ 'r', `java.lang.Comparable`, `Comparable`],
 					[/* text */ 't', `).
          Implementations may, but are not required to, throw this
          exception if `],
@@ -616,7 +616,7 @@ DocsCollector.collect('java.util.NavigableMap', [
 		[/* method */ 'descendingKeySet()', [
 			[/* method description */
 				[/* text */ 't', `Returns a reverse order `],
-				[/* reference */ 'r', `java.util.NavigableSet`],
+				[/* reference */ 'r', `java.util.NavigableSet`, `NavigableSet`],
 				[/* text */ 't', ` view of the keys contained in this map.
  The set's iterator returns the keys in descending order.
  The set is backed by the map, so changes to the map are reflected in
@@ -652,7 +652,7 @@ DocsCollector.collect('java.util.NavigableMap', [
 		[/* method */ 'navigableKeySet()', [
 			[/* method description */
 				[/* text */ 't', `Returns a `],
-				[/* reference */ 'r', `java.util.NavigableSet`],
+				[/* reference */ 'r', `java.util.NavigableSet`, `NavigableSet`],
 				[/* text */ 't', ` view of the keys contained in this map.
  The set's iterator returns the keys in ascending order.
  The set is backed by the map, so changes to the map are reflected in
@@ -724,7 +724,7 @@ DocsCollector.collect('java.util.NavigableMap', [
          if `],
 					[/* inline code block */ 'i', `toKey`],
 					[/* text */ 't', ` does not implement `],
-					[/* reference */ 'r', `java.lang.Comparable`],
+					[/* reference */ 'r', `java.lang.Comparable`, `Comparable`],
 					[/* text */ 't', `).
          Implementations may, but are not required to, throw this
          exception if `],
@@ -881,7 +881,7 @@ DocsCollector.collect('java.util.NavigableMap', [
          if `],
 					[/* inline code block */ 'i', `fromKey`],
 					[/* text */ 't', ` does not implement `],
-					[/* reference */ 'r', `java.lang.Comparable`],
+					[/* reference */ 'r', `java.lang.Comparable`, `Comparable`],
 					[/* text */ 't', `).
          Implementations may, but are not required to, throw this
          exception if `],

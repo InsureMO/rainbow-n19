@@ -4,7 +4,7 @@ import {DocsCollector} from '../../DocsCollector';
 DocsCollector.collect('java.io.Serial', [
 	[/* class description */
 		[/* text */ 't', `Indicates that an annotated field or method is part of the `],
-		[/* reference */ 'r', `java.io.Serializable`],
+		[/* reference */ 'r', `java.io.Serializable`, `serialization mechanism`],
 		[/* text */ 't', ` defined by the
  `],
 		[/* text */ 't', `Java Object Serialization Specification`],
@@ -12,7 +12,7 @@ DocsCollector.collect('java.io.Serial', [
  annotation type is intended to allow compile-time checking of
  serialization-related declarations, analogous to the checking
  enabled by the `],
-		[/* reference */ 'r', `annotation interface in java.lang.Override`],
+		[/* reference */ 'r', `annotation interface in java.lang.Override`, `Override`],
 		[/* text */ 't', ` annotation type to
  validate method overriding. `],
 		[/* inline code block */ 'i', `Serializable`],

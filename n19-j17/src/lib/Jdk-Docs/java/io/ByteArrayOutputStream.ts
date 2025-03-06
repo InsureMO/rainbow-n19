@@ -106,7 +106,7 @@ DocsCollector.collect('java.io.ByteArrayOutputStream', [
 					[/* text */ 't', ` This method always replaces malformed-input and unmappable-character
  sequences with the default replacement string for the platform's
  default character set. The `],
-					[/* reference */ 'r', `java.nio.charset.CharsetDecoder`],
+					[/* reference */ 'r', `java.nio.charset.CharsetDecoder`, `CharsetDecoder`],
 					[/* text */ 't', `
  class should be used when more control over the decoding process is
  required.`]
@@ -150,7 +150,7 @@ DocsCollector.collect('java.io.ByteArrayOutputStream', [
 			[/* method description */
 				[/* text */ 't', `Converts the buffer's contents into a string by decoding the bytes using
  the named `],
-				[/* reference */ 'r', `java.nio.charset.Charset`],
+				[/* reference */ 'r', `java.nio.charset.Charset`, `charset`],
 				[/* text */ 't', `.
 
  `],
@@ -159,7 +159,7 @@ DocsCollector.collect('java.io.ByteArrayOutputStream', [
 					[/* inline code block */ 'i', `#toString(charset)`],
 					[/* text */ 't', ` that takes a
  `],
-					[/* reference */ 'r', `java.nio.charset.Charset`],
+					[/* reference */ 'r', `java.nio.charset.Charset`, `charset`],
 					[/* text */ 't', `.
 
  `]
@@ -186,7 +186,7 @@ DocsCollector.collect('java.io.ByteArrayOutputStream', [
 				[/* parameter */ 'charsetName', [/* parameter description */
 					[/* text */ 't', `the name of a supported
          `],
-					[/* reference */ 'r', `java.nio.charset.Charset`]
+					[/* reference */ 'r', `java.nio.charset.Charset`, `charset`]
 				]]
 			],
 			[/* throws */
@@ -202,7 +202,7 @@ DocsCollector.collect('java.io.ByteArrayOutputStream', [
 			[/* method description */
 				[/* text */ 't', `Converts the buffer's contents into a string by decoding the bytes using
  the specified `],
-				[/* reference */ 'r', `java.nio.charset.Charset`],
+				[/* reference */ 'r', `java.nio.charset.Charset`, `charset`],
 				[/* text */ 't', `. The length of the new
  `],
 				[/* inline code block */ 'i', `String`],
@@ -213,7 +213,7 @@ DocsCollector.collect('java.io.ByteArrayOutputStream', [
 				[/* block */ 'b', [
 					[/* text */ 't', ` This method always replaces malformed-input and unmappable-character
  sequences with the charset's default replacement string. The `],
-					[/* reference */ 'r', `java.nio.charset.CharsetDecoder`],
+					[/* reference */ 'r', `java.nio.charset.CharsetDecoder`, `CharsetDecoder`],
 					[/* text */ 't', ` class should be used when more control
  over the decoding process is required.`]
 				]]
@@ -221,7 +221,7 @@ DocsCollector.collect('java.io.ByteArrayOutputStream', [
 			[/* parameters */
 				[/* parameter */ 'charset', [/* parameter description */
 					[/* text */ 't', `the `],
-					[/* reference */ 'r', `java.nio.charset.Charset`],
+					[/* reference */ 'r', `java.nio.charset.Charset`, `charset`],
 					[/* text */ 't', `
              to be used to decode the `],
 					[/* inline code block */ 'i', `bytes`]

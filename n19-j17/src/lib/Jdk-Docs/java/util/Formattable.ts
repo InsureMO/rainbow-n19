@@ -10,7 +10,7 @@ DocsCollector.collect('java.util.Formattable', [
 		[/* inline code block */ 'i', `'s'`],
 		[/* text */ 't', ` conversion
  specifier of `],
-		[/* reference */ 'r', `java.util.Formatter`],
+		[/* reference */ 'r', `java.util.Formatter`, `Formatter`],
 		[/* text */ 't', `.  This interface allows basic
  control for formatting arbitrary objects.
 
@@ -74,7 +74,7 @@ DocsCollector.collect('java.util.Formattable', [
 		]],
 		[/* block */ 'b', [
 			[/* text */ 't', ` When used in conjunction with the `],
-			[/* reference */ 'r', `java.util.Formatter`],
+			[/* reference */ 'r', `java.util.Formatter`, `Formatter`],
 			[/* text */ 't', `, the above
  class produces the following output for various format strings.
 
@@ -102,7 +102,7 @@ DocsCollector.collect('java.util.Formattable', [
 			[/* inline code block */ 'i', `null`],
 			[/* text */ 't', ` argument to
  any method in this interface will cause a `],
-			[/* reference */ 'r', `java.lang.NullPointerException`],
+			[/* reference */ 'r', `java.lang.NullPointerException`, `NullPointerException`],
 			[/* text */ 't', ` to be thrown.`]
 		]]
 	],
@@ -112,22 +112,22 @@ DocsCollector.collect('java.util.Formattable', [
 		[/* method */ 'formatTo(java.util.Formatter,int,int,int)', [
 			[/* method description */
 				[/* text */ 't', `Formats the object using the provided `],
-				[/* reference */ 'r', `java.util.Formatter`],
+				[/* reference */ 'r', `java.util.Formatter`, `formatter`],
 				[/* text */ 't', `.`]
 			],
 			[/* parameters */
 				[/* parameter */ 'formatter', [/* parameter description */
 					[/* text */ 't', `The `],
-					[/* reference */ 'r', `java.util.Formatter`],
+					[/* reference */ 'r', `java.util.Formatter`, `formatter`],
 					[/* text */ 't', `.  Implementing classes may call
          `],
-					[/* reference */ 'r', `.Formatter#out()`],
+					[/* reference */ 'r', `java.util.Formatter#out()`, `formatter.out()`],
 					[/* text */ 't', ` or `],
-					[/* reference */ 'r', `.Formatter#locale()`],
+					[/* reference */ 'r', `java.util.Formatter#locale()`, `formatter.locale()`],
 					[/* text */ 't', ` to obtain the `],
-					[/* reference */ 'r', `java.lang.Appendable`],
+					[/* reference */ 'r', `java.lang.Appendable`, `Appendable`],
 					[/* text */ 't', ` or `],
-					[/* reference */ 'r', `java.util.Locale`],
+					[/* reference */ 'r', `java.util.Locale`, `Locale`],
 					[/* text */ 't', ` used by this
          `],
 					[/* inline code block */ 'i', `formatter`],
@@ -137,11 +137,11 @@ DocsCollector.collect('java.util.Formattable', [
 					[/* text */ 't', `The flags modify the output format.  The value is interpreted as
          a bitmask.  Any combination of the following flags may be set:
          `],
-					[/* reference */ 'r', `.FormattableFlags#LEFT_JUSTIFY`],
+					[/* reference */ 'r', `java.util.FormattableFlags#LEFT_JUSTIFY`, `FormattableFlags.LEFT_JUSTIFY`],
 					[/* text */ 't', `, `],
-					[/* reference */ 'r', `.FormattableFlags#UPPERCASE`],
+					[/* reference */ 'r', `java.util.FormattableFlags#UPPERCASE`, `FormattableFlags.UPPERCASE`],
 					[/* text */ 't', `, and `],
-					[/* reference */ 'r', `.FormattableFlags#ALTERNATE`],
+					[/* reference */ 'r', `java.util.FormattableFlags#ALTERNATE`, `FormattableFlags.ALTERNATE`],
 					[/* text */ 't', `.  If no flags are set, the default
          formatting of the implementing class will apply.`]
 				]],
@@ -156,7 +156,7 @@ DocsCollector.collect('java.util.Formattable', [
 					[/* text */ 't', ` until the total number of characters
          equals width.  The padding is at the beginning by default.  If
          the `],
-					[/* reference */ 'r', `.FormattableFlags#LEFT_JUSTIFY`],
+					[/* reference */ 'r', `java.util.FormattableFlags#LEFT_JUSTIFY`, `FormattableFlags.LEFT_JUSTIFY`],
 					[/* text */ 't', ` flag is set then the
          padding will be at the end.  If `],
 					[/* inline code block */ 'i', `width`],
@@ -188,7 +188,7 @@ DocsCollector.collect('java.util.Formattable', [
 				[/* throw */ 'java.util.IllegalFormatException', [/* throw description */
 					[/* text */ 't', `If any of the parameters are invalid.  For specification of all
           possible formatting errors, see the `],
-					[/* reference */ 'r', `java.Formatter#detail`],
+					[/* reference */ 'r', `java.util.Formatter#detail`, `Details`],
 					[/* text */ 't', ` section of the
           formatter class specification.`]
 				]]

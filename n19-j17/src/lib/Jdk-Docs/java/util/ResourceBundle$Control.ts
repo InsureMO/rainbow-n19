@@ -6,7 +6,7 @@ DocsCollector.collect('java.util.ResourceBundle$Control', [
 		[/* inline code block */ 'i', `ResourceBundle.Control`],
 		[/* text */ 't', ` defines a set of callback methods
  that are invoked by the `],
-		[/* reference */ 'r', `.ResourceBundle#getBundle(java.lang.String,java.util.Locale,java.lang.ClassLoader,java.util.ResourceBundle.Control)`],
+		[/* reference */ 'r', `java.util.ResourceBundle#getBundle(java.lang.String,java.util.Locale,java.lang.ClassLoader,java.util.ResourceBundle.Control)`, `ResourceBundle.getBundle`],
 		[/* text */ 't', ` factory
  methods during the bundle loading process. In other words, a
  `],
@@ -15,17 +15,17 @@ DocsCollector.collect('java.util.ResourceBundle$Control', [
  methods for loading resource bundles. The default implementation of
  the callback methods provides the information necessary for the
  factory methods to perform the `],
-		[/* reference */ 'r', `.ResourceBundle#default_behavior`],
+		[/* reference */ 'r', `java.util.ResourceBundle#default_behavior`, `default behavior`],
 		[/* text */ 't', `.
 
  `],
 		[/* block */ 'b', [
-			[/* reference */ 'r', `java.util.ResourceBundle.Control`],
+			[/* reference */ 'r', `java.util.ResourceBundle.Control`, `ResourceBundle.Control`],
 			[/* text */ 't', ` is designed for an application deployed
  in an unnamed module, for example to support resource bundles in
  non-standard formats or package localized resources in a non-traditional
  convention. `],
-			[/* reference */ 'r', `java.util.spi.ResourceBundleProvider`],
+			[/* reference */ 'r', `java.util.spi.ResourceBundleProvider`, `ResourceBundleProvider`],
 			[/* text */ 't', ` is the replacement for
  `],
 			[/* inline code block */ 'i', `ResourceBundle.Control`],
@@ -151,7 +151,7 @@ DocsCollector.collect('java.util.ResourceBundle$Control', [
 		[/* text */ 't', `
 
  Given the resource bundles in the `],
-		[/* reference */ 'r', `.ResourceBundle#default_behavior_example`],
+		[/* reference */ 'r', `java.util.ResourceBundle#default_behavior_example`, `example`],
 		[/* text */ 't', ` in
  the `],
 		[/* inline code block */ 'i', `ResourceBundle.getBundle`],
@@ -180,7 +180,7 @@ DocsCollector.collect('java.util.ResourceBundle$Control', [
 		[/* block */ 'b', [
 			[/* text */ 't', `The following is an example of loading XML-based bundles
  using `],
-			[/* reference */ 'r', `.Properties#loadFromXML(java.io.InputStream)`],
+			[/* reference */ 'r', `java.util.Properties#loadFromXML(java.io.InputStream)`, `Properties.loadFromXML`],
 			[/* text */ 't', `.
 
  `]
@@ -332,7 +332,7 @@ DocsCollector.collect('java.util.ResourceBundle$Control', [
 				[/* inline code block */ 'i', `loadTime`],
 				[/* text */ 't', ` is a millisecond offset since
  the `],
-				[/* reference */ 'r', `.Calendar#Epoch`],
+				[/* reference */ 'r', `java.util.Calendar#Epoch`, `Calendar Epoch`],
 				[/* text */ 't', `.
 
  `],
@@ -436,7 +436,7 @@ DocsCollector.collect('java.util.ResourceBundle$Control', [
 				[/* inline code block */ 'i', `bundleName`],
 				[/* text */ 't', ` to the form required
  by the `],
-				[/* reference */ 'r', `java.ClassLoader#getResource(java.lang.String)`],
+				[/* reference */ 'r', `java.lang.ClassLoader#getResource(java.lang.String)`, `ClassLoader.getResource`],
 				[/* text */ 't', `
  method by replacing all occurrences of `],
 				[/* inline code block */ 'i', `'.'`],
@@ -609,7 +609,7 @@ DocsCollector.collect('java.util.ResourceBundle$Control', [
  bundles and `],
 				[/* inline code block */ 'i', `"java.properties"`],
 				[/* text */ 't', ` for `],
-				[/* reference */ 'r', `java.util.PropertyResourceBundle`],
+				[/* reference */ 'r', `java.util.PropertyResourceBundle`, `properties-based`],
 				[/* text */ 't', ` ones. Strings starting
  with `],
 				[/* inline code block */ 'i', `"java."`],
@@ -694,7 +694,7 @@ DocsCollector.collect('java.util.ResourceBundle$Control', [
  candidate locales exist and their parents are not defined by
  loaded resource bundles themselves.  The last element of the list
  must be a `],
-					[/* reference */ 'r', `.Locale#ROOT`],
+					[/* reference */ 'r', `java.util.Locale#ROOT`, `root locale`],
 					[/* text */ 't', ` if it is desired to
  have the base bundle as the terminal of the parent chain.
 
@@ -1180,7 +1180,7 @@ DocsCollector.collect('java.util.ResourceBundle$Control', [
 				[/* block */ 'b', ''],
 				[/* block */ 'b', [
 					[/* text */ 't', `The default implementation uses an `],
-					[/* reference */ 'r', `java.util.ArrayList`],
+					[/* reference */ 'r', `java.util.ArrayList`, `ArrayList`],
 					[/* text */ 't', ` that
  overriding implementations may modify before returning it to the
  caller. However, a subclass must not modify it after it has
@@ -1285,7 +1285,7 @@ DocsCollector.collect('java.util.ResourceBundle$Control', [
 				]],
 				[/* block */ 'b', [
 					[/* text */ 't', `The default implementation returns the `],
-					[/* reference */ 'r', `.Locale#getDefault()`],
+					[/* reference */ 'r', `java.util.Locale#getDefault()`, `default Locale`],
 					[/* text */ 't', ` if the given
  `],
 					[/* inline code block */ 'i', `locale`],
@@ -1438,7 +1438,7 @@ DocsCollector.collect('java.util.ResourceBundle$Control', [
 				[/* throw */ 'java.lang.SecurityException', [/* throw description */
 					[/* text */ 't', `If a security manager is present and creation of new
         instances is denied. See `],
-					[/* reference */ 'r', `java.Class#newInstance()`],
+					[/* reference */ 'r', `java.lang.Class#newInstance()`, `Class.newInstance()`],
 					[/* text */ 't', `
         for details.`]
 				]],

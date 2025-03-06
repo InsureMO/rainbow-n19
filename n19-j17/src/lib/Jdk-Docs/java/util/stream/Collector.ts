@@ -4,7 +4,7 @@ import {DocsCollector} from '../../../DocsCollector';
 DocsCollector.collect('java.util.stream.Collector', [
 	[/* class description */
 		[/* text */ 't', `A `],
-		[/* reference */ 'r', `.package-summary#Reduction`],
+		[/* text */ 't', `mutable reduction operation`],
 		[/* text */ 't', ` that
  accumulates input elements into a mutable result container, optionally transforming
  the accumulated result into a final representation after all input elements
@@ -22,7 +22,7 @@ DocsCollector.collect('java.util.stream.Collector', [
 			[/* text */ 't', `; computing summary information about
  elements such as sum, min, max, or average; computing "pivot table" summaries
  such as "maximum valued transaction by seller", etc.  The class `],
-			[/* reference */ 'r', `java.util.stream.Collectors`],
+			[/* reference */ 'r', `java.util.stream.Collectors`, `Collectors`],
 			[/* text */ 't', `
  provides implementations of many common mutable reductions.
 
@@ -61,7 +61,7 @@ DocsCollector.collect('java.util.stream.Collector', [
 		[/* block */ 'b', [
 			[/* text */ 't', `Collectors also have a set of characteristics, such as
  `],
-			[/* reference */ 'r', `.Collector.Characteristics#CONCURRENT`],
+			[/* reference */ 'r', `java.util.stream.Collector.Characteristics#CONCURRENT`, `Collector.Characteristics.CONCURRENT`],
 			[/* text */ 't', `, that provide hints that can be used by a
  reduction implementation to provide better performance.
 
@@ -82,7 +82,7 @@ DocsCollector.collect('java.util.stream.Collector', [
 			[/* text */ 't', `identity`],
 			[/* text */ 't', ` and an
  `],
-			[/* reference */ 'r', `.package-summary#Associativity`],
+			[/* text */ 't', `associativity`],
 			[/* text */ 't', ` constraints.
 
  `]
@@ -156,7 +156,7 @@ DocsCollector.collect('java.util.stream.Collector', [
 			[/* inline code block */ 'i', `Collector`],
 			[/* text */ 't', `, such as
  `],
-			[/* reference */ 'r', `.Stream#collect(java.util.stream.Collector)`],
+			[/* reference */ 'r', `java.util.stream.Stream#collect(java.util.stream.Collector)`, `Stream.collect(Collector)`],
 			[/* text */ 't', `, must adhere to the following constraints:
  `]
 		]],
@@ -193,7 +193,7 @@ DocsCollector.collect('java.util.stream.Collector', [
      rather than keeping the result isolated during accumulation.
      A concurrent reduction should only be applied if the collector has the
      `],
-				[/* reference */ 'r', `.Collector.Characteristics#UNORDERED`],
+				[/* reference */ 'r', `java.util.stream.Collector.Characteristics#UNORDERED`, `Collector.Characteristics.UNORDERED`],
 				[/* text */ 't', ` characteristics or if the
      originating data is unordered.`]
 			]]
@@ -201,7 +201,7 @@ DocsCollector.collect('java.util.stream.Collector', [
 		[/* block */ 'b', ''],
 		[/* block */ 'b', [
 			[/* text */ 't', `In addition to the predefined implementations in `],
-			[/* reference */ 'r', `java.util.stream.Collectors`],
+			[/* reference */ 'r', `java.util.stream.Collectors`, `Collectors`],
 			[/* text */ 't', `, the
  static factory methods `],
 			[/* reference */ 'r', `#of(java.util.function.Supplier,java.util.function.BiConsumer,java.util.function.BinaryOperator,java.util.stream.Collector.Characteristics...)`, `of(Supplier, BiConsumer, BinaryOperator, Characteristics...)`],
@@ -222,7 +222,7 @@ DocsCollector.collect('java.util.stream.Collector', [
 
  (This behavior is also implemented by the predefined collector
  `],
-		[/* reference */ 'r', `.Collectors#toCollection(java.util.function.Supplier)`],
+		[/* reference */ 'r', `java.util.stream.Collectors#toCollection(java.util.function.Supplier)`, `Collectors.toCollection(Supplier)`],
 		[/* text */ 't', `).`],
 		[/* block */ 'b', '']
 	],

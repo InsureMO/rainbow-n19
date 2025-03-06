@@ -12,13 +12,13 @@ DocsCollector.collect('java.lang.BootstrapMethodError', [
 		[/* text */ 't', ` instruction the bootstrap method has failed to
  provide a
  `],
-		[/* reference */ 'r', `java.lang.invoke.CallSite`],
+		[/* reference */ 'r', `java.lang.invoke.CallSite`, `call site`],
 		[/* text */ 't', ` with a
  `],
-		[/* reference */ 'r', `.CallSite#getTarget()`],
+		[/* reference */ 'r', `java.lang.invoke.CallSite#getTarget()`, `target`],
 		[/* text */ 't', `
  of the correct `],
-		[/* reference */ 'r', `.MethodHandle#type()`],
+		[/* reference */ 'r', `java.lang.invoke.MethodHandle#type()`, `method type`],
 		[/* text */ 't', `,
  or for a dynamic constant the bootstrap method has failed to provide a
  constant value of the required type.`]

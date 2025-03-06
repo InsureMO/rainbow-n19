@@ -8,7 +8,7 @@ DocsCollector.collect('java.util.zip.Inflater', [
  initially developed as part of the PNG graphics standard and is not
  protected by patents. It is fully described in the specifications at
  the `],
-		[/* reference */ 'r', `.package-summary#package-description`],
+		[/* text */ 't', `java.util.zip package description`],
 		[/* text */ 't', `.
  `],
 		[/* block */ 'b', [
@@ -222,7 +222,7 @@ DocsCollector.collect('java.util.zip.Inflater', [
 					[/* reference */ 'r', `#getBytesWritten()`, `total bytes written`],
 					[/* text */ 't', `
  values, will be updated even in the event that a `],
-					[/* reference */ 'r', `java.util.zip.DataFormatException`],
+					[/* reference */ 'r', `java.util.zip.DataFormatException`, `DataFormatException`],
 					[/* text */ 't', `
  is thrown to reflect the amount of data consumed and produced before the
  exception occurred.`]
@@ -258,7 +258,7 @@ DocsCollector.collect('java.util.zip.Inflater', [
 					[/* text */ 't', ` method was called to provide a buffer
  for input, the input buffer's position will be advanced by the number of bytes
  consumed by this operation, even in the event that a `],
-					[/* reference */ 'r', `java.util.zip.DataFormatException`],
+					[/* reference */ 'r', `java.util.zip.DataFormatException`, `DataFormatException`],
 					[/* text */ 't', `
  is thrown.
  `]
@@ -285,7 +285,7 @@ DocsCollector.collect('java.util.zip.Inflater', [
 					[/* reference */ 'r', `#getBytesWritten()`, `total bytes written`],
 					[/* text */ 't', `
  values, will be updated even in the event that a `],
-					[/* reference */ 'r', `java.util.zip.DataFormatException`],
+					[/* reference */ 'r', `java.util.zip.DataFormatException`, `DataFormatException`],
 					[/* text */ 't', `
  is thrown to reflect the amount of data consumed and produced before the
  exception occurred.`]
@@ -331,7 +331,7 @@ DocsCollector.collect('java.util.zip.Inflater', [
 					[/* inline code block */ 'i', `output`],
 					[/* text */ 't', ` buffer will be advanced even in the event that a
  `],
-					[/* reference */ 'r', `java.util.zip.DataFormatException`],
+					[/* reference */ 'r', `java.util.zip.DataFormatException`, `DataFormatException`],
 					[/* text */ 't', ` is thrown.
  `]
 				]],
@@ -357,7 +357,7 @@ DocsCollector.collect('java.util.zip.Inflater', [
 					[/* reference */ 'r', `#getBytesWritten()`, `total bytes written`],
 					[/* text */ 't', `
  values, will be updated even in the event that a `],
-					[/* reference */ 'r', `java.util.zip.DataFormatException`],
+					[/* reference */ 'r', `java.util.zip.DataFormatException`, `DataFormatException`],
 					[/* text */ 't', `
  is thrown to reflect the amount of data consumed and produced before the
  exception occurred.`]

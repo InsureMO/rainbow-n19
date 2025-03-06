@@ -9,10 +9,10 @@ DocsCollector.collect('java.time.zone.ZoneRules', [
 			[/* text */ 't', `
  The rules model all the historic and future transitions for a time-zone.
  `],
-			[/* reference */ 'r', `java.time.zone.ZoneOffsetTransition`],
+			[/* reference */ 'r', `java.time.zone.ZoneOffsetTransition`, `ZoneOffsetTransition`],
 			[/* text */ 't', ` is used for known transitions, typically historic.
  `],
-			[/* reference */ 'r', `java.time.zone.ZoneOffsetTransitionRule`],
+			[/* reference */ 'r', `java.time.zone.ZoneOffsetTransitionRule`, `ZoneOffsetTransitionRule`],
 			[/* text */ 't', ` is used for future transitions that are based
  on the result of an algorithm.
  `]
@@ -20,9 +20,9 @@ DocsCollector.collect('java.time.zone.ZoneRules', [
 		[/* block */ 'b', [
 			[/* text */ 't', `
  The rules are loaded via `],
-			[/* reference */ 'r', `java.time.zone.ZoneRulesProvider`],
+			[/* reference */ 'r', `java.time.zone.ZoneRulesProvider`, `ZoneRulesProvider`],
 			[/* text */ 't', ` using a `],
-			[/* reference */ 'r', `java.time.ZoneId`],
+			[/* reference */ 'r', `java.time.ZoneId`, `ZoneId`],
 			[/* text */ 't', `.
  The same rules may be shared internally between multiple zone IDs.
  `]
@@ -405,7 +405,7 @@ DocsCollector.collect('java.time.zone.ZoneRules', [
  and `],
 					[/* reference */ 'r', `#getTransitions()`, `getTransitions()`],
 					[/* text */ 't', `. This method returns instances of `],
-					[/* reference */ 'r', `java.time.zone.ZoneOffsetTransitionRule`],
+					[/* reference */ 'r', `java.time.zone.ZoneOffsetTransitionRule`, `ZoneOffsetTransitionRule`],
 					[/* text */ 't', `
  that define an algorithm for when transitions will occur.
  `]

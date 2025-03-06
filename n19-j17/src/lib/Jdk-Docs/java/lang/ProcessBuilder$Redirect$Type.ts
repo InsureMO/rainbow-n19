@@ -4,7 +4,7 @@ import {DocsCollector} from '../../DocsCollector';
 DocsCollector.collect('java.lang.ProcessBuilder$Redirect$Type', [
 	[/* class description */
 		[/* text */ 't', `The type of a `],
-		[/* reference */ 'r', `java.lang.ProcessBuilder.Redirect`],
+		[/* reference */ 'r', `java.lang.ProcessBuilder.Redirect`, `ProcessBuilder.Redirect`],
 		[/* text */ 't', `.`]
 	],
 	/* fields */ UDF,

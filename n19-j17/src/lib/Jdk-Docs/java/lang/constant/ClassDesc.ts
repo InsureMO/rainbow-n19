@@ -4,19 +4,19 @@ import {DocsCollector} from '../../../DocsCollector';
 DocsCollector.collect('java.lang.constant.ClassDesc', [
 	[/* class description */
 		[/* text */ 't', `A `],
-		[/* reference */ 'r', `.package-summary#nominal`],
+		[/* text */ 't', `nominal descriptor`],
 		[/* text */ 't', ` for a
  `],
-		[/* reference */ 'r', `java.lang.Class`],
+		[/* reference */ 'r', `java.lang.Class`, `Class`],
 		[/* text */ 't', ` constant.
 
  `],
 		[/* block */ 'b', [
 			[/* text */ 't', `For common system types, including all the primitive types, there are
  predefined `],
-			[/* reference */ 'r', `java.lang.constant.ClassDesc`],
+			[/* reference */ 'r', `java.lang.constant.ClassDesc`, `ClassDesc`],
 			[/* text */ 't', ` constants in `],
-			[/* reference */ 'r', `java.lang.constant.ConstantDescs`],
+			[/* reference */ 'r', `java.lang.constant.ConstantDescs`, `ConstantDescs`],
 			[/* text */ 't', `.
  (The `],
 			[/* inline code block */ 'i', `java.lang.constant`],
@@ -24,20 +24,20 @@ DocsCollector.collect('java.lang.constant.ClassDesc', [
 			[/* inline code block */ 'i', `void`],
 			[/* text */ 't', ` to be a primitive type.)
  To create a `],
-			[/* reference */ 'r', `java.lang.constant.ClassDesc`],
+			[/* reference */ 'r', `java.lang.constant.ClassDesc`, `ClassDesc`],
 			[/* text */ 't', ` for a class or interface type, use `],
 			[/* reference */ 'r', `#of(java.lang.String)`, `of(java.lang.String)`],
 			[/* text */ 't', ` or
  `],
 			[/* reference */ 'r', `#ofDescriptor(java.lang.String)`, `ofDescriptor(String)`],
 			[/* text */ 't', `; to create a `],
-			[/* reference */ 'r', `java.lang.constant.ClassDesc`],
+			[/* reference */ 'r', `java.lang.constant.ClassDesc`, `ClassDesc`],
 			[/* text */ 't', ` for an array
  type, use `],
 			[/* reference */ 'r', `#ofDescriptor(java.lang.String)`, `ofDescriptor(String)`],
 			[/* text */ 't', `, or first obtain a
  `],
-			[/* reference */ 'r', `java.lang.constant.ClassDesc`],
+			[/* reference */ 'r', `java.lang.constant.ClassDesc`, `ClassDesc`],
 			[/* text */ 't', ` for the component type and then call the `],
 			[/* reference */ 'r', `#arrayType()`, `arrayType()`],
 			[/* text */ 't', `
@@ -56,7 +56,7 @@ DocsCollector.collect('java.lang.constant.ClassDesc', [
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if and only if the specified object is also a
  `],
-				[/* reference */ 'r', `java.lang.constant.ClassDesc`],
+				[/* reference */ 'r', `java.lang.constant.ClassDesc`, `ClassDesc`],
 				[/* text */ 't', ` and both describe the same type.`]
 			],
 			[/* parameters */
@@ -82,75 +82,75 @@ DocsCollector.collect('java.lang.constant.ClassDesc', [
 		[/* method */ 'isArray()', [
 			[/* method description */
 				[/* text */ 't', `Returns whether this `],
-				[/* reference */ 'r', `java.lang.constant.ClassDesc`],
+				[/* reference */ 'r', `java.lang.constant.ClassDesc`, `ClassDesc`],
 				[/* text */ 't', ` describes an array type.`]
 			],
 			/* parameters */ UDF,
 			/* throws */ UDF,
 			[/* return description */
 				[/* text */ 't', `whether this `],
-				[/* reference */ 'r', `java.lang.constant.ClassDesc`],
+				[/* reference */ 'r', `java.lang.constant.ClassDesc`, `ClassDesc`],
 				[/* text */ 't', ` describes an array type`]
 			]
 		]],
 		[/* method */ 'isClassOrInterface()', [
 			[/* method description */
 				[/* text */ 't', `Returns whether this `],
-				[/* reference */ 'r', `java.lang.constant.ClassDesc`],
+				[/* reference */ 'r', `java.lang.constant.ClassDesc`, `ClassDesc`],
 				[/* text */ 't', ` describes a class or interface type.`]
 			],
 			/* parameters */ UDF,
 			/* throws */ UDF,
 			[/* return description */
 				[/* text */ 't', `whether this `],
-				[/* reference */ 'r', `java.lang.constant.ClassDesc`],
+				[/* reference */ 'r', `java.lang.constant.ClassDesc`, `ClassDesc`],
 				[/* text */ 't', ` describes a class or interface type`]
 			]
 		]],
 		[/* method */ 'isPrimitive()', [
 			[/* method description */
 				[/* text */ 't', `Returns whether this `],
-				[/* reference */ 'r', `java.lang.constant.ClassDesc`],
+				[/* reference */ 'r', `java.lang.constant.ClassDesc`, `ClassDesc`],
 				[/* text */ 't', ` describes a primitive type.`]
 			],
 			/* parameters */ UDF,
 			/* throws */ UDF,
 			[/* return description */
 				[/* text */ 't', `whether this `],
-				[/* reference */ 'r', `java.lang.constant.ClassDesc`],
+				[/* reference */ 'r', `java.lang.constant.ClassDesc`, `ClassDesc`],
 				[/* text */ 't', ` describes a primitive type`]
 			]
 		]],
 		[/* method */ 'arrayType()', [
 			[/* method description */
 				[/* text */ 't', `Returns a `],
-				[/* reference */ 'r', `java.lang.constant.ClassDesc`],
+				[/* reference */ 'r', `java.lang.constant.ClassDesc`, `ClassDesc`],
 				[/* text */ 't', ` for an array type whose component type
  is described by this `],
-				[/* reference */ 'r', `java.lang.constant.ClassDesc`],
+				[/* reference */ 'r', `java.lang.constant.ClassDesc`, `ClassDesc`],
 				[/* text */ 't', `.`]
 			],
 			/* parameters */ UDF,
 			[/* throws */
 				[/* throw */ 'java.lang.IllegalStateException', [/* throw description */
 					[/* text */ 't', `if the resulting `],
-					[/* reference */ 'r', `java.lang.constant.ClassDesc`],
+					[/* reference */ 'r', `java.lang.constant.ClassDesc`, `ClassDesc`],
 					[/* text */ 't', ` would have an array rank of greater than 255`]
 				]]
 			],
 			[/* return description */
 				[/* text */ 't', `a `],
-				[/* reference */ 'r', `java.lang.constant.ClassDesc`],
+				[/* reference */ 'r', `java.lang.constant.ClassDesc`, `ClassDesc`],
 				[/* text */ 't', ` describing the array type`]
 			]
 		]],
 		[/* method */ 'arrayType(int)', [
 			[/* method description */
 				[/* text */ 't', `Returns a `],
-				[/* reference */ 'r', `java.lang.constant.ClassDesc`],
+				[/* reference */ 'r', `java.lang.constant.ClassDesc`, `ClassDesc`],
 				[/* text */ 't', ` for an array type of the specified rank,
  whose component type is described by this `],
-				[/* reference */ 'r', `java.lang.constant.ClassDesc`],
+				[/* reference */ 'r', `java.lang.constant.ClassDesc`, `ClassDesc`],
 				[/* text */ 't', `.`]
 			],
 			[/* parameters */
@@ -166,14 +166,14 @@ DocsCollector.collect('java.lang.constant.ClassDesc', [
 			],
 			[/* return description */
 				[/* text */ 't', `a `],
-				[/* reference */ 'r', `java.lang.constant.ClassDesc`],
+				[/* reference */ 'r', `java.lang.constant.ClassDesc`, `ClassDesc`],
 				[/* text */ 't', ` describing the array type`]
 			]
 		]],
 		[/* method */ 'componentType()', [
 			[/* method description */
 				[/* text */ 't', `Returns the component type of this `],
-				[/* reference */ 'r', `java.lang.constant.ClassDesc`],
+				[/* reference */ 'r', `java.lang.constant.ClassDesc`, `ClassDesc`],
 				[/* text */ 't', `, if it describes
  an array type, or `],
 				[/* inline code block */ 'i', `null`],
@@ -183,7 +183,7 @@ DocsCollector.collect('java.lang.constant.ClassDesc', [
 			/* throws */ UDF,
 			[/* return description */
 				[/* text */ 't', `a `],
-				[/* reference */ 'r', `java.lang.constant.ClassDesc`],
+				[/* reference */ 'r', `java.lang.constant.ClassDesc`, `ClassDesc`],
 				[/* text */ 't', ` describing the component type, or `],
 				[/* inline code block */ 'i', `null`],
 				[/* text */ 't', `
@@ -193,10 +193,10 @@ DocsCollector.collect('java.lang.constant.ClassDesc', [
 		[/* method */ 'nested(java.lang.String)', [
 			[/* method description */
 				[/* text */ 't', `Returns a `],
-				[/* reference */ 'r', `java.lang.constant.ClassDesc`],
+				[/* reference */ 'r', `java.lang.constant.ClassDesc`, `ClassDesc`],
 				[/* text */ 't', ` for a nested class of the class or
  interface type described by this `],
-				[/* reference */ 'r', `java.lang.constant.ClassDesc`],
+				[/* reference */ 'r', `java.lang.constant.ClassDesc`, `ClassDesc`],
 				[/* text */ 't', `.`]
 			],
 			[/* parameters */
@@ -211,7 +211,7 @@ DocsCollector.collect('java.lang.constant.ClassDesc', [
 				]],
 				[/* throw */ 'java.lang.IllegalStateException', [/* throw description */
 					[/* text */ 't', `if this `],
-					[/* reference */ 'r', `java.lang.constant.ClassDesc`],
+					[/* reference */ 'r', `java.lang.constant.ClassDesc`, `ClassDesc`],
 					[/* text */ 't', ` does not
  describe a class or interface type`]
 				]],
@@ -221,17 +221,17 @@ DocsCollector.collect('java.lang.constant.ClassDesc', [
 			],
 			[/* return description */
 				[/* text */ 't', `a `],
-				[/* reference */ 'r', `java.lang.constant.ClassDesc`],
+				[/* reference */ 'r', `java.lang.constant.ClassDesc`, `ClassDesc`],
 				[/* text */ 't', ` describing the nested class`]
 			]
 		]],
 		[/* method */ 'nested(java.lang.String,java.lang.String...)', [
 			[/* method description */
 				[/* text */ 't', `Returns a `],
-				[/* reference */ 'r', `java.lang.constant.ClassDesc`],
+				[/* reference */ 'r', `java.lang.constant.ClassDesc`, `ClassDesc`],
 				[/* text */ 't', ` for a nested class of the class or
  interface type described by this `],
-				[/* reference */ 'r', `java.lang.constant.ClassDesc`],
+				[/* reference */ 'r', `java.lang.constant.ClassDesc`, `ClassDesc`],
 				[/* text */ 't', `.`]
 			],
 			[/* parameters */
@@ -250,7 +250,7 @@ DocsCollector.collect('java.lang.constant.ClassDesc', [
 				]],
 				[/* throw */ 'java.lang.IllegalStateException', [/* throw description */
 					[/* text */ 't', `if this `],
-					[/* reference */ 'r', `java.lang.constant.ClassDesc`],
+					[/* reference */ 'r', `java.lang.constant.ClassDesc`, `ClassDesc`],
 					[/* text */ 't', ` does not
  describe a class or interface type`]
 				]],
@@ -260,7 +260,7 @@ DocsCollector.collect('java.lang.constant.ClassDesc', [
 			],
 			[/* return description */
 				[/* text */ 't', `a `],
-				[/* reference */ 'r', `java.lang.constant.ClassDesc`],
+				[/* reference */ 'r', `java.lang.constant.ClassDesc`, `ClassDesc`],
 				[/* text */ 't', ` describing the nested class`]
 			]
 		]],
@@ -277,7 +277,7 @@ DocsCollector.collect('java.lang.constant.ClassDesc', [
 		[/* method */ 'packageName()', [
 			[/* method description */
 				[/* text */ 't', `Returns the package name of this `],
-				[/* reference */ 'r', `java.lang.constant.ClassDesc`],
+				[/* reference */ 'r', `java.lang.constant.ClassDesc`, `ClassDesc`],
 				[/* text */ 't', `, if it describes
  a class or interface type.`]
 			],
@@ -286,14 +286,14 @@ DocsCollector.collect('java.lang.constant.ClassDesc', [
 			[/* return description */
 				[/* text */ 't', `the package name, or the empty string if the class is in the
  default package, or this `],
-				[/* reference */ 'r', `java.lang.constant.ClassDesc`],
+				[/* reference */ 'r', `java.lang.constant.ClassDesc`, `ClassDesc`],
 				[/* text */ 't', ` does not describe a class or interface type`]
 			]
 		]],
 		[/* method */ 'of(java.lang.String)', [
 			[/* method description */
 				[/* text */ 't', `Returns a `],
-				[/* reference */ 'r', `java.lang.constant.ClassDesc`],
+				[/* reference */ 'r', `java.lang.constant.ClassDesc`, `ClassDesc`],
 				[/* text */ 't', ` for a class or interface type,
  given the name of the class or interface, such as `],
 				[/* inline code block */ 'i', `"java.lang.String"`],
@@ -308,7 +308,7 @@ DocsCollector.collect('java.lang.constant.ClassDesc', [
 				[/* reference */ 'r', `#ofDescriptor(java.lang.String)`, `ofDescriptor(String)`],
 				[/* text */ 't', ` or use the predefined constants in
  `],
-				[/* reference */ 'r', `java.lang.constant.ConstantDescs`],
+				[/* reference */ 'r', `java.lang.constant.ConstantDescs`, `ConstantDescs`],
 				[/* text */ 't', `).`]
 			],
 			[/* parameters */
@@ -328,14 +328,14 @@ DocsCollector.collect('java.lang.constant.ClassDesc', [
 			],
 			[/* return description */
 				[/* text */ 't', `a `],
-				[/* reference */ 'r', `java.lang.constant.ClassDesc`],
+				[/* reference */ 'r', `java.lang.constant.ClassDesc`, `ClassDesc`],
 				[/* text */ 't', ` describing the desired class`]
 			]
 		]],
 		[/* method */ 'of(java.lang.String,java.lang.String)', [
 			[/* method description */
 				[/* text */ 't', `Returns a `],
-				[/* reference */ 'r', `java.lang.constant.ClassDesc`],
+				[/* reference */ 'r', `java.lang.constant.ClassDesc`, `ClassDesc`],
 				[/* text */ 't', ` for a class or interface type,
  given a package name and the unqualified (simple) name for the
  class or interface.`]
@@ -362,14 +362,14 @@ DocsCollector.collect('java.lang.constant.ClassDesc', [
 			],
 			[/* return description */
 				[/* text */ 't', `a `],
-				[/* reference */ 'r', `java.lang.constant.ClassDesc`],
+				[/* reference */ 'r', `java.lang.constant.ClassDesc`, `ClassDesc`],
 				[/* text */ 't', ` describing the desired class`]
 			]
 		]],
 		[/* method */ 'ofDescriptor(java.lang.String)', [
 			[/* method description */
 				[/* text */ 't', `Returns a `],
-				[/* reference */ 'r', `java.lang.constant.ClassDesc`],
+				[/* reference */ 'r', `java.lang.constant.ClassDesc`, `ClassDesc`],
 				[/* text */ 't', ` given a descriptor string for a class,
  interface, array, or primitive type.`]
 			],
@@ -390,7 +390,7 @@ DocsCollector.collect('java.lang.constant.ClassDesc', [
 			],
 			[/* return description */
 				[/* text */ 't', `a `],
-				[/* reference */ 'r', `java.lang.constant.ClassDesc`],
+				[/* reference */ 'r', `java.lang.constant.ClassDesc`, `ClassDesc`],
 				[/* text */ 't', ` describing the desired class`]
 			]
 		]]

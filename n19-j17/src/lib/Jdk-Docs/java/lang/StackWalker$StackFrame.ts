@@ -7,7 +7,7 @@ DocsCollector.collect('java.lang.StackWalker$StackFrame', [
 		[/* inline code block */ 'i', `StackFrame`],
 		[/* text */ 't', ` object represents a method invocation returned by
  `],
-		[/* reference */ 'r', `java.lang.StackWalker`],
+		[/* reference */ 'r', `java.lang.StackWalker`, `StackWalker`],
 		[/* text */ 't', `.
 
  `],
@@ -16,9 +16,9 @@ DocsCollector.collect('java.lang.StackWalker$StackFrame', [
 			[/* reference */ 'r', `#getDeclaringClass()`, `getDeclaringClass()`],
 			[/* text */ 't', ` method may be unsupported as determined
  by the `],
-			[/* reference */ 'r', `enum class in java.lang.StackWalker.Option`],
+			[/* reference */ 'r', `enum class in java.lang.StackWalker.Option`, `stack walking options`],
 			[/* text */ 't', ` of a `],
-			[/* reference */ 'r', `java.lang.StackWalker`],
+			[/* reference */ 'r', `java.lang.StackWalker`, `stack walker`],
 			[/* text */ 't', `.`]
 		]]
 	],
@@ -95,7 +95,7 @@ DocsCollector.collect('java.lang.StackWalker$StackFrame', [
 					[/* inline code block */ 'i', `StackWalker`],
 					[/* text */ 't', `
          is not configured with `],
-					[/* reference */ 'r', `.StackWalker.Option#RETAIN_CLASS_REFERENCE`],
+					[/* reference */ 'r', `java.lang.StackWalker.Option#RETAIN_CLASS_REFERENCE`, `Option.RETAIN_CLASS_REFERENCE`],
 					[/* text */ 't', `.`]
 				]]
 			],
@@ -122,7 +122,7 @@ DocsCollector.collect('java.lang.StackWalker$StackFrame', [
 		[/* method */ 'getClassName()', [
 			[/* method description */
 				[/* text */ 't', `Gets the `],
-				[/* reference */ 'r', `.ClassLoader#binary-name`],
+				[/* reference */ 'r', `java.lang.ClassLoader#binary-name`, `binary name`],
 				[/* text */ 't', `
  of the declaring class of the method represented by this stack frame.`]
 			],
@@ -171,7 +171,7 @@ DocsCollector.collect('java.lang.StackWalker$StackFrame', [
 		[/* method */ 'getMethodType()', [
 			[/* method description */
 				[/* text */ 't', `Returns the `],
-				[/* reference */ 'r', `java.lang.invoke.MethodType`],
+				[/* reference */ 'r', `java.lang.invoke.MethodType`, `MethodType`],
 				[/* text */ 't', ` representing the parameter types and
  the return type for the method represented by this stack frame.`]
 			],
@@ -182,7 +182,7 @@ DocsCollector.collect('java.lang.StackWalker$StackFrame', [
 					[/* inline code block */ 'i', `StackWalker`],
 					[/* text */ 't', `
          is not configured with `],
-					[/* reference */ 'r', `.StackWalker.Option#RETAIN_CLASS_REFERENCE`],
+					[/* reference */ 'r', `java.lang.StackWalker.Option#RETAIN_CLASS_REFERENCE`, `Option.RETAIN_CLASS_REFERENCE`],
 					[/* text */ 't', `.`]
 				]]
 			],

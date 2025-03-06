@@ -10,11 +10,11 @@ DocsCollector.collect('java.time.Duration', [
  This class models a quantity or amount of time in terms of seconds and nanoseconds.
  It can be accessed using other duration-based units, such as minutes and hours.
  In addition, the `],
-			[/* reference */ 'r', `.ChronoUnit#DAYS`],
+			[/* reference */ 'r', `java.time.temporal.ChronoUnit#DAYS`, `DAYS`],
 			[/* text */ 't', ` unit can be used and is treated as
  exactly equal to 24 hours, thus ignoring daylight savings effects.
  See `],
-			[/* reference */ 'r', `java.time.Period`],
+			[/* reference */ 'r', `java.time.Period`, `Period`],
 			[/* text */ 't', ` for the date-based equivalent to this class.
  `]
 		]],
@@ -22,7 +22,7 @@ DocsCollector.collect('java.time.Duration', [
 			[/* text */ 't', `
  A physical duration could be of infinite length.
  For practicality, the duration is stored with constraints similar to `],
-			[/* reference */ 'r', `java.time.Instant`],
+			[/* reference */ 'r', `java.time.Instant`, `Instant`],
 			[/* text */ 't', `.
  The duration uses nanosecond resolution with a maximum value of the seconds that can
  be held in a `],
@@ -51,7 +51,7 @@ DocsCollector.collect('java.time.Duration', [
  This difference only impacts durations measured near a leap-second and should not affect
  most applications.
  See `],
-			[/* reference */ 'r', `java.time.Instant`],
+			[/* reference */ 'r', `java.time.Instant`, `Instant`],
 			[/* text */ 't', ` for a discussion as to the meaning of the second and time-scales.
  `]
 		]],
@@ -147,7 +147,7 @@ DocsCollector.collect('java.time.Duration', [
 					[/* text */ 't', `
  The comparison is based on the total length of the durations.
  It is "consistent with equals", as defined by `],
-					[/* reference */ 'r', `java.lang.Comparable`],
+					[/* reference */ 'r', `java.lang.Comparable`, `Comparable`],
 					[/* text */ 't', `.`]
 				]]
 			],
@@ -440,10 +440,10 @@ DocsCollector.collect('java.time.Duration', [
  The duration amount is measured in terms of the specified unit.
  Only a subset of units are accepted by this method.
  The unit must either have an `],
-					[/* reference */ 'r', `.TemporalUnit#isDurationEstimated()`],
+					[/* reference */ 'r', `java.time.temporal.TemporalUnit#isDurationEstimated()`, `exact duration`],
 					[/* text */ 't', ` or
  be `],
-					[/* reference */ 'r', `.ChronoUnit#DAYS`],
+					[/* reference */ 'r', `java.time.temporal.ChronoUnit#DAYS`, `ChronoUnit.DAYS`],
 					[/* text */ 't', ` which is treated as 24 hours. Other units throw an exception.
  `]
 				]],
@@ -701,10 +701,10 @@ DocsCollector.collect('java.time.Duration', [
  The duration amount is measured in terms of the specified unit.
  Only a subset of units are accepted by this method.
  The unit must either have an `],
-					[/* reference */ 'r', `.TemporalUnit#isDurationEstimated()`],
+					[/* reference */ 'r', `java.time.temporal.TemporalUnit#isDurationEstimated()`, `exact duration`],
 					[/* text */ 't', ` or
  be `],
-					[/* reference */ 'r', `.ChronoUnit#DAYS`],
+					[/* reference */ 'r', `java.time.temporal.ChronoUnit#DAYS`, `ChronoUnit.DAYS`],
 					[/* text */ 't', ` which is treated as 24 hours. Other units throw an exception.
  `]
 				]],
@@ -886,7 +886,7 @@ DocsCollector.collect('java.time.Duration', [
  Truncating the duration returns a copy of the original with conceptual fields
  smaller than the specified unit set to zero.
  For example, truncating with the `],
-					[/* reference */ 'r', `.ChronoUnit#MINUTES`],
+					[/* reference */ 'r', `java.time.temporal.ChronoUnit#MINUTES`, `MINUTES`],
 					[/* text */ 't', ` unit will
  round down towards zero to the nearest minute, setting the seconds and
  nanoseconds to zero.
@@ -895,15 +895,15 @@ DocsCollector.collect('java.time.Duration', [
 				[/* block */ 'b', [
 					[/* text */ 't', `
  The unit must have a `],
-					[/* reference */ 'r', `.TemporalUnit#getDuration()`],
+					[/* reference */ 'r', `java.time.temporal.TemporalUnit#getDuration()`, `duration`],
 					[/* text */ 't', `
  that divides into the length of a standard day without remainder.
  This includes all
  `],
-					[/* reference */ 'r', `.ChronoUnit#isTimeBased()`],
+					[/* reference */ 'r', `java.time.temporal.ChronoUnit#isTimeBased()`, `time-based units on ChronoUnit`],
 					[/* text */ 't', `
  and `],
-					[/* reference */ 'r', `.ChronoUnit#DAYS`],
+					[/* reference */ 'r', `java.time.temporal.ChronoUnit#DAYS`, `DAYS`],
 					[/* text */ 't', `. Other ChronoUnits throw an exception.
  `]
 				]],
@@ -991,7 +991,7 @@ DocsCollector.collect('java.time.Duration', [
 					[/* text */ 't', `
  In most cases, it is clearer to reverse the calling pattern by using
  `],
-					[/* reference */ 'r', `.Temporal#plus(java.time.temporal.TemporalAmount)`],
+					[/* reference */ 'r', `java.time.temporal.Temporal#plus(java.time.temporal.TemporalAmount)`, `Temporal.plus(TemporalAmount)`],
 					[/* text */ 't', `.
  `]
 				]],
@@ -1036,7 +1036,7 @@ DocsCollector.collect('java.time.Duration', [
 					[/* text */ 't', `
  In most cases, it is clearer to reverse the calling pattern by using
  `],
-					[/* reference */ 'r', `.Temporal#minus(java.time.temporal.TemporalAmount)`],
+					[/* reference */ 'r', `java.time.temporal.Temporal#minus(java.time.temporal.TemporalAmount)`, `Temporal.minus(TemporalAmount)`],
 					[/* text */ 't', `.
  `]
 				]],
@@ -1076,10 +1076,10 @@ DocsCollector.collect('java.time.Duration', [
 				[/* block */ 'b', [
 					[/* text */ 't', `
  The supported units are `],
-					[/* reference */ 'r', `.ChronoUnit#SECONDS`],
+					[/* reference */ 'r', `java.time.temporal.ChronoUnit#SECONDS`, `SECONDS`],
 					[/* text */ 't', `,
  and `],
-					[/* reference */ 'r', `.ChronoUnit#NANOS`],
+					[/* reference */ 'r', `java.time.temporal.ChronoUnit#NANOS`, `NANOS`],
 					[/* text */ 't', `.
  They are returned in the order seconds, nanos.
  `]
@@ -1130,9 +1130,9 @@ DocsCollector.collect('java.time.Duration', [
 					[/* text */ 't', `
  This returns a value for each of the two supported units,
  `],
-					[/* reference */ 'r', `.ChronoUnit#SECONDS`],
+					[/* reference */ 'r', `java.time.temporal.ChronoUnit#SECONDS`, `SECONDS`],
 					[/* text */ 't', ` and `],
-					[/* reference */ 'r', `.ChronoUnit#NANOS`],
+					[/* reference */ 'r', `java.time.temporal.ChronoUnit#NANOS`, `NANOS`],
 					[/* text */ 't', `.
  All other units throw an exception.`]
 				]]
@@ -1343,13 +1343,13 @@ DocsCollector.collect('java.time.Duration', [
 				[/* block */ 'b', [
 					[/* text */ 't', `
  The specified temporal objects must support the `],
-					[/* reference */ 'r', `.ChronoUnit#SECONDS`],
+					[/* reference */ 'r', `java.time.temporal.ChronoUnit#SECONDS`, `SECONDS`],
 					[/* text */ 't', ` unit.
  For full accuracy, either the `],
-					[/* reference */ 'r', `.ChronoUnit#NANOS`],
+					[/* reference */ 'r', `java.time.temporal.ChronoUnit#NANOS`, `NANOS`],
 					[/* text */ 't', ` unit or the
  `],
-					[/* reference */ 'r', `.ChronoField#NANO_OF_SECOND`],
+					[/* reference */ 'r', `java.time.temporal.ChronoField#NANO_OF_SECOND`, `NANO_OF_SECOND`],
 					[/* text */ 't', ` field should be supported.
  `]
 				]],
@@ -1403,17 +1403,17 @@ DocsCollector.collect('java.time.Duration', [
 					[/* text */ 't', `
  The conversion loops around the set of units from the amount and uses
  the `],
-					[/* reference */ 'r', `.TemporalUnit#getDuration()`],
+					[/* reference */ 'r', `java.time.temporal.TemporalUnit#getDuration()`, `duration`],
 					[/* text */ 't', ` of the unit to
  calculate the total `],
 					[/* inline code block */ 'i', `Duration`],
 					[/* text */ 't', `.
  Only a subset of units are accepted by this method. The unit must either
  have an `],
-					[/* reference */ 'r', `.TemporalUnit#isDurationEstimated()`],
+					[/* reference */ 'r', `java.time.temporal.TemporalUnit#isDurationEstimated()`, `exact duration`],
 					[/* text */ 't', `
  or be `],
-					[/* reference */ 'r', `.ChronoUnit#DAYS`],
+					[/* reference */ 'r', `java.time.temporal.ChronoUnit#DAYS`, `ChronoUnit.DAYS`],
 					[/* text */ 't', ` which is treated as 24 hours.
  If any other units are found then an exception is thrown.`]
 				]]
@@ -1451,10 +1451,10 @@ DocsCollector.collect('java.time.Duration', [
 				[/* text */ 't', `
  Only a subset of units are accepted by this method.
  The unit must either have an `],
-				[/* reference */ 'r', `.TemporalUnit#isDurationEstimated()`],
+				[/* reference */ 'r', `java.time.temporal.TemporalUnit#isDurationEstimated()`, `exact duration`],
 				[/* text */ 't', ` or
  be `],
-				[/* reference */ 'r', `.ChronoUnit#DAYS`],
+				[/* reference */ 'r', `java.time.temporal.ChronoUnit#DAYS`, `ChronoUnit.DAYS`],
 				[/* text */ 't', ` which is treated as 24 hours. Other units throw an exception.`],
 				[/* block */ 'b', '']
 			],

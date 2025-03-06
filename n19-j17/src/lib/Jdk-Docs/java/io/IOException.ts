@@ -31,7 +31,7 @@ DocsCollector.collect('java.io.IOException', [
 				[/* parameter */ 'message', [/* parameter description */
 					[/* text */ 't', `The detail message (which is saved for later retrieval
         by the `],
-					[/* reference */ 'r', `java.Throwable#getMessage()`],
+					[/* reference */ 'r', `java.lang.Throwable#getMessage()`, `Throwable.getMessage()`],
 					[/* text */ 't', ` method)`]
 				]]
 			],
@@ -59,13 +59,13 @@ DocsCollector.collect('java.io.IOException', [
 				[/* parameter */ 'message', [/* parameter description */
 					[/* text */ 't', `The detail message (which is saved for later retrieval
         by the `],
-					[/* reference */ 'r', `java.Throwable#getMessage()`],
+					[/* reference */ 'r', `java.lang.Throwable#getMessage()`, `Throwable.getMessage()`],
 					[/* text */ 't', ` method)`]
 				]],
 				[/* parameter */ 'cause', [/* parameter description */
 					[/* text */ 't', `The cause (which is saved for later retrieval by the
         `],
-					[/* reference */ 'r', `java.Throwable#getCause()`],
+					[/* reference */ 'r', `java.lang.Throwable#getCause()`, `Throwable.getCause()`],
 					[/* text */ 't', ` method).  (A null value is permitted,
         and indicates that the cause is nonexistent or unknown.)`]
 				]]
@@ -90,7 +90,7 @@ DocsCollector.collect('java.io.IOException', [
 				[/* parameter */ 'cause', [/* parameter description */
 					[/* text */ 't', `The cause (which is saved for later retrieval by the
         `],
-					[/* reference */ 'r', `java.Throwable#getCause()`],
+					[/* reference */ 'r', `java.lang.Throwable#getCause()`, `Throwable.getCause()`],
 					[/* text */ 't', ` method).  (A null value is permitted,
         and indicates that the cause is nonexistent or unknown.)`]
 				]]

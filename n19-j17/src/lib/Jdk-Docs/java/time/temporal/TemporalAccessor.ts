@@ -11,9 +11,9 @@ DocsCollector.collect('java.time.temporal.TemporalAccessor', [
  This is the base interface type for date, time and offset objects.
  It is implemented by those classes that can provide information
  as `],
-			[/* reference */ 'r', `java.time.temporal.TemporalField`],
+			[/* reference */ 'r', `java.time.temporal.TemporalField`, `fields`],
 			[/* text */ 't', ` or `],
-			[/* reference */ 'r', `java.time.temporal.TemporalQuery`],
+			[/* reference */ 'r', `java.time.temporal.TemporalQuery`, `queries`],
 			[/* text */ 't', `.
  `]
 		]],
@@ -28,7 +28,7 @@ DocsCollector.collect('java.time.temporal.TemporalAccessor', [
 			[/* text */ 't', ` to handle large values. Year, month and day-of-month are
  simple examples of fields, but they also include instant and offsets.
  See `],
-			[/* reference */ 'r', `enum class in java.time.temporal.ChronoField`],
+			[/* reference */ 'r', `enum class in java.time.temporal.ChronoField`, `ChronoField`],
 			[/* text */ 't', ` for the standard set of fields.
  `]
 		]],
@@ -36,23 +36,23 @@ DocsCollector.collect('java.time.temporal.TemporalAccessor', [
 			[/* text */ 't', `
  Two pieces of date/time information cannot be represented by numbers,
  the `],
-			[/* reference */ 'r', `java.time.chrono.Chronology`],
+			[/* reference */ 'r', `java.time.chrono.Chronology`, `chronology`],
 			[/* text */ 't', ` and the
  `],
-			[/* reference */ 'r', `java.time.ZoneId`],
+			[/* reference */ 'r', `java.time.ZoneId`, `time-zone`],
 			[/* text */ 't', `.
  These can be accessed via `],
 			[/* reference */ 'r', `#query(java.time.temporal.TemporalQuery)`, `queries`],
 			[/* text */ 't', ` using
  the static methods defined on `],
-			[/* reference */ 'r', `java.time.temporal.TemporalQuery`],
+			[/* reference */ 'r', `java.time.temporal.TemporalQuery`, `TemporalQuery`],
 			[/* text */ 't', `.
  `]
 		]],
 		[/* block */ 'b', [
 			[/* text */ 't', `
  A sub-interface, `],
-			[/* reference */ 'r', `java.time.temporal.Temporal`],
+			[/* reference */ 'r', `java.time.temporal.Temporal`, `Temporal`],
 			[/* text */ 't', `, extends this definition to one that also
  supports adjustment and manipulation on more complete temporal objects.
  `]
@@ -67,7 +67,7 @@ DocsCollector.collect('java.time.temporal.TemporalAccessor', [
  There are many reasons for this, part of which is that implementations
  of this interface may be in calendar systems other than ISO.
  See `],
-			[/* reference */ 'r', `java.time.chrono.ChronoLocalDate`],
+			[/* reference */ 'r', `java.time.chrono.ChronoLocalDate`, `ChronoLocalDate`],
 			[/* text */ 't', ` for a fuller discussion of the issues.`]
 		]]
 	],
@@ -154,7 +154,7 @@ DocsCollector.collect('java.time.temporal.TemporalAccessor', [
 					[/* inline code block */ 'i', `ZoneId::from`],
 					[/* text */ 't', `.
  Additional implementations are provided as static methods on `],
-					[/* reference */ 'r', `java.time.temporal.TemporalQuery`],
+					[/* reference */ 'r', `java.time.temporal.TemporalQuery`, `TemporalQuery`],
 					[/* text */ 't', `.`]
 				]]
 			],

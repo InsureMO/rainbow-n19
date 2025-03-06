@@ -12,7 +12,7 @@ DocsCollector.collect('java.util.function.Consumer', [
  `],
 		[/* block */ 'b', [
 			[/* text */ 't', `This is a `],
-			[/* reference */ 'r', `.package-summary`],
+			[/* text */ 't', `functional interface`],
 			[/* text */ 't', `
  whose functional method is `],
 			[/* reference */ 'r', `#accept(T)`, `accept(Object)`],

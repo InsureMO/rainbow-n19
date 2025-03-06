@@ -97,12 +97,12 @@ DocsCollector.collect('java.util.HexFormat', [
 			[/* reference */ 'r', `#formatHex(A,byte%5B%5D)`, `formatHex(Appendable, byte[])`],
 			[/* text */ 't', `.
  The formatted output is a string or is appended to an `],
-			[/* reference */ 'r', `java.lang.Appendable`],
+			[/* reference */ 'r', `java.lang.Appendable`, `Appendable`],
 			[/* text */ 't', ` such as
  `],
-			[/* reference */ 'r', `java.lang.StringBuilder`],
+			[/* reference */ 'r', `java.lang.StringBuilder`, `StringBuilder`],
 			[/* text */ 't', ` or `],
-			[/* reference */ 'r', `java.io.PrintStream`],
+			[/* reference */ 'r', `java.io.PrintStream`, `PrintStream`],
 			[/* text */ 't', `.
  Each byte value is formatted as the prefix, two hexadecimal characters from the
  uppercase or lowercase digits, and the suffix.
@@ -134,7 +134,7 @@ DocsCollector.collect('java.util.HexFormat', [
 		[/* method */ 'formatHex(java.lang.Appendable,byte[])', [
 			[/* method description */
 				[/* text */ 't', `Appends formatted hexadecimal strings from a byte array to the `],
-				[/* reference */ 'r', `java.lang.Appendable`],
+				[/* reference */ 'r', `java.lang.Appendable`, `Appendable`],
 				[/* text */ 't', `.
  Each byte value is formatted as the prefix, two hexadecimal characters
  `],
@@ -142,7 +142,7 @@ DocsCollector.collect('java.util.HexFormat', [
 				[/* text */ 't', ` uppercase or lowercase digits, and the suffix.
  A delimiter follows each formatted value, except the last.
  The formatted hexadecimal strings are appended in zero or more calls to the `],
-				[/* reference */ 'r', `java.lang.Appendable`],
+				[/* reference */ 'r', `java.lang.Appendable`, `Appendable`],
 				[/* text */ 't', ` methods.`]
 			],
 			[/* parameters */
@@ -168,7 +168,7 @@ DocsCollector.collect('java.util.HexFormat', [
 		[/* method */ 'formatHex(java.lang.Appendable,byte[],int,int)', [
 			[/* method description */
 				[/* text */ 't', `Appends formatted hexadecimal strings from a byte array range to the `],
-				[/* reference */ 'r', `java.lang.Appendable`],
+				[/* reference */ 'r', `java.lang.Appendable`, `Appendable`],
 				[/* text */ 't', `.
  Each byte value is formatted as the prefix, two hexadecimal characters
  `],
@@ -176,7 +176,7 @@ DocsCollector.collect('java.util.HexFormat', [
 				[/* text */ 't', ` uppercase or lowercase digits, and the suffix.
  A delimiter follows each formatted value, except the last.
  The formatted hexadecimal strings are appended in zero or more calls to the `],
-				[/* reference */ 'r', `java.lang.Appendable`],
+				[/* reference */ 'r', `java.lang.Appendable`, `Appendable`],
 				[/* text */ 't', ` methods.`]
 			],
 			[/* parameters */
@@ -211,7 +211,7 @@ DocsCollector.collect('java.util.HexFormat', [
 		[/* method */ 'toHexDigits(java.lang.Appendable,byte)', [
 			[/* method description */
 				[/* text */ 't', `Appends two hexadecimal characters for the byte value to the `],
-				[/* reference */ 'r', `java.lang.Appendable`],
+				[/* reference */ 'r', `java.lang.Appendable`, `Appendable`],
 				[/* text */ 't', `.
  Each nibble (4 bits) from most significant to least significant of the value
  is formatted as if by `],
@@ -219,7 +219,7 @@ DocsCollector.collect('java.util.HexFormat', [
 				[/* text */ 't', `.
  The hexadecimal characters are appended in one or more calls to the
  `],
-				[/* reference */ 'r', `java.lang.Appendable`],
+				[/* reference */ 'r', `java.lang.Appendable`, `Appendable`],
 				[/* text */ 't', ` methods. The delimiter, prefix and suffix are not used.`]
 			],
 			[/* parameters */
@@ -1027,7 +1027,7 @@ DocsCollector.collect('java.util.HexFormat', [
 			/* throws */ UDF,
 			[/* return description */
 				[/* text */ 't', `a `],
-				[/* reference */ 'r', `java.util.HexFormat`],
+				[/* reference */ 'r', `java.util.HexFormat`, `HexFormat`],
 				[/* text */ 't', ` with the delimiter and lowercase characters`]
 			]
 		]],

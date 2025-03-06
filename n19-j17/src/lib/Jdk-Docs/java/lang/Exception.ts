@@ -17,7 +17,7 @@ DocsCollector.collect('java.lang.Exception', [
 			[/* inline code block */ 'i', `Exception`],
 			[/* text */ 't', ` and any subclasses that are not also
  subclasses of `],
-			[/* reference */ 'r', `java.lang.RuntimeException`],
+			[/* reference */ 'r', `java.lang.RuntimeException`, `RuntimeException`],
 			[/* text */ 't', ` are `],
 			[/* text */ 't', `checked
  exceptions`],
@@ -65,7 +65,7 @@ DocsCollector.collect('java.lang.Exception', [
 				[/* text */ 't', ` as its detail message.
  The cause is not initialized, and may subsequently be initialized by a
  call to `],
-				[/* reference */ 'r', `.Throwable#initCause(java.lang.Throwable)`],
+				[/* reference */ 'r', `java.lang.Throwable#initCause(java.lang.Throwable)`, `Throwable.initCause(java.lang.Throwable)`],
 				[/* text */ 't', `.`]
 			],
 			/* parameters */ UDF,
@@ -76,14 +76,14 @@ DocsCollector.collect('java.lang.Exception', [
 				[/* text */ 't', `Constructs a new exception with the specified detail message.  The
  cause is not initialized, and may subsequently be initialized by
  a call to `],
-				[/* reference */ 'r', `.Throwable#initCause(java.lang.Throwable)`],
+				[/* reference */ 'r', `java.lang.Throwable#initCause(java.lang.Throwable)`, `Throwable.initCause(java.lang.Throwable)`],
 				[/* text */ 't', `.`]
 			],
 			[/* parameters */
 				[/* parameter */ 'message', [/* parameter description */
 					[/* text */ 't', `the detail message. The detail message is saved for
           later retrieval by the `],
-					[/* reference */ 'r', `.Throwable#getMessage()`],
+					[/* reference */ 'r', `java.lang.Throwable#getMessage()`, `Throwable.getMessage()`],
 					[/* text */ 't', ` method.`]
 				]]
 			],
@@ -107,13 +107,13 @@ DocsCollector.collect('java.lang.Exception', [
 				[/* parameter */ 'message', [/* parameter description */
 					[/* text */ 't', `the detail message (which is saved for later retrieval
          by the `],
-					[/* reference */ 'r', `.Throwable#getMessage()`],
+					[/* reference */ 'r', `java.lang.Throwable#getMessage()`, `Throwable.getMessage()`],
 					[/* text */ 't', ` method).`]
 				]],
 				[/* parameter */ 'cause', [/* parameter description */
 					[/* text */ 't', `the cause (which is saved for later retrieval by the
          `],
-					[/* reference */ 'r', `.Throwable#getCause()`],
+					[/* reference */ 'r', `java.lang.Throwable#getCause()`, `Throwable.getCause()`],
 					[/* text */ 't', ` method).  (A `],
 					[/* inline code block */ 'i', `null`],
 					[/* text */ 't', ` value is
@@ -134,14 +134,14 @@ DocsCollector.collect('java.lang.Exception', [
 				[/* text */ 't', `).
  This constructor is useful for exceptions that are little more than
  wrappers for other throwables (for example, `],
-				[/* reference */ 'r', `java.security.PrivilegedActionException`],
+				[/* reference */ 'r', `java.security.PrivilegedActionException`, `PrivilegedActionException`],
 				[/* text */ 't', `).`]
 			],
 			[/* parameters */
 				[/* parameter */ 'cause', [/* parameter description */
 					[/* text */ 't', `the cause (which is saved for later retrieval by the
          `],
-					[/* reference */ 'r', `.Throwable#getCause()`],
+					[/* reference */ 'r', `java.lang.Throwable#getCause()`, `Throwable.getCause()`],
 					[/* text */ 't', ` method).  (A `],
 					[/* inline code block */ 'i', `null`],
 					[/* text */ 't', ` value is

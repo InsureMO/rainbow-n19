@@ -18,19 +18,19 @@ DocsCollector.collect('java.lang.Comparable', [
 
  Lists (and arrays) of objects that implement this interface can be sorted
  automatically by `],
-			[/* reference */ 'r', `java.Collections#sort(java.util.List)`],
+			[/* reference */ 'r', `java.util.Collections#sort(java.util.List)`, `Collections.sort`],
 			[/* text */ 't', ` (and
  `],
-			[/* reference */ 'r', `java.Arrays#sort(java.lang.Object[])`],
+			[/* reference */ 'r', `java.util.Arrays#sort(java.lang.Object[])`, `Arrays.sort`],
 			[/* text */ 't', `).  Objects that implement this
  interface can be used as keys in a `],
-			[/* reference */ 'r', `java.util.SortedMap`],
+			[/* reference */ 'r', `java.util.SortedMap`, `sorted map`],
 			[/* text */ 't', ` or as
  elements in a `],
-			[/* reference */ 'r', `java.util.SortedSet`],
+			[/* reference */ 'r', `java.util.SortedSet`, `sorted set`],
 			[/* text */ 't', `, without the need to
  specify a `],
-			[/* reference */ 'r', `java.util.Comparator`],
+			[/* reference */ 'r', `java.util.Comparator`, `comparator`],
 			[/* text */ 't', `.`]
 		]],
 		[/* block */ 'b', [
@@ -111,14 +111,14 @@ DocsCollector.collect('java.lang.Comparable', [
 			[/* text */ 't', `
  have natural orderings that are consistent with equals.  One
  exception is `],
-			[/* reference */ 'r', `java.math.BigDecimal`],
+			[/* reference */ 'r', `java.math.BigDecimal`, `BigDecimal`],
 			[/* text */ 't', `, whose `],
-			[/* reference */ 'r', `java.BigDecimal#compareTo(java.math.BigDecimal)`],
+			[/* reference */ 'r', `java.math.BigDecimal#compareTo(java.math.BigDecimal)`, `natural ordering`],
 			[/* text */ 't', ` equates `],
 			[/* inline code block */ 'i', `BigDecimal`],
 			[/* text */ 't', ` objects with equal numerical values and different
  representations (such as 4.0 and 4.00). For `],
-			[/* reference */ 'r', `java.BigDecimal#equals(java.lang.Object)`],
+			[/* reference */ 'r', `java.math.BigDecimal#equals(java.lang.Object)`, `BigDecimal.equals()`],
 			[/* text */ 't', ` to return true,
  the representation and numerical value of the two `],
 			[/* inline code block */ 'i', `BigDecimal`],
@@ -161,7 +161,7 @@ DocsCollector.collect('java.lang.Comparable', [
 		[/* text */ 't', `, we mean that the
  quotient for the natural ordering is the equivalence relation defined by
  the class's `],
-		[/* reference */ 'r', `.Object#equals(java.lang.Object)`],
+		[/* reference */ 'r', `java.lang.Object#equals(java.lang.Object)`, `equals(Object)`],
 		[/* text */ 't', ` method:`],
 		[/* code block */ 'c', `     {(x, y) such that x.equals(y)}. `],
 		[/* block */ 'b', ''],
@@ -198,7 +198,7 @@ DocsCollector.collect('java.lang.Comparable', [
  `],
 				[/* block */ 'b', [
 					[/* text */ 't', `The implementor must ensure `],
-					[/* reference */ 'r', `.Integer#signum(int)`],
+					[/* reference */ 'r', `java.lang.Integer#signum(int)`, `signum`],
 					[/* inline code block */ 'i', `(x.compareTo(y)) == -signum(y.compareTo(x))`],
 					[/* text */ 't', ` for
  all `],

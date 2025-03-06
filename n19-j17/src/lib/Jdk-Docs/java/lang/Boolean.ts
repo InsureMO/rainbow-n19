@@ -238,7 +238,7 @@ DocsCollector.collect('java.lang.Boolean', [
 		[/* method */ 'describeConstable()', [
 			[/* method description */
 				[/* text */ 't', `Returns an `],
-				[/* reference */ 'r', `java.util.Optional`],
+				[/* reference */ 'r', `java.util.Optional`, `Optional`],
 				[/* text */ 't', ` containing the nominal descriptor for this
  instance.`]
 			],
@@ -246,9 +246,9 @@ DocsCollector.collect('java.lang.Boolean', [
 			/* throws */ UDF,
 			[/* return description */
 				[/* text */ 't', `an `],
-				[/* reference */ 'r', `java.util.Optional`],
+				[/* reference */ 'r', `java.util.Optional`, `Optional`],
 				[/* text */ 't', ` describing the `],
-				[/* reference */ 'r', `java.lang.Boolean`],
+				[/* reference */ 'r', `java.lang.Boolean`, `Boolean`],
 				[/* text */ 't', ` instance`]
 			]
 		]],
@@ -284,7 +284,7 @@ DocsCollector.collect('java.lang.Boolean', [
 				[/* throw */ 'java.lang.SecurityException', [/* throw description */
 					[/* text */ 't', `for the same reasons as
           `],
-					[/* reference */ 'r', `.System#getProperty(java.lang.String)`]
+					[/* reference */ 'r', `java.lang.System#getProperty(java.lang.String)`, `System.getProperty`]
 				]]
 			],
 			[/* return description */

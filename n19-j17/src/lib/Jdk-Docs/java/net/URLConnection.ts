@@ -18,7 +18,7 @@ DocsCollector.collect('java.net.URLConnection', [
 			[/* block */ 'b', [
 				[/* text */ 't', `The connection object is created by invoking the
      `],
-				[/* reference */ 'r', `.URL#openConnection()`],
+				[/* reference */ 'r', `java.net.URL#openConnection()`, `openConnection`],
 				[/* text */ 't', ` method on a URL.
  `]
 			]],
@@ -717,15 +717,15 @@ DocsCollector.collect('java.net.URLConnection', [
      returns `],
 						[/* inline code block */ 'i', `null`],
 						[/* text */ 't', `, then the `],
-						[/* reference */ 'r', `java.util.ServiceLoader`],
+						[/* reference */ 'r', `java.util.ServiceLoader`, `ServiceLoader`],
 						[/* text */ 't', ` mechanism is used to locate `],
-						[/* reference */ 'r', `java.net.ContentHandlerFactory`],
+						[/* reference */ 'r', `java.net.ContentHandlerFactory`, `ContentHandlerFactory`],
 						[/* text */ 't', `
      implementations using the system class
      loader. The order that factories are located is implementation
      specific, and an implementation is free to cache the located
      factories. A `],
-						[/* reference */ 'r', `java.util.ServiceConfigurationError`],
+						[/* reference */ 'r', `java.util.ServiceConfigurationError`, `ServiceConfigurationError`],
 						[/* text */ 't', `, `],
 						[/* inline code block */ 'i', `Error`],
 						[/* text */ 't', ` or `],
@@ -744,7 +744,7 @@ DocsCollector.collect('java.net.URLConnection', [
 					[/* block */ 'b', [
 						[/* text */ 't', `Failing that, this method tries to load a content handler
      class as defined by `],
-						[/* reference */ 'r', `java.net.ContentHandler`],
+						[/* reference */ 'r', `java.net.ContentHandler`, `ContentHandler`],
 						[/* text */ 't', `.
      If the class does not exist, or is not a subclass of `],
 						[/* inline code block */ 'i', `ContentHandler`],

@@ -24,7 +24,7 @@ DocsCollector.collect('java.text.DecimalFormatSymbols', [
 		[/* block */ 'b', [
 			[/* text */ 't', `If the locale contains "rg" (region override)
  `],
-			[/* reference */ 'r', `java.Locale#def_locale_extension`],
+			[/* reference */ 'r', `java.util.Locale#def_locale_extension`, `Unicode extension`],
 			[/* text */ 't', `,
  the symbols are overridden for the designated region.`]
 		]]
@@ -35,13 +35,13 @@ DocsCollector.collect('java.text.DecimalFormatSymbols', [
 			[/* constructor description */
 				[/* text */ 't', `Create a DecimalFormatSymbols object for the default
  `],
-				[/* reference */ 'r', `java.Locale.Category#FORMAT`],
+				[/* reference */ 'r', `java.util.Locale.Category#FORMAT`, `FORMAT`],
 				[/* text */ 't', ` locale.
  This constructor can only construct instances for the locales
  supported by the Java runtime environment, not for those
  supported by installed
  `],
-				[/* reference */ 'r', `java.text.spi.DecimalFormatSymbolsProvider`],
+				[/* reference */ 'r', `java.text.spi.DecimalFormatSymbolsProvider`, `DecimalFormatSymbolsProvider`],
 				[/* text */ 't', `
  implementations. For full locale coverage, use the
  `],
@@ -65,14 +65,14 @@ DocsCollector.collect('java.text.DecimalFormatSymbols', [
  supported by the Java runtime environment, not for those
  supported by installed
  `],
-				[/* reference */ 'r', `java.text.spi.DecimalFormatSymbolsProvider`],
+				[/* reference */ 'r', `java.text.spi.DecimalFormatSymbolsProvider`, `DecimalFormatSymbolsProvider`],
 				[/* text */ 't', `
  implementations. For full locale coverage, use the
  `],
 				[/* reference */ 'r', `#getInstance(java.util.Locale)`, `getInstance`],
 				[/* text */ 't', ` method.
  If the specified locale contains the `],
-				[/* reference */ 'r', `java.Locale#UNICODE_LOCALE_EXTENSION`],
+				[/* reference */ 'r', `java.util.Locale#UNICODE_LOCALE_EXTENSION`, `Locale.UNICODE_LOCALE_EXTENSION`],
 				[/* text */ 't', `
  for the numbering system, the instance is initialized with the specified numbering
  system if the JRE implementation supports it. For example,
@@ -323,7 +323,7 @@ DocsCollector.collect('java.text.DecimalFormatSymbols', [
  instances for locales supported by the Java runtime itself as well
  as for those supported by installed
  `],
-				[/* reference */ 'r', `java.text.spi.DecimalFormatSymbolsProvider`],
+				[/* reference */ 'r', `java.text.spi.DecimalFormatSymbolsProvider`, `DecimalFormatSymbolsProvider`],
 				[/* text */ 't', ` implementations.
  `],
 				[/* block */ 'b', [
@@ -352,10 +352,10 @@ DocsCollector.collect('java.text.DecimalFormatSymbols', [
  instances for locales supported by the Java runtime itself as well
  as for those supported by installed
  `],
-				[/* reference */ 'r', `java.text.spi.DecimalFormatSymbolsProvider`],
+				[/* reference */ 'r', `java.text.spi.DecimalFormatSymbolsProvider`, `DecimalFormatSymbolsProvider`],
 				[/* text */ 't', ` implementations.
  If the specified locale contains the `],
-				[/* reference */ 'r', `java.Locale#UNICODE_LOCALE_EXTENSION`],
+				[/* reference */ 'r', `java.util.Locale#UNICODE_LOCALE_EXTENSION`, `Locale.UNICODE_LOCALE_EXTENSION`],
 				[/* text */ 't', `
  for the numbering system, the instance is initialized with the specified numbering
  system if the JRE implementation supports it. For example,
@@ -396,13 +396,13 @@ DocsCollector.collect('java.text.DecimalFormatSymbols', [
  The returned array represents the union of locales supported by the Java
  runtime and by installed
  `],
-				[/* reference */ 'r', `java.text.spi.DecimalFormatSymbolsProvider`],
+				[/* reference */ 'r', `java.text.spi.DecimalFormatSymbolsProvider`, `DecimalFormatSymbolsProvider`],
 				[/* text */ 't', `
  implementations.  It must contain at least a `],
 				[/* inline code block */ 'i', `Locale`],
 				[/* text */ 't', `
  instance equal to `],
-				[/* reference */ 'r', `java.Locale#US`],
+				[/* reference */ 'r', `java.util.Locale#US`, `Locale.US`],
 				[/* text */ 't', `.`]
 			],
 			/* parameters */ UDF,
@@ -522,7 +522,7 @@ DocsCollector.collect('java.text.DecimalFormatSymbols', [
  DecimalFormatSymbols.
  If the currency code is valid (as defined by
  `],
-				[/* reference */ 'r', `java.Currency#getInstance(java.lang.String)`],
+				[/* reference */ 'r', `java.util.Currency#getInstance(java.lang.String)`, `Currency.getInstance`],
 				[/* text */ 't', `),
  this also sets the currency attribute to the corresponding Currency
  instance and the currency symbol attribute to the currency's symbol

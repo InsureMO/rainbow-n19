@@ -55,7 +55,7 @@ DocsCollector.collect('java.lang.NullPointerException', [
 			[/* inline code block */ 'i', `NullPointerException`],
 			[/* text */ 't', ` objects may be constructed by the
  virtual machine as if `],
-			[/* reference */ 'r', `.Throwable#<init>(java.lang.String,java.lang.Throwable,boolean,boolean)`],
+			[/* reference */ 'r', `java.lang.Throwable#<init>(java.lang.String,java.lang.Throwable,boolean,boolean)`, `suppression were disabled and/or the stack trace was not writable`],
 			[/* text */ 't', `.`]
 		]]
 	],

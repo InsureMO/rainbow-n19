@@ -38,7 +38,7 @@ DocsCollector.collect('java.text.MessageFormat', [
  `]
 		]],
 		[/* block */ 'b', [
-			[/* text */ 't', `Patterns and Their Interpretation`]
+			[/* anchor */ 'r', '#-id', `patterns`, `Patterns and Their Interpretation`]
 		]],
 		[/* inline code block */ 'i', `MessageFormat`],
 		[/* text */ 't', ` uses patterns of the following form:
@@ -291,7 +291,7 @@ DocsCollector.collect('java.text.MessageFormat', [
        `]
 					]],
 					[/* table cell */ 'tbc', [
-						[/* reference */ 'r', `.NumberFormat#getInstance(java.util.Locale)`],
+						[/* reference */ 'r', `java.text.NumberFormat#getInstance(java.util.Locale)`, `NumberFormat.getInstance`],
 						[/* inline code block */ 'i', `(getLocale())`],
 						[/* text */ 't', `
     `]
@@ -304,7 +304,7 @@ DocsCollector.collect('java.text.MessageFormat', [
        `]
 					]],
 					[/* table cell */ 'tbc', [
-						[/* reference */ 'r', `.NumberFormat#getIntegerInstance(java.util.Locale)`],
+						[/* reference */ 'r', `java.text.NumberFormat#getIntegerInstance(java.util.Locale)`, `NumberFormat.getIntegerInstance`],
 						[/* inline code block */ 'i', `(getLocale())`],
 						[/* text */ 't', `
     `]
@@ -317,7 +317,7 @@ DocsCollector.collect('java.text.MessageFormat', [
        `]
 					]],
 					[/* table cell */ 'tbc', [
-						[/* reference */ 'r', `.NumberFormat#getCurrencyInstance(java.util.Locale)`],
+						[/* reference */ 'r', `java.text.NumberFormat#getCurrencyInstance(java.util.Locale)`, `NumberFormat.getCurrencyInstance`],
 						[/* inline code block */ 'i', `(getLocale())`],
 						[/* text */ 't', `
     `]
@@ -330,7 +330,7 @@ DocsCollector.collect('java.text.MessageFormat', [
        `]
 					]],
 					[/* table cell */ 'tbc', [
-						[/* reference */ 'r', `.NumberFormat#getPercentInstance(java.util.Locale)`],
+						[/* reference */ 'r', `java.text.NumberFormat#getPercentInstance(java.util.Locale)`, `NumberFormat.getPercentInstance`],
 						[/* inline code block */ 'i', `(getLocale())`],
 						[/* text */ 't', `
     `]
@@ -345,10 +345,10 @@ DocsCollector.collect('java.text.MessageFormat', [
 					[/* table cell */ 'tbc', [
 						[/* inline code block */ 'i', `new`],
 						[/* text */ 't', ` `],
-						[/* reference */ 'r', `.DecimalFormat#<init>(java.lang.String,java.text.DecimalFormatSymbols)`],
+						[/* reference */ 'r', `java.text.DecimalFormat#<init>(java.lang.String,java.text.DecimalFormatSymbols)`, `DecimalFormat`],
 						[/* inline code block */ 'i', `(subformatPattern,`],
 						[/* text */ 't', ` `],
-						[/* reference */ 'r', `.DecimalFormatSymbols#getInstance(java.util.Locale)`],
+						[/* reference */ 'r', `java.text.DecimalFormatSymbols#getInstance(java.util.Locale)`, `DecimalFormatSymbols.getInstance`],
 						[/* inline code block */ 'i', `(getLocale()))`],
 						[/* text */ 't', `
     `]
@@ -366,9 +366,9 @@ DocsCollector.collect('java.text.MessageFormat', [
        `]
 					]],
 					[/* table cell */ 'tbc', [
-						[/* reference */ 'r', `.DateFormat#getDateInstance(int,java.util.Locale)`],
+						[/* reference */ 'r', `java.text.DateFormat#getDateInstance(int,java.util.Locale)`, `DateFormat.getDateInstance`],
 						[/* inline code block */ 'i', `(`],
-						[/* reference */ 'r', `.DateFormat#DEFAULT`],
+						[/* reference */ 'r', `java.text.DateFormat#DEFAULT`, `DateFormat.DEFAULT`],
 						[/* inline code block */ 'i', `, getLocale())`],
 						[/* text */ 't', `
     `]
@@ -381,9 +381,9 @@ DocsCollector.collect('java.text.MessageFormat', [
        `]
 					]],
 					[/* table cell */ 'tbc', [
-						[/* reference */ 'r', `.DateFormat#getDateInstance(int,java.util.Locale)`],
+						[/* reference */ 'r', `java.text.DateFormat#getDateInstance(int,java.util.Locale)`, `DateFormat.getDateInstance`],
 						[/* inline code block */ 'i', `(`],
-						[/* reference */ 'r', `.DateFormat#SHORT`],
+						[/* reference */ 'r', `java.text.DateFormat#SHORT`, `DateFormat.SHORT`],
 						[/* inline code block */ 'i', `, getLocale())`],
 						[/* text */ 't', `
     `]
@@ -396,9 +396,9 @@ DocsCollector.collect('java.text.MessageFormat', [
        `]
 					]],
 					[/* table cell */ 'tbc', [
-						[/* reference */ 'r', `.DateFormat#getDateInstance(int,java.util.Locale)`],
+						[/* reference */ 'r', `java.text.DateFormat#getDateInstance(int,java.util.Locale)`, `DateFormat.getDateInstance`],
 						[/* inline code block */ 'i', `(`],
-						[/* reference */ 'r', `.DateFormat#DEFAULT`],
+						[/* reference */ 'r', `java.text.DateFormat#DEFAULT`, `DateFormat.DEFAULT`],
 						[/* inline code block */ 'i', `, getLocale())`],
 						[/* text */ 't', `
     `]
@@ -411,9 +411,9 @@ DocsCollector.collect('java.text.MessageFormat', [
        `]
 					]],
 					[/* table cell */ 'tbc', [
-						[/* reference */ 'r', `.DateFormat#getDateInstance(int,java.util.Locale)`],
+						[/* reference */ 'r', `java.text.DateFormat#getDateInstance(int,java.util.Locale)`, `DateFormat.getDateInstance`],
 						[/* inline code block */ 'i', `(`],
-						[/* reference */ 'r', `.DateFormat#LONG`],
+						[/* reference */ 'r', `java.text.DateFormat#LONG`, `DateFormat.LONG`],
 						[/* inline code block */ 'i', `, getLocale())`],
 						[/* text */ 't', `
     `]
@@ -426,9 +426,9 @@ DocsCollector.collect('java.text.MessageFormat', [
        `]
 					]],
 					[/* table cell */ 'tbc', [
-						[/* reference */ 'r', `.DateFormat#getDateInstance(int,java.util.Locale)`],
+						[/* reference */ 'r', `java.text.DateFormat#getDateInstance(int,java.util.Locale)`, `DateFormat.getDateInstance`],
 						[/* inline code block */ 'i', `(`],
-						[/* reference */ 'r', `.DateFormat#FULL`],
+						[/* reference */ 'r', `java.text.DateFormat#FULL`, `DateFormat.FULL`],
 						[/* inline code block */ 'i', `, getLocale())`],
 						[/* text */ 't', `
     `]
@@ -443,7 +443,7 @@ DocsCollector.collect('java.text.MessageFormat', [
 					[/* table cell */ 'tbc', [
 						[/* inline code block */ 'i', `new`],
 						[/* text */ 't', ` `],
-						[/* reference */ 'r', `.SimpleDateFormat#<init>(java.lang.String,java.util.Locale)`],
+						[/* reference */ 'r', `java.text.SimpleDateFormat#<init>(java.lang.String,java.util.Locale)`, `SimpleDateFormat`],
 						[/* inline code block */ 'i', `(subformatPattern, getLocale())`],
 						[/* text */ 't', `
     `]
@@ -461,9 +461,9 @@ DocsCollector.collect('java.text.MessageFormat', [
        `]
 					]],
 					[/* table cell */ 'tbc', [
-						[/* reference */ 'r', `.DateFormat#getTimeInstance(int,java.util.Locale)`],
+						[/* reference */ 'r', `java.text.DateFormat#getTimeInstance(int,java.util.Locale)`, `DateFormat.getTimeInstance`],
 						[/* inline code block */ 'i', `(`],
-						[/* reference */ 'r', `.DateFormat#DEFAULT`],
+						[/* reference */ 'r', `java.text.DateFormat#DEFAULT`, `DateFormat.DEFAULT`],
 						[/* inline code block */ 'i', `, getLocale())`],
 						[/* text */ 't', `
     `]
@@ -476,9 +476,9 @@ DocsCollector.collect('java.text.MessageFormat', [
        `]
 					]],
 					[/* table cell */ 'tbc', [
-						[/* reference */ 'r', `.DateFormat#getTimeInstance(int,java.util.Locale)`],
+						[/* reference */ 'r', `java.text.DateFormat#getTimeInstance(int,java.util.Locale)`, `DateFormat.getTimeInstance`],
 						[/* inline code block */ 'i', `(`],
-						[/* reference */ 'r', `.DateFormat#SHORT`],
+						[/* reference */ 'r', `java.text.DateFormat#SHORT`, `DateFormat.SHORT`],
 						[/* inline code block */ 'i', `, getLocale())`],
 						[/* text */ 't', `
     `]
@@ -491,9 +491,9 @@ DocsCollector.collect('java.text.MessageFormat', [
        `]
 					]],
 					[/* table cell */ 'tbc', [
-						[/* reference */ 'r', `.DateFormat#getTimeInstance(int,java.util.Locale)`],
+						[/* reference */ 'r', `java.text.DateFormat#getTimeInstance(int,java.util.Locale)`, `DateFormat.getTimeInstance`],
 						[/* inline code block */ 'i', `(`],
-						[/* reference */ 'r', `.DateFormat#DEFAULT`],
+						[/* reference */ 'r', `java.text.DateFormat#DEFAULT`, `DateFormat.DEFAULT`],
 						[/* inline code block */ 'i', `, getLocale())`],
 						[/* text */ 't', `
     `]
@@ -506,9 +506,9 @@ DocsCollector.collect('java.text.MessageFormat', [
        `]
 					]],
 					[/* table cell */ 'tbc', [
-						[/* reference */ 'r', `.DateFormat#getTimeInstance(int,java.util.Locale)`],
+						[/* reference */ 'r', `java.text.DateFormat#getTimeInstance(int,java.util.Locale)`, `DateFormat.getTimeInstance`],
 						[/* inline code block */ 'i', `(`],
-						[/* reference */ 'r', `.DateFormat#LONG`],
+						[/* reference */ 'r', `java.text.DateFormat#LONG`, `DateFormat.LONG`],
 						[/* inline code block */ 'i', `, getLocale())`],
 						[/* text */ 't', `
     `]
@@ -521,9 +521,9 @@ DocsCollector.collect('java.text.MessageFormat', [
        `]
 					]],
 					[/* table cell */ 'tbc', [
-						[/* reference */ 'r', `.DateFormat#getTimeInstance(int,java.util.Locale)`],
+						[/* reference */ 'r', `java.text.DateFormat#getTimeInstance(int,java.util.Locale)`, `DateFormat.getTimeInstance`],
 						[/* inline code block */ 'i', `(`],
-						[/* reference */ 'r', `.DateFormat#FULL`],
+						[/* reference */ 'r', `java.text.DateFormat#FULL`, `DateFormat.FULL`],
 						[/* inline code block */ 'i', `, getLocale())`],
 						[/* text */ 't', `
     `]
@@ -538,7 +538,7 @@ DocsCollector.collect('java.text.MessageFormat', [
 					[/* table cell */ 'tbc', [
 						[/* inline code block */ 'i', `new`],
 						[/* text */ 't', ` `],
-						[/* reference */ 'r', `.SimpleDateFormat#<init>(java.lang.String,java.util.Locale)`],
+						[/* reference */ 'r', `java.text.SimpleDateFormat#<init>(java.lang.String,java.util.Locale)`, `SimpleDateFormat`],
 						[/* inline code block */ 'i', `(subformatPattern, getLocale())`],
 						[/* text */ 't', `
     `]
@@ -558,7 +558,7 @@ DocsCollector.collect('java.text.MessageFormat', [
 					[/* table cell */ 'tbc', [
 						[/* inline code block */ 'i', `new`],
 						[/* text */ 't', ` `],
-						[/* reference */ 'r', `.ChoiceFormat#<init>(java.lang.String)`],
+						[/* reference */ 'r', `java.text.ChoiceFormat#<init>(java.lang.String)`, `ChoiceFormat`],
 						[/* inline code block */ 'i', `(subformatPattern)`],
 						[/* text */ 't', `
  `]
@@ -672,7 +672,7 @@ DocsCollector.collect('java.text.MessageFormat', [
 			[/* inline code block */ 'i', `ChoiceFormat`],
 			[/* text */ 't', ` programmatically, as in the
  above example, or by using a pattern. See `],
-			[/* reference */ 'r', `java.text.ChoiceFormat`],
+			[/* reference */ 'r', `java.text.ChoiceFormat`, `ChoiceFormat`],
 			[/* text */ 't', `
  for more information.
  `]
@@ -735,7 +735,7 @@ DocsCollector.collect('java.text.MessageFormat', [
 		]],
 		[/* block */ 'b', ''],
 		[/* block */ 'b', [
-			[/* text */ 't', `Synchronization`]
+			[/* anchor */ 'r', '#-id', `synchronization`, `Synchronization`]
 		]],
 		[/* block */ 'b', `
  Message formats are not synchronized.
@@ -749,7 +749,7 @@ DocsCollector.collect('java.text.MessageFormat', [
 			[/* constructor description */
 				[/* text */ 't', `Constructs a MessageFormat for the default
  `],
-				[/* reference */ 'r', `java.Locale.Category#FORMAT`],
+				[/* reference */ 'r', `java.util.Locale.Category#FORMAT`, `FORMAT`],
 				[/* text */ 't', ` locale and the
  specified pattern.
  The constructor first sets the locale, then parses the pattern and

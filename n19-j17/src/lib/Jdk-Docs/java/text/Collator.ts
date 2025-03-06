@@ -137,7 +137,7 @@ DocsCollector.collect('java.text.Collator', [
 			[/* inline code block */ 'i', `Collator`],
 			[/* text */ 't', `s can not be compared. See the class description
  for `],
-			[/* reference */ 'r', `java.text.CollationKey`],
+			[/* reference */ 'r', `java.text.CollationKey`, `CollationKey`],
 			[/* text */ 't', `
  for an example using `],
 			[/* inline code block */ 'i', `CollationKey`],
@@ -411,11 +411,11 @@ DocsCollector.collect('java.text.Collator', [
  The returned array represents the union of locales supported
  by the Java runtime and by installed
  `],
-				[/* reference */ 'r', `java.text.spi.CollatorProvider`],
+				[/* reference */ 'r', `java.text.spi.CollatorProvider`, `CollatorProvider`],
 				[/* text */ 't', ` implementations.
  It must contain at least a Locale instance equal to
  `],
-				[/* reference */ 'r', `java.Locale#US`],
+				[/* reference */ 'r', `java.util.Locale#US`, `Locale.US`],
 				[/* text */ 't', `.`]
 			],
 			/* parameters */ UDF,

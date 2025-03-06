@@ -43,7 +43,7 @@ DocsCollector.collect('java.lang.ProcessBuilder$Redirect', [
 		[/* block */ 'b', [
 			[/* text */ 't', `Each of the above categories has an associated unique
  `],
-			[/* reference */ 'r', `enum class in java.lang.ProcessBuilder.Redirect.Type`],
+			[/* reference */ 'r', `enum class in java.lang.ProcessBuilder.Redirect.Type`, `Type`],
 			[/* text */ 't', `.`]
 		]]
 	],
@@ -160,7 +160,7 @@ DocsCollector.collect('java.lang.ProcessBuilder$Redirect', [
 		[/* method */ 'file()', [
 			[/* method description */
 				[/* text */ 't', `Returns the `],
-				[/* reference */ 'r', `java.io.File`],
+				[/* reference */ 'r', `java.io.File`, `File`],
 				[/* text */ 't', ` source or destination associated
  with this redirect, or `],
 				[/* inline code block */ 'i', `null`],

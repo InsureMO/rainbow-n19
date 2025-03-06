@@ -14,14 +14,14 @@ DocsCollector.collect('java.nio.file.Watchable', [
 			[/* reference */ 'r', `#register(java.nio.file.WatchService,java.nio.file.WatchEvent.Kind%5B%5D,java.nio.file.WatchEvent.Modifier...)`, `register`],
 			[/* text */ 't', ` method to register
  the object with a `],
-			[/* reference */ 'r', `java.nio.file.WatchService`],
+			[/* reference */ 'r', `java.nio.file.WatchService`, `WatchService`],
 			[/* text */ 't', ` returning a `],
-			[/* reference */ 'r', `java.nio.file.WatchKey`],
+			[/* reference */ 'r', `java.nio.file.WatchKey`, `WatchKey`],
 			[/* text */ 't', ` to
  represent the registration. An object may be registered with more than one
  watch service. Registration with a watch service is cancelled by invoking the
  key's `],
-			[/* reference */ 'r', `.WatchKey#cancel()`],
+			[/* reference */ 'r', `java.nio.file.WatchKey#cancel()`, `cancel`],
 			[/* text */ 't', ` method.`]
 		]]
 	],
@@ -92,7 +92,7 @@ DocsCollector.collect('java.nio.file.Watchable', [
 					[/* text */ 't', ` parameters.
  Changing the event set does not cause pending events for the object to be
  discarded. Objects are automatically registered for the `],
-					[/* reference */ 'r', `.StandardWatchEventKinds#OVERFLOW`],
+					[/* reference */ 'r', `java.nio.file.StandardWatchEventKinds#OVERFLOW`, `OVERFLOW`],
 					[/* text */ 't', ` event. This event is not
  required to be present in the array of events.
 

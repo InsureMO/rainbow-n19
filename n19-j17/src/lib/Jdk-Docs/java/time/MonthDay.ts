@@ -33,9 +33,9 @@ DocsCollector.collect('java.time.MonthDay', [
 		[/* block */ 'b', [
 			[/* text */ 't', `
  This class implements `],
-			[/* reference */ 'r', `java.time.temporal.TemporalAccessor`],
+			[/* reference */ 'r', `java.time.temporal.TemporalAccessor`, `TemporalAccessor`],
 			[/* text */ 't', ` rather than `],
-			[/* reference */ 'r', `java.time.temporal.Temporal`],
+			[/* reference */ 'r', `java.time.temporal.Temporal`, `Temporal`],
 			[/* text */ 't', `.
  This is because it is not possible to define whether February 29th is valid or not
  without external information, preventing the implementation of plus/minus.
@@ -94,7 +94,7 @@ DocsCollector.collect('java.time.MonthDay', [
 					[/* text */ 't', `
  The result of this method is obtained by invoking the
  `],
-					[/* reference */ 'r', `.TemporalQuery#queryFrom(java.time.temporal.TemporalAccessor)`],
+					[/* reference */ 'r', `java.time.temporal.TemporalQuery#queryFrom(java.time.temporal.TemporalAccessor)`, `TemporalQuery.queryFrom(TemporalAccessor)`],
 					[/* text */ 't', ` method on the
  specified query passing `],
 					[/* inline code block */ 'i', `this`],
@@ -181,7 +181,7 @@ DocsCollector.collect('java.time.MonthDay', [
 				[/* block */ 'b', [
 					[/* text */ 't', `
  If the field is a `],
-					[/* reference */ 'r', `enum class in java.time.temporal.ChronoField`],
+					[/* reference */ 'r', `enum class in java.time.temporal.ChronoField`, `ChronoField`],
 					[/* text */ 't', ` then the query is implemented here.
  The supported fields are:
  `]
@@ -250,7 +250,7 @@ DocsCollector.collect('java.time.MonthDay', [
 					[/* text */ 't', `
  The comparison is based first on value of the month, then on the value of the day.
  It is "consistent with equals", as defined by `],
-					[/* reference */ 'r', `java.lang.Comparable`],
+					[/* reference */ 'r', `java.lang.Comparable`, `Comparable`],
 					[/* text */ 't', `.`]
 				]]
 			],
@@ -279,7 +279,7 @@ DocsCollector.collect('java.time.MonthDay', [
 				[/* block */ 'b', [
 					[/* text */ 't', `
  If the field is a `],
-					[/* reference */ 'r', `enum class in java.time.temporal.ChronoField`],
+					[/* reference */ 'r', `enum class in java.time.temporal.ChronoField`, `ChronoField`],
 					[/* text */ 't', ` then the query is implemented here.
  The `],
 					[/* reference */ 'r', `#isSupported(java.time.temporal.TemporalField)`, `supported fields`],
@@ -356,7 +356,7 @@ DocsCollector.collect('java.time.MonthDay', [
 					[/* inline code block */ 'i', `int`],
 					[/* text */ 't', ` from 1 to 12.
  Application code is frequently clearer if the enum `],
-					[/* reference */ 'r', `enum class in java.time.Month`],
+					[/* reference */ 'r', `enum class in java.time.Month`, `Month`],
 					[/* text */ 't', `
  is used by calling `],
 					[/* reference */ 'r', `#getMonth()`, `getMonth()`],
@@ -464,7 +464,7 @@ DocsCollector.collect('java.time.MonthDay', [
 				[/* block */ 'b', [
 					[/* text */ 't', `
  This method returns the enum `],
-					[/* reference */ 'r', `enum class in java.time.Month`],
+					[/* reference */ 'r', `enum class in java.time.Month`, `Month`],
 					[/* text */ 't', ` for the month.
  This avoids confusion as to what `],
 					[/* inline code block */ 'i', `int`],
@@ -473,7 +473,7 @@ DocsCollector.collect('java.time.MonthDay', [
 					[/* inline code block */ 'i', `int`],
 					[/* text */ 't', ` value then the enum
  provides the `],
-					[/* reference */ 'r', `.Month#getValue()`],
+					[/* reference */ 'r', `java.time.Month#getValue()`, `int value`],
 					[/* text */ 't', `.`]
 				]]
 			],
@@ -580,13 +580,13 @@ DocsCollector.collect('java.time.MonthDay', [
 				[/* block */ 'b', [
 					[/* text */ 't', `
  The adjustment is equivalent to using `],
-					[/* reference */ 'r', `.Temporal#with(java.time.temporal.TemporalField,long)`],
+					[/* reference */ 'r', `java.time.temporal.Temporal#with(java.time.temporal.TemporalField,long)`, `Temporal.with(TemporalField, long)`],
 					[/* text */ 't', `
  twice, passing `],
-					[/* reference */ 'r', `.ChronoField#MONTH_OF_YEAR`],
+					[/* reference */ 'r', `java.time.temporal.ChronoField#MONTH_OF_YEAR`, `ChronoField.MONTH_OF_YEAR`],
 					[/* text */ 't', ` and
  `],
-					[/* reference */ 'r', `.ChronoField#DAY_OF_MONTH`],
+					[/* reference */ 'r', `java.time.temporal.ChronoField#DAY_OF_MONTH`, `ChronoField.DAY_OF_MONTH`],
 					[/* text */ 't', ` as the fields.
  If the specified temporal object does not use the ISO calendar system then
  a `],
@@ -598,7 +598,7 @@ DocsCollector.collect('java.time.MonthDay', [
 					[/* text */ 't', `
  In most cases, it is clearer to reverse the calling pattern by using
  `],
-					[/* reference */ 'r', `.Temporal#with(java.time.temporal.TemporalAdjuster)`],
+					[/* reference */ 'r', `java.time.temporal.Temporal#with(java.time.temporal.TemporalAdjuster)`, `Temporal.with(TemporalAdjuster)`],
 					[/* text */ 't', `:
  `]
 				]],
@@ -640,7 +640,7 @@ DocsCollector.collect('java.time.MonthDay', [
 				[/* block */ 'b', [
 					[/* text */ 't', `
  If the field is a `],
-					[/* reference */ 'r', `enum class in java.time.temporal.ChronoField`],
+					[/* reference */ 'r', `enum class in java.time.temporal.ChronoField`, `ChronoField`],
 					[/* text */ 't', ` then the query is implemented here.
  The `],
 					[/* reference */ 'r', `#isSupported(java.time.temporal.TemporalField)`, `supported fields`],
@@ -698,7 +698,7 @@ DocsCollector.collect('java.time.MonthDay', [
 				[/* block */ 'b', [
 					[/* text */ 't', `
  If the field is a `],
-					[/* reference */ 'r', `enum class in java.time.temporal.ChronoField`],
+					[/* reference */ 'r', `enum class in java.time.temporal.ChronoField`, `ChronoField`],
 					[/* text */ 't', ` then the query is implemented here.
  The `],
 					[/* reference */ 'r', `#isSupported(java.time.temporal.TemporalField)`, `supported fields`],
@@ -765,10 +765,10 @@ DocsCollector.collect('java.time.MonthDay', [
 				[/* block */ 'b', [
 					[/* text */ 't', `
  The conversion extracts the `],
-					[/* reference */ 'r', `.ChronoField#MONTH_OF_YEAR`],
+					[/* reference */ 'r', `java.time.temporal.ChronoField#MONTH_OF_YEAR`, `MONTH_OF_YEAR`],
 					[/* text */ 't', ` and
  `],
-					[/* reference */ 'r', `.ChronoField#DAY_OF_MONTH`],
+					[/* reference */ 'r', `java.time.temporal.ChronoField#DAY_OF_MONTH`, `DAY_OF_MONTH`],
 					[/* text */ 't', ` fields.
  The extraction is only permitted if the temporal object has an ISO
  chronology, or can be converted to a `],
@@ -779,7 +779,7 @@ DocsCollector.collect('java.time.MonthDay', [
 				[/* block */ 'b', [
 					[/* text */ 't', `
  This method matches the signature of the functional interface `],
-					[/* reference */ 'r', `java.time.temporal.TemporalQuery`],
+					[/* reference */ 'r', `java.time.temporal.TemporalQuery`, `TemporalQuery`],
 					[/* text */ 't', `
  allowing it to be used as a query via method reference, `],
 					[/* inline code block */ 'i', `MonthDay::from`],
@@ -808,7 +808,7 @@ DocsCollector.collect('java.time.MonthDay', [
 				[/* block */ 'b', [
 					[/* text */ 't', `
  This will query the `],
-					[/* reference */ 'r', `.Clock#systemDefaultZone()`],
+					[/* reference */ 'r', `java.time.Clock#systemDefaultZone()`, `system clock`],
 					[/* text */ 't', ` in the default
  time-zone to obtain the current month-day.
  `]
@@ -832,7 +832,7 @@ DocsCollector.collect('java.time.MonthDay', [
  This will query the specified clock to obtain the current month-day.
  Using this method allows the use of an alternate clock for testing.
  The alternate clock may be introduced using `],
-					[/* reference */ 'r', `java.time.Clock`],
+					[/* reference */ 'r', `java.time.Clock`, `dependency injection`],
 					[/* text */ 't', `.`]
 				]]
 			],
@@ -853,7 +853,7 @@ DocsCollector.collect('java.time.MonthDay', [
 				[/* block */ 'b', [
 					[/* text */ 't', `
  This will query the `],
-					[/* reference */ 'r', `.Clock#system(java.time.ZoneId)`],
+					[/* reference */ 'r', `java.time.Clock#system(java.time.ZoneId)`, `system clock`],
 					[/* text */ 't', ` to obtain the current month-day.
  Specifying the time-zone avoids dependence on the default time-zone.
  `]

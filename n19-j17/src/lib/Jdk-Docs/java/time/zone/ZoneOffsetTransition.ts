@@ -275,10 +275,10 @@ DocsCollector.collect('java.time.zone.ZoneOffsetTransition', [
 				[/* block */ 'b', [
 					[/* text */ 't', `
  Applications should normally obtain an instance from `],
-					[/* reference */ 'r', `java.time.zone.ZoneRules`],
+					[/* reference */ 'r', `java.time.zone.ZoneRules`, `ZoneRules`],
 					[/* text */ 't', `.
  This factory is only intended for use when creating `],
-					[/* reference */ 'r', `java.time.zone.ZoneRules`],
+					[/* reference */ 'r', `java.time.zone.ZoneRules`, `ZoneRules`],
 					[/* text */ 't', `.`]
 				]]
 			],

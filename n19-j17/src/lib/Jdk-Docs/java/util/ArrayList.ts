@@ -89,7 +89,7 @@ DocsCollector.collect('java.util.ArrayList', [
 
  If no such object exists, the list should be "wrapped" using the
  `],
-			[/* reference */ 'r', `.Collections#synchronizedList(java.util.List)`],
+			[/* reference */ 'r', `java.util.Collections#synchronizedList(java.util.List)`, `Collections.synchronizedList`],
 			[/* text */ 't', `
  method.  This is best done at creation time, to prevent accidental
  unsynchronized access to the list:`]
@@ -109,13 +109,13 @@ DocsCollector.collect('java.util.ArrayList', [
  if the list is structurally modified at any time after the iterator is
  created, in any way except through the iterator's own
  `],
-			[/* reference */ 'r', `.ListIterator#remove()`],
+			[/* reference */ 'r', `java.util.ListIterator#remove()`, `remove`],
 			[/* text */ 't', ` or
  `],
-			[/* reference */ 'r', `.ListIterator#add(E)`],
+			[/* reference */ 'r', `java.util.ListIterator#add(E)`, `add`],
 			[/* text */ 't', ` methods, the iterator will throw a
  `],
-			[/* reference */ 'r', `java.util.ConcurrentModificationException`],
+			[/* reference */ 'r', `java.util.ConcurrentModificationException`, `ConcurrentModificationException`],
 			[/* text */ 't', `.  Thus, in the face of
  concurrent modification, the iterator fails quickly and cleanly, rather
  than risking arbitrary, non-deterministic behavior at an undetermined
@@ -282,7 +282,7 @@ DocsCollector.collect('java.util.ArrayList', [
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` (as specified by `],
-				[/* reference */ 'r', `.Collection#add(E)`],
+				[/* reference */ 'r', `java.util.Collection#add(E)`, `Collection.add(E)`],
 				[/* text */ 't', `)`]
 			]
 		]],
@@ -459,14 +459,14 @@ DocsCollector.collect('java.util.ArrayList', [
 					[/* text */ 't', `if the class of an element of this list
          is incompatible with the specified collection
  (`],
-					[/* reference */ 'r', `.Collection#optional-restrictions`],
+					[/* reference */ 'r', `java.util.Collection#optional-restrictions`, `optional`],
 					[/* text */ 't', `)`]
 				]],
 				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
 					[/* text */ 't', `if this list contains a null element and the
          specified collection does not permit null elements
  (`],
-					[/* reference */ 'r', `.Collection#optional-restrictions`],
+					[/* reference */ 'r', `java.util.Collection#optional-restrictions`, `optional`],
 					[/* text */ 't', `),
          or if the specified collection is null`]
 				]]
@@ -516,14 +516,14 @@ DocsCollector.collect('java.util.ArrayList', [
 					[/* text */ 't', `if the class of an element of this list
          is incompatible with the specified collection
  (`],
-					[/* reference */ 'r', `.Collection#optional-restrictions`],
+					[/* reference */ 'r', `java.util.Collection#optional-restrictions`, `optional`],
 					[/* text */ 't', `)`]
 				]],
 				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
 					[/* text */ 't', `if this list contains a null element and the
          specified collection does not permit null elements
  (`],
-					[/* reference */ 'r', `.Collection#optional-restrictions`],
+					[/* reference */ 'r', `java.util.Collection#optional-restrictions`, `optional`],
 					[/* text */ 't', `),
          or if the specified collection is null`]
 				]]
@@ -755,7 +755,7 @@ DocsCollector.collect('java.util.ArrayList', [
 				[/* reference */ 'r', `#lastIndexOf(java.lang.Object)`, `lastIndexOf(Object)`],
 				[/* text */ 't', `, and all of the algorithms in the
  `],
-				[/* reference */ 'r', `java.util.Collections`],
+				[/* reference */ 'r', `java.util.Collections`, `Collections`],
 				[/* text */ 't', ` class can be applied to a subList.
 
  `],
@@ -819,10 +819,10 @@ DocsCollector.collect('java.util.ArrayList', [
  sequence), starting at the specified position in the list.
  The specified index indicates the first element that would be
  returned by an initial call to `],
-				[/* reference */ 'r', `.ListIterator#next()`],
+				[/* reference */ 'r', `java.util.ListIterator#next()`, `next`],
 				[/* text */ 't', `.
  An initial call to `],
-				[/* reference */ 'r', `.ListIterator#previous()`],
+				[/* reference */ 'r', `java.util.ListIterator#previous()`, `previous`],
 				[/* text */ 't', ` would
  return the element with the specified index minus one.
 
@@ -837,7 +837,7 @@ DocsCollector.collect('java.util.ArrayList', [
 				[/* parameter */ 'index', [/* parameter description */
 					[/* text */ 't', `index of the first element to be returned from the
         list iterator (by a call to `],
-					[/* reference */ 'r', `.ListIterator#next()`],
+					[/* reference */ 'r', `java.util.ListIterator#next()`, `next`],
 					[/* text */ 't', `)`]
 				]]
 			],
@@ -857,11 +857,11 @@ DocsCollector.collect('java.util.ArrayList', [
 		[/* method */ 'spliterator()', [
 			[/* method description */
 				[/* text */ 't', `Creates a `],
-				[/* reference */ 'r', `.Spliterator#binding`],
+				[/* reference */ 'r', `java.util.Spliterator#binding`, `late-binding`],
 				[/* text */ 't', `
  and `],
 				[/* text */ 't', `fail-fast`],
-				[/* reference */ 'r', `java.util.Spliterator`],
+				[/* reference */ 'r', `java.util.Spliterator`, `Spliterator`],
 				[/* text */ 't', ` over the elements in this
  list.
 
@@ -870,12 +870,12 @@ DocsCollector.collect('java.util.ArrayList', [
 					[/* text */ 't', `The `],
 					[/* inline code block */ 'i', `Spliterator`],
 					[/* text */ 't', ` reports `],
-					[/* reference */ 'r', `.Spliterator#SIZED`],
+					[/* reference */ 'r', `java.util.Spliterator#SIZED`, `Spliterator.SIZED`],
 					[/* text */ 't', `,
  `],
-					[/* reference */ 'r', `.Spliterator#SUBSIZED`],
+					[/* reference */ 'r', `java.util.Spliterator#SUBSIZED`, `Spliterator.SUBSIZED`],
 					[/* text */ 't', `, and `],
-					[/* reference */ 'r', `.Spliterator#ORDERED`],
+					[/* reference */ 'r', `java.util.Spliterator#ORDERED`, `Spliterator.ORDERED`],
 					[/* text */ 't', `.
  Overriding implementations should document the reporting of additional
  characteristic values.`]

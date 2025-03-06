@@ -33,7 +33,7 @@ DocsCollector.collect('java.lang.reflect.WildcardType', [
 					[/* block */ 'b', [
 						[/* text */ 't', `if B is a parameterized type or a type variable, it is created,
   (see `],
-						[/* reference */ 'r', `java.lang.reflect.ParameterizedType`],
+						[/* reference */ 'r', `java.lang.reflect.ParameterizedType`, `ParameterizedType`],
 						[/* text */ 't', `
   for the details of the creation process for parameterized types).
    `]
@@ -77,7 +77,7 @@ DocsCollector.collect('java.lang.reflect.WildcardType', [
 					[/* block */ 'b', [
 						[/* text */ 't', `if B is a parameterized type or a type variable, it is created,
   (see `],
-						[/* reference */ 'r', `java.lang.reflect.ParameterizedType`],
+						[/* reference */ 'r', `java.lang.reflect.ParameterizedType`, `ParameterizedType`],
 						[/* text */ 't', `
   for the details of the creation process for parameterized types).
   `]

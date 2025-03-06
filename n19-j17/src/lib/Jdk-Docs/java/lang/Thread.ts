@@ -152,7 +152,7 @@ DocsCollector.collect('java.lang.Thread', [
 			[/* inline code block */ 'i', `null`],
 			[/* text */ 't', ` argument to a constructor
  or method in this class will cause a `],
-			[/* reference */ 'r', `java.lang.NullPointerException`],
+			[/* reference */ 'r', `java.lang.NullPointerException`, `NullPointerException`],
 			[/* text */ 't', ` to be
  thrown.`]
 		]]
@@ -298,7 +298,7 @@ DocsCollector.collect('java.lang.Thread', [
 					[/* inline code block */ 'i', `null`],
 					[/* text */ 't', ` and there is a security
          manager, the group is determined by `],
-					[/* reference */ 'r', `.SecurityManager#getThreadGroup()`],
+					[/* reference */ 'r', `java.lang.SecurityManager#getThreadGroup()`, `SecurityManager.getThreadGroup()`],
 					[/* text */ 't', `.
          If there is not a security manager or `],
 					[/* inline code block */ 'i', `SecurityManager.getThreadGroup()`],
@@ -341,7 +341,7 @@ DocsCollector.collect('java.lang.Thread', [
 				[/* block */ 'b', [
 					[/* text */ 't', `If there is a security manager, its
  `],
-					[/* reference */ 'r', `.SecurityManager#checkAccess(java.lang.ThreadGroup)`],
+					[/* reference */ 'r', `java.lang.SecurityManager#checkAccess(java.lang.ThreadGroup)`, `checkAccess`],
 					[/* text */ 't', `
  method is invoked with the ThreadGroup as its argument.
 
@@ -389,7 +389,7 @@ DocsCollector.collect('java.lang.Thread', [
 					[/* inline code block */ 'i', `null`],
 					[/* text */ 't', ` and there is a security
          manager, the group is determined by `],
-					[/* reference */ 'r', `.SecurityManager#getThreadGroup()`],
+					[/* reference */ 'r', `java.lang.SecurityManager#getThreadGroup()`, `SecurityManager.getThreadGroup()`],
 					[/* text */ 't', `.
          If there is not a security manager or `],
 					[/* inline code block */ 'i', `SecurityManager.getThreadGroup()`],
@@ -450,11 +450,11 @@ DocsCollector.collect('java.lang.Thread', [
 					[/* inline code block */ 'i', `stackSize`],
 					[/* text */ 't', ` parameter may allow a thread to achieve greater
  recursion depth before throwing a `],
-					[/* reference */ 'r', `java.lang.StackOverflowError`],
+					[/* reference */ 'r', `java.lang.StackOverflowError`, `StackOverflowError`],
 					[/* text */ 't', `.
  Similarly, specifying a lower value may allow a greater number of
  threads to exist concurrently without throwing an `],
-					[/* reference */ 'r', `java.lang.OutOfMemoryError`],
+					[/* reference */ 'r', `java.lang.OutOfMemoryError`, `OutOfMemoryError`],
 					[/* text */ 't', ` (or other internal error).  The details of
  the relationship between the value of the `],
 					[/* inline code block */ 'i', `stackSize`],
@@ -510,7 +510,7 @@ DocsCollector.collect('java.lang.Thread', [
 					[/* inline code block */ 'i', `null`],
 					[/* text */ 't', ` and there is a security
          manager, the group is determined by `],
-					[/* reference */ 'r', `.SecurityManager#getThreadGroup()`],
+					[/* reference */ 'r', `java.lang.SecurityManager#getThreadGroup()`, `SecurityManager.getThreadGroup()`],
 					[/* text */ 't', `.
          If there is not a security manager or `],
 					[/* inline code block */ 'i', `SecurityManager.getThreadGroup()`],
@@ -559,7 +559,7 @@ DocsCollector.collect('java.lang.Thread', [
 				[/* inline code block */ 'i', `stackSize`],
 				[/* text */ 't', `, and inherits initial values for
  `],
-				[/* reference */ 'r', `java.lang.InheritableThreadLocal`],
+				[/* reference */ 'r', `java.lang.InheritableThreadLocal`, `inheritable thread-local`],
 				[/* text */ 't', ` variables
  if `],
 				[/* inline code block */ 'i', `inheritThreadLocals`],
@@ -603,7 +603,7 @@ DocsCollector.collect('java.lang.Thread', [
 					[/* inline code block */ 'i', `null`],
 					[/* text */ 't', ` and there is a security
          manager, the group is determined by `],
-					[/* reference */ 'r', `.SecurityManager#getThreadGroup()`],
+					[/* reference */ 'r', `java.lang.SecurityManager#getThreadGroup()`, `SecurityManager.getThreadGroup()`],
 					[/* text */ 't', `.
          If there is not a security manager or `],
 					[/* inline code block */ 'i', `SecurityManager.getThreadGroup()`],
@@ -658,7 +658,7 @@ DocsCollector.collect('java.lang.Thread', [
 					[/* inline code block */ 'i', `null`],
 					[/* text */ 't', ` and there is a security
          manager, the group is determined by `],
-					[/* reference */ 'r', `.SecurityManager#getThreadGroup()`],
+					[/* reference */ 'r', `java.lang.SecurityManager#getThreadGroup()`, `SecurityManager.getThreadGroup()`],
 					[/* text */ 't', `.
          If there is not a security manager or `],
 					[/* inline code block */ 'i', `SecurityManager.getThreadGroup()`],
@@ -1239,7 +1239,7 @@ DocsCollector.collect('java.lang.Thread', [
 					[/* text */ 't', ` and is not the same as or an ancestor of the
           context class loader, and the caller does not have the
           `],
-					[/* reference */ 'r', `java.lang.RuntimePermission`],
+					[/* reference */ 'r', `java.lang.RuntimePermission`, `RuntimePermission`],
 					[/* inline code block */ 'i', `("getClassLoader")`]
 				]]
 			],
@@ -1383,7 +1383,7 @@ DocsCollector.collect('java.lang.Thread', [
 			[/* method description */
 				[/* text */ 't', `Returns an estimate of the number of active threads in the current
  thread's `],
-				[/* reference */ 'r', `java.lang.ThreadGroup`],
+				[/* reference */ 'r', `java.lang.ThreadGroup`, `thread group`],
 				[/* text */ 't', ` and its
  subgroups. Recursively iterates over all subgroups in the current
  thread's thread group.
@@ -1408,7 +1408,7 @@ DocsCollector.collect('java.lang.Thread', [
 				[/* text */ 't', `Copies into the specified array every active thread in the current
  thread's thread group and its subgroups. This method simply
  invokes the `],
-				[/* reference */ 'r', `.ThreadGroup#enumerate(java.lang.Thread[])`],
+				[/* reference */ 'r', `java.lang.ThreadGroup#enumerate(java.lang.Thread[])`, `ThreadGroup.enumerate(Thread[])`],
 				[/* text */ 't', `
  method of the current thread's thread group.
 
@@ -1441,7 +1441,7 @@ DocsCollector.collect('java.lang.Thread', [
 			[/* throws */
 				[/* throw */ 'java.lang.SecurityException', [/* throw description */
 					[/* text */ 't', `if `],
-					[/* reference */ 'r', `.ThreadGroup#checkAccess()`],
+					[/* reference */ 'r', `java.lang.ThreadGroup#checkAccess()`, `ThreadGroup.checkAccess()`],
 					[/* text */ 't', ` determines that
           the current thread cannot access its thread group`]
 				]]
@@ -1652,7 +1652,7 @@ DocsCollector.collect('java.lang.Thread', [
 				[/* block */ 'b', [
 					[/* text */ 't', `Uncaught exception handling is controlled first by the thread, then
  by the thread's `],
-					[/* reference */ 'r', `java.lang.ThreadGroup`],
+					[/* reference */ 'r', `java.lang.ThreadGroup`, `ThreadGroup`],
 					[/* text */ 't', ` object and finally by the default
  uncaught exception handler. If the thread does not have an explicit
  uncaught exception handler set, and the thread's thread group
@@ -1692,7 +1692,7 @@ DocsCollector.collect('java.lang.Thread', [
 				[/* throw */ 'java.lang.SecurityException', [/* throw description */
 					[/* text */ 't', `if a security manager is present and it denies
          `],
-					[/* reference */ 'r', `java.lang.RuntimePermission`],
+					[/* reference */ 'r', `java.lang.RuntimePermission`, `RuntimePermission`],
 					[/* inline code block */ 'i', `("setDefaultUncaughtExceptionHandler")`]
 				]]
 			],
@@ -1779,20 +1779,20 @@ DocsCollector.collect('java.lang.Thread', [
 					[/* reference */ 'r', `#checkAccess()`, `checkAccess`],
 					[/* text */ 't', ` method
  of this thread is invoked, which may cause a `],
-					[/* reference */ 'r', `java.lang.SecurityException`],
+					[/* reference */ 'r', `java.lang.SecurityException`, `SecurityException`],
 					[/* text */ 't', ` to be thrown.
 
  `]
 				]],
 				[/* block */ 'b', [
 					[/* text */ 't', ` If this thread is blocked in an invocation of the `],
-					[/* reference */ 'r', `.Object#wait()`],
+					[/* reference */ 'r', `java.lang.Object#wait()`, `wait()`],
 					[/* text */ 't', `, `],
-					[/* reference */ 'r', `.Object#wait(long)`],
+					[/* reference */ 'r', `java.lang.Object#wait(long)`, `wait(long)`],
 					[/* text */ 't', `, or `],
-					[/* reference */ 'r', `.Object#wait(long,int)`],
+					[/* reference */ 'r', `java.lang.Object#wait(long,int)`, `wait(long, int)`],
 					[/* text */ 't', ` methods of the `],
-					[/* reference */ 'r', `java.lang.Object`],
+					[/* reference */ 'r', `java.lang.Object`, `Object`],
 					[/* text */ 't', `
  class, or of the `],
 					[/* reference */ 'r', `#join()`, `join()`],
@@ -1807,30 +1807,30 @@ DocsCollector.collect('java.lang.Thread', [
 					[/* text */ 't', `
  methods of this class, then its interrupt status will be cleared and it
  will receive an `],
-					[/* reference */ 'r', `java.lang.InterruptedException`],
+					[/* reference */ 'r', `java.lang.InterruptedException`, `InterruptedException`],
 					[/* text */ 't', `.
 
  `]
 				]],
 				[/* block */ 'b', [
 					[/* text */ 't', ` If this thread is blocked in an I/O operation upon an `],
-					[/* reference */ 'r', `java.nio.channels.InterruptibleChannel`],
+					[/* reference */ 'r', `java.nio.channels.InterruptibleChannel`, `InterruptibleChannel`],
 					[/* text */ 't', `
  then the channel will be closed, the thread's interrupt
  status will be set, and the thread will receive a `],
-					[/* reference */ 'r', `java.nio.channels.ClosedByInterruptException`],
+					[/* reference */ 'r', `java.nio.channels.ClosedByInterruptException`, `ClosedByInterruptException`],
 					[/* text */ 't', `.
 
  `]
 				]],
 				[/* block */ 'b', [
 					[/* text */ 't', ` If this thread is blocked in a `],
-					[/* reference */ 'r', `java.nio.channels.Selector`],
+					[/* reference */ 'r', `java.nio.channels.Selector`, `Selector`],
 					[/* text */ 't', `
  then the thread's interrupt status will be set and it will return
  immediately from the selection operation, possibly with a non-zero
  value, just as if the selector's `],
-					[/* reference */ 'r', `java.channels.Selector#wakeup()`],
+					[/* reference */ 'r', `java.nio.channels.Selector#wakeup()`, `wakeup`],
 					[/* text */ 't', ` method were invoked.
 
  `]
@@ -1884,10 +1884,10 @@ DocsCollector.collect('java.lang.Thread', [
  `],
 				[/* block */ 'b', [
 					[/* text */ 't', `If a security manager is present, its `],
-					[/* reference */ 'r', `.SecurityManager#checkPermission(java.security.Permission)`],
+					[/* reference */ 'r', `java.lang.SecurityManager#checkPermission(java.security.Permission)`, `checkPermission`],
 					[/* text */ 't', `
  method is invoked with a `],
-					[/* reference */ 'r', `java.lang.RuntimePermission`],
+					[/* reference */ 'r', `java.lang.RuntimePermission`, `RuntimePermission`],
 					[/* inline code block */ 'i', `("setContextClassLoader")`],
 					[/* text */ 't', ` permission to see if setting the context
  ClassLoader is permitted.`]

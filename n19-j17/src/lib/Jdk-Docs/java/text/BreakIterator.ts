@@ -54,7 +54,7 @@ DocsCollector.collect('java.text.BreakIterator', [
  `]
 		]],
 		[/* block */ 'b', [
-			[/* text */ 't', ``],
+			[/* anchor */ 'r', '#-id', `line`, ``],
 			[/* text */ 't', `
  Line boundary analysis determines where a text string can be
  broken when line-wrapping. The mechanism correctly handles
@@ -65,7 +65,7 @@ DocsCollector.collect('java.text.BreakIterator', [
  `]
 		]],
 		[/* block */ 'b', [
-			[/* text */ 't', ``],
+			[/* anchor */ 'r', '#-id', `sentence`, ``],
 			[/* text */ 't', `
  Sentence boundary analysis allows selection with correct interpretation
  of periods within numbers and abbreviations, and trailing punctuation
@@ -74,7 +74,7 @@ DocsCollector.collect('java.text.BreakIterator', [
  `]
 		]],
 		[/* block */ 'b', [
-			[/* text */ 't', ``],
+			[/* anchor */ 'r', '#-id', `word`, ``],
 			[/* text */ 't', `
  Word boundary analysis is used by search and replace functions, as
  well as within text editing applications that allow the user to
@@ -86,7 +86,7 @@ DocsCollector.collect('java.text.BreakIterator', [
  `]
 		]],
 		[/* block */ 'b', [
-			[/* text */ 't', ``],
+			[/* anchor */ 'r', '#-id', `character`, ``],
 			[/* text */ 't', `
  Character boundary analysis allows users to interact with characters
  as they expect to, for example, when moving the cursor through a text
@@ -495,10 +495,10 @@ DocsCollector.collect('java.text.BreakIterator', [
 				[/* inline code block */ 'i', `BreakIterator`],
 				[/* text */ 't', ` instance
  for `],
-				[/* reference */ 'r', `.BreakIterator#character`],
+				[/* reference */ 'r', `java.text.BreakIterator#character`, `character breaks`],
 				[/* text */ 't', `
  for the `],
-				[/* reference */ 'r', `java.Locale#getDefault()`],
+				[/* reference */ 'r', `java.util.Locale#getDefault()`, `default locale`],
 				[/* text */ 't', `.`]
 			],
 			/* parameters */ UDF,
@@ -513,7 +513,7 @@ DocsCollector.collect('java.text.BreakIterator', [
 				[/* inline code block */ 'i', `BreakIterator`],
 				[/* text */ 't', ` instance
  for `],
-				[/* reference */ 'r', `.BreakIterator#character`],
+				[/* reference */ 'r', `java.text.BreakIterator#character`, `character breaks`],
 				[/* text */ 't', `
  for the given locale.`]
 			],
@@ -539,10 +539,10 @@ DocsCollector.collect('java.text.BreakIterator', [
 				[/* inline code block */ 'i', `BreakIterator`],
 				[/* text */ 't', ` instance
  for `],
-				[/* reference */ 'r', `.BreakIterator#line`],
+				[/* reference */ 'r', `java.text.BreakIterator#line`, `line breaks`],
 				[/* text */ 't', `
  for the `],
-				[/* reference */ 'r', `java.Locale#getDefault()`],
+				[/* reference */ 'r', `java.util.Locale#getDefault()`, `default locale`],
 				[/* text */ 't', `.`]
 			],
 			/* parameters */ UDF,
@@ -557,7 +557,7 @@ DocsCollector.collect('java.text.BreakIterator', [
 				[/* inline code block */ 'i', `BreakIterator`],
 				[/* text */ 't', ` instance
  for `],
-				[/* reference */ 'r', `.BreakIterator#line`],
+				[/* reference */ 'r', `java.text.BreakIterator#line`, `line breaks`],
 				[/* text */ 't', `
  for the given locale.`]
 			],
@@ -583,10 +583,10 @@ DocsCollector.collect('java.text.BreakIterator', [
 				[/* inline code block */ 'i', `BreakIterator`],
 				[/* text */ 't', ` instance
  for `],
-				[/* reference */ 'r', `.BreakIterator#sentence`],
+				[/* reference */ 'r', `java.text.BreakIterator#sentence`, `sentence breaks`],
 				[/* text */ 't', `
  for the `],
-				[/* reference */ 'r', `java.Locale#getDefault()`],
+				[/* reference */ 'r', `java.util.Locale#getDefault()`, `default locale`],
 				[/* text */ 't', `.`]
 			],
 			/* parameters */ UDF,
@@ -601,7 +601,7 @@ DocsCollector.collect('java.text.BreakIterator', [
 				[/* inline code block */ 'i', `BreakIterator`],
 				[/* text */ 't', ` instance
  for `],
-				[/* reference */ 'r', `.BreakIterator#sentence`],
+				[/* reference */ 'r', `java.text.BreakIterator#sentence`, `sentence breaks`],
 				[/* text */ 't', `
  for the given locale.`]
 			],
@@ -627,10 +627,10 @@ DocsCollector.collect('java.text.BreakIterator', [
 				[/* inline code block */ 'i', `BreakIterator`],
 				[/* text */ 't', ` instance
  for `],
-				[/* reference */ 'r', `.BreakIterator#word`],
+				[/* reference */ 'r', `java.text.BreakIterator#word`, `word breaks`],
 				[/* text */ 't', `
  for the `],
-				[/* reference */ 'r', `java.Locale#getDefault()`],
+				[/* reference */ 'r', `java.util.Locale#getDefault()`, `default locale`],
 				[/* text */ 't', `.`]
 			],
 			/* parameters */ UDF,
@@ -645,7 +645,7 @@ DocsCollector.collect('java.text.BreakIterator', [
 				[/* inline code block */ 'i', `BreakIterator`],
 				[/* text */ 't', ` instance
  for `],
-				[/* reference */ 'r', `.BreakIterator#word`],
+				[/* reference */ 'r', `java.text.BreakIterator#word`, `word breaks`],
 				[/* text */ 't', `
  for the given locale.`]
 			],
@@ -675,13 +675,13 @@ DocsCollector.collect('java.text.BreakIterator', [
  The returned array represents the union of locales supported by the Java
  runtime and by installed
  `],
-				[/* reference */ 'r', `java.text.spi.BreakIteratorProvider`],
+				[/* reference */ 'r', `java.text.spi.BreakIteratorProvider`, `BreakIteratorProvider`],
 				[/* text */ 't', ` implementations.
  It must contain at least a `],
 				[/* inline code block */ 'i', `Locale`],
 				[/* text */ 't', `
  instance equal to `],
-				[/* reference */ 'r', `java.Locale#US`],
+				[/* reference */ 'r', `java.util.Locale#US`, `Locale.US`],
 				[/* text */ 't', `.`]
 			],
 			/* parameters */ UDF,

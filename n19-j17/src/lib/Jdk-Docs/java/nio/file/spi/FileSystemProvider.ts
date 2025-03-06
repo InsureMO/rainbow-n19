@@ -4,7 +4,7 @@ import {DocsCollector} from '../../../../DocsCollector';
 DocsCollector.collect('java.nio.file.spi.FileSystemProvider', [
 	[/* class description */
 		[/* text */ 't', `Service-provider class for file systems. The methods defined by the `],
-		[/* reference */ 'r', `java.nio.file.Files`],
+		[/* reference */ 'r', `java.nio.file.Files`, `Files`],
 		[/* text */ 't', ` class will typically delegate to an instance of this
  class.
 
@@ -17,11 +17,11 @@ DocsCollector.collect('java.nio.file.spi.FileSystemProvider', [
 			[/* reference */ 'r', `#getScheme()`, `scheme`],
 			[/* text */ 't', `. The default provider
  is identified by the URI scheme "file". It creates the `],
-			[/* reference */ 'r', `java.nio.file.FileSystem`],
+			[/* reference */ 'r', `java.nio.file.FileSystem`, `FileSystem`],
 			[/* text */ 't', ` that
  provides access to the file systems accessible to the Java virtual machine.
  The `],
-			[/* reference */ 'r', `java.nio.file.FileSystems`],
+			[/* reference */ 'r', `java.nio.file.FileSystems`, `FileSystems`],
 			[/* text */ 't', ` class defines how file system providers are located
  and loaded. The default provider is typically a system-default provider but
  may be overridden if the system property `],
@@ -36,7 +36,7 @@ DocsCollector.collect('java.nio.file.spi.FileSystemProvider', [
 		]],
 		[/* block */ 'b', [
 			[/* text */ 't', ` A provider is a factory for one or more `],
-			[/* reference */ 'r', `java.nio.file.FileSystem`],
+			[/* reference */ 'r', `java.nio.file.FileSystem`, `FileSystem`],
 			[/* text */ 't', ` instances. Each
  file system is identified by a `],
 			[/* inline code block */ 'i', `URI`],
@@ -88,7 +88,7 @@ DocsCollector.collect('java.nio.file.spi.FileSystemProvider', [
 				[/* throw */ 'java.lang.SecurityException', [/* throw description */
 					[/* text */ 't', `If a security manager has been installed and it denies
           `],
-					[/* reference */ 'r', `java.lang.RuntimePermission`],
+					[/* reference */ 'r', `java.lang.RuntimePermission`, `RuntimePermission`],
 					[/* inline code block */ 'i', `("fileSystemProvider")`]
 				]]
 			]
@@ -99,7 +99,7 @@ DocsCollector.collect('java.nio.file.spi.FileSystemProvider', [
 			[/* method description */
 				[/* text */ 't', `Reads a file's attributes as a bulk operation. This method works in
  exactly the manner specified by the `],
-				[/* reference */ 'r', `java.Files#readAttributes(java.nio.file.Path,java.lang.Class,java.nio.file.LinkOption...)`],
+				[/* reference */ 'r', `java.nio.file.Files#readAttributes(java.nio.file.Path,java.lang.Class,java.nio.file.LinkOption...)`, `Files.readAttributes(Path,Class,LinkOption[])`],
 				[/* text */ 't', ` method.`]
 			],
 			[/* parameters */
@@ -126,7 +126,7 @@ DocsCollector.collect('java.nio.file.spi.FileSystemProvider', [
 				[/* throw */ 'java.lang.SecurityException', [/* throw description */
 					[/* text */ 't', `In the case of the default provider, a security manager is
           installed, its `],
-					[/* reference */ 'r', `java.nio.file.SecurityManager#checkRead(java.lang.String)`],
+					[/* reference */ 'r', `java.lang.SecurityManager#checkRead(java.lang.String)`, `checkRead`],
 					[/* text */ 't', `
           method is invoked to check read access to the file`]
 				]]
@@ -139,7 +139,7 @@ DocsCollector.collect('java.nio.file.spi.FileSystemProvider', [
 			[/* method description */
 				[/* text */ 't', `Returns a file attribute view of a given type. This method works in
  exactly the manner specified by the `],
-				[/* reference */ 'r', `java.Files#getFileAttributeView(java.nio.file.Path,java.lang.Class,java.nio.file.LinkOption...)`],
+				[/* reference */ 'r', `java.nio.file.Files#getFileAttributeView(java.nio.file.Path,java.lang.Class,java.nio.file.LinkOption...)`, `Files.getFileAttributeView(java.nio.file.Path, java.lang.Class<V>, java.nio.file.LinkOption...)`],
 				[/* text */ 't', `
  method.`]
 			],
@@ -170,14 +170,14 @@ DocsCollector.collect('java.nio.file.spi.FileSystemProvider', [
 				[/* text */ 't', `hidden`],
 				[/* text */ 't', `. This method
  works in exactly the manner specified by the `],
-				[/* reference */ 'r', `java.Files#isHidden(java.nio.file.Path)`],
+				[/* reference */ 'r', `java.nio.file.Files#isHidden(java.nio.file.Path)`, `Files.isHidden(java.nio.file.Path)`],
 				[/* text */ 't', `
  method.
 
  `],
 				[/* block */ 'b', [
 					[/* text */ 't', ` This method is invoked by the `],
-					[/* reference */ 'r', `java.Files#isHidden(java.nio.file.Path)`],
+					[/* reference */ 'r', `java.nio.file.Files#isHidden(java.nio.file.Path)`, `isHidden`],
 					[/* text */ 't', ` method.`]
 				]]
 			],
@@ -193,7 +193,7 @@ DocsCollector.collect('java.nio.file.spi.FileSystemProvider', [
 				[/* throw */ 'java.lang.SecurityException', [/* throw description */
 					[/* text */ 't', `In the case of the default provider, and a security manager is
           installed, the `],
-					[/* reference */ 'r', `java.nio.file.SecurityManager#checkRead(java.lang.String)`],
+					[/* reference */ 'r', `java.lang.SecurityManager#checkRead(java.lang.String)`, `checkRead`],
 					[/* text */ 't', `
           method is invoked to check read access to the file.`]
 				]]
@@ -207,7 +207,7 @@ DocsCollector.collect('java.nio.file.spi.FileSystemProvider', [
 			[/* method description */
 				[/* text */ 't', `Tests if two paths locate the same file. This method works in exactly the
  manner specified by the `],
-				[/* reference */ 'r', `java.Files#isSameFile(java.nio.file.Path,java.nio.file.Path)`],
+				[/* reference */ 'r', `java.nio.file.Files#isSameFile(java.nio.file.Path,java.nio.file.Path)`, `Files.isSameFile(java.nio.file.Path, java.nio.file.Path)`],
 				[/* text */ 't', ` method.`]
 			],
 			[/* parameters */
@@ -225,7 +225,7 @@ DocsCollector.collect('java.nio.file.spi.FileSystemProvider', [
 				[/* throw */ 'java.lang.SecurityException', [/* throw description */
 					[/* text */ 't', `In the case of the default provider, and a security manager is
           installed, the `],
-					[/* reference */ 'r', `java.nio.file.SecurityManager#checkRead(java.lang.String)`],
+					[/* reference */ 'r', `java.lang.SecurityManager#checkRead(java.lang.String)`, `checkRead`],
 					[/* text */ 't', `
           method is invoked to check read access to both files.`]
 				]]
@@ -249,7 +249,7 @@ DocsCollector.collect('java.nio.file.spi.FileSystemProvider', [
 			[/* method description */
 				[/* text */ 't', `Opens or creates a file, returning a seekable byte channel to access the
  file. This method works in exactly the manner specified by the `],
-				[/* reference */ 'r', `java.Files#newByteChannel(java.nio.file.Path,java.util.Set,java.nio.file.attribute.FileAttribute...)`],
+				[/* reference */ 'r', `java.nio.file.Files#newByteChannel(java.nio.file.Path,java.util.Set,java.nio.file.attribute.FileAttribute...)`, `Files.newByteChannel(Path,Set,FileAttribute[])`],
 				[/* text */ 't', ` method.`]
 			],
 			[/* parameters */
@@ -274,7 +274,7 @@ DocsCollector.collect('java.nio.file.spi.FileSystemProvider', [
 				]],
 				[/* throw */ 'java.nio.file.FileAlreadyExistsException', [/* throw description */
 					[/* text */ 't', `If a file of that name already exists and the `],
-					[/* reference */ 'r', `java.StandardOpenOption#CREATE_NEW`],
+					[/* reference */ 'r', `java.nio.file.StandardOpenOption#CREATE_NEW`, `CREATE_NEW`],
 					[/* text */ 't', ` option is specified
           and the file is being opened for writing
           `],
@@ -286,14 +286,14 @@ DocsCollector.collect('java.nio.file.spi.FileSystemProvider', [
 				[/* throw */ 'java.lang.SecurityException', [/* throw description */
 					[/* text */ 't', `In the case of the default provider, and a security manager is
           installed, the `],
-					[/* reference */ 'r', `java.nio.file.SecurityManager#checkRead(java.lang.String)`],
+					[/* reference */ 'r', `java.lang.SecurityManager#checkRead(java.lang.String)`, `checkRead`],
 					[/* text */ 't', `
           method is invoked to check read access to the path if the file is
           opened for reading. The `],
-					[/* reference */ 'r', `java.nio.file.SecurityManager#checkWrite(java.lang.String)`],
+					[/* reference */ 'r', `java.lang.SecurityManager#checkWrite(java.lang.String)`, `checkWrite`],
 					[/* text */ 't', ` method is invoked to check write access to the path
           if the file is opened for writing. The `],
-					[/* reference */ 'r', `java.nio.file.SecurityManager#checkDelete(java.lang.String)`],
+					[/* reference */ 'r', `java.lang.SecurityManager#checkDelete(java.lang.String)`, `checkDelete`],
 					[/* text */ 't', ` method is
           invoked to check delete access if the file is opened with the
           `],
@@ -312,7 +312,7 @@ DocsCollector.collect('java.nio.file.spi.FileSystemProvider', [
 				[/* text */ 't', ` to iterate over
  the entries in the directory. This method works in exactly the manner
  specified by the `],
-				[/* reference */ 'r', `java.Files#newDirectoryStream(java.nio.file.Path,java.nio.file.DirectoryStream.Filter)`],
+				[/* reference */ 'r', `java.nio.file.Files#newDirectoryStream(java.nio.file.Path,java.nio.file.DirectoryStream.Filter)`, `Files.newDirectoryStream(java.nio.file.Path, java.nio.file.DirectoryStream.Filter)`],
 				[/* text */ 't', `
  method.`]
 			],
@@ -336,7 +336,7 @@ DocsCollector.collect('java.nio.file.spi.FileSystemProvider', [
 				[/* throw */ 'java.lang.SecurityException', [/* throw description */
 					[/* text */ 't', `In the case of the default provider, and a security manager is
           installed, the `],
-					[/* reference */ 'r', `java.nio.file.SecurityManager#checkRead(java.lang.String)`],
+					[/* reference */ 'r', `java.lang.SecurityManager#checkRead(java.lang.String)`, `checkRead`],
 					[/* text */ 't', `
           method is invoked to check read access to the directory.`]
 				]]
@@ -350,11 +350,11 @@ DocsCollector.collect('java.nio.file.spi.FileSystemProvider', [
 		[/* method */ 'getFileStore(java.nio.file.Path)', [
 			[/* method description */
 				[/* text */ 't', `Returns the `],
-				[/* reference */ 'r', `java.nio.file.FileStore`],
+				[/* reference */ 'r', `java.nio.file.FileStore`, `FileStore`],
 				[/* text */ 't', ` representing the file store where a file
  is located. This method works in exactly the manner specified by the
  `],
-				[/* reference */ 'r', `java.Files#getFileStore(java.nio.file.Path)`],
+				[/* reference */ 'r', `java.nio.file.Files#getFileStore(java.nio.file.Path)`, `Files.getFileStore(java.nio.file.Path)`],
 				[/* text */ 't', ` method.`]
 			],
 			[/* parameters */
@@ -369,12 +369,12 @@ DocsCollector.collect('java.nio.file.spi.FileSystemProvider', [
 				[/* throw */ 'java.lang.SecurityException', [/* throw description */
 					[/* text */ 't', `In the case of the default provider, and a security manager is
           installed, the `],
-					[/* reference */ 'r', `java.nio.file.SecurityManager#checkRead(java.lang.String)`],
+					[/* reference */ 'r', `java.lang.SecurityManager#checkRead(java.lang.String)`, `checkRead`],
 					[/* text */ 't', `
           method is invoked to check read access to the file, and in
           addition it checks
           `],
-					[/* reference */ 'r', `java.lang.RuntimePermission`],
+					[/* reference */ 'r', `java.lang.RuntimePermission`, `RuntimePermission`],
 					[/* inline code block */ 'i', `("getFileStoreAttributes")`]
 				]]
 			],
@@ -414,10 +414,10 @@ DocsCollector.collect('java.nio.file.spi.FileSystemProvider', [
 				]],
 				[/* block */ 'b', [
 					[/* text */ 't', ` Once a file system created by this provider is `],
-					[/* reference */ 'r', `java.FileSystem#close()`],
+					[/* reference */ 'r', `java.nio.file.FileSystem#close()`, `closed`],
 					[/* text */ 't', ` it is provider-dependent if this
  method returns a reference to the closed file system or throws `],
-					[/* reference */ 'r', `java.nio.file.FileSystemNotFoundException`],
+					[/* reference */ 'r', `java.nio.file.FileSystemNotFoundException`, `FileSystemNotFoundException`],
 					[/* text */ 't', `. If the provider allows a new file system to
  be created with the same URI as a file system it previously created then
  this method throws the exception if invoked after the file system is
@@ -431,7 +431,7 @@ DocsCollector.collect('java.nio.file.spi.FileSystemProvider', [
 					[/* text */ 't', ` If a security manager is installed then a provider implementation
  may require to check a permission before returning a reference to an
  existing file system. In the case of the `],
-					[/* reference */ 'r', `java.FileSystems#getDefault()`],
+					[/* reference */ 'r', `java.nio.file.FileSystems#getDefault()`, `default`],
 					[/* text */ 't', ` file system, no permission check is required.`]
 				]]
 			],
@@ -464,7 +464,7 @@ DocsCollector.collect('java.nio.file.spi.FileSystemProvider', [
 				[/* inline code block */ 'i', `FileSystem`],
 				[/* text */ 't', ` object identified by a URI. This
  method is invoked by the `],
-				[/* reference */ 'r', `java.FileSystems#newFileSystem(java.net.URI,java.util.Map)`],
+				[/* reference */ 'r', `java.nio.file.FileSystems#newFileSystem(java.net.URI,java.util.Map)`, `FileSystems.newFileSystem(URI,Map)`],
 				[/* text */ 't', `
  method to open a new file system identified by a URI.
 
@@ -484,11 +484,11 @@ DocsCollector.collect('java.nio.file.spi.FileSystemProvider', [
 				]],
 				[/* block */ 'b', [
 					[/* text */ 't', ` This method throws `],
-					[/* reference */ 'r', `java.nio.file.FileSystemAlreadyExistsException`],
+					[/* reference */ 'r', `java.nio.file.FileSystemAlreadyExistsException`, `FileSystemAlreadyExistsException`],
 					[/* text */ 't', ` if the
  file system already exists because it was previously created by an
  invocation of this method. Once a file system is `],
-					[/* reference */ 'r', `java.FileSystem#close()`],
+					[/* reference */ 'r', `java.nio.file.FileSystem#close()`, `closed`],
 					[/* text */ 't', ` it is provider-dependent if the
  provider allows a new file system to be created with the same URI as a
  file system it previously created.`]
@@ -533,12 +533,12 @@ DocsCollector.collect('java.nio.file.spi.FileSystemProvider', [
 				[/* text */ 't', `Return a `],
 				[/* inline code block */ 'i', `Path`],
 				[/* text */ 't', ` object by converting the given `],
-				[/* reference */ 'r', `java.net.URI`],
+				[/* reference */ 'r', `java.net.URI`, `URI`],
 				[/* text */ 't', `. The
  resulting `],
 				[/* inline code block */ 'i', `Path`],
 				[/* text */ 't', ` is associated with a `],
-				[/* reference */ 'r', `java.nio.file.FileSystem`],
+				[/* reference */ 'r', `java.nio.file.FileSystem`, `FileSystem`],
 				[/* text */ 't', ` that
  already exists or is constructed automatically.
 
@@ -553,7 +553,7 @@ DocsCollector.collect('java.nio.file.spi.FileSystemProvider', [
 					[/* inline code block */ 'i', `Path`],
 					[/* text */ 't', ` is associated with the
  default `],
-					[/* reference */ 'r', `java.FileSystems#getDefault()`],
+					[/* reference */ 'r', `java.nio.file.FileSystems#getDefault()`, `default`],
 					[/* inline code block */ 'i', `FileSystem`],
 					[/* text */ 't', `.
 
@@ -562,7 +562,7 @@ DocsCollector.collect('java.nio.file.spi.FileSystemProvider', [
 				[/* block */ 'b', [
 					[/* text */ 't', ` If a security manager is installed then a provider implementation
  may require to check a permission. In the case of the `],
-					[/* reference */ 'r', `java.FileSystems#getDefault()`],
+					[/* reference */ 'r', `java.nio.file.FileSystems#getDefault()`, `default`],
 					[/* text */ 't', ` file system, no permission check is
  required.`]
 				]]
@@ -595,7 +595,7 @@ DocsCollector.collect('java.nio.file.spi.FileSystemProvider', [
 			[/* method description */
 				[/* text */ 't', `Reads a set of file attributes as a bulk operation. This method works in
  exactly the manner specified by the `],
-				[/* reference */ 'r', `java.Files#readAttributes(java.nio.file.Path,java.lang.String,java.nio.file.LinkOption...)`],
+				[/* reference */ 'r', `java.nio.file.Files#readAttributes(java.nio.file.Path,java.lang.String,java.nio.file.LinkOption...)`, `Files.readAttributes(Path,String,LinkOption[])`],
 				[/* text */ 't', ` method.`]
 			],
 			[/* parameters */
@@ -623,7 +623,7 @@ DocsCollector.collect('java.nio.file.spi.FileSystemProvider', [
 				[/* throw */ 'java.lang.SecurityException', [/* throw description */
 					[/* text */ 't', `In the case of the default provider, and a security manager is
           installed, its `],
-					[/* reference */ 'r', `java.nio.file.SecurityManager#checkRead(java.lang.String)`],
+					[/* reference */ 'r', `java.lang.SecurityManager#checkRead(java.lang.String)`, `checkRead`],
 					[/* text */ 't', `
           method denies read access to the file. If this method is invoked
           to read security sensitive attributes then the security manager
@@ -642,12 +642,12 @@ DocsCollector.collect('java.nio.file.spi.FileSystemProvider', [
  `],
 				[/* block */ 'b', [
 					[/* text */ 't', ` This method may be used by the `],
-					[/* reference */ 'r', `java.Files#isReadable(java.nio.file.Path)`],
+					[/* reference */ 'r', `java.nio.file.Files#isReadable(java.nio.file.Path)`, `isReadable`],
 					[/* text */ 't', `,
  `],
-					[/* reference */ 'r', `java.Files#isWritable(java.nio.file.Path)`],
+					[/* reference */ 'r', `java.nio.file.Files#isWritable(java.nio.file.Path)`, `isWritable`],
 					[/* text */ 't', ` and `],
-					[/* reference */ 'r', `java.Files#isExecutable(java.nio.file.Path)`],
+					[/* reference */ 'r', `java.nio.file.Files#isExecutable(java.nio.file.Path)`, `isExecutable`],
 					[/* text */ 't', ` methods to check the accessibility of a file.
 
  `]
@@ -678,7 +678,7 @@ DocsCollector.collect('java.nio.file.spi.FileSystemProvider', [
 						[/* table row */ 'tr', [
 							[/* table header cell */ 'thc', [
 								[/* text */ 't', ` `],
-								[/* reference */ 'r', `java.AccessMode#READ`],
+								[/* reference */ 'r', `java.nio.file.AccessMode#READ`, `READ`],
 								[/* text */ 't', ` `]
 							]],
 							[/* table cell */ 'tbc', [
@@ -689,7 +689,7 @@ DocsCollector.collect('java.nio.file.spi.FileSystemProvider', [
 						[/* table row */ 'tr', [
 							[/* table header cell */ 'thc', [
 								[/* text */ 't', ` `],
-								[/* reference */ 'r', `java.AccessMode#WRITE`],
+								[/* reference */ 'r', `java.nio.file.AccessMode#WRITE`, `WRITE`],
 								[/* text */ 't', ` `]
 							]],
 							[/* table cell */ 'tbc', [
@@ -700,13 +700,13 @@ DocsCollector.collect('java.nio.file.spi.FileSystemProvider', [
 						[/* table row */ 'tr', [
 							[/* table header cell */ 'thc', [
 								[/* text */ 't', ` `],
-								[/* reference */ 'r', `java.AccessMode#EXECUTE`],
+								[/* reference */ 'r', `java.nio.file.AccessMode#EXECUTE`, `EXECUTE`],
 								[/* text */ 't', ` `]
 							]],
 							[/* table cell */ 'tbc', [
 								[/* text */ 't', ` Checks that the file exists and that the Java virtual machine has
      permission to `],
-								[/* reference */ 'r', `java.nio.file.Runtime#exec(java.lang.String)`],
+								[/* reference */ 'r', `java.lang.Runtime#exec(java.lang.String)`, `execute`],
 								[/* text */ 't', ` the file. The semantics
      may differ when checking access to a directory. For example, on UNIX
      systems, checking for `],
@@ -774,14 +774,14 @@ DocsCollector.collect('java.nio.file.spi.FileSystemProvider', [
 				[/* throw */ 'java.lang.SecurityException', [/* throw description */
 					[/* text */ 't', `In the case of the default provider, and a security manager is
           installed, the `],
-					[/* reference */ 'r', `java.nio.file.SecurityManager#checkRead(java.lang.String)`],
+					[/* reference */ 'r', `java.lang.SecurityManager#checkRead(java.lang.String)`, `checkRead`],
 					[/* text */ 't', `
           is invoked when checking read access to the file or only the
           existence of the file, the `],
-					[/* reference */ 'r', `java.nio.file.SecurityManager#checkWrite(java.lang.String)`],
+					[/* reference */ 'r', `java.lang.SecurityManager#checkWrite(java.lang.String)`, `checkWrite`],
 					[/* text */ 't', ` is invoked when checking write access to the file,
           and `],
-					[/* reference */ 'r', `java.nio.file.SecurityManager#checkExec(java.lang.String)`],
+					[/* reference */ 'r', `java.lang.SecurityManager#checkExec(java.lang.String)`, `checkExec`],
 					[/* text */ 't', ` is invoked
           when checking execute access.`]
 				]]
@@ -792,7 +792,7 @@ DocsCollector.collect('java.nio.file.spi.FileSystemProvider', [
 			[/* method description */
 				[/* text */ 't', `Copy a file to a target file. This method works in exactly the manner
  specified by the `],
-				[/* reference */ 'r', `java.Files#copy(java.nio.file.Path,java.nio.file.Path,java.nio.file.CopyOption...)`],
+				[/* reference */ 'r', `java.nio.file.Files#copy(java.nio.file.Path,java.nio.file.Path,java.nio.file.CopyOption...)`, `Files.copy(Path,Path,CopyOption[])`],
 				[/* text */ 't', ` method
  except that both the source and target paths must be associated with
  this provider.`]
@@ -834,15 +834,15 @@ DocsCollector.collect('java.nio.file.spi.FileSystemProvider', [
 				[/* throw */ 'java.lang.SecurityException', [/* throw description */
 					[/* text */ 't', `In the case of the default provider, and a security manager is
           installed, the `],
-					[/* reference */ 'r', `java.nio.file.SecurityManager#checkRead(java.lang.String)`],
+					[/* reference */ 'r', `java.lang.SecurityManager#checkRead(java.lang.String)`, `checkRead`],
 					[/* text */ 't', `
           method is invoked to check read access to the source file, the
           `],
-					[/* reference */ 'r', `java.nio.file.SecurityManager#checkWrite(java.lang.String)`],
+					[/* reference */ 'r', `java.lang.SecurityManager#checkWrite(java.lang.String)`, `checkWrite`],
 					[/* text */ 't', ` is invoked
           to check write access to the target file. If a symbolic link is
           copied the security manager is invoked to check `],
-					[/* reference */ 'r', `java.nio.file.LinkPermission`],
+					[/* reference */ 'r', `java.nio.file.LinkPermission`, `LinkPermission`],
 					[/* inline code block */ 'i', `("symbolic")`],
 					[/* text */ 't', `.`]
 				]]
@@ -853,7 +853,7 @@ DocsCollector.collect('java.nio.file.spi.FileSystemProvider', [
 			[/* method description */
 				[/* text */ 't', `Creates a new directory. This method works in exactly the manner
  specified by the `],
-				[/* reference */ 'r', `java.Files#createDirectory(java.nio.file.Path,java.nio.file.attribute.FileAttribute...)`],
+				[/* reference */ 'r', `java.nio.file.Files#createDirectory(java.nio.file.Path,java.nio.file.attribute.FileAttribute...)`, `Files.createDirectory(java.nio.file.Path, java.nio.file.attribute.FileAttribute<?>...)`],
 				[/* text */ 't', ` method.`]
 			],
 			[/* parameters */
@@ -881,7 +881,7 @@ DocsCollector.collect('java.nio.file.spi.FileSystemProvider', [
 				[/* throw */ 'java.lang.SecurityException', [/* throw description */
 					[/* text */ 't', `In the case of the default provider, and a security manager is
           installed, the `],
-					[/* reference */ 'r', `java.nio.file.SecurityManager#checkWrite(java.lang.String)`],
+					[/* reference */ 'r', `java.lang.SecurityManager#checkWrite(java.lang.String)`, `checkWrite`],
 					[/* text */ 't', `
           method is invoked to check write access to the new directory.`]
 				]]
@@ -892,7 +892,7 @@ DocsCollector.collect('java.nio.file.spi.FileSystemProvider', [
 			[/* method description */
 				[/* text */ 't', `Deletes a file. This method works in exactly the  manner specified by the
  `],
-				[/* reference */ 'r', `java.Files#delete(java.nio.file.Path)`],
+				[/* reference */ 'r', `java.nio.file.Files#delete(java.nio.file.Path)`, `Files.delete(java.nio.file.Path)`],
 				[/* text */ 't', ` method.`]
 			],
 			[/* parameters */
@@ -917,7 +917,7 @@ DocsCollector.collect('java.nio.file.spi.FileSystemProvider', [
 				[/* throw */ 'java.lang.SecurityException', [/* throw description */
 					[/* text */ 't', `In the case of the default provider, and a security manager is
           installed, the `],
-					[/* reference */ 'r', `java.nio.file.SecurityManager#checkDelete(java.lang.String)`],
+					[/* reference */ 'r', `java.lang.SecurityManager#checkDelete(java.lang.String)`, `SecurityManager.checkDelete(String)`],
 					[/* text */ 't', ` method
           is invoked to check delete access to the file`]
 				]]
@@ -928,7 +928,7 @@ DocsCollector.collect('java.nio.file.spi.FileSystemProvider', [
 			[/* method description */
 				[/* text */ 't', `Move or rename a file to a target file. This method works in exactly the
  manner specified by the `],
-				[/* reference */ 'r', `java.Files#move(java.nio.file.Path,java.nio.file.Path,java.nio.file.CopyOption...)`],
+				[/* reference */ 'r', `java.nio.file.Files#move(java.nio.file.Path,java.nio.file.Path,java.nio.file.CopyOption...)`, `Files.move(java.nio.file.Path, java.nio.file.Path, java.nio.file.CopyOption...)`],
 				[/* text */ 't', ` method except that both the
  source and target paths must be associated with this provider.`]
 			],
@@ -975,7 +975,7 @@ DocsCollector.collect('java.nio.file.spi.FileSystemProvider', [
 				[/* throw */ 'java.lang.SecurityException', [/* throw description */
 					[/* text */ 't', `In the case of the default provider, and a security manager is
           installed, the `],
-					[/* reference */ 'r', `java.nio.file.SecurityManager#checkWrite(java.lang.String)`],
+					[/* reference */ 'r', `java.lang.SecurityManager#checkWrite(java.lang.String)`, `checkWrite`],
 					[/* text */ 't', `
           method is invoked to check write access to both the source and
           target file.`]
@@ -987,7 +987,7 @@ DocsCollector.collect('java.nio.file.spi.FileSystemProvider', [
 			[/* method description */
 				[/* text */ 't', `Sets the value of a file attribute. This method works in exactly the
  manner specified by the `],
-				[/* reference */ 'r', `java.Files#setAttribute(java.nio.file.Path,java.lang.String,java.lang.Object,java.nio.file.LinkOption...)`],
+				[/* reference */ 'r', `java.nio.file.Files#setAttribute(java.nio.file.Path,java.lang.String,java.lang.Object,java.nio.file.LinkOption...)`, `Files.setAttribute(java.nio.file.Path, java.lang.String, java.lang.Object, java.nio.file.LinkOption...)`],
 				[/* text */ 't', ` method.`]
 			],
 			[/* parameters */
@@ -1024,7 +1024,7 @@ DocsCollector.collect('java.nio.file.spi.FileSystemProvider', [
 				[/* throw */ 'java.lang.SecurityException', [/* throw description */
 					[/* text */ 't', `In the case of the default provider, and a security manager is
           installed, its `],
-					[/* reference */ 'r', `java.nio.file.SecurityManager#checkWrite(java.lang.String)`],
+					[/* reference */ 'r', `java.lang.SecurityManager#checkWrite(java.lang.String)`, `checkWrite`],
 					[/* text */ 't', `
           method denies write access to the file. If this method is invoked
           to set security sensitive attributes then the security manager
@@ -1037,7 +1037,7 @@ DocsCollector.collect('java.nio.file.spi.FileSystemProvider', [
 			[/* method description */
 				[/* text */ 't', `Deletes a file if it exists. This method works in exactly the manner
  specified by the `],
-				[/* reference */ 'r', `java.Files#deleteIfExists(java.nio.file.Path)`],
+				[/* reference */ 'r', `java.nio.file.Files#deleteIfExists(java.nio.file.Path)`, `Files.deleteIfExists(java.nio.file.Path)`],
 				[/* text */ 't', ` method.
 
  `],
@@ -1068,7 +1068,7 @@ DocsCollector.collect('java.nio.file.spi.FileSystemProvider', [
 				[/* throw */ 'java.lang.SecurityException', [/* throw description */
 					[/* text */ 't', `In the case of the default provider, and a security manager is
           installed, the `],
-					[/* reference */ 'r', `java.nio.file.SecurityManager#checkDelete(java.lang.String)`],
+					[/* reference */ 'r', `java.lang.SecurityManager#checkDelete(java.lang.String)`, `SecurityManager.checkDelete(String)`],
 					[/* text */ 't', ` method
           is invoked to check delete access to the file`]
 				]]
@@ -1085,7 +1085,7 @@ DocsCollector.collect('java.nio.file.spi.FileSystemProvider', [
 			[/* method description */
 				[/* text */ 't', `Opens a file, returning an input stream to read from the file. This
  method works in exactly the manner specified by the `],
-				[/* reference */ 'r', `java.Files#newInputStream(java.nio.file.Path,java.nio.file.OpenOption...)`],
+				[/* reference */ 'r', `java.nio.file.Files#newInputStream(java.nio.file.Path,java.nio.file.OpenOption...)`, `Files.newInputStream(java.nio.file.Path, java.nio.file.OpenOption...)`],
 				[/* text */ 't', ` method.
 
  `],
@@ -1119,7 +1119,7 @@ DocsCollector.collect('java.nio.file.spi.FileSystemProvider', [
 				[/* throw */ 'java.lang.SecurityException', [/* throw description */
 					[/* text */ 't', `In the case of the default provider, and a security manager is
           installed, the `],
-					[/* reference */ 'r', `java.nio.file.SecurityManager#checkRead(java.lang.String)`],
+					[/* reference */ 'r', `java.lang.SecurityManager#checkRead(java.lang.String)`, `checkRead`],
 					[/* text */ 't', `
           method is invoked to check read access to the file.`]
 				]]
@@ -1133,7 +1133,7 @@ DocsCollector.collect('java.nio.file.spi.FileSystemProvider', [
 				[/* text */ 't', `Opens or creates a file, returning an output stream that may be used to
  write bytes to the file. This method works in exactly the manner
  specified by the `],
-				[/* reference */ 'r', `java.Files#newOutputStream(java.nio.file.Path,java.nio.file.OpenOption...)`],
+				[/* reference */ 'r', `java.nio.file.Files#newOutputStream(java.nio.file.Path,java.nio.file.OpenOption...)`, `Files.newOutputStream(java.nio.file.Path, java.nio.file.OpenOption...)`],
 				[/* text */ 't', ` method.
 
  `],
@@ -1168,7 +1168,7 @@ DocsCollector.collect('java.nio.file.spi.FileSystemProvider', [
 				]],
 				[/* throw */ 'java.nio.file.FileAlreadyExistsException', [/* throw description */
 					[/* text */ 't', `If a file of that name already exists and the `],
-					[/* reference */ 'r', `java.StandardOpenOption#CREATE_NEW`],
+					[/* reference */ 'r', `java.nio.file.StandardOpenOption#CREATE_NEW`, `CREATE_NEW`],
 					[/* text */ 't', ` option is specified
           `],
 					[/* text */ 't', `(optional specific exception)`]
@@ -1176,10 +1176,10 @@ DocsCollector.collect('java.nio.file.spi.FileSystemProvider', [
 				[/* throw */ 'java.lang.SecurityException', [/* throw description */
 					[/* text */ 't', `In the case of the default provider, and a security manager is
           installed, the `],
-					[/* reference */ 'r', `java.nio.file.SecurityManager#checkWrite(java.lang.String)`],
+					[/* reference */ 'r', `java.lang.SecurityManager#checkWrite(java.lang.String)`, `checkWrite`],
 					[/* text */ 't', `
           method is invoked to check write access to the file. The `],
-					[/* reference */ 'r', `java.nio.file.SecurityManager#checkDelete(java.lang.String)`],
+					[/* reference */ 'r', `java.lang.SecurityManager#checkDelete(java.lang.String)`, `checkDelete`],
 					[/* text */ 't', ` method is
           invoked to check delete access if the file is opened with the
           `],
@@ -1196,7 +1196,7 @@ DocsCollector.collect('java.nio.file.spi.FileSystemProvider', [
 				[/* text */ 't', `Opens or creates a file for reading and/or writing, returning an
  asynchronous file channel to access the file. This method works in
  exactly the manner specified by the `],
-				[/* reference */ 'r', `java.nio.AsynchronousFileChannel#open(java.nio.file.Path,java.util.Set,java.util.concurrent.ExecutorService,java.nio.file.attribute.FileAttribute...)`],
+				[/* reference */ 'r', `java.nio.channels.AsynchronousFileChannel#open(java.nio.file.Path,java.util.Set,java.util.concurrent.ExecutorService,java.nio.file.attribute.FileAttribute...)`, `AsynchronousFileChannel.open`],
 				[/* text */ 't', ` method.
  A provider that does not support all the features required to construct
  an asynchronous file channel throws `],
@@ -1237,7 +1237,7 @@ DocsCollector.collect('java.nio.file.spi.FileSystemProvider', [
 				]],
 				[/* throw */ 'java.nio.file.FileAlreadyExistsException', [/* throw description */
 					[/* text */ 't', `If a file of that name already exists and the `],
-					[/* reference */ 'r', `java.StandardOpenOption#CREATE_NEW`],
+					[/* reference */ 'r', `java.nio.file.StandardOpenOption#CREATE_NEW`, `CREATE_NEW`],
 					[/* text */ 't', ` option is specified
           and the file is being opened for writing
           `],
@@ -1248,10 +1248,10 @@ DocsCollector.collect('java.nio.file.spi.FileSystemProvider', [
 				]],
 				[/* throw */ 'java.lang.SecurityException', [/* throw description */
 					[/* text */ 't', `In the case of the default file system, the `],
-					[/* reference */ 'r', `java.nio.file.SecurityManager#checkRead(java.lang.String)`],
+					[/* reference */ 'r', `java.lang.SecurityManager#checkRead(java.lang.String)`, `SecurityManager.checkRead(String)`],
 					[/* text */ 't', ` method is invoked to check
           read access if the file is opened for reading. The `],
-					[/* reference */ 'r', `java.nio.file.SecurityManager#checkWrite(java.lang.String)`],
+					[/* reference */ 'r', `java.lang.SecurityManager#checkWrite(java.lang.String)`, `SecurityManager.checkWrite(String)`],
 					[/* text */ 't', ` method is invoked to check
           write access if the file is opened for writing`]
 				]]
@@ -1265,7 +1265,7 @@ DocsCollector.collect('java.nio.file.spi.FileSystemProvider', [
 				[/* text */ 't', `Opens or creates a file for reading and/or writing, returning a file
  channel to access the file. This method works in exactly the manner
  specified by the `],
-				[/* reference */ 'r', `java.nio.FileChannel#open(java.nio.file.Path,java.util.Set,java.nio.file.attribute.FileAttribute...)`],
+				[/* reference */ 'r', `java.nio.channels.FileChannel#open(java.nio.file.Path,java.util.Set,java.nio.file.attribute.FileAttribute...)`, `FileChannel.open`],
 				[/* text */ 't', ` method. A provider that does not support all the
  features required to construct a file channel throws `],
 				[/* inline code block */ 'i', `UnsupportedOperationException`],
@@ -1297,7 +1297,7 @@ DocsCollector.collect('java.nio.file.spi.FileSystemProvider', [
 				]],
 				[/* throw */ 'java.nio.file.FileAlreadyExistsException', [/* throw description */
 					[/* text */ 't', `If a file of that name already exists and the `],
-					[/* reference */ 'r', `java.StandardOpenOption#CREATE_NEW`],
+					[/* reference */ 'r', `java.nio.file.StandardOpenOption#CREATE_NEW`, `CREATE_NEW`],
 					[/* text */ 't', ` option is specified
           and the file is being opened for writing
           `],
@@ -1308,10 +1308,10 @@ DocsCollector.collect('java.nio.file.spi.FileSystemProvider', [
 				]],
 				[/* throw */ 'java.lang.SecurityException', [/* throw description */
 					[/* text */ 't', `In the case of the default file system, the `],
-					[/* reference */ 'r', `java.nio.file.SecurityManager#checkRead(java.lang.String)`],
+					[/* reference */ 'r', `java.lang.SecurityManager#checkRead(java.lang.String)`, `SecurityManager.checkRead(String)`],
 					[/* text */ 't', ` method is invoked to check
           read access if the file is opened for reading. The `],
-					[/* reference */ 'r', `java.nio.file.SecurityManager#checkWrite(java.lang.String)`],
+					[/* reference */ 'r', `java.lang.SecurityManager#checkWrite(java.lang.String)`, `SecurityManager.checkWrite(String)`],
 					[/* text */ 't', ` method is invoked to check
           write access if the file is opened for writing`]
 				]]
@@ -1386,7 +1386,7 @@ DocsCollector.collect('java.nio.file.spi.FileSystemProvider', [
 			[/* method description */
 				[/* text */ 't', `Reads the target of a symbolic link. This method works in exactly the
  manner specified by the `],
-				[/* reference */ 'r', `java.Files#readSymbolicLink(java.nio.file.Path)`],
+				[/* reference */ 'r', `java.nio.file.Files#readSymbolicLink(java.nio.file.Path)`, `Files.readSymbolicLink(java.nio.file.Path)`],
 				[/* text */ 't', ` method.
 
  `],
@@ -1436,7 +1436,7 @@ DocsCollector.collect('java.nio.file.spi.FileSystemProvider', [
 					[/* text */ 't', ` The first invocation of this method causes the default provider to be
  initialized (if not already initialized) and loads any other installed
  providers as described by the `],
-					[/* reference */ 'r', `java.nio.file.FileSystems`],
+					[/* reference */ 'r', `java.nio.file.FileSystems`, `FileSystems`],
 					[/* text */ 't', ` class.`]
 				]]
 			],
@@ -1456,7 +1456,7 @@ DocsCollector.collect('java.nio.file.spi.FileSystemProvider', [
 			[/* method description */
 				[/* text */ 't', `Creates a new link (directory entry) for an existing file. This method
  works in exactly the manner specified by the `],
-				[/* reference */ 'r', `java.Files#createLink(java.nio.file.Path,java.nio.file.Path)`],
+				[/* reference */ 'r', `java.nio.file.Files#createLink(java.nio.file.Path,java.nio.file.Path)`, `Files.createLink(java.nio.file.Path, java.nio.file.Path)`],
 				[/* text */ 't', `
  method.
 
@@ -1491,11 +1491,11 @@ DocsCollector.collect('java.nio.file.spi.FileSystemProvider', [
 				[/* throw */ 'java.lang.SecurityException', [/* throw description */
 					[/* text */ 't', `In the case of the default provider, and a security manager
           is installed, it denies `],
-					[/* reference */ 'r', `java.nio.file.LinkPermission`],
+					[/* reference */ 'r', `java.nio.file.LinkPermission`, `LinkPermission`],
 					[/* inline code block */ 'i', `("hard")`],
 					[/* text */ 't', `
           or its `],
-					[/* reference */ 'r', `java.nio.file.SecurityManager#checkWrite(java.lang.String)`],
+					[/* reference */ 'r', `java.lang.SecurityManager#checkWrite(java.lang.String)`, `checkWrite`],
 					[/* text */ 't', `
           method denies write access to either the  link or the
           existing file.`]
@@ -1507,7 +1507,7 @@ DocsCollector.collect('java.nio.file.spi.FileSystemProvider', [
 			[/* method description */
 				[/* text */ 't', `Creates a symbolic link to a target. This method works in exactly the
  manner specified by the `],
-				[/* reference */ 'r', `java.Files#createSymbolicLink(java.nio.file.Path,java.nio.file.Path,java.nio.file.attribute.FileAttribute...)`],
+				[/* reference */ 'r', `java.nio.file.Files#createSymbolicLink(java.nio.file.Path,java.nio.file.Path,java.nio.file.attribute.FileAttribute...)`, `Files.createSymbolicLink(java.nio.file.Path, java.nio.file.Path, java.nio.file.attribute.FileAttribute<?>...)`],
 				[/* text */ 't', ` method.
 
  `],
@@ -1546,11 +1546,11 @@ DocsCollector.collect('java.nio.file.spi.FileSystemProvider', [
 				[/* throw */ 'java.lang.SecurityException', [/* throw description */
 					[/* text */ 't', `In the case of the default provider, and a security manager
           is installed, it denies `],
-					[/* reference */ 'r', `java.nio.file.LinkPermission`],
+					[/* reference */ 'r', `java.nio.file.LinkPermission`, `LinkPermission`],
 					[/* inline code block */ 'i', `("symbolic")`],
 					[/* text */ 't', `
           or its `],
-					[/* reference */ 'r', `java.nio.file.SecurityManager#checkWrite(java.lang.String)`],
+					[/* reference */ 'r', `java.lang.SecurityManager#checkWrite(java.lang.String)`, `checkWrite`],
 					[/* text */ 't', `
           method denies write access to the path of the symbolic link.`]
 				]]

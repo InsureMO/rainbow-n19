@@ -49,7 +49,7 @@ DocsCollector.collect('java.util.concurrent.Future', [
 		[/* text */ 't', `
 
  The `],
-		[/* reference */ 'r', `java.util.concurrent.FutureTask`],
+		[/* reference */ 'r', `java.util.concurrent.FutureTask`, `FutureTask`],
 		[/* text */ 't', ` class is an implementation of `],
 		[/* inline code block */ 'i', `Future`],
 		[/* text */ 't', ` that
@@ -70,7 +70,7 @@ DocsCollector.collect('java.util.concurrent.Future', [
 		[/* block */ 'b', [
 			[/* text */ 't', `Memory consistency effects: Actions taken by the asynchronous computation
  `],
-			[/* reference */ 'r', `.package-summary#MemoryVisibility`],
+			[/* text */ 't', `happen-before`],
 			[/* text */ 't', `
  actions following the corresponding `],
 			[/* inline code block */ 'i', `Future.get()`],

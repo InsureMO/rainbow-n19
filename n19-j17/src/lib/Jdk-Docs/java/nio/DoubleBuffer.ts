@@ -68,7 +68,7 @@ DocsCollector.collect('java.nio.DoubleBuffer', [
 			[/* text */ 't', ` an existing
  double array {#if[char]?or string} into a buffer, or by creating a
  `],
-			[/* reference */ 'r', `.ByteBuffer#views`],
+			[/* reference */ 'r', `java.nio.ByteBuffer#views`, `view`],
 			[/* text */ 't', ` of an existing byte buffer.
 
 
@@ -178,7 +178,7 @@ DocsCollector.collect('java.nio.DoubleBuffer', [
 		]],
 		[/* block */ 'b', [
 			[/* text */ 't', ` Like a byte buffer, a double buffer is either `],
-			[/* reference */ 'r', `.ByteBuffer#direct`],
+			[/* reference */ 'r', `java.nio.ByteBuffer#direct`, `direct or non-direct`],
 			[/* text */ 't', `.  A
  double buffer created via the `],
 			[/* inline code block */ 'i', `wrap`],
@@ -258,10 +258,10 @@ DocsCollector.collect('java.nio.DoubleBuffer', [
  wrapping an existing `],
 					[/* inline code block */ 'i', `double`],
 					[/* text */ 't', ` array is the `],
-					[/* reference */ 'r', `.ByteOrder#nativeOrder()`],
+					[/* reference */ 'r', `java.nio.ByteOrder#nativeOrder()`, `native order`],
 					[/* text */ 't', ` of the underlying
  hardware.  The byte order of a double buffer created as a `],
-					[/* reference */ 'r', `.ByteBuffer#views`],
+					[/* reference */ 'r', `java.nio.ByteBuffer#views`, `view`],
 					[/* text */ 't', ` of a byte buffer is that of the
  byte buffer at the moment that the view is created.  `]
 				]]
@@ -522,7 +522,7 @@ DocsCollector.collect('java.nio.DoubleBuffer', [
 					[/* text */ 't', `The position in this buffer at which the content of the new
           buffer will start; must be non-negative and no larger than
           `],
-					[/* reference */ 'r', `.Buffer#limit()`]
+					[/* reference */ 'r', `java.nio.Buffer#limit()`, `limit()`]
 				]],
 				[/* parameter */ 'length', [/* parameter description */
 					[/* text */ 't', `The number of elements the new buffer will contain; must be
@@ -583,7 +583,7 @@ DocsCollector.collect('java.nio.DoubleBuffer', [
 							[/* inline code block */ 'i', `+0.0`],
 							[/* text */ 't', ` are considered to be
    equal, unlike `],
-							[/* reference */ 'r', `java.Double#equals(java.lang.Object)`],
+							[/* reference */ 'r', `java.lang.Double#equals(java.lang.Object)`, `Double.equals(Object)`],
 							[/* text */ 't', `.
 
    `]
@@ -762,7 +762,7 @@ DocsCollector.collect('java.nio.DoubleBuffer', [
 				[/* block */ 'b', ''],
 				[/* block */ 'b', [
 					[/* text */ 't', ` This method is often used in conjunction with the `],
-					[/* reference */ 'r', `.ByteBuffer#compact()`],
+					[/* reference */ 'r', `java.nio.ByteBuffer#compact()`, `compact`],
 					[/* text */ 't', ` method when transferring data from
  one place to another.  `]
 				]]
@@ -911,7 +911,7 @@ DocsCollector.collect('java.nio.DoubleBuffer', [
 					[/* inline code block */ 'i', `double`],
 					[/* text */ 't', ` elements are compared as if by invoking
  `],
-					[/* reference */ 'r', `java.Double#compare(double,double)`],
+					[/* reference */ 'r', `java.lang.Double#compare(double,double)`, `Double.compare(double,double)`],
 					[/* text */ 't', `, except that
  `],
 					[/* inline code block */ 'i', `-0.0`],
@@ -980,10 +980,10 @@ DocsCollector.collect('java.nio.DoubleBuffer', [
 				[/* text */ 't', `Finds and returns the relative index of the first mismatch between this
  buffer and a given buffer.  The index is relative to the
  `],
-				[/* reference */ 'r', `.Buffer#position()`],
+				[/* reference */ 'r', `java.nio.Buffer#position()`, `position`],
 				[/* text */ 't', ` of each buffer and will be in the range of
  0 (inclusive) up to the smaller of the `],
-				[/* reference */ 'r', `.Buffer#remaining()`],
+				[/* reference */ 'r', `java.nio.Buffer#remaining()`, `remaining`],
 				[/* text */ 't', `
  elements in each buffer (exclusive).
 
@@ -1073,7 +1073,7 @@ DocsCollector.collect('java.nio.DoubleBuffer', [
 					[/* inline code block */ 'i', `remaining()`],
 					[/* text */ 't', `, then no
  doubles are transferred and a `],
-					[/* reference */ 'r', `java.nio.BufferUnderflowException`],
+					[/* reference */ 'r', `java.nio.BufferUnderflowException`, `BufferUnderflowException`],
 					[/* text */ 't', ` is
  thrown.
 
@@ -1288,7 +1288,7 @@ DocsCollector.collect('java.nio.DoubleBuffer', [
 					[/* inline code block */ 'i', `remaining()`],
 					[/* text */ 't', `, then no
  doubles are transferred and a `],
-					[/* reference */ 'r', `java.nio.BufferOverflowException`],
+					[/* reference */ 'r', `java.nio.BufferOverflowException`, `BufferOverflowException`],
 					[/* text */ 't', ` is
  thrown.
 
@@ -1596,7 +1596,7 @@ DocsCollector.collect('java.nio.DoubleBuffer', [
 					[/* inline code block */ 'i', `remaining()`],
 					[/* text */ 't', `,
  then no doubles are transferred and a `],
-					[/* reference */ 'r', `java.nio.BufferOverflowException`],
+					[/* reference */ 'r', `java.nio.BufferOverflowException`, `BufferOverflowException`],
 					[/* text */ 't', ` is thrown.
 
  `]
@@ -1669,7 +1669,7 @@ DocsCollector.collect('java.nio.DoubleBuffer', [
 
 
  the `],
-					[/* reference */ 'r', `.ByteOrder#nativeOrder()`],
+					[/* reference */ 'r', `java.nio.ByteOrder#nativeOrder()`, `native order`],
 					[/* text */ 't', ` of the underlying
  hardware.
 
@@ -1714,7 +1714,7 @@ DocsCollector.collect('java.nio.DoubleBuffer', [
 
 
  the `],
-					[/* reference */ 'r', `.ByteOrder#nativeOrder()`],
+					[/* reference */ 'r', `java.nio.ByteOrder#nativeOrder()`, `native order`],
 					[/* text */ 't', ` of the underlying
  hardware.
 
@@ -1758,7 +1758,7 @@ DocsCollector.collect('java.nio.DoubleBuffer', [
 
 
  the `],
-					[/* reference */ 'r', `.ByteOrder#nativeOrder()`],
+					[/* reference */ 'r', `java.nio.ByteOrder#nativeOrder()`, `native order`],
 					[/* text */ 't', ` of the underlying
  hardware.
 

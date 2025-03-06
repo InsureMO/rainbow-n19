@@ -4,12 +4,12 @@ import {DocsCollector} from '../../../DocsCollector';
 DocsCollector.collect('java.lang.constant.DirectMethodHandleDesc', [
 	[/* class description */
 		[/* text */ 't', `A `],
-		[/* reference */ 'r', `.package-summary#nominal`],
+		[/* text */ 't', `nominal descriptor`],
 		[/* text */ 't', ` for a direct
  `],
-		[/* reference */ 'r', `java.lang.invoke.MethodHandle`],
+		[/* reference */ 'r', `java.lang.invoke.MethodHandle`, `MethodHandle`],
 		[/* text */ 't', `.  A `],
-		[/* reference */ 'r', `java.lang.constant.DirectMethodHandleDesc`],
+		[/* reference */ 'r', `java.lang.constant.DirectMethodHandleDesc`, `DirectMethodHandleDesc`],
 		[/* text */ 't', ` corresponds to
  a `],
 		[/* inline code block */ 'i', `Constant_MethodHandle_info`],
@@ -34,7 +34,7 @@ DocsCollector.collect('java.lang.constant.DirectMethodHandleDesc', [
 				[/* inline code block */ 'i', `refKind`],
 				[/* text */ 't', ` of the method handle described by this nominal
  reference, as defined by `],
-				[/* reference */ 'r', `java.lang.invoke.MethodHandleInfo`],
+				[/* reference */ 'r', `java.lang.invoke.MethodHandleInfo`, `MethodHandleInfo`],
 				[/* text */ 't', `.`]
 			],
 			/* parameters */ UDF,
@@ -46,7 +46,7 @@ DocsCollector.collect('java.lang.constant.DirectMethodHandleDesc', [
 		[/* method */ 'owner()', [
 			[/* method description */
 				[/* text */ 't', `Returns a `],
-				[/* reference */ 'r', `java.lang.constant.ClassDesc`],
+				[/* reference */ 'r', `java.lang.constant.ClassDesc`, `ClassDesc`],
 				[/* text */ 't', ` describing the class declaring the
  method or field described by this nominal descriptor.`]
 			],
@@ -67,7 +67,7 @@ DocsCollector.collect('java.lang.constant.DirectMethodHandleDesc', [
 			/* throws */ UDF,
 			[/* return description */
 				[/* text */ 't', `the `],
-				[/* reference */ 'r', `enum class in java.lang.constant.DirectMethodHandleDesc.Kind`]
+				[/* reference */ 'r', `enum class in java.lang.constant.DirectMethodHandleDesc.Kind`, `DirectMethodHandleDesc.Kind`]
 			]
 		]],
 		[/* method */ 'lookupDescriptor()', [
@@ -77,7 +77,7 @@ DocsCollector.collect('java.lang.constant.DirectMethodHandleDesc', [
  a method type descriptor string (for methods and constructors), or a field
  descriptor string (for field access method handles).  The lookup descriptor
  string is in the same format as accepted by `],
-				[/* reference */ 'r', `.MethodHandleDesc#of(java.lang.constant.DirectMethodHandleDesc.Kind,java.lang.constant.ClassDesc,java.lang.String,java.lang.String)`],
+				[/* reference */ 'r', `java.lang.constant.MethodHandleDesc#of(java.lang.constant.DirectMethodHandleDesc.Kind,java.lang.constant.ClassDesc,java.lang.String,java.lang.String)`, `MethodHandleDesc.of(Kind, ClassDesc, String, String)`],
 				[/* text */ 't', `.`]
 			],
 			/* parameters */ UDF,

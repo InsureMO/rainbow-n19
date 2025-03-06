@@ -17,7 +17,7 @@ DocsCollector.collect('java.nio.channels.ScatteringByteChannel', [
  `],
 			[/* text */ 't', `gathering`],
 			[/* text */ 't', ` write operations are defined in the `],
-			[/* reference */ 'r', `java.nio.channels.GatheringByteChannel`],
+			[/* reference */ 'r', `java.nio.channels.GatheringByteChannel`, `GatheringByteChannel`],
 			[/* text */ 't', ` interface.  `]
 		]]
 	],

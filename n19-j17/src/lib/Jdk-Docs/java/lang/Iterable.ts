@@ -26,7 +26,7 @@ DocsCollector.collect('java.lang.Iterable', [
 		[/* method */ 'spliterator()', [
 			[/* method description */
 				[/* text */ 't', `Creates a `],
-				[/* reference */ 'r', `java.util.Spliterator`],
+				[/* reference */ 'r', `java.util.Spliterator`, `Spliterator`],
 				[/* text */ 't', ` over the elements described by this
  `],
 				[/* inline code block */ 'i', `Iterable`],

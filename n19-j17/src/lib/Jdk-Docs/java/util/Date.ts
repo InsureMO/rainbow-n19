@@ -1059,7 +1059,7 @@ DocsCollector.collect('java.util.Date', [
      years from 0 to 18 are assumed to mean 2000 to 2018.  Note
      that this is slightly different from the interpretation of
      years less than 100 that is used in `],
-						[/* reference */ 'r', `java.text.SimpleDateFormat`],
+						[/* reference */ 'r', `java.text.SimpleDateFormat`, `SimpleDateFormat`],
 						[/* text */ 't', `.
  `]
 					]],

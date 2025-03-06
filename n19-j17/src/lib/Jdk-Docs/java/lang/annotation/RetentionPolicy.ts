@@ -6,7 +6,7 @@ DocsCollector.collect('java.lang.annotation.RetentionPolicy', [
 		[/* text */ 't', `Annotation retention policy.  The constants of this enumerated class
  describe the various policies for retaining annotations.  They are used
  in conjunction with the `],
-		[/* reference */ 'r', `annotation interface in java.lang.annotation.Retention`],
+		[/* reference */ 'r', `annotation interface in java.lang.annotation.Retention`, `Retention`],
 		[/* text */ 't', ` meta-annotation interface to
  specify how long annotations are to be retained.`]
 	],

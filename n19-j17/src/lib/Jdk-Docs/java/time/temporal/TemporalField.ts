@@ -12,14 +12,14 @@ DocsCollector.collect('java.time.temporal.TemporalField', [
 		[/* block */ 'b', [
 			[/* text */ 't', `
  The most commonly used units are defined in `],
-			[/* reference */ 'r', `enum class in java.time.temporal.ChronoField`],
+			[/* reference */ 'r', `enum class in java.time.temporal.ChronoField`, `ChronoField`],
 			[/* text */ 't', `.
  Further fields are supplied in `],
-			[/* reference */ 'r', `java.time.temporal.IsoFields`],
+			[/* reference */ 'r', `java.time.temporal.IsoFields`, `IsoFields`],
 			[/* text */ 't', `, `],
-			[/* reference */ 'r', `java.time.temporal.WeekFields`],
+			[/* reference */ 'r', `java.time.temporal.WeekFields`, `WeekFields`],
 			[/* text */ 't', ` and `],
-			[/* reference */ 'r', `java.time.temporal.JulianFields`],
+			[/* reference */ 'r', `java.time.temporal.JulianFields`, `JulianFields`],
 			[/* text */ 't', `.
  Fields can also be written by application code by implementing this interface.
  `]
@@ -65,7 +65,7 @@ DocsCollector.collect('java.time.temporal.TemporalField', [
  There are two equivalent ways of using this method.
  The first is to invoke this method directly.
  The second is to use `],
-					[/* reference */ 'r', `.Temporal#with(java.time.temporal.TemporalField,long)`],
+					[/* reference */ 'r', `java.time.temporal.Temporal#with(java.time.temporal.TemporalField,long)`, `Temporal.with(TemporalField, long)`],
 					[/* text */ 't', `:
  `]
 				]],
@@ -84,7 +84,7 @@ DocsCollector.collect('java.time.temporal.TemporalField', [
 					[/* text */ 't', `
  Implementations should perform any queries or calculations using the fields
  available in `],
-					[/* reference */ 'r', `enum class in java.time.temporal.ChronoField`],
+					[/* reference */ 'r', `enum class in java.time.temporal.ChronoField`, `ChronoField`],
 					[/* text */ 't', `.
  If the field is not supported an `],
 					[/* inline code block */ 'i', `UnsupportedTemporalTypeException`],
@@ -127,7 +127,7 @@ DocsCollector.collect('java.time.temporal.TemporalField', [
 					[/* text */ 't', `
  A field is date-based if it can be derived from
  `],
-					[/* reference */ 'r', `.ChronoField#EPOCH_DAY`],
+					[/* reference */ 'r', `java.time.temporal.ChronoField#EPOCH_DAY`, `EPOCH_DAY`],
 					[/* text */ 't', `.
  Note that it is valid for both `],
 					[/* inline code block */ 'i', `isDateBased()`],
@@ -156,7 +156,7 @@ DocsCollector.collect('java.time.temporal.TemporalField', [
  There are two equivalent ways of using this method.
  The first is to invoke this method directly.
  The second is to use `],
-					[/* reference */ 'r', `.TemporalAccessor#isSupported(java.time.temporal.TemporalField)`],
+					[/* reference */ 'r', `java.time.temporal.TemporalAccessor#isSupported(java.time.temporal.TemporalField)`, `TemporalAccessor.isSupported(TemporalField)`],
 					[/* text */ 't', `:
  `]
 				]],
@@ -175,7 +175,7 @@ DocsCollector.collect('java.time.temporal.TemporalField', [
 					[/* text */ 't', `
  Implementations should determine whether they are supported using the fields
  available in `],
-					[/* reference */ 'r', `enum class in java.time.temporal.ChronoField`],
+					[/* reference */ 'r', `enum class in java.time.temporal.ChronoField`, `ChronoField`],
 					[/* text */ 't', `.`]
 				]]
 			],
@@ -197,7 +197,7 @@ DocsCollector.collect('java.time.temporal.TemporalField', [
 					[/* text */ 't', `
  A field is time-based if it can be derived from
  `],
-					[/* reference */ 'r', `.ChronoField#NANO_OF_DAY`],
+					[/* reference */ 'r', `java.time.temporal.ChronoField#NANO_OF_DAY`, `NANO_OF_DAY`],
 					[/* text */ 't', `.
  Note that it is valid for both `],
 					[/* inline code block */ 'i', `isDateBased()`],
@@ -324,7 +324,7 @@ DocsCollector.collect('java.time.temporal.TemporalField', [
  There are two equivalent ways of using this method.
  The first is to invoke this method directly.
  The second is to use `],
-					[/* reference */ 'r', `.TemporalAccessor#range(java.time.temporal.TemporalField)`],
+					[/* reference */ 'r', `java.time.temporal.TemporalAccessor#range(java.time.temporal.TemporalField)`, `TemporalAccessor.range(TemporalField)`],
 					[/* text */ 't', `:
  `]
 				]],
@@ -343,7 +343,7 @@ DocsCollector.collect('java.time.temporal.TemporalField', [
 					[/* text */ 't', `
  Implementations should perform any queries or calculations using the fields
  available in `],
-					[/* reference */ 'r', `enum class in java.time.temporal.ChronoField`],
+					[/* reference */ 'r', `enum class in java.time.temporal.ChronoField`, `ChronoField`],
 					[/* text */ 't', `.
  If the field is not supported an `],
 					[/* inline code block */ 'i', `UnsupportedTemporalTypeException`],
@@ -379,10 +379,10 @@ DocsCollector.collect('java.time.temporal.TemporalField', [
  There are two equivalent ways of using this method.
  The first is to invoke this method directly.
  The second is to use `],
-					[/* reference */ 'r', `.TemporalAccessor#getLong(java.time.temporal.TemporalField)`],
+					[/* reference */ 'r', `java.time.temporal.TemporalAccessor#getLong(java.time.temporal.TemporalField)`, `TemporalAccessor.getLong(TemporalField)`],
 					[/* text */ 't', `
  (or `],
-					[/* reference */ 'r', `.TemporalAccessor#get(java.time.temporal.TemporalField)`],
+					[/* reference */ 'r', `java.time.temporal.TemporalAccessor#get(java.time.temporal.TemporalField)`, `TemporalAccessor.get(TemporalField)`],
 					[/* text */ 't', `):
  `]
 				]],
@@ -401,7 +401,7 @@ DocsCollector.collect('java.time.temporal.TemporalField', [
 					[/* text */ 't', `
  Implementations should perform any queries or calculations using the fields
  available in `],
-					[/* reference */ 'r', `enum class in java.time.temporal.ChronoField`],
+					[/* reference */ 'r', `enum class in java.time.temporal.ChronoField`, `ChronoField`],
 					[/* text */ 't', `.
  If the field is not supported an `],
 					[/* inline code block */ 'i', `UnsupportedTemporalTypeException`],

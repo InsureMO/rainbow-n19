@@ -7,7 +7,7 @@ DocsCollector.collect('java.nio.charset.CharsetEncoder', [
  bytes in a specific charset.
 
  `],
-		[/* text */ 't', ``],
+		[/* anchor */ 'r', '#-id', `steps`, ``],
 		[/* block */ 'b', [
 			[/* text */ 't', ` The input character sequence is provided in a character buffer or a series
  of such buffers.  The output byte sequence is written to a byte buffer
@@ -74,14 +74,14 @@ DocsCollector.collect('java.nio.charset.CharsetEncoder', [
 		[/* text */ 't', ` method returns when more
  input is required, when there is not enough room in the output buffer, or
  when an encoding error has occurred.  In each case a `],
-		[/* reference */ 'r', `java.nio.charset.CoderResult`],
+		[/* reference */ 'r', `java.nio.charset.CoderResult`, `CoderResult`],
 		[/* text */ 't', `
  object is returned to describe the reason for termination.  An invoker can
  examine this object and fill the input buffer, flush the output buffer, or
  attempt to recover from an encoding error, as appropriate, and try again.
 
  `],
-		[/* text */ 't', ``],
+		[/* anchor */ 'r', '#-id', `ce`, ``],
 		[/* block */ 'b', ''],
 		[/* block */ 'b', [
 			[/* text */ 't', ` There are two general types of encoding errors.  If the input character
@@ -94,21 +94,21 @@ DocsCollector.collect('java.nio.charset.CharsetEncoder', [
 			[/* text */ 't', ` has been encountered.
 
  `],
-			[/* text */ 't', ``]
+			[/* anchor */ 'r', '#-id', `cae`, ``]
 		]],
 		[/* block */ 'b', [
 			[/* text */ 't', ` How an encoding error is handled depends upon the action requested for
  that type of error, which is described by an instance of the `],
-			[/* reference */ 'r', `java.nio.charset.CodingErrorAction`],
+			[/* reference */ 'r', `java.nio.charset.CodingErrorAction`, `CodingErrorAction`],
 			[/* text */ 't', ` class.  The possible error actions are to `],
-			[/* reference */ 'r', `.CodingErrorAction#IGNORE`],
+			[/* reference */ 'r', `java.nio.charset.CodingErrorAction#IGNORE`, `ignore`],
 			[/* text */ 't', ` the erroneous input, `],
-			[/* reference */ 'r', `.CodingErrorAction#REPORT`],
+			[/* reference */ 'r', `java.nio.charset.CodingErrorAction#REPORT`, `report`],
 			[/* text */ 't', ` the error to the invoker via
  the returned `],
-			[/* reference */ 'r', `java.nio.charset.CoderResult`],
+			[/* reference */ 'r', `java.nio.charset.CoderResult`, `CoderResult`],
 			[/* text */ 't', ` object, or `],
-			[/* reference */ 'r', `.CodingErrorAction#REPLACE`],
+			[/* reference */ 'r', `java.nio.charset.CodingErrorAction#REPLACE`, `replace`],
 			[/* text */ 't', ` the erroneous input with the current value of the
  replacement byte array.  The replacement
 
@@ -135,7 +135,7 @@ DocsCollector.collect('java.nio.charset.CharsetEncoder', [
 		[/* block */ 'b', [
 			[/* text */ 't', ` The default action for malformed-input and unmappable-character errors
  is to `],
-			[/* reference */ 'r', `.CodingErrorAction#REPORT`],
+			[/* reference */ 'r', `java.nio.charset.CodingErrorAction#REPORT`, `report`],
 			[/* text */ 't', ` them.  The
  malformed-input error action may be changed via the `],
 			[/* reference */ 'r', `#onMalformedInput(java.nio.charset.CodingErrorAction)`, `onMalformedInput`],
@@ -252,10 +252,10 @@ DocsCollector.collect('java.nio.charset.CharsetEncoder', [
 				[/* block */ 'b', [
 					[/* text */ 't', ` The buffers are read from, and written to, starting at their current
  positions.  At most `],
-					[/* reference */ 'r', `java.Buffer#remaining()`],
+					[/* reference */ 'r', `java.nio.Buffer#remaining()`, `in.remaining()`],
 					[/* text */ 't', ` characters
  will be read, and at most `],
-					[/* reference */ 'r', `java.Buffer#remaining()`],
+					[/* reference */ 'r', `java.nio.Buffer#remaining()`, `out.remaining()`],
 					[/* text */ 't', `
  bytes will be written.  The buffers' positions will be advanced to
  reflect the characters read and the bytes written, but their marks and
@@ -265,7 +265,7 @@ DocsCollector.collect('java.nio.charset.CharsetEncoder', [
 				]],
 				[/* block */ 'b', [
 					[/* text */ 't', ` This method returns a `],
-					[/* reference */ 'r', `java.nio.charset.CoderResult`],
+					[/* reference */ 'r', `java.nio.charset.CoderResult`, `CoderResult`],
 					[/* text */ 't', ` object to describe its
  reason for termination, in the same manner as the `],
 					[/* reference */ 'r', `#encode(java.nio.CharBuffer,java.nio.ByteBuffer,boolean)`, `encode`],
@@ -282,7 +282,7 @@ DocsCollector.collect('java.nio.charset.CharsetEncoder', [
 				[/* block */ 'b', [
 					[/* text */ 't', ` An implementation of this method may perform arbitrary lookahead by
  returning `],
-					[/* reference */ 'r', `.CoderResult#UNDERFLOW`],
+					[/* reference */ 'r', `java.nio.charset.CoderResult#UNDERFLOW`, `CoderResult.UNDERFLOW`],
 					[/* text */ 't', ` until it receives sufficient
  input.  `]
 				]]
@@ -308,7 +308,7 @@ DocsCollector.collect('java.nio.charset.CharsetEncoder', [
 				[/* block */ 'b', [
 					[/* text */ 't', ` The default implementation of this method does nothing, and always
  returns `],
-					[/* reference */ 'r', `.CoderResult#UNDERFLOW`],
+					[/* reference */ 'r', `java.nio.charset.CoderResult#UNDERFLOW`, `CoderResult.UNDERFLOW`],
 					[/* text */ 't', `.  This method should be overridden
  by encoders that may need to write final bytes to the output buffer
  once the entire input sequence has been read. `]
@@ -322,10 +322,10 @@ DocsCollector.collect('java.nio.charset.CharsetEncoder', [
 			/* throws */ UDF,
 			[/* return description */
 				[/* text */ 't', `A coder-result object, either `],
-				[/* reference */ 'r', `.CoderResult#UNDERFLOW`],
+				[/* reference */ 'r', `java.nio.charset.CoderResult#UNDERFLOW`, `CoderResult.UNDERFLOW`],
 				[/* text */ 't', ` or
           `],
-				[/* reference */ 'r', `.CoderResult#OVERFLOW`]
+				[/* reference */ 'r', `java.nio.charset.CoderResult#OVERFLOW`, `CoderResult.OVERFLOW`]
 			]
 		]],
 		[/* method */ 'implOnMalformedInput(java.nio.charset.CodingErrorAction)', [
@@ -574,13 +574,13 @@ DocsCollector.collect('java.nio.charset.CharsetEncoder', [
 					[/* text */ 't', `If the character sequence starting at the input buffer's current
           position is not a legal sixteen-bit Unicode sequence and the current malformed-input action
           is `],
-					[/* reference */ 'r', `.CodingErrorAction#REPORT`]
+					[/* reference */ 'r', `java.nio.charset.CodingErrorAction#REPORT`, `CodingErrorAction.REPORT`]
 				]],
 				[/* throw */ 'java.nio.charset.UnmappableCharacterException', [/* throw description */
 					[/* text */ 't', `If the character sequence starting at the input buffer's current
           position cannot be mapped to an equivalent byte sequence and
           the current unmappable-character action is `],
-					[/* reference */ 'r', `.CodingErrorAction#REPORT`]
+					[/* reference */ 'r', `java.nio.charset.CodingErrorAction#REPORT`, `CodingErrorAction.REPORT`]
 				]],
 				[/* throw */ 'java.nio.charset.CharacterCodingException', UDF]
 			],
@@ -721,10 +721,10 @@ DocsCollector.collect('java.nio.charset.CharsetEncoder', [
 				[/* block */ 'b', [
 					[/* text */ 't', ` The buffers are read from, and written to, starting at their current
  positions.  At most `],
-					[/* reference */ 'r', `java.Buffer#remaining()`],
+					[/* reference */ 'r', `java.nio.Buffer#remaining()`, `in.remaining()`],
 					[/* text */ 't', ` characters
  will be read and at most `],
-					[/* reference */ 'r', `java.Buffer#remaining()`],
+					[/* reference */ 'r', `java.nio.Buffer#remaining()`, `out.remaining()`],
 					[/* text */ 't', `
  bytes will be written.  The buffers' positions will be advanced to
  reflect the characters read and the bytes written, but their marks and
@@ -735,7 +735,7 @@ DocsCollector.collect('java.nio.charset.CharsetEncoder', [
 				[/* block */ 'b', [
 					[/* text */ 't', ` In addition to reading characters from the input buffer and writing
  bytes to the output buffer, this method returns a `],
-					[/* reference */ 'r', `java.nio.charset.CoderResult`],
+					[/* reference */ 'r', `java.nio.charset.CoderResult`, `CoderResult`],
 					[/* text */ 't', `
  object to describe its reason for termination:
 
@@ -744,7 +744,7 @@ DocsCollector.collect('java.nio.charset.CharsetEncoder', [
 				[/* list */ 'l', [
 					[/* block */ 'b', [
 						[/* block */ 'b', [
-							[/* reference */ 'r', `.CoderResult#UNDERFLOW`],
+							[/* reference */ 'r', `java.nio.charset.CoderResult#UNDERFLOW`, `CoderResult.UNDERFLOW`],
 							[/* text */ 't', ` indicates that as much of the
    input buffer as possible has been encoded.  If there is no further
    input then the invoker can proceed to the next step of the
@@ -756,12 +756,12 @@ DocsCollector.collect('java.nio.charset.CharsetEncoder', [
 					]],
 					[/* block */ 'b', [
 						[/* block */ 'b', [
-							[/* reference */ 'r', `.CoderResult#OVERFLOW`],
+							[/* reference */ 'r', `java.nio.charset.CoderResult#OVERFLOW`, `CoderResult.OVERFLOW`],
 							[/* text */ 't', ` indicates that there is
    insufficient space in the output buffer to encode any more characters.
    This method should be invoked again with an output buffer that has
    more `],
-							[/* reference */ 'r', `java.Buffer#remaining()`],
+							[/* reference */ 'r', `java.nio.Buffer#remaining()`, `remaining`],
 							[/* text */ 't', ` bytes. This is
    typically done by draining any encoded bytes from the output
    buffer.  `]
@@ -770,18 +770,18 @@ DocsCollector.collect('java.nio.charset.CharsetEncoder', [
 					[/* block */ 'b', [
 						[/* block */ 'b', [
 							[/* text */ 't', ` A `],
-							[/* reference */ 'r', `.CoderResult#malformedForLength(int)`],
+							[/* reference */ 'r', `java.nio.charset.CoderResult#malformedForLength(int)`, `malformed-input`],
 							[/* text */ 't', ` result indicates that a malformed-input
    error has been detected.  The malformed characters begin at the input
    buffer's (possibly incremented) position; the number of malformed
    characters may be determined by invoking the result object's `],
-							[/* reference */ 'r', `.CoderResult#length()`],
+							[/* reference */ 'r', `java.nio.charset.CoderResult#length()`, `length`],
 							[/* text */ 't', ` method.  This case applies only if the
    `],
 							[/* reference */ 'r', `#onMalformedInput(java.nio.charset.CodingErrorAction)`, `malformed action`],
 							[/* text */ 't', ` of this encoder
    is `],
-							[/* reference */ 'r', `.CodingErrorAction#REPORT`],
+							[/* reference */ 'r', `java.nio.charset.CodingErrorAction#REPORT`, `CodingErrorAction.REPORT`],
 							[/* text */ 't', `; otherwise the malformed input
    will be ignored or replaced, as requested.  `]
 						]]
@@ -789,18 +789,18 @@ DocsCollector.collect('java.nio.charset.CharsetEncoder', [
 					[/* block */ 'b', [
 						[/* block */ 'b', [
 							[/* text */ 't', ` An `],
-							[/* reference */ 'r', `.CoderResult#unmappableForLength(int)`],
+							[/* reference */ 'r', `java.nio.charset.CoderResult#unmappableForLength(int)`, `unmappable-character`],
 							[/* text */ 't', ` result indicates that an
    unmappable-character error has been detected.  The characters that
    encode the unmappable character begin at the input buffer's (possibly
    incremented) position; the number of such characters may be determined
    by invoking the result object's `],
-							[/* reference */ 'r', `.CoderResult#length()`],
+							[/* reference */ 'r', `java.nio.charset.CoderResult#length()`, `length`],
 							[/* text */ 't', `
    method.  This case applies only if the `],
 							[/* reference */ 'r', `#onUnmappableCharacter(java.nio.charset.CodingErrorAction)`, `unmappable action`],
 							[/* text */ 't', ` of this encoder is `],
-							[/* reference */ 'r', `.CodingErrorAction#REPORT`],
+							[/* reference */ 'r', `java.nio.charset.CodingErrorAction#REPORT`, `CodingErrorAction.REPORT`],
 							[/* text */ 't', `; otherwise the unmappable character will be
    ignored or replaced, as requested.  `]
 						]]
@@ -902,7 +902,7 @@ DocsCollector.collect('java.nio.charset.CharsetEncoder', [
 				[/* block */ 'b', [
 					[/* text */ 't', ` Any additional output is written to the output buffer beginning at
  its current position.  At most `],
-					[/* reference */ 'r', `java.Buffer#remaining()`],
+					[/* reference */ 'r', `java.nio.Buffer#remaining()`, `out.remaining()`],
 					[/* text */ 't', `
  bytes will be written.  The buffer's position will be advanced
  appropriately, but its mark and limit will not be modified.
@@ -911,10 +911,10 @@ DocsCollector.collect('java.nio.charset.CharsetEncoder', [
 				]],
 				[/* block */ 'b', [
 					[/* text */ 't', ` If this method completes successfully then it returns `],
-					[/* reference */ 'r', `.CoderResult#UNDERFLOW`],
+					[/* reference */ 'r', `java.nio.charset.CoderResult#UNDERFLOW`, `CoderResult.UNDERFLOW`],
 					[/* text */ 't', `.  If there is insufficient room in the output
  buffer then it returns `],
-					[/* reference */ 'r', `.CoderResult#OVERFLOW`],
+					[/* reference */ 'r', `java.nio.charset.CoderResult#OVERFLOW`, `CoderResult.OVERFLOW`],
 					[/* text */ 't', `.  If this happens
  then this method must be invoked again, with an output buffer that has
  more room, in order to complete the current `],
@@ -958,10 +958,10 @@ DocsCollector.collect('java.nio.charset.CharsetEncoder', [
 			],
 			[/* return description */
 				[/* text */ 't', `A coder-result object, either `],
-				[/* reference */ 'r', `.CoderResult#UNDERFLOW`],
+				[/* reference */ 'r', `java.nio.charset.CoderResult#UNDERFLOW`, `CoderResult.UNDERFLOW`],
 				[/* text */ 't', ` or
           `],
-				[/* reference */ 'r', `.CoderResult#OVERFLOW`]
+				[/* reference */ 'r', `java.nio.charset.CoderResult#OVERFLOW`, `CoderResult.OVERFLOW`]
 			]
 		]],
 		[/* method */ 'malformedInputAction()', [

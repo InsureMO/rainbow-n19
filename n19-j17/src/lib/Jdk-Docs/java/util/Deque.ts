@@ -124,7 +124,7 @@ DocsCollector.collect('java.util.Deque', [
 		[/* block */ 'b', ''],
 		[/* block */ 'b', [
 			[/* text */ 't', `This interface extends the `],
-			[/* reference */ 'r', `java.util.Queue`],
+			[/* reference */ 'r', `java.util.Queue`, `Queue`],
 			[/* text */ 't', ` interface.  When a deque is
  used as a queue, FIFO (First-In-First-Out) behavior results.  Elements are
  added at the end of the deque and removed from the beginning.  The methods
@@ -210,7 +210,7 @@ DocsCollector.collect('java.util.Deque', [
 		[/* block */ 'b', [
 			[/* text */ 't', `Deques can also be used as LIFO (Last-In-First-Out) stacks.  This
  interface should be used in preference to the legacy `],
-			[/* reference */ 'r', `java.util.Stack`],
+			[/* reference */ 'r', `java.util.Stack`, `Stack`],
 			[/* text */ 't', ` class.
  When a deque is used as a stack, elements are pushed and popped from the
  beginning of the deque.  Stack methods are equivalent to `],
@@ -286,7 +286,7 @@ DocsCollector.collect('java.util.Deque', [
 		]],
 		[/* block */ 'b', [
 			[/* text */ 't', `Unlike the `],
-			[/* reference */ 'r', `java.util.List`],
+			[/* reference */ 'r', `java.util.List`, `List`],
 			[/* text */ 't', ` interface, this interface does not
  provide support for indexed access to elements.
 
@@ -385,7 +385,7 @@ DocsCollector.collect('java.util.Deque', [
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` (as specified by `],
-				[/* reference */ 'r', `.Collection#add(E)`],
+				[/* reference */ 'r', `java.util.Collection#add(E)`, `Collection.add(E)`],
 				[/* text */ 't', `)`]
 			]
 		]],
@@ -463,14 +463,14 @@ DocsCollector.collect('java.util.Deque', [
 					[/* text */ 't', `if the class of the specified element
          is incompatible with this deque
  (`],
-					[/* text */ 't', `optional`],
+					[/* reference */ 'r', `java.util.Collection#optional-restrictions`, `optional`],
 					[/* text */ 't', `)`]
 				]],
 				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
 					[/* text */ 't', `if the specified element is null and this
          deque does not permit null elements
  (`],
-					[/* text */ 't', `optional`],
+					[/* reference */ 'r', `java.util.Collection#optional-restrictions`, `optional`],
 					[/* text */ 't', `)`]
 				]]
 			],
@@ -630,14 +630,14 @@ DocsCollector.collect('java.util.Deque', [
 					[/* text */ 't', `if the class of the specified element
          is incompatible with this deque
  (`],
-					[/* text */ 't', `optional`],
+					[/* reference */ 'r', `java.util.Collection#optional-restrictions`, `optional`],
 					[/* text */ 't', `)`]
 				]],
 				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
 					[/* text */ 't', `if the specified element is null and this
          deque does not permit null elements
  (`],
-					[/* text */ 't', `optional`],
+					[/* reference */ 'r', `java.util.Collection#optional-restrictions`, `optional`],
 					[/* text */ 't', `)`]
 				]]
 			],
@@ -671,14 +671,14 @@ DocsCollector.collect('java.util.Deque', [
 					[/* text */ 't', `if the class of the specified element
          is incompatible with this deque
  (`],
-					[/* text */ 't', `optional`],
+					[/* reference */ 'r', `java.util.Collection#optional-restrictions`, `optional`],
 					[/* text */ 't', `)`]
 				]],
 				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
 					[/* text */ 't', `if the specified element is null and this
          deque does not permit null elements
  (`],
-					[/* text */ 't', `optional`],
+					[/* reference */ 'r', `java.util.Collection#optional-restrictions`, `optional`],
 					[/* text */ 't', `)`]
 				]]
 			],
@@ -712,14 +712,14 @@ DocsCollector.collect('java.util.Deque', [
 					[/* text */ 't', `if the class of the specified element
          is incompatible with this deque
  (`],
-					[/* text */ 't', `optional`],
+					[/* reference */ 'r', `java.util.Collection#optional-restrictions`, `optional`],
 					[/* text */ 't', `)`]
 				]],
 				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
 					[/* text */ 't', `if the specified element is null and this
          deque does not permit null elements
  (`],
-					[/* text */ 't', `optional`],
+					[/* reference */ 'r', `java.util.Collection#optional-restrictions`, `optional`],
 					[/* text */ 't', `)`]
 				]]
 			],

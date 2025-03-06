@@ -43,7 +43,7 @@ DocsCollector.collect('java.text.DateFormatSymbols', [
 			[/* inline code block */ 'i', `DateFormat`],
 			[/* text */ 't', `'s factory methods,
  see `],
-			[/* reference */ 'r', `java.text.DateFormat`],
+			[/* reference */ 'r', `java.text.DateFormat`, `DateFormat`],
 			[/* text */ 't', `.
 
  `]
@@ -60,7 +60,7 @@ DocsCollector.collect('java.text.DateFormatSymbols', [
 		[/* block */ 'b', [
 			[/* text */ 't', `If the locale contains "rg" (region override)
  `],
-			[/* reference */ 'r', `java.Locale#def_locale_extension`],
+			[/* reference */ 'r', `java.util.Locale#def_locale_extension`, `Unicode extension`],
 			[/* text */ 't', `,
  the symbols are overridden for the designated region.
 
@@ -95,13 +95,13 @@ DocsCollector.collect('java.text.DateFormatSymbols', [
 			[/* constructor description */
 				[/* text */ 't', `Construct a DateFormatSymbols object by loading format data from
  resources for the default `],
-				[/* reference */ 'r', `java.Locale.Category#FORMAT`],
+				[/* reference */ 'r', `java.util.Locale.Category#FORMAT`, `FORMAT`],
 				[/* text */ 't', `
  locale. This constructor can only
  construct instances for the locales supported by the Java
  runtime environment, not for those supported by installed
  `],
-				[/* reference */ 'r', `java.text.spi.DateFormatSymbolsProvider`],
+				[/* reference */ 'r', `java.text.spi.DateFormatSymbolsProvider`, `DateFormatSymbolsProvider`],
 				[/* text */ 't', `
  implementations. For full locale coverage, use the
  `],
@@ -130,7 +130,7 @@ DocsCollector.collect('java.text.DateFormatSymbols', [
  construct instances for the locales supported by the Java
  runtime environment, not for those supported by installed
  `],
-				[/* reference */ 'r', `java.text.spi.DateFormatSymbolsProvider`],
+				[/* reference */ 'r', `java.text.spi.DateFormatSymbolsProvider`, `DateFormatSymbolsProvider`],
 				[/* text */ 't', `
  implementations. For full locale coverage, use the
  `],
@@ -225,14 +225,14 @@ DocsCollector.collect('java.text.DateFormatSymbols', [
 				[/* text */ 't', `Gets month strings. For example: "January", "February", etc.
  An array with either 12 or 13 elements will be returned depending
  on whether or not `],
-				[/* reference */ 'r', `java.Calendar#UNDECIMBER`],
+				[/* reference */ 'r', `java.util.Calendar#UNDECIMBER`, `Calendar.UNDECIMBER`],
 				[/* text */ 't', `
  is supported. Use
  `],
-				[/* reference */ 'r', `java.Calendar#JANUARY`],
+				[/* reference */ 'r', `java.util.Calendar#JANUARY`, `Calendar.JANUARY`],
 				[/* text */ 't', `,
  `],
-				[/* reference */ 'r', `java.Calendar#FEBRUARY`],
+				[/* reference */ 'r', `java.util.Calendar#FEBRUARY`, `Calendar.FEBRUARY`],
 				[/* text */ 't', `,
  etc. to index the result array.
 
@@ -266,14 +266,14 @@ DocsCollector.collect('java.text.DateFormatSymbols', [
 				[/* text */ 't', `Gets short month strings. For example: "Jan", "Feb", etc.
  An array with either 12 or 13 elements will be returned depending
  on whether or not `],
-				[/* reference */ 'r', `java.Calendar#UNDECIMBER`],
+				[/* reference */ 'r', `java.util.Calendar#UNDECIMBER`, `Calendar.UNDECIMBER`],
 				[/* text */ 't', `
  is supported. Use
  `],
-				[/* reference */ 'r', `java.Calendar#JANUARY`],
+				[/* reference */ 'r', `java.util.Calendar#JANUARY`, `Calendar.JANUARY`],
 				[/* text */ 't', `,
  `],
-				[/* reference */ 'r', `java.Calendar#FEBRUARY`],
+				[/* reference */ 'r', `java.util.Calendar#FEBRUARY`, `Calendar.FEBRUARY`],
 				[/* text */ 't', `,
  etc. to index the result array.
 
@@ -311,10 +311,10 @@ DocsCollector.collect('java.text.DateFormatSymbols', [
 			[/* return description */
 				[/* text */ 't', `the short weekday strings. Use
  `],
-				[/* reference */ 'r', `java.Calendar#SUNDAY`],
+				[/* reference */ 'r', `java.util.Calendar#SUNDAY`, `Calendar.SUNDAY`],
 				[/* text */ 't', `,
  `],
-				[/* reference */ 'r', `java.Calendar#MONDAY`],
+				[/* reference */ 'r', `java.util.Calendar#MONDAY`, `Calendar.MONDAY`],
 				[/* text */ 't', `, etc. to index
  the result array.`]
 			]
@@ -328,10 +328,10 @@ DocsCollector.collect('java.text.DateFormatSymbols', [
 			[/* return description */
 				[/* text */ 't', `the weekday strings. Use
  `],
-				[/* reference */ 'r', `java.Calendar#SUNDAY`],
+				[/* reference */ 'r', `java.util.Calendar#SUNDAY`, `Calendar.SUNDAY`],
 				[/* text */ 't', `,
  `],
-				[/* reference */ 'r', `java.Calendar#MONDAY`],
+				[/* reference */ 'r', `java.util.Calendar#MONDAY`, `Calendar.MONDAY`],
 				[/* text */ 't', `, etc. to index
  the result array.`]
 			]
@@ -340,7 +340,7 @@ DocsCollector.collect('java.text.DateFormatSymbols', [
 			[/* method description */
 				[/* text */ 't', `Gets time zone strings.  Use of this method is discouraged; use
  `],
-				[/* reference */ 'r', `java.TimeZone#getDisplayName()`],
+				[/* reference */ 'r', `java.util.TimeZone#getDisplayName()`, `TimeZone.getDisplayName()`],
 				[/* text */ 't', `
  instead.
  `],
@@ -399,10 +399,10 @@ DocsCollector.collect('java.text.DateFormatSymbols', [
 				[/* text */ 't', `not`],
 				[/* text */ 't', ` localized; it's one of the valid IDs of
  the `],
-				[/* reference */ 'r', `java.util.TimeZone`],
+				[/* reference */ 'r', `java.util.TimeZone`, `TimeZone`],
 				[/* text */ 't', ` class that are not
  `],
-				[/* reference */ 'r', `java.TimeZone#CustomID`],
+				[/* reference */ 'r', `java.util.TimeZone#CustomID`, `custom IDs`],
 				[/* text */ 't', `.
  All other entries are localized names.  If a zone does not implement
  daylight saving time, the daylight saving time names should not be used.
@@ -419,7 +419,7 @@ DocsCollector.collect('java.text.DateFormatSymbols', [
  provided by that call are returned. Otherwise, the returned array
  contains names provided by the Java runtime and by installed
  `],
-					[/* reference */ 'r', `java.util.spi.TimeZoneNameProvider`],
+					[/* reference */ 'r', `java.util.spi.TimeZoneNameProvider`, `TimeZoneNameProvider`],
 					[/* text */ 't', `
  implementations.`]
 				]]
@@ -441,7 +441,7 @@ DocsCollector.collect('java.text.DateFormatSymbols', [
  instances for locales supported by the Java runtime itself as well
  as for those supported by installed
  `],
-				[/* reference */ 'r', `java.text.spi.DateFormatSymbolsProvider`],
+				[/* reference */ 'r', `java.text.spi.DateFormatSymbolsProvider`, `DateFormatSymbolsProvider`],
 				[/* text */ 't', `
  implementations.
  `],
@@ -470,7 +470,7 @@ DocsCollector.collect('java.text.DateFormatSymbols', [
  instances for locales supported by the Java runtime itself as well
  as for those supported by installed
  `],
-				[/* reference */ 'r', `java.text.spi.DateFormatSymbolsProvider`],
+				[/* reference */ 'r', `java.text.spi.DateFormatSymbolsProvider`, `DateFormatSymbolsProvider`],
 				[/* text */ 't', `
  implementations.`]
 			],
@@ -502,13 +502,13 @@ DocsCollector.collect('java.text.DateFormatSymbols', [
  The returned array represents the union of locales supported by the
  Java runtime and by installed
  `],
-				[/* reference */ 'r', `java.text.spi.DateFormatSymbolsProvider`],
+				[/* reference */ 'r', `java.text.spi.DateFormatSymbolsProvider`, `DateFormatSymbolsProvider`],
 				[/* text */ 't', `
  implementations.  It must contain at least a `],
 				[/* inline code block */ 'i', `Locale`],
 				[/* text */ 't', `
  instance equal to `],
-				[/* reference */ 'r', `java.Locale#US`],
+				[/* reference */ 'r', `java.util.Locale#US`, `Locale.US`],
 				[/* text */ 't', `.`]
 			],
 			/* parameters */ UDF,
@@ -565,10 +565,10 @@ DocsCollector.collect('java.text.DateFormatSymbols', [
 				[/* parameter */ 'newMonths', [/* parameter description */
 					[/* text */ 't', `the new month strings. The array should
  be indexed by `],
-					[/* reference */ 'r', `java.Calendar#JANUARY`],
+					[/* reference */ 'r', `java.util.Calendar#JANUARY`, `Calendar.JANUARY`],
 					[/* text */ 't', `,
  `],
-					[/* reference */ 'r', `java.Calendar#FEBRUARY`],
+					[/* reference */ 'r', `java.util.Calendar#FEBRUARY`, `Calendar.FEBRUARY`],
 					[/* text */ 't', `, etc.`]
 				]]
 			],
@@ -583,10 +583,10 @@ DocsCollector.collect('java.text.DateFormatSymbols', [
 				[/* parameter */ 'newShortMonths', [/* parameter description */
 					[/* text */ 't', `the new short month strings. The array should
  be indexed by `],
-					[/* reference */ 'r', `java.Calendar#JANUARY`],
+					[/* reference */ 'r', `java.util.Calendar#JANUARY`, `Calendar.JANUARY`],
 					[/* text */ 't', `,
  `],
-					[/* reference */ 'r', `java.Calendar#FEBRUARY`],
+					[/* reference */ 'r', `java.util.Calendar#FEBRUARY`, `Calendar.FEBRUARY`],
 					[/* text */ 't', `, etc.`]
 				]]
 			],
@@ -601,10 +601,10 @@ DocsCollector.collect('java.text.DateFormatSymbols', [
 				[/* parameter */ 'newShortWeekdays', [/* parameter description */
 					[/* text */ 't', `the new short weekday strings. The array should
  be indexed by `],
-					[/* reference */ 'r', `java.Calendar#SUNDAY`],
+					[/* reference */ 'r', `java.util.Calendar#SUNDAY`, `Calendar.SUNDAY`],
 					[/* text */ 't', `,
  `],
-					[/* reference */ 'r', `java.Calendar#MONDAY`],
+					[/* reference */ 'r', `java.util.Calendar#MONDAY`, `Calendar.MONDAY`],
 					[/* text */ 't', `, etc.`]
 				]]
 			],
@@ -619,10 +619,10 @@ DocsCollector.collect('java.text.DateFormatSymbols', [
 				[/* parameter */ 'newWeekdays', [/* parameter description */
 					[/* text */ 't', `the new weekday strings. The array should
  be indexed by `],
-					[/* reference */ 'r', `java.Calendar#SUNDAY`],
+					[/* reference */ 'r', `java.util.Calendar#SUNDAY`, `Calendar.SUNDAY`],
 					[/* text */ 't', `,
  `],
-					[/* reference */ 'r', `java.Calendar#MONDAY`],
+					[/* reference */ 'r', `java.util.Calendar#MONDAY`, `Calendar.MONDAY`],
 					[/* text */ 't', `, etc.`]
 				]]
 			],
@@ -683,10 +683,10 @@ DocsCollector.collect('java.text.DateFormatSymbols', [
 				[/* text */ 't', `not`],
 				[/* text */ 't', ` localized; it's one of the valid IDs of
  the `],
-				[/* reference */ 'r', `java.util.TimeZone`],
+				[/* reference */ 'r', `java.util.TimeZone`, `TimeZone`],
 				[/* text */ 't', ` class that are not
  `],
-				[/* reference */ 'r', `java.TimeZone#CustomID`],
+				[/* reference */ 'r', `java.util.TimeZone#CustomID`, `custom IDs`],
 				[/* text */ 't', `.
  All other entries are localized names.`]
 			],

@@ -9,10 +9,10 @@ DocsCollector.collect('java.lang.invoke.MethodType', [
  matched between a method handle and all its callers,
  and the JVM's operations enforce this matching at, specifically
  during calls to `],
-		[/* reference */ 'r', `.MethodHandle#invokeExact(java.lang.Object...)`],
+		[/* reference */ 'r', `java.lang.invoke.MethodHandle#invokeExact(java.lang.Object...)`, `MethodHandle.invokeExact`],
 		[/* text */ 't', `
  and `],
-		[/* reference */ 'r', `.MethodHandle#invoke(java.lang.Object...)`],
+		[/* reference */ 'r', `java.lang.invoke.MethodHandle#invoke(java.lang.Object...)`, `MethodHandle.invoke`],
 		[/* text */ 't', `, and during execution
  of `],
 		[/* inline code block */ 'i', `invokedynamic`],
@@ -24,7 +24,7 @@ DocsCollector.collect('java.lang.invoke.MethodType', [
  The types (primitive, `],
 			[/* inline code block */ 'i', `void`],
 			[/* text */ 't', `, and reference) are represented by `],
-			[/* reference */ 'r', `java.lang.Class`],
+			[/* reference */ 'r', `java.lang.Class`, `Class`],
 			[/* text */ 't', ` objects.
  (For ease of exposition, we treat `],
 			[/* inline code block */ 'i', `void`],
@@ -105,28 +105,28 @@ DocsCollector.collect('java.lang.invoke.MethodType', [
  `]
 		]],
 		[/* block */ 'b', [
-			[/* text */ 't', `Nominal Descriptors`]
+			[/* anchor */ 'r', '#-id', `descriptor`, `Nominal Descriptors`]
 		]],
 		[/* block */ 'b', [
 			[/* text */ 't', `
  A `],
 			[/* inline code block */ 'i', `MethodType`],
 			[/* text */ 't', ` can be described in `],
-			[/* reference */ 'r', `java.lang.constant.MethodTypeDesc`],
+			[/* reference */ 'r', `java.lang.constant.MethodTypeDesc`, `nominal form`],
 			[/* text */ 't', `
  if and only if all of the parameter types and return type can be described
  with a `],
-			[/* reference */ 'r', `java.Class#describeConstable()`],
+			[/* reference */ 'r', `java.lang.Class#describeConstable()`, `nominal descriptor`],
 			[/* text */ 't', ` represented by
  `],
-			[/* reference */ 'r', `java.lang.constant.ClassDesc`],
+			[/* reference */ 'r', `java.lang.constant.ClassDesc`, `ClassDesc`],
 			[/* text */ 't', `.  If a method type can be described nominally, then:
  `]
 		]],
 		[/* list */ 'l', [
 			[/* block */ 'b', [
 				[/* text */ 't', `The method type has a `],
-				[/* reference */ 'r', `java.lang.constant.MethodTypeDesc`],
+				[/* reference */ 'r', `java.lang.constant.MethodTypeDesc`, `nominal descriptor`],
 				[/* text */ 't', `
      returned by `],
 				[/* reference */ 'r', `#describeConstable()`, `MethodType::describeConstable`],
@@ -150,7 +150,7 @@ DocsCollector.collect('java.lang.invoke.MethodType', [
 			[/* text */ 't', `
  If any of the parameter types or return type cannot be described
  nominally, i.e. `],
-			[/* reference */ 'r', `java.Class#describeConstable()`],
+			[/* reference */ 'r', `java.lang.Class#describeConstable()`, `Class::describeConstable`],
 			[/* text */ 't', `
  returns an empty optional for that type,
  then the method type cannot be described nominally:
@@ -159,7 +159,7 @@ DocsCollector.collect('java.lang.invoke.MethodType', [
 		[/* list */ 'l', [
 			[/* block */ 'b', [
 				[/* text */ 't', `The method type has no `],
-				[/* reference */ 'r', `java.lang.constant.MethodTypeDesc`],
+				[/* reference */ 'r', `java.lang.constant.MethodTypeDesc`, `nominal descriptor`],
 				[/* text */ 't', ` and
      `],
 				[/* reference */ 'r', `#describeConstable()`, `MethodType::describeConstable`],
@@ -221,7 +221,7 @@ DocsCollector.collect('java.lang.invoke.MethodType', [
 			[/* method description */
 				[/* text */ 't', `Reports if this type contains a wrapper argument or return value.
  Wrappers are types which box primitive values, such as `],
-				[/* reference */ 'r', `java.lang.Integer`],
+				[/* reference */ 'r', `java.lang.Integer`, `Integer`],
 				[/* text */ 't', `.
  The reference type `],
 				[/* inline code block */ 'i', `java.lang.Void`],
@@ -655,10 +655,10 @@ DocsCollector.collect('java.lang.invoke.MethodType', [
 					[/* external link */ 'a', `https://docs.oracle.com/javase/specs/jvms/se17/html/jvms-4.html#jvms-4.3.3`, `4.3.3`],
 					[/* text */ 't', `).
  `],
-					[/* reference */ 'r', `java.lang.constant.MethodTypeDesc`],
+					[/* reference */ 'r', `java.lang.constant.MethodTypeDesc`, `MethodTypeDesc`],
 					[/* text */ 't', ` for this method type
  can be produced by calling `],
-					[/* reference */ 'r', `java.MethodTypeDesc#ofDescriptor(java.lang.String)`],
+					[/* reference */ 'r', `java.lang.constant.MethodTypeDesc#ofDescriptor(java.lang.String)`, `MethodTypeDesc::ofDescriptor`],
 					[/* text */ 't', ` with the result descriptor string.
  `]
 				]],
@@ -678,13 +678,13 @@ DocsCollector.collect('java.lang.invoke.MethodType', [
 				[/* inline code block */ 'i', `<parameter-descriptors>`],
 				[/* text */ 't', ` is the concatenation of the
  `],
-				[/* reference */ 'r', `java.Class#descriptorString()`],
+				[/* reference */ 'r', `java.lang.Class#descriptorString()`, `descriptor string`],
 				[/* text */ 't', ` of all
  of the parameter types and the `],
-				[/* reference */ 'r', `java.Class#descriptorString()`],
+				[/* reference */ 'r', `java.lang.Class#descriptorString()`, `descriptor string`],
 				[/* text */ 't', `
  of the return type. No `],
-				[/* reference */ 'r', `java.lang.constant.MethodTypeDesc`],
+				[/* reference */ 'r', `java.lang.constant.MethodTypeDesc`, `MethodTypeDesc`],
 				[/* text */ 't', `
  can be produced from the result string.`],
 				[/* block */ 'b', '']
@@ -744,7 +744,7 @@ DocsCollector.collect('java.lang.invoke.MethodType', [
 					[/* text */ 't', `
  Each type is represented by its
  `],
-					[/* reference */ 'r', `java.Class#getSimpleName()`],
+					[/* reference */ 'r', `java.lang.Class#getSimpleName()`, `simple name`],
 					[/* text */ 't', `.`]
 				]]
 			],
@@ -769,17 +769,17 @@ DocsCollector.collect('java.lang.invoke.MethodType', [
 			[/* method description */
 				[/* text */ 't', `Returns a nominal descriptor for this instance, if one can be
  constructed, or an empty `],
-				[/* reference */ 'r', `java.util.Optional`],
+				[/* reference */ 'r', `java.util.Optional`, `Optional`],
 				[/* text */ 't', ` if one cannot be.`]
 			],
 			/* parameters */ UDF,
 			/* throws */ UDF,
 			[/* return description */
 				[/* text */ 't', `An `],
-				[/* reference */ 'r', `java.util.Optional`],
+				[/* reference */ 'r', `java.util.Optional`, `Optional`],
 				[/* text */ 't', ` containing the resulting nominal descriptor,
  or an empty `],
-				[/* reference */ 'r', `java.util.Optional`],
+				[/* reference */ 'r', `java.util.Optional`, `Optional`],
 				[/* text */ 't', ` if one cannot be constructed.`]
 			]
 		]],
@@ -831,7 +831,7 @@ DocsCollector.collect('java.lang.invoke.MethodType', [
 					[/* inline code block */ 'i', `null`],
 					[/* text */ 't', ` and the caller does not have the
          `],
-					[/* reference */ 'r', `java.lang.RuntimePermission`],
+					[/* reference */ 'r', `java.lang.RuntimePermission`, `RuntimePermission`],
 					[/* inline code block */ 'i', `("getClassLoader")`]
 				]]
 			],

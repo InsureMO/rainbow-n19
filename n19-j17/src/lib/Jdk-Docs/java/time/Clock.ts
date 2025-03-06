@@ -13,10 +13,10 @@ DocsCollector.collect('java.time.Clock', [
  For example, `],
 			[/* inline code block */ 'i', `Clock`],
 			[/* text */ 't', ` can be used instead of `],
-			[/* reference */ 'r', `java.System#currentTimeMillis()`],
+			[/* reference */ 'r', `java.lang.System#currentTimeMillis()`, `System.currentTimeMillis()`],
 			[/* text */ 't', `
  and `],
-			[/* reference */ 'r', `java.TimeZone#getDefault()`],
+			[/* reference */ 'r', `java.util.TimeZone#getDefault()`, `TimeZone.getDefault()`],
 			[/* text */ 't', `.
  `]
 		]],
@@ -72,7 +72,7 @@ DocsCollector.collect('java.time.Clock', [
 			[/* inline code block */ 'i', `system`],
 			[/* text */ 't', ` factory methods provide clocks based on the best available
  system clock. This may use `],
-			[/* reference */ 'r', `java.System#currentTimeMillis()`],
+			[/* reference */ 'r', `java.lang.System#currentTimeMillis()`, `System.currentTimeMillis()`],
 			[/* text */ 't', `, or a higher
  resolution clock if one is available.`]
 		]]
@@ -146,10 +146,10 @@ DocsCollector.collect('java.time.Clock', [
 					[/* text */ 't', `
  Clocks should override this method to compare equals based on
  their state and to meet the contract of `],
-					[/* reference */ 'r', `java.Object#equals(java.lang.Object)`],
+					[/* reference */ 'r', `java.lang.Object#equals(java.lang.Object)`, `Object.equals(java.lang.Object)`],
 					[/* text */ 't', `.
  If not overridden, the behavior is defined by `],
-					[/* reference */ 'r', `java.Object#equals(java.lang.Object)`]
+					[/* reference */ 'r', `java.lang.Object#equals(java.lang.Object)`, `Object.equals(java.lang.Object)`]
 				]]
 			],
 			[/* parameters */
@@ -170,10 +170,10 @@ DocsCollector.collect('java.time.Clock', [
 					[/* text */ 't', `
  Clocks should override this method based on
  their state and to meet the contract of `],
-					[/* reference */ 'r', `java.Object#hashCode()`],
+					[/* reference */ 'r', `java.lang.Object#hashCode()`, `Object.hashCode()`],
 					[/* text */ 't', `.
  If not overridden, the behavior is defined by `],
-					[/* reference */ 'r', `java.Object#hashCode()`]
+					[/* reference */ 'r', `java.lang.Object#hashCode()`, `Object.hashCode()`]
 				]]
 			],
 			/* parameters */ UDF,
@@ -190,14 +190,14 @@ DocsCollector.collect('java.time.Clock', [
 					[/* text */ 't', `
  This returns the millisecond-based instant, measured from 1970-01-01T00:00Z (UTC).
  This is equivalent to the definition of `],
-					[/* reference */ 'r', `java.System#currentTimeMillis()`],
+					[/* reference */ 'r', `java.lang.System#currentTimeMillis()`, `System.currentTimeMillis()`],
 					[/* text */ 't', `.
  `]
 				]],
 				[/* block */ 'b', [
 					[/* text */ 't', `
  Most applications should avoid this method and use `],
-					[/* reference */ 'r', `java.time.Instant`],
+					[/* reference */ 'r', `java.time.Instant`, `Instant`],
 					[/* text */ 't', ` to represent
  an instant on the time-line rather than a raw millisecond value.
  This method is provided to allow the use of the clock in high performance use cases
@@ -297,7 +297,7 @@ DocsCollector.collect('java.time.Clock', [
 					[/* text */ 't', `
  This clock is based on the best available system clock.
  This may use `],
-					[/* reference */ 'r', `java.System#currentTimeMillis()`],
+					[/* reference */ 'r', `java.lang.System#currentTimeMillis()`, `System.currentTimeMillis()`],
 					[/* text */ 't', `, or a higher resolution
  clock if one is available.
  `]
@@ -331,7 +331,7 @@ DocsCollector.collect('java.time.Clock', [
 					[/* text */ 't', `
  This clock is based on the best available system clock.
  This may use `],
-					[/* reference */ 'r', `java.System#currentTimeMillis()`],
+					[/* reference */ 'r', `java.lang.System#currentTimeMillis()`, `System.currentTimeMillis()`],
 					[/* text */ 't', `, or a higher resolution
  clock if one is available.
  `]
@@ -379,7 +379,7 @@ DocsCollector.collect('java.time.Clock', [
 					[/* text */ 't', `
  This clock is based on the best available system clock.
  This may use `],
-					[/* reference */ 'r', `java.System#currentTimeMillis()`],
+					[/* reference */ 'r', `java.lang.System#currentTimeMillis()`, `System.currentTimeMillis()`],
 					[/* text */ 't', `, or a higher resolution
  clock if one is available.
  `]
@@ -387,7 +387,7 @@ DocsCollector.collect('java.time.Clock', [
 				[/* block */ 'b', [
 					[/* text */ 't', `
  Conversion from instant to date or time uses the `],
-					[/* reference */ 'r', `.ZoneOffset#UTC`],
+					[/* reference */ 'r', `java.time.ZoneOffset#UTC`, `UTC time-zone`],
 					[/* text */ 't', `.
  `]
 				]],

@@ -4,10 +4,10 @@ import {DocsCollector} from '../../../DocsCollector';
 DocsCollector.collect('java.lang.module.Configuration', [
 	[/* class description */
 		[/* text */ 't', `A configuration that is the result of `],
-		[/* reference */ 'r', `.package-summary#resolution`],
+		[/* text */ 't', `resolution`],
 		[/* text */ 't', ` or resolution with
  `],
-		[/* text */ 't', `service binding`],
+		[/* reference */ 'r', `java.lang.module.Configuration#service-binding`, `service binding`],
 		[/* text */ 't', `.
 
  `],
@@ -17,7 +17,7 @@ DocsCollector.collect('java.lang.module.Configuration', [
 			[/* text */ 't', ` that is the
  output of resolution. A readability graph is a directed graph whose vertices
  are of type `],
-			[/* reference */ 'r', `java.lang.module.ResolvedModule`],
+			[/* reference */ 'r', `java.lang.module.ResolvedModule`, `ResolvedModule`],
 			[/* text */ 't', ` and the edges represent the readability
  amongst the modules. `],
 			[/* inline code block */ 'i', `Configuration`],
@@ -26,7 +26,7 @@ DocsCollector.collect('java.lang.module.Configuration', [
 			[/* text */ 't', ` method to get the set of resolved modules in the graph. `],
 			[/* inline code block */ 'i', `ResolvedModule`],
 			[/* text */ 't', ` defines the `],
-			[/* reference */ 'r', `.ResolvedModule#reads()`],
+			[/* reference */ 'r', `java.lang.module.ResolvedModule#reads()`, `reads()`],
 			[/* text */ 't', ` method to
  get the set of modules that a resolved module reads. The modules that are
  read may be in the same configuration or may be in `],
@@ -47,10 +47,10 @@ DocsCollector.collect('java.lang.module.Configuration', [
 		]],
 		[/* block */ 'b', [
 			[/* text */ 't', ` Each `],
-			[/* reference */ 'r', `java.lang.ModuleLayer`],
+			[/* reference */ 'r', `java.lang.ModuleLayer`, `layer`],
 			[/* text */ 't', ` of modules in the Java virtual
  machine is created from a configuration. The configuration for the `],
-			[/* reference */ 'r', `java.ModuleLayer#boot()`],
+			[/* reference */ 'r', `java.lang.ModuleLayer#boot()`, `boot`],
 			[/* text */ 't', ` layer is obtained by invoking `],
 			[/* inline code block */ 'i', `ModuleLayer.boot().configuration()`],
 			[/* text */ 't', `. The configuration for the boot layer
@@ -450,16 +450,16 @@ DocsCollector.collect('java.lang.module.Configuration', [
  with modules induced by the service-use dependence relation. `]
 				]],
 				[/* block */ 'b', [
-					[/* text */ 't', ``],
+					[/* anchor */ 'r', '#-id', `service-binding`, ``],
 					[/* text */ 't', `More specifically, the root modules are
  resolved as if by calling `],
 					[/* inline code block */ 'i', `resolve`],
 					[/* text */ 't', `. The resolved modules, and
  all modules in the parent configurations, with `],
-					[/* reference */ 'r', `.ModuleDescriptor#uses()`],
+					[/* reference */ 'r', `java.lang.module.ModuleDescriptor#uses()`, `service dependences`],
 					[/* text */ 't', ` are then examined. All modules found by the given
  module finders that `],
-					[/* reference */ 'r', `.ModuleDescriptor#provides()`],
+					[/* reference */ 'r', `java.lang.module.ModuleDescriptor#provides()`, `provide`],
 					[/* text */ 't', ` an
  implementation of one or more of the service types are added to the
  module graph and then resolved as if by calling the `],

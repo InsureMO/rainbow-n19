@@ -32,7 +32,7 @@ DocsCollector.collect('java.util.Stack', [
 		[/* block */ 'b', [
 			[/* text */ 't', `A more complete and consistent set of LIFO stack operations is
  provided by the `],
-			[/* reference */ 'r', `java.util.Deque`],
+			[/* reference */ 'r', `java.util.Deque`, `Deque`],
 			[/* text */ 't', ` interface and its implementations, which
  should be used in preference to this class.  For example:
  `]

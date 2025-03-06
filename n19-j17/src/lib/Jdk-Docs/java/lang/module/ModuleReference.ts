@@ -11,7 +11,7 @@ DocsCollector.collect('java.lang.module.ModuleReference', [
  implements the abstract methods defined by this class. It contains the
  module's descriptor and its location, if known.  It also has the ability to
  create a `],
-			[/* reference */ 'r', `java.lang.module.ModuleReader`],
+			[/* reference */ 'r', `java.lang.module.ModuleReader`, `ModuleReader`],
 			[/* text */ 't', ` in order to access the module's content, which
  may be inside the Java run-time system itself or in an artifact such as a
  modular JAR file.`]
@@ -73,12 +73,12 @@ DocsCollector.collect('java.lang.module.ModuleReference', [
  `],
 				[/* block */ 'b', [
 					[/* text */ 't', ` This URI, when present, can be used as the `],
-					[/* reference */ 'r', `java.lang.CodeSource#getLocation()`],
+					[/* reference */ 'r', `java.security.CodeSource#getLocation()`, `location`],
 					[/* text */ 't', ` value of a `],
-					[/* reference */ 'r', `java.security.CodeSource`],
+					[/* reference */ 'r', `java.security.CodeSource`, `CodeSource`],
 					[/* text */ 't', ` so that a module's classes can be
  granted specific permissions when loaded by a `],
-					[/* reference */ 'r', `java.security.SecureClassLoader`],
+					[/* reference */ 'r', `java.security.SecureClassLoader`, `SecureClassLoader`],
 					[/* text */ 't', `.`]
 				]]
 			],

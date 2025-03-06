@@ -27,7 +27,7 @@ DocsCollector.collect('java.math.RoundingMode', [
 			[/* inline code block */ 'i', `BigDecimal`],
 			[/* text */ 't', ` number with the specified value, forming a
  `],
-			[/* reference */ 'r', `java.math.MathContext`],
+			[/* reference */ 'r', `java.math.MathContext`, `MathContext`],
 			[/* text */ 't', ` object with the proper settings
  (`],
 			[/* inline code block */ 'i', `precision`],
@@ -38,7 +38,7 @@ DocsCollector.collect('java.math.RoundingMode', [
 			[/* inline code block */ 'i', `roundingMode`],
 			[/* text */ 't', ` set to the rounding mode in question), and
  calling `],
-			[/* reference */ 'r', `.BigDecimal#round(java.math.MathContext)`],
+			[/* reference */ 'r', `java.math.BigDecimal#round(java.math.MathContext)`, `round`],
 			[/* text */ 't', ` on this number with the
  proper `],
 			[/* inline code block */ 'i', `MathContext`],
@@ -395,12 +395,12 @@ DocsCollector.collect('java.math.RoundingMode', [
 			[/* inline code block */ 'i', `enum`],
 			[/* text */ 't', ` is intended to replace the integer-based
  enumeration of rounding mode constants in `],
-			[/* reference */ 'r', `java.math.BigDecimal`],
+			[/* reference */ 'r', `java.math.BigDecimal`, `BigDecimal`],
 			[/* text */ 't', `
  (`],
-			[/* reference */ 'r', `.BigDecimal#ROUND_UP`],
+			[/* reference */ 'r', `java.math.BigDecimal#ROUND_UP`, `BigDecimal.ROUND_UP`],
 			[/* text */ 't', `, `],
-			[/* reference */ 'r', `.BigDecimal#ROUND_DOWN`],
+			[/* reference */ 'r', `java.math.BigDecimal#ROUND_DOWN`, `BigDecimal.ROUND_DOWN`],
 			[/* text */ 't', `,
  etc. ).`]
 		]]
@@ -414,7 +414,7 @@ DocsCollector.collect('java.math.RoundingMode', [
 				[/* inline code block */ 'i', `RoundingMode`],
 				[/* text */ 't', ` object corresponding to a
  legacy integer rounding mode constant in `],
-				[/* reference */ 'r', `java.math.BigDecimal`],
+				[/* reference */ 'r', `java.math.BigDecimal`, `BigDecimal`],
 				[/* text */ 't', `.`]
 			],
 			[/* parameters */

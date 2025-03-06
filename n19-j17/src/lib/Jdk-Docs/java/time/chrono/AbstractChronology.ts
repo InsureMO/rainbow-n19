@@ -12,7 +12,7 @@ DocsCollector.collect('java.time.chrono.AbstractChronology', [
 		[/* block */ 'b', [
 			[/* text */ 't', `
  See `],
-			[/* reference */ 'r', `java.time.chrono.Chronology`],
+			[/* reference */ 'r', `java.time.chrono.Chronology`, `Chronology`],
 			[/* text */ 't', ` for more details.`]
 		]]
 	],
@@ -53,7 +53,7 @@ DocsCollector.collect('java.time.chrono.AbstractChronology', [
  The comparison order first by the chronology ID string, then by any
  additional information specific to the subclass.
  It is "consistent with equals", as defined by `],
-					[/* reference */ 'r', `java.lang.Comparable`],
+					[/* reference */ 'r', `java.lang.Comparable`, `Comparable`],
 					[/* text */ 't', `.`]
 				]]
 			],
@@ -283,12 +283,12 @@ DocsCollector.collect('java.time.chrono.AbstractChronology', [
 					[/* text */ 't', `
  The default implementation is suitable for most calendar systems.
  If `],
-					[/* reference */ 'r', `java.ChronoField#YEAR_OF_ERA`],
+					[/* reference */ 'r', `java.time.temporal.ChronoField#YEAR_OF_ERA`, `ChronoField.YEAR_OF_ERA`],
 					[/* text */ 't', ` is found without an `],
-					[/* reference */ 'r', `java.ChronoField#ERA`],
+					[/* reference */ 'r', `java.time.temporal.ChronoField#ERA`, `ChronoField.ERA`],
 					[/* text */ 't', `
  then the last era in `],
-					[/* reference */ 'r', `.Chronology#eras()`],
+					[/* reference */ 'r', `java.time.chrono.Chronology#eras()`, `Chronology.eras()`],
 					[/* text */ 't', ` is used.
  The implementation assumes a 7 day week, that the first day-of-month
  has the value 1, that first day-of-year has the value 1, and that the

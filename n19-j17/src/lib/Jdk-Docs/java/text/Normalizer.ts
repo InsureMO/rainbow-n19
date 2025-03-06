@@ -101,16 +101,16 @@ DocsCollector.collect('java.text.Normalizer', [
 				[/* parameter */ 'form', [/* parameter description */
 					[/* text */ 't', `The normalization form; one of
                    `],
-					[/* reference */ 'r', `.Normalizer.Form#NFC`],
+					[/* reference */ 'r', `java.text.Normalizer.Form#NFC`, `Normalizer.Form.NFC`],
 					[/* text */ 't', `,
                    `],
-					[/* reference */ 'r', `.Normalizer.Form#NFD`],
+					[/* reference */ 'r', `java.text.Normalizer.Form#NFD`, `Normalizer.Form.NFD`],
 					[/* text */ 't', `,
                    `],
-					[/* reference */ 'r', `.Normalizer.Form#NFKC`],
+					[/* reference */ 'r', `java.text.Normalizer.Form#NFKC`, `Normalizer.Form.NFKC`],
 					[/* text */ 't', `,
                    `],
-					[/* reference */ 'r', `.Normalizer.Form#NFKD`]
+					[/* reference */ 'r', `java.text.Normalizer.Form#NFKD`, `Normalizer.Form.NFKD`]
 				]]
 			],
 			[/* throws */
@@ -141,16 +141,16 @@ DocsCollector.collect('java.text.Normalizer', [
 				[/* parameter */ 'form', [/* parameter description */
 					[/* text */ 't', `The normalization form; one of
                    `],
-					[/* reference */ 'r', `.Normalizer.Form#NFC`],
+					[/* reference */ 'r', `java.text.Normalizer.Form#NFC`, `Normalizer.Form.NFC`],
 					[/* text */ 't', `,
                    `],
-					[/* reference */ 'r', `.Normalizer.Form#NFD`],
+					[/* reference */ 'r', `java.text.Normalizer.Form#NFD`, `Normalizer.Form.NFD`],
 					[/* text */ 't', `,
                    `],
-					[/* reference */ 'r', `.Normalizer.Form#NFKC`],
+					[/* reference */ 'r', `java.text.Normalizer.Form#NFKC`, `Normalizer.Form.NFKC`],
 					[/* text */ 't', `,
                    `],
-					[/* reference */ 'r', `.Normalizer.Form#NFKD`]
+					[/* reference */ 'r', `java.text.Normalizer.Form#NFKD`, `Normalizer.Form.NFKD`]
 				]]
 			],
 			[/* throws */

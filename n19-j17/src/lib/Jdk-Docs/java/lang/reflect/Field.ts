@@ -62,7 +62,7 @@ DocsCollector.collect('java.lang.reflect.Field', [
  value is an array of length 0.
 
  The difference between this method and `],
-				[/* reference */ 'r', `.AnnotatedElement#getAnnotation(java.lang.Class)`],
+				[/* reference */ 'r', `java.lang.reflect.AnnotatedElement#getAnnotation(java.lang.Class)`, `AnnotatedElement.getAnnotation(Class)`],
 				[/* text */ 't', `
  is that this method detects if its argument is a `],
 				[/* text */ 't', `repeatable
@@ -936,12 +936,12 @@ DocsCollector.collect('java.lang.reflect.Field', [
 					[/* block */ 'b', `the field is non-static; and`],
 					[/* block */ 'b', [
 						[/* text */ 't', `the field's declaring class is not a `],
-						[/* reference */ 'r', `java.Class#isHidden()`],
+						[/* reference */ 'r', `java.lang.Class#isHidden()`, `hidden class`],
 						[/* text */ 't', `; and`]
 					]],
 					[/* block */ 'b', [
 						[/* text */ 't', `the field's declaring class is not a `],
-						[/* reference */ 'r', `java.Class#isRecord()`],
+						[/* reference */ 'r', `java.lang.Class#isRecord()`, `record class`],
 						[/* text */ 't', `.`]
 					]]
 				]],
@@ -1057,9 +1057,9 @@ DocsCollector.collect('java.lang.reflect.Field', [
 						[/* inline code block */ 'i', `C`],
 						[/* text */ 't', ` to enable
  access to a `],
-						[/* reference */ 'r', `java.lang.reflect.Member`],
+						[/* reference */ 'r', `java.lang.reflect.Member`, `member`],
 						[/* text */ 't', ` of `],
-						[/* reference */ 'r', `.Member#getDeclaringClass()`],
+						[/* reference */ 'r', `java.lang.reflect.Member#getDeclaringClass()`, `declaring class`],
 						[/* inline code block */ 'i', `D`],
 						[/* text */ 't', ` if any of the following hold: `]
 					]],
@@ -1080,7 +1080,7 @@ DocsCollector.collect('java.lang.reflect.Field', [
 							[/* text */ 't', ` in
      a package that the module containing `],
 							[/* inline code block */ 'i', `D`],
-							[/* reference */ 'r', `java.Module#isExported(java.lang.String,java.lang.Module)`],
+							[/* reference */ 'r', `java.lang.Module#isExported(java.lang.String,java.lang.Module)`, `exports`],
 							[/* text */ 't', ` to at least the module
      containing `],
 							[/* inline code block */ 'i', `C`],
@@ -1111,7 +1111,7 @@ DocsCollector.collect('java.lang.reflect.Field', [
 							[/* inline code block */ 'i', `D`],
 							[/* text */ 't', ` is in a package that the module containing `],
 							[/* inline code block */ 'i', `D`],
-							[/* reference */ 'r', `java.Module#isOpen(java.lang.String,java.lang.Module)`],
+							[/* reference */ 'r', `java.lang.Module#isOpen(java.lang.String,java.lang.Module)`, `opens`],
 							[/* text */ 't', ` to at least the module
      containing `],
 							[/* inline code block */ 'i', `C`],
@@ -1142,11 +1142,11 @@ DocsCollector.collect('java.lang.reflect.Field', [
 						[/* block */ 'b', `static final fields declared in any class or interface`],
 						[/* block */ 'b', [
 							[/* text */ 't', `final fields declared in a `],
-							[/* reference */ 'r', `java.Class#isHidden()`]
+							[/* reference */ 'r', `java.lang.Class#isHidden()`, `hidden class`]
 						]],
 						[/* block */ 'b', [
 							[/* text */ 't', `final fields declared in a `],
-							[/* reference */ 'r', `java.Class#isRecord()`]
+							[/* reference */ 'r', `java.lang.Class#isRecord()`, `record`]
 						]]
 					]],
 					[/* block */ 'b', ''],

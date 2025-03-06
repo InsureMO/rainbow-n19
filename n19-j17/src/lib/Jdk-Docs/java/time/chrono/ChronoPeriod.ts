@@ -223,7 +223,7 @@ DocsCollector.collect('java.time.chrono.ChronoPeriod', [
 					[/* text */ 't', `
  In most cases, it is clearer to reverse the calling pattern by using
  `],
-					[/* reference */ 'r', `java.Temporal#plus(java.time.temporal.TemporalAmount)`],
+					[/* reference */ 'r', `java.time.temporal.Temporal#plus(java.time.temporal.TemporalAmount)`, `Temporal.plus(TemporalAmount)`],
 					[/* text */ 't', `.
  `]
 				]],
@@ -268,7 +268,7 @@ DocsCollector.collect('java.time.chrono.ChronoPeriod', [
 					[/* text */ 't', `
  In most cases, it is clearer to reverse the calling pattern by using
  `],
-					[/* reference */ 'r', `java.Temporal#minus(java.time.temporal.TemporalAmount)`],
+					[/* reference */ 'r', `java.time.temporal.Temporal#minus(java.time.temporal.TemporalAmount)`, `Temporal.minus(TemporalAmount)`],
 					[/* text */ 't', `.
  `]
 				]],
@@ -309,12 +309,12 @@ DocsCollector.collect('java.time.chrono.ChronoPeriod', [
 					[/* text */ 't', `
  The supported units are chronology specific.
  They will typically be `],
-					[/* reference */ 'r', `java.ChronoUnit#YEARS`],
+					[/* reference */ 'r', `java.time.temporal.ChronoUnit#YEARS`, `YEARS`],
 					[/* text */ 't', `,
  `],
-					[/* reference */ 'r', `java.ChronoUnit#MONTHS`],
+					[/* reference */ 'r', `java.time.temporal.ChronoUnit#MONTHS`, `MONTHS`],
 					[/* text */ 't', ` and `],
-					[/* reference */ 'r', `java.ChronoUnit#DAYS`],
+					[/* reference */ 'r', `java.time.temporal.ChronoUnit#DAYS`, `DAYS`],
 					[/* text */ 't', `.
  They are returned in order from largest to smallest.
  `]
@@ -341,12 +341,12 @@ DocsCollector.collect('java.time.chrono.ChronoPeriod', [
 					[/* text */ 't', `
  The supported units are chronology specific.
  They will typically be `],
-					[/* reference */ 'r', `java.ChronoUnit#YEARS`],
+					[/* reference */ 'r', `java.time.temporal.ChronoUnit#YEARS`, `YEARS`],
 					[/* text */ 't', `,
  `],
-					[/* reference */ 'r', `java.ChronoUnit#MONTHS`],
+					[/* reference */ 'r', `java.time.temporal.ChronoUnit#MONTHS`, `MONTHS`],
 					[/* text */ 't', ` and `],
-					[/* reference */ 'r', `java.ChronoUnit#DAYS`],
+					[/* reference */ 'r', `java.time.temporal.ChronoUnit#DAYS`, `DAYS`],
 					[/* text */ 't', `.
  Requesting an unsupported unit will throw an exception.`]
 				]]
@@ -424,7 +424,7 @@ DocsCollector.collect('java.time.chrono.ChronoPeriod', [
 					[/* text */ 't', `
  The start date is included, but the end date is not.
  The period is calculated using `],
-					[/* reference */ 'r', `.ChronoLocalDate#until(java.time.chrono.ChronoLocalDate)`],
+					[/* reference */ 'r', `java.time.chrono.ChronoLocalDate#until(java.time.chrono.ChronoLocalDate)`, `ChronoLocalDate.until(ChronoLocalDate)`],
 					[/* text */ 't', `.
  As such, the calculation is chronology specific.
  `]

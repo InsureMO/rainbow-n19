@@ -6,7 +6,7 @@ DocsCollector.collect('java.lang.annotation.ElementType', [
 		[/* text */ 't', `The constants of this enumerated class provide a simple classification of the
  syntactic locations where annotations may appear in a Java program. These
  constants are used in `],
-		[/* reference */ 'r', `annotation interface in java.lang.annotation.Target`],
+		[/* reference */ 'r', `annotation interface in java.lang.annotation.Target`, `Target`],
 		[/* text */ 't', `
  meta-annotations to specify where it is legal to write annotations of a
  given type.

@@ -8,7 +8,7 @@ DocsCollector.collect('java.util.stream.IntStream$IntMapMultiConsumer', [
 		[/* text */ 't', `-valued argument
  and an IntConsumer, and returns no result. This functional interface is
  used by `],
-		[/* reference */ 'r', `.IntStream#mapMulti(java.util.stream.IntStream.IntMapMultiConsumer)`],
+		[/* reference */ 'r', `java.util.stream.IntStream#mapMulti(java.util.stream.IntStream.IntMapMultiConsumer)`, `IntStream.mapMulti`],
 		[/* text */ 't', `
  to replace an int value with zero or more int values.
 

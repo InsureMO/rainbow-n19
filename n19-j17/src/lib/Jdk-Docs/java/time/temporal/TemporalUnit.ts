@@ -13,17 +13,17 @@ DocsCollector.collect('java.time.temporal.TemporalUnit', [
 			[/* text */ 't', `
  An instance of this interface represents the unit itself, rather than an amount of the unit.
  See `],
-			[/* reference */ 'r', `java.time.Period`],
+			[/* reference */ 'r', `java.time.Period`, `Period`],
 			[/* text */ 't', ` for a class that represents an amount in terms of the common units.
  `]
 		]],
 		[/* block */ 'b', [
 			[/* text */ 't', `
  The most commonly used units are defined in `],
-			[/* reference */ 'r', `enum class in java.time.temporal.ChronoUnit`],
+			[/* reference */ 'r', `enum class in java.time.temporal.ChronoUnit`, `ChronoUnit`],
 			[/* text */ 't', `.
  Further units are supplied in `],
-			[/* reference */ 'r', `java.time.temporal.IsoFields`],
+			[/* reference */ 'r', `java.time.temporal.IsoFields`, `IsoFields`],
 			[/* text */ 't', `.
  Units can also be written by application code by implementing this interface.
  `]
@@ -58,7 +58,7 @@ DocsCollector.collect('java.time.temporal.TemporalUnit', [
  There are two equivalent ways of using this method.
  The first is to invoke this method directly.
  The second is to use `],
-					[/* reference */ 'r', `.Temporal#plus(long,java.time.temporal.TemporalUnit)`],
+					[/* reference */ 'r', `java.time.temporal.Temporal#plus(long,java.time.temporal.TemporalUnit)`, `Temporal.plus(long, TemporalUnit)`],
 					[/* text */ 't', `:
  `]
 				]],
@@ -77,9 +77,9 @@ DocsCollector.collect('java.time.temporal.TemporalUnit', [
 					[/* text */ 't', `
  Implementations should perform any queries or calculations using the units
  available in `],
-					[/* reference */ 'r', `enum class in java.time.temporal.ChronoUnit`],
+					[/* reference */ 'r', `enum class in java.time.temporal.ChronoUnit`, `ChronoUnit`],
 					[/* text */ 't', ` or the fields available in `],
-					[/* reference */ 'r', `enum class in java.time.temporal.ChronoField`],
+					[/* reference */ 'r', `enum class in java.time.temporal.ChronoField`, `ChronoField`],
 					[/* text */ 't', `.
  If the unit is not supported an `],
 					[/* inline code block */ 'i', `UnsupportedTemporalTypeException`],
@@ -248,7 +248,7 @@ DocsCollector.collect('java.time.temporal.TemporalUnit', [
  There are two equivalent ways of using this method.
  The first is to invoke this method directly.
  The second is to use `],
-					[/* reference */ 'r', `.Temporal#until(java.time.temporal.Temporal,java.time.temporal.TemporalUnit)`],
+					[/* reference */ 'r', `java.time.temporal.Temporal#until(java.time.temporal.Temporal,java.time.temporal.TemporalUnit)`, `Temporal.until(Temporal, TemporalUnit)`],
 					[/* text */ 't', `:
  `]
 				]],
@@ -273,9 +273,9 @@ DocsCollector.collect('java.time.temporal.TemporalUnit', [
 					[/* text */ 't', `
  Implementations should perform any queries or calculations using the units
  available in `],
-					[/* reference */ 'r', `enum class in java.time.temporal.ChronoUnit`],
+					[/* reference */ 'r', `enum class in java.time.temporal.ChronoUnit`, `ChronoUnit`],
 					[/* text */ 't', ` or the fields available in `],
-					[/* reference */ 'r', `enum class in java.time.temporal.ChronoField`],
+					[/* reference */ 'r', `enum class in java.time.temporal.ChronoField`, `ChronoField`],
 					[/* text */ 't', `.
  If the unit is not supported an `],
 					[/* inline code block */ 'i', `UnsupportedTemporalTypeException`],
@@ -321,7 +321,7 @@ DocsCollector.collect('java.time.temporal.TemporalUnit', [
 					[/* text */ 't', `
  This default implementation derives the value using
  `],
-					[/* reference */ 'r', `.Temporal#plus(long,java.time.temporal.TemporalUnit)`],
+					[/* reference */ 'r', `java.time.temporal.Temporal#plus(long,java.time.temporal.TemporalUnit)`, `Temporal.plus(long, TemporalUnit)`],
 					[/* text */ 't', `.`]
 				]]
 			],

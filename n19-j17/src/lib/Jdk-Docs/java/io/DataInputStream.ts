@@ -763,7 +763,7 @@ DocsCollector.collect('java.io.DataInputStream', [
 				[/* text */ 't', ` a representation
  of a Unicode  character string encoded in
  `],
-				[/* reference */ 'r', `.DataInput#modified-utf-8`],
+				[/* reference */ 'r', `java.io.DataInput#modified-utf-8`, `modified UTF-8`],
 				[/* text */ 't', ` format;
  this string of characters is then returned as a `],
 				[/* inline code block */ 'i', `String`],

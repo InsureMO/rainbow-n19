@@ -8,13 +8,13 @@ DocsCollector.collect('java.util.function.ToDoubleBiFunction', [
 		[/* inline code block */ 'i', `double`],
 		[/* text */ 't', `-producing primitive specialization for
  `],
-		[/* reference */ 'r', `java.util.function.BiFunction`],
+		[/* reference */ 'r', `java.util.function.BiFunction`, `BiFunction`],
 		[/* text */ 't', `.
 
  `],
 		[/* block */ 'b', [
 			[/* text */ 't', `This is a `],
-			[/* reference */ 'r', `.package-summary`],
+			[/* text */ 't', `functional interface`],
 			[/* text */ 't', `
  whose functional method is `],
 			[/* reference */ 'r', `#applyAsDouble(T,U)`, `applyAsDouble(Object, Object)`],

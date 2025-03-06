@@ -5,7 +5,7 @@ DocsCollector.collect('java.util.Queue', [
 	[/* class description */
 		[/* text */ 't', `A collection designed for holding elements prior to processing.
  Besides basic `],
-		[/* reference */ 'r', `java.util.Collection`],
+		[/* reference */ 'r', `java.util.Collection`, `Collection`],
 		[/* text */ 't', ` operations, queues provide
  additional insertion, extraction, and inspection operations.
  Each of these methods exists in two forms: one throws an exception
@@ -105,7 +105,7 @@ DocsCollector.collect('java.util.Queue', [
  otherwise returning `],
 			[/* inline code block */ 'i', `false`],
 			[/* text */ 't', `.  This differs from the `],
-			[/* reference */ 'r', `.Collection#add(E)`],
+			[/* reference */ 'r', `java.util.Collection#add(E)`, `Collection.add`],
 			[/* text */ 't', ` method, which can fail to
  add an element only by throwing an unchecked exception.  The
  `],
@@ -161,7 +161,7 @@ DocsCollector.collect('java.util.Queue', [
 			[/* text */ 't', `, which are common in concurrent programming.  These methods,
  which wait for elements to appear or for space to become available, are
  defined in the `],
-			[/* reference */ 'r', `java.util.concurrent.BlockingQueue`],
+			[/* reference */ 'r', `java.util.concurrent.BlockingQueue`, `BlockingQueue`],
 			[/* text */ 't', ` interface, which
  extends this interface.
 
@@ -174,7 +174,7 @@ DocsCollector.collect('java.util.Queue', [
 			[/* inline code block */ 'i', `null`],
 			[/* text */ 't', ` elements, although some implementations, such as
  `],
-			[/* reference */ 'r', `java.util.LinkedList`],
+			[/* reference */ 'r', `java.util.LinkedList`, `LinkedList`],
 			[/* text */ 't', `, do not prohibit insertion of `],
 			[/* inline code block */ 'i', `null`],
 			[/* text */ 't', `.
@@ -257,7 +257,7 @@ DocsCollector.collect('java.util.Queue', [
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` (as specified by `],
-				[/* reference */ 'r', `.Collection#add(E)`],
+				[/* reference */ 'r', `java.util.Collection#add(E)`, `Collection.add(E)`],
 				[/* text */ 't', `)`]
 			]
 		]],

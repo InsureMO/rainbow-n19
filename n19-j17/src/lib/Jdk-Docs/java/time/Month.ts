@@ -62,7 +62,7 @@ DocsCollector.collect('java.time.Month', [
 					[/* text */ 't', `
  The result of this method is obtained by invoking the
  `],
-					[/* reference */ 'r', `.TemporalQuery#queryFrom(java.time.temporal.TemporalAccessor)`],
+					[/* reference */ 'r', `java.time.temporal.TemporalQuery#queryFrom(java.time.temporal.TemporalAccessor)`, `TemporalQuery.queryFrom(TemporalAccessor)`],
 					[/* text */ 't', ` method on the
  specified query passing `],
 					[/* inline code block */ 'i', `this`],
@@ -104,7 +104,7 @@ DocsCollector.collect('java.time.Month', [
 				[/* block */ 'b', [
 					[/* text */ 't', `
  If the field is `],
-					[/* reference */ 'r', `.ChronoField#MONTH_OF_YEAR`],
+					[/* reference */ 'r', `java.time.temporal.ChronoField#MONTH_OF_YEAR`, `MONTH_OF_YEAR`],
 					[/* text */ 't', ` then
  this method returns true.
  All other `],
@@ -169,7 +169,7 @@ DocsCollector.collect('java.time.Month', [
 				[/* block */ 'b', [
 					[/* text */ 't', `
  If the field is `],
-					[/* reference */ 'r', `.ChronoField#MONTH_OF_YEAR`],
+					[/* reference */ 'r', `java.time.temporal.ChronoField#MONTH_OF_YEAR`, `MONTH_OF_YEAR`],
 					[/* text */ 't', ` then the
  value of the month-of-year, from 1 to 12, will be returned.
  All other `],
@@ -384,10 +384,10 @@ DocsCollector.collect('java.time.Month', [
 				[/* block */ 'b', [
 					[/* text */ 't', `
  The adjustment is equivalent to using `],
-					[/* reference */ 'r', `.Temporal#with(java.time.temporal.TemporalField,long)`],
+					[/* reference */ 'r', `java.time.temporal.Temporal#with(java.time.temporal.TemporalField,long)`, `Temporal.with(TemporalField, long)`],
 					[/* text */ 't', `
  passing `],
-					[/* reference */ 'r', `.ChronoField#MONTH_OF_YEAR`],
+					[/* reference */ 'r', `java.time.temporal.ChronoField#MONTH_OF_YEAR`, `ChronoField.MONTH_OF_YEAR`],
 					[/* text */ 't', ` as the field.
  If the specified temporal object does not use the ISO calendar system then
  a `],
@@ -399,7 +399,7 @@ DocsCollector.collect('java.time.Month', [
 					[/* text */ 't', `
  In most cases, it is clearer to reverse the calling pattern by using
  `],
-					[/* reference */ 'r', `.Temporal#with(java.time.temporal.TemporalAdjuster)`],
+					[/* reference */ 'r', `java.time.temporal.Temporal#with(java.time.temporal.TemporalAdjuster)`, `Temporal.with(TemporalAdjuster)`],
 					[/* text */ 't', `:
  `]
 				]],
@@ -451,7 +451,7 @@ DocsCollector.collect('java.time.Month', [
 				[/* block */ 'b', [
 					[/* text */ 't', `
  If the field is `],
-					[/* reference */ 'r', `.ChronoField#MONTH_OF_YEAR`],
+					[/* reference */ 'r', `java.time.temporal.ChronoField#MONTH_OF_YEAR`, `MONTH_OF_YEAR`],
 					[/* text */ 't', ` then the
  range of the month-of-year, from 1 to 12, will be returned.
  All other `],
@@ -506,7 +506,7 @@ DocsCollector.collect('java.time.Month', [
 				[/* block */ 'b', [
 					[/* text */ 't', `
  If the field is `],
-					[/* reference */ 'r', `.ChronoField#MONTH_OF_YEAR`],
+					[/* reference */ 'r', `java.time.temporal.ChronoField#MONTH_OF_YEAR`, `MONTH_OF_YEAR`],
 					[/* text */ 't', ` then the
  value of the month-of-year, from 1 to 12, will be returned.
  All other `],
@@ -570,7 +570,7 @@ DocsCollector.collect('java.time.Month', [
 				[/* block */ 'b', [
 					[/* text */ 't', `
  The conversion extracts the `],
-					[/* reference */ 'r', `.ChronoField#MONTH_OF_YEAR`],
+					[/* reference */ 'r', `java.time.temporal.ChronoField#MONTH_OF_YEAR`, `MONTH_OF_YEAR`],
 					[/* text */ 't', ` field.
  The extraction is only permitted if the temporal object has an ISO
  chronology, or can be converted to a `],
@@ -581,7 +581,7 @@ DocsCollector.collect('java.time.Month', [
 				[/* block */ 'b', [
 					[/* text */ 't', `
  This method matches the signature of the functional interface `],
-					[/* reference */ 'r', `java.time.temporal.TemporalQuery`],
+					[/* reference */ 'r', `java.time.temporal.TemporalQuery`, `TemporalQuery`],
 					[/* text */ 't', `
  allowing it to be used as a query via method reference, `],
 					[/* inline code block */ 'i', `Month::from`],

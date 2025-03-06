@@ -16,7 +16,7 @@ DocsCollector.collect('java.lang.SafeVarargs', [
  `],
 		[/* block */ 'b', [
 			[/* text */ 't', ` In addition to the usage restrictions imposed by its `],
-			[/* reference */ 'r', `annotation interface in java.lang.annotation.Target`],
+			[/* reference */ 'r', `annotation interface in java.lang.annotation.Target`, `@Target`],
 			[/* text */ 't', ` meta-annotation, compilers are required to implement
  additional usage restrictions on this annotation type; it is a
  compile-time error if a method or constructor declaration is

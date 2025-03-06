@@ -4,20 +4,20 @@ import {DocsCollector} from '../../DocsCollector';
 DocsCollector.collect('java.util.SortedSet', [
 	[/* class description */
 		[/* text */ 't', `A `],
-		[/* reference */ 'r', `java.util.Set`],
+		[/* reference */ 'r', `java.util.Set`, `Set`],
 		[/* text */ 't', ` that further provides a `],
 		[/* text */ 't', `total ordering`],
 		[/* text */ 't', ` on its elements.
  The elements are ordered using their `],
-		[/* reference */ 'r', `java.lang.Comparable`],
+		[/* reference */ 'r', `java.lang.Comparable`, `natural ordering`],
 		[/* text */ 't', `, or by a `],
-		[/* reference */ 'r', `java.util.Comparator`],
+		[/* reference */ 'r', `java.util.Comparator`, `Comparator`],
 		[/* text */ 't', ` typically provided at sorted
  set creation time.  The set's iterator will traverse the set in
  ascending element order. Several additional operations are provided
  to take advantage of the ordering.  (This interface is the set
  analogue of `],
-		[/* reference */ 'r', `java.util.SortedMap`],
+		[/* reference */ 'r', `java.util.SortedMap`, `SortedMap`],
 		[/* text */ 't', `.)
 
  `],
@@ -199,7 +199,7 @@ DocsCollector.collect('java.util.SortedSet', [
  or `],
 				[/* inline code block */ 'i', `null`],
 				[/* text */ 't', ` if this set uses the `],
-				[/* reference */ 'r', `java.lang.Comparable`],
+				[/* reference */ 'r', `java.lang.Comparable`, `natural ordering`],
 				[/* text */ 't', ` of its elements.`]
 			],
 			/* parameters */ UDF,
@@ -244,7 +244,7 @@ DocsCollector.collect('java.util.SortedSet', [
          if `],
 					[/* inline code block */ 'i', `toElement`],
 					[/* text */ 't', ` does not implement `],
-					[/* reference */ 'r', `java.lang.Comparable`],
+					[/* reference */ 'r', `java.lang.Comparable`, `Comparable`],
 					[/* text */ 't', `).
          Implementations may, but are not required to, throw this
          exception if `],
@@ -389,7 +389,7 @@ DocsCollector.collect('java.util.SortedSet', [
          if `],
 					[/* inline code block */ 'i', `fromElement`],
 					[/* text */ 't', ` does not implement `],
-					[/* reference */ 'r', `java.lang.Comparable`],
+					[/* reference */ 'r', `java.lang.Comparable`, `Comparable`],
 					[/* text */ 't', `).
          Implementations may, but are not required to, throw this
          exception if `],
@@ -428,12 +428,12 @@ DocsCollector.collect('java.util.SortedSet', [
 					[/* text */ 't', `The `],
 					[/* inline code block */ 'i', `Spliterator`],
 					[/* text */ 't', ` reports `],
-					[/* reference */ 'r', `.Spliterator#DISTINCT`],
+					[/* reference */ 'r', `java.util.Spliterator#DISTINCT`, `Spliterator.DISTINCT`],
 					[/* text */ 't', `,
  `],
-					[/* reference */ 'r', `.Spliterator#SORTED`],
+					[/* reference */ 'r', `java.util.Spliterator#SORTED`, `Spliterator.SORTED`],
 					[/* text */ 't', ` and `],
-					[/* reference */ 'r', `.Spliterator#ORDERED`],
+					[/* reference */ 'r', `java.util.Spliterator#ORDERED`, `Spliterator.ORDERED`],
 					[/* text */ 't', `.
  Implementations should document the reporting of additional
  characteristic values.
@@ -443,7 +443,7 @@ DocsCollector.collect('java.util.SortedSet', [
 				[/* block */ 'b', [
 					[/* text */ 't', `The spliterator's comparator (see
  `],
-					[/* reference */ 'r', `.Spliterator#getComparator()`],
+					[/* reference */ 'r', `java.util.Spliterator#getComparator()`, `Spliterator.getComparator()`],
 					[/* text */ 't', `) must be `],
 					[/* inline code block */ 'i', `null`],
 					[/* text */ 't', ` if

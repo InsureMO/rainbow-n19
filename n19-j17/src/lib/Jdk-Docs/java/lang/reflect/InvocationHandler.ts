@@ -79,7 +79,7 @@ DocsCollector.collect('java.lang.reflect.InvocationHandler', [
 					[/* text */ 't', ` clause of
  the interface method, then an
  `],
-					[/* reference */ 'r', `java.lang.reflect.UndeclaredThrowableException`],
+					[/* reference */ 'r', `java.lang.reflect.UndeclaredThrowableException`, `UndeclaredThrowableException`],
 					[/* text */ 't', ` containing the
  exception that was thrown by this method will be thrown by the
  method invocation on the proxy instance.`]
@@ -397,7 +397,7 @@ DocsCollector.collect('java.lang.reflect.InvocationHandler', [
 						[/* block */ 'b', [
 							[/* inline code block */ 'i', `proxy`],
 							[/* text */ 't', ` is not `],
-							[/* reference */ 'r', `.Proxy#isProxyClass(java.lang.Class)`],
+							[/* reference */ 'r', `java.lang.reflect.Proxy#isProxyClass(java.lang.Class)`, `a proxy instance`],
 							[/* text */ 't', `; or`]
 						]],
 						[/* block */ 'b', [

@@ -4,19 +4,19 @@ import {DocsCollector} from '../../../DocsCollector';
 DocsCollector.collect('java.lang.module.ModuleDescriptor$Builder', [
 	[/* class description */
 		[/* text */ 't', `A builder for building `],
-		[/* reference */ 'r', `java.lang.module.ModuleDescriptor`],
+		[/* reference */ 'r', `java.lang.module.ModuleDescriptor`, `ModuleDescriptor`],
 		[/* text */ 't', ` objects.
 
  `],
 		[/* block */ 'b', [
 			[/* inline code block */ 'i', `ModuleDescriptor`],
 			[/* text */ 't', ` defines the `],
-			[/* reference */ 'r', `.ModuleDescriptor#newModule(java.lang.String,java.util.Set)`],
+			[/* reference */ 'r', `java.lang.module.ModuleDescriptor#newModule(java.lang.String,java.util.Set)`, `newModule`],
 			[/* text */ 't', `,
  `],
-			[/* reference */ 'r', `.ModuleDescriptor#newOpenModule(java.lang.String)`],
+			[/* reference */ 'r', `java.lang.module.ModuleDescriptor#newOpenModule(java.lang.String)`, `newOpenModule`],
 			[/* text */ 't', `, and `],
-			[/* reference */ 'r', `.ModuleDescriptor#newAutomaticModule(java.lang.String)`],
+			[/* reference */ 'r', `java.lang.module.ModuleDescriptor#newAutomaticModule(java.lang.String)`, `newAutomaticModule`],
 			[/* text */ 't', ` methods to create builders for building
  `],
 			[/* text */ 't', `normal`],
@@ -81,7 +81,7 @@ DocsCollector.collect('java.lang.module.ModuleDescriptor$Builder', [
  "`],
 					[/* inline code block */ 'i', `java.base`],
 					[/* text */ 't', `" will have the `],
-					[/* reference */ 'r', `.ModuleDescriptor.Requires.Modifier#MANDATED`],
+					[/* reference */ 'r', `java.lang.module.ModuleDescriptor.Requires.Modifier#MANDATED`, `MANDATED`],
 					[/* text */ 't', `
  modifier if the dependence was not declared. `]
 				]]
@@ -104,7 +104,7 @@ DocsCollector.collect('java.lang.module.ModuleDescriptor$Builder', [
 			[/* throws */
 				[/* throw */ 'java.lang.IllegalStateException', [/* throw description */
 					[/* text */ 't', `If the `],
-					[/* reference */ 'r', `.ModuleDescriptor.Exports#source()`],
+					[/* reference */ 'r', `java.lang.module.ModuleDescriptor.Exports#source()`, `package`],
 					[/* text */ 't', ` is already declared as
          exported or this builder is for an automatic module`]
 				]]

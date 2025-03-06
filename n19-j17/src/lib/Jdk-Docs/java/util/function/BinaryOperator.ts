@@ -6,17 +6,17 @@ DocsCollector.collect('java.util.function.BinaryOperator', [
 		[/* text */ 't', `Represents an operation upon two operands of the same type, producing a result
  of the same type as the operands.  This is a specialization of
  `],
-		[/* reference */ 'r', `java.util.function.BiFunction`],
+		[/* reference */ 'r', `java.util.function.BiFunction`, `BiFunction`],
 		[/* text */ 't', ` for the case where the operands and the result are all of
  the same type.
 
  `],
 		[/* block */ 'b', [
 			[/* text */ 't', `This is a `],
-			[/* reference */ 'r', `.package-summary`],
+			[/* text */ 't', `functional interface`],
 			[/* text */ 't', `
  whose functional method is `],
-			[/* reference */ 'r', `.BiFunction#apply(T,U)`],
+			[/* reference */ 'r', `java.util.function.BiFunction#apply(T,U)`, `BiFunction.apply(Object, Object)`],
 			[/* text */ 't', `.`]
 		]]
 	],
@@ -26,7 +26,7 @@ DocsCollector.collect('java.util.function.BinaryOperator', [
 		[/* method */ 'maxBy(java.util.Comparator)', [
 			[/* method description */
 				[/* text */ 't', `Returns a `],
-				[/* reference */ 'r', `java.util.function.BinaryOperator`],
+				[/* reference */ 'r', `java.util.function.BinaryOperator`, `BinaryOperator`],
 				[/* text */ 't', ` which returns the greater of two elements
  according to the specified `],
 				[/* inline code block */ 'i', `Comparator`],
@@ -55,7 +55,7 @@ DocsCollector.collect('java.util.function.BinaryOperator', [
 		[/* method */ 'minBy(java.util.Comparator)', [
 			[/* method description */
 				[/* text */ 't', `Returns a `],
-				[/* reference */ 'r', `java.util.function.BinaryOperator`],
+				[/* reference */ 'r', `java.util.function.BinaryOperator`, `BinaryOperator`],
 				[/* text */ 't', ` which returns the lesser of two elements
  according to the specified `],
 				[/* inline code block */ 'i', `Comparator`],

@@ -6,7 +6,7 @@ DocsCollector.collect('java.text.spi.NumberFormatProvider', [
 		[/* text */ 't', `An abstract class for service providers that
  provide concrete implementations of the
  `],
-		[/* reference */ 'r', `java.text.NumberFormat`],
+		[/* reference */ 'r', `java.text.NumberFormat`, `NumberFormat`],
 		[/* text */ 't', ` class.`]
 	],
 	/* fields */ UDF,
@@ -45,7 +45,7 @@ DocsCollector.collect('java.text.spi.NumberFormatProvider', [
 					[/* text */ 't', ` isn't
      one of the locales returned from
      `],
-					[/* reference */ 'r', `java.text.spi.LocaleServiceProvider#getAvailableLocales()`],
+					[/* reference */ 'r', `java.util.spi.LocaleServiceProvider#getAvailableLocales()`, `getAvailableLocales()`],
 					[/* text */ 't', `.`]
 				]]
 			],
@@ -62,11 +62,11 @@ DocsCollector.collect('java.text.spi.NumberFormatProvider', [
  The returned number format is configured to
  round floating point numbers to the nearest integer using
  half-even rounding (see `],
-				[/* reference */ 'r', `java.text.RoundingMode#HALF_EVEN`],
+				[/* reference */ 'r', `java.math.RoundingMode#HALF_EVEN`, `HALF_EVEN`],
 				[/* text */ 't', `)
  for formatting, and to parse only the integer part of
  an input string (see `],
-				[/* reference */ 'r', `java.NumberFormat#isParseIntegerOnly()`],
+				[/* reference */ 'r', `java.text.NumberFormat#isParseIntegerOnly()`, `isParseIntegerOnly`],
 				[/* text */ 't', `).`]
 			],
 			[/* parameters */
@@ -86,7 +86,7 @@ DocsCollector.collect('java.text.spi.NumberFormatProvider', [
 					[/* text */ 't', ` isn't
      one of the locales returned from
      `],
-					[/* reference */ 'r', `java.text.spi.LocaleServiceProvider#getAvailableLocales()`],
+					[/* reference */ 'r', `java.util.spi.LocaleServiceProvider#getAvailableLocales()`, `getAvailableLocales()`],
 					[/* text */ 't', `.`]
 				]]
 			],
@@ -118,7 +118,7 @@ DocsCollector.collect('java.text.spi.NumberFormatProvider', [
 					[/* text */ 't', ` isn't
      one of the locales returned from
      `],
-					[/* reference */ 'r', `java.text.spi.LocaleServiceProvider#getAvailableLocales()`],
+					[/* reference */ 'r', `java.util.spi.LocaleServiceProvider#getAvailableLocales()`, `getAvailableLocales()`],
 					[/* text */ 't', `.`]
 				]]
 			],
@@ -150,7 +150,7 @@ DocsCollector.collect('java.text.spi.NumberFormatProvider', [
 					[/* text */ 't', ` isn't
      one of the locales returned from
      `],
-					[/* reference */ 'r', `java.text.spi.LocaleServiceProvider#getAvailableLocales()`],
+					[/* reference */ 'r', `java.util.spi.LocaleServiceProvider#getAvailableLocales()`, `getAvailableLocales()`],
 					[/* text */ 't', `.`]
 				]]
 			],
@@ -194,7 +194,7 @@ DocsCollector.collect('java.text.spi.NumberFormatProvider', [
 					[/* text */ 't', ` is not
      one of the locales returned from
      `],
-					[/* reference */ 'r', `java.text.spi.LocaleServiceProvider#getAvailableLocales()`],
+					[/* reference */ 'r', `java.util.spi.LocaleServiceProvider#getAvailableLocales()`, `getAvailableLocales()`],
 					[/* text */ 't', `.`]
 				]],
 				[/* throw */ 'java.lang.UnsupportedOperationException', [/* throw description */

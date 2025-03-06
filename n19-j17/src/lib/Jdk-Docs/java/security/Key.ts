@@ -88,7 +88,7 @@ DocsCollector.collect('java.security.Key', [
  Keys may also be obtained from key specifications (transparent
  representations of the underlying key material) through the use of a key
  factory (see `],
-		[/* reference */ 'r', `java.security.KeyFactory`],
+		[/* reference */ 'r', `java.security.KeyFactory`, `KeyFactory`],
 		[/* text */ 't', `).
 
  `],

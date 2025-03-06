@@ -177,7 +177,7 @@ DocsCollector.collect('java.util.OptionalLong', [
 		[/* method */ 'stream()', [
 			[/* method description */
 				[/* text */ 't', `If a value is present, returns a sequential `],
-				[/* reference */ 'r', `java.util.stream.LongStream`],
+				[/* reference */ 'r', `java.util.stream.LongStream`, `LongStream`],
 				[/* text */ 't', ` containing
  only that value, otherwise returns an empty `],
 				[/* inline code block */ 'i', `LongStream`],

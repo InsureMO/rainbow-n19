@@ -134,7 +134,7 @@ DocsCollector.collect('java.time.Instant', [
  implementations must document the approach they use when defining a
  clock representing the current instant.
  See `],
-			[/* reference */ 'r', `java.time.Clock`],
+			[/* reference */ 'r', `java.time.Clock`, `Clock`],
 			[/* text */ 't', ` for details on the available clocks.
  `]
 		]],
@@ -246,7 +246,7 @@ DocsCollector.collect('java.time.Instant', [
 					[/* text */ 't', `
  The result of this method is obtained by invoking the
  `],
-					[/* reference */ 'r', `.TemporalQuery#queryFrom(java.time.temporal.TemporalAccessor)`],
+					[/* reference */ 'r', `java.time.temporal.TemporalQuery#queryFrom(java.time.temporal.TemporalAccessor)`, `TemporalQuery.queryFrom(TemporalAccessor)`],
 					[/* text */ 't', ` method on the
  specified query passing `],
 					[/* inline code block */ 'i', `this`],
@@ -350,7 +350,7 @@ DocsCollector.collect('java.time.Instant', [
 				[/* block */ 'b', [
 					[/* text */ 't', `
  If the field is a `],
-					[/* reference */ 'r', `enum class in java.time.temporal.ChronoField`],
+					[/* reference */ 'r', `enum class in java.time.temporal.ChronoField`, `ChronoField`],
 					[/* text */ 't', ` then the query is implemented here.
  The supported fields are:
  `]
@@ -417,7 +417,7 @@ DocsCollector.collect('java.time.Instant', [
 				[/* block */ 'b', [
 					[/* text */ 't', `
  If the unit is a `],
-					[/* reference */ 'r', `enum class in java.time.temporal.ChronoUnit`],
+					[/* reference */ 'r', `enum class in java.time.temporal.ChronoUnit`, `ChronoUnit`],
 					[/* text */ 't', ` then the query is implemented here.
  The supported units are:
  `]
@@ -486,7 +486,7 @@ DocsCollector.collect('java.time.Instant', [
 					[/* text */ 't', `
  The comparison is based on the time-line position of the instants.
  It is "consistent with equals", as defined by `],
-					[/* reference */ 'r', `java.lang.Comparable`],
+					[/* reference */ 'r', `java.lang.Comparable`, `Comparable`],
 					[/* text */ 't', `.`]
 				]]
 			],
@@ -519,7 +519,7 @@ DocsCollector.collect('java.time.Instant', [
 				[/* block */ 'b', [
 					[/* text */ 't', `
  If the field is a `],
-					[/* reference */ 'r', `enum class in java.time.temporal.ChronoField`],
+					[/* reference */ 'r', `enum class in java.time.temporal.ChronoField`, `ChronoField`],
 					[/* text */ 't', ` then the query is implemented here.
  The `],
 					[/* reference */ 'r', `#isSupported(java.time.temporal.TemporalField)`, `supported fields`],
@@ -612,7 +612,7 @@ DocsCollector.collect('java.time.Instant', [
 				[/* block */ 'b', [
 					[/* text */ 't', `
  The format used is the same as `],
-					[/* reference */ 'r', `.DateTimeFormatter#ISO_INSTANT`],
+					[/* reference */ 'r', `java.time.format.DateTimeFormatter#ISO_INSTANT`, `DateTimeFormatter.ISO_INSTANT`],
 					[/* text */ 't', `.`]
 				]]
 			],
@@ -632,10 +632,10 @@ DocsCollector.collect('java.time.Instant', [
 					[/* inline code block */ 'i', `Instant`],
 					[/* text */ 't', `, based on this one, with the specified amount subtracted.
  The amount is typically `],
-					[/* reference */ 'r', `java.time.Duration`],
+					[/* reference */ 'r', `java.time.Duration`, `Duration`],
 					[/* text */ 't', ` but may be any other type implementing
  the `],
-					[/* reference */ 'r', `java.time.temporal.TemporalAmount`],
+					[/* reference */ 'r', `java.time.temporal.TemporalAmount`, `TemporalAmount`],
 					[/* text */ 't', ` interface.
  `]
 				]],
@@ -643,7 +643,7 @@ DocsCollector.collect('java.time.Instant', [
 					[/* text */ 't', `
  The calculation is delegated to the amount object by calling
  `],
-					[/* reference */ 'r', `.TemporalAmount#subtractFrom(java.time.temporal.Temporal)`],
+					[/* reference */ 'r', `java.time.temporal.TemporalAmount#subtractFrom(java.time.temporal.Temporal)`, `TemporalAmount.subtractFrom(Temporal)`],
 					[/* text */ 't', `. The amount implementation is free
  to implement the subtraction in any way it wishes, however it typically
  calls back to `],
@@ -811,10 +811,10 @@ DocsCollector.collect('java.time.Instant', [
 					[/* inline code block */ 'i', `Instant`],
 					[/* text */ 't', `, based on this one, with the specified amount added.
  The amount is typically `],
-					[/* reference */ 'r', `java.time.Duration`],
+					[/* reference */ 'r', `java.time.Duration`, `Duration`],
 					[/* text */ 't', ` but may be any other type implementing
  the `],
-					[/* reference */ 'r', `java.time.temporal.TemporalAmount`],
+					[/* reference */ 'r', `java.time.temporal.TemporalAmount`, `TemporalAmount`],
 					[/* text */ 't', ` interface.
  `]
 				]],
@@ -822,7 +822,7 @@ DocsCollector.collect('java.time.Instant', [
 					[/* text */ 't', `
  The calculation is delegated to the amount object by calling
  `],
-					[/* reference */ 'r', `.TemporalAmount#addTo(java.time.temporal.Temporal)`],
+					[/* reference */ 'r', `java.time.temporal.TemporalAmount#addTo(java.time.temporal.Temporal)`, `TemporalAmount.addTo(Temporal)`],
 					[/* text */ 't', `. The amount implementation is free
  to implement the addition in any way it wishes, however it typically
  calls back to `],
@@ -869,7 +869,7 @@ DocsCollector.collect('java.time.Instant', [
 				[/* block */ 'b', [
 					[/* text */ 't', `
  If the field is a `],
-					[/* reference */ 'r', `enum class in java.time.temporal.ChronoUnit`],
+					[/* reference */ 'r', `enum class in java.time.temporal.ChronoUnit`, `ChronoUnit`],
 					[/* text */ 't', ` then the addition is implemented here.
  The supported fields behave as follows:
  `]
@@ -1115,7 +1115,7 @@ DocsCollector.collect('java.time.Instant', [
 					[/* inline code block */ 'i', `toString`],
 					[/* text */ 't', `.
  For example, truncating with the `],
-					[/* reference */ 'r', `.ChronoUnit#MINUTES`],
+					[/* reference */ 'r', `java.time.temporal.ChronoUnit#MINUTES`, `MINUTES`],
 					[/* text */ 't', ` unit will
  round down to the nearest minute, setting the seconds and nanoseconds to zero.
  `]
@@ -1123,14 +1123,14 @@ DocsCollector.collect('java.time.Instant', [
 				[/* block */ 'b', [
 					[/* text */ 't', `
  The unit must have a `],
-					[/* reference */ 'r', `.TemporalUnit#getDuration()`],
+					[/* reference */ 'r', `java.time.temporal.TemporalUnit#getDuration()`, `duration`],
 					[/* text */ 't', `
  that divides into the length of a standard day without remainder.
  This includes all supplied time units on `],
-					[/* reference */ 'r', `enum class in java.time.temporal.ChronoUnit`],
+					[/* reference */ 'r', `enum class in java.time.temporal.ChronoUnit`, `ChronoUnit`],
 					[/* text */ 't', ` and
  `],
-					[/* reference */ 'r', `.ChronoUnit#DAYS`],
+					[/* reference */ 'r', `java.time.temporal.ChronoUnit#DAYS`, `DAYS`],
 					[/* text */ 't', `. Other units throw an exception.
  `]
 				]],
@@ -1173,7 +1173,7 @@ DocsCollector.collect('java.time.Instant', [
 					[/* text */ 't', `
  The result of this method is obtained by invoking the
  `],
-					[/* reference */ 'r', `.TemporalAdjuster#adjustInto(java.time.temporal.Temporal)`],
+					[/* reference */ 'r', `java.time.temporal.TemporalAdjuster#adjustInto(java.time.temporal.Temporal)`, `TemporalAdjuster.adjustInto(Temporal)`],
 					[/* text */ 't', ` method on the
  specified adjuster passing `],
 					[/* inline code block */ 'i', `this`],
@@ -1221,7 +1221,7 @@ DocsCollector.collect('java.time.Instant', [
 				[/* block */ 'b', [
 					[/* text */ 't', `
  If the field is a `],
-					[/* reference */ 'r', `enum class in java.time.temporal.ChronoField`],
+					[/* reference */ 'r', `enum class in java.time.temporal.ChronoField`, `ChronoField`],
 					[/* text */ 't', ` then the adjustment is implemented here.
  The supported fields behave as follows:
  `]
@@ -1345,7 +1345,7 @@ DocsCollector.collect('java.time.Instant', [
 					[/* text */ 't', `
  This method is equivalent to
  `],
-					[/* reference */ 'r', `.OffsetDateTime#ofInstant(java.time.Instant,java.time.ZoneId)`],
+					[/* reference */ 'r', `java.time.OffsetDateTime#ofInstant(java.time.Instant,java.time.ZoneId)`, `OffsetDateTime.ofInstant(this, offset)`],
 					[/* text */ 't', `.`]
 				]]
 			],
@@ -1374,13 +1374,13 @@ DocsCollector.collect('java.time.Instant', [
 				[/* block */ 'b', [
 					[/* text */ 't', `
  The adjustment is equivalent to using `],
-					[/* reference */ 'r', `.Temporal#with(java.time.temporal.TemporalField,long)`],
+					[/* reference */ 'r', `java.time.temporal.Temporal#with(java.time.temporal.TemporalField,long)`, `Temporal.with(TemporalField, long)`],
 					[/* text */ 't', `
  twice, passing `],
-					[/* reference */ 'r', `.ChronoField#INSTANT_SECONDS`],
+					[/* reference */ 'r', `java.time.temporal.ChronoField#INSTANT_SECONDS`, `ChronoField.INSTANT_SECONDS`],
 					[/* text */ 't', ` and
  `],
-					[/* reference */ 'r', `.ChronoField#NANO_OF_SECOND`],
+					[/* reference */ 'r', `java.time.temporal.ChronoField#NANO_OF_SECOND`, `ChronoField.NANO_OF_SECOND`],
 					[/* text */ 't', ` as the fields.
  `]
 				]],
@@ -1388,7 +1388,7 @@ DocsCollector.collect('java.time.Instant', [
 					[/* text */ 't', `
  In most cases, it is clearer to reverse the calling pattern by using
  `],
-					[/* reference */ 'r', `.Temporal#with(java.time.temporal.TemporalAdjuster)`],
+					[/* reference */ 'r', `java.time.temporal.Temporal#with(java.time.temporal.TemporalAdjuster)`, `Temporal.with(TemporalAdjuster)`],
 					[/* text */ 't', `:
  `]
 				]],
@@ -1430,7 +1430,7 @@ DocsCollector.collect('java.time.Instant', [
 				[/* block */ 'b', [
 					[/* text */ 't', `
  If the field is a `],
-					[/* reference */ 'r', `enum class in java.time.temporal.ChronoField`],
+					[/* reference */ 'r', `enum class in java.time.temporal.ChronoField`, `ChronoField`],
 					[/* text */ 't', ` then the query is implemented here.
  The `],
 					[/* reference */ 'r', `#isSupported(java.time.temporal.TemporalField)`, `supported fields`],
@@ -1493,7 +1493,7 @@ DocsCollector.collect('java.time.Instant', [
 					[/* text */ 't', `
  This method is equivalent to
  `],
-					[/* reference */ 'r', `.ZonedDateTime#ofInstant(java.time.Instant,java.time.ZoneId)`],
+					[/* reference */ 'r', `java.time.ZonedDateTime#ofInstant(java.time.Instant,java.time.ZoneId)`, `ZonedDateTime.ofInstant(this, zone)`],
 					[/* text */ 't', `.`]
 				]]
 			],
@@ -1544,7 +1544,7 @@ DocsCollector.collect('java.time.Instant', [
 				[/* block */ 'b', [
 					[/* text */ 't', `
  If the field is a `],
-					[/* reference */ 'r', `enum class in java.time.temporal.ChronoField`],
+					[/* reference */ 'r', `enum class in java.time.temporal.ChronoField`, `ChronoField`],
 					[/* text */ 't', ` then the query is implemented here.
  The `],
 					[/* reference */ 'r', `#isSupported(java.time.temporal.TemporalField)`, `supported fields`],
@@ -1656,7 +1656,7 @@ DocsCollector.collect('java.time.Instant', [
  There are two equivalent ways of using this method.
  The first is to invoke this method.
  The second is to use `],
-					[/* reference */ 'r', `.TemporalUnit#between(java.time.temporal.Temporal,java.time.temporal.Temporal)`],
+					[/* reference */ 'r', `java.time.temporal.TemporalUnit#between(java.time.temporal.Temporal,java.time.temporal.Temporal)`, `TemporalUnit.between(Temporal, Temporal)`],
 					[/* text */ 't', `:
  `]
 				]],
@@ -1671,7 +1671,7 @@ DocsCollector.collect('java.time.Instant', [
 				[/* block */ 'b', [
 					[/* text */ 't', `
  The calculation is implemented in this method for `],
-					[/* reference */ 'r', `enum class in java.time.temporal.ChronoUnit`],
+					[/* reference */ 'r', `enum class in java.time.temporal.ChronoUnit`, `ChronoUnit`],
 					[/* text */ 't', `.
  The units `],
 					[/* inline code block */ 'i', `NANOS`],
@@ -1760,17 +1760,17 @@ DocsCollector.collect('java.time.Instant', [
 				[/* block */ 'b', [
 					[/* text */ 't', `
  The conversion extracts the `],
-					[/* reference */ 'r', `.ChronoField#INSTANT_SECONDS`],
+					[/* reference */ 'r', `java.time.temporal.ChronoField#INSTANT_SECONDS`, `INSTANT_SECONDS`],
 					[/* text */ 't', `
  and `],
-					[/* reference */ 'r', `.ChronoField#NANO_OF_SECOND`],
+					[/* reference */ 'r', `java.time.temporal.ChronoField#NANO_OF_SECOND`, `NANO_OF_SECOND`],
 					[/* text */ 't', ` fields.
  `]
 				]],
 				[/* block */ 'b', [
 					[/* text */ 't', `
  This method matches the signature of the functional interface `],
-					[/* reference */ 'r', `java.time.temporal.TemporalQuery`],
+					[/* reference */ 'r', `java.time.temporal.TemporalQuery`, `TemporalQuery`],
 					[/* text */ 't', `
  allowing it to be used as a query via method reference, `],
 					[/* inline code block */ 'i', `Instant::from`],
@@ -1799,7 +1799,7 @@ DocsCollector.collect('java.time.Instant', [
 				[/* block */ 'b', [
 					[/* text */ 't', `
  This will query the `],
-					[/* reference */ 'r', `.Clock#systemUTC()`],
+					[/* reference */ 'r', `java.time.Clock#systemUTC()`, `system UTC clock`],
 					[/* text */ 't', ` to
  obtain the current instant.
  `]
@@ -1825,7 +1825,7 @@ DocsCollector.collect('java.time.Instant', [
 					[/* text */ 't', `
  Using this method allows the use of an alternate clock for testing.
  The alternate clock may be introduced using `],
-					[/* reference */ 'r', `java.time.Clock`],
+					[/* reference */ 'r', `java.time.Clock`, `dependency injection`],
 					[/* text */ 't', `.`]
 				]]
 			],
@@ -1939,7 +1939,7 @@ DocsCollector.collect('java.time.Instant', [
 					[/* text */ 't', `
  The string must represent a valid instant in UTC and is parsed using
  `],
-					[/* reference */ 'r', `.DateTimeFormatter#ISO_INSTANT`],
+					[/* reference */ 'r', `java.time.format.DateTimeFormatter#ISO_INSTANT`, `DateTimeFormatter.ISO_INSTANT`],
 					[/* text */ 't', `.`]
 				]]
 			],

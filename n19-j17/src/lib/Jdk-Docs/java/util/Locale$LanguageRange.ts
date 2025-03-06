@@ -11,7 +11,7 @@ DocsCollector.collect('java.util.Locale$LanguageRange', [
 		[/* text */ 't', `. A language range is an identifier which is used to
  select language tag(s) meeting specific requirements by using the
  mechanisms described in `],
-		[/* reference */ 'r', `.Locale#LocaleMatching`],
+		[/* reference */ 'r', `java.util.Locale#LocaleMatching`, `Locale Matching`],
 		[/* text */ 't', `. A list which represents a user's preferences and consists
  of language ranges is called a `],
 		[/* text */ 't', `Language Priority List`],

@@ -29,7 +29,7 @@ DocsCollector.collect('java.util.Base64$Decoder', [
 		]],
 		[/* block */ 'b', [
 			[/* text */ 't', ` Instances of `],
-			[/* reference */ 'r', `java.util.Base64.Decoder`],
+			[/* reference */ 'r', `java.util.Base64.Decoder`, `Base64.Decoder`],
 			[/* text */ 't', ` class are safe for use by
  multiple concurrent threads.
 
@@ -41,7 +41,7 @@ DocsCollector.collect('java.util.Base64$Decoder', [
 			[/* text */ 't', ` argument to
  a method of this class will cause a
  `],
-			[/* reference */ 'r', `java.lang.NullPointerException`],
+			[/* reference */ 'r', `java.lang.NullPointerException`, `NullPointerException`],
 			[/* text */ 't', ` to
  be thrown.
  `]
@@ -50,7 +50,7 @@ DocsCollector.collect('java.util.Base64$Decoder', [
 			[/* text */ 't', ` If the decoded byte output of the needed size can not
      be allocated, the decode methods of this class will
      cause an `],
-			[/* reference */ 'r', `java.lang.OutOfMemoryError`],
+			[/* reference */ 'r', `java.lang.OutOfMemoryError`, `OutOfMemoryError`],
 			[/* text */ 't', `
      to be thrown.`]
 		]]
@@ -61,7 +61,7 @@ DocsCollector.collect('java.util.Base64$Decoder', [
 		[/* method */ 'decode(byte[])', [
 			[/* method description */
 				[/* text */ 't', `Decodes all bytes from the input byte array using the `],
-				[/* reference */ 'r', `java.util.Base64`],
+				[/* reference */ 'r', `java.util.Base64`, `Base64`],
 				[/* text */ 't', `
  encoding scheme, writing the results into a newly-allocated output
  byte array. The returned byte array is of the length of the resulting
@@ -87,7 +87,7 @@ DocsCollector.collect('java.util.Base64$Decoder', [
 			[/* method description */
 				[/* text */ 't', `Decodes a Base64 encoded String into a newly-allocated byte array
  using the `],
-				[/* reference */ 'r', `java.util.Base64`],
+				[/* reference */ 'r', `java.util.Base64`, `Base64`],
 				[/* text */ 't', ` encoding scheme.
 
  `],
@@ -116,7 +116,7 @@ DocsCollector.collect('java.util.Base64$Decoder', [
 		[/* method */ 'decode(byte[],byte[])', [
 			[/* method description */
 				[/* text */ 't', `Decodes all bytes from the input byte array using the `],
-				[/* reference */ 'r', `java.util.Base64`],
+				[/* reference */ 'r', `java.util.Base64`, `Base64`],
 				[/* text */ 't', `
  encoding scheme, writing the results into the given output byte array,
  starting at offset 0.
@@ -161,7 +161,7 @@ DocsCollector.collect('java.util.Base64$Decoder', [
 		[/* method */ 'wrap(java.io.InputStream)', [
 			[/* method description */
 				[/* text */ 't', `Returns an input stream for decoding `],
-				[/* reference */ 'r', `java.util.Base64`],
+				[/* reference */ 'r', `java.util.Base64`, `Base64`],
 				[/* text */ 't', ` encoded byte stream.
 
  `],
@@ -194,7 +194,7 @@ DocsCollector.collect('java.util.Base64$Decoder', [
 		[/* method */ 'decode(java.nio.ByteBuffer)', [
 			[/* method description */
 				[/* text */ 't', `Decodes all bytes from the input byte buffer using the `],
-				[/* reference */ 'r', `java.util.Base64`],
+				[/* reference */ 'r', `java.util.Base64`, `Base64`],
 				[/* text */ 't', `
  encoding scheme, writing the results into a newly-allocated ByteBuffer.
 

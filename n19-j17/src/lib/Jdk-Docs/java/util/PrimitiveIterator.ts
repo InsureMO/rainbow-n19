@@ -7,36 +7,36 @@ DocsCollector.collect('java.util.PrimitiveIterator', [
 		[/* inline code block */ 'i', `Iterator`],
 		[/* text */ 't', `.  Specialized
  subtypes are provided for `],
-		[/* reference */ 'r', `java.util.PrimitiveIterator.OfInt`],
+		[/* reference */ 'r', `java.util.PrimitiveIterator.OfInt`, `int`],
 		[/* text */ 't', `, `],
-		[/* reference */ 'r', `java.util.PrimitiveIterator.OfLong`],
+		[/* reference */ 'r', `java.util.PrimitiveIterator.OfLong`, `long`],
 		[/* text */ 't', `, and
  `],
-		[/* reference */ 'r', `java.util.PrimitiveIterator.OfDouble`],
+		[/* reference */ 'r', `java.util.PrimitiveIterator.OfDouble`, `double`],
 		[/* text */ 't', ` values.
 
  `],
 		[/* block */ 'b', [
 			[/* text */ 't', `The specialized subtype default implementations of `],
-			[/* reference */ 'r', `.Iterator#next()`],
+			[/* reference */ 'r', `java.util.Iterator#next()`, `Iterator.next()`],
 			[/* text */ 't', `
  and `],
-			[/* reference */ 'r', `.Iterator#forEachRemaining(java.util.function.Consumer)`],
+			[/* reference */ 'r', `java.util.Iterator#forEachRemaining(java.util.function.Consumer)`, `Iterator.forEachRemaining(java.util.function.Consumer)`],
 			[/* text */ 't', ` box
  primitive values to instances of their corresponding wrapper class.  Such
  boxing may offset any advantages gained when using the primitive
  specializations.  To avoid boxing, the corresponding primitive-based methods
  should be used.  For example, `],
-			[/* reference */ 'r', `.PrimitiveIterator.OfInt#nextInt()`],
+			[/* reference */ 'r', `java.util.PrimitiveIterator.OfInt#nextInt()`, `PrimitiveIterator.OfInt.nextInt()`],
 			[/* text */ 't', ` and
  `],
-			[/* reference */ 'r', `.PrimitiveIterator.OfInt#forEachRemaining(java.util.function.IntConsumer)`],
+			[/* reference */ 'r', `java.util.PrimitiveIterator.OfInt#forEachRemaining(java.util.function.IntConsumer)`, `PrimitiveIterator.OfInt.forEachRemaining(java.util.function.IntConsumer)`],
 			[/* text */ 't', `
  should be used in preference to `],
-			[/* reference */ 'r', `.PrimitiveIterator.OfInt#next()`],
+			[/* reference */ 'r', `java.util.PrimitiveIterator.OfInt#next()`, `PrimitiveIterator.OfInt.next()`],
 			[/* text */ 't', ` and
  `],
-			[/* reference */ 'r', `.PrimitiveIterator.OfInt#forEachRemaining(java.util.function.Consumer)`],
+			[/* reference */ 'r', `java.util.PrimitiveIterator.OfInt#forEachRemaining(java.util.function.Consumer)`, `PrimitiveIterator.OfInt.forEachRemaining(java.util.function.Consumer)`],
 			[/* text */ 't', `.
 
  `]
@@ -44,10 +44,10 @@ DocsCollector.collect('java.util.PrimitiveIterator', [
 		[/* block */ 'b', [
 			[/* text */ 't', `Iteration of primitive values using boxing-based methods
  `],
-			[/* reference */ 'r', `.Iterator#next()`],
+			[/* reference */ 'r', `java.util.Iterator#next()`, `next()`],
 			[/* text */ 't', ` and
  `],
-			[/* reference */ 'r', `.Iterator#forEachRemaining(java.util.function.Consumer)`],
+			[/* reference */ 'r', `java.util.Iterator#forEachRemaining(java.util.function.Consumer)`, `forEachRemaining()`],
 			[/* text */ 't', `,
  does not affect the order in which the values, transformed to boxed values,
  are encountered.`]
@@ -67,7 +67,7 @@ DocsCollector.collect('java.util.PrimitiveIterator', [
 					[/* text */ 't', `
  The behavior of an iterator is unspecified if the action modifies the
  source of elements in any way (even by calling the `],
-					[/* reference */ 'r', `.Iterator#remove()`],
+					[/* reference */ 'r', `java.util.Iterator#remove()`, `remove`],
 					[/* text */ 't', `
  method or other mutator methods of `],
 					[/* inline code block */ 'i', `Iterator`],

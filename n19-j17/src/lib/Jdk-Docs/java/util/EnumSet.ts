@@ -4,7 +4,7 @@ import {DocsCollector} from '../../DocsCollector';
 DocsCollector.collect('java.util.EnumSet', [
 	[/* class description */
 		[/* text */ 't', `A specialized `],
-		[/* reference */ 'r', `java.util.Set`],
+		[/* reference */ 'r', `java.util.Set`, `Set`],
 		[/* text */ 't', ` implementation for use with enum types.  All of
  the elements in an enum set must come from a single enum type that is
  specified, explicitly or implicitly, when the set is created.  Enum sets
@@ -33,7 +33,7 @@ DocsCollector.collect('java.util.EnumSet', [
 			[/* text */ 't', `weakly
  consistent`],
 			[/* text */ 't', `: it will never throw `],
-			[/* reference */ 'r', `java.util.ConcurrentModificationException`],
+			[/* reference */ 'r', `java.util.ConcurrentModificationException`, `ConcurrentModificationException`],
 			[/* text */ 't', `
  and it may or may not show the effects of any modifications to the set that
  occur while the iteration is in progress.
@@ -43,7 +43,7 @@ DocsCollector.collect('java.util.EnumSet', [
 		[/* block */ 'b', [
 			[/* text */ 't', `Null elements are not permitted.  Attempts to insert a null element
  will throw `],
-			[/* reference */ 'r', `java.lang.NullPointerException`],
+			[/* reference */ 'r', `java.lang.NullPointerException`, `NullPointerException`],
 			[/* text */ 't', `.  Attempts to test for the
  presence of a null element or to remove one will, however, function
  properly.
@@ -59,7 +59,7 @@ DocsCollector.collect('java.util.EnumSet', [
  externally.  This is typically accomplished by synchronizing on some
  object that naturally encapsulates the enum set.  If no such object exists,
  the set should be "wrapped" using the `],
-			[/* reference */ 'r', `.Collections#synchronizedSet(java.util.Set)`],
+			[/* reference */ 'r', `java.util.Collections#synchronizedSet(java.util.Set)`, `Collections.synchronizedSet(java.util.Set<T>)`],
 			[/* text */ 't', `
  method.  This is best done at creation time, to prevent accidental
  unsynchronized access:
@@ -73,7 +73,7 @@ DocsCollector.collect('java.util.EnumSet', [
 			[/* text */ 't', `Implementation note: All basic operations execute in constant time.
  They are likely (though not guaranteed) to be much faster than their
  `],
-			[/* reference */ 'r', `java.util.HashSet`],
+			[/* reference */ 'r', `java.util.HashSet`, `HashSet`],
 			[/* text */ 't', ` counterparts.  Even bulk operations execute in
  constant time if their argument is also an enum set.
 

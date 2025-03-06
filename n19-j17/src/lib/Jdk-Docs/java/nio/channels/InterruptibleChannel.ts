@@ -15,7 +15,7 @@ DocsCollector.collect('java.nio.channels.InterruptibleChannel', [
 			[/* reference */ 'r', `#close()`, `close`],
 			[/* text */ 't', ` method.  This will cause the blocked thread to receive an
  `],
-			[/* reference */ 'r', `java.nio.channels.AsynchronousCloseException`],
+			[/* reference */ 'r', `java.nio.channels.AsynchronousCloseException`, `AsynchronousCloseException`],
 			[/* text */ 't', `.
 
  `]
@@ -26,10 +26,10 @@ DocsCollector.collect('java.nio.channels.InterruptibleChannel', [
 			[/* text */ 't', `
  If a thread is blocked in an I/O operation on an interruptible channel then
  another thread may invoke the blocked thread's `],
-			[/* reference */ 'r', `java.nio.Thread#interrupt()`],
+			[/* reference */ 'r', `java.lang.Thread#interrupt()`, `interrupt`],
 			[/* text */ 't', ` method.  This will cause the channel to be closed, the blocked
  thread to receive a `],
-			[/* reference */ 'r', `java.nio.channels.ClosedByInterruptException`],
+			[/* reference */ 'r', `java.nio.channels.ClosedByInterruptException`, `ClosedByInterruptException`],
 			[/* text */ 't', `, and the blocked
  thread's interrupt status to be set.
 
@@ -39,7 +39,7 @@ DocsCollector.collect('java.nio.channels.InterruptibleChannel', [
 			[/* text */ 't', ` If a thread's interrupt status is already set and it invokes a blocking
  I/O operation upon a channel then the channel will be closed and the thread
  will immediately receive a `],
-			[/* reference */ 'r', `java.nio.channels.ClosedByInterruptException`],
+			[/* reference */ 'r', `java.nio.channels.ClosedByInterruptException`, `ClosedByInterruptException`],
 			[/* text */ 't', `; its interrupt
  status will remain set.
 
@@ -64,14 +64,14 @@ DocsCollector.collect('java.nio.channels.InterruptibleChannel', [
 				[/* block */ 'b', [
 					[/* text */ 't', ` Any thread currently blocked in an I/O operation upon this channel
  will receive an `],
-					[/* reference */ 'r', `java.nio.channels.AsynchronousCloseException`],
+					[/* reference */ 'r', `java.nio.channels.AsynchronousCloseException`, `AsynchronousCloseException`],
 					[/* text */ 't', `.
 
  `]
 				]],
 				[/* block */ 'b', [
 					[/* text */ 't', ` This method otherwise behaves exactly as specified by the `],
-					[/* reference */ 'r', `.Channel#close()`],
+					[/* reference */ 'r', `java.nio.channels.Channel#close()`, `Channel`],
 					[/* text */ 't', ` interface.  `]
 				]]
 			],

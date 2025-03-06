@@ -30,7 +30,7 @@ DocsCollector.collect('java.lang.module.ModuleDescriptor$Opens', [
 				]],
 				[/* block */ 'b', [
 					[/* text */ 't', ` This method satisfies the general contract of the `],
-					[/* reference */ 'r', `java.Object#equals(java.lang.Object)`],
+					[/* reference */ 'r', `java.lang.Object#equals(java.lang.Object)`, `Object.equals`],
 					[/* text */ 't', ` method. `]
 				]]
 			],
@@ -76,7 +76,7 @@ DocsCollector.collect('java.lang.module.ModuleDescriptor$Opens', [
  names lexicographically. Where the packages names are equal then the
  sets of modifiers are compared in the same way that module modifiers
  are compared (see `],
-					[/* reference */ 'r', `.ModuleDescriptor#compareTo(java.lang.module.ModuleDescriptor)`],
+					[/* reference */ 'r', `java.lang.module.ModuleDescriptor#compareTo(java.lang.module.ModuleDescriptor)`, `ModuleDescriptor.compareTo`],
 					[/* text */ 't', `). Where the package names are equal and
  the set of modifiers are equal then the set of target modules are
  compared. This is done by sorting the names of the target modules
@@ -118,7 +118,7 @@ DocsCollector.collect('java.lang.module.ModuleDescriptor$Opens', [
 					[/* text */ 't', `, the set of modules names to which the
  package is opened. It satisfies the general contract of the
  `],
-					[/* reference */ 'r', `java.Object#hashCode()`],
+					[/* reference */ 'r', `java.lang.Object#hashCode()`, `Object.hashCode`],
 					[/* text */ 't', ` method.`]
 				]]
 			],

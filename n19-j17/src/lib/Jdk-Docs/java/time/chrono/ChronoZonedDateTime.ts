@@ -9,7 +9,7 @@ DocsCollector.collect('java.time.chrono.ChronoZonedDateTime', [
 		[/* block */ 'b', [
 			[/* text */ 't', `Most applications should declare method signatures, fields and variables
  as `],
-			[/* reference */ 'r', `java.time.ZonedDateTime`],
+			[/* reference */ 'r', `java.time.ZonedDateTime`, `ZonedDateTime`],
 			[/* text */ 't', `, not this interface.`]
 		]],
 		[/* block */ 'b', [
@@ -21,10 +21,10 @@ DocsCollector.collect('java.time.chrono.ChronoZonedDateTime', [
 			[/* inline code block */ 'i', `Chronology chronology`],
 			[/* text */ 't', `, or calendar system, is pluggable.
  The date-time is defined in terms of fields expressed by `],
-			[/* reference */ 'r', `java.time.temporal.TemporalField`],
+			[/* reference */ 'r', `java.time.temporal.TemporalField`, `TemporalField`],
 			[/* text */ 't', `,
  where most common implementations are defined in `],
-			[/* reference */ 'r', `enum class in java.time.temporal.ChronoField`],
+			[/* reference */ 'r', `enum class in java.time.temporal.ChronoField`, `ChronoField`],
 			[/* text */ 't', `.
  The chronology defines how the calendar system operates and the meaning of
  the standard fields.
@@ -38,7 +38,7 @@ DocsCollector.collect('java.time.chrono.ChronoZonedDateTime', [
 		[/* text */ 't', ` rather than this
  interface, even in the case where the application needs to deal with multiple
  calendar systems. The rationale for this is explored in detail in `],
-		[/* reference */ 'r', `java.time.chrono.ChronoLocalDate`],
+		[/* reference */ 'r', `java.time.chrono.ChronoLocalDate`, `ChronoLocalDate`],
 		[/* text */ 't', `.
  `],
 		[/* block */ 'b', [
@@ -85,10 +85,10 @@ DocsCollector.collect('java.time.chrono.ChronoZonedDateTime', [
 					[/* text */ 't', `
  This checks if the specified field can be queried on this date-time.
  If false, then calling the `],
-					[/* reference */ 'r', `java.TemporalAccessor#range(java.time.temporal.TemporalField)`],
+					[/* reference */ 'r', `java.time.temporal.TemporalAccessor#range(java.time.temporal.TemporalField)`, `range`],
 					[/* text */ 't', `,
  `],
-					[/* reference */ 'r', `java.TemporalAccessor#get(java.time.temporal.TemporalField)`],
+					[/* reference */ 'r', `java.time.temporal.TemporalAccessor#get(java.time.temporal.TemporalField)`, `get`],
 					[/* text */ 't', ` and `],
 					[/* reference */ 'r', `#with(java.time.temporal.TemporalField,long)`, `with(TemporalField, long)`],
 					[/* text */ 't', `
@@ -431,7 +431,7 @@ DocsCollector.collect('java.time.chrono.ChronoZonedDateTime', [
 					[/* text */ 't', `
  The result of this method is obtained by invoking the
  `],
-					[/* reference */ 'r', `java.TemporalQuery#queryFrom(java.time.temporal.TemporalAccessor)`],
+					[/* reference */ 'r', `java.time.temporal.TemporalQuery#queryFrom(java.time.temporal.TemporalAccessor)`, `TemporalQuery.queryFrom(TemporalAccessor)`],
 					[/* text */ 't', ` method on the
  specified query passing `],
 					[/* inline code block */ 'i', `this`],
@@ -616,7 +616,7 @@ DocsCollector.collect('java.time.chrono.ChronoZonedDateTime', [
  The comparison is based first on the instant, then on the local date-time,
  then on the zone ID, then on the chronology.
  It is "consistent with equals", as defined by `],
-					[/* reference */ 'r', `java.lang.Comparable`],
+					[/* reference */ 'r', `java.lang.Comparable`, `Comparable`],
 					[/* text */ 't', `.
  `]
 				]],
@@ -676,7 +676,7 @@ DocsCollector.collect('java.time.chrono.ChronoZonedDateTime', [
 					[/* inline code block */ 'i', `Chronology`],
 					[/* text */ 't', ` represents the calendar system in use.
  The era and other fields in `],
-					[/* reference */ 'r', `enum class in java.time.temporal.ChronoField`],
+					[/* reference */ 'r', `enum class in java.time.temporal.ChronoField`, `ChronoField`],
 					[/* text */ 't', ` are defined by the chronology.`]
 				]]
 			],
@@ -694,12 +694,12 @@ DocsCollector.collect('java.time.chrono.ChronoZonedDateTime', [
 					[/* text */ 't', `
  This adjusts this temporal, subtracting according to the rules of the specified amount.
  The amount is typically a `],
-					[/* reference */ 'r', `java.time.Period`],
+					[/* reference */ 'r', `java.time.Period`, `Period`],
 					[/* text */ 't', ` but may be any other type implementing
  the `],
-					[/* reference */ 'r', `java.time.temporal.TemporalAmount`],
+					[/* reference */ 'r', `java.time.temporal.TemporalAmount`, `TemporalAmount`],
 					[/* text */ 't', ` interface, such as `],
-					[/* reference */ 'r', `java.time.Duration`],
+					[/* reference */ 'r', `java.time.Duration`, `Duration`],
 					[/* text */ 't', `.
  `]
 				]],
@@ -785,12 +785,12 @@ DocsCollector.collect('java.time.chrono.ChronoZonedDateTime', [
 					[/* text */ 't', `
  This adjusts this temporal, adding according to the rules of the specified amount.
  The amount is typically a `],
-					[/* reference */ 'r', `java.time.Period`],
+					[/* reference */ 'r', `java.time.Period`, `Period`],
 					[/* text */ 't', ` but may be any other type implementing
  the `],
-					[/* reference */ 'r', `java.time.temporal.TemporalAmount`],
+					[/* reference */ 'r', `java.time.temporal.TemporalAmount`, `TemporalAmount`],
 					[/* text */ 't', ` interface, such as `],
-					[/* reference */ 'r', `java.time.Duration`],
+					[/* reference */ 'r', `java.time.Duration`, `Duration`],
 					[/* text */ 't', `.
  `]
 				]],
@@ -840,7 +840,7 @@ DocsCollector.collect('java.time.chrono.ChronoZonedDateTime', [
  A more complex adjuster might set the date to the last day of the month.
  A selection of common adjustments is provided in
  `],
-					[/* reference */ 'r', `java.time.temporal.TemporalAdjusters`],
+					[/* reference */ 'r', `java.time.temporal.TemporalAdjusters`, `TemporalAdjusters`],
 					[/* text */ 't', `.
  These include finding the "last day of the month" and "next Wednesday".
  The adjuster is responsible for handling special cases, such as the varying
@@ -985,7 +985,7 @@ DocsCollector.collect('java.time.chrono.ChronoZonedDateTime', [
  The conversion extracts and combines the chronology, date, time and zone
  from the temporal object. The behavior is equivalent to using
  `],
-					[/* reference */ 'r', `.Chronology#zonedDateTime(java.time.temporal.TemporalAccessor)`],
+					[/* reference */ 'r', `java.time.chrono.Chronology#zonedDateTime(java.time.temporal.TemporalAccessor)`, `Chronology.zonedDateTime(TemporalAccessor)`],
 					[/* text */ 't', ` with the extracted chronology.
  Implementations are permitted to perform optimizations such as accessing
  those fields that are equivalent to the relevant objects.
@@ -994,7 +994,7 @@ DocsCollector.collect('java.time.chrono.ChronoZonedDateTime', [
 				[/* block */ 'b', [
 					[/* text */ 't', `
  This method matches the signature of the functional interface `],
-					[/* reference */ 'r', `java.time.temporal.TemporalQuery`],
+					[/* reference */ 'r', `java.time.temporal.TemporalQuery`, `TemporalQuery`],
 					[/* text */ 't', `
  allowing it to be used as a query via method reference, `],
 					[/* inline code block */ 'i', `ChronoZonedDateTime::from`],

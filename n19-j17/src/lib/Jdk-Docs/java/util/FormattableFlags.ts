@@ -4,11 +4,11 @@ import {DocsCollector} from '../../DocsCollector';
 DocsCollector.collect('java.util.FormattableFlags', [
 	[/* class description */
 		[/* text */ 't', `FormattableFlags are passed to the `],
-		[/* reference */ 'r', `.Formattable#formatTo(java.util.Formatter,int,int,int)`],
+		[/* reference */ 'r', `java.util.Formattable#formatTo(java.util.Formatter,int,int,int)`, `Formattable.formatTo()`],
 		[/* text */ 't', ` method and modify the output format for `],
-		[/* reference */ 'r', `java.util.Formattable`],
+		[/* reference */ 'r', `java.util.Formattable`, `Formattables`],
 		[/* text */ 't', `.  Implementations of `],
-		[/* reference */ 'r', `java.util.Formattable`],
+		[/* reference */ 'r', `java.util.Formattable`, `Formattable`],
 		[/* text */ 't', ` are
  responsible for interpreting and validating any flags.`]
 	],
@@ -55,15 +55,15 @@ DocsCollector.collect('java.util.FormattableFlags', [
 			[/* field description */
 				[/* text */ 't', `Converts the output to upper case according to the rules of the
  `],
-				[/* reference */ 'r', `java.util.Locale`],
+				[/* reference */ 'r', `java.util.Locale`, `locale`],
 				[/* text */ 't', ` given during creation of the
  `],
 				[/* inline code block */ 'i', `formatter`],
 				[/* text */ 't', ` argument of the `],
-				[/* reference */ 'r', `.Formattable#formatTo(java.util.Formatter,int,int,int)`],
+				[/* reference */ 'r', `java.util.Formattable#formatTo(java.util.Formatter,int,int,int)`, `formatTo()`],
 				[/* text */ 't', ` method.  The output should be equivalent the following
  invocation of `],
-				[/* reference */ 'r', `java.String#toUpperCase(java.util.Locale)`],
+				[/* reference */ 'r', `java.lang.String#toUpperCase(java.util.Locale)`, `String.toUpperCase(java.util.Locale)`],
 				[/* code block */ 'c', `     out.toUpperCase() `],
 				[/* block */ 'b', [
 					[/* text */ 't', ` This flag corresponds to `],

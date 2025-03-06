@@ -6,7 +6,7 @@ DocsCollector.collect('java.lang.invoke.CallSite', [
 		[/* text */ 't', `A `],
 		[/* inline code block */ 'i', `CallSite`],
 		[/* text */ 't', ` is a holder for a variable `],
-		[/* reference */ 'r', `java.lang.invoke.MethodHandle`],
+		[/* reference */ 'r', `java.lang.invoke.MethodHandle`, `MethodHandle`],
 		[/* text */ 't', `,
  which is called its `],
 		[/* inline code block */ 'i', `target`],
@@ -41,7 +41,7 @@ DocsCollector.collect('java.lang.invoke.CallSite', [
 				[/* inline code block */ 'i', `invokedynamic`],
 				[/* text */ 't', ` instruction
  may be permanently bound by means of a `],
-				[/* reference */ 'r', `java.lang.invoke.ConstantCallSite`],
+				[/* reference */ 'r', `java.lang.invoke.ConstantCallSite`, `constant call site`],
 				[/* text */ 't', `.
  `]
 			]],
@@ -49,14 +49,14 @@ DocsCollector.collect('java.lang.invoke.CallSite', [
 				[/* text */ 't', `If a mutable target is required which has volatile variable semantics,
  because updates to the target must be immediately and reliably witnessed by other threads,
  a `],
-				[/* reference */ 'r', `java.lang.invoke.VolatileCallSite`],
+				[/* reference */ 'r', `java.lang.invoke.VolatileCallSite`, `volatile call site`],
 				[/* text */ 't', ` may be used.
  `]
 			]],
 			[/* block */ 'b', [
 				[/* text */ 't', `Otherwise, if a mutable target is required,
  a `],
-				[/* reference */ 'r', `java.lang.invoke.MutableCallSite`],
+				[/* reference */ 'r', `java.lang.invoke.MutableCallSite`, `mutable call site`],
 				[/* text */ 't', ` may be used.
  `]
 			]]
@@ -68,7 +68,7 @@ DocsCollector.collect('java.lang.invoke.CallSite', [
 			[/* text */ 't', `relinked`],
 			[/* text */ 't', ` by changing its target.
  The new target must have the same `],
-			[/* reference */ 'r', `.MethodHandle#type()`],
+			[/* reference */ 'r', `java.lang.invoke.MethodHandle#type()`, `type`],
 			[/* text */ 't', `
  as the previous target.
  Thus, though a call site can be relinked to a series of
@@ -157,7 +157,7 @@ private static CallSite bootstrapDynamic(MethodHandles.Lookup caller, String nam
 				[/* block */ 'b', [
 					[/* text */ 't', `
  The type of the new target must be `],
-					[/* reference */ 'r', `.MethodType#equals(java.lang.Object)`],
+					[/* reference */ 'r', `java.lang.invoke.MethodType#equals(java.lang.Object)`, `equal to`],
 					[/* text */ 't', `
  the type of the old target.`]
 				]]

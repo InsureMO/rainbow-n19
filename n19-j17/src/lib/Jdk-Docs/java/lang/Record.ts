@@ -39,11 +39,11 @@ DocsCollector.collect('java.lang.Record', [
  constructor arguments.  The implicit declaration of the accessor methods returns
  the value of the corresponding component field.  The implicit declaration of the
  `],
-			[/* reference */ 'r', `.Object#equals(java.lang.Object)`],
+			[/* reference */ 'r', `java.lang.Object#equals(java.lang.Object)`, `Object.equals(Object)`],
 			[/* text */ 't', `, `],
-			[/* reference */ 'r', `.Object#hashCode()`],
+			[/* reference */ 'r', `java.lang.Object#hashCode()`, `Object.hashCode()`],
 			[/* text */ 't', `, and `],
-			[/* reference */ 'r', `.Object#toString()`],
+			[/* reference */ 'r', `java.lang.Object#toString()`, `Object.toString()`],
 			[/* text */ 't', `
  methods are derived from all of the component fields.
 
@@ -86,7 +86,7 @@ DocsCollector.collect('java.lang.Record', [
 			[/* method description */
 				[/* text */ 't', `Indicates whether some other object is "equal to" this one.  In addition
  to the general contract of `],
-				[/* reference */ 'r', `.Object#equals(java.lang.Object)`],
+				[/* reference */ 'r', `java.lang.Object#equals(java.lang.Object)`, `Object.equals`],
 				[/* text */ 't', `,
  record classes must further obey the invariant that when
  a record instance is "copied" by passing the result of the record component
@@ -117,7 +117,7 @@ DocsCollector.collect('java.lang.Record', [
 			[/* method description */
 				[/* text */ 't', `Returns a hash code value for the record.
  Obeys the general contract of `],
-				[/* reference */ 'r', `.Object#hashCode()`],
+				[/* reference */ 'r', `java.lang.Object#hashCode()`, `Object.hashCode`],
 				[/* text */ 't', `.
  For records, hashing behavior is constrained by the refined contract
  of `],
@@ -135,7 +135,7 @@ DocsCollector.collect('java.lang.Record', [
 			[/* method description */
 				[/* text */ 't', `Returns a string representation of the record.
  In accordance with the general contract of `],
-				[/* reference */ 'r', `.Object#toString()`],
+				[/* reference */ 'r', `java.lang.Object#toString()`, `Object.toString()`],
 				[/* text */ 't', `,
  the `],
 				[/* inline code block */ 'i', `toString`],

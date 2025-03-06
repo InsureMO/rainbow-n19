@@ -46,7 +46,7 @@ DocsCollector.collect('java.io.DataInput', [
  `]
 		]],
 		[/* block */ 'b', [
-			[/* text */ 't', `Modified UTF-8`]
+			[/* anchor */ 'r', '#-id', `modified-utf-8`, `Modified UTF-8`]
 		]],
 		[/* block */ 'b', [
 			[/* text */ 't', `
@@ -296,7 +296,7 @@ DocsCollector.collect('java.io.DataInput', [
 			[/* block */ 'b', `Only the 1-byte, 2-byte, and 3-byte formats are used.
  `],
 			[/* block */ 'b', [
-				[/* text */ 't', `Supplementary characters`],
+				[/* reference */ 'r', `java.lang.Character#unicode`, `Supplementary characters`],
 				[/* text */ 't', `
      are represented in the form of surrogate pairs.
  `]

@@ -49,7 +49,7 @@ DocsCollector.collect('java.lang.invoke.VarHandle', [
 		[/* block */ 'b', ''],
 		[/* block */ 'b', [
 			[/* text */ 't', `Factory methods that produce or `],
-			[/* reference */ 'r', `java.lang.invoke.MethodHandles.Lookup`],
+			[/* reference */ 'r', `java.lang.invoke.MethodHandles.Lookup`, `lookup`],
 			[/* text */ 't', ` VarHandle instances document the supported variable type and the list
  of coordinate types.
 
@@ -60,7 +60,7 @@ DocsCollector.collect('java.lang.invoke.VarHandle', [
 			[/* text */ 't', `access mode method`],
 			[/* text */ 't', `, a
  `],
-			[/* reference */ 'r', `.MethodHandle#sigpoly`],
+			[/* reference */ 'r', `java.lang.invoke.MethodHandle#sigpoly`, `signature polymorphic`],
 			[/* text */ 't', ` method named
  for the access mode.  When an access mode method is invoked on a VarHandle
  instance, the initial arguments to the invocation are coordinate expressions
@@ -79,7 +79,7 @@ DocsCollector.collect('java.lang.invoke.VarHandle', [
 			[/* reference */ 'r', `#accessModeType(java.lang.invoke.VarHandle.AccessMode)`, `access mode type`],
 			[/* text */ 't', `,
  represented as an instance of `],
-			[/* reference */ 'r', `java.lang.invoke.MethodType`],
+			[/* reference */ 'r', `java.lang.invoke.MethodType`, `MethodType`],
 			[/* text */ 't', `, that serves as a kind of
  method signature against which the arguments are checked dynamically.  An
  access mode type gives formal parameter types in terms of the coordinate
@@ -123,7 +123,7 @@ DocsCollector.collect('java.lang.invoke.VarHandle', [
 			[/* text */ 't', `.
  Such a VarHandle instance may be produced by the
  `],
-			[/* reference */ 'r', `.MethodHandles#arrayElementVarHandle(java.lang.Class)`],
+			[/* reference */ 'r', `java.lang.invoke.MethodHandles#arrayElementVarHandle(java.lang.Class)`, `array factory method`],
 			[/* text */ 't', ` and
  access array elements as follows:
  `]
@@ -302,7 +302,7 @@ DocsCollector.collect('java.lang.invoke.VarHandle', [
 		[/* block */ 'b', ''],
 		[/* block */ 'b', [
 			[/* text */ 't', `Factory methods that produce or `],
-			[/* reference */ 'r', `java.lang.invoke.MethodHandles.Lookup`],
+			[/* reference */ 'r', `java.lang.invoke.MethodHandles.Lookup`, `lookup`],
 			[/* text */ 't', ` VarHandle instances document the set of access modes that are
  supported, which may also include documenting restrictions based on the
  variable type and whether a variable is read-only.  If an access mode is not
@@ -465,7 +465,7 @@ DocsCollector.collect('java.lang.invoke.VarHandle', [
  `]
 		]],
 		[/* block */ 'b', [
-			[/* text */ 't', `Performing invocation of access mode methods`]
+			[/* anchor */ 'r', '#-id', `invoke`, `Performing invocation of access mode methods`]
 		]],
 		[/* text */ 't', `
  The first time an `],
@@ -497,7 +497,7 @@ DocsCollector.collect('java.lang.invoke.VarHandle', [
 			[/* text */ 't', `
  Invocation of an access mode method behaves, by default, as if an invocation of
  `],
-			[/* reference */ 'r', `.MethodHandle#invoke(java.lang.Object...)`],
+			[/* reference */ 'r', `java.lang.invoke.MethodHandle#invoke(java.lang.Object...)`, `MethodHandle.invoke(java.lang.Object...)`],
 			[/* text */ 't', `, where the receiving method handle accepts the
  VarHandle instance as the leading argument.  More specifically, the
  following, where `],
@@ -539,14 +539,14 @@ DocsCollector.collect('java.lang.invoke.VarHandle', [
 		[/* text */ 't', `
  where the desired method type is the symbolic type descriptor and a
  `],
-		[/* reference */ 'r', `.MethodHandle#invokeExact(java.lang.Object...)`],
+		[/* reference */ 'r', `java.lang.invoke.MethodHandle#invokeExact(java.lang.Object...)`, `MethodHandle.invokeExact(java.lang.Object...)`],
 		[/* text */ 't', ` is performed, since before invocation of the
  target, the handle will apply reference casts as necessary and box, unbox, or
  widen primitive values, as if by `],
-		[/* reference */ 'r', `.MethodHandle#asType(java.lang.invoke.MethodType)`],
+		[/* reference */ 'r', `java.lang.invoke.MethodHandle#asType(java.lang.invoke.MethodType)`, `asType`],
 		[/* text */ 't', ` (see also
  `],
-		[/* reference */ 'r', `.MethodHandles#varHandleInvoker(java.lang.invoke.VarHandle.AccessMode,java.lang.invoke.MethodType)`],
+		[/* reference */ 'r', `java.lang.invoke.MethodHandles#varHandleInvoker(java.lang.invoke.VarHandle.AccessMode,java.lang.invoke.MethodType)`, `MethodHandles.varHandleInvoker(java.lang.invoke.VarHandle.AccessMode, java.lang.invoke.MethodType)`],
 		[/* text */ 't', `).
 
  More concisely, such behavior is equivalent to:
@@ -569,7 +569,7 @@ DocsCollector.collect('java.lang.invoke.VarHandle', [
 			[/* reference */ 'r', `#withInvokeExactBehavior()`, `withInvokeExactBehavior()`],
 			[/* text */ 't', `) such that invocation of
  an access mode method behaves as if invocation of `],
-			[/* reference */ 'r', `.MethodHandle#invokeExact(java.lang.Object...)`],
+			[/* reference */ 'r', `java.lang.invoke.MethodHandle#invokeExact(java.lang.Object...)`, `MethodHandle.invokeExact(java.lang.Object...)`],
 			[/* text */ 't', `,
  where the receiving method handle accepts the VarHandle instance as the leading argument.
  More specifically, the following, where `],
@@ -618,7 +618,7 @@ DocsCollector.collect('java.lang.invoke.VarHandle', [
  In typical programs, VarHandle access mode type matching will usually
  succeed.  But if a match fails, the JVM will throw a
  `],
-		[/* reference */ 'r', `java.lang.invoke.WrongMethodTypeException`],
+		[/* reference */ 'r', `java.lang.invoke.WrongMethodTypeException`, `WrongMethodTypeException`],
 		[/* text */ 't', `.
  `],
 		[/* block */ 'b', [
@@ -676,7 +676,7 @@ DocsCollector.collect('java.lang.invoke.VarHandle', [
  Unlike with the Core Reflection API, where access is checked every time a
  reflective method is invoked, VarHandle access checking is performed
  `],
-			[/* reference */ 'r', `.MethodHandles.Lookup#access`],
+			[/* reference */ 'r', `java.lang.invoke.MethodHandles.Lookup#access`, `when the VarHandle is created`],
 			[/* text */ 't', `.
  Thus, VarHandles to non-public variables, or to variables in non-public
  classes, should generally be kept secret.  They should not be passed to
@@ -690,15 +690,15 @@ DocsCollector.collect('java.lang.invoke.VarHandle', [
  Java code can create a VarHandle that directly accesses any field that is
  accessible to that code.  This is done via a reflective, capability-based
  API called `],
-		[/* reference */ 'r', `java.lang.invoke.MethodHandles.Lookup`],
+		[/* reference */ 'r', `java.lang.invoke.MethodHandles.Lookup`, `MethodHandles.Lookup`],
 		[/* text */ 't', `.
  For example, a VarHandle for a non-static field can be obtained
  from `],
-		[/* reference */ 'r', `.MethodHandles.Lookup#findVarHandle(java.lang.Class,java.lang.String,java.lang.Class)`],
+		[/* reference */ 'r', `java.lang.invoke.MethodHandles.Lookup#findVarHandle(java.lang.Class,java.lang.String,java.lang.Class)`, `Lookup.findVarHandle`],
 		[/* text */ 't', `.
  There is also a conversion method from Core Reflection API objects,
  `],
-		[/* reference */ 'r', `.MethodHandles.Lookup#unreflectVarHandle(java.lang.reflect.Field)`],
+		[/* reference */ 'r', `java.lang.invoke.MethodHandles.Lookup#unreflectVarHandle(java.lang.reflect.Field)`, `Lookup.unreflectVarHandle`],
 		[/* text */ 't', `.
  `],
 		[/* block */ 'b', `
@@ -713,15 +713,15 @@ DocsCollector.collect('java.lang.invoke.VarHandle', [
 		[/* block */ 'b', `Interoperation between VarHandles and the Core Reflection API`],
 		[/* text */ 't', `
  Using factory methods in the `],
-		[/* reference */ 'r', `java.lang.invoke.MethodHandles.Lookup`],
+		[/* reference */ 'r', `java.lang.invoke.MethodHandles.Lookup`, `Lookup`],
 		[/* text */ 't', ` API, any field represented by a Core Reflection API object
  can be converted to a behaviorally equivalent VarHandle.
  For example, a reflective `],
-		[/* reference */ 'r', `java.lang.reflect.Field`],
+		[/* reference */ 'r', `java.lang.reflect.Field`, `Field`],
 		[/* text */ 't', ` can
  be converted to a VarHandle using
  `],
-		[/* reference */ 'r', `.MethodHandles.Lookup#unreflectVarHandle(java.lang.reflect.Field)`],
+		[/* reference */ 'r', `java.lang.invoke.MethodHandles.Lookup#unreflectVarHandle(java.lang.reflect.Field)`, `Lookup.unreflectVarHandle`],
 		[/* text */ 't', `.
  The resulting VarHandles generally provide more direct and efficient
  access to the underlying fields.
@@ -732,11 +732,11 @@ DocsCollector.collect('java.lang.invoke.VarHandle', [
  signature polymorphic access mode methods in this class, they appear as
  ordinary non-polymorphic methods.  Their reflective appearance, as viewed by
  `],
-			[/* reference */ 'r', `java.Class#getDeclaredMethod(java.lang.String,java.lang.Class...)`],
+			[/* reference */ 'r', `java.lang.Class#getDeclaredMethod(java.lang.String,java.lang.Class...)`, `Class.getDeclaredMethod`],
 			[/* text */ 't', `,
  is unaffected by their special status in this API.
  For example, `],
-			[/* reference */ 'r', `java.Method#getModifiers()`],
+			[/* reference */ 'r', `java.lang.reflect.Method#getModifiers()`, `Method.getModifiers`],
 			[/* text */ 't', `
  will report exactly those modifier bits required for any similarly
  declared method, including in this case `],
@@ -751,11 +751,11 @@ DocsCollector.collect('java.lang.invoke.VarHandle', [
 			[/* text */ 't', `
  As with any reflected method, these methods (when reflected) may be invoked
  directly via `],
-			[/* reference */ 'r', `java.Method#invoke(java.lang.Object,java.lang.Object...)`],
+			[/* reference */ 'r', `java.lang.reflect.Method#invoke(java.lang.Object,java.lang.Object...)`, `java.lang.reflect.Method.invoke`],
 			[/* text */ 't', `,
  via JNI, or indirectly via
  `],
-			[/* reference */ 'r', `.MethodHandles.Lookup#unreflect(java.lang.reflect.Method)`],
+			[/* reference */ 'r', `java.lang.invoke.MethodHandles.Lookup#unreflect(java.lang.reflect.Method)`, `Lookup.unreflect`],
 			[/* text */ 't', `.
  However, such reflective calls do not result in access mode method
  invocations.  Such a call, if passed the required argument (a single one, of
@@ -784,18 +784,18 @@ DocsCollector.collect('java.lang.invoke.VarHandle', [
 			[/* text */ 't', `
  In order to obtain an invoker method for a particular access mode type,
  use `],
-			[/* reference */ 'r', `.MethodHandles#varHandleExactInvoker(java.lang.invoke.VarHandle.AccessMode,java.lang.invoke.MethodType)`],
+			[/* reference */ 'r', `java.lang.invoke.MethodHandles#varHandleExactInvoker(java.lang.invoke.VarHandle.AccessMode,java.lang.invoke.MethodType)`, `MethodHandles.varHandleExactInvoker(java.lang.invoke.VarHandle.AccessMode, java.lang.invoke.MethodType)`],
 			[/* text */ 't', ` or
  `],
-			[/* reference */ 'r', `.MethodHandles#varHandleInvoker(java.lang.invoke.VarHandle.AccessMode,java.lang.invoke.MethodType)`],
+			[/* reference */ 'r', `java.lang.invoke.MethodHandles#varHandleInvoker(java.lang.invoke.VarHandle.AccessMode,java.lang.invoke.MethodType)`, `MethodHandles.varHandleInvoker(java.lang.invoke.VarHandle.AccessMode, java.lang.invoke.MethodType)`],
 			[/* text */ 't', `.  The
  `],
-			[/* reference */ 'r', `.MethodHandles.Lookup#findVirtual(java.lang.Class,java.lang.String,java.lang.invoke.MethodType)`],
+			[/* reference */ 'r', `java.lang.invoke.MethodHandles.Lookup#findVirtual(java.lang.Class,java.lang.String,java.lang.invoke.MethodType)`, `Lookup.findVirtual`],
 			[/* text */ 't', `
  API is also able to return a method handle to call an access mode method for
  any specified access mode type and is equivalent in behavior to
  `],
-			[/* reference */ 'r', `.MethodHandles#varHandleInvoker(java.lang.invoke.VarHandle.AccessMode,java.lang.invoke.MethodType)`],
+			[/* reference */ 'r', `java.lang.invoke.MethodHandles#varHandleInvoker(java.lang.invoke.VarHandle.AccessMode,java.lang.invoke.MethodType)`, `MethodHandles.varHandleInvoker(java.lang.invoke.VarHandle.AccessMode, java.lang.invoke.MethodType)`],
 			[/* text */ 't', `.
 
  `]
@@ -948,7 +948,7 @@ DocsCollector.collect('java.lang.invoke.VarHandle', [
 		[/* method */ 'toString()', [
 			[/* method description */
 				[/* text */ 't', `Returns a compact textual description of this `],
-				[/* reference */ 'r', `java.lang.invoke.VarHandle`],
+				[/* reference */ 'r', `java.lang.invoke.VarHandle`, `VarHandle`],
 				[/* text */ 't', `,
  including the type of variable described, and a description of its coordinates.`]
 			],
@@ -956,7 +956,7 @@ DocsCollector.collect('java.lang.invoke.VarHandle', [
 			/* throws */ UDF,
 			[/* return description */
 				[/* text */ 't', `A compact textual description of this `],
-				[/* reference */ 'r', `java.lang.invoke.VarHandle`]
+				[/* reference */ 'r', `java.lang.invoke.VarHandle`, `VarHandle`]
 			]
 		]],
 		[/* method */ 'compareAndSet(java.lang.Object...)', [
@@ -3055,17 +3055,17 @@ DocsCollector.collect('java.lang.invoke.VarHandle', [
 			[/* method description */
 				[/* text */ 't', `Return a nominal descriptor for this instance, if one can be
  constructed, or an empty `],
-				[/* reference */ 'r', `java.util.Optional`],
+				[/* reference */ 'r', `java.util.Optional`, `Optional`],
 				[/* text */ 't', ` if one cannot be.`]
 			],
 			/* parameters */ UDF,
 			/* throws */ UDF,
 			[/* return description */
 				[/* text */ 't', `An `],
-				[/* reference */ 'r', `java.util.Optional`],
+				[/* reference */ 'r', `java.util.Optional`, `Optional`],
 				[/* text */ 't', ` containing the resulting nominal descriptor,
  or an empty `],
-				[/* reference */ 'r', `java.util.Optional`],
+				[/* reference */ 'r', `java.util.Optional`, `Optional`],
 				[/* text */ 't', ` if one cannot be constructed.`]
 			]
 		]],

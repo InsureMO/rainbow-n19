@@ -5,11 +5,11 @@ DocsCollector.collect('java.io.FileWriter', [
 	[/* class description */
 		[/* text */ 't', `Writes text to character files using a default buffer size. Encoding from characters
  to bytes uses either a specified `],
-		[/* reference */ 'r', `java.nio.charset.Charset`],
+		[/* reference */ 'r', `java.nio.charset.Charset`, `charset`],
 		[/* text */ 't', `
  or the platform's
  `],
-		[/* reference */ 'r', `java.charset.Charset#defaultCharset()`],
+		[/* reference */ 'r', `java.nio.charset.Charset#defaultCharset()`, `default charset`],
 		[/* text */ 't', `.
 
  `],
@@ -46,7 +46,7 @@ DocsCollector.collect('java.io.FileWriter', [
 				[/* text */ 't', ` to write,
  using the platform's
  `],
-				[/* reference */ 'r', `java.charset.Charset#defaultCharset()`]
+				[/* reference */ 'r', `java.nio.charset.Charset#defaultCharset()`, `default charset`]
 			],
 			[/* parameters */
 				[/* parameter */ 'file', [/* parameter description */
@@ -72,7 +72,7 @@ DocsCollector.collect('java.io.FileWriter', [
 				[/* text */ 't', ` to write and
  a boolean indicating whether to append the data written, using the platform's
  `],
-				[/* reference */ 'r', `java.charset.Charset#defaultCharset()`],
+				[/* reference */ 'r', `java.nio.charset.Charset#defaultCharset()`, `default charset`],
 				[/* text */ 't', `.`]
 			],
 			[/* parameters */
@@ -104,7 +104,7 @@ DocsCollector.collect('java.io.FileWriter', [
 				[/* inline code block */ 'i', `File`],
 				[/* text */ 't', ` to write and
  `],
-				[/* reference */ 'r', `java.nio.charset.Charset`],
+				[/* reference */ 'r', `java.nio.charset.Charset`, `charset`],
 				[/* text */ 't', `.`]
 			],
 			[/* parameters */
@@ -115,7 +115,7 @@ DocsCollector.collect('java.io.FileWriter', [
 				]],
 				[/* parameter */ 'charset', [/* parameter description */
 					[/* text */ 't', `the `],
-					[/* reference */ 'r', `java.nio.charset.Charset`]
+					[/* reference */ 'r', `java.nio.charset.Charset`, `charset`]
 				]]
 			],
 			[/* throws */
@@ -134,7 +134,7 @@ DocsCollector.collect('java.io.FileWriter', [
 				[/* inline code block */ 'i', `File`],
 				[/* text */ 't', ` to write,
  `],
-				[/* reference */ 'r', `java.nio.charset.Charset`],
+				[/* reference */ 'r', `java.nio.charset.Charset`, `charset`],
 				[/* text */ 't', ` and a boolean indicating
  whether to append the data written.`]
 			],
@@ -146,7 +146,7 @@ DocsCollector.collect('java.io.FileWriter', [
 				]],
 				[/* parameter */ 'charset', [/* parameter description */
 					[/* text */ 't', `the `],
-					[/* reference */ 'r', `java.nio.charset.Charset`]
+					[/* reference */ 'r', `java.nio.charset.Charset`, `charset`]
 				]],
 				[/* parameter */ 'append', [/* parameter description */
 					[/* text */ 't', `a boolean. If `],
@@ -170,7 +170,7 @@ DocsCollector.collect('java.io.FileWriter', [
 				[/* text */ 't', ` given a file descriptor,
  using the platform's
  `],
-				[/* reference */ 'r', `java.charset.Charset#defaultCharset()`],
+				[/* reference */ 'r', `java.nio.charset.Charset#defaultCharset()`, `default charset`],
 				[/* text */ 't', `.`]
 			],
 			[/* parameters */
@@ -188,7 +188,7 @@ DocsCollector.collect('java.io.FileWriter', [
 				[/* inline code block */ 'i', `FileWriter`],
 				[/* text */ 't', ` given a file name, using the platform's
  `],
-				[/* reference */ 'r', `java.charset.Charset#defaultCharset()`]
+				[/* reference */ 'r', `java.nio.charset.Charset#defaultCharset()`, `default charset`]
 			],
 			[/* parameters */
 				[/* parameter */ 'fileName', [/* parameter description */
@@ -210,7 +210,7 @@ DocsCollector.collect('java.io.FileWriter', [
 				[/* text */ 't', ` given a file name and a boolean indicating
  whether to append the data written, using the platform's
  `],
-				[/* reference */ 'r', `java.charset.Charset#defaultCharset()`],
+				[/* reference */ 'r', `java.nio.charset.Charset#defaultCharset()`, `default charset`],
 				[/* text */ 't', `.`]
 			],
 			[/* parameters */
@@ -238,7 +238,7 @@ DocsCollector.collect('java.io.FileWriter', [
 				[/* inline code block */ 'i', `FileWriter`],
 				[/* text */ 't', ` given a file name and
  `],
-				[/* reference */ 'r', `java.nio.charset.Charset`],
+				[/* reference */ 'r', `java.nio.charset.Charset`, `charset`],
 				[/* text */ 't', `.`]
 			],
 			[/* parameters */
@@ -247,7 +247,7 @@ DocsCollector.collect('java.io.FileWriter', [
 				]],
 				[/* parameter */ 'charset', [/* parameter description */
 					[/* text */ 't', `the `],
-					[/* reference */ 'r', `java.nio.charset.Charset`]
+					[/* reference */ 'r', `java.nio.charset.Charset`, `charset`]
 				]]
 			],
 			[/* throws */
@@ -264,7 +264,7 @@ DocsCollector.collect('java.io.FileWriter', [
 				[/* inline code block */ 'i', `FileWriter`],
 				[/* text */ 't', ` given a file name,
  `],
-				[/* reference */ 'r', `java.nio.charset.Charset`],
+				[/* reference */ 'r', `java.nio.charset.Charset`, `charset`],
 				[/* text */ 't', ` and a boolean indicating
  whether to append the data written.`]
 			],
@@ -274,7 +274,7 @@ DocsCollector.collect('java.io.FileWriter', [
 				]],
 				[/* parameter */ 'charset', [/* parameter description */
 					[/* text */ 't', `the `],
-					[/* reference */ 'r', `java.nio.charset.Charset`]
+					[/* reference */ 'r', `java.nio.charset.Charset`, `charset`]
 				]],
 				[/* parameter */ 'append', [/* parameter description */
 					[/* text */ 't', `a boolean. If `],

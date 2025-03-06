@@ -8,7 +8,7 @@ DocsCollector.collect('java.util.function.LongConsumer', [
 		[/* text */ 't', `-valued argument and
  returns no result.  This is the primitive type specialization of
  `],
-		[/* reference */ 'r', `java.util.function.Consumer`],
+		[/* reference */ 'r', `java.util.function.Consumer`, `Consumer`],
 		[/* text */ 't', ` for `],
 		[/* inline code block */ 'i', `long`],
 		[/* text */ 't', `.  Unlike most other functional interfaces,
@@ -19,7 +19,7 @@ DocsCollector.collect('java.util.function.LongConsumer', [
  `],
 		[/* block */ 'b', [
 			[/* text */ 't', `This is a `],
-			[/* reference */ 'r', `.package-summary`],
+			[/* text */ 't', `functional interface`],
 			[/* text */ 't', `
  whose functional method is `],
 			[/* reference */ 'r', `#accept(long)`, `accept(long)`],

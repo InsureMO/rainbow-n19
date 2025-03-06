@@ -53,7 +53,7 @@ DocsCollector.collect('java.util.NoSuchElementException', [
 				[/* parameter */ 'cause', [/* parameter description */
 					[/* text */ 't', `the cause (which is saved for later retrieval by the
               `],
-					[/* reference */ 'r', `java.Throwable#getCause()`],
+					[/* reference */ 'r', `java.lang.Throwable#getCause()`, `Throwable.getCause()`],
 					[/* text */ 't', ` method), or null`]
 				]]
 			],
@@ -75,7 +75,7 @@ DocsCollector.collect('java.util.NoSuchElementException', [
 				[/* parameter */ 'cause', [/* parameter description */
 					[/* text */ 't', `the cause (which is saved for later retrieval by the
               `],
-					[/* reference */ 'r', `java.Throwable#getCause()`],
+					[/* reference */ 'r', `java.lang.Throwable#getCause()`, `Throwable.getCause()`],
 					[/* text */ 't', ` method)`]
 				]]
 			],

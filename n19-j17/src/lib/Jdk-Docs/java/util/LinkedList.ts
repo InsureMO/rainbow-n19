@@ -34,7 +34,7 @@ DocsCollector.collect('java.util.LinkedList', [
 
  If no such object exists, the list should be "wrapped" using the
  `],
-			[/* reference */ 'r', `.Collections#synchronizedList(java.util.List)`],
+			[/* reference */ 'r', `java.util.Collections#synchronizedList(java.util.List)`, `Collections.synchronizedList`],
 			[/* text */ 't', `
  method.  This is best done at creation time, to prevent accidental
  unsynchronized access to the list:`]
@@ -57,7 +57,7 @@ DocsCollector.collect('java.util.LinkedList', [
  `],
 			[/* inline code block */ 'i', `add`],
 			[/* text */ 't', ` methods, the iterator will throw a `],
-			[/* reference */ 'r', `java.util.ConcurrentModificationException`],
+			[/* reference */ 'r', `java.util.ConcurrentModificationException`, `ConcurrentModificationException`],
 			[/* text */ 't', `.  Thus, in the face of concurrent
  modification, the iterator fails quickly and cleanly, rather than
  risking arbitrary, non-deterministic behavior at an undetermined
@@ -208,7 +208,7 @@ DocsCollector.collect('java.util.LinkedList', [
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` (as specified by `],
-				[/* reference */ 'r', `.Collection#add(E)`],
+				[/* reference */ 'r', `java.util.Collection#add(E)`, `Collection.add(E)`],
 				[/* text */ 't', `)`]
 			]
 		]],
@@ -309,7 +309,7 @@ DocsCollector.collect('java.util.LinkedList', [
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` (as specified by `],
-				[/* reference */ 'r', `.Queue#offer(E)`],
+				[/* reference */ 'r', `java.util.Queue#offer(E)`, `Queue.offer(E)`],
 				[/* text */ 't', `)`]
 			]
 		]],
@@ -326,7 +326,7 @@ DocsCollector.collect('java.util.LinkedList', [
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` (as specified by `],
-				[/* reference */ 'r', `.Deque#offerFirst(E)`],
+				[/* reference */ 'r', `java.util.Deque#offerFirst(E)`, `Deque.offerFirst(E)`],
 				[/* text */ 't', `)`]
 			]
 		]],
@@ -343,7 +343,7 @@ DocsCollector.collect('java.util.LinkedList', [
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` (as specified by `],
-				[/* reference */ 'r', `.Deque#offerLast(E)`],
+				[/* reference */ 'r', `java.util.Deque#offerLast(E)`, `Deque.offerLast(E)`],
 				[/* text */ 't', `)`]
 			]
 		]],
@@ -830,11 +830,11 @@ DocsCollector.collect('java.util.LinkedList', [
 		[/* method */ 'spliterator()', [
 			[/* method description */
 				[/* text */ 't', `Creates a `],
-				[/* reference */ 'r', `.Spliterator#binding`],
+				[/* reference */ 'r', `java.util.Spliterator#binding`, `late-binding`],
 				[/* text */ 't', `
  and `],
 				[/* text */ 't', `fail-fast`],
-				[/* reference */ 'r', `java.util.Spliterator`],
+				[/* reference */ 'r', `java.util.Spliterator`, `Spliterator`],
 				[/* text */ 't', ` over the elements in this
  list.
 
@@ -843,10 +843,10 @@ DocsCollector.collect('java.util.LinkedList', [
 					[/* text */ 't', `The `],
 					[/* inline code block */ 'i', `Spliterator`],
 					[/* text */ 't', ` reports `],
-					[/* reference */ 'r', `.Spliterator#SIZED`],
+					[/* reference */ 'r', `java.util.Spliterator#SIZED`, `Spliterator.SIZED`],
 					[/* text */ 't', ` and
  `],
-					[/* reference */ 'r', `.Spliterator#ORDERED`],
+					[/* reference */ 'r', `java.util.Spliterator#ORDERED`, `Spliterator.ORDERED`],
 					[/* text */ 't', `.  Overriding implementations should document
  the reporting of additional characteristic values.`]
 				]]

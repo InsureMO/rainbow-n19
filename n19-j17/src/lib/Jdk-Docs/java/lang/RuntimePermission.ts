@@ -401,7 +401,7 @@ DocsCollector.collect('java.lang.RuntimePermission', [
 					[/* table cell */ 'tbc', [
 						[/* text */ 't', `Define a class with
  `],
-						[/* reference */ 'r', `.MethodHandles.Lookup#defineClass(byte[])`],
+						[/* reference */ 'r', `java.lang.invoke.MethodHandles.Lookup#defineClass(byte[])`, `Lookup.defineClass`],
 						[/* text */ 't', `.`]
 					]],
 					[/* table cell */ 'tbc', [
@@ -514,7 +514,7 @@ DocsCollector.collect('java.lang.RuntimePermission', [
 					[/* table cell */ 'tbc', [
 						[/* text */ 't', `Native process termination and information about processes
        `],
-						[/* reference */ 'r', `java.lang.ProcessHandle`],
+						[/* reference */ 'r', `java.lang.ProcessHandle`, `ProcessHandle`],
 						[/* text */ 't', `.`]
 					]],
 					[/* table cell */ 'tbc', [
@@ -539,7 +539,7 @@ DocsCollector.collect('java.lang.RuntimePermission', [
 					]],
 					[/* table cell */ 'tbc', [
 						[/* text */ 't', `See `],
-						[/* reference */ 'r', `java.spi.LocaleServiceProvider`],
+						[/* reference */ 'r', `java.util.spi.LocaleServiceProvider`, `java.util.spi.LocaleServiceProvider`],
 						[/* text */ 't', ` for more
    information.`]
 					]]
@@ -563,7 +563,7 @@ DocsCollector.collect('java.lang.RuntimePermission', [
 					]],
 					[/* table cell */ 'tbc', [
 						[/* text */ 't', `See `],
-						[/* reference */ 'r', `java.lang.System.LoggerFinder`],
+						[/* reference */ 'r', `java.lang.System.LoggerFinder`, `java.lang.System.LoggerFinder`],
 						[/* text */ 't', `
    for more information.`]
 					]]
@@ -578,7 +578,7 @@ DocsCollector.collect('java.lang.RuntimePermission', [
 					[/* table cell */ 'tbc', [
 						[/* text */ 't', `This grants the permission to access resources in the
    `],
-						[/* reference */ 'r', `.ModuleFinder#ofSystem()`],
+						[/* reference */ 'r', `java.lang.module.ModuleFinder#ofSystem()`, `system modules`],
 						[/* text */ 't', ` in the runtime image.`]
 					]]
 				]]

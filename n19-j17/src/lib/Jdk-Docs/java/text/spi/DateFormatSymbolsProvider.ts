@@ -6,7 +6,7 @@ DocsCollector.collect('java.text.spi.DateFormatSymbolsProvider', [
 		[/* text */ 't', `An abstract class for service providers that
  provide instances of the
  `],
-		[/* reference */ 'r', `java.text.DateFormatSymbols`],
+		[/* reference */ 'r', `java.text.DateFormatSymbols`, `DateFormatSymbols`],
 		[/* text */ 't', ` class.`]
 	],
 	/* fields */ UDF,
@@ -45,7 +45,7 @@ DocsCollector.collect('java.text.spi.DateFormatSymbolsProvider', [
 					[/* text */ 't', ` isn't
      one of the locales returned from
      `],
-					[/* reference */ 'r', `java.text.spi.LocaleServiceProvider#getAvailableLocales()`],
+					[/* reference */ 'r', `java.util.spi.LocaleServiceProvider#getAvailableLocales()`, `getAvailableLocales()`],
 					[/* text */ 't', `.`]
 				]]
 			],

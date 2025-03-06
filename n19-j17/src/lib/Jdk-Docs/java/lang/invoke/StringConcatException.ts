@@ -4,7 +4,7 @@ import {DocsCollector} from '../../../DocsCollector';
 DocsCollector.collect('java.lang.invoke.StringConcatException', [
 	[/* class description */
 		[/* text */ 't', `StringConcatException is thrown by `],
-		[/* reference */ 'r', `java.lang.invoke.StringConcatFactory`],
+		[/* reference */ 'r', `java.lang.invoke.StringConcatFactory`, `StringConcatFactory`],
 		[/* text */ 't', ` when linkage
  invariants are violated.`]
 	],

@@ -6,7 +6,7 @@ DocsCollector.collect('java.util.Spliterator', [
 		[/* text */ 't', `An object for traversing and partitioning elements of a source.  The source
  of elements covered by a Spliterator could be, for example, an array, a
  `],
-		[/* reference */ 'r', `java.util.Collection`],
+		[/* reference */ 'r', `java.util.Collection`, `Collection`],
 		[/* text */ 't', `, an IO channel, or a generator function.
 
  `],
@@ -58,17 +58,17 @@ DocsCollector.collect('java.util.Spliterator', [
 			[/* text */ 't', `. These may
  be employed by Spliterator clients to control, specialize or simplify
  computation.  For example, a Spliterator for a `],
-			[/* reference */ 'r', `java.util.Collection`],
+			[/* reference */ 'r', `java.util.Collection`, `Collection`],
 			[/* text */ 't', ` would
  report `],
 			[/* inline code block */ 'i', `SIZED`],
 			[/* text */ 't', `, a Spliterator for a `],
-			[/* reference */ 'r', `java.util.Set`],
+			[/* reference */ 'r', `java.util.Set`, `Set`],
 			[/* text */ 't', ` would report
  `],
 			[/* inline code block */ 'i', `DISTINCT`],
 			[/* text */ 't', `, and a Spliterator for a `],
-			[/* reference */ 'r', `java.util.SortedSet`],
+			[/* reference */ 'r', `java.util.SortedSet`, `SortedSet`],
 			[/* text */ 't', ` would also
  report `],
 			[/* inline code block */ 'i', `SORTED`],
@@ -85,7 +85,7 @@ DocsCollector.collect('java.util.Spliterator', [
  `]
 		]],
 		[/* block */ 'b', [
-			[/* text */ 't', `A Spliterator that does not report IMMUTABLE or CONCURRENT is expected to have a documented policy concerning: when the spliterator binds to the element source; and detection of structural interference of the element source detected after binding.`],
+			[/* anchor */ 'r', '#-id', `binding`, `A Spliterator that does not report IMMUTABLE or CONCURRENT is expected to have a documented policy concerning: when the spliterator binds to the element source; and detection of structural interference of the element source detected after binding.`],
 			[/* text */ 't', `  A
  `],
 			[/* text */ 't', `late-binding`],
@@ -99,7 +99,7 @@ DocsCollector.collect('java.util.Spliterator', [
  source prior to binding are reflected when the Spliterator is traversed.
  After binding a Spliterator should, on a best-effort basis, throw
  `],
-			[/* reference */ 'r', `java.util.ConcurrentModificationException`],
+			[/* reference */ 'r', `java.util.ConcurrentModificationException`, `ConcurrentModificationException`],
 			[/* text */ 't', ` if structural interference is
  detected.  Spliterators that do this are called `],
 			[/* text */ 't', `fail-fast`],
@@ -161,11 +161,11 @@ DocsCollector.collect('java.util.Spliterator', [
 			[/* inline code block */ 'i', `Spliterator`],
 			[/* text */ 't', ` are provided for
  `],
-			[/* reference */ 'r', `java.util.Spliterator.OfInt`],
+			[/* reference */ 'r', `java.util.Spliterator.OfInt`, `int`],
 			[/* text */ 't', `, `],
-			[/* reference */ 'r', `java.util.Spliterator.OfLong`],
+			[/* reference */ 'r', `java.util.Spliterator.OfLong`, `long`],
 			[/* text */ 't', `, and `],
-			[/* reference */ 'r', `java.util.Spliterator.OfDouble`],
+			[/* reference */ 'r', `java.util.Spliterator.OfDouble`, `double`],
 			[/* text */ 't', ` values.
  The subtype default implementations of
  `],
@@ -179,17 +179,17 @@ DocsCollector.collect('java.util.Spliterator', [
  specializations.  To avoid boxing, the corresponding primitive-based methods
  should be used.  For example,
  `],
-			[/* reference */ 'r', `.Spliterator.OfPrimitive#tryAdvance(T_CONS)`],
+			[/* reference */ 'r', `java.util.Spliterator.OfPrimitive#tryAdvance(T_CONS)`, `Spliterator.OfPrimitive.tryAdvance(java.util.function.IntConsumer)`],
 			[/* text */ 't', `
  and `],
-			[/* reference */ 'r', `.Spliterator.OfPrimitive#forEachRemaining(T_CONS)`],
+			[/* reference */ 'r', `java.util.Spliterator.OfPrimitive#forEachRemaining(T_CONS)`, `Spliterator.OfPrimitive.forEachRemaining(java.util.function.IntConsumer)`],
 			[/* text */ 't', `
  should be used in preference to
  `],
-			[/* reference */ 'r', `.Spliterator.OfInt#tryAdvance(java.util.function.Consumer)`],
+			[/* reference */ 'r', `java.util.Spliterator.OfInt#tryAdvance(java.util.function.Consumer)`, `Spliterator.OfInt.tryAdvance(java.util.function.Consumer)`],
 			[/* text */ 't', ` and
  `],
-			[/* reference */ 'r', `.Spliterator.OfInt#forEachRemaining(java.util.function.Consumer)`],
+			[/* reference */ 'r', `java.util.Spliterator.OfInt#forEachRemaining(java.util.function.Consumer)`, `Spliterator.OfInt.forEachRemaining(java.util.function.Consumer)`],
 			[/* text */ 't', `.
  Traversal of primitive values using boxing-based methods
  `],
@@ -253,7 +253,7 @@ DocsCollector.collect('java.util.Spliterator', [
 				[/* inline code block */ 'i', `!x.equals(y)`],
 				[/* text */ 't', `. This
  applies for example, to a Spliterator based on a `],
-				[/* reference */ 'r', `java.util.Set`],
+				[/* reference */ 'r', `java.util.Set`, `Set`],
 				[/* text */ 't', `.`]
 			],
 		]],
@@ -269,7 +269,7 @@ DocsCollector.collect('java.util.Spliterator', [
 				[/* text */ 't', ` is expected
  to have a documented policy (for example throwing
  `],
-				[/* reference */ 'r', `java.util.ConcurrentModificationException`],
+				[/* reference */ 'r', `java.util.ConcurrentModificationException`, `ConcurrentModificationException`],
 				[/* text */ 't', `) concerning structural
  interference detected during traversal.`]
 			],
@@ -300,10 +300,10 @@ DocsCollector.collect('java.util.Spliterator', [
  `],
 				[/* block */ 'b', [
 					[/* text */ 't', `A `],
-					[/* reference */ 'r', `java.util.Collection`],
+					[/* reference */ 'r', `java.util.Collection`, `Collection`],
 					[/* text */ 't', ` has an encounter order if the corresponding
  `],
-					[/* reference */ 'r', `.Collection#iterator()`],
+					[/* reference */ 'r', `java.util.Collection#iterator()`, `Collection.iterator()`],
 					[/* text */ 't', ` documents an order. If so, the encounter
  order is the same as the documented order. Otherwise, a collection does
  not have an encounter order.`]
@@ -330,7 +330,7 @@ DocsCollector.collect('java.util.Spliterator', [
  Comparator, or `],
 				[/* inline code block */ 'i', `null`],
 				[/* text */ 't', ` if all elements are `],
-				[/* reference */ 'r', `java.lang.Comparable`],
+				[/* reference */ 'r', `java.lang.Comparable`, `Comparable`],
 				[/* text */ 't', ` and
  are sorted by their natural ordering.
 
@@ -527,7 +527,7 @@ DocsCollector.collect('java.util.Spliterator', [
  encountered by a `],
 				[/* reference */ 'r', `#forEachRemaining(java.util.function.Consumer)`, `forEachRemaining(java.util.function.Consumer<? super T>)`],
 				[/* text */ 't', ` traversal, or returns `],
-				[/* reference */ 'r', `java.Long#MAX_VALUE`],
+				[/* reference */ 'r', `java.lang.Long#MAX_VALUE`, `Long.MAX_VALUE`],
 				[/* text */ 't', ` if infinite, unknown, or too expensive to compute.
 
  `],
@@ -581,7 +581,7 @@ DocsCollector.collect('java.util.Spliterator', [
 				[/* text */ 't', `If this Spliterator's source is `],
 				[/* text */ 't', `SORTED`],
 				[/* text */ 't', ` by a `],
-				[/* reference */ 'r', `java.util.Comparator`],
+				[/* reference */ 'r', `java.util.Comparator`, `Comparator`],
 				[/* text */ 't', `,
  returns that `],
 				[/* inline code block */ 'i', `Comparator`],
@@ -589,14 +589,14 @@ DocsCollector.collect('java.util.Spliterator', [
 				[/* inline code block */ 'i', `SORTED`],
 				[/* text */ 't', ` in
  `],
-				[/* reference */ 'r', `java.lang.Comparable`],
+				[/* reference */ 'r', `java.lang.Comparable`, `natural order`],
 				[/* text */ 't', `, returns `],
 				[/* inline code block */ 'i', `null`],
 				[/* text */ 't', `.  Otherwise,
  if the source is not `],
 				[/* inline code block */ 'i', `SORTED`],
 				[/* text */ 't', `, throws `],
-				[/* reference */ 'r', `java.lang.IllegalStateException`],
+				[/* reference */ 'r', `java.lang.IllegalStateException`, `IllegalStateException`],
 				[/* text */ 't', `.`]
 			],
 			/* parameters */ UDF,

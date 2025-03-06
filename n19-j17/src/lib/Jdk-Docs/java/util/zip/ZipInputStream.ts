@@ -16,7 +16,7 @@ DocsCollector.collect('java.util.zip.ZipInputStream', [
  `],
 				[/* block */ 'b', [
 					[/* text */ 't', `The UTF-8 `],
-					[/* reference */ 'r', `java.nio.charset.Charset`],
+					[/* reference */ 'r', `java.nio.charset.Charset`, `charset`],
 					[/* text */ 't', ` is used to
  decode the entry names.`]
 				]]
@@ -38,11 +38,11 @@ DocsCollector.collect('java.util.zip.ZipInputStream', [
 				]],
 				[/* parameter */ 'charset', [/* parameter description */
 					[/* text */ 't', `The `],
-					[/* reference */ 'r', `java.nio.charset.Charset`],
+					[/* reference */ 'r', `java.nio.charset.Charset`, `charset`],
 					[/* text */ 't', ` to be
         used to decode the ZIP entry name (ignored if the
         `],
-					[/* reference */ 'r', `.package-summary#lang_encoding`],
+					[/* text */ 't', `language encoding bit`],
 					[/* text */ 't', ` of the ZIP entry's general purpose bit
         flag is set).`]
 				]]

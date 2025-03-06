@@ -123,10 +123,10 @@ DocsCollector.collect('java.io.BufferedReader', [
 				[/* block */ 'b', [
 					[/* text */ 't', ` This method implements the general contract of the corresponding
  `],
-					[/* reference */ 'r', `.Reader#read(char[],int,int)`],
+					[/* reference */ 'r', `java.io.Reader#read(char[],int,int)`, `read`],
 					[/* text */ 't', ` method of the
  `],
-					[/* reference */ 'r', `java.io.Reader`],
+					[/* reference */ 'r', `java.io.Reader`, `Reader`],
 					[/* text */ 't', ` class.  As an additional convenience, it
  attempts to read as many characters as possible by repeatedly invoking
  the `],
@@ -253,7 +253,7 @@ DocsCollector.collect('java.io.BufferedReader', [
  this `],
 				[/* inline code block */ 'i', `BufferedReader`],
 				[/* text */ 't', `.  The `],
-				[/* reference */ 'r', `java.util.stream.Stream`],
+				[/* reference */ 'r', `java.util.stream.Stream`, `Stream`],
 				[/* text */ 't', ` is lazily populated,
  i.e., read only occurs during the
  `],
@@ -273,12 +273,12 @@ DocsCollector.collect('java.io.BufferedReader', [
  `],
 				[/* block */ 'b', [
 					[/* text */ 't', ` If an `],
-					[/* reference */ 'r', `java.io.IOException`],
+					[/* reference */ 'r', `java.io.IOException`, `IOException`],
 					[/* text */ 't', ` is thrown when accessing the underlying
  `],
 					[/* inline code block */ 'i', `BufferedReader`],
 					[/* text */ 't', `, it is wrapped in an `],
-					[/* reference */ 'r', `java.io.UncheckedIOException`],
+					[/* reference */ 'r', `java.io.UncheckedIOException`, `UncheckedIOException`],
 					[/* text */ 't', ` which will be thrown from the `],
 					[/* inline code block */ 'i', `Stream`],
 					[/* text */ 't', `

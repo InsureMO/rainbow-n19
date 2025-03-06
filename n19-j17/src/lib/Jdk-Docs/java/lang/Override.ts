@@ -18,7 +18,7 @@ DocsCollector.collect('java.lang.Override', [
 				[/* text */ 't', `
  The method has a signature that is override-equivalent to that of
  any public method declared in `],
-				[/* reference */ 'r', `java.lang.Object`],
+				[/* reference */ 'r', `java.lang.Object`, `Object`],
 				[/* text */ 't', `.
  `]
 			]]

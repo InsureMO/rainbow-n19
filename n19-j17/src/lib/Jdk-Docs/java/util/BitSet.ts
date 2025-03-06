@@ -589,7 +589,7 @@ DocsCollector.collect('java.util.BitSet', [
 					[/* text */ 't', `The stream binds to this bit set when the terminal stream operation
  commences (specifically, the spliterator for the stream is
  `],
-					[/* reference */ 'r', `.Spliterator#binding`],
+					[/* reference */ 'r', `java.util.Spliterator#binding`, `late-binding`],
 					[/* text */ 't', `).  If the
  bit set is modified during that operation then the result is undefined.`]
 				]]

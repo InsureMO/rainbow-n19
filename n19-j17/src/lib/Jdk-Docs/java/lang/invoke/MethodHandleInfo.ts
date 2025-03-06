@@ -6,11 +6,11 @@ DocsCollector.collect('java.lang.invoke.MethodHandleInfo', [
 		[/* text */ 't', `A symbolic reference obtained by cracking a direct method handle
  into its constituent symbolic parts.
  To crack a direct method handle, call `],
-		[/* reference */ 'r', `.MethodHandles.Lookup#revealDirect(java.lang.invoke.MethodHandle)`],
+		[/* reference */ 'r', `java.lang.invoke.MethodHandles.Lookup#revealDirect(java.lang.invoke.MethodHandle)`, `Lookup.revealDirect`],
 		[/* text */ 't', `.
  `],
 		[/* block */ 'b', [
-			[/* text */ 't', ``],
+			[/* anchor */ 'r', '#-id', `directmh`, ``],
 			[/* text */ 't', `Direct Method Handles`]
 		]],
 		[/* text */ 't', `
@@ -40,10 +40,10 @@ DocsCollector.collect('java.lang.invoke.MethodHandleInfo', [
 			]],
 			[/* block */ 'b', [
 				[/* text */ 't', `By calling one of the `],
-				[/* reference */ 'r', `.MethodHandles.Lookup#lookups`],
+				[/* reference */ 'r', `java.lang.invoke.MethodHandles.Lookup#lookups`, `Lookup Factory Methods`],
 				[/* text */ 't', `,
      such as `],
-				[/* reference */ 'r', `.MethodHandles.Lookup#findVirtual(java.lang.Class,java.lang.String,java.lang.invoke.MethodType)`],
+				[/* reference */ 'r', `java.lang.invoke.MethodHandles.Lookup#findVirtual(java.lang.Class,java.lang.String,java.lang.invoke.MethodType)`, `Lookup.findVirtual`],
 				[/* text */ 't', `,
      to resolve a symbolic reference into a method handle.
      A symbolic reference consists of a class, name string, and type.
@@ -51,34 +51,34 @@ DocsCollector.collect('java.lang.invoke.MethodHandleInfo', [
 			]],
 			[/* block */ 'b', [
 				[/* text */ 't', `By calling the factory method `],
-				[/* reference */ 'r', `.MethodHandles.Lookup#unreflect(java.lang.reflect.Method)`],
+				[/* reference */ 'r', `java.lang.invoke.MethodHandles.Lookup#unreflect(java.lang.reflect.Method)`, `Lookup.unreflect`],
 				[/* text */ 't', `
      or `],
-				[/* reference */ 'r', `.MethodHandles.Lookup#unreflectSpecial(java.lang.reflect.Method,java.lang.Class)`],
+				[/* reference */ 'r', `java.lang.invoke.MethodHandles.Lookup#unreflectSpecial(java.lang.reflect.Method,java.lang.Class)`, `Lookup.unreflectSpecial`],
 				[/* text */ 't', `
      to convert a `],
-				[/* reference */ 'r', `java.lang.reflect.Method`],
+				[/* reference */ 'r', `java.lang.reflect.Method`, `Method`],
 				[/* text */ 't', ` into a method handle.
  `]
 			]],
 			[/* block */ 'b', [
 				[/* text */ 't', `By calling the factory method `],
-				[/* reference */ 'r', `.MethodHandles.Lookup#unreflectConstructor(java.lang.reflect.Constructor)`],
+				[/* reference */ 'r', `java.lang.invoke.MethodHandles.Lookup#unreflectConstructor(java.lang.reflect.Constructor)`, `Lookup.unreflectConstructor`],
 				[/* text */ 't', `
      to convert a `],
-				[/* reference */ 'r', `java.lang.reflect.Constructor`],
+				[/* reference */ 'r', `java.lang.reflect.Constructor`, `Constructor`],
 				[/* text */ 't', ` into a method handle.
  `]
 			]],
 			[/* block */ 'b', [
 				[/* text */ 't', `By calling the factory method `],
-				[/* reference */ 'r', `.MethodHandles.Lookup#unreflectGetter(java.lang.reflect.Field)`],
+				[/* reference */ 'r', `java.lang.invoke.MethodHandles.Lookup#unreflectGetter(java.lang.reflect.Field)`, `Lookup.unreflectGetter`],
 				[/* text */ 't', `
      or `],
-				[/* reference */ 'r', `.MethodHandles.Lookup#unreflectSetter(java.lang.reflect.Field)`],
+				[/* reference */ 'r', `java.lang.invoke.MethodHandles.Lookup#unreflectSetter(java.lang.reflect.Field)`, `Lookup.unreflectSetter`],
 				[/* text */ 't', `
      to convert a `],
-				[/* reference */ 'r', `java.lang.reflect.Field`],
+				[/* reference */ 'r', `java.lang.reflect.Field`, `Field`],
 				[/* text */ 't', ` into a method handle.
  `]
 			]]
@@ -98,11 +98,11 @@ DocsCollector.collect('java.lang.invoke.MethodHandleInfo', [
 		[/* block */ 'b', [
 			[/* text */ 't', `
  If the underlying method is `],
-			[/* reference */ 'r', `.MethodHandles.Lookup#callsens`],
+			[/* reference */ 'r', `java.lang.invoke.MethodHandles.Lookup#callsens`, `caller sensitive`],
 			[/* text */ 't', `,
  the direct method handle will have been "bound" to a particular caller class, the
  `],
-			[/* reference */ 'r', `.MethodHandles.Lookup#lookupClass()`],
+			[/* reference */ 'r', `java.lang.invoke.MethodHandles.Lookup#lookupClass()`, `lookup class`],
 			[/* text */ 't', `
  of the lookup object used to create it.
  Cracking this method handle with a different lookup class will fail
@@ -117,18 +117,18 @@ DocsCollector.collect('java.lang.invoke.MethodHandleInfo', [
  for programs which may otherwise trust erroneous revelation of a method
  handle with symbolic information (or caller binding) from an unexpected scope.
  Use `],
-			[/* reference */ 'r', `.MethodHandles#reflectAs(java.lang.Class,java.lang.invoke.MethodHandle)`],
+			[/* reference */ 'r', `java.lang.invoke.MethodHandles#reflectAs(java.lang.Class,java.lang.invoke.MethodHandle)`, `MethodHandles.reflectAs(java.lang.Class<T>, java.lang.invoke.MethodHandle)`],
 			[/* text */ 't', ` to override this limitation.
 
  `]
 		]],
 		[/* block */ 'b', [
-			[/* text */ 't', ``],
+			[/* anchor */ 'r', '#-id', `refkinds`, ``],
 			[/* text */ 't', `Reference kinds`]
 		]],
 		[/* text */ 't', `
  The `],
-		[/* reference */ 'r', `.MethodHandles.Lookup#lookups`],
+		[/* reference */ 'r', `java.lang.invoke.MethodHandles.Lookup#lookups`, `Lookup Factory Methods`],
 		[/* text */ 't', `
  correspond to all major use cases for methods, constructors, and fields.
  These use cases may be distinguished using small integers as follows:
@@ -328,7 +328,7 @@ DocsCollector.collect('java.lang.invoke.MethodHandleInfo', [
 			[/* field description */
 				[/* text */ 't', `A direct method handle reference kind,
  as defined in the `],
-				[/* reference */ 'r', `.MethodHandleInfo#refkinds`],
+				[/* reference */ 'r', `java.lang.invoke.MethodHandleInfo#refkinds`, `table above`],
 				[/* text */ 't', `.`]
 			],
 		]],
@@ -336,7 +336,7 @@ DocsCollector.collect('java.lang.invoke.MethodHandleInfo', [
 			[/* field description */
 				[/* text */ 't', `A direct method handle reference kind,
  as defined in the `],
-				[/* reference */ 'r', `.MethodHandleInfo#refkinds`],
+				[/* reference */ 'r', `java.lang.invoke.MethodHandleInfo#refkinds`, `table above`],
 				[/* text */ 't', `.`]
 			],
 		]],
@@ -344,7 +344,7 @@ DocsCollector.collect('java.lang.invoke.MethodHandleInfo', [
 			[/* field description */
 				[/* text */ 't', `A direct method handle reference kind,
  as defined in the `],
-				[/* reference */ 'r', `.MethodHandleInfo#refkinds`],
+				[/* reference */ 'r', `java.lang.invoke.MethodHandleInfo#refkinds`, `table above`],
 				[/* text */ 't', `.`]
 			],
 		]],
@@ -352,7 +352,7 @@ DocsCollector.collect('java.lang.invoke.MethodHandleInfo', [
 			[/* field description */
 				[/* text */ 't', `A direct method handle reference kind,
  as defined in the `],
-				[/* reference */ 'r', `.MethodHandleInfo#refkinds`],
+				[/* reference */ 'r', `java.lang.invoke.MethodHandleInfo#refkinds`, `table above`],
 				[/* text */ 't', `.`]
 			],
 		]],
@@ -360,7 +360,7 @@ DocsCollector.collect('java.lang.invoke.MethodHandleInfo', [
 			[/* field description */
 				[/* text */ 't', `A direct method handle reference kind,
  as defined in the `],
-				[/* reference */ 'r', `.MethodHandleInfo#refkinds`],
+				[/* reference */ 'r', `java.lang.invoke.MethodHandleInfo#refkinds`, `table above`],
 				[/* text */ 't', `.`]
 			],
 		]],
@@ -368,7 +368,7 @@ DocsCollector.collect('java.lang.invoke.MethodHandleInfo', [
 			[/* field description */
 				[/* text */ 't', `A direct method handle reference kind,
  as defined in the `],
-				[/* reference */ 'r', `.MethodHandleInfo#refkinds`],
+				[/* reference */ 'r', `java.lang.invoke.MethodHandleInfo#refkinds`, `table above`],
 				[/* text */ 't', `.`]
 			],
 		]],
@@ -376,7 +376,7 @@ DocsCollector.collect('java.lang.invoke.MethodHandleInfo', [
 			[/* field description */
 				[/* text */ 't', `A direct method handle reference kind,
  as defined in the `],
-				[/* reference */ 'r', `.MethodHandleInfo#refkinds`],
+				[/* reference */ 'r', `java.lang.invoke.MethodHandleInfo#refkinds`, `table above`],
 				[/* text */ 't', `.`]
 			],
 		]],
@@ -384,7 +384,7 @@ DocsCollector.collect('java.lang.invoke.MethodHandleInfo', [
 			[/* field description */
 				[/* text */ 't', `A direct method handle reference kind,
  as defined in the `],
-				[/* reference */ 'r', `.MethodHandleInfo#refkinds`],
+				[/* reference */ 'r', `java.lang.invoke.MethodHandleInfo#refkinds`, `table above`],
 				[/* text */ 't', `.`]
 			],
 		]],
@@ -392,7 +392,7 @@ DocsCollector.collect('java.lang.invoke.MethodHandleInfo', [
 			[/* field description */
 				[/* text */ 't', `A direct method handle reference kind,
  as defined in the `],
-				[/* reference */ 'r', `.MethodHandleInfo#refkinds`],
+				[/* reference */ 'r', `java.lang.invoke.MethodHandleInfo#refkinds`, `table above`],
 				[/* text */ 't', `.`]
 			],
 		]]
@@ -461,7 +461,7 @@ DocsCollector.collect('java.lang.invoke.MethodHandleInfo', [
 				[/* text */ 't', `Returns the reference kind of the cracked method handle, which in turn
  determines whether the method handle's underlying member was a constructor, method, or field.
  See the `],
-				[/* reference */ 'r', `.MethodHandleInfo#refkinds`],
+				[/* reference */ 'r', `java.lang.invoke.MethodHandleInfo#refkinds`, `table above`],
 				[/* text */ 't', ` for definitions.`]
 			],
 			/* parameters */ UDF,
@@ -549,7 +549,7 @@ DocsCollector.collect('java.lang.invoke.MethodHandleInfo', [
 			[/* method description */
 				[/* text */ 't', `Returns the descriptive name of the given reference kind,
  as defined in the `],
-				[/* reference */ 'r', `.MethodHandleInfo#refkinds`],
+				[/* reference */ 'r', `java.lang.invoke.MethodHandleInfo#refkinds`, `table above`],
 				[/* text */ 't', `.
  The conventional prefix "REF_" is omitted.`]
 			],
@@ -562,7 +562,7 @@ DocsCollector.collect('java.lang.invoke.MethodHandleInfo', [
 				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
 					[/* text */ 't', `if the argument is not a valid
             `],
-					[/* reference */ 'r', `.MethodHandleInfo#refkinds`]
+					[/* reference */ 'r', `java.lang.invoke.MethodHandleInfo#refkinds`, `reference kind number`]
 				]]
 			],
 			[/* return description */
@@ -589,7 +589,7 @@ DocsCollector.collect('java.lang.invoke.MethodHandleInfo', [
  `],
 				[/* inline code block */ 'i', `C`],
 				[/* text */ 't', ` is the `],
-				[/* reference */ 'r', `java.Class#getName()`],
+				[/* reference */ 'r', `java.lang.Class#getName()`, `name`],
 				[/* text */ 't', ` of `],
 				[/* inline code block */ 'i', `defc`],
 				[/* inline code block */ 'i', `N`],
@@ -644,7 +644,7 @@ DocsCollector.collect('java.lang.invoke.MethodHandleInfo', [
 				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
 					[/* text */ 't', `if the first argument is not a valid
             `],
-					[/* reference */ 'r', `.MethodHandleInfo#refkinds`]
+					[/* reference */ 'r', `java.lang.invoke.MethodHandleInfo#refkinds`, `reference kind number`]
 				]],
 				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
 					[/* text */ 't', `if any reference argument is `],

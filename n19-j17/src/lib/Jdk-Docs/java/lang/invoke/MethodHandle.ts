@@ -14,10 +14,10 @@ DocsCollector.collect('java.lang.invoke.MethodHandle', [
 		[/* reference */ 'r', `#bindTo(java.lang.Object)`, `insertion`],
 		[/* text */ 't', `,
  `],
-		[/* reference */ 'r', `.MethodHandles#dropArguments(java.lang.invoke.MethodHandle,int,java.util.List)`],
+		[/* reference */ 'r', `java.lang.invoke.MethodHandles#dropArguments(java.lang.invoke.MethodHandle,int,java.util.List)`, `deletion`],
 		[/* text */ 't', `,
  and `],
-		[/* reference */ 'r', `.MethodHandles#filterArguments(java.lang.invoke.MethodHandle,int,java.lang.invoke.MethodHandle...)`],
+		[/* reference */ 'r', `java.lang.invoke.MethodHandles#filterArguments(java.lang.invoke.MethodHandle,int,java.lang.invoke.MethodHandle...)`, `substitution`],
 		[/* text */ 't', `.
 
  `],
@@ -36,7 +36,7 @@ DocsCollector.collect('java.lang.invoke.MethodHandle', [
 			[/* reference */ 'r', `#type()`, `type`],
 			[/* text */ 't', ` accessor.
  This type descriptor is a `],
-			[/* reference */ 'r', `java.lang.invoke.MethodType`],
+			[/* reference */ 'r', `java.lang.invoke.MethodType`, `MethodType`],
 			[/* text */ 't', ` object,
  whose structure is a series of classes, one of which is
  the return type of the method (or `],
@@ -79,7 +79,7 @@ DocsCollector.collect('java.lang.invoke.MethodHandle', [
 			[/* inline code block */ 'i', `MethodHandle`],
 			[/* text */ 't', `
  which may be visible via the `],
-			[/* reference */ 'r', `java.Object#getClass()`],
+			[/* reference */ 'r', `java.lang.Object#getClass()`, `Object.getClass`],
 			[/* text */ 't', `
  operation.  The programmer should not draw conclusions about a method handle
  from its specific class, as the method handle class hierarchy (if any)
@@ -262,7 +262,7 @@ DocsCollector.collect('java.lang.invoke.MethodHandle', [
 		[/* text */ 't', `
  In typical programs, method handle type matching will usually succeed.
  But if a match fails, the JVM will throw a `],
-		[/* reference */ 'r', `java.lang.invoke.WrongMethodTypeException`],
+		[/* reference */ 'r', `java.lang.invoke.WrongMethodTypeException`, `WrongMethodTypeException`],
 		[/* text */ 't', `,
  either directly (in the case of `],
 		[/* inline code block */ 'i', `invokeExact`],
@@ -331,7 +331,7 @@ DocsCollector.collect('java.lang.invoke.MethodHandle', [
  a reflective method is invoked,
  method handle access checking is performed
  `],
-			[/* reference */ 'r', `.MethodHandles.Lookup#access`],
+			[/* reference */ 'r', `java.lang.invoke.MethodHandles.Lookup#access`, `when the method handle is created`],
 			[/* text */ 't', `.
  In the case of `],
 			[/* inline code block */ 'i', `ldc`],
@@ -352,15 +352,15 @@ DocsCollector.collect('java.lang.invoke.MethodHandle', [
  any method, constructor, or field that is accessible to that code.
  This is done via a reflective, capability-based API called
  `],
-		[/* reference */ 'r', `java.lang.invoke.MethodHandles.Lookup`],
+		[/* reference */ 'r', `java.lang.invoke.MethodHandles.Lookup`, `MethodHandles.Lookup`],
 		[/* text */ 't', `.
  For example, a static method handle can be obtained
  from `],
-		[/* reference */ 'r', `.MethodHandles.Lookup#findStatic(java.lang.Class,java.lang.String,java.lang.invoke.MethodType)`],
+		[/* reference */ 'r', `java.lang.invoke.MethodHandles.Lookup#findStatic(java.lang.Class,java.lang.String,java.lang.invoke.MethodType)`, `Lookup.findStatic`],
 		[/* text */ 't', `.
  There are also conversion methods from Core Reflection API objects,
  such as `],
-		[/* reference */ 'r', `.MethodHandles.Lookup#unreflect(java.lang.reflect.Method)`],
+		[/* reference */ 'r', `java.lang.invoke.MethodHandles.Lookup#unreflect(java.lang.reflect.Method)`, `Lookup.unreflect`],
 		[/* text */ 't', `.
  `],
 		[/* block */ 'b', [
@@ -514,7 +514,7 @@ mh.invokeExact(System.out, "Hello, world.");
 		[/* inline code block */ 'i', `assertEquals`],
 		[/* text */ 't', ` is assumed to
  be a method which calls `],
-		[/* reference */ 'r', `java.lang.Objects#equals(java.lang.Object,java.lang.Object)`],
+		[/* reference */ 'r', `java.util.Objects#equals(java.lang.Object,java.lang.Object)`, `Objects.equals`],
 		[/* text */ 't', `
  on its arguments, and asserts that the result is true.
 
@@ -527,7 +527,7 @@ mh.invokeExact(System.out, "Hello, world.");
 		[/* inline code block */ 'i', `invoke`],
 		[/* text */ 't', ` are declared
  to throw `],
-		[/* reference */ 'r', `java.lang.Throwable`],
+		[/* reference */ 'r', `java.lang.Throwable`, `Throwable`],
 		[/* text */ 't', `,
  which is to say that there is no static restriction on what a method handle
  can throw.  Since the JVM does not distinguish between checked
@@ -543,7 +543,7 @@ mh.invokeExact(System.out, "Hello, world.");
 
  `],
 		[/* block */ 'b', [
-			[/* text */ 't', ``],
+			[/* anchor */ 'r', '#-id', `sigpoly`, ``],
 			[/* text */ 't', `Signature polymorphism`]
 		]],
 		[/* text */ 't', `
@@ -588,16 +588,16 @@ mh.invokeExact(System.out, "Hello, world.");
 		[/* block */ 'b', `Interoperation between method handles and the Core Reflection API`],
 		[/* text */ 't', `
  Using factory methods in the `],
-		[/* reference */ 'r', `java.lang.invoke.MethodHandles.Lookup`],
+		[/* reference */ 'r', `java.lang.invoke.MethodHandles.Lookup`, `Lookup`],
 		[/* text */ 't', ` API,
  any class member represented by a Core Reflection API object
  can be converted to a behaviorally equivalent method handle.
  For example, a reflective `],
-		[/* reference */ 'r', `java.lang.reflect.Method`],
+		[/* reference */ 'r', `java.lang.reflect.Method`, `Method`],
 		[/* text */ 't', ` can
  be converted to a method handle using
  `],
-		[/* reference */ 'r', `.MethodHandles.Lookup#unreflect(java.lang.reflect.Method)`],
+		[/* reference */ 'r', `java.lang.invoke.MethodHandles.Lookup#unreflect(java.lang.reflect.Method)`, `Lookup.unreflect`],
 		[/* text */ 't', `.
  The resulting method handles generally provide more direct and efficient
  access to the underlying class members.
@@ -614,11 +614,11 @@ mh.invokeExact(System.out, "Hello, world.");
  they appear as ordinary non-polymorphic methods.
  Their reflective appearance, as viewed by
  `],
-			[/* reference */ 'r', `java.Class#getDeclaredMethod(java.lang.String,java.lang.Class...)`],
+			[/* reference */ 'r', `java.lang.Class#getDeclaredMethod(java.lang.String,java.lang.Class...)`, `Class.getDeclaredMethod`],
 			[/* text */ 't', `,
  is unaffected by their special status in this API.
  For example, `],
-			[/* reference */ 'r', `java.Method#getModifiers()`],
+			[/* reference */ 'r', `java.lang.reflect.Method#getModifiers()`, `Method.getModifiers`],
 			[/* text */ 't', `
  will report exactly those modifier bits required for any similarly
  declared method, including in this case `],
@@ -632,7 +632,7 @@ mh.invokeExact(System.out, "Hello, world.");
 			[/* text */ 't', `
  As with any reflected method, these methods (when reflected) may be
  invoked via `],
-			[/* reference */ 'r', `java.Method#invoke(java.lang.Object,java.lang.Object...)`],
+			[/* reference */ 'r', `java.lang.reflect.Method#invoke(java.lang.Object,java.lang.Object...)`, `java.lang.reflect.Method.invoke`],
 			[/* text */ 't', `.
  However, such reflective calls do not result in method handle invocations.
  Such a call, if passed the required argument
@@ -661,13 +661,13 @@ mh.invokeExact(System.out, "Hello, world.");
 			[/* text */ 't', `
  In order to obtain an invoker method for a particular type descriptor,
  use `],
-			[/* reference */ 'r', `.MethodHandles#exactInvoker(java.lang.invoke.MethodType)`],
+			[/* reference */ 'r', `java.lang.invoke.MethodHandles#exactInvoker(java.lang.invoke.MethodType)`, `MethodHandles.exactInvoker`],
 			[/* text */ 't', `,
  or `],
-			[/* reference */ 'r', `.MethodHandles#invoker(java.lang.invoke.MethodType)`],
+			[/* reference */ 'r', `java.lang.invoke.MethodHandles#invoker(java.lang.invoke.MethodType)`, `MethodHandles.invoker`],
 			[/* text */ 't', `.
  The `],
-			[/* reference */ 'r', `.MethodHandles.Lookup#findVirtual(java.lang.Class,java.lang.String,java.lang.invoke.MethodType)`],
+			[/* reference */ 'r', `java.lang.invoke.MethodHandles.Lookup#findVirtual(java.lang.Class,java.lang.String,java.lang.invoke.MethodType)`, `Lookup.findVirtual`],
 			[/* text */ 't', `
  API is also able to return a method handle
  to call `],
@@ -703,7 +703,7 @@ mh.invokeExact(System.out, "Hello, world.");
 			[/* block */ 'b', [
 				[/* text */ 't', `Method types range over all possible arities,
  from no arguments to up to the  `],
-				[/* reference */ 'r', `.MethodHandle#maxarity`],
+				[/* reference */ 'r', `java.lang.invoke.MethodHandle#maxarity`, `maximum number`],
 				[/* text */ 't', ` of allowed arguments.
  Generics are not variadic, and so cannot represent this.`]
 			]],
@@ -716,7 +716,7 @@ mh.invokeExact(System.out, "Hello, world.");
 		]],
 		[/* block */ 'b', ''],
 		[/* block */ 'b', [
-			[/* text */ 't', ``],
+			[/* anchor */ 'r', '#-id', `maxarity`, ``],
 			[/* text */ 't', `Arity limits`]
 		]],
 		[/* text */ 't', `
@@ -749,7 +749,7 @@ mh.invokeExact(System.out, "Hello, world.");
  These limits imply that certain method handles cannot be created, solely because of the JVM limit on stacked arguments.
  For example, if a static JVM method accepts exactly 255 arguments, a method handle cannot be created for it.
  Attempts to create method handles with impossible method types lead to an `],
-		[/* reference */ 'r', `java.lang.IllegalArgumentException`],
+		[/* reference */ 'r', `java.lang.IllegalArgumentException`, `IllegalArgumentException`],
 		[/* text */ 't', `.
  In particular, a method handle’s type must not have an arity of the exact maximum 255.`]
 	],
@@ -771,7 +771,7 @@ mh.invokeExact(System.out, "Hello, world.");
 					]],
 					[/* block */ 'b', [
 						[/* text */ 't', `a call to a `],
-						[/* reference */ 'r', `java.lang.invoke.MethodHandles.Lookup`],
+						[/* reference */ 'r', `java.lang.invoke.MethodHandles.Lookup`, `lookup method`],
 						[/* text */ 't', `
      which resolves to a variable arity Java method or constructor
  `]
@@ -853,10 +853,10 @@ mh.invokeExact(System.out, "Hello, world.");
  it will appear as a single native method, taking an object array and returning an object.
  If this native method is invoked directly via
  `],
-					[/* reference */ 'r', `java.Method#invoke(java.lang.Object,java.lang.Object...)`],
+					[/* reference */ 'r', `java.lang.reflect.Method#invoke(java.lang.Object,java.lang.Object...)`, `java.lang.reflect.Method.invoke`],
 					[/* text */ 't', `, via JNI,
  or indirectly via `],
-					[/* reference */ 'r', `.MethodHandles.Lookup#unreflect(java.lang.reflect.Method)`],
+					[/* reference */ 'r', `java.lang.invoke.MethodHandles.Lookup#unreflect(java.lang.reflect.Method)`, `Lookup.unreflect`],
 					[/* text */ 't', `,
  it will throw an `],
 					[/* inline code block */ 'i', `UnsupportedOperationException`],
@@ -901,10 +901,10 @@ mh.invokeExact(System.out, "Hello, world.");
  it will appear as a single native method, taking an object array and returning an object.
  If this native method is invoked directly via
  `],
-					[/* reference */ 'r', `java.Method#invoke(java.lang.Object,java.lang.Object...)`],
+					[/* reference */ 'r', `java.lang.reflect.Method#invoke(java.lang.Object,java.lang.Object...)`, `java.lang.reflect.Method.invoke`],
 					[/* text */ 't', `, via JNI,
  or indirectly via `],
-					[/* reference */ 'r', `.MethodHandles.Lookup#unreflect(java.lang.reflect.Method)`],
+					[/* reference */ 'r', `java.lang.invoke.MethodHandles.Lookup#unreflect(java.lang.reflect.Method)`, `Lookup.unreflect`],
 					[/* text */ 't', `,
  it will throw an `],
 					[/* inline code block */ 'i', `UnsupportedOperationException`],
@@ -993,7 +993,7 @@ mh.invokeExact(System.out, "Hello, world.");
 					[/* text */ 't', ` has an illegal value (negative, or greater than the number of arguments),
          or the resulting method handle's type would have
          `],
-					[/* reference */ 'r', `.MethodHandle#maxarity`]
+					[/* reference */ 'r', `java.lang.invoke.MethodHandle#maxarity`, `too many parameters`]
 				]],
 				[/* throw */ 'java.lang.invoke.WrongMethodTypeException', [/* throw description */
 					[/* text */ 't', `if the implied `],
@@ -1063,7 +1063,7 @@ mh.invokeExact(System.out, "Hello, world.");
 					[/* inline code block */ 'i', `arrayType`],
 					[/* text */ 't', ` is often identical to the
  `],
-					[/* reference */ 'r', `.MethodType#lastParameterType()`],
+					[/* reference */ 'r', `java.lang.invoke.MethodType#lastParameterType()`, `last parameter type`],
 					[/* text */ 't', `
  of the original target.
  It is an explicit argument for symmetry with `],
@@ -1153,7 +1153,7 @@ assertEquals("[123]", (String) longsToString.invokeExact((long)123));`]
 					[/* text */ 't', ` is not a legal array size,
          or the resulting method handle's type would have
          `],
-					[/* reference */ 'r', `.MethodHandle#maxarity`]
+					[/* reference */ 'r', `java.lang.invoke.MethodHandle#maxarity`, `too many parameters`]
 				]],
 				[/* throw */ 'java.lang.invoke.WrongMethodTypeException', [/* throw description */
 					[/* text */ 't', `if the implied `],
@@ -1297,7 +1297,7 @@ assertEquals("[three, thee, tee]", asListFix.invoke((Object)argv).toString());`]
          number of arguments),
          or if the resulting method handle's type would have
          `],
-					[/* reference */ 'r', `.MethodHandle#maxarity`]
+					[/* reference */ 'r', `java.lang.invoke.MethodHandle#maxarity`, `too many parameters`]
 				]],
 				[/* throw */ 'java.lang.invoke.WrongMethodTypeException', [/* throw description */
 					[/* text */ 't', `if the implied `],
@@ -1375,7 +1375,7 @@ assertEquals("[three, thee, tee]", asListFix.invoke((Object)argv).toString());`]
  if the array is `],
 					[/* inline code block */ 'i', `null`],
 					[/* text */ 't', ` and throw an `],
-					[/* reference */ 'r', `java.lang.IllegalArgumentException`],
+					[/* reference */ 'r', `java.lang.IllegalArgumentException`, `IllegalArgumentException`],
 					[/* text */ 't', `
  if the array does not have the correct number of elements.
  `]
@@ -1459,7 +1459,7 @@ assertEquals("[A, B, C]", (String) caToString2.invokeExact('A', "BC".toCharArray
 					[/* text */ 't', ` is negative,
          or if the resulting method handle's type would have
          `],
-					[/* reference */ 'r', `.MethodHandle#maxarity`]
+					[/* reference */ 'r', `java.lang.invoke.MethodHandle#maxarity`, `too many parameters`]
 				]],
 				[/* throw */ 'java.lang.invoke.WrongMethodTypeException', [/* throw description */
 					[/* text */ 't', `if the implied `],
@@ -1627,7 +1627,7 @@ assertEquals("[A, B, C]", (String) caToString2.invokeExact('A', "BC".toCharArray
 						[/* text */ 't', `T0`],
 						[/* text */ 't', ` is Object, these are the conversions
      allowed by `],
-						[/* reference */ 'r', `java.Method#invoke(java.lang.Object,java.lang.Object...)`],
+						[/* reference */ 'r', `java.lang.reflect.Method#invoke(java.lang.Object,java.lang.Object...)`, `java.lang.reflect.Method.invoke`],
 						[/* text */ 't', `.)
      The unboxing conversion must have a possibility of success, which means that
      if `],
@@ -1691,12 +1691,12 @@ assertEquals("[A, B, C]", (String) caToString2.invokeExact('A', "BC".toCharArray
  or return values may require additional runtime checks which can fail.
  An unboxing operation may fail because the original reference is null,
  causing a `],
-					[/* reference */ 'r', `java.lang.NullPointerException`],
+					[/* reference */ 'r', `java.lang.NullPointerException`, `NullPointerException`],
 					[/* text */ 't', `.
  An unboxing operation or a reference cast may also fail on a reference
  to an object of the wrong type,
  causing a `],
-					[/* reference */ 'r', `java.lang.ClassCastException`],
+					[/* reference */ 'r', `java.lang.ClassCastException`, `ClassCastException`],
 					[/* text */ 't', `.
  Although an unboxing operation may accept several kinds of wrappers,
  if none are available, a `],
@@ -1748,7 +1748,7 @@ assertEquals("[A, B, C]", (String) caToString2.invokeExact('A', "BC".toCharArray
  trailing parameter.
  Also, the
  `],
-					[/* reference */ 'r', `.MethodType#lastParameterType()`],
+					[/* reference */ 'r', `java.lang.invoke.MethodType#lastParameterType()`, `last parameter type`],
 					[/* text */ 't', `
  of the adapter will be
  `],
@@ -2180,7 +2180,7 @@ assertEquals("[three, thee, tee]", Arrays.toString((Object[])ls.get(0)));`]
 							[/* block */ 'b', [
 								[/* text */ 't', `Check that this method handle has variable arity with a
          `],
-								[/* reference */ 'r', `.MethodType#lastParameterType()`],
+								[/* reference */ 'r', `java.lang.invoke.MethodType#lastParameterType()`, `trailing parameter`],
 								[/* text */ 't', `
          of some array type `],
 								[/* inline code block */ 'i', `A[]`],
@@ -2456,17 +2456,17 @@ assertEquals("[three, thee, tee]", Arrays.toString((Object[])ls.get(0)));`]
 			[/* method description */
 				[/* text */ 't', `Return a nominal descriptor for this instance, if one can be
  constructed, or an empty `],
-				[/* reference */ 'r', `java.util.Optional`],
+				[/* reference */ 'r', `java.util.Optional`, `Optional`],
 				[/* text */ 't', ` if one cannot be.`]
 			],
 			/* parameters */ UDF,
 			/* throws */ UDF,
 			[/* return description */
 				[/* text */ 't', `An `],
-				[/* reference */ 'r', `java.util.Optional`],
+				[/* reference */ 'r', `java.util.Optional`, `Optional`],
 				[/* text */ 't', ` containing the resulting nominal descriptor,
  or an empty `],
-				[/* reference */ 'r', `java.util.Optional`],
+				[/* reference */ 'r', `java.util.Optional`, `Optional`],
 				[/* text */ 't', ` if one cannot be constructed.`]
 			]
 		]]

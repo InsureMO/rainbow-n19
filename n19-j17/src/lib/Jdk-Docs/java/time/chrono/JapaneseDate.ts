@@ -8,7 +8,7 @@ DocsCollector.collect('java.time.chrono.JapaneseDate', [
 		[/* block */ 'b', [
 			[/* text */ 't', `
  This date operates using the `],
-			[/* reference */ 'r', `java.time.chrono.JapaneseChronology`],
+			[/* reference */ 'r', `java.time.chrono.JapaneseChronology`, `Japanese Imperial calendar`],
 			[/* text */ 't', `.
  This calendar system is primarily used in Japan.
  `]
@@ -85,7 +85,7 @@ DocsCollector.collect('java.time.chrono.JapaneseDate', [
 					[/* inline code block */ 'i', `TemporalAccessor`],
 					[/* text */ 't', ` instances, including dates
  in two different chronologies, use `],
-					[/* reference */ 'r', `java.ChronoField#EPOCH_DAY`],
+					[/* reference */ 'r', `java.time.temporal.ChronoField#EPOCH_DAY`, `ChronoField.EPOCH_DAY`],
 					[/* text */ 't', ` as a comparator.`]
 				]]
 			],
@@ -107,17 +107,17 @@ DocsCollector.collect('java.time.chrono.JapaneseDate', [
 					[/* text */ 't', `
  This checks if this date can be queried for the specified field.
  If false, then calling the `],
-					[/* reference */ 'r', `java.TemporalAccessor#range(java.time.temporal.TemporalField)`],
+					[/* reference */ 'r', `java.time.temporal.TemporalAccessor#range(java.time.temporal.TemporalField)`, `range`],
 					[/* text */ 't', ` and
  `],
-					[/* reference */ 'r', `java.TemporalAccessor#get(java.time.temporal.TemporalField)`],
+					[/* reference */ 'r', `java.time.temporal.TemporalAccessor#get(java.time.temporal.TemporalField)`, `get`],
 					[/* text */ 't', ` methods will throw an exception.
  `]
 				]],
 				[/* block */ 'b', [
 					[/* text */ 't', `
  If the field is a `],
-					[/* reference */ 'r', `enum class in java.time.temporal.ChronoField`],
+					[/* reference */ 'r', `enum class in java.time.temporal.ChronoField`, `ChronoField`],
 					[/* text */ 't', ` then the query is implemented here.
  The supported fields are:
  `]
@@ -285,7 +285,7 @@ DocsCollector.collect('java.time.chrono.JapaneseDate', [
 					[/* inline code block */ 'i', `Chronology`],
 					[/* text */ 't', ` represents the calendar system in use.
  The era and other fields in `],
-					[/* reference */ 'r', `enum class in java.time.temporal.ChronoField`],
+					[/* reference */ 'r', `enum class in java.time.temporal.ChronoField`, `ChronoField`],
 					[/* text */ 't', ` are defined by the chronology.`]
 				]]
 			],
@@ -303,12 +303,12 @@ DocsCollector.collect('java.time.chrono.JapaneseDate', [
 					[/* text */ 't', `
  This adjusts this temporal, subtracting according to the rules of the specified amount.
  The amount is typically a `],
-					[/* reference */ 'r', `java.time.Period`],
+					[/* reference */ 'r', `java.time.Period`, `Period`],
 					[/* text */ 't', ` but may be any other type implementing
  the `],
-					[/* reference */ 'r', `java.time.temporal.TemporalAmount`],
+					[/* reference */ 'r', `java.time.temporal.TemporalAmount`, `TemporalAmount`],
 					[/* text */ 't', ` interface, such as `],
-					[/* reference */ 'r', `java.time.Duration`],
+					[/* reference */ 'r', `java.time.Duration`, `Duration`],
 					[/* text */ 't', `.
  `]
 				]],
@@ -389,12 +389,12 @@ DocsCollector.collect('java.time.chrono.JapaneseDate', [
 					[/* text */ 't', `
  This adjusts this temporal, adding according to the rules of the specified amount.
  The amount is typically a `],
-					[/* reference */ 'r', `java.time.Period`],
+					[/* reference */ 'r', `java.time.Period`, `Period`],
 					[/* text */ 't', ` but may be any other type implementing
  the `],
-					[/* reference */ 'r', `java.time.temporal.TemporalAmount`],
+					[/* reference */ 'r', `java.time.temporal.TemporalAmount`, `TemporalAmount`],
 					[/* text */ 't', ` interface, such as `],
-					[/* reference */ 'r', `java.time.Duration`],
+					[/* reference */ 'r', `java.time.Duration`, `Duration`],
 					[/* text */ 't', `.
  `]
 				]],
@@ -478,7 +478,7 @@ DocsCollector.collect('java.time.chrono.JapaneseDate', [
  A more complex adjuster might set the date to the last day of the month.
  A selection of common adjustments is provided in
  `],
-					[/* reference */ 'r', `java.time.temporal.TemporalAdjusters`],
+					[/* reference */ 'r', `java.time.temporal.TemporalAdjusters`, `TemporalAdjusters`],
 					[/* text */ 't', `.
  These include finding the "last day of the month" and "next Wednesday".
  The adjuster is responsible for handling special cases, such as the varying
@@ -552,7 +552,7 @@ DocsCollector.collect('java.time.chrono.JapaneseDate', [
 				[/* block */ 'b', [
 					[/* text */ 't', `
  The Japanese calendar system has multiple eras defined by `],
-					[/* reference */ 'r', `java.time.chrono.JapaneseEra`],
+					[/* reference */ 'r', `java.time.chrono.JapaneseEra`, `JapaneseEra`],
 					[/* text */ 't', `.`]
 				]]
 			],
@@ -608,7 +608,7 @@ DocsCollector.collect('java.time.chrono.JapaneseDate', [
 				[/* block */ 'b', [
 					[/* text */ 't', `
  The conversion typically uses the `],
-					[/* reference */ 'r', `java.ChronoField#EPOCH_DAY`],
+					[/* reference */ 'r', `java.time.temporal.ChronoField#EPOCH_DAY`, `EPOCH_DAY`],
 					[/* text */ 't', `
  field, which is standardized across calendar systems.
  `]
@@ -616,7 +616,7 @@ DocsCollector.collect('java.time.chrono.JapaneseDate', [
 				[/* block */ 'b', [
 					[/* text */ 't', `
  This method matches the signature of the functional interface `],
-					[/* reference */ 'r', `java.time.temporal.TemporalQuery`],
+					[/* reference */ 'r', `java.time.temporal.TemporalQuery`, `TemporalQuery`],
 					[/* text */ 't', `
  allowing it to be used as a query via method reference, `],
 					[/* inline code block */ 'i', `JapaneseDate::from`],
@@ -647,7 +647,7 @@ DocsCollector.collect('java.time.chrono.JapaneseDate', [
 				[/* block */ 'b', [
 					[/* text */ 't', `
  This will query the `],
-					[/* reference */ 'r', `java.Clock#systemDefaultZone()`],
+					[/* reference */ 'r', `java.time.Clock#systemDefaultZone()`, `system clock`],
 					[/* text */ 't', ` in the default
  time-zone to obtain the current date.
  `]
@@ -673,7 +673,7 @@ DocsCollector.collect('java.time.chrono.JapaneseDate', [
  This will query the specified clock to obtain the current date - today.
  Using this method allows the use of an alternate clock for testing.
  The alternate clock may be introduced using `],
-					[/* reference */ 'r', `java.time.Clock`],
+					[/* reference */ 'r', `java.time.Clock`, `dependency injection`],
 					[/* text */ 't', `.`]
 				]]
 			],
@@ -700,7 +700,7 @@ DocsCollector.collect('java.time.chrono.JapaneseDate', [
 				[/* block */ 'b', [
 					[/* text */ 't', `
  This will query the `],
-					[/* reference */ 'r', `java.Clock#system(java.time.ZoneId)`],
+					[/* reference */ 'r', `java.time.Clock#system(java.time.ZoneId)`, `system clock`],
 					[/* text */ 't', ` to obtain the current date.
  Specifying the time-zone avoids dependence on the default time-zone.
  `]

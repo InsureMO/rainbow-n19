@@ -6,7 +6,7 @@ DocsCollector.collect('java.lang.invoke.LambdaMetafactory', [
 		[/* block */ 'b', [
 			[/* text */ 't', `Methods to facilitate the creation of simple "function objects" that
  implement one or more interfaces by delegation to a provided `],
-			[/* reference */ 'r', `java.lang.invoke.MethodHandle`],
+			[/* reference */ 'r', `java.lang.invoke.MethodHandle`, `MethodHandle`],
 			[/* text */ 't', `,
  possibly after type adaptation and partial evaluation of arguments.  These
  methods are typically used as `],
@@ -41,11 +41,11 @@ DocsCollector.collect('java.lang.invoke.LambdaMetafactory', [
 					[/* text */ 't', `, one with a single abstract method), a
      name and signature of a method from that interface to be implemented, a
      `],
-					[/* reference */ 'r', `java.lang.invoke.MethodHandleInfo`],
+					[/* reference */ 'r', `java.lang.invoke.MethodHandleInfo`, `direct method handle`],
 					[/* text */ 't', ` describing the desired
      implementation behavior for that method, and possibly other additional
      metadata, and produce a `],
-					[/* reference */ 'r', `java.lang.invoke.CallSite`],
+					[/* reference */ 'r', `java.lang.invoke.CallSite`, `CallSite`],
 					[/* text */ 't', ` whose target can be used to
      create suitable function objects.
 
@@ -134,7 +134,7 @@ DocsCollector.collect('java.lang.invoke.LambdaMetafactory', [
 			[/* inline code block */ 'i', `Object`],
 			[/* text */ 't', `.
  At linkage time, an additional `],
-			[/* reference */ 'r', `java.lang.invoke.MethodType`],
+			[/* reference */ 'r', `java.lang.invoke.MethodType`, `MethodType`],
 			[/* text */ 't', ` parameter describes the
  "dynamic" method type; on invocation, the arguments and eventual result
  are checked against this `],
@@ -198,12 +198,12 @@ DocsCollector.collect('java.lang.invoke.LambdaMetafactory', [
 				[/* text */ 't', `, which requires additional
      assistance from the capturing class (the class described by the
      `],
-				[/* reference */ 'r', `java.lang.invoke.MethodHandles.Lookup`],
+				[/* reference */ 'r', `java.lang.invoke.MethodHandles.Lookup`, `MethodHandles.Lookup`],
 				[/* text */ 't', ` parameter `],
 				[/* inline code block */ 'i', `caller`],
 				[/* text */ 't', `); see
      `],
-				[/* reference */ 'r', `java.lang.invoke.SerializedLambda`],
+				[/* reference */ 'r', `java.lang.invoke.SerializedLambda`, `SerializedLambda`],
 				[/* text */ 't', ` for details.`]
 			]]
 		]],
@@ -393,7 +393,7 @@ DocsCollector.collect('java.lang.invoke.LambdaMetafactory', [
 			[/* method description */
 				[/* text */ 't', `Facilitates the creation of simple "function objects" that implement one
  or more interfaces by delegation to a provided `],
-				[/* reference */ 'r', `java.lang.invoke.MethodHandle`],
+				[/* reference */ 'r', `java.lang.invoke.MethodHandle`, `MethodHandle`],
 				[/* text */ 't', `,
  after appropriate type adaptation and partial evaluation of arguments.
  Typically used as a `],
@@ -416,7 +416,7 @@ DocsCollector.collect('java.lang.invoke.LambdaMetafactory', [
 					[/* text */ 't', `.
  A general description of the behavior of this method is provided
  `],
-					[/* reference */ 'r', `java.lang.invoke.LambdaMetafactory`],
+					[/* reference */ 'r', `java.lang.invoke.LambdaMetafactory`, `above`],
 					[/* text */ 't', `.
 
  `]
@@ -529,7 +529,7 @@ DocsCollector.collect('java.lang.invoke.LambdaMetafactory', [
 					[/* inline code block */ 'i', `factoryType`],
 					[/* text */ 't', `,
  as described `],
-					[/* reference */ 'r', `java.lang.invoke.LambdaMetafactory`],
+					[/* reference */ 'r', `java.lang.invoke.LambdaMetafactory`, `above`],
 					[/* text */ 't', `.  Each `],
 					[/* inline code block */ 'i', `MethodType`],
 					[/* text */ 't', `
@@ -539,7 +539,7 @@ DocsCollector.collect('java.lang.invoke.LambdaMetafactory', [
  `],
 					[/* inline code block */ 'i', `interfaceMethodType`],
 					[/* text */ 't', `, as described `],
-					[/* reference */ 'r', `java.lang.invoke.LambdaMetafactory`],
+					[/* reference */ 'r', `java.lang.invoke.LambdaMetafactory`, `above`],
 					[/* text */ 't', `.
 
  `]
@@ -554,7 +554,7 @@ DocsCollector.collect('java.lang.invoke.LambdaMetafactory', [
 					[/* inline code block */ 'i', `writeReplace`],
 					[/* text */ 't', `
  method that returns an appropriate `],
-					[/* reference */ 'r', `java.lang.invoke.SerializedLambda`],
+					[/* reference */ 'r', `java.lang.invoke.SerializedLambda`, `SerializedLambda`],
 					[/* text */ 't', `.  The
  `],
 					[/* inline code block */ 'i', `caller`],
@@ -562,7 +562,7 @@ DocsCollector.collect('java.lang.invoke.LambdaMetafactory', [
 					[/* inline code block */ 'i', `$deserializeLambda$`],
 					[/* text */ 't', `
  method, as described in `],
-					[/* reference */ 'r', `java.lang.invoke.SerializedLambda`],
+					[/* reference */ 'r', `java.lang.invoke.SerializedLambda`, `SerializedLambda`],
 					[/* text */ 't', `.
 
  `]
@@ -607,7 +607,7 @@ DocsCollector.collect('java.lang.invoke.LambdaMetafactory', [
 					[/* text */ 't', `Represents a lookup context with the accessibility
                privileges of the caller.  Specifically, the lookup context
                must have `],
-					[/* reference */ 'r', `.MethodHandles.Lookup#hasFullPrivilegeAccess()`],
+					[/* reference */ 'r', `java.lang.invoke.MethodHandles.Lookup#hasFullPrivilegeAccess()`, `full privilege access`],
 					[/* text */ 't', `.
                When used with `],
 					[/* inline code block */ 'i', `invokedynamic`],
@@ -678,7 +678,7 @@ DocsCollector.collect('java.lang.invoke.LambdaMetafactory', [
 					[/* text */ 't', ` is not a direct method
          handle referencing a method or constructor, or if the linkage
          invariants are violated, as defined `],
-					[/* reference */ 'r', `java.lang.invoke.LambdaMetafactory`],
+					[/* reference */ 'r', `java.lang.invoke.LambdaMetafactory`, `above`],
 					[/* text */ 't', `.`]
 				]],
 				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
@@ -704,7 +704,7 @@ DocsCollector.collect('java.lang.invoke.LambdaMetafactory', [
 				[/* throw */ 'java.lang.SecurityException', [/* throw description */
 					[/* text */ 't', `If a security manager is present, and it
          `],
-					[/* reference */ 'r', `.MethodHandles.Lookup#secmgr`],
+					[/* reference */ 'r', `java.lang.invoke.MethodHandles.Lookup#secmgr`, `refuses access`],
 					[/* text */ 't', `
          from `],
 					[/* inline code block */ 'i', `caller`],
@@ -723,7 +723,7 @@ DocsCollector.collect('java.lang.invoke.LambdaMetafactory', [
 			[/* method description */
 				[/* text */ 't', `Facilitates the creation of simple "function objects" that implement one
  or more interfaces by delegation to a provided `],
-				[/* reference */ 'r', `java.lang.invoke.MethodHandle`],
+				[/* reference */ 'r', `java.lang.invoke.MethodHandle`, `MethodHandle`],
 				[/* text */ 't', `,
  after appropriate type adaptation and partial evaluation of arguments.
  Typically used as a `],
@@ -746,7 +746,7 @@ DocsCollector.collect('java.lang.invoke.LambdaMetafactory', [
 					[/* text */ 't', `.
  A general description of the behavior of this method is provided
  `],
-					[/* reference */ 'r', `java.lang.invoke.LambdaMetafactory`],
+					[/* reference */ 'r', `java.lang.invoke.LambdaMetafactory`, `above`],
 					[/* text */ 't', `.
 
  `]
@@ -775,7 +775,7 @@ DocsCollector.collect('java.lang.invoke.LambdaMetafactory', [
 					[/* text */ 't', `Represents a lookup context with the accessibility
                privileges of the caller.  Specifically, the lookup context
                must have `],
-					[/* reference */ 'r', `.MethodHandles.Lookup#hasFullPrivilegeAccess()`],
+					[/* reference */ 'r', `java.lang.invoke.MethodHandles.Lookup#hasFullPrivilegeAccess()`, `full privilege access`],
 					[/* text */ 't', `.
                When used with `],
 					[/* inline code block */ 'i', `invokedynamic`],
@@ -846,7 +846,7 @@ DocsCollector.collect('java.lang.invoke.LambdaMetafactory', [
 					[/* text */ 't', ` is not a direct method
          handle referencing a method or constructor, or if the linkage
          invariants are violated, as defined `],
-					[/* reference */ 'r', `java.lang.invoke.LambdaMetafactory`],
+					[/* reference */ 'r', `java.lang.invoke.LambdaMetafactory`, `above`],
 					[/* text */ 't', `.`]
 				]],
 				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
@@ -857,7 +857,7 @@ DocsCollector.collect('java.lang.invoke.LambdaMetafactory', [
 				[/* throw */ 'java.lang.SecurityException', [/* throw description */
 					[/* text */ 't', `If a security manager is present, and it
          `],
-					[/* reference */ 'r', `.MethodHandles.Lookup#secmgr`],
+					[/* reference */ 'r', `java.lang.invoke.MethodHandles.Lookup#secmgr`, `refuses access`],
 					[/* text */ 't', `
          from `],
 					[/* inline code block */ 'i', `caller`],

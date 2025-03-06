@@ -10,7 +10,7 @@ DocsCollector.collect('java.util.function.ObjDoubleConsumer', [
  `],
 		[/* inline code block */ 'i', `(reference, double)`],
 		[/* text */ 't', ` specialization of `],
-		[/* reference */ 'r', `java.util.function.BiConsumer`],
+		[/* reference */ 'r', `java.util.function.BiConsumer`, `BiConsumer`],
 		[/* text */ 't', `.
  Unlike most other functional interfaces, `],
 		[/* inline code block */ 'i', `ObjDoubleConsumer`],
@@ -20,7 +20,7 @@ DocsCollector.collect('java.util.function.ObjDoubleConsumer', [
  `],
 		[/* block */ 'b', [
 			[/* text */ 't', `This is a `],
-			[/* reference */ 'r', `.package-summary`],
+			[/* text */ 't', `functional interface`],
 			[/* text */ 't', `
  whose functional method is `],
 			[/* reference */ 'r', `#accept(T,double)`, `accept(Object, double)`],

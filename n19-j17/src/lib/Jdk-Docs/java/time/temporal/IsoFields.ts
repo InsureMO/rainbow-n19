@@ -36,7 +36,7 @@ DocsCollector.collect('java.time.temporal.IsoFields', [
  `]
 			]],
 			[/* block */ 'b', [
-				[/* reference */ 'r', `.ChronoField#YEAR`],
+				[/* reference */ 'r', `java.time.temporal.ChronoField#YEAR`, `YEAR`],
 				[/* text */ 't', ` - the standard ISO year
  `]
 			]]
@@ -53,7 +53,7 @@ DocsCollector.collect('java.time.temporal.IsoFields', [
  `],
 		[/* list */ 'l', [
 			[/* block */ 'b', [
-				[/* reference */ 'r', `.ChronoField#DAY_OF_WEEK`],
+				[/* reference */ 'r', `java.time.temporal.ChronoField#DAY_OF_WEEK`, `DAY_OF_WEEK`],
 				[/* text */ 't', ` - the standard field defining the
   day-of-week from Monday (1) to Sunday (7)
  `]
@@ -216,7 +216,7 @@ DocsCollector.collect('java.time.temporal.IsoFields', [
 				[/* block */ 'b', [
 					[/* text */ 't', `
  In `],
-					[/* reference */ 'r', `java.ResolverStyle#STRICT`],
+					[/* reference */ 'r', `java.time.format.ResolverStyle#STRICT`, `strict mode`],
 					[/* text */ 't', `, all three fields are
  validated against their range of valid values. The day-of-quarter field
  is validated from 1 to 90, 91 or 92 depending on the year and quarter.
@@ -225,7 +225,7 @@ DocsCollector.collect('java.time.temporal.IsoFields', [
 				[/* block */ 'b', [
 					[/* text */ 't', `
  In `],
-					[/* reference */ 'r', `java.ResolverStyle#SMART`],
+					[/* reference */ 'r', `java.time.format.ResolverStyle#SMART`, `smart mode`],
 					[/* text */ 't', `, all three fields are
  validated against their range of valid values. The day-of-quarter field is
  validated between 1 and 92, ignoring the actual range based on the year and quarter.
@@ -237,7 +237,7 @@ DocsCollector.collect('java.time.temporal.IsoFields', [
 				[/* block */ 'b', [
 					[/* text */ 't', `
  In `],
-					[/* reference */ 'r', `java.ResolverStyle#LENIENT`],
+					[/* reference */ 'r', `java.time.format.ResolverStyle#LENIENT`, `lenient mode`],
 					[/* text */ 't', `, only the year is validated
  against the range of valid values. The resulting date is calculated equivalent to
  the following three stage approach. First, create a date on the first of January
@@ -296,9 +296,9 @@ DocsCollector.collect('java.time.temporal.IsoFields', [
 				[/* block */ 'b', [
 					[/* text */ 't', `
  The field has a range that matches `],
-					[/* reference */ 'r', `java.LocalDate#MAX`],
+					[/* reference */ 'r', `java.time.LocalDate#MAX`, `LocalDate.MAX`],
 					[/* text */ 't', ` and `],
-					[/* reference */ 'r', `java.LocalDate#MIN`],
+					[/* reference */ 'r', `java.time.LocalDate#MIN`, `LocalDate.MIN`],
 					[/* text */ 't', `.
  `]
 				]],
@@ -354,7 +354,7 @@ DocsCollector.collect('java.time.temporal.IsoFields', [
 				[/* block */ 'b', [
 					[/* text */ 't', `
  In `],
-					[/* reference */ 'r', `java.ResolverStyle#STRICT`],
+					[/* reference */ 'r', `java.time.format.ResolverStyle#STRICT`, `strict mode`],
 					[/* text */ 't', `, all three fields are
  validated against their range of valid values. The week-of-week-based-year
  field is validated from 1 to 52 or 53 depending on the week-based-year.
@@ -363,7 +363,7 @@ DocsCollector.collect('java.time.temporal.IsoFields', [
 				[/* block */ 'b', [
 					[/* text */ 't', `
  In `],
-					[/* reference */ 'r', `java.ResolverStyle#SMART`],
+					[/* reference */ 'r', `java.time.format.ResolverStyle#SMART`, `smart mode`],
 					[/* text */ 't', `, all three fields are
  validated against their range of valid values. The week-of-week-based-year
  field is validated between 1 and 53, ignoring the week-based-year.
@@ -374,7 +374,7 @@ DocsCollector.collect('java.time.temporal.IsoFields', [
 				[/* block */ 'b', [
 					[/* text */ 't', `
  In `],
-					[/* reference */ 'r', `java.ResolverStyle#LENIENT`],
+					[/* reference */ 'r', `java.time.format.ResolverStyle#LENIENT`, `lenient mode`],
 					[/* text */ 't', `, only the week-based-year
  is validated against the range of valid values. If the day-of-week is outside
  the range 1 to 7, then the resulting date is adjusted by a suitable number of

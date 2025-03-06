@@ -7,10 +7,10 @@ DocsCollector.collect('java.lang.module.ModuleFinder', [
 		[/* inline code block */ 'i', `ModuleFinder`],
 		[/* text */ 't', ` is used to find modules during
  `],
-		[/* reference */ 'r', `.package-summary#resolution`],
+		[/* text */ 't', `resolution`],
 		[/* text */ 't', ` or
  `],
-		[/* reference */ 'r', `.Configuration#service-binding`],
+		[/* reference */ 'r', `java.lang.module.Configuration#service-binding`, `service binding`],
 		[/* text */ 't', `.
 
  `],
@@ -51,9 +51,9 @@ DocsCollector.collect('java.lang.module.ModuleFinder', [
 			[/* text */ 't', `, that
  two or more modules with the same name are found in a directory.
  When an error is detected then these methods throw `],
-			[/* reference */ 'r', `java.lang.module.FindException`],
+			[/* reference */ 'r', `java.lang.module.FindException`, `FindException`],
 			[/* text */ 't', ` with an appropriate `],
-			[/* reference */ 'r', `java.Throwable#getCause()`],
+			[/* reference */ 'r', `java.lang.Throwable#getCause()`, `cause`],
 			[/* text */ 't', `.
  The behavior of a `],
 			[/* inline code block */ 'i', `ModuleFinder`],
@@ -248,7 +248,7 @@ DocsCollector.collect('java.lang.module.ModuleFinder', [
 					[/* inline code block */ 'i', `module-info.class`],
 					[/* text */ 't', ` in its top-level directory, or in a versioned entry
  in a `],
-					[/* reference */ 'r', `java.lang.jar.JarFile#isMultiRelease()`],
+					[/* reference */ 'r', `java.util.jar.JarFile#isMultiRelease()`, `multi-release`],
 					[/* text */ 't', `
  JAR file, is a modular JAR file and thus defines an `],
 					[/* text */ 't', `explicit`],
@@ -268,7 +268,7 @@ DocsCollector.collect('java.lang.module.ModuleFinder', [
 							[/* inline code block */ 'i', `Automatic-Module-Name`],
 							[/* text */ 't', `"
      in its main manifest then its value is the `],
-							[/* reference */ 'r', `.ModuleDescriptor#name()`],
+							[/* reference */ 'r', `java.lang.module.ModuleDescriptor#name()`, `module name`],
 							[/* text */ 't', `. The module name is otherwise
      derived from the name of the JAR file. `]
 						]]
@@ -276,7 +276,7 @@ DocsCollector.collect('java.lang.module.ModuleFinder', [
 					[/* block */ 'b', [
 						[/* block */ 'b', [
 							[/* text */ 't', ` The `],
-							[/* reference */ 'r', `.ModuleDescriptor#version()`],
+							[/* reference */ 'r', `java.lang.module.ModuleDescriptor#version()`, `version`],
 							[/* text */ 't', `, and the
      module name when the attribute "`],
 							[/* inline code block */ 'i', `Automatic-Module-Name`],
@@ -298,7 +298,7 @@ DocsCollector.collect('java.lang.module.ModuleFinder', [
 									[/* text */ 't', ` then the module name will be derived from the
          subsequence preceding the hyphen of the first occurrence. The
          subsequence after the hyphen is parsed as a `],
-									[/* reference */ 'r', `java.lang.module.ModuleDescriptor.Version`],
+									[/* reference */ 'r', `java.lang.module.ModuleDescriptor.Version`, `Version`],
 									[/* text */ 't', ` and ignored if it cannot be
          parsed as a `],
 									[/* inline code block */ 'i', `Version`],
@@ -365,7 +365,7 @@ DocsCollector.collect('java.lang.module.ModuleFinder', [
 							[/* inline code block */ 'i', `META-INF/services/`],
 							[/* text */ 't', ` are assumed to be service configuration files
      (see `],
-							[/* reference */ 'r', `java.util.ServiceLoader`],
+							[/* reference */ 'r', `java.util.ServiceLoader`, `ServiceLoader`],
 							[/* text */ 't', `). If the name of a file
      (that follows `],
 							[/* inline code block */ 'i', `META-INF/services/`],
@@ -383,7 +383,7 @@ DocsCollector.collect('java.lang.module.ModuleFinder', [
      main manifest, its value is a legal class name, and its package is
      in the set of packages derived for the module, then the value is the
      module `],
-							[/* reference */ 'r', `.ModuleDescriptor#mainClass()`],
+							[/* reference */ 'r', `java.lang.module.ModuleDescriptor#mainClass()`, `main class`],
 							[/* text */ 't', `. `]
 						]]
 					]]
@@ -393,7 +393,7 @@ DocsCollector.collect('java.lang.module.ModuleFinder', [
 					[/* inline code block */ 'i', `ModuleDescriptor`],
 					[/* text */ 't', ` cannot be created (by means of the
  `],
-					[/* reference */ 'r', `java.lang.module.ModuleDescriptor.Builder`],
+					[/* reference */ 'r', `java.lang.module.ModuleDescriptor.Builder`, `ModuleDescriptor.Builder`],
 					[/* text */ 't', ` API) for an
  automatic module then `],
 					[/* inline code block */ 'i', `FindException`],
@@ -427,7 +427,7 @@ DocsCollector.collect('java.lang.module.ModuleFinder', [
 					[/* text */ 't', `scanned`],
 					[/* text */ 't', ` in order to determine the packages
  in the module. Whether `],
-					[/* reference */ 'r', `java.lang.file.Files#isHidden(java.nio.file.Path)`],
+					[/* reference */ 'r', `java.nio.file.Files#isHidden(java.nio.file.Path)`, `hidden files`],
 					[/* text */ 't', ` are ignored or not is implementation specific and therefore
  not specified. If a `],
 					[/* inline code block */ 'i', `.class`],
@@ -477,11 +477,11 @@ DocsCollector.collect('java.lang.module.ModuleFinder', [
  `],
 				[/* block */ 'b', [
 					[/* text */ 't', ` If there is a security manager set then its `],
-					[/* reference */ 'r', `java.SecurityManager#checkPermission(java.security.Permission)`],
+					[/* reference */ 'r', `java.lang.SecurityManager#checkPermission(java.security.Permission)`, `checkPermission`],
 					[/* text */ 't', ` method is
  invoked to check that the caller has been granted
  `],
-					[/* reference */ 'r', `java.lang.RuntimePermission`],
+					[/* reference */ 'r', `java.lang.RuntimePermission`, `RuntimePermission("accessSystemModules")`],
 					[/* text */ 't', `
  to access the system modules. `]
 				]]

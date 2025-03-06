@@ -67,7 +67,7 @@ DocsCollector.collect('java.util.Enumeration', [
 		[/* method */ 'asIterator()', [
 			[/* method description */
 				[/* text */ 't', `Returns an `],
-				[/* reference */ 'r', `java.util.Iterator`],
+				[/* reference */ 'r', `java.util.Iterator`, `Iterator`],
 				[/* text */ 't', ` that traverses the remaining elements
  covered by this enumeration. Traversal is undefined if any methods
  are called on this enumeration after the call to `],

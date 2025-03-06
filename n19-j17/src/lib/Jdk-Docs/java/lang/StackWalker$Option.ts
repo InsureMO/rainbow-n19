@@ -4,7 +4,7 @@ import {DocsCollector} from '../../DocsCollector';
 DocsCollector.collect('java.lang.StackWalker$Option', [
 	[/* class description */
 		[/* text */ 't', `Stack walker option to configure the `],
-		[/* reference */ 'r', `java.lang.StackWalker.StackFrame`],
+		[/* reference */ 'r', `java.lang.StackWalker.StackFrame`, `stack frame`],
 		[/* text */ 't', `
  information obtained by a `],
 		[/* inline code block */ 'i', `StackWalker`],

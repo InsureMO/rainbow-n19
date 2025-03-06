@@ -4,10 +4,10 @@ import {DocsCollector} from '../../../DocsCollector';
 DocsCollector.collect('java.lang.constant.MethodHandleDesc', [
 	[/* class description */
 		[/* text */ 't', `A `],
-		[/* reference */ 'r', `.package-summary#nominal`],
+		[/* text */ 't', `nominal descriptor`],
 		[/* text */ 't', ` for a
  `],
-		[/* reference */ 'r', `java.lang.invoke.MethodHandle`],
+		[/* reference */ 'r', `java.lang.invoke.MethodHandle`, `MethodHandle`],
 		[/* text */ 't', ` constant.`]
 	],
 	/* fields */ UDF,
@@ -20,7 +20,7 @@ DocsCollector.collect('java.lang.constant.MethodHandleDesc', [
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if and only if the specified object is also a
  `],
-				[/* reference */ 'r', `java.lang.constant.MethodHandleDesc`],
+				[/* reference */ 'r', `java.lang.constant.MethodHandleDesc`, `MethodHandleDesc`],
 				[/* text */ 't', `, and both encode the same nominal description
  of a method handle.`]
 			],
@@ -37,7 +37,7 @@ DocsCollector.collect('java.lang.constant.MethodHandleDesc', [
 		[/* method */ 'invocationType()', [
 			[/* method description */
 				[/* text */ 't', `Returns a `],
-				[/* reference */ 'r', `java.lang.constant.MethodTypeDesc`],
+				[/* reference */ 'r', `java.lang.constant.MethodTypeDesc`, `MethodTypeDesc`],
 				[/* text */ 't', ` describing the invocation type of the
  method handle described by this nominal descriptor.  The invocation type
  describes the full set of stack values that are consumed by the invocation
@@ -47,23 +47,23 @@ DocsCollector.collect('java.lang.constant.MethodHandleDesc', [
 			/* throws */ UDF,
 			[/* return description */
 				[/* text */ 't', `a `],
-				[/* reference */ 'r', `java.lang.constant.MethodHandleDesc`],
+				[/* reference */ 'r', `java.lang.constant.MethodHandleDesc`, `MethodHandleDesc`],
 				[/* text */ 't', ` describing the method handle type`]
 			]
 		]],
 		[/* method */ 'asType(java.lang.constant.MethodTypeDesc)', [
 			[/* method description */
 				[/* text */ 't', `Returns a `],
-				[/* reference */ 'r', `java.lang.constant.MethodHandleDesc`],
+				[/* reference */ 'r', `java.lang.constant.MethodHandleDesc`, `MethodHandleDesc`],
 				[/* text */ 't', ` that describes this method handle
  adapted to a different type, as if by `],
-				[/* reference */ 'r', `java.MethodHandle#asType(java.lang.invoke.MethodType)`],
+				[/* reference */ 'r', `java.lang.invoke.MethodHandle#asType(java.lang.invoke.MethodType)`, `MethodHandle.asType(MethodType)`],
 				[/* text */ 't', `.`]
 			],
 			[/* parameters */
 				[/* parameter */ 'type', [/* parameter description */
 					[/* text */ 't', `a `],
-					[/* reference */ 'r', `java.lang.constant.MethodHandleDesc`],
+					[/* reference */ 'r', `java.lang.constant.MethodHandleDesc`, `MethodHandleDesc`],
 					[/* text */ 't', ` describing the new method type`]
 				]]
 			],
@@ -75,14 +75,14 @@ DocsCollector.collect('java.lang.constant.MethodHandleDesc', [
 			],
 			[/* return description */
 				[/* text */ 't', `a `],
-				[/* reference */ 'r', `java.lang.constant.MethodHandleDesc`],
+				[/* reference */ 'r', `java.lang.constant.MethodHandleDesc`, `MethodHandleDesc`],
 				[/* text */ 't', ` for the adapted method handle`]
 			]
 		]],
 		[/* method */ 'of(java.lang.constant.DirectMethodHandleDesc.Kind,java.lang.constant.ClassDesc,java.lang.String,java.lang.String)', [
 			[/* method description */
 				[/* text */ 't', `Creates a `],
-				[/* reference */ 'r', `java.lang.constant.MethodHandleDesc`],
+				[/* reference */ 'r', `java.lang.constant.MethodHandleDesc`, `MethodHandleDesc`],
 				[/* text */ 't', ` corresponding to an invocation of a
  declared method, invocation of a constructor, or access to a field.
 
@@ -93,7 +93,7 @@ DocsCollector.collect('java.lang.constant.MethodHandleDesc', [
 					[/* inline code block */ 'i', `CONSTANT_MethodHandle_info`],
 					[/* text */ 't', ` and for the lookup
  methods on `],
-					[/* reference */ 'r', `java.lang.invoke.MethodHandles.Lookup`],
+					[/* reference */ 'r', `java.lang.invoke.MethodHandles.Lookup`, `MethodHandles.Lookup`],
 					[/* text */ 't', `.  For a method or constructor
  invocation, it is interpreted as a method type descriptor; for field
  access, it is interpreted as a field descriptor.  If `],
@@ -119,7 +119,7 @@ DocsCollector.collect('java.lang.constant.MethodHandleDesc', [
 				]],
 				[/* parameter */ 'owner', [/* parameter description */
 					[/* text */ 't', `a `],
-					[/* reference */ 'r', `java.lang.constant.ClassDesc`],
+					[/* reference */ 'r', `java.lang.constant.ClassDesc`, `ClassDesc`],
 					[/* text */ 't', ` describing the class containing the
               method, constructor, or field`]
 				]],
@@ -149,25 +149,25 @@ DocsCollector.collect('java.lang.constant.MethodHandleDesc', [
 			],
 			[/* return description */
 				[/* text */ 't', `the `],
-				[/* reference */ 'r', `java.lang.constant.MethodHandleDesc`]
+				[/* reference */ 'r', `java.lang.constant.MethodHandleDesc`, `MethodHandleDesc`]
 			]
 		]],
 		[/* method */ 'ofConstructor(java.lang.constant.ClassDesc,java.lang.constant.ClassDesc...)', [
 			[/* method description */
 				[/* text */ 't', `Returns a `],
-				[/* reference */ 'r', `java.lang.constant.MethodHandleDesc`],
+				[/* reference */ 'r', `java.lang.constant.MethodHandleDesc`, `MethodHandleDesc`],
 				[/* text */ 't', ` corresponding to invocation of a constructor`]
 			],
 			[/* parameters */
 				[/* parameter */ 'owner', [/* parameter description */
 					[/* text */ 't', `a `],
-					[/* reference */ 'r', `java.lang.constant.ClassDesc`],
+					[/* reference */ 'r', `java.lang.constant.ClassDesc`, `ClassDesc`],
 					[/* text */ 't', ` describing the class containing the
               constructor`]
 				]],
 				[/* parameter */ 'paramTypes', [/* parameter description */
 					[/* text */ 't', ``],
-					[/* reference */ 'r', `java.lang.constant.ClassDesc`],
+					[/* reference */ 'r', `java.lang.constant.ClassDesc`, `ClassDesc`],
 					[/* text */ 't', `s describing the parameter types of
                    the constructor`]
 				]]
@@ -180,13 +180,13 @@ DocsCollector.collect('java.lang.constant.MethodHandleDesc', [
 			],
 			[/* return description */
 				[/* text */ 't', `the `],
-				[/* reference */ 'r', `java.lang.constant.MethodHandleDesc`]
+				[/* reference */ 'r', `java.lang.constant.MethodHandleDesc`, `MethodHandleDesc`]
 			]
 		]],
 		[/* method */ 'ofField(java.lang.constant.DirectMethodHandleDesc.Kind,java.lang.constant.ClassDesc,java.lang.String,java.lang.constant.ClassDesc)', [
 			[/* method description */
 				[/* text */ 't', `Creates a `],
-				[/* reference */ 'r', `java.lang.constant.MethodHandleDesc`],
+				[/* reference */ 'r', `java.lang.constant.MethodHandleDesc`, `MethodHandleDesc`],
 				[/* text */ 't', ` corresponding to a method handle
  that accesses a field.`]
 			],
@@ -204,7 +204,7 @@ DocsCollector.collect('java.lang.constant.MethodHandleDesc', [
 				]],
 				[/* parameter */ 'owner', [/* parameter description */
 					[/* text */ 't', `a `],
-					[/* reference */ 'r', `java.lang.constant.ClassDesc`],
+					[/* reference */ 'r', `java.lang.constant.ClassDesc`, `ClassDesc`],
 					[/* text */ 't', ` describing the class containing the field`]
 				]],
 				[/* parameter */ 'fieldName', [/* parameter description */
@@ -212,7 +212,7 @@ DocsCollector.collect('java.lang.constant.MethodHandleDesc', [
 				]],
 				[/* parameter */ 'fieldType', [/* parameter description */
 					[/* text */ 't', `a `],
-					[/* reference */ 'r', `java.lang.constant.ClassDesc`],
+					[/* reference */ 'r', `java.lang.constant.ClassDesc`, `ClassDesc`],
 					[/* text */ 't', ` describing the type of the field`]
 				]]
 			],
@@ -229,13 +229,13 @@ DocsCollector.collect('java.lang.constant.MethodHandleDesc', [
 			],
 			[/* return description */
 				[/* text */ 't', `the `],
-				[/* reference */ 'r', `java.lang.constant.MethodHandleDesc`]
+				[/* reference */ 'r', `java.lang.constant.MethodHandleDesc`, `MethodHandleDesc`]
 			]
 		]],
 		[/* method */ 'ofMethod(java.lang.constant.DirectMethodHandleDesc.Kind,java.lang.constant.ClassDesc,java.lang.String,java.lang.constant.MethodTypeDesc)', [
 			[/* method description */
 				[/* text */ 't', `Creates a `],
-				[/* reference */ 'r', `java.lang.constant.MethodHandleDesc`],
+				[/* reference */ 'r', `java.lang.constant.MethodHandleDesc`, `MethodHandleDesc`],
 				[/* text */ 't', ` corresponding to an invocation of a
  declared method or constructor.
 
@@ -243,7 +243,7 @@ DocsCollector.collect('java.lang.constant.MethodHandleDesc', [
 				[/* block */ 'b', [
 					[/* text */ 't', `The lookup descriptor string has the same format as for the lookup
  methods on `],
-					[/* reference */ 'r', `java.lang.invoke.MethodHandles.Lookup`],
+					[/* reference */ 'r', `java.lang.invoke.MethodHandles.Lookup`, `MethodHandles.Lookup`],
 					[/* text */ 't', `.  If `],
 					[/* inline code block */ 'i', `kind`],
 					[/* text */ 't', ` is
@@ -267,7 +267,7 @@ DocsCollector.collect('java.lang.constant.MethodHandleDesc', [
 				]],
 				[/* parameter */ 'owner', [/* parameter description */
 					[/* text */ 't', `a `],
-					[/* reference */ 'r', `java.lang.constant.ClassDesc`],
+					[/* reference */ 'r', `java.lang.constant.ClassDesc`, `ClassDesc`],
 					[/* text */ 't', ` describing the class containing the
               method or constructor`]
 				]],
@@ -281,7 +281,7 @@ DocsCollector.collect('java.lang.constant.MethodHandleDesc', [
 				]],
 				[/* parameter */ 'lookupMethodType', [/* parameter description */
 					[/* text */ 't', `a `],
-					[/* reference */ 'r', `java.lang.constant.MethodTypeDesc`],
+					[/* reference */ 'r', `java.lang.constant.MethodTypeDesc`, `MethodTypeDesc`],
 					[/* text */ 't', ` describing the lookup type`]
 				]]
 			],
@@ -298,7 +298,7 @@ DocsCollector.collect('java.lang.constant.MethodHandleDesc', [
 			],
 			[/* return description */
 				[/* text */ 't', `the `],
-				[/* reference */ 'r', `java.lang.constant.MethodHandleDesc`]
+				[/* reference */ 'r', `java.lang.constant.MethodHandleDesc`, `MethodHandleDesc`]
 			]
 		]]
 	],

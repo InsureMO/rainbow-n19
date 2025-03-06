@@ -89,7 +89,7 @@ DocsCollector.collect('java.util.Collections', [
 				[/* text */ 't', `Returns a dynamically typesafe view of the specified collection.
  Any attempt to insert an element of the wrong type will result in an
  immediate `],
-				[/* reference */ 'r', `java.lang.ClassCastException`],
+				[/* reference */ 'r', `java.lang.ClassCastException`, `ClassCastException`],
 				[/* text */ 't', `.  Assuming a collection
  contains no incorrectly typed elements prior to the time a
  dynamically typesafe view is generated, and that all subsequent
@@ -192,7 +192,7 @@ DocsCollector.collect('java.util.Collections', [
 				[/* text */ 't', `Returns a dynamically typesafe view of the specified list.
  Any attempt to insert an element of the wrong type will result in
  an immediate `],
-				[/* reference */ 'r', `java.lang.ClassCastException`],
+				[/* reference */ 'r', `java.lang.ClassCastException`, `ClassCastException`],
 				[/* text */ 't', `.  Assuming a list contains
  no incorrectly typed elements prior to the time a dynamically typesafe
  view is generated, and that all subsequent access to the list
@@ -243,7 +243,7 @@ DocsCollector.collect('java.util.Collections', [
 				[/* text */ 't', `Returns a dynamically typesafe view of the specified navigable set.
  Any attempt to insert an element of the wrong type will result in an
  immediate `],
-				[/* reference */ 'r', `java.lang.ClassCastException`],
+				[/* reference */ 'r', `java.lang.ClassCastException`, `ClassCastException`],
 				[/* text */ 't', `.  Assuming a navigable set
  contains no incorrectly typed elements prior to the time a
  dynamically typesafe view is generated, and that all subsequent
@@ -314,7 +314,7 @@ DocsCollector.collect('java.util.Collections', [
 				[/* text */ 't', `Returns a dynamically typesafe view of the specified queue.
  Any attempt to insert an element of the wrong type will result in
  an immediate `],
-				[/* reference */ 'r', `java.lang.ClassCastException`],
+				[/* reference */ 'r', `java.lang.ClassCastException`, `ClassCastException`],
 				[/* text */ 't', `.  Assuming a queue contains
  no incorrectly typed elements prior to the time a dynamically typesafe
  view is generated, and that all subsequent access to the queue
@@ -367,7 +367,7 @@ DocsCollector.collect('java.util.Collections', [
 				[/* text */ 't', `Returns a dynamically typesafe view of the specified set.
  Any attempt to insert an element of the wrong type will result in
  an immediate `],
-				[/* reference */ 'r', `java.lang.ClassCastException`],
+				[/* reference */ 'r', `java.lang.ClassCastException`, `ClassCastException`],
 				[/* text */ 't', `.  Assuming a set contains
  no incorrectly typed elements prior to the time a dynamically typesafe
  view is generated, and that all subsequent access to the set
@@ -418,20 +418,20 @@ DocsCollector.collect('java.util.Collections', [
 				[/* text */ 't', `Returns a set backed by the specified map.  The resulting set displays
  the same ordering, concurrency, and performance characteristics as the
  backing map.  In essence, this factory method provides a `],
-				[/* reference */ 'r', `java.util.Set`],
+				[/* reference */ 'r', `java.util.Set`, `Set`],
 				[/* text */ 't', `
  implementation corresponding to any `],
-				[/* reference */ 'r', `java.util.Map`],
+				[/* reference */ 'r', `java.util.Map`, `Map`],
 				[/* text */ 't', ` implementation.  There
  is no need to use this method on a `],
-				[/* reference */ 'r', `java.util.Map`],
+				[/* reference */ 'r', `java.util.Map`, `Map`],
 				[/* text */ 't', ` implementation that
  already has a corresponding `],
-				[/* reference */ 'r', `java.util.Set`],
+				[/* reference */ 'r', `java.util.Set`, `Set`],
 				[/* text */ 't', ` implementation (such as `],
-				[/* reference */ 'r', `java.util.HashMap`],
+				[/* reference */ 'r', `java.util.HashMap`, `HashMap`],
 				[/* text */ 't', ` or `],
-				[/* reference */ 'r', `java.util.TreeMap`],
+				[/* reference */ 'r', `java.util.TreeMap`, `TreeMap`],
 				[/* text */ 't', `).
 
  `],
@@ -481,7 +481,7 @@ DocsCollector.collect('java.util.Collections', [
 				[/* text */ 't', `Returns a dynamically typesafe view of the specified sorted set.
  Any attempt to insert an element of the wrong type will result in an
  immediate `],
-				[/* reference */ 'r', `java.lang.ClassCastException`],
+				[/* reference */ 'r', `java.lang.ClassCastException`, `ClassCastException`],
 				[/* text */ 't', `.  Assuming a sorted set
  contains no incorrectly typed elements prior to the time a
  dynamically typesafe view is generated, and that all subsequent
@@ -552,18 +552,18 @@ DocsCollector.collect('java.util.Collections', [
 				[/* text */ 't', `Returns a dynamically typesafe view of the specified map.
  Any attempt to insert a mapping whose key or value have the wrong
  type will result in an immediate `],
-				[/* reference */ 'r', `java.lang.ClassCastException`],
+				[/* reference */ 'r', `java.lang.ClassCastException`, `ClassCastException`],
 				[/* text */ 't', `.
  Similarly, any attempt to modify the value currently associated with
  a key will result in an immediate `],
-				[/* reference */ 'r', `java.lang.ClassCastException`],
+				[/* reference */ 'r', `java.lang.ClassCastException`, `ClassCastException`],
 				[/* text */ 't', `,
  whether the modification is attempted directly through the map
  itself, or through a `],
-				[/* reference */ 'r', `java.util.Map.Entry`],
+				[/* reference */ 'r', `java.util.Map.Entry`, `Map.Entry`],
 				[/* text */ 't', ` instance obtained from the
  map's `],
-				[/* reference */ 'r', `.Map#entrySet()`],
+				[/* reference */ 'r', `java.util.Map#entrySet()`, `entry set`],
 				[/* text */ 't', ` view.
 
  `],
@@ -653,12 +653,12 @@ DocsCollector.collect('java.util.Collections', [
 
  It is imperative that the user manually synchronize on the returned
  map when traversing any of its collection views via `],
-					[/* reference */ 'r', `java.util.Iterator`],
+					[/* reference */ 'r', `java.util.Iterator`, `Iterator`],
 					[/* text */ 't', `,
  `],
-					[/* reference */ 'r', `java.util.Spliterator`],
+					[/* reference */ 'r', `java.util.Spliterator`, `Spliterator`],
 					[/* text */ 't', ` or `],
-					[/* reference */ 'r', `java.util.stream.Stream`],
+					[/* reference */ 'r', `java.util.stream.Stream`, `Stream`],
 					[/* text */ 't', `:
  `]
 				]],
@@ -693,7 +693,7 @@ DocsCollector.collect('java.util.Collections', [
 		[/* method */ 'unmodifiableMap(java.util.Map)', [
 			[/* method description */
 				[/* text */ 't', `Returns an `],
-				[/* reference */ 'r', `.Collection#unmodview`],
+				[/* reference */ 'r', `java.util.Collection#unmodview`, `unmodifiable view`],
 				[/* text */ 't', ` of the
  specified map. Query operations on the returned map "read through"
  to the specified map, and attempts to modify the returned
@@ -721,18 +721,18 @@ DocsCollector.collect('java.util.Collections', [
 				[/* text */ 't', `Returns a dynamically typesafe view of the specified navigable map.
  Any attempt to insert a mapping whose key or value have the wrong
  type will result in an immediate `],
-				[/* reference */ 'r', `java.lang.ClassCastException`],
+				[/* reference */ 'r', `java.lang.ClassCastException`, `ClassCastException`],
 				[/* text */ 't', `.
  Similarly, any attempt to modify the value currently associated with
  a key will result in an immediate `],
-				[/* reference */ 'r', `java.lang.ClassCastException`],
+				[/* reference */ 'r', `java.lang.ClassCastException`, `ClassCastException`],
 				[/* text */ 't', `,
  whether the modification is attempted directly through the map
  itself, or through a `],
-				[/* reference */ 'r', `java.util.Map.Entry`],
+				[/* reference */ 'r', `java.util.Map.Entry`, `Map.Entry`],
 				[/* text */ 't', ` instance obtained from the
  map's `],
-				[/* reference */ 'r', `.Map#entrySet()`],
+				[/* reference */ 'r', `java.util.Map#entrySet()`, `entry set`],
 				[/* text */ 't', ` view.
 
  `],
@@ -799,12 +799,12 @@ DocsCollector.collect('java.util.Collections', [
  `],
 					[/* inline code block */ 'i', `tailMap`],
 					[/* text */ 't', ` views, via `],
-					[/* reference */ 'r', `java.util.Iterator`],
+					[/* reference */ 'r', `java.util.Iterator`, `Iterator`],
 					[/* text */ 't', `, `],
-					[/* reference */ 'r', `java.util.Spliterator`],
+					[/* reference */ 'r', `java.util.Spliterator`, `Spliterator`],
 					[/* text */ 't', ` or
  `],
-					[/* reference */ 'r', `java.util.stream.Stream`],
+					[/* reference */ 'r', `java.util.stream.Stream`, `Stream`],
 					[/* text */ 't', `:
  `]
 				]],
@@ -854,7 +854,7 @@ DocsCollector.collect('java.util.Collections', [
 		[/* method */ 'unmodifiableNavigableMap(java.util.NavigableMap)', [
 			[/* method description */
 				[/* text */ 't', `Returns an `],
-				[/* reference */ 'r', `.Collection#unmodview`],
+				[/* reference */ 'r', `java.util.Collection#unmodview`, `unmodifiable view`],
 				[/* text */ 't', ` of the
  specified navigable map. Query operations on the returned navigable map "read
  through" to the specified navigable map.  Attempts to modify the returned
@@ -890,18 +890,18 @@ DocsCollector.collect('java.util.Collections', [
 				[/* text */ 't', `Returns a dynamically typesafe view of the specified sorted map.
  Any attempt to insert a mapping whose key or value have the wrong
  type will result in an immediate `],
-				[/* reference */ 'r', `java.lang.ClassCastException`],
+				[/* reference */ 'r', `java.lang.ClassCastException`, `ClassCastException`],
 				[/* text */ 't', `.
  Similarly, any attempt to modify the value currently associated with
  a key will result in an immediate `],
-				[/* reference */ 'r', `java.lang.ClassCastException`],
+				[/* reference */ 'r', `java.lang.ClassCastException`, `ClassCastException`],
 				[/* text */ 't', `,
  whether the modification is attempted directly through the map
  itself, or through a `],
-				[/* reference */ 'r', `java.util.Map.Entry`],
+				[/* reference */ 'r', `java.util.Map.Entry`, `Map.Entry`],
 				[/* text */ 't', ` instance obtained from the
  map's `],
-				[/* reference */ 'r', `.Map#entrySet()`],
+				[/* reference */ 'r', `java.util.Map#entrySet()`, `entry set`],
 				[/* text */ 't', ` view.
 
  `],
@@ -978,12 +978,12 @@ DocsCollector.collect('java.util.Collections', [
  `],
 					[/* inline code block */ 'i', `tailMap`],
 					[/* text */ 't', ` views, via `],
-					[/* reference */ 'r', `java.util.Iterator`],
+					[/* reference */ 'r', `java.util.Iterator`, `Iterator`],
 					[/* text */ 't', `, `],
-					[/* reference */ 'r', `java.util.Spliterator`],
+					[/* reference */ 'r', `java.util.Spliterator`, `Spliterator`],
 					[/* text */ 't', ` or
  `],
-					[/* reference */ 'r', `java.util.stream.Stream`],
+					[/* reference */ 'r', `java.util.stream.Stream`, `Stream`],
 					[/* text */ 't', `:
  `]
 				]],
@@ -1032,7 +1032,7 @@ DocsCollector.collect('java.util.Collections', [
 		[/* method */ 'unmodifiableSortedMap(java.util.SortedMap)', [
 			[/* method description */
 				[/* text */ 't', `Returns an `],
-				[/* reference */ 'r', `.Collection#unmodview`],
+				[/* reference */ 'r', `java.util.Collection#unmodview`, `unmodifiable view`],
 				[/* text */ 't', ` of the
  specified sorted map. Query operations on the returned sorted map "read through"
  to the specified sorted map.  Attempts to modify the returned
@@ -1067,10 +1067,10 @@ DocsCollector.collect('java.util.Collections', [
 			[/* method description */
 				[/* text */ 't', `Sorts the specified list into ascending order, according to the
  `],
-				[/* reference */ 'r', `java.lang.Comparable`],
+				[/* reference */ 'r', `java.lang.Comparable`, `natural ordering`],
 				[/* text */ 't', ` of its elements.
  All elements in the list must implement the `],
-				[/* reference */ 'r', `java.lang.Comparable`],
+				[/* reference */ 'r', `java.lang.Comparable`, `Comparable`],
 				[/* text */ 't', `
  interface.  Furthermore, all elements in the list must be
  `],
@@ -1120,7 +1120,7 @@ DocsCollector.collect('java.util.Collections', [
 					[/* text */ 't', `(optional) if the implementation
          detects that the natural ordering of the list elements is
          found to violate the `],
-					[/* reference */ 'r', `java.lang.Comparable`],
+					[/* reference */ 'r', `java.lang.Comparable`, `Comparable`],
 					[/* text */ 't', ` contract`]
 				]]
 			],
@@ -1287,7 +1287,7 @@ DocsCollector.collect('java.util.Collections', [
 				[/* text */ 't', `Searches the specified list for the specified object using the binary
  search algorithm.  The list must be sorted into ascending order
  according to the `],
-				[/* reference */ 'r', `java.lang.Comparable`],
+				[/* reference */ 'r', `java.lang.Comparable`, `natural ordering`],
 				[/* text */ 't', ` of its
  elements (as by the `],
 				[/* reference */ 'r', `#sort(java.util.List)`, `sort(List)`],
@@ -1301,7 +1301,7 @@ DocsCollector.collect('java.util.Collections', [
 					[/* text */ 't', `This method runs in log(n) time for a "random access" list (which
  provides near-constant-time positional access).  If the specified list
  does not implement the `],
-					[/* reference */ 'r', `java.util.RandomAccess`],
+					[/* reference */ 'r', `java.util.RandomAccess`, `RandomAccess`],
 					[/* text */ 't', ` interface and is large,
  this method will do an iterator-based binary search that performs
  O(n) link traversals and O(log n) element comparisons.`]
@@ -1360,7 +1360,7 @@ DocsCollector.collect('java.util.Collections', [
 					[/* text */ 't', `This method runs in log(n) time for a "random access" list (which
  provides near-constant-time positional access).  If the specified list
  does not implement the `],
-					[/* reference */ 'r', `java.util.RandomAccess`],
+					[/* reference */ 'r', `java.util.RandomAccess`, `RandomAccess`],
 					[/* text */ 't', ` interface and is large,
  this method will do an iterator-based binary search that performs
  O(n) link traversals and O(log n) element comparisons.`]
@@ -1379,7 +1379,7 @@ DocsCollector.collect('java.util.Collections', [
 					[/* inline code block */ 'i', `null`],
 					[/* text */ 't', ` value indicates that the elements'
          `],
-					[/* reference */ 'r', `java.lang.Comparable`],
+					[/* reference */ 'r', `java.lang.Comparable`, `natural ordering`],
 					[/* text */ 't', ` should be used.`]
 				]]
 			],
@@ -1443,12 +1443,12 @@ DocsCollector.collect('java.util.Collections', [
 
  It is imperative that the user manually synchronize on the returned
  collection when traversing it via `],
-					[/* reference */ 'r', `java.util.Iterator`],
+					[/* reference */ 'r', `java.util.Iterator`, `Iterator`],
 					[/* text */ 't', `, `],
-					[/* reference */ 'r', `java.util.Spliterator`],
+					[/* reference */ 'r', `java.util.Spliterator`, `Spliterator`],
 					[/* text */ 't', `
  or `],
-					[/* reference */ 'r', `java.util.stream.Stream`],
+					[/* reference */ 'r', `java.util.stream.Stream`, `Stream`],
 					[/* text */ 't', `:
  `]
 				]],
@@ -1498,7 +1498,7 @@ DocsCollector.collect('java.util.Collections', [
 		[/* method */ 'unmodifiableCollection(java.util.Collection)', [
 			[/* method description */
 				[/* text */ 't', `Returns an `],
-				[/* reference */ 'r', `.Collection#unmodview`],
+				[/* reference */ 'r', `java.util.Collection#unmodview`, `unmodifiable view`],
 				[/* text */ 't', ` of the
  specified collection. Query operations on the returned collection "read through"
  to the specified collection, and attempts to modify the returned
@@ -1620,17 +1620,17 @@ DocsCollector.collect('java.util.Collections', [
  `],
 				[/* list */ 'l', [
 					[/* block */ 'b', [
-						[/* reference */ 'r', `.Enumeration#hasMoreElements()`],
+						[/* reference */ 'r', `java.util.Enumeration#hasMoreElements()`, `hasMoreElements`],
 						[/* text */ 't', ` always
  returns `],
 						[/* inline code block */ 'i', `false`],
 						[/* text */ 't', `.`]
 					]],
 					[/* block */ 'b', [
-						[/* reference */ 'r', `.Enumeration#nextElement()`],
+						[/* reference */ 'r', `java.util.Enumeration#nextElement()`, `nextElement`],
 						[/* text */ 't', ` always throws
  `],
-						[/* reference */ 'r', `java.util.NoSuchElementException`],
+						[/* reference */ 'r', `java.util.NoSuchElementException`, `NoSuchElementException`],
 						[/* text */ 't', `.`]
 					]]
 				]],
@@ -1652,7 +1652,7 @@ DocsCollector.collect('java.util.Collections', [
  `],
 				[/* block */ 'b', [
 					[/* text */ 't', `The iterator returned from a call to `],
-					[/* reference */ 'r', `.Enumeration#asIterator()`],
+					[/* reference */ 'r', `java.util.Enumeration#asIterator()`, `Enumeration.asIterator()`],
 					[/* text */ 't', `
  does not support removal of elements from the specified collection.  This
  is necessary to avoid unintentionally increasing the capabilities of the
@@ -1676,21 +1676,21 @@ DocsCollector.collect('java.util.Collections', [
  `],
 				[/* list */ 'l', [
 					[/* block */ 'b', [
-						[/* reference */ 'r', `.Iterator#hasNext()`],
+						[/* reference */ 'r', `java.util.Iterator#hasNext()`, `hasNext`],
 						[/* text */ 't', ` always returns `],
 						[/* inline code block */ 'i', `false`],
 						[/* text */ 't', `.`]
 					]],
 					[/* block */ 'b', [
-						[/* reference */ 'r', `.Iterator#next()`],
+						[/* reference */ 'r', `java.util.Iterator#next()`, `next`],
 						[/* text */ 't', ` always throws `],
-						[/* reference */ 'r', `java.util.NoSuchElementException`],
+						[/* reference */ 'r', `java.util.NoSuchElementException`, `NoSuchElementException`],
 						[/* text */ 't', `.`]
 					]],
 					[/* block */ 'b', [
-						[/* reference */ 'r', `.Iterator#remove()`],
+						[/* reference */ 'r', `java.util.Iterator#remove()`, `remove`],
 						[/* text */ 't', ` always throws `],
-						[/* reference */ 'r', `java.lang.IllegalStateException`],
+						[/* reference */ 'r', `java.lang.IllegalStateException`, `IllegalStateException`],
 						[/* text */ 't', `.`]
 					]]
 				]],
@@ -1764,12 +1764,12 @@ DocsCollector.collect('java.util.Collections', [
 
  It is imperative that the user manually synchronize on the returned
  list when traversing it via `],
-					[/* reference */ 'r', `java.util.Iterator`],
+					[/* reference */ 'r', `java.util.Iterator`, `Iterator`],
 					[/* text */ 't', `, `],
-					[/* reference */ 'r', `java.util.Spliterator`],
+					[/* reference */ 'r', `java.util.Spliterator`, `Spliterator`],
 					[/* text */ 't', `
  or `],
-					[/* reference */ 'r', `java.util.stream.Stream`],
+					[/* reference */ 'r', `java.util.stream.Stream`, `Stream`],
 					[/* text */ 't', `:
  `]
 				]],
@@ -1802,7 +1802,7 @@ DocsCollector.collect('java.util.Collections', [
 		[/* method */ 'unmodifiableList(java.util.List)', [
 			[/* method description */
 				[/* text */ 't', `Returns an `],
-				[/* reference */ 'r', `.Collection#unmodview`],
+				[/* reference */ 'r', `java.util.Collection#unmodview`, `unmodifiable view`],
 				[/* text */ 't', ` of the
  specified list. Query operations on the returned list "read through" to the
  specified list, and attempts to modify the returned list, whether
@@ -1816,7 +1816,7 @@ DocsCollector.collect('java.util.Collections', [
  The returned list will be serializable if the specified list
  is serializable. Similarly, the returned list will implement
  `],
-					[/* reference */ 'r', `java.util.RandomAccess`],
+					[/* reference */ 'r', `java.util.RandomAccess`, `RandomAccess`],
 					[/* text */ 't', ` if the specified list does.`]
 				]]
 			],
@@ -1837,44 +1837,44 @@ DocsCollector.collect('java.util.Collections', [
  `],
 				[/* list */ 'l', [
 					[/* block */ 'b', [
-						[/* reference */ 'r', `.Iterator#hasNext()`],
+						[/* reference */ 'r', `java.util.Iterator#hasNext()`, `hasNext`],
 						[/* text */ 't', ` and `],
-						[/* reference */ 'r', `.ListIterator#hasPrevious()`],
+						[/* reference */ 'r', `java.util.ListIterator#hasPrevious()`, `hasPrevious`],
 						[/* text */ 't', ` always return `],
 						[/* inline code block */ 'i', `false`],
 						[/* text */ 't', `.`]
 					]],
 					[/* block */ 'b', [
-						[/* reference */ 'r', `.Iterator#next()`],
+						[/* reference */ 'r', `java.util.Iterator#next()`, `next`],
 						[/* text */ 't', ` and `],
-						[/* reference */ 'r', `.ListIterator#previous()`],
+						[/* reference */ 'r', `java.util.ListIterator#previous()`, `previous`],
 						[/* text */ 't', ` always throw `],
-						[/* reference */ 'r', `java.util.NoSuchElementException`],
+						[/* reference */ 'r', `java.util.NoSuchElementException`, `NoSuchElementException`],
 						[/* text */ 't', `.`]
 					]],
 					[/* block */ 'b', [
-						[/* reference */ 'r', `.Iterator#remove()`],
+						[/* reference */ 'r', `java.util.Iterator#remove()`, `remove`],
 						[/* text */ 't', ` and `],
-						[/* reference */ 'r', `.ListIterator#set(E)`],
+						[/* reference */ 'r', `java.util.ListIterator#set(E)`, `set`],
 						[/* text */ 't', ` always throw `],
-						[/* reference */ 'r', `java.lang.IllegalStateException`],
+						[/* reference */ 'r', `java.lang.IllegalStateException`, `IllegalStateException`],
 						[/* text */ 't', `.`]
 					]],
 					[/* block */ 'b', [
-						[/* reference */ 'r', `.ListIterator#add(E)`],
+						[/* reference */ 'r', `java.util.ListIterator#add(E)`, `add`],
 						[/* text */ 't', ` always throws `],
-						[/* reference */ 'r', `java.lang.UnsupportedOperationException`],
+						[/* reference */ 'r', `java.lang.UnsupportedOperationException`, `UnsupportedOperationException`],
 						[/* text */ 't', `.`]
 					]],
 					[/* block */ 'b', [
-						[/* reference */ 'r', `.ListIterator#nextIndex()`],
+						[/* reference */ 'r', `java.util.ListIterator#nextIndex()`, `nextIndex`],
 						[/* text */ 't', ` always returns
  `],
 						[/* inline code block */ 'i', `0`],
 						[/* text */ 't', `.`]
 					]],
 					[/* block */ 'b', [
-						[/* reference */ 'r', `.ListIterator#previousIndex()`],
+						[/* reference */ 'r', `java.util.ListIterator#previousIndex()`, `previousIndex`],
 						[/* text */ 't', ` always
  returns `],
 						[/* inline code block */ 'i', `-1`],
@@ -1910,12 +1910,12 @@ DocsCollector.collect('java.util.Collections', [
 					[/* text */ 't', `, or `],
 					[/* inline code block */ 'i', `tailSet`],
 					[/* text */ 't', ` views, via `],
-					[/* reference */ 'r', `java.util.Iterator`],
+					[/* reference */ 'r', `java.util.Iterator`, `Iterator`],
 					[/* text */ 't', `,
  `],
-					[/* reference */ 'r', `java.util.Spliterator`],
+					[/* reference */ 'r', `java.util.Spliterator`, `Spliterator`],
 					[/* text */ 't', ` or `],
-					[/* reference */ 'r', `java.util.stream.Stream`],
+					[/* reference */ 'r', `java.util.stream.Stream`, `Stream`],
 					[/* text */ 't', `:
  `]
 				]],
@@ -1961,7 +1961,7 @@ DocsCollector.collect('java.util.Collections', [
 		[/* method */ 'unmodifiableNavigableSet(java.util.NavigableSet)', [
 			[/* method description */
 				[/* text */ 't', `Returns an `],
-				[/* reference */ 'r', `.Collection#unmodview`],
+				[/* reference */ 'r', `java.util.Collection#unmodview`, `unmodifiable view`],
 				[/* text */ 't', ` of the
  specified navigable set. Query operations on the returned navigable set "read
  through" to the specified navigable set.  Attempts to modify the returned
@@ -1995,10 +1995,10 @@ DocsCollector.collect('java.util.Collections', [
 		[/* method */ 'asLifoQueue(java.util.Deque)', [
 			[/* method description */
 				[/* text */ 't', `Returns a view of a `],
-				[/* reference */ 'r', `java.util.Deque`],
+				[/* reference */ 'r', `java.util.Deque`, `Deque`],
 				[/* text */ 't', ` as a Last-in-first-out (Lifo)
  `],
-				[/* reference */ 'r', `java.util.Queue`],
+				[/* reference */ 'r', `java.util.Queue`, `Queue`],
 				[/* text */ 't', `. Method `],
 				[/* inline code block */ 'i', `add`],
 				[/* text */ 't', ` is mapped to `],
@@ -2019,10 +2019,10 @@ DocsCollector.collect('java.util.Collections', [
 					[/* text */ 't', `Each method invocation on the queue returned by this method
  results in exactly one method invocation on the backing deque, with
  one exception.  The `],
-					[/* reference */ 'r', `.Collection#addAll(java.util.Collection)`],
+					[/* reference */ 'r', `java.util.Collection#addAll(java.util.Collection)`, `addAll`],
 					[/* text */ 't', ` method is
  implemented as a sequence of `],
-					[/* reference */ 'r', `.Deque#addFirst(E)`],
+					[/* reference */ 'r', `java.util.Deque#addFirst(E)`, `addFirst`],
 					[/* text */ 't', `
  invocations on the backing deque.`]
 				]]
@@ -2065,12 +2065,12 @@ DocsCollector.collect('java.util.Collections', [
 
  It is imperative that the user manually synchronize on the returned
  collection when traversing it via `],
-					[/* reference */ 'r', `java.util.Iterator`],
+					[/* reference */ 'r', `java.util.Iterator`, `Iterator`],
 					[/* text */ 't', `, `],
-					[/* reference */ 'r', `java.util.Spliterator`],
+					[/* reference */ 'r', `java.util.Spliterator`, `Spliterator`],
 					[/* text */ 't', `
  or `],
-					[/* reference */ 'r', `java.util.stream.Stream`],
+					[/* reference */ 'r', `java.util.stream.Stream`, `Stream`],
 					[/* text */ 't', `:
  `]
 				]],
@@ -2103,7 +2103,7 @@ DocsCollector.collect('java.util.Collections', [
 		[/* method */ 'unmodifiableSet(java.util.Set)', [
 			[/* method description */
 				[/* text */ 't', `Returns an `],
-				[/* reference */ 'r', `.Collection#unmodview`],
+				[/* reference */ 'r', `java.util.Collection#unmodview`, `unmodifiable view`],
 				[/* text */ 't', ` of the
  specified set. Query operations on the returned set "read through" to the specified
  set, and attempts to modify the returned set, whether direct or via its
@@ -2145,12 +2145,12 @@ DocsCollector.collect('java.util.Collections', [
 					[/* text */ 't', `, or `],
 					[/* inline code block */ 'i', `tailSet`],
 					[/* text */ 't', ` views via `],
-					[/* reference */ 'r', `java.util.Iterator`],
+					[/* reference */ 'r', `java.util.Iterator`, `Iterator`],
 					[/* text */ 't', `,
  `],
-					[/* reference */ 'r', `java.util.Spliterator`],
+					[/* reference */ 'r', `java.util.Spliterator`, `Spliterator`],
 					[/* text */ 't', ` or `],
-					[/* reference */ 'r', `java.util.stream.Stream`],
+					[/* reference */ 'r', `java.util.stream.Stream`, `Stream`],
 					[/* text */ 't', `:
  `]
 				]],
@@ -2195,7 +2195,7 @@ DocsCollector.collect('java.util.Collections', [
 		[/* method */ 'unmodifiableSortedSet(java.util.SortedSet)', [
 			[/* method description */
 				[/* text */ 't', `Returns an `],
-				[/* reference */ 'r', `.Collection#unmodview`],
+				[/* reference */ 'r', `java.util.Collection#unmodview`, `unmodifiable view`],
 				[/* text */ 't', ` of the
  specified sorted set. Query operations on the returned sorted set "read
  through" to the specified sorted set.  Attempts to modify the returned
@@ -2451,7 +2451,7 @@ DocsCollector.collect('java.util.Collections', [
 				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
 					[/* text */ 't', `(optional) if the comparator is
          found to violate the `],
-					[/* reference */ 'r', `java.util.Comparator`],
+					[/* reference */ 'r', `java.util.Comparator`, `Comparator`],
 					[/* text */ 't', ` contract`]
 				]]
 			],
@@ -2474,12 +2474,12 @@ DocsCollector.collect('java.util.Collections', [
  for containment in the other collection (or to perform any equivalent
  computation).  If either collection uses a nonstandard equality test
  (as does a `],
-					[/* reference */ 'r', `java.util.SortedSet`],
+					[/* reference */ 'r', `java.util.SortedSet`, `SortedSet`],
 					[/* text */ 't', ` whose ordering is not `],
 					[/* text */ 't', `compatible with
  equals`],
 					[/* text */ 't', `, or the key set of an `],
-					[/* reference */ 'r', `java.util.IdentityHashMap`],
+					[/* reference */ 'r', `java.util.IdentityHashMap`, `IdentityHashMap`],
 					[/* text */ 't', `), both
  collections must use the same nonstandard equality test, or the
  result of this method is undefined.
@@ -2524,14 +2524,14 @@ DocsCollector.collect('java.util.Collections', [
 					[/* inline code block */ 'i', `null`],
 					[/* text */ 't', ` is not an eligible element for the other collection.
  (`],
-					[/* reference */ 'r', `.Collection#optional-restrictions`],
+					[/* reference */ 'r', `java.util.Collection#optional-restrictions`, `optional`],
 					[/* text */ 't', `)`]
 				]],
 				[/* throw */ 'java.lang.ClassCastException', [/* throw description */
 					[/* text */ 't', `if one collection contains an element that is
  of a type which is ineligible for the other collection.
  (`],
-					[/* reference */ 'r', `.Collection#optional-restrictions`],
+					[/* reference */ 'r', `java.util.Collection#optional-restrictions`, `optional`],
 					[/* text */ 't', `)`]
 				]]
 			],
@@ -2853,7 +2853,7 @@ DocsCollector.collect('java.util.Collections', [
  `],
 				[/* block */ 'b', [
 					[/* text */ 't', `If the specified list is small or implements the `],
-					[/* reference */ 'r', `java.util.RandomAccess`],
+					[/* reference */ 'r', `java.util.RandomAccess`, `RandomAccess`],
 					[/* text */ 't', ` interface, this implementation exchanges the first
  element into the location it should go, and then repeatedly exchanges
  the displaced element into the location it should go until a displaced
@@ -2922,7 +2922,7 @@ DocsCollector.collect('java.util.Collections', [
 				[/* block */ 'b', [
 					[/* text */ 't', `This method runs in linear time.  If the specified list does not
  implement the `],
-					[/* reference */ 'r', `java.util.RandomAccess`],
+					[/* reference */ 'r', `java.util.RandomAccess`, `RandomAccess`],
 					[/* text */ 't', ` interface and is large, this
  implementation dumps the specified list into an array before shuffling
  it, and dumps the shuffled array back into the list.  This avoids the
@@ -2962,7 +2962,7 @@ DocsCollector.collect('java.util.Collections', [
 
  This method runs in linear time.  If the specified list does not
  implement the `],
-					[/* reference */ 'r', `java.util.RandomAccess`],
+					[/* reference */ 'r', `java.util.RandomAccess`, `RandomAccess`],
 					[/* text */ 't', ` interface and is large, this
  implementation dumps the specified list into an array before shuffling
  it, and dumps the shuffled array back into the list.  This avoids the

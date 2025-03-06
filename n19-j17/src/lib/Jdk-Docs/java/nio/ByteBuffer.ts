@@ -95,7 +95,7 @@ DocsCollector.collect('java.nio.ByteBuffer', [
 
 
  `],
-			[/* text */ 't', ``]
+			[/* anchor */ 'r', '#-id', `direct`, ``]
 		]],
 		[/* block */ 'b', [
 			[/* text */ 't', ` Direct `],
@@ -133,7 +133,7 @@ DocsCollector.collect('java.nio.ByteBuffer', [
 		]],
 		[/* block */ 'b', [
 			[/* text */ 't', ` A direct byte buffer may also be created by `],
-			[/* reference */ 'r', `.FileChannel#map(java.nio.channels.FileChannel.MapMode,long,long)`],
+			[/* reference */ 'r', `java.nio.channels.FileChannel#map(java.nio.channels.FileChannel.MapMode,long,long)`, `mapping`],
 			[/* text */ 't', ` a region of a file
  directly into memory.  An implementation of the Java platform may optionally
  support the creation of direct byte buffers from native code via JNI.  If an
@@ -153,7 +153,7 @@ DocsCollector.collect('java.nio.ByteBuffer', [
 
 
  `],
-			[/* text */ 't', ``]
+			[/* anchor */ 'r', '#-id', `bin`, ``]
 		]],
 		[/* block */ 'b', ` Access to binary data `],
 		[/* block */ 'b', [
@@ -166,9 +166,9 @@ DocsCollector.collect('java.nio.ByteBuffer', [
 			[/* reference */ 'r', `#order()`, `order`],
 			[/* text */ 't', `
  methods.  Specific byte orders are represented by instances of the `],
-			[/* reference */ 'r', `java.nio.ByteOrder`],
+			[/* reference */ 'r', `java.nio.ByteOrder`, `ByteOrder`],
 			[/* text */ 't', ` class.  The initial order of a byte buffer is always `],
-			[/* reference */ 'r', `.ByteOrder#BIG_ENDIAN`],
+			[/* reference */ 'r', `java.nio.ByteOrder#BIG_ENDIAN`, `BIG_ENDIAN`],
 			[/* text */ 't', `.
 
  `]
@@ -215,7 +215,7 @@ DocsCollector.collect('java.nio.ByteBuffer', [
  bytes rather than of the type being read or written.
 
  `],
-			[/* text */ 't', ``]
+			[/* anchor */ 'r', '#-id', `views`, ``]
 		]],
 		[/* block */ 'b', [
 			[/* text */ 't', ` For access to homogeneous binary data, that is, sequences of values of
@@ -231,7 +231,7 @@ DocsCollector.collect('java.nio.ByteBuffer', [
 			[/* reference */ 'r', `#asFloatBuffer()`, `asFloatBuffer`],
 			[/* text */ 't', ` method, for example, creates an instance of
  the `],
-			[/* reference */ 'r', `java.nio.FloatBuffer`],
+			[/* reference */ 'r', `java.nio.FloatBuffer`, `FloatBuffer`],
 			[/* text */ 't', ` class that is backed by the byte buffer upon which
  the method is invoked.  Corresponding view-creation methods are defined for
  the types `],
@@ -574,7 +574,7 @@ DocsCollector.collect('java.nio.ByteBuffer', [
 
  and mark values will be identical to those of this buffer, and its byte
  order will be `],
-					[/* reference */ 'r', `.ByteOrder#BIG_ENDIAN`],
+					[/* reference */ 'r', `java.nio.ByteOrder#BIG_ENDIAN`, `BIG_ENDIAN`],
 					[/* text */ 't', `.
 
 
@@ -688,7 +688,7 @@ DocsCollector.collect('java.nio.ByteBuffer', [
 
  and mark values will be identical to those of this buffer, and its byte
  order will be `],
-					[/* reference */ 'r', `.ByteOrder#BIG_ENDIAN`],
+					[/* reference */ 'r', `java.nio.ByteOrder#BIG_ENDIAN`, `BIG_ENDIAN`],
 					[/* text */ 't', `.
 
 
@@ -1199,7 +1199,7 @@ DocsCollector.collect('java.nio.ByteBuffer', [
  undefined, and its byte order will be
 
  `],
-					[/* reference */ 'r', `.ByteOrder#BIG_ENDIAN`],
+					[/* reference */ 'r', `java.nio.ByteOrder#BIG_ENDIAN`, `BIG_ENDIAN`],
 					[/* text */ 't', `.
 
 
@@ -1240,7 +1240,7 @@ DocsCollector.collect('java.nio.ByteBuffer', [
  will be
 
  `],
-					[/* reference */ 'r', `.ByteOrder#BIG_ENDIAN`],
+					[/* reference */ 'r', `java.nio.ByteOrder#BIG_ENDIAN`, `BIG_ENDIAN`],
 					[/* text */ 't', `.
 
 
@@ -1254,7 +1254,7 @@ DocsCollector.collect('java.nio.ByteBuffer', [
 					[/* text */ 't', `The position in this buffer at which the content of the new
           buffer will start; must be non-negative and no larger than
           `],
-					[/* reference */ 'r', `.Buffer#limit()`]
+					[/* reference */ 'r', `java.nio.Buffer#limit()`, `limit()`]
 				]],
 				[/* parameter */ 'length', [/* parameter description */
 					[/* text */ 't', `The number of elements the new buffer will contain; must be
@@ -1777,7 +1777,7 @@ DocsCollector.collect('java.nio.ByteBuffer', [
  will be the number of bytes remaining in this buffer or fewer subject to
  alignment, its mark will be undefined, and its byte order will be
  `],
-					[/* reference */ 'r', `.ByteOrder#BIG_ENDIAN`],
+					[/* reference */ 'r', `java.nio.ByteOrder#BIG_ENDIAN`, `BIG_ENDIAN`],
 					[/* text */ 't', `.
 
  The new buffer will be direct if, and only if, this buffer is direct, and
@@ -1817,10 +1817,10 @@ DocsCollector.collect('java.nio.ByteBuffer', [
 				[/* parameter */ 'bo', [/* parameter description */
 					[/* text */ 't', `The new byte order,
          either `],
-					[/* reference */ 'r', `.ByteOrder#BIG_ENDIAN`],
+					[/* reference */ 'r', `java.nio.ByteOrder#BIG_ENDIAN`, `BIG_ENDIAN`],
 					[/* text */ 't', `
          or `],
-					[/* reference */ 'r', `.ByteOrder#LITTLE_ENDIAN`]
+					[/* reference */ 'r', `java.nio.ByteOrder#LITTLE_ENDIAN`, `LITTLE_ENDIAN`]
 				]]
 			],
 			/* throws */ UDF,
@@ -1876,7 +1876,7 @@ DocsCollector.collect('java.nio.ByteBuffer', [
 					[/* text */ 't', ` The byte order is used when reading or writing multibyte values, and
  when creating buffers that are views of this byte buffer.  The order of
  a newly-created byte buffer is always `],
-					[/* reference */ 'r', `.ByteOrder#BIG_ENDIAN`],
+					[/* reference */ 'r', `java.nio.ByteOrder#BIG_ENDIAN`, `BIG_ENDIAN`],
 					[/* text */ 't', `.  `]
 				]]
 			],
@@ -1907,7 +1907,7 @@ DocsCollector.collect('java.nio.ByteBuffer', [
 					[/* inline code block */ 'i', `byte`],
 					[/* text */ 't', ` elements are compared as if by invoking
  `],
-					[/* reference */ 'r', `java.Byte#compare(byte,byte)`],
+					[/* reference */ 'r', `java.lang.Byte#compare(byte,byte)`, `Byte.compare(byte,byte)`],
 					[/* text */ 't', `.
 
 
@@ -1959,10 +1959,10 @@ DocsCollector.collect('java.nio.ByteBuffer', [
 				[/* text */ 't', `Finds and returns the relative index of the first mismatch between this
  buffer and a given buffer.  The index is relative to the
  `],
-				[/* reference */ 'r', `.Buffer#position()`],
+				[/* reference */ 'r', `java.nio.Buffer#position()`, `position`],
 				[/* text */ 't', ` of each buffer and will be in the range of
  0 (inclusive) up to the smaller of the `],
-				[/* reference */ 'r', `.Buffer#remaining()`],
+				[/* reference */ 'r', `java.nio.Buffer#remaining()`, `remaining`],
 				[/* text */ 't', `
  elements in each buffer (exclusive).
 
@@ -2119,7 +2119,7 @@ DocsCollector.collect('java.nio.ByteBuffer', [
 					[/* inline code block */ 'i', `remaining()`],
 					[/* text */ 't', `, then no
  bytes are transferred and a `],
-					[/* reference */ 'r', `java.nio.BufferUnderflowException`],
+					[/* reference */ 'r', `java.nio.BufferUnderflowException`, `BufferUnderflowException`],
 					[/* text */ 't', ` is
  thrown.
 
@@ -2377,7 +2377,7 @@ DocsCollector.collect('java.nio.ByteBuffer', [
 					[/* inline code block */ 'i', `remaining()`],
 					[/* text */ 't', `, then no
  bytes are transferred and a `],
-					[/* reference */ 'r', `java.nio.BufferOverflowException`],
+					[/* reference */ 'r', `java.nio.BufferOverflowException`, `BufferOverflowException`],
 					[/* text */ 't', ` is
  thrown.
 
@@ -2685,7 +2685,7 @@ DocsCollector.collect('java.nio.ByteBuffer', [
 					[/* inline code block */ 'i', `remaining()`],
 					[/* text */ 't', `,
  then no bytes are transferred and a `],
-					[/* reference */ 'r', `java.nio.BufferOverflowException`],
+					[/* reference */ 'r', `java.nio.BufferOverflowException`, `BufferOverflowException`],
 					[/* text */ 't', ` is thrown.
 
  `]
@@ -2798,7 +2798,7 @@ DocsCollector.collect('java.nio.ByteBuffer', [
  initialized to zero, and its byte order will be
 
  `],
-					[/* reference */ 'r', `.ByteOrder#BIG_ENDIAN`],
+					[/* reference */ 'r', `java.nio.ByteOrder#BIG_ENDIAN`, `BIG_ENDIAN`],
 					[/* text */ 't', `.
 
 
@@ -2838,7 +2838,7 @@ DocsCollector.collect('java.nio.ByteBuffer', [
  capacity, its mark will be undefined, each of its elements will be
  initialized to zero, and its byte order will be
  `],
-					[/* reference */ 'r', `.ByteOrder#BIG_ENDIAN`],
+					[/* reference */ 'r', `java.nio.ByteOrder#BIG_ENDIAN`, `BIG_ENDIAN`],
 					[/* text */ 't', `.  Whether or not it has a
  `],
 					[/* reference */ 'r', `#hasArray()`, `backing array`],
@@ -2876,7 +2876,7 @@ DocsCollector.collect('java.nio.ByteBuffer', [
  undefined, and its byte order will be
 
  `],
-					[/* reference */ 'r', `.ByteOrder#BIG_ENDIAN`],
+					[/* reference */ 'r', `java.nio.ByteOrder#BIG_ENDIAN`, `BIG_ENDIAN`],
 					[/* text */ 't', `.
 
 
@@ -2920,7 +2920,7 @@ DocsCollector.collect('java.nio.ByteBuffer', [
  byte order will be
 
  `],
-					[/* reference */ 'r', `.ByteOrder#BIG_ENDIAN`],
+					[/* reference */ 'r', `java.nio.ByteOrder#BIG_ENDIAN`, `BIG_ENDIAN`],
 					[/* text */ 't', `.
 
 

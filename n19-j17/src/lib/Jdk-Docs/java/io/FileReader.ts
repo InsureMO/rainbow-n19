@@ -5,11 +5,11 @@ DocsCollector.collect('java.io.FileReader', [
 	[/* class description */
 		[/* text */ 't', `Reads text from character files using a default buffer size. Decoding from bytes
  to characters uses either a specified `],
-		[/* reference */ 'r', `java.nio.charset.Charset`],
+		[/* reference */ 'r', `java.nio.charset.Charset`, `charset`],
 		[/* text */ 't', `
  or the platform's
  `],
-		[/* reference */ 'r', `java.charset.Charset#defaultCharset()`],
+		[/* reference */ 'r', `java.nio.charset.Charset#defaultCharset()`, `default charset`],
 		[/* text */ 't', `.
 
  `],
@@ -34,7 +34,7 @@ DocsCollector.collect('java.io.FileReader', [
 				[/* text */ 't', ` to read,
  using the platform's
  `],
-				[/* reference */ 'r', `java.charset.Charset#defaultCharset()`],
+				[/* reference */ 'r', `java.nio.charset.Charset#defaultCharset()`, `default charset`],
 				[/* text */ 't', `.`]
 			],
 			[/* parameters */
@@ -61,7 +61,7 @@ DocsCollector.collect('java.io.FileReader', [
 				[/* inline code block */ 'i', `File`],
 				[/* text */ 't', ` to read and
  the `],
-				[/* reference */ 'r', `java.nio.charset.Charset`],
+				[/* reference */ 'r', `java.nio.charset.Charset`, `charset`],
 				[/* text */ 't', `.`]
 			],
 			[/* parameters */
@@ -72,7 +72,7 @@ DocsCollector.collect('java.io.FileReader', [
 				]],
 				[/* parameter */ 'charset', [/* parameter description */
 					[/* text */ 't', `the `],
-					[/* reference */ 'r', `java.nio.charset.Charset`]
+					[/* reference */ 'r', `java.nio.charset.Charset`, `charset`]
 				]]
 			],
 			[/* throws */
@@ -93,7 +93,7 @@ DocsCollector.collect('java.io.FileReader', [
 				[/* text */ 't', ` to read,
  using the platform's
  `],
-				[/* reference */ 'r', `java.charset.Charset#defaultCharset()`],
+				[/* reference */ 'r', `java.nio.charset.Charset#defaultCharset()`, `default charset`],
 				[/* text */ 't', `.`]
 			],
 			[/* parameters */
@@ -112,7 +112,7 @@ DocsCollector.collect('java.io.FileReader', [
 				[/* text */ 't', `, given the name of the file to read,
  using the platform's
  `],
-				[/* reference */ 'r', `java.charset.Charset#defaultCharset()`],
+				[/* reference */ 'r', `java.nio.charset.Charset#defaultCharset()`, `default charset`],
 				[/* text */ 't', `.`]
 			],
 			[/* parameters */
@@ -135,7 +135,7 @@ DocsCollector.collect('java.io.FileReader', [
 				[/* inline code block */ 'i', `FileReader`],
 				[/* text */ 't', `, given the name of the file to read
  and the `],
-				[/* reference */ 'r', `java.nio.charset.Charset`],
+				[/* reference */ 'r', `java.nio.charset.Charset`, `charset`],
 				[/* text */ 't', `.`]
 			],
 			[/* parameters */
@@ -144,7 +144,7 @@ DocsCollector.collect('java.io.FileReader', [
 				]],
 				[/* parameter */ 'charset', [/* parameter description */
 					[/* text */ 't', `the `],
-					[/* reference */ 'r', `java.nio.charset.Charset`]
+					[/* reference */ 'r', `java.nio.charset.Charset`, `charset`]
 				]]
 			],
 			[/* throws */

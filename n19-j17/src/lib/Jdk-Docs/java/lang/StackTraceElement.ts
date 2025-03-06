@@ -4,7 +4,7 @@ import {DocsCollector} from '../../DocsCollector';
 DocsCollector.collect('java.lang.StackTraceElement', [
 	[/* class description */
 		[/* text */ 't', `An element in a stack trace, as returned by `],
-		[/* reference */ 'r', `.Throwable#getStackTrace()`],
+		[/* reference */ 'r', `java.lang.Throwable#getStackTrace()`, `Throwable.getStackTrace()`],
 		[/* text */ 't', `.  Each element represents a single stack frame.
  All stack frames except for the one at the top of the stack represent
  a method invocation.  The frame at the top of the stack represents the
@@ -150,7 +150,7 @@ DocsCollector.collect('java.lang.StackTraceElement', [
  where `],
 				[/* inline code block */ 'i', `equals`],
 				[/* text */ 't', ` has the semantics of `],
-				[/* reference */ 'r', `java.Objects#equals(java.lang.Object,java.lang.Object)`],
+				[/* reference */ 'r', `java.util.Objects#equals(java.lang.Object,java.lang.Object)`, `Objects.equals`],
 				[/* text */ 't', `.`]
 			],
 			[/* parameters */

@@ -18,7 +18,7 @@ DocsCollector.collect('java.text.AttributedCharacterIterator$Attribute', [
  `],
 				[/* block */ 'b', [
 					[/* text */ 't', `Values are instances of `],
-					[/* reference */ 'r', `java.text.Annotation`],
+					[/* reference */ 'r', `java.text.Annotation`, `Annotation`],
 					[/* text */ 't', ` holding a `],
 					[/* inline code block */ 'i', `null`],
 					[/* text */ 't', ` reference.`]
@@ -31,7 +31,7 @@ DocsCollector.collect('java.text.AttributedCharacterIterator$Attribute', [
  `],
 				[/* block */ 'b', [
 					[/* text */ 't', ` Values are instances of `],
-					[/* reference */ 'r', `java.util.Locale`],
+					[/* reference */ 'r', `java.util.Locale`, `Locale`],
 					[/* text */ 't', `.`]
 				]]
 			],
@@ -45,9 +45,9 @@ DocsCollector.collect('java.text.AttributedCharacterIterator$Attribute', [
  `],
 				[/* block */ 'b', [
 					[/* text */ 't', `Values are instances of `],
-					[/* reference */ 'r', `java.text.Annotation`],
+					[/* reference */ 'r', `java.text.Annotation`, `Annotation`],
 					[/* text */ 't', ` holding instances of `],
-					[/* reference */ 'r', `java.lang.String`],
+					[/* reference */ 'r', `java.lang.String`, `String`],
 					[/* text */ 't', `.`]
 				]]
 			],

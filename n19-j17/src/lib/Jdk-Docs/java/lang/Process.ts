@@ -11,10 +11,10 @@ DocsCollector.collect('java.lang.Process', [
  checking the exit status of the process, and destroying (killing)
  the process.
  The `],
-		[/* reference */ 'r', `.ProcessBuilder#start()`],
+		[/* reference */ 'r', `java.lang.ProcessBuilder#start()`, `ProcessBuilder.start()`],
 		[/* text */ 't', ` and
  `],
-		[/* reference */ 'r', `.Runtime#exec(java.lang.String[],java.lang.String[],java.io.File)`],
+		[/* reference */ 'r', `java.lang.Runtime#exec(java.lang.String[],java.lang.String[],java.io.File)`, `Runtime.exec`],
 		[/* text */ 't', `
  methods create a native process and return an instance of a
  subclass of `],
@@ -69,10 +69,10 @@ DocsCollector.collect('java.lang.Process', [
 		]],
 		[/* block */ 'b', [
 			[/* text */ 't', `Where desired, `],
-			[/* reference */ 'r', `.ProcessBuilder#redirect-input`],
+			[/* reference */ 'r', `java.lang.ProcessBuilder#redirect-input`, `process I/O can also be redirected`],
 			[/* text */ 't', `
  using methods of the `],
-			[/* reference */ 'r', `java.lang.ProcessBuilder`],
+			[/* reference */ 'r', `java.lang.ProcessBuilder`, `ProcessBuilder`],
 			[/* text */ 't', ` class.
 
  `]
@@ -98,7 +98,7 @@ DocsCollector.collect('java.lang.Process', [
 		]],
 		[/* block */ 'b', [
 			[/* text */ 't', `As of 1.5, `],
-			[/* reference */ 'r', `.ProcessBuilder#start()`],
+			[/* reference */ 'r', `java.lang.ProcessBuilder#start()`, `ProcessBuilder.start()`],
 			[/* text */ 't', ` is the preferred way
  to create a `],
 			[/* inline code block */ 'i', `Process`],
@@ -179,11 +179,11 @@ DocsCollector.collect('java.lang.Process', [
 				[/* throw */ 'java.lang.InterruptedException', [/* throw description */
 					[/* text */ 't', `if the current thread is
          `],
-					[/* reference */ 'r', `.Thread#interrupt()`],
+					[/* reference */ 'r', `java.lang.Thread#interrupt()`, `interrupted`],
 					[/* text */ 't', ` by another
          thread while it is waiting, then the wait is ended and
          an `],
-					[/* reference */ 'r', `java.lang.InterruptedException`],
+					[/* reference */ 'r', `java.lang.InterruptedException`, `InterruptedException`],
 					[/* text */ 't', ` is thrown.`]
 				]]
 			],
@@ -209,14 +209,14 @@ DocsCollector.collect('java.lang.Process', [
 				[/* block */ 'b', [
 					[/* text */ 't', `If the standard error of the process has been redirected using
  `],
-					[/* reference */ 'r', `.ProcessBuilder#redirectError(java.lang.ProcessBuilder.Redirect)`],
+					[/* reference */ 'r', `java.lang.ProcessBuilder#redirectError(java.lang.ProcessBuilder.Redirect)`, `ProcessBuilder.redirectError`],
 					[/* text */ 't', ` or
  `],
-					[/* reference */ 'r', `.ProcessBuilder#redirectErrorStream(boolean)`],
+					[/* reference */ 'r', `java.lang.ProcessBuilder#redirectErrorStream(boolean)`, `ProcessBuilder.redirectErrorStream`],
 					[/* text */ 't', `
  then this method will return a
  `],
-					[/* reference */ 'r', `.ProcessBuilder#redirect-output`],
+					[/* reference */ 'r', `java.lang.ProcessBuilder#redirect-output`, `null input stream`],
 					[/* text */ 't', `.`]
 				]]
 			],
@@ -239,11 +239,11 @@ DocsCollector.collect('java.lang.Process', [
 				[/* block */ 'b', [
 					[/* text */ 't', `If the standard output of the process has been redirected using
  `],
-					[/* reference */ 'r', `.ProcessBuilder#redirectOutput(java.lang.ProcessBuilder.Redirect)`],
+					[/* reference */ 'r', `java.lang.ProcessBuilder#redirectOutput(java.lang.ProcessBuilder.Redirect)`, `ProcessBuilder.redirectOutput`],
 					[/* text */ 't', `
  then this method will return a
  `],
-					[/* reference */ 'r', `.ProcessBuilder#redirect-output`],
+					[/* reference */ 'r', `java.lang.ProcessBuilder#redirect-output`, `null input stream`],
 					[/* text */ 't', `.
 
  `]
@@ -252,7 +252,7 @@ DocsCollector.collect('java.lang.Process', [
 					[/* text */ 't', `Otherwise, if the standard error of the process has been
  redirected using
  `],
-					[/* reference */ 'r', `.ProcessBuilder#redirectErrorStream(boolean)`],
+					[/* reference */ 'r', `java.lang.ProcessBuilder#redirectErrorStream(boolean)`, `ProcessBuilder.redirectErrorStream`],
 					[/* text */ 't', `
  then the input stream returned by this method will receive the
  merged standard output and the standard error of the process.`]
@@ -277,11 +277,11 @@ DocsCollector.collect('java.lang.Process', [
 				[/* block */ 'b', [
 					[/* text */ 't', `If the standard input of the process has been redirected using
  `],
-					[/* reference */ 'r', `.ProcessBuilder#redirectInput(java.lang.ProcessBuilder.Redirect)`],
+					[/* reference */ 'r', `java.lang.ProcessBuilder#redirectInput(java.lang.ProcessBuilder.Redirect)`, `ProcessBuilder.redirectInput`],
 					[/* text */ 't', `
  then this method will return a
  `],
-					[/* reference */ 'r', `.ProcessBuilder#redirect-input`],
+					[/* reference */ 'r', `java.lang.ProcessBuilder#redirect-input`, `null output stream`],
 					[/* text */ 't', `.`]
 				]]
 			],
@@ -309,12 +309,12 @@ DocsCollector.collect('java.lang.Process', [
 				[/* block */ 'b', [
 					[/* text */ 't', `
  The `],
-					[/* reference */ 'r', `java.util.concurrent.CompletableFuture`],
+					[/* reference */ 'r', `java.util.concurrent.CompletableFuture`, `CompletableFuture`],
 					[/* text */ 't', ` from `],
 					[/* reference */ 'r', `#onExit()`, `onExit()`],
 					[/* text */ 't', ` is
  `],
-					[/* reference */ 'r', `java.concurrent.CompletableFuture#complete(T)`],
+					[/* reference */ 'r', `java.util.concurrent.CompletableFuture#complete(T)`, `completed`],
 					[/* text */ 't', `
  when the process has terminated.`]
 				]]
@@ -361,9 +361,9 @@ DocsCollector.collect('java.lang.Process', [
 					[/* inline code block */ 'i', `Process`],
 					[/* text */ 't', ` objects returned by
  `],
-					[/* reference */ 'r', `.ProcessBuilder#start()`],
+					[/* reference */ 'r', `java.lang.ProcessBuilder#start()`, `ProcessBuilder.start()`],
 					[/* text */ 't', ` and `],
-					[/* reference */ 'r', `.Runtime#exec(java.lang.String)`],
+					[/* reference */ 'r', `java.lang.Runtime#exec(java.lang.String)`, `Runtime.exec(java.lang.String)`],
 					[/* text */ 't', ` return
  `],
 					[/* inline code block */ 'i', `true`],
@@ -450,10 +450,10 @@ DocsCollector.collect('java.lang.Process', [
 		[/* method */ 'errorReader()', [
 			[/* method description */
 				[/* text */ 't', `Returns a `],
-				[/* reference */ 'r', `java.io.BufferedReader`],
+				[/* reference */ 'r', `java.io.BufferedReader`, `BufferedReader`],
 				[/* text */ 't', ` connected to the standard
  error of the process. The `],
-				[/* reference */ 'r', `java.nio.charset.Charset`],
+				[/* reference */ 'r', `java.nio.charset.Charset`, `Charset`],
 				[/* text */ 't', ` for the native encoding is used
  to read characters, lines, or stream lines from standard error.
 
@@ -463,7 +463,7 @@ DocsCollector.collect('java.lang.Process', [
 					[/* reference */ 'r', `#errorReader(java.nio.charset.Charset)`, `errorReader(Charset)`],
 					[/* text */ 't', ` using the
  `],
-					[/* reference */ 'r', `java.nio.charset.Charset`],
+					[/* reference */ 'r', `java.nio.charset.Charset`, `Charset`],
 					[/* text */ 't', ` named by the `],
 					[/* inline code block */ 'i', `native.encoding`],
 					[/* text */ 't', ` system property.
@@ -471,7 +471,7 @@ DocsCollector.collect('java.lang.Process', [
 					[/* inline code block */ 'i', `native.encoding`],
 					[/* text */ 't', ` is not a valid charset name or not supported
  the `],
-					[/* reference */ 'r', `java.charset.Charset#defaultCharset()`],
+					[/* reference */ 'r', `java.nio.charset.Charset#defaultCharset()`, `Charset.defaultCharset()`],
 					[/* text */ 't', ` is used.`]
 				]]
 			],
@@ -479,19 +479,19 @@ DocsCollector.collect('java.lang.Process', [
 			/* throws */ UDF,
 			[/* return description */
 				[/* text */ 't', `a `],
-				[/* reference */ 'r', `java.io.BufferedReader`],
+				[/* reference */ 'r', `java.io.BufferedReader`, `BufferedReader`],
 				[/* text */ 't', ` using the
           `],
 				[/* inline code block */ 'i', `native.encoding`],
 				[/* text */ 't', ` if supported, otherwise, the
           `],
-				[/* reference */ 'r', `java.charset.Charset#defaultCharset()`]
+				[/* reference */ 'r', `java.nio.charset.Charset#defaultCharset()`, `Charset.defaultCharset()`]
 			]
 		]],
 		[/* method */ 'errorReader(java.nio.charset.Charset)', [
 			[/* method description */
 				[/* text */ 't', `Returns a `],
-				[/* reference */ 'r', `java.io.BufferedReader`],
+				[/* reference */ 'r', `java.io.BufferedReader`, `BufferedReader`],
 				[/* text */ 't', ` connected to the
  standard error of this process using a Charset.
  The `],
@@ -517,7 +517,7 @@ DocsCollector.collect('java.lang.Process', [
 				]],
 				[/* block */ 'b', [
 					[/* text */ 't', `The first call to this method creates the `],
-					[/* reference */ 'r', `java.io.BufferedReader`],
+					[/* reference */ 'r', `java.io.BufferedReader`, `BufferedReader`],
 					[/* text */ 't', `,
  if called again with the same `],
 					[/* inline code block */ 'i', `charset`],
@@ -533,16 +533,16 @@ DocsCollector.collect('java.lang.Process', [
 				[/* block */ 'b', [
 					[/* text */ 't', `If the standard error of the process has been redirected using
  `],
-					[/* reference */ 'r', `.ProcessBuilder#redirectError(java.lang.ProcessBuilder.Redirect)`],
+					[/* reference */ 'r', `java.lang.ProcessBuilder#redirectError(java.lang.ProcessBuilder.Redirect)`, `ProcessBuilder.redirectError`],
 					[/* text */ 't', ` or
  `],
-					[/* reference */ 'r', `.ProcessBuilder#redirectErrorStream(boolean)`],
+					[/* reference */ 'r', `java.lang.ProcessBuilder#redirectErrorStream(boolean)`, `ProcessBuilder.redirectErrorStream`],
 					[/* text */ 't', `
  then the `],
 					[/* inline code block */ 'i', `InputStreamReader`],
 					[/* text */ 't', ` will be reading from a
  `],
-					[/* reference */ 'r', `.ProcessBuilder#redirect-output`],
+					[/* reference */ 'r', `java.lang.ProcessBuilder#redirect-output`, `null input stream`],
 					[/* text */ 't', `.`]
 				]]
 			],
@@ -574,10 +574,10 @@ DocsCollector.collect('java.lang.Process', [
 		[/* method */ 'inputReader()', [
 			[/* method description */
 				[/* text */ 't', `Returns a `],
-				[/* reference */ 'r', `java.io.BufferedReader`],
+				[/* reference */ 'r', `java.io.BufferedReader`, `BufferedReader`],
 				[/* text */ 't', ` connected to the standard
  output of the process. The `],
-				[/* reference */ 'r', `java.nio.charset.Charset`],
+				[/* reference */ 'r', `java.nio.charset.Charset`, `Charset`],
 				[/* text */ 't', ` for the native encoding is used
  to read characters, lines, or stream lines from standard output.
 
@@ -587,7 +587,7 @@ DocsCollector.collect('java.lang.Process', [
 					[/* reference */ 'r', `#inputReader(java.nio.charset.Charset)`, `inputReader(Charset)`],
 					[/* text */ 't', ` using the
  `],
-					[/* reference */ 'r', `java.nio.charset.Charset`],
+					[/* reference */ 'r', `java.nio.charset.Charset`, `Charset`],
 					[/* text */ 't', ` named by the `],
 					[/* inline code block */ 'i', `native.encoding`],
 					[/* text */ 't', ` system property.
@@ -595,7 +595,7 @@ DocsCollector.collect('java.lang.Process', [
 					[/* inline code block */ 'i', `native.encoding`],
 					[/* text */ 't', ` is not a valid charset name or not supported
  the `],
-					[/* reference */ 'r', `java.charset.Charset#defaultCharset()`],
+					[/* reference */ 'r', `java.nio.charset.Charset#defaultCharset()`, `Charset.defaultCharset()`],
 					[/* text */ 't', ` is used.`]
 				]]
 			],
@@ -603,19 +603,19 @@ DocsCollector.collect('java.lang.Process', [
 			/* throws */ UDF,
 			[/* return description */
 				[/* text */ 't', `a `],
-				[/* reference */ 'r', `java.io.BufferedReader`],
+				[/* reference */ 'r', `java.io.BufferedReader`, `BufferedReader`],
 				[/* text */ 't', ` using the
           `],
 				[/* inline code block */ 'i', `native.encoding`],
 				[/* text */ 't', ` if supported, otherwise, the
           `],
-				[/* reference */ 'r', `java.charset.Charset#defaultCharset()`]
+				[/* reference */ 'r', `java.nio.charset.Charset#defaultCharset()`, `Charset.defaultCharset()`]
 			]
 		]],
 		[/* method */ 'inputReader(java.nio.charset.Charset)', [
 			[/* method description */
 				[/* text */ 't', `Returns a `],
-				[/* reference */ 'r', `java.io.BufferedReader`],
+				[/* reference */ 'r', `java.io.BufferedReader`, `BufferedReader`],
 				[/* text */ 't', ` connected to the
  standard output of this process using a Charset.
  The `],
@@ -641,7 +641,7 @@ DocsCollector.collect('java.lang.Process', [
 				]],
 				[/* block */ 'b', [
 					[/* text */ 't', `The first call to this method creates the `],
-					[/* reference */ 'r', `java.io.BufferedReader`],
+					[/* reference */ 'r', `java.io.BufferedReader`, `BufferedReader`],
 					[/* text */ 't', `,
  if called again with the same `],
 					[/* inline code block */ 'i', `charset`],
@@ -657,13 +657,13 @@ DocsCollector.collect('java.lang.Process', [
 				[/* block */ 'b', [
 					[/* text */ 't', `If the standard output of the process has been redirected using
  `],
-					[/* reference */ 'r', `.ProcessBuilder#redirectOutput(java.lang.ProcessBuilder.Redirect)`],
+					[/* reference */ 'r', `java.lang.ProcessBuilder#redirectOutput(java.lang.ProcessBuilder.Redirect)`, `ProcessBuilder.redirectOutput`],
 					[/* text */ 't', `
  then the `],
 					[/* inline code block */ 'i', `InputStreamReader`],
 					[/* text */ 't', ` will be reading from a
  `],
-					[/* reference */ 'r', `.ProcessBuilder#redirect-output`],
+					[/* reference */ 'r', `java.lang.ProcessBuilder#redirect-output`, `null input stream`],
 					[/* text */ 't', `.
 
  `]
@@ -671,7 +671,7 @@ DocsCollector.collect('java.lang.Process', [
 				[/* block */ 'b', [
 					[/* text */ 't', `Otherwise, if the standard error of the process has been redirected using
  `],
-					[/* reference */ 'r', `.ProcessBuilder#redirectErrorStream(boolean)`],
+					[/* reference */ 'r', `java.lang.ProcessBuilder#redirectErrorStream(boolean)`, `ProcessBuilder.redirectErrorStream`],
 					[/* text */ 't', ` then the input reader returned by
  this method will receive the merged standard output and the standard error
  of the process.`]
@@ -717,7 +717,7 @@ DocsCollector.collect('java.lang.Process', [
 					[/* reference */ 'r', `#outputWriter(java.nio.charset.Charset)`, `outputWriter(Charset)`],
 					[/* text */ 't', ` using the
  `],
-					[/* reference */ 'r', `java.nio.charset.Charset`],
+					[/* reference */ 'r', `java.nio.charset.Charset`, `Charset`],
 					[/* text */ 't', ` named by the `],
 					[/* inline code block */ 'i', `native.encoding`],
 					[/* text */ 't', ` system property.
@@ -725,7 +725,7 @@ DocsCollector.collect('java.lang.Process', [
 					[/* inline code block */ 'i', `native.encoding`],
 					[/* text */ 't', ` is not a valid charset name or not supported
  the `],
-					[/* reference */ 'r', `java.charset.Charset#defaultCharset()`],
+					[/* reference */ 'r', `java.nio.charset.Charset#defaultCharset()`, `Charset.defaultCharset()`],
 					[/* text */ 't', ` is used.`]
 				]]
 			],
@@ -752,10 +752,10 @@ DocsCollector.collect('java.lang.Process', [
  `],
 				[/* block */ 'b', [
 					[/* text */ 't', `Characters written by the writer are encoded to bytes using `],
-					[/* reference */ 'r', `java.io.OutputStreamWriter`],
+					[/* reference */ 'r', `java.io.OutputStreamWriter`, `OutputStreamWriter`],
 					[/* text */ 't', `
  and the `],
-					[/* reference */ 'r', `java.nio.charset.Charset`],
+					[/* reference */ 'r', `java.nio.charset.Charset`, `Charset`],
 					[/* text */ 't', ` are written to the standard input of the process represented
  by this `],
 					[/* inline code block */ 'i', `Process`],
@@ -767,7 +767,7 @@ DocsCollector.collect('java.lang.Process', [
 				]],
 				[/* block */ 'b', [
 					[/* text */ 't', `The first call to this method creates the `],
-					[/* reference */ 'r', `java.io.BufferedWriter`],
+					[/* reference */ 'r', `java.io.BufferedWriter`, `BufferedWriter`],
 					[/* text */ 't', `,
  if called again with the same `],
 					[/* inline code block */ 'i', `charset`],
@@ -783,12 +783,12 @@ DocsCollector.collect('java.lang.Process', [
 				[/* block */ 'b', [
 					[/* text */ 't', `If the standard input of the process has been redirected using
  `],
-					[/* reference */ 'r', `.ProcessBuilder#redirectInput(java.lang.ProcessBuilder.Redirect)`],
+					[/* reference */ 'r', `java.lang.ProcessBuilder#redirectInput(java.lang.ProcessBuilder.Redirect)`, `ProcessBuilder.redirectInput`],
 					[/* text */ 't', ` then the `],
 					[/* inline code block */ 'i', `OutputStreamWriter`],
 					[/* text */ 't', ` writes to a
  `],
-					[/* reference */ 'r', `.ProcessBuilder#redirect-input`],
+					[/* reference */ 'r', `java.lang.ProcessBuilder#redirect-input`, `null output stream`],
 					[/* text */ 't', `.`]
 				]]
 			],
@@ -830,12 +830,12 @@ DocsCollector.collect('java.lang.Process', [
 				[/* block */ 'b', [
 					[/* text */ 't', `
  The `],
-					[/* reference */ 'r', `java.util.concurrent.CompletableFuture`],
+					[/* reference */ 'r', `java.util.concurrent.CompletableFuture`, `CompletableFuture`],
 					[/* text */ 't', ` from `],
 					[/* reference */ 'r', `#onExit()`, `onExit()`],
 					[/* text */ 't', ` is
  `],
-					[/* reference */ 'r', `java.concurrent.CompletableFuture#complete(T)`],
+					[/* reference */ 'r', `java.util.concurrent.CompletableFuture#complete(T)`, `completed`],
 					[/* text */ 't', `
  when the process has terminated.
  `]
@@ -846,9 +846,9 @@ DocsCollector.collect('java.lang.Process', [
 					[/* inline code block */ 'i', `Process`],
 					[/* text */ 't', ` objects returned by
  `],
-					[/* reference */ 'r', `.ProcessBuilder#start()`],
+					[/* reference */ 'r', `java.lang.ProcessBuilder#start()`, `ProcessBuilder.start()`],
 					[/* text */ 't', ` and `],
-					[/* reference */ 'r', `.Runtime#exec(java.lang.String)`],
+					[/* reference */ 'r', `java.lang.Runtime#exec(java.lang.String)`, `Runtime.exec(java.lang.String)`],
 					[/* text */ 't', ` forcibly terminate
  the process.`]
 				]]
@@ -869,15 +869,15 @@ DocsCollector.collect('java.lang.Process', [
  `],
 				[/* inline code block */ 'i', `Process`],
 				[/* text */ 't', ` objects returned by `],
-				[/* reference */ 'r', `.ProcessBuilder#start()`],
+				[/* reference */ 'r', `java.lang.ProcessBuilder#start()`, `ProcessBuilder.start()`],
 				[/* text */ 't', ` and
  `],
-				[/* reference */ 'r', `.Runtime#exec(java.lang.String)`],
+				[/* reference */ 'r', `java.lang.Runtime#exec(java.lang.String)`, `Runtime.exec(java.lang.String)`],
 				[/* text */ 't', ` implement `],
 				[/* inline code block */ 'i', `toHandle`],
 				[/* text */ 't', ` as the equivalent of
  `],
-				[/* reference */ 'r', `.ProcessHandle#of(long)`],
+				[/* reference */ 'r', `java.lang.ProcessHandle#of(long)`, `ProcessHandle.of(pid)`],
 				[/* text */ 't', ` including the
  check for a SecurityManager and `],
 				[/* inline code block */ 'i', `RuntimePermission("manageProcess")`],
@@ -905,7 +905,7 @@ DocsCollector.collect('java.lang.Process', [
  `],
 				[/* block */ 'b', [
 					[/* text */ 't', ` A `],
-					[/* reference */ 'r', `java.lang.ProcessHandle.Info`],
+					[/* reference */ 'r', `java.lang.ProcessHandle.Info`, `ProcessHandle.Info`],
 					[/* text */ 't', ` instance has accessor methods
  that return information about the process if it is available.`]
 				]]
@@ -927,13 +927,13 @@ DocsCollector.collect('java.lang.Process', [
 				[/* inline code block */ 'i', `CompletableFuture<Process>`],
 				[/* text */ 't', ` for the termination of the Process.
  The `],
-				[/* reference */ 'r', `java.util.concurrent.CompletableFuture`],
+				[/* reference */ 'r', `java.util.concurrent.CompletableFuture`, `CompletableFuture`],
 				[/* text */ 't', ` provides the ability
  to trigger dependent functions or actions that may be run synchronously
  or asynchronously upon process termination.
  When the process has terminated the CompletableFuture is
  `],
-				[/* reference */ 'r', `java.concurrent.CompletableFuture#complete(T)`],
+				[/* reference */ 'r', `java.util.concurrent.CompletableFuture#complete(T)`, `completed`],
 				[/* text */ 't', ` regardless
  of the exit status of the process.
  `],
@@ -944,13 +944,13 @@ DocsCollector.collect('java.lang.Process', [
 					[/* text */ 't', ` waits for the process to terminate and returns
  the Process. The future can be used to check if the process is
  `],
-					[/* reference */ 'r', `java.concurrent.CompletableFuture#isDone()`],
+					[/* reference */ 'r', `java.util.concurrent.CompletableFuture#isDone()`, `done`],
 					[/* text */ 't', ` or to
  `],
-					[/* reference */ 'r', `java.concurrent.CompletableFuture#get()`],
+					[/* reference */ 'r', `java.util.concurrent.CompletableFuture#get()`, `wait`],
 					[/* text */ 't', ` for it to terminate.
  `],
-					[/* reference */ 'r', `java.concurrent.CompletableFuture#cancel(boolean)`],
+					[/* reference */ 'r', `java.util.concurrent.CompletableFuture#cancel(boolean)`, `Cancelling`],
 					[/* text */ 't', `
  the CompletableFuture does not affect the Process.
  `]
@@ -958,7 +958,7 @@ DocsCollector.collect('java.lang.Process', [
 				[/* block */ 'b', [
 					[/* text */ 't', `
  Processes returned from `],
-					[/* reference */ 'r', `.ProcessBuilder#start()`],
+					[/* reference */ 'r', `java.lang.ProcessBuilder#start()`, `ProcessBuilder.start()`],
 					[/* text */ 't', ` override the
  default implementation to provide an efficient mechanism to wait
  for process exit.`]

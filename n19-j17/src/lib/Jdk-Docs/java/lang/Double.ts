@@ -50,7 +50,7 @@ DocsCollector.collect('java.lang.Double', [
  `]
 		]],
 		[/* block */ 'b', [
-			[/* text */ 't', `Floating-point Equality, Equivalence, and Comparison`]
+			[/* anchor */ 'r', '#-id', `equivalenceRelation`, `Floating-point Equality, Equivalence, and Comparison`]
 		]],
 		[/* text */ 't', `
 
@@ -78,7 +78,7 @@ DocsCollector.collect('java.lang.Double', [
  relation on pairs of values that is reflexive, symmetric, and
  transitive. For more discussion of equivalence relations and object
  equality, see the `],
-			[/* reference */ 'r', `.Object#equals(java.lang.Object)`],
+			[/* reference */ 'r', `java.lang.Object#equals(java.lang.Object)`, `Object.equals`],
 			[/* text */ 't', `
  specification. An equivalence relation partitions the values it
  operates over into sets called `],
@@ -244,7 +244,7 @@ DocsCollector.collect('java.lang.Double', [
 			[/* text */ 't', ` implemented by `],
 			[/* reference */ 'r', `#compareTo(java.lang.Double)`, `compareTo`],
 			[/* text */ 't', ` is `],
-			[/* reference */ 'r', `java.lang.Comparable`],
+			[/* reference */ 'r', `java.lang.Comparable`, `consistent with equals`],
 			[/* text */ 't', `. That
  is, two objects are reported as equal by `],
 			[/* inline code block */ 'i', `equals`],
@@ -266,10 +266,10 @@ DocsCollector.collect('java.lang.Double', [
 			[/* inline code block */ 'i', `equals`],
 			[/* text */ 't', ` to one another allows NaN to be used as
  an element of a `],
-			[/* reference */ 'r', `java.util.HashSet`],
+			[/* reference */ 'r', `java.util.HashSet`, `HashSet`],
 			[/* text */ 't', ` or as the key of
  a `],
-			[/* reference */ 'r', `java.util.HashMap`],
+			[/* reference */ 'r', `java.util.HashMap`, `HashMap`],
 			[/* text */ 't', `. Similarly, defining `],
 			[/* inline code block */ 'i', `compareTo`],
 			[/* text */ 't', ` as a total ordering, including `],
@@ -278,10 +278,10 @@ DocsCollector.collect('java.lang.Double', [
 			[/* inline code block */ 'i', `-0.0`],
 			[/* text */ 't', `, and NaN, allows instances of wrapper classes to be used as
  elements of a `],
-			[/* reference */ 'r', `java.util.SortedSet`],
+			[/* reference */ 'r', `java.util.SortedSet`, `SortedSet`],
 			[/* text */ 't', ` or as keys of a
  `],
-			[/* reference */ 'r', `java.util.SortedMap`],
+			[/* reference */ 'r', `java.util.SortedMap`, `SortedMap`],
 			[/* text */ 't', `.`]
 		]]
 	],
@@ -769,7 +769,7 @@ DocsCollector.collect('java.lang.Double', [
 		[/* method */ 'resolveConstantDesc(java.lang.invoke.MethodHandles.Lookup)', [
 			[/* method description */
 				[/* text */ 't', `Resolves this instance as a `],
-				[/* reference */ 'r', `java.lang.constant.ConstantDesc`],
+				[/* reference */ 'r', `java.lang.constant.ConstantDesc`, `ConstantDesc`],
 				[/* text */ 't', `, the result of which is
  the instance itself.`]
 			],
@@ -781,7 +781,7 @@ DocsCollector.collect('java.lang.Double', [
 			/* throws */ UDF,
 			[/* return description */
 				[/* text */ 't', `the `],
-				[/* reference */ 'r', `java.lang.Double`],
+				[/* reference */ 'r', `java.lang.Double`, `Double`],
 				[/* text */ 't', ` instance`]
 			]
 		]],
@@ -809,7 +809,7 @@ DocsCollector.collect('java.lang.Double', [
 		[/* method */ 'describeConstable()', [
 			[/* method description */
 				[/* text */ 't', `Returns an `],
-				[/* reference */ 'r', `java.util.Optional`],
+				[/* reference */ 'r', `java.util.Optional`, `Optional`],
 				[/* text */ 't', ` containing the nominal descriptor for this
  instance, which is the instance itself.`]
 			],
@@ -817,9 +817,9 @@ DocsCollector.collect('java.lang.Double', [
 			/* throws */ UDF,
 			[/* return description */
 				[/* text */ 't', `an `],
-				[/* reference */ 'r', `java.util.Optional`],
+				[/* reference */ 'r', `java.util.Optional`, `Optional`],
 				[/* text */ 't', ` describing the `],
-				[/* reference */ 'r', `java.lang.Double`],
+				[/* reference */ 'r', `java.lang.Double`, `Double`],
 				[/* text */ 't', ` instance`]
 			]
 		]],
@@ -939,7 +939,7 @@ DocsCollector.collect('java.lang.Double', [
 				[/* inline code block */ 'i', `double`],
 				[/* text */ 't', ` values
  as if by calling `],
-				[/* reference */ 'r', `.Math#max(double,double)`],
+				[/* reference */ 'r', `java.lang.Math#max(double,double)`, `Math.max`],
 				[/* text */ 't', `.`]
 			],
 			[/* parameters */
@@ -964,7 +964,7 @@ DocsCollector.collect('java.lang.Double', [
 				[/* inline code block */ 'i', `double`],
 				[/* text */ 't', ` values
  as if by calling `],
-				[/* reference */ 'r', `.Math#min(double,double)`],
+				[/* reference */ 'r', `java.lang.Math#min(double,double)`, `Math.min`],
 				[/* text */ 't', `.`]
 			],
 			[/* parameters */
@@ -1178,7 +1178,7 @@ DocsCollector.collect('java.lang.Double', [
 					[/* inline code block */ 'i', `s`],
 					[/* text */ 't', `
  are ignored.  Whitespace is removed as if by the `],
-					[/* reference */ 'r', `.String#trim()`],
+					[/* reference */ 'r', `java.lang.String#trim()`, `String.trim()`],
 					[/* text */ 't', ` method; that is, both ASCII space and control
  characters are removed. The rest of `],
 					[/* inline code block */ 'i', `s`],
@@ -1358,7 +1358,7 @@ DocsCollector.collect('java.lang.Double', [
  enough in magnitude (greater than or equal to (`],
 				[/* text */ 't', `MAX_VALUE`],
 				[/* text */ 't', ` + `],
-				[/* reference */ 'r', `.Math#ulp(double)`],
+				[/* reference */ 'r', `java.lang.Math#ulp(double)`, `ulp(MAX_VALUE)`],
 				[/* text */ 't', `/2),
  rounding to `],
 				[/* inline code block */ 'i', `double`],
@@ -1383,7 +1383,7 @@ DocsCollector.collect('java.lang.Double', [
 				[/* block */ 'b', [
 					[/* text */ 't', ` To interpret localized string representations of a
  floating-point value, use subclasses of `],
-					[/* reference */ 'r', `java.text.NumberFormat`],
+					[/* reference */ 'r', `java.text.NumberFormat`, `NumberFormat`],
 					[/* text */ 't', `.
 
  `]
@@ -1606,7 +1606,7 @@ DocsCollector.collect('java.lang.Double', [
 								[/* text */ 't', ` followed
  by a decimal string of the unbiased exponent as if produced by
  a call to `],
-								[/* reference */ 'r', `.Integer#toString(int)`],
+								[/* reference */ 'r', `java.lang.Integer#toString(int)`, `Integer.toString`],
 								[/* text */ 't', ` on the
  exponent value.
 
@@ -1880,7 +1880,7 @@ DocsCollector.collect('java.lang.Double', [
 								[/* text */ 't', `n`],
 								[/* text */ 't', ` as a decimal integer, as
  produced by the method `],
-								[/* reference */ 'r', `.Integer#toString(int)`],
+								[/* reference */ 'r', `java.lang.Integer#toString(int)`, `Integer.toString(int)`],
 								[/* text */ 't', `.
  `]
 							]]
@@ -1930,7 +1930,7 @@ DocsCollector.collect('java.lang.Double', [
 				[/* block */ 'b', [
 					[/* text */ 't', `To create localized string representations of a floating-point
  value, use subclasses of `],
-					[/* reference */ 'r', `java.text.NumberFormat`],
+					[/* reference */ 'r', `java.text.NumberFormat`, `NumberFormat`],
 					[/* text */ 't', `.`]
 				]]
 			],

@@ -17,7 +17,7 @@ DocsCollector.collect('java.util.Spliterator$OfPrimitive', [
 				[/* inline code block */ 'i', `false`],
 				[/* text */ 't', `.  If this
  Spliterator is `],
-				[/* reference */ 'r', `.Spliterator#ORDERED`],
+				[/* reference */ 'r', `java.util.Spliterator#ORDERED`, `Spliterator.ORDERED`],
 				[/* text */ 't', ` the action is performed on the
  next element in encounter order.  Exceptions thrown by the
  action are relayed to the caller.
@@ -50,7 +50,7 @@ DocsCollector.collect('java.util.Spliterator$OfPrimitive', [
 				[/* text */ 't', `Performs the given action for each remaining element, sequentially in
  the current thread, until all elements have been processed or the
  action throws an exception.  If this Spliterator is `],
-				[/* reference */ 'r', `.Spliterator#ORDERED`],
+				[/* reference */ 'r', `java.util.Spliterator#ORDERED`, `Spliterator.ORDERED`],
 				[/* text */ 't', `,
  actions are performed in encounter order.  Exceptions thrown by the
  action are relayed to the caller.

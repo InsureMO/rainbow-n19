@@ -8,13 +8,13 @@ DocsCollector.collect('java.util.function.DoubleFunction', [
 		[/* inline code block */ 'i', `double`],
 		[/* text */ 't', `-consuming primitive specialization for
  `],
-		[/* reference */ 'r', `java.util.function.Function`],
+		[/* reference */ 'r', `java.util.function.Function`, `Function`],
 		[/* text */ 't', `.
 
  `],
 		[/* block */ 'b', [
 			[/* text */ 't', `This is a `],
-			[/* reference */ 'r', `.package-summary`],
+			[/* text */ 't', `functional interface`],
 			[/* text */ 't', `
  whose functional method is `],
 			[/* reference */ 'r', `#apply(double)`, `apply(double)`],

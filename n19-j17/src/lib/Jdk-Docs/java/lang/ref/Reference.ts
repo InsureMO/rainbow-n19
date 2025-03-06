@@ -14,7 +14,7 @@ DocsCollector.collect('java.lang.ref.Reference', [
 		[/* method */ 'clone()', [
 			[/* method description */
 				[/* text */ 't', `Throws `],
-				[/* reference */ 'r', `java.lang.CloneNotSupportedException`],
+				[/* reference */ 'r', `java.lang.CloneNotSupportedException`, `CloneNotSupportedException`],
 				[/* text */ 't', `. A `],
 				[/* inline code block */ 'i', `Reference`],
 				[/* text */ 't', ` cannot be
@@ -120,7 +120,7 @@ DocsCollector.collect('java.lang.ref.Reference', [
 			[/* method description */
 				[/* text */ 't', `Ensures that the object referenced by the given reference remains
  `],
-				[/* reference */ 'r', `.package-summary#reachability`],
+				[/* text */ 't', `strongly reachable`],
 				[/* text */ 't', `,
  regardless of any prior actions of the program that might otherwise cause
  the object to become unreachable; thus, the referenced object is not
@@ -132,7 +132,7 @@ DocsCollector.collect('java.lang.ref.Reference', [
 				[/* block */ 'b', [
 					[/* text */ 't', ` This method establishes an ordering for
  `],
-					[/* reference */ 'r', `.package-summary#reachability`],
+					[/* text */ 't', `strong reachability`],
 					[/* text */ 't', `
  with respect to garbage collection.  It controls relations that are
  otherwise only implicit in a program -- the reachability conditions

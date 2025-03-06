@@ -4,13 +4,13 @@ import {DocsCollector} from '../../../DocsCollector';
 DocsCollector.collect('java.util.random.RandomGenerator$StreamableGenerator', [
 	[/* class description */
 		[/* text */ 't', `The `],
-		[/* reference */ 'r', `java.util.random.RandomGenerator.StreamableGenerator`],
+		[/* reference */ 'r', `java.util.random.RandomGenerator.StreamableGenerator`, `RandomGenerator.StreamableGenerator`],
 		[/* text */ 't', ` interface augments the
  `],
-		[/* reference */ 'r', `java.util.random.RandomGenerator`],
+		[/* reference */ 'r', `java.util.random.RandomGenerator`, `RandomGenerator`],
 		[/* text */ 't', ` interface to provide methods that return streams
  of `],
-		[/* reference */ 'r', `java.util.random.RandomGenerator`],
+		[/* reference */ 'r', `java.util.random.RandomGenerator`, `RandomGenerator`],
 		[/* text */ 't', ` objects. Ideally, such a stream of objects
  would have the property that the behavior of each object is statistically
  independent of all the others. In practice, one may have to settle for
@@ -19,10 +19,10 @@ DocsCollector.collect('java.util.random.RandomGenerator$StreamableGenerator', [
  `],
 		[/* block */ 'b', [
 			[/* text */ 't', ` A generator that implements interface `],
-			[/* reference */ 'r', `java.util.random.RandomGenerator.SplittableGenerator`],
+			[/* reference */ 'r', `java.util.random.RandomGenerator.SplittableGenerator`, `RandomGenerator.SplittableGenerator`],
 			[/* text */ 't', ` may
  choose to use its `],
-			[/* reference */ 'r', `.RandomGenerator.SplittableGenerator#splits()`],
+			[/* reference */ 'r', `java.util.random.RandomGenerator.SplittableGenerator#splits()`, `splits`],
 			[/* text */ 't', `() method to
  implement the `],
 			[/* reference */ 'r', `#rngs()`, `rngs`],
@@ -33,10 +33,10 @@ DocsCollector.collect('java.util.random.RandomGenerator$StreamableGenerator', [
 		]],
 		[/* block */ 'b', [
 			[/* text */ 't', ` A generator that implements interface `],
-			[/* reference */ 'r', `java.util.random.RandomGenerator.JumpableGenerator`],
+			[/* reference */ 'r', `java.util.random.RandomGenerator.JumpableGenerator`, `RandomGenerator.JumpableGenerator`],
 			[/* text */ 't', ` may
  choose to use its `],
-			[/* reference */ 'r', `.RandomGenerator.JumpableGenerator#jumps()`],
+			[/* reference */ 'r', `java.util.random.RandomGenerator.JumpableGenerator#jumps()`, `jumps`],
 			[/* text */ 't', `() method to implement the
  `],
 			[/* reference */ 'r', `#rngs()`, `rngs`],
@@ -46,10 +46,10 @@ DocsCollector.collect('java.util.random.RandomGenerator$StreamableGenerator', [
 		]],
 		[/* block */ 'b', [
 			[/* text */ 't', ` A generator that implements interface `],
-			[/* reference */ 'r', `java.util.random.RandomGenerator.LeapableGenerator`],
+			[/* reference */ 'r', `java.util.random.RandomGenerator.LeapableGenerator`, `RandomGenerator.LeapableGenerator`],
 			[/* text */ 't', ` may
  choose to use its `],
-			[/* reference */ 'r', `.RandomGenerator.LeapableGenerator#leaps()`],
+			[/* reference */ 'r', `java.util.random.RandomGenerator.LeapableGenerator#leaps()`, `leaps`],
 			[/* text */ 't', `() method to
  implement the `],
 			[/* reference */ 'r', `#rngs()`, `rngs`],
@@ -60,10 +60,10 @@ DocsCollector.collect('java.util.random.RandomGenerator$StreamableGenerator', [
 		]],
 		[/* block */ 'b', [
 			[/* text */ 't', ` Objects that implement `],
-			[/* reference */ 'r', `java.util.random.RandomGenerator.StreamableGenerator`],
+			[/* reference */ 'r', `java.util.random.RandomGenerator.StreamableGenerator`, `RandomGenerator.StreamableGenerator`],
 			[/* text */ 't', ` are typically not
  cryptographically secure. Consider instead using `],
-			[/* reference */ 'r', `java.security.SecureRandom`],
+			[/* reference */ 'r', `java.security.SecureRandom`, `SecureRandom`],
 			[/* text */ 't', ` to
  get a cryptographically secure pseudo-random number generator for use by
  security-sensitive applications.`]
@@ -76,19 +76,19 @@ DocsCollector.collect('java.util.random.RandomGenerator$StreamableGenerator', [
 			[/* method description */
 				[/* text */ 't', `Returns an effectively unlimited stream of objects, each of which
  implements the `],
-				[/* reference */ 'r', `java.util.random.RandomGenerator`],
+				[/* reference */ 'r', `java.util.random.RandomGenerator`, `RandomGenerator`],
 				[/* text */ 't', ` interface. Ideally the
  generators in the stream will appear to be statistically independent.
  The new generators are of the same
  `],
-				[/* reference */ 'r', `.package-summary#algorithms`],
+				[/* text */ 't', `algorithm`],
 				[/* text */ 't', ` as this generator.`]
 			],
 			/* parameters */ UDF,
 			/* throws */ UDF,
 			[/* return description */
 				[/* text */ 't', `a stream of objects that implement the `],
-				[/* reference */ 'r', `java.util.random.RandomGenerator`],
+				[/* reference */ 'r', `java.util.random.RandomGenerator`, `RandomGenerator`],
 				[/* text */ 't', ` interface`]
 			]
 		]],
@@ -96,12 +96,12 @@ DocsCollector.collect('java.util.random.RandomGenerator$StreamableGenerator', [
 			[/* method description */
 				[/* text */ 't', `Returns an effectively unlimited stream of objects, each of which
  implements the `],
-				[/* reference */ 'r', `java.util.random.RandomGenerator`],
+				[/* reference */ 'r', `java.util.random.RandomGenerator`, `RandomGenerator`],
 				[/* text */ 't', ` interface. Ideally the
  generators in the stream will appear to be statistically independent.
  The new generators are of the same
  `],
-				[/* reference */ 'r', `.package-summary#algorithms`],
+				[/* text */ 't', `algorithm`],
 				[/* text */ 't', ` as this generator.`]
 			],
 			[/* parameters */
@@ -119,25 +119,25 @@ DocsCollector.collect('java.util.random.RandomGenerator$StreamableGenerator', [
 			],
 			[/* return description */
 				[/* text */ 't', `a stream of objects that implement the `],
-				[/* reference */ 'r', `java.util.random.RandomGenerator`],
+				[/* reference */ 'r', `java.util.random.RandomGenerator`, `RandomGenerator`],
 				[/* text */ 't', ` interface`]
 			]
 		]],
 		[/* method */ 'of(java.lang.String)', [
 			[/* method description */
 				[/* text */ 't', `Returns an instance of `],
-				[/* reference */ 'r', `java.util.random.RandomGenerator.StreamableGenerator`],
+				[/* reference */ 'r', `java.util.random.RandomGenerator.StreamableGenerator`, `RandomGenerator.StreamableGenerator`],
 				[/* text */ 't', ` that utilizes the
  `],
 				[/* inline code block */ 'i', `name`],
-				[/* reference */ 'r', `.package-summary#algorithms`],
+				[/* text */ 't', `algorithm`],
 				[/* text */ 't', `.`]
 			],
 			[/* parameters */
 				[/* parameter */ 'name', [/* parameter description */
 					[/* text */ 't', `Name of random number generator
               `],
-					[/* reference */ 'r', `.package-summary#algorithms`]
+					[/* text */ 't', `algorithm`]
 				]]
 			],
 			[/* throws */
@@ -150,7 +150,7 @@ DocsCollector.collect('java.util.random.RandomGenerator$StreamableGenerator', [
 			],
 			[/* return description */
 				[/* text */ 't', `An instance of `],
-				[/* reference */ 'r', `java.util.random.RandomGenerator.StreamableGenerator`]
+				[/* reference */ 'r', `java.util.random.RandomGenerator.StreamableGenerator`, `RandomGenerator.StreamableGenerator`]
 			]
 		]]
 	],

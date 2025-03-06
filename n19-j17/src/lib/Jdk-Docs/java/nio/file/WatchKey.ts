@@ -4,10 +4,10 @@ import {DocsCollector} from '../../../DocsCollector';
 DocsCollector.collect('java.nio.file.WatchKey', [
 	[/* class description */
 		[/* text */ 't', `A token representing the registration of a `],
-		[/* reference */ 'r', `java.nio.file.Watchable`],
+		[/* reference */ 'r', `java.nio.file.Watchable`, `watchable`],
 		[/* text */ 't', ` object
  with a `],
-		[/* reference */ 'r', `java.nio.file.WatchService`],
+		[/* reference */ 'r', `java.nio.file.WatchService`, `WatchService`],
 		[/* text */ 't', `.
 
  `],
@@ -29,7 +29,7 @@ DocsCollector.collect('java.nio.file.WatchKey', [
      or `],
 			[/* block */ 'b', [
 				[/* text */ 't', ` By `],
-				[/* reference */ 'r', `.WatchService#close()`],
+				[/* reference */ 'r', `java.nio.file.WatchService#close()`, `closing`],
 				[/* text */ 't', ` the watch service. `]
 			]]
 		]],
@@ -42,9 +42,9 @@ DocsCollector.collect('java.nio.file.WatchKey', [
 			[/* text */ 't', `signalled`],
 			[/* text */ 't', `
  and queued so that it can be retrieved by invoking the watch service's `],
-			[/* reference */ 'r', `.WatchService#poll()`],
+			[/* reference */ 'r', `java.nio.file.WatchService#poll()`, `poll`],
 			[/* text */ 't', ` or `],
-			[/* reference */ 'r', `.WatchService#take()`],
+			[/* reference */ 'r', `java.nio.file.WatchService#take()`, `take`],
 			[/* text */ 't', ` methods. Once
  signalled, a key remains in this state until its `],
 			[/* reference */ 'r', `#reset()`, `reset`],

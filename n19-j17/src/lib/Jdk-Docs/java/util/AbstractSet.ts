@@ -153,14 +153,14 @@ DocsCollector.collect('java.util.AbstractSet', [
 					[/* text */ 't', `if the class of an element of this set
          is incompatible with the specified collection
  (`],
-					[/* reference */ 'r', `.Collection#optional-restrictions`],
+					[/* reference */ 'r', `java.util.Collection#optional-restrictions`, `optional`],
 					[/* text */ 't', `)`]
 				]],
 				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
 					[/* text */ 't', `if this set contains a null element and the
          specified collection does not permit null elements
  (`],
-					[/* reference */ 'r', `.Collection#optional-restrictions`],
+					[/* reference */ 'r', `java.util.Collection#optional-restrictions`, `optional`],
 					[/* text */ 't', `),
          or if the specified collection is null`]
 				]]
@@ -189,7 +189,7 @@ DocsCollector.collect('java.util.AbstractSet', [
 				[/* inline code block */ 'i', `s2`],
 				[/* text */ 't', `, as required by the general contract of
  `],
-				[/* reference */ 'r', `java.Object#hashCode()`],
+				[/* reference */ 'r', `java.lang.Object#hashCode()`, `Object.hashCode()`],
 				[/* text */ 't', `.
 
  `],

@@ -21,7 +21,7 @@ DocsCollector.collect('java.io.PipedInputStream', [
  decoupling read operations from write operations,
  within limits.
  A pipe is said to be `],
-		[/* text */ 't', `broken`],
+		[/* anchor */ 'r', '#-id', `BROKEN`, `broken`],
 		[/* text */ 't', ` if a
  thread that was providing data bytes to the connected
  piped output stream is no longer alive.`]
@@ -66,7 +66,7 @@ DocsCollector.collect('java.io.PipedInputStream', [
 				[/* reference */ 'r', `#connect(java.io.PipedOutputStream)`, `connected`],
 				[/* text */ 't', `.
  It must be `],
-				[/* reference */ 'r', `.PipedOutputStream#connect(java.io.PipedInputStream)`],
+				[/* reference */ 'r', `java.io.PipedOutputStream#connect(java.io.PipedInputStream)`, `connected`],
 				[/* text */ 't', ` to a
  `],
 				[/* inline code block */ 'i', `PipedOutputStream`],
@@ -85,7 +85,7 @@ DocsCollector.collect('java.io.PipedInputStream', [
 				[/* text */ 't', ` and
  uses the specified pipe size for the pipe's buffer.
  It must be `],
-				[/* reference */ 'r', `.PipedOutputStream#connect(java.io.PipedInputStream)`],
+				[/* reference */ 'r', `java.io.PipedOutputStream#connect(java.io.PipedInputStream)`, `connected`],
 				[/* text */ 't', ` to a `],
 				[/* inline code block */ 'i', `PipedOutputStream`],
 				[/* text */ 't', ` before being used.`]

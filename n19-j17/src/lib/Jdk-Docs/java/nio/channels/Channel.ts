@@ -16,7 +16,7 @@ DocsCollector.collect('java.nio.channels.Channel', [
 			[/* text */ 't', ` A channel is either open or closed.  A channel is open upon creation,
  and once closed it remains closed.  Once a channel is closed, any attempt to
  invoke an I/O operation upon it will cause a `],
-			[/* reference */ 'r', `java.nio.channels.ClosedChannelException`],
+			[/* reference */ 'r', `java.nio.channels.ClosedChannelException`, `ClosedChannelException`],
 			[/* text */ 't', `
  to be thrown.  Whether or not a channel is open may be tested by invoking
  its `],
@@ -51,7 +51,7 @@ DocsCollector.collect('java.nio.channels.Channel', [
 				[/* block */ 'b', [
 					[/* text */ 't', ` After a channel is closed, any further attempt to invoke I/O
  operations upon it will cause a `],
-					[/* reference */ 'r', `java.nio.channels.ClosedChannelException`],
+					[/* reference */ 'r', `java.nio.channels.ClosedChannelException`, `ClosedChannelException`],
 					[/* text */ 't', ` to be
  thrown.
 

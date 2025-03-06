@@ -4,13 +4,13 @@ import {DocsCollector} from '../../DocsCollector';
 DocsCollector.collect('java.util.PriorityQueue', [
 	[/* class description */
 		[/* text */ 't', `An unbounded priority `],
-		[/* reference */ 'r', `java.util.Queue`],
+		[/* reference */ 'r', `java.util.Queue`, `queue`],
 		[/* text */ 't', ` based on a priority heap.
  The elements of the priority queue are ordered according to their
  `],
-		[/* reference */ 'r', `java.lang.Comparable`],
+		[/* reference */ 'r', `java.lang.Comparable`, `natural ordering`],
 		[/* text */ 't', `, or by a `],
-		[/* reference */ 'r', `java.util.Comparator`],
+		[/* reference */ 'r', `java.util.Comparator`, `Comparator`],
 		[/* text */ 't', `
  provided at queue construction time, depending on which constructor is
  used.  A priority queue does not permit `],
@@ -62,9 +62,9 @@ DocsCollector.collect('java.util.PriorityQueue', [
  `],
 			[/* text */ 't', `optional`],
 			[/* text */ 't', ` methods of the `],
-			[/* reference */ 'r', `java.util.Collection`],
+			[/* reference */ 'r', `java.util.Collection`, `Collection`],
 			[/* text */ 't', ` and `],
-			[/* reference */ 'r', `java.util.Iterator`],
+			[/* reference */ 'r', `java.util.Iterator`, `Iterator`],
 			[/* text */ 't', ` interfaces.  The Iterator provided in method `],
 			[/* reference */ 'r', `#iterator()`, `iterator()`],
 			[/* text */ 't', ` and the Spliterator provided in method `],
@@ -88,7 +88,7 @@ DocsCollector.collect('java.util.PriorityQueue', [
 			[/* text */ 't', `
  instance concurrently if any of the threads modifies the queue.
  Instead, use the thread-safe `],
-			[/* reference */ 'r', `java.util.concurrent.PriorityBlockingQueue`],
+			[/* reference */ 'r', `java.util.concurrent.PriorityBlockingQueue`, `PriorityBlockingQueue`],
 			[/* text */ 't', ` class.
 
  `]
@@ -137,7 +137,7 @@ DocsCollector.collect('java.util.PriorityQueue', [
 				[/* text */ 't', ` with the default initial
  capacity (11) that orders its elements according to their
  `],
-				[/* reference */ 'r', `java.lang.Comparable`],
+				[/* reference */ 'r', `java.lang.Comparable`, `natural ordering`],
 				[/* text */ 't', `.`]
 			],
 			/* parameters */ UDF,
@@ -150,7 +150,7 @@ DocsCollector.collect('java.util.PriorityQueue', [
 				[/* text */ 't', ` with the specified initial
  capacity that orders its elements according to their
  `],
-				[/* reference */ 'r', `java.lang.Comparable`],
+				[/* reference */ 'r', `java.lang.Comparable`, `natural ordering`],
 				[/* text */ 't', `.`]
 			],
 			[/* parameters */
@@ -183,7 +183,7 @@ DocsCollector.collect('java.util.PriorityQueue', [
          priority queue.  If `],
 					[/* inline code block */ 'i', `null`],
 					[/* text */ 't', `, the `],
-					[/* reference */ 'r', `java.lang.Comparable`],
+					[/* reference */ 'r', `java.lang.Comparable`, `natural ordering`],
 					[/* text */ 't', ` of the elements will be used.`]
 				]]
 			],
@@ -203,14 +203,14 @@ DocsCollector.collect('java.util.PriorityQueue', [
 				[/* text */ 't', ` containing the elements in the
  specified collection.  If the specified collection is an instance of
  a `],
-				[/* reference */ 'r', `java.util.SortedSet`],
+				[/* reference */ 'r', `java.util.SortedSet`, `SortedSet`],
 				[/* text */ 't', ` or is another `],
 				[/* inline code block */ 'i', `PriorityQueue`],
 				[/* text */ 't', `, this
  priority queue will be ordered according to the same ordering.
  Otherwise, this priority queue will be ordered according to the
  `],
-				[/* reference */ 'r', `java.lang.Comparable`],
+				[/* reference */ 'r', `java.lang.Comparable`, `natural ordering`],
 				[/* text */ 't', ` of its elements.`]
 			],
 			[/* parameters */
@@ -244,7 +244,7 @@ DocsCollector.collect('java.util.PriorityQueue', [
          priority queue.  If `],
 					[/* inline code block */ 'i', `null`],
 					[/* text */ 't', `, the `],
-					[/* reference */ 'r', `java.lang.Comparable`],
+					[/* reference */ 'r', `java.lang.Comparable`, `natural ordering`],
 					[/* text */ 't', ` of the elements will be used.`]
 				]]
 			],
@@ -406,7 +406,7 @@ DocsCollector.collect('java.util.PriorityQueue', [
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` (as specified by `],
-				[/* reference */ 'r', `.Collection#add(E)`],
+				[/* reference */ 'r', `java.util.Collection#add(E)`, `Collection.add(E)`],
 				[/* text */ 't', `)`]
 			]
 		]],
@@ -457,7 +457,7 @@ DocsCollector.collect('java.util.PriorityQueue', [
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` (as specified by `],
-				[/* reference */ 'r', `.Queue#offer(E)`],
+				[/* reference */ 'r', `java.util.Queue#offer(E)`, `Queue.offer(E)`],
 				[/* text */ 't', `)`]
 			]
 		]],
@@ -505,7 +505,7 @@ DocsCollector.collect('java.util.PriorityQueue', [
          null elements and the specified collection does not support
          null elements
          (`],
-					[/* text */ 't', `optional`],
+					[/* reference */ 'r', `java.util.Collection#optional-restrictions`, `optional`],
 					[/* text */ 't', `),
          or if the specified collection is null`]
 				]]
@@ -558,7 +558,7 @@ DocsCollector.collect('java.util.PriorityQueue', [
          null elements and the specified collection does not permit null
          elements
          (`],
-					[/* text */ 't', `optional`],
+					[/* reference */ 'r', `java.util.Collection#optional-restrictions`, `optional`],
 					[/* text */ 't', `),
          or if the specified collection is null`]
 				]]
@@ -605,15 +605,15 @@ DocsCollector.collect('java.util.PriorityQueue', [
 		[/* method */ 'spliterator()', [
 			[/* method description */
 				[/* text */ 't', `Creates a `],
-				[/* reference */ 'r', `.Spliterator#binding`],
+				[/* reference */ 'r', `java.util.Spliterator#binding`, `late-binding`],
 				[/* text */ 't', `
  and `],
 				[/* text */ 't', `fail-fast`],
-				[/* reference */ 'r', `java.util.Spliterator`],
+				[/* reference */ 'r', `java.util.Spliterator`, `Spliterator`],
 				[/* text */ 't', ` over the elements in this
  queue. The spliterator does not traverse elements in any particular order
  (the `],
-				[/* reference */ 'r', `.Spliterator#ORDERED`],
+				[/* reference */ 'r', `java.util.Spliterator#ORDERED`, `ORDERED`],
 				[/* text */ 't', ` characteristic is not reported).
 
  `],
@@ -621,12 +621,12 @@ DocsCollector.collect('java.util.PriorityQueue', [
 					[/* text */ 't', `The `],
 					[/* inline code block */ 'i', `Spliterator`],
 					[/* text */ 't', ` reports `],
-					[/* reference */ 'r', `.Spliterator#SIZED`],
+					[/* reference */ 'r', `java.util.Spliterator#SIZED`, `Spliterator.SIZED`],
 					[/* text */ 't', `,
  `],
-					[/* reference */ 'r', `.Spliterator#SUBSIZED`],
+					[/* reference */ 'r', `java.util.Spliterator#SUBSIZED`, `Spliterator.SUBSIZED`],
 					[/* text */ 't', `, and `],
-					[/* reference */ 'r', `.Spliterator#NONNULL`],
+					[/* reference */ 'r', `java.util.Spliterator#NONNULL`, `Spliterator.NONNULL`],
 					[/* text */ 't', `.
  Overriding implementations should document the reporting of additional
  characteristic values.`]
@@ -685,7 +685,7 @@ DocsCollector.collect('java.util.PriorityQueue', [
 				[/* inline code block */ 'i', `null`],
 				[/* text */ 't', ` if this queue is sorted according to
  the `],
-				[/* reference */ 'r', `java.lang.Comparable`],
+				[/* reference */ 'r', `java.lang.Comparable`, `natural ordering`],
 				[/* text */ 't', ` of its elements.`]
 			],
 			/* parameters */ UDF,

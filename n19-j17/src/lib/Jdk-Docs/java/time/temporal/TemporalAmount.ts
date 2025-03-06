@@ -16,7 +16,7 @@ DocsCollector.collect('java.time.temporal.TemporalAmount', [
  The amount can be thought of as a `],
 			[/* inline code block */ 'i', `Map`],
 			[/* text */ 't', ` of `],
-			[/* reference */ 'r', `java.time.temporal.TemporalUnit`],
+			[/* reference */ 'r', `java.time.temporal.TemporalUnit`, `TemporalUnit`],
 			[/* text */ 't', ` to
  `],
 			[/* inline code block */ 'i', `long`],
@@ -34,10 +34,10 @@ DocsCollector.collect('java.time.temporal.TemporalAmount', [
 			[/* text */ 't', `
  There are two common implementations.
  `],
-			[/* reference */ 'r', `java.time.Period`],
+			[/* reference */ 'r', `java.time.Period`, `Period`],
 			[/* text */ 't', ` is a date-based implementation, storing years, months and days.
  `],
-			[/* reference */ 'r', `java.time.Duration`],
+			[/* reference */ 'r', `java.time.Duration`, `Duration`],
 			[/* text */ 't', ` is a time-based implementation, storing seconds and nanoseconds,
  but providing some access using other duration based units such as minutes,
  hours and fixed 24-hour days.
@@ -70,7 +70,7 @@ DocsCollector.collect('java.time.temporal.TemporalAmount', [
  There are two equivalent ways of using this method.
  The first is to invoke this method directly.
  The second is to use `],
-					[/* reference */ 'r', `.Temporal#plus(java.time.temporal.TemporalAmount)`],
+					[/* reference */ 'r', `java.time.temporal.Temporal#plus(java.time.temporal.TemporalAmount)`, `Temporal.plus(TemporalAmount)`],
 					[/* text */ 't', `:
  `]
 				]],
@@ -115,7 +115,7 @@ DocsCollector.collect('java.time.temporal.TemporalAmount', [
  There are two equivalent ways of using this method.
  The first is to invoke this method directly.
  The second is to use `],
-					[/* reference */ 'r', `.Temporal#minus(java.time.temporal.TemporalAmount)`],
+					[/* reference */ 'r', `java.time.temporal.Temporal#minus(java.time.temporal.TemporalAmount)`, `Temporal.minus(TemporalAmount)`],
 					[/* text */ 't', `:
  `]
 				]],

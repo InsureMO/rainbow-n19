@@ -21,7 +21,7 @@ DocsCollector.collect('java.security.Provider', [
 			[/* text */ 't', `Some provider implementations may encounter unrecoverable internal
  errors during their operation, for example a failure to communicate with a
  security token. A `],
-			[/* reference */ 'r', `java.security.ProviderException`],
+			[/* reference */ 'r', `java.security.ProviderException`, `ProviderException`],
 			[/* text */ 't', ` should be used to indicate
  such errors.
 
@@ -100,10 +100,10 @@ DocsCollector.collect('java.security.Provider', [
 			[/* inline code block */ 'i', `META-INF/services`],
 			[/* text */ 't', `.
  Security providers are looked up via the `],
-			[/* reference */ 'r', `java.util.ServiceLoader`],
+			[/* reference */ 'r', `java.util.ServiceLoader`, `ServiceLoader`],
 			[/* text */ 't', ` mechanism
  using the `],
-			[/* reference */ 'r', `java.ClassLoader#getSystemClassLoader()`],
+			[/* reference */ 'r', `java.lang.ClassLoader#getSystemClassLoader()`, `application class loader`],
 			[/* text */ 't', `.
 
  `]
@@ -112,7 +112,7 @@ DocsCollector.collect('java.security.Provider', [
 			[/* text */ 't', `Providers may be configured such that they are automatically
  installed and made available at runtime via the
  `],
-			[/* reference */ 'r', `.Security#getProviders()`],
+			[/* reference */ 'r', `java.security.Security#getProviders()`, `Security.getProviders()`],
 			[/* text */ 't', ` method.
  The mechanism for configuring and installing security providers is
  implementation-specific.`]
@@ -170,7 +170,7 @@ DocsCollector.collect('java.security.Provider', [
  more than two components (separated by '.' as defined above), only
  the first two components are retained. The resulting string is then
  passed to `],
-					[/* reference */ 'r', `java.Double#valueOf(java.lang.String)`],
+					[/* reference */ 'r', `java.lang.Double#valueOf(java.lang.String)`, `Double.valueOf(String)`],
 					[/* text */ 't', ` to generate version number,
  i.e. `],
 					[/* reference */ 'r', `#getVersion()`, `getVersion()`],
@@ -240,7 +240,7 @@ DocsCollector.collect('java.security.Provider', [
 			[/* throws */
 				[/* throw */ 'java.lang.SecurityException', [/* throw description */
 					[/* text */ 't', `if a security manager exists and its `],
-					[/* reference */ 'r', `java.SecurityManager#checkSecurityAccess(java.lang.String)`],
+					[/* reference */ 'r', `java.lang.SecurityManager#checkSecurityAccess(java.lang.String)`, `SecurityManager.checkSecurityAccess(java.lang.String)`],
 					[/* text */ 't', ` method denies
       access to set property values.`]
 				]],
@@ -296,7 +296,7 @@ DocsCollector.collect('java.security.Provider', [
 			[/* throws */
 				[/* throw */ 'java.lang.SecurityException', [/* throw description */
 					[/* text */ 't', `if a security manager exists and its `],
-					[/* reference */ 'r', `java.SecurityManager#checkSecurityAccess(java.lang.String)`],
+					[/* reference */ 'r', `java.lang.SecurityManager#checkSecurityAccess(java.lang.String)`, `SecurityManager.checkSecurityAccess(java.lang.String)`],
 					[/* text */ 't', ` method denies
           access to remove this provider's properties.`]
 				]],
@@ -420,7 +420,7 @@ DocsCollector.collect('java.security.Provider', [
 			[/* parameters */
 				[/* parameter */ 'type', [/* parameter description */
 					[/* text */ 't', `the type of `],
-					[/* reference */ 'r', `java.security.Provider.Service`],
+					[/* reference */ 'r', `java.security.Provider.Service`, `service`],
 					[/* text */ 't', ` requested
  (for example, `],
 					[/* inline code block */ 'i', `MessageDigest`],
@@ -497,7 +497,7 @@ DocsCollector.collect('java.security.Provider', [
 			[/* throws */
 				[/* throw */ 'java.lang.SecurityException', [/* throw description */
 					[/* text */ 't', `if a security manager exists and its `],
-					[/* reference */ 'r', `java.SecurityManager#checkSecurityAccess(java.lang.String)`],
+					[/* reference */ 'r', `java.lang.SecurityManager#checkSecurityAccess(java.lang.String)`, `SecurityManager.checkSecurityAccess(java.lang.String)`],
 					[/* text */ 't', ` method
           denies access to remove this provider's properties.`]
 				]]
@@ -540,7 +540,7 @@ DocsCollector.collect('java.security.Provider', [
 			[/* throws */
 				[/* throw */ 'java.lang.SecurityException', [/* throw description */
 					[/* text */ 't', `if a security manager exists and its `],
-					[/* reference */ 'r', `java.SecurityManager#checkSecurityAccess(java.lang.String)`],
+					[/* reference */ 'r', `java.lang.SecurityManager#checkSecurityAccess(java.lang.String)`, `SecurityManager.checkSecurityAccess(java.lang.String)`],
 					[/* text */ 't', ` method
           denies access to set property values.`]
 				]]
@@ -586,7 +586,7 @@ DocsCollector.collect('java.security.Provider', [
 			[/* throws */
 				[/* throw */ 'java.lang.SecurityException', [/* throw description */
 					[/* text */ 't', `if a security manager exists and its `],
-					[/* reference */ 'r', `java.SecurityManager#checkSecurityAccess(java.lang.String)`],
+					[/* reference */ 'r', `java.lang.SecurityManager#checkSecurityAccess(java.lang.String)`, `SecurityManager.checkSecurityAccess(java.lang.String)`],
 					[/* text */ 't', ` method
           denies access to set property values or remove properties.`]
 				]]
@@ -634,7 +634,7 @@ DocsCollector.collect('java.security.Provider', [
 			[/* throws */
 				[/* throw */ 'java.lang.SecurityException', [/* throw description */
 					[/* text */ 't', `if a security manager exists and its `],
-					[/* reference */ 'r', `java.SecurityManager#checkSecurityAccess(java.lang.String)`],
+					[/* reference */ 'r', `java.lang.SecurityManager#checkSecurityAccess(java.lang.String)`, `SecurityManager.checkSecurityAccess(java.lang.String)`],
 					[/* text */ 't', ` method
           denies access to set property values and remove properties.`]
 				]]
@@ -677,7 +677,7 @@ DocsCollector.collect('java.security.Provider', [
 			[/* throws */
 				[/* throw */ 'java.lang.SecurityException', [/* throw description */
 					[/* text */ 't', `if a security manager exists and its `],
-					[/* reference */ 'r', `java.SecurityManager#checkSecurityAccess(java.lang.String)`],
+					[/* reference */ 'r', `java.lang.SecurityManager#checkSecurityAccess(java.lang.String)`, `SecurityManager.checkSecurityAccess(java.lang.String)`],
 					[/* text */ 't', ` method
           denies access to set property values or remove properties.`]
 				]]
@@ -753,7 +753,7 @@ DocsCollector.collect('java.security.Provider', [
 			[/* throws */
 				[/* throw */ 'java.lang.SecurityException', [/* throw description */
 					[/* text */ 't', `if a security manager exists and its `],
-					[/* reference */ 'r', `java.SecurityManager#checkSecurityAccess(java.lang.String)`],
+					[/* reference */ 'r', `java.lang.SecurityManager#checkSecurityAccess(java.lang.String)`, `SecurityManager.checkSecurityAccess(java.lang.String)`],
 					[/* text */ 't', ` method
           denies access to set property values or remove properties.`]
 				]]
@@ -797,7 +797,7 @@ DocsCollector.collect('java.security.Provider', [
 			[/* throws */
 				[/* throw */ 'java.lang.SecurityException', [/* throw description */
 					[/* text */ 't', `if a security manager exists and its `],
-					[/* reference */ 'r', `java.SecurityManager#checkSecurityAccess(java.lang.String)`],
+					[/* reference */ 'r', `java.lang.SecurityManager#checkSecurityAccess(java.lang.String)`, `SecurityManager.checkSecurityAccess(java.lang.String)`],
 					[/* text */ 't', ` method
           denies access to set property values.`]
 				]]
@@ -844,7 +844,7 @@ DocsCollector.collect('java.security.Provider', [
 			[/* throws */
 				[/* throw */ 'java.lang.SecurityException', [/* throw description */
 					[/* text */ 't', `if a security manager exists and its `],
-					[/* reference */ 'r', `java.SecurityManager#checkSecurityAccess(java.lang.String)`],
+					[/* reference */ 'r', `java.lang.SecurityManager#checkSecurityAccess(java.lang.String)`, `SecurityManager.checkSecurityAccess(java.lang.String)`],
 					[/* text */ 't', ` method
           denies access to set property values.`]
 				]]
@@ -894,7 +894,7 @@ DocsCollector.collect('java.security.Provider', [
 			[/* throws */
 				[/* throw */ 'java.lang.SecurityException', [/* throw description */
 					[/* text */ 't', `if a security manager exists and its `],
-					[/* reference */ 'r', `java.SecurityManager#checkSecurityAccess(java.lang.String)`],
+					[/* reference */ 'r', `java.lang.SecurityManager#checkSecurityAccess(java.lang.String)`, `SecurityManager.checkSecurityAccess(java.lang.String)`],
 					[/* text */ 't', ` method
           denies access to remove this provider's properties.`]
 				]]
@@ -936,7 +936,7 @@ DocsCollector.collect('java.security.Provider', [
 			[/* throws */
 				[/* throw */ 'java.lang.SecurityException', [/* throw description */
 					[/* text */ 't', `if a security manager exists and its `],
-					[/* reference */ 'r', `java.SecurityManager#checkSecurityAccess(java.lang.String)`],
+					[/* reference */ 'r', `java.lang.SecurityManager#checkSecurityAccess(java.lang.String)`, `SecurityManager.checkSecurityAccess(java.lang.String)`],
 					[/* text */ 't', ` method
           denies access to set property values.`]
 				]]
@@ -1001,7 +1001,7 @@ DocsCollector.collect('java.security.Provider', [
 			[/* throws */
 				[/* throw */ 'java.lang.SecurityException', [/* throw description */
 					[/* text */ 't', `if a security manager exists and its `],
-					[/* reference */ 'r', `java.SecurityManager#checkSecurityAccess(java.lang.String)`],
+					[/* reference */ 'r', `java.lang.SecurityManager#checkSecurityAccess(java.lang.String)`, `SecurityManager.checkSecurityAccess(java.lang.String)`],
 					[/* text */ 't', ` method
           denies access to clear this provider`]
 				]]
@@ -1084,7 +1084,7 @@ DocsCollector.collect('java.security.Provider', [
 			[/* throws */
 				[/* throw */ 'java.lang.SecurityException', [/* throw description */
 					[/* text */ 't', `if a security manager exists and its `],
-					[/* reference */ 'r', `java.SecurityManager#checkSecurityAccess(java.lang.String)`],
+					[/* reference */ 'r', `java.lang.SecurityManager#checkSecurityAccess(java.lang.String)`, `SecurityManager.checkSecurityAccess(java.lang.String)`],
 					[/* text */ 't', ` method
           denies access to set property values.`]
 				]]

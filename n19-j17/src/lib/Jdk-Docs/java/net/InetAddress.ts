@@ -119,17 +119,17 @@ DocsCollector.collect('java.net.InetAddress', [
 			[/* text */ 't', `
 
  For IPv4 address format, please refer to `],
-			[/* reference */ 'r', `.Inet4Address#format`],
+			[/* text */ 't', `Inet4Address#format`],
 			[/* text */ 't', `; For IPv6
  address format, please refer to `],
-			[/* reference */ 'r', `.Inet6Address#format`],
+			[/* text */ 't', `Inet6Address#format`],
 			[/* text */ 't', `.
 
  `]
 		]],
 		[/* block */ 'b', [
 			[/* text */ 't', `There is a `],
-			[/* reference */ 'r', `.net-properties#Ipv4IPv6`],
+			[/* text */ 't', `couple of System Properties`],
 			[/* text */ 't', ` affecting how IPv4 and IPv6 addresses are used.`]
 		]],
 		[/* block */ 'b', ` Host Name Resolution `],
@@ -709,7 +709,7 @@ DocsCollector.collect('java.net.InetAddress', [
  either the form defined in RFC 2732 or the literal IPv6 address
  format defined in RFC 2373 is accepted. IPv6 scoped addresses are also
  supported. See `],
-					[/* reference */ 'r', `.Inet6Address#scoped`],
+					[/* text */ 't', `here`],
 					[/* text */ 't', ` for a description of IPv6
  scoped addresses.
 
@@ -854,7 +854,7 @@ DocsCollector.collect('java.net.InetAddress', [
  also be qualified by appending a scoped zone identifier or scope_id.
  The syntax and usage of scope_ids is described
  `],
-					[/* reference */ 'r', `.Inet6Address#scoped`],
+					[/* text */ 't', `here`],
 					[/* text */ 't', `.
 
  `]

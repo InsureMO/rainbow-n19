@@ -5,7 +5,7 @@ DocsCollector.collect('java.io.OutputStreamWriter', [
 	[/* class description */
 		[/* text */ 't', `An OutputStreamWriter is a bridge from character streams to byte streams:
  Characters written to it are encoded into bytes using a specified `],
-		[/* reference */ 'r', `java.nio.charset.Charset`],
+		[/* reference */ 'r', `java.nio.charset.Charset`, `charset`],
 		[/* text */ 't', `.  The charset that it uses
  may be specified by name or may be given explicitly, or the platform's
  default charset may be accepted.
@@ -56,7 +56,7 @@ DocsCollector.collect('java.io.OutputStreamWriter', [
 			[/* text */ 't', `substitution sequence`],
 			[/* text */ 't', `.
  The `],
-			[/* reference */ 'r', `java.nio.charset.CharsetEncoder`],
+			[/* reference */ 'r', `java.nio.charset.CharsetEncoder`, `CharsetEncoder`],
 			[/* text */ 't', ` class should be used when more
  control over the encoding process is required.`]
 		]]
@@ -85,7 +85,7 @@ DocsCollector.collect('java.io.OutputStreamWriter', [
 				[/* parameter */ 'charsetName', [/* parameter description */
 					[/* text */ 't', `The name of a supported
          `],
-					[/* reference */ 'r', `java.nio.charset.Charset`]
+					[/* reference */ 'r', `java.nio.charset.Charset`, `charset`]
 				]]
 			],
 			[/* throws */

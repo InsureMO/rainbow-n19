@@ -8,7 +8,7 @@ DocsCollector.collect('java.time.temporal.ValueRange', [
 		[/* block */ 'b', [
 			[/* text */ 't', `
  All `],
-			[/* reference */ 'r', `java.time.temporal.TemporalField`],
+			[/* reference */ 'r', `java.time.temporal.TemporalField`, `TemporalField`],
 			[/* text */ 't', ` instances have a valid range of values.
  For example, the ISO day-of-month runs from 1 to somewhere between 28 and 31.
  This class captures that valid range.

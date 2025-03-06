@@ -60,10 +60,10 @@ DocsCollector.collect('java.text.AttributedCharacterIterator', [
 		[/* block */ 'b', [
 			[/* text */ 't', `
  Attribute keys are instances of `],
-			[/* reference */ 'r', `java.text.AttributedCharacterIterator.Attribute`],
+			[/* reference */ 'r', `java.text.AttributedCharacterIterator.Attribute`, `AttributedCharacterIterator.Attribute`],
 			[/* text */ 't', ` and its
  subclasses, such as `],
-			[/* reference */ 'r', `java.awt.font.TextAttribute`],
+			[/* reference */ 'r', `java.awt.font.TextAttribute`, `TextAttribute`],
 			[/* text */ 't', `.`]
 		]]
 	],

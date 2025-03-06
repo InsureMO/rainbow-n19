@@ -26,7 +26,7 @@ DocsCollector.collect('java.lang.module.ModuleDescriptor$Requires', [
 				]],
 				[/* block */ 'b', [
 					[/* text */ 't', ` This method satisfies the general contract of the `],
-					[/* reference */ 'r', `java.Object#equals(java.lang.Object)`],
+					[/* reference */ 'r', `java.lang.Object#equals(java.lang.Object)`, `Object.equals`],
 					[/* text */ 't', ` method. `]
 				]]
 			],
@@ -54,14 +54,14 @@ DocsCollector.collect('java.lang.module.ModuleDescriptor$Requires', [
  module names lexicographically. Where the module names are equal
  then the sets of modifiers are compared in the same way that
  module modifiers are compared (see `],
-					[/* reference */ 'r', `.ModuleDescriptor#compareTo(java.lang.module.ModuleDescriptor)`],
+					[/* reference */ 'r', `java.lang.module.ModuleDescriptor#compareTo(java.lang.module.ModuleDescriptor)`, `ModuleDescriptor.compareTo`],
 					[/* text */ 't', `). Where the module names are equal and
  the set of modifiers are equal then the version of the modules
  recorded at compile-time are compared. When comparing the versions
  recorded at compile-time then a dependence that has a recorded
  version is considered to succeed a dependence that does not have a
  recorded version. If both recorded versions are `],
-					[/* reference */ 'r', `.ModuleDescriptor.Version#parse(java.lang.String)`],
+					[/* reference */ 'r', `java.lang.module.ModuleDescriptor.Version#parse(java.lang.String)`, `unparseable`],
 					[/* text */ 't', ` then the `],
 					[/* reference */ 'r', `#rawCompiledVersion()`, `raw version strings`],
 					[/* text */ 't', ` are compared
@@ -89,7 +89,7 @@ DocsCollector.collect('java.lang.module.ModuleDescriptor$Requires', [
 					[/* text */ 't', ` The hash code is based upon the module name, modifiers, and the
  module version if recorded at compile time. It satisfies the general
  contract of the `],
-					[/* reference */ 'r', `java.Object#hashCode()`],
+					[/* reference */ 'r', `java.lang.Object#hashCode()`, `Object.hashCode`],
 					[/* text */ 't', ` method. `]
 				]]
 			],
@@ -131,7 +131,7 @@ DocsCollector.collect('java.lang.module.ModuleDescriptor$Requires', [
 				[/* inline code block */ 'i', `Optional`],
 				[/* text */ 't', ` if no version was recorded or
          the version string recorded is `],
-				[/* reference */ 'r', `.ModuleDescriptor.Version#parse(java.lang.String)`]
+				[/* reference */ 'r', `java.lang.module.ModuleDescriptor.Version#parse(java.lang.String)`, `unparseable`]
 			]
 		]],
 		[/* method */ 'rawCompiledVersion()', [

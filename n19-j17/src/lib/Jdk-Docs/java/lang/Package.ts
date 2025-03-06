@@ -42,12 +42,12 @@ DocsCollector.collect('java.lang.Package', [
 			[/* inline code block */ 'i', `Package`],
 			[/* text */ 't', ` may be explicitly defined with
  the `],
-			[/* reference */ 'r', `.ClassLoader#definePackage(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.net.URL)`],
+			[/* reference */ 'r', `java.lang.ClassLoader#definePackage(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.net.URL)`, `ClassLoader.definePackage(String, String, String, String, String, String, String, URL)`],
 			[/* text */ 't', ` method.
  The caller supplies the specification and implementation titles, versions, and
  vendors. The caller also indicates whether the package is
  `],
-			[/* reference */ 'r', `java.jar.Attributes.Name#SEALED`],
+			[/* text */ 't', `sealed`],
 			[/* text */ 't', `.
  If a `],
 			[/* inline code block */ 'i', `Package`],
@@ -69,14 +69,14 @@ DocsCollector.collect('java.lang.Package', [
 		[/* list */ 'l', [
 			[/* block */ 'b', [
 				[/* text */ 't', `The name of the package is derived from the `],
-				[/* reference */ 'r', `.Class#getName()`],
+				[/* reference */ 'r', `java.lang.Class#getName()`, `binary names`],
 				[/* text */ 't', `
      of the classes. Since classes in a named module must be in a named package,
      the derived name is never empty.`]
 			]],
 			[/* block */ 'b', [
 				[/* text */ 't', `The package is sealed with the `],
-				[/* reference */ 'r', `.ModuleReference#location()`],
+				[/* reference */ 'r', `java.lang.module.ModuleReference#location()`, `module location`],
 				[/* text */ 't', ` as the code source, if known.`]
 			]],
 			[/* block */ 'b', `The specification and implementation titles, versions, and vendors
@@ -103,7 +103,7 @@ DocsCollector.collect('java.lang.Package', [
 				[/* inline code block */ 'i', `""`],
 				[/* text */ 't', ` (for classes in an unnamed package)
      or derived from the `],
-				[/* reference */ 'r', `.Class#getName()`],
+				[/* reference */ 'r', `java.lang.Class#getName()`, `binary names`],
 				[/* text */ 't', ` of the classes
      (for classes in a named package).`]
 			]],
@@ -125,7 +125,7 @@ DocsCollector.collect('java.lang.Package', [
 			[/* text */ 't', ` can be obtained with the `],
 			[/* reference */ 'r', `#getPackage(java.lang.String)`, `Package.getPackage(String)`],
 			[/* text */ 't', ` and `],
-			[/* reference */ 'r', `.ClassLoader#getDefinedPackage(java.lang.String)`],
+			[/* reference */ 'r', `java.lang.ClassLoader#getDefinedPackage(java.lang.String)`, `ClassLoader.getDefinedPackage(String)`],
 			[/* text */ 't', ` methods.
  Every `],
 			[/* inline code block */ 'i', `Package`],
@@ -134,7 +134,7 @@ DocsCollector.collect('java.lang.Package', [
 			[/* reference */ 'r', `#getPackages()`, `Package.getPackages()`],
 			[/* text */ 't', ` and
  `],
-			[/* reference */ 'r', `.ClassLoader#getDefinedPackages()`],
+			[/* reference */ 'r', `java.lang.ClassLoader#getDefinedPackages()`, `ClassLoader.getDefinedPackages()`],
 			[/* text */ 't', ` methods.`]
 		]]
 	],
@@ -208,7 +208,7 @@ DocsCollector.collect('java.lang.Package', [
  value is an array of length 0.
 
  The difference between this method and `],
-				[/* reference */ 'r', `.AnnotatedElement#getAnnotation(java.lang.Class)`],
+				[/* reference */ 'r', `java.lang.reflect.AnnotatedElement#getAnnotation(java.lang.Class)`, `AnnotatedElement.getAnnotation(Class)`],
 				[/* text */ 't', `
  is that this method detects if its argument is a `],
 				[/* text */ 't', `repeatable
@@ -258,7 +258,7 @@ DocsCollector.collect('java.lang.Package', [
  0.
 
  The difference between this method and `],
-					[/* reference */ 'r', `.AnnotatedElement#getDeclaredAnnotation(java.lang.Class)`],
+					[/* reference */ 'r', `java.lang.reflect.AnnotatedElement#getDeclaredAnnotation(java.lang.Class)`, `AnnotatedElement.getDeclaredAnnotation(Class)`],
 					[/* text */ 't', ` is that this method detects if its
  argument is a `],
 					[/* text */ 't', `repeatable annotation type`],
@@ -598,7 +598,7 @@ DocsCollector.collect('java.lang.Package', [
 						]],
 						[/* dd */ 'dd', [
 							[/* text */ 't', `any character for which `],
-							[/* reference */ 'r', `.Character#isDigit(char)`],
+							[/* reference */ 'r', `java.lang.Character#isDigit(char)`, `Character.isDigit(char)`],
 							[/* text */ 't', ` returns `],
 							[/* inline code block */ 'i', `true`],
 							[/* text */ 't', `,
@@ -652,7 +652,7 @@ DocsCollector.collect('java.lang.Package', [
 				[/* block */ 'b', [
 					[/* text */ 't', `
  Calling this method is equivalent to calling `],
-					[/* reference */ 'r', `.ClassLoader#getPackage(java.lang.String)`],
+					[/* reference */ 'r', `java.lang.ClassLoader#getPackage(java.lang.String)`, `ClassLoader.getPackage(java.lang.String)`],
 					[/* text */ 't', `
  on a `],
 					[/* inline code block */ 'i', `ClassLoader`],
@@ -698,7 +698,7 @@ DocsCollector.collect('java.lang.Package', [
 				[/* block */ 'b', [
 					[/* text */ 't', `
  Calling this method is equivalent to calling `],
-					[/* reference */ 'r', `.ClassLoader#getPackages()`],
+					[/* reference */ 'r', `java.lang.ClassLoader#getPackages()`, `ClassLoader.getPackages()`],
 					[/* text */ 't', `
  on a `],
 					[/* inline code block */ 'i', `ClassLoader`],

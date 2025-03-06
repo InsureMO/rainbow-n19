@@ -7,7 +7,7 @@ DocsCollector.collect('java.lang.TypeNotPresentException', [
  representing the type's name, but no definition for the type with
  the specified name can be found.   This exception differs from
  `],
-		[/* reference */ 'r', `java.lang.ClassNotFoundException`],
+		[/* reference */ 'r', `java.lang.ClassNotFoundException`, `ClassNotFoundException`],
 		[/* text */ 't', ` in that `],
 		[/* inline code block */ 'i', `ClassNotFoundException`],
 		[/* text */ 't', ` is a
@@ -19,7 +19,7 @@ DocsCollector.collect('java.lang.TypeNotPresentException', [
  are accessed as well as when types (e.g., classes, interfaces or
  annotation types) are loaded.
  In particular, this exception can be thrown by the `],
-			[/* reference */ 'r', `java.lang.reflect.AnnotatedElement`],
+			[/* reference */ 'r', `java.lang.reflect.AnnotatedElement`, `API used to read annotations reflectively`],
 			[/* text */ 't', `.`]
 		]]
 	],

@@ -4,7 +4,7 @@ import {DocsCollector} from '../../DocsCollector';
 DocsCollector.collect('java.util.NavigableSet', [
 	[/* class description */
 		[/* text */ 't', `A `],
-		[/* reference */ 'r', `java.util.SortedSet`],
+		[/* reference */ 'r', `java.util.SortedSet`, `SortedSet`],
 		[/* text */ 't', ` extended with navigation methods reporting
  closest matches for given search targets. Methods `],
 		[/* reference */ 'r', `#lower(E)`, `lower(E)`],
@@ -79,7 +79,7 @@ DocsCollector.collect('java.util.NavigableSet', [
  `],
 			[/* inline code block */ 'i', `null`],
 			[/* text */ 't', ` elements. (Note that sorted sets of `],
-			[/* reference */ 'r', `java.lang.Comparable`],
+			[/* reference */ 'r', `java.lang.Comparable`, `Comparable`],
 			[/* text */ 't', ` elements intrinsically do not permit `],
 			[/* inline code block */ 'i', `null`],
 			[/* text */ 't', `.)
@@ -315,7 +315,7 @@ DocsCollector.collect('java.util.NavigableSet', [
 				[/* block */ 'b', [
 					[/* text */ 't', `The returned set has an ordering equivalent to
  `],
-					[/* reference */ 'r', `.Collections#reverseOrder(java.util.Comparator)`],
+					[/* reference */ 'r', `java.util.Collections#reverseOrder(java.util.Comparator)`, `Collections.reverseOrder`],
 					[/* inline code block */ 'i', `(comparator())`],
 					[/* text */ 't', `.
  The expression `],
@@ -374,7 +374,7 @@ DocsCollector.collect('java.util.NavigableSet', [
          if `],
 					[/* inline code block */ 'i', `toElement`],
 					[/* text */ 't', ` does not implement `],
-					[/* reference */ 'r', `java.lang.Comparable`],
+					[/* reference */ 'r', `java.lang.Comparable`, `Comparable`],
 					[/* text */ 't', `).
          Implementations may, but are not required to, throw this
          exception if `],
@@ -544,7 +544,7 @@ DocsCollector.collect('java.util.NavigableSet', [
          if `],
 					[/* inline code block */ 'i', `fromElement`],
 					[/* text */ 't', ` does not implement `],
-					[/* reference */ 'r', `java.lang.Comparable`],
+					[/* reference */ 'r', `java.lang.Comparable`, `Comparable`],
 					[/* text */ 't', `).
          Implementations may, but are not required to, throw this
          exception if `],
@@ -611,7 +611,7 @@ DocsCollector.collect('java.util.NavigableSet', [
          if `],
 					[/* inline code block */ 'i', `toElement`],
 					[/* text */ 't', ` does not implement `],
-					[/* reference */ 'r', `java.lang.Comparable`],
+					[/* reference */ 'r', `java.lang.Comparable`, `Comparable`],
 					[/* text */ 't', `).
          Implementations may, but are not required to, throw this
          exception if `],
@@ -770,7 +770,7 @@ DocsCollector.collect('java.util.NavigableSet', [
          if `],
 					[/* inline code block */ 'i', `fromElement`],
 					[/* text */ 't', ` does not implement `],
-					[/* reference */ 'r', `java.lang.Comparable`],
+					[/* reference */ 'r', `java.lang.Comparable`, `Comparable`],
 					[/* text */ 't', `).
          Implementations may, but are not required to, throw this
          exception if `],

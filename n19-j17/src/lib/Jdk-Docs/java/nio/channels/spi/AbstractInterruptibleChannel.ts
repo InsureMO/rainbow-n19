@@ -70,7 +70,7 @@ DocsCollector.collect('java.nio.channels.spi.AbstractInterruptibleChannel', [
 		]],
 		[/* block */ 'b', [
 			[/* text */ 't', ` This class performs the synchronization required to implement the `],
-			[/* reference */ 'r', `java.nio.channels.Channel`],
+			[/* reference */ 'r', `java.nio.channels.Channel`, `Channel`],
 			[/* text */ 't', ` specification.  Implementations of the `],
 			[/* reference */ 'r', `#implCloseChannel()`, `implCloseChannel`],
 			[/* text */ 't', ` method need not synchronize against

@@ -40,7 +40,7 @@ DocsCollector.collect('java.util.regex.MatchResult', [
 
  `],
 				[/* block */ 'b', [
-					[/* reference */ 'r', `.Pattern#cg`],
+					[/* reference */ 'r', `java.util.regex.Pattern#cg`, `Capturing groups`],
 					[/* text */ 't', ` are indexed from left
  to right, starting at one.  Group zero denotes the entire pattern, so
  the expression `],
@@ -117,7 +117,7 @@ DocsCollector.collect('java.util.regex.MatchResult', [
 
  `],
 				[/* block */ 'b', [
-					[/* reference */ 'r', `.Pattern#cg`],
+					[/* reference */ 'r', `java.util.regex.Pattern#cg`, `Capturing groups`],
 					[/* text */ 't', ` are indexed from left
  to right, starting at one.  Group zero denotes the entire pattern, so
  the expression `],
@@ -235,7 +235,7 @@ DocsCollector.collect('java.util.regex.MatchResult', [
  are equivalent.  `]
 				]],
 				[/* block */ 'b', [
-					[/* reference */ 'r', `.Pattern#cg`],
+					[/* reference */ 'r', `java.util.regex.Pattern#cg`, `Capturing groups`],
 					[/* text */ 't', ` are indexed from left
  to right, starting at one.  Group zero denotes the entire pattern, so
  the expression `],

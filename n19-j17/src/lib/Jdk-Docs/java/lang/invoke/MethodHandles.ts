@@ -20,7 +20,7 @@ DocsCollector.collect('java.lang.invoke.MethodHandles', [
 		[/* inline code block */ 'i', `IllegalArgumentException`],
 		[/* text */ 't', ` if the created method handle's type
  would have `],
-		[/* reference */ 'r', `.MethodHandle#maxarity`],
+		[/* reference */ 'r', `java.lang.invoke.MethodHandle#maxarity`, `too many parameters`],
 		[/* text */ 't', `.`]
 	],
 	/* fields */ UDF,
@@ -30,16 +30,16 @@ DocsCollector.collect('java.lang.invoke.MethodHandles', [
 			[/* method description */
 				[/* text */ 't', `Performs an unchecked "crack" of a
  `],
-				[/* reference */ 'r', `.MethodHandleInfo#directmh`],
+				[/* reference */ 'r', `java.lang.invoke.MethodHandleInfo#directmh`, `direct method handle`],
 				[/* text */ 't', `.
  The result is as if the user had obtained a lookup object capable enough
  to crack the target method handle, called
  `],
-				[/* reference */ 'r', `.MethodHandles.Lookup#revealDirect(java.lang.invoke.MethodHandle)`],
+				[/* reference */ 'r', `java.lang.invoke.MethodHandles.Lookup#revealDirect(java.lang.invoke.MethodHandle)`, `Lookup.revealDirect`],
 				[/* text */ 't', `
  on the target to obtain its symbolic reference, and then called
  `],
-				[/* reference */ 'r', `.MethodHandleInfo#reflectAs(java.lang.Class,java.lang.invoke.MethodHandles.Lookup)`],
+				[/* reference */ 'r', `java.lang.invoke.MethodHandleInfo#reflectAs(java.lang.Class,java.lang.invoke.MethodHandles.Lookup)`, `MethodHandleInfo.reflectAs`],
 				[/* text */ 't', `
  to resolve the symbolic reference to a member.
  `],
@@ -97,7 +97,7 @@ DocsCollector.collect('java.lang.invoke.MethodHandles', [
 				[/* block */ 'b', [
 					[/* text */ 't', ` A hidden class with class data can be created by calling
  `],
-					[/* reference */ 'r', `.MethodHandles.Lookup#defineHiddenClassWithClassData(byte[],java.lang.Object,boolean,java.lang.invoke.MethodHandles.Lookup.ClassOption...)`],
+					[/* reference */ 'r', `java.lang.invoke.MethodHandles.Lookup#defineHiddenClassWithClassData(byte[],java.lang.Object,boolean,java.lang.invoke.MethodHandles.Lookup.ClassOption...)`, `Lookup::defineHiddenClassWithClassData`],
 					[/* text */ 't', `.
  This method will cause the static class initializer of the lookup
  class of the given `],
@@ -109,7 +109,7 @@ DocsCollector.collect('java.lang.invoke.MethodHandles', [
 				]],
 				[/* block */ 'b', [
 					[/* text */ 't', ` A hidden class created by `],
-					[/* reference */ 'r', `.MethodHandles.Lookup#defineHiddenClass(byte[],boolean,java.lang.invoke.MethodHandles.Lookup.ClassOption...)`],
+					[/* reference */ 'r', `java.lang.invoke.MethodHandles.Lookup#defineHiddenClass(byte[],boolean,java.lang.invoke.MethodHandles.Lookup.ClassOption...)`, `Lookup::defineHiddenClass`],
 					[/* text */ 't', ` and non-hidden classes have no class data.
  `],
 					[/* inline code block */ 'i', `null`],
@@ -120,10 +120,10 @@ DocsCollector.collect('java.lang.invoke.MethodHandles', [
 				]],
 				[/* block */ 'b', [
 					[/* text */ 't', ` The `],
-					[/* reference */ 'r', `.MethodHandles.Lookup#lookupModes()`],
+					[/* reference */ 'r', `java.lang.invoke.MethodHandles.Lookup#lookupModes()`, `lookup modes`],
 					[/* text */ 't', ` for this lookup
  must have `],
-					[/* reference */ 'r', `.MethodHandles.Lookup#ORIGINAL`],
+					[/* reference */ 'r', `java.lang.invoke.MethodHandles.Lookup#ORIGINAL`, `original access`],
 					[/* text */ 't', `
  in order to retrieve the class data.`]
 				]]
@@ -135,7 +135,7 @@ DocsCollector.collect('java.lang.invoke.MethodHandles', [
 				]],
 				[/* parameter */ 'name', [/* parameter description */
 					[/* text */ 't', `must be `],
-					[/* reference */ 'r', `java.ConstantDescs#DEFAULT_NAME`],
+					[/* reference */ 'r', `java.lang.constant.ConstantDescs#DEFAULT_NAME`, `ConstantDescs.DEFAULT_NAME`],
 					[/* text */ 't', `
              (`],
 					[/* inline code block */ 'i', `"_"`],
@@ -153,7 +153,7 @@ DocsCollector.collect('java.lang.invoke.MethodHandles', [
 				[/* throw */ 'java.lang.IllegalAccessException', [/* throw description */
 					[/* text */ 't', `if the lookup context does not have
  `],
-					[/* reference */ 'r', `.MethodHandles.Lookup#ORIGINAL`],
+					[/* reference */ 'r', `java.lang.invoke.MethodHandles.Lookup#ORIGINAL`, `original`],
 					[/* text */ 't', ` access`]
 				]],
 				[/* throw */ 'java.lang.ClassCastException', [/* throw description */
@@ -198,7 +198,7 @@ DocsCollector.collect('java.lang.invoke.MethodHandles', [
 				[/* block */ 'b', [
 					[/* text */ 't', ` A hidden class with class data can be created by calling
  `],
-					[/* reference */ 'r', `.MethodHandles.Lookup#defineHiddenClassWithClassData(byte[],java.lang.Object,boolean,java.lang.invoke.MethodHandles.Lookup.ClassOption...)`],
+					[/* reference */ 'r', `java.lang.invoke.MethodHandles.Lookup#defineHiddenClassWithClassData(byte[],java.lang.Object,boolean,java.lang.invoke.MethodHandles.Lookup.ClassOption...)`, `Lookup::defineHiddenClassWithClassData`],
 					[/* text */ 't', `.
  This method will cause the static class initializer of the lookup
  class of the given `],
@@ -210,7 +210,7 @@ DocsCollector.collect('java.lang.invoke.MethodHandles', [
 				]],
 				[/* block */ 'b', [
 					[/* text */ 't', ` A hidden class created by `],
-					[/* reference */ 'r', `.MethodHandles.Lookup#defineHiddenClass(byte[],boolean,java.lang.invoke.MethodHandles.Lookup.ClassOption...)`],
+					[/* reference */ 'r', `java.lang.invoke.MethodHandles.Lookup#defineHiddenClass(byte[],boolean,java.lang.invoke.MethodHandles.Lookup.ClassOption...)`, `Lookup::defineHiddenClass`],
 					[/* text */ 't', ` and non-hidden classes have no class data.
  `],
 					[/* inline code block */ 'i', `null`],
@@ -221,10 +221,10 @@ DocsCollector.collect('java.lang.invoke.MethodHandles', [
 				]],
 				[/* block */ 'b', [
 					[/* text */ 't', ` The `],
-					[/* reference */ 'r', `.MethodHandles.Lookup#lookupModes()`],
+					[/* reference */ 'r', `java.lang.invoke.MethodHandles.Lookup#lookupModes()`, `lookup modes`],
 					[/* text */ 't', ` for this lookup
  must have `],
-					[/* reference */ 'r', `.MethodHandles.Lookup#ORIGINAL`],
+					[/* reference */ 'r', `java.lang.invoke.MethodHandles.Lookup#ORIGINAL`, `original access`],
 					[/* text */ 't', `
  in order to retrieve the class data.`]
 				]]
@@ -236,7 +236,7 @@ DocsCollector.collect('java.lang.invoke.MethodHandles', [
 				]],
 				[/* parameter */ 'name', [/* parameter description */
 					[/* text */ 't', `must be `],
-					[/* reference */ 'r', `java.ConstantDescs#DEFAULT_NAME`],
+					[/* reference */ 'r', `java.lang.constant.ConstantDescs#DEFAULT_NAME`, `ConstantDescs.DEFAULT_NAME`],
 					[/* text */ 't', `
              (`],
 					[/* inline code block */ 'i', `"_"`],
@@ -257,7 +257,7 @@ DocsCollector.collect('java.lang.invoke.MethodHandles', [
 				[/* throw */ 'java.lang.IllegalAccessException', [/* throw description */
 					[/* text */ 't', `if the lookup context does not have
  `],
-					[/* reference */ 'r', `.MethodHandles.Lookup#ORIGINAL`],
+					[/* reference */ 'r', `java.lang.invoke.MethodHandles.Lookup#ORIGINAL`, `original`],
 					[/* text */ 't', ` access`]
 				]],
 				[/* throw */ 'java.lang.ClassCastException', [/* throw description */
@@ -754,7 +754,7 @@ assertEquals("[top, [[up, down, strange], charm], bottom]",
 				[/* block */ 'b', [
 					[/* text */ 't', `Note:`],
 					[/* text */ 't', ` The resulting adapter is never a `],
-					[/* reference */ 'r', `.MethodHandle#asVarargsCollector(java.lang.Class)`],
+					[/* reference */ 'r', `java.lang.invoke.MethodHandle#asVarargsCollector(java.lang.Class)`, `variable-arity method handle`],
 					[/* text */ 't', `, even if the original target method handle was.`]
 				]]
 			],
@@ -786,7 +786,7 @@ assertEquals("[top, [[up, down, strange], charm], bottom]",
 					[/* text */ 't', ` is not between 0 and the target's arity, inclusive,
           or if the resulting method handle's type would have
           `],
-					[/* reference */ 'r', `.MethodHandle#maxarity`]
+					[/* reference */ 'r', `java.lang.invoke.MethodHandle#maxarity`, `too many parameters`]
 				]]
 			],
 			[/* return description */
@@ -1005,10 +1005,10 @@ assertEquals("[top, [[up, down, strange], charm], bottom]",
 						[/* inline code block */ 'i', `V`],
 						[/* text */ 't', `.
  Its parameter list (of some `],
-						[/* reference */ 'r', `.MethodHandles#astar`],
+						[/* reference */ 'r', `java.lang.invoke.MethodHandles#astar`, `form (A*)`],
 						[/* text */ 't', `) must be
  `],
-						[/* reference */ 'r', `.MethodHandles#effid`],
+						[/* reference */ 'r', `java.lang.invoke.MethodHandles#effid`, `effectively identical`],
 						[/* text */ 't', `
  to the external parameter list `],
 						[/* inline code block */ 'i', `(A...)`],
@@ -1316,10 +1316,10 @@ assertEquals("[top, [[up, down, strange], charm], bottom]",
 						[/* inline code block */ 'i', `V`],
 						[/* text */ 't', `.
  Its parameter list (of some `],
-						[/* reference */ 'r', `.MethodHandles#astar`],
+						[/* reference */ 'r', `java.lang.invoke.MethodHandles#astar`, `form (A*)`],
 						[/* text */ 't', `) must be
  `],
-						[/* reference */ 'r', `.MethodHandles#effid`],
+						[/* reference */ 'r', `java.lang.invoke.MethodHandles#effid`, `effectively identical`],
 						[/* text */ 't', `
  to the external parameter list `],
 						[/* inline code block */ 'i', `(A...)`],
@@ -1578,10 +1578,10 @@ assertEquals("[top, [[up, down, strange], charm], bottom]",
 						[/* inline code block */ 'i', `V`],
 						[/* text */ 't', `.
  Its parameter list (of some `],
-						[/* reference */ 'r', `.MethodHandles#astar`],
+						[/* reference */ 'r', `java.lang.invoke.MethodHandles#astar`, `form (A*)`],
 						[/* text */ 't', `) must be
  `],
-						[/* reference */ 'r', `.MethodHandles#effid`],
+						[/* reference */ 'r', `java.lang.invoke.MethodHandles#effid`, `effectively identical`],
 						[/* text */ 't', `
  to the external parameter list `],
 						[/* inline code block */ 'i', `(A...)`],
@@ -1766,7 +1766,7 @@ assertEquals("[top, [[up, down, strange], charm], bottom]",
 					[/* text */ 't', ` is negative or greater than the arity of the target,
                   or if the new method handle's type would have
                   `],
-					[/* reference */ 'r', `.MethodHandle#maxarity`]
+					[/* reference */ 'r', `java.lang.invoke.MethodHandle#maxarity`, `too many parameters`]
 				]]
 			],
 			[/* return description */
@@ -2052,7 +2052,7 @@ assertEquals("yz", (String) d0.invokeExact(123, "x", "y", "z"));`]
 				[/* text */ 't', `invoker method handle`],
 				[/* text */ 't', ` which can be used to
  invoke any method handle of the given type, as if by `],
-				[/* reference */ 'r', `.MethodHandle#invokeExact(java.lang.Object...)`],
+				[/* reference */ 'r', `java.lang.invoke.MethodHandle#invokeExact(java.lang.Object...)`, `invokeExact`],
 				[/* text */ 't', `.
  The resulting invoker will have a type which is
  exactly equal to the desired type, except that it will accept
@@ -2107,7 +2107,7 @@ assertEquals("yz", (String) d0.invokeExact(123, "x", "y", "z"));`]
 				[/* block */ 'b', [
 					[/* text */ 't', `(Note:  The invoker method is not available via the Core Reflection API.
  An attempt to call `],
-					[/* reference */ 'r', `java.Method#invoke(java.lang.Object,java.lang.Object...)`],
+					[/* reference */ 'r', `java.lang.reflect.Method#invoke(java.lang.Object,java.lang.Object...)`, `java.lang.reflect.Method.invoke`],
 					[/* text */ 't', `
  on the declared `],
 					[/* inline code block */ 'i', `invokeExact`],
@@ -2115,7 +2115,7 @@ assertEquals("yz", (String) d0.invokeExact(123, "x", "y", "z"));`]
 					[/* inline code block */ 'i', `invoke`],
 					[/* text */ 't', ` method will raise an
  `],
-					[/* reference */ 'r', `java.lang.UnsupportedOperationException`],
+					[/* reference */ 'r', `java.lang.UnsupportedOperationException`, `UnsupportedOperationException`],
 					[/* text */ 't', `.)`]
 				]],
 				[/* block */ 'b', `
@@ -2130,7 +2130,7 @@ assertEquals("yz", (String) d0.invokeExact(123, "x", "y", "z"));`]
 				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
 					[/* text */ 't', `if the resulting method handle's type would have
           `],
-					[/* reference */ 'r', `.MethodHandle#maxarity`]
+					[/* reference */ 'r', `java.lang.invoke.MethodHandle#maxarity`, `too many parameters`]
 				]]
 			],
 			[/* return description */
@@ -2151,7 +2151,7 @@ assertEquals("yz", (String) d0.invokeExact(123, "x", "y", "z"));`]
 				[/* block */ 'b', [
 					[/* text */ 't', `
  The same conversions are allowed as for `],
-					[/* reference */ 'r', `.MethodHandle#asType(java.lang.invoke.MethodType)`],
+					[/* reference */ 'r', `java.lang.invoke.MethodHandle#asType(java.lang.invoke.MethodType)`, `MethodHandle.asType`],
 					[/* text */ 't', `,
  and some additional conversions are also applied if those conversions fail.
  Given types `],
@@ -2391,7 +2391,7 @@ assertEquals("XY", (String) f2.invokeExact("x", "y")); // XY`]
 				[/* block */ 'b', [
 					[/* text */ 't', `Note:`],
 					[/* text */ 't', ` The resulting adapter is never a `],
-					[/* reference */ 'r', `.MethodHandle#asVarargsCollector(java.lang.Class)`],
+					[/* reference */ 'r', `java.lang.invoke.MethodHandle#asVarargsCollector(java.lang.Class)`, `variable-arity method handle`],
 					[/* text */ 't', `, even if the original target method handle was.`]
 				]]
 			],
@@ -2425,7 +2425,7 @@ assertEquals("XY", (String) f2.invokeExact("x", "y")); // XY`]
 					[/* text */ 't', `,
           or if the resulting method handle's type would have
           `],
-					[/* reference */ 'r', `.MethodHandle#maxarity`]
+					[/* reference */ 'r', `java.lang.invoke.MethodHandle#maxarity`, `too many parameters`]
 				]]
 			],
 			[/* return description */
@@ -2518,7 +2518,7 @@ System.out.println((int) f0.invokeExact("x", "y")); // 2`]
 				[/* block */ 'b', [
 					[/* text */ 't', `Note:`],
 					[/* text */ 't', ` The resulting adapter is never a `],
-					[/* reference */ 'r', `.MethodHandle#asVarargsCollector(java.lang.Class)`],
+					[/* reference */ 'r', `java.lang.invoke.MethodHandle#asVarargsCollector(java.lang.Class)`, `variable-arity method handle`],
 					[/* text */ 't', `, even if the original target method handle was.`]
 				]]
 			],
@@ -2668,7 +2668,7 @@ System.out.println((int) f0.invokeExact("x", "y")); // 2`]
  that either the combiner or the target does not wish to receive.
  If some of the incoming arguments are destined only for the combiner,
  consider using `],
-					[/* reference */ 'r', `.MethodHandle#asCollector(java.lang.Class,int)`],
+					[/* reference */ 'r', `java.lang.invoke.MethodHandle#asCollector(java.lang.Class,int)`, `asCollector`],
 					[/* text */ 't', ` instead, since those
  arguments will not need to be live on the stack on entry to the
  target.)
@@ -2752,7 +2752,7 @@ assertEquals("boojum", (String) catTrace.invokeExact("boo", "jum"));`]
 				[/* block */ 'b', [
 					[/* text */ 't', `Note:`],
 					[/* text */ 't', ` The resulting adapter is never a `],
-					[/* reference */ 'r', `.MethodHandle#asVarargsCollector(java.lang.Class)`],
+					[/* reference */ 'r', `java.lang.invoke.MethodHandle#asVarargsCollector(java.lang.Class)`, `variable-arity method handle`],
 					[/* text */ 't', `, even if the original target method handle was.`]
 				]]
 			],
@@ -2942,7 +2942,7 @@ assertEquals("boojum", (String) catTrace.invokeExact("boo", "jum"));`]
 				[/* block */ 'b', [
 					[/* text */ 't', `Note:`],
 					[/* text */ 't', ` The resulting adapter is never a `],
-					[/* reference */ 'r', `.MethodHandle#asVarargsCollector(java.lang.Class)`],
+					[/* reference */ 'r', `java.lang.invoke.MethodHandle#asVarargsCollector(java.lang.Class)`, `variable-arity method handle`],
 					[/* text */ 't', `, even if the original target method handle was.`]
 				]]
 			],
@@ -2992,7 +2992,7 @@ assertEquals("boojum", (String) catTrace.invokeExact("boo", "jum"));`]
 				[/* text */ 't', `invoker method handle`],
 				[/* text */ 't', ` which can be used to
  invoke any method handle compatible with the given type, as if by `],
-				[/* reference */ 'r', `.MethodHandle#invoke(java.lang.Object...)`],
+				[/* reference */ 'r', `java.lang.invoke.MethodHandle#invoke(java.lang.Object...)`, `invoke`],
 				[/* text */ 't', `.
  The resulting invoker will have a type which is
  exactly equal to the desired type, except that it will accept
@@ -3005,14 +3005,14 @@ assertEquals("boojum", (String) catTrace.invokeExact("boo", "jum"));`]
  Before invoking its target, if the target differs from the expected type,
  the invoker will apply reference casts as
  necessary and box, unbox, or widen primitive values, as if by `],
-					[/* reference */ 'r', `.MethodHandle#asType(java.lang.invoke.MethodType)`],
+					[/* reference */ 'r', `java.lang.invoke.MethodHandle#asType(java.lang.invoke.MethodType)`, `asType`],
 					[/* text */ 't', `.
  Similarly, the return value will be converted as necessary.
  If the target is a `],
-					[/* reference */ 'r', `.MethodHandle#asVarargsCollector(java.lang.Class)`],
+					[/* reference */ 'r', `java.lang.invoke.MethodHandle#asVarargsCollector(java.lang.Class)`, `variable arity method handle`],
 					[/* text */ 't', `,
  the required arity conversion will be made, again as if by `],
-					[/* reference */ 'r', `.MethodHandle#asType(java.lang.invoke.MethodType)`],
+					[/* reference */ 'r', `java.lang.invoke.MethodHandle#asType(java.lang.invoke.MethodType)`, `asType`],
 					[/* text */ 't', `.
  `]
 				]],
@@ -3026,7 +3026,7 @@ assertEquals("boojum", (String) catTrace.invokeExact("boo", "jum"));`]
 					[/* text */ 't', `Discussion:`],
 					[/* text */ 't', `
  A `],
-					[/* reference */ 'r', `.MethodType#genericMethodType(int,boolean)`],
+					[/* reference */ 'r', `java.lang.invoke.MethodType#genericMethodType(int,boolean)`, `general method type`],
 					[/* text */ 't', ` is one which
  mentions only `],
 					[/* inline code block */ 'i', `Object`],
@@ -3038,7 +3038,7 @@ assertEquals("boojum", (String) catTrace.invokeExact("boo", "jum"));`]
 				[/* block */ 'b', [
 					[/* text */ 't', `(Note:  The invoker method is not available via the Core Reflection API.
  An attempt to call `],
-					[/* reference */ 'r', `java.Method#invoke(java.lang.Object,java.lang.Object...)`],
+					[/* reference */ 'r', `java.lang.reflect.Method#invoke(java.lang.Object,java.lang.Object...)`, `java.lang.reflect.Method.invoke`],
 					[/* text */ 't', `
  on the declared `],
 					[/* inline code block */ 'i', `invokeExact`],
@@ -3046,7 +3046,7 @@ assertEquals("boojum", (String) catTrace.invokeExact("boo", "jum"));`]
 					[/* inline code block */ 'i', `invoke`],
 					[/* text */ 't', ` method will raise an
  `],
-					[/* reference */ 'r', `java.lang.UnsupportedOperationException`],
+					[/* reference */ 'r', `java.lang.UnsupportedOperationException`, `UnsupportedOperationException`],
 					[/* text */ 't', `.)`]
 				]],
 				[/* block */ 'b', `
@@ -3061,7 +3061,7 @@ assertEquals("boojum", (String) catTrace.invokeExact("boo", "jum"));`]
 				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
 					[/* text */ 't', `if the resulting method handle's type would have
           `],
-					[/* reference */ 'r', `.MethodHandle#maxarity`]
+					[/* reference */ 'r', `java.lang.invoke.MethodHandle#maxarity`, `too many parameters`]
 				]]
 			],
 			[/* return description */
@@ -3231,10 +3231,10 @@ assertEquals("boojum", (String) catTrace.invokeExact("boo", "jum"));`]
 						[/* inline code block */ 'i', `V`],
 						[/* text */ 't', `.
  Its parameter list (of some `],
-						[/* reference */ 'r', `.MethodHandles#astar`],
+						[/* reference */ 'r', `java.lang.invoke.MethodHandles#astar`, `form (A*)`],
 						[/* text */ 't', `) must be
  `],
-						[/* reference */ 'r', `.MethodHandles#effid`],
+						[/* reference */ 'r', `java.lang.invoke.MethodHandles#effid`, `effectively identical`],
 						[/* text */ 't', `
  to the external parameter list `],
 						[/* inline code block */ 'i', `(A...)`],
@@ -3287,7 +3287,7 @@ assertEquals("boojum", (String) catTrace.invokeExact("boo", "jum"));`]
 						[/* inline code block */ 'i', `null`],
 						[/* text */ 't', ` it defaults to a method handle which behaves
  like `],
-						[/* reference */ 'r', `java.Iterable#iterator()`],
+						[/* reference */ 'r', `java.lang.Iterable#iterator()`, `Iterable.iterator()`],
 						[/* text */ 't', `.  In that case, the internal parameter list
  `],
 						[/* inline code block */ 'i', `(V T A...)`],
@@ -3298,7 +3298,7 @@ assertEquals("boojum", (String) catTrace.invokeExact("boo", "jum"));`]
 						[/* inline code block */ 'i', `A`],
 						[/* text */ 't', ` type, as if by
  the `],
-						[/* reference */ 'r', `.MethodHandle#asType(java.lang.invoke.MethodType)`],
+						[/* reference */ 'r', `java.lang.invoke.MethodHandle#asType(java.lang.invoke.MethodType)`, `asType`],
 						[/* text */ 't', ` conversion method.
  The leading `],
 						[/* inline code block */ 'i', `A`],
@@ -3330,11 +3330,11 @@ assertEquals("boojum", (String) catTrace.invokeExact("boo", "jum"));`]
 					[/* inline code block */ 'i', `Object`],
 					[/* text */ 't', `
  as if by the `],
-					[/* reference */ 'r', `.MethodHandle#asType(java.lang.invoke.MethodType)`],
+					[/* reference */ 'r', `java.lang.invoke.MethodHandle#asType(java.lang.invoke.MethodType)`, `asType`],
 					[/* text */ 't', ` conversion method.
  Therefore, if an iterator of the wrong type appears as the loop is executed, runtime exceptions may occur
  as the result of dynamic conversions performed by `],
-					[/* reference */ 'r', `.MethodHandle#asType(java.lang.invoke.MethodType)`],
+					[/* reference */ 'r', `java.lang.invoke.MethodHandle#asType(java.lang.invoke.MethodType)`, `MethodHandle.asType(MethodType)`],
 					[/* text */ 't', `.
  `]
 				]],
@@ -3399,7 +3399,7 @@ assertEquals("boojum", (String) catTrace.invokeExact("boo", "jum"));`]
                  If non-`],
 					[/* inline code block */ 'i', `null`],
 					[/* text */ 't', `, the handle must return `],
-					[/* reference */ 'r', `java.util.Iterator`],
+					[/* reference */ 'r', `java.util.Iterator`, `Iterator`],
 					[/* text */ 't', ` or a subtype.
                  See above for other constraints.`]
 				]],
@@ -3538,7 +3538,7 @@ assertEquals("boojum", (String) catTrace.invokeExact("boo", "jum"));`]
 					[/* reference */ 'r', `#dropArguments(java.lang.invoke.MethodHandle,int,java.util.List)`, `dropArguments(java.lang.invoke.MethodHandle, int, java.util.List<java.lang.Class<?>>)`],
 					[/* text */ 't', `.
  `],
-					[/* text */ 't', ``],
+					[/* anchor */ 'r', '#-id', `astar`, ``],
 					[/* text */ 't', `
  More specifically, we shall use the notation `],
 					[/* inline code block */ 'i', `(V*)`],
@@ -3568,14 +3568,14 @@ assertEquals("boojum", (String) catTrace.invokeExact("boo", "jum"));`]
  Given a set of clauses, there is a number of checks and adjustments performed to connect all the parts of the
  loop. They are spelled out in detail in the steps below. In these steps, every occurrence of the word "must"
  corresponds to a place where `],
-					[/* reference */ 'r', `java.lang.IllegalArgumentException`],
+					[/* reference */ 'r', `java.lang.IllegalArgumentException`, `IllegalArgumentException`],
 					[/* text */ 't', ` will be thrown if the required constraint is not
  met by the inputs to the loop combinator.
  `]
 				]],
 				[/* block */ 'b', [
 					[/* text */ 't', `Effectively identical sequences:`],
-					[/* text */ 't', ``],
+					[/* anchor */ 'r', '#-id', `effid`, ``],
 					[/* text */ 't', `
  A parameter list `],
 					[/* inline code block */ 'i', `A`],
@@ -4103,7 +4103,7 @@ assertEquals("boojum", (String) catTrace.invokeExact("boo", "jum"));`]
 			[/* parameters */
 				[/* parameter */ 'clauses', [/* parameter description */
 					[/* text */ 't', `an array of arrays (4-tuples) of `],
-					[/* reference */ 'r', `java.lang.invoke.MethodHandle`],
+					[/* reference */ 'r', `java.lang.invoke.MethodHandle`, `MethodHandle`],
 					[/* text */ 't', `s adhering to the rules described above.`]
 				]]
 			],
@@ -4212,7 +4212,7 @@ assert((int)twice.invokeExact(21) == 42);`]
 				[/* block */ 'b', [
 					[/* text */ 't', `Note:`],
 					[/* text */ 't', ` The resulting adapter is never a `],
-					[/* reference */ 'r', `.MethodHandle#asVarargsCollector(java.lang.Class)`],
+					[/* reference */ 'r', `java.lang.invoke.MethodHandle#asVarargsCollector(java.lang.Class)`, `variable-arity method handle`],
 					[/* text */ 't', `, even if the original target method handle was.`]
 				]]
 			],
@@ -4285,7 +4285,7 @@ assert((int)twice.invokeExact(21) == 42);`]
 				[/* block */ 'b', [
 					[/* text */ 't', `
  The invoker will invoke its target like a call to `],
-					[/* reference */ 'r', `.MethodHandle#invoke(java.lang.Object...)`],
+					[/* reference */ 'r', `java.lang.invoke.MethodHandle#invoke(java.lang.Object...)`, `invoke`],
 					[/* text */ 't', ` with
  the indicated `],
 					[/* inline code block */ 'i', `type`],
@@ -4296,7 +4296,7 @@ assert((int)twice.invokeExact(21) == 42);`]
  like `],
 					[/* inline code block */ 'i', `invokeExact`],
 					[/* text */ 't', `; otherwise it behave as if `],
-					[/* reference */ 'r', `.MethodHandle#asType(java.lang.invoke.MethodType)`],
+					[/* reference */ 'r', `java.lang.invoke.MethodHandle#asType(java.lang.invoke.MethodType)`, `asType`],
 					[/* text */ 't', `
  is used to convert the target to the required `],
 					[/* inline code block */ 'i', `type`],
@@ -4324,7 +4324,7 @@ assert((int)twice.invokeExact(21) == 42);`]
  If, when the invoker is called, the supplied array argument does
  not have the correct number of elements, the invoker will throw
  an `],
-					[/* reference */ 'r', `java.lang.IllegalArgumentException`],
+					[/* reference */ 'r', `java.lang.IllegalArgumentException`, `IllegalArgumentException`],
 					[/* text */ 't', ` instead of invoking the target.
  `]
 				]],
@@ -4366,7 +4366,7 @@ return invoker;`]
 					[/* text */ 't', ` inclusive,
                   or if the resulting method handle's type would have
           `],
-					[/* reference */ 'r', `.MethodHandle#maxarity`]
+					[/* reference */ 'r', `java.lang.invoke.MethodHandle#maxarity`, `too many parameters`]
 				]]
 			],
 			[/* return description */
@@ -4779,7 +4779,7 @@ return invoker;`]
  desired given type, the invoker will apply reference casts as necessary
  and box, unbox, or widen primitive values, as if by
  `],
-					[/* reference */ 'r', `.MethodHandle#asType(java.lang.invoke.MethodType)`],
+					[/* reference */ 'r', `java.lang.invoke.MethodHandle#asType(java.lang.invoke.MethodType)`, `asType`],
 					[/* text */ 't', `.  Similarly, the return value will be
  converted as necessary.
  `]
@@ -4921,10 +4921,10 @@ return invoker;`]
 						[/* inline code block */ 'i', `V`],
 						[/* text */ 't', `.
  Its parameter list (of some `],
-						[/* reference */ 'r', `.MethodHandles#astar`],
+						[/* reference */ 'r', `java.lang.invoke.MethodHandles#astar`, `form (A*)`],
 						[/* text */ 't', `) must be
  `],
-						[/* reference */ 'r', `.MethodHandles#effid`],
+						[/* reference */ 'r', `java.lang.invoke.MethodHandles#effid`, `effectively identical`],
 						[/* text */ 't', `
  to the external parameter list `],
 						[/* inline code block */ 'i', `(A...)`],
@@ -5087,21 +5087,21 @@ return invoker;`]
 		[/* method */ 'lookup()', [
 			[/* method description */
 				[/* text */ 't', `Returns a `],
-				[/* reference */ 'r', `java.lang.invoke.MethodHandles.Lookup`],
+				[/* reference */ 'r', `java.lang.invoke.MethodHandles.Lookup`, `lookup object`],
 				[/* text */ 't', ` with
  full capabilities to emulate all supported bytecode behaviors of the caller.
  These capabilities include `],
-				[/* reference */ 'r', `.MethodHandles.Lookup#hasFullPrivilegeAccess()`],
+				[/* reference */ 'r', `java.lang.invoke.MethodHandles.Lookup#hasFullPrivilegeAccess()`, `full privilege access`],
 				[/* text */ 't', ` to the caller.
  Factory methods on the lookup object can create
  `],
-				[/* reference */ 'r', `.MethodHandleInfo#directmh`],
+				[/* reference */ 'r', `java.lang.invoke.MethodHandleInfo#directmh`, `direct method handles`],
 				[/* text */ 't', `
  for any member that the caller has access to via bytecodes,
  including protected and private fields and methods.
  This lookup object is created by the original lookup class
  and has the `],
-				[/* reference */ 'r', `.MethodHandles.Lookup#ORIGINAL`],
+				[/* reference */ 'r', `java.lang.invoke.MethodHandles.Lookup#ORIGINAL`, `ORIGINAL`],
 				[/* text */ 't', ` bit set.
  This lookup object is a `],
 				[/* text */ 't', `capability`],
@@ -5117,20 +5117,20 @@ return invoker;`]
 			[/* return description */
 				[/* text */ 't', `a lookup object for the caller of this method, with
  `],
-				[/* reference */ 'r', `.MethodHandles.Lookup#ORIGINAL`],
+				[/* reference */ 'r', `java.lang.invoke.MethodHandles.Lookup#ORIGINAL`, `original`],
 				[/* text */ 't', ` and
  `],
-				[/* reference */ 'r', `.MethodHandles.Lookup#hasFullPrivilegeAccess()`],
+				[/* reference */ 'r', `java.lang.invoke.MethodHandles.Lookup#hasFullPrivilegeAccess()`, `full privilege access`],
 				[/* text */ 't', `.`]
 			]
 		]],
 		[/* method */ 'privateLookupIn(java.lang.Class,java.lang.invoke.MethodHandles.Lookup)', [
 			[/* method description */
 				[/* text */ 't', `Returns a `],
-				[/* reference */ 'r', `java.lang.invoke.MethodHandles.Lookup`],
+				[/* reference */ 'r', `java.lang.invoke.MethodHandles.Lookup`, `lookup`],
 				[/* text */ 't', ` object on a target class to emulate all supported
  bytecode behaviors, including `],
-				[/* reference */ 'r', `.MethodHandles.Lookup#privacc`],
+				[/* reference */ 'r', `java.lang.invoke.MethodHandles.Lookup#privacc`, `private access`],
 				[/* text */ 't', `.
  The returned lookup object can provide access to classes in modules and packages,
  and members of those classes, outside the normal rules of Java access control,
@@ -5166,13 +5166,13 @@ return invoker;`]
 					]],
 					[/* block */ 'b', [
 						[/* text */ 't', `The caller lookup object must have `],
-						[/* reference */ 'r', `.MethodHandles.Lookup#hasFullPrivilegeAccess()`],
+						[/* reference */ 'r', `java.lang.invoke.MethodHandles.Lookup#hasFullPrivilegeAccess()`, `full privilege access`],
 						[/* text */ 't', `.  Specifically:
    `],
 						[/* list */ 'l', [
 							[/* block */ 'b', [
 								[/* text */ 't', `The caller lookup object must have the `],
-								[/* reference */ 'r', `.MethodHandles.Lookup#MODULE`],
+								[/* reference */ 'r', `java.lang.invoke.MethodHandles.Lookup#MODULE`, `MODULE`],
 								[/* text */ 't', ` lookup mode.
          (This is because otherwise there would be no way to ensure the original lookup
          creator was a member of any particular module, and so any subsequent checks
@@ -5181,11 +5181,11 @@ return invoker;`]
 							]],
 							[/* block */ 'b', [
 								[/* text */ 't', `The caller lookup object must have `],
-								[/* reference */ 'r', `.MethodHandles.Lookup#PRIVATE`],
+								[/* reference */ 'r', `java.lang.invoke.MethodHandles.Lookup#PRIVATE`, `PRIVATE`],
 								[/* text */ 't', ` access.
          (This is because an application intending to share intra-module access
          using `],
-								[/* reference */ 'r', `.MethodHandles.Lookup#MODULE`],
+								[/* reference */ 'r', `java.lang.invoke.MethodHandles.Lookup#MODULE`, `MODULE`],
 								[/* text */ 't', ` alone will inadvertently also share
          deep reflection to its own module.)
    `]
@@ -5210,13 +5210,13 @@ return invoker;`]
 						[/* list */ 'l', [
 							[/* block */ 'b', [
 								[/* inline code block */ 'i', `M1`],
-								[/* reference */ 'r', `java.Module#canRead(java.lang.Module)`],
+								[/* reference */ 'r', `java.lang.Module#canRead(java.lang.Module)`, `reads`],
 								[/* inline code block */ 'i', `M2`],
 								[/* text */ 't', `.`]
 							]],
 							[/* block */ 'b', [
 								[/* inline code block */ 'i', `M2`],
-								[/* reference */ 'r', `java.Module#isOpen(java.lang.String,java.lang.Module)`],
+								[/* reference */ 'r', `java.lang.Module#isOpen(java.lang.String,java.lang.Module)`, `opens`],
 								[/* text */ 't', ` the package
          containing the target class to at least `],
 								[/* inline code block */ 'i', `M1`],
@@ -5243,7 +5243,7 @@ return invoker;`]
 					[/* inline code block */ 'i', `targetClass`],
 					[/* text */ 't', ` with
  `],
-					[/* reference */ 'r', `.MethodHandles.Lookup#hasFullPrivilegeAccess()`],
+					[/* reference */ 'r', `java.lang.invoke.MethodHandles.Lookup#hasFullPrivilegeAccess()`, `full privilege access`],
 					[/* text */ 't', `
  with `],
 					[/* inline code block */ 'i', `null`],
@@ -5315,7 +5315,7 @@ return invoker;`]
 		[/* method */ 'publicLookup()', [
 			[/* method description */
 				[/* text */ 't', `Returns a `],
-				[/* reference */ 'r', `java.lang.invoke.MethodHandles.Lookup`],
+				[/* reference */ 'r', `java.lang.invoke.MethodHandles.Lookup`, `lookup object`],
 				[/* text */ 't', ` which is trusted minimally.
  The lookup has the `],
 				[/* inline code block */ 'i', `UNCONDITIONAL`],
@@ -5326,10 +5326,10 @@ return invoker;`]
 				[/* block */ 'b', [
 					[/* text */ 't', `
  As a matter of pure convention, the `],
-					[/* reference */ 'r', `.MethodHandles.Lookup#lookupClass()`],
+					[/* reference */ 'r', `java.lang.invoke.MethodHandles.Lookup#lookupClass()`, `lookup class`],
 					[/* text */ 't', `
  of this lookup object will be `],
-					[/* reference */ 'r', `java.lang.Object`],
+					[/* reference */ 'r', `java.lang.Object`, `Object`],
 					[/* text */ 't', `.`]
 				]]
 			],
@@ -5411,10 +5411,10 @@ return invoker;`]
 					[/* text */ 't', ` then numeric
  and atomic update access modes compare values using their bitwise
  representation (see `],
-					[/* reference */ 'r', `java.Float#floatToRawIntBits(float)`],
+					[/* reference */ 'r', `java.lang.Float#floatToRawIntBits(float)`, `Float.floatToRawIntBits(float)`],
 					[/* text */ 't', ` and
  `],
-					[/* reference */ 'r', `java.Double#doubleToRawLongBits(double)`],
+					[/* reference */ 'r', `java.lang.Double#doubleToRawLongBits(double)`, `Double.doubleToRawLongBits(double)`],
 					[/* text */ 't', `, respectively).
 
  `]
@@ -5635,10 +5635,10 @@ return invoker;`]
 					[/* text */ 't', ` then atomic
  update access modes compare values using their bitwise representation
  (see `],
-					[/* reference */ 'r', `java.Float#floatToRawIntBits(float)`],
+					[/* reference */ 'r', `java.lang.Float#floatToRawIntBits(float)`, `Float.floatToRawIntBits(float)`],
 					[/* text */ 't', ` and
  `],
-					[/* reference */ 'r', `java.Double#doubleToRawLongBits(double)`],
+					[/* reference */ 'r', `java.lang.Double#doubleToRawLongBits(double)`, `Double.doubleToRawLongBits(double)`],
 					[/* text */ 't', `, respectively).`]
 				]]
 			],
@@ -5872,10 +5872,10 @@ return invoker;`]
 					[/* text */ 't', ` then atomic
  update access modes compare values using their bitwise representation
  (see `],
-					[/* reference */ 'r', `java.Float#floatToRawIntBits(float)`],
+					[/* reference */ 'r', `java.lang.Float#floatToRawIntBits(float)`, `Float.floatToRawIntBits(float)`],
 					[/* text */ 't', ` and
  `],
-					[/* reference */ 'r', `java.Double#doubleToRawLongBits(double)`],
+					[/* reference */ 'r', `java.lang.Double#doubleToRawLongBits(double)`, `Double.doubleToRawLongBits(double)`],
 					[/* text */ 't', `, respectively).`]
 				]]
 			],

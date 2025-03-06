@@ -42,7 +42,7 @@ DocsCollector.collect('java.util.WeakHashMap', [
 			[/* inline code block */ 'i', `WeakHashMap`],
 			[/* text */ 't', ` may be constructed using the
  `],
-			[/* reference */ 'r', `.Collections#synchronizedMap(java.util.Map)`],
+			[/* reference */ 'r', `java.util.Collections#synchronizedMap(java.util.Map)`, `Collections.synchronizedMap`],
 			[/* text */ 't', `
  method.
 
@@ -179,7 +179,7 @@ DocsCollector.collect('java.util.WeakHashMap', [
  `],
 			[/* inline code block */ 'i', `remove`],
 			[/* text */ 't', ` method, the iterator will throw a `],
-			[/* reference */ 'r', `java.util.ConcurrentModificationException`],
+			[/* reference */ 'r', `java.util.ConcurrentModificationException`, `ConcurrentModificationException`],
 			[/* text */ 't', `.  Thus, in the face of concurrent
  modification, the iterator fails quickly and cleanly, rather than risking
  arbitrary, non-deterministic behavior at an undetermined time in the future.
@@ -358,7 +358,7 @@ DocsCollector.collect('java.util.WeakHashMap', [
 		[/* method */ 'values()', [
 			[/* method description */
 				[/* text */ 't', `Returns a `],
-				[/* reference */ 'r', `java.util.Collection`],
+				[/* reference */ 'r', `java.util.Collection`, `Collection`],
 				[/* text */ 't', ` view of the values contained in this map.
  The collection is backed by the map, so changes to the map are
  reflected in the collection, and vice-versa.  If the map is
@@ -396,7 +396,7 @@ DocsCollector.collect('java.util.WeakHashMap', [
 		[/* method */ 'entrySet()', [
 			[/* method description */
 				[/* text */ 't', `Returns a `],
-				[/* reference */ 'r', `java.util.Set`],
+				[/* reference */ 'r', `java.util.Set`, `Set`],
 				[/* text */ 't', ` view of the mappings contained in this map.
  The set is backed by the map, so changes to the map are
  reflected in the set, and vice-versa.  If the map is modified
@@ -437,7 +437,7 @@ DocsCollector.collect('java.util.WeakHashMap', [
 		[/* method */ 'keySet()', [
 			[/* method description */
 				[/* text */ 't', `Returns a `],
-				[/* reference */ 'r', `java.util.Set`],
+				[/* reference */ 'r', `java.util.Set`, `Set`],
 				[/* text */ 't', ` view of the keys contained in this map.
  The set is backed by the map, so changes to the map are
  reflected in the set, and vice-versa.  If the map is modified

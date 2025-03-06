@@ -15,7 +15,7 @@ DocsCollector.collect('java.io.PipedOutputStream', [
  other thread. Attempting to use both objects from a single thread
  is not recommended as it may deadlock the thread.
  The pipe is said to be `],
-		[/* text */ 't', `broken`],
+		[/* anchor */ 'r', '#-id', `BROKEN`, `broken`],
 		[/* text */ 't', ` if a
  thread that was reading data bytes from the connected piped input
  stream is no longer alive.`]

@@ -123,11 +123,11 @@ DocsCollector.collect('java.time.chrono.IsoChronology', [
  It can be used to lookup the `],
 					[/* inline code block */ 'i', `Chronology`],
 					[/* text */ 't', ` using `],
-					[/* reference */ 'r', `.Chronology#of(java.lang.String)`],
+					[/* reference */ 'r', `java.time.chrono.Chronology#of(java.lang.String)`, `Chronology.of(String)`],
 					[/* text */ 't', `.
  It can also be used as part of a locale, accessible via
  `],
-					[/* reference */ 'r', `java.time.Locale#getUnicodeLocaleType(java.lang.String)`],
+					[/* reference */ 'r', `java.util.Locale#getUnicodeLocaleType(java.lang.String)`, `Locale.getUnicodeLocaleType(String)`],
 					[/* text */ 't', ` with the key 'ca'.`]
 				]]
 			],
@@ -149,7 +149,7 @@ DocsCollector.collect('java.time.chrono.IsoChronology', [
  It can be used to lookup the `],
 					[/* inline code block */ 'i', `Chronology`],
 					[/* text */ 't', ` using `],
-					[/* reference */ 'r', `.Chronology#of(java.lang.String)`],
+					[/* reference */ 'r', `java.time.chrono.Chronology#of(java.lang.String)`, `Chronology.of(String)`],
 					[/* text */ 't', `.`]
 				]]
 			],
@@ -198,7 +198,7 @@ DocsCollector.collect('java.time.chrono.IsoChronology', [
 				[/* block */ 'b', [
 					[/* text */ 't', `
  This is equivalent to `],
-					[/* reference */ 'r', `java.LocalDate#of(int,int,int)`],
+					[/* reference */ 'r', `java.time.LocalDate#of(int,int,int)`, `LocalDate.of(int, int, int)`],
 					[/* text */ 't', `.`]
 				]]
 			],
@@ -263,7 +263,7 @@ DocsCollector.collect('java.time.chrono.IsoChronology', [
 				[/* block */ 'b', [
 					[/* text */ 't', `
  This is equivalent to `],
-					[/* reference */ 'r', `java.LocalDate#from(java.time.temporal.TemporalAccessor)`],
+					[/* reference */ 'r', `java.time.LocalDate#from(java.time.temporal.TemporalAccessor)`, `LocalDate.from(TemporalAccessor)`],
 					[/* text */ 't', `.`]
 				]]
 			],
@@ -288,7 +288,7 @@ DocsCollector.collect('java.time.chrono.IsoChronology', [
 				[/* block */ 'b', [
 					[/* text */ 't', `
  This is equivalent to `],
-					[/* reference */ 'r', `java.LocalDate#ofEpochDay(long)`],
+					[/* reference */ 'r', `java.time.LocalDate#ofEpochDay(long)`, `LocalDate.ofEpochDay(long)`],
 					[/* text */ 't', `.`]
 				]]
 			],
@@ -313,7 +313,7 @@ DocsCollector.collect('java.time.chrono.IsoChronology', [
 				[/* block */ 'b', [
 					[/* text */ 't', `
  This will query the `],
-					[/* reference */ 'r', `java.Clock#systemDefaultZone()`],
+					[/* reference */ 'r', `java.time.Clock#systemDefaultZone()`, `system clock`],
 					[/* text */ 't', ` in the default
  time-zone to obtain the current date.
  `]
@@ -341,7 +341,7 @@ DocsCollector.collect('java.time.chrono.IsoChronology', [
  This will query the specified clock to obtain the current date - today.
  Using this method allows the use of an alternate clock for testing.
  The alternate clock may be introduced using `],
-					[/* reference */ 'r', `java.time.Clock`],
+					[/* reference */ 'r', `java.time.Clock`, `dependency injection`],
 					[/* text */ 't', `.`]
 				]]
 			],
@@ -366,7 +366,7 @@ DocsCollector.collect('java.time.chrono.IsoChronology', [
 				[/* block */ 'b', [
 					[/* text */ 't', `
  This will query the `],
-					[/* reference */ 'r', `java.Clock#system(java.time.ZoneId)`],
+					[/* reference */ 'r', `java.time.Clock#system(java.time.ZoneId)`, `system clock`],
 					[/* text */ 't', ` to obtain the current date.
  Specifying the time-zone avoids dependence on the default time-zone.
  `]
@@ -396,7 +396,7 @@ DocsCollector.collect('java.time.chrono.IsoChronology', [
 				[/* block */ 'b', [
 					[/* text */ 't', `
  This is equivalent to `],
-					[/* reference */ 'r', `java.LocalDate#ofYearDay(int,int)`],
+					[/* reference */ 'r', `java.time.LocalDate#ofYearDay(int,int)`, `LocalDate.ofYearDay(int, int)`],
 					[/* text */ 't', `.`]
 				]]
 			],
@@ -668,7 +668,7 @@ DocsCollector.collect('java.time.chrono.IsoChronology', [
 				[/* block */ 'b', [
 					[/* text */ 't', `
  This is equivalent to `],
-					[/* reference */ 'r', `java.LocalDateTime#from(java.time.temporal.TemporalAccessor)`],
+					[/* reference */ 'r', `java.time.LocalDateTime#from(java.time.temporal.TemporalAccessor)`, `LocalDateTime.from(TemporalAccessor)`],
 					[/* text */ 't', `.`]
 				]]
 			],
@@ -694,7 +694,7 @@ DocsCollector.collect('java.time.chrono.IsoChronology', [
 					[/* text */ 't', `
  This returns a period tied to the ISO chronology using the specified
  years, months and days. See `],
-					[/* reference */ 'r', `java.time.Period`],
+					[/* reference */ 'r', `java.time.Period`, `Period`],
 					[/* text */ 't', ` for further details.`]
 				]]
 			],
@@ -755,7 +755,7 @@ DocsCollector.collect('java.time.chrono.IsoChronology', [
 				[/* block */ 'b', [
 					[/* text */ 't', `
  This is equivalent to `],
-					[/* reference */ 'r', `java.ZonedDateTime#ofInstant(java.time.Instant,java.time.ZoneId)`],
+					[/* reference */ 'r', `java.time.ZonedDateTime#ofInstant(java.time.Instant,java.time.ZoneId)`, `ZonedDateTime.ofInstant(Instant, ZoneId)`],
 					[/* text */ 't', `.`]
 				]]
 			],
@@ -783,7 +783,7 @@ DocsCollector.collect('java.time.chrono.IsoChronology', [
 				[/* block */ 'b', [
 					[/* text */ 't', `
  This is equivalent to `],
-					[/* reference */ 'r', `java.ZonedDateTime#from(java.time.temporal.TemporalAccessor)`],
+					[/* reference */ 'r', `java.time.ZonedDateTime#from(java.time.temporal.TemporalAccessor)`, `ZonedDateTime.from(TemporalAccessor)`],
 					[/* text */ 't', `.`]
 				]]
 			],

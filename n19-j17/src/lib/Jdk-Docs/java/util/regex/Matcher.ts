@@ -4,15 +4,15 @@ import {DocsCollector} from '../../../DocsCollector';
 DocsCollector.collect('java.util.regex.Matcher', [
 	[/* class description */
 		[/* text */ 't', `An engine that performs match operations on a `],
-		[/* reference */ 'r', `java.lang.CharSequence`],
+		[/* reference */ 'r', `java.lang.CharSequence`, `character sequence`],
 		[/* text */ 't', ` by interpreting a `],
-		[/* reference */ 'r', `java.util.regex.Pattern`],
+		[/* reference */ 'r', `java.util.regex.Pattern`, `Pattern`],
 		[/* text */ 't', `.
 
  `],
 		[/* block */ 'b', [
 			[/* text */ 't', ` A matcher is created from a pattern by invoking the pattern's `],
-			[/* reference */ 'r', `.Pattern#matcher(java.lang.CharSequence)`],
+			[/* reference */ 'r', `java.util.regex.Pattern#matcher(java.lang.CharSequence)`, `matcher`],
 			[/* text */ 't', ` method.  Once created, a matcher can be used to
  perform three different kinds of match operations:
 
@@ -92,7 +92,7 @@ DocsCollector.collect('java.util.regex.Matcher', [
 			[/* text */ 't', ` The explicit state of a matcher includes the start and end indices of
  the most recent successful match.  It also includes the start and end
  indices of the input subsequence captured by each `],
-			[/* reference */ 'r', `.Pattern#cg`],
+			[/* reference */ 'r', `java.util.regex.Pattern#cg`, `capturing group`],
 			[/* text */ 't', ` in the pattern as well as a total
  count of such subsequences.  As a convenience, methods are also provided for
  returning these captured subsequences in string form.
@@ -102,7 +102,7 @@ DocsCollector.collect('java.util.regex.Matcher', [
 		[/* block */ 'b', [
 			[/* text */ 't', ` The explicit state of a matcher is initially undefined; attempting to
  query any part of it before a successful match will cause an `],
-			[/* reference */ 'r', `java.lang.IllegalStateException`],
+			[/* reference */ 'r', `java.lang.IllegalStateException`, `IllegalStateException`],
 			[/* text */ 't', ` to be thrown.  The explicit state of a matcher is
  recomputed by every match operation.
 
@@ -400,7 +400,7 @@ DocsCollector.collect('java.util.regex.Matcher', [
 
  `],
 				[/* block */ 'b', [
-					[/* reference */ 'r', `.Pattern#cg`],
+					[/* reference */ 'r', `java.util.regex.Pattern#cg`, `Capturing groups`],
 					[/* text */ 't', ` are indexed from left
  to right, starting at one.  Group zero denotes the entire pattern, so
  the expression `],
@@ -440,7 +440,7 @@ DocsCollector.collect('java.util.regex.Matcher', [
 			[/* method description */
 				[/* text */ 't', `Returns the offset after the last character of the subsequence
  captured by the given `],
-				[/* reference */ 'r', `.Pattern#groupname`],
+				[/* reference */ 'r', `java.util.regex.Pattern#groupname`, `named-capturing group`],
 				[/* text */ 't', ` during the previous match operation.`]
 			],
 			[/* parameters */
@@ -541,7 +541,7 @@ DocsCollector.collect('java.util.regex.Matcher', [
 
  `],
 				[/* block */ 'b', [
-					[/* reference */ 'r', `.Pattern#cg`],
+					[/* reference */ 'r', `java.util.regex.Pattern#cg`, `Capturing groups`],
 					[/* text */ 't', ` are indexed from left
  to right, starting at one.  Group zero denotes the entire pattern, so
  the expression `],
@@ -581,7 +581,7 @@ DocsCollector.collect('java.util.regex.Matcher', [
 			[/* method description */
 				[/* text */ 't', `Returns the start index of the subsequence captured by the given
  `],
-				[/* reference */ 'r', `.Pattern#groupname`],
+				[/* reference */ 'r', `java.util.regex.Pattern#groupname`, `named-capturing group`],
 				[/* text */ 't', ` during the
  previous match operation.`]
 			],
@@ -689,7 +689,7 @@ DocsCollector.collect('java.util.regex.Matcher', [
  are equivalent.  `]
 				]],
 				[/* block */ 'b', [
-					[/* reference */ 'r', `.Pattern#cg`],
+					[/* reference */ 'r', `java.util.regex.Pattern#cg`, `Capturing groups`],
 					[/* text */ 't', ` are indexed from left
  to right, starting at one.  Group zero denotes the entire pattern, so
  the expression `],
@@ -738,7 +738,7 @@ DocsCollector.collect('java.util.regex.Matcher', [
 			[/* method description */
 				[/* text */ 't', `Returns the input subsequence captured by the given
  `],
-				[/* reference */ 'r', `.Pattern#groupname`],
+				[/* reference */ 'r', `java.util.regex.Pattern#groupname`, `named-capturing group`],
 				[/* text */ 't', ` during the
  previous match operation.
 
@@ -899,7 +899,7 @@ DocsCollector.collect('java.util.regex.Matcher', [
 					[/* text */ 't', ` The replacer function should not modify this matcher's state during
  replacement.  This method will, on a best-effort basis, throw a
  `],
-					[/* reference */ 'r', `java.util.ConcurrentModificationException`],
+					[/* reference */ 'r', `java.util.ConcurrentModificationException`, `ConcurrentModificationException`],
 					[/* text */ 't', ` if such modification is
  detected.
 
@@ -1054,7 +1054,7 @@ DocsCollector.collect('java.util.regex.Matcher', [
 					[/* text */ 't', ` The replacer function should not modify this matcher's state during
  replacement.  This method will, on a best-effort basis, throw a
  `],
-					[/* reference */ 'r', `java.util.ConcurrentModificationException`],
+					[/* reference */ 'r', `java.util.ConcurrentModificationException`, `ConcurrentModificationException`],
 					[/* text */ 't', ` if such modification is
  detected.
 
@@ -1631,7 +1631,7 @@ DocsCollector.collect('java.util.regex.Matcher', [
 		[/* method */ 'toMatchResult()', [
 			[/* method description */
 				[/* text */ 't', `Returns the match state of this matcher as a `],
-				[/* reference */ 'r', `java.util.regex.MatchResult`],
+				[/* reference */ 'r', `java.util.regex.MatchResult`, `MatchResult`],
 				[/* text */ 't', `.
  The result is unaffected by subsequent operations performed upon this
  matcher.`]
@@ -1687,7 +1687,7 @@ DocsCollector.collect('java.util.regex.Matcher', [
 					[/* text */ 't', `fail-fast`],
 					[/* text */ 't', ` and will, on a best-effort
  basis, throw a `],
-					[/* reference */ 'r', `java.util.ConcurrentModificationException`],
+					[/* reference */ 'r', `java.util.ConcurrentModificationException`, `ConcurrentModificationException`],
 					[/* text */ 't', ` if such
  modification is detected.`]
 				]]
@@ -1716,7 +1716,7 @@ DocsCollector.collect('java.util.regex.Matcher', [
  `],
 				[/* inline code block */ 'i', `appendReplacement`],
 				[/* text */ 't', ` method of the `],
-				[/* reference */ 'r', `java.util.regex.Matcher`],
+				[/* reference */ 'r', `java.util.regex.Matcher`, `Matcher`],
 				[/* text */ 't', ` class.
  The `],
 				[/* inline code block */ 'i', `String`],

@@ -15,7 +15,7 @@ DocsCollector.collect('java.lang.reflect.ParameterizedType', [
  parameterized type p is created, the generic class or interface declaration
  that p instantiates is resolved, and all type arguments of p are created
  recursively. See `],
-			[/* reference */ 'r', `java.lang.reflect.TypeVariable`],
+			[/* reference */ 'r', `java.lang.reflect.TypeVariable`, `TypeVariable`],
 			[/* text */ 't', ` for details on the creation process for type
  variables. Repeated creation of a parameterized type has no effect.
 

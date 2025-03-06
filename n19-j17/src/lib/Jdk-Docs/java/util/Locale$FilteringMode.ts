@@ -191,7 +191,7 @@ DocsCollector.collect('java.util.Locale$FilteringMode', [
 					[/* table cell */ 'tbc', [
 						[/* text */ 't', `
  Throws `],
-						[/* reference */ 'r', `java.lang.IllegalArgumentException`],
+						[/* reference */ 'r', `java.lang.IllegalArgumentException`, `IllegalArgumentException`],
 						[/* text */ 't', ` because `],
 						[/* inline code block */ 'i', `"de-*-DE"`],
 						[/* text */ 't', ` is

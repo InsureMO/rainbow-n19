@@ -119,7 +119,7 @@ DocsCollector.collect('java.util.AbstractCollection', [
 				[/* throw */ 'java.lang.ArrayStoreException', [/* throw description */
 					[/* text */ 't', `if the runtime type of any element in this
          collection is not assignable to the `],
-					[/* reference */ 'r', `java.Class#getComponentType()`],
+					[/* reference */ 'r', `java.lang.Class#getComponentType()`, `runtime component type`],
 					[/* text */ 't', ` of the specified array`]
 				]],
 				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
@@ -282,14 +282,14 @@ DocsCollector.collect('java.util.AbstractCollection', [
 					[/* text */ 't', `if the type of the specified element
          is incompatible with this collection
          (`],
-					[/* text */ 't', `optional`],
+					[/* reference */ 'r', `java.util.Collection#optional-restrictions`, `optional`],
 					[/* text */ 't', `)`]
 				]],
 				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
 					[/* text */ 't', `if the specified element is null and this
          collection does not permit null elements
          (`],
-					[/* text */ 't', `optional`],
+					[/* reference */ 'r', `java.util.Collection#optional-restrictions`, `optional`],
 					[/* text */ 't', `)`]
 				]]
 			],
@@ -317,7 +317,7 @@ DocsCollector.collect('java.util.AbstractCollection', [
          in the specified collection are incompatible with this
          collection
          (`],
-					[/* text */ 't', `optional`],
+					[/* reference */ 'r', `java.util.Collection#optional-restrictions`, `optional`],
 					[/* text */ 't', `)`]
 				]],
 				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
@@ -325,7 +325,7 @@ DocsCollector.collect('java.util.AbstractCollection', [
          or more null elements and this collection does not permit null
          elements
          (`],
-					[/* text */ 't', `optional`],
+					[/* reference */ 'r', `java.util.Collection#optional-restrictions`, `optional`],
 					[/* text */ 't', `),
          or if the specified collection is null.`]
 				]]
@@ -381,14 +381,14 @@ DocsCollector.collect('java.util.AbstractCollection', [
 					[/* text */ 't', `if the type of the specified element
          is incompatible with this collection
          (`],
-					[/* text */ 't', `optional`],
+					[/* reference */ 'r', `java.util.Collection#optional-restrictions`, `optional`],
 					[/* text */ 't', `)`]
 				]],
 				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
 					[/* text */ 't', `if the specified element is null and this
          collection does not permit null elements
          (`],
-					[/* text */ 't', `optional`],
+					[/* reference */ 'r', `java.util.Collection#optional-restrictions`, `optional`],
 					[/* text */ 't', `)`]
 				]]
 			],
@@ -421,7 +421,7 @@ DocsCollector.collect('java.util.AbstractCollection', [
          in this collection are incompatible with the specified
          collection
          (`],
-					[/* text */ 't', `optional`],
+					[/* reference */ 'r', `java.util.Collection#optional-restrictions`, `optional`],
 					[/* text */ 't', `)`]
 				]],
 				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
@@ -429,7 +429,7 @@ DocsCollector.collect('java.util.AbstractCollection', [
          null elements and the specified collection does not support
          null elements
          (`],
-					[/* text */ 't', `optional`],
+					[/* reference */ 'r', `java.util.Collection#optional-restrictions`, `optional`],
 					[/* text */ 't', `),
          or if the specified collection is null`]
 				]]
@@ -464,7 +464,7 @@ DocsCollector.collect('java.util.AbstractCollection', [
          in this collection are incompatible with the specified
          collection
          (`],
-					[/* text */ 't', `optional`],
+					[/* reference */ 'r', `java.util.Collection#optional-restrictions`, `optional`],
 					[/* text */ 't', `)`]
 				]],
 				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
@@ -472,7 +472,7 @@ DocsCollector.collect('java.util.AbstractCollection', [
          null elements and the specified collection does not permit null
          elements
          (`],
-					[/* text */ 't', `optional`],
+					[/* reference */ 'r', `java.util.Collection#optional-restrictions`, `optional`],
 					[/* text */ 't', `),
          or if the specified collection is null`]
 				]]
@@ -488,7 +488,7 @@ DocsCollector.collect('java.util.AbstractCollection', [
  If this collection makes any guarantees as to what order its elements
  are returned by its iterator, this method must return the elements in
  the same order. The returned array's `],
-				[/* reference */ 'r', `java.Class#getComponentType()`],
+				[/* reference */ 'r', `java.lang.Class#getComponentType()`, `runtime component type`],
 				[/* text */ 't', ` is `],
 				[/* inline code block */ 'i', `Object`],
 				[/* text */ 't', `.
@@ -503,7 +503,7 @@ DocsCollector.collect('java.util.AbstractCollection', [
 			/* throws */ UDF,
 			[/* return description */
 				[/* text */ 't', `an array, whose `],
-				[/* reference */ 'r', `java.Class#getComponentType()`],
+				[/* reference */ 'r', `java.lang.Class#getComponentType()`, `runtime component type`],
 				[/* text */ 't', ` is `],
 				[/* inline code block */ 'i', `Object`],
 				[/* text */ 't', `, containing all of the elements in this collection`]
@@ -521,7 +521,7 @@ DocsCollector.collect('java.util.AbstractCollection', [
 				[/* inline code block */ 'i', `", "`],
 				[/* text */ 't', ` (comma and space).  Elements are converted to strings as
  by `],
-				[/* reference */ 'r', `java.String#valueOf(java.lang.Object)`],
+				[/* reference */ 'r', `java.lang.String#valueOf(java.lang.Object)`, `String.valueOf(Object)`],
 				[/* text */ 't', `.`]
 			],
 			/* parameters */ UDF,

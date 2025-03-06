@@ -4,7 +4,7 @@ import {DocsCollector} from '../../DocsCollector';
 DocsCollector.collect('java.lang.ModuleLayer$Controller', [
 	[/* class description */
 		[/* text */ 't', `Controls a module layer. The static methods defined by `],
-		[/* reference */ 'r', `java.lang.ModuleLayer`],
+		[/* reference */ 'r', `java.lang.ModuleLayer`, `ModuleLayer`],
 		[/* text */ 't', `
  to create module layers return a `],
 		[/* inline code block */ 'i', `Controller`],
@@ -17,7 +17,7 @@ DocsCollector.collect('java.lang.ModuleLayer$Controller', [
 			[/* inline code block */ 'i', `null`],
 			[/* text */ 't', ` argument to a
  method in this class causes a `],
-			[/* reference */ 'r', `java.lang.NullPointerException`],
+			[/* reference */ 'r', `java.lang.NullPointerException`, `NullPointerException`],
 			[/* text */ 't', ` to be thrown. `]
 		]]
 	],

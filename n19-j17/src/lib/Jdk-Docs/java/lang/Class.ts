@@ -51,13 +51,13 @@ DocsCollector.collect('java.lang.Class', [
 		]],
 		[/* list */ 'l', [
 			[/* block */ 'b', [
-				[/* reference */ 'r', `.ClassLoader#defineClass(java.lang.String,byte[],int,int)`]
+				[/* reference */ 'r', `java.lang.ClassLoader#defineClass(java.lang.String,byte[],int,int)`, `ClassLoader::defineClass`]
 			]],
 			[/* block */ 'b', [
-				[/* reference */ 'r', `.MethodHandles.Lookup#defineClass(byte[])`]
+				[/* reference */ 'r', `java.lang.invoke.MethodHandles.Lookup#defineClass(byte[])`, `java.lang.invoke.MethodHandles.Lookup::defineClass`]
 			]],
 			[/* block */ 'b', [
-				[/* reference */ 'r', `.MethodHandles.Lookup#defineHiddenClass(byte[],boolean,java.lang.invoke.MethodHandles.Lookup.ClassOption...)`]
+				[/* reference */ 'r', `java.lang.invoke.MethodHandles.Lookup#defineHiddenClass(byte[],boolean,java.lang.invoke.MethodHandles.Lookup.ClassOption...)`, `java.lang.invoke.MethodHandles.Lookup::defineHiddenClass`]
 			]]
 		]],
 		[/* block */ 'b', ''],
@@ -127,7 +127,7 @@ DocsCollector.collect('java.lang.Class', [
  is situated in a `],
 			[/* text */ 't', `nest`],
 			[/* text */ 't', `. A `],
-			[/* text */ 't', `nest`],
+			[/* anchor */ 'r', '#-id', `nest`, `nest`],
 			[/* text */ 't', ` is a set of
  classes and interfaces, in the same run-time package, that
  allow mutual access to their `],
@@ -155,7 +155,7 @@ DocsCollector.collect('java.lang.Class', [
 		[/* block */ 'b', [
 			[/* text */ 't', ` A class or interface created by the invocation of
  `],
-			[/* reference */ 'r', `.MethodHandles.Lookup#defineHiddenClass(byte[],boolean,java.lang.invoke.MethodHandles.Lookup.ClassOption...)`],
+			[/* reference */ 'r', `java.lang.invoke.MethodHandles.Lookup#defineHiddenClass(byte[],boolean,java.lang.invoke.MethodHandles.Lookup.ClassOption...)`, `Lookup::defineHiddenClass`],
 			[/* text */ 't', ` is a `],
 			[/* reference */ 'r', `#isHidden()`, `hidden`],
 			[/* text */ 't', `
@@ -168,7 +168,7 @@ DocsCollector.collect('java.lang.Class', [
 			[/* reference */ 'r', `#getName()`, `name of a hidden class or interface`],
 			[/* text */ 't', ` is
  not a `],
-			[/* reference */ 'r', `.ClassLoader#binary-name`],
+			[/* reference */ 'r', `java.lang.ClassLoader#binary-name`, `binary name`],
 			[/* text */ 't', `,
  which means the following:
  `]
@@ -180,16 +180,16 @@ DocsCollector.collect('java.lang.Class', [
 			[/* block */ 'b', [
 				[/* text */ 't', `A hidden class or interface cannot be described in
      `],
-				[/* reference */ 'r', `java.lang.constant.ConstantDesc`],
+				[/* reference */ 'r', `java.lang.constant.ConstantDesc`, `nominal form`],
 				[/* text */ 't', ` by
      `],
 				[/* reference */ 'r', `#describeConstable()`, `Class::describeConstable`],
 				[/* text */ 't', `,
      `],
-				[/* reference */ 'r', `.ClassDesc#of(java.lang.String)`],
+				[/* reference */ 'r', `java.lang.constant.ClassDesc#of(java.lang.String)`, `ClassDesc::of`],
 				[/* text */ 't', `, or
      `],
-				[/* reference */ 'r', `.ClassDesc#ofDescriptor(java.lang.String)`],
+				[/* reference */ 'r', `java.lang.constant.ClassDesc#ofDescriptor(java.lang.String)`, `ClassDesc::ofDescriptor`],
 				[/* text */ 't', `.
  `]
 			]],
@@ -198,7 +198,7 @@ DocsCollector.collect('java.lang.Class', [
 				[/* reference */ 'r', `#forName(java.lang.String)`, `Class::forName`],
 				[/* text */ 't', `
      or `],
-				[/* reference */ 'r', `.ClassLoader#loadClass(java.lang.String,boolean)`],
+				[/* reference */ 'r', `java.lang.ClassLoader#loadClass(java.lang.String,boolean)`, `ClassLoader::loadClass`],
 				[/* text */ 't', `.
  `]
 			]]
@@ -283,7 +283,7 @@ DocsCollector.collect('java.lang.Class', [
  value is an array of length 0.
 
  The difference between this method and `],
-				[/* reference */ 'r', `.AnnotatedElement#getAnnotation(java.lang.Class)`],
+				[/* reference */ 'r', `java.lang.reflect.AnnotatedElement#getAnnotation(java.lang.Class)`, `AnnotatedElement.getAnnotation(Class)`],
 				[/* text */ 't', `
  is that this method detects if its argument is a `],
 				[/* text */ 't', `repeatable
@@ -332,7 +332,7 @@ DocsCollector.collect('java.lang.Class', [
  0.
 
  The difference between this method and `],
-				[/* reference */ 'r', `.AnnotatedElement#getDeclaredAnnotation(java.lang.Class)`],
+				[/* reference */ 'r', `java.lang.reflect.AnnotatedElement#getDeclaredAnnotation(java.lang.Class)`, `AnnotatedElement.getDeclaredAnnotation(Class)`],
 				[/* text */ 't', ` is that this method detects if its
  argument is a `],
 				[/* text */ 't', `repeatable annotation type`],
@@ -505,7 +505,7 @@ DocsCollector.collect('java.lang.Class', [
  source code.
 
  Note that `],
-				[/* reference */ 'r', `java.lang.Enum`],
+				[/* reference */ 'r', `java.lang.Enum`, `Enum`],
 				[/* text */ 't', ` is not itself an enum class.
 
  Also note that if an enum constant is declared with a class body,
@@ -514,7 +514,7 @@ DocsCollector.collect('java.lang.Class', [
 				[/* text */ 't', `not`],
 				[/* text */ 't', ` the class of the declaring enum class. The
  `],
-				[/* reference */ 'r', `.Enum#getDeclaringClass()`],
+				[/* reference */ 'r', `java.lang.Enum#getDeclaringClass()`, `Enum.getDeclaringClass()`],
 				[/* text */ 't', ` method of an enum constant can
  be used to get the class of the enum class declaring the
  constant.`]
@@ -597,7 +597,7 @@ DocsCollector.collect('java.lang.Class', [
  class is `],
 					[/* inline code block */ 'i', `java.lang.Record`],
 					[/* text */ 't', `. A record class is `],
-					[/* reference */ 'r', `.Modifier#FINAL`],
+					[/* reference */ 'r', `java.lang.reflect.Modifier#FINAL`, `final`],
 					[/* text */ 't', `. A record class has (possibly zero) record
  components; `],
 					[/* reference */ 'r', `#getRecordComponents()`, `getRecordComponents()`],
@@ -608,7 +608,7 @@ DocsCollector.collect('java.lang.Class', [
 				]],
 				[/* block */ 'b', [
 					[/* text */ 't', ` Note that class `],
-					[/* reference */ 'r', `java.lang.Record`],
+					[/* reference */ 'r', `java.lang.Record`, `Record`],
 					[/* text */ 't', ` is not a record class and thus
  invoking this method on class `],
 					[/* inline code block */ 'i', `Record`],
@@ -676,17 +676,17 @@ DocsCollector.collect('java.lang.Class', [
  `],
 				[/* block */ 'b', [
 					[/* text */ 't', ` If this class is in a named `],
-					[/* reference */ 'r', `java.lang.Module`],
+					[/* reference */ 'r', `java.lang.Module`, `Module`],
 					[/* text */ 't', ` then this method
  will attempt to find the resource in the module. This is done by
  delegating to the module's class loader `],
-					[/* reference */ 'r', `.ClassLoader#findResource(java.lang.String,java.lang.String)`],
+					[/* reference */ 'r', `java.lang.ClassLoader#findResource(java.lang.String,java.lang.String)`, `findResource(String,String)`],
 					[/* text */ 't', `
  method, invoking it with the module name and the absolute name of the
  resource. Resources in named modules are subject to the rules for
  encapsulation specified in the `],
 					[/* inline code block */ 'i', `Module`],
-					[/* reference */ 'r', `.Module#getResourceAsStream(java.lang.String)`],
+					[/* reference */ 'r', `java.lang.Module#getResourceAsStream(java.lang.String)`, `getResourceAsStream`],
 					[/* text */ 't', ` method and so this
  method returns `],
 					[/* inline code block */ 'i', `null`],
@@ -702,7 +702,7 @@ DocsCollector.collect('java.lang.Class', [
 					[/* text */ 't', ` Otherwise, if this class is not in a named module then the rules for
  searching resources associated with a given class are implemented by the
  defining `],
-					[/* reference */ 'r', `java.lang.ClassLoader`],
+					[/* reference */ 'r', `java.lang.ClassLoader`, `class loader`],
 					[/* text */ 't', ` of the class.  This method
  delegates to this `],
 					[/* inline code block */ 'i', `Class`],
@@ -711,7 +711,7 @@ DocsCollector.collect('java.lang.Class', [
 					[/* inline code block */ 'i', `Class`],
 					[/* text */ 't', ` object was loaded by the bootstrap class loader,
  the method delegates to `],
-					[/* reference */ 'r', `.ClassLoader#getSystemResourceAsStream(java.lang.String)`],
+					[/* reference */ 'r', `java.lang.ClassLoader#getSystemResourceAsStream(java.lang.String)`, `ClassLoader.getSystemResourceAsStream(java.lang.String)`],
 					[/* text */ 't', `.
 
  `]
@@ -779,13 +779,13 @@ DocsCollector.collect('java.lang.Class', [
 			],
 			[/* return description */
 				[/* text */ 't', `A `],
-				[/* reference */ 'r', `java.io.InputStream`],
+				[/* reference */ 'r', `java.io.InputStream`, `InputStream`],
 				[/* text */ 't', ` object; `],
 				[/* inline code block */ 'i', `null`],
 				[/* text */ 't', ` if no
           resource with this name is found, the resource is in a package
           that is not `],
-				[/* reference */ 'r', `.Module#isOpen(java.lang.String,java.lang.Module)`],
+				[/* reference */ 'r', `java.lang.Module#isOpen(java.lang.String,java.lang.Module)`, `open`],
 				[/* text */ 't', ` to at
           least the caller module, or access to the resource is denied
           by the security manager.`]
@@ -844,7 +844,7 @@ DocsCollector.collect('java.lang.Class', [
 				[/* inline code block */ 'i', `Class`],
 				[/* text */ 't', ` for an array type whose component type
  is described by this `],
-				[/* reference */ 'r', `java.lang.Class`],
+				[/* reference */ 'r', `java.lang.Class`, `Class`],
 				[/* text */ 't', `.`]
 			],
 			/* parameters */ UDF,
@@ -917,7 +917,7 @@ DocsCollector.collect('java.lang.Class', [
 					[/* text */ 't', `, is present and the caller's
          class loader is not the same as or an ancestor of the class
          loader for the declaring class and invocation of `],
-					[/* reference */ 'r', `.SecurityManager#checkPackageAccess(java.lang.String)`],
+					[/* reference */ 'r', `java.lang.SecurityManager#checkPackageAccess(java.lang.String)`, `s.checkPackageAccess()`],
 					[/* text */ 't', `
          denies access to the package of the declaring class`]
 				]]
@@ -942,7 +942,7 @@ DocsCollector.collect('java.lang.Class', [
 					[/* text */ 't', `, is present and the caller's
              class loader is not the same as or an ancestor of the class
              loader for the enclosing class and invocation of `],
-					[/* reference */ 'r', `.SecurityManager#checkPackageAccess(java.lang.String)`],
+					[/* reference */ 'r', `java.lang.SecurityManager#checkPackageAccess(java.lang.String)`, `s.checkPackageAccess()`],
 					[/* text */ 't', `
              denies access to the package of the enclosing class`]
 				]]
@@ -996,7 +996,7 @@ DocsCollector.collect('java.lang.Class', [
 					[/* text */ 't', `, is present and the caller's
          class loader is not the same as or an ancestor of the class
          loader for the returned class and invocation of `],
-					[/* reference */ 'r', `.SecurityManager#checkPackageAccess(java.lang.String)`],
+					[/* reference */ 'r', `java.lang.SecurityManager#checkPackageAccess(java.lang.String)`, `s.checkPackageAccess()`],
 					[/* text */ 't', `
          denies access to the package of the returned class`]
 				]]
@@ -1034,7 +1034,7 @@ DocsCollector.collect('java.lang.Class', [
          the caller's class loader is not the same as or an
          ancestor of the class loader for the current class and
          invocation of `],
-					[/* reference */ 'r', `.SecurityManager#checkPackageAccess(java.lang.String)`],
+					[/* reference */ 'r', `java.lang.SecurityManager#checkPackageAccess(java.lang.String)`, `s.checkPackageAccess()`],
 					[/* text */ 't', ` denies access to the package
          of this class.`]
 				]]
@@ -1077,7 +1077,7 @@ DocsCollector.collect('java.lang.Class', [
 							[/* text */ 't', ` the caller's class loader is not the same as the
          class loader of this class and invocation of
          `],
-							[/* reference */ 'r', `.SecurityManager#checkPermission(java.security.Permission)`],
+							[/* reference */ 'r', `java.lang.SecurityManager#checkPermission(java.security.Permission)`, `s.checkPermission`],
 							[/* text */ 't', ` method with
          `],
 							[/* inline code block */ 'i', `RuntimePermission("accessDeclaredMembers")`],
@@ -1090,7 +1090,7 @@ DocsCollector.collect('java.lang.Class', [
 							[/* text */ 't', ` the caller's class loader is not the same as or an
          ancestor of the class loader for the current class and
          invocation of `],
-							[/* reference */ 'r', `.SecurityManager#checkPackageAccess(java.lang.String)`],
+							[/* reference */ 'r', `java.lang.SecurityManager#checkPackageAccess(java.lang.String)`, `s.checkPackageAccess()`],
 							[/* text */ 't', ` denies access to the package
          of this class
 
@@ -1287,7 +1287,7 @@ DocsCollector.collect('java.lang.Class', [
 					[/* text */ 't', `, is present and the caller's
  class loader is not the same as or an ancestor of the class
  loader for that returned class and invocation of `],
-					[/* reference */ 'r', `.SecurityManager#checkPackageAccess(java.lang.String)`],
+					[/* reference */ 'r', `java.lang.SecurityManager#checkPackageAccess(java.lang.String)`, `s.checkPackageAccess()`],
 					[/* text */ 't', `
  denies access to the package of that returned class`]
 				]]
@@ -1357,7 +1357,7 @@ DocsCollector.collect('java.lang.Class', [
 					[/* text */ 't', `, is present and the caller's
          class loader is not the same as or an ancestor of the class
          loader for that returned class and invocation of `],
-					[/* reference */ 'r', `.SecurityManager#checkPackageAccess(java.lang.String)`],
+					[/* reference */ 'r', `java.lang.SecurityManager#checkPackageAccess(java.lang.String)`, `s.checkPackageAccess()`],
 					[/* text */ 't', `
          denies access to the package of any class in the returned array.`]
 				]]
@@ -1396,7 +1396,7 @@ DocsCollector.collect('java.lang.Class', [
           class loader for the class whose class loader is requested,
           and the caller does not have the
           `],
-					[/* reference */ 'r', `java.lang.RuntimePermission`],
+					[/* reference */ 'r', `java.lang.RuntimePermission`, `RuntimePermission`],
 					[/* inline code block */ 'i', `("getClassLoader")`]
 				]]
 			],
@@ -1423,7 +1423,7 @@ DocsCollector.collect('java.lang.Class', [
 				[/* text */ 't', ` module is returned.
 
  If this class is in an unnamed module then the `],
-				[/* reference */ 'r', `.ClassLoader#getUnnamedModule()`],
+				[/* reference */ 'r', `java.lang.ClassLoader#getUnnamedModule()`, `unnamed`],
 				[/* inline code block */ 'i', `Module`],
 				[/* text */ 't', ` of the class
  loader for this class is returned.`]
@@ -1573,7 +1573,7 @@ DocsCollector.collect('java.lang.Class', [
 				[/* inline code block */ 'i', `Class`],
 				[/* text */ 't', ` object represents a local or anonymous
  class within a constructor, returns a `],
-				[/* reference */ 'r', `java.lang.reflect.Constructor`],
+				[/* reference */ 'r', `java.lang.reflect.Constructor`, `Constructor`],
 				[/* text */ 't', ` object representing
  the immediately enclosing constructor of the underlying
  class. Returns `],
@@ -1599,7 +1599,7 @@ DocsCollector.collect('java.lang.Class', [
 							[/* text */ 't', ` the caller's class loader is not the same as the
          class loader of the enclosing class and invocation of
          `],
-							[/* reference */ 'r', `.SecurityManager#checkPermission(java.security.Permission)`],
+							[/* reference */ 'r', `java.lang.SecurityManager#checkPermission(java.security.Permission)`, `s.checkPermission`],
 							[/* text */ 't', ` method with
          `],
 							[/* inline code block */ 'i', `RuntimePermission("accessDeclaredMembers")`],
@@ -1612,7 +1612,7 @@ DocsCollector.collect('java.lang.Class', [
 							[/* text */ 't', ` the caller's class loader is not the same as or an
          ancestor of the class loader for the enclosing class and
          invocation of `],
-							[/* reference */ 'r', `.SecurityManager#checkPackageAccess(java.lang.String)`],
+							[/* reference */ 'r', `java.lang.SecurityManager#checkPackageAccess(java.lang.String)`, `s.checkPackageAccess()`],
 							[/* text */ 't', ` denies access to the package
          of the enclosing class
 
@@ -1649,7 +1649,7 @@ DocsCollector.collect('java.lang.Class', [
          the caller's class loader is not the same as or an
          ancestor of the class loader for the current class and
          invocation of `],
-					[/* reference */ 'r', `.SecurityManager#checkPackageAccess(java.lang.String)`],
+					[/* reference */ 'r', `java.lang.SecurityManager#checkPackageAccess(java.lang.String)`, `s.checkPackageAccess()`],
 					[/* text */ 't', ` denies access to the package
          of this class.`]
 				]]
@@ -1703,7 +1703,7 @@ DocsCollector.collect('java.lang.Class', [
 							[/* text */ 't', ` the caller's class loader is not the same as the
           class loader of this class and invocation of
           `],
-							[/* reference */ 'r', `.SecurityManager#checkPermission(java.security.Permission)`],
+							[/* reference */ 'r', `java.lang.SecurityManager#checkPermission(java.security.Permission)`, `s.checkPermission`],
 							[/* text */ 't', ` method with
           `],
 							[/* inline code block */ 'i', `RuntimePermission("accessDeclaredMembers")`],
@@ -1716,7 +1716,7 @@ DocsCollector.collect('java.lang.Class', [
 							[/* text */ 't', ` the caller's class loader is not the same as or an
           ancestor of the class loader for the current class and
           invocation of `],
-							[/* reference */ 'r', `.SecurityManager#checkPackageAccess(java.lang.String)`],
+							[/* reference */ 'r', `java.lang.SecurityManager#checkPackageAccess(java.lang.String)`, `s.checkPackageAccess()`],
 							[/* text */ 't', ` denies access to the package
           of this class
 
@@ -1781,7 +1781,7 @@ DocsCollector.collect('java.lang.Class', [
          the caller's class loader is not the same as or an
          ancestor of the class loader for the current class and
          invocation of `],
-					[/* reference */ 'r', `.SecurityManager#checkPackageAccess(java.lang.String)`],
+					[/* reference */ 'r', `java.lang.SecurityManager#checkPackageAccess(java.lang.String)`, `s.checkPackageAccess()`],
 					[/* text */ 't', ` denies access to the package
          of this class.`]
 				]]
@@ -1837,7 +1837,7 @@ DocsCollector.collect('java.lang.Class', [
 							[/* text */ 't', ` the caller's class loader is not the same as the
           class loader of this class and invocation of
           `],
-							[/* reference */ 'r', `.SecurityManager#checkPermission(java.security.Permission)`],
+							[/* reference */ 'r', `java.lang.SecurityManager#checkPermission(java.security.Permission)`, `s.checkPermission`],
 							[/* text */ 't', ` method with
           `],
 							[/* inline code block */ 'i', `RuntimePermission("accessDeclaredMembers")`],
@@ -1850,7 +1850,7 @@ DocsCollector.collect('java.lang.Class', [
 							[/* text */ 't', ` the caller's class loader is not the same as or an
           ancestor of the class loader for the current class and
           invocation of `],
-							[/* reference */ 'r', `.SecurityManager#checkPackageAccess(java.lang.String)`],
+							[/* reference */ 'r', `java.lang.SecurityManager#checkPackageAccess(java.lang.String)`, `s.checkPackageAccess()`],
 							[/* text */ 't', ` denies access to the package
           of this class
 
@@ -1919,7 +1919,7 @@ DocsCollector.collect('java.lang.Class', [
 							[/* text */ 't', ` the caller's class loader is not the same as the
           class loader of this class and invocation of
           `],
-							[/* reference */ 'r', `.SecurityManager#checkPermission(java.security.Permission)`],
+							[/* reference */ 'r', `java.lang.SecurityManager#checkPermission(java.security.Permission)`, `s.checkPermission`],
 							[/* text */ 't', ` method with
           `],
 							[/* inline code block */ 'i', `RuntimePermission("accessDeclaredMembers")`],
@@ -1932,7 +1932,7 @@ DocsCollector.collect('java.lang.Class', [
 							[/* text */ 't', ` the caller's class loader is not the same as or an
           ancestor of the class loader for the current class and
           invocation of `],
-							[/* reference */ 'r', `.SecurityManager#checkPackageAccess(java.lang.String)`],
+							[/* reference */ 'r', `java.lang.SecurityManager#checkPackageAccess(java.lang.String)`, `s.checkPackageAccess()`],
 							[/* text */ 't', ` denies access to the package
           of this class
 
@@ -2020,7 +2020,7 @@ DocsCollector.collect('java.lang.Class', [
          the caller's class loader is not the same as or an
          ancestor of the class loader for the current class and
          invocation of `],
-					[/* reference */ 'r', `.SecurityManager#checkPackageAccess(java.lang.String)`],
+					[/* reference */ 'r', `java.lang.SecurityManager#checkPackageAccess(java.lang.String)`, `s.checkPackageAccess()`],
 					[/* text */ 't', ` denies access to the package
          of this class.`]
 				]]
@@ -2078,7 +2078,7 @@ DocsCollector.collect('java.lang.Class', [
 							[/* text */ 't', ` the caller's class loader is not the same as the
           class loader of this class and invocation of
           `],
-							[/* reference */ 'r', `.SecurityManager#checkPermission(java.security.Permission)`],
+							[/* reference */ 'r', `java.lang.SecurityManager#checkPermission(java.security.Permission)`, `s.checkPermission`],
 							[/* text */ 't', ` method with
           `],
 							[/* inline code block */ 'i', `RuntimePermission("accessDeclaredMembers")`],
@@ -2091,7 +2091,7 @@ DocsCollector.collect('java.lang.Class', [
 							[/* text */ 't', ` the caller's class loader is not the same as or an
           ancestor of the class loader for the current class and
           invocation of `],
-							[/* reference */ 'r', `.SecurityManager#checkPackageAccess(java.lang.String)`],
+							[/* reference */ 'r', `java.lang.SecurityManager#checkPackageAccess(java.lang.String)`, `s.checkPackageAccess()`],
 							[/* text */ 't', ` denies access to the package
           of this class
 
@@ -2165,7 +2165,7 @@ DocsCollector.collect('java.lang.Class', [
          the caller's class loader is not the same as or an
          ancestor of the class loader for the current class and
          invocation of `],
-					[/* reference */ 'r', `.SecurityManager#checkPackageAccess(java.lang.String)`],
+					[/* reference */ 'r', `java.lang.SecurityManager#checkPackageAccess(java.lang.String)`, `s.checkPackageAccess()`],
 					[/* text */ 't', ` denies access to the package
          of this class.`]
 				]]
@@ -2246,7 +2246,7 @@ DocsCollector.collect('java.lang.Class', [
 							[/* text */ 't', ` the caller's class loader is not the same as the
           class loader of this class and invocation of
           `],
-							[/* reference */ 'r', `.SecurityManager#checkPermission(java.security.Permission)`],
+							[/* reference */ 'r', `java.lang.SecurityManager#checkPermission(java.security.Permission)`, `s.checkPermission`],
 							[/* text */ 't', ` method with
           `],
 							[/* inline code block */ 'i', `RuntimePermission("accessDeclaredMembers")`],
@@ -2259,7 +2259,7 @@ DocsCollector.collect('java.lang.Class', [
 							[/* text */ 't', ` the caller's class loader is not the same as or an
           ancestor of the class loader for the current class and
           invocation of `],
-							[/* reference */ 'r', `.SecurityManager#checkPackageAccess(java.lang.String)`],
+							[/* reference */ 'r', `java.lang.SecurityManager#checkPackageAccess(java.lang.String)`, `s.checkPackageAccess()`],
 							[/* text */ 't', ` denies access to the package
           of this class
 
@@ -2281,7 +2281,7 @@ DocsCollector.collect('java.lang.Class', [
 				[/* inline code block */ 'i', `Class`],
 				[/* text */ 't', ` object represents a local or anonymous
  class within a method, returns a `],
-				[/* reference */ 'r', `java.lang.reflect.Method`],
+				[/* reference */ 'r', `java.lang.reflect.Method`, `Method`],
 				[/* text */ 't', ` object representing the
  immediately enclosing method of the underlying class. Returns
  `],
@@ -2308,7 +2308,7 @@ DocsCollector.collect('java.lang.Class', [
 							[/* text */ 't', ` the caller's class loader is not the same as the
          class loader of the enclosing class and invocation of
          `],
-							[/* reference */ 'r', `.SecurityManager#checkPermission(java.security.Permission)`],
+							[/* reference */ 'r', `java.lang.SecurityManager#checkPermission(java.security.Permission)`, `s.checkPermission`],
 							[/* text */ 't', ` method with
          `],
 							[/* inline code block */ 'i', `RuntimePermission("accessDeclaredMembers")`],
@@ -2321,7 +2321,7 @@ DocsCollector.collect('java.lang.Class', [
 							[/* text */ 't', ` the caller's class loader is not the same as or an
          ancestor of the class loader for the enclosing class and
          invocation of `],
-							[/* reference */ 'r', `.SecurityManager#checkPackageAccess(java.lang.String)`],
+							[/* reference */ 'r', `java.lang.SecurityManager#checkPackageAccess(java.lang.String)`, `s.checkPackageAccess()`],
 							[/* text */ 't', ` denies access to the package
          of the enclosing class
 
@@ -2494,7 +2494,7 @@ DocsCollector.collect('java.lang.Class', [
          the caller's class loader is not the same as or an
          ancestor of the class loader for the current class and
          invocation of `],
-					[/* reference */ 'r', `.SecurityManager#checkPackageAccess(java.lang.String)`],
+					[/* reference */ 'r', `java.lang.SecurityManager#checkPackageAccess(java.lang.String)`, `s.checkPackageAccess()`],
 					[/* text */ 't', ` denies access to the package
          of this class.`]
 				]]
@@ -2522,9 +2522,9 @@ DocsCollector.collect('java.lang.Class', [
 				[/* text */ 't', `not`],
 				[/* text */ 't', ` in the
  source of the class or interface, including `],
-				[/* reference */ 'r', `.Method#isBridge()`],
+				[/* reference */ 'r', `java.lang.reflect.Method#isBridge()`, `bridge methods`],
 				[/* text */ 't', ` and other `],
-				[/* reference */ 'r', `.Executable#isSynthetic()`],
+				[/* reference */ 'r', `java.lang.reflect.Executable#isSynthetic()`, `synthetic`],
 				[/* text */ 't', ` methods added by compilers.
 
  `],
@@ -2588,7 +2588,7 @@ DocsCollector.collect('java.lang.Class', [
 							[/* text */ 't', ` the caller's class loader is not the same as the
           class loader of this class and invocation of
           `],
-							[/* reference */ 'r', `.SecurityManager#checkPermission(java.security.Permission)`],
+							[/* reference */ 'r', `java.lang.SecurityManager#checkPermission(java.security.Permission)`, `s.checkPermission`],
 							[/* text */ 't', ` method with
           `],
 							[/* inline code block */ 'i', `RuntimePermission("accessDeclaredMembers")`],
@@ -2601,7 +2601,7 @@ DocsCollector.collect('java.lang.Class', [
 							[/* text */ 't', ` the caller's class loader is not the same as or an
           ancestor of the class loader for the current class and
           invocation of `],
-							[/* reference */ 'r', `.SecurityManager#checkPackageAccess(java.lang.String)`],
+							[/* reference */ 'r', `java.lang.SecurityManager#checkPackageAccess(java.lang.String)`, `s.checkPackageAccess()`],
 							[/* text */ 't', ` denies access to the package
           of this class
 
@@ -2738,7 +2738,7 @@ DocsCollector.collect('java.lang.Class', [
          the caller's class loader is not the same as or an
          ancestor of the class loader for the current class and
          invocation of `],
-					[/* reference */ 'r', `.SecurityManager#checkPackageAccess(java.lang.String)`],
+					[/* reference */ 'r', `java.lang.SecurityManager#checkPackageAccess(java.lang.String)`, `s.checkPackageAccess()`],
 					[/* text */ 't', ` denies access to the package
          of this class.`]
 				]]
@@ -2793,7 +2793,7 @@ DocsCollector.collect('java.lang.Class', [
 							[/* text */ 't', ` the caller's class loader is not the same as the
           class loader of this class and invocation of
           `],
-							[/* reference */ 'r', `.SecurityManager#checkPermission(java.security.Permission)`],
+							[/* reference */ 'r', `java.lang.SecurityManager#checkPermission(java.security.Permission)`, `s.checkPermission`],
 							[/* text */ 't', ` method with
           `],
 							[/* inline code block */ 'i', `RuntimePermission("accessDeclaredMembers")`],
@@ -2806,7 +2806,7 @@ DocsCollector.collect('java.lang.Class', [
 							[/* text */ 't', ` the caller's class loader is not the same as or an
           ancestor of the class loader for the current class and
           invocation of `],
-							[/* reference */ 'r', `.SecurityManager#checkPackageAccess(java.lang.String)`],
+							[/* reference */ 'r', `java.lang.SecurityManager#checkPackageAccess(java.lang.String)`, `s.checkPackageAccess()`],
 							[/* text */ 't', ` denies access to the package
           of this class
 
@@ -2844,7 +2844,7 @@ DocsCollector.collect('java.lang.Class', [
  arguments used in the source code. The parameterized type
  representing the superclass is created if it had not been
  created before. See the declaration of `],
-					[/* reference */ 'r', `java.lang.reflect.ParameterizedType`],
+					[/* reference */ 'r', `java.lang.reflect.ParameterizedType`, `ParameterizedType`],
 					[/* text */ 't', ` for the
  semantics of the creation process for parameterized types.  If
  this `],
@@ -2911,7 +2911,7 @@ DocsCollector.collect('java.lang.Class', [
  parameterized type representing each superinterface is created
  if it had not been created before. See the declaration of
  `],
-					[/* reference */ 'r', `java.lang.reflect.ParameterizedType`],
+					[/* reference */ 'r', `java.lang.reflect.ParameterizedType`, `ParameterizedType`],
 					[/* text */ 't', `
  for the semantics of the creation process for parameterized
  types.
@@ -3057,10 +3057,10 @@ DocsCollector.collect('java.lang.Class', [
 						[/* text */ 't', `)
       for the class or interface. Calling
       `],
-						[/* reference */ 'r', `.ClassDesc#ofDescriptor(java.lang.String)`],
+						[/* reference */ 'r', `java.lang.constant.ClassDesc#ofDescriptor(java.lang.String)`, `ClassDesc::ofDescriptor`],
 						[/* text */ 't', `
       with the result descriptor string produces a `],
-						[/* reference */ 'r', `java.lang.constant.ClassDesc`],
+						[/* reference */ 'r', `java.lang.constant.ClassDesc`, `ClassDesc`],
 						[/* text */ 't', `
       describing this class or interface.
  `]
@@ -3080,18 +3080,18 @@ DocsCollector.collect('java.lang.Class', [
       where `],
 						[/* text */ 't', `N`],
 						[/* text */ 't', ` is the `],
-						[/* reference */ 'r', `.ClassLoader#binary-name`],
+						[/* reference */ 'r', `java.lang.ClassLoader#binary-name`, `binary name`],
 						[/* text */ 't', `
       encoded in internal form indicated by the `],
 						[/* inline code block */ 'i', `class`],
 						[/* text */ 't', ` file passed to
       `],
-						[/* reference */ 'r', `.MethodHandles.Lookup#defineHiddenClass(byte[],boolean,java.lang.invoke.MethodHandles.Lookup.ClassOption...)`],
+						[/* reference */ 'r', `java.lang.invoke.MethodHandles.Lookup#defineHiddenClass(byte[],boolean,java.lang.invoke.MethodHandles.Lookup.ClassOption...)`, `Lookup::defineHiddenClass`],
 						[/* text */ 't', `, and `],
 						[/* inline code block */ 'i', `<suffix>`],
 						[/* text */ 't', ` is an unqualified name.
       A hidden class or interface has no `],
-						[/* reference */ 'r', `java.lang.constant.ClassDesc`],
+						[/* reference */ 'r', `java.lang.constant.ClassDesc`, `nominal descriptor`],
 						[/* text */ 't', `.
       The result string is not a type descriptor.
  `]
@@ -3116,10 +3116,10 @@ DocsCollector.collect('java.lang.Class', [
 						[/* text */ 't', ` class
  or interface, then this array class can be described nominally.
  Calling `],
-						[/* reference */ 'r', `.ClassDesc#ofDescriptor(java.lang.String)`],
+						[/* reference */ 'r', `java.lang.constant.ClassDesc#ofDescriptor(java.lang.String)`, `ClassDesc::ofDescriptor`],
 						[/* text */ 't', `
  with the result descriptor string produces a `],
-						[/* reference */ 'r', `java.lang.constant.ClassDesc`],
+						[/* reference */ 'r', `java.lang.constant.ClassDesc`, `ClassDesc`],
 						[/* text */ 't', `
  describing this array class.
  `]
@@ -3216,7 +3216,7 @@ DocsCollector.collect('java.lang.Class', [
 						[/* reference */ 'r', `#isHidden()`, `hidden`],
 						[/* text */ 't', `,
       then the `],
-						[/* reference */ 'r', `.ClassLoader#binary-name`],
+						[/* reference */ 'r', `java.lang.ClassLoader#binary-name`, `binary name`],
 						[/* text */ 't', `
       of the class or interface is returned.
  `]
@@ -3229,13 +3229,13 @@ DocsCollector.collect('java.lang.Class', [
       where `],
 						[/* inline code block */ 'i', `N`],
 						[/* text */ 't', ` is the `],
-						[/* reference */ 'r', `.ClassLoader#binary-name`],
+						[/* reference */ 'r', `java.lang.ClassLoader#binary-name`, `binary name`],
 						[/* text */ 't', `
       indicated by the `],
 						[/* inline code block */ 'i', `class`],
 						[/* text */ 't', ` file passed to
       `],
-						[/* reference */ 'r', `.MethodHandles.Lookup#defineHiddenClass(byte[],boolean,java.lang.invoke.MethodHandles.Lookup.ClassOption...)`],
+						[/* reference */ 'r', `java.lang.invoke.MethodHandles.Lookup#defineHiddenClass(byte[],boolean,java.lang.invoke.MethodHandles.Lookup.ClassOption...)`, `Lookup::defineHiddenClass`],
 						[/* text */ 't', `, and `],
 						[/* inline code block */ 'i', `<suffix>`],
 						[/* text */ 't', ` is an unqualified name.
@@ -3312,7 +3312,7 @@ DocsCollector.collect('java.lang.Class', [
 							[/* table row */ 'tr', [
 								[/* table header cell */ 'thc', [
 									[/* text */ 't', ` class or interface with `],
-									[/* reference */ 'r', `.ClassLoader#binary-name`],
+									[/* reference */ 'r', `java.lang.ClassLoader#binary-name`, `binary name`],
 									[/* text */ 't', ` `],
 									[/* text */ 't', `N`],
 									[/* text */ 't', `
@@ -3615,17 +3615,17 @@ DocsCollector.collect('java.lang.Class', [
  `],
 				[/* block */ 'b', [
 					[/* text */ 't', ` If this class is in a named `],
-					[/* reference */ 'r', `java.lang.Module`],
+					[/* reference */ 'r', `java.lang.Module`, `Module`],
 					[/* text */ 't', ` then this method
  will attempt to find the resource in the module. This is done by
  delegating to the module's class loader `],
-					[/* reference */ 'r', `.ClassLoader#findResource(java.lang.String,java.lang.String)`],
+					[/* reference */ 'r', `java.lang.ClassLoader#findResource(java.lang.String,java.lang.String)`, `findResource(String,String)`],
 					[/* text */ 't', `
  method, invoking it with the module name and the absolute name of the
  resource. Resources in named modules are subject to the rules for
  encapsulation specified in the `],
 					[/* inline code block */ 'i', `Module`],
-					[/* reference */ 'r', `.Module#getResourceAsStream(java.lang.String)`],
+					[/* reference */ 'r', `java.lang.Module#getResourceAsStream(java.lang.String)`, `getResourceAsStream`],
 					[/* text */ 't', ` method and so this
  method returns `],
 					[/* inline code block */ 'i', `null`],
@@ -3641,7 +3641,7 @@ DocsCollector.collect('java.lang.Class', [
 					[/* text */ 't', ` Otherwise, if this class is not in a named module then the rules for
  searching resources associated with a given class are implemented by the
  defining `],
-					[/* reference */ 'r', `java.lang.ClassLoader`],
+					[/* reference */ 'r', `java.lang.ClassLoader`, `class loader`],
 					[/* text */ 't', ` of the class.  This method
  delegates to this `],
 					[/* inline code block */ 'i', `Class`],
@@ -3650,7 +3650,7 @@ DocsCollector.collect('java.lang.Class', [
 					[/* inline code block */ 'i', `Class`],
 					[/* text */ 't', ` object was loaded by the bootstrap class loader,
  the method delegates to `],
-					[/* reference */ 'r', `.ClassLoader#getSystemResource(java.lang.String)`],
+					[/* reference */ 'r', `java.lang.ClassLoader#getSystemResource(java.lang.String)`, `ClassLoader.getSystemResource(java.lang.String)`],
 					[/* text */ 't', `.
 
  `]
@@ -3718,14 +3718,14 @@ DocsCollector.collect('java.lang.Class', [
 			],
 			[/* return description */
 				[/* text */ 't', `A `],
-				[/* reference */ 'r', `java.net.URL`],
+				[/* reference */ 'r', `java.net.URL`, `URL`],
 				[/* text */ 't', ` object; `],
 				[/* inline code block */ 'i', `null`],
 				[/* text */ 't', ` if no resource with
          this name is found, the resource cannot be located by a URL, the
          resource is in a package that is not
          `],
-				[/* reference */ 'r', `.Module#isOpen(java.lang.String,java.lang.Module)`],
+				[/* reference */ 'r', `java.lang.Module#isOpen(java.lang.String,java.lang.Module)`, `open`],
 				[/* text */ 't', ` to at least the caller
          module, or access to the resource is denied by the security
          manager.`]
@@ -3766,17 +3766,17 @@ DocsCollector.collect('java.lang.Class', [
 			[/* method description */
 				[/* text */ 't', `Returns a nominal descriptor for this instance, if one can be
  constructed, or an empty `],
-				[/* reference */ 'r', `java.util.Optional`],
+				[/* reference */ 'r', `java.util.Optional`, `Optional`],
 				[/* text */ 't', ` if one cannot be.`]
 			],
 			/* parameters */ UDF,
 			/* throws */ UDF,
 			[/* return description */
 				[/* text */ 't', `An `],
-				[/* reference */ 'r', `java.util.Optional`],
+				[/* reference */ 'r', `java.util.Optional`, `Optional`],
 				[/* text */ 't', ` containing the resulting nominal descriptor,
  or an empty `],
-				[/* reference */ 'r', `java.util.Optional`],
+				[/* reference */ 'r', `java.util.Optional`, `Optional`],
 				[/* text */ 't', ` if one cannot be constructed.`]
 			]
 		]],
@@ -4174,7 +4174,7 @@ DocsCollector.collect('java.lang.Class', [
 				[/* text */ 't', `Returns the `],
 				[/* inline code block */ 'i', `Class`],
 				[/* text */ 't', ` with the given `],
-				[/* reference */ 'r', `.ClassLoader#binary-name`],
+				[/* reference */ 'r', `java.lang.ClassLoader#binary-name`, `binary name`],
 				[/* text */ 't', ` in the given module.
 
  `],
@@ -4201,7 +4201,7 @@ DocsCollector.collect('java.lang.Class', [
 				]],
 				[/* parameter */ 'name', [/* parameter description */
 					[/* text */ 't', `The `],
-					[/* reference */ 'r', `.ClassLoader#binary-name`],
+					[/* reference */ 'r', `java.lang.ClassLoader#binary-name`, `binary name`],
 					[/* text */ 't', `
                   of the class`]
 				]]
@@ -4227,7 +4227,7 @@ DocsCollector.collect('java.lang.Class', [
 							[/* text */ 't', ` access to the module content is denied. For example,
          permission check will be performed when a class loader calls
          `],
-							[/* reference */ 'r', `.ModuleReader#open(java.lang.String)`],
+							[/* reference */ 'r', `java.lang.module.ModuleReader#open(java.lang.String)`, `ModuleReader.open(String)`],
 							[/* text */ 't', ` to read the bytes of a class file
          in a module.`]
 						]]
@@ -4431,7 +4431,7 @@ DocsCollector.collect('java.lang.Class', [
 					[/* inline code block */ 'i', `null`],
 					[/* text */ 't', `, and the caller does not have the
             `],
-					[/* reference */ 'r', `java.lang.RuntimePermission`],
+					[/* reference */ 'r', `java.lang.RuntimePermission`, `RuntimePermission`],
 					[/* inline code block */ 'i', `("getClassLoader")`]
 				]]
 			],
@@ -4497,7 +4497,7 @@ DocsCollector.collect('java.lang.Class', [
           the caller's class loader is not the same as or an
           ancestor of the class loader for the current class and
           invocation of `],
-					[/* reference */ 'r', `.SecurityManager#checkPackageAccess(java.lang.String)`],
+					[/* reference */ 'r', `java.lang.SecurityManager#checkPackageAccess(java.lang.String)`, `s.checkPackageAccess()`],
 					[/* text */ 't', ` denies access to the package
           of this class.`]
 				]]

@@ -23,17 +23,17 @@ DocsCollector.collect('java.time.format.DateTimeFormatterBuilder', [
 			[/* block */ 'b', `Text - the textual equivalent for the value`],
 			[/* block */ 'b', [
 				[/* text */ 't', `OffsetId/Offset - the `],
-				[/* reference */ 'r', `java.time.ZoneOffset`]
+				[/* reference */ 'r', `java.time.ZoneOffset`, `zone offset`]
 			]],
 			[/* block */ 'b', [
 				[/* text */ 't', `ZoneId - the `],
-				[/* reference */ 'r', `java.time.ZoneId`],
+				[/* reference */ 'r', `java.time.ZoneId`, `time-zone`],
 				[/* text */ 't', ` id`]
 			]],
 			[/* block */ 'b', `ZoneText - the name of the time-zone`],
 			[/* block */ 'b', [
 				[/* text */ 't', `ChronologyId - the `],
-				[/* reference */ 'r', `java.time.chrono.Chronology`],
+				[/* reference */ 'r', `java.time.chrono.Chronology`, `chronology`],
 				[/* text */ 't', ` id`]
 			]],
 			[/* block */ 'b', `ChronologyText - the name of the chronology`],
@@ -76,11 +76,11 @@ DocsCollector.collect('java.time.format.DateTimeFormatterBuilder', [
 				[/* block */ 'b', [
 					[/* text */ 't', `
  This will create a formatter with the `],
-					[/* reference */ 'r', `java.time.Locale#getDefault(java.util.Locale.Category)`],
+					[/* reference */ 'r', `java.util.Locale#getDefault(java.util.Locale.Category)`, `default FORMAT locale`],
 					[/* text */ 't', `.
  Numbers will be printed and parsed using the standard DecimalStyle.
  The resolver style will be `],
-					[/* reference */ 'r', `.ResolverStyle#SMART`],
+					[/* reference */ 'r', `java.time.format.ResolverStyle#SMART`, `SMART`],
 					[/* text */ 't', `.
  `]
 				]],
@@ -118,7 +118,7 @@ DocsCollector.collect('java.time.format.DateTimeFormatterBuilder', [
  This will create a formatter with the specified locale.
  Numbers will be printed and parsed using the standard DecimalStyle.
  The resolver style will be `],
-					[/* reference */ 'r', `.ResolverStyle#SMART`],
+					[/* reference */ 'r', `java.time.format.ResolverStyle#SMART`, `SMART`],
 					[/* text */ 't', `.
  `]
 				]],
@@ -177,10 +177,10 @@ DocsCollector.collect('java.time.format.DateTimeFormatterBuilder', [
 					[/* text */ 't', `
  During formatting, the chronology is obtained using a mechanism equivalent
  to querying the temporal with `],
-					[/* reference */ 'r', `java.TemporalQueries#chronology()`],
+					[/* reference */ 'r', `java.time.temporal.TemporalQueries#chronology()`, `TemporalQueries.chronology()`],
 					[/* text */ 't', `.
  It will be printed using the result of `],
-					[/* reference */ 'r', `java.Chronology#getId()`],
+					[/* reference */ 'r', `java.time.chrono.Chronology#getId()`, `Chronology.getId()`],
 					[/* text */ 't', `.
  If the chronology cannot be obtained then an exception is thrown unless the
  section of the formatter is optional.
@@ -190,7 +190,7 @@ DocsCollector.collect('java.time.format.DateTimeFormatterBuilder', [
 					[/* text */ 't', `
  During parsing, the chronology is parsed and must match one of the chronologies
  in `],
-					[/* reference */ 'r', `java.Chronology#getAvailableChronologies()`],
+					[/* reference */ 'r', `java.time.chrono.Chronology#getAvailableChronologies()`, `Chronology.getAvailableChronologies()`],
 					[/* text */ 't', `.
  If the chronology cannot be parsed then an exception is thrown unless the
  section of the formatter is optional.
@@ -399,21 +399,21 @@ DocsCollector.collect('java.time.format.DateTimeFormatterBuilder', [
 					[/* text */ 't', `
  During formatting, the zone is obtained using a mechanism equivalent
  to querying the temporal with `],
-					[/* reference */ 'r', `java.TemporalQueries#zoneId()`],
+					[/* reference */ 'r', `java.time.temporal.TemporalQueries#zoneId()`, `TemporalQueries.zoneId()`],
 					[/* text */ 't', `.
  If the zone is a `],
 					[/* inline code block */ 'i', `ZoneOffset`],
 					[/* text */ 't', ` it will be printed using the
  result of `],
-					[/* reference */ 'r', `java.ZoneOffset#getId()`],
+					[/* reference */ 'r', `java.time.ZoneOffset#getId()`, `ZoneOffset.getId()`],
 					[/* text */ 't', `.
  If the zone is not an offset, the textual name will be looked up
  for the locale set in the `],
-					[/* reference */ 'r', `java.time.format.DateTimeFormatter`],
+					[/* reference */ 'r', `java.time.format.DateTimeFormatter`, `DateTimeFormatter`],
 					[/* text */ 't', `.
  If the lookup for text does not find any suitable result, then the
  `],
-					[/* reference */ 'r', `java.ZoneId#getId()`],
+					[/* reference */ 'r', `java.time.ZoneId#getId()`, `ID`],
 					[/* text */ 't', ` will be printed.
  If the zone cannot be obtained then an exception is thrown unless the
  section of the formatter is optional.
@@ -426,14 +426,14 @@ DocsCollector.collect('java.time.format.DateTimeFormatterBuilder', [
  for both "Central Standard Time" and "China Standard Time". In this
  situation, the zone id will be determined by the region information from
  formatter's  `],
-					[/* reference */ 'r', `.DateTimeFormatter#getLocale()`],
+					[/* reference */ 'r', `java.time.format.DateTimeFormatter#getLocale()`, `locale`],
 					[/* text */ 't', ` and the standard
  zone id for that area, for example, America/New_York for the America Eastern zone.
  The `],
 					[/* reference */ 'r', `#appendGenericZoneText(java.time.format.TextStyle,java.util.Set)`, `appendGenericZoneText(TextStyle, Set)`],
 					[/* text */ 't', ` may be used
  to specify a set of preferred `],
-					[/* reference */ 'r', `java.time.ZoneId`],
+					[/* reference */ 'r', `java.time.ZoneId`, `ZoneId`],
 					[/* text */ 't', ` in this situation.`]
 				]]
 			],
@@ -465,7 +465,7 @@ DocsCollector.collect('java.time.format.DateTimeFormatterBuilder', [
 				[/* block */ 'b', [
 					[/* text */ 't', `
  This method also allows a set of preferred `],
-					[/* reference */ 'r', `java.time.ZoneId`],
+					[/* reference */ 'r', `java.time.ZoneId`, `ZoneId`],
 					[/* text */ 't', ` to be
  specified for parsing. The matched preferred zone id will be used if the
  textural zone name being parsed is not unique.
@@ -508,7 +508,7 @@ DocsCollector.collect('java.time.format.DateTimeFormatterBuilder', [
 				[/* block */ 'b', [
 					[/* text */ 't', `
  The instant is obtained using `],
-					[/* reference */ 'r', `java.ChronoField#INSTANT_SECONDS`],
+					[/* reference */ 'r', `java.time.temporal.ChronoField#INSTANT_SECONDS`, `INSTANT_SECONDS`],
 					[/* text */ 't', `
  and optionally `],
 					[/* inline code block */ 'i', `NANO_OF_SECOND`],
@@ -523,12 +523,12 @@ DocsCollector.collect('java.time.format.DateTimeFormatterBuilder', [
 				[/* block */ 'b', [
 					[/* text */ 't', `
  The `],
-					[/* reference */ 'r', `enum class in java.time.format.ResolverStyle`],
+					[/* reference */ 'r', `enum class in java.time.format.ResolverStyle`, `resolver style`],
 					[/* text */ 't', ` has no effect on instant parsing.
  The end-of-day time of '24:00' is handled as midnight at the start of the following day.
  The leap-second time of '23:59:59' is handled to some degree, see
  `],
-					[/* reference */ 'r', `.DateTimeFormatter#parsedLeapSecond()`],
+					[/* reference */ 'r', `java.time.format.DateTimeFormatter#parsedLeapSecond()`, `DateTimeFormatter.parsedLeapSecond()`],
 					[/* text */ 't', ` for full details.
  `]
 				]],
@@ -585,7 +585,7 @@ DocsCollector.collect('java.time.format.DateTimeFormatterBuilder', [
 				[/* block */ 'b', [
 					[/* text */ 't', `
  The instant is obtained using `],
-					[/* reference */ 'r', `java.ChronoField#INSTANT_SECONDS`],
+					[/* reference */ 'r', `java.time.temporal.ChronoField#INSTANT_SECONDS`, `INSTANT_SECONDS`],
 					[/* text */ 't', `
  and optionally `],
 					[/* inline code block */ 'i', `NANO_OF_SECOND`],
@@ -600,12 +600,12 @@ DocsCollector.collect('java.time.format.DateTimeFormatterBuilder', [
 				[/* block */ 'b', [
 					[/* text */ 't', `
  The `],
-					[/* reference */ 'r', `enum class in java.time.format.ResolverStyle`],
+					[/* reference */ 'r', `enum class in java.time.format.ResolverStyle`, `resolver style`],
 					[/* text */ 't', ` has no effect on instant parsing.
  The end-of-day time of '24:00' is handled as midnight at the start of the following day.
  The leap-second time of '23:59:60' is handled to some degree, see
  `],
-					[/* reference */ 'r', `.DateTimeFormatter#parsedLeapSecond()`],
+					[/* reference */ 'r', `java.time.format.DateTimeFormatter#parsedLeapSecond()`, `DateTimeFormatter.parsedLeapSecond()`],
 					[/* text */ 't', ` for full details.
  `]
 				]],
@@ -708,7 +708,7 @@ DocsCollector.collect('java.time.format.DateTimeFormatterBuilder', [
  During formatting, the chronology is obtained from the temporal object
  being formatted, which may have been overridden by
  `],
-				[/* reference */ 'r', `.DateTimeFormatter#withChronology(java.time.chrono.Chronology)`],
+				[/* reference */ 'r', `java.time.format.DateTimeFormatter#withChronology(java.time.chrono.Chronology)`, `DateTimeFormatter.withChronology(Chronology)`],
 				[/* text */ 't', `.
  The `],
 				[/* inline code block */ 'i', `FULL`],
@@ -721,7 +721,7 @@ DocsCollector.collect('java.time.format.DateTimeFormatterBuilder', [
  either by using `],
 				[/* inline code block */ 'i', `ZonedDateTime`],
 				[/* text */ 't', ` or `],
-				[/* reference */ 'r', `.DateTimeFormatter#withZone(java.time.ZoneId)`],
+				[/* reference */ 'r', `java.time.format.DateTimeFormatter#withZone(java.time.ZoneId)`, `DateTimeFormatter.withZone(java.time.ZoneId)`],
 				[/* text */ 't', `.
  `],
 				[/* block */ 'b', ''],
@@ -742,7 +742,7 @@ DocsCollector.collect('java.time.format.DateTimeFormatterBuilder', [
  `],
 					[/* inline code block */ 'i', `DateFormat`],
 					[/* text */ 't', ` such as `],
-					[/* reference */ 'r', `java.time.DateFormat#getDateTimeInstance(int,int)`],
+					[/* reference */ 'r', `java.text.DateFormat#getDateTimeInstance(int,int)`, `DateFormat.getDateTimeInstance(int, int)`],
 					[/* text */ 't', `.`]
 				]]
 			],
@@ -771,21 +771,21 @@ DocsCollector.collect('java.time.format.DateTimeFormatterBuilder', [
 					[/* text */ 't', `
  This appends a localized zone offset to the builder, the format of the
  localized offset is controlled by the specified `],
-					[/* reference */ 'r', `enum class in java.time.format.FormatStyle`],
+					[/* reference */ 'r', `enum class in java.time.format.FormatStyle`, `style`],
 					[/* text */ 't', `
  to this method:
  `]
 				]],
 				[/* list */ 'l', [
 					[/* block */ 'b', [
-						[/* reference */ 'r', `.TextStyle#FULL`],
+						[/* reference */ 'r', `java.time.format.TextStyle#FULL`, `full`],
 						[/* text */ 't', ` - formats with localized offset text, such
  as 'GMT, 2-digit hour and minute field, optional second field if non-zero,
  and colon.
  `]
 					]],
 					[/* block */ 'b', [
-						[/* reference */ 'r', `.TextStyle#SHORT`],
+						[/* reference */ 'r', `java.time.format.TextStyle#SHORT`, `short`],
 						[/* text */ 't', ` - formats with localized offset text,
  such as 'GMT, hour without leading zero, optional 2-digit minute and
  second if non-zero, and colon.
@@ -797,7 +797,7 @@ DocsCollector.collect('java.time.format.DateTimeFormatterBuilder', [
 					[/* text */ 't', `
  During formatting, the offset is obtained using a mechanism equivalent
  to querying the temporal with `],
-					[/* reference */ 'r', `java.TemporalQueries#offset()`],
+					[/* reference */ 'r', `java.time.temporal.TemporalQueries#offset()`, `TemporalQueries.offset()`],
 					[/* text */ 't', `.
  If the offset cannot be obtained then an exception is thrown unless the
  section of the formatter is optional.
@@ -816,9 +816,9 @@ DocsCollector.collect('java.time.format.DateTimeFormatterBuilder', [
 			[/* throws */
 				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
 					[/* text */ 't', `if style is neither `],
-					[/* reference */ 'r', `.TextStyle#FULL`],
+					[/* reference */ 'r', `java.time.format.TextStyle#FULL`, `full`],
 					[/* text */ 't', ` nor `],
-					[/* reference */ 'r', `.TextStyle#SHORT`]
+					[/* reference */ 'r', `java.time.format.TextStyle#SHORT`, `short`]
 				]]
 			],
 			[/* return description */
@@ -836,7 +836,7 @@ DocsCollector.collect('java.time.format.DateTimeFormatterBuilder', [
 					[/* text */ 't', `
  During formatting, the offset is obtained using a mechanism equivalent
  to querying the temporal with `],
-					[/* reference */ 'r', `java.TemporalQueries#offset()`],
+					[/* reference */ 'r', `java.time.temporal.TemporalQueries#offset()`, `TemporalQueries.offset()`],
 					[/* text */ 't', `.
  It will be printed using the format defined below.
  If the offset cannot be obtained then an exception is thrown unless the
@@ -1123,7 +1123,7 @@ DocsCollector.collect('java.time.format.DateTimeFormatterBuilder', [
 					[/* text */ 't', `
  The count of pattern letters determine the format.
  See `],
-					[/* reference */ 'r', `.DateTimeFormatter#patterns`],
+					[/* text */ 't', `DateTimeFormatter`],
 					[/* text */ 't', ` for a user-focused description of the patterns.
  The following tables define how the pattern letters map to the builder.
  `]
@@ -1294,7 +1294,7 @@ DocsCollector.collect('java.time.format.DateTimeFormatterBuilder', [
 					[/* text */ 't', `
  Note that the pattern string is similar, but not identical, to
  `],
-					[/* reference */ 'r', `java.text.SimpleDateFormat`],
+					[/* reference */ 'r', `java.text.SimpleDateFormat`, `SimpleDateFormat`],
 					[/* text */ 't', `.
  The pattern string is also similar, but not identical, to that defined by the
  Unicode Common Locale Data Repository (CLDR/LDML).
@@ -1849,10 +1849,10 @@ DocsCollector.collect('java.time.format.DateTimeFormatterBuilder', [
 					[/* text */ 't', `
  During formatting, the zone is obtained using a mechanism equivalent
  to querying the temporal with `],
-					[/* reference */ 'r', `java.TemporalQueries#zoneId()`],
+					[/* reference */ 'r', `java.time.temporal.TemporalQueries#zoneId()`, `TemporalQueries.zoneId()`],
 					[/* text */ 't', `.
  It will be printed using the result of `],
-					[/* reference */ 'r', `java.ZoneId#getId()`],
+					[/* reference */ 'r', `java.time.ZoneId#getId()`, `ZoneId.getId()`],
 					[/* text */ 't', `.
  If the zone cannot be obtained then an exception is thrown unless the
  section of the formatter is optional.
@@ -1873,7 +1873,7 @@ DocsCollector.collect('java.time.format.DateTimeFormatterBuilder', [
  arguments 'HH:MM:ss' and the no offset string '0'.
  If the parse starts with 'UT', 'UTC' or 'GMT', and the parser cannot
  match a following offset ID, then `],
-					[/* reference */ 'r', `java.ZoneOffset#UTC`],
+					[/* reference */ 'r', `java.time.ZoneOffset#UTC`, `ZoneOffset.UTC`],
 					[/* text */ 't', ` is selected.
  In all other cases, the list of known region-based zones is used to
  find the longest available match. If no match is found, and the parse
@@ -1928,10 +1928,10 @@ DocsCollector.collect('java.time.format.DateTimeFormatterBuilder', [
 					[/* text */ 't', `
  During formatting, the zone is obtained using a mechanism equivalent
  to querying the temporal with `],
-					[/* reference */ 'r', `java.TemporalQueries#zone()`],
+					[/* reference */ 'r', `java.time.temporal.TemporalQueries#zone()`, `TemporalQueries.zone()`],
 					[/* text */ 't', `.
  It will be printed using the result of `],
-					[/* reference */ 'r', `java.ZoneId#getId()`],
+					[/* reference */ 'r', `java.time.ZoneId#getId()`, `ZoneId.getId()`],
 					[/* text */ 't', `.
  If the zone cannot be obtained then an exception is thrown unless the
  section of the formatter is optional.
@@ -1952,7 +1952,7 @@ DocsCollector.collect('java.time.format.DateTimeFormatterBuilder', [
  arguments 'HH:MM:ss' and the no offset string '0'.
  If the parse starts with 'UT', 'UTC' or 'GMT', and the parser cannot
  match a following offset ID, then `],
-					[/* reference */ 'r', `java.ZoneOffset#UTC`],
+					[/* reference */ 'r', `java.time.ZoneOffset#UTC`, `ZoneOffset.UTC`],
 					[/* text */ 't', ` is selected.
  In all other cases, the list of known region-based zones is used to
  find the longest available match. If no match is found, and the parse
@@ -2007,7 +2007,7 @@ DocsCollector.collect('java.time.format.DateTimeFormatterBuilder', [
 					[/* text */ 't', `
  During formatting, the zone is obtained using a mechanism equivalent
  to querying the temporal with `],
-					[/* reference */ 'r', `java.TemporalQueries#zoneId()`],
+					[/* reference */ 'r', `java.time.temporal.TemporalQueries#zoneId()`, `TemporalQueries.zoneId()`],
 					[/* text */ 't', `.
  If the zone is a `],
 					[/* inline code block */ 'i', `ZoneOffset`],
@@ -2015,7 +2015,7 @@ DocsCollector.collect('java.time.format.DateTimeFormatterBuilder', [
  an exception is thrown unless the section of the formatter is optional.
  If the zone is not an offset, then the zone will be printed using
  the zone ID from `],
-					[/* reference */ 'r', `java.ZoneId#getId()`],
+					[/* reference */ 'r', `java.time.ZoneId#getId()`, `ZoneId.getId()`],
 					[/* text */ 't', `.
  `]
 				]],
@@ -2034,7 +2034,7 @@ DocsCollector.collect('java.time.format.DateTimeFormatterBuilder', [
  arguments 'HH:MM:ss' and the no offset string '0'.
  If the parse starts with 'UT', 'UTC' or 'GMT', and the parser cannot
  match a following offset ID, then `],
-					[/* reference */ 'r', `java.ZoneOffset#UTC`],
+					[/* reference */ 'r', `java.time.ZoneOffset#UTC`, `ZoneOffset.UTC`],
 					[/* text */ 't', ` is selected.
  In all other cases, the list of known region-based zones is used to
  find the longest available match. If no match is found, and the parse
@@ -2088,24 +2088,24 @@ DocsCollector.collect('java.time.format.DateTimeFormatterBuilder', [
 					[/* text */ 't', `
  During formatting, the zone is obtained using a mechanism equivalent
  to querying the temporal with `],
-					[/* reference */ 'r', `java.TemporalQueries#zoneId()`],
+					[/* reference */ 'r', `java.time.temporal.TemporalQueries#zoneId()`, `TemporalQueries.zoneId()`],
 					[/* text */ 't', `.
  If the zone is a `],
 					[/* inline code block */ 'i', `ZoneOffset`],
 					[/* text */ 't', ` it will be printed using the
  result of `],
-					[/* reference */ 'r', `java.ZoneOffset#getId()`],
+					[/* reference */ 'r', `java.time.ZoneOffset#getId()`, `ZoneOffset.getId()`],
 					[/* text */ 't', `.
  If the zone is not an offset, the textual name will be looked up
  for the locale set in the `],
-					[/* reference */ 'r', `java.time.format.DateTimeFormatter`],
+					[/* reference */ 'r', `java.time.format.DateTimeFormatter`, `DateTimeFormatter`],
 					[/* text */ 't', `.
  If the temporal object being printed represents an instant, or if it is a
  local date-time that is not in a daylight saving gap or overlap then
  the text will be the summer or winter time text as appropriate.
  If the lookup for text does not find any suitable result, then the
  `],
-					[/* reference */ 'r', `java.ZoneId#getId()`],
+					[/* reference */ 'r', `java.time.ZoneId#getId()`, `ID`],
 					[/* text */ 't', ` will be printed.
  If the zone cannot be obtained then an exception is thrown unless the
  section of the formatter is optional.
@@ -2118,14 +2118,14 @@ DocsCollector.collect('java.time.format.DateTimeFormatterBuilder', [
  for both "Central Standard Time" and "China Standard Time". In this
  situation, the zone id will be determined by the region information from
  formatter's  `],
-					[/* reference */ 'r', `.DateTimeFormatter#getLocale()`],
+					[/* reference */ 'r', `java.time.format.DateTimeFormatter#getLocale()`, `locale`],
 					[/* text */ 't', ` and the standard
  zone id for that area, for example, America/New_York for the America Eastern
  zone. The `],
 					[/* reference */ 'r', `#appendZoneText(java.time.format.TextStyle,java.util.Set)`, `appendZoneText(TextStyle, Set)`],
 					[/* text */ 't', ` may be used
  to specify a set of preferred `],
-					[/* reference */ 'r', `java.time.ZoneId`],
+					[/* reference */ 'r', `java.time.ZoneId`, `ZoneId`],
 					[/* text */ 't', ` in this situation.`]
 				]]
 			],
@@ -2151,24 +2151,24 @@ DocsCollector.collect('java.time.format.DateTimeFormatterBuilder', [
 					[/* text */ 't', `
  During formatting, the zone is obtained using a mechanism equivalent
  to querying the temporal with `],
-					[/* reference */ 'r', `java.TemporalQueries#zoneId()`],
+					[/* reference */ 'r', `java.time.temporal.TemporalQueries#zoneId()`, `TemporalQueries.zoneId()`],
 					[/* text */ 't', `.
  If the zone is a `],
 					[/* inline code block */ 'i', `ZoneOffset`],
 					[/* text */ 't', ` it will be printed using the
  result of `],
-					[/* reference */ 'r', `java.ZoneOffset#getId()`],
+					[/* reference */ 'r', `java.time.ZoneOffset#getId()`, `ZoneOffset.getId()`],
 					[/* text */ 't', `.
  If the zone is not an offset, the textual name will be looked up
  for the locale set in the `],
-					[/* reference */ 'r', `java.time.format.DateTimeFormatter`],
+					[/* reference */ 'r', `java.time.format.DateTimeFormatter`, `DateTimeFormatter`],
 					[/* text */ 't', `.
  If the temporal object being printed represents an instant, or if it is a
  local date-time that is not in a daylight saving gap or overlap, then the text
  will be the summer or winter time text as appropriate.
  If the lookup for text does not find any suitable result, then the
  `],
-					[/* reference */ 'r', `java.ZoneId#getId()`],
+					[/* reference */ 'r', `java.time.ZoneId#getId()`, `ID`],
 					[/* text */ 't', ` will be printed.
  If the zone cannot be obtained then an exception is thrown unless the
  section of the formatter is optional.
@@ -2181,11 +2181,11 @@ DocsCollector.collect('java.time.format.DateTimeFormatterBuilder', [
  for both "Central Standard Time" and "China Standard Time". In this
  situation, the zone id will be determined by the region information from
  formatter's  `],
-					[/* reference */ 'r', `.DateTimeFormatter#getLocale()`],
+					[/* reference */ 'r', `java.time.format.DateTimeFormatter#getLocale()`, `locale`],
 					[/* text */ 't', ` and the standard
  zone id for that area, for example, America/New_York for the America Eastern
  zone. This method also allows a set of preferred `],
-					[/* reference */ 'r', `java.time.ZoneId`],
+					[/* reference */ 'r', `java.time.ZoneId`, `ZoneId`],
 					[/* text */ 't', ` to be
  specified for parsing. The matched preferred zone id will be used if the
  textural zone name being parsed is not unique.
@@ -2539,7 +2539,7 @@ DocsCollector.collect('java.time.format.DateTimeFormatterBuilder', [
 					[/* text */ 't', `
  If the locale contains the "rg" (region override)
  `],
-					[/* reference */ 'r', `java.time.Locale#def_locale_extension`],
+					[/* reference */ 'r', `java.util.Locale#def_locale_extension`, `Unicode extensions`],
 					[/* text */ 't', `,
  the formatting pattern is overridden with the one appropriate for the region.`]
 				]]

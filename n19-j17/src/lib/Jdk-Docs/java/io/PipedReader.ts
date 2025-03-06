@@ -15,7 +15,7 @@ DocsCollector.collect('java.io.PipedReader', [
  that it is not yet `],
 				[/* reference */ 'r', `#connect(java.io.PipedWriter)`, `connected`],
 				[/* text */ 't', `. It must be `],
-				[/* reference */ 'r', `.PipedWriter#connect(java.io.PipedReader)`],
+				[/* reference */ 'r', `java.io.PipedWriter#connect(java.io.PipedReader)`, `connected`],
 				[/* text */ 't', ` to a `],
 				[/* inline code block */ 'i', `PipedWriter`],
 				[/* text */ 't', `
@@ -34,7 +34,7 @@ DocsCollector.collect('java.io.PipedReader', [
 				[/* text */ 't', ` and uses
  the specified pipe size for the pipe's buffer.
  It must be  `],
-				[/* reference */ 'r', `.PipedWriter#connect(java.io.PipedReader)`],
+				[/* reference */ 'r', `java.io.PipedWriter#connect(java.io.PipedReader)`, `connected`],
 				[/* text */ 't', ` to a `],
 				[/* inline code block */ 'i', `PipedWriter`],
 				[/* text */ 't', `
@@ -121,7 +121,7 @@ DocsCollector.collect('java.io.PipedReader', [
 				[/* throw */ 'java.io.IOException', [/* throw description */
 					[/* text */ 't', `if the pipe is
              `],
-					[/* reference */ 'r', `.PipedInputStream#BROKEN`],
+					[/* reference */ 'r', `java.io.PipedInputStream#BROKEN`, `broken`],
 					[/* text */ 't', `,
              `],
 					[/* reference */ 'r', `#connect(java.io.PipedWriter)`, `unconnected`],
@@ -149,7 +149,7 @@ DocsCollector.collect('java.io.PipedReader', [
 				[/* throw */ 'java.io.IOException', [/* throw description */
 					[/* text */ 't', `if the pipe is
           `],
-					[/* reference */ 'r', `.PipedInputStream#BROKEN`],
+					[/* reference */ 'r', `java.io.PipedInputStream#BROKEN`, `broken`],
 					[/* text */ 't', `,
           `],
 					[/* reference */ 'r', `#connect(java.io.PipedWriter)`, `unconnected`],
@@ -223,7 +223,7 @@ DocsCollector.collect('java.io.PipedReader', [
 				[/* throw */ 'java.io.IOException', [/* throw description */
 					[/* text */ 't', `if the pipe is
              `],
-					[/* reference */ 'r', `.PipedInputStream#BROKEN`],
+					[/* reference */ 'r', `java.io.PipedInputStream#BROKEN`, `broken`],
 					[/* text */ 't', `,
              `],
 					[/* reference */ 'r', `#connect(java.io.PipedWriter)`, `unconnected`],

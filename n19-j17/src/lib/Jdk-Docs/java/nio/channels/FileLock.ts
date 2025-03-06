@@ -9,20 +9,20 @@ DocsCollector.collect('java.nio.channels.FileLock', [
 		[/* block */ 'b', [
 			[/* text */ 't', ` A file-lock object is created each time a lock is acquired on a file via
  one of the `],
-			[/* reference */ 'r', `.FileChannel#lock(long,long,boolean)`],
+			[/* reference */ 'r', `java.nio.channels.FileChannel#lock(long,long,boolean)`, `lock`],
 			[/* text */ 't', ` or `],
-			[/* reference */ 'r', `.FileChannel#tryLock(long,long,boolean)`],
+			[/* reference */ 'r', `java.nio.channels.FileChannel#tryLock(long,long,boolean)`, `tryLock`],
 			[/* text */ 't', ` methods of the
  `],
-			[/* reference */ 'r', `java.nio.channels.FileChannel`],
+			[/* reference */ 'r', `java.nio.channels.FileChannel`, `FileChannel`],
 			[/* text */ 't', ` class, or the `],
-			[/* reference */ 'r', `.AsynchronousFileChannel#lock(long,long,boolean,A,java.nio.channels.CompletionHandler)`],
+			[/* reference */ 'r', `java.nio.channels.AsynchronousFileChannel#lock(long,long,boolean,A,java.nio.channels.CompletionHandler)`, `lock`],
 			[/* text */ 't', `
  or `],
-			[/* reference */ 'r', `.AsynchronousFileChannel#tryLock(long,long,boolean)`],
+			[/* reference */ 'r', `java.nio.channels.AsynchronousFileChannel#tryLock(long,long,boolean)`, `tryLock`],
 			[/* text */ 't', `
  methods of the `],
-			[/* reference */ 'r', `java.nio.channels.AsynchronousFileChannel`],
+			[/* reference */ 'r', `java.nio.channels.AsynchronousFileChannel`, `AsynchronousFileChannel`],
 			[/* text */ 't', ` class.
 
  `]
@@ -89,7 +89,7 @@ DocsCollector.collect('java.nio.channels.FileLock', [
 
 
  `],
-			[/* text */ 't', ``]
+			[/* anchor */ 'r', '#-id', `pdep`, ``]
 		]],
 		[/* block */ 'b', ` Platform dependencies `],
 		[/* block */ 'b', ` This file-locking API is intended to map directly to the native locking
@@ -121,7 +121,7 @@ DocsCollector.collect('java.nio.channels.FileLock', [
 		[/* block */ 'b', [
 			[/* text */ 't', ` On some systems, acquiring a mandatory lock on a region of a file
  prevents that region from being `],
-			[/* reference */ 'r', `.FileChannel#map(java.nio.channels.FileChannel.MapMode,long,long)`],
+			[/* reference */ 'r', `java.nio.channels.FileChannel#map(java.nio.channels.FileChannel.MapMode,long,long)`, `mapped into memory`],
 			[/* text */ 't', `, and vice versa.  Programs that combine
  locking and mapping should be prepared for this combination to fail.
 

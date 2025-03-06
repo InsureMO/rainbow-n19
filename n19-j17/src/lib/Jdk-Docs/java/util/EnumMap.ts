@@ -4,7 +4,7 @@ import {DocsCollector} from '../../DocsCollector';
 DocsCollector.collect('java.util.EnumMap', [
 	[/* class description */
 		[/* text */ 't', `A specialized `],
-		[/* reference */ 'r', `java.util.Map`],
+		[/* reference */ 'r', `java.util.Map`, `Map`],
 		[/* text */ 't', ` implementation for use with enum type keys.  All
  of the keys in an enum map must come from a single enum type that is
  specified, explicitly or implicitly, when the map is created.  Enum maps
@@ -33,7 +33,7 @@ DocsCollector.collect('java.util.EnumMap', [
 			[/* text */ 't', `weakly consistent`],
 			[/* text */ 't', `:
  they will never throw `],
-			[/* reference */ 'r', `java.util.ConcurrentModificationException`],
+			[/* reference */ 'r', `java.util.ConcurrentModificationException`, `ConcurrentModificationException`],
 			[/* text */ 't', ` and they may
  or may not show the effects of any modifications to the map that occur while
  the iteration is in progress.
@@ -43,7 +43,7 @@ DocsCollector.collect('java.util.EnumMap', [
 		[/* block */ 'b', [
 			[/* text */ 't', `Null keys are not permitted.  Attempts to insert a null key will
  throw `],
-			[/* reference */ 'r', `java.lang.NullPointerException`],
+			[/* reference */ 'r', `java.lang.NullPointerException`, `NullPointerException`],
 			[/* text */ 't', `.  Attempts to test for the
  presence of a null key or to remove one will, however, function properly.
  Null values are permitted.
@@ -59,7 +59,7 @@ DocsCollector.collect('java.util.EnumMap', [
  externally.  This is typically accomplished by synchronizing on some
  object that naturally encapsulates the enum map.  If no such object exists,
  the map should be "wrapped" using the `],
-			[/* reference */ 'r', `.Collections#synchronizedMap(java.util.Map)`],
+			[/* reference */ 'r', `java.util.Collections#synchronizedMap(java.util.Map)`, `Collections.synchronizedMap(java.util.Map<K, V>)`],
 			[/* text */ 't', `
  method.  This is best done at creation time, to prevent accidental
  unsynchronized access:
@@ -74,7 +74,7 @@ DocsCollector.collect('java.util.EnumMap', [
 			[/* text */ 't', `Implementation note: All basic operations execute in constant time.
  They are likely (though not guaranteed) to be faster than their
  `],
-			[/* reference */ 'r', `java.util.HashMap`],
+			[/* reference */ 'r', `java.util.HashMap`, `HashMap`],
 			[/* text */ 't', ` counterparts.
 
  `]
@@ -202,7 +202,7 @@ DocsCollector.collect('java.util.EnumMap', [
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if the given object is also a map and the two maps
  represent the same mappings, as specified in the `],
-				[/* reference */ 'r', `.Map#equals(java.lang.Object)`],
+				[/* reference */ 'r', `java.util.Map#equals(java.lang.Object)`, `Map.equals(Object)`],
 				[/* text */ 't', ` contract.`]
 			],
 			[/* parameters */
@@ -240,11 +240,11 @@ DocsCollector.collect('java.util.EnumMap', [
 		[/* method */ 'values()', [
 			[/* method description */
 				[/* text */ 't', `Returns a `],
-				[/* reference */ 'r', `java.util.Collection`],
+				[/* reference */ 'r', `java.util.Collection`, `Collection`],
 				[/* text */ 't', ` view of the values contained in this map.
  The returned collection obeys the general contract outlined in
  `],
-				[/* reference */ 'r', `.Map#values()`],
+				[/* reference */ 'r', `java.util.Map#values()`, `Map.values()`],
 				[/* text */ 't', `.  The collection's iterator will return the
  values in the order their corresponding keys appear in map,
  which is their natural order (the order in which the enum constants
@@ -270,11 +270,11 @@ DocsCollector.collect('java.util.EnumMap', [
 		[/* method */ 'entrySet()', [
 			[/* method description */
 				[/* text */ 't', `Returns a `],
-				[/* reference */ 'r', `java.util.Set`],
+				[/* reference */ 'r', `java.util.Set`, `Set`],
 				[/* text */ 't', ` view of the mappings contained in this map.
  The returned set obeys the general contract outlined in
  `],
-				[/* reference */ 'r', `.Map#keySet()`],
+				[/* reference */ 'r', `java.util.Map#keySet()`, `Map.keySet()`],
 				[/* text */ 't', `.  The set's iterator will return the
  mappings in the order their keys appear in map, which is their
  natural order (the order in which the enum constants are declared).`]
@@ -288,11 +288,11 @@ DocsCollector.collect('java.util.EnumMap', [
 		[/* method */ 'keySet()', [
 			[/* method description */
 				[/* text */ 't', `Returns a `],
-				[/* reference */ 'r', `java.util.Set`],
+				[/* reference */ 'r', `java.util.Set`, `Set`],
 				[/* text */ 't', ` view of the keys contained in this map.
  The returned set obeys the general contract outlined in
  `],
-				[/* reference */ 'r', `.Map#keySet()`],
+				[/* reference */ 'r', `java.util.Map#keySet()`, `Map.keySet()`],
 				[/* text */ 't', `.  The set's iterator will return the keys
  in their natural order (the order in which the enum constants
  are declared).`]

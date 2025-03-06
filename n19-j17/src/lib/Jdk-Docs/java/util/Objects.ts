@@ -36,7 +36,7 @@ DocsCollector.collect('java.util.Objects', [
 					[/* inline code block */ 'i', `NullPointerException`],
 					[/* text */ 't', ` may or may not be thrown depending on
  what ordering policy, if any, the `],
-					[/* reference */ 'r', `java.util.Comparator`],
+					[/* reference */ 'r', `java.util.Comparator`, `Comparator`],
 					[/* text */ 't', `
  chooses to have for `],
 					[/* inline code block */ 'i', `null`],
@@ -104,7 +104,7 @@ DocsCollector.collect('java.util.Objects', [
 				[/* inline code block */ 'i', `null`],
 				[/* text */ 't', ` and
  throws a customized `],
-				[/* reference */ 'r', `java.lang.NullPointerException`],
+				[/* reference */ 'r', `java.lang.NullPointerException`, `NullPointerException`],
 				[/* text */ 't', ` if it is. This method
  is designed primarily for doing parameter validation in methods and
  constructors with multiple parameters, as demonstrated below:
@@ -147,7 +147,7 @@ DocsCollector.collect('java.util.Objects', [
 				[/* inline code block */ 'i', `null`],
 				[/* text */ 't', ` and
  throws a customized `],
-				[/* reference */ 'r', `java.lang.NullPointerException`],
+				[/* reference */ 'r', `java.lang.NullPointerException`, `NullPointerException`],
 				[/* text */ 't', ` if it is.
 
  `],
@@ -290,10 +290,10 @@ DocsCollector.collect('java.util.Objects', [
 				[/* inline code block */ 'i', `null`],
 				[/* text */ 't', ` values are deeply equal.  If both arguments are
  arrays, the algorithm in `],
-				[/* reference */ 'r', `.Arrays#deepEquals(java.lang.Object[],java.lang.Object[])`],
+				[/* reference */ 'r', `java.util.Arrays#deepEquals(java.lang.Object[],java.lang.Object[])`, `Arrays.deepEquals`],
 				[/* text */ 't', ` is used to determine equality.
  Otherwise, equality is determined by using the `],
-				[/* reference */ 'r', `java.Object#equals(java.lang.Object)`],
+				[/* reference */ 'r', `java.lang.Object#equals(java.lang.Object)`, `equals`],
 				[/* text */ 't', ` method of the first argument.`]
 			],
 			[/* parameters */
@@ -331,7 +331,7 @@ DocsCollector.collect('java.util.Objects', [
  is returned.  Otherwise, if the first argument is not `],
 				[/* inline code block */ 'i', `null`],
 				[/* text */ 't', `, equality is determined by calling the `],
-				[/* reference */ 'r', `java.Object#equals(java.lang.Object)`],
+				[/* reference */ 'r', `java.lang.Object#equals(java.lang.Object)`, `equals`],
 				[/* text */ 't', ` method of the first argument with the
  second argument of this method. Otherwise, `],
 				[/* inline code block */ 'i', `false`],
@@ -582,13 +582,13 @@ DocsCollector.collect('java.util.Objects', [
 				[/* text */ 't', `Generates a hash code for a sequence of input values. The hash
  code is generated as if all the input values were placed into an
  array, and that array were hashed by calling `],
-				[/* reference */ 'r', `.Arrays#hashCode(java.lang.Object[])`],
+				[/* reference */ 'r', `java.util.Arrays#hashCode(java.lang.Object[])`, `Arrays.hashCode(Object[])`],
 				[/* text */ 't', `.
 
  `],
 				[/* block */ 'b', [
 					[/* text */ 't', `This method is useful for implementing `],
-					[/* reference */ 'r', `java.Object#hashCode()`],
+					[/* reference */ 'r', `java.lang.Object#hashCode()`, `Object.hashCode()`],
 					[/* text */ 't', ` on objects containing multiple fields. For
  example, if an object that has three fields, `],
 					[/* inline code block */ 'i', `x`],

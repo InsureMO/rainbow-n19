@@ -44,7 +44,7 @@ DocsCollector.collect('java.util.Locale', [
 		]],
 		[/* dl */ 'dl', [
 			[/* dt */ 'dt', [
-				[/* text */ 't', `language`]
+				[/* anchor */ 'r', '#-id', `def_language`, `language`]
 			]],
 			[/* dd */ 'dd', [
 				[/* text */ 't', `ISO 639 alpha-2 or alpha-3 language code, or registered
@@ -70,7 +70,7 @@ DocsCollector.collect('java.util.Locale', [
 				[/* text */ 't', `Example: "en" (English), "ja" (Japanese), "kok" (Konkani)`]
 			]],
 			[/* dt */ 'dt', [
-				[/* text */ 't', `script`]
+				[/* anchor */ 'r', '#-id', `def_script`, `script`]
 			]],
 			[/* dd */ 'dd', [
 				[/* text */ 't', `ISO 15924 alpha-4 script code.  You can find a full list of
@@ -91,7 +91,7 @@ DocsCollector.collect('java.util.Locale', [
 				[/* text */ 't', `Example: "Latn" (Latin), "Cyrl" (Cyrillic)`]
 			]],
 			[/* dt */ 'dt', [
-				[/* text */ 't', `country (region)`]
+				[/* anchor */ 'r', '#-id', `def_region`, `country (region)`]
 			]],
 			[/* dd */ 'dd', [
 				[/* text */ 't', `ISO 3166 alpha-2 country code or UN M.49 numeric-3 area code.
@@ -112,7 +112,7 @@ DocsCollector.collect('java.util.Locale', [
    (Caribbean)`]
 			]],
 			[/* dt */ 'dt', [
-				[/* text */ 't', `variant`]
+				[/* anchor */ 'r', '#-id', `def_variant`, `variant`]
 			]],
 			[/* dd */ 'dd', [
 				[/* text */ 't', `Any arbitrary value used to indicate a variation of a
@@ -157,7 +157,7 @@ DocsCollector.collect('java.util.Locale', [
 				[/* text */ 't', `Example: "polyton" (Polytonic Greek), "POSIX"`]
 			]],
 			[/* dt */ 'dt', [
-				[/* text */ 't', `extensions`]
+				[/* anchor */ 'r', '#-id', `def_extensions`, `extensions`]
 			]],
 			[/* dd */ 'dd', [
 				[/* text */ 't', `A map from single character keys to string values, indicating
@@ -204,13 +204,13 @@ DocsCollector.collect('java.util.Locale', [
  only checks if an individual field satisfies the syntactic
  requirement (is well-formed), but does not validate the value
  itself.  See `],
-		[/* reference */ 'r', `java.util.Locale.Builder`],
+		[/* reference */ 'r', `java.util.Locale.Builder`, `Locale.Builder`],
 		[/* text */ 't', ` for details.
 
  `],
 		[/* block */ 'b', ''],
 		[/* block */ 'b', [
-			[/* text */ 't', `Unicode locale/language extension`]
+			[/* anchor */ 'r', '#-id', `def_locale_extension`, `Unicode locale/language extension`]
 		]],
 		[/* block */ 'b', `UTS#35, "Unicode Locale Data Markup Language" defines optional
  attributes and keywords to override or refine the default behavior
@@ -292,7 +292,7 @@ DocsCollector.collect('java.util.Locale', [
 		[/* block */ 'b', `Builder`],
 		[/* block */ 'b', [
 			[/* text */ 't', `Using `],
-			[/* reference */ 'r', `java.util.Locale.Builder`],
+			[/* reference */ 'r', `java.util.Locale.Builder`, `Locale.Builder`],
 			[/* text */ 't', ` you can construct a `],
 			[/* inline code block */ 'i', `Locale`],
 			[/* text */ 't', ` object
@@ -354,7 +354,7 @@ DocsCollector.collect('java.util.Locale', [
 		]],
 		[/* block */ 'b', ''],
 		[/* block */ 'b', [
-			[/* text */ 't', `Locale Matching`]
+			[/* anchor */ 'r', '#-id', `LocaleMatching`, `Locale Matching`]
 		]],
 		[/* block */ 'b', `If an application or a system is internationalized and provides localized
  resources for multiple locales, it sometimes needs to find one or more
@@ -386,7 +386,7 @@ DocsCollector.collect('java.util.Locale', [
  expressed as a list of language ranges. There are syntactically two types of
  language ranges: basic and extended. See
  `],
-			[/* reference */ 'r', `java.util.Locale.LanguageRange`],
+			[/* reference */ 'r', `java.util.Locale.LanguageRange`, `Locale.LanguageRange`],
 			[/* text */ 't', ` for details.
 
  `]
@@ -408,7 +408,7 @@ DocsCollector.collect('java.util.Locale', [
  (called "extended filtering"). They may return different results by what
  kind of language ranges are included in the given Language Priority List.
  `],
-			[/* reference */ 'r', `enum class in java.util.Locale.FilteringMode`],
+			[/* reference */ 'r', `enum class in java.util.Locale.FilteringMode`, `Locale.FilteringMode`],
 			[/* text */ 't', ` is a parameter to specify how filtering should
  be done.
 
@@ -460,9 +460,9 @@ DocsCollector.collect('java.util.Locale', [
 			[/* text */ 't', `
  included in a language range, the first matching language tag returned by
  an `],
-			[/* reference */ 'r', `java.util.Iterator`],
+			[/* reference */ 'r', `java.util.Iterator`, `Iterator`],
 			[/* text */ 't', ` over a `],
-			[/* reference */ 'r', `java.util.Collection`],
+			[/* reference */ 'r', `java.util.Collection`, `Collection`],
 			[/* text */ 't', ` of language tags is treated as
  the best matching one.
 
@@ -492,7 +492,7 @@ DocsCollector.collect('java.util.Locale', [
 			[/* text */ 't', ` methods are themselves locale-sensitive
  and have two versions: one that uses the default
  `],
-			[/* reference */ 'r', `.Locale.Category#DISPLAY`],
+			[/* reference */ 'r', `java.util.Locale.Category#DISPLAY`, `DISPLAY`],
 			[/* text */ 't', ` locale and one
  that uses the locale specified as an argument.
 
@@ -526,7 +526,7 @@ DocsCollector.collect('java.util.Locale', [
  Each of these methods has two variants; one with an explicit locale
  and one without; the latter uses the default
  `],
-		[/* reference */ 'r', `.Locale.Category#FORMAT`],
+		[/* reference */ 'r', `java.util.Locale.Category#FORMAT`, `FORMAT`],
 		[/* text */ 't', ` locale:
  `],
 		[/* block */ 'b', [
@@ -595,7 +595,7 @@ DocsCollector.collect('java.util.Locale', [
  `]
 		]],
 		[/* block */ 'b', [
-			[/* text */ 't', `Special cases`]
+			[/* anchor */ 'r', '#-id', `special_cases_constructor`, `Special cases`]
 		]],
 		[/* block */ 'b', [
 			[/* text */ 't', `For compatibility reasons, two
@@ -660,7 +660,7 @@ DocsCollector.collect('java.util.Locale', [
  `]
 		]],
 		[/* block */ 'b', [
-			[/* text */ 't', `Legacy language codes`]
+			[/* anchor */ 'r', '#-id', `legacy_language_codes`, `Legacy language codes`]
 		]],
 		[/* block */ 'b', [
 			[/* text */ 't', `Locale's constructor has always converted three language codes to
@@ -732,7 +732,7 @@ DocsCollector.collect('java.util.Locale', [
  API is used to construct them. Java's default resource bundle
  lookup mechanism also implements this mapping, so that resources
  can be named using either convention, see `],
-			[/* reference */ 'r', `java.util.ResourceBundle.Control`],
+			[/* reference */ 'r', `java.util.ResourceBundle.Control`, `ResourceBundle.Control`],
 			[/* text */ 't', `.
 
  `]
@@ -999,20 +999,20 @@ DocsCollector.collect('java.util.Locale', [
  user.
  If possible, the name returned will be localized for the default
  `],
-				[/* reference */ 'r', `.Locale.Category#DISPLAY`],
+				[/* reference */ 'r', `java.util.Locale.Category#DISPLAY`, `DISPLAY`],
 				[/* text */ 't', ` locale.
  For example, if the locale is fr_FR and the default
  `],
-				[/* reference */ 'r', `.Locale.Category#DISPLAY`],
+				[/* reference */ 'r', `java.util.Locale.Category#DISPLAY`, `DISPLAY`],
 				[/* text */ 't', ` locale
  is en_US, getDisplayCountry() will return "France"; if the locale is en_US and
  the default `],
-				[/* reference */ 'r', `.Locale.Category#DISPLAY`],
+				[/* reference */ 'r', `java.util.Locale.Category#DISPLAY`, `DISPLAY`],
 				[/* text */ 't', ` locale is fr_FR,
  getDisplayCountry() will return "Etats-Unis".
  If the name returned cannot be localized for the default
  `],
-				[/* reference */ 'r', `.Locale.Category#DISPLAY`],
+				[/* reference */ 'r', `java.util.Locale.Category#DISPLAY`, `DISPLAY`],
 				[/* text */ 't', ` locale,
  (say, we don't have a Japanese name for Croatia),
  this function falls back on the English name, and uses the ISO code as a last-resort
@@ -1030,20 +1030,20 @@ DocsCollector.collect('java.util.Locale', [
  user.
  If possible, the name returned will be localized for the default
  `],
-				[/* reference */ 'r', `.Locale.Category#DISPLAY`],
+				[/* reference */ 'r', `java.util.Locale.Category#DISPLAY`, `DISPLAY`],
 				[/* text */ 't', ` locale.
  For example, if the locale is fr_FR and the default
  `],
-				[/* reference */ 'r', `.Locale.Category#DISPLAY`],
+				[/* reference */ 'r', `java.util.Locale.Category#DISPLAY`, `DISPLAY`],
 				[/* text */ 't', ` locale
  is en_US, getDisplayLanguage() will return "French"; if the locale is en_US and
  the default `],
-				[/* reference */ 'r', `.Locale.Category#DISPLAY`],
+				[/* reference */ 'r', `java.util.Locale.Category#DISPLAY`, `DISPLAY`],
 				[/* text */ 't', ` locale is fr_FR,
  getDisplayLanguage() will return "anglais".
  If the name returned cannot be localized for the default
  `],
-				[/* reference */ 'r', `.Locale.Category#DISPLAY`],
+				[/* reference */ 'r', `java.util.Locale.Category#DISPLAY`, `DISPLAY`],
 				[/* text */ 't', ` locale,
  (say, we don't have a Japanese name for Croatian),
  this function falls back on the English name, and uses the ISO code as a last-resort
@@ -1061,7 +1061,7 @@ DocsCollector.collect('java.util.Locale', [
  user. This will be the values returned by getDisplayLanguage(),
  getDisplayScript(), getDisplayCountry(), getDisplayVariant() and
  optional `],
-				[/* reference */ 'r', `.Locale#def_locale_extension`],
+				[/* reference */ 'r', `java.util.Locale#def_locale_extension`, `Unicode extensions`],
 				[/* text */ 't', `
  assembled into a single string. The non-empty values are used in order, with
  the second and subsequent names in parentheses.  For example:
@@ -1100,7 +1100,7 @@ DocsCollector.collect('java.util.Locale', [
 				[/* text */ 't', `Returns a name for the locale's variant code that is appropriate for display to the
  user.  If possible, the name will be localized for the default
  `],
-				[/* reference */ 'r', `.Locale.Category#DISPLAY`],
+				[/* reference */ 'r', `java.util.Locale.Category#DISPLAY`, `DISPLAY`],
 				[/* text */ 't', ` locale.  If the locale
  doesn't specify a variant code, this function returns the empty string.`]
 			],
@@ -1293,7 +1293,7 @@ DocsCollector.collect('java.util.Locale', [
  to the user.  This will be the values returned by
  getDisplayLanguage(), getDisplayScript(),getDisplayCountry()
  getDisplayVariant(), and optional `],
-				[/* reference */ 'r', `.Locale#def_locale_extension`],
+				[/* reference */ 'r', `java.util.Locale#def_locale_extension`, `Unicode extensions`],
 				[/* text */ 't', ` assembled into a single string. The non-empty
  values are used in order, with the second and subsequent names in
  parentheses.  For example:
@@ -1343,7 +1343,7 @@ DocsCollector.collect('java.util.Locale', [
 				[/* text */ 't', `Returns a name for the locale's script that is appropriate for display to
  the user. If possible, the name will be localized for the default
  `],
-				[/* reference */ 'r', `.Locale.Category#DISPLAY`],
+				[/* reference */ 'r', `java.util.Locale.Category#DISPLAY`, `DISPLAY`],
 				[/* text */ 't', ` locale.  Returns
  the empty string if this locale doesn't specify a script code.`]
 			],
@@ -1352,7 +1352,7 @@ DocsCollector.collect('java.util.Locale', [
 			[/* return description */
 				[/* text */ 't', `the display name of the script code for the current default
      `],
-				[/* reference */ 'r', `.Locale.Category#DISPLAY`],
+				[/* reference */ 'r', `java.util.Locale.Category#DISPLAY`, `DISPLAY`],
 				[/* text */ 't', ` locale`]
 			]
 		]],
@@ -1379,7 +1379,7 @@ DocsCollector.collect('java.util.Locale', [
 			[/* return description */
 				[/* text */ 't', `the display name of the script code for the current default
  `],
-				[/* reference */ 'r', `.Locale.Category#DISPLAY`],
+				[/* reference */ 'r', `java.util.Locale.Category#DISPLAY`, `DISPLAY`],
 				[/* text */ 't', ` locale`]
 			]
 		]],
@@ -1742,7 +1742,7 @@ DocsCollector.collect('java.util.Locale', [
 				[/* text */ 't', `
  with `],
 				[/* inline code block */ 'i', `type`],
-				[/* reference */ 'r', `.Locale.IsoCountryCode#PART1_ALPHA2`],
+				[/* reference */ 'r', `java.util.Locale.IsoCountryCode#PART1_ALPHA2`, `Locale.IsoCountryCode.PART1_ALPHA2`],
 				[/* text */ 't', `.
  `],
 				[/* block */ 'b', [
@@ -1764,7 +1764,7 @@ DocsCollector.collect('java.util.Locale', [
 					[/* text */ 't', ` with
  `],
 					[/* inline code block */ 'i', `type`],
-					[/* reference */ 'r', `.Locale.IsoCountryCode#PART3`],
+					[/* reference */ 'r', `java.util.Locale.IsoCountryCode#PART3`, `Locale.IsoCountryCode.PART3`],
 					[/* text */ 't', `.`]
 				]]
 			],
@@ -1812,7 +1812,7 @@ DocsCollector.collect('java.util.Locale', [
 				[/* inline code block */ 'i', `mode`],
 				[/* text */ 't', `
  is `],
-				[/* reference */ 'r', `.Locale.FilteringMode#AUTOSELECT_FILTERING`],
+				[/* reference */ 'r', `java.util.Locale.FilteringMode#AUTOSELECT_FILTERING`, `Locale.FilteringMode.AUTOSELECT_FILTERING`],
 				[/* text */ 't', `.
 
  This filter operation on the given `],
@@ -1914,7 +1914,7 @@ DocsCollector.collect('java.util.Locale', [
 					[/* text */ 't', `if one or more extended language ranges
      are included in the given list when
      `],
-					[/* reference */ 'r', `.Locale.FilteringMode#REJECT_EXTENDED_RANGES`],
+					[/* reference */ 'r', `java.util.Locale.FilteringMode#REJECT_EXTENDED_RANGES`, `Locale.FilteringMode.REJECT_EXTENDED_RANGES`],
 					[/* text */ 't', ` is specified`]
 				]]
 			],
@@ -1936,7 +1936,7 @@ DocsCollector.collect('java.util.Locale', [
 				[/* inline code block */ 'i', `mode`],
 				[/* text */ 't', ` is
  `],
-				[/* reference */ 'r', `.Locale.FilteringMode#AUTOSELECT_FILTERING`],
+				[/* reference */ 'r', `java.util.Locale.FilteringMode#AUTOSELECT_FILTERING`, `Locale.FilteringMode.AUTOSELECT_FILTERING`],
 				[/* text */ 't', `.
 
  This filter operation on the given `],
@@ -2014,7 +2014,7 @@ DocsCollector.collect('java.util.Locale', [
 					[/* text */ 't', `if one or more extended language ranges
      are included in the given list when
      `],
-					[/* reference */ 'r', `.Locale.FilteringMode#REJECT_EXTENDED_RANGES`],
+					[/* reference */ 'r', `java.util.Locale.FilteringMode#REJECT_EXTENDED_RANGES`, `Locale.FilteringMode.REJECT_EXTENDED_RANGES`],
 					[/* text */ 't', ` is specified`]
 				]]
 			],
@@ -2035,7 +2035,7 @@ DocsCollector.collect('java.util.Locale', [
 					[/* text */ 't', `If the specified language tag contains any ill-formed subtags,
  the first such subtag and all following subtags are ignored.  Compare
  to `],
-					[/* reference */ 'r', `.Locale.Builder#setLanguageTag(java.lang.String)`],
+					[/* reference */ 'r', `java.util.Locale.Builder#setLanguageTag(java.lang.String)`, `Locale.Builder.setLanguageTag(java.lang.String)`],
 					[/* text */ 't', ` which throws an exception
  in this case.
 
@@ -2483,7 +2483,7 @@ DocsCollector.collect('java.util.Locale', [
  The returned array represents the union of locales supported
  by the Java runtime environment and by installed
  `],
-				[/* reference */ 'r', `java.util.spi.LocaleServiceProvider`],
+				[/* reference */ 'r', `java.util.spi.LocaleServiceProvider`, `LocaleServiceProvider`],
 				[/* text */ 't', `
  implementations.  It must contain at least a `],
 				[/* inline code block */ 'i', `Locale`],
@@ -2507,7 +2507,7 @@ DocsCollector.collect('java.util.Locale', [
 			[/* parameters */
 				[/* parameter */ 'type', [/* parameter description */
 					[/* text */ 't', ``],
-					[/* reference */ 'r', `enum class in java.util.Locale.IsoCountryCode`],
+					[/* reference */ 'r', `enum class in java.util.Locale.IsoCountryCode`, `Locale.IsoCountryCode`],
 					[/* text */ 't', ` specified ISO code type.`]
 				]]
 			],

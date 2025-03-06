@@ -27,7 +27,7 @@ DocsCollector.collect('java.text.CompactNumberFormat', [
  `],
 			[/* new line */ 'n'],
 			[/* text */ 't', `In the `],
-			[/* reference */ 'r', `java.Locale#US`],
+			[/* reference */ 'r', `java.util.Locale#US`, `US locale`],
 			[/* text */ 't', `, `],
 			[/* inline code block */ 'i', `1000`],
 			[/* text */ 't', ` can be formatted
@@ -67,7 +67,7 @@ DocsCollector.collect('java.text.CompactNumberFormat', [
 			[/* text */ 't', ` for compact number
  formatting. For example,
  `],
-			[/* reference */ 'r', `.NumberFormat#getCompactNumberInstance(java.util.Locale,java.text.NumberFormat.Style)`],
+			[/* reference */ 'r', `java.text.NumberFormat#getCompactNumberInstance(java.util.Locale,java.text.NumberFormat.Style)`, `NumberFormat.getCompactNumberInstance(Locale, Style)`],
 			[/* text */ 't', `.
 
  `]
@@ -80,34 +80,34 @@ DocsCollector.collect('java.text.CompactNumberFormat', [
 		]],
 		[/* block */ 'b', ''],
 		[/* block */ 'b', [
-			[/* text */ 't', `Style`]
+			[/* anchor */ 'r', '#-id', `compact_number_style`, `Style`]
 		]],
 		[/* block */ 'b', [
 			[/* text */ 't', `
  A number can be formatted in the compact forms with two different
  styles, `],
-			[/* reference */ 'r', `.NumberFormat.Style#SHORT`],
+			[/* reference */ 'r', `java.text.NumberFormat.Style#SHORT`, `SHORT`],
 			[/* text */ 't', `
  and `],
-			[/* reference */ 'r', `.NumberFormat.Style#LONG`],
+			[/* reference */ 'r', `java.text.NumberFormat.Style#LONG`, `LONG`],
 			[/* text */ 't', `. Use
  `],
-			[/* reference */ 'r', `.NumberFormat#getCompactNumberInstance(java.util.Locale,java.text.NumberFormat.Style)`],
+			[/* reference */ 'r', `java.text.NumberFormat#getCompactNumberInstance(java.util.Locale,java.text.NumberFormat.Style)`, `NumberFormat.getCompactNumberInstance(Locale, Style)`],
 			[/* text */ 't', ` for formatting and
  parsing a number in `],
-			[/* reference */ 'r', `.NumberFormat.Style#SHORT`],
+			[/* reference */ 'r', `java.text.NumberFormat.Style#SHORT`, `SHORT`],
 			[/* text */ 't', ` or
  `],
-			[/* reference */ 'r', `.NumberFormat.Style#LONG`],
+			[/* reference */ 'r', `java.text.NumberFormat.Style#LONG`, `LONG`],
 			[/* text */ 't', ` compact form,
  where the given `],
 			[/* inline code block */ 'i', `Style`],
 			[/* text */ 't', ` parameter requests the desired
  format. A `],
-			[/* reference */ 'r', `.NumberFormat.Style#SHORT`],
+			[/* reference */ 'r', `java.text.NumberFormat.Style#SHORT`, `SHORT`],
 			[/* text */ 't', ` style
  compact number instance in the `],
-			[/* reference */ 'r', `java.Locale#US`],
+			[/* reference */ 'r', `java.util.Locale#US`, `US locale`],
 			[/* text */ 't', ` formats
  `],
 			[/* inline code block */ 'i', `10000`],
@@ -115,7 +115,7 @@ DocsCollector.collect('java.text.CompactNumberFormat', [
 			[/* inline code block */ 'i', `"10K"`],
 			[/* text */ 't', `. However, a
  `],
-			[/* reference */ 'r', `.NumberFormat.Style#LONG`],
+			[/* reference */ 'r', `java.text.NumberFormat.Style#LONG`, `LONG`],
 			[/* text */ 't', ` style instance in same locale
  formats `],
 			[/* inline code block */ 'i', `10000`],
@@ -126,17 +126,17 @@ DocsCollector.collect('java.text.CompactNumberFormat', [
  `]
 		]],
 		[/* block */ 'b', [
-			[/* text */ 't', `Compact Number Patterns`]
+			[/* anchor */ 'r', '#-id', `compact_number_patterns`, `Compact Number Patterns`]
 		]],
 		[/* block */ 'b', [
 			[/* text */ 't', `
  The compact number patterns are represented in a series of patterns where each
  pattern is used to format a range of numbers. An example of
  `],
-			[/* reference */ 'r', `.NumberFormat.Style#SHORT`],
+			[/* reference */ 'r', `java.text.NumberFormat.Style#SHORT`, `SHORT`],
 			[/* text */ 't', ` styled compact number patterns
  for the `],
-			[/* reference */ 'r', `java.Locale#US`],
+			[/* reference */ 'r', `java.util.Locale#US`, `US locale`],
 			[/* text */ 't', ` is `],
 			[/* inline code block */ 'i', `{"", "", "", "0K", "00K", "000K", "0M", "00M", "000M", "0B", "00B", "000B", "0T", "00T", "000T"}`],
 			[/* text */ 't', `,
@@ -219,7 +219,7 @@ DocsCollector.collect('java.text.CompactNumberFormat', [
  Many characters in a compact pattern are taken literally, they are matched
  during parsing and output unchanged during formatting.
  `],
-			[/* reference */ 'r', `.DecimalFormat#special_pattern_character`],
+			[/* reference */ 'r', `java.text.DecimalFormat#special_pattern_character`, `Special characters`],
 			[/* text */ 't', `,
  on the other hand, stand for other characters, strings, or classes of
  characters. They must be quoted, using single quote `],
@@ -337,7 +337,7 @@ DocsCollector.collect('java.text.CompactNumberFormat', [
  not `],
 		[/* inline code block */ 'i', `"1.00K"`],
 		[/* text */ 't', ` (in the `],
-		[/* reference */ 'r', `java.Locale#US`],
+		[/* reference */ 'r', `java.util.Locale#US`, `US locale`],
 		[/* text */ 't', `). For this
  reason, the patterns provided for formatting contain only the minimum
  integer digits, prefix and/or suffix, but no fractional part.
@@ -349,7 +349,7 @@ DocsCollector.collect('java.text.CompactNumberFormat', [
 		[/* text */ 't', ` (special pattern),
  either explicit or defaulted, then the general number formatting provided by
  `],
-		[/* reference */ 'r', `java.text.DecimalFormat`],
+		[/* reference */ 'r', `java.text.DecimalFormat`, `DecimalFormat`],
 		[/* text */ 't', `
  for the specified locale is used.
 
@@ -373,10 +373,10 @@ DocsCollector.collect('java.text.CompactNumberFormat', [
 		[/* inline code block */ 'i', `CompactNumberFormat`],
 		[/* text */ 't', ` provides rounding modes defined in
  `],
-		[/* reference */ 'r', `enum class in java.math.RoundingMode`],
+		[/* reference */ 'r', `enum class in java.math.RoundingMode`, `RoundingMode`],
 		[/* text */ 't', ` for formatting.  By default, it uses
  `],
-		[/* reference */ 'r', `java.RoundingMode#HALF_EVEN`],
+		[/* reference */ 'r', `java.math.RoundingMode#HALF_EVEN`, `RoundingMode.HALF_EVEN`],
 		[/* text */ 't', `.`]
 	],
 	/* fields */ UDF,
@@ -400,7 +400,7 @@ DocsCollector.collect('java.text.CompactNumberFormat', [
 				[/* inline code block */ 'i', `NumberFormat`],
 				[/* text */ 't', ` for compact number formatting. For example,
  `],
-				[/* reference */ 'r', `.NumberFormat#getCompactNumberInstance(java.util.Locale,java.text.NumberFormat.Style)`],
+				[/* reference */ 'r', `java.text.NumberFormat#getCompactNumberInstance(java.util.Locale,java.text.NumberFormat.Style)`, `NumberFormat.getCompactNumberInstance(Locale, Style)`],
 				[/* text */ 't', `.`]
 			],
 			[/* parameters */
@@ -413,7 +413,7 @@ DocsCollector.collect('java.text.CompactNumberFormat', [
 				[/* parameter */ 'compactPatterns', [/* parameter description */
 					[/* text */ 't', `an array of
         `],
-					[/* reference */ 'r', `.CompactNumberFormat#compact_number_patterns`]
+					[/* reference */ 'r', `java.text.CompactNumberFormat#compact_number_patterns`, `compact number patterns`]
 				]]
 			],
 			[/* throws */
@@ -457,7 +457,7 @@ DocsCollector.collect('java.text.CompactNumberFormat', [
 				[/* inline code block */ 'i', `NumberFormat`],
 				[/* text */ 't', ` for compact number formatting. For example,
  `],
-				[/* reference */ 'r', `.NumberFormat#getCompactNumberInstance(java.util.Locale,java.text.NumberFormat.Style)`],
+				[/* reference */ 'r', `java.text.NumberFormat#getCompactNumberInstance(java.util.Locale,java.text.NumberFormat.Style)`, `NumberFormat.getCompactNumberInstance(Locale, Style)`],
 				[/* text */ 't', `.`]
 			],
 			[/* parameters */
@@ -470,7 +470,7 @@ DocsCollector.collect('java.text.CompactNumberFormat', [
 				[/* parameter */ 'compactPatterns', [/* parameter description */
 					[/* text */ 't', `an array of
         `],
-					[/* reference */ 'r', `.CompactNumberFormat#compact_number_patterns`]
+					[/* reference */ 'r', `java.text.CompactNumberFormat#compact_number_patterns`, `compact number patterns`]
 				]],
 				[/* parameter */ 'pluralRules', [/* parameter description */
 					[/* text */ 't', `a String designating plural rules which associate
@@ -520,7 +520,7 @@ DocsCollector.collect('java.text.CompactNumberFormat', [
 				[/* text */ 't', `
  are compared, other types return false; obeys the general contract of
  `],
-				[/* reference */ 'r', `java.Object#equals(java.lang.Object)`],
+				[/* reference */ 'r', `java.lang.Object#equals(java.lang.Object)`, `Object.equals`],
 				[/* text */ 't', `.`]
 			],
 			[/* parameters */
@@ -544,7 +544,7 @@ DocsCollector.collect('java.text.CompactNumberFormat', [
 				[/* inline code block */ 'i', `"12,347 trillion"`],
 				[/* text */ 't', ` in the
  `],
-				[/* reference */ 'r', `java.Locale#US`],
+				[/* reference */ 'r', `java.util.Locale#US`, `US locale`],
 				[/* text */ 't', `.
  The grouping separator is locale dependent.`]
 			],
@@ -585,7 +585,7 @@ DocsCollector.collect('java.text.CompactNumberFormat', [
  number component, prefix/suffix is still considered to compute the
  resulting output.
  For example, in the `],
-				[/* reference */ 'r', `java.Locale#US`],
+				[/* reference */ 'r', `java.util.Locale#US`, `US locale`],
 				[/* text */ 't', `, if this method
  returns `],
 				[/* inline code block */ 'i', `true`],
@@ -612,7 +612,7 @@ DocsCollector.collect('java.text.CompactNumberFormat', [
 			[/* method description */
 				[/* text */ 't', `Formats a number to produce a string representing its compact form.
  The number can be of any subclass of `],
-				[/* reference */ 'r', `java.lang.Number`],
+				[/* reference */ 'r', `java.lang.Number`, `Number`],
 				[/* text */ 't', `.`]
 			],
 			[/* parameters */
@@ -632,13 +632,13 @@ DocsCollector.collect('java.text.CompactNumberFormat', [
 					[/* inline code block */ 'i', `123456789`],
 					[/* text */ 't', ` in the
                          `],
-					[/* reference */ 'r', `java.Locale#US`],
+					[/* reference */ 'r', `java.util.Locale#US`, `US locale`],
 					[/* text */ 't', `,
                          if the given `],
 					[/* inline code block */ 'i', `fieldPosition`],
 					[/* text */ 't', ` is
                          `],
-					[/* reference */ 'r', `.NumberFormat#INTEGER_FIELD`],
+					[/* reference */ 'r', `java.text.NumberFormat#INTEGER_FIELD`, `NumberFormat.INTEGER_FIELD`],
 					[/* text */ 't', `, the begin
                          index and end index of `],
 					[/* inline code block */ 'i', `fieldPosition`],
@@ -649,10 +649,10 @@ DocsCollector.collect('java.text.CompactNumberFormat', [
 					[/* text */ 't', `. Similarly, positions
                          of the prefix and the suffix fields can be
                          obtained using `],
-					[/* reference */ 'r', `.NumberFormat.Field#PREFIX`],
+					[/* reference */ 'r', `java.text.NumberFormat.Field#PREFIX`, `NumberFormat.Field.PREFIX`],
 					[/* text */ 't', `
                          and `],
-					[/* reference */ 'r', `.NumberFormat.Field#SUFFIX`],
+					[/* reference */ 'r', `java.text.NumberFormat.Field#SUFFIX`, `NumberFormat.Field.SUFFIX`],
 					[/* text */ 't', ` respectively.`]
 				]]
 			],
@@ -696,7 +696,7 @@ DocsCollector.collect('java.text.CompactNumberFormat', [
 				[/* inline code block */ 'i', `"12,347 trillion"`],
 				[/* text */ 't', ` for the
  `],
-				[/* reference */ 'r', `java.Locale#US`],
+				[/* reference */ 'r', `java.util.Locale#US`, `US locale`],
 				[/* text */ 't', `, the grouping size is 3.`]
 			],
 			/* parameters */ UDF,
@@ -755,7 +755,7 @@ DocsCollector.collect('java.text.CompactNumberFormat', [
  The value is the numeric part in the given text multiplied
  by the numeric equivalent of the affix attached
  (For example, "K" = 1000 in `],
-					[/* reference */ 'r', `java.Locale#US`],
+					[/* reference */ 'r', `java.util.Locale#US`, `US locale`],
 					[/* text */ 't', `).
  The subclass returned depends on the value of
  `],
@@ -845,7 +845,7 @@ DocsCollector.collect('java.text.CompactNumberFormat', [
 					[/* inline code block */ 'i', `"1.05E4K"`],
 					[/* text */ 't', ` in
  `],
-					[/* reference */ 'r', `java.Locale#US`],
+					[/* reference */ 'r', `java.util.Locale#US`, `US locale`],
 					[/* text */ 't', ` breaks at character 'E'
  and returns 1.05.`]
 				]]
@@ -895,13 +895,13 @@ DocsCollector.collect('java.text.CompactNumberFormat', [
 					[/* inline code block */ 'i', `1234567.89`],
 					[/* text */ 't', ` in the
                          `],
-					[/* reference */ 'r', `java.Locale#US`],
+					[/* reference */ 'r', `java.util.Locale#US`, `US locale`],
 					[/* text */ 't', `
                          if the given `],
 					[/* inline code block */ 'i', `fieldPosition`],
 					[/* text */ 't', ` is
                          `],
-					[/* reference */ 'r', `.NumberFormat#INTEGER_FIELD`],
+					[/* reference */ 'r', `java.text.NumberFormat#INTEGER_FIELD`, `NumberFormat.INTEGER_FIELD`],
 					[/* text */ 't', `, the begin
                          index and end index of `],
 					[/* inline code block */ 'i', `fieldPosition`],
@@ -912,10 +912,10 @@ DocsCollector.collect('java.text.CompactNumberFormat', [
 					[/* text */ 't', `. Similarly, positions
                          of the prefix and the suffix fields can be
                          obtained using `],
-					[/* reference */ 'r', `.NumberFormat.Field#PREFIX`],
+					[/* reference */ 'r', `java.text.NumberFormat.Field#PREFIX`, `NumberFormat.Field.PREFIX`],
 					[/* text */ 't', `
                          and `],
-					[/* reference */ 'r', `.NumberFormat.Field#SUFFIX`],
+					[/* reference */ 'r', `java.text.NumberFormat.Field#SUFFIX`, `NumberFormat.Field.SUFFIX`],
 					[/* text */ 't', ` respectively.`]
 				]]
 			],
@@ -960,13 +960,13 @@ DocsCollector.collect('java.text.CompactNumberFormat', [
 					[/* inline code block */ 'i', `123456789`],
 					[/* text */ 't', ` in the
                          `],
-					[/* reference */ 'r', `java.Locale#US`],
+					[/* reference */ 'r', `java.util.Locale#US`, `US locale`],
 					[/* text */ 't', `,
                          if the given `],
 					[/* inline code block */ 'i', `fieldPosition`],
 					[/* text */ 't', ` is
                          `],
-					[/* reference */ 'r', `.NumberFormat#INTEGER_FIELD`],
+					[/* reference */ 'r', `java.text.NumberFormat#INTEGER_FIELD`, `NumberFormat.INTEGER_FIELD`],
 					[/* text */ 't', `, the begin
                          index and end index of `],
 					[/* inline code block */ 'i', `fieldPosition`],
@@ -977,10 +977,10 @@ DocsCollector.collect('java.text.CompactNumberFormat', [
 					[/* text */ 't', `. Similarly, positions
                          of the prefix and the suffix fields can be
                          obtained using `],
-					[/* reference */ 'r', `.NumberFormat.Field#PREFIX`],
+					[/* reference */ 'r', `java.text.NumberFormat.Field#PREFIX`, `NumberFormat.Field.PREFIX`],
 					[/* text */ 't', `
                          and `],
-					[/* reference */ 'r', `.NumberFormat.Field#SUFFIX`],
+					[/* reference */ 'r', `java.text.NumberFormat.Field#SUFFIX`, `NumberFormat.Field.SUFFIX`],
 					[/* text */ 't', ` respectively.`]
 				]]
 			],
@@ -1010,7 +1010,7 @@ DocsCollector.collect('java.text.CompactNumberFormat', [
 		[/* method */ 'getRoundingMode()', [
 			[/* method description */
 				[/* text */ 't', `Gets the `],
-				[/* reference */ 'r', `enum class in java.math.RoundingMode`],
+				[/* reference */ 'r', `enum class in java.math.RoundingMode`, `RoundingMode`],
 				[/* text */ 't', ` used in this
  `],
 				[/* inline code block */ 'i', `CompactNumberFormat`],
@@ -1048,10 +1048,10 @@ DocsCollector.collect('java.text.CompactNumberFormat', [
  being the same as the attribute key. The prefix and the suffix
  parts of the returned iterator (if present) are represented by
  the attributes `],
-					[/* reference */ 'r', `.NumberFormat.Field#PREFIX`],
+					[/* reference */ 'r', `java.text.NumberFormat.Field#PREFIX`, `NumberFormat.Field.PREFIX`],
 					[/* text */ 't', ` and
  `],
-					[/* reference */ 'r', `.NumberFormat.Field#SUFFIX`],
+					[/* reference */ 'r', `java.text.NumberFormat.Field#SUFFIX`, `NumberFormat.Field.SUFFIX`],
 					[/* text */ 't', ` respectively.`]
 				]]
 			],
@@ -1102,7 +1102,7 @@ DocsCollector.collect('java.text.CompactNumberFormat', [
 				[/* inline code block */ 'i', `"12,347 trillion"`],
 				[/* text */ 't', ` for the
  `],
-				[/* reference */ 'r', `java.Locale#US`],
+				[/* reference */ 'r', `java.util.Locale#US`, `US locale`],
 				[/* text */ 't', `, the grouping size is 3. The grouping
  size must be greater than or equal to zero and less than or equal to 127.`]
 			],
@@ -1253,7 +1253,7 @@ DocsCollector.collect('java.text.CompactNumberFormat', [
 		[/* method */ 'setRoundingMode(java.math.RoundingMode)', [
 			[/* method description */
 				[/* text */ 't', `Sets the `],
-				[/* reference */ 'r', `enum class in java.math.RoundingMode`],
+				[/* reference */ 'r', `enum class in java.math.RoundingMode`, `RoundingMode`],
 				[/* text */ 't', ` used in this
  `],
 				[/* inline code block */ 'i', `CompactNumberFormat`],

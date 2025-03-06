@@ -9,7 +9,7 @@ DocsCollector.collect('java.lang.annotation.Target', [
 		[/* external link */ 'a', `https://docs.oracle.com/javase/specs/jls/se17/html/jls-9.html#jls-9.6.4.1`, `9.6.4.1`],
 		[/* text */ 't', `, and denoted in source code by
  enum constants of `],
-		[/* reference */ 'r', `enum class in java.lang.annotation.ElementType`],
+		[/* reference */ 'r', `enum class in java.lang.annotation.ElementType`, `java.lang.annotation.ElementType`],
 		[/* text */ 't', `.
 
  `],

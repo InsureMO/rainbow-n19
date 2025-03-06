@@ -42,13 +42,13 @@ DocsCollector.collect('java.security.NoSuchAlgorithmException', [
 				[/* parameter */ 'message', [/* parameter description */
 					[/* text */ 't', `the detail message (which is saved for later retrieval
         by the `],
-					[/* reference */ 'r', `java.Throwable#getMessage()`],
+					[/* reference */ 'r', `java.lang.Throwable#getMessage()`, `Throwable.getMessage()`],
 					[/* text */ 't', ` method).`]
 				]],
 				[/* parameter */ 'cause', [/* parameter description */
 					[/* text */ 't', `the cause (which is saved for later retrieval by the
         `],
-					[/* reference */ 'r', `java.Throwable#getCause()`],
+					[/* reference */ 'r', `java.lang.Throwable#getCause()`, `Throwable.getCause()`],
 					[/* text */ 't', ` method).  (A `],
 					[/* inline code block */ 'i', `null`],
 					[/* text */ 't', ` value is permitted,
@@ -74,7 +74,7 @@ DocsCollector.collect('java.security.NoSuchAlgorithmException', [
 				[/* parameter */ 'cause', [/* parameter description */
 					[/* text */ 't', `the cause (which is saved for later retrieval by the
         `],
-					[/* reference */ 'r', `java.Throwable#getCause()`],
+					[/* reference */ 'r', `java.lang.Throwable#getCause()`, `Throwable.getCause()`],
 					[/* text */ 't', ` method).  (A `],
 					[/* inline code block */ 'i', `null`],
 					[/* text */ 't', ` value is permitted,

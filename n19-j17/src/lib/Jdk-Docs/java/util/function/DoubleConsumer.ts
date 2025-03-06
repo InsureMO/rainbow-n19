@@ -8,7 +8,7 @@ DocsCollector.collect('java.util.function.DoubleConsumer', [
 		[/* text */ 't', `-valued argument and
  returns no result.  This is the primitive type specialization of
  `],
-		[/* reference */ 'r', `java.util.function.Consumer`],
+		[/* reference */ 'r', `java.util.function.Consumer`, `Consumer`],
 		[/* text */ 't', ` for `],
 		[/* inline code block */ 'i', `double`],
 		[/* text */ 't', `.  Unlike most other functional interfaces,
@@ -19,7 +19,7 @@ DocsCollector.collect('java.util.function.DoubleConsumer', [
  `],
 		[/* block */ 'b', [
 			[/* text */ 't', `This is a `],
-			[/* reference */ 'r', `.package-summary`],
+			[/* text */ 't', `functional interface`],
 			[/* text */ 't', `
  whose functional method is `],
 			[/* reference */ 'r', `#accept(double)`, `accept(double)`],

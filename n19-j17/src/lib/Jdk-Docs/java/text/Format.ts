@@ -163,13 +163,13 @@ DocsCollector.collect('java.text.Format', [
 			[/* inline code block */ 'i', `ERA_FIELD`],
 			[/* text */ 't', ` and its
  friends in `],
-			[/* reference */ 'r', `java.text.DateFormat`],
+			[/* reference */ 'r', `java.text.DateFormat`, `DateFormat`],
 			[/* text */ 't', `.
 
  `]
 		]],
 		[/* block */ 'b', [
-			[/* text */ 't', `Synchronization`]
+			[/* anchor */ 'r', '#-id', `synchronization`, `Synchronization`]
 		]],
 		[/* block */ 'b', `
  Formats are generally not synchronized.

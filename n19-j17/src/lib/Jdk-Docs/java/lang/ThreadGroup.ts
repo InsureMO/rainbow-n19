@@ -342,10 +342,10 @@ DocsCollector.collect('java.lang.ThreadGroup', [
 					[/* inline code block */ 'i', `pri`],
 					[/* text */ 't', ` argument is less than
  `],
-					[/* reference */ 'r', `.Thread#MIN_PRIORITY`],
+					[/* reference */ 'r', `java.lang.Thread#MIN_PRIORITY`, `Thread.MIN_PRIORITY`],
 					[/* text */ 't', ` or greater than
  `],
-					[/* reference */ 'r', `.Thread#MAX_PRIORITY`],
+					[/* reference */ 'r', `java.lang.Thread#MAX_PRIORITY`, `Thread.MAX_PRIORITY`],
 					[/* text */ 't', `, the maximum priority of the group
  remains unchanged.
  `]
@@ -692,7 +692,7 @@ DocsCollector.collect('java.lang.ThreadGroup', [
 				[/* text */ 't', `Called by the Java Virtual Machine when a thread in this
  thread group stops because of an uncaught exception, and the thread
  does not have a specific `],
-				[/* reference */ 'r', `java.lang.Thread.UncaughtExceptionHandler`],
+				[/* reference */ 'r', `java.lang.Thread.UncaughtExceptionHandler`, `Thread.UncaughtExceptionHandler`],
 				[/* text */ 't', `
  installed.
  `],
@@ -718,7 +718,7 @@ DocsCollector.collect('java.lang.ThreadGroup', [
 					[/* block */ 'b', [
 						[/* text */ 't', `Otherwise, this method checks to see if there is a
      `],
-						[/* reference */ 'r', `.Thread#getDefaultUncaughtExceptionHandler()`],
+						[/* reference */ 'r', `java.lang.Thread#getDefaultUncaughtExceptionHandler()`, `default uncaught exception handler`],
 						[/* text */ 't', ` installed, and if so, its
      `],
 						[/* inline code block */ 'i', `uncaughtException`],
@@ -731,19 +731,19 @@ DocsCollector.collect('java.lang.ThreadGroup', [
 						[/* inline code block */ 'i', `Throwable`],
 						[/* text */ 't', `
      argument is an instance of `],
-						[/* reference */ 'r', `java.lang.ThreadDeath`],
+						[/* reference */ 'r', `java.lang.ThreadDeath`, `ThreadDeath`],
 						[/* text */ 't', `. If so, nothing
      special is done. Otherwise, a message containing the
      thread's name, as returned from the thread's `],
-						[/* reference */ 'r', `.Thread#getName()`],
+						[/* reference */ 'r', `java.lang.Thread#getName()`, `getName`],
 						[/* text */ 't', ` method, and a stack backtrace,
      using the `],
 						[/* inline code block */ 'i', `Throwable`],
 						[/* text */ 't', `'s `],
-						[/* reference */ 'r', `.Throwable#printStackTrace()`],
+						[/* reference */ 'r', `java.lang.Throwable#printStackTrace()`, `printStackTrace`],
 						[/* text */ 't', ` method, is
      printed to the `],
-						[/* reference */ 'r', `.System#err`],
+						[/* reference */ 'r', `java.lang.System#err`, `standard error stream`],
 						[/* text */ 't', `.
  `]
 					]]

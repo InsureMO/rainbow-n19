@@ -17,11 +17,11 @@ DocsCollector.collect('java.lang.reflect.GenericArrayType', [
 				[/* text */ 't', ` object representing the component type
  of this array. This method creates the component type of the
  array.  See the declaration of `],
-				[/* reference */ 'r', `java.lang.reflect.ParameterizedType`],
+				[/* reference */ 'r', `java.lang.reflect.ParameterizedType`, `ParameterizedType`],
 				[/* text */ 't', ` for the
  semantics of the creation process for parameterized types and
  see `],
-				[/* reference */ 'r', `java.lang.reflect.TypeVariable`],
+				[/* reference */ 'r', `java.lang.reflect.TypeVariable`, `TypeVariable`],
 				[/* text */ 't', ` for the
  creation process for type variables.`]
 			],

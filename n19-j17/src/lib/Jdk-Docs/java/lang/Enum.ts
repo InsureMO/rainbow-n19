@@ -30,9 +30,9 @@ DocsCollector.collect('java.lang.Enum', [
 			[/* text */ 't', ` Note that when using an enumeration type as the type of a set
  or as the type of the keys in a map, specialized and efficient
  `],
-			[/* reference */ 'r', `java.util.EnumSet`],
+			[/* reference */ 'r', `java.util.EnumSet`, `set`],
 			[/* text */ 't', ` and `],
-			[/* reference */ 'r', `java.util.EnumMap`],
+			[/* reference */ 'r', `java.util.EnumMap`, `map`],
 			[/* text */ 't', ` implementations are available.`]
 		]]
 	],
@@ -147,9 +147,9 @@ DocsCollector.collect('java.lang.Enum', [
  Most programmers will have no use for this method.  It is
  designed for use by sophisticated enum-based data structures, such
  as `],
-				[/* reference */ 'r', `java.util.EnumSet`],
+				[/* reference */ 'r', `java.util.EnumSet`, `EnumSet`],
 				[/* text */ 't', ` and `],
-				[/* reference */ 'r', `java.util.EnumMap`],
+				[/* reference */ 'r', `java.util.EnumMap`, `EnumMap`],
 				[/* text */ 't', `.`]
 			],
 			/* parameters */ UDF,
@@ -166,7 +166,7 @@ DocsCollector.collect('java.lang.Enum', [
    e1.getDeclaringClass() == e2.getDeclaringClass().
  (The value returned by this method may differ from the one returned
  by the `],
-				[/* reference */ 'r', `.Object#getClass()`],
+				[/* reference */ 'r', `java.lang.Object#getClass()`, `Object.getClass()`],
 				[/* text */ 't', ` method for enum constants with
  constant-specific class bodies.)`]
 			],
@@ -200,17 +200,17 @@ DocsCollector.collect('java.lang.Enum', [
 				[/* inline code block */ 'i', `EnumDesc`],
 				[/* text */ 't', ` for this instance, if one can be
  constructed, or an empty `],
-				[/* reference */ 'r', `java.util.Optional`],
+				[/* reference */ 'r', `java.util.Optional`, `Optional`],
 				[/* text */ 't', ` if one cannot be.`]
 			],
 			/* parameters */ UDF,
 			/* throws */ UDF,
 			[/* return description */
 				[/* text */ 't', `An `],
-				[/* reference */ 'r', `java.util.Optional`],
+				[/* reference */ 'r', `java.util.Optional`, `Optional`],
 				[/* text */ 't', ` containing the resulting nominal descriptor,
  or an empty `],
-				[/* reference */ 'r', `java.util.Optional`],
+				[/* reference */ 'r', `java.util.Optional`, `Optional`],
 				[/* text */ 't', ` if one cannot be constructed.`]
 			]
 		]],

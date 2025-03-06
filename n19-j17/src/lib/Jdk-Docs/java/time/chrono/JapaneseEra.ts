@@ -111,7 +111,7 @@ DocsCollector.collect('java.time.chrono.JapaneseEra', [
 				[/* block */ 'b', [
 					[/* text */ 't', `
  If no textual mapping is found then the `],
-					[/* reference */ 'r', `.Era#getValue()`],
+					[/* reference */ 'r', `java.time.chrono.Era#getValue()`, `numeric value`],
 					[/* text */ 't', ` is returned.`]
 				]]
 			],
@@ -142,7 +142,7 @@ DocsCollector.collect('java.time.chrono.JapaneseEra', [
 				[/* block */ 'b', [
 					[/* text */ 't', `
  If the field is a `],
-					[/* reference */ 'r', `enum class in java.time.temporal.ChronoField`],
+					[/* reference */ 'r', `enum class in java.time.temporal.ChronoField`, `ChronoField`],
 					[/* text */ 't', ` then the query is implemented here.
  The `],
 					[/* inline code block */ 'i', `ERA`],
@@ -229,7 +229,7 @@ DocsCollector.collect('java.time.chrono.JapaneseEra', [
 					[/* reference */ 'r', `#values()`, `values()`],
 					[/* text */ 't', `
  method has an int value (available via `],
-					[/* reference */ 'r', `.Era#getValue()`],
+					[/* reference */ 'r', `java.time.chrono.Era#getValue()`, `Era.getValue()`],
 					[/* text */ 't', ` which is
  accepted by this method.`]
 				]]

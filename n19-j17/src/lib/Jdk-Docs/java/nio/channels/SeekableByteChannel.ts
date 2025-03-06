@@ -52,7 +52,7 @@ DocsCollector.collect('java.nio.channels.SeekableByteChannel', [
 					[/* text */ 't', ` Bytes are read starting at this channel's current position, and
  then the position is updated with the number of bytes actually read.
  Otherwise this method behaves exactly as specified in the `],
-					[/* reference */ 'r', `java.nio.channels.ReadableByteChannel`],
+					[/* reference */ 'r', `java.nio.channels.ReadableByteChannel`, `ReadableByteChannel`],
 					[/* text */ 't', ` interface.`]
 				]]
 			],
@@ -95,14 +95,14 @@ DocsCollector.collect('java.nio.channels.SeekableByteChannel', [
 					[/* text */ 't', ` Bytes are written starting at this channel's current position, unless
  the channel is connected to an entity such as a file that is opened with
  the `],
-					[/* reference */ 'r', `java.StandardOpenOption#APPEND`],
+					[/* reference */ 'r', `java.nio.file.StandardOpenOption#APPEND`, `APPEND`],
 					[/* text */ 't', ` option, in
  which case the position is first advanced to the end. The entity to which
  the channel is connected is grown, if necessary, to accommodate the
  written bytes, and then the position is updated with the number of bytes
  actually written. Otherwise this method behaves exactly as specified by
  the `],
-					[/* reference */ 'r', `java.nio.channels.WritableByteChannel`],
+					[/* reference */ 'r', `java.nio.channels.WritableByteChannel`, `WritableByteChannel`],
 					[/* text */ 't', ` interface.`]
 				]]
 			],
@@ -150,7 +150,7 @@ DocsCollector.collect('java.nio.channels.SeekableByteChannel', [
 				[/* block */ 'b', [
 					[/* text */ 't', ` Setting the channel's position is not recommended when connected to
  an entity, typically a file, that is opened with the `],
-					[/* reference */ 'r', `java.StandardOpenOption#APPEND`],
+					[/* reference */ 'r', `java.nio.file.StandardOpenOption#APPEND`, `APPEND`],
 					[/* text */ 't', ` option. When opened for
  append, the position is first advanced to the end before writing.`]
 				]]
@@ -192,7 +192,7 @@ DocsCollector.collect('java.nio.channels.SeekableByteChannel', [
 				[/* block */ 'b', [
 					[/* text */ 't', ` An implementation of this interface may prohibit truncation when
  connected to an entity, typically a file, opened with the `],
-					[/* reference */ 'r', `java.StandardOpenOption#APPEND`],
+					[/* reference */ 'r', `java.nio.file.StandardOpenOption#APPEND`, `APPEND`],
 					[/* text */ 't', ` option.`]
 				]]
 			],

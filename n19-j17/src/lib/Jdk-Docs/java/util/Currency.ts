@@ -85,7 +85,7 @@ DocsCollector.collect('java.util.Currency', [
 		[/* block */ 'b', [
 			[/* text */ 't', `
  It is recommended to use `],
-			[/* reference */ 'r', `java.math.BigDecimal`],
+			[/* reference */ 'r', `java.math.BigDecimal`, `BigDecimal`],
 			[/* text */ 't', ` class while dealing
  with `],
 			[/* inline code block */ 'i', `Currency`],
@@ -136,7 +136,7 @@ DocsCollector.collect('java.util.Currency', [
 			[/* method description */
 				[/* text */ 't', `Gets the name that is suitable for displaying this currency for
  the default `],
-				[/* reference */ 'r', `.Locale.Category#DISPLAY`],
+				[/* reference */ 'r', `java.util.Locale.Category#DISPLAY`, `DISPLAY`],
 				[/* text */ 't', ` locale.
  If there is no suitable display name found
  for the default locale, the ISO 4217 currency code is returned.
@@ -154,7 +154,7 @@ DocsCollector.collect('java.util.Currency', [
 			[/* return description */
 				[/* text */ 't', `the display name of this currency for the default
      `],
-				[/* reference */ 'r', `.Locale.Category#DISPLAY`],
+				[/* reference */ 'r', `java.util.Locale.Category#DISPLAY`, `DISPLAY`],
 				[/* text */ 't', ` locale`]
 			]
 		]],
@@ -206,7 +206,7 @@ DocsCollector.collect('java.util.Currency', [
 			[/* method description */
 				[/* text */ 't', `Gets the symbol of this currency for the default
  `],
-				[/* reference */ 'r', `.Locale.Category#DISPLAY`],
+				[/* reference */ 'r', `java.util.Locale.Category#DISPLAY`, `DISPLAY`],
 				[/* text */ 't', ` locale.
  For example, for the US Dollar, the symbol is "$" if the default
  locale is the US, while for other locales it may be "US$". If no
@@ -215,11 +215,11 @@ DocsCollector.collect('java.util.Currency', [
 				[/* block */ 'b', [
 					[/* text */ 't', `
  If the default `],
-					[/* reference */ 'r', `.Locale.Category#DISPLAY`],
+					[/* reference */ 'r', `java.util.Locale.Category#DISPLAY`, `DISPLAY`],
 					[/* text */ 't', ` locale
  contains "rg" (region override)
  `],
-					[/* reference */ 'r', `.Locale#def_locale_extension`],
+					[/* reference */ 'r', `java.util.Locale#def_locale_extension`, `Unicode extension`],
 					[/* text */ 't', `,
  the symbol returned from this method reflects
  the value specified with that extension.
@@ -238,7 +238,7 @@ DocsCollector.collect('java.util.Currency', [
 			[/* return description */
 				[/* text */ 't', `the symbol of this currency for the default
      `],
-				[/* reference */ 'r', `.Locale.Category#DISPLAY`],
+				[/* reference */ 'r', `java.util.Locale.Category#DISPLAY`, `DISPLAY`],
 				[/* text */ 't', ` locale`]
 			]
 		]],
@@ -255,7 +255,7 @@ DocsCollector.collect('java.util.Currency', [
 					[/* inline code block */ 'i', `locale`],
 					[/* text */ 't', ` contains "rg" (region override)
  `],
-					[/* reference */ 'r', `.Locale#def_locale_extension`],
+					[/* reference */ 'r', `java.util.Locale#def_locale_extension`, `Unicode extension`],
 					[/* text */ 't', `,
  the symbol returned from this method reflects
  the value specified with that extension.`]
@@ -336,7 +336,7 @@ DocsCollector.collect('java.util.Currency', [
 					[/* inline code block */ 'i', `locale`],
 					[/* text */ 't', ` contains "cu" and/or "rg"
  `],
-					[/* reference */ 'r', `.Locale#def_locale_extension`],
+					[/* reference */ 'r', `java.util.Locale#def_locale_extension`, `Unicode extensions`],
 					[/* text */ 't', `,
  the instance returned from this method reflects
  the values specified with those extensions. If both "cu" and "rg" are

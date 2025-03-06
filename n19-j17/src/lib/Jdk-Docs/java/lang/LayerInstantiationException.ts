@@ -4,7 +4,7 @@ import {DocsCollector} from '../../DocsCollector';
 DocsCollector.collect('java.lang.LayerInstantiationException', [
 	[/* class description */
 		[/* text */ 't', `Thrown when creating a `],
-		[/* reference */ 'r', `java.lang.ModuleLayer`],
+		[/* reference */ 'r', `java.lang.ModuleLayer`, `module layer`],
 		[/* text */ 't', ` fails.`]
 	],
 	/* fields */ UDF,

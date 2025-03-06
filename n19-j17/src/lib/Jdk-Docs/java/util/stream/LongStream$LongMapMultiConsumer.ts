@@ -8,7 +8,7 @@ DocsCollector.collect('java.util.stream.LongStream$LongMapMultiConsumer', [
 		[/* text */ 't', `-valued argument
  and a LongConsumer, and returns no result. This functional interface is
  used by `],
-		[/* reference */ 'r', `.LongStream#mapMulti(java.util.stream.LongStream.LongMapMultiConsumer)`],
+		[/* reference */ 'r', `java.util.stream.LongStream#mapMulti(java.util.stream.LongStream.LongMapMultiConsumer)`, `LongStream.mapMulti`],
 		[/* text */ 't', `
  to replace a long value with zero or more long values.
 

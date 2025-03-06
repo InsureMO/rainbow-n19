@@ -27,9 +27,9 @@ DocsCollector.collect('java.lang.reflect.AccessibleObject', [
  their top-level class; package access members outside their package; protected members
  outside their package or subclasses; and public members outside their
  module unless they are declared in an `],
-			[/* reference */ 'r', `java.Module#isExported(java.lang.String,java.lang.Module)`],
+			[/* reference */ 'r', `java.lang.Module#isExported(java.lang.String,java.lang.Module)`, `exported`],
 			[/* text */ 't', ` package and the user `],
-			[/* reference */ 'r', `java.Module#canRead(java.lang.Module)`],
+			[/* reference */ 'r', `java.lang.Module#canRead(java.lang.Module)`, `reads`],
 			[/* text */ 't', ` their module. By
  default, Java language access control is enforced (with one variation) when
  `],
@@ -141,7 +141,7 @@ DocsCollector.collect('java.lang.reflect.AccessibleObject', [
  value is an array of length 0.
 
  The difference between this method and `],
-				[/* reference */ 'r', `.AnnotatedElement#getAnnotation(java.lang.Class)`],
+				[/* reference */ 'r', `java.lang.reflect.AnnotatedElement#getAnnotation(java.lang.Class)`, `AnnotatedElement.getAnnotation(Class)`],
 				[/* text */ 't', `
  is that this method detects if its argument is a `],
 				[/* text */ 't', `repeatable
@@ -191,7 +191,7 @@ DocsCollector.collect('java.lang.reflect.AccessibleObject', [
  0.
 
  The difference between this method and `],
-				[/* reference */ 'r', `.AnnotatedElement#getDeclaredAnnotation(java.lang.Class)`],
+				[/* reference */ 'r', `java.lang.reflect.AnnotatedElement#getDeclaredAnnotation(java.lang.Class)`, `AnnotatedElement.getDeclaredAnnotation(Class)`],
 				[/* text */ 't', ` is that this method detects if its
  argument is a `],
 				[/* text */ 't', `repeatable annotation type`],
@@ -280,7 +280,7 @@ DocsCollector.collect('java.lang.reflect.AccessibleObject', [
 				[/* inline code block */ 'i', `obj`],
 				[/* text */ 't', ` argument must be an
  instance of the `],
-				[/* reference */ 'r', `.Member#getDeclaringClass()`],
+				[/* reference */ 'r', `java.lang.reflect.Member#getDeclaringClass()`, `declaring class`],
 				[/* text */ 't', `. For
  static members and constructors then `],
 				[/* inline code block */ 'i', `obj`],
@@ -331,7 +331,7 @@ DocsCollector.collect('java.lang.reflect.AccessibleObject', [
 							[/* inline code block */ 'i', `null`],
 							[/* text */ 't', ` or of type
               that is not a subclass of the `],
-							[/* reference */ 'r', `.Member#getDeclaringClass()`],
+							[/* reference */ 'r', `java.lang.reflect.Member#getDeclaringClass()`, `declaring class`],
 							[/* text */ 't', ` of the member.`]
 						]]
 					]]
@@ -529,7 +529,7 @@ DocsCollector.collect('java.lang.reflect.AccessibleObject', [
  the input `],
 					[/* inline code block */ 'i', `array`],
 					[/* text */ 't', ` is a `],
-					[/* reference */ 'r', `java.lang.reflect.Constructor`],
+					[/* reference */ 'r', `java.lang.reflect.Constructor`, `Constructor`],
 					[/* text */ 't', `
  object for the class `],
 					[/* inline code block */ 'i', `java.lang.Class`],
@@ -583,9 +583,9 @@ DocsCollector.collect('java.lang.reflect.AccessibleObject', [
 					[/* inline code block */ 'i', `C`],
 					[/* text */ 't', ` to enable
  access to a `],
-					[/* reference */ 'r', `java.lang.reflect.Member`],
+					[/* reference */ 'r', `java.lang.reflect.Member`, `member`],
 					[/* text */ 't', ` of `],
-					[/* reference */ 'r', `.Member#getDeclaringClass()`],
+					[/* reference */ 'r', `java.lang.reflect.Member#getDeclaringClass()`, `declaring class`],
 					[/* inline code block */ 'i', `D`],
 					[/* text */ 't', ` if any of the following hold: `]
 				]],
@@ -606,7 +606,7 @@ DocsCollector.collect('java.lang.reflect.AccessibleObject', [
 						[/* text */ 't', ` in
      a package that the module containing `],
 						[/* inline code block */ 'i', `D`],
-						[/* reference */ 'r', `java.Module#isExported(java.lang.String,java.lang.Module)`],
+						[/* reference */ 'r', `java.lang.Module#isExported(java.lang.String,java.lang.Module)`, `exports`],
 						[/* text */ 't', ` to at least the module
      containing `],
 						[/* inline code block */ 'i', `C`],
@@ -637,7 +637,7 @@ DocsCollector.collect('java.lang.reflect.AccessibleObject', [
 						[/* inline code block */ 'i', `D`],
 						[/* text */ 't', ` is in a package that the module containing `],
 						[/* inline code block */ 'i', `D`],
-						[/* reference */ 'r', `java.Module#isOpen(java.lang.String,java.lang.Module)`],
+						[/* reference */ 'r', `java.lang.Module#isOpen(java.lang.String,java.lang.Module)`, `opens`],
 						[/* text */ 't', ` to at least the module
      containing `],
 						[/* inline code block */ 'i', `C`],
@@ -656,7 +656,7 @@ DocsCollector.collect('java.lang.reflect.AccessibleObject', [
  to the caller's module. `],
 				[/* block */ 'b', [
 					[/* text */ 't', ` This method cannot be used to enable `],
-					[/* reference */ 'r', `.Field#set(java.lang.Object,java.lang.Object)`],
+					[/* reference */ 'r', `java.lang.reflect.Field#set(java.lang.Object,java.lang.Object)`, `write`],
 					[/* text */ 't', `
  access to a `],
 					[/* text */ 't', `non-modifiable`],
@@ -668,11 +668,11 @@ DocsCollector.collect('java.lang.reflect.AccessibleObject', [
 					[/* block */ 'b', `static final fields declared in any class or interface`],
 					[/* block */ 'b', [
 						[/* text */ 't', `final fields declared in a `],
-						[/* reference */ 'r', `java.Class#isHidden()`]
+						[/* reference */ 'r', `java.lang.Class#isHidden()`, `hidden class`]
 					]],
 					[/* block */ 'b', [
 						[/* text */ 't', `final fields declared in a `],
-						[/* reference */ 'r', `java.Class#isRecord()`]
+						[/* reference */ 'r', `java.lang.Class#isRecord()`, `record`]
 					]]
 				]],
 				[/* block */ 'b', ''],
@@ -683,7 +683,7 @@ DocsCollector.collect('java.lang.reflect.AccessibleObject', [
 					[/* inline code block */ 'i', `true`],
 					[/* text */ 't', ` suppresses Java language access
  control checks to only enable `],
-					[/* reference */ 'r', `.Field#get(java.lang.Object)`],
+					[/* reference */ 'r', `java.lang.reflect.Field#get(java.lang.Object)`, `read`],
 					[/* text */ 't', ` access to
  these non-modifiable final fields.
 

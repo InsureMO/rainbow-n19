@@ -11,17 +11,17 @@ DocsCollector.collect('java.nio.file.FileStore', [
 		[/* inline code block */ 'i', `FileStore`],
 		[/* text */ 't', ` for where a file is stored is obtained
  by invoking the `],
-		[/* reference */ 'r', `.Files#getFileStore(java.nio.file.Path)`],
+		[/* reference */ 'r', `java.nio.file.Files#getFileStore(java.nio.file.Path)`, `getFileStore`],
 		[/* text */ 't', ` method, or all file
  stores can be enumerated by invoking the `],
-		[/* reference */ 'r', `.FileSystem#getFileStores()`],
+		[/* reference */ 'r', `java.nio.file.FileSystem#getFileStores()`, `getFileStores`],
 		[/* text */ 't', ` method.
 
  `],
 		[/* block */ 'b', [
 			[/* text */ 't', ` In addition to the methods defined by this class, a file store may support
  one or more `],
-			[/* reference */ 'r', `java.nio.file.attribute.FileStoreAttributeView`],
+			[/* reference */ 'r', `java.nio.file.attribute.FileStoreAttributeView`, `FileStoreAttributeView`],
 			[/* text */ 't', ` classes
  that provide a read-only or updatable view of a set of file store attributes.`]
 		]]
@@ -92,7 +92,7 @@ DocsCollector.collect('java.nio.file.FileStore', [
  `],
 				[/* block */ 'b', [
 					[/* text */ 't', ` Invoking this method to test if the file store supports `],
-					[/* reference */ 'r', `java.nio.file.attribute.BasicFileAttributeView`],
+					[/* reference */ 'r', `java.nio.file.attribute.BasicFileAttributeView`, `BasicFileAttributeView`],
 					[/* text */ 't', ` will always return `],
 					[/* inline code block */ 'i', `true`],
 					[/* text */ 't', `. In the case of
@@ -121,7 +121,7 @@ DocsCollector.collect('java.nio.file.FileStore', [
  `],
 				[/* block */ 'b', [
 					[/* text */ 't', ` Invoking this method to test if the file store supports `],
-					[/* reference */ 'r', `java.nio.file.attribute.BasicFileAttributeView`],
+					[/* reference */ 'r', `java.nio.file.attribute.BasicFileAttributeView`, `BasicFileAttributeView`],
 					[/* text */ 't', `, identified by the name "`],
 					[/* inline code block */ 'i', `basic`],
 					[/* text */ 't', `" will
@@ -136,7 +136,7 @@ DocsCollector.collect('java.nio.file.FileStore', [
 			[/* parameters */
 				[/* parameter */ 'name', [/* parameter description */
 					[/* text */ 't', `the `],
-					[/* reference */ 'r', `.AttributeView#name()`],
+					[/* reference */ 'r', `java.nio.file.attribute.AttributeView#name()`, `name`],
 					[/* text */ 't', ` of file attribute view`]
 				]]
 			],
@@ -174,10 +174,10 @@ DocsCollector.collect('java.nio.file.FileStore', [
 				[/* block */ 'b', [
 					[/* text */ 't', `view-name`],
 					[/* text */ 't', ` is the `],
-					[/* reference */ 'r', `.AttributeView#name()`],
+					[/* reference */ 'r', `java.nio.file.attribute.AttributeView#name()`, `name`],
 					[/* text */ 't', ` of
  a `],
-					[/* reference */ 'r', `java.nio.file.FileStore`],
+					[/* reference */ 'r', `java.nio.file.FileStore`, `AttributeView`],
 					[/* text */ 't', ` that identifies a set of file attributes.
  `],
 					[/* text */ 't', `attribute-name`],
@@ -221,7 +221,7 @@ DocsCollector.collect('java.nio.file.FileStore', [
 				[/* block */ 'b', [
 					[/* text */ 't', ` The string returned by this method may differ from the string
  returned by the `],
-					[/* reference */ 'r', `java.nio.Object#toString()`],
+					[/* reference */ 'r', `java.lang.Object#toString()`, `toString`],
 					[/* text */ 't', ` method.`]
 				]]
 			],
@@ -250,7 +250,7 @@ DocsCollector.collect('java.nio.file.FileStore', [
 			[/* method description */
 				[/* text */ 't', `Returns the size, in bytes, of the file store. If the total number of
  bytes in the file store is greater than `],
-				[/* reference */ 'r', `java.nio.Long#MAX_VALUE`],
+				[/* reference */ 'r', `java.lang.Long#MAX_VALUE`, `Long.MAX_VALUE`],
 				[/* text */ 't', `, then
  `],
 				[/* inline code block */ 'i', `Long.MAX_VALUE`],
@@ -271,7 +271,7 @@ DocsCollector.collect('java.nio.file.FileStore', [
 				[/* text */ 't', `Returns the number of unallocated bytes in the file store.
  If the number of unallocated bytes is greater than
  `],
-				[/* reference */ 'r', `java.nio.Long#MAX_VALUE`],
+				[/* reference */ 'r', `java.lang.Long#MAX_VALUE`, `Long.MAX_VALUE`],
 				[/* text */ 't', `, then `],
 				[/* inline code block */ 'i', `Long.MAX_VALUE`],
 				[/* text */ 't', ` will be returned.
@@ -299,7 +299,7 @@ DocsCollector.collect('java.nio.file.FileStore', [
 				[/* text */ 't', `Returns the number of bytes available to this Java virtual machine on the
  file store.  If the number of bytes available is greater than
  `],
-				[/* reference */ 'r', `java.nio.Long#MAX_VALUE`],
+				[/* reference */ 'r', `java.lang.Long#MAX_VALUE`, `Long.MAX_VALUE`],
 				[/* text */ 't', `, then `],
 				[/* inline code block */ 'i', `Long.MAX_VALUE`],
 				[/* text */ 't', ` will be returned.

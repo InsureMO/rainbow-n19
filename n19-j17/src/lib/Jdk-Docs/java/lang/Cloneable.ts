@@ -7,7 +7,7 @@ DocsCollector.collect('java.lang.Cloneable', [
 		[/* inline code block */ 'i', `Cloneable`],
 		[/* text */ 't', ` interface to
  indicate to the `],
-		[/* reference */ 'r', `.Object#clone()`],
+		[/* reference */ 'r', `java.lang.Object#clone()`, `Object.clone()`],
 		[/* text */ 't', ` method that it
  is legal for that method to make a
  field-for-field copy of instances of that class.
@@ -30,7 +30,7 @@ DocsCollector.collect('java.lang.Cloneable', [
 			[/* inline code block */ 'i', `Object.clone`],
 			[/* text */ 't', ` (which is protected) with a public method.
  See `],
-			[/* reference */ 'r', `.Object#clone()`],
+			[/* reference */ 'r', `java.lang.Object#clone()`, `Object.clone()`],
 			[/* text */ 't', ` for details on overriding this
  method.
  `]

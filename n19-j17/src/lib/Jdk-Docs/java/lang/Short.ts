@@ -338,7 +338,7 @@ DocsCollector.collect('java.lang.Short', [
 		[/* method */ 'describeConstable()', [
 			[/* method description */
 				[/* text */ 't', `Returns an `],
-				[/* reference */ 'r', `java.util.Optional`],
+				[/* reference */ 'r', `java.util.Optional`, `Optional`],
 				[/* text */ 't', ` containing the nominal descriptor for this
  instance.`]
 			],
@@ -346,9 +346,9 @@ DocsCollector.collect('java.lang.Short', [
 			/* throws */ UDF,
 			[/* return description */
 				[/* text */ 't', `an `],
-				[/* reference */ 'r', `java.util.Optional`],
+				[/* reference */ 'r', `java.util.Optional`, `Optional`],
 				[/* text */ 't', ` describing the `],
-				[/* reference */ 'r', `java.lang.Short`],
+				[/* reference */ 'r', `java.lang.Short`, `Short`],
 				[/* text */ 't', ` instance`]
 			]
 		]],
@@ -637,7 +637,7 @@ DocsCollector.collect('java.lang.Short', [
 					[/* text */ 't', ` method with the indicated radix (10, 16, or
  8).  This sequence of characters must represent a positive
  value or a `],
-					[/* reference */ 'r', `java.lang.NumberFormatException`],
+					[/* reference */ 'r', `java.lang.NumberFormatException`, `NumberFormatException`],
 					[/* text */ 't', ` will be thrown.  The
  result is negated if first character of the specified `],
 					[/* inline code block */ 'i', `String`],
@@ -952,7 +952,7 @@ DocsCollector.collect('java.lang.Short', [
  radix specified by the second argument. The characters in the
  string must all be digits, of the specified radix (as
  determined by whether `],
-				[/* reference */ 'r', `.Character#digit(int,int)`],
+				[/* reference */ 'r', `java.lang.Character#digit(int,int)`, `Character.digit(char, int)`],
 				[/* text */ 't', ` returns a nonnegative value) except that the first
  character may be an ASCII minus sign `],
 				[/* inline code block */ 'i', `'-'`],
@@ -989,9 +989,9 @@ DocsCollector.collect('java.lang.Short', [
 					]],
 					[/* block */ 'b', [
 						[/* text */ 't', ` The radix is either smaller than `],
-						[/* reference */ 'r', `.Character#MIN_RADIX`],
+						[/* reference */ 'r', `java.lang.Character#MIN_RADIX`, `Character.MIN_RADIX`],
 						[/* text */ 't', ` or larger than `],
-						[/* reference */ 'r', `.Character#MAX_RADIX`],
+						[/* reference */ 'r', `java.lang.Character#MAX_RADIX`, `Character.MAX_RADIX`],
 						[/* text */ 't', `.
 
  `]

@@ -42,7 +42,7 @@ DocsCollector.collect('java.lang.module.ResolvedModule', [
 				]],
 				[/* block */ 'b', [
 					[/* text */ 't', ` This method satisfies the general contract of the `],
-					[/* reference */ 'r', `java.Object#equals(java.lang.Object)`],
+					[/* reference */ 'r', `java.lang.Object#equals(java.lang.Object)`, `Object.equals`],
 					[/* text */ 't', ` method. `]
 				]]
 			],
@@ -66,7 +66,7 @@ DocsCollector.collect('java.lang.module.ResolvedModule', [
 				[/* block */ 'b', [
 					[/* text */ 't', ` The hash code is based upon the components of the resolved module
  and satisfies the general contract of the `],
-					[/* reference */ 'r', `java.Object#hashCode()`],
+					[/* reference */ 'r', `java.lang.Object#hashCode()`, `Object.hashCode`],
 					[/* text */ 't', ` method. `]
 				]]
 			],

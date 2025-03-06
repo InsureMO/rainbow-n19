@@ -69,7 +69,7 @@ DocsCollector.collect('java.util.Collection', [
  `]
 		]],
 		[/* block */ 'b', [
-			[/* text */ 't', ``],
+			[/* anchor */ 'r', '#-id', `optional-restrictions`, ``],
 			[/* text */ 't', `Some collection implementations
  have restrictions on the elements that they may contain.
  For example, some implementations prohibit null elements,
@@ -103,7 +103,7 @@ DocsCollector.collect('java.util.Collection', [
 		[/* block */ 'b', [
 			[/* text */ 't', `Many methods in Collections Framework interfaces are defined in
  terms of the `],
-			[/* reference */ 'r', `java.Object#equals(java.lang.Object)`],
+			[/* reference */ 'r', `java.lang.Object#equals(java.lang.Object)`, `equals`],
 			[/* text */ 't', ` method.  For example,
  the specification for the `],
 			[/* reference */ 'r', `#contains(java.lang.Object)`, `contains(Object o)`],
@@ -135,12 +135,12 @@ DocsCollector.collect('java.util.Collection', [
 			[/* text */ 't', ` invocation is avoided, for
  example, by first comparing the hash codes of the two elements.  (The
  `],
-			[/* reference */ 'r', `java.Object#hashCode()`],
+			[/* reference */ 'r', `java.lang.Object#hashCode()`, `Object.hashCode()`],
 			[/* text */ 't', ` specification guarantees that two objects with
  unequal hash codes cannot be equal.)  More generally, implementations of
  the various Collections Framework interfaces are free to take advantage of
  the specified behavior of underlying `],
-			[/* reference */ 'r', `java.lang.Object`],
+			[/* reference */ 'r', `java.lang.Object`, `Object`],
 			[/* text */ 't', ` methods wherever the
  implementor deems it appropriate.
 
@@ -165,7 +165,7 @@ DocsCollector.collect('java.util.Collection', [
  `]
 		]],
 		[/* block */ 'b', [
-			[/* text */ 't', `View Collections`]
+			[/* anchor */ 'r', '#-id', `view`, `View Collections`]
 		]],
 		[/* block */ 'b', [
 			[/* text */ 't', `Most collections manage storage for elements they contain. By contrast, `],
@@ -176,33 +176,33 @@ DocsCollector.collect('java.util.Collection', [
  by the view collection itself are delegated to the backing collection. Examples of
  view collections include the wrapper collections returned by methods such as
  `],
-			[/* reference */ 'r', `.Collections#checkedCollection(java.util.Collection,java.lang.Class)`],
+			[/* reference */ 'r', `java.util.Collections#checkedCollection(java.util.Collection,java.lang.Class)`, `Collections.checkedCollection`],
 			[/* text */ 't', `,
  `],
-			[/* reference */ 'r', `.Collections#synchronizedCollection(java.util.Collection)`],
+			[/* reference */ 'r', `java.util.Collections#synchronizedCollection(java.util.Collection)`, `Collections.synchronizedCollection`],
 			[/* text */ 't', `, and
  `],
-			[/* reference */ 'r', `.Collections#unmodifiableCollection(java.util.Collection)`],
+			[/* reference */ 'r', `java.util.Collections#unmodifiableCollection(java.util.Collection)`, `Collections.unmodifiableCollection`],
 			[/* text */ 't', `.
  Other examples of view collections include collections that provide a
  different representation of the same elements, for example, as
  provided by `],
-			[/* reference */ 'r', `.List#subList(int,int)`],
+			[/* reference */ 'r', `java.util.List#subList(int,int)`, `List.subList`],
 			[/* text */ 't', `,
  `],
-			[/* reference */ 'r', `.NavigableSet#subSet(E,boolean,E,boolean)`],
+			[/* reference */ 'r', `java.util.NavigableSet#subSet(E,boolean,E,boolean)`, `NavigableSet.subSet`],
 			[/* text */ 't', `, or
  `],
-			[/* reference */ 'r', `.Map#entrySet()`],
+			[/* reference */ 'r', `java.util.Map#entrySet()`, `Map.entrySet`],
 			[/* text */ 't', `.
  Any changes made to the backing collection are visible in the view collection.
  Correspondingly, any changes made to the view collection — if changes
  are permitted — are written through to the backing collection.
  Although they technically aren't collections, instances of
  `],
-			[/* reference */ 'r', `java.util.Iterator`],
+			[/* reference */ 'r', `java.util.Iterator`, `Iterator`],
 			[/* text */ 't', ` and `],
-			[/* reference */ 'r', `java.util.ListIterator`],
+			[/* reference */ 'r', `java.util.ListIterator`, `ListIterator`],
 			[/* text */ 't', ` can also allow modifications
  to be written through to the backing collection, and in some cases,
  modifications to the backing collection will be visible to the Iterator
@@ -211,7 +211,7 @@ DocsCollector.collect('java.util.Collection', [
  `]
 		]],
 		[/* block */ 'b', [
-			[/* text */ 't', `Unmodifiable Collections`]
+			[/* anchor */ 'r', '#-id', `unmodifiable`, `Unmodifiable Collections`]
 		]],
 		[/* block */ 'b', [
 			[/* text */ 't', `Certain methods of this interface are considered "destructive" and are called
@@ -251,7 +251,7 @@ DocsCollector.collect('java.util.Collection', [
  unmodifiable, any view collections derived from it must also be unmodifiable.
  For example, if a List is unmodifiable, the List returned by
  `],
-			[/* reference */ 'r', `.List#subList(int,int)`],
+			[/* reference */ 'r', `java.util.List#subList(int,int)`, `List.subList`],
 			[/* text */ 't', ` is also unmodifiable.
 
  `]
@@ -271,7 +271,7 @@ DocsCollector.collect('java.util.Collection', [
  `]
 		]],
 		[/* block */ 'b', [
-			[/* text */ 't', `Unmodifiable View Collections`]
+			[/* anchor */ 'r', '#-id', `unmodview`, `Unmodifiable View Collections`]
 		]],
 		[/* block */ 'b', [
 			[/* text */ 't', `An `],
@@ -288,10 +288,10 @@ DocsCollector.collect('java.util.Collection', [
  collections unexpectedly. Examples of unmodifiable view collections
  are those returned by the
  `],
-			[/* reference */ 'r', `.Collections#unmodifiableCollection(java.util.Collection)`],
+			[/* reference */ 'r', `java.util.Collections#unmodifiableCollection(java.util.Collection)`, `Collections.unmodifiableCollection`],
 			[/* text */ 't', `,
  `],
-			[/* reference */ 'r', `.Collections#unmodifiableList(java.util.List)`],
+			[/* reference */ 'r', `java.util.Collections#unmodifiableList(java.util.List)`, `Collections.unmodifiableList`],
 			[/* text */ 't', `, and
  related methods.
 
@@ -306,12 +306,12 @@ DocsCollector.collect('java.util.Collection', [
 
  `],
 		[/* block */ 'b', [
-			[/* text */ 't', `Serializability of Collections`]
+			[/* anchor */ 'r', '#-id', `serializable`, `Serializability of Collections`]
 		]],
 		[/* block */ 'b', [
 			[/* text */ 't', `Serializability of collections is optional. As such, none of the collections
  interfaces are declared to implement the `],
-			[/* reference */ 'r', `java.io.Serializable`],
+			[/* reference */ 'r', `java.io.Serializable`, `Serializable`],
 			[/* text */ 't', ` interface.
  However, serializability is regarded as being generally useful, so most collection
  implementations are serializable.
@@ -368,12 +368,12 @@ DocsCollector.collect('java.util.Collection', [
 		]],
 		[/* block */ 'b', [
 			[/* text */ 't', `An additional case occurs with instances of `],
-			[/* reference */ 'r', `java.util.SortedSet`],
+			[/* reference */ 'r', `java.util.SortedSet`, `SortedSet`],
 			[/* text */ 't', ` and `],
-			[/* reference */ 'r', `java.util.SortedMap`],
+			[/* reference */ 'r', `java.util.SortedMap`, `SortedMap`],
 			[/* text */ 't', `.
  These collections can be created with a `],
-			[/* reference */ 'r', `java.util.Comparator`],
+			[/* reference */ 'r', `java.util.Comparator`, `Comparator`],
 			[/* text */ 't', ` that imposes an ordering on
  the set elements or map keys. Such a collection is serializable only if the provided
  `],
@@ -432,7 +432,7 @@ DocsCollector.collect('java.util.Collection', [
 				[/* throw */ 'java.lang.ArrayStoreException', [/* throw description */
 					[/* text */ 't', `if the runtime type of any element in this
          collection is not assignable to the `],
-					[/* reference */ 'r', `java.Class#getComponentType()`],
+					[/* reference */ 'r', `java.lang.Class#getComponentType()`, `runtime component type`],
 					[/* text */ 't', ` of the specified array`]
 				]],
 				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
@@ -584,14 +584,14 @@ DocsCollector.collect('java.util.Collection', [
 					[/* text */ 't', `if the type of the specified element
          is incompatible with this collection
          (`],
-					[/* text */ 't', `optional`],
+					[/* reference */ 'r', `java.util.Collection#optional-restrictions`, `optional`],
 					[/* text */ 't', `)`]
 				]],
 				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
 					[/* text */ 't', `if the specified element is null and this
          collection does not permit null elements
          (`],
-					[/* text */ 't', `optional`],
+					[/* reference */ 'r', `java.util.Collection#optional-restrictions`, `optional`],
 					[/* text */ 't', `)`]
 				]]
 			],
@@ -619,7 +619,7 @@ DocsCollector.collect('java.util.Collection', [
          in the specified collection are incompatible with this
          collection
          (`],
-					[/* text */ 't', `optional`],
+					[/* reference */ 'r', `java.util.Collection#optional-restrictions`, `optional`],
 					[/* text */ 't', `)`]
 				]],
 				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
@@ -627,7 +627,7 @@ DocsCollector.collect('java.util.Collection', [
          or more null elements and this collection does not permit null
          elements
          (`],
-					[/* text */ 't', `optional`],
+					[/* reference */ 'r', `java.util.Collection#optional-restrictions`, `optional`],
 					[/* text */ 't', `),
          or if the specified collection is null.`]
 				]]
@@ -763,14 +763,14 @@ DocsCollector.collect('java.util.Collection', [
 					[/* text */ 't', `if the type of the specified element
          is incompatible with this collection
          (`],
-					[/* text */ 't', `optional`],
+					[/* reference */ 'r', `java.util.Collection#optional-restrictions`, `optional`],
 					[/* text */ 't', `)`]
 				]],
 				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
 					[/* text */ 't', `if the specified element is null and this
          collection does not permit null elements
          (`],
-					[/* text */ 't', `optional`],
+					[/* reference */ 'r', `java.util.Collection#optional-restrictions`, `optional`],
 					[/* text */ 't', `)`]
 				]],
 				[/* throw */ 'java.lang.UnsupportedOperationException', [/* throw description */
@@ -809,7 +809,7 @@ DocsCollector.collect('java.util.Collection', [
          in this collection are incompatible with the specified
          collection
          (`],
-					[/* text */ 't', `optional`],
+					[/* reference */ 'r', `java.util.Collection#optional-restrictions`, `optional`],
 					[/* text */ 't', `)`]
 				]],
 				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
@@ -817,7 +817,7 @@ DocsCollector.collect('java.util.Collection', [
          null elements and the specified collection does not support
          null elements
          (`],
-					[/* text */ 't', `optional`],
+					[/* reference */ 'r', `java.util.Collection#optional-restrictions`, `optional`],
 					[/* text */ 't', `),
          or if the specified collection is null`]
 				]]
@@ -852,7 +852,7 @@ DocsCollector.collect('java.util.Collection', [
          in this collection are incompatible with the specified
          collection
          (`],
-					[/* text */ 't', `optional`],
+					[/* reference */ 'r', `java.util.Collection#optional-restrictions`, `optional`],
 					[/* text */ 't', `)`]
 				]],
 				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
@@ -860,7 +860,7 @@ DocsCollector.collect('java.util.Collection', [
          null elements and the specified collection does not permit null
          elements
          (`],
-					[/* text */ 't', `optional`],
+					[/* reference */ 'r', `java.util.Collection#optional-restrictions`, `optional`],
 					[/* text */ 't', `),
          or if the specified collection is null`]
 				]]
@@ -923,7 +923,7 @@ DocsCollector.collect('java.util.Collection', [
  If this collection makes any guarantees as to what order its elements
  are returned by its iterator, this method must return the elements in
  the same order. The returned array's `],
-				[/* reference */ 'r', `java.Class#getComponentType()`],
+				[/* reference */ 'r', `java.lang.Class#getComponentType()`, `runtime component type`],
 				[/* text */ 't', ` is `],
 				[/* inline code block */ 'i', `Object`],
 				[/* text */ 't', `.
@@ -938,7 +938,7 @@ DocsCollector.collect('java.util.Collection', [
 			/* throws */ UDF,
 			[/* return description */
 				[/* text */ 't', `an array, whose `],
-				[/* reference */ 'r', `java.Class#getComponentType()`],
+				[/* reference */ 'r', `java.lang.Class#getComponentType()`, `runtime component type`],
 				[/* text */ 't', ` is `],
 				[/* inline code block */ 'i', `Object`],
 				[/* text */ 't', `, containing all of the elements in this collection`]
@@ -997,7 +997,7 @@ DocsCollector.collect('java.util.Collection', [
 				[/* throw */ 'java.lang.ArrayStoreException', [/* throw description */
 					[/* text */ 't', `if the runtime type of any element in this
          collection is not assignable to the `],
-					[/* reference */ 'r', `java.Class#getComponentType()`],
+					[/* reference */ 'r', `java.lang.Class#getComponentType()`, `runtime component type`],
 					[/* text */ 't', ` of the generated array`]
 				]],
 				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
@@ -1041,13 +1041,13 @@ DocsCollector.collect('java.util.Collection', [
 		[/* method */ 'spliterator()', [
 			[/* method description */
 				[/* text */ 't', `Creates a `],
-				[/* reference */ 'r', `java.util.Spliterator`],
+				[/* reference */ 'r', `java.util.Spliterator`, `Spliterator`],
 				[/* text */ 't', ` over the elements in this collection.
 
  Implementations should document characteristic values reported by the
  spliterator.  Such characteristic values are not required to be reported
  if the spliterator reports `],
-				[/* reference */ 'r', `.Spliterator#SIZED`],
+				[/* reference */ 'r', `java.util.Spliterator#SIZED`, `Spliterator.SIZED`],
 				[/* text */ 't', ` and this collection
  contains no elements.
 
@@ -1067,7 +1067,7 @@ DocsCollector.collect('java.util.Collection', [
 					[/* inline code block */ 'i', `CONCURRENT`],
 					[/* text */ 't', `, or be
  `],
-					[/* reference */ 'r', `.Spliterator#binding`],
+					[/* reference */ 'r', `java.util.Spliterator#binding`, `late-binding`],
 					[/* text */ 't', `.
  If none of these is practical, the overriding class should describe the
  spliterator's documented policy of binding and structural interference,

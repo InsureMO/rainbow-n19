@@ -13,7 +13,7 @@ DocsCollector.collect('java.time.temporal.JulianFields', [
 		[/* block */ 'b', [
 			[/* text */ 't', `
  The fields are implemented relative to `],
-			[/* reference */ 'r', `.ChronoField#EPOCH_DAY`],
+			[/* reference */ 'r', `java.time.temporal.ChronoField#EPOCH_DAY`, `EPOCH_DAY`],
 			[/* text */ 't', `.
  The fields are supported, and can be queried and set if `],
 			[/* inline code block */ 'i', `EPOCH_DAY`],
@@ -42,10 +42,10 @@ DocsCollector.collect('java.time.temporal.JulianFields', [
 					[/* inline code block */ 'i', `Temporal`],
 					[/* text */ 't', ` objects that
  can be converted into `],
-					[/* reference */ 'r', `.ChronoField#EPOCH_DAY`],
+					[/* reference */ 'r', `java.time.temporal.ChronoField#EPOCH_DAY`, `ChronoField.EPOCH_DAY`],
 					[/* text */ 't', `.
  An `],
-					[/* reference */ 'r', `java.time.temporal.UnsupportedTemporalTypeException`],
+					[/* reference */ 'r', `java.time.temporal.UnsupportedTemporalTypeException`, `UnsupportedTemporalTypeException`],
 					[/* text */ 't', ` is thrown for any other type of object.
  `]
 				]],
@@ -53,13 +53,13 @@ DocsCollector.collect('java.time.temporal.JulianFields', [
 					[/* text */ 't', `
  In the resolving phase of parsing, a date can be created from a Julian Day field.
  In `],
-					[/* reference */ 'r', `java.ResolverStyle#STRICT`],
+					[/* reference */ 'r', `java.time.format.ResolverStyle#STRICT`, `strict mode`],
 					[/* text */ 't', ` and `],
-					[/* reference */ 'r', `java.ResolverStyle#SMART`],
+					[/* reference */ 'r', `java.time.format.ResolverStyle#SMART`, `smart mode`],
 					[/* text */ 't', `
  the Julian Day value is validated against the range of valid values.
  In `],
-					[/* reference */ 'r', `java.ResolverStyle#LENIENT`],
+					[/* reference */ 'r', `java.time.format.ResolverStyle#LENIENT`, `lenient mode`],
 					[/* text */ 't', ` no validation occurs.
 
  `]
@@ -125,10 +125,10 @@ DocsCollector.collect('java.time.temporal.JulianFields', [
 					[/* inline code block */ 'i', `Temporal`],
 					[/* text */ 't', ` objects
  that can be converted into `],
-					[/* reference */ 'r', `.ChronoField#EPOCH_DAY`],
+					[/* reference */ 'r', `java.time.temporal.ChronoField#EPOCH_DAY`, `ChronoField.EPOCH_DAY`],
 					[/* text */ 't', `.
  An `],
-					[/* reference */ 'r', `java.time.temporal.UnsupportedTemporalTypeException`],
+					[/* reference */ 'r', `java.time.temporal.UnsupportedTemporalTypeException`, `UnsupportedTemporalTypeException`],
 					[/* text */ 't', ` is thrown for any other type of object.
  `]
 				]],
@@ -139,13 +139,13 @@ DocsCollector.collect('java.time.temporal.JulianFields', [
 					[/* text */ 't', `
  In the resolving phase of parsing, a date can be created from a Modified Julian Day field.
  In `],
-					[/* reference */ 'r', `java.ResolverStyle#STRICT`],
+					[/* reference */ 'r', `java.time.format.ResolverStyle#STRICT`, `strict mode`],
 					[/* text */ 't', ` and `],
-					[/* reference */ 'r', `java.ResolverStyle#SMART`],
+					[/* reference */ 'r', `java.time.format.ResolverStyle#SMART`, `smart mode`],
 					[/* text */ 't', `
  the Modified Julian Day value is validated against the range of valid values.
  In `],
-					[/* reference */ 'r', `java.ResolverStyle#LENIENT`],
+					[/* reference */ 'r', `java.time.format.ResolverStyle#LENIENT`, `lenient mode`],
 					[/* text */ 't', ` no validation occurs.
 
  `]
@@ -184,10 +184,10 @@ DocsCollector.collect('java.time.temporal.JulianFields', [
 					[/* inline code block */ 'i', `Temporal`],
 					[/* text */ 't', ` objects
  that can be converted into `],
-					[/* reference */ 'r', `.ChronoField#EPOCH_DAY`],
+					[/* reference */ 'r', `java.time.temporal.ChronoField#EPOCH_DAY`, `ChronoField.EPOCH_DAY`],
 					[/* text */ 't', `.
  An `],
-					[/* reference */ 'r', `java.time.temporal.UnsupportedTemporalTypeException`],
+					[/* reference */ 'r', `java.time.temporal.UnsupportedTemporalTypeException`, `UnsupportedTemporalTypeException`],
 					[/* text */ 't', ` is thrown for any other type of object.
  `]
 				]],
@@ -195,13 +195,13 @@ DocsCollector.collect('java.time.temporal.JulianFields', [
 					[/* text */ 't', `
  In the resolving phase of parsing, a date can be created from a Rata Die field.
  In `],
-					[/* reference */ 'r', `java.ResolverStyle#STRICT`],
+					[/* reference */ 'r', `java.time.format.ResolverStyle#STRICT`, `strict mode`],
 					[/* text */ 't', ` and `],
-					[/* reference */ 'r', `java.ResolverStyle#SMART`],
+					[/* reference */ 'r', `java.time.format.ResolverStyle#SMART`, `smart mode`],
 					[/* text */ 't', `
  the Rata Die value is validated against the range of valid values.
  In `],
-					[/* reference */ 'r', `java.ResolverStyle#LENIENT`],
+					[/* reference */ 'r', `java.time.format.ResolverStyle#LENIENT`, `lenient mode`],
 					[/* text */ 't', ` no validation occurs.`]
 				]]
 			],

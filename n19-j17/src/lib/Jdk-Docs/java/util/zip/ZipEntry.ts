@@ -189,7 +189,7 @@ DocsCollector.collect('java.util.zip.ZipEntry', [
  from the entry's `],
 					[/* inline code block */ 'i', `date and time fields`],
 					[/* text */ 't', `, the `],
-					[/* reference */ 'r', `java.TimeZone#getDefault()`],
+					[/* reference */ 'r', `java.util.TimeZone#getDefault()`, `default TimeZone`],
 					[/* text */ 't', ` is used to convert
  the standard MS-DOS formatted date and time to the epoch time.`]
 				]]
@@ -220,7 +220,7 @@ DocsCollector.collect('java.util.zip.ZipEntry', [
 				]],
 				[/* block */ 'b', [
 					[/* text */ 't', ` The `],
-					[/* reference */ 'r', `java.util.ZoneId#systemDefault()`],
+					[/* reference */ 'r', `java.time.ZoneId#systemDefault()`, `system default TimeZone`],
 					[/* text */ 't', `
  is used to convert the UTC time to local date-time.`]
 				]]
@@ -369,7 +369,7 @@ DocsCollector.collect('java.util.zip.ZipEntry', [
 					[/* inline code block */ 'i', `date and time fields`],
 					[/* text */ 't', ` of the zip file entry. The
  `],
-					[/* reference */ 'r', `java.TimeZone#getDefault()`],
+					[/* reference */ 'r', `java.util.TimeZone#getDefault()`, `default TimeZone`],
 					[/* text */ 't', ` is used
  to convert the standard MS-DOS formatted date and time to the
  epoch time.`]
@@ -492,7 +492,7 @@ DocsCollector.collect('java.util.zip.ZipEntry', [
 					[/* text */ 't', `if the specified size is less
          than 0, is greater than 0xFFFFFFFF when
          `],
-					[/* reference */ 'r', `.package-summary#zip64`],
+					[/* text */ 't', `ZIP64 format`],
 					[/* text */ 't', ` is not supported,
          or is less than 0 when ZIP64 is supported`]
 				]]
@@ -514,7 +514,7 @@ DocsCollector.collect('java.util.zip.ZipEntry', [
 					[/* inline code block */ 'i', `MS-DOS date and time format`],
 					[/* text */ 't', `.
  The `],
-					[/* reference */ 'r', `java.TimeZone#getDefault()`],
+					[/* reference */ 'r', `java.util.TimeZone#getDefault()`, `default TimeZone`],
 					[/* text */ 't', ` is
  used to convert the epoch time to the MS-DOS data and time.`]
 				]]
@@ -548,7 +548,7 @@ DocsCollector.collect('java.util.zip.ZipEntry', [
  zip file entry's extended timestamp fields in `],
 					[/* inline code block */ 'i', `optional extra data`],
 					[/* text */ 't', ` in UTC time. The `],
-					[/* reference */ 'r', `java.util.ZoneId#systemDefault()`],
+					[/* reference */ 'r', `java.time.ZoneId#systemDefault()`, `system default TimeZone`],
 					[/* text */ 't', ` is used to convert the local date-time
  to UTC time.
 

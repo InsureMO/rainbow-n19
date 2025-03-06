@@ -207,7 +207,7 @@ DocsCollector.collect('java.text.DecimalFormat', [
  `]
 		]],
 		[/* block */ 'b', [
-			[/* text */ 't', `Special Pattern Characters`]
+			[/* anchor */ 'r', '#-id', `special_pattern_character`, `Special Pattern Characters`]
 		]],
 		[/* block */ 'b', `Many characters in a pattern are taken literally; they are matched during
  parsing and output unchanged during formatting.  Special characters, on the
@@ -581,10 +581,10 @@ DocsCollector.collect('java.text.DecimalFormat', [
 		[/* inline code block */ 'i', `DecimalFormat`],
 		[/* text */ 't', ` provides rounding modes defined in
  `],
-		[/* reference */ 'r', `enum class in java.math.RoundingMode`],
+		[/* reference */ 'r', `enum class in java.math.RoundingMode`, `RoundingMode`],
 		[/* text */ 't', ` for formatting.  By default, it uses
  `],
-		[/* reference */ 'r', `java.RoundingMode#HALF_EVEN`],
+		[/* reference */ 'r', `java.math.RoundingMode#HALF_EVEN`, `RoundingMode.HALF_EVEN`],
 		[/* text */ 't', `.
 
  `],
@@ -600,7 +600,7 @@ DocsCollector.collect('java.text.DecimalFormat', [
 		[/* text */ 't', ` object as digits. For parsing, these
  digits as well as all Unicode decimal digits, as defined by
  `],
-		[/* reference */ 'r', `java.Character#digit(char,int)`],
+		[/* reference */ 'r', `java.lang.Character#digit(char,int)`, `Character.digit`],
 		[/* text */ 't', `, are recognized.
 
  `],
@@ -668,7 +668,7 @@ DocsCollector.collect('java.text.DecimalFormat', [
 		]],
 		[/* block */ 'b', ''],
 		[/* block */ 'b', [
-			[/* text */ 't', `Synchronization`]
+			[/* anchor */ 'r', '#-id', `synchronization`, `Synchronization`]
 		]],
 		[/* block */ 'b', `
  Decimal formats are generally not synchronized.
@@ -720,7 +720,7 @@ DocsCollector.collect('java.text.DecimalFormat', [
 			[/* constructor description */
 				[/* text */ 't', `Creates a DecimalFormat using the default pattern and symbols
  for the default `],
-				[/* reference */ 'r', `java.Locale.Category#FORMAT`],
+				[/* reference */ 'r', `java.util.Locale.Category#FORMAT`, `FORMAT`],
 				[/* text */ 't', ` locale.
  This is a convenient way to obtain a
  DecimalFormat when internationalization is not the main concern.
@@ -738,7 +738,7 @@ DocsCollector.collect('java.text.DecimalFormat', [
 			[/* constructor description */
 				[/* text */ 't', `Creates a DecimalFormat using the given pattern and the symbols
  for the default `],
-				[/* reference */ 'r', `java.Locale.Category#FORMAT`],
+				[/* reference */ 'r', `java.util.Locale.Category#FORMAT`, `FORMAT`],
 				[/* text */ 't', ` locale.
  This is a convenient way to obtain a
  DecimalFormat when internationalization is not the main concern.
@@ -856,7 +856,7 @@ DocsCollector.collect('java.text.DecimalFormat', [
 				[/* text */ 't', `Formats a number and appends the resulting text to the given string
  buffer.
  The number can be of any subclass of `],
-				[/* reference */ 'r', `java.lang.Number`],
+				[/* reference */ 'r', `java.lang.Number`, `Number`],
 				[/* text */ 't', `.
  `],
 				[/* block */ 'b', `
@@ -884,7 +884,7 @@ DocsCollector.collect('java.text.DecimalFormat', [
 					[/* inline code block */ 'i', `fieldPosition`],
 					[/* text */ 't', ` is
                    `],
-					[/* reference */ 'r', `.NumberFormat#INTEGER_FIELD`],
+					[/* reference */ 'r', `java.text.NumberFormat#INTEGER_FIELD`, `NumberFormat.INTEGER_FIELD`],
 					[/* text */ 't', `, the begin index
                    and end index of `],
 					[/* inline code block */ 'i', `fieldPosition`],
@@ -929,7 +929,7 @@ DocsCollector.collect('java.text.DecimalFormat', [
  in the number "123,456.78", the grouping size is 3. Grouping size of
  zero designates that grouping is not used, which provides the same
  formatting as if calling `],
-				[/* reference */ 'r', `.NumberFormat#setGroupingUsed(boolean)`],
+				[/* reference */ 'r', `java.text.NumberFormat#setGroupingUsed(boolean)`, `setGroupingUsed(false)`],
 				[/* text */ 't', `.`]
 			],
 			/* parameters */ UDF,
@@ -1133,7 +1133,7 @@ DocsCollector.collect('java.text.DecimalFormat', [
 						[/* inline code block */ 'i', `BigDecimal`],
 						[/* text */ 't', ` objects. The values are the ones
        constructed by `],
-						[/* reference */ 'r', `java.BigDecimal#<init>(java.lang.String)`],
+						[/* reference */ 'r', `java.math.BigDecimal#<init>(java.lang.String)`, `BigDecimal(String)`],
 						[/* text */ 't', `
        for corresponding strings in locale-independent format. The
        special cases negative and positive infinity and NaN are returned
@@ -1293,7 +1293,7 @@ DocsCollector.collect('java.text.DecimalFormat', [
 					[/* inline code block */ 'i', `fieldPosition`],
 					[/* text */ 't', ` is
                          `],
-					[/* reference */ 'r', `.NumberFormat#INTEGER_FIELD`],
+					[/* reference */ 'r', `java.text.NumberFormat#INTEGER_FIELD`, `NumberFormat.INTEGER_FIELD`],
 					[/* text */ 't', `, the begin index
                          and end index of `],
 					[/* inline code block */ 'i', `fieldPosition`],
@@ -1346,7 +1346,7 @@ DocsCollector.collect('java.text.DecimalFormat', [
 					[/* inline code block */ 'i', `fieldPosition`],
 					[/* text */ 't', ` is
                          `],
-					[/* reference */ 'r', `.NumberFormat#INTEGER_FIELD`],
+					[/* reference */ 'r', `java.text.NumberFormat#INTEGER_FIELD`, `NumberFormat.INTEGER_FIELD`],
 					[/* text */ 't', `, the begin index
                          and end index of `],
 					[/* inline code block */ 'i', `fieldPosition`],
@@ -1379,7 +1379,7 @@ DocsCollector.collect('java.text.DecimalFormat', [
 		[/* method */ 'getRoundingMode()', [
 			[/* method description */
 				[/* text */ 't', `Gets the `],
-				[/* reference */ 'r', `enum class in java.math.RoundingMode`],
+				[/* reference */ 'r', `enum class in java.math.RoundingMode`, `RoundingMode`],
 				[/* text */ 't', ` used in this DecimalFormat.`]
 			],
 			/* parameters */ UDF,
@@ -1449,7 +1449,7 @@ DocsCollector.collect('java.text.DecimalFormat', [
  currency values.
  The currency is obtained by calling
  `],
-				[/* reference */ 'r', `.DecimalFormatSymbols#getCurrency()`],
+				[/* reference */ 'r', `java.text.DecimalFormatSymbols#getCurrency()`, `DecimalFormatSymbols.getCurrency`],
 				[/* text */ 't', `
  on this number format's symbols.`]
 			],
@@ -1566,7 +1566,7 @@ DocsCollector.collect('java.text.DecimalFormat', [
  number of fraction digits used by the number format.
  The currency is set by calling
  `],
-				[/* reference */ 'r', `.DecimalFormatSymbols#setCurrency(java.util.Currency)`],
+				[/* reference */ 'r', `java.text.DecimalFormatSymbols#setCurrency(java.util.Currency)`, `DecimalFormatSymbols.setCurrency`],
 				[/* text */ 't', `
  on this number format's symbols.`]
 			],
@@ -1624,7 +1624,7 @@ DocsCollector.collect('java.text.DecimalFormat', [
  in the number "123,456.78", the grouping size is 3. Grouping size of
  zero designates that grouping is not used, which provides the same
  formatting as if calling `],
-				[/* reference */ 'r', `.NumberFormat#setGroupingUsed(boolean)`],
+				[/* reference */ 'r', `java.text.NumberFormat#setGroupingUsed(boolean)`, `setGroupingUsed(false)`],
 				[/* text */ 't', `.
  `],
 				[/* block */ 'b', [
@@ -1632,7 +1632,7 @@ DocsCollector.collect('java.text.DecimalFormat', [
  The value passed in is converted to a byte, which may lose information.
  Values that are negative or greater than
  `],
-					[/* reference */ 'r', `java.Byte#MAX_VALUE`],
+					[/* reference */ 'r', `java.lang.Byte#MAX_VALUE`, `Byte.MAX_VALUE`],
 					[/* text */ 't', `, will throw an
  `],
 					[/* inline code block */ 'i', `IllegalArgumentException`],
@@ -1650,7 +1650,7 @@ DocsCollector.collect('java.text.DecimalFormat', [
 					[/* inline code block */ 'i', `newValue`],
 					[/* text */ 't', ` is negative or
           greater than `],
-					[/* reference */ 'r', `java.Byte#MAX_VALUE`]
+					[/* reference */ 'r', `java.lang.Byte#MAX_VALUE`, `Byte.MAX_VALUE`]
 				]]
 			],
 			/* return */ UDF
@@ -1854,7 +1854,7 @@ DocsCollector.collect('java.text.DecimalFormat', [
 		[/* method */ 'setRoundingMode(java.math.RoundingMode)', [
 			[/* method description */
 				[/* text */ 't', `Sets the `],
-				[/* reference */ 'r', `enum class in java.math.RoundingMode`],
+				[/* reference */ 'r', `enum class in java.math.RoundingMode`, `RoundingMode`],
 				[/* text */ 't', ` used in this DecimalFormat.`]
 			],
 			[/* parameters */

@@ -6,7 +6,7 @@ DocsCollector.collect('java.text.spi.DateFormatProvider', [
 		[/* text */ 't', `An abstract class for service providers that
  provide concrete implementations of the
  `],
-		[/* reference */ 'r', `java.text.DateFormat`],
+		[/* reference */ 'r', `java.text.DateFormat`, `DateFormat`],
 		[/* text */ 't', ` class.`]
 	],
 	/* fields */ UDF,
@@ -32,16 +32,16 @@ DocsCollector.collect('java.text.spi.DateFormatProvider', [
 				[/* parameter */ 'style', [/* parameter description */
 					[/* text */ 't', `the given formatting style.  Either one of
      `],
-					[/* reference */ 'r', `java.DateFormat#SHORT`],
+					[/* reference */ 'r', `java.text.DateFormat#SHORT`, `DateFormat.SHORT`],
 					[/* text */ 't', `,
      `],
-					[/* reference */ 'r', `java.DateFormat#MEDIUM`],
+					[/* reference */ 'r', `java.text.DateFormat#MEDIUM`, `DateFormat.MEDIUM`],
 					[/* text */ 't', `,
      `],
-					[/* reference */ 'r', `java.DateFormat#LONG`],
+					[/* reference */ 'r', `java.text.DateFormat#LONG`, `DateFormat.LONG`],
 					[/* text */ 't', `, or
      `],
-					[/* reference */ 'r', `java.DateFormat#FULL`],
+					[/* reference */ 'r', `java.text.DateFormat#FULL`, `DateFormat.FULL`],
 					[/* text */ 't', `.`]
 				]],
 				[/* parameter */ 'locale', [/* parameter description */
@@ -58,7 +58,7 @@ DocsCollector.collect('java.text.spi.DateFormatProvider', [
 					[/* text */ 't', ` isn't
      one of the locales returned from
      `],
-					[/* reference */ 'r', `java.text.spi.LocaleServiceProvider#getAvailableLocales()`],
+					[/* reference */ 'r', `java.util.spi.LocaleServiceProvider#getAvailableLocales()`, `getAvailableLocales()`],
 					[/* text */ 't', `.`]
 				]],
 				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
@@ -82,31 +82,31 @@ DocsCollector.collect('java.text.spi.DateFormatProvider', [
 				[/* parameter */ 'dateStyle', [/* parameter description */
 					[/* text */ 't', `the given date formatting style.  Either one of
      `],
-					[/* reference */ 'r', `java.DateFormat#SHORT`],
+					[/* reference */ 'r', `java.text.DateFormat#SHORT`, `DateFormat.SHORT`],
 					[/* text */ 't', `,
      `],
-					[/* reference */ 'r', `java.DateFormat#MEDIUM`],
+					[/* reference */ 'r', `java.text.DateFormat#MEDIUM`, `DateFormat.MEDIUM`],
 					[/* text */ 't', `,
      `],
-					[/* reference */ 'r', `java.DateFormat#LONG`],
+					[/* reference */ 'r', `java.text.DateFormat#LONG`, `DateFormat.LONG`],
 					[/* text */ 't', `, or
      `],
-					[/* reference */ 'r', `java.DateFormat#FULL`],
+					[/* reference */ 'r', `java.text.DateFormat#FULL`, `DateFormat.FULL`],
 					[/* text */ 't', `.`]
 				]],
 				[/* parameter */ 'timeStyle', [/* parameter description */
 					[/* text */ 't', `the given time formatting style.  Either one of
      `],
-					[/* reference */ 'r', `java.DateFormat#SHORT`],
+					[/* reference */ 'r', `java.text.DateFormat#SHORT`, `DateFormat.SHORT`],
 					[/* text */ 't', `,
      `],
-					[/* reference */ 'r', `java.DateFormat#MEDIUM`],
+					[/* reference */ 'r', `java.text.DateFormat#MEDIUM`, `DateFormat.MEDIUM`],
 					[/* text */ 't', `,
      `],
-					[/* reference */ 'r', `java.DateFormat#LONG`],
+					[/* reference */ 'r', `java.text.DateFormat#LONG`, `DateFormat.LONG`],
 					[/* text */ 't', `, or
      `],
-					[/* reference */ 'r', `java.DateFormat#FULL`],
+					[/* reference */ 'r', `java.text.DateFormat#FULL`, `DateFormat.FULL`],
 					[/* text */ 't', `.`]
 				]],
 				[/* parameter */ 'locale', [/* parameter description */
@@ -126,7 +126,7 @@ DocsCollector.collect('java.text.spi.DateFormatProvider', [
 					[/* text */ 't', ` isn't
      one of the locales returned from
      `],
-					[/* reference */ 'r', `java.text.spi.LocaleServiceProvider#getAvailableLocales()`],
+					[/* reference */ 'r', `java.util.spi.LocaleServiceProvider#getAvailableLocales()`, `getAvailableLocales()`],
 					[/* text */ 't', `.`]
 				]],
 				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
@@ -150,16 +150,16 @@ DocsCollector.collect('java.text.spi.DateFormatProvider', [
 				[/* parameter */ 'style', [/* parameter description */
 					[/* text */ 't', `the given formatting style.  Either one of
      `],
-					[/* reference */ 'r', `java.DateFormat#SHORT`],
+					[/* reference */ 'r', `java.text.DateFormat#SHORT`, `DateFormat.SHORT`],
 					[/* text */ 't', `,
      `],
-					[/* reference */ 'r', `java.DateFormat#MEDIUM`],
+					[/* reference */ 'r', `java.text.DateFormat#MEDIUM`, `DateFormat.MEDIUM`],
 					[/* text */ 't', `,
      `],
-					[/* reference */ 'r', `java.DateFormat#LONG`],
+					[/* reference */ 'r', `java.text.DateFormat#LONG`, `DateFormat.LONG`],
 					[/* text */ 't', `, or
      `],
-					[/* reference */ 'r', `java.DateFormat#FULL`],
+					[/* reference */ 'r', `java.text.DateFormat#FULL`, `DateFormat.FULL`],
 					[/* text */ 't', `.`]
 				]],
 				[/* parameter */ 'locale', [/* parameter description */
@@ -176,7 +176,7 @@ DocsCollector.collect('java.text.spi.DateFormatProvider', [
 					[/* text */ 't', ` isn't
      one of the locales returned from
      `],
-					[/* reference */ 'r', `java.text.spi.LocaleServiceProvider#getAvailableLocales()`],
+					[/* reference */ 'r', `java.util.spi.LocaleServiceProvider#getAvailableLocales()`, `getAvailableLocales()`],
 					[/* text */ 't', `.`]
 				]],
 				[/* throw */ 'java.lang.NullPointerException', [/* throw description */

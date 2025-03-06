@@ -9,10 +9,10 @@ DocsCollector.collect('java.nio.file.FileSystem', [
  `],
 		[/* block */ 'b', [
 			[/* text */ 't', ` The default file system, obtained by invoking the `],
-			[/* reference */ 'r', `.FileSystems#getDefault()`],
+			[/* reference */ 'r', `java.nio.file.FileSystems#getDefault()`, `FileSystems.getDefault`],
 			[/* text */ 't', ` method, provides access to the file system that is
  accessible to the Java virtual machine. The `],
-			[/* reference */ 'r', `java.nio.file.FileSystems`],
+			[/* reference */ 'r', `java.nio.file.FileSystems`, `FileSystems`],
 			[/* text */ 't', ` class defines
  methods to create file systems that provide access to other types of (custom)
  file systems.
@@ -31,7 +31,7 @@ DocsCollector.collect('java.nio.file.FileSystem', [
      `],
 					[/* text */ 't', `path string`],
 					[/* text */ 't', `, returning a `],
-					[/* reference */ 'r', `java.nio.file.Path`],
+					[/* reference */ 'r', `java.nio.file.Path`, `Path`],
 					[/* text */ 't', ` object that may be used
      to locate and access a file. `]
 				]]
@@ -42,7 +42,7 @@ DocsCollector.collect('java.nio.file.FileSystem', [
 					[/* reference */ 'r', `#getPathMatcher(java.lang.String)`, `getPathMatcher`],
 					[/* text */ 't', ` method is used
      to create a `],
-					[/* reference */ 'r', `java.nio.file.PathMatcher`],
+					[/* reference */ 'r', `java.nio.file.PathMatcher`, `PathMatcher`],
 					[/* text */ 't', ` that performs match operations on
      paths. `]
 				]]
@@ -53,7 +53,7 @@ DocsCollector.collect('java.nio.file.FileSystem', [
 					[/* reference */ 'r', `#getFileStores()`, `getFileStores`],
 					[/* text */ 't', ` method returns an iterator
      over the underlying `],
-					[/* reference */ 'r', `java.nio.file.FileStore`],
+					[/* reference */ 'r', `java.nio.file.FileStore`, `file-stores`],
 					[/* text */ 't', `. `]
 				]]
 			]],
@@ -63,7 +63,7 @@ DocsCollector.collect('java.nio.file.FileSystem', [
 					[/* reference */ 'r', `#getUserPrincipalLookupService()`, `getUserPrincipalLookupService`],
 					[/* text */ 't', `
      method returns the `],
-					[/* reference */ 'r', `java.nio.file.attribute.UserPrincipalLookupService`],
+					[/* reference */ 'r', `java.nio.file.attribute.UserPrincipalLookupService`, `UserPrincipalLookupService`],
 					[/* text */ 't', ` to lookup users or
      groups by name. `]
 				]]
@@ -74,7 +74,7 @@ DocsCollector.collect('java.nio.file.FileSystem', [
 					[/* reference */ 'r', `#newWatchService()`, `newWatchService`],
 					[/* text */ 't', ` method creates a
      `],
-					[/* reference */ 'r', `java.nio.file.WatchService`],
+					[/* reference */ 'r', `java.nio.file.WatchService`, `WatchService`],
 					[/* text */ 't', ` that may be used to watch objects for changes and
      events. `]
 				]]
@@ -90,7 +90,7 @@ DocsCollector.collect('java.nio.file.FileSystem', [
 			[/* text */ 't', ` method may be
  used to iterate over the root directories in the file system. A file system
  is typically composed of one or more underlying `],
-			[/* reference */ 'r', `java.nio.file.FileStore`],
+			[/* reference */ 'r', `java.nio.file.FileStore`, `file-stores`],
 			[/* text */ 't', `
  that provide the storage for the files. Theses file stores can also vary in
  the features they support, and the file attributes or `],
@@ -106,10 +106,10 @@ DocsCollector.collect('java.nio.file.FileSystem', [
 			[/* reference */ 'r', `#close()`, `close`],
 			[/* text */ 't', ` method. Once closed, any further attempt to access
  objects in the file system cause `],
-			[/* reference */ 'r', `java.nio.file.ClosedFileSystemException`],
+			[/* reference */ 'r', `java.nio.file.ClosedFileSystemException`, `ClosedFileSystemException`],
 			[/* text */ 't', ` to be
  thrown. File systems created by the default `],
-			[/* reference */ 'r', `java.nio.file.spi.FileSystemProvider`],
+			[/* reference */ 'r', `java.nio.file.spi.FileSystemProvider`, `provider`],
 			[/* text */ 't', `
  cannot be closed.
 
@@ -127,7 +127,7 @@ DocsCollector.collect('java.nio.file.FileSystem', [
 			[/* reference */ 'r', `#isReadOnly()`, `isReadOnly`],
 			[/* text */ 't', ` method. Attempts to write to file stores
  by means of an object associated with a read-only file system throws `],
-			[/* reference */ 'r', `java.nio.file.ReadOnlyFileSystemException`],
+			[/* reference */ 'r', `java.nio.file.ReadOnlyFileSystemException`, `ReadOnlyFileSystemException`],
 			[/* text */ 't', `.
 
  `]
@@ -145,7 +145,7 @@ DocsCollector.collect('java.nio.file.FileSystem', [
 			[/* text */ 't', ` method
  then it may require to block until the first operation is complete. Closing
  a file system causes all open channels, watch services, and other `],
-			[/* reference */ 'r', `java.io.Closeable`],
+			[/* reference */ 'r', `java.io.Closeable`, `closeable`],
 			[/* text */ 't', ` objects associated with the file system to be closed.`]
 		]]
 	],
@@ -194,7 +194,7 @@ DocsCollector.collect('java.nio.file.FileSystem', [
  `],
 				[/* block */ 'b', [
 					[/* text */ 't', ` The elements of the returned iterator are the `],
-					[/* reference */ 'r', `java.nio.file.FileStore`],
+					[/* reference */ 'r', `java.nio.file.FileStore`, `FileStores`],
 					[/* text */ 't', ` for this file system. The order of the elements is
  not defined and the file stores may change during the lifetime of the
  Java virtual machine. When an I/O error occurs, perhaps because a file
@@ -205,12 +205,12 @@ DocsCollector.collect('java.nio.file.FileSystem', [
 				[/* block */ 'b', [
 					[/* text */ 't', ` In the case of the default provider, and a security manager is
  installed, the security manager is invoked to check `],
-					[/* reference */ 'r', `java.lang.RuntimePermission`],
+					[/* reference */ 'r', `java.lang.RuntimePermission`, `RuntimePermission`],
 					[/* inline code block */ 'i', `("getFileStoreAttributes")`],
 					[/* text */ 't', `. If denied, then
  no file stores are returned by the iterator. In addition, the security
  manager's `],
-					[/* reference */ 'r', `java.nio.SecurityManager#checkRead(java.lang.String)`],
+					[/* reference */ 'r', `java.lang.SecurityManager#checkRead(java.lang.String)`, `SecurityManager.checkRead(String)`],
 					[/* text */ 't', ` method is invoked to
  check read access to the file store's `],
 					[/* text */ 't', `top-most`],
@@ -257,7 +257,7 @@ DocsCollector.collect('java.nio.file.FileSystem', [
 					[/* text */ 't', ` When a security manager is installed, it is invoked to check access
  to the each root directory. If denied, the root directory is not returned
  by the iterator. In the case of the default provider, the `],
-					[/* reference */ 'r', `java.nio.SecurityManager#checkRead(java.lang.String)`],
+					[/* reference */ 'r', `java.lang.SecurityManager#checkRead(java.lang.String)`, `SecurityManager.checkRead(String)`],
 					[/* text */ 't', ` method is invoked to check read access
  to each root directory. It is system dependent if the permission checks
  are done when the iterator is obtained or during iteration.`]
@@ -281,7 +281,7 @@ DocsCollector.collect('java.nio.file.FileSystem', [
 					[/* text */ 't', `default`],
 					[/* text */ 't', ` name separator.
  This separator is used when creating path strings by invoking the `],
-					[/* reference */ 'r', `.Path#toString()`],
+					[/* reference */ 'r', `java.nio.file.Path#toString()`, `toString()`],
 					[/* text */ 't', ` method.
 
  `]
@@ -289,7 +289,7 @@ DocsCollector.collect('java.nio.file.FileSystem', [
 				[/* block */ 'b', [
 					[/* text */ 't', ` In the case of the default provider, this method returns the same
  separator as `],
-					[/* reference */ 'r', `java.nio.File#separator`],
+					[/* reference */ 'r', `java.io.File#separator`, `File.separator`],
 					[/* text */ 't', `.`]
 				]]
 			],
@@ -348,7 +348,7 @@ DocsCollector.collect('java.nio.file.FileSystem', [
 				[/* inline code block */ 'i', `first`],
 				[/* text */ 't', `, is considered to be a sequence
  of name elements (see `],
-				[/* reference */ 'r', `java.nio.file.Path`],
+				[/* reference */ 'r', `java.nio.file.Path`, `Path`],
 				[/* text */ 't', `) and is joined to form a path string.
  The details as to how the Strings are joined is provider specific but
  typically they will be joined using the `],
@@ -379,7 +379,7 @@ DocsCollector.collect('java.nio.file.FileSystem', [
 					[/* text */ 't', ` The parsing and conversion to a path object is inherently
  implementation dependent. In the simplest case, the path string is rejected,
  and `],
-					[/* reference */ 'r', `java.nio.file.InvalidPathException`],
+					[/* reference */ 'r', `java.nio.file.InvalidPathException`, `InvalidPathException`],
 					[/* text */ 't', ` thrown, if the path string contains
  characters that cannot be converted to characters that are `],
 					[/* text */ 't', `legal`],
@@ -405,11 +405,11 @@ DocsCollector.collect('java.nio.file.FileSystem', [
  `],
 				[/* block */ 'b', [
 					[/* text */ 't', ` This method throws `],
-					[/* reference */ 'r', `java.nio.file.InvalidPathException`],
+					[/* reference */ 'r', `java.nio.file.InvalidPathException`, `InvalidPathException`],
 					[/* text */ 't', ` when the path string
  cannot be converted to a path. Where possible, and where applicable,
  the exception is created with an `],
-					[/* reference */ 'r', `.InvalidPathException#getIndex()`],
+					[/* reference */ 'r', `java.nio.file.InvalidPathException#getIndex()`, `index`],
 					[/* text */ 't', ` value indicating the first position in the `],
 					[/* inline code block */ 'i', `path`],
 					[/* text */ 't', ` parameter
@@ -442,7 +442,7 @@ DocsCollector.collect('java.nio.file.FileSystem', [
  `],
 				[/* inline code block */ 'i', `String`],
 				[/* text */ 't', ` representation of `],
-				[/* reference */ 'r', `java.nio.file.Path`],
+				[/* reference */ 'r', `java.nio.file.Path`, `Path`],
 				[/* text */ 't', ` objects by interpreting a
  given pattern.
 
@@ -599,9 +599,9 @@ DocsCollector.collect('java.nio.file.FileSystem', [
 							[/* text */ 't', ` The `],
 							[/* inline code block */ 'i', `*`],
 							[/* text */ 't', ` character matches zero or more `],
-							[/* reference */ 'r', `java.lang.Character`],
+							[/* reference */ 'r', `java.lang.Character`, `characters`],
 							[/* text */ 't', ` of a `],
-							[/* reference */ 'r', `.Path#getName(int)`],
+							[/* reference */ 'r', `java.nio.file.Path#getName(int)`, `name`],
 							[/* text */ 't', ` component without
    crossing directory boundaries. `]
 						]]
@@ -611,7 +611,7 @@ DocsCollector.collect('java.nio.file.FileSystem', [
 							[/* text */ 't', ` The `],
 							[/* inline code block */ 'i', `**`],
 							[/* text */ 't', ` characters matches zero or more `],
-							[/* reference */ 'r', `java.lang.Character`],
+							[/* reference */ 'r', `java.lang.Character`, `characters`],
 							[/* text */ 't', ` crossing directory boundaries. `]
 						]]
 					]],
@@ -732,7 +732,7 @@ DocsCollector.collect('java.nio.file.FileSystem', [
 							[/* inline code block */ 'i', `".login"`],
 							[/* text */ 't', `.
    The `],
-							[/* reference */ 'r', `.Files#isHidden(java.nio.file.Path)`],
+							[/* reference */ 'r', `java.nio.file.Files#isHidden(java.nio.file.Path)`, `Files.isHidden(java.nio.file.Path)`],
 							[/* text */ 't', ` method may be used to test whether a file
    is considered hidden.
    `]
@@ -749,7 +749,7 @@ DocsCollector.collect('java.nio.file.FileSystem', [
 					[/* block */ 'b', [
 						[/* block */ 'b', [
 							[/* text */ 't', ` The matching of `],
-							[/* reference */ 'r', `.Path#getRoot()`],
+							[/* reference */ 'r', `java.nio.file.Path#getRoot()`, `root`],
 							[/* text */ 't', ` components is highly
    implementation-dependent and is not specified. `]
 						]]
@@ -761,7 +761,7 @@ DocsCollector.collect('java.nio.file.FileSystem', [
 					[/* inline code block */ 'i', `regex`],
 					[/* text */ 't', `" then the pattern component is a
  regular expression as defined by the `],
-					[/* reference */ 'r', `java.util.regex.Pattern`],
+					[/* reference */ 'r', `java.util.regex.Pattern`, `Pattern`],
 					[/* text */ 't', `
  class.
 
@@ -805,7 +805,7 @@ DocsCollector.collect('java.nio.file.FileSystem', [
 		[/* method */ 'newWatchService()', [
 			[/* method description */
 				[/* text */ 't', `Constructs a new `],
-				[/* reference */ 'r', `java.nio.file.WatchService`],
+				[/* reference */ 'r', `java.nio.file.WatchService`, `WatchService`],
 				[/* text */ 't', `(optional operation)`],
 				[/* text */ 't', `.
 
@@ -835,7 +835,7 @@ DocsCollector.collect('java.nio.file.FileSystem', [
 		[/* method */ 'supportedFileAttributeViews()', [
 			[/* method description */
 				[/* text */ 't', `Returns the set of the `],
-				[/* reference */ 'r', `.AttributeView#name()`],
+				[/* reference */ 'r', `java.nio.file.attribute.AttributeView#name()`, `names`],
 				[/* text */ 't', ` of the file
  attribute views supported by this `],
 				[/* inline code block */ 'i', `FileSystem`],
@@ -844,7 +844,7 @@ DocsCollector.collect('java.nio.file.FileSystem', [
  `],
 				[/* block */ 'b', [
 					[/* text */ 't', ` The `],
-					[/* reference */ 'r', `java.nio.file.attribute.BasicFileAttributeView`],
+					[/* reference */ 'r', `java.nio.file.attribute.BasicFileAttributeView`, `BasicFileAttributeView`],
 					[/* text */ 't', ` is required to be supported and
  therefore the set contains at least one element, "basic".
 
@@ -852,10 +852,10 @@ DocsCollector.collect('java.nio.file.FileSystem', [
 				]],
 				[/* block */ 'b', [
 					[/* text */ 't', ` The `],
-					[/* reference */ 'r', `.FileStore#supportsFileAttributeView(java.lang.String)`],
+					[/* reference */ 'r', `java.nio.file.FileStore#supportsFileAttributeView(java.lang.String)`, `supportsFileAttributeView(String)`],
 					[/* text */ 't', ` method may be used to test if an
  underlying `],
-					[/* reference */ 'r', `java.nio.file.FileStore`],
+					[/* reference */ 'r', `java.nio.file.FileStore`, `FileStore`],
 					[/* text */ 't', ` supports the file attributes identified by a
  file attribute view.`]
 				]]
@@ -876,7 +876,7 @@ DocsCollector.collect('java.nio.file.FileSystem', [
 					[/* text */ 't', ` After a file system is closed then all subsequent access to the file
  system, either by methods defined by this class or on objects associated
  with this file system, throw `],
-					[/* reference */ 'r', `java.nio.file.ClosedFileSystemException`],
+					[/* reference */ 'r', `java.nio.file.ClosedFileSystemException`, `ClosedFileSystemException`],
 					[/* text */ 't', `. If the
  file system is already closed then invoking this method has no effect.
 
@@ -884,15 +884,15 @@ DocsCollector.collect('java.nio.file.FileSystem', [
 				]],
 				[/* block */ 'b', [
 					[/* text */ 't', ` Closing a file system will close all open `],
-					[/* reference */ 'r', `java.nio.channels.Channel`],
+					[/* reference */ 'r', `java.nio.channels.Channel`, `channels`],
 					[/* text */ 't', `, `],
-					[/* reference */ 'r', `java.nio.file.DirectoryStream`],
+					[/* reference */ 'r', `java.nio.file.DirectoryStream`, `directory-streams`],
 					[/* text */ 't', `,
  `],
-					[/* reference */ 'r', `java.nio.file.WatchService`],
+					[/* reference */ 'r', `java.nio.file.WatchService`, `watch-service`],
 					[/* text */ 't', `, and other closeable objects associated
  with this file system. The `],
-					[/* reference */ 'r', `.FileSystems#getDefault()`],
+					[/* reference */ 'r', `java.nio.file.FileSystems#getDefault()`, `default`],
 					[/* text */ 't', ` file
  system cannot be closed.`]
 				]]

@@ -8,7 +8,7 @@ DocsCollector.collect('java.util.stream.DoubleStream$DoubleMapMultiConsumer', [
 		[/* text */ 't', `-valued argument
  and a DoubleConsumer, and returns no result. This functional interface is
  used by `],
-		[/* reference */ 'r', `.DoubleStream#mapMulti(java.util.stream.DoubleStream.DoubleMapMultiConsumer)`],
+		[/* reference */ 'r', `java.util.stream.DoubleStream#mapMulti(java.util.stream.DoubleStream.DoubleMapMultiConsumer)`, `DoubleStream.mapMulti`],
 		[/* text */ 't', `
  to replace a double value with zero or more double values.
 

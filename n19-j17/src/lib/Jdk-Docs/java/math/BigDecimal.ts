@@ -47,7 +47,7 @@ DocsCollector.collect('java.math.BigDecimal', [
 			[/* text */ 't', `
  is thrown; otherwise, calculations can be carried out to a chosen
  precision and rounding mode by supplying an appropriate `],
-			[/* reference */ 'r', `java.math.MathContext`],
+			[/* reference */ 'r', `java.math.MathContext`, `MathContext`],
 			[/* text */ 't', ` object to the operation.  In either case, eight
  `],
 			[/* text */ 't', `rounding modes`],
@@ -60,7 +60,7 @@ DocsCollector.collect('java.math.BigDecimal', [
 			[/* inline code block */ 'i', `enum`],
 			[/* text */ 't', `, (such
  as `],
-			[/* reference */ 'r', `.RoundingMode#HALF_UP`],
+			[/* reference */ 'r', `java.math.RoundingMode#HALF_UP`, `RoundingMode.HALF_UP`],
 			[/* text */ 't', `) should be used instead.
 
  `]
@@ -70,7 +70,7 @@ DocsCollector.collect('java.math.BigDecimal', [
 			[/* inline code block */ 'i', `MathContext`],
 			[/* text */ 't', ` object is supplied with a precision
  setting of 0 (for example, `],
-			[/* reference */ 'r', `.MathContext#UNLIMITED`],
+			[/* reference */ 'r', `java.math.MathContext#UNLIMITED`, `MathContext.UNLIMITED`],
 			[/* text */ 't', `),
  arithmetic operations are exact, as are the arithmetic methods
  which take no `],
@@ -179,7 +179,7 @@ DocsCollector.collect('java.math.BigDecimal', [
 			[/* inline code block */ 'i', `MathContext`],
 			[/* text */ 't', `
  parameter, if the result is inexact but the rounding mode is `],
-			[/* reference */ 'r', `.RoundingMode#UNNECESSARY`],
+			[/* reference */ 'r', `java.math.RoundingMode#UNNECESSARY`, `UNNECESSARY`],
 			[/* text */ 't', `, an `],
 			[/* inline code block */ 'i', `ArithmeticException`],
 			[/* text */ 't', ` will be thrown.
@@ -284,7 +284,7 @@ DocsCollector.collect('java.math.BigDecimal', [
 			[/* text */ 't', ` digits by removing
  trailing zeros and decreasing the scale.  For example, rounding to
  three digits using the `],
-			[/* reference */ 'r', `.RoundingMode#FLOOR`],
+			[/* reference */ 'r', `java.math.RoundingMode#FLOOR`, `floor`],
 			[/* text */ 't', `
  rounding mode, `],
 			[/* new line */ 'n'],
@@ -755,7 +755,7 @@ DocsCollector.collect('java.math.BigDecimal', [
 						[/* inline code block */ 'i', `String`],
 						[/* text */ 't', ` using the
  `],
-						[/* reference */ 'r', `java.Double#toString(double)`],
+						[/* reference */ 'r', `java.lang.Double#toString(double)`, `Double.toString(double)`],
 						[/* text */ 't', ` method and then using the
  `],
 						[/* reference */ 'r', `#%3Cinit%3E(java.lang.String)`, `BigDecimal(String)`],
@@ -927,11 +927,11 @@ DocsCollector.collect('java.math.BigDecimal', [
 					[/* text */ 't', `)
  followed by one or more decimal digits.  The value of the
  exponent must lie between -`],
-					[/* reference */ 'r', `java.Integer#MAX_VALUE`],
+					[/* reference */ 'r', `java.lang.Integer#MAX_VALUE`, `Integer.MAX_VALUE`],
 					[/* text */ 't', ` (`],
-					[/* reference */ 'r', `java.Integer#MIN_VALUE`],
+					[/* reference */ 'r', `java.lang.Integer#MIN_VALUE`, `Integer.MIN_VALUE`],
 					[/* text */ 't', `+1) and `],
-					[/* reference */ 'r', `java.Integer#MAX_VALUE`],
+					[/* reference */ 'r', `java.lang.Integer#MAX_VALUE`, `Integer.MAX_VALUE`],
 					[/* text */ 't', `, inclusive.
 
  `]
@@ -1069,7 +1069,7 @@ DocsCollector.collect('java.math.BigDecimal', [
 						]],
 						[/* dd */ 'dd', [
 							[/* text */ 't', `any character for which `],
-							[/* reference */ 'r', `java.Character#isDigit(char)`],
+							[/* reference */ 'r', `java.lang.Character#isDigit(char)`, `Character.isDigit(char)`],
 							[/* text */ 't', `
  returns `],
 							[/* inline code block */ 'i', `true`],
@@ -1098,7 +1098,7 @@ DocsCollector.collect('java.math.BigDecimal', [
 				]],
 				[/* block */ 'b', [
 					[/* text */ 't', `The character-to-digit mapping is provided by `],
-					[/* reference */ 'r', `java.Character#digit(char,int)`],
+					[/* reference */ 'r', `java.lang.Character#digit(char,int)`, `Character.digit(char, int)`],
 					[/* text */ 't', ` set to convert to radix 10.  The
  String may not contain any extraneous characters (whitespace,
  for example).
@@ -1468,9 +1468,9 @@ DocsCollector.collect('java.math.BigDecimal', [
 				[/* inline code block */ 'i', `double`],
 				[/* text */ 't', `, it will be
  converted to `],
-				[/* reference */ 'r', `java.Double#NEGATIVE_INFINITY`],
+				[/* reference */ 'r', `java.lang.Double#NEGATIVE_INFINITY`, `Double.NEGATIVE_INFINITY`],
 				[/* text */ 't', ` or `],
-				[/* reference */ 'r', `java.Double#POSITIVE_INFINITY`],
+				[/* reference */ 'r', `java.lang.Double#POSITIVE_INFINITY`, `Double.POSITIVE_INFINITY`],
 				[/* text */ 't', ` as appropriate.  Note that even when
  the return value is finite, this conversion can lose
  information about the precision of the `],
@@ -1514,9 +1514,9 @@ DocsCollector.collect('java.math.BigDecimal', [
 				[/* inline code block */ 'i', `float`],
 				[/* text */ 't', `, it will be
  converted to `],
-				[/* reference */ 'r', `java.Float#NEGATIVE_INFINITY`],
+				[/* reference */ 'r', `java.lang.Float#NEGATIVE_INFINITY`, `Float.NEGATIVE_INFINITY`],
 				[/* text */ 't', ` or `],
-				[/* reference */ 'r', `java.Float#POSITIVE_INFINITY`],
+				[/* reference */ 'r', `java.lang.Float#POSITIVE_INFINITY`, `Float.POSITIVE_INFINITY`],
 				[/* text */ 't', ` as appropriate.  Note that even when
  the return value is finite, this conversion can lose
  information about the precision of the `],
@@ -2009,7 +2009,7 @@ DocsCollector.collect('java.math.BigDecimal', [
  as a canonical string representation for exchanging decimal
  data, or as a key for a Hashtable, etc.  Locale-sensitive
  number formatting and parsing is handled by the `],
-						[/* reference */ 'r', `java.text.NumberFormat`],
+						[/* reference */ 'r', `java.text.NumberFormat`, `NumberFormat`],
 						[/* text */ 't', ` class and its subclasses.
 
  `]
@@ -3257,11 +3257,11 @@ DocsCollector.collect('java.math.BigDecimal', [
 					[/* text */ 't', `. The value of the returned result is
  always within one ulp of the exact decimal value for the
  precision in question.  If the rounding mode is `],
-					[/* reference */ 'r', `.RoundingMode#HALF_UP`],
+					[/* reference */ 'r', `java.math.RoundingMode#HALF_UP`, `HALF_UP`],
 					[/* text */ 't', `, `],
-					[/* reference */ 'r', `.RoundingMode#HALF_DOWN`],
+					[/* reference */ 'r', `java.math.RoundingMode#HALF_DOWN`, `HALF_DOWN`],
 					[/* text */ 't', `, or `],
-					[/* reference */ 'r', `.RoundingMode#HALF_EVEN`],
+					[/* reference */ 'r', `java.math.RoundingMode#HALF_EVEN`, `HALF_EVEN`],
 					[/* text */ 't', `, the
  result is within one half an ulp of the exact decimal value.
 
@@ -3793,7 +3793,7 @@ DocsCollector.collect('java.math.BigDecimal', [
 				[/* inline code block */ 'i', `double`],
 				[/* text */ 't', `'s canonical string representation provided
  by the `],
-				[/* reference */ 'r', `java.Double#toString(double)`],
+				[/* reference */ 'r', `java.lang.Double#toString(double)`, `Double.toString(double)`],
 				[/* text */ 't', ` method.`]
 			],
 			[/* parameters */

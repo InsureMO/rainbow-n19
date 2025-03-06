@@ -10,7 +10,7 @@ DocsCollector.collect('java.lang.Readable', [
 		[/* inline code block */ 'i', `Readable`],
 		[/* text */ 't', ` are made available to callers of the read
  method via a `],
-		[/* reference */ 'r', `java.nio.CharBuffer`],
+		[/* reference */ 'r', `java.nio.CharBuffer`, `CharBuffer`],
 		[/* text */ 't', `.`]
 	],
 	/* fields */ UDF,

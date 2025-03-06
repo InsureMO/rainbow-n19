@@ -219,7 +219,7 @@ DocsCollector.collect('java.util.ResourceBundle', [
  `]
 		]],
 		[/* block */ 'b', [
-			[/* text */ 't', `Resource Bundles and Named Modules`]
+			[/* anchor */ 'r', '#-id', `resource-bundle-modules`, `Resource Bundles and Named Modules`]
 		]],
 		[/* text */ 't', `
 
@@ -240,7 +240,7 @@ DocsCollector.collect('java.util.ResourceBundle', [
 
  `],
 		[/* block */ 'b', [
-			[/* text */ 't', `Resource bundles as service providers`]
+			[/* anchor */ 'r', '#-id', `service-providers`, `Resource bundles as service providers`]
 		]],
 		[/* text */ 't', `
 
@@ -248,15 +248,15 @@ DocsCollector.collect('java.util.ResourceBundle', [
 		[/* text */ 't', `service provider modules`],
 		[/* text */ 't', `
  and they can be located using `],
-		[/* reference */ 'r', `java.util.ServiceLoader`],
+		[/* reference */ 'r', `java.util.ServiceLoader`, `ServiceLoader`],
 		[/* text */ 't', `.
  A `],
-		[/* reference */ 'r', `java.util.spi.ResourceBundleProvider`],
+		[/* reference */ 'r', `java.util.spi.ResourceBundleProvider`, `service`],
 		[/* text */ 't', ` interface or class must be
  defined. The caller module declares that it uses the service, the service
  provider modules declare that they provide implementations of the service.
  Refer to `],
-		[/* reference */ 'r', `java.util.spi.ResourceBundleProvider`],
+		[/* reference */ 'r', `java.util.spi.ResourceBundleProvider`, `ResourceBundleProvider`],
 		[/* text */ 't', ` for developing resource bundle
  services and deploying resource bundle providers.
  The module obtaining the resource bundle can be a resource bundle
@@ -266,17 +266,17 @@ DocsCollector.collect('java.util.ResourceBundle', [
  `],
 		[/* block */ 'b', [
 			[/* text */ 't', `A `],
-			[/* reference */ 'r', `java.util.spi.ResourceBundleProvider`],
+			[/* reference */ 'r', `java.util.spi.ResourceBundleProvider`, `resource bundle provider`],
 			[/* text */ 't', ` can
  provide resource bundles in any format such XML which replaces the need
  of `],
-			[/* reference */ 'r', `java.util.ResourceBundle.Control`],
+			[/* reference */ 'r', `java.util.ResourceBundle.Control`, `ResourceBundle.Control`],
 			[/* text */ 't', `.
 
  `]
 		]],
 		[/* block */ 'b', [
-			[/* text */ 't', `Resource bundles in other modules and class path`]
+			[/* anchor */ 'r', '#-id', `other-modules`, `Resource bundles in other modules and class path`]
 		]],
 		[/* text */ 't', `
 
@@ -287,7 +287,7 @@ DocsCollector.collect('java.util.ResourceBundle', [
  in unnamed modules and class path are open for any module to access.
  Resource bundle follows the resource encapsulation rules as specified
  in `],
-		[/* reference */ 'r', `java.Module#getResourceAsStream(java.lang.String)`],
+		[/* reference */ 'r', `java.lang.Module#getResourceAsStream(java.lang.String)`, `Module.getResourceAsStream(String)`],
 		[/* text */ 't', `.
 
  `],
@@ -299,14 +299,14 @@ DocsCollector.collect('java.util.ResourceBundle', [
 			[/* text */ 't', ` parameter
  locate and load resource bundles from
  `],
-			[/* reference */ 'r', `java.util.spi.ResourceBundleProvider`],
+			[/* reference */ 'r', `java.util.spi.ResourceBundleProvider`, `service providers`],
 			[/* text */ 't', `.
  It may continue the search as if calling `],
-			[/* reference */ 'r', `java.Module#getResourceAsStream(java.lang.String)`],
+			[/* reference */ 'r', `java.lang.Module#getResourceAsStream(java.lang.String)`, `Module.getResourceAsStream(String)`],
 			[/* text */ 't', `
  to find the named resource from a given module and calling
  `],
-			[/* reference */ 'r', `java.ClassLoader#getResourceAsStream(java.lang.String)`],
+			[/* reference */ 'r', `java.lang.ClassLoader#getResourceAsStream(java.lang.String)`, `ClassLoader.getResourceAsStream(String)`],
 			[/* text */ 't', `; refer to
  the specification of the `],
 			[/* inline code block */ 'i', `getBundle`],
@@ -333,7 +333,7 @@ DocsCollector.collect('java.util.ResourceBundle', [
 		[/* text */ 't', `
 
  A common format of resource bundles is in `],
-		[/* reference */ 'r', `java.util.PropertyResourceBundle`],
+		[/* reference */ 'r', `java.util.PropertyResourceBundle`, `.properties`],
 		[/* text */ 't', ` file format.  Typically `],
 		[/* inline code block */ 'i', `.properties`],
 		[/* text */ 't', ` resource bundles
@@ -359,7 +359,7 @@ DocsCollector.collect('java.util.ResourceBundle', [
 		[/* text */ 't', `
 
  The `],
-		[/* reference */ 'r', `java.util.ResourceBundle.Control`],
+		[/* reference */ 'r', `java.util.ResourceBundle.Control`, `ResourceBundle.Control`],
 		[/* text */ 't', ` class provides information necessary
  to perform the bundle loading process by the `],
 		[/* inline code block */ 'i', `getBundle`],
@@ -377,12 +377,12 @@ DocsCollector.collect('java.util.ResourceBundle', [
 
  `],
 		[/* block */ 'b', [
-			[/* reference */ 'r', `java.util.ResourceBundle.Control`],
+			[/* reference */ 'r', `java.util.ResourceBundle.Control`, `ResourceBundle.Control`],
 			[/* text */ 't', ` is designed for an application deployed
  in an unnamed module, for example to support resource bundles in
  non-standard formats or package localized resources in a non-traditional
  convention. `],
-			[/* reference */ 'r', `java.util.spi.ResourceBundleProvider`],
+			[/* reference */ 'r', `java.util.spi.ResourceBundleProvider`, `ResourceBundleProvider`],
 			[/* text */ 't', ` is the replacement for
  `],
 			[/* inline code block */ 'i', `ResourceBundle.Control`],
@@ -397,30 +397,30 @@ DocsCollector.collect('java.util.ResourceBundle', [
  `]
 		]],
 		[/* block */ 'b', [
-			[/* text */ 't', `For the getBundle factory`],
+			[/* anchor */ 'r', '#-id', `modify_default_behavior`, `For the getBundle factory`],
 			[/* text */ 't', `
  methods that take no `],
-			[/* reference */ 'r', `java.util.ResourceBundle.Control`],
+			[/* reference */ 'r', `java.util.ResourceBundle.Control`, `ResourceBundle.Control`],
 			[/* text */ 't', ` instance, their `],
 			[/* text */ 't', `default behavior`],
 			[/* text */ 't', ` of resource bundle loading
  can be modified with custom `],
-			[/* reference */ 'r', `java.util.spi.ResourceBundleControlProvider`],
+			[/* reference */ 'r', `java.util.spi.ResourceBundleControlProvider`, `ResourceBundleControlProvider`],
 			[/* text */ 't', ` implementations.
  If any of the
  providers provides a `],
-			[/* reference */ 'r', `java.util.ResourceBundle.Control`],
+			[/* reference */ 'r', `java.util.ResourceBundle.Control`, `ResourceBundle.Control`],
 			[/* text */ 't', ` for the given base name, that `],
-			[/* reference */ 'r', `java.util.ResourceBundle.Control`],
+			[/* reference */ 'r', `java.util.ResourceBundle.Control`, `ResourceBundle.Control`],
 			[/* text */ 't', ` will be used instead of the default `],
-			[/* reference */ 'r', `java.util.ResourceBundle.Control`],
+			[/* reference */ 'r', `java.util.ResourceBundle.Control`, `ResourceBundle.Control`],
 			[/* text */ 't', `. If there is
  more than one service provider for supporting the same base name,
  the first one returned from `],
-			[/* reference */ 'r', `java.util.ServiceLoader`],
+			[/* reference */ 'r', `java.util.ServiceLoader`, `ServiceLoader`],
 			[/* text */ 't', ` will be used.
  A custom `],
-			[/* reference */ 'r', `java.util.ResourceBundle.Control`],
+			[/* reference */ 'r', `java.util.ResourceBundle.Control`, `ResourceBundle.Control`],
 			[/* text */ 't', ` implementation is ignored by named modules.
 
  `]
@@ -443,9 +443,9 @@ DocsCollector.collect('java.util.ResourceBundle', [
 		[/* text */ 't', `, `],
 		[/* reference */ 'r', `#clearCache(java.lang.ClassLoader)`, `clearCache`],
 		[/* text */ 't', `, `],
-		[/* reference */ 'r', `.ResourceBundle.Control#getTimeToLive(java.lang.String,java.util.Locale)`],
+		[/* reference */ 'r', `java.util.ResourceBundle.Control#getTimeToLive(java.lang.String,java.util.Locale)`, `ResourceBundle.Control.getTimeToLive`],
 		[/* text */ 't', `, and `],
-		[/* reference */ 'r', `.ResourceBundle.Control#needsReload(java.lang.String,java.util.Locale,java.lang.String,java.lang.ClassLoader,java.util.ResourceBundle,long)`],
+		[/* reference */ 'r', `java.util.ResourceBundle.Control#needsReload(java.lang.String,java.util.Locale,java.lang.String,java.lang.ClassLoader,java.util.ResourceBundle,long)`, `ResourceBundle.Control.needsReload`],
 		[/* text */ 't', ` for details.
 
  `],
@@ -1143,13 +1143,13 @@ DocsCollector.collect('java.util.ResourceBundle', [
  where `],
 				[/* inline code block */ 'i', `control`],
 				[/* text */ 't', ` is the default instance of `],
-				[/* reference */ 'r', `java.util.ResourceBundle.Control`],
+				[/* reference */ 'r', `java.util.ResourceBundle.Control`, `ResourceBundle.Control`],
 				[/* text */ 't', ` unless
  a `],
 				[/* inline code block */ 'i', `Control`],
 				[/* text */ 't', ` instance is provided by
  `],
-				[/* reference */ 'r', `java.util.spi.ResourceBundleControlProvider`],
+				[/* reference */ 'r', `java.util.spi.ResourceBundleControlProvider`, `ResourceBundleControlProvider`],
 				[/* text */ 't', ` SPI.  Refer to the
  description of `],
 				[/* text */ 't', `modifying the default behavior`],
@@ -1158,15 +1158,15 @@ DocsCollector.collect('java.util.ResourceBundle', [
  `],
 				[/* block */ 'b', ''],
 				[/* block */ 'b', [
-					[/* text */ 't', `Resource Bundle Search and Loading Strategy`]
+					[/* anchor */ 'r', '#-id', `default_behavior`, `Resource Bundle Search and Loading Strategy`]
 				]],
 				[/* block */ 'b', [
 					[/* inline code block */ 'i', `getBundle`],
 					[/* text */ 't', ` uses the base name, the specified locale, and
  the default locale (obtained from `],
-					[/* reference */ 'r', `.Locale#getDefault()`],
+					[/* reference */ 'r', `java.util.Locale#getDefault()`, `Locale.getDefault`],
 					[/* text */ 't', `) to generate a sequence of `],
-					[/* text */ 't', `candidate bundle names`],
+					[/* anchor */ 'r', '#-id', `candidates`, `candidate bundle names`],
 					[/* text */ 't', `.  If the specified
  locale's language, script, country, and variant are all empty strings,
  then the base name is the only candidate bundle name.  Otherwise, a list
@@ -1223,7 +1223,7 @@ DocsCollector.collect('java.util.ResourceBundle', [
  candidate bundle names contains extra names, or the order of bundle names
  is slightly modified.  See the description of the default implementation
  of `],
-					[/* reference */ 'r', `.ResourceBundle.Control#getCandidateLocales(java.lang.String,java.util.Locale)`],
+					[/* reference */ 'r', `java.util.ResourceBundle.Control#getCandidateLocales(java.lang.String,java.util.Locale)`, `getCandidateLocales`],
 					[/* text */ 't', ` for details.`]
 				]],
 				[/* block */ 'b', ''],
@@ -1234,7 +1234,7 @@ DocsCollector.collect('java.util.ResourceBundle', [
 					[/* text */ 't', `instantiate`],
 					[/* text */ 't', ` an actual
  resource bundle. It uses the default controls' `],
-					[/* reference */ 'r', `.ResourceBundle.Control#getFormats(java.lang.String)`],
+					[/* reference */ 'r', `java.util.ResourceBundle.Control#getFormats(java.lang.String)`, `getFormats`],
 					[/* text */ 't', ` method, which generates two bundle names for each generated
  name, the first a class name and the second a properties file name. For
  each candidate bundle name, it attempts to create a resource bundle:
@@ -1264,14 +1264,14 @@ DocsCollector.collect('java.util.ResourceBundle', [
  path name from the candidate bundle name by replacing all "." characters
  with "/" and appending the string ".properties".  It attempts to find a
  "resource" with this name using `],
-						[/* reference */ 'r', `java.ClassLoader#getResource(java.lang.String)`],
+						[/* reference */ 'r', `java.lang.ClassLoader#getResource(java.lang.String)`, `ClassLoader.getResource`],
 						[/* text */ 't', `.  (Note that a "resource" in the sense of
  `],
 						[/* inline code block */ 'i', `getResource`],
 						[/* text */ 't', ` has nothing to do with the contents of a
  resource bundle, it is just a container of data, such as a file.)  If it
  finds a "resource", it attempts to create a new `],
-						[/* reference */ 'r', `java.util.PropertyResourceBundle`],
+						[/* reference */ 'r', `java.util.PropertyResourceBundle`, `PropertyResourceBundle`],
 						[/* text */ 't', ` instance from its contents.  If successful, this
  instance becomes the `],
 						[/* text */ 't', `result resource bundle`],
@@ -1283,7 +1283,7 @@ DocsCollector.collect('java.util.ResourceBundle', [
 					[/* text */ 't', `This continues until a result resource bundle is instantiated or the
  list of candidate bundle names is exhausted.  If no matching resource
  bundle is found, the default control's `],
-					[/* reference */ 'r', `.ResourceBundle.Control#getFallbackLocale(java.lang.String,java.util.Locale)`],
+					[/* reference */ 'r', `java.util.ResourceBundle.Control#getFallbackLocale(java.lang.String,java.util.Locale)`, `getFallbackLocale`],
 					[/* text */ 't', ` method is called, which returns the current default
  locale.  A new sequence of candidate locale names is generated using this
  locale and searched again, as above.
@@ -1299,7 +1299,7 @@ DocsCollector.collect('java.util.ResourceBundle', [
  `]
 				]],
 				[/* block */ 'b', [
-					[/* text */ 't', `Once a result resource bundle has been found, its parent chain is instantiated`],
+					[/* anchor */ 'r', '#-id', `parent_chain`, `Once a result resource bundle has been found, its parent chain is instantiated`],
 					[/* text */ 't', `.  If the result bundle already
  has a parent (perhaps because it was returned from a cache) the chain is
  complete.
@@ -1356,7 +1356,7 @@ DocsCollector.collect('java.util.ResourceBundle', [
  `]
 				]],
 				[/* block */ 'b', [
-					[/* text */ 't', `Example:`]
+					[/* anchor */ 'r', '#-id', `default_behavior_example`, `Example:`]
 				]],
 				[/* block */ 'b', `
  The following class and property files are provided:
@@ -1524,7 +1524,7 @@ DocsCollector.collect('java.util.ResourceBundle', [
 					]],
 					[/* block */ 'b', [
 						[/* text */ 't', `The `],
-						[/* reference */ 'r', `.ResourceBundle.Control#getFormats(java.lang.String)`],
+						[/* reference */ 'r', `java.util.ResourceBundle.Control#getFormats(java.lang.String)`, `control.getFormats`],
 						[/* text */ 't', ` method is called to get resource bundle formats
  to produce bundle or resource names. The strings
  `],
@@ -1533,7 +1533,7 @@ DocsCollector.collect('java.util.ResourceBundle', [
 						[/* inline code block */ 'i', `"java.properties"`],
 						[/* text */ 't', `
  designate class-based and `],
-						[/* reference */ 'r', `java.util.PropertyResourceBundle`],
+						[/* reference */ 'r', `java.util.PropertyResourceBundle`, `property`],
 						[/* text */ 't', `-based resource bundles, respectively. Other strings
  starting with `],
 						[/* inline code block */ 'i', `"java."`],
@@ -1543,7 +1543,7 @@ DocsCollector.collect('java.util.ResourceBundle', [
 					]],
 					[/* block */ 'b', [
 						[/* text */ 't', `The `],
-						[/* reference */ 'r', `.ResourceBundle.Control#getCandidateLocales(java.lang.String,java.util.Locale)`],
+						[/* reference */ 'r', `java.util.ResourceBundle.Control#getCandidateLocales(java.lang.String,java.util.Locale)`, `control.getCandidateLocales`],
 						[/* text */ 't', ` method is called with the target
  locale to get a list of `],
 						[/* inline code block */ 'i', `Locale`],
@@ -1552,7 +1552,7 @@ DocsCollector.collect('java.util.ResourceBundle', [
 					]],
 					[/* block */ 'b', [
 						[/* text */ 't', `The `],
-						[/* reference */ 'r', `.ResourceBundle.Control#newBundle(java.lang.String,java.util.Locale,java.lang.String,java.lang.ClassLoader,boolean)`],
+						[/* reference */ 'r', `java.util.ResourceBundle.Control#newBundle(java.lang.String,java.util.Locale,java.lang.String,java.lang.ClassLoader,boolean)`, `control.newBundle`],
 						[/* text */ 't', ` method is called to
  instantiate a `],
 						[/* inline code block */ 'i', `ResourceBundle`],
@@ -1686,7 +1686,7 @@ DocsCollector.collect('java.util.ResourceBundle', [
 					]],
 					[/* block */ 'b', [
 						[/* text */ 't', `The `],
-						[/* reference */ 'r', `.ResourceBundle.Control#getFallbackLocale(java.lang.String,java.util.Locale)`],
+						[/* reference */ 'r', `java.util.ResourceBundle.Control#getFallbackLocale(java.lang.String,java.util.Locale)`, `control.getFallbackLocale`],
 						[/* text */ 't', ` method is called to get a fallback
  locale (alternative to the current target locale) to try further
  finding a resource bundle. If the method returns a non-null locale,
@@ -1699,7 +1699,7 @@ DocsCollector.collect('java.util.ResourceBundle', [
 						[/* text */ 't', `At this point, we have found a resource bundle that's not the
  base bundle. If this bundle set its parent during its instantiation,
  it is returned to the caller. Otherwise, its `],
-						[/* reference */ 'r', `.ResourceBundle#parent_chain`],
+						[/* reference */ 'r', `java.util.ResourceBundle#parent_chain`, `parent chain`],
 						[/* text */ 't', ` is
  instantiated based on the list of candidate locales from which it was
  found. Finally, the bundle is returned to the caller.`]
@@ -1708,11 +1708,11 @@ DocsCollector.collect('java.util.ResourceBundle', [
 				[/* block */ 'b', [
 					[/* text */ 't', `During the resource bundle loading process above, this factory
  method looks up the cache before calling the `],
-					[/* reference */ 'r', `.ResourceBundle.Control#newBundle(java.lang.String,java.util.Locale,java.lang.String,java.lang.ClassLoader,boolean)`],
+					[/* reference */ 'r', `java.util.ResourceBundle.Control#newBundle(java.lang.String,java.util.Locale,java.lang.String,java.lang.ClassLoader,boolean)`, `control.newBundle`],
 					[/* text */ 't', ` method.  If the time-to-live period of the
  resource bundle found in the cache has expired, the factory method
  calls the `],
-					[/* reference */ 'r', `.ResourceBundle.Control#needsReload(java.lang.String,java.util.Locale,java.lang.String,java.lang.ClassLoader,java.util.ResourceBundle,long)`],
+					[/* reference */ 'r', `java.util.ResourceBundle.Control#needsReload(java.lang.String,java.util.Locale,java.lang.String,java.lang.ClassLoader,java.util.ResourceBundle,long)`, `control.needsReload`],
 					[/* text */ 't', `
  method to determine whether the resource bundle needs to be reloaded.
  If reloading is required, the factory method calls
@@ -1736,7 +1736,7 @@ DocsCollector.collect('java.util.ResourceBundle', [
 				[/* block */ 'b', [
 					[/* text */ 't', `All resource bundles loaded are cached by default. Refer to
  `],
-					[/* reference */ 'r', `.ResourceBundle.Control#getTimeToLive(java.lang.String,java.util.Locale)`],
+					[/* reference */ 'r', `java.util.ResourceBundle.Control#getTimeToLive(java.lang.String,java.util.Locale)`, `control.getTimeToLive`],
 					[/* text */ 't', ` for details.
 
  `]
@@ -1760,13 +1760,13 @@ DocsCollector.collect('java.util.ResourceBundle', [
 						[/* text */ 't', `Requested `],
 						[/* inline code block */ 'i', `Locale`],
 						[/* text */ 't', `: `],
-						[/* reference */ 'r', `.Locale#ITALY`]
+						[/* reference */ 'r', `java.util.Locale#ITALY`, `Locale.ITALY`]
 					]],
 					[/* block */ 'b', [
 						[/* text */ 't', `Default `],
 						[/* inline code block */ 'i', `Locale`],
 						[/* text */ 't', `: `],
-						[/* reference */ 'r', `.Locale#FRENCH`]
+						[/* reference */ 'r', `java.util.Locale#FRENCH`, `Locale.FRENCH`]
 					]],
 					[/* block */ 'b', [
 						[/* text */ 't', `Available resource bundles:
@@ -1823,7 +1823,7 @@ DocsCollector.collect('java.util.ResourceBundle', [
  because it's the base bundle.  `],
 					[/* inline code block */ 'i', `getBundle`],
 					[/* text */ 't', ` calls `],
-					[/* reference */ 'r', `.ResourceBundle.Control#getFallbackLocale(java.lang.String,java.util.Locale)`],
+					[/* reference */ 'r', `java.util.ResourceBundle.Control#getFallbackLocale(java.lang.String,java.util.Locale)`, `control.getFallbackLocale("foo.bar.Messages", Locale.ITALY)`],
 					[/* text */ 't', ` which
  returns `],
 					[/* inline code block */ 'i', `Locale.FRENCH`],
@@ -1943,7 +1943,7 @@ DocsCollector.collect('java.util.ResourceBundle', [
 					[/* text */ 't', ` Resource bundles in named modules may be encapsulated.  When
  the resource bundle is loaded from a
  `],
-					[/* reference */ 'r', `java.util.spi.ResourceBundleProvider`],
+					[/* reference */ 'r', `java.util.spi.ResourceBundleProvider`, `service provider`],
 					[/* text */ 't', `, the caller module
  must have an appropriate `],
 					[/* text */ 't', `uses`],
@@ -1951,21 +1951,21 @@ DocsCollector.collect('java.util.ResourceBundle', [
 					[/* text */ 't', `module descriptor`],
 					[/* text */ 't', `
  to declare that the module uses of `],
-					[/* reference */ 'r', `java.util.spi.ResourceBundleProvider`],
+					[/* reference */ 'r', `java.util.spi.ResourceBundleProvider`, `ResourceBundleProvider`],
 					[/* text */ 't', `
  for the named resource bundle.
  Otherwise, it will load the resource bundles that are local in the
  given module as if calling `],
-					[/* reference */ 'r', `java.Module#getResourceAsStream(java.lang.String)`],
+					[/* reference */ 'r', `java.lang.Module#getResourceAsStream(java.lang.String)`, `Module.getResourceAsStream(String)`],
 					[/* text */ 't', `
  or that are visible to the class loader of the given module
  as if calling `],
-					[/* reference */ 'r', `java.ClassLoader#getResourceAsStream(java.lang.String)`],
+					[/* reference */ 'r', `java.lang.ClassLoader#getResourceAsStream(java.lang.String)`, `ClassLoader.getResourceAsStream(String)`],
 					[/* text */ 't', `.
  When the resource bundle is loaded from the specified module, it is
  subject to the encapsulation rules specified by
  `],
-					[/* reference */ 'r', `java.Module#getResourceAsStream(java.lang.String)`],
+					[/* reference */ 'r', `java.lang.Module#getResourceAsStream(java.lang.String)`, `Module.getResourceAsStream`],
 					[/* text */ 't', `.
 
  `]
@@ -1980,7 +1980,7 @@ DocsCollector.collect('java.util.ResourceBundle', [
 					[/* text */ 't', ` to load
  resource bundles that are visible to the class loader of the given
  unnamed module. Custom `],
-					[/* reference */ 'r', `java.util.spi.ResourceBundleControlProvider`],
+					[/* reference */ 'r', `java.util.spi.ResourceBundleControlProvider`, `ResourceBundleControlProvider`],
 					[/* text */ 't', `
  implementations, if present, will only be invoked if the specified
  module is an unnamed module.`]

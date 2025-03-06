@@ -8,19 +8,19 @@ DocsCollector.collect('java.util.Comparator', [
 		[/* text */ 't', ` on
  some collection of objects.  Comparators can be passed to a sort
  method (such as `],
-		[/* reference */ 'r', `.Collections#sort(java.util.List,java.util.Comparator)`],
+		[/* reference */ 'r', `java.util.Collections#sort(java.util.List,java.util.Comparator)`, `Collections.sort`],
 		[/* text */ 't', ` or `],
-		[/* reference */ 'r', `.Arrays#sort(T[],java.util.Comparator)`],
+		[/* reference */ 'r', `java.util.Arrays#sort(T[],java.util.Comparator)`, `Arrays.sort`],
 		[/* text */ 't', `) to allow precise control over the sort order.
  Comparators can also be used to control the order of certain data
  structures (such as `],
-		[/* reference */ 'r', `java.util.SortedSet`],
+		[/* reference */ 'r', `java.util.SortedSet`, `sorted sets`],
 		[/* text */ 't', ` or
  `],
-		[/* reference */ 'r', `java.util.SortedMap`],
+		[/* reference */ 'r', `java.util.SortedMap`, `sorted maps`],
 		[/* text */ 't', `), or to provide an ordering for
  collections of objects that don't have a `],
-		[/* reference */ 'r', `java.lang.Comparable`],
+		[/* reference */ 'r', `java.lang.Comparable`, `natural ordering`],
 		[/* text */ 't', `.`],
 		[/* block */ 'b', [
 			[/* text */ 't', `
@@ -96,7 +96,7 @@ DocsCollector.collect('java.util.Comparator', [
 			[/* text */ 't', ` are not equivalent from the tree set's perspective, even though
  this is contrary to the specification of the
  `],
-			[/* reference */ 'r', `.Set#add(E)`],
+			[/* reference */ 'r', `java.util.Set#add(E)`, `Set.add`],
 			[/* text */ 't', ` method.`]
 		]],
 		[/* block */ 'b', [
@@ -107,9 +107,9 @@ DocsCollector.collect('java.util.Comparator', [
 			[/* inline code block */ 'i', `java.io.Serializable`],
 			[/* text */ 't', `, as they may be used as ordering methods in
  serializable data structures (like `],
-			[/* reference */ 'r', `java.util.TreeSet`],
+			[/* reference */ 'r', `java.util.TreeSet`, `TreeSet`],
 			[/* text */ 't', `, `],
-			[/* reference */ 'r', `java.util.TreeMap`],
+			[/* reference */ 'r', `java.util.TreeMap`, `TreeMap`],
 			[/* text */ 't', `).  In
  order for the data structure to serialize successfully, the comparator (if
  provided) must implement `],
@@ -162,7 +162,7 @@ DocsCollector.collect('java.util.Comparator', [
  equals`],
 		[/* text */ 't', `, we mean that the quotient for the ordering is the equivalence
  relation defined by the objects' `],
-		[/* reference */ 'r', `java.Object#equals(java.lang.Object)`],
+		[/* reference */ 'r', `java.lang.Object#equals(java.lang.Object)`, `equals(Object)`],
 		[/* text */ 't', ` method(s):`],
 		[/* code block */ 'c', `     {(x, y) such that x.equals(y)}. `],
 		[/* text */ 't', `
@@ -202,7 +202,7 @@ DocsCollector.collect('java.util.Comparator', [
 				[/* text */ 't', `Indicates whether some other object is "equal to"
  this comparator.  This method must obey the general contract of
  `],
-				[/* reference */ 'r', `java.Object#equals(java.lang.Object)`],
+				[/* reference */ 'r', `java.lang.Object#equals(java.lang.Object)`, `Object.equals(Object)`],
 				[/* text */ 't', `.  Additionally, this method can
  return `],
 				[/* inline code block */ 'i', `true`],
@@ -213,7 +213,7 @@ DocsCollector.collect('java.util.Comparator', [
 				[/* inline code block */ 'i', `comp1.equals(comp2)`],
 				[/* text */ 't', ` implies that
  `],
-				[/* reference */ 'r', `java.Integer#signum(int)`],
+				[/* reference */ 'r', `java.lang.Integer#signum(int)`, `signum`],
 				[/* inline code block */ 'i', `(comp1.compare(o1, o2))==signum(comp2.compare(o1, o2))`],
 				[/* text */ 't', ` for every object reference
  `],
@@ -258,7 +258,7 @@ DocsCollector.collect('java.util.Comparator', [
 					[/* text */ 't', `
 
  The implementor must ensure that `],
-					[/* reference */ 'r', `java.Integer#signum(int)`],
+					[/* reference */ 'r', `java.lang.Integer#signum(int)`, `signum`],
 					[/* inline code block */ 'i', `(compare(x, y)) == -signum(compare(y, x))`],
 					[/* text */ 't', ` for
  all `],
@@ -328,7 +328,7 @@ DocsCollector.collect('java.util.Comparator', [
 			[/* parameters */
 				[/* parameter */ 'keyExtractor', [/* parameter description */
 					[/* text */ 't', `the function used to extract the `],
-					[/* reference */ 'r', `java.lang.Comparable`],
+					[/* reference */ 'r', `java.lang.Comparable`, `Comparable`],
 					[/* text */ 't', ` sort key`]
 				]]
 			],
@@ -340,7 +340,7 @@ DocsCollector.collect('java.util.Comparator', [
 			[/* return description */
 				[/* text */ 't', `a lexicographic-order comparator composed of this and then the
          `],
-				[/* reference */ 'r', `java.lang.Comparable`],
+				[/* reference */ 'r', `java.lang.Comparable`, `Comparable`],
 				[/* text */ 't', ` sort key.`]
 			]
 		]],
@@ -490,14 +490,14 @@ DocsCollector.collect('java.util.Comparator', [
 		[/* method */ 'naturalOrder()', [
 			[/* method description */
 				[/* text */ 't', `Returns a comparator that compares `],
-				[/* reference */ 'r', `java.lang.Comparable`],
+				[/* reference */ 'r', `java.lang.Comparable`, `Comparable`],
 				[/* text */ 't', ` objects in natural
  order.
 
  `],
 				[/* block */ 'b', [
 					[/* text */ 't', `The returned comparator is serializable and throws `],
-					[/* reference */ 'r', `java.lang.NullPointerException`],
+					[/* reference */ 'r', `java.lang.NullPointerException`, `NullPointerException`],
 					[/* text */ 't', ` when comparing `],
 					[/* inline code block */ 'i', `null`],
 					[/* text */ 't', `.`]
@@ -523,7 +523,7 @@ DocsCollector.collect('java.util.Comparator', [
  `],
 				[/* block */ 'b', [
 					[/* text */ 't', `The returned comparator is serializable and throws `],
-					[/* reference */ 'r', `java.lang.NullPointerException`],
+					[/* reference */ 'r', `java.lang.NullPointerException`, `NullPointerException`],
 					[/* text */ 't', ` when comparing `],
 					[/* inline code block */ 'i', `null`],
 					[/* text */ 't', `.`]
@@ -543,7 +543,7 @@ DocsCollector.collect('java.util.Comparator', [
 		[/* method */ 'comparing(java.util.function.Function)', [
 			[/* method description */
 				[/* text */ 't', `Accepts a function that extracts a `],
-				[/* reference */ 'r', `java.lang.Comparable`],
+				[/* reference */ 'r', `java.lang.Comparable`, `Comparable`],
 				[/* text */ 't', ` sort key from a type `],
 				[/* inline code block */ 'i', `T`],
 				[/* text */ 't', `, and returns a `],
@@ -557,7 +557,7 @@ DocsCollector.collect('java.util.Comparator', [
 			[/* parameters */
 				[/* parameter */ 'keyExtractor', [/* parameter description */
 					[/* text */ 't', `the function used to extract the `],
-					[/* reference */ 'r', `java.lang.Comparable`],
+					[/* reference */ 'r', `java.lang.Comparable`, `Comparable`],
 					[/* text */ 't', ` sort key`]
 				]]
 			],
@@ -579,7 +579,7 @@ DocsCollector.collect('java.util.Comparator', [
 				[/* inline code block */ 'i', `Comparator<T>`],
 				[/* text */ 't', ` that compares by that sort key using
  the specified `],
-				[/* reference */ 'r', `java.util.Comparator`],
+				[/* reference */ 'r', `java.util.Comparator`, `Comparator`],
 				[/* text */ 't', `.
 
  `],

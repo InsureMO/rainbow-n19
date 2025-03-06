@@ -28,7 +28,7 @@ DocsCollector.collect('java.lang.module.ModuleDescriptor$Provides', [
 				]],
 				[/* block */ 'b', [
 					[/* text */ 't', ` This method satisfies the general contract of the `],
-					[/* reference */ 'r', `java.Object#equals(java.lang.Object)`],
+					[/* reference */ 'r', `java.lang.Object#equals(java.lang.Object)`, `Object.equals`],
 					[/* text */ 't', ` method. `]
 				]]
 			],
@@ -98,7 +98,7 @@ DocsCollector.collect('java.lang.module.ModuleDescriptor$Provides', [
 				[/* block */ 'b', [
 					[/* text */ 't', ` The hash code is based upon the service type and the set of
  providers. It satisfies the general contract of the `],
-					[/* reference */ 'r', `java.Object#hashCode()`],
+					[/* reference */ 'r', `java.lang.Object#hashCode()`, `Object.hashCode`],
 					[/* text */ 't', ` method. `]
 				]]
 			],

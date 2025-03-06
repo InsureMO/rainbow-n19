@@ -5,7 +5,7 @@ DocsCollector.collect('java.lang.StringBuffer', [
 	[/* class description */
 		[/* text */ 't', `A thread-safe, mutable sequence of characters.
  A string buffer is like a `],
-		[/* reference */ 'r', `java.lang.String`],
+		[/* reference */ 'r', `java.lang.String`, `String`],
 		[/* text */ 't', `, but can be modified. At any
  point in time it contains some particular sequence of characters, but
  the length and content of the sequence can be changed through certain
@@ -110,7 +110,7 @@ DocsCollector.collect('java.lang.StringBuffer', [
 			[/* inline code block */ 'i', `null`],
 			[/* text */ 't', ` argument to a constructor
  or method in this class will cause a `],
-			[/* reference */ 'r', `java.lang.NullPointerException`],
+			[/* reference */ 'r', `java.lang.NullPointerException`, `NullPointerException`],
 			[/* text */ 't', ` to be
  thrown.
  `]
@@ -119,7 +119,7 @@ DocsCollector.collect('java.lang.StringBuffer', [
 			[/* text */ 't', `
  As of  release JDK 5, this class has been supplemented with an equivalent
  class designed for use by a single thread, `],
-			[/* reference */ 'r', `java.lang.StringBuilder`],
+			[/* reference */ 'r', `java.lang.StringBuilder`, `StringBuilder`],
 			[/* text */ 't', `.  The
  `],
 			[/* inline code block */ 'i', `StringBuilder`],
@@ -282,7 +282,7 @@ DocsCollector.collect('java.lang.StringBuffer', [
 					[/* text */ 't', `
  The overall effect is exactly as if the second argument were
  converted to a string by the method `],
-					[/* reference */ 'r', `.String#valueOf(boolean)`],
+					[/* reference */ 'r', `java.lang.String#valueOf(boolean)`, `String.valueOf(boolean)`],
 					[/* text */ 't', `,
  and the characters of that string were then
  `],
@@ -299,7 +299,7 @@ DocsCollector.collect('java.lang.StringBuffer', [
  `],
 					[/* inline code block */ 'i', `0`],
 					[/* text */ 't', `, and less than or equal to the `],
-					[/* reference */ 'r', `.CharSequence#length()`],
+					[/* reference */ 'r', `java.lang.CharSequence#length()`, `length`],
 					[/* text */ 't', `
  of this sequence.`]
 				]]
@@ -334,7 +334,7 @@ DocsCollector.collect('java.lang.StringBuffer', [
 					[/* text */ 't', `
  The overall effect is exactly as if the second argument were
  converted to a string by the method `],
-					[/* reference */ 'r', `.String#valueOf(double)`],
+					[/* reference */ 'r', `java.lang.String#valueOf(double)`, `String.valueOf(double)`],
 					[/* text */ 't', `,
  and the characters of that string were then
  `],
@@ -351,7 +351,7 @@ DocsCollector.collect('java.lang.StringBuffer', [
  `],
 					[/* inline code block */ 'i', `0`],
 					[/* text */ 't', `, and less than or equal to the `],
-					[/* reference */ 'r', `.CharSequence#length()`],
+					[/* reference */ 'r', `java.lang.CharSequence#length()`, `length`],
 					[/* text */ 't', `
  of this sequence.`]
 				]]
@@ -386,7 +386,7 @@ DocsCollector.collect('java.lang.StringBuffer', [
 					[/* text */ 't', `
  The overall effect is exactly as if the second argument were
  converted to a string by the method `],
-					[/* reference */ 'r', `.String#valueOf(double)`],
+					[/* reference */ 'r', `java.lang.String#valueOf(double)`, `String.valueOf(float)`],
 					[/* text */ 't', `,
  and the characters of that string were then
  `],
@@ -403,7 +403,7 @@ DocsCollector.collect('java.lang.StringBuffer', [
  `],
 					[/* inline code block */ 'i', `0`],
 					[/* text */ 't', `, and less than or equal to the `],
-					[/* reference */ 'r', `.CharSequence#length()`],
+					[/* reference */ 'r', `java.lang.CharSequence#length()`, `length`],
 					[/* text */ 't', `
  of this sequence.`]
 				]]
@@ -438,7 +438,7 @@ DocsCollector.collect('java.lang.StringBuffer', [
 					[/* text */ 't', `
  The overall effect is exactly as if the second argument were
  converted to a string by the method `],
-					[/* reference */ 'r', `.String#valueOf(double)`],
+					[/* reference */ 'r', `java.lang.String#valueOf(double)`, `String.valueOf(int)`],
 					[/* text */ 't', `,
  and the characters of that string were then
  `],
@@ -455,7 +455,7 @@ DocsCollector.collect('java.lang.StringBuffer', [
  `],
 					[/* inline code block */ 'i', `0`],
 					[/* text */ 't', `, and less than or equal to the `],
-					[/* reference */ 'r', `.CharSequence#length()`],
+					[/* reference */ 'r', `java.lang.CharSequence#length()`, `length`],
 					[/* text */ 't', `
  of this sequence.`]
 				]]
@@ -545,7 +545,7 @@ DocsCollector.collect('java.lang.StringBuffer', [
 					[/* text */ 't', `
  The overall effect is exactly as if the second argument were
  converted to a string by the method `],
-					[/* reference */ 'r', `.String#valueOf(double)`],
+					[/* reference */ 'r', `java.lang.String#valueOf(double)`, `String.valueOf(long)`],
 					[/* text */ 't', `,
  and the characters of that string were then
  `],
@@ -562,7 +562,7 @@ DocsCollector.collect('java.lang.StringBuffer', [
  `],
 					[/* inline code block */ 'i', `0`],
 					[/* text */ 't', `, and less than or equal to the `],
-					[/* reference */ 'r', `.CharSequence#length()`],
+					[/* reference */ 'r', `java.lang.CharSequence#length()`, `length`],
 					[/* text */ 't', `
  of this sequence.`]
 				]]
@@ -614,7 +614,7 @@ DocsCollector.collect('java.lang.StringBuffer', [
 					[/* inline code block */ 'i', `char`],
 					[/* text */ 't', ` value specified by the index is a
  `],
-					[/* reference */ 'r', `.Character#unicode`],
+					[/* reference */ 'r', `java.lang.Character#unicode`, `surrogate`],
 					[/* text */ 't', `, the surrogate
  value is returned.`]
 				]]
@@ -664,7 +664,7 @@ DocsCollector.collect('java.lang.StringBuffer', [
 				[/* inline code block */ 'i', `0`],
 				[/* text */ 't', ` to
  `],
-				[/* reference */ 'r', `.CharSequence#length()`],
+				[/* reference */ 'r', `java.lang.CharSequence#length()`, `CharSequence.length()`],
 				[/* inline code block */ 'i', `- 1`],
 				[/* text */ 't', `.
 
@@ -716,7 +716,7 @@ DocsCollector.collect('java.lang.StringBuffer', [
  (Unicode code units) and ranges from `],
 				[/* inline code block */ 'i', `1`],
 				[/* text */ 't', ` to `],
-				[/* reference */ 'r', `.CharSequence#length()`],
+				[/* reference */ 'r', `java.lang.CharSequence#length()`, `CharSequence.length()`],
 				[/* text */ 't', `.
 
  `],
@@ -823,7 +823,7 @@ DocsCollector.collect('java.lang.StringBuffer', [
 				[/* text */ 't', ` instances lexicographically. This method
  follows the same rules for lexicographical comparison as defined in the
  `],
-				[/* reference */ 'r', `.CharSequence#compare(java.lang.CharSequence,java.lang.CharSequence)`],
+				[/* reference */ 'r', `java.lang.CharSequence#compare(java.lang.CharSequence,java.lang.CharSequence)`, `CharSequence.compare(this, another)`],
 				[/* text */ 't', ` method.
 
  `],
@@ -831,7 +831,7 @@ DocsCollector.collect('java.lang.StringBuffer', [
 					[/* text */ 't', `
  For finer-grained, locale-sensitive String comparison, refer to
  `],
-					[/* reference */ 'r', `java.text.Collator`],
+					[/* reference */ 'r', `java.text.Collator`, `Collator`],
 					[/* text */ 't', `.`]
 				]]
 			],
@@ -1035,7 +1035,7 @@ DocsCollector.collect('java.lang.StringBuffer', [
 
  This method is provided so that this class can
  implement the `],
-				[/* reference */ 'r', `java.lang.CharSequence`],
+				[/* reference */ 'r', `java.lang.CharSequence`, `CharSequence`],
 				[/* text */ 't', ` interface.`],
 				[/* block */ 'b', '']
 			],
@@ -1170,11 +1170,11 @@ DocsCollector.collect('java.lang.StringBuffer', [
 					[/* text */ 't', `
  The overall effect is exactly as if the argument were converted
  to a string by the method `],
-					[/* reference */ 'r', `.String#valueOf(boolean)`],
+					[/* reference */ 'r', `java.lang.String#valueOf(boolean)`, `String.valueOf(boolean)`],
 					[/* text */ 't', `,
  and the characters of that string were then
  `],
-					[/* reference */ 'r', `.Appendable#append(java.lang.CharSequence)`],
+					[/* reference */ 'r', `java.lang.Appendable#append(java.lang.CharSequence)`, `appended`],
 					[/* text */ 't', ` to this character sequence.`]
 				]]
 			],
@@ -1209,11 +1209,11 @@ DocsCollector.collect('java.lang.StringBuffer', [
 					[/* text */ 't', `
  The overall effect is exactly as if the argument were converted
  to a string by the method `],
-					[/* reference */ 'r', `.String#valueOf(double)`],
+					[/* reference */ 'r', `java.lang.String#valueOf(double)`, `String.valueOf(char)`],
 					[/* text */ 't', `,
  and the character in that string were then
  `],
-					[/* reference */ 'r', `.Appendable#append(java.lang.CharSequence)`],
+					[/* reference */ 'r', `java.lang.Appendable#append(java.lang.CharSequence)`, `appended`],
 					[/* text */ 't', ` to this character sequence.`]
 				]]
 			],
@@ -1245,11 +1245,11 @@ DocsCollector.collect('java.lang.StringBuffer', [
 					[/* text */ 't', `
  The overall effect is exactly as if the argument were converted
  to a string by the method `],
-					[/* reference */ 'r', `.String#valueOf(char[])`],
+					[/* reference */ 'r', `java.lang.String#valueOf(char[])`, `String.valueOf(char[])`],
 					[/* text */ 't', `,
  and the characters of that string were then
  `],
-					[/* reference */ 'r', `.Appendable#append(java.lang.CharSequence)`],
+					[/* reference */ 'r', `java.lang.Appendable#append(java.lang.CharSequence)`, `appended`],
 					[/* text */ 't', ` to this character sequence.`]
 				]]
 			],
@@ -1290,11 +1290,11 @@ DocsCollector.collect('java.lang.StringBuffer', [
 					[/* text */ 't', `
  The overall effect is exactly as if the arguments were converted
  to a string by the method `],
-					[/* reference */ 'r', `.String#valueOf(char[],int,int)`],
+					[/* reference */ 'r', `java.lang.String#valueOf(char[],int,int)`, `String.valueOf(char[],int,int)`],
 					[/* text */ 't', `,
  and the characters of that string were then
  `],
-					[/* reference */ 'r', `.Appendable#append(java.lang.CharSequence)`],
+					[/* reference */ 'r', `java.lang.Appendable#append(java.lang.CharSequence)`, `appended`],
 					[/* text */ 't', ` to this character sequence.`]
 				]]
 			],
@@ -1339,11 +1339,11 @@ DocsCollector.collect('java.lang.StringBuffer', [
 					[/* text */ 't', `
  The overall effect is exactly as if the argument were converted
  to a string by the method `],
-					[/* reference */ 'r', `.String#valueOf(double)`],
+					[/* reference */ 'r', `java.lang.String#valueOf(double)`, `String.valueOf(double)`],
 					[/* text */ 't', `,
  and the characters of that string were then
  `],
-					[/* reference */ 'r', `.Appendable#append(java.lang.CharSequence)`],
+					[/* reference */ 'r', `java.lang.Appendable#append(java.lang.CharSequence)`, `appended`],
 					[/* text */ 't', ` to this character sequence.`]
 				]]
 			],
@@ -1370,11 +1370,11 @@ DocsCollector.collect('java.lang.StringBuffer', [
 					[/* text */ 't', `
  The overall effect is exactly as if the argument were converted
  to a string by the method `],
-					[/* reference */ 'r', `.String#valueOf(double)`],
+					[/* reference */ 'r', `java.lang.String#valueOf(double)`, `String.valueOf(float)`],
 					[/* text */ 't', `,
  and the characters of that string were then
  `],
-					[/* reference */ 'r', `.Appendable#append(java.lang.CharSequence)`],
+					[/* reference */ 'r', `java.lang.Appendable#append(java.lang.CharSequence)`, `appended`],
 					[/* text */ 't', ` to this character sequence.`]
 				]]
 			],
@@ -1401,11 +1401,11 @@ DocsCollector.collect('java.lang.StringBuffer', [
 					[/* text */ 't', `
  The overall effect is exactly as if the argument were converted
  to a string by the method `],
-					[/* reference */ 'r', `.String#valueOf(double)`],
+					[/* reference */ 'r', `java.lang.String#valueOf(double)`, `String.valueOf(int)`],
 					[/* text */ 't', `,
  and the characters of that string were then
  `],
-					[/* reference */ 'r', `.Appendable#append(java.lang.CharSequence)`],
+					[/* reference */ 'r', `java.lang.Appendable#append(java.lang.CharSequence)`, `appended`],
 					[/* text */ 't', ` to this character sequence.`]
 				]]
 			],
@@ -1579,11 +1579,11 @@ DocsCollector.collect('java.lang.StringBuffer', [
 					[/* text */ 't', `
  The overall effect is exactly as if the argument were converted
  to a string by the method `],
-					[/* reference */ 'r', `.String#valueOf(java.lang.Object)`],
+					[/* reference */ 'r', `java.lang.String#valueOf(java.lang.Object)`, `String.valueOf(Object)`],
 					[/* text */ 't', `,
  and the characters of that string were then
  `],
-					[/* reference */ 'r', `.Appendable#append(java.lang.CharSequence)`],
+					[/* reference */ 'r', `java.lang.Appendable#append(java.lang.CharSequence)`, `appended`],
 					[/* text */ 't', ` to this character sequence.`]
 				]]
 			],
@@ -1746,11 +1746,11 @@ DocsCollector.collect('java.lang.StringBuffer', [
 					[/* text */ 't', `
  The overall effect is exactly as if the argument were converted
  to a string by the method `],
-					[/* reference */ 'r', `.String#valueOf(double)`],
+					[/* reference */ 'r', `java.lang.String#valueOf(double)`, `String.valueOf(long)`],
 					[/* text */ 't', `,
  and the characters of that string were then
  `],
-					[/* reference */ 'r', `.Appendable#append(java.lang.CharSequence)`],
+					[/* reference */ 'r', `java.lang.Appendable#append(java.lang.CharSequence)`, `appended`],
 					[/* text */ 't', ` to this character sequence.`]
 				]]
 			],
@@ -1778,7 +1778,7 @@ DocsCollector.collect('java.lang.StringBuffer', [
 					[/* text */ 't', ` The argument is appended to the contents of this sequence.
  The length of this sequence increases by
  `],
-					[/* reference */ 'r', `.Character#charCount(int)`],
+					[/* reference */ 'r', `java.lang.Character#charCount(int)`, `Character.charCount(codePoint)`],
 					[/* text */ 't', `.
 
  `]
@@ -1789,7 +1789,7 @@ DocsCollector.collect('java.lang.StringBuffer', [
 					[/* inline code block */ 'i', `char`],
 					[/* text */ 't', ` array by the method
  `],
-					[/* reference */ 'r', `.Character#toChars(int)`],
+					[/* reference */ 'r', `java.lang.Character#toChars(int)`, `Character.toChars(int)`],
 					[/* text */ 't', ` and the character in that array
  were then `],
 					[/* reference */ 'r', `#append(char%5B%5D)`, `appended`],
@@ -1906,7 +1906,7 @@ DocsCollector.collect('java.lang.StringBuffer', [
 					[/* text */ 't', `
  The overall effect is exactly as if the second argument were
  converted to a string by the method `],
-					[/* reference */ 'r', `.String#valueOf(double)`],
+					[/* reference */ 'r', `java.lang.String#valueOf(double)`, `String.valueOf(char)`],
 					[/* text */ 't', `,
  and the character in that string were then
  `],
@@ -1923,7 +1923,7 @@ DocsCollector.collect('java.lang.StringBuffer', [
  `],
 					[/* inline code block */ 'i', `0`],
 					[/* text */ 't', `, and less than or equal to the `],
-					[/* reference */ 'r', `.CharSequence#length()`],
+					[/* reference */ 'r', `java.lang.CharSequence#length()`, `length`],
 					[/* text */ 't', `
  of this sequence.`]
 				]]
@@ -1968,7 +1968,7 @@ DocsCollector.collect('java.lang.StringBuffer', [
 					[/* text */ 't', `
  The overall effect is exactly as if the second argument were
  converted to a string by the method `],
-					[/* reference */ 'r', `.String#valueOf(char[])`],
+					[/* reference */ 'r', `java.lang.String#valueOf(char[])`, `String.valueOf(char[])`],
 					[/* text */ 't', `,
  and the characters of that string were then
  `],
@@ -1985,7 +1985,7 @@ DocsCollector.collect('java.lang.StringBuffer', [
  `],
 					[/* inline code block */ 'i', `0`],
 					[/* text */ 't', `, and less than or equal to the `],
-					[/* reference */ 'r', `.CharSequence#length()`],
+					[/* reference */ 'r', `java.lang.CharSequence#length()`, `length`],
 					[/* text */ 't', `
  of this sequence.`]
 				]]
@@ -2152,7 +2152,7 @@ DocsCollector.collect('java.lang.StringBuffer', [
  `],
 					[/* inline code block */ 'i', `0`],
 					[/* text */ 't', `, and less than or equal to the `],
-					[/* reference */ 'r', `.CharSequence#length()`],
+					[/* reference */ 'r', `java.lang.CharSequence#length()`, `length`],
 					[/* text */ 't', `
  of this sequence.
  `]
@@ -2237,7 +2237,7 @@ DocsCollector.collect('java.lang.StringBuffer', [
 					[/* text */ 't', `
  The overall effect is exactly as if the second argument were
  converted to a string by the method `],
-					[/* reference */ 'r', `.String#valueOf(java.lang.Object)`],
+					[/* reference */ 'r', `java.lang.String#valueOf(java.lang.Object)`, `String.valueOf(Object)`],
 					[/* text */ 't', `,
  and the characters of that string were then
  `],
@@ -2254,7 +2254,7 @@ DocsCollector.collect('java.lang.StringBuffer', [
  `],
 					[/* inline code block */ 'i', `0`],
 					[/* text */ 't', `, and less than or equal to the `],
-					[/* reference */ 'r', `.CharSequence#length()`],
+					[/* reference */ 'r', `java.lang.CharSequence#length()`, `length`],
 					[/* text */ 't', `
  of this sequence.`]
 				]]
@@ -2354,7 +2354,7 @@ DocsCollector.collect('java.lang.StringBuffer', [
  `],
 					[/* inline code block */ 'i', `0`],
 					[/* text */ 't', `, and less than or equal to the `],
-					[/* reference */ 'r', `.CharSequence#length()`],
+					[/* reference */ 'r', `java.lang.CharSequence#length()`, `length`],
 					[/* text */ 't', `
  of this sequence.`]
 				]]

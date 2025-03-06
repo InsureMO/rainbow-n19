@@ -125,7 +125,7 @@ DocsCollector.collect('java.util.Hashtable', [
  `],
 			[/* inline code block */ 'i', `remove`],
 			[/* text */ 't', ` method, the iterator will throw a `],
-			[/* reference */ 'r', `java.util.ConcurrentModificationException`],
+			[/* reference */ 'r', `java.util.ConcurrentModificationException`, `ConcurrentModificationException`],
 			[/* text */ 't', `.  Thus, in the face of concurrent
  modification, the iterator fails quickly and cleanly, rather than risking
  arbitrary, non-deterministic behavior at an undetermined time in the future.
@@ -157,7 +157,7 @@ DocsCollector.collect('java.util.Hashtable', [
 		[/* block */ 'b', [
 			[/* text */ 't', `As of the Java 2 platform v1.2, this class was retrofitted to
  implement the `],
-			[/* reference */ 'r', `java.util.Map`],
+			[/* reference */ 'r', `java.util.Map`, `Map`],
 			[/* text */ 't', ` interface, making it a member of the
  `],
 			[/* text */ 't', `Java Collections Framework`],
@@ -167,13 +167,13 @@ DocsCollector.collect('java.util.Hashtable', [
 			[/* text */ 't', ` is synchronized.  If a
  thread-safe implementation is not needed, it is recommended to use
  `],
-			[/* reference */ 'r', `java.util.HashMap`],
+			[/* reference */ 'r', `java.util.HashMap`, `HashMap`],
 			[/* text */ 't', ` in place of `],
 			[/* inline code block */ 'i', `Hashtable`],
 			[/* text */ 't', `.  If a thread-safe
  highly-concurrent implementation is desired, then it is recommended
  to use `],
-			[/* reference */ 'r', `java.util.concurrent.ConcurrentHashMap`],
+			[/* reference */ 'r', `java.util.concurrent.ConcurrentHashMap`, `ConcurrentHashMap`],
 			[/* text */ 't', ` in place of
  `],
 			[/* inline code block */ 'i', `Hashtable`],
@@ -267,7 +267,7 @@ DocsCollector.collect('java.util.Hashtable', [
 					[/* text */ 't', `Note that this method is identical in functionality to `],
 					[/* reference */ 'r', `#contains(java.lang.Object)`, `contains`],
 					[/* text */ 't', ` (which predates the `],
-					[/* reference */ 'r', `java.util.Map`],
+					[/* reference */ 'r', `java.util.Map`, `Map`],
 					[/* text */ 't', ` interface).`]
 				]]
 			],
@@ -291,7 +291,7 @@ DocsCollector.collect('java.util.Hashtable', [
 		[/* method */ 'values()', [
 			[/* method description */
 				[/* text */ 't', `Returns a `],
-				[/* reference */ 'r', `java.util.Collection`],
+				[/* reference */ 'r', `java.util.Collection`, `Collection`],
 				[/* text */ 't', ` view of the values contained in this map.
  The collection is backed by the map, so changes to the map are
  reflected in the collection, and vice-versa.  If the map is
@@ -329,7 +329,7 @@ DocsCollector.collect('java.util.Hashtable', [
 		[/* method */ 'entrySet()', [
 			[/* method description */
 				[/* text */ 't', `Returns a `],
-				[/* reference */ 'r', `java.util.Set`],
+				[/* reference */ 'r', `java.util.Set`, `Set`],
 				[/* text */ 't', ` view of the mappings contained in this map.
  The set is backed by the map, so changes to the map are
  reflected in the set, and vice-versa.  If the map is modified
@@ -370,7 +370,7 @@ DocsCollector.collect('java.util.Hashtable', [
 		[/* method */ 'keySet()', [
 			[/* method description */
 				[/* text */ 't', `Returns a `],
-				[/* reference */ 'r', `java.util.Set`],
+				[/* reference */ 'r', `java.util.Set`, `Set`],
 				[/* text */ 't', ` view of the keys contained in this map.
  The set is backed by the map, so changes to the map are
  reflected in the set, and vice-versa.  If the map is modified
@@ -419,7 +419,7 @@ DocsCollector.collect('java.util.Hashtable', [
 					[/* reference */ 'r', `#containsValue(java.lang.Object)`, `containsValue`],
 					[/* text */ 't', `, (which is part of the
  `],
-					[/* reference */ 'r', `java.util.Map`],
+					[/* reference */ 'r', `java.util.Map`, `Map`],
 					[/* text */ 't', ` interface in the collections framework).`]
 				]]
 			],
@@ -604,7 +604,7 @@ DocsCollector.collect('java.util.Hashtable', [
 				]],
 				[/* text */ 't', `
  (Method `],
-				[/* reference */ 'r', `.Map#merge(K,V,java.util.function.BiFunction)`],
+				[/* reference */ 'r', `java.util.Map#merge(K,V,java.util.function.BiFunction)`, `merge()`],
 				[/* text */ 't', ` is often simpler to use for such purposes.)
 
  `],
@@ -624,7 +624,7 @@ DocsCollector.collect('java.util.Hashtable', [
 				[/* block */ 'b', [
 					[/* text */ 't', `This method will, on a best-effort basis, throw a
  `],
-					[/* reference */ 'r', `java.util.ConcurrentModificationException`],
+					[/* reference */ 'r', `java.util.ConcurrentModificationException`, `ConcurrentModificationException`],
 					[/* text */ 't', ` if the remapping
  function modified this map during computation.`]
 				]]
@@ -691,7 +691,7 @@ DocsCollector.collect('java.util.Hashtable', [
 				[/* block */ 'b', [
 					[/* text */ 't', `This method will, on a best-effort basis, throw a
  `],
-					[/* reference */ 'r', `java.util.ConcurrentModificationException`],
+					[/* reference */ 'r', `java.util.ConcurrentModificationException`, `ConcurrentModificationException`],
 					[/* text */ 't', ` if the mapping
  function modified this map during computation.`]
 				]]
@@ -736,7 +736,7 @@ DocsCollector.collect('java.util.Hashtable', [
 				[/* block */ 'b', [
 					[/* text */ 't', `This method will, on a best-effort basis, throw a
  `],
-					[/* reference */ 'r', `java.util.ConcurrentModificationException`],
+					[/* reference */ 'r', `java.util.ConcurrentModificationException`, `ConcurrentModificationException`],
 					[/* text */ 't', ` if the remapping
  function modified this map during computation.`]
 				]]
@@ -835,7 +835,7 @@ DocsCollector.collect('java.util.Hashtable', [
 				[/* block */ 'b', [
 					[/* text */ 't', `This method will, on a best-effort basis, throw a
  `],
-					[/* reference */ 'r', `java.util.ConcurrentModificationException`],
+					[/* reference */ 'r', `java.util.ConcurrentModificationException`, `ConcurrentModificationException`],
 					[/* text */ 't', ` if the remapping
  function modified this map during computation.`]
 				]]

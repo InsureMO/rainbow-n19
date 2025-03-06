@@ -29,7 +29,7 @@ DocsCollector.collect('java.lang.invoke.MethodHandleProxies', [
 					[/* text */ 't', `)
  are disregarded as are any default (non-abstract) methods.
  For example, `],
-					[/* reference */ 'r', `java.util.Comparator`],
+					[/* reference */ 'r', `java.util.Comparator`, `Comparator`],
 					[/* text */ 't', ` is a single-method interface,
  even though it re-declares the `],
 					[/* inline code block */ 'i', `Object.equals`],
@@ -42,7 +42,7 @@ DocsCollector.collect('java.lang.invoke.MethodHandleProxies', [
 				[/* block */ 'b', [
 					[/* text */ 't', `
  The interface must be public and not `],
-					[/* reference */ 'r', `java.Class#isSealed()`],
+					[/* reference */ 'r', `java.lang.Class#isSealed()`, `sealed`],
 					[/* text */ 't', `.
  No additional access checks are performed.
  `]
@@ -95,7 +95,7 @@ DocsCollector.collect('java.lang.invoke.MethodHandleProxies', [
  Implementations may not bundle together
  multiple single-method interfaces onto single implementation classes
  in the style of `],
-					[/* reference */ 'r', `java.awt.AWTEventMulticaster`],
+					[/* reference */ 'r', `java.awt.AWTEventMulticaster`, `AWTEventMulticaster`],
 					[/* text */ 't', `.
  `]
 				]],
@@ -108,7 +108,7 @@ DocsCollector.collect('java.lang.invoke.MethodHandleProxies', [
  not declared by the requested type's single abstract method.
  If this happens, the throwable will be wrapped in an instance of
  `],
-					[/* reference */ 'r', `java.lang.reflect.UndeclaredThrowableException`],
+					[/* reference */ 'r', `java.lang.reflect.UndeclaredThrowableException`, `UndeclaredThrowableException`],
 					[/* text */ 't', `
  and thrown in that wrapped form.
  `]
@@ -116,7 +116,7 @@ DocsCollector.collect('java.lang.invoke.MethodHandleProxies', [
 				[/* block */ 'b', [
 					[/* text */ 't', `
  Like `],
-					[/* reference */ 'r', `java.Integer#valueOf(java.lang.String,int)`],
+					[/* reference */ 'r', `java.lang.Integer#valueOf(java.lang.String,int)`, `Integer.valueOf`],
 					[/* text */ 't', `,
  `],
 					[/* inline code block */ 'i', `asInterfaceInstance`],
@@ -128,7 +128,7 @@ DocsCollector.collect('java.lang.invoke.MethodHandleProxies', [
 				[/* block */ 'b', [
 					[/* text */ 't', `
  Because of the possibility of `],
-					[/* reference */ 'r', `java.Method#isBridge()`],
+					[/* reference */ 'r', `java.lang.reflect.Method#isBridge()`, `bridge methods`],
 					[/* text */ 't', `
  and other corner cases, the interface may also have several abstract methods
  with the same name but having distinct descriptors (types of returns and parameters).

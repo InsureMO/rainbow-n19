@@ -4,7 +4,7 @@ import {DocsCollector} from '../../../DocsCollector';
 DocsCollector.collect('java.util.concurrent.Executor', [
 	[/* class description */
 		[/* text */ 't', `An object that executes submitted `],
-		[/* reference */ 'r', `java.lang.Runnable`],
+		[/* reference */ 'r', `java.lang.Runnable`, `Runnable`],
 		[/* text */ 't', ` tasks. This
  interface provides a way of decoupling task submission from the
  mechanics of how each task will be run, including details of thread
@@ -100,13 +100,13 @@ DocsCollector.collect('java.util.concurrent.Executor', [
 		[/* inline code block */ 'i', `Executor`],
 		[/* text */ 't', ` implementations provided in this package
  implement `],
-		[/* reference */ 'r', `java.util.concurrent.ExecutorService`],
+		[/* reference */ 'r', `java.util.concurrent.ExecutorService`, `ExecutorService`],
 		[/* text */ 't', `, which is a more extensive
  interface.  The `],
-		[/* reference */ 'r', `java.util.concurrent.ThreadPoolExecutor`],
+		[/* reference */ 'r', `java.util.concurrent.ThreadPoolExecutor`, `ThreadPoolExecutor`],
 		[/* text */ 't', ` class provides an
  extensible thread pool implementation. The `],
-		[/* reference */ 'r', `java.util.concurrent.Executors`],
+		[/* reference */ 'r', `java.util.concurrent.Executors`, `Executors`],
 		[/* text */ 't', ` class
  provides convenient factory methods for these Executors.
 
@@ -117,7 +117,7 @@ DocsCollector.collect('java.util.concurrent.Executor', [
 			[/* inline code block */ 'i', `Runnable`],
 			[/* text */ 't', ` object to an `],
 			[/* inline code block */ 'i', `Executor`],
-			[/* reference */ 'r', `.package-summary#MemoryVisibility`],
+			[/* text */ 't', `happen-before`],
 			[/* text */ 't', `
  its execution begins, perhaps in another thread.`]
 		]]

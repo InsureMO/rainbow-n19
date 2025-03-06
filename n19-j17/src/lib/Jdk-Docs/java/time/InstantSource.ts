@@ -11,7 +11,7 @@ DocsCollector.collect('java.time.InstantSource', [
  For example, `],
 			[/* inline code block */ 'i', `InstantSource`],
 			[/* text */ 't', ` can be used instead of `],
-			[/* reference */ 'r', `java.System#currentTimeMillis()`],
+			[/* reference */ 'r', `java.lang.System#currentTimeMillis()`, `System.currentTimeMillis()`],
 			[/* text */ 't', `.
  `]
 		]],
@@ -59,7 +59,7 @@ DocsCollector.collect('java.time.InstantSource', [
 			[/* inline code block */ 'i', `system`],
 			[/* text */ 't', ` factory method provides a source based on the best available
  system clock. This may use `],
-			[/* reference */ 'r', `java.System#currentTimeMillis()`],
+			[/* reference */ 'r', `java.lang.System#currentTimeMillis()`, `System.currentTimeMillis()`],
 			[/* text */ 't', `, or a higher
  resolution clock if one is available.`]
 		]]
@@ -91,7 +91,7 @@ DocsCollector.collect('java.time.InstantSource', [
 				[/* block */ 'b', [
 					[/* text */ 't', `
  This returns a `],
-					[/* reference */ 'r', `java.time.Clock`],
+					[/* reference */ 'r', `java.time.Clock`, `Clock`],
 					[/* text */ 't', `, which is an extension of this interface
  that combines this source and the specified time-zone.
  `]
@@ -122,14 +122,14 @@ DocsCollector.collect('java.time.InstantSource', [
 					[/* text */ 't', `
  This returns the millisecond-based instant, measured from 1970-01-01T00:00Z (UTC).
  This is equivalent to the definition of `],
-					[/* reference */ 'r', `java.System#currentTimeMillis()`],
+					[/* reference */ 'r', `java.lang.System#currentTimeMillis()`, `System.currentTimeMillis()`],
 					[/* text */ 't', `.
  `]
 				]],
 				[/* block */ 'b', [
 					[/* text */ 't', `
  Most applications should avoid this method and use `],
-					[/* reference */ 'r', `java.time.Instant`],
+					[/* reference */ 'r', `java.time.Instant`, `Instant`],
 					[/* text */ 't', ` to represent
  an instant on the time-line rather than a raw millisecond value.
  This method is provided to allow the use of the source in high performance use cases
@@ -219,7 +219,7 @@ DocsCollector.collect('java.time.InstantSource', [
 					[/* text */ 't', `
  This source is based on the best available system clock. This may use
  `],
-					[/* reference */ 'r', `java.System#currentTimeMillis()`],
+					[/* reference */ 'r', `java.lang.System#currentTimeMillis()`, `System.currentTimeMillis()`],
 					[/* text */ 't', `, or a higher resolution system clock if
  one is available.
  `]

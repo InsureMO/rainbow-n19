@@ -6,13 +6,13 @@ DocsCollector.collect('java.nio.file.attribute.FileTime', [
 		[/* text */ 't', `Represents the value of a file's time stamp attribute. For example, it may
  represent the time that the file was last
  `],
-		[/* reference */ 'r', `.BasicFileAttributes#lastModifiedTime()`],
+		[/* reference */ 'r', `java.nio.file.attribute.BasicFileAttributes#lastModifiedTime()`, `modified`],
 		[/* text */ 't', `,
  `],
-		[/* reference */ 'r', `.BasicFileAttributes#lastAccessTime()`],
+		[/* reference */ 'r', `java.nio.file.attribute.BasicFileAttributes#lastAccessTime()`, `accessed`],
 		[/* text */ 't', `,
  or `],
-		[/* reference */ 'r', `.BasicFileAttributes#creationTime()`],
+		[/* reference */ 'r', `java.nio.file.attribute.BasicFileAttributes#creationTime()`, `created`],
 		[/* text */ 't', `.
 
  `],
@@ -95,7 +95,7 @@ DocsCollector.collect('java.nio.file.attribute.FileTime', [
 				[/* block */ 'b', [
 					[/* text */ 't', ` The hash code is based upon the value represented, and satisfies the
  general contract of the `],
-					[/* reference */ 'r', `java.nio.file.Object#hashCode()`],
+					[/* reference */ 'r', `java.lang.Object#hashCode()`, `Object.hashCode()`],
 					[/* text */ 't', ` method.`]
 				]]
 			],
@@ -189,12 +189,12 @@ DocsCollector.collect('java.nio.file.attribute.FileTime', [
 					[/* inline code block */ 'i', `Instant`],
 					[/* text */ 't', `. Conversion
  from such further time points saturates to `],
-					[/* reference */ 'r', `java.nio.file.Instant#MIN`],
+					[/* reference */ 'r', `java.time.Instant#MIN`, `Instant.MIN`],
 					[/* text */ 't', ` if
  earlier than `],
 					[/* inline code block */ 'i', `Instant.MIN`],
 					[/* text */ 't', ` or `],
-					[/* reference */ 'r', `java.nio.file.Instant#MAX`],
+					[/* reference */ 'r', `java.time.Instant#MAX`, `Instant.MAX`],
 					[/* text */ 't', ` if later
  than `],
 					[/* inline code block */ 'i', `Instant.MAX`],

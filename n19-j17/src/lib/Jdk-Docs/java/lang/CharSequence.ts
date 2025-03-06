@@ -18,15 +18,15 @@ DocsCollector.collect('java.lang.CharSequence', [
 		[/* text */ 't', `Basic
  Multilingual Plane (BMP)`],
 		[/* text */ 't', ` or a surrogate. Refer to `],
-		[/* reference */ 'r', `.Character#unicode`],
+		[/* reference */ 'r', `java.lang.Character#unicode`, `Unicode Character Representation`],
 		[/* text */ 't', ` for details.
 
  `],
 		[/* block */ 'b', [
 			[/* text */ 't', ` This interface does not refine the general contracts of the `],
-			[/* reference */ 'r', `.Object#equals(java.lang.Object)`],
+			[/* reference */ 'r', `java.lang.Object#equals(java.lang.Object)`, `equals`],
 			[/* text */ 't', ` and `],
-			[/* reference */ 'r', `.Object#hashCode()`],
+			[/* reference */ 'r', `java.lang.Object#hashCode()`, `hashCode`],
 			[/* text */ 't', ` methods. The result of testing two objects
  that implement `],
 			[/* inline code block */ 'i', `CharSequence`],
@@ -62,7 +62,7 @@ DocsCollector.collect('java.lang.CharSequence', [
 					[/* inline code block */ 'i', `char`],
 					[/* text */ 't', ` value specified by the index is a
  `],
-					[/* text */ 't', `surrogate`],
+					[/* reference */ 'r', `java.lang.Character#unicode`, `surrogate`],
 					[/* text */ 't', `, the surrogate
  value is returned.`]
 				]]
@@ -196,7 +196,7 @@ DocsCollector.collect('java.lang.CharSequence', [
 				[/* inline code block */ 'i', `char`],
 				[/* text */ 't', ` values
  from this sequence.  Any char which maps to a `],
-				[/* text */ 't', `surrogate code point`],
+				[/* reference */ 'r', `java.lang.Character#unicode`, `surrogate code point`],
 				[/* text */ 't', ` is passed through uninterpreted.
 
  `],
@@ -204,7 +204,7 @@ DocsCollector.collect('java.lang.CharSequence', [
 					[/* text */ 't', `The stream binds to this sequence when the terminal stream operation
  commences (specifically, for mutable sequences the spliterator for the
  stream is `],
-					[/* reference */ 'r', `java.Spliterator#binding`],
+					[/* reference */ 'r', `java.util.Spliterator#binding`, `late-binding`],
 					[/* text */ 't', `).
  If the sequence is modified during that operation then the result is
  undefined.`]
@@ -220,7 +220,7 @@ DocsCollector.collect('java.lang.CharSequence', [
 			[/* method description */
 				[/* text */ 't', `Returns a stream of code point values from this sequence.  Any surrogate
  pairs encountered in the sequence are combined as if by `],
-				[/* reference */ 'r', `.Character#toCodePoint(char,char)`],
+				[/* reference */ 'r', `java.lang.Character#toCodePoint(char,char)`, `Character.toCodePoint`],
 				[/* text */ 't', ` and the result is passed
  to the stream. Any other code units, including ordinary BMP characters,
  unpaired surrogates, and undefined code units, are zero-extended to
@@ -233,7 +233,7 @@ DocsCollector.collect('java.lang.CharSequence', [
 					[/* text */ 't', `The stream binds to this sequence when the terminal stream operation
  commences (specifically, for mutable sequences the spliterator for the
  stream is `],
-					[/* reference */ 'r', `java.Spliterator#binding`],
+					[/* reference */ 'r', `java.util.Spliterator#binding`, `late-binding`],
 					[/* text */ 't', `).
  If the sequence is modified during that operation then the result is
  undefined.`]

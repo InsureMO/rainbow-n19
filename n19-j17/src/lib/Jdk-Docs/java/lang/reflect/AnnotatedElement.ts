@@ -28,7 +28,7 @@ DocsCollector.collect('java.lang.reflect.AnnotatedElement', [
 		[/* text */ 't', `.
 
  Note that any annotations returned by methods on the `],
-		[/* reference */ 'r', `java.lang.reflect.AnnotatedType`],
+		[/* reference */ 'r', `java.lang.reflect.AnnotatedType`, `AnnotatedType`],
 		[/* text */ 't', ` interface and its subinterfaces are
  type annotations as the entity being potentially annotated is a
  type. Annotations returned by methods outside of the `],
@@ -558,12 +558,12 @@ DocsCollector.collect('java.lang.reflect.AnnotatedElement', [
 		[/* block */ 'b', [
 			[/* text */ 't', `If an annotation returned by a method in this interface contains
  (directly or indirectly) a `],
-			[/* reference */ 'r', `java.lang.Class`],
+			[/* reference */ 'r', `java.lang.Class`, `Class`],
 			[/* text */ 't', `-valued member referring to
  a class that is not accessible in this VM, attempting to read the class
  by calling the relevant Class-returning method on the returned annotation
  will result in a `],
-			[/* reference */ 'r', `java.lang.TypeNotPresentException`],
+			[/* reference */ 'r', `java.lang.TypeNotPresentException`, `TypeNotPresentException`],
 			[/* text */ 't', `.
 
  `]
@@ -571,7 +571,7 @@ DocsCollector.collect('java.lang.reflect.AnnotatedElement', [
 		[/* block */ 'b', [
 			[/* text */ 't', `Similarly, attempting to read an enum-valued member will result in
  a `],
-			[/* reference */ 'r', `java.lang.EnumConstantNotPresentException`],
+			[/* reference */ 'r', `java.lang.EnumConstantNotPresentException`, `EnumConstantNotPresentException`],
 			[/* text */ 't', ` if the enum constant in the
  annotation is no longer present in the enum class.
 
@@ -596,7 +596,7 @@ DocsCollector.collect('java.lang.reflect.AnnotatedElement', [
 			[/* inline code block */ 'i', `[]`],
 			[/* text */ 't', `, then an exception of type
  `],
-			[/* reference */ 'r', `java.lang.annotation.AnnotationFormatError`],
+			[/* reference */ 'r', `java.lang.annotation.AnnotationFormatError`, `AnnotationFormatError`],
 			[/* text */ 't', ` is thrown.
 
  `]
@@ -604,10 +604,10 @@ DocsCollector.collect('java.lang.reflect.AnnotatedElement', [
 		[/* block */ 'b', [
 			[/* text */ 't', `Finally, attempting to read a member whose definition has evolved
  incompatibly will result in a `],
-			[/* reference */ 'r', `java.lang.annotation.AnnotationTypeMismatchException`],
+			[/* reference */ 'r', `java.lang.annotation.AnnotationTypeMismatchException`, `AnnotationTypeMismatchException`],
 			[/* text */ 't', ` or an
  `],
-			[/* reference */ 'r', `java.lang.annotation.IncompleteAnnotationException`],
+			[/* reference */ 'r', `java.lang.annotation.IncompleteAnnotationException`, `IncompleteAnnotationException`],
 			[/* text */ 't', `.`]
 		]]
 	],

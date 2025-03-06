@@ -6,7 +6,7 @@ DocsCollector.collect('java.lang.invoke.ConstantCallSite', [
 		[/* text */ 't', `A `],
 		[/* inline code block */ 'i', `ConstantCallSite`],
 		[/* text */ 't', ` is a `],
-		[/* reference */ 'r', `java.lang.invoke.CallSite`],
+		[/* reference */ 'r', `java.lang.invoke.CallSite`, `CallSite`],
 		[/* text */ 't', ` whose target is permanent, and can never be changed.
  An `],
 		[/* inline code block */ 'i', `invokedynamic`],
@@ -120,7 +120,7 @@ DocsCollector.collect('java.lang.invoke.ConstantCallSite', [
 				[/* text */ 't', `Returns this call site's permanent target.
  Since that target will never change, this is a correct implementation
  of `],
-				[/* reference */ 'r', `.CallSite#dynamicInvoker()`],
+				[/* reference */ 'r', `java.lang.invoke.CallSite#dynamicInvoker()`, `CallSite.dynamicInvoker`],
 				[/* text */ 't', `.`]
 			],
 			/* parameters */ UDF,
@@ -161,7 +161,7 @@ DocsCollector.collect('java.lang.invoke.ConstantCallSite', [
 		[/* method */ 'setTarget(java.lang.invoke.MethodHandle)', [
 			[/* method description */
 				[/* text */ 't', `Always throws an `],
-				[/* reference */ 'r', `java.lang.UnsupportedOperationException`],
+				[/* reference */ 'r', `java.lang.UnsupportedOperationException`, `UnsupportedOperationException`],
 				[/* text */ 't', `.
  This kind of call site cannot change its target.`]
 			],

@@ -50,15 +50,15 @@ DocsCollector.collect('java.io.RandomAccessFile', [
 			[/* constructor description */
 				[/* text */ 't', `Creates a random access file stream to read from, and optionally to
  write to, the file specified by the `],
-				[/* reference */ 'r', `java.io.File`],
+				[/* reference */ 'r', `java.io.File`, `File`],
 				[/* text */ 't', ` argument.  A new `],
-				[/* reference */ 'r', `java.io.FileDescriptor`],
+				[/* reference */ 'r', `java.io.FileDescriptor`, `FileDescriptor`],
 				[/* text */ 't', ` object is created to represent this file connection.
 
  `],
 				[/* block */ 'b', [
 					[/* text */ 't', `The `],
-					[/* text */ 't', `mode`],
+					[/* anchor */ 'r', '#-id', `mode`, `mode`],
 					[/* text */ 't', ` argument specifies the access mode
  in which the file is to be opened.  The permitted values and their
  meanings are:
@@ -88,7 +88,7 @@ DocsCollector.collect('java.io.RandomAccessFile', [
 								[/* text */ 't', `
      methods of the resulting object will cause an
      `],
-								[/* reference */ 'r', `java.io.IOException`],
+								[/* reference */ 'r', `java.io.IOException`, `IOException`],
 								[/* text */ 't', ` to be thrown.`]
 							]]
 						]],
@@ -134,10 +134,10 @@ DocsCollector.collect('java.io.RandomAccessFile', [
 				[/* text */ 't', ` and `],
 				[/* inline code block */ 'i', `"rwd"`],
 				[/* text */ 't', ` modes work much like the `],
-				[/* reference */ 'r', `java.channels.FileChannel#force(boolean)`],
+				[/* reference */ 'r', `java.nio.channels.FileChannel#force(boolean)`, `force(boolean)`],
 				[/* text */ 't', ` method of
  the `],
-				[/* reference */ 'r', `java.nio.channels.FileChannel`],
+				[/* reference */ 'r', `java.nio.channels.FileChannel`, `FileChannel`],
 				[/* text */ 't', ` class, passing arguments of
  `],
 				[/* inline code block */ 'i', `true`],
@@ -238,7 +238,7 @@ DocsCollector.collect('java.io.RandomAccessFile', [
 				[/* text */ 't', `Creates a random access file stream to read from, and optionally
  to write to, a file with the specified name. A new
  `],
-				[/* reference */ 'r', `java.io.FileDescriptor`],
+				[/* reference */ 'r', `java.io.FileDescriptor`, `FileDescriptor`],
 				[/* text */ 't', ` object is created to represent the
  connection to the file.
 
@@ -684,7 +684,7 @@ DocsCollector.collect('java.io.RandomAccessFile', [
 				[/* text */ 't', `Reads in a string from this file. The string has been encoded
  using a
  `],
-				[/* reference */ 'r', `.DataInput#modified-utf-8`],
+				[/* reference */ 'r', `java.io.DataInput#modified-utf-8`, `modified UTF-8`],
 				[/* text */ 't', `
  format.
  `],
@@ -726,14 +726,14 @@ DocsCollector.collect('java.io.RandomAccessFile', [
 		[/* method */ 'getChannel()', [
 			[/* method description */
 				[/* text */ 't', `Returns the unique `],
-				[/* reference */ 'r', `java.nio.channels.FileChannel`],
+				[/* reference */ 'r', `java.nio.channels.FileChannel`, `FileChannel`],
 				[/* text */ 't', `
  object associated with this file.
 
  `],
 				[/* block */ 'b', [
 					[/* text */ 't', ` The `],
-					[/* reference */ 'r', `java.channels.FileChannel#position()`],
+					[/* reference */ 'r', `java.nio.channels.FileChannel#position()`, `position`],
 					[/* text */ 't', ` of the returned channel will always be equal to
  this object's file-pointer offset as returned by the `],
 					[/* reference */ 'r', `#getFilePointer()`, `getFilePointer`],
@@ -1182,7 +1182,7 @@ DocsCollector.collect('java.io.RandomAccessFile', [
 			[/* method description */
 				[/* text */ 't', `Writes a string to the file using
  `],
-				[/* reference */ 'r', `.DataInput#modified-utf-8`],
+				[/* reference */ 'r', `java.io.DataInput#modified-utf-8`, `modified UTF-8`],
 				[/* text */ 't', `
  encoding in a machine-independent manner.
  `],
@@ -1228,7 +1228,7 @@ DocsCollector.collect('java.io.RandomAccessFile', [
 					[/* inline code block */ 'i', `InputStream`],
 					[/* text */ 't', `, this method behaves in exactly the same
  way as the `],
-					[/* reference */ 'r', `.InputStream#read()`],
+					[/* reference */ 'r', `java.io.InputStream#read()`, `InputStream.read()`],
 					[/* text */ 't', ` method of
  `],
 					[/* inline code block */ 'i', `InputStream`],
@@ -1266,7 +1266,7 @@ DocsCollector.collect('java.io.RandomAccessFile', [
 					[/* inline code block */ 'i', `InputStream`],
 					[/* text */ 't', `, this method behaves in exactly the
  same way as the `],
-					[/* reference */ 'r', `.InputStream#read(byte[])`],
+					[/* reference */ 'r', `java.io.InputStream#read(byte[])`, `InputStream.read(byte[])`],
 					[/* text */ 't', ` method of
  `],
 					[/* inline code block */ 'i', `InputStream`],
@@ -1317,7 +1317,7 @@ DocsCollector.collect('java.io.RandomAccessFile', [
 					[/* inline code block */ 'i', `InputStream`],
 					[/* text */ 't', `, this method behaves in exactly the
  same way as the `],
-					[/* reference */ 'r', `.InputStream#read(byte[],int,int)`],
+					[/* reference */ 'r', `java.io.InputStream#read(byte[],int,int)`, `InputStream.read(byte[], int, int)`],
 					[/* text */ 't', ` method of
  `],
 					[/* inline code block */ 'i', `InputStream`],

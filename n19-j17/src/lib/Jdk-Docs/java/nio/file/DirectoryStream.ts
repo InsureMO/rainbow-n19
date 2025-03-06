@@ -30,7 +30,7 @@ DocsCollector.collect('java.nio.file.DirectoryStream', [
 			[/* inline code block */ 'i', `Iterator`],
 			[/* text */ 't', ` is that
  its `],
-			[/* reference */ 'r', `java.nio.Iterator#hasNext()`],
+			[/* reference */ 'r', `java.util.Iterator#hasNext()`, `hasNext`],
 			[/* text */ 't', ` method is guaranteed to read-ahead by
  at least one element. If `],
 			[/* inline code block */ 'i', `hasNext`],
@@ -44,12 +44,12 @@ DocsCollector.collect('java.nio.file.DirectoryStream', [
 			[/* inline code block */ 'i', `next`],
 			[/* text */ 't', ` method will not throw an exception due to an I/O error, or
  because the stream has been `],
-			[/* reference */ 'r', `java.nio.Closeable#close()`],
+			[/* reference */ 'r', `java.io.Closeable#close()`, `closed`],
 			[/* text */ 't', `. The `],
 			[/* inline code block */ 'i', `Iterator`],
 			[/* text */ 't', ` does
  not support the `],
-			[/* reference */ 'r', `java.nio.Iterator#remove()`],
+			[/* reference */ 'r', `java.util.Iterator#remove()`, `remove`],
 			[/* text */ 't', ` operation.
 
  `]
@@ -119,9 +119,9 @@ DocsCollector.collect('java.nio.file.DirectoryStream', [
 			[/* inline code block */ 'i', `next`],
 			[/* text */ 't', ` methods to
  throw `],
-			[/* reference */ 'r', `java.nio.file.DirectoryIteratorException`],
+			[/* reference */ 'r', `java.nio.file.DirectoryIteratorException`, `DirectoryIteratorException`],
 			[/* text */ 't', ` with the `],
-			[/* reference */ 'r', `java.io.IOException`],
+			[/* reference */ 'r', `java.io.IOException`, `IOException`],
 			[/* text */ 't', ` as the
  cause. As stated above, the `],
 			[/* inline code block */ 'i', `hasNext`],

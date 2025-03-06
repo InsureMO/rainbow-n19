@@ -98,7 +98,7 @@ DocsCollector.collect('java.security.cert.CertPath', [
 			[/* inline code block */ 'i', `CertPath`],
 			[/* text */ 't', ` objects are resolved into an alternate
  `],
-			[/* reference */ 'r', `java.security.cert.CertPath.CertPathRep`],
+			[/* reference */ 'r', `java.security.cert.CertPath.CertPathRep`, `CertPathRep`],
 			[/* text */ 't', ` object during serialization. This allows
  a `],
 			[/* inline code block */ 'i', `CertPath`],
@@ -128,7 +128,7 @@ DocsCollector.collect('java.security.cert.CertPath', [
  certificate and ending with a certificate issued by the trust anchor. That
  is, the issuer of one certificate is the subject of the following one. The
  certificate representing the `],
-			[/* reference */ 'r', `java.security.cert.TrustAnchor`],
+			[/* reference */ 'r', `java.security.cert.TrustAnchor`, `TrustAnchor`],
 			[/* text */ 't', ` should not be
  included in the certification path. Unvalidated X.509 `],
 			[/* inline code block */ 'i', `CertPath`],
@@ -404,7 +404,7 @@ DocsCollector.collect('java.security.cert.CertPath', [
 				[/* text */ 't', `s in this certification
  path. This is the same string that would be returned by
  `],
-				[/* reference */ 'r', `.Certificate#getType()`],
+				[/* reference */ 'r', `java.security.cert.Certificate#getType()`, `cert.getType()`],
 				[/* text */ 't', `
  for all `],
 				[/* inline code block */ 'i', `Certificate`],

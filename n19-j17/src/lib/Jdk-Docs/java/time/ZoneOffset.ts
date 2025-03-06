@@ -16,7 +16,7 @@ DocsCollector.collect('java.time.ZoneOffset', [
  Different parts of the world have different time-zone offsets.
  The rules for how offsets vary by place and time of year are captured in the
  `],
-			[/* reference */ 'r', `java.time.ZoneId`],
+			[/* reference */ 'r', `java.time.ZoneId`, `ZoneId`],
 			[/* text */ 't', ` class.
  `]
 		]],
@@ -112,7 +112,7 @@ DocsCollector.collect('java.time.ZoneOffset', [
 					[/* text */ 't', `
  The result of this method is obtained by invoking the
  `],
-					[/* reference */ 'r', `.TemporalQuery#queryFrom(java.time.temporal.TemporalAccessor)`],
+					[/* reference */ 'r', `java.time.temporal.TemporalQuery#queryFrom(java.time.temporal.TemporalAccessor)`, `TemporalQuery.queryFrom(TemporalAccessor)`],
 					[/* text */ 't', ` method on the
  specified query passing `],
 					[/* inline code block */ 'i', `this`],
@@ -172,7 +172,7 @@ DocsCollector.collect('java.time.ZoneOffset', [
 				[/* block */ 'b', [
 					[/* text */ 't', `
  If the field is a `],
-					[/* reference */ 'r', `enum class in java.time.temporal.ChronoField`],
+					[/* reference */ 'r', `enum class in java.time.temporal.ChronoField`, `ChronoField`],
 					[/* text */ 't', ` then the query is implemented here.
  The `],
 					[/* inline code block */ 'i', `OFFSET_SECONDS`],
@@ -226,7 +226,7 @@ DocsCollector.collect('java.time.ZoneOffset', [
 				[/* block */ 'b', [
 					[/* text */ 't', `
  The comparison is "consistent with equals", as defined by `],
-					[/* reference */ 'r', `java.lang.Comparable`],
+					[/* reference */ 'r', `java.lang.Comparable`, `Comparable`],
 					[/* text */ 't', `.`]
 				]]
 			],
@@ -261,7 +261,7 @@ DocsCollector.collect('java.time.ZoneOffset', [
 				[/* block */ 'b', [
 					[/* text */ 't', `
  If the field is a `],
-					[/* reference */ 'r', `enum class in java.time.temporal.ChronoField`],
+					[/* reference */ 'r', `enum class in java.time.temporal.ChronoField`, `ChronoField`],
 					[/* text */ 't', ` then the query is implemented here.
  The `],
 					[/* inline code block */ 'i', `OFFSET_SECONDS`],
@@ -395,10 +395,10 @@ DocsCollector.collect('java.time.ZoneOffset', [
 				[/* block */ 'b', [
 					[/* text */ 't', `
  The adjustment is equivalent to using `],
-					[/* reference */ 'r', `.Temporal#with(java.time.temporal.TemporalField,long)`],
+					[/* reference */ 'r', `java.time.temporal.Temporal#with(java.time.temporal.TemporalField,long)`, `Temporal.with(TemporalField, long)`],
 					[/* text */ 't', `
  passing `],
-					[/* reference */ 'r', `.ChronoField#OFFSET_SECONDS`],
+					[/* reference */ 'r', `java.time.temporal.ChronoField#OFFSET_SECONDS`, `ChronoField.OFFSET_SECONDS`],
 					[/* text */ 't', ` as the field.
  `]
 				]],
@@ -406,7 +406,7 @@ DocsCollector.collect('java.time.ZoneOffset', [
 					[/* text */ 't', `
  In most cases, it is clearer to reverse the calling pattern by using
  `],
-					[/* reference */ 'r', `.Temporal#with(java.time.temporal.TemporalAdjuster)`],
+					[/* reference */ 'r', `java.time.temporal.Temporal#with(java.time.temporal.TemporalAdjuster)`, `Temporal.with(TemporalAdjuster)`],
 					[/* text */ 't', `:
  `]
 				]],
@@ -448,7 +448,7 @@ DocsCollector.collect('java.time.ZoneOffset', [
 				[/* block */ 'b', [
 					[/* text */ 't', `
  If the field is a `],
-					[/* reference */ 'r', `enum class in java.time.temporal.ChronoField`],
+					[/* reference */ 'r', `enum class in java.time.temporal.ChronoField`, `ChronoField`],
 					[/* text */ 't', ` then the query is implemented here.
  The `],
 					[/* reference */ 'r', `#isSupported(java.time.temporal.TemporalField)`, `supported fields`],
@@ -520,7 +520,7 @@ DocsCollector.collect('java.time.ZoneOffset', [
 				[/* block */ 'b', [
 					[/* text */ 't', `
  If the field is a `],
-					[/* reference */ 'r', `enum class in java.time.temporal.ChronoField`],
+					[/* reference */ 'r', `enum class in java.time.temporal.ChronoField`, `ChronoField`],
 					[/* text */ 't', ` then the query is implemented here.
  The `],
 					[/* inline code block */ 'i', `OFFSET_SECONDS`],
@@ -596,17 +596,17 @@ DocsCollector.collect('java.time.ZoneOffset', [
 				[/* block */ 'b', [
 					[/* text */ 't', `
  The conversion uses the `],
-					[/* reference */ 'r', `.TemporalQueries#offset()`],
+					[/* reference */ 'r', `java.time.temporal.TemporalQueries#offset()`, `TemporalQueries.offset()`],
 					[/* text */ 't', ` query, which relies
  on extracting the `],
-					[/* reference */ 'r', `.ChronoField#OFFSET_SECONDS`],
+					[/* reference */ 'r', `java.time.temporal.ChronoField#OFFSET_SECONDS`, `OFFSET_SECONDS`],
 					[/* text */ 't', ` field.
  `]
 				]],
 				[/* block */ 'b', [
 					[/* text */ 't', `
  This method matches the signature of the functional interface `],
-					[/* reference */ 'r', `java.time.temporal.TemporalQuery`],
+					[/* reference */ 'r', `java.time.temporal.TemporalQuery`, `TemporalQuery`],
 					[/* text */ 't', `
  allowing it to be used as a query via method reference, `],
 					[/* inline code block */ 'i', `ZoneOffset::from`],

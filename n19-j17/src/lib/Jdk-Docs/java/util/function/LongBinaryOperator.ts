@@ -10,7 +10,7 @@ DocsCollector.collect('java.util.function.LongBinaryOperator', [
 		[/* inline code block */ 'i', `long`],
 		[/* text */ 't', `-valued result.   This is the primitive type specialization of
  `],
-		[/* reference */ 'r', `java.util.function.BinaryOperator`],
+		[/* reference */ 'r', `java.util.function.BinaryOperator`, `BinaryOperator`],
 		[/* text */ 't', ` for `],
 		[/* inline code block */ 'i', `long`],
 		[/* text */ 't', `.
@@ -18,7 +18,7 @@ DocsCollector.collect('java.util.function.LongBinaryOperator', [
  `],
 		[/* block */ 'b', [
 			[/* text */ 't', `This is a `],
-			[/* reference */ 'r', `.package-summary`],
+			[/* text */ 't', `functional interface`],
 			[/* text */ 't', `
  whose functional method is `],
 			[/* reference */ 'r', `#applyAsLong(long,long)`, `applyAsLong(long, long)`],

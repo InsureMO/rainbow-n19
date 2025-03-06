@@ -4,7 +4,7 @@ import {DocsCollector} from '../../../DocsCollector';
 DocsCollector.collect('java.nio.charset.Charset', [
 	[/* class description */
 		[/* text */ 't', `A named mapping between sequences of sixteen-bit Unicode `],
-		[/* text */ 't', `code units`],
+		[/* reference */ 'r', `java.lang.Character#unicode`, `code units`],
 		[/* text */ 't', ` and sequences of
  bytes.  This class defines methods for creating decoders and encoders and
  for retrieving the various names associated with a charset.  Instances of
@@ -17,7 +17,7 @@ DocsCollector.collect('java.nio.charset.Charset', [
  constructing a map that contains every charset for which support is
  available in the current Java virtual machine.  Support for new charsets can
  be added via the service-provider interface defined in the `],
-			[/* reference */ 'r', `java.nio.charset.spi.CharsetProvider`],
+			[/* reference */ 'r', `java.nio.charset.spi.CharsetProvider`, `CharsetProvider`],
 			[/* text */ 't', ` class.
 
  `]
@@ -28,7 +28,7 @@ DocsCollector.collect('java.nio.charset.Charset', [
 
  `],
 		[/* block */ 'b', [
-			[/* text */ 't', `Charset names`]
+			[/* anchor */ 'r', '#-id', `names`, `Charset names`]
 		]],
 		[/* block */ 'b', ` Charsets are named by strings composed of the following characters:
 
@@ -166,22 +166,22 @@ DocsCollector.collect('java.nio.charset.Charset', [
  `]
 		]],
 		[/* block */ 'b', [
-			[/* text */ 't', `Some charsets have an historical name that is defined for compatibility with previous versions of the Java platform.`],
+			[/* anchor */ 'r', '#-id', `hn`, `Some charsets have an historical name that is defined for compatibility with previous versions of the Java platform.`],
 			[/* text */ 't', `  A charset's
  historical name is either its canonical name or one of its aliases.  The
  historical name is returned by the `],
 			[/* inline code block */ 'i', `getEncoding()`],
 			[/* text */ 't', ` methods of the
  `],
-			[/* reference */ 'r', `java.nio.InputStreamReader#getEncoding()`],
+			[/* reference */ 'r', `java.io.InputStreamReader#getEncoding()`, `InputStreamReader`],
 			[/* text */ 't', ` and `],
-			[/* reference */ 'r', `java.nio.OutputStreamWriter#getEncoding()`],
+			[/* reference */ 'r', `java.io.OutputStreamWriter#getEncoding()`, `OutputStreamWriter`],
 			[/* text */ 't', ` classes.
 
  `]
 		]],
 		[/* block */ 'b', [
-			[/* text */ 't', ``],
+			[/* anchor */ 'r', '#-id', `iana`, ``],
 			[/* text */ 't', `If a charset listed in the `],
 			[/* external link */ 'a', `http://www.iana.org/assignments/character-sets`, `IANA Charset Registry`],
 			[/* text */ 't', ` is supported by an implementation of the Java platform then
@@ -210,7 +210,7 @@ DocsCollector.collect('java.nio.charset.Charset', [
 
  `],
 		[/* block */ 'b', [
-			[/* text */ 't', `Standard charsets`]
+			[/* anchor */ 'r', '#-id', `standard`, `Standard charsets`]
 		]],
 		[/* block */ 'b', ` Every implementation of the Java platform is required to support the
  following standard charsets.  Consult the release documentation for your
@@ -374,7 +374,7 @@ DocsCollector.collect('java.nio.charset.Charset', [
  locale and charset being used by the underlying operating system. `],
 		[/* block */ 'b', [
 			[/* text */ 't', ` The `],
-			[/* reference */ 'r', `java.nio.charset.StandardCharsets`],
+			[/* reference */ 'r', `java.nio.charset.StandardCharsets`, `StandardCharsets`],
 			[/* text */ 't', ` class defines constants for each of the
  standard charsets.
 
@@ -741,7 +741,7 @@ DocsCollector.collect('java.nio.charset.Charset', [
 					[/* text */ 't', ` This method always replaces malformed-input and unmappable-character
  sequences with this charset's default replacement string.  In order to
  detect such sequences, use the `],
-					[/* reference */ 'r', `.CharsetEncoder#encode(java.nio.CharBuffer)`],
+					[/* reference */ 'r', `java.nio.charset.CharsetEncoder#encode(java.nio.CharBuffer)`, `CharsetEncoder.encode(java.nio.CharBuffer)`],
 					[/* text */ 't', ` method directly.  `]
 				]]
 			],
@@ -784,7 +784,7 @@ DocsCollector.collect('java.nio.charset.Charset', [
 					[/* text */ 't', ` This method always replaces malformed-input and unmappable-character
  sequences with this charset's default replacement byte array.  In order
  to detect such sequences, use the `],
-					[/* reference */ 'r', `.CharsetDecoder#decode(java.nio.ByteBuffer)`],
+					[/* reference */ 'r', `java.nio.charset.CharsetDecoder#decode(java.nio.ByteBuffer)`, `CharsetDecoder.decode(java.nio.ByteBuffer)`],
 					[/* text */ 't', ` method directly.  `]
 				]]
 			],

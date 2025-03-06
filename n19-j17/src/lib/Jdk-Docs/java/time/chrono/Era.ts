@@ -13,7 +13,7 @@ DocsCollector.collect('java.time.chrono.Era', [
  In all cases, the era is conceptually the largest division of the time-line.
  Each chronology defines the Era's that are known Eras and a
  `],
-			[/* reference */ 'r', `.Chronology#eras()`],
+			[/* reference */ 'r', `java.time.chrono.Chronology#eras()`, `Chronology.eras`],
 			[/* text */ 't', ` to get the valid eras.
  `]
 		]],
@@ -79,7 +79,7 @@ DocsCollector.collect('java.time.chrono.Era', [
 					[/* text */ 't', `
  The result of this method is obtained by invoking the
  `],
-					[/* reference */ 'r', `java.TemporalQuery#queryFrom(java.time.temporal.TemporalAccessor)`],
+					[/* reference */ 'r', `java.time.temporal.TemporalQuery#queryFrom(java.time.temporal.TemporalAccessor)`, `TemporalQuery.queryFrom(TemporalAccessor)`],
 					[/* text */ 't', ` method on the
  specified query passing `],
 					[/* inline code block */ 'i', `this`],
@@ -121,7 +121,7 @@ DocsCollector.collect('java.time.chrono.Era', [
 				[/* block */ 'b', [
 					[/* text */ 't', `
  If the field is a `],
-					[/* reference */ 'r', `enum class in java.time.temporal.ChronoField`],
+					[/* reference */ 'r', `enum class in java.time.temporal.ChronoField`, `ChronoField`],
 					[/* text */ 't', ` then the query is implemented here.
  The `],
 					[/* inline code block */ 'i', `ERA`],
@@ -170,7 +170,7 @@ DocsCollector.collect('java.time.chrono.Era', [
 				[/* block */ 'b', [
 					[/* text */ 't', `
  If the field is a `],
-					[/* reference */ 'r', `enum class in java.time.temporal.ChronoField`],
+					[/* reference */ 'r', `enum class in java.time.temporal.ChronoField`, `ChronoField`],
 					[/* text */ 't', ` then the query is implemented here.
  The `],
 					[/* inline code block */ 'i', `ERA`],
@@ -259,10 +259,10 @@ DocsCollector.collect('java.time.chrono.Era', [
 				[/* block */ 'b', [
 					[/* text */ 't', `
  The adjustment is equivalent to using `],
-					[/* reference */ 'r', `java.Temporal#with(java.time.temporal.TemporalField,long)`],
+					[/* reference */ 'r', `java.time.temporal.Temporal#with(java.time.temporal.TemporalField,long)`, `Temporal.with(TemporalField, long)`],
 					[/* text */ 't', `
  passing `],
-					[/* reference */ 'r', `java.ChronoField#ERA`],
+					[/* reference */ 'r', `java.time.temporal.ChronoField#ERA`, `ChronoField.ERA`],
 					[/* text */ 't', ` as the field.
  `]
 				]],
@@ -270,7 +270,7 @@ DocsCollector.collect('java.time.chrono.Era', [
 					[/* text */ 't', `
  In most cases, it is clearer to reverse the calling pattern by using
  `],
-					[/* reference */ 'r', `java.Temporal#with(java.time.temporal.TemporalAdjuster)`],
+					[/* reference */ 'r', `java.time.temporal.Temporal#with(java.time.temporal.TemporalAdjuster)`, `Temporal.with(TemporalAdjuster)`],
 					[/* text */ 't', `:
  `]
 				]],
@@ -312,7 +312,7 @@ DocsCollector.collect('java.time.chrono.Era', [
 				[/* block */ 'b', [
 					[/* text */ 't', `
  If the field is a `],
-					[/* reference */ 'r', `enum class in java.time.temporal.ChronoField`],
+					[/* reference */ 'r', `enum class in java.time.temporal.ChronoField`, `ChronoField`],
 					[/* text */ 't', ` then the query is implemented here.
  The `],
 					[/* inline code block */ 'i', `ERA`],
@@ -377,7 +377,7 @@ DocsCollector.collect('java.time.chrono.Era', [
 				[/* block */ 'b', [
 					[/* text */ 't', `
  If the field is a `],
-					[/* reference */ 'r', `enum class in java.time.temporal.ChronoField`],
+					[/* reference */ 'r', `enum class in java.time.temporal.ChronoField`, `ChronoField`],
 					[/* text */ 't', ` then the query is implemented here.
  The `],
 					[/* inline code block */ 'i', `ERA`],

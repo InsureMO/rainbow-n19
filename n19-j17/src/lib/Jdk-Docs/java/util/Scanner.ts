@@ -95,10 +95,10 @@ DocsCollector.collect('java.util.Scanner', [
 		[/* block */ 'b', ''],
 		[/* block */ 'b', [
 			[/* text */ 't', `The `],
-			[/* text */ 't', `default whitespace delimiter`],
+			[/* anchor */ 'r', '#-id', `default-delimiter`, `default whitespace delimiter`],
 			[/* text */ 't', ` used
  by a scanner is as recognized by `],
-			[/* reference */ 'r', `java.Character#isWhitespace(int)`],
+			[/* reference */ 'r', `java.lang.Character#isWhitespace(int)`, `Character.isWhitespace()`],
 			[/* text */ 't', `. The `],
 			[/* reference */ 'r', `#reset()`, `reset()`],
 			[/* text */ 't', `
@@ -161,7 +161,7 @@ DocsCollector.collect('java.util.Scanner', [
 		]],
 		[/* block */ 'b', [
 			[/* text */ 't', `When a scanner throws an `],
-			[/* reference */ 'r', `java.util.InputMismatchException`],
+			[/* reference */ 'r', `java.util.InputMismatchException`, `InputMismatchException`],
 			[/* text */ 't', `, the scanner
  will not pass the token that caused the exception, so that it may be
  retrieved or skipped via some other method.
@@ -183,12 +183,12 @@ DocsCollector.collect('java.util.Scanner', [
 		]],
 		[/* block */ 'b', [
 			[/* text */ 't', ` A scanner can read text from any object which implements the `],
-			[/* reference */ 'r', `java.lang.Readable`],
+			[/* reference */ 'r', `java.lang.Readable`, `Readable`],
 			[/* text */ 't', ` interface.  If an invocation of the underlying
  readable's `],
-			[/* reference */ 'r', `java.Readable#read(java.nio.CharBuffer)`],
+			[/* reference */ 'r', `java.lang.Readable#read(java.nio.CharBuffer)`, `read()`],
 			[/* text */ 't', ` method throws an `],
-			[/* reference */ 'r', `java.io.IOException`],
+			[/* reference */ 'r', `java.io.IOException`, `IOException`],
 			[/* text */ 't', ` then the scanner assumes that the end of the input
  has been reached.  The most recent `],
 			[/* inline code block */ 'i', `IOException`],
@@ -204,7 +204,7 @@ DocsCollector.collect('java.util.Scanner', [
 			[/* inline code block */ 'i', `Scanner`],
 			[/* text */ 't', ` is closed, it will close its input source
  if the source implements the `],
-			[/* reference */ 'r', `java.io.Closeable`],
+			[/* reference */ 'r', `java.io.Closeable`, `Closeable`],
 			[/* text */ 't', ` interface.
 
  `]
@@ -245,15 +245,15 @@ DocsCollector.collect('java.util.Scanner', [
  `]
 		]],
 		[/* block */ 'b', [
-			[/* text */ 't', `Localized numbers`]
+			[/* anchor */ 'r', '#-id', `localized-numbers`, `Localized numbers`]
 		]],
 		[/* block */ 'b', [
 			[/* text */ 't', ` An instance of this class is capable of scanning numbers in the standard
  formats as well as in the formats of the scanner's locale. A scanner's
  `],
-			[/* text */ 't', `initial locale`],
+			[/* anchor */ 'r', '#-id', `initial-locale`, `initial locale`],
 			[/* text */ 't', `is the value returned by the `],
-			[/* reference */ 'r', `.Locale#getDefault(java.util.Locale.Category)`],
+			[/* reference */ 'r', `java.util.Locale#getDefault(java.util.Locale.Category)`, `Locale.getDefault(Locale.Category.FORMAT)`],
 			[/* text */ 't', ` method; it may be changed via the `],
 			[/* reference */ 'r', `#useLocale(java.util.Locale)`, `useLocale()`],
 			[/* text */ 't', ` method. The `],
@@ -267,12 +267,12 @@ DocsCollector.collect('java.util.Scanner', [
 		[/* block */ 'b', [
 			[/* text */ 't', `The localized formats are defined in terms of the following parameters,
  which for a particular locale are taken from that locale's `],
-			[/* reference */ 'r', `java.text.DecimalFormat`],
+			[/* reference */ 'r', `java.text.DecimalFormat`, `DecimalFormat`],
 			[/* text */ 't', ` object, `],
 			[/* inline code block */ 'i', `df`],
 			[/* text */ 't', `, and its and
  `],
-			[/* reference */ 'r', `java.text.DecimalFormatSymbols`],
+			[/* reference */ 'r', `java.text.DecimalFormatSymbols`, `DecimalFormatSymbols`],
 			[/* text */ 't', ` object,
  `],
 			[/* inline code block */ 'i', `dfs`],
@@ -293,7 +293,7 @@ DocsCollector.collect('java.util.Scanner', [
 					[/* text */ 't', `i.e.,`],
 					[/* text */ 't', ` `],
 					[/* inline code block */ 'i', `dfs.`],
-					[/* reference */ 'r', `java.DecimalFormatSymbols#getGroupingSeparator()`],
+					[/* reference */ 'r', `java.text.DecimalFormatSymbols#getGroupingSeparator()`, `getGroupingSeparator()`],
 					[/* text */ 't', `
      `]
 				]],
@@ -308,7 +308,7 @@ DocsCollector.collect('java.util.Scanner', [
 					[/* text */ 't', `i.e.,`],
 					[/* text */ 't', ` `],
 					[/* inline code block */ 'i', `dfs.`],
-					[/* reference */ 'r', `java.DecimalFormatSymbols#getDecimalSeparator()`],
+					[/* reference */ 'r', `java.text.DecimalFormatSymbols#getDecimalSeparator()`, `getDecimalSeparator()`],
 					[/* text */ 't', `
      `]
 				]],
@@ -323,7 +323,7 @@ DocsCollector.collect('java.util.Scanner', [
 					[/* text */ 't', `i.e.,`],
 					[/* text */ 't', ` `],
 					[/* inline code block */ 'i', `df.`],
-					[/* reference */ 'r', `java.DecimalFormat#getPositivePrefix()`],
+					[/* reference */ 'r', `java.text.DecimalFormat#getPositivePrefix()`, `getPositivePrefix()`],
 					[/* text */ 't', `
      `]
 				]],
@@ -338,7 +338,7 @@ DocsCollector.collect('java.util.Scanner', [
 					[/* text */ 't', `i.e.,`],
 					[/* text */ 't', ` `],
 					[/* inline code block */ 'i', `df.`],
-					[/* reference */ 'r', `java.DecimalFormat#getPositiveSuffix()`],
+					[/* reference */ 'r', `java.text.DecimalFormat#getPositiveSuffix()`, `getPositiveSuffix()`],
 					[/* text */ 't', `
      `]
 				]],
@@ -353,7 +353,7 @@ DocsCollector.collect('java.util.Scanner', [
 					[/* text */ 't', `i.e.,`],
 					[/* text */ 't', ` `],
 					[/* inline code block */ 'i', `df.`],
-					[/* reference */ 'r', `java.DecimalFormat#getNegativePrefix()`],
+					[/* reference */ 'r', `java.text.DecimalFormat#getNegativePrefix()`, `getNegativePrefix()`],
 					[/* text */ 't', `
      `]
 				]],
@@ -368,7 +368,7 @@ DocsCollector.collect('java.util.Scanner', [
 					[/* text */ 't', `i.e.,`],
 					[/* text */ 't', ` `],
 					[/* inline code block */ 'i', `df.`],
-					[/* reference */ 'r', `java.DecimalFormat#getNegativeSuffix()`],
+					[/* reference */ 'r', `java.text.DecimalFormat#getNegativeSuffix()`, `getNegativeSuffix()`],
 					[/* text */ 't', `
      `]
 				]],
@@ -384,7 +384,7 @@ DocsCollector.collect('java.util.Scanner', [
 					[/* text */ 't', `i.e.,`],
 					[/* text */ 't', ` `],
 					[/* inline code block */ 'i', `dfs.`],
-					[/* reference */ 'r', `java.DecimalFormatSymbols#getNaN()`],
+					[/* reference */ 'r', `java.text.DecimalFormatSymbols#getNaN()`, `getNaN()`],
 					[/* text */ 't', `
      `]
 				]],
@@ -399,7 +399,7 @@ DocsCollector.collect('java.util.Scanner', [
 					[/* text */ 't', `i.e.,`],
 					[/* text */ 't', ` `],
 					[/* inline code block */ 'i', `dfs.`],
-					[/* reference */ 'r', `java.DecimalFormatSymbols#getInfinity()`],
+					[/* reference */ 'r', `java.text.DecimalFormatSymbols#getInfinity()`, `getInfinity()`],
 					[/* text */ 't', `
  `]
 				]]
@@ -407,7 +407,7 @@ DocsCollector.collect('java.util.Scanner', [
 		]],
 		[/* block */ 'b', ''],
 		[/* block */ 'b', [
-			[/* text */ 't', `Number syntax`]
+			[/* anchor */ 'r', '#-id', `number-syntax`, `Number syntax`]
 		]],
 		[/* block */ 'b', ` The strings that can be parsed as numbers by an instance of this class
  are specified in terms of the following regular-expression grammar, where
@@ -423,7 +423,7 @@ DocsCollector.collect('java.util.Scanner', [
 			[/* dd */ 'dd', [
 				[/* text */ 't', `A non-ASCII character c for which
             `],
-				[/* reference */ 'r', `java.Character#isDigit(char)`],
+				[/* reference */ 'r', `java.lang.Character#isDigit(char)`, `Character.isDigit`],
 				[/* inline code block */ 'i', `(c)`],
 				[/* text */ 't', `
                         returns true
@@ -509,7 +509,7 @@ DocsCollector.collect('java.util.Scanner', [
    `]
 			]],
 			[/* dt */ 'dt', [
-				[/* text */ 't', `Integer:`],
+				[/* anchor */ 'r', '#-id', `Integer-regex`, `Integer:`],
 				[/* text */ 't', `
        `]
 			]],
@@ -591,7 +591,7 @@ DocsCollector.collect('java.util.Scanner', [
    `]
 			]],
 			[/* dt */ 'dt', [
-				[/* text */ 't', `Decimal:`],
+				[/* anchor */ 'r', '#-id', `Decimal-regex`, `Decimal:`],
 				[/* text */ 't', `
        `]
 			]],
@@ -701,7 +701,7 @@ DocsCollector.collect('java.util.Scanner', [
    `]
 			]],
 			[/* dt */ 'dt', [
-				[/* text */ 't', `Float`],
+				[/* anchor */ 'r', '#-id', `Float-regex`, `Float`],
 				[/* text */ 't', `:
        `]
 			]],
@@ -733,7 +733,7 @@ DocsCollector.collect('java.util.Scanner', [
  from the specified file. Bytes from the file are converted into
  characters using the underlying platform's
  `],
-				[/* reference */ 'r', `java.charset.Charset#defaultCharset()`],
+				[/* reference */ 'r', `java.nio.charset.Charset#defaultCharset()`, `default charset`],
 				[/* text */ 't', `.`]
 			],
 			[/* parameters */
@@ -805,7 +805,7 @@ DocsCollector.collect('java.util.Scanner', [
  from the specified input stream. Bytes from the stream are converted
  into characters using the underlying platform's
  `],
-				[/* reference */ 'r', `java.charset.Charset#defaultCharset()`],
+				[/* reference */ 'r', `java.nio.charset.Charset#defaultCharset()`, `default charset`],
 				[/* text */ 't', `.`]
 			],
 			[/* parameters */
@@ -868,7 +868,7 @@ DocsCollector.collect('java.util.Scanner', [
 			[/* parameters */
 				[/* parameter */ 'source', [/* parameter description */
 					[/* text */ 't', `A character source implementing the `],
-					[/* reference */ 'r', `java.lang.Readable`],
+					[/* reference */ 'r', `java.lang.Readable`, `Readable`],
 					[/* text */ 't', `
          interface`]
 				]]
@@ -897,7 +897,7 @@ DocsCollector.collect('java.util.Scanner', [
  from the specified channel. Bytes from the source are converted into
  characters using the underlying platform's
  `],
-				[/* reference */ 'r', `java.charset.Charset#defaultCharset()`],
+				[/* reference */ 'r', `java.nio.charset.Charset#defaultCharset()`, `default charset`],
 				[/* text */ 't', `.`]
 			],
 			[/* parameters */
@@ -958,7 +958,7 @@ DocsCollector.collect('java.util.Scanner', [
  from the specified file. Bytes from the file are converted into
  characters using the underlying platform's
  `],
-				[/* reference */ 'r', `java.charset.Charset#defaultCharset()`],
+				[/* reference */ 'r', `java.nio.charset.Charset#defaultCharset()`, `default charset`],
 				[/* text */ 't', `.`]
 			],
 			[/* parameters */
@@ -1152,10 +1152,10 @@ DocsCollector.collect('java.util.Scanner', [
  `],
 				[/* block */ 'b', [
 					[/* text */ 't', `If the radix is less than `],
-					[/* reference */ 'r', `java.Character#MIN_RADIX`],
+					[/* reference */ 'r', `java.lang.Character#MIN_RADIX`, `Character.MIN_RADIX`],
 					[/* text */ 't', `
  or greater than `],
-					[/* reference */ 'r', `java.Character#MAX_RADIX`],
+					[/* reference */ 'r', `java.lang.Character#MAX_RADIX`, `Character.MAX_RADIX`],
 					[/* text */ 't', `, then an
  `],
 					[/* inline code block */ 'i', `IllegalArgumentException`],
@@ -1229,10 +1229,10 @@ DocsCollector.collect('java.util.Scanner', [
  `],
 				[/* block */ 'b', [
 					[/* text */ 't', `If the radix is less than `],
-					[/* reference */ 'r', `java.Character#MIN_RADIX`],
+					[/* reference */ 'r', `java.lang.Character#MIN_RADIX`, `Character.MIN_RADIX`],
 					[/* text */ 't', `
  or greater than `],
-					[/* reference */ 'r', `java.Character#MAX_RADIX`],
+					[/* reference */ 'r', `java.lang.Character#MAX_RADIX`, `Character.MAX_RADIX`],
 					[/* text */ 't', `, then an
  `],
 					[/* inline code block */ 'i', `IllegalArgumentException`],
@@ -1325,10 +1325,10 @@ DocsCollector.collect('java.util.Scanner', [
  `],
 				[/* block */ 'b', [
 					[/* text */ 't', `If the radix is less than `],
-					[/* reference */ 'r', `java.Character#MIN_RADIX`],
+					[/* reference */ 'r', `java.lang.Character#MIN_RADIX`, `Character.MIN_RADIX`],
 					[/* text */ 't', `
  or greater than `],
-					[/* reference */ 'r', `java.Character#MAX_RADIX`],
+					[/* reference */ 'r', `java.lang.Character#MAX_RADIX`, `Character.MAX_RADIX`],
 					[/* text */ 't', `, then an
  `],
 					[/* inline code block */ 'i', `IllegalArgumentException`],
@@ -1399,10 +1399,10 @@ DocsCollector.collect('java.util.Scanner', [
  `],
 				[/* block */ 'b', [
 					[/* text */ 't', `If the radix is less than `],
-					[/* reference */ 'r', `java.Character#MIN_RADIX`],
+					[/* reference */ 'r', `java.lang.Character#MIN_RADIX`, `Character.MIN_RADIX`],
 					[/* text */ 't', `
  or greater than `],
-					[/* reference */ 'r', `java.Character#MAX_RADIX`],
+					[/* reference */ 'r', `java.lang.Character#MAX_RADIX`, `Character.MAX_RADIX`],
 					[/* text */ 't', `, then an
  `],
 					[/* inline code block */ 'i', `IllegalArgumentException`],
@@ -1457,10 +1457,10 @@ DocsCollector.collect('java.util.Scanner', [
  `],
 				[/* block */ 'b', [
 					[/* text */ 't', `If the radix is less than `],
-					[/* reference */ 'r', `java.Character#MIN_RADIX`],
+					[/* reference */ 'r', `java.lang.Character#MIN_RADIX`, `Character.MIN_RADIX`],
 					[/* text */ 't', `
  or greater than `],
-					[/* reference */ 'r', `java.Character#MAX_RADIX`],
+					[/* reference */ 'r', `java.lang.Character#MAX_RADIX`, `Character.MAX_RADIX`],
 					[/* text */ 't', `, then an
  `],
 					[/* inline code block */ 'i', `IllegalArgumentException`],
@@ -1575,12 +1575,12 @@ DocsCollector.collect('java.util.Scanner', [
  removing all locale specific prefixes, group separators, and locale
  specific suffixes, then mapping non-ASCII digits into ASCII
  digits via `],
-					[/* reference */ 'r', `java.Character#digit(char,int)`],
+					[/* reference */ 'r', `java.lang.Character#digit(char,int)`, `Character.digit`],
 					[/* text */ 't', `, prepending a
  negative sign (-) if the locale specific negative prefixes and suffixes
  were present, and passing the resulting string to
  `],
-					[/* reference */ 'r', `java.Byte#parseByte(java.lang.String,int)`],
+					[/* reference */ 'r', `java.lang.Byte#parseByte(java.lang.String,int)`, `Byte.parseByte`],
 					[/* text */ 't', ` with the
  specified radix.
 
@@ -1588,10 +1588,10 @@ DocsCollector.collect('java.util.Scanner', [
 				]],
 				[/* block */ 'b', [
 					[/* text */ 't', `If the radix is less than `],
-					[/* reference */ 'r', `java.Character#MIN_RADIX`],
+					[/* reference */ 'r', `java.lang.Character#MIN_RADIX`, `Character.MIN_RADIX`],
 					[/* text */ 't', `
  or greater than `],
-					[/* reference */ 'r', `java.Character#MAX_RADIX`],
+					[/* reference */ 'r', `java.lang.Character#MAX_RADIX`, `Character.MAX_RADIX`],
 					[/* text */ 't', `, then an
  `],
 					[/* inline code block */ 'i', `IllegalArgumentException`],
@@ -1649,16 +1649,16 @@ DocsCollector.collect('java.util.Scanner', [
  removing all locale specific prefixes, group separators, and locale
  specific suffixes, then mapping non-ASCII digits into ASCII
  digits via `],
-					[/* reference */ 'r', `java.Character#digit(char,int)`],
+					[/* reference */ 'r', `java.lang.Character#digit(char,int)`, `Character.digit`],
 					[/* text */ 't', `, prepending a
  negative sign (-) if the locale specific negative prefixes and suffixes
  were present, and passing the resulting string to
  `],
-					[/* reference */ 'r', `java.Double#parseDouble(java.lang.String)`],
+					[/* reference */ 'r', `java.lang.Double#parseDouble(java.lang.String)`, `Double.parseDouble`],
 					[/* text */ 't', `. If the token matches
  the localized NaN or infinity strings, then either "Nan" or "Infinity"
  is passed to `],
-					[/* reference */ 'r', `java.Double#parseDouble(java.lang.String)`],
+					[/* reference */ 'r', `java.lang.Double#parseDouble(java.lang.String)`, `Double.parseDouble`],
 					[/* text */ 't', ` as
  appropriate.`]
 				]]
@@ -1707,16 +1707,16 @@ DocsCollector.collect('java.util.Scanner', [
  removing all locale specific prefixes, group separators, and locale
  specific suffixes, then mapping non-ASCII digits into ASCII
  digits via `],
-					[/* reference */ 'r', `java.Character#digit(char,int)`],
+					[/* reference */ 'r', `java.lang.Character#digit(char,int)`, `Character.digit`],
 					[/* text */ 't', `, prepending a
  negative sign (-) if the locale specific negative prefixes and suffixes
  were present, and passing the resulting string to
  `],
-					[/* reference */ 'r', `java.Float#parseFloat(java.lang.String)`],
+					[/* reference */ 'r', `java.lang.Float#parseFloat(java.lang.String)`, `Float.parseFloat`],
 					[/* text */ 't', `. If the token matches
  the localized NaN or infinity strings, then either "Nan" or "Infinity"
  is passed to `],
-					[/* reference */ 'r', `java.Float#parseFloat(java.lang.String)`],
+					[/* reference */ 'r', `java.lang.Float#parseFloat(java.lang.String)`, `Float.parseFloat`],
 					[/* text */ 't', ` as
  appropriate.`]
 				]]
@@ -1806,12 +1806,12 @@ DocsCollector.collect('java.util.Scanner', [
  removing all locale specific prefixes, group separators, and locale
  specific suffixes, then mapping non-ASCII digits into ASCII
  digits via `],
-					[/* reference */ 'r', `java.Character#digit(char,int)`],
+					[/* reference */ 'r', `java.lang.Character#digit(char,int)`, `Character.digit`],
 					[/* text */ 't', `, prepending a
  negative sign (-) if the locale specific negative prefixes and suffixes
  were present, and passing the resulting string to
  `],
-					[/* reference */ 'r', `java.Integer#parseInt(java.lang.String,int)`],
+					[/* reference */ 'r', `java.lang.Integer#parseInt(java.lang.String,int)`, `Integer.parseInt`],
 					[/* text */ 't', ` with the
  specified radix.
 
@@ -1819,10 +1819,10 @@ DocsCollector.collect('java.util.Scanner', [
 				]],
 				[/* block */ 'b', [
 					[/* text */ 't', `If the radix is less than `],
-					[/* reference */ 'r', `java.Character#MIN_RADIX`],
+					[/* reference */ 'r', `java.lang.Character#MIN_RADIX`, `Character.MIN_RADIX`],
 					[/* text */ 't', `
  or greater than `],
-					[/* reference */ 'r', `java.Character#MAX_RADIX`],
+					[/* reference */ 'r', `java.lang.Character#MAX_RADIX`, `Character.MAX_RADIX`],
 					[/* text */ 't', `, then an
  `],
 					[/* inline code block */ 'i', `IllegalArgumentException`],
@@ -2016,9 +2016,9 @@ DocsCollector.collect('java.util.Scanner', [
  by the horizon; that is, an arbitrary match result may have been
  different if the horizon had been larger. The scanner treats the
  horizon as a transparent, non-anchoring bound (see `],
-					[/* reference */ 'r', `.Matcher#useTransparentBounds(boolean)`],
+					[/* reference */ 'r', `java.util.regex.Matcher#useTransparentBounds(boolean)`, `Matcher.useTransparentBounds(boolean)`],
 					[/* text */ 't', ` and `],
-					[/* reference */ 'r', `.Matcher#useAnchoringBounds(boolean)`],
+					[/* reference */ 'r', `java.util.regex.Matcher#useAnchoringBounds(boolean)`, `Matcher.useAnchoringBounds(boolean)`],
 					[/* text */ 't', `).
 
  `]
@@ -2192,7 +2192,7 @@ DocsCollector.collect('java.util.Scanner', [
 		[/* method */ 'nextBigDecimal()', [
 			[/* method description */
 				[/* text */ 't', `Scans the next token of the input as a `],
-				[/* reference */ 'r', `java.math.BigDecimal`],
+				[/* reference */ 'r', `java.math.BigDecimal`, `BigDecimal`],
 				[/* text */ 't', `.
 
  `],
@@ -2205,10 +2205,10 @@ DocsCollector.collect('java.util.Scanner', [
 					[/* text */ 't', ` value as if
  by removing all group separators, mapping non-ASCII digits into ASCII
  digits via the `],
-					[/* reference */ 'r', `java.Character#digit(char,int)`],
+					[/* reference */ 'r', `java.lang.Character#digit(char,int)`, `Character.digit`],
 					[/* text */ 't', `, and passing the
  resulting string to the `],
-					[/* reference */ 'r', `java.BigDecimal#<init>(java.lang.String)`],
+					[/* reference */ 'r', `java.math.BigDecimal#<init>(java.lang.String)`, `BigDecimal(String)`],
 					[/* text */ 't', `
  constructor.`]
 				]]
@@ -2237,7 +2237,7 @@ DocsCollector.collect('java.util.Scanner', [
 		[/* method */ 'nextBigInteger()', [
 			[/* method description */
 				[/* text */ 't', `Scans the next token of the input as a `],
-				[/* reference */ 'r', `java.math.BigInteger`],
+				[/* reference */ 'r', `java.math.BigInteger`, `BigInteger`],
 				[/* text */ 't', `.
 
  `],
@@ -2278,7 +2278,7 @@ DocsCollector.collect('java.util.Scanner', [
 		[/* method */ 'nextBigInteger(int)', [
 			[/* method description */
 				[/* text */ 't', `Scans the next token of the input as a `],
-				[/* reference */ 'r', `java.math.BigInteger`],
+				[/* reference */ 'r', `java.math.BigInteger`, `BigInteger`],
 				[/* text */ 't', `.
 
  `],
@@ -2291,20 +2291,20 @@ DocsCollector.collect('java.util.Scanner', [
 					[/* text */ 't', ` value as if
  by removing all group separators, mapping non-ASCII digits into ASCII
  digits via the `],
-					[/* reference */ 'r', `java.Character#digit(char,int)`],
+					[/* reference */ 'r', `java.lang.Character#digit(char,int)`, `Character.digit`],
 					[/* text */ 't', `, and passing the
  resulting string to the `],
-					[/* reference */ 'r', `java.BigInteger#<init>(java.lang.String)`],
+					[/* reference */ 'r', `java.math.BigInteger#<init>(java.lang.String)`, `BigInteger(String, int)`],
 					[/* text */ 't', ` constructor with the specified radix.
 
  `]
 				]],
 				[/* block */ 'b', [
 					[/* text */ 't', `If the radix is less than `],
-					[/* reference */ 'r', `java.Character#MIN_RADIX`],
+					[/* reference */ 'r', `java.lang.Character#MIN_RADIX`, `Character.MIN_RADIX`],
 					[/* text */ 't', `
  or greater than `],
-					[/* reference */ 'r', `java.Character#MAX_RADIX`],
+					[/* reference */ 'r', `java.lang.Character#MAX_RADIX`, `Character.MAX_RADIX`],
 					[/* text */ 't', `, then an
  `],
 					[/* inline code block */ 'i', `IllegalArgumentException`],
@@ -2645,10 +2645,10 @@ DocsCollector.collect('java.util.Scanner', [
 				]],
 				[/* block */ 'b', [
 					[/* text */ 't', `If the radix is less than `],
-					[/* reference */ 'r', `java.Character#MIN_RADIX`],
+					[/* reference */ 'r', `java.lang.Character#MIN_RADIX`, `Character.MIN_RADIX`],
 					[/* text */ 't', `
  or greater than `],
-					[/* reference */ 'r', `java.Character#MAX_RADIX`],
+					[/* reference */ 'r', `java.lang.Character#MAX_RADIX`, `Character.MAX_RADIX`],
 					[/* text */ 't', `, then an
  `],
 					[/* inline code block */ 'i', `IllegalArgumentException`],
@@ -2710,7 +2710,7 @@ DocsCollector.collect('java.util.Scanner', [
 					[/* text */ 't', `fail-fast`],
 					[/* text */ 't', ` and will, on a best-effort basis, throw a
  `],
-					[/* reference */ 'r', `java.util.ConcurrentModificationException`],
+					[/* reference */ 'r', `java.util.ConcurrentModificationException`, `ConcurrentModificationException`],
 					[/* text */ 't', ` if any such calls are detected
  during stream pipeline execution.
 
@@ -2809,7 +2809,7 @@ DocsCollector.collect('java.util.Scanner', [
 					[/* text */ 't', `fail-fast`],
 					[/* text */ 't', ` and will, on a best-effort basis, throw a
  `],
-					[/* reference */ 'r', `java.util.ConcurrentModificationException`],
+					[/* reference */ 'r', `java.util.ConcurrentModificationException`, `ConcurrentModificationException`],
 					[/* text */ 't', ` if any such calls are detected
  during stream pipeline execution.
 
@@ -2921,12 +2921,12 @@ DocsCollector.collect('java.util.Scanner', [
  removing all locale specific prefixes, group separators, and locale
  specific suffixes, then mapping non-ASCII digits into ASCII
  digits via `],
-					[/* reference */ 'r', `java.Character#digit(char,int)`],
+					[/* reference */ 'r', `java.lang.Character#digit(char,int)`, `Character.digit`],
 					[/* text */ 't', `, prepending a
  negative sign (-) if the locale specific negative prefixes and suffixes
  were present, and passing the resulting string to
  `],
-					[/* reference */ 'r', `java.Long#parseLong(java.lang.String,int)`],
+					[/* reference */ 'r', `java.lang.Long#parseLong(java.lang.String,int)`, `Long.parseLong`],
 					[/* text */ 't', ` with the
  specified radix.
 
@@ -2934,10 +2934,10 @@ DocsCollector.collect('java.util.Scanner', [
 				]],
 				[/* block */ 'b', [
 					[/* text */ 't', `If the radix is less than `],
-					[/* reference */ 'r', `java.Character#MIN_RADIX`],
+					[/* reference */ 'r', `java.lang.Character#MIN_RADIX`, `Character.MIN_RADIX`],
 					[/* text */ 't', `
  or greater than `],
-					[/* reference */ 'r', `java.Character#MAX_RADIX`],
+					[/* reference */ 'r', `java.lang.Character#MAX_RADIX`, `Character.MAX_RADIX`],
 					[/* text */ 't', `, then an
  `],
 					[/* inline code block */ 'i', `IllegalArgumentException`],
@@ -3036,12 +3036,12 @@ DocsCollector.collect('java.util.Scanner', [
  removing all locale specific prefixes, group separators, and locale
  specific suffixes, then mapping non-ASCII digits into ASCII
  digits via `],
-					[/* reference */ 'r', `java.Character#digit(char,int)`],
+					[/* reference */ 'r', `java.lang.Character#digit(char,int)`, `Character.digit`],
 					[/* text */ 't', `, prepending a
  negative sign (-) if the locale specific negative prefixes and suffixes
  were present, and passing the resulting string to
  `],
-					[/* reference */ 'r', `java.Short#parseShort(java.lang.String,int)`],
+					[/* reference */ 'r', `java.lang.Short#parseShort(java.lang.String,int)`, `Short.parseShort`],
 					[/* text */ 't', ` with the
  specified radix.
 
@@ -3049,10 +3049,10 @@ DocsCollector.collect('java.util.Scanner', [
 				]],
 				[/* block */ 'b', [
 					[/* text */ 't', `If the radix is less than `],
-					[/* reference */ 'r', `java.Character#MIN_RADIX`],
+					[/* reference */ 'r', `java.lang.Character#MIN_RADIX`, `Character.MIN_RADIX`],
 					[/* text */ 't', `
  or greater than `],
-					[/* reference */ 'r', `java.Character#MAX_RADIX`],
+					[/* reference */ 'r', `java.lang.Character#MAX_RADIX`, `Character.MAX_RADIX`],
 					[/* text */ 't', `, then an
  `],
 					[/* inline code block */ 'i', `IllegalArgumentException`],
@@ -3095,9 +3095,9 @@ DocsCollector.collect('java.util.Scanner', [
 				[/* block */ 'b', [
 					[/* text */ 't', ` If this scanner has not yet been closed then if its underlying
  `],
-					[/* reference */ 'r', `java.lang.Readable`],
+					[/* reference */ 'r', `java.lang.Readable`, `readable`],
 					[/* text */ 't', ` also implements the `],
-					[/* reference */ 'r', `java.io.Closeable`],
+					[/* reference */ 'r', `java.io.Closeable`, `Closeable`],
 					[/* text */ 't', ` interface then the readable's `],
 					[/* inline code block */ 'i', `close`],
 					[/* text */ 't', ` method
@@ -3109,7 +3109,7 @@ DocsCollector.collect('java.util.Scanner', [
 				[/* block */ 'b', [
 					[/* text */ 't', `Attempting to perform search operations after a scanner has
  been closed will result in an `],
-					[/* reference */ 'r', `java.lang.IllegalStateException`],
+					[/* reference */ 'r', `java.lang.IllegalStateException`, `IllegalStateException`],
 					[/* text */ 't', `.`]
 				]]
 			],

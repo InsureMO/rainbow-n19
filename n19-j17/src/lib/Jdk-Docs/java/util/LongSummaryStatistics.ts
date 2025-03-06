@@ -25,10 +25,10 @@ DocsCollector.collect('java.util.LongSummaryStatistics', [
 			[/* inline code block */ 'i', `LongSummaryStatistics`],
 			[/* text */ 't', ` can be used as a
  `],
-			[/* reference */ 'r', `.Stream#collect(java.util.stream.Collector)`],
+			[/* reference */ 'r', `java.util.stream.Stream#collect(java.util.stream.Collector)`, `reduction`],
 			[/* text */ 't', `
  target for a `],
-			[/* reference */ 'r', `java.util.stream.Stream`],
+			[/* reference */ 'r', `java.util.stream.Stream`, `stream`],
 			[/* text */ 't', `. For example:
 
  `]

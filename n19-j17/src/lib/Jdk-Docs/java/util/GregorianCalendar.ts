@@ -66,17 +66,17 @@ DocsCollector.collect('java.util.GregorianCalendar', [
 
  `],
 		[/* block */ 'b', [
-			[/* text */ 't', `Week Of Year and Week Year`]
+			[/* anchor */ 'r', '#-id', `week_and_year`, `Week Of Year and Week Year`]
 		]],
 		[/* block */ 'b', [
 			[/* text */ 't', `Values calculated for the `],
-			[/* reference */ 'r', `.Calendar#WEEK_OF_YEAR`],
+			[/* reference */ 'r', `java.util.Calendar#WEEK_OF_YEAR`, `WEEK_OF_YEAR`],
 			[/* text */ 't', ` field range from 1 to 53. The first week of a
  calendar year is the earliest seven day period starting on `],
-			[/* reference */ 'r', `.Calendar#getFirstDayOfWeek()`],
+			[/* reference */ 'r', `java.util.Calendar#getFirstDayOfWeek()`, `getFirstDayOfWeek()`],
 			[/* text */ 't', ` that contains at
  least `],
-			[/* reference */ 'r', `.Calendar#getMinimalDaysInFirstWeek()`],
+			[/* reference */ 'r', `java.util.Calendar#getMinimalDaysInFirstWeek()`, `getMinimalDaysInFirstWeek()`],
 			[/* text */ 't', ` days from that year. It thus depends
  on the values of `],
 			[/* inline code block */ 'i', `getMinimalDaysInFirstWeek()`],
@@ -98,7 +98,7 @@ DocsCollector.collect('java.util.GregorianCalendar', [
  locale-dependent resources when constructing a `],
 			[/* inline code block */ 'i', `GregorianCalendar`],
 			[/* text */ 't', `. `],
-			[/* text */ 't', `The week determination is compatible`],
+			[/* anchor */ 'r', '#-id', `iso8601_compatible_setting`, `The week determination is compatible`],
 			[/* text */ 't', ` with the ISO 8601 standard when `],
 			[/* inline code block */ 'i', `getFirstDayOfWeek()`],
 			[/* text */ 't', ` is `],
@@ -108,17 +108,17 @@ DocsCollector.collect('java.util.GregorianCalendar', [
 			[/* text */ 't', ` is 4, which values are used in locales
  where the standard is preferred. These values can explicitly be set by
  calling `],
-			[/* reference */ 'r', `.Calendar#setFirstDayOfWeek(int)`],
+			[/* reference */ 'r', `java.util.Calendar#setFirstDayOfWeek(int)`, `setFirstDayOfWeek()`],
 			[/* text */ 't', ` and
  `],
-			[/* reference */ 'r', `.Calendar#setMinimalDaysInFirstWeek(int)`],
+			[/* reference */ 'r', `java.util.Calendar#setMinimalDaysInFirstWeek(int)`, `setMinimalDaysInFirstWeek()`],
 			[/* text */ 't', `.
 
  `]
 		]],
 		[/* block */ 'b', [
 			[/* text */ 't', `A `],
-			[/* text */ 't', `week year`],
+			[/* anchor */ 'r', '#-id', `week_year`, `week year`],
 			[/* text */ 't', ` is in sync with a
  `],
 			[/* inline code block */ 'i', `WEEK_OF_YEAR`],
@@ -494,7 +494,7 @@ DocsCollector.collect('java.util.GregorianCalendar', [
 				[/* text */ 't', ` using the current time
  in the default time zone with the default
  `],
-				[/* reference */ 'r', `.Locale.Category#FORMAT`],
+				[/* reference */ 'r', `java.util.Locale.Category#FORMAT`, `FORMAT`],
 				[/* text */ 't', ` locale.`]
 			],
 			/* parameters */ UDF,
@@ -630,7 +630,7 @@ DocsCollector.collect('java.util.GregorianCalendar', [
 				[/* text */ 't', ` based on the current time
  in the given time zone with the default
  `],
-				[/* reference */ 'r', `.Locale.Category#FORMAT`],
+				[/* reference */ 'r', `java.util.Locale.Category#FORMAT`, `FORMAT`],
 				[/* text */ 't', ` locale.`]
 			],
 			[/* parameters */
@@ -662,7 +662,7 @@ DocsCollector.collect('java.util.GregorianCalendar', [
 		[/* method */ 'computeFields()', [
 			[/* method description */
 				[/* text */ 't', `Converts the time value (millisecond offset from the `],
-				[/* reference */ 'r', `.Calendar#Epoch`],
+				[/* reference */ 'r', `java.util.Calendar#Epoch`, `Epoch`],
 				[/* text */ 't', `) to calendar field values.
  The time is `],
 				[/* text */ 't', `not`],
@@ -680,7 +680,7 @@ DocsCollector.collect('java.util.GregorianCalendar', [
 			[/* method description */
 				[/* text */ 't', `Converts calendar field values to the time value (millisecond
  offset from the `],
-				[/* reference */ 'r', `.Calendar#Epoch`],
+				[/* reference */ 'r', `java.util.Calendar#Epoch`, `Epoch`],
 				[/* text */ 't', `).`]
 			],
 			/* parameters */ UDF,
@@ -706,7 +706,7 @@ DocsCollector.collect('java.util.GregorianCalendar', [
 				[/* text */ 't', ` object
  that represents the same time value (millisecond offset from
  the `],
-				[/* reference */ 'r', `.Calendar#Epoch`],
+				[/* reference */ 'r', `java.util.Calendar#Epoch`, `Epoch`],
 				[/* text */ 't', `) under the same
  `],
 				[/* inline code block */ 'i', `Calendar`],
@@ -790,16 +790,16 @@ DocsCollector.collect('java.util.GregorianCalendar', [
  taking into consideration the given time value and the current
  values of the
  `],
-				[/* reference */ 'r', `.Calendar#getFirstDayOfWeek()`],
+				[/* reference */ 'r', `java.util.Calendar#getFirstDayOfWeek()`, `getFirstDayOfWeek`],
 				[/* text */ 't', `,
  `],
-				[/* reference */ 'r', `.Calendar#getMinimalDaysInFirstWeek()`],
+				[/* reference */ 'r', `java.util.Calendar#getMinimalDaysInFirstWeek()`, `getMinimalDaysInFirstWeek`],
 				[/* text */ 't', `,
  `],
 				[/* reference */ 'r', `#getGregorianChange()`, `getGregorianChange`],
 				[/* text */ 't', ` and
  `],
-				[/* reference */ 'r', `.Calendar#getTimeZone()`],
+				[/* reference */ 'r', `java.util.Calendar#getTimeZone()`, `getTimeZone`],
 				[/* text */ 't', ` methods.
  For example, if the date of this instance is February 1, 2004,
  the actual maximum value of the `],
@@ -811,9 +811,9 @@ DocsCollector.collect('java.util.GregorianCalendar', [
  `],
 				[/* block */ 'b', [
 					[/* text */ 't', `This method calculates the maximum value of `],
-					[/* reference */ 'r', `.Calendar#WEEK_OF_YEAR`],
+					[/* reference */ 'r', `java.util.Calendar#WEEK_OF_YEAR`, `WEEK_OF_YEAR`],
 					[/* text */ 't', ` based on the `],
-					[/* reference */ 'r', `.Calendar#YEAR`],
+					[/* reference */ 'r', `java.util.Calendar#YEAR`, `YEAR`],
 					[/* text */ 't', ` (calendar year) value, not the `],
 					[/* text */ 't', `week year`],
 					[/* text */ 't', `. Call `],
@@ -843,16 +843,16 @@ DocsCollector.collect('java.util.GregorianCalendar', [
  taking into consideration the given time value and the current
  values of the
  `],
-				[/* reference */ 'r', `.Calendar#getFirstDayOfWeek()`],
+				[/* reference */ 'r', `java.util.Calendar#getFirstDayOfWeek()`, `getFirstDayOfWeek`],
 				[/* text */ 't', `,
  `],
-				[/* reference */ 'r', `.Calendar#getMinimalDaysInFirstWeek()`],
+				[/* reference */ 'r', `java.util.Calendar#getMinimalDaysInFirstWeek()`, `getMinimalDaysInFirstWeek`],
 				[/* text */ 't', `,
  `],
 				[/* reference */ 'r', `#getGregorianChange()`, `getGregorianChange`],
 				[/* text */ 't', ` and
  `],
-				[/* reference */ 'r', `.Calendar#getTimeZone()`],
+				[/* reference */ 'r', `java.util.Calendar#getTimeZone()`, `getTimeZone`],
 				[/* text */ 't', ` methods.
 
  `],
@@ -894,16 +894,16 @@ DocsCollector.collect('java.util.GregorianCalendar', [
 				[/* text */ 't', ` for any possible time value,
  taking into consideration the current values of the
  `],
-				[/* reference */ 'r', `.Calendar#getFirstDayOfWeek()`],
+				[/* reference */ 'r', `java.util.Calendar#getFirstDayOfWeek()`, `getFirstDayOfWeek`],
 				[/* text */ 't', `,
  `],
-				[/* reference */ 'r', `.Calendar#getMinimalDaysInFirstWeek()`],
+				[/* reference */ 'r', `java.util.Calendar#getMinimalDaysInFirstWeek()`, `getMinimalDaysInFirstWeek`],
 				[/* text */ 't', `,
  `],
 				[/* reference */ 'r', `#getGregorianChange()`, `getGregorianChange`],
 				[/* text */ 't', ` and
  `],
-				[/* reference */ 'r', `.Calendar#getTimeZone()`],
+				[/* reference */ 'r', `java.util.Calendar#getTimeZone()`, `getTimeZone`],
 				[/* text */ 't', ` methods.`]
 			],
 			[/* parameters */
@@ -928,16 +928,16 @@ DocsCollector.collect('java.util.GregorianCalendar', [
 				[/* text */ 't', ` for any possible time value,
  taking into consideration the current values of the
  `],
-				[/* reference */ 'r', `.Calendar#getFirstDayOfWeek()`],
+				[/* reference */ 'r', `java.util.Calendar#getFirstDayOfWeek()`, `getFirstDayOfWeek`],
 				[/* text */ 't', `,
  `],
-				[/* reference */ 'r', `.Calendar#getMinimalDaysInFirstWeek()`],
+				[/* reference */ 'r', `java.util.Calendar#getMinimalDaysInFirstWeek()`, `getMinimalDaysInFirstWeek`],
 				[/* text */ 't', `,
  `],
 				[/* reference */ 'r', `#getGregorianChange()`, `getGregorianChange`],
 				[/* text */ 't', ` and
  `],
-				[/* reference */ 'r', `.Calendar#getTimeZone()`],
+				[/* reference */ 'r', `java.util.Calendar#getTimeZone()`, `getTimeZone`],
 				[/* text */ 't', ` methods.`]
 			],
 			[/* parameters */
@@ -957,20 +957,20 @@ DocsCollector.collect('java.util.GregorianCalendar', [
 				[/* inline code block */ 'i', `GregorianCalendar`],
 				[/* text */ 't', ` instance. The maximum value is
  defined as the largest value returned by the `],
-				[/* reference */ 'r', `.Calendar#get(int)`],
+				[/* reference */ 'r', `java.util.Calendar#get(int)`, `get`],
 				[/* text */ 't', ` method for any possible time value,
  taking into consideration the current values of the
  `],
-				[/* reference */ 'r', `.Calendar#getFirstDayOfWeek()`],
+				[/* reference */ 'r', `java.util.Calendar#getFirstDayOfWeek()`, `getFirstDayOfWeek`],
 				[/* text */ 't', `,
  `],
-				[/* reference */ 'r', `.Calendar#getMinimalDaysInFirstWeek()`],
+				[/* reference */ 'r', `java.util.Calendar#getMinimalDaysInFirstWeek()`, `getMinimalDaysInFirstWeek`],
 				[/* text */ 't', `,
  `],
 				[/* reference */ 'r', `#getGregorianChange()`, `getGregorianChange`],
 				[/* text */ 't', ` and
  `],
-				[/* reference */ 'r', `.Calendar#getTimeZone()`],
+				[/* reference */ 'r', `java.util.Calendar#getTimeZone()`, `getTimeZone`],
 				[/* text */ 't', ` methods.`]
 			],
 			[/* parameters */
@@ -990,20 +990,20 @@ DocsCollector.collect('java.util.GregorianCalendar', [
 				[/* inline code block */ 'i', `GregorianCalendar`],
 				[/* text */ 't', ` instance. The minimum value is
  defined as the smallest value returned by the `],
-				[/* reference */ 'r', `.Calendar#get(int)`],
+				[/* reference */ 'r', `java.util.Calendar#get(int)`, `get`],
 				[/* text */ 't', ` method for any possible time value,
  taking into consideration the current values of the
  `],
-				[/* reference */ 'r', `.Calendar#getFirstDayOfWeek()`],
+				[/* reference */ 'r', `java.util.Calendar#getFirstDayOfWeek()`, `getFirstDayOfWeek`],
 				[/* text */ 't', `,
  `],
-				[/* reference */ 'r', `.Calendar#getMinimalDaysInFirstWeek()`],
+				[/* reference */ 'r', `java.util.Calendar#getMinimalDaysInFirstWeek()`, `getMinimalDaysInFirstWeek`],
 				[/* text */ 't', `,
  `],
 				[/* reference */ 'r', `#getGregorianChange()`, `getGregorianChange`],
 				[/* text */ 't', ` and
  `],
-				[/* reference */ 'r', `.Calendar#getTimeZone()`],
+				[/* reference */ 'r', `java.util.Calendar#getTimeZone()`, `getTimeZone`],
 				[/* text */ 't', ` methods.`]
 			],
 			[/* parameters */
@@ -1055,14 +1055,14 @@ DocsCollector.collect('java.util.GregorianCalendar', [
 				[/* text */ 't', `. The dates in the weeks between 1 and the
  maximum week number of the week year have the same week year value
  that may be one year before or after the `],
-				[/* reference */ 'r', `.Calendar#YEAR`],
+				[/* reference */ 'r', `java.util.Calendar#YEAR`, `YEAR`],
 				[/* text */ 't', `
  (calendar year) value.
 
  `],
 				[/* block */ 'b', [
 					[/* text */ 't', `This method calls `],
-					[/* reference */ 'r', `.Calendar#complete()`],
+					[/* reference */ 'r', `java.util.Calendar#complete()`, `Calendar.complete()`],
 					[/* text */ 't', ` before
  calculating the week year.`]
 				]]
@@ -1078,7 +1078,7 @@ DocsCollector.collect('java.util.GregorianCalendar', [
 				[/* inline code block */ 'i', `GregorianCalendar`],
 				[/* text */ 't', `.
          If the `],
-				[/* reference */ 'r', `.Calendar#ERA`],
+				[/* reference */ 'r', `java.util.Calendar#ERA`, `ERA`],
 				[/* text */ 't', ` value is `],
 				[/* text */ 't', `BC`],
 				[/* text */ 't', `, the year is
@@ -1158,12 +1158,12 @@ DocsCollector.collect('java.util.GregorianCalendar', [
  which has `],
 					[/* inline code block */ 'i', `MONDAY`],
 					[/* text */ 't', ` as the `],
-					[/* reference */ 'r', `.Calendar#getFirstDayOfWeek()`],
+					[/* reference */ 'r', `java.util.Calendar#getFirstDayOfWeek()`, `FirstDayOfWeek`],
 					[/* text */ 't', ` and `],
 					[/* inline code block */ 'i', `4`],
 					[/* text */ 't', ` as the value of the
  `],
-					[/* reference */ 'r', `.Calendar#getMinimalDaysInFirstWeek()`],
+					[/* reference */ 'r', `java.util.Calendar#getMinimalDaysInFirstWeek()`, `MinimalDaysInFirstWeek`],
 					[/* text */ 't', `.
  `]
 				]],
@@ -1326,7 +1326,7 @@ DocsCollector.collect('java.util.GregorianCalendar', [
  `],
 				[/* block */ 'b', [
 					[/* text */ 't', `This method calls `],
-					[/* reference */ 'r', `.Calendar#complete()`],
+					[/* reference */ 'r', `java.util.Calendar#complete()`, `Calendar.complete()`],
 					[/* text */ 't', ` before adding the
  amount so that all the calendar fields are normalized. If there
  is any calendar field having an out-of-range value in non-lenient mode, then an
@@ -1468,11 +1468,11 @@ DocsCollector.collect('java.util.GregorianCalendar', [
 				[/* inline code block */ 'i', `dayOfWeek`],
 				[/* text */ 't', ` value must be one of the
  `],
-				[/* reference */ 'r', `.Calendar#DAY_OF_WEEK`],
+				[/* reference */ 'r', `java.util.Calendar#DAY_OF_WEEK`, `DAY_OF_WEEK`],
 				[/* text */ 't', ` values: `],
-				[/* reference */ 'r', `.Calendar#SUNDAY`],
+				[/* reference */ 'r', `java.util.Calendar#SUNDAY`, `SUNDAY`],
 				[/* text */ 't', ` to `],
-				[/* reference */ 'r', `.Calendar#SATURDAY`],
+				[/* reference */ 'r', `java.util.Calendar#SATURDAY`, `SATURDAY`],
 				[/* text */ 't', `.
 
  `],
@@ -1528,13 +1528,13 @@ DocsCollector.collect('java.util.GregorianCalendar', [
 				[/* parameter */ 'dayOfWeek', [/* parameter description */
 					[/* text */ 't', `the day of week value: one of the constants
                     for the `],
-					[/* reference */ 'r', `.Calendar#DAY_OF_WEEK`],
+					[/* reference */ 'r', `java.util.Calendar#DAY_OF_WEEK`, `DAY_OF_WEEK`],
 					[/* text */ 't', ` field:
                     `],
-					[/* reference */ 'r', `.Calendar#SUNDAY`],
+					[/* reference */ 'r', `java.util.Calendar#SUNDAY`, `SUNDAY`],
 					[/* text */ 't', `, ...,
                     `],
-					[/* reference */ 'r', `.Calendar#SATURDAY`],
+					[/* reference */ 'r', `java.util.Calendar#SATURDAY`, `SATURDAY`],
 					[/* text */ 't', `.`]
 				]]
 			],

@@ -8,9 +8,9 @@ DocsCollector.collect('java.io.FileDescriptor', [
  file, an open socket, or another source or sink of bytes.
  The main practical use for a file descriptor is to create a
  `],
-		[/* reference */ 'r', `java.io.FileInputStream`],
+		[/* reference */ 'r', `java.io.FileInputStream`, `FileInputStream`],
 		[/* text */ 't', ` or `],
-		[/* reference */ 'r', `java.io.FileOutputStream`],
+		[/* reference */ 'r', `java.io.FileOutputStream`, `FileOutputStream`],
 		[/* text */ 't', ` to contain it.
  `],
 		[/* block */ 'b', `

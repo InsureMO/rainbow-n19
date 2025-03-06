@@ -33,7 +33,7 @@ DocsCollector.collect('java.io.LineNumberReader', [
 		]],
 		[/* block */ 'b', [
 			[/* text */ 't', ` A line is considered to be `],
-			[/* text */ 't', `terminated`],
+			[/* anchor */ 'r', '#-id', `lt`, `terminated`],
 			[/* text */ 't', ` by any one of a
  line feed ('\\n'), a carriage return ('\\r'), or a carriage return followed
  immediately by a linefeed, or any of the previous terminators followed by

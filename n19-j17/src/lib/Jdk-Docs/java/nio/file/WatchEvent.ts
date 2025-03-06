@@ -4,7 +4,7 @@ import {DocsCollector} from '../../../DocsCollector';
 DocsCollector.collect('java.nio.file.WatchEvent', [
 	[/* class description */
 		[/* text */ 't', `An event or a repeated event for an object that is registered with a `],
-		[/* reference */ 'r', `java.nio.file.WatchService`],
+		[/* reference */ 'r', `java.nio.file.WatchService`, `WatchService`],
 		[/* text */ 't', `.
 
  `],
@@ -59,17 +59,17 @@ DocsCollector.collect('java.nio.file.WatchEvent', [
  `],
 				[/* block */ 'b', [
 					[/* text */ 't', ` In the case of `],
-					[/* reference */ 'r', `.StandardWatchEventKinds#ENTRY_CREATE`],
+					[/* reference */ 'r', `java.nio.file.StandardWatchEventKinds#ENTRY_CREATE`, `ENTRY_CREATE`],
 					[/* text */ 't', `,
  `],
-					[/* reference */ 'r', `.StandardWatchEventKinds#ENTRY_DELETE`],
+					[/* reference */ 'r', `java.nio.file.StandardWatchEventKinds#ENTRY_DELETE`, `ENTRY_DELETE`],
 					[/* text */ 't', `, and `],
-					[/* reference */ 'r', `.StandardWatchEventKinds#ENTRY_MODIFY`],
+					[/* reference */ 'r', `java.nio.file.StandardWatchEventKinds#ENTRY_MODIFY`, `ENTRY_MODIFY`],
 					[/* text */ 't', ` events the context is
  a `],
 					[/* inline code block */ 'i', `Path`],
 					[/* text */ 't', ` that is the `],
-					[/* reference */ 'r', `.Path#relativize(java.nio.file.Path)`],
+					[/* reference */ 'r', `java.nio.file.Path#relativize(java.nio.file.Path)`, `relative`],
 					[/* text */ 't', ` path between
  the directory registered with the watch service, and the entry that is
  created, deleted, or modified.`]

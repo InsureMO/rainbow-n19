@@ -8,10 +8,10 @@ DocsCollector.collect('java.nio.MappedByteBuffer', [
  `],
 		[/* block */ 'b', [
 			[/* text */ 't', ` Mapped byte buffers are created via the `],
-			[/* reference */ 'r', `.FileChannel#map(java.nio.channels.FileChannel.MapMode,long,long)`],
+			[/* reference */ 'r', `java.nio.channels.FileChannel#map(java.nio.channels.FileChannel.MapMode,long,long)`, `FileChannel.map`],
 			[/* text */ 't', ` method.  This class
  extends the `],
-			[/* reference */ 'r', `java.nio.ByteBuffer`],
+			[/* reference */ 'r', `java.nio.ByteBuffer`, `ByteBuffer`],
 			[/* text */ 't', ` class with operations that are specific to
  memory-mapped file regions.
 
@@ -28,7 +28,7 @@ DocsCollector.collect('java.nio.MappedByteBuffer', [
  occur, is operating-system dependent and therefore unspecified.
 
  `],
-			[/* text */ 't', ``]
+			[/* anchor */ 'r', '#-id', `inaccess`, ``]
 		]],
 		[/* block */ 'b', ` All or part of a mapped byte buffer may become
  inaccessible at any time, for example if the mapped file is truncated.  An
@@ -135,7 +135,7 @@ DocsCollector.collect('java.nio.MappedByteBuffer', [
 
  and mark values will be identical to those of this buffer, and its byte
  order will be `],
-					[/* reference */ 'r', `.ByteOrder#BIG_ENDIAN`],
+					[/* reference */ 'r', `java.nio.ByteOrder#BIG_ENDIAN`, `BIG_ENDIAN`],
 					[/* text */ 't', `.
 
 
@@ -168,7 +168,7 @@ DocsCollector.collect('java.nio.MappedByteBuffer', [
  undefined, and its byte order will be
 
  `],
-					[/* reference */ 'r', `.ByteOrder#BIG_ENDIAN`],
+					[/* reference */ 'r', `java.nio.ByteOrder#BIG_ENDIAN`, `BIG_ENDIAN`],
 					[/* text */ 't', `.
 
 
@@ -222,7 +222,7 @@ DocsCollector.collect('java.nio.MappedByteBuffer', [
  will be
 
  `],
-					[/* reference */ 'r', `.ByteOrder#BIG_ENDIAN`],
+					[/* reference */ 'r', `java.nio.ByteOrder#BIG_ENDIAN`, `BIG_ENDIAN`],
 					[/* text */ 't', `.
 
 
@@ -254,7 +254,7 @@ DocsCollector.collect('java.nio.MappedByteBuffer', [
 					[/* text */ 't', `The position in this buffer at which the content of the new
           buffer will start; must be non-negative and no larger than
           `],
-					[/* reference */ 'r', `.Buffer#limit()`]
+					[/* reference */ 'r', `java.nio.Buffer#limit()`, `limit()`]
 				]],
 				[/* parameter */ 'length', [/* parameter description */
 					[/* text */ 't', `The number of elements the new buffer will contain; must be
@@ -355,7 +355,7 @@ DocsCollector.collect('java.nio.MappedByteBuffer', [
 				[/* block */ 'b', ''],
 				[/* block */ 'b', [
 					[/* text */ 't', ` This method is often used in conjunction with the `],
-					[/* reference */ 'r', `.ByteBuffer#compact()`],
+					[/* reference */ 'r', `java.nio.ByteBuffer#compact()`, `compact`],
 					[/* text */ 't', ` method when transferring data from
  one place to another.  `]
 				]]
@@ -391,7 +391,7 @@ DocsCollector.collect('java.nio.MappedByteBuffer', [
  `],
 				[/* block */ 'b', [
 					[/* text */ 't', ` If this buffer was not mapped in read/write mode (`],
-					[/* reference */ 'r', `.FileChannel.MapMode#READ_WRITE`],
+					[/* reference */ 'r', `java.nio.channels.FileChannel.MapMode#READ_WRITE`, `FileChannel.MapMode.READ_WRITE`],
 					[/* text */ 't', `) then
  invoking this method may have no effect. In particular, the
  method has no effect for buffers mapped in read-only or private
@@ -438,7 +438,7 @@ DocsCollector.collect('java.nio.MappedByteBuffer', [
  `],
 				[/* block */ 'b', [
 					[/* text */ 't', ` If this buffer was not mapped in read/write mode (`],
-					[/* reference */ 'r', `.FileChannel.MapMode#READ_WRITE`],
+					[/* reference */ 'r', `java.nio.channels.FileChannel.MapMode#READ_WRITE`, `FileChannel.MapMode.READ_WRITE`],
 					[/* text */ 't', `) then
  invoking this method may have no effect. In particular, the
  method has no effect for buffers mapped in read-only or private

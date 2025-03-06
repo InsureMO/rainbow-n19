@@ -5,7 +5,7 @@ DocsCollector.collect('java.util.concurrent.ThreadFactory', [
 	[/* class description */
 		[/* text */ 't', `An object that creates new threads on demand.  Using thread factories
  removes hardwiring of calls to `],
-		[/* reference */ 'r', `java.util.Thread#<init>(java.lang.Runnable)`],
+		[/* reference */ 'r', `java.lang.Thread#<init>(java.lang.Runnable)`, `new Thread`],
 		[/* text */ 't', `,
  enabling applications to use special thread subclasses, priorities, etc.
 
@@ -23,7 +23,7 @@ DocsCollector.collect('java.util.concurrent.ThreadFactory', [
 		[/* text */ 't', `
 
  The `],
-		[/* reference */ 'r', `.Executors#defaultThreadFactory()`],
+		[/* reference */ 'r', `java.util.concurrent.Executors#defaultThreadFactory()`, `Executors.defaultThreadFactory()`],
 		[/* text */ 't', ` method provides a more
  useful simple implementation, that sets the created thread context
  to known values before returning it.`],

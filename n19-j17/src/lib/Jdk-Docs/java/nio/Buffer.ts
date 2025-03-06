@@ -53,12 +53,12 @@ DocsCollector.collect('java.nio.Buffer', [
    relative `],
 				[/* text */ 't', `get`],
 				[/* text */ 't', ` operation throws a `],
-				[/* reference */ 'r', `java.nio.BufferUnderflowException`],
+				[/* reference */ 'r', `java.nio.BufferUnderflowException`, `BufferUnderflowException`],
 				[/* text */ 't', `
    and a relative `],
 				[/* text */ 't', `put`],
 				[/* text */ 't', ` operation throws a `],
-				[/* reference */ 'r', `java.nio.BufferOverflowException`],
+				[/* reference */ 'r', `java.nio.BufferOverflowException`, `BufferOverflowException`],
 				[/* text */ 't', `; in either case, no data is transferred.  `]
 			]],
 			[/* block */ 'b', [
@@ -70,7 +70,7 @@ DocsCollector.collect('java.nio.Buffer', [
 				[/* text */ 't', `put`],
 				[/* text */ 't', ` operations throw
    an `],
-				[/* reference */ 'r', `java.lang.IndexOutOfBoundsException`],
+				[/* reference */ 'r', `java.lang.IndexOutOfBoundsException`, `IndexOutOfBoundsException`],
 				[/* text */ 't', ` if the index argument exceeds the
    limit.  `]
 			]]
@@ -96,7 +96,7 @@ DocsCollector.collect('java.nio.Buffer', [
 			[/* reference */ 'r', `#reset()`, `reset`],
 			[/* text */ 't', ` method causes an
  `],
-			[/* reference */ 'r', `java.nio.InvalidMarkException`],
+			[/* reference */ 'r', `java.nio.InvalidMarkException`, `InvalidMarkException`],
 			[/* text */ 't', ` to be thrown.
 
 
@@ -189,7 +189,7 @@ DocsCollector.collect('java.nio.Buffer', [
 			[/* text */ 't', `optional
  operations`],
 			[/* text */ 't', ` that will throw a `],
-			[/* reference */ 'r', `java.nio.ReadOnlyBufferException`],
+			[/* reference */ 'r', `java.nio.ReadOnlyBufferException`, `ReadOnlyBufferException`],
 			[/* text */ 't', ` when
  invoked upon a read-only buffer.  A read-only buffer does not allow its
  content to be changed, but its mark, position, and limit values are mutable.
@@ -262,7 +262,7 @@ DocsCollector.collect('java.nio.Buffer', [
 			[/* method description */
 				[/* text */ 't', `Tells whether or not this buffer is
  `],
-				[/* reference */ 'r', `.ByteBuffer#direct`],
+				[/* reference */ 'r', `java.nio.ByteBuffer#direct`, `direct`],
 				[/* text */ 't', `.`]
 			],
 			/* parameters */ UDF,
@@ -576,7 +576,7 @@ DocsCollector.collect('java.nio.Buffer', [
 				[/* block */ 'b', ''],
 				[/* block */ 'b', [
 					[/* text */ 't', ` This method is often used in conjunction with the `],
-					[/* reference */ 'r', `.ByteBuffer#compact()`],
+					[/* reference */ 'r', `java.nio.ByteBuffer#compact()`, `compact`],
 					[/* text */ 't', ` method when transferring data from
  one place to another.  `]
 				]]

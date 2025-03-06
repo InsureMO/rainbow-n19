@@ -6,9 +6,9 @@ DocsCollector.collect('java.util.stream.Stream', [
 		[/* text */ 't', `A sequence of elements supporting sequential and parallel aggregate
  operations.  The following example illustrates an aggregate operation using
  `],
-		[/* reference */ 'r', `java.util.stream.Stream`],
+		[/* reference */ 'r', `java.util.stream.Stream`, `Stream`],
 		[/* text */ 't', ` and `],
-		[/* reference */ 'r', `java.util.stream.IntStream`],
+		[/* reference */ 'r', `java.util.stream.IntStream`, `IntStream`],
 		[/* text */ 't', `:
 
  `],
@@ -28,7 +28,7 @@ DocsCollector.collect('java.util.stream.Stream', [
  a stream of `],
 		[/* inline code block */ 'i', `Widget`],
 		[/* text */ 't', ` objects via `],
-		[/* reference */ 'r', `java.Collection#stream()`],
+		[/* reference */ 'r', `java.util.Collection#stream()`, `Collection.stream()`],
 		[/* text */ 't', `,
  filter it to produce a stream containing only the red widgets, and then
  transform it into a stream of `],
@@ -42,12 +42,12 @@ DocsCollector.collect('java.util.stream.Stream', [
 			[/* inline code block */ 'i', `Stream`],
 			[/* text */ 't', `, which is a stream of object references,
  there are primitive specializations for `],
-			[/* reference */ 'r', `java.util.stream.IntStream`],
+			[/* reference */ 'r', `java.util.stream.IntStream`, `IntStream`],
 			[/* text */ 't', `, `],
-			[/* reference */ 'r', `java.util.stream.LongStream`],
+			[/* reference */ 'r', `java.util.stream.LongStream`, `LongStream`],
 			[/* text */ 't', `,
  and `],
-			[/* reference */ 'r', `java.util.stream.DoubleStream`],
+			[/* reference */ 'r', `java.util.stream.DoubleStream`, `DoubleStream`],
 			[/* text */ 't', `, all of which are referred to as "streams" and
  conform to the characteristics and restrictions described here.
 
@@ -56,7 +56,7 @@ DocsCollector.collect('java.util.stream.Stream', [
 		[/* block */ 'b', [
 			[/* text */ 't', `To perform a computation, stream
  `],
-			[/* reference */ 'r', `.package-summary#StreamOps`],
+			[/* text */ 't', `operations`],
 			[/* text */ 't', ` are composed into a
  `],
 			[/* text */ 't', `stream pipeline`],
@@ -100,7 +100,7 @@ DocsCollector.collect('java.util.stream.Stream', [
 			[/* reference */ 'r', `#count()`, `count()`],
 			[/* text */ 't', ` operation.  For more detail, see the
  `],
-			[/* reference */ 'r', `.package-summary#SideEffects`],
+			[/* text */ 't', `side-effects`],
 			[/* text */ 't', ` section of the
  stream package documentation.)
 
@@ -115,9 +115,9 @@ DocsCollector.collect('java.util.stream.Stream', [
  computational operations which will be performed in aggregate on that source.
  However, if the provided stream operations do not offer the desired
  functionality, the `],
-			[/* reference */ 'r', `.BaseStream#iterator()`],
+			[/* reference */ 'r', `java.util.stream.BaseStream#iterator()`, `BaseStream.iterator()`],
 			[/* text */ 't', ` and `],
-			[/* reference */ 'r', `.BaseStream#spliterator()`],
+			[/* reference */ 'r', `java.util.stream.BaseStream#spliterator()`, `BaseStream.spliterator()`],
 			[/* text */ 't', ` operations
  can be used to perform a controlled traversal.
 
@@ -129,7 +129,7 @@ DocsCollector.collect('java.util.stream.Stream', [
 			[/* text */ 't', `query`],
 			[/* text */ 't', ` on the stream source.  Unless the source was explicitly
  designed for concurrent modification (such as a `],
-			[/* reference */ 'r', `java.util.concurrent.ConcurrentHashMap`],
+			[/* reference */ 'r', `java.util.concurrent.ConcurrentHashMap`, `ConcurrentHashMap`],
 			[/* text */ 't', `),
  unpredictable or erroneous behavior may result from modifying the stream
  source while it is being queried.
@@ -152,13 +152,13 @@ DocsCollector.collect('java.util.stream.Stream', [
 		[/* list */ 'l', [
 			[/* block */ 'b', [
 				[/* text */ 't', `must be `],
-				[/* reference */ 'r', `.package-summary#NonInterference`],
+				[/* text */ 't', `non-interfering`],
 				[/* text */ 't', `
  (they do not modify the stream source); and`]
 			]],
 			[/* block */ 'b', [
 				[/* text */ 't', `in most cases must be `],
-				[/* reference */ 'r', `.package-summary#Statelessness`],
+				[/* text */ 't', `stateless`],
 				[/* text */ 't', `
  (their result should not depend on any state that might change during execution
  of the stream pipeline).`]
@@ -171,7 +171,7 @@ DocsCollector.collect('java.util.stream.Stream', [
 			[/* text */ 't', `functional interface`],
 			[/* text */ 't', ` such
  as `],
-			[/* reference */ 'r', `java.util.function.Function`],
+			[/* reference */ 'r', `java.util.function.Function`, `Function`],
 			[/* text */ 't', `, and are often lambda expressions or
  method references.  Unless otherwise specified these parameters must be
  `],
@@ -185,7 +185,7 @@ DocsCollector.collect('java.util.stream.Stream', [
  operation) only once.  This rules out, for example, "forked" streams, where
  the same source feeds two or more pipelines, or multiple traversals of the
  same stream.  A stream implementation may throw `],
-			[/* reference */ 'r', `java.lang.IllegalStateException`],
+			[/* reference */ 'r', `java.lang.IllegalStateException`, `IllegalStateException`],
 			[/* text */ 't', `
  if it detects that the stream is being reused. However, since some stream
  operations may return their receiver rather than a new stream object, it may
@@ -195,18 +195,18 @@ DocsCollector.collect('java.util.stream.Stream', [
 		]],
 		[/* block */ 'b', [
 			[/* text */ 't', `Streams have a `],
-			[/* reference */ 'r', `.BaseStream#close()`],
+			[/* reference */ 'r', `java.util.stream.BaseStream#close()`, `BaseStream.close()`],
 			[/* text */ 't', ` method and implement `],
-			[/* reference */ 'r', `java.lang.AutoCloseable`],
+			[/* reference */ 'r', `java.lang.AutoCloseable`, `AutoCloseable`],
 			[/* text */ 't', `.
  Operating on a stream after it has been closed will throw `],
-			[/* reference */ 'r', `java.lang.IllegalStateException`],
+			[/* reference */ 'r', `java.lang.IllegalStateException`, `IllegalStateException`],
 			[/* text */ 't', `.
  Most stream instances do not actually need to be closed after use, as they
  are backed by collections, arrays, or generating functions, which require no
  special resource management. Generally, only streams whose source is an IO channel,
  such as those returned by `],
-			[/* reference */ 'r', `java.util.file.Files#lines(java.nio.file.Path)`],
+			[/* reference */ 'r', `java.nio.file.Files#lines(java.nio.file.Path)`, `Files.lines(Path)`],
 			[/* text */ 't', `, will require closing. If a
  stream does require closing, it must be opened as a resource within a try-with-resources
  statement or similar control structure to ensure that it is closed promptly after its
@@ -217,24 +217,24 @@ DocsCollector.collect('java.util.stream.Stream', [
 		[/* block */ 'b', [
 			[/* text */ 't', `Stream pipelines may execute either sequentially or in
  `],
-			[/* reference */ 'r', `.package-summary#Parallelism`],
+			[/* text */ 't', `parallel`],
 			[/* text */ 't', `.  This
  execution mode is a property of the stream.  Streams are created
  with an initial choice of sequential or parallel execution.  (For example,
  `],
-			[/* reference */ 'r', `java.Collection#stream()`],
+			[/* reference */ 'r', `java.util.Collection#stream()`, `Collection.stream()`],
 			[/* text */ 't', ` creates a sequential stream,
  and `],
-			[/* reference */ 'r', `java.Collection#parallelStream()`],
+			[/* reference */ 'r', `java.util.Collection#parallelStream()`, `Collection.parallelStream()`],
 			[/* text */ 't', ` creates
  a parallel one.)  This choice of execution mode may be modified by the
  `],
-			[/* reference */ 'r', `.BaseStream#sequential()`],
+			[/* reference */ 'r', `java.util.stream.BaseStream#sequential()`, `BaseStream.sequential()`],
 			[/* text */ 't', ` or `],
-			[/* reference */ 'r', `.BaseStream#parallel()`],
+			[/* reference */ 'r', `java.util.stream.BaseStream#parallel()`, `BaseStream.parallel()`],
 			[/* text */ 't', ` methods, and may be queried with
  the `],
-			[/* reference */ 'r', `.BaseStream#isParallel()`],
+			[/* reference */ 'r', `java.util.stream.BaseStream#isParallel()`, `BaseStream.isParallel()`],
 			[/* text */ 't', ` method.`]
 		]]
 	],
@@ -253,7 +253,7 @@ DocsCollector.collect('java.util.stream.Stream', [
  `],
 				[/* block */ 'b', [
 					[/* text */ 't', `This is a `],
-					[/* reference */ 'r', `.package-summary#StreamOps`],
+					[/* text */ 't', `terminal operation`],
 					[/* text */ 't', `.`]
 				]]
 			],
@@ -267,7 +267,7 @@ DocsCollector.collect('java.util.stream.Stream', [
 				[/* throw */ 'java.lang.ArrayStoreException', [/* throw description */
 					[/* text */ 't', `if the runtime type of any element of this
          stream is not assignable to the `],
-					[/* reference */ 'r', `java.util.Class#getComponentType()`],
+					[/* reference */ 'r', `java.lang.Class#getComponentType()`, `runtime component type`],
 					[/* text */ 't', ` of the generated array`]
 				]]
 			],
@@ -278,7 +278,7 @@ DocsCollector.collect('java.util.stream.Stream', [
 		[/* method */ 'collect(java.util.stream.Collector)', [
 			[/* method description */
 				[/* text */ 't', `Performs a `],
-				[/* reference */ 'r', `.package-summary#MutableReduction`],
+				[/* text */ 't', `mutable reduction`],
 				[/* text */ 't', ` operation on the elements of this stream using a
  `],
 				[/* inline code block */ 'i', `Collector`],
@@ -298,14 +298,14 @@ DocsCollector.collect('java.util.stream.Stream', [
 					[/* inline code block */ 'i', `Collector`],
 					[/* text */ 't', `
  is `],
-					[/* reference */ 'r', `.Collector.Characteristics#CONCURRENT`],
+					[/* reference */ 'r', `java.util.stream.Collector.Characteristics#CONCURRENT`, `concurrent`],
 					[/* text */ 't', `, and
  either the stream is unordered or the collector is
  `],
-					[/* reference */ 'r', `.Collector.Characteristics#UNORDERED`],
+					[/* reference */ 'r', `java.util.stream.Collector.Characteristics#UNORDERED`, `unordered`],
 					[/* text */ 't', `,
  then a concurrent reduction will be performed (see `],
-					[/* reference */ 'r', `java.util.stream.Collector`],
+					[/* reference */ 'r', `java.util.stream.Collector`, `Collector`],
 					[/* text */ 't', ` for
  details on concurrent reduction.)
 
@@ -313,7 +313,7 @@ DocsCollector.collect('java.util.stream.Stream', [
 				]],
 				[/* block */ 'b', [
 					[/* text */ 't', `This is a `],
-					[/* reference */ 'r', `.package-summary#StreamOps`],
+					[/* text */ 't', `terminal operation`],
 					[/* text */ 't', `.
 
  `]
@@ -346,7 +346,7 @@ DocsCollector.collect('java.util.stream.Stream', [
  this stream with the contents of a mapped stream produced by applying
  the provided mapping function to each element.  Each mapped stream is
  `],
-				[/* reference */ 'r', `.BaseStream#close()`],
+				[/* reference */ 'r', `java.util.stream.BaseStream#close()`, `closed`],
 				[/* text */ 't', ` after its contents
  have been placed into this stream.  (If a mapped stream is `],
 				[/* inline code block */ 'i', `null`],
@@ -356,17 +356,17 @@ DocsCollector.collect('java.util.stream.Stream', [
  `],
 				[/* block */ 'b', [
 					[/* text */ 't', `This is an `],
-					[/* reference */ 'r', `.package-summary#StreamOps`],
+					[/* text */ 't', `intermediate operation`],
 					[/* text */ 't', `.`]
 				]]
 			],
 			[/* parameters */
 				[/* parameter */ 'mapper', [/* parameter description */
 					[/* text */ 't', `a `],
-					[/* reference */ 'r', `.package-summary#NonInterference`],
+					[/* text */ 't', `non-interfering`],
 					[/* text */ 't', `,
                `],
-					[/* reference */ 'r', `.package-summary#Statelessness`],
+					[/* text */ 't', `stateless`],
 					[/* text */ 't', `
                function to apply to each element which produces a stream
                of new values`]
@@ -385,17 +385,17 @@ DocsCollector.collect('java.util.stream.Stream', [
  `],
 				[/* block */ 'b', [
 					[/* text */ 't', `This is an `],
-					[/* reference */ 'r', `.package-summary#StreamOps`],
+					[/* text */ 't', `intermediate operation`],
 					[/* text */ 't', `.`]
 				]]
 			],
 			[/* parameters */
 				[/* parameter */ 'mapper', [/* parameter description */
 					[/* text */ 't', `a `],
-					[/* reference */ 'r', `.package-summary#NonInterference`],
+					[/* text */ 't', `non-interfering`],
 					[/* text */ 't', `,
                `],
-					[/* reference */ 'r', `.package-summary#Statelessness`],
+					[/* text */ 't', `stateless`],
 					[/* text */ 't', `
                function to apply to each element`]
 				]]
@@ -408,7 +408,7 @@ DocsCollector.collect('java.util.stream.Stream', [
 		[/* method */ 'collect(java.util.function.Supplier,java.util.function.BiConsumer,java.util.function.BiConsumer)', [
 			[/* method description */
 				[/* text */ 't', `Performs a `],
-				[/* reference */ 'r', `.package-summary#MutableReduction`],
+				[/* text */ 't', `mutable reduction`],
 				[/* text */ 't', ` operation on the elements of this stream.  A mutable
  reduction is one in which the reduced value is a mutable result container,
  such as an `],
@@ -435,7 +435,7 @@ DocsCollector.collect('java.util.stream.Stream', [
 				]],
 				[/* block */ 'b', [
 					[/* text */ 't', `This is a `],
-					[/* reference */ 'r', `.package-summary#StreamOps`],
+					[/* text */ 't', `terminal operation`],
 					[/* text */ 't', `.`]
 				]]
 			],
@@ -447,26 +447,26 @@ DocsCollector.collect('java.util.stream.Stream', [
 				]],
 				[/* parameter */ 'accumulator', [/* parameter description */
 					[/* text */ 't', `an `],
-					[/* reference */ 'r', `.package-summary#Associativity`],
+					[/* text */ 't', `associative`],
 					[/* text */ 't', `,
                     `],
-					[/* reference */ 'r', `.package-summary#NonInterference`],
+					[/* text */ 't', `non-interfering`],
 					[/* text */ 't', `,
                     `],
-					[/* reference */ 'r', `.package-summary#Statelessness`],
+					[/* text */ 't', `stateless`],
 					[/* text */ 't', `
                     function that must fold an element into a result
                     container.`]
 				]],
 				[/* parameter */ 'combiner', [/* parameter description */
 					[/* text */ 't', `an `],
-					[/* reference */ 'r', `.package-summary#Associativity`],
+					[/* text */ 't', `associative`],
 					[/* text */ 't', `,
                     `],
-					[/* reference */ 'r', `.package-summary#NonInterference`],
+					[/* text */ 't', `non-interfering`],
 					[/* text */ 't', `,
                     `],
-					[/* reference */ 'r', `.package-summary#Statelessness`],
+					[/* text */ 't', `stateless`],
 					[/* text */ 't', `
                     function that accepts two partial result containers
                     and merges them, which must be compatible with the
@@ -483,7 +483,7 @@ DocsCollector.collect('java.util.stream.Stream', [
 		[/* method */ 'reduce(java.lang.Object,java.util.function.BiFunction,java.util.function.BinaryOperator)', [
 			[/* method description */
 				[/* text */ 't', `Performs a `],
-				[/* reference */ 'r', `.package-summary#Reduction`],
+				[/* text */ 't', `reduction`],
 				[/* text */ 't', ` on the
  elements of this stream, using the provided identity, accumulation and
  combining functions.  This is equivalent to:
@@ -529,7 +529,7 @@ DocsCollector.collect('java.util.stream.Stream', [
 				[/* block */ 'b', ''],
 				[/* block */ 'b', [
 					[/* text */ 't', `This is a `],
-					[/* reference */ 'r', `.package-summary#StreamOps`],
+					[/* text */ 't', `terminal operation`],
 					[/* text */ 't', `.`]
 				]]
 			],
@@ -539,25 +539,25 @@ DocsCollector.collect('java.util.stream.Stream', [
 				]],
 				[/* parameter */ 'accumulator', [/* parameter description */
 					[/* text */ 't', `an `],
-					[/* reference */ 'r', `.package-summary#Associativity`],
+					[/* text */ 't', `associative`],
 					[/* text */ 't', `,
                     `],
-					[/* reference */ 'r', `.package-summary#NonInterference`],
+					[/* text */ 't', `non-interfering`],
 					[/* text */ 't', `,
                     `],
-					[/* reference */ 'r', `.package-summary#Statelessness`],
+					[/* text */ 't', `stateless`],
 					[/* text */ 't', `
                     function for incorporating an additional element into a result`]
 				]],
 				[/* parameter */ 'combiner', [/* parameter description */
 					[/* text */ 't', `an `],
-					[/* reference */ 'r', `.package-summary#Associativity`],
+					[/* text */ 't', `associative`],
 					[/* text */ 't', `,
                     `],
-					[/* reference */ 'r', `.package-summary#NonInterference`],
+					[/* text */ 't', `non-interfering`],
 					[/* text */ 't', `,
                     `],
-					[/* reference */ 'r', `.package-summary#Statelessness`],
+					[/* text */ 't', `stateless`],
 					[/* text */ 't', `
                     function for combining two values, which must be
                     compatible with the accumulator function`]
@@ -580,17 +580,17 @@ DocsCollector.collect('java.util.stream.Stream', [
  `],
 				[/* block */ 'b', [
 					[/* text */ 't', `This is a `],
-					[/* reference */ 'r', `.package-summary#StreamOps`],
+					[/* text */ 't', `short-circuiting terminal operation`],
 					[/* text */ 't', `.`]
 				]]
 			],
 			[/* parameters */
 				[/* parameter */ 'predicate', [/* parameter description */
 					[/* text */ 't', `a `],
-					[/* reference */ 'r', `.package-summary#NonInterference`],
+					[/* text */ 't', `non-interfering`],
 					[/* text */ 't', `,
                   `],
-					[/* reference */ 'r', `.package-summary#Statelessness`],
+					[/* text */ 't', `stateless`],
 					[/* text */ 't', `
                   predicate to apply to elements of this stream`]
 				]]
@@ -615,17 +615,17 @@ DocsCollector.collect('java.util.stream.Stream', [
  `],
 				[/* block */ 'b', [
 					[/* text */ 't', `This is a `],
-					[/* reference */ 'r', `.package-summary#StreamOps`],
+					[/* text */ 't', `short-circuiting terminal operation`],
 					[/* text */ 't', `.`]
 				]]
 			],
 			[/* parameters */
 				[/* parameter */ 'predicate', [/* parameter description */
 					[/* text */ 't', `a `],
-					[/* reference */ 'r', `.package-summary#NonInterference`],
+					[/* text */ 't', `non-interfering`],
 					[/* text */ 't', `,
                   `],
-					[/* reference */ 'r', `.package-summary#Statelessness`],
+					[/* text */ 't', `stateless`],
 					[/* text */ 't', `
                   predicate to apply to elements of this stream`]
 				]]
@@ -650,17 +650,17 @@ DocsCollector.collect('java.util.stream.Stream', [
  `],
 				[/* block */ 'b', [
 					[/* text */ 't', `This is a `],
-					[/* reference */ 'r', `.package-summary#StreamOps`],
+					[/* text */ 't', `short-circuiting terminal operation`],
 					[/* text */ 't', `.`]
 				]]
 			],
 			[/* parameters */
 				[/* parameter */ 'predicate', [/* parameter description */
 					[/* text */ 't', `a `],
-					[/* reference */ 'r', `.package-summary#NonInterference`],
+					[/* text */ 't', `non-interfering`],
 					[/* text */ 't', `,
                   `],
-					[/* reference */ 'r', `.package-summary#Statelessness`],
+					[/* text */ 't', `stateless`],
 					[/* text */ 't', `
                   predicate to apply to elements of this stream`]
 				]]
@@ -680,7 +680,7 @@ DocsCollector.collect('java.util.stream.Stream', [
  `],
 				[/* block */ 'b', [
 					[/* text */ 't', `This is a `],
-					[/* reference */ 'r', `.package-summary#StreamOps`],
+					[/* text */ 't', `terminal operation`],
 					[/* text */ 't', `.`]
 				]]
 			],
@@ -688,7 +688,7 @@ DocsCollector.collect('java.util.stream.Stream', [
 			/* throws */ UDF,
 			[/* return description */
 				[/* text */ 't', `an array, whose `],
-				[/* reference */ 'r', `java.util.Class#getComponentType()`],
+				[/* reference */ 'r', `java.lang.Class#getComponentType()`, `runtime component type`],
 				[/* text */ 't', ` is `],
 				[/* inline code block */ 'i', `Object`],
 				[/* text */ 't', `, containing the elements of this stream`]
@@ -697,7 +697,7 @@ DocsCollector.collect('java.util.stream.Stream', [
 		[/* method */ 'findAny()', [
 			[/* method description */
 				[/* text */ 't', `Returns an `],
-				[/* reference */ 'r', `java.util.Optional`],
+				[/* reference */ 'r', `java.util.Optional`, `Optional`],
 				[/* text */ 't', ` describing some element of the stream, or an
  empty `],
 				[/* inline code block */ 'i', `Optional`],
@@ -706,7 +706,7 @@ DocsCollector.collect('java.util.stream.Stream', [
  `],
 				[/* block */ 'b', [
 					[/* text */ 't', `This is a `],
-					[/* reference */ 'r', `.package-summary#StreamOps`],
+					[/* text */ 't', `short-circuiting terminal operation`],
 					[/* text */ 't', `.
 
  `]
@@ -739,7 +739,7 @@ DocsCollector.collect('java.util.stream.Stream', [
 		[/* method */ 'findFirst()', [
 			[/* method description */
 				[/* text */ 't', `Returns an `],
-				[/* reference */ 'r', `java.util.Optional`],
+				[/* reference */ 'r', `java.util.Optional`, `Optional`],
 				[/* text */ 't', ` describing the first element of this stream,
  or an empty `],
 				[/* inline code block */ 'i', `Optional`],
@@ -749,7 +749,7 @@ DocsCollector.collect('java.util.stream.Stream', [
  `],
 				[/* block */ 'b', [
 					[/* text */ 't', `This is a `],
-					[/* reference */ 'r', `.package-summary#StreamOps`],
+					[/* text */ 't', `short-circuiting terminal operation`],
 					[/* text */ 't', `.`]
 				]]
 			],
@@ -775,23 +775,23 @@ DocsCollector.collect('java.util.stream.Stream', [
 				[/* inline code block */ 'i', `Comparator`],
 				[/* text */ 't', `.  This is a special case of a
  `],
-				[/* reference */ 'r', `.package-summary#Reduction`],
+				[/* text */ 't', `reduction`],
 				[/* text */ 't', `.
 
  `],
 				[/* block */ 'b', [
 					[/* text */ 't', `This is a `],
-					[/* reference */ 'r', `.package-summary#StreamOps`],
+					[/* text */ 't', `terminal operation`],
 					[/* text */ 't', `.`]
 				]]
 			],
 			[/* parameters */
 				[/* parameter */ 'comparator', [/* parameter description */
 					[/* text */ 't', `a `],
-					[/* reference */ 'r', `.package-summary#NonInterference`],
+					[/* text */ 't', `non-interfering`],
 					[/* text */ 't', `,
                    `],
-					[/* reference */ 'r', `.package-summary#Statelessness`],
+					[/* text */ 't', `stateless`],
 					[/* inline code block */ 'i', `Comparator`],
 					[/* text */ 't', ` to compare elements of this stream`]
 				]]
@@ -817,23 +817,23 @@ DocsCollector.collect('java.util.stream.Stream', [
 				[/* inline code block */ 'i', `Comparator`],
 				[/* text */ 't', `.  This is a special case of a
  `],
-				[/* reference */ 'r', `.package-summary#Reduction`],
+				[/* text */ 't', `reduction`],
 				[/* text */ 't', `.
 
  `],
 				[/* block */ 'b', [
 					[/* text */ 't', `This is a `],
-					[/* reference */ 'r', `.package-summary#StreamOps`],
+					[/* text */ 't', `terminal operation`],
 					[/* text */ 't', `.`]
 				]]
 			],
 			[/* parameters */
 				[/* parameter */ 'comparator', [/* parameter description */
 					[/* text */ 't', `a `],
-					[/* reference */ 'r', `.package-summary#NonInterference`],
+					[/* text */ 't', `non-interfering`],
 					[/* text */ 't', `,
                    `],
-					[/* reference */ 'r', `.package-summary#Statelessness`],
+					[/* text */ 't', `stateless`],
 					[/* inline code block */ 'i', `Comparator`],
 					[/* text */ 't', ` to compare elements of this stream`]
 				]]
@@ -855,11 +855,11 @@ DocsCollector.collect('java.util.stream.Stream', [
 		[/* method */ 'reduce(java.util.function.BinaryOperator)', [
 			[/* method description */
 				[/* text */ 't', `Performs a `],
-				[/* reference */ 'r', `.package-summary#Reduction`],
+				[/* text */ 't', `reduction`],
 				[/* text */ 't', ` on the
  elements of this stream, using an
  `],
-				[/* reference */ 'r', `.package-summary#Associativity`],
+				[/* text */ 't', `associative`],
 				[/* text */ 't', ` accumulation
  function, and returns an `],
 				[/* inline code block */ 'i', `Optional`],
@@ -889,27 +889,27 @@ DocsCollector.collect('java.util.stream.Stream', [
 					[/* inline code block */ 'i', `accumulator`],
 					[/* text */ 't', ` function must be an
  `],
-					[/* reference */ 'r', `.package-summary#Associativity`],
+					[/* text */ 't', `associative`],
 					[/* text */ 't', ` function.
 
  `]
 				]],
 				[/* block */ 'b', [
 					[/* text */ 't', `This is a `],
-					[/* reference */ 'r', `.package-summary#StreamOps`],
+					[/* text */ 't', `terminal operation`],
 					[/* text */ 't', `.`]
 				]]
 			],
 			[/* parameters */
 				[/* parameter */ 'accumulator', [/* parameter description */
 					[/* text */ 't', `an `],
-					[/* reference */ 'r', `.package-summary#Associativity`],
+					[/* text */ 't', `associative`],
 					[/* text */ 't', `,
                     `],
-					[/* reference */ 'r', `.package-summary#NonInterference`],
+					[/* text */ 't', `non-interfering`],
 					[/* text */ 't', `,
                     `],
-					[/* reference */ 'r', `.package-summary#Statelessness`],
+					[/* text */ 't', `stateless`],
 					[/* text */ 't', `
                     function for combining two values`]
 				]]
@@ -921,7 +921,7 @@ DocsCollector.collect('java.util.stream.Stream', [
 			],
 			[/* return description */
 				[/* text */ 't', `an `],
-				[/* reference */ 'r', `java.util.Optional`],
+				[/* reference */ 'r', `java.util.Optional`, `Optional`],
 				[/* text */ 't', ` describing the result of the reduction`]
 			]
 		]],
@@ -933,7 +933,7 @@ DocsCollector.collect('java.util.stream.Stream', [
  each element of this stream with the contents of a mapped stream produced
  by applying the provided mapping function to each element.  Each mapped
  stream is `],
-				[/* reference */ 'r', `.BaseStream#close()`],
+				[/* reference */ 'r', `java.util.stream.BaseStream#close()`, `closed`],
 				[/* text */ 't', ` after its
  contents have placed been into this stream.  (If a mapped stream is
  `],
@@ -943,17 +943,17 @@ DocsCollector.collect('java.util.stream.Stream', [
  `],
 				[/* block */ 'b', [
 					[/* text */ 't', `This is an `],
-					[/* reference */ 'r', `.package-summary#StreamOps`],
+					[/* text */ 't', `intermediate operation`],
 					[/* text */ 't', `.`]
 				]]
 			],
 			[/* parameters */
 				[/* parameter */ 'mapper', [/* parameter description */
 					[/* text */ 't', `a `],
-					[/* reference */ 'r', `.package-summary#NonInterference`],
+					[/* text */ 't', `non-interfering`],
 					[/* text */ 't', `,
                `],
-					[/* reference */ 'r', `.package-summary#Statelessness`],
+					[/* text */ 't', `stateless`],
 					[/* text */ 't', `
                function to apply to each element which produces a stream
                of new values`]
@@ -974,17 +974,17 @@ DocsCollector.collect('java.util.stream.Stream', [
  `],
 				[/* block */ 'b', [
 					[/* text */ 't', `This is an `],
-					[/* reference */ 'r', `.package-summary#StreamOps`],
+					[/* text */ 't', `intermediate operation`],
 					[/* text */ 't', `.`]
 				]]
 			],
 			[/* parameters */
 				[/* parameter */ 'mapper', [/* parameter description */
 					[/* text */ 't', `a `],
-					[/* reference */ 'r', `.package-summary#NonInterference`],
+					[/* text */ 't', `non-interfering`],
 					[/* text */ 't', `,
                `],
-					[/* reference */ 'r', `.package-summary#Statelessness`],
+					[/* text */ 't', `stateless`],
 					[/* text */ 't', `
                function to apply to each element`]
 				]]
@@ -1002,7 +1002,7 @@ DocsCollector.collect('java.util.stream.Stream', [
  element of this stream with the contents of a mapped stream produced by
  applying the provided mapping function to each element.  Each mapped
  stream is `],
-				[/* reference */ 'r', `.BaseStream#close()`],
+				[/* reference */ 'r', `java.util.stream.BaseStream#close()`, `closed`],
 				[/* text */ 't', ` after its
  contents have been placed into this stream.  (If a mapped stream is
  `],
@@ -1012,17 +1012,17 @@ DocsCollector.collect('java.util.stream.Stream', [
  `],
 				[/* block */ 'b', [
 					[/* text */ 't', `This is an `],
-					[/* reference */ 'r', `.package-summary#StreamOps`],
+					[/* text */ 't', `intermediate operation`],
 					[/* text */ 't', `.`]
 				]]
 			],
 			[/* parameters */
 				[/* parameter */ 'mapper', [/* parameter description */
 					[/* text */ 't', `a `],
-					[/* reference */ 'r', `.package-summary#NonInterference`],
+					[/* text */ 't', `non-interfering`],
 					[/* text */ 't', `,
                `],
-					[/* reference */ 'r', `.package-summary#Statelessness`],
+					[/* text */ 't', `stateless`],
 					[/* text */ 't', `
                function to apply to each element which produces a stream
                of new values`]
@@ -1043,17 +1043,17 @@ DocsCollector.collect('java.util.stream.Stream', [
  `],
 				[/* block */ 'b', [
 					[/* text */ 't', `This is an `],
-					[/* reference */ 'r', `.package-summary#StreamOps`],
+					[/* text */ 't', `intermediate operation`],
 					[/* text */ 't', `.`]
 				]]
 			],
 			[/* parameters */
 				[/* parameter */ 'mapper', [/* parameter description */
 					[/* text */ 't', `a `],
-					[/* reference */ 'r', `.package-summary#NonInterference`],
+					[/* text */ 't', `non-interfering`],
 					[/* text */ 't', `,
                `],
-					[/* reference */ 'r', `.package-summary#Statelessness`],
+					[/* text */ 't', `stateless`],
 					[/* text */ 't', `
                function to apply to each element`]
 				]]
@@ -1071,7 +1071,7 @@ DocsCollector.collect('java.util.stream.Stream', [
  element of this stream with the contents of a mapped stream produced by
  applying the provided mapping function to each element.  Each mapped
  stream is `],
-				[/* reference */ 'r', `.BaseStream#close()`],
+				[/* reference */ 'r', `java.util.stream.BaseStream#close()`, `closed`],
 				[/* text */ 't', ` after its
  contents have been placed into this stream.  (If a mapped stream is
  `],
@@ -1081,17 +1081,17 @@ DocsCollector.collect('java.util.stream.Stream', [
  `],
 				[/* block */ 'b', [
 					[/* text */ 't', `This is an `],
-					[/* reference */ 'r', `.package-summary#StreamOps`],
+					[/* text */ 't', `intermediate operation`],
 					[/* text */ 't', `.`]
 				]]
 			],
 			[/* parameters */
 				[/* parameter */ 'mapper', [/* parameter description */
 					[/* text */ 't', `a `],
-					[/* reference */ 'r', `.package-summary#NonInterference`],
+					[/* text */ 't', `non-interfering`],
 					[/* text */ 't', `,
                `],
-					[/* reference */ 'r', `.package-summary#Statelessness`],
+					[/* text */ 't', `stateless`],
 					[/* text */ 't', `
                function to apply to each element which produces a stream
                of new values`]
@@ -1112,17 +1112,17 @@ DocsCollector.collect('java.util.stream.Stream', [
  `],
 				[/* block */ 'b', [
 					[/* text */ 't', `This is an `],
-					[/* reference */ 'r', `.package-summary#StreamOps`],
+					[/* text */ 't', `intermediate operation`],
 					[/* text */ 't', `.`]
 				]]
 			],
 			[/* parameters */
 				[/* parameter */ 'mapper', [/* parameter description */
 					[/* text */ 't', `a `],
-					[/* reference */ 'r', `.package-summary#NonInterference`],
+					[/* text */ 't', `non-interfering`],
 					[/* text */ 't', `,
                `],
-					[/* reference */ 'r', `.package-summary#Statelessness`],
+					[/* text */ 't', `stateless`],
 					[/* text */ 't', `
                function to apply to each element`]
 				]]
@@ -1136,7 +1136,7 @@ DocsCollector.collect('java.util.stream.Stream', [
 			[/* method description */
 				[/* text */ 't', `Returns a stream consisting of the distinct elements (according to
  `],
-				[/* reference */ 'r', `java.util.Object#equals(java.lang.Object)`],
+				[/* reference */ 'r', `java.lang.Object#equals(java.lang.Object)`, `Object.equals(Object)`],
 				[/* text */ 't', `) of this stream.
 
  `],
@@ -1148,7 +1148,7 @@ DocsCollector.collect('java.util.stream.Stream', [
  `],
 				[/* block */ 'b', [
 					[/* text */ 't', `This is a `],
-					[/* reference */ 'r', `.package-summary#StreamOps`],
+					[/* text */ 't', `stateful intermediate operation`],
 					[/* text */ 't', `.`]
 				]]
 			],
@@ -1166,17 +1166,17 @@ DocsCollector.collect('java.util.stream.Stream', [
  `],
 				[/* block */ 'b', [
 					[/* text */ 't', `This is an `],
-					[/* reference */ 'r', `.package-summary#StreamOps`],
+					[/* text */ 't', `intermediate operation`],
 					[/* text */ 't', `.`]
 				]]
 			],
 			[/* parameters */
 				[/* parameter */ 'predicate', [/* parameter description */
 					[/* text */ 't', `a `],
-					[/* reference */ 'r', `.package-summary#NonInterference`],
+					[/* text */ 't', `non-interfering`],
 					[/* text */ 't', `,
                   `],
-					[/* reference */ 'r', `.package-summary#Statelessness`],
+					[/* text */ 't', `stateless`],
 					[/* text */ 't', `
                   predicate to apply to each element to determine if it
                   should be included`]
@@ -1197,7 +1197,7 @@ DocsCollector.collect('java.util.stream.Stream', [
  `],
 				[/* block */ 'b', [
 					[/* text */ 't', `This is a `],
-					[/* reference */ 'r', `.package-summary#StreamOps`],
+					[/* text */ 't', `short-circuiting stateful intermediate operation`],
 					[/* text */ 't', `.`]
 				]]
 			],
@@ -1226,7 +1226,7 @@ DocsCollector.collect('java.util.stream.Stream', [
  `],
 				[/* block */ 'b', [
 					[/* text */ 't', `This is an `],
-					[/* reference */ 'r', `.package-summary#StreamOps`],
+					[/* text */ 't', `intermediate operation`],
 					[/* text */ 't', `.
 
  `]
@@ -1239,7 +1239,7 @@ DocsCollector.collect('java.util.stream.Stream', [
 			[/* parameters */
 				[/* parameter */ 'action', [/* parameter description */
 					[/* text */ 't', `a `],
-					[/* reference */ 'r', `.package-summary#NonInterference`],
+					[/* text */ 't', `non-interfering`],
 					[/* text */ 't', ` action to perform on the elements as
                  they are consumed from the stream`]
 				]]
@@ -1263,7 +1263,7 @@ DocsCollector.collect('java.util.stream.Stream', [
  `],
 				[/* block */ 'b', [
 					[/* text */ 't', `This is a `],
-					[/* reference */ 'r', `.package-summary#StreamOps`],
+					[/* text */ 't', `stateful intermediate operation`],
 					[/* text */ 't', `.`]
 				]]
 			],
@@ -1301,7 +1301,7 @@ DocsCollector.collect('java.util.stream.Stream', [
  `],
 				[/* block */ 'b', [
 					[/* text */ 't', `This is a `],
-					[/* reference */ 'r', `.package-summary#StreamOps`],
+					[/* text */ 't', `stateful intermediate operation`],
 					[/* text */ 't', `.`]
 				]]
 			],
@@ -1325,17 +1325,17 @@ DocsCollector.collect('java.util.stream.Stream', [
  `],
 				[/* block */ 'b', [
 					[/* text */ 't', `This is a `],
-					[/* reference */ 'r', `.package-summary#StreamOps`],
+					[/* text */ 't', `stateful intermediate operation`],
 					[/* text */ 't', `.`]
 				]]
 			],
 			[/* parameters */
 				[/* parameter */ 'comparator', [/* parameter description */
 					[/* text */ 't', `a `],
-					[/* reference */ 'r', `.package-summary#NonInterference`],
+					[/* text */ 't', `non-interfering`],
 					[/* text */ 't', `,
                    `],
-					[/* reference */ 'r', `.package-summary#Statelessness`],
+					[/* text */ 't', `stateless`],
 					[/* inline code block */ 'i', `Comparator`],
 					[/* text */ 't', ` to be used to compare stream elements`]
 				]]
@@ -1349,7 +1349,7 @@ DocsCollector.collect('java.util.stream.Stream', [
 			[/* method description */
 				[/* text */ 't', `Returns the count of elements in this stream.  This is a special case of
  a `],
-				[/* reference */ 'r', `.package-summary#Reduction`],
+				[/* text */ 't', `reduction`],
 				[/* text */ 't', ` and is
  equivalent to:
  `],
@@ -1358,7 +1358,7 @@ DocsCollector.collect('java.util.stream.Stream', [
 				]],
 				[/* block */ 'b', [
 					[/* text */ 't', `This is a `],
-					[/* reference */ 'r', `.package-summary#StreamOps`],
+					[/* text */ 't', `terminal operation`],
 					[/* text */ 't', `.`]
 				]]
 			],
@@ -1371,11 +1371,11 @@ DocsCollector.collect('java.util.stream.Stream', [
 		[/* method */ 'reduce(java.lang.Object,java.util.function.BinaryOperator)', [
 			[/* method description */
 				[/* text */ 't', `Performs a `],
-				[/* reference */ 'r', `.package-summary#Reduction`],
+				[/* text */ 't', `reduction`],
 				[/* text */ 't', ` on the
  elements of this stream, using the provided identity value and an
  `],
-				[/* reference */ 'r', `.package-summary#Associativity`],
+				[/* text */ 't', `associative`],
 				[/* text */ 't', `
  accumulation function, and returns the reduced value.  This is equivalent
  to:
@@ -1407,14 +1407,14 @@ DocsCollector.collect('java.util.stream.Stream', [
 					[/* inline code block */ 'i', `accumulator`],
 					[/* text */ 't', ` function must be an
  `],
-					[/* reference */ 'r', `.package-summary#Associativity`],
+					[/* text */ 't', `associative`],
 					[/* text */ 't', ` function.
 
  `]
 				]],
 				[/* block */ 'b', [
 					[/* text */ 't', `This is a `],
-					[/* reference */ 'r', `.package-summary#StreamOps`],
+					[/* text */ 't', `terminal operation`],
 					[/* text */ 't', `.`]
 				]]
 			],
@@ -1424,13 +1424,13 @@ DocsCollector.collect('java.util.stream.Stream', [
 				]],
 				[/* parameter */ 'accumulator', [/* parameter description */
 					[/* text */ 't', `an `],
-					[/* reference */ 'r', `.package-summary#Associativity`],
+					[/* text */ 't', `associative`],
 					[/* text */ 't', `,
                     `],
-					[/* reference */ 'r', `.package-summary#NonInterference`],
+					[/* text */ 't', `non-interfering`],
 					[/* text */ 't', `,
                     `],
-					[/* reference */ 'r', `.package-summary#Statelessness`],
+					[/* text */ 't', `stateless`],
 					[/* text */ 't', `
                     function for combining two values`]
 				]]
@@ -1447,7 +1447,7 @@ DocsCollector.collect('java.util.stream.Stream', [
  `],
 				[/* block */ 'b', [
 					[/* text */ 't', `This is a `],
-					[/* reference */ 'r', `.package-summary#StreamOps`],
+					[/* text */ 't', `terminal operation`],
 					[/* text */ 't', `.
 
  `]
@@ -1457,7 +1457,7 @@ DocsCollector.collect('java.util.stream.Stream', [
 			[/* parameters */
 				[/* parameter */ 'action', [/* parameter description */
 					[/* text */ 't', `a `],
-					[/* reference */ 'r', `.package-summary#NonInterference`],
+					[/* text */ 't', `non-interfering`],
 					[/* text */ 't', ` action to perform on the elements`]
 				]]
 			],
@@ -1472,7 +1472,7 @@ DocsCollector.collect('java.util.stream.Stream', [
  `],
 				[/* block */ 'b', [
 					[/* text */ 't', `This is a `],
-					[/* reference */ 'r', `.package-summary#StreamOps`],
+					[/* text */ 't', `terminal operation`],
 					[/* text */ 't', `.
 
  `]
@@ -1490,7 +1490,7 @@ DocsCollector.collect('java.util.stream.Stream', [
 			[/* parameters */
 				[/* parameter */ 'action', [/* parameter description */
 					[/* text */ 't', `a `],
-					[/* reference */ 'r', `.package-summary#NonInterference`],
+					[/* text */ 't', `non-interfering`],
 					[/* text */ 't', ` action to perform on the elements`]
 				]]
 			],
@@ -1503,7 +1503,7 @@ DocsCollector.collect('java.util.stream.Stream', [
  this stream with multiple elements, specifically zero or more elements.
  Replacement is performed by applying the provided mapping function to each
  element in conjunction with a `],
-				[/* reference */ 'r', `java.util.function.Consumer`],
+				[/* reference */ 'r', `java.util.function.Consumer`, `consumer`],
 				[/* text */ 't', ` argument
  that accepts replacement elements. The mapping function calls the consumer
  zero or more times to provide the replacement elements.
@@ -1511,14 +1511,14 @@ DocsCollector.collect('java.util.stream.Stream', [
  `],
 				[/* block */ 'b', [
 					[/* text */ 't', `This is an `],
-					[/* reference */ 'r', `.package-summary#StreamOps`],
+					[/* text */ 't', `intermediate operation`],
 					[/* text */ 't', `.
 
  `]
 				]],
 				[/* block */ 'b', [
 					[/* text */ 't', `If the `],
-					[/* reference */ 'r', `java.util.function.Consumer`],
+					[/* reference */ 'r', `java.util.function.Consumer`, `consumer`],
 					[/* text */ 't', ` argument is used outside the scope of
  its application to the mapping function, the results are undefined.`]
 				]]
@@ -1526,10 +1526,10 @@ DocsCollector.collect('java.util.stream.Stream', [
 			[/* parameters */
 				[/* parameter */ 'mapper', [/* parameter description */
 					[/* text */ 't', `a `],
-					[/* reference */ 'r', `.package-summary#NonInterference`],
+					[/* text */ 't', `non-interfering`],
 					[/* text */ 't', `,
                `],
-					[/* reference */ 'r', `.package-summary#Statelessness`],
+					[/* text */ 't', `stateless`],
 					[/* text */ 't', `
                function that generates replacement elements`]
 				]]
@@ -1566,7 +1566,7 @@ DocsCollector.collect('java.util.stream.Stream', [
 				]],
 				[/* block */ 'b', [
 					[/* text */ 't', `This is a `],
-					[/* reference */ 'r', `.package-summary#StreamOps`],
+					[/* text */ 't', `terminal operation`],
 					[/* text */ 't', `.`]
 				]]
 			],
@@ -1585,7 +1585,7 @@ DocsCollector.collect('java.util.stream.Stream', [
  elements.
  Replacement is performed by applying the provided mapping function to each
  element in conjunction with a `],
-				[/* reference */ 'r', `java.util.function.DoubleConsumer`],
+				[/* reference */ 'r', `java.util.function.DoubleConsumer`, `consumer`],
 				[/* text */ 't', ` argument
  that accepts replacement elements. The mapping function calls the consumer
  zero or more times to provide the replacement elements.
@@ -1593,14 +1593,14 @@ DocsCollector.collect('java.util.stream.Stream', [
  `],
 				[/* block */ 'b', [
 					[/* text */ 't', `This is an `],
-					[/* reference */ 'r', `.package-summary#StreamOps`],
+					[/* text */ 't', `intermediate operation`],
 					[/* text */ 't', `.
 
  `]
 				]],
 				[/* block */ 'b', [
 					[/* text */ 't', `If the `],
-					[/* reference */ 'r', `java.util.function.DoubleConsumer`],
+					[/* reference */ 'r', `java.util.function.DoubleConsumer`, `consumer`],
 					[/* text */ 't', ` argument is used outside the scope of
  its application to the mapping function, the results are undefined.`]
 				]]
@@ -1608,10 +1608,10 @@ DocsCollector.collect('java.util.stream.Stream', [
 			[/* parameters */
 				[/* parameter */ 'mapper', [/* parameter description */
 					[/* text */ 't', `a `],
-					[/* reference */ 'r', `.package-summary#NonInterference`],
+					[/* text */ 't', `non-interfering`],
 					[/* text */ 't', `,
                `],
-					[/* reference */ 'r', `.package-summary#Statelessness`],
+					[/* text */ 't', `stateless`],
 					[/* text */ 't', `
                function that generates replacement elements`]
 				]]
@@ -1630,7 +1630,7 @@ DocsCollector.collect('java.util.stream.Stream', [
  elements.
  Replacement is performed by applying the provided mapping function to each
  element in conjunction with a `],
-				[/* reference */ 'r', `java.util.function.IntConsumer`],
+				[/* reference */ 'r', `java.util.function.IntConsumer`, `consumer`],
 				[/* text */ 't', ` argument
  that accepts replacement elements. The mapping function calls the consumer
  zero or more times to provide the replacement elements.
@@ -1638,14 +1638,14 @@ DocsCollector.collect('java.util.stream.Stream', [
  `],
 				[/* block */ 'b', [
 					[/* text */ 't', `This is an `],
-					[/* reference */ 'r', `.package-summary#StreamOps`],
+					[/* text */ 't', `intermediate operation`],
 					[/* text */ 't', `.
 
  `]
 				]],
 				[/* block */ 'b', [
 					[/* text */ 't', `If the `],
-					[/* reference */ 'r', `java.util.function.IntConsumer`],
+					[/* reference */ 'r', `java.util.function.IntConsumer`, `consumer`],
 					[/* text */ 't', ` argument is used outside the scope of
  its application to the mapping function, the results are undefined.`]
 				]]
@@ -1653,10 +1653,10 @@ DocsCollector.collect('java.util.stream.Stream', [
 			[/* parameters */
 				[/* parameter */ 'mapper', [/* parameter description */
 					[/* text */ 't', `a `],
-					[/* reference */ 'r', `.package-summary#NonInterference`],
+					[/* text */ 't', `non-interfering`],
 					[/* text */ 't', `,
                `],
-					[/* reference */ 'r', `.package-summary#Statelessness`],
+					[/* text */ 't', `stateless`],
 					[/* text */ 't', `
                function that generates replacement elements`]
 				]]
@@ -1675,7 +1675,7 @@ DocsCollector.collect('java.util.stream.Stream', [
  elements.
  Replacement is performed by applying the provided mapping function to each
  element in conjunction with a `],
-				[/* reference */ 'r', `java.util.function.LongConsumer`],
+				[/* reference */ 'r', `java.util.function.LongConsumer`, `consumer`],
 				[/* text */ 't', ` argument
  that accepts replacement elements. The mapping function calls the consumer
  zero or more times to provide the replacement elements.
@@ -1683,14 +1683,14 @@ DocsCollector.collect('java.util.stream.Stream', [
  `],
 				[/* block */ 'b', [
 					[/* text */ 't', `This is an `],
-					[/* reference */ 'r', `.package-summary#StreamOps`],
+					[/* text */ 't', `intermediate operation`],
 					[/* text */ 't', `.
 
  `]
 				]],
 				[/* block */ 'b', [
 					[/* text */ 't', `If the `],
-					[/* reference */ 'r', `java.util.function.LongConsumer`],
+					[/* reference */ 'r', `java.util.function.LongConsumer`, `consumer`],
 					[/* text */ 't', ` argument is used outside the scope of
  its application to the mapping function, the results are undefined.`]
 				]]
@@ -1698,10 +1698,10 @@ DocsCollector.collect('java.util.stream.Stream', [
 			[/* parameters */
 				[/* parameter */ 'mapper', [/* parameter description */
 					[/* text */ 't', `a `],
-					[/* reference */ 'r', `.package-summary#NonInterference`],
+					[/* text */ 't', `non-interfering`],
 					[/* text */ 't', `,
                `],
-					[/* reference */ 'r', `.package-summary#Statelessness`],
+					[/* text */ 't', `stateless`],
 					[/* text */ 't', `
                function that generates replacement elements`]
 				]]
@@ -1742,17 +1742,17 @@ DocsCollector.collect('java.util.stream.Stream', [
  `],
 				[/* block */ 'b', [
 					[/* text */ 't', `This is a `],
-					[/* reference */ 'r', `.package-summary#StreamOps`],
+					[/* text */ 't', `stateful intermediate operation`],
 					[/* text */ 't', `.`]
 				]]
 			],
 			[/* parameters */
 				[/* parameter */ 'predicate', [/* parameter description */
 					[/* text */ 't', `a `],
-					[/* reference */ 'r', `.package-summary#NonInterference`],
+					[/* text */ 't', `non-interfering`],
 					[/* text */ 't', `,
                   `],
-					[/* reference */ 'r', `.package-summary#Statelessness`],
+					[/* text */ 't', `stateless`],
 					[/* text */ 't', `
                   predicate to apply to elements to determine the longest
                   prefix of elements.`]
@@ -1793,17 +1793,17 @@ DocsCollector.collect('java.util.stream.Stream', [
  `],
 				[/* block */ 'b', [
 					[/* text */ 't', `This is a `],
-					[/* reference */ 'r', `.package-summary#StreamOps`],
+					[/* text */ 't', `short-circuiting stateful intermediate operation`],
 					[/* text */ 't', `.`]
 				]]
 			],
 			[/* parameters */
 				[/* parameter */ 'predicate', [/* parameter description */
 					[/* text */ 't', `a `],
-					[/* reference */ 'r', `.package-summary#NonInterference`],
+					[/* text */ 't', `non-interfering`],
 					[/* text */ 't', `,
                   `],
-					[/* reference */ 'r', `.package-summary#Statelessness`],
+					[/* text */ 't', `stateless`],
 					[/* text */ 't', `
                   predicate to apply to elements to determine the longest
                   prefix of elements.`]

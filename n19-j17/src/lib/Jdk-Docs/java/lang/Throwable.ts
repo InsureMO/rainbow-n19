@@ -22,19 +22,19 @@ DocsCollector.collect('java.lang.Throwable', [
 		[/* inline code block */ 'i', `Throwable`],
 		[/* text */ 't', ` that is not also a
  subclass of either `],
-		[/* reference */ 'r', `java.lang.RuntimeException`],
+		[/* reference */ 'r', `java.lang.RuntimeException`, `RuntimeException`],
 		[/* text */ 't', ` or `],
-		[/* reference */ 'r', `java.lang.Error`],
+		[/* reference */ 'r', `java.lang.Error`, `Error`],
 		[/* text */ 't', ` are
  regarded as checked exceptions.
 
  `],
 		[/* block */ 'b', [
 			[/* text */ 't', `Instances of two subclasses, `],
-			[/* reference */ 'r', `java.lang.Error`],
+			[/* reference */ 'r', `java.lang.Error`, `Error`],
 			[/* text */ 't', ` and
  `],
-			[/* reference */ 'r', `java.lang.Exception`],
+			[/* reference */ 'r', `java.lang.Exception`, `Exception`],
 			[/* text */ 't', `, are conventionally used to indicate
  that exceptional situations have occurred. Typically, these instances
  are freshly created in the context of the exceptional situation so
@@ -82,7 +82,7 @@ DocsCollector.collect('java.lang.Throwable', [
  that throws it must conform to a general-purpose interface that does not
  permit the method to throw the cause directly.  For example, suppose
  a persistent collection conforms to the `],
-			[/* reference */ 'r', `java.util.Collection`],
+			[/* reference */ 'r', `java.util.Collection`, `Collection`],
 			[/* text */ 't', ` interface, and that its persistence is implemented atop
  `],
 			[/* inline code block */ 'i', `java.io`],
@@ -90,7 +90,7 @@ DocsCollector.collect('java.lang.Throwable', [
 			[/* inline code block */ 'i', `add`],
 			[/* text */ 't', ` method
  can throw an `],
-			[/* reference */ 'r', `java.io.IOException`],
+			[/* reference */ 'r', `java.io.IOException`, `IOException`],
 			[/* text */ 't', `.  The implementation
  can communicate the details of the `],
 			[/* inline code block */ 'i', `IOException`],
@@ -322,7 +322,7 @@ DocsCollector.collect('java.lang.Throwable', [
 				[/* text */ 't', `).
  This constructor is useful for throwables that are little more than
  wrappers for other throwables (for example, `],
-				[/* reference */ 'r', `java.security.PrivilegedActionException`],
+				[/* reference */ 'r', `java.security.PrivilegedActionException`, `PrivilegedActionException`],
 				[/* text */ 't', `).
 
  `],
@@ -538,7 +538,7 @@ DocsCollector.collect('java.lang.Throwable', [
 				[/* list */ 'l', [
 					[/* block */ 'b', [
 						[/* text */ 't', ` the `],
-						[/* reference */ 'r', `.Class#getName()`],
+						[/* reference */ 'r', `java.lang.Class#getName()`, `name`],
 						[/* text */ 't', ` of the class of this object
  `]
 					]],

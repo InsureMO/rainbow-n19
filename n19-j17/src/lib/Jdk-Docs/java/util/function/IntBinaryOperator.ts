@@ -10,7 +10,7 @@ DocsCollector.collect('java.util.function.IntBinaryOperator', [
 		[/* inline code block */ 'i', `int`],
 		[/* text */ 't', `-valued result.   This is the primitive type specialization of
  `],
-		[/* reference */ 'r', `java.util.function.BinaryOperator`],
+		[/* reference */ 'r', `java.util.function.BinaryOperator`, `BinaryOperator`],
 		[/* text */ 't', ` for `],
 		[/* inline code block */ 'i', `int`],
 		[/* text */ 't', `.
@@ -18,7 +18,7 @@ DocsCollector.collect('java.util.function.IntBinaryOperator', [
  `],
 		[/* block */ 'b', [
 			[/* text */ 't', `This is a `],
-			[/* reference */ 'r', `.package-summary`],
+			[/* text */ 't', `functional interface`],
 			[/* text */ 't', `
  whose functional method is `],
 			[/* reference */ 'r', `#applyAsInt(int,int)`, `applyAsInt(int, int)`],

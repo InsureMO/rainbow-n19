@@ -73,7 +73,7 @@ DocsCollector.collect('java.net.URL', [
 			[/* text */ 't', `. The Literal IPv6 address format
  also supports scope_ids. The syntax and usage of scope_ids is described
  `],
-			[/* reference */ 'r', `.Inet6Address#scoped`],
+			[/* text */ 't', `here`],
 			[/* text */ 't', `.
  `]
 		]],
@@ -148,26 +148,26 @@ DocsCollector.collect('java.net.URL', [
 		[/* block */ 'b', [
 			[/* text */ 't', `
  Note, the `],
-			[/* reference */ 'r', `java.net.URI`],
+			[/* reference */ 'r', `java.net.URI`, `URI`],
 			[/* text */ 't', ` class does perform escaping of its
  component fields in certain circumstances. The recommended way
  to manage the encoding and decoding of URLs is to use `],
-			[/* reference */ 'r', `java.net.URI`],
+			[/* reference */ 'r', `java.net.URI`, `URI`],
 			[/* text */ 't', `,
  and to convert between these two classes using `],
 			[/* reference */ 'r', `#toURI()`, `toURI()`],
 			[/* text */ 't', ` and
  `],
-			[/* reference */ 'r', `.URI#toURL()`],
+			[/* reference */ 'r', `java.net.URI#toURL()`, `URI.toURL()`],
 			[/* text */ 't', `.
  `]
 		]],
 		[/* block */ 'b', [
 			[/* text */ 't', `
  The `],
-			[/* reference */ 'r', `java.net.URLEncoder`],
+			[/* reference */ 'r', `java.net.URLEncoder`, `URLEncoder`],
 			[/* text */ 't', ` and `],
-			[/* reference */ 'r', `java.net.URLDecoder`],
+			[/* reference */ 'r', `java.net.URLDecoder`, `URLDecoder`],
 			[/* text */ 't', ` classes can also be
  used, but only for HTML form encoding, which is not the same
  as the encoding scheme defined in RFC2396.`]
@@ -289,15 +289,15 @@ DocsCollector.collect('java.net.URL', [
      returns `],
 						[/* inline code block */ 'i', `null`],
 						[/* text */ 't', `, then the `],
-						[/* reference */ 'r', `java.util.ServiceLoader`],
+						[/* reference */ 'r', `java.util.ServiceLoader`, `ServiceLoader`],
 						[/* text */ 't', ` mechanism is used to locate `],
-						[/* reference */ 'r', `java.net.spi.URLStreamHandlerProvider`],
+						[/* reference */ 'r', `java.net.spi.URLStreamHandlerProvider`, `URLStreamHandlerProvider`],
 						[/* text */ 't', `
      implementations using the system class
      loader. The order that providers are located is implementation
      specific, and an implementation is free to cache the located
      providers. A `],
-						[/* reference */ 'r', `java.util.ServiceConfigurationError`],
+						[/* reference */ 'r', `java.util.ServiceConfigurationError`, `ServiceConfigurationError`],
 						[/* text */ 't', `, `],
 						[/* inline code block */ 'i', `Error`],
 						[/* text */ 't', ` or `],
@@ -988,7 +988,7 @@ DocsCollector.collect('java.net.URL', [
 		[/* method */ 'toURI()', [
 			[/* method description */
 				[/* text */ 't', `Returns a `],
-				[/* reference */ 'r', `java.net.URI`],
+				[/* reference */ 'r', `java.net.URI`, `URI`],
 				[/* text */ 't', ` equivalent to this URL.
  This method functions in the same way as `],
 				[/* inline code block */ 'i', `new URI (this.toString())`],
@@ -1012,7 +1012,7 @@ DocsCollector.collect('java.net.URL', [
 		[/* method */ 'openConnection()', [
 			[/* method description */
 				[/* text */ 't', `Returns a `],
-				[/* reference */ 'r', `java.net.URLConnection`],
+				[/* reference */ 'r', `java.net.URLConnection`, `URLConnection`],
 				[/* text */ 't', ` instance that
  represents a connection to the remote object referred to by the
  `],
@@ -1022,11 +1022,11 @@ DocsCollector.collect('java.net.URL', [
  `],
 				[/* block */ 'b', [
 					[/* text */ 't', `A new instance of `],
-					[/* reference */ 'r', `java.net.URLConnection`],
+					[/* reference */ 'r', `java.net.URLConnection`, `URLConnection`],
 					[/* text */ 't', ` is
  created every time when invoking the
  `],
-					[/* reference */ 'r', `.URLStreamHandler#openConnection(java.net.URL)`],
+					[/* reference */ 'r', `java.net.URLStreamHandler#openConnection(java.net.URL)`, `URLStreamHandler.openConnection(URL)`],
 					[/* text */ 't', ` method of the protocol handler for
  this URL.`]
 				]],
@@ -1034,7 +1034,7 @@ DocsCollector.collect('java.net.URL', [
 					[/* text */ 't', `It should be noted that a URLConnection instance does not establish
  the actual network connection on creation. This will happen only when
  calling `],
-					[/* reference */ 'r', `.URLConnection#connect()`],
+					[/* reference */ 'r', `java.net.URLConnection#connect()`, `URLConnection.connect()`],
 					[/* text */ 't', `.`]
 				]],
 				[/* block */ 'b', `If for the URL's protocol (such as HTTP or JAR), there
@@ -1053,7 +1053,7 @@ DocsCollector.collect('java.net.URL', [
 			],
 			[/* return description */
 				[/* text */ 't', `a `],
-				[/* reference */ 'r', `java.net.URLConnection`],
+				[/* reference */ 'r', `java.net.URLConnection`, `URLConnection`],
 				[/* text */ 't', ` linking
              to the URL.`]
 			]
@@ -1069,7 +1069,7 @@ DocsCollector.collect('java.net.URL', [
 
  Invoking this method preempts the system's default
  `],
-				[/* reference */ 'r', `java.net.ProxySelector`],
+				[/* reference */ 'r', `java.net.ProxySelector`, `ProxySelector`],
 				[/* text */ 't', ` settings.`]
 			],
 			[/* parameters */

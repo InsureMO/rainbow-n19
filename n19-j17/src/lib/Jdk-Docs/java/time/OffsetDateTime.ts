@@ -21,9 +21,9 @@ DocsCollector.collect('java.time.OffsetDateTime', [
 		[/* block */ 'b', [
 			[/* inline code block */ 'i', `OffsetDateTime`],
 			[/* text */ 't', `, `],
-			[/* reference */ 'r', `java.time.ZonedDateTime`],
+			[/* reference */ 'r', `java.time.ZonedDateTime`, `ZonedDateTime`],
 			[/* text */ 't', ` and `],
-			[/* reference */ 'r', `java.time.Instant`],
+			[/* reference */ 'r', `java.time.Instant`, `Instant`],
 			[/* text */ 't', ` all store an instant
  on the time-line to nanosecond precision.
  `],
@@ -74,9 +74,9 @@ DocsCollector.collect('java.time.OffsetDateTime', [
  This is the local date-time just before midnight at the end of the maximum date
  in the minimum offset (larger negative offsets are later on the time-line).
  This combines `],
-				[/* reference */ 'r', `.LocalDateTime#MAX`],
+				[/* reference */ 'r', `java.time.LocalDateTime#MAX`, `LocalDateTime.MAX`],
 				[/* text */ 't', ` and `],
-				[/* reference */ 'r', `.ZoneOffset#MIN`],
+				[/* reference */ 'r', `java.time.ZoneOffset#MIN`, `ZoneOffset.MIN`],
 				[/* text */ 't', `.
  This could be used by an application as a "far future" date-time.`]
 			],
@@ -89,9 +89,9 @@ DocsCollector.collect('java.time.OffsetDateTime', [
  This is the local date-time of midnight at the start of the minimum date
  in the maximum offset (larger offsets are earlier on the time-line).
  This combines `],
-				[/* reference */ 'r', `.LocalDateTime#MIN`],
+				[/* reference */ 'r', `java.time.LocalDateTime#MIN`, `LocalDateTime.MIN`],
 				[/* text */ 't', ` and `],
-				[/* reference */ 'r', `.ZoneOffset#MAX`],
+				[/* reference */ 'r', `java.time.ZoneOffset#MAX`, `ZoneOffset.MAX`],
 				[/* text */ 't', `.
  This could be used by an application as a "far past" date-time.`]
 			],
@@ -117,7 +117,7 @@ DocsCollector.collect('java.time.OffsetDateTime', [
 					[/* text */ 't', `
  The result of this method is obtained by invoking the
  `],
-					[/* reference */ 'r', `.TemporalQuery#queryFrom(java.time.temporal.TemporalAccessor)`],
+					[/* reference */ 'r', `java.time.temporal.TemporalQuery#queryFrom(java.time.temporal.TemporalAccessor)`, `TemporalQuery.queryFrom(TemporalAccessor)`],
 					[/* text */ 't', ` method on the
  specified query passing `],
 					[/* inline code block */ 'i', `this`],
@@ -266,7 +266,7 @@ DocsCollector.collect('java.time.OffsetDateTime', [
 				[/* block */ 'b', [
 					[/* text */ 't', `
  If the field is a `],
-					[/* reference */ 'r', `enum class in java.time.temporal.ChronoField`],
+					[/* reference */ 'r', `enum class in java.time.temporal.ChronoField`, `ChronoField`],
 					[/* text */ 't', ` then the query is implemented here.
  The supported fields are:
  `]
@@ -411,7 +411,7 @@ DocsCollector.collect('java.time.OffsetDateTime', [
 				[/* block */ 'b', [
 					[/* text */ 't', `
  If the unit is a `],
-					[/* reference */ 'r', `enum class in java.time.temporal.ChronoUnit`],
+					[/* reference */ 'r', `enum class in java.time.temporal.ChronoUnit`, `ChronoUnit`],
 					[/* text */ 't', ` then the query is implemented here.
  The supported units are:
  `]
@@ -501,7 +501,7 @@ DocsCollector.collect('java.time.OffsetDateTime', [
 					[/* text */ 't', `
  The comparison is based on the instant then on the local date-time.
  It is "consistent with equals", as defined by `],
-					[/* reference */ 'r', `java.lang.Comparable`],
+					[/* reference */ 'r', `java.lang.Comparable`, `Comparable`],
 					[/* text */ 't', `.
  `]
 				]],
@@ -562,7 +562,7 @@ DocsCollector.collect('java.time.OffsetDateTime', [
 				[/* block */ 'b', [
 					[/* text */ 't', `
  If the field is a `],
-					[/* reference */ 'r', `enum class in java.time.temporal.ChronoField`],
+					[/* reference */ 'r', `enum class in java.time.temporal.ChronoField`, `ChronoField`],
 					[/* text */ 't', ` then the query is implemented here.
  The `],
 					[/* reference */ 'r', `#isSupported(java.time.temporal.TemporalField)`, `supported fields`],
@@ -692,7 +692,7 @@ DocsCollector.collect('java.time.OffsetDateTime', [
 					[/* inline code block */ 'i', `int`],
 					[/* text */ 't', ` from 1 to 12.
  Application code is frequently clearer if the enum `],
-					[/* reference */ 'r', `enum class in java.time.Month`],
+					[/* reference */ 'r', `enum class in java.time.Month`, `Month`],
 					[/* text */ 't', `
  is used by calling `],
 					[/* reference */ 'r', `#getMonth()`, `getMonth()`],
@@ -831,7 +831,7 @@ DocsCollector.collect('java.time.OffsetDateTime', [
 				[/* block */ 'b', [
 					[/* text */ 't', `
  This method returns the enum `],
-					[/* reference */ 'r', `enum class in java.time.DayOfWeek`],
+					[/* reference */ 'r', `enum class in java.time.DayOfWeek`, `DayOfWeek`],
 					[/* text */ 't', ` for the day-of-week.
  This avoids confusion as to what `],
 					[/* inline code block */ 'i', `int`],
@@ -840,7 +840,7 @@ DocsCollector.collect('java.time.OffsetDateTime', [
 					[/* inline code block */ 'i', `int`],
 					[/* text */ 't', ` value then the enum
  provides the `],
-					[/* reference */ 'r', `.DayOfWeek#getValue()`],
+					[/* reference */ 'r', `java.time.DayOfWeek#getValue()`, `int value`],
 					[/* text */ 't', `.
  `]
 				]],
@@ -949,7 +949,7 @@ DocsCollector.collect('java.time.OffsetDateTime', [
 				[/* block */ 'b', [
 					[/* text */ 't', `
  This method returns the enum `],
-					[/* reference */ 'r', `enum class in java.time.Month`],
+					[/* reference */ 'r', `enum class in java.time.Month`, `Month`],
 					[/* text */ 't', ` for the month.
  This avoids confusion as to what `],
 					[/* inline code block */ 'i', `int`],
@@ -958,7 +958,7 @@ DocsCollector.collect('java.time.OffsetDateTime', [
 					[/* inline code block */ 'i', `int`],
 					[/* text */ 't', ` value then the enum
  provides the `],
-					[/* reference */ 'r', `.Month#getValue()`],
+					[/* reference */ 'r', `java.time.Month#getValue()`, `int value`],
 					[/* text */ 't', `.`]
 				]]
 			],
@@ -978,12 +978,12 @@ DocsCollector.collect('java.time.OffsetDateTime', [
 					[/* inline code block */ 'i', `OffsetDateTime`],
 					[/* text */ 't', `, based on this one, with the specified amount subtracted.
  The amount is typically `],
-					[/* reference */ 'r', `java.time.Period`],
+					[/* reference */ 'r', `java.time.Period`, `Period`],
 					[/* text */ 't', ` or `],
-					[/* reference */ 'r', `java.time.Duration`],
+					[/* reference */ 'r', `java.time.Duration`, `Duration`],
 					[/* text */ 't', ` but may be
  any other type implementing the `],
-					[/* reference */ 'r', `java.time.temporal.TemporalAmount`],
+					[/* reference */ 'r', `java.time.temporal.TemporalAmount`, `TemporalAmount`],
 					[/* text */ 't', ` interface.
  `]
 				]],
@@ -991,7 +991,7 @@ DocsCollector.collect('java.time.OffsetDateTime', [
 					[/* text */ 't', `
  The calculation is delegated to the amount object by calling
  `],
-					[/* reference */ 'r', `.TemporalAmount#subtractFrom(java.time.temporal.Temporal)`],
+					[/* reference */ 'r', `java.time.temporal.TemporalAmount#subtractFrom(java.time.temporal.Temporal)`, `TemporalAmount.subtractFrom(Temporal)`],
 					[/* text */ 't', `. The amount implementation is free
  to implement the subtraction in any way it wishes, however it typically
  calls back to `],
@@ -1325,12 +1325,12 @@ DocsCollector.collect('java.time.OffsetDateTime', [
 					[/* inline code block */ 'i', `OffsetDateTime`],
 					[/* text */ 't', `, based on this one, with the specified amount added.
  The amount is typically `],
-					[/* reference */ 'r', `java.time.Period`],
+					[/* reference */ 'r', `java.time.Period`, `Period`],
 					[/* text */ 't', ` or `],
-					[/* reference */ 'r', `java.time.Duration`],
+					[/* reference */ 'r', `java.time.Duration`, `Duration`],
 					[/* text */ 't', ` but may be
  any other type implementing the `],
-					[/* reference */ 'r', `java.time.temporal.TemporalAmount`],
+					[/* reference */ 'r', `java.time.temporal.TemporalAmount`, `TemporalAmount`],
 					[/* text */ 't', ` interface.
  `]
 				]],
@@ -1338,7 +1338,7 @@ DocsCollector.collect('java.time.OffsetDateTime', [
 					[/* text */ 't', `
  The calculation is delegated to the amount object by calling
  `],
-					[/* reference */ 'r', `.TemporalAmount#addTo(java.time.temporal.Temporal)`],
+					[/* reference */ 'r', `java.time.temporal.TemporalAmount#addTo(java.time.temporal.Temporal)`, `TemporalAmount.addTo(Temporal)`],
 					[/* text */ 't', `. The amount implementation is free
  to implement the addition in any way it wishes, however it typically
  calls back to `],
@@ -1385,10 +1385,10 @@ DocsCollector.collect('java.time.OffsetDateTime', [
 				[/* block */ 'b', [
 					[/* text */ 't', `
  If the field is a `],
-					[/* reference */ 'r', `enum class in java.time.temporal.ChronoUnit`],
+					[/* reference */ 'r', `enum class in java.time.temporal.ChronoUnit`, `ChronoUnit`],
 					[/* text */ 't', ` then the addition is implemented by
  `],
-					[/* reference */ 'r', `.LocalDateTime#plus(long,java.time.temporal.TemporalUnit)`],
+					[/* reference */ 'r', `java.time.LocalDateTime#plus(long,java.time.temporal.TemporalUnit)`, `LocalDateTime.plus(long, TemporalUnit)`],
 					[/* text */ 't', `.
  The offset is not part of the calculation and will be unchanged in the result.
  `]
@@ -1686,7 +1686,7 @@ DocsCollector.collect('java.time.OffsetDateTime', [
  Truncation returns a copy of the original date-time with fields
  smaller than the specified unit set to zero.
  For example, truncating with the `],
-					[/* reference */ 'r', `.ChronoUnit#MINUTES`],
+					[/* reference */ 'r', `java.time.temporal.ChronoUnit#MINUTES`, `minutes`],
 					[/* text */ 't', ` unit
  will set the second-of-minute and nano-of-second field to zero.
  `]
@@ -1694,14 +1694,14 @@ DocsCollector.collect('java.time.OffsetDateTime', [
 				[/* block */ 'b', [
 					[/* text */ 't', `
  The unit must have a `],
-					[/* reference */ 'r', `.TemporalUnit#getDuration()`],
+					[/* reference */ 'r', `java.time.temporal.TemporalUnit#getDuration()`, `duration`],
 					[/* text */ 't', `
  that divides into the length of a standard day without remainder.
  This includes all supplied time units on `],
-					[/* reference */ 'r', `enum class in java.time.temporal.ChronoUnit`],
+					[/* reference */ 'r', `enum class in java.time.temporal.ChronoUnit`, `ChronoUnit`],
 					[/* text */ 't', ` and
  `],
-					[/* reference */ 'r', `.ChronoUnit#DAYS`],
+					[/* reference */ 'r', `java.time.temporal.ChronoUnit#DAYS`, `DAYS`],
 					[/* text */ 't', `. Other units throw an exception.
  `]
 				]],
@@ -1749,16 +1749,16 @@ DocsCollector.collect('java.time.OffsetDateTime', [
  A more complex adjuster might set the date to the last day of the month.
  A selection of common adjustments is provided in
  `],
-					[/* reference */ 'r', `java.time.temporal.TemporalAdjusters`],
+					[/* reference */ 'r', `java.time.temporal.TemporalAdjusters`, `TemporalAdjusters`],
 					[/* text */ 't', `.
  These include finding the "last day of the month" and "next Wednesday".
  Key date-time classes also implement the `],
 					[/* inline code block */ 'i', `TemporalAdjuster`],
 					[/* text */ 't', ` interface,
  such as `],
-					[/* reference */ 'r', `enum class in java.time.Month`],
+					[/* reference */ 'r', `enum class in java.time.Month`, `Month`],
 					[/* text */ 't', ` and `],
-					[/* reference */ 'r', `java.time.MonthDay`],
+					[/* reference */ 'r', `java.time.MonthDay`, `MonthDay`],
 					[/* text */ 't', `.
  The adjuster is responsible for handling special cases, such as the varying
  lengths of month and leap years.
@@ -1776,11 +1776,11 @@ DocsCollector.collect('java.time.OffsetDateTime', [
 				[/* block */ 'b', [
 					[/* text */ 't', `
  The classes `],
-					[/* reference */ 'r', `java.time.LocalDate`],
+					[/* reference */ 'r', `java.time.LocalDate`, `LocalDate`],
 					[/* text */ 't', `, `],
-					[/* reference */ 'r', `java.time.LocalTime`],
+					[/* reference */ 'r', `java.time.LocalTime`, `LocalTime`],
 					[/* text */ 't', ` and `],
-					[/* reference */ 'r', `java.time.ZoneOffset`],
+					[/* reference */ 'r', `java.time.ZoneOffset`, `ZoneOffset`],
 					[/* text */ 't', ` implement
  `],
 					[/* inline code block */ 'i', `TemporalAdjuster`],
@@ -1796,7 +1796,7 @@ DocsCollector.collect('java.time.OffsetDateTime', [
 					[/* text */ 't', `
  The result of this method is obtained by invoking the
  `],
-					[/* reference */ 'r', `.TemporalAdjuster#adjustInto(java.time.temporal.Temporal)`],
+					[/* reference */ 'r', `java.time.temporal.TemporalAdjuster#adjustInto(java.time.temporal.Temporal)`, `TemporalAdjuster.adjustInto(Temporal)`],
 					[/* text */ 't', ` method on the
  specified adjuster passing `],
 					[/* inline code block */ 'i', `this`],
@@ -1851,7 +1851,7 @@ DocsCollector.collect('java.time.OffsetDateTime', [
 				[/* block */ 'b', [
 					[/* text */ 't', `
  If the field is a `],
-					[/* reference */ 'r', `enum class in java.time.temporal.ChronoField`],
+					[/* reference */ 'r', `enum class in java.time.temporal.ChronoField`, `ChronoField`],
 					[/* text */ 't', ` then the adjustment is implemented here.
  `]
 				]],
@@ -1883,7 +1883,7 @@ DocsCollector.collect('java.time.OffsetDateTime', [
 					[/* reference */ 'r', `#isSupported(java.time.temporal.TemporalField)`, `supported fields`],
 					[/* text */ 't', ` will behave as per
  the matching method on `],
-					[/* reference */ 'r', `.LocalDateTime#with(java.time.temporal.TemporalField,long)`],
+					[/* reference */ 'r', `java.time.LocalDateTime#with(java.time.temporal.TemporalField,long)`, `LocalDateTime`],
 					[/* text */ 't', `.
  In this case, the offset is not part of the calculation and will be unchanged.
  `]
@@ -2307,15 +2307,15 @@ DocsCollector.collect('java.time.OffsetDateTime', [
 				[/* block */ 'b', [
 					[/* text */ 't', `
  The adjustment is equivalent to using `],
-					[/* reference */ 'r', `.Temporal#with(java.time.temporal.TemporalField,long)`],
+					[/* reference */ 'r', `java.time.temporal.Temporal#with(java.time.temporal.TemporalField,long)`, `Temporal.with(TemporalField, long)`],
 					[/* text */ 't', `
  three times, passing `],
-					[/* reference */ 'r', `.ChronoField#EPOCH_DAY`],
+					[/* reference */ 'r', `java.time.temporal.ChronoField#EPOCH_DAY`, `ChronoField.EPOCH_DAY`],
 					[/* text */ 't', `,
  `],
-					[/* reference */ 'r', `.ChronoField#NANO_OF_DAY`],
+					[/* reference */ 'r', `java.time.temporal.ChronoField#NANO_OF_DAY`, `ChronoField.NANO_OF_DAY`],
 					[/* text */ 't', ` and `],
-					[/* reference */ 'r', `.ChronoField#OFFSET_SECONDS`],
+					[/* reference */ 'r', `java.time.temporal.ChronoField#OFFSET_SECONDS`, `ChronoField.OFFSET_SECONDS`],
 					[/* text */ 't', ` as the fields.
  `]
 				]],
@@ -2323,7 +2323,7 @@ DocsCollector.collect('java.time.OffsetDateTime', [
 					[/* text */ 't', `
  In most cases, it is clearer to reverse the calling pattern by using
  `],
-					[/* reference */ 'r', `.Temporal#with(java.time.temporal.TemporalAdjuster)`],
+					[/* reference */ 'r', `java.time.temporal.Temporal#with(java.time.temporal.TemporalAdjuster)`, `Temporal.with(TemporalAdjuster)`],
 					[/* text */ 't', `:
  `]
 				]],
@@ -2365,7 +2365,7 @@ DocsCollector.collect('java.time.OffsetDateTime', [
 				[/* block */ 'b', [
 					[/* text */ 't', `
  If the field is a `],
-					[/* reference */ 'r', `enum class in java.time.temporal.ChronoField`],
+					[/* reference */ 'r', `enum class in java.time.temporal.ChronoField`, `ChronoField`],
 					[/* text */ 't', ` then the query is implemented here.
  The `],
 					[/* reference */ 'r', `#isSupported(java.time.temporal.TemporalField)`, `supported fields`],
@@ -2467,7 +2467,7 @@ DocsCollector.collect('java.time.OffsetDateTime', [
  local time-line exists. If the local date-time is in a gap or overlap according to
  the rules then a resolver is used to determine the resultant local time and offset.
  This method uses `],
-					[/* reference */ 'r', `.ZonedDateTime#ofLocal(java.time.LocalDateTime,java.time.ZoneId,java.time.ZoneOffset)`],
+					[/* reference */ 'r', `java.time.ZonedDateTime#ofLocal(java.time.LocalDateTime,java.time.ZoneId,java.time.ZoneOffset)`, `ZonedDateTime.ofLocal(LocalDateTime, ZoneId, ZoneOffset)`],
 					[/* text */ 't', `
  to retain the offset from this instance if possible.
  `]
@@ -2477,7 +2477,7 @@ DocsCollector.collect('java.time.OffsetDateTime', [
  Finer control over gaps and overlaps is available in two ways.
  If you simply want to use the later offset at overlaps then call
  `],
-					[/* reference */ 'r', `.ZonedDateTime#withLaterOffsetAtOverlap()`],
+					[/* reference */ 'r', `java.time.ZonedDateTime#withLaterOffsetAtOverlap()`, `ZonedDateTime.withLaterOffsetAtOverlap()`],
 					[/* text */ 't', ` immediately after this method.
  `]
 				]],
@@ -2559,7 +2559,7 @@ DocsCollector.collect('java.time.OffsetDateTime', [
 				[/* block */ 'b', [
 					[/* text */ 't', `
  If the field is a `],
-					[/* reference */ 'r', `enum class in java.time.temporal.ChronoField`],
+					[/* reference */ 'r', `enum class in java.time.temporal.ChronoField`, `ChronoField`],
 					[/* text */ 't', ` then the query is implemented here.
  The `],
 					[/* reference */ 'r', `#isSupported(java.time.temporal.TemporalField)`, `supported fields`],
@@ -2614,7 +2614,7 @@ DocsCollector.collect('java.time.OffsetDateTime', [
 					[/* text */ 't', `
  This allows this date-time to be converted to a value of the
  `],
-					[/* reference */ 'r', `.ChronoField#INSTANT_SECONDS`],
+					[/* reference */ 'r', `java.time.temporal.ChronoField#INSTANT_SECONDS`, `epoch-seconds`],
 					[/* text */ 't', ` field. This is primarily
  intended for low-level conversions rather than general application usage.`]
 				]]
@@ -2672,7 +2672,7 @@ DocsCollector.collect('java.time.OffsetDateTime', [
  There are two equivalent ways of using this method.
  The first is to invoke this method.
  The second is to use `],
-					[/* reference */ 'r', `.TemporalUnit#between(java.time.temporal.Temporal,java.time.temporal.Temporal)`],
+					[/* reference */ 'r', `java.time.temporal.TemporalUnit#between(java.time.temporal.Temporal,java.time.temporal.Temporal)`, `TemporalUnit.between(Temporal, Temporal)`],
 					[/* text */ 't', `:
  `]
 				]],
@@ -2687,7 +2687,7 @@ DocsCollector.collect('java.time.OffsetDateTime', [
 				[/* block */ 'b', [
 					[/* text */ 't', `
  The calculation is implemented in this method for `],
-					[/* reference */ 'r', `enum class in java.time.temporal.ChronoUnit`],
+					[/* reference */ 'r', `enum class in java.time.temporal.ChronoUnit`, `ChronoUnit`],
 					[/* text */ 't', `.
  The units `],
 					[/* inline code block */ 'i', `NANOS`],
@@ -2814,7 +2814,7 @@ DocsCollector.collect('java.time.OffsetDateTime', [
 				[/* block */ 'b', [
 					[/* text */ 't', `
  This method matches the signature of the functional interface `],
-					[/* reference */ 'r', `java.time.temporal.TemporalQuery`],
+					[/* reference */ 'r', `java.time.temporal.TemporalQuery`, `TemporalQuery`],
 					[/* text */ 't', `
  allowing it to be used as a query via method reference, `],
 					[/* inline code block */ 'i', `OffsetDateTime::from`],
@@ -2843,7 +2843,7 @@ DocsCollector.collect('java.time.OffsetDateTime', [
 				[/* block */ 'b', [
 					[/* text */ 't', `
  This will query the `],
-					[/* reference */ 'r', `.Clock#systemDefaultZone()`],
+					[/* reference */ 'r', `java.time.Clock#systemDefaultZone()`, `system clock`],
 					[/* text */ 't', ` in the default
  time-zone to obtain the current date-time.
  The offset will be calculated from the time-zone in the clock.
@@ -2871,7 +2871,7 @@ DocsCollector.collect('java.time.OffsetDateTime', [
 					[/* text */ 't', `
  Using this method allows the use of an alternate clock for testing.
  The alternate clock may be introduced using `],
-					[/* reference */ 'r', `java.time.Clock`],
+					[/* reference */ 'r', `java.time.Clock`, `dependency injection`],
 					[/* text */ 't', `.`]
 				]]
 			],
@@ -2892,7 +2892,7 @@ DocsCollector.collect('java.time.OffsetDateTime', [
 				[/* block */ 'b', [
 					[/* text */ 't', `
  This will query the `],
-					[/* reference */ 'r', `.Clock#system(java.time.ZoneId)`],
+					[/* reference */ 'r', `java.time.Clock#system(java.time.ZoneId)`, `system clock`],
 					[/* text */ 't', ` to obtain the current date-time.
  Specifying the time-zone avoids dependence on the default time-zone.
  The offset will be calculated from the specified time-zone.
@@ -3059,7 +3059,7 @@ DocsCollector.collect('java.time.OffsetDateTime', [
 					[/* text */ 't', `
  The string must represent a valid date-time and is parsed using
  `],
-					[/* reference */ 'r', `.DateTimeFormatter#ISO_OFFSET_DATE_TIME`],
+					[/* reference */ 'r', `java.time.format.DateTimeFormatter#ISO_OFFSET_DATE_TIME`, `DateTimeFormatter.ISO_OFFSET_DATE_TIME`],
 					[/* text */ 't', `.`]
 				]]
 			],

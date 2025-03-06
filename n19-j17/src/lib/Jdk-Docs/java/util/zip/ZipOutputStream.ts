@@ -27,7 +27,7 @@ DocsCollector.collect('java.util.zip.ZipOutputStream', [
  `],
 				[/* block */ 'b', [
 					[/* text */ 't', `The UTF-8 `],
-					[/* reference */ 'r', `java.nio.charset.Charset`],
+					[/* reference */ 'r', `java.nio.charset.Charset`, `charset`],
 					[/* text */ 't', ` is used
  to encode the entry names and comments.`]
 				]]
@@ -49,7 +49,7 @@ DocsCollector.collect('java.util.zip.ZipOutputStream', [
 				]],
 				[/* parameter */ 'charset', [/* parameter description */
 					[/* text */ 't', `the `],
-					[/* reference */ 'r', `java.nio.charset.Charset`],
+					[/* reference */ 'r', `java.nio.charset.Charset`, `charset`],
 					[/* text */ 't', `
                 to be used to encode the entry names and comments`]
 				]]
@@ -143,7 +143,7 @@ DocsCollector.collect('java.util.zip.ZipOutputStream', [
  was specified for the entry. When writing a compressed (DEFLATED)
  entry, and the compressed size has not been explicitly set with the
  `],
-					[/* reference */ 'r', `.ZipEntry#setCompressedSize(long)`],
+					[/* reference */ 'r', `java.util.zip.ZipEntry#setCompressedSize(long)`, `ZipEntry.setCompressedSize(long)`],
 					[/* text */ 't', ` method, then the compressed
  size will be set to the actual compressed size after deflation.
  `]

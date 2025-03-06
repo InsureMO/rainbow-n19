@@ -14,15 +14,15 @@ DocsCollector.collect('java.lang.Module', [
 			[/* text */ 't', ` and are constructed by the
  Java Virtual Machine when a graph of modules is defined to the Java virtual
  machine to create a `],
-			[/* reference */ 'r', `java.lang.ModuleLayer`],
+			[/* reference */ 'r', `java.lang.ModuleLayer`, `module layer`],
 			[/* text */ 't', `. `]
 		]],
 		[/* block */ 'b', [
 			[/* text */ 't', ` An unnamed module does not have a name. There is an unnamed module for
  each `],
-			[/* reference */ 'r', `java.lang.ClassLoader`],
+			[/* reference */ 'r', `java.lang.ClassLoader`, `ClassLoader`],
 			[/* text */ 't', `, obtained by invoking its `],
-			[/* reference */ 'r', `.ClassLoader#getUnnamedModule()`],
+			[/* reference */ 'r', `java.lang.ClassLoader#getUnnamedModule()`, `getUnnamedModule`],
 			[/* text */ 't', ` method. All types that are
  not in a named module are members of their defining class loader's unnamed
  module. `]
@@ -44,7 +44,7 @@ DocsCollector.collect('java.lang.Module', [
 			[/* inline code block */ 'i', `null`],
 			[/* text */ 't', ` argument to a method
  in this class causes a `],
-			[/* reference */ 'r', `java.lang.NullPointerException`],
+			[/* reference */ 'r', `java.lang.NullPointerException`, `NullPointerException`],
 			[/* text */ 't', ` to
  be thrown. `]
 		]]
@@ -226,7 +226,7 @@ DocsCollector.collect('java.lang.Module', [
 					[/* inline code block */ 'i', `true`],
 					[/* text */ 't', ` when invoked on an
  `],
-					[/* reference */ 'r', `.ModuleDescriptor#isOpen()`],
+					[/* reference */ 'r', `java.lang.module.ModuleDescriptor#isOpen()`, `open`],
 					[/* text */ 't', ` module with a package in the
  module. `]
 				]],
@@ -264,7 +264,7 @@ DocsCollector.collect('java.lang.Module', [
 					[/* inline code block */ 'i', `true`],
 					[/* text */ 't', ` when invoked on an
  `],
-					[/* reference */ 'r', `.ModuleDescriptor#isOpen()`],
+					[/* reference */ 'r', `java.lang.module.ModuleDescriptor#isOpen()`, `open`],
 					[/* text */ 't', ` module with a package in the module.
  It always returns `],
 					[/* inline code block */ 'i', `true`],
@@ -298,10 +298,10 @@ DocsCollector.collect('java.lang.Module', [
 				[/* inline code block */ 'i', `'/'`],
 				[/* text */ 't', `-separated path name that
  identifies the resource. As with `],
-				[/* reference */ 'r', `.Class#getResourceAsStream(java.lang.String)`],
+				[/* reference */ 'r', `java.lang.Class#getResourceAsStream(java.lang.String)`, `Class.getResourceAsStream`],
 				[/* text */ 't', `, this method delegates to the module's class
  loader `],
-				[/* reference */ 'r', `.ClassLoader#findResource(java.lang.String,java.lang.String)`],
+				[/* reference */ 'r', `java.lang.ClassLoader#findResource(java.lang.String,java.lang.String)`, `findResource(String,String)`],
 				[/* text */ 't', ` method, invoking it with the module name
  (or `],
 				[/* inline code block */ 'i', `null`],
@@ -573,7 +573,7 @@ DocsCollector.collect('java.lang.Module', [
 				[/* text */ 't', `If the caller's module is this module then update this module to add a
  service dependence on the given service type. This method is intended
  for use by frameworks that invoke `],
-				[/* reference */ 'r', `java.util.ServiceLoader`],
+				[/* reference */ 'r', `java.util.ServiceLoader`, `ServiceLoader`],
 				[/* text */ 't', ` on behalf of other modules or where the framework is
  passed a reference to the service type by other code. This method is
  a no-op when invoked on an unnamed module or an automatic module.
@@ -581,7 +581,7 @@ DocsCollector.collect('java.lang.Module', [
  `],
 				[/* block */ 'b', [
 					[/* text */ 't', ` This method does not cause `],
-					[/* reference */ 'r', `.Configuration#resolveAndBind(java.lang.module.ModuleFinder,java.lang.module.ModuleFinder,java.util.Collection)`],
+					[/* reference */ 'r', `java.lang.module.Configuration#resolveAndBind(java.lang.module.ModuleFinder,java.lang.module.ModuleFinder,java.util.Collection)`, `resolveAndBind`],
 					[/* text */ 't', ` to be re-run. `]
 				]]
 			],
@@ -627,7 +627,7 @@ DocsCollector.collect('java.lang.Module', [
 
  `],
 				[/* block */ 'b', [
-					[/* reference */ 'r', `.Proxy#dynamicmodule`],
+					[/* reference */ 'r', `java.lang.reflect.Proxy#dynamicmodule`, `Dynamic modules`],
 					[/* text */ 't', ` are
  named modules that are generated at runtime. A dynamic module may or may
  not be in a module layer. `]
@@ -680,7 +680,7 @@ DocsCollector.collect('java.lang.Module', [
 				[/* block */ 'b', [
 					[/* text */ 't', ` For unnamed modules, the returned set contains an element for
  each package that `],
-					[/* reference */ 'r', `.ClassLoader#getDefinedPackages()`],
+					[/* reference */ 'r', `java.lang.ClassLoader#getDefinedPackages()`, `has been defined`],
 					[/* text */ 't', `
  in the unnamed module.`]
 				]]

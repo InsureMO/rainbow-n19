@@ -128,7 +128,7 @@ DocsCollector.collect('java.io.PushbackInputStream', [
 				[/* block */ 'b', [
 					[/* text */ 't', ` The method returns the sum of the number of bytes that have been
  pushed back and the value returned by `],
-					[/* reference */ 'r', `.FilterInputStream#available()`],
+					[/* reference */ 'r', `java.io.FilterInputStream#available()`, `available`],
 					[/* text */ 't', `.`]
 				]]
 			],

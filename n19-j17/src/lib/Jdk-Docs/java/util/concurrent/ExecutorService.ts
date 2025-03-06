@@ -4,10 +4,10 @@ import {DocsCollector} from '../../../DocsCollector';
 DocsCollector.collect('java.util.concurrent.ExecutorService', [
 	[/* class description */
 		[/* text */ 't', `An `],
-		[/* reference */ 'r', `java.util.concurrent.Executor`],
+		[/* reference */ 'r', `java.util.concurrent.Executor`, `Executor`],
 		[/* text */ 't', ` that provides methods to manage termination and
  methods that can produce a `],
-		[/* reference */ 'r', `java.util.concurrent.Future`],
+		[/* reference */ 'r', `java.util.concurrent.Future`, `Future`],
 		[/* text */ 't', ` for tracking progress of
  one or more asynchronous tasks.
 
@@ -40,9 +40,9 @@ DocsCollector.collect('java.util.concurrent.ExecutorService', [
 			[/* text */ 't', `Method `],
 			[/* inline code block */ 'i', `submit`],
 			[/* text */ 't', ` extends base method `],
-			[/* reference */ 'r', `.Executor#execute(java.lang.Runnable)`],
+			[/* reference */ 'r', `java.util.concurrent.Executor#execute(java.lang.Runnable)`, `Executor.execute(Runnable)`],
 			[/* text */ 't', ` by creating and returning a `],
-			[/* reference */ 'r', `java.util.concurrent.Future`],
+			[/* reference */ 'r', `java.util.concurrent.Future`, `Future`],
 			[/* text */ 't', `
  that can be used to cancel execution and/or wait for completion.
  Methods `],
@@ -53,7 +53,7 @@ DocsCollector.collect('java.util.concurrent.ExecutorService', [
  commonly useful forms of bulk execution, executing a collection of
  tasks and then waiting for at least one, or all, to
  complete. (Class `],
-			[/* reference */ 'r', `java.util.concurrent.ExecutorCompletionService`],
+			[/* reference */ 'r', `java.util.concurrent.ExecutorCompletionService`, `ExecutorCompletionService`],
 			[/* text */ 't', ` can be used to
  write customized variants of these methods.)
 
@@ -61,7 +61,7 @@ DocsCollector.collect('java.util.concurrent.ExecutorService', [
 		]],
 		[/* block */ 'b', [
 			[/* text */ 't', `The `],
-			[/* reference */ 'r', `java.util.concurrent.Executors`],
+			[/* reference */ 'r', `java.util.concurrent.Executors`, `Executors`],
 			[/* text */ 't', ` class provides factory methods for the
  executor services provided in this package.
 
@@ -72,7 +72,7 @@ DocsCollector.collect('java.util.concurrent.ExecutorService', [
 
  Here is a sketch of a network service in which threads in a thread
  pool service incoming requests. It uses the preconfigured `],
-		[/* reference */ 'r', `.Executors#newFixedThreadPool(int)`],
+		[/* reference */ 'r', `java.util.concurrent.Executors#newFixedThreadPool(int)`, `Executors.newFixedThreadPool(int)`],
 		[/* text */ 't', ` factory method:
 
  `],
@@ -147,7 +147,7 @@ DocsCollector.collect('java.util.concurrent.ExecutorService', [
 			[/* text */ 't', ` task to an
  `],
 			[/* inline code block */ 'i', `ExecutorService`],
-			[/* reference */ 'r', `.package-summary#MemoryVisibility`],
+			[/* text */ 't', `happen-before`],
 			[/* text */ 't', `
  any actions taken by that task, which in turn `],
 			[/* text */ 't', `happen-before`],
@@ -208,14 +208,14 @@ DocsCollector.collect('java.util.concurrent.ExecutorService', [
 				]],
 				[/* block */ 'b', [
 					[/* text */ 't', `Note: The `],
-					[/* reference */ 'r', `java.util.concurrent.Executors`],
+					[/* reference */ 'r', `java.util.concurrent.Executors`, `Executors`],
 					[/* text */ 't', ` class includes a set of methods
  that can convert some other common closure-like objects,
  for example, `],
-					[/* reference */ 'r', `java.security.PrivilegedAction`],
+					[/* reference */ 'r', `java.security.PrivilegedAction`, `PrivilegedAction`],
 					[/* text */ 't', ` to
  `],
-					[/* reference */ 'r', `java.util.concurrent.Callable`],
+					[/* reference */ 'r', `java.util.concurrent.Callable`, `Callable`],
 					[/* text */ 't', ` form so they can be submitted.`]
 				]]
 			],
@@ -242,7 +242,7 @@ DocsCollector.collect('java.util.concurrent.ExecutorService', [
 				[/* text */ 't', `Executes the given tasks, returning a list of Futures holding
  their status and results when all complete.
  `],
-				[/* reference */ 'r', `.Future#isDone()`],
+				[/* reference */ 'r', `java.util.concurrent.Future#isDone()`, `Future.isDone()`],
 				[/* text */ 't', ` is `],
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` for each
@@ -285,7 +285,7 @@ DocsCollector.collect('java.util.concurrent.ExecutorService', [
  their status and results
  when all complete or the timeout expires, whichever happens first.
  `],
-				[/* reference */ 'r', `.Future#isDone()`],
+				[/* reference */ 'r', `java.util.concurrent.Future#isDone()`, `Future.isDone()`],
 				[/* text */ 't', ` is `],
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` for each
@@ -529,7 +529,7 @@ DocsCollector.collect('java.util.concurrent.ExecutorService', [
 					[/* text */ 't', `There are no guarantees beyond best-effort attempts to stop
  processing actively executing tasks.  For example, typical
  implementations will cancel via `],
-					[/* reference */ 'r', `java.util.Thread#interrupt()`],
+					[/* reference */ 'r', `java.lang.Thread#interrupt()`, `Thread.interrupt()`],
 					[/* text */ 't', `, so any
  task that fails to respond to interrupts may never terminate.`]
 				]]
@@ -541,7 +541,7 @@ DocsCollector.collect('java.util.concurrent.ExecutorService', [
          shutting down this ExecutorService may manipulate
          threads that the caller is not permitted to modify
          because it does not hold `],
-					[/* reference */ 'r', `java.lang.RuntimePermission`],
+					[/* reference */ 'r', `java.lang.RuntimePermission`, `RuntimePermission`],
 					[/* inline code block */ 'i', `("modifyThread")`],
 					[/* text */ 't', `,
          or the security manager's `],
@@ -576,7 +576,7 @@ DocsCollector.collect('java.util.concurrent.ExecutorService', [
          shutting down this ExecutorService may manipulate
          threads that the caller is not permitted to modify
          because it does not hold `],
-					[/* reference */ 'r', `java.lang.RuntimePermission`],
+					[/* reference */ 'r', `java.lang.RuntimePermission`, `RuntimePermission`],
 					[/* inline code block */ 'i', `("modifyThread")`],
 					[/* text */ 't', `,
          or the security manager's `],

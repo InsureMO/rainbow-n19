@@ -9,7 +9,7 @@ DocsCollector.collect('java.lang.Runtime$Version', [
 
  `],
 		[/* block */ 'b', [
-			[/* text */ 't', `Version numbers`]
+			[/* anchor */ 'r', '#-id', `verNum`, `Version numbers`]
 		]],
 		[/* block */ 'b', [
 			[/* text */ 't', ` A `],
@@ -35,7 +35,7 @@ DocsCollector.collect('java.lang.Runtime$Version', [
 		[/* list */ 'l', [
 			[/* block */ 'b', [
 				[/* block */ 'b', [
-					[/* text */ 't', `$FEATURE`],
+					[/* anchor */ 'r', '#-id', `FEATURE`, `$FEATURE`],
 					[/* text */ 't', ` — The
  feature-release counter, incremented for every feature release
  regardless of release content.  Features may be added in a feature
@@ -46,7 +46,7 @@ DocsCollector.collect('java.lang.Runtime$Version', [
 			]],
 			[/* block */ 'b', [
 				[/* block */ 'b', [
-					[/* text */ 't', `$INTERIM`],
+					[/* anchor */ 'r', '#-id', `INTERIM`, `$INTERIM`],
 					[/* text */ 't', ` — The
  interim-release counter, incremented for non-feature releases that
  contain compatible bug fixes and enhancements but no incompatible
@@ -56,7 +56,7 @@ DocsCollector.collect('java.lang.Runtime$Version', [
 			]],
 			[/* block */ 'b', [
 				[/* block */ 'b', [
-					[/* text */ 't', `$UPDATE`],
+					[/* anchor */ 'r', '#-id', `UPDATE`, `$UPDATE`],
 					[/* text */ 't', ` — The update-release
  counter, incremented for compatible update releases that fix security
  issues, regressions, and bugs in newer features. `]
@@ -64,7 +64,7 @@ DocsCollector.collect('java.lang.Runtime$Version', [
 			]],
 			[/* block */ 'b', [
 				[/* block */ 'b', [
-					[/* text */ 't', `$PATCH`],
+					[/* anchor */ 'r', '#-id', `PATCH`, `$PATCH`],
 					[/* text */ 't', ` — The emergency
  patch-release counter, incremented only when it's necessary to produce
  an emergency release to fix a critical issue. `]
@@ -97,7 +97,7 @@ DocsCollector.collect('java.lang.Runtime$Version', [
 			[/* text */ 't', `. `]
 		]],
 		[/* block */ 'b', [
-			[/* text */ 't', `Version strings`]
+			[/* anchor */ 'r', '#-id', `verStr`, `Version strings`]
 		]],
 		[/* block */ 'b', [
 			[/* text */ 't', ` A `],
@@ -119,7 +119,7 @@ DocsCollector.collect('java.lang.Runtime$Version', [
 		[/* list */ 'l', [
 			[/* block */ 'b', [
 				[/* block */ 'b', [
-					[/* text */ 't', `$PRE`],
+					[/* anchor */ 'r', '#-id', `pre`, `$PRE`],
 					[/* text */ 't', `, matching `],
 					[/* inline code block */ 'i', `([a-zA-Z0-9]+)`],
 					[/* text */ 't', `
@@ -134,7 +134,7 @@ DocsCollector.collect('java.lang.Runtime$Version', [
 			]],
 			[/* block */ 'b', [
 				[/* block */ 'b', [
-					[/* text */ 't', `$BUILD`],
+					[/* anchor */ 'r', '#-id', `build`, `$BUILD`],
 					[/* text */ 't', `, matching `],
 					[/* inline code block */ 'i', `(0|[1-9][0-9]*)`],
 					[/* text */ 't', ` — The build number, incremented for each promoted
@@ -149,7 +149,7 @@ DocsCollector.collect('java.lang.Runtime$Version', [
 			]],
 			[/* block */ 'b', [
 				[/* block */ 'b', [
-					[/* text */ 't', `$OPT`],
+					[/* anchor */ 'r', '#-id', `opt`, `$OPT`],
 					[/* text */ 't', `, matching `],
 					[/* inline code block */ 'i', `([-a-zA-Z0-9.]+)`],
 					[/* text */ 't', `
@@ -480,7 +480,7 @@ DocsCollector.collect('java.lang.Runtime$Version', [
 		[/* method */ 'version()', [
 			[/* method description */
 				[/* text */ 't', `Returns an unmodifiable `],
-				[/* reference */ 'r', `java.util.List`],
+				[/* reference */ 'r', `java.util.List`, `List`],
 				[/* text */ 't', ` of the integers
  represented in the `],
 				[/* text */ 't', `version number`],
@@ -564,7 +564,7 @@ DocsCollector.collect('java.lang.Runtime$Version', [
 				[/* throw */ 'java.lang.NumberFormatException', [/* throw description */
 					[/* text */ 't', `If an element of the version number or the build number
           cannot be represented as an `],
-					[/* reference */ 'r', `java.lang.Integer`]
+					[/* reference */ 'r', `java.lang.Integer`, `Integer`]
 				]]
 			],
 			[/* return description */

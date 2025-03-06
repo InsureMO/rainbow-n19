@@ -54,7 +54,7 @@ DocsCollector.collect('java.security.AccessControlContext', [
 					[/* text */ 't', `if a security manager is installed and the
           caller does not have the "createAccessControlContext"
           `],
-					[/* reference */ 'r', `java.security.SecurityPermission`]
+					[/* reference */ 'r', `java.security.SecurityPermission`, `SecurityPermission`]
 				]]
 			]
 		]],
@@ -131,7 +131,7 @@ DocsCollector.collect('java.security.AccessControlContext', [
 					[/* text */ 't', `if a security manager is installed and
           the caller does not have the "getDomainCombiner"
           `],
-					[/* reference */ 'r', `java.security.SecurityPermission`]
+					[/* reference */ 'r', `java.security.SecurityPermission`, `SecurityPermission`]
 				]]
 			],
 			[/* return description */

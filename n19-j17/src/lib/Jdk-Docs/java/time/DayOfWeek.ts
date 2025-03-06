@@ -31,7 +31,7 @@ DocsCollector.collect('java.time.DayOfWeek', [
  Some locales also assign different numeric values to the days, declaring
  Sunday to have the value 1, however this class provides no support for this.
  See `],
-			[/* reference */ 'r', `java.time.temporal.WeekFields`],
+			[/* reference */ 'r', `java.time.temporal.WeekFields`, `WeekFields`],
 			[/* text */ 't', ` for localized week-numbering.
  `]
 		]],
@@ -71,7 +71,7 @@ DocsCollector.collect('java.time.DayOfWeek', [
 					[/* text */ 't', `
  The result of this method is obtained by invoking the
  `],
-					[/* reference */ 'r', `.TemporalQuery#queryFrom(java.time.temporal.TemporalAccessor)`],
+					[/* reference */ 'r', `java.time.temporal.TemporalQuery#queryFrom(java.time.temporal.TemporalAccessor)`, `TemporalQuery.queryFrom(TemporalAccessor)`],
 					[/* text */ 't', ` method on the
  specified query passing `],
 					[/* inline code block */ 'i', `this`],
@@ -113,7 +113,7 @@ DocsCollector.collect('java.time.DayOfWeek', [
 				[/* block */ 'b', [
 					[/* text */ 't', `
  If the field is `],
-					[/* reference */ 'r', `.ChronoField#DAY_OF_WEEK`],
+					[/* reference */ 'r', `java.time.temporal.ChronoField#DAY_OF_WEEK`, `DAY_OF_WEEK`],
 					[/* text */ 't', ` then
  this method returns true.
  All other `],
@@ -160,7 +160,7 @@ DocsCollector.collect('java.time.DayOfWeek', [
 				[/* block */ 'b', [
 					[/* text */ 't', `
  If the field is `],
-					[/* reference */ 'r', `.ChronoField#DAY_OF_WEEK`],
+					[/* reference */ 'r', `java.time.temporal.ChronoField#DAY_OF_WEEK`, `DAY_OF_WEEK`],
 					[/* text */ 't', ` then the
  value of the day-of-week, from 1 to 7, will be returned.
  All other `],
@@ -217,7 +217,7 @@ DocsCollector.collect('java.time.DayOfWeek', [
 					[/* text */ 't', `
  The values are numbered following the ISO-8601 standard, from 1 (Monday) to 7 (Sunday).
  See `],
-					[/* reference */ 'r', `.WeekFields#dayOfWeek()`],
+					[/* reference */ 'r', `java.time.temporal.WeekFields#dayOfWeek()`, `WeekFields.dayOfWeek()`],
 					[/* text */ 't', ` for localized week-numbering.`]
 				]]
 			],
@@ -309,14 +309,14 @@ DocsCollector.collect('java.time.DayOfWeek', [
 				[/* block */ 'b', [
 					[/* text */ 't', `
  The adjustment is equivalent to using `],
-					[/* reference */ 'r', `.Temporal#with(java.time.temporal.TemporalField,long)`],
+					[/* reference */ 'r', `java.time.temporal.Temporal#with(java.time.temporal.TemporalField,long)`, `Temporal.with(TemporalField, long)`],
 					[/* text */ 't', `
  passing `],
-					[/* reference */ 'r', `.ChronoField#DAY_OF_WEEK`],
+					[/* reference */ 'r', `java.time.temporal.ChronoField#DAY_OF_WEEK`, `ChronoField.DAY_OF_WEEK`],
 					[/* text */ 't', ` as the field.
  Note that this adjusts forwards or backwards within a Monday to Sunday week.
  See `],
-					[/* reference */ 'r', `.WeekFields#dayOfWeek()`],
+					[/* reference */ 'r', `java.time.temporal.WeekFields#dayOfWeek()`, `WeekFields.dayOfWeek()`],
 					[/* text */ 't', ` for localized week start days.
  See `],
 					[/* inline code block */ 'i', `TemporalAdjuster`],
@@ -330,7 +330,7 @@ DocsCollector.collect('java.time.DayOfWeek', [
 					[/* text */ 't', `
  In most cases, it is clearer to reverse the calling pattern by using
  `],
-					[/* reference */ 'r', `.Temporal#with(java.time.temporal.TemporalAdjuster)`],
+					[/* reference */ 'r', `java.time.temporal.Temporal#with(java.time.temporal.TemporalAdjuster)`, `Temporal.with(TemporalAdjuster)`],
 					[/* text */ 't', `:
  `]
 				]],
@@ -384,7 +384,7 @@ DocsCollector.collect('java.time.DayOfWeek', [
 				[/* block */ 'b', [
 					[/* text */ 't', `
  If the field is `],
-					[/* reference */ 'r', `.ChronoField#DAY_OF_WEEK`],
+					[/* reference */ 'r', `java.time.temporal.ChronoField#DAY_OF_WEEK`, `DAY_OF_WEEK`],
 					[/* text */ 't', ` then the
  range of the day-of-week, from 1 to 7, will be returned.
  All other `],
@@ -439,7 +439,7 @@ DocsCollector.collect('java.time.DayOfWeek', [
 				[/* block */ 'b', [
 					[/* text */ 't', `
  If the field is `],
-					[/* reference */ 'r', `.ChronoField#DAY_OF_WEEK`],
+					[/* reference */ 'r', `java.time.temporal.ChronoField#DAY_OF_WEEK`, `DAY_OF_WEEK`],
 					[/* text */ 't', ` then the
  value of the day-of-week, from 1 to 7, will be returned.
  All other `],
@@ -503,14 +503,14 @@ DocsCollector.collect('java.time.DayOfWeek', [
 				[/* block */ 'b', [
 					[/* text */ 't', `
  The conversion extracts the `],
-					[/* reference */ 'r', `.ChronoField#DAY_OF_WEEK`],
+					[/* reference */ 'r', `java.time.temporal.ChronoField#DAY_OF_WEEK`, `DAY_OF_WEEK`],
 					[/* text */ 't', ` field.
  `]
 				]],
 				[/* block */ 'b', [
 					[/* text */ 't', `
  This method matches the signature of the functional interface `],
-					[/* reference */ 'r', `java.time.temporal.TemporalQuery`],
+					[/* reference */ 'r', `java.time.temporal.TemporalQuery`, `TemporalQuery`],
 					[/* text */ 't', `
  allowing it to be used as a query via method reference, `],
 					[/* inline code block */ 'i', `DayOfWeek::from`],

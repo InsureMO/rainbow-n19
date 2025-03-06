@@ -4,7 +4,7 @@ import {DocsCollector} from '../../../DocsCollector';
 DocsCollector.collect('java.lang.constant.DynamicConstantDesc', [
 	[/* class description */
 		[/* text */ 't', `A `],
-		[/* reference */ 'r', `.package-summary#nominal`],
+		[/* text */ 't', `nominal descriptor`],
 		[/* text */ 't', ` for a
  dynamic constant (one described in the constant pool with
  `],
@@ -14,7 +14,7 @@ DocsCollector.collect('java.lang.constant.DynamicConstantDesc', [
  `],
 		[/* block */ 'b', [
 			[/* text */ 't', `Concrete subtypes of `],
-			[/* reference */ 'r', `java.lang.constant.DynamicConstantDesc`],
+			[/* reference */ 'r', `java.lang.constant.DynamicConstantDesc`, `DynamicConstantDesc`],
 			[/* text */ 't', ` should be immutable
  and their behavior should not rely on object identity.`]
 		]]
@@ -28,7 +28,7 @@ DocsCollector.collect('java.lang.constant.DynamicConstantDesc', [
 			[/* parameters */
 				[/* parameter */ 'bootstrapMethod', [/* parameter description */
 					[/* text */ 't', `a `],
-					[/* reference */ 'r', `java.lang.constant.DirectMethodHandleDesc`],
+					[/* reference */ 'r', `java.lang.constant.DirectMethodHandleDesc`, `DirectMethodHandleDesc`],
 					[/* text */ 't', ` describing the
                         bootstrap method for the constant`]
 				]],
@@ -42,7 +42,7 @@ DocsCollector.collect('java.lang.constant.DynamicConstantDesc', [
 				]],
 				[/* parameter */ 'constantType', [/* parameter description */
 					[/* text */ 't', `a `],
-					[/* reference */ 'r', `java.lang.constant.ClassDesc`],
+					[/* reference */ 'r', `java.lang.constant.ClassDesc`, `ClassDesc`],
 					[/* text */ 't', ` describing the type
                      that would appear in the `],
 					[/* inline code block */ 'i', `NameAndType`],
@@ -53,7 +53,7 @@ DocsCollector.collect('java.lang.constant.DynamicConstantDesc', [
 				]],
 				[/* parameter */ 'bootstrapArgs', [/* parameter description */
 					[/* text */ 't', ``],
-					[/* reference */ 'r', `java.lang.constant.ConstantDesc`],
+					[/* reference */ 'r', `java.lang.constant.ConstantDesc`, `ConstantDesc`],
 					[/* text */ 't', `s describing the static arguments
                       to the bootstrap, that would appear in the
                       `],
@@ -82,7 +82,7 @@ DocsCollector.collect('java.lang.constant.DynamicConstantDesc', [
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if and only if the specified object is also a
  `],
-				[/* reference */ 'r', `java.lang.constant.DynamicConstantDesc`],
+				[/* reference */ 'r', `java.lang.constant.DynamicConstantDesc`, `DynamicConstantDesc`],
 				[/* text */ 't', `, and both descriptors have equal
  bootstrap methods, bootstrap argument lists, constant name, and
  constant type.`]
@@ -113,7 +113,7 @@ DocsCollector.collect('java.lang.constant.DynamicConstantDesc', [
 					[/* text */ 't', `Returns a hash code value for the object. This method is
  supported for the benefit of hash tables such as those provided by
  `],
-					[/* reference */ 'r', `java.util.HashMap`],
+					[/* reference */ 'r', `java.util.HashMap`, `HashMap`],
 					[/* text */ 't', `.
  `],
 					[/* block */ 'b', [
@@ -139,7 +139,7 @@ DocsCollector.collect('java.lang.constant.DynamicConstantDesc', [
 						]],
 						[/* block */ 'b', [
 							[/* text */ 't', `If two objects are equal according to the `],
-							[/* reference */ 'r', `java.Object#equals(java.lang.Object)`],
+							[/* reference */ 'r', `java.lang.Object#equals(java.lang.Object)`, `equals`],
 							[/* text */ 't', ` method, then calling the `],
 							[/* inline code block */ 'i', `hashCode`],
 							[/* text */ 't', ` method on each of the two objects must produce the
@@ -151,7 +151,7 @@ DocsCollector.collect('java.lang.constant.DynamicConstantDesc', [
 							[/* text */ 't', `not`],
 							[/* text */ 't', ` required that if two objects are unequal
      according to the `],
-							[/* reference */ 'r', `java.Object#equals(java.lang.Object)`],
+							[/* reference */ 'r', `java.lang.Object#equals(java.lang.Object)`, `equals`],
 							[/* text */ 't', ` method, then
      calling the `],
 							[/* inline code block */ 'i', `hashCode`],
@@ -174,7 +174,7 @@ DocsCollector.collect('java.lang.constant.DynamicConstantDesc', [
 		[/* method */ 'constantType()', [
 			[/* method description */
 				[/* text */ 't', `Returns a `],
-				[/* reference */ 'r', `java.lang.constant.ClassDesc`],
+				[/* reference */ 'r', `java.lang.constant.ClassDesc`, `ClassDesc`],
 				[/* text */ 't', ` describing the type that would appear in the
  `],
 				[/* inline code block */ 'i', `NameAndType`],
@@ -201,7 +201,7 @@ DocsCollector.collect('java.lang.constant.DynamicConstantDesc', [
 		[/* method */ 'bootstrapMethod()', [
 			[/* method description */
 				[/* text */ 't', `Returns a `],
-				[/* reference */ 'r', `java.lang.constant.MethodHandleDesc`],
+				[/* reference */ 'r', `java.lang.constant.MethodHandleDesc`, `MethodHandleDesc`],
 				[/* text */ 't', ` describing the bootstrap method for
  this constant.`]
 			],
@@ -241,14 +241,14 @@ DocsCollector.collect('java.lang.constant.DynamicConstantDesc', [
 		[/* method */ 'bootstrapArgsList()', [
 			[/* method description */
 				[/* text */ 't', `Returns the bootstrap arguments for this constant as an immutable `],
-				[/* reference */ 'r', `java.util.List`],
+				[/* reference */ 'r', `java.util.List`, `List`],
 				[/* text */ 't', `.`]
 			],
 			/* parameters */ UDF,
 			/* throws */ UDF,
 			[/* return description */
 				[/* text */ 't', `a `],
-				[/* reference */ 'r', `java.util.List`],
+				[/* reference */ 'r', `java.util.List`, `List`],
 				[/* text */ 't', ` of the bootstrap arguments`]
 			]
 		]],
@@ -261,18 +261,18 @@ DocsCollector.collect('java.lang.constant.DynamicConstantDesc', [
  `],
 				[/* block */ 'b', [
 					[/* text */ 't', `Classes whose `],
-					[/* reference */ 'r', `.Constable#describeConstable()`],
+					[/* reference */ 'r', `java.lang.constant.Constable#describeConstable()`, `Constable.describeConstable()`],
 					[/* text */ 't', ` method produce
  a `],
-					[/* reference */ 'r', `java.lang.constant.DynamicConstantDesc`],
+					[/* reference */ 'r', `java.lang.constant.DynamicConstantDesc`, `DynamicConstantDesc`],
 					[/* text */ 't', ` with a well-known bootstrap including
  `],
-					[/* reference */ 'r', `java.lang.Class`],
+					[/* reference */ 'r', `java.lang.Class`, `Class`],
 					[/* text */ 't', ` (for instances describing primitive types), `],
-					[/* reference */ 'r', `java.lang.Enum`],
+					[/* reference */ 'r', `java.lang.Enum`, `Enum`],
 					[/* text */ 't', `,
  and `],
-					[/* reference */ 'r', `java.lang.invoke.VarHandle`],
+					[/* reference */ 'r', `java.lang.invoke.VarHandle`, `VarHandle`],
 					[/* text */ 't', `.
 
  `]
@@ -280,7 +280,7 @@ DocsCollector.collect('java.lang.constant.DynamicConstantDesc', [
 				[/* block */ 'b', [
 					[/* text */ 't', `Bytecode-reading APIs that process the constant pool and wish to expose
  entries as `],
-					[/* reference */ 'r', `java.lang.constant.ConstantDesc`],
+					[/* reference */ 'r', `java.lang.constant.ConstantDesc`, `ConstantDesc`],
 					[/* text */ 't', ` to their callers should generally use this
  method in preference to `],
 					[/* reference */ 'r', `#ofNamed(java.lang.constant.DirectMethodHandleDesc,java.lang.String,java.lang.constant.ClassDesc,java.lang.constant.ConstantDesc...)`, `ofNamed(DirectMethodHandleDesc, String, ClassDesc, ConstantDesc...)`],
@@ -292,7 +292,7 @@ DocsCollector.collect('java.lang.constant.DynamicConstantDesc', [
 			[/* parameters */
 				[/* parameter */ 'bootstrapMethod', [/* parameter description */
 					[/* text */ 't', `a `],
-					[/* reference */ 'r', `java.lang.constant.DirectMethodHandleDesc`],
+					[/* reference */ 'r', `java.lang.constant.DirectMethodHandleDesc`, `DirectMethodHandleDesc`],
 					[/* text */ 't', ` describing the
                         bootstrap method for the constant`]
 				]],
@@ -306,7 +306,7 @@ DocsCollector.collect('java.lang.constant.DynamicConstantDesc', [
 				]],
 				[/* parameter */ 'constantType', [/* parameter description */
 					[/* text */ 't', `a `],
-					[/* reference */ 'r', `java.lang.constant.ClassDesc`],
+					[/* reference */ 'r', `java.lang.constant.ClassDesc`, `ClassDesc`],
 					[/* text */ 't', ` describing the type
                      that would appear in the `],
 					[/* inline code block */ 'i', `NameAndType`],
@@ -317,7 +317,7 @@ DocsCollector.collect('java.lang.constant.DynamicConstantDesc', [
 				]],
 				[/* parameter */ 'bootstrapArgs', [/* parameter description */
 					[/* text */ 't', ``],
-					[/* reference */ 'r', `java.lang.constant.ConstantDesc`],
+					[/* reference */ 'r', `java.lang.constant.ConstantDesc`, `ConstantDesc`],
 					[/* text */ 't', `s describing the static arguments
                       to the bootstrap, that would appear in the
                       `],
@@ -344,14 +344,14 @@ DocsCollector.collect('java.lang.constant.DynamicConstantDesc', [
 			[/* method description */
 				[/* text */ 't', `Returns a nominal descriptor for a dynamic constant whose bootstrap has
  no static arguments, whose name parameter is `],
-				[/* reference */ 'r', `.ConstantDescs#DEFAULT_NAME`],
+				[/* reference */ 'r', `java.lang.constant.ConstantDescs#DEFAULT_NAME`, `ConstantDescs.DEFAULT_NAME`],
 				[/* text */ 't', `,
  and whose type parameter is always the same as the bootstrap method return type.`]
 			],
 			[/* parameters */
 				[/* parameter */ 'bootstrapMethod', [/* parameter description */
 					[/* text */ 't', `a `],
-					[/* reference */ 'r', `java.lang.constant.DirectMethodHandleDesc`],
+					[/* reference */ 'r', `java.lang.constant.DirectMethodHandleDesc`, `DirectMethodHandleDesc`],
 					[/* text */ 't', ` describing the
                         bootstrap method for the constant`]
 				]]
@@ -369,20 +369,20 @@ DocsCollector.collect('java.lang.constant.DynamicConstantDesc', [
 			[/* method description */
 				[/* text */ 't', `Returns a nominal descriptor for a dynamic constant whose name parameter
  is `],
-				[/* reference */ 'r', `.ConstantDescs#DEFAULT_NAME`],
+				[/* reference */ 'r', `java.lang.constant.ConstantDescs#DEFAULT_NAME`, `ConstantDescs.DEFAULT_NAME`],
 				[/* text */ 't', `, and whose type parameter is always
  the same as the bootstrap method return type.`]
 			],
 			[/* parameters */
 				[/* parameter */ 'bootstrapMethod', [/* parameter description */
 					[/* text */ 't', `a `],
-					[/* reference */ 'r', `java.lang.constant.DirectMethodHandleDesc`],
+					[/* reference */ 'r', `java.lang.constant.DirectMethodHandleDesc`, `DirectMethodHandleDesc`],
 					[/* text */ 't', ` describing the
                         bootstrap method for the constant`]
 				]],
 				[/* parameter */ 'bootstrapArgs', [/* parameter description */
 					[/* text */ 't', ``],
-					[/* reference */ 'r', `java.lang.constant.ConstantDesc`],
+					[/* reference */ 'r', `java.lang.constant.ConstantDesc`, `ConstantDesc`],
 					[/* text */ 't', `s describing the static arguments
                       to the bootstrap, that would appear in the
                       `],
@@ -406,7 +406,7 @@ DocsCollector.collect('java.lang.constant.DynamicConstantDesc', [
 			[/* parameters */
 				[/* parameter */ 'bootstrapMethod', [/* parameter description */
 					[/* text */ 't', `a `],
-					[/* reference */ 'r', `java.lang.constant.DirectMethodHandleDesc`],
+					[/* reference */ 'r', `java.lang.constant.DirectMethodHandleDesc`, `DirectMethodHandleDesc`],
 					[/* text */ 't', ` describing the
                         bootstrap method for the constant`]
 				]],
@@ -420,7 +420,7 @@ DocsCollector.collect('java.lang.constant.DynamicConstantDesc', [
 				]],
 				[/* parameter */ 'constantType', [/* parameter description */
 					[/* text */ 't', `a `],
-					[/* reference */ 'r', `java.lang.constant.ClassDesc`],
+					[/* reference */ 'r', `java.lang.constant.ClassDesc`, `ClassDesc`],
 					[/* text */ 't', ` describing the type
                      that would appear in the `],
 					[/* inline code block */ 'i', `NameAndType`],
@@ -431,7 +431,7 @@ DocsCollector.collect('java.lang.constant.DynamicConstantDesc', [
 				]],
 				[/* parameter */ 'bootstrapArgs', [/* parameter description */
 					[/* text */ 't', ``],
-					[/* reference */ 'r', `java.lang.constant.ConstantDesc`],
+					[/* reference */ 'r', `java.lang.constant.ConstantDesc`, `ConstantDesc`],
 					[/* text */ 't', `s describing the static arguments
                       to the bootstrap, that would appear in the
                       `],
@@ -460,7 +460,7 @@ DocsCollector.collect('java.lang.constant.DynamicConstantDesc', [
 					[/* text */ 't', `Resolves this descriptor reflectively, emulating the resolution behavior
  of JVMS 5.4.3 and the access control behavior of JVMS 5.4.4.  The resolution
  and access control context is provided by the `],
-					[/* reference */ 'r', `java.lang.invoke.MethodHandles.Lookup`],
+					[/* reference */ 'r', `java.lang.invoke.MethodHandles.Lookup`, `MethodHandles.Lookup`],
 					[/* text */ 't', `
  parameter.  No caching of the resulting value is performed.`]
 				]]
@@ -468,7 +468,7 @@ DocsCollector.collect('java.lang.constant.DynamicConstantDesc', [
 			[/* parameters */
 				[/* parameter */ 'lookup', [/* parameter description */
 					[/* text */ 't', `The `],
-					[/* reference */ 'r', `java.lang.invoke.MethodHandles.Lookup`],
+					[/* reference */ 'r', `java.lang.invoke.MethodHandles.Lookup`, `MethodHandles.Lookup`],
 					[/* text */ 't', ` to provide name resolution
                and access control context`]
 				]]

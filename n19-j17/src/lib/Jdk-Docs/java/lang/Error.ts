@@ -71,7 +71,7 @@ DocsCollector.collect('java.lang.Error', [
 				[/* text */ 't', ` as its detail message.
  The cause is not initialized, and may subsequently be initialized by a
  call to `],
-				[/* reference */ 'r', `.Throwable#initCause(java.lang.Throwable)`],
+				[/* reference */ 'r', `java.lang.Throwable#initCause(java.lang.Throwable)`, `Throwable.initCause(java.lang.Throwable)`],
 				[/* text */ 't', `.`]
 			],
 			/* parameters */ UDF,
@@ -82,14 +82,14 @@ DocsCollector.collect('java.lang.Error', [
 				[/* text */ 't', `Constructs a new error with the specified detail message.  The
  cause is not initialized, and may subsequently be initialized by
  a call to `],
-				[/* reference */ 'r', `.Throwable#initCause(java.lang.Throwable)`],
+				[/* reference */ 'r', `java.lang.Throwable#initCause(java.lang.Throwable)`, `Throwable.initCause(java.lang.Throwable)`],
 				[/* text */ 't', `.`]
 			],
 			[/* parameters */
 				[/* parameter */ 'message', [/* parameter description */
 					[/* text */ 't', `the detail message. The detail message is saved for
           later retrieval by the `],
-					[/* reference */ 'r', `.Throwable#getMessage()`],
+					[/* reference */ 'r', `java.lang.Throwable#getMessage()`, `Throwable.getMessage()`],
 					[/* text */ 't', ` method.`]
 				]]
 			],
@@ -113,13 +113,13 @@ DocsCollector.collect('java.lang.Error', [
 				[/* parameter */ 'message', [/* parameter description */
 					[/* text */ 't', `the detail message (which is saved for later retrieval
          by the `],
-					[/* reference */ 'r', `.Throwable#getMessage()`],
+					[/* reference */ 'r', `java.lang.Throwable#getMessage()`, `Throwable.getMessage()`],
 					[/* text */ 't', ` method).`]
 				]],
 				[/* parameter */ 'cause', [/* parameter description */
 					[/* text */ 't', `the cause (which is saved for later retrieval by the
          `],
-					[/* reference */ 'r', `.Throwable#getCause()`],
+					[/* reference */ 'r', `java.lang.Throwable#getCause()`, `Throwable.getCause()`],
 					[/* text */ 't', ` method).  (A `],
 					[/* inline code block */ 'i', `null`],
 					[/* text */ 't', ` value is
@@ -145,7 +145,7 @@ DocsCollector.collect('java.lang.Error', [
 				[/* parameter */ 'cause', [/* parameter description */
 					[/* text */ 't', `the cause (which is saved for later retrieval by the
          `],
-					[/* reference */ 'r', `.Throwable#getCause()`],
+					[/* reference */ 'r', `java.lang.Throwable#getCause()`, `Throwable.getCause()`],
 					[/* text */ 't', ` method).  (A `],
 					[/* inline code block */ 'i', `null`],
 					[/* text */ 't', ` value is

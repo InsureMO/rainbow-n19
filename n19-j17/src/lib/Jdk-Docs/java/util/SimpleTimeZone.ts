@@ -40,18 +40,18 @@ DocsCollector.collect('java.util.SimpleTimeZone', [
 			[/* text */ 't', `month`],
 			[/* text */ 't', `
  value is represented by a Calendar `],
-			[/* reference */ 'r', `.Calendar#MONTH`],
+			[/* reference */ 'r', `java.util.Calendar#MONTH`, `MONTH`],
 			[/* text */ 't', ` field
  value, such as `],
-			[/* reference */ 'r', `.Calendar#MARCH`],
+			[/* reference */ 'r', `java.util.Calendar#MARCH`, `Calendar.MARCH`],
 			[/* text */ 't', `. The `],
 			[/* text */ 't', `day-of-week`],
 			[/* text */ 't', ` value is
  represented by a Calendar `],
-			[/* reference */ 'r', `.Calendar#DAY_OF_WEEK`],
+			[/* reference */ 'r', `java.util.Calendar#DAY_OF_WEEK`, `DAY_OF_WEEK`],
 			[/* text */ 't', ` value,
  such as `],
-			[/* reference */ 'r', `.Calendar#SUNDAY`],
+			[/* reference */ 'r', `java.util.Calendar#SUNDAY`, `SUNDAY`],
 			[/* text */ 't', `. The meanings of value combinations
  are as follows.
 
@@ -73,7 +73,7 @@ DocsCollector.collect('java.util.SimpleTimeZone', [
  example, to specify March 1, set the `],
 				[/* text */ 't', `month`],
 				[/* text */ 't', ` to `],
-				[/* reference */ 'r', `.Calendar#MARCH`],
+				[/* reference */ 'r', `java.util.Calendar#MARCH`, `MARCH`],
 				[/* text */ 't', `, `],
 				[/* text */ 't', `day-of-month`],
 				[/* text */ 't', ` to 1, and `],
@@ -93,12 +93,12 @@ DocsCollector.collect('java.util.SimpleTimeZone', [
  or after which the rule is applied, and `],
 				[/* text */ 't', `day-of-week`],
 				[/* text */ 't', ` to a negative `],
-				[/* reference */ 'r', `.Calendar#DAY_OF_WEEK`],
+				[/* reference */ 'r', `java.util.Calendar#DAY_OF_WEEK`, `DAY_OF_WEEK`],
 				[/* text */ 't', ` field value. For example, to specify the
  second Sunday of April, set `],
 				[/* text */ 't', `month`],
 				[/* text */ 't', ` to `],
-				[/* reference */ 'r', `.Calendar#APRIL`],
+				[/* reference */ 'r', `java.util.Calendar#APRIL`, `APRIL`],
 				[/* text */ 't', `,
  `],
 				[/* text */ 't', `day-of-month`],
@@ -106,7 +106,7 @@ DocsCollector.collect('java.util.SimpleTimeZone', [
 				[/* text */ 't', `day-of-week`],
 				[/* text */ 't', ` to `],
 				[/* inline code block */ 'i', `-`],
-				[/* reference */ 'r', `.Calendar#SUNDAY`],
+				[/* reference */ 'r', `java.util.Calendar#SUNDAY`, `SUNDAY`],
 				[/* text */ 't', `.`]
 			]],
 			[/* block */ 'b', [
@@ -123,7 +123,7 @@ DocsCollector.collect('java.util.SimpleTimeZone', [
  `],
 				[/* text */ 't', `month`],
 				[/* text */ 't', ` to `],
-				[/* reference */ 'r', `.Calendar#MARCH`],
+				[/* reference */ 'r', `java.util.Calendar#MARCH`, `MARCH`],
 				[/* text */ 't', `, `],
 				[/* text */ 't', `day-of-month`],
 				[/* text */ 't', ` is -21
@@ -131,7 +131,7 @@ DocsCollector.collect('java.util.SimpleTimeZone', [
 				[/* text */ 't', `day-of-week`],
 				[/* text */ 't', ` is `],
 				[/* inline code block */ 'i', `-`],
-				[/* reference */ 'r', `.Calendar#WEDNESDAY`],
+				[/* reference */ 'r', `java.util.Calendar#WEDNESDAY`, `WEDNESDAY`],
 				[/* text */ 't', `. `]
 			]],
 			[/* block */ 'b', [
@@ -142,7 +142,7 @@ DocsCollector.collect('java.util.SimpleTimeZone', [
 				[/* text */ 't', `day-of-week`],
 				[/* text */ 't', ` to a
  `],
-				[/* reference */ 'r', `.Calendar#DAY_OF_WEEK`],
+				[/* reference */ 'r', `java.util.Calendar#DAY_OF_WEEK`, `DAY_OF_WEEK`],
 				[/* text */ 't', ` value and `],
 				[/* text */ 't', `day-of-month`],
 				[/* text */ 't', ` to
@@ -150,11 +150,11 @@ DocsCollector.collect('java.util.SimpleTimeZone', [
 				[/* text */ 't', `month`],
 				[/* text */ 't', `
  to `],
-				[/* reference */ 'r', `.Calendar#OCTOBER`],
+				[/* reference */ 'r', `java.util.Calendar#OCTOBER`, `OCTOBER`],
 				[/* text */ 't', `, `],
 				[/* text */ 't', `day-of-week`],
 				[/* text */ 't', ` to `],
-				[/* reference */ 'r', `.Calendar#SUNDAY`],
+				[/* reference */ 'r', `java.util.Calendar#SUNDAY`, `SUNDAY`],
 				[/* text */ 't', ` and `],
 				[/* text */ 't', `day-of-month`],
 				[/* text */ 't', ` to -1.  `]
@@ -297,7 +297,7 @@ DocsCollector.collect('java.util.SimpleTimeZone', [
 				[/* parameter */ 'startMonth', [/* parameter description */
 					[/* text */ 't', `The daylight saving time starting month. Month is
                         a `],
-					[/* reference */ 'r', `.Calendar#MONTH`],
+					[/* reference */ 'r', `java.util.Calendar#MONTH`, `MONTH`],
 					[/* text */ 't', ` field value (0-based. e.g., 0
                         for January).`]
 				]],
@@ -317,7 +317,7 @@ DocsCollector.collect('java.util.SimpleTimeZone', [
 				[/* parameter */ 'endMonth', [/* parameter description */
 					[/* text */ 't', `The daylight saving time ending month. Month is
                         a `],
-					[/* reference */ 'r', `.Calendar#MONTH`],
+					[/* reference */ 'r', `java.util.Calendar#MONTH`, `MONTH`],
 					[/* text */ 't', ` field
                         value (0-based. e.g., 9 for October).`]
 				]],
@@ -380,7 +380,7 @@ DocsCollector.collect('java.util.SimpleTimeZone', [
 				[/* parameter */ 'startMonth', [/* parameter description */
 					[/* text */ 't', `The daylight saving time starting month. Month is
                         a `],
-					[/* reference */ 'r', `.Calendar#MONTH`],
+					[/* reference */ 'r', `java.util.Calendar#MONTH`, `MONTH`],
 					[/* text */ 't', ` field
                         value (0-based. e.g., 0 for January).`]
 				]],
@@ -399,7 +399,7 @@ DocsCollector.collect('java.util.SimpleTimeZone', [
 				[/* parameter */ 'endMonth', [/* parameter description */
 					[/* text */ 't', `The daylight saving time ending month. Month is
                         a `],
-					[/* reference */ 'r', `.Calendar#MONTH`],
+					[/* reference */ 'r', `java.util.Calendar#MONTH`, `MONTH`],
 					[/* text */ 't', ` field
                         value (0-based. e.g., 9 for October).`]
 				]],
@@ -456,7 +456,7 @@ DocsCollector.collect('java.util.SimpleTimeZone', [
 				[/* parameter */ 'startMonth', [/* parameter description */
 					[/* text */ 't', `The daylight saving time starting month. Month is
                         a `],
-					[/* reference */ 'r', `.Calendar#MONTH`],
+					[/* reference */ 'r', `java.util.Calendar#MONTH`, `MONTH`],
 					[/* text */ 't', ` field
                         value (0-based. e.g., 0 for January).`]
 				]],
@@ -480,7 +480,7 @@ DocsCollector.collect('java.util.SimpleTimeZone', [
 				[/* parameter */ 'endMonth', [/* parameter description */
 					[/* text */ 't', `The daylight saving time ending month. Month is
                         a `],
-					[/* reference */ 'r', `.Calendar#MONTH`],
+					[/* reference */ 'r', `java.util.Calendar#MONTH`, `MONTH`],
 					[/* text */ 't', ` field
                         value (0-based. e.g., 9 for October).`]
 				]],
@@ -627,7 +627,7 @@ DocsCollector.collect('java.util.SimpleTimeZone', [
  daylight saving, for the specified date and time.  This method
  assumes that the start and end month are distinct.  It also
  uses a default `],
-				[/* reference */ 'r', `java.util.GregorianCalendar`],
+				[/* reference */ 'r', `java.util.GregorianCalendar`, `GregorianCalendar`],
 				[/* text */ 't', ` object as its
  underlying calendar, such as for determining leap years.  Do
  not use the result of this method with a calendar other than a
@@ -776,7 +776,7 @@ DocsCollector.collect('java.util.SimpleTimeZone', [
 				[/* parameter */ 'endMonth', [/* parameter description */
 					[/* text */ 't', `The daylight saving time ending month. Month is
                         a `],
-					[/* reference */ 'r', `.Calendar#MONTH`],
+					[/* reference */ 'r', `java.util.Calendar#MONTH`, `MONTH`],
 					[/* text */ 't', ` field
                         value (0-based. e.g., 9 for October).`]
 				]],
@@ -815,7 +815,7 @@ DocsCollector.collect('java.util.SimpleTimeZone', [
 				[/* parameter */ 'endMonth', [/* parameter description */
 					[/* text */ 't', `The daylight saving time ending month. Month is
                         a `],
-					[/* reference */ 'r', `.Calendar#MONTH`],
+					[/* reference */ 'r', `java.util.Calendar#MONTH`, `MONTH`],
 					[/* text */ 't', ` field
                         value (0-based. e.g., 9 for October).`]
 				]],
@@ -858,7 +858,7 @@ DocsCollector.collect('java.util.SimpleTimeZone', [
 				[/* parameter */ 'endMonth', [/* parameter description */
 					[/* text */ 't', `The daylight saving time ending month. Month is
                         a `],
-					[/* reference */ 'r', `.Calendar#MONTH`],
+					[/* reference */ 'r', `java.util.Calendar#MONTH`, `MONTH`],
 					[/* text */ 't', ` field
                         value (0-based. e.g., 9 for October).`]
 				]],
@@ -931,7 +931,7 @@ DocsCollector.collect('java.util.SimpleTimeZone', [
 				[/* parameter */ 'startMonth', [/* parameter description */
 					[/* text */ 't', `The daylight saving time starting month. Month is
                         a `],
-					[/* reference */ 'r', `.Calendar#MONTH`],
+					[/* reference */ 'r', `java.util.Calendar#MONTH`, `MONTH`],
 					[/* text */ 't', ` field
                         value (0-based. e.g., 0 for January).`]
 				]],
@@ -972,7 +972,7 @@ DocsCollector.collect('java.util.SimpleTimeZone', [
 				[/* parameter */ 'startMonth', [/* parameter description */
 					[/* text */ 't', `The daylight saving time starting month. Month is
                         a `],
-					[/* reference */ 'r', `.Calendar#MONTH`],
+					[/* reference */ 'r', `java.util.Calendar#MONTH`, `MONTH`],
 					[/* text */ 't', ` field
                         value (0-based. e.g., 0 for January).`]
 				]],
@@ -1014,7 +1014,7 @@ DocsCollector.collect('java.util.SimpleTimeZone', [
 				[/* parameter */ 'startMonth', [/* parameter description */
 					[/* text */ 't', `The daylight saving time starting month. Month is
                         a `],
-					[/* reference */ 'r', `.Calendar#MONTH`],
+					[/* reference */ 'r', `java.util.Calendar#MONTH`, `MONTH`],
 					[/* text */ 't', ` field
                         value (0-based. e.g., 0 for January).`]
 				]],

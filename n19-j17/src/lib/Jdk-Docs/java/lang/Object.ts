@@ -603,7 +603,7 @@ DocsCollector.collect('java.lang.Object', [
 					]],
 					[/* block */ 'b', [
 						[/* text */ 't', `Some other thread `],
-						[/* reference */ 'r', `.Thread#interrupt()`],
+						[/* reference */ 'r', `java.lang.Thread#interrupt()`, `interrupts`],
 						[/* text */ 't', `
  thread `],
 						[/* inline code block */ 'i', `T`],
@@ -678,7 +678,7 @@ DocsCollector.collect('java.lang.Object', [
 				[/* block */ 'b', [
 					[/* text */ 't', `
  If the current thread is `],
-					[/* reference */ 'r', `.Thread#interrupt()`],
+					[/* reference */ 'r', `java.lang.Thread#interrupt()`, `interrupted`],
 					[/* text */ 't', `
  by any thread before or while it is waiting, then an `],
 					[/* inline code block */ 'i', `InterruptedException`],
@@ -736,7 +736,7 @@ DocsCollector.collect('java.lang.Object', [
 				[/* text */ 't', `Returns a hash code value for the object. This method is
  supported for the benefit of hash tables such as those provided by
  `],
-				[/* reference */ 'r', `java.util.HashMap`],
+				[/* reference */ 'r', `java.util.HashMap`, `HashMap`],
 				[/* text */ 't', `.
  `],
 				[/* block */ 'b', [

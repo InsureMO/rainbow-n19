@@ -125,7 +125,7 @@ DocsCollector.collect('java.io.StringReader', [
  `],
 					[/* inline code block */ 'i', `skip`],
 					[/* text */ 't', ` method of the `],
-					[/* reference */ 'r', `java.io.Reader`],
+					[/* reference */ 'r', `java.io.Reader`, `Reader`],
 					[/* text */ 't', ` superclass throws
  an exception in this case. Negative values of `],
 					[/* inline code block */ 'i', `n`],

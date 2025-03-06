@@ -12,12 +12,12 @@ DocsCollector.collect('java.time.temporal.Temporal', [
  are complete enough to be manipulated using plus and minus.
  It is implemented by those classes that can provide and manipulate information
  as `],
-			[/* reference */ 'r', `java.time.temporal.TemporalField`],
+			[/* reference */ 'r', `java.time.temporal.TemporalField`, `fields`],
 			[/* text */ 't', ` or `],
-			[/* reference */ 'r', `java.time.temporal.TemporalQuery`],
+			[/* reference */ 'r', `java.time.temporal.TemporalQuery`, `queries`],
 			[/* text */ 't', `.
  See `],
-			[/* reference */ 'r', `java.time.temporal.TemporalAccessor`],
+			[/* reference */ 'r', `java.time.temporal.TemporalAccessor`, `TemporalAccessor`],
 			[/* text */ 't', ` for the read-only version of this interface.
  `]
 		]],
@@ -32,7 +32,7 @@ DocsCollector.collect('java.time.temporal.Temporal', [
 			[/* text */ 't', ` to handle large values. Year, month and day-of-month are
  simple examples of fields, but they also include instant and offsets.
  See `],
-			[/* reference */ 'r', `enum class in java.time.temporal.ChronoField`],
+			[/* reference */ 'r', `enum class in java.time.temporal.ChronoField`, `ChronoField`],
 			[/* text */ 't', ` for the standard set of fields.
  `]
 		]],
@@ -40,16 +40,16 @@ DocsCollector.collect('java.time.temporal.Temporal', [
 			[/* text */ 't', `
  Two pieces of date/time information cannot be represented by numbers,
  the `],
-			[/* reference */ 'r', `java.time.chrono.Chronology`],
+			[/* reference */ 'r', `java.time.chrono.Chronology`, `chronology`],
 			[/* text */ 't', ` and the
  `],
-			[/* reference */ 'r', `java.time.ZoneId`],
+			[/* reference */ 'r', `java.time.ZoneId`, `time-zone`],
 			[/* text */ 't', `.
  These can be accessed via `],
-			[/* reference */ 'r', `.TemporalAccessor#query(java.time.temporal.TemporalQuery)`],
+			[/* reference */ 'r', `java.time.temporal.TemporalAccessor#query(java.time.temporal.TemporalQuery)`, `queries`],
 			[/* text */ 't', ` using
  the static methods defined on `],
-			[/* reference */ 'r', `java.time.temporal.TemporalQuery`],
+			[/* reference */ 'r', `java.time.temporal.TemporalQuery`, `TemporalQuery`],
 			[/* text */ 't', `.
  `]
 		]],
@@ -63,7 +63,7 @@ DocsCollector.collect('java.time.temporal.Temporal', [
  There are many reasons for this, part of which is that implementations
  of this interface may be in calendar systems other than ISO.
  See `],
-			[/* reference */ 'r', `java.time.chrono.ChronoLocalDate`],
+			[/* reference */ 'r', `java.time.chrono.ChronoLocalDate`, `ChronoLocalDate`],
 			[/* text */ 't', ` for a fuller discussion of the issues.
 
  `]
@@ -261,7 +261,7 @@ DocsCollector.collect('java.time.temporal.Temporal', [
  There are two equivalent ways of using this method.
  The first is to invoke this method directly.
  The second is to use `],
-					[/* reference */ 'r', `.TemporalUnit#between(java.time.temporal.Temporal,java.time.temporal.Temporal)`],
+					[/* reference */ 'r', `java.time.temporal.TemporalUnit#between(java.time.temporal.Temporal,java.time.temporal.Temporal)`, `TemporalUnit.between(Temporal, Temporal)`],
 					[/* text */ 't', `:
  `]
 				]],
@@ -318,12 +318,12 @@ DocsCollector.collect('java.time.temporal.Temporal', [
 					[/* text */ 't', `
  This adjusts this temporal, subtracting according to the rules of the specified amount.
  The amount is typically a `],
-					[/* reference */ 'r', `java.time.Period`],
+					[/* reference */ 'r', `java.time.Period`, `Period`],
 					[/* text */ 't', ` but may be any other type implementing
  the `],
-					[/* reference */ 'r', `java.time.temporal.TemporalAmount`],
+					[/* reference */ 'r', `java.time.temporal.TemporalAmount`, `TemporalAmount`],
 					[/* text */ 't', ` interface, such as `],
-					[/* reference */ 'r', `java.time.Duration`],
+					[/* reference */ 'r', `java.time.Duration`, `Duration`],
 					[/* text */ 't', `.
  `]
 				]],
@@ -412,12 +412,12 @@ DocsCollector.collect('java.time.temporal.Temporal', [
 					[/* text */ 't', `
  This adjusts this temporal, adding according to the rules of the specified amount.
  The amount is typically a `],
-					[/* reference */ 'r', `java.time.Period`],
+					[/* reference */ 'r', `java.time.Period`, `Period`],
 					[/* text */ 't', ` but may be any other type implementing
  the `],
-					[/* reference */ 'r', `java.time.temporal.TemporalAmount`],
+					[/* reference */ 'r', `java.time.temporal.TemporalAmount`, `TemporalAmount`],
 					[/* text */ 't', ` interface, such as `],
-					[/* reference */ 'r', `java.time.Duration`],
+					[/* reference */ 'r', `java.time.Duration`, `Duration`],
 					[/* text */ 't', `.
  `]
 				]],
@@ -467,7 +467,7 @@ DocsCollector.collect('java.time.temporal.Temporal', [
  A more complex adjuster might set the date to the last day of the month.
  A selection of common adjustments is provided in
  `],
-					[/* reference */ 'r', `java.time.temporal.TemporalAdjusters`],
+					[/* reference */ 'r', `java.time.temporal.TemporalAdjusters`, `TemporalAdjusters`],
 					[/* text */ 't', `.
  These include finding the "last day of the month" and "next Wednesday".
  The adjuster is responsible for handling special cases, such as the varying

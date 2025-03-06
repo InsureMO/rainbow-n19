@@ -5,13 +5,13 @@ DocsCollector.collect('java.util.function.BiPredicate', [
 	[/* class description */
 		[/* text */ 't', `Represents a predicate (boolean-valued function) of two arguments.  This is
  the two-arity specialization of `],
-		[/* reference */ 'r', `java.util.function.Predicate`],
+		[/* reference */ 'r', `java.util.function.Predicate`, `Predicate`],
 		[/* text */ 't', `.
 
  `],
 		[/* block */ 'b', [
 			[/* text */ 't', `This is a `],
-			[/* reference */ 'r', `.package-summary`],
+			[/* text */ 't', `functional interface`],
 			[/* text */ 't', `
  whose functional method is `],
 			[/* reference */ 'r', `#test(T,U)`, `test(Object, Object)`],

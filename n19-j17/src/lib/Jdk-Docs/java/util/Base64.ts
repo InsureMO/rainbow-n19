@@ -17,7 +17,7 @@ DocsCollector.collect('java.util.Base64', [
  `],
 		[/* list */ 'l', [
 			[/* block */ 'b', [
-				[/* text */ 't', `Basic`],
+				[/* anchor */ 'r', '#-id', `basic`, `Basic`],
 				[/* block */ 'b', ` Uses "The Base64 Alphabet" as specified in Table 1 of
      RFC 4648 and RFC 2045 for encoding and decoding operation.
      The encoder does not add any line feed (line separator)
@@ -25,7 +25,7 @@ DocsCollector.collect('java.util.Base64', [
      outside the base64 alphabet.`]
 			]],
 			[/* block */ 'b', [
-				[/* text */ 't', `URL and Filename safe`],
+				[/* anchor */ 'r', '#-id', `url`, `URL and Filename safe`],
 				[/* block */ 'b', ` Uses the "URL and Filename safe Base64 Alphabet" as specified
      in Table 2 of RFC 4648 for encoding and decoding. The
      encoder does not add any line feed (line separator) character.
@@ -33,7 +33,7 @@ DocsCollector.collect('java.util.Base64', [
      base64 alphabet.`]
 			]],
 			[/* block */ 'b', [
-				[/* text */ 't', `MIME`],
+				[/* anchor */ 'r', '#-id', `mime`, `MIME`],
 				[/* block */ 'b', [
 					[/* text */ 't', ` Uses "The Base64 Alphabet" as specified in Table 1 of
      RFC 2045 for encoding and decoding operation. The encoded output
@@ -55,7 +55,7 @@ DocsCollector.collect('java.util.Base64', [
 			[/* inline code block */ 'i', `null`],
 			[/* text */ 't', ` argument to a
  method of this class will cause a `],
-			[/* reference */ 'r', `java.lang.NullPointerException`],
+			[/* reference */ 'r', `java.lang.NullPointerException`, `NullPointerException`],
 			[/* text */ 't', ` to be thrown.`]
 		]]
 	],
@@ -65,7 +65,7 @@ DocsCollector.collect('java.util.Base64', [
 		[/* method */ 'getDecoder()', [
 			[/* method description */
 				[/* text */ 't', `Returns a `],
-				[/* reference */ 'r', `java.util.Base64.Decoder`],
+				[/* reference */ 'r', `java.util.Base64.Decoder`, `Base64.Decoder`],
 				[/* text */ 't', ` that decodes using the
  `],
 				[/* text */ 't', `Basic`],
@@ -80,7 +80,7 @@ DocsCollector.collect('java.util.Base64', [
 		[/* method */ 'getMimeDecoder()', [
 			[/* method description */
 				[/* text */ 't', `Returns a `],
-				[/* reference */ 'r', `java.util.Base64.Decoder`],
+				[/* reference */ 'r', `java.util.Base64.Decoder`, `Base64.Decoder`],
 				[/* text */ 't', ` that decodes using the
  `],
 				[/* text */ 't', `MIME`],
@@ -95,7 +95,7 @@ DocsCollector.collect('java.util.Base64', [
 		[/* method */ 'getUrlDecoder()', [
 			[/* method description */
 				[/* text */ 't', `Returns a `],
-				[/* reference */ 'r', `java.util.Base64.Decoder`],
+				[/* reference */ 'r', `java.util.Base64.Decoder`, `Base64.Decoder`],
 				[/* text */ 't', ` that decodes using the
  `],
 				[/* text */ 't', `URL and Filename safe`],
@@ -111,7 +111,7 @@ DocsCollector.collect('java.util.Base64', [
 		[/* method */ 'getEncoder()', [
 			[/* method description */
 				[/* text */ 't', `Returns a `],
-				[/* reference */ 'r', `java.util.Base64.Encoder`],
+				[/* reference */ 'r', `java.util.Base64.Encoder`, `Base64.Encoder`],
 				[/* text */ 't', ` that encodes using the
  `],
 				[/* text */ 't', `Basic`],
@@ -126,7 +126,7 @@ DocsCollector.collect('java.util.Base64', [
 		[/* method */ 'getMimeEncoder()', [
 			[/* method description */
 				[/* text */ 't', `Returns a `],
-				[/* reference */ 'r', `java.util.Base64.Encoder`],
+				[/* reference */ 'r', `java.util.Base64.Encoder`, `Base64.Encoder`],
 				[/* text */ 't', ` that encodes using the
  `],
 				[/* text */ 't', `MIME`],
@@ -141,7 +141,7 @@ DocsCollector.collect('java.util.Base64', [
 		[/* method */ 'getMimeEncoder(int,byte[])', [
 			[/* method description */
 				[/* text */ 't', `Returns a `],
-				[/* reference */ 'r', `java.util.Base64.Encoder`],
+				[/* reference */ 'r', `java.util.Base64.Encoder`, `Base64.Encoder`],
 				[/* text */ 't', ` that encodes using the
  `],
 				[/* text */ 't', `MIME`],
@@ -174,7 +174,7 @@ DocsCollector.collect('java.util.Base64', [
 		[/* method */ 'getUrlEncoder()', [
 			[/* method description */
 				[/* text */ 't', `Returns a `],
-				[/* reference */ 'r', `java.util.Base64.Encoder`],
+				[/* reference */ 'r', `java.util.Base64.Encoder`, `Base64.Encoder`],
 				[/* text */ 't', ` that encodes using the
  `],
 				[/* text */ 't', `URL and Filename safe`],

@@ -31,7 +31,7 @@ DocsCollector.collect('java.text.SimpleDateFormat', [
 			[/* text */ 't', ` methods as desired.
  For more information on using these methods, see
  `],
-			[/* reference */ 'r', `java.text.DateFormat`],
+			[/* reference */ 'r', `java.text.DateFormat`, `DateFormat`],
 			[/* text */ 't', `.
 
  `]
@@ -620,7 +620,7 @@ DocsCollector.collect('java.text.SimpleDateFormat', [
  `],
 		[/* list */ 'l', [
 			[/* block */ 'b', [
-				[/* text */ 't', `Text:`],
+				[/* anchor */ 'r', '#-id', `text`, `Text:`],
 				[/* text */ 't', `
      For formatting, if the number of pattern letters is 4 or more,
      the full form is used; otherwise a short or abbreviated form
@@ -631,7 +631,7 @@ DocsCollector.collect('java.text.SimpleDateFormat', [
 				[/* new line */ 'n']
 			]],
 			[/* block */ 'b', [
-				[/* text */ 't', `Number:`],
+				[/* anchor */ 'r', '#-id', `number`, `Number:`],
 				[/* text */ 't', `
      For formatting, the number of pattern letters is the minimum
      number of digits, and shorter numbers are zero-padded to this amount.
@@ -641,10 +641,10 @@ DocsCollector.collect('java.text.SimpleDateFormat', [
 				[/* new line */ 'n']
 			]],
 			[/* block */ 'b', [
-				[/* text */ 't', `Year:`],
+				[/* anchor */ 'r', '#-id', `year`, `Year:`],
 				[/* text */ 't', `
      If the formatter's `],
-				[/* reference */ 'r', `.DateFormat#getCalendar()`],
+				[/* reference */ 'r', `java.text.DateFormat#getCalendar()`, `Calendar`],
 				[/* text */ 't', ` is the Gregorian
      calendar, the following rules are applied.`],
 				[/* new line */ 'n'],
@@ -679,7 +679,7 @@ DocsCollector.collect('java.text.SimpleDateFormat', [
          would be interpreted as May 4, 1964.
          During parsing, only strings consisting of exactly two digits, as defined by
          `],
-						[/* reference */ 'r', `java.Character#isDigit(int)`],
+						[/* reference */ 'r', `java.lang.Character#isDigit(int)`, `Character.isDigit(char)`],
 						[/* text */ 't', `, will be parsed into the default century.
          Any other numeric string, such as a one digit string, a three or more digit
          string, or a two digit string that isn't all digits (for example, "-1"), is
@@ -692,10 +692,10 @@ DocsCollector.collect('java.text.SimpleDateFormat', [
      Otherwise, calendar system specific forms are applied.
      For both formatting and parsing, if the number of pattern
      letters is 4 or more, a calendar specific `],
-				[/* reference */ 'r', `java.Calendar#LONG`],
+				[/* reference */ 'r', `java.util.Calendar#LONG`, `long form`],
 				[/* text */ 't', ` is used. Otherwise, a calendar
      specific `],
-				[/* reference */ 'r', `java.Calendar#SHORT`],
+				[/* reference */ 'r', `java.util.Calendar#SHORT`, `short or abbreviated form`],
 				[/* text */ 't', `
      is used.`],
 				[/* new line */ 'n'],
@@ -704,22 +704,22 @@ DocsCollector.collect('java.text.SimpleDateFormat', [
      If week year `],
 				[/* inline code block */ 'i', `'Y'`],
 				[/* text */ 't', ` is specified and the `],
-				[/* reference */ 'r', `.DateFormat#getCalendar()`],
+				[/* reference */ 'r', `java.text.DateFormat#getCalendar()`, `calendar`],
 				[/* text */ 't', ` doesn't support any `],
-				[/* reference */ 'r', `java.GregorianCalendar#week_year`],
+				[/* reference */ 'r', `java.util.GregorianCalendar#week_year`, `week years`],
 				[/* text */ 't', `, the calendar year (`],
 				[/* inline code block */ 'i', `'y'`],
 				[/* text */ 't', `) is used instead. The
      support of week years can be tested with a call to `],
-				[/* reference */ 'r', `.DateFormat#getCalendar()`],
+				[/* reference */ 'r', `java.text.DateFormat#getCalendar()`, `getCalendar()`],
 				[/* text */ 't', `.`],
-				[/* reference */ 'r', `java.Calendar#isWeekDateSupported()`],
+				[/* reference */ 'r', `java.util.Calendar#isWeekDateSupported()`, `isWeekDateSupported()`],
 				[/* text */ 't', `.`],
 				[/* new line */ 'n'],
 				[/* new line */ 'n']
 			]],
 			[/* block */ 'b', [
-				[/* text */ 't', `Month:`],
+				[/* anchor */ 'r', '#-id', `month`, `Month:`],
 				[/* text */ 't', `
      If the number of pattern letters is 3 or more, the month is
      interpreted as `],
@@ -765,7 +765,7 @@ DocsCollector.collect('java.text.SimpleDateFormat', [
 				[/* new line */ 'n']
 			]],
 			[/* block */ 'b', [
-				[/* text */ 't', `General time zone:`],
+				[/* anchor */ 'r', '#-id', `timezone`, `General time zone:`],
 				[/* text */ 't', `
      Time zones are interpreted as `],
 				[/* text */ 't', `text`],
@@ -774,7 +774,7 @@ DocsCollector.collect('java.text.SimpleDateFormat', [
      following syntax is used:
      `],
 				[/* code block */ 'c', [
-					[/* text */ 't', `GMTOffsetTimeZone:`],
+					[/* anchor */ 'r', '#-id', `GMTOffsetTimeZone`, `GMTOffsetTimeZone:`],
 					[/* inline code block */ 'i', `GMT`],
 					[/* text */ 't', `Sign`],
 					[/* text */ 't', `Hours`],
@@ -813,7 +813,7 @@ DocsCollector.collect('java.text.SimpleDateFormat', [
 				]]
 			]],
 			[/* block */ 'b', [
-				[/* text */ 't', `RFC 822 time zone:`],
+				[/* anchor */ 'r', '#-id', `rfc822timezone`, `RFC 822 time zone:`],
 				[/* text */ 't', `
      For formatting, the RFC 822 4-digit time zone format is used:
 
@@ -842,7 +842,7 @@ DocsCollector.collect('java.text.SimpleDateFormat', [
 				]]
 			]],
 			[/* block */ 'b', [
-				[/* text */ 't', `ISO 8601 Time zone:`],
+				[/* anchor */ 'r', '#-id', `iso8601timezone`, `ISO 8601 Time zone:`],
 				[/* text */ 't', `
      The number of pattern letters designates the format for both formatting
      and parsing as follows:
@@ -907,7 +907,7 @@ DocsCollector.collect('java.text.SimpleDateFormat', [
 				]],
 				[/* block */ 'b', [
 					[/* text */ 't', `If the number of pattern letters is 4 or more, `],
-					[/* reference */ 'r', `java.lang.IllegalArgumentException`],
+					[/* reference */ 'r', `java.lang.IllegalArgumentException`, `IllegalArgumentException`],
 					[/* text */ 't', ` is thrown when constructing a `],
 					[/* inline code block */ 'i', `SimpleDateFormat`],
 					[/* text */ 't', ` or `],
@@ -1090,7 +1090,7 @@ DocsCollector.collect('java.text.SimpleDateFormat', [
 			]
 		]],
 		[/* block */ 'b', [
-			[/* text */ 't', `Synchronization`]
+			[/* anchor */ 'r', '#-id', `synchronization`, `Synchronization`]
 		]],
 		[/* block */ 'b', `
  Date formats are not synchronized.
@@ -1107,13 +1107,13 @@ DocsCollector.collect('java.text.SimpleDateFormat', [
 				[/* text */ 't', ` using the default pattern and
  date format symbols for the default
  `],
-				[/* reference */ 'r', `java.Locale.Category#FORMAT`],
+				[/* reference */ 'r', `java.util.Locale.Category#FORMAT`, `FORMAT`],
 				[/* text */ 't', ` locale.
  `],
 				[/* text */ 't', `Note:`],
 				[/* text */ 't', ` This constructor may not support all locales.
  For full coverage, use the factory methods in the `],
-				[/* reference */ 'r', `java.text.DateFormat`],
+				[/* reference */ 'r', `java.text.DateFormat`, `DateFormat`],
 				[/* text */ 't', `
  class.`]
 			],
@@ -1127,13 +1127,13 @@ DocsCollector.collect('java.text.SimpleDateFormat', [
 				[/* text */ 't', ` using the given pattern and
  the default date format symbols for the default
  `],
-				[/* reference */ 'r', `java.Locale.Category#FORMAT`],
+				[/* reference */ 'r', `java.util.Locale.Category#FORMAT`, `FORMAT`],
 				[/* text */ 't', ` locale.
  `],
 				[/* text */ 't', `Note:`],
 				[/* text */ 't', ` This constructor may not support all locales.
  For full coverage, use the factory methods in the `],
-				[/* reference */ 'r', `java.text.DateFormat`],
+				[/* reference */ 'r', `java.text.DateFormat`, `DateFormat`],
 				[/* text */ 't', `
  class.
  `],
@@ -1192,7 +1192,7 @@ DocsCollector.collect('java.text.SimpleDateFormat', [
 				[/* text */ 't', `Note:`],
 				[/* text */ 't', ` This constructor may not support all locales.
  For full coverage, use the factory methods in the `],
-				[/* reference */ 'r', `java.text.DateFormat`],
+				[/* reference */ 'r', `java.text.DateFormat`, `DateFormat`],
 				[/* text */ 't', `
  class.`]
 			],
@@ -1307,7 +1307,7 @@ DocsCollector.collect('java.text.SimpleDateFormat', [
 					[/* inline code block */ 'i', `fieldPosition`],
 					[/* text */ 't', `
  is `],
-					[/* reference */ 'r', `.DateFormat#YEAR_FIELD`],
+					[/* reference */ 'r', `java.text.DateFormat#YEAR_FIELD`, `DateFormat.YEAR_FIELD`],
 					[/* text */ 't', `, the begin index and end index of
  `],
 					[/* inline code block */ 'i', `fieldPosition`],
@@ -1326,7 +1326,7 @@ DocsCollector.collect('java.text.SimpleDateFormat', [
 					[/* inline code block */ 'i', `"h a z (zzzz)"`],
 					[/* text */ 't', ` and the alignment field
  `],
-					[/* reference */ 'r', `.DateFormat#TIMEZONE_FIELD`],
+					[/* reference */ 'r', `java.text.DateFormat#TIMEZONE_FIELD`, `DateFormat.TIMEZONE_FIELD`],
 					[/* text */ 't', `, the begin index and end index of
  `],
 					[/* inline code block */ 'i', `fieldPosition`],
@@ -1440,13 +1440,13 @@ DocsCollector.collect('java.text.SimpleDateFormat', [
 				]],
 				[/* block */ 'b', [
 					[/* text */ 't', `This parsing operation uses the `],
-					[/* reference */ 'r', `.DateFormat#calendar`],
+					[/* reference */ 'r', `java.text.DateFormat#calendar`, `calendar`],
 					[/* text */ 't', ` to produce a `],
 					[/* inline code block */ 'i', `Date`],
 					[/* text */ 't', `. All of the `],
 					[/* inline code block */ 'i', `calendar`],
 					[/* text */ 't', `'s date-time fields are `],
-					[/* reference */ 'r', `java.Calendar#clear()`],
+					[/* reference */ 'r', `java.util.Calendar#clear()`, `cleared`],
 					[/* text */ 't', ` before parsing, and the `],
 					[/* inline code block */ 'i', `calendar`],
 					[/* text */ 't', `'s default
@@ -1455,7 +1455,7 @@ DocsCollector.collect('java.text.SimpleDateFormat', [
  parsed `],
 					[/* inline code block */ 'i', `Date`],
 					[/* text */ 't', ` is 1970 with `],
-					[/* reference */ 'r', `java.util.GregorianCalendar`],
+					[/* reference */ 'r', `java.util.GregorianCalendar`, `GregorianCalendar`],
 					[/* text */ 't', ` if
  no year value is given from the parsing operation.  The `],
 					[/* inline code block */ 'i', `TimeZone`],
@@ -1466,7 +1466,7 @@ DocsCollector.collect('java.text.SimpleDateFormat', [
 					[/* inline code block */ 'i', `TimeZone`],
 					[/* text */ 't', ` value that has previously been set by a call to
  `],
-					[/* reference */ 'r', `.DateFormat#setTimeZone(java.util.TimeZone)`],
+					[/* reference */ 'r', `java.text.DateFormat#setTimeZone(java.util.TimeZone)`, `setTimeZone`],
 					[/* text */ 't', ` may need
  to be restored for further operations.`]
 				]]

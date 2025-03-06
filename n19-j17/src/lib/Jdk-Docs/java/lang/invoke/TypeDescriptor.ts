@@ -22,12 +22,12 @@ DocsCollector.collect('java.lang.invoke.TypeDescriptor', [
 				[/* text */ 't', `.
  The result descriptor string can be used to produce
  a `],
-				[/* reference */ 'r', `java.lang.constant.ConstantDesc`],
+				[/* reference */ 'r', `java.lang.constant.ConstantDesc`, `nominal descriptor`],
 				[/* text */ 't', `.
 
  Otherwise, the result string is not a type descriptor.
  No `],
-				[/* reference */ 'r', `java.lang.constant.ConstantDesc`],
+				[/* reference */ 'r', `java.lang.constant.ConstantDesc`, `nominal descriptor`],
 				[/* text */ 't', `
  can be produced from the result string.`]
 			],

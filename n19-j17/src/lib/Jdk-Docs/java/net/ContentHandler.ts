@@ -32,7 +32,7 @@ DocsCollector.collect('java.net.ContentHandler', [
 			[/* inline code block */ 'i', `ContentHandlerFactory`],
 			[/* text */ 't', ` set up by a call to
  `],
-			[/* reference */ 'r', `.URLConnection#setContentHandlerFactory(java.net.ContentHandlerFactory)`],
+			[/* reference */ 'r', `java.net.URLConnection#setContentHandlerFactory(java.net.ContentHandlerFactory)`, `setContentHandlerFactory`],
 			[/* text */ 't', ` is called with a `],
 			[/* inline code block */ 'i', `String`],
 			[/* text */ 't', ` giving the
@@ -48,7 +48,7 @@ DocsCollector.collect('java.net.ContentHandler', [
 		[/* block */ 'b', [
 			[/* text */ 't', `
  If no content handler could be `],
-			[/* reference */ 'r', `.URLConnection#getContent()`],
+			[/* reference */ 'r', `java.net.URLConnection#getContent()`, `found`],
 			[/* text */ 't', `,
  URLConnection will look for a content handler in a user-definable set of places.
  Users can define a vertical-bar delimited set of class prefixes

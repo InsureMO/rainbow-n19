@@ -31,7 +31,7 @@ DocsCollector.collect('java.util.ListResourceBundle', [
 		[/* block */ 'b', [
 			[/* text */ 't', `
  The following `],
-			[/* text */ 't', `example`],
+			[/* anchor */ 'r', '#-id', `sample`, `example`],
 			[/* text */ 't', ` shows two members of a resource
  bundle family with the base name "MyResources".
  "MyResources" is the default member of the bundle family, and
@@ -40,7 +40,7 @@ DocsCollector.collect('java.util.ListResourceBundle', [
 			[/* inline code block */ 'i', `ListResourceBundle`],
 			[/* text */ 't', `
  (a related `],
-			[/* reference */ 'r', `.PropertyResourceBundle#sample`],
+			[/* reference */ 'r', `java.util.PropertyResourceBundle#sample`, `example`],
 			[/* text */ 't', ` shows
  how you can add a bundle to this family that's based on a properties file).
  The keys in this example are of the form "s1" etc. The actual

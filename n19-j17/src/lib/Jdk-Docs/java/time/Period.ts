@@ -10,7 +10,7 @@ DocsCollector.collect('java.time.Period', [
 			[/* text */ 't', `
  This class models a quantity or amount of time in terms of years, months and days.
  See `],
-			[/* reference */ 'r', `java.time.Duration`],
+			[/* reference */ 'r', `java.time.Duration`, `Duration`],
 			[/* text */ 't', ` for the time-based equivalent to this class.
  `]
 		]],
@@ -18,7 +18,7 @@ DocsCollector.collect('java.time.Period', [
 			[/* text */ 't', `
  Durations and periods differ in their treatment of daylight savings time
  when added to `],
-			[/* reference */ 'r', `java.time.ZonedDateTime`],
+			[/* reference */ 'r', `java.time.ZonedDateTime`, `ZonedDateTime`],
 			[/* text */ 't', `. A `],
 			[/* inline code block */ 'i', `Duration`],
 			[/* text */ 't', ` will add an exact
@@ -49,12 +49,12 @@ DocsCollector.collect('java.time.Period', [
 		[/* block */ 'b', [
 			[/* text */ 't', `
  The supported units of a period are `],
-			[/* reference */ 'r', `.ChronoUnit#YEARS`],
+			[/* reference */ 'r', `java.time.temporal.ChronoUnit#YEARS`, `YEARS`],
 			[/* text */ 't', `,
  `],
-			[/* reference */ 'r', `.ChronoUnit#MONTHS`],
+			[/* reference */ 'r', `java.time.temporal.ChronoUnit#MONTHS`, `MONTHS`],
 			[/* text */ 't', ` and `],
-			[/* reference */ 'r', `.ChronoUnit#DAYS`],
+			[/* reference */ 'r', `java.time.temporal.ChronoUnit#DAYS`, `DAYS`],
 			[/* text */ 't', `.
  All three fields are always present, but may be set to zero.
  `]
@@ -673,7 +673,7 @@ DocsCollector.collect('java.time.Period', [
 					[/* text */ 't', `
  In most cases, it is clearer to reverse the calling pattern by using
  `],
-					[/* reference */ 'r', `.Temporal#plus(java.time.temporal.TemporalAmount)`],
+					[/* reference */ 'r', `java.time.temporal.Temporal#plus(java.time.temporal.TemporalAmount)`, `Temporal.plus(TemporalAmount)`],
 					[/* text */ 't', `.
  `]
 				]],
@@ -733,7 +733,7 @@ DocsCollector.collect('java.time.Period', [
 					[/* text */ 't', `
  In most cases, it is clearer to reverse the calling pattern by using
  `],
-					[/* reference */ 'r', `.Temporal#minus(java.time.temporal.TemporalAmount)`],
+					[/* reference */ 'r', `java.time.temporal.Temporal#minus(java.time.temporal.TemporalAmount)`, `Temporal.minus(TemporalAmount)`],
 					[/* text */ 't', `.
  `]
 				]],
@@ -787,12 +787,12 @@ DocsCollector.collect('java.time.Period', [
 				[/* block */ 'b', [
 					[/* text */ 't', `
  The supported units are `],
-					[/* reference */ 'r', `.ChronoUnit#YEARS`],
+					[/* reference */ 'r', `java.time.temporal.ChronoUnit#YEARS`, `YEARS`],
 					[/* text */ 't', `,
  `],
-					[/* reference */ 'r', `.ChronoUnit#MONTHS`],
+					[/* reference */ 'r', `java.time.temporal.ChronoUnit#MONTHS`, `MONTHS`],
 					[/* text */ 't', ` and `],
-					[/* reference */ 'r', `.ChronoUnit#DAYS`],
+					[/* reference */ 'r', `java.time.temporal.ChronoUnit#DAYS`, `DAYS`],
 					[/* text */ 't', `.
  They are returned in the order years, months, days.
  `]
@@ -819,12 +819,12 @@ DocsCollector.collect('java.time.Period', [
 					[/* text */ 't', `
  This returns a value for each of the three supported units,
  `],
-					[/* reference */ 'r', `.ChronoUnit#YEARS`],
+					[/* reference */ 'r', `java.time.temporal.ChronoUnit#YEARS`, `YEARS`],
 					[/* text */ 't', `, `],
-					[/* reference */ 'r', `.ChronoUnit#MONTHS`],
+					[/* reference */ 'r', `java.time.temporal.ChronoUnit#MONTHS`, `MONTHS`],
 					[/* text */ 't', ` and
  `],
-					[/* reference */ 'r', `.ChronoUnit#DAYS`],
+					[/* reference */ 'r', `java.time.temporal.ChronoUnit#DAYS`, `DAYS`],
 					[/* text */ 't', `.
  All other units throw an exception.`]
 				]]
@@ -924,12 +924,12 @@ DocsCollector.collect('java.time.Period', [
 					[/* text */ 't', `
  The conversion loops around the set of units from the amount and uses
  the `],
-					[/* reference */ 'r', `.ChronoUnit#YEARS`],
+					[/* reference */ 'r', `java.time.temporal.ChronoUnit#YEARS`, `YEARS`],
 					[/* text */ 't', `, `],
-					[/* reference */ 'r', `.ChronoUnit#MONTHS`],
+					[/* reference */ 'r', `java.time.temporal.ChronoUnit#MONTHS`, `MONTHS`],
 					[/* text */ 't', `
  and `],
-					[/* reference */ 'r', `.ChronoUnit#DAYS`],
+					[/* reference */ 'r', `java.time.temporal.ChronoUnit#DAYS`, `DAYS`],
 					[/* text */ 't', ` units to create a period.
  If any other units are found then an exception is thrown.
  `]

@@ -73,7 +73,7 @@ DocsCollector.collect('java.util.concurrent.CompletionStage', [
 				[/* text */ 't', `
  that employ the stage's default asynchronous execution facility),
  or custom (via a supplied `],
-				[/* reference */ 'r', `java.util.concurrent.Executor`],
+				[/* reference */ 'r', `java.util.concurrent.Executor`, `Executor`],
 				[/* text */ 't', `).  The execution
  properties of default and async modes are specified by
  CompletionStage implementations, not this interface. Methods with
@@ -101,7 +101,7 @@ DocsCollector.collect('java.util.concurrent.CompletionStage', [
  with an (unchecked) exception or error, then all dependent stages
  requiring its completion complete exceptionally as well, with a
  `],
-				[/* reference */ 'r', `java.util.concurrent.CompletionException`],
+				[/* reference */ 'r', `java.util.concurrent.CompletionException`, `CompletionException`],
 				[/* text */ 't', ` holding the exception as its cause.  If
  a stage is dependent on `],
 				[/* text */ 't', `both`],
@@ -134,7 +134,7 @@ DocsCollector.collect('java.util.concurrent.CompletionStage', [
 			[/* inline code block */ 'i', `T`],
 			[/* text */ 't', `) for methods accepting them may be null, passing a null
  value for any other parameter will result in a `],
-			[/* reference */ 'r', `java.lang.NullPointerException`],
+			[/* reference */ 'r', `java.lang.NullPointerException`, `NullPointerException`],
 			[/* text */ 't', ` being thrown.
 
  `]
@@ -189,7 +189,7 @@ DocsCollector.collect('java.util.concurrent.CompletionStage', [
  results as arguments to the supplied function.
 
  See the `],
-				[/* reference */ 'r', `java.util.concurrent.CompletionStage`],
+				[/* reference */ 'r', `java.util.concurrent.CompletionStage`, `CompletionStage`],
 				[/* text */ 't', ` documentation for rules
  covering exceptional completion.`]
 			],
@@ -215,7 +215,7 @@ DocsCollector.collect('java.util.concurrent.CompletionStage', [
  results as arguments to the supplied function.
 
  See the `],
-				[/* reference */ 'r', `java.util.concurrent.CompletionStage`],
+				[/* reference */ 'r', `java.util.concurrent.CompletionStage`, `CompletionStage`],
 				[/* text */ 't', ` documentation for rules
  covering exceptional completion.`]
 			],
@@ -241,7 +241,7 @@ DocsCollector.collect('java.util.concurrent.CompletionStage', [
  supplied function.
 
  See the `],
-				[/* reference */ 'r', `java.util.concurrent.CompletionStage`],
+				[/* reference */ 'r', `java.util.concurrent.CompletionStage`, `CompletionStage`],
 				[/* text */ 't', ` documentation for rules
  covering exceptional completion.`]
 			],
@@ -269,7 +269,7 @@ DocsCollector.collect('java.util.concurrent.CompletionStage', [
  results as arguments to the supplied action.
 
  See the `],
-				[/* reference */ 'r', `java.util.concurrent.CompletionStage`],
+				[/* reference */ 'r', `java.util.concurrent.CompletionStage`, `CompletionStage`],
 				[/* text */ 't', ` documentation for rules
  covering exceptional completion.`]
 			],
@@ -295,7 +295,7 @@ DocsCollector.collect('java.util.concurrent.CompletionStage', [
  results as arguments to the supplied action.
 
  See the `],
-				[/* reference */ 'r', `java.util.concurrent.CompletionStage`],
+				[/* reference */ 'r', `java.util.concurrent.CompletionStage`, `CompletionStage`],
 				[/* text */ 't', ` documentation for rules
  covering exceptional completion.`]
 			],
@@ -321,7 +321,7 @@ DocsCollector.collect('java.util.concurrent.CompletionStage', [
  supplied action.
 
  See the `],
-				[/* reference */ 'r', `java.util.concurrent.CompletionStage`],
+				[/* reference */ 'r', `java.util.concurrent.CompletionStage`, `CompletionStage`],
 				[/* text */ 't', ` documentation for rules
  covering exceptional completion.`]
 			],
@@ -349,7 +349,7 @@ DocsCollector.collect('java.util.concurrent.CompletionStage', [
  corresponding result as argument to the supplied function.
 
  See the `],
-				[/* reference */ 'r', `java.util.concurrent.CompletionStage`],
+				[/* reference */ 'r', `java.util.concurrent.CompletionStage`, `CompletionStage`],
 				[/* text */ 't', ` documentation for rules
  covering exceptional completion.`]
 			],
@@ -375,7 +375,7 @@ DocsCollector.collect('java.util.concurrent.CompletionStage', [
  corresponding result as argument to the supplied function.
 
  See the `],
-				[/* reference */ 'r', `java.util.concurrent.CompletionStage`],
+				[/* reference */ 'r', `java.util.concurrent.CompletionStage`, `CompletionStage`],
 				[/* text */ 't', ` documentation for rules
  covering exceptional completion.`]
 			],
@@ -401,7 +401,7 @@ DocsCollector.collect('java.util.concurrent.CompletionStage', [
  the supplied function.
 
  See the `],
-				[/* reference */ 'r', `java.util.concurrent.CompletionStage`],
+				[/* reference */ 'r', `java.util.concurrent.CompletionStage`, `CompletionStage`],
 				[/* text */ 't', ` documentation for rules
  covering exceptional completion.`]
 			],
@@ -524,17 +524,17 @@ DocsCollector.collect('java.util.concurrent.CompletionStage', [
 				[/* block */ 'b', [
 					[/* text */ 't', `This method is analogous to
  `],
-					[/* reference */ 'r', `java.Optional#map(java.util.function.Function)`],
+					[/* reference */ 'r', `java.util.Optional#map(java.util.function.Function)`, `Optional.map`],
 					[/* text */ 't', ` and
  `],
-					[/* reference */ 'r', `java.Stream#map(java.util.function.Function)`],
+					[/* reference */ 'r', `java.util.stream.Stream#map(java.util.function.Function)`, `Stream.map`],
 					[/* text */ 't', `.
 
  `]
 				]],
 				[/* block */ 'b', [
 					[/* text */ 't', `See the `],
-					[/* reference */ 'r', `java.util.concurrent.CompletionStage`],
+					[/* reference */ 'r', `java.util.concurrent.CompletionStage`, `CompletionStage`],
 					[/* text */ 't', ` documentation for rules
  covering exceptional completion.`]
 				]]
@@ -558,7 +558,7 @@ DocsCollector.collect('java.util.concurrent.CompletionStage', [
  the supplied function.
 
  See the `],
-				[/* reference */ 'r', `java.util.concurrent.CompletionStage`],
+				[/* reference */ 'r', `java.util.concurrent.CompletionStage`, `CompletionStage`],
 				[/* text */ 't', ` documentation for rules
  covering exceptional completion.`]
 			],
@@ -580,7 +580,7 @@ DocsCollector.collect('java.util.concurrent.CompletionStage', [
  stage's result as the argument to the supplied function.
 
  See the `],
-				[/* reference */ 'r', `java.util.concurrent.CompletionStage`],
+				[/* reference */ 'r', `java.util.concurrent.CompletionStage`, `CompletionStage`],
 				[/* text */ 't', ` documentation for rules
  covering exceptional completion.`]
 			],
@@ -618,17 +618,17 @@ DocsCollector.collect('java.util.concurrent.CompletionStage', [
 				[/* block */ 'b', [
 					[/* text */ 't', `This method is analogous to
  `],
-					[/* reference */ 'r', `java.Optional#flatMap(java.util.function.Function)`],
+					[/* reference */ 'r', `java.util.Optional#flatMap(java.util.function.Function)`, `Optional.flatMap`],
 					[/* text */ 't', ` and
  `],
-					[/* reference */ 'r', `java.Stream#flatMap(java.util.function.Function)`],
+					[/* reference */ 'r', `java.util.stream.Stream#flatMap(java.util.function.Function)`, `Stream.flatMap`],
 					[/* text */ 't', `.
 
  `]
 				]],
 				[/* block */ 'b', [
 					[/* text */ 't', `See the `],
-					[/* reference */ 'r', `java.util.concurrent.CompletionStage`],
+					[/* reference */ 'r', `java.util.concurrent.CompletionStage`, `CompletionStage`],
 					[/* text */ 't', ` documentation for rules
  covering exceptional completion.`]
 				]]
@@ -664,7 +664,7 @@ DocsCollector.collect('java.util.concurrent.CompletionStage', [
  `],
 				[/* block */ 'b', [
 					[/* text */ 't', `See the `],
-					[/* reference */ 'r', `java.util.concurrent.CompletionStage`],
+					[/* reference */ 'r', `java.util.concurrent.CompletionStage`, `CompletionStage`],
 					[/* text */ 't', ` documentation for rules
  covering exceptional completion.`]
 				]]
@@ -699,7 +699,7 @@ DocsCollector.collect('java.util.concurrent.CompletionStage', [
  `],
 				[/* block */ 'b', [
 					[/* text */ 't', `See the `],
-					[/* reference */ 'r', `java.util.concurrent.CompletionStage`],
+					[/* reference */ 'r', `java.util.concurrent.CompletionStage`, `CompletionStage`],
 					[/* text */ 't', ` documentation for rules
  covering exceptional completion.`]
 				]]
@@ -720,7 +720,7 @@ DocsCollector.collect('java.util.concurrent.CompletionStage', [
 		[/* method */ 'toCompletableFuture()', [
 			[/* method description */
 				[/* text */ 't', `Returns a `],
-				[/* reference */ 'r', `java.util.concurrent.CompletableFuture`],
+				[/* reference */ 'r', `java.util.concurrent.CompletableFuture`, `CompletableFuture`],
 				[/* text */ 't', ` maintaining the same
  completion properties as this stage. If this stage is already a
  CompletableFuture, this method may return this stage itself.
@@ -745,7 +745,7 @@ DocsCollector.collect('java.util.concurrent.CompletionStage', [
  corresponding result as argument to the supplied action.
 
  See the `],
-				[/* reference */ 'r', `java.util.concurrent.CompletionStage`],
+				[/* reference */ 'r', `java.util.concurrent.CompletionStage`, `CompletionStage`],
 				[/* text */ 't', ` documentation for rules
  covering exceptional completion.`]
 			],
@@ -771,7 +771,7 @@ DocsCollector.collect('java.util.concurrent.CompletionStage', [
  corresponding result as argument to the supplied action.
 
  See the `],
-				[/* reference */ 'r', `java.util.concurrent.CompletionStage`],
+				[/* reference */ 'r', `java.util.concurrent.CompletionStage`, `CompletionStage`],
 				[/* text */ 't', ` documentation for rules
  covering exceptional completion.`]
 			],
@@ -797,7 +797,7 @@ DocsCollector.collect('java.util.concurrent.CompletionStage', [
  the supplied action.
 
  See the `],
-				[/* reference */ 'r', `java.util.concurrent.CompletionStage`],
+				[/* reference */ 'r', `java.util.concurrent.CompletionStage`, `CompletionStage`],
 				[/* text */ 't', ` documentation for rules
  covering exceptional completion.`]
 			],
@@ -824,7 +824,7 @@ DocsCollector.collect('java.util.concurrent.CompletionStage', [
  given stage both complete normally, executes the given action.
 
  See the `],
-				[/* reference */ 'r', `java.util.concurrent.CompletionStage`],
+				[/* reference */ 'r', `java.util.concurrent.CompletionStage`, `CompletionStage`],
 				[/* text */ 't', ` documentation for rules
  covering exceptional completion.`]
 			],
@@ -849,7 +849,7 @@ DocsCollector.collect('java.util.concurrent.CompletionStage', [
  using this stage's default asynchronous execution facility.
 
  See the `],
-				[/* reference */ 'r', `java.util.concurrent.CompletionStage`],
+				[/* reference */ 'r', `java.util.concurrent.CompletionStage`, `CompletionStage`],
 				[/* text */ 't', ` documentation for rules
  covering exceptional completion.`]
 			],
@@ -874,7 +874,7 @@ DocsCollector.collect('java.util.concurrent.CompletionStage', [
  using the supplied executor.
 
  See the `],
-				[/* reference */ 'r', `java.util.concurrent.CompletionStage`],
+				[/* reference */ 'r', `java.util.concurrent.CompletionStage`, `CompletionStage`],
 				[/* text */ 't', ` documentation for rules
  covering exceptional completion.`]
 			],
@@ -901,7 +901,7 @@ DocsCollector.collect('java.util.concurrent.CompletionStage', [
  other given stage complete normally, executes the given action.
 
  See the `],
-				[/* reference */ 'r', `java.util.concurrent.CompletionStage`],
+				[/* reference */ 'r', `java.util.concurrent.CompletionStage`, `CompletionStage`],
 				[/* text */ 't', ` documentation for rules
  covering exceptional completion.`]
 			],
@@ -926,7 +926,7 @@ DocsCollector.collect('java.util.concurrent.CompletionStage', [
  using this stage's default asynchronous execution facility.
 
  See the `],
-				[/* reference */ 'r', `java.util.concurrent.CompletionStage`],
+				[/* reference */ 'r', `java.util.concurrent.CompletionStage`, `CompletionStage`],
 				[/* text */ 't', ` documentation for rules
  covering exceptional completion.`]
 			],
@@ -951,7 +951,7 @@ DocsCollector.collect('java.util.concurrent.CompletionStage', [
  using the supplied executor.
 
  See the `],
-				[/* reference */ 'r', `java.util.concurrent.CompletionStage`],
+				[/* reference */ 'r', `java.util.concurrent.CompletionStage`, `CompletionStage`],
 				[/* text */ 't', ` documentation for rules
  covering exceptional completion.`]
 			],
@@ -979,7 +979,7 @@ DocsCollector.collect('java.util.concurrent.CompletionStage', [
  to the supplied action.
 
  See the `],
-				[/* reference */ 'r', `java.util.concurrent.CompletionStage`],
+				[/* reference */ 'r', `java.util.concurrent.CompletionStage`, `CompletionStage`],
 				[/* text */ 't', ` documentation for rules
  covering exceptional completion.`]
 			],
@@ -1002,7 +1002,7 @@ DocsCollector.collect('java.util.concurrent.CompletionStage', [
  the supplied action.
 
  See the `],
-				[/* reference */ 'r', `java.util.concurrent.CompletionStage`],
+				[/* reference */ 'r', `java.util.concurrent.CompletionStage`, `CompletionStage`],
 				[/* text */ 't', ` documentation for rules
  covering exceptional completion.`]
 			],
@@ -1024,7 +1024,7 @@ DocsCollector.collect('java.util.concurrent.CompletionStage', [
  stage's result as the argument to the supplied action.
 
  See the `],
-				[/* reference */ 'r', `java.util.concurrent.CompletionStage`],
+				[/* reference */ 'r', `java.util.concurrent.CompletionStage`, `CompletionStage`],
 				[/* text */ 't', ` documentation for rules
  covering exceptional completion.`]
 			],
@@ -1048,7 +1048,7 @@ DocsCollector.collect('java.util.concurrent.CompletionStage', [
  normally, executes the given action.
 
  See the `],
-				[/* reference */ 'r', `java.util.concurrent.CompletionStage`],
+				[/* reference */ 'r', `java.util.concurrent.CompletionStage`, `CompletionStage`],
 				[/* text */ 't', ` documentation for rules
  covering exceptional completion.`]
 			],
@@ -1070,7 +1070,7 @@ DocsCollector.collect('java.util.concurrent.CompletionStage', [
  asynchronous execution facility.
 
  See the `],
-				[/* reference */ 'r', `java.util.concurrent.CompletionStage`],
+				[/* reference */ 'r', `java.util.concurrent.CompletionStage`, `CompletionStage`],
 				[/* text */ 't', ` documentation for rules
  covering exceptional completion.`]
 			],
@@ -1091,7 +1091,7 @@ DocsCollector.collect('java.util.concurrent.CompletionStage', [
  normally, executes the given action using the supplied Executor.
 
  See the `],
-				[/* reference */ 'r', `java.util.concurrent.CompletionStage`],
+				[/* reference */ 'r', `java.util.concurrent.CompletionStage`, `CompletionStage`],
 				[/* text */ 't', ` documentation for rules
  covering exceptional completion.`]
 			],

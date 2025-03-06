@@ -4,12 +4,12 @@ import {DocsCollector} from '../../DocsCollector';
 DocsCollector.collect('java.util.AbstractList', [
 	[/* class description */
 		[/* text */ 't', `This class provides a skeletal implementation of the `],
-		[/* reference */ 'r', `java.util.List`],
+		[/* reference */ 'r', `java.util.List`, `List`],
 		[/* text */ 't', `
  interface to minimize the effort required to implement this interface
  backed by a "random access" data store (such as an array).  For sequential
  access data (such as a linked list), `],
-		[/* reference */ 'r', `java.util.AbstractSequentialList`],
+		[/* reference */ 'r', `java.util.AbstractSequentialList`, `AbstractSequentialList`],
 		[/* text */ 't', ` should
  be used in preference to this class.
 
@@ -20,7 +20,7 @@ DocsCollector.collect('java.util.AbstractList', [
 			[/* reference */ 'r', `#get(int)`, `get(int)`],
 			[/* text */ 't', ` and
  `],
-			[/* reference */ 'r', `.List#size()`],
+			[/* reference */ 'r', `java.util.List#size()`, `size()`],
 			[/* text */ 't', ` methods.
 
  `]
@@ -45,7 +45,7 @@ DocsCollector.collect('java.util.AbstractList', [
 		[/* block */ 'b', [
 			[/* text */ 't', `The programmer should generally provide a void (no argument) and collection
  constructor, as per the recommendation in the `],
-			[/* reference */ 'r', `java.util.Collection`],
+			[/* reference */ 'r', `java.util.Collection`, `Collection`],
 			[/* text */ 't', ` interface
  specification.
 
@@ -267,7 +267,7 @@ DocsCollector.collect('java.util.AbstractList', [
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` (as specified by `],
-				[/* reference */ 'r', `.Collection#add(E)`],
+				[/* reference */ 'r', `java.util.Collection#add(E)`, `Collection.add(E)`],
 				[/* text */ 't', `)`]
 			]
 		]],
@@ -461,14 +461,14 @@ DocsCollector.collect('java.util.AbstractList', [
 					[/* text */ 't', `if the type of the specified element
          is incompatible with this list
          (`],
-					[/* reference */ 'r', `.Collection#optional-restrictions`],
+					[/* reference */ 'r', `java.util.Collection#optional-restrictions`, `optional`],
 					[/* text */ 't', `)`]
 				]],
 				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
 					[/* text */ 't', `if the specified element is null and this
          list does not permit null elements
          (`],
-					[/* reference */ 'r', `.Collection#optional-restrictions`],
+					[/* reference */ 'r', `java.util.Collection#optional-restrictions`, `optional`],
 					[/* text */ 't', `)`]
 				]]
 			],
@@ -499,14 +499,14 @@ DocsCollector.collect('java.util.AbstractList', [
 					[/* text */ 't', `if the type of the specified element
          is incompatible with this list
          (`],
-					[/* reference */ 'r', `.Collection#optional-restrictions`],
+					[/* reference */ 'r', `java.util.Collection#optional-restrictions`, `optional`],
 					[/* text */ 't', `)`]
 				]],
 				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
 					[/* text */ 't', `if the specified element is null and this
          list does not permit null elements
          (`],
-					[/* reference */ 'r', `.Collection#optional-restrictions`],
+					[/* reference */ 'r', `java.util.Collection#optional-restrictions`, `optional`],
 					[/* text */ 't', `)`]
 				]]
 			],
@@ -618,10 +618,10 @@ DocsCollector.collect('java.util.AbstractList', [
  sequence), starting at the specified position in the list.
  The specified index indicates the first element that would be
  returned by an initial call to `],
-				[/* reference */ 'r', `.ListIterator#next()`],
+				[/* reference */ 'r', `java.util.ListIterator#next()`, `next`],
 				[/* text */ 't', `.
  An initial call to `],
-				[/* reference */ 'r', `.ListIterator#previous()`],
+				[/* reference */ 'r', `java.util.ListIterator#previous()`, `previous`],
 				[/* text */ 't', ` would
  return the element with the specified index minus one.`]
 			],
@@ -629,7 +629,7 @@ DocsCollector.collect('java.util.AbstractList', [
 				[/* parameter */ 'index', [/* parameter description */
 					[/* text */ 't', `index of the first element to be returned from the
         list iterator (by a call to `],
-					[/* reference */ 'r', `.ListIterator#next()`],
+					[/* reference */ 'r', `java.util.ListIterator#next()`, `next`],
 					[/* text */ 't', `)`]
 				]]
 			],

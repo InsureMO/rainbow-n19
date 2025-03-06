@@ -5,7 +5,7 @@ DocsCollector.collect('java.io.ObjectInputFilter$FilterInfo', [
 	[/* class description */
 		[/* text */ 't', `FilterInfo provides access to information about the current object
  being deserialized and the status of the `],
-		[/* reference */ 'r', `java.io.ObjectInputStream`],
+		[/* reference */ 'r', `java.io.ObjectInputStream`, `ObjectInputStream`],
 		[/* text */ 't', `.`]
 	],
 	/* fields */ UDF,
@@ -21,7 +21,7 @@ DocsCollector.collect('java.io.ObjectInputFilter$FilterInfo', [
 				[/* text */ 't', `".
  To check the array's element type, iteratively use
  `],
-				[/* reference */ 'r', `java.Class#getComponentType()`],
+				[/* reference */ 'r', `java.lang.Class#getComponentType()`, `Class.getComponentType`],
 				[/* text */ 't', ` while the result
  is an array and then check the class.
  The `],

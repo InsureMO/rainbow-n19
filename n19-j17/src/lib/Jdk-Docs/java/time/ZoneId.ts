@@ -13,9 +13,9 @@ DocsCollector.collect('java.time.ZoneId', [
 			[/* inline code block */ 'i', `ZoneId`],
 			[/* text */ 't', ` is used to identify the rules used to convert between
  an `],
-			[/* reference */ 'r', `java.time.Instant`],
+			[/* reference */ 'r', `java.time.Instant`, `Instant`],
 			[/* text */ 't', ` and a `],
-			[/* reference */ 'r', `java.time.LocalDateTime`],
+			[/* reference */ 'r', `java.time.LocalDateTime`, `LocalDateTime`],
 			[/* text */ 't', `.
  There are two distinct types of ID:
  `]
@@ -30,7 +30,7 @@ DocsCollector.collect('java.time.ZoneId', [
 		]],
 		[/* text */ 't', `
  Most fixed offsets are represented by `],
-		[/* reference */ 'r', `java.time.ZoneOffset`],
+		[/* reference */ 'r', `java.time.ZoneOffset`, `ZoneOffset`],
 		[/* text */ 't', `.
  Calling `],
 		[/* reference */ 'r', `#normalized()`, `normalized()`],
@@ -45,7 +45,7 @@ DocsCollector.collect('java.time.ZoneId', [
 		[/* block */ 'b', [
 			[/* text */ 't', `
  The actual rules, describing when and how the offset changes, are defined by `],
-			[/* reference */ 'r', `java.time.zone.ZoneRules`],
+			[/* reference */ 'r', `java.time.zone.ZoneRules`, `ZoneRules`],
 			[/* text */ 't', `.
  This class is simply an ID used to obtain the underlying rules.
  This approach is taken because rules are defined by governments and change
@@ -94,7 +94,7 @@ DocsCollector.collect('java.time.ZoneId', [
  The third type of ID are region-based IDs. A region-based ID must be of
  two or more characters, and not start with 'UTC', 'GMT', 'UT' '+' or '-'.
  Region-based IDs are defined by configuration, see `],
-			[/* reference */ 'r', `java.time.zone.ZoneRulesProvider`],
+			[/* reference */ 'r', `java.time.zone.ZoneRulesProvider`, `ZoneRulesProvider`],
 			[/* text */ 't', `.
  The configuration focuses on providing the lookup from the ID to the
  underlying `],
@@ -160,7 +160,7 @@ DocsCollector.collect('java.time.ZoneId', [
 			[/* inline code block */ 'i', `ZoneRulesException`],
 			[/* text */ 't', `.
  This approach is designed to allow a `],
-			[/* reference */ 'r', `java.time.ZonedDateTime`],
+			[/* reference */ 'r', `java.time.ZonedDateTime`, `ZonedDateTime`],
 			[/* text */ 't', ` to be loaded and
  queried, but not modified, on a Java Runtime with incomplete time-zone information.
  `]
@@ -251,7 +251,7 @@ DocsCollector.collect('java.time.ZoneId', [
 					[/* text */ 't', `
  This ID uniquely defines this object.
  The format of an offset based ID is defined by `],
-					[/* reference */ 'r', `.ZoneOffset#getId()`],
+					[/* reference */ 'r', `java.time.ZoneOffset#getId()`, `ZoneOffset.getId()`],
 					[/* text */ 't', `.`]
 				]]
 			],
@@ -281,7 +281,7 @@ DocsCollector.collect('java.time.ZoneId', [
 				[/* block */ 'b', [
 					[/* text */ 't', `
  The rules are supplied by `],
-					[/* reference */ 'r', `java.time.zone.ZoneRulesProvider`],
+					[/* reference */ 'r', `java.time.zone.ZoneRulesProvider`, `ZoneRulesProvider`],
 					[/* text */ 't', `. An advanced provider may
  support dynamic updates to the rules without restarting the Java Runtime.
  If so, then the result of this method may change over time.
@@ -289,7 +289,7 @@ DocsCollector.collect('java.time.ZoneId', [
  `]
 				]],
 				[/* block */ 'b', [
-					[/* reference */ 'r', `java.time.ZoneOffset`],
+					[/* reference */ 'r', `java.time.ZoneOffset`, `ZoneOffset`],
 					[/* text */ 't', ` will always return a set of rules where the offset never changes.`]
 				]]
 			],
@@ -441,14 +441,14 @@ DocsCollector.collect('java.time.ZoneId', [
 					[/* text */ 't', `
  The conversion will try to obtain the zone in a way that favours region-based
  zones over offset-based zones using `],
-					[/* reference */ 'r', `.TemporalQueries#zone()`],
+					[/* reference */ 'r', `java.time.temporal.TemporalQueries#zone()`, `TemporalQueries.zone()`],
 					[/* text */ 't', `.
  `]
 				]],
 				[/* block */ 'b', [
 					[/* text */ 't', `
  This method matches the signature of the functional interface `],
-					[/* reference */ 'r', `java.time.temporal.TemporalQuery`],
+					[/* reference */ 'r', `java.time.temporal.TemporalQuery`, `TemporalQuery`],
 					[/* text */ 't', `
  allowing it to be used as a query via method reference, `],
 					[/* inline code block */ 'i', `ZoneId::from`],
@@ -488,7 +488,7 @@ DocsCollector.collect('java.time.ZoneId', [
 					[/* inline code block */ 'i', `ZoneOffset`],
 					[/* text */ 't', ` is returned if the ID is 'Z', or starts with '+' or '-'.
  The result will always be a valid ID for which `],
-					[/* reference */ 'r', `java.time.zone.ZoneRules`],
+					[/* reference */ 'r', `java.time.zone.ZoneRules`, `ZoneRules`],
 					[/* text */ 't', ` can be obtained.
  `]
 				]],
@@ -514,7 +514,7 @@ DocsCollector.collect('java.time.ZoneId', [
   `],
 						[/* inline code block */ 'i', `ZoneOffset`],
 						[/* text */ 't', ` using `],
-						[/* reference */ 'r', `.ZoneOffset#of(java.lang.String)`],
+						[/* reference */ 'r', `java.time.ZoneOffset#of(java.lang.String)`, `ZoneOffset.of(String)`],
 						[/* text */ 't', `.
  `]
 					]],
@@ -532,13 +532,13 @@ DocsCollector.collect('java.time.ZoneId', [
   then the ID is a prefixed offset-based ID. The ID is split in two, with
   a two or three letter prefix and a suffix starting with the sign.
   The suffix is parsed as a `],
-						[/* reference */ 'r', `.ZoneOffset#of(java.lang.String)`],
+						[/* reference */ 'r', `java.time.ZoneOffset#of(java.lang.String)`, `ZoneOffset`],
 						[/* text */ 't', `.
   The result will be a `],
 						[/* inline code block */ 'i', `ZoneId`],
 						[/* text */ 't', ` with the specified UTC/GMT/UT prefix
   and the normalized offset ID as per `],
-						[/* reference */ 'r', `.ZoneOffset#getId()`],
+						[/* reference */ 'r', `java.time.ZoneOffset#getId()`, `ZoneOffset.getId()`],
 						[/* text */ 't', `.
   The rules of the returned `],
 						[/* inline code block */ 'i', `ZoneId`],
@@ -563,7 +563,7 @@ DocsCollector.collect('java.time.ZoneId', [
   The default set of data is supplied by the IANA Time Zone Database (TZDB).
   This has region IDs of the form '{area}/{city}', such as 'Europe/Paris' or 'America/New_York'.
   This is compatible with most IDs from `],
-						[/* reference */ 'r', `java.util.TimeZone`],
+						[/* reference */ 'r', `java.util.TimeZone`, `TimeZone`],
 						[/* text */ 't', `.
  `]
 					]]
@@ -665,7 +665,7 @@ DocsCollector.collect('java.time.ZoneId', [
 				[/* block */ 'b', [
 					[/* text */ 't', `
  This queries `],
-					[/* reference */ 'r', `java.TimeZone#getDefault()`],
+					[/* reference */ 'r', `java.util.TimeZone#getDefault()`, `TimeZone.getDefault()`],
 					[/* text */ 't', ` to find the default time-zone
  and converts it to a `],
 					[/* inline code block */ 'i', `ZoneId`],

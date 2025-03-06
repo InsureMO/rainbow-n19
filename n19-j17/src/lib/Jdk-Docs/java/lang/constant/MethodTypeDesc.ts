@@ -4,10 +4,10 @@ import {DocsCollector} from '../../../DocsCollector';
 DocsCollector.collect('java.lang.constant.MethodTypeDesc', [
 	[/* class description */
 		[/* text */ 't', `A `],
-		[/* reference */ 'r', `.package-summary#nominal`],
+		[/* text */ 't', `nominal descriptor`],
 		[/* text */ 't', ` for a
  `],
-		[/* reference */ 'r', `java.lang.invoke.MethodType`],
+		[/* reference */ 'r', `java.lang.invoke.MethodType`, `MethodType`],
 		[/* text */ 't', ` constant.`]
 	],
 	/* fields */ UDF,
@@ -20,7 +20,7 @@ DocsCollector.collect('java.lang.constant.MethodTypeDesc', [
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if and only if the specified object is also a
  `],
-				[/* reference */ 'r', `java.lang.constant.MethodTypeDesc`],
+				[/* reference */ 'r', `java.lang.constant.MethodTypeDesc`, `MethodTypeDesc`],
 				[/* text */ 't', ` both have the same arity, their return types
  are equal, and each pair of corresponding parameter types are equal.`]
 			],
@@ -38,7 +38,7 @@ DocsCollector.collect('java.lang.constant.MethodTypeDesc', [
 			[/* method description */
 				[/* text */ 't', `Returns the number of parameters of the method type described by
  this `],
-				[/* reference */ 'r', `java.lang.constant.MethodTypeDesc`],
+				[/* reference */ 'r', `java.lang.constant.MethodTypeDesc`, `MethodTypeDesc`],
 				[/* text */ 't', `.`]
 			],
 			/* parameters */ UDF,
@@ -53,7 +53,7 @@ DocsCollector.collect('java.lang.constant.MethodTypeDesc', [
 				[/* inline code block */ 'i', `index`],
 				[/* text */ 't', `'th parameter of the method type
  described by this `],
-				[/* reference */ 'r', `java.lang.constant.MethodTypeDesc`],
+				[/* reference */ 'r', `java.lang.constant.MethodTypeDesc`, `MethodTypeDesc`],
 				[/* text */ 't', `.`]
 			],
 			[/* parameters */
@@ -69,21 +69,21 @@ DocsCollector.collect('java.lang.constant.MethodTypeDesc', [
 			],
 			[/* return description */
 				[/* text */ 't', `a `],
-				[/* reference */ 'r', `java.lang.constant.ClassDesc`],
+				[/* reference */ 'r', `java.lang.constant.ClassDesc`, `ClassDesc`],
 				[/* text */ 't', ` describing the desired parameter type`]
 			]
 		]],
 		[/* method */ 'returnType()', [
 			[/* method description */
 				[/* text */ 't', `Gets the return type of the method type described by this `],
-				[/* reference */ 'r', `java.lang.constant.MethodTypeDesc`],
+				[/* reference */ 'r', `java.lang.constant.MethodTypeDesc`, `MethodTypeDesc`],
 				[/* text */ 't', `.`]
 			],
 			/* parameters */ UDF,
 			/* throws */ UDF,
 			[/* return description */
 				[/* text */ 't', `a `],
-				[/* reference */ 'r', `java.lang.constant.ClassDesc`],
+				[/* reference */ 'r', `java.lang.constant.ClassDesc`, `ClassDesc`],
 				[/* text */ 't', ` describing the return type of the method type`]
 			]
 		]],
@@ -95,14 +95,14 @@ DocsCollector.collect('java.lang.constant.MethodTypeDesc', [
 			/* throws */ UDF,
 			[/* return description */
 				[/* text */ 't', `an array of `],
-				[/* reference */ 'r', `java.lang.constant.ClassDesc`],
+				[/* reference */ 'r', `java.lang.constant.ClassDesc`, `ClassDesc`],
 				[/* text */ 't', ` describing the parameter types`]
 			]
 		]],
 		[/* method */ 'changeParameterType(int,java.lang.constant.ClassDesc)', [
 			[/* method description */
 				[/* text */ 't', `Returns a `],
-				[/* reference */ 'r', `java.lang.constant.MethodTypeDesc`],
+				[/* reference */ 'r', `java.lang.constant.MethodTypeDesc`, `MethodTypeDesc`],
 				[/* text */ 't', ` that is identical to this one,
  except that a single parameter type has been changed to the specified type.`]
 			],
@@ -112,7 +112,7 @@ DocsCollector.collect('java.lang.constant.MethodTypeDesc', [
 				]],
 				[/* parameter */ 'paramType', [/* parameter description */
 					[/* text */ 't', `a `],
-					[/* reference */ 'r', `java.lang.constant.ClassDesc`],
+					[/* reference */ 'r', `java.lang.constant.ClassDesc`, `ClassDesc`],
 					[/* text */ 't', ` describing the new parameter type`]
 				]]
 			],
@@ -128,21 +128,21 @@ DocsCollector.collect('java.lang.constant.MethodTypeDesc', [
 			],
 			[/* return description */
 				[/* text */ 't', `a `],
-				[/* reference */ 'r', `java.lang.constant.MethodTypeDesc`],
+				[/* reference */ 'r', `java.lang.constant.MethodTypeDesc`, `MethodTypeDesc`],
 				[/* text */ 't', ` describing the desired method type`]
 			]
 		]],
 		[/* method */ 'changeReturnType(java.lang.constant.ClassDesc)', [
 			[/* method description */
 				[/* text */ 't', `Returns a `],
-				[/* reference */ 'r', `java.lang.constant.MethodTypeDesc`],
+				[/* reference */ 'r', `java.lang.constant.MethodTypeDesc`, `MethodTypeDesc`],
 				[/* text */ 't', ` that is identical to
  this one, except with the specified return type.`]
 			],
 			[/* parameters */
 				[/* parameter */ 'returnType', [/* parameter description */
 					[/* text */ 't', `a `],
-					[/* reference */ 'r', `java.lang.constant.ClassDesc`],
+					[/* reference */ 'r', `java.lang.constant.ClassDesc`, `ClassDesc`],
 					[/* text */ 't', ` describing the new return type`]
 				]]
 			],
@@ -154,14 +154,14 @@ DocsCollector.collect('java.lang.constant.MethodTypeDesc', [
 			],
 			[/* return description */
 				[/* text */ 't', `a `],
-				[/* reference */ 'r', `java.lang.constant.MethodTypeDesc`],
+				[/* reference */ 'r', `java.lang.constant.MethodTypeDesc`, `MethodTypeDesc`],
 				[/* text */ 't', ` describing the desired method type`]
 			]
 		]],
 		[/* method */ 'dropParameterTypes(int,int)', [
 			[/* method description */
 				[/* text */ 't', `Returns a `],
-				[/* reference */ 'r', `java.lang.constant.MethodTypeDesc`],
+				[/* reference */ 'r', `java.lang.constant.MethodTypeDesc`, `MethodTypeDesc`],
 				[/* text */ 't', ` that is identical to this one,
  except that a range of parameter types have been removed.`]
 			],
@@ -191,14 +191,14 @@ DocsCollector.collect('java.lang.constant.MethodTypeDesc', [
 			],
 			[/* return description */
 				[/* text */ 't', `a `],
-				[/* reference */ 'r', `java.lang.constant.MethodTypeDesc`],
+				[/* reference */ 'r', `java.lang.constant.MethodTypeDesc`, `MethodTypeDesc`],
 				[/* text */ 't', ` describing the desired method type`]
 			]
 		]],
 		[/* method */ 'insertParameterTypes(int,java.lang.constant.ClassDesc...)', [
 			[/* method description */
 				[/* text */ 't', `Returns a `],
-				[/* reference */ 'r', `java.lang.constant.MethodTypeDesc`],
+				[/* reference */ 'r', `java.lang.constant.MethodTypeDesc`, `MethodTypeDesc`],
 				[/* text */ 't', ` that is identical to this one,
  except that a range of additional parameter types have been inserted.`]
 			],
@@ -208,7 +208,7 @@ DocsCollector.collect('java.lang.constant.MethodTypeDesc', [
 				]],
 				[/* parameter */ 'paramTypes', [/* parameter description */
 					[/* text */ 't', ``],
-					[/* reference */ 'r', `java.lang.constant.ClassDesc`],
+					[/* reference */ 'r', `java.lang.constant.ClassDesc`, `ClassDesc`],
 					[/* text */ 't', `s describing the new parameter types
                    to insert`]
 				]]
@@ -229,30 +229,30 @@ DocsCollector.collect('java.lang.constant.MethodTypeDesc', [
 					[/* inline code block */ 'i', `paramTypes`],
 					[/* text */ 't', `
  is a `],
-					[/* reference */ 'r', `java.lang.constant.ClassDesc`],
+					[/* reference */ 'r', `java.lang.constant.ClassDesc`, `ClassDesc`],
 					[/* text */ 't', ` for `],
 					[/* inline code block */ 'i', `void`]
 				]]
 			],
 			[/* return description */
 				[/* text */ 't', `a `],
-				[/* reference */ 'r', `java.lang.constant.MethodTypeDesc`],
+				[/* reference */ 'r', `java.lang.constant.MethodTypeDesc`, `MethodTypeDesc`],
 				[/* text */ 't', ` describing the desired method type`]
 			]
 		]],
 		[/* method */ 'parameterList()', [
 			[/* method description */
 				[/* text */ 't', `Returns the parameter types as an immutable `],
-				[/* reference */ 'r', `java.util.List`],
+				[/* reference */ 'r', `java.util.List`, `List`],
 				[/* text */ 't', `.`]
 			],
 			/* parameters */ UDF,
 			/* throws */ UDF,
 			[/* return description */
 				[/* text */ 't', `a `],
-				[/* reference */ 'r', `java.util.List`],
+				[/* reference */ 'r', `java.util.List`, `List`],
 				[/* text */ 't', ` of `],
-				[/* reference */ 'r', `java.lang.constant.ClassDesc`],
+				[/* reference */ 'r', `java.lang.constant.ClassDesc`, `ClassDesc`],
 				[/* text */ 't', ` describing the parameter types`]
 			]
 		]],
@@ -280,19 +280,19 @@ DocsCollector.collect('java.lang.constant.MethodTypeDesc', [
 		[/* method */ 'of(java.lang.constant.ClassDesc,java.lang.constant.ClassDesc...)', [
 			[/* method description */
 				[/* text */ 't', `Returns a `],
-				[/* reference */ 'r', `java.lang.constant.MethodTypeDesc`],
+				[/* reference */ 'r', `java.lang.constant.MethodTypeDesc`, `MethodTypeDesc`],
 				[/* text */ 't', ` given the return type and parameter
  types.`]
 			],
 			[/* parameters */
 				[/* parameter */ 'returnDesc', [/* parameter description */
 					[/* text */ 't', `a `],
-					[/* reference */ 'r', `java.lang.constant.ClassDesc`],
+					[/* reference */ 'r', `java.lang.constant.ClassDesc`, `ClassDesc`],
 					[/* text */ 't', ` describing the return type`]
 				]],
 				[/* parameter */ 'paramDescs', [/* parameter description */
 					[/* text */ 't', ``],
-					[/* reference */ 'r', `java.lang.constant.ClassDesc`],
+					[/* reference */ 'r', `java.lang.constant.ClassDesc`, `ClassDesc`],
 					[/* text */ 't', `s describing the argument types`]
 				]]
 			],
@@ -306,21 +306,21 @@ DocsCollector.collect('java.lang.constant.MethodTypeDesc', [
 					[/* inline code block */ 'i', `paramDescs`],
 					[/* text */ 't', ` is a
  `],
-					[/* reference */ 'r', `java.lang.constant.ClassDesc`],
+					[/* reference */ 'r', `java.lang.constant.ClassDesc`, `ClassDesc`],
 					[/* text */ 't', ` for `],
 					[/* inline code block */ 'i', `void`]
 				]]
 			],
 			[/* return description */
 				[/* text */ 't', `a `],
-				[/* reference */ 'r', `java.lang.constant.MethodTypeDesc`],
+				[/* reference */ 'r', `java.lang.constant.MethodTypeDesc`, `MethodTypeDesc`],
 				[/* text */ 't', ` describing the desired method type`]
 			]
 		]],
 		[/* method */ 'ofDescriptor(java.lang.String)', [
 			[/* method description */
 				[/* text */ 't', `Creates a `],
-				[/* reference */ 'r', `java.lang.constant.MethodTypeDesc`],
+				[/* reference */ 'r', `java.lang.constant.MethodTypeDesc`, `MethodTypeDesc`],
 				[/* text */ 't', ` given a method descriptor string.`]
 			],
 			[/* parameters */
@@ -340,7 +340,7 @@ DocsCollector.collect('java.lang.constant.MethodTypeDesc', [
 			],
 			[/* return description */
 				[/* text */ 't', `a `],
-				[/* reference */ 'r', `java.lang.constant.MethodTypeDesc`],
+				[/* reference */ 'r', `java.lang.constant.MethodTypeDesc`, `MethodTypeDesc`],
 				[/* text */ 't', ` describing the desired method type`]
 			]
 		]]

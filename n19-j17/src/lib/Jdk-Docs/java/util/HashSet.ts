@@ -52,7 +52,7 @@ DocsCollector.collect('java.util.HashSet', [
 
  If no such object exists, the set should be "wrapped" using the
  `],
-			[/* reference */ 'r', `.Collections#synchronizedSet(java.util.Set)`],
+			[/* reference */ 'r', `java.util.Collections#synchronizedSet(java.util.Set)`, `Collections.synchronizedSet`],
 			[/* text */ 't', `
  method.  This is best done at creation time, to prevent accidental
  unsynchronized access to the set:`]
@@ -70,7 +70,7 @@ DocsCollector.collect('java.util.HashSet', [
 			[/* inline code block */ 'i', `remove`],
 			[/* text */ 't', `
  method, the Iterator throws a `],
-			[/* reference */ 'r', `java.util.ConcurrentModificationException`],
+			[/* reference */ 'r', `java.util.ConcurrentModificationException`, `ConcurrentModificationException`],
 			[/* text */ 't', `.
  Thus, in the face of concurrent modification, the iterator fails quickly
  and cleanly, rather than risking arbitrary, non-deterministic behavior at
@@ -340,7 +340,7 @@ DocsCollector.collect('java.util.HashSet', [
  If this collection makes any guarantees as to what order its elements
  are returned by its iterator, this method must return the elements in
  the same order. The returned array's `],
-					[/* reference */ 'r', `java.Class#getComponentType()`],
+					[/* reference */ 'r', `java.lang.Class#getComponentType()`, `runtime component type`],
 					[/* text */ 't', ` is `],
 					[/* inline code block */ 'i', `Object`],
 					[/* text */ 't', `.
@@ -356,7 +356,7 @@ DocsCollector.collect('java.util.HashSet', [
 			/* throws */ UDF,
 			[/* return description */
 				[/* text */ 't', `an array, whose `],
-				[/* reference */ 'r', `java.Class#getComponentType()`],
+				[/* reference */ 'r', `java.lang.Class#getComponentType()`, `runtime component type`],
 				[/* text */ 't', ` is `],
 				[/* inline code block */ 'i', `Object`],
 				[/* text */ 't', `, containing all of the elements in this collection`]
@@ -376,11 +376,11 @@ DocsCollector.collect('java.util.HashSet', [
 		[/* method */ 'spliterator()', [
 			[/* method description */
 				[/* text */ 't', `Creates a `],
-				[/* reference */ 'r', `.Spliterator#binding`],
+				[/* reference */ 'r', `java.util.Spliterator#binding`, `late-binding`],
 				[/* text */ 't', `
  and `],
 				[/* text */ 't', `fail-fast`],
-				[/* reference */ 'r', `java.util.Spliterator`],
+				[/* reference */ 'r', `java.util.Spliterator`, `Spliterator`],
 				[/* text */ 't', ` over the elements in this
  set.
 
@@ -389,10 +389,10 @@ DocsCollector.collect('java.util.HashSet', [
 					[/* text */ 't', `The `],
 					[/* inline code block */ 'i', `Spliterator`],
 					[/* text */ 't', ` reports `],
-					[/* reference */ 'r', `.Spliterator#SIZED`],
+					[/* reference */ 'r', `java.util.Spliterator#SIZED`, `Spliterator.SIZED`],
 					[/* text */ 't', ` and
  `],
-					[/* reference */ 'r', `.Spliterator#DISTINCT`],
+					[/* reference */ 'r', `java.util.Spliterator#DISTINCT`, `Spliterator.DISTINCT`],
 					[/* text */ 't', `.  Overriding implementations should document
  the reporting of additional characteristic values.`]
 				]]

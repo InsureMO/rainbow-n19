@@ -69,7 +69,7 @@ DocsCollector.collect('java.io.ObjectStreamClass', [
 				[/* text */ 't', `Returns the name of the class described by this descriptor.
  This method returns the name of the class in the format that
  is used by the `],
-				[/* reference */ 'r', `java.Class#getName()`],
+				[/* reference */ 'r', `java.lang.Class#getName()`, `Class.getName()`],
 				[/* text */ 't', ` method.`]
 			],
 			/* parameters */ UDF,
@@ -122,7 +122,7 @@ DocsCollector.collect('java.io.ObjectStreamClass', [
 			[/* method description */
 				[/* text */ 't', `Returns the descriptor for any class, regardless of whether it
  implements `],
-				[/* reference */ 'r', `java.io.Serializable`],
+				[/* reference */ 'r', `java.io.Serializable`, `Serializable`],
 				[/* text */ 't', `.`]
 			],
 			[/* parameters */

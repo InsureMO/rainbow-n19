@@ -11,7 +11,7 @@ DocsCollector.collect('java.lang.ref.PhantomReference', [
 		[/* block */ 'b', [
 			[/* text */ 't', ` Suppose the garbage collector determines at a certain point in time
  that an object is `],
-			[/* reference */ 'r', `.package-summary#reachability`],
+			[/* text */ 't', `phantom reachable`],
 			[/* text */ 't', `.  At that time it will atomically clear
  all phantom references to that object and all phantom references to
  any other phantom-reachable objects from which that object is reachable.
@@ -29,7 +29,7 @@ DocsCollector.collect('java.lang.ref.PhantomReference', [
 			[/* inline code block */ 'i', `null`],
 			[/* text */ 't', `.
  The `],
-			[/* reference */ 'r', `.Reference#refersTo(T)`],
+			[/* reference */ 'r', `java.lang.ref.Reference#refersTo(T)`, `refersTo`],
 			[/* text */ 't', ` method can be used to test
  whether some object is the referent of a phantom reference.`]
 		]]

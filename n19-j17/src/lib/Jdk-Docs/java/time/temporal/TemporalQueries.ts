@@ -10,7 +10,7 @@ DocsCollector.collect('java.time.temporal.TemporalQueries', [
 		[/* block */ 'b', [
 			[/* text */ 't', `
  This class provides common implementations of `],
-			[/* reference */ 'r', `java.time.temporal.TemporalQuery`],
+			[/* reference */ 'r', `java.time.temporal.TemporalQuery`, `TemporalQuery`],
 			[/* text */ 't', `.
  These are defined here as they must be constants, and the definition
  of lambdas does not guarantee that. By assigning them once here,
@@ -27,7 +27,7 @@ DocsCollector.collect('java.time.temporal.TemporalQueries', [
 		[/* block */ 'b', [
 			[/* text */ 't', `
  The `],
-			[/* reference */ 'r', `java.time.temporal.TemporalField`],
+			[/* reference */ 'r', `java.time.temporal.TemporalField`, `TemporalField`],
 			[/* text */ 't', ` interface provides another mechanism for querying
  temporal objects. That interface is limited to returning a `],
 			[/* inline code block */ 'i', `long`],
@@ -42,7 +42,7 @@ DocsCollector.collect('java.time.temporal.TemporalQueries', [
 			[/* text */ 't', `.
  The first is to invoke the method on this interface directly.
  The second is to use `],
-			[/* reference */ 'r', `.TemporalAccessor#query(java.time.temporal.TemporalQuery)`],
+			[/* reference */ 'r', `java.time.temporal.TemporalAccessor#query(java.time.temporal.TemporalQuery)`, `TemporalAccessor.query(TemporalQuery)`],
 			[/* text */ 't', `:
  `]
 		]],
@@ -179,7 +179,7 @@ DocsCollector.collect('java.time.temporal.TemporalQueries', [
 				[/* block */ 'b', [
 					[/* text */ 't', `
  The method `],
-					[/* reference */ 'r', `java.Chronology#from(java.time.temporal.TemporalAccessor)`],
+					[/* reference */ 'r', `java.time.chrono.Chronology#from(java.time.temporal.TemporalAccessor)`, `Chronology.from(TemporalAccessor)`],
 					[/* text */ 't', ` can be used as a
  `],
 					[/* inline code block */ 'i', `TemporalQuery`],
@@ -214,7 +214,7 @@ DocsCollector.collect('java.time.temporal.TemporalQueries', [
 				[/* block */ 'b', [
 					[/* text */ 't', `
  The query implementation examines the `],
-					[/* reference */ 'r', `.ChronoField#EPOCH_DAY`],
+					[/* reference */ 'r', `java.time.temporal.ChronoField#EPOCH_DAY`, `EPOCH_DAY`],
 					[/* text */ 't', `
  field and uses it to create a `],
 					[/* inline code block */ 'i', `LocalDate`],
@@ -224,7 +224,7 @@ DocsCollector.collect('java.time.temporal.TemporalQueries', [
 				[/* block */ 'b', [
 					[/* text */ 't', `
  The method `],
-					[/* reference */ 'r', `java.ZoneOffset#from(java.time.temporal.TemporalAccessor)`],
+					[/* reference */ 'r', `java.time.ZoneOffset#from(java.time.temporal.TemporalAccessor)`, `ZoneOffset.from(TemporalAccessor)`],
 					[/* text */ 't', ` can be used as a
  `],
 					[/* inline code block */ 'i', `TemporalQuery`],
@@ -263,7 +263,7 @@ DocsCollector.collect('java.time.temporal.TemporalQueries', [
 				[/* block */ 'b', [
 					[/* text */ 't', `
  The query implementation examines the `],
-					[/* reference */ 'r', `.ChronoField#NANO_OF_DAY`],
+					[/* reference */ 'r', `java.time.temporal.ChronoField#NANO_OF_DAY`, `NANO_OF_DAY`],
 					[/* text */ 't', `
  field and uses it to create a `],
 					[/* inline code block */ 'i', `LocalTime`],
@@ -273,7 +273,7 @@ DocsCollector.collect('java.time.temporal.TemporalQueries', [
 				[/* block */ 'b', [
 					[/* text */ 't', `
  The method `],
-					[/* reference */ 'r', `java.ZoneOffset#from(java.time.temporal.TemporalAccessor)`],
+					[/* reference */ 'r', `java.time.ZoneOffset#from(java.time.temporal.TemporalAccessor)`, `ZoneOffset.from(TemporalAccessor)`],
 					[/* text */ 't', ` can be used as a
  `],
 					[/* inline code block */ 'i', `TemporalQuery`],
@@ -424,12 +424,12 @@ DocsCollector.collect('java.time.temporal.TemporalQueries', [
 					[/* reference */ 'r', `#offset()`, `offset()`],
 					[/* text */ 't', `.
  Thus a `],
-					[/* reference */ 'r', `java.time.ZonedDateTime`],
+					[/* reference */ 'r', `java.time.ZonedDateTime`, `ZonedDateTime`],
 					[/* text */ 't', ` will return the result of `],
 					[/* inline code block */ 'i', `getZone()`],
 					[/* text */ 't', `,
  while an `],
-					[/* reference */ 'r', `java.time.OffsetDateTime`],
+					[/* reference */ 'r', `java.time.OffsetDateTime`, `OffsetDateTime`],
 					[/* text */ 't', ` will return the result of `],
 					[/* inline code block */ 'i', `getOffset()`],
 					[/* text */ 't', `.
@@ -445,7 +445,7 @@ DocsCollector.collect('java.time.temporal.TemporalQueries', [
 				[/* block */ 'b', [
 					[/* text */ 't', `
  The method `],
-					[/* reference */ 'r', `java.ZoneId#from(java.time.temporal.TemporalAccessor)`],
+					[/* reference */ 'r', `java.time.ZoneId#from(java.time.temporal.TemporalAccessor)`, `ZoneId.from(TemporalAccessor)`],
 					[/* text */ 't', ` can be used as a
  `],
 					[/* inline code block */ 'i', `TemporalQuery`],
@@ -480,12 +480,12 @@ DocsCollector.collect('java.time.temporal.TemporalQueries', [
 					[/* inline code block */ 'i', `ZoneOffset`],
 					[/* text */ 't', `.
  Thus a `],
-					[/* reference */ 'r', `java.time.ZonedDateTime`],
+					[/* reference */ 'r', `java.time.ZonedDateTime`, `ZonedDateTime`],
 					[/* text */ 't', ` will return the result of `],
 					[/* inline code block */ 'i', `getZone()`],
 					[/* text */ 't', `,
  but an `],
-					[/* reference */ 'r', `java.time.OffsetDateTime`],
+					[/* reference */ 'r', `java.time.OffsetDateTime`, `OffsetDateTime`],
 					[/* text */ 't', ` will return null.
  `]
 				]],
@@ -579,7 +579,7 @@ DocsCollector.collect('java.time.temporal.TemporalQueries', [
 				[/* block */ 'b', [
 					[/* text */ 't', `
  The query implementation examines the `],
-					[/* reference */ 'r', `.ChronoField#OFFSET_SECONDS`],
+					[/* reference */ 'r', `java.time.temporal.ChronoField#OFFSET_SECONDS`, `OFFSET_SECONDS`],
 					[/* text */ 't', `
  field and uses it to create a `],
 					[/* inline code block */ 'i', `ZoneOffset`],
@@ -589,7 +589,7 @@ DocsCollector.collect('java.time.temporal.TemporalQueries', [
 				[/* block */ 'b', [
 					[/* text */ 't', `
  The method `],
-					[/* reference */ 'r', `java.ZoneOffset#from(java.time.temporal.TemporalAccessor)`],
+					[/* reference */ 'r', `java.time.ZoneOffset#from(java.time.temporal.TemporalAccessor)`, `ZoneOffset.from(TemporalAccessor)`],
 					[/* text */ 't', ` can be used as a
  `],
 					[/* inline code block */ 'i', `TemporalQuery`],

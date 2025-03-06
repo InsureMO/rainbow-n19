@@ -5,13 +5,13 @@ DocsCollector.collect('java.util.function.BiFunction', [
 	[/* class description */
 		[/* text */ 't', `Represents a function that accepts two arguments and produces a result.
  This is the two-arity specialization of `],
-		[/* reference */ 'r', `java.util.function.Function`],
+		[/* reference */ 'r', `java.util.function.Function`, `Function`],
 		[/* text */ 't', `.
 
  `],
 		[/* block */ 'b', [
 			[/* text */ 't', `This is a `],
-			[/* reference */ 'r', `.package-summary`],
+			[/* text */ 't', `functional interface`],
 			[/* text */ 't', `
  whose functional method is `],
 			[/* reference */ 'r', `#apply(T,U)`, `apply(Object, Object)`],

@@ -192,7 +192,7 @@ DocsCollector.collect('java.time.format.DecimalStyle', [
  This method provides access to locale sensitive decimal style symbols.
  If the locale contains "nu" (Numbering System) and/or "rg"
  (Region Override) `],
-					[/* reference */ 'r', `java.time.Locale#def_locale_extension`],
+					[/* reference */ 'r', `java.util.Locale#def_locale_extension`, `Unicode extensions`],
 					[/* text */ 't', `, returned instance will reflect the values specified with
  those extensions. If both "nu" and "rg" are specified, the value from
  the "nu" extension supersedes the implicit one from the "rg" extension.`]
@@ -212,7 +212,7 @@ DocsCollector.collect('java.time.format.DecimalStyle', [
 			[/* method description */
 				[/* text */ 't', `Obtains the DecimalStyle for the default
  `],
-				[/* reference */ 'r', `java.time.Locale.Category#FORMAT`],
+				[/* reference */ 'r', `java.util.Locale.Category#FORMAT`, `FORMAT`],
 				[/* text */ 't', ` locale.
  `],
 				[/* block */ 'b', `

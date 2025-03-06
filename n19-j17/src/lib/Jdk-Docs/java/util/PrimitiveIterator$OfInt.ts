@@ -49,7 +49,7 @@ DocsCollector.collect('java.util.PrimitiveIterator$OfInt', [
 					[/* text */ 't', `
  The behavior of an iterator is unspecified if the action modifies the
  collection in any way (even by calling the `],
-					[/* reference */ 'r', `.Iterator#remove()`],
+					[/* reference */ 'r', `java.util.Iterator#remove()`, `remove`],
 					[/* text */ 't', ` method
  or other mutator methods of `],
 					[/* inline code block */ 'i', `Iterator`],
@@ -80,7 +80,7 @@ DocsCollector.collect('java.util.PrimitiveIterator$OfInt', [
 					[/* text */ 't', `
  The behavior of an iterator is unspecified if the action modifies the
  source of elements in any way (even by calling the `],
-					[/* reference */ 'r', `.Iterator#remove()`],
+					[/* reference */ 'r', `java.util.Iterator#remove()`, `remove`],
 					[/* text */ 't', `
  method or other mutator methods of `],
 					[/* inline code block */ 'i', `Iterator`],

@@ -8,7 +8,7 @@ DocsCollector.collect('java.nio.channels.FileChannel', [
  `],
 		[/* block */ 'b', [
 			[/* text */ 't', ` A file channel is a `],
-			[/* reference */ 'r', `java.nio.channels.SeekableByteChannel`],
+			[/* reference */ 'r', `java.nio.channels.SeekableByteChannel`, `SeekableByteChannel`],
 			[/* text */ 't', ` that is connected to
  a file. It has a current `],
 			[/* text */ 't', `position`],
@@ -84,7 +84,7 @@ DocsCollector.collect('java.nio.channels.FileChannel', [
 			[/* block */ 'b', [
 				[/* block */ 'b', [
 					[/* text */ 't', ` A region of a file may be `],
-					[/* reference */ 'r', `java.nio.channels.FileLock`],
+					[/* reference */ 'r', `java.nio.channels.FileLock`, `locked`],
 					[/* text */ 't', `
    against access by other programs.  `]
 				]]
@@ -93,10 +93,10 @@ DocsCollector.collect('java.nio.channels.FileChannel', [
 		[/* block */ 'b', [
 			[/* text */ 't', ` File channels are safe for use by multiple concurrent threads.  The
  `],
-			[/* reference */ 'r', `.Channel#close()`],
+			[/* reference */ 'r', `java.nio.channels.Channel#close()`, `close`],
 			[/* text */ 't', ` method may be invoked at any time, as specified
  by the `],
-			[/* reference */ 'r', `java.nio.channels.Channel`],
+			[/* reference */ 'r', `java.nio.channels.Channel`, `Channel`],
 			[/* text */ 't', ` interface.  Only one operation that involves the
  channel's position or can change its file's size may be in progress at any
  given time; attempts to initiate a second such operation while the first is
@@ -125,11 +125,11 @@ DocsCollector.collect('java.nio.channels.FileChannel', [
 			[/* text */ 't', `
  methods defined by this class. A file channel can also be obtained from an
  existing `],
-			[/* reference */ 'r', `java.nio.FileInputStream#getChannel()`],
+			[/* reference */ 'r', `java.io.FileInputStream#getChannel()`, `FileInputStream`],
 			[/* text */ 't', `, `],
-			[/* reference */ 'r', `java.nio.FileOutputStream#getChannel()`],
+			[/* reference */ 'r', `java.io.FileOutputStream#getChannel()`, `FileOutputStream`],
 			[/* text */ 't', `, or `],
-			[/* reference */ 'r', `java.nio.RandomAccessFile#getChannel()`],
+			[/* reference */ 'r', `java.io.RandomAccessFile#getChannel()`, `RandomAccessFile`],
 			[/* text */ 't', ` object by invoking
  that object's `],
 			[/* inline code block */ 'i', `getChannel`],
@@ -147,26 +147,26 @@ DocsCollector.collect('java.nio.channels.FileChannel', [
  seen by the originating object, and vice versa.
 
  `],
-			[/* text */ 't', ``]
+			[/* anchor */ 'r', '#-id', `open-mode`, ``]
 		]],
 		[/* block */ 'b', [
 			[/* text */ 't', ` At various points this class specifies that an
  instance that is "open for reading," "open for writing," or "open for
  reading and writing" is required.  A channel obtained via the `],
-			[/* reference */ 'r', `java.nio.FileInputStream#getChannel()`],
+			[/* reference */ 'r', `java.io.FileInputStream#getChannel()`, `getChannel`],
 			[/* text */ 't', ` method of a `],
-			[/* reference */ 'r', `java.io.FileInputStream`],
+			[/* reference */ 'r', `java.io.FileInputStream`, `FileInputStream`],
 			[/* text */ 't', ` instance will be open for reading.  A channel
  obtained via the `],
-			[/* reference */ 'r', `java.nio.FileOutputStream#getChannel()`],
+			[/* reference */ 'r', `java.io.FileOutputStream#getChannel()`, `getChannel`],
 			[/* text */ 't', `
  method of a `],
-			[/* reference */ 'r', `java.io.FileOutputStream`],
+			[/* reference */ 'r', `java.io.FileOutputStream`, `FileOutputStream`],
 			[/* text */ 't', ` instance will be open for
  writing.  Finally, a channel obtained via the `],
-			[/* reference */ 'r', `java.nio.RandomAccessFile#getChannel()`],
+			[/* reference */ 'r', `java.io.RandomAccessFile#getChannel()`, `getChannel`],
 			[/* text */ 't', ` method of a `],
-			[/* reference */ 'r', `java.io.RandomAccessFile`],
+			[/* reference */ 'r', `java.io.RandomAccessFile`, `RandomAccessFile`],
 			[/* text */ 't', ` instance will be open for reading if the instance
  was created with mode `],
 			[/* inline code block */ 'i', `"r"`],
@@ -176,7 +176,7 @@ DocsCollector.collect('java.nio.channels.FileChannel', [
 			[/* text */ 't', `.
 
  `],
-			[/* text */ 't', ``]
+			[/* anchor */ 'r', '#-id', `append-mode`, ``]
 		]],
 		[/* block */ 'b', [
 			[/* text */ 't', ` A file channel that is open for writing may be in
@@ -184,7 +184,7 @@ DocsCollector.collect('java.nio.channels.FileChannel', [
 			[/* text */ 't', `append mode`],
 			[/* text */ 't', `, for example if it was obtained from a file-output stream
  that was created by invoking the `],
-			[/* reference */ 'r', `java.nio.FileOutputStream#<init>(java.io.File,boolean)`],
+			[/* reference */ 'r', `java.io.FileOutputStream#<init>(java.io.File,boolean)`, `FileOutputStream(File,boolean)`],
 			[/* text */ 't', ` constructor and passing `],
 			[/* inline code block */ 'i', `true`],
 			[/* text */ 't', ` for
@@ -215,7 +215,7 @@ DocsCollector.collect('java.nio.channels.FileChannel', [
 					[/* text */ 't', ` Bytes are read starting at this channel's current file position, and
  then the file position is updated with the number of bytes actually
  read.  Otherwise this method behaves exactly as specified in the `],
-					[/* reference */ 'r', `java.nio.channels.ReadableByteChannel`],
+					[/* reference */ 'r', `java.nio.channels.ReadableByteChannel`, `ReadableByteChannel`],
 					[/* text */ 't', ` interface. `]
 				]]
 			],
@@ -317,7 +317,7 @@ DocsCollector.collect('java.nio.channels.FileChannel', [
  to accommodate the written bytes, and then the file position is updated
  with the number of bytes actually written.  Otherwise this method
  behaves exactly as specified by the `],
-					[/* reference */ 'r', `java.nio.channels.WritableByteChannel`],
+					[/* reference */ 'r', `java.nio.channels.WritableByteChannel`, `WritableByteChannel`],
 					[/* text */ 't', `
  interface. `]
 				]]
@@ -485,7 +485,7 @@ DocsCollector.collect('java.nio.channels.FileChannel', [
 				[/* block */ 'b', [
 					[/* text */ 't', ` If this channel is closed by another thread during an invocation of
  this method then an `],
-					[/* reference */ 'r', `java.nio.channels.AsynchronousCloseException`],
+					[/* reference */ 'r', `java.nio.channels.AsynchronousCloseException`, `AsynchronousCloseException`],
 					[/* text */ 't', ` will be thrown.
 
  `]
@@ -493,7 +493,7 @@ DocsCollector.collect('java.nio.channels.FileChannel', [
 				[/* block */ 'b', [
 					[/* text */ 't', ` If the invoking thread is interrupted while waiting to acquire the
  lock then its interrupt status will be set and a `],
-					[/* reference */ 'r', `java.nio.channels.FileLockInterruptionException`],
+					[/* reference */ 'r', `java.nio.channels.FileLockInterruptionException`, `FileLockInterruptionException`],
 					[/* text */ 't', ` will be thrown.  If the invoker's
  interrupt status is set when this method is invoked then that exception
  will be thrown immediately; the thread's interrupt status will not be
@@ -517,7 +517,7 @@ DocsCollector.collect('java.nio.channels.FileChannel', [
  `],
 					[/* reference */ 'r', `#lock()`, `lock()`],
 					[/* text */ 't', ` method simply locks a region of size `],
-					[/* reference */ 'r', `java.nio.Long#MAX_VALUE`],
+					[/* reference */ 'r', `java.lang.Long#MAX_VALUE`, `Long.MAX_VALUE`],
 					[/* text */ 't', `.
 
  `]
@@ -527,7 +527,7 @@ DocsCollector.collect('java.nio.channels.FileChannel', [
  request for a shared lock is automatically converted into a request for
  an exclusive lock.  Whether the newly-acquired lock is shared or
  exclusive may be tested by invoking the resulting lock object's `],
-					[/* reference */ 'r', `.FileLock#isShared()`],
+					[/* reference */ 'r', `java.nio.channels.FileLock#isShared()`, `isShared`],
 					[/* text */ 't', ` method.
 
  `]
@@ -638,7 +638,7 @@ DocsCollector.collect('java.nio.channels.FileChannel', [
  `],
 					[/* reference */ 'r', `#tryLock()`, `tryLock()`],
 					[/* text */ 't', ` method simply locks a region of size `],
-					[/* reference */ 'r', `java.nio.Long#MAX_VALUE`],
+					[/* reference */ 'r', `java.lang.Long#MAX_VALUE`, `Long.MAX_VALUE`],
 					[/* text */ 't', `.
 
  `]
@@ -648,7 +648,7 @@ DocsCollector.collect('java.nio.channels.FileChannel', [
  request for a shared lock is automatically converted into a request for
  an exclusive lock.  Whether the newly-acquired lock is shared or
  exclusive may be tested by invoking the resulting lock object's `],
-					[/* reference */ 'r', `.FileLock#isShared()`],
+					[/* reference */ 'r', `java.nio.channels.FileLock#isShared()`, `isShared`],
 					[/* text */ 't', ` method.
 
  `]
@@ -723,10 +723,10 @@ DocsCollector.collect('java.nio.channels.FileChannel', [
 							[/* text */ 't', `Read-only:`],
 							[/* text */ 't', ` Any attempt to modify the resulting buffer
    will cause a `],
-							[/* reference */ 'r', `java.nio.ReadOnlyBufferException`],
+							[/* reference */ 'r', `java.nio.ReadOnlyBufferException`, `ReadOnlyBufferException`],
 							[/* text */ 't', ` to be thrown.
    (`],
-							[/* reference */ 'r', `.FileChannel.MapMode#READ_ONLY`],
+							[/* reference */ 'r', `java.nio.channels.FileChannel.MapMode#READ_ONLY`, `MapMode.READ_ONLY`],
 							[/* text */ 't', `) `]
 						]]
 					]],
@@ -736,7 +736,7 @@ DocsCollector.collect('java.nio.channels.FileChannel', [
 							[/* text */ 't', ` Changes made to the resulting buffer will
    eventually be propagated to the file; they may or may not be made
    visible to other programs that have mapped the same file.  (`],
-							[/* reference */ 'r', `.FileChannel.MapMode#READ_WRITE`],
+							[/* reference */ 'r', `java.nio.channels.FileChannel.MapMode#READ_WRITE`, `MapMode.READ_WRITE`],
 							[/* text */ 't', `) `]
 						]]
 					]],
@@ -747,7 +747,7 @@ DocsCollector.collect('java.nio.channels.FileChannel', [
    be propagated to the file and will not be visible to other programs
    that have mapped the same file; instead, they will cause private
    copies of the modified portions of the buffer to be created.  (`],
-							[/* reference */ 'r', `.FileChannel.MapMode#PRIVATE`],
+							[/* reference */ 'r', `java.nio.channels.FileChannel.MapMode#PRIVATE`, `MapMode.PRIVATE`],
 							[/* text */ 't', `) `]
 						]]
 					]]
@@ -763,7 +763,7 @@ DocsCollector.collect('java.nio.channels.FileChannel', [
  `],
 				[/* block */ 'b', [
 					[/* text */ 't', ` The `],
-					[/* reference */ 'r', `java.nio.MappedByteBuffer`],
+					[/* reference */ 'r', `java.nio.MappedByteBuffer`, `mapped byte buffer`],
 					[/* text */ 't', `
  returned by this method will have a position of zero and a limit and
  capacity of `],
@@ -803,13 +803,13 @@ DocsCollector.collect('java.nio.channels.FileChannel', [
 			[/* parameters */
 				[/* parameter */ 'mode', [/* parameter description */
 					[/* text */ 't', `One of the constants `],
-					[/* reference */ 'r', `.FileChannel.MapMode#READ_ONLY`],
+					[/* reference */ 'r', `java.nio.channels.FileChannel.MapMode#READ_ONLY`, `READ_ONLY`],
 					[/* text */ 't', `, `],
-					[/* reference */ 'r', `.FileChannel.MapMode#READ_WRITE`],
+					[/* reference */ 'r', `java.nio.channels.FileChannel.MapMode#READ_WRITE`, `READ_WRITE`],
 					[/* text */ 't', `, or `],
-					[/* reference */ 'r', `.FileChannel.MapMode#PRIVATE`],
+					[/* reference */ 'r', `java.nio.channels.FileChannel.MapMode#PRIVATE`, `PRIVATE`],
 					[/* text */ 't', ` defined in the `],
-					[/* reference */ 'r', `java.nio.channels.FileChannel.MapMode`],
+					[/* reference */ 'r', `java.nio.channels.FileChannel.MapMode`, `FileChannel.MapMode`],
 					[/* text */ 't', ` class, according to
          whether the file is to be mapped read-only, read/write, or
          privately (copy-on-write), respectively, or an implementation
@@ -822,7 +822,7 @@ DocsCollector.collect('java.nio.channels.FileChannel', [
 				[/* parameter */ 'size', [/* parameter description */
 					[/* text */ 't', `The size of the region to be mapped; must be non-negative and
          no greater than `],
-					[/* reference */ 'r', `java.nio.Integer#MAX_VALUE`]
+					[/* reference */ 'r', `java.lang.Integer#MAX_VALUE`, `Integer.MAX_VALUE`]
 				]]
 			],
 			[/* throws */
@@ -830,7 +830,7 @@ DocsCollector.collect('java.nio.channels.FileChannel', [
 					[/* text */ 't', `If the `],
 					[/* inline code block */ 'i', `mode`],
 					[/* text */ 't', ` is `],
-					[/* reference */ 'r', `.FileChannel.MapMode#READ_ONLY`],
+					[/* reference */ 'r', `java.nio.channels.FileChannel.MapMode#READ_ONLY`, `READ_ONLY`],
 					[/* text */ 't', ` or
          an implementation specific map mode requiring read access
          but this channel was not opened for reading`]
@@ -839,10 +839,10 @@ DocsCollector.collect('java.nio.channels.FileChannel', [
 					[/* text */ 't', `If the `],
 					[/* inline code block */ 'i', `mode`],
 					[/* text */ 't', ` is `],
-					[/* reference */ 'r', `.FileChannel.MapMode#READ_WRITE`],
+					[/* reference */ 'r', `java.nio.channels.FileChannel.MapMode#READ_WRITE`, `READ_WRITE`],
 					[/* text */ 't', `.
          `],
-					[/* reference */ 'r', `.FileChannel.MapMode#PRIVATE`],
+					[/* reference */ 'r', `java.nio.channels.FileChannel.MapMode#PRIVATE`, `PRIVATE`],
 					[/* text */ 't', ` or an implementation specific
          map mode requiring write access but this channel was not
          opened for both reading and writing`]
@@ -890,7 +890,7 @@ DocsCollector.collect('java.nio.channels.FileChannel', [
 					[/* text */ 't', ` Bytes are read starting at this channel's current file position, and
  then the file position is updated with the number of bytes actually
  read.  Otherwise this method behaves exactly as specified in the `],
-					[/* reference */ 'r', `java.nio.channels.ScatteringByteChannel`],
+					[/* reference */ 'r', `java.nio.channels.ScatteringByteChannel`, `ScatteringByteChannel`],
 					[/* text */ 't', ` interface.  `]
 				]]
 			],
@@ -1138,7 +1138,7 @@ DocsCollector.collect('java.nio.channels.FileChannel', [
  to accommodate the written bytes, and then the file position is updated
  with the number of bytes actually written.  Otherwise this method
  behaves exactly as specified in the `],
-					[/* reference */ 'r', `java.nio.channels.GatheringByteChannel`],
+					[/* reference */ 'r', `java.nio.channels.GatheringByteChannel`, `GatheringByteChannel`],
 					[/* text */ 't', `
  interface.  `]
 				]]
@@ -1231,12 +1231,12 @@ DocsCollector.collect('java.nio.channels.FileChannel', [
  this channel's file via the methods defined in this class.  It may or
  may not force changes that were made by modifying the content of a
  `],
-					[/* reference */ 'r', `java.nio.MappedByteBuffer`],
+					[/* reference */ 'r', `java.nio.MappedByteBuffer`, `mapped byte buffer`],
 					[/* text */ 't', ` obtained by
  invoking the `],
 					[/* reference */ 'r', `#map(java.nio.channels.FileChannel.MapMode,long,long)`, `map`],
 					[/* text */ 't', ` method.  Invoking the `],
-					[/* reference */ 'r', `java.MappedByteBuffer#force()`],
+					[/* reference */ 'r', `java.nio.MappedByteBuffer#force()`, `force`],
 					[/* text */ 't', ` method of the mapped byte buffer will
  force changes made to the buffer's content to be written.  `]
 				]]
@@ -1363,7 +1363,7 @@ DocsCollector.collect('java.nio.channels.FileChannel', [
 					[/* text */ 't', ` Bytes are read starting at this channel's current file position, and
  then the file position is updated with the number of bytes actually
  read.  Otherwise this method behaves exactly as specified in the `],
-					[/* reference */ 'r', `java.nio.channels.ScatteringByteChannel`],
+					[/* reference */ 'r', `java.nio.channels.ScatteringByteChannel`, `ScatteringByteChannel`],
 					[/* text */ 't', ` interface.  `]
 				]]
 			],
@@ -1409,7 +1409,7 @@ DocsCollector.collect('java.nio.channels.FileChannel', [
  to accommodate the written bytes, and then the file position is updated
  with the number of bytes actually written.  Otherwise this method
  behaves exactly as specified in the `],
-					[/* reference */ 'r', `java.nio.channels.GatheringByteChannel`],
+					[/* reference */ 'r', `java.nio.channels.GatheringByteChannel`, `GatheringByteChannel`],
 					[/* text */ 't', `
  interface.  `]
 				]]
@@ -1484,7 +1484,7 @@ DocsCollector.collect('java.nio.channels.FileChannel', [
 				]],
 				[/* throw */ 'java.nio.file.FileAlreadyExistsException', [/* throw description */
 					[/* text */ 't', `If a file of that name already exists and the `],
-					[/* reference */ 'r', `java.StandardOpenOption#CREATE_NEW`],
+					[/* reference */ 'r', `java.nio.file.StandardOpenOption#CREATE_NEW`, `CREATE_NEW`],
 					[/* text */ 't', ` option is specified
           and the file is being opened for writing
           `],
@@ -1497,10 +1497,10 @@ DocsCollector.collect('java.nio.channels.FileChannel', [
 					[/* text */ 't', `If a security manager is installed and it denies an
           unspecified permission required by the implementation.
           In the case of the default provider, the `],
-					[/* reference */ 'r', `java.nio.SecurityManager#checkRead(java.lang.String)`],
+					[/* reference */ 'r', `java.lang.SecurityManager#checkRead(java.lang.String)`, `SecurityManager.checkRead(String)`],
 					[/* text */ 't', ` method is invoked to check
           read access if the file is opened for reading. The `],
-					[/* reference */ 'r', `java.nio.SecurityManager#checkWrite(java.lang.String)`],
+					[/* reference */ 'r', `java.lang.SecurityManager#checkWrite(java.lang.String)`, `SecurityManager.checkWrite(String)`],
 					[/* text */ 't', ` method is invoked to check
           write access if the file is opened for writing`]
 				]]
@@ -1519,12 +1519,12 @@ DocsCollector.collect('java.nio.channels.FileChannel', [
 					[/* inline code block */ 'i', `options`],
 					[/* text */ 't', ` parameter determines how the file is opened.
  The `],
-					[/* reference */ 'r', `java.StandardOpenOption#READ`],
+					[/* reference */ 'r', `java.nio.file.StandardOpenOption#READ`, `READ`],
 					[/* text */ 't', ` and `],
-					[/* reference */ 'r', `java.StandardOpenOption#WRITE`],
+					[/* reference */ 'r', `java.nio.file.StandardOpenOption#WRITE`, `WRITE`],
 					[/* text */ 't', ` options determine if the file should be opened for reading and/or
  writing. If neither option (or the `],
-					[/* reference */ 'r', `java.StandardOpenOption#APPEND`],
+					[/* reference */ 'r', `java.nio.file.StandardOpenOption#APPEND`, `APPEND`],
 					[/* text */ 't', `
  option) is contained in the array then the file is opened for reading.
  By default reading or writing commences at the beginning of the file.
@@ -1557,7 +1557,7 @@ DocsCollector.collect('java.nio.channels.FileChannel', [
 						[/* table row */ 'tr', [
 							[/* table header cell */ 'thc', [
 								[/* text */ 't', ` `],
-								[/* reference */ 'r', `java.StandardOpenOption#APPEND`],
+								[/* reference */ 'r', `java.nio.file.StandardOpenOption#APPEND`, `APPEND`],
 								[/* text */ 't', ` `]
 							]],
 							[/* table cell */ 'tbc', [
@@ -1579,7 +1579,7 @@ DocsCollector.collect('java.nio.channels.FileChannel', [
 						[/* table row */ 'tr', [
 							[/* table header cell */ 'thc', [
 								[/* text */ 't', ` `],
-								[/* reference */ 'r', `java.StandardOpenOption#TRUNCATE_EXISTING`],
+								[/* reference */ 'r', `java.nio.file.StandardOpenOption#TRUNCATE_EXISTING`, `TRUNCATE_EXISTING`],
 								[/* text */ 't', ` `]
 							]],
 							[/* table cell */ 'tbc', [
@@ -1591,7 +1591,7 @@ DocsCollector.collect('java.nio.channels.FileChannel', [
 						[/* table row */ 'tr', [
 							[/* table header cell */ 'thc', [
 								[/* text */ 't', ` `],
-								[/* reference */ 'r', `java.StandardOpenOption#CREATE_NEW`],
+								[/* reference */ 'r', `java.nio.file.StandardOpenOption#CREATE_NEW`, `CREATE_NEW`],
 								[/* text */ 't', ` `]
 							]],
 							[/* table cell */ 'tbc', [
@@ -1605,7 +1605,7 @@ DocsCollector.collect('java.nio.channels.FileChannel', [
 						[/* table row */ 'tr', [
 							[/* table header cell */ 'thc', [
 								[/* text */ 't', ` `],
-								[/* reference */ 'r', `java.StandardOpenOption#CREATE`],
+								[/* reference */ 'r', `java.nio.file.StandardOpenOption#CREATE`, `CREATE`],
 								[/* text */ 't', ` `]
 							]],
 							[/* table cell */ 'tbc', [
@@ -1622,7 +1622,7 @@ DocsCollector.collect('java.nio.channels.FileChannel', [
 						[/* table row */ 'tr', [
 							[/* table header cell */ 'thc', [
 								[/* text */ 't', ` `],
-								[/* reference */ 'r', `java.StandardOpenOption#DELETE_ON_CLOSE`],
+								[/* reference */ 'r', `java.nio.file.StandardOpenOption#DELETE_ON_CLOSE`, `DELETE_ON_CLOSE`],
 								[/* text */ 't', ` `]
 							]],
 							[/* table cell */ 'tbc', [
@@ -1631,7 +1631,7 @@ DocsCollector.collect('java.nio.channels.FileChannel', [
 								[/* text */ 't', `best effort`],
 								[/* text */ 't', ` attempt to delete the file when closed by
    the `],
-								[/* reference */ 'r', `.AbstractInterruptibleChannel#close()`],
+								[/* reference */ 'r', `java.nio.channels.spi.AbstractInterruptibleChannel#close()`, `close`],
 								[/* text */ 't', ` method. If the `],
 								[/* inline code block */ 'i', `close`],
 								[/* text */ 't', ` method is not
@@ -1643,7 +1643,7 @@ DocsCollector.collect('java.nio.channels.FileChannel', [
 						]],
 						[/* table row */ 'tr', [
 							[/* table header cell */ 'thc', [
-								[/* reference */ 'r', `java.StandardOpenOption#SPARSE`],
+								[/* reference */ 'r', `java.nio.file.StandardOpenOption#SPARSE`, `SPARSE`],
 								[/* text */ 't', ` `]
 							]],
 							[/* table cell */ 'tbc', [
@@ -1657,7 +1657,7 @@ DocsCollector.collect('java.nio.channels.FileChannel', [
 						[/* table row */ 'tr', [
 							[/* table header cell */ 'thc', [
 								[/* text */ 't', ` `],
-								[/* reference */ 'r', `java.StandardOpenOption#SYNC`],
+								[/* reference */ 'r', `java.nio.file.StandardOpenOption#SYNC`, `SYNC`],
 								[/* text */ 't', ` `]
 							]],
 							[/* table cell */ 'tbc', [
@@ -1670,7 +1670,7 @@ DocsCollector.collect('java.nio.channels.FileChannel', [
 						[/* table row */ 'tr', [
 							[/* table header cell */ 'thc', [
 								[/* text */ 't', ` `],
-								[/* reference */ 'r', `java.StandardOpenOption#DSYNC`],
+								[/* reference */ 'r', `java.nio.file.StandardOpenOption#DSYNC`, `DSYNC`],
 								[/* text */ 't', ` `]
 							]],
 							[/* table cell */ 'tbc', [
@@ -1690,14 +1690,14 @@ DocsCollector.collect('java.nio.channels.FileChannel', [
 					[/* text */ 't', ` The `],
 					[/* inline code block */ 'i', `attrs`],
 					[/* text */ 't', ` parameter is an optional array of file `],
-					[/* reference */ 'r', `java.nio.file.attribute.FileAttribute`],
+					[/* reference */ 'r', `java.nio.file.attribute.FileAttribute`, `file-attributes`],
 					[/* text */ 't', ` to set atomically when creating the file.
 
  `]
 				]],
 				[/* block */ 'b', [
 					[/* text */ 't', ` The new channel is created by invoking the `],
-					[/* reference */ 'r', `java.spi.FileSystemProvider#newFileChannel(java.nio.file.Path,java.util.Set,java.nio.file.attribute.FileAttribute...)`],
+					[/* reference */ 'r', `java.nio.file.spi.FileSystemProvider#newFileChannel(java.nio.file.Path,java.util.Set,java.nio.file.attribute.FileAttribute...)`, `newFileChannel`],
 					[/* text */ 't', ` method on the
  provider that created the `],
 					[/* inline code block */ 'i', `Path`],
@@ -1730,7 +1730,7 @@ DocsCollector.collect('java.nio.channels.FileChannel', [
 				]],
 				[/* throw */ 'java.nio.file.FileAlreadyExistsException', [/* throw description */
 					[/* text */ 't', `If a file of that name already exists and the `],
-					[/* reference */ 'r', `java.StandardOpenOption#CREATE_NEW`],
+					[/* reference */ 'r', `java.nio.file.StandardOpenOption#CREATE_NEW`, `CREATE_NEW`],
 					[/* text */ 't', ` option is specified
           and the file is being opened for writing
           `],
@@ -1743,10 +1743,10 @@ DocsCollector.collect('java.nio.channels.FileChannel', [
 					[/* text */ 't', `If a security manager is installed and it denies an
           unspecified permission required by the implementation.
           In the case of the default provider, the `],
-					[/* reference */ 'r', `java.nio.SecurityManager#checkRead(java.lang.String)`],
+					[/* reference */ 'r', `java.lang.SecurityManager#checkRead(java.lang.String)`, `SecurityManager.checkRead(String)`],
 					[/* text */ 't', ` method is invoked to check
           read access if the file is opened for reading. The `],
-					[/* reference */ 'r', `java.nio.SecurityManager#checkWrite(java.lang.String)`],
+					[/* reference */ 'r', `java.lang.SecurityManager#checkWrite(java.lang.String)`, `SecurityManager.checkWrite(String)`],
 					[/* text */ 't', ` method is invoked to check
           write access if the file is opened for writing`]
 				]]

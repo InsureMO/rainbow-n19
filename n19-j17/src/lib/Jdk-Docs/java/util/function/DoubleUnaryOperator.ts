@@ -10,7 +10,7 @@ DocsCollector.collect('java.util.function.DoubleUnaryOperator', [
 		[/* inline code block */ 'i', `double`],
 		[/* text */ 't', `-valued result.  This is the primitive type specialization of
  `],
-		[/* reference */ 'r', `java.util.function.UnaryOperator`],
+		[/* reference */ 'r', `java.util.function.UnaryOperator`, `UnaryOperator`],
 		[/* text */ 't', ` for `],
 		[/* inline code block */ 'i', `double`],
 		[/* text */ 't', `.
@@ -18,7 +18,7 @@ DocsCollector.collect('java.util.function.DoubleUnaryOperator', [
  `],
 		[/* block */ 'b', [
 			[/* text */ 't', `This is a `],
-			[/* reference */ 'r', `.package-summary`],
+			[/* text */ 't', `functional interface`],
 			[/* text */ 't', `
  whose functional method is `],
 			[/* reference */ 'r', `#applyAsDouble(double)`, `applyAsDouble(double)`],

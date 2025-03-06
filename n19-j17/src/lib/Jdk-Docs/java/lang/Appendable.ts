@@ -10,14 +10,14 @@ DocsCollector.collect('java.lang.Appendable', [
 		[/* inline code block */ 'i', `Appendable`],
 		[/* text */ 't', ` interface must be implemented by any class whose
  instances are intended to receive formatted output from a `],
-		[/* reference */ 'r', `java.util.Formatter`],
+		[/* reference */ 'r', `java.util.Formatter`, `Formatter`],
 		[/* text */ 't', `.
 
  `],
 		[/* block */ 'b', [
 			[/* text */ 't', ` The characters to be appended should be valid Unicode characters as
  described in `],
-			[/* reference */ 'r', `.Character#unicode`],
+			[/* reference */ 'r', `java.lang.Character#unicode`, `Unicode Character Representation`],
 			[/* text */ 't', `.  Note that supplementary characters may be composed of
  multiple 16-bit `],
 			[/* inline code block */ 'i', `char`],
@@ -73,7 +73,7 @@ DocsCollector.collect('java.lang.Appendable', [
  instance, if `],
 					[/* inline code block */ 'i', `csq`],
 					[/* text */ 't', ` is a `],
-					[/* reference */ 'r', `java.nio.CharBuffer`],
+					[/* reference */ 'r', `java.nio.CharBuffer`, `CharBuffer`],
 					[/* text */ 't', ` then
  the subsequence to append is defined by the buffer's position and limit.`]
 				]]

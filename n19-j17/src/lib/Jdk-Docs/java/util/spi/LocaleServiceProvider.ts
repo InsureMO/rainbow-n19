@@ -55,7 +55,7 @@ DocsCollector.collect('java.util.spi.LocaleServiceProvider', [
 			[/* text */ 't', `
  For example, an implementation of the
  `],
-			[/* reference */ 'r', `java.text.spi.DateFormatProvider`],
+			[/* reference */ 'r', `java.text.spi.DateFormatProvider`, `DateFormatProvider`],
 			[/* text */ 't', ` class should
  take the form of a jar file which contains the file:
  `]
@@ -97,7 +97,7 @@ DocsCollector.collect('java.util.spi.LocaleServiceProvider', [
  supports the requested locale. If such a provider is found, its other
  methods are called to obtain the requested object or name.  When checking
  whether a locale is supported, the `],
-			[/* reference */ 'r', `java.Locale#def_extensions`],
+			[/* reference */ 'r', `java.util.Locale#def_extensions`, `locale's extensions`],
 			[/* text */ 't', ` are ignored by default. (If locale's extensions should
  also be checked, the `],
 			[/* inline code block */ 'i', `isSupportedLocale`],
@@ -110,7 +110,7 @@ DocsCollector.collect('java.util.spi.LocaleServiceProvider', [
 			[/* inline code block */ 'i', `ResourceBundle`],
 			[/* text */ 't', ` by default (see
  `],
-			[/* reference */ 'r', `java.ResourceBundle.Control#getCandidateLocales(java.lang.String,java.util.Locale)`],
+			[/* reference */ 'r', `java.util.ResourceBundle.Control#getCandidateLocales(java.lang.String,java.util.Locale)`, `getCandidateLocales`],
 			[/* text */ 't', `
  for the details).  Even if a locale is resolved from the candidate list,
  methods that return requested objects or names are invoked with the original
@@ -207,7 +207,7 @@ DocsCollector.collect('java.util.spi.LocaleServiceProvider', [
 				[/* throw */ 'java.lang.SecurityException', [/* throw description */
 					[/* text */ 't', `If a security manager has been installed and it denies
           `],
-					[/* reference */ 'r', `java.lang.RuntimePermission`]
+					[/* reference */ 'r', `java.lang.RuntimePermission`, `RuntimePermission("localeServiceProvider")`]
 				]]
 			]
 		]]
@@ -250,7 +250,7 @@ DocsCollector.collect('java.util.spi.LocaleServiceProvider', [
 				[/* inline code block */ 'i', `locale`],
 				[/* text */ 't', ` may contain
  `],
-				[/* reference */ 'r', `java.Locale#def_extensions`],
+				[/* reference */ 'r', `java.util.Locale#def_extensions`, `extensions`],
 				[/* text */ 't', ` that should be
  taken into account for the support determination.
 

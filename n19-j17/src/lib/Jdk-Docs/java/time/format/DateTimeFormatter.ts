@@ -34,7 +34,7 @@ DocsCollector.collect('java.time.format.DateTimeFormatter', [
 			[/* text */ 't', `
  More complex formatters are provided by
  `],
-			[/* reference */ 'r', `java.time.format.DateTimeFormatterBuilder`],
+			[/* reference */ 'r', `java.time.format.DateTimeFormatterBuilder`, `DateTimeFormatterBuilder`],
 			[/* text */ 't', `.
 
  `]
@@ -101,7 +101,7 @@ DocsCollector.collect('java.time.format.DateTimeFormatter', [
 			[/* reference */ 'r', `#withDecimalStyle(java.time.format.DecimalStyle)`, `withDecimalStyle`],
 			[/* text */ 't', ` method returns a new formatter that
  overrides the `],
-			[/* reference */ 'r', `java.time.format.DecimalStyle`],
+			[/* reference */ 'r', `java.time.format.DecimalStyle`, `DecimalStyle`],
 			[/* text */ 't', `. The DecimalStyle symbols are used for
  formatting and parsing.
  `]
@@ -109,7 +109,7 @@ DocsCollector.collect('java.time.format.DateTimeFormatter', [
 		[/* block */ 'b', [
 			[/* text */ 't', `
  Some applications may need to use the older `],
-			[/* reference */ 'r', `java.text.Format`],
+			[/* reference */ 'r', `java.text.Format`, `java.text.Format`],
 			[/* text */ 't', `
  class for formatting. The `],
 			[/* reference */ 'r', `#toFormat()`, `toFormat()`],
@@ -989,13 +989,13 @@ DocsCollector.collect('java.time.format.DateTimeFormatter', [
 			[/* text */ 't', `: The text style is determined based on the number of pattern
  letters used. Less than 4 pattern letters will use the
  `],
-			[/* reference */ 'r', `.TextStyle#SHORT`],
+			[/* reference */ 'r', `java.time.format.TextStyle#SHORT`, `short form`],
 			[/* text */ 't', `. Exactly 4 pattern letters will use the
  `],
-			[/* reference */ 'r', `.TextStyle#FULL`],
+			[/* reference */ 'r', `java.time.format.TextStyle#FULL`, `full form`],
 			[/* text */ 't', `. Exactly 5 pattern letters will use the
  `],
-			[/* reference */ 'r', `.TextStyle#NARROW`],
+			[/* reference */ 'r', `java.time.format.TextStyle#NARROW`, `narrow form`],
 			[/* text */ 't', `.
  Pattern letters 'L', 'c', and 'q' specify the stand-alone form of the text styles.
  `]
@@ -1008,17 +1008,17 @@ DocsCollector.collect('java.time.format.DateTimeFormatter', [
 			[/* text */ 't', `: The count of letters determines the minimum field width below
  which padding is used. If the count of letters is two, then a
  `],
-			[/* reference */ 'r', `.DateTimeFormatterBuilder#appendValueReduced(java.time.temporal.TemporalField,int,int,int)`],
+			[/* reference */ 'r', `java.time.format.DateTimeFormatterBuilder#appendValueReduced(java.time.temporal.TemporalField,int,int,int)`, `reduced`],
 			[/* text */ 't', ` two digit form is
  used. For printing, this outputs the rightmost two digits. For parsing, this
  will parse using the base value of 2000, resulting in a year within the range
  2000 to 2099 inclusive. If the count of letters is less than four (but not
  two), then the sign is only output for negative years as per
  `],
-			[/* reference */ 'r', `.SignStyle#NORMAL`],
+			[/* reference */ 'r', `java.time.format.SignStyle#NORMAL`, `SignStyle.NORMAL`],
 			[/* text */ 't', `. Otherwise, the sign is output if the pad width is
  exceeded, as per `],
-			[/* reference */ 'r', `.SignStyle#EXCEEDS_PAD`],
+			[/* reference */ 'r', `java.time.format.SignStyle#EXCEEDS_PAD`, `SignStyle.EXCEEDS_PAD`],
 			[/* text */ 't', `.
  `]
 		]],
@@ -1076,12 +1076,12 @@ DocsCollector.collect('java.time.format.DateTimeFormatter', [
 			[/* text */ 't', `: With a non-zero offset, this formats the localized offset
  based on the number of pattern letters. One letter outputs the
  `],
-			[/* reference */ 'r', `.TextStyle#SHORT`],
+			[/* reference */ 'r', `java.time.format.TextStyle#SHORT`, `short`],
 			[/* text */ 't', ` form of the localized offset, which is
  localized offset text, such as 'GMT', with hour without leading zero, optional
  2-digit minute and second if non-zero, and colon, for example 'GMT+8'. Four
  letters outputs the `],
-			[/* reference */ 'r', `.TextStyle#FULL`],
+			[/* reference */ 'r', `java.time.format.TextStyle#FULL`, `full`],
 			[/* text */ 't', ` form, which is localized
  offset text, such as 'GMT, with 2-digit hour and minute field, optional second
  field if non-zero, and colon, for example 'GMT+08:00'. If the offset is zero,
@@ -1097,7 +1097,7 @@ DocsCollector.collect('java.time.format.DateTimeFormatter', [
  letters. One, two or three letters outputs the hour and minute, without a
  colon, such as '+0130'. The output will be '+0000' when the offset is zero.
  Four letters outputs the `],
-			[/* reference */ 'r', `.TextStyle#FULL`],
+			[/* reference */ 'r', `java.time.format.TextStyle#FULL`, `full`],
 			[/* text */ 't', ` form of localized
  offset, equivalent to four letters of Offset-O. The output will be the
  corresponding localized offset text if the offset is zero. Five
@@ -1112,10 +1112,10 @@ DocsCollector.collect('java.time.format.DateTimeFormatter', [
 			[/* text */ 't', `Optional section`],
 			[/* text */ 't', `: The optional section markers work exactly like
  calling `],
-			[/* reference */ 'r', `.DateTimeFormatterBuilder#optionalStart()`],
+			[/* reference */ 'r', `java.time.format.DateTimeFormatterBuilder#optionalStart()`, `DateTimeFormatterBuilder.optionalStart()`],
 			[/* text */ 't', ` and
  `],
-			[/* reference */ 'r', `.DateTimeFormatterBuilder#optionalEnd()`],
+			[/* reference */ 'r', `java.time.format.DateTimeFormatterBuilder#optionalEnd()`, `DateTimeFormatterBuilder.optionalEnd()`],
 			[/* text */ 't', `.
  `]
 		]],
@@ -1125,7 +1125,7 @@ DocsCollector.collect('java.time.format.DateTimeFormatter', [
  padded with spaces. The pad width is determined by the number of pattern
  letters. This is the same as calling
  `],
-			[/* reference */ 'r', `.DateTimeFormatterBuilder#padNext(int)`],
+			[/* reference */ 'r', `java.time.format.DateTimeFormatterBuilder#padNext(int)`, `DateTimeFormatterBuilder.padNext(int)`],
 			[/* text */ 't', `.
  `]
 		]],
@@ -1174,7 +1174,7 @@ DocsCollector.collect('java.time.format.DateTimeFormatter', [
 		[/* block */ 'b', [
 			[/* text */ 't', `
  The `],
-			[/* reference */ 'r', `enum class in java.time.format.ResolverStyle`],
+			[/* reference */ 'r', `enum class in java.time.format.ResolverStyle`, `ResolverStyle`],
 			[/* text */ 't', ` is an enum that offers three different approaches,
  strict, smart and lenient. The smart option is the default.
  It can be set using `],
@@ -1215,7 +1215,7 @@ DocsCollector.collect('java.time.format.DateTimeFormatter', [
 				[/* inline code block */ 'i', `ChronoField`],
 				[/* text */ 't', ` date fields are resolved.
  This is achieved using `],
-				[/* reference */ 'r', `java.Chronology#resolveDate(java.util.Map,java.time.format.ResolverStyle)`],
+				[/* reference */ 'r', `java.time.chrono.Chronology#resolveDate(java.util.Map,java.time.format.ResolverStyle)`, `Chronology.resolveDate(Map, ResolverStyle)`],
 				[/* text */ 't', `.
  Documentation about field resolution is located in the implementation
  of `],
@@ -1228,7 +1228,7 @@ DocsCollector.collect('java.time.format.DateTimeFormatter', [
 				[/* inline code block */ 'i', `ChronoField`],
 				[/* text */ 't', ` time fields are resolved.
  This is documented on `],
-				[/* reference */ 'r', `enum class in java.time.temporal.ChronoField`],
+				[/* reference */ 'r', `enum class in java.time.temporal.ChronoField`, `ChronoField`],
 				[/* text */ 't', ` and is the same for all chronologies.
  `]
 			]],
@@ -1237,7 +1237,7 @@ DocsCollector.collect('java.time.format.DateTimeFormatter', [
 				[/* inline code block */ 'i', `ChronoField`],
 				[/* text */ 't', ` are processed.
  This is achieved using `],
-				[/* reference */ 'r', `java.TemporalField#resolve(java.util.Map,java.time.temporal.TemporalAccessor,java.time.format.ResolverStyle)`],
+				[/* reference */ 'r', `java.time.temporal.TemporalField#resolve(java.util.Map,java.time.temporal.TemporalAccessor,java.time.format.ResolverStyle)`, `TemporalField.resolve(Map, TemporalAccessor, ResolverStyle)`],
 				[/* text */ 't', `.
  Documentation about field resolution is located in the implementation
  of `],
@@ -1280,7 +1280,7 @@ DocsCollector.collect('java.time.format.DateTimeFormatter', [
 				[/* text */ 't', ` was not parsed,
  then the resolver ensures that milli, micro and nano second values are
  available to meet the contract of `],
-				[/* reference */ 'r', `enum class in java.time.temporal.ChronoField`],
+				[/* reference */ 'r', `enum class in java.time.temporal.ChronoField`, `ChronoField`],
 				[/* text */ 't', `.
  These will be set to zero if missing.
  `]
@@ -1288,7 +1288,7 @@ DocsCollector.collect('java.time.format.DateTimeFormatter', [
 			[/* block */ 'b', [
 				[/* text */ 't', `If both date and time were parsed and either an offset or zone is present,
  the field `],
-				[/* reference */ 'r', `java.ChronoField#INSTANT_SECONDS`],
+				[/* reference */ 'r', `java.time.temporal.ChronoField#INSTANT_SECONDS`, `ChronoField.INSTANT_SECONDS`],
 				[/* text */ 't', ` is created.
  If an offset was parsed then the offset will be combined with the
  `],
@@ -1301,7 +1301,7 @@ DocsCollector.collect('java.time.format.DateTimeFormatter', [
 				[/* inline code block */ 'i', `LocalDateTime`],
 				[/* text */ 't', ` to form the instant using the rules
  of `],
-				[/* reference */ 'r', `java.ChronoLocalDateTime#atZone(java.time.ZoneId)`],
+				[/* reference */ 'r', `java.time.chrono.ChronoLocalDateTime#atZone(java.time.ZoneId)`, `ChronoLocalDateTime.atZone(ZoneId)`],
 				[/* text */ 't', `.
  `]
 			]]
@@ -1322,21 +1322,21 @@ DocsCollector.collect('java.time.format.DateTimeFormatter', [
 				[/* list */ 'l', [
 					[/* block */ 'b', [
 						[/* text */ 't', `Four digits for the `],
-						[/* reference */ 'r', `java.ChronoField#YEAR`],
+						[/* reference */ 'r', `java.time.temporal.ChronoField#YEAR`, `year`],
 						[/* text */ 't', `.
   Only years in the range 0000 to 9999 are supported.
  `]
 					]],
 					[/* block */ 'b', [
 						[/* text */ 't', `Two digits for the `],
-						[/* reference */ 'r', `java.ChronoField#MONTH_OF_YEAR`],
+						[/* reference */ 'r', `java.time.temporal.ChronoField#MONTH_OF_YEAR`, `month-of-year`],
 						[/* text */ 't', `.
   This is pre-padded by zero to ensure two digits.
  `]
 					]],
 					[/* block */ 'b', [
 						[/* text */ 't', `Two digits for the `],
-						[/* reference */ 'r', `java.ChronoField#DAY_OF_MONTH`],
+						[/* reference */ 'r', `java.time.temporal.ChronoField#DAY_OF_MONTH`, `day-of-month`],
 						[/* text */ 't', `.
   This is pre-padded by zero to ensure two digits.
  `]
@@ -1345,7 +1345,7 @@ DocsCollector.collect('java.time.format.DateTimeFormatter', [
  `],
 					[/* block */ 'b', [
 						[/* text */ 't', `The `],
-						[/* reference */ 'r', `java.ZoneOffset#getId()`],
+						[/* reference */ 'r', `java.time.ZoneOffset#getId()`, `offset ID`],
 						[/* text */ 't', ` without colons. If the offset has
   seconds then they will be handled even though this is not part of the ISO-8601 standard.
   The offset parsing is lenient, which allows the minutes and seconds to be optional.
@@ -1367,7 +1367,7 @@ DocsCollector.collect('java.time.format.DateTimeFormatter', [
  The returned formatter has a chronology of ISO set to ensure dates in
  other calendar systems are correctly converted.
  It has no override zone and uses the `],
-					[/* reference */ 'r', `.ResolverStyle#STRICT`],
+					[/* reference */ 'r', `java.time.format.ResolverStyle#STRICT`, `STRICT`],
 					[/* text */ 't', ` resolver style.`]
 				]]
 			],
@@ -1391,7 +1391,7 @@ DocsCollector.collect('java.time.format.DateTimeFormatter', [
  `],
 					[/* block */ 'b', [
 						[/* text */ 't', `The `],
-						[/* reference */ 'r', `java.ZoneOffset#getId()`],
+						[/* reference */ 'r', `java.time.ZoneOffset#getId()`, `offset ID`],
 						[/* text */ 't', `. If the offset has seconds then
   they will be handled even though this is not part of the ISO-8601 standard.
   Parsing is case insensitive.
@@ -1412,7 +1412,7 @@ DocsCollector.collect('java.time.format.DateTimeFormatter', [
  The returned formatter has a chronology of ISO set to ensure dates in
  other calendar systems are correctly converted.
  It has no override zone and uses the `],
-					[/* reference */ 'r', `.ResolverStyle#STRICT`],
+					[/* reference */ 'r', `java.time.format.ResolverStyle#STRICT`, `STRICT`],
 					[/* text */ 't', ` resolver style.`]
 				]]
 			],
@@ -1438,7 +1438,7 @@ DocsCollector.collect('java.time.format.DateTimeFormatter', [
  `],
 					[/* block */ 'b', [
 						[/* text */ 't', `The `],
-						[/* reference */ 'r', `java.ZoneOffset#getId()`],
+						[/* reference */ 'r', `java.time.ZoneOffset#getId()`, `offset ID`],
 						[/* text */ 't', `. If the offset has seconds then
   they will be handled even though this is not part of the ISO-8601 standard.
  `]
@@ -1453,7 +1453,7 @@ DocsCollector.collect('java.time.format.DateTimeFormatter', [
  `],
 					[/* block */ 'b', [
 						[/* text */ 't', `The `],
-						[/* reference */ 'r', `java.ZoneId#getId()`],
+						[/* reference */ 'r', `java.time.ZoneId#getId()`, `zone ID`],
 						[/* text */ 't', `. This is not part of the ISO-8601 standard.
   Parsing is case sensitive.
  `]
@@ -1475,7 +1475,7 @@ DocsCollector.collect('java.time.format.DateTimeFormatter', [
  The returned formatter has a chronology of ISO set to ensure dates in
  other calendar systems are correctly converted.
  It has no override zone and uses the `],
-					[/* reference */ 'r', `.ResolverStyle#STRICT`],
+					[/* reference */ 'r', `java.time.format.ResolverStyle#STRICT`, `STRICT`],
 					[/* text */ 't', ` resolver style.`]
 				]]
 			],
@@ -1493,7 +1493,7 @@ DocsCollector.collect('java.time.format.DateTimeFormatter', [
  The second-of-minute is always output.
  The nano-of-second outputs zero, three, six or nine digits as necessary.
  When parsing, the behaviour of `],
-					[/* reference */ 'r', `.DateTimeFormatterBuilder#appendOffsetId()`],
+					[/* reference */ 'r', `java.time.format.DateTimeFormatterBuilder#appendOffsetId()`, `DateTimeFormatterBuilder.appendOffsetId()`],
 					[/* text */ 't', `
  will be used to parse the offset, converting the instant to UTC as necessary.
  The time to at least the seconds field is required.
@@ -1505,7 +1505,7 @@ DocsCollector.collect('java.time.format.DateTimeFormatter', [
 					[/* text */ 't', `
  This is a special case formatter intended to allow a human readable form
  of an `],
-					[/* reference */ 'r', `java.time.Instant`],
+					[/* reference */ 'r', `java.time.Instant`, `Instant`],
 					[/* text */ 't', `. The `],
 					[/* inline code block */ 'i', `Instant`],
 					[/* text */ 't', ` class is designed to
@@ -1531,9 +1531,9 @@ DocsCollector.collect('java.time.format.DateTimeFormatter', [
 						[/* text */ 't', `ISO_OFFSET_DATE_TIME`],
 						[/* text */ 't', ` where the instant is converted from
   `],
-						[/* reference */ 'r', `java.ChronoField#INSTANT_SECONDS`],
+						[/* reference */ 'r', `java.time.temporal.ChronoField#INSTANT_SECONDS`, `ChronoField.INSTANT_SECONDS`],
 						[/* text */ 't', ` and `],
-						[/* reference */ 'r', `java.ChronoField#NANO_OF_SECOND`],
+						[/* reference */ 'r', `java.time.temporal.ChronoField#NANO_OF_SECOND`, `ChronoField.NANO_OF_SECOND`],
 						[/* text */ 't', `
   using the `],
 						[/* inline code block */ 'i', `UTC`],
@@ -1546,7 +1546,7 @@ DocsCollector.collect('java.time.format.DateTimeFormatter', [
 					[/* text */ 't', `
  The returned formatter has no override chronology or zone.
  It uses the `],
-					[/* reference */ 'r', `.ResolverStyle#STRICT`],
+					[/* reference */ 'r', `java.time.format.ResolverStyle#STRICT`, `STRICT`],
 					[/* text */ 't', ` resolver style.`]
 				]]
 			],
@@ -1564,7 +1564,7 @@ DocsCollector.collect('java.time.format.DateTimeFormatter', [
 				[/* list */ 'l', [
 					[/* block */ 'b', [
 						[/* text */ 't', `Four digits or more for the `],
-						[/* reference */ 'r', `java.ChronoField#YEAR`],
+						[/* reference */ 'r', `java.time.temporal.ChronoField#YEAR`, `year`],
 						[/* text */ 't', `.
  Years in the range 0000 to 9999 will be pre-padded by zero to ensure four digits.
  Years outside that range will have a prefixed positive or negative symbol.
@@ -1574,7 +1574,7 @@ DocsCollector.collect('java.time.format.DateTimeFormatter', [
  `],
 					[/* block */ 'b', [
 						[/* text */ 't', `Two digits for the `],
-						[/* reference */ 'r', `java.ChronoField#MONTH_OF_YEAR`],
+						[/* reference */ 'r', `java.time.temporal.ChronoField#MONTH_OF_YEAR`, `month-of-year`],
 						[/* text */ 't', `.
   This is pre-padded by zero to ensure two digits.
  `]
@@ -1583,7 +1583,7 @@ DocsCollector.collect('java.time.format.DateTimeFormatter', [
  `],
 					[/* block */ 'b', [
 						[/* text */ 't', `Two digits for the `],
-						[/* reference */ 'r', `java.ChronoField#DAY_OF_MONTH`],
+						[/* reference */ 'r', `java.time.temporal.ChronoField#DAY_OF_MONTH`, `day-of-month`],
 						[/* text */ 't', `.
   This is pre-padded by zero to ensure two digits.
  `]
@@ -1595,7 +1595,7 @@ DocsCollector.collect('java.time.format.DateTimeFormatter', [
  The returned formatter has a chronology of ISO set to ensure dates in
  other calendar systems are correctly converted.
  It has no override zone and uses the `],
-					[/* reference */ 'r', `.ResolverStyle#STRICT`],
+					[/* reference */ 'r', `java.time.format.ResolverStyle#STRICT`, `STRICT`],
 					[/* text */ 't', ` resolver style.`]
 				]]
 			],
@@ -1628,7 +1628,7 @@ DocsCollector.collect('java.time.format.DateTimeFormatter', [
  The returned formatter has a chronology of ISO set to ensure dates in
  other calendar systems are correctly converted.
  It has no override zone and uses the `],
-					[/* reference */ 'r', `.ResolverStyle#STRICT`],
+					[/* reference */ 'r', `java.time.format.ResolverStyle#STRICT`, `STRICT`],
 					[/* text */ 't', ` resolver style.`]
 				]]
 			],
@@ -1646,7 +1646,7 @@ DocsCollector.collect('java.time.format.DateTimeFormatter', [
 				[/* list */ 'l', [
 					[/* block */ 'b', [
 						[/* text */ 't', `Two digits for the `],
-						[/* reference */ 'r', `java.ChronoField#HOUR_OF_DAY`],
+						[/* reference */ 'r', `java.time.temporal.ChronoField#HOUR_OF_DAY`, `hour-of-day`],
 						[/* text */ 't', `.
   This is pre-padded by zero to ensure two digits.
  `]
@@ -1655,7 +1655,7 @@ DocsCollector.collect('java.time.format.DateTimeFormatter', [
  `],
 					[/* block */ 'b', [
 						[/* text */ 't', `Two digits for the `],
-						[/* reference */ 'r', `java.ChronoField#MINUTE_OF_HOUR`],
+						[/* reference */ 'r', `java.time.temporal.ChronoField#MINUTE_OF_HOUR`, `minute-of-hour`],
 						[/* text */ 't', `.
   This is pre-padded by zero to ensure two digits.
  `]
@@ -1666,7 +1666,7 @@ DocsCollector.collect('java.time.format.DateTimeFormatter', [
  `],
 					[/* block */ 'b', [
 						[/* text */ 't', `Two digits for the `],
-						[/* reference */ 'r', `java.ChronoField#SECOND_OF_MINUTE`],
+						[/* reference */ 'r', `java.time.temporal.ChronoField#SECOND_OF_MINUTE`, `second-of-minute`],
 						[/* text */ 't', `.
   This is pre-padded by zero to ensure two digits.
  `]
@@ -1677,7 +1677,7 @@ DocsCollector.collect('java.time.format.DateTimeFormatter', [
  `],
 					[/* block */ 'b', [
 						[/* text */ 't', `One to nine digits for the `],
-						[/* reference */ 'r', `java.ChronoField#NANO_OF_SECOND`],
+						[/* reference */ 'r', `java.time.temporal.ChronoField#NANO_OF_SECOND`, `nano-of-second`],
 						[/* text */ 't', `.
   As many digits will be output as required.
  `]
@@ -1688,7 +1688,7 @@ DocsCollector.collect('java.time.format.DateTimeFormatter', [
 					[/* text */ 't', `
  The returned formatter has no override chronology or zone.
  It uses the `],
-					[/* reference */ 'r', `.ResolverStyle#STRICT`],
+					[/* reference */ 'r', `java.time.format.ResolverStyle#STRICT`, `STRICT`],
 					[/* text */ 't', ` resolver style.`]
 				]]
 			],
@@ -1710,7 +1710,7 @@ DocsCollector.collect('java.time.format.DateTimeFormatter', [
 					]],
 					[/* block */ 'b', [
 						[/* text */ 't', `The `],
-						[/* reference */ 'r', `java.ZoneOffset#getId()`],
+						[/* reference */ 'r', `java.time.ZoneOffset#getId()`, `offset ID`],
 						[/* text */ 't', `. If the offset has seconds then
   they will be handled even though this is not part of the ISO-8601 standard.
   Parsing is case insensitive.
@@ -1723,7 +1723,7 @@ DocsCollector.collect('java.time.format.DateTimeFormatter', [
  The returned formatter has a chronology of ISO set to ensure dates in
  other calendar systems are correctly converted.
  It has no override zone and uses the `],
-					[/* reference */ 'r', `.ResolverStyle#STRICT`],
+					[/* reference */ 'r', `java.time.format.ResolverStyle#STRICT`, `STRICT`],
 					[/* text */ 't', ` resolver style.`]
 				]]
 			],
@@ -1745,7 +1745,7 @@ DocsCollector.collect('java.time.format.DateTimeFormatter', [
 					]],
 					[/* block */ 'b', [
 						[/* text */ 't', `The `],
-						[/* reference */ 'r', `java.ZoneOffset#getId()`],
+						[/* reference */ 'r', `java.time.ZoneOffset#getId()`, `offset ID`],
 						[/* text */ 't', `. If the offset has seconds then
   they will be handled even though this is not part of the ISO-8601 standard.
   The offset parsing is lenient, which allows the minutes and seconds to be optional.
@@ -1759,7 +1759,7 @@ DocsCollector.collect('java.time.format.DateTimeFormatter', [
  The returned formatter has a chronology of ISO set to ensure dates in
  other calendar systems are correctly converted.
  It has no override zone and uses the `],
-					[/* reference */ 'r', `.ResolverStyle#STRICT`],
+					[/* reference */ 'r', `java.time.format.ResolverStyle#STRICT`, `STRICT`],
 					[/* text */ 't', ` resolver style.`]
 				]]
 			],
@@ -1781,7 +1781,7 @@ DocsCollector.collect('java.time.format.DateTimeFormatter', [
 					]],
 					[/* block */ 'b', [
 						[/* text */ 't', `The `],
-						[/* reference */ 'r', `java.ZoneOffset#getId()`],
+						[/* reference */ 'r', `java.time.ZoneOffset#getId()`, `offset ID`],
 						[/* text */ 't', `. If the offset has seconds then
   they will be handled even though this is not part of the ISO-8601 standard.
   Parsing is case insensitive.
@@ -1793,7 +1793,7 @@ DocsCollector.collect('java.time.format.DateTimeFormatter', [
 					[/* text */ 't', `
  The returned formatter has no override chronology or zone.
  It uses the `],
-					[/* reference */ 'r', `.ResolverStyle#STRICT`],
+					[/* reference */ 'r', `java.time.format.ResolverStyle#STRICT`, `STRICT`],
 					[/* text */ 't', ` resolver style.`]
 				]]
 			],
@@ -1811,7 +1811,7 @@ DocsCollector.collect('java.time.format.DateTimeFormatter', [
 				[/* list */ 'l', [
 					[/* block */ 'b', [
 						[/* text */ 't', `Four digits or more for the `],
-						[/* reference */ 'r', `java.ChronoField#YEAR`],
+						[/* reference */ 'r', `java.time.temporal.ChronoField#YEAR`, `year`],
 						[/* text */ 't', `.
  Years in the range 0000 to 9999 will be pre-padded by zero to ensure four digits.
  Years outside that range will have a prefixed positive or negative symbol.
@@ -1821,7 +1821,7 @@ DocsCollector.collect('java.time.format.DateTimeFormatter', [
  `],
 					[/* block */ 'b', [
 						[/* text */ 't', `Three digits for the `],
-						[/* reference */ 'r', `java.ChronoField#DAY_OF_YEAR`],
+						[/* reference */ 'r', `java.time.temporal.ChronoField#DAY_OF_YEAR`, `day-of-year`],
 						[/* text */ 't', `.
   This is pre-padded by zero to ensure three digits.
  `]
@@ -1830,7 +1830,7 @@ DocsCollector.collect('java.time.format.DateTimeFormatter', [
  `],
 					[/* block */ 'b', [
 						[/* text */ 't', `The `],
-						[/* reference */ 'r', `java.ZoneOffset#getId()`],
+						[/* reference */ 'r', `java.time.ZoneOffset#getId()`, `offset ID`],
 						[/* text */ 't', `. If the offset has seconds then
   they will be handled even though this is not part of the ISO-8601 standard.
   Parsing is case insensitive.
@@ -1851,7 +1851,7 @@ DocsCollector.collect('java.time.format.DateTimeFormatter', [
  The returned formatter has a chronology of ISO set to ensure dates in
  other calendar systems are correctly converted.
  It has no override zone and uses the `],
-					[/* reference */ 'r', `.ResolverStyle#STRICT`],
+					[/* reference */ 'r', `java.time.format.ResolverStyle#STRICT`, `STRICT`],
 					[/* text */ 't', ` resolver style.`]
 				]]
 			],
@@ -1875,7 +1875,7 @@ DocsCollector.collect('java.time.format.DateTimeFormatter', [
  `],
 					[/* block */ 'b', [
 						[/* text */ 't', `The `],
-						[/* reference */ 'r', `java.ZoneOffset#getId()`],
+						[/* reference */ 'r', `java.time.ZoneOffset#getId()`, `offset ID`],
 						[/* text */ 't', `. If the offset has seconds then
   they will be handled even though this is not part of the ISO-8601 standard.
   Parsing is case insensitive.
@@ -1895,7 +1895,7 @@ DocsCollector.collect('java.time.format.DateTimeFormatter', [
 					[/* text */ 't', `
  The returned formatter has no override chronology or zone.
  It uses the `],
-					[/* reference */ 'r', `.ResolverStyle#STRICT`],
+					[/* reference */ 'r', `java.time.format.ResolverStyle#STRICT`, `STRICT`],
 					[/* text */ 't', ` resolver style.`]
 				]]
 			],
@@ -1913,7 +1913,7 @@ DocsCollector.collect('java.time.format.DateTimeFormatter', [
 				[/* list */ 'l', [
 					[/* block */ 'b', [
 						[/* text */ 't', `Four digits or more for the `],
-						[/* reference */ 'r', `java.IsoFields#WEEK_BASED_YEAR`],
+						[/* reference */ 'r', `java.time.temporal.IsoFields#WEEK_BASED_YEAR`, `week-based-year`],
 						[/* text */ 't', `.
  Years in the range 0000 to 9999 will be pre-padded by zero to ensure four digits.
  Years outside that range will have a prefixed positive or negative symbol.
@@ -1925,7 +1925,7 @@ DocsCollector.collect('java.time.format.DateTimeFormatter', [
  `],
 					[/* block */ 'b', [
 						[/* text */ 't', `Two digits for the `],
-						[/* reference */ 'r', `java.IsoFields#WEEK_OF_WEEK_BASED_YEAR`],
+						[/* reference */ 'r', `java.time.temporal.IsoFields#WEEK_OF_WEEK_BASED_YEAR`, `week-of-week-based-year`],
 						[/* text */ 't', `.
   This is pre-padded by zero to ensure three digits.
  `]
@@ -1934,7 +1934,7 @@ DocsCollector.collect('java.time.format.DateTimeFormatter', [
  `],
 					[/* block */ 'b', [
 						[/* text */ 't', `One digit for the `],
-						[/* reference */ 'r', `java.ChronoField#DAY_OF_WEEK`],
+						[/* reference */ 'r', `java.time.temporal.ChronoField#DAY_OF_WEEK`, `day-of-week`],
 						[/* text */ 't', `.
   The value run from Monday (1) to Sunday (7).
  `]
@@ -1943,7 +1943,7 @@ DocsCollector.collect('java.time.format.DateTimeFormatter', [
  `],
 					[/* block */ 'b', [
 						[/* text */ 't', `The `],
-						[/* reference */ 'r', `java.ZoneOffset#getId()`],
+						[/* reference */ 'r', `java.time.ZoneOffset#getId()`, `offset ID`],
 						[/* text */ 't', `. If the offset has seconds then
   they will be handled even though this is not part of the ISO-8601 standard.
   Parsing is case insensitive.
@@ -1964,7 +1964,7 @@ DocsCollector.collect('java.time.format.DateTimeFormatter', [
  The returned formatter has a chronology of ISO set to ensure dates in
  other calendar systems are correctly converted.
  It has no override zone and uses the `],
-					[/* reference */ 'r', `.ResolverStyle#STRICT`],
+					[/* reference */ 'r', `java.time.format.ResolverStyle#STRICT`, `STRICT`],
 					[/* text */ 't', ` resolver style.`]
 				]]
 			],
@@ -1996,7 +1996,7 @@ DocsCollector.collect('java.time.format.DateTimeFormatter', [
  `],
 					[/* block */ 'b', [
 						[/* text */ 't', `The `],
-						[/* reference */ 'r', `java.ZoneId#getId()`],
+						[/* reference */ 'r', `java.time.ZoneId#getId()`, `zone ID`],
 						[/* text */ 't', `. This is not part of the ISO-8601 standard.
   Parsing is case sensitive.
  `]
@@ -2010,7 +2010,7 @@ DocsCollector.collect('java.time.format.DateTimeFormatter', [
  The returned formatter has a chronology of ISO set to ensure dates in
  other calendar systems are correctly converted.
  It has no override zone and uses the `],
-					[/* reference */ 'r', `.ResolverStyle#STRICT`],
+					[/* reference */ 'r', `java.time.format.ResolverStyle#STRICT`, `STRICT`],
 					[/* text */ 't', ` resolver style.`]
 				]]
 			],
@@ -2035,7 +2035,7 @@ DocsCollector.collect('java.time.format.DateTimeFormatter', [
  `],
 					[/* block */ 'b', [
 						[/* text */ 't', `Three letter `],
-						[/* reference */ 'r', `java.ChronoField#DAY_OF_WEEK`],
+						[/* reference */ 'r', `java.time.temporal.ChronoField#DAY_OF_WEEK`, `day-of-week`],
 						[/* text */ 't', ` in English.
  `]
 					]],
@@ -2045,7 +2045,7 @@ DocsCollector.collect('java.time.format.DateTimeFormatter', [
  `],
 					[/* block */ 'b', [
 						[/* text */ 't', `One or two digits for the `],
-						[/* reference */ 'r', `java.ChronoField#DAY_OF_MONTH`],
+						[/* reference */ 'r', `java.time.temporal.ChronoField#DAY_OF_MONTH`, `day-of-month`],
 						[/* text */ 't', `.
  `]
 					]],
@@ -2053,7 +2053,7 @@ DocsCollector.collect('java.time.format.DateTimeFormatter', [
  `],
 					[/* block */ 'b', [
 						[/* text */ 't', `Three letter `],
-						[/* reference */ 'r', `java.ChronoField#MONTH_OF_YEAR`],
+						[/* reference */ 'r', `java.time.temporal.ChronoField#MONTH_OF_YEAR`, `month-of-year`],
 						[/* text */ 't', ` in English.
  `]
 					]],
@@ -2061,7 +2061,7 @@ DocsCollector.collect('java.time.format.DateTimeFormatter', [
  `],
 					[/* block */ 'b', [
 						[/* text */ 't', `Four digits for the `],
-						[/* reference */ 'r', `java.ChronoField#YEAR`],
+						[/* reference */ 'r', `java.time.temporal.ChronoField#YEAR`, `year`],
 						[/* text */ 't', `.
   Only years in the range 0000 to 9999 are supported.
  `]
@@ -2070,7 +2070,7 @@ DocsCollector.collect('java.time.format.DateTimeFormatter', [
  `],
 					[/* block */ 'b', [
 						[/* text */ 't', `Two digits for the `],
-						[/* reference */ 'r', `java.ChronoField#HOUR_OF_DAY`],
+						[/* reference */ 'r', `java.time.temporal.ChronoField#HOUR_OF_DAY`, `hour-of-day`],
 						[/* text */ 't', `.
   This is pre-padded by zero to ensure two digits.
  `]
@@ -2079,7 +2079,7 @@ DocsCollector.collect('java.time.format.DateTimeFormatter', [
  `],
 					[/* block */ 'b', [
 						[/* text */ 't', `Two digits for the `],
-						[/* reference */ 'r', `java.ChronoField#MINUTE_OF_HOUR`],
+						[/* reference */ 'r', `java.time.temporal.ChronoField#MINUTE_OF_HOUR`, `minute-of-hour`],
 						[/* text */ 't', `.
   This is pre-padded by zero to ensure two digits.
  `]
@@ -2090,7 +2090,7 @@ DocsCollector.collect('java.time.format.DateTimeFormatter', [
  `],
 					[/* block */ 'b', [
 						[/* text */ 't', `Two digits for the `],
-						[/* reference */ 'r', `java.ChronoField#SECOND_OF_MINUTE`],
+						[/* reference */ 'r', `java.time.temporal.ChronoField#SECOND_OF_MINUTE`, `second-of-minute`],
 						[/* text */ 't', `.
   This is pre-padded by zero to ensure two digits.
  `]
@@ -2099,7 +2099,7 @@ DocsCollector.collect('java.time.format.DateTimeFormatter', [
  `],
 					[/* block */ 'b', [
 						[/* text */ 't', `The `],
-						[/* reference */ 'r', `java.ZoneOffset#getId()`],
+						[/* reference */ 'r', `java.time.ZoneOffset#getId()`, `offset ID`],
 						[/* text */ 't', ` without colons or seconds.
   An offset of zero uses "GMT". North American zone names and military zone names are not handled.
  `]
@@ -2114,7 +2114,7 @@ DocsCollector.collect('java.time.format.DateTimeFormatter', [
  The returned formatter has a chronology of ISO set to ensure dates in
  other calendar systems are correctly converted.
  It has no override zone and uses the `],
-					[/* reference */ 'r', `.ResolverStyle#SMART`],
+					[/* reference */ 'r', `java.time.format.ResolverStyle#SMART`, `SMART`],
 					[/* text */ 't', ` resolver style.`]
 				]]
 			],
@@ -2200,12 +2200,12 @@ DocsCollector.collect('java.time.format.DateTimeFormatter', [
 				[/* block */ 'b', [
 					[/* text */ 't', `
  The returned `],
-					[/* reference */ 'r', `java.text.Format`],
+					[/* reference */ 'r', `java.text.Format`, `Format`],
 					[/* text */ 't', ` instance will format any `],
-					[/* reference */ 'r', `java.time.temporal.TemporalAccessor`],
+					[/* reference */ 'r', `java.time.temporal.TemporalAccessor`, `TemporalAccessor`],
 					[/* text */ 't', `
  and parses to a resolved `],
-					[/* reference */ 'r', `java.time.temporal.TemporalAccessor`],
+					[/* reference */ 'r', `java.time.temporal.TemporalAccessor`, `TemporalAccessor`],
 					[/* text */ 't', `.
  `]
 				]],
@@ -2239,9 +2239,9 @@ DocsCollector.collect('java.time.format.DateTimeFormatter', [
 				[/* block */ 'b', [
 					[/* text */ 't', `
  The returned `],
-					[/* reference */ 'r', `java.text.Format`],
+					[/* reference */ 'r', `java.text.Format`, `Format`],
 					[/* text */ 't', ` instance will format any `],
-					[/* reference */ 'r', `java.time.temporal.TemporalAccessor`],
+					[/* reference */ 'r', `java.time.temporal.TemporalAccessor`, `TemporalAccessor`],
 					[/* text */ 't', `
  and parses to the type specified.
  The type must be one that is supported by `],
@@ -2305,7 +2305,7 @@ DocsCollector.collect('java.time.format.DateTimeFormatter', [
  "ca" (calendar), "nu" (numbering system), "rg" (region override), and/or
  "tz" (timezone)
  `],
-					[/* reference */ 'r', `java.time.Locale#def_locale_extension`],
+					[/* reference */ 'r', `java.util.Locale#def_locale_extension`, `Unicode extensions`],
 					[/* text */ 't', `,
  the chronology, numbering system and/or the zone are overridden. If both "ca"
  and "rg" are specified, the chronology from the "ca" extension supersedes the
@@ -2354,7 +2354,7 @@ DocsCollector.collect('java.time.format.DateTimeFormatter', [
  be converted to a date in the override chronology.
  Whether the temporal contains a date is determined by querying the
  `],
-					[/* reference */ 'r', `java.ChronoField#EPOCH_DAY`],
+					[/* reference */ 'r', `java.time.temporal.ChronoField#EPOCH_DAY`, `EPOCH_DAY`],
 					[/* text */ 't', ` field.
  Any time or zone will be retained unaltered unless overridden.
  `]
@@ -2376,7 +2376,7 @@ DocsCollector.collect('java.time.format.DateTimeFormatter', [
  When parsing, there are two distinct cases to consider.
  If a chronology has been parsed directly from the text, perhaps because
  `],
-					[/* reference */ 'r', `.DateTimeFormatterBuilder#appendChronologyId()`],
+					[/* reference */ 'r', `java.time.format.DateTimeFormatterBuilder#appendChronologyId()`, `DateTimeFormatterBuilder.appendChronologyId()`],
 					[/* text */ 't', ` was used, then
  this override chronology has no effect.
  If no zone has been parsed, then this override chronology will be used
@@ -2428,7 +2428,7 @@ DocsCollector.collect('java.time.format.DateTimeFormatter', [
 					[/* text */ 't', `
  The locale is stored as passed in, without further processing.
  If the locale has `],
-					[/* reference */ 'r', `java.time.Locale#def_locale_extension`],
+					[/* reference */ 'r', `java.util.Locale#def_locale_extension`, `Unicode extensions`],
 					[/* text */ 't', `, they may be used later in text
  processing. To set the chronology, time-zone and decimal style from
  unicode extensions, see `],
@@ -2470,10 +2470,10 @@ DocsCollector.collect('java.time.format.DateTimeFormatter', [
  be resolved. For example, if the formatter consists of year, month, day-of-month
  and day-of-year, then there are two ways to resolve a date.
  Calling this method with the arguments `],
-					[/* reference */ 'r', `java.ChronoField#YEAR`],
+					[/* reference */ 'r', `java.time.temporal.ChronoField#YEAR`, `YEAR`],
 					[/* text */ 't', ` and
  `],
-					[/* reference */ 'r', `java.ChronoField#DAY_OF_YEAR`],
+					[/* reference */ 'r', `java.time.temporal.ChronoField#DAY_OF_YEAR`, `DAY_OF_YEAR`],
 					[/* text */ 't', ` will ensure that the date is
  resolved using the year and day-of-year, effectively meaning that the month
  and day-of-month are ignored during the resolving phase.
@@ -2486,13 +2486,13 @@ DocsCollector.collect('java.time.format.DateTimeFormatter', [
  month, day-of-month and day-of-week, then there is only one way to resolve a
  date, but the parsed value for day-of-week will be cross-checked against the
  resolved date. Calling this method with the arguments `],
-					[/* reference */ 'r', `java.ChronoField#YEAR`],
+					[/* reference */ 'r', `java.time.temporal.ChronoField#YEAR`, `YEAR`],
 					[/* text */ 't', `,
  `],
-					[/* reference */ 'r', `java.ChronoField#MONTH_OF_YEAR`],
+					[/* reference */ 'r', `java.time.temporal.ChronoField#MONTH_OF_YEAR`, `MONTH_OF_YEAR`],
 					[/* text */ 't', ` and
  `],
-					[/* reference */ 'r', `java.ChronoField#DAY_OF_MONTH`],
+					[/* reference */ 'r', `java.time.temporal.ChronoField#DAY_OF_MONTH`, `DAY_OF_MONTH`],
 					[/* text */ 't', ` will ensure that the date is
  resolved correctly, but without any cross-check for the day-of-week.
  `]
@@ -2537,10 +2537,10 @@ DocsCollector.collect('java.time.format.DateTimeFormatter', [
  be resolved. For example, if the formatter consists of year, month, day-of-month
  and day-of-year, then there are two ways to resolve a date.
  Calling this method with the arguments `],
-					[/* reference */ 'r', `java.ChronoField#YEAR`],
+					[/* reference */ 'r', `java.time.temporal.ChronoField#YEAR`, `YEAR`],
 					[/* text */ 't', ` and
  `],
-					[/* reference */ 'r', `java.ChronoField#DAY_OF_YEAR`],
+					[/* reference */ 'r', `java.time.temporal.ChronoField#DAY_OF_YEAR`, `DAY_OF_YEAR`],
 					[/* text */ 't', ` will ensure that the date is
  resolved using the year and day-of-year, effectively meaning that the month
  and day-of-month are ignored during the resolving phase.
@@ -2553,13 +2553,13 @@ DocsCollector.collect('java.time.format.DateTimeFormatter', [
  month, day-of-month and day-of-week, then there is only one way to resolve a
  date, but the parsed value for day-of-week will be cross-checked against the
  resolved date. Calling this method with the arguments `],
-					[/* reference */ 'r', `java.ChronoField#YEAR`],
+					[/* reference */ 'r', `java.time.temporal.ChronoField#YEAR`, `YEAR`],
 					[/* text */ 't', `,
  `],
-					[/* reference */ 'r', `java.ChronoField#MONTH_OF_YEAR`],
+					[/* reference */ 'r', `java.time.temporal.ChronoField#MONTH_OF_YEAR`, `MONTH_OF_YEAR`],
 					[/* text */ 't', ` and
  `],
-					[/* reference */ 'r', `java.ChronoField#DAY_OF_MONTH`],
+					[/* reference */ 'r', `java.time.temporal.ChronoField#DAY_OF_MONTH`, `DAY_OF_MONTH`],
 					[/* text */ 't', ` will ensure that the date is
  resolved correctly, but without any cross-check for the day-of-week.
  `]
@@ -2592,7 +2592,7 @@ DocsCollector.collect('java.time.format.DateTimeFormatter', [
  This returns a formatter with similar state to this formatter but
  with the resolver style set. By default, a formatter has the
  `],
-					[/* reference */ 'r', `.ResolverStyle#SMART`],
+					[/* reference */ 'r', `java.time.format.ResolverStyle#SMART`, `SMART`],
 					[/* text */ 't', ` resolver style.
  `]
 				]],
@@ -2639,7 +2639,7 @@ DocsCollector.collect('java.time.format.DateTimeFormatter', [
  be converted to a zoned date-time using the override zone.
  Whether the temporal is an instant is determined by querying the
  `],
-					[/* reference */ 'r', `java.ChronoField#INSTANT_SECONDS`],
+					[/* reference */ 'r', `java.time.temporal.ChronoField#INSTANT_SECONDS`, `INSTANT_SECONDS`],
 					[/* text */ 't', ` field.
  If the input has a chronology then it will be retained unless overridden.
  If the input does not have a chronology, such as `],
@@ -2665,7 +2665,7 @@ DocsCollector.collect('java.time.format.DateTimeFormatter', [
  When parsing, there are two distinct cases to consider.
  If a zone has been parsed directly from the text, perhaps because
  `],
-					[/* reference */ 'r', `.DateTimeFormatterBuilder#appendZoneId()`],
+					[/* reference */ 'r', `java.time.format.DateTimeFormatterBuilder#appendZoneId()`, `DateTimeFormatterBuilder.appendZoneId()`],
 					[/* text */ 't', ` was used, then
  this override zone has no effect.
  If no zone has been parsed, then this override zone will be included in
@@ -2704,7 +2704,7 @@ DocsCollector.collect('java.time.format.DateTimeFormatter', [
  This returns the resolver style, used during the second phase of parsing
  when fields are resolved into dates and times.
  By default, a formatter has the `],
-					[/* reference */ 'r', `.ResolverStyle#SMART`],
+					[/* reference */ 'r', `java.time.format.ResolverStyle#SMART`, `SMART`],
 					[/* text */ 't', ` resolver style.
  See `],
 					[/* reference */ 'r', `#withResolverStyle(java.time.format.ResolverStyle)`, `withResolverStyle(ResolverStyle)`],
@@ -2788,7 +2788,7 @@ DocsCollector.collect('java.time.format.DateTimeFormatter', [
 					[/* inline code block */ 'i', `ParsePosition`],
 					[/* text */ 't', `. By contrast, this
  method will throw a `],
-					[/* reference */ 'r', `java.time.format.DateTimeParseException`],
+					[/* reference */ 'r', `java.time.format.DateTimeParseException`, `DateTimeParseException`],
 					[/* text */ 't', ` if an error occurs, with
  the exception containing the error index.
  This change in behavior is necessary due to the increased complexity of
@@ -3034,7 +3034,7 @@ DocsCollector.collect('java.time.format.DateTimeFormatter', [
 				[/* block */ 'b', [
 					[/* text */ 't', `
  This returns a singleton `],
-					[/* reference */ 'r', `java.time.temporal.TemporalQuery`],
+					[/* reference */ 'r', `java.time.temporal.TemporalQuery`, `query`],
 					[/* text */ 't', ` that provides
  access to additional information from the parse. The query always returns
  a non-null boolean, true if parsing saw a leap-second, false if not.
@@ -3047,7 +3047,7 @@ DocsCollector.collect('java.time.format.DateTimeFormatter', [
  local times in different time-zones. To avoid this potential ambiguity,
  the handling of leap-seconds is limited to
  `],
-					[/* reference */ 'r', `.DateTimeFormatterBuilder#appendInstant()`],
+					[/* reference */ 'r', `java.time.format.DateTimeFormatterBuilder#appendInstant()`, `DateTimeFormatterBuilder.appendInstant()`],
 					[/* text */ 't', `, as that method
  always parses the instant with the UTC zone offset.
  `]
@@ -3088,7 +3088,7 @@ DocsCollector.collect('java.time.format.DateTimeFormatter', [
 				[/* block */ 'b', [
 					[/* text */ 't', `
  This returns a singleton `],
-					[/* reference */ 'r', `java.time.temporal.TemporalQuery`],
+					[/* reference */ 'r', `java.time.temporal.TemporalQuery`, `query`],
 					[/* text */ 't', ` that provides
  access to additional information from the parse. The query always returns
  a non-null period, with a zero period returned instead of null.
@@ -3184,7 +3184,7 @@ DocsCollector.collect('java.time.format.DateTimeFormatter', [
 					[/* text */ 't', `
  The locale is determined from the formatter. The formatter returned directly by
  this method will use the `],
-					[/* reference */ 'r', `java.time.Locale#getDefault(java.util.Locale.Category)`],
+					[/* reference */ 'r', `java.util.Locale#getDefault(java.util.Locale.Category)`, `default FORMAT locale`],
 					[/* text */ 't', `.
  The locale can be controlled using `],
 					[/* reference */ 'r', `#withLocale(java.util.Locale)`, `withLocale(Locale)`],
@@ -3206,7 +3206,7 @@ DocsCollector.collect('java.time.format.DateTimeFormatter', [
  The returned formatter has a chronology of ISO set to ensure dates in
  other calendar systems are correctly converted.
  It has no override zone and uses the `],
-					[/* reference */ 'r', `.ResolverStyle#SMART`],
+					[/* reference */ 'r', `java.time.format.ResolverStyle#SMART`, `SMART`],
 					[/* text */ 't', ` resolver style.`]
 				]]
 			],
@@ -3232,7 +3232,7 @@ DocsCollector.collect('java.time.format.DateTimeFormatter', [
 					[/* text */ 't', `
  The locale is determined from the formatter. The formatter returned directly by
  this method will use the `],
-					[/* reference */ 'r', `java.time.Locale#getDefault(java.util.Locale.Category)`],
+					[/* reference */ 'r', `java.util.Locale#getDefault(java.util.Locale.Category)`, `default FORMAT locale`],
 					[/* text */ 't', `.
  The locale can be controlled using `],
 					[/* reference */ 'r', `#withLocale(java.util.Locale)`, `withLocale(Locale)`],
@@ -3254,7 +3254,7 @@ DocsCollector.collect('java.time.format.DateTimeFormatter', [
  The returned formatter has a chronology of ISO set to ensure dates in
  other calendar systems are correctly converted.
  It has no override zone and uses the `],
-					[/* reference */ 'r', `.ResolverStyle#SMART`],
+					[/* reference */ 'r', `java.time.format.ResolverStyle#SMART`, `SMART`],
 					[/* text */ 't', ` resolver style.
  The `],
 					[/* inline code block */ 'i', `FULL`],
@@ -3293,7 +3293,7 @@ DocsCollector.collect('java.time.format.DateTimeFormatter', [
 					[/* text */ 't', `
  The locale is determined from the formatter. The formatter returned directly by
  this method will use the `],
-					[/* reference */ 'r', `java.time.Locale#getDefault()`],
+					[/* reference */ 'r', `java.util.Locale#getDefault()`, `default FORMAT locale`],
 					[/* text */ 't', `.
  The locale can be controlled using `],
 					[/* reference */ 'r', `#withLocale(java.util.Locale)`, `withLocale(Locale)`],
@@ -3315,7 +3315,7 @@ DocsCollector.collect('java.time.format.DateTimeFormatter', [
  The returned formatter has a chronology of ISO set to ensure dates in
  other calendar systems are correctly converted.
  It has no override zone and uses the `],
-					[/* reference */ 'r', `.ResolverStyle#SMART`],
+					[/* reference */ 'r', `java.time.format.ResolverStyle#SMART`, `SMART`],
 					[/* text */ 't', ` resolver style.
  The `],
 					[/* inline code block */ 'i', `FULL`],
@@ -3357,7 +3357,7 @@ DocsCollector.collect('java.time.format.DateTimeFormatter', [
 					[/* text */ 't', `
  The locale is determined from the formatter. The formatter returned directly by
  this method will use the `],
-					[/* reference */ 'r', `java.time.Locale#getDefault(java.util.Locale.Category)`],
+					[/* reference */ 'r', `java.util.Locale#getDefault(java.util.Locale.Category)`, `default FORMAT locale`],
 					[/* text */ 't', `.
  The locale can be controlled using `],
 					[/* reference */ 'r', `#withLocale(java.util.Locale)`, `withLocale(Locale)`],
@@ -3379,7 +3379,7 @@ DocsCollector.collect('java.time.format.DateTimeFormatter', [
  The returned formatter has a chronology of ISO set to ensure dates in
  other calendar systems are correctly converted.
  It has no override zone and uses the `],
-					[/* reference */ 'r', `.ResolverStyle#SMART`],
+					[/* reference */ 'r', `java.time.format.ResolverStyle#SMART`, `SMART`],
 					[/* text */ 't', ` resolver style.
  The `],
 					[/* inline code block */ 'i', `FULL`],
@@ -3425,7 +3425,7 @@ DocsCollector.collect('java.time.format.DateTimeFormatter', [
 				[/* block */ 'b', [
 					[/* text */ 't', `
  The formatter will use the `],
-					[/* reference */ 'r', `java.time.Locale#getDefault(java.util.Locale.Category)`],
+					[/* reference */ 'r', `java.util.Locale#getDefault(java.util.Locale.Category)`, `default FORMAT locale`],
 					[/* text */ 't', `.
  This can be changed using `],
 					[/* reference */ 'r', `#withLocale(java.util.Locale)`, `withLocale(Locale)`],
@@ -3439,7 +3439,7 @@ DocsCollector.collect('java.time.format.DateTimeFormatter', [
 					[/* text */ 't', `
  The returned formatter has no override chronology or zone.
  It uses `],
-					[/* reference */ 'r', `.ResolverStyle#SMART`],
+					[/* reference */ 'r', `java.time.format.ResolverStyle#SMART`, `SMART`],
 					[/* text */ 't', ` resolver style.`]
 				]]
 			],
@@ -3485,7 +3485,7 @@ DocsCollector.collect('java.time.format.DateTimeFormatter', [
 					[/* text */ 't', `
  The returned formatter has no override chronology or zone.
  It uses `],
-					[/* reference */ 'r', `.ResolverStyle#SMART`],
+					[/* reference */ 'r', `java.time.format.ResolverStyle#SMART`, `SMART`],
 					[/* text */ 't', ` resolver style.`]
 				]]
 			],
@@ -3516,7 +3516,7 @@ DocsCollector.collect('java.time.format.DateTimeFormatter', [
 					[/* text */ 't', `
  This outputs the formatted date-time to the specified destination.
  `],
-					[/* reference */ 'r', `java.lang.Appendable`],
+					[/* reference */ 'r', `java.lang.Appendable`, `Appendable`],
 					[/* text */ 't', ` is a general purpose interface that is implemented by all
  key character output classes including `],
 					[/* inline code block */ 'i', `StringBuffer`],

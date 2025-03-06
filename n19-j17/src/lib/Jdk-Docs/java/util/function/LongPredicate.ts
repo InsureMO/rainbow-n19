@@ -10,13 +10,13 @@ DocsCollector.collect('java.util.function.LongPredicate', [
 		[/* inline code block */ 'i', `long`],
 		[/* text */ 't', `-consuming primitive type specialization of
  `],
-		[/* reference */ 'r', `java.util.function.Predicate`],
+		[/* reference */ 'r', `java.util.function.Predicate`, `Predicate`],
 		[/* text */ 't', `.
 
  `],
 		[/* block */ 'b', [
 			[/* text */ 't', `This is a `],
-			[/* reference */ 'r', `.package-summary`],
+			[/* text */ 't', `functional interface`],
 			[/* text */ 't', `
  whose functional method is `],
 			[/* reference */ 'r', `#test(long)`, `test(long)`],

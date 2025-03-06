@@ -9,11 +9,11 @@ DocsCollector.collect('java.io.FileNotFoundException', [
  `],
 		[/* block */ 'b', [
 			[/* text */ 't', ` This exception will be thrown by the `],
-			[/* reference */ 'r', `java.io.FileInputStream`],
+			[/* reference */ 'r', `java.io.FileInputStream`, `FileInputStream`],
 			[/* text */ 't', `, `],
-			[/* reference */ 'r', `java.io.FileOutputStream`],
+			[/* reference */ 'r', `java.io.FileOutputStream`, `FileOutputStream`],
 			[/* text */ 't', `, and `],
-			[/* reference */ 'r', `java.io.RandomAccessFile`],
+			[/* reference */ 'r', `java.io.RandomAccessFile`, `RandomAccessFile`],
 			[/* text */ 't', ` constructors when a file
  with the specified pathname does not exist.  It will also be thrown by these
  constructors if the file does exist but for some reason is inaccessible, for
@@ -44,7 +44,7 @@ DocsCollector.collect('java.io.FileNotFoundException', [
 				[/* text */ 't', ` can be
  retrieved later by the
  `],
-				[/* reference */ 'r', `java.Throwable#getMessage()`],
+				[/* reference */ 'r', `java.lang.Throwable#getMessage()`, `Throwable.getMessage()`],
 				[/* text */ 't', `
  method of class `],
 				[/* inline code block */ 'i', `java.lang.Throwable`],

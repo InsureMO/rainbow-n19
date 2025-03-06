@@ -8,13 +8,13 @@ DocsCollector.collect('java.nio.file.OpenOption', [
  `],
 		[/* block */ 'b', [
 			[/* text */ 't', ` Objects of this type are used by methods such as `],
-			[/* reference */ 'r', `.Files#newOutputStream(java.nio.file.Path,java.nio.file.OpenOption...)`],
+			[/* reference */ 'r', `java.nio.file.Files#newOutputStream(java.nio.file.Path,java.nio.file.OpenOption...)`, `newOutputStream`],
 			[/* text */ 't', `, `],
-			[/* reference */ 'r', `.Files#newByteChannel(java.nio.file.Path,java.util.Set,java.nio.file.attribute.FileAttribute...)`],
+			[/* reference */ 'r', `java.nio.file.Files#newByteChannel(java.nio.file.Path,java.util.Set,java.nio.file.attribute.FileAttribute...)`, `newByteChannel`],
 			[/* text */ 't', `, `],
-			[/* reference */ 'r', `java.FileChannel#open(java.nio.file.Path,java.util.Set,java.nio.file.attribute.FileAttribute...)`],
+			[/* reference */ 'r', `java.nio.channels.FileChannel#open(java.nio.file.Path,java.util.Set,java.nio.file.attribute.FileAttribute...)`, `FileChannel.open`],
 			[/* text */ 't', `, and `],
-			[/* reference */ 'r', `java.AsynchronousFileChannel#open(java.nio.file.Path,java.util.Set,java.util.concurrent.ExecutorService,java.nio.file.attribute.FileAttribute...)`],
+			[/* reference */ 'r', `java.nio.channels.AsynchronousFileChannel#open(java.nio.file.Path,java.util.Set,java.util.concurrent.ExecutorService,java.nio.file.attribute.FileAttribute...)`, `AsynchronousFileChannel.open`],
 			[/* text */ 't', `
  when opening or creating a file.
 
@@ -22,7 +22,7 @@ DocsCollector.collect('java.nio.file.OpenOption', [
 		]],
 		[/* block */ 'b', [
 			[/* text */ 't', ` The `],
-			[/* reference */ 'r', `enum class in java.nio.file.StandardOpenOption`],
+			[/* reference */ 'r', `enum class in java.nio.file.StandardOpenOption`, `StandardOpenOption`],
 			[/* text */ 't', ` enumeration type defines the
  `],
 			[/* text */ 't', `standard`],

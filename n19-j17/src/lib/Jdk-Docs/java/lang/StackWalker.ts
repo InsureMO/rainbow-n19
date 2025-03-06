@@ -11,7 +11,7 @@ DocsCollector.collect('java.lang.StackWalker', [
 			[/* reference */ 'r', `#walk(java.util.function.Function)`, `walk`],
 			[/* text */ 't', ` method opens a sequential stream
  of `],
-			[/* reference */ 'r', `java.lang.StackWalker.StackFrame`],
+			[/* reference */ 'r', `java.lang.StackWalker.StackFrame`, `StackFrame`],
 			[/* text */ 't', `s for the current thread and then applies
  the given function to walk the `],
 			[/* inline code block */ 'i', `StackFrame`],
@@ -33,23 +33,23 @@ DocsCollector.collect('java.lang.StackWalker', [
 		]],
 		[/* block */ 'b', [
 			[/* text */ 't', ` The `],
-			[/* reference */ 'r', `enum class in java.lang.StackWalker.Option`],
+			[/* reference */ 'r', `enum class in java.lang.StackWalker.Option`, `stack walking options`],
 			[/* text */ 't', ` of a
  `],
 			[/* inline code block */ 'i', `StackWalker`],
 			[/* text */ 't', ` determines the information of
  `],
-			[/* reference */ 'r', `java.lang.StackWalker.StackFrame`],
+			[/* reference */ 'r', `java.lang.StackWalker.StackFrame`, `StackFrame`],
 			[/* text */ 't', ` objects to be returned.
  By default, stack frames of the reflection API and implementation
  classes are `],
-			[/* reference */ 'r', `.StackWalker.Option#SHOW_HIDDEN_FRAMES`],
+			[/* reference */ 'r', `java.lang.StackWalker.Option#SHOW_HIDDEN_FRAMES`, `hidden`],
 			[/* text */ 't', `
  and `],
 			[/* inline code block */ 'i', `StackFrame`],
 			[/* text */ 't', `s have the class name and method name
  available but not the `],
-			[/* reference */ 'r', `.StackWalker.StackFrame#getDeclaringClass()`],
+			[/* reference */ 'r', `java.lang.StackWalker.StackFrame#getDeclaringClass()`, `Class reference`],
 			[/* text */ 't', `.
 
  `]
@@ -97,7 +97,7 @@ DocsCollector.collect('java.lang.StackWalker', [
 				[/* parameter */ 'function', [/* parameter description */
 					[/* text */ 't', `a function that takes a stream of
                  `],
-					[/* reference */ 'r', `java.lang.StackWalker.StackFrame`],
+					[/* reference */ 'r', `java.lang.StackWalker.StackFrame`, `stack frames`],
 					[/* text */ 't', ` and returns a result.`]
 				]]
 			],
@@ -105,7 +105,7 @@ DocsCollector.collect('java.lang.StackWalker', [
 			[/* return description */
 				[/* text */ 't', `the result of applying the function to the stream of
          `],
-				[/* reference */ 'r', `java.lang.StackWalker.StackFrame`],
+				[/* reference */ 'r', `java.lang.StackWalker.StackFrame`, `stack frame`],
 				[/* text */ 't', `.`]
 			]
 		]],
@@ -121,18 +121,18 @@ DocsCollector.collect('java.lang.StackWalker', [
  `],
 				[/* block */ 'b', [
 					[/* text */ 't', ` This method filters `],
-					[/* reference */ 'r', `.StackWalker.Option#SHOW_REFLECT_FRAMES`],
+					[/* reference */ 'r', `java.lang.StackWalker.Option#SHOW_REFLECT_FRAMES`, `reflection frames`],
 					[/* text */ 't', `, `],
-					[/* reference */ 'r', `java.lang.invoke.MethodHandle`],
+					[/* reference */ 'r', `java.lang.invoke.MethodHandle`, `MethodHandle`],
 					[/* text */ 't', `, and
  `],
-					[/* reference */ 'r', `.StackWalker.Option#SHOW_HIDDEN_FRAMES`],
+					[/* reference */ 'r', `java.lang.StackWalker.Option#SHOW_HIDDEN_FRAMES`, `hidden frames`],
 					[/* text */ 't', ` regardless of the
  `],
-					[/* reference */ 'r', `.StackWalker.Option#SHOW_REFLECT_FRAMES`],
+					[/* reference */ 'r', `java.lang.StackWalker.Option#SHOW_REFLECT_FRAMES`, `SHOW_REFLECT_FRAMES`],
 					[/* text */ 't', `
  and `],
-					[/* reference */ 'r', `.StackWalker.Option#SHOW_HIDDEN_FRAMES`],
+					[/* reference */ 'r', `java.lang.StackWalker.Option#SHOW_HIDDEN_FRAMES`, `SHOW_HIDDEN_FRAMES`],
 					[/* text */ 't', ` options
  this `],
 					[/* inline code block */ 'i', `StackWalker`],
@@ -157,7 +157,7 @@ DocsCollector.collect('java.lang.StackWalker', [
 					[/* inline code block */ 'i', `StackWalker`],
 					[/* text */ 't', ` is not configured with the
  `],
-					[/* reference */ 'r', `.StackWalker.Option#RETAIN_CLASS_REFERENCE`],
+					[/* reference */ 'r', `java.lang.StackWalker.Option#RETAIN_CLASS_REFERENCE`, `RETAIN_CLASS_REFERENCE`],
 					[/* text */ 't', ` option.`]
 				]]
 			],
@@ -168,7 +168,7 @@ DocsCollector.collect('java.lang.StackWalker', [
 					[/* inline code block */ 'i', `StackWalker`],
 					[/* text */ 't', `
          is not configured with `],
-					[/* reference */ 'r', `.StackWalker.Option#RETAIN_CLASS_REFERENCE`],
+					[/* reference */ 'r', `java.lang.StackWalker.Option#RETAIN_CLASS_REFERENCE`, `Option.RETAIN_CLASS_REFERENCE`],
 					[/* text */ 't', `.`]
 				]],
 				[/* throw */ 'java.lang.IllegalCallerException', [/* throw description */
@@ -196,10 +196,10 @@ DocsCollector.collect('java.lang.StackWalker', [
 					[/* inline code block */ 'i', `StackWalker`],
 					[/* text */ 't', ` is configured to skip all
  `],
-					[/* reference */ 'r', `.StackWalker.Option#SHOW_HIDDEN_FRAMES`],
+					[/* reference */ 'r', `java.lang.StackWalker.Option#SHOW_HIDDEN_FRAMES`, `hidden frames`],
 					[/* text */ 't', ` and
  no `],
-					[/* reference */ 'r', `.StackWalker.Option#RETAIN_CLASS_REFERENCE`],
+					[/* reference */ 'r', `java.lang.StackWalker.Option#RETAIN_CLASS_REFERENCE`, `class reference`],
 					[/* text */ 't', ` is retained.`]
 				]]
 			],
@@ -210,10 +210,10 @@ DocsCollector.collect('java.lang.StackWalker', [
 				[/* inline code block */ 'i', `StackWalker`],
 				[/* text */ 't', ` configured to skip all
  `],
-				[/* reference */ 'r', `.StackWalker.Option#SHOW_HIDDEN_FRAMES`],
+				[/* reference */ 'r', `java.lang.StackWalker.Option#SHOW_HIDDEN_FRAMES`, `hidden frames`],
 				[/* text */ 't', ` and
  no `],
-				[/* reference */ 'r', `.StackWalker.Option#RETAIN_CLASS_REFERENCE`],
+				[/* reference */ 'r', `java.lang.StackWalker.Option#RETAIN_CLASS_REFERENCE`, `class reference`],
 				[/* text */ 't', ` is retained.`]
 			]
 		]],
@@ -231,10 +231,10 @@ DocsCollector.collect('java.lang.StackWalker', [
 					[/* inline code block */ 'i', `option`],
 					[/* text */ 't', ` is
  `],
-					[/* reference */ 'r', `.StackWalker.Option#RETAIN_CLASS_REFERENCE`],
+					[/* reference */ 'r', `java.lang.StackWalker.Option#RETAIN_CLASS_REFERENCE`, `Option.RETAIN_CLASS_REFERENCE`],
 					[/* text */ 't', `,
  it calls its `],
-					[/* reference */ 'r', `.SecurityManager#checkPermission(java.security.Permission)`],
+					[/* reference */ 'r', `java.lang.SecurityManager#checkPermission(java.security.Permission)`, `checkPermission`],
 					[/* text */ 't', `
  method for `],
 					[/* inline code block */ 'i', `RuntimePermission("getStackWalkerWithClassReference")`],
@@ -244,7 +244,7 @@ DocsCollector.collect('java.lang.StackWalker', [
 			[/* parameters */
 				[/* parameter */ 'option', [/* parameter description */
 					[/* text */ 't', ``],
-					[/* reference */ 'r', `enum class in java.lang.StackWalker.Option`]
+					[/* reference */ 'r', `enum class in java.lang.StackWalker.Option`, `stack walking option`]
 				]]
 			],
 			[/* throws */
@@ -275,10 +275,10 @@ DocsCollector.collect('java.lang.StackWalker', [
 				[/* inline code block */ 'i', `StackWalker`],
 				[/* text */ 't', ` is configured to skip all
  `],
-				[/* reference */ 'r', `.StackWalker.Option#SHOW_HIDDEN_FRAMES`],
+				[/* reference */ 'r', `java.lang.StackWalker.Option#SHOW_HIDDEN_FRAMES`, `hidden frames`],
 				[/* text */ 't', ` and no
  `],
-				[/* reference */ 'r', `.StackWalker.Option#RETAIN_CLASS_REFERENCE`],
+				[/* reference */ 'r', `java.lang.StackWalker.Option#RETAIN_CLASS_REFERENCE`, `class reference`],
 				[/* text */ 't', ` is retained.
 
  `],
@@ -288,10 +288,10 @@ DocsCollector.collect('java.lang.StackWalker', [
 					[/* inline code block */ 'i', `options`],
 					[/* text */ 't', ` contains
  `],
-					[/* reference */ 'r', `.StackWalker.Option#RETAIN_CLASS_REFERENCE`],
+					[/* reference */ 'r', `java.lang.StackWalker.Option#RETAIN_CLASS_REFERENCE`, `Option.RETAIN_CLASS_REFERENCE`],
 					[/* text */ 't', `,
  it calls its `],
-					[/* reference */ 'r', `.SecurityManager#checkPermission(java.security.Permission)`],
+					[/* reference */ 'r', `java.lang.SecurityManager#checkPermission(java.security.Permission)`, `checkPermission`],
 					[/* text */ 't', `
  method for `],
 					[/* inline code block */ 'i', `RuntimePermission("getStackWalkerWithClassReference")`],
@@ -301,7 +301,7 @@ DocsCollector.collect('java.lang.StackWalker', [
 			[/* parameters */
 				[/* parameter */ 'options', [/* parameter description */
 					[/* text */ 't', ``],
-					[/* reference */ 'r', `enum class in java.lang.StackWalker.Option`]
+					[/* reference */ 'r', `enum class in java.lang.StackWalker.Option`, `stack walking option`]
 				]]
 			],
 			[/* throws */
@@ -332,10 +332,10 @@ DocsCollector.collect('java.lang.StackWalker', [
 				[/* inline code block */ 'i', `StackWalker`],
 				[/* text */ 't', ` is configured to skip all
  `],
-				[/* reference */ 'r', `.StackWalker.Option#SHOW_HIDDEN_FRAMES`],
+				[/* reference */ 'r', `java.lang.StackWalker.Option#SHOW_HIDDEN_FRAMES`, `hidden frames`],
 				[/* text */ 't', ` and no
  `],
-				[/* reference */ 'r', `.StackWalker.Option#RETAIN_CLASS_REFERENCE`],
+				[/* reference */ 'r', `java.lang.StackWalker.Option#RETAIN_CLASS_REFERENCE`, `class reference`],
 				[/* text */ 't', ` is retained.
 
  `],
@@ -345,10 +345,10 @@ DocsCollector.collect('java.lang.StackWalker', [
 					[/* inline code block */ 'i', `options`],
 					[/* text */ 't', ` contains
  `],
-					[/* reference */ 'r', `.StackWalker.Option#RETAIN_CLASS_REFERENCE`],
+					[/* reference */ 'r', `java.lang.StackWalker.Option#RETAIN_CLASS_REFERENCE`, `Option.RETAIN_CLASS_REFERENCE`],
 					[/* text */ 't', `,
  it calls its `],
-					[/* reference */ 'r', `.SecurityManager#checkPermission(java.security.Permission)`],
+					[/* reference */ 'r', `java.lang.SecurityManager#checkPermission(java.security.Permission)`, `checkPermission`],
 					[/* text */ 't', `
  method for `],
 					[/* inline code block */ 'i', `RuntimePermission("getStackWalkerWithClassReference")`],
@@ -372,7 +372,7 @@ DocsCollector.collect('java.lang.StackWalker', [
 			[/* parameters */
 				[/* parameter */ 'options', [/* parameter description */
 					[/* text */ 't', ``],
-					[/* reference */ 'r', `enum class in java.lang.StackWalker.Option`]
+					[/* reference */ 'r', `enum class in java.lang.StackWalker.Option`, `stack walking options`]
 				]],
 				[/* parameter */ 'estimateDepth', [/* parameter description */
 					[/* text */ 't', `Estimate number of stack frames to be traversed.`]

@@ -4,7 +4,7 @@ import {DocsCollector} from '../../../DocsCollector';
 DocsCollector.collect('java.util.concurrent.ConcurrentMap', [
 	[/* class description */
 		[/* text */ 't', `A `],
-		[/* reference */ 'r', `java.util.Map`],
+		[/* reference */ 'r', `java.util.Map`, `Map`],
 		[/* text */ 't', ` providing thread safety and atomicity guarantees.
 
  `],
@@ -13,15 +13,15 @@ DocsCollector.collect('java.util.concurrent.ConcurrentMap', [
  methods including `],
 			[/* reference */ 'r', `#putIfAbsent(K,V)`, `putIfAbsent(K, V)`],
 			[/* text */ 't', ` inherited from `],
-			[/* reference */ 'r', `java.util.Map`],
+			[/* reference */ 'r', `java.util.Map`, `Map`],
 			[/* text */ 't', `
  must be overridden by implementations of this interface. Similarly,
  implementations of the collections returned by methods `],
-			[/* reference */ 'r', `java.Map#keySet()`],
+			[/* reference */ 'r', `java.util.Map#keySet()`, `Map.keySet()`],
 			[/* text */ 't', `, `],
-			[/* reference */ 'r', `java.Map#values()`],
+			[/* reference */ 'r', `java.util.Map#values()`, `Map.values()`],
 			[/* text */ 't', `, and `],
-			[/* reference */ 'r', `java.Map#entrySet()`],
+			[/* reference */ 'r', `java.util.Map#entrySet()`, `Map.entrySet()`],
 			[/* text */ 't', ` must override
  methods such as `],
 			[/* inline code block */ 'i', `removeIf`],
@@ -37,7 +37,7 @@ DocsCollector.collect('java.util.concurrent.ConcurrentMap', [
 			[/* inline code block */ 'i', `ConcurrentMap`],
 			[/* text */ 't', ` as a key or value
  `],
-			[/* reference */ 'r', `.package-summary#MemoryVisibility`],
+			[/* text */ 't', `happen-before`],
 			[/* text */ 't', `
  actions subsequent to the access or removal of that object from
  the `],
@@ -95,14 +95,14 @@ DocsCollector.collect('java.util.concurrent.ConcurrentMap', [
 					[/* text */ 't', `if the key or value is of an inappropriate
          type for this map
  (`],
-					[/* text */ 't', `optional`],
+					[/* reference */ 'r', `java.util.Collection#optional-restrictions`, `optional`],
 					[/* text */ 't', `)`]
 				]],
 				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
 					[/* text */ 't', `if the specified key or value is null,
          and this map does not permit null keys or values
  (`],
-					[/* text */ 't', `optional`],
+					[/* reference */ 'r', `java.util.Collection#optional-restrictions`, `optional`],
 					[/* text */ 't', `)`]
 				]]
 			],
@@ -303,7 +303,7 @@ DocsCollector.collect('java.util.concurrent.ConcurrentMap', [
 				]],
 				[/* text */ 't', `
  (Method `],
-				[/* reference */ 'r', `java.Map#merge(K,V,java.util.function.BiFunction)`],
+				[/* reference */ 'r', `java.util.Map#merge(K,V,java.util.function.BiFunction)`, `merge()`],
 				[/* text */ 't', ` is often simpler to use for such purposes.)
 
  `],
@@ -334,14 +334,14 @@ DocsCollector.collect('java.util.concurrent.ConcurrentMap', [
 					[/* text */ 't', ` operation
          is not supported by this map
          (`],
-					[/* text */ 't', `optional`],
+					[/* reference */ 'r', `java.util.Collection#optional-restrictions`, `optional`],
 					[/* text */ 't', `)`]
 				]],
 				[/* throw */ 'java.lang.ClassCastException', [/* throw description */
 					[/* text */ 't', `if the class of the specified key or value
          prevents it from being stored in this map
          (`],
-					[/* text */ 't', `optional`],
+					[/* reference */ 'r', `java.util.Collection#optional-restrictions`, `optional`],
 					[/* text */ 't', `)`]
 				]],
 				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
@@ -353,7 +353,7 @@ DocsCollector.collect('java.util.concurrent.ConcurrentMap', [
 					[/* text */ 't', `if some property of the specified key
          or value prevents it from being stored in this map
          (`],
-					[/* text */ 't', `optional`],
+					[/* reference */ 'r', `java.util.Collection#optional-restrictions`, `optional`],
 					[/* text */ 't', `)`]
 				]]
 			],
@@ -416,14 +416,14 @@ DocsCollector.collect('java.util.concurrent.ConcurrentMap', [
 					[/* text */ 't', ` operation
          is not supported by this map
          (`],
-					[/* text */ 't', `optional`],
+					[/* reference */ 'r', `java.util.Collection#optional-restrictions`, `optional`],
 					[/* text */ 't', `)`]
 				]],
 				[/* throw */ 'java.lang.ClassCastException', [/* throw description */
 					[/* text */ 't', `if the class of the specified key or value
          prevents it from being stored in this map
          (`],
-					[/* text */ 't', `optional`],
+					[/* reference */ 'r', `java.util.Collection#optional-restrictions`, `optional`],
 					[/* text */ 't', `)`]
 				]],
 				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
@@ -435,7 +435,7 @@ DocsCollector.collect('java.util.concurrent.ConcurrentMap', [
 					[/* text */ 't', `if some property of the specified key
          or value prevents it from being stored in this map
          (`],
-					[/* text */ 't', `optional`],
+					[/* reference */ 'r', `java.util.Collection#optional-restrictions`, `optional`],
 					[/* text */ 't', `)`]
 				]]
 			],
@@ -476,14 +476,14 @@ DocsCollector.collect('java.util.concurrent.ConcurrentMap', [
 					[/* text */ 't', ` operation
          is not supported by this map
          (`],
-					[/* text */ 't', `optional`],
+					[/* reference */ 'r', `java.util.Collection#optional-restrictions`, `optional`],
 					[/* text */ 't', `)`]
 				]],
 				[/* throw */ 'java.lang.ClassCastException', [/* throw description */
 					[/* text */ 't', `if the class of the specified key or value
          prevents it from being stored in this map
          (`],
-					[/* text */ 't', `optional`],
+					[/* reference */ 'r', `java.util.Collection#optional-restrictions`, `optional`],
 					[/* text */ 't', `)`]
 				]],
 				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
@@ -495,7 +495,7 @@ DocsCollector.collect('java.util.concurrent.ConcurrentMap', [
 					[/* text */ 't', `if some property of the specified key
          or value prevents it from being stored in this map
          (`],
-					[/* text */ 't', `optional`],
+					[/* reference */ 'r', `java.util.Collection#optional-restrictions`, `optional`],
 					[/* text */ 't', `)`]
 				]]
 			],
@@ -523,14 +523,14 @@ DocsCollector.collect('java.util.concurrent.ConcurrentMap', [
 					[/* text */ 't', `if the key is of an inappropriate type for
  this map
  (`],
-					[/* text */ 't', `optional`],
+					[/* reference */ 'r', `java.util.Collection#optional-restrictions`, `optional`],
 					[/* text */ 't', `)`]
 				]],
 				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
 					[/* text */ 't', `if the specified key is null and this map
  does not permit null keys
  (`],
-					[/* text */ 't', `optional`],
+					[/* reference */ 'r', `java.util.Collection#optional-restrictions`, `optional`],
 					[/* text */ 't', `)`]
 				]]
 			],
@@ -591,14 +591,14 @@ DocsCollector.collect('java.util.concurrent.ConcurrentMap', [
 					[/* text */ 't', ` operation
          is not supported by this map
          (`],
-					[/* text */ 't', `optional`],
+					[/* reference */ 'r', `java.util.Collection#optional-restrictions`, `optional`],
 					[/* text */ 't', `)`]
 				]],
 				[/* throw */ 'java.lang.ClassCastException', [/* throw description */
 					[/* text */ 't', `if the class of the specified key or value
          prevents it from being stored in this map
          (`],
-					[/* text */ 't', `optional`],
+					[/* reference */ 'r', `java.util.Collection#optional-restrictions`, `optional`],
 					[/* text */ 't', `)`]
 				]],
 				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
@@ -610,7 +610,7 @@ DocsCollector.collect('java.util.concurrent.ConcurrentMap', [
 					[/* text */ 't', `if some property of the specified key
          or value prevents it from being stored in this map
          (`],
-					[/* text */ 't', `optional`],
+					[/* reference */ 'r', `java.util.Collection#optional-restrictions`, `optional`],
 					[/* text */ 't', `)`]
 				]]
 			],
@@ -662,21 +662,21 @@ DocsCollector.collect('java.util.concurrent.ConcurrentMap', [
 					[/* text */ 't', `if function or a replacement value is null,
          and this map does not permit null keys or values
          (`],
-					[/* text */ 't', `optional`],
+					[/* reference */ 'r', `java.util.Collection#optional-restrictions`, `optional`],
 					[/* text */ 't', `)`]
 				]],
 				[/* throw */ 'java.lang.ClassCastException', [/* throw description */
 					[/* text */ 't', `if a replacement value is of an inappropriate
          type for this map
          (`],
-					[/* text */ 't', `optional`],
+					[/* reference */ 'r', `java.util.Collection#optional-restrictions`, `optional`],
 					[/* text */ 't', `)`]
 				]],
 				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
 					[/* text */ 't', `if some property of a replacement value
          prevents it from being stored in this map
          (`],
-					[/* text */ 't', `optional`],
+					[/* reference */ 'r', `java.util.Collection#optional-restrictions`, `optional`],
 					[/* text */ 't', `)`]
 				]]
 			],

@@ -12,10 +12,10 @@ DocsCollector.collect('java.util.function.UnaryOperator', [
  `],
 		[/* block */ 'b', [
 			[/* text */ 't', `This is a `],
-			[/* reference */ 'r', `.package-summary`],
+			[/* text */ 't', `functional interface`],
 			[/* text */ 't', `
  whose functional method is `],
-			[/* reference */ 'r', `.Function#apply(T)`],
+			[/* reference */ 'r', `java.util.function.Function#apply(T)`, `Function.apply(Object)`],
 			[/* text */ 't', `.`]
 		]]
 	],

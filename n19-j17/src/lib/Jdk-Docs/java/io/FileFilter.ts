@@ -9,10 +9,10 @@ DocsCollector.collect('java.io.FileFilter', [
 		[/* block */ 'b', [
 			[/* text */ 't', ` Instances of this interface may be passed to the
  `],
-			[/* reference */ 'r', `.File#listFiles(java.io.FileFilter)`],
+			[/* reference */ 'r', `java.io.File#listFiles(java.io.FileFilter)`, `listFiles(FileFilter)`],
 			[/* text */ 't', ` method
  of the `],
-			[/* reference */ 'r', `java.io.File`],
+			[/* reference */ 'r', `java.io.File`, `File`],
 			[/* text */ 't', ` class.`]
 		]]
 	],

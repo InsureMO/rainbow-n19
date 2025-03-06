@@ -6,7 +6,7 @@ DocsCollector.collect('java.lang.invoke.MutableCallSite', [
 		[/* text */ 't', `A `],
 		[/* inline code block */ 'i', `MutableCallSite`],
 		[/* text */ 't', ` is a `],
-		[/* reference */ 'r', `java.lang.invoke.CallSite`],
+		[/* reference */ 'r', `java.lang.invoke.CallSite`, `CallSite`],
 		[/* text */ 't', ` whose target variable
  behaves like an ordinary field.
  An `],
@@ -16,7 +16,7 @@ DocsCollector.collect('java.lang.invoke.MutableCallSite', [
 		[/* text */ 't', ` delegates
  all calls to the site's current target.
  The `],
-		[/* reference */ 'r', `.CallSite#dynamicInvoker()`],
+		[/* reference */ 'r', `java.lang.invoke.CallSite#dynamicInvoker()`, `dynamic invoker`],
 		[/* text */ 't', ` of a mutable call site
  also delegates each call to the site's current target.
  `],
@@ -73,7 +73,7 @@ assertEquals("Wilma, dear?", (String) worker2.invokeExact());`]
 			[/* text */ 't', `
  For target values which will be frequently updated, consider using
  a `],
-			[/* reference */ 'r', `java.lang.invoke.VolatileCallSite`],
+			[/* reference */ 'r', `java.lang.invoke.VolatileCallSite`, `volatile call site`],
 			[/* text */ 't', ` instead.`]
 		]]
 	],
@@ -100,7 +100,7 @@ assertEquals("Wilma, dear?", (String) worker2.invokeExact());`]
 				[/* text */ 't', `Creates a blank call site object with the given method type.
  The initial target is set to a method handle of the given type
  which will throw an `],
-				[/* reference */ 'r', `java.lang.IllegalStateException`],
+				[/* reference */ 'r', `java.lang.IllegalStateException`, `IllegalStateException`],
 				[/* text */ 't', ` if called.
  `],
 				[/* block */ 'b', `
@@ -114,7 +114,7 @@ assertEquals("Wilma, dear?", (String) worker2.invokeExact());`]
  or invoked in some other manner,
  it is usually provided with a more useful target method,
  via a call to `],
-					[/* reference */ 'r', `.CallSite#setTarget(java.lang.invoke.MethodHandle)`],
+					[/* reference */ 'r', `java.lang.invoke.CallSite#setTarget(java.lang.invoke.MethodHandle)`, `setTarget`],
 					[/* text */ 't', `.`]
 				]]
 			],
@@ -193,7 +193,7 @@ assertEquals("Wilma, dear?", (String) worker2.invokeExact());`]
  This operation does not reverse any calls that have already started
  on an old target value.
  (Java supports `],
-					[/* reference */ 'r', `java.Object#wait()`],
+					[/* reference */ 'r', `java.lang.Object#wait()`, `forward time travel`],
 					[/* text */ 't', ` only.)
  `]
 				]],

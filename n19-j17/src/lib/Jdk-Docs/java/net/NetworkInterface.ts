@@ -136,7 +136,7 @@ DocsCollector.collect('java.net.NetworkInterface', [
  has one and if it can be accessed given the current privileges.
  If a security manager is set, then the caller must have
  the permission `],
-				[/* reference */ 'r', `java.net.NetPermission`],
+				[/* reference */ 'r', `java.net.NetPermission`, `NetPermission`],
 				[/* text */ 't', `("getNetworkInformation").`]
 			],
 			/* parameters */ UDF,
@@ -243,7 +243,7 @@ DocsCollector.collect('java.net.NetworkInterface', [
 					[/* text */ 't', ` doesn't throw a SecurityException
  will be returned in the Enumeration. However, if the caller has the
  `],
-					[/* reference */ 'r', `java.net.NetPermission`],
+					[/* reference */ 'r', `java.net.NetPermission`, `NetPermission`],
 					[/* text */ 't', `("getNetworkInformation") permission, then all
  InetAddresses are returned.`]
 				]]
@@ -314,7 +314,7 @@ DocsCollector.collect('java.net.NetworkInterface', [
 					[/* text */ 't', ` doesn't throw a SecurityException will be
  returned in the Stream. However, if the caller has the
  `],
-					[/* reference */ 'r', `java.net.NetPermission`],
+					[/* reference */ 'r', `java.net.NetPermission`, `NetPermission`],
 					[/* text */ 't', `("getNetworkInformation") permission, then all
  InetAddresses are returned.`]
 				]]

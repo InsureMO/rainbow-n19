@@ -236,7 +236,7 @@ DocsCollector.collect('java.io.InputStream', [
 				[/* block */ 'b', [
 					[/* text */ 't', ` A subclass's implementation of this method may choose to throw an
  `],
-					[/* reference */ 'r', `java.io.IOException`],
+					[/* reference */ 'r', `java.io.IOException`, `IOException`],
 					[/* text */ 't', ` if this input stream has been closed by invoking the
  `],
 					[/* reference */ 'r', `#close()`, `close()`],

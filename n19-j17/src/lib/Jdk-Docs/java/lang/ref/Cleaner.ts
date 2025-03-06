@@ -14,12 +14,12 @@ DocsCollector.collect('java.lang.ref.Cleaner', [
  to run after the cleaner is notified that the object has become
  phantom reachable.
  The cleaner uses `],
-			[/* reference */ 'r', `java.lang.ref.PhantomReference`],
+			[/* reference */ 'r', `java.lang.ref.PhantomReference`, `PhantomReference`],
 			[/* text */ 't', ` and `],
-			[/* reference */ 'r', `java.lang.ref.ReferenceQueue`],
+			[/* reference */ 'r', `java.lang.ref.ReferenceQueue`, `ReferenceQueue`],
 			[/* text */ 't', ` to be
  notified when the `],
-			[/* reference */ 'r', `.package-summary#reachability`],
+			[/* text */ 't', `reachability`],
 			[/* text */ 't', `
  changes.
  `]
@@ -30,14 +30,14 @@ DocsCollector.collect('java.lang.ref.Cleaner', [
  and handling threading and termination when the cleaner is no longer in use.
  Registering an object reference and corresponding cleaning action returns
  a `],
-			[/* reference */ 'r', `java.lang.ref.Cleaner.Cleanable`],
+			[/* reference */ 'r', `java.lang.ref.Cleaner.Cleanable`, `Cleanable`],
 			[/* text */ 't', `. The most efficient use is to explicitly invoke
  the `],
-			[/* reference */ 'r', `.Cleaner.Cleanable#clean()`],
+			[/* reference */ 'r', `java.lang.ref.Cleaner.Cleanable#clean()`, `clean`],
 			[/* text */ 't', ` method when the object is closed or
  no longer needed.
  The cleaning action is a `],
-			[/* reference */ 'r', `java.lang.Runnable`],
+			[/* reference */ 'r', `java.lang.Runnable`, `Runnable`],
 			[/* text */ 't', ` to be invoked at most once when
  the object has become phantom reachable unless it has already been explicitly cleaned.
  Note that the cleaning action must not refer to the object being registered.
@@ -57,7 +57,7 @@ DocsCollector.collect('java.lang.ref.Cleaner', [
 		[/* block */ 'b', [
 			[/* text */ 't', `
  The behavior of cleaners during `],
-			[/* reference */ 'r', `java.System#exit(int)`],
+			[/* reference */ 'r', `java.lang.System#exit(int)`, `System.exit`],
 			[/* text */ 't', `
  is implementation specific. No guarantees are made relating
  to whether cleaning actions are invoked or not.
@@ -70,7 +70,7 @@ DocsCollector.collect('java.lang.ref.Cleaner', [
 			[/* text */ 't', ` argument to a constructor or
  method in this class will cause a
  `],
-			[/* reference */ 'r', `java.lang.NullPointerException`],
+			[/* reference */ 'r', `java.lang.NullPointerException`, `NullPointerException`],
 			[/* text */ 't', ` to be thrown.`]
 		]]
 	],
@@ -112,19 +112,19 @@ DocsCollector.collect('java.lang.ref.Cleaner', [
 				[/* block */ 'b', [
 					[/* text */ 't', `
  The cleaner creates a `],
-					[/* reference */ 'r', `java.Thread#setDaemon(boolean)`],
+					[/* reference */ 'r', `java.lang.Thread#setDaemon(boolean)`, `daemon thread`],
 					[/* text */ 't', `
  to process the phantom reachable objects and to invoke cleaning actions.
  The `],
-					[/* reference */ 'r', `java.Thread#getContextClassLoader()`],
+					[/* reference */ 'r', `java.lang.Thread#getContextClassLoader()`, `context class loader`],
 					[/* text */ 't', `
  of the thread is set to the
  `],
-					[/* reference */ 'r', `java.ClassLoader#getSystemClassLoader()`],
+					[/* reference */ 'r', `java.lang.ClassLoader#getSystemClassLoader()`, `system class loader`],
 					[/* text */ 't', `.
  The thread has no permissions, enforced only if a
  `],
-					[/* reference */ 'r', `java.System#setSecurityManager(java.lang.SecurityManager)`],
+					[/* reference */ 'r', `java.lang.System#setSecurityManager(java.lang.SecurityManager)`, `SecurityManager is set`],
 					[/* text */ 't', `.
  `]
 				]],
@@ -157,14 +157,14 @@ DocsCollector.collect('java.lang.ref.Cleaner', [
 				[/* block */ 'b', [
 					[/* text */ 't', `
  A thread from the thread factory's `],
-					[/* reference */ 'r', `java.lang.concurrent.ThreadFactory#newThread(java.lang.Runnable)`],
+					[/* reference */ 'r', `java.util.concurrent.ThreadFactory#newThread(java.lang.Runnable)`, `newThread`],
 					[/* text */ 't', `
  method is set to be a `],
-					[/* reference */ 'r', `java.Thread#setDaemon(boolean)`],
+					[/* reference */ 'r', `java.lang.Thread#setDaemon(boolean)`, `daemon thread`],
 					[/* text */ 't', `
  and started to process phantom reachable objects and invoke cleaning actions.
  On each call the `],
-					[/* reference */ 'r', `java.lang.concurrent.ThreadFactory#newThread(java.lang.Runnable)`],
+					[/* reference */ 'r', `java.util.concurrent.ThreadFactory#newThread(java.lang.Runnable)`, `thread factory`],
 					[/* text */ 't', `
  must provide a Thread that is suitable for performing the cleaning actions.
  `]
@@ -187,7 +187,7 @@ DocsCollector.collect('java.lang.ref.Cleaner', [
 				[/* throw */ 'java.lang.IllegalThreadStateException', [/* throw description */
 					[/* text */ 't', `if the thread from the thread
                factory was `],
-					[/* reference */ 'r', `java.Thread.State#NEW`],
+					[/* reference */ 'r', `java.lang.Thread.State#NEW`, `not a new thread`],
 					[/* text */ 't', `.`]
 				]],
 				[/* throw */ 'java.lang.SecurityException', [/* throw description */

@@ -9,7 +9,7 @@ DocsCollector.collect('java.time.temporal.ChronoField', [
 			[/* text */ 't', `
  This set of fields provide field-based access to manipulate a date, time or date-time.
  The standard set of fields can be extended by implementing `],
-			[/* reference */ 'r', `java.time.temporal.TemporalField`],
+			[/* reference */ 'r', `java.time.temporal.TemporalField`, `TemporalField`],
 			[/* text */ 't', `.
  `]
 		]],
@@ -49,7 +49,7 @@ DocsCollector.collect('java.time.temporal.ChronoField', [
  There are two equivalent ways of using this method.
  The first is to invoke this method directly.
  The second is to use `],
-						[/* reference */ 'r', `.Temporal#with(java.time.temporal.TemporalField,long)`],
+						[/* reference */ 'r', `java.time.temporal.Temporal#with(java.time.temporal.TemporalField,long)`, `Temporal.with(TemporalField, long)`],
 						[/* text */ 't', `:
  `]
 					]],
@@ -68,7 +68,7 @@ DocsCollector.collect('java.time.temporal.ChronoField', [
 						[/* text */ 't', `
  Implementations should perform any queries or calculations using the fields
  available in `],
-						[/* reference */ 'r', `enum class in java.time.temporal.ChronoField`],
+						[/* reference */ 'r', `enum class in java.time.temporal.ChronoField`, `ChronoField`],
 						[/* text */ 't', `.
  If the field is not supported an `],
 						[/* inline code block */ 'i', `UnsupportedTemporalTypeException`],
@@ -121,7 +121,7 @@ DocsCollector.collect('java.time.temporal.ChronoField', [
  There are two equivalent ways of using this method.
  The first is to invoke this method directly.
  The second is to use `],
-						[/* reference */ 'r', `.TemporalAccessor#isSupported(java.time.temporal.TemporalField)`],
+						[/* reference */ 'r', `java.time.temporal.TemporalAccessor#isSupported(java.time.temporal.TemporalField)`, `TemporalAccessor.isSupported(TemporalField)`],
 						[/* text */ 't', `:
  `]
 					]],
@@ -140,7 +140,7 @@ DocsCollector.collect('java.time.temporal.ChronoField', [
 						[/* text */ 't', `
  Implementations should determine whether they are supported using the fields
  available in `],
-						[/* reference */ 'r', `enum class in java.time.temporal.ChronoField`],
+						[/* reference */ 'r', `enum class in java.time.temporal.ChronoField`, `ChronoField`],
 						[/* text */ 't', `.`]
 					]]
 				]]
@@ -190,7 +190,7 @@ DocsCollector.collect('java.time.temporal.ChronoField', [
  This method checks against the range of the field in the ISO-8601 calendar system.
  This range may be incorrect for other calendar systems.
  Use `],
-					[/* reference */ 'r', `java.Chronology#range(java.time.temporal.ChronoField)`],
+					[/* reference */ 'r', `java.time.chrono.Chronology#range(java.time.temporal.ChronoField)`, `Chronology.range(ChronoField)`],
 					[/* text */ 't', ` to access the correct range
  for a different calendar system.`]
 				]]
@@ -229,7 +229,7 @@ DocsCollector.collect('java.time.temporal.ChronoField', [
  The unit of the field is the period that varies within the range.
  For example, in the field 'MonthOfYear', the unit is 'Months'.
  See also `],
-						[/* reference */ 'r', `.TemporalField#getRangeUnit()`],
+						[/* reference */ 'r', `java.time.temporal.TemporalField#getRangeUnit()`, `TemporalField.getRangeUnit()`],
 						[/* text */ 't', `.`]
 					]]
 				]]
@@ -250,7 +250,7 @@ DocsCollector.collect('java.time.temporal.ChronoField', [
  The range of the field is the period that the field varies within.
  For example, in the field 'MonthOfYear', the range is 'Years'.
  See also `],
-						[/* reference */ 'r', `.TemporalField#getBaseUnit()`],
+						[/* reference */ 'r', `java.time.temporal.TemporalField#getBaseUnit()`, `TemporalField.getBaseUnit()`],
 						[/* text */ 't', `.
  `]
 					]],
@@ -282,7 +282,7 @@ DocsCollector.collect('java.time.temporal.ChronoField', [
  This method returns the range of the field in the ISO-8601 calendar system.
  This range may be incorrect for other calendar systems.
  Use `],
-					[/* reference */ 'r', `java.Chronology#range(java.time.temporal.ChronoField)`],
+					[/* reference */ 'r', `java.time.chrono.Chronology#range(java.time.temporal.ChronoField)`, `Chronology.range(ChronoField)`],
 					[/* text */ 't', ` to access the correct range
  for a different calendar system.
  `]
@@ -308,7 +308,7 @@ DocsCollector.collect('java.time.temporal.ChronoField', [
 						[/* text */ 't', `
  This uses the temporal object to find the range of valid values for the field.
  This is similar to `],
-						[/* reference */ 'r', `.TemporalField#range()`],
+						[/* reference */ 'r', `java.time.temporal.TemporalField#range()`, `TemporalField.range()`],
 						[/* text */ 't', `, however this method refines the result
  using the temporal. For example, if the field is `],
 						[/* inline code block */ 'i', `DAY_OF_MONTH`],
@@ -325,7 +325,7 @@ DocsCollector.collect('java.time.temporal.ChronoField', [
  There are two equivalent ways of using this method.
  The first is to invoke this method directly.
  The second is to use `],
-						[/* reference */ 'r', `.TemporalAccessor#range(java.time.temporal.TemporalField)`],
+						[/* reference */ 'r', `java.time.temporal.TemporalAccessor#range(java.time.temporal.TemporalField)`, `TemporalAccessor.range(TemporalField)`],
 						[/* text */ 't', `:
  `]
 					]],
@@ -344,7 +344,7 @@ DocsCollector.collect('java.time.temporal.ChronoField', [
 						[/* text */ 't', `
  Implementations should perform any queries or calculations using the fields
  available in `],
-						[/* reference */ 'r', `enum class in java.time.temporal.ChronoField`],
+						[/* reference */ 'r', `enum class in java.time.temporal.ChronoField`, `ChronoField`],
 						[/* text */ 't', `.
  If the field is not supported an `],
 						[/* inline code block */ 'i', `UnsupportedTemporalTypeException`],
@@ -379,7 +379,7 @@ DocsCollector.collect('java.time.temporal.ChronoField', [
  This method checks against the range of the field in the ISO-8601 calendar system.
  This range may be incorrect for other calendar systems.
  Use `],
-					[/* reference */ 'r', `java.Chronology#range(java.time.temporal.ChronoField)`],
+					[/* reference */ 'r', `java.time.chrono.Chronology#range(java.time.temporal.ChronoField)`, `Chronology.range(ChronoField)`],
 					[/* text */ 't', ` to access the correct range
  for a different calendar system.`]
 				]]
@@ -407,10 +407,10 @@ DocsCollector.collect('java.time.temporal.ChronoField', [
  There are two equivalent ways of using this method.
  The first is to invoke this method directly.
  The second is to use `],
-						[/* reference */ 'r', `.TemporalAccessor#getLong(java.time.temporal.TemporalField)`],
+						[/* reference */ 'r', `java.time.temporal.TemporalAccessor#getLong(java.time.temporal.TemporalField)`, `TemporalAccessor.getLong(TemporalField)`],
 						[/* text */ 't', `
  (or `],
-						[/* reference */ 'r', `.TemporalAccessor#get(java.time.temporal.TemporalField)`],
+						[/* reference */ 'r', `java.time.temporal.TemporalAccessor#get(java.time.temporal.TemporalField)`, `TemporalAccessor.get(TemporalField)`],
 						[/* text */ 't', `):
  `]
 					]],
@@ -429,7 +429,7 @@ DocsCollector.collect('java.time.temporal.ChronoField', [
 						[/* text */ 't', `
  Implementations should perform any queries or calculations using the fields
  available in `],
-						[/* reference */ 'r', `enum class in java.time.temporal.ChronoField`],
+						[/* reference */ 'r', `enum class in java.time.temporal.ChronoField`, `ChronoField`],
 						[/* text */ 't', `.
  If the field is not supported an `],
 						[/* inline code block */ 'i', `UnsupportedTemporalTypeException`],

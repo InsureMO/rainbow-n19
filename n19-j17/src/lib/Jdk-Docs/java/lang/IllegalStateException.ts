@@ -51,13 +51,13 @@ DocsCollector.collect('java.lang.IllegalStateException', [
 				[/* parameter */ 'message', [/* parameter description */
 					[/* text */ 't', `the detail message (which is saved for later retrieval
          by the `],
-					[/* reference */ 'r', `.Throwable#getMessage()`],
+					[/* reference */ 'r', `java.lang.Throwable#getMessage()`, `Throwable.getMessage()`],
 					[/* text */ 't', ` method).`]
 				]],
 				[/* parameter */ 'cause', [/* parameter description */
 					[/* text */ 't', `the cause (which is saved for later retrieval by the
          `],
-					[/* reference */ 'r', `.Throwable#getCause()`],
+					[/* reference */ 'r', `java.lang.Throwable#getCause()`, `Throwable.getCause()`],
 					[/* text */ 't', ` method).  (A `],
 					[/* inline code block */ 'i', `null`],
 					[/* text */ 't', ` value
@@ -78,14 +78,14 @@ DocsCollector.collect('java.lang.IllegalStateException', [
 				[/* text */ 't', `).
  This constructor is useful for exceptions that are little more than
  wrappers for other throwables (for example, `],
-				[/* reference */ 'r', `java.security.PrivilegedActionException`],
+				[/* reference */ 'r', `java.security.PrivilegedActionException`, `PrivilegedActionException`],
 				[/* text */ 't', `).`]
 			],
 			[/* parameters */
 				[/* parameter */ 'cause', [/* parameter description */
 					[/* text */ 't', `the cause (which is saved for later retrieval by the
          `],
-					[/* reference */ 'r', `.Throwable#getCause()`],
+					[/* reference */ 'r', `java.lang.Throwable#getCause()`, `Throwable.getCause()`],
 					[/* text */ 't', ` method).  (A `],
 					[/* inline code block */ 'i', `null`],
 					[/* text */ 't', ` value is

@@ -95,7 +95,7 @@ DocsCollector.collect('java.nio.file.attribute.BasicFileAttributes', [
 					[/* text */ 't', ` File keys returned by this method can be compared for equality and are
  suitable for use in collections. If the file system and files remain static,
  and two files are the `],
-					[/* reference */ 'r', `java.Files#isSameFile(java.nio.file.Path,java.nio.file.Path)`],
+					[/* reference */ 'r', `java.nio.file.Files#isSameFile(java.nio.file.Path,java.nio.file.Path)`, `same`],
 					[/* text */ 't', ` with
  non-`],
 					[/* inline code block */ 'i', `null`],

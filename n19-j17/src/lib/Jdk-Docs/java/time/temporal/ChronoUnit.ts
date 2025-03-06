@@ -9,7 +9,7 @@ DocsCollector.collect('java.time.temporal.ChronoUnit', [
 			[/* text */ 't', `
  This set of units provide unit-based access to manipulate a date, time or date-time.
  The standard set of units can be extended by implementing `],
-			[/* reference */ 'r', `java.time.temporal.TemporalUnit`],
+			[/* reference */ 'r', `java.time.temporal.TemporalUnit`, `TemporalUnit`],
 			[/* text */ 't', `.
  `]
 		]],
@@ -38,7 +38,7 @@ DocsCollector.collect('java.time.temporal.ChronoUnit', [
  There are two equivalent ways of using this method.
  The first is to invoke this method directly.
  The second is to use `],
-						[/* reference */ 'r', `.Temporal#plus(long,java.time.temporal.TemporalUnit)`],
+						[/* reference */ 'r', `java.time.temporal.Temporal#plus(long,java.time.temporal.TemporalUnit)`, `Temporal.plus(long, TemporalUnit)`],
 						[/* text */ 't', `:
  `]
 					]],
@@ -57,9 +57,9 @@ DocsCollector.collect('java.time.temporal.ChronoUnit', [
 						[/* text */ 't', `
  Implementations should perform any queries or calculations using the units
  available in `],
-						[/* reference */ 'r', `enum class in java.time.temporal.ChronoUnit`],
+						[/* reference */ 'r', `enum class in java.time.temporal.ChronoUnit`, `ChronoUnit`],
 						[/* text */ 't', ` or the fields available in `],
-						[/* reference */ 'r', `enum class in java.time.temporal.ChronoField`],
+						[/* reference */ 'r', `enum class in java.time.temporal.ChronoField`, `ChronoField`],
 						[/* text */ 't', `.
  If the unit is not supported an `],
 						[/* inline code block */ 'i', `UnsupportedTemporalTypeException`],
@@ -196,7 +196,7 @@ DocsCollector.collect('java.time.temporal.ChronoUnit', [
  There are two equivalent ways of using this method.
  The first is to invoke this method directly.
  The second is to use `],
-						[/* reference */ 'r', `.Temporal#until(java.time.temporal.Temporal,java.time.temporal.TemporalUnit)`],
+						[/* reference */ 'r', `java.time.temporal.Temporal#until(java.time.temporal.Temporal,java.time.temporal.TemporalUnit)`, `Temporal.until(Temporal, TemporalUnit)`],
 						[/* text */ 't', `:
  `]
 					]],
@@ -221,9 +221,9 @@ DocsCollector.collect('java.time.temporal.ChronoUnit', [
 						[/* text */ 't', `
  Implementations should perform any queries or calculations using the units
  available in `],
-						[/* reference */ 'r', `enum class in java.time.temporal.ChronoUnit`],
+						[/* reference */ 'r', `enum class in java.time.temporal.ChronoUnit`, `ChronoUnit`],
 						[/* text */ 't', ` or the fields available in `],
-						[/* reference */ 'r', `enum class in java.time.temporal.ChronoField`],
+						[/* reference */ 'r', `enum class in java.time.temporal.ChronoField`, `ChronoField`],
 						[/* text */ 't', `.
  If the unit is not supported an `],
 						[/* inline code block */ 'i', `UnsupportedTemporalTypeException`],

@@ -5,33 +5,33 @@ DocsCollector.collect('java.util.random.RandomGeneratorFactory', [
 	[/* class description */
 		[/* text */ 't', `This is a factory class for generating multiple random number generators
  of a specific `],
-		[/* reference */ 'r', `.package-summary#algorithms`],
+		[/* text */ 't', `algorithm`],
 		[/* text */ 't', `.
  `],
-		[/* reference */ 'r', `java.util.random.RandomGeneratorFactory`],
+		[/* reference */ 'r', `java.util.random.RandomGeneratorFactory`, `RandomGeneratorFactory`],
 		[/* text */ 't', ` also provides
  methods for selecting random number generator algorithms.
 
  A specific `],
-		[/* reference */ 'r', `java.util.random.RandomGeneratorFactory`],
+		[/* reference */ 'r', `java.util.random.RandomGeneratorFactory`, `RandomGeneratorFactory`],
 		[/* text */ 't', ` can be located by using the
  `],
 		[/* reference */ 'r', `#of(java.lang.String)`, `of(String)`],
 		[/* text */ 't', ` method, where the argument string
  is the name of the `],
-		[/* reference */ 'r', `.package-summary#algorithms`],
+		[/* text */ 't', `algorithm`],
 		[/* text */ 't', `
  required. The method
  `],
 		[/* reference */ 'r', `#all()`, `all()`],
 		[/* text */ 't', ` produces a non-empty `],
-		[/* reference */ 'r', `java.util.stream.Stream`],
+		[/* reference */ 'r', `java.util.stream.Stream`, `Stream`],
 		[/* text */ 't', ` of all available
  `],
-		[/* reference */ 'r', `java.util.random.RandomGeneratorFactory`],
+		[/* reference */ 'r', `java.util.random.RandomGeneratorFactory`, `RandomGeneratorFactorys`],
 		[/* text */ 't', ` that can be searched
  to locate a `],
-		[/* reference */ 'r', `java.util.random.RandomGeneratorFactory`],
+		[/* reference */ 'r', `java.util.random.RandomGeneratorFactory`, `RandomGeneratorFactory`],
 		[/* text */ 't', ` suitable to the task.
 
  There are three methods for constructing a RandomGenerator instance,
@@ -65,17 +65,17 @@ DocsCollector.collect('java.util.random.RandomGeneratorFactory', [
  RandomGeneratorFactory also provides methods describing the attributes (or properties)
  of a generator and can be used to select random number generator
  `],
-		[/* reference */ 'r', `.package-summary#algorithms`],
+		[/* text */ 't', `algorithms`],
 		[/* text */ 't', `.
  These methods are typically used in
  conjunction with `],
 		[/* reference */ 'r', `#all()`, `all()`],
 		[/* text */ 't', `. In this example, the code
  locates the `],
-		[/* reference */ 'r', `java.util.random.RandomGeneratorFactory`],
+		[/* reference */ 'r', `java.util.random.RandomGeneratorFactory`, `RandomGeneratorFactory`],
 		[/* text */ 't', ` that produces
  `],
-		[/* reference */ 'r', `java.util.random.RandomGenerator`],
+		[/* reference */ 'r', `java.util.random.RandomGenerator`, `RandomGenerators`],
 		[/* text */ 't', `
  with the highest number of state bits.
 
@@ -165,7 +165,7 @@ DocsCollector.collect('java.util.random.RandomGeneratorFactory', [
 			[/* method description */
 				[/* text */ 't', `Return true if random generator is computed using an arithmetic
  `],
-				[/* reference */ 'r', `.package-summary#algorithms`],
+				[/* text */ 't', `algorithm`],
 				[/* text */ 't', `
  and is statistically deterministic.`]
 			],
@@ -190,7 +190,7 @@ DocsCollector.collect('java.util.random.RandomGeneratorFactory', [
 			[/* method description */
 				[/* text */ 't', `Return true if random generator can be used to create
  `],
-				[/* reference */ 'r', `java.util.stream.Stream`],
+				[/* reference */ 'r', `java.util.stream.Stream`, `Streams`],
 				[/* text */ 't', ` of random numbers.`]
 			],
 			/* parameters */ UDF,
@@ -202,21 +202,21 @@ DocsCollector.collect('java.util.random.RandomGeneratorFactory', [
 		[/* method */ 'equidistribution()', [
 			[/* method description */
 				[/* text */ 't', `Returns the equidistribution of the `],
-				[/* reference */ 'r', `.package-summary#algorithms`],
+				[/* text */ 't', `algorithm`],
 				[/* text */ 't', `.`]
 			],
 			/* parameters */ UDF,
 			/* throws */ UDF,
 			[/* return description */
 				[/* text */ 't', `the equidistribution of the `],
-				[/* reference */ 'r', `.package-summary#algorithms`],
+				[/* text */ 't', `algorithm`],
 				[/* text */ 't', `.`]
 			]
 		]],
 		[/* method */ 'stateBits()', [
 			[/* method description */
 				[/* text */ 't', `Returns number of bits used by the `],
-				[/* reference */ 'r', `.package-summary#algorithms`],
+				[/* text */ 't', `algorithm`],
 				[/* text */ 't', `
  to maintain state of seed.`]
 			],
@@ -224,7 +224,7 @@ DocsCollector.collect('java.util.random.RandomGeneratorFactory', [
 			/* throws */ UDF,
 			[/* return description */
 				[/* text */ 't', `number of bits used by the `],
-				[/* reference */ 'r', `.package-summary#algorithms`],
+				[/* text */ 't', `algorithm`],
 				[/* text */ 't', `
          to maintain state of seed.`]
 			]
@@ -232,7 +232,7 @@ DocsCollector.collect('java.util.random.RandomGeneratorFactory', [
 		[/* method */ 'group()', [
 			[/* method description */
 				[/* text */ 't', `Return the group name of the `],
-				[/* reference */ 'r', `.package-summary#algorithms`],
+				[/* text */ 't', `algorithm`],
 				[/* text */ 't', `
  used by the random number generator.`]
 			],
@@ -240,14 +240,14 @@ DocsCollector.collect('java.util.random.RandomGeneratorFactory', [
 			/* throws */ UDF,
 			[/* return description */
 				[/* text */ 't', `Group name of the `],
-				[/* reference */ 'r', `.package-summary#algorithms`],
+				[/* text */ 't', `algorithm`],
 				[/* text */ 't', `.`]
 			]
 		]],
 		[/* method */ 'name()', [
 			[/* method description */
 				[/* text */ 't', `Return the name of the `],
-				[/* reference */ 'r', `.package-summary#algorithms`],
+				[/* text */ 't', `algorithm`],
 				[/* text */ 't', `
  used by the random number generator.`]
 			],
@@ -255,14 +255,14 @@ DocsCollector.collect('java.util.random.RandomGeneratorFactory', [
 			/* throws */ UDF,
 			[/* return description */
 				[/* text */ 't', `Name of the `],
-				[/* reference */ 'r', `.package-summary#algorithms`],
+				[/* text */ 't', `algorithm`],
 				[/* text */ 't', `.`]
 			]
 		]],
 		[/* method */ 'period()', [
 			[/* method description */
 				[/* text */ 't', `Return the period of the `],
-				[/* reference */ 'r', `.package-summary#algorithms`],
+				[/* text */ 't', `algorithm`],
 				[/* text */ 't', `
  used by the random number generator.
  Returns BigInteger.ZERO if period is not determinable.`]
@@ -276,20 +276,20 @@ DocsCollector.collect('java.util.random.RandomGeneratorFactory', [
 		[/* method */ 'of(java.lang.String)', [
 			[/* method description */
 				[/* text */ 't', `Returns a `],
-				[/* reference */ 'r', `java.util.random.RandomGeneratorFactory`],
+				[/* reference */ 'r', `java.util.random.RandomGeneratorFactory`, `RandomGeneratorFactory`],
 				[/* text */ 't', ` that can produce instances of
  `],
-				[/* reference */ 'r', `java.util.random.RandomGenerator`],
+				[/* reference */ 'r', `java.util.random.RandomGenerator`, `RandomGenerator`],
 				[/* text */ 't', ` that utilize the `],
 				[/* inline code block */ 'i', `name`],
-				[/* reference */ 'r', `.package-summary#algorithms`],
+				[/* text */ 't', `algorithm`],
 				[/* text */ 't', `.`]
 			],
 			[/* parameters */
 				[/* parameter */ 'name', [/* parameter description */
 					[/* text */ 't', `Name of random number generator
  `],
-					[/* reference */ 'r', `.package-summary#algorithms`]
+					[/* text */ 't', `algorithm`]
 				]]
 			],
 			[/* throws */
@@ -301,15 +301,15 @@ DocsCollector.collect('java.util.random.RandomGeneratorFactory', [
 				]]
 			],
 			[/* return description */
-				[/* reference */ 'r', `java.util.random.RandomGeneratorFactory`],
+				[/* reference */ 'r', `java.util.random.RandomGeneratorFactory`, `RandomGeneratorFactory`],
 				[/* text */ 't', ` of `],
-				[/* reference */ 'r', `java.util.random.RandomGenerator`]
+				[/* reference */ 'r', `java.util.random.RandomGenerator`, `RandomGenerator`]
 			]
 		]],
 		[/* method */ 'getDefault()', [
 			[/* method description */
 				[/* text */ 't', `Returns a `],
-				[/* reference */ 'r', `java.util.random.RandomGeneratorFactory`],
+				[/* reference */ 'r', `java.util.random.RandomGeneratorFactory`, `RandomGeneratorFactory`],
 				[/* text */ 't', ` meeting the minimal requirement
  of having an algorithm whose state bits are greater than or equal 64.`]
 			],
@@ -317,13 +317,13 @@ DocsCollector.collect('java.util.random.RandomGeneratorFactory', [
 			/* throws */ UDF,
 			[/* return description */
 				[/* text */ 't', `a `],
-				[/* reference */ 'r', `java.util.random.RandomGeneratorFactory`]
+				[/* reference */ 'r', `java.util.random.RandomGeneratorFactory`, `RandomGeneratorFactory`]
 			]
 		]],
 		[/* method */ 'all()', [
 			[/* method description */
 				[/* text */ 't', `Returns a non-empty stream of available `],
-				[/* reference */ 'r', `java.util.random.RandomGeneratorFactory`],
+				[/* reference */ 'r', `java.util.random.RandomGeneratorFactory`, `RandomGeneratorFactory(s)`],
 				[/* text */ 't', `.
 
  RandomGenerators that are marked as deprecated are not included in the result.`]
@@ -332,38 +332,38 @@ DocsCollector.collect('java.util.random.RandomGeneratorFactory', [
 			/* throws */ UDF,
 			[/* return description */
 				[/* text */ 't', `a non-empty stream of all available `],
-				[/* reference */ 'r', `java.util.random.RandomGeneratorFactory`],
+				[/* reference */ 'r', `java.util.random.RandomGeneratorFactory`, `RandomGeneratorFactory(s)`],
 				[/* text */ 't', `.`]
 			]
 		]],
 		[/* method */ 'create()', [
 			[/* method description */
 				[/* text */ 't', `Create an instance of `],
-				[/* reference */ 'r', `java.util.random.RandomGenerator`],
+				[/* reference */ 'r', `java.util.random.RandomGenerator`, `RandomGenerator`],
 				[/* text */ 't', ` based on
  `],
-				[/* reference */ 'r', `.package-summary#algorithms`],
+				[/* text */ 't', `algorithm`],
 				[/* text */ 't', ` chosen.`]
 			],
 			/* parameters */ UDF,
 			/* throws */ UDF,
 			[/* return description */
 				[/* text */ 't', `new in instance of `],
-				[/* reference */ 'r', `java.util.random.RandomGenerator`],
+				[/* reference */ 'r', `java.util.random.RandomGenerator`, `RandomGenerator`],
 				[/* text */ 't', `.`]
 			]
 		]],
 		[/* method */ 'create(byte[])', [
 			[/* method description */
 				[/* text */ 't', `Create an instance of `],
-				[/* reference */ 'r', `java.util.random.RandomGenerator`],
+				[/* reference */ 'r', `java.util.random.RandomGenerator`, `RandomGenerator`],
 				[/* text */ 't', ` based on
  `],
-				[/* reference */ 'r', `.package-summary#algorithms`],
+				[/* text */ 't', `algorithm`],
 				[/* text */ 't', ` chosen
  providing a starting byte[] seed. If byte[] seed is not supported by an
  `],
-				[/* reference */ 'r', `.package-summary#algorithms`],
+				[/* text */ 't', `algorithm`],
 				[/* text */ 't', ` then the no
  argument form of create is used.`]
 			],
@@ -379,17 +379,17 @@ DocsCollector.collect('java.util.random.RandomGeneratorFactory', [
 			],
 			[/* return description */
 				[/* text */ 't', `new in instance of `],
-				[/* reference */ 'r', `java.util.random.RandomGenerator`],
+				[/* reference */ 'r', `java.util.random.RandomGenerator`, `RandomGenerator`],
 				[/* text */ 't', `.`]
 			]
 		]],
 		[/* method */ 'create(long)', [
 			[/* method description */
 				[/* text */ 't', `Create an instance of `],
-				[/* reference */ 'r', `java.util.random.RandomGenerator`],
+				[/* reference */ 'r', `java.util.random.RandomGenerator`, `RandomGenerator`],
 				[/* text */ 't', ` based on
  `],
-				[/* reference */ 'r', `.package-summary#algorithms`],
+				[/* text */ 't', `algorithm`],
 				[/* text */ 't', ` chosen
  providing a starting long seed. If long seed is not supported by an
  algorithm then the no argument form of create is used.`]
@@ -402,7 +402,7 @@ DocsCollector.collect('java.util.random.RandomGeneratorFactory', [
 			/* throws */ UDF,
 			[/* return description */
 				[/* text */ 't', `new in instance of `],
-				[/* reference */ 'r', `java.util.random.RandomGenerator`],
+				[/* reference */ 'r', `java.util.random.RandomGenerator`, `RandomGenerator`],
 				[/* text */ 't', `.`]
 			]
 		]]

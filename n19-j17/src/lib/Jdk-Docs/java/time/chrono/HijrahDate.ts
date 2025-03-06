@@ -9,7 +9,7 @@ DocsCollector.collect('java.time.chrono.HijrahDate', [
 			[/* text */ 't', `
  This date operates using one of several variants of the
  `],
-			[/* reference */ 'r', `java.time.chrono.HijrahChronology`],
+			[/* reference */ 'r', `java.time.chrono.HijrahChronology`, `Hijrah calendar`],
 			[/* text */ 't', `.
  `]
 		]],
@@ -20,7 +20,7 @@ DocsCollector.collect('java.time.chrono.HijrahDate', [
  of a complete revolution of the moon around the earth
  (as between successive new moons).
  Refer to the `],
-			[/* reference */ 'r', `java.time.chrono.HijrahChronology`],
+			[/* reference */ 'r', `java.time.chrono.HijrahChronology`, `HijrahChronology`],
 			[/* text */ 't', ` for details of supported variants.
  `]
 		]],
@@ -75,7 +75,7 @@ DocsCollector.collect('java.time.chrono.HijrahDate', [
 					[/* inline code block */ 'i', `TemporalAccessor`],
 					[/* text */ 't', ` instances, including dates
  in two different chronologies, use `],
-					[/* reference */ 'r', `java.ChronoField#EPOCH_DAY`],
+					[/* reference */ 'r', `java.time.temporal.ChronoField#EPOCH_DAY`, `ChronoField.EPOCH_DAY`],
 					[/* text */ 't', ` as a comparator.`]
 				]]
 			],
@@ -217,7 +217,7 @@ DocsCollector.collect('java.time.chrono.HijrahDate', [
 					[/* inline code block */ 'i', `Chronology`],
 					[/* text */ 't', ` represents the calendar system in use.
  The era and other fields in `],
-					[/* reference */ 'r', `enum class in java.time.temporal.ChronoField`],
+					[/* reference */ 'r', `enum class in java.time.temporal.ChronoField`, `ChronoField`],
 					[/* text */ 't', ` are defined by the chronology.`]
 				]]
 			],
@@ -235,12 +235,12 @@ DocsCollector.collect('java.time.chrono.HijrahDate', [
 					[/* text */ 't', `
  This adjusts this temporal, subtracting according to the rules of the specified amount.
  The amount is typically a `],
-					[/* reference */ 'r', `java.time.Period`],
+					[/* reference */ 'r', `java.time.Period`, `Period`],
 					[/* text */ 't', ` but may be any other type implementing
  the `],
-					[/* reference */ 'r', `java.time.temporal.TemporalAmount`],
+					[/* reference */ 'r', `java.time.temporal.TemporalAmount`, `TemporalAmount`],
 					[/* text */ 't', ` interface, such as `],
-					[/* reference */ 'r', `java.time.Duration`],
+					[/* reference */ 'r', `java.time.Duration`, `Duration`],
 					[/* text */ 't', `.
  `]
 				]],
@@ -321,12 +321,12 @@ DocsCollector.collect('java.time.chrono.HijrahDate', [
 					[/* text */ 't', `
  This adjusts this temporal, adding according to the rules of the specified amount.
  The amount is typically a `],
-					[/* reference */ 'r', `java.time.Period`],
+					[/* reference */ 'r', `java.time.Period`, `Period`],
 					[/* text */ 't', ` but may be any other type implementing
  the `],
-					[/* reference */ 'r', `java.time.temporal.TemporalAmount`],
+					[/* reference */ 'r', `java.time.temporal.TemporalAmount`, `TemporalAmount`],
 					[/* text */ 't', ` interface, such as `],
-					[/* reference */ 'r', `java.time.Duration`],
+					[/* reference */ 'r', `java.time.Duration`, `Duration`],
 					[/* text */ 't', `.
  `]
 				]],
@@ -410,7 +410,7 @@ DocsCollector.collect('java.time.chrono.HijrahDate', [
  A more complex adjuster might set the date to the last day of the month.
  A selection of common adjustments is provided in
  `],
-					[/* reference */ 'r', `java.time.temporal.TemporalAdjusters`],
+					[/* reference */ 'r', `java.time.temporal.TemporalAdjusters`, `TemporalAdjusters`],
 					[/* text */ 't', `.
  These include finding the "last day of the month" and "next Wednesday".
  The adjuster is responsible for handling special cases, such as the varying
@@ -507,7 +507,7 @@ DocsCollector.collect('java.time.chrono.HijrahDate', [
 					[/* text */ 't', `
  The Hijrah calendar system has one era, 'AH',
  defined by `],
-					[/* reference */ 'r', `enum class in java.time.chrono.HijrahEra`],
+					[/* reference */ 'r', `enum class in java.time.chrono.HijrahEra`, `HijrahEra`],
 					[/* text */ 't', `.`]
 				]]
 			],
@@ -563,7 +563,7 @@ DocsCollector.collect('java.time.chrono.HijrahDate', [
 				[/* block */ 'b', [
 					[/* text */ 't', `
  The conversion typically uses the `],
-					[/* reference */ 'r', `java.ChronoField#EPOCH_DAY`],
+					[/* reference */ 'r', `java.time.temporal.ChronoField#EPOCH_DAY`, `EPOCH_DAY`],
 					[/* text */ 't', `
  field, which is standardized across calendar systems.
  `]
@@ -571,7 +571,7 @@ DocsCollector.collect('java.time.chrono.HijrahDate', [
 				[/* block */ 'b', [
 					[/* text */ 't', `
  This method matches the signature of the functional interface `],
-					[/* reference */ 'r', `java.time.temporal.TemporalQuery`],
+					[/* reference */ 'r', `java.time.temporal.TemporalQuery`, `TemporalQuery`],
 					[/* text */ 't', `
  allowing it to be used as a query via method reference, `],
 					[/* inline code block */ 'i', `HijrahDate::from`],
@@ -603,7 +603,7 @@ DocsCollector.collect('java.time.chrono.HijrahDate', [
 				[/* block */ 'b', [
 					[/* text */ 't', `
  This will query the `],
-					[/* reference */ 'r', `java.Clock#systemDefaultZone()`],
+					[/* reference */ 'r', `java.time.Clock#systemDefaultZone()`, `system clock`],
 					[/* text */ 't', ` in the default
  time-zone to obtain the current date.
  `]
@@ -630,7 +630,7 @@ DocsCollector.collect('java.time.chrono.HijrahDate', [
  This will query the specified clock to obtain the current date - today.
  Using this method allows the use of an alternate clock for testing.
  The alternate clock may be introduced using `],
-					[/* reference */ 'r', `java.time.Clock`],
+					[/* reference */ 'r', `java.time.Clock`, `dependency injection`],
 					[/* text */ 't', `.`]
 				]]
 			],
@@ -658,7 +658,7 @@ DocsCollector.collect('java.time.chrono.HijrahDate', [
 				[/* block */ 'b', [
 					[/* text */ 't', `
  This will query the `],
-					[/* reference */ 'r', `java.Clock#system(java.time.ZoneId)`],
+					[/* reference */ 'r', `java.time.Clock#system(java.time.ZoneId)`, `system clock`],
 					[/* text */ 't', ` to obtain the current date.
  Specifying the time-zone avoids dependence on the default time-zone.
  `]

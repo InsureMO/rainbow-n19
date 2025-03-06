@@ -200,7 +200,7 @@ DocsCollector.collect('java.io.CharArrayReader', [
  `],
 					[/* inline code block */ 'i', `skip`],
 					[/* text */ 't', ` method of the `],
-					[/* reference */ 'r', `java.io.Reader`],
+					[/* reference */ 'r', `java.io.Reader`, `Reader`],
 					[/* text */ 't', ` superclass throws
  an exception in this case. If `],
 					[/* inline code block */ 'i', `n`],

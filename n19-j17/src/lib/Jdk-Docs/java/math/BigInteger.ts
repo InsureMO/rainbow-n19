@@ -418,7 +418,7 @@ DocsCollector.collect('java.math.BigInteger', [
  optional minus or plus sign followed by a sequence of one or
  more decimal digits.  The character-to-digit mapping is
  provided by `],
-				[/* reference */ 'r', `java.Character#digit(int,int)`],
+				[/* reference */ 'r', `java.lang.Character#digit(int,int)`, `Character.digit`],
 				[/* text */ 't', `.  The String may not contain any extraneous
  characters (whitespace, for example).`]
 			],
@@ -443,7 +443,7 @@ DocsCollector.collect('java.math.BigInteger', [
  consists of an optional minus or plus sign followed by a
  sequence of one or more digits in the specified radix.  The
  character-to-digit mapping is provided by `],
-				[/* reference */ 'r', `java.Character#digit(int,int)`],
+				[/* reference */ 'r', `java.lang.Character#digit(int,int)`, `Character.digit`],
 				[/* text */ 't', `.  The String may
  not contain any extraneous characters (whitespace, for
  example).`]
@@ -467,10 +467,10 @@ DocsCollector.collect('java.math.BigInteger', [
 					[/* inline code block */ 'i', `radix`],
 					[/* text */ 't', ` is
          outside the range from `],
-					[/* reference */ 'r', `java.Character#MIN_RADIX`],
+					[/* reference */ 'r', `java.lang.Character#MIN_RADIX`, `Character.MIN_RADIX`],
 					[/* text */ 't', ` to
          `],
-					[/* reference */ 'r', `java.Character#MAX_RADIX`],
+					[/* reference */ 'r', `java.lang.Character#MAX_RADIX`, `Character.MAX_RADIX`],
 					[/* text */ 't', `, inclusive.`]
 				]]
 			]
@@ -637,9 +637,9 @@ DocsCollector.collect('java.math.BigInteger', [
 				[/* inline code block */ 'i', `double`],
 				[/* text */ 't', `, it will be converted to
  `],
-				[/* reference */ 'r', `java.Double#NEGATIVE_INFINITY`],
+				[/* reference */ 'r', `java.lang.Double#NEGATIVE_INFINITY`, `Double.NEGATIVE_INFINITY`],
 				[/* text */ 't', ` or `],
-				[/* reference */ 'r', `java.Double#POSITIVE_INFINITY`],
+				[/* reference */ 'r', `java.lang.Double#POSITIVE_INFINITY`, `Double.POSITIVE_INFINITY`],
 				[/* text */ 't', ` as appropriate.  Note that even when
  the return value is finite, this conversion can lose
  information about the precision of the BigInteger value.`]
@@ -674,9 +674,9 @@ DocsCollector.collect('java.math.BigInteger', [
 				[/* inline code block */ 'i', `float`],
 				[/* text */ 't', `, it will be converted to
  `],
-				[/* reference */ 'r', `java.Float#NEGATIVE_INFINITY`],
+				[/* reference */ 'r', `java.lang.Float#NEGATIVE_INFINITY`, `Float.NEGATIVE_INFINITY`],
 				[/* text */ 't', ` or `],
-				[/* reference */ 'r', `java.Float#POSITIVE_INFINITY`],
+				[/* reference */ 'r', `java.lang.Float#POSITIVE_INFINITY`, `Float.POSITIVE_INFINITY`],
 				[/* text */ 't', ` as appropriate.  Note that even when
  the return value is finite, this conversion can lose
  information about the precision of the BigInteger value.`]
@@ -883,9 +883,9 @@ DocsCollector.collect('java.math.BigInteger', [
 			[/* method description */
 				[/* text */ 't', `Returns the String representation of this BigInteger in the
  given radix.  If the radix is outside the range from `],
-				[/* reference */ 'r', `java.Character#MIN_RADIX`],
+				[/* reference */ 'r', `java.lang.Character#MIN_RADIX`, `Character.MIN_RADIX`],
 				[/* text */ 't', ` to `],
-				[/* reference */ 'r', `java.Character#MAX_RADIX`],
+				[/* reference */ 'r', `java.lang.Character#MAX_RADIX`, `Character.MAX_RADIX`],
 				[/* text */ 't', ` inclusive,
  it will default to 10 (as is the case for
  `],

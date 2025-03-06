@@ -86,7 +86,7 @@ DocsCollector.collect('java.util.IdentityHashMap', [
 			[/* inline code block */ 'i', `put`],
 			[/* text */ 't', `), assuming the system
  identity hash function (`],
-			[/* reference */ 'r', `java.System#identityHashCode(java.lang.Object)`],
+			[/* reference */ 'r', `java.lang.System#identityHashCode(java.lang.Object)`, `System.identityHashCode(Object)`],
 			[/* text */ 't', `)
  disperses elements properly among the buckets.
 
@@ -129,7 +129,7 @@ DocsCollector.collect('java.util.IdentityHashMap', [
 
  If no such object exists, the map should be "wrapped" using the
  `],
-			[/* reference */ 'r', `.Collections#synchronizedMap(java.util.Map)`],
+			[/* reference */ 'r', `java.util.Collections#synchronizedMap(java.util.Map)`, `Collections.synchronizedMap`],
 			[/* text */ 't', `
  method.  This is best done at creation time, to prevent accidental
  unsynchronized access to the map:`]
@@ -149,7 +149,7 @@ DocsCollector.collect('java.util.IdentityHashMap', [
 			[/* inline code block */ 'i', `remove`],
 			[/* text */ 't', ` method, the iterator
  will throw a `],
-			[/* reference */ 'r', `java.util.ConcurrentModificationException`],
+			[/* reference */ 'r', `java.util.ConcurrentModificationException`, `ConcurrentModificationException`],
 			[/* text */ 't', `.  Thus, in the
  face of concurrent modification, the iterator fails quickly and
  cleanly, rather than risking arbitrary, non-deterministic behavior
@@ -333,7 +333,7 @@ DocsCollector.collect('java.util.IdentityHashMap', [
 				[/* inline code block */ 'i', `m2`],
 				[/* text */ 't', `, as
  required by the general contract of `],
-				[/* reference */ 'r', `java.Object#hashCode()`],
+				[/* reference */ 'r', `java.lang.Object#hashCode()`, `Object.hashCode()`],
 				[/* text */ 't', `.
 
  `],
@@ -384,7 +384,7 @@ DocsCollector.collect('java.util.IdentityHashMap', [
 		[/* method */ 'values()', [
 			[/* method description */
 				[/* text */ 't', `Returns a `],
-				[/* reference */ 'r', `java.util.Collection`],
+				[/* reference */ 'r', `java.util.Collection`, `Collection`],
 				[/* text */ 't', ` view of the values contained in this map.
  The collection is backed by the map, so changes to the map are
  reflected in the collection, and vice-versa.  If the map is
@@ -442,7 +442,7 @@ DocsCollector.collect('java.util.IdentityHashMap', [
 		[/* method */ 'entrySet()', [
 			[/* method description */
 				[/* text */ 't', `Returns a `],
-				[/* reference */ 'r', `java.util.Set`],
+				[/* reference */ 'r', `java.util.Set`, `Set`],
 				[/* text */ 't', ` view of the mappings contained in this map.
  Each element in the returned set is a reference-equality-based
  `],
@@ -513,7 +513,7 @@ DocsCollector.collect('java.util.IdentityHashMap', [
 					[/* text */ 't', ` instances in the set returned by this method,
  it is possible that the symmetry and transitivity requirements of
  the `],
-					[/* reference */ 'r', `java.Object#equals(java.lang.Object)`],
+					[/* reference */ 'r', `java.lang.Object#equals(java.lang.Object)`, `Object.equals(Object)`],
 					[/* text */ 't', ` contract may be violated if any of
  the entries in the set is compared to a normal map entry, or if
  the set returned by this method is compared to a set of normal map

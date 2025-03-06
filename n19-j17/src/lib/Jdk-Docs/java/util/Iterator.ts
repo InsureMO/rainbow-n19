@@ -7,7 +7,7 @@ DocsCollector.collect('java.util.Iterator', [
 		[/* inline code block */ 'i', `Iterator`],
 		[/* text */ 't', ` takes the place of
  `],
-		[/* reference */ 'r', `java.util.Enumeration`],
+		[/* reference */ 'r', `java.util.Enumeration`, `Enumeration`],
 		[/* text */ 't', ` in the Java Collections Framework.  Iterators
  differ from enumerations in two ways:
 

@@ -95,7 +95,7 @@ DocsCollector.collect('java.lang.invoke.SwitchPoint', [
 			[/* text */ 't', `Implementation Note:`],
 			[/* text */ 't', `
  A switch point behaves as if implemented on top of `],
-			[/* reference */ 'r', `java.lang.invoke.MutableCallSite`],
+			[/* reference */ 'r', `java.lang.invoke.MutableCallSite`, `MutableCallSite`],
 			[/* text */ 't', `,
  approximately as follows:
  `]
@@ -170,7 +170,7 @@ DocsCollector.collect('java.lang.invoke.SwitchPoint', [
 					[/* inline code block */ 'i', `s.guardWithTest`],
 					[/* text */ 't', ` on
  `],
-					[/* reference */ 'r', `.MethodHandles#constant(java.lang.Class,java.lang.Object)`],
+					[/* reference */ 'r', `java.lang.invoke.MethodHandles#constant(java.lang.Class,java.lang.Object)`, `constant`],
 					[/* text */ 't', ` true and false method handles.`]
 				]]
 			],
@@ -260,14 +260,14 @@ DocsCollector.collect('java.lang.invoke.SwitchPoint', [
 					[/* inline code block */ 'i', `SwitchPoint`],
 					[/* text */ 't', ` may use
  a private `],
-					[/* reference */ 'r', `java.lang.invoke.MutableCallSite`],
+					[/* reference */ 'r', `java.lang.invoke.MutableCallSite`, `MutableCallSite`],
 					[/* text */ 't', ` to publish the state of a switch point.
  In such an implementation, the `],
 					[/* inline code block */ 'i', `invalidateAll`],
 					[/* text */ 't', ` method can
  simply change the call site's target, and issue one call to
  `],
-					[/* reference */ 'r', `.MutableCallSite#syncAll(java.lang.invoke.MutableCallSite[])`],
+					[/* reference */ 'r', `java.lang.invoke.MutableCallSite#syncAll(java.lang.invoke.MutableCallSite[])`, `synchronize`],
 					[/* text */ 't', ` all the
  private call sites.`]
 				]]

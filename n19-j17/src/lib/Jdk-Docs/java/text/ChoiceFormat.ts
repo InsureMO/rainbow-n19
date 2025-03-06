@@ -158,7 +158,7 @@ DocsCollector.collect('java.text.ChoiceFormat', [
 		]],
 		[/* block */ 'b', ''],
 		[/* block */ 'b', [
-			[/* text */ 't', `Synchronization`]
+			[/* anchor */ 'r', '#-id', `synchronization`, `Synchronization`]
 		]],
 		[/* block */ 'b', `
  Choice formats are not synchronized.
@@ -376,7 +376,7 @@ DocsCollector.collect('java.text.ChoiceFormat', [
 					[/* inline code block */ 'i', `fieldPosition`],
 					[/* text */ 't', ` is
                    `],
-					[/* reference */ 'r', `.NumberFormat#INTEGER_FIELD`],
+					[/* reference */ 'r', `java.text.NumberFormat#INTEGER_FIELD`, `NumberFormat.INTEGER_FIELD`],
 					[/* text */ 't', `, the begin index
                    and end index of `],
 					[/* inline code block */ 'i', `fieldPosition`],

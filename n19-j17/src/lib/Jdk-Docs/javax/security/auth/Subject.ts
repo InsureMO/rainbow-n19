@@ -332,7 +332,7 @@ DocsCollector.collect('javax.security.auth.Subject', [
 				[/* block */ 'b', [
 					[/* text */ 't', ` If a security manager is installed, the caller must have a
  `],
-					[/* reference */ 'r', `javax.security.auth.PrivateCredentialPermission`],
+					[/* reference */ 'r', `javax.security.auth.PrivateCredentialPermission`, `PrivateCredentialPermission`],
 					[/* text */ 't', ` to access all of the requested
  Credentials, or a `],
 					[/* inline code block */ 'i', `SecurityException`],
@@ -474,7 +474,7 @@ DocsCollector.collect('javax.security.auth.Subject', [
 				[/* throw */ 'java.lang.SecurityException', [/* throw description */
 					[/* text */ 't', `if a security manager is installed and the
          caller does not have a `],
-					[/* reference */ 'r', `javax.security.auth.PrivateCredentialPermission`],
+					[/* reference */ 'r', `javax.security.auth.PrivateCredentialPermission`, `PrivateCredentialPermission`],
 					[/* text */ 't', `
          permission to access the private credentials for this
          `],
@@ -516,7 +516,7 @@ DocsCollector.collect('javax.security.auth.Subject', [
 				[/* throw */ 'java.lang.SecurityException', [/* throw description */
 					[/* text */ 't', `if a security manager is installed and the
          caller does not have a `],
-					[/* reference */ 'r', `javax.security.auth.PrivateCredentialPermission`],
+					[/* reference */ 'r', `javax.security.auth.PrivateCredentialPermission`, `PrivateCredentialPermission`],
 					[/* text */ 't', `
          permission to access this Subject's private credentials.`]
 				]]
@@ -570,7 +570,7 @@ DocsCollector.collect('javax.security.auth.Subject', [
 				[/* block */ 'b', [
 					[/* text */ 't', ` If a security manager is installed, the caller must have a
  `],
-					[/* reference */ 'r', `.AuthPermission#<init>(java.lang.String)`],
+					[/* reference */ 'r', `javax.security.auth.AuthPermission#<init>(java.lang.String)`, `AuthPermission("modifyPrivateCredentials")`],
 					[/* text */ 't', ` permission to modify
  the returned set, or a `],
 					[/* inline code block */ 'i', `SecurityException`],
@@ -586,7 +586,7 @@ DocsCollector.collect('javax.security.auth.Subject', [
 					[/* inline code block */ 'i', `SecurityException`],
 					[/* text */ 't', ` is thrown if a security manager is installed
  and the caller does not have a `],
-					[/* reference */ 'r', `javax.security.auth.PrivateCredentialPermission`],
+					[/* reference */ 'r', `javax.security.auth.PrivateCredentialPermission`, `PrivateCredentialPermission`],
 					[/* text */ 't', `
  to access a particular Credential.  The `],
 					[/* inline code block */ 'i', `Iterator`],
@@ -636,7 +636,7 @@ DocsCollector.collect('javax.security.auth.Subject', [
 				[/* block */ 'b', [
 					[/* text */ 't', ` If a security manager is installed, the caller must have a
  `],
-					[/* reference */ 'r', `.AuthPermission#<init>(java.lang.String)`],
+					[/* reference */ 'r', `javax.security.auth.AuthPermission#<init>(java.lang.String)`, `AuthPermission("modifyPublicCredentials")`],
 					[/* text */ 't', ` permission to modify
  the returned set, or a `],
 					[/* inline code block */ 'i', `SecurityException`],
@@ -690,7 +690,7 @@ DocsCollector.collect('javax.security.auth.Subject', [
 				[/* block */ 'b', [
 					[/* text */ 't', ` If a security manager is installed, the caller must have a
  `],
-					[/* reference */ 'r', `.AuthPermission#<init>(java.lang.String)`],
+					[/* reference */ 'r', `javax.security.auth.AuthPermission#<init>(java.lang.String)`, `AuthPermission("modifyPrincipals")`],
 					[/* text */ 't', ` permission to modify
  the returned set, or a `],
 					[/* inline code block */ 'i', `SecurityException`],
@@ -776,7 +776,7 @@ DocsCollector.collect('javax.security.auth.Subject', [
 					[/* text */ 't', `if a security manager is installed and the
                   caller does not have an
                   `],
-					[/* reference */ 'r', `.AuthPermission#<init>(java.lang.String)`],
+					[/* reference */ 'r', `javax.security.auth.AuthPermission#<init>(java.lang.String)`, `AuthPermission("doAs")`],
 					[/* text */ 't', ` permission to invoke this
                   method.`]
 				]]
@@ -864,7 +864,7 @@ DocsCollector.collect('javax.security.auth.Subject', [
 					[/* text */ 't', `if a security manager is installed and the
                   caller does not have an
                   `],
-					[/* reference */ 'r', `.AuthPermission#<init>(java.lang.String)`],
+					[/* reference */ 'r', `javax.security.auth.AuthPermission#<init>(java.lang.String)`, `AuthPermission("doAs")`],
 					[/* text */ 't', ` permission to invoke this
                   method.`]
 				]]
@@ -947,7 +947,7 @@ DocsCollector.collect('javax.security.auth.Subject', [
 					[/* text */ 't', `if a security manager is installed and the
                   caller does not have a
                   `],
-					[/* reference */ 'r', `.AuthPermission#<init>(java.lang.String)`],
+					[/* reference */ 'r', `javax.security.auth.AuthPermission#<init>(java.lang.String)`, `AuthPermission("doAsPrivileged")`],
 					[/* text */ 't', ` permission to invoke
                   this method.`]
 				]]
@@ -1038,7 +1038,7 @@ DocsCollector.collect('javax.security.auth.Subject', [
 					[/* text */ 't', `if a security manager is installed and the
                   caller does not have a
                   `],
-					[/* reference */ 'r', `.AuthPermission#<init>(java.lang.String)`],
+					[/* reference */ 'r', `javax.security.auth.AuthPermission#<init>(java.lang.String)`, `AuthPermission("doAsPrivileged")`],
 					[/* text */ 't', ` permission to invoke
                   this method.`]
 				]]
@@ -1090,7 +1090,7 @@ DocsCollector.collect('javax.security.auth.Subject', [
 					[/* text */ 't', `if a security manager is installed and the
           caller does not have an
           `],
-					[/* reference */ 'r', `.AuthPermission#<init>(java.lang.String)`],
+					[/* reference */ 'r', `javax.security.auth.AuthPermission#<init>(java.lang.String)`, `AuthPermission("getSubject")`],
 					[/* text */ 't', ` permission to get the
           `],
 					[/* inline code block */ 'i', `Subject`],
@@ -1163,7 +1163,7 @@ DocsCollector.collect('javax.security.auth.Subject', [
 					[/* text */ 't', `if a security manager is installed and the
          caller does not have an
          `],
-					[/* reference */ 'r', `.AuthPermission#<init>(java.lang.String)`],
+					[/* reference */ 'r', `javax.security.auth.AuthPermission#<init>(java.lang.String)`, `AuthPermission("setReadOnly")`],
 					[/* text */ 't', ` permission to set this
          `],
 					[/* inline code block */ 'i', `Subject`],

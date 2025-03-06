@@ -40,10 +40,10 @@ DocsCollector.collect('java.util.LinkedHashSet', [
 		[/* block */ 'b', [
 			[/* text */ 't', `This implementation spares its clients from the unspecified, generally
  chaotic ordering provided by `],
-			[/* reference */ 'r', `java.util.HashSet`],
+			[/* reference */ 'r', `java.util.HashSet`, `HashSet`],
 			[/* text */ 't', `, without incurring the
  increased cost associated with `],
-			[/* reference */ 'r', `java.util.TreeSet`],
+			[/* reference */ 'r', `java.util.TreeSet`, `TreeSet`],
 			[/* text */ 't', `.  It can be used to
  produce a copy of a set that has the same order as the original, regardless
  of the original set's implementation:
@@ -127,7 +127,7 @@ DocsCollector.collect('java.util.LinkedHashSet', [
 
  If no such object exists, the set should be "wrapped" using the
  `],
-			[/* reference */ 'r', `.Collections#synchronizedSet(java.util.Set)`],
+			[/* reference */ 'r', `java.util.Collections#synchronizedSet(java.util.Set)`, `Collections.synchronizedSet`],
 			[/* text */ 't', `
  method.  This is best done at creation time, to prevent accidental
  unsynchronized access to the set: `]
@@ -145,7 +145,7 @@ DocsCollector.collect('java.util.LinkedHashSet', [
 			[/* inline code block */ 'i', `remove`],
 			[/* text */ 't', `
  method, the iterator will throw a `],
-			[/* reference */ 'r', `java.util.ConcurrentModificationException`],
+			[/* reference */ 'r', `java.util.ConcurrentModificationException`, `ConcurrentModificationException`],
 			[/* text */ 't', `.
  Thus, in the face of concurrent modification, the iterator fails quickly
  and cleanly, rather than risking arbitrary, non-deterministic behavior at
@@ -243,7 +243,7 @@ DocsCollector.collect('java.util.LinkedHashSet', [
 		[/* method */ 'spliterator()', [
 			[/* method description */
 				[/* text */ 't', `Creates a `],
-				[/* reference */ 'r', `.Spliterator#binding`],
+				[/* reference */ 'r', `java.util.Spliterator#binding`, `late-binding`],
 				[/* text */ 't', `
  and `],
 				[/* text */ 't', `fail-fast`],
@@ -255,10 +255,10 @@ DocsCollector.collect('java.util.LinkedHashSet', [
 					[/* text */ 't', `The `],
 					[/* inline code block */ 'i', `Spliterator`],
 					[/* text */ 't', ` reports `],
-					[/* reference */ 'r', `.Spliterator#SIZED`],
+					[/* reference */ 'r', `java.util.Spliterator#SIZED`, `Spliterator.SIZED`],
 					[/* text */ 't', `,
  `],
-					[/* reference */ 'r', `.Spliterator#DISTINCT`],
+					[/* reference */ 'r', `java.util.Spliterator#DISTINCT`, `Spliterator.DISTINCT`],
 					[/* text */ 't', `, and `],
 					[/* inline code block */ 'i', `ORDERED`],
 					[/* text */ 't', `.  Implementations

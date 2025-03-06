@@ -4,7 +4,7 @@ import {DocsCollector} from '../../../DocsCollector';
 DocsCollector.collect('java.lang.constant.DirectMethodHandleDesc$Kind', [
 	[/* class description */
 		[/* text */ 't', `Kinds of method handles that can be described with `],
-		[/* reference */ 'r', `java.lang.constant.DirectMethodHandleDesc`],
+		[/* reference */ 'r', `java.lang.constant.DirectMethodHandleDesc`, `DirectMethodHandleDesc`],
 		[/* text */ 't', `.`]
 	],
 	[/* fields */
@@ -19,7 +19,7 @@ DocsCollector.collect('java.lang.constant.DirectMethodHandleDesc$Kind', [
 				[/* inline code block */ 'i', `refKind`],
 				[/* text */ 't', ` value for this kind of method handle,
  as defined by `],
-				[/* reference */ 'r', `java.lang.invoke.MethodHandleInfo`]
+				[/* reference */ 'r', `java.lang.invoke.MethodHandleInfo`, `MethodHandleInfo`]
 			],
 		]]
 	],

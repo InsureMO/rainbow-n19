@@ -13,7 +13,7 @@ DocsCollector.collect('java.util.MissingFormatArgumentException', [
 			[/* inline code block */ 'i', `null`],
 			[/* text */ 't', ` argument to any
  method or constructor in this class will cause a `],
-			[/* reference */ 'r', `java.lang.NullPointerException`],
+			[/* reference */ 'r', `java.lang.NullPointerException`, `NullPointerException`],
 			[/* text */ 't', ` to be thrown.`]
 		]]
 	],

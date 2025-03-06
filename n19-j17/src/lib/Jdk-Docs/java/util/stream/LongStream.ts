@@ -8,16 +8,16 @@ DocsCollector.collect('java.util.stream.LongStream', [
 		[/* inline code block */ 'i', `long`],
 		[/* text */ 't', ` primitive specialization of
  `],
-		[/* reference */ 'r', `java.util.stream.Stream`],
+		[/* reference */ 'r', `java.util.stream.Stream`, `Stream`],
 		[/* text */ 't', `.
 
  `],
 		[/* block */ 'b', [
 			[/* text */ 't', `The following example illustrates an aggregate operation using
  `],
-			[/* reference */ 'r', `java.util.stream.Stream`],
+			[/* reference */ 'r', `java.util.stream.Stream`, `Stream`],
 			[/* text */ 't', ` and `],
-			[/* reference */ 'r', `java.util.stream.LongStream`],
+			[/* reference */ 'r', `java.util.stream.LongStream`, `LongStream`],
 			[/* text */ 't', `, computing the sum of the weights of the
  red widgets:
 
@@ -32,10 +32,10 @@ DocsCollector.collect('java.util.stream.LongStream', [
 		[/* text */ 't', `
 
  See the class documentation for `],
-		[/* reference */ 'r', `java.util.stream.Stream`],
+		[/* reference */ 'r', `java.util.stream.Stream`, `Stream`],
 		[/* text */ 't', ` and the package documentation
  for `],
-		[/* reference */ 'r', `.package-summary`],
+		[/* text */ 't', `java.util.stream`],
 		[/* text */ 't', ` for additional
  specification of streams, stream operations, stream pipelines, and
  parallelism.`],
@@ -47,7 +47,7 @@ DocsCollector.collect('java.util.stream.LongStream', [
 		[/* method */ 'collect(java.util.function.Supplier,java.util.function.ObjLongConsumer,java.util.function.BiConsumer)', [
 			[/* method description */
 				[/* text */ 't', `Performs a `],
-				[/* reference */ 'r', `.package-summary#MutableReduction`],
+				[/* text */ 't', `mutable reduction`],
 				[/* text */ 't', ` operation on the elements of this stream.  A mutable
  reduction is one in which the reduced value is a mutable result container,
  such as an `],
@@ -74,7 +74,7 @@ DocsCollector.collect('java.util.stream.LongStream', [
 				]],
 				[/* block */ 'b', [
 					[/* text */ 't', `This is a `],
-					[/* reference */ 'r', `.package-summary#StreamOps`],
+					[/* text */ 't', `terminal operation`],
 					[/* text */ 't', `.`]
 				]]
 			],
@@ -86,26 +86,26 @@ DocsCollector.collect('java.util.stream.LongStream', [
 				]],
 				[/* parameter */ 'accumulator', [/* parameter description */
 					[/* text */ 't', `an `],
-					[/* reference */ 'r', `.package-summary#Associativity`],
+					[/* text */ 't', `associative`],
 					[/* text */ 't', `,
                     `],
-					[/* reference */ 'r', `.package-summary#NonInterference`],
+					[/* text */ 't', `non-interfering`],
 					[/* text */ 't', `,
                     `],
-					[/* reference */ 'r', `.package-summary#Statelessness`],
+					[/* text */ 't', `stateless`],
 					[/* text */ 't', `
                     function that must fold an element into a result
                     container.`]
 				]],
 				[/* parameter */ 'combiner', [/* parameter description */
 					[/* text */ 't', `an `],
-					[/* reference */ 'r', `.package-summary#Associativity`],
+					[/* text */ 't', `associative`],
 					[/* text */ 't', `,
                     `],
-					[/* reference */ 'r', `.package-summary#NonInterference`],
+					[/* text */ 't', `non-interfering`],
 					[/* text */ 't', `,
                     `],
-					[/* reference */ 'r', `.package-summary#Statelessness`],
+					[/* text */ 't', `stateless`],
 					[/* text */ 't', `
                     function that accepts two partial result containers
                     and merges them, which must be compatible with the
@@ -129,17 +129,17 @@ DocsCollector.collect('java.util.stream.LongStream', [
  `],
 				[/* block */ 'b', [
 					[/* text */ 't', `This is an `],
-					[/* reference */ 'r', `.package-summary#StreamOps`],
+					[/* text */ 't', `intermediate operation`],
 					[/* text */ 't', `.`]
 				]]
 			],
 			[/* parameters */
 				[/* parameter */ 'mapper', [/* parameter description */
 					[/* text */ 't', `a `],
-					[/* reference */ 'r', `.package-summary#NonInterference`],
+					[/* text */ 't', `non-interfering`],
 					[/* text */ 't', `,
                `],
-					[/* reference */ 'r', `.package-summary#Statelessness`],
+					[/* text */ 't', `stateless`],
 					[/* text */ 't', `
                function to apply to each element`]
 				]]
@@ -161,17 +161,17 @@ DocsCollector.collect('java.util.stream.LongStream', [
  `],
 				[/* block */ 'b', [
 					[/* text */ 't', `This is a `],
-					[/* reference */ 'r', `.package-summary#StreamOps`],
+					[/* text */ 't', `short-circuiting terminal operation`],
 					[/* text */ 't', `.`]
 				]]
 			],
 			[/* parameters */
 				[/* parameter */ 'predicate', [/* parameter description */
 					[/* text */ 't', `a `],
-					[/* reference */ 'r', `.package-summary#NonInterference`],
+					[/* text */ 't', `non-interfering`],
 					[/* text */ 't', `,
                   `],
-					[/* reference */ 'r', `.package-summary#Statelessness`],
+					[/* text */ 't', `stateless`],
 					[/* text */ 't', `
                   predicate to apply to elements of this stream`]
 				]]
@@ -196,17 +196,17 @@ DocsCollector.collect('java.util.stream.LongStream', [
  `],
 				[/* block */ 'b', [
 					[/* text */ 't', `This is a `],
-					[/* reference */ 'r', `.package-summary#StreamOps`],
+					[/* text */ 't', `short-circuiting terminal operation`],
 					[/* text */ 't', `.`]
 				]]
 			],
 			[/* parameters */
 				[/* parameter */ 'predicate', [/* parameter description */
 					[/* text */ 't', `a `],
-					[/* reference */ 'r', `.package-summary#NonInterference`],
+					[/* text */ 't', `non-interfering`],
 					[/* text */ 't', `,
                   `],
-					[/* reference */ 'r', `.package-summary#Statelessness`],
+					[/* text */ 't', `stateless`],
 					[/* text */ 't', `
                   predicate to apply to elements of this stream`]
 				]]
@@ -231,17 +231,17 @@ DocsCollector.collect('java.util.stream.LongStream', [
  `],
 				[/* block */ 'b', [
 					[/* text */ 't', `This is a `],
-					[/* reference */ 'r', `.package-summary#StreamOps`],
+					[/* text */ 't', `short-circuiting terminal operation`],
 					[/* text */ 't', `.`]
 				]]
 			],
 			[/* parameters */
 				[/* parameter */ 'predicate', [/* parameter description */
 					[/* text */ 't', `a `],
-					[/* reference */ 'r', `.package-summary#NonInterference`],
+					[/* text */ 't', `non-interfering`],
 					[/* text */ 't', `,
                   `],
-					[/* reference */ 'r', `.package-summary#Statelessness`],
+					[/* text */ 't', `stateless`],
 					[/* text */ 't', `
                   predicate to apply to elements of this stream`]
 				]]
@@ -261,13 +261,13 @@ DocsCollector.collect('java.util.stream.LongStream', [
 				[/* text */ 't', ` describing various summary data
  about the elements of this stream.  This is a special case of a
  `],
-				[/* reference */ 'r', `.package-summary#Reduction`],
+				[/* text */ 't', `reduction`],
 				[/* text */ 't', `.
 
  `],
 				[/* block */ 'b', [
 					[/* text */ 't', `This is a `],
-					[/* reference */ 'r', `.package-summary#StreamOps`],
+					[/* text */ 't', `terminal operation`],
 					[/* text */ 't', `.`]
 				]]
 			],
@@ -288,13 +288,13 @@ DocsCollector.collect('java.util.stream.LongStream', [
  this stream, or an empty optional if this stream is empty.  This is a
  special case of a
  `],
-				[/* reference */ 'r', `.package-summary#Reduction`],
+				[/* text */ 't', `reduction`],
 				[/* text */ 't', `.
 
  `],
 				[/* block */ 'b', [
 					[/* text */ 't', `This is a `],
-					[/* reference */ 'r', `.package-summary#StreamOps`],
+					[/* text */ 't', `terminal operation`],
 					[/* text */ 't', `.`]
 				]]
 			],
@@ -310,7 +310,7 @@ DocsCollector.collect('java.util.stream.LongStream', [
 		[/* method */ 'findAny()', [
 			[/* method description */
 				[/* text */ 't', `Returns an `],
-				[/* reference */ 'r', `java.util.OptionalLong`],
+				[/* reference */ 'r', `java.util.OptionalLong`, `OptionalLong`],
 				[/* text */ 't', ` describing some element of the stream, or
  an empty `],
 				[/* inline code block */ 'i', `OptionalLong`],
@@ -319,7 +319,7 @@ DocsCollector.collect('java.util.stream.LongStream', [
  `],
 				[/* block */ 'b', [
 					[/* text */ 't', `This is a `],
-					[/* reference */ 'r', `.package-summary#StreamOps`],
+					[/* text */ 't', `short-circuiting terminal operation`],
 					[/* text */ 't', `.
 
  `]
@@ -348,7 +348,7 @@ DocsCollector.collect('java.util.stream.LongStream', [
 		[/* method */ 'findFirst()', [
 			[/* method description */
 				[/* text */ 't', `Returns an `],
-				[/* reference */ 'r', `java.util.OptionalLong`],
+				[/* reference */ 'r', `java.util.OptionalLong`, `OptionalLong`],
 				[/* text */ 't', ` describing the first element of this
  stream, or an empty `],
 				[/* inline code block */ 'i', `OptionalLong`],
@@ -358,7 +358,7 @@ DocsCollector.collect('java.util.stream.LongStream', [
  `],
 				[/* block */ 'b', [
 					[/* text */ 't', `This is a `],
-					[/* reference */ 'r', `.package-summary#StreamOps`],
+					[/* text */ 't', `short-circuiting terminal operation`],
 					[/* text */ 't', `.`]
 				]]
 			],
@@ -380,7 +380,7 @@ DocsCollector.collect('java.util.stream.LongStream', [
 				[/* text */ 't', ` describing the maximum element of this
  stream, or an empty optional if this stream is empty.  This is a special
  case of a `],
-				[/* reference */ 'r', `.package-summary#Reduction`],
+				[/* text */ 't', `reduction`],
 				[/* text */ 't', `
  and is equivalent to:
  `],
@@ -389,7 +389,7 @@ DocsCollector.collect('java.util.stream.LongStream', [
 				]],
 				[/* block */ 'b', [
 					[/* text */ 't', `This is a `],
-					[/* reference */ 'r', `.package-summary#StreamOps`],
+					[/* text */ 't', `terminal operation`],
 					[/* text */ 't', `.`]
 				]]
 			],
@@ -411,7 +411,7 @@ DocsCollector.collect('java.util.stream.LongStream', [
 				[/* text */ 't', ` describing the minimum element of this
  stream, or an empty optional if this stream is empty.  This is a special
  case of a `],
-				[/* reference */ 'r', `.package-summary#Reduction`],
+				[/* text */ 't', `reduction`],
 				[/* text */ 't', `
  and is equivalent to:
  `],
@@ -420,7 +420,7 @@ DocsCollector.collect('java.util.stream.LongStream', [
 				]],
 				[/* block */ 'b', [
 					[/* text */ 't', `This is a `],
-					[/* reference */ 'r', `.package-summary#StreamOps`],
+					[/* text */ 't', `terminal operation`],
 					[/* text */ 't', `.`]
 				]]
 			],
@@ -438,11 +438,11 @@ DocsCollector.collect('java.util.stream.LongStream', [
 		[/* method */ 'reduce(java.util.function.LongBinaryOperator)', [
 			[/* method description */
 				[/* text */ 't', `Performs a `],
-				[/* reference */ 'r', `.package-summary#Reduction`],
+				[/* text */ 't', `reduction`],
 				[/* text */ 't', ` on the
  elements of this stream, using an
  `],
-				[/* reference */ 'r', `.package-summary#Associativity`],
+				[/* text */ 't', `associative`],
 				[/* text */ 't', ` accumulation
  function, and returns an `],
 				[/* inline code block */ 'i', `OptionalLong`],
@@ -472,27 +472,27 @@ DocsCollector.collect('java.util.stream.LongStream', [
 					[/* inline code block */ 'i', `accumulator`],
 					[/* text */ 't', ` function must be an
  `],
-					[/* reference */ 'r', `.package-summary#Associativity`],
+					[/* text */ 't', `associative`],
 					[/* text */ 't', ` function.
 
  `]
 				]],
 				[/* block */ 'b', [
 					[/* text */ 't', `This is a `],
-					[/* reference */ 'r', `.package-summary#StreamOps`],
+					[/* text */ 't', `terminal operation`],
 					[/* text */ 't', `.`]
 				]]
 			],
 			[/* parameters */
 				[/* parameter */ 'op', [/* parameter description */
 					[/* text */ 't', `an `],
-					[/* reference */ 'r', `.package-summary#Associativity`],
+					[/* text */ 't', `associative`],
 					[/* text */ 't', `,
            `],
-					[/* reference */ 'r', `.package-summary#NonInterference`],
+					[/* text */ 't', `non-interfering`],
 					[/* text */ 't', `,
            `],
-					[/* reference */ 'r', `.package-summary#Statelessness`],
+					[/* text */ 't', `stateless`],
 					[/* text */ 't', `
            function for combining two values`]
 				]]
@@ -516,7 +516,7 @@ DocsCollector.collect('java.util.stream.LongStream', [
  `],
 				[/* block */ 'b', [
 					[/* text */ 't', `This is an `],
-					[/* reference */ 'r', `.package-summary#StreamOps`],
+					[/* text */ 't', `intermediate operation`],
 					[/* text */ 't', `.`]
 				]]
 			],
@@ -540,17 +540,17 @@ DocsCollector.collect('java.util.stream.LongStream', [
  `],
 				[/* block */ 'b', [
 					[/* text */ 't', `This is an `],
-					[/* reference */ 'r', `.package-summary#StreamOps`],
+					[/* text */ 't', `intermediate operation`],
 					[/* text */ 't', `.`]
 				]]
 			],
 			[/* parameters */
 				[/* parameter */ 'mapper', [/* parameter description */
 					[/* text */ 't', `a `],
-					[/* reference */ 'r', `.package-summary#NonInterference`],
+					[/* text */ 't', `non-interfering`],
 					[/* text */ 't', `,
                `],
-					[/* reference */ 'r', `.package-summary#Statelessness`],
+					[/* text */ 't', `stateless`],
 					[/* text */ 't', `
                function to apply to each element`]
 				]]
@@ -570,17 +570,17 @@ DocsCollector.collect('java.util.stream.LongStream', [
  `],
 				[/* block */ 'b', [
 					[/* text */ 't', `This is an `],
-					[/* reference */ 'r', `.package-summary#StreamOps`],
+					[/* text */ 't', `intermediate operation`],
 					[/* text */ 't', `.`]
 				]]
 			],
 			[/* parameters */
 				[/* parameter */ 'mapper', [/* parameter description */
 					[/* text */ 't', `a `],
-					[/* reference */ 'r', `.package-summary#NonInterference`],
+					[/* text */ 't', `non-interfering`],
 					[/* text */ 't', `,
                `],
-					[/* reference */ 'r', `.package-summary#Statelessness`],
+					[/* text */ 't', `stateless`],
 					[/* text */ 't', `
                function to apply to each element`]
 				]]
@@ -597,7 +597,7 @@ DocsCollector.collect('java.util.stream.LongStream', [
  `],
 				[/* block */ 'b', [
 					[/* text */ 't', `This is a `],
-					[/* reference */ 'r', `.package-summary#StreamOps`],
+					[/* text */ 't', `stateful intermediate operation`],
 					[/* text */ 't', `.`]
 				]]
 			],
@@ -615,17 +615,17 @@ DocsCollector.collect('java.util.stream.LongStream', [
  `],
 				[/* block */ 'b', [
 					[/* text */ 't', `This is an `],
-					[/* reference */ 'r', `.package-summary#StreamOps`],
+					[/* text */ 't', `intermediate operation`],
 					[/* text */ 't', `.`]
 				]]
 			],
 			[/* parameters */
 				[/* parameter */ 'predicate', [/* parameter description */
 					[/* text */ 't', `a `],
-					[/* reference */ 'r', `.package-summary#NonInterference`],
+					[/* text */ 't', `non-interfering`],
 					[/* text */ 't', `,
                   `],
-					[/* reference */ 'r', `.package-summary#Statelessness`],
+					[/* text */ 't', `stateless`],
 					[/* text */ 't', `
                   predicate to apply to each element to determine if it
                   should be included`]
@@ -642,7 +642,7 @@ DocsCollector.collect('java.util.stream.LongStream', [
  this stream with the contents of a mapped stream produced by applying
  the provided mapping function to each element.  Each mapped stream is
  `],
-				[/* reference */ 'r', `.BaseStream#close()`],
+				[/* reference */ 'r', `java.util.stream.BaseStream#close()`, `closed`],
 				[/* text */ 't', ` after its contents
  have been placed into this stream.  (If a mapped stream is `],
 				[/* inline code block */ 'i', `null`],
@@ -652,17 +652,17 @@ DocsCollector.collect('java.util.stream.LongStream', [
  `],
 				[/* block */ 'b', [
 					[/* text */ 't', `This is an `],
-					[/* reference */ 'r', `.package-summary#StreamOps`],
+					[/* text */ 't', `intermediate operation`],
 					[/* text */ 't', `.`]
 				]]
 			],
 			[/* parameters */
 				[/* parameter */ 'mapper', [/* parameter description */
 					[/* text */ 't', `a `],
-					[/* reference */ 'r', `.package-summary#NonInterference`],
+					[/* text */ 't', `non-interfering`],
 					[/* text */ 't', `,
                `],
-					[/* reference */ 'r', `.package-summary#Statelessness`],
+					[/* text */ 't', `stateless`],
 					[/* text */ 't', `
                function to apply to each element which produces a
                `],
@@ -685,7 +685,7 @@ DocsCollector.collect('java.util.stream.LongStream', [
  `],
 				[/* block */ 'b', [
 					[/* text */ 't', `This is a `],
-					[/* reference */ 'r', `.package-summary#StreamOps`],
+					[/* text */ 't', `short-circuiting stateful intermediate operation`],
 					[/* text */ 't', `.`]
 				]]
 			],
@@ -713,17 +713,17 @@ DocsCollector.collect('java.util.stream.LongStream', [
  `],
 				[/* block */ 'b', [
 					[/* text */ 't', `This is an `],
-					[/* reference */ 'r', `.package-summary#StreamOps`],
+					[/* text */ 't', `intermediate operation`],
 					[/* text */ 't', `.`]
 				]]
 			],
 			[/* parameters */
 				[/* parameter */ 'mapper', [/* parameter description */
 					[/* text */ 't', `a `],
-					[/* reference */ 'r', `.package-summary#NonInterference`],
+					[/* text */ 't', `non-interfering`],
 					[/* text */ 't', `,
                `],
-					[/* reference */ 'r', `.package-summary#Statelessness`],
+					[/* text */ 't', `stateless`],
 					[/* text */ 't', `
                function to apply to each element`]
 				]]
@@ -743,7 +743,7 @@ DocsCollector.collect('java.util.stream.LongStream', [
  `],
 				[/* block */ 'b', [
 					[/* text */ 't', `This is an `],
-					[/* reference */ 'r', `.package-summary#StreamOps`],
+					[/* text */ 't', `intermediate operation`],
 					[/* text */ 't', `.
 
  `]
@@ -756,7 +756,7 @@ DocsCollector.collect('java.util.stream.LongStream', [
 			[/* parameters */
 				[/* parameter */ 'action', [/* parameter description */
 					[/* text */ 't', `a `],
-					[/* reference */ 'r', `.package-summary#NonInterference`],
+					[/* text */ 't', `non-interfering`],
 					[/* text */ 't', ` action to perform on the elements as
                they are consumed from the stream`]
 				]]
@@ -781,7 +781,7 @@ DocsCollector.collect('java.util.stream.LongStream', [
  `],
 				[/* block */ 'b', [
 					[/* text */ 't', `This is a `],
-					[/* reference */ 'r', `.package-summary#StreamOps`],
+					[/* text */ 't', `stateful intermediate operation`],
 					[/* text */ 't', `.`]
 				]]
 			],
@@ -809,7 +809,7 @@ DocsCollector.collect('java.util.stream.LongStream', [
  `],
 				[/* block */ 'b', [
 					[/* text */ 't', `This is a `],
-					[/* reference */ 'r', `.package-summary#StreamOps`],
+					[/* text */ 't', `stateful intermediate operation`],
 					[/* text */ 't', `.`]
 				]]
 			],
@@ -831,7 +831,7 @@ DocsCollector.collect('java.util.stream.LongStream', [
  `],
 				[/* block */ 'b', [
 					[/* text */ 't', `This is an `],
-					[/* reference */ 'r', `.package-summary#StreamOps`],
+					[/* text */ 't', `intermediate operation`],
 					[/* text */ 't', `.`]
 				]]
 			],
@@ -849,7 +849,7 @@ DocsCollector.collect('java.util.stream.LongStream', [
 			[/* method description */
 				[/* text */ 't', `Returns the count of elements in this stream.  This is a special case of
  a `],
-				[/* reference */ 'r', `.package-summary#Reduction`],
+				[/* text */ 't', `reduction`],
 				[/* text */ 't', ` and is
  equivalent to:
  `],
@@ -858,7 +858,7 @@ DocsCollector.collect('java.util.stream.LongStream', [
 				]],
 				[/* block */ 'b', [
 					[/* text */ 't', `This is a `],
-					[/* reference */ 'r', `.package-summary#StreamOps`],
+					[/* text */ 't', `terminal operation`],
 					[/* text */ 't', `.`]
 				]]
 			],
@@ -871,11 +871,11 @@ DocsCollector.collect('java.util.stream.LongStream', [
 		[/* method */ 'reduce(long,java.util.function.LongBinaryOperator)', [
 			[/* method description */
 				[/* text */ 't', `Performs a `],
-				[/* reference */ 'r', `.package-summary#Reduction`],
+				[/* text */ 't', `reduction`],
 				[/* text */ 't', ` on the
  elements of this stream, using the provided identity value and an
  `],
-				[/* reference */ 'r', `.package-summary#Associativity`],
+				[/* text */ 't', `associative`],
 				[/* text */ 't', `
  accumulation function, and returns the reduced value.  This is equivalent
  to:
@@ -907,14 +907,14 @@ DocsCollector.collect('java.util.stream.LongStream', [
 					[/* inline code block */ 'i', `accumulator`],
 					[/* text */ 't', ` function must be an
  `],
-					[/* reference */ 'r', `.package-summary#Associativity`],
+					[/* text */ 't', `associative`],
 					[/* text */ 't', ` function.
 
  `]
 				]],
 				[/* block */ 'b', [
 					[/* text */ 't', `This is a `],
-					[/* reference */ 'r', `.package-summary#StreamOps`],
+					[/* text */ 't', `terminal operation`],
 					[/* text */ 't', `.`]
 				]]
 			],
@@ -924,13 +924,13 @@ DocsCollector.collect('java.util.stream.LongStream', [
 				]],
 				[/* parameter */ 'op', [/* parameter description */
 					[/* text */ 't', `an `],
-					[/* reference */ 'r', `.package-summary#Associativity`],
+					[/* text */ 't', `associative`],
 					[/* text */ 't', `,
            `],
-					[/* reference */ 'r', `.package-summary#NonInterference`],
+					[/* text */ 't', `non-interfering`],
 					[/* text */ 't', `,
            `],
-					[/* reference */ 'r', `.package-summary#Statelessness`],
+					[/* text */ 't', `stateless`],
 					[/* text */ 't', `
            function for combining two values`]
 				]]
@@ -944,7 +944,7 @@ DocsCollector.collect('java.util.stream.LongStream', [
 			[/* method description */
 				[/* text */ 't', `Returns the sum of elements in this stream.  This is a special case
  of a `],
-				[/* reference */ 'r', `.package-summary#Reduction`],
+				[/* text */ 't', `reduction`],
 				[/* text */ 't', `
  and is equivalent to:
  `],
@@ -953,7 +953,7 @@ DocsCollector.collect('java.util.stream.LongStream', [
 				]],
 				[/* block */ 'b', [
 					[/* text */ 't', `This is a `],
-					[/* reference */ 'r', `.package-summary#StreamOps`],
+					[/* text */ 't', `terminal operation`],
 					[/* text */ 't', `.`]
 				]]
 			],
@@ -970,7 +970,7 @@ DocsCollector.collect('java.util.stream.LongStream', [
  `],
 				[/* block */ 'b', [
 					[/* text */ 't', `This is a `],
-					[/* reference */ 'r', `.package-summary#StreamOps`],
+					[/* text */ 't', `terminal operation`],
 					[/* text */ 't', `.`]
 				]]
 			],
@@ -987,7 +987,7 @@ DocsCollector.collect('java.util.stream.LongStream', [
  `],
 				[/* block */ 'b', [
 					[/* text */ 't', `This is a `],
-					[/* reference */ 'r', `.package-summary#StreamOps`],
+					[/* text */ 't', `terminal operation`],
 					[/* text */ 't', `.
 
  `]
@@ -997,7 +997,7 @@ DocsCollector.collect('java.util.stream.LongStream', [
 			[/* parameters */
 				[/* parameter */ 'action', [/* parameter description */
 					[/* text */ 't', `a `],
-					[/* reference */ 'r', `.package-summary#NonInterference`],
+					[/* text */ 't', `non-interfering`],
 					[/* text */ 't', ` action to perform on the elements`]
 				]]
 			],
@@ -1013,14 +1013,14 @@ DocsCollector.collect('java.util.stream.LongStream', [
  `],
 				[/* block */ 'b', [
 					[/* text */ 't', `This is a `],
-					[/* reference */ 'r', `.package-summary#StreamOps`],
+					[/* text */ 't', `terminal operation`],
 					[/* text */ 't', `.`]
 				]]
 			],
 			[/* parameters */
 				[/* parameter */ 'action', [/* parameter description */
 					[/* text */ 't', `a `],
-					[/* reference */ 'r', `.package-summary#NonInterference`],
+					[/* text */ 't', `non-interfering`],
 					[/* text */ 't', ` action to perform on the elements`]
 				]]
 			],
@@ -1058,17 +1058,17 @@ DocsCollector.collect('java.util.stream.LongStream', [
  `],
 				[/* block */ 'b', [
 					[/* text */ 't', `This is a `],
-					[/* reference */ 'r', `.package-summary#StreamOps`],
+					[/* text */ 't', `stateful intermediate operation`],
 					[/* text */ 't', `.`]
 				]]
 			],
 			[/* parameters */
 				[/* parameter */ 'predicate', [/* parameter description */
 					[/* text */ 't', `a `],
-					[/* reference */ 'r', `.package-summary#NonInterference`],
+					[/* text */ 't', `non-interfering`],
 					[/* text */ 't', `,
                   `],
-					[/* reference */ 'r', `.package-summary#Statelessness`],
+					[/* text */ 't', `stateless`],
 					[/* text */ 't', `
                   predicate to apply to elements to determine the longest
                   prefix of elements.`]
@@ -1085,7 +1085,7 @@ DocsCollector.collect('java.util.stream.LongStream', [
  this stream with multiple elements, specifically zero or more elements.
  Replacement is performed by applying the provided mapping function to each
  element in conjunction with a `],
-				[/* reference */ 'r', `java.util.function.LongConsumer`],
+				[/* reference */ 'r', `java.util.function.LongConsumer`, `consumer`],
 				[/* text */ 't', ` argument
  that accepts replacement elements. The mapping function calls the consumer
  zero or more times to provide the replacement elements.
@@ -1093,14 +1093,14 @@ DocsCollector.collect('java.util.stream.LongStream', [
  `],
 				[/* block */ 'b', [
 					[/* text */ 't', `This is an `],
-					[/* reference */ 'r', `.package-summary#StreamOps`],
+					[/* text */ 't', `intermediate operation`],
 					[/* text */ 't', `.
 
  `]
 				]],
 				[/* block */ 'b', [
 					[/* text */ 't', `If the `],
-					[/* reference */ 'r', `java.util.function.LongConsumer`],
+					[/* reference */ 'r', `java.util.function.LongConsumer`, `consumer`],
 					[/* text */ 't', ` argument is used outside the scope of
  its application to the mapping function, the results are undefined.`]
 				]]
@@ -1108,10 +1108,10 @@ DocsCollector.collect('java.util.stream.LongStream', [
 			[/* parameters */
 				[/* parameter */ 'mapper', [/* parameter description */
 					[/* text */ 't', `a `],
-					[/* reference */ 'r', `.package-summary#NonInterference`],
+					[/* text */ 't', `non-interfering`],
 					[/* text */ 't', `,
                `],
-					[/* reference */ 'r', `.package-summary#Statelessness`],
+					[/* text */ 't', `stateless`],
 					[/* text */ 't', `
                function that generates replacement elements`]
 				]]
@@ -1151,17 +1151,17 @@ DocsCollector.collect('java.util.stream.LongStream', [
  `],
 				[/* block */ 'b', [
 					[/* text */ 't', `This is a `],
-					[/* reference */ 'r', `.package-summary#StreamOps`],
+					[/* text */ 't', `short-circuiting stateful intermediate operation`],
 					[/* text */ 't', `.`]
 				]]
 			],
 			[/* parameters */
 				[/* parameter */ 'predicate', [/* parameter description */
 					[/* text */ 't', `a `],
-					[/* reference */ 'r', `.package-summary#NonInterference`],
+					[/* text */ 't', `non-interfering`],
 					[/* text */ 't', `,
                   `],
-					[/* reference */ 'r', `.package-summary#Statelessness`],
+					[/* text */ 't', `stateless`],
 					[/* text */ 't', `
                   predicate to apply to elements to determine the longest
                   prefix of elements.`]

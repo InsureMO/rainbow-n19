@@ -8,7 +8,7 @@ DocsCollector.collect('java.lang.StringIndexOutOfBoundsException', [
 		[/* text */ 't', ` methods to indicate that an index is either negative
  or greater than the size of the string.  For some methods such as the
  `],
-		[/* reference */ 'r', `.String#charAt(int)`],
+		[/* reference */ 'r', `java.lang.String#charAt(int)`, `charAt`],
 		[/* text */ 't', ` method, this exception also is thrown when the
  index is equal to the size of the string.`]
 	],

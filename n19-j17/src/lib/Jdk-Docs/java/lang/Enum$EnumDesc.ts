@@ -24,7 +24,7 @@ DocsCollector.collect('java.lang.Enum$EnumDesc', [
 			[/* parameters */
 				[/* parameter */ 'enumClass', [/* parameter description */
 					[/* text */ 't', `a `],
-					[/* reference */ 'r', `java.lang.constant.ClassDesc`],
+					[/* reference */ 'r', `java.lang.constant.ClassDesc`, `ClassDesc`],
 					[/* text */ 't', ` describing the `],
 					[/* inline code block */ 'i', `enum`],
 					[/* text */ 't', ` class`]

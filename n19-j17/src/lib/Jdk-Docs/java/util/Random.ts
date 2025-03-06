@@ -49,7 +49,7 @@ DocsCollector.collect('java.util.Random', [
 		[/* block */ 'b', [
 			[/* text */ 't', `
  Many applications will find the method `],
-			[/* reference */ 'r', `java.Math#random()`],
+			[/* reference */ 'r', `java.lang.Math#random()`, `Math.random()`],
 			[/* text */ 't', ` simpler to use.
 
  `]
@@ -64,7 +64,7 @@ DocsCollector.collect('java.util.Random', [
  instance across threads may encounter contention and consequent
  poor performance. Consider instead using
  `],
-			[/* reference */ 'r', `java.util.concurrent.ThreadLocalRandom`],
+			[/* reference */ 'r', `java.util.concurrent.ThreadLocalRandom`, `ThreadLocalRandom`],
 			[/* text */ 't', ` in multithreaded
  designs.
 
@@ -75,7 +75,7 @@ DocsCollector.collect('java.util.Random', [
 			[/* inline code block */ 'i', `java.util.Random`],
 			[/* text */ 't', ` are not cryptographically
  secure.  Consider instead using `],
-			[/* reference */ 'r', `java.security.SecureRandom`],
+			[/* reference */ 'r', `java.security.SecureRandom`, `SecureRandom`],
 			[/* text */ 't', ` to
  get a cryptographically secure pseudo-random number generator for use
  by security-sensitive applications.`]

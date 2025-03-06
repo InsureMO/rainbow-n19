@@ -6,10 +6,10 @@ DocsCollector.collect('java.util.stream.BaseStream', [
 		[/* text */ 't', `Base interface for streams, which are sequences of elements supporting
  sequential and parallel aggregate operations.  The following example
  illustrates an aggregate operation using the stream types `],
-		[/* reference */ 'r', `java.util.stream.Stream`],
+		[/* reference */ 'r', `java.util.stream.Stream`, `Stream`],
 		[/* text */ 't', `
  and `],
-		[/* reference */ 'r', `java.util.stream.IntStream`],
+		[/* reference */ 'r', `java.util.stream.IntStream`, `IntStream`],
 		[/* text */ 't', `, computing the sum of the weights of the red widgets:
 
  `],
@@ -22,10 +22,10 @@ DocsCollector.collect('java.util.stream.BaseStream', [
 		[/* text */ 't', `
 
  See the class documentation for `],
-		[/* reference */ 'r', `java.util.stream.Stream`],
+		[/* reference */ 'r', `java.util.stream.Stream`, `Stream`],
 		[/* text */ 't', ` and the package documentation
  for `],
-		[/* reference */ 'r', `.package-summary`],
+		[/* text */ 't', `java.util.stream`],
 		[/* text */ 't', ` for additional
  specification of streams, stream operations, stream pipelines, and
  parallelism, which governs the behavior of all stream types.`]
@@ -53,7 +53,7 @@ DocsCollector.collect('java.util.stream.BaseStream', [
  `],
 				[/* block */ 'b', [
 					[/* text */ 't', `This is a `],
-					[/* reference */ 'r', `.package-summary#StreamOps`],
+					[/* text */ 't', `terminal operation`],
 					[/* text */ 't', `.`]
 				]]
 			],
@@ -70,7 +70,7 @@ DocsCollector.collect('java.util.stream.BaseStream', [
  `],
 				[/* block */ 'b', [
 					[/* text */ 't', `This is a `],
-					[/* reference */ 'r', `.package-summary#StreamOps`],
+					[/* text */ 't', `terminal operation`],
 					[/* text */ 't', `.
 
  `]
@@ -109,7 +109,7 @@ DocsCollector.collect('java.util.stream.BaseStream', [
  `],
 				[/* block */ 'b', [
 					[/* text */ 't', `This is an `],
-					[/* reference */ 'r', `.package-summary#StreamOps`],
+					[/* text */ 't', `intermediate operation`],
 					[/* text */ 't', `.`]
 				]]
 			],
@@ -132,7 +132,7 @@ DocsCollector.collect('java.util.stream.BaseStream', [
  `],
 				[/* block */ 'b', [
 					[/* text */ 't', `This is an `],
-					[/* reference */ 'r', `.package-summary#StreamOps`],
+					[/* text */ 't', `intermediate operation`],
 					[/* text */ 't', `.`]
 				]]
 			],
@@ -151,7 +151,7 @@ DocsCollector.collect('java.util.stream.BaseStream', [
  `],
 				[/* block */ 'b', [
 					[/* text */ 't', `This is an `],
-					[/* reference */ 'r', `.package-summary#StreamOps`],
+					[/* text */ 't', `intermediate operation`],
 					[/* text */ 't', `.`]
 				]]
 			],
@@ -165,7 +165,7 @@ DocsCollector.collect('java.util.stream.BaseStream', [
 			[/* method description */
 				[/* text */ 't', `Returns an equivalent stream that is
  `],
-				[/* reference */ 'r', `.package-summary#Ordering`],
+				[/* text */ 't', `unordered`],
 				[/* text */ 't', `.  May return
  itself, either because the stream was already unordered, or because
  the underlying stream state was modified to be unordered.
@@ -173,7 +173,7 @@ DocsCollector.collect('java.util.stream.BaseStream', [
  `],
 				[/* block */ 'b', [
 					[/* text */ 't', `This is an `],
-					[/* reference */ 'r', `.package-summary#StreamOps`],
+					[/* text */ 't', `intermediate operation`],
 					[/* text */ 't', `.`]
 				]]
 			],

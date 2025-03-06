@@ -4,16 +4,16 @@ import {DocsCollector} from '../../DocsCollector';
 DocsCollector.collect('java.util.ArrayDeque', [
 	[/* class description */
 		[/* text */ 't', `Resizable-array implementation of the `],
-		[/* reference */ 'r', `java.util.Deque`],
+		[/* reference */ 'r', `java.util.Deque`, `Deque`],
 		[/* text */ 't', ` interface.  Array
  deques have no capacity restrictions; they grow as necessary to support
  usage.  They are not thread-safe; in the absence of external
  synchronization, they do not support concurrent access by multiple threads.
  Null elements are prohibited.  This class is likely to be faster than
  `],
-		[/* reference */ 'r', `java.util.Stack`],
+		[/* reference */ 'r', `java.util.Stack`, `Stack`],
 		[/* text */ 't', ` when used as a stack, and faster than `],
-		[/* reference */ 'r', `java.util.LinkedList`],
+		[/* reference */ 'r', `java.util.LinkedList`, `LinkedList`],
 		[/* text */ 't', `
  when used as a queue.
 
@@ -53,7 +53,7 @@ DocsCollector.collect('java.util.ArrayDeque', [
  `],
 			[/* inline code block */ 'i', `remove`],
 			[/* text */ 't', ` method, the iterator will generally throw a `],
-			[/* reference */ 'r', `java.util.ConcurrentModificationException`],
+			[/* reference */ 'r', `java.util.ConcurrentModificationException`, `ConcurrentModificationException`],
 			[/* text */ 't', `.  Thus, in the face of concurrent
  modification, the iterator fails quickly and cleanly, rather than risking
  arbitrary, non-deterministic behavior at an undetermined time in the
@@ -78,9 +78,9 @@ DocsCollector.collect('java.util.ArrayDeque', [
  `],
 			[/* text */ 't', `optional`],
 			[/* text */ 't', ` methods of the `],
-			[/* reference */ 'r', `java.util.Collection`],
+			[/* reference */ 'r', `java.util.Collection`, `Collection`],
 			[/* text */ 't', ` and `],
-			[/* reference */ 'r', `java.util.Iterator`],
+			[/* reference */ 'r', `java.util.Iterator`, `Iterator`],
 			[/* text */ 't', ` interfaces.
 
  `]
@@ -236,7 +236,7 @@ DocsCollector.collect('java.util.ArrayDeque', [
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` (as specified by `],
-				[/* reference */ 'r', `.Collection#add(E)`],
+				[/* reference */ 'r', `java.util.Collection#add(E)`, `Collection.add(E)`],
 				[/* text */ 't', `)`]
 			]
 		]],
@@ -326,7 +326,7 @@ DocsCollector.collect('java.util.ArrayDeque', [
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` (as specified by `],
-				[/* reference */ 'r', `.Queue#offer(E)`],
+				[/* reference */ 'r', `java.util.Queue#offer(E)`, `Queue.offer(E)`],
 				[/* text */ 't', `)`]
 			]
 		]],
@@ -347,7 +347,7 @@ DocsCollector.collect('java.util.ArrayDeque', [
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` (as specified by `],
-				[/* reference */ 'r', `.Deque#offerFirst(E)`],
+				[/* reference */ 'r', `java.util.Deque#offerFirst(E)`, `Deque.offerFirst(E)`],
 				[/* text */ 't', `)`]
 			]
 		]],
@@ -368,7 +368,7 @@ DocsCollector.collect('java.util.ArrayDeque', [
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` (as specified by `],
-				[/* reference */ 'r', `.Deque#offerLast(E)`],
+				[/* reference */ 'r', `java.util.Deque#offerLast(E)`, `Deque.offerLast(E)`],
 				[/* text */ 't', `)`]
 			]
 		]],
@@ -423,7 +423,7 @@ DocsCollector.collect('java.util.ArrayDeque', [
          null elements and the specified collection does not support
          null elements
          (`],
-					[/* text */ 't', `optional`],
+					[/* reference */ 'r', `java.util.Collection#optional-restrictions`, `optional`],
 					[/* text */ 't', `),
          or if the specified collection is null`]
 				]]
@@ -530,7 +530,7 @@ DocsCollector.collect('java.util.ArrayDeque', [
          null elements and the specified collection does not permit null
          elements
          (`],
-					[/* text */ 't', `optional`],
+					[/* reference */ 'r', `java.util.Collection#optional-restrictions`, `optional`],
 					[/* text */ 't', `),
          or if the specified collection is null`]
 				]]
@@ -571,7 +571,7 @@ DocsCollector.collect('java.util.ArrayDeque', [
 					[/* text */ 't', `Retrieves, but does not remove, the first element of this deque.
 
  This method differs from `],
-					[/* reference */ 'r', `.Deque#peekFirst()`],
+					[/* reference */ 'r', `java.util.Deque#peekFirst()`, `peekFirst`],
 					[/* text */ 't', ` only in that it
  throws an exception if this deque is empty.`]
 				]]
@@ -591,7 +591,7 @@ DocsCollector.collect('java.util.ArrayDeque', [
 				[/* block */ 'b', [
 					[/* text */ 't', `Retrieves, but does not remove, the last element of this deque.
  This method differs from `],
-					[/* reference */ 'r', `.Deque#peekLast()`],
+					[/* reference */ 'r', `java.util.Deque#peekLast()`, `peekLast`],
 					[/* text */ 't', ` only in that it
  throws an exception if this deque is empty.`]
 				]]
@@ -775,7 +775,7 @@ DocsCollector.collect('java.util.ArrayDeque', [
 				[/* block */ 'b', [
 					[/* text */ 't', `Retrieves and removes the first element of this deque.  This method
  differs from `],
-					[/* reference */ 'r', `.Deque#pollFirst()`],
+					[/* reference */ 'r', `java.util.Deque#pollFirst()`, `pollFirst`],
 					[/* text */ 't', ` only in that it throws an
  exception if this deque is empty.`]
 				]]
@@ -795,7 +795,7 @@ DocsCollector.collect('java.util.ArrayDeque', [
 				[/* block */ 'b', [
 					[/* text */ 't', `Retrieves and removes the last element of this deque.  This method
  differs from `],
-					[/* reference */ 'r', `.Deque#pollLast()`],
+					[/* reference */ 'r', `java.util.Deque#pollLast()`, `pollLast`],
 					[/* text */ 't', ` only in that it throws an
  exception if this deque is empty.`]
 				]]
@@ -883,11 +883,11 @@ DocsCollector.collect('java.util.ArrayDeque', [
 		[/* method */ 'spliterator()', [
 			[/* method description */
 				[/* text */ 't', `Creates a `],
-				[/* reference */ 'r', `.Spliterator#binding`],
+				[/* reference */ 'r', `java.util.Spliterator#binding`, `late-binding`],
 				[/* text */ 't', `
  and `],
 				[/* text */ 't', `fail-fast`],
-				[/* reference */ 'r', `java.util.Spliterator`],
+				[/* reference */ 'r', `java.util.Spliterator`, `Spliterator`],
 				[/* text */ 't', ` over the elements in this
  deque.
 
@@ -896,15 +896,15 @@ DocsCollector.collect('java.util.ArrayDeque', [
 					[/* text */ 't', `The `],
 					[/* inline code block */ 'i', `Spliterator`],
 					[/* text */ 't', ` reports `],
-					[/* reference */ 'r', `.Spliterator#SIZED`],
+					[/* reference */ 'r', `java.util.Spliterator#SIZED`, `Spliterator.SIZED`],
 					[/* text */ 't', `,
  `],
-					[/* reference */ 'r', `.Spliterator#SUBSIZED`],
+					[/* reference */ 'r', `java.util.Spliterator#SUBSIZED`, `Spliterator.SUBSIZED`],
 					[/* text */ 't', `, `],
-					[/* reference */ 'r', `.Spliterator#ORDERED`],
+					[/* reference */ 'r', `java.util.Spliterator#ORDERED`, `Spliterator.ORDERED`],
 					[/* text */ 't', `, and
  `],
-					[/* reference */ 'r', `.Spliterator#NONNULL`],
+					[/* reference */ 'r', `java.util.Spliterator#NONNULL`, `Spliterator.NONNULL`],
 					[/* text */ 't', `.  Overriding implementations should document
  the reporting of additional characteristic values.`]
 				]]

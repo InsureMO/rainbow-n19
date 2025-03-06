@@ -73,22 +73,22 @@ DocsCollector.collect('java.nio.file.Path', [
 		]],
 		[/* block */ 'b', [
 			[/* text */ 't', ` This interface extends `],
-			[/* reference */ 'r', `java.nio.file.Watchable`],
+			[/* reference */ 'r', `java.nio.file.Watchable`, `Watchable`],
 			[/* text */ 't', ` interface so that a directory
  located by a path can be `],
 			[/* reference */ 'r', `#register(java.nio.file.WatchService,java.nio.file.WatchEvent.Kind%5B%5D,java.nio.file.WatchEvent.Modifier...)`, `registered`],
 			[/* text */ 't', ` with a `],
-			[/* reference */ 'r', `java.nio.file.WatchService`],
+			[/* reference */ 'r', `java.nio.file.WatchService`, `WatchService`],
 			[/* text */ 't', ` and entries in the directory watched. `]
 		]],
 		[/* block */ 'b', `WARNING:`],
 		[/* block */ 'b', `Accessing Files`],
 		[/* block */ 'b', [
 			[/* text */ 't', ` Paths may be used with the `],
-			[/* reference */ 'r', `java.nio.file.Files`],
+			[/* reference */ 'r', `java.nio.file.Files`, `Files`],
 			[/* text */ 't', ` class to operate on files,
  directories, and other types of files. For example, suppose we want a `],
-			[/* reference */ 'r', `java.io.BufferedReader`],
+			[/* reference */ 'r', `java.io.BufferedReader`, `BufferedReader`],
 			[/* text */ 't', ` to read text from a file "`],
 			[/* inline code block */ 'i', `access.log`],
 			[/* text */ 't', `". The
@@ -101,21 +101,21 @@ DocsCollector.collect('java.nio.file.Path', [
 		[/* code block */ 'c', `     Path path = FileSystems.getDefault().getPath("logs", "access.log");
      BufferedReader reader = Files.newBufferedReader(path, StandardCharsets.UTF_8);
  `],
-		[/* text */ 't', ``],
+		[/* anchor */ 'r', '#-id', `interop`, ``],
 		[/* block */ 'b', ''],
 		[/* block */ 'b', `Interoperability`],
 		[/* block */ 'b', [
 			[/* text */ 't', ` Paths associated with the default `],
-			[/* reference */ 'r', `java.nio.file.spi.FileSystemProvider`],
+			[/* reference */ 'r', `java.nio.file.spi.FileSystemProvider`, `provider`],
 			[/* text */ 't', ` are generally interoperable
  with the `],
-			[/* reference */ 'r', `java.io.File`],
+			[/* reference */ 'r', `java.io.File`, `java.io.File`],
 			[/* text */ 't', ` class. Paths created by other
  providers are unlikely to be interoperable with the abstract path names
  represented by `],
 			[/* inline code block */ 'i', `java.io.File`],
 			[/* text */ 't', `. The `],
-			[/* reference */ 'r', `java.nio.File#toPath()`],
+			[/* reference */ 'r', `java.io.File#toPath()`, `toPath`],
 			[/* text */ 't', `
  method may be used to obtain a `],
 			[/* inline code block */ 'i', `Path`],
@@ -210,7 +210,7 @@ DocsCollector.collect('java.nio.file.Path', [
  to case, and others are case sensitive. This method does not access the
  file system and the file is not required to exist. Where required, the
  `],
-					[/* reference */ 'r', `.Files#isSameFile(java.nio.file.Path,java.nio.file.Path)`],
+					[/* reference */ 'r', `java.nio.file.Files#isSameFile(java.nio.file.Path,java.nio.file.Path)`, `isSameFile`],
 					[/* text */ 't', ` method may be used to check if two
  paths locate the same file.
 
@@ -218,7 +218,7 @@ DocsCollector.collect('java.nio.file.Path', [
 				]],
 				[/* block */ 'b', [
 					[/* text */ 't', ` This method satisfies the general contract of the `],
-					[/* reference */ 'r', `java.nio.Object#equals(java.lang.Object)`],
+					[/* reference */ 'r', `java.lang.Object#equals(java.lang.Object)`, `Object.equals`],
 					[/* text */ 't', ` method. `]
 				]]
 			],
@@ -351,7 +351,7 @@ DocsCollector.collect('java.nio.file.Path', [
 				[/* block */ 'b', [
 					[/* text */ 't', ` The hash code is based upon the components of the path, and
  satisfies the general contract of the `],
-					[/* reference */ 'r', `java.nio.Object#hashCode()`],
+					[/* reference */ 'r', `java.lang.Object#hashCode()`, `Object.hashCode`],
 					[/* text */ 't', ` method.`]
 				]]
 			],
@@ -369,7 +369,7 @@ DocsCollector.collect('java.nio.file.Path', [
 				[/* block */ 'b', [
 					[/* text */ 't', ` If this path was created by converting a path string using the
  `],
-					[/* reference */ 'r', `.FileSystem#getPath(java.lang.String,java.lang.String...)`],
+					[/* reference */ 'r', `java.nio.file.FileSystem#getPath(java.lang.String,java.lang.String...)`, `getPath`],
 					[/* text */ 't', ` method then the path string returned
  by this method may differ from the original String used to create the path.
 
@@ -377,7 +377,7 @@ DocsCollector.collect('java.nio.file.Path', [
 				]],
 				[/* block */ 'b', [
 					[/* text */ 't', ` The returned path string uses the default name `],
-					[/* reference */ 'r', `.FileSystem#getSeparator()`],
+					[/* reference */ 'r', `java.nio.file.FileSystem#getSeparator()`, `separator`],
 					[/* text */ 't', ` to separate names in the path.`]
 				]]
 			],
@@ -394,9 +394,9 @@ DocsCollector.collect('java.nio.file.Path', [
  `],
 				[/* block */ 'b', [
 					[/* text */ 't', ` This method constructs an absolute `],
-					[/* reference */ 'r', `java.net.URI`],
+					[/* reference */ 'r', `java.net.URI`, `URI`],
 					[/* text */ 't', ` with a `],
-					[/* reference */ 'r', `java.nio.URI#getScheme()`],
+					[/* reference */ 'r', `java.net.URI#getScheme()`, `scheme`],
 					[/* text */ 't', ` equal to the URI scheme that identifies the
  provider. The exact form of the scheme specific part is highly provider
  dependent.
@@ -406,14 +406,14 @@ DocsCollector.collect('java.nio.file.Path', [
 				[/* block */ 'b', [
 					[/* text */ 't', ` In the case of the default provider, the URI is hierarchical with
  a `],
-					[/* reference */ 'r', `java.nio.URI#getPath()`],
+					[/* reference */ 'r', `java.net.URI#getPath()`, `path`],
 					[/* text */ 't', ` component that is absolute. The query and
  fragment components are undefined. Whether the authority component is
  defined or not is implementation dependent. There is no guarantee that
  the `],
 					[/* inline code block */ 'i', `URI`],
 					[/* text */ 't', ` may be used to construct a `],
-					[/* reference */ 'r', `java.io.File`],
+					[/* reference */ 'r', `java.io.File`, `java.io.File`],
 					[/* text */ 't', `.
  In particular, if this path represents a Universal Naming Convention (UNC)
  path, then the UNC server name may be encoded in the authority component
@@ -430,7 +430,7 @@ DocsCollector.collect('java.nio.file.Path', [
 					[/* text */ 't', `round-trip`],
 					[/* text */ 't', ` guarantee
  to the `],
-					[/* reference */ 'r', `java.io.File`],
+					[/* reference */ 'r', `java.io.File`, `File`],
 					[/* text */ 't', ` class. For a given `],
 					[/* inline code block */ 'i', `Path`],
 					[/* text */ 't', `p`],
@@ -740,7 +740,7 @@ DocsCollector.collect('java.nio.file.Path', [
 					[/* text */ 't', ` When symbolic links are supported, then whether the resulting path,
  when resolved against this path, yields a path that can be used to locate
  the `],
-					[/* reference */ 'r', `.Files#isSameFile(java.nio.file.Path,java.nio.file.Path)`],
+					[/* reference */ 'r', `java.nio.file.Files#isSameFile(java.nio.file.Path,java.nio.file.Path)`, `same`],
 					[/* text */ 't', ` file as `],
 					[/* inline code block */ 'i', `other`],
 					[/* text */ 't', ` is implementation
@@ -916,7 +916,7 @@ DocsCollector.collect('java.nio.file.Path', [
 					[/* text */ 't', `In the case of the default provider, a security manager
           is installed, and this path is not absolute, then the security
           manager's `],
-					[/* reference */ 'r', `java.nio.SecurityManager#checkPropertyAccess(java.lang.String)`],
+					[/* reference */ 'r', `java.lang.SecurityManager#checkPropertyAccess(java.lang.String)`, `checkPropertyAccess`],
 					[/* text */ 't', ` method is invoked to check access to the
           system property `],
 					[/* inline code block */ 'i', `user.dir`]
@@ -941,7 +941,7 @@ DocsCollector.collect('java.nio.file.Path', [
 					[/* reference */ 'r', `#isAbsolute()`, `absolute`],
 					[/* text */ 't', `
  path that locates the `],
-					[/* reference */ 'r', `.Files#isSameFile(java.nio.file.Path,java.nio.file.Path)`],
+					[/* reference */ 'r', `java.nio.file.Files#isSameFile(java.nio.file.Path,java.nio.file.Path)`, `same`],
 					[/* text */ 't', ` file as this path, but
  with name elements that represent the actual name of the directories
  and the file. For example, where filename comparisons on a file system
@@ -965,7 +965,7 @@ DocsCollector.collect('java.nio.file.Path', [
 					[/* text */ 't', ` array may be used to indicate how symbolic links
  are handled. By default, symbolic links are resolved to their final
  target. If the option `],
-					[/* reference */ 'r', `.LinkOption#NOFOLLOW_LINKS`],
+					[/* reference */ 'r', `java.nio.file.LinkOption#NOFOLLOW_LINKS`, `NOFOLLOW_LINKS`],
 					[/* text */ 't', ` is
  present then this method does not resolve symbolic links.
 
@@ -998,11 +998,11 @@ DocsCollector.collect('java.nio.file.Path', [
 				[/* throw */ 'java.lang.SecurityException', [/* throw description */
 					[/* text */ 't', `In the case of the default provider, and a security manager
           is installed, its `],
-					[/* reference */ 'r', `java.nio.SecurityManager#checkRead(java.lang.String)`],
+					[/* reference */ 'r', `java.lang.SecurityManager#checkRead(java.lang.String)`, `checkRead`],
 					[/* text */ 't', `
           method is invoked to check read access to the file, and where
           this path is not absolute, its `],
-					[/* reference */ 'r', `java.nio.SecurityManager#checkPropertyAccess(java.lang.String)`],
+					[/* reference */ 'r', `java.lang.SecurityManager#checkPropertyAccess(java.lang.String)`, `checkPropertyAccess`],
 					[/* text */ 't', ` method is invoked to check access to the
           system property `],
 					[/* inline code block */ 'i', `user.dir`]
@@ -1031,17 +1031,17 @@ DocsCollector.collect('java.nio.file.Path', [
 				]],
 				[/* list */ 'l', [
 					[/* block */ 'b', [
-						[/* reference */ 'r', `.StandardWatchEventKinds#ENTRY_CREATE`],
+						[/* reference */ 'r', `java.nio.file.StandardWatchEventKinds#ENTRY_CREATE`, `ENTRY_CREATE`],
 						[/* text */ 't', ` -
        entry created or moved into the directory`]
 					]],
 					[/* block */ 'b', [
-						[/* reference */ 'r', `.StandardWatchEventKinds#ENTRY_DELETE`],
+						[/* reference */ 'r', `java.nio.file.StandardWatchEventKinds#ENTRY_DELETE`, `ENTRY_DELETE`],
 						[/* text */ 't', ` -
         entry deleted or moved out of the directory`]
 					]],
 					[/* block */ 'b', [
-						[/* reference */ 'r', `.StandardWatchEventKinds#ENTRY_MODIFY`],
+						[/* reference */ 'r', `java.nio.file.StandardWatchEventKinds#ENTRY_MODIFY`, `ENTRY_MODIFY`],
 						[/* text */ 't', ` -
         entry in directory was modified`]
 					]]
@@ -1049,7 +1049,7 @@ DocsCollector.collect('java.nio.file.Path', [
 				[/* block */ 'b', ''],
 				[/* block */ 'b', [
 					[/* text */ 't', ` The `],
-					[/* reference */ 'r', `.WatchEvent#context()`],
+					[/* reference */ 'r', `java.nio.file.WatchEvent#context()`, `context`],
 					[/* text */ 't', ` for these events is the
  relative path between the directory located by this path, and the path
  that locates the directory entry that is created, deleted, or modified.
@@ -1059,7 +1059,7 @@ DocsCollector.collect('java.nio.file.Path', [
 				[/* block */ 'b', [
 					[/* text */ 't', ` The set of events may include additional implementation specific
  event that are not defined by the enum `],
-					[/* reference */ 'r', `java.nio.file.StandardWatchEventKinds`]
+					[/* reference */ 'r', `java.nio.file.StandardWatchEventKinds`, `StandardWatchEventKinds`]
 				]],
 				[/* block */ 'b', [
 					[/* text */ 't', ` The `],
@@ -1111,7 +1111,7 @@ DocsCollector.collect('java.nio.file.Path', [
 				[/* throw */ 'java.lang.SecurityException', [/* throw description */
 					[/* text */ 't', `In the case of the default provider, and a security manager is
           installed, the `],
-					[/* reference */ 'r', `java.nio.SecurityManager#checkRead(java.lang.String)`],
+					[/* reference */ 'r', `java.lang.SecurityManager#checkRead(java.lang.String)`, `checkRead`],
 					[/* text */ 't', `
           method is invoked to check read access to the file.`]
 				]]
@@ -1212,7 +1212,7 @@ DocsCollector.collect('java.nio.file.Path', [
 		[/* method */ 'toFile()', [
 			[/* method description */
 				[/* text */ 't', `Returns a `],
-				[/* reference */ 'r', `java.io.File`],
+				[/* reference */ 'r', `java.io.File`, `File`],
 				[/* text */ 't', ` object representing this path. Where this `],
 				[/* inline code block */ 'i', `Path`],
 				[/* text */ 't', ` is associated with the default provider, then this method is
@@ -1227,7 +1227,7 @@ DocsCollector.collect('java.nio.file.Path', [
 				[/* block */ 'b', [
 					[/* text */ 't', ` If this path was created by invoking the `],
 					[/* inline code block */ 'i', `File`],
-					[/* reference */ 'r', `java.nio.File#toPath()`],
+					[/* reference */ 'r', `java.io.File#toPath()`, `toPath`],
 					[/* text */ 't', ` method then there is no guarantee that the `],
 					[/* inline code block */ 'i', `File`],
 					[/* text */ 't', ` object returned by this method is `],
@@ -1414,7 +1414,7 @@ DocsCollector.collect('java.nio.file.Path', [
 				[/* throw */ 'java.lang.SecurityException', [/* throw description */
 					[/* text */ 't', `In the case of the default provider, and a security manager is
           installed, the `],
-					[/* reference */ 'r', `java.nio.SecurityManager#checkRead(java.lang.String)`],
+					[/* reference */ 'r', `java.lang.SecurityManager#checkRead(java.lang.String)`, `checkRead`],
 					[/* text */ 't', `
           method is invoked to check read access to the file.`]
 				]]
@@ -1465,7 +1465,7 @@ DocsCollector.collect('java.nio.file.Path', [
  path string. The details as to how the Strings are joined is provider
  specific but typically they will be joined using the
  `],
-				[/* reference */ 'r', `.FileSystem#getSeparator()`],
+				[/* reference */ 'r', `java.nio.file.FileSystem#getSeparator()`, `name-separator`],
 				[/* text */ 't', ` as the separator.
  For example, if the name separator is "`],
 				[/* inline code block */ 'i', `/`],
@@ -1492,10 +1492,10 @@ DocsCollector.collect('java.nio.file.Path', [
 					[/* text */ 't', ` The `],
 					[/* inline code block */ 'i', `Path`],
 					[/* text */ 't', ` is obtained by invoking the `],
-					[/* reference */ 'r', `.FileSystem#getPath(java.lang.String,java.lang.String...)`],
+					[/* reference */ 'r', `java.nio.file.FileSystem#getPath(java.lang.String,java.lang.String...)`, `getPath`],
 					[/* text */ 't', ` method of the `],
-					[/* reference */ 'r', `.FileSystems#getDefault()`],
-					[/* reference */ 'r', `java.nio.file.FileSystem`],
+					[/* reference */ 'r', `java.nio.file.FileSystems#getDefault()`, `default`],
+					[/* reference */ 'r', `java.nio.file.FileSystem`, `FileSystem`],
 					[/* text */ 't', `.
 
  `]
@@ -1546,13 +1546,13 @@ DocsCollector.collect('java.nio.file.Path', [
  `],
 				[/* block */ 'b', [
 					[/* text */ 't', ` This method iterates over the `],
-					[/* reference */ 'r', `.FileSystemProvider#installedProviders()`],
+					[/* reference */ 'r', `java.nio.file.spi.FileSystemProvider#installedProviders()`, `installed`],
 					[/* text */ 't', ` providers to locate the provider that is identified by the
  URI `],
-					[/* reference */ 'r', `java.nio.URI#getScheme()`],
+					[/* reference */ 'r', `java.net.URI#getScheme()`, `scheme`],
 					[/* text */ 't', ` of the given URI. URI schemes are
  compared without regard to case. If the provider is found then its `],
-					[/* reference */ 'r', `.FileSystemProvider#getPath(java.net.URI)`],
+					[/* reference */ 'r', `java.nio.file.spi.FileSystemProvider#getPath(java.net.URI)`, `getPath`],
 					[/* text */ 't', ` method is invoked to convert the
  URI.
 
@@ -1566,7 +1566,7 @@ DocsCollector.collect('java.nio.file.Path', [
 					[/* inline code block */ 'i', `Path`],
 					[/* text */ 't', ` is associated with the
  `],
-					[/* reference */ 'r', `.FileSystems#getDefault()`],
+					[/* reference */ 'r', `java.nio.file.FileSystems#getDefault()`, `default`],
 					[/* text */ 't', ` file system.
 
  `]
@@ -1576,7 +1576,7 @@ DocsCollector.collect('java.nio.file.Path', [
 					[/* text */ 't', `round-trip`],
 					[/* text */ 't', ` guarantee
  to the `],
-					[/* reference */ 'r', `java.io.File`],
+					[/* reference */ 'r', `java.io.File`, `File`],
 					[/* text */ 't', ` class. For a given `],
 					[/* inline code block */ 'i', `Path`],
 					[/* text */ 't', `p`],

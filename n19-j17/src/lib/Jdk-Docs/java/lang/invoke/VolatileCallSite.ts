@@ -6,7 +6,7 @@ DocsCollector.collect('java.lang.invoke.VolatileCallSite', [
 		[/* text */ 't', `A `],
 		[/* inline code block */ 'i', `VolatileCallSite`],
 		[/* text */ 't', ` is a `],
-		[/* reference */ 'r', `java.lang.invoke.CallSite`],
+		[/* reference */ 'r', `java.lang.invoke.CallSite`, `CallSite`],
 		[/* text */ 't', ` whose target acts like a volatile variable.
  An `],
 		[/* inline code block */ 'i', `invokedynamic`],
@@ -22,7 +22,7 @@ DocsCollector.collect('java.lang.invoke.VolatileCallSite', [
 			[/* inline code block */ 'i', `MutableCallSite`],
 			[/* text */ 't', `, there is no
  `],
-			[/* reference */ 'r', `.MutableCallSite#syncAll(java.lang.invoke.MutableCallSite[])`],
+			[/* reference */ 'r', `java.lang.invoke.MutableCallSite#syncAll(java.lang.invoke.MutableCallSite[])`, `syncAll operation`],
 			[/* text */ 't', ` on volatile
  call sites, since every write to a volatile variable is implicitly
  synchronized with reader threads.

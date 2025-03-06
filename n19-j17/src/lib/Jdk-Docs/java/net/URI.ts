@@ -16,7 +16,7 @@ DocsCollector.collect('java.net.URI', [
 			[/* text */ 't', `. The Literal IPv6 address format
  also supports scope_ids. The syntax and usage of scope_ids is described
  `],
-			[/* reference */ 'r', `.Inet6Address#scoped`],
+			[/* text */ 't', `here`],
 			[/* text */ 't', `.
  This class provides constructors for creating URI instances from
  their components or by parsing their string forms, methods for accessing the
@@ -608,10 +608,10 @@ DocsCollector.collect('java.net.URI', [
 					[/* table cell */ 'tbc', [
 						[/* text */ 't', `The Unicode characters that are not in the US-ASCII character set,
            are not control characters (according to the `],
-						[/* reference */ 'r', `java.Character#isISOControl(int)`],
+						[/* reference */ 'r', `java.lang.Character#isISOControl(int)`, `Character.isISOControl`],
 						[/* text */ 't', `
            method), and are not space characters (according to the `],
-						[/* reference */ 'r', `java.Character#isSpaceChar(int)`],
+						[/* reference */ 'r', `java.lang.Character#isSpaceChar(int)`, `Character.isSpaceChar`],
 						[/* text */ 't', `
            method)  `],
 						[/* text */ 't', `Deviation from RFC 2396`]
@@ -620,7 +620,7 @@ DocsCollector.collect('java.net.URI', [
 			]],
 		],
 		[/* block */ 'b', [
-			[/* text */ 't', ``],
+			[/* anchor */ 'r', '#-id', `legal-chars`, ``],
 			[/* text */ 't', ` The set of all legal URI characters consists of
  the `],
 			[/* text */ 't', `unreserved`],
@@ -674,7 +674,7 @@ DocsCollector.collect('java.net.URI', [
 		[/* list */ 'l', [
 			[/* block */ 'b', [
 				[/* block */ 'b', [
-					[/* text */ 't', ``],
+					[/* anchor */ 'r', '#-id', `encode`, ``],
 					[/* text */ 't', ` A character is `],
 					[/* text */ 't', `encoded`],
 					[/* text */ 't', ` by replacing it
@@ -691,7 +691,7 @@ DocsCollector.collect('java.net.URI', [
 			]],
 			[/* block */ 'b', [
 				[/* block */ 'b', [
-					[/* text */ 't', ``],
+					[/* anchor */ 'r', '#-id', `quote`, ``],
 					[/* text */ 't', ` An illegal character is `],
 					[/* text */ 't', `quoted`],
 					[/* text */ 't', ` simply by
@@ -705,7 +705,7 @@ DocsCollector.collect('java.net.URI', [
 			]],
 			[/* block */ 'b', [
 				[/* block */ 'b', [
-					[/* text */ 't', ``],
+					[/* anchor */ 'r', '#-id', `decode`, ``],
 					[/* text */ 't', `
    A sequence of escaped octets is `],
 					[/* text */ 't', `decoded`],
@@ -714,7 +714,7 @@ DocsCollector.collect('java.net.URI', [
    UTF-8 character set.  UTF-8 contains US-ASCII, hence decoding has the
    effect of de-quoting any quoted US-ASCII characters as well as that of
    decoding any encoded non-US-ASCII characters.  If a `],
-					[/* reference */ 'r', `java.charset.CharsetDecoder#ce`],
+					[/* reference */ 'r', `java.nio.charset.CharsetDecoder#ce`, `decoding error`],
 					[/* text */ 't', ` occurs
    when decoding the escaped octets then the erroneous octets are replaced by
    `],
@@ -952,7 +952,7 @@ DocsCollector.collect('java.net.URI', [
 		[/* block */ 'b', [
 			[/* text */ 't', ` The conceptual distinction between URIs and URLs is reflected in the
  differences between this class and the `],
-			[/* reference */ 'r', `java.net.URL`],
+			[/* reference */ 'r', `java.net.URL`, `URL`],
 			[/* text */ 't', ` class.
 
  `]
@@ -970,7 +970,7 @@ DocsCollector.collect('java.net.URI', [
  `],
 		[/* block */ 'b', [
 			[/* text */ 't', ` An instance of the `],
-			[/* reference */ 'r', `java.net.URL`],
+			[/* reference */ 'r', `java.net.URL`, `URL`],
 			[/* text */ 't', ` class, by contrast, represents the
  syntactic components of a URL together with some of the information required
  to access the resource that it describes.  A URL must be absolute, that is,
@@ -1163,7 +1163,7 @@ DocsCollector.collect('java.net.URI', [
 					[/* reference */ 'r', `#%3Cinit%3E(java.lang.String)`, `URI(String)`],
 					[/* text */ 't', ` constructor;
  this may cause a `],
-					[/* reference */ 'r', `java.net.URISyntaxException`],
+					[/* reference */ 'r', `java.net.URISyntaxException`, `URISyntaxException`],
 					[/* text */ 't', ` to be thrown.  `]
 				]]
 			],
@@ -1323,7 +1323,7 @@ DocsCollector.collect('java.net.URI', [
 					[/* text */ 't', ` constructor and then invoking the `],
 					[/* reference */ 'r', `#parseServerAuthority()`, `parseServerAuthority()`],
 					[/* text */ 't', ` method upon the result; this may cause a `],
-					[/* reference */ 'r', `java.net.URISyntaxException`],
+					[/* reference */ 'r', `java.net.URISyntaxException`, `URISyntaxException`],
 					[/* text */ 't', ` to be thrown.  `]
 				]]
 			],
@@ -1516,7 +1516,7 @@ DocsCollector.collect('java.net.URI', [
 					[/* text */ 't', ` constructor and then invoking the `],
 					[/* reference */ 'r', `#parseServerAuthority()`, `parseServerAuthority()`],
 					[/* text */ 't', ` method upon the result; this may cause a `],
-					[/* reference */ 'r', `java.net.URISyntaxException`],
+					[/* reference */ 'r', `java.net.URISyntaxException`, `URISyntaxException`],
 					[/* text */ 't', ` to be thrown.  `]
 				]]
 			],
@@ -1590,7 +1590,7 @@ DocsCollector.collect('java.net.URI', [
  `],
 				[/* block */ 'b', [
 					[/* text */ 't', ` This method satisfies the general contract of the `],
-					[/* reference */ 'r', `java.Object#equals(java.lang.Object)`],
+					[/* reference */ 'r', `java.lang.Object#equals(java.lang.Object)`, `Object.equals`],
 					[/* text */ 't', ` method. `]
 				]]
 			],
@@ -1648,7 +1648,7 @@ DocsCollector.collect('java.net.URI', [
  considered to be less than the second.  Unless otherwise noted, string
  components are ordered according to their natural, case-sensitive
  ordering as defined by the `],
-					[/* reference */ 'r', `java.String#compareTo(java.lang.String)`],
+					[/* reference */ 'r', `java.lang.String#compareTo(java.lang.String)`, `String.compareTo`],
 					[/* text */ 't', ` method.  String components that are subject to
  encoding are compared by comparing their raw forms rather than their
  encoded forms and the hexadecimal digits of escaped octets are compared
@@ -1704,7 +1704,7 @@ DocsCollector.collect('java.net.URI', [
 				]],
 				[/* block */ 'b', [
 					[/* text */ 't', ` This method satisfies the general contract of the `],
-					[/* reference */ 'r', `java.Comparable#compareTo(T)`],
+					[/* reference */ 'r', `java.lang.Comparable#compareTo(T)`, `Comparable.compareTo`],
 					[/* text */ 't', `
  method. `]
 				]]
@@ -1746,7 +1746,7 @@ DocsCollector.collect('java.net.URI', [
 				[/* text */ 't', `Returns a hash-code value for this URI.  The hash code is based upon all
  of the URI's components, and satisfies the general contract of the
  `],
-				[/* reference */ 'r', `java.Object#hashCode()`],
+				[/* reference */ 'r', `java.lang.Object#hashCode()`, `Object.hashCode`],
 				[/* text */ 't', ` method.`]
 			],
 			/* parameters */ UDF,
@@ -2439,7 +2439,7 @@ DocsCollector.collect('java.net.URI', [
 
  `],
 				[/* block */ 'b', [
-					[/* text */ 't', ``],
+					[/* anchor */ 'r', '#-id', `resolve-frag`, ``],
 					[/* text */ 't', ` If the given URI's fragment component is
  defined, its path component is empty, and its scheme, authority, and
  query components are undefined, then a URI with the given fragment but
@@ -2545,10 +2545,10 @@ DocsCollector.collect('java.net.URI', [
 					[/* text */ 't', ` This convenience factory method works as if by invoking the `],
 					[/* reference */ 'r', `#%3Cinit%3E(java.lang.String)`, `URI(String)`],
 					[/* text */ 't', ` constructor; any `],
-					[/* reference */ 'r', `java.net.URISyntaxException`],
+					[/* reference */ 'r', `java.net.URISyntaxException`, `URISyntaxException`],
 					[/* text */ 't', ` thrown by the
  constructor is caught and wrapped in a new `],
-					[/* reference */ 'r', `java.lang.IllegalArgumentException`],
+					[/* reference */ 'r', `java.lang.IllegalArgumentException`, `IllegalArgumentException`],
 					[/* text */ 't', ` object, which is then thrown.
 
  `]
@@ -2559,7 +2559,7 @@ DocsCollector.collect('java.net.URI', [
  within a program, and so it would be considered a programming error
  for the string not to parse as such.  The constructors, which throw
  `],
-					[/* reference */ 'r', `java.net.URISyntaxException`],
+					[/* reference */ 'r', `java.net.URISyntaxException`, `URISyntaxException`],
 					[/* text */ 't', ` directly, should be used in situations where a
  URI is being constructed from user input or from some other source that
  may be prone to errors.  `]

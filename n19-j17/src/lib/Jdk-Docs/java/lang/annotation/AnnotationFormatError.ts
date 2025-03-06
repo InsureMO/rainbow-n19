@@ -6,7 +6,7 @@ DocsCollector.collect('java.lang.annotation.AnnotationFormatError', [
 		[/* text */ 't', `Thrown when the annotation parser attempts to read an annotation
  from a class file and determines that the annotation is malformed.
  This error can be thrown by the `],
-		[/* reference */ 'r', `java.lang.reflect.AnnotatedElement`],
+		[/* reference */ 'r', `java.lang.reflect.AnnotatedElement`, `API used to read annotations reflectively`],
 		[/* text */ 't', `.`]
 	],
 	/* fields */ UDF,

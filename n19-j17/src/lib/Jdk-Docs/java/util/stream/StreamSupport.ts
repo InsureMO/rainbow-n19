@@ -31,7 +31,7 @@ DocsCollector.collect('java.util.stream.StreamSupport', [
  `],
 				[/* block */ 'b', [
 					[/* text */ 't', `The `],
-					[/* reference */ 'r', `java.Supplier#get()`],
+					[/* reference */ 'r', `java.util.function.Supplier#get()`, `Supplier.get()`],
 					[/* text */ 't', ` method will be invoked on the supplier no
  more than once, and only after the terminal operation of the stream pipeline
  commences.
@@ -46,7 +46,7 @@ DocsCollector.collect('java.util.stream.StreamSupport', [
 					[/* inline code block */ 'i', `CONCURRENT`],
 					[/* text */ 't', `, or that are
  `],
-					[/* reference */ 'r', `java.Spliterator#binding`],
+					[/* reference */ 'r', `java.util.Spliterator#binding`, `late-binding`],
 					[/* text */ 't', `, it is likely
  more efficient to use `],
 					[/* reference */ 'r', `#stream(java.util.Spliterator,boolean)`, `stream(java.util.Spliterator, boolean)`],
@@ -63,7 +63,7 @@ DocsCollector.collect('java.util.stream.StreamSupport', [
  commences, any modifications to the source up to the start of the
  terminal operation are reflected in the stream result.  See
  `],
-					[/* reference */ 'r', `.package-summary#NonInterference`],
+					[/* text */ 't', `Non-Interference`],
 					[/* text */ 't', ` for
  more details.`]
 				]]
@@ -123,14 +123,14 @@ DocsCollector.collect('java.util.stream.StreamSupport', [
 					[/* inline code block */ 'i', `CONCURRENT`],
 					[/* text */ 't', `, or be
  `],
-					[/* reference */ 'r', `java.Spliterator#binding`],
+					[/* reference */ 'r', `java.util.Spliterator#binding`, `late-binding`],
 					[/* text */ 't', `.  Otherwise,
  `],
 					[/* reference */ 'r', `#stream(java.util.function.Supplier,int,boolean)`, `stream(java.util.function.Supplier, int, boolean)`],
 					[/* text */ 't', ` should be used
  to reduce the scope of potential interference with the source.  See
  `],
-					[/* reference */ 'r', `.package-summary#NonInterference`],
+					[/* text */ 't', `Non-Interference`],
 					[/* text */ 't', ` for
  more details.`]
 				]]
@@ -171,7 +171,7 @@ DocsCollector.collect('java.util.stream.StreamSupport', [
  `],
 				[/* block */ 'b', [
 					[/* text */ 't', `The `],
-					[/* reference */ 'r', `java.Supplier#get()`],
+					[/* reference */ 'r', `java.util.function.Supplier#get()`, `Supplier.get()`],
 					[/* text */ 't', ` method will be invoked on the supplier no
  more than once, and only after the terminal operation of the stream pipeline
  commences.
@@ -186,7 +186,7 @@ DocsCollector.collect('java.util.stream.StreamSupport', [
 					[/* inline code block */ 'i', `CONCURRENT`],
 					[/* text */ 't', `, or that are
  `],
-					[/* reference */ 'r', `java.Spliterator#binding`],
+					[/* reference */ 'r', `java.util.Spliterator#binding`, `late-binding`],
 					[/* text */ 't', `, it is likely
  more efficient to use `],
 					[/* reference */ 'r', `#doubleStream(java.util.Spliterator.OfDouble,boolean)`, `doubleStream(java.util.Spliterator.OfDouble, boolean)`],
@@ -203,7 +203,7 @@ DocsCollector.collect('java.util.stream.StreamSupport', [
  commences, any modifications to the source up to the start of the
  terminal operation are reflected in the stream result.  See
  `],
-					[/* reference */ 'r', `.package-summary#NonInterference`],
+					[/* text */ 't', `Non-Interference`],
 					[/* text */ 't', ` for
  more details.`]
 				]]
@@ -263,14 +263,14 @@ DocsCollector.collect('java.util.stream.StreamSupport', [
 					[/* inline code block */ 'i', `CONCURRENT`],
 					[/* text */ 't', `, or be
  `],
-					[/* reference */ 'r', `java.Spliterator#binding`],
+					[/* reference */ 'r', `java.util.Spliterator#binding`, `late-binding`],
 					[/* text */ 't', `.  Otherwise,
  `],
 					[/* reference */ 'r', `#doubleStream(java.util.function.Supplier,int,boolean)`, `doubleStream(java.util.function.Supplier, int, boolean)`],
 					[/* text */ 't', ` should
  be used to reduce the scope of potential interference with the source.  See
  `],
-					[/* reference */ 'r', `.package-summary#NonInterference`],
+					[/* text */ 't', `Non-Interference`],
 					[/* text */ 't', ` for
  more details.`]
 				]]
@@ -311,7 +311,7 @@ DocsCollector.collect('java.util.stream.StreamSupport', [
  `],
 				[/* block */ 'b', [
 					[/* text */ 't', `The `],
-					[/* reference */ 'r', `java.Supplier#get()`],
+					[/* reference */ 'r', `java.util.function.Supplier#get()`, `Supplier.get()`],
 					[/* text */ 't', ` method will be invoked on the supplier no
  more than once, and only after the terminal operation of the stream pipeline
  commences.
@@ -326,7 +326,7 @@ DocsCollector.collect('java.util.stream.StreamSupport', [
 					[/* inline code block */ 'i', `CONCURRENT`],
 					[/* text */ 't', `, or that are
  `],
-					[/* reference */ 'r', `java.Spliterator#binding`],
+					[/* reference */ 'r', `java.util.Spliterator#binding`, `late-binding`],
 					[/* text */ 't', `, it is likely
  more efficient to use `],
 					[/* reference */ 'r', `#intStream(java.util.Spliterator.OfInt,boolean)`, `intStream(java.util.Spliterator.OfInt, boolean)`],
@@ -343,7 +343,7 @@ DocsCollector.collect('java.util.stream.StreamSupport', [
  commences, any modifications to the source up to the start of the
  terminal operation are reflected in the stream result.  See
  `],
-					[/* reference */ 'r', `.package-summary#NonInterference`],
+					[/* text */ 't', `Non-Interference`],
 					[/* text */ 't', ` for
  more details.`]
 				]]
@@ -403,14 +403,14 @@ DocsCollector.collect('java.util.stream.StreamSupport', [
 					[/* inline code block */ 'i', `CONCURRENT`],
 					[/* text */ 't', `, or be
  `],
-					[/* reference */ 'r', `java.Spliterator#binding`],
+					[/* reference */ 'r', `java.util.Spliterator#binding`, `late-binding`],
 					[/* text */ 't', `.  Otherwise,
  `],
 					[/* reference */ 'r', `#intStream(java.util.function.Supplier,int,boolean)`, `intStream(java.util.function.Supplier, int, boolean)`],
 					[/* text */ 't', ` should be
  used to reduce the scope of potential interference with the source.  See
  `],
-					[/* reference */ 'r', `.package-summary#NonInterference`],
+					[/* text */ 't', `Non-Interference`],
 					[/* text */ 't', ` for
  more details.`]
 				]]
@@ -451,7 +451,7 @@ DocsCollector.collect('java.util.stream.StreamSupport', [
  `],
 				[/* block */ 'b', [
 					[/* text */ 't', `The `],
-					[/* reference */ 'r', `java.Supplier#get()`],
+					[/* reference */ 'r', `java.util.function.Supplier#get()`, `Supplier.get()`],
 					[/* text */ 't', ` method will be invoked on the supplier no
  more than once, and only after the terminal operation of the stream pipeline
  commences.
@@ -466,7 +466,7 @@ DocsCollector.collect('java.util.stream.StreamSupport', [
 					[/* inline code block */ 'i', `CONCURRENT`],
 					[/* text */ 't', `, or that are
  `],
-					[/* reference */ 'r', `java.Spliterator#binding`],
+					[/* reference */ 'r', `java.util.Spliterator#binding`, `late-binding`],
 					[/* text */ 't', `, it is likely
  more efficient to use `],
 					[/* reference */ 'r', `#longStream(java.util.Spliterator.OfLong,boolean)`, `longStream(java.util.Spliterator.OfLong, boolean)`],
@@ -483,7 +483,7 @@ DocsCollector.collect('java.util.stream.StreamSupport', [
  commences, any modifications to the source up to the start of the
  terminal operation are reflected in the stream result.  See
  `],
-					[/* reference */ 'r', `.package-summary#NonInterference`],
+					[/* text */ 't', `Non-Interference`],
 					[/* text */ 't', ` for
  more details.`]
 				]]
@@ -543,14 +543,14 @@ DocsCollector.collect('java.util.stream.StreamSupport', [
 					[/* inline code block */ 'i', `CONCURRENT`],
 					[/* text */ 't', `, or be
  `],
-					[/* reference */ 'r', `java.Spliterator#binding`],
+					[/* reference */ 'r', `java.util.Spliterator#binding`, `late-binding`],
 					[/* text */ 't', `.  Otherwise,
  `],
 					[/* reference */ 'r', `#longStream(java.util.function.Supplier,int,boolean)`, `longStream(java.util.function.Supplier, int, boolean)`],
 					[/* text */ 't', ` should be
  used to reduce the scope of potential interference with the source.  See
  `],
-					[/* reference */ 'r', `.package-summary#NonInterference`],
+					[/* text */ 't', `Non-Interference`],
 					[/* text */ 't', ` for
  more details.`]
 				]]

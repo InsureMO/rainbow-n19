@@ -7,7 +7,7 @@ DocsCollector.collect('java.lang.invoke.VarHandle$VarHandleDesc', [
 		[/* text */ 't', `nominal descriptor`],
 		[/* text */ 't', ` for a
  `],
-		[/* reference */ 'r', `java.lang.invoke.VarHandle`],
+		[/* reference */ 'r', `java.lang.invoke.VarHandle`, `VarHandle`],
 		[/* text */ 't', ` constant.`]
 	],
 	/* fields */ UDF,
@@ -16,7 +16,7 @@ DocsCollector.collect('java.lang.invoke.VarHandle$VarHandleDesc', [
 		[/* method */ 'varType()', [
 			[/* method description */
 				[/* text */ 't', `Returns a `],
-				[/* reference */ 'r', `java.lang.constant.ClassDesc`],
+				[/* reference */ 'r', `java.lang.constant.ClassDesc`, `ClassDesc`],
 				[/* text */ 't', ` describing the type of the variable described
  by this descriptor.`]
 			],
@@ -31,10 +31,10 @@ DocsCollector.collect('java.lang.invoke.VarHandle$VarHandleDesc', [
 			[/* method description */
 				[/* text */ 't', `Returns a compact textual description of this constant description.
  For a field `],
-				[/* reference */ 'r', `java.lang.invoke.VarHandle`],
+				[/* reference */ 'r', `java.lang.invoke.VarHandle`, `VarHandle`],
 				[/* text */ 't', `, includes the owner, name, and type
  of the field, and whether it is static; for an array `],
-				[/* reference */ 'r', `java.lang.invoke.VarHandle`],
+				[/* reference */ 'r', `java.lang.invoke.VarHandle`, `VarHandle`],
 				[/* text */ 't', `,
  the name of the component type.`]
 			],
@@ -47,16 +47,16 @@ DocsCollector.collect('java.lang.invoke.VarHandle$VarHandleDesc', [
 		[/* method */ 'ofArray(java.lang.constant.ClassDesc)', [
 			[/* method description */
 				[/* text */ 't', `Returns a `],
-				[/* reference */ 'r', `java.lang.invoke.VarHandle.VarHandleDesc`],
+				[/* reference */ 'r', `java.lang.invoke.VarHandle.VarHandleDesc`, `VarHandle.VarHandleDesc`],
 				[/* text */ 't', ` corresponding to a `],
-				[/* reference */ 'r', `java.lang.invoke.VarHandle`],
+				[/* reference */ 'r', `java.lang.invoke.VarHandle`, `VarHandle`],
 				[/* text */ 't', `
  for an array type.`]
 			],
 			[/* parameters */
 				[/* parameter */ 'arrayClass', [/* parameter description */
 					[/* text */ 't', `a `],
-					[/* reference */ 'r', `java.lang.constant.ClassDesc`],
+					[/* reference */ 'r', `java.lang.constant.ClassDesc`, `ClassDesc`],
 					[/* text */ 't', ` describing the type of the array`]
 				]]
 			],
@@ -67,15 +67,15 @@ DocsCollector.collect('java.lang.invoke.VarHandle$VarHandleDesc', [
 			],
 			[/* return description */
 				[/* text */ 't', `the `],
-				[/* reference */ 'r', `java.lang.invoke.VarHandle.VarHandleDesc`]
+				[/* reference */ 'r', `java.lang.invoke.VarHandle.VarHandleDesc`, `VarHandle.VarHandleDesc`]
 			]
 		]],
 		[/* method */ 'ofField(java.lang.constant.ClassDesc,java.lang.String,java.lang.constant.ClassDesc)', [
 			[/* method description */
 				[/* text */ 't', `Returns a `],
-				[/* reference */ 'r', `java.lang.invoke.VarHandle.VarHandleDesc`],
+				[/* reference */ 'r', `java.lang.invoke.VarHandle.VarHandleDesc`, `VarHandle.VarHandleDesc`],
 				[/* text */ 't', ` corresponding to a `],
-				[/* reference */ 'r', `java.lang.invoke.VarHandle`],
+				[/* reference */ 'r', `java.lang.invoke.VarHandle`, `VarHandle`],
 				[/* text */ 't', `
  for an instance field.`]
 			],
@@ -85,13 +85,13 @@ DocsCollector.collect('java.lang.invoke.VarHandle$VarHandleDesc', [
 				]],
 				[/* parameter */ 'declaringClass', [/* parameter description */
 					[/* text */ 't', `a `],
-					[/* reference */ 'r', `java.lang.constant.ClassDesc`],
+					[/* reference */ 'r', `java.lang.constant.ClassDesc`, `ClassDesc`],
 					[/* text */ 't', ` describing the declaring class,
                        for field var handles`]
 				]],
 				[/* parameter */ 'fieldType', [/* parameter description */
 					[/* text */ 't', `a `],
-					[/* reference */ 'r', `java.lang.constant.ClassDesc`],
+					[/* reference */ 'r', `java.lang.constant.ClassDesc`, `ClassDesc`],
 					[/* text */ 't', ` describing the type of the field`]
 				]]
 			],
@@ -102,15 +102,15 @@ DocsCollector.collect('java.lang.invoke.VarHandle$VarHandleDesc', [
 			],
 			[/* return description */
 				[/* text */ 't', `the `],
-				[/* reference */ 'r', `java.lang.invoke.VarHandle.VarHandleDesc`]
+				[/* reference */ 'r', `java.lang.invoke.VarHandle.VarHandleDesc`, `VarHandle.VarHandleDesc`]
 			]
 		]],
 		[/* method */ 'ofStaticField(java.lang.constant.ClassDesc,java.lang.String,java.lang.constant.ClassDesc)', [
 			[/* method description */
 				[/* text */ 't', `Returns a `],
-				[/* reference */ 'r', `java.lang.invoke.VarHandle.VarHandleDesc`],
+				[/* reference */ 'r', `java.lang.invoke.VarHandle.VarHandleDesc`, `VarHandle.VarHandleDesc`],
 				[/* text */ 't', ` corresponding to a `],
-				[/* reference */ 'r', `java.lang.invoke.VarHandle`],
+				[/* reference */ 'r', `java.lang.invoke.VarHandle`, `VarHandle`],
 				[/* text */ 't', `
  for a static field.`]
 			],
@@ -120,13 +120,13 @@ DocsCollector.collect('java.lang.invoke.VarHandle$VarHandleDesc', [
 				]],
 				[/* parameter */ 'declaringClass', [/* parameter description */
 					[/* text */ 't', `a `],
-					[/* reference */ 'r', `java.lang.constant.ClassDesc`],
+					[/* reference */ 'r', `java.lang.constant.ClassDesc`, `ClassDesc`],
 					[/* text */ 't', ` describing the declaring class,
                        for field var handles`]
 				]],
 				[/* parameter */ 'fieldType', [/* parameter description */
 					[/* text */ 't', `a `],
-					[/* reference */ 'r', `java.lang.constant.ClassDesc`],
+					[/* reference */ 'r', `java.lang.constant.ClassDesc`, `ClassDesc`],
 					[/* text */ 't', ` describing the type of the field`]
 				]]
 			],
@@ -137,7 +137,7 @@ DocsCollector.collect('java.lang.invoke.VarHandle$VarHandleDesc', [
 			],
 			[/* return description */
 				[/* text */ 't', `the `],
-				[/* reference */ 'r', `java.lang.invoke.VarHandle.VarHandleDesc`]
+				[/* reference */ 'r', `java.lang.invoke.VarHandle.VarHandleDesc`, `VarHandle.VarHandleDesc`]
 			]
 		]]
 	],

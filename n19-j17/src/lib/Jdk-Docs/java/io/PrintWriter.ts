@@ -7,14 +7,14 @@ DocsCollector.collect('java.io.PrintWriter', [
  class implements all of the `],
 		[/* inline code block */ 'i', `print`],
 		[/* text */ 't', ` methods found in `],
-		[/* reference */ 'r', `java.io.PrintStream`],
+		[/* reference */ 'r', `java.io.PrintStream`, `PrintStream`],
 		[/* text */ 't', `.  It does not contain methods for writing raw bytes, for which
  a program should use unencoded byte streams.
 
  `],
 		[/* block */ 'b', [
 			[/* text */ 't', ` Unlike the `],
-			[/* reference */ 'r', `java.io.PrintStream`],
+			[/* reference */ 'r', `java.io.PrintStream`, `PrintStream`],
 			[/* text */ 't', ` class, if automatic flushing is enabled
  it will be done only when one of the `],
 			[/* inline code block */ 'i', `println`],
@@ -42,7 +42,7 @@ DocsCollector.collect('java.io.PrintWriter', [
 			[/* text */ 't', ` This class always replaces malformed and unmappable character sequences with
  the charset's default replacement string.
  The `],
-			[/* reference */ 'r', `java.nio.charset.CharsetEncoder`],
+			[/* reference */ 'r', `java.nio.charset.CharsetEncoder`, `CharsetEncoder`],
 			[/* text */ 't', ` class should be used when more
  control over the encoding process is required.`]
 		]]
@@ -63,10 +63,10 @@ DocsCollector.collect('java.io.PrintWriter', [
 				[/* text */ 't', `Creates a new PrintWriter, without automatic line flushing, with the
  specified file.  This convenience constructor creates the necessary
  intermediate `],
-				[/* reference */ 'r', `java.io.OutputStreamWriter`],
+				[/* reference */ 'r', `java.io.OutputStreamWriter`, `OutputStreamWriter`],
 				[/* text */ 't', `,
  which will encode characters using the `],
-				[/* reference */ 'r', `java.charset.Charset#defaultCharset()`],
+				[/* reference */ 'r', `java.nio.charset.Charset#defaultCharset()`, `default charset`],
 				[/* text */ 't', ` for this
  instance of the Java virtual machine.`]
 			],
@@ -87,7 +87,7 @@ DocsCollector.collect('java.io.PrintWriter', [
 				]],
 				[/* throw */ 'java.lang.SecurityException', [/* throw description */
 					[/* text */ 't', `If a security manager is present and `],
-					[/* reference */ 'r', `java.SecurityManager#checkWrite(java.io.FileDescriptor)`],
+					[/* reference */ 'r', `java.lang.SecurityManager#checkWrite(java.io.FileDescriptor)`, `checkWrite(file.getPath())`],
 					[/* text */ 't', `
           denies write access to the file`]
 				]]
@@ -98,7 +98,7 @@ DocsCollector.collect('java.io.PrintWriter', [
 				[/* text */ 't', `Creates a new PrintWriter, without automatic line flushing, with the
  specified file and charset.  This convenience constructor creates the
  necessary intermediate `],
-				[/* reference */ 'r', `java.io.OutputStreamWriter`],
+				[/* reference */ 'r', `java.io.OutputStreamWriter`, `OutputStreamWriter`],
 				[/* text */ 't', `, which will encode characters using the provided
  charset.`]
 			],
@@ -111,7 +111,7 @@ DocsCollector.collect('java.io.PrintWriter', [
 				]],
 				[/* parameter */ 'csn', [/* parameter description */
 					[/* text */ 't', `The name of a supported `],
-					[/* reference */ 'r', `java.nio.charset.Charset`]
+					[/* reference */ 'r', `java.nio.charset.Charset`, `charset`]
 				]]
 			],
 			[/* throws */
@@ -123,7 +123,7 @@ DocsCollector.collect('java.io.PrintWriter', [
 				]],
 				[/* throw */ 'java.lang.SecurityException', [/* throw description */
 					[/* text */ 't', `If a security manager is present and `],
-					[/* reference */ 'r', `java.SecurityManager#checkWrite(java.io.FileDescriptor)`],
+					[/* reference */ 'r', `java.lang.SecurityManager#checkWrite(java.io.FileDescriptor)`, `checkWrite(file.getPath())`],
 					[/* text */ 't', `
           denies write access to the file`]
 				]],
@@ -137,7 +137,7 @@ DocsCollector.collect('java.io.PrintWriter', [
 				[/* text */ 't', `Creates a new PrintWriter, without automatic line flushing, with the
  specified file and charset.  This convenience constructor creates the
  necessary intermediate `],
-				[/* reference */ 'r', `java.io.OutputStreamWriter`],
+				[/* reference */ 'r', `java.io.OutputStreamWriter`, `OutputStreamWriter`],
 				[/* text */ 't', `, which will encode characters using the provided
  charset.`]
 			],
@@ -150,7 +150,7 @@ DocsCollector.collect('java.io.PrintWriter', [
 				]],
 				[/* parameter */ 'charset', [/* parameter description */
 					[/* text */ 't', `A `],
-					[/* reference */ 'r', `java.nio.charset.Charset`]
+					[/* reference */ 'r', `java.nio.charset.Charset`, `charset`]
 				]]
 			],
 			[/* throws */
@@ -159,7 +159,7 @@ DocsCollector.collect('java.io.PrintWriter', [
 				]],
 				[/* throw */ 'java.lang.SecurityException', [/* throw description */
 					[/* text */ 't', `If a security manager is present and `],
-					[/* reference */ 'r', `java.SecurityManager#checkWrite(java.io.FileDescriptor)`],
+					[/* reference */ 'r', `java.lang.SecurityManager#checkWrite(java.io.FileDescriptor)`, `checkWrite(file.getPath())`],
 					[/* text */ 't', `
           denies write access to the file`]
 				]]
@@ -228,7 +228,7 @@ DocsCollector.collect('java.io.PrintWriter', [
 				]],
 				[/* parameter */ 'charset', [/* parameter description */
 					[/* text */ 't', `A `],
-					[/* reference */ 'r', `java.nio.charset.Charset`]
+					[/* reference */ 'r', `java.nio.charset.Charset`, `charset`]
 				]]
 			],
 			/* throws */ UDF
@@ -271,10 +271,10 @@ DocsCollector.collect('java.io.PrintWriter', [
 				[/* text */ 't', `Creates a new PrintWriter, without automatic line flushing, with the
  specified file name.  This convenience constructor creates the necessary
  intermediate `],
-				[/* reference */ 'r', `java.io.OutputStreamWriter`],
+				[/* reference */ 'r', `java.io.OutputStreamWriter`, `OutputStreamWriter`],
 				[/* text */ 't', `,
  which will encode characters using the `],
-				[/* reference */ 'r', `java.charset.Charset#defaultCharset()`],
+				[/* reference */ 'r', `java.nio.charset.Charset#defaultCharset()`, `default charset`],
 				[/* text */ 't', ` for this
  instance of the Java virtual machine.`]
 			],
@@ -295,7 +295,7 @@ DocsCollector.collect('java.io.PrintWriter', [
 				]],
 				[/* throw */ 'java.lang.SecurityException', [/* throw description */
 					[/* text */ 't', `If a security manager is present and `],
-					[/* reference */ 'r', `java.SecurityManager#checkWrite(java.io.FileDescriptor)`],
+					[/* reference */ 'r', `java.lang.SecurityManager#checkWrite(java.io.FileDescriptor)`, `checkWrite(fileName)`],
 					[/* text */ 't', ` denies write
           access to the file`]
 				]]
@@ -306,7 +306,7 @@ DocsCollector.collect('java.io.PrintWriter', [
 				[/* text */ 't', `Creates a new PrintWriter, without automatic line flushing, with the
  specified file name and charset.  This convenience constructor creates
  the necessary intermediate `],
-				[/* reference */ 'r', `java.io.OutputStreamWriter`],
+				[/* reference */ 'r', `java.io.OutputStreamWriter`, `OutputStreamWriter`],
 				[/* text */ 't', `, which will encode characters using the provided
  charset.`]
 			],
@@ -319,7 +319,7 @@ DocsCollector.collect('java.io.PrintWriter', [
 				]],
 				[/* parameter */ 'csn', [/* parameter description */
 					[/* text */ 't', `The name of a supported `],
-					[/* reference */ 'r', `java.nio.charset.Charset`]
+					[/* reference */ 'r', `java.nio.charset.Charset`, `charset`]
 				]]
 			],
 			[/* throws */
@@ -331,7 +331,7 @@ DocsCollector.collect('java.io.PrintWriter', [
 				]],
 				[/* throw */ 'java.lang.SecurityException', [/* throw description */
 					[/* text */ 't', `If a security manager is present and `],
-					[/* reference */ 'r', `java.SecurityManager#checkWrite(java.io.FileDescriptor)`],
+					[/* reference */ 'r', `java.lang.SecurityManager#checkWrite(java.io.FileDescriptor)`, `checkWrite(fileName)`],
 					[/* text */ 't', ` denies write
           access to the file`]
 				]],
@@ -345,7 +345,7 @@ DocsCollector.collect('java.io.PrintWriter', [
 				[/* text */ 't', `Creates a new PrintWriter, without automatic line flushing, with the
  specified file name and charset.  This convenience constructor creates
  the necessary intermediate `],
-				[/* reference */ 'r', `java.io.OutputStreamWriter`],
+				[/* reference */ 'r', `java.io.OutputStreamWriter`, `OutputStreamWriter`],
 				[/* text */ 't', `, which will encode characters using the provided
  charset.`]
 			],
@@ -358,7 +358,7 @@ DocsCollector.collect('java.io.PrintWriter', [
 				]],
 				[/* parameter */ 'charset', [/* parameter description */
 					[/* text */ 't', `A `],
-					[/* reference */ 'r', `java.nio.charset.Charset`]
+					[/* reference */ 'r', `java.nio.charset.Charset`, `charset`]
 				]]
 			],
 			[/* throws */
@@ -367,7 +367,7 @@ DocsCollector.collect('java.io.PrintWriter', [
 				]],
 				[/* throw */ 'java.lang.SecurityException', [/* throw description */
 					[/* text */ 't', `If a security manager is present and `],
-					[/* reference */ 'r', `java.SecurityManager#checkWrite(java.io.FileDescriptor)`],
+					[/* reference */ 'r', `java.lang.SecurityManager#checkWrite(java.io.FileDescriptor)`, `checkWrite(fileName)`],
 					[/* text */ 't', ` denies write
           access to the file`]
 				]]
@@ -582,7 +582,7 @@ DocsCollector.collect('java.io.PrintWriter', [
  `],
 				[/* block */ 'b', [
 					[/* text */ 't', ` The locale always used is the one returned by `],
-					[/* reference */ 'r', `java.Locale#getDefault()`],
+					[/* reference */ 'r', `java.util.Locale#getDefault()`, `Locale.getDefault()`],
 					[/* text */ 't', `, regardless of any
  previous invocations of other formatting methods on this object.`]
 				]]
@@ -590,7 +590,7 @@ DocsCollector.collect('java.io.PrintWriter', [
 			[/* parameters */
 				[/* parameter */ 'format', [/* parameter description */
 					[/* text */ 't', `A format string as described in `],
-					[/* reference */ 'r', `java.Formatter#syntax`],
+					[/* reference */ 'r', `java.util.Formatter#syntax`, `Format string syntax`],
 					[/* text */ 't', `.`]
 				]],
 				[/* parameter */ 'args', [/* parameter description */
@@ -606,7 +606,7 @@ DocsCollector.collect('java.io.PrintWriter', [
          `],
 					[/* inline code block */ 'i', `null`],
 					[/* text */ 't', ` argument depends on the `],
-					[/* reference */ 'r', `java.Formatter#syntax`],
+					[/* reference */ 'r', `java.util.Formatter#syntax`, `conversion`],
 					[/* text */ 't', `.`]
 				]]
 			],
@@ -617,7 +617,7 @@ DocsCollector.collect('java.io.PrintWriter', [
           insufficient arguments given the format string, or other
           illegal conditions.  For specification of all possible
           formatting errors, see the `],
-					[/* reference */ 'r', `java.Formatter#detail`],
+					[/* reference */ 'r', `java.util.Formatter#detail`, `Details`],
 					[/* text */ 't', ` section of the
           Formatter class specification.`]
 				]],
@@ -641,7 +641,7 @@ DocsCollector.collect('java.io.PrintWriter', [
 			[/* parameters */
 				[/* parameter */ 'l', [/* parameter description */
 					[/* text */ 't', `The `],
-					[/* reference */ 'r', `java.util.Locale`],
+					[/* reference */ 'r', `java.util.Locale`, `locale`],
 					[/* text */ 't', ` to apply during
          formatting.  If `],
 					[/* inline code block */ 'i', `l`],
@@ -652,7 +652,7 @@ DocsCollector.collect('java.io.PrintWriter', [
 				]],
 				[/* parameter */ 'format', [/* parameter description */
 					[/* text */ 't', `A format string as described in `],
-					[/* reference */ 'r', `java.Formatter#syntax`],
+					[/* reference */ 'r', `java.util.Formatter#syntax`, `Format string syntax`],
 					[/* text */ 't', `.`]
 				]],
 				[/* parameter */ 'args', [/* parameter description */
@@ -668,7 +668,7 @@ DocsCollector.collect('java.io.PrintWriter', [
          `],
 					[/* inline code block */ 'i', `null`],
 					[/* text */ 't', ` argument depends on the `],
-					[/* reference */ 'r', `java.Formatter#syntax`],
+					[/* reference */ 'r', `java.util.Formatter#syntax`, `conversion`],
 					[/* text */ 't', `.`]
 				]]
 			],
@@ -679,7 +679,7 @@ DocsCollector.collect('java.io.PrintWriter', [
           insufficient arguments given the format string, or other
           illegal conditions.  For specification of all possible
           formatting errors, see the `],
-					[/* reference */ 'r', `java.Formatter#detail`],
+					[/* reference */ 'r', `java.util.Formatter#detail`, `Details`],
 					[/* text */ 't', ` section of the
           formatter class specification.`]
 				]],
@@ -718,7 +718,7 @@ DocsCollector.collect('java.io.PrintWriter', [
 			[/* parameters */
 				[/* parameter */ 'format', [/* parameter description */
 					[/* text */ 't', `A format string as described in `],
-					[/* reference */ 'r', `java.Formatter#syntax`],
+					[/* reference */ 'r', `java.util.Formatter#syntax`, `Format string syntax`],
 					[/* text */ 't', `.`]
 				]],
 				[/* parameter */ 'args', [/* parameter description */
@@ -734,7 +734,7 @@ DocsCollector.collect('java.io.PrintWriter', [
          `],
 					[/* inline code block */ 'i', `null`],
 					[/* text */ 't', ` argument depends on the `],
-					[/* reference */ 'r', `java.Formatter#syntax`],
+					[/* reference */ 'r', `java.util.Formatter#syntax`, `conversion`],
 					[/* text */ 't', `.`]
 				]]
 			],
@@ -745,7 +745,7 @@ DocsCollector.collect('java.io.PrintWriter', [
           insufficient arguments given the format string, or other
           illegal conditions.  For specification of all possible
           formatting errors, see the `],
-					[/* reference */ 'r', `java.Formatter#detail`],
+					[/* reference */ 'r', `java.util.Formatter#detail`, `Details`],
 					[/* text */ 't', ` section of the
           formatter class specification.`]
 				]],
@@ -784,7 +784,7 @@ DocsCollector.collect('java.io.PrintWriter', [
 			[/* parameters */
 				[/* parameter */ 'l', [/* parameter description */
 					[/* text */ 't', `The `],
-					[/* reference */ 'r', `java.util.Locale`],
+					[/* reference */ 'r', `java.util.Locale`, `locale`],
 					[/* text */ 't', ` to apply during
          formatting.  If `],
 					[/* inline code block */ 'i', `l`],
@@ -795,7 +795,7 @@ DocsCollector.collect('java.io.PrintWriter', [
 				]],
 				[/* parameter */ 'format', [/* parameter description */
 					[/* text */ 't', `A format string as described in `],
-					[/* reference */ 'r', `java.Formatter#syntax`],
+					[/* reference */ 'r', `java.util.Formatter#syntax`, `Format string syntax`],
 					[/* text */ 't', `.`]
 				]],
 				[/* parameter */ 'args', [/* parameter description */
@@ -811,7 +811,7 @@ DocsCollector.collect('java.io.PrintWriter', [
          `],
 					[/* inline code block */ 'i', `null`],
 					[/* text */ 't', ` argument depends on the `],
-					[/* reference */ 'r', `java.Formatter#syntax`],
+					[/* reference */ 'r', `java.util.Formatter#syntax`, `conversion`],
 					[/* text */ 't', `.`]
 				]]
 			],
@@ -822,7 +822,7 @@ DocsCollector.collect('java.io.PrintWriter', [
           insufficient arguments given the format string, or other
           illegal conditions.  For specification of all possible
           formatting errors, see the `],
-					[/* reference */ 'r', `java.Formatter#detail`],
+					[/* reference */ 'r', `java.util.Formatter#detail`, `Details`],
 					[/* text */ 't', ` section of the
           formatter class specification.`]
 				]],
@@ -857,7 +857,7 @@ DocsCollector.collect('java.io.PrintWriter', [
 		[/* method */ 'print(boolean)', [
 			[/* method description */
 				[/* text */ 't', `Prints a boolean value.  The string produced by `],
-				[/* reference */ 'r', `java.String#valueOf(boolean)`],
+				[/* reference */ 'r', `java.lang.String#valueOf(boolean)`, `String.valueOf(boolean)`],
 				[/* text */ 't', ` is translated into bytes
  according to the platform's default character encoding, and these bytes
  are written in exactly the manner of the `],
@@ -920,7 +920,7 @@ DocsCollector.collect('java.io.PrintWriter', [
 			[/* method description */
 				[/* text */ 't', `Prints a double-precision floating-point number.  The string produced by
  `],
-				[/* reference */ 'r', `java.String#valueOf(double)`],
+				[/* reference */ 'r', `java.lang.String#valueOf(double)`, `String.valueOf(double)`],
 				[/* text */ 't', ` is translated into
  bytes according to the platform's default character encoding, and these
  bytes are written in exactly the manner of the `],
@@ -940,7 +940,7 @@ DocsCollector.collect('java.io.PrintWriter', [
 		[/* method */ 'print(float)', [
 			[/* method description */
 				[/* text */ 't', `Prints a floating-point number.  The string produced by `],
-				[/* reference */ 'r', `java.String#valueOf(double)`],
+				[/* reference */ 'r', `java.lang.String#valueOf(double)`, `String.valueOf(float)`],
 				[/* text */ 't', ` is translated into bytes
  according to the platform's default character encoding, and these bytes
  are written in exactly the manner of the `],
@@ -961,7 +961,7 @@ DocsCollector.collect('java.io.PrintWriter', [
 		[/* method */ 'print(int)', [
 			[/* method description */
 				[/* text */ 't', `Prints an integer.  The string produced by `],
-				[/* reference */ 'r', `java.String#valueOf(double)`],
+				[/* reference */ 'r', `java.lang.String#valueOf(double)`, `String.valueOf(int)`],
 				[/* text */ 't', ` is translated into bytes according
  to the platform's default character encoding, and these bytes are
  written in exactly the manner of the `],
@@ -982,7 +982,7 @@ DocsCollector.collect('java.io.PrintWriter', [
 		[/* method */ 'print(java.lang.Object)', [
 			[/* method description */
 				[/* text */ 't', `Prints an object.  The string produced by the `],
-				[/* reference */ 'r', `java.String#valueOf(java.lang.Object)`],
+				[/* reference */ 'r', `java.lang.String#valueOf(java.lang.Object)`, `String.valueOf(Object)`],
 				[/* text */ 't', ` method is translated into bytes
  according to the platform's default character encoding, and these bytes
  are written in exactly the manner of the `],
@@ -1027,7 +1027,7 @@ DocsCollector.collect('java.io.PrintWriter', [
 		[/* method */ 'print(long)', [
 			[/* method description */
 				[/* text */ 't', `Prints a long integer.  The string produced by `],
-				[/* reference */ 'r', `java.String#valueOf(double)`],
+				[/* reference */ 'r', `java.lang.String#valueOf(double)`, `String.valueOf(long)`],
 				[/* text */ 't', ` is translated into bytes
  according to the platform's default character encoding, and these bytes
  are written in exactly the manner of the `],
@@ -1049,7 +1049,7 @@ DocsCollector.collect('java.io.PrintWriter', [
 			[/* method description */
 				[/* text */ 't', `Terminates the current line by writing the line separator string.  The
  line separator is `],
-				[/* reference */ 'r', `java.System#lineSeparator()`],
+				[/* reference */ 'r', `java.lang.System#lineSeparator()`, `System.lineSeparator()`],
 				[/* text */ 't', ` and is not necessarily
  a single newline character (`],
 				[/* inline code block */ 'i', `'\\n'`],

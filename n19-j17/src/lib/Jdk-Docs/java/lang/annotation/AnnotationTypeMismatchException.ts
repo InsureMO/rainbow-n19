@@ -7,7 +7,7 @@ DocsCollector.collect('java.lang.annotation.AnnotationTypeMismatchException', [
  an annotation whose type has changed after the annotation was compiled
  (or serialized).
  This exception can be thrown by the `],
-		[/* reference */ 'r', `java.lang.reflect.AnnotatedElement`],
+		[/* reference */ 'r', `java.lang.reflect.AnnotatedElement`, `API used to read annotations reflectively`],
 		[/* text */ 't', `.`]
 	],
 	/* fields */ UDF,

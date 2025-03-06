@@ -8,7 +8,7 @@ DocsCollector.collect('java.util.zip.Deflater', [
  initially developed as part of the PNG graphics standard and is not
  protected by patents. It is fully described in the specifications at
  the `],
-		[/* reference */ 'r', `.package-summary#package-description`],
+		[/* text */ 't', `java.util.zip package description`],
 		[/* text */ 't', `.
  `],
 		[/* block */ 'b', [
@@ -480,7 +480,7 @@ DocsCollector.collect('java.util.zip.Deflater', [
 					[/* text */ 't', `SYNC_FLUSH`],
 					[/* text */ 't', `, if
  the return value is equal to the `],
-					[/* reference */ 'r', `java.util.Buffer#remaining()`],
+					[/* reference */ 'r', `java.nio.Buffer#remaining()`, `remaining space`],
 					[/* text */ 't', `
  of the buffer, this method should be invoked again with the same
  `],

@@ -331,7 +331,7 @@ DocsCollector.collect('java.lang.Integer', [
 		[/* method */ 'resolveConstantDesc(java.lang.invoke.MethodHandles.Lookup)', [
 			[/* method description */
 				[/* text */ 't', `Resolves this instance as a `],
-				[/* reference */ 'r', `java.lang.constant.ConstantDesc`],
+				[/* reference */ 'r', `java.lang.constant.ConstantDesc`, `ConstantDesc`],
 				[/* text */ 't', `, the result of which is
  the instance itself.`]
 			],
@@ -343,7 +343,7 @@ DocsCollector.collect('java.lang.Integer', [
 			/* throws */ UDF,
 			[/* return description */
 				[/* text */ 't', `the `],
-				[/* reference */ 'r', `java.lang.Integer`],
+				[/* reference */ 'r', `java.lang.Integer`, `Integer`],
 				[/* text */ 't', ` instance`]
 			]
 		]],
@@ -370,7 +370,7 @@ DocsCollector.collect('java.lang.Integer', [
 		[/* method */ 'describeConstable()', [
 			[/* method description */
 				[/* text */ 't', `Returns an `],
-				[/* reference */ 'r', `java.util.Optional`],
+				[/* reference */ 'r', `java.util.Optional`, `Optional`],
 				[/* text */ 't', ` containing the nominal descriptor for this
  instance, which is the instance itself.`]
 			],
@@ -378,9 +378,9 @@ DocsCollector.collect('java.lang.Integer', [
 			/* throws */ UDF,
 			[/* return description */
 				[/* text */ 't', `an `],
-				[/* reference */ 'r', `java.util.Optional`],
+				[/* reference */ 'r', `java.util.Optional`, `Optional`],
 				[/* text */ 't', ` describing the `],
-				[/* reference */ 'r', `java.lang.Integer`],
+				[/* reference */ 'r', `java.lang.Integer`, `Integer`],
 				[/* text */ 't', ` instance`]
 			]
 		]],
@@ -631,7 +631,7 @@ DocsCollector.collect('java.lang.Integer', [
 				[/* inline code block */ 'i', `int`],
 				[/* text */ 't', ` values
  as if by calling `],
-				[/* reference */ 'r', `.Math#max(double,double)`],
+				[/* reference */ 'r', `java.lang.Math#max(double,double)`, `Math.max`],
 				[/* text */ 't', `.`]
 			],
 			[/* parameters */
@@ -656,7 +656,7 @@ DocsCollector.collect('java.lang.Integer', [
 				[/* inline code block */ 'i', `int`],
 				[/* text */ 't', ` values
  as if by calling `],
-				[/* reference */ 'r', `.Math#min(double,double)`],
+				[/* reference */ 'r', `java.lang.Math#min(double,double)`, `Math.min`],
 				[/* text */ 't', `.`]
 			],
 			[/* parameters */
@@ -752,7 +752,7 @@ DocsCollector.collect('java.lang.Integer', [
 		[/* method */ 'parseInt(java.lang.CharSequence,int,int,int)', [
 			[/* method description */
 				[/* text */ 't', `Parses the `],
-				[/* reference */ 'r', `java.lang.CharSequence`],
+				[/* reference */ 'r', `java.lang.CharSequence`, `CharSequence`],
 				[/* text */ 't', ` argument as a signed `],
 				[/* inline code block */ 'i', `int`],
 				[/* text */ 't', ` in the
@@ -829,10 +829,10 @@ DocsCollector.collect('java.lang.Integer', [
 					[/* inline code block */ 'i', `radix`],
 					[/* text */ 't', ` is either smaller than
              `],
-					[/* reference */ 'r', `.Character#MIN_RADIX`],
+					[/* reference */ 'r', `java.lang.Character#MIN_RADIX`, `Character.MIN_RADIX`],
 					[/* text */ 't', ` or larger than
              `],
-					[/* reference */ 'r', `.Character#MAX_RADIX`],
+					[/* reference */ 'r', `java.lang.Character#MAX_RADIX`, `Character.MAX_RADIX`],
 					[/* text */ 't', `.`]
 				]]
 			],
@@ -890,7 +890,7 @@ DocsCollector.collect('java.lang.Integer', [
  specified by the second argument. The characters in the string
  must all be digits of the specified radix (as determined by
  whether `],
-				[/* reference */ 'r', `.Character#digit(int,int)`],
+				[/* reference */ 'r', `java.lang.Character#digit(int,int)`, `Character.digit(char, int)`],
 				[/* text */ 't', ` returns a
  nonnegative value), except that the first character may be an
  ASCII minus sign `],
@@ -926,10 +926,10 @@ DocsCollector.collect('java.lang.Integer', [
 					[/* block */ 'b', [
 						[/* text */ 't', `The radix is either smaller than
  `],
-						[/* reference */ 'r', `.Character#MIN_RADIX`],
+						[/* reference */ 'r', `java.lang.Character#MIN_RADIX`, `Character.MIN_RADIX`],
 						[/* text */ 't', ` or
  larger than `],
-						[/* reference */ 'r', `.Character#MAX_RADIX`],
+						[/* reference */ 'r', `java.lang.Character#MAX_RADIX`, `Character.MAX_RADIX`],
 						[/* text */ 't', `.
 
  `]
@@ -1010,7 +1010,7 @@ DocsCollector.collect('java.lang.Integer', [
 		[/* method */ 'parseUnsignedInt(java.lang.CharSequence,int,int,int)', [
 			[/* method description */
 				[/* text */ 't', `Parses the `],
-				[/* reference */ 'r', `java.lang.CharSequence`],
+				[/* reference */ 'r', `java.lang.CharSequence`, `CharSequence`],
 				[/* text */ 't', ` argument as an unsigned `],
 				[/* inline code block */ 'i', `int`],
 				[/* text */ 't', ` in
@@ -1087,10 +1087,10 @@ DocsCollector.collect('java.lang.Integer', [
 					[/* inline code block */ 'i', `radix`],
 					[/* text */ 't', ` is either smaller than
              `],
-					[/* reference */ 'r', `.Character#MIN_RADIX`],
+					[/* reference */ 'r', `java.lang.Character#MIN_RADIX`, `Character.MIN_RADIX`],
 					[/* text */ 't', ` or larger than
              `],
-					[/* reference */ 'r', `.Character#MAX_RADIX`],
+					[/* reference */ 'r', `java.lang.Character#MAX_RADIX`, `Character.MAX_RADIX`],
 					[/* text */ 't', `.`]
 				]]
 			],
@@ -1146,7 +1146,7 @@ DocsCollector.collect('java.lang.Integer', [
 
  The characters in the string must all be digits of the
  specified radix (as determined by whether `],
-				[/* reference */ 'r', `.Character#digit(int,int)`],
+				[/* reference */ 'r', `java.lang.Character#digit(int,int)`, `Character.digit(char, int)`],
 				[/* text */ 't', ` returns a nonnegative
  value), except that the first character may be an ASCII plus
  sign `],
@@ -1176,10 +1176,10 @@ DocsCollector.collect('java.lang.Integer', [
 					[/* block */ 'b', [
 						[/* text */ 't', `The radix is either smaller than
  `],
-						[/* reference */ 'r', `.Character#MIN_RADIX`],
+						[/* reference */ 'r', `java.lang.Character#MIN_RADIX`, `Character.MIN_RADIX`],
 						[/* text */ 't', ` or
  larger than `],
-						[/* reference */ 'r', `.Character#MAX_RADIX`],
+						[/* reference */ 'r', `java.lang.Character#MAX_RADIX`, `Character.MAX_RADIX`],
 						[/* text */ 't', `.
 
  `]
@@ -1520,7 +1520,7 @@ DocsCollector.collect('java.lang.Integer', [
 					[/* text */ 't', ` method with the indicated radix (10, 16, or
  8).  This sequence of characters must represent a positive
  value or a `],
-					[/* reference */ 'r', `java.lang.NumberFormatException`],
+					[/* reference */ 'r', `java.lang.NumberFormatException`, `NumberFormatException`],
 					[/* text */ 't', ` will be thrown.  The
  result is negated if first character of the specified `],
 					[/* inline code block */ 'i', `String`],
@@ -1564,7 +1564,7 @@ DocsCollector.collect('java.lang.Integer', [
 				[/* block */ 'b', [
 					[/* text */ 't', `The first argument is treated as the name of a system
  property.  System properties are accessible through the `],
-					[/* reference */ 'r', `.System#getProperty(java.lang.String)`],
+					[/* reference */ 'r', `java.lang.System#getProperty(java.lang.String)`, `System.getProperty(java.lang.String)`],
 					[/* text */ 't', ` method. The
  string value of this property is then interpreted as an integer
  value using the grammar supported by `],
@@ -1610,7 +1610,7 @@ DocsCollector.collect('java.lang.Integer', [
 				[/* throw */ 'java.lang.SecurityException', [/* throw description */
 					[/* text */ 't', `for the same reasons as
           `],
-					[/* reference */ 'r', `.System#getProperty(java.lang.String)`]
+					[/* reference */ 'r', `java.lang.System#getProperty(java.lang.String)`, `System.getProperty`]
 				]]
 			],
 			[/* return description */
@@ -1628,7 +1628,7 @@ DocsCollector.collect('java.lang.Integer', [
 				[/* block */ 'b', [
 					[/* text */ 't', `The first argument is treated as the name of a system
  property.  System properties are accessible through the `],
-					[/* reference */ 'r', `.System#getProperty(java.lang.String)`],
+					[/* reference */ 'r', `java.lang.System#getProperty(java.lang.String)`, `System.getProperty(java.lang.String)`],
 					[/* text */ 't', ` method. The
  string value of this property is then interpreted as an integer
  value using the grammar supported by `],
@@ -1694,7 +1694,7 @@ DocsCollector.collect('java.lang.Integer', [
 				[/* throw */ 'java.lang.SecurityException', [/* throw description */
 					[/* text */ 't', `for the same reasons as
           `],
-					[/* reference */ 'r', `.System#getProperty(java.lang.String)`]
+					[/* reference */ 'r', `java.lang.System#getProperty(java.lang.String)`, `System.getProperty`]
 				]]
 			],
 			[/* return description */
@@ -1709,7 +1709,7 @@ DocsCollector.collect('java.lang.Integer', [
  specified name.  The first argument is treated as the name of a
  system property.  System properties are accessible through the
  `],
-				[/* reference */ 'r', `.System#getProperty(java.lang.String)`],
+				[/* reference */ 'r', `java.lang.System#getProperty(java.lang.String)`, `System.getProperty(java.lang.String)`],
 				[/* text */ 't', ` method.
  The string value of this property is then interpreted as an
  integer value, as per the `],
@@ -1777,7 +1777,7 @@ DocsCollector.collect('java.lang.Integer', [
 				[/* throw */ 'java.lang.SecurityException', [/* throw description */
 					[/* text */ 't', `for the same reasons as
           `],
-					[/* reference */ 'r', `.System#getProperty(java.lang.String)`]
+					[/* reference */ 'r', `java.lang.System#getProperty(java.lang.String)`, `System.getProperty`]
 				]]
 			],
 			[/* return description */
@@ -2049,7 +2049,7 @@ DocsCollector.collect('java.lang.Integer', [
 				[/* inline code block */ 'i', `'\\u0066'`],
 				[/* text */ 't', `. If uppercase letters are
  desired, the `],
-				[/* reference */ 'r', `.String#toUpperCase()`],
+				[/* reference */ 'r', `java.lang.String#toUpperCase()`, `String.toUpperCase()`],
 				[/* text */ 't', ` method may
  be called on the result:
 
@@ -2232,7 +2232,7 @@ DocsCollector.collect('java.lang.Integer', [
 				[/* inline code block */ 'i', `0123456789abcdef`],
 				[/* text */ 't', `. If uppercase letters are
  desired, the `],
-				[/* reference */ 'r', `.String#toUpperCase()`],
+				[/* reference */ 'r', `java.lang.String#toUpperCase()`, `String.toUpperCase()`],
 				[/* text */ 't', ` method may
  be called on the result:
 

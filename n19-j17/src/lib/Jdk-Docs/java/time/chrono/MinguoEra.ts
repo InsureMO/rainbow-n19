@@ -131,7 +131,7 @@ DocsCollector.collect('java.time.chrono.MinguoEra', [
 				[/* block */ 'b', [
 					[/* text */ 't', `
  If no textual mapping is found then the `],
-					[/* reference */ 'r', `.Era#getValue()`],
+					[/* reference */ 'r', `java.time.chrono.Era#getValue()`, `numeric value`],
 					[/* text */ 't', ` is returned.`]
 				]]
 			],

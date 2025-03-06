@@ -68,7 +68,7 @@ DocsCollector.collect('java.lang.invoke.ConstantBootstraps', [
 		[/* method */ 'primitiveClass(java.lang.invoke.MethodHandles.Lookup,java.lang.String,java.lang.Class)', [
 			[/* method description */
 				[/* text */ 't', `Returns a `],
-				[/* reference */ 'r', `java.lang.Class`],
+				[/* reference */ 'r', `java.lang.Class`, `Class`],
 				[/* text */ 't', ` mirror for the primitive type whose type
  descriptor is specified by `],
 				[/* inline code block */ 'i', `name`],
@@ -96,14 +96,14 @@ DocsCollector.collect('java.lang.invoke.ConstantBootstraps', [
 			],
 			[/* return description */
 				[/* text */ 't', `the `],
-				[/* reference */ 'r', `java.lang.Class`],
+				[/* reference */ 'r', `java.lang.Class`, `Class`],
 				[/* text */ 't', ` mirror`]
 			]
 		]],
 		[/* method */ 'arrayVarHandle(java.lang.invoke.MethodHandles.Lookup,java.lang.String,java.lang.Class,java.lang.Class)', [
 			[/* method description */
 				[/* text */ 't', `Finds a `],
-				[/* reference */ 'r', `java.lang.invoke.VarHandle`],
+				[/* reference */ 'r', `java.lang.invoke.VarHandle`, `VarHandle`],
 				[/* text */ 't', ` for an array type.`]
 			],
 			[/* parameters */
@@ -135,13 +135,13 @@ DocsCollector.collect('java.lang.invoke.ConstantBootstraps', [
 			],
 			[/* return description */
 				[/* text */ 't', `the `],
-				[/* reference */ 'r', `java.lang.invoke.VarHandle`]
+				[/* reference */ 'r', `java.lang.invoke.VarHandle`, `VarHandle`]
 			]
 		]],
 		[/* method */ 'fieldVarHandle(java.lang.invoke.MethodHandles.Lookup,java.lang.String,java.lang.Class,java.lang.Class,java.lang.Class)', [
 			[/* method description */
 				[/* text */ 't', `Finds a `],
-				[/* reference */ 'r', `java.lang.invoke.VarHandle`],
+				[/* reference */ 'r', `java.lang.invoke.VarHandle`, `VarHandle`],
 				[/* text */ 't', ` for an instance field.`]
 			],
 			[/* parameters */
@@ -179,13 +179,13 @@ DocsCollector.collect('java.lang.invoke.ConstantBootstraps', [
 			],
 			[/* return description */
 				[/* text */ 't', `the `],
-				[/* reference */ 'r', `java.lang.invoke.VarHandle`]
+				[/* reference */ 'r', `java.lang.invoke.VarHandle`, `VarHandle`]
 			]
 		]],
 		[/* method */ 'staticFieldVarHandle(java.lang.invoke.MethodHandles.Lookup,java.lang.String,java.lang.Class,java.lang.Class,java.lang.Class)', [
 			[/* method description */
 				[/* text */ 't', `Finds a `],
-				[/* reference */ 'r', `java.lang.invoke.VarHandle`],
+				[/* reference */ 'r', `java.lang.invoke.VarHandle`, `VarHandle`],
 				[/* text */ 't', ` for a static field.`]
 			],
 			[/* parameters */
@@ -223,7 +223,7 @@ DocsCollector.collect('java.lang.invoke.ConstantBootstraps', [
 			],
 			[/* return description */
 				[/* text */ 't', `the `],
-				[/* reference */ 'r', `java.lang.invoke.VarHandle`]
+				[/* reference */ 'r', `java.lang.invoke.VarHandle`, `VarHandle`]
 			]
 		]],
 		[/* method */ 'explicitCast(java.lang.invoke.MethodHandles.Lookup,java.lang.String,java.lang.Class,java.lang.Object)', [
@@ -248,7 +248,7 @@ DocsCollector.collect('java.lang.invoke.ConstantBootstraps', [
 						[/* inline code block */ 'i', `void.class`],
 						[/* text */ 't', `,
      a `],
-						[/* reference */ 'r', `java.lang.ClassCastException`],
+						[/* reference */ 'r', `java.lang.ClassCastException`, `ClassCastException`],
 						[/* text */ 't', ` is thrown.
  `]
 					]],
@@ -290,7 +290,7 @@ DocsCollector.collect('java.lang.invoke.ConstantBootstraps', [
      of `],
 						[/* inline code block */ 'i', `value`],
 						[/* text */ 't', ` is a primitive wrapper type (such as `],
-						[/* reference */ 'r', `java.lang.Integer`],
+						[/* reference */ 'r', `java.lang.Integer`, `Integer`],
 						[/* text */ 't', `),
      a Java unboxing conversion is applied `],
 						[/* external link */ 'a', `https://docs.oracle.com/javase/specs/jls/se17/html/jls-5.html#jls-5.1.8`, `5.1.8`],
@@ -317,7 +317,7 @@ DocsCollector.collect('java.lang.invoke.ConstantBootstraps', [
 						[/* inline code block */ 'i', `value`],
 						[/* text */ 't', ` is
      not a primitive wrapper type a `],
-						[/* reference */ 'r', `java.lang.ClassCastException`],
+						[/* reference */ 'r', `java.lang.ClassCastException`, `ClassCastException`],
 						[/* text */ 't', ` is thrown.
  `]
 					]]
@@ -364,7 +364,7 @@ DocsCollector.collect('java.lang.invoke.ConstantBootstraps', [
 					[/* inline code block */ 'i', `value`],
 					[/* text */ 't', ` is not a primitive wrapper type
          (such as `],
-					[/* reference */ 'r', `java.lang.Integer`],
+					[/* reference */ 'r', `java.lang.Integer`, `Integer`],
 					[/* text */ 't', `)`]
 				]]
 			],
@@ -459,7 +459,7 @@ DocsCollector.collect('java.lang.invoke.ConstantBootstraps', [
 					[/* text */ 't', `
  This method behaves as if the method handle to be invoked is the result
  of adapting the given method handle, via `],
-					[/* reference */ 'r', `.MethodHandle#asType(java.lang.invoke.MethodType)`],
+					[/* reference */ 'r', `java.lang.invoke.MethodHandle#asType(java.lang.invoke.MethodType)`, `MethodHandle.asType(java.lang.invoke.MethodType)`],
 					[/* text */ 't', `, to
  adjust the return type to the desired type.`]
 				]]
@@ -481,7 +481,7 @@ DocsCollector.collect('java.lang.invoke.ConstantBootstraps', [
 				[/* parameter */ 'args', [/* parameter description */
 					[/* text */ 't', `the arguments to pass to the method handle, as if with
  `],
-					[/* reference */ 'r', `.MethodHandle#invokeWithArguments(java.lang.Object...)`],
+					[/* reference */ 'r', `java.lang.invoke.MethodHandle#invokeWithArguments(java.lang.Object...)`, `MethodHandle.invokeWithArguments(java.lang.Object...)`],
 					[/* text */ 't', `.  Each argument may be
  `],
 					[/* inline code block */ 'i', `null`],

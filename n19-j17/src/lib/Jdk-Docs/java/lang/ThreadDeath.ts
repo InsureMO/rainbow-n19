@@ -7,7 +7,7 @@ DocsCollector.collect('java.lang.ThreadDeath', [
 		[/* inline code block */ 'i', `ThreadDeath`],
 		[/* text */ 't', ` is thrown in the victim thread
  when the (deprecated) `],
-		[/* reference */ 'r', `.Thread#stop()`],
+		[/* reference */ 'r', `java.lang.Thread#stop()`, `Thread.stop()`],
 		[/* text */ 't', ` method is invoked.
 
  `],
@@ -23,7 +23,7 @@ DocsCollector.collect('java.lang.ThreadDeath', [
 		]],
 		[/* block */ 'b', [
 			[/* text */ 't', `The `],
-			[/* reference */ 'r', `.ThreadGroup#uncaughtException(java.lang.Thread,java.lang.Throwable)`],
+			[/* reference */ 'r', `java.lang.ThreadGroup#uncaughtException(java.lang.Thread,java.lang.Throwable)`, `top-level error handler`],
 			[/* text */ 't', ` does not print out a message if `],
 			[/* inline code block */ 'i', `ThreadDeath`],
 			[/* text */ 't', ` is

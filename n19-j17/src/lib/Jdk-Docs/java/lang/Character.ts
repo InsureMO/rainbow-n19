@@ -24,7 +24,7 @@ DocsCollector.collect('java.lang.Character', [
 
  `],
 		[/* block */ 'b', [
-			[/* text */ 't', `Unicode Conformance`]
+			[/* anchor */ 'r', '#-id', `conformance`, `Unicode Conformance`]
 		]],
 		[/* block */ 'b', [
 			[/* text */ 't', `
@@ -160,7 +160,7 @@ DocsCollector.collect('java.lang.Character', [
  `],
 		[/* block */ 'b', ''],
 		[/* block */ 'b', [
-			[/* text */ 't', `Unicode Character Representations`]
+			[/* anchor */ 'r', '#-id', `unicode`, `Unicode Character Representations`]
 		]],
 		[/* block */ 'b', [
 			[/* text */ 't', `The `],
@@ -188,13 +188,13 @@ DocsCollector.collect('java.lang.Character', [
  `]
 		]],
 		[/* block */ 'b', [
-			[/* text */ 't', `The set of characters from U+0000 to U+FFFF`],
+			[/* anchor */ 'r', '#-id', `BMP`, `The set of characters from U+0000 to U+FFFF`],
 			[/* text */ 't', ` is
  sometimes referred to as the `],
 			[/* text */ 't', `Basic Multilingual Plane (BMP)`],
 			[/* text */ 't', `.
  `],
-			[/* text */ 't', `Characters`],
+			[/* anchor */ 'r', '#-id', `supplementary`, `Characters`],
 			[/* text */ 't', ` whose code points are greater
  than U+FFFF are called `],
 			[/* text */ 't', `supplementary character`],
@@ -918,7 +918,7 @@ DocsCollector.collect('java.lang.Character', [
 		[/* method */ 'describeConstable()', [
 			[/* method description */
 				[/* text */ 't', `Returns an `],
-				[/* reference */ 'r', `java.util.Optional`],
+				[/* reference */ 'r', `java.util.Optional`, `Optional`],
 				[/* text */ 't', ` containing the nominal descriptor for this
  instance.`]
 			],
@@ -926,9 +926,9 @@ DocsCollector.collect('java.lang.Character', [
 			/* throws */ UDF,
 			[/* return description */
 				[/* text */ 't', `an `],
-				[/* reference */ 'r', `java.util.Optional`],
+				[/* reference */ 'r', `java.util.Optional`, `Optional`],
 				[/* text */ 't', ` describing the `],
-				[/* reference */ 'r', `java.lang.Character`],
+				[/* reference */ 'r', `java.lang.Character`, `Character`],
 				[/* text */ 't', ` instance`]
 			]
 		]],
@@ -3472,7 +3472,7 @@ DocsCollector.collect('java.lang.Character', [
  code point) in the UTF-16 encoding.  If the specified character
  is not a
  `],
-				[/* reference */ 'r', `.Character#supplementary`],
+				[/* reference */ 'r', `java.lang.Character#supplementary`, `supplementary character`],
 				[/* text */ 't', `,
  an unspecified `],
 				[/* inline code block */ 'i', `char`],
@@ -3526,7 +3526,7 @@ DocsCollector.collect('java.lang.Character', [
  code point) in the UTF-16 encoding.  If the specified character
  is not a
  `],
-				[/* reference */ 'r', `.Character#supplementary`],
+				[/* reference */ 'r', `java.lang.Character#supplementary`, `supplementary character`],
 				[/* text */ 't', `,
  an unspecified `],
 				[/* inline code block */ 'i', `char`],
@@ -3609,7 +3609,7 @@ DocsCollector.collect('java.lang.Character', [
 				]],
 				[/* block */ 'b', [
 					[/* text */ 't', `In general, `],
-					[/* reference */ 'r', `.String#toLowerCase()`],
+					[/* reference */ 'r', `java.lang.String#toLowerCase()`, `String.toLowerCase()`],
 					[/* text */ 't', ` should be used to map
  characters to lowercase. `],
 					[/* inline code block */ 'i', `String`],
@@ -3721,7 +3721,7 @@ DocsCollector.collect('java.lang.Character', [
 				]],
 				[/* block */ 'b', [
 					[/* text */ 't', `In general, `],
-					[/* reference */ 'r', `.String#toUpperCase()`],
+					[/* reference */ 'r', `java.lang.String#toUpperCase()`, `String.toUpperCase()`],
 					[/* text */ 't', ` should be used to map
  characters to uppercase. `],
 					[/* inline code block */ 'i', `String`],
@@ -4016,7 +4016,7 @@ DocsCollector.collect('java.lang.Character', [
 					[/* inline code block */ 'i', `index`],
 					[/* text */ 't', ` is negative or not less than
  `],
-					[/* reference */ 'r', `.CharSequence#length()`],
+					[/* reference */ 'r', `java.lang.CharSequence#length()`, `seq.length()`],
 					[/* text */ 't', `.`]
 				]]
 			],
@@ -4226,7 +4226,7 @@ DocsCollector.collect('java.lang.Character', [
 					[/* inline code block */ 'i', `index`],
 					[/* text */ 't', `
  argument is less than 1 or greater than `],
-					[/* reference */ 'r', `.CharSequence#length()`],
+					[/* reference */ 'r', `java.lang.CharSequence#length()`, `seq.length()`],
 					[/* text */ 't', `.`]
 				]]
 			],
@@ -5202,7 +5202,7 @@ DocsCollector.collect('java.lang.Character', [
 				]],
 				[/* block */ 'b', [
 					[/* text */ 't', `In general, `],
-					[/* reference */ 'r', `.String#toLowerCase()`],
+					[/* reference */ 'r', `java.lang.String#toLowerCase()`, `String.toLowerCase()`],
 					[/* text */ 't', ` should be used to map
  characters to lowercase. `],
 					[/* inline code block */ 'i', `String`],
@@ -5285,7 +5285,7 @@ DocsCollector.collect('java.lang.Character', [
 				]],
 				[/* block */ 'b', [
 					[/* text */ 't', `In general, `],
-					[/* reference */ 'r', `.String#toUpperCase()`],
+					[/* reference */ 'r', `java.lang.String#toUpperCase()`, `String.toUpperCase()`],
 					[/* text */ 't', ` should be used to map
  characters to uppercase. `],
 					[/* inline code block */ 'i', `String`],

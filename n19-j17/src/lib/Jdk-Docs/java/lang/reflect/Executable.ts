@@ -4,10 +4,10 @@ import {DocsCollector} from '../../../DocsCollector';
 DocsCollector.collect('java.lang.reflect.Executable', [
 	[/* class description */
 		[/* text */ 't', `A shared superclass for the common functionality of `],
-		[/* reference */ 'r', `java.lang.reflect.Method`],
+		[/* reference */ 'r', `java.lang.reflect.Method`, `Method`],
 		[/* text */ 't', `
  and `],
-		[/* reference */ 'r', `java.lang.reflect.Constructor`],
+		[/* reference */ 'r', `java.lang.reflect.Constructor`, `Constructor`],
 		[/* text */ 't', `.`]
 	],
 	/* fields */ UDF,
@@ -52,7 +52,7 @@ DocsCollector.collect('java.lang.reflect.Executable', [
  value is an array of length 0.
 
  The difference between this method and `],
-				[/* reference */ 'r', `.AnnotatedElement#getAnnotation(java.lang.Class)`],
+				[/* reference */ 'r', `java.lang.reflect.AnnotatedElement#getAnnotation(java.lang.Class)`, `AnnotatedElement.getAnnotation(Class)`],
 				[/* text */ 't', `
  is that this method detects if its argument is a `],
 				[/* text */ 't', `repeatable
@@ -89,7 +89,7 @@ DocsCollector.collect('java.lang.reflect.Executable', [
 		[/* method */ 'getModifiers()', [
 			[/* method description */
 				[/* text */ 't', `Returns the Java language `],
-				[/* reference */ 'r', `java.lang.reflect.Modifier`],
+				[/* reference */ 'r', `java.lang.reflect.Modifier`, `modifiers`],
 				[/* text */ 't', ` for
  the executable represented by this object.`]
 			],
@@ -97,7 +97,7 @@ DocsCollector.collect('java.lang.reflect.Executable', [
 			/* throws */ UDF,
 			[/* return description */
 				[/* text */ 't', `the Java language `],
-				[/* reference */ 'r', `java.lang.reflect.Modifier`],
+				[/* reference */ 'r', `java.lang.reflect.Modifier`, `modifiers`],
 				[/* text */ 't', ` for
  the executable represented by this object`]
 			]
@@ -129,7 +129,7 @@ DocsCollector.collect('java.lang.reflect.Executable', [
  declared in source ("mandated"), as well as parameters that
  are neither implicitly nor explicitly declared in source
  ("synthetic") to the parameter list for a method.  See `],
-				[/* reference */ 'r', `java.lang.reflect.Parameter`],
+				[/* reference */ 'r', `java.lang.reflect.Parameter`, `Parameter`],
 				[/* text */ 't', ` for more information.
 
  `],

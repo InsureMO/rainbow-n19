@@ -14,7 +14,7 @@ DocsCollector.collect('java.util.concurrent.Callable', [
 			[/* text */ 't', `The `],
 			[/* inline code block */ 'i', `Callable`],
 			[/* text */ 't', ` interface is similar to `],
-			[/* reference */ 'r', `java.lang.Runnable`],
+			[/* reference */ 'r', `java.lang.Runnable`, `Runnable`],
 			[/* text */ 't', `, in that both are designed for classes whose
  instances are potentially executed by another thread.  A
  `],
@@ -26,7 +26,7 @@ DocsCollector.collect('java.util.concurrent.Callable', [
 		]],
 		[/* block */ 'b', [
 			[/* text */ 't', `The `],
-			[/* reference */ 'r', `java.util.concurrent.Executors`],
+			[/* reference */ 'r', `java.util.concurrent.Executors`, `Executors`],
 			[/* text */ 't', ` class contains utility methods to
  convert from other common forms to `],
 			[/* inline code block */ 'i', `Callable`],

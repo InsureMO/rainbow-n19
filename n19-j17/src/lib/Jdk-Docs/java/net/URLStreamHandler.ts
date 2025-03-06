@@ -220,7 +220,7 @@ DocsCollector.collect('java.net.URLStreamHandler', [
 				[/* block */ 'b', [
 					[/* text */ 't', ` Calling this method preempts the system's default
  `],
-					[/* reference */ 'r', `java.net.ProxySelector`],
+					[/* reference */ 'r', `java.net.ProxySelector`, `ProxySelector`],
 					[/* text */ 't', ` settings.`]
 				]]
 			],

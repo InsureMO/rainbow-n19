@@ -197,13 +197,13 @@ DocsCollector.collect('java.util.Map$Entry', [
 		[/* method */ 'comparingByKey()', [
 			[/* method description */
 				[/* text */ 't', `Returns a comparator that compares `],
-				[/* reference */ 'r', `java.util.Map.Entry`],
+				[/* reference */ 'r', `java.util.Map.Entry`, `Map.Entry`],
 				[/* text */ 't', ` in natural order on key.
 
  `],
 				[/* block */ 'b', [
 					[/* text */ 't', `The returned comparator is serializable and throws `],
-					[/* reference */ 'r', `java.lang.NullPointerException`],
+					[/* reference */ 'r', `java.lang.NullPointerException`, `NullPointerException`],
 					[/* text */ 't', ` when comparing an entry with a null key.`]
 				]]
 			],
@@ -211,20 +211,20 @@ DocsCollector.collect('java.util.Map$Entry', [
 			/* throws */ UDF,
 			[/* return description */
 				[/* text */ 't', `a comparator that compares `],
-				[/* reference */ 'r', `java.util.Map.Entry`],
+				[/* reference */ 'r', `java.util.Map.Entry`, `Map.Entry`],
 				[/* text */ 't', ` in natural order on key.`]
 			]
 		]],
 		[/* method */ 'comparingByValue()', [
 			[/* method description */
 				[/* text */ 't', `Returns a comparator that compares `],
-				[/* reference */ 'r', `java.util.Map.Entry`],
+				[/* reference */ 'r', `java.util.Map.Entry`, `Map.Entry`],
 				[/* text */ 't', ` in natural order on value.
 
  `],
 				[/* block */ 'b', [
 					[/* text */ 't', `The returned comparator is serializable and throws `],
-					[/* reference */ 'r', `java.lang.NullPointerException`],
+					[/* reference */ 'r', `java.lang.NullPointerException`, `NullPointerException`],
 					[/* text */ 't', ` when comparing an entry with null values.`]
 				]]
 			],
@@ -232,17 +232,17 @@ DocsCollector.collect('java.util.Map$Entry', [
 			/* throws */ UDF,
 			[/* return description */
 				[/* text */ 't', `a comparator that compares `],
-				[/* reference */ 'r', `java.util.Map.Entry`],
+				[/* reference */ 'r', `java.util.Map.Entry`, `Map.Entry`],
 				[/* text */ 't', ` in natural order on value.`]
 			]
 		]],
 		[/* method */ 'comparingByKey(java.util.Comparator)', [
 			[/* method description */
 				[/* text */ 't', `Returns a comparator that compares `],
-				[/* reference */ 'r', `java.util.Map.Entry`],
+				[/* reference */ 'r', `java.util.Map.Entry`, `Map.Entry`],
 				[/* text */ 't', ` by key using the given
  `],
-				[/* reference */ 'r', `java.util.Comparator`],
+				[/* reference */ 'r', `java.util.Comparator`, `Comparator`],
 				[/* text */ 't', `.
 
  `],
@@ -252,23 +252,23 @@ DocsCollector.collect('java.util.Map$Entry', [
 			[/* parameters */
 				[/* parameter */ 'cmp', [/* parameter description */
 					[/* text */ 't', `the key `],
-					[/* reference */ 'r', `java.util.Comparator`]
+					[/* reference */ 'r', `java.util.Comparator`, `Comparator`]
 				]]
 			],
 			/* throws */ UDF,
 			[/* return description */
 				[/* text */ 't', `a comparator that compares `],
-				[/* reference */ 'r', `java.util.Map.Entry`],
+				[/* reference */ 'r', `java.util.Map.Entry`, `Map.Entry`],
 				[/* text */ 't', ` by the key.`]
 			]
 		]],
 		[/* method */ 'comparingByValue(java.util.Comparator)', [
 			[/* method description */
 				[/* text */ 't', `Returns a comparator that compares `],
-				[/* reference */ 'r', `java.util.Map.Entry`],
+				[/* reference */ 'r', `java.util.Map.Entry`, `Map.Entry`],
 				[/* text */ 't', ` by value using the given
  `],
-				[/* reference */ 'r', `java.util.Comparator`],
+				[/* reference */ 'r', `java.util.Comparator`, `Comparator`],
 				[/* text */ 't', `.
 
  `],
@@ -278,13 +278,13 @@ DocsCollector.collect('java.util.Map$Entry', [
 			[/* parameters */
 				[/* parameter */ 'cmp', [/* parameter description */
 					[/* text */ 't', `the value `],
-					[/* reference */ 'r', `java.util.Comparator`]
+					[/* reference */ 'r', `java.util.Comparator`, `Comparator`]
 				]]
 			],
 			/* throws */ UDF,
 			[/* return description */
 				[/* text */ 't', `a comparator that compares `],
-				[/* reference */ 'r', `java.util.Map.Entry`],
+				[/* reference */ 'r', `java.util.Map.Entry`, `Map.Entry`],
 				[/* text */ 't', ` by the value.`]
 			]
 		]],
@@ -295,7 +295,7 @@ DocsCollector.collect('java.util.Map$Entry', [
 				[/* text */ 't', `. The returned instance is not
  associated with any map. The returned instance has the same characteristics
  as instances returned by the `],
-				[/* reference */ 'r', `.Map#entry(K,V)`],
+				[/* reference */ 'r', `java.util.Map#entry(K,V)`, `Map::entry`],
 				[/* text */ 't', ` method.`]
 			],
 			[/* parameters */

@@ -5,7 +5,7 @@ DocsCollector.collect('java.util.function.BiConsumer', [
 	[/* class description */
 		[/* text */ 't', `Represents an operation that accepts two input arguments and returns no
  result.  This is the two-arity specialization of `],
-		[/* reference */ 'r', `java.util.function.Consumer`],
+		[/* reference */ 'r', `java.util.function.Consumer`, `Consumer`],
 		[/* text */ 't', `.
  Unlike most other functional interfaces, `],
 		[/* inline code block */ 'i', `BiConsumer`],
@@ -15,7 +15,7 @@ DocsCollector.collect('java.util.function.BiConsumer', [
  `],
 		[/* block */ 'b', [
 			[/* text */ 't', `This is a `],
-			[/* reference */ 'r', `.package-summary`],
+			[/* text */ 't', `functional interface`],
 			[/* text */ 't', `
  whose functional method is `],
 			[/* reference */ 'r', `#accept(T,U)`, `accept(Object, Object)`],

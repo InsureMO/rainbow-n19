@@ -132,7 +132,7 @@ DocsCollector.collect('java.util.List', [
  `]
 		]],
 		[/* block */ 'b', [
-			[/* text */ 't', `Unmodifiable Lists`]
+			[/* anchor */ 'r', '#-id', `unmodifiable`, `Unmodifiable Lists`]
 		]],
 		[/* block */ 'b', [
 			[/* text */ 't', `The `],
@@ -151,7 +151,7 @@ DocsCollector.collect('java.util.List', [
 		[/* list */ 'l', [
 			[/* block */ 'b', [
 				[/* text */ 't', `They are `],
-				[/* reference */ 'r', `.Collection#unmodifiable`],
+				[/* reference */ 'r', `java.util.Collection#unmodifiable`, `unmodifiable`],
 				[/* text */ 't', `. Elements cannot
  be added, removed, or replaced. Calling any mutator method on the List
  will always cause `],
@@ -182,7 +182,7 @@ DocsCollector.collect('java.util.List', [
 				[/* reference */ 'r', `#subList(int,int)`, `subList`],
 				[/* text */ 't', ` views implement the
  `],
-				[/* reference */ 'r', `java.util.RandomAccess`],
+				[/* reference */ 'r', `java.util.RandomAccess`, `RandomAccess`],
 				[/* text */ 't', ` interface.
  `]
 			]],
@@ -339,7 +339,7 @@ DocsCollector.collect('java.util.List', [
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` (as specified by `],
-				[/* reference */ 'r', `.Collection#add(E)`],
+				[/* reference */ 'r', `java.util.Collection#add(E)`, `Collection.add(E)`],
 				[/* text */ 't', `)`]
 			]
 		]],
@@ -461,14 +461,14 @@ DocsCollector.collect('java.util.List', [
 					[/* text */ 't', `if the type of the specified element
          is incompatible with this list
  (`],
-					[/* reference */ 'r', `.Collection#optional-restrictions`],
+					[/* reference */ 'r', `java.util.Collection#optional-restrictions`, `optional`],
 					[/* text */ 't', `)`]
 				]],
 				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
 					[/* text */ 't', `if the specified element is null and this
          list does not permit null elements
  (`],
-					[/* reference */ 'r', `.Collection#optional-restrictions`],
+					[/* reference */ 'r', `java.util.Collection#optional-restrictions`, `optional`],
 					[/* text */ 't', `)`]
 				]]
 			],
@@ -495,7 +495,7 @@ DocsCollector.collect('java.util.List', [
          in the specified collection are incompatible with this
          list
  (`],
-					[/* reference */ 'r', `.Collection#optional-restrictions`],
+					[/* reference */ 'r', `java.util.Collection#optional-restrictions`, `optional`],
 					[/* text */ 't', `)`]
 				]],
 				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
@@ -503,7 +503,7 @@ DocsCollector.collect('java.util.List', [
          or more null elements and this list does not permit null
          elements
          (`],
-					[/* reference */ 'r', `.Collection#optional-restrictions`],
+					[/* reference */ 'r', `java.util.Collection#optional-restrictions`, `optional`],
 					[/* text */ 't', `),
          or if the specified collection is null`]
 				]]
@@ -591,14 +591,14 @@ DocsCollector.collect('java.util.List', [
 					[/* text */ 't', `if the type of the specified element
          is incompatible with this list
  (`],
-					[/* reference */ 'r', `.Collection#optional-restrictions`],
+					[/* reference */ 'r', `java.util.Collection#optional-restrictions`, `optional`],
 					[/* text */ 't', `)`]
 				]],
 				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
 					[/* text */ 't', `if the specified element is null and this
          list does not permit null elements
  (`],
-					[/* reference */ 'r', `.Collection#optional-restrictions`],
+					[/* reference */ 'r', `java.util.Collection#optional-restrictions`, `optional`],
 					[/* text */ 't', `)`]
 				]],
 				[/* throw */ 'java.lang.UnsupportedOperationException', [/* throw description */
@@ -634,14 +634,14 @@ DocsCollector.collect('java.util.List', [
 					[/* text */ 't', `if the class of an element of this list
          is incompatible with the specified collection
  (`],
-					[/* reference */ 'r', `.Collection#optional-restrictions`],
+					[/* reference */ 'r', `java.util.Collection#optional-restrictions`, `optional`],
 					[/* text */ 't', `)`]
 				]],
 				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
 					[/* text */ 't', `if this list contains a null element and the
          specified collection does not permit null elements
          (`],
-					[/* reference */ 'r', `.Collection#optional-restrictions`],
+					[/* reference */ 'r', `java.util.Collection#optional-restrictions`, `optional`],
 					[/* text */ 't', `),
          or if the specified collection is null`]
 				]]
@@ -674,14 +674,14 @@ DocsCollector.collect('java.util.List', [
 					[/* text */ 't', `if the class of an element of this list
          is incompatible with the specified collection
  (`],
-					[/* reference */ 'r', `.Collection#optional-restrictions`],
+					[/* reference */ 'r', `java.util.Collection#optional-restrictions`, `optional`],
 					[/* text */ 't', `)`]
 				]],
 				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
 					[/* text */ 't', `if this list contains a null element and the
          specified collection does not permit null elements
          (`],
-					[/* reference */ 'r', `.Collection#optional-restrictions`],
+					[/* reference */ 'r', `java.util.Collection#optional-restrictions`, `optional`],
 					[/* text */ 't', `),
          or if the specified collection is null`]
 				]]
@@ -808,7 +808,7 @@ DocsCollector.collect('java.util.List', [
 				[/* inline code block */ 'i', `list2`],
 				[/* text */ 't', `, as required by the general
  contract of `],
-				[/* reference */ 'r', `java.Object#hashCode()`],
+				[/* reference */ 'r', `java.lang.Object#hashCode()`, `Object.hashCode()`],
 				[/* text */ 't', `.`]
 			],
 			/* parameters */ UDF,
@@ -839,14 +839,14 @@ DocsCollector.collect('java.util.List', [
 					[/* text */ 't', `if the type of the specified element
          is incompatible with this list
          (`],
-					[/* reference */ 'r', `.Collection#optional-restrictions`],
+					[/* reference */ 'r', `java.util.Collection#optional-restrictions`, `optional`],
 					[/* text */ 't', `)`]
 				]],
 				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
 					[/* text */ 't', `if the specified element is null and this
          list does not permit null elements
          (`],
-					[/* reference */ 'r', `.Collection#optional-restrictions`],
+					[/* reference */ 'r', `java.util.Collection#optional-restrictions`, `optional`],
 					[/* text */ 't', `)`]
 				]]
 			],
@@ -877,14 +877,14 @@ DocsCollector.collect('java.util.List', [
 					[/* text */ 't', `if the type of the specified element
          is incompatible with this list
          (`],
-					[/* reference */ 'r', `.Collection#optional-restrictions`],
+					[/* reference */ 'r', `java.util.Collection#optional-restrictions`, `optional`],
 					[/* text */ 't', `)`]
 				]],
 				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
 					[/* text */ 't', `if the specified element is null and this
          list does not permit null elements
          (`],
-					[/* reference */ 'r', `.Collection#optional-restrictions`],
+					[/* reference */ 'r', `java.util.Collection#optional-restrictions`, `optional`],
 					[/* text */ 't', `)`]
 				]]
 			],
@@ -1030,10 +1030,10 @@ DocsCollector.collect('java.util.List', [
  sequence), starting at the specified position in the list.
  The specified index indicates the first element that would be
  returned by an initial call to `],
-				[/* reference */ 'r', `.ListIterator#next()`],
+				[/* reference */ 'r', `java.util.ListIterator#next()`, `next`],
 				[/* text */ 't', `.
  An initial call to `],
-				[/* reference */ 'r', `.ListIterator#previous()`],
+				[/* reference */ 'r', `java.util.ListIterator#previous()`, `previous`],
 				[/* text */ 't', ` would
  return the element with the specified index minus one.`]
 			],
@@ -1041,7 +1041,7 @@ DocsCollector.collect('java.util.List', [
 				[/* parameter */ 'index', [/* parameter description */
 					[/* text */ 't', `index of the first element to be returned from the
         list iterator (by a call to `],
-					[/* reference */ 'r', `.ListIterator#next()`],
+					[/* reference */ 'r', `java.util.ListIterator#next()`, `next`],
 					[/* text */ 't', `)`]
 				]]
 			],
@@ -1120,7 +1120,7 @@ DocsCollector.collect('java.util.List', [
 		[/* method */ 'spliterator()', [
 			[/* method description */
 				[/* text */ 't', `Creates a `],
-				[/* reference */ 'r', `java.util.Spliterator`],
+				[/* reference */ 'r', `java.util.Spliterator`, `Spliterator`],
 				[/* text */ 't', ` over the elements in this list.
 
  `],
@@ -1128,10 +1128,10 @@ DocsCollector.collect('java.util.List', [
 					[/* text */ 't', `The `],
 					[/* inline code block */ 'i', `Spliterator`],
 					[/* text */ 't', ` reports `],
-					[/* reference */ 'r', `.Spliterator#SIZED`],
+					[/* reference */ 'r', `java.util.Spliterator#SIZED`, `Spliterator.SIZED`],
 					[/* text */ 't', ` and
  `],
-					[/* reference */ 'r', `.Spliterator#ORDERED`],
+					[/* reference */ 'r', `java.util.Spliterator#ORDERED`, `Spliterator.ORDERED`],
 					[/* text */ 't', `.  Implementations should document the
  reporting of additional characteristic values.`]
 				]]
@@ -1167,7 +1167,7 @@ DocsCollector.collect('java.util.List', [
          if the operator result is a null value and this list does
          not permit null elements
          (`],
-					[/* reference */ 'r', `.Collection#optional-restrictions`],
+					[/* reference */ 'r', `java.util.Collection#optional-restrictions`, `optional`],
 					[/* text */ 't', `)`]
 				]]
 			],
@@ -1177,7 +1177,7 @@ DocsCollector.collect('java.util.List', [
 			[/* method description */
 				[/* text */ 't', `Sorts this list according to the order induced by the specified
  `],
-				[/* reference */ 'r', `java.util.Comparator`],
+				[/* reference */ 'r', `java.util.Comparator`, `Comparator`],
 				[/* text */ 't', `.  The sort is `],
 				[/* text */ 't', `stable`],
 				[/* text */ 't', `: this method must not
@@ -1207,10 +1207,10 @@ DocsCollector.collect('java.util.List', [
 					[/* inline code block */ 'i', `null`],
 					[/* text */ 't', ` then all elements in this
  list must implement the `],
-					[/* reference */ 'r', `java.lang.Comparable`],
+					[/* reference */ 'r', `java.lang.Comparable`, `Comparable`],
 					[/* text */ 't', ` interface and the elements'
  `],
-					[/* reference */ 'r', `java.lang.Comparable`],
+					[/* reference */ 'r', `java.lang.Comparable`, `natural ordering`],
 					[/* text */ 't', ` should be used.
 
  `]
@@ -1226,7 +1226,7 @@ DocsCollector.collect('java.util.List', [
 					[/* inline code block */ 'i', `null`],
 					[/* text */ 't', ` value indicates that the elements'
           `],
-					[/* reference */ 'r', `java.lang.Comparable`],
+					[/* reference */ 'r', `java.lang.Comparable`, `natural ordering`],
 					[/* text */ 't', ` should be used`]
 				]]
 			],
@@ -1245,10 +1245,10 @@ DocsCollector.collect('java.util.List', [
 				]],
 				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
 					[/* text */ 't', `(`],
-					[/* reference */ 'r', `.Collection#optional-restrictions`],
+					[/* reference */ 'r', `java.util.Collection#optional-restrictions`, `optional`],
 					[/* text */ 't', `)
          if the comparator is found to violate the `],
-					[/* reference */ 'r', `java.util.Comparator`],
+					[/* reference */ 'r', `java.util.Comparator`, `Comparator`],
 					[/* text */ 't', `
          contract`]
 				]]

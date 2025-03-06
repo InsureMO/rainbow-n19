@@ -4,7 +4,7 @@ import {DocsCollector} from '../../../DocsCollector';
 DocsCollector.collect('java.util.random.RandomGenerator', [
 	[/* class description */
 		[/* text */ 't', `The `],
-		[/* reference */ 'r', `java.util.random.RandomGenerator`],
+		[/* reference */ 'r', `java.util.random.RandomGenerator`, `RandomGenerator`],
 		[/* text */ 't', ` interface is designed to provide a common
  protocol for objects that generate random or (more typically) pseudorandom
  sequences of numbers (or Boolean values). Such a sequence may be obtained by
@@ -66,7 +66,7 @@ DocsCollector.collect('java.util.random.RandomGenerator', [
 			[/* inline code block */ 'i', `r`],
 			[/* text */ 't', ` implements
  `],
-			[/* reference */ 'r', `java.util.random.RandomGenerator`],
+			[/* reference */ 'r', `java.util.random.RandomGenerator`, `RandomGenerator`],
 			[/* text */ 't', `, then the method call `],
 			[/* inline code block */ 'i', `r.ints(100)`],
 			[/* text */ 't', ` returns a
@@ -83,7 +83,7 @@ DocsCollector.collect('java.util.random.RandomGenerator', [
 		]],
 		[/* block */ 'b', [
 			[/* text */ 't', ` Every object that implements the `],
-			[/* reference */ 'r', `java.util.random.RandomGenerator`],
+			[/* reference */ 'r', `java.util.random.RandomGenerator`, `RandomGenerator`],
 			[/* text */ 't', ` interface by
  using a pseudorandom algorithm is assumed to contain a finite amount of
  state. Using such an object to generate a pseudorandomly chosen value alters
@@ -93,7 +93,7 @@ DocsCollector.collect('java.util.random.RandomGenerator', [
 			[/* text */ 't', `period`],
 			[/* text */ 't', `.
  (Some implementations of the `],
-			[/* reference */ 'r', `java.util.random.RandomGenerator`],
+			[/* reference */ 'r', `java.util.random.RandomGenerator`, `RandomGenerator`],
 			[/* text */ 't', ` interface may be truly
  random rather than pseudorandom, for example relying on the statistical
  behavior of a physical object to derive chosen values. Such implementations
@@ -103,37 +103,37 @@ DocsCollector.collect('java.util.random.RandomGenerator', [
 		]],
 		[/* block */ 'b', [
 			[/* text */ 't', ` As a rule, objects that implement the `],
-			[/* reference */ 'r', `java.util.random.RandomGenerator`],
+			[/* reference */ 'r', `java.util.random.RandomGenerator`, `RandomGenerator`],
 			[/* text */ 't', ` interface
  need not be thread-safe. It is recommended that multithreaded applications
  use either `],
-			[/* reference */ 'r', `java.util.concurrent.ThreadLocalRandom`],
+			[/* reference */ 'r', `java.util.concurrent.ThreadLocalRandom`, `ThreadLocalRandom`],
 			[/* text */ 't', ` or (preferably) pseudorandom number
  generators that implement the `],
-			[/* reference */ 'r', `java.util.random.RandomGenerator.SplittableGenerator`],
+			[/* reference */ 'r', `java.util.random.RandomGenerator.SplittableGenerator`, `RandomGenerator.SplittableGenerator`],
 			[/* text */ 't', ` or
  `],
-			[/* reference */ 'r', `java.util.random.RandomGenerator.JumpableGenerator`],
+			[/* reference */ 'r', `java.util.random.RandomGenerator.JumpableGenerator`, `RandomGenerator.JumpableGenerator`],
 			[/* text */ 't', ` interface.
 
  `]
 		]],
 		[/* block */ 'b', [
 			[/* text */ 't', ` Objects that implement `],
-			[/* reference */ 'r', `java.util.random.RandomGenerator`],
+			[/* reference */ 'r', `java.util.random.RandomGenerator`, `RandomGenerator`],
 			[/* text */ 't', ` are typically not
  cryptographically secure. Consider instead using `],
-			[/* reference */ 'r', `java.security.SecureRandom`],
+			[/* reference */ 'r', `java.security.SecureRandom`, `SecureRandom`],
 			[/* text */ 't', ` to get
  a cryptographically secure pseudorandom number generator for use by
  security-sensitive applications. Note, however, that `],
-			[/* reference */ 'r', `java.security.SecureRandom`],
+			[/* reference */ 'r', `java.security.SecureRandom`, `SecureRandom`],
 			[/* text */ 't', `
  does implement the `],
-			[/* reference */ 'r', `java.util.random.RandomGenerator`],
+			[/* reference */ 'r', `java.util.random.RandomGenerator`, `RandomGenerator`],
 			[/* text */ 't', ` interface, so that instances of
  `],
-			[/* reference */ 'r', `java.security.SecureRandom`],
+			[/* reference */ 'r', `java.security.SecureRandom`, `SecureRandom`],
 			[/* text */ 't', ` may be used interchangeably with other types of
  pseudorandom generators in applications that do not require a secure
  generator.
@@ -926,10 +926,10 @@ DocsCollector.collect('java.util.random.RandomGenerator', [
 		[/* method */ 'getDefault()', [
 			[/* method description */
 				[/* text */ 't', `Returns a `],
-				[/* reference */ 'r', `java.util.random.RandomGenerator`],
+				[/* reference */ 'r', `java.util.random.RandomGenerator`, `RandomGenerator`],
 				[/* text */ 't', ` meeting the minimal requirement
  of having an `],
-				[/* reference */ 'r', `.package-summary#algorithms`],
+				[/* text */ 't', `algorithm`],
 				[/* text */ 't', `
  whose state bits are greater than or equal 64.`]
 			],
@@ -937,24 +937,24 @@ DocsCollector.collect('java.util.random.RandomGenerator', [
 			/* throws */ UDF,
 			[/* return description */
 				[/* text */ 't', `a `],
-				[/* reference */ 'r', `java.util.random.RandomGenerator`]
+				[/* reference */ 'r', `java.util.random.RandomGenerator`, `RandomGenerator`]
 			]
 		]],
 		[/* method */ 'of(java.lang.String)', [
 			[/* method description */
 				[/* text */ 't', `Returns an instance of `],
-				[/* reference */ 'r', `java.util.random.RandomGenerator`],
+				[/* reference */ 'r', `java.util.random.RandomGenerator`, `RandomGenerator`],
 				[/* text */ 't', ` that utilizes the
  `],
 				[/* inline code block */ 'i', `name`],
-				[/* reference */ 'r', `.package-summary#algorithms`],
+				[/* text */ 't', `algorithm`],
 				[/* text */ 't', `.`]
 			],
 			[/* parameters */
 				[/* parameter */ 'name', [/* parameter description */
 					[/* text */ 't', `Name of random number generator
               `],
-					[/* reference */ 'r', `.package-summary#algorithms`]
+					[/* text */ 't', `algorithm`]
 				]]
 			],
 			[/* throws */
@@ -967,7 +967,7 @@ DocsCollector.collect('java.util.random.RandomGenerator', [
 			],
 			[/* return description */
 				[/* text */ 't', `An instance of `],
-				[/* reference */ 'r', `java.util.random.RandomGenerator`]
+				[/* reference */ 'r', `java.util.random.RandomGenerator`, `RandomGenerator`]
 			]
 		]]
 	],

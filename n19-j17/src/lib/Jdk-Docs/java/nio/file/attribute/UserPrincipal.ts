@@ -23,20 +23,20 @@ DocsCollector.collect('java.nio.file.attribute.UserPrincipal', [
 			[/* inline code block */ 'i', `UserPrincipal`],
 			[/* text */ 't', ` object is an abstract representation of an
  identity. It has a `],
-			[/* reference */ 'r', `java.nio.file.Principal#getName()`],
+			[/* reference */ 'r', `java.security.Principal#getName()`, `name`],
 			[/* text */ 't', ` that is typically the username or
  account name that it represents. User principal objects may be obtained using
  a `],
-			[/* reference */ 'r', `java.nio.file.attribute.UserPrincipalLookupService`],
+			[/* reference */ 'r', `java.nio.file.attribute.UserPrincipalLookupService`, `UserPrincipalLookupService`],
 			[/* text */ 't', `, or returned by `],
-			[/* reference */ 'r', `java.nio.file.attribute.FileAttributeView`],
+			[/* reference */ 'r', `java.nio.file.attribute.FileAttributeView`, `FileAttributeView`],
 			[/* text */ 't', ` implementations that provide access to identity related
  attributes. For example, the `],
-			[/* reference */ 'r', `java.nio.file.attribute.AclFileAttributeView`],
+			[/* reference */ 'r', `java.nio.file.attribute.AclFileAttributeView`, `AclFileAttributeView`],
 			[/* text */ 't', ` and `],
-			[/* reference */ 'r', `java.nio.file.attribute.PosixFileAttributeView`],
+			[/* reference */ 'r', `java.nio.file.attribute.PosixFileAttributeView`, `PosixFileAttributeView`],
 			[/* text */ 't', ` provide access to a file's `],
-			[/* reference */ 'r', `.PosixFileAttributes#owner()`],
+			[/* reference */ 'r', `java.nio.file.attribute.PosixFileAttributes#owner()`, `owner`],
 			[/* text */ 't', `.`]
 		]]
 	],

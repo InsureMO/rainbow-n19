@@ -98,7 +98,7 @@ DocsCollector.collect('java.util.HashMap', [
 			[/* text */ 't', ` is a sure way to slow
  down performance of any hash table. To ameliorate impact, when keys
  are `],
-			[/* reference */ 'r', `java.lang.Comparable`],
+			[/* reference */ 'r', `java.lang.Comparable`, `Comparable`],
 			[/* text */ 't', `, this class may use comparison order among
  keys to help break ties.
 
@@ -119,7 +119,7 @@ DocsCollector.collect('java.util.HashMap', [
 
  If no such object exists, the map should be "wrapped" using the
  `],
-			[/* reference */ 'r', `.Collections#synchronizedMap(java.util.Map)`],
+			[/* reference */ 'r', `java.util.Collections#synchronizedMap(java.util.Map)`, `Collections.synchronizedMap`],
 			[/* text */ 't', `
  method.  This is best done at creation time, to prevent accidental
  unsynchronized access to the map:`]
@@ -136,7 +136,7 @@ DocsCollector.collect('java.util.HashMap', [
 			[/* inline code block */ 'i', `remove`],
 			[/* text */ 't', ` method, the iterator will throw a
  `],
-			[/* reference */ 'r', `java.util.ConcurrentModificationException`],
+			[/* reference */ 'r', `java.util.ConcurrentModificationException`, `ConcurrentModificationException`],
 			[/* text */ 't', `.  Thus, in the face of concurrent
  modification, the iterator fails quickly and cleanly, rather than risking
  arbitrary, non-deterministic behavior at an undetermined time in the
@@ -322,7 +322,7 @@ DocsCollector.collect('java.util.HashMap', [
 		[/* method */ 'values()', [
 			[/* method description */
 				[/* text */ 't', `Returns a `],
-				[/* reference */ 'r', `java.util.Collection`],
+				[/* reference */ 'r', `java.util.Collection`, `Collection`],
 				[/* text */ 't', ` view of the values contained in this map.
  The collection is backed by the map, so changes to the map are
  reflected in the collection, and vice-versa.  If the map is
@@ -360,7 +360,7 @@ DocsCollector.collect('java.util.HashMap', [
 		[/* method */ 'entrySet()', [
 			[/* method description */
 				[/* text */ 't', `Returns a `],
-				[/* reference */ 'r', `java.util.Set`],
+				[/* reference */ 'r', `java.util.Set`, `Set`],
 				[/* text */ 't', ` view of the mappings contained in this map.
  The set is backed by the map, so changes to the map are
  reflected in the set, and vice-versa.  If the map is modified
@@ -401,7 +401,7 @@ DocsCollector.collect('java.util.HashMap', [
 		[/* method */ 'keySet()', [
 			[/* method description */
 				[/* text */ 't', `Returns a `],
-				[/* reference */ 'r', `java.util.Set`],
+				[/* reference */ 'r', `java.util.Set`, `Set`],
 				[/* text */ 't', ` view of the keys contained in this map.
  The set is backed by the map, so changes to the map are
  reflected in the set, and vice-versa.  If the map is modified
@@ -453,7 +453,7 @@ DocsCollector.collect('java.util.HashMap', [
 				]],
 				[/* text */ 't', `
  (Method `],
-				[/* reference */ 'r', `.Map#merge(K,V,java.util.function.BiFunction)`],
+				[/* reference */ 'r', `java.util.Map#merge(K,V,java.util.function.BiFunction)`, `merge()`],
 				[/* text */ 't', ` is often simpler to use for such purposes.)
 
  `],
@@ -473,7 +473,7 @@ DocsCollector.collect('java.util.HashMap', [
 				[/* block */ 'b', [
 					[/* text */ 't', `This method will, on a best-effort basis, throw a
  `],
-					[/* reference */ 'r', `java.util.ConcurrentModificationException`],
+					[/* reference */ 'r', `java.util.ConcurrentModificationException`, `ConcurrentModificationException`],
 					[/* text */ 't', ` if it is detected that the
  remapping function modifies this map during computation.`]
 				]]
@@ -540,7 +540,7 @@ DocsCollector.collect('java.util.HashMap', [
 				[/* block */ 'b', [
 					[/* text */ 't', `This method will, on a best-effort basis, throw a
  `],
-					[/* reference */ 'r', `java.util.ConcurrentModificationException`],
+					[/* reference */ 'r', `java.util.ConcurrentModificationException`, `ConcurrentModificationException`],
 					[/* text */ 't', ` if it is detected that the
  mapping function modifies this map during computation.`]
 				]]
@@ -585,7 +585,7 @@ DocsCollector.collect('java.util.HashMap', [
 				[/* block */ 'b', [
 					[/* text */ 't', `This method will, on a best-effort basis, throw a
  `],
-					[/* reference */ 'r', `java.util.ConcurrentModificationException`],
+					[/* reference */ 'r', `java.util.ConcurrentModificationException`, `ConcurrentModificationException`],
 					[/* text */ 't', ` if it is detected that the
  remapping function modifies this map during computation.`]
 				]]
@@ -696,7 +696,7 @@ DocsCollector.collect('java.util.HashMap', [
 				[/* block */ 'b', [
 					[/* text */ 't', `This method will, on a best-effort basis, throw a
  `],
-					[/* reference */ 'r', `java.util.ConcurrentModificationException`],
+					[/* reference */ 'r', `java.util.ConcurrentModificationException`, `ConcurrentModificationException`],
 					[/* text */ 't', ` if it is detected that the
  remapping function modifies this map during computation.`]
 				]]

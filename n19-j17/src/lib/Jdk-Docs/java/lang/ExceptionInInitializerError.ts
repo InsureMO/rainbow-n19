@@ -34,7 +34,7 @@ DocsCollector.collect('java.lang.ExceptionInInitializerError', [
  message string.  A detail message is a String that describes this
  particular exception. The detail message string is saved for later
  retrieval by the `],
-				[/* reference */ 'r', `.Throwable#getMessage()`],
+				[/* reference */ 'r', `java.lang.Throwable#getMessage()`, `Throwable.getMessage()`],
 				[/* text */ 't', ` method. There is no
  saved throwable object.`]
 			],

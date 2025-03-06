@@ -68,7 +68,7 @@ DocsCollector.collect('java.nio.CharBuffer', [
 			[/* text */ 't', ` an existing
  char array {#if[char]?or string} into a buffer, or by creating a
  `],
-			[/* reference */ 'r', `.ByteBuffer#views`],
+			[/* reference */ 'r', `java.nio.ByteBuffer#views`, `view`],
 			[/* text */ 't', ` of an existing byte buffer.
 
 
@@ -178,7 +178,7 @@ DocsCollector.collect('java.nio.CharBuffer', [
 		]],
 		[/* block */ 'b', [
 			[/* text */ 't', ` Like a byte buffer, a char buffer is either `],
-			[/* reference */ 'r', `.ByteBuffer#direct`],
+			[/* reference */ 'r', `java.nio.ByteBuffer#direct`, `direct or non-direct`],
 			[/* text */ 't', `.  A
  char buffer created via the `],
 			[/* inline code block */ 'i', `wrap`],
@@ -191,7 +191,7 @@ DocsCollector.collect('java.nio.CharBuffer', [
 		]],
 		[/* block */ 'b', [
 			[/* text */ 't', ` This class implements the `],
-			[/* reference */ 'r', `java.lang.CharSequence`],
+			[/* reference */ 'r', `java.lang.CharSequence`, `CharSequence`],
 			[/* text */ 't', ` interface so that
  character buffers may be used wherever character sequences are accepted, for
  example in the regular-expression package `],
@@ -308,10 +308,10 @@ DocsCollector.collect('java.nio.CharBuffer', [
  wrapping an existing `],
 					[/* inline code block */ 'i', `char`],
 					[/* text */ 't', ` array is the `],
-					[/* reference */ 'r', `.ByteOrder#nativeOrder()`],
+					[/* reference */ 'r', `java.nio.ByteOrder#nativeOrder()`, `native order`],
 					[/* text */ 't', ` of the underlying
  hardware.  The byte order of a char buffer created as a `],
-					[/* reference */ 'r', `.ByteBuffer#views`],
+					[/* reference */ 'r', `java.nio.ByteBuffer#views`, `view`],
 					[/* text */ 't', ` of a byte buffer is that of the
  byte buffer at the moment that the view is created.  `]
 				]]
@@ -572,7 +572,7 @@ DocsCollector.collect('java.nio.CharBuffer', [
 					[/* text */ 't', `The position in this buffer at which the content of the new
           buffer will start; must be non-negative and no larger than
           `],
-					[/* reference */ 'r', `.Buffer#limit()`]
+					[/* reference */ 'r', `java.nio.Buffer#limit()`, `limit()`]
 				]],
 				[/* parameter */ 'length', [/* parameter description */
 					[/* text */ 't', `The number of elements the new buffer will contain; must be
@@ -917,7 +917,7 @@ DocsCollector.collect('java.nio.CharBuffer', [
 				[/* block */ 'b', ''],
 				[/* block */ 'b', [
 					[/* text */ 't', ` This method is often used in conjunction with the `],
-					[/* reference */ 'r', `.ByteBuffer#compact()`],
+					[/* reference */ 'r', `java.nio.ByteBuffer#compact()`, `compact`],
 					[/* text */ 't', ` method when transferring data from
  one place to another.  `]
 				]]
@@ -1111,7 +1111,7 @@ DocsCollector.collect('java.nio.CharBuffer', [
 					[/* inline code block */ 'i', `char`],
 					[/* text */ 't', ` elements are compared as if by invoking
  `],
-					[/* reference */ 'r', `java.Character#compare(char,char)`],
+					[/* reference */ 'r', `java.lang.Character#compare(char,char)`, `Character.compare(char,char)`],
 					[/* text */ 't', `.
 
 
@@ -1163,10 +1163,10 @@ DocsCollector.collect('java.nio.CharBuffer', [
 				[/* text */ 't', `Finds and returns the relative index of the first mismatch between this
  buffer and a given buffer.  The index is relative to the
  `],
-				[/* reference */ 'r', `.Buffer#position()`],
+				[/* reference */ 'r', `java.nio.Buffer#position()`, `position`],
 				[/* text */ 't', ` of each buffer and will be in the range of
  0 (inclusive) up to the smaller of the `],
-				[/* reference */ 'r', `.Buffer#remaining()`],
+				[/* reference */ 'r', `java.nio.Buffer#remaining()`, `remaining`],
 				[/* text */ 't', `
  elements in each buffer (exclusive).
 
@@ -1457,7 +1457,7 @@ DocsCollector.collect('java.nio.CharBuffer', [
 					[/* inline code block */ 'i', `remaining()`],
 					[/* text */ 't', `, then no
  chars are transferred and a `],
-					[/* reference */ 'r', `java.nio.BufferUnderflowException`],
+					[/* reference */ 'r', `java.nio.BufferUnderflowException`, `BufferUnderflowException`],
 					[/* text */ 't', ` is
  thrown.
 
@@ -1672,7 +1672,7 @@ DocsCollector.collect('java.nio.CharBuffer', [
 					[/* inline code block */ 'i', `remaining()`],
 					[/* text */ 't', `, then no
  chars are transferred and a `],
-					[/* reference */ 'r', `java.nio.BufferOverflowException`],
+					[/* reference */ 'r', `java.nio.BufferOverflowException`, `BufferOverflowException`],
 					[/* text */ 't', ` is
  thrown.
 
@@ -1980,7 +1980,7 @@ DocsCollector.collect('java.nio.CharBuffer', [
 					[/* inline code block */ 'i', `remaining()`],
 					[/* text */ 't', `,
  then no chars are transferred and a `],
-					[/* reference */ 'r', `java.nio.BufferOverflowException`],
+					[/* reference */ 'r', `java.nio.BufferOverflowException`, `BufferOverflowException`],
 					[/* text */ 't', ` is thrown.
 
  `]
@@ -2081,7 +2081,7 @@ DocsCollector.collect('java.nio.CharBuffer', [
 					[/* inline code block */ 'i', `remaining()`],
 					[/* text */ 't', `,
  then no chars are transferred and a `],
-					[/* reference */ 'r', `java.nio.BufferOverflowException`],
+					[/* reference */ 'r', `java.nio.BufferOverflowException`, `BufferOverflowException`],
 					[/* text */ 't', ` is thrown.
 
  `]
@@ -2155,7 +2155,7 @@ DocsCollector.collect('java.nio.CharBuffer', [
 
 
  the `],
-					[/* reference */ 'r', `.ByteOrder#nativeOrder()`],
+					[/* reference */ 'r', `java.nio.ByteOrder#nativeOrder()`, `native order`],
 					[/* text */ 't', ` of the underlying
  hardware.
 
@@ -2200,7 +2200,7 @@ DocsCollector.collect('java.nio.CharBuffer', [
 
 
  the `],
-					[/* reference */ 'r', `.ByteOrder#nativeOrder()`],
+					[/* reference */ 'r', `java.nio.ByteOrder#nativeOrder()`, `native order`],
 					[/* text */ 't', ` of the underlying
  hardware.
 
@@ -2244,7 +2244,7 @@ DocsCollector.collect('java.nio.CharBuffer', [
 
 
  the `],
-					[/* reference */ 'r', `.ByteOrder#nativeOrder()`],
+					[/* reference */ 'r', `java.nio.ByteOrder#nativeOrder()`, `native order`],
 					[/* text */ 't', ` of the underlying
  hardware.
 

@@ -4,7 +4,7 @@ import {DocsCollector} from '../../DocsCollector';
 DocsCollector.collect('java.io.UncheckedIOException', [
 	[/* class description */
 		[/* text */ 't', `Wraps an `],
-		[/* reference */ 'r', `java.io.IOException`],
+		[/* reference */ 'r', `java.io.IOException`, `IOException`],
 		[/* text */ 't', ` with an unchecked exception.`]
 	],
 	/* fields */ UDF,

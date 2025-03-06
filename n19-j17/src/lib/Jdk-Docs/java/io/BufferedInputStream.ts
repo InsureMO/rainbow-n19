@@ -285,7 +285,7 @@ DocsCollector.collect('java.io.BufferedInputStream', [
 					[/* inline code block */ 'i', `count - pos`],
 					[/* text */ 't', `) and the result of calling the
  `],
-					[/* reference */ 'r', `.FilterInputStream#in`],
+					[/* reference */ 'r', `java.io.FilterInputStream#in`, `in`],
 					[/* inline code block */ 'i', `.available()`],
 					[/* text */ 't', `.`]
 				]]
@@ -341,10 +341,10 @@ DocsCollector.collect('java.io.BufferedInputStream', [
 				[/* block */ 'b', [
 					[/* text */ 't', ` This method implements the general contract of the corresponding
  `],
-					[/* reference */ 'r', `.InputStream#read(byte[],int,int)`],
+					[/* reference */ 'r', `java.io.InputStream#read(byte[],int,int)`, `read`],
 					[/* text */ 't', ` method of
  the `],
-					[/* reference */ 'r', `java.io.InputStream`],
+					[/* reference */ 'r', `java.io.InputStream`, `InputStream`],
 					[/* text */ 't', ` class.  As an additional
  convenience, it attempts to read as many bytes as possible by repeatedly
  invoking the `],

@@ -38,7 +38,7 @@ DocsCollector.collect('java.lang.module.ModuleReader', [
 			[/* text */ 't', ` A `],
 			[/* inline code block */ 'i', `ModuleReader`],
 			[/* text */ 't', ` is `],
-			[/* reference */ 'r', `.ModuleReference#open()`],
+			[/* reference */ 'r', `java.lang.module.ModuleReference#open()`, `open`],
 			[/* text */ 't', ` upon
  creation and is closed by invoking the `],
 			[/* reference */ 'r', `#close()`, `close`],
@@ -113,7 +113,7 @@ DocsCollector.collect('java.lang.module.ModuleReader', [
  the `],
 					[/* inline code block */ 'i', `IOException`],
 					[/* text */ 't', ` will be wrapped in an `],
-					[/* reference */ 'r', `java.io.UncheckedIOException`],
+					[/* reference */ 'r', `java.io.UncheckedIOException`, `UncheckedIOException`],
 					[/* text */ 't', ` and thrown from the method that caused the
  access to be attempted. `],
 					[/* inline code block */ 'i', `SecurityException`],

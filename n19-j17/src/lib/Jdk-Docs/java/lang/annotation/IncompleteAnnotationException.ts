@@ -8,7 +8,7 @@ DocsCollector.collect('java.lang.annotation.IncompleteAnnotationException', [
  after the annotation was compiled (or serialized). This exception will not be
  thrown if the new element has a default value.
  This exception can be thrown by the `],
-		[/* reference */ 'r', `java.lang.reflect.AnnotatedElement`],
+		[/* reference */ 'r', `java.lang.reflect.AnnotatedElement`, `API used to read annotations reflectively`],
 		[/* text */ 't', `.`]
 	],
 	/* fields */ UDF,

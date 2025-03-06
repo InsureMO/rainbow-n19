@@ -51,11 +51,11 @@ DocsCollector.collect('java.nio.channels.AsynchronousChannel', [
  `],
 		[/* block */ 'b', [
 			[/* text */ 't', ` In the first form, the methods defined by the `],
-			[/* reference */ 'r', `java.util.concurrent.Future`],
+			[/* reference */ 'r', `java.util.concurrent.Future`, `Future`],
 			[/* text */ 't', `
  interface may be used to check if the operation has completed, wait for its
  completion, and to retrieve the result. In the second form, a `],
-			[/* reference */ 'r', `java.nio.channels.CompletionHandler`],
+			[/* reference */ 'r', `java.nio.channels.CompletionHandler`, `CompletionHandler`],
 			[/* text */ 't', ` is invoked to consume the result of the I/O operation when
  it completes or fails.
 
@@ -70,7 +70,7 @@ DocsCollector.collect('java.nio.channels.AsynchronousChannel', [
 			[/* reference */ 'r', `#close()`, `close`],
 			[/* text */ 't', ` method is invoked, then the I/O operation
  fails with the exception `],
-			[/* reference */ 'r', `java.nio.channels.AsynchronousCloseException`],
+			[/* reference */ 'r', `java.nio.channels.AsynchronousCloseException`, `AsynchronousCloseException`],
 			[/* text */ 't', `.
 
  `]
@@ -86,11 +86,11 @@ DocsCollector.collect('java.nio.channels.AsynchronousChannel', [
 			[/* text */ 't', ` The `],
 			[/* inline code block */ 'i', `Future`],
 			[/* text */ 't', ` interface defines the `],
-			[/* reference */ 'r', `java.nio.concurrent.Future#cancel(boolean)`],
+			[/* reference */ 'r', `java.util.concurrent.Future#cancel(boolean)`, `cancel`],
 			[/* text */ 't', `
  method to cancel execution. This causes all threads waiting on the result of
  the I/O operation to throw `],
-			[/* reference */ 'r', `java.util.concurrent.CancellationException`],
+			[/* reference */ 'r', `java.util.concurrent.CancellationException`, `CancellationException`],
 			[/* text */ 't', `.
  Whether the underlying I/O operation can be cancelled is highly implementation
  specific and therefore not specified. Where cancellation leaves the channel,
@@ -118,7 +118,7 @@ DocsCollector.collect('java.nio.channels.AsynchronousChannel', [
 		]],
 		[/* block */ 'b', [
 			[/* text */ 't', ` Where the `],
-			[/* reference */ 'r', `java.nio.concurrent.Future#cancel(boolean)`],
+			[/* reference */ 'r', `java.util.concurrent.Future#cancel(boolean)`, `cancel`],
 			[/* text */ 't', ` method is invoked with the `],
 			[/* inline code block */ 'i', `mayInterruptIfRunning`],
 			[/* text */ 't', ` parameter set to `],
@@ -130,7 +130,7 @@ DocsCollector.collect('java.nio.channels.AsynchronousChannel', [
 			[/* text */ 't', ` and
  any other I/O operations outstanding on the channel complete with the
  exception `],
-			[/* reference */ 'r', `java.nio.channels.AsynchronousCloseException`],
+			[/* reference */ 'r', `java.nio.channels.AsynchronousCloseException`, `AsynchronousCloseException`],
 			[/* text */ 't', `.
 
  `]
@@ -155,18 +155,18 @@ DocsCollector.collect('java.nio.channels.AsynchronousChannel', [
 				[/* block */ 'b', [
 					[/* text */ 't', ` Any outstanding asynchronous operations upon this channel will
  complete with the exception `],
-					[/* reference */ 'r', `java.nio.channels.AsynchronousCloseException`],
+					[/* reference */ 'r', `java.nio.channels.AsynchronousCloseException`, `AsynchronousCloseException`],
 					[/* text */ 't', `. After a
  channel is closed, further attempts to initiate asynchronous I/O
  operations complete immediately with cause `],
-					[/* reference */ 'r', `java.nio.channels.ClosedChannelException`],
+					[/* reference */ 'r', `java.nio.channels.ClosedChannelException`, `ClosedChannelException`],
 					[/* text */ 't', `.
 
  `]
 				]],
 				[/* block */ 'b', [
 					[/* text */ 't', `  This method otherwise behaves exactly as specified by the `],
-					[/* reference */ 'r', `java.nio.channels.Channel`],
+					[/* reference */ 'r', `java.nio.channels.Channel`, `Channel`],
 					[/* text */ 't', ` interface.`]
 				]]
 			],

@@ -35,7 +35,7 @@ DocsCollector.collect('java.lang.Runtime', [
 				[/* throw */ 'java.lang.SecurityException', [/* throw description */
 					[/* text */ 't', `If a security manager is present and it denies
           `],
-					[/* reference */ 'r', `java.lang.RuntimePermission`],
+					[/* reference */ 'r', `java.lang.RuntimePermission`, `RuntimePermission`],
 					[/* inline code block */ 'i', `("shutdownHooks")`]
 				]]
 			],
@@ -74,7 +74,7 @@ DocsCollector.collect('java.lang.Runtime', [
 				[/* throw */ 'java.lang.SecurityException', [/* throw description */
 					[/* text */ 't', `If a security manager exists and its
           `],
-					[/* reference */ 'r', `.SecurityManager#checkExec(java.lang.String)`],
+					[/* reference */ 'r', `java.lang.SecurityManager#checkExec(java.lang.String)`, `checkExec`],
 					[/* text */ 't', `
           method doesn't allow creation of the subprocess`]
 				]],
@@ -95,7 +95,7 @@ DocsCollector.collect('java.lang.Runtime', [
 			],
 			[/* return description */
 				[/* text */ 't', `A new `],
-				[/* reference */ 'r', `java.lang.Process`],
+				[/* reference */ 'r', `java.lang.Process`, `Process`],
 				[/* text */ 't', ` object for managing the subprocess`]
 			]
 		]],
@@ -139,7 +139,7 @@ DocsCollector.collect('java.lang.Runtime', [
 				[/* throw */ 'java.lang.SecurityException', [/* throw description */
 					[/* text */ 't', `If a security manager exists and its
           `],
-					[/* reference */ 'r', `.SecurityManager#checkExec(java.lang.String)`],
+					[/* reference */ 'r', `java.lang.SecurityManager#checkExec(java.lang.String)`, `checkExec`],
 					[/* text */ 't', `
           method doesn't allow creation of the subprocess`]
 				]],
@@ -165,7 +165,7 @@ DocsCollector.collect('java.lang.Runtime', [
 			],
 			[/* return description */
 				[/* text */ 't', `A new `],
-				[/* reference */ 'r', `java.lang.Process`],
+				[/* reference */ 'r', `java.lang.Process`, `Process`],
 				[/* text */ 't', ` object for managing the subprocess`]
 			]
 		]],
@@ -199,7 +199,7 @@ DocsCollector.collect('java.lang.Runtime', [
 					[/* inline code block */ 'i', `command`],
 					[/* text */ 't', ` string is broken
  into tokens using a `],
-					[/* reference */ 'r', `java.util.StringTokenizer`],
+					[/* reference */ 'r', `java.util.StringTokenizer`, `StringTokenizer`],
 					[/* text */ 't', ` created by the call
  `],
 					[/* inline code block */ 'i', `new StringTokenizer(command)`],
@@ -240,7 +240,7 @@ DocsCollector.collect('java.lang.Runtime', [
 				[/* throw */ 'java.lang.SecurityException', [/* throw description */
 					[/* text */ 't', `If a security manager exists and its
           `],
-					[/* reference */ 'r', `.SecurityManager#checkExec(java.lang.String)`],
+					[/* reference */ 'r', `java.lang.SecurityManager#checkExec(java.lang.String)`, `checkExec`],
 					[/* text */ 't', `
           method doesn't allow creation of the subprocess`]
 				]],
@@ -266,7 +266,7 @@ DocsCollector.collect('java.lang.Runtime', [
 			],
 			[/* return description */
 				[/* text */ 't', `A new `],
-				[/* reference */ 'r', `java.lang.Process`],
+				[/* reference */ 'r', `java.lang.Process`, `Process`],
 				[/* text */ 't', ` object for managing the subprocess`]
 			]
 		]],
@@ -297,7 +297,7 @@ DocsCollector.collect('java.lang.Runtime', [
 				[/* throw */ 'java.lang.SecurityException', [/* throw description */
 					[/* text */ 't', `If a security manager exists and its
           `],
-					[/* reference */ 'r', `.SecurityManager#checkExec(java.lang.String)`],
+					[/* reference */ 'r', `java.lang.SecurityManager#checkExec(java.lang.String)`, `checkExec`],
 					[/* text */ 't', `
           method doesn't allow creation of the subprocess`]
 				]],
@@ -326,7 +326,7 @@ DocsCollector.collect('java.lang.Runtime', [
 			],
 			[/* return description */
 				[/* text */ 't', `A new `],
-				[/* reference */ 'r', `java.lang.Process`],
+				[/* reference */ 'r', `java.lang.Process`, `Process`],
 				[/* text */ 't', ` object for managing the subprocess`]
 			]
 		]],
@@ -371,7 +371,7 @@ DocsCollector.collect('java.lang.Runtime', [
 				[/* throw */ 'java.lang.SecurityException', [/* throw description */
 					[/* text */ 't', `If a security manager exists and its
           `],
-					[/* reference */ 'r', `.SecurityManager#checkExec(java.lang.String)`],
+					[/* reference */ 'r', `java.lang.SecurityManager#checkExec(java.lang.String)`, `checkExec`],
 					[/* text */ 't', `
           method doesn't allow creation of the subprocess`]
 				]],
@@ -405,7 +405,7 @@ DocsCollector.collect('java.lang.Runtime', [
 			],
 			[/* return description */
 				[/* text */ 't', `A new `],
-				[/* reference */ 'r', `java.lang.Process`],
+				[/* reference */ 'r', `java.lang.Process`, `Process`],
 				[/* text */ 't', ` object for managing the subprocess`]
 			]
 		]],
@@ -454,7 +454,7 @@ DocsCollector.collect('java.lang.Runtime', [
 
  `],
 				[/* block */ 'b', [
-					[/* reference */ 'r', `.ProcessBuilder#start()`],
+					[/* reference */ 'r', `java.lang.ProcessBuilder#start()`, `ProcessBuilder.start()`],
 					[/* text */ 't', ` is now the preferred way to
  start a process with a modified environment.
 
@@ -476,14 +476,14 @@ DocsCollector.collect('java.lang.Runtime', [
 				[/* block */ 'b', [
 					[/* text */ 't', `If a security manager exists, its
  `],
-					[/* reference */ 'r', `.SecurityManager#checkExec(java.lang.String)`],
+					[/* reference */ 'r', `java.lang.SecurityManager#checkExec(java.lang.String)`, `checkExec`],
 					[/* text */ 't', `
  method is invoked with the first component of the array
  `],
 					[/* inline code block */ 'i', `cmdarray`],
 					[/* text */ 't', ` as its argument. This may result in a
  `],
-					[/* reference */ 'r', `java.lang.SecurityException`],
+					[/* reference */ 'r', `java.lang.SecurityException`, `SecurityException`],
 					[/* text */ 't', ` being thrown.
 
  `]
@@ -504,7 +504,7 @@ DocsCollector.collect('java.lang.Runtime', [
 					[/* text */ 't', `In such cases an exception will be thrown.  The exact nature
  of the exception is system-dependent, but it will always be a
  subclass of `],
-					[/* reference */ 'r', `java.io.IOException`],
+					[/* reference */ 'r', `java.io.IOException`, `IOException`],
 					[/* text */ 't', `.
 
  `]
@@ -512,7 +512,7 @@ DocsCollector.collect('java.lang.Runtime', [
 				[/* block */ 'b', [
 					[/* text */ 't', `If the operating system does not support the creation of
  processes, an `],
-					[/* reference */ 'r', `java.lang.UnsupportedOperationException`],
+					[/* reference */ 'r', `java.lang.UnsupportedOperationException`, `UnsupportedOperationException`],
 					[/* text */ 't', ` will be thrown.`]
 				]]
 			],
@@ -546,7 +546,7 @@ DocsCollector.collect('java.lang.Runtime', [
 				[/* throw */ 'java.lang.SecurityException', [/* throw description */
 					[/* text */ 't', `If a security manager exists and its
           `],
-					[/* reference */ 'r', `.SecurityManager#checkExec(java.lang.String)`],
+					[/* reference */ 'r', `java.lang.SecurityManager#checkExec(java.lang.String)`, `checkExec`],
 					[/* text */ 't', `
           method doesn't allow creation of the subprocess`]
 				]],
@@ -583,7 +583,7 @@ DocsCollector.collect('java.lang.Runtime', [
 			],
 			[/* return description */
 				[/* text */ 't', `A new `],
-				[/* reference */ 'r', `java.lang.Process`],
+				[/* reference */ 'r', `java.lang.Process`, `Process`],
 				[/* text */ 't', ` object for managing the subprocess`]
 			]
 		]],
@@ -626,7 +626,7 @@ DocsCollector.collect('java.lang.Runtime', [
 				[/* text */ 't', `Returns the maximum amount of memory that the Java virtual machine
  will attempt to use.  If there is no inherent limit then the value
  `],
-				[/* reference */ 'r', `.Long#MAX_VALUE`],
+				[/* reference */ 'r', `java.lang.Long#MAX_VALUE`, `Long.MAX_VALUE`],
 				[/* text */ 't', ` will be returned.`]
 			],
 			/* parameters */ UDF,
@@ -671,7 +671,7 @@ DocsCollector.collect('java.lang.Runtime', [
  There is also no guarantee that this effort will determine
  the change of reachability in any particular number of objects,
  or that any particular number of `],
-					[/* reference */ 'r', `java.lang.ref.Reference`],
+					[/* reference */ 'r', `java.lang.ref.Reference`, `Reference`],
 					[/* text */ 't', `
  objects will be cleared and enqueued.
  `]
@@ -691,7 +691,7 @@ DocsCollector.collect('java.lang.Runtime', [
 				[/* block */ 'b', [
 					[/* text */ 't', `
  The method `],
-					[/* reference */ 'r', `.System#gc()`],
+					[/* reference */ 'r', `java.lang.System#gc()`, `System.gc()`],
 					[/* text */ 't', ` is the conventional and convenient
  means of invoking this method.`]
 				]]
@@ -720,14 +720,14 @@ DocsCollector.collect('java.lang.Runtime', [
 		[/* method */ 'version()', [
 			[/* method description */
 				[/* text */ 't', `Returns the version of the Java Runtime Environment as a `],
-				[/* reference */ 'r', `java.lang.Runtime.Version`],
+				[/* reference */ 'r', `java.lang.Runtime.Version`, `Runtime.Version`],
 				[/* text */ 't', `.`]
 			],
 			/* parameters */ UDF,
 			/* throws */ UDF,
 			[/* return description */
 				[/* text */ 't', `the `],
-				[/* reference */ 'r', `java.lang.Runtime.Version`],
+				[/* reference */ 'r', `java.lang.Runtime.Version`, `Runtime.Version`],
 				[/* text */ 't', ` of the Java Runtime Environment`]
 			]
 		]],
@@ -753,7 +753,7 @@ DocsCollector.collect('java.lang.Runtime', [
 						[/* reference */ 'r', `#exit(int)`, `exit`],
 						[/* text */ 't', ` (equivalently,
    `],
-						[/* reference */ 'r', `.System#exit(int)`],
+						[/* reference */ 'r', `java.lang.System#exit(int)`, `System.exit`],
 						[/* text */ 't', `) method is invoked, or
 
    `]
@@ -800,7 +800,7 @@ DocsCollector.collect('java.lang.Runtime', [
  new shutdown hook or de-register a previously-registered hook.
  Attempting either of these operations will cause an
  `],
-					[/* reference */ 'r', `java.lang.IllegalStateException`],
+					[/* reference */ 'r', `java.lang.IllegalStateException`, `IllegalStateException`],
 					[/* text */ 't', ` to be thrown.
 
  `]
@@ -833,13 +833,13 @@ DocsCollector.collect('java.lang.Runtime', [
 					[/* text */ 't', ` Uncaught exceptions are handled in shutdown hooks just as in any
  other thread, by invoking the
  `],
-					[/* reference */ 'r', `.ThreadGroup#uncaughtException(java.lang.Thread,java.lang.Throwable)`],
+					[/* reference */ 'r', `java.lang.ThreadGroup#uncaughtException(java.lang.Thread,java.lang.Throwable)`, `uncaughtException`],
 					[/* text */ 't', ` method of the
  thread's `],
-					[/* reference */ 'r', `java.lang.ThreadGroup`],
+					[/* reference */ 'r', `java.lang.ThreadGroup`, `ThreadGroup`],
 					[/* text */ 't', ` object. The default implementation of this
  method prints the exception's stack trace to `],
-					[/* reference */ 'r', `.System#err`],
+					[/* reference */ 'r', `java.lang.System#err`, `System.err`],
 					[/* text */ 't', ` and
  terminates the thread; it does not cause the virtual machine to exit or
  halt.
@@ -867,7 +867,7 @@ DocsCollector.collect('java.lang.Runtime', [
 			[/* parameters */
 				[/* parameter */ 'hook', [/* parameter description */
 					[/* text */ 't', `An initialized but unstarted `],
-					[/* reference */ 'r', `java.lang.Thread`],
+					[/* reference */ 'r', `java.lang.Thread`, `Thread`],
 					[/* text */ 't', ` object`]
 				]]
 			],
@@ -884,7 +884,7 @@ DocsCollector.collect('java.lang.Runtime', [
 				[/* throw */ 'java.lang.SecurityException', [/* throw description */
 					[/* text */ 't', `If a security manager is present and it denies
           `],
-					[/* reference */ 'r', `java.lang.RuntimePermission`],
+					[/* reference */ 'r', `java.lang.RuntimePermission`, `RuntimePermission`],
 					[/* inline code block */ 'i', `("shutdownHooks")`]
 				]]
 			],
@@ -918,7 +918,7 @@ DocsCollector.collect('java.lang.Runtime', [
  `],
 				[/* block */ 'b', [
 					[/* text */ 't', ` The `],
-					[/* reference */ 'r', `.System#exit(int)`],
+					[/* reference */ 'r', `java.lang.System#exit(int)`, `System.exit`],
 					[/* text */ 't', ` method is the
  conventional and convenient means of invoking this method.`]
 				]]
@@ -933,7 +933,7 @@ DocsCollector.collect('java.lang.Runtime', [
 				[/* throw */ 'java.lang.SecurityException', [/* throw description */
 					[/* text */ 't', `If a security manager is present and its
          `],
-					[/* reference */ 'r', `.SecurityManager#checkExit(int)`],
+					[/* reference */ 'r', `java.lang.SecurityManager#checkExit(int)`, `checkExit`],
 					[/* text */ 't', ` method does not permit
          exiting with the specified status`]
 				]]
@@ -963,7 +963,7 @@ DocsCollector.collect('java.lang.Runtime', [
 					[/* reference */ 'r', `#exit(int)`, `exit`],
 					[/* text */ 't', `
          (equivalently, `],
-					[/* reference */ 'r', `.System#exit(int)`],
+					[/* reference */ 'r', `java.lang.System#exit(int)`, `System.exit`],
 					[/* text */ 't', `) method
          has already been invoked then this status code
          will override the status code passed to that method.`]
@@ -973,7 +973,7 @@ DocsCollector.collect('java.lang.Runtime', [
 				[/* throw */ 'java.lang.SecurityException', [/* throw description */
 					[/* text */ 't', `If a security manager is present and its
          `],
-					[/* reference */ 'r', `.SecurityManager#checkExit(int)`],
+					[/* reference */ 'r', `java.lang.SecurityManager#checkExit(int)`, `checkExit`],
 					[/* text */ 't', ` method
          does not permit an exit with the specified status`]
 				]]
@@ -1027,7 +1027,7 @@ DocsCollector.collect('java.lang.Runtime', [
 				[/* block */ 'b', [
 					[/* text */ 't', `
  The method `],
-					[/* reference */ 'r', `.System#load(java.lang.String)`],
+					[/* reference */ 'r', `java.lang.System#load(java.lang.String)`, `System.load(String)`],
 					[/* text */ 't', ` is the conventional and
  convenient means of invoking this method.`]
 				]]
@@ -1099,7 +1099,7 @@ DocsCollector.collect('java.lang.Runtime', [
 				[/* block */ 'b', [
 					[/* text */ 't', `
  The method `],
-					[/* reference */ 'r', `.System#loadLibrary(java.lang.String)`],
+					[/* reference */ 'r', `java.lang.System#loadLibrary(java.lang.String)`, `System.loadLibrary(String)`],
 					[/* text */ 't', ` is the conventional
  and convenient means of invoking this method. If native
  methods are to be used in the implementation of a class, a standard
@@ -1178,7 +1178,7 @@ DocsCollector.collect('java.lang.Runtime', [
 				[/* block */ 'b', [
 					[/* text */ 't', `
  The method `],
-					[/* reference */ 'r', `.System#runFinalization()`],
+					[/* reference */ 'r', `java.lang.System#runFinalization()`, `System.runFinalization()`],
 					[/* text */ 't', ` is the conventional
  and convenient means of invoking this method.`]
 				]]

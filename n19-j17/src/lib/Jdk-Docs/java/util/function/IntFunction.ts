@@ -8,13 +8,13 @@ DocsCollector.collect('java.util.function.IntFunction', [
 		[/* inline code block */ 'i', `int`],
 		[/* text */ 't', `-consuming primitive specialization for
  `],
-		[/* reference */ 'r', `java.util.function.Function`],
+		[/* reference */ 'r', `java.util.function.Function`, `Function`],
 		[/* text */ 't', `.
 
  `],
 		[/* block */ 'b', [
 			[/* text */ 't', `This is a `],
-			[/* reference */ 'r', `.package-summary`],
+			[/* text */ 't', `functional interface`],
 			[/* text */ 't', `
  whose functional method is `],
 			[/* reference */ 'r', `#apply(int)`, `apply(int)`],

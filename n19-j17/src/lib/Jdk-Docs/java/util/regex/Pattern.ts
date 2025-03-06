@@ -10,9 +10,9 @@ DocsCollector.collect('java.util.regex.Pattern', [
 			[/* text */ 't', ` A regular expression, specified as a string, must first be compiled into
  an instance of this class.  The resulting pattern can then be used to create
  a `],
-			[/* reference */ 'r', `java.util.regex.Matcher`],
+			[/* reference */ 'r', `java.util.regex.Matcher`, `Matcher`],
 			[/* text */ 't', ` object that can match arbitrary `],
-			[/* reference */ 'r', `java.lang.CharSequence`],
+			[/* reference */ 'r', `java.lang.CharSequence`, `character sequences`],
 			[/* text */ 't', ` against the regular
  expression.  All of the state involved in performing a match resides in the
  matcher, so many matchers can share the same pattern.
@@ -59,7 +59,7 @@ DocsCollector.collect('java.util.regex.Pattern', [
 		[/* block */ 'b', [
 			[/* text */ 't', ` Instances of this class are immutable and are safe for use by multiple
  concurrent threads.  Instances of the `],
-			[/* reference */ 'r', `java.util.regex.Matcher`],
+			[/* reference */ 'r', `java.util.regex.Matcher`, `Matcher`],
 			[/* text */ 't', ` class are not safe for
  such use.
 
@@ -67,7 +67,7 @@ DocsCollector.collect('java.util.regex.Pattern', [
  `]
 		]],
 		[/* block */ 'b', [
-			[/* text */ 't', `Summary of regular-expression constructs`]
+			[/* anchor */ 'r', '#-id', `sum`, `Summary of regular-expression constructs`]
 		]],
 		[/* table */ 'tbl',
 			[/* caption */ 'tc'],
@@ -201,14 +201,14 @@ DocsCollector.collect('java.util.regex.Pattern', [
 						[/* text */ 't', `h...h`],
 						[/* text */ 't', `
          (`],
-						[/* reference */ 'r', `java.util.Character#MIN_CODE_POINT`],
+						[/* reference */ 'r', `java.lang.Character#MIN_CODE_POINT`, `Character.MIN_CODE_POINT`],
 						[/* text */ 't', `
           <= `],
 						[/* inline code block */ 'i', `0x`],
 						[/* text */ 't', `h...h`],
 						[/* text */ 't', ` <= 
           `],
-						[/* reference */ 'r', `java.util.Character#MAX_CODE_POINT`],
+						[/* reference */ 'r', `java.lang.Character#MAX_CODE_POINT`, `Character.MAX_CODE_POINT`],
 						[/* text */ 't', `)`]
 					]]
 				]],
@@ -1345,7 +1345,7 @@ DocsCollector.collect('java.util.regex.Pattern', [
 		],
 		[/* new line */ 'n'],
 		[/* block */ 'b', [
-			[/* text */ 't', `Backslashes, escapes, and quoting`]
+			[/* anchor */ 'r', '#-id', `bs`, `Backslashes, escapes, and quoting`]
 		]],
 		[/* block */ 'b', [
 			[/* text */ 't', ` The backslash character (`],
@@ -1403,7 +1403,7 @@ DocsCollector.collect('java.util.regex.Pattern', [
  `]
 		]],
 		[/* block */ 'b', [
-			[/* text */ 't', `Character Classes`]
+			[/* anchor */ 'r', '#-id', `cc`, `Character Classes`]
 		]],
 		[/* block */ 'b', [
 			[/* text */ 't', ` Character classes may appear within other character classes, and
@@ -1511,7 +1511,7 @@ DocsCollector.collect('java.util.regex.Pattern', [
  `]
 		]],
 		[/* block */ 'b', [
-			[/* text */ 't', `Line terminators`]
+			[/* anchor */ 'r', '#-id', `lt`, `Line terminators`]
 		]],
 		[/* block */ 'b', [
 			[/* text */ 't', ` A `],
@@ -1609,10 +1609,10 @@ DocsCollector.collect('java.util.regex.Pattern', [
  `]
 		]],
 		[/* block */ 'b', [
-			[/* text */ 't', `Groups and capturing`]
+			[/* anchor */ 'r', '#-id', `cg`, `Groups and capturing`]
 		]],
 		[/* block */ 'b', [
-			[/* text */ 't', `Group number`]
+			[/* anchor */ 'r', '#-id', `gnumber`, `Group number`]
 		]],
 		[/* block */ 'b', [
 			[/* text */ 't', ` Capturing groups are numbered by counting their opening parentheses from
@@ -1645,7 +1645,7 @@ DocsCollector.collect('java.util.regex.Pattern', [
 
  `],
 		[/* block */ 'b', [
-			[/* text */ 't', `Group name`]
+			[/* anchor */ 'r', '#-id', `groupname`, `Group name`]
 		]],
 		[/* block */ 'b', [
 			[/* text */ 't', `A capturing group can also be assigned a "name", a `],
@@ -1805,7 +1805,7 @@ DocsCollector.collect('java.util.regex.Pattern', [
 			[/* text */ 't', `. The character names supported
  by this class are the valid Unicode character names matched by
  `],
-			[/* reference */ 'r', `java.util.Character#codePointOf(java.lang.String)`],
+			[/* reference */ 'r', `java.lang.Character#codePointOf(java.lang.String)`, `Character.codePointOf(name)`],
 			[/* text */ 't', `.
  `]
 		]],
@@ -1848,7 +1848,7 @@ DocsCollector.collect('java.util.regex.Pattern', [
 
  `],
 		[/* block */ 'b', [
-			[/* text */ 't', `Scripts`],
+			[/* anchor */ 'r', '#-id', `usc`, `Scripts`],
 			[/* text */ 't', ` are specified either with the prefix `],
 			[/* inline code block */ 'i', `Is`],
 			[/* text */ 't', `, as in
@@ -1873,13 +1873,13 @@ DocsCollector.collect('java.util.regex.Pattern', [
 			[/* text */ 't', ` are the valid script names
  accepted and defined by
  `],
-			[/* reference */ 'r', `java.util.Character.UnicodeScript#forName(java.lang.String)`],
+			[/* reference */ 'r', `java.lang.Character.UnicodeScript#forName(java.lang.String)`, `UnicodeScript.forName`],
 			[/* text */ 't', `.
 
  `]
 		]],
 		[/* block */ 'b', [
-			[/* text */ 't', `Blocks`],
+			[/* anchor */ 'r', '#-id', `ubc`, `Blocks`],
 			[/* text */ 't', ` are specified with the prefix `],
 			[/* inline code block */ 'i', `In`],
 			[/* text */ 't', `, as in
@@ -1904,12 +1904,12 @@ DocsCollector.collect('java.util.regex.Pattern', [
 			[/* text */ 't', ` are the valid block names
  accepted and defined by
  `],
-			[/* reference */ 'r', `java.util.Character.UnicodeBlock#forName(java.lang.String)`],
+			[/* reference */ 'r', `java.lang.Character.UnicodeBlock#forName(java.lang.String)`, `UnicodeBlock.forName`],
 			[/* text */ 't', `.
  `]
 		]],
 		[/* block */ 'b', [
-			[/* text */ 't', `Categories`],
+			[/* anchor */ 'r', '#-id', `ucc`, `Categories`],
 			[/* text */ 't', ` may be specified with the optional prefix `],
 			[/* inline code block */ 'i', `Is`],
 			[/* text */ 't', `:
@@ -1938,13 +1938,13 @@ DocsCollector.collect('java.util.regex.Pattern', [
 			[/* external link */ 'a', `http://www.unicode.org/standard/standard.html`, `The Unicode Standard`],
 			[/* text */ 't', ` in the version specified by the
  `],
-			[/* reference */ 'r', `java.lang.Character`],
+			[/* reference */ 'r', `java.lang.Character`, `Character`],
 			[/* text */ 't', ` class. The category names are those
  defined in the Standard, both normative and informative.
  `]
 		]],
 		[/* block */ 'b', [
-			[/* text */ 't', `Binary properties`],
+			[/* anchor */ 'r', '#-id', `ubpc`, `Binary properties`],
 			[/* text */ 't', ` are specified with the prefix `],
 			[/* inline code block */ 'i', `Is`],
 			[/* text */ 't', `, as in
@@ -2193,7 +2193,7 @@ DocsCollector.collect('java.util.regex.Pattern', [
 		],
 		[/* block */ 'b', ''],
 		[/* block */ 'b', [
-			[/* text */ 't', `Categories that behave like the java.lang.Character boolean ismethodname methods (except for the deprecated ones) are available through the same \\p{prop} syntax where the specified property has the name javamethodname`],
+			[/* anchor */ 'r', '#-id', `jcc`, `Categories that behave like the java.lang.Character boolean ismethodname methods (except for the deprecated ones) are available through the same \\p{prop} syntax where the specified property has the name javamethodname`],
 			[/* text */ 't', `.
 
  `]
@@ -2334,9 +2334,9 @@ DocsCollector.collect('java.util.regex.Pattern', [
 					[/* text */ 't', ` flag to request a match that resumes
     where the last match left off.  This functionality is provided implicitly
     by the `],
-					[/* reference */ 'r', `java.util.regex.Matcher`],
+					[/* reference */ 'r', `java.util.regex.Matcher`, `Matcher`],
 					[/* text */ 't', ` class: Repeated invocations of the `],
-					[/* reference */ 'r', `.Matcher#find()`],
+					[/* reference */ 'r', `java.util.regex.Matcher#find()`, `find`],
 					[/* text */ 't', ` method will resume where the last match left off,
     unless the matcher is reset.  `]
 				]]

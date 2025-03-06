@@ -254,7 +254,7 @@ DocsCollector.collect('java.util.OptionalDouble', [
 		[/* method */ 'stream()', [
 			[/* method description */
 				[/* text */ 't', `If a value is present, returns a sequential `],
-				[/* reference */ 'r', `java.util.stream.DoubleStream`],
+				[/* reference */ 'r', `java.util.stream.DoubleStream`, `DoubleStream`],
 				[/* text */ 't', `
  containing only that value, otherwise returns an empty
  `],

@@ -81,7 +81,7 @@ DocsCollector.collect('java.lang.reflect.Parameter', [
  value is an array of length 0.
 
  The difference between this method and `],
-				[/* reference */ 'r', `.AnnotatedElement#getAnnotation(java.lang.Class)`],
+				[/* reference */ 'r', `java.lang.reflect.AnnotatedElement#getAnnotation(java.lang.Class)`, `AnnotatedElement.getAnnotation(Class)`],
 				[/* text */ 't', `
  is that this method detects if its argument is a `],
 				[/* text */ 't', `repeatable
@@ -130,7 +130,7 @@ DocsCollector.collect('java.lang.reflect.Parameter', [
  0.
 
  The difference between this method and `],
-				[/* reference */ 'r', `.AnnotatedElement#getDeclaredAnnotation(java.lang.Class)`],
+				[/* reference */ 'r', `java.lang.reflect.AnnotatedElement#getDeclaredAnnotation(java.lang.Class)`, `AnnotatedElement.getDeclaredAnnotation(Class)`],
 				[/* text */ 't', ` is that this method detects if its
  argument is a `],
 				[/* text */ 't', `repeatable annotation type`],
@@ -249,7 +249,7 @@ DocsCollector.collect('java.lang.reflect.Parameter', [
 		[/* method */ 'getModifiers()', [
 			[/* method description */
 				[/* text */ 't', `Returns the Java language `],
-				[/* reference */ 'r', `java.lang.reflect.Modifier`],
+				[/* reference */ 'r', `java.lang.reflect.Modifier`, `modifiers`],
 				[/* text */ 't', ` for
  the parameter represented by this object.`]
 			],
@@ -257,7 +257,7 @@ DocsCollector.collect('java.lang.reflect.Parameter', [
 			/* throws */ UDF,
 			[/* return description */
 				[/* text */ 't', `the Java language `],
-				[/* reference */ 'r', `java.lang.reflect.Modifier`],
+				[/* reference */ 'r', `java.lang.reflect.Modifier`, `modifiers`],
 				[/* text */ 't', ` for
  the parameter represented by this object`]
 			]

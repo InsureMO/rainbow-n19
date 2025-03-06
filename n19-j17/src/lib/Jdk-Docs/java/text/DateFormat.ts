@@ -7,7 +7,7 @@ DocsCollector.collect('java.text.DateFormat', [
 		[/* text */ 't', ` is an abstract class for date/time formatting subclasses which
  formats and parses dates or time in a language-independent manner.
  The date/time formatting subclass, such as `],
-		[/* reference */ 'r', `java.text.SimpleDateFormat`],
+		[/* reference */ 'r', `java.text.SimpleDateFormat`, `SimpleDateFormat`],
 		[/* text */ 't', `, allows for
  formatting (i.e., date → text), parsing (text → date), and
  normalization.  The date is represented as a `],
@@ -81,7 +81,7 @@ DocsCollector.collect('java.text.DateFormat', [
 		[/* block */ 'b', [
 			[/* text */ 't', `If the specified locale contains "ca" (calendar), "rg" (region override),
  and/or "tz" (timezone) `],
-			[/* reference */ 'r', `java.Locale#def_locale_extension`],
+			[/* reference */ 'r', `java.util.Locale#def_locale_extension`, `Unicode extensions`],
 			[/* text */ 't', `, the calendar, the country and/or the time zone for formatting
  are overridden. If both "ca" and "rg" are specified, the calendar from the "ca"
  extension supersedes the implicit one from the "rg" extension.
@@ -158,7 +158,7 @@ DocsCollector.collect('java.text.DateFormat', [
 			[/* inline code block */ 'i', `DateFormat`],
 			[/* text */ 't', ` you get from the factory methods
  to a `],
-			[/* reference */ 'r', `java.text.SimpleDateFormat`],
+			[/* reference */ 'r', `java.text.SimpleDateFormat`, `SimpleDateFormat`],
 			[/* text */ 't', `. This will work for the majority
  of countries; just remember to put it in a `],
 			[/* inline code block */ 'i', `try`],
@@ -170,9 +170,9 @@ DocsCollector.collect('java.text.DateFormat', [
 		[/* block */ 'b', [
 			[/* text */ 't', `You can also use forms of the parse and format methods with
  `],
-			[/* reference */ 'r', `java.text.ParsePosition`],
+			[/* reference */ 'r', `java.text.ParsePosition`, `ParsePosition`],
 			[/* text */ 't', ` and `],
-			[/* reference */ 'r', `java.text.FieldPosition`],
+			[/* reference */ 'r', `java.text.FieldPosition`, `FieldPosition`],
 			[/* text */ 't', ` to
  allow you to
  `]
@@ -186,7 +186,7 @@ DocsCollector.collect('java.text.DateFormat', [
 		]],
 		[/* block */ 'b', ''],
 		[/* block */ 'b', [
-			[/* text */ 't', `Synchronization`]
+			[/* anchor */ 'r', '#-id', `synchronization`, `Synchronization`]
 		]],
 		[/* block */ 'b', `
  Date formats are not synchronized.
@@ -204,7 +204,7 @@ DocsCollector.collect('java.text.DateFormat', [
 		[/* field */ 'calendar', [
 			[/* field description */
 				[/* text */ 't', `The `],
-				[/* reference */ 'r', `java.util.Calendar`],
+				[/* reference */ 'r', `java.util.Calendar`, `Calendar`],
 				[/* text */ 't', ` instance used for calculating the date-time fields
  and the instant of time. This field is used for both formatting and
  parsing.
@@ -212,10 +212,10 @@ DocsCollector.collect('java.text.DateFormat', [
  `],
 				[/* block */ 'b', [
 					[/* text */ 't', `Subclasses should initialize this field to a `],
-					[/* reference */ 'r', `java.util.Calendar`],
+					[/* reference */ 'r', `java.util.Calendar`, `Calendar`],
 					[/* text */ 't', `
  appropriate for the `],
-					[/* reference */ 'r', `java.util.Locale`],
+					[/* reference */ 'r', `java.util.Locale`, `Locale`],
 					[/* text */ 't', ` associated with this
  `],
 					[/* inline code block */ 'i', `DateFormat`],
@@ -383,7 +383,7 @@ DocsCollector.collect('java.text.DateFormat', [
 		[/* method */ 'format(java.util.Date,java.lang.StringBuffer,java.text.FieldPosition)', [
 			[/* method description */
 				[/* text */ 't', `Formats a `],
-				[/* reference */ 'r', `java.util.Date`],
+				[/* reference */ 'r', `java.util.Date`, `Date`],
 				[/* text */ 't', ` into a date-time string. The formatted
  string is appended to the given `],
 				[/* inline code block */ 'i', `StringBuffer`],
@@ -549,7 +549,7 @@ DocsCollector.collect('java.text.DateFormat', [
 		[/* method */ 'format(java.util.Date)', [
 			[/* method description */
 				[/* text */ 't', `Formats a `],
-				[/* reference */ 'r', `java.util.Date`],
+				[/* reference */ 'r', `java.util.Date`, `Date`],
 				[/* text */ 't', ` into a date-time string.`]
 			],
 			[/* parameters */
@@ -579,7 +579,7 @@ DocsCollector.collect('java.text.DateFormat', [
 					[/* inline code block */ 'i', `Number`],
 					[/* text */ 't', ` representing a
  millisecond offset from the `],
-					[/* reference */ 'r', `java.Calendar#Epoch`],
+					[/* reference */ 'r', `java.util.Calendar#Epoch`, `Epoch`],
 					[/* text */ 't', `.`]
 				]],
 				[/* parameter */ 'toAppendTo', [/* parameter description */
@@ -801,7 +801,7 @@ DocsCollector.collect('java.text.DateFormat', [
 			[/* method description */
 				[/* text */ 't', `Gets the date formatter with the default formatting style
  for the default `],
-				[/* reference */ 'r', `java.Locale.Category#FORMAT`],
+				[/* reference */ 'r', `java.util.Locale.Category#FORMAT`, `FORMAT`],
 				[/* text */ 't', ` locale.
  `],
 				[/* block */ 'b', [
@@ -821,7 +821,7 @@ DocsCollector.collect('java.text.DateFormat', [
 			[/* method description */
 				[/* text */ 't', `Gets the date formatter with the given formatting style
  for the default `],
-				[/* reference */ 'r', `java.Locale.Category#FORMAT`],
+				[/* reference */ 'r', `java.util.Locale.Category#FORMAT`, `FORMAT`],
 				[/* text */ 't', ` locale.
  `],
 				[/* block */ 'b', [
@@ -865,7 +865,7 @@ DocsCollector.collect('java.text.DateFormat', [
 			[/* method description */
 				[/* text */ 't', `Gets the date/time formatter with the default formatting style
  for the default `],
-				[/* reference */ 'r', `java.Locale.Category#FORMAT`],
+				[/* reference */ 'r', `java.util.Locale.Category#FORMAT`, `FORMAT`],
 				[/* text */ 't', ` locale.
  `],
 				[/* block */ 'b', [
@@ -885,7 +885,7 @@ DocsCollector.collect('java.text.DateFormat', [
 			[/* method description */
 				[/* text */ 't', `Gets the date/time formatter with the given date and time
  formatting styles for the default `],
-				[/* reference */ 'r', `java.Locale.Category#FORMAT`],
+				[/* reference */ 'r', `java.util.Locale.Category#FORMAT`, `FORMAT`],
 				[/* text */ 't', ` locale.
  `],
 				[/* block */ 'b', [
@@ -946,7 +946,7 @@ DocsCollector.collect('java.text.DateFormat', [
 			[/* method description */
 				[/* text */ 't', `Gets the time formatter with the default formatting style
  for the default `],
-				[/* reference */ 'r', `java.Locale.Category#FORMAT`],
+				[/* reference */ 'r', `java.util.Locale.Category#FORMAT`, `FORMAT`],
 				[/* text */ 't', ` locale.
  `],
 				[/* block */ 'b', [
@@ -966,7 +966,7 @@ DocsCollector.collect('java.text.DateFormat', [
 			[/* method description */
 				[/* text */ 't', `Gets the time formatter with the given formatting style
  for the default `],
-				[/* reference */ 'r', `java.Locale.Category#FORMAT`],
+				[/* reference */ 'r', `java.util.Locale.Category#FORMAT`, `FORMAT`],
 				[/* text */ 't', ` locale.
  `],
 				[/* block */ 'b', [
@@ -1016,13 +1016,13 @@ DocsCollector.collect('java.text.DateFormat', [
  The returned array represents the union of locales supported by the Java
  runtime and by installed
  `],
-				[/* reference */ 'r', `java.text.spi.DateFormatProvider`],
+				[/* reference */ 'r', `java.text.spi.DateFormatProvider`, `DateFormatProvider`],
 				[/* text */ 't', ` implementations.
  It must contain at least a `],
 				[/* inline code block */ 'i', `Locale`],
 				[/* text */ 't', ` instance equal to
  `],
-				[/* reference */ 'r', `java.Locale#US`],
+				[/* reference */ 'r', `java.util.Locale#US`, `Locale.US`],
 				[/* text */ 't', `.`]
 			],
 			/* parameters */ UDF,
@@ -1042,7 +1042,7 @@ DocsCollector.collect('java.text.DateFormat', [
  `],
 				[/* block */ 'b', [
 					[/* text */ 't', `Any `],
-					[/* reference */ 'r', `java.util.TimeZone`],
+					[/* reference */ 'r', `java.util.TimeZone`, `TimeZone`],
 					[/* text */ 't', ` and `],
 					[/* reference */ 'r', `#isLenient()`, `leniency`],
 					[/* text */ 't', ` values that have previously been set are

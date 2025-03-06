@@ -22,7 +22,7 @@ DocsCollector.collect('java.io.Console', [
  If this virtual machine has a console then it is represented by a
  unique instance of this class which can be obtained by invoking the
  `],
-			[/* reference */ 'r', `java.System#console()`],
+			[/* reference */ 'r', `java.lang.System#console()`, `System.console()`],
 			[/* text */ 't', ` method.  If no console device is
  available then an invocation of that method will return `],
 			[/* inline code block */ 'i', `null`],
@@ -81,7 +81,7 @@ DocsCollector.collect('java.io.Console', [
 			[/* inline code block */ 'i', `null`],
 			[/* text */ 't', ` argument to any method
  in this class will cause a `],
-			[/* reference */ 'r', `java.lang.NullPointerException`],
+			[/* reference */ 'r', `java.lang.NullPointerException`, `NullPointerException`],
 			[/* text */ 't', ` to be thrown.
  `]
 		]],
@@ -141,7 +141,7 @@ DocsCollector.collect('java.io.Console', [
 			[/* parameters */
 				[/* parameter */ 'fmt', [/* parameter description */
 					[/* text */ 't', `A format string as described in `],
-					[/* reference */ 'r', `java.Formatter#syntax`],
+					[/* reference */ 'r', `java.util.Formatter#syntax`, `Format string syntax`],
 					[/* text */ 't', `
          for the prompt text.`]
 				]],
@@ -162,7 +162,7 @@ DocsCollector.collect('java.io.Console', [
           insufficient arguments given the format string, or other
           illegal conditions.  For specification of all possible
           formatting errors, see the `],
-					[/* reference */ 'r', `java.Formatter#detail`],
+					[/* reference */ 'r', `java.util.Formatter#detail`, `Details`],
 					[/* text */ 't', `
           section of the formatter class specification.`]
 				]],
@@ -186,7 +186,7 @@ DocsCollector.collect('java.io.Console', [
 			[/* parameters */
 				[/* parameter */ 'fmt', [/* parameter description */
 					[/* text */ 't', `A format string as described in `],
-					[/* reference */ 'r', `java.Formatter#syntax`]
+					[/* reference */ 'r', `java.util.Formatter#syntax`, `Format string syntax`]
 				]],
 				[/* parameter */ 'args', [/* parameter description */
 					[/* text */ 't', `Arguments referenced by the format specifiers in the format
@@ -201,7 +201,7 @@ DocsCollector.collect('java.io.Console', [
          `],
 					[/* inline code block */ 'i', `null`],
 					[/* text */ 't', ` argument depends on the `],
-					[/* reference */ 'r', `java.Formatter#syntax`],
+					[/* reference */ 'r', `java.util.Formatter#syntax`, `conversion`],
 					[/* text */ 't', `.`]
 				]]
 			],
@@ -212,7 +212,7 @@ DocsCollector.collect('java.io.Console', [
           insufficient arguments given the format string, or other
           illegal conditions.  For specification of all possible
           formatting errors, see the `],
-					[/* reference */ 'r', `java.Formatter#detail`],
+					[/* reference */ 'r', `java.util.Formatter#detail`, `Details`],
 					[/* text */ 't', ` section
           of the formatter class specification.`]
 				]]
@@ -242,7 +242,7 @@ DocsCollector.collect('java.io.Console', [
 			[/* parameters */
 				[/* parameter */ 'format', [/* parameter description */
 					[/* text */ 't', `A format string as described in `],
-					[/* reference */ 'r', `java.Formatter#syntax`],
+					[/* reference */ 'r', `java.util.Formatter#syntax`, `Format string syntax`],
 					[/* text */ 't', `.`]
 				]],
 				[/* parameter */ 'args', [/* parameter description */
@@ -258,7 +258,7 @@ DocsCollector.collect('java.io.Console', [
          `],
 					[/* inline code block */ 'i', `null`],
 					[/* text */ 't', ` argument depends on the `],
-					[/* reference */ 'r', `java.Formatter#syntax`],
+					[/* reference */ 'r', `java.util.Formatter#syntax`, `conversion`],
 					[/* text */ 't', `.`]
 				]]
 			],
@@ -269,7 +269,7 @@ DocsCollector.collect('java.io.Console', [
           insufficient arguments given the format string, or other
           illegal conditions.  For specification of all possible
           formatting errors, see the `],
-					[/* reference */ 'r', `java.Formatter#detail`],
+					[/* reference */ 'r', `java.util.Formatter#detail`, `Details`],
 					[/* text */ 't', ` section of the
           formatter class specification.`]
 				]]
@@ -281,7 +281,7 @@ DocsCollector.collect('java.io.Console', [
 		[/* method */ 'writer()', [
 			[/* method description */
 				[/* text */ 't', `Retrieves the unique `],
-				[/* reference */ 'r', `java.io.PrintWriter`],
+				[/* reference */ 'r', `java.io.PrintWriter`, `PrintWriter`],
 				[/* text */ 't', ` object
  associated with this console.`]
 			],
@@ -294,7 +294,7 @@ DocsCollector.collect('java.io.Console', [
 		[/* method */ 'reader()', [
 			[/* method description */
 				[/* text */ 't', `Retrieves the unique `],
-				[/* reference */ 'r', `java.io.Reader`],
+				[/* reference */ 'r', `java.io.Reader`, `Reader`],
 				[/* text */ 't', ` object associated
  with this console.
  `],
@@ -302,7 +302,7 @@ DocsCollector.collect('java.io.Console', [
 					[/* text */ 't', `
  This method is intended to be used by sophisticated applications, for
  example, a `],
-					[/* reference */ 'r', `java.util.Scanner`],
+					[/* reference */ 'r', `java.util.Scanner`, `Scanner`],
 					[/* text */ 't', ` object which utilizes the rich
  parsing/scanning functionality provided by the `],
 					[/* inline code block */ 'i', `Scanner`],
@@ -329,13 +329,13 @@ DocsCollector.collect('java.io.Console', [
 				[/* block */ 'b', [
 					[/* text */ 't', `
  The bulk read operations `],
-					[/* reference */ 'r', `.Reader#read(char[])`],
+					[/* reference */ 'r', `java.io.Reader#read(char[])`, `read(char[])`],
 					[/* text */ 't', `,
  `],
-					[/* reference */ 'r', `.Reader#read(char[],int,int)`],
+					[/* reference */ 'r', `java.io.Reader#read(char[],int,int)`, `read(char[], int, int)`],
 					[/* text */ 't', ` and
  `],
-					[/* reference */ 'r', `.Reader#read(java.nio.CharBuffer)`],
+					[/* reference */ 'r', `java.io.Reader#read(java.nio.CharBuffer)`, `read(java.nio.CharBuffer)`],
 					[/* text */ 't', `
  on the returned object will not read in characters beyond the line
  bound for each invocation, even if the destination buffer has space for
@@ -386,7 +386,7 @@ DocsCollector.collect('java.io.Console', [
 			[/* parameters */
 				[/* parameter */ 'fmt', [/* parameter description */
 					[/* text */ 't', `A format string as described in `],
-					[/* reference */ 'r', `java.Formatter#syntax`],
+					[/* reference */ 'r', `java.util.Formatter#syntax`, `Format string syntax`],
 					[/* text */ 't', `.`]
 				]],
 				[/* parameter */ 'args', [/* parameter description */
@@ -406,7 +406,7 @@ DocsCollector.collect('java.io.Console', [
           insufficient arguments given the format string, or other
           illegal conditions.  For specification of all possible
           formatting errors, see the `],
-					[/* reference */ 'r', `java.Formatter#detail`],
+					[/* reference */ 'r', `java.util.Formatter#detail`, `Details`],
 					[/* text */ 't', ` section
           of the formatter class specification.`]
 				]],
@@ -425,7 +425,7 @@ DocsCollector.collect('java.io.Console', [
 		[/* method */ 'charset()', [
 			[/* method description */
 				[/* text */ 't', `Returns the `],
-				[/* reference */ 'r', `java.nio.charset.Charset`],
+				[/* reference */ 'r', `java.nio.charset.Charset`, `Charset`],
 				[/* text */ 't', ` object used for
  the `],
 				[/* inline code block */ 'i', `Console`],
@@ -437,7 +437,7 @@ DocsCollector.collect('java.io.Console', [
  (e.g., keyboard and/or display) specified by the host environment or user.
  It may not necessarily be the same as the default charset returned from
  `],
-					[/* reference */ 'r', `java.charset.Charset#defaultCharset()`],
+					[/* reference */ 'r', `java.nio.charset.Charset#defaultCharset()`, `Charset.defaultCharset()`],
 					[/* text */ 't', `.`]
 				]]
 			],
@@ -445,7 +445,7 @@ DocsCollector.collect('java.io.Console', [
 			/* throws */ UDF,
 			[/* return description */
 				[/* text */ 't', `a `],
-				[/* reference */ 'r', `java.nio.charset.Charset`],
+				[/* reference */ 'r', `java.nio.charset.Charset`, `Charset`],
 				[/* text */ 't', ` object used for the
           `],
 				[/* inline code block */ 'i', `Console`]

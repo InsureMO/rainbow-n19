@@ -50,14 +50,14 @@ DocsCollector.collect('java.lang.Float', [
  `]
 		]],
 		[/* block */ 'b', [
-			[/* text */ 't', `Floating-point Equality, Equivalence, and Comparison`]
+			[/* anchor */ 'r', '#-id', `equivalenceRelation`, `Floating-point Equality, Equivalence, and Comparison`]
 		]],
 		[/* text */ 't', `
 
  The class `],
 		[/* inline code block */ 'i', `java.lang.Double`],
 		[/* text */ 't', ` has a `],
-		[/* reference */ 'r', `.Double#equivalenceRelation`],
+		[/* reference */ 'r', `java.lang.Double#equivalenceRelation`, `discussion of equality, equivalence, and comparison of floating-point values`],
 		[/* text */ 't', ` that is
  equality applicable to `],
 		[/* inline code block */ 'i', `float`],
@@ -457,7 +457,7 @@ DocsCollector.collect('java.lang.Float', [
 				[/* text */ 't', `consistent with
  equals`],
 				[/* text */ 't', `; see `],
-				[/* reference */ 'r', `.Double#equivalenceRelation`],
+				[/* reference */ 'r', `java.lang.Double#equivalenceRelation`, `this discussion`],
 				[/* text */ 't', ` for details of floating-point comparison and
  ordering.`]
 			],
@@ -541,7 +541,7 @@ DocsCollector.collect('java.lang.Float', [
 		[/* method */ 'resolveConstantDesc(java.lang.invoke.MethodHandles.Lookup)', [
 			[/* method description */
 				[/* text */ 't', `Resolves this instance as a `],
-				[/* reference */ 'r', `java.lang.constant.ConstantDesc`],
+				[/* reference */ 'r', `java.lang.constant.ConstantDesc`, `ConstantDesc`],
 				[/* text */ 't', `, the result of which is
  the instance itself.`]
 			],
@@ -553,7 +553,7 @@ DocsCollector.collect('java.lang.Float', [
 			/* throws */ UDF,
 			[/* return description */
 				[/* text */ 't', `the `],
-				[/* reference */ 'r', `java.lang.Float`],
+				[/* reference */ 'r', `java.lang.Float`, `Float`],
 				[/* text */ 't', ` instance`]
 			]
 		]],
@@ -583,7 +583,7 @@ DocsCollector.collect('java.lang.Float', [
 		[/* method */ 'describeConstable()', [
 			[/* method description */
 				[/* text */ 't', `Returns an `],
-				[/* reference */ 'r', `java.util.Optional`],
+				[/* reference */ 'r', `java.util.Optional`, `Optional`],
 				[/* text */ 't', ` containing the nominal descriptor for this
  instance, which is the instance itself.`]
 			],
@@ -591,9 +591,9 @@ DocsCollector.collect('java.lang.Float', [
 			/* throws */ UDF,
 			[/* return description */
 				[/* text */ 't', `an `],
-				[/* reference */ 'r', `java.util.Optional`],
+				[/* reference */ 'r', `java.util.Optional`, `Optional`],
 				[/* text */ 't', ` describing the `],
-				[/* reference */ 'r', `java.lang.Float`],
+				[/* reference */ 'r', `java.lang.Float`, `Float`],
 				[/* text */ 't', ` instance`]
 			]
 		]],
@@ -713,7 +713,7 @@ DocsCollector.collect('java.lang.Float', [
 				[/* inline code block */ 'i', `float`],
 				[/* text */ 't', ` values
  as if by calling `],
-				[/* reference */ 'r', `.Math#max(double,double)`],
+				[/* reference */ 'r', `java.lang.Math#max(double,double)`, `Math.max`],
 				[/* text */ 't', `.`]
 			],
 			[/* parameters */
@@ -738,7 +738,7 @@ DocsCollector.collect('java.lang.Float', [
 				[/* inline code block */ 'i', `float`],
 				[/* text */ 't', ` values
  as if by calling `],
-				[/* reference */ 'r', `.Math#min(double,double)`],
+				[/* reference */ 'r', `java.lang.Math#min(double,double)`, `Math.min`],
 				[/* text */ 't', `.`]
 			],
 			[/* parameters */
@@ -1020,7 +1020,7 @@ DocsCollector.collect('java.lang.Float', [
 					[/* inline code block */ 'i', `s`],
 					[/* text */ 't', `
  are ignored.  Whitespace is removed as if by the `],
-					[/* reference */ 'r', `.String#trim()`],
+					[/* reference */ 'r', `java.lang.String#trim()`, `String.trim()`],
 					[/* text */ 't', ` method; that is, both ASCII space and control
  characters are removed. The rest of `],
 					[/* inline code block */ 'i', `s`],
@@ -1200,7 +1200,7 @@ DocsCollector.collect('java.lang.Float', [
  enough in magnitude (greater than or equal to (`],
 				[/* text */ 't', `MAX_VALUE`],
 				[/* text */ 't', ` + `],
-				[/* reference */ 'r', `.Math#ulp(float)`],
+				[/* reference */ 'r', `java.lang.Math#ulp(float)`, `ulp(MAX_VALUE)`],
 				[/* text */ 't', `/2),
  rounding to `],
 				[/* inline code block */ 'i', `float`],
@@ -1225,7 +1225,7 @@ DocsCollector.collect('java.lang.Float', [
 				[/* block */ 'b', [
 					[/* text */ 't', `To interpret localized string representations of a
  floating-point value, use subclasses of `],
-					[/* reference */ 'r', `java.text.NumberFormat`],
+					[/* reference */ 'r', `java.text.NumberFormat`, `NumberFormat`],
 					[/* text */ 't', `.
 
  `]
@@ -1292,7 +1292,7 @@ DocsCollector.collect('java.lang.Float', [
 					[/* inline code block */ 'i', `NumberFormatException`],
 					[/* text */ 't', ` be thrown, the documentation
  for `],
-					[/* reference */ 'r', `.Double#valueOf(java.lang.String)`],
+					[/* reference */ 'r', `java.lang.Double#valueOf(java.lang.String)`, `Double.valueOf`],
 					[/* text */ 't', ` lists a regular
  expression which can be used to screen the input.`]
 				]]
@@ -1401,7 +1401,7 @@ DocsCollector.collect('java.lang.Float', [
 								[/* text */ 't', ` followed
  by a decimal string of the unbiased exponent as if produced by
  a call to `],
-								[/* reference */ 'r', `.Integer#toString(int)`],
+								[/* reference */ 'r', `java.lang.Integer#toString(int)`, `Integer.toString`],
 								[/* text */ 't', ` on the
  exponent value.
 
@@ -1676,7 +1676,7 @@ DocsCollector.collect('java.lang.Float', [
 								[/* text */ 't', `n`],
 								[/* text */ 't', ` as a decimal integer, as produced by the
       method `],
-								[/* reference */ 'r', `.Integer#toString(int)`],
+								[/* reference */ 'r', `java.lang.Integer#toString(int)`, `Integer.toString(int)`],
 								[/* text */ 't', `.
 
  `]
@@ -1729,7 +1729,7 @@ DocsCollector.collect('java.lang.Float', [
 				[/* block */ 'b', [
 					[/* text */ 't', `To create localized string representations of a floating-point
  value, use subclasses of `],
-					[/* reference */ 'r', `java.text.NumberFormat`],
+					[/* reference */ 'r', `java.text.NumberFormat`, `NumberFormat`],
 					[/* text */ 't', `.`]
 				]]
 			],

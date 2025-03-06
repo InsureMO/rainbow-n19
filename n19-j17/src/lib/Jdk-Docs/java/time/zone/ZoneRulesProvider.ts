@@ -16,7 +16,7 @@ DocsCollector.collect('java.time.zone.ZoneRulesProvider', [
  extension classes, that is, jar files placed into any of the usual extension
  directories. Installed providers are loaded using the service-provider loading
  facility defined by the `],
-			[/* reference */ 'r', `java.util.ServiceLoader`],
+			[/* reference */ 'r', `java.util.ServiceLoader`, `ServiceLoader`],
 			[/* text */ 't', ` class. A ZoneRulesProvider
  identifies itself with a provider configuration file named
  `],
@@ -48,7 +48,7 @@ DocsCollector.collect('java.time.zone.ZoneRulesProvider', [
 		[/* block */ 'b', [
 			[/* text */ 't', `
  Rules are looked up primarily by zone ID, as used by `],
-			[/* reference */ 'r', `java.time.ZoneId`],
+			[/* reference */ 'r', `java.time.ZoneId`, `ZoneId`],
 			[/* text */ 't', `.
  Only zone region IDs may be used, zone offset IDs are not used here.
  `]
@@ -91,7 +91,7 @@ DocsCollector.collect('java.time.zone.ZoneRulesProvider', [
 					[/* text */ 't', `
  If the provider implementation is dynamic, then the flag gives the option
  of preventing the returned rules from being cached in `],
-					[/* reference */ 'r', `java.time.ZoneId`],
+					[/* reference */ 'r', `java.time.ZoneId`, `ZoneId`],
 					[/* text */ 't', `.
  When the flag is true, the provider is permitted to return null, where
  null will prevent the rules from being cached in `],
@@ -227,7 +227,7 @@ DocsCollector.collect('java.time.zone.ZoneRulesProvider', [
  This method allows an application to request that the providers check
  for any updates to the provided rules.
  After calling this method, the offset stored in any `],
-					[/* reference */ 'r', `java.time.ZonedDateTime`],
+					[/* reference */ 'r', `java.time.ZonedDateTime`, `ZonedDateTime`],
 					[/* text */ 't', `
  may be invalid for the zone ID.
  `]
@@ -368,7 +368,7 @@ DocsCollector.collect('java.time.zone.ZoneRulesProvider', [
 				[/* block */ 'b', [
 					[/* text */ 't', `
  These IDs are the string form of a `],
-					[/* reference */ 'r', `java.time.ZoneId`],
+					[/* reference */ 'r', `java.time.ZoneId`, `ZoneId`],
 					[/* text */ 't', `.`]
 				]]
 			],
@@ -388,7 +388,7 @@ DocsCollector.collect('java.time.zone.ZoneRulesProvider', [
  A provider supplies rules for one or more zone IDs.
  A provider cannot be registered if it supplies a zone ID that has already been
  registered. See the notes on time-zone IDs in `],
-					[/* reference */ 'r', `java.time.ZoneId`],
+					[/* reference */ 'r', `java.time.ZoneId`, `ZoneId`],
 					[/* text */ 't', `, especially
  the section on using the concept of a "group" to make IDs unique.
  `]

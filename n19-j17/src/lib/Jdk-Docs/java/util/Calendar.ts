@@ -21,7 +21,7 @@ DocsCollector.collect('java.util.Calendar', [
  manipulating the calendar fields, such as getting the date of the next
  week. An instant in time can be represented by a millisecond value that is
  an offset from the `],
-		[/* text */ 't', `Epoch`],
+		[/* anchor */ 'r', '#-id', `Epoch`, `Epoch`],
 		[/* text */ 't', `, January 1, 1970
  00:00:00.000 GMT (Gregorian).
 
@@ -154,7 +154,7 @@ DocsCollector.collect('java.util.Calendar', [
  `]
 		]],
 		[/* block */ 'b', [
-			[/* text */ 't', `First Week`]
+			[/* anchor */ 'r', '#-id', `first_week`, `First Week`]
 		]],
 		[/* inline code block */ 'i', `Calendar`],
 		[/* text */ 't', ` defines a locale-specific seven day week using two
@@ -164,7 +164,7 @@ DocsCollector.collect('java.util.Calendar', [
 		[/* inline code block */ 'i', `Calendar`],
 		[/* text */ 't', ` is constructed. If the designated
  locale contains "fw" and/or "rg" `],
-		[/* reference */ 'r', `.Locale#def_locale_extension`],
+		[/* reference */ 'r', `java.util.Locale#def_locale_extension`, `Unicode extensions`],
 		[/* text */ 't', `, the first day of the week will be obtained according to
  those extensions. If both "fw" and "rg" are specified, the value from the "fw"
  extension supersedes the implicit one from the "rg" extension.
@@ -218,7 +218,7 @@ DocsCollector.collect('java.util.Calendar', [
 
  `],
 		[/* block */ 'b', [
-			[/* text */ 't', `If there is any conflict in calendar field values, Calendar gives priorities to calendar fields that have been set more recently.`],
+			[/* anchor */ 'r', '#-id', `resolution`, `If there is any conflict in calendar field values, Calendar gives priorities to calendar fields that have been set more recently.`],
 			[/* text */ 't', ` The following are the default combinations of the
  calendar fields. The most recent combination, as determined by the
  most recently set single field, will be used.
@@ -226,7 +226,7 @@ DocsCollector.collect('java.util.Calendar', [
  `]
 		]],
 		[/* block */ 'b', [
-			[/* text */ 't', `For the date fields`],
+			[/* anchor */ 'r', '#-id', `date_resolution`, `For the date fields`],
 			[/* text */ 't', `:
  `]
 		]],
@@ -238,7 +238,7 @@ DocsCollector.collect('java.util.Calendar', [
  YEAR + DAY_OF_WEEK + WEEK_OF_YEAR
  `]
 		]],
-		[/* text */ 't', `For the time of day fields`],
+		[/* anchor */ 'r', '#-id', `time_resolution`, `For the time of day fields`],
 		[/* text */ 't', `:
  `],
 		[/* block */ 'b', [
@@ -284,7 +284,7 @@ DocsCollector.collect('java.util.Calendar', [
  The date or time format strings are not part of the definition of a
  calendar, as those must be modifiable or overridable by the user at
  runtime. Use `],
-			[/* reference */ 'r', `java.text.DateFormat`],
+			[/* reference */ 'r', `java.text.DateFormat`, `DateFormat`],
 			[/* text */ 't', `
  to format dates.
 
@@ -491,7 +491,7 @@ DocsCollector.collect('java.util.Calendar', [
 		[/* block */ 'b', [
 			[/* text */ 't', `Example`],
 			[/* text */ 't', `: See `],
-			[/* reference */ 'r', `.GregorianCalendar#roll(int,int)`],
+			[/* reference */ 'r', `java.util.GregorianCalendar#roll(int,int)`, `GregorianCalendar.roll(int, int)`],
 			[/* text */ 't', `.
 
  `]
@@ -1197,7 +1197,7 @@ DocsCollector.collect('java.util.Calendar', [
 			[/* constructor description */
 				[/* text */ 't', `Constructs a Calendar with the default time zone
  and the default `],
-				[/* reference */ 'r', `.Locale.Category#FORMAT`],
+				[/* reference */ 'r', `java.util.Locale.Category#FORMAT`, `FORMAT`],
 				[/* text */ 't', `
  locale.`]
 			],
@@ -1658,7 +1658,7 @@ DocsCollector.collect('java.util.Calendar', [
 		[/* method */ 'toInstant()', [
 			[/* method description */
 				[/* text */ 't', `Converts this object to an `],
-				[/* reference */ 'r', `java.time.Instant`],
+				[/* reference */ 'r', `java.time.Instant`, `Instant`],
 				[/* text */ 't', `.
  `],
 				[/* block */ 'b', [
@@ -2169,7 +2169,7 @@ DocsCollector.collect('java.util.Calendar', [
 				[/* block */ 'b', [
 					[/* text */ 't', `The default implementation of this method throws an
  `],
-					[/* reference */ 'r', `java.lang.UnsupportedOperationException`],
+					[/* reference */ 'r', `java.lang.UnsupportedOperationException`, `UnsupportedOperationException`],
 					[/* text */ 't', `.`]
 				]]
 			],
@@ -2285,7 +2285,7 @@ DocsCollector.collect('java.util.Calendar', [
 				[/* block */ 'b', [
 					[/* text */ 't', `The default implementation supports the calendar fields for
  which a `],
-					[/* reference */ 'r', `java.text.DateFormatSymbols`],
+					[/* reference */ 'r', `java.text.DateFormatSymbols`, `DateFormatSymbols`],
 					[/* text */ 't', ` has names in the given
  `],
 					[/* inline code block */ 'i', `locale`],
@@ -2387,7 +2387,7 @@ DocsCollector.collect('java.util.Calendar', [
  example, if this `],
 				[/* inline code block */ 'i', `Calendar`],
 				[/* text */ 't', ` is a `],
-				[/* reference */ 'r', `java.util.GregorianCalendar`],
+				[/* reference */ 'r', `java.util.GregorianCalendar`, `GregorianCalendar`],
 				[/* text */ 't', `, the returned map would contain "Jan" to
  `],
 				[/* text */ 't', `JANUARY`],
@@ -2426,7 +2426,7 @@ DocsCollector.collect('java.util.Calendar', [
 				[/* block */ 'b', [
 					[/* text */ 't', `The default implementation supports display names contained in
  a `],
-					[/* reference */ 'r', `java.text.DateFormatSymbols`],
+					[/* reference */ 'r', `java.text.DateFormatSymbols`, `DateFormatSymbols`],
 					[/* text */ 't', `. For example, if `],
 					[/* inline code block */ 'i', `field`],
 					[/* text */ 't', `
@@ -2440,10 +2440,10 @@ DocsCollector.collect('java.util.Calendar', [
 					[/* inline code block */ 'i', `Map`],
 					[/* text */ 't', ` containing
  all strings returned by `],
-					[/* reference */ 'r', `java.DateFormatSymbols#getShortMonths()`],
+					[/* reference */ 'r', `java.text.DateFormatSymbols#getShortMonths()`, `DateFormatSymbols.getShortMonths()`],
 					[/* text */ 't', `
  and `],
-					[/* reference */ 'r', `java.DateFormatSymbols#getMonths()`],
+					[/* reference */ 'r', `java.text.DateFormatSymbols#getMonths()`, `DateFormatSymbols.getMonths()`],
 					[/* text */ 't', `.`]
 				]]
 			],
@@ -2537,14 +2537,14 @@ DocsCollector.collect('java.util.Calendar', [
 				[/* text */ 't', ` returned is based on the current time
  in the default time zone with the default
  `],
-				[/* reference */ 'r', `.Locale.Category#FORMAT`],
+				[/* reference */ 'r', `java.util.Locale.Category#FORMAT`, `FORMAT`],
 				[/* text */ 't', ` locale.
  `],
 				[/* block */ 'b', [
 					[/* text */ 't', `
  If the locale contains the time zone with "tz"
  `],
-					[/* reference */ 'r', `.Locale#def_locale_extension`],
+					[/* reference */ 'r', `java.util.Locale#def_locale_extension`, `Unicode extension`],
 					[/* text */ 't', `,
  that time zone is used instead.`]
 				]]
@@ -2567,7 +2567,7 @@ DocsCollector.collect('java.util.Calendar', [
 					[/* text */ 't', `
  If the locale contains the time zone with "tz"
  `],
-					[/* reference */ 'r', `.Locale#def_locale_extension`],
+					[/* reference */ 'r', `java.util.Locale#def_locale_extension`, `Unicode extension`],
 					[/* text */ 't', `,
  that time zone is used instead.`]
 				]]
@@ -2590,7 +2590,7 @@ DocsCollector.collect('java.util.Calendar', [
 				[/* text */ 't', ` returned is based on the current time
  in the given time zone with the default
  `],
-				[/* reference */ 'r', `.Locale.Category#FORMAT`],
+				[/* reference */ 'r', `java.util.Locale.Category#FORMAT`, `FORMAT`],
 				[/* text */ 't', ` locale.`]
 			],
 			[/* parameters */
@@ -2633,7 +2633,7 @@ DocsCollector.collect('java.util.Calendar', [
 				[/* inline code block */ 'i', `Calendar`],
 				[/* text */ 't', ` in the runtime environment. The available
  calendar types can be used for the `],
-				[/* reference */ 'r', `.Locale#def_locale_extension`],
+				[/* reference */ 'r', `java.util.Locale#def_locale_extension`, `Unicode locale extensions`],
 				[/* text */ 't', `.
  The `],
 				[/* inline code block */ 'i', `Set`],
@@ -2665,7 +2665,7 @@ DocsCollector.collect('java.util.Calendar', [
 				[/* inline code block */ 'i', `Locale`],
 				[/* text */ 't', `
  instance equal to `],
-				[/* reference */ 'r', `.Locale#US`],
+				[/* reference */ 'r', `java.util.Locale#US`, `Locale.US`],
 				[/* text */ 't', `.`]
 			],
 			/* parameters */ UDF,

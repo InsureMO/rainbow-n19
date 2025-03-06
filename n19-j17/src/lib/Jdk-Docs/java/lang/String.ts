@@ -52,7 +52,7 @@ DocsCollector.collect('java.lang.String', [
  copy of a string with all characters translated to uppercase or to
  lowercase. Case mapping is based on the Unicode Standard version
  specified by the `],
-			[/* reference */ 'r', `java.lang.Character`],
+			[/* reference */ 'r', `java.lang.Character`, `Character`],
 			[/* text */ 't', ` class.
  `]
 		]],
@@ -72,7 +72,7 @@ DocsCollector.collect('java.lang.String', [
 			[/* inline code block */ 'i', `null`],
 			[/* text */ 't', ` argument to a constructor
  or method in this class will cause a `],
-			[/* reference */ 'r', `java.lang.NullPointerException`],
+			[/* reference */ 'r', `java.lang.NullPointerException`, `NullPointerException`],
 			[/* text */ 't', ` to be
  thrown.
 
@@ -88,7 +88,7 @@ DocsCollector.collect('java.lang.String', [
 			[/* text */ 't', `surrogate
  pairs`],
 			[/* text */ 't', ` (see the section `],
-			[/* reference */ 'r', `.Character#unicode`],
+			[/* reference */ 'r', `java.lang.Character#unicode`, `Unicode Character Representations`],
 			[/* text */ 't', ` in the `],
 			[/* inline code block */ 'i', `Character`],
 			[/* text */ 't', ` class for
@@ -115,7 +115,7 @@ DocsCollector.collect('java.lang.String', [
 		[/* block */ 'b', [
 			[/* text */ 't', `Unless otherwise noted, methods for comparing Strings do not take locale
  into account.  The `],
-			[/* reference */ 'r', `java.text.Collator`],
+			[/* reference */ 'r', `java.text.Collator`, `Collator`],
 			[/* text */ 't', ` class provides methods for
  finer-grain, locale-sensitive String comparison.`]
 		]]
@@ -138,7 +138,7 @@ DocsCollector.collect('java.lang.String', [
 					[/* text */ 't', ` take locale into account,
  and will result in an unsatisfactory ordering for certain locales.
  The `],
-					[/* reference */ 'r', `java.text.Collator`],
+					[/* reference */ 'r', `java.text.Collator`, `Collator`],
 					[/* text */ 't', ` class provides locale-sensitive comparison.`]
 				]]
 			],
@@ -170,7 +170,7 @@ DocsCollector.collect('java.lang.String', [
 				[/* block */ 'b', [
 					[/* text */ 't', ` The behavior of this constructor when the given bytes are not valid
  in the default charset is unspecified.  The `],
-					[/* reference */ 'r', `java.nio.charset.CharsetDecoder`],
+					[/* reference */ 'r', `java.nio.charset.CharsetDecoder`, `CharsetDecoder`],
 					[/* text */ 't', ` class should be used when more control
  over the decoding process is required.`]
 				]]
@@ -232,7 +232,7 @@ DocsCollector.collect('java.lang.String', [
 				[/* block */ 'b', [
 					[/* text */ 't', ` The behavior of this constructor when the given bytes are not valid
  in the default charset is unspecified.  The `],
-					[/* reference */ 'r', `java.nio.charset.CharsetDecoder`],
+					[/* reference */ 'r', `java.nio.charset.CharsetDecoder`, `CharsetDecoder`],
 					[/* text */ 't', ` class should be used when more control
  over the decoding process is required.`]
 				]]
@@ -335,7 +335,7 @@ DocsCollector.collect('java.lang.String', [
 				[/* block */ 'b', [
 					[/* text */ 't', ` The behavior of this constructor when the given bytes are not valid
  in the given charset is unspecified.  The `],
-					[/* reference */ 'r', `java.nio.charset.CharsetDecoder`],
+					[/* reference */ 'r', `java.nio.charset.CharsetDecoder`, `CharsetDecoder`],
 					[/* text */ 't', ` class should be used when more control
  over the decoding process is required.`]
 				]]
@@ -352,7 +352,7 @@ DocsCollector.collect('java.lang.String', [
 				]],
 				[/* parameter */ 'charsetName', [/* parameter description */
 					[/* text */ 't', `The name of a supported `],
-					[/* reference */ 'r', `java.nio.charset.Charset`]
+					[/* reference */ 'r', `java.nio.charset.Charset`, `charset`]
 				]]
 			],
 			[/* throws */
@@ -378,7 +378,7 @@ DocsCollector.collect('java.lang.String', [
 				[/* inline code block */ 'i', `String`],
 				[/* text */ 't', ` by decoding the specified subarray of
  bytes using the specified `],
-				[/* reference */ 'r', `java.nio.charset.Charset`],
+				[/* reference */ 'r', `java.nio.charset.Charset`, `charset`],
 				[/* text */ 't', `.
  The length of the new `],
 				[/* inline code block */ 'i', `String`],
@@ -389,7 +389,7 @@ DocsCollector.collect('java.lang.String', [
 				[/* block */ 'b', [
 					[/* text */ 't', ` This method always replaces malformed-input and unmappable-character
  sequences with this charset's default replacement string.  The `],
-					[/* reference */ 'r', `java.nio.charset.CharsetDecoder`],
+					[/* reference */ 'r', `java.nio.charset.CharsetDecoder`, `CharsetDecoder`],
 					[/* text */ 't', ` class should be used when more control
  over the decoding process is required.`]
 				]]
@@ -406,7 +406,7 @@ DocsCollector.collect('java.lang.String', [
 				]],
 				[/* parameter */ 'charset', [/* parameter description */
 					[/* text */ 't', `The `],
-					[/* reference */ 'r', `java.nio.charset.Charset`],
+					[/* reference */ 'r', `java.nio.charset.Charset`, `charset`],
 					[/* text */ 't', ` to be used to
          decode the `],
 					[/* inline code block */ 'i', `bytes`]
@@ -432,7 +432,7 @@ DocsCollector.collect('java.lang.String', [
 				[/* inline code block */ 'i', `String`],
 				[/* text */ 't', ` by decoding the specified array of bytes
  using the specified `],
-				[/* reference */ 'r', `java.nio.charset.Charset`],
+				[/* reference */ 'r', `java.nio.charset.Charset`, `charset`],
 				[/* text */ 't', `.  The
  length of the new `],
 				[/* inline code block */ 'i', `String`],
@@ -443,7 +443,7 @@ DocsCollector.collect('java.lang.String', [
 				[/* block */ 'b', [
 					[/* text */ 't', ` The behavior of this constructor when the given bytes are not valid
  in the given charset is unspecified.  The `],
-					[/* reference */ 'r', `java.nio.charset.CharsetDecoder`],
+					[/* reference */ 'r', `java.nio.charset.CharsetDecoder`, `CharsetDecoder`],
 					[/* text */ 't', ` class should be used when more control
  over the decoding process is required.`]
 				]]
@@ -454,7 +454,7 @@ DocsCollector.collect('java.lang.String', [
 				]],
 				[/* parameter */ 'charsetName', [/* parameter description */
 					[/* text */ 't', `The name of a supported `],
-					[/* reference */ 'r', `java.nio.charset.Charset`]
+					[/* reference */ 'r', `java.nio.charset.Charset`, `charset`]
 				]]
 			],
 			[/* throws */
@@ -469,7 +469,7 @@ DocsCollector.collect('java.lang.String', [
 				[/* inline code block */ 'i', `String`],
 				[/* text */ 't', ` by decoding the specified array of
  bytes using the specified `],
-				[/* reference */ 'r', `java.nio.charset.Charset`],
+				[/* reference */ 'r', `java.nio.charset.Charset`, `charset`],
 				[/* text */ 't', `.
  The length of the new `],
 				[/* inline code block */ 'i', `String`],
@@ -480,7 +480,7 @@ DocsCollector.collect('java.lang.String', [
 				[/* block */ 'b', [
 					[/* text */ 't', ` This method always replaces malformed-input and unmappable-character
  sequences with this charset's default replacement string.  The `],
-					[/* reference */ 'r', `java.nio.charset.CharsetDecoder`],
+					[/* reference */ 'r', `java.nio.charset.CharsetDecoder`, `CharsetDecoder`],
 					[/* text */ 't', ` class should be used when more control
  over the decoding process is required.`]
 				]]
@@ -491,7 +491,7 @@ DocsCollector.collect('java.lang.String', [
 				]],
 				[/* parameter */ 'charset', [/* parameter description */
 					[/* text */ 't', `The `],
-					[/* reference */ 'r', `java.nio.charset.Charset`],
+					[/* reference */ 'r', `java.nio.charset.Charset`, `charset`],
 					[/* text */ 't', ` to be used to
          decode the `],
 					[/* inline code block */ 'i', `bytes`]
@@ -561,7 +561,7 @@ DocsCollector.collect('java.lang.String', [
 				[/* inline code block */ 'i', `String`],
 				[/* text */ 't', ` that contains characters from a subarray
  of the `],
-				[/* reference */ 'r', `.Character#unicode`],
+				[/* reference */ 'r', `java.lang.Character#unicode`, `Unicode code point`],
 				[/* text */ 't', ` array
  argument.  The `],
 				[/* inline code block */ 'i', `offset`],
@@ -734,7 +734,7 @@ DocsCollector.collect('java.lang.String', [
 				[/* block */ 'b', [
 					[/* text */ 't', `For finer-grained String comparison, refer to
  `],
-					[/* reference */ 'r', `java.text.Collator`],
+					[/* reference */ 'r', `java.text.Collator`, `Collator`],
 					[/* text */ 't', `.`]
 				]]
 			],
@@ -777,7 +777,7 @@ DocsCollector.collect('java.lang.String', [
 				[/* block */ 'b', [
 					[/* text */ 't', `For finer-grained String comparison, refer to
  `],
-					[/* reference */ 'r', `java.text.Collator`],
+					[/* reference */ 'r', `java.text.Collator`, `Collator`],
 					[/* text */ 't', `.`]
 				]]
 			],
@@ -847,7 +847,7 @@ DocsCollector.collect('java.lang.String', [
 				[/* block */ 'b', [
 					[/* text */ 't', `For finer-grained String comparison, refer to
  `],
-					[/* reference */ 'r', `java.text.Collator`],
+					[/* reference */ 'r', `java.text.Collator`, `Collator`],
 					[/* text */ 't', `.`]
 				]]
 			],
@@ -907,7 +907,7 @@ DocsCollector.collect('java.lang.String', [
 					[/* text */ 't', ` take locale into account, and
  will result in unsatisfactory results for certain locales.  The
  `],
-					[/* reference */ 'r', `java.text.Collator`],
+					[/* reference */ 'r', `java.text.Collator`, `Collator`],
 					[/* text */ 't', ` class provides locale-sensitive comparison.`]
 				]]
 			],
@@ -939,7 +939,7 @@ DocsCollector.collect('java.lang.String', [
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if the string is empty or contains only
  `],
-				[/* reference */ 'r', `.Character#isWhitespace(int)`],
+				[/* reference */ 'r', `java.lang.Character#isWhitespace(int)`, `white space`],
 				[/* text */ 't', ` codepoints,
  otherwise `],
 				[/* inline code block */ 'i', `false`],
@@ -951,7 +951,7 @@ DocsCollector.collect('java.lang.String', [
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if the string is empty or contains only
          `],
-				[/* reference */ 'r', `.Character#isWhitespace(int)`],
+				[/* reference */ 'r', `java.lang.Character#isWhitespace(int)`, `white space`],
 				[/* text */ 't', ` codepoints,
          otherwise `],
 				[/* inline code block */ 'i', `false`]
@@ -983,7 +983,7 @@ DocsCollector.collect('java.lang.String', [
 		[/* method */ 'matches(java.lang.String)', [
 			[/* method description */
 				[/* text */ 't', `Tells whether or not this string matches the given `],
-				[/* reference */ 'r', `java.regex.Pattern#sum`],
+				[/* reference */ 'r', `java.util.regex.Pattern#sum`, `regular expression`],
 				[/* text */ 't', `.
 
  `],
@@ -1000,9 +1000,9 @@ DocsCollector.collect('java.lang.String', [
  `]
 				]],
 				[/* block */ 'b', [
-					[/* reference */ 'r', `java.util.regex.Pattern`],
+					[/* reference */ 'r', `java.util.regex.Pattern`, `Pattern`],
 					[/* text */ 't', `.`],
-					[/* reference */ 'r', `java.regex.Pattern#matches(java.lang.String,java.lang.CharSequence)`]
+					[/* reference */ 'r', `java.util.regex.Pattern#matches(java.lang.String,java.lang.CharSequence)`, `matches(regex, str)`]
 				]],
 				[/* block */ 'b', '']
 			],
@@ -1100,8 +1100,8 @@ DocsCollector.collect('java.lang.String', [
 						[/* inline code block */ 'i', `true`],
 						[/* text */ 't', `,
  `],
-						[/* reference */ 'r', `.Character#toLowerCase(int)`],
-						[/* reference */ 'r', `.Character#toUpperCase(int)`],
+						[/* reference */ 'r', `java.lang.Character#toLowerCase(int)`, `Character.toLowerCase(`],
+						[/* reference */ 'r', `java.lang.Character#toUpperCase(int)`, `Character.toUpperCase(int)`],
 						[/* inline code block */ 'i', `)`],
 						[/* text */ 't', ` on all pairs of Unicode code points
  results in equal integer values.
@@ -1119,7 +1119,7 @@ DocsCollector.collect('java.lang.String', [
 					[/* text */ 't', ` is `],
 					[/* inline code block */ 'i', `true`],
 					[/* text */ 't', `.  The `],
-					[/* reference */ 'r', `java.text.Collator`],
+					[/* reference */ 'r', `java.text.Collator`, `Collator`],
 					[/* text */ 't', ` class
  provides locale-sensitive comparison.`]
 				]]
@@ -1239,7 +1239,7 @@ DocsCollector.collect('java.lang.String', [
 					[/* text */ 't', `not`],
 					[/* text */ 't', ` take locale into account.  The
  `],
-					[/* reference */ 'r', `java.text.Collator`],
+					[/* reference */ 'r', `java.text.Collator`, `Collator`],
 					[/* text */ 't', ` class provides locale-sensitive comparison.`]
 				]]
 			],
@@ -1346,7 +1346,7 @@ DocsCollector.collect('java.lang.String', [
 				[/* block */ 'b', [
 					[/* text */ 't', ` The behavior of this method when this string cannot be encoded in
  the default charset is unspecified.  The `],
-					[/* reference */ 'r', `java.nio.charset.CharsetEncoder`],
+					[/* reference */ 'r', `java.nio.charset.CharsetEncoder`, `CharsetEncoder`],
 					[/* text */ 't', ` class should be used when more control
  over the encoding process is required.`]
 				]]
@@ -1368,7 +1368,7 @@ DocsCollector.collect('java.lang.String', [
 				[/* block */ 'b', [
 					[/* text */ 't', ` The behavior of this method when this string cannot be encoded in
  the given charset is unspecified.  The `],
-					[/* reference */ 'r', `java.nio.charset.CharsetEncoder`],
+					[/* reference */ 'r', `java.nio.charset.CharsetEncoder`, `CharsetEncoder`],
 					[/* text */ 't', ` class should be used when more control
  over the encoding process is required.`]
 				]]
@@ -1376,7 +1376,7 @@ DocsCollector.collect('java.lang.String', [
 			[/* parameters */
 				[/* parameter */ 'charsetName', [/* parameter description */
 					[/* text */ 't', `The name of a supported `],
-					[/* reference */ 'r', `java.nio.charset.Charset`]
+					[/* reference */ 'r', `java.nio.charset.Charset`, `charset`]
 				]]
 			],
 			[/* throws */
@@ -1394,7 +1394,7 @@ DocsCollector.collect('java.lang.String', [
 				[/* inline code block */ 'i', `String`],
 				[/* text */ 't', ` into a sequence of bytes using the given
  `],
-				[/* reference */ 'r', `java.nio.charset.Charset`],
+				[/* reference */ 'r', `java.nio.charset.Charset`, `charset`],
 				[/* text */ 't', `, storing the result into a
  new byte array.
 
@@ -1403,7 +1403,7 @@ DocsCollector.collect('java.lang.String', [
 					[/* text */ 't', ` This method always replaces malformed-input and unmappable-character
  sequences with this charset's default replacement byte array.  The
  `],
-					[/* reference */ 'r', `java.nio.charset.CharsetEncoder`],
+					[/* reference */ 'r', `java.nio.charset.CharsetEncoder`, `CharsetEncoder`],
 					[/* text */ 't', ` class should be used when more
  control over the encoding process is required.`]
 				]]
@@ -1411,7 +1411,7 @@ DocsCollector.collect('java.lang.String', [
 			[/* parameters */
 				[/* parameter */ 'charset', [/* parameter description */
 					[/* text */ 't', `The `],
-					[/* reference */ 'r', `java.nio.charset.Charset`],
+					[/* reference */ 'r', `java.nio.charset.Charset`, `Charset`],
 					[/* text */ 't', ` to be used to encode
          the `],
 					[/* inline code block */ 'i', `String`]
@@ -1448,7 +1448,7 @@ DocsCollector.collect('java.lang.String', [
 					[/* inline code block */ 'i', `char`],
 					[/* text */ 't', ` value specified by the index is a
  `],
-					[/* reference */ 'r', `.Character#unicode`],
+					[/* reference */ 'r', `java.lang.Character#unicode`, `surrogate`],
 					[/* text */ 't', `, the surrogate
  value is returned.`]
 				]]
@@ -1556,7 +1556,7 @@ DocsCollector.collect('java.lang.String', [
  (Unicode code units) and ranges from `],
 				[/* inline code block */ 'i', `1`],
 				[/* text */ 't', ` to `],
-				[/* reference */ 'r', `.CharSequence#length()`],
+				[/* reference */ 'r', `java.lang.CharSequence#length()`, `length`],
 				[/* text */ 't', `.
 
  `],
@@ -1732,7 +1732,7 @@ DocsCollector.collect('java.lang.String', [
 				[/* block */ 'b', [
 					[/* text */ 't', `For finer-grained String comparison, refer to
  `],
-					[/* reference */ 'r', `java.text.Collator`],
+					[/* reference */ 'r', `java.text.Collator`, `Collator`],
 					[/* text */ 't', `.`]
 				]]
 			],
@@ -1778,7 +1778,7 @@ DocsCollector.collect('java.lang.String', [
 					[/* text */ 't', ` take locale into account,
  and will result in an unsatisfactory ordering for certain locales.
  The `],
-					[/* reference */ 'r', `java.text.Collator`],
+					[/* reference */ 'r', `java.text.Collator`, `Collator`],
 					[/* text */ 't', ` class provides locale-sensitive comparison.`]
 				]]
 			],
@@ -2309,7 +2309,7 @@ DocsCollector.collect('java.lang.String', [
 			[/* method description */
 				[/* text */ 't', `Returns the length of this string.
  The length is equal to the number of `],
-				[/* reference */ 'r', `.Character#unicode`],
+				[/* reference */ 'r', `java.lang.Character#unicode`, `Unicode code units`],
 				[/* text */ 't', ` in the string.`]
 			],
 			/* parameters */ UDF,
@@ -2526,12 +2526,12 @@ DocsCollector.collect('java.lang.String', [
 					[/* inline code block */ 'i', `n < 0`],
 					[/* text */ 't', ` then up to `],
 					[/* inline code block */ 'i', `n`],
-					[/* reference */ 'r', `.Character#isWhitespace(int)`],
+					[/* reference */ 'r', `java.lang.Character#isWhitespace(int)`, `white space characters`],
 					[/* text */ 't', ` are removed
  from the beginning of each line. If a given line does not contain
  sufficient white space then all leading
  `],
-					[/* reference */ 'r', `.Character#isWhitespace(int)`],
+					[/* reference */ 'r', `java.lang.Character#isWhitespace(int)`, `white space characters`],
 					[/* text */ 't', ` are removed.
  Each white space character is treated as a single character. In
  particular, the tab character `],
@@ -2552,7 +2552,7 @@ DocsCollector.collect('java.lang.String', [
 				[/* parameter */ 'n', [/* parameter description */
 					[/* text */ 't', `number of leading
            `],
-					[/* reference */ 'r', `.Character#isWhitespace(int)`],
+					[/* reference */ 'r', `java.lang.Character#isWhitespace(int)`, `white space characters`],
 					[/* text */ 't', `
            to add or remove`]
 				]]
@@ -2686,7 +2686,7 @@ DocsCollector.collect('java.lang.String', [
 		[/* method */ 'replaceAll(java.lang.String,java.lang.String)', [
 			[/* method description */
 				[/* text */ 't', `Replaces each substring of this string that matches the given `],
-				[/* reference */ 'r', `java.regex.Pattern#sum`],
+				[/* reference */ 'r', `java.util.regex.Pattern#sum`, `regular expression`],
 				[/* text */ 't', ` with the
  given replacement.
 
@@ -2719,10 +2719,10 @@ DocsCollector.collect('java.lang.String', [
  replacement string may cause the results to be different than if it were
  being treated as a literal replacement string; see
  `],
-					[/* reference */ 'r', `java.regex.Matcher#replaceAll(java.lang.String)`],
+					[/* reference */ 'r', `java.util.regex.Matcher#replaceAll(java.lang.String)`, `Matcher.replaceAll`],
 					[/* text */ 't', `.
  Use `],
-					[/* reference */ 'r', `java.regex.Matcher#quoteReplacement(java.lang.String)`],
+					[/* reference */ 'r', `java.util.regex.Matcher#quoteReplacement(java.lang.String)`, `Matcher.quoteReplacement(java.lang.String)`],
 					[/* text */ 't', ` to suppress the special
  meaning of these characters, if desired.`]
 				]]
@@ -2748,7 +2748,7 @@ DocsCollector.collect('java.lang.String', [
 		[/* method */ 'replaceFirst(java.lang.String,java.lang.String)', [
 			[/* method description */
 				[/* text */ 't', `Replaces the first substring of this string that matches the given `],
-				[/* reference */ 'r', `java.regex.Pattern#sum`],
+				[/* reference */ 'r', `java.util.regex.Pattern#sum`, `regular expression`],
 				[/* text */ 't', ` with the
  given replacement.
 
@@ -2781,10 +2781,10 @@ DocsCollector.collect('java.lang.String', [
  replacement string may cause the results to be different than if it were
  being treated as a literal replacement string; see
  `],
-					[/* reference */ 'r', `java.regex.Matcher#replaceFirst(java.lang.String)`],
+					[/* reference */ 'r', `java.util.regex.Matcher#replaceFirst(java.lang.String)`, `Matcher.replaceFirst(java.lang.String)`],
 					[/* text */ 't', `.
  Use `],
-					[/* reference */ 'r', `java.regex.Matcher#quoteReplacement(java.lang.String)`],
+					[/* reference */ 'r', `java.util.regex.Matcher#quoteReplacement(java.lang.String)`, `Matcher.quoteReplacement(java.lang.String)`],
 					[/* text */ 't', ` to suppress the special
  meaning of these characters, if desired.`]
 				]]
@@ -2810,7 +2810,7 @@ DocsCollector.collect('java.lang.String', [
 		[/* method */ 'resolveConstantDesc(java.lang.invoke.MethodHandles.Lookup)', [
 			[/* method description */
 				[/* text */ 't', `Resolves this instance as a `],
-				[/* reference */ 'r', `java.lang.constant.ConstantDesc`],
+				[/* reference */ 'r', `java.lang.constant.ConstantDesc`, `ConstantDesc`],
 				[/* text */ 't', `, the result of which is
  the instance itself.`]
 			],
@@ -2822,7 +2822,7 @@ DocsCollector.collect('java.lang.String', [
 			/* throws */ UDF,
 			[/* return description */
 				[/* text */ 't', `the `],
-				[/* reference */ 'r', `java.lang.String`],
+				[/* reference */ 'r', `java.lang.String`, `String`],
 				[/* text */ 't', ` instance`]
 			]
 		]],
@@ -2830,7 +2830,7 @@ DocsCollector.collect('java.lang.String', [
 			[/* method description */
 				[/* text */ 't', `Returns a string whose value is this string, with all leading
  and trailing `],
-				[/* reference */ 'r', `.Character#isWhitespace(int)`],
+				[/* reference */ 'r', `java.lang.Character#isWhitespace(int)`, `white space`],
 				[/* text */ 't', `
  removed.
  `],
@@ -2841,7 +2841,7 @@ DocsCollector.collect('java.lang.String', [
 					[/* text */ 't', ` object represents an empty string,
  or if all code points in this string are
  `],
-					[/* reference */ 'r', `.Character#isWhitespace(int)`],
+					[/* reference */ 'r', `java.lang.Character#isWhitespace(int)`, `white space`],
 					[/* text */ 't', `, then an empty string
  is returned.
  `]
@@ -2850,11 +2850,11 @@ DocsCollector.collect('java.lang.String', [
 					[/* text */ 't', `
  Otherwise, returns a substring of this string beginning with the first
  code point that is not a `],
-					[/* reference */ 'r', `.Character#isWhitespace(int)`],
+					[/* reference */ 'r', `java.lang.Character#isWhitespace(int)`, `white space`],
 					[/* text */ 't', `
  up to and including the last code point that is not a
  `],
-					[/* reference */ 'r', `.Character#isWhitespace(int)`],
+					[/* reference */ 'r', `java.lang.Character#isWhitespace(int)`, `white space`],
 					[/* text */ 't', `.
  `]
 				]],
@@ -2862,7 +2862,7 @@ DocsCollector.collect('java.lang.String', [
 					[/* text */ 't', `
  This method may be used to strip
  `],
-					[/* reference */ 'r', `.Character#isWhitespace(int)`],
+					[/* reference */ 'r', `java.lang.Character#isWhitespace(int)`, `white space`],
 					[/* text */ 't', ` from
  the beginning and end of a string.`]
 				]]
@@ -2878,19 +2878,19 @@ DocsCollector.collect('java.lang.String', [
 			[/* method description */
 				[/* text */ 't', `Returns a string whose value is this string, with incidental
  `],
-				[/* reference */ 'r', `.Character#isWhitespace(int)`],
+				[/* reference */ 'r', `java.lang.Character#isWhitespace(int)`, `white space`],
 				[/* text */ 't', ` removed from
  the beginning and end of every line.
  `],
 				[/* block */ 'b', [
 					[/* text */ 't', `
  Incidental `],
-					[/* reference */ 'r', `.Character#isWhitespace(int)`],
+					[/* reference */ 'r', `java.lang.Character#isWhitespace(int)`, `white space`],
 					[/* text */ 't', `
  is often present in a text block to align the content with the opening
  delimiter. For example, in the following code, dots represent incidental
  `],
-					[/* reference */ 'r', `.Character#isWhitespace(int)`],
+					[/* reference */ 'r', `java.lang.Character#isWhitespace(int)`, `white space`],
 					[/* text */ 't', `:
  `]
 				]],
@@ -2907,7 +2907,7 @@ DocsCollector.collect('java.lang.String', [
 				[/* text */ 't', `
  This method treats the incidental
  `],
-				[/* reference */ 'r', `.Character#isWhitespace(int)`],
+				[/* reference */ 'r', `java.lang.Character#isWhitespace(int)`, `white space`],
 				[/* text */ 't', ` as indentation to be
  stripped, producing a string that preserves the relative indentation of
  the content. Using | to visualize the start of each line of the string:
@@ -2948,7 +2948,7 @@ DocsCollector.collect('java.lang.String', [
 							[/* reference */ 'r', `#isBlank()`, `isBlank()`],
 							[/* text */ 't', `),
    the leading `],
-							[/* reference */ 'r', `.Character#isWhitespace(int)`],
+							[/* reference */ 'r', `java.lang.Character#isWhitespace(int)`, `white space`],
 							[/* text */ 't', `
    characters are counted.`]
 						]]
@@ -2956,7 +2956,7 @@ DocsCollector.collect('java.lang.String', [
 					[/* block */ 'b', [
 						[/* block */ 'b', [
 							[/* text */ 't', `The leading `],
-							[/* reference */ 'r', `.Character#isWhitespace(int)`],
+							[/* reference */ 'r', `java.lang.Character#isWhitespace(int)`, `white space`],
 							[/* text */ 't', `
    characters on the last line are also counted even if
    `],
@@ -2980,10 +2980,10 @@ DocsCollector.collect('java.lang.String', [
 					[/* text */ 't', `min`],
 					[/* text */ 't', ` leading
  `],
-					[/* reference */ 'r', `.Character#isWhitespace(int)`],
+					[/* reference */ 'r', `java.lang.Character#isWhitespace(int)`, `white space`],
 					[/* text */ 't', ` characters are
  removed, and any trailing `],
-					[/* reference */ 'r', `.Character#isWhitespace(int)`],
+					[/* reference */ 'r', `java.lang.Character#isWhitespace(int)`, `white space`],
 					[/* text */ 't', ` characters are removed. `],
 					[/* reference */ 'r', `#isBlank()`, `Blank`],
 					[/* text */ 't', ` lines
@@ -3010,7 +3010,7 @@ DocsCollector.collect('java.lang.String', [
 			[/* method description */
 				[/* text */ 't', `Returns a string whose value is this string, with all leading
  `],
-				[/* reference */ 'r', `.Character#isWhitespace(int)`],
+				[/* reference */ 'r', `java.lang.Character#isWhitespace(int)`, `white space`],
 				[/* text */ 't', ` removed.
  `],
 				[/* block */ 'b', [
@@ -3020,7 +3020,7 @@ DocsCollector.collect('java.lang.String', [
 					[/* text */ 't', ` object represents an empty string,
  or if all code points in this string are
  `],
-					[/* reference */ 'r', `.Character#isWhitespace(int)`],
+					[/* reference */ 'r', `java.lang.Character#isWhitespace(int)`, `white space`],
 					[/* text */ 't', `, then an empty string
  is returned.
  `]
@@ -3029,7 +3029,7 @@ DocsCollector.collect('java.lang.String', [
 					[/* text */ 't', `
  Otherwise, returns a substring of this string beginning with the first
  code point that is not a `],
-					[/* reference */ 'r', `.Character#isWhitespace(int)`],
+					[/* reference */ 'r', `java.lang.Character#isWhitespace(int)`, `white space`],
 					[/* text */ 't', `
  up to and including the last code point of this string.
  `]
@@ -3038,7 +3038,7 @@ DocsCollector.collect('java.lang.String', [
 					[/* text */ 't', `
  This method may be used to trim
  `],
-					[/* reference */ 'r', `.Character#isWhitespace(int)`],
+					[/* reference */ 'r', `java.lang.Character#isWhitespace(int)`, `white space`],
 					[/* text */ 't', ` from
  the beginning of a string.`]
 				]]
@@ -3054,7 +3054,7 @@ DocsCollector.collect('java.lang.String', [
 			[/* method description */
 				[/* text */ 't', `Returns a string whose value is this string, with all trailing
  `],
-				[/* reference */ 'r', `.Character#isWhitespace(int)`],
+				[/* reference */ 'r', `java.lang.Character#isWhitespace(int)`, `white space`],
 				[/* text */ 't', ` removed.
  `],
 				[/* block */ 'b', [
@@ -3064,7 +3064,7 @@ DocsCollector.collect('java.lang.String', [
 					[/* text */ 't', ` object represents an empty string,
  or if all characters in this string are
  `],
-					[/* reference */ 'r', `.Character#isWhitespace(int)`],
+					[/* reference */ 'r', `java.lang.Character#isWhitespace(int)`, `white space`],
 					[/* text */ 't', `, then an empty string
  is returned.
  `]
@@ -3074,7 +3074,7 @@ DocsCollector.collect('java.lang.String', [
  Otherwise, returns a substring of this string beginning with the first
  code point of this string up to and including the last code point
  that is not a `],
-					[/* reference */ 'r', `.Character#isWhitespace(int)`],
+					[/* reference */ 'r', `java.lang.Character#isWhitespace(int)`, `white space`],
 					[/* text */ 't', `.
  `]
 				]],
@@ -3082,7 +3082,7 @@ DocsCollector.collect('java.lang.String', [
 					[/* text */ 't', `
  This method may be used to trim
  `],
-					[/* reference */ 'r', `.Character#isWhitespace(int)`],
+					[/* reference */ 'r', `java.lang.Character#isWhitespace(int)`, `white space`],
 					[/* text */ 't', ` from
  the end of a string.`]
 				]]
@@ -3232,7 +3232,7 @@ DocsCollector.collect('java.lang.String', [
 				[/* inline code block */ 'i', `Locale`],
 				[/* text */ 't', `.  Case mapping is based
  on the Unicode Standard version specified by the `],
-				[/* reference */ 'r', `java.lang.Character`],
+				[/* reference */ 'r', `java.lang.Character`, `Character`],
 				[/* text */ 't', `
  class. Since case mappings are not always 1:1 char mappings, the resulting
  `],
@@ -3393,7 +3393,7 @@ DocsCollector.collect('java.lang.String', [
 				[/* inline code block */ 'i', `Locale`],
 				[/* text */ 't', `. Case mapping is based
  on the Unicode Standard version specified by the `],
-				[/* reference */ 'r', `java.lang.Character`],
+				[/* reference */ 'r', `java.lang.Character`, `Character`],
 				[/* text */ 't', `
  class. Since case mappings are not always 1:1 char mappings, the resulting
  `],
@@ -3726,7 +3726,7 @@ DocsCollector.collect('java.lang.String', [
 		[/* method */ 'split(java.lang.String)', [
 			[/* method description */
 				[/* text */ 't', `Splits this string around matches of the given `],
-				[/* reference */ 'r', `java.regex.Pattern#sum`],
+				[/* reference */ 'r', `java.util.regex.Pattern#sum`, `regular expression`],
 				[/* text */ 't', `.
 
  `],
@@ -3801,7 +3801,7 @@ DocsCollector.collect('java.lang.String', [
 			[/* method description */
 				[/* text */ 't', `Splits this string around matches of the given
  `],
-				[/* reference */ 'r', `java.regex.Pattern#sum`],
+				[/* reference */ 'r', `java.util.regex.Pattern#sum`, `regular expression`],
 				[/* text */ 't', `.
 
  `],
@@ -3988,7 +3988,7 @@ DocsCollector.collect('java.lang.String', [
 		[/* method */ 'describeConstable()', [
 			[/* method description */
 				[/* text */ 't', `Returns an `],
-				[/* reference */ 'r', `java.util.Optional`],
+				[/* reference */ 'r', `java.util.Optional`, `Optional`],
 				[/* text */ 't', ` containing the nominal descriptor for this
  instance, which is the instance itself.`]
 			],
@@ -3996,9 +3996,9 @@ DocsCollector.collect('java.lang.String', [
 			/* throws */ UDF,
 			[/* return description */
 				[/* text */ 't', `an `],
-				[/* reference */ 'r', `java.util.Optional`],
+				[/* reference */ 'r', `java.util.Optional`, `Optional`],
 				[/* text */ 't', ` describing the `],
-				[/* reference */ 'r', `java.lang.String`],
+				[/* reference */ 'r', `java.lang.String`, `String`],
 				[/* text */ 't', ` instance`]
 			]
 		]],
@@ -4010,7 +4010,7 @@ DocsCollector.collect('java.lang.String', [
 				[/* inline code block */ 'i', `char`],
 				[/* text */ 't', ` values
  from this sequence.  Any char which maps to a `],
-				[/* text */ 't', `surrogate code point`],
+				[/* reference */ 'r', `java.lang.Character#unicode`, `surrogate code point`],
 				[/* text */ 't', ` is passed through uninterpreted.`]
 			],
 			/* parameters */ UDF,
@@ -4023,7 +4023,7 @@ DocsCollector.collect('java.lang.String', [
 			[/* method description */
 				[/* text */ 't', `Returns a stream of code point values from this sequence.  Any surrogate
  pairs encountered in the sequence are combined as if by `],
-				[/* reference */ 'r', `.Character#toCodePoint(char,char)`],
+				[/* reference */ 'r', `java.lang.Character#toCodePoint(char,char)`, `Character.toCodePoint`],
 				[/* text */ 't', ` and the result is passed
  to the stream. Any other code units, including ordinary BMP characters,
  unpaired surrogates, and undefined code units, are zero-extended to
@@ -4212,17 +4212,17 @@ DocsCollector.collect('java.lang.String', [
  `],
 				[/* block */ 'b', [
 					[/* text */ 't', ` The locale always used is the one returned by `],
-					[/* reference */ 'r', `java.Locale#getDefault(java.util.Locale.Category)`],
+					[/* reference */ 'r', `java.util.Locale#getDefault(java.util.Locale.Category)`, `Locale.getDefault(Locale.Category)`],
 					[/* text */ 't', ` with
  `],
-					[/* reference */ 'r', `java.Locale.Category#FORMAT`],
+					[/* reference */ 'r', `java.util.Locale.Category#FORMAT`, `FORMAT`],
 					[/* text */ 't', ` category specified.`]
 				]]
 			],
 			[/* parameters */
 				[/* parameter */ 'format', [/* parameter description */
 					[/* text */ 't', `A `],
-					[/* reference */ 'r', `java.Formatter#syntax`]
+					[/* reference */ 'r', `java.util.Formatter#syntax`, `format string`]
 				]],
 				[/* parameter */ 'args', [/* parameter description */
 					[/* text */ 't', `Arguments referenced by the format specifiers in the format
@@ -4237,7 +4237,7 @@ DocsCollector.collect('java.lang.String', [
          `],
 					[/* inline code block */ 'i', `null`],
 					[/* text */ 't', ` argument depends on the `],
-					[/* reference */ 'r', `java.Formatter#syntax`],
+					[/* reference */ 'r', `java.util.Formatter#syntax`, `conversion`],
 					[/* text */ 't', `.`]
 				]]
 			],
@@ -4248,7 +4248,7 @@ DocsCollector.collect('java.lang.String', [
           insufficient arguments given the format string, or other
           illegal conditions.  For specification of all possible
           formatting errors, see the `],
-					[/* reference */ 'r', `java.Formatter#detail`],
+					[/* reference */ 'r', `java.util.Formatter#detail`, `Details`],
 					[/* text */ 't', ` section of the
           formatter class specification.`]
 				]]
@@ -4265,7 +4265,7 @@ DocsCollector.collect('java.lang.String', [
 			[/* parameters */
 				[/* parameter */ 'l', [/* parameter description */
 					[/* text */ 't', `The `],
-					[/* reference */ 'r', `java.util.Locale`],
+					[/* reference */ 'r', `java.util.Locale`, `locale`],
 					[/* text */ 't', ` to apply during
          formatting.  If `],
 					[/* inline code block */ 'i', `l`],
@@ -4276,7 +4276,7 @@ DocsCollector.collect('java.lang.String', [
 				]],
 				[/* parameter */ 'format', [/* parameter description */
 					[/* text */ 't', `A `],
-					[/* reference */ 'r', `java.Formatter#syntax`]
+					[/* reference */ 'r', `java.util.Formatter#syntax`, `format string`]
 				]],
 				[/* parameter */ 'args', [/* parameter description */
 					[/* text */ 't', `Arguments referenced by the format specifiers in the format
@@ -4292,7 +4292,7 @@ DocsCollector.collect('java.lang.String', [
 					[/* inline code block */ 'i', `null`],
 					[/* text */ 't', ` argument depends on the
          `],
-					[/* reference */ 'r', `java.Formatter#syntax`],
+					[/* reference */ 'r', `java.util.Formatter#syntax`, `conversion`],
 					[/* text */ 't', `.`]
 				]]
 			],
@@ -4303,7 +4303,7 @@ DocsCollector.collect('java.lang.String', [
           insufficient arguments given the format string, or other
           illegal conditions.  For specification of all possible
           formatting errors, see the `],
-					[/* reference */ 'r', `java.Formatter#detail`],
+					[/* reference */ 'r', `java.util.Formatter#detail`, `Details`],
 					[/* text */ 't', ` section of the
           formatter class specification`]
 				]]

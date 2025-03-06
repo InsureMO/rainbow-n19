@@ -79,7 +79,7 @@ DocsCollector.collect('java.util.Timer', [
 			[/* inline code block */ 'i', `java.util.concurrent`],
 			[/* text */ 't', ` package and
  one of the concurrency utilities therein is the `],
-			[/* reference */ 'r', `java.util.concurrent.ScheduledThreadPoolExecutor`],
+			[/* reference */ 'r', `java.util.concurrent.ScheduledThreadPoolExecutor`, `ScheduledThreadPoolExecutor`],
 			[/* text */ 't', ` which is a thread pool for repeatedly
  executing tasks at a given rate or delay.  It is effectively a more
  versatile replacement for the `],
@@ -116,7 +116,7 @@ DocsCollector.collect('java.util.Timer', [
 			[/* constructor description */
 				[/* text */ 't', `Creates a new timer.  The associated thread does `],
 				[/* text */ 't', `not`],
-				[/* reference */ 'r', `java.Thread#setDaemon(boolean)`],
+				[/* reference */ 'r', `java.lang.Thread#setDaemon(boolean)`, `run as a daemon`],
 				[/* text */ 't', `.`]
 			],
 			/* parameters */ UDF,
@@ -126,7 +126,7 @@ DocsCollector.collect('java.util.Timer', [
 			[/* constructor description */
 				[/* text */ 't', `Creates a new timer whose associated thread may be specified to
  `],
-				[/* reference */ 'r', `java.Thread#setDaemon(boolean)`],
+				[/* reference */ 'r', `java.lang.Thread#setDaemon(boolean)`, `run as a daemon`],
 				[/* text */ 't', `.
  A daemon thread is called for if the timer will be used to
  schedule repeating "maintenance activities", which must be
@@ -145,7 +145,7 @@ DocsCollector.collect('java.util.Timer', [
 				[/* text */ 't', `Creates a new timer whose associated thread has the specified name.
  The associated thread does `],
 				[/* text */ 't', `not`],
-				[/* reference */ 'r', `java.Thread#setDaemon(boolean)`],
+				[/* reference */ 'r', `java.lang.Thread#setDaemon(boolean)`, `run as a daemon`],
 				[/* text */ 't', `.`]
 			],
 			[/* parameters */
@@ -166,7 +166,7 @@ DocsCollector.collect('java.util.Timer', [
 				[/* text */ 't', `Creates a new timer whose associated thread has the specified name,
  and may be specified to
  `],
-				[/* reference */ 'r', `java.Thread#setDaemon(boolean)`],
+				[/* reference */ 'r', `java.lang.Thread#setDaemon(boolean)`, `run as a daemon`],
 				[/* text */ 't', `.`]
 			],
 			[/* parameters */

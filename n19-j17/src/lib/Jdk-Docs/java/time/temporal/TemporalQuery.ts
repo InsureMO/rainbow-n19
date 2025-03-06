@@ -15,7 +15,7 @@ DocsCollector.collect('java.time.temporal.TemporalQuery', [
 		[/* block */ 'b', [
 			[/* text */ 't', `
  The `],
-			[/* reference */ 'r', `java.time.temporal.TemporalField`],
+			[/* reference */ 'r', `java.time.temporal.TemporalField`, `TemporalField`],
 			[/* text */ 't', ` interface provides another mechanism for querying
  temporal objects. That interface is limited to returning a `],
 			[/* inline code block */ 'i', `long`],
@@ -30,7 +30,7 @@ DocsCollector.collect('java.time.temporal.TemporalQuery', [
 			[/* text */ 't', `.
  The first is to invoke the method on this interface directly.
  The second is to use `],
-			[/* reference */ 'r', `.TemporalAccessor#query(java.time.temporal.TemporalQuery)`],
+			[/* reference */ 'r', `java.time.temporal.TemporalAccessor#query(java.time.temporal.TemporalQuery)`, `TemporalAccessor.query(TemporalQuery)`],
 			[/* text */ 't', `:
  `]
 		]],
@@ -54,7 +54,7 @@ DocsCollector.collect('java.time.temporal.TemporalQuery', [
 			[/* inline code block */ 'i', `ZoneId::from`],
 			[/* text */ 't', `.
  Additional common queries are provided as static methods in `],
-			[/* reference */ 'r', `java.time.temporal.TemporalQueries`],
+			[/* reference */ 'r', `java.time.temporal.TemporalQueries`, `TemporalQueries`],
 			[/* text */ 't', `.`]
 		]]
 	],
@@ -76,7 +76,7 @@ DocsCollector.collect('java.time.temporal.TemporalQuery', [
  There are two equivalent ways of using this method.
  The first is to invoke this method directly.
  The second is to use `],
-					[/* reference */ 'r', `.TemporalAccessor#query(java.time.temporal.TemporalQuery)`],
+					[/* reference */ 'r', `java.time.temporal.TemporalAccessor#query(java.time.temporal.TemporalQuery)`, `TemporalAccessor.query(TemporalQuery)`],
 					[/* text */ 't', `:
  `]
 				]],

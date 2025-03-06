@@ -55,7 +55,7 @@ DocsCollector.collect('java.lang.invoke.StringConcatFactory', [
 				[/* inline code block */ 'i', `MethodHandle`],
 				[/* text */ 't', ` is invoked with the static arguments and any additional dynamic
  arguments provided on invocation, as if by `],
-				[/* reference */ 'r', `.MethodHandle#invoke(java.lang.Object...)`],
+				[/* reference */ 'r', `java.lang.invoke.MethodHandle#invoke(java.lang.Object...)`, `MethodHandle.invoke(Object...)`],
 				[/* text */ 't', `.`]
 			]]
 		]],
@@ -140,7 +140,7 @@ DocsCollector.collect('java.lang.invoke.StringConcatFactory', [
 						[/* text */ 't', `The return type in `],
 						[/* inline code block */ 'i', `concatType`],
 						[/* text */ 't', ` is assignable from `],
-						[/* reference */ 'r', `java.lang.String`]
+						[/* reference */ 'r', `java.lang.String`, `String`]
 					]]
 				]],
 				[/* block */ 'b', '']
@@ -151,7 +151,7 @@ DocsCollector.collect('java.lang.invoke.StringConcatFactory', [
                  privileges of the caller. Specifically, the lookup
                  context must have
                  `],
-					[/* reference */ 'r', `.MethodHandles.Lookup#hasFullPrivilegeAccess()`],
+					[/* reference */ 'r', `java.lang.invoke.MethodHandles.Lookup#hasFullPrivilegeAccess()`, `full privilege access`],
 					[/* text */ 't', `.
                  When used with `],
 					[/* inline code block */ 'i', `invokedynamic`],
@@ -177,7 +177,7 @@ DocsCollector.collect('java.lang.invoke.StringConcatFactory', [
 					[/* text */ 't', `.  The
                    parameter types represent the types of concatenation
                    arguments; the return type is always assignable from `],
-					[/* reference */ 'r', `java.lang.String`],
+					[/* reference */ 'r', `java.lang.String`, `String`],
 					[/* text */ 't', `.  When used with `],
 					[/* inline code block */ 'i', `invokedynamic`],
 					[/* text */ 't', `,
@@ -312,10 +312,10 @@ DocsCollector.collect('java.lang.invoke.StringConcatFactory', [
 						[/* inline code block */ 'i', `concatType`],
 						[/* text */ 't', ` is assignable
    from `],
-						[/* reference */ 'r', `java.lang.String`],
+						[/* reference */ 'r', `java.lang.String`, `String`],
 						[/* text */ 't', `, and matches the return type of the
    returned `],
-						[/* reference */ 'r', `java.lang.invoke.MethodHandle`]
+						[/* reference */ 'r', `java.lang.invoke.MethodHandle`, `MethodHandle`]
 					]],
 					[/* block */ 'b', [
 						[/* text */ 't', `The number of elements in `],
@@ -333,7 +333,7 @@ DocsCollector.collect('java.lang.invoke.StringConcatFactory', [
                   privileges of the caller. Specifically, the lookup
                   context must have
                   `],
-					[/* reference */ 'r', `.MethodHandles.Lookup#hasFullPrivilegeAccess()`],
+					[/* reference */ 'r', `java.lang.invoke.MethodHandles.Lookup#hasFullPrivilegeAccess()`, `full privilege access`],
 					[/* text */ 't', `.
                   When used with `],
 					[/* inline code block */ 'i', `invokedynamic`],
@@ -359,7 +359,7 @@ DocsCollector.collect('java.lang.invoke.StringConcatFactory', [
 					[/* text */ 't', `.  The
                   parameter types represent the types of dynamic concatenation
                   arguments; the return type is always assignable from `],
-					[/* reference */ 'r', `java.lang.String`],
+					[/* reference */ 'r', `java.lang.String`, `String`],
 					[/* text */ 't', `.  When used with `],
 					[/* inline code block */ 'i', `invokedynamic`],
 					[/* text */ 't', `, this is provided by the `],

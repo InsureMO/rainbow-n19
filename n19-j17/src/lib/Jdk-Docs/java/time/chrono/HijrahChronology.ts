@@ -37,7 +37,7 @@ DocsCollector.collect('java.time.chrono.HijrahChronology', [
 					]],
 					[/* table header cell */ 'thc', [
 						[/* text */ 't', `Locale extension, see `],
-						[/* reference */ 'r', `java.util.Locale`]
+						[/* reference */ 'r', `java.util.Locale`, `Locale`]
 					]],
 					[/* table header cell */ 'thc', [
 						[/* text */ 't', `Description`]
@@ -64,7 +64,7 @@ DocsCollector.collect('java.time.chrono.HijrahChronology', [
 		[/* block */ 'b', ''],
 		[/* block */ 'b', [
 			[/* text */ 't', `Additional variants may be available through `],
-			[/* reference */ 'r', `.Chronology#getAvailableChronologies()`],
+			[/* reference */ 'r', `java.time.chrono.Chronology#getAvailableChronologies()`, `Chronology.getAvailableChronologies()`],
 			[/* text */ 't', `.
 
  `]
@@ -73,7 +73,7 @@ DocsCollector.collect('java.time.chrono.HijrahChronology', [
 		[/* block */ 'b', [
 			[/* text */ 't', `
  Selecting the chronology from the locale uses `],
-			[/* reference */ 'r', `.Chronology#ofLocale(java.util.Locale)`],
+			[/* reference */ 'r', `java.time.chrono.Chronology#ofLocale(java.util.Locale)`, `Chronology.ofLocale(java.util.Locale)`],
 			[/* text */ 't', `
  to find the Chronology based on Locale supported BCP 47 extension mechanism
  to request a specific calendar ("ca"). For example,
@@ -89,7 +89,7 @@ DocsCollector.collect('java.time.chrono.HijrahChronology', [
 				[/* text */ 't', `Singleton instance of the Islamic Umm Al-Qura calendar of Saudi Arabia.
  Other Hijrah chronology variants may be available from
  `],
-				[/* reference */ 'r', `.Chronology#getAvailableChronologies()`],
+				[/* reference */ 'r', `java.time.chrono.Chronology#getAvailableChronologies()`, `Chronology.getAvailableChronologies()`],
 				[/* text */ 't', `.`]
 			],
 		]]
@@ -176,7 +176,7 @@ DocsCollector.collect('java.time.chrono.HijrahChronology', [
  It can be used to lookup the `],
 					[/* inline code block */ 'i', `Chronology`],
 					[/* text */ 't', ` using `],
-					[/* reference */ 'r', `.Chronology#of(java.lang.String)`],
+					[/* reference */ 'r', `java.time.chrono.Chronology#of(java.lang.String)`, `Chronology.of(String)`],
 					[/* text */ 't', `.`]
 				]]
 			],
@@ -199,7 +199,7 @@ DocsCollector.collect('java.time.chrono.HijrahChronology', [
  lookup the `],
 					[/* inline code block */ 'i', `Chronology`],
 					[/* text */ 't', ` using `],
-					[/* reference */ 'r', `.Chronology#of(java.lang.String)`],
+					[/* reference */ 'r', `java.time.chrono.Chronology#of(java.lang.String)`, `Chronology.of(String)`],
 					[/* text */ 't', `.`]
 				]]
 			],
@@ -241,7 +241,7 @@ DocsCollector.collect('java.time.chrono.HijrahChronology', [
 					[/* block */ 'b', [
 						[/* text */ 't', `
  This method matches the signature of the functional interface `],
-						[/* reference */ 'r', `java.time.temporal.TemporalQuery`],
+						[/* reference */ 'r', `java.time.temporal.TemporalQuery`, `TemporalQuery`],
 						[/* text */ 't', `
  allowing it to be used as a query via method reference, `],
 						[/* inline code block */ 'i', `aChronology::localDateTime`],
@@ -334,7 +334,7 @@ DocsCollector.collect('java.time.chrono.HijrahChronology', [
 					[/* block */ 'b', [
 						[/* text */ 't', `
  This method matches the signature of the functional interface `],
-						[/* reference */ 'r', `java.time.temporal.TemporalQuery`],
+						[/* reference */ 'r', `java.time.temporal.TemporalQuery`, `TemporalQuery`],
 						[/* text */ 't', `
  allowing it to be used as a query via method reference, `],
 						[/* inline code block */ 'i', `aChronology::zonedDateTime`],
@@ -430,7 +430,7 @@ DocsCollector.collect('java.time.chrono.HijrahChronology', [
 					[/* block */ 'b', [
 						[/* text */ 't', `
  The conversion typically uses the `],
-						[/* reference */ 'r', `java.ChronoField#EPOCH_DAY`],
+						[/* reference */ 'r', `java.time.temporal.ChronoField#EPOCH_DAY`, `EPOCH_DAY`],
 						[/* text */ 't', `
  field, which is standardized across calendar systems.
  `]
@@ -438,7 +438,7 @@ DocsCollector.collect('java.time.chrono.HijrahChronology', [
 					[/* block */ 'b', [
 						[/* text */ 't', `
  This method matches the signature of the functional interface `],
-						[/* reference */ 'r', `java.time.temporal.TemporalQuery`],
+						[/* reference */ 'r', `java.time.temporal.TemporalQuery`, `TemporalQuery`],
 						[/* text */ 't', `
  allowing it to be used as a query via method reference, `],
 						[/* inline code block */ 'i', `aChronology::date`],
@@ -482,7 +482,7 @@ DocsCollector.collect('java.time.chrono.HijrahChronology', [
 					[/* block */ 'b', [
 						[/* text */ 't', `
  This will query the `],
-						[/* reference */ 'r', `java.Clock#systemDefaultZone()`],
+						[/* reference */ 'r', `java.time.Clock#systemDefaultZone()`, `system clock`],
 						[/* text */ 't', ` in the default
  time-zone to obtain the current date.
  `]
@@ -508,7 +508,7 @@ DocsCollector.collect('java.time.chrono.HijrahChronology', [
  This will query the specified clock to obtain the current date - today.
  Using this method allows the use of an alternate clock for testing.
  The alternate clock may be introduced using `],
-						[/* reference */ 'r', `java.time.Clock`],
+						[/* reference */ 'r', `java.time.Clock`, `dependency injection`],
 						[/* text */ 't', `.`]
 					]]
 				]]
@@ -531,7 +531,7 @@ DocsCollector.collect('java.time.chrono.HijrahChronology', [
 					[/* block */ 'b', [
 						[/* text */ 't', `
  This will query the `],
-						[/* reference */ 'r', `java.Clock#system(java.time.ZoneId)`],
+						[/* reference */ 'r', `java.time.Clock#system(java.time.ZoneId)`, `system clock`],
 						[/* text */ 't', ` to obtain the current date.
  Specifying the time-zone avoids dependence on the default time-zone.
  `]
@@ -797,12 +797,12 @@ DocsCollector.collect('java.time.chrono.HijrahChronology', [
 						[/* text */ 't', `
  The default implementation is suitable for most calendar systems.
  If `],
-						[/* reference */ 'r', `java.ChronoField#YEAR_OF_ERA`],
+						[/* reference */ 'r', `java.time.temporal.ChronoField#YEAR_OF_ERA`, `ChronoField.YEAR_OF_ERA`],
 						[/* text */ 't', ` is found without an `],
-						[/* reference */ 'r', `java.ChronoField#ERA`],
+						[/* reference */ 'r', `java.time.temporal.ChronoField#ERA`, `ChronoField.ERA`],
 						[/* text */ 't', `
  then the last era in `],
-						[/* reference */ 'r', `.Chronology#eras()`],
+						[/* reference */ 'r', `java.time.chrono.Chronology#eras()`, `Chronology.eras()`],
 						[/* text */ 't', ` is used.
  The implementation assumes a 7 day week, that the first day-of-month
  has the value 1, that first day-of-year has the value 1, and that the

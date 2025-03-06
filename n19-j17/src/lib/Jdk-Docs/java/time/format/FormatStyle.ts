@@ -9,9 +9,9 @@ DocsCollector.collect('java.time.format.FormatStyle', [
 			[/* text */ 't', `
  These styles are used when obtaining a date-time style from configuration.
  See `],
-			[/* reference */ 'r', `java.time.format.DateTimeFormatter`],
+			[/* reference */ 'r', `java.time.format.DateTimeFormatter`, `DateTimeFormatter`],
 			[/* text */ 't', ` and `],
-			[/* reference */ 'r', `java.time.format.DateTimeFormatterBuilder`],
+			[/* reference */ 'r', `java.time.format.DateTimeFormatterBuilder`, `DateTimeFormatterBuilder`],
 			[/* text */ 't', ` for usage.`]
 		]]
 	],

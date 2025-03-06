@@ -4,12 +4,12 @@ import {DocsCollector} from '../../DocsCollector';
 DocsCollector.collect('java.util.TreeMap', [
 	[/* class description */
 		[/* text */ 't', `A Red-Black tree based `],
-		[/* reference */ 'r', `java.util.NavigableMap`],
+		[/* reference */ 'r', `java.util.NavigableMap`, `NavigableMap`],
 		[/* text */ 't', ` implementation.
  The map is sorted according to the `],
-		[/* reference */ 'r', `java.lang.Comparable`],
+		[/* reference */ 'r', `java.lang.Comparable`, `natural ordering`],
 		[/* text */ 't', ` of its keys, or by a `],
-		[/* reference */ 'r', `java.util.Comparator`],
+		[/* reference */ 'r', `java.util.Comparator`, `Comparator`],
 		[/* text */ 't', ` provided at map
  creation time, depending on which constructor is used.
 
@@ -84,7 +84,7 @@ DocsCollector.collect('java.util.TreeMap', [
  encapsulates the map.
  If no such object exists, the map should be "wrapped" using the
  `],
-			[/* reference */ 'r', `.Collections#synchronizedSortedMap(java.util.SortedMap)`],
+			[/* reference */ 'r', `java.util.Collections#synchronizedSortedMap(java.util.SortedMap)`, `Collections.synchronizedSortedMap`],
 			[/* text */ 't', `
  method.  This is best done at creation time, to prevent accidental
  unsynchronized access to the map: `]
@@ -103,7 +103,7 @@ DocsCollector.collect('java.util.TreeMap', [
  `],
 			[/* inline code block */ 'i', `remove`],
 			[/* text */ 't', ` method, the iterator will throw a `],
-			[/* reference */ 'r', `java.util.ConcurrentModificationException`],
+			[/* reference */ 'r', `java.util.ConcurrentModificationException`, `ConcurrentModificationException`],
 			[/* text */ 't', `.  Thus, in the face of concurrent
  modification, the iterator fails quickly and cleanly, rather than risking
  arbitrary, non-deterministic behavior at an undetermined time in the future.
@@ -152,7 +152,7 @@ DocsCollector.collect('java.util.TreeMap', [
 			[/* constructor description */
 				[/* text */ 't', `Constructs a new, empty tree map, using the natural ordering of its
  keys.  All keys inserted into the map must implement the `],
-				[/* reference */ 'r', `java.lang.Comparable`],
+				[/* reference */ 'r', `java.lang.Comparable`, `Comparable`],
 				[/* text */ 't', ` interface.  Furthermore, all such keys must be
  `],
 				[/* text */ 't', `mutually comparable`],
@@ -208,7 +208,7 @@ DocsCollector.collect('java.util.TreeMap', [
         If `],
 					[/* inline code block */ 'i', `null`],
 					[/* text */ 't', `, the `],
-					[/* reference */ 'r', `java.lang.Comparable`],
+					[/* reference */ 'r', `java.lang.Comparable`, `natural ordering`],
 					[/* text */ 't', ` of the keys will be used.`]
 				]]
 			],
@@ -221,7 +221,7 @@ DocsCollector.collect('java.util.TreeMap', [
 				[/* text */ 't', `natural ordering`],
 				[/* text */ 't', ` of its keys.
  All keys inserted into the new map must implement the `],
-				[/* reference */ 'r', `java.lang.Comparable`],
+				[/* reference */ 'r', `java.lang.Comparable`, `Comparable`],
 				[/* text */ 't', ` interface.  Furthermore, all such keys must be
  `],
 				[/* text */ 't', `mutually comparable`],
@@ -245,7 +245,7 @@ DocsCollector.collect('java.util.TreeMap', [
 			[/* throws */
 				[/* throw */ 'java.lang.ClassCastException', [/* throw description */
 					[/* text */ 't', `if the keys in m are not `],
-					[/* reference */ 'r', `java.lang.Comparable`],
+					[/* reference */ 'r', `java.lang.Comparable`, `Comparable`],
 					[/* text */ 't', `,
          or are not mutually comparable`]
 				]],
@@ -363,7 +363,7 @@ DocsCollector.collect('java.util.TreeMap', [
 		[/* method */ 'values()', [
 			[/* method description */
 				[/* text */ 't', `Returns a `],
-				[/* reference */ 'r', `java.util.Collection`],
+				[/* reference */ 'r', `java.util.Collection`, `Collection`],
 				[/* text */ 't', ` view of the values contained in this map.
 
  `],
@@ -371,12 +371,12 @@ DocsCollector.collect('java.util.TreeMap', [
 					[/* text */ 't', `The collection's iterator returns the values in ascending order
  of the corresponding keys. The collection's spliterator is
  `],
-					[/* reference */ 'r', `.Spliterator#binding`],
+					[/* reference */ 'r', `java.util.Spliterator#binding`, `late-binding`],
 					[/* text */ 't', `,
  `],
 					[/* text */ 't', `fail-fast`],
 					[/* text */ 't', `, and additionally reports `],
-					[/* reference */ 'r', `.Spliterator#ORDERED`],
+					[/* reference */ 'r', `java.util.Spliterator#ORDERED`, `Spliterator.ORDERED`],
 					[/* text */ 't', `
  with an encounter order that is ascending order of the corresponding
  keys.
@@ -425,7 +425,7 @@ DocsCollector.collect('java.util.TreeMap', [
  `],
 					[/* inline code block */ 'i', `null`],
 					[/* text */ 't', ` if this map uses the `],
-					[/* reference */ 'r', `java.lang.Comparable`],
+					[/* reference */ 'r', `java.lang.Comparable`, `natural ordering`],
 					[/* text */ 't', ` of its keys.`]
 				]]
 			],
@@ -667,7 +667,7 @@ DocsCollector.collect('java.util.TreeMap', [
 					[/* block */ 'b', [
 						[/* text */ 't', `The returned map has an ordering equivalent to
  `],
-						[/* reference */ 'r', `.Collections#reverseOrder(java.util.Comparator)`],
+						[/* reference */ 'r', `java.util.Collections#reverseOrder(java.util.Comparator)`, `Collections.reverseOrder`],
 						[/* inline code block */ 'i', `(comparator())`],
 						[/* text */ 't', `.
  The expression `],
@@ -729,7 +729,7 @@ DocsCollector.collect('java.util.TreeMap', [
          if `],
 					[/* inline code block */ 'i', `toKey`],
 					[/* text */ 't', ` does not implement `],
-					[/* reference */ 'r', `java.lang.Comparable`],
+					[/* reference */ 'r', `java.lang.Comparable`, `Comparable`],
 					[/* text */ 't', `).
          Implementations may, but are not required to, throw this
          exception if `],
@@ -904,7 +904,7 @@ DocsCollector.collect('java.util.TreeMap', [
          if `],
 					[/* inline code block */ 'i', `fromKey`],
 					[/* text */ 't', ` does not implement `],
-					[/* reference */ 'r', `java.lang.Comparable`],
+					[/* reference */ 'r', `java.lang.Comparable`, `Comparable`],
 					[/* text */ 't', `).
          Implementations may, but are not required to, throw this
          exception if `],
@@ -939,7 +939,7 @@ DocsCollector.collect('java.util.TreeMap', [
 			[/* method description */
 				[/* block */ 'b', [
 					[/* text */ 't', `Returns a reverse order `],
-					[/* reference */ 'r', `java.util.NavigableSet`],
+					[/* reference */ 'r', `java.util.NavigableSet`, `NavigableSet`],
 					[/* text */ 't', ` view of the keys contained in this map.
  The set's iterator returns the keys in descending order.
  The set is backed by the map, so changes to the map are reflected in
@@ -977,7 +977,7 @@ DocsCollector.collect('java.util.TreeMap', [
 			[/* method description */
 				[/* block */ 'b', [
 					[/* text */ 't', `Returns a `],
-					[/* reference */ 'r', `java.util.NavigableSet`],
+					[/* reference */ 'r', `java.util.NavigableSet`, `NavigableSet`],
 					[/* text */ 't', ` view of the keys contained in this map.
  The set's iterator returns the keys in ascending order.
  The set is backed by the map, so changes to the map are reflected in
@@ -1014,7 +1014,7 @@ DocsCollector.collect('java.util.TreeMap', [
 		[/* method */ 'entrySet()', [
 			[/* method description */
 				[/* text */ 't', `Returns a `],
-				[/* reference */ 'r', `java.util.Set`],
+				[/* reference */ 'r', `java.util.Set`, `Set`],
 				[/* text */ 't', ` view of the mappings contained in this map.
 
  `],
@@ -1022,15 +1022,15 @@ DocsCollector.collect('java.util.TreeMap', [
 					[/* text */ 't', `The set's iterator returns the entries in ascending key order. The
  set's spliterator is
  `],
-					[/* reference */ 'r', `.Spliterator#binding`],
+					[/* reference */ 'r', `java.util.Spliterator#binding`, `late-binding`],
 					[/* text */ 't', `,
  `],
 					[/* text */ 't', `fail-fast`],
 					[/* text */ 't', `, and additionally reports `],
-					[/* reference */ 'r', `.Spliterator#SORTED`],
+					[/* reference */ 'r', `java.util.Spliterator#SORTED`, `Spliterator.SORTED`],
 					[/* text */ 't', ` and
  `],
-					[/* reference */ 'r', `.Spliterator#ORDERED`],
+					[/* reference */ 'r', `java.util.Spliterator#ORDERED`, `Spliterator.ORDERED`],
 					[/* text */ 't', ` with an encounter order that is ascending key
  order.
 
@@ -1078,7 +1078,7 @@ DocsCollector.collect('java.util.TreeMap', [
 		[/* method */ 'keySet()', [
 			[/* method description */
 				[/* text */ 't', `Returns a `],
-				[/* reference */ 'r', `java.util.Set`],
+				[/* reference */ 'r', `java.util.Set`, `Set`],
 				[/* text */ 't', ` view of the keys contained in this map.
 
  `],
@@ -1086,19 +1086,19 @@ DocsCollector.collect('java.util.TreeMap', [
 					[/* text */ 't', `The set's iterator returns the keys in ascending order.
  The set's spliterator is
  `],
-					[/* reference */ 'r', `.Spliterator#binding`],
+					[/* reference */ 'r', `java.util.Spliterator#binding`, `late-binding`],
 					[/* text */ 't', `,
  `],
 					[/* text */ 't', `fail-fast`],
 					[/* text */ 't', `, and additionally reports `],
-					[/* reference */ 'r', `.Spliterator#SORTED`],
+					[/* reference */ 'r', `java.util.Spliterator#SORTED`, `Spliterator.SORTED`],
 					[/* text */ 't', `
  and `],
-					[/* reference */ 'r', `.Spliterator#ORDERED`],
+					[/* reference */ 'r', `java.util.Spliterator#ORDERED`, `Spliterator.ORDERED`],
 					[/* text */ 't', ` with an encounter order that is ascending
  key order.  The spliterator's comparator (see
  `],
-					[/* reference */ 'r', `.Spliterator#getComparator()`],
+					[/* reference */ 'r', `java.util.Spliterator#getComparator()`, `Spliterator.getComparator()`],
 					[/* text */ 't', `) is `],
 					[/* inline code block */ 'i', `null`],
 					[/* text */ 't', ` if
@@ -1188,7 +1188,7 @@ DocsCollector.collect('java.util.TreeMap', [
          if `],
 					[/* inline code block */ 'i', `toKey`],
 					[/* text */ 't', ` does not implement `],
-					[/* reference */ 'r', `java.lang.Comparable`],
+					[/* reference */ 'r', `java.lang.Comparable`, `Comparable`],
 					[/* text */ 't', `).
          Implementations may, but are not required to, throw this
          exception if `],
@@ -1351,7 +1351,7 @@ DocsCollector.collect('java.util.TreeMap', [
          if `],
 					[/* inline code block */ 'i', `fromKey`],
 					[/* text */ 't', ` does not implement `],
-					[/* reference */ 'r', `java.lang.Comparable`],
+					[/* reference */ 'r', `java.lang.Comparable`, `Comparable`],
 					[/* text */ 't', `).
          Implementations may, but are not required to, throw this
          exception if `],
@@ -1561,7 +1561,7 @@ DocsCollector.collect('java.util.TreeMap', [
 				]],
 				[/* text */ 't', `
  (Method `],
-				[/* reference */ 'r', `.Map#merge(K,V,java.util.function.BiFunction)`],
+				[/* reference */ 'r', `java.util.Map#merge(K,V,java.util.function.BiFunction)`, `merge()`],
 				[/* text */ 't', ` is often simpler to use for such purposes.)
 
  `],
@@ -1581,7 +1581,7 @@ DocsCollector.collect('java.util.TreeMap', [
 				[/* block */ 'b', [
 					[/* text */ 't', `This method will, on a best-effort basis, throw a
  `],
-					[/* reference */ 'r', `java.util.ConcurrentModificationException`],
+					[/* reference */ 'r', `java.util.ConcurrentModificationException`, `ConcurrentModificationException`],
 					[/* text */ 't', ` if it is detected that the
  remapping function modifies this map during computation.`]
 				]]
@@ -1648,7 +1648,7 @@ DocsCollector.collect('java.util.TreeMap', [
 				[/* block */ 'b', [
 					[/* text */ 't', `This method will, on a best-effort basis, throw a
  `],
-					[/* reference */ 'r', `java.util.ConcurrentModificationException`],
+					[/* reference */ 'r', `java.util.ConcurrentModificationException`, `ConcurrentModificationException`],
 					[/* text */ 't', ` if it is detected that the
  mapping function modifies this map during computation.`]
 				]]
@@ -1693,7 +1693,7 @@ DocsCollector.collect('java.util.TreeMap', [
 				[/* block */ 'b', [
 					[/* text */ 't', `This method will, on a best-effort basis, throw a
  `],
-					[/* reference */ 'r', `java.util.ConcurrentModificationException`],
+					[/* reference */ 'r', `java.util.ConcurrentModificationException`, `ConcurrentModificationException`],
 					[/* text */ 't', ` if it is detected that the
  remapping function modifies this map during computation.`]
 				]]
@@ -1817,7 +1817,7 @@ DocsCollector.collect('java.util.TreeMap', [
 				[/* block */ 'b', [
 					[/* text */ 't', `This method will, on a best-effort basis, throw a
  `],
-					[/* reference */ 'r', `java.util.ConcurrentModificationException`],
+					[/* reference */ 'r', `java.util.ConcurrentModificationException`, `ConcurrentModificationException`],
 					[/* text */ 't', ` if it is detected that the
  remapping function modifies this map during computation.`]
 				]]

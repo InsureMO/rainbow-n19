@@ -136,7 +136,7 @@ DocsCollector.collect('java.lang.invoke.SerializedLambda', [
 		[/* method */ 'getImplMethodKind()', [
 			[/* method description */
 				[/* text */ 't', `Get the method handle kind (see `],
-				[/* reference */ 'r', `java.lang.invoke.MethodHandleInfo`],
+				[/* reference */ 'r', `java.lang.invoke.MethodHandleInfo`, `MethodHandleInfo`],
 				[/* text */ 't', `) of
  the implementation method.`]
 			],

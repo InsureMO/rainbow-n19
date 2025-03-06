@@ -8,7 +8,7 @@ DocsCollector.collect('java.lang.invoke.TypeDescriptor$OfMethod', [
 		[/* external link */ 'a', `https://docs.oracle.com/javase/specs/jvms/se17/html/jvms-4.html#jvms-4.3.3`, `4.3.3`],
 		[/* text */ 't', ` can be described
  nominally via `],
-		[/* reference */ 'r', `.MethodType#describeConstable()`],
+		[/* reference */ 'r', `java.lang.invoke.MethodType#describeConstable()`, `MethodType::describeConstable`],
 		[/* text */ 't', `;
  otherwise they cannot be described nominally.`]
 	],

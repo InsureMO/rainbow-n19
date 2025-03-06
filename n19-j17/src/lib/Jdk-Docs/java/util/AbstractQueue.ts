@@ -4,7 +4,7 @@ import {DocsCollector} from '../../DocsCollector';
 DocsCollector.collect('java.util.AbstractQueue', [
 	[/* class description */
 		[/* text */ 't', `This class provides skeletal implementations of some `],
-		[/* reference */ 'r', `java.util.Queue`],
+		[/* reference */ 'r', `java.util.Queue`, `Queue`],
 		[/* text */ 't', `
  operations. The implementations in this class are appropriate when
  the base implementation does `],
@@ -20,11 +20,11 @@ DocsCollector.collect('java.util.AbstractQueue', [
  `],
 		[/* reference */ 'r', `#element()`, `element`],
 		[/* text */ 't', ` are based on `],
-		[/* reference */ 'r', `.Queue#offer(E)`],
+		[/* reference */ 'r', `java.util.Queue#offer(E)`, `offer`],
 		[/* text */ 't', `, `],
-		[/* reference */ 'r', `.Queue#poll()`],
+		[/* reference */ 'r', `java.util.Queue#poll()`, `poll`],
 		[/* text */ 't', `, and `],
-		[/* reference */ 'r', `.Queue#peek()`],
+		[/* reference */ 'r', `java.util.Queue#peek()`, `peek`],
 		[/* text */ 't', `, respectively, but throw
  exceptions instead of indicating failure via `],
 		[/* inline code block */ 'i', `false`],
@@ -39,23 +39,23 @@ DocsCollector.collect('java.util.AbstractQueue', [
 			[/* inline code block */ 'i', `Queue`],
 			[/* text */ 't', ` implementation that extends this class must
  minimally define a method `],
-			[/* reference */ 'r', `.Queue#offer(E)`],
+			[/* reference */ 'r', `java.util.Queue#offer(E)`, `Queue.offer(E)`],
 			[/* text */ 't', ` which does not permit
  insertion of `],
 			[/* inline code block */ 'i', `null`],
 			[/* text */ 't', ` elements, along with methods `],
-			[/* reference */ 'r', `.Queue#peek()`],
+			[/* reference */ 'r', `java.util.Queue#peek()`, `Queue.peek()`],
 			[/* text */ 't', `, `],
-			[/* reference */ 'r', `.Queue#poll()`],
+			[/* reference */ 'r', `java.util.Queue#poll()`, `Queue.poll()`],
 			[/* text */ 't', `, `],
-			[/* reference */ 'r', `.Collection#size()`],
+			[/* reference */ 'r', `java.util.Collection#size()`, `Collection.size()`],
 			[/* text */ 't', `, and
  `],
-			[/* reference */ 'r', `.Collection#iterator()`],
+			[/* reference */ 'r', `java.util.Collection#iterator()`, `Collection.iterator()`],
 			[/* text */ 't', `.  Typically, additional methods will be
  overridden as well.  If these requirements cannot be met, consider
  instead subclassing `],
-			[/* reference */ 'r', `java.util.AbstractCollection`],
+			[/* reference */ 'r', `java.util.AbstractCollection`, `AbstractCollection`],
 			[/* text */ 't', `.
 
  `]
@@ -127,7 +127,7 @@ DocsCollector.collect('java.util.AbstractQueue', [
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` (as specified by `],
-				[/* reference */ 'r', `.Collection#add(E)`],
+				[/* reference */ 'r', `java.util.Collection#add(E)`, `Collection.add(E)`],
 				[/* text */ 't', `)`]
 			]
 		]],
@@ -188,7 +188,7 @@ DocsCollector.collect('java.util.AbstractQueue', [
 			[/* method description */
 				[/* text */ 't', `Retrieves, but does not remove, the head of this queue.  This method
  differs from `],
-				[/* reference */ 'r', `.Queue#peek()`],
+				[/* reference */ 'r', `java.util.Queue#peek()`, `peek`],
 				[/* text */ 't', ` only in that it throws an exception if
  this queue is empty.
 
@@ -214,7 +214,7 @@ DocsCollector.collect('java.util.AbstractQueue', [
 			[/* method description */
 				[/* text */ 't', `Retrieves and removes the head of this queue.  This method differs
  from `],
-				[/* reference */ 'r', `.Queue#poll()`],
+				[/* reference */ 'r', `java.util.Queue#poll()`, `poll`],
 				[/* text */ 't', ` only in that it throws an exception if this
  queue is empty.
 
@@ -244,7 +244,7 @@ DocsCollector.collect('java.util.AbstractQueue', [
  `],
 				[/* block */ 'b', [
 					[/* text */ 't', `This implementation repeatedly invokes `],
-					[/* reference */ 'r', `.Queue#poll()`],
+					[/* reference */ 'r', `java.util.Queue#poll()`, `poll`],
 					[/* text */ 't', ` until it
  returns `],
 					[/* inline code block */ 'i', `null`],

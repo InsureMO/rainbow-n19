@@ -10,7 +10,7 @@ DocsCollector.collect('java.time.temporal.WeekFields', [
  A standard week is seven days long, but cultures have different definitions for some
  other aspects of a week. This class represents the definition of the week, for the
  purpose of providing `],
-			[/* reference */ 'r', `java.time.temporal.TemporalField`],
+			[/* reference */ 'r', `java.time.temporal.TemporalField`, `TemporalField`],
 			[/* text */ 't', ` instances.
  `]
 		]],
@@ -30,7 +30,7 @@ DocsCollector.collect('java.time.temporal.WeekFields', [
 			[/* reference */ 'r', `#weekBasedYear()`, `weekBasedYear()`],
 			[/* text */ 't', `
  that provide access to the values from any `],
-			[/* reference */ 'r', `java.time.temporal.Temporal`],
+			[/* reference */ 'r', `java.time.temporal.Temporal`, `temporal object`],
 			[/* text */ 't', `.
  `]
 		]],
@@ -38,22 +38,22 @@ DocsCollector.collect('java.time.temporal.WeekFields', [
 			[/* text */ 't', `
  The computations for day-of-week, week-of-month, and week-of-year are based
  on the  `],
-			[/* reference */ 'r', `.ChronoField#YEAR`],
+			[/* reference */ 'r', `java.time.temporal.ChronoField#YEAR`, `proleptic-year`],
 			[/* text */ 't', `,
  `],
-			[/* reference */ 'r', `.ChronoField#MONTH_OF_YEAR`],
+			[/* reference */ 'r', `java.time.temporal.ChronoField#MONTH_OF_YEAR`, `month-of-year`],
 			[/* text */ 't', `,
  `],
-			[/* reference */ 'r', `.ChronoField#DAY_OF_MONTH`],
+			[/* reference */ 'r', `java.time.temporal.ChronoField#DAY_OF_MONTH`, `day-of-month`],
 			[/* text */ 't', `, and
  `],
-			[/* reference */ 'r', `.ChronoField#DAY_OF_WEEK`],
+			[/* reference */ 'r', `java.time.temporal.ChronoField#DAY_OF_WEEK`, `ISO day-of-week`],
 			[/* text */ 't', ` which are based on the
  `],
-			[/* reference */ 'r', `.ChronoField#EPOCH_DAY`],
+			[/* reference */ 'r', `java.time.temporal.ChronoField#EPOCH_DAY`, `epoch-day`],
 			[/* text */ 't', ` and the chronology.
  The values may not be aligned with the `],
-			[/* reference */ 'r', `.ChronoField#YEAR_OF_ERA`],
+			[/* reference */ 'r', `java.time.temporal.ChronoField#YEAR_OF_ERA`, `year-of-Era`],
 			[/* text */ 't', `
  depending on the Chronology.
  `]
@@ -416,7 +416,7 @@ DocsCollector.collect('java.time.temporal.WeekFields', [
 				[/* block */ 'b', [
 					[/* text */ 't', `
  This is similar to `],
-					[/* reference */ 'r', `.ChronoField#DAY_OF_WEEK`],
+					[/* reference */ 'r', `java.time.temporal.ChronoField#DAY_OF_WEEK`, `ChronoField.DAY_OF_WEEK`],
 					[/* text */ 't', ` but uses values for
  the day-of-week based on this `],
 					[/* inline code block */ 'i', `WeekFields`],
@@ -488,7 +488,7 @@ DocsCollector.collect('java.time.temporal.WeekFields', [
 				[/* block */ 'b', [
 					[/* text */ 't', `
  In `],
-					[/* reference */ 'r', `java.ResolverStyle#STRICT`],
+					[/* reference */ 'r', `java.time.format.ResolverStyle#STRICT`, `strict mode`],
 					[/* text */ 't', `, all three fields are
  validated against their range of valid values. The week-of-year field
  is validated to ensure that the resulting week-based-year is the
@@ -498,7 +498,7 @@ DocsCollector.collect('java.time.temporal.WeekFields', [
 				[/* block */ 'b', [
 					[/* text */ 't', `
  In `],
-					[/* reference */ 'r', `java.ResolverStyle#SMART`],
+					[/* reference */ 'r', `java.time.format.ResolverStyle#SMART`, `smart mode`],
 					[/* text */ 't', `, all three fields are
  validated against their range of valid values. The week-of-week-based-year field
  is validated from 1 to 53, meaning that the resulting date can be in the
@@ -508,7 +508,7 @@ DocsCollector.collect('java.time.temporal.WeekFields', [
 				[/* block */ 'b', [
 					[/* text */ 't', `
  In `],
-					[/* reference */ 'r', `java.ResolverStyle#LENIENT`],
+					[/* reference */ 'r', `java.time.format.ResolverStyle#LENIENT`, `lenient mode`],
 					[/* text */ 't', `, the year and day-of-week
  are validated against the range of valid values. The resulting date is calculated
  equivalent to the following three stage approach.
@@ -579,7 +579,7 @@ DocsCollector.collect('java.time.temporal.WeekFields', [
 				[/* block */ 'b', [
 					[/* text */ 't', `
  In `],
-					[/* reference */ 'r', `java.ResolverStyle#STRICT`],
+					[/* reference */ 'r', `java.time.format.ResolverStyle#STRICT`, `strict mode`],
 					[/* text */ 't', `, all four fields are
  validated against their range of valid values. The week-of-month field
  is validated to ensure that the resulting month is the month requested.
@@ -588,7 +588,7 @@ DocsCollector.collect('java.time.temporal.WeekFields', [
 				[/* block */ 'b', [
 					[/* text */ 't', `
  In `],
-					[/* reference */ 'r', `java.ResolverStyle#SMART`],
+					[/* reference */ 'r', `java.time.format.ResolverStyle#SMART`, `smart mode`],
 					[/* text */ 't', `, all four fields are
  validated against their range of valid values. The week-of-month field
  is validated from 0 to 6, meaning that the resulting date can be in a
@@ -598,7 +598,7 @@ DocsCollector.collect('java.time.temporal.WeekFields', [
 				[/* block */ 'b', [
 					[/* text */ 't', `
  In `],
-					[/* reference */ 'r', `java.ResolverStyle#LENIENT`],
+					[/* reference */ 'r', `java.time.format.ResolverStyle#LENIENT`, `lenient mode`],
 					[/* text */ 't', `, the year and day-of-week
  are validated against the range of valid values. The resulting date is calculated
  equivalent to the following four stage approach.
@@ -674,7 +674,7 @@ DocsCollector.collect('java.time.temporal.WeekFields', [
 				[/* block */ 'b', [
 					[/* text */ 't', `
  In `],
-					[/* reference */ 'r', `java.ResolverStyle#STRICT`],
+					[/* reference */ 'r', `java.time.format.ResolverStyle#STRICT`, `strict mode`],
 					[/* text */ 't', `, all three fields are
  validated against their range of valid values. The week-of-year field
  is validated to ensure that the resulting week-based-year is the
@@ -684,7 +684,7 @@ DocsCollector.collect('java.time.temporal.WeekFields', [
 				[/* block */ 'b', [
 					[/* text */ 't', `
  In `],
-					[/* reference */ 'r', `java.ResolverStyle#SMART`],
+					[/* reference */ 'r', `java.time.format.ResolverStyle#SMART`, `smart mode`],
 					[/* text */ 't', `, all three fields are
  validated against their range of valid values. The week-of-week-based-year field
  is validated from 1 to 53, meaning that the resulting date can be in the
@@ -694,7 +694,7 @@ DocsCollector.collect('java.time.temporal.WeekFields', [
 				[/* block */ 'b', [
 					[/* text */ 't', `
  In `],
-					[/* reference */ 'r', `java.ResolverStyle#LENIENT`],
+					[/* reference */ 'r', `java.time.format.ResolverStyle#LENIENT`, `lenient mode`],
 					[/* text */ 't', `, the year and day-of-week
  are validated against the range of valid values. The resulting date is calculated
  equivalent to the following three stage approach.
@@ -765,7 +765,7 @@ DocsCollector.collect('java.time.temporal.WeekFields', [
 				[/* block */ 'b', [
 					[/* text */ 't', `
  In `],
-					[/* reference */ 'r', `java.ResolverStyle#STRICT`],
+					[/* reference */ 'r', `java.time.format.ResolverStyle#STRICT`, `strict mode`],
 					[/* text */ 't', `, all three fields are
  validated against their range of valid values. The week-of-year field
  is validated to ensure that the resulting year is the year requested.
@@ -774,7 +774,7 @@ DocsCollector.collect('java.time.temporal.WeekFields', [
 				[/* block */ 'b', [
 					[/* text */ 't', `
  In `],
-					[/* reference */ 'r', `java.ResolverStyle#SMART`],
+					[/* reference */ 'r', `java.time.format.ResolverStyle#SMART`, `smart mode`],
 					[/* text */ 't', `, all three fields are
  validated against their range of valid values. The week-of-year field
  is validated from 0 to 54, meaning that the resulting date can be in a
@@ -784,7 +784,7 @@ DocsCollector.collect('java.time.temporal.WeekFields', [
 				[/* block */ 'b', [
 					[/* text */ 't', `
  In `],
-					[/* reference */ 'r', `java.ResolverStyle#LENIENT`],
+					[/* reference */ 'r', `java.time.format.ResolverStyle#LENIENT`, `lenient mode`],
 					[/* text */ 't', `, the year and day-of-week
  are validated against the range of valid values. The resulting date is calculated
  equivalent to the following three stage approach.
@@ -857,7 +857,7 @@ DocsCollector.collect('java.time.temporal.WeekFields', [
  This will look up appropriate values from the provider of localization data.
  If the locale contains "fw" (First day of week) and/or "rg"
  (Region Override) `],
-					[/* reference */ 'r', `java.time.Locale#def_locale_extension`],
+					[/* reference */ 'r', `java.util.Locale#def_locale_extension`, `Unicode extensions`],
 					[/* text */ 't', `, returned instance will reflect the values specified with
  those extensions. If both "fw" and "rg" are specified, the value from
  the "fw" extension supersedes the implicit one from the "rg" extension.`]

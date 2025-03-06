@@ -6,7 +6,7 @@ DocsCollector.collect('java.util.InvalidPropertiesFormatException', [
 		[/* text */ 't', `Thrown to indicate that an operation could not complete because
  the input did not conform to the appropriate XML document type
  for a collection of properties, as per the `],
-		[/* reference */ 'r', `java.util.Properties`],
+		[/* reference */ 'r', `java.util.Properties`, `Properties`],
 		[/* text */ 't', `
  specification.`],
 		[/* block */ 'b', `
@@ -26,7 +26,7 @@ DocsCollector.collect('java.util.InvalidPropertiesFormatException', [
 				[/* parameter */ 'message', [/* parameter description */
 					[/* text */ 't', `the detail message. The detail message is saved for
           later retrieval by the `],
-					[/* reference */ 'r', `java.Throwable#getMessage()`],
+					[/* reference */ 'r', `java.lang.Throwable#getMessage()`, `Throwable.getMessage()`],
 					[/* text */ 't', ` method.`]
 				]]
 			],
@@ -41,7 +41,7 @@ DocsCollector.collect('java.util.InvalidPropertiesFormatException', [
 				[/* parameter */ 'cause', [/* parameter description */
 					[/* text */ 't', `the cause (which is saved for later retrieval by the
          `],
-					[/* reference */ 'r', `java.Throwable#getCause()`],
+					[/* reference */ 'r', `java.lang.Throwable#getCause()`, `Throwable.getCause()`],
 					[/* text */ 't', ` method).`]
 				]]
 			],

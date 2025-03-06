@@ -50,7 +50,7 @@ DocsCollector.collect('java.time.chrono.HijrahEra', [
 				[/* block */ 'b', [
 					[/* text */ 't', `
  If no textual mapping is found then the `],
-					[/* reference */ 'r', `.Era#getValue()`],
+					[/* reference */ 'r', `java.time.chrono.Era#getValue()`, `numeric value`],
 					[/* text */ 't', ` is returned.`]
 				]]
 			],
@@ -80,7 +80,7 @@ DocsCollector.collect('java.time.chrono.HijrahEra', [
 				[/* block */ 'b', [
 					[/* text */ 't', `
  If the field is a `],
-					[/* reference */ 'r', `enum class in java.time.temporal.ChronoField`],
+					[/* reference */ 'r', `enum class in java.time.temporal.ChronoField`, `ChronoField`],
 					[/* text */ 't', ` then the query is implemented here.
  The `],
 					[/* inline code block */ 'i', `ERA`],

@@ -155,7 +155,7 @@ DocsCollector.collect('java.lang.reflect.Method', [
 		[/* method */ 'getModifiers()', [
 			[/* method description */
 				[/* text */ 't', `Returns the Java language `],
-				[/* reference */ 'r', `java.lang.reflect.Modifier`],
+				[/* reference */ 'r', `java.lang.reflect.Modifier`, `modifiers`],
 				[/* text */ 't', ` for
  the executable represented by this object.`]
 			],
@@ -163,7 +163,7 @@ DocsCollector.collect('java.lang.reflect.Method', [
 			/* throws */ UDF,
 			[/* return description */
 				[/* text */ 't', `the Java language `],
-				[/* reference */ 'r', `java.lang.reflect.Modifier`],
+				[/* reference */ 'r', `java.lang.reflect.Modifier`, `modifiers`],
 				[/* text */ 't', ` for
  the executable represented by this object`]
 			]
@@ -247,7 +247,7 @@ DocsCollector.collect('java.lang.reflect.Method', [
  declared in source ("mandated"), as well as parameters that
  are neither implicitly nor explicitly declared in source
  ("synthetic") to the parameter list for a method.  See `],
-				[/* reference */ 'r', `java.lang.reflect.Parameter`],
+				[/* reference */ 'r', `java.lang.reflect.Parameter`, `Parameter`],
 				[/* text */ 't', ` for more information.
 
  `],
@@ -343,7 +343,7 @@ DocsCollector.collect('java.lang.reflect.Method', [
 				[/* throw */ 'java.lang.TypeNotPresentException', [/* throw description */
 					[/* text */ 't', `if the annotation is of type
      `],
-					[/* reference */ 'r', `java.lang.Class`],
+					[/* reference */ 'r', `java.lang.Class`, `Class`],
 					[/* text */ 't', ` and no definition can be found for the
      default class value.`]
 				]]
@@ -831,9 +831,9 @@ DocsCollector.collect('java.lang.reflect.Method', [
 						[/* inline code block */ 'i', `C`],
 						[/* text */ 't', ` to enable
  access to a `],
-						[/* reference */ 'r', `java.lang.reflect.Member`],
+						[/* reference */ 'r', `java.lang.reflect.Member`, `member`],
 						[/* text */ 't', ` of `],
-						[/* reference */ 'r', `.Member#getDeclaringClass()`],
+						[/* reference */ 'r', `java.lang.reflect.Member#getDeclaringClass()`, `declaring class`],
 						[/* inline code block */ 'i', `D`],
 						[/* text */ 't', ` if any of the following hold: `]
 					]],
@@ -854,7 +854,7 @@ DocsCollector.collect('java.lang.reflect.Method', [
 							[/* text */ 't', ` in
      a package that the module containing `],
 							[/* inline code block */ 'i', `D`],
-							[/* reference */ 'r', `java.Module#isExported(java.lang.String,java.lang.Module)`],
+							[/* reference */ 'r', `java.lang.Module#isExported(java.lang.String,java.lang.Module)`, `exports`],
 							[/* text */ 't', ` to at least the module
      containing `],
 							[/* inline code block */ 'i', `C`],
@@ -885,7 +885,7 @@ DocsCollector.collect('java.lang.reflect.Method', [
 							[/* inline code block */ 'i', `D`],
 							[/* text */ 't', ` is in a package that the module containing `],
 							[/* inline code block */ 'i', `D`],
-							[/* reference */ 'r', `java.Module#isOpen(java.lang.String,java.lang.Module)`],
+							[/* reference */ 'r', `java.lang.Module#isOpen(java.lang.String,java.lang.Module)`, `opens`],
 							[/* text */ 't', ` to at least the module
      containing `],
 							[/* inline code block */ 'i', `C`],
@@ -904,7 +904,7 @@ DocsCollector.collect('java.lang.reflect.Method', [
  to the caller's module. `],
 					[/* block */ 'b', [
 						[/* text */ 't', ` This method cannot be used to enable `],
-						[/* reference */ 'r', `.Field#set(java.lang.Object,java.lang.Object)`],
+						[/* reference */ 'r', `java.lang.reflect.Field#set(java.lang.Object,java.lang.Object)`, `write`],
 						[/* text */ 't', `
  access to a `],
 						[/* text */ 't', `non-modifiable`],
@@ -916,11 +916,11 @@ DocsCollector.collect('java.lang.reflect.Method', [
 						[/* block */ 'b', `static final fields declared in any class or interface`],
 						[/* block */ 'b', [
 							[/* text */ 't', `final fields declared in a `],
-							[/* reference */ 'r', `java.Class#isHidden()`]
+							[/* reference */ 'r', `java.lang.Class#isHidden()`, `hidden class`]
 						]],
 						[/* block */ 'b', [
 							[/* text */ 't', `final fields declared in a `],
-							[/* reference */ 'r', `java.Class#isRecord()`]
+							[/* reference */ 'r', `java.lang.Class#isRecord()`, `record`]
 						]]
 					]],
 					[/* block */ 'b', ''],
@@ -931,7 +931,7 @@ DocsCollector.collect('java.lang.reflect.Method', [
 						[/* inline code block */ 'i', `true`],
 						[/* text */ 't', ` suppresses Java language access
  control checks to only enable `],
-						[/* reference */ 'r', `.Field#get(java.lang.Object)`],
+						[/* reference */ 'r', `java.lang.reflect.Field#get(java.lang.Object)`, `read`],
 						[/* text */ 't', ` access to
  these non-modifiable final fields.
 

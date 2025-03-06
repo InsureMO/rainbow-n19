@@ -160,7 +160,7 @@ DocsCollector.collect('java.io.File', [
  storage device (e.g. a physical disk-drive, flash memory, CD-ROM) may
  contain multiple partitions.  The object, if any, will reside on the
  partition `],
-			[/* text */ 't', `named`],
+			[/* anchor */ 'r', '#-id', `partName`, `named`],
 			[/* text */ 't', ` by some ancestor of the absolute
  form of this pathname.
 
@@ -209,14 +209,14 @@ DocsCollector.collect('java.io.File', [
  The `],
 			[/* reference */ 'r', `#toPath()`, `toPath`],
 			[/* text */ 't', ` method may be used to obtain a `],
-			[/* reference */ 'r', `java.nio.file.Path`],
+			[/* reference */ 'r', `java.nio.file.Path`, `Path`],
 			[/* text */ 't', ` that uses the abstract path represented by a `],
 			[/* inline code block */ 'i', `File`],
 			[/* text */ 't', ` object to
  locate a file. The resulting `],
 			[/* inline code block */ 'i', `Path`],
 			[/* text */ 't', ` may be used with the `],
-			[/* reference */ 'r', `java.nio.file.Files`],
+			[/* reference */ 'r', `java.nio.file.Files`, `Files`],
 			[/* text */ 't', ` class to provide more efficient and extensive access to
  additional file operations, file attributes, and I/O exceptions to help
  diagnose errors when an operation on a file fails.`]
@@ -515,7 +515,7 @@ DocsCollector.collect('java.io.File', [
 			[/* throws */
 				[/* throw */ 'java.lang.SecurityException', [/* throw description */
 					[/* text */ 't', `If a security manager exists and its `],
-					[/* reference */ 'r', `java.SecurityManager#checkExec(java.lang.String)`],
+					[/* reference */ 'r', `java.lang.SecurityManager#checkExec(java.lang.String)`, `SecurityManager.checkExec(java.lang.String)`],
 					[/* text */ 't', `
           method denies execute access to the file`]
 				]]
@@ -542,7 +542,7 @@ DocsCollector.collect('java.io.File', [
 			[/* throws */
 				[/* throw */ 'java.lang.SecurityException', [/* throw description */
 					[/* text */ 't', `If a security manager exists and its `],
-					[/* reference */ 'r', `java.SecurityManager#checkRead(java.lang.String)`],
+					[/* reference */ 'r', `java.lang.SecurityManager#checkRead(java.lang.String)`, `SecurityManager.checkRead(java.lang.String)`],
 					[/* text */ 't', `
           method denies read access to the file`]
 				]]
@@ -572,7 +572,7 @@ DocsCollector.collect('java.io.File', [
 			[/* throws */
 				[/* throw */ 'java.lang.SecurityException', [/* throw description */
 					[/* text */ 't', `If a security manager exists and its `],
-					[/* reference */ 'r', `java.SecurityManager#checkWrite(java.lang.String)`],
+					[/* reference */ 'r', `java.lang.SecurityManager#checkWrite(java.lang.String)`, `SecurityManager.checkWrite(java.lang.String)`],
 					[/* text */ 't', `
           method denies write access to the file`]
 				]]
@@ -604,7 +604,7 @@ DocsCollector.collect('java.io.File', [
 					[/* text */ 't', ` be used for file-locking, as
  the resulting protocol cannot be made to work reliably. The
  `],
-					[/* reference */ 'r', `java.nio.channels.FileLock`],
+					[/* reference */ 'r', `java.nio.channels.FileLock`, `FileLock`],
 					[/* text */ 't', `
  facility should be used instead.`]
 				]]
@@ -616,7 +616,7 @@ DocsCollector.collect('java.io.File', [
 				]],
 				[/* throw */ 'java.lang.SecurityException', [/* throw description */
 					[/* text */ 't', `If a security manager exists and its `],
-					[/* reference */ 'r', `java.SecurityManager#checkWrite(java.lang.String)`],
+					[/* reference */ 'r', `java.lang.SecurityManager#checkWrite(java.lang.String)`, `SecurityManager.checkWrite(java.lang.String)`],
 					[/* text */ 't', `
           method denies write access to the file`]
 				]]
@@ -639,11 +639,11 @@ DocsCollector.collect('java.io.File', [
  `],
 				[/* block */ 'b', [
 					[/* text */ 't', ` Note that the `],
-					[/* reference */ 'r', `java.nio.file.Files`],
+					[/* reference */ 'r', `java.nio.file.Files`, `Files`],
 					[/* text */ 't', ` class defines the `],
-					[/* reference */ 'r', `java.file.Files#delete(java.nio.file.Path)`],
+					[/* reference */ 'r', `java.nio.file.Files#delete(java.nio.file.Path)`, `delete`],
 					[/* text */ 't', ` method to throw an `],
-					[/* reference */ 'r', `java.io.IOException`],
+					[/* reference */ 'r', `java.io.IOException`, `IOException`],
 					[/* text */ 't', `
  when a file cannot be deleted. This is useful for error reporting and to
  diagnose why a file cannot be deleted.`]
@@ -653,7 +653,7 @@ DocsCollector.collect('java.io.File', [
 			[/* throws */
 				[/* throw */ 'java.lang.SecurityException', [/* throw description */
 					[/* text */ 't', `If a security manager exists and its `],
-					[/* reference */ 'r', `java.SecurityManager#checkDelete(java.lang.String)`],
+					[/* reference */ 'r', `java.lang.SecurityManager#checkDelete(java.lang.String)`, `SecurityManager.checkDelete(java.lang.String)`],
 					[/* text */ 't', ` method denies
           delete access to the file`]
 				]]
@@ -703,7 +703,7 @@ DocsCollector.collect('java.io.File', [
 			[/* throws */
 				[/* throw */ 'java.lang.SecurityException', [/* throw description */
 					[/* text */ 't', `If a security manager exists and its `],
-					[/* reference */ 'r', `java.SecurityManager#checkRead(java.lang.String)`],
+					[/* reference */ 'r', `java.lang.SecurityManager#checkRead(java.lang.String)`, `SecurityManager.checkRead(java.lang.String)`],
 					[/* text */ 't', `
           method denies read access to the file or directory`]
 				]]
@@ -750,7 +750,7 @@ DocsCollector.collect('java.io.File', [
 					[/* text */ 't', ` Where it is required to distinguish an I/O exception from the case
  that the file is not a directory, or where several attributes of the
  same file are required at the same time, then the `],
-					[/* reference */ 'r', `java.file.Files#readAttributes(java.nio.file.Path,java.lang.Class,java.nio.file.LinkOption...)`],
+					[/* reference */ 'r', `java.nio.file.Files#readAttributes(java.nio.file.Path,java.lang.Class,java.nio.file.LinkOption...)`, `Files.readAttributes`],
 					[/* text */ 't', ` method may be used.`]
 				]]
 			],
@@ -758,7 +758,7 @@ DocsCollector.collect('java.io.File', [
 			[/* throws */
 				[/* throw */ 'java.lang.SecurityException', [/* throw description */
 					[/* text */ 't', `If a security manager exists and its `],
-					[/* reference */ 'r', `java.SecurityManager#checkRead(java.lang.String)`],
+					[/* reference */ 'r', `java.lang.SecurityManager#checkRead(java.lang.String)`, `SecurityManager.checkRead(java.lang.String)`],
 					[/* text */ 't', `
           method denies read access to the file`]
 				]]
@@ -788,7 +788,7 @@ DocsCollector.collect('java.io.File', [
 					[/* text */ 't', ` Where it is required to distinguish an I/O exception from the case
  that the file is not a normal file, or where several attributes of the
  same file are required at the same time, then the `],
-					[/* reference */ 'r', `java.file.Files#readAttributes(java.nio.file.Path,java.lang.Class,java.nio.file.LinkOption...)`],
+					[/* reference */ 'r', `java.nio.file.Files#readAttributes(java.nio.file.Path,java.lang.Class,java.nio.file.LinkOption...)`, `Files.readAttributes`],
 					[/* text */ 't', ` method may be used.`]
 				]]
 			],
@@ -796,7 +796,7 @@ DocsCollector.collect('java.io.File', [
 			[/* throws */
 				[/* throw */ 'java.lang.SecurityException', [/* throw description */
 					[/* text */ 't', `If a security manager exists and its `],
-					[/* reference */ 'r', `java.SecurityManager#checkRead(java.lang.String)`],
+					[/* reference */ 'r', `java.lang.SecurityManager#checkRead(java.lang.String)`, `SecurityManager.checkRead(java.lang.String)`],
 					[/* text */ 't', `
           method denies read access to the file`]
 				]]
@@ -828,7 +828,7 @@ DocsCollector.collect('java.io.File', [
 			[/* throws */
 				[/* throw */ 'java.lang.SecurityException', [/* throw description */
 					[/* text */ 't', `If a security manager exists and its `],
-					[/* reference */ 'r', `java.SecurityManager#checkRead(java.lang.String)`],
+					[/* reference */ 'r', `java.lang.SecurityManager#checkRead(java.lang.String)`, `SecurityManager.checkRead(java.lang.String)`],
 					[/* text */ 't', `
           method denies read access to the file`]
 				]]
@@ -848,7 +848,7 @@ DocsCollector.collect('java.io.File', [
 			[/* throws */
 				[/* throw */ 'java.lang.SecurityException', [/* throw description */
 					[/* text */ 't', `If a security manager exists and its `],
-					[/* reference */ 'r', `java.SecurityManager#checkWrite(java.lang.String)`],
+					[/* reference */ 'r', `java.lang.SecurityManager#checkWrite(java.lang.String)`, `SecurityManager.checkWrite(java.lang.String)`],
 					[/* text */ 't', `
           method does not permit the named directory to be created`]
 				]]
@@ -872,12 +872,12 @@ DocsCollector.collect('java.io.File', [
 			[/* throws */
 				[/* throw */ 'java.lang.SecurityException', [/* throw description */
 					[/* text */ 't', `If a security manager exists and its `],
-					[/* reference */ 'r', `java.SecurityManager#checkRead(java.lang.String)`],
+					[/* reference */ 'r', `java.lang.SecurityManager#checkRead(java.lang.String)`, `SecurityManager.checkRead(java.lang.String)`],
 					[/* text */ 't', `
           method does not permit verification of the existence of the
           named directory and all necessary parent directories; or if
           the `],
-					[/* reference */ 'r', `java.SecurityManager#checkWrite(java.lang.String)`],
+					[/* reference */ 'r', `java.lang.SecurityManager#checkWrite(java.lang.String)`, `SecurityManager.checkWrite(java.lang.String)`],
 					[/* text */ 't', `
           method does not permit the named directory and all necessary
           parent directories to be created`]
@@ -913,9 +913,9 @@ DocsCollector.collect('java.io.File', [
 				]],
 				[/* block */ 'b', [
 					[/* text */ 't', ` Note that the `],
-					[/* reference */ 'r', `java.nio.file.Files`],
+					[/* reference */ 'r', `java.nio.file.Files`, `Files`],
 					[/* text */ 't', ` class defines the `],
-					[/* reference */ 'r', `java.file.Files#move(java.nio.file.Path,java.nio.file.Path,java.nio.file.CopyOption...)`],
+					[/* reference */ 'r', `java.nio.file.Files#move(java.nio.file.Path,java.nio.file.Path,java.nio.file.CopyOption...)`, `move`],
 					[/* text */ 't', ` method to move or rename a file in a
  platform independent manner.`]
 				]]
@@ -928,7 +928,7 @@ DocsCollector.collect('java.io.File', [
 			[/* throws */
 				[/* throw */ 'java.lang.SecurityException', [/* throw description */
 					[/* text */ 't', `If a security manager exists and its `],
-					[/* reference */ 'r', `java.SecurityManager#checkWrite(java.lang.String)`],
+					[/* reference */ 'r', `java.lang.SecurityManager#checkWrite(java.lang.String)`, `SecurityManager.checkWrite(java.lang.String)`],
 					[/* text */ 't', `
           method denies write access to either the old or new pathnames`]
 				]],
@@ -981,7 +981,7 @@ DocsCollector.collect('java.io.File', [
 			[/* throws */
 				[/* throw */ 'java.lang.SecurityException', [/* throw description */
 					[/* text */ 't', `If a security manager exists and its `],
-					[/* reference */ 'r', `java.SecurityManager#checkWrite(java.lang.String)`],
+					[/* reference */ 'r', `java.lang.SecurityManager#checkWrite(java.lang.String)`, `SecurityManager.checkWrite(java.lang.String)`],
 					[/* text */ 't', `
           method denies write access to the file`]
 				]]
@@ -1010,7 +1010,7 @@ DocsCollector.collect('java.io.File', [
  `],
 				[/* block */ 'b', [
 					[/* text */ 't', ` The `],
-					[/* reference */ 'r', `java.nio.file.Files`],
+					[/* reference */ 'r', `java.nio.file.Files`, `Files`],
 					[/* text */ 't', ` class defines methods that operate on
  file attributes including file permissions. This may be used when finer
  manipulation of file permissions is required.`]
@@ -1038,7 +1038,7 @@ DocsCollector.collect('java.io.File', [
 			[/* throws */
 				[/* throw */ 'java.lang.SecurityException', [/* throw description */
 					[/* text */ 't', `If a security manager exists and its `],
-					[/* reference */ 'r', `java.SecurityManager#checkWrite(java.lang.String)`],
+					[/* reference */ 'r', `java.lang.SecurityManager#checkWrite(java.lang.String)`, `SecurityManager.checkWrite(java.lang.String)`],
 					[/* text */ 't', `
           method denies write access to the file`]
 				]]
@@ -1088,7 +1088,7 @@ DocsCollector.collect('java.io.File', [
 				]],
 				[/* throw */ 'java.lang.SecurityException', [/* throw description */
 					[/* text */ 't', `If a security manager exists and its `],
-					[/* reference */ 'r', `java.SecurityManager#checkWrite(java.lang.String)`],
+					[/* reference */ 'r', `java.lang.SecurityManager#checkWrite(java.lang.String)`, `SecurityManager.checkWrite(java.lang.String)`],
 					[/* text */ 't', `
           method denies write access to the named file`]
 				]]
@@ -1135,7 +1135,7 @@ DocsCollector.collect('java.io.File', [
 			[/* throws */
 				[/* throw */ 'java.lang.SecurityException', [/* throw description */
 					[/* text */ 't', `If a security manager exists and its `],
-					[/* reference */ 'r', `java.SecurityManager#checkWrite(java.lang.String)`],
+					[/* reference */ 'r', `java.lang.SecurityManager#checkWrite(java.lang.String)`, `SecurityManager.checkWrite(java.lang.String)`],
 					[/* text */ 't', `
           method denies write access to the file`]
 				]]
@@ -1164,7 +1164,7 @@ DocsCollector.collect('java.io.File', [
  `],
 				[/* block */ 'b', [
 					[/* text */ 't', ` The `],
-					[/* reference */ 'r', `java.nio.file.Files`],
+					[/* reference */ 'r', `java.nio.file.Files`, `Files`],
 					[/* text */ 't', ` class defines methods that operate on
  file attributes including file permissions. This may be used when finer
  manipulation of file permissions is required.`]
@@ -1192,7 +1192,7 @@ DocsCollector.collect('java.io.File', [
 			[/* throws */
 				[/* throw */ 'java.lang.SecurityException', [/* throw description */
 					[/* text */ 't', `If a security manager exists and its `],
-					[/* reference */ 'r', `java.SecurityManager#checkWrite(java.lang.String)`],
+					[/* reference */ 'r', `java.lang.SecurityManager#checkWrite(java.lang.String)`, `SecurityManager.checkWrite(java.lang.String)`],
 					[/* text */ 't', `
           method denies write access to the file`]
 				]]
@@ -1225,7 +1225,7 @@ DocsCollector.collect('java.io.File', [
 			[/* throws */
 				[/* throw */ 'java.lang.SecurityException', [/* throw description */
 					[/* text */ 't', `If a security manager exists and its `],
-					[/* reference */ 'r', `java.SecurityManager#checkWrite(java.lang.String)`],
+					[/* reference */ 'r', `java.lang.SecurityManager#checkWrite(java.lang.String)`, `SecurityManager.checkWrite(java.lang.String)`],
 					[/* text */ 't', `
           method denies write access to the named file`]
 				]]
@@ -1272,7 +1272,7 @@ DocsCollector.collect('java.io.File', [
 			[/* throws */
 				[/* throw */ 'java.lang.SecurityException', [/* throw description */
 					[/* text */ 't', `If a security manager exists and its `],
-					[/* reference */ 'r', `java.SecurityManager#checkWrite(java.lang.String)`],
+					[/* reference */ 'r', `java.lang.SecurityManager#checkWrite(java.lang.String)`, `SecurityManager.checkWrite(java.lang.String)`],
 					[/* text */ 't', `
           method denies write access to the file`]
 				]]
@@ -1294,7 +1294,7 @@ DocsCollector.collect('java.io.File', [
  `],
 				[/* block */ 'b', [
 					[/* text */ 't', ` The `],
-					[/* reference */ 'r', `java.nio.file.Files`],
+					[/* reference */ 'r', `java.nio.file.Files`, `Files`],
 					[/* text */ 't', ` class defines methods that operate on
  file attributes including file permissions. This may be used when finer
  manipulation of file permissions is required.`]
@@ -1322,7 +1322,7 @@ DocsCollector.collect('java.io.File', [
 			[/* throws */
 				[/* throw */ 'java.lang.SecurityException', [/* throw description */
 					[/* text */ 't', `If a security manager exists and its `],
-					[/* reference */ 'r', `java.SecurityManager#checkWrite(java.lang.String)`],
+					[/* reference */ 'r', `java.lang.SecurityManager#checkWrite(java.lang.String)`, `SecurityManager.checkWrite(java.lang.String)`],
 					[/* text */ 't', `
           method denies write access to the named file`]
 				]]
@@ -1418,7 +1418,7 @@ DocsCollector.collect('java.io.File', [
 				[/* throw */ 'java.lang.SecurityException', [/* throw description */
 					[/* text */ 't', `If a required system property value cannot be accessed, or
           if a security manager exists and its `],
-					[/* reference */ 'r', `java.SecurityManager#checkRead(java.io.FileDescriptor)`],
+					[/* reference */ 'r', `java.lang.SecurityManager#checkRead(java.io.FileDescriptor)`, `SecurityManager.checkRead(java.io.FileDescriptor)`],
 					[/* text */ 't', ` method denies
           read access to the file`]
 				]]
@@ -1481,9 +1481,9 @@ DocsCollector.collect('java.io.File', [
  `],
 				[/* block */ 'b', [
 					[/* text */ 't', ` Note that the `],
-					[/* reference */ 'r', `java.nio.file.Files`],
+					[/* reference */ 'r', `java.nio.file.Files`, `Files`],
 					[/* text */ 't', ` class defines the `],
-					[/* reference */ 'r', `java.file.Files#newDirectoryStream(java.nio.file.Path)`],
+					[/* reference */ 'r', `java.nio.file.Files#newDirectoryStream(java.nio.file.Path)`, `newDirectoryStream`],
 					[/* text */ 't', ` method
  to open a directory and iterate over the names of the files in the
  directory. This may use less resources when working with very large
@@ -1494,7 +1494,7 @@ DocsCollector.collect('java.io.File', [
 			[/* throws */
 				[/* throw */ 'java.lang.SecurityException', [/* throw description */
 					[/* text */ 't', `If a security manager exists and its `],
-					[/* reference */ 'r', `java.SecurityManager#checkRead(java.lang.String)`],
+					[/* reference */ 'r', `java.lang.SecurityManager#checkRead(java.lang.String)`, `SecurityManager.checkRead(String)`],
 					[/* text */ 't', ` method denies read access to
           the directory`]
 				]]
@@ -1527,7 +1527,7 @@ DocsCollector.collect('java.io.File', [
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` results when
  the `],
-				[/* reference */ 'r', `.FileFilter#accept(java.io.File)`],
+				[/* reference */ 'r', `java.io.FileFilter#accept(java.io.File)`, `FileFilter.accept(File)`],
 				[/* text */ 't', ` method of the
  filter is invoked on the pathname.`]
 			],
@@ -1539,7 +1539,7 @@ DocsCollector.collect('java.io.File', [
 			[/* throws */
 				[/* throw */ 'java.lang.SecurityException', [/* throw description */
 					[/* text */ 't', `If a security manager exists and its `],
-					[/* reference */ 'r', `java.SecurityManager#checkRead(java.lang.String)`],
+					[/* reference */ 'r', `java.lang.SecurityManager#checkRead(java.lang.String)`, `SecurityManager.checkRead(String)`],
 					[/* text */ 't', ` method denies read access to
           the directory`]
 				]]
@@ -1572,7 +1572,7 @@ DocsCollector.collect('java.io.File', [
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` results when
  the `],
-				[/* reference */ 'r', `.FilenameFilter#accept(java.io.File,java.lang.String)`],
+				[/* reference */ 'r', `java.io.FilenameFilter#accept(java.io.File,java.lang.String)`, `FilenameFilter.accept(File, String)`],
 				[/* text */ 't', ` method of the filter is
  invoked on this abstract pathname and the name of a file or directory in
  the directory that it denotes.`]
@@ -1585,7 +1585,7 @@ DocsCollector.collect('java.io.File', [
 			[/* throws */
 				[/* throw */ 'java.lang.SecurityException', [/* throw description */
 					[/* text */ 't', `If a security manager exists and its `],
-					[/* reference */ 'r', `java.SecurityManager#checkRead(java.lang.String)`],
+					[/* reference */ 'r', `java.lang.SecurityManager#checkRead(java.lang.String)`, `SecurityManager.checkRead(String)`],
 					[/* text */ 't', ` method denies read access to
           the directory`]
 				]]
@@ -1676,7 +1676,7 @@ DocsCollector.collect('java.io.File', [
 				[/* throw */ 'java.lang.SecurityException', [/* throw description */
 					[/* text */ 't', `If a required system property value cannot be accessed, or
           if a security manager exists and its `],
-					[/* reference */ 'r', `java.SecurityManager#checkRead(java.io.FileDescriptor)`],
+					[/* reference */ 'r', `java.lang.SecurityManager#checkRead(java.io.FileDescriptor)`, `SecurityManager.checkRead(java.io.FileDescriptor)`],
 					[/* text */ 't', ` method denies
           read access to the file`]
 				]]
@@ -1773,9 +1773,9 @@ DocsCollector.collect('java.io.File', [
  `],
 				[/* block */ 'b', [
 					[/* text */ 't', ` Note that the `],
-					[/* reference */ 'r', `java.nio.file.Files`],
+					[/* reference */ 'r', `java.nio.file.Files`, `Files`],
 					[/* text */ 't', ` class defines the `],
-					[/* reference */ 'r', `java.file.Files#newDirectoryStream(java.nio.file.Path)`],
+					[/* reference */ 'r', `java.nio.file.Files#newDirectoryStream(java.nio.file.Path)`, `newDirectoryStream`],
 					[/* text */ 't', ` method to
  open a directory and iterate over the names of the files in the directory.
  This may use less resources when working with very large directories, and
@@ -1786,7 +1786,7 @@ DocsCollector.collect('java.io.File', [
 			[/* throws */
 				[/* throw */ 'java.lang.SecurityException', [/* throw description */
 					[/* text */ 't', `If a security manager exists and its `],
-					[/* reference */ 'r', `java.SecurityManager#checkRead(java.lang.String)`],
+					[/* reference */ 'r', `java.lang.SecurityManager#checkRead(java.lang.String)`, `SecurityManager.checkRead(String)`],
 					[/* text */ 't', ` method denies read access to
           the directory`]
 				]]
@@ -1818,7 +1818,7 @@ DocsCollector.collect('java.io.File', [
  and only if the value `],
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` results when the `],
-				[/* reference */ 'r', `.FilenameFilter#accept(java.io.File,java.lang.String)`],
+				[/* reference */ 'r', `java.io.FilenameFilter#accept(java.io.File,java.lang.String)`, `FilenameFilter.accept(File, String)`],
 				[/* text */ 't', ` method
  of the filter is invoked on this abstract pathname and the name of a
  file or directory in the directory that it denotes.`]
@@ -1831,7 +1831,7 @@ DocsCollector.collect('java.io.File', [
 			[/* throws */
 				[/* throw */ 'java.lang.SecurityException', [/* throw description */
 					[/* text */ 't', `If a security manager exists and its `],
-					[/* reference */ 'r', `java.SecurityManager#checkRead(java.lang.String)`],
+					[/* reference */ 'r', `java.lang.SecurityManager#checkRead(java.lang.String)`, `SecurityManager.checkRead(String)`],
 					[/* text */ 't', ` method denies read access to
           the directory`]
 				]]
@@ -1898,10 +1898,10 @@ DocsCollector.collect('java.io.File', [
  that it is represented as `],
 					[/* inline code block */ 'i', `null`],
 					[/* text */ 't', `. The `],
-					[/* reference */ 'r', `java.nio.file.Path`],
+					[/* reference */ 'r', `java.nio.file.Path`, `Path`],
 					[/* text */ 't', ` class defines the
  `],
-					[/* reference */ 'r', `java.file.Path#toUri()`],
+					[/* reference */ 'r', `java.nio.file.Path#toUri()`, `toUri`],
 					[/* text */ 't', ` method to encode the server name in the authority
  component of the resulting `],
 					[/* inline code block */ 'i', `URI`],
@@ -1950,13 +1950,13 @@ DocsCollector.collect('java.io.File', [
 		[/* method */ 'toPath()', [
 			[/* method description */
 				[/* text */ 't', `Returns a `],
-				[/* reference */ 'r', `java.nio.file.Path`],
+				[/* reference */ 'r', `java.nio.file.Path`, `java.nio.file.Path`],
 				[/* text */ 't', ` object constructed from
  this abstract path. The resulting `],
 				[/* inline code block */ 'i', `Path`],
 				[/* text */ 't', ` is associated with the
  `],
-				[/* reference */ 'r', `java.file.FileSystems#getDefault()`],
+				[/* reference */ 'r', `java.nio.file.FileSystems#getDefault()`, `default-filesystem`],
 				[/* text */ 't', `.
 
  `],
@@ -1996,7 +1996,7 @@ DocsCollector.collect('java.io.File', [
 					[/* inline code block */ 'i', `Path`],
 					[/* text */ 't', ` object cannot be constructed from the abstract
           path (see `],
-					[/* reference */ 'r', `java.file.FileSystem#getPath(java.lang.String,java.lang.String...)`],
+					[/* reference */ 'r', `java.nio.file.FileSystem#getPath(java.lang.String,java.lang.String...)`, `FileSystem.getPath`],
 					[/* text */ 't', `)`]
 				]]
 			],
@@ -2013,7 +2013,7 @@ DocsCollector.collect('java.io.File', [
 				[/* text */ 't', ` by this abstract path name.  If the
  number of unallocated bytes in the partition is greater than
  `],
-				[/* reference */ 'r', `java.Long#MAX_VALUE`],
+				[/* reference */ 'r', `java.lang.Long#MAX_VALUE`, `Long.MAX_VALUE`],
 				[/* text */ 't', `, then `],
 				[/* inline code block */ 'i', `Long.MAX_VALUE`],
 				[/* text */ 't', ` will be returned.
@@ -2033,11 +2033,11 @@ DocsCollector.collect('java.io.File', [
 				[/* throw */ 'java.lang.SecurityException', [/* throw description */
 					[/* text */ 't', `If a security manager has been installed and it denies
           `],
-					[/* reference */ 'r', `java.lang.RuntimePermission`],
+					[/* reference */ 'r', `java.lang.RuntimePermission`, `RuntimePermission`],
 					[/* inline code block */ 'i', `("getFileSystemAttributes")`],
 					[/* text */ 't', `
           or its `],
-					[/* reference */ 'r', `java.SecurityManager#checkRead(java.lang.String)`],
+					[/* reference */ 'r', `java.lang.SecurityManager#checkRead(java.lang.String)`, `SecurityManager.checkRead(String)`],
 					[/* text */ 't', ` method denies
           read access to the file named by this abstract pathname`]
 				]]
@@ -2061,7 +2061,7 @@ DocsCollector.collect('java.io.File', [
 				[/* text */ 't', ` by this
  abstract pathname. If the total number of bytes in the partition is
  greater than `],
-				[/* reference */ 'r', `java.Long#MAX_VALUE`],
+				[/* reference */ 'r', `java.lang.Long#MAX_VALUE`, `Long.MAX_VALUE`],
 				[/* text */ 't', `, then `],
 				[/* inline code block */ 'i', `Long.MAX_VALUE`],
 				[/* text */ 't', ` will be
@@ -2072,11 +2072,11 @@ DocsCollector.collect('java.io.File', [
 				[/* throw */ 'java.lang.SecurityException', [/* throw description */
 					[/* text */ 't', `If a security manager has been installed and it denies
           `],
-					[/* reference */ 'r', `java.lang.RuntimePermission`],
+					[/* reference */ 'r', `java.lang.RuntimePermission`, `RuntimePermission`],
 					[/* inline code block */ 'i', `("getFileSystemAttributes")`],
 					[/* text */ 't', `
           or its `],
-					[/* reference */ 'r', `java.SecurityManager#checkRead(java.lang.String)`],
+					[/* reference */ 'r', `java.lang.SecurityManager#checkRead(java.lang.String)`, `SecurityManager.checkRead(String)`],
 					[/* text */ 't', ` method denies
           read access to the file named by this abstract pathname`]
 				]]
@@ -2097,7 +2097,7 @@ DocsCollector.collect('java.io.File', [
 				[/* text */ 't', ` by this abstract pathname.  If
  the number of available bytes in the partition is greater than
  `],
-				[/* reference */ 'r', `java.Long#MAX_VALUE`],
+				[/* reference */ 'r', `java.lang.Long#MAX_VALUE`, `Long.MAX_VALUE`],
 				[/* text */ 't', `, then `],
 				[/* inline code block */ 'i', `Long.MAX_VALUE`],
 				[/* text */ 't', ` will be returned.
@@ -2122,11 +2122,11 @@ DocsCollector.collect('java.io.File', [
 				[/* throw */ 'java.lang.SecurityException', [/* throw description */
 					[/* text */ 't', `If a security manager has been installed and it denies
           `],
-					[/* reference */ 'r', `java.lang.RuntimePermission`],
+					[/* reference */ 'r', `java.lang.RuntimePermission`, `RuntimePermission`],
 					[/* inline code block */ 'i', `("getFileSystemAttributes")`],
 					[/* text */ 't', `
           or its `],
-					[/* reference */ 'r', `java.SecurityManager#checkRead(java.lang.String)`],
+					[/* reference */ 'r', `java.lang.SecurityManager#checkRead(java.lang.String)`, `SecurityManager.checkRead(String)`],
 					[/* text */ 't', ` method denies
           read access to the file named by this abstract pathname`]
 				]]
@@ -2152,7 +2152,7 @@ DocsCollector.collect('java.io.File', [
 			[/* throws */
 				[/* throw */ 'java.lang.SecurityException', [/* throw description */
 					[/* text */ 't', `If a security manager exists and its `],
-					[/* reference */ 'r', `java.SecurityManager#checkRead(java.lang.String)`],
+					[/* reference */ 'r', `java.lang.SecurityManager#checkRead(java.lang.String)`, `SecurityManager.checkRead(java.lang.String)`],
 					[/* text */ 't', `
           method denies read access to the file`]
 				]]
@@ -2182,7 +2182,7 @@ DocsCollector.collect('java.io.File', [
 					[/* inline code block */ 'i', `0L`],
 					[/* text */ 't', ` is returned, or where several attributes of the same file
  are required at the same time, then the `],
-					[/* reference */ 'r', `java.file.Files#readAttributes(java.nio.file.Path,java.lang.Class,java.nio.file.LinkOption...)`],
+					[/* reference */ 'r', `java.nio.file.Files#readAttributes(java.nio.file.Path,java.lang.Class,java.nio.file.LinkOption...)`, `Files.readAttributes`],
 					[/* text */ 't', ` method may be used.`]
 				]]
 			],
@@ -2190,7 +2190,7 @@ DocsCollector.collect('java.io.File', [
 			[/* throws */
 				[/* throw */ 'java.lang.SecurityException', [/* throw description */
 					[/* text */ 't', `If a security manager exists and its `],
-					[/* reference */ 'r', `java.SecurityManager#checkRead(java.lang.String)`],
+					[/* reference */ 'r', `java.lang.SecurityManager#checkRead(java.lang.String)`, `SecurityManager.checkRead(java.lang.String)`],
 					[/* text */ 't', `
           method denies read access to the file`]
 				]]
@@ -2217,7 +2217,7 @@ DocsCollector.collect('java.io.File', [
  `],
 				[/* block */ 'b', [
 					[/* text */ 't', ` The `],
-					[/* reference */ 'r', `java.file.Files#createTempFile(java.lang.String,java.lang.String,java.nio.file.attribute.FileAttribute...)`],
+					[/* reference */ 'r', `java.nio.file.Files#createTempFile(java.lang.String,java.lang.String,java.nio.file.attribute.FileAttribute...)`, `Files.createTempFile`],
 					[/* text */ 't', ` method provides an alternative method to create an
  empty file in the temporary-file directory. Files created by that method
  may have more restrictive access permissions to files created by this
@@ -2251,7 +2251,7 @@ DocsCollector.collect('java.io.File', [
 				]],
 				[/* throw */ 'java.lang.SecurityException', [/* throw description */
 					[/* text */ 't', `If a security manager exists and its `],
-					[/* reference */ 'r', `java.SecurityManager#checkWrite(java.lang.String)`],
+					[/* reference */ 'r', `java.lang.SecurityManager#checkWrite(java.lang.String)`, `SecurityManager.checkWrite(java.lang.String)`],
 					[/* text */ 't', `
           method does not allow a file to be created`]
 				]]
@@ -2380,7 +2380,7 @@ DocsCollector.collect('java.io.File', [
 				]],
 				[/* throw */ 'java.lang.SecurityException', [/* throw description */
 					[/* text */ 't', `If a security manager exists and its `],
-					[/* reference */ 'r', `java.SecurityManager#checkWrite(java.lang.String)`],
+					[/* reference */ 'r', `java.lang.SecurityManager#checkWrite(java.lang.String)`, `SecurityManager.checkWrite(java.lang.String)`],
 					[/* text */ 't', `
           method does not allow a file to be created`]
 				]]
@@ -2441,7 +2441,7 @@ DocsCollector.collect('java.io.File', [
 				[/* block */ 'b', [
 					[/* text */ 't', ` Unlike most methods in this class, this method does not throw
  security exceptions.  If a security manager exists and its `],
-					[/* reference */ 'r', `java.SecurityManager#checkRead(java.lang.String)`],
+					[/* reference */ 'r', `java.lang.SecurityManager#checkRead(java.lang.String)`, `SecurityManager.checkRead(String)`],
 					[/* text */ 't', ` method denies read access to a
  particular root directory, then that directory will not appear in the
  result.`]
@@ -2482,7 +2482,7 @@ DocsCollector.collect('java.io.File', [
 					[/* text */ 't', ` be used for file-locking, as
  the resulting protocol cannot be made to work reliably. The
  `],
-					[/* reference */ 'r', `java.nio.channels.FileLock`],
+					[/* reference */ 'r', `java.nio.channels.FileLock`, `FileLock`],
 					[/* text */ 't', `
  facility should be used instead.`]
 				]]
@@ -2491,7 +2491,7 @@ DocsCollector.collect('java.io.File', [
 			[/* throws */
 				[/* throw */ 'java.lang.SecurityException', [/* throw description */
 					[/* text */ 't', `If a security manager exists and its `],
-					[/* reference */ 'r', `java.SecurityManager#checkDelete(java.lang.String)`],
+					[/* reference */ 'r', `java.lang.SecurityManager#checkDelete(java.lang.String)`, `SecurityManager.checkDelete(java.lang.String)`],
 					[/* text */ 't', ` method denies
           delete access to the file`]
 				]]

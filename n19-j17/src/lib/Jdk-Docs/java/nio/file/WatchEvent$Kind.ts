@@ -11,7 +11,7 @@ DocsCollector.collect('java.nio.file.WatchEvent$Kind', [
 		[/* method */ 'type()', [
 			[/* method description */
 				[/* text */ 't', `Returns the type of the `],
-				[/* reference */ 'r', `.WatchEvent#context()`],
+				[/* reference */ 'r', `java.nio.file.WatchEvent#context()`, `context`],
 				[/* text */ 't', ` value.`]
 			],
 			/* parameters */ UDF,

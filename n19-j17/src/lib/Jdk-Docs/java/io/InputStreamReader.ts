@@ -5,11 +5,11 @@ DocsCollector.collect('java.io.InputStreamReader', [
 	[/* class description */
 		[/* text */ 't', `An InputStreamReader is a bridge from byte streams to character streams: It
  reads bytes and decodes them into characters using a specified `],
-		[/* reference */ 'r', `java.nio.charset.Charset`],
+		[/* reference */ 'r', `java.nio.charset.Charset`, `charset`],
 		[/* text */ 't', `.  The charset that it uses
  may be specified by name or may be given explicitly, or the platform's
  `],
-		[/* reference */ 'r', `java.charset.Charset#defaultCharset()`],
+		[/* reference */ 'r', `java.nio.charset.Charset#defaultCharset()`, `default charset`],
 		[/* text */ 't', ` may be accepted.
 
  `],
@@ -35,7 +35,7 @@ DocsCollector.collect('java.io.InputStreamReader', [
 			[/* constructor description */
 				[/* text */ 't', `Creates an InputStreamReader that uses the
  `],
-				[/* reference */ 'r', `java.charset.Charset#defaultCharset()`],
+				[/* reference */ 'r', `java.nio.charset.Charset#defaultCharset()`, `default charset`],
 				[/* text */ 't', `.`]
 			],
 			[/* parameters */
@@ -56,7 +56,7 @@ DocsCollector.collect('java.io.InputStreamReader', [
 				[/* parameter */ 'charsetName', [/* parameter description */
 					[/* text */ 't', `The name of a supported
          `],
-					[/* reference */ 'r', `java.nio.charset.Charset`]
+					[/* reference */ 'r', `java.nio.charset.Charset`, `charset`]
 				]]
 			],
 			[/* throws */

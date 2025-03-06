@@ -56,7 +56,7 @@ DocsCollector.collect('java.lang.reflect.Array', [
 				]],
 				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
 					[/* text */ 't', `if componentType is `],
-					[/* reference */ 'r', `java.Void#TYPE`],
+					[/* reference */ 'r', `java.lang.Void#TYPE`, `Void.TYPE`],
 					[/* text */ 't', ` or if the number of dimensions of the requested array
          instance exceed 255.`]
 				]],
@@ -130,7 +130,7 @@ DocsCollector.collect('java.lang.reflect.Array', [
 					[/* inline code block */ 'i', `dimensions`],
 					[/* text */ 't', `
  argument is a zero-dimensional array, if componentType is `],
-					[/* reference */ 'r', `java.Void#TYPE`],
+					[/* reference */ 'r', `java.lang.Void#TYPE`, `Void.TYPE`],
 					[/* text */ 't', `, or if the number of dimensions of the requested array
  instance exceed 255.`]
 				]],

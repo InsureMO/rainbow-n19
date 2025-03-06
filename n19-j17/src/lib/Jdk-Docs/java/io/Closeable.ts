@@ -21,7 +21,7 @@ DocsCollector.collect('java.io.Closeable', [
  `],
 				[/* block */ 'b', [
 					[/* text */ 't', ` As noted in `],
-					[/* reference */ 'r', `java.AutoCloseable#close()`],
+					[/* reference */ 'r', `java.lang.AutoCloseable#close()`, `AutoCloseable.close()`],
 					[/* text */ 't', `, cases where the
  close may fail require careful attention. It is strongly advised
  to relinquish the underlying resources and to internally

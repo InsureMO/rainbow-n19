@@ -12,7 +12,7 @@ DocsCollector.collect('java.net.URLStreamHandlerFactory', [
 		[/* block */ 'b', [
 			[/* text */ 't', ` A URL stream handler factory is used as specified in the
  `],
-			[/* reference */ 'r', `.URL#<init>(java.lang.String,java.lang.String,int,java.lang.String)`],
+			[/* reference */ 'r', `java.net.URL#<init>(java.lang.String,java.lang.String,int,java.lang.String)`, `URL constructor`],
 			[/* text */ 't', `.`]
 		]]
 	],
