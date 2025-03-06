@@ -8,7 +8,7 @@ export type DocSegmentText = ['t', DocSegmentContent] | ['t', DocSegmentContent,
 export type DocSegmentInlineCodeBlock = ['i', DocSegmentContent];
 /** reference, could be class/field/method/constructor */
 export type DocSegmentReference =
-	| ['r', DocSegmentContent] // link
+	// | ['r', DocSegmentContent] // link
 	| ['r', DocSegmentContent, DocSegmentContent] // link, text
 	| ['r', '#-id', DocSegmentContent, DocSegmentContent]; // id, text
 /** code block */
