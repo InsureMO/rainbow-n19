@@ -283,7 +283,7 @@ DocsCollector.collect('groovy.lang.IntRange', [
 				[/* block */ 'b', [
 					[/* text */ 't', `
  Note that equals is generally handled by `],
-					[/* reference */ 'r', `groovy.lang.codehaus.groovy.runtime.DefaultGroovyMethods#equals(java.util.List,java.util.List)`, `DefaultGroovyMethods.equals(List, List)`],
+					[/* text */ 't', `DefaultGroovyMethods.equals(List, List)`],
 					[/* text */ 't', `
  instead of this method.`]
 				]]
