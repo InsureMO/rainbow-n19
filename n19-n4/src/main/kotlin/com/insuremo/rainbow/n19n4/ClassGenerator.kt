@@ -774,18 +774,55 @@ private class ClassGenerator(
 			"${getPackageNameFromLinkNode(a)}.${className}"
 		} else {
 			val myPackageName = clazz.packageName.split(".").toMutableList()
-			var link = href
-			var linkTo: MutableList<String> = mutableListOf()
-			while (link.startsWith("../")) {
-				if (myPackageName.isEmpty()) {
-					Logs.error("Cannot compute internal link[${href}].", -1)
-					return href
-				}
-				linkTo.add(myPackageName.removeFirst())
-				link = link.substring(3)
+			val link = href
+			val internalLink = if (link.contains("/java.base/")) {
+				link.substring(link.indexOf("/java.base/") + 11).replace(".html", "").replace("/", ".")
+			} else if (link.startsWith("../")) {
+				// another package
+				myPackageName.take(myPackageName.size - (link.split("../").size - 1)).joinToString(".") +
+						"." +
+						link.replace("../", "").replace(".html", "").replace("/", ".")
+			} else if (link.startsWith("./")) {
+				"${clazz.packageName}." + link.replace("./", "").replace(".html", "").replace("/", ".")
+			} else {
+				"${clazz.packageName}." + link.replace(".html", "").replace("/", ".")
 			}
-			"${linkTo.joinToString(".")}." +
-					link.substring(link.indexOf("/") + 1).replace(".html", "").replace("/", ".")
+
+			if (internalLink.contains("#") && !internalLink.contains("(")) {
+				internalLink.split("#").takeIf { link ->
+					try {
+						val cls = link[0].let {
+							try {
+								Class.forName(it)
+							} catch (_: Throwable) {
+								it.split(".").let {
+									try {
+										Class.forName("${it.dropLast(1).joinToString(".")}$${it.last()}")
+									} catch (_: Throwable) {
+										Class.forName(
+											"${it.dropLast(2).joinToString(".")}$${it.takeLast(2).joinToString("$")}"
+										)
+									}
+								}
+							}
+						}
+						var found = !cls.isEnum && cls.declaredFields.any {
+							it.name == link[1]
+						}
+						if (!found) {
+							found = cls.isEnum && cls.enumConstants.any {
+								(it as Enum<*>).name == link[1]
+							}
+						}
+						!found
+					} catch (_: Throwable) {
+						true
+					}
+				}?.let {
+					Summary.addReferId(internalLink, clazz.name + "," + href)
+				}
+			}
+			internalLink
 		}
 	}
 
@@ -866,10 +903,17 @@ private class ClassGenerator(
 				val hrefToSubPackage = !hrefToExternal && !hrefToAnotherPackage && href.contains("/")
 				val hasChildElement = element.childrenSize() != 0
 				when {
-					inCodeBlock -> "${indent}[/* text */ 't', `${element.text().escapeDocChars()}`]"
 					hrefIgnored -> "${indent}[/* text */ 't', `${element.text().escapeDocChars()}`]"
+					hasId -> {
+						val id = element.attr("id")
+						Summary.addAnchorId(clazz.name + "#" + id)
+						"${indent}[/* anchor */ 'r', '#-id', `${id}`, `${element.text().escapeDocChars()}`]"
+					}
 
-					!hasTitle && hasId -> "${indent}[/* text */ 't', `${element.text().escapeDocChars()}`]"
+					inCodeBlock -> {
+						"${indent}[/* text */ 't', `${element.text().escapeDocChars()}`]"
+					}
+
 					!hasTitle && hrefStartsWithHash && !href.contains("(") -> {
 						"${indent}[/* text */ 't', `${element.text().escapeDocChars()}`]"
 					}
@@ -887,7 +931,9 @@ private class ClassGenerator(
 					}
 
 					hrefToAnotherPackage || hrefToSamePackage || hrefToSubPackage -> {
-						"${indent}[/* reference */ 'r', `${getInternalLink(node).escapeDocChars()}`]"
+						"${indent}[/* reference */ 'r', `${getInternalLink(node).escapeDocChars()}`, `${
+							element.text().escapeDocChars()
+						}`]"
 					}
 
 					else -> {

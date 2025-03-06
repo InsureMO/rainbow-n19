@@ -1,5 +1,6 @@
 package com.insuremo.rainbow.n19n4
 
+import groovy.sql.SqlWhereVisitor
 import java.io.File
 
 object Summary {
@@ -10,6 +11,8 @@ object Summary {
 	private val takenBackClasses = mutableMapOf<String, List<String>>()
 	private val externalClasses = mutableMapOf<String, Boolean>()
 	private val parameterNames = mutableMapOf<String, Boolean>()
+	private val referIds = mutableMapOf<String, String>()
+	private val anchorIds = mutableMapOf<String, Boolean>()
 
 	fun addTreatedClass(className: String) {
 		this.treatedClasses.put(className, true)
@@ -58,6 +61,14 @@ object Summary {
 		this.parameterNames.put(name, true)
 	}
 
+	fun addReferId(id: String, where: String) {
+		this.referIds.put(id, where)
+	}
+
+	fun addAnchorId(id: String) {
+		this.anchorIds.put(id, true)
+	}
+
 	fun printSummary() {
 		val content = listOf<String>(
 			"Classes Treated: ${this.treatedClasses.size}",
@@ -86,6 +97,22 @@ object Summary {
 			"",
 			"Parameter names:",
 			this.parameterNames.keys.sortedBy { it.lowercase() }.joinToString("\n"),
+			"",
+			"Missed anchor ids:",
+			this.referIds.keys.map {
+				it.replace(".", "-")
+			}.minus(this.anchorIds.keys.map {
+				it.replace(".", "-").replace("$", "-")
+			}).sortedBy {
+				it.lowercase()
+			}.map {
+				it.replace("-", ".")
+			}.joinToString("\n") {
+				it + " from " + this.referIds[it]
+			},
+			"",
+			"Existing anchor ids:",
+			this.anchorIds.keys.sortedBy { it.lowercase() }.joinToString("\n"),
 			""
 		).joinToString("\n")
 

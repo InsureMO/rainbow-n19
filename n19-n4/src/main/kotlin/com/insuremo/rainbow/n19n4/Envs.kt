@@ -265,19 +265,25 @@ object Envs {
 	}
 	val ignoredDocLinks by lazy {
 		listOf(
-			"/package-summary.html",
+			"package-summary.html",
 			"/specs/serialization/",
-			"/doc-files/",
+			"doc-files/",
 			"/specs/jni/",
 			"/serialized-form.html",
 			"/specs/jvmti.html",
 			"/specs/security/",
-			"/Collection.html#optional-restrictions",
+//			"/Collection.html#optional-restrictions",
 			"/ResourceBundleProvider.html#obtain-resource-bundle",
-			"/Configuration.html#service-binding",
-			"/Character.html#unicode",
+//			"/Configuration.html#service-binding",
+//			"/Character.html#unicode",
 			"/ModuleFinder.html#automatic-modules",
-			"/Instrumentation.html#isModifiableClass"
+			"/Instrumentation.html#isModifiableClass",
+//			"DataInput.html#modified-utf-8",
+			"/Attributes.Name.html#SEALED",
+			"Inet4Address.html",
+			"Inet6Address.html",
+			"System.html#EnvironmentVSSystemProperties",
+			"DateTimeFormatter.html#patterns"
 		)
 	}
 
