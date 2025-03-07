@@ -174,7 +174,6 @@ const getAllClassesInPackage = (pkg: IPackage, classloader: IClassLoader): Array
 class ClassDocDetails {
 	private readonly _doc: Optional<ClassDoc>;
 
-	private readonly _available: boolean;
 	private readonly _classDocAvailable: boolean;
 	private readonly _fieldsDocAvailable: boolean;
 	private readonly _constructorsDocAvailable: boolean;
@@ -183,8 +182,7 @@ class ClassDocDetails {
 	constructor(className: Optional<ClassName>,
 	            classDocs: CodeEditorClassDocs,
 	            mode: HelpStateMode) {
-		if (mode !== HelpStateMode.CLASS || this._doc == null) {
-			this._available = false;
+		if (mode !== HelpStateMode.CLASS || className == null) {
 			this._classDocAvailable = false;
 			this._fieldsDocAvailable = false;
 			this._constructorsDocAvailable = false;
@@ -195,8 +193,6 @@ class ClassDocDetails {
 			this._fieldsDocAvailable = this._doc.fields != null && this._doc.fields.length > 0;
 			this._constructorsDocAvailable = this._doc.constructors != null && this._doc.constructors.length > 0;
 			this._methodsDocAvailable = this._doc.methods != null && this._doc.methods.length > 0;
-			this._available = this._classDocAvailable
-				|| this._fieldsDocAvailable || this._constructorsDocAvailable || this._methodsDocAvailable;
 		}
 	}
 
@@ -205,7 +201,7 @@ class ClassDocDetails {
 	}
 
 	get available(): boolean {
-		return this._available;
+		return this._classDocAvailable || this._fieldsDocAvailable || this._constructorsDocAvailable || this._methodsDocAvailable;
 	}
 
 	get classDocAvailable(): boolean {
