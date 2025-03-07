@@ -116,7 +116,7 @@ export abstract class AbstractClassLoader implements IClassLoader {
 	}
 
 	protected linkToDeclaringClass(clazz: IClass, originalClass: IClass): void {
-		if (!clazz.isArray && !clazz.isPrimitive) {
+		if (clazz.isArray || clazz.isPrimitive) {
 			return;
 		}
 
@@ -159,7 +159,7 @@ export abstract class AbstractClassLoader implements IClassLoader {
 	}
 
 	protected linkToNestHost(clazz: IClass, originalClass: IClass): void {
-		if (!clazz.isArray && !clazz.isPrimitive) {
+		if (clazz.isArray || clazz.isPrimitive) {
 			return;
 		}
 
