@@ -91,20 +91,16 @@ export const Help = (props: HelpProps) => {
 	const onCloseClicked = () => {
 		classDocs?.toggle();
 	};
-	const getClassTypeForContentTitle = (className: ClassName): string => {
+	const getClassTitle = (className: ClassName): string => {
 		const cls = classDocs.classLoader().findClass(className);
 		if (cls == null) {
 			return '';
-		} else if (cls.isInterface) {
-			return 'interface ';
-		} else if (cls.isEnum) {
-			return 'enum ';
-		} else if (cls.isAnnotation) {
-			return 'annotation ';
-		} else if (cls.isAbstract) {
-			return 'abstract class ';
+		}
+		const title = cls.toGenericString();
+		if (cls.isInterface) {
+			return title.replace('abstract ', '');
 		} else {
-			return 'class ';
+			return title;
 		}
 	};
 	const onGroupTitleClicked = (group: ItemGroup) => () => {
@@ -162,9 +158,7 @@ export const Help = (props: HelpProps) => {
 				? <HelpContentTitle>Package {state.packageName}</HelpContentTitle>
 				: null}
 			{state.mode === HelpStateMode.CLASS
-				? <HelpContentTitle>
-					{getClassTypeForContentTitle(state.className)}{state.className}
-				</HelpContentTitle>
+				? <HelpContentTitle>{getClassTitle(state.className)}</HelpContentTitle>
 				: null}
 			<HelpItemList mode={state.mode} items={state.items}
 			              onGroupTitleClicked={onGroupTitleClicked} onItemClicked={onItemClicked}/>
