@@ -8,6 +8,13 @@ import {L} from './l';
 import {N} from './n';
 import {R} from './r';
 import {T} from './t';
+import {Tb} from './tb';
+import {Tbc} from './tbc';
+import {Tbl} from './tbl';
+import {Tc} from './tc';
+import {Th} from './th';
+import {Thc} from './thc';
+import {Tr} from './tr';
 
 export const HELPContent = {
 	't': T,
@@ -19,5 +26,13 @@ export const HELPContent = {
 	'n': N,
 	'dt': Dt,
 	'dd': Dd,
-	'dl': Dl
+	'dl': Dl,
+	'tc': Tc,
+	'tbc': Tbc,
+	'thc': Thc,
+	'tr': Tr,
+	'th': Th,
+	'tb': Tb,
+	'tbl': Tbl,
+	'b': 'B'
 };
