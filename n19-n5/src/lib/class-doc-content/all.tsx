@@ -1,4 +1,5 @@
 import {A} from './a';
+import {B} from './b';
 import {C} from './c';
 import {Dd} from './dd';
 import {Dl} from './dl';
@@ -16,7 +17,7 @@ import {Th} from './th';
 import {Thc} from './thc';
 import {Tr} from './tr';
 
-export const HelpContentWidgets = {
+export const ClassDocContentWidgets = {
 	't': T,
 	'i': I,
 	'r': R,
@@ -34,5 +35,5 @@ export const HelpContentWidgets = {
 	'th': Th,
 	'tb': Tb,
 	'tbl': Tbl,
-	'b': 'B'
+	'b': B
 };

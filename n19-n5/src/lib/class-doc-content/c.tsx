@@ -1,6 +1,6 @@
 import {Java} from '@rainbow-n19/n2';
 import React, {FC} from 'react';
-import {HelpContentWidgets} from './all';
+import {ClassDocContentWidgets} from './all';
 
 export interface CProps {
 	content: Java.DocSegmentCodeBlock;
@@ -17,11 +17,11 @@ export const C: FC<CProps> = (props: CProps) => {
 		return <pre data-w="c">{textOrChildren}</pre>;
 	} else {
 		return <pre data-w="c">
-			{textOrChildren.map(child => {
+			{textOrChildren.map((child, index) => {
 				const [t] = child;
-				const C = HelpContentWidgets[t];
-				// @ts-ignore
-				return <C content={child} key={JSON.stringify(child)}/>;
+				const C = ClassDocContentWidgets[t];
+				// @ts-expect-error dynamic widget used here
+				return <C content={child} key={`${index}-${JSON.stringify(child)}`}/>;
 			})}
 		</pre>;
 	}

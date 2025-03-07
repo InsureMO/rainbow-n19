@@ -12,6 +12,7 @@ export const T: FC<TProps> = (props: TProps) => {
 		return null;
 	}
 
+	// eslint-disable-next-line @typescript-eslint/no-explicit-any
 	let content: any;
 	switch (type) {
 		case 'small':

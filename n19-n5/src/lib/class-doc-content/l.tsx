@@ -1,6 +1,6 @@
 import {Java} from '@rainbow-n19/n2';
 import React, {FC} from 'react';
-import {HelpContentWidgets} from './all';
+import {ClassDocContentWidgets} from './all';
 
 export interface LProps {
 	content: Java.DocSegmentList;
@@ -14,11 +14,11 @@ export const L: FC<LProps> = (props: LProps) => {
 	}
 
 	return <div data-w="l">
-		{items.map(item => {
+		{items.map((item, index) => {
 			const [t] = item;
-			const C = HelpContentWidgets[t];
-			// @ts-ignore
-			return <C content={child} key={JSON.stringify(item)}/>;
+			const C = ClassDocContentWidgets[t];
+			// @ts-expect-error dynamic widget used here
+			return <C content={item} key={`${index}-${JSON.stringify(item)}`}/>;
 		})}
 	</div>;
 };

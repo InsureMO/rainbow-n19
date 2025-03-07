@@ -1,6 +1,6 @@
 import {Java} from '@rainbow-n19/n2';
 import React, {FC} from 'react';
-import {HelpContentWidgets} from './all';
+import {ClassDocContentWidgets} from './all';
 
 export interface DlProps {
 	content: Java.DocSegmentDl;
@@ -14,11 +14,11 @@ export const Dl: FC<DlProps> = (props: DlProps) => {
 	}
 
 	return <dl data-w="dl">
-		{children.map(child => {
+		{children.map((child, index) => {
 			const [t] = child;
-			const C = HelpContentWidgets[t];
-			// @ts-ignore
-			return <C content={child} key={JSON.stringify(child)}/>;
+			const C = ClassDocContentWidgets[t];
+			// @ts-expect-error dynamic widget used here
+			return <C content={child} key={`${index}-${JSON.stringify(child)}`}/>;
 		})}
 	</dl>;
 };
