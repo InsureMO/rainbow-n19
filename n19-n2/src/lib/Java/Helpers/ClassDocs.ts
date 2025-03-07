@@ -8,7 +8,7 @@ export type DocSegmentText = ['t', DocSegmentContent] | ['t', DocSegmentContent,
 export type DocSegmentInlineCodeBlock = ['i', DocSegmentContent];
 /** reference, could be class/field/method/constructor */
 export type DocSegmentReference =
-	// | ['r', DocSegmentContent] // link
+// | ['r', DocSegmentContent] // link
 	| ['r', DocSegmentContent, DocSegmentContent] // link, text
 	| ['r', '#-id', DocSegmentContent, DocSegmentContent]; // id, text
 /** code block */
@@ -27,9 +27,9 @@ export type DocSegmentDl = ['dl'] | ['dl', Array<DocSegmentDt | DocSegmentDd>];
 export type DocSegmentTableCaption = ['tc'] | ['tc', Array<DocSegment>];
 export type DocSegmentTableCell =
 	| ['tbc']
-	| ['tbc', number, number]
+	| ['tbc', number, number] // colspan, rowspan
 	| ['tbc', Array<DocSegment>]
-	| ['tbc', number, number, Array<DocSegment>]
+	| ['tbc', number, number, Array<DocSegment>] // colspan, rowspan
 export type DocSegmentTableHeaderCell =
 	| ['thc']
 	| ['thc', number, number]
@@ -40,7 +40,7 @@ export type DocSegmentTableHeader = ['th'] | ['th', Array<DocSegmentTableRow>]
 export type DocSegmentTableBody = ['tb'] | ['tb', Array<DocSegmentTableRow>]
 export type DocSegmentTable = ['tbl', DocSegmentTableCaption, DocSegmentTableHeader, DocSegmentTableBody]
 /** block */
-export type DocSegmentBlock = ['b', DocSegmentContent | Array<DocSegmentText | DocSegmentInlineCodeBlock | DocSegmentReference | DocSegmentCodeBlock | DocSegmentExternalLink | DocSegmentList | DocSegmentNewLine | DocSegmentDl | DocSegmentTable | DocSegmentBlock>]
+export type DocSegmentBlock = ['b', DocSegmentContent | Array<DocSegment>]
 export type DocSegment =
 	| DocSegmentText
 	| DocSegmentInlineCodeBlock
