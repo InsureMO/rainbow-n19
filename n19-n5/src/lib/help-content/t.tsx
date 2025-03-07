@@ -1,11 +1,11 @@
 import {Java} from '@rainbow-n19/n2';
-import React from 'react';
+import React, {FC} from 'react';
 
 export interface TProps {
 	content: Java.DocSegmentText;
 }
 
-export const T = (props: TProps) => {
+export const T: FC<TProps> = (props: TProps) => {
 	const {content: [, text, type] = []} = props;
 
 	if (text == null || text.length === 0) {

@@ -1,15 +1,19 @@
 import {Java} from '@rainbow-n19/n2';
-import React from 'react';
+import React, {FC} from 'react';
 
 export interface RProps {
 	content: Java.DocSegmentReference;
 }
 
-export const R = (props: RProps) => {
-	const {content: [, linkOrType, idOrText, text]} = props;
+export const R: FC<RProps> = (props: RProps) => {
+	const {content: [, linkOrType, idOrText, text] = []} = props;
+
+	if (linkOrType == null || linkOrType.length === 0) {
+		return null;
+	}
 
 	if (linkOrType === '#-id') {
-		return <a id={idOrText}>{text}</a>;
+		return <a data-w="r" id={idOrText}>{text}</a>;
 	} else {
 		const onClicked = () => {
 			// TODO, check link format, could be one of following:
@@ -20,6 +24,6 @@ export const R = (props: RProps) => {
 			// 5. anchor of another class
 			// 6. external link, should open new window
 		};
-		return <a onClick={onClicked}>{idOrText}</a>;
+		return <a data-w="r" onClick={onClicked}>{idOrText}</a>;
 	}
 };

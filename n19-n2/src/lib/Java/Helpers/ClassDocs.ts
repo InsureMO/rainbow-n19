@@ -14,7 +14,7 @@ export type DocSegmentReference =
 /** code block */
 export type DocSegmentCodeBlock = ['c', DocSegmentContent | Array<DocSegmentText | DocSegmentInlineCodeBlock | DocSegmentReference>];
 /** external link */
-export type DocSegmentExternalLink = ['a', DocSegmentContent, DocSegmentContent];
+export type DocSegmentExternalLink = ['a', DocSegmentContent, DocSegmentContent]; // link, text
 /** list */
 export type DocSegmentList = ['l', Array<DocSegmentBlock>]
 /** new line, aka <br> */
