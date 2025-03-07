@@ -1,6 +1,6 @@
 import {Java} from '@rainbow-n19/n2';
 import React, {FC} from 'react';
-import {HELPContent} from './all';
+import {HelpContentWidgets} from './all';
 
 export interface DlProps {
 	content: Java.DocSegmentDl;
@@ -16,7 +16,7 @@ export const Dl: FC<DlProps> = (props: DlProps) => {
 	return <dl data-w="dl">
 		{children.map(child => {
 			const [t] = child;
-			const C = HELPContent[t];
+			const C = HelpContentWidgets[t];
 			// @ts-ignore
 			return <C content={child} key={JSON.stringify(child)}/>;
 		})}

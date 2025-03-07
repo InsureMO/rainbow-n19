@@ -16,7 +16,7 @@ import {Th} from './th';
 import {Thc} from './thc';
 import {Tr} from './tr';
 
-export const HELPContent = {
+export const HelpContentWidgets = {
 	't': T,
 	'i': I,
 	'r': R,

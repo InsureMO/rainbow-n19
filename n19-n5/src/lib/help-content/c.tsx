@@ -1,6 +1,6 @@
 import {Java} from '@rainbow-n19/n2';
 import React, {FC} from 'react';
-import {HELPContent} from './all';
+import {HelpContentWidgets} from './all';
 
 export interface CProps {
 	content: Java.DocSegmentCodeBlock;
@@ -19,7 +19,7 @@ export const C: FC<CProps> = (props: CProps) => {
 		return <pre data-w="c">
 			{textOrChildren.map(child => {
 				const [t] = child;
-				const C = HELPContent[t];
+				const C = HelpContentWidgets[t];
 				// @ts-ignore
 				return <C content={child} key={JSON.stringify(child)}/>;
 			})}
