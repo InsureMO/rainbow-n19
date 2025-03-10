@@ -5,7 +5,7 @@ import {GroovyClassLoader} from '../OrgCodehausGroovy';
  * third-party libs
  */
 export class DependenciesClassLoader extends NonJREClassLoader {
-	constructor(parent: JREClassLoader | GroovyClassLoader | DependenciesClassLoader) {
+	constructor(parent?: JREClassLoader | GroovyClassLoader | DependenciesClassLoader) {
 		super(parent);
 	}
 }
@@ -14,7 +14,7 @@ export class DependenciesClassLoader extends NonJREClassLoader {
  * project level
  */
 export class ProjectClassLoader extends NonJREClassLoader {
-	constructor(parent: JREClassLoader | GroovyClassLoader | DependenciesClassLoader) {
+	constructor(parent?: JREClassLoader | GroovyClassLoader | DependenciesClassLoader) {
 		super(parent);
 	}
 }
@@ -23,7 +23,7 @@ export class ProjectClassLoader extends NonJREClassLoader {
  * classes on editing, maybe not saved to disk yet, depends on IDE policy
  */
 export class FloatingClassLoader extends NonJREClassLoader {
-	constructor(parent: ProjectClassLoader) {
+	constructor(parent?: ProjectClassLoader) {
 		super(parent);
 	}
 }
@@ -32,7 +32,7 @@ export class FloatingClassLoader extends NonJREClassLoader {
  * editing class
  */
 export class EditingClassLoader extends NonJREClassLoader {
-	constructor(parent: FloatingClassLoader) {
+	constructor(parent?: FloatingClassLoader) {
 		super(parent);
 	}
 }

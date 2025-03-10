@@ -5,6 +5,7 @@ import {IPackage} from './IPackage';
 
 export interface IClassLoader {
 	root(): IClassLoader;
+	setParent(parent?: IClassLoader): void;
 	parent(): Optional<IClassLoader>;
 	findClass(className: ClassName): Optional<IClass>;
 	findClass(className: ClassName, orCreate: () => IClass): IClass;

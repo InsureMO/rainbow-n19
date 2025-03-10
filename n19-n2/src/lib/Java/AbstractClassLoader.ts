@@ -5,7 +5,7 @@ import {Package} from './Package';
 import {ClassName, PackageName} from './TypeAlias';
 
 export abstract class AbstractClassLoader implements IClassLoader {
-	private readonly _parent: Optional<IClassLoader>;
+	private _parent: Optional<IClassLoader>;
 	private readonly _classes: Map<ClassName, IClass> = new Map();
 	private readonly _declaredClasses: Map<ClassName, Array<IClass>> = new Map();
 	private readonly _nestMembers: Map<ClassName, Array<IClass>> = new Map();
@@ -22,6 +22,10 @@ export abstract class AbstractClassLoader implements IClassLoader {
 		} else {
 			return this._parent.root();
 		}
+	}
+
+	setParent(parent?: IClassLoader): void {
+		this._parent = parent;
 	}
 
 	parent(): Optional<IClassLoader> {

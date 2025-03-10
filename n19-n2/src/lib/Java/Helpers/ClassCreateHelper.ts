@@ -1,5 +1,4 @@
 import {Optional} from '../../TsAddon';
-import {AbstractClassLoader} from '../AbstractClassLoader';
 import {Annotation} from '../Annotation';
 import {Class} from '../Class';
 import {Constructor} from '../Constructor';
@@ -134,12 +133,6 @@ export type ClassCreateClassArgs = [
 	Optional<Array<ClassCreateEnumValueArgs>> // enum values, available only when class is enum.
 ];
 
-class IntermediaryClassLoader extends AbstractClassLoader {
-	constructor() {
-		super();
-	}
-}
-
 export class ClassCreateHelper {
 	private readonly _classLoader: IClassLoader;
 
@@ -153,10 +146,6 @@ export class ClassCreateHelper {
 
 	static on(classLoader: IClassLoader): ClassCreateHelper {
 		return new ClassCreateHelper(classLoader);
-	}
-
-	static intermediary(): ClassCreateHelper {
-		return new ClassCreateHelper(new IntermediaryClassLoader());
 	}
 
 	protected _typeVariable(declaration: IGenericDeclaration, args: ClassCreateTypeVariableArgs): ITypeVariable {
@@ -319,9 +308,5 @@ export class ClassCreateHelper {
 		});
 		this._classLoader.addClass(clazz);
 		return clazz;
-	}
-
-	passAllMyClassesTo(another: IClassLoader): void {
-		this._classLoader.allMyClasses().forEach(clazz => another.addClass(clazz));
 	}
 }
