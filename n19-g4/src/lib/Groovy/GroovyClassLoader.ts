@@ -1,7 +1,7 @@
 import {Groovy, Java} from '@rainbow-n19/n2';
 
 export class GroovyClassLoader extends Groovy.GroovyClassLoader {
-	constructor(parent: Java.JREClassLoader) {
+	constructor(parent?: Java.JREClassLoader) {
 		super(parent, '4.0.25');
 	}
 
@@ -10,9 +10,9 @@ export class GroovyClassLoader extends Groovy.GroovyClassLoader {
 	}
 }
 
-export const GroovyClassCreateHelper = Java.ClassCreateHelper.intermediary();
+export const GroovyClassCreateHelper = new Java.ClassCreateHelper(new GroovyClassLoader());
 export const createGroovyClassLoader = (parent: Java.JREClassLoader): GroovyClassLoader => {
-	const classLoader = new GroovyClassLoader(parent);
-	GroovyClassCreateHelper.passAllMyClassesTo(classLoader);
-	return classLoader;
-}
+	const classLoader = GroovyClassCreateHelper.classLoader;
+	classLoader.setParent(parent);
+	return classLoader as GroovyClassLoader;
+};
