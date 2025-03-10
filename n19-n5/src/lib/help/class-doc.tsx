@@ -1,4 +1,4 @@
-import {IClass, IPackage} from '@rainbow-n19/n2/lib/Java';
+import {Java} from '@rainbow-n19/n2';
 import React, {MouseEvent} from 'react';
 import {ClassDocSegment} from '../class-doc-content';
 import {CodeEditorClassDocs} from '../types';
@@ -11,6 +11,9 @@ import {
 	HelpSuperclassOInterfaceListItems,
 	HelpSuperclassOInterfaceListTitle
 } from './widgets';
+
+type IPackage = Java.IPackage;
+type IClass = Java.IClass;
 
 export interface HelpClassDocProps {
 	mode: HelpState['mode'];
