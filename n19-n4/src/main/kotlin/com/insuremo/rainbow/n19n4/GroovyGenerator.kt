@@ -7,19 +7,19 @@ import java.io.File
 private fun createClassLoaderFile(targetDir: String) {
 	val content = "import {Groovy, Java} from '@rainbow-n19/n2';\n\n" +
 			"export class GroovyClassLoader extends Groovy.GroovyClassLoader {\n" +
-			"\tconstructor(parent: Java.JREClassLoader) {\n" +
+			"\tconstructor(parent?: Java.JREClassLoader) {\n" +
 			"\t\tsuper(parent, '${GroovySystem.getVersion()}');\n" +
 			"\t}\n\n" +
 			"\tvendor(): string {\n" +
 			"\t\treturn 'The Apache Software Foundation';\n" +
 			"\t}\n" +
 			"}\n\n" +
-			"export const GroovyClassCreateHelper = Java.ClassCreateHelper.intermediary();\n" +
+			"export const GroovyClassCreateHelper = new Java.ClassCreateHelper(new GroovyClassLoader());\n" +
 			"export const createGroovyClassLoader = (parent: Java.JREClassLoader): GroovyClassLoader => {\n" +
-			"\tconst classLoader = new GroovyClassLoader(parent);\n" +
-			"\tGroovyClassCreateHelper.passAllMyClassesTo(classLoader);\n" +
-			"\treturn classLoader;\n" +
-			"}\n"
+			"\tconst classLoader = GroovyClassCreateHelper.classLoader;\n" +
+			"\tclassLoader.setParent(parent);\n" +
+			"\treturn classLoader as GroovyClassLoader;\n" +
+			"};\n"
 	writeFile(targetDir + File.separator + "GroovyClassLoader.ts", content)
 }
 

@@ -11,7 +11,7 @@ private fun createClassLoaderFile(targetDir: String, name: String) {
 			"\treadonly vendor?: string;\n" +
 			"}\n\n" +
 			"export class ${name}ClassLoader extends DependenciesClassLoader {\n" +
-			"\tconstructor(parent: Java.JREClassLoader | Groovy.GroovyClassLoader | DependenciesClassLoader) {\n" +
+			"\tconstructor(parent?: Java.JREClassLoader | Groovy.GroovyClassLoader | DependenciesClassLoader) {\n" +
 			"\t\tsuper(parent);\n" +
 			"\t}\n\n" +
 			"\tlibs(): Array<ThirdLib> {\n" +
@@ -22,12 +22,12 @@ private fun createClassLoaderFile(targetDir: String, name: String) {
 			"\t\t});\n" +
 			"\t}\n" +
 			"}\n\n" +
-			"export const ${name}ClassCreateHelper = Java.ClassCreateHelper.intermediary();\n" +
+			"export const ${name}ClassCreateHelper = new ${name}ClassLoader();\n" +
 			"export const create${name}ClassLoader = (parent: Java.JREClassLoader | Groovy.GroovyClassLoader | DependenciesClassLoader): ${name}ClassLoader => {\n" +
-			"\tconst classLoader = new ${name}ClassLoader(parent);\n" +
-			"\t${name}ClassCreateHelper.passAllMyClassesTo(classLoader);\n" +
-			"\treturn classLoader;\n" +
-			"}\n"
+			"\tconst classLoader = ${name}ClassCreateHelper.classLoader;\n" +
+			"\tclassLoader.setParent(parent);\n" +
+			"\treturn classLoader as ${name}ClassLoader;\n" +
+			"};\n"
 	writeFile(targetDir + File.separator + "${name}ClassLoader.ts", content)
 }
 
