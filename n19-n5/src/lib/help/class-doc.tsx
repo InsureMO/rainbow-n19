@@ -1,11 +1,10 @@
 import {Java} from '@rainbow-n19/n2';
 import React, {MouseEvent} from 'react';
-import {ClassDocSegment} from '../class-doc-content';
 import {CodeEditorClassDocs} from '../types';
 import {ClassDocDetails} from './class-doc-details';
+import {ClassLevelDoc} from './class-level-doc';
 import {HelpState, HelpStateMode} from './types';
 import {
-	HelpPartDoc,
 	HelpSuperclassOInterfaceList,
 	HelpSuperclassOInterfaceListItem,
 	HelpSuperclassOInterfaceListItems,
@@ -29,11 +28,10 @@ export const HelpClassDoc = (props: HelpClassDocProps) => {
 		return null;
 	}
 
-	const doc = new ClassDocDetails(className, classDocs, mode);
-
-	const superclasses = doc.superclasses;
+	const details = new ClassDocDetails(className, classDocs, mode);
+	const superclasses = details.superclasses;
 	const hasSuperclass = superclasses != null && superclasses.length !== 0;
-	const interfaces = doc.interfaces;
+	const interfaces = details.interfaces;
 	const hasInterface = interfaces != null && interfaces.length !== 0;
 
 	return <>
@@ -65,10 +63,6 @@ export const HelpClassDoc = (props: HelpClassDocProps) => {
 					: null}
 			</HelpSuperclassOInterfaceList>
 			: null}
-		{doc.classDocAvailable
-			? <HelpPartDoc>
-				<ClassDocSegment content={doc.classDoc}/>
-			</HelpPartDoc>
-			: null}
+		<ClassLevelDoc details={details}/>
 	</>;
 };

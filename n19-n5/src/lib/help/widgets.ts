@@ -296,15 +296,59 @@ export const HelpSuperclassOInterfaceListItem = styled.span.attrs({
     }
 `;
 // noinspection CssUnresolvedCustomProperty
-export const HelpPartDoc = styled.div.attrs({
+export const HelpDocOfCategory = styled.div.attrs({
 	// @ts-expect-error for avoid attribute name rule
-	'data-w': 'groovy-editor-help-class-part-doc'
+	'data-w': 'groovy-editor-help-class-doc-of-category'
+})`
+    display: grid;
+    position: relative;
+    grid-template-columns: auto 1fr;
+    grid-column-gap: var(--groovy-editor-help-class-doc-of-category-column-gap, 12px);
+    align-items: center;
+    height: var(--groovy-editor-help-class-doc-of-category-height, 40px);
+    line-height: calc(var(--groovy-editor-help-class-doc-of-category-height, 40px) * 7 / 8);
+    border-bottom: var(--groovy-editor-help-class-doc-of-category-border, 1px solid #e5e5e5);
+`;
+// noinspection CssUnresolvedCustomProperty
+export const HelpDocOfCategoryTitle = styled.div.attrs({
+	// @ts-expect-error for avoid attribute name rule
+	'data-w': 'groovy-editor-help-class-doc-of-category-title'
+})`
+    display: flex;
+    position: relative;
+    align-items: center;
+    height: var(--groovy-editor-help-item-group-title-height, 40px);
+    line-height: calc(var(--groovy-editor-help-item-group-title-height, 40px) * 7 / 8);
+    font-size: var(--groovy-editor-help-class-doc-of-categ0ory-title-font-size, 14px);
+    font-weight: var(--groovy-editor-help-class-doc-of-category-title-font-weight, 500);
+    border: var(--groovy-editor-help-item-group-title-border, 1px solid transparent);
+
+    > span:first-child {
+        opacity: 0.5;
+        margin-right: 0.8em;
+    }
+
+    > span:nth-child(2) {
+        cursor: pointer;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+`;
+// noinspection CssUnresolvedCustomProperty
+export const HelpDocOfItem = styled.div.attrs({
+	// @ts-expect-error for avoid attribute name rule
+	'data-w': 'groovy-editor-help-class-doc-of-item'
 })`
     display: block;
     position: relative;
     padding: var(--groovy-editor-help-class-doc-padding, 4px 0);
     width: 100%;
+    height: var(--height);
     font-size: var(--groovy-editor-help-class-doc-font-size, 12px);
+    overflow: hidden;
+    transition: height 300ms ease-in-out;
 
     a[data-w=a],
     p[data-w=b],

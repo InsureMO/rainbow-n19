@@ -23,6 +23,10 @@ export class ClassDocDetails {
 		}
 	}
 
+	get class(): Optional<IClass> {
+		return this._class;
+	}
+
 	/**
 	 * java.lang.Object is not included
 	 */
