@@ -1,4 +1,4 @@
-import React, {FC, ReactNode, useEffect, useState} from 'react';
+import React, {FC, ReactNode} from 'react';
 import {ClassDocDetails} from './class-doc-details';
 import {DocPartExpandCommunicator} from './use-doc-part-expandable';
 import {HelpDocOfItem, HelpDocOfItemTitle} from './widgets';
@@ -30,17 +30,10 @@ const DocItemPartHeader =
 export const DocItemPart = (props: DocItemPartProps) => {
 	const {details, title, content: Content} = props;
 
-	const [state, setState] = useState({
-		details, communicator: new DocPartExpandCommunicator()
-	});
-	useEffect(() => {
-		if (details !== state.details) {
-			setState({details, communicator: new DocPartExpandCommunicator()});
-		}
-	}, [details]);
+	const communicator = new DocPartExpandCommunicator();
 
 	return <>
-		<DocItemPartHeader details={details} title={title} communicator={state.communicator}/>
-		<Content details={details} communicator={state.communicator}/>
+		<DocItemPartHeader details={details} title={title} communicator={communicator}/>
+		<Content details={details} communicator={communicator}/>
 	</>;
 };

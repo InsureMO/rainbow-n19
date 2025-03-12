@@ -26,26 +26,27 @@ export const useDocPartContentHeight = (communicator: DocPartExpandCommunicator)
 	const ref = useRef<HTMLDivElement>(null);
 	const heightRef = useRef(-1);
 	useEffect(() => {
-		if (ref.current == null) {
-			return;
-		}
-
-		const dom = ref.current as HTMLDivElement;
-		const height = getComputedStyle(dom).height;
-		heightRef.current = Number(height.replace('px', ''));
-		dom.style.setProperty('--height', height);
-
 		communicator.listen(async (expanded) => {
 			if (ref.current == null) {
 				return;
 			}
 			const dom = ref.current as HTMLDivElement;
 			if (expanded) {
+				dom.addEventListener('transitionend', () => {
+					dom.style.removeProperty('--height');
+				}, {once: true});
 				dom.style.setProperty('--height', heightRef.current + 'px');
 				dom.style.removeProperty('--padding');
 			} else {
-				dom.style.setProperty('--height', '0px');
-				dom.style.setProperty('--padding', '0px');
+				// save height
+				const dom = ref.current as HTMLDivElement;
+				const height = getComputedStyle(dom).height;
+				heightRef.current = Number(height.replace('px', ''));
+				dom.style.setProperty('--height', height);
+				setTimeout(() => {
+					dom.style.setProperty('--height', '0px');
+					dom.style.setProperty('--padding', '0px');
+				}, 10);
 			}
 		});
 	}, [communicator]);
