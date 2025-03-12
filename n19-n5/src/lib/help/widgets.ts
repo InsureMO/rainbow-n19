@@ -327,7 +327,8 @@ export const HelpDocOfCategoryTitle = styled.div.attrs({
 
     > span:first-child {
         opacity: 0.5;
-        margin-right: 0.8em;
+        margin-right: 10px;
+        width: 8px;
     }
 
     > span:nth-child(2) {
@@ -363,10 +364,6 @@ export const HelpDocOfItem = styled.div.attrs({
     padding: var(--groovy-editor-help-class-doc-of-item-padding, 4px 0);
     width: 100%;
     border-bottom: var(--groovy-editor-help-class-doc-of-item-border, 1px solid #e5e5e5);
-
-    &:not(:first-child) {
-        border-top: var(--groovy-editor-help-class-doc-of-item-border, 1px solid #e5e5e5);
-    }
 `;
 // noinspection CssUnresolvedCustomProperty
 export const HelpDocOfItemTitle = styled.div.attrs({
@@ -384,7 +381,8 @@ export const HelpDocOfItemTitle = styled.div.attrs({
 
     > span:first-child {
         opacity: 0.5;
-        margin-right: 0.8em;
+        margin-right: 10px;
+        width: 8px;
     }
 
     > span:nth-child(2) {
@@ -403,6 +401,7 @@ export const HelpDocOfItemContent = styled.div.attrs({
     display: block;
     position: relative;
     padding: var(--padding, var(--groovy-editor-help-class-doc-padding, 4px 0));
+    padding-left: 18px;
     width: 100%;
     height: var(--height);
     font-size: var(--groovy-editor-help-class-doc-font-size, 12px);

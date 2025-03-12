@@ -2,6 +2,7 @@ import React, {FC} from 'react';
 import {ClassDocSegment} from '../class-doc-content';
 import {ClassDocDetails} from './class-doc-details';
 import {DocPart, DocPartContentProps} from './doc-part';
+import {useDocPartContentHeight} from './use-doc-part-expandable';
 import {HelpDocOfItemContent} from './widgets';
 
 export interface ClassLevelDocProps {
@@ -9,9 +10,11 @@ export interface ClassLevelDocProps {
 }
 
 const ClassLevelDocContent: FC<DocPartContentProps> = (props) => {
-	const {details} = props;
+	const {details, communicator} = props;
 
-	return <HelpDocOfItemContent>
+	const {ref} = useDocPartContentHeight(communicator);
+
+	return <HelpDocOfItemContent ref={ref}>
 		<ClassDocSegment content={details.classDoc}/>
 	</HelpDocOfItemContent>;
 };
