@@ -8,6 +8,7 @@ import {useDocPartContentHeight} from './use-doc-part-expandable';
 import {HelpDocOfItemContent, HelpDocOfItems} from './widgets';
 
 type IField = Java.IField;
+const Modifier = Java.Modifier;
 
 export interface FieldDocProps {
 	details: ClassDocDetails;
@@ -29,7 +30,14 @@ const FieldDocContent: FC<DocItemPartContentProps & Pick<FieldDocProps, 'field'>
 const FieldDoc: FC<FieldDocProps> = (props) => {
 	const {details, field} = props;
 
-	return <DocItemPart details={details} title={field.toGenericString()}
+	const title = <>
+		{(field.modifiers == 0) ? '' : (Modifier.toString(field.modifiers) + ' ')}
+		{field.genericTypeName}
+		{' '}
+		{field.name}
+	</>;
+
+	return <DocItemPart details={details} title={title}
 	                    content={(props) => <FieldDocContent {...props} field={field}/>}/>;
 };
 
