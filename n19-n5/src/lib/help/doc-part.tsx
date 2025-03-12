@@ -5,7 +5,6 @@ import {HelpDocOfCategory, HelpDocOfCategoryTitle} from './widgets';
 
 export interface DocPartContentProps {
 	details: ClassDocDetails;
-	expanded?: boolean;
 }
 
 export interface DocPartProps {
@@ -15,23 +14,29 @@ export interface DocPartProps {
 	content: FC<DocPartContentProps>;
 }
 
-export const DocPart = (props: DocPartProps) => {
-	const {details, title, available, content: Content} = props;
+const DocPartHeader = (props: Omit<DocPartProps, 'available' | 'content'>) => {
+	const {details, title} = props;
 
 	const {ref, expanded, toggle} = useDocPartExpandable(details);
+
+	return <HelpDocOfCategory data-expanded={expanded} ref={ref}>
+		<HelpDocOfCategoryTitle>
+			<span>{expanded ? '⊖' : '⊕'}</span>
+			<span onClick={toggle}>{title}</span>
+		</HelpDocOfCategoryTitle>
+		<span/>
+	</HelpDocOfCategory>;
+};
+
+export const DocPart = (props: DocPartProps) => {
+	const {details, available, title, content: Content} = props;
 
 	if (!available()) {
 		return null;
 	}
 
 	return <>
-		<HelpDocOfCategory data-expanded={expanded} ref={ref}>
-			<HelpDocOfCategoryTitle>
-				<span>{expanded ? '⊖' : '⊕'}</span>
-				<span onClick={toggle}>{title}</span>
-			</HelpDocOfCategoryTitle>
-			<span/>
-		</HelpDocOfCategory>
-		<Content details={details} expanded={expanded}/>
+		<DocPartHeader details={details} title={title}/>
+		<Content details={details}/>
 	</>;
 };

@@ -122,7 +122,8 @@ export const HelpContent = styled.div.attrs({
     border-top: var(--groovy-editor-help-content-border-top, 1px solid #ddd);
     margin: var(--groovy-editor-help-content-margin, 16px 0 0);
     color: var(--groovy-editor-help-content-color, #555);
-    overflow: auto;
+    overflow-x: hidden;
+    overflow-y: scroll;
 `;
 // noinspection CssUnresolvedCustomProperty
 export const HelpContentTitle = styled.div.attrs({
@@ -321,6 +322,7 @@ export const HelpDocOfCategoryTitle = styled.div.attrs({
     line-height: calc(var(--groovy-editor-help-item-group-title-height, 40px) * 7 / 8);
     font-size: var(--groovy-editor-help-class-doc-of-category-title-font-size, 14px);
     font-weight: var(--groovy-editor-help-class-doc-of-category-title-font-weight, 500);
+    color: var(--groovy-editor-help-class-doc-of-category-title-color, #4868c6);
     border: var(--groovy-editor-help-item-group-title-border, 1px solid transparent);
 
     > span:first-child {
@@ -376,8 +378,9 @@ export const HelpDocOfItemTitle = styled.div.attrs({
     align-items: center;
     min-height: var(--groovy-editor-help-class-doc-of-item-title-height, 24px);
     line-height: var(--groovy-editor-help-class-doc-of-item-title-height, 24px);
-    font-size: var(--groovy-editor-help-class-class-doc-of-item-font-size, 12px);
-    font-weight: var(--groovy-editor-help-class-class-doc-of-item-font-weight, 500);
+    font-size: var(--groovy-editor-help-class-class-doc-of-item-title-font-size, 12px);
+    font-weight: var(--groovy-editor-help-class-class-doc-of-item-title-font-weight, 500);
+    color: var(--groovy-editor-help-class-class-doc-of-item-title-color, #6073a8);
 
     > span:first-child {
         opacity: 0.5;
@@ -399,12 +402,12 @@ export const HelpDocOfItemContent = styled.div.attrs({
 })`
     display: block;
     position: relative;
-    padding: var(--groovy-editor-help-class-doc-padding, 4px 0);
+    padding: var(--padding, var(--groovy-editor-help-class-doc-padding, 4px 0));
     width: 100%;
     height: var(--height);
     font-size: var(--groovy-editor-help-class-doc-font-size, 12px);
     overflow: hidden;
-    transition: height 300ms ease-in-out;
+    transition: all 300ms ease-in-out;
 
     a[data-w=a],
     p[data-w=b],

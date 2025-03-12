@@ -14,11 +14,11 @@ export interface FieldDocProps {
 }
 
 const FieldDocContent: FC<DocItemPartContentProps & Pick<FieldDocProps, 'field'>> = (props) => {
-	const {details, field, expanded} = props;
+	const {details, field} = props;
 
 	const fieldDoc = details.findFieldDoc(field)?.description;
 
-	return <HelpDocOfItemContent data-expanded={expanded}>
+	return <HelpDocOfItemContent>
 		<ClassDocSegment content={fieldDoc}/>
 	</HelpDocOfItemContent>;
 };
@@ -31,8 +31,8 @@ const FieldDoc: FC<FieldDocProps> = (props) => {
 };
 
 const FieldsDocContent: FC<DocPartContentProps> = (props) => {
-	const {details, expanded} = props;
-	return <HelpDocOfItems data-expanded={expanded}>
+	const {details} = props;
+	return <HelpDocOfItems>
 		{details.class.declaredFields.sort((f1, f2) => {
 			return f1.name.localeCompare(f2.name, (void 0), {sensitivity: 'base'});
 		}).map(field => {

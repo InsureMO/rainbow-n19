@@ -1,5 +1,5 @@
 import {Java} from '@rainbow-n19/n2';
-import React, {useEffect, useRef} from 'react';
+import {useEffect, useRef, useState} from 'react';
 import {ClassDocDetails} from './class-doc-details';
 
 interface DocPartExpandableState {
@@ -9,13 +9,10 @@ interface DocPartExpandableState {
 
 export const useDocPartExpandable = (details: ClassDocDetails) => {
 	const ref = useRef<HTMLDivElement>(null);
-	const [state, setState] = React.useState<DocPartExpandableState>({
-		expanded: true,
-		class: details.class
-	});
+	const heightRef = useRef(-1);
+	const [state, setState] = useState<DocPartExpandableState>({expanded: true, class: details.class});
 	useEffect(() => {
 		if (details.class !== state.class) {
-			ref.current?.nextElementSibling?.removeAttribute('data-height');
 			setState({expanded: true, class: details.class});
 		}
 	}, [details.class]);
@@ -30,15 +27,17 @@ export const useDocPartExpandable = (details: ClassDocDetails) => {
 		}
 
 		if (state.expanded) {
-			if (dom.hasAttribute('data-height')) {
-				dom.style.setProperty('--height', dom.getAttribute('data-height') + 'px');
+			if (heightRef.current !== -1) {
+				dom.style.setProperty('--height', heightRef.current + 'px');
 			} else {
 				const height = getComputedStyle(dom).height;
-				dom.setAttribute('data-height', height.replace('px', ''));
+				heightRef.current = Number(height.replace('px', ''));
 				dom.style.setProperty('--height', height);
 			}
+			dom.style.removeProperty('--padding');
 		} else {
 			dom.style.setProperty('--height', '0px');
+			dom.style.setProperty('--padding', '0px');
 		}
 	}, [state.expanded]);
 
