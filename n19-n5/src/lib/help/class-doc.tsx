@@ -43,7 +43,7 @@ export const HelpClassDoc = (props: HelpClassDocProps) => {
 						<HelpSuperclassOInterfaceListItems>
 							{superclasses.map((cls, index) => {
 								return <HelpSuperclassOInterfaceListItem key={cls.name}>
-									<span>{cls.name}</span>
+									<span onClick={onItemClicked(cls)}>{cls.name}</span>
 									{(index !== superclasses.length - 1) ? <span>,</span> : null}
 								</HelpSuperclassOInterfaceListItem>;
 							})}
