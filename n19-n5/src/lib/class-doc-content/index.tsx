@@ -12,7 +12,8 @@ export const ClassDocSegment: FC<ClassDocSegmentProps> = (props: ClassDocSegment
 	const {content} = props;
 
 	if (content == null) {
-		return null;
+		const C = ClassDocContentWidgets.t;
+		return <C content={['t', 'No document available.']}/>;
 	}
 
 	return <>

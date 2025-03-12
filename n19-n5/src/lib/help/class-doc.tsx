@@ -3,6 +3,7 @@ import React, {MouseEvent} from 'react';
 import {CodeEditorClassDocs} from '../types';
 import {ClassDocDetails} from './class-doc-details';
 import {ClassLevelDoc} from './class-level-doc';
+import {FieldsDoc} from './fields-doc';
 import {HelpState, HelpStateMode} from './types';
 import {
 	HelpSuperclassOInterfaceList,
@@ -64,5 +65,6 @@ export const HelpClassDoc = (props: HelpClassDocProps) => {
 			</HelpSuperclassOInterfaceList>
 			: null}
 		<ClassLevelDoc details={details}/>
+		<FieldsDoc details={details}/>
 	</>;
 };

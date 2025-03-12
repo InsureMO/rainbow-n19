@@ -4,7 +4,9 @@ import {HelpStateMode} from './types';
 
 type ClassName = Java.ClassName;
 type IClass = Java.IClass;
+type IField = Java.IField;
 type ClassDoc = Java.ClassDoc;
+type ClassFieldDoc = Java.ClassFieldDoc;
 type DocDescription = Java.DocDescription;
 
 export class ClassDocDetails {
@@ -71,15 +73,7 @@ export class ClassDocDetails {
 		return this._doc?.description;
 	}
 
-	get fieldsDocAvailable(): boolean {
-		return this._doc?.fields != null && this._doc.fields.length > 0;
-	}
-
-	get constructorsDocAvailable(): boolean {
-		return this._doc?.constructors != null && this._doc.constructors.length > 0;
-	}
-
-	get methodsDocAvailable(): boolean {
-		return this._doc?.methods != null && this._doc.methods.length > 0;
+	findFieldDoc(field: IField): Optional<ClassFieldDoc> {
+		return this._doc?.fields?.find(f => f.key === field.name);
 	}
 }

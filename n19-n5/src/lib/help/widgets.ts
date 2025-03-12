@@ -319,7 +319,7 @@ export const HelpDocOfCategoryTitle = styled.div.attrs({
     align-items: center;
     height: var(--groovy-editor-help-item-group-title-height, 40px);
     line-height: calc(var(--groovy-editor-help-item-group-title-height, 40px) * 7 / 8);
-    font-size: var(--groovy-editor-help-class-doc-of-categ0ory-title-font-size, 14px);
+    font-size: var(--groovy-editor-help-class-doc-of-category-title-font-size, 14px);
     font-weight: var(--groovy-editor-help-class-doc-of-category-title-font-weight, 500);
     border: var(--groovy-editor-help-item-group-title-border, 1px solid transparent);
 
@@ -337,9 +337,65 @@ export const HelpDocOfCategoryTitle = styled.div.attrs({
     }
 `;
 // noinspection CssUnresolvedCustomProperty
+export const HelpDocOfItems = styled.div.attrs({
+	// @ts-expect-error for avoid attribute name rule
+	'data-w': 'groovy-editor-help-class-doc-of-items'
+})`
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    width: 100%;
+    height: var(--height);
+    overflow: hidden;
+    transition: height 300ms ease-in-out;
+`;
+// noinspection CssUnresolvedCustomProperty
 export const HelpDocOfItem = styled.div.attrs({
 	// @ts-expect-error for avoid attribute name rule
 	'data-w': 'groovy-editor-help-class-doc-of-item'
+})`
+    display: flex;
+    position: relative;
+    align-items: center;
+    min-height: var(--groovy-editor-help-class-doc-of-item-height, 32px);
+    padding: var(--groovy-editor-help-class-doc-of-item-padding, 4px 0);
+    width: 100%;
+    border-bottom: var(--groovy-editor-help-class-doc-of-item-border, 1px solid #e5e5e5);
+
+    &:not(:first-child) {
+        border-top: var(--groovy-editor-help-class-doc-of-item-border, 1px solid #e5e5e5);
+    }
+`;
+// noinspection CssUnresolvedCustomProperty
+export const HelpDocOfItemTitle = styled.div.attrs({
+	// @ts-expect-error for avoid attribute name rule
+	'data-w': 'groovy-editor-help-class-doc-of-item-title'
+})`
+    display: flex;
+    position: relative;
+    align-items: center;
+    min-height: var(--groovy-editor-help-class-doc-of-item-title-height, 24px);
+    line-height: var(--groovy-editor-help-class-doc-of-item-title-height, 24px);
+    font-size: var(--groovy-editor-help-class-class-doc-of-item-font-size, 12px);
+    font-weight: var(--groovy-editor-help-class-class-doc-of-item-font-weight, 500);
+
+    > span:first-child {
+        opacity: 0.5;
+        margin-right: 0.8em;
+    }
+
+    > span:nth-child(2) {
+        cursor: pointer;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+`;
+// noinspection CssUnresolvedCustomProperty
+export const HelpDocOfItemContent = styled.div.attrs({
+	// @ts-expect-error for avoid attribute name rule
+	'data-w': 'groovy-editor-help-class-doc-of-item-content'
 })`
     display: block;
     position: relative;
