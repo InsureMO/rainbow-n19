@@ -12,12 +12,9 @@ import {
 } from '../common';
 import {ClassDocSegment} from '../doc-content';
 
-type IField = Java.IField;
-const Modifier = Java.Modifier;
-
 export interface FieldDocProps {
 	details: ClassDocDetails;
-	field: IField;
+	field: Java.IField;
 }
 
 const FieldDocContent: FC<DocItemPartContentProps & Pick<FieldDocProps, 'field'>> = (props) => {
@@ -36,7 +33,7 @@ const FieldDoc: FC<FieldDocProps> = (props) => {
 	const {details, field} = props;
 
 	const title = <>
-		{(field.modifiers == 0) ? '' : (Modifier.toString(field.modifiers) + ' ')}
+		{(field.modifiers == 0) ? '' : (Java.Modifier.toString(field.modifiers) + ' ')}
 		{field.genericTypeName}
 		{' '}
 		{field.name}

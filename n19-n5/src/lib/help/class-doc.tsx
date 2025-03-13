@@ -1,14 +1,15 @@
+import {Java} from '@rainbow-n19/n2';
 import React from 'react';
 import {CodeEditorClassDocs} from '../types';
 import {ClassDocDetails} from './class-doc-details';
 import {ClassPartDoc} from './class-part';
 import {ExtendsPartDoc} from './extends-part';
 import {FieldsPartDoc} from './fields-part';
-import {HelpState, HelpStateMode} from './types';
+import {HelpStateMode} from './types';
 
 export interface HelpClassDocProps {
-	mode: HelpState['mode'];
-	className?: HelpState['className'];
+	mode: HelpStateMode;
+	className: Java.ClassName;
 	classDocs: CodeEditorClassDocs;
 }
 

@@ -1,12 +1,10 @@
 import {Java} from '@rainbow-n19/n2';
-import React, {useEffect, useRef, useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import {CodeEditorClassDocs, GroovyEditorPackageGroup} from '../types';
 import {HelpClassDoc} from './class-doc';
 import {HelpDocsContextProvider, useHelpDocsContext} from './common';
 import {HelpItemList} from './item-list';
-import {createPackageGroup} from './package-group';
-import {HelpState, HelpStateMode} from './types';
-import {getAllClasses, getAllClassesInPackage, getAllPackages} from './utils';
+import {HelpStateMode} from './types';
 import {
 	HelpClose,
 	HelpContainer,
@@ -17,28 +15,26 @@ import {
 	HelpShortcuts
 } from './widgets';
 
-type ClassName = Java.ClassName;
-
 export interface HelpProps {
 	classDocs: CodeEditorClassDocs;
 	packageGroup?: GroovyEditorPackageGroup;
 }
 
+interface HelpState {
+	mode: HelpStateMode;
+	packageName?: Java.PackageName;
+	className?: Java.ClassName;
+}
+
 export const HelpDocs = (props: HelpProps) => {
 	const {classDocs, packageGroup} = props;
 
-	const containerRef = useRef<HTMLDivElement>(null);
 	const {
 		onSwitchToPackage, offSwitchToPackage, onSwitchToClass, offSwitchToClass
 	} = useHelpDocsContext();
 	const [opened, setOpened] = useState(false);
 	const [state, setState] = useState<HelpState>(() => {
-		const group = createPackageGroup(packageGroup);
-		return {
-			mode: HelpStateMode.PACKAGES,
-			items: getAllPackages(classDocs.classLoader().parent(), group),
-			packageGroup: group
-		};
+		return {mode: HelpStateMode.PACKAGES};
 	});
 
 	useEffect(() => {
@@ -51,37 +47,11 @@ export const HelpDocs = (props: HelpProps) => {
 		};
 	}, [classDocs]);
 	useEffect(() => {
-		setState(state => {
-			return {...state, packageGroup: createPackageGroup(packageGroup)};
-		});
-	}, [packageGroup]);
-	useEffect(() => {
-		if (containerRef.current == null) {
-			return;
-		}
-		containerRef.current.querySelectorAll('div[data-w=groovy-editor-help-item-list]').forEach(el => {
-			(el as HTMLElement).style.setProperty('--item-count', el.getAttribute('data-item-count'));
-		});
-	});
-	useEffect(() => {
 		const onPackageClicked = (pkg: Java.IPackage) => {
-			setState(state => {
-				return {
-					mode: HelpStateMode.PACKAGE,
-					packageName: pkg.name,
-					items: getAllClassesInPackage(pkg, classDocs.classLoader().parent()),
-					packageGroup: state.packageGroup
-				};
-			});
+			setState({mode: HelpStateMode.PACKAGE, packageName: pkg.name});
 		};
 		const onClassClicked = (cls: Java.IClass) => {
-			setState(state => {
-				return {
-					mode: HelpStateMode.CLASS,
-					className: cls.name,
-					packageGroup: state.packageGroup
-				};
-			});
+			setState({mode: HelpStateMode.CLASS, className: cls.name});
 		};
 		onSwitchToPackage(onPackageClicked);
 		onSwitchToClass(onClassClicked);
@@ -96,30 +66,18 @@ export const HelpDocs = (props: HelpProps) => {
 			return;
 		}
 		// get all packages from parent class loader
-		setState(state => {
-			return {
-				mode: HelpStateMode.PACKAGES,
-				items: getAllPackages(classDocs.classLoader().parent(), state.packageGroup),
-				packageGroup: state.packageGroup
-			};
-		});
+		setState({mode: HelpStateMode.PACKAGES});
 	};
 	const onClassesClicked = () => {
 		if (state.mode === HelpStateMode.CLASSES) {
 			return;
 		}
-		setState(state => {
-			return {
-				mode: HelpStateMode.CLASSES,
-				items: getAllClasses(classDocs.classLoader().parent(), state.packageGroup),
-				packageGroup: state.packageGroup
-			};
-		});
+		setState({mode: HelpStateMode.CLASSES});
 	};
 	const onCloseClicked = () => {
 		classDocs?.toggle();
 	};
-	const getClassTitle = (className: ClassName): string => {
+	const getClassTitle = (className: Java.ClassName): string => {
 		const cls = classDocs.classLoader().findClass(className);
 		if (cls == null) {
 			return '';
@@ -132,7 +90,7 @@ export const HelpDocs = (props: HelpProps) => {
 		}
 	};
 
-	return <HelpContainer data-visible={opened} ref={containerRef}>
+	return <HelpContainer data-visible={opened}>
 		<HelpSearchInput placeholder="Press Enter to start searching…"/>
 		<HelpShortcuts>
 			<HelpShortcut onClick={onPackagesClicked} data-active={state.mode === HelpStateMode.PACKAGES}>
@@ -156,9 +114,9 @@ export const HelpDocs = (props: HelpProps) => {
 			{state.mode === HelpStateMode.CLASS
 				? <HelpContentTitle>{getClassTitle(state.className)}</HelpContentTitle>
 				: null}
-			<HelpItemList mode={state.mode} items={state.items}/>
-			<HelpClassDoc mode={state.mode} className={state.className}
-			              classDocs={classDocs}/>
+			<HelpItemList mode={state.mode} packageName={state.packageName} classDocs={classDocs}
+			              group={packageGroup}/>
+			<HelpClassDoc mode={state.mode} className={state.className} classDocs={classDocs}/>
 		</HelpContent>
 	</HelpContainer>;
 };

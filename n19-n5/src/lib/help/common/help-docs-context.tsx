@@ -3,7 +3,7 @@ import EventEmitter from 'events';
 import React, {createContext, ReactNode, useContext, useState} from 'react';
 
 export interface HelpDocsHelpers {
-	switchTo: (to: Java.IPackage | Java.IClass) => void;
+	switchTo: (to: Java.IPackage | Java.IClass | string) => void;
 	onSwitchToPackage: (listener: (to: Java.IPackage) => void) => void;
 	offSwitchToPackage: (listener: (to: Java.IPackage) => void) => void;
 	onSwitchToClass: (listener: (to: Java.IClass) => void) => void;
@@ -16,8 +16,16 @@ const createHelpDocsHelpers = () => {
 	const on = (what: string) => (listener: (...args: Array<any>) => void) => emitter.on(what, listener);
 	// eslint-disable-next-line @typescript-eslint/no-explicit-any
 	const off = (what: string) => (listener: (...args: Array<any>) => void) => emitter.off(what, listener);
-	const switchTo = (to: Java.IPackage | Java.IClass): void => {
-		if ((to as Java.IClass).isArray == null) {
+	const switchTo = (to: Java.IPackage | Java.IClass | string): void => {
+		if (typeof to === 'string') {
+			// TODO, check link format, could be one of following:
+			// 1. internal field/constructor/method
+			// 2. internal anchor
+			// 3. another class
+			// 4. field/constructor/method of another class
+			// 5. anchor of another class
+			// 6. external link, should open new window
+		} else if ((to as Java.IClass).isArray == null) {
 			// is package
 			emitter.emit('switchToPackage', to);
 		} else {

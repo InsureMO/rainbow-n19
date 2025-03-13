@@ -2,18 +2,11 @@ import {Java, Optional} from '@rainbow-n19/n2';
 import {CodeEditorClassDocs} from '../types';
 import {HelpStateMode} from './types';
 
-type ClassName = Java.ClassName;
-type IClass = Java.IClass;
-type IField = Java.IField;
-type ClassDoc = Java.ClassDoc;
-type ClassFieldDoc = Java.ClassFieldDoc;
-type DocDescription = Java.DocDescription;
-
 export class ClassDocDetails {
-	private readonly _class: Optional<IClass>;
-	private readonly _doc: Optional<ClassDoc>;
+	private readonly _class: Optional<Java.IClass>;
+	private readonly _doc: Optional<Java.ClassDoc>;
 
-	constructor(className: Optional<ClassName>,
+	constructor(className: Optional<Java.ClassName>,
 	            classDocs: CodeEditorClassDocs,
 	            mode: HelpStateMode) {
 		if (mode !== HelpStateMode.CLASS || className == null) {
@@ -25,15 +18,15 @@ export class ClassDocDetails {
 		}
 	}
 
-	get class(): Optional<IClass> {
+	get class(): Optional<Java.IClass> {
 		return this._class;
 	}
 
 	/**
 	 * java.lang.Object is not included
 	 */
-	get superclasses(): Array<IClass> {
-		const superclasses: Array<IClass> = [];
+	get superclasses(): Array<Java.IClass> {
+		const superclasses: Array<Java.IClass> = [];
 		let superclass = this._class?.superclass;
 		while (superclass != null) {
 			if (superclass.name === 'java.lang.Object') {
@@ -45,11 +38,11 @@ export class ClassDocDetails {
 		return superclasses;
 	}
 
-	get interfaces(): Array<IClass> {
-		const interfaces: Array<IClass> = [];
+	get interfaces(): Array<Java.IClass> {
+		const interfaces: Array<Java.IClass> = [];
 		let interfaceClasses = this._class?.interfaces;
 		while (interfaceClasses != null && interfaceClasses.length !== 0) {
-			const pushed: Array<IClass> = [];
+			const pushed: Array<Java.IClass> = [];
 			interfaceClasses.map(interfaceClass => {
 				if (!interfaces.includes(interfaceClass)) {
 					interfaces.push(interfaceClass);
@@ -61,7 +54,7 @@ export class ClassDocDetails {
 		return interfaces;
 	}
 
-	get doc(): Optional<ClassDoc> {
+	get doc(): Optional<Java.ClassDoc> {
 		return this._doc;
 	}
 
@@ -69,11 +62,11 @@ export class ClassDocDetails {
 		return this._doc?.description != null && this._doc.description.length > 0;
 	}
 
-	get classDoc(): Optional<DocDescription> {
+	get classDoc(): Optional<Java.DocDescription> {
 		return this._doc?.description;
 	}
 
-	findFieldDoc(field: IField): Optional<ClassFieldDoc> {
+	findFieldDoc(field: Java.IField): Optional<Java.ClassFieldDoc> {
 		return this._doc?.fields?.find(f => f.key === field.name);
 	}
 }
