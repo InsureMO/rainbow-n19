@@ -1,4 +1,4 @@
-import React, {FC, ReactNode} from 'react';
+import React, {FC, ReactNode, useReducer} from 'react';
 import {ClassDocDetails} from '../class-doc-details';
 import {DocPartExpandCommunicator} from './use-doc-part-expandable';
 import {HelpDocOfItem, HelpDocOfItemTitle} from './widgets';
@@ -18,10 +18,17 @@ const DocItemPartHeader =
 	(props: Pick<DocItemPartProps, 'details' | 'title'> & { communicator: DocPartExpandCommunicator }) => {
 		const {title, communicator} = props;
 
+		const [, forceUpdate] = useReducer((x) => !x, false);
+
+		const onToggleClicked = () => {
+			communicator.toggle();
+			forceUpdate();
+		};
+
 		return <HelpDocOfItem>
 			<HelpDocOfItemTitle>
 				<span>{communicator.expanded ? '−' : '+'}</span>
-				<span onClick={() => communicator.toggle()}>{title}</span>
+				<span onClick={onToggleClicked}>{title}</span>
 			</HelpDocOfItemTitle>
 			<span/>
 		</HelpDocOfItem>;

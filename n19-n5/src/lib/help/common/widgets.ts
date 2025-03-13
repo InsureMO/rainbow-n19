@@ -143,11 +143,12 @@ export const HelpDocOfItemContent = styled.div.attrs({
         font-style: var(--groovy-editor-help-class-doc-code-font-style, italic);
     }
 
-    div[data-w=l] {
-        display: flex;
+    ul[data-w=l] {
+        display: block;
         position: relative;
-        align-items: center;
-        flex-direction: column;
+
+        > li {
+        }
     }
 
     br {

@@ -69,4 +69,28 @@ export class ClassDocDetails {
 	findFieldDoc(field: Java.IField): Optional<Java.ClassFieldDoc> {
 		return this._doc?.fields?.find(f => f.key === field.name);
 	}
+
+	private transformClassNameForExecutableKey(clazz: Java.IClass): string {
+		if (clazz.isPrimitive) {
+			return clazz.simpleName;
+		} else if (clazz.isArray) {
+			return this.transformClassNameForExecutableKey(clazz.componentType) + '[]';
+		} else {
+			return clazz.name.replace('$', '.');
+		}
+	}
+
+	private transformParameterToExecutableKey(parameter: Java.IParameter): string {
+		if (parameter.isVarArgs) {
+			return this.transformClassNameForExecutableKey(parameter.type.componentType) + '...';
+		} else {
+			return this.transformClassNameForExecutableKey(parameter.type);
+		}
+	}
+
+	findMethodDoc(method: Java.IMethod): Optional<Java.ClassMethodDoc> {
+		const parameters = method.parameters.map(p => this.transformParameterToExecutableKey(p)).join(',');
+		const key = `${method.name}(${parameters})`;
+		return this._doc?.methods?.find(f => f.key === key);
+	}
 }

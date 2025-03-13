@@ -6,6 +6,7 @@ import {
 	DocItemPartContentProps,
 	DocPart,
 	DocPartContentProps,
+	FieldTitle,
 	HelpDocOfItemContent,
 	HelpDocOfItems,
 	useDocPartContentHeight
@@ -32,14 +33,8 @@ const FieldDocContent: FC<DocItemPartContentProps & Pick<FieldDocProps, 'field'>
 const FieldDoc: FC<FieldDocProps> = (props) => {
 	const {details, field} = props;
 
-	const title = <>
-		{(field.modifiers == 0) ? '' : (Java.Modifier.toString(field.modifiers) + ' ')}
-		{field.genericTypeName}
-		{' '}
-		{field.name}
-	</>;
-
-	return <DocItemPart details={details} title={title}
+	return <DocItemPart details={details}
+	                    title={<FieldTitle details={details} member={field}/>}
 	                    content={(props) => <FieldDocContent {...props} field={field}/>}/>;
 };
 

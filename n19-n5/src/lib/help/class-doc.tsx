@@ -5,6 +5,7 @@ import {ClassDocDetails} from './class-doc-details';
 import {ClassPartDoc} from './class-part';
 import {ExtendsPartDoc} from './extends-part';
 import {FieldsPartDoc} from './fields-part';
+import {MethodsPartDoc} from './methods-part';
 import {HelpStateMode} from './types';
 
 export interface HelpClassDocProps {
@@ -26,5 +27,6 @@ export const HelpClassDoc = (props: HelpClassDocProps) => {
 		<ExtendsPartDoc details={details}/>
 		<ClassPartDoc details={details}/>
 		<FieldsPartDoc details={details}/>
+		<MethodsPartDoc details={details}/>
 	</>;
 };

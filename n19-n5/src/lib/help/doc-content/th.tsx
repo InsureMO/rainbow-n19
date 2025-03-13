@@ -13,8 +13,7 @@ export const Th: FC<ThProps> = (props: ThProps) => {
 	{(items ?? []).map((item, index) => {
 		const [t] = item;
 		const C = ClassDocContentWidgets[t];
-		// @ts-expect-error dynamic widget used here
-		return <C content={child} key={`${index}-${JSON.stringify(item)}`}/>;
+		return <C content={item} key={`${index}-${JSON.stringify(item)}`}/>;
 	})}
 	</thead>;
 };
