@@ -1,10 +1,11 @@
 import {Java} from '@rainbow-n19/n2';
-import React, {useEffect, useReducer, useRef, useState} from 'react';
+import React, {useEffect, useRef, useState} from 'react';
 import {CodeEditorClassDocs, GroovyEditorPackageGroup} from '../types';
 import {HelpClassDoc} from './class-doc';
+import {HelpDocsContextProvider, useHelpDocsContext} from './common';
 import {HelpItemList} from './item-list';
 import {createPackageGroup} from './package-group';
-import {HelpState, HelpStateMode, ItemGroup} from './types';
+import {HelpState, HelpStateMode} from './types';
 import {getAllClasses, getAllClassesInPackage, getAllPackages} from './utils';
 import {
 	HelpClose,
@@ -16,19 +17,20 @@ import {
 	HelpShortcuts
 } from './widgets';
 
-type IPackage = Java.IPackage;
 type ClassName = Java.ClassName;
-type IClass = Java.IClass;
 
 export interface HelpProps {
 	classDocs: CodeEditorClassDocs;
 	packageGroup?: GroovyEditorPackageGroup;
 }
 
-export const Help = (props: HelpProps) => {
+export const HelpDocs = (props: HelpProps) => {
 	const {classDocs, packageGroup} = props;
 
 	const containerRef = useRef<HTMLDivElement>(null);
+	const {
+		onSwitchToPackage, offSwitchToPackage, onSwitchToClass, offSwitchToClass
+	} = useHelpDocsContext();
 	const [opened, setOpened] = useState(false);
 	const [state, setState] = useState<HelpState>(() => {
 		const group = createPackageGroup(packageGroup);
@@ -38,7 +40,6 @@ export const Help = (props: HelpProps) => {
 			packageGroup: group
 		};
 	});
-	const [, forceUpdate] = useReducer((x) => !x, false);
 
 	useEffect(() => {
 		const toggleHandler = async (opened: boolean) => {
@@ -62,6 +63,33 @@ export const Help = (props: HelpProps) => {
 			(el as HTMLElement).style.setProperty('--item-count', el.getAttribute('data-item-count'));
 		});
 	});
+	useEffect(() => {
+		const onPackageClicked = (pkg: Java.IPackage) => {
+			setState(state => {
+				return {
+					mode: HelpStateMode.PACKAGE,
+					packageName: pkg.name,
+					items: getAllClassesInPackage(pkg, classDocs.classLoader().parent()),
+					packageGroup: state.packageGroup
+				};
+			});
+		};
+		const onClassClicked = (cls: Java.IClass) => {
+			setState(state => {
+				return {
+					mode: HelpStateMode.CLASS,
+					className: cls.name,
+					packageGroup: state.packageGroup
+				};
+			});
+		};
+		onSwitchToPackage(onPackageClicked);
+		onSwitchToClass(onClassClicked);
+		return () => {
+			offSwitchToPackage(onPackageClicked);
+			offSwitchToClass(onClassClicked);
+		};
+	}, []);
 
 	const onPackagesClicked = () => {
 		if (state.mode === HelpStateMode.PACKAGES) {
@@ -103,38 +131,6 @@ export const Help = (props: HelpProps) => {
 			return title;
 		}
 	};
-	const onGroupTitleClicked = (group: ItemGroup) => () => {
-		group.expanded = !group.expanded;
-		forceUpdate();
-	};
-	const onPackageClicked = (pkg: IPackage) => {
-		setState(state => {
-			return {
-				mode: HelpStateMode.PACKAGE,
-				packageName: pkg.name,
-				items: getAllClassesInPackage(pkg, classDocs.classLoader().parent()),
-				packageGroup: state.packageGroup
-			};
-		});
-	};
-	const onClassClicked = (cls: IClass) => {
-		setState(state => {
-			return {
-				mode: HelpStateMode.CLASS,
-				className: cls.name,
-				packageGroup: state.packageGroup
-			};
-		});
-	};
-	const onItemClicked = (item: IPackage | IClass) => () => {
-		if ((item as IClass).isArray == null) {
-			// is package
-			onPackageClicked(item as IPackage);
-		} else {
-			// is class
-			onClassClicked(item as IClass);
-		}
-	};
 
 	return <HelpContainer data-visible={opened} ref={containerRef}>
 		<HelpSearchInput placeholder="Press Enter to start searching…"/>
@@ -160,10 +156,15 @@ export const Help = (props: HelpProps) => {
 			{state.mode === HelpStateMode.CLASS
 				? <HelpContentTitle>{getClassTitle(state.className)}</HelpContentTitle>
 				: null}
-			<HelpItemList mode={state.mode} items={state.items}
-			              onGroupTitleClicked={onGroupTitleClicked} onItemClicked={onItemClicked}/>
+			<HelpItemList mode={state.mode} items={state.items}/>
 			<HelpClassDoc mode={state.mode} className={state.className}
-			              classDocs={classDocs} onItemClicked={onItemClicked}/>
+			              classDocs={classDocs}/>
 		</HelpContent>
 	</HelpContainer>;
+};
+
+export const Help = (props: HelpProps) => {
+	return <HelpDocsContextProvider>
+		<HelpDocs {...props}/>
+	</HelpDocsContextProvider>;
 };

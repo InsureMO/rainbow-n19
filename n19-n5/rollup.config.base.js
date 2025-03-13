@@ -29,6 +29,7 @@ export const buildConfig = (lint) => {
 		},
 		external(id) {
 			return [
+				'events',
 				'@lezer/common',
 				'@codemirror/language', '@codemirror/state', '@codemirror/view',
 				'@codemirror/autocomplete', '@codemirror/commands', '@codemirror/lint',

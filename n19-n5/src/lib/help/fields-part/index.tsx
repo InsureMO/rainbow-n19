@@ -1,11 +1,16 @@
 import {Java} from '@rainbow-n19/n2';
 import React, {FC} from 'react';
-import {ClassDocSegment} from '../class-doc-content';
-import {ClassDocDetails} from './class-doc-details';
-import {DocItemPart, DocItemPartContentProps} from './doc-item-part';
-import {DocPart, DocPartContentProps} from './doc-part';
-import {useDocPartContentHeight} from './use-doc-part-expandable';
-import {HelpDocOfItemContent, HelpDocOfItems} from './widgets';
+import {ClassDocDetails} from '../class-doc-details';
+import {
+	DocItemPart,
+	DocItemPartContentProps,
+	DocPart,
+	DocPartContentProps,
+	HelpDocOfItemContent,
+	HelpDocOfItems,
+	useDocPartContentHeight
+} from '../common';
+import {ClassDocSegment} from '../doc-content';
 
 type IField = Java.IField;
 const Modifier = Java.Modifier;
@@ -41,7 +46,7 @@ const FieldDoc: FC<FieldDocProps> = (props) => {
 	                    content={(props) => <FieldDocContent {...props} field={field}/>}/>;
 };
 
-const FieldsDocContent: FC<DocPartContentProps> = (props) => {
+const FieldsPartDocContent: FC<DocPartContentProps> = (props) => {
 	const {details, communicator} = props;
 
 	const {ref} = useDocPartContentHeight(communicator);
@@ -59,7 +64,7 @@ export interface FieldsDocProps {
 	details: ClassDocDetails;
 }
 
-export const FieldsDoc = (props: FieldsDocProps) => {
+export const FieldsPartDoc = (props: FieldsDocProps) => {
 	const {details} = props;
 
 	const available = () => {
@@ -67,5 +72,5 @@ export const FieldsDoc = (props: FieldsDocProps) => {
 	};
 
 	return <DocPart details={details} title="Fields documentation" available={available}
-	                content={FieldsDocContent}/>;
+	                content={FieldsPartDocContent}/>;
 };

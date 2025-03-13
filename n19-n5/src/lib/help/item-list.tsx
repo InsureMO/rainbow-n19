@@ -1,5 +1,5 @@
-import {IClass, IPackage} from '@rainbow-n19/n2/lib/Java';
-import React, {MouseEvent} from 'react';
+import React, {useReducer} from 'react';
+import {useHelpDocsContext} from './common';
 import {HelpState, HelpStateMode, ItemGroup} from './types';
 import {
 	HelpContentItem,
@@ -12,12 +12,13 @@ import {
 export interface HelpItemListProps {
 	mode: HelpState['mode'];
 	items?: HelpState['items'];
-	onGroupTitleClicked: (group: ItemGroup) => ((event: MouseEvent<HTMLElement>) => void);
-	onItemClicked: (item: IPackage | IClass) => ((event: MouseEvent<HTMLElement>) => void);
 }
 
 export const HelpItemList = (props: HelpItemListProps) => {
-	const {mode, items, onGroupTitleClicked, onItemClicked} = props;
+	const {mode, items} = props;
+
+	const {switchTo} = useHelpDocsContext();
+	const [, forceUpdate] = useReducer((x) => !x, false);
 
 	if (![HelpStateMode.PACKAGES, HelpStateMode.PACKAGE, HelpStateMode.CLASSES].includes(mode)) {
 		return null;
@@ -39,6 +40,11 @@ export const HelpItemList = (props: HelpItemListProps) => {
 		}
 	}
 
+	const onGroupTitleClicked = (group: ItemGroup) => () => {
+		group.expanded = !group.expanded;
+		forceUpdate();
+	};
+
 	return <>
 		{items.map(group => {
 			return <HelpContentItemGroup key={group.name}>
@@ -52,7 +58,7 @@ export const HelpItemList = (props: HelpItemListProps) => {
 					{group.items.map(item => {
 						return <HelpContentItem key={item.name}>
 							<span>⁃</span>
-							<span onClick={onItemClicked(item)}>{item.name}</span>
+							<span onClick={() => switchTo(item)}>{item.name}</span>
 						</HelpContentItem>;
 					})}
 				</HelpContentItemList>

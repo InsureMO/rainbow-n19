@@ -1,9 +1,7 @@
 import React, {FC} from 'react';
-import {ClassDocSegment} from '../class-doc-content';
-import {ClassDocDetails} from './class-doc-details';
-import {DocPart, DocPartContentProps} from './doc-part';
-import {useDocPartContentHeight} from './use-doc-part-expandable';
-import {HelpDocOfItemContent} from './widgets';
+import {ClassDocDetails} from '../class-doc-details';
+import {DocPart, DocPartContentProps, HelpDocOfItemContent, useDocPartContentHeight} from '../common';
+import {ClassDocSegment} from '../doc-content';
 
 export interface ClassLevelDocProps {
 	details: ClassDocDetails;
@@ -19,7 +17,7 @@ const ClassLevelDocContent: FC<DocPartContentProps> = (props) => {
 	</HelpDocOfItemContent>;
 };
 
-export const ClassLevelDoc = (props: ClassLevelDocProps) => {
+export const ClassPartDoc = (props: ClassLevelDocProps) => {
 	const {details} = props;
 
 	const available = () => details.classDocAvailable;

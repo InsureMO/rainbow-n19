@@ -1,5 +1,5 @@
 import React, {FC, ReactNode} from 'react';
-import {ClassDocDetails} from './class-doc-details';
+import {ClassDocDetails} from '../class-doc-details';
 import {DocPartExpandCommunicator} from './use-doc-part-expandable';
 import {HelpDocOfItem, HelpDocOfItemTitle} from './widgets';
 
