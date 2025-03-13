@@ -31,16 +31,14 @@ export const HelpDocOfCategoryTitle = styled.div.attrs({
 
     > span:first-child {
         opacity: 0.5;
-        margin-right: 10px;
-        width: 8px;
+        padding-right: 10px;
+        width: 18px;
+        cursor: pointer;
     }
 
-    > span:nth-child(2) {
+    span[data-w=ref-to-class] {
         cursor: pointer;
-
-        &:hover {
-            text-decoration: underline;
-        }
+        text-decoration: underline;
     }
 `;
 // noinspection CssUnresolvedCustomProperty
@@ -85,16 +83,14 @@ export const HelpDocOfItemTitle = styled.div.attrs({
 
     > span:first-child {
         opacity: 0.5;
-        margin-right: 10px;
-        width: 8px;
+        padding-right: 10px;
+        width: 18px;
+        cursor: pointer;
     }
 
-    > span:nth-child(2) {
+    span[data-w=ref-to-class] {
         cursor: pointer;
-
-        &:hover {
-            text-decoration: underline;
-        }
+        text-decoration: underline;
     }
 `;
 // noinspection CssUnresolvedCustomProperty

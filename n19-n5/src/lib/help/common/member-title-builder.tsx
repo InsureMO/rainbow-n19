@@ -1,7 +1,7 @@
 import {Java} from '@rainbow-n19/n2';
 import React, {FC, ReactNode} from 'react';
 import {ClassDocDetails} from '../class-doc-details';
-import {RefToClassWithSimpleName} from './ref-to';
+import {RefToClass} from './ref-to';
 
 export interface MemberTitleProps<M extends Java.IField | Java.IMethod | Java.IConstructor> {
 	details: ClassDocDetails;
@@ -14,7 +14,7 @@ export const FieldTitle: FC<MemberTitleProps<Java.IField>> = (props) => {
 	let type: ReactNode;
 	const genericType = field.genericType;
 	if (genericType === field.type && !field.type.isPrimitive) {
-		type = <RefToClassWithSimpleName details={details} class={field.type}/>;
+		type = <RefToClass details={details} class={field.type}/>;
 	} else {
 		type = field.genericTypeName;
 	}

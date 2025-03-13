@@ -28,8 +28,8 @@ const DocPartHeader =
 
 		return <HelpDocOfCategory>
 			<HelpDocOfCategoryTitle>
-				<span>{communicator.expanded ? '⊖' : '⊕'}</span>
-				<span onClick={onToggleClicked}>{title}</span>
+				<span onClick={onToggleClicked}>{communicator.expanded ? '⊖' : '⊕'}</span>
+				<span>{title}</span>
 			</HelpDocOfCategoryTitle>
 			<span/>
 		</HelpDocOfCategory>;

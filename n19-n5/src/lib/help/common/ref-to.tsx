@@ -13,13 +13,10 @@ export const RefToClass: FC<RefToClassProps> = (props) => {
 
 	const {switchTo} = useHelpDocsContext();
 
-	return <span onClick={() => switchTo(cls)}>{cls.name}</span>;
-};
+	const title = cls.name !== cls.simpleName ? cls.name : (void 0);
 
-export const RefToClassWithSimpleName: FC<RefToClassProps> = (props) => {
-	const {class: cls} = props;
-
-	const {switchTo} = useHelpDocsContext();
-
-	return <span onClick={() => switchTo(cls)}>{cls.simpleName}</span>;
+	return <span data-w="ref-to-class" title={title}
+	             onClick={() => switchTo(cls)}>
+		{cls.simpleName}
+	</span>;
 };

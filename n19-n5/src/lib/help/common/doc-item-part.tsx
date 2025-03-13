@@ -27,8 +27,8 @@ const DocItemPartHeader =
 
 		return <HelpDocOfItem>
 			<HelpDocOfItemTitle>
-				<span>{communicator.expanded ? '−' : '+'}</span>
-				<span onClick={onToggleClicked}>{title}</span>
+				<span onClick={onToggleClicked}>{communicator.expanded ? '−' : '+'}</span>
+				<span>{title}</span>
 			</HelpDocOfItemTitle>
 			<span/>
 		</HelpDocOfItem>;
