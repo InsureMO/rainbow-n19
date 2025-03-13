@@ -61,7 +61,7 @@ export type ClassElementDocContents = [
 export abstract class AbstractClassElementDoc {
 	private readonly _description: DocDescription;
 
-	protected constructor(readonly contents?: ClassElementDocContents) {
+	protected constructor(contents?: ClassElementDocContents) {
 		this._description = contents?.[0];
 	}
 
