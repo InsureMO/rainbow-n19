@@ -1024,7 +1024,7 @@ export class Class implements IClass {
 				sb = sb + '[]';
 			}
 
-			return sb.toString();
+			return sb;
 		}
 	}
 

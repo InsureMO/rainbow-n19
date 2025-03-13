@@ -141,5 +141,16 @@ export const HelpContentTitle = styled.div.attrs({
     border: var(--groovy-editor-help-content-title-border, 1px solid transparent);
     border-bottom: var(--groovy-editor-help-content-title-border, 2px solid #e1e1e1);
     background-color: var(--groovy-editor-help-background-color, #f5f5f5);
+    white-space: pre;
     z-index: 1;
+
+    span[data-w=ref-to-package], span[data-w=ref-to-class] {
+        cursor: pointer;
+        transition: all 300ms ease-in-out;;
+
+        &:hover {
+            color: var(--groovy-editor-help-class-super-item-hover-color, #0033B3);
+            text-decoration: underline;
+        }
+    }
 `;

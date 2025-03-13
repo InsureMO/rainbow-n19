@@ -1,5 +1,5 @@
 import {Java} from '@rainbow-n19/n2';
-import React, {useEffect, useState} from 'react';
+import React, {FC, ReactNode, useEffect, useRef, useState} from 'react';
 import {CodeEditorClassDocs, GroovyEditorPackageGroup} from '../types';
 import {HelpClassDoc} from './class-doc';
 import {HelpDocsContextProvider, useHelpDocsContext} from './common';
@@ -14,6 +14,92 @@ import {
 	HelpShortcut,
 	HelpShortcuts
 } from './widgets';
+
+interface ClassTitleProps {
+	classDocs: CodeEditorClassDocs;
+	className: Java.ClassName;
+}
+
+const ClassTitle: FC<ClassTitleProps> = (props) => {
+	const {classDocs, className} = props;
+
+	const {switchTo} = useHelpDocsContext();
+
+	const cls = classDocs.classLoader().findClass(className);
+	if (cls == null) {
+		return null;
+	}
+
+	const modifiers = cls.modifiers & Java.Modifier.classModifiers();
+
+	const typeParameters = (() => {
+		const typeParameterNames = (cls.typeParameters ?? []).map(p => p.typeName);
+		return typeParameterNames.length === 0 ? '' : `<${typeParameterNames.join(', ')}>`;
+	})();
+
+	const onPackageClicked = (packageNames: Array<string>, index: number) => () => {
+		const packageName = packageNames.slice(0, index + 1).join('.');
+		const pkg = classDocs.classLoader().findPackage(packageName);
+		switchTo(pkg);
+	};
+	const onClassClicked = (packageNames: Array<string>, simpleName: string, innerClasses?: Array<string>, innerClassIndex?: number) => () => {
+		const className = packageNames.length === 0 ? '' : (packageNames.join('.') + '.') + simpleName;
+		if (innerClasses == null) {
+			const cls = classDocs.classLoader().findClass(className);
+			switchTo(cls);
+		} else {
+			const innerClassName = innerClasses.slice(0, innerClassIndex + 1).join('$');
+			const cls = classDocs.classLoader().findClass(className + '$' + innerClassName);
+			switchTo(cls);
+		}
+	};
+	const [declaringClass, ...innerClasses] = className.split('$');
+	const [simpleName, ...reversedPackageNames] = declaringClass.split('.').reverse();
+	const packageNames = reversedPackageNames.reverse();
+	const names: Array<ReactNode> = [];
+	for (let index = 0, count = packageNames.length; index < count; index++) {
+		if (names.length !== 0) {
+			names.push('.');
+		}
+		names.push(<span data-w="ref-to-package" onClick={onPackageClicked(packageNames, index)}>
+			{packageNames[index]}
+		</span>);
+	}
+	if (names.length !== 0) {
+		names.push('.');
+	}
+	if (innerClasses.length === 0) {
+		names.push(simpleName);
+	} else {
+		names.push(<span data-w="ref-to-class" onClick={onClassClicked(packageNames, simpleName)}>
+			{simpleName}
+		</span>);
+	}
+	const lastInnerClassIndex = innerClasses.length - 1;
+	innerClasses.forEach((innerClassName, index) => {
+		names.push('$');
+		if (index === lastInnerClassIndex) {
+			names.push(innerClassName);
+		} else {
+			names.push(<span data-w="ref-to-class"
+			                 onClick={onClassClicked(packageNames, simpleName, innerClasses, index)}>
+				{innerClassName}
+			</span>);
+		}
+	});
+
+	return <>
+		{modifiers !== 0 ? Java.Modifier.toString(modifiers).replace(/abstract\s?/, '') : ''}
+		{' '}
+		{cls.isAnnotation ? '@' : ''}
+		{cls.isInterface ? 'interface' : ''}
+		{cls.isEnum ? 'enum' : ''}
+		{(!cls.isInterface && !cls.isEnum) ? 'class' : ''}
+		{' '}
+		{names}
+		{typeParameters}
+	</>;
+};
 
 export interface HelpProps {
 	classDocs: CodeEditorClassDocs;
@@ -32,6 +118,7 @@ export const HelpDocs = (props: HelpProps) => {
 	const {
 		onSwitchToPackage, offSwitchToPackage, onSwitchToClass, offSwitchToClass
 	} = useHelpDocsContext();
+	const contentRef = useRef<HTMLDivElement>(null);
 	const [opened, setOpened] = useState(false);
 	const [state, setState] = useState<HelpState>(() => {
 		return {mode: HelpStateMode.PACKAGES};
@@ -60,6 +147,11 @@ export const HelpDocs = (props: HelpProps) => {
 			offSwitchToClass(onClassClicked);
 		};
 	}, []);
+	useEffect(() => {
+		if (opened && contentRef.current != null) {
+			contentRef.current.scrollTo({top: 0, behavior: 'smooth'});
+		}
+	});
 
 	const onPackagesClicked = () => {
 		if (state.mode === HelpStateMode.PACKAGES) {
@@ -77,18 +169,6 @@ export const HelpDocs = (props: HelpProps) => {
 	const onCloseClicked = () => {
 		classDocs?.toggle();
 	};
-	const getClassTitle = (className: Java.ClassName): string => {
-		const cls = classDocs.classLoader().findClass(className);
-		if (cls == null) {
-			return '';
-		}
-		const title = cls.toGenericString();
-		if (cls.isInterface) {
-			return title.replace('abstract ', '');
-		} else {
-			return title;
-		}
-	};
 
 	return <HelpContainer data-visible={opened}>
 		<HelpSearchInput placeholder="Press Enter to start searching…"/>
@@ -101,7 +181,7 @@ export const HelpDocs = (props: HelpProps) => {
 			</HelpShortcut>
 		</HelpShortcuts>
 		<HelpClose onClick={onCloseClicked}>×</HelpClose>
-		<HelpContent>
+		<HelpContent ref={contentRef}>
 			{state.mode === HelpStateMode.PACKAGES
 				? <HelpContentTitle>All Packages</HelpContentTitle>
 				: null}
@@ -112,7 +192,7 @@ export const HelpDocs = (props: HelpProps) => {
 				? <HelpContentTitle>Package {state.packageName}</HelpContentTitle>
 				: null}
 			{state.mode === HelpStateMode.CLASS
-				? <HelpContentTitle>{getClassTitle(state.className)}</HelpContentTitle>
+				? <HelpContentTitle><ClassTitle classDocs={classDocs} className={state.className}/></HelpContentTitle>
 				: null}
 			<HelpItemList mode={state.mode} packageName={state.packageName} classDocs={classDocs}
 			              group={packageGroup}/>
