@@ -20,6 +20,7 @@ export const ClassDocSegment: FC<ClassDocSegmentProps> = (props: ClassDocSegment
 		{content.map((s, index) => {
 			const [t] = s;
 			const C = ClassDocContentWidgets[t];
+			// @ts-expect-error dynamic widget used here
 			return <C content={s} key={`${index}-${JSON.stringify(s)}`}/>;
 		})}
 	</>;

@@ -15,10 +15,16 @@ export const L: FC<LProps> = (props: LProps) => {
 
 	return <ul data-w="l">
 		{items.map((item, index) => {
-			const [t] = item;
-			const C = ClassDocContentWidgets[t];
+			const [, content] = item;
 			return <li key={`${index}-${JSON.stringify(item)}`}>
-				<C content={item}/>
+				{typeof content === 'string'
+					? content
+					: content.map((item, index) => {
+						const C = ClassDocContentWidgets[item[0]];
+						// @ts-expect-error dynamic widget used here
+						return <C content={item} key={`${index}-${JSON.stringify(item)}`}/>;
+					})
+				}
 			</li>;
 		})}
 	</ul>;

@@ -136,6 +136,7 @@ export const HelpDocOfItemContent = styled.div.attrs({
     }
 
     blockquote[data-w=q] {
+        border-left: var(--groovy-editor-help-class-doc-blockquote-border, 2px solid #d5d5d5);
     }
 
     code[data-w=i] {
@@ -148,6 +149,7 @@ export const HelpDocOfItemContent = styled.div.attrs({
     ul[data-w=l] {
         display: block;
         position: relative;
+        padding-inline-start: var(--groovy-editor-help-class-doc-list-padding-inline-start, 20px);
 
         > li {
         }
