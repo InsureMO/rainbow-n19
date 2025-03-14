@@ -18,6 +18,7 @@ export class JREClassLoader extends AbstractClassLoader {
 		const modifiers = Modifier.PUBLIC & Modifier.SYNTHETIC & Modifier.BRIDGE;
 		[
 			...Object.keys(BuiltInConstants.ARR_OF_PRIMITIVE_TYPES),
+			BuiltInConstants.P_VOID,
 			...(BuiltInConstants.CHAR_OF_PRIMITIVE_TYPES.split('').map(t => [`[${t}`, `[[${t}`]).flat())
 		].forEach(name => this.addClass(new Class(this, {name, modifiers})));
 	}

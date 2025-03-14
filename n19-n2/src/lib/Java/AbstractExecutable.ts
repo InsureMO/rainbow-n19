@@ -325,6 +325,7 @@ export abstract class AbstractExecutable implements IExecutable {
 			}
 			return sb;
 		} catch (e) {
+			console.error(e);
 			return '<' + e.message + '>';
 		}
 	}

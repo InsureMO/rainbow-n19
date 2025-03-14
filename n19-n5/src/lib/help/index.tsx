@@ -61,17 +61,22 @@ const ClassTitle: FC<ClassTitleProps> = (props) => {
 		if (names.length !== 0) {
 			names.push('.');
 		}
-		names.push(<span data-w="ref-to-package" onClick={onPackageClicked(packageNames, index)}>
+		names.push(<span data-w="ref-to-package" onClick={onPackageClicked(packageNames, index)}
+		                 title={packageNames.slice(0, index + 1).join('.')}
+		                 key={`pkg-${index}-${packageNames[index]}`}>
 			{packageNames[index]}
 		</span>);
 	}
 	if (names.length !== 0) {
 		names.push('.');
 	}
+	const declaringClassName = (packageNames.length === 0 ? '' : (packageNames.join('.') + '.')) + simpleName;
 	if (innerClasses.length === 0) {
 		names.push(simpleName);
 	} else {
-		names.push(<span data-w="ref-to-class" onClick={onClassClicked(packageNames, simpleName)}>
+		names.push(<span data-w="ref-to-class" onClick={onClassClicked(packageNames, simpleName)}
+		                 title={declaringClassName}
+		                 key={`cls-${simpleName}`}>
 			{simpleName}
 		</span>);
 	}
@@ -82,7 +87,9 @@ const ClassTitle: FC<ClassTitleProps> = (props) => {
 			names.push(innerClassName);
 		} else {
 			names.push(<span data-w="ref-to-class"
-			                 onClick={onClassClicked(packageNames, simpleName, innerClasses, index)}>
+			                 onClick={onClassClicked(packageNames, simpleName, innerClasses, index)}
+			                 title={declaringClassName + '$' + innerClasses.slice(0, index + 1).join('$')}
+			                 key={`inner-cls-${index}-${innerClassName}`}>
 				{innerClassName}
 			</span>);
 		}
