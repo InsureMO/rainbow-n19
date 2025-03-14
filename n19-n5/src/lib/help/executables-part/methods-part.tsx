@@ -12,6 +12,29 @@ import {
 	useDocPartContentHeight
 } from '../common';
 import {ClassDocSegment} from '../doc-content';
+import {ParametersPartDoc} from './parameters-part';
+import {HelpDocOfExecutableMember, HelpDocOfExecutableMembersTitle} from './widgets';
+
+interface ReturnsPartDocProps {
+	details: ClassDocDetails;
+	method: Java.IMethod;
+	doc?: Java.ClassMethodDoc;
+}
+
+const ReturnsPartDoc: FC<ReturnsPartDocProps> = (props) => {
+	const {method, doc} = props;
+
+	if (method.returnedType.simpleName === Java.BuiltInConstants.P_VOID) {
+		return null;
+	}
+
+	return <>
+		<HelpDocOfExecutableMembersTitle>Returns:</HelpDocOfExecutableMembersTitle>
+		<HelpDocOfExecutableMember>
+			<ClassDocSegment content={doc?.return}/>
+		</HelpDocOfExecutableMember>
+	</>;
+};
 
 export interface MethodDocProps {
 	details: ClassDocDetails;
@@ -25,12 +48,11 @@ const MethodDocContent: FC<DocItemPartContentProps & Pick<MethodDocProps, 'metho
 
 	const doc = details.findMethodDoc(method);
 	const methodDoc = doc?.description;
-	// const parametersDoc = doc?.parameters;
-	// const throwsDoc = doc?.throwns;
-	// const returnDoc = doc?.return;
 
 	return <HelpDocOfItemContent ref={ref}>
 		<ClassDocSegment content={methodDoc}/>
+		<ParametersPartDoc details={details} executable={method} doc={doc}/>
+		<ReturnsPartDoc details={details} method={method} doc={doc}/>
 	</HelpDocOfItemContent>;
 };
 

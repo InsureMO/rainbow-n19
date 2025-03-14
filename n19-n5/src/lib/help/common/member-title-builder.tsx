@@ -177,6 +177,8 @@ const Parameters: FC<ParametersProps> = (props) => {
 				{index !== 0 ? ', ' : (void 0)}
 				<Type details={details} type={parameter.genericType}/>
 				{parameter.isVarArgs ? '...' : (void 0)}
+				{' '}
+				{parameter.name}
 			</Fragment>;
 		})}
 	</>;

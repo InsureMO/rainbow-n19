@@ -3,10 +3,9 @@ import React from 'react';
 import {CodeEditorClassDocs} from '../types';
 import {ClassDocDetails} from './class-doc-details';
 import {ClassPartDoc} from './class-part';
-import {ConstructorsPartDoc} from './constructors-part';
+import {ConstructorsPartDoc, MethodsPartDoc} from './executables-part';
 import {ExtendsPartDoc} from './extends-part';
 import {FieldsPartDoc} from './fields-part';
-import {MethodsPartDoc} from './methods-part';
 import {HelpStateMode} from './types';
 
 export interface HelpClassDocProps {

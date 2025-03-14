@@ -12,6 +12,7 @@ import {
 	useDocPartContentHeight
 } from '../common';
 import {ClassDocSegment} from '../doc-content';
+import {ParametersPartDoc} from './parameters-part';
 
 export interface ConstructorDocProps {
 	details: ClassDocDetails;
@@ -25,12 +26,10 @@ const ConstructorDocContent: FC<DocItemPartContentProps & Pick<ConstructorDocPro
 
 	const doc = details.findConstructorDoc(constructor);
 	const constructorDoc = doc?.description;
-	// const parametersDoc = doc?.parameters;
-	// const throwsDoc = doc?.throwns;
-	// const returnDoc = doc?.return;
 
 	return <HelpDocOfItemContent ref={ref}>
 		<ClassDocSegment content={constructorDoc}/>
+		<ParametersPartDoc details={details} executable={constructor} doc={doc}/>
 	</HelpDocOfItemContent>;
 };
 
