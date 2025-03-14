@@ -557,6 +557,7 @@ DocsCollector.collect('java.lang.Package', [
  `]
 						]],
 						[/* dd */ 'dd', [
+							[/* text */ 't', `Digits RefinedVersion`],
 							[/* text */ 't', `opt`, 'sub'],
 							[/* text */ 't', `
 

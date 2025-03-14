@@ -3257,7 +3257,10 @@ DocsCollector.collect('java.lang.StrictMath', [
 				[/* text */ 't', `x`],
 				[/* text */ 't', ` is defined to be
  (`],
-				[/* text */ 't', `e<sup>x</sup> + e<sup>-x</sup>`],
+				[/* text */ 't', `e`],
+				[/* text */ 't', `x`, 'sup'],
+				[/* text */ 't', ` + e`],
+				[/* text */ 't', `-x`, 'sup'],
 				[/* text */ 't', `)/2
  where `],
 				[/* text */ 't', `e`],
@@ -3587,7 +3590,10 @@ DocsCollector.collect('java.lang.StrictMath', [
 				[/* text */ 't', `x`],
 				[/* text */ 't', ` is defined to be
  (`],
-				[/* text */ 't', `e<sup>x</sup> - e<sup>-x</sup>`],
+				[/* text */ 't', `e`],
+				[/* text */ 't', `x`, 'sup'],
+				[/* text */ 't', ` - e`],
+				[/* text */ 't', `-x`, 'sup'],
 				[/* text */ 't', `)/2
  where `],
 				[/* text */ 't', `e`],
@@ -3692,9 +3698,15 @@ DocsCollector.collect('java.lang.StrictMath', [
 				[/* text */ 't', `x`],
 				[/* text */ 't', ` is defined to be
  (`],
-				[/* text */ 't', `e<sup>x</sup> - e<sup>-x</sup>`],
+				[/* text */ 't', `e`],
+				[/* text */ 't', `x`, 'sup'],
+				[/* text */ 't', ` - e`],
+				[/* text */ 't', `-x`, 'sup'],
 				[/* text */ 't', `)/(`],
-				[/* text */ 't', `e<sup>x</sup> + e<sup>-x</sup>`],
+				[/* text */ 't', `e`],
+				[/* text */ 't', `x`, 'sup'],
+				[/* text */ 't', ` + e`],
+				[/* text */ 't', `-x`, 'sup'],
 				[/* text */ 't', `),
  in other words, `],
 				[/* reference */ 'r', `java.lang.Math#sinh(double)`, `sinh(x)`],

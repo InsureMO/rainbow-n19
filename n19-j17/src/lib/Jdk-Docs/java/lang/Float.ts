@@ -1042,6 +1042,7 @@ DocsCollector.collect('java.lang.Float', [
  `]
 						]],
 						[/* dd */ 'dd', [
+							[/* text */ 't', `Sign`],
 							[/* text */ 't', `opt`, 'sub'],
 							[/* text */ 't', ` `],
 							[/* inline code block */ 'i', `NaN`],
@@ -1049,6 +1050,7 @@ DocsCollector.collect('java.lang.Float', [
  `]
 						]],
 						[/* dd */ 'dd', [
+							[/* text */ 't', `Sign`],
 							[/* text */ 't', `opt`, 'sub'],
 							[/* text */ 't', ` `],
 							[/* inline code block */ 'i', `Infinity`],
@@ -1056,12 +1058,16 @@ DocsCollector.collect('java.lang.Float', [
  `]
 						]],
 						[/* dd */ 'dd', [
+							[/* text */ 't', `Sign`],
 							[/* text */ 't', `opt`, 'sub'],
+							[/* text */ 't', ` FloatingPointLiteral`],
 							[/* text */ 't', `
  `]
 						]],
 						[/* dd */ 'dd', [
+							[/* text */ 't', `Sign`],
 							[/* text */ 't', `opt`, 'sub'],
+							[/* text */ 't', ` HexFloatingPointLiteral`],
 							[/* text */ 't', `
  `]
 						]],
@@ -1082,6 +1088,7 @@ DocsCollector.collect('java.lang.Float', [
 						]],
 						[/* dd */ 'dd', [
 							[/* text */ 't', ` `],
+							[/* text */ 't', `HexSignificand BinaryExponent FloatTypeSuffix`],
 							[/* text */ 't', `opt`, 'sub'],
 							[/* text */ 't', `
  `]
@@ -1111,7 +1118,10 @@ DocsCollector.collect('java.lang.Float', [
 						[/* dd */ 'dd', [
 							[/* inline code block */ 'i', `0x`],
 							[/* text */ 't', ` `],
+							[/* text */ 't', `HexDigits`],
 							[/* text */ 't', `opt`, 'sub'],
+							[/* text */ 't', `
+     `],
 							[/* inline code block */ 'i', `.`],
 							[/* text */ 't', ` HexDigits`],
 							[/* text */ 't', `
@@ -1119,7 +1129,10 @@ DocsCollector.collect('java.lang.Float', [
 						]],
 						[/* dd */ 'dd', [
 							[/* inline code block */ 'i', `0X`],
+							[/* text */ 't', ` HexDigits`],
 							[/* text */ 't', `opt`, 'sub'],
+							[/* text */ 't', `
+     `],
 							[/* inline code block */ 'i', `.`],
 							[/* text */ 't', ` `],
 							[/* text */ 't', `HexDigits`],

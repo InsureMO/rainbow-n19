@@ -197,7 +197,11 @@ DocsCollector.collect('java.util.LinkedHashMap', [
  iteration order.  In insertion-ordered linked hash maps, merely changing
  the value associated with a key that is already contained in the map is not
  a structural modification.  `],
+		[/* text */ 't', `In access-ordered linked hash maps,
+ merely querying the map with `],
 		[/* inline code block */ 'i', `get`],
+		[/* text */ 't', ` is a structural modification.
+ `],
 		[/* text */ 't', `)
 
  `],

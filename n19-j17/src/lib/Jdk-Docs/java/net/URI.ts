@@ -666,7 +666,10 @@ DocsCollector.collect('java.net.URI', [
 						[/* reference */ 'r', `java.lang.Character#isSpaceChar(int)`, `Character.isSpaceChar`],
 						[/* text */ 't', `
            method)  `],
-						[/* text */ 't', `Deviation from RFC 2396`]
+						[/* text */ 't', `(`],
+						[/* text */ 't', `Deviation from RFC 2396`],
+						[/* text */ 't', `, which is
+           limited to US-ASCII)`]
 					]]
 				]]
 			]],
@@ -740,8 +743,11 @@ DocsCollector.collect('java.net.URI', [
    for example, is encoded as `],
 					[/* inline code block */ 'i', `"%E2%82%AC"`],
 					[/* text */ 't', `.  `],
+					[/* text */ 't', `(`],
 					[/* text */ 't', `Deviation from
    RFC 2396`],
+					[/* text */ 't', `, which does not specify any particular character
+   set.)`],
 					[/* text */ 't', ` `]
 				]]
 			]],

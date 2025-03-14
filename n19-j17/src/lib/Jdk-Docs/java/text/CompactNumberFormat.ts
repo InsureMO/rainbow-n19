@@ -290,6 +290,7 @@ DocsCollector.collect('java.text.CompactNumberFormat', [
          '{' `],
 				[/* text */ 't', `PluralPattern`],
 				[/* text */ 't', ` `],
+				[/* text */ 't', `[' ' PluralPattern]`],
 				[/* text */ 't', `optional`, 'sub'],
 				[/* text */ 't', ` '}'
  `],
@@ -301,6 +302,7 @@ DocsCollector.collect('java.text.CompactNumberFormat', [
          `],
 				[/* text */ 't', `PositivePattern`],
 				[/* text */ 't', ` `],
+				[/* text */ 't', `[; NegativePattern]`],
 				[/* text */ 't', `optional`, 'sub'],
 				[/* text */ 't', `
  `],
@@ -319,20 +321,24 @@ DocsCollector.collect('java.text.CompactNumberFormat', [
 				[/* text */ 't', `PositivePattern:`],
 				[/* text */ 't', `
          `],
+				[/* text */ 't', `Prefix`],
 				[/* text */ 't', `optional`, 'sub'],
 				[/* text */ 't', ` `],
 				[/* text */ 't', `MinimumInteger`],
 				[/* text */ 't', ` `],
+				[/* text */ 't', `Suffix`],
 				[/* text */ 't', `optional`, 'sub'],
 				[/* text */ 't', `
  `],
 				[/* text */ 't', `NegativePattern:`],
 				[/* text */ 't', `
         `],
+				[/* text */ 't', `Prefix`],
 				[/* text */ 't', `optional`, 'sub'],
 				[/* text */ 't', ` `],
 				[/* text */ 't', `MinimumInteger`],
 				[/* text */ 't', ` `],
+				[/* text */ 't', `Suffix`],
 				[/* text */ 't', `optional`, 'sub'],
 				[/* text */ 't', `
  `],

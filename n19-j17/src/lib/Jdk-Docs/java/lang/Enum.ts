@@ -183,7 +183,11 @@ DocsCollector.collect('java.lang.Enum', [
  enum declaration.
 
  `],
+				[/* text */ 't', `Most programmers should use the `],
 				[/* reference */ 'r', `#toString()`, `toString()`],
+				[/* text */ 't', ` method in
+ preference to this one, as the toString method may return
+ a more user-friendly name.`],
 				[/* text */ 't', `  This method is designed primarily for
  use in specialized situations where correctness depends on getting the
  exact name, which will not vary from release to release.`]

@@ -846,12 +846,7 @@ private class ClassGenerator(
 			}
 
 			"em", "strong", "b", "i", "cite" -> {
-				val element = node as Element
-				if (element.childrenSize() == 1) {
-					return generateDocSegment(element.child(0), level, inCodeBlock)
-				} else {
-					"${indent}[/* text */ 't', `${element.html().escapeDocChars()}`]"
-				}
+				node.childNodes().joinToString(",\n") { child -> generateDocSegment(child, level, inCodeBlock) }
 			}
 
 			"sup" -> "${indent}[/* text */ 't', `${(node as Element).text().escapeDocChars()}`, 'sup']"

@@ -137,6 +137,9 @@ export const HelpDocOfItemContent = styled.div.attrs({
 
     code[data-w=i] {
         font-style: var(--groovy-editor-help-class-doc-code-font-style, italic);
+        background-color: var(--groovy-editor-help-class-doc-code-font-color, #f1c7b7);
+        padding: var(--groovy-editor-help-class-doc-code-font-padding, 0 4px);
+        border-radius: var(--groovy-editor-help-class-doc-code-font-border-radius, 4px);
     }
 
     ul[data-w=l] {
@@ -167,8 +170,6 @@ export const HelpDocOfItemContent = styled.div.attrs({
     table[data-w=tbl] {
         display: block;
         position: relative;
-        border: var(--groovy-editor-help-class-doc-table-border, 1px solid #e1e1e1);
-        border-radius: var(--groovy-editor-help-class-doc-table-border-radius, 4px);
         border-collapse: collapse;
         overflow: hidden;
 
@@ -178,16 +179,21 @@ export const HelpDocOfItemContent = styled.div.attrs({
 
         th[data-w=thc], td[data-w=tbc] {
             padding: var(--groovy-editor-help-class-doc-padding, 4px 8px);
+            border: var(--groovy-editor-help-class-doc-table-border, 1px solid #e1e1e1);
         }
     }
 
     dl[data-w=dl] {
+        border-left: var(--groovy-editor-help-class-doc-detail-list-border, 2px solid #d5d5d5);
+        padding: var(--groovy-editor-help-class-doc-detail-list-padding, 0 0 0 4px);
+
         > dt[data-w=dt] {
             padding: var(--groovy-editor-help-class-doc-padding, 4px 8px);
+            font-weight: var(--groovy-editor-help-class-doc-detail-list-title-font-weight, 500);
         }
 
         > dd[data-w=dd] {
-            padding: var(--groovy-editor-help-class-doc-padding, 4px 8px);
+            padding: var(--groovy-editor-help-class-doc-padding, 4px 8px 4px 48px);
         }
     }
 `;

@@ -43,7 +43,9 @@ DocsCollector.collect('java.util.ConcurrentModificationException', [
 			[/* text */ 't', ` on a best-effort basis.
  Therefore, it would be wrong to write a program that depended on this
  exception for its correctness: `],
-			[/* inline code block */ 'i', `ConcurrentModificationException`]
+			[/* inline code block */ 'i', `ConcurrentModificationException`],
+			[/* text */ 't', `
+ should be used only to detect bugs.`]
 		]]
 	],
 	/* fields */ UDF,

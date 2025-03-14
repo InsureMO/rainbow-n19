@@ -1501,7 +1501,9 @@ DocsCollector.collect('java.nio.channels.FileChannel', [
 					[/* text */ 't', ` option is specified
           and the file is being opened for writing
           `],
-					[/* text */ 't', `optional specific exception`]
+					[/* text */ 't', `(`],
+					[/* text */ 't', `optional specific exception`],
+					[/* text */ 't', `)`]
 				]],
 				[/* throw */ 'java.io.IOException', [/* throw description */
 					[/* text */ 't', `If an I/O error occurs`]
@@ -1750,7 +1752,9 @@ DocsCollector.collect('java.nio.channels.FileChannel', [
 					[/* text */ 't', ` option is specified
           and the file is being opened for writing
           `],
-					[/* text */ 't', `optional specific exception`]
+					[/* text */ 't', `(`],
+					[/* text */ 't', `optional specific exception`],
+					[/* text */ 't', `)`]
 				]],
 				[/* throw */ 'java.io.IOException', [/* throw description */
 					[/* text */ 't', `If an I/O error occurs`]

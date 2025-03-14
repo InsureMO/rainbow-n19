@@ -26,7 +26,7 @@ export const ThrowsPartDoc: FC<ThrowsPartDocProps> = (props) => {
 			const type = executable.throwns?.[index]?.genericType
 				?? details.class.classLoader.findClass(t.key);
 			const shouldRenderRefToClass = type != null && type instanceof Java.Class;
-			return <HelpDocOfExecutableMember key={t.key}>
+			return <HelpDocOfExecutableMember key={`${index}-${t.key}`}>
 				<HelpDocOfExecutableMemberName>
 					{'► '}
 					{shouldRenderRefToClass

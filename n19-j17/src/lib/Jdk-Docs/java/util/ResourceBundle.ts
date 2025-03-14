@@ -1606,7 +1606,9 @@ DocsCollector.collect('java.util.ResourceBundle', [
 						[/* reference */ 'r', `java.util.ResourceBundle.Control#getCandidateLocales(java.lang.String,java.util.Locale)`, `control.getCandidateLocales`],
 						[/* text */ 't', ` method is called with the target
  locale to get a list of `],
+						[/* text */ 't', `candidate `],
 						[/* inline code block */ 'i', `Locale`],
+						[/* text */ 't', `s`],
 						[/* text */ 't', ` for
  which resource bundles are searched.`]
 					]],

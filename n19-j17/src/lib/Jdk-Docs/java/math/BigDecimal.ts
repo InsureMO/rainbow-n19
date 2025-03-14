@@ -968,7 +968,10 @@ DocsCollector.collect('java.math.BigDecimal', [
  `]
 						]],
 						[/* dd */ 'dd', [
-							[/* text */ 't', `Sign<sub>opt</sub> Significand Exponent<sub>opt</sub>`],
+							[/* text */ 't', `Sign`],
+							[/* text */ 't', `opt`, 'sub'],
+							[/* text */ 't', ` Significand Exponent`],
+							[/* text */ 't', `opt`, 'sub'],
 							[/* text */ 't', `
  `]
 						]],
@@ -997,6 +1000,7 @@ DocsCollector.collect('java.math.BigDecimal', [
 							[/* text */ 't', ` `],
 							[/* inline code block */ 'i', `.`],
 							[/* text */ 't', ` `],
+							[/* text */ 't', `FractionPart`],
 							[/* text */ 't', `opt`, 'sub'],
 							[/* text */ 't', `
  `]
@@ -1064,7 +1068,9 @@ DocsCollector.collect('java.math.BigDecimal', [
  `]
 						]],
 						[/* dd */ 'dd', [
+							[/* text */ 't', `Sign`],
 							[/* text */ 't', `opt`, 'sub'],
+							[/* text */ 't', ` Digits`],
 							[/* text */ 't', `
  `]
 						]],

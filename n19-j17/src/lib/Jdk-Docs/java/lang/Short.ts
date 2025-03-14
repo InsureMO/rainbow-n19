@@ -552,11 +552,14 @@ DocsCollector.collect('java.lang.Short', [
  `]
 						]],
 						[/* dd */ 'dd', [
+							[/* text */ 't', `Sign`],
 							[/* text */ 't', `opt`, 'sub'],
+							[/* text */ 't', ` DecimalNumeral`],
 							[/* text */ 't', `
  `]
 						]],
 						[/* dd */ 'dd', [
+							[/* text */ 't', `Sign`],
 							[/* text */ 't', `opt`, 'sub'],
 							[/* text */ 't', ` `],
 							[/* inline code block */ 'i', `0x`],
@@ -566,6 +569,7 @@ DocsCollector.collect('java.lang.Short', [
  `]
 						]],
 						[/* dd */ 'dd', [
+							[/* text */ 't', `Sign`],
 							[/* text */ 't', `opt`, 'sub'],
 							[/* text */ 't', ` `],
 							[/* inline code block */ 'i', `0X`],
@@ -575,6 +579,7 @@ DocsCollector.collect('java.lang.Short', [
  `]
 						]],
 						[/* dd */ 'dd', [
+							[/* text */ 't', `Sign`],
 							[/* text */ 't', `opt`, 'sub'],
 							[/* text */ 't', ` `],
 							[/* inline code block */ 'i', `#`],
@@ -584,6 +589,7 @@ DocsCollector.collect('java.lang.Short', [
  `]
 						]],
 						[/* dd */ 'dd', [
+							[/* text */ 't', `Sign`],
 							[/* text */ 't', `opt`, 'sub'],
 							[/* text */ 't', ` `],
 							[/* inline code block */ 'i', `0`],

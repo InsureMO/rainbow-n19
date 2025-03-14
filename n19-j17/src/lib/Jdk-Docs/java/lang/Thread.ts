@@ -462,7 +462,10 @@ DocsCollector.collect('java.lang.Thread', [
  that it allows the thread stack size to be specified.  The stack size
  is the approximate number of bytes of address space that the virtual
  machine is to allocate for this thread's stack.  `],
+					[/* text */ 't', `The effect of the
+ `],
 					[/* inline code block */ 'i', `stackSize`],
+					[/* text */ 't', ` parameter, if any, is highly platform dependent.`],
 					[/* text */ 't', `
 
  `]
@@ -484,7 +487,10 @@ DocsCollector.collect('java.lang.Thread', [
 					[/* text */ 't', ` parameter
  and the maximum recursion depth and concurrency level are
  platform-dependent.  `],
+					[/* text */ 't', `On some platforms, the value of the
+ `],
 					[/* inline code block */ 'i', `stackSize`],
+					[/* text */ 't', ` parameter may have no effect whatsoever.`],
 					[/* text */ 't', `
 
  `]

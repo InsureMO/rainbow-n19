@@ -97,20 +97,24 @@ DocsCollector.collect('java.text.DecimalFormat', [
 				[/* text */ 't', `PositivePattern:`],
 				[/* text */ 't', `
          `],
+				[/* text */ 't', `Prefix`],
 				[/* text */ 't', `opt`, 'sub'],
 				[/* text */ 't', ` `],
 				[/* text */ 't', `Number`],
 				[/* text */ 't', ` `],
+				[/* text */ 't', `Suffix`],
 				[/* text */ 't', `opt`, 'sub'],
 				[/* text */ 't', `
  `],
 				[/* text */ 't', `NegativePattern:`],
 				[/* text */ 't', `
          `],
+				[/* text */ 't', `Prefix`],
 				[/* text */ 't', `opt`, 'sub'],
 				[/* text */ 't', ` `],
 				[/* text */ 't', `Number`],
 				[/* text */ 't', ` `],
+				[/* text */ 't', `Suffix`],
 				[/* text */ 't', `opt`, 'sub'],
 				[/* text */ 't', `
  `],
@@ -127,6 +131,7 @@ DocsCollector.collect('java.text.DecimalFormat', [
          `],
 				[/* text */ 't', `Integer`],
 				[/* text */ 't', ` `],
+				[/* text */ 't', `Exponent`],
 				[/* text */ 't', `opt`, 'sub'],
 				[/* text */ 't', `
          `],
@@ -134,6 +139,7 @@ DocsCollector.collect('java.text.DecimalFormat', [
 				[/* text */ 't', ` . `],
 				[/* text */ 't', `Fraction`],
 				[/* text */ 't', ` `],
+				[/* text */ 't', `Exponent`],
 				[/* text */ 't', `opt`, 'sub'],
 				[/* text */ 't', `
  `],
@@ -163,20 +169,24 @@ DocsCollector.collect('java.text.DecimalFormat', [
 				[/* text */ 't', `Fraction:`],
 				[/* text */ 't', `
          `],
+				[/* text */ 't', `MinimumFraction`],
 				[/* text */ 't', `opt`, 'sub'],
 				[/* text */ 't', ` `],
+				[/* text */ 't', `OptionalFraction`],
 				[/* text */ 't', `opt`, 'sub'],
 				[/* text */ 't', `
  `],
 				[/* text */ 't', `MinimumFraction:`],
 				[/* text */ 't', `
          0 `],
+				[/* text */ 't', `MinimumFraction`],
 				[/* text */ 't', `opt`, 'sub'],
 				[/* text */ 't', `
  `],
 				[/* text */ 't', `OptionalFraction:`],
 				[/* text */ 't', `
          # `],
+				[/* text */ 't', `OptionalFraction`],
 				[/* text */ 't', `opt`, 'sub'],
 				[/* text */ 't', `
  `],
@@ -189,6 +199,7 @@ DocsCollector.collect('java.text.DecimalFormat', [
 				[/* text */ 't', `MinimumExponent:`],
 				[/* text */ 't', `
          0 `],
+				[/* text */ 't', `MinimumExponent`],
 				[/* text */ 't', `opt`, 'sub'],
 				[/* text */ 't', `
  `]

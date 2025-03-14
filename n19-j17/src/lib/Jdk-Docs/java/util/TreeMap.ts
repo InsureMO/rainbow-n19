@@ -35,6 +35,8 @@ DocsCollector.collect('java.util.TreeMap', [
 		[/* block */ 'b', [
 			[/* text */ 't', `Note that the ordering maintained by a tree map, like any sorted map, and
  whether or not an explicit comparator is provided, must be `],
+			[/* text */ 't', `consistent
+ with `],
 			[/* inline code block */ 'i', `equals`],
 			[/* text */ 't', ` if this sorted map is to correctly implement the
  `],
