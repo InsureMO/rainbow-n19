@@ -13,6 +13,7 @@ import {
 } from '../common';
 import {ClassDocSegment} from '../doc-content';
 import {ParametersPartDoc} from './parameters-part';
+import {ThrowsPartDoc} from './throws-part';
 import {HelpDocOfExecutableMember, HelpDocOfExecutableMembersTitle} from './widgets';
 
 interface ReturnsPartDocProps {
@@ -53,6 +54,7 @@ const MethodDocContent: FC<DocItemPartContentProps & Pick<MethodDocProps, 'metho
 		<ClassDocSegment content={methodDoc}/>
 		<ParametersPartDoc details={details} executable={method} doc={doc}/>
 		<ReturnsPartDoc details={details} method={method} doc={doc}/>
+		<ThrowsPartDoc details={details} executable={method} doc={doc}/>
 	</HelpDocOfItemContent>;
 };
 

@@ -8,7 +8,7 @@ export interface IClassLoader {
 	setParent(parent?: IClassLoader): void;
 	parent(): Optional<IClassLoader>;
 	findClass(className: ClassName): Optional<IClass>;
-	findClass(className: ClassName, orCreate: () => IClass): IClass;
+	findClass(className: ClassName, orCreate: (classLoader: IClassLoader) => IClass): IClass;
 	findPackage(packageName: PackageName): IPackage;
 	/**
 	 * classes with given package name, including ancestors

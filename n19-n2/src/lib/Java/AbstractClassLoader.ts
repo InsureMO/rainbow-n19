@@ -1,5 +1,6 @@
 import {Optional} from '../TsAddon';
-import {BuiltInConstants} from './Helpers';
+import {Class} from './Class';
+import {BuiltInConstants, Modifier} from './Helpers';
 import {IClass, IClassLoader, IPackage} from './Interfaces';
 import {Package} from './Package';
 import {ClassName, PackageName} from './TypeAlias';
@@ -33,14 +34,44 @@ export abstract class AbstractClassLoader implements IClassLoader {
 	}
 
 	findClass(className: ClassName): Optional<IClass>;
-	findClass(className: ClassName, orCreate: () => IClass): IClass;
-	findClass(className: ClassName, orCreate?: () => IClass): Optional<IClass> {
-		const clazz = this._classes.get(className) ?? this._parent?.findClass(className);
+	findClass(className: ClassName, orCreate: (classLoader: IClassLoader) => IClass): IClass;
+	findClass(className: ClassName, orCreate?: (classLoader: IClassLoader) => IClass): Optional<IClass> {
+		let clazz = this._classes.get(className);
+		if (clazz == null) {
+			if (className.startsWith(BuiltInConstants.ARR_HEAD)) {
+				let componentTypeClassName = className.substring(1);
+				if (componentTypeClassName.endsWith(BuiltInConstants.ARR_CLASS_TAIL)) {
+					if (componentTypeClassName.startsWith(BuiltInConstants.ARR_HEAD)) {
+						// component type class name still is an array, do nothing, find it
+					} else {
+						// component type class name is not an array, remove the array head and tail
+						componentTypeClassName = componentTypeClassName.substring(1, componentTypeClassName.length - 1);
+					}
+				} else {
+					// primitive type, no matter it is an array or not
+				}
+				const componentTypeClass = this.findClass(componentTypeClassName, orCreate);
+				if (componentTypeClass != null) {
+					// create array class and add to class loader which component type stays
+					const classLoader = componentTypeClass.classLoader;
+					clazz = new Class(classLoader, {
+						name: className,
+						modifiers: Modifier.PUBLIC & Modifier.SYNTHETIC & Modifier.BRIDGE
+					});
+					classLoader.addClass(clazz);
+					return clazz;
+				} else {
+					return (void 0);
+				}
+			} else {
+				clazz = this._parent?.findClass(className);
+			}
+		}
 		if (clazz == null) {
 			if (orCreate == null) {
 				return (void 0);
 			} else {
-				const createdClass = orCreate();
+				const createdClass = orCreate(this);
 				this._classes.set(className, createdClass);
 				return createdClass;
 			}

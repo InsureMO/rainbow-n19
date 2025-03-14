@@ -244,7 +244,7 @@ export class Class implements IClass {
 				// interfaces are java.lang.Cloneable and java.lang.Serializable
 				this.setInterfaces([BuiltInConstants.LANG_CLONEABLE, BuiltInConstants.LANG_SERIALIZABLE]);
 				// package following component type's
-				const baseComponentName = this.name.replace(/^\[+/, '').replace(/;$/, '');
+				const baseComponentName = this.name.replace(/^\[+L?/, '').replace(/;$/, '');
 				if (BuiltInConstants.CHAR_OF_PRIMITIVE_TYPES.includes(baseComponentName)) {
 					// primitive type array
 					this._packageName = BuiltInConstants.LANG_PACKAGE;

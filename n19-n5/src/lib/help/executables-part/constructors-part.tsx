@@ -13,6 +13,7 @@ import {
 } from '../common';
 import {ClassDocSegment} from '../doc-content';
 import {ParametersPartDoc} from './parameters-part';
+import {ThrowsPartDoc} from './throws-part';
 
 export interface ConstructorDocProps {
 	details: ClassDocDetails;
@@ -30,6 +31,7 @@ const ConstructorDocContent: FC<DocItemPartContentProps & Pick<ConstructorDocPro
 	return <HelpDocOfItemContent ref={ref}>
 		<ClassDocSegment content={constructorDoc}/>
 		<ParametersPartDoc details={details} executable={constructor} doc={doc}/>
+		<ThrowsPartDoc details={details} executable={constructor} doc={doc}/>
 	</HelpDocOfItemContent>;
 };
 

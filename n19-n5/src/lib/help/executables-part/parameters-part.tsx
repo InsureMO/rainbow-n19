@@ -18,9 +18,11 @@ export const ParametersPartDoc: FC<ParametersPartDocProps> = (props) => {
 	const {doc} = props;
 
 	const parameters = doc?.parameters;
+
 	if (parameters == null || parameters.length === 0) {
 		return null;
 	}
+
 	return <>
 		<HelpDocOfExecutableMembersTitle>Parameters:</HelpDocOfExecutableMembersTitle>
 		{doc?.parameters?.map(pd => {

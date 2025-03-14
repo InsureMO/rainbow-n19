@@ -733,8 +733,16 @@ private class ClassGenerator(
 
 	private fun generateDocSegmentOfChildren(node: Node, level: Int, inCodeBlock: Boolean): String {
 		val indent = "\t".repeat(level)
+		val nodeName = node.nodeName()
 		val childNodes = node.childNodes().filter { node ->
-			node.nodeName() != "#text" || node.outerHtml().trim().isNotEmpty()
+			val name = node.nodeName()
+			if (name != "#text") {
+				true
+			} else if (nodeName == "ul" || nodeName == "ol") {
+				node.outerHtml().trim().isNotEmpty()
+			} else {
+				node.outerHtml().isNotEmpty()
+			}
 		}
 		return when (childNodes.size) {
 			0 -> "''"
@@ -1088,7 +1096,7 @@ private class ClassGenerator(
 	private fun generateDescDoc(node: Element?, level: Int, comments: String): String {
 		val indent = "\t".repeat(level)
 		return node?.childNodes()
-			?.filter { node -> node.nodeName() != "#text" || node.outerHtml().trim().isNotEmpty() }
+			?.filter { node -> node.nodeName() != "#text" || node.outerHtml().isNotEmpty() }
 			?.joinToString(",\n", "${indent}[${comments}\n", "\n${indent}],") { node ->
 				generateDocSegment(node, level + 1, false)
 			}
@@ -1160,7 +1168,7 @@ private class ClassGenerator(
 				val descriptionNodes = node.childNodes()
 					.drop(if (node.child(0) === node.childNode(0)) 1 else 2)
 					.filter { node ->
-						node.nodeName() != "#text" || node.outerHtml().trim().isNotEmpty()
+						node.nodeName() != "#text" || node.outerHtml().isNotEmpty()
 					}
 				if (descriptionNodes.isEmpty()) {
 					"${indent1}[/* parameter */ '${name}', UDF]"
@@ -1211,7 +1219,7 @@ private class ClassGenerator(
 				val descriptionNodes = node.childNodes()
 					.drop(if (node.child(0) === node.childNode(0)) 1 else 2)
 					.filter { node ->
-						node.nodeName() != "#text" || node.outerHtml().trim().isNotEmpty()
+						node.nodeName() != "#text" || node.outerHtml().isNotEmpty()
 					}
 				if (descriptionNodes.isEmpty()) {
 					"${indent1}[/* throw */ '${name}', UDF]"
@@ -1295,7 +1303,7 @@ private class ClassGenerator(
 
 		val nodes = parameterNodes.map { node ->
 			node.childNodes().filter { node ->
-				node.nodeName() != "#text" || node.outerHtml().trim().isNotEmpty()
+				node.nodeName() != "#text" || node.outerHtml().isNotEmpty()
 			}
 		}.flatten()
 		if (nodes.isEmpty()) {
