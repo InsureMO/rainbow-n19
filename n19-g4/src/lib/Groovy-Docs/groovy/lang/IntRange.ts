@@ -279,7 +279,8 @@ DocsCollector.collect('groovy.lang.IntRange', [
 					[/* external link */ 'a', `https://docs.oracle.com/javase/8/docs/api/java/util/AbstractList.html#hashCode--`, `AbstractList.hashCode()`],
 					[/* text */ 't', ` provides a suitable hash code.`]
 				]],
-				[/* block */ 'b', ''],
+				[/* block */ 'b', `
+ `],
 				[/* block */ 'b', [
 					[/* text */ 't', `
  Note that equals is generally handled by `],

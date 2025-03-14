@@ -60,6 +60,8 @@ DocsCollector.collect('groovy.lang.Closure', [
 				[/* text */ 't', `
  This will succeed, because the x and y variables declared in the delegate shadow the fields in the owner class.`],
 				[/* block */ 'b', [
+					[/* text */ 't', `
+ `],
 					[/* text */ 't', `Note that local variables are always looked up first, independently of the resolution strategy.`]
 				]]
 			],
@@ -96,6 +98,8 @@ DocsCollector.collect('groovy.lang.Closure', [
  will throw an error because even if the owner declares a "z" field, the resolution strategy will bypass
  lookup in the owner.`],
 				[/* block */ 'b', [
+					[/* text */ 't', `
+ `],
 					[/* text */ 't', `Note that local variables are always looked up first, independently of the resolution strategy.`]
 				]]
 			],
@@ -138,6 +142,8 @@ DocsCollector.collect('groovy.lang.Closure', [
 				[/* text */ 't', `
  Will succeed, because the x and y fields declared in the Test class shadow the variables in the delegate.`],
 				[/* block */ 'b', [
+					[/* text */ 't', `
+ `],
 					[/* text */ 't', `Note that local variables are always looked up first, independently of the resolution strategy.`]
 				]]
 			],
@@ -173,6 +179,8 @@ DocsCollector.collect('groovy.lang.Closure', [
  will throw "No such property: z" error because even if the z variable is declared in the delegate, no
  lookup is made.`],
 				[/* block */ 'b', [
+					[/* text */ 't', `
+ `],
 					[/* text */ 't', `Note that local variables are always looked up first, independently of the resolution strategy.`]
 				]]
 			],
@@ -190,6 +198,8 @@ DocsCollector.collect('groovy.lang.Closure', [
  from the owner nor the delegate, but only on the closure object itself. This allows the developer to
  override getProperty using ExpandoMetaClass of the closure itself.`],
 				[/* block */ 'b', [
+					[/* text */ 't', `
+ `],
 					[/* text */ 't', `Note that local variables are always looked up first, independently of the resolution strategy.`]
 				]]
 			],
