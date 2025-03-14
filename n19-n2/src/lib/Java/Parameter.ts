@@ -49,7 +49,7 @@ export class Parameter implements IParameter {
 	}
 
 	get name(): string {
-		if (this.isNamePresent) {
+		if (!this.isNamePresent) {
 			return 'arg' + this.index;
 		} else {
 			return this._name;
