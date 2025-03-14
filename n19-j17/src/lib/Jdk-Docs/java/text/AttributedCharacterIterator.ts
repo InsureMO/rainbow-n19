@@ -35,6 +35,9 @@ DocsCollector.collect('java.text.AttributedCharacterIterator', [
  `]
 			]]
 		]],
+		[/* text */ 't', `
+
+ `],
 		[/* block */ 'b', ''],
 		[/* block */ 'b', `run with respect to a set of attributes`],
 		[/* block */ 'b', [

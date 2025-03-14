@@ -80,6 +80,8 @@ DocsCollector.collect('java.util.Set', [
 		[/* block */ 'b', [
 			[/* anchor */ 'r', '#-id', `unmodifiable`, `Unmodifiable Sets`]
 		]],
+		[/* text */ 't', `
+ `],
 		[/* block */ 'b', [
 			[/* text */ 't', `The `],
 			[/* reference */ 'r', `#of(E...)`, `Set.of`],
@@ -152,6 +154,9 @@ DocsCollector.collect('java.util.Set', [
  `]
 			]]
 		]],
+		[/* text */ 't', `
+
+ `],
 		[/* block */ 'b', ''],
 		[/* block */ 'b', [
 			[/* text */ 't', `This interface is a member of the

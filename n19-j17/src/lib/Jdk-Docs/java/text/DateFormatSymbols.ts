@@ -53,9 +53,16 @@ DocsCollector.collect('java.text.DateFormatSymbols', [
  format pattern for a specific locale, you can do so with:
  `],
 		[/* block */ 'b', [
+			[/* text */ 't', `
+ `],
 			[/* code block */ 'c', ` new SimpleDateFormat(aPattern, DateFormatSymbols.getInstance(aLocale)).
+ `],
+			[/* text */ 't', `
  `]
 		]],
+		[/* text */ 't', `
+
+ `],
 		[/* block */ 'b', ''],
 		[/* block */ 'b', [
 			[/* text */ 't', `If the locale contains "rg" (region override)
@@ -67,6 +74,8 @@ DocsCollector.collect('java.text.DateFormatSymbols', [
  `]
 		]],
 		[/* block */ 'b', [
+			[/* text */ 't', `
+ `],
 			[/* inline code block */ 'i', `DateFormatSymbols`],
 			[/* text */ 't', ` objects are cloneable. When you obtain
  a `],

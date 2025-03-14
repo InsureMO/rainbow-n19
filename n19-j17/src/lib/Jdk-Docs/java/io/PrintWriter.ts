@@ -471,6 +471,9 @@ DocsCollector.collect('java.io.PrintWriter', [
 				[/* code block */ 'c', [
 					[/* inline code block */ 'i', `out.write(csq.toString())`]
 				]],
+				[/* text */ 't', `
+
+ `],
 				[/* block */ 'b', ''],
 				[/* block */ 'b', [
 					[/* text */ 't', ` Depending on the specification of `],

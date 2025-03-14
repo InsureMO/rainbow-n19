@@ -71,6 +71,9 @@ DocsCollector.collect('java.nio.ByteBuffer', [
 				]]
 			]]
 		]],
+		[/* text */ 't', `
+
+ `],
 		[/* block */ 'b', ''],
 		[/* block */ 'b', [
 			[/* text */ 't', ` Byte buffers can be created either by `],
@@ -95,13 +98,18 @@ DocsCollector.collect('java.nio.ByteBuffer', [
 
 
  `],
-			[/* anchor */ 'r', '#-id', `direct`, ``]
+			[/* anchor */ 'r', '#-id', `direct`, ``],
+			[/* text */ 't', `
+ `]
 		]],
 		[/* block */ 'b', [
 			[/* text */ 't', ` Direct `],
 			[/* text */ 't', `vs.`],
 			[/* text */ 't', ` non-direct buffers `]
 		]],
+		[/* text */ 't', `
+
+ `],
 		[/* block */ 'b', [
 			[/* text */ 't', ` A byte buffer is either `],
 			[/* text */ 't', `direct`],
@@ -153,9 +161,14 @@ DocsCollector.collect('java.nio.ByteBuffer', [
 
 
  `],
-			[/* anchor */ 'r', '#-id', `bin`, ``]
+			[/* anchor */ 'r', '#-id', `bin`, ``],
+			[/* text */ 't', `
+ `]
 		]],
 		[/* block */ 'b', ` Access to binary data `],
+		[/* text */ 't', `
+
+ `],
 		[/* block */ 'b', [
 			[/* text */ 't', ` This class defines methods for reading and writing values of all other
  primitive types, except `],
@@ -200,6 +213,9 @@ DocsCollector.collect('java.nio.ByteBuffer', [
 				[/* text */ 't', `putFloat(int index, float f)`]
 			]]
 		]],
+		[/* text */ 't', `
+
+ `],
 		[/* block */ 'b', ''],
 		[/* block */ 'b', [
 			[/* text */ 't', ` Corresponding methods are defined for the types `],
@@ -215,7 +231,10 @@ DocsCollector.collect('java.nio.ByteBuffer', [
  bytes rather than of the type being read or written.
 
  `],
-			[/* anchor */ 'r', '#-id', `views`, ``]
+			[/* anchor */ 'r', '#-id', `views`, ``],
+			[/* text */ 't', `
+
+ `]
 		]],
 		[/* block */ 'b', [
 			[/* text */ 't', ` For access to homogeneous binary data, that is, sequences of values of
@@ -273,10 +292,46 @@ DocsCollector.collect('java.nio.ByteBuffer', [
    be direct if, and only if, its backing byte buffer is direct.  `]
 			]]
 		]],
+		[/* text */ 't', `
+
+ `],
 		[/* block */ 'b', ''],
 		[/* block */ 'b', ` The byte order of a view buffer is fixed to be that of its byte buffer
  at the time that the view is created.  `],
+		[/* text */ 't', `
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ `],
 		[/* block */ 'b', ` Invocation chaining `],
+		[/* text */ 't', `
+
+
+ `],
 		[/* block */ 'b', ` Methods in this class that do not otherwise have a value to return are
  specified to return the buffer upon which they are invoked.  This allows
  method invocations to be chained.
@@ -641,6 +696,11 @@ DocsCollector.collect('java.nio.ByteBuffer', [
 					[/* text */ 't', `
  method. `]
 				]],
+				[/* text */ 't', `
+
+
+
+ `],
 				[/* block */ 'b', [
 					[/* text */ 't', ` Invoke this method after writing data from a buffer in case the
  write was incomplete.  The following loop, for example, copies bytes
@@ -1552,6 +1612,9 @@ DocsCollector.collect('java.nio.ByteBuffer', [
    `]
 					]]
 				]],
+				[/* text */ 't', `
+
+ `],
 				[/* block */ 'b', ''],
 				[/* block */ 'b', ` A byte buffer is not equal to any other type of object.  `]
 			],
@@ -1766,6 +1829,9 @@ DocsCollector.collect('java.nio.ByteBuffer', [
 					[/* inline code block */ 'i', `nb.alignmentOffset(0, unitSize) == 0
  nb.alignmentOffset(nb.limit(), unitSize) == 0`]
 				]],
+				[/* text */ 't', `
+
+ `],
 				[/* block */ 'b', ''],
 				[/* block */ 'b', ` Changes to this buffer's content will be visible in the new
  buffer, and vice versa; the two buffers' position, limit, and mark
@@ -2015,6 +2081,9 @@ DocsCollector.collect('java.nio.ByteBuffer', [
 					[/* code block */ 'c', ` buf.clear();     // Prepare buffer for reading
  in.read(buf);    // Read data`]
 				]],
+				[/* text */ 't', `
+
+ `],
 				[/* block */ 'b', ''],
 				[/* block */ 'b', ` This method does not actually erase the data in the buffer, but it
  is named as if it did because it will most often be used in situations
@@ -2050,6 +2119,9 @@ DocsCollector.collect('java.nio.ByteBuffer', [
  buf.flip();        // Flip buffer
  out.write(buf);    // Write header + data to channel`]
 				]],
+				[/* text */ 't', `
+
+ `],
 				[/* block */ 'b', ''],
 				[/* block */ 'b', [
 					[/* text */ 't', ` This method is often used in conjunction with the `],

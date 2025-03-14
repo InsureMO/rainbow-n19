@@ -584,6 +584,8 @@ DocsCollector.collect('java.time.chrono.ChronoLocalDateTime', [
   date = date.minus(duration);             // subtract a Duration instance
   date = date.minus(workingDays(6));       // example user-written workingDays method
  `],
+				[/* text */ 't', `
+ `],
 				[/* block */ 'b', ''],
 				[/* block */ 'b', [
 					[/* text */ 't', `
@@ -674,6 +676,8 @@ DocsCollector.collect('java.time.chrono.ChronoLocalDateTime', [
 				[/* code block */ 'c', `  date = date.plus(period);                // add a Period instance
   date = date.plus(duration);              // add a Duration instance
   date = date.plus(workingDays(6));        // example user-written workingDays method
+ `],
+				[/* text */ 't', `
  `],
 				[/* block */ 'b', ''],
 				[/* block */ 'b', [
@@ -829,6 +833,8 @@ DocsCollector.collect('java.time.chrono.ChronoLocalDateTime', [
 				[/* code block */ 'c', `   // these two lines are equivalent, but the second approach is recommended
    temporal = thisLocalDateTime.adjustInto(temporal);
    temporal = temporal.with(thisLocalDateTime);
+ `],
+				[/* text */ 't', `
  `],
 				[/* block */ 'b', ''],
 				[/* block */ 'b', `

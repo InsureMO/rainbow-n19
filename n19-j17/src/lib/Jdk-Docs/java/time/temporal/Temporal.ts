@@ -69,13 +69,17 @@ DocsCollector.collect('java.time.temporal.Temporal', [
  `]
 		]],
 		[/* block */ 'b', `When to implement`],
+		[/* text */ 't', `
+ `],
 		[/* block */ 'b', `
  A class should implement this interface if it meets three criteria:
  `],
 		[/* list */ 'l', [
 			[/* block */ 'b', [
 				[/* text */ 't', `it provides access to date/time/offset information, as per `],
-				[/* inline code block */ 'i', `TemporalAccessor`]
+				[/* inline code block */ 'i', `TemporalAccessor`],
+				[/* text */ 't', `
+ `]
 			]],
 			[/* block */ 'b', `the set of fields are contiguous from the largest to the smallest
  `],
@@ -83,6 +87,8 @@ DocsCollector.collect('java.time.temporal.Temporal', [
   valid range of values for the fields that are represented
  `]
 		]],
+		[/* text */ 't', `
+ `],
 		[/* block */ 'b', ''],
 		[/* block */ 'b', `
  Four examples make this clear:
@@ -334,6 +340,8 @@ DocsCollector.collect('java.time.temporal.Temporal', [
   date = date.minus(duration);             // subtract a Duration instance
   date = date.minus(workingDays(6));       // example user-written workingDays method
  `],
+				[/* text */ 't', `
+ `],
 				[/* block */ 'b', ''],
 				[/* block */ 'b', [
 					[/* text */ 't', `
@@ -427,6 +435,8 @@ DocsCollector.collect('java.time.temporal.Temporal', [
 				[/* code block */ 'c', `  date = date.plus(period);                // add a Period instance
   date = date.plus(duration);              // add a Duration instance
   date = date.plus(workingDays(6));        // example user-written workingDays method
+ `],
+				[/* text */ 't', `
  `],
 				[/* block */ 'b', ''],
 				[/* block */ 'b', [

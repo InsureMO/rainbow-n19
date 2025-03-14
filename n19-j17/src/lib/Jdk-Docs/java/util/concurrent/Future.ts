@@ -32,6 +32,7 @@ DocsCollector.collect('java.util.concurrent.Future', [
  `],
 		[/* block */ 'b', `Sample Usage`],
 		[/* code block */ 'c', [
+			[/* text */ 't', ` `],
 			[/* inline code block */ 'i', `interface ArchiveSearcher { String search(String target); }
  class App {
    ExecutorService executor = ...;
@@ -63,9 +64,13 @@ DocsCollector.collect('java.util.concurrent.Future', [
 		[/* text */ 't', ` could be replaced by:
  `],
 		[/* code block */ 'c', [
+			[/* text */ 't', ` `],
 			[/* inline code block */ 'i', `FutureTask<String> future = new FutureTask<>(task);
  executor.execute(future);`]
 		]],
+		[/* text */ 't', `
+
+ `],
 		[/* block */ 'b', ''],
 		[/* block */ 'b', [
 			[/* text */ 't', `Memory consistency effects: Actions taken by the asynchronous computation

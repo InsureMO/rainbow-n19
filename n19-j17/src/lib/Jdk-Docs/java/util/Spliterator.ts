@@ -500,6 +500,9 @@ DocsCollector.collect('java.util.Spliterator', [
  splitting.`]
 					]]
 				]],
+				[/* text */ 't', `
+
+ `],
 				[/* block */ 'b', ''],
 				[/* block */ 'b', [
 					[/* text */ 't', `This method may return `],

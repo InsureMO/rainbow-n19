@@ -16,10 +16,14 @@ DocsCollector.collect('java.util.LongSummaryStatistics', [
  `]
 		]],
 		[/* code block */ 'c', [
+			[/* text */ 't', ` `],
 			[/* inline code block */ 'i', `LongSummaryStatistics stats = longStream.collect(LongSummaryStatistics::new,
                                                   LongSummaryStatistics::accept,
                                                   LongSummaryStatistics::combine);`]
 		]],
+		[/* text */ 't', `
+
+ `],
 		[/* block */ 'b', ''],
 		[/* block */ 'b', [
 			[/* inline code block */ 'i', `LongSummaryStatistics`],
@@ -34,6 +38,7 @@ DocsCollector.collect('java.util.LongSummaryStatistics', [
  `]
 		]],
 		[/* code block */ 'c', [
+			[/* text */ 't', ` `],
 			[/* inline code block */ 'i', `LongSummaryStatistics stats = people.stream()
                                      .collect(Collectors.summarizingLong(Person::getAge));`]
 		]],

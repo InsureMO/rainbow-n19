@@ -168,8 +168,11 @@ DocsCollector.collect('java.io.ByteArrayOutputStream', [
 
  `],
 				[/* code block */ 'c', [
+					[/* text */ 't', ` `],
 					[/* inline code block */ 'i', `ByteArrayOutputStream b = ...
-      b.toString("UTF-8")`]
+      b.toString("UTF-8")`],
+					[/* text */ 't', `
+ `]
 				]],
 				[/* text */ 't', `
 
@@ -177,8 +180,11 @@ DocsCollector.collect('java.io.ByteArrayOutputStream', [
 
  `],
 				[/* code block */ 'c', [
+					[/* text */ 't', ` `],
 					[/* inline code block */ 'i', `ByteArrayOutputStream b = ...
-      b.toString(StandardCharsets.UTF_8)`]
+      b.toString(StandardCharsets.UTF_8)`],
+					[/* text */ 't', `
+ `]
 				]],
 				[/* block */ 'b', '']
 			],

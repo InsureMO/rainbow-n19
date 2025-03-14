@@ -46,10 +46,16 @@ DocsCollector.collect('java.text.DateFormat', [
  static factory methods:
  `],
 		[/* block */ 'b', [
+			[/* text */ 't', `
+ `],
 			[/* code block */ 'c', [
 				[/* inline code block */ 'i', `myString = DateFormat.getDateInstance().format(myDate);`]
-			]]
+			]],
+			[/* text */ 't', `
+ `]
 		]],
+		[/* text */ 't', `
+ `],
 		[/* block */ 'b', ''],
 		[/* block */ 'b', `If you are formatting multiple dates, it is
  more efficient to get the format and use it multiple times so that
@@ -57,13 +63,19 @@ DocsCollector.collect('java.text.DateFormat', [
  language and country conventions multiple times.
  `],
 		[/* block */ 'b', [
+			[/* text */ 't', `
+ `],
 			[/* code block */ 'c', [
 				[/* inline code block */ 'i', `DateFormat df = DateFormat.getDateInstance();
  for (int i = 0; i < myDate.length; ++i) {
      output.println(df.format(myDate[i]) + "; ");
  }`]
-			]]
+			]],
+			[/* text */ 't', `
+ `]
 		]],
+		[/* text */ 't', `
+ `],
 		[/* block */ 'b', ''],
 		[/* block */ 'b', [
 			[/* text */ 't', `To format a date for a different Locale, specify it in the
@@ -73,10 +85,17 @@ DocsCollector.collect('java.text.DateFormat', [
  `]
 		]],
 		[/* block */ 'b', [
+			[/* text */ 't', `
+ `],
 			[/* code block */ 'c', [
 				[/* inline code block */ 'i', `DateFormat df = DateFormat.getDateInstance(DateFormat.LONG, Locale.FRANCE);`]
-			]]
+			]],
+			[/* text */ 't', `
+ `]
 		]],
+		[/* text */ 't', `
+
+ `],
 		[/* block */ 'b', ''],
 		[/* block */ 'b', [
 			[/* text */ 't', `If the specified locale contains "ca" (calendar), "rg" (region override),
@@ -91,10 +110,16 @@ DocsCollector.collect('java.text.DateFormat', [
 		[/* block */ 'b', `You can use a DateFormat to parse also.
  `],
 		[/* block */ 'b', [
+			[/* text */ 't', `
+ `],
 			[/* code block */ 'c', [
 				[/* inline code block */ 'i', `myDate = df.parse(myString);`]
-			]]
+			]],
+			[/* text */ 't', `
+ `]
 		]],
+		[/* text */ 't', `
+ `],
 		[/* block */ 'b', ''],
 		[/* block */ 'b', [
 			[/* text */ 't', `Use `],
@@ -126,19 +151,25 @@ DocsCollector.collect('java.text.DateFormat', [
 				[/* text */ 't', ` is completely numeric, such as `],
 				[/* inline code block */ 'i', `12.13.52`],
 				[/* text */ 't', ` or `],
-				[/* inline code block */ 'i', `3:30pm`]
+				[/* inline code block */ 'i', `3:30pm`],
+				[/* text */ 't', `
+ `]
 			]],
 			[/* block */ 'b', [
 				[/* text */ 't', `MEDIUM`],
 				[/* text */ 't', ` is longer, such as `],
-				[/* inline code block */ 'i', `Jan 12, 1952`]
+				[/* inline code block */ 'i', `Jan 12, 1952`],
+				[/* text */ 't', `
+ `]
 			]],
 			[/* block */ 'b', [
 				[/* text */ 't', `LONG`],
 				[/* text */ 't', ` is longer, such as `],
 				[/* inline code block */ 'i', `January 12, 1952`],
 				[/* text */ 't', ` or `],
-				[/* inline code block */ 'i', `3:30:32pm`]
+				[/* inline code block */ 'i', `3:30:32pm`],
+				[/* text */ 't', `
+ `]
 			]],
 			[/* block */ 'b', [
 				[/* text */ 't', `FULL`],
@@ -149,6 +180,9 @@ DocsCollector.collect('java.text.DateFormat', [
  `]
 			]]
 		]],
+		[/* text */ 't', `
+
+ `],
 		[/* block */ 'b', ''],
 		[/* block */ 'b', [
 			[/* text */ 't', `You can also set the time zone on the format if you wish.
@@ -184,10 +218,16 @@ DocsCollector.collect('java.text.DateFormat', [
  on the screen.
  `]
 		]],
+		[/* text */ 't', `
+
+ `],
 		[/* block */ 'b', ''],
 		[/* block */ 'b', [
 			[/* anchor */ 'r', '#-id', `synchronization`, `Synchronization`]
 		]],
+		[/* text */ 't', `
+
+ `],
 		[/* block */ 'b', `
  Date formats are not synchronized.
  It is recommended to create separate format instances for each thread.
@@ -1076,6 +1116,9 @@ DocsCollector.collect('java.text.DateFormat', [
 						[/* inline code block */ 'i', `getCalendar().setLenient(lenient)`]
 					]]
 				]],
+				[/* text */ 't', `
+
+ `],
 				[/* block */ 'b', ''],
 				[/* block */ 'b', [
 					[/* text */ 't', `This leniency value is overwritten by a call to `],
@@ -1117,6 +1160,9 @@ DocsCollector.collect('java.text.DateFormat', [
 						[/* inline code block */ 'i', `getCalendar().setTimeZone(zone)`]
 					]]
 				]],
+				[/* text */ 't', `
+
+ `],
 				[/* block */ 'b', [
 					[/* text */ 't', `The `],
 					[/* inline code block */ 'i', `TimeZone`],

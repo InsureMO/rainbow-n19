@@ -38,6 +38,7 @@ DocsCollector.collect('java.lang.Class', [
 
  `],
 		[/* block */ 'b', [
+			[/* text */ 't', ` `],
 			[/* inline code block */ 'i', `Class`],
 			[/* text */ 't', ` has no public constructor. Instead a `],
 			[/* inline code block */ 'i', `Class`],
@@ -51,15 +52,27 @@ DocsCollector.collect('java.lang.Class', [
 		]],
 		[/* list */ 'l', [
 			[/* block */ 'b', [
-				[/* reference */ 'r', `java.lang.ClassLoader#defineClass(java.lang.String,byte[],int,int)`, `ClassLoader::defineClass`]
+				[/* text */ 't', ` `],
+				[/* reference */ 'r', `java.lang.ClassLoader#defineClass(java.lang.String,byte[],int,int)`, `ClassLoader::defineClass`],
+				[/* text */ 't', `
+ `]
 			]],
 			[/* block */ 'b', [
-				[/* reference */ 'r', `java.lang.invoke.MethodHandles.Lookup#defineClass(byte[])`, `java.lang.invoke.MethodHandles.Lookup::defineClass`]
+				[/* text */ 't', ` `],
+				[/* reference */ 'r', `java.lang.invoke.MethodHandles.Lookup#defineClass(byte[])`, `java.lang.invoke.MethodHandles.Lookup::defineClass`],
+				[/* text */ 't', `
+ `]
 			]],
 			[/* block */ 'b', [
-				[/* reference */ 'r', `java.lang.invoke.MethodHandles.Lookup#defineHiddenClass(byte[],boolean,java.lang.invoke.MethodHandles.Lookup.ClassOption...)`, `java.lang.invoke.MethodHandles.Lookup::defineHiddenClass`]
+				[/* text */ 't', ` `],
+				[/* reference */ 'r', `java.lang.invoke.MethodHandles.Lookup#defineHiddenClass(byte[],boolean,java.lang.invoke.MethodHandles.Lookup.ClassOption...)`, `java.lang.invoke.MethodHandles.Lookup::defineHiddenClass`],
+				[/* text */ 't', `
+ `]
 			]]
 		]],
+		[/* text */ 't', `
+
+ `],
 		[/* block */ 'b', ''],
 		[/* block */ 'b', [
 			[/* text */ 't', ` The methods of class `],
@@ -113,8 +126,15 @@ DocsCollector.collect('java.lang.Class', [
 
  `],
 		[/* block */ 'b', [
-			[/* inline code block */ 'i', `System.out.println("The name of class Foo is: "+Foo.class.getName());`]
+			[/* text */ 't', `
+     `],
+			[/* inline code block */ 'i', `System.out.println("The name of class Foo is: "+Foo.class.getName());`],
+			[/* text */ 't', `
+ `]
 		]],
+		[/* text */ 't', `
+
+ `],
 		[/* block */ 'b', ''],
 		[/* block */ 'b', [
 			[/* text */ 't', ` Some methods of class `],
@@ -686,6 +706,7 @@ DocsCollector.collect('java.lang.Class', [
  resource. Resources in named modules are subject to the rules for
  encapsulation specified in the `],
 					[/* inline code block */ 'i', `Module`],
+					[/* text */ 't', ` `],
 					[/* reference */ 'r', `java.lang.Module#getResourceAsStream(java.lang.String)`, `getResourceAsStream`],
 					[/* text */ 't', ` method and so this
  method returns `],
@@ -743,8 +764,15 @@ DocsCollector.collect('java.lang.Class', [
 
  `],
 						[/* block */ 'b', [
-							[/* inline code block */ 'i', `modified_package_name/name`]
+							[/* text */ 't', `
+   `],
+							[/* inline code block */ 'i', `modified_package_name/name`],
+							[/* text */ 't', `
+ `]
 						]],
+						[/* text */ 't', `
+
+ `],
 						[/* block */ 'b', [
 							[/* text */ 't', ` Where the `],
 							[/* inline code block */ 'i', `modified_package_name`],
@@ -1130,7 +1158,11 @@ DocsCollector.collect('java.lang.Class', [
  `]
 				]],
 				[/* block */ 'b', [
-					[/* inline code block */ 'i', `class Shimmer implements FloorWax, DessertTopping { ... }`]
+					[/* text */ 't', `
+ `],
+					[/* inline code block */ 'i', `class Shimmer implements FloorWax, DessertTopping { ... }`],
+					[/* text */ 't', `
+ `]
 				]],
 				[/* text */ 't', `
  suppose the value of `],
@@ -1141,7 +1173,11 @@ DocsCollector.collect('java.lang.Class', [
 				[/* text */ 't', `; the value of the expression:
  `],
 				[/* block */ 'b', [
-					[/* inline code block */ 'i', `s.getClass().getInterfaces()[0]`]
+					[/* text */ 't', `
+ `],
+					[/* inline code block */ 'i', `s.getClass().getInterfaces()[0]`],
+					[/* text */ 't', `
+ `]
 				]],
 				[/* text */ 't', `
  is the `],
@@ -1152,7 +1188,11 @@ DocsCollector.collect('java.lang.Class', [
 				[/* text */ 't', `; and the value of:
  `],
 				[/* block */ 'b', [
-					[/* inline code block */ 'i', `s.getClass().getInterfaces()[1]`]
+					[/* text */ 't', `
+ `],
+					[/* inline code block */ 'i', `s.getClass().getInterfaces()[1]`],
+					[/* text */ 't', `
+ `]
 				]],
 				[/* text */ 't', `
  is the `],
@@ -1424,6 +1464,7 @@ DocsCollector.collect('java.lang.Class', [
 
  If this class is in an unnamed module then the `],
 				[/* reference */ 'r', `java.lang.ClassLoader#getUnnamedModule()`, `unnamed`],
+				[/* text */ 't', ` `],
 				[/* inline code block */ 'i', `Module`],
 				[/* text */ 't', ` of the class
  loader for this class is returned.`]
@@ -1987,6 +2028,9 @@ DocsCollector.collect('java.lang.Class', [
       is thrown.`]
 					]]
 				]],
+				[/* text */ 't', `
+
+ `],
 				[/* block */ 'b', ''],
 				[/* block */ 'b', [
 					[/* text */ 't', ` If this `],
@@ -3072,9 +3116,15 @@ DocsCollector.collect('java.lang.Class', [
       then the result is a string of the form:
       `],
 						[/* block */ 'b', [
+							[/* text */ 't', `
+      `],
 							[/* inline code block */ 'i', `"L" +`],
+							[/* text */ 't', ` `],
 							[/* text */ 't', `N`],
-							[/* inline code block */ 'i', `+ "." + <suffix> + ";"`]
+							[/* text */ 't', ` `],
+							[/* inline code block */ 'i', `+ "." + <suffix> + ";"`],
+							[/* text */ 't', `
+      `]
 						]],
 						[/* text */ 't', `
       where `],
@@ -3097,6 +3147,9 @@ DocsCollector.collect('java.lang.Class', [
  `]
 					]]
 				]],
+				[/* text */ 't', `
+
+ `],
 				[/* block */ 'b', ''],
 				[/* block */ 'b', [
 					[/* text */ 't', ` If this `],
@@ -3133,6 +3186,9 @@ DocsCollector.collect('java.lang.Class', [
  `]
 					]]
 				]],
+				[/* text */ 't', `
+
+ `],
 				[/* block */ 'b', ''],
 				[/* block */ 'b', [
 					[/* text */ 't', ` If this `],
@@ -3173,15 +3229,21 @@ DocsCollector.collect('java.lang.Class', [
 				[/* list */ 'l', [
 					[/* block */ 'b', [
 						[/* text */ 't', `a `],
-						[/* reference */ 'r', `#isLocalClass()`, `local class`]
+						[/* reference */ 'r', `#isLocalClass()`, `local class`],
+						[/* text */ 't', `
+ `]
 					]],
 					[/* block */ 'b', [
 						[/* text */ 't', `a `],
-						[/* reference */ 'r', `#isAnonymousClass()`, `anonymous class`]
+						[/* reference */ 'r', `#isAnonymousClass()`, `anonymous class`],
+						[/* text */ 't', `
+ `]
 					]],
 					[/* block */ 'b', [
 						[/* text */ 't', `a `],
-						[/* reference */ 'r', `#isHidden()`, `hidden class`]
+						[/* reference */ 'r', `#isHidden()`, `hidden class`],
+						[/* text */ 't', `
+ `]
 					]],
 					[/* block */ 'b', `an array whose component type does not have a canonical name`]
 				]]
@@ -3242,6 +3304,9 @@ DocsCollector.collect('java.lang.Class', [
  `]
 					]]
 				]],
+				[/* text */ 't', `
+
+ `],
 				[/* block */ 'b', ''],
 				[/* block */ 'b', [
 					[/* text */ 't', ` If this `],
@@ -3395,6 +3460,9 @@ DocsCollector.collect('java.lang.Class', [
 						]],
 					]
 				]],
+				[/* text */ 't', `
+
+ `],
 				[/* block */ 'b', ''],
 				[/* block */ 'b', [
 					[/* text */ 't', ` If this `],
@@ -3625,6 +3693,7 @@ DocsCollector.collect('java.lang.Class', [
  resource. Resources in named modules are subject to the rules for
  encapsulation specified in the `],
 					[/* inline code block */ 'i', `Module`],
+					[/* text */ 't', ` `],
 					[/* reference */ 'r', `java.lang.Module#getResourceAsStream(java.lang.String)`, `getResourceAsStream`],
 					[/* text */ 't', ` method and so this
  method returns `],
@@ -3682,8 +3751,15 @@ DocsCollector.collect('java.lang.Class', [
 
  `],
 						[/* block */ 'b', [
-							[/* inline code block */ 'i', `modified_package_name/name`]
+							[/* text */ 't', `
+   `],
+							[/* inline code block */ 'i', `modified_package_name/name`],
+							[/* text */ 't', `
+ `]
 						]],
+						[/* text */ 't', `
+
+ `],
 						[/* block */ 'b', [
 							[/* text */ 't', ` Where the `],
 							[/* inline code block */ 'i', `modified_package_name`],
@@ -4185,6 +4261,9 @@ DocsCollector.collect('java.lang.Class', [
 					[/* inline code block */ 'i', `null`],
 					[/* text */ 't', `. `]
 				]],
+				[/* text */ 't', `
+
+ `],
 				[/* block */ 'b', [
 					[/* text */ 't', ` If the class loader of the given module defines other modules and
  the given name is a class defined in a different module, this method
@@ -4192,6 +4271,9 @@ DocsCollector.collect('java.lang.Class', [
 					[/* inline code block */ 'i', `null`],
 					[/* text */ 't', ` after the class is loaded. `]
 				]],
+				[/* text */ 't', `
+
+ `],
 				[/* block */ 'b', ` This method does not check whether the requested class is
  accessible to its caller. `]
 			],
@@ -4252,7 +4334,11 @@ DocsCollector.collect('java.lang.Class', [
 
  `],
 				[/* block */ 'b', [
-					[/* inline code block */ 'i', `Class.forName(className, true, currentLoader)`]
+					[/* text */ 't', `
+  `],
+					[/* inline code block */ 'i', `Class.forName(className, true, currentLoader)`],
+					[/* text */ 't', `
+ `]
 				]],
 				[/* text */ 't', `
 
@@ -4274,8 +4360,14 @@ DocsCollector.collect('java.lang.Class', [
  `]
 				]],
 				[/* block */ 'b', [
-					[/* inline code block */ 'i', `Class t = Class.forName("java.lang.Thread")`]
+					[/* text */ 't', `
+   `],
+					[/* inline code block */ 'i', `Class t = Class.forName("java.lang.Thread")`],
+					[/* text */ 't', `
+ `]
 				]],
+				[/* text */ 't', `
+ `],
 				[/* block */ 'b', ''],
 				[/* block */ 'b', [
 					[/* text */ 't', `
@@ -4362,7 +4454,11 @@ DocsCollector.collect('java.lang.Class', [
 
  `],
 				[/* block */ 'b', [
-					[/* inline code block */ 'i', `Class.forName("Foo")`]
+					[/* text */ 't', `
+  `],
+					[/* inline code block */ 'i', `Class.forName("Foo")`],
+					[/* text */ 't', `
+ `]
 				]],
 				[/* text */ 't', `
 
@@ -4370,7 +4466,11 @@ DocsCollector.collect('java.lang.Class', [
 
  `],
 				[/* block */ 'b', [
-					[/* inline code block */ 'i', `Class.forName("Foo", true, this.getClass().getClassLoader())`]
+					[/* text */ 't', `
+  `],
+					[/* inline code block */ 'i', `Class.forName("Foo", true, this.getClass().getClassLoader())`],
+					[/* text */ 't', `
+ `]
 				]],
 				[/* text */ 't', `
 

@@ -221,6 +221,8 @@ DocsCollector.collect('java.time.chrono.JapaneseEra', [
 						[/* text */ 't', `).`]
 					]]
 				]],
+				[/* text */ 't', `
+ `],
 				[/* block */ 'b', [
 					[/* text */ 't', `
  Every instance of `],

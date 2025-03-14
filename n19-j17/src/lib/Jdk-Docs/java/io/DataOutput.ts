@@ -590,6 +590,7 @@ DocsCollector.collect('java.io.DataOutput', [
 					[/* inline code block */ 'i', `(byte)(0xff & (v >> 8))
  (byte)(0xff & v)`]
 				]],
+				[/* text */ 't', ` `],
 				[/* block */ 'b', [
 					[/* text */ 't', `
  The bytes written by this method may be
@@ -662,6 +663,7 @@ DocsCollector.collect('java.io.DataOutput', [
  `]
 				]],
 				[/* code block */ 'c', `(byte)c `],
+				[/* text */ 't', `  `],
 				[/* block */ 'b', ''],
 				[/* block */ 'b', [
 					[/* text */ 't', `
@@ -683,6 +685,7 @@ DocsCollector.collect('java.io.DataOutput', [
 					[/* inline code block */ 'i', `(byte)(0xc0 | (0x1f & (c >> 6)))
  (byte)(0x80 | (0x3f & c))`]
 				]],
+				[/* text */ 't', ` `],
 				[/* block */ 'b', ''],
 				[/* block */ 'b', [
 					[/* text */ 't', ` If a character
@@ -702,6 +705,7 @@ DocsCollector.collect('java.io.DataOutput', [
  (byte)(0x80 | (0x3f & (c >>  6)))
  (byte)(0x80 | (0x3f & c))`]
 				]],
+				[/* text */ 't', `  `],
 				[/* block */ 'b', ''],
 				[/* block */ 'b', [
 					[/* text */ 't', ` First,

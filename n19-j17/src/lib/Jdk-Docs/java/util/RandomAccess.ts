@@ -55,6 +55,9 @@ DocsCollector.collect('java.util.RandomAccess', [
 		[/* code block */ 'c', `     for (Iterator i=list.iterator(); i.hasNext(); )
          i.next();
  `],
+		[/* text */ 't', `
+
+ `],
 		[/* block */ 'b', ''],
 		[/* block */ 'b', [
 			[/* text */ 't', `This interface is a member of the

@@ -55,9 +55,16 @@ DocsCollector.collect('java.util.Calendar', [
  `]
 		]],
 		[/* block */ 'b', [
+			[/* text */ 't', `
+ `],
 			[/* code block */ 'c', `     Calendar rightNow = Calendar.getInstance();
+ `],
+			[/* text */ 't', `
  `]
 		]],
+		[/* text */ 't', `
+
+ `],
 		[/* block */ 'b', ''],
 		[/* block */ 'b', [
 			[/* text */ 't', `A `],
@@ -80,6 +87,9 @@ DocsCollector.collect('java.util.Calendar', [
  `]
 		]],
 		[/* block */ 'b', `Getting and Setting Calendar Field Values`],
+		[/* text */ 't', `
+
+ `],
 		[/* block */ 'b', [
 			[/* text */ 't', `The calendar field values can be set by calling the `],
 			[/* inline code block */ 'i', `set`],
@@ -105,6 +115,9 @@ DocsCollector.collect('java.util.Calendar', [
  `]
 		]],
 		[/* block */ 'b', `Leniency`],
+		[/* text */ 't', `
+
+ `],
 		[/* block */ 'b', [
 			[/* inline code block */ 'i', `Calendar`],
 			[/* text */ 't', ` has two modes for interpreting the calendar
@@ -156,6 +169,9 @@ DocsCollector.collect('java.util.Calendar', [
 		[/* block */ 'b', [
 			[/* anchor */ 'r', '#-id', `first_week`, `First Week`]
 		]],
+		[/* text */ 't', `
+
+ `],
 		[/* inline code block */ 'i', `Calendar`],
 		[/* text */ 't', ` defines a locale-specific seven day week using two
  parameters: the first day of the week and the minimal days in first week
@@ -231,6 +247,8 @@ DocsCollector.collect('java.util.Calendar', [
  `]
 		]],
 		[/* block */ 'b', [
+			[/* text */ 't', `
+ `],
 			[/* code block */ 'c', ` YEAR + MONTH + DAY_OF_MONTH
  YEAR + MONTH + WEEK_OF_MONTH + DAY_OF_WEEK
  YEAR + MONTH + DAY_OF_WEEK_IN_MONTH + DAY_OF_WEEK
@@ -238,14 +256,22 @@ DocsCollector.collect('java.util.Calendar', [
  YEAR + DAY_OF_WEEK + WEEK_OF_YEAR
  `]
 		]],
+		[/* text */ 't', `
+
+ `],
 		[/* anchor */ 'r', '#-id', `time_resolution`, `For the time of day fields`],
 		[/* text */ 't', `:
  `],
 		[/* block */ 'b', [
+			[/* text */ 't', `
+ `],
 			[/* code block */ 'c', ` HOUR_OF_DAY
  AM_PM + HOUR
  `]
 		]],
+		[/* text */ 't', `
+
+ `],
 		[/* block */ 'b', ''],
 		[/* block */ 'b', [
 			[/* text */ 't', `If there are any calendar fields whose values haven't been set in the selected
@@ -278,6 +304,9 @@ DocsCollector.collect('java.util.Calendar', [
           12:00 am (midnight) < 12:01 am, and 12:00 pm (noon) < 12:01 pm
  `]
 		]],
+		[/* text */ 't', `
+
+ `],
 		[/* block */ 'b', ''],
 		[/* block */ 'b', [
 			[/* text */ 't', `
@@ -349,6 +378,9 @@ DocsCollector.collect('java.util.Calendar', [
  after the calendar fields have been recomputed. The specifics are determined by
  the concrete calendar class.`]
 		]],
+		[/* text */ 't', `
+
+ `],
 		[/* block */ 'b', [
 			[/* text */ 't', `Example`],
 			[/* text */ 't', `: Consider a `],
@@ -371,6 +403,9 @@ DocsCollector.collect('java.util.Calendar', [
 			[/* inline code block */ 'i', `set()`],
 			[/* text */ 't', ` itself.`]
 		]],
+		[/* text */ 't', `
+
+ `],
 		[/* block */ 'b', [
 			[/* inline code block */ 'i', `add(f, delta)`],
 			[/* text */ 't', ` adds `],
@@ -382,7 +417,12 @@ DocsCollector.collect('java.util.Calendar', [
 			[/* inline code block */ 'i', `set(f, get(f) + delta)`],
 			[/* text */ 't', ` with two adjustments:`]
 		]],
+		[/* text */ 't', `
+
+ `],
 		[/* block */ 'b', [
+			[/* text */ 't', `
+   `],
 			[/* block */ 'b', [
 				[/* text */ 't', `Add rule 1`],
 				[/* text */ 't', `. The value of field `],
@@ -400,6 +440,9 @@ DocsCollector.collect('java.util.Calendar', [
    range and, as a result, the next larger field is incremented or
    decremented and the field value is adjusted back into its range.`]
 			]],
+			[/* text */ 't', `
+
+   `],
 			[/* block */ 'b', [
 				[/* text */ 't', `Add rule 2`],
 				[/* text */ 't', `. If a smaller field is expected to be
@@ -418,8 +461,13 @@ DocsCollector.collect('java.util.Calendar', [
 				[/* text */ 't', `. No adjustment is made to smaller fields
    that are not expected to be invariant. The calendar system
    determines what fields are expected to be invariant.`]
-			]]
+			]],
+			[/* text */ 't', `
+ `]
 		]],
+		[/* text */ 't', `
+
+ `],
 		[/* block */ 'b', [
 			[/* text */ 't', `In addition, unlike `],
 			[/* inline code block */ 'i', `set()`],
@@ -429,6 +477,9 @@ DocsCollector.collect('java.util.Calendar', [
  an immediate recomputation of the calendar's milliseconds and all
  fields.`]
 		]],
+		[/* text */ 't', `
+
+ `],
 		[/* block */ 'b', [
 			[/* text */ 't', `Example`],
 			[/* text */ 't', `: Consider a `],
@@ -462,6 +513,9 @@ DocsCollector.collect('java.util.Calendar', [
 			[/* inline code block */ 'i', `GregorianCalendar`],
 			[/* text */ 't', `.`]
 		]],
+		[/* text */ 't', `
+
+ `],
 		[/* block */ 'b', [
 			[/* inline code block */ 'i', `roll(f, delta)`],
 			[/* text */ 't', ` adds
@@ -475,7 +529,12 @@ DocsCollector.collect('java.util.Calendar', [
 			[/* text */ 't', ` with
  the following adjustment:`]
 		]],
+		[/* text */ 't', `
+
+ `],
 		[/* block */ 'b', [
+			[/* text */ 't', `
+   `],
 			[/* block */ 'b', [
 				[/* text */ 't', `Roll rule`],
 				[/* text */ 't', `. Larger fields are unchanged after the
@@ -486,8 +545,13 @@ DocsCollector.collect('java.util.Calendar', [
    `],
 				[/* inline code block */ 'i', `HOUR`],
 				[/* text */ 't', `.`]
-			]]
+			]],
+			[/* text */ 't', `
+ `]
 		]],
+		[/* text */ 't', `
+
+ `],
 		[/* block */ 'b', [
 			[/* text */ 't', `Example`],
 			[/* text */ 't', `: See `],

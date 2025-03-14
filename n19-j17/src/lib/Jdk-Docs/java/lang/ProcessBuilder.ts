@@ -102,7 +102,9 @@ DocsCollector.collect('java.lang.ProcessBuilder', [
 						[/* reference */ 'r', `java.io.OutputStream#write(int)`, `write`],
 						[/* text */ 't', ` methods always
  throw `],
-						[/* inline code block */ 'i', `IOException`]
+						[/* inline code block */ 'i', `IOException`],
+						[/* text */ 't', `
+ `]
 					]],
 					[/* block */ 'b', [
 						[/* text */ 't', `the `],
@@ -110,7 +112,10 @@ DocsCollector.collect('java.lang.ProcessBuilder', [
 						[/* text */ 't', ` method does nothing
  `]
 					]]
-				]]
+				]],
+				[/* text */ 't', `
+
+ `]
 			]],
 			[/* block */ 'b', [
 				[/* anchor */ 'r', '#-id', `redirect-output`, `a destination for standard output and standard error`],
@@ -146,14 +151,18 @@ DocsCollector.collect('java.lang.ProcessBuilder', [
 						[/* reference */ 'r', `java.io.InputStream#read()`, `read`],
 						[/* text */ 't', ` methods always return
  `],
-						[/* inline code block */ 'i', `-1`]
+						[/* inline code block */ 'i', `-1`],
+						[/* text */ 't', `
+ `]
 					]],
 					[/* block */ 'b', [
 						[/* text */ 't', `the `],
 						[/* reference */ 'r', `java.io.InputStream#available()`, `available`],
 						[/* text */ 't', ` method always returns
  `],
-						[/* inline code block */ 'i', `0`]
+						[/* inline code block */ 'i', `0`],
+						[/* text */ 't', `
+ `]
 					]],
 					[/* block */ 'b', [
 						[/* text */ 't', `the `],
@@ -161,7 +170,10 @@ DocsCollector.collect('java.lang.ProcessBuilder', [
 						[/* text */ 't', ` method does nothing
  `]
 					]]
-				]]
+				]],
+				[/* text */ 't', `
+
+ `]
 			]],
 			[/* block */ 'b', [
 				[/* text */ 't', `a `],
@@ -194,7 +206,9 @@ DocsCollector.collect('java.lang.ProcessBuilder', [
 						[/* text */ 't', `the common destination of standard error and standard output can be
  redirected using
  `],
-						[/* reference */ 'r', `#redirectOutput(java.lang.ProcessBuilder.Redirect)`, `redirectOutput`]
+						[/* reference */ 'r', `#redirectOutput(java.lang.ProcessBuilder.Redirect)`, `redirectOutput`],
+						[/* text */ 't', `
+ `]
 					]],
 					[/* block */ 'b', [
 						[/* text */ 't', `any redirection set by the
@@ -209,12 +223,20 @@ DocsCollector.collect('java.lang.ProcessBuilder', [
 						[/* reference */ 'r', `java.lang.Process#getErrorStream()`, `Process.getErrorStream()`],
 						[/* text */ 't', ` will
  always be a `],
-						[/* text */ 't', `null input stream`]
+						[/* text */ 't', `null input stream`],
+						[/* text */ 't', `
+ `]
 					]]
 				]],
+				[/* text */ 't', `
+
+ `],
 				[/* block */ 'b', '']
 			]]
 		]],
+		[/* text */ 't', `
+
+ `],
 		[/* block */ 'b', ''],
 		[/* block */ 'b', [
 			[/* text */ 't', `Modifying a process builder's attributes will affect processes
@@ -258,8 +280,12 @@ DocsCollector.collect('java.lang.ProcessBuilder', [
 
  `],
 		[/* code block */ 'c', [
+			[/* text */ 't', ` `],
 			[/* inline code block */ 'i', `Process p = new ProcessBuilder("myCommand", "myArg").start();`]
 		]],
+		[/* text */ 't', `
+
+ `],
 		[/* block */ 'b', ''],
 		[/* block */ 'b', `Here is an example that starts a process with a modified working
  directory and environment, and redirects standard output and error
@@ -267,6 +293,7 @@ DocsCollector.collect('java.lang.ProcessBuilder', [
 
  `],
 		[/* code block */ 'c', [
+			[/* text */ 't', ` `],
 			[/* inline code block */ 'i', `ProcessBuilder pb =
    new ProcessBuilder("myCommand", "myArg1", "myArg2");
  Map<String, String> env = pb.environment();
@@ -282,6 +309,9 @@ DocsCollector.collect('java.lang.ProcessBuilder', [
  assert pb.redirectOutput().file() == log;
  assert p.getInputStream().read() == -1;`]
 		]],
+		[/* text */ 't', `
+
+ `],
 		[/* block */ 'b', ''],
 		[/* block */ 'b', [
 			[/* text */ 't', `To start a process with an explicit set of environment
@@ -468,6 +498,9 @@ DocsCollector.collect('java.lang.ProcessBuilder', [
 					[/* block */ 'b', `Invalid character in command argument, such as NUL.
  `]
 				]],
+				[/* text */ 't', `
+
+ `],
 				[/* block */ 'b', ''],
 				[/* block */ 'b', [
 					[/* text */ 't', `In such cases an exception will be thrown.  The exact nature
@@ -641,12 +674,14 @@ DocsCollector.collect('java.lang.ProcessBuilder', [
 				[/* block */ 'b', `This is a convenience method.  An invocation of the form
   `],
 				[/* code block */ 'c', [
+					[/* text */ 't', ` `],
 					[/* inline code block */ 'i', `pb.inheritIO()`]
 				]],
 				[/* text */ 't', `
  behaves in exactly the same way as the invocation
   `],
 				[/* code block */ 'c', [
+					[/* text */ 't', ` `],
 					[/* inline code block */ 'i', `pb.redirectInput(Redirect.INHERIT)
    .redirectOutput(Redirect.INHERIT)
    .redirectError(Redirect.INHERIT)`]
@@ -679,6 +714,8 @@ DocsCollector.collect('java.lang.ProcessBuilder', [
  behaves in exactly the same way as the invocation
  `],
 					[/* reference */ 'r', `#redirectError(java.lang.ProcessBuilder.Redirect)`, `redirectError`],
+					[/* text */ 't', `
+ `],
 					[/* inline code block */ 'i', `(Redirect.to(file))`],
 					[/* text */ 't', `.`]
 				]]
@@ -796,6 +833,8 @@ DocsCollector.collect('java.lang.ProcessBuilder', [
  behaves in exactly the same way as the invocation
  `],
 					[/* reference */ 'r', `#redirectInput(java.lang.ProcessBuilder.Redirect)`, `redirectInput`],
+					[/* text */ 't', `
+ `],
 					[/* inline code block */ 'i', `(Redirect.from(file))`],
 					[/* text */ 't', `.`]
 				]]
@@ -871,6 +910,8 @@ DocsCollector.collect('java.lang.ProcessBuilder', [
  behaves in exactly the same way as the invocation
  `],
 					[/* reference */ 'r', `#redirectOutput(java.lang.ProcessBuilder.Redirect)`, `redirectOutput`],
+					[/* text */ 't', `
+ `],
 					[/* inline code block */ 'i', `(Redirect.to(file))`],
 					[/* text */ 't', `.`]
 				]]
@@ -1241,6 +1282,8 @@ DocsCollector.collect('java.lang.ProcessBuilder', [
 					[/* block */ 'b', `Invalid character in command argument, such as NUL.
  `]
 				]],
+				[/* text */ 't', `
+ `],
 				[/* block */ 'b', ''],
 				[/* block */ 'b', [
 					[/* text */ 't', `

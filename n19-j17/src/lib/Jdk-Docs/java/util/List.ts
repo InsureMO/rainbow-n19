@@ -134,6 +134,8 @@ DocsCollector.collect('java.util.List', [
 		[/* block */ 'b', [
 			[/* anchor */ 'r', '#-id', `unmodifiable`, `Unmodifiable Lists`]
 		]],
+		[/* text */ 't', `
+ `],
 		[/* block */ 'b', [
 			[/* text */ 't', `The `],
 			[/* reference */ 'r', `#of(E...)`, `List.of`],
@@ -209,6 +211,9 @@ DocsCollector.collect('java.util.List', [
  `]
 			]]
 		]],
+		[/* text */ 't', `
+
+ `],
 		[/* block */ 'b', ''],
 		[/* block */ 'b', [
 			[/* text */ 't', `This interface is a member of the

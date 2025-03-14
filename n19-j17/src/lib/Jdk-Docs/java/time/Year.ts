@@ -8,6 +8,8 @@ DocsCollector.collect('java.time.Year', [
 		[/* text */ 't', `.
  `],
 		[/* block */ 'b', [
+			[/* text */ 't', `
+ `],
 			[/* inline code block */ 'i', `Year`],
 			[/* text */ 't', ` is an immutable date-time object that represents a year.
  Any field that can be derived from a year can be obtained.
@@ -208,13 +210,19 @@ DocsCollector.collect('java.time.Year', [
 				]],
 				[/* list */ 'l', [
 					[/* block */ 'b', [
-						[/* inline code block */ 'i', `YEAR_OF_ERA`]
+						[/* inline code block */ 'i', `YEAR_OF_ERA`],
+						[/* text */ 't', `
+ `]
 					]],
 					[/* block */ 'b', [
-						[/* inline code block */ 'i', `YEAR`]
+						[/* inline code block */ 'i', `YEAR`],
+						[/* text */ 't', `
+ `]
 					]],
 					[/* block */ 'b', [
-						[/* inline code block */ 'i', `ERA`]
+						[/* inline code block */ 'i', `ERA`],
+						[/* text */ 't', `
+ `]
 					]]
 				]],
 				[/* text */ 't', `
@@ -272,19 +280,29 @@ DocsCollector.collect('java.time.Year', [
 				]],
 				[/* list */ 'l', [
 					[/* block */ 'b', [
-						[/* inline code block */ 'i', `YEARS`]
+						[/* inline code block */ 'i', `YEARS`],
+						[/* text */ 't', `
+ `]
 					]],
 					[/* block */ 'b', [
-						[/* inline code block */ 'i', `DECADES`]
+						[/* inline code block */ 'i', `DECADES`],
+						[/* text */ 't', `
+ `]
 					]],
 					[/* block */ 'b', [
-						[/* inline code block */ 'i', `CENTURIES`]
+						[/* inline code block */ 'i', `CENTURIES`],
+						[/* text */ 't', `
+ `]
 					]],
 					[/* block */ 'b', [
-						[/* inline code block */ 'i', `MILLENNIA`]
+						[/* inline code block */ 'i', `MILLENNIA`],
+						[/* text */ 't', `
+ `]
 					]],
 					[/* block */ 'b', [
-						[/* inline code block */ 'i', `ERAS`]
+						[/* inline code block */ 'i', `ERAS`],
+						[/* text */ 't', `
+ `]
 					]]
 				]],
 				[/* text */ 't', `
@@ -586,6 +604,8 @@ DocsCollector.collect('java.time.Year', [
 				[/* code block */ 'c', `   // these two lines are equivalent, but the second approach is recommended
    temporal = thisYear.adjustInto(temporal);
    temporal = temporal.with(thisYear);
+ `],
+				[/* text */ 't', `
  `],
 				[/* block */ 'b', ''],
 				[/* block */ 'b', `
@@ -924,6 +944,8 @@ DocsCollector.collect('java.time.Year', [
  `]
 					]]
 				]],
+				[/* text */ 't', `
+ `],
 				[/* block */ 'b', ''],
 				[/* block */ 'b', [
 					[/* text */ 't', `
@@ -1102,6 +1124,8 @@ DocsCollector.collect('java.time.Year', [
  `]
 					]]
 				]],
+				[/* text */ 't', `
+ `],
 				[/* block */ 'b', ''],
 				[/* block */ 'b', [
 					[/* text */ 't', `

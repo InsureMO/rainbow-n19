@@ -81,8 +81,16 @@ DocsCollector.collect('java.nio.file.Path', [
 			[/* reference */ 'r', `java.nio.file.WatchService`, `WatchService`],
 			[/* text */ 't', ` and entries in the directory watched. `]
 		]],
+		[/* text */ 't', `
+
+ `],
 		[/* block */ 'b', `WARNING:`],
+		[/* text */ 't', `
+
+ `],
 		[/* block */ 'b', `Accessing Files`],
+		[/* text */ 't', `
+ `],
 		[/* block */ 'b', [
 			[/* text */ 't', ` Paths may be used with the `],
 			[/* reference */ 'r', `java.nio.file.Files`, `Files`],
@@ -101,9 +109,14 @@ DocsCollector.collect('java.nio.file.Path', [
 		[/* code block */ 'c', `     Path path = FileSystems.getDefault().getPath("logs", "access.log");
      BufferedReader reader = Files.newBufferedReader(path, StandardCharsets.UTF_8);
  `],
+		[/* text */ 't', `
+
+ `],
 		[/* anchor */ 'r', '#-id', `interop`, ``],
 		[/* block */ 'b', ''],
 		[/* block */ 'b', `Interoperability`],
+		[/* text */ 't', `
+ `],
 		[/* block */ 'b', [
 			[/* text */ 't', ` Paths associated with the default `],
 			[/* reference */ 'r', `java.nio.file.spi.FileSystemProvider`, `provider`],
@@ -141,6 +154,8 @@ DocsCollector.collect('java.nio.file.Path', [
  `]
 		]],
 		[/* block */ 'b', `Concurrency`],
+		[/* text */ 't', `
+ `],
 		[/* block */ 'b', ` Implementations of this interface are immutable and safe for use by
  multiple concurrent threads.`]
 	],
@@ -433,20 +448,27 @@ DocsCollector.collect('java.nio.file.Path', [
 					[/* reference */ 'r', `java.io.File`, `File`],
 					[/* text */ 't', ` class. For a given `],
 					[/* inline code block */ 'i', `Path`],
+					[/* text */ 't', ` `],
 					[/* text */ 't', `p`],
 					[/* text */ 't', ` it
  is guaranteed that
  `]
 				]],
 				[/* block */ 'b', [
+					[/* text */ 't', `
+ `],
 					[/* reference */ 'r', `#of(java.net.URI)`, `Path.of`],
 					[/* inline code block */ 'i', `(`],
 					[/* text */ 't', `p`],
 					[/* inline code block */ 'i', `.toUri()).equals(`],
 					[/* text */ 't', `p`],
+					[/* text */ 't', `
+ `],
 					[/* inline code block */ 'i', `.`],
 					[/* reference */ 'r', `#toAbsolutePath()`, `toAbsolutePath`],
-					[/* inline code block */ 'i', `())`]
+					[/* inline code block */ 'i', `())`],
+					[/* text */ 't', `
+ `]
 				]],
 				[/* text */ 't', `
  so long as the original `],
@@ -726,15 +748,24 @@ DocsCollector.collect('java.nio.file.Path', [
  `]
 				]],
 				[/* block */ 'b', [
+					[/* text */ 't', `
+   `],
 					[/* text */ 't', `p`],
 					[/* inline code block */ 'i', `.relativize(`],
 					[/* text */ 't', `p`],
+					[/* text */ 't', `
+   `],
 					[/* inline code block */ 'i', `.resolve(`],
 					[/* text */ 't', `q`],
 					[/* inline code block */ 'i', `)).equals(`],
 					[/* text */ 't', `q`],
-					[/* inline code block */ 'i', `)`]
+					[/* inline code block */ 'i', `)`],
+					[/* text */ 't', `
+ `]
 				]],
+				[/* text */ 't', `
+
+ `],
 				[/* block */ 'b', ''],
 				[/* block */ 'b', [
 					[/* text */ 't', ` When symbolic links are supported, then whether the resulting path,
@@ -1046,6 +1077,9 @@ DocsCollector.collect('java.nio.file.Path', [
         entry in directory was modified`]
 					]]
 				]],
+				[/* text */ 't', `
+
+ `],
 				[/* block */ 'b', ''],
 				[/* block */ 'b', [
 					[/* text */ 't', ` The `],
@@ -1059,7 +1093,10 @@ DocsCollector.collect('java.nio.file.Path', [
 				[/* block */ 'b', [
 					[/* text */ 't', ` The set of events may include additional implementation specific
  event that are not defined by the enum `],
-					[/* reference */ 'r', `java.nio.file.StandardWatchEventKinds`, `StandardWatchEventKinds`]
+					[/* reference */ 'r', `java.nio.file.StandardWatchEventKinds`, `StandardWatchEventKinds`],
+					[/* text */ 't', `
+
+ `]
 				]],
 				[/* block */ 'b', [
 					[/* text */ 't', ` The `],
@@ -1227,6 +1264,7 @@ DocsCollector.collect('java.nio.file.Path', [
 				[/* block */ 'b', [
 					[/* text */ 't', ` If this path was created by invoking the `],
 					[/* inline code block */ 'i', `File`],
+					[/* text */ 't', ` `],
 					[/* reference */ 'r', `java.io.File#toPath()`, `toPath`],
 					[/* text */ 't', ` method then there is no guarantee that the `],
 					[/* inline code block */ 'i', `File`],
@@ -1376,6 +1414,9 @@ DocsCollector.collect('java.nio.file.Path', [
 					[/* text */ 't', `(watcher, events, new WatchEvent.Modifier[0]);
  `]
 				]],
+				[/* text */ 't', `
+
+ `],
 				[/* block */ 'b', ''],
 				[/* block */ 'b', `Usage Example:`],
 				[/* code block */ 'c', `     Path dir = ...
@@ -1495,6 +1536,7 @@ DocsCollector.collect('java.nio.file.Path', [
 					[/* reference */ 'r', `java.nio.file.FileSystem#getPath(java.lang.String,java.lang.String...)`, `getPath`],
 					[/* text */ 't', ` method of the `],
 					[/* reference */ 'r', `java.nio.file.FileSystems#getDefault()`, `default`],
+					[/* text */ 't', ` `],
 					[/* reference */ 'r', `java.nio.file.FileSystem`, `FileSystem`],
 					[/* text */ 't', `.
 
@@ -1579,6 +1621,7 @@ DocsCollector.collect('java.nio.file.Path', [
 					[/* reference */ 'r', `java.io.File`, `File`],
 					[/* text */ 't', ` class. For a given `],
 					[/* inline code block */ 'i', `Path`],
+					[/* text */ 't', ` `],
 					[/* text */ 't', `p`],
 					[/* text */ 't', ` it
  is guaranteed that
@@ -1590,10 +1633,14 @@ DocsCollector.collect('java.nio.file.Path', [
 					[/* inline code block */ 'i', `.`],
 					[/* reference */ 'r', `#toUri()`, `toUri`],
 					[/* inline code block */ 'i', `()).equals(`],
+					[/* text */ 't', `
+ `],
 					[/* text */ 't', `p`],
 					[/* inline code block */ 'i', `.`],
 					[/* reference */ 'r', `#toAbsolutePath()`, `toAbsolutePath`],
-					[/* inline code block */ 'i', `())`]
+					[/* inline code block */ 'i', `())`],
+					[/* text */ 't', `
+ `]
 				]],
 				[/* text */ 't', `
  so long as the original `],

@@ -297,6 +297,8 @@ DocsCollector.collect('java.math.MathContext', [
  `]
 					]]
 				]],
+				[/* text */ 't', `
+ `],
 				[/* block */ 'b', `
  For example:
  `],

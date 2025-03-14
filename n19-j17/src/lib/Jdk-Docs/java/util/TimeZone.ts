@@ -60,36 +60,73 @@ DocsCollector.collect('java.util.TimeZone', [
  `],
 		[/* block */ 'b', [
 			[/* code block */ 'c', [
+				[/* text */ 't', ` `],
 				[/* anchor */ 'r', '#-id', `CustomID`, `CustomID:`],
+				[/* text */ 't', `
+         `],
 				[/* inline code block */ 'i', `GMT`],
+				[/* text */ 't', ` `],
 				[/* text */ 't', `Sign`],
+				[/* text */ 't', ` `],
 				[/* text */ 't', `Hours`],
+				[/* text */ 't', ` `],
 				[/* inline code block */ 'i', `:`],
+				[/* text */ 't', ` `],
 				[/* text */ 't', `Minutes`],
+				[/* text */ 't', `
+         `],
 				[/* inline code block */ 'i', `GMT`],
+				[/* text */ 't', ` `],
 				[/* text */ 't', `Sign`],
+				[/* text */ 't', ` `],
 				[/* text */ 't', `Hours`],
+				[/* text */ 't', ` `],
 				[/* text */ 't', `Minutes`],
+				[/* text */ 't', `
+         `],
 				[/* inline code block */ 'i', `GMT`],
+				[/* text */ 't', ` `],
 				[/* text */ 't', `Sign`],
+				[/* text */ 't', ` `],
 				[/* text */ 't', `Hours`],
+				[/* text */ 't', `
+ `],
 				[/* text */ 't', `Sign:`],
 				[/* text */ 't', ` one of
          `],
 				[/* inline code block */ 'i', `+ -`],
+				[/* text */ 't', `
+ `],
 				[/* text */ 't', `Hours:`],
+				[/* text */ 't', `
+         `],
 				[/* text */ 't', `Digit`],
+				[/* text */ 't', `
+         `],
 				[/* text */ 't', `Digit`],
+				[/* text */ 't', ` `],
 				[/* text */ 't', `Digit`],
+				[/* text */ 't', `
+ `],
 				[/* text */ 't', `Minutes:`],
+				[/* text */ 't', `
+         `],
 				[/* text */ 't', `Digit`],
+				[/* text */ 't', ` `],
 				[/* text */ 't', `Digit`],
+				[/* text */ 't', `
+ `],
 				[/* text */ 't', `Digit:`],
 				[/* text */ 't', ` one of
          `],
-				[/* inline code block */ 'i', `0 1 2 3 4 5 6 7 8 9`]
+				[/* inline code block */ 'i', `0 1 2 3 4 5 6 7 8 9`],
+				[/* text */ 't', `
+ `]
 			]]
 		]],
+		[/* text */ 't', `
+
+ `],
 		[/* text */ 't', `Hours`],
 		[/* text */ 't', ` must be between 0 to 23 and `],
 		[/* text */ 't', `Minutes`],
@@ -119,26 +156,49 @@ DocsCollector.collect('java.util.TimeZone', [
 		]],
 		[/* block */ 'b', [
 			[/* code block */ 'c', [
+				[/* text */ 't', ` `],
 				[/* anchor */ 'r', '#-id', `NormalizedCustomID`, `NormalizedCustomID:`],
+				[/* text */ 't', `
+         `],
 				[/* inline code block */ 'i', `GMT`],
+				[/* text */ 't', ` `],
 				[/* text */ 't', `Sign`],
+				[/* text */ 't', ` `],
 				[/* text */ 't', `TwoDigitHours`],
+				[/* text */ 't', ` `],
 				[/* inline code block */ 'i', `:`],
+				[/* text */ 't', ` `],
 				[/* text */ 't', `Minutes`],
+				[/* text */ 't', `
+ `],
 				[/* text */ 't', `Sign:`],
 				[/* text */ 't', ` one of
          `],
 				[/* inline code block */ 'i', `+ -`],
+				[/* text */ 't', `
+ `],
 				[/* text */ 't', `TwoDigitHours:`],
+				[/* text */ 't', `
+         `],
 				[/* text */ 't', `Digit`],
+				[/* text */ 't', ` `],
 				[/* text */ 't', `Digit`],
+				[/* text */ 't', `
+ `],
 				[/* text */ 't', `Minutes:`],
+				[/* text */ 't', `
+         `],
 				[/* text */ 't', `Digit`],
+				[/* text */ 't', ` `],
 				[/* text */ 't', `Digit`],
+				[/* text */ 't', `
+ `],
 				[/* text */ 't', `Digit:`],
 				[/* text */ 't', ` one of
          `],
-				[/* inline code block */ 'i', `0 1 2 3 4 5 6 7 8 9`]
+				[/* inline code block */ 'i', `0 1 2 3 4 5 6 7 8 9`],
+				[/* text */ 't', `
+ `]
 			]]
 		]],
 		[/* text */ 't', `
@@ -738,6 +798,9 @@ DocsCollector.collect('java.util.TimeZone', [
  time zone ID is unknown.`]
 					]]
 				]],
+				[/* text */ 't', `
+
+ `],
 				[/* block */ 'b', [
 					[/* text */ 't', `The default `],
 					[/* inline code block */ 'i', `TimeZone`],

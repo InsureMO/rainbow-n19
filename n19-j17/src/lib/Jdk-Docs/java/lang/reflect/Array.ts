@@ -29,10 +29,17 @@ DocsCollector.collect('java.lang.reflect.Array', [
  as follows:
  `],
 				[/* block */ 'b', [
+					[/* text */ 't', `
+ `],
 					[/* code block */ 'c', ` int[] x = {length};
  Array.newInstance(componentType, x);
+ `],
+					[/* text */ 't', `
  `]
 				]],
+				[/* text */ 't', `
+
+ `],
 				[/* block */ 'b', `The number of dimensions of the new array must not
  exceed 255.`]
 			],

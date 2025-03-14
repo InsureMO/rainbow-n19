@@ -19,6 +19,9 @@ DocsCollector.collect('java.io.ObjectInputFilter', [
  practices for defensive use of serial filters.
  `]
 		]],
+		[/* text */ 't', `
+
+ `],
 		[/* block */ 'b', `To protect against deserialization vulnerabilities, application developers
  need a clear description of the objects that can be deserialized
  by each component or library. For each context and use case, developers should
@@ -66,11 +69,17 @@ DocsCollector.collect('java.io.ObjectInputFilter', [
 			[/* inline code block */ 'i', `As a command line property:
      % java -Djdk.serialFilter="example.*;java.base/*;!*" ...`]
 		]],
+		[/* text */ 't', `
+
+ `],
 		[/* code block */ 'c', [
 			[/* inline code block */ 'i', `Or programmatically:
      var filter = ObjectInputFilter.Config.createFilter("example.*;java.base/*;!*")
      ObjectInputFilter.Config.setSerialFilter(filter);`]
 		]],
+		[/* text */ 't', `
+
+ `],
 		[/* block */ 'b', ''],
 		[/* block */ 'b', [
 			[/* text */ 't', `In an application with multiple execution contexts, the application can provide a
@@ -91,6 +100,8 @@ DocsCollector.collect('java.io.ObjectInputFilter', [
  `]
 		]],
 		[/* block */ 'b', `Invoking the Filter Factory`],
+		[/* text */ 't', `
+ `],
 		[/* block */ 'b', [
 			[/* text */ 't', `The JVM-wide filter factory is a function invoked when each `],
 			[/* reference */ 'r', `java.io.ObjectInputStream`, `ObjectInputStream`],
@@ -163,6 +174,9 @@ DocsCollector.collect('java.io.ObjectInputFilter', [
  `]
 			]]
 		]],
+		[/* text */ 't', `
+
+ `],
 		[/* block */ 'b', ''],
 		[/* block */ 'b', `Filters`],
 		[/* text */ 't', `
@@ -270,6 +284,9 @@ DocsCollector.collect('java.io.ObjectInputFilter', [
          access to serialized classes and choose a filter accordingly.
  `]
 		]],
+		[/* text */ 't', `
+
+ `],
 		[/* block */ 'b', ''],
 		[/* block */ 'b', `Example to filter every deserialization in a thread`],
 		[/* text */ 't', `
@@ -338,6 +355,8 @@ DocsCollector.collect('java.io.ObjectInputFilter', [
      }
  }`]
 		]],
+		[/* text */ 't', `
+ `],
 		[/* block */ 'b', `Using the Filter Factory`],
 		[/* text */ 't', `
  To use `],
@@ -360,6 +379,8 @@ DocsCollector.collect('java.io.ObjectInputFilter', [
               var o = deserializeObject(bytes);
         });`]
 		]],
+		[/* text */ 't', `
+ `],
 		[/* block */ 'b', [
 			[/* text */ 't', `
  Unless otherwise noted, passing a `],
@@ -476,6 +497,8 @@ DocsCollector.collect('java.io.ObjectInputFilter', [
 						[/* text */ 't', `.`]
 					]]
 				]],
+				[/* text */ 't', `
+ `],
 				[/* block */ 'b', ''],
 				[/* block */ 'b', `
  Example, to create a filter that will allow any class loaded from the platform
@@ -650,6 +673,8 @@ DocsCollector.collect('java.io.ObjectInputFilter', [
 						[/* text */ 't', `.`]
 					]]
 				]],
+				[/* text */ 't', `
+ `],
 				[/* block */ 'b', `
  Example, to create a filter that will reject any class loaded from the application classloader.
  `],

@@ -45,6 +45,8 @@ DocsCollector.collect('java.util.PropertyPermission', [
  `]
 			]]
 		]],
+		[/* text */ 't', `
+ `],
 		[/* block */ 'b', ''],
 		[/* block */ 'b', `
  The actions string is converted to lowercase before processing.
@@ -127,17 +129,20 @@ DocsCollector.collect('java.util.PropertyPermission', [
  `],
 				[/* list */ 'l', [
 					[/* block */ 'b', [
+						[/* text */ 't', ` `],
 						[/* text */ 't', `p`],
 						[/* text */ 't', ` is an instanceof PropertyPermission,
  `]
 					]],
 					[/* block */ 'b', [
+						[/* text */ 't', ` `],
 						[/* text */ 't', `p`],
 						[/* text */ 't', `'s actions are a subset of this
  object's actions, and
  `]
 					]],
 					[/* block */ 'b', [
+						[/* text */ 't', ` `],
 						[/* text */ 't', `p`],
 						[/* text */ 't', `'s name is implied by this object's
       name. For example, "java.*" implies "java.home".

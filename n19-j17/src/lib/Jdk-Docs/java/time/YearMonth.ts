@@ -8,6 +8,8 @@ DocsCollector.collect('java.time.YearMonth', [
 		[/* text */ 't', `.
  `],
 		[/* block */ 'b', [
+			[/* text */ 't', `
+ `],
 			[/* inline code block */ 'i', `YearMonth`],
 			[/* text */ 't', ` is an immutable date-time object that represents the combination
  of a year and month. Any field that can be derived from a year and month, such as
@@ -190,19 +192,29 @@ DocsCollector.collect('java.time.YearMonth', [
 				]],
 				[/* list */ 'l', [
 					[/* block */ 'b', [
-						[/* inline code block */ 'i', `MONTH_OF_YEAR`]
+						[/* inline code block */ 'i', `MONTH_OF_YEAR`],
+						[/* text */ 't', `
+ `]
 					]],
 					[/* block */ 'b', [
-						[/* inline code block */ 'i', `PROLEPTIC_MONTH`]
+						[/* inline code block */ 'i', `PROLEPTIC_MONTH`],
+						[/* text */ 't', `
+ `]
 					]],
 					[/* block */ 'b', [
-						[/* inline code block */ 'i', `YEAR_OF_ERA`]
+						[/* inline code block */ 'i', `YEAR_OF_ERA`],
+						[/* text */ 't', `
+ `]
 					]],
 					[/* block */ 'b', [
-						[/* inline code block */ 'i', `YEAR`]
+						[/* inline code block */ 'i', `YEAR`],
+						[/* text */ 't', `
+ `]
 					]],
 					[/* block */ 'b', [
-						[/* inline code block */ 'i', `ERA`]
+						[/* inline code block */ 'i', `ERA`],
+						[/* text */ 't', `
+ `]
 					]]
 				]],
 				[/* text */ 't', `
@@ -260,22 +272,34 @@ DocsCollector.collect('java.time.YearMonth', [
 				]],
 				[/* list */ 'l', [
 					[/* block */ 'b', [
-						[/* inline code block */ 'i', `MONTHS`]
+						[/* inline code block */ 'i', `MONTHS`],
+						[/* text */ 't', `
+ `]
 					]],
 					[/* block */ 'b', [
-						[/* inline code block */ 'i', `YEARS`]
+						[/* inline code block */ 'i', `YEARS`],
+						[/* text */ 't', `
+ `]
 					]],
 					[/* block */ 'b', [
-						[/* inline code block */ 'i', `DECADES`]
+						[/* inline code block */ 'i', `DECADES`],
+						[/* text */ 't', `
+ `]
 					]],
 					[/* block */ 'b', [
-						[/* inline code block */ 'i', `CENTURIES`]
+						[/* inline code block */ 'i', `CENTURIES`],
+						[/* text */ 't', `
+ `]
 					]],
 					[/* block */ 'b', [
-						[/* inline code block */ 'i', `MILLENNIA`]
+						[/* inline code block */ 'i', `MILLENNIA`],
+						[/* text */ 't', `
+ `]
 					]],
 					[/* block */ 'b', [
-						[/* inline code block */ 'i', `ERAS`]
+						[/* inline code block */ 'i', `ERAS`],
+						[/* text */ 't', `
+ `]
 					]]
 				]],
 				[/* text */ 't', `
@@ -673,6 +697,8 @@ DocsCollector.collect('java.time.YearMonth', [
    temporal = thisYearMonth.adjustInto(temporal);
    temporal = temporal.with(thisYearMonth);
  `],
+				[/* text */ 't', `
+ `],
 				[/* block */ 'b', ''],
 				[/* block */ 'b', `
  This instance is immutable and unaffected by this method call.`]
@@ -1046,6 +1072,8 @@ DocsCollector.collect('java.time.YearMonth', [
  `]
 					]]
 				]],
+				[/* text */ 't', `
+ `],
 				[/* block */ 'b', ''],
 				[/* block */ 'b', [
 					[/* text */ 't', `
@@ -1271,6 +1299,8 @@ DocsCollector.collect('java.time.YearMonth', [
  `]
 					]]
 				]],
+				[/* text */ 't', `
+ `],
 				[/* block */ 'b', ''],
 				[/* block */ 'b', [
 					[/* text */ 't', `

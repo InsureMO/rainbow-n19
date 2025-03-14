@@ -95,6 +95,9 @@ DocsCollector.collect('java.net.URI', [
 				]]
 			]]
 		]],
+		[/* text */ 't', `
+
+ `],
 		[/* block */ 'b', ''],
 		[/* block */ 'b', [
 			[/* text */ 't', ` A `],
@@ -107,14 +110,27 @@ DocsCollector.collect('java.net.URI', [
  `]
 		]],
 		[/* block */ 'b', [
+			[/* text */ 't', `
+ `],
 			[/* inline code block */ 'i', `http://example.com/languages/java/`],
 			[/* new line */ 'n'],
+			[/* text */ 't', `
+ `],
 			[/* inline code block */ 'i', `sample/a/index.html#28`],
 			[/* new line */ 'n'],
+			[/* text */ 't', `
+ `],
 			[/* inline code block */ 'i', `../../demo/b/index.html`],
 			[/* new line */ 'n'],
-			[/* inline code block */ 'i', `file:///~/calendar`]
+			[/* text */ 't', `
+ `],
+			[/* inline code block */ 'i', `file:///~/calendar`],
+			[/* text */ 't', `
+ `]
 		]],
+		[/* text */ 't', `
+
+ `],
 		[/* block */ 'b', ''],
 		[/* block */ 'b', ` A hierarchical URI is subject to further parsing according to the syntax
 
@@ -336,6 +352,7 @@ DocsCollector.collect('java.net.URI', [
 
  `],
 		[/* block */ 'b', [
+			[/* text */ 't', ` `],
 			[/* text */ 't', `Normalization`],
 			[/* text */ 't', ` is the process of removing unnecessary `],
 			[/* inline code block */ 'i', `"."`],
@@ -356,6 +373,7 @@ DocsCollector.collect('java.net.URI', [
  `]
 		]],
 		[/* block */ 'b', [
+			[/* text */ 't', ` `],
 			[/* text */ 't', `Resolution`],
 			[/* text */ 't', ` is the process of resolving one URI against another,
  `],
@@ -369,6 +387,8 @@ DocsCollector.collect('java.net.URI', [
  `]
 		]],
 		[/* block */ 'b', [
+			[/* text */ 't', `
+ `],
 			[/* inline code block */ 'i', `sample/a/index.html#28`],
 			[/* text */ 't', `
              
@@ -384,7 +404,11 @@ DocsCollector.collect('java.net.URI', [
 
  `],
 		[/* block */ 'b', [
-			[/* inline code block */ 'i', `http://example.com/languages/java/sample/a/index.html#28`]
+			[/* text */ 't', `
+ `],
+			[/* inline code block */ 'i', `http://example.com/languages/java/sample/a/index.html#28`],
+			[/* text */ 't', `
+ `]
 		]],
 		[/* text */ 't', `
 
@@ -392,6 +416,8 @@ DocsCollector.collect('java.net.URI', [
 
  `],
 		[/* block */ 'b', [
+			[/* text */ 't', `
+ `],
 			[/* inline code block */ 'i', `../../demo/b/index.html`],
 			[/* text */ 't', `    (2)
  `]
@@ -402,7 +428,11 @@ DocsCollector.collect('java.net.URI', [
 
  `],
 		[/* block */ 'b', [
-			[/* inline code block */ 'i', `http://example.com/languages/java/demo/b/index.html`]
+			[/* text */ 't', `
+ `],
+			[/* inline code block */ 'i', `http://example.com/languages/java/demo/b/index.html`],
+			[/* text */ 't', `
+ `]
 		]],
 		[/* text */ 't', `
 
@@ -417,10 +447,18 @@ DocsCollector.collect('java.net.URI', [
 
  `],
 		[/* block */ 'b', [
-			[/* inline code block */ 'i', `demo/b/index.html`]
+			[/* text */ 't', `
+ `],
+			[/* inline code block */ 'i', `demo/b/index.html`],
+			[/* text */ 't', `
+ `]
 		]],
+		[/* text */ 't', `
+
+ `],
 		[/* block */ 'b', ''],
 		[/* block */ 'b', [
+			[/* text */ 't', ` `],
 			[/* text */ 't', `Relativization`],
 			[/* text */ 't', `, finally, is the inverse of resolution: For any
  two normalized URIs `],
@@ -432,6 +470,8 @@ DocsCollector.collect('java.net.URI', [
  `]
 		]],
 		[/* block */ 'b', [
+			[/* text */ 't', `
+   `],
 			[/* text */ 't', `u`],
 			[/* inline code block */ 'i', `.relativize(`],
 			[/* text */ 't', `u`],
@@ -442,6 +482,8 @@ DocsCollector.collect('java.net.URI', [
 			[/* inline code block */ 'i', `)`],
 			[/* text */ 't', `  and`],
 			[/* new line */ 'n'],
+			[/* text */ 't', `
+   `],
 			[/* text */ 't', `u`],
 			[/* inline code block */ 'i', `.resolve(`],
 			[/* text */ 't', `u`],
@@ -451,7 +493,9 @@ DocsCollector.collect('java.net.URI', [
 			[/* text */ 't', `v`],
 			[/* inline code block */ 'i', `)`],
 			[/* text */ 't', `  .`],
-			[/* new line */ 'n']
+			[/* new line */ 'n'],
+			[/* text */ 't', `
+ `]
 		]],
 		[/* text */ 't', `
 
@@ -461,7 +505,11 @@ DocsCollector.collect('java.net.URI', [
 
  `],
 		[/* block */ 'b', [
-			[/* inline code block */ 'i', `http://example.com/languages/java/sample/a/index.html#28`]
+			[/* text */ 't', `
+ `],
+			[/* inline code block */ 'i', `http://example.com/languages/java/sample/a/index.html#28`],
+			[/* text */ 't', `
+ `]
 		]],
 		[/* text */ 't', `
 
@@ -469,7 +517,11 @@ DocsCollector.collect('java.net.URI', [
 
  `],
 		[/* block */ 'b', [
-			[/* inline code block */ 'i', `http://example.com/languages/java/`]
+			[/* text */ 't', `
+ `],
+			[/* inline code block */ 'i', `http://example.com/languages/java/`],
+			[/* text */ 't', `
+ `]
 		]],
 		[/* text */ 't', `
 
@@ -619,6 +671,9 @@ DocsCollector.collect('java.net.URI', [
 				]]
 			]],
 		],
+		[/* text */ 't', `
+
+ `],
 		[/* block */ 'b', [
 			[/* anchor */ 'r', '#-id', `legal-chars`, ``],
 			[/* text */ 't', ` The set of all legal URI characters consists of
@@ -686,7 +741,8 @@ DocsCollector.collect('java.net.URI', [
 					[/* inline code block */ 'i', `"%E2%82%AC"`],
 					[/* text */ 't', `.  `],
 					[/* text */ 't', `Deviation from
-   RFC 2396`]
+   RFC 2396`],
+					[/* text */ 't', ` `]
 				]]
 			]],
 			[/* block */ 'b', [
@@ -823,6 +879,10 @@ DocsCollector.collect('java.net.URI', [
 				]]
 			]]
 		]],
+		[/* text */ 't', `
+
+
+ `],
 		[/* block */ 'b', ` Identities `],
 		[/* text */ 't', `
 
@@ -832,6 +892,8 @@ DocsCollector.collect('java.net.URI', [
 
  `],
 		[/* block */ 'b', [
+			[/* text */ 't', `
+ `],
 			[/* inline code block */ 'i', `new URI(`],
 			[/* text */ 't', `u`],
 			[/* inline code block */ 'i', `.toString()).equals(`],
@@ -997,8 +1059,12 @@ DocsCollector.collect('java.net.URI', [
 					[/* external link */ 'a', `http://www.ietf.org/rfc/rfc2396.txt`, `RFC 2396`],
 					[/* text */ 't', `,
  Appendix A, `],
-					[/* text */ 't', `except for the following deviations:`]
+					[/* text */ 't', `except for the following deviations:`],
+					[/* text */ 't', ` `]
 				]],
+				[/* text */ 't', `
+
+ `],
 				[/* list */ 'l', [
 					[/* block */ 'b', [
 						[/* block */ 'b', [
@@ -1040,6 +1106,7 @@ DocsCollector.collect('java.net.URI', [
 						]]
 					]],
 					[/* block */ 'b', [
+						[/* text */ 't', ` `],
 						[/* block */ 'b', [
 							[/* text */ 't', ` Hostnames in host components that comprise only a single
    domain label are permitted to start with an `],
@@ -1124,6 +1191,9 @@ DocsCollector.collect('java.net.URI', [
 				]],
 				[/* block */ 'b', ` This constructor first builds a URI in string form using the given
  components as follows:  `],
+				[/* text */ 't', `
+
+ `],
 				[/* list */ 'l', [
 					[/* block */ 'b', [
 						[/* block */ 'b', ` Initially, the result string is empty.  `]
@@ -1157,6 +1227,9 @@ DocsCollector.collect('java.net.URI', [
 						]]
 					]]
 				]],
+				[/* text */ 't', `
+
+ `],
 				[/* block */ 'b', [
 					[/* text */ 't', ` The resulting URI string is then parsed in order to create the new
  URI instance as if by invoking the `],
@@ -1214,6 +1287,9 @@ DocsCollector.collect('java.net.URI', [
 					[/* text */ 't', `,
  section 5.2, step 7: `]
 				]],
+				[/* text */ 't', `
+
+ `],
 				[/* list */ 'l', [
 					[/* block */ 'b', [
 						[/* block */ 'b', ` Initially, the result string is empty. `]
@@ -1317,6 +1393,9 @@ DocsCollector.collect('java.net.URI', [
 						]]
 					]]
 				]],
+				[/* text */ 't', `
+
+ `],
 				[/* block */ 'b', [
 					[/* text */ 't', ` The resulting URI string is then parsed as if by invoking the `],
 					[/* reference */ 'r', `#%3Cinit%3E(java.lang.String)`, `URI(String)`],
@@ -1376,9 +1455,14 @@ DocsCollector.collect('java.net.URI', [
 
  `],
 				[/* block */ 'b', [
+					[/* text */ 't', `
+ `],
 					[/* inline code block */ 'i', `new`],
+					[/* text */ 't', ` `],
 					[/* reference */ 'r', `#%3Cinit%3E(java.lang.String,java.lang.String,java.lang.String,int,java.lang.String,java.lang.String,java.lang.String)`, `URI`],
-					[/* inline code block */ 'i', `(scheme, null, host, -1, path, null, fragment);`]
+					[/* inline code block */ 'i', `(scheme, null, host, -1, path, null, fragment);`],
+					[/* text */ 't', `
+ `]
 				]],
 				[/* block */ 'b', '']
 			],
@@ -1427,6 +1511,9 @@ DocsCollector.collect('java.net.URI', [
 					[/* text */ 't', `,
  section 5.2, step 7: `]
 				]],
+				[/* text */ 't', `
+
+ `],
 				[/* list */ 'l', [
 					[/* block */ 'b', [
 						[/* block */ 'b', ` Initially, the result string is empty.  `]
@@ -1510,6 +1597,9 @@ DocsCollector.collect('java.net.URI', [
 						]]
 					]]
 				]],
+				[/* text */ 't', `
+
+ `],
 				[/* block */ 'b', [
 					[/* text */ 't', ` The resulting URI string is then parsed as if by invoking the `],
 					[/* reference */ 'r', `#%3Cinit%3E(java.lang.String)`, `URI(String)`],
@@ -1657,6 +1747,9 @@ DocsCollector.collect('java.net.URI', [
  `]
 				]],
 				[/* block */ 'b', ` The ordering of URIs is defined as follows: `],
+				[/* text */ 't', `
+
+ `],
 				[/* list */ 'l', [
 					[/* block */ 'b', [
 						[/* block */ 'b', ` Two URIs with different schemes are ordered according the
@@ -1678,6 +1771,9 @@ DocsCollector.collect('java.net.URI', [
 					[/* block */ 'b', [
 						[/* block */ 'b', ` Two hierarchical URIs with identical schemes are ordered
    according to the ordering of their authority components: `],
+						[/* text */ 't', `
+
+   `],
 						[/* list */ 'l', [
 							[/* block */ 'b', [
 								[/* block */ 'b', ` If both authority components are server-based then the URIs
@@ -1702,6 +1798,9 @@ DocsCollector.collect('java.net.URI', [
    are ordered according to the order of their fragments. `]
 					]]
 				]],
+				[/* text */ 't', `
+
+ `],
 				[/* block */ 'b', [
 					[/* text */ 't', ` This method satisfies the general contract of the `],
 					[/* reference */ 'r', `java.lang.Comparable#compareTo(T)`, `Comparable.compareTo`],
@@ -1810,6 +1909,9 @@ DocsCollector.collect('java.net.URI', [
  `],
 				[/* block */ 'b', ` The host component of a URI, if defined, will have one of the
  following forms: `],
+				[/* text */ 't', `
+
+ `],
 				[/* list */ 'l', [
 					[/* block */ 'b', [
 						[/* block */ 'b', [
@@ -2218,6 +2320,9 @@ DocsCollector.collect('java.net.URI', [
  section 5.2, step 6, sub-steps c through f; that is:
  `]
 				]],
+				[/* text */ 't', `
+
+ `],
 				[/* list */ 'l', [
 					[/* block */ 'b', [
 						[/* block */ 'b', [
@@ -2255,10 +2360,14 @@ DocsCollector.collect('java.net.URI', [
 							[/* inline code block */ 'i', `"b/c/d"`],
 							[/* text */ 't', `.
    `],
-							[/* text */ 't', `(Deviation from RFC 2396)`]
+							[/* text */ 't', `(Deviation from RFC 2396)`],
+							[/* text */ 't', ` `]
 						]]
 					]]
 				]],
+				[/* text */ 't', `
+
+ `],
 				[/* block */ 'b', [
 					[/* text */ 't', ` A normalized path will begin with one or more `],
 					[/* inline code block */ 'i', `".."`],
@@ -2325,10 +2434,17 @@ DocsCollector.collect('java.net.URI', [
 
  `],
 				[/* block */ 'b', [
+					[/* text */ 't', `
+ `],
 					[/* inline code block */ 'i', `URI`],
 					[/* text */ 't', `u`],
-					[/* inline code block */ 'i', `= new URI(str).parseServerAuthority();`]
+					[/* inline code block */ 'i', `= new URI(str).parseServerAuthority();`],
+					[/* text */ 't', `
+ `]
 				]],
+				[/* text */ 't', `
+
+ `],
 				[/* block */ 'b', ''],
 				[/* block */ 'b', [
 					[/* text */ 't', ` can be used to ensure that `],
@@ -2361,6 +2477,9 @@ DocsCollector.collect('java.net.URI', [
  `],
 				[/* block */ 'b', ` The relativization of the given URI against this URI is computed as
  follows: `],
+				[/* text */ 't', `
+
+ `],
 				[/* list */ 'l', [
 					[/* block */ 'b', [
 						[/* block */ 'b', ` If either this URI or the given URI are opaque, or if the
@@ -2458,6 +2577,9 @@ DocsCollector.collect('java.net.URI', [
 					[/* text */ 't', `,
  section 5.2; that is: `]
 				]],
+				[/* text */ 't', `
+
+ `],
 				[/* list */ 'l', [
 					[/* block */ 'b', [
 						[/* block */ 'b', ` A new URI is constructed with this URI's scheme and the given
@@ -2470,6 +2592,9 @@ DocsCollector.collect('java.net.URI', [
 					[/* block */ 'b', [
 						[/* block */ 'b', ` Otherwise the new URI's authority component is copied from
    this URI, and its path is computed as follows: `],
+						[/* text */ 't', `
+
+   `],
 						[/* list */ 'l', [
 							[/* block */ 'b', [
 								[/* block */ 'b', ` If the given URI's path is absolute then the new URI's path
@@ -2489,6 +2614,9 @@ DocsCollector.collect('java.net.URI', [
 						]]
 					]]
 				]],
+				[/* text */ 't', `
+
+ `],
 				[/* block */ 'b', ` The result of this method is absolute if, and only if, either this
  URI is absolute or the given URI is absolute.  `]
 			],

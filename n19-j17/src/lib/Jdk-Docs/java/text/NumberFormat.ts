@@ -13,6 +13,8 @@ DocsCollector.collect('java.text.NumberFormat', [
 
  `],
 		[/* block */ 'b', [
+			[/* text */ 't', `
+ `],
 			[/* inline code block */ 'i', `NumberFormat`],
 			[/* text */ 't', ` helps you to format and parse numbers for any locale.
  Your code can be completely independent of the locale conventions for
@@ -26,9 +28,13 @@ DocsCollector.collect('java.text.NumberFormat', [
  class methods:
  `],
 		[/* block */ 'b', [
+			[/* text */ 't', `
+ `],
 			[/* code block */ 'c', [
 				[/* inline code block */ 'i', `myString = NumberFormat.getInstance().format(myNumber);`]
-			]]
+			]],
+			[/* text */ 't', `
+ `]
 		]],
 		[/* text */ 't', `
  If you are formatting multiple numbers, it is
@@ -37,12 +43,16 @@ DocsCollector.collect('java.text.NumberFormat', [
  language and country conventions multiple times.
  `],
 		[/* block */ 'b', [
+			[/* text */ 't', `
+ `],
 			[/* code block */ 'c', [
 				[/* inline code block */ 'i', `NumberFormat nf = NumberFormat.getInstance();
  for (int i = 0; i < myNumber.length; ++i) {
      output.println(nf.format(myNumber[i]) + "; ");
  }`]
-			]]
+			]],
+			[/* text */ 't', `
+ `]
 		]],
 		[/* text */ 't', `
  To format a number for a different Locale, specify it in the
@@ -51,10 +61,17 @@ DocsCollector.collect('java.text.NumberFormat', [
 		[/* text */ 't', `.
  `],
 		[/* block */ 'b', [
+			[/* text */ 't', `
+ `],
 			[/* code block */ 'c', [
 				[/* inline code block */ 'i', `NumberFormat nf = NumberFormat.getInstance(Locale.FRENCH);`]
-			]]
+			]],
+			[/* text */ 't', `
+ `]
 		]],
+		[/* text */ 't', `
+
+ `],
 		[/* block */ 'b', ''],
 		[/* block */ 'b', [
 			[/* text */ 't', `If the locale contains "nu" (numbers) and/or "rg" (region override)
@@ -74,9 +91,13 @@ DocsCollector.collect('java.text.NumberFormat', [
  `]
 		]],
 		[/* block */ 'b', [
+			[/* text */ 't', `
+ `],
 			[/* code block */ 'c', [
 				[/* inline code block */ 'i', `myNumber = nf.parse(myString);`]
-			]]
+			]],
+			[/* text */ 't', `
+ `]
 		]],
 		[/* text */ 't', `
  Use `],
@@ -213,10 +234,16 @@ DocsCollector.collect('java.text.NumberFormat', [
  `]
 			]]
 		]],
+		[/* text */ 't', `
+
+ `],
 		[/* block */ 'b', ''],
 		[/* block */ 'b', [
 			[/* anchor */ 'r', '#-id', `synchronization`, `Synchronization`]
 		]],
+		[/* text */ 't', `
+
+ `],
 		[/* block */ 'b', `
  Number formats are generally not synchronized.
  It is recommended to create separate format instances for each thread.

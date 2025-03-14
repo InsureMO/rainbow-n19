@@ -15,6 +15,9 @@ DocsCollector.collect('java.lang.reflect.Proxy', [
                                           new Class<?>[] { Foo.class },
                                           handler);`]
 		]],
+		[/* text */ 't', `
+
+ `],
 		[/* block */ 'b', [
 			[/* text */ 't', `
  A `],
@@ -132,6 +135,9 @@ DocsCollector.collect('java.lang.reflect.Proxy', [
  `]
 			]]
 		]],
+		[/* text */ 't', `
+
+ `],
 		[/* block */ 'b', ''],
 		[/* block */ 'b', `A proxy instance has the following properties:
 
@@ -147,7 +153,10 @@ DocsCollector.collect('java.lang.reflect.Proxy', [
  following expression will return true:
  `],
 				[/* code block */ 'c', [
-					[/* inline code block */ 'i', `proxy instanceof Foo`]
+					[/* text */ 't', `     `],
+					[/* inline code block */ 'i', `proxy instanceof Foo`],
+					[/* text */ 't', `
+ `]
 				]],
 				[/* text */ 't', `
  and the following cast operation will succeed (rather than throwing
@@ -156,8 +165,14 @@ DocsCollector.collect('java.lang.reflect.Proxy', [
 				[/* text */ 't', `):
  `],
 				[/* code block */ 'c', [
-					[/* inline code block */ 'i', `(Foo) proxy`]
-				]]
+					[/* text */ 't', `     `],
+					[/* inline code block */ 'i', `(Foo) proxy`],
+					[/* text */ 't', `
+ `]
+				]],
+				[/* text */ 't', `
+
+ `]
 			]],
 			[/* block */ 'b', [
 				[/* text */ 't', `Each proxy instance has an associated invocation handler, the one
@@ -224,6 +239,9 @@ DocsCollector.collect('java.lang.reflect.Proxy', [
  `]
 			]]
 		]],
+		[/* text */ 't', `
+
+ `],
 		[/* block */ 'b', ''],
 		[/* block */ 'b', [
 			[/* anchor */ 'r', '#-id', `membership`, `Package and Module Membership of Proxy Class`]
@@ -275,7 +293,9 @@ DocsCollector.collect('java.lang.reflect.Proxy', [
 						[/* text */ 't', `not possible`],
 						[/* text */ 't', `.`]
 					]]
-				]]
+				]],
+				[/* text */ 't', `
+ `]
 			]],
 			[/* block */ 'b', [
 				[/* text */ 't', `If at least one proxy interface is in a package that is
@@ -315,9 +335,14 @@ DocsCollector.collect('java.lang.reflect.Proxy', [
 						[/* text */ 't', `not possible`],
 						[/* text */ 't', `.`]
 					]]
-				]]
+				]],
+				[/* text */ 't', `
+ `]
 			]]
 		]],
+		[/* text */ 't', `
+
+ `],
 		[/* block */ 'b', `
  Note that if proxy interfaces with a mix of accessibilities -- for example,
  an exported public interface and a non-exported non-public interface -- are
@@ -346,6 +371,8 @@ DocsCollector.collect('java.lang.reflect.Proxy', [
 		[/* block */ 'b', [
 			[/* anchor */ 'r', '#-id', `dynamicmodule`, `Dynamic Modules`]
 		]],
+		[/* text */ 't', `
+ `],
 		[/* block */ 'b', [
 			[/* text */ 't', `
  A dynamic module is a named module generated at runtime. A proxy class
@@ -382,6 +409,9 @@ DocsCollector.collect('java.lang.reflect.Proxy', [
  `]
 		]],
 		[/* block */ 'b', `Methods Duplicated in Multiple Proxy Interfaces`],
+		[/* text */ 't', `
+
+ `],
 		[/* block */ 'b', [
 			[/* text */ 't', `When two or more proxy interfaces contain a method with
  the same name and parameter signature, the order of the proxy class's
@@ -621,7 +651,11 @@ DocsCollector.collect('java.lang.reflect.Proxy', [
  handler.
  `],
 				[/* block */ 'b', [
-					[/* anchor */ 'r', '#-id', `restrictions`, `IllegalArgumentException will be thrown if any of the following restrictions is violated:`]
+					[/* text */ 't', `
+ `],
+					[/* anchor */ 'r', '#-id', `restrictions`, `IllegalArgumentException will be thrown if any of the following restrictions is violated:`],
+					[/* text */ 't', `
+ `]
 				]],
 				[/* list */ 'l', [
 					[/* block */ 'b', [
@@ -660,7 +694,12 @@ DocsCollector.collect('java.lang.reflect.Proxy', [
 						[/* text */ 't', `, the following
  expression must be true:`],
 						[/* block */ 'b', [
-							[/* inline code block */ 'i', `Class.forName(i.getName(), false, cl) == i`]
+							[/* text */ 't', `
+ `],
+							[/* inline code block */ 'i', `Class.forName(i.getName(), false, cl) == i`],
+							[/* text */ 't', `
+
+ `]
 						]]
 					]],
 					[/* block */ 'b', `All of the types referenced by all
@@ -690,7 +729,10 @@ DocsCollector.collect('java.lang.reflect.Proxy', [
  is assignable to all of the return types of the rest of the
  methods.
  `]
-						]]
+						]],
+						[/* text */ 't', `
+
+ `]
 					]],
 					[/* block */ 'b', [
 						[/* text */ 't', `The resulting proxy class must not exceed any limits imposed
@@ -704,6 +746,9 @@ DocsCollector.collect('java.lang.reflect.Proxy', [
 					]],
 					[/* block */ 'b', '']
 				]],
+				[/* text */ 't', `
+
+ `],
 				[/* block */ 'b', ''],
 				[/* block */ 'b', `Note that the order of the specified proxy interfaces is
  significant: two requests for a proxy class with the same combination

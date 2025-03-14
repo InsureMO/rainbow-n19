@@ -29,6 +29,9 @@ DocsCollector.collect('java.security.PermissionCollection', [
  `]
 			]]
 		]],
+		[/* text */ 't', `
+
+ `],
 		[/* block */ 'b', ''],
 		[/* block */ 'b', [
 			[/* text */ 't', `When it is desirable to group together a number of Permission objects
@@ -200,6 +203,9 @@ DocsCollector.collect('java.security.PermissionCollection', [
    // objects and call toString() on them,
    // one per line..
  )`],
+				[/* text */ 't', `
+
+ `],
 				[/* inline code block */ 'i', `super.toString`],
 				[/* text */ 't', ` is a call to the `],
 				[/* inline code block */ 'i', `toString`],

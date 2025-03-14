@@ -86,6 +86,8 @@ DocsCollector.collect('java.io.Console', [
  `]
 		]],
 		[/* block */ 'b', [
+			[/* text */ 't', `
+ `],
 			[/* text */ 't', `Security note:`],
 			[/* text */ 't', `
  If an application needs to read a password or other secure data, it should
@@ -317,6 +319,8 @@ DocsCollector.collect('java.io.Console', [
  }
  `]
 				]],
+				[/* text */ 't', `
+ `],
 				[/* block */ 'b', ''],
 				[/* block */ 'b', [
 					[/* text */ 't', `

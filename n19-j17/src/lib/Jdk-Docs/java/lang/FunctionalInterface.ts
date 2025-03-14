@@ -40,6 +40,9 @@ DocsCollector.collect('java.lang.FunctionalInterface', [
 			[/* block */ 'b', ` The annotated type satisfies the requirements of a functional interface.
  `]
 		]],
+		[/* text */ 't', `
+
+ `],
 		[/* block */ 'b', ''],
 		[/* block */ 'b', [
 			[/* text */ 't', `However, the compiler will treat any interface meeting the

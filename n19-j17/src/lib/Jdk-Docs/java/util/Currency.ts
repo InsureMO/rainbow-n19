@@ -46,7 +46,11 @@ DocsCollector.collect('java.util.Currency', [
  `]
 		]],
 		[/* block */ 'b', [
-			[/* inline code block */ 'i', `#Sample currency properties JP=JPZ,999,0`]
+			[/* text */ 't', `
+ `],
+			[/* inline code block */ 'i', `#Sample currency properties JP=JPZ,999,0`],
+			[/* text */ 't', `
+ `]
 		]],
 		[/* block */ 'b', `
  will supersede the currency data for Japan. If JPZ is one of the existing
@@ -56,7 +60,11 @@ DocsCollector.collect('java.util.Currency', [
 
  `],
 		[/* block */ 'b', [
-			[/* inline code block */ 'i', `#Sample currency properties with cutover date JP=JPZ,999,0,2014-01-01T00:00:00`]
+			[/* text */ 't', `
+ `],
+			[/* inline code block */ 'i', `#Sample currency properties with cutover date JP=JPZ,999,0,2014-01-01T00:00:00`],
+			[/* text */ 't', `
+ `]
 		]],
 		[/* block */ 'b', [
 			[/* text */ 't', `

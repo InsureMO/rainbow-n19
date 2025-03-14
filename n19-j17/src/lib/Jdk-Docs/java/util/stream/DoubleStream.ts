@@ -62,6 +62,9 @@ DocsCollector.collect('java.util.stream.DoubleStream', [
          accumulator.accept(result, element);
      return result;`]
 				]],
+				[/* text */ 't', `
+
+ `],
 				[/* block */ 'b', [
 					[/* text */ 't', `Like `],
 					[/* reference */ 'r', `#reduce(double,java.util.function.DoubleBinaryOperator)`, `reduce(double, DoubleBinaryOperator)`],
@@ -395,7 +398,10 @@ DocsCollector.collect('java.util.stream.DoubleStream', [
  sign, the sum may be NaN.
 
  `]
-						]]
+						]],
+						[/* text */ 't', `
+
+ `]
 					]]
 				]],
 				[/* text */ 't', `
@@ -593,6 +599,9 @@ DocsCollector.collect('java.util.stream.DoubleStream', [
 				[/* code block */ 'c', [
 					[/* inline code block */ 'i', `return reduce(Double::max);`]
 				]],
+				[/* text */ 't', `
+
+ `],
 				[/* block */ 'b', [
 					[/* text */ 't', `This is a `],
 					[/* text */ 't', `terminal operation`],
@@ -627,6 +636,9 @@ DocsCollector.collect('java.util.stream.DoubleStream', [
 				[/* code block */ 'c', [
 					[/* inline code block */ 'i', `return reduce(Double::min);`]
 				]],
+				[/* text */ 't', `
+
+ `],
 				[/* block */ 'b', [
 					[/* text */ 't', `This is a `],
 					[/* text */ 't', `terminal operation`],
@@ -1044,6 +1056,9 @@ DocsCollector.collect('java.util.stream.DoubleStream', [
 				[/* code block */ 'c', [
 					[/* inline code block */ 'i', `return mapToLong(e -> 1L).sum();`]
 				]],
+				[/* text */ 't', `
+
+ `],
 				[/* block */ 'b', [
 					[/* text */ 't', `This is a `],
 					[/* text */ 't', `terminal operation`],
@@ -1335,6 +1350,9 @@ DocsCollector.collect('java.util.stream.DoubleStream', [
          ...
      }`]
 				]],
+				[/* text */ 't', `
+
+ `],
 				[/* block */ 'b', ''],
 				[/* block */ 'b', [
 					[/* text */ 't', `The resulting sequence may be empty if the `],

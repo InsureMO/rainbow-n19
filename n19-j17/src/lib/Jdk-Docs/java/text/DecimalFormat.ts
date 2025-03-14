@@ -45,6 +45,9 @@ DocsCollector.collect('java.text.DecimalFormat', [
  }
  `]
 		]],
+		[/* text */ 't', `
+
+ `],
 		[/* block */ 'b', ''],
 		[/* block */ 'b', [
 			[/* text */ 't', `A `],
@@ -71,24 +74,46 @@ DocsCollector.collect('java.text.DecimalFormat', [
  `]
 		]],
 		[/* block */ 'b', `Patterns`],
+		[/* text */ 't', `
+
+ `],
 		[/* inline code block */ 'i', `DecimalFormat`],
 		[/* text */ 't', ` patterns have the following syntax:
  `],
 		[/* block */ 'b', [
 			[/* code block */ 'c', [
+				[/* text */ 't', ` `],
 				[/* text */ 't', `Pattern:`],
+				[/* text */ 't', `
+         `],
 				[/* text */ 't', `PositivePattern`],
+				[/* text */ 't', `
+         `],
 				[/* text */ 't', `PositivePattern`],
 				[/* text */ 't', ` ; `],
 				[/* text */ 't', `NegativePattern`],
+				[/* text */ 't', `
+ `],
 				[/* text */ 't', `PositivePattern:`],
+				[/* text */ 't', `
+         `],
 				[/* text */ 't', `opt`, 'sub'],
+				[/* text */ 't', ` `],
 				[/* text */ 't', `Number`],
+				[/* text */ 't', ` `],
 				[/* text */ 't', `opt`, 'sub'],
+				[/* text */ 't', `
+ `],
 				[/* text */ 't', `NegativePattern:`],
+				[/* text */ 't', `
+         `],
 				[/* text */ 't', `opt`, 'sub'],
+				[/* text */ 't', ` `],
 				[/* text */ 't', `Number`],
+				[/* text */ 't', ` `],
 				[/* text */ 't', `opt`, 'sub'],
+				[/* text */ 't', `
+ `],
 				[/* text */ 't', `Prefix:`],
 				[/* text */ 't', `
          any Unicode characters except \\uFFFE, \\uFFFF, and special characters
@@ -98,13 +123,23 @@ DocsCollector.collect('java.text.DecimalFormat', [
          any Unicode characters except \\uFFFE, \\uFFFF, and special characters
  `],
 				[/* text */ 't', `Number:`],
+				[/* text */ 't', `
+         `],
 				[/* text */ 't', `Integer`],
+				[/* text */ 't', ` `],
 				[/* text */ 't', `opt`, 'sub'],
+				[/* text */ 't', `
+         `],
 				[/* text */ 't', `Integer`],
 				[/* text */ 't', ` . `],
 				[/* text */ 't', `Fraction`],
+				[/* text */ 't', ` `],
 				[/* text */ 't', `opt`, 'sub'],
+				[/* text */ 't', `
+ `],
 				[/* text */ 't', `Integer:`],
+				[/* text */ 't', `
+         `],
 				[/* text */ 't', `MinimumInteger`],
 				[/* text */ 't', `
          #
@@ -113,6 +148,8 @@ DocsCollector.collect('java.text.DecimalFormat', [
 				[/* text */ 't', `
          # , `],
 				[/* text */ 't', `Integer`],
+				[/* text */ 't', `
+ `],
 				[/* text */ 't', `MinimumInteger:`],
 				[/* text */ 't', `
          0
@@ -121,27 +158,45 @@ DocsCollector.collect('java.text.DecimalFormat', [
 				[/* text */ 't', `
          0 , `],
 				[/* text */ 't', `MinimumInteger`],
+				[/* text */ 't', `
+ `],
 				[/* text */ 't', `Fraction:`],
+				[/* text */ 't', `
+         `],
 				[/* text */ 't', `opt`, 'sub'],
+				[/* text */ 't', ` `],
 				[/* text */ 't', `opt`, 'sub'],
+				[/* text */ 't', `
+ `],
 				[/* text */ 't', `MinimumFraction:`],
 				[/* text */ 't', `
          0 `],
 				[/* text */ 't', `opt`, 'sub'],
+				[/* text */ 't', `
+ `],
 				[/* text */ 't', `OptionalFraction:`],
 				[/* text */ 't', `
          # `],
 				[/* text */ 't', `opt`, 'sub'],
+				[/* text */ 't', `
+ `],
 				[/* text */ 't', `Exponent:`],
 				[/* text */ 't', `
          E `],
 				[/* text */ 't', `MinimumExponent`],
+				[/* text */ 't', `
+ `],
 				[/* text */ 't', `MinimumExponent:`],
 				[/* text */ 't', `
          0 `],
-				[/* text */ 't', `opt`, 'sub']
+				[/* text */ 't', `opt`, 'sub'],
+				[/* text */ 't', `
+ `]
 			]]
 		]],
+		[/* text */ 't', `
+
+ `],
 		[/* block */ 'b', [
 			[/* text */ 't', `A `],
 			[/* inline code block */ 'i', `DecimalFormat`],
@@ -209,6 +264,9 @@ DocsCollector.collect('java.text.DecimalFormat', [
 		[/* block */ 'b', [
 			[/* anchor */ 'r', '#-id', `special_pattern_character`, `Special Pattern Characters`]
 		]],
+		[/* text */ 't', `
+
+ `],
 		[/* block */ 'b', `Many characters in a pattern are taken literally; they are matched during
  parsing and output unchanged during formatting.  Special characters, on the
  other hand, stand for other characters, strings, or classes of characters.
@@ -228,6 +286,8 @@ DocsCollector.collect('java.text.DecimalFormat', [
  `]
 		]],
 		[/* block */ 'b', [
+			[/* text */ 't', `
+ `],
 			[/* table */ 'tbl',
 				[/* caption */ 'tc'],
 				[/* table header */ 'th', [
@@ -478,10 +538,18 @@ DocsCollector.collect('java.text.DecimalFormat', [
 						]]
 					]]
 				]],
-			]
+			],
+			[/* text */ 't', `
+ `]
 		]],
+		[/* text */ 't', `
+
+ `],
 		[/* block */ 'b', ''],
 		[/* block */ 'b', `Scientific Notation`],
+		[/* text */ 't', `
+
+ `],
 		[/* block */ 'b', [
 			[/* text */ 't', `Numbers in scientific notation are expressed as the product of a mantissa
  and a power of ten, for example, 1234 can be expressed as 1.234 x 10^3.  The
@@ -553,7 +621,10 @@ DocsCollector.collect('java.text.DecimalFormat', [
 						[/* text */ 't', `.
  `]
 					]]
-				]]
+				]],
+				[/* text */ 't', `
+
+ `]
 			]],
 			[/* block */ 'b', [
 				[/* text */ 't', `The number of significant digits in the mantissa is the sum of the
@@ -576,8 +647,14 @@ DocsCollector.collect('java.text.DecimalFormat', [
 			[/* block */ 'b', `Exponential patterns may not contain grouping separators.
  `]
 		]],
+		[/* text */ 't', `
+
+ `],
 		[/* block */ 'b', ''],
 		[/* block */ 'b', `Rounding`],
+		[/* text */ 't', `
+
+ `],
 		[/* inline code block */ 'i', `DecimalFormat`],
 		[/* text */ 't', ` provides rounding modes defined in
  `],
@@ -605,6 +682,9 @@ DocsCollector.collect('java.text.DecimalFormat', [
 
  `],
 		[/* block */ 'b', `Special Values`],
+		[/* text */ 't', `
+
+ `],
 		[/* block */ 'b', [
 			[/* inline code block */ 'i', `NaN`],
 			[/* text */ 't', ` is formatted as a string, which typically has a single character
@@ -666,10 +746,16 @@ DocsCollector.collect('java.text.DecimalFormat', [
  `]
 			]]
 		]],
+		[/* text */ 't', `
+
+ `],
 		[/* block */ 'b', ''],
 		[/* block */ 'b', [
 			[/* anchor */ 'r', '#-id', `synchronization`, `Synchronization`]
 		]],
+		[/* text */ 't', `
+
+ `],
 		[/* block */ 'b', `
  Decimal formats are generally not synchronized.
  It is recommended to create separate format instances for each thread.
@@ -678,6 +764,9 @@ DocsCollector.collect('java.text.DecimalFormat', [
 
  `],
 		[/* block */ 'b', `Example`],
+		[/* text */ 't', `
+
+ `],
 		[/* block */ 'b', [
 			[/* code block */ 'c', [
 				[/* inline code block */ 'i', `// Print out a number using the localized number, integer, currency,
@@ -1147,8 +1236,12 @@ DocsCollector.collect('java.text.DecimalFormat', [
 					]],
 					[/* block */ 'b', '']
 				]],
+				[/* text */ 't', `
+ `],
 				[/* block */ 'b', ''],
 				[/* block */ 'b', [
+					[/* text */ 't', `
+ `],
 					[/* inline code block */ 'i', `DecimalFormat`],
 					[/* text */ 't', ` parses all Unicode characters that represent
  decimal digits, as defined by `],

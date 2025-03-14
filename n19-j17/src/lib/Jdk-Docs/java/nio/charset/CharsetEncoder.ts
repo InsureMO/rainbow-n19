@@ -8,6 +8,9 @@ DocsCollector.collect('java.nio.charset.CharsetEncoder', [
 
  `],
 		[/* anchor */ 'r', '#-id', `steps`, ``],
+		[/* text */ 't', `
+
+ `],
 		[/* block */ 'b', [
 			[/* text */ 't', ` The input character sequence is provided in a character buffer or a series
  of such buffers.  The output byte sequence is written to a byte buffer
@@ -82,6 +85,9 @@ DocsCollector.collect('java.nio.charset.CharsetEncoder', [
 
  `],
 		[/* anchor */ 'r', '#-id', `ce`, ``],
+		[/* text */ 't', `
+
+ `],
 		[/* block */ 'b', ''],
 		[/* block */ 'b', [
 			[/* text */ 't', ` There are two general types of encoding errors.  If the input character
@@ -94,7 +100,10 @@ DocsCollector.collect('java.nio.charset.CharsetEncoder', [
 			[/* text */ 't', ` has been encountered.
 
  `],
-			[/* anchor */ 'r', '#-id', `cae`, ``]
+			[/* anchor */ 'r', '#-id', `cae`, ``],
+			[/* text */ 't', `
+
+ `]
 		]],
 		[/* block */ 'b', [
 			[/* text */ 't', ` How an encoding error is handled depends upon the action requested for
@@ -744,6 +753,7 @@ DocsCollector.collect('java.nio.charset.CharsetEncoder', [
 				[/* list */ 'l', [
 					[/* block */ 'b', [
 						[/* block */ 'b', [
+							[/* text */ 't', ` `],
 							[/* reference */ 'r', `java.nio.charset.CoderResult#UNDERFLOW`, `CoderResult.UNDERFLOW`],
 							[/* text */ 't', ` indicates that as much of the
    input buffer as possible has been encoded.  If there is no further
@@ -756,6 +766,7 @@ DocsCollector.collect('java.nio.charset.CharsetEncoder', [
 					]],
 					[/* block */ 'b', [
 						[/* block */ 'b', [
+							[/* text */ 't', ` `],
 							[/* reference */ 'r', `java.nio.charset.CoderResult#OVERFLOW`, `CoderResult.OVERFLOW`],
 							[/* text */ 't', ` indicates that there is
    insufficient space in the output buffer to encode any more characters.

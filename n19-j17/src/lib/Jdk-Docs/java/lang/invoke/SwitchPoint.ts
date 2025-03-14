@@ -89,9 +89,13 @@ DocsCollector.collect('java.lang.invoke.SwitchPoint', [
  assert(spt.hasBeenInvalidated());
  assertEquals("hodmet", (String) worker.invokeExact("met", "hod"));`]
 		]],
+		[/* text */ 't', `
+ `],
 		[/* block */ 'b', ''],
 		[/* block */ 'b', `Discussion:`],
 		[/* block */ 'b', [
+			[/* text */ 't', `
+ `],
 			[/* text */ 't', `Implementation Note:`],
 			[/* text */ 't', `
  A switch point behaves as if implemented on top of `],
@@ -144,6 +148,8 @@ DocsCollector.collect('java.lang.invoke.SwitchPoint', [
 
  `],
 				[/* block */ 'b', [
+					[/* text */ 't', `
+ `],
 					[/* text */ 't', `Discussion:`],
 					[/* text */ 't', `
  Because of the one-way nature of invalidation, once a switch point begins
@@ -235,6 +241,8 @@ DocsCollector.collect('java.lang.invoke.SwitchPoint', [
  `]
 				]],
 				[/* block */ 'b', [
+					[/* text */ 't', `
+ `],
 					[/* text */ 't', `Discussion:`],
 					[/* text */ 't', `
  For performance reasons, `],
@@ -254,6 +262,8 @@ DocsCollector.collect('java.lang.invoke.SwitchPoint', [
  `]
 				]],
 				[/* block */ 'b', [
+					[/* text */ 't', `
+ `],
 					[/* text */ 't', `Implementation Note:`],
 					[/* text */ 't', `
  Simple implementations of `],

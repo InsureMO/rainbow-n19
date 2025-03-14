@@ -9,6 +9,7 @@ DocsCollector.collect('java.lang.module.ResolvedModule', [
 
  `],
 		[/* block */ 'b', [
+			[/* text */ 't', ` `],
 			[/* inline code block */ 'i', `ResolvedModule`],
 			[/* text */ 't', ` defines the `],
 			[/* reference */ 'r', `#configuration()`, `configuration`],
@@ -40,6 +41,9 @@ DocsCollector.collect('java.lang.module.ResolvedModule', [
  equal if they are in the same configuration and have equal references
  to the module content. `]
 				]],
+				[/* text */ 't', `
+
+ `],
 				[/* block */ 'b', [
 					[/* text */ 't', ` This method satisfies the general contract of the `],
 					[/* reference */ 'r', `java.lang.Object#equals(java.lang.Object)`, `Object.equals`],
@@ -103,6 +107,7 @@ DocsCollector.collect('java.lang.module.ResolvedModule', [
  This convenience method is the equivalent to invoking:
  `],
 				[/* code block */ 'c', [
+					[/* text */ 't', ` `],
 					[/* inline code block */ 'i', `reference().descriptor().name()`]
 				]]
 			],

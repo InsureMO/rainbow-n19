@@ -92,6 +92,9 @@ DocsCollector.collect('java.nio.channels.FileLock', [
 			[/* anchor */ 'r', '#-id', `pdep`, ``]
 		]],
 		[/* block */ 'b', ` Platform dependencies `],
+		[/* text */ 't', `
+
+ `],
 		[/* block */ 'b', ` This file-locking API is intended to map directly to the native locking
  facility of the underlying operating system.  Thus the locks held on a file
  should be visible to all programs that have access to the file, regardless

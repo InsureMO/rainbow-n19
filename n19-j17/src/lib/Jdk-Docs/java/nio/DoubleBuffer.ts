@@ -50,6 +50,9 @@ DocsCollector.collect('java.nio.DoubleBuffer', [
 				]]
 			]]
 		]],
+		[/* text */ 't', `
+
+ `],
 		[/* block */ 'b', ''],
 		[/* block */ 'b', [
 			[/* text */ 't', ` Double buffers can be created either by `],
@@ -189,6 +192,26 @@ DocsCollector.collect('java.nio.DoubleBuffer', [
 			[/* reference */ 'r', `#isDirect()`, `isDirect`],
 			[/* text */ 't', ` method.  `]
 		]],
+		[/* text */ 't', `
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ `],
 		[/* block */ 'b', ` Methods in this class that do not otherwise have a value to return are
  specified to return the buffer upon which they are invoked.  This allows
  method invocations to be chained.`]
@@ -590,6 +613,9 @@ DocsCollector.collect('java.nio.DoubleBuffer', [
 						]]
 					]]
 				]],
+				[/* text */ 't', `
+
+ `],
 				[/* block */ 'b', ''],
 				[/* block */ 'b', ` A double buffer is not equal to any other type of object.  `]
 			],
@@ -724,6 +750,9 @@ DocsCollector.collect('java.nio.DoubleBuffer', [
 					[/* code block */ 'c', ` buf.clear();     // Prepare buffer for reading
  in.read(buf);    // Read data`]
 				]],
+				[/* text */ 't', `
+
+ `],
 				[/* block */ 'b', ''],
 				[/* block */ 'b', ` This method does not actually erase the data in the buffer, but it
  is named as if it did because it will most often be used in situations
@@ -759,6 +788,9 @@ DocsCollector.collect('java.nio.DoubleBuffer', [
  buf.flip();        // Flip buffer
  out.write(buf);    // Write header + data to channel`]
 				]],
+				[/* text */ 't', `
+
+ `],
 				[/* block */ 'b', ''],
 				[/* block */ 'b', [
 					[/* text */ 't', ` This method is often used in conjunction with the `],

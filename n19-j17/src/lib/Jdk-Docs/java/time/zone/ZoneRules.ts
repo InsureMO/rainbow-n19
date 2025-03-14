@@ -477,6 +477,8 @@ DocsCollector.collect('java.time.zone.ZoneRules', [
     ZoneOffsetTransition trans = rules.getTransition(localDT);
   }
  `],
+				[/* text */ 't', `
+ `],
 				[/* block */ 'b', ''],
 				[/* block */ 'b', `
  In theory, it is possible for there to be more than two valid offsets.

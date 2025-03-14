@@ -9,6 +9,7 @@ DocsCollector.collect('java.lang.module.ModuleDescriptor$Builder', [
 
  `],
 		[/* block */ 'b', [
+			[/* text */ 't', ` `],
 			[/* inline code block */ 'i', `ModuleDescriptor`],
 			[/* text */ 't', ` defines the `],
 			[/* reference */ 'r', `java.lang.module.ModuleDescriptor#newModule(java.lang.String,java.util.Set)`, `newModule`],
@@ -22,6 +23,9 @@ DocsCollector.collect('java.lang.module.ModuleDescriptor$Builder', [
 			[/* text */ 't', `normal`],
 			[/* text */ 't', `, open, and automatic modules. `]
 		]],
+		[/* text */ 't', `
+
+ `],
 		[/* block */ 'b', [
 			[/* text */ 't', ` The set of packages in the module are accumulated by the `],
 			[/* inline code block */ 'i', `Builder`],
@@ -42,6 +46,9 @@ DocsCollector.collect('java.lang.module.ModuleDescriptor$Builder', [
 			[/* text */ 't', ` methods are
  invoked. `]
 		]],
+		[/* text */ 't', `
+
+ `],
 		[/* block */ 'b', [
 			[/* text */ 't', ` The module names, package names, and class names that are parameters
  specified to the builder methods are the module names, package names,
@@ -50,7 +57,12 @@ DocsCollector.collect('java.lang.module.ModuleDescriptor$Builder', [
 			[/* text */ 't', `The Java Language Specification`],
 			[/* text */ 't', `. `]
 		]],
+		[/* text */ 't', `
+
+ `],
 		[/* block */ 'b', ` Example usage: `],
+		[/* text */ 't', `
+ `],
 		[/* code block */ 'c', [
 			[/* inline code block */ 'i', `ModuleDescriptor descriptor = ModuleDescriptor.newModule("stats.core")
          .requires("java.base")

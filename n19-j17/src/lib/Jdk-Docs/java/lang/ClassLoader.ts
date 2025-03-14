@@ -27,6 +27,7 @@ DocsCollector.collect('java.lang.ClassLoader', [
  `]
 		]],
 		[/* block */ 'b', [
+			[/* text */ 't', ` `],
 			[/* inline code block */ 'i', `Class`],
 			[/* text */ 't', ` objects for array classes are not created by class
  loaders, but are created automatically as required by the Java runtime.
@@ -104,6 +105,7 @@ DocsCollector.collect('java.lang.ClassLoader', [
  `]
 		]],
 		[/* block */ 'b', [
+			[/* text */ 't', ` `],
 			[/* anchor */ 'r', '#-id', `builtinLoaders`, `Run-time Built-in Class Loaders`]
 		]],
 		[/* text */ 't', `
@@ -162,6 +164,9 @@ DocsCollector.collect('java.lang.ClassLoader', [
 				]]
 			]]
 		]],
+		[/* text */ 't', `
+
+ `],
 		[/* block */ 'b', [
 			[/* text */ 't', ` Normally, the Java virtual machine loads classes from the local file
  system in a platform-dependent manner.
@@ -199,6 +204,9 @@ DocsCollector.collect('java.lang.ClassLoader', [
         . . .
  `]
 		]],
+		[/* text */ 't', `
+
+ `],
 		[/* block */ 'b', ''],
 		[/* block */ 'b', [
 			[/* text */ 't', ` The network class loader subclass must define the methods `],
@@ -231,10 +239,18 @@ DocsCollector.collect('java.lang.ClassLoader', [
      }
  `]
 		]],
+		[/* text */ 't', `
+
+ `],
 		[/* block */ 'b', ''],
 		[/* block */ 'b', [
-			[/* anchor */ 'r', '#-id', `binary-name`, `Binary names`]
+			[/* text */ 't', ` `],
+			[/* anchor */ 'r', '#-id', `binary-name`, `Binary names`],
+			[/* text */ 't', ` `]
 		]],
+		[/* text */ 't', `
+
+ `],
 		[/* block */ 'b', [
 			[/* text */ 't', ` Any class name provided as a `],
 			[/* inline code block */ 'i', `String`],
@@ -257,6 +273,9 @@ DocsCollector.collect('java.lang.ClassLoader', [
    "java.net.URLClassLoader$3$1"
  `]
 		]],
+		[/* text */ 't', `
+
+ `],
 		[/* block */ 'b', ''],
 		[/* block */ 'b', [
 			[/* text */ 't', ` Any package name provided as a `],
@@ -465,6 +484,9 @@ DocsCollector.collect('java.lang.ClassLoader', [
 					[/* inline code block */ 'i', `ProtectionDomain`],
 					[/* text */ 't', ` as one of its arguments.  `]
 				]],
+				[/* text */ 't', `
+
+ `],
 				[/* block */ 'b', [
 					[/* text */ 't', `
  This method defines a package in this class loader corresponding to the
@@ -763,8 +785,11 @@ DocsCollector.collect('java.lang.ClassLoader', [
 					[/* inline code block */ 'i', `.defineClass(`],
 					[/* text */ 't', `name`],
 					[/* inline code block */ 'i', `,`],
+					[/* text */ 't', `
+ `],
 					[/* text */ 't', `bBuffer`],
 					[/* inline code block */ 'i', `,`],
+					[/* text */ 't', ` `],
 					[/* text */ 't', `pd`],
 					[/* inline code block */ 'i', `)`],
 					[/* text */ 't', ` yields exactly the same
@@ -773,6 +798,7 @@ DocsCollector.collect('java.lang.ClassLoader', [
 `]
 				]],
 				[/* block */ 'b', [
+					[/* text */ 't', ` `],
 					[/* inline code block */ 'i', `... byte[] temp = new byte[bBuffer.remaining()]; bBuffer.get(temp); return cl.defineClass(name, temp, 0, temp.length, pd);`]
 				]]
 			],
@@ -1063,6 +1089,9 @@ DocsCollector.collect('java.lang.ClassLoader', [
 						]]
 					]]
 				]],
+				[/* text */ 't', `
+
+ `],
 				[/* block */ 'b', [
 					[/* text */ 't', ` If the class was found using the above steps, and the
  `],
@@ -1082,6 +1111,9 @@ DocsCollector.collect('java.lang.ClassLoader', [
 					[/* reference */ 'r', `#findClass(java.lang.String)`, `findClass(String)`],
 					[/* text */ 't', `, rather than this method.  `]
 				]],
+				[/* text */ 't', `
+
+ `],
 				[/* block */ 'b', [
 					[/* text */ 't', ` Unless overridden, this method synchronizes on the result of
  `],
@@ -1147,6 +1179,8 @@ DocsCollector.collect('java.lang.ClassLoader', [
 				[/* text */ 't', `.
  `],
 				[/* block */ 'b', [
+					[/* text */ 't', `
+ `],
 					[/* text */ 't', `Package names`],
 					[/* text */ 't', ` must be unique within a class loader and
  cannot be redefined or changed once created.
@@ -1322,6 +1356,7 @@ DocsCollector.collect('java.lang.ClassLoader', [
 					[/* text */ 't', ` For resources in named modules then the method must implement the
  rules for encapsulation specified in the `],
 					[/* inline code block */ 'i', `Module`],
+					[/* text */ 't', ` `],
 					[/* reference */ 'r', `java.lang.Module#getResourceAsStream(java.lang.String)`, `getResourceAsStream`],
 					[/* text */ 't', ` method. Additionally,
  it must not find non-"`],
@@ -1400,6 +1435,7 @@ DocsCollector.collect('java.lang.ClassLoader', [
 					[/* text */ 't', ` For resources in named modules then the method must implement the
  rules for encapsulation specified in the `],
 					[/* inline code block */ 'i', `Module`],
+					[/* text */ 't', ` `],
 					[/* reference */ 'r', `java.lang.Module#getResourceAsStream(java.lang.String)`, `getResourceAsStream`],
 					[/* text */ 't', ` method. Additionally,
  it must not find non-"`],
@@ -1560,6 +1596,9 @@ DocsCollector.collect('java.lang.ClassLoader', [
 					[/* reference */ 'r', `#getResource(java.lang.String)`, `getResource(String)`],
 					[/* text */ 't', `.  `]
 				]],
+				[/* text */ 't', `
+
+ `],
 				[/* block */ 'b', [
 					[/* text */ 't', ` Resources in named modules are subject to the encapsulation rules
  specified by `],
@@ -1656,6 +1695,9 @@ DocsCollector.collect('java.lang.ClassLoader', [
 					[/* text */ 't', `'-separated path name that
  identifies the resource. `]
 				]],
+				[/* text */ 't', `
+
+ `],
 				[/* block */ 'b', [
 					[/* text */ 't', ` Resources in named modules are subject to the encapsulation rules
  specified by `],
@@ -1710,6 +1752,9 @@ DocsCollector.collect('java.lang.ClassLoader', [
 					[/* text */ 't', `-separated path name that
  identifies the resource. `]
 				]],
+				[/* text */ 't', `
+
+ `],
 				[/* block */ 'b', [
 					[/* text */ 't', ` Resources in named modules are subject to the encapsulation rules
  specified by `],
@@ -2028,6 +2073,9 @@ DocsCollector.collect('java.lang.ClassLoader', [
 					[/* reference */ 'r', `#getSystemResource(java.lang.String)`, `getSystemResource(String)`],
 					[/* text */ 't', `.  `]
 				]],
+				[/* text */ 't', `
+
+ `],
 				[/* block */ 'b', [
 					[/* text */ 't', ` Resources in named modules are subject to the encapsulation rules
  specified by `],

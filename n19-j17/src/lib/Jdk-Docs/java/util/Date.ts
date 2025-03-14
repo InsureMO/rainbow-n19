@@ -71,18 +71,28 @@ DocsCollector.collect('java.util.Date', [
 		]],
 		[/* block */ 'b', [
 			[/* code block */ 'c', [
-				[/* text */ 't', `https://www.usno.navy.mil/USNO`]
+				[/* text */ 't', `     `],
+				[/* text */ 't', `https://www.usno.navy.mil/USNO`],
+				[/* text */ 't', `
+ `]
 			]]
 		]],
+		[/* text */ 't', `
+ `],
 		[/* block */ 'b', ''],
 		[/* block */ 'b', `
  and the material regarding "Systems of Time" at:
  `],
 		[/* block */ 'b', [
 			[/* code block */ 'c', [
-				[/* text */ 't', `https://www.usno.navy.mil/USNO/time/master-clock/systems-of-time`]
+				[/* text */ 't', `     `],
+				[/* text */ 't', `https://www.usno.navy.mil/USNO/time/master-clock/systems-of-time`],
+				[/* text */ 't', `
+ `]
 			]]
 		]],
+		[/* text */ 't', `
+ `],
 		[/* block */ 'b', ''],
 		[/* block */ 'b', `
  which has descriptions of various different time systems including
@@ -130,6 +140,8 @@ DocsCollector.collect('java.util.Date', [
      for ISO C.
  `]
 		]],
+		[/* text */ 't', `
+ `],
 		[/* block */ 'b', ''],
 		[/* block */ 'b', `
  In all cases, arguments given to methods for these purposes need
@@ -907,6 +919,8 @@ DocsCollector.collect('java.util.Date', [
 				[/* text */ 't', ` object.
  `],
 				[/* block */ 'b', [
+					[/* text */ 't', `
+ `],
 					[/* inline code block */ 'i', `Instant`],
 					[/* text */ 't', ` uses a precision of nanoseconds, whereas `],
 					[/* inline code block */ 'i', `Date`],
@@ -917,6 +931,8 @@ DocsCollector.collect('java.util.Date', [
  `]
 				]],
 				[/* block */ 'b', [
+					[/* text */ 't', `
+ `],
 					[/* inline code block */ 'i', `Instant`],
 					[/* text */ 't', ` can store points on the time-line further in the future
  and further in the past than `],

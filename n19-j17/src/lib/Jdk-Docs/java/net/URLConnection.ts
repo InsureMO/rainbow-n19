@@ -35,36 +35,54 @@ DocsCollector.collect('java.net.URLConnection', [
      of the remote object can be accessed.
  `]
 		]],
+		[/* text */ 't', `
+ `],
 		[/* block */ 'b', ''],
 		[/* block */ 'b', `
  The setup parameters are modified using the following methods:
  `],
 		[/* list */ 'l', [
 			[/* block */ 'b', [
-				[/* inline code block */ 'i', `setAllowUserInteraction`]
+				[/* inline code block */ 'i', `setAllowUserInteraction`],
+				[/* text */ 't', `
+   `]
 			]],
 			[/* block */ 'b', [
-				[/* inline code block */ 'i', `setDoInput`]
+				[/* inline code block */ 'i', `setDoInput`],
+				[/* text */ 't', `
+   `]
 			]],
 			[/* block */ 'b', [
-				[/* inline code block */ 'i', `setDoOutput`]
+				[/* inline code block */ 'i', `setDoOutput`],
+				[/* text */ 't', `
+   `]
 			]],
 			[/* block */ 'b', [
-				[/* inline code block */ 'i', `setIfModifiedSince`]
+				[/* inline code block */ 'i', `setIfModifiedSince`],
+				[/* text */ 't', `
+   `]
 			]],
 			[/* block */ 'b', [
-				[/* inline code block */ 'i', `setUseCaches`]
+				[/* inline code block */ 'i', `setUseCaches`],
+				[/* text */ 't', `
+ `]
 			]]
 		]],
+		[/* text */ 't', `
+ `],
 		[/* block */ 'b', ''],
 		[/* block */ 'b', `
  and the general request properties are modified using the method:
  `],
 		[/* list */ 'l', [
 			[/* block */ 'b', [
-				[/* inline code block */ 'i', `setRequestProperty`]
+				[/* inline code block */ 'i', `setRequestProperty`],
+				[/* text */ 't', `
+ `]
 			]]
 		]],
+		[/* text */ 't', `
+ `],
 		[/* block */ 'b', ''],
 		[/* block */ 'b', [
 			[/* text */ 't', `
@@ -100,42 +118,66 @@ DocsCollector.collect('java.net.URLConnection', [
  `],
 		[/* list */ 'l', [
 			[/* block */ 'b', [
-				[/* inline code block */ 'i', `getContent`]
+				[/* inline code block */ 'i', `getContent`],
+				[/* text */ 't', `
+   `]
 			]],
 			[/* block */ 'b', [
-				[/* inline code block */ 'i', `getHeaderField`]
+				[/* inline code block */ 'i', `getHeaderField`],
+				[/* text */ 't', `
+   `]
 			]],
 			[/* block */ 'b', [
-				[/* inline code block */ 'i', `getInputStream`]
+				[/* inline code block */ 'i', `getInputStream`],
+				[/* text */ 't', `
+   `]
 			]],
 			[/* block */ 'b', [
-				[/* inline code block */ 'i', `getOutputStream`]
+				[/* inline code block */ 'i', `getOutputStream`],
+				[/* text */ 't', `
+ `]
 			]]
 		]],
+		[/* text */ 't', `
+ `],
 		[/* block */ 'b', ''],
 		[/* block */ 'b', `
  Certain header fields are accessed frequently. The methods:
  `],
 		[/* list */ 'l', [
 			[/* block */ 'b', [
-				[/* inline code block */ 'i', `getContentEncoding`]
+				[/* inline code block */ 'i', `getContentEncoding`],
+				[/* text */ 't', `
+   `]
 			]],
 			[/* block */ 'b', [
-				[/* inline code block */ 'i', `getContentLength`]
+				[/* inline code block */ 'i', `getContentLength`],
+				[/* text */ 't', `
+   `]
 			]],
 			[/* block */ 'b', [
-				[/* inline code block */ 'i', `getContentType`]
+				[/* inline code block */ 'i', `getContentType`],
+				[/* text */ 't', `
+   `]
 			]],
 			[/* block */ 'b', [
-				[/* inline code block */ 'i', `getDate`]
+				[/* inline code block */ 'i', `getDate`],
+				[/* text */ 't', `
+   `]
 			]],
 			[/* block */ 'b', [
-				[/* inline code block */ 'i', `getExpiration`]
+				[/* inline code block */ 'i', `getExpiration`],
+				[/* text */ 't', `
+   `]
 			]],
 			[/* block */ 'b', [
-				[/* inline code block */ 'i', `getLastModified`]
+				[/* inline code block */ 'i', `getLastModified`],
+				[/* text */ 't', `
+ `]
 			]]
 		]],
+		[/* text */ 't', `
+ `],
 		[/* block */ 'b', ''],
 		[/* block */ 'b', [
 			[/* text */ 't', `
@@ -178,7 +220,10 @@ DocsCollector.collect('java.net.URLConnection', [
 		]],
 		[/* block */ 'b', [
 			[/* code block */ 'c', [
-				[/* text */ 't', `http://www.ietf.org/rfc/rfc2616.txt`]
+				[/* text */ 't', ` `],
+				[/* text */ 't', `http://www.ietf.org/rfc/rfc2616.txt`],
+				[/* text */ 't', `
+ `]
 			]]
 		]],
 		[/* text */ 't', `
@@ -569,6 +614,8 @@ DocsCollector.collect('java.net.URLConnection', [
 				[/* text */ 't', ` header field.
  `],
 				[/* block */ 'b', [
+					[/* text */ 't', `
+ `],
 					[/* text */ 't', `Note`],
 					[/* text */ 't', `: `],
 					[/* reference */ 'r', `#getContentLengthLong()`, `getContentLengthLong()`],

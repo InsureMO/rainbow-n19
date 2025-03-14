@@ -50,6 +50,8 @@ DocsCollector.collect('java.io.StreamTokenizer', [
 			[/* block */ 'b', `Whether the characters of identifiers are converted to lowercase.
  `]
 		]],
+		[/* text */ 't', `
+ `],
 		[/* block */ 'b', ''],
 		[/* block */ 'b', [
 			[/* text */ 't', `
@@ -163,6 +165,8 @@ DocsCollector.collect('java.io.StreamTokenizer', [
  `]
 					]]
 				]],
+				[/* text */ 't', `
+ `],
 				[/* block */ 'b', `
  The initial value of this field is -4.`]
 			],
@@ -482,6 +486,8 @@ DocsCollector.collect('java.io.StreamTokenizer', [
 					[/* code block */ 'c', `      0 1 2 3 4 5 6 7 8 9 . -
  `]
 				]],
+				[/* text */ 't', `
+ `],
 				[/* block */ 'b', `
  has the "numeric" attribute.
  `],

@@ -16,10 +16,14 @@ DocsCollector.collect('java.util.DoubleSummaryStatistics', [
  `]
 		]],
 		[/* code block */ 'c', [
+			[/* text */ 't', ` `],
 			[/* inline code block */ 'i', `DoubleSummaryStatistics stats = doubleStream.collect(DoubleSummaryStatistics::new,
                                                       DoubleSummaryStatistics::accept,
                                                       DoubleSummaryStatistics::combine);`]
 		]],
+		[/* text */ 't', `
+
+ `],
 		[/* block */ 'b', ''],
 		[/* block */ 'b', [
 			[/* inline code block */ 'i', `DoubleSummaryStatistics`],
@@ -34,6 +38,7 @@ DocsCollector.collect('java.util.DoubleSummaryStatistics', [
  `]
 		]],
 		[/* code block */ 'c', [
+			[/* text */ 't', ` `],
 			[/* inline code block */ 'i', `DoubleSummaryStatistics stats = people.stream()
      .collect(Collectors.summarizingDouble(Person::getWeight));`]
 		]],
@@ -237,7 +242,10 @@ DocsCollector.collect('java.util.DoubleSummaryStatistics', [
  sign, the sum may be NaN.
 
  `]
-						]]
+						]],
+						[/* text */ 't', `
+
+ `]
 					]]
 				]],
 				[/* text */ 't', `

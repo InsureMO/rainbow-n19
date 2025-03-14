@@ -8,6 +8,8 @@ DocsCollector.collect('java.time.MonthDay', [
 		[/* text */ 't', `.
  `],
 		[/* block */ 'b', [
+			[/* text */ 't', `
+ `],
 			[/* inline code block */ 'i', `MonthDay`],
 			[/* text */ 't', ` is an immutable date-time object that represents the combination
  of a month and day-of-month. Any field that can be derived from a month and day,
@@ -188,10 +190,14 @@ DocsCollector.collect('java.time.MonthDay', [
 				]],
 				[/* list */ 'l', [
 					[/* block */ 'b', [
-						[/* inline code block */ 'i', `MONTH_OF_YEAR`]
+						[/* inline code block */ 'i', `MONTH_OF_YEAR`],
+						[/* text */ 't', `
+ `]
 					]],
 					[/* block */ 'b', [
-						[/* inline code block */ 'i', `YEAR`]
+						[/* inline code block */ 'i', `YEAR`],
+						[/* text */ 't', `
+ `]
 					]]
 				]],
 				[/* text */ 't', `
@@ -605,6 +611,8 @@ DocsCollector.collect('java.time.MonthDay', [
 				[/* code block */ 'c', `   // these two lines are equivalent, but the second approach is recommended
    temporal = thisMonthDay.adjustInto(temporal);
    temporal = temporal.with(thisMonthDay);
+ `],
+				[/* text */ 't', `
  `],
 				[/* block */ 'b', ''],
 				[/* block */ 'b', `

@@ -414,6 +414,8 @@ DocsCollector.collect('java.time.ZoneOffset', [
    temporal = thisOffset.adjustInto(temporal);
    temporal = temporal.with(thisOffset);
  `],
+				[/* text */ 't', `
+ `],
 				[/* block */ 'b', ''],
 				[/* block */ 'b', `
  This instance is immutable and unaffected by this method call.`]
@@ -652,34 +654,54 @@ DocsCollector.collect('java.time.ZoneOffset', [
  `]
 					]],
 					[/* block */ 'b', [
-						[/* inline code block */ 'i', `+h`]
+						[/* inline code block */ 'i', `+h`],
+						[/* text */ 't', `
+ `]
 					]],
 					[/* block */ 'b', [
-						[/* inline code block */ 'i', `+hh`]
+						[/* inline code block */ 'i', `+hh`],
+						[/* text */ 't', `
+ `]
 					]],
 					[/* block */ 'b', [
-						[/* inline code block */ 'i', `+hh:mm`]
+						[/* inline code block */ 'i', `+hh:mm`],
+						[/* text */ 't', `
+ `]
 					]],
 					[/* block */ 'b', [
-						[/* inline code block */ 'i', `-hh:mm`]
+						[/* inline code block */ 'i', `-hh:mm`],
+						[/* text */ 't', `
+ `]
 					]],
 					[/* block */ 'b', [
-						[/* inline code block */ 'i', `+hhmm`]
+						[/* inline code block */ 'i', `+hhmm`],
+						[/* text */ 't', `
+ `]
 					]],
 					[/* block */ 'b', [
-						[/* inline code block */ 'i', `-hhmm`]
+						[/* inline code block */ 'i', `-hhmm`],
+						[/* text */ 't', `
+ `]
 					]],
 					[/* block */ 'b', [
-						[/* inline code block */ 'i', `+hh:mm:ss`]
+						[/* inline code block */ 'i', `+hh:mm:ss`],
+						[/* text */ 't', `
+ `]
 					]],
 					[/* block */ 'b', [
-						[/* inline code block */ 'i', `-hh:mm:ss`]
+						[/* inline code block */ 'i', `-hh:mm:ss`],
+						[/* text */ 't', `
+ `]
 					]],
 					[/* block */ 'b', [
-						[/* inline code block */ 'i', `+hhmmss`]
+						[/* inline code block */ 'i', `+hhmmss`],
+						[/* text */ 't', `
+ `]
 					]],
 					[/* block */ 'b', [
-						[/* inline code block */ 'i', `-hhmmss`]
+						[/* inline code block */ 'i', `-hhmmss`],
+						[/* text */ 't', `
+ `]
 					]]
 				]],
 				[/* text */ 't', `

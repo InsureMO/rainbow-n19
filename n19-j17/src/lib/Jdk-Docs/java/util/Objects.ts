@@ -606,6 +606,9 @@ DocsCollector.collect('java.util.Objects', [
  }
  `]
 				]],
+				[/* text */ 't', `
+
+ `],
 				[/* text */ 't', `Warning: When a single object reference is supplied, the returned
  value does not equal the hash code of that object reference.`],
 				[/* text */ 't', ` This

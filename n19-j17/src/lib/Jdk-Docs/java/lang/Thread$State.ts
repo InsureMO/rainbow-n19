@@ -52,6 +52,9 @@ DocsCollector.collect('java.lang.Thread$State', [
      `]
 			]]
 		]],
+		[/* text */ 't', `
+
+ `],
 		[/* block */ 'b', `
  A thread can be in only one state at a given point in time.
  These states are virtual machine states which do not reflect

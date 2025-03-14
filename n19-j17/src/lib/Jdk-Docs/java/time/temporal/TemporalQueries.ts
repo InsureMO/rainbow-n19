@@ -116,65 +116,101 @@ DocsCollector.collect('java.time.temporal.TemporalQueries', [
 					[/* inline code block */ 'i', `TemporalAccessor`],
 					[/* text */ 't', ` is as follows:`],
 					[/* new line */ 'n'],
+					[/* text */ 't', `
+ `],
 					[/* inline code block */ 'i', `LocalDate`],
 					[/* text */ 't', ` returns `],
 					[/* inline code block */ 'i', `IsoChronology.INSTANCE`],
 					[/* new line */ 'n'],
+					[/* text */ 't', `
+ `],
 					[/* inline code block */ 'i', `LocalTime`],
 					[/* text */ 't', ` returns null (does not represent a date)`],
 					[/* new line */ 'n'],
+					[/* text */ 't', `
+ `],
 					[/* inline code block */ 'i', `LocalDateTime`],
 					[/* text */ 't', ` returns `],
 					[/* inline code block */ 'i', `IsoChronology.INSTANCE`],
 					[/* new line */ 'n'],
+					[/* text */ 't', `
+ `],
 					[/* inline code block */ 'i', `ZonedDateTime`],
 					[/* text */ 't', ` returns `],
 					[/* inline code block */ 'i', `IsoChronology.INSTANCE`],
 					[/* new line */ 'n'],
+					[/* text */ 't', `
+ `],
 					[/* inline code block */ 'i', `OffsetTime`],
 					[/* text */ 't', ` returns null (does not represent a date)`],
 					[/* new line */ 'n'],
+					[/* text */ 't', `
+ `],
 					[/* inline code block */ 'i', `OffsetDateTime`],
 					[/* text */ 't', ` returns `],
 					[/* inline code block */ 'i', `IsoChronology.INSTANCE`],
 					[/* new line */ 'n'],
+					[/* text */ 't', `
+ `],
 					[/* inline code block */ 'i', `ChronoLocalDate`],
 					[/* text */ 't', ` returns the associated chronology`],
 					[/* new line */ 'n'],
+					[/* text */ 't', `
+ `],
 					[/* inline code block */ 'i', `ChronoLocalDateTime`],
 					[/* text */ 't', ` returns the associated chronology`],
 					[/* new line */ 'n'],
+					[/* text */ 't', `
+ `],
 					[/* inline code block */ 'i', `ChronoZonedDateTime`],
 					[/* text */ 't', ` returns the associated chronology`],
 					[/* new line */ 'n'],
+					[/* text */ 't', `
+ `],
 					[/* inline code block */ 'i', `Era`],
 					[/* text */ 't', ` returns the associated chronology`],
 					[/* new line */ 'n'],
+					[/* text */ 't', `
+ `],
 					[/* inline code block */ 'i', `DayOfWeek`],
 					[/* text */ 't', ` returns null (shared across chronologies)`],
 					[/* new line */ 'n'],
+					[/* text */ 't', `
+ `],
 					[/* inline code block */ 'i', `Month`],
 					[/* text */ 't', ` returns `],
 					[/* inline code block */ 'i', `IsoChronology.INSTANCE`],
 					[/* new line */ 'n'],
+					[/* text */ 't', `
+ `],
 					[/* inline code block */ 'i', `Year`],
 					[/* text */ 't', ` returns `],
 					[/* inline code block */ 'i', `IsoChronology.INSTANCE`],
 					[/* new line */ 'n'],
+					[/* text */ 't', `
+ `],
 					[/* inline code block */ 'i', `YearMonth`],
 					[/* text */ 't', ` returns `],
 					[/* inline code block */ 'i', `IsoChronology.INSTANCE`],
 					[/* new line */ 'n'],
+					[/* text */ 't', `
+ `],
 					[/* inline code block */ 'i', `MonthDay`],
 					[/* text */ 't', ` returns null `],
 					[/* inline code block */ 'i', `IsoChronology.INSTANCE`],
 					[/* new line */ 'n'],
+					[/* text */ 't', `
+ `],
 					[/* inline code block */ 'i', `ZoneOffset`],
 					[/* text */ 't', ` returns null (does not represent a date)`],
 					[/* new line */ 'n'],
+					[/* text */ 't', `
+ `],
 					[/* inline code block */ 'i', `Instant`],
 					[/* text */ 't', ` returns null (does not represent a date)`],
-					[/* new line */ 'n']
+					[/* new line */ 'n'],
+					[/* text */ 't', `
+ `]
 				]],
 				[/* block */ 'b', [
 					[/* text */ 't', `
@@ -330,68 +366,102 @@ DocsCollector.collect('java.time.temporal.TemporalQueries', [
 					[/* inline code block */ 'i', `TemporalAccessor`],
 					[/* text */ 't', ` is as follows:`],
 					[/* new line */ 'n'],
+					[/* text */ 't', `
+ `],
 					[/* inline code block */ 'i', `LocalDate`],
 					[/* text */ 't', ` returns `],
 					[/* inline code block */ 'i', `DAYS`],
 					[/* new line */ 'n'],
+					[/* text */ 't', `
+ `],
 					[/* inline code block */ 'i', `LocalTime`],
 					[/* text */ 't', ` returns `],
 					[/* inline code block */ 'i', `NANOS`],
 					[/* new line */ 'n'],
+					[/* text */ 't', `
+ `],
 					[/* inline code block */ 'i', `LocalDateTime`],
 					[/* text */ 't', ` returns `],
 					[/* inline code block */ 'i', `NANOS`],
 					[/* new line */ 'n'],
+					[/* text */ 't', `
+ `],
 					[/* inline code block */ 'i', `ZonedDateTime`],
 					[/* text */ 't', ` returns `],
 					[/* inline code block */ 'i', `NANOS`],
 					[/* new line */ 'n'],
+					[/* text */ 't', `
+ `],
 					[/* inline code block */ 'i', `OffsetTime`],
 					[/* text */ 't', ` returns `],
 					[/* inline code block */ 'i', `NANOS`],
 					[/* new line */ 'n'],
+					[/* text */ 't', `
+ `],
 					[/* inline code block */ 'i', `OffsetDateTime`],
 					[/* text */ 't', ` returns `],
 					[/* inline code block */ 'i', `NANOS`],
 					[/* new line */ 'n'],
+					[/* text */ 't', `
+ `],
 					[/* inline code block */ 'i', `ChronoLocalDate`],
 					[/* text */ 't', ` returns `],
 					[/* inline code block */ 'i', `DAYS`],
 					[/* new line */ 'n'],
+					[/* text */ 't', `
+ `],
 					[/* inline code block */ 'i', `ChronoLocalDateTime`],
 					[/* text */ 't', ` returns `],
 					[/* inline code block */ 'i', `NANOS`],
 					[/* new line */ 'n'],
+					[/* text */ 't', `
+ `],
 					[/* inline code block */ 'i', `ChronoZonedDateTime`],
 					[/* text */ 't', ` returns `],
 					[/* inline code block */ 'i', `NANOS`],
 					[/* new line */ 'n'],
+					[/* text */ 't', `
+ `],
 					[/* inline code block */ 'i', `Era`],
 					[/* text */ 't', ` returns `],
 					[/* inline code block */ 'i', `ERAS`],
 					[/* new line */ 'n'],
+					[/* text */ 't', `
+ `],
 					[/* inline code block */ 'i', `DayOfWeek`],
 					[/* text */ 't', ` returns `],
 					[/* inline code block */ 'i', `DAYS`],
 					[/* new line */ 'n'],
+					[/* text */ 't', `
+ `],
 					[/* inline code block */ 'i', `Month`],
 					[/* text */ 't', ` returns `],
 					[/* inline code block */ 'i', `MONTHS`],
 					[/* new line */ 'n'],
+					[/* text */ 't', `
+ `],
 					[/* inline code block */ 'i', `Year`],
 					[/* text */ 't', ` returns `],
 					[/* inline code block */ 'i', `YEARS`],
 					[/* new line */ 'n'],
+					[/* text */ 't', `
+ `],
 					[/* inline code block */ 'i', `YearMonth`],
 					[/* text */ 't', ` returns `],
 					[/* inline code block */ 'i', `MONTHS`],
 					[/* new line */ 'n'],
+					[/* text */ 't', `
+ `],
 					[/* inline code block */ 'i', `MonthDay`],
 					[/* text */ 't', ` returns null (does not represent a complete date or time)`],
 					[/* new line */ 'n'],
+					[/* text */ 't', `
+ `],
 					[/* inline code block */ 'i', `ZoneOffset`],
 					[/* text */ 't', ` returns null (does not represent a date or time)`],
 					[/* new line */ 'n'],
+					[/* text */ 't', `
+ `],
 					[/* inline code block */ 'i', `Instant`],
 					[/* text */ 't', ` returns `],
 					[/* inline code block */ 'i', `NANOS`],
@@ -502,54 +572,88 @@ DocsCollector.collect('java.time.temporal.TemporalQueries', [
 					[/* inline code block */ 'i', `TemporalAccessor`],
 					[/* text */ 't', ` is as follows:`],
 					[/* new line */ 'n'],
+					[/* text */ 't', `
+ `],
 					[/* inline code block */ 'i', `LocalDate`],
 					[/* text */ 't', ` returns null`],
 					[/* new line */ 'n'],
+					[/* text */ 't', `
+ `],
 					[/* inline code block */ 'i', `LocalTime`],
 					[/* text */ 't', ` returns null`],
 					[/* new line */ 'n'],
+					[/* text */ 't', `
+ `],
 					[/* inline code block */ 'i', `LocalDateTime`],
 					[/* text */ 't', ` returns null`],
 					[/* new line */ 'n'],
+					[/* text */ 't', `
+ `],
 					[/* inline code block */ 'i', `ZonedDateTime`],
 					[/* text */ 't', ` returns the associated zone`],
 					[/* new line */ 'n'],
+					[/* text */ 't', `
+ `],
 					[/* inline code block */ 'i', `OffsetTime`],
 					[/* text */ 't', ` returns null`],
 					[/* new line */ 'n'],
+					[/* text */ 't', `
+ `],
 					[/* inline code block */ 'i', `OffsetDateTime`],
 					[/* text */ 't', ` returns null`],
 					[/* new line */ 'n'],
+					[/* text */ 't', `
+ `],
 					[/* inline code block */ 'i', `ChronoLocalDate`],
 					[/* text */ 't', ` returns null`],
 					[/* new line */ 'n'],
+					[/* text */ 't', `
+ `],
 					[/* inline code block */ 'i', `ChronoLocalDateTime`],
 					[/* text */ 't', ` returns null`],
 					[/* new line */ 'n'],
+					[/* text */ 't', `
+ `],
 					[/* inline code block */ 'i', `ChronoZonedDateTime`],
 					[/* text */ 't', ` returns the associated zone`],
 					[/* new line */ 'n'],
+					[/* text */ 't', `
+ `],
 					[/* inline code block */ 'i', `Era`],
 					[/* text */ 't', ` returns null`],
 					[/* new line */ 'n'],
+					[/* text */ 't', `
+ `],
 					[/* inline code block */ 'i', `DayOfWeek`],
 					[/* text */ 't', ` returns null`],
 					[/* new line */ 'n'],
+					[/* text */ 't', `
+ `],
 					[/* inline code block */ 'i', `Month`],
 					[/* text */ 't', ` returns null`],
 					[/* new line */ 'n'],
+					[/* text */ 't', `
+ `],
 					[/* inline code block */ 'i', `Year`],
 					[/* text */ 't', ` returns null`],
 					[/* new line */ 'n'],
+					[/* text */ 't', `
+ `],
 					[/* inline code block */ 'i', `YearMonth`],
 					[/* text */ 't', ` returns null`],
 					[/* new line */ 'n'],
+					[/* text */ 't', `
+ `],
 					[/* inline code block */ 'i', `MonthDay`],
 					[/* text */ 't', ` returns null`],
 					[/* new line */ 'n'],
+					[/* text */ 't', `
+ `],
 					[/* inline code block */ 'i', `ZoneOffset`],
 					[/* text */ 't', ` returns null`],
 					[/* new line */ 'n'],
+					[/* text */ 't', `
+ `],
 					[/* inline code block */ 'i', `Instant`],
 					[/* text */ 't', ` returns null`],
 					[/* new line */ 'n']

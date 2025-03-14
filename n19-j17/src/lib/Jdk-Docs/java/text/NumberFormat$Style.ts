@@ -6,6 +6,8 @@ DocsCollector.collect('java.text.NumberFormat$Style', [
 		[/* text */ 't', `A number format style.
  `],
 		[/* block */ 'b', [
+			[/* text */ 't', `
+ `],
 			[/* inline code block */ 'i', `Style`],
 			[/* text */ 't', ` is an enum which represents the style for formatting
  a number within a given `],

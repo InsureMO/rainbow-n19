@@ -16,16 +16,24 @@ DocsCollector.collect('java.text.CollationElementIterator', [
  For example, consider the following in Spanish:
  `],
 		[/* block */ 'b', [
+			[/* text */ 't', `
+ `],
 			[/* code block */ 'c', ` "ca" → the first key is key('c') and second key is key('a').
  "cha" → the first key is key('ch') and second key is key('a').
+ `],
+			[/* text */ 't', `
  `]
 		]],
 		[/* text */ 't', `
  And in German,
  `],
 		[/* block */ 'b', [
+			[/* text */ 't', `
+ `],
 			[/* code block */ 'c', ` "äb" → the first key is key('a'), the second key is key('e'), and
  the third key is key('b').
+ `],
+			[/* text */ 't', `
  `]
 		]],
 		[/* text */ 't', `
@@ -55,6 +63,8 @@ DocsCollector.collect('java.text.CollationElementIterator', [
  Example of the iterator usage,
  `],
 		[/* block */ 'b', [
+			[/* text */ 't', `
+ `],
 			[/* code block */ 'c', `
   String testString = "This is a test";
   Collator col = Collator.getInstance();
@@ -64,10 +74,17 @@ DocsCollector.collect('java.text.CollationElementIterator', [
       int primaryOrder = CollationElementIterator.primaryOrder(collationElementIterator.next());
           :
   }
+ `],
+			[/* text */ 't', `
  `]
 		]],
+		[/* text */ 't', `
+
+ `],
 		[/* block */ 'b', ''],
 		[/* block */ 'b', [
+			[/* text */ 't', `
+ `],
 			[/* inline code block */ 'i', `CollationElementIterator.next`],
 			[/* text */ 't', ` returns the collation order
  of the next character. A collation order consists of primary order,
@@ -82,6 +99,7 @@ DocsCollector.collect('java.text.CollationElementIterator', [
 		]],
 		[/* block */ 'b', [
 			[/* text */ 't', `Note:`],
+			[/* text */ 't', ` `],
 			[/* inline code block */ 'i', `CollationElementIterator`],
 			[/* text */ 't', ` is a part of
  `],
@@ -145,6 +163,8 @@ DocsCollector.collect('java.text.CollationElementIterator', [
  collation elements, this doesn't mean the same thing as "return the
  collation element [or ordering priority] of the next character in the
  string".`],
+				[/* text */ 't', `
+ `],
 				[/* block */ 'b', `This function returns the collation element that the iterator is currently
  pointing to and then updates the internal pointer to point to the next element.
  previous() updates the pointer first and then returns the element.  This
@@ -167,6 +187,8 @@ DocsCollector.collect('java.text.CollationElementIterator', [
  collation elements, this doesn't mean the same thing as "return the
  collation element [or ordering priority] of the previous character in the
  string".`],
+				[/* text */ 't', `
+ `],
 				[/* block */ 'b', `This function updates the iterator's internal pointer to point to the
  collation element preceding the one it's currently pointing to and then
  returns that element, while next() returns the current element and then

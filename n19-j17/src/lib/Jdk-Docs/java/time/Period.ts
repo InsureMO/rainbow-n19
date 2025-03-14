@@ -681,6 +681,8 @@ DocsCollector.collect('java.time.Period', [
    dateTime = thisPeriod.addTo(dateTime);
    dateTime = dateTime.plus(thisPeriod);
  `],
+				[/* text */ 't', `
+ `],
 				[/* block */ 'b', ''],
 				[/* block */ 'b', `
  The calculation operates as follows.
@@ -740,6 +742,8 @@ DocsCollector.collect('java.time.Period', [
 				[/* code block */ 'c', `   // these two lines are equivalent, but the second approach is recommended
    dateTime = thisPeriod.subtractFrom(dateTime);
    dateTime = dateTime.minus(thisPeriod);
+ `],
+				[/* text */ 't', `
  `],
 				[/* block */ 'b', ''],
 				[/* block */ 'b', `

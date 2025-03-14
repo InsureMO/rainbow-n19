@@ -208,6 +208,8 @@ DocsCollector.collect('java.time.chrono.ThaiBuddhistDate', [
   date = date.minus(duration);             // subtract a Duration instance
   date = date.minus(workingDays(6));       // example user-written workingDays method
  `],
+				[/* text */ 't', `
+ `],
 				[/* block */ 'b', ''],
 				[/* block */ 'b', [
 					[/* text */ 't', `
@@ -293,6 +295,8 @@ DocsCollector.collect('java.time.chrono.ThaiBuddhistDate', [
 				[/* code block */ 'c', `  date = date.plus(period);                // add a Period instance
   date = date.plus(duration);              // add a Duration instance
   date = date.plus(workingDays(6));        // example user-written workingDays method
+ `],
+				[/* text */ 't', `
  `],
 				[/* block */ 'b', ''],
 				[/* block */ 'b', [

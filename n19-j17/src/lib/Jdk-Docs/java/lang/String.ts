@@ -41,6 +41,8 @@ DocsCollector.collect('java.lang.String', [
      String d = cde.substring(1, 2);
  `]
 		]],
+		[/* text */ 't', `
+ `],
 		[/* block */ 'b', ''],
 		[/* block */ 'b', [
 			[/* text */ 't', `
@@ -198,6 +200,7 @@ DocsCollector.collect('java.lang.String', [
  `],
 				[/* block */ 'b', [
 					[/* code block */ 'c', [
+						[/* text */ 't', `     `],
 						[/* text */ 't', `c`],
 						[/* text */ 't', ` == (char)(((hibyte & 0xff) << 8)
                          | (`],
@@ -900,6 +903,9 @@ DocsCollector.collect('java.lang.String', [
  `]
 					]]
 				]],
+				[/* text */ 't', `
+
+ `],
 				[/* block */ 'b', ''],
 				[/* block */ 'b', [
 					[/* text */ 't', `Note that this method does `],
@@ -1000,9 +1006,13 @@ DocsCollector.collect('java.lang.String', [
  `]
 				]],
 				[/* block */ 'b', [
+					[/* text */ 't', `
+ `],
 					[/* reference */ 'r', `java.util.regex.Pattern`, `Pattern`],
 					[/* text */ 't', `.`],
-					[/* reference */ 'r', `java.util.regex.Pattern#matches(java.lang.String,java.lang.CharSequence)`, `matches(regex, str)`]
+					[/* reference */ 'r', `java.util.regex.Pattern#matches(java.lang.String,java.lang.CharSequence)`, `matches(regex, str)`],
+					[/* text */ 't', `
+ `]
 				]],
 				[/* block */ 'b', '']
 			],
@@ -1101,6 +1111,8 @@ DocsCollector.collect('java.lang.String', [
 						[/* text */ 't', `,
  `],
 						[/* reference */ 'r', `java.lang.Character#toLowerCase(int)`, `Character.toLowerCase(`],
+						[/* text */ 't', `
+ `],
 						[/* reference */ 'r', `java.lang.Character#toUpperCase(int)`, `Character.toUpperCase(int)`],
 						[/* inline code block */ 'i', `)`],
 						[/* text */ 't', ` on all pairs of Unicode code points
@@ -1108,6 +1120,9 @@ DocsCollector.collect('java.lang.String', [
  `]
 					]]
 				]],
+				[/* text */ 't', `
+
+ `],
 				[/* block */ 'b', ''],
 				[/* block */ 'b', [
 					[/* text */ 't', `Note that this method does `],
@@ -1229,10 +1244,17 @@ DocsCollector.collect('java.lang.String', [
 						[/* inline code block */ 'i', `this.charAt(toffset +`],
 						[/* text */ 't', `k`],
 						[/* inline code block */ 'i', `) != other.charAt(ooffset +`],
+						[/* text */ 't', `
+ `],
 						[/* text */ 't', `k`],
-						[/* inline code block */ 'i', `)`]
+						[/* inline code block */ 'i', `)`],
+						[/* text */ 't', `
+ `]
 					]]
 				]],
+				[/* text */ 't', `
+
+ `],
 				[/* block */ 'b', ''],
 				[/* block */ 'b', [
 					[/* text */ 't', `Note that this method does `],
@@ -1728,6 +1750,9 @@ DocsCollector.collect('java.lang.String', [
 					[/* code block */ 'c', ` this.length()-anotherString.length()
  `]
 				]],
+				[/* text */ 't', `
+
+ `],
 				[/* block */ 'b', ''],
 				[/* block */ 'b', [
 					[/* text */ 't', `For finer-grained String comparison, refer to
@@ -2526,6 +2551,8 @@ DocsCollector.collect('java.lang.String', [
 					[/* inline code block */ 'i', `n < 0`],
 					[/* text */ 't', ` then up to `],
 					[/* inline code block */ 'i', `n`],
+					[/* text */ 't', `
+ `],
 					[/* reference */ 'r', `java.lang.Character#isWhitespace(int)`, `white space characters`],
 					[/* text */ 't', ` are removed
  from the beginning of each line. If a given line does not contain
@@ -2698,6 +2725,7 @@ DocsCollector.collect('java.lang.String', [
 					[/* inline code block */ 'i', `.replaceAll(`],
 					[/* text */ 't', `regex`],
 					[/* inline code block */ 'i', `,`],
+					[/* text */ 't', ` `],
 					[/* text */ 't', `repl`],
 					[/* inline code block */ 'i', `)`],
 					[/* text */ 't', `
@@ -2706,8 +2734,15 @@ DocsCollector.collect('java.lang.String', [
  `]
 				]],
 				[/* block */ 'b', [
-					[/* inline code block */ 'i', `Pattern.compile(regex).matcher(str).replaceAll(repl)`]
+					[/* text */ 't', `
+ `],
+					[/* inline code block */ 'i', `Pattern.compile(regex).matcher(str).replaceAll(repl)`],
+					[/* text */ 't', `
+ `]
 				]],
+				[/* text */ 't', `
+
+`],
 				[/* block */ 'b', ''],
 				[/* block */ 'b', [
 					[/* text */ 't', `
@@ -2760,6 +2795,7 @@ DocsCollector.collect('java.lang.String', [
 					[/* inline code block */ 'i', `.replaceFirst(`],
 					[/* text */ 't', `regex`],
 					[/* inline code block */ 'i', `,`],
+					[/* text */ 't', ` `],
 					[/* text */ 't', `repl`],
 					[/* inline code block */ 'i', `)`],
 					[/* text */ 't', `
@@ -2768,8 +2804,15 @@ DocsCollector.collect('java.lang.String', [
  `]
 				]],
 				[/* block */ 'b', [
-					[/* inline code block */ 'i', `Pattern.compile(regex).matcher(str).replaceFirst(repl)`]
+					[/* text */ 't', `
+ `],
+					[/* inline code block */ 'i', `Pattern.compile(regex).matcher(str).replaceFirst(repl)`],
+					[/* text */ 't', `
+ `]
 				]],
+				[/* text */ 't', `
+
+`],
 				[/* block */ 'b', ''],
 				[/* block */ 'b', [
 					[/* text */ 't', `
@@ -2951,7 +2994,9 @@ DocsCollector.collect('java.lang.String', [
 							[/* reference */ 'r', `java.lang.Character#isWhitespace(int)`, `white space`],
 							[/* text */ 't', `
    characters are counted.`]
-						]]
+						]],
+						[/* text */ 't', `
+   `]
 					]],
 					[/* block */ 'b', [
 						[/* block */ 'b', [
@@ -2962,9 +3007,13 @@ DocsCollector.collect('java.lang.String', [
    `],
 							[/* reference */ 'r', `#isBlank()`, `blank`],
 							[/* text */ 't', `.`]
-						]]
+						]],
+						[/* text */ 't', `
+   `]
 					]]
 				]],
+				[/* text */ 't', `
+ `],
 				[/* block */ 'b', ''],
 				[/* block */ 'b', [
 					[/* text */ 't', `The `],
@@ -3196,6 +3245,8 @@ DocsCollector.collect('java.lang.String', [
 				[/* text */ 't', `.
  `],
 				[/* block */ 'b', [
+					[/* text */ 't', `
+ `],
 					[/* text */ 't', `Note:`],
 					[/* text */ 't', ` This method is locale sensitive, and may produce unexpected
  results if used for strings that are intended to be interpreted locale
@@ -3357,6 +3408,8 @@ DocsCollector.collect('java.lang.String', [
 				[/* text */ 't', `.
  `],
 				[/* block */ 'b', [
+					[/* text */ 't', `
+ `],
 					[/* text */ 't', `Note:`],
 					[/* text */ 't', ` This method is locale sensitive, and may produce unexpected
  results if used for strings that are intended to be interpreted locale
@@ -3863,6 +3916,9 @@ DocsCollector.collect('java.lang.String', [
 						]]
 					]]
 				]],
+				[/* text */ 't', `
+
+ `],
 				[/* block */ 'b', ''],
 				[/* block */ 'b', [
 					[/* text */ 't', ` The string `],
@@ -3946,6 +4002,9 @@ DocsCollector.collect('java.lang.String', [
 						]],
 					]
 				]],
+				[/* text */ 't', `
+
+ `],
 				[/* block */ 'b', ''],
 				[/* block */ 'b', [
 					[/* text */ 't', ` An invocation of this method of the form
@@ -3963,7 +4022,11 @@ DocsCollector.collect('java.lang.String', [
  `]
 				]],
 				[/* block */ 'b', [
-					[/* inline code block */ 'i', `Pattern.compile(regex).split(str, n)`]
+					[/* text */ 't', `
+ `],
+					[/* inline code block */ 'i', `Pattern.compile(regex).split(str, n)`],
+					[/* text */ 't', `
+ `]
 				]],
 				[/* block */ 'b', '']
 			],
@@ -4754,29 +4817,38 @@ DocsCollector.collect('java.lang.String', [
           `],
 					[/* list */ 'l', [
 						[/* block */ 'b', [
+							[/* text */ 't', ` `],
 							[/* inline code block */ 'i', `srcBegin`],
 							[/* text */ 't', ` is negative
             `]
 						]],
 						[/* block */ 'b', [
+							[/* text */ 't', ` `],
 							[/* inline code block */ 'i', `srcBegin`],
 							[/* text */ 't', ` is greater than `],
-							[/* inline code block */ 'i', `srcEnd`]
+							[/* inline code block */ 'i', `srcEnd`],
+							[/* text */ 't', `
+            `]
 						]],
 						[/* block */ 'b', [
+							[/* text */ 't', ` `],
 							[/* inline code block */ 'i', `srcEnd`],
 							[/* text */ 't', ` is greater than the length of this String
             `]
 						]],
 						[/* block */ 'b', [
+							[/* text */ 't', ` `],
 							[/* inline code block */ 'i', `dstBegin`],
 							[/* text */ 't', ` is negative
             `]
 						]],
 						[/* block */ 'b', [
+							[/* text */ 't', ` `],
 							[/* inline code block */ 'i', `dstBegin+(srcEnd-srcBegin)`],
 							[/* text */ 't', ` is larger than `],
-							[/* inline code block */ 'i', `dst.length`]
+							[/* inline code block */ 'i', `dst.length`],
+							[/* text */ 't', `
+          `]
 						]]
 					]]
 				]]
@@ -4844,7 +4916,9 @@ DocsCollector.collect('java.lang.String', [
 						[/* block */ 'b', [
 							[/* inline code block */ 'i', `srcBegin`],
 							[/* text */ 't', ` is greater than `],
-							[/* inline code block */ 'i', `srcEnd`]
+							[/* inline code block */ 'i', `srcEnd`],
+							[/* text */ 't', `
+            `]
 						]],
 						[/* block */ 'b', [
 							[/* inline code block */ 'i', `srcEnd`],

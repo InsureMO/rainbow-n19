@@ -237,7 +237,9 @@ DocsCollector.collect('java.time.chrono.ChronoLocalDate', [
  `],
 			[/* block */ 'b', [
 				[/* text */ 't', `convert back to `],
-				[/* inline code block */ 'i', `LocalDate`]
+				[/* inline code block */ 'i', `LocalDate`],
+				[/* text */ 't', `
+ `]
 			]]
 		]],
 		[/* text */ 't', `
@@ -896,6 +898,8 @@ DocsCollector.collect('java.time.chrono.ChronoLocalDate', [
   date = date.minus(duration);             // subtract a Duration instance
   date = date.minus(workingDays(6));       // example user-written workingDays method
  `],
+				[/* text */ 't', `
+ `],
 				[/* block */ 'b', ''],
 				[/* block */ 'b', [
 					[/* text */ 't', `
@@ -989,6 +993,8 @@ DocsCollector.collect('java.time.chrono.ChronoLocalDate', [
 				[/* code block */ 'c', `  date = date.plus(period);                // add a Period instance
   date = date.plus(duration);              // add a Duration instance
   date = date.plus(workingDays(6));        // example user-written workingDays method
+ `],
+				[/* text */ 't', `
  `],
 				[/* block */ 'b', ''],
 				[/* block */ 'b', [
@@ -1233,6 +1239,8 @@ DocsCollector.collect('java.time.chrono.ChronoLocalDate', [
 				[/* code block */ 'c', `   // these two lines are equivalent, but the second approach is recommended
    temporal = thisLocalDate.adjustInto(temporal);
    temporal = temporal.with(thisLocalDate);
+ `],
+				[/* text */ 't', `
  `],
 				[/* block */ 'b', ''],
 				[/* block */ 'b', `

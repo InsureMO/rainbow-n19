@@ -51,6 +51,9 @@ DocsCollector.collect('java.util.Spliterators', [
 			[/* method description */
 				[/* text */ 't', `Creates an empty `],
 				[/* inline code block */ 'i', `Spliterator`],
+				[/* text */ 't', `
+
+ `],
 				[/* block */ 'b', [
 					[/* text */ 't', `The empty spliterator reports `],
 					[/* reference */ 'r', `java.util.Spliterator#SIZED`, `Spliterator.SIZED`],
@@ -461,6 +464,9 @@ DocsCollector.collect('java.util.Spliterators', [
 			[/* method description */
 				[/* text */ 't', `Creates an empty `],
 				[/* inline code block */ 'i', `Spliterator.OfDouble`],
+				[/* text */ 't', `
+
+ `],
 				[/* block */ 'b', [
 					[/* text */ 't', `The empty spliterator reports `],
 					[/* reference */ 'r', `java.util.Spliterator#SIZED`, `Spliterator.SIZED`],
@@ -748,6 +754,9 @@ DocsCollector.collect('java.util.Spliterators', [
 			[/* method description */
 				[/* text */ 't', `Creates an empty `],
 				[/* inline code block */ 'i', `Spliterator.OfInt`],
+				[/* text */ 't', `
+
+ `],
 				[/* block */ 'b', [
 					[/* text */ 't', `The empty spliterator reports `],
 					[/* reference */ 'r', `java.util.Spliterator#SIZED`, `Spliterator.SIZED`],
@@ -1022,6 +1031,9 @@ DocsCollector.collect('java.util.Spliterators', [
 			[/* method description */
 				[/* text */ 't', `Creates an empty `],
 				[/* inline code block */ 'i', `Spliterator.OfLong`],
+				[/* text */ 't', `
+
+ `],
 				[/* block */ 'b', [
 					[/* text */ 't', `The empty spliterator reports `],
 					[/* reference */ 'r', `java.util.Spliterator#SIZED`, `Spliterator.SIZED`],

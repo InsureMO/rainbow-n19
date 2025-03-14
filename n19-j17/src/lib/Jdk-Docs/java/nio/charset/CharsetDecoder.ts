@@ -8,6 +8,9 @@ DocsCollector.collect('java.nio.charset.CharsetDecoder', [
 
  `],
 		[/* anchor */ 'r', '#-id', `steps`, ``],
+		[/* text */ 't', `
+
+ `],
 		[/* block */ 'b', [
 			[/* text */ 't', ` The input byte sequence is provided in a byte buffer or a series
  of such buffers.  The output character sequence is written to a character buffer
@@ -82,6 +85,9 @@ DocsCollector.collect('java.nio.charset.CharsetDecoder', [
 
  `],
 		[/* anchor */ 'r', '#-id', `ce`, ``],
+		[/* text */ 't', `
+
+ `],
 		[/* block */ 'b', ''],
 		[/* block */ 'b', [
 			[/* text */ 't', ` There are two general types of decoding errors.  If the input byte
@@ -94,7 +100,10 @@ DocsCollector.collect('java.nio.charset.CharsetDecoder', [
 			[/* text */ 't', ` has been encountered.
 
  `],
-			[/* anchor */ 'r', '#-id', `cae`, ``]
+			[/* anchor */ 'r', '#-id', `cae`, ``],
+			[/* text */ 't', `
+
+ `]
 		]],
 		[/* block */ 'b', [
 			[/* text */ 't', ` How a decoding error is handled depends upon the action requested for
@@ -663,6 +672,7 @@ DocsCollector.collect('java.nio.charset.CharsetDecoder', [
 				[/* list */ 'l', [
 					[/* block */ 'b', [
 						[/* block */ 'b', [
+							[/* text */ 't', ` `],
 							[/* reference */ 'r', `java.nio.charset.CoderResult#UNDERFLOW`, `CoderResult.UNDERFLOW`],
 							[/* text */ 't', ` indicates that as much of the
    input buffer as possible has been decoded.  If there is no further
@@ -675,6 +685,7 @@ DocsCollector.collect('java.nio.charset.CharsetDecoder', [
 					]],
 					[/* block */ 'b', [
 						[/* block */ 'b', [
+							[/* text */ 't', ` `],
 							[/* reference */ 'r', `java.nio.charset.CoderResult#OVERFLOW`, `CoderResult.OVERFLOW`],
 							[/* text */ 't', ` indicates that there is
    insufficient space in the output buffer to decode any more bytes.

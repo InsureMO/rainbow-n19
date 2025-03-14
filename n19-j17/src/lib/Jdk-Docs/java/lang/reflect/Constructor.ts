@@ -558,6 +558,9 @@ DocsCollector.collect('java.lang.reflect.Constructor', [
 				[/* code block */ 'c', [
 					[/* inline code block */ 'i', `public java.util.HashMap(int,float)`]
 				]],
+				[/* text */ 't', `
+
+ `],
 				[/* block */ 'b', [
 					[/* text */ 't', `If the constructor is declared to throw exceptions, the
  parameter list is followed by a space, followed by the word
@@ -699,11 +702,16 @@ DocsCollector.collect('java.lang.reflect.Constructor', [
 					[/* reference */ 'r', `java.lang.reflect.Member`, `member`],
 					[/* text */ 't', ` of `],
 					[/* reference */ 'r', `java.lang.reflect.Member#getDeclaringClass()`, `declaring class`],
+					[/* text */ 't', ` `],
 					[/* inline code block */ 'i', `D`],
 					[/* text */ 't', ` if any of the following hold: `]
 				]],
+				[/* text */ 't', `
+
+ `],
 				[/* list */ 'l', [
 					[/* block */ 'b', [
+						[/* text */ 't', ` `],
 						[/* inline code block */ 'i', `C`],
 						[/* text */ 't', ` and `],
 						[/* inline code block */ 'i', `D`],
@@ -719,6 +727,7 @@ DocsCollector.collect('java.lang.reflect.Constructor', [
 						[/* text */ 't', ` in
      a package that the module containing `],
 						[/* inline code block */ 'i', `D`],
+						[/* text */ 't', ` `],
 						[/* reference */ 'r', `java.lang.Module#isExported(java.lang.String,java.lang.Module)`, `exports`],
 						[/* text */ 't', ` to at least the module
      containing `],
@@ -728,6 +737,7 @@ DocsCollector.collect('java.lang.reflect.Constructor', [
 					[/* block */ 'b', [
 						[/* text */ 't', ` The member is `],
 						[/* inline code block */ 'i', `protected`],
+						[/* text */ 't', ` `],
 						[/* inline code block */ 'i', `static`],
 						[/* text */ 't', `, `],
 						[/* inline code block */ 'i', `D`],
@@ -747,9 +757,12 @@ DocsCollector.collect('java.lang.reflect.Constructor', [
 						[/* text */ 't', `. `]
 					]],
 					[/* block */ 'b', [
+						[/* text */ 't', ` `],
 						[/* inline code block */ 'i', `D`],
 						[/* text */ 't', ` is in a package that the module containing `],
 						[/* inline code block */ 'i', `D`],
+						[/* text */ 't', `
+     `],
 						[/* reference */ 'r', `java.lang.Module#isOpen(java.lang.String,java.lang.Module)`, `opens`],
 						[/* text */ 't', ` to at least the module
      containing `],
@@ -762,11 +775,17 @@ DocsCollector.collect('java.lang.reflect.Constructor', [
      open module. `]
 					]]
 				]],
+				[/* text */ 't', `
+
+ `],
 				[/* block */ 'b', ` This method cannot be used to enable access to private members,
  members with default (package) access, protected instance members, or
  protected constructors when the declaring class is in a different module
  to the caller and the package containing the declaring class is not open
  to the caller's module. `],
+				[/* text */ 't', `
+
+ `],
 				[/* block */ 'b', [
 					[/* text */ 't', ` This method cannot be used to enable `],
 					[/* reference */ 'r', `java.lang.reflect.Field#set(java.lang.Object,java.lang.Object)`, `write`],
@@ -788,6 +807,8 @@ DocsCollector.collect('java.lang.reflect.Constructor', [
 						[/* reference */ 'r', `java.lang.Class#isRecord()`, `record`]
 					]]
 				]],
+				[/* text */ 't', `
+ `],
 				[/* block */ 'b', ''],
 				[/* block */ 'b', [
 					[/* text */ 't', ` The `],

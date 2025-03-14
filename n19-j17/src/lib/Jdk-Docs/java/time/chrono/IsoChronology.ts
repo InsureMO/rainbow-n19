@@ -463,6 +463,8 @@ DocsCollector.collect('java.time.chrono.IsoChronology', [
  `]
 				]],
 				[/* block */ 'b', [
+					[/* text */ 't', `
+ `],
 					[/* inline code block */ 'i', `ChronoField`],
 					[/* text */ 't', ` instances on the ISO calendar system are resolved
  as follows.

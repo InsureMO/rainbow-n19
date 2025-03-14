@@ -35,6 +35,9 @@ DocsCollector.collect('java.nio.channels.FileChannel', [
 		]],
 		[/* block */ 'b', ` In addition to the familiar read, write, and close operations of byte
  channels, this class defines the following file-specific operations: `],
+		[/* text */ 't', `
+
+ `],
 		[/* list */ 'l', [
 			[/* block */ 'b', [
 				[/* block */ 'b', [
@@ -90,6 +93,9 @@ DocsCollector.collect('java.nio.channels.FileChannel', [
 				]]
 			]]
 		]],
+		[/* text */ 't', `
+
+ `],
 		[/* block */ 'b', [
 			[/* text */ 't', ` File channels are safe for use by multiple concurrent threads.  The
  `],
@@ -147,7 +153,8 @@ DocsCollector.collect('java.nio.channels.FileChannel', [
  seen by the originating object, and vice versa.
 
  `],
-			[/* anchor */ 'r', '#-id', `open-mode`, ``]
+			[/* anchor */ 'r', '#-id', `open-mode`, ``],
+			[/* text */ 't', ` `]
 		]],
 		[/* block */ 'b', [
 			[/* text */ 't', ` At various points this class specifies that an
@@ -720,6 +727,7 @@ DocsCollector.collect('java.nio.channels.FileChannel', [
 				[/* list */ 'l', [
 					[/* block */ 'b', [
 						[/* block */ 'b', [
+							[/* text */ 't', ` `],
 							[/* text */ 't', `Read-only:`],
 							[/* text */ 't', ` Any attempt to modify the resulting buffer
    will cause a `],
@@ -732,6 +740,7 @@ DocsCollector.collect('java.nio.channels.FileChannel', [
 					]],
 					[/* block */ 'b', [
 						[/* block */ 'b', [
+							[/* text */ 't', ` `],
 							[/* text */ 't', `Read/write:`],
 							[/* text */ 't', ` Changes made to the resulting buffer will
    eventually be propagated to the file; they may or may not be made
@@ -742,6 +751,7 @@ DocsCollector.collect('java.nio.channels.FileChannel', [
 					]],
 					[/* block */ 'b', [
 						[/* block */ 'b', [
+							[/* text */ 't', ` `],
 							[/* text */ 't', `Private:`],
 							[/* text */ 't', ` Changes made to the resulting buffer will not
    be propagated to the file and will not be visible to other programs
@@ -752,6 +762,9 @@ DocsCollector.collect('java.nio.channels.FileChannel', [
 						]]
 					]]
 				]],
+				[/* text */ 't', `
+
+ `],
 				[/* block */ 'b', ''],
 				[/* block */ 'b', ` An implementation may support additional map modes.
 
@@ -1682,6 +1695,9 @@ DocsCollector.collect('java.nio.channels.FileChannel', [
 						]]
 					]],
 				],
+				[/* text */ 't', `
+
+ `],
 				[/* block */ 'b', ''],
 				[/* block */ 'b', ` An implementation may also support additional options.
 

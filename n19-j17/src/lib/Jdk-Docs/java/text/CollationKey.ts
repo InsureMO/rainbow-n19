@@ -88,6 +88,8 @@ DocsCollector.collect('java.text.CollationKey', [
  `]
 		]],
 		[/* block */ 'b', [
+			[/* text */ 't', `
+ `],
 			[/* code block */ 'c', [
 				[/* inline code block */ 'i', `// Create an array of CollationKeys for the Strings to be sorted.
  Collator myCollator = Collator.getInstance();
@@ -109,7 +111,9 @@ DocsCollector.collect('java.text.CollationKey', [
  System.out.println(keys[0].getSourceString());
  System.out.println(keys[1].getSourceString());
  System.out.println(keys[2].getSourceString());`]
-			]]
+			]],
+			[/* text */ 't', `
+ `]
 		]],
 		[/* block */ 'b', '']
 	],

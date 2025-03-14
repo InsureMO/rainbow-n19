@@ -231,6 +231,8 @@ DocsCollector.collect('java.time.chrono.ChronoPeriod', [
    dateTime = thisPeriod.addTo(dateTime);
    dateTime = dateTime.plus(thisPeriod);
  `],
+				[/* text */ 't', `
+ `],
 				[/* block */ 'b', ''],
 				[/* block */ 'b', `
  The specified temporal must have the same chronology as this period.
@@ -275,6 +277,8 @@ DocsCollector.collect('java.time.chrono.ChronoPeriod', [
 				[/* code block */ 'c', `   // these two lines are equivalent, but the second approach is recommended
    dateTime = thisPeriod.subtractFrom(dateTime);
    dateTime = dateTime.minus(thisPeriod);
+ `],
+				[/* text */ 't', `
  `],
 				[/* block */ 'b', ''],
 				[/* block */ 'b', `

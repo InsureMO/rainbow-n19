@@ -69,7 +69,10 @@ DocsCollector.collect('java.util.spi.LocaleServiceProvider', [
  a line such as:
  `],
 		[/* code block */ 'c', [
-			[/* inline code block */ 'i', `com.foo.DateFormatProviderImpl`]
+			[/* text */ 't', ` `],
+			[/* inline code block */ 'i', `com.foo.DateFormatProviderImpl`],
+			[/* text */ 't', `
+ `]
 		]],
 		[/* text */ 't', `
  which is the fully qualified class name of the class implementing
@@ -79,6 +82,8 @@ DocsCollector.collect('java.util.spi.LocaleServiceProvider', [
  `],
 		[/* block */ 'b', ''],
 		[/* block */ 'b', `Invocation of Locale Sensitive Services`],
+		[/* text */ 't', `
+ `],
 		[/* block */ 'b', [
 			[/* text */ 't', `
  Locale sensitive factory methods and methods for name retrieval in the
@@ -178,6 +183,8 @@ DocsCollector.collect('java.util.spi.LocaleServiceProvider', [
  is deprecated and will be removed in the future release of JDK.
  `]
 		]],
+		[/* text */ 't', `
+ `],
 		[/* block */ 'b', ''],
 		[/* block */ 'b', `
  For example, if the following is specified in the property:

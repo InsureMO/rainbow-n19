@@ -121,6 +121,9 @@ DocsCollector.collect('java.util.Deque', [
 				]]
 			]],
 		],
+		[/* text */ 't', `
+
+ `],
 		[/* block */ 'b', ''],
 		[/* block */ 'b', [
 			[/* text */ 't', `This interface extends the `],
@@ -206,6 +209,9 @@ DocsCollector.collect('java.util.Deque', [
 				]]
 			]],
 		],
+		[/* text */ 't', `
+
+ `],
 		[/* block */ 'b', ''],
 		[/* block */ 'b', [
 			[/* text */ 't', `Deques can also be used as LIFO (Last-In-First-Out) stacks.  This
@@ -263,6 +269,9 @@ DocsCollector.collect('java.util.Deque', [
 				]]
 			]],
 		],
+		[/* text */ 't', `
+
+ `],
 		[/* block */ 'b', ''],
 		[/* block */ 'b', [
 			[/* text */ 't', `Note that the `],

@@ -13,7 +13,11 @@ DocsCollector.collect('java.text.ChoiceFormat', [
  specifies a half-open interval up to the next item:
  `],
 		[/* block */ 'b', [
+			[/* text */ 't', `
+ `],
 			[/* code block */ 'c', ` X matches j if and only if limit[j] ≤ X < limit[j+1]
+ `],
+			[/* text */ 't', `
  `]
 		]],
 		[/* text */ 't', `
@@ -26,7 +30,11 @@ DocsCollector.collect('java.text.ChoiceFormat', [
 
  `],
 		[/* block */ 'b', [
+			[/* text */ 't', `
+ `],
 			[/* text */ 't', `Note:`],
+			[/* text */ 't', `
+ `],
 			[/* inline code block */ 'i', `ChoiceFormat`],
 			[/* text */ 't', ` differs from the other `],
 			[/* inline code block */ 'i', `Format`],
@@ -58,17 +66,25 @@ DocsCollector.collect('java.text.ChoiceFormat', [
 		]],
 		[/* list */ 'l', [
 			[/* block */ 'b', [
+				[/* text */ 't', `
+     `],
 				[/* text */ 't', `limits`],
 				[/* text */ 't', ` = {1,2,3,4,5,6,7}`],
 				[/* new line */ 'n'],
+				[/* text */ 't', `
+     `],
 				[/* text */ 't', `formats`],
 				[/* text */ 't', ` = {"Sun","Mon","Tue","Wed","Thur","Fri","Sat"}
  `]
 			]],
 			[/* block */ 'b', [
+				[/* text */ 't', `
+     `],
 				[/* text */ 't', `limits`],
 				[/* text */ 't', ` = {0, 1, ChoiceFormat.nextDouble(1)}`],
 				[/* new line */ 'n'],
+				[/* text */ 't', `
+     `],
 				[/* text */ 't', `formats`],
 				[/* text */ 't', ` = {"no files", "one file", "many files"}`],
 				[/* new line */ 'n'],
@@ -80,11 +96,16 @@ DocsCollector.collect('java.text.ChoiceFormat', [
  `]
 			]]
 		]],
+		[/* text */ 't', `
+
+ `],
 		[/* block */ 'b', ''],
 		[/* block */ 'b', `
  Here is a simple example that shows formatting and parsing:
  `],
 		[/* block */ 'b', [
+			[/* text */ 't', `
+ `],
 			[/* code block */ 'c', [
 				[/* inline code block */ 'i', `double[] limits = {1,2,3,4,5,6,7};
  String[] dayOfWeekNames = {"Sun","Mon","Tue","Wed","Thur","Fri","Sat"};
@@ -95,12 +116,16 @@ DocsCollector.collect('java.text.ChoiceFormat', [
      System.out.println(i + " -> " + form.format(i) + " -> "
                               + form.parse(form.format(i),status));
  }`]
-			]]
+			]],
+			[/* text */ 't', `
+ `]
 		]],
 		[/* text */ 't', `
  Here is a more complex example, with a pattern format:
  `],
 		[/* block */ 'b', [
+			[/* text */ 't', `
+ `],
 			[/* code block */ 'c', [
 				[/* inline code block */ 'i', `double[] filelimits = {0,1,2};
  String[] filepart = {"are no files","is one file","are {2} files"};
@@ -114,14 +139,20 @@ DocsCollector.collect('java.text.ChoiceFormat', [
      testArgs[2] = testArgs[0];
      System.out.println(pattform.format(testArgs));
  }`]
-			]]
+			]],
+			[/* text */ 't', `
+ `]
 		]],
+		[/* text */ 't', `
+ `],
 		[/* block */ 'b', ''],
 		[/* block */ 'b', `
  Specifying a pattern for ChoiceFormat objects is fairly straightforward.
  For example:
  `],
 		[/* block */ 'b', [
+			[/* text */ 't', `
+ `],
 			[/* code block */ 'c', [
 				[/* inline code block */ 'i', `ChoiceFormat fmt = new ChoiceFormat(
       "-1#is negative| 0#is zero or fraction | 1#is one |1.0<is 1+ |2#is two |2<is more than 2.");
@@ -137,12 +168,16 @@ DocsCollector.collect('java.text.ChoiceFormat', [
  System.out.println("Format with 2.1 : " + fmt.format(2.1));
  System.out.println("Format with NaN : " + fmt.format(Double.NaN));
  System.out.println("Format with +INF : " + fmt.format(Double.POSITIVE_INFINITY));`]
-			]]
+			]],
+			[/* text */ 't', `
+ `]
 		]],
 		[/* text */ 't', `
  And the output result would be like the following:
  `],
 		[/* block */ 'b', [
+			[/* text */ 't', `
+ `],
 			[/* code block */ 'c', [
 				[/* inline code block */ 'i', `Format with -INF : is negative
  Format with -1.0 : is negative
@@ -154,12 +189,20 @@ DocsCollector.collect('java.text.ChoiceFormat', [
  Format with 2.1 : is more than 2.
  Format with NaN : is negative
  Format with +INF : is more than 2.`]
-			]]
+			]],
+			[/* text */ 't', `
+ `]
 		]],
+		[/* text */ 't', `
+
+ `],
 		[/* block */ 'b', ''],
 		[/* block */ 'b', [
 			[/* anchor */ 'r', '#-id', `synchronization`, `Synchronization`]
 		]],
+		[/* text */ 't', `
+
+ `],
 		[/* block */ 'b', `
  Choice formats are not synchronized.
  It is recommended to create separate format instances for each thread.

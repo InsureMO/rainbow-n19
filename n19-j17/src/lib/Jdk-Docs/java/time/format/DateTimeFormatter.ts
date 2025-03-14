@@ -29,6 +29,8 @@ DocsCollector.collect('java.time.format.DateTimeFormatter', [
 				[/* inline code block */ 'i', `medium`]
 			]]
 		]],
+		[/* text */ 't', `
+ `],
 		[/* block */ 'b', ''],
 		[/* block */ 'b', [
 			[/* text */ 't', `
@@ -58,6 +60,8 @@ DocsCollector.collect('java.time.format.DateTimeFormatter', [
   LocalDate parsedDate = LocalDate.parse(text, formatter);
  `]
 		]],
+		[/* text */ 't', `
+ `],
 		[/* block */ 'b', ''],
 		[/* block */ 'b', `
  In addition to the format, formatters can be created with desired Locale,
@@ -121,6 +125,8 @@ DocsCollector.collect('java.time.format.DateTimeFormatter', [
  `]
 		]],
 		[/* block */ 'b', `Predefined Formatters`],
+		[/* text */ 't', `
+ `],
 		[/* table */ 'tbl',
 			[/* caption */ 'tc', [
 				[/* text */ 't', `Predefined Formatters`]
@@ -374,6 +380,9 @@ DocsCollector.collect('java.time.format.DateTimeFormatter', [
 				]]
 			]],
 		],
+		[/* text */ 't', `
+
+ `],
 		[/* block */ 'b', `Patterns for Formatting and Parsing`],
 		[/* text */ 't', `
  Patterns are based on a simple sequence of letters and symbols.
@@ -400,6 +409,8 @@ DocsCollector.collect('java.time.format.DateTimeFormatter', [
   LocalDate parsedDate = LocalDate.parse(text, formatter);
  `]
 		]],
+		[/* text */ 't', `
+ `],
 		[/* block */ 'b', ''],
 		[/* block */ 'b', `
  All letters 'A' to 'Z' and 'a' to 'z' are reserved as pattern letters. The
@@ -980,11 +991,15 @@ DocsCollector.collect('java.time.format.DateTimeFormatter', [
 				]]
 			]],
 		],
+		[/* text */ 't', `
+ `],
 		[/* block */ 'b', ''],
 		[/* block */ 'b', `
  The count of pattern letters determines the format.
  `],
 		[/* block */ 'b', [
+			[/* text */ 't', `
+ `],
 			[/* text */ 't', `Text`],
 			[/* text */ 't', `: The text style is determined based on the number of pattern
  letters used. Less than 4 pattern letters will use the
@@ -1004,6 +1019,8 @@ DocsCollector.collect('java.time.format.DateTimeFormatter', [
 		[/* block */ 'b', `Number/Text`],
 		[/* block */ 'b', `Fraction`],
 		[/* block */ 'b', [
+			[/* text */ 't', `
+ `],
 			[/* text */ 't', `Year`],
 			[/* text */ 't', `: The count of letters determines the minimum field width below
  which padding is used. If the count of letters is two, then a
@@ -1023,6 +1040,8 @@ DocsCollector.collect('java.time.format.DateTimeFormatter', [
  `]
 		]],
 		[/* block */ 'b', [
+			[/* text */ 't', `
+ `],
 			[/* text */ 't', `ZoneId`],
 			[/* text */ 't', `: This outputs the time-zone ID, such as 'Europe/Paris'. If the
  count of letters is two, then the time-zone ID is output. Any other count of
@@ -1032,6 +1051,8 @@ DocsCollector.collect('java.time.format.DateTimeFormatter', [
  `]
 		]],
 		[/* block */ 'b', [
+			[/* text */ 't', `
+ `],
 			[/* text */ 't', `Zone names`],
 			[/* text */ 't', `: This outputs the display name of the time-zone ID. If the
  pattern letter is 'z' the output is the daylight savings aware zone name.
@@ -1055,6 +1076,8 @@ DocsCollector.collect('java.time.format.DateTimeFormatter', [
  `]
 		]],
 		[/* block */ 'b', [
+			[/* text */ 't', `
+ `],
 			[/* text */ 't', `Offset X and x`],
 			[/* text */ 't', `: This formats the offset based on the number of pattern
  letters. One letter outputs just the hour, such as '+01', unless the minute
@@ -1072,6 +1095,8 @@ DocsCollector.collect('java.time.format.DateTimeFormatter', [
  `]
 		]],
 		[/* block */ 'b', [
+			[/* text */ 't', `
+ `],
 			[/* text */ 't', `Offset O`],
 			[/* text */ 't', `: With a non-zero offset, this formats the localized offset
  based on the number of pattern letters. One letter outputs the
@@ -1092,6 +1117,8 @@ DocsCollector.collect('java.time.format.DateTimeFormatter', [
  `]
 		]],
 		[/* block */ 'b', [
+			[/* text */ 't', `
+ `],
 			[/* text */ 't', `Offset Z`],
 			[/* text */ 't', `: This formats the offset based on the number of pattern
  letters. One, two or three letters outputs the hour and minute, without a
@@ -1109,6 +1136,8 @@ DocsCollector.collect('java.time.format.DateTimeFormatter', [
  `]
 		]],
 		[/* block */ 'b', [
+			[/* text */ 't', `
+ `],
 			[/* text */ 't', `Optional section`],
 			[/* text */ 't', `: The optional section markers work exactly like
  calling `],
@@ -1120,6 +1149,8 @@ DocsCollector.collect('java.time.format.DateTimeFormatter', [
  `]
 		]],
 		[/* block */ 'b', [
+			[/* text */ 't', `
+ `],
 			[/* text */ 't', `Pad modifier`],
 			[/* text */ 't', `: Modifies the pattern that immediately follows to be
  padded with spaces. The pad width is determined by the number of pattern
@@ -1353,6 +1384,8 @@ DocsCollector.collect('java.time.format.DateTimeFormatter', [
  `]
 					]]
 				]],
+				[/* text */ 't', `
+ `],
 				[/* block */ 'b', ''],
 				[/* block */ 'b', [
 					[/* text */ 't', `
@@ -1385,7 +1418,9 @@ DocsCollector.collect('java.time.format.DateTimeFormatter', [
 				[/* list */ 'l', [
 					[/* block */ 'b', [
 						[/* text */ 't', `The `],
-						[/* text */ 't', `ISO_LOCAL_DATE`]
+						[/* text */ 't', `ISO_LOCAL_DATE`],
+						[/* text */ 't', `
+ `]
 					]],
 					[/* block */ 'b', `If the offset is not available then the format is complete.
  `],
@@ -1398,6 +1433,8 @@ DocsCollector.collect('java.time.format.DateTimeFormatter', [
  `]
 					]]
 				]],
+				[/* text */ 't', `
+ `],
 				[/* block */ 'b', ''],
 				[/* block */ 'b', [
 					[/* text */ 't', `
@@ -1432,7 +1469,9 @@ DocsCollector.collect('java.time.format.DateTimeFormatter', [
 				[/* list */ 'l', [
 					[/* block */ 'b', [
 						[/* text */ 't', `The `],
-						[/* text */ 't', `ISO_LOCAL_DATE_TIME`]
+						[/* text */ 't', `ISO_LOCAL_DATE_TIME`],
+						[/* text */ 't', `
+ `]
 					]],
 					[/* block */ 'b', `If the offset is not available to format or parse then the format is complete.
  `],
@@ -1461,6 +1500,8 @@ DocsCollector.collect('java.time.format.DateTimeFormatter', [
 					[/* block */ 'b', `A close square bracket ']'.
  `]
 				]],
+				[/* text */ 't', `
+ `],
 				[/* block */ 'b', ''],
 				[/* block */ 'b', [
 					[/* text */ 't', `
@@ -1541,6 +1582,8 @@ DocsCollector.collect('java.time.format.DateTimeFormatter', [
  `]
 					]]
 				]],
+				[/* text */ 't', `
+ `],
 				[/* block */ 'b', ''],
 				[/* block */ 'b', [
 					[/* text */ 't', `
@@ -1589,6 +1632,8 @@ DocsCollector.collect('java.time.format.DateTimeFormatter', [
  `]
 					]]
 				]],
+				[/* text */ 't', `
+ `],
 				[/* block */ 'b', ''],
 				[/* block */ 'b', [
 					[/* text */ 't', `
@@ -1613,15 +1658,21 @@ DocsCollector.collect('java.time.format.DateTimeFormatter', [
 				[/* list */ 'l', [
 					[/* block */ 'b', [
 						[/* text */ 't', `The `],
-						[/* text */ 't', `ISO_LOCAL_DATE`]
+						[/* text */ 't', `ISO_LOCAL_DATE`],
+						[/* text */ 't', `
+ `]
 					]],
 					[/* block */ 'b', `The letter 'T'. Parsing is case insensitive.
  `],
 					[/* block */ 'b', [
 						[/* text */ 't', `The `],
-						[/* text */ 't', `ISO_LOCAL_TIME`]
+						[/* text */ 't', `ISO_LOCAL_TIME`],
+						[/* text */ 't', `
+ `]
 					]]
 				]],
+				[/* text */ 't', `
+ `],
 				[/* block */ 'b', ''],
 				[/* block */ 'b', [
 					[/* text */ 't', `
@@ -1683,6 +1734,8 @@ DocsCollector.collect('java.time.format.DateTimeFormatter', [
  `]
 					]]
 				]],
+				[/* text */ 't', `
+ `],
 				[/* block */ 'b', ''],
 				[/* block */ 'b', [
 					[/* text */ 't', `
@@ -1706,7 +1759,9 @@ DocsCollector.collect('java.time.format.DateTimeFormatter', [
 				[/* list */ 'l', [
 					[/* block */ 'b', [
 						[/* text */ 't', `The `],
-						[/* text */ 't', `ISO_LOCAL_DATE`]
+						[/* text */ 't', `ISO_LOCAL_DATE`],
+						[/* text */ 't', `
+ `]
 					]],
 					[/* block */ 'b', [
 						[/* text */ 't', `The `],
@@ -1717,6 +1772,8 @@ DocsCollector.collect('java.time.format.DateTimeFormatter', [
  `]
 					]]
 				]],
+				[/* text */ 't', `
+ `],
 				[/* block */ 'b', ''],
 				[/* block */ 'b', [
 					[/* text */ 't', `
@@ -1741,7 +1798,9 @@ DocsCollector.collect('java.time.format.DateTimeFormatter', [
 				[/* list */ 'l', [
 					[/* block */ 'b', [
 						[/* text */ 't', `The `],
-						[/* text */ 't', `ISO_LOCAL_DATE_TIME`]
+						[/* text */ 't', `ISO_LOCAL_DATE_TIME`],
+						[/* text */ 't', `
+ `]
 					]],
 					[/* block */ 'b', [
 						[/* text */ 't', `The `],
@@ -1753,6 +1812,8 @@ DocsCollector.collect('java.time.format.DateTimeFormatter', [
  `]
 					]]
 				]],
+				[/* text */ 't', `
+ `],
 				[/* block */ 'b', ''],
 				[/* block */ 'b', [
 					[/* text */ 't', `
@@ -1777,7 +1838,9 @@ DocsCollector.collect('java.time.format.DateTimeFormatter', [
 				[/* list */ 'l', [
 					[/* block */ 'b', [
 						[/* text */ 't', `The `],
-						[/* text */ 't', `ISO_LOCAL_TIME`]
+						[/* text */ 't', `ISO_LOCAL_TIME`],
+						[/* text */ 't', `
+ `]
 					]],
 					[/* block */ 'b', [
 						[/* text */ 't', `The `],
@@ -1788,6 +1851,8 @@ DocsCollector.collect('java.time.format.DateTimeFormatter', [
  `]
 					]]
 				]],
+				[/* text */ 't', `
+ `],
 				[/* block */ 'b', ''],
 				[/* block */ 'b', [
 					[/* text */ 't', `
@@ -1837,6 +1902,8 @@ DocsCollector.collect('java.time.format.DateTimeFormatter', [
  `]
 					]]
 				]],
+				[/* text */ 't', `
+ `],
 				[/* block */ 'b', ''],
 				[/* block */ 'b', [
 					[/* text */ 't', `
@@ -1869,7 +1936,9 @@ DocsCollector.collect('java.time.format.DateTimeFormatter', [
 				[/* list */ 'l', [
 					[/* block */ 'b', [
 						[/* text */ 't', `The `],
-						[/* text */ 't', `ISO_LOCAL_TIME`]
+						[/* text */ 't', `ISO_LOCAL_TIME`],
+						[/* text */ 't', `
+ `]
 					]],
 					[/* block */ 'b', `If the offset is not available then the format is complete.
  `],
@@ -1882,6 +1951,8 @@ DocsCollector.collect('java.time.format.DateTimeFormatter', [
  `]
 					]]
 				]],
+				[/* text */ 't', `
+ `],
 				[/* block */ 'b', ''],
 				[/* block */ 'b', [
 					[/* text */ 't', `
@@ -1950,6 +2021,8 @@ DocsCollector.collect('java.time.format.DateTimeFormatter', [
  `]
 					]]
 				]],
+				[/* text */ 't', `
+ `],
 				[/* block */ 'b', ''],
 				[/* block */ 'b', [
 					[/* text */ 't', `
@@ -1984,7 +2057,9 @@ DocsCollector.collect('java.time.format.DateTimeFormatter', [
 				[/* list */ 'l', [
 					[/* block */ 'b', [
 						[/* text */ 't', `The `],
-						[/* text */ 't', `ISO_OFFSET_DATE_TIME`]
+						[/* text */ 't', `ISO_OFFSET_DATE_TIME`],
+						[/* text */ 't', `
+ `]
 					]],
 					[/* block */ 'b', [
 						[/* text */ 't', `If the zone ID is not available or is a `],
@@ -2004,6 +2079,8 @@ DocsCollector.collect('java.time.format.DateTimeFormatter', [
 					[/* block */ 'b', `A close square bracket ']'.
  `]
 				]],
+				[/* text */ 't', `
+ `],
 				[/* block */ 'b', ''],
 				[/* block */ 'b', [
 					[/* text */ 't', `
@@ -2105,6 +2182,8 @@ DocsCollector.collect('java.time.format.DateTimeFormatter', [
  `]
 					]]
 				]],
+				[/* text */ 't', `
+ `],
 				[/* block */ 'b', ''],
 				[/* block */ 'b', `
  Parsing is case insensitive.
@@ -3129,6 +3208,8 @@ DocsCollector.collect('java.time.format.DateTimeFormatter', [
  `]
 					]]
 				]],
+				[/* text */ 't', `
+ `],
 				[/* block */ 'b', ''],
 				[/* block */ 'b', [
 					[/* text */ 't', `

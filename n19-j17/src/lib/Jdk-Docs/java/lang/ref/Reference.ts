@@ -97,6 +97,7 @@ DocsCollector.collect('java.lang.ref.Reference', [
 				[/* text */ 't', `.
  Using a `],
 				[/* inline code block */ 'i', `null`],
+				[/* text */ 't', ` `],
 				[/* inline code block */ 'i', `obj`],
 				[/* text */ 't', ` returns `],
 				[/* inline code block */ 'i', `true`],

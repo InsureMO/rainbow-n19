@@ -37,6 +37,9 @@ DocsCollector.collect('java.nio.channels.spi.AbstractInterruptibleChannel', [
      end(completed);
  }`]
 		]],
+		[/* text */ 't', `
+
+ `],
 		[/* block */ 'b', ''],
 		[/* block */ 'b', [
 			[/* text */ 't', ` The `],

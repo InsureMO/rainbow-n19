@@ -213,6 +213,8 @@ DocsCollector.collect('java.util.BitSet', [
  `],
 					[/* new line */ 'n'],
 					[/* inline code block */ 'i', `byte[] bytes = s.toByteArray();`],
+					[/* text */ 't', `
+ `],
 					[/* new line */ 'n'],
 					[/* text */ 't', `then `],
 					[/* inline code block */ 'i', `bytes.length == (s.length()+7)/8`],
@@ -220,6 +222,8 @@ DocsCollector.collect('java.util.BitSet', [
  `],
 					[/* new line */ 'n'],
 					[/* inline code block */ 'i', `s.get(n) == ((bytes[n/8] & (1<<(n%8))) != 0)`],
+					[/* text */ 't', `
+ `],
 					[/* new line */ 'n'],
 					[/* text */ 't', `for all `],
 					[/* inline code block */ 'i', `n < 8 * bytes.length`],
@@ -262,6 +266,7 @@ DocsCollector.collect('java.util.BitSet', [
  calculation:
   `],
 				[/* code block */ 'c', [
+					[/* text */ 't', ` `],
 					[/* inline code block */ 'i', `public int hashCode() {
      long h = 1234;
      long[] words = toLongArray();
@@ -342,6 +347,7 @@ DocsCollector.collect('java.util.BitSet', [
   `]
 				]],
 				[/* code block */ 'c', [
+					[/* text */ 't', ` `],
 					[/* inline code block */ 'i', `for (int i = bs.nextSetBit(0); i >= 0; i = bs.nextSetBit(i+1)) {
      // operate on index i here
      if (i == Integer.MAX_VALUE) {
@@ -425,6 +431,7 @@ DocsCollector.collect('java.util.BitSet', [
   `]
 				]],
 				[/* code block */ 'c', [
+					[/* text */ 't', ` `],
 					[/* inline code block */ 'i', `for (int i = bs.length(); (i = bs.previousSetBit(i-1)) >= 0; ) {
      // operate on index i here
  }`]
@@ -610,6 +617,8 @@ DocsCollector.collect('java.util.BitSet', [
  `],
 					[/* new line */ 'n'],
 					[/* inline code block */ 'i', `long[] longs = s.toLongArray();`],
+					[/* text */ 't', `
+ `],
 					[/* new line */ 'n'],
 					[/* text */ 't', `then `],
 					[/* inline code block */ 'i', `longs.length == (s.length()+63)/64`],
@@ -617,6 +626,8 @@ DocsCollector.collect('java.util.BitSet', [
  `],
 					[/* new line */ 'n'],
 					[/* inline code block */ 'i', `s.get(n) == ((longs[n/64] & (1L<<(n%64))) != 0)`],
+					[/* text */ 't', `
+ `],
 					[/* new line */ 'n'],
 					[/* text */ 't', `for all `],
 					[/* inline code block */ 'i', `n < 64 * longs.length`],
@@ -640,6 +651,8 @@ DocsCollector.collect('java.util.BitSet', [
  `],
 					[/* new line */ 'n'],
 					[/* inline code block */ 'i', `BitSet.valueOf(bytes).get(n) == ((bytes[n/8] & (1<<(n%8))) != 0)`],
+					[/* text */ 't', `
+ `],
 					[/* new line */ 'n'],
 					[/* text */ 't', `for all `],
 					[/* inline code block */ 'i', `n < 8 * bytes.length`],
@@ -679,6 +692,8 @@ DocsCollector.collect('java.util.BitSet', [
  `],
 					[/* new line */ 'n'],
 					[/* inline code block */ 'i', `BitSet.valueOf(bb).get(n) == ((bb.get(bb.position()+n/8) & (1<<(n%8))) != 0)`],
+					[/* text */ 't', `
+ `],
 					[/* new line */ 'n'],
 					[/* text */ 't', `for all `],
 					[/* inline code block */ 'i', `n < 8 * bb.remaining()`],
@@ -715,6 +730,8 @@ DocsCollector.collect('java.util.BitSet', [
  `],
 					[/* new line */ 'n'],
 					[/* inline code block */ 'i', `BitSet.valueOf(lb).get(n) == ((lb.get(lb.position()+n/64) & (1L<<(n%64))) != 0)`],
+					[/* text */ 't', `
+ `],
 					[/* new line */ 'n'],
 					[/* text */ 't', `for all `],
 					[/* inline code block */ 'i', `n < 64 * lb.remaining()`],
@@ -750,6 +767,8 @@ DocsCollector.collect('java.util.BitSet', [
  `],
 					[/* new line */ 'n'],
 					[/* inline code block */ 'i', `BitSet.valueOf(longs).get(n) == ((longs[n/64] & (1L<<(n%64))) != 0)`],
+					[/* text */ 't', `
+ `],
 					[/* new line */ 'n'],
 					[/* text */ 't', `for all `],
 					[/* inline code block */ 'i', `n < 64 * longs.length`],

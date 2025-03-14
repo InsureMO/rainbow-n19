@@ -42,6 +42,9 @@ DocsCollector.collect('java.lang.SafeVarargs', [
  `]
 			]]
 		]],
+		[/* text */ 't', `
+
+ `],
 		[/* block */ 'b', ''],
 		[/* block */ 'b', ` Compilers are encouraged to issue warnings when this annotation
  type is applied to a method or constructor declaration where:

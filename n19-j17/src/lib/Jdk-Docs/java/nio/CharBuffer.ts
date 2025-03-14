@@ -50,6 +50,9 @@ DocsCollector.collect('java.nio.CharBuffer', [
 				]]
 			]]
 		]],
+		[/* text */ 't', `
+
+ `],
 		[/* block */ 'b', ''],
 		[/* block */ 'b', [
 			[/* text */ 't', ` Char buffers can be created either by `],
@@ -189,6 +192,13 @@ DocsCollector.collect('java.nio.CharBuffer', [
 			[/* reference */ 'r', `#isDirect()`, `isDirect`],
 			[/* text */ 't', ` method.  `]
 		]],
+		[/* text */ 't', `
+
+
+
+
+
+ `],
 		[/* block */ 'b', [
 			[/* text */ 't', ` This class implements the `],
 			[/* reference */ 'r', `java.lang.CharSequence`, `CharSequence`],
@@ -203,6 +213,15 @@ DocsCollector.collect('java.nio.CharBuffer', [
  position of the buffer when they are invoked.
  `]
 		]],
+		[/* text */ 't', `
+
+
+
+
+
+
+
+ `],
 		[/* block */ 'b', ` Methods in this class that do not otherwise have a value to return are
  specified to return the buffer upon which they are invoked.  This allows
  method invocations to be chained.
@@ -683,6 +702,9 @@ DocsCollector.collect('java.nio.CharBuffer', [
    `]
 					]]
 				]],
+				[/* text */ 't', `
+
+ `],
 				[/* block */ 'b', ''],
 				[/* block */ 'b', ` A char buffer is not equal to any other type of object.  `]
 			],
@@ -879,6 +901,9 @@ DocsCollector.collect('java.nio.CharBuffer', [
 					[/* code block */ 'c', ` buf.clear();     // Prepare buffer for reading
  in.read(buf);    // Read data`]
 				]],
+				[/* text */ 't', `
+
+ `],
 				[/* block */ 'b', ''],
 				[/* block */ 'b', ` This method does not actually erase the data in the buffer, but it
  is named as if it did because it will most often be used in situations
@@ -914,6 +939,9 @@ DocsCollector.collect('java.nio.CharBuffer', [
  buf.flip();        // Flip buffer
  out.write(buf);    // Write header + data to channel`]
 				]],
+				[/* text */ 't', `
+
+ `],
 				[/* block */ 'b', ''],
 				[/* block */ 'b', [
 					[/* text */ 't', ` This method is often used in conjunction with the `],
@@ -1289,6 +1317,9 @@ DocsCollector.collect('java.nio.CharBuffer', [
  `]
 				]],
 				[/* code block */ 'c', `     dst.put(csq.toString()) `],
+				[/* text */ 't', `
+
+ `],
 				[/* block */ 'b', ''],
 				[/* block */ 'b', [
 					[/* text */ 't', ` Depending on the specification of `],

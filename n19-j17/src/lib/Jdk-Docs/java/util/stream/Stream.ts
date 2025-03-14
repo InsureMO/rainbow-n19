@@ -164,6 +164,9 @@ DocsCollector.collect('java.util.stream.Stream', [
  of the stream pipeline).`]
 			]]
 		]],
+		[/* text */ 't', `
+
+ `],
 		[/* block */ 'b', ''],
 		[/* block */ 'b', [
 			[/* text */ 't', `Such parameters are always instances of a
@@ -423,6 +426,9 @@ DocsCollector.collect('java.util.stream.Stream', [
          accumulator.accept(result, element);
      return result;`]
 				]],
+				[/* text */ 't', `
+
+ `],
 				[/* block */ 'b', [
 					[/* text */ 't', `Like `],
 					[/* reference */ 'r', `#reduce(T,java.util.function.BinaryOperator)`, `reduce(Object, BinaryOperator)`],
@@ -526,6 +532,9 @@ DocsCollector.collect('java.util.stream.Stream', [
 				[/* code block */ 'c', [
 					[/* inline code block */ 'i', `combiner.apply(u, accumulator.apply(identity, t)) == accumulator.apply(u, t)`]
 				]],
+				[/* text */ 't', `
+
+ `],
 				[/* block */ 'b', ''],
 				[/* block */ 'b', [
 					[/* text */ 't', `This is a `],
@@ -792,6 +801,8 @@ DocsCollector.collect('java.util.stream.Stream', [
 					[/* text */ 't', `,
                    `],
 					[/* text */ 't', `stateless`],
+					[/* text */ 't', `
+                   `],
 					[/* inline code block */ 'i', `Comparator`],
 					[/* text */ 't', ` to compare elements of this stream`]
 				]]
@@ -834,6 +845,8 @@ DocsCollector.collect('java.util.stream.Stream', [
 					[/* text */ 't', `,
                    `],
 					[/* text */ 't', `stateless`],
+					[/* text */ 't', `
+                   `],
 					[/* inline code block */ 'i', `Comparator`],
 					[/* text */ 't', ` to compare elements of this stream`]
 				]]
@@ -1336,6 +1349,8 @@ DocsCollector.collect('java.util.stream.Stream', [
 					[/* text */ 't', `,
                    `],
 					[/* text */ 't', `stateless`],
+					[/* text */ 't', `
+                   `],
 					[/* inline code block */ 'i', `Comparator`],
 					[/* text */ 't', ` to be used to compare stream elements`]
 				]]
@@ -1356,6 +1371,9 @@ DocsCollector.collect('java.util.stream.Stream', [
 				[/* code block */ 'c', [
 					[/* inline code block */ 'i', `return mapToLong(e -> 1L).sum();`]
 				]],
+				[/* text */ 't', `
+
+ `],
 				[/* block */ 'b', [
 					[/* text */ 't', `This is a `],
 					[/* text */ 't', `terminal operation`],
@@ -1913,6 +1931,9 @@ DocsCollector.collect('java.util.stream.Stream', [
          ...
      }`]
 				]],
+				[/* text */ 't', `
+
+ `],
 				[/* block */ 'b', ''],
 				[/* block */ 'b', [
 					[/* text */ 't', `The resulting sequence may be empty if the `],

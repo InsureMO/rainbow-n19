@@ -6,6 +6,8 @@ DocsCollector.collect('java.time.Month', [
 		[/* text */ 't', `A month-of-year, such as 'July'.
  `],
 		[/* block */ 'b', [
+			[/* text */ 't', `
+ `],
 			[/* inline code block */ 'i', `Month`],
 			[/* text */ 't', ` is an enum representing the 12 months of the year -
  January, February, March, April, May, June, July, August, September, October,
@@ -407,6 +409,8 @@ DocsCollector.collect('java.time.Month', [
    temporal = thisMonth.adjustInto(temporal);
    temporal = temporal.with(thisMonth);
  `],
+				[/* text */ 't', `
+ `],
 				[/* block */ 'b', ''],
 				[/* block */ 'b', `
  For example, given a date in May, the following are output:
@@ -416,6 +420,8 @@ DocsCollector.collect('java.time.Month', [
    dateInMay.with(MAY);        // same date
    dateInMay.with(JUNE);       // one month later
    dateInMay.with(DECEMBER);   // seven months later
+ `],
+				[/* text */ 't', `
  `],
 				[/* block */ 'b', ''],
 				[/* block */ 'b', `
@@ -612,6 +618,8 @@ DocsCollector.collect('java.time.Month', [
 				[/* text */ 't', ` value.
  `],
 				[/* block */ 'b', [
+					[/* text */ 't', `
+ `],
 					[/* inline code block */ 'i', `Month`],
 					[/* text */ 't', ` is an enum representing the 12 months of the year.
  This factory allows the enum to be obtained from the `],

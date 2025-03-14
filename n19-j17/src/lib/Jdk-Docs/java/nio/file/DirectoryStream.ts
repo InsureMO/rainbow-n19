@@ -73,6 +73,9 @@ DocsCollector.collect('java.nio.file.DirectoryStream', [
        }
    }
  `],
+		[/* text */ 't', `
+
+ `],
 		[/* block */ 'b', ''],
 		[/* block */ 'b', [
 			[/* text */ 't', ` Once a directory stream is closed, then further access to the directory,

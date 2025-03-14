@@ -160,9 +160,13 @@ DocsCollector.collect('java.nio.file.FileStore', [
  `]
 				]],
 				[/* block */ 'b', [
+					[/* text */ 't', `
+ `],
 					[/* text */ 't', `view-name`],
 					[/* text */ 't', `:`],
-					[/* text */ 't', `attribute-name`]
+					[/* text */ 't', `attribute-name`],
+					[/* text */ 't', `
+ `]
 				]],
 				[/* text */ 't', `
  where the character `],
@@ -172,6 +176,7 @@ DocsCollector.collect('java.nio.file.FileStore', [
  `],
 				[/* block */ 'b', ''],
 				[/* block */ 'b', [
+					[/* text */ 't', ` `],
 					[/* text */ 't', `view-name`],
 					[/* text */ 't', ` is the `],
 					[/* reference */ 'r', `java.nio.file.attribute.AttributeView#name()`, `name`],

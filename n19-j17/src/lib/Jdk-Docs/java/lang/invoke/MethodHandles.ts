@@ -640,6 +640,8 @@ assertEquals("[top, [[up, down, strange], charm], bottom]",
              (String) ts3_ts2_ts3.invokeExact("top", "up", "down", "strange", "charm", "bottom"));`]
 					]]
 				]],
+				[/* text */ 't', `
+ `],
 				[/* block */ 'b', ''],
 				[/* block */ 'b', [
 					[/* text */ 't', `Here is pseudocode for the resulting adapter. In the code, `],
@@ -713,6 +715,8 @@ assertEquals("[top, [[up, down, strange], charm], bottom]",
  }`]
 					]]
 				]],
+				[/* text */ 't', `
+ `],
 				[/* block */ 'b', ''],
 				[/* block */ 'b', [
 					[/* text */ 't', `
@@ -752,6 +756,8 @@ assertEquals("[top, [[up, down, strange], charm], bottom]",
  `],
 				[/* block */ 'b', ''],
 				[/* block */ 'b', [
+					[/* text */ 't', `
+ `],
 					[/* text */ 't', `Note:`],
 					[/* text */ 't', ` The resulting adapter is never a `],
 					[/* reference */ 'r', `java.lang.invoke.MethodHandle#asVarargsCollector(java.lang.Class)`, `variable-arity method handle`],
@@ -1038,6 +1044,8 @@ assertEquals("[top, [[up, down, strange], charm], bottom]",
  `]
 					]]
 				]],
+				[/* text */ 't', `
+ `],
 				[/* block */ 'b', ''],
 				[/* block */ 'b', `
  The resulting loop handle's result type and parameter signature are determined as follows:`],
@@ -1056,6 +1064,8 @@ assertEquals("[top, [[up, down, strange], charm], bottom]",
  `]
 					]]
 				]],
+				[/* text */ 't', `
+ `],
 				[/* block */ 'b', ''],
 				[/* block */ 'b', [
 					[/* text */ 't', `
@@ -1356,6 +1366,8 @@ assertEquals("[top, [[up, down, strange], charm], bottom]",
  `]
 					]]
 				]],
+				[/* text */ 't', `
+ `],
 				[/* block */ 'b', ''],
 				[/* block */ 'b', `
  The resulting loop handle's result type and parameter signature are determined as follows:`],
@@ -1374,6 +1386,8 @@ assertEquals("[top, [[up, down, strange], charm], bottom]",
  `]
 					]]
 				]],
+				[/* text */ 't', `
+ `],
 				[/* block */ 'b', ''],
 				[/* block */ 'b', [
 					[/* text */ 't', `
@@ -1614,6 +1628,8 @@ assertEquals("[top, [[up, down, strange], charm], bottom]",
  `]
 					]]
 				]],
+				[/* text */ 't', `
+ `],
 				[/* block */ 'b', ''],
 				[/* block */ 'b', `
  The resulting loop handle's result type and parameter signature are determined as follows:`],
@@ -1632,6 +1648,8 @@ assertEquals("[top, [[up, down, strange], charm], bottom]",
  `]
 					]]
 				]],
+				[/* text */ 't', `
+ `],
 				[/* block */ 'b', ''],
 				[/* block */ 'b', [
 					[/* text */ 't', `
@@ -1820,14 +1838,19 @@ assertEquals(bigType, d0.type());
 assertEquals("yz", (String) d0.invokeExact(123, "x", "y", "z"));`]
 					]]
 				]],
+				[/* text */ 't', `
+ `],
 				[/* block */ 'b', ''],
 				[/* block */ 'b', `
  This method is also equivalent to the following code:
  `],
 				[/* block */ 'b', [
 					[/* code block */ 'c', [
+						[/* text */ 't', ` `],
 						[/* text */ 't', `dropArguments`],
-						[/* inline code block */ 'i', `(target, pos, valueTypes.toArray(new Class[0]))`]
+						[/* inline code block */ 'i', `(target, pos, valueTypes.toArray(new Class[0]))`],
+						[/* text */ 't', `
+ `]
 					]]
 				]],
 				[/* block */ 'b', '']
@@ -2064,9 +2087,14 @@ assertEquals("yz", (String) d0.invokeExact(123, "x", "y", "z"));`]
 					[/* text */ 't', `
  This method is equivalent to the following code (though it may be more efficient):
  `],
-					[/* inline code block */ 'i', `publicLookup().findVirtual(MethodHandle.class, "invokeExact", type)`]
+					[/* inline code block */ 'i', `publicLookup().findVirtual(MethodHandle.class, "invokeExact", type)`],
+					[/* text */ 't', `
+
+ `]
 				]],
 				[/* block */ 'b', [
+					[/* text */ 't', `
+ `],
 					[/* text */ 't', `Discussion:`],
 					[/* text */ 't', `
  Invoker method handles can be useful when working with variable method handles
@@ -2341,6 +2369,8 @@ MethodHandle f2 = filterArguments(cat, 0, upcase, upcase);
 assertEquals("XY", (String) f2.invokeExact("x", "y")); // XY`]
 					]]
 				]],
+				[/* text */ 't', `
+ `],
 				[/* block */ 'b', ''],
 				[/* block */ 'b', [
 					[/* text */ 't', `Here is pseudocode for the resulting adapter. In the code, `],
@@ -2387,8 +2417,12 @@ assertEquals("XY", (String) f2.invokeExact("x", "y")); // XY`]
  }`]
 					]]
 				]],
+				[/* text */ 't', `
+ `],
 				[/* block */ 'b', ''],
 				[/* block */ 'b', [
+					[/* text */ 't', `
+ `],
 					[/* text */ 't', `Note:`],
 					[/* text */ 't', ` The resulting adapter is never a `],
 					[/* reference */ 'r', `java.lang.invoke.MethodHandle#asVarargsCollector(java.lang.Class)`, `variable-arity method handle`],
@@ -2465,6 +2499,8 @@ MethodHandle f0 = filterReturnValue(cat, length);
 System.out.println((int) f0.invokeExact("x", "y")); // 2`]
 					]]
 				]],
+				[/* text */ 't', `
+ `],
 				[/* block */ 'b', ''],
 				[/* block */ 'b', [
 					[/* text */ 't', `Here is pseudocode for the resulting adapter. In the code,
@@ -2514,8 +2550,12 @@ System.out.println((int) f0.invokeExact("x", "y")); // 2`]
  }`]
 					]]
 				]],
+				[/* text */ 't', `
+ `],
 				[/* block */ 'b', ''],
 				[/* block */ 'b', [
+					[/* text */ 't', `
+ `],
 					[/* text */ 't', `Note:`],
 					[/* text */ 't', ` The resulting adapter is never a `],
 					[/* reference */ 'r', `java.lang.invoke.MethodHandle#asVarargsCollector(java.lang.Class)`, `variable-arity method handle`],
@@ -2691,6 +2731,8 @@ MethodHandle catTrace = foldArguments(cat, trace);
 assertEquals("boojum", (String) catTrace.invokeExact("boo", "jum"));`]
 					]]
 				]],
+				[/* text */ 't', `
+ `],
 				[/* block */ 'b', ''],
 				[/* block */ 'b', [
 					[/* text */ 't', `Here is pseudocode for the resulting adapter. In the code, `],
@@ -2748,8 +2790,12 @@ assertEquals("boojum", (String) catTrace.invokeExact("boo", "jum"));`]
  }`]
 					]]
 				]],
+				[/* text */ 't', `
+ `],
 				[/* block */ 'b', ''],
 				[/* block */ 'b', [
+					[/* text */ 't', `
+ `],
 					[/* text */ 't', `Note:`],
 					[/* text */ 't', ` The resulting adapter is never a `],
 					[/* reference */ 'r', `java.lang.invoke.MethodHandle#asVarargsCollector(java.lang.Class)`, `variable-arity method handle`],
@@ -2940,6 +2986,8 @@ assertEquals("boojum", (String) catTrace.invokeExact("boo", "jum"));`]
  `]
 				]],
 				[/* block */ 'b', [
+					[/* text */ 't', `
+ `],
 					[/* text */ 't', `Note:`],
 					[/* text */ 't', ` The resulting adapter is never a `],
 					[/* reference */ 'r', `java.lang.invoke.MethodHandle#asVarargsCollector(java.lang.Class)`, `variable-arity method handle`],
@@ -3020,9 +3068,13 @@ assertEquals("boojum", (String) catTrace.invokeExact("boo", "jum"));`]
 					[/* text */ 't', `
  This method is equivalent to the following code (though it may be more efficient):
  `],
-					[/* inline code block */ 'i', `publicLookup().findVirtual(MethodHandle.class, "invoke", type)`]
+					[/* inline code block */ 'i', `publicLookup().findVirtual(MethodHandle.class, "invoke", type)`],
+					[/* text */ 't', `
+ `]
 				]],
 				[/* block */ 'b', [
+					[/* text */ 't', `
+ `],
 					[/* text */ 't', `Discussion:`],
 					[/* text */ 't', `
  A `],
@@ -3311,6 +3363,8 @@ assertEquals("boojum", (String) catTrace.invokeExact("boo", "jum"));`]
  `]
 					]]
 				]],
+				[/* text */ 't', `
+ `],
 				[/* block */ 'b', ''],
 				[/* block */ 'b', [
 					[/* text */ 't', `
@@ -3355,6 +3409,8 @@ assertEquals("boojum", (String) catTrace.invokeExact("boo", "jum"));`]
  `]
 					]]
 				]],
+				[/* text */ 't', `
+ `],
 				[/* block */ 'b', ''],
 				[/* block */ 'b', [
 					[/* text */ 't', `
@@ -3487,6 +3543,8 @@ assertEquals("boojum", (String) catTrace.invokeExact("boo", "jum"));`]
  this case. See below for a detailed description.
  `],
 				[/* block */ 'b', [
+					[/* text */ 't', `
+ `],
 					[/* text */ 't', `Parameters optional everywhere:`],
 					[/* text */ 't', `
  Each clause function is allowed but not required to accept a parameter for each iteration variable `],
@@ -3501,6 +3559,8 @@ assertEquals("boojum", (String) catTrace.invokeExact("boo", "jum"));`]
  `]
 				]],
 				[/* block */ 'b', [
+					[/* text */ 't', `
+ `],
 					[/* text */ 't', `Loop parameters:`],
 					[/* text */ 't', `
  A clause function may take all the iteration variable values it is entitled to, in which case
@@ -3524,6 +3584,8 @@ assertEquals("boojum", (String) catTrace.invokeExact("boo", "jum"));`]
  `]
 				]],
 				[/* block */ 'b', [
+					[/* text */ 't', `
+ `],
 					[/* text */ 't', `Parameters visible everywhere:`],
 					[/* text */ 't', `
  Each non-init clause function is permitted to observe the entire loop state, because it can be passed the full
@@ -3563,6 +3625,8 @@ assertEquals("boojum", (String) catTrace.invokeExact("boo", "jum"));`]
  `]
 				]],
 				[/* block */ 'b', [
+					[/* text */ 't', `
+ `],
 					[/* text */ 't', `Checking clause structure:`],
 					[/* text */ 't', `
  Given a set of clauses, there is a number of checks and adjustments performed to connect all the parts of the
@@ -3574,7 +3638,11 @@ assertEquals("boojum", (String) catTrace.invokeExact("boo", "jum"));`]
  `]
 				]],
 				[/* block */ 'b', [
+					[/* text */ 't', `
+ `],
 					[/* text */ 't', `Effectively identical sequences:`],
+					[/* text */ 't', `
+ `],
 					[/* anchor */ 'r', '#-id', `effid`, ``],
 					[/* text */ 't', `
  A parameter list `],
@@ -3636,6 +3704,8 @@ assertEquals("boojum", (String) catTrace.invokeExact("boo", "jum"));`]
 					[/* block */ 'b', `Each clause is treated as a four-tuple of functions, called "init", "step", "pred", and "fini".
  `]
 				]],
+				[/* text */ 't', `
+ `],
 				[/* block */ 'b', ''],
 				[/* block */ 'b', [
 					[/* text */ 't', `Step 1A: Determine iteration variable types `],
@@ -3667,6 +3737,8 @@ assertEquals("boojum", (String) catTrace.invokeExact("boo", "jum"));`]
  `]
 					]]
 				]],
+				[/* text */ 't', `
+ `],
 				[/* block */ 'b', ''],
 				[/* block */ 'b', [
 					[/* text */ 't', `Step 1B: Determine loop parameters `],
@@ -3708,6 +3780,8 @@ assertEquals("boojum", (String) catTrace.invokeExact("boo", "jum"));`]
  the "internal parameter list".
  `]
 				]],
+				[/* text */ 't', `
+ `],
 				[/* block */ 'b', ''],
 				[/* block */ 'b', `Step 1C: Determine loop return type.`],
 				[/* list */ 'l', [
@@ -3727,6 +3801,8 @@ assertEquals("boojum", (String) catTrace.invokeExact("boo", "jum"));`]
  `]
 					]]
 				]],
+				[/* text */ 't', `
+ `],
 				[/* block */ 'b', ''],
 				[/* block */ 'b', `Step 1D: Check other types.`],
 				[/* list */ 'l', [
@@ -3739,6 +3815,8 @@ assertEquals("boojum", (String) catTrace.invokeExact("boo", "jum"));`]
  `]
 					]]
 				]],
+				[/* text */ 't', `
+ `],
 				[/* block */ 'b', ''],
 				[/* block */ 'b', `Step 2: Determine parameter lists.`],
 				[/* list */ 'l', [
@@ -3759,6 +3837,8 @@ assertEquals("boojum", (String) catTrace.invokeExact("boo", "jum"));`]
  `]
 					]]
 				]],
+				[/* text */ 't', `
+ `],
 				[/* block */ 'b', ''],
 				[/* block */ 'b', `Step 3: Fill in omitted functions.`],
 				[/* list */ 'l', [
@@ -3794,6 +3874,8 @@ assertEquals("boojum", (String) catTrace.invokeExact("boo", "jum"));`]
  `]
 					]]
 				]],
+				[/* text */ 't', `
+ `],
 				[/* block */ 'b', ''],
 				[/* block */ 'b', `Step 4: Fill in missing parameter types.`],
 				[/* list */ 'l', [
@@ -3819,6 +3901,8 @@ assertEquals("boojum", (String) catTrace.invokeExact("boo", "jum"));`]
  `]
 					]]
 				]],
+				[/* text */ 't', `
+ `],
 				[/* block */ 'b', ''],
 				[/* block */ 'b', `Final observations.`],
 				[/* list */ 'l', [
@@ -3866,8 +3950,12 @@ assertEquals("boojum", (String) catTrace.invokeExact("boo", "jum"));`]
  `]
 					]]
 				]],
+				[/* text */ 't', `
+ `],
 				[/* block */ 'b', ''],
 				[/* block */ 'b', [
+					[/* text */ 't', `
+ `],
 					[/* text */ 't', `Example.`],
 					[/* text */ 't', ` As a consequence of step 1A above, the `],
 					[/* inline code block */ 'i', `loop`],
@@ -4020,6 +4108,8 @@ assertEquals("boojum", (String) catTrace.invokeExact("boo", "jum"));`]
  except by throwing an exception.
  `]
 				]],
+				[/* text */ 't', `
+ `],
 				[/* block */ 'b', ''],
 				[/* block */ 'b', `Usage tips.`],
 				[/* list */ 'l', [
@@ -4051,6 +4141,8 @@ assertEquals("boojum", (String) catTrace.invokeExact("boo", "jum"));`]
  `]
 					]]
 				]],
+				[/* text */ 't', `
+ `],
 				[/* block */ 'b', ''],
 				[/* block */ 'b', [
 					[/* text */ 't', `
@@ -4208,8 +4300,12 @@ assert(twice.type().equals(intfn1));
 assert((int)twice.invokeExact(21) == 42);`]
 					]]
 				]],
+				[/* text */ 't', `
+ `],
 				[/* block */ 'b', ''],
 				[/* block */ 'b', [
+					[/* text */ 't', `
+ `],
 					[/* text */ 't', `Note:`],
 					[/* text */ 't', ` The resulting adapter is never a `],
 					[/* reference */ 'r', `java.lang.invoke.MethodHandle#asVarargsCollector(java.lang.Class)`, `variable-arity method handle`],
@@ -4282,6 +4378,8 @@ assert((int)twice.invokeExact(21) == 42);`]
  `]
 					]]
 				]],
+				[/* text */ 't', `
+ `],
 				[/* block */ 'b', [
 					[/* text */ 't', `
  The invoker will invoke its target like a call to `],
@@ -4587,6 +4685,8 @@ return invoker;`]
  `]
 					]]
 				]],
+				[/* text */ 't', `
+ `],
 				[/* block */ 'b', ''],
 				[/* block */ 'b', [
 					[/* text */ 't', `
@@ -4627,6 +4727,8 @@ return invoker;`]
  }`]
 					]]
 				]],
+				[/* text */ 't', `
+ `],
 				[/* block */ 'b', ''],
 				[/* block */ 'b', [
 					[/* text */ 't', `
@@ -4957,6 +5059,8 @@ return invoker;`]
  `]
 					]]
 				]],
+				[/* text */ 't', `
+ `],
 				[/* block */ 'b', ''],
 				[/* block */ 'b', `
  The resulting loop handle's result type and parameter signature are determined as follows:`],
@@ -4975,6 +5079,8 @@ return invoker;`]
  `]
 					]]
 				]],
+				[/* text */ 't', `
+ `],
 				[/* block */ 'b', ''],
 				[/* block */ 'b', [
 					[/* text */ 't', `
@@ -5190,7 +5296,9 @@ return invoker;`]
          deep reflection to its own module.)
    `]
 							]]
-						]]
+						]],
+						[/* text */ 't', `
+ `]
 					]],
 					[/* block */ 'b', [
 						[/* text */ 't', `The target class must be a proper class, not a primitive or array class.
@@ -5210,21 +5318,28 @@ return invoker;`]
 						[/* list */ 'l', [
 							[/* block */ 'b', [
 								[/* inline code block */ 'i', `M1`],
+								[/* text */ 't', ` `],
 								[/* reference */ 'r', `java.lang.Module#canRead(java.lang.Module)`, `reads`],
+								[/* text */ 't', ` `],
 								[/* inline code block */ 'i', `M2`],
 								[/* text */ 't', `.`]
 							]],
 							[/* block */ 'b', [
 								[/* inline code block */ 'i', `M2`],
+								[/* text */ 't', ` `],
 								[/* reference */ 'r', `java.lang.Module#isOpen(java.lang.String,java.lang.Module)`, `opens`],
 								[/* text */ 't', ` the package
          containing the target class to at least `],
 								[/* inline code block */ 'i', `M1`],
 								[/* text */ 't', `.`]
 							]]
-						]]
+						]],
+						[/* text */ 't', `
+ `]
 					]]
 				]],
+				[/* text */ 't', `
+ `],
 				[/* block */ 'b', ''],
 				[/* block */ 'b', `
  If any of the above checks is violated, this method fails with an
@@ -5401,6 +5516,8 @@ return invoker;`]
  `]
 					]]
 				]],
+				[/* text */ 't', `
+ `],
 				[/* block */ 'b', ''],
 				[/* block */ 'b', [
 					[/* text */ 't', `
@@ -5601,6 +5718,8 @@ return invoker;`]
  `]
 					]]
 				]],
+				[/* text */ 't', `
+ `],
 				[/* block */ 'b', ''],
 				[/* block */ 'b', [
 					[/* text */ 't', `
@@ -5625,6 +5744,8 @@ return invoker;`]
  int misalignedAtIndex = (misalignedAtZeroIndex + index) % sizeOfT;
  boolean isMisaligned = misalignedAtIndex != 0;`]
 				]],
+				[/* text */ 't', `
+ `],
 				[/* block */ 'b', ''],
 				[/* block */ 'b', [
 					[/* text */ 't', `
@@ -5837,6 +5958,8 @@ return invoker;`]
  `]
 					]]
 				]],
+				[/* text */ 't', `
+ `],
 				[/* block */ 'b', ''],
 				[/* block */ 'b', [
 					[/* text */ 't', `
@@ -5862,6 +5985,8 @@ return invoker;`]
  int misalignedAtIndex = bb.alignmentOffset(index, sizeOfT);
  boolean isMisaligned = misalignedAtIndex != 0;`]
 				]],
+				[/* text */ 't', `
+ `],
 				[/* block */ 'b', ''],
 				[/* block */ 'b', [
 					[/* text */ 't', `

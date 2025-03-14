@@ -44,6 +44,8 @@ DocsCollector.collect('java.lang.NullPointerException', [
  `]
 			]]
 		]],
+		[/* text */ 't', `
+ `],
 		[/* block */ 'b', [
 			[/* text */ 't', `
  Applications should throw instances of this class to indicate

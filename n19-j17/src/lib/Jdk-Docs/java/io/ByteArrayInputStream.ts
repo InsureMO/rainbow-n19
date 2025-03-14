@@ -239,6 +239,8 @@ DocsCollector.collect('java.io.ByteArrayInputStream', [
 						[/* text */ 't', `, leaving elements `],
 						[/* inline code block */ 'i', `b[off+`],
 						[/* text */ 't', `k`],
+						[/* text */ 't', `
+ `],
 						[/* inline code block */ 'i', `]`],
 						[/* text */ 't', ` through `],
 						[/* inline code block */ 'i', `b[off+len-1]`],

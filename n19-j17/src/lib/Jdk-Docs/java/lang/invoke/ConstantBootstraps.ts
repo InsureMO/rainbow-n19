@@ -263,6 +263,8 @@ DocsCollector.collect('java.lang.invoke.ConstantBootstraps', [
  `]
 					]]
 				]],
+				[/* text */ 't', `
+ `],
 				[/* block */ 'b', ''],
 				[/* block */ 'b', [
 					[/* text */ 't', `
@@ -322,6 +324,8 @@ DocsCollector.collect('java.lang.invoke.ConstantBootstraps', [
  `]
 					]]
 				]],
+				[/* text */ 't', `
+ `],
 				[/* block */ 'b', ''],
 				[/* block */ 'b', `
  The result is the same as when using the following code:

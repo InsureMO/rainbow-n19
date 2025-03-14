@@ -327,6 +327,9 @@ DocsCollector.collect('java.util.zip.Deflater', [
  `]
 					]]
 				]],
+				[/* text */ 't', `
+
+ `],
 				[/* block */ 'b', ''],
 				[/* block */ 'b', [
 					[/* text */ 't', `In the case of `],
@@ -472,6 +475,9 @@ DocsCollector.collect('java.util.zip.Deflater', [
  `]
 					]]
 				]],
+				[/* text */ 't', `
+
+ `],
 				[/* block */ 'b', ''],
 				[/* block */ 'b', [
 					[/* text */ 't', `In the case of `],

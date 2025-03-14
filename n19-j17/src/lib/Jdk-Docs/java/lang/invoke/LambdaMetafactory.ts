@@ -119,6 +119,9 @@ DocsCollector.collect('java.lang.invoke.LambdaMetafactory', [
 				]]
 			]]
 		]],
+		[/* text */ 't', `
+
+ `],
 		[/* block */ 'b', ''],
 		[/* block */ 'b', [
 			[/* text */ 't', `It is sometimes useful to restrict the set of inputs or results permitted
@@ -207,6 +210,9 @@ DocsCollector.collect('java.lang.invoke.LambdaMetafactory', [
 				[/* text */ 't', ` for details.`]
 			]]
 		]],
+		[/* text */ 't', `
+
+ `],
 		[/* block */ 'b', ''],
 		[/* block */ 'b', `Assume the linkage arguments are as follows:
  `],
@@ -239,6 +245,9 @@ DocsCollector.collect('java.lang.invoke.LambdaMetafactory', [
       has N parameters, of types (T1..Tn) and return type Rt.`]
 			]]
 		]],
+		[/* text */ 't', `
+
+ `],
 		[/* block */ 'b', ''],
 		[/* block */ 'b', `Then the following linkage invariants must hold:
  `],
@@ -259,6 +268,9 @@ DocsCollector.collect('java.lang.invoke.LambdaMetafactory', [
 			[/* block */ 'b', `The return type Rt is void, or the return type Ra is not void and is
      adaptable to Rt`]
 		]],
+		[/* text */ 't', `
+
+ `],
 		[/* block */ 'b', ''],
 		[/* block */ 'b', [
 			[/* text */ 't', `Further, at capture time, if `],
@@ -440,6 +452,9 @@ DocsCollector.collect('java.lang.invoke.LambdaMetafactory', [
                           MethodType factoryType,
                           Object... args)`]
 				]],
+				[/* text */ 't', `
+
+ `],
 				[/* block */ 'b', ''],
 				[/* block */ 'b', `but it behaves as if the argument list is as follows:
 
@@ -458,6 +473,9 @@ DocsCollector.collect('java.lang.invoke.LambdaMetafactory', [
                           MethodType... altMethods      // IF flags has BRIDGES set
                           )`]
 				]],
+				[/* text */ 't', `
+
+ `],
 				[/* block */ 'b', ''],
 				[/* block */ 'b', [
 					[/* text */ 't', `Arguments that appear in the argument list for
@@ -518,6 +536,9 @@ DocsCollector.collect('java.lang.invoke.LambdaMetafactory', [
 						[/* text */ 't', ` flag is set.`]
 					]]
 				]],
+				[/* text */ 't', `
+
+ `],
 				[/* block */ 'b', ''],
 				[/* block */ 'b', [
 					[/* text */ 't', `Each class named by `],

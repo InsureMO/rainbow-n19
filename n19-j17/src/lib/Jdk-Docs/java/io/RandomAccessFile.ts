@@ -371,6 +371,8 @@ DocsCollector.collect('java.io.RandomAccessFile', [
 					[/* code block */ 'c', `     (byte)(b)
  `]
 				]],
+				[/* text */ 't', `
+ `],
 				[/* block */ 'b', `
  This method blocks until the byte is read, the end of the stream
  is detected, or an exception is thrown.`]
@@ -410,6 +412,8 @@ DocsCollector.collect('java.io.RandomAccessFile', [
 					[/* code block */ 'c', `     (char)((b1 << 8) | b2)
  `]
 				]],
+				[/* text */ 't', `
+ `],
 				[/* block */ 'b', `
  This method blocks until the two bytes are read, the end of the
  stream is detected, or an exception is thrown.`]
@@ -542,6 +546,8 @@ DocsCollector.collect('java.io.RandomAccessFile', [
 					[/* code block */ 'c', `     (b1 << 24) | (b2 << 16) + (b3 << 8) + b4
  `]
 				]],
+				[/* text */ 't', `
+ `],
 				[/* block */ 'b', `
  This method blocks until the four bytes are read, the end of the
  stream is detected, or an exception is thrown.`]
@@ -606,6 +612,8 @@ DocsCollector.collect('java.io.RandomAccessFile', [
 					[/* code block */ 'c', `     (b1 << 8) | b2
  `]
 				]],
+				[/* text */ 't', `
+ `],
 				[/* block */ 'b', `
  This method blocks until the two bytes are read, the end of the
  stream is detected, or an exception is thrown.`]
@@ -779,6 +787,8 @@ DocsCollector.collect('java.io.RandomAccessFile', [
 					[/* code block */ 'c', `     0 <= b1, b2, b3, b4, b5, b6, b7, b8 <=255,
  `]
 				]],
+				[/* text */ 't', `
+ `],
 				[/* block */ 'b', `
  then the result is equal to:
  `],
@@ -789,6 +799,8 @@ DocsCollector.collect('java.io.RandomAccessFile', [
      + ((long)b7 << 8) + b8
  `]
 				]],
+				[/* text */ 't', `
+ `],
 				[/* block */ 'b', ''],
 				[/* block */ 'b', `
  This method blocks until the eight bytes are read, the end of the
@@ -832,6 +844,8 @@ DocsCollector.collect('java.io.RandomAccessFile', [
 					[/* code block */ 'c', `     (short)((b1 << 8) | b2)
  `]
 				]],
+				[/* text */ 't', `
+ `],
 				[/* block */ 'b', `
  This method blocks until the two bytes are read, the end of the
  stream is detected, or an exception is thrown.`]

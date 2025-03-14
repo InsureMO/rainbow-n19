@@ -62,6 +62,9 @@ DocsCollector.collect('java.util.stream.IntStream', [
          accumulator.accept(result, element);
      return result;`]
 				]],
+				[/* text */ 't', `
+
+ `],
 				[/* block */ 'b', [
 					[/* text */ 't', `Like `],
 					[/* reference */ 'r', `#reduce(int,java.util.function.IntBinaryOperator)`, `reduce(int, IntBinaryOperator)`],
@@ -337,6 +340,9 @@ DocsCollector.collect('java.util.stream.IntStream', [
 				[/* code block */ 'c', [
 					[/* inline code block */ 'i', `return reduce(0, Integer::sum);`]
 				]],
+				[/* text */ 't', `
+
+ `],
 				[/* block */ 'b', [
 					[/* text */ 't', `This is a `],
 					[/* text */ 't', `terminal operation`],
@@ -499,6 +505,9 @@ DocsCollector.collect('java.util.stream.IntStream', [
 				[/* code block */ 'c', [
 					[/* inline code block */ 'i', `return reduce(Integer::max);`]
 				]],
+				[/* text */ 't', `
+
+ `],
 				[/* block */ 'b', [
 					[/* text */ 't', `This is a `],
 					[/* text */ 't', `terminal operation`],
@@ -530,6 +539,9 @@ DocsCollector.collect('java.util.stream.IntStream', [
 				[/* code block */ 'c', [
 					[/* inline code block */ 'i', `return reduce(Integer::min);`]
 				]],
+				[/* text */ 't', `
+
+ `],
 				[/* block */ 'b', [
 					[/* text */ 't', `This is a `],
 					[/* text */ 't', `terminal operation`],
@@ -994,6 +1006,9 @@ DocsCollector.collect('java.util.stream.IntStream', [
 				[/* code block */ 'c', [
 					[/* inline code block */ 'i', `return mapToLong(e -> 1L).sum();`]
 				]],
+				[/* text */ 't', `
+
+ `],
 				[/* block */ 'b', [
 					[/* text */ 't', `This is a `],
 					[/* text */ 't', `terminal operation`],
@@ -1285,6 +1300,9 @@ DocsCollector.collect('java.util.stream.IntStream', [
          ...
      }`]
 				]],
+				[/* text */ 't', `
+
+ `],
 				[/* block */ 'b', ''],
 				[/* block */ 'b', [
 					[/* text */ 't', `The resulting sequence may be empty if the `],

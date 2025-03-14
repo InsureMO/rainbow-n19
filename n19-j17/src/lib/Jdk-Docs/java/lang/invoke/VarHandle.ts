@@ -30,6 +30,8 @@ DocsCollector.collect('java.lang.invoke.VarHandle', [
 			[/* block */ 'b', [
 				[/* text */ 't', `a list of `],
 				[/* reference */ 'r', `#coordinateTypes()`, `coordinate types`],
+				[/* text */ 't', `
+ `],
 				[/* inline code block */ 'i', `CT1, CT2, ..., CTn`],
 				[/* text */ 't', `, the types of `],
 				[/* text */ 't', `coordinate expressions`],
@@ -129,10 +131,14 @@ DocsCollector.collect('java.lang.invoke.VarHandle', [
  `]
 		]],
 		[/* code block */ 'c', [
+			[/* text */ 't', ` `],
 			[/* inline code block */ 'i', `String[] sa = ...
  VarHandle avh = MethodHandles.arrayElementVarHandle(String[].class);
  boolean r = avh.compareAndSet(sa, 10, "expected", "new");`]
 		]],
+		[/* text */ 't', `
+
+ `],
 		[/* block */ 'b', ''],
 		[/* block */ 'b', [
 			[/* text */ 't', `Access modes control atomicity and consistency properties.
@@ -299,6 +305,9 @@ DocsCollector.collect('java.lang.invoke.VarHandle', [
  `]
 			]]
 		]],
+		[/* text */ 't', `
+
+ `],
 		[/* block */ 'b', ''],
 		[/* block */ 'b', [
 			[/* text */ 't', `Factory methods that produce or `],
@@ -507,6 +516,7 @@ DocsCollector.collect('java.lang.invoke.VarHandle', [
  `]
 		]],
 		[/* code block */ 'c', [
+			[/* text */ 't', ` `],
 			[/* inline code block */ 'i', `VarHandle vh = ..
  R r = (R) vh.{access-mode}(p1, p2, ..., pN);`]
 		]],
@@ -514,6 +524,7 @@ DocsCollector.collect('java.lang.invoke.VarHandle', [
  behaves as if:
  `],
 		[/* code block */ 'c', [
+			[/* text */ 't', ` `],
 			[/* inline code block */ 'i', `VarHandle vh = ..
  VarHandle.AccessMode am = VarHandle.AccessMode.valueFromMethodName("{access-mode}");
  MethodHandle mh = MethodHandles.varHandleExactInvoker(
@@ -529,6 +540,7 @@ DocsCollector.collect('java.lang.invoke.VarHandle', [
  This is equivalent to:
  `],
 		[/* code block */ 'c', [
+			[/* text */ 't', ` `],
 			[/* inline code block */ 'i', `MethodHandle mh = MethodHandles.lookup().findVirtual(
                        VarHandle.class,
                        "{access-mode}",
@@ -552,6 +564,7 @@ DocsCollector.collect('java.lang.invoke.VarHandle', [
  More concisely, such behavior is equivalent to:
  `],
 		[/* code block */ 'c', [
+			[/* text */ 't', ` `],
 			[/* inline code block */ 'i', `VarHandle vh = ..
  VarHandle.AccessMode am = VarHandle.AccessMode.valueFromMethodName("{access-mode}");
  MethodHandle mh = vh.toMethodHandle(am);
@@ -579,6 +592,7 @@ DocsCollector.collect('java.lang.invoke.VarHandle', [
  `]
 		]],
 		[/* code block */ 'c', [
+			[/* text */ 't', ` `],
 			[/* inline code block */ 'i', `VarHandle vh = ..
  R r = (R) vh.{access-mode}(p1, p2, ..., pN);`]
 		]],
@@ -586,6 +600,7 @@ DocsCollector.collect('java.lang.invoke.VarHandle', [
  behaves as if:
  `],
 		[/* code block */ 'c', [
+			[/* text */ 't', ` `],
 			[/* inline code block */ 'i', `VarHandle vh = ..
  VarHandle.AccessMode am = VarHandle.AccessMode.valueFromMethodName("{access-mode}");
  MethodHandle mh = MethodHandles.varHandleExactInvoker(
@@ -602,6 +617,7 @@ DocsCollector.collect('java.lang.invoke.VarHandle', [
  More concisely, such behavior is equivalent to:
  `],
 		[/* code block */ 'c', [
+			[/* text */ 't', ` `],
 			[/* inline code block */ 'i', `VarHandle vh = ..
  VarHandle.AccessMode am = VarHandle.AccessMode.valueFromMethodName("{access-mode}");
  MethodHandle mh = vh.toMethodHandle(am);
@@ -2821,7 +2837,10 @@ DocsCollector.collect('java.lang.invoke.VarHandle', [
  `],
 				[/* block */ 'b', [
 					[/* text */ 't', `The method signature is of the form `],
-					[/* inline code block */ 'i', `(CT1 ct1, ..., CTn ctn, T newValue)void`]
+					[/* inline code block */ 'i', `(CT1 ct1, ..., CTn ctn, T newValue)void`],
+					[/* text */ 't', `
+
+ `]
 				]],
 				[/* block */ 'b', [
 					[/* text */ 't', `The symbolic type descriptor at the call site of `],

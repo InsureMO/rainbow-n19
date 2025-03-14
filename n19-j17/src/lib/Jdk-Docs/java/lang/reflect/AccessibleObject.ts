@@ -48,10 +48,16 @@ DocsCollector.collect('java.lang.reflect.AccessibleObject', [
  class on the stack only succeeds if the member and the declaring class are
  public, and the class is in a package that is exported to all modules. `]
 		]],
+		[/* text */ 't', `
+
+ `],
 		[/* block */ 'b', ` The one variation from Java language access control is that the checks
  by reflected objects assume readability. That is, the module containing
  the use of a reflected object is assumed to read the module in which
  the underlying field, method, or constructor is declared. `],
+		[/* text */ 't', `
+
+ `],
 		[/* block */ 'b', [
 			[/* text */ 't', ` Whether the checks for Java language access control can be suppressed
  (and thus, whether access can be enabled) depends on whether the reflected
@@ -408,6 +414,7 @@ DocsCollector.collect('java.lang.reflect.AccessibleObject', [
  `]
 				]],
 				[/* code block */ 'c', [
+					[/* text */ 't', ` `],
 					[/* inline code block */ 'i', `p.T obj = ....;  // instance of p.T
      :
      Method m = p.T.class.getDeclaredMethod("privateMethod");
@@ -418,6 +425,9 @@ DocsCollector.collect('java.lang.reflect.AccessibleObject', [
          ...
      }`]
 				]],
+				[/* text */ 't', `
+
+ `],
 				[/* block */ 'b', ''],
 				[/* block */ 'b', [
 					[/* text */ 't', ` If there is a security manager, its `],
@@ -511,6 +521,9 @@ DocsCollector.collect('java.lang.reflect.AccessibleObject', [
 					[/* reference */ 'r', `#setAccessible(boolean)`, `setAccessible(boolean)`],
 					[/* text */ 't', `. `]
 				]],
+				[/* text */ 't', `
+
+ `],
 				[/* block */ 'b', [
 					[/* text */ 't', `If there is a security manager, its
  `],
@@ -586,11 +599,16 @@ DocsCollector.collect('java.lang.reflect.AccessibleObject', [
 					[/* reference */ 'r', `java.lang.reflect.Member`, `member`],
 					[/* text */ 't', ` of `],
 					[/* reference */ 'r', `java.lang.reflect.Member#getDeclaringClass()`, `declaring class`],
+					[/* text */ 't', ` `],
 					[/* inline code block */ 'i', `D`],
 					[/* text */ 't', ` if any of the following hold: `]
 				]],
+				[/* text */ 't', `
+
+ `],
 				[/* list */ 'l', [
 					[/* block */ 'b', [
+						[/* text */ 't', ` `],
 						[/* inline code block */ 'i', `C`],
 						[/* text */ 't', ` and `],
 						[/* inline code block */ 'i', `D`],
@@ -606,6 +624,7 @@ DocsCollector.collect('java.lang.reflect.AccessibleObject', [
 						[/* text */ 't', ` in
      a package that the module containing `],
 						[/* inline code block */ 'i', `D`],
+						[/* text */ 't', ` `],
 						[/* reference */ 'r', `java.lang.Module#isExported(java.lang.String,java.lang.Module)`, `exports`],
 						[/* text */ 't', ` to at least the module
      containing `],
@@ -615,6 +634,7 @@ DocsCollector.collect('java.lang.reflect.AccessibleObject', [
 					[/* block */ 'b', [
 						[/* text */ 't', ` The member is `],
 						[/* inline code block */ 'i', `protected`],
+						[/* text */ 't', ` `],
 						[/* inline code block */ 'i', `static`],
 						[/* text */ 't', `, `],
 						[/* inline code block */ 'i', `D`],
@@ -634,9 +654,12 @@ DocsCollector.collect('java.lang.reflect.AccessibleObject', [
 						[/* text */ 't', `. `]
 					]],
 					[/* block */ 'b', [
+						[/* text */ 't', ` `],
 						[/* inline code block */ 'i', `D`],
 						[/* text */ 't', ` is in a package that the module containing `],
 						[/* inline code block */ 'i', `D`],
+						[/* text */ 't', `
+     `],
 						[/* reference */ 'r', `java.lang.Module#isOpen(java.lang.String,java.lang.Module)`, `opens`],
 						[/* text */ 't', ` to at least the module
      containing `],
@@ -649,11 +672,17 @@ DocsCollector.collect('java.lang.reflect.AccessibleObject', [
      open module. `]
 					]]
 				]],
+				[/* text */ 't', `
+
+ `],
 				[/* block */ 'b', ` This method cannot be used to enable access to private members,
  members with default (package) access, protected instance members, or
  protected constructors when the declaring class is in a different module
  to the caller and the package containing the declaring class is not open
  to the caller's module. `],
+				[/* text */ 't', `
+
+ `],
 				[/* block */ 'b', [
 					[/* text */ 't', ` This method cannot be used to enable `],
 					[/* reference */ 'r', `java.lang.reflect.Field#set(java.lang.Object,java.lang.Object)`, `write`],
@@ -675,6 +704,8 @@ DocsCollector.collect('java.lang.reflect.AccessibleObject', [
 						[/* reference */ 'r', `java.lang.Class#isRecord()`, `record`]
 					]]
 				]],
+				[/* text */ 't', `
+ `],
 				[/* block */ 'b', ''],
 				[/* block */ 'b', [
 					[/* text */ 't', ` The `],

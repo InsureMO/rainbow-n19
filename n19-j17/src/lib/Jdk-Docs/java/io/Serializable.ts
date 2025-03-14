@@ -65,6 +65,9 @@ DocsCollector.collect('java.io.Serializable', [
  private void readObjectNoData()
      throws ObjectStreamException;
  `],
+		[/* text */ 't', `
+
+ `],
 		[/* block */ 'b', ''],
 		[/* block */ 'b', `The writeObject method is responsible for writing the state of the
  object for its particular class so that the corresponding

@@ -701,6 +701,8 @@ DocsCollector.collect('java.lang.Byte', [
 
  `],
 				[/* block */ 'b', [
+					[/* text */ 't', `
+ `],
 					[/* dl */ 'dl', [
 						[/* dt */ 'dt', [
 							[/* text */ 't', `DecodableString:`],
@@ -764,8 +766,13 @@ DocsCollector.collect('java.lang.Byte', [
 							[/* text */ 't', `
  `]
 						]]
-					]]
+					]],
+					[/* text */ 't', `
+ `]
 				]],
+				[/* text */ 't', `
+
+ `],
 				[/* text */ 't', `DecimalNumeral`],
 				[/* text */ 't', `, `],
 				[/* text */ 't', `HexDigits`],
@@ -896,7 +903,11 @@ DocsCollector.collect('java.lang.Byte', [
  `]
 				]],
 				[/* block */ 'b', [
-					[/* inline code block */ 'i', `new Byte(Byte.parseByte(s))`]
+					[/* text */ 't', `
+ `],
+					[/* inline code block */ 'i', `new Byte(Byte.parseByte(s))`],
+					[/* text */ 't', `
+ `]
 				]],
 				[/* block */ 'b', '']
 			],
@@ -954,7 +965,11 @@ DocsCollector.collect('java.lang.Byte', [
  `]
 				]],
 				[/* block */ 'b', [
-					[/* inline code block */ 'i', `new Byte(Byte.parseByte(s, radix))`]
+					[/* text */ 't', `
+ `],
+					[/* inline code block */ 'i', `new Byte(Byte.parseByte(s, radix))`],
+					[/* text */ 't', `
+ `]
 				]],
 				[/* block */ 'b', '']
 			],

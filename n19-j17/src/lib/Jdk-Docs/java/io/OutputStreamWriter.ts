@@ -24,6 +24,9 @@ DocsCollector.collect('java.io.OutputStreamWriter', [
 		[/* code block */ 'c', ` Writer out
    = new BufferedWriter(new OutputStreamWriter(System.out));
  `],
+		[/* text */ 't', `
+
+ `],
 		[/* block */ 'b', ''],
 		[/* block */ 'b', [
 			[/* text */ 't', ` A `],

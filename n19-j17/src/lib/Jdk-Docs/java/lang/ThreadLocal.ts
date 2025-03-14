@@ -46,6 +46,8 @@ DocsCollector.collect('java.lang.ThreadLocal', [
      }
  }
  `],
+		[/* text */ 't', `
+ `],
 		[/* block */ 'b', ''],
 		[/* block */ 'b', [
 			[/* text */ 't', `Each thread holds an implicit reference to its copy of a thread-local

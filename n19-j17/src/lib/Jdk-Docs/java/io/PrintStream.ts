@@ -503,6 +503,9 @@ DocsCollector.collect('java.io.PrintStream', [
 				[/* code block */ 'c', [
 					[/* inline code block */ 'i', `out.print(csq.toString())`]
 				]],
+				[/* text */ 't', `
+
+ `],
 				[/* block */ 'b', ''],
 				[/* block */ 'b', [
 					[/* text */ 't', ` Depending on the specification of `],

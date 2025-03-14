@@ -25,7 +25,9 @@ DocsCollector.collect('java.lang.invoke.MutableCallSite', [
  Here is an example of a mutable call site which introduces a
  state variable into a method handle chain.
  `],
-			[/* block */ 'b', ``]
+			[/* block */ 'b', ``],
+			[/* text */ 't', `
+ `]
 		]],
 		[/* block */ 'b', [
 			[/* code block */ 'c', [
@@ -42,6 +44,8 @@ assertEquals("FRED", (String) worker1.invokeExact());
 // (mutation can be continued indefinitely)`]
 			]]
 		]],
+		[/* text */ 't', `
+ `],
 		[/* block */ 'b', ''],
 		[/* block */ 'b', `
  The same call site may be used in several places at once.
@@ -59,6 +63,8 @@ assertEquals("WILMA", (String) worker1.invokeExact());
 assertEquals("Wilma, dear?", (String) worker2.invokeExact());`]
 			]]
 		]],
+		[/* text */ 't', `
+ `],
 		[/* block */ 'b', ''],
 		[/* block */ 'b', `Non-synchronization of target values:`],
 		[/* block */ 'b', [
@@ -381,6 +387,8 @@ assertEquals("Wilma, dear?", (String) worker2.invokeExact());`]
  `]
 				]],
 				[/* block */ 'b', [
+					[/* text */ 't', `
+ `],
 					[/* text */ 't', `Discussion:`],
 					[/* text */ 't', `
  For performance reasons, `],
@@ -400,6 +408,8 @@ assertEquals("Wilma, dear?", (String) worker2.invokeExact());`]
  `]
 				]],
 				[/* block */ 'b', [
+					[/* text */ 't', `
+ `],
 					[/* text */ 't', `Implementation Note:`],
 					[/* text */ 't', `
  Simple implementations of `],

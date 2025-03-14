@@ -52,6 +52,9 @@ DocsCollector.collect('java.lang.annotation.Target', [
         ...
     }
  `],
+		[/* text */ 't', `
+
+ `],
 		[/* block */ 'b', ''],
 		[/* block */ 'b', [
 			[/* text */ 't', `This `],
@@ -66,6 +69,9 @@ DocsCollector.collect('java.lang.annotation.Target', [
     public @interface MemberInterface {
         ...
     }
+ `],
+		[/* text */ 't', `
+
  `],
 		[/* block */ 'b', ''],
 		[/* block */ 'b', [

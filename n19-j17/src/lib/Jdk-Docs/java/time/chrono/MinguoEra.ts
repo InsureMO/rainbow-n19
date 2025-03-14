@@ -89,6 +89,8 @@ DocsCollector.collect('java.time.chrono.MinguoEra', [
 				]]
 			]],
 		],
+		[/* text */ 't', `
+ `],
 		[/* block */ 'b', ''],
 		[/* block */ 'b', [
 			[/* text */ 't', `Do not use `],
@@ -157,6 +159,8 @@ DocsCollector.collect('java.time.chrono.MinguoEra', [
 				[/* text */ 't', ` value.
  `],
 				[/* block */ 'b', [
+					[/* text */ 't', `
+ `],
 					[/* inline code block */ 'i', `MinguoEra`],
 					[/* text */ 't', ` is an enum representing the Minguo eras of BEFORE_ROC/ROC.
  This factory allows the enum to be obtained from the `],

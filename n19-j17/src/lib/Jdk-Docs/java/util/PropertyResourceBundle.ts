@@ -61,6 +61,8 @@ DocsCollector.collect('java.util.PropertyResourceBundle', [
  `]
 		]],
 		[/* block */ 'b', [
+			[/* text */ 't', `
+ `],
 			[/* code block */ 'c', ` # MessageFormat pattern
  s1=Die Platte \\"{1}\\" enthält {0}.
 
@@ -81,6 +83,8 @@ DocsCollector.collect('java.util.PropertyResourceBundle', [
 
  # sample date
  s7=3. März 1996
+ `],
+			[/* text */ 't', `
  `]
 		]],
 		[/* block */ 'b', '']

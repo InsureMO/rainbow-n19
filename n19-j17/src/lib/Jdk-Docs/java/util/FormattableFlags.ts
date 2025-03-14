@@ -64,7 +64,13 @@ DocsCollector.collect('java.util.FormattableFlags', [
 				[/* text */ 't', ` method.  The output should be equivalent the following
  invocation of `],
 				[/* reference */ 'r', `java.lang.String#toUpperCase(java.util.Locale)`, `String.toUpperCase(java.util.Locale)`],
+				[/* text */ 't', `
+
+ `],
 				[/* code block */ 'c', `     out.toUpperCase() `],
+				[/* text */ 't', `
+
+ `],
 				[/* block */ 'b', [
 					[/* text */ 't', ` This flag corresponds to `],
 					[/* inline code block */ 'i', `'S'`],

@@ -499,6 +499,9 @@ DocsCollector.collect('java.lang.Runtime', [
 					[/* block */ 'b', `The working directory does not exist.
  `]
 				]],
+				[/* text */ 't', `
+
+ `],
 				[/* block */ 'b', ''],
 				[/* block */ 'b', [
 					[/* text */ 't', `In such cases an exception will be thrown.  The exact nature
@@ -770,6 +773,9 @@ DocsCollector.collect('java.lang.Runtime', [
    `]
 					]]
 				]],
+				[/* text */ 't', `
+
+ `],
 				[/* block */ 'b', ''],
 				[/* block */ 'b', [
 					[/* text */ 't', ` A `],

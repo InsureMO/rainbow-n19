@@ -1943,14 +1943,18 @@ DocsCollector.collect('java.util.Arrays', [
 				]],
 				[/* list */ 'l', [
 					[/* block */ 'b', [
+						[/* text */ 't', ` `],
 						[/* inline code block */ 'i', `e1`],
 						[/* text */ 't', ` and `],
 						[/* inline code block */ 'i', `e2`],
 						[/* text */ 't', ` are both arrays of object reference
          types, and `],
-						[/* inline code block */ 'i', `Arrays.deepEquals(e1, e2) would return true`]
+						[/* inline code block */ 'i', `Arrays.deepEquals(e1, e2) would return true`],
+						[/* text */ 't', `
+    `]
 					]],
 					[/* block */ 'b', [
+						[/* text */ 't', ` `],
 						[/* inline code block */ 'i', `e1`],
 						[/* text */ 't', ` and `],
 						[/* inline code block */ 'i', `e2`],
@@ -1962,9 +1966,13 @@ DocsCollector.collect('java.util.Arrays', [
     `]
 					]],
 					[/* block */ 'b', [
-						[/* inline code block */ 'i', `e1 == e2`]
+						[/* text */ 't', ` `],
+						[/* inline code block */ 'i', `e1 == e2`],
+						[/* text */ 't', `
+    `]
 					]],
 					[/* block */ 'b', [
+						[/* text */ 't', ` `],
 						[/* inline code block */ 'i', `e1.equals(e2)`],
 						[/* text */ 't', ` would return true.
  `]
@@ -2296,6 +2304,7 @@ DocsCollector.collect('java.util.Arrays', [
 				[/* text */ 't', ` are considered equal if:
  `],
 				[/* code block */ 'c', [
+					[/* text */ 't', `    `],
 					[/* inline code block */ 'i', `new Double(d1).equals(new Double(d2))`]
 				]],
 				[/* text */ 't', `
@@ -2344,6 +2353,7 @@ DocsCollector.collect('java.util.Arrays', [
  `]
 				]],
 				[/* code block */ 'c', [
+					[/* text */ 't', `    `],
 					[/* inline code block */ 'i', `new Double(d1).equals(new Double(d2))`]
 				]],
 				[/* text */ 't', `
@@ -2427,6 +2437,7 @@ DocsCollector.collect('java.util.Arrays', [
 				[/* text */ 't', ` are considered equal if:
  `],
 				[/* code block */ 'c', [
+					[/* text */ 't', `    `],
 					[/* inline code block */ 'i', `new Float(f1).equals(new Float(f2))`]
 				]],
 				[/* text */ 't', `
@@ -2475,6 +2486,7 @@ DocsCollector.collect('java.util.Arrays', [
  `]
 				]],
 				[/* code block */ 'c', [
+					[/* text */ 't', `    `],
 					[/* inline code block */ 'i', `new Float(f1).equals(new Float(f2))`]
 				]],
 				[/* text */ 't', `

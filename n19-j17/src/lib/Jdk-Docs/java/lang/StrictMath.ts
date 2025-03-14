@@ -414,6 +414,9 @@ DocsCollector.collect('java.lang.StrictMath', [
 
  `]
 				]],
+				[/* text */ 't', `
+
+ `],
 				[/* block */ 'b', ''],
 				[/* block */ 'b', [
 					[/* text */ 't', `Note that `],
@@ -709,7 +712,10 @@ DocsCollector.collect('java.lang.StrictMath', [
 					[/* block */ 'b', [
 						[/* text */ 't', ` If the argument is zero, the result is
  `],
-						[/* inline code block */ 'i', `-Double.MIN_VALUE`]
+						[/* inline code block */ 'i', `-Double.MIN_VALUE`],
+						[/* text */ 't', `
+
+ `]
 					]]
 				]],
 				[/* block */ 'b', '']
@@ -755,7 +761,10 @@ DocsCollector.collect('java.lang.StrictMath', [
 					[/* block */ 'b', [
 						[/* text */ 't', ` If the argument is zero, the result is
  `],
-						[/* reference */ 'r', `java.lang.Double#MIN_VALUE`, `Double.MIN_VALUE`]
+						[/* reference */ 'r', `java.lang.Double#MIN_VALUE`, `Double.MIN_VALUE`],
+						[/* text */ 't', `
+
+ `]
 					]]
 				]],
 				[/* block */ 'b', '']
@@ -941,7 +950,10 @@ DocsCollector.collect('java.lang.StrictMath', [
 							[/* block */ 'b', `if the second argument is finite and not an integer, then
  the result is NaN.
  `]
-						]]
+						]],
+						[/* text */ 't', `
+
+ `]
 					]],
 					[/* block */ 'b', [
 						[/* text */ 't', `If both arguments are integers, then the result is exactly equal
@@ -952,6 +964,9 @@ DocsCollector.collect('java.lang.StrictMath', [
 						[/* text */ 't', ` value.`]
 					]]
 				]],
+				[/* text */ 't', `
+
+ `],
 				[/* block */ 'b', [
 					[/* text */ 't', `(In the foregoing descriptions, a floating-point value is
  considered to be an integer if and only if it is finite and a
@@ -1340,6 +1355,9 @@ DocsCollector.collect('java.lang.StrictMath', [
 
  `]
 				]],
+				[/* text */ 't', `
+
+ `],
 				[/* block */ 'b', ''],
 				[/* block */ 'b', [
 					[/* text */ 't', `Note that `],
@@ -1585,7 +1603,10 @@ DocsCollector.collect('java.lang.StrictMath', [
 					[/* block */ 'b', [
 						[/* text */ 't', ` If the argument is zero, the result is
  `],
-						[/* inline code block */ 'i', `-Float.MIN_VALUE`]
+						[/* inline code block */ 'i', `-Float.MIN_VALUE`],
+						[/* text */ 't', `
+
+ `]
 					]]
 				]],
 				[/* block */ 'b', '']
@@ -1631,7 +1652,10 @@ DocsCollector.collect('java.lang.StrictMath', [
 					[/* block */ 'b', [
 						[/* text */ 't', ` If the argument is zero, the result is
  `],
-						[/* reference */ 'r', `java.lang.Float#MIN_VALUE`, `Float.MIN_VALUE`]
+						[/* reference */ 'r', `java.lang.Float#MIN_VALUE`, `Float.MIN_VALUE`],
+						[/* text */ 't', `
+
+ `]
 					]]
 				]],
 				[/* block */ 'b', '']
@@ -1994,9 +2018,13 @@ DocsCollector.collect('java.lang.StrictMath', [
 				]],
 				[/* list */ 'l', [
 					[/* block */ 'b', [
-						[/* inline code block */ 'i', `floorDiv(x, y) * y + floorMod(x, y) == x`]
+						[/* inline code block */ 'i', `floorDiv(x, y) * y + floorMod(x, y) == x`],
+						[/* text */ 't', `
+ `]
 					]]
 				]],
+				[/* text */ 't', `
+ `],
 				[/* block */ 'b', ''],
 				[/* block */ 'b', [
 					[/* text */ 't', `
@@ -2061,9 +2089,13 @@ DocsCollector.collect('java.lang.StrictMath', [
 				]],
 				[/* list */ 'l', [
 					[/* block */ 'b', [
-						[/* inline code block */ 'i', `floorDiv(x, y) * y + floorMod(x, y) == x`]
+						[/* inline code block */ 'i', `floorDiv(x, y) * y + floorMod(x, y) == x`],
+						[/* text */ 't', `
+ `]
 					]]
 				]],
+				[/* text */ 't', `
+ `],
 				[/* block */ 'b', ''],
 				[/* block */ 'b', [
 					[/* text */ 't', `
@@ -2649,9 +2681,13 @@ DocsCollector.collect('java.lang.StrictMath', [
 				]],
 				[/* list */ 'l', [
 					[/* block */ 'b', [
-						[/* inline code block */ 'i', `floorDiv(x, y) * y + floorMod(x, y) == x`]
+						[/* inline code block */ 'i', `floorDiv(x, y) * y + floorMod(x, y) == x`],
+						[/* text */ 't', `
+ `]
 					]]
 				]],
+				[/* text */ 't', `
+ `],
 				[/* block */ 'b', ''],
 				[/* block */ 'b', [
 					[/* text */ 't', `

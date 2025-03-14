@@ -107,6 +107,8 @@ DocsCollector.collect('java.security.cert.CertPath', [
  `]
 		]],
 		[/* block */ 'b', [
+			[/* text */ 't', `
+ `],
 			[/* inline code block */ 'i', `CertPath`],
 			[/* text */ 't', ` objects can be created with a
  `],

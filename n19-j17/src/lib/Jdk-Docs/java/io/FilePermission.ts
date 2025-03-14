@@ -90,6 +90,8 @@ DocsCollector.collect('java.io.FilePermission', [
  `]
 			]]
 		]],
+		[/* text */ 't', `
+ `],
 		[/* block */ 'b', ''],
 		[/* block */ 'b', `
  The actions string is converted to lowercase before processing.
@@ -194,17 +196,20 @@ DocsCollector.collect('java.io.FilePermission', [
  `],
 				[/* list */ 'l', [
 					[/* block */ 'b', [
+						[/* text */ 't', ` `],
 						[/* text */ 't', `p`],
 						[/* text */ 't', ` is an instanceof FilePermission,
  `]
 					]],
 					[/* block */ 'b', [
+						[/* text */ 't', ` `],
 						[/* text */ 't', `p`],
 						[/* text */ 't', `'s actions are a proper subset of this
  object's actions, and
  `]
 					]],
 					[/* block */ 'b', [
+						[/* text */ 't', ` `],
 						[/* text */ 't', `p`],
 						[/* text */ 't', `'s pathname is implied by this object's
       pathname. For example, "/tmp/*" implies "/tmp/foo", since
@@ -213,6 +218,8 @@ DocsCollector.collect('java.io.FilePermission', [
  `]
 					]]
 				]],
+				[/* text */ 't', `
+ `],
 				[/* block */ 'b', ''],
 				[/* block */ 'b', `
  Precisely, a simple pathname implies another simple pathname
@@ -230,6 +237,8 @@ DocsCollector.collect('java.io.FilePermission', [
      must be recursively inside the wildcard pathname's path.
  `]
 				]],
+				[/* text */ 't', `
+ `],
 				[/* block */ 'b', ''],
 				[/* block */ 'b', `
  "<<ALL FILES>>" implies every other pathname. No pathname,
@@ -299,12 +308,21 @@ DocsCollector.collect('java.io.FilePermission', [
  `],
 				[/* list */ 'l', [
 					[/* block */ 'b', [
-						[/* inline code block */ 'i', `"/tmp/-", "read"`]
+						[/* text */ 't', `  `],
+						[/* inline code block */ 'i', `"/tmp/-", "read"`],
+						[/* text */ 't', `
+ `]
 					]],
 					[/* block */ 'b', [
-						[/* inline code block */ 'i', `"/tmp/scratch/foo", "write"`]
+						[/* text */ 't', `  `],
+						[/* inline code block */ 'i', `"/tmp/scratch/foo", "write"`],
+						[/* text */ 't', `
+ `]
 					]]
 				]],
+				[/* text */ 't', `
+
+ `],
 				[/* block */ 'b', ''],
 				[/* block */ 'b', [
 					[/* text */ 't', `and you are calling the `],

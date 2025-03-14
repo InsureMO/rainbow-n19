@@ -59,6 +59,9 @@ DocsCollector.collect('java.lang.invoke.StringConcatFactory', [
 				[/* text */ 't', `.`]
 			]]
 		]],
+		[/* text */ 't', `
+
+ `],
 		[/* block */ 'b', ''],
 		[/* block */ 'b', [
 			[/* text */ 't', ` This class provides two forms of linkage methods: a simple version
@@ -113,6 +116,9 @@ DocsCollector.collect('java.lang.invoke.StringConcatFactory', [
      The inputs are converted as per JLS 5.1.11 "String Conversion",
      and combined from left to right.`]
 				]],
+				[/* text */ 't', `
+
+ `],
 				[/* block */ 'b', ''],
 				[/* block */ 'b', `Assume the linkage arguments are as follows:
 
@@ -125,6 +131,9 @@ DocsCollector.collect('java.lang.invoke.StringConcatFactory', [
 						[/* text */ 't', ` signature`]
 					]]
 				]],
+				[/* text */ 't', `
+
+ `],
 				[/* block */ 'b', ''],
 				[/* block */ 'b', `Then the following linkage invariants must hold:
 
@@ -246,6 +255,9 @@ DocsCollector.collect('java.lang.invoke.StringConcatFactory', [
      The inputs are converted as per JLS 5.1.11 "String Conversion",
      and combined from left to right.`]
 				]],
+				[/* text */ 't', `
+
+ `],
 				[/* block */ 'b', ''],
 				[/* block */ 'b', `recipe`],
 				[/* list */ 'l', [
@@ -269,6 +281,9 @@ DocsCollector.collect('java.lang.invoke.StringConcatFactory', [
 						[/* text */ 't', ` a single character constant.`]
 					]]
 				]],
+				[/* text */ 't', `
+
+ `],
 				[/* block */ 'b', ''],
 				[/* block */ 'b', `Assume the linkage arguments are as follows:
 
@@ -289,6 +304,9 @@ DocsCollector.collect('java.lang.invoke.StringConcatFactory', [
 						[/* text */ 't', `, the vararg array of constants`]
 					]]
 				]],
+				[/* text */ 't', `
+
+ `],
 				[/* block */ 'b', ''],
 				[/* block */ 'b', `Then the following linkage invariants must hold:
 

@@ -117,11 +117,13 @@ DocsCollector.collect('java.security.BasicPermission', [
  `],
 				[/* list */ 'l', [
 					[/* block */ 'b', [
+						[/* text */ 't', ` `],
 						[/* inline code block */ 'i', `p`],
 						[/* text */ 't', `'s class is the same as this object's class, and
  `]
 					]],
 					[/* block */ 'b', [
+						[/* text */ 't', ` `],
 						[/* inline code block */ 'i', `p`],
 						[/* text */ 't', `'s name equals or (in the case of wildcards)
       is implied by this object's

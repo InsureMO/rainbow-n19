@@ -16,6 +16,7 @@ DocsCollector.collect('java.nio.charset.CoderResult', [
 		[/* list */ 'l', [
 			[/* block */ 'b', [
 				[/* block */ 'b', [
+					[/* text */ 't', ` `],
 					[/* text */ 't', `Underflow`],
 					[/* text */ 't', ` is reported when there is no more input to be
    processed, or there is insufficient input and additional input is
@@ -32,6 +33,7 @@ DocsCollector.collect('java.nio.charset.CoderResult', [
 			]],
 			[/* block */ 'b', [
 				[/* block */ 'b', [
+					[/* text */ 't', ` `],
 					[/* text */ 't', `Overflow`],
 					[/* text */ 't', ` is reported when there is insufficient room
    remaining in the output buffer.  This condition is represented by the
@@ -83,6 +85,9 @@ DocsCollector.collect('java.nio.charset.CoderResult', [
 				]]
 			]]
 		]],
+		[/* text */ 't', `
+
+ `],
 		[/* block */ 'b', ''],
 		[/* block */ 'b', [
 			[/* text */ 't', ` For convenience, the `],

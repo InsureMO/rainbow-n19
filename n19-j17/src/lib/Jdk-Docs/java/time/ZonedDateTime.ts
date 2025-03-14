@@ -9,6 +9,8 @@ DocsCollector.collect('java.time.ZonedDateTime', [
 		[/* text */ 't', `.
  `],
 		[/* block */ 'b', [
+			[/* text */ 't', `
+ `],
 			[/* inline code block */ 'i', `ZonedDateTime`],
 			[/* text */ 't', ` is an immutable representation of a date-time with a time-zone.
  This class stores all date and time fields, to a precision of nanoseconds,
@@ -57,6 +59,8 @@ DocsCollector.collect('java.time.ZonedDateTime', [
   due to the autumn daylight savings change from "summer" to "winter".
   In an overlap there are local date-time values with two valid offsets.`]
 		]],
+		[/* text */ 't', `
+ `],
 		[/* block */ 'b', ''],
 		[/* block */ 'b', `
  Any method that converts directly or implicitly from a local date-time to an
@@ -207,94 +211,154 @@ DocsCollector.collect('java.time.ZonedDateTime', [
 				]],
 				[/* list */ 'l', [
 					[/* block */ 'b', [
-						[/* inline code block */ 'i', `NANO_OF_SECOND`]
+						[/* inline code block */ 'i', `NANO_OF_SECOND`],
+						[/* text */ 't', `
+ `]
 					]],
 					[/* block */ 'b', [
-						[/* inline code block */ 'i', `NANO_OF_DAY`]
+						[/* inline code block */ 'i', `NANO_OF_DAY`],
+						[/* text */ 't', `
+ `]
 					]],
 					[/* block */ 'b', [
-						[/* inline code block */ 'i', `MICRO_OF_SECOND`]
+						[/* inline code block */ 'i', `MICRO_OF_SECOND`],
+						[/* text */ 't', `
+ `]
 					]],
 					[/* block */ 'b', [
-						[/* inline code block */ 'i', `MICRO_OF_DAY`]
+						[/* inline code block */ 'i', `MICRO_OF_DAY`],
+						[/* text */ 't', `
+ `]
 					]],
 					[/* block */ 'b', [
-						[/* inline code block */ 'i', `MILLI_OF_SECOND`]
+						[/* inline code block */ 'i', `MILLI_OF_SECOND`],
+						[/* text */ 't', `
+ `]
 					]],
 					[/* block */ 'b', [
-						[/* inline code block */ 'i', `MILLI_OF_DAY`]
+						[/* inline code block */ 'i', `MILLI_OF_DAY`],
+						[/* text */ 't', `
+ `]
 					]],
 					[/* block */ 'b', [
-						[/* inline code block */ 'i', `SECOND_OF_MINUTE`]
+						[/* inline code block */ 'i', `SECOND_OF_MINUTE`],
+						[/* text */ 't', `
+ `]
 					]],
 					[/* block */ 'b', [
-						[/* inline code block */ 'i', `SECOND_OF_DAY`]
+						[/* inline code block */ 'i', `SECOND_OF_DAY`],
+						[/* text */ 't', `
+ `]
 					]],
 					[/* block */ 'b', [
-						[/* inline code block */ 'i', `MINUTE_OF_HOUR`]
+						[/* inline code block */ 'i', `MINUTE_OF_HOUR`],
+						[/* text */ 't', `
+ `]
 					]],
 					[/* block */ 'b', [
-						[/* inline code block */ 'i', `MINUTE_OF_DAY`]
+						[/* inline code block */ 'i', `MINUTE_OF_DAY`],
+						[/* text */ 't', `
+ `]
 					]],
 					[/* block */ 'b', [
-						[/* inline code block */ 'i', `HOUR_OF_AMPM`]
+						[/* inline code block */ 'i', `HOUR_OF_AMPM`],
+						[/* text */ 't', `
+ `]
 					]],
 					[/* block */ 'b', [
-						[/* inline code block */ 'i', `CLOCK_HOUR_OF_AMPM`]
+						[/* inline code block */ 'i', `CLOCK_HOUR_OF_AMPM`],
+						[/* text */ 't', `
+ `]
 					]],
 					[/* block */ 'b', [
-						[/* inline code block */ 'i', `HOUR_OF_DAY`]
+						[/* inline code block */ 'i', `HOUR_OF_DAY`],
+						[/* text */ 't', `
+ `]
 					]],
 					[/* block */ 'b', [
-						[/* inline code block */ 'i', `CLOCK_HOUR_OF_DAY`]
+						[/* inline code block */ 'i', `CLOCK_HOUR_OF_DAY`],
+						[/* text */ 't', `
+ `]
 					]],
 					[/* block */ 'b', [
-						[/* inline code block */ 'i', `AMPM_OF_DAY`]
+						[/* inline code block */ 'i', `AMPM_OF_DAY`],
+						[/* text */ 't', `
+ `]
 					]],
 					[/* block */ 'b', [
-						[/* inline code block */ 'i', `DAY_OF_WEEK`]
+						[/* inline code block */ 'i', `DAY_OF_WEEK`],
+						[/* text */ 't', `
+ `]
 					]],
 					[/* block */ 'b', [
-						[/* inline code block */ 'i', `ALIGNED_DAY_OF_WEEK_IN_MONTH`]
+						[/* inline code block */ 'i', `ALIGNED_DAY_OF_WEEK_IN_MONTH`],
+						[/* text */ 't', `
+ `]
 					]],
 					[/* block */ 'b', [
-						[/* inline code block */ 'i', `ALIGNED_DAY_OF_WEEK_IN_YEAR`]
+						[/* inline code block */ 'i', `ALIGNED_DAY_OF_WEEK_IN_YEAR`],
+						[/* text */ 't', `
+ `]
 					]],
 					[/* block */ 'b', [
-						[/* inline code block */ 'i', `DAY_OF_MONTH`]
+						[/* inline code block */ 'i', `DAY_OF_MONTH`],
+						[/* text */ 't', `
+ `]
 					]],
 					[/* block */ 'b', [
-						[/* inline code block */ 'i', `DAY_OF_YEAR`]
+						[/* inline code block */ 'i', `DAY_OF_YEAR`],
+						[/* text */ 't', `
+ `]
 					]],
 					[/* block */ 'b', [
-						[/* inline code block */ 'i', `EPOCH_DAY`]
+						[/* inline code block */ 'i', `EPOCH_DAY`],
+						[/* text */ 't', `
+ `]
 					]],
 					[/* block */ 'b', [
-						[/* inline code block */ 'i', `ALIGNED_WEEK_OF_MONTH`]
+						[/* inline code block */ 'i', `ALIGNED_WEEK_OF_MONTH`],
+						[/* text */ 't', `
+ `]
 					]],
 					[/* block */ 'b', [
-						[/* inline code block */ 'i', `ALIGNED_WEEK_OF_YEAR`]
+						[/* inline code block */ 'i', `ALIGNED_WEEK_OF_YEAR`],
+						[/* text */ 't', `
+ `]
 					]],
 					[/* block */ 'b', [
-						[/* inline code block */ 'i', `MONTH_OF_YEAR`]
+						[/* inline code block */ 'i', `MONTH_OF_YEAR`],
+						[/* text */ 't', `
+ `]
 					]],
 					[/* block */ 'b', [
-						[/* inline code block */ 'i', `PROLEPTIC_MONTH`]
+						[/* inline code block */ 'i', `PROLEPTIC_MONTH`],
+						[/* text */ 't', `
+ `]
 					]],
 					[/* block */ 'b', [
-						[/* inline code block */ 'i', `YEAR_OF_ERA`]
+						[/* inline code block */ 'i', `YEAR_OF_ERA`],
+						[/* text */ 't', `
+ `]
 					]],
 					[/* block */ 'b', [
-						[/* inline code block */ 'i', `YEAR`]
+						[/* inline code block */ 'i', `YEAR`],
+						[/* text */ 't', `
+ `]
 					]],
 					[/* block */ 'b', [
-						[/* inline code block */ 'i', `ERA`]
+						[/* inline code block */ 'i', `ERA`],
+						[/* text */ 't', `
+ `]
 					]],
 					[/* block */ 'b', [
-						[/* inline code block */ 'i', `INSTANT_SECONDS`]
+						[/* inline code block */ 'i', `INSTANT_SECONDS`],
+						[/* text */ 't', `
+ `]
 					]],
 					[/* block */ 'b', [
-						[/* inline code block */ 'i', `OFFSET_SECONDS`]
+						[/* inline code block */ 'i', `OFFSET_SECONDS`],
+						[/* text */ 't', `
+ `]
 					]]
 				]],
 				[/* text */ 't', `
@@ -352,49 +416,79 @@ DocsCollector.collect('java.time.ZonedDateTime', [
 				]],
 				[/* list */ 'l', [
 					[/* block */ 'b', [
-						[/* inline code block */ 'i', `NANOS`]
+						[/* inline code block */ 'i', `NANOS`],
+						[/* text */ 't', `
+ `]
 					]],
 					[/* block */ 'b', [
-						[/* inline code block */ 'i', `MICROS`]
+						[/* inline code block */ 'i', `MICROS`],
+						[/* text */ 't', `
+ `]
 					]],
 					[/* block */ 'b', [
-						[/* inline code block */ 'i', `MILLIS`]
+						[/* inline code block */ 'i', `MILLIS`],
+						[/* text */ 't', `
+ `]
 					]],
 					[/* block */ 'b', [
-						[/* inline code block */ 'i', `SECONDS`]
+						[/* inline code block */ 'i', `SECONDS`],
+						[/* text */ 't', `
+ `]
 					]],
 					[/* block */ 'b', [
-						[/* inline code block */ 'i', `MINUTES`]
+						[/* inline code block */ 'i', `MINUTES`],
+						[/* text */ 't', `
+ `]
 					]],
 					[/* block */ 'b', [
-						[/* inline code block */ 'i', `HOURS`]
+						[/* inline code block */ 'i', `HOURS`],
+						[/* text */ 't', `
+ `]
 					]],
 					[/* block */ 'b', [
-						[/* inline code block */ 'i', `HALF_DAYS`]
+						[/* inline code block */ 'i', `HALF_DAYS`],
+						[/* text */ 't', `
+ `]
 					]],
 					[/* block */ 'b', [
-						[/* inline code block */ 'i', `DAYS`]
+						[/* inline code block */ 'i', `DAYS`],
+						[/* text */ 't', `
+ `]
 					]],
 					[/* block */ 'b', [
-						[/* inline code block */ 'i', `WEEKS`]
+						[/* inline code block */ 'i', `WEEKS`],
+						[/* text */ 't', `
+ `]
 					]],
 					[/* block */ 'b', [
-						[/* inline code block */ 'i', `MONTHS`]
+						[/* inline code block */ 'i', `MONTHS`],
+						[/* text */ 't', `
+ `]
 					]],
 					[/* block */ 'b', [
-						[/* inline code block */ 'i', `YEARS`]
+						[/* inline code block */ 'i', `YEARS`],
+						[/* text */ 't', `
+ `]
 					]],
 					[/* block */ 'b', [
-						[/* inline code block */ 'i', `DECADES`]
+						[/* inline code block */ 'i', `DECADES`],
+						[/* text */ 't', `
+ `]
 					]],
 					[/* block */ 'b', [
-						[/* inline code block */ 'i', `CENTURIES`]
+						[/* inline code block */ 'i', `CENTURIES`],
+						[/* text */ 't', `
+ `]
 					]],
 					[/* block */ 'b', [
-						[/* inline code block */ 'i', `MILLENNIA`]
+						[/* inline code block */ 'i', `MILLENNIA`],
+						[/* text */ 't', `
+ `]
 					]],
 					[/* block */ 'b', [
-						[/* inline code block */ 'i', `ERAS`]
+						[/* inline code block */ 'i', `ERAS`],
+						[/* text */ 't', `
+ `]
 					]]
 				]],
 				[/* text */ 't', `
@@ -1094,6 +1188,8 @@ DocsCollector.collect('java.time.ZonedDateTime', [
      (moving from winter to summer time)
  `]
 				]],
+				[/* text */ 't', `
+ `],
 				[/* block */ 'b', ''],
 				[/* block */ 'b', `
  This instance is immutable and unaffected by this method call.`]
@@ -1563,6 +1659,8 @@ DocsCollector.collect('java.time.ZonedDateTime', [
      (moving from summer to winter time)
  `]
 				]],
+				[/* text */ 't', `
+ `],
 				[/* block */ 'b', ''],
 				[/* block */ 'b', `
  This instance is immutable and unaffected by this method call.`]
@@ -1929,6 +2027,8 @@ DocsCollector.collect('java.time.ZonedDateTime', [
 
   result = zonedDateTime.with(JULY).with(lastDayOfMonth());
  `],
+				[/* text */ 't', `
+ `],
 				[/* block */ 'b', ''],
 				[/* block */ 'b', [
 					[/* text */ 't', `
@@ -1945,8 +2045,12 @@ DocsCollector.collect('java.time.ZonedDateTime', [
 				[/* code block */ 'c', `  result = zonedDateTime.with(date);
   result = zonedDateTime.with(time);
  `],
+				[/* text */ 't', `
+ `],
 				[/* block */ 'b', ''],
 				[/* block */ 'b', [
+					[/* text */ 't', `
+ `],
 					[/* reference */ 'r', `java.time.ZoneOffset`, `ZoneOffset`],
 					[/* text */ 't', ` also implements `],
 					[/* inline code block */ 'i', `TemporalAdjuster`],

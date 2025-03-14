@@ -94,6 +94,8 @@ DocsCollector.collect('java.time.temporal.JulianFields', [
   | 1970-01-02T06:00  |         2,440,589  |         2,440,588.75    |
   | 1970-01-02T12:00  |         2,440,589  |         2,440,589.0     |
  `],
+				[/* text */ 't', `
+ `],
 				[/* block */ 'b', ''],
 				[/* block */ 'b', `
  Julian Days are sometimes taken to imply Universal Time or UTC, but this
@@ -151,6 +153,8 @@ DocsCollector.collect('java.time.temporal.JulianFields', [
  `]
 				]],
 				[/* block */ 'b', `Astronomical and Scientific Notes`],
+				[/* text */ 't', `
+ `],
 				[/* code block */ 'c', `  | ISO date          | Modified Julian Day |      Decimal MJD |
   | 1970-01-01T00:00  |             40,587  |       40,587.0   |
   | 1970-01-01T06:00  |             40,587  |       40,587.25  |

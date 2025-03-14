@@ -695,7 +695,9 @@ DocsCollector.collect('java.time.format.DateTimeFormatterBuilder', [
 						[/* text */ 't', `the `],
 						[/* inline code block */ 'i', `Locale`],
 						[/* text */ 't', ` of the `],
-						[/* inline code block */ 'i', `DateTimeFormatter`]
+						[/* inline code block */ 'i', `DateTimeFormatter`],
+						[/* text */ 't', `
+ `]
 					]],
 					[/* block */ 'b', [
 						[/* text */ 't', `the `],
@@ -792,6 +794,8 @@ DocsCollector.collect('java.time.format.DateTimeFormatterBuilder', [
  `]
 					]]
 				]],
+				[/* text */ 't', `
+ `],
 				[/* block */ 'b', ''],
 				[/* block */ 'b', [
 					[/* text */ 't', `
@@ -1118,6 +1122,8 @@ DocsCollector.collect('java.time.format.DateTimeFormatterBuilder', [
    {       reserved for future use
    }       reserved for future use
  `],
+				[/* text */ 't', `
+ `],
 				[/* block */ 'b', ''],
 				[/* block */ 'b', [
 					[/* text */ 't', `
@@ -1197,6 +1203,8 @@ DocsCollector.collect('java.time.format.DateTimeFormatterBuilder', [
     cccc    4      appendText(ChronoField.DAY_OF_WEEK, TextStyle.FULL_STANDALONE)
     ccccc   5      appendText(ChronoField.DAY_OF_WEEK, TextStyle.NARROW_STANDALONE)
  `],
+				[/* text */ 't', `
+ `],
 				[/* block */ 'b', ''],
 				[/* block */ 'b', `Time fields`],
 				[/* code block */ 'c', `  Pattern  Count  Equivalent builder methods
@@ -1220,6 +1228,8 @@ DocsCollector.collect('java.time.format.DateTimeFormatterBuilder', [
     n..n    1..n   appendValue(ChronoField.NANO_OF_SECOND, n, 19, SignStyle.NOT_NEGATIVE)
     N..N    1..n   appendValue(ChronoField.NANO_OF_DAY, n, 19, SignStyle.NOT_NEGATIVE)
  `],
+				[/* text */ 't', `
+ `],
 				[/* block */ 'b', ''],
 				[/* block */ 'b', `Day periods`],
 				[/* code block */ 'c', `  Pattern  Count  Equivalent builder methods
@@ -1228,8 +1238,12 @@ DocsCollector.collect('java.time.format.DateTimeFormatterBuilder', [
     BBBB    4      appendDayPeriodText(TextStyle.FULL)
     BBBBB   5      appendDayPeriodText(TextStyle.NARROW)
  `],
+				[/* text */ 't', `
+ `],
 				[/* block */ 'b', ''],
 				[/* block */ 'b', [
+					[/* text */ 't', `
+ `],
 					[/* text */ 't', `Zone ID`],
 					[/* text */ 't', `: Pattern letters to output `],
 					[/* inline code block */ 'i', `ZoneId`],
@@ -1246,8 +1260,12 @@ DocsCollector.collect('java.time.format.DateTimeFormatterBuilder', [
     zzz     3      appendZoneText(TextStyle.SHORT)
     zzzz    4      appendZoneText(TextStyle.FULL)
  `],
+				[/* text */ 't', `
+ `],
 				[/* block */ 'b', ''],
 				[/* block */ 'b', [
+					[/* text */ 't', `
+ `],
 					[/* text */ 't', `Zone offset`],
 					[/* text */ 't', `: Pattern letters to output `],
 					[/* inline code block */ 'i', `ZoneOffset`],
@@ -1274,6 +1292,8 @@ DocsCollector.collect('java.time.format.DateTimeFormatterBuilder', [
     ZZZZ    4      appendLocalizedOffset(TextStyle.FULL)
     ZZZZZ   5      appendOffset("+HH:MM:ss","Z")
  `],
+				[/* text */ 't', `
+ `],
 				[/* block */ 'b', ''],
 				[/* block */ 'b', `Modifiers`],
 				[/* code block */ 'c', `  Pattern  Count  Equivalent builder methods
@@ -1281,6 +1301,8 @@ DocsCollector.collect('java.time.format.DateTimeFormatterBuilder', [
     [       1      optionalStart()
     ]       1      optionalEnd()
     p..p    1..n   padNext(n)
+ `],
+				[/* text */ 't', `
  `],
 				[/* block */ 'b', ''],
 				[/* block */ 'b', `
@@ -1397,6 +1419,8 @@ DocsCollector.collect('java.time.format.DateTimeFormatterBuilder', [
  map.put(3L, "MCH");
  ...
  builder.appendText(MONTH_OF_YEAR, map);
+ `],
+				[/* text */ 't', `
  `],
 				[/* block */ 'b', ''],
 				[/* block */ 'b', `
@@ -1977,6 +2001,8 @@ DocsCollector.collect('java.time.format.DateTimeFormatterBuilder', [
    "UTC+01:30"               -- ZoneOffset.of("UTC+01:30")
    "GMT+01:30"               -- ZoneOffset.of("GMT+01:30")
  `],
+				[/* text */ 't', `
+ `],
 				[/* block */ 'b', ''],
 				[/* block */ 'b', [
 					[/* text */ 't', `
@@ -2058,6 +2084,8 @@ DocsCollector.collect('java.time.format.DateTimeFormatterBuilder', [
    "UT+01:30"                -- ZoneOffset.of("+01:30")
    "UTC+01:30"               -- ZoneOffset.of("+01:30")
    "GMT+01:30"               -- ZoneOffset.of("+01:30")
+ `],
+				[/* text */ 't', `
  `],
 				[/* block */ 'b', ''],
 				[/* block */ 'b', [

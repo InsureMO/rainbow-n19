@@ -25,7 +25,13 @@ DocsCollector.collect('java.lang.module.ModuleFinder', [
  will ignore other modules of that name that appear in directories later in
  the sequence. `]
 		]],
+		[/* text */ 't', `
+
+ `],
 		[/* block */ 'b', ` Example usage: `],
+		[/* text */ 't', `
+
+ `],
 		[/* code block */ 'c', [
 			[/* inline code block */ 'i', `Path dir1, dir2, dir3;
 
@@ -34,6 +40,9 @@ DocsCollector.collect('java.lang.module.ModuleFinder', [
      Optional<ModuleReference> omref = finder.find("jdk.foo");
      omref.ifPresent(mref -> ... );`]
 		]],
+		[/* text */ 't', `
+
+ `],
 		[/* block */ 'b', [
 			[/* text */ 't', ` The `],
 			[/* reference */ 'r', `#find(java.lang.String)`, `find`],
@@ -67,6 +76,9 @@ DocsCollector.collect('java.lang.module.ModuleFinder', [
  It is recommended that a module finder be discarded after an exception is
  thrown. `]
 		]],
+		[/* text */ 't', `
+
+ `],
 		[/* block */ 'b', [
 			[/* text */ 't', ` A `],
 			[/* inline code block */ 'i', `ModuleFinder`],
@@ -242,6 +254,9 @@ DocsCollector.collect('java.lang.module.ModuleFinder', [
  directory is treated as an exploded module rather than a directory of
  modules. `]
 				]],
+				[/* text */ 't', `
+
+ `],
 				[/* block */ 'b', [
 					[/* text */ 't', ` The module finder returned by this method
  supports modules packaged as JAR files. A JAR file with a `],
@@ -261,6 +276,9 @@ DocsCollector.collect('java.lang.module.ModuleFinder', [
 					[/* text */ 't', `, as follows:
  `]
 				]],
+				[/* text */ 't', `
+
+ `],
 				[/* list */ 'l', [
 					[/* block */ 'b', [
 						[/* block */ 'b', [
@@ -283,6 +301,9 @@ DocsCollector.collect('java.lang.module.ModuleFinder', [
 							[/* text */ 't', `" is not
      present, are derived from the file name of the JAR file as follows: `]
 						]],
+						[/* text */ 't', `
+
+     `],
 						[/* list */ 'l', [
 							[/* block */ 'b', [
 								[/* block */ 'b', [
@@ -388,6 +409,9 @@ DocsCollector.collect('java.lang.module.ModuleFinder', [
 						]]
 					]]
 				]],
+				[/* text */ 't', `
+
+ `],
 				[/* block */ 'b', [
 					[/* text */ 't', ` If a `],
 					[/* inline code block */ 'i', `ModuleDescriptor`],
@@ -409,6 +433,9 @@ DocsCollector.collect('java.lang.module.ModuleFinder', [
  configuration file is not a legal class name or its package name is not
  in the set of packages derived for the module. `]
 				]],
+				[/* text */ 't', `
+
+ `],
 				[/* block */ 'b', [
 					[/* text */ 't', ` In addition to JAR files, an implementation may also support modules
  that are packaged in other implementation specific module formats. If
@@ -421,6 +448,9 @@ DocsCollector.collect('java.lang.module.ModuleFinder', [
  file is encountered. Paths to files that do not exist are always ignored.
  `]
 				]],
+				[/* text */ 't', `
+
+ `],
 				[/* block */ 'b', [
 					[/* text */ 't', ` As with automatic modules, the contents of a packaged or exploded
  module may need to be `],
@@ -439,6 +469,9 @@ DocsCollector.collect('java.lang.module.ModuleFinder', [
 					[/* text */ 't', `
  is thrown. `]
 				]],
+				[/* text */ 't', `
+
+ `],
 				[/* block */ 'b', [
 					[/* text */ 't', ` Finders created by this method are lazy and do not eagerly check
  that the given file paths are directories or packaged modules.

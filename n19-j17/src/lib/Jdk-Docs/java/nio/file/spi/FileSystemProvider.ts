@@ -14,6 +14,7 @@ DocsCollector.collect('java.nio.file.spi.FileSystemProvider', [
  implements the abstract methods defined by this class. A provider is
  identified by a `],
 			[/* inline code block */ 'i', `URI`],
+			[/* text */ 't', ` `],
 			[/* reference */ 'r', `#getScheme()`, `scheme`],
 			[/* text */ 't', `. The default provider
  is identified by the URI scheme "file". It creates the `],
@@ -554,6 +555,7 @@ DocsCollector.collect('java.nio.file.spi.FileSystemProvider', [
 					[/* text */ 't', ` is associated with the
  default `],
 					[/* reference */ 'r', `java.nio.file.FileSystems#getDefault()`, `default`],
+					[/* text */ 't', ` `],
 					[/* inline code block */ 'i', `FileSystem`],
 					[/* text */ 't', `.
 
@@ -718,6 +720,9 @@ DocsCollector.collect('java.nio.file.spi.FileSystemProvider', [
 						]]
 					]],
 				],
+				[/* text */ 't', `
+
+ `],
 				[/* block */ 'b', ''],
 				[/* block */ 'b', [
 					[/* text */ 't', ` If the `],

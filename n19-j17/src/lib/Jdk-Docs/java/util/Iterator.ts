@@ -20,6 +20,9 @@ DocsCollector.collect('java.util.Iterator', [
 			[/* block */ 'b', ` Method names have been improved.
  `]
 		]],
+		[/* text */ 't', `
+
+ `],
 		[/* block */ 'b', [
 			[/* text */ 't', `This interface is a member of the
  `],

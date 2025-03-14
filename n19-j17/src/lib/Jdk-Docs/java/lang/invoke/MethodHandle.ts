@@ -714,6 +714,9 @@ mh.invokeExact(System.out, "Hello, world.");
  those of multiple arities.  It is impossible to represent such
  genericity with a Java type parameter.`]
 		]],
+		[/* text */ 't', `
+
+ `],
 		[/* block */ 'b', ''],
 		[/* block */ 'b', [
 			[/* anchor */ 'r', '#-id', `maxarity`, ``],
@@ -767,7 +770,9 @@ mh.invokeExact(System.out, "Hello, world.");
 				[/* list */ 'l', [
 					[/* block */ 'b', [
 						[/* text */ 't', `a call to `],
-						[/* reference */ 'r', `#asVarargsCollector(java.lang.Class)`, `asVarargsCollector`]
+						[/* reference */ 'r', `#asVarargsCollector(java.lang.Class)`, `asVarargsCollector`],
+						[/* text */ 't', `
+ `]
 					]],
 					[/* block */ 'b', [
 						[/* text */ 't', `a call to a `],
@@ -1117,8 +1122,12 @@ MethodHandle longsToString = publicLookup()
 assertEquals("[123]", (String) longsToString.invokeExact((long)123));`]
 					]]
 				]],
+				[/* text */ 't', `
+ `],
 				[/* block */ 'b', ''],
 				[/* block */ 'b', [
+					[/* text */ 't', `
+ `],
 					[/* text */ 't', `Note:`],
 					[/* text */ 't', ` The resulting adapter is never a `],
 					[/* reference */ 'r', `#asVarargsCollector(java.lang.Class)`, `variable-arity method handle`],
@@ -1500,6 +1509,8 @@ assertEquals("[A, B, C]", (String) caToString2.invokeExact('A', "BC".toCharArray
      to the return type of new method handle.
  `]
 				]],
+				[/* text */ 't', `
+ `],
 				[/* block */ 'b', ''],
 				[/* block */ 'b', [
 					[/* text */ 't', `
@@ -1983,6 +1994,8 @@ assertEquals(1, ls.size());
 assertEquals("[three, thee, tee]", Arrays.toString((Object[])ls.get(0)));`]
 					]]
 				]],
+				[/* text */ 't', `
+ `],
 				[/* block */ 'b', ''],
 				[/* block */ 'b', `Discussion:`]
 			],
@@ -2046,6 +2059,8 @@ assertEquals("[three, thee, tee]", Arrays.toString((Object[])ls.get(0)));`]
 				]],
 				[/* block */ 'b', `Note:`],
 				[/* block */ 'b', [
+					[/* text */ 't', `
+ `],
 					[/* text */ 't', `Note:`],
 					[/* text */ 't', ` The resulting adapter is never a `],
 					[/* reference */ 'r', `#asVarargsCollector(java.lang.Class)`, `variable-arity method handle`],
@@ -2245,7 +2260,9 @@ assertEquals("[three, thee, tee]", Arrays.toString((Object[])ls.get(0)));`]
 								[/* text */ 't', `.
      `]
 							]]
-						]]
+						]],
+						[/* text */ 't', `
+ `]
 					]],
 					[/* block */ 'b', [
 						[/* text */ 't', `Force the original target method handle `],
@@ -2270,6 +2287,8 @@ assertEquals("[three, thee, tee]", Arrays.toString((Object[])ls.get(0)));`]
 						[/* text */ 't', ` reference. `]
 					]]
 				]],
+				[/* text */ 't', `
+ `],
 				[/* block */ 'b', ''],
 				[/* block */ 'b', [
 					[/* text */ 't', `
@@ -2335,6 +2354,8 @@ assertEquals("[three, thee, tee]", Arrays.toString((Object[])ls.get(0)));`]
 					[/* block */ 'b', `variable arity conversion
  `]
 				]],
+				[/* text */ 't', `
+ `],
 				[/* block */ 'b', ''],
 				[/* block */ 'b', `
  The result returned by the call is boxed if it is a primitive,
@@ -2394,6 +2415,8 @@ assertEquals("[three, thee, tee]", Arrays.toString((Object[])ls.get(0)));`]
 						[/* inline code block */ 'i', `invokeWithArguments(arguments.toArray())`]
 					]]
 				]],
+				[/* text */ 't', `
+ `],
 				[/* block */ 'b', ''],
 				[/* block */ 'b', [
 					[/* text */ 't', `
@@ -2444,6 +2467,8 @@ assertEquals("[three, thee, tee]", Arrays.toString((Object[])ls.get(0)));`]
 						[/* inline code block */ 'i', `"MethodHandle" + type().toString()`]
 					]]
 				]],
+				[/* text */ 't', `
+ `],
 				[/* block */ 'b', `Note:`]
 			],
 			/* parameters */ UDF,

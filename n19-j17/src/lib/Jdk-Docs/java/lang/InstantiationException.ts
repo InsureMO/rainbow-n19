@@ -18,7 +18,9 @@ DocsCollector.collect('java.lang.InstantiationException', [
 			[/* block */ 'b', [
 				[/* text */ 't', ` the class object represents an abstract class, an interface,
       an array class, a primitive type, or `],
-				[/* inline code block */ 'i', `void`]
+				[/* inline code block */ 'i', `void`],
+				[/* text */ 't', `
+ `]
 			]],
 			[/* block */ 'b', ` the class has no nullary constructor
 `]

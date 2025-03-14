@@ -10,6 +10,8 @@ DocsCollector.collect('java.text.MessageFormat', [
 
  `],
 		[/* block */ 'b', [
+			[/* text */ 't', `
+ `],
 			[/* inline code block */ 'i', `MessageFormat`],
 			[/* text */ 't', ` takes a set of objects, formats them, then
  inserts the formatted strings into the pattern at the appropriate places.
@@ -17,7 +19,11 @@ DocsCollector.collect('java.text.MessageFormat', [
  `]
 		]],
 		[/* block */ 'b', [
+			[/* text */ 't', `
+ `],
 			[/* text */ 't', `Note:`],
+			[/* text */ 't', `
+ `],
 			[/* inline code block */ 'i', `MessageFormat`],
 			[/* text */ 't', ` differs from the other `],
 			[/* inline code block */ 'i', `Format`],
@@ -40,16 +46,29 @@ DocsCollector.collect('java.text.MessageFormat', [
 		[/* block */ 'b', [
 			[/* anchor */ 'r', '#-id', `patterns`, `Patterns and Their Interpretation`]
 		]],
+		[/* text */ 't', `
+
+ `],
 		[/* inline code block */ 'i', `MessageFormat`],
 		[/* text */ 't', ` uses patterns of the following form:
  `],
 		[/* block */ 'b', [
 			[/* code block */ 'c', [
+				[/* text */ 't', ` `],
 				[/* text */ 't', `MessageFormatPattern:`],
+				[/* text */ 't', `
+         `],
 				[/* text */ 't', `String`],
+				[/* text */ 't', `
+         `],
 				[/* text */ 't', `MessageFormatPattern`],
+				[/* text */ 't', ` `],
 				[/* text */ 't', `FormatElement`],
+				[/* text */ 't', ` `],
 				[/* text */ 't', `String`],
+				[/* text */ 't', `
+
+ `],
 				[/* text */ 't', `FormatElement:`],
 				[/* text */ 't', `
          { `],
@@ -84,9 +103,14 @@ DocsCollector.collect('java.text.MessageFormat', [
          currency
          percent
          `],
-				[/* text */ 't', `SubformatPattern`]
+				[/* text */ 't', `SubformatPattern`],
+				[/* text */ 't', `
+ `]
 			]]
 		]],
+		[/* text */ 't', `
+
+ `],
 		[/* block */ 'b', [
 			[/* text */ 't', `Within a `],
 			[/* text */ 't', `String`],
@@ -119,6 +143,7 @@ DocsCollector.collect('java.text.MessageFormat', [
 			[/* text */ 't', ` (a right curly brace and end of quoting),
  `],
 			[/* text */ 't', `not`],
+			[/* text */ 't', ` `],
 			[/* inline code block */ 'i', `'{'`],
 			[/* text */ 't', ` and `],
 			[/* inline code block */ 'i', `'}'`],
@@ -128,6 +153,7 @@ DocsCollector.collect('java.text.MessageFormat', [
 			[/* text */ 't', `,
  `],
 			[/* text */ 't', `not`],
+			[/* text */ 't', ` `],
 			[/* inline code block */ 'i', `"{}"`],
 			[/* text */ 't', `.
 
@@ -200,6 +226,8 @@ DocsCollector.collect('java.text.MessageFormat', [
  `]
 			]]
 		]],
+		[/* text */ 't', `
+ `],
 		[/* block */ 'b', ''],
 		[/* block */ 'b', [
 			[/* text */ 't', `
@@ -566,8 +594,14 @@ DocsCollector.collect('java.text.MessageFormat', [
 				]]
 			]],
 		],
+		[/* text */ 't', `
+
+ `],
 		[/* block */ 'b', ''],
 		[/* block */ 'b', `Usage Information`],
+		[/* text */ 't', `
+
+ `],
 		[/* block */ 'b', `
  Here are some examples of usage.
  In real internationalized programs, the message format pattern and other
@@ -600,6 +634,9 @@ DocsCollector.collect('java.text.MessageFormat', [
 			[/* code block */ 'c', ` At 12:30 PM on Jul 3, 2053, there was a disturbance in the Force on planet 7.
  `]
 		]],
+		[/* text */ 't', `
+
+ `],
 		[/* block */ 'b', ''],
 		[/* block */ 'b', [
 			[/* text */ 't', `
@@ -631,6 +668,9 @@ DocsCollector.collect('java.text.MessageFormat', [
  The disk "MyDisk" contains 1,273 file(s).
  `]
 		]],
+		[/* text */ 't', `
+
+ `],
 		[/* block */ 'b', ''],
 		[/* block */ 'b', [
 			[/* text */ 't', `
@@ -665,6 +705,9 @@ DocsCollector.collect('java.text.MessageFormat', [
  The disk "MyDisk" contains 1,273 files.
  `]
 		]],
+		[/* text */ 't', `
+
+ `],
 		[/* block */ 'b', ''],
 		[/* block */ 'b', [
 			[/* text */ 't', `
@@ -683,8 +726,13 @@ DocsCollector.collect('java.text.MessageFormat', [
     "There {0,choice,0#are no files|1#is one file|1<are {0,number,integer} files}.");`]
 			]]
 		]],
+		[/* text */ 't', `
+
+ `],
 		[/* block */ 'b', ''],
 		[/* block */ 'b', [
+			[/* text */ 't', `
+ `],
 			[/* text */ 't', `Note:`],
 			[/* text */ 't', ` As we see above, the string produced
  by a `],
@@ -716,6 +764,9 @@ DocsCollector.collect('java.text.MessageFormat', [
  // objs now equals {new Double(3.1)}
  `]
 		]],
+		[/* text */ 't', `
+
+ `],
 		[/* block */ 'b', ''],
 		[/* block */ 'b', [
 			[/* text */ 't', `
@@ -733,10 +784,16 @@ DocsCollector.collect('java.text.MessageFormat', [
  // result now equals {new String("z")}
  `]
 		]],
+		[/* text */ 't', `
+
+ `],
 		[/* block */ 'b', ''],
 		[/* block */ 'b', [
 			[/* anchor */ 'r', '#-id', `synchronization`, `Synchronization`]
 		]],
+		[/* text */ 't', `
+
+ `],
 		[/* block */ 'b', `
  Message formats are not synchronized.
  It is recommended to create separate format instances for each thread.
@@ -841,7 +898,11 @@ DocsCollector.collect('java.text.MessageFormat', [
  This is equivalent to
  `],
 				[/* block */ 'b', [
-					[/* inline code block */ 'i', `format((Object[]) arguments, result, pos)`]
+					[/* text */ 't', `
+     `],
+					[/* inline code block */ 'i', `format((Object[]) arguments, result, pos)`],
+					[/* text */ 't', `
+ `]
 				]]
 			],
 			[/* parameters */
@@ -1044,6 +1105,8 @@ DocsCollector.collect('java.text.MessageFormat', [
 						]]
 					]],
 				],
+				[/* text */ 't', `
+ `],
 				[/* block */ 'b', ''],
 				[/* block */ 'b', [
 					[/* text */ 't', `
@@ -1303,8 +1366,14 @@ DocsCollector.collect('java.text.MessageFormat', [
  `]
 				]],
 				[/* block */ 'b', [
-					[/* inline code block */ 'i', `format(arguments, new StringBuffer(), null).toString()`]
+					[/* text */ 't', `
+     `],
+					[/* inline code block */ 'i', `format(arguments, new StringBuffer(), null).toString()`],
+					[/* text */ 't', `
+ `]
 				]],
+				[/* text */ 't', `
+ `],
 				[/* block */ 'b', ''],
 				[/* block */ 'b', [
 					[/* text */ 't', `
@@ -1447,7 +1516,11 @@ DocsCollector.collect('java.text.MessageFormat', [
  to format the given arguments. This is equivalent to
  `],
 				[/* block */ 'b', [
-					[/* inline code block */ 'i', `(new MessageFormat(pattern)).format(arguments, new StringBuffer(), null).toString()`]
+					[/* text */ 't', `
+     `],
+					[/* inline code block */ 'i', `(new MessageFormat(pattern)).format(arguments, new StringBuffer(), null).toString()`],
+					[/* text */ 't', `
+ `]
 				]]
 			],
 			[/* parameters */

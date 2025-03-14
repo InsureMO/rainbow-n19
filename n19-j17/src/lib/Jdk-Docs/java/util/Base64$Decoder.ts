@@ -206,6 +206,7 @@ DocsCollector.collect('java.util.Base64$Decoder', [
 
  `],
 				[/* block */ 'b', [
+					[/* text */ 't', ` `],
 					[/* inline code block */ 'i', `IllegalArgumentException`],
 					[/* text */ 't', ` is thrown if the input buffer
  is not in valid Base64 encoding scheme. The position of the input

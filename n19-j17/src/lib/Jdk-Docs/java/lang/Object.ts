@@ -31,12 +31,16 @@ DocsCollector.collect('java.lang.Object', [
 				[/* text */ 't', `, the expression:
  `],
 				[/* block */ 'b', [
+					[/* text */ 't', `
+ `],
 					[/* code block */ 'c', ` x.clone() != x`]
 				]],
 				[/* text */ 't', `
  will be true, and that the expression:
  `],
 				[/* block */ 'b', [
+					[/* text */ 't', `
+ `],
 					[/* code block */ 'c', ` x.clone().getClass() == x.getClass()`]
 				]],
 				[/* text */ 't', `
@@ -46,6 +50,8 @@ DocsCollector.collect('java.lang.Object', [
  While it is typically the case that:
  `],
 				[/* block */ 'b', [
+					[/* text */ 't', `
+ `],
 					[/* code block */ 'c', ` x.clone().equals(x)`]
 				]],
 				[/* text */ 't', `
@@ -310,6 +316,9 @@ DocsCollector.collect('java.lang.Object', [
  `]
 					]]
 				]],
+				[/* text */ 't', `
+
+ `],
 				[/* block */ 'b', ''],
 				[/* block */ 'b', [
 					[/* text */ 't', `
@@ -359,10 +368,19 @@ DocsCollector.collect('java.lang.Object', [
 					[/* inline code block */ 'i', `getClass`],
 					[/* text */ 't', ` is called.`]
 				]],
+				[/* text */ 't', `
+
+ `],
 				[/* block */ 'b', [
+					[/* text */ 't', `
+ `],
 					[/* inline code block */ 'i', `Number n = 0;`],
 					[/* new line */ 'n'],
-					[/* inline code block */ 'i', `Class<? extends Number> c = n.getClass();`]
+					[/* text */ 't', `
+ `],
+					[/* inline code block */ 'i', `Class<? extends Number> c = n.getClass();`],
+					[/* text */ 't', `
+ `]
 				]]
 			],
 			/* parameters */ UDF,
@@ -415,6 +433,8 @@ DocsCollector.collect('java.lang.Object', [
  `]
 					]]
 				]],
+				[/* text */ 't', `
+ `],
 				[/* block */ 'b', ''],
 				[/* block */ 'b', `
  Only one thread at a time can own an object's monitor.`]
@@ -631,6 +651,8 @@ DocsCollector.collect('java.lang.Object', [
  `]
 					]]
 				]],
+				[/* text */ 't', `
+ `],
 				[/* block */ 'b', ''],
 				[/* block */ 'b', [
 					[/* text */ 't', `

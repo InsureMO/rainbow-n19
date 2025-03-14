@@ -89,6 +89,8 @@ DocsCollector.collect('java.lang.invoke.MethodHandleProxies', [
  `]
 				]],
 				[/* block */ 'b', [
+					[/* text */ 't', `
+ `],
 					[/* text */ 't', `Implementation Note:`],
 					[/* text */ 't', `
  Therefore, each instance must implement a unique single-method interface.

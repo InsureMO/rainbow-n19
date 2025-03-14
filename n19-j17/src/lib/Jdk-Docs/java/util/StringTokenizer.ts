@@ -80,6 +80,8 @@ DocsCollector.collect('java.util.StringTokenizer', [
      }
  `]
 		]],
+		[/* text */ 't', `
+ `],
 		[/* block */ 'b', ''],
 		[/* block */ 'b', `
  prints the following output:
@@ -91,8 +93,13 @@ DocsCollector.collect('java.util.StringTokenizer', [
      test
  `]
 		]],
+		[/* text */ 't', `
+
+ `],
 		[/* block */ 'b', ''],
 		[/* block */ 'b', [
+			[/* text */ 't', `
+ `],
 			[/* inline code block */ 'i', `StringTokenizer`],
 			[/* text */ 't', ` is a legacy class that is retained for
  compatibility reasons although its use is discouraged in new code. It is
@@ -118,6 +125,8 @@ DocsCollector.collect('java.util.StringTokenizer', [
          System.out.println(result[x]);
  `]
 		]],
+		[/* text */ 't', `
+ `],
 		[/* block */ 'b', ''],
 		[/* block */ 'b', `
  prints the following output:

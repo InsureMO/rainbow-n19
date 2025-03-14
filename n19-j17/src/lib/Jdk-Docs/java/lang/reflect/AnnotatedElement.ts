@@ -170,7 +170,10 @@ DocsCollector.collect('java.lang.reflect.AnnotatedElement', [
 
  `]
 					]]
-				]]
+				]],
+				[/* text */ 't', `
+
+ `]
 			]],
 			[/* block */ 'b', [
 				[/* text */ 't', `An annotation `],
@@ -212,9 +215,15 @@ DocsCollector.collect('java.lang.reflect.AnnotatedElement', [
 
  `]
 					]]
-				]]
+				]],
+				[/* text */ 't', `
+
+ `]
 			]]
 		]],
+		[/* text */ 't', `
+
+ `],
 		[/* block */ 'b', ''],
 		[/* block */ 'b', `The table below summarizes which kind of annotation presence
  different methods in this interface examine.
@@ -355,6 +364,9 @@ DocsCollector.collect('java.lang.reflect.AnnotatedElement', [
 				]]
 			]],
 		],
+		[/* text */ 't', `
+
+ `],
 		[/* block */ 'b', ''],
 		[/* block */ 'b', [
 			[/* text */ 't', `For an invocation of `],
@@ -495,7 +507,10 @@ DocsCollector.collect('java.lang.reflect.AnnotatedElement', [
 
  `]
 					]]
-				]]
+				]],
+				[/* text */ 't', `
+
+ `]
 			]],
 			[/* block */ 'b', [
 				[/* text */ 't', `If an annotation of type `],
@@ -551,9 +566,15 @@ DocsCollector.collect('java.lang.reflect.AnnotatedElement', [
 
  `]
 					]]
-				]]
+				]],
+				[/* text */ 't', `
+
+ `]
 			]]
 		]],
+		[/* text */ 't', `
+
+ `],
 		[/* block */ 'b', ''],
 		[/* block */ 'b', [
 			[/* text */ 't', `If an annotation returned by a method in this interface contains

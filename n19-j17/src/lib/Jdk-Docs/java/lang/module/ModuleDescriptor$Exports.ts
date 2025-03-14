@@ -23,6 +23,9 @@ DocsCollector.collect('java.lang.module.ModuleDescriptor$Exports', [
  set of modifiers is equal, the package names are equal and the set
  of target module names is equal. `]
 				]],
+				[/* text */ 't', `
+
+ `],
 				[/* block */ 'b', [
 					[/* text */ 't', ` This method satisfies the general contract of the `],
 					[/* reference */ 'r', `java.lang.Object#equals(java.lang.Object)`, `Object.equals`],

@@ -9,6 +9,8 @@ DocsCollector.collect('java.time.LocalDate', [
 		[/* text */ 't', `.
  `],
 		[/* block */ 'b', [
+			[/* text */ 't', `
+ `],
 			[/* inline code block */ 'i', `LocalDate`],
 			[/* text */ 't', ` is an immutable date-time object that represents a date,
  often viewed as year-month-day. Other date fields, such as day-of-year,
@@ -165,6 +167,8 @@ DocsCollector.collect('java.time.LocalDate', [
    a.isAfter(a) == false
    b.isAfter(a) == true
  `],
+				[/* text */ 't', `
+ `],
 				[/* block */ 'b', ''],
 				[/* block */ 'b', [
 					[/* text */ 't', `
@@ -202,6 +206,8 @@ DocsCollector.collect('java.time.LocalDate', [
    a.isBefore(a) == false
    b.isBefore(a) == false
  `],
+				[/* text */ 't', `
+ `],
 				[/* block */ 'b', ''],
 				[/* block */ 'b', [
 					[/* text */ 't', `
@@ -238,6 +244,8 @@ DocsCollector.collect('java.time.LocalDate', [
    a.isEqual(b) == false
    a.isEqual(a) == true
    b.isEqual(a) == false
+ `],
+				[/* text */ 't', `
  `],
 				[/* block */ 'b', ''],
 				[/* block */ 'b', [
@@ -316,43 +324,69 @@ DocsCollector.collect('java.time.LocalDate', [
 				]],
 				[/* list */ 'l', [
 					[/* block */ 'b', [
-						[/* inline code block */ 'i', `DAY_OF_WEEK`]
+						[/* inline code block */ 'i', `DAY_OF_WEEK`],
+						[/* text */ 't', `
+ `]
 					]],
 					[/* block */ 'b', [
-						[/* inline code block */ 'i', `ALIGNED_DAY_OF_WEEK_IN_MONTH`]
+						[/* inline code block */ 'i', `ALIGNED_DAY_OF_WEEK_IN_MONTH`],
+						[/* text */ 't', `
+ `]
 					]],
 					[/* block */ 'b', [
-						[/* inline code block */ 'i', `ALIGNED_DAY_OF_WEEK_IN_YEAR`]
+						[/* inline code block */ 'i', `ALIGNED_DAY_OF_WEEK_IN_YEAR`],
+						[/* text */ 't', `
+ `]
 					]],
 					[/* block */ 'b', [
-						[/* inline code block */ 'i', `DAY_OF_MONTH`]
+						[/* inline code block */ 'i', `DAY_OF_MONTH`],
+						[/* text */ 't', `
+ `]
 					]],
 					[/* block */ 'b', [
-						[/* inline code block */ 'i', `DAY_OF_YEAR`]
+						[/* inline code block */ 'i', `DAY_OF_YEAR`],
+						[/* text */ 't', `
+ `]
 					]],
 					[/* block */ 'b', [
-						[/* inline code block */ 'i', `EPOCH_DAY`]
+						[/* inline code block */ 'i', `EPOCH_DAY`],
+						[/* text */ 't', `
+ `]
 					]],
 					[/* block */ 'b', [
-						[/* inline code block */ 'i', `ALIGNED_WEEK_OF_MONTH`]
+						[/* inline code block */ 'i', `ALIGNED_WEEK_OF_MONTH`],
+						[/* text */ 't', `
+ `]
 					]],
 					[/* block */ 'b', [
-						[/* inline code block */ 'i', `ALIGNED_WEEK_OF_YEAR`]
+						[/* inline code block */ 'i', `ALIGNED_WEEK_OF_YEAR`],
+						[/* text */ 't', `
+ `]
 					]],
 					[/* block */ 'b', [
-						[/* inline code block */ 'i', `MONTH_OF_YEAR`]
+						[/* inline code block */ 'i', `MONTH_OF_YEAR`],
+						[/* text */ 't', `
+ `]
 					]],
 					[/* block */ 'b', [
-						[/* inline code block */ 'i', `PROLEPTIC_MONTH`]
+						[/* inline code block */ 'i', `PROLEPTIC_MONTH`],
+						[/* text */ 't', `
+ `]
 					]],
 					[/* block */ 'b', [
-						[/* inline code block */ 'i', `YEAR_OF_ERA`]
+						[/* inline code block */ 'i', `YEAR_OF_ERA`],
+						[/* text */ 't', `
+ `]
 					]],
 					[/* block */ 'b', [
-						[/* inline code block */ 'i', `YEAR`]
+						[/* inline code block */ 'i', `YEAR`],
+						[/* text */ 't', `
+ `]
 					]],
 					[/* block */ 'b', [
-						[/* inline code block */ 'i', `ERA`]
+						[/* inline code block */ 'i', `ERA`],
+						[/* text */ 't', `
+ `]
 					]]
 				]],
 				[/* text */ 't', `
@@ -410,28 +444,44 @@ DocsCollector.collect('java.time.LocalDate', [
 				]],
 				[/* list */ 'l', [
 					[/* block */ 'b', [
-						[/* inline code block */ 'i', `DAYS`]
+						[/* inline code block */ 'i', `DAYS`],
+						[/* text */ 't', `
+ `]
 					]],
 					[/* block */ 'b', [
-						[/* inline code block */ 'i', `WEEKS`]
+						[/* inline code block */ 'i', `WEEKS`],
+						[/* text */ 't', `
+ `]
 					]],
 					[/* block */ 'b', [
-						[/* inline code block */ 'i', `MONTHS`]
+						[/* inline code block */ 'i', `MONTHS`],
+						[/* text */ 't', `
+ `]
 					]],
 					[/* block */ 'b', [
-						[/* inline code block */ 'i', `YEARS`]
+						[/* inline code block */ 'i', `YEARS`],
+						[/* text */ 't', `
+ `]
 					]],
 					[/* block */ 'b', [
-						[/* inline code block */ 'i', `DECADES`]
+						[/* inline code block */ 'i', `DECADES`],
+						[/* text */ 't', `
+ `]
 					]],
 					[/* block */ 'b', [
-						[/* inline code block */ 'i', `CENTURIES`]
+						[/* inline code block */ 'i', `CENTURIES`],
+						[/* text */ 't', `
+ `]
 					]],
 					[/* block */ 'b', [
-						[/* inline code block */ 'i', `MILLENNIA`]
+						[/* inline code block */ 'i', `MILLENNIA`],
+						[/* text */ 't', `
+ `]
 					]],
 					[/* block */ 'b', [
-						[/* inline code block */ 'i', `ERAS`]
+						[/* inline code block */ 'i', `ERAS`],
+						[/* text */ 't', `
+ `]
 					]]
 				]],
 				[/* text */ 't', `
@@ -969,6 +1019,8 @@ DocsCollector.collect('java.time.LocalDate', [
 					[/* block */ 'b', `Check if the resulting date would be invalid`],
 					[/* block */ 'b', `Adjust the day-of-month to the last valid day if necessary`]
 				]],
+				[/* text */ 't', `
+ `],
 				[/* block */ 'b', ''],
 				[/* block */ 'b', `
  For example, 2007-03-31 minus one month would result in the invalid date
@@ -1041,6 +1093,8 @@ DocsCollector.collect('java.time.LocalDate', [
 					[/* block */ 'b', `Check if the resulting date would be invalid`],
 					[/* block */ 'b', `Adjust the day-of-month to the last valid day if necessary`]
 				]],
+				[/* text */ 't', `
+ `],
 				[/* block */ 'b', ''],
 				[/* block */ 'b', `
  For example, 2008-02-29 (leap year) minus one year would result in the
@@ -1257,6 +1311,8 @@ DocsCollector.collect('java.time.LocalDate', [
  `]
 					]]
 				]],
+				[/* text */ 't', `
+ `],
 				[/* block */ 'b', ''],
 				[/* block */ 'b', [
 					[/* text */ 't', `
@@ -1356,6 +1412,8 @@ DocsCollector.collect('java.time.LocalDate', [
 					[/* block */ 'b', `Check if the resulting date would be invalid`],
 					[/* block */ 'b', `Adjust the day-of-month to the last valid day if necessary`]
 				]],
+				[/* text */ 't', `
+ `],
 				[/* block */ 'b', ''],
 				[/* block */ 'b', `
  For example, 2007-03-31 plus one month would result in the invalid date
@@ -1428,6 +1486,8 @@ DocsCollector.collect('java.time.LocalDate', [
 					[/* block */ 'b', `Check if the resulting date would be invalid`],
 					[/* block */ 'b', `Adjust the day-of-month to the last valid day if necessary`]
 				]],
+				[/* text */ 't', `
+ `],
 				[/* block */ 'b', ''],
 				[/* block */ 'b', `
  For example, 2008-02-29 (leap year) plus one year would result in the
@@ -1496,6 +1556,8 @@ DocsCollector.collect('java.time.LocalDate', [
   import static java.time.temporal.TemporalAdjusters.*;
 
   result = localDate.with(JULY).with(lastDayOfMonth());
+ `],
+				[/* text */ 't', `
  `],
 				[/* block */ 'b', ''],
 				[/* block */ 'b', [
@@ -1714,6 +1776,8 @@ DocsCollector.collect('java.time.LocalDate', [
  `]
 					]]
 				]],
+				[/* text */ 't', `
+ `],
 				[/* block */ 'b', ''],
 				[/* block */ 'b', [
 					[/* text */ 't', `
@@ -2188,6 +2252,8 @@ DocsCollector.collect('java.time.LocalDate', [
 				[/* code block */ 'c', `   // these two lines are equivalent, but the second approach is recommended
    temporal = thisLocalDate.adjustInto(temporal);
    temporal = temporal.with(thisLocalDate);
+ `],
+				[/* text */ 't', `
  `],
 				[/* block */ 'b', ''],
 				[/* block */ 'b', `

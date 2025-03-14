@@ -97,21 +97,29 @@ DocsCollector.collect('java.util.Hashtable', [
  the numbers as keys:
  `],
 		[/* code block */ 'c', [
+			[/* text */ 't', `   `],
 			[/* inline code block */ 'i', `Hashtable<String, Integer> numbers
      = new Hashtable<String, Integer>();
    numbers.put("one", 1);
    numbers.put("two", 2);
    numbers.put("three", 3);`]
 		]],
+		[/* text */ 't', `
+
+ `],
 		[/* block */ 'b', ''],
 		[/* block */ 'b', `To retrieve a number, use the following code:
  `],
 		[/* code block */ 'c', [
+			[/* text */ 't', `   `],
 			[/* inline code block */ 'i', `Integer n = numbers.get("two");
    if (n != null) {
      System.out.println("two = " + n);
    }`]
 		]],
+		[/* text */ 't', `
+
+ `],
 		[/* block */ 'b', ''],
 		[/* block */ 'b', [
 			[/* text */ 't', `The iterators returned by the `],
@@ -152,7 +160,10 @@ DocsCollector.collect('java.util.Hashtable', [
  Therefore, it would be wrong to write a program that depended on this
  exception for its correctness: `],
 			[/* text */ 't', `the fail-fast behavior of iterators
- should be used only to detect bugs.`]
+ should be used only to detect bugs.`],
+			[/* text */ 't', `
+
+ `]
 		]],
 		[/* block */ 'b', [
 			[/* text */ 't', `As of the Java 2 platform v1.2, this class was retrofitted to
@@ -600,6 +611,7 @@ DocsCollector.collect('java.util.Hashtable', [
 
  `],
 				[/* code block */ 'c', [
+					[/* text */ 't', ` `],
 					[/* inline code block */ 'i', `map.compute(key, (k, v) -> (v == null) ? msg : v.concat(msg))`]
 				]],
 				[/* text */ 't', `
@@ -670,8 +682,12 @@ DocsCollector.collect('java.util.Hashtable', [
  `]
 				]],
 				[/* code block */ 'c', [
+					[/* text */ 't', ` `],
 					[/* inline code block */ 'i', `map.computeIfAbsent(key, k -> new Value(f(k)));`]
 				]],
+				[/* text */ 't', `
+
+ `],
 				[/* block */ 'b', ''],
 				[/* block */ 'b', [
 					[/* text */ 't', `Or to implement a multi-value map, `],
@@ -682,8 +698,12 @@ DocsCollector.collect('java.util.Hashtable', [
  `]
 				]],
 				[/* code block */ 'c', [
+					[/* text */ 't', ` `],
 					[/* inline code block */ 'i', `map.computeIfAbsent(key, k -> new HashSet<V>()).add(v);`]
 				]],
+				[/* text */ 't', `
+
+ `],
 				[/* block */ 'b', ''],
 				[/* block */ 'b', `The mapping function should not modify this map during computation.
 
@@ -818,8 +838,12 @@ DocsCollector.collect('java.util.Hashtable', [
 
  `],
 				[/* code block */ 'c', [
+					[/* text */ 't', ` `],
 					[/* inline code block */ 'i', `map.merge(key, msg, String::concat)`]
 				]],
+				[/* text */ 't', `
+
+ `],
 				[/* block */ 'b', [
 					[/* text */ 't', `If the remapping function returns `],
 					[/* inline code block */ 'i', `null`],

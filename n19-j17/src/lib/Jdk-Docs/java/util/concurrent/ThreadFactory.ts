@@ -14,6 +14,7 @@ DocsCollector.collect('java.util.concurrent.ThreadFactory', [
  The simplest implementation of this interface is just:
  `],
 		[/* code block */ 'c', [
+			[/* text */ 't', ` `],
 			[/* inline code block */ 'i', `class SimpleThreadFactory implements ThreadFactory {
    public Thread newThread(Runnable r) {
      return new Thread(r);

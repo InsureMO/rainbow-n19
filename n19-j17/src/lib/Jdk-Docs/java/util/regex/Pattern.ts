@@ -35,6 +35,9 @@ DocsCollector.collect('java.util.regex.Pattern', [
 				[/* text */ 't', `();`]
 			]]
 		]],
+		[/* text */ 't', `
+
+ `],
 		[/* block */ 'b', ''],
 		[/* block */ 'b', [
 			[/* text */ 't', ` A `],
@@ -69,6 +72,9 @@ DocsCollector.collect('java.util.regex.Pattern', [
 		[/* block */ 'b', [
 			[/* anchor */ 'r', '#-id', `sum`, `Summary of regular-expression constructs`]
 		]],
+		[/* text */ 't', `
+
+ `],
 		[/* table */ 'tbl',
 			[/* caption */ 'tc'],
 			[/* table header */ 'th', [
@@ -1343,10 +1349,20 @@ DocsCollector.collect('java.util.regex.Pattern', [
 				]]
 			]],
 		],
+		[/* text */ 't', `
+
+ `],
 		[/* new line */ 'n'],
+		[/* text */ 't', `
+
+
+ `],
 		[/* block */ 'b', [
 			[/* anchor */ 'r', '#-id', `bs`, `Backslashes, escapes, and quoting`]
 		]],
+		[/* text */ 't', `
+
+ `],
 		[/* block */ 'b', [
 			[/* text */ 't', ` The backslash character (`],
 			[/* inline code block */ 'i', `'\\'`],
@@ -1405,6 +1421,9 @@ DocsCollector.collect('java.util.regex.Pattern', [
 		[/* block */ 'b', [
 			[/* anchor */ 'r', '#-id', `cc`, `Character Classes`]
 		]],
+		[/* text */ 't', `
+
+    `],
 		[/* block */ 'b', [
 			[/* text */ 't', ` Character classes may appear within other character classes, and
     may be composed by the union operator (implicit) and the intersection
@@ -1496,6 +1515,9 @@ DocsCollector.collect('java.util.regex.Pattern', [
 				]]
 			]],
 		],
+		[/* text */ 't', `
+
+    `],
 		[/* block */ 'b', ''],
 		[/* block */ 'b', [
 			[/* text */ 't', ` Note that a different set of metacharacters are in effect inside
@@ -1513,6 +1535,9 @@ DocsCollector.collect('java.util.regex.Pattern', [
 		[/* block */ 'b', [
 			[/* anchor */ 'r', '#-id', `lt`, `Line terminators`]
 		]],
+		[/* text */ 't', `
+
+ `],
 		[/* block */ 'b', [
 			[/* text */ 't', ` A `],
 			[/* text */ 't', `line terminator`],
@@ -1567,6 +1592,8 @@ DocsCollector.collect('java.util.regex.Pattern', [
  `]
 			]]
 		]],
+		[/* text */ 't', `
+ `],
 		[/* block */ 'b', ''],
 		[/* block */ 'b', [
 			[/* text */ 't', `If `],
@@ -1611,9 +1638,14 @@ DocsCollector.collect('java.util.regex.Pattern', [
 		[/* block */ 'b', [
 			[/* anchor */ 'r', '#-id', `cg`, `Groups and capturing`]
 		]],
+		[/* text */ 't', `
+
+ `],
 		[/* block */ 'b', [
 			[/* anchor */ 'r', '#-id', `gnumber`, `Group number`]
 		]],
+		[/* text */ 't', `
+ `],
 		[/* block */ 'b', [
 			[/* text */ 't', ` Capturing groups are numbered by counting their opening parentheses from
  left to right.  In the expression `],
@@ -1621,20 +1653,38 @@ DocsCollector.collect('java.util.regex.Pattern', [
 			[/* text */ 't', `, for example, there
  are four such groups: `]
 		]],
+		[/* text */ 't', `
+
+ `],
 		[/* list */ 'l', [
 			[/* block */ 'b', [
-				[/* inline code block */ 'i', `((A)(B(C)))`]
+				[/* text */ 't', ` `],
+				[/* inline code block */ 'i', `((A)(B(C)))`],
+				[/* text */ 't', `
+   `]
 			]],
 			[/* block */ 'b', [
-				[/* inline code block */ 'i', `(A)`]
+				[/* text */ 't', ` `],
+				[/* inline code block */ 'i', `(A)`],
+				[/* text */ 't', `
+   `]
 			]],
 			[/* block */ 'b', [
-				[/* inline code block */ 'i', `(B(C))`]
+				[/* text */ 't', ` `],
+				[/* inline code block */ 'i', `(B(C))`],
+				[/* text */ 't', `
+   `]
 			]],
 			[/* block */ 'b', [
-				[/* inline code block */ 'i', `(C)`]
+				[/* text */ 't', ` `],
+				[/* inline code block */ 'i', `(C)`],
+				[/* text */ 't', `
+ `]
 			]]
 		]],
+		[/* text */ 't', `
+
+ `],
 		[/* block */ 'b', ` Group zero always stands for the entire expression.
 
  `],
@@ -1647,6 +1697,8 @@ DocsCollector.collect('java.util.regex.Pattern', [
 		[/* block */ 'b', [
 			[/* anchor */ 'r', '#-id', `groupname`, `Group name`]
 		]],
+		[/* text */ 't', `
+ `],
 		[/* block */ 'b', [
 			[/* text */ 't', `A capturing group can also be assigned a "name", a `],
 			[/* inline code block */ 'i', `named-capturing group`],
@@ -1699,6 +1751,9 @@ DocsCollector.collect('java.util.regex.Pattern', [
  `]
 			]]
 		]],
+		[/* text */ 't', `
+
+ `],
 		[/* block */ 'b', ''],
 		[/* block */ 'b', [
 			[/* text */ 't', ` A `],
@@ -1741,6 +1796,9 @@ DocsCollector.collect('java.util.regex.Pattern', [
  `]
 		]],
 		[/* block */ 'b', ` Unicode support `],
+		[/* text */ 't', `
+
+ `],
 		[/* block */ 'b', [
 			[/* text */ 't', ` This class is in conformance with Level 1 of `],
 			[/* external link */ 'a', `http://www.unicode.org/reports/tr18/`, `Unicode Technical Standard #18: Unicode Regular Expressions`],
@@ -1749,6 +1807,8 @@ DocsCollector.collect('java.util.regex.Pattern', [
  `]
 		]],
 		[/* block */ 'b', [
+			[/* text */ 't', `
+ `],
 			[/* text */ 't', `Unicode escape sequences`],
 			[/* text */ 't', ` such as `],
 			[/* inline code block */ 'i', `\\u2014`],
@@ -1791,6 +1851,8 @@ DocsCollector.collect('java.util.regex.Pattern', [
  `]
 		]],
 		[/* block */ 'b', [
+			[/* text */ 't', `
+ `],
 			[/* text */ 't', `Unicode character names`],
 			[/* text */ 't', ` are supported by the named character construct
  `],
@@ -1810,6 +1872,8 @@ DocsCollector.collect('java.util.regex.Pattern', [
  `]
 		]],
 		[/* block */ 'b', [
+			[/* text */ 't', `
+ `],
 			[/* external link */ 'a', `http://www.unicode.org/reports/tr18/#Default_Grapheme_Clusters`, `Unicode extended grapheme clusters`],
 			[/* text */ 't', ` are supported by the grapheme
  cluster matcher `],
@@ -1848,6 +1912,8 @@ DocsCollector.collect('java.util.regex.Pattern', [
 
  `],
 		[/* block */ 'b', [
+			[/* text */ 't', `
+ `],
 			[/* anchor */ 'r', '#-id', `usc`, `Scripts`],
 			[/* text */ 't', ` are specified either with the prefix `],
 			[/* inline code block */ 'i', `Is`],
@@ -1879,6 +1945,8 @@ DocsCollector.collect('java.util.regex.Pattern', [
  `]
 		]],
 		[/* block */ 'b', [
+			[/* text */ 't', `
+ `],
 			[/* anchor */ 'r', '#-id', `ubc`, `Blocks`],
 			[/* text */ 't', ` are specified with the prefix `],
 			[/* inline code block */ 'i', `In`],
@@ -1909,6 +1977,9 @@ DocsCollector.collect('java.util.regex.Pattern', [
  `]
 		]],
 		[/* block */ 'b', [
+			[/* text */ 't', `
+
+ `],
 			[/* anchor */ 'r', '#-id', `ucc`, `Categories`],
 			[/* text */ 't', ` may be specified with the optional prefix `],
 			[/* inline code block */ 'i', `Is`],
@@ -1944,6 +2015,9 @@ DocsCollector.collect('java.util.regex.Pattern', [
  `]
 		]],
 		[/* block */ 'b', [
+			[/* text */ 't', `
+
+ `],
 			[/* anchor */ 'r', '#-id', `ubpc`, `Binary properties`],
 			[/* text */ 't', ` are specified with the prefix `],
 			[/* inline code block */ 'i', `Is`],
@@ -1986,6 +2060,8 @@ DocsCollector.collect('java.util.regex.Pattern', [
 			[/* block */ 'b', ` Assigned
  `]
 		]],
+		[/* text */ 't', `
+ `],
 		[/* block */ 'b', ''],
 		[/* block */ 'b', [
 			[/* text */ 't', `
@@ -2191,14 +2267,21 @@ DocsCollector.collect('java.util.regex.Pattern', [
 				]]
 			]],
 		],
+		[/* text */ 't', `
+ `],
 		[/* block */ 'b', ''],
 		[/* block */ 'b', [
+			[/* text */ 't', `
+ `],
 			[/* anchor */ 'r', '#-id', `jcc`, `Categories that behave like the java.lang.Character boolean ismethodname methods (except for the deprecated ones) are available through the same \\p{prop} syntax where the specified property has the name javamethodname`],
 			[/* text */ 't', `.
 
  `]
 		]],
 		[/* block */ 'b', ` Comparison to Perl 5 `],
+		[/* text */ 't', `
+
+ `],
 		[/* block */ 'b', [
 			[/* text */ 't', `The `],
 			[/* inline code block */ 'i', `Pattern`],
@@ -2208,6 +2291,9 @@ DocsCollector.collect('java.util.regex.Pattern', [
  `]
 		]],
 		[/* block */ 'b', ` Perl constructs not supported by this class: `],
+		[/* text */ 't', `
+
+ `],
 		[/* list */ 'l', [
 			[/* block */ 'b', [
 				[/* block */ 'b', [
@@ -2279,6 +2365,7 @@ DocsCollector.collect('java.util.regex.Pattern', [
 				[/* block */ 'b', [
 					[/* text */ 't', ` The preprocessing operations `],
 					[/* inline code block */ 'i', `\\l`],
+					[/* text */ 't', ` `],
 					[/* inline code block */ 'i', `\\u`],
 					[/* text */ 't', `,
     `],
@@ -2289,7 +2376,13 @@ DocsCollector.collect('java.util.regex.Pattern', [
 				]]
 			]]
 		]],
+		[/* text */ 't', `
+
+ `],
 		[/* block */ 'b', ` Constructs supported by this class but not by Perl: `],
+		[/* text */ 't', `
+
+ `],
 		[/* list */ 'l', [
 			[/* block */ 'b', [
 				[/* block */ 'b', [
@@ -2300,7 +2393,13 @@ DocsCollector.collect('java.util.regex.Pattern', [
 				]]
 			]]
 		]],
+		[/* text */ 't', `
+
+ `],
 		[/* block */ 'b', ` Notable differences from Perl: `],
+		[/* text */ 't', `
+
+ `],
 		[/* list */ 'l', [
 			[/* block */ 'b', [
 				[/* block */ 'b', [
@@ -2349,10 +2448,16 @@ DocsCollector.collect('java.util.regex.Pattern', [
     group just as in Perl.  `]
 			]]
 		]],
+		[/* text */ 't', `
+
+
+ `],
 		[/* block */ 'b', [
 			[/* text */ 't', ` For a more precise description of the behavior of regular expression
  constructs, please see `],
-			[/* external link */ 'a', `http://www.oreilly.com/catalog/regex3/`, `Mastering Regular Expressions, 3rd Edition, Jeffrey E. F. Friedl, O'Reilly and Associates, 2006.`]
+			[/* external link */ 'a', `http://www.oreilly.com/catalog/regex3/`, `Mastering Regular Expressions, 3rd Edition, Jeffrey E. F. Friedl, O'Reilly and Associates, 2006.`],
+			[/* text */ 't', `
+ `]
 		]]
 	],
 	[/* fields */
@@ -2543,6 +2648,8 @@ DocsCollector.collect('java.util.regex.Pattern', [
  are in conformance with
  `],
 					[/* external link */ 'a', `http://www.unicode.org/reports/tr18/`, `Unicode Technical Standard #18: Unicode Regular Expressions`],
+					[/* text */ 't', `
+ `],
 					[/* text */ 't', `Annex C: Compatibility Properties`],
 					[/* text */ 't', `.
  `]
@@ -2637,6 +2744,9 @@ DocsCollector.collect('java.util.regex.Pattern', [
  sequence and a limit argument of zero.  Trailing empty strings are
  therefore not included in the resulting array. `]
 				]],
+				[/* text */ 't', `
+
+ `],
 				[/* block */ 'b', [
 					[/* text */ 't', ` The input `],
 					[/* inline code block */ 'i', `"boo:and:foo"`],
@@ -2753,6 +2863,9 @@ DocsCollector.collect('java.util.regex.Pattern', [
 						]]
 					]]
 				]],
+				[/* text */ 't', `
+
+ `],
 				[/* block */ 'b', ''],
 				[/* block */ 'b', [
 					[/* text */ 't', ` The input `],
@@ -2947,6 +3060,9 @@ DocsCollector.collect('java.util.regex.Pattern', [
 				[/* block */ 'b', [
 					[/* code block */ 'c', ` Pattern.compile(regex).matcher(input).matches()`]
 				]],
+				[/* text */ 't', `
+
+ `],
 				[/* block */ 'b', ''],
 				[/* block */ 'b', ` If a pattern is to be used multiple times, compiling it once and reusing
  it will be more efficient than invoking this method each time.  `]

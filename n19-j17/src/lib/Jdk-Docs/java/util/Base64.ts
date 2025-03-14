@@ -18,6 +18,8 @@ DocsCollector.collect('java.util.Base64', [
 		[/* list */ 'l', [
 			[/* block */ 'b', [
 				[/* anchor */ 'r', '#-id', `basic`, `Basic`],
+				[/* text */ 't', `
+ `],
 				[/* block */ 'b', ` Uses "The Base64 Alphabet" as specified in Table 1 of
      RFC 4648 and RFC 2045 for encoding and decoding operation.
      The encoder does not add any line feed (line separator)
@@ -26,6 +28,8 @@ DocsCollector.collect('java.util.Base64', [
 			]],
 			[/* block */ 'b', [
 				[/* anchor */ 'r', '#-id', `url`, `URL and Filename safe`],
+				[/* text */ 't', `
+ `],
 				[/* block */ 'b', ` Uses the "URL and Filename safe Base64 Alphabet" as specified
      in Table 2 of RFC 4648 for encoding and decoding. The
      encoder does not add any line feed (line separator) character.
@@ -34,6 +38,8 @@ DocsCollector.collect('java.util.Base64', [
 			]],
 			[/* block */ 'b', [
 				[/* anchor */ 'r', '#-id', `mime`, `MIME`],
+				[/* text */ 't', `
+ `],
 				[/* block */ 'b', [
 					[/* text */ 't', ` Uses "The Base64 Alphabet" as specified in Table 1 of
      RFC 2045 for encoding and decoding operation. The encoded output
@@ -50,6 +56,9 @@ DocsCollector.collect('java.util.Base64', [
 				]]
 			]]
 		]],
+		[/* text */ 't', `
+
+ `],
 		[/* block */ 'b', [
 			[/* text */ 't', ` Unless otherwise noted, passing a `],
 			[/* inline code block */ 'i', `null`],

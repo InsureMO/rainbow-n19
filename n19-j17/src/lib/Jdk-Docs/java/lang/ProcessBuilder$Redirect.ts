@@ -14,32 +14,47 @@ DocsCollector.collect('java.lang.ProcessBuilder$Redirect', [
 		[/* list */ 'l', [
 			[/* block */ 'b', [
 				[/* text */ 't', `the special value `],
-				[/* text */ 't', `Redirect.PIPE`]
+				[/* text */ 't', `Redirect.PIPE`],
+				[/* text */ 't', `
+ `]
 			]],
 			[/* block */ 'b', [
 				[/* text */ 't', `the special value `],
-				[/* text */ 't', `Redirect.INHERIT`]
+				[/* text */ 't', `Redirect.INHERIT`],
+				[/* text */ 't', `
+ `]
 			]],
 			[/* block */ 'b', [
 				[/* text */ 't', `the special value `],
-				[/* text */ 't', `Redirect.DISCARD`]
+				[/* text */ 't', `Redirect.DISCARD`],
+				[/* text */ 't', `
+ `]
 			]],
 			[/* block */ 'b', [
 				[/* text */ 't', `a redirection to read from a file, created by an invocation of
      `],
-				[/* reference */ 'r', `#from(java.io.File)`, `Redirect.from(File)`]
+				[/* reference */ 'r', `#from(java.io.File)`, `Redirect.from(File)`],
+				[/* text */ 't', `
+ `]
 			]],
 			[/* block */ 'b', [
 				[/* text */ 't', `a redirection to write to a file,  created by an invocation of
      `],
-				[/* reference */ 'r', `#to(java.io.File)`, `Redirect.to(File)`]
+				[/* reference */ 'r', `#to(java.io.File)`, `Redirect.to(File)`],
+				[/* text */ 't', `
+ `]
 			]],
 			[/* block */ 'b', [
 				[/* text */ 't', `a redirection to append to a file, created by an invocation of
      `],
-				[/* reference */ 'r', `#appendTo(java.io.File)`, `Redirect.appendTo(File)`]
+				[/* reference */ 'r', `#appendTo(java.io.File)`, `Redirect.appendTo(File)`],
+				[/* text */ 't', `
+ `]
 			]]
 		]],
+		[/* text */ 't', `
+
+ `],
 		[/* block */ 'b', [
 			[/* text */ 't', `Each of the above categories has an associated unique
  `],
@@ -58,6 +73,7 @@ DocsCollector.collect('java.lang.ProcessBuilder$Redirect', [
 				[/* block */ 'b', `It will always be true that
  `],
 				[/* code block */ 'c', [
+					[/* text */ 't', ` `],
 					[/* inline code block */ 'i', `Redirect.DISCARD.file() is the filename appropriate for the operating system
  and may be null &&
  Redirect.DISCARD.type() == Redirect.Type.WRITE`]
@@ -75,6 +91,7 @@ DocsCollector.collect('java.lang.ProcessBuilder$Redirect', [
 				[/* block */ 'b', `It will always be true that
   `],
 				[/* code block */ 'c', [
+					[/* text */ 't', ` `],
 					[/* inline code block */ 'i', `Redirect.INHERIT.file() == null &&
  Redirect.INHERIT.type() == Redirect.Type.INHERIT`]
 				]],
@@ -92,6 +109,7 @@ DocsCollector.collect('java.lang.ProcessBuilder$Redirect', [
 				[/* block */ 'b', `It will always be true that
   `],
 				[/* code block */ 'c', [
+					[/* text */ 't', ` `],
 					[/* inline code block */ 'i', `Redirect.PIPE.file() == null &&
  Redirect.PIPE.type() == Redirect.Type.PIPE`]
 				]],
@@ -188,6 +206,7 @@ DocsCollector.collect('java.lang.ProcessBuilder$Redirect', [
 				[/* block */ 'b', `It will always be true that
   `],
 				[/* code block */ 'c', [
+					[/* text */ 't', ` `],
 					[/* inline code block */ 'i', `Redirect.appendTo(file).file() == file &&
  Redirect.appendTo(file).type() == Redirect.Type.APPEND`]
 				]],
@@ -215,6 +234,7 @@ DocsCollector.collect('java.lang.ProcessBuilder$Redirect', [
 				[/* block */ 'b', `It will always be true that
   `],
 				[/* code block */ 'c', [
+					[/* text */ 't', ` `],
 					[/* inline code block */ 'i', `Redirect.from(file).file() == file &&
  Redirect.from(file).type() == Redirect.Type.READ`]
 				]],
@@ -244,6 +264,7 @@ DocsCollector.collect('java.lang.ProcessBuilder$Redirect', [
 				[/* block */ 'b', `It will always be true that
   `],
 				[/* code block */ 'c', [
+					[/* text */ 't', ` `],
 					[/* inline code block */ 'i', `Redirect.to(file).file() == file &&
  Redirect.to(file).type() == Redirect.Type.WRITE`]
 				]],

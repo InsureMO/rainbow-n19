@@ -28,6 +28,9 @@ DocsCollector.collect('java.util.UUID', [
  0x3FFF000000000000 clock_seq
  0x0000FFFFFFFFFFFF node
  `],
+		[/* text */ 't', `
+
+ `],
 		[/* block */ 'b', ''],
 		[/* block */ 'b', [
 			[/* text */ 't', ` The variant field contains a value which identifies the layout of the
@@ -262,6 +265,7 @@ DocsCollector.collect('java.util.UUID', [
  `],
 				[/* block */ 'b', [
 					[/* code block */ 'c', [
+						[/* text */ 't', ` `],
 						[/* inline code block */ 'i', `UUID                   = <time_low> "-" <time_mid> "-"
                           <time_high_and_version> "-"
                           <variant_and_sequence> "-"

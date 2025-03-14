@@ -10,6 +10,8 @@ DocsCollector.collect('java.text.SimpleDateFormat', [
 
  `],
 		[/* block */ 'b', [
+			[/* text */ 't', `
+ `],
 			[/* inline code block */ 'i', `SimpleDateFormat`],
 			[/* text */ 't', ` allows you to start by choosing
  any user-defined patterns for date-time formatting. However, you
@@ -37,6 +39,8 @@ DocsCollector.collect('java.text.SimpleDateFormat', [
  `]
 		]],
 		[/* block */ 'b', `Date and Time Patterns`],
+		[/* text */ 't', `
+ `],
 		[/* block */ 'b', [
 			[/* text */ 't', `
  Date and time formats are specified by `],
@@ -83,6 +87,8 @@ DocsCollector.collect('java.text.SimpleDateFormat', [
  `]
 		]],
 		[/* block */ 'b', [
+			[/* text */ 't', `
+ `],
 			[/* table */ 'tbl',
 				[/* caption */ 'tc'],
 				[/* table header */ 'th', [
@@ -612,7 +618,9 @@ DocsCollector.collect('java.text.SimpleDateFormat', [
 						]]
 					]]
 				]],
-			]
+			],
+			[/* text */ 't', `
+ `]
 		]],
 		[/* text */ 't', `
  Pattern letters are usually repeated, as their number determines the
@@ -648,6 +656,8 @@ DocsCollector.collect('java.text.SimpleDateFormat', [
 				[/* text */ 't', ` is the Gregorian
      calendar, the following rules are applied.`],
 				[/* new line */ 'n'],
+				[/* text */ 't', `
+     `],
 				[/* list */ 'l', [
 					[/* block */ 'b', [
 						[/* text */ 't', `For formatting, if the number of pattern letters is 2, the year
@@ -699,6 +709,8 @@ DocsCollector.collect('java.text.SimpleDateFormat', [
 				[/* text */ 't', `
      is used.`],
 				[/* new line */ 'n'],
+				[/* text */ 't', `
+     `],
 				[/* new line */ 'n'],
 				[/* text */ 't', `
      If week year `],
@@ -729,6 +741,8 @@ DocsCollector.collect('java.text.SimpleDateFormat', [
 				[/* text */ 't', `number`],
 				[/* text */ 't', `.`],
 				[/* new line */ 'n'],
+				[/* text */ 't', `
+     `],
 				[/* list */ 'l', [
 					[/* block */ 'b', [
 						[/* text */ 't', `Letter `],
@@ -762,6 +776,8 @@ DocsCollector.collect('java.text.SimpleDateFormat', [
 						[/* text */ 't', ` produces the standalone form of month names.`]
 					]]
 				]],
+				[/* text */ 't', `
+     `],
 				[/* new line */ 'n']
 			]],
 			[/* block */ 'b', [
@@ -774,28 +790,53 @@ DocsCollector.collect('java.text.SimpleDateFormat', [
      following syntax is used:
      `],
 				[/* code block */ 'c', [
+					[/* text */ 't', `     `],
 					[/* anchor */ 'r', '#-id', `GMTOffsetTimeZone`, `GMTOffsetTimeZone:`],
+					[/* text */ 't', `
+             `],
 					[/* inline code block */ 'i', `GMT`],
+					[/* text */ 't', ` `],
 					[/* text */ 't', `Sign`],
+					[/* text */ 't', ` `],
 					[/* text */ 't', `Hours`],
+					[/* text */ 't', ` `],
 					[/* inline code block */ 'i', `:`],
+					[/* text */ 't', ` `],
 					[/* text */ 't', `Minutes`],
+					[/* text */ 't', `
+     `],
 					[/* text */ 't', `Sign:`],
 					[/* text */ 't', ` one of
              `],
 					[/* inline code block */ 'i', `+ -`],
+					[/* text */ 't', `
+     `],
 					[/* text */ 't', `Hours:`],
+					[/* text */ 't', `
+             `],
 					[/* text */ 't', `Digit`],
+					[/* text */ 't', `
+             `],
 					[/* text */ 't', `Digit`],
+					[/* text */ 't', ` `],
 					[/* text */ 't', `Digit`],
+					[/* text */ 't', `
+     `],
 					[/* text */ 't', `Minutes:`],
+					[/* text */ 't', `
+             `],
 					[/* text */ 't', `Digit`],
+					[/* text */ 't', ` `],
 					[/* text */ 't', `Digit`],
+					[/* text */ 't', `
+     `],
 					[/* text */ 't', `Digit:`],
 					[/* text */ 't', ` one of
              `],
 					[/* inline code block */ 'i', `0 1 2 3 4 5 6 7 8 9`]
 				]],
+				[/* text */ 't', `
+     `],
 				[/* text */ 't', `Hours`],
 				[/* text */ 't', ` must be between 0 and 23, and `],
 				[/* text */ 't', `Minutes`],
@@ -819,13 +860,24 @@ DocsCollector.collect('java.text.SimpleDateFormat', [
 
      `],
 				[/* code block */ 'c', [
+					[/* text */ 't', `     `],
 					[/* text */ 't', `RFC822TimeZone:`],
+					[/* text */ 't', `
+             `],
 					[/* text */ 't', `Sign`],
+					[/* text */ 't', ` `],
 					[/* text */ 't', `TwoDigitHours`],
+					[/* text */ 't', ` `],
 					[/* text */ 't', `Minutes`],
+					[/* text */ 't', `
+     `],
 					[/* text */ 't', `TwoDigitHours:`],
+					[/* text */ 't', `
+             `],
 					[/* text */ 't', `Digit Digit`]
 				]],
+				[/* text */ 't', `
+     `],
 				[/* text */ 't', `TwoDigitHours`],
 				[/* text */ 't', ` must be between 00 and 23. Other definitions
      are as for `],
@@ -848,24 +900,55 @@ DocsCollector.collect('java.text.SimpleDateFormat', [
      and parsing as follows:
      `],
 				[/* code block */ 'c', [
+					[/* text */ 't', `     `],
 					[/* text */ 't', `ISO8601TimeZone:`],
+					[/* text */ 't', `
+             `],
 					[/* text */ 't', `OneLetterISO8601TimeZone`],
+					[/* text */ 't', `
+             `],
 					[/* text */ 't', `TwoLetterISO8601TimeZone`],
+					[/* text */ 't', `
+             `],
 					[/* text */ 't', `ThreeLetterISO8601TimeZone`],
+					[/* text */ 't', `
+     `],
 					[/* text */ 't', `OneLetterISO8601TimeZone:`],
+					[/* text */ 't', `
+             `],
 					[/* text */ 't', `Sign`],
+					[/* text */ 't', ` `],
 					[/* text */ 't', `TwoDigitHours`],
+					[/* text */ 't', `
+             `],
 					[/* inline code block */ 'i', `Z`],
+					[/* text */ 't', `
+     `],
 					[/* text */ 't', `TwoLetterISO8601TimeZone:`],
+					[/* text */ 't', `
+             `],
 					[/* text */ 't', `Sign`],
+					[/* text */ 't', ` `],
 					[/* text */ 't', `TwoDigitHours`],
+					[/* text */ 't', ` `],
 					[/* text */ 't', `Minutes`],
+					[/* text */ 't', `
+             `],
 					[/* inline code block */ 'i', `Z`],
+					[/* text */ 't', `
+     `],
 					[/* text */ 't', `ThreeLetterISO8601TimeZone:`],
+					[/* text */ 't', `
+             `],
 					[/* text */ 't', `Sign`],
+					[/* text */ 't', ` `],
 					[/* text */ 't', `TwoDigitHours`],
+					[/* text */ 't', ` `],
 					[/* inline code block */ 'i', `:`],
+					[/* text */ 't', ` `],
 					[/* text */ 't', `Minutes`],
+					[/* text */ 't', `
+             `],
 					[/* inline code block */ 'i', `Z`]
 				]],
 				[/* text */ 't', `
@@ -918,6 +1001,8 @@ DocsCollector.collect('java.text.SimpleDateFormat', [
 			]],
 			[/* block */ 'b', '']
 		]],
+		[/* text */ 't', `
+ `],
 		[/* inline code block */ 'i', `SimpleDateFormat`],
 		[/* text */ 't', ` also supports `],
 		[/* text */ 't', `localized date and time
@@ -939,6 +1024,8 @@ DocsCollector.collect('java.text.SimpleDateFormat', [
  in the U.S. Pacific Time time zone.
  `],
 		[/* block */ 'b', [
+			[/* text */ 't', `
+ `],
 			[/* table */ 'tbl',
 				[/* caption */ 'tc'],
 				[/* table header */ 'th', [
@@ -1087,11 +1174,19 @@ DocsCollector.collect('java.text.SimpleDateFormat', [
 						]]
 					]]
 				]],
-			]
+			],
+			[/* text */ 't', `
+ `]
 		]],
+		[/* text */ 't', `
+
+ `],
 		[/* block */ 'b', [
 			[/* anchor */ 'r', '#-id', `synchronization`, `Synchronization`]
 		]],
+		[/* text */ 't', `
+
+ `],
 		[/* block */ 'b', `
  Date formats are not synchronized.
  It is recommended to create separate format instances for each thread.

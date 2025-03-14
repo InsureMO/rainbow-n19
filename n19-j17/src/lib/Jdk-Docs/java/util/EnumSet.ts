@@ -68,6 +68,9 @@ DocsCollector.collect('java.util.EnumSet', [
 		]],
 		[/* code block */ 'c', ` Set<MyEnum> s = Collections.synchronizedSet(EnumSet.noneOf(MyEnum.class));
  `],
+		[/* text */ 't', `
+
+ `],
 		[/* block */ 'b', ''],
 		[/* block */ 'b', [
 			[/* text */ 't', `Implementation note: All basic operations execute in constant time.

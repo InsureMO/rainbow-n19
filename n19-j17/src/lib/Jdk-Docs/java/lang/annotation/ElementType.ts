@@ -93,6 +93,8 @@ DocsCollector.collect('java.lang.annotation.ElementType', [
 			[/* inline code block */ 'i', `@Target(ElementType.TYPE_USE)`],
 			[/* text */ 't', `, then `],
 			[/* inline code block */ 'i', `@NonNull`],
+			[/* text */ 't', `
+ `],
 			[/* inline code block */ 'i', `class C {...}`],
 			[/* text */ 't', ` could be treated by a type checker as indicating that
  all variables of class `],

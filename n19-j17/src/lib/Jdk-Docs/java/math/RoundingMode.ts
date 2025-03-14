@@ -389,6 +389,10 @@ DocsCollector.collect('java.math.RoundingMode', [
 				]]
 			]],
 		],
+		[/* text */ 't', `
+
+
+ `],
 		[/* block */ 'b', ''],
 		[/* block */ 'b', [
 			[/* text */ 't', `This `],

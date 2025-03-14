@@ -140,6 +140,7 @@ DocsCollector.collect('java.util.WeakHashMap', [
  `]
 		]],
 		[/* block */ 'b', [
+			[/* text */ 't', ` `],
 			[/* text */ 't', `Implementation note:`],
 			[/* text */ 't', ` The value objects in a
  `],
@@ -196,7 +197,10 @@ DocsCollector.collect('java.util.WeakHashMap', [
  Therefore, it would be wrong to write a program that depended on this
  exception for its correctness:  `],
 			[/* text */ 't', `the fail-fast behavior of iterators
- should be used only to detect bugs.`]
+ should be used only to detect bugs.`],
+			[/* text */ 't', `
+
+ `]
 		]],
 		[/* block */ 'b', [
 			[/* text */ 't', `This class is a member of the

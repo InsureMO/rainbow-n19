@@ -219,7 +219,9 @@ DocsCollector.collect('java.lang.ClassValue', [
 						[/* text */ 't', ` calls `],
 						[/* inline code block */ 'i', `CV.get(C)`],
 						[/* text */ 't', ` and sees state `],
-						[/* inline code block */ 'i', `2N`]
+						[/* inline code block */ 'i', `2N`],
+						[/* text */ 't', `
+ `]
 					]],
 					[/* block */ 'b', [
 						[/* inline code block */ 'i', `T`],
@@ -239,14 +241,18 @@ DocsCollector.collect('java.lang.ClassValue', [
 						[/* text */ 't', ` also calls `],
 						[/* inline code block */ 'i', `CV.get(C)`],
 						[/* text */ 't', ` and sees state `],
-						[/* inline code block */ 'i', `2N`]
+						[/* inline code block */ 'i', `2N`],
+						[/* text */ 't', `
+ `]
 					]],
 					[/* block */ 'b', [
 						[/* inline code block */ 'i', `T2`],
 						[/* text */ 't', ` quickly computes a similar time-dependent value `],
 						[/* inline code block */ 'i', `V1`],
 						[/* text */ 't', ` and installs it on `],
-						[/* inline code block */ 'i', `CV.get(C)`]
+						[/* inline code block */ 'i', `CV.get(C)`],
+						[/* text */ 't', `
+ `]
 					]],
 					[/* block */ 'b', [
 						[/* inline code block */ 'i', `T2`],
@@ -277,7 +283,9 @@ DocsCollector.collect('java.lang.ClassValue', [
 						[/* text */ 't', ` wakes up and attempts to install `],
 						[/* inline code block */ 'i', `V0`],
 						[/* text */ 't', `; `],
-						[/* text */ 't', `this must fail`]
+						[/* text */ 't', `this must fail`],
+						[/* text */ 't', `
+ `]
 					]]
 				]],
 				[/* text */ 't', `

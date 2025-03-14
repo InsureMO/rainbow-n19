@@ -26,6 +26,9 @@ DocsCollector.collect('java.lang.module.ModuleDescriptor$Provides', [
 					[/* text */ 't', ` objects are equal if the
  service type is equal and the list of providers is equal. `]
 				]],
+				[/* text */ 't', `
+
+ `],
 				[/* block */ 'b', [
 					[/* text */ 't', ` This method satisfies the general contract of the `],
 					[/* reference */ 'r', `java.lang.Object#equals(java.lang.Object)`, `Object.equals`],

@@ -80,6 +80,9 @@ DocsCollector.collect('java.nio.file.FileSystem', [
 				]]
 			]]
 		]],
+		[/* text */ 't', `
+
+ `],
 		[/* block */ 'b', ''],
 		[/* block */ 'b', [
 			[/* text */ 't', ` File systems vary greatly. In some cases the file system is a single
@@ -453,9 +456,12 @@ DocsCollector.collect('java.nio.file.FileSystem', [
  `],
 				[/* block */ 'b', [
 					[/* code block */ 'c', [
+						[/* text */ 't', ` `],
 						[/* text */ 't', `syntax`],
 						[/* text */ 't', `:`],
-						[/* text */ 't', `pattern`]
+						[/* text */ 't', `pattern`],
+						[/* text */ 't', `
+ `]
 					]]
 				]],
 				[/* text */ 't', `
@@ -589,6 +595,9 @@ DocsCollector.collect('java.nio.file.FileSystem', [
 						]]
 					]],
 				],
+				[/* text */ 't', `
+
+ `],
 				[/* block */ 'b', ''],
 				[/* block */ 'b', ` The following rules are used to interpret glob patterns:
 
@@ -755,6 +764,9 @@ DocsCollector.collect('java.nio.file.FileSystem', [
 						]]
 					]]
 				]],
+				[/* text */ 't', `
+
+ `],
 				[/* block */ 'b', ''],
 				[/* block */ 'b', [
 					[/* text */ 't', ` When the syntax is "`],
@@ -806,6 +818,7 @@ DocsCollector.collect('java.nio.file.FileSystem', [
 			[/* method description */
 				[/* text */ 't', `Constructs a new `],
 				[/* reference */ 'r', `java.nio.file.WatchService`, `WatchService`],
+				[/* text */ 't', ` `],
 				[/* text */ 't', `(optional operation)`],
 				[/* text */ 't', `.
 

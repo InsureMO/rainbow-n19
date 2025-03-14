@@ -698,13 +698,17 @@ DocsCollector.collect('java.lang.Integer', [
 						[/* text */ 't', `floor(log`],
 						[/* text */ 't', `2`, 'sub'],
 						[/* text */ 't', `(x)) = `],
-						[/* inline code block */ 'i', `31 - numberOfLeadingZeros(x)`]
+						[/* inline code block */ 'i', `31 - numberOfLeadingZeros(x)`],
+						[/* text */ 't', `
+ `]
 					]],
 					[/* block */ 'b', [
 						[/* text */ 't', `ceil(log`],
 						[/* text */ 't', `2`, 'sub'],
 						[/* text */ 't', `(x)) = `],
-						[/* inline code block */ 'i', `32 - numberOfLeadingZeros(x - 1)`]
+						[/* inline code block */ 'i', `32 - numberOfLeadingZeros(x - 1)`],
+						[/* text */ 't', `
+ `]
 					]]
 				]],
 				[/* block */ 'b', '']
@@ -959,6 +963,9 @@ DocsCollector.collect('java.lang.Integer', [
  `]
 					]]
 				]],
+				[/* text */ 't', `
+
+ `],
 				[/* block */ 'b', ''],
 				[/* block */ 'b', `Examples:
  `],
@@ -1426,6 +1433,8 @@ DocsCollector.collect('java.lang.Integer', [
 
  `],
 				[/* block */ 'b', [
+					[/* text */ 't', `
+ `],
 					[/* dl */ 'dl', [
 						[/* dt */ 'dt', [
 							[/* text */ 't', `DecodableString:`],
@@ -1489,8 +1498,13 @@ DocsCollector.collect('java.lang.Integer', [
 							[/* text */ 't', `
  `]
 						]]
-					]]
+					]],
+					[/* text */ 't', `
+ `]
 				]],
+				[/* text */ 't', `
+
+ `],
 				[/* text */ 't', `DecimalNumeral`],
 				[/* text */ 't', `, `],
 				[/* text */ 't', `HexDigits`],
@@ -1597,7 +1611,11 @@ DocsCollector.collect('java.lang.Integer', [
  `]
 				]],
 				[/* block */ 'b', [
-					[/* inline code block */ 'i', `getInteger(nm, null)`]
+					[/* text */ 't', `
+  `],
+					[/* inline code block */ 'i', `getInteger(nm, null)`],
+					[/* text */ 't', `
+ `]
 				]],
 				[/* block */ 'b', '']
 			],
@@ -1662,7 +1680,11 @@ DocsCollector.collect('java.lang.Integer', [
  `]
 				]],
 				[/* block */ 'b', [
-					[/* inline code block */ 'i', `getInteger(nm, new Integer(val))`]
+					[/* text */ 't', `
+  `],
+					[/* inline code block */ 'i', `getInteger(nm, new Integer(val))`],
+					[/* text */ 't', `
+ `]
 				]],
 				[/* text */ 't', `
 
@@ -1756,6 +1778,9 @@ DocsCollector.collect('java.lang.Integer', [
  `]
 					]]
 				]],
+				[/* text */ 't', `
+
+ `],
 				[/* block */ 'b', [
 					[/* text */ 't', `The second argument is the default value. The default value is
  returned if there is no property of the specified name, if the
@@ -1849,7 +1874,11 @@ DocsCollector.collect('java.lang.Integer', [
  `]
 				]],
 				[/* block */ 'b', [
-					[/* inline code block */ 'i', `new Integer(Integer.parseInt(s))`]
+					[/* text */ 't', `
+  `],
+					[/* inline code block */ 'i', `new Integer(Integer.parseInt(s))`],
+					[/* text */ 't', `
+ `]
 				]],
 				[/* block */ 'b', '']
 			],
@@ -1900,7 +1929,11 @@ DocsCollector.collect('java.lang.Integer', [
  `]
 				]],
 				[/* block */ 'b', [
-					[/* inline code block */ 'i', `new Integer(Integer.parseInt(s, radix))`]
+					[/* text */ 't', `
+  `],
+					[/* inline code block */ 'i', `new Integer(Integer.parseInt(s, radix))`],
+					[/* text */ 't', `
+ `]
 				]],
 				[/* block */ 'b', '']
 			],
@@ -2033,7 +2066,11 @@ DocsCollector.collect('java.lang.Integer', [
  `]
 				]],
 				[/* block */ 'b', [
-					[/* inline code block */ 'i', `0123456789abcdef`]
+					[/* text */ 't', `
+  `],
+					[/* inline code block */ 'i', `0123456789abcdef`],
+					[/* text */ 't', `
+ `]
 				]],
 				[/* text */ 't', `
 
@@ -2055,7 +2092,11 @@ DocsCollector.collect('java.lang.Integer', [
 
  `],
 				[/* block */ 'b', [
-					[/* inline code block */ 'i', `Integer.toHexString(n).toUpperCase()`]
+					[/* text */ 't', `
+  `],
+					[/* inline code block */ 'i', `Integer.toHexString(n).toUpperCase()`],
+					[/* text */ 't', `
+ `]
 				]],
 				[/* block */ 'b', '']
 			],
@@ -2112,7 +2153,11 @@ DocsCollector.collect('java.lang.Integer', [
  `]
 				]],
 				[/* block */ 'b', [
-					[/* inline code block */ 'i', `01234567`]
+					[/* text */ 't', `
+ `],
+					[/* inline code block */ 'i', `01234567`],
+					[/* text */ 't', `
+ `]
 				]],
 				[/* text */ 't', `
 
@@ -2202,7 +2247,11 @@ DocsCollector.collect('java.lang.Integer', [
  `]
 				]],
 				[/* block */ 'b', [
-					[/* inline code block */ 'i', `0123456789abcdefghijklmnopqrstuvwxyz`]
+					[/* text */ 't', `
+   `],
+					[/* inline code block */ 'i', `0123456789abcdefghijklmnopqrstuvwxyz`],
+					[/* text */ 't', `
+ `]
 				]],
 				[/* text */ 't', `
 
@@ -2238,7 +2287,11 @@ DocsCollector.collect('java.lang.Integer', [
 
  `],
 				[/* block */ 'b', [
-					[/* inline code block */ 'i', `Integer.toString(n, 16).toUpperCase()`]
+					[/* text */ 't', `
+  `],
+					[/* inline code block */ 'i', `Integer.toString(n, 16).toUpperCase()`],
+					[/* text */ 't', `
+ `]
 				]],
 				[/* block */ 'b', '']
 			],

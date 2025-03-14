@@ -33,6 +33,8 @@ DocsCollector.collect('java.lang.ClassNotFoundException', [
  `]
 			]]
 		]],
+		[/* text */ 't', `
+ `],
 		[/* block */ 'b', `
  but no definition for the class with the specified name could be found.`]
 	],

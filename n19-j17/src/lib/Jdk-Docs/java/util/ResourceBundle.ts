@@ -24,6 +24,9 @@ DocsCollector.collect('java.util.ResourceBundle', [
 			[/* block */ 'b', ` be easily modified later to support even more locales
  `]
 		]],
+		[/* text */ 't', `
+
+ `],
 		[/* block */ 'b', ''],
 		[/* block */ 'b', `
  Resource bundles belong to families whose members share a common base
@@ -73,10 +76,17 @@ DocsCollector.collect('java.util.ResourceBundle', [
  `]
 		]],
 		[/* block */ 'b', [
+			[/* text */ 't', `
+ `],
 			[/* code block */ 'c', ` ResourceBundle myResources =
       ResourceBundle.getBundle("MyResources", currentLocale);
+ `],
+			[/* text */ 't', `
  `]
 		]],
+		[/* text */ 't', `
+
+ `],
 		[/* block */ 'b', ''],
 		[/* block */ 'b', [
 			[/* text */ 't', `
@@ -89,6 +99,8 @@ DocsCollector.collect('java.util.ResourceBundle', [
  `]
 		]],
 		[/* block */ 'b', [
+			[/* text */ 't', `
+ `],
 			[/* code block */ 'c', ` public class MyResources extends ListResourceBundle {
      protected Object[][] getContents() {
          return new Object[][] {
@@ -99,6 +111,8 @@ DocsCollector.collect('java.util.ResourceBundle', [
         };
      }
  }
+ `],
+			[/* text */ 't', `
  `]
 		]],
 		[/* text */ 't', `
@@ -124,8 +138,12 @@ DocsCollector.collect('java.util.ResourceBundle', [
  `]
 		]],
 		[/* block */ 'b', [
+			[/* text */ 't', `
+ `],
 			[/* code block */ 'c', ` button1 = new Button(myResources.getString("OkKey"));
  button2 = new Button(myResources.getString("CancelKey"));
+ `],
+			[/* text */ 't', `
  `]
 		]],
 		[/* text */ 't', `
@@ -157,9 +175,16 @@ DocsCollector.collect('java.util.ResourceBundle', [
  `]
 		]],
 		[/* block */ 'b', [
+			[/* text */ 't', `
+ `],
 			[/* code block */ 'c', ` int[] myIntegers = (int[]) myResources.getObject("intList");
+ `],
+			[/* text */ 't', `
  `]
 		]],
+		[/* text */ 't', `
+
+ `],
 		[/* block */ 'b', ''],
 		[/* block */ 'b', [
 			[/* text */ 't', `
@@ -377,6 +402,7 @@ DocsCollector.collect('java.util.ResourceBundle', [
 
  `],
 		[/* block */ 'b', [
+			[/* text */ 't', ` `],
 			[/* reference */ 'r', `java.util.ResourceBundle.Control`, `ResourceBundle.Control`],
 			[/* text */ 't', ` is designed for an application deployed
  in an unnamed module, for example to support resource bundles in
@@ -468,6 +494,8 @@ DocsCollector.collect('java.util.ResourceBundle', [
  key with the same value (as for the okKey below).
  `],
 		[/* block */ 'b', [
+			[/* text */ 't', `
+ `],
 			[/* code block */ 'c', ` // default (English language, United States)
  public class MyResources extends ResourceBundle {
      public Object handleGetObject(String key) {
@@ -499,6 +527,8 @@ DocsCollector.collect('java.util.ResourceBundle', [
          return new HashSet<String>(Arrays.asList("cancelKey"));
      }
  }
+ `],
+			[/* text */ 't', `
  `]
 		]],
 		[/* text */ 't', `
@@ -720,6 +750,8 @@ DocsCollector.collect('java.util.ResourceBundle', [
  Calling this method is equivalent to calling
  `],
 				[/* block */ 'b', [
+					[/* text */ 't', `
+ `],
 					[/* inline code block */ 'i', `(String) getObject(key)`],
 					[/* text */ 't', `.
  `]
@@ -754,6 +786,8 @@ DocsCollector.collect('java.util.ResourceBundle', [
  Calling this method is equivalent to calling
  `],
 				[/* block */ 'b', [
+					[/* text */ 't', `
+ `],
 					[/* inline code block */ 'i', `(String[]) getObject(key)`],
 					[/* text */ 't', `.
  `]
@@ -843,6 +877,8 @@ DocsCollector.collect('java.util.ResourceBundle', [
  and the caller module. Calling this method is equivalent to calling
  `],
 				[/* block */ 'b', [
+					[/* text */ 't', `
+ `],
 					[/* inline code block */ 'i', `getBundle(baseName, Locale.getDefault(), callerModule)`],
 					[/* text */ 't', `,
  `]
@@ -874,6 +910,8 @@ DocsCollector.collect('java.util.ResourceBundle', [
  and the caller module. Calling this method is equivalent to calling
  `],
 				[/* block */ 'b', [
+					[/* text */ 't', `
+ `],
 					[/* inline code block */ 'i', `getBundle(baseName, locale, callerModule)`],
 					[/* text */ 't', `,
  `]
@@ -1082,7 +1120,11 @@ DocsCollector.collect('java.util.ResourceBundle', [
  on behalf of the specified module. This method is equivalent to calling
  `],
 				[/* block */ 'b', [
-					[/* inline code block */ 'i', `getBundle(baseName, Locale.getDefault(), module)`]
+					[/* text */ 't', `
+ `],
+					[/* inline code block */ 'i', `getBundle(baseName, Locale.getDefault(), module)`],
+					[/* text */ 't', `
+ `]
 				]]
 			],
 			[/* parameters */
@@ -1183,6 +1225,9 @@ DocsCollector.collect('java.util.ResourceBundle', [
      baseName + "_" + language + "_" + country
      baseName + "_" + language
  `],
+				[/* text */ 't', `
+
+ `],
 				[/* block */ 'b', ''],
 				[/* block */ 'b', `Candidate bundle names where the final component is an empty string
  are omitted, along with the underscore.  For example, if country is an
@@ -1215,6 +1260,9 @@ DocsCollector.collect('java.util.ResourceBundle', [
  MyResource_en_US
  MyResource_en
  `],
+				[/* text */ 't', `
+
+ `],
 				[/* block */ 'b', [
 					[/* text */ 't', `Note:`],
 					[/* text */ 't', ` For some `],
@@ -1226,6 +1274,9 @@ DocsCollector.collect('java.util.ResourceBundle', [
 					[/* reference */ 'r', `java.util.ResourceBundle.Control#getCandidateLocales(java.lang.String,java.util.Locale)`, `getCandidateLocales`],
 					[/* text */ 't', ` for details.`]
 				]],
+				[/* text */ 't', `
+
+ `],
 				[/* block */ 'b', ''],
 				[/* block */ 'b', [
 					[/* inline code block */ 'i', `getBundle`],
@@ -1278,6 +1329,9 @@ DocsCollector.collect('java.util.ResourceBundle', [
 						[/* text */ 't', `.  `]
 					]]
 				]],
+				[/* text */ 't', `
+
+ `],
 				[/* block */ 'b', ''],
 				[/* block */ 'b', [
 					[/* text */ 't', `This continues until a result resource bundle is instantiated or the
@@ -1334,6 +1388,7 @@ DocsCollector.collect('java.util.ResourceBundle', [
  `],
 				[/* block */ 'b', [
 					[/* text */ 't', `Note:`],
+					[/* text */ 't', ` `],
 					[/* inline code block */ 'i', `getBundle`],
 					[/* text */ 't', ` caches instantiated resource
  bundles and might return the same resource bundle instance multiple times.
@@ -1356,7 +1411,9 @@ DocsCollector.collect('java.util.ResourceBundle', [
  `]
 				]],
 				[/* block */ 'b', [
-					[/* anchor */ 'r', '#-id', `default_behavior_example`, `Example:`]
+					[/* anchor */ 'r', '#-id', `default_behavior_example`, `Example:`],
+					[/* text */ 't', `
+ `]
 				]],
 				[/* block */ 'b', `
  The following class and property files are provided:
@@ -1453,6 +1510,9 @@ DocsCollector.collect('java.util.ResourceBundle', [
 						]]
 					]],
 				],
+				[/* text */ 't', `
+
+ `],
 				[/* block */ 'b', ''],
 				[/* block */ 'b', `The file MyResources_fr_CH.properties is never used because it is
  hidden by the MyResources_fr_CH.class. Likewise, MyResources.properties
@@ -1668,7 +1728,9 @@ DocsCollector.collect('java.util.ResourceBundle', [
 									]]
 								]]
 							]],
-						]
+						],
+						[/* text */ 't', `
+ `]
 					]],
 					[/* block */ 'b', [
 						[/* text */ 't', `If the previous step has found no resource bundle, proceed to
@@ -1705,6 +1767,9 @@ DocsCollector.collect('java.util.ResourceBundle', [
  found. Finally, the bundle is returned to the caller.`]
 					]]
 				]],
+				[/* text */ 't', `
+
+ `],
 				[/* block */ 'b', [
 					[/* text */ 't', `During the resource bundle loading process above, this factory
  method looks up the cache before calling the `],
@@ -1754,7 +1819,9 @@ DocsCollector.collect('java.util.ResourceBundle', [
 				[/* list */ 'l', [
 					[/* block */ 'b', [
 						[/* text */ 't', `Base bundle name: `],
-						[/* inline code block */ 'i', `foo.bar.Messages`]
+						[/* inline code block */ 'i', `foo.bar.Messages`],
+						[/* text */ 't', `
+ `]
 					]],
 					[/* block */ 'b', [
 						[/* text */ 't', `Requested `],
@@ -1777,6 +1844,9 @@ DocsCollector.collect('java.util.ResourceBundle', [
 						[/* inline code block */ 'i', `foo/bar/Messages.properties`]
 					]]
 				]],
+				[/* text */ 't', `
+
+ `],
 				[/* block */ 'b', ''],
 				[/* block */ 'b', [
 					[/* text */ 't', `First, `],
@@ -1789,11 +1859,15 @@ DocsCollector.collect('java.util.ResourceBundle', [
 				[/* list */ 'l', [
 					[/* block */ 'b', [
 						[/* text */ 't', `class `],
-						[/* inline code block */ 'i', `foo.bar.Messages_it_IT`]
+						[/* inline code block */ 'i', `foo.bar.Messages_it_IT`],
+						[/* text */ 't', `
+ `]
 					]],
 					[/* block */ 'b', [
 						[/* text */ 't', `file `],
-						[/* inline code block */ 'i', `foo/bar/Messages_it_IT.properties`]
+						[/* inline code block */ 'i', `foo/bar/Messages_it_IT.properties`],
+						[/* text */ 't', `
+ `]
 					]],
 					[/* block */ 'b', [
 						[/* text */ 't', `class `],
@@ -1812,6 +1886,9 @@ DocsCollector.collect('java.util.ResourceBundle', [
 						[/* inline code block */ 'i', `foo/bar/Messages.properties`]
 					]]
 				]],
+				[/* text */ 't', `
+
+ `],
 				[/* block */ 'b', ''],
 				[/* block */ 'b', [
 					[/* text */ 't', `At this point, `],
@@ -1852,6 +1929,9 @@ DocsCollector.collect('java.util.ResourceBundle', [
 						[/* inline code block */ 'i', `foo/bar/Messages.properties`]
 					]]
 				]],
+				[/* text */ 't', `
+
+ `],
 				[/* block */ 'b', ''],
 				[/* block */ 'b', [
 					[/* inline code block */ 'i', `getBundle`],

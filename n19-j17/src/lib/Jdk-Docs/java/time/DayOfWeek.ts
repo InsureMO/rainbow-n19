@@ -6,6 +6,8 @@ DocsCollector.collect('java.time.DayOfWeek', [
 		[/* text */ 't', `A day-of-week, such as 'Tuesday'.
  `],
 		[/* block */ 'b', [
+			[/* text */ 't', `
+ `],
 			[/* inline code block */ 'i', `DayOfWeek`],
 			[/* text */ 't', ` is an enum representing the 7 days of the week -
  Monday, Tuesday, Wednesday, Thursday, Friday, Saturday and Sunday.
@@ -338,6 +340,8 @@ DocsCollector.collect('java.time.DayOfWeek', [
    temporal = thisDayOfWeek.adjustInto(temporal);
    temporal = temporal.with(thisDayOfWeek);
  `],
+				[/* text */ 't', `
+ `],
 				[/* block */ 'b', ''],
 				[/* block */ 'b', `
  For example, given a date that is a Wednesday, the following are output:
@@ -349,6 +353,8 @@ DocsCollector.collect('java.time.DayOfWeek', [
    dateOnWed.with(FRIDAY);     // two days later
    dateOnWed.with(SATURDAY);   // three days later
    dateOnWed.with(SUNDAY);     // four days later
+ `],
+				[/* text */ 't', `
  `],
 				[/* block */ 'b', ''],
 				[/* block */ 'b', `
@@ -541,6 +547,8 @@ DocsCollector.collect('java.time.DayOfWeek', [
 				[/* text */ 't', ` value.
  `],
 				[/* block */ 'b', [
+					[/* text */ 't', `
+ `],
 					[/* inline code block */ 'i', `DayOfWeek`],
 					[/* text */ 't', ` is an enum representing the 7 days of the week.
  This factory allows the enum to be obtained from the `],

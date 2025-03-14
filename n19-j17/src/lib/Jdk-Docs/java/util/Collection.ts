@@ -167,6 +167,9 @@ DocsCollector.collect('java.util.Collection', [
 		[/* block */ 'b', [
 			[/* anchor */ 'r', '#-id', `view`, `View Collections`]
 		]],
+		[/* text */ 't', `
+
+ `],
 		[/* block */ 'b', [
 			[/* text */ 't', `Most collections manage storage for elements they contain. By contrast, `],
 			[/* text */ 't', `view
@@ -213,6 +216,9 @@ DocsCollector.collect('java.util.Collection', [
 		[/* block */ 'b', [
 			[/* anchor */ 'r', '#-id', `unmodifiable`, `Unmodifiable Collections`]
 		]],
+		[/* text */ 't', `
+
+ `],
 		[/* block */ 'b', [
 			[/* text */ 't', `Certain methods of this interface are considered "destructive" and are called
  "mutator" methods in that they modify the group of objects contained within
@@ -273,6 +279,9 @@ DocsCollector.collect('java.util.Collection', [
 		[/* block */ 'b', [
 			[/* anchor */ 'r', '#-id', `unmodview`, `Unmodifiable View Collections`]
 		]],
+		[/* text */ 't', `
+
+ `],
 		[/* block */ 'b', [
 			[/* text */ 't', `An `],
 			[/* text */ 't', `unmodifiable view collection`],
@@ -308,6 +317,9 @@ DocsCollector.collect('java.util.Collection', [
 		[/* block */ 'b', [
 			[/* anchor */ 'r', '#-id', `serializable`, `Serializability of Collections`]
 		]],
+		[/* text */ 't', `
+
+ `],
 		[/* block */ 'b', [
 			[/* text */ 't', `Serializability of collections is optional. As such, none of the collections
  interfaces are declared to implement the `],
@@ -1085,6 +1097,8 @@ DocsCollector.collect('java.util.Collection', [
 				[/* code block */ 'c', [
 					[/* inline code block */ 'i', `Stream<E> s = StreamSupport.stream(() -> spliterator(), spliteratorCharacteristics)`]
 				]],
+				[/* text */ 't', `
+ `],
 				[/* block */ 'b', ''],
 				[/* block */ 'b', [
 					[/* text */ 't', `These requirements ensure that streams produced by the

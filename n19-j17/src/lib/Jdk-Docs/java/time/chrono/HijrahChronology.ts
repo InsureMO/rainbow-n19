@@ -61,6 +61,8 @@ DocsCollector.collect('java.time.chrono.HijrahChronology', [
 				]]
 			]],
 		],
+		[/* text */ 't', `
+ `],
 		[/* block */ 'b', ''],
 		[/* block */ 'b', [
 			[/* text */ 't', `Additional variants may be available through `],
@@ -70,6 +72,8 @@ DocsCollector.collect('java.time.chrono.HijrahChronology', [
  `]
 		]],
 		[/* block */ 'b', `Example`],
+		[/* text */ 't', `
+ `],
 		[/* block */ 'b', [
 			[/* text */ 't', `
  Selecting the chronology from the locale uses `],
@@ -79,6 +83,8 @@ DocsCollector.collect('java.time.chrono.HijrahChronology', [
  to request a specific calendar ("ca"). For example,
  `]
 		]],
+		[/* text */ 't', `
+ `],
 		[/* code block */ 'c', `      Locale locale = Locale.forLanguageTag("en-US-u-ca-islamic-umalqura");
       Chronology chrono = Chronology.ofLocale(locale);
  `]
@@ -114,6 +120,8 @@ DocsCollector.collect('java.time.chrono.HijrahChronology', [
      valid range of years for the chronology.
  `]
 					]],
+					[/* text */ 't', `
+ `],
 					[/* block */ 'b', ''],
 					[/* block */ 'b', `
  Outside the range of valid years an implementation is free to return
@@ -628,6 +636,8 @@ DocsCollector.collect('java.time.chrono.HijrahChronology', [
  `]
 					]],
 					[/* block */ 'b', [
+						[/* text */ 't', `
+ `],
 						[/* inline code block */ 'i', `ChronoField`],
 						[/* text */ 't', ` instances are resolved by this method, which may
  be overridden in subclasses.
@@ -792,6 +802,8 @@ DocsCollector.collect('java.time.chrono.HijrahChronology', [
  `]
 						]]
 					]],
+					[/* text */ 't', `
+ `],
 					[/* block */ 'b', ''],
 					[/* block */ 'b', [
 						[/* text */ 't', `

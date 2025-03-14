@@ -36,21 +36,33 @@ DocsCollector.collect('java.io.Serial', [
 		]],
 		[/* list */ 'l', [
 			[/* block */ 'b', [
-				[/* inline code block */ 'i', `private void writeObject(java.io.ObjectOutputStream stream) throws IOException`]
+				[/* inline code block */ 'i', `private void writeObject(java.io.ObjectOutputStream stream) throws IOException`],
+				[/* text */ 't', `
+ `]
 			]],
 			[/* block */ 'b', [
-				[/* inline code block */ 'i', `private void readObject(java.io.ObjectInputStream stream) throws IOException, ClassNotFoundException`]
+				[/* inline code block */ 'i', `private void readObject(java.io.ObjectInputStream stream) throws IOException, ClassNotFoundException`],
+				[/* text */ 't', `
+ `]
 			]],
 			[/* block */ 'b', [
-				[/* inline code block */ 'i', `private void readObjectNoData() throws ObjectStreamException`]
+				[/* inline code block */ 'i', `private void readObjectNoData() throws ObjectStreamException`],
+				[/* text */ 't', `
+ `]
 			]],
 			[/* block */ 'b', [
 				[/* text */ 't', `ANY-ACCESS-MODIFIER`],
-				[/* inline code block */ 'i', `Object writeReplace() throws ObjectStreamException`]
+				[/* text */ 't', ` `],
+				[/* inline code block */ 'i', `Object writeReplace() throws ObjectStreamException`],
+				[/* text */ 't', `
+ `]
 			]],
 			[/* block */ 'b', [
 				[/* text */ 't', `ANY-ACCESS-MODIFIER`],
-				[/* inline code block */ 'i', `Object readResolve() throws ObjectStreamException`]
+				[/* text */ 't', ` `],
+				[/* inline code block */ 'i', `Object readResolve() throws ObjectStreamException`],
+				[/* text */ 't', `
+ `]
 			]]
 		]],
 		[/* text */ 't', `
@@ -60,10 +72,14 @@ DocsCollector.collect('java.io.Serial', [
  `],
 		[/* list */ 'l', [
 			[/* block */ 'b', [
-				[/* inline code block */ 'i', `private static final ObjectStreamField[] serialPersistentFields`]
+				[/* inline code block */ 'i', `private static final ObjectStreamField[] serialPersistentFields`],
+				[/* text */ 't', `
+ `]
 			]],
 			[/* block */ 'b', [
-				[/* inline code block */ 'i', `private static final long serialVersionUID`]
+				[/* inline code block */ 'i', `private static final long serialVersionUID`],
+				[/* text */ 't', `
+ `]
 			]]
 		]],
 		[/* text */ 't', `
@@ -82,7 +98,10 @@ DocsCollector.collect('java.io.Serial', [
 		[/* list */ 'l', [
 			[/* block */ 'b', [
 				[/* text */ 't', `fields or methods in a class that is not `],
-				[/* inline code block */ 'i', `Serializable`]
+				[/* inline code block */ 'i', `Serializable`],
+				[/* text */ 't', `
+
+ `]
 			]],
 			[/* block */ 'b', [
 				[/* text */ 't', `fields or methods of the proper structural declaration, but in
@@ -118,11 +137,16 @@ DocsCollector.collect('java.io.Serial', [
 						[/* text */ 't', `, `],
 						[/* inline code block */ 'i', `readObject`],
 						[/* text */ 't', `, and `],
-						[/* inline code block */ 'i', `readObjectNoData`]
+						[/* inline code block */ 'i', `readObjectNoData`],
+						[/* text */ 't', `
+
+  `]
 					]],
 					[/* block */ 'b', [
 						[/* text */ 't', `a field declaration for `],
-						[/* inline code block */ 'i', `serialPersistentFields`]
+						[/* inline code block */ 'i', `serialPersistentFields`],
+						[/* text */ 't', `
+ `]
 					]]
 				]],
 				[/* text */ 't', `

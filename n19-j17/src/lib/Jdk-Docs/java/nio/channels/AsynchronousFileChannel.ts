@@ -44,6 +44,9 @@ DocsCollector.collect('java.nio.channels.AsynchronousFileChannel', [
 		]],
 		[/* block */ 'b', ` In addition to read and write operations, this class defines the
  following operations: `],
+		[/* text */ 't', `
+
+ `],
 		[/* list */ 'l', [
 			[/* block */ 'b', [
 				[/* block */ 'b', [
@@ -62,6 +65,9 @@ DocsCollector.collect('java.nio.channels.AsynchronousFileChannel', [
 				]]
 			]]
 		]],
+		[/* text */ 't', `
+
+ `],
 		[/* block */ 'b', [
 			[/* text */ 't', ` An `],
 			[/* inline code block */ 'i', `AsynchronousFileChannel`],
@@ -1096,6 +1102,9 @@ DocsCollector.collect('java.nio.channels.AsynchronousFileChannel', [
 						]]
 					]],
 				],
+				[/* text */ 't', `
+
+ `],
 				[/* block */ 'b', ''],
 				[/* block */ 'b', ` An implementation may also support additional options.
 

@@ -1033,6 +1033,8 @@ DocsCollector.collect('java.lang.Float', [
  `]
 				]],
 				[/* block */ 'b', [
+					[/* text */ 't', `
+ `],
 					[/* dl */ 'dl', [
 						[/* dt */ 'dt', [
 							[/* text */ 't', `FloatValue:`],
@@ -1069,6 +1071,9 @@ DocsCollector.collect('java.lang.Float', [
  `]
 						]]
 					]],
+					[/* text */ 't', `
+
+ `],
 					[/* dl */ 'dl', [
 						[/* dt */ 'dt', [
 							[/* text */ 't', `HexFloatingPointLiteral`],
@@ -1082,6 +1087,9 @@ DocsCollector.collect('java.lang.Float', [
  `]
 						]]
 					]],
+					[/* text */ 't', `
+
+ `],
 					[/* dl */ 'dl', [
 						[/* dt */ 'dt', [
 							[/* text */ 't', `HexSignificand:`],
@@ -1119,6 +1127,9 @@ DocsCollector.collect('java.lang.Float', [
  `]
 						]]
 					]],
+					[/* text */ 't', `
+
+ `],
 					[/* dl */ 'dl', [
 						[/* dt */ 'dt', [
 							[/* text */ 't', `BinaryExponent:`],
@@ -1131,6 +1142,9 @@ DocsCollector.collect('java.lang.Float', [
  `]
 						]]
 					]],
+					[/* text */ 't', `
+
+ `],
 					[/* dl */ 'dl', [
 						[/* dt */ 'dt', [
 							[/* text */ 't', `BinaryExponentIndicator:`],
@@ -1147,7 +1161,10 @@ DocsCollector.collect('java.lang.Float', [
 							[/* text */ 't', `
  `]
 						]]
-					]]
+					]],
+					[/* text */ 't', `
+
+ `]
 				]],
 				[/* text */ 't', `
 
@@ -1269,6 +1286,8 @@ DocsCollector.collect('java.lang.Float', [
 					[/* inline code block */ 'i', `float`],
 					[/* text */ 't', `, the string`],
 					[/* new line */ 'n'],
+					[/* text */ 't', `
+ `],
 					[/* inline code block */ 'i', `"1.00000017881393421514957253748434595763683319091796875001d"`],
 					[/* new line */ 'n'],
 					[/* text */ 't', `
@@ -1427,9 +1446,15 @@ DocsCollector.collect('java.lang.Float', [
 
  `]
 							]]
-						]]
+						]],
+						[/* text */ 't', `
+
+ `]
 					]]
 				]],
+				[/* text */ 't', `
+
+ `],
 				[/* table */ 'tbl',
 					[/* caption */ 'tc', [
 						[/* text */ 't', `Examples`]
@@ -1681,7 +1706,9 @@ DocsCollector.collect('java.lang.Float', [
 
  `]
 							]]
-						]]
+						]],
+						[/* text */ 't', `
+ `]
 					]]
 				]],
 				[/* text */ 't', `

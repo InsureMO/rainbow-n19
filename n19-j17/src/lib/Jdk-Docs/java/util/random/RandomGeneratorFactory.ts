@@ -282,6 +282,8 @@ DocsCollector.collect('java.util.random.RandomGeneratorFactory', [
 				[/* reference */ 'r', `java.util.random.RandomGenerator`, `RandomGenerator`],
 				[/* text */ 't', ` that utilize the `],
 				[/* inline code block */ 'i', `name`],
+				[/* text */ 't', `
+ `],
 				[/* text */ 't', `algorithm`],
 				[/* text */ 't', `.`]
 			],

@@ -114,6 +114,8 @@ DocsCollector.collect('java.time.chrono.AbstractChronology', [
  `]
 				]],
 				[/* block */ 'b', [
+					[/* text */ 't', `
+ `],
 					[/* inline code block */ 'i', `ChronoField`],
 					[/* text */ 't', ` instances are resolved by this method, which may
  be overridden in subclasses.
@@ -278,6 +280,8 @@ DocsCollector.collect('java.time.chrono.AbstractChronology', [
  `]
 					]]
 				]],
+				[/* text */ 't', `
+ `],
 				[/* block */ 'b', ''],
 				[/* block */ 'b', [
 					[/* text */ 't', `

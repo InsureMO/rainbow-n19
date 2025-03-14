@@ -30,6 +30,9 @@ DocsCollector.collect('java.nio.charset.Charset', [
 		[/* block */ 'b', [
 			[/* anchor */ 'r', '#-id', `names`, `Charset names`]
 		]],
+		[/* text */ 't', `
+
+ `],
 		[/* block */ 'b', ` Charsets are named by strings composed of the following characters:
 
  `],
@@ -212,6 +215,10 @@ DocsCollector.collect('java.nio.charset.Charset', [
 		[/* block */ 'b', [
 			[/* anchor */ 'r', '#-id', `standard`, `Standard charsets`]
 		]],
+		[/* text */ 't', `
+
+
+ `],
 		[/* block */ 'b', ` Every implementation of the Java platform is required to support the
  following standard charsets.  Consult the release documentation for your
  implementation to see if any other charsets are supported.  The behavior
@@ -290,6 +297,9 @@ DocsCollector.collect('java.nio.charset.Charset', [
 				]],
 			]
 		]],
+		[/* text */ 't', `
+
+ `],
 		[/* block */ 'b', ''],
 		[/* block */ 'b', [
 			[/* text */ 't', ` The `],
@@ -372,6 +382,9 @@ DocsCollector.collect('java.nio.charset.Charset', [
  may or may not be one of the standard charsets.  The default charset is
  determined during virtual-machine startup and typically depends upon the
  locale and charset being used by the underlying operating system. `],
+		[/* text */ 't', `
+
+ `],
 		[/* block */ 'b', [
 			[/* text */ 't', ` The `],
 			[/* reference */ 'r', `java.nio.charset.StandardCharsets`, `StandardCharsets`],
@@ -381,6 +394,9 @@ DocsCollector.collect('java.nio.charset.Charset', [
  `]
 		]],
 		[/* block */ 'b', `Terminology`],
+		[/* text */ 't', `
+
+ `],
 		[/* block */ 'b', [
 			[/* text */ 't', ` The name of this class is taken from the terms used in
  `],
@@ -921,6 +937,9 @@ DocsCollector.collect('java.nio.charset.Charset', [
  two or more supported charsets have the same canonical name then the
  resulting map will contain just one of them; which one it will contain
  is not specified. `],
+				[/* text */ 't', `
+
+ `],
 				[/* block */ 'b', [
 					[/* text */ 't', ` The invocation of this method, and the subsequent use of the
  resulting map, may cause time-consuming disk or network I/O operations

@@ -44,6 +44,7 @@ DocsCollector.collect('java.nio.channels.AsynchronousChannel', [
  consuming the result. The attachment is important for cases where a
  `],
 		[/* text */ 't', `state-less`],
+		[/* text */ 't', ` `],
 		[/* inline code block */ 'i', `CompletionHandler`],
 		[/* text */ 't', ` is used to consume the result
  of many I/O operations.
@@ -82,6 +83,9 @@ DocsCollector.collect('java.nio.channels.AsynchronousChannel', [
 
  `],
 		[/* block */ 'b', `Cancellation`],
+		[/* text */ 't', `
+
+ `],
 		[/* block */ 'b', [
 			[/* text */ 't', ` The `],
 			[/* inline code block */ 'i', `Future`],

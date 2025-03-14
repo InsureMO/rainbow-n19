@@ -543,6 +543,8 @@ DocsCollector.collect('java.lang.Short', [
 
  `],
 				[/* block */ 'b', [
+					[/* text */ 't', `
+ `],
 					[/* dl */ 'dl', [
 						[/* dt */ 'dt', [
 							[/* text */ 't', `DecodableString:`],
@@ -606,8 +608,13 @@ DocsCollector.collect('java.lang.Short', [
 							[/* text */ 't', `
  `]
 						]]
-					]]
+					]],
+					[/* text */ 't', `
+ `]
 				]],
+				[/* text */ 't', `
+
+ `],
 				[/* text */ 't', `DecimalNumeral`],
 				[/* text */ 't', `, `],
 				[/* text */ 't', `HexDigits`],
@@ -706,7 +713,11 @@ DocsCollector.collect('java.lang.Short', [
  `]
 				]],
 				[/* block */ 'b', [
-					[/* inline code block */ 'i', `new Short(Short.parseShort(s))`]
+					[/* text */ 't', `
+  `],
+					[/* inline code block */ 'i', `new Short(Short.parseShort(s))`],
+					[/* text */ 't', `
+ `]
 				]],
 				[/* block */ 'b', '']
 			],
@@ -764,7 +775,11 @@ DocsCollector.collect('java.lang.Short', [
  `]
 				]],
 				[/* block */ 'b', [
-					[/* inline code block */ 'i', `new Short(Short.parseShort(s, radix))`]
+					[/* text */ 't', `
+  `],
+					[/* inline code block */ 'i', `new Short(Short.parseShort(s, radix))`],
+					[/* text */ 't', `
+ `]
 				]],
 				[/* block */ 'b', '']
 			],

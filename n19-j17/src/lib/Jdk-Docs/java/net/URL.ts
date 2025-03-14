@@ -13,6 +13,8 @@ DocsCollector.collect('java.net.URL', [
  information on the types of URLs and their formats can be found at:
  `],
 		[/* external link */ 'a', `http://web.archive.org/web/20051219043731/http://archive.ncsa.uiuc.edu/SDG/Software/Mosaic/Demo/url-primer.html`, `Types of URL`],
+		[/* text */ 't', `
+ `],
 		[/* block */ 'b', `
  In general, a URL can be broken into several parts. Consider the
  following example:
@@ -21,6 +23,8 @@ DocsCollector.collect('java.net.URL', [
 			[/* code block */ 'c', `     http://www.example.com/docs/resource1.html
  `]
 		]],
+		[/* text */ 't', `
+ `],
 		[/* block */ 'b', ''],
 		[/* block */ 'b', [
 			[/* text */ 't', `
@@ -61,6 +65,8 @@ DocsCollector.collect('java.net.URL', [
 			[/* code block */ 'c', `     http://www.example.com:1080/docs/resource1.html
  `]
 		]],
+		[/* text */ 't', `
+ `],
 		[/* block */ 'b', ''],
 		[/* block */ 'b', [
 			[/* text */ 't', `
@@ -86,6 +92,8 @@ DocsCollector.collect('java.net.URL', [
 			[/* code block */ 'c', `     http://www.example.com/index.html#chapter1
  `]
 		]],
+		[/* text */ 't', `
+ `],
 		[/* block */ 'b', ''],
 		[/* block */ 'b', [
 			[/* text */ 't', `
@@ -122,6 +130,8 @@ DocsCollector.collect('java.net.URL', [
 			[/* code block */ 'c', `     http://www.example.com/FAQ.html
  `]
 		]],
+		[/* text */ 't', `
+ `],
 		[/* block */ 'b', ''],
 		[/* block */ 'b', `
  The relative URL need not specify all the components of a URL. If
@@ -138,7 +148,9 @@ DocsCollector.collect('java.net.URL', [
  that are returned from URL. Furthermore, because URL has no knowledge
  of URL escaping, it does not recognise equivalence between the encoded
  or decoded form of the same URL. For example, the two URLs:`],
-			[/* new line */ 'n']
+			[/* new line */ 'n'],
+			[/* text */ 't', `
+ `]
 		]],
 		[/* code block */ 'c', `    http://foo.com/hello world/ and http://foo.com/hello%20world`],
 		[/* text */ 't', `
@@ -228,6 +240,9 @@ DocsCollector.collect('java.net.URL', [
 				[/* inline code block */ 'i', `file`],
 				[/* text */ 't', `.`],
 				[/* block */ 'b', [
+					[/* text */ 't', `
+
+ `],
 					[/* inline code block */ 'i', `host`],
 					[/* text */ 't', ` can be expressed as a host name or a literal
  IP address. If IPv6 literal address is used, it should be
@@ -360,6 +375,9 @@ DocsCollector.collect('java.net.URL', [
  `]
 					]]
 				]],
+				[/* text */ 't', `
+
+ `],
 				[/* block */ 'b', ''],
 				[/* block */ 'b', `Protocol handlers for the following protocols are guaranteed
  to exist on the search path:
@@ -443,6 +461,9 @@ DocsCollector.collect('java.net.URL', [
  for:
      `],
 				[/* reference */ 'r', `#%3Cinit%3E(java.lang.String,java.lang.String,int,java.lang.String)`, `URL(java.lang.String, java.lang.String, int, java.lang.String)`],
+				[/* text */ 't', `
+
+ `],
 				[/* block */ 'b', [
 					[/* text */ 't', `If the handler is not null and there is a security manager,
  the security manager's `],
@@ -1030,6 +1051,9 @@ DocsCollector.collect('java.net.URL', [
 					[/* text */ 't', ` method of the protocol handler for
  this URL.`]
 				]],
+				[/* text */ 't', `
+
+ `],
 				[/* block */ 'b', [
 					[/* text */ 't', `It should be noted that a URLConnection instance does not establish
  the actual network connection on creation. This will happen only when
@@ -1037,6 +1061,9 @@ DocsCollector.collect('java.net.URL', [
 					[/* reference */ 'r', `java.net.URLConnection#connect()`, `URLConnection.connect()`],
 					[/* text */ 't', `.`]
 				]],
+				[/* text */ 't', `
+
+ `],
 				[/* block */ 'b', `If for the URL's protocol (such as HTTP or JAR), there
  exists a public, specialized URLConnection subclass belonging
  to one of the following packages or one of their subpackages:

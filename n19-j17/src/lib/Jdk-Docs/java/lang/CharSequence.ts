@@ -261,6 +261,7 @@ DocsCollector.collect('java.lang.CharSequence', [
 					[/* text */ 't', ` is defined as follows.
  Consider a `],
 					[/* inline code block */ 'i', `CharSequence`],
+					[/* text */ 't', ` `],
 					[/* text */ 't', `cs`],
 					[/* text */ 't', ` of length `],
 					[/* text */ 't', `len`],

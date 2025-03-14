@@ -947,6 +947,7 @@ DocsCollector.collect('java.util.random.RandomGenerator', [
 				[/* text */ 't', ` that utilizes the
  `],
 				[/* inline code block */ 'i', `name`],
+				[/* text */ 't', ` `],
 				[/* text */ 't', `algorithm`],
 				[/* text */ 't', `.`]
 			],

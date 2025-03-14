@@ -578,6 +578,7 @@ DocsCollector.collect('java.lang.Throwable', [
 				[/* block */ 'b', [
 					[/* text */ 't', `If the stack trace of this `],
 					[/* inline code block */ 'i', `Throwable`],
+					[/* text */ 't', ` `],
 					[/* reference */ 'r', `#%3Cinit%3E(java.lang.String,java.lang.Throwable,boolean,boolean)`, `is not writable`],
 					[/* text */ 't', `, calling this method has no effect.`]
 				]]
@@ -932,6 +933,7 @@ DocsCollector.collect('java.lang.Throwable', [
 				[/* block */ 'b', [
 					[/* text */ 't', `If the stack trace of this `],
 					[/* inline code block */ 'i', `Throwable`],
+					[/* text */ 't', ` `],
 					[/* reference */ 'r', `#%3Cinit%3E(java.lang.String,java.lang.Throwable,boolean,boolean)`, `is not writable`],
 					[/* text */ 't', `, calling this method has no effect other than
  validating its argument.`]

@@ -33,7 +33,11 @@ DocsCollector.collect('java.text.FieldPosition', [
  `]
 			]]
 		]],
+		[/* text */ 't', `
+ `],
 		[/* block */ 'b', [
+			[/* text */ 't', `
+ `],
 			[/* inline code block */ 'i', `FieldPosition`],
 			[/* text */ 't', ` keeps track of the position of the
  field within the formatted output with two indices: the index

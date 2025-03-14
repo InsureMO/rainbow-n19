@@ -19,6 +19,7 @@ DocsCollector.collect('java.util.Formattable', [
 
  `],
 		[/* code block */ 'c', [
+			[/* text */ 't', ` `],
 			[/* inline code block */ 'i', `import java.nio.CharBuffer;
    import java.util.Formatter;
    import java.util.Formattable;
@@ -72,6 +73,9 @@ DocsCollector.collect('java.util.Formattable', [
        }
    }`]
 		]],
+		[/* text */ 't', `
+
+ `],
 		[/* block */ 'b', [
 			[/* text */ 't', ` When used in conjunction with the `],
 			[/* reference */ 'r', `java.util.Formatter`, `Formatter`],
@@ -81,6 +85,7 @@ DocsCollector.collect('java.util.Formattable', [
  `]
 		]],
 		[/* code block */ 'c', [
+			[/* text */ 't', ` `],
 			[/* inline code block */ 'i', `Formatter fmt = new Formatter();
    StockName sn = new StockName("HUGE", "Huge Fruit, Inc.",
                                 "Fruit Titanesque, Inc.");
@@ -91,6 +96,9 @@ DocsCollector.collect('java.util.Formattable', [
    fmt.format("%.12s", sn);                //   -> "Huge Fruit,*"
    fmt.format(Locale.FRANCE, "%25s", sn);  //   -> "   Fruit Titanesque, Inc."`]
 		]],
+		[/* text */ 't', `
+
+ `],
 		[/* block */ 'b', ''],
 		[/* block */ 'b', ` Formattables are not necessarily safe for multithreaded access.  Thread
  safety is optional and may be enforced by classes that extend and implement

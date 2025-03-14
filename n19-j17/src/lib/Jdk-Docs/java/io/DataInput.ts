@@ -48,6 +48,8 @@ DocsCollector.collect('java.io.DataInput', [
 		[/* block */ 'b', [
 			[/* anchor */ 'r', '#-id', `modified-utf-8`, `Modified UTF-8`]
 		]],
+		[/* text */ 't', `
+ `],
 		[/* block */ 'b', [
 			[/* text */ 't', `
  Implementations of the DataInput and DataOutput interfaces represent
@@ -94,6 +96,9 @@ DocsCollector.collect('java.io.DataInput', [
  `]
 			]]
 		]],
+		[/* text */ 't', `
+
+   `],
 		[/* table */ 'tbl',
 			[/* caption */ 'tc', [
 				[/* text */ 't', `Encoding of UTF-8 values`]
@@ -279,6 +284,9 @@ DocsCollector.collect('java.io.DataInput', [
 				]]
 			]],
 		],
+		[/* text */ 't', `
+
+ `],
 		[/* block */ 'b', ''],
 		[/* block */ 'b', `
  The differences between this format and the
@@ -967,6 +975,8 @@ DocsCollector.collect('java.io.DataInput', [
   ((long)(g & 0xff) <<  8) |
   ((long)(h & 0xff)))`]
 				]],
+				[/* text */ 't', `
+ `],
 				[/* block */ 'b', [
 					[/* text */ 't', `
  This method is suitable
@@ -1081,6 +1091,8 @@ DocsCollector.collect('java.io.DataInput', [
  `]
 					]]
 				]],
+				[/* text */ 't', `
+ `],
 				[/* block */ 'b', ''],
 				[/* block */ 'b', [
 					[/* text */ 't', `
@@ -1176,6 +1188,8 @@ DocsCollector.collect('java.io.DataInput', [
  `]
 					]]
 				]],
+				[/* text */ 't', `
+ `],
 				[/* block */ 'b', ''],
 				[/* block */ 'b', [
 					[/* text */ 't', `

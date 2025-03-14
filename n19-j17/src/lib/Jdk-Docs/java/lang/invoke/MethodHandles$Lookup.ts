@@ -381,9 +381,14 @@ DocsCollector.collect('java.lang.invoke.MethodHandles$Lookup', [
 				[/* inline code block */ 'i', `IllegalArgumentException`],
 				[/* text */ 't', `, due to the method handle type having
  `],
-				[/* reference */ 'r', `java.lang.invoke.MethodHandle#maxarity`, `too many parameters.`]
+				[/* reference */ 'r', `java.lang.invoke.MethodHandle#maxarity`, `too many parameters.`],
+				[/* text */ 't', `
+ `]
 			]]
 		]],
+		[/* text */ 't', `
+
+ `],
 		[/* block */ 'b', ''],
 		[/* block */ 'b', [
 			[/* anchor */ 'r', '#-id', `access`, ``],
@@ -461,6 +466,8 @@ DocsCollector.collect('java.lang.invoke.MethodHandles$Lookup', [
 			[/* block */ 'b', `IllegalAccessException — if the member exists but an access check fails
  `]
 		]],
+		[/* text */ 't', `
+ `],
 		[/* block */ 'b', ''],
 		[/* block */ 'b', [
 			[/* text */ 't', `
@@ -489,6 +496,8 @@ DocsCollector.collect('java.lang.invoke.MethodHandles$Lookup', [
  `]
 		]],
 		[/* block */ 'b', [
+			[/* text */ 't', `
+ `],
 			[/* text */ 't', `Discussion:`],
 			[/* text */ 't', `
  Access checks only apply to named and reflected methods,
@@ -634,7 +643,11 @@ DocsCollector.collect('java.lang.invoke.MethodHandles$Lookup', [
  `]
 		]],
 		[/* block */ 'b', [
+			[/* text */ 't', `
+ `],
 			[/* anchor */ 'r', '#-id', `privacc`, ``],
+			[/* text */ 't', `
+ `],
 			[/* text */ 't', `Discussion of private and module access:`],
 			[/* text */ 't', `
  We say that a lookup has `],
@@ -675,6 +688,8 @@ DocsCollector.collect('java.lang.invoke.MethodHandles$Lookup', [
  `]
 			]]
 		]],
+		[/* text */ 't', `
+ `],
 		[/* block */ 'b', ''],
 		[/* block */ 'b', `
  Similarly, a lookup with module access ensures that the original lookup creator was
@@ -696,7 +711,9 @@ DocsCollector.collect('java.lang.invoke.MethodHandles$Lookup', [
 				[/* reference */ 'r', `java.lang.invoke.MethodHandles.Lookup#callsens`, `caller sensitive`],
 				[/* text */ 't', ` methods,
      such as `],
-				[/* inline code block */ 'i', `Class.forName`]
+				[/* inline code block */ 'i', `Class.forName`],
+				[/* text */ 't', `
+ `]
 			]],
 			[/* block */ 'b', [
 				[/* text */ 't', `obtain the `],
@@ -704,6 +721,8 @@ DocsCollector.collect('java.lang.invoke.MethodHandles$Lookup', [
 				[/* text */ 't', ` associated with the lookup class`]
 			]]
 		]],
+		[/* text */ 't', `
+ `],
 		[/* block */ 'b', ''],
 		[/* block */ 'b', [
 			[/* text */ 't', `
@@ -797,11 +816,14 @@ DocsCollector.collect('java.lang.invoke.MethodHandles$Lookup', [
 		]],
 		[/* block */ 'b', [
 			[/* code block */ 'c', [
+				[/* text */ 't', ` `],
 				[/* inline code block */ 'i', `Lookup lookup = MethodHandles.lookup();   // in class C
  Lookup lookup2 = lookup.in(D.class);
  MethodHandle mh = lookup2.findStatic(E.class, "m", MT);`]
 			]]
 		]],
+		[/* text */ 't', `
+ `],
 		[/* block */ 'b', ''],
 		[/* block */ 'b', [
 			[/* text */ 't', `
@@ -926,6 +948,8 @@ DocsCollector.collect('java.lang.invoke.MethodHandles$Lookup', [
  (see below).
  `],
 		[/* block */ 'b', [
+			[/* text */ 't', `
+ `],
 			[/* reference */ 'r', `java.lang.invoke.MethodHandles#privateLookupIn(java.lang.Class,java.lang.invoke.MethodHandles.Lookup)`, `MethodHandles.privateLookupIn(T.class, lookup)`],
 			[/* text */ 't', `
  can be used to teleport a `],
@@ -992,6 +1016,7 @@ DocsCollector.collect('java.lang.invoke.MethodHandles$Lookup', [
 			[/* inline code block */ 'i', `M2`],
 			[/* text */ 't', ` and `],
 			[/* inline code block */ 'i', `M2`],
+			[/* text */ 't', ` `],
 			[/* reference */ 'r', `java.lang.Module#isOpen(java.lang.String,java.lang.Module)`, `opens`],
 			[/* text */ 't', `
  the package containing `],
@@ -1187,6 +1212,9 @@ DocsCollector.collect('java.lang.invoke.MethodHandles$Lookup', [
 				]]
 			]],
 		],
+		[/* text */ 't', `
+
+ `],
 		[/* block */ 'b', ''],
 		[/* block */ 'b', [
 			[/* anchor */ 'r', '#-id', `access-modes`, ``],
@@ -1216,6 +1244,9 @@ DocsCollector.collect('java.lang.invoke.MethodHandles$Lookup', [
 				[/* reference */ 'r', `#dropLookupMode(int)`, `Lookup::dropLookupMode`]
 			]]
 		]],
+		[/* text */ 't', `
+
+ `],
 		[/* table */ 'tbl',
 			[/* caption */ 'tc'],
 			[/* table header */ 'th', [
@@ -1841,6 +1872,9 @@ DocsCollector.collect('java.lang.invoke.MethodHandles$Lookup', [
 				]]
 			]],
 		],
+		[/* text */ 't', `
+
+ `],
 		[/* block */ 'b', `
  Notes:
  `],
@@ -1946,7 +1980,9 @@ DocsCollector.collect('java.lang.invoke.MethodHandles$Lookup', [
      different module from the current lookup class.
  `]
 					]]
-				]]
+				]],
+				[/* text */ 't', `
+ `]
 			]],
 			[/* block */ 'b', `Any attempt to reach a third module loses all access.`],
 			[/* block */ 'b', [
@@ -1958,6 +1994,9 @@ DocsCollector.collect('java.lang.invoke.MethodHandles$Lookup', [
  all access modes are dropped.`]
 			]]
 		]],
+		[/* text */ 't', `
+
+ `],
 		[/* block */ 'b', ''],
 		[/* block */ 'b', [
 			[/* anchor */ 'r', '#-id', `secmgr`, ``],
@@ -2180,6 +2219,8 @@ DocsCollector.collect('java.lang.invoke.MethodHandles$Lookup', [
  `]
 		]],
 		[/* block */ 'b', [
+			[/* text */ 't', `
+ `],
 			[/* text */ 't', `Discussion:`],
 			[/* text */ 't', `
  For example, the caller-sensitive method
@@ -2316,6 +2357,7 @@ DocsCollector.collect('java.lang.invoke.MethodHandles$Lookup', [
 				[/* text */ 't', `, happens to be the same as the value of the
   `],
 				[/* inline code block */ 'i', `private`],
+				[/* text */ 't', ` `],
 				[/* reference */ 'r', `java.lang.reflect.Modifier#PRIVATE`, `modifier bit`],
 				[/* text */ 't', `.`]
 			],
@@ -2333,6 +2375,7 @@ DocsCollector.collect('java.lang.invoke.MethodHandles$Lookup', [
 				[/* text */ 't', `, happens to be the same as the value of the
   `],
 				[/* inline code block */ 'i', `protected`],
+				[/* text */ 't', ` `],
 				[/* reference */ 'r', `java.lang.reflect.Modifier#PROTECTED`, `modifier bit`],
 				[/* text */ 't', `.`]
 			],
@@ -2350,6 +2393,7 @@ DocsCollector.collect('java.lang.invoke.MethodHandles$Lookup', [
 				[/* text */ 't', `, happens to be the same as the value of the
   `],
 				[/* inline code block */ 'i', `public`],
+				[/* text */ 't', ` `],
 				[/* reference */ 'r', `java.lang.reflect.Modifier#PUBLIC`, `modifier bit`],
 				[/* text */ 't', `.
   `],
@@ -2599,6 +2643,9 @@ DocsCollector.collect('java.lang.invoke.MethodHandles$Lookup', [
 						[/* text */ 't', ` unconditionally.`]
 					]]
 				]],
+				[/* text */ 't', `
+
+ `],
 				[/* block */ 'b', ''],
 				[/* block */ 'b', [
 					[/* text */ 't', `
@@ -2663,6 +2710,8 @@ DocsCollector.collect('java.lang.invoke.MethodHandles$Lookup', [
  `]
 					]]
 				]],
+				[/* text */ 't', `
+ `],
 				[/* block */ 'b', ''],
 				[/* block */ 'b', [
 					[/* text */ 't', `
@@ -2733,6 +2782,8 @@ DocsCollector.collect('java.lang.invoke.MethodHandles$Lookup', [
  `]
 					]]
 				]],
+				[/* text */ 't', `
+ `],
 				[/* block */ 'b', ''],
 				[/* block */ 'b', [
 					[/* text */ 't', `
@@ -2798,6 +2849,9 @@ DocsCollector.collect('java.lang.invoke.MethodHandles$Lookup', [
  from a lookup originally created by suitably privileged code to a target class in
  the runtime package). `]
 				]],
+				[/* text */ 't', `
+
+ `],
 				[/* block */ 'b', [
 					[/* text */ 't', ` The `],
 					[/* inline code block */ 'i', `bytes`],
@@ -2807,8 +2861,14 @@ DocsCollector.collect('java.lang.invoke.MethodHandles$Lookup', [
 					[/* text */ 't', `) with a class name in the
  same package as the lookup class. `]
 				]],
+				[/* text */ 't', `
+
+ `],
 				[/* block */ 'b', `The Java Language
  Specification`],
+				[/* text */ 't', `
+
+ `],
 				[/* block */ 'b', [
 					[/* text */ 't', ` If there is a security manager and this lookup does not have `],
 					[/* reference */ 'r', `#hasFullPrivilegeAccess()`, `full privilege access`],
@@ -4290,6 +4350,7 @@ assertEquals("", (String) MH_newString.invokeExact());`]
  `]
 						]],
 						[/* block */ 'b', [
+							[/* text */ 't', ` `],
 							[/* inline code block */ 'i', `C`],
 							[/* text */ 't', ` is derived with name `],
 							[/* inline code block */ 'i', `CN`],
@@ -4325,6 +4386,7 @@ assertEquals("", (String) MH_newString.invokeExact());`]
 								[/* text */ 't', `.`]
 							]],
 							[/* block */ 'b', [
+								[/* text */ 't', ` `],
 								[/* inline code block */ 'i', `C`],
 								[/* text */ 't', ` is considered to have the same runtime
  `],
@@ -4355,6 +4417,7 @@ assertEquals("", (String) MH_newString.invokeExact());`]
  `],
 								[/* list */ 'l', [
 									[/* block */ 'b', [
+										[/* text */ 't', ` `],
 										[/* reference */ 'r', `java.lang.Class#getName()`, `Class.getName()`],
 										[/* text */ 't', ` returns the string `],
 										[/* inline code block */ 'i', `GN + "/" + <suffix>`],
@@ -4362,6 +4425,7 @@ assertEquals("", (String) MH_newString.invokeExact());`]
       even though this is not a valid binary class or interface name.`]
 									]],
 									[/* block */ 'b', [
+										[/* text */ 't', ` `],
 										[/* reference */ 'r', `java.lang.Class#descriptorString()`, `Class.descriptorString()`],
 										[/* text */ 't', ` returns the string
       `],
@@ -4370,6 +4434,7 @@ assertEquals("", (String) MH_newString.invokeExact());`]
       even though this is not a valid type descriptor name.`]
 									]],
 									[/* block */ 'b', [
+										[/* text */ 't', ` `],
 										[/* reference */ 'r', `java.lang.Class#describeConstable()`, `Class.describeConstable()`],
 										[/* text */ 't', ` returns an empty optional as `],
 										[/* inline code block */ 'i', `C`],
@@ -4378,12 +4443,19 @@ assertEquals("", (String) MH_newString.invokeExact());`]
 										[/* reference */ 'r', `java.lang.constant.ClassDesc`, `nominal form`],
 										[/* text */ 't', `.`]
 									]]
-								]]
+								]],
+								[/* text */ 't', `
+ `]
 							]]
 						]],
+						[/* text */ 't', `
+ `],
 						[/* block */ 'b', '']
 					]]
 				]],
+				[/* text */ 't', `
+
+ `],
 				[/* block */ 'b', ''],
 				[/* block */ 'b', [
 					[/* text */ 't', ` After `],
@@ -4414,6 +4486,9 @@ assertEquals("", (String) MH_newString.invokeExact());`]
 						[/* text */ 't', ` and resolution always succeeds immediately.`]
 					]]
 				]],
+				[/* text */ 't', `
+
+ `],
 				[/* block */ 'b', ''],
 				[/* block */ 'b', [
 					[/* text */ 't', ` If the `],
@@ -4589,6 +4664,9 @@ assertEquals("", (String) MH_newString.invokeExact());`]
      the nest host of the lookup class.`]
 					]]
 				]],
+				[/* text */ 't', `
+
+ `],
 				[/* block */ 'b', ''],
 				[/* block */ 'b', ` A hidden class or interface may be serializable, but this requires a custom
  serialization mechanism in order to ensure that instances are properly serialized
@@ -5001,6 +5079,8 @@ assertEquals("", (String) MH_newString.invokeExact());`]
  all access modes are lost.
  `]
 				]],
+				[/* text */ 't', `
+ `],
 				[/* block */ 'b', ''],
 				[/* block */ 'b', `
  The new previous lookup class is chosen as follows:
@@ -5022,6 +5102,8 @@ assertEquals("", (String) MH_newString.invokeExact());`]
  the new previous lookup class is the old lookup class.
 `]
 				]],
+				[/* text */ 't', `
+ `],
 				[/* block */ 'b', ''],
 				[/* block */ 'b', [
 					[/* text */ 't', `
@@ -5130,6 +5212,8 @@ assertEquals("", (String) MH_newString.invokeExact());`]
  `]
 					]]
 				]],
+				[/* text */ 't', `
+ `],
 				[/* block */ 'b', ''],
 				[/* block */ 'b', [
 					[/* text */ 't', `
@@ -5267,6 +5351,8 @@ assertEquals("", (String) MH_newString.invokeExact());`]
  `]
 					]]
 				]],
+				[/* text */ 't', `
+ `],
 				[/* block */ 'b', ''],
 				[/* block */ 'b', [
 					[/* text */ 't', `
@@ -5419,6 +5505,8 @@ assertEquals("", (String) MH_newString.invokeExact());`]
  `]
 					]]
 				]],
+				[/* text */ 't', `
+ `],
 				[/* block */ 'b', ''],
 				[/* block */ 'b', [
 					[/* text */ 't', `

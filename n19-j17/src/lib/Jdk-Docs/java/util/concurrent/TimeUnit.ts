@@ -31,6 +31,7 @@ DocsCollector.collect('java.util.concurrent.TimeUnit', [
  `]
 		]],
 		[/* code block */ 'c', [
+			[/* text */ 't', ` `],
 			[/* inline code block */ 'i', `Lock lock = ...;
  if (lock.tryLock(50L, TimeUnit.MILLISECONDS)) ...`]
 		]],
@@ -39,6 +40,7 @@ DocsCollector.collect('java.util.concurrent.TimeUnit', [
  while this code will timeout in 50 seconds:
  `],
 		[/* code block */ 'c', [
+			[/* text */ 't', ` `],
 			[/* inline code block */ 'i', `Lock lock = ...;
  if (lock.tryLock(50L, TimeUnit.SECONDS)) ...`]
 		]],
@@ -458,6 +460,7 @@ the order they are declared.`]
  `]
 				]],
 				[/* code block */ 'c', [
+					[/* text */ 't', ` `],
 					[/* inline code block */ 'i', `public E poll(long timeout, TimeUnit unit)
      throws InterruptedException {
    synchronized (lock) {

@@ -64,6 +64,9 @@ DocsCollector.collect('java.util.Formatter', [
    // -> "Amount gained or lost since last statement: $ (6,217.58)"
  `]
 		]],
+		[/* text */ 't', `
+
+ `],
 		[/* block */ 'b', ''],
 		[/* block */ 'b', ` Convenience methods for common formatting requests exist as illustrated
  by the following invocations:
@@ -80,6 +83,9 @@ DocsCollector.collect('java.util.Formatter', [
    // -> "Unable to open file 'food': No such file or directory"
  `]
 		]],
+		[/* text */ 't', `
+
+ `],
 		[/* block */ 'b', ''],
 		[/* block */ 'b', [
 			[/* text */ 't', ` Like C's `],
@@ -102,10 +108,16 @@ DocsCollector.collect('java.util.Formatter', [
    // -> s == "Duke's Birthday: May 23, 1995"
  `]
 		]],
+		[/* text */ 't', `
+
+ `],
 		[/* block */ 'b', ''],
 		[/* block */ 'b', [
 			[/* anchor */ 'r', '#-id', `org`, `Organization`]
 		]],
+		[/* text */ 't', `
+
+ `],
 		[/* block */ 'b', [
 			[/* text */ 't', ` This specification is divided into two sections.  The first section, `],
 			[/* text */ 't', `Summary`],
@@ -123,6 +135,9 @@ DocsCollector.collect('java.util.Formatter', [
 		[/* block */ 'b', [
 			[/* anchor */ 'r', '#-id', `summary`, `Summary`]
 		]],
+		[/* text */ 't', `
+
+ `],
 		[/* block */ 'b', [
 			[/* text */ 't', ` This section is intended to provide a brief overview of formatting
  concepts.  For precise behavioral details, refer to the `],
@@ -134,6 +149,9 @@ DocsCollector.collect('java.util.Formatter', [
 		[/* block */ 'b', [
 			[/* anchor */ 'r', '#-id', `syntax`, `Format String Syntax`]
 		]],
+		[/* text */ 't', `
+
+ `],
 		[/* block */ 'b', [
 			[/* text */ 't', ` Every method which produces formatted output requires a `],
 			[/* text */ 't', `format
@@ -192,6 +210,9 @@ DocsCollector.collect('java.util.Formatter', [
 					[/* code block */ 'c', `   %[argument_index$][flags][width][.precision]conversion
  `]
 				]],
+				[/* text */ 't', `
+
+ `],
 				[/* block */ 'b', [
 					[/* text */ 't', ` The optional `],
 					[/* text */ 't', `argument_index`],
@@ -249,6 +270,9 @@ DocsCollector.collect('java.util.Formatter', [
 					[/* code block */ 'c', `   %[argument_index$][flags][width]conversion
  `]
 				]],
+				[/* text */ 't', `
+
+ `],
 				[/* block */ 'b', [
 					[/* text */ 't', ` The optional `],
 					[/* text */ 't', `argument_index`],
@@ -290,6 +314,9 @@ DocsCollector.collect('java.util.Formatter', [
 					[/* code block */ 'c', `   %[flags][width]conversion
  `]
 				]],
+				[/* text */ 't', `
+
+ `],
 				[/* block */ 'b', [
 					[/* text */ 't', ` The optional `],
 					[/* text */ 't', `flags`],
@@ -311,13 +338,20 @@ DocsCollector.collect('java.util.Formatter', [
 			[/* block */ 'b', ''],
 			[/* block */ 'b', '']
 		]],
+		[/* text */ 't', `
+
+ `],
 		[/* block */ 'b', ''],
 		[/* block */ 'b', ` Conversions `],
+		[/* text */ 't', `
+
+ `],
 		[/* block */ 'b', ` Conversions are divided into the following categories:
 
  `],
 		[/* list */ 'l', [
 			[/* block */ 'b', [
+				[/* text */ 't', ` `],
 				[/* text */ 't', `General`],
 				[/* text */ 't', ` - may be applied to any argument
  type
@@ -325,6 +359,7 @@ DocsCollector.collect('java.util.Formatter', [
  `]
 			]],
 			[/* block */ 'b', [
+				[/* text */ 't', ` `],
 				[/* text */ 't', `Character`],
 				[/* text */ 't', ` - may be applied to basic types which represent
  Unicode characters: `],
@@ -347,12 +382,20 @@ DocsCollector.collect('java.util.Formatter', [
 				[/* text */ 't', ` when `],
 				[/* reference */ 'r', `java.lang.Character#isValidCodePoint(int)`, `Character.isValidCodePoint(int)`],
 				[/* text */ 't', ` returns `],
-				[/* inline code block */ 'i', `true`]
+				[/* inline code block */ 'i', `true`],
+				[/* text */ 't', `
+
+ `]
 			]],
 			[/* block */ 'b', [
+				[/* text */ 't', ` `],
 				[/* text */ 't', `Numeric`],
+				[/* text */ 't', `
+
+ `],
 				[/* list */ 'l', [
 					[/* block */ 'b', [
+						[/* text */ 't', ` `],
 						[/* text */ 't', `Integral`],
 						[/* text */ 't', ` - may be applied to Java integral types: `],
 						[/* inline code block */ 'i', `byte`],
@@ -393,11 +436,18 @@ DocsCollector.collect('java.util.Formatter', [
 						[/* text */ 't', `, `],
 						[/* reference */ 'r', `java.lang.Double`, `Double`],
 						[/* text */ 't', `, and `],
-						[/* reference */ 'r', `java.math.BigDecimal`, `BigDecimal`]
+						[/* reference */ 'r', `java.math.BigDecimal`, `BigDecimal`],
+						[/* text */ 't', `
+
+ `]
 					]]
-				]]
+				]],
+				[/* text */ 't', `
+
+ `]
 			]],
 			[/* block */ 'b', [
+				[/* text */ 't', ` `],
 				[/* text */ 't', `Date/Time`],
 				[/* text */ 't', ` - may be applied to Java types which are capable of
  encoding a date or time: `],
@@ -410,9 +460,13 @@ DocsCollector.collect('java.util.Formatter', [
  `],
 				[/* reference */ 'r', `java.util.Date`, `Date`],
 				[/* text */ 't', ` and `],
-				[/* reference */ 'r', `java.time.temporal.TemporalAccessor`, `TemporalAccessor`]
+				[/* reference */ 'r', `java.time.temporal.TemporalAccessor`, `TemporalAccessor`],
+				[/* text */ 't', `
+
+ `]
 			]],
 			[/* block */ 'b', [
+				[/* text */ 't', ` `],
 				[/* text */ 't', `Percent`],
 				[/* text */ 't', ` - produces a literal `],
 				[/* inline code block */ 'i', `'%'`],
@@ -424,12 +478,16 @@ DocsCollector.collect('java.util.Formatter', [
  `]
 			]],
 			[/* block */ 'b', [
+				[/* text */ 't', ` `],
 				[/* text */ 't', `Line Separator`],
 				[/* text */ 't', ` - produces the platform-specific line separator
 
  `]
 			]]
 		]],
+		[/* text */ 't', `
+
+ `],
 		[/* block */ 'b', ''],
 		[/* block */ 'b', [
 			[/* text */ 't', ` For category `],
@@ -802,6 +860,9 @@ DocsCollector.collect('java.util.Formatter', [
 				]]
 			]],
 		],
+		[/* text */ 't', `
+
+ `],
 		[/* block */ 'b', ''],
 		[/* block */ 'b', ` Any characters not explicitly defined as conversions are illegal and are
  reserved for future extensions.
@@ -810,6 +871,9 @@ DocsCollector.collect('java.util.Formatter', [
 		[/* block */ 'b', [
 			[/* anchor */ 'r', '#-id', `dt`, `Date/Time Conversions`]
 		]],
+		[/* text */ 't', `
+
+ `],
 		[/* block */ 'b', [
 			[/* text */ 't', ` The following date and time conversion suffix characters are defined for
  the `],
@@ -1077,6 +1141,9 @@ DocsCollector.collect('java.util.Formatter', [
 				]]
 			]],
 		],
+		[/* text */ 't', `
+
+ `],
 		[/* block */ 'b', ''],
 		[/* block */ 'b', ` The following conversion characters are used for formatting dates:
 
@@ -1285,6 +1352,9 @@ DocsCollector.collect('java.util.Formatter', [
 				]]
 			]],
 		],
+		[/* text */ 't', `
+
+ `],
 		[/* block */ 'b', ''],
 		[/* block */ 'b', ` The following conversion characters are used for formatting common
  date/time compositions.
@@ -1390,12 +1460,18 @@ DocsCollector.collect('java.util.Formatter', [
 				]]
 			]],
 		],
+		[/* text */ 't', `
+
+ `],
 		[/* block */ 'b', ''],
 		[/* block */ 'b', ` Any characters not explicitly defined as date/time conversion suffixes
  are illegal and are reserved for future extensions.
 
  `],
 		[/* block */ 'b', ` Flags `],
+		[/* text */ 't', `
+
+ `],
 		[/* block */ 'b', [
 			[/* text */ 't', ` The following table summarizes the supported flags.  `],
 			[/* text */ 't', `y`],
@@ -1667,8 +1743,12 @@ DocsCollector.collect('java.util.Formatter', [
 				]]
 			]],
 		],
+		[/* text */ 't', `
+
+ `],
 		[/* block */ 'b', ''],
 		[/* block */ 'b', [
+			[/* text */ 't', ` `],
 			[/* text */ 't', `1`, 'sup'],
 			[/* text */ 't', ` Depends on the definition of `],
 			[/* reference */ 'r', `java.util.Formattable`, `Formattable`],
@@ -1677,6 +1757,7 @@ DocsCollector.collect('java.util.Formatter', [
  `]
 		]],
 		[/* block */ 'b', [
+			[/* text */ 't', ` `],
 			[/* text */ 't', `2`, 'sup'],
 			[/* text */ 't', ` For `],
 			[/* inline code block */ 'i', `'d'`],
@@ -1685,6 +1766,7 @@ DocsCollector.collect('java.util.Formatter', [
  `]
 		]],
 		[/* block */ 'b', [
+			[/* text */ 't', ` `],
 			[/* text */ 't', `3`, 'sup'],
 			[/* text */ 't', ` For `],
 			[/* inline code block */ 'i', `'o'`],
@@ -1698,6 +1780,7 @@ DocsCollector.collect('java.util.Formatter', [
  `]
 		]],
 		[/* block */ 'b', [
+			[/* text */ 't', ` `],
 			[/* text */ 't', `4`, 'sup'],
 			[/* text */ 't', ` For `],
 			[/* inline code block */ 'i', `'d'`],
@@ -1734,6 +1817,7 @@ DocsCollector.collect('java.util.Formatter', [
  `]
 		]],
 		[/* block */ 'b', [
+			[/* text */ 't', ` `],
 			[/* text */ 't', `5`, 'sup'],
 			[/* text */ 't', ` For `],
 			[/* inline code block */ 'i', `'e'`],
@@ -1755,12 +1839,18 @@ DocsCollector.collect('java.util.Formatter', [
 
  `],
 		[/* block */ 'b', ` Width `],
+		[/* text */ 't', `
+
+ `],
 		[/* block */ 'b', ` The width is the minimum number of characters to be written to the
  output.  For the line separator conversion, width is not applicable; if it
  is provided, an exception will be thrown.
 
  `],
 		[/* block */ 'b', ` Precision `],
+		[/* text */ 't', `
+
+ `],
 		[/* block */ 'b', ` For general argument types, the precision is the maximum number of
  characters to be written to the output.
 
@@ -1794,6 +1884,9 @@ DocsCollector.collect('java.util.Formatter', [
 
  `],
 		[/* block */ 'b', ` Argument Index `],
+		[/* text */ 't', `
+
+ `],
 		[/* block */ 'b', [
 			[/* text */ 't', ` The argument index is a decimal integer indicating the position of the
  argument in the argument list.  The first argument is referenced by
@@ -1824,17 +1917,28 @@ DocsCollector.collect('java.util.Formatter', [
    String s2 = String.format("Duke's Birthday: %1$tm %<te,%<tY", c);
  `]
 		]],
+		[/* text */ 't', `
+
+ `],
 		[/* new line */ 'n'],
+		[/* text */ 't', `
+ `],
 		[/* block */ 'b', ''],
 		[/* block */ 'b', [
 			[/* anchor */ 'r', '#-id', `detail`, `Details`]
 		]],
+		[/* text */ 't', `
+
+ `],
 		[/* block */ 'b', [
 			[/* text */ 't', ` This section is intended to provide behavioral details for formatting,
  including conditions and exceptions, supported data types, localization, and
  interactions between flags, conversions, and data types.  For an overview of
  formatting concepts, refer to the `],
-			[/* text */ 't', `Summary`]
+			[/* text */ 't', `Summary`],
+			[/* text */ 't', `
+
+ `]
 		]],
 		[/* block */ 'b', [
 			[/* text */ 't', ` Any characters not explicitly defined as conversions, date/time
@@ -1881,6 +1985,9 @@ DocsCollector.collect('java.util.Formatter', [
 			[/* reference */ 'r', `java.util.IllegalFormatPrecisionException`, `IllegalFormatPrecisionException`],
 			[/* text */ 't', ` is thrown.`]
 		]],
+		[/* text */ 't', `
+
+ `],
 		[/* block */ 'b', [
 			[/* text */ 't', ` Values of `],
 			[/* text */ 't', `width`],
@@ -1905,6 +2012,9 @@ DocsCollector.collect('java.util.Formatter', [
 			[/* text */ 't', `flag`],
 			[/* text */ 't', ` is "-".`]
 		]],
+		[/* text */ 't', `
+
+ `],
 		[/* block */ 'b', [
 			[/* text */ 't', ` Values of `],
 			[/* text */ 't', `index`],
@@ -1916,6 +2026,9 @@ DocsCollector.collect('java.util.Formatter', [
 			[/* reference */ 'r', `java.util.IllegalFormatException`, `IllegalFormatException`],
 			[/* text */ 't', ` will be thrown.`]
 		]],
+		[/* text */ 't', `
+
+ `],
 		[/* block */ 'b', [
 			[/* text */ 't', ` All specified exceptions may be thrown by any of the `],
 			[/* inline code block */ 'i', `format`],
@@ -1994,6 +2107,9 @@ DocsCollector.collect('java.util.Formatter', [
 		[/* block */ 'b', [
 			[/* anchor */ 'r', '#-id', `dgen`, `General`]
 		]],
+		[/* text */ 't', `
+
+ `],
 		[/* block */ 'b', ` The following general conversions may be applied to any argument type:
 
  `],
@@ -2204,6 +2320,9 @@ DocsCollector.collect('java.util.Formatter', [
 				]]
 			]],
 		],
+		[/* text */ 't', `
+
+ `],
 		[/* block */ 'b', ''],
 		[/* block */ 'b', [
 			[/* text */ 't', ` The following `],
@@ -2264,6 +2383,9 @@ DocsCollector.collect('java.util.Formatter', [
 				]]
 			]],
 		],
+		[/* text */ 't', `
+
+ `],
 		[/* block */ 'b', ''],
 		[/* block */ 'b', [
 			[/* text */ 't', ` The `],
@@ -2394,6 +2516,9 @@ DocsCollector.collect('java.util.Formatter', [
 				]]
 			]],
 		],
+		[/* text */ 't', `
+
+ `],
 		[/* block */ 'b', [
 			[/* text */ 't', ` The `],
 			[/* inline code block */ 'i', `'-'`],
@@ -2425,23 +2550,45 @@ DocsCollector.collect('java.util.Formatter', [
 		[/* block */ 'b', [
 			[/* anchor */ 'r', '#-id', `dnum`, `Numeric`]
 		]],
+		[/* text */ 't', `
+
+ `],
 		[/* block */ 'b', ` Numeric conversions are divided into the following categories:
 
  `],
 		[/* list */ 'l', [
 			[/* block */ 'b', [
-				[/* text */ 't', `Byte, Short, Integer, and Long`]
+				[/* text */ 't', ` `],
+				[/* text */ 't', `Byte, Short, Integer, and Long`],
+				[/* text */ 't', `
+
+ `]
 			]],
 			[/* block */ 'b', [
-				[/* text */ 't', `BigInteger`]
+				[/* text */ 't', ` `],
+				[/* text */ 't', `BigInteger`],
+				[/* text */ 't', `
+
+ `]
 			]],
 			[/* block */ 'b', [
-				[/* text */ 't', `Float and Double`]
+				[/* text */ 't', ` `],
+				[/* text */ 't', `Float and Double`],
+				[/* text */ 't', `
+
+ `]
 			]],
 			[/* block */ 'b', [
-				[/* text */ 't', `BigDecimal`]
+				[/* text */ 't', ` `],
+				[/* text */ 't', `BigDecimal`],
+				[/* text */ 't', `
+
+ `]
 			]]
 		]],
+		[/* text */ 't', `
+
+ `],
 		[/* block */ 'b', ''],
 		[/* block */ 'b', ` Numeric types will be formatted according to the following algorithm:
 
@@ -2462,10 +2609,15 @@ DocsCollector.collect('java.util.Formatter', [
  locale-specific digit computed relative to the current locale's
  `],
 				[/* reference */ 'r', `java.text.DecimalFormatSymbols#getZeroDigit()`, `zero digit`],
+				[/* text */ 't', `
+ `],
 				[/* text */ 't', `z`],
 				[/* text */ 't', `; that is `],
 				[/* text */ 't', `d - `],
+				[/* text */ 't', ` `],
 				[/* inline code block */ 'i', `'0'`],
+				[/* text */ 't', `
+ `],
 				[/* text */ 't', ` + z`],
 				[/* text */ 't', `.
 
@@ -2553,6 +2705,9 @@ DocsCollector.collect('java.util.Formatter', [
  `]
 			]]
 		]],
+		[/* text */ 't', `
+
+ `],
 		[/* block */ 'b', ''],
 		[/* block */ 'b', [
 			[/* text */ 't', ` If the value is NaN or positive infinity the literal strings "NaN" or
@@ -2565,7 +2720,10 @@ DocsCollector.collect('java.util.Formatter', [
  `]
 		]],
 		[/* block */ 'b', [
-			[/* anchor */ 'r', '#-id', `dnint`, `Byte, Short, Integer, and Long`]
+			[/* anchor */ 'r', '#-id', `dnint`, `Byte, Short, Integer, and Long`],
+			[/* text */ 't', `
+
+ `]
 		]],
 		[/* block */ 'b', [
 			[/* text */ 't', ` The following conversions may be applied to `],
@@ -2833,6 +2991,9 @@ DocsCollector.collect('java.util.Formatter', [
 				]]
 			]],
 		],
+		[/* text */ 't', `
+
+ `],
 		[/* block */ 'b', ''],
 		[/* block */ 'b', [
 			[/* text */ 't', ` If the conversion is `],
@@ -3042,6 +3203,9 @@ DocsCollector.collect('java.util.Formatter', [
 				]]
 			]],
 		],
+		[/* text */ 't', `
+
+ `],
 		[/* block */ 'b', ''],
 		[/* block */ 'b', [
 			[/* text */ 't', ` If no `],
@@ -3054,7 +3218,10 @@ DocsCollector.collect('java.util.Formatter', [
 		[/* list */ 'l', [
 			[/* block */ 'b', [
 				[/* text */ 't', ` The output is right-justified within the `],
-				[/* inline code block */ 'i', `width`]
+				[/* inline code block */ 'i', `width`],
+				[/* text */ 't', `
+
+ `]
 			]],
 			[/* block */ 'b', [
 				[/* text */ 't', ` Negative numbers begin with a `],
@@ -3073,6 +3240,9 @@ DocsCollector.collect('java.util.Formatter', [
 
  `]
 		]],
+		[/* text */ 't', `
+
+ `],
 		[/* block */ 'b', ''],
 		[/* block */ 'b', [
 			[/* text */ 't', ` The `],
@@ -3101,7 +3271,10 @@ DocsCollector.collect('java.util.Formatter', [
  `]
 		]],
 		[/* block */ 'b', [
-			[/* anchor */ 'r', '#-id', `dnbint`, `BigInteger`]
+			[/* anchor */ 'r', '#-id', `dnbint`, `BigInteger`],
+			[/* text */ 't', `
+
+ `]
 		]],
 		[/* block */ 'b', [
 			[/* text */ 't', ` The following conversions may be applied to `],
@@ -3338,6 +3511,9 @@ DocsCollector.collect('java.util.Formatter', [
 				]]
 			]],
 		],
+		[/* text */ 't', `
+
+ `],
 		[/* block */ 'b', ''],
 		[/* block */ 'b', [
 			[/* text */ 't', ` If the conversion is `],
@@ -3408,7 +3584,10 @@ DocsCollector.collect('java.util.Formatter', [
  `]
 		]],
 		[/* block */ 'b', [
-			[/* anchor */ 'r', '#-id', `dndec`, `Float and Double`]
+			[/* anchor */ 'r', '#-id', `dndec`, `Float and Double`],
+			[/* text */ 't', `
+
+ `]
 		]],
 		[/* block */ 'b', [
 			[/* text */ 't', ` The following conversions may be applied to `],
@@ -3972,6 +4151,9 @@ DocsCollector.collect('java.util.Formatter', [
 				]]
 			]],
 		],
+		[/* text */ 't', `
+
+ `],
 		[/* block */ 'b', ''],
 		[/* block */ 'b', [
 			[/* text */ 't', ` All `],
@@ -4000,11 +4182,17 @@ DocsCollector.collect('java.util.Formatter', [
 		[/* list */ 'l', [
 			[/* block */ 'b', [
 				[/* text */ 't', ` The output is right-justified within the `],
-				[/* inline code block */ 'i', `width`]
+				[/* inline code block */ 'i', `width`],
+				[/* text */ 't', `
+
+ `]
 			]],
 			[/* block */ 'b', [
 				[/* text */ 't', ` Negative numbers begin with a `],
-				[/* inline code block */ 'i', `'-'`]
+				[/* inline code block */ 'i', `'-'`],
+				[/* text */ 't', `
+
+ `]
 			]],
 			[/* block */ 'b', ` Positive numbers and positive zero do not include a sign or extra
  leading space
@@ -4017,6 +4205,9 @@ DocsCollector.collect('java.util.Formatter', [
 
  `]
 		]],
+		[/* text */ 't', `
+
+ `],
 		[/* block */ 'b', ''],
 		[/* block */ 'b', [
 			[/* text */ 't', ` The `],
@@ -4088,7 +4279,10 @@ DocsCollector.collect('java.util.Formatter', [
  `]
 		]],
 		[/* block */ 'b', [
-			[/* anchor */ 'r', '#-id', `dnbdec`, `BigDecimal`]
+			[/* anchor */ 'r', '#-id', `dnbdec`, `BigDecimal`],
+			[/* text */ 't', `
+
+ `]
 		]],
 		[/* block */ 'b', [
 			[/* text */ 't', ` The following conversions may be applied `],
@@ -4428,6 +4622,9 @@ DocsCollector.collect('java.util.Formatter', [
 				]]
 			]],
 		],
+		[/* text */ 't', `
+
+ `],
 		[/* block */ 'b', ''],
 		[/* block */ 'b', [
 			[/* text */ 't', ` All `],
@@ -4466,6 +4663,9 @@ DocsCollector.collect('java.util.Formatter', [
 		[/* block */ 'b', [
 			[/* anchor */ 'r', '#-id', `ddt`, `Date/Time`]
 		]],
+		[/* text */ 't', `
+
+ `],
 		[/* block */ 'b', [
 			[/* text */ 't', ` This conversion may be applied to `],
 			[/* inline code block */ 'i', `long`],
@@ -4476,7 +4676,10 @@ DocsCollector.collect('java.util.Formatter', [
 			[/* text */ 't', `, `],
 			[/* reference */ 'r', `java.util.Date`, `Date`],
 			[/* text */ 't', ` and `],
-			[/* reference */ 'r', `java.time.temporal.TemporalAccessor`, `TemporalAccessor`]
+			[/* reference */ 'r', `java.time.temporal.TemporalAccessor`, `TemporalAccessor`],
+			[/* text */ 't', `
+
+ `]
 		]],
 		[/* table */ 'tbl',
 			[/* caption */ 'tc'],
@@ -4523,6 +4726,9 @@ DocsCollector.collect('java.util.Formatter', [
 				]]
 			]],
 		],
+		[/* text */ 't', `
+
+ `],
 		[/* block */ 'b', ''],
 		[/* block */ 'b', [
 			[/* text */ 't', ` The following date and time conversion character suffixes are defined
@@ -4893,6 +5099,9 @@ DocsCollector.collect('java.util.Formatter', [
 				]]
 			]],
 		],
+		[/* text */ 't', `
+
+ `],
 		[/* block */ 'b', ''],
 		[/* block */ 'b', ` The following conversion characters are used for formatting dates:
 
@@ -5187,6 +5396,9 @@ DocsCollector.collect('java.util.Formatter', [
 				]]
 			]],
 		],
+		[/* text */ 't', `
+
+ `],
 		[/* block */ 'b', ''],
 		[/* block */ 'b', ` The following conversion characters are used for formatting common
  date/time compositions.
@@ -5327,6 +5539,9 @@ DocsCollector.collect('java.util.Formatter', [
 				]]
 			]],
 		],
+		[/* text */ 't', `
+
+ `],
 		[/* block */ 'b', ''],
 		[/* block */ 'b', [
 			[/* text */ 't', ` The `],
@@ -5369,6 +5584,9 @@ DocsCollector.collect('java.util.Formatter', [
 		[/* block */ 'b', [
 			[/* anchor */ 'r', '#-id', `dper`, `Percent`]
 		]],
+		[/* text */ 't', `
+
+ `],
 		[/* block */ 'b', ` The conversion does not correspond to any argument.
 
  `],
@@ -5432,10 +5650,16 @@ DocsCollector.collect('java.util.Formatter', [
 				]]
 			]],
 		],
+		[/* text */ 't', `
+
+ `],
 		[/* block */ 'b', ''],
 		[/* block */ 'b', [
 			[/* anchor */ 'r', '#-id', `dls`, `Line Separator`]
 		]],
+		[/* text */ 't', `
+
+ `],
 		[/* block */ 'b', ` The conversion does not correspond to any argument.
 
  `],
@@ -5459,6 +5683,9 @@ DocsCollector.collect('java.util.Formatter', [
 				]]
 			]],
 		],
+		[/* text */ 't', `
+
+ `],
 		[/* block */ 'b', ''],
 		[/* block */ 'b', [
 			[/* text */ 't', ` Flags, width, and precision are not applicable.  If any are provided an
@@ -5476,11 +5703,15 @@ DocsCollector.collect('java.util.Formatter', [
 		[/* block */ 'b', [
 			[/* anchor */ 'r', '#-id', `dpos`, `Argument Index`]
 		]],
+		[/* text */ 't', `
+
+ `],
 		[/* block */ 'b', ` Format specifiers can reference arguments in three ways:
 
  `],
 		[/* list */ 'l', [
 			[/* block */ 'b', [
+				[/* text */ 't', ` `],
 				[/* text */ 't', `Explicit indexing`],
 				[/* text */ 't', ` is used when the format specifier contains an
  argument index.  The argument index is a decimal integer indicating the
@@ -5501,9 +5732,13 @@ DocsCollector.collect('java.util.Formatter', [
                     "a", "b", "c", "d")
    // -> "d c b a d c b a"
  `]
-				]]
+				]],
+				[/* text */ 't', `
+
+ `]
 			]],
 			[/* block */ 'b', [
+				[/* text */ 't', ` `],
 				[/* text */ 't', `Relative indexing`],
 				[/* text */ 't', ` is used when the format specifier contains a
  `],
@@ -5522,9 +5757,13 @@ DocsCollector.collect('java.util.Formatter', [
     // -> "a b b b"
     // "c" and "d" are ignored because they are not referenced
  `]
-				]]
+				]],
+				[/* text */ 't', `
+
+ `]
 			]],
 			[/* block */ 'b', [
+				[/* text */ 't', ` `],
 				[/* text */ 't', `Ordinary indexing`],
 				[/* text */ 't', ` is used when the format specifier contains
  neither an argument index nor a `],
@@ -5539,10 +5778,16 @@ DocsCollector.collect('java.util.Formatter', [
 					[/* code block */ 'c', `   formatter.format("%s %s %s %s", "a", "b", "c", "d")
    // -> "a b c d"
  `]
-				]]
+				]],
+				[/* text */ 't', `
+
+ `]
 			]],
 			[/* block */ 'b', '']
 		]],
+		[/* text */ 't', `
+
+ `],
 		[/* block */ 'b', ''],
 		[/* block */ 'b', ` It is possible to have a format string which uses all forms of indexing,
  for example:
@@ -5554,6 +5799,9 @@ DocsCollector.collect('java.util.Formatter', [
    // "c" and "d" are ignored because they are not referenced
  `]
 		]],
+		[/* text */ 't', `
+
+ `],
 		[/* block */ 'b', ''],
 		[/* block */ 'b', [
 			[/* text */ 't', ` The maximum number of arguments is limited by the maximum dimension of a
@@ -6299,11 +6547,17 @@ DocsCollector.collect('java.util.Formatter', [
    // -> s == "Last reboot at Sat Jan 01 00:00:00 PST 2000"
  `]
 				]],
+				[/* text */ 't', `
+
+ `],
 				[/* block */ 'b', ` An invocation of this method behaves in exactly the same way as the
  invocation
 
  `],
 				[/* code block */ 'c', `     out().toString() `],
+				[/* text */ 't', `
+
+ `],
 				[/* block */ 'b', ''],
 				[/* block */ 'b', [
 					[/* text */ 't', ` Depending on the specification of `],

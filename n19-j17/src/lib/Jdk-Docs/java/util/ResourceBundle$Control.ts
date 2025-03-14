@@ -20,6 +20,7 @@ DocsCollector.collect('java.util.ResourceBundle$Control', [
 
  `],
 		[/* block */ 'b', [
+			[/* text */ 't', ` `],
 			[/* reference */ 'r', `java.util.ResourceBundle.Control`, `ResourceBundle.Control`],
 			[/* text */ 't', ` is designed for an application deployed
  in an unnamed module, for example to support resource bundles in
@@ -800,7 +801,9 @@ DocsCollector.collect('java.util.ResourceBundle$Control', [
 								[/* text */ 't', `] `]
 							]],
 							[/* block */ 'b', [
-								[/* inline code block */ 'i', `Locale.ROOT`]
+								[/* text */ 't', ` `],
+								[/* inline code block */ 'i', `Locale.ROOT`],
+								[/* text */ 't', ` `]
 							]]
 						]]
 					]],
@@ -867,6 +870,7 @@ DocsCollector.collect('java.util.ResourceBundle$Control', [
 								[/* text */ 't', `]`]
 							]],
 							[/* block */ 'b', [
+								[/* text */ 't', ` `],
 								[/* inline code block */ 'i', `Locale.ROOT`]
 							]]
 						]]
@@ -964,6 +968,7 @@ DocsCollector.collect('java.util.ResourceBundle$Control', [
 								[/* text */ 't', `]`]
 							]],
 							[/* block */ 'b', [
+								[/* text */ 't', ` `],
 								[/* inline code block */ 'i', `Locale.ROOT`]
 							]]
 						]]
@@ -1011,6 +1016,7 @@ DocsCollector.collect('java.util.ResourceBundle$Control', [
 								[/* text */ 't', `("zh")]`]
 							]],
 							[/* block */ 'b', [
+								[/* text */ 't', ` `],
 								[/* inline code block */ 'i', `Locale.ROOT`]
 							]]
 						]],
@@ -1050,6 +1056,7 @@ DocsCollector.collect('java.util.ResourceBundle$Control', [
 								[/* text */ 't', `("zh")]`]
 							]],
 							[/* block */ 'b', [
+								[/* text */ 't', ` `],
 								[/* inline code block */ 'i', `Locale.ROOT`]
 							]]
 						]]
@@ -1090,6 +1097,7 @@ DocsCollector.collect('java.util.ResourceBundle$Control', [
 								[/* text */ 't', `("no")]`]
 							]],
 							[/* block */ 'b', [
+								[/* text */ 't', ` `],
 								[/* inline code block */ 'i', `Locale.ROOT`]
 							]]
 						]],
@@ -1167,9 +1175,13 @@ DocsCollector.collect('java.util.ResourceBundle$Control', [
 								[/* text */ 't', `("no")]`]
 							]],
 							[/* block */ 'b', [
+								[/* text */ 't', ` `],
 								[/* inline code block */ 'i', `Locale.ROOT`]
 							]]
 						]],
+						[/* text */ 't', `
+
+ `],
 						[/* inline code block */ 'i', `Locale("no", "NO", "POSIX")`],
 						[/* text */ 't', ` would generate the same list
  except that locales with "no" would appear before the corresponding
@@ -1177,6 +1189,9 @@ DocsCollector.collect('java.util.ResourceBundle$Control', [
 						[/* block */ 'b', '']
 					]]
 				]],
+				[/* text */ 't', `
+
+ `],
 				[/* block */ 'b', ''],
 				[/* block */ 'b', [
 					[/* text */ 't', `The default implementation uses an `],

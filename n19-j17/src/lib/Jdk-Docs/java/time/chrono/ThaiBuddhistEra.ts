@@ -89,6 +89,8 @@ DocsCollector.collect('java.time.chrono.ThaiBuddhistEra', [
 				]]
 			]],
 		],
+		[/* text */ 't', `
+ `],
 		[/* block */ 'b', ''],
 		[/* block */ 'b', [
 			[/* text */ 't', `Do not use `],
@@ -157,6 +159,8 @@ DocsCollector.collect('java.time.chrono.ThaiBuddhistEra', [
 				[/* text */ 't', ` value.
  `],
 				[/* block */ 'b', [
+					[/* text */ 't', `
+ `],
 					[/* inline code block */ 'i', `ThaiBuddhistEra`],
 					[/* text */ 't', ` is an enum representing the Thai Buddhist eras of BEFORE_BE/BE.
  This factory allows the enum to be obtained from the `],

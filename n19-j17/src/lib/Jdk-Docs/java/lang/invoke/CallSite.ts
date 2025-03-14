@@ -29,6 +29,8 @@ DocsCollector.collect('java.lang.invoke.CallSite', [
 		[/* text */ 't', `.
  `],
 		[/* block */ 'b', [
+			[/* text */ 't', `
+ `],
 			[/* inline code block */ 'i', `CallSite`],
 			[/* text */ 't', ` is an abstract class which does not allow
  direct subclassing by users.  It has three immediate,
@@ -61,6 +63,8 @@ DocsCollector.collect('java.lang.invoke.CallSite', [
  `]
 			]]
 		]],
+		[/* text */ 't', `
+ `],
 		[/* block */ 'b', ''],
 		[/* block */ 'b', [
 			[/* text */ 't', `

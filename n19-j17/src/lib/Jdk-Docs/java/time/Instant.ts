@@ -30,6 +30,8 @@ DocsCollector.collect('java.time.Instant', [
  `]
 		]],
 		[/* block */ 'b', `Time-scale`],
+		[/* text */ 't', `
+ `],
 		[/* block */ 'b', `
  The length of the solar day is the standard way that humans measure time.
  This has traditionally been subdivided into 24 hours of 60 minutes of 60 seconds,
@@ -357,16 +359,24 @@ DocsCollector.collect('java.time.Instant', [
 				]],
 				[/* list */ 'l', [
 					[/* block */ 'b', [
-						[/* inline code block */ 'i', `NANO_OF_SECOND`]
+						[/* inline code block */ 'i', `NANO_OF_SECOND`],
+						[/* text */ 't', `
+ `]
 					]],
 					[/* block */ 'b', [
-						[/* inline code block */ 'i', `MICRO_OF_SECOND`]
+						[/* inline code block */ 'i', `MICRO_OF_SECOND`],
+						[/* text */ 't', `
+ `]
 					]],
 					[/* block */ 'b', [
-						[/* inline code block */ 'i', `MILLI_OF_SECOND`]
+						[/* inline code block */ 'i', `MILLI_OF_SECOND`],
+						[/* text */ 't', `
+ `]
 					]],
 					[/* block */ 'b', [
-						[/* inline code block */ 'i', `INSTANT_SECONDS`]
+						[/* inline code block */ 'i', `INSTANT_SECONDS`],
+						[/* text */ 't', `
+ `]
 					]]
 				]],
 				[/* text */ 't', `
@@ -424,28 +434,44 @@ DocsCollector.collect('java.time.Instant', [
 				]],
 				[/* list */ 'l', [
 					[/* block */ 'b', [
-						[/* inline code block */ 'i', `NANOS`]
+						[/* inline code block */ 'i', `NANOS`],
+						[/* text */ 't', `
+ `]
 					]],
 					[/* block */ 'b', [
-						[/* inline code block */ 'i', `MICROS`]
+						[/* inline code block */ 'i', `MICROS`],
+						[/* text */ 't', `
+ `]
 					]],
 					[/* block */ 'b', [
-						[/* inline code block */ 'i', `MILLIS`]
+						[/* inline code block */ 'i', `MILLIS`],
+						[/* text */ 't', `
+ `]
 					]],
 					[/* block */ 'b', [
-						[/* inline code block */ 'i', `SECONDS`]
+						[/* inline code block */ 'i', `SECONDS`],
+						[/* text */ 't', `
+ `]
 					]],
 					[/* block */ 'b', [
-						[/* inline code block */ 'i', `MINUTES`]
+						[/* inline code block */ 'i', `MINUTES`],
+						[/* text */ 't', `
+ `]
 					]],
 					[/* block */ 'b', [
-						[/* inline code block */ 'i', `HOURS`]
+						[/* inline code block */ 'i', `HOURS`],
+						[/* text */ 't', `
+ `]
 					]],
 					[/* block */ 'b', [
-						[/* inline code block */ 'i', `HALF_DAYS`]
+						[/* inline code block */ 'i', `HALF_DAYS`],
+						[/* text */ 't', `
+ `]
 					]],
 					[/* block */ 'b', [
-						[/* inline code block */ 'i', `DAYS`]
+						[/* inline code block */ 'i', `DAYS`],
+						[/* text */ 't', `
+ `]
 					]]
 				]],
 				[/* text */ 't', `
@@ -970,6 +996,8 @@ DocsCollector.collect('java.time.Instant', [
  `]
 					]]
 				]],
+				[/* text */ 't', `
+ `],
 				[/* block */ 'b', ''],
 				[/* block */ 'b', [
 					[/* text */ 't', `
@@ -1264,6 +1292,8 @@ DocsCollector.collect('java.time.Instant', [
  `]
 					]]
 				]],
+				[/* text */ 't', `
+ `],
 				[/* block */ 'b', ''],
 				[/* block */ 'b', [
 					[/* text */ 't', `
@@ -1395,6 +1425,8 @@ DocsCollector.collect('java.time.Instant', [
 				[/* code block */ 'c', `   // these two lines are equivalent, but the second approach is recommended
    temporal = thisInstant.adjustInto(temporal);
    temporal = temporal.with(thisInstant);
+ `],
+				[/* text */ 't', `
  `],
 				[/* block */ 'b', ''],
 				[/* block */ 'b', `

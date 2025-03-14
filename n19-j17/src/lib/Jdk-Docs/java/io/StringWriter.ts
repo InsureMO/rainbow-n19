@@ -90,6 +90,9 @@ DocsCollector.collect('java.io.StringWriter', [
  `]
 				]],
 				[/* code block */ 'c', `     out.write(csq.toString()) `],
+				[/* text */ 't', `
+
+ `],
 				[/* block */ 'b', ''],
 				[/* block */ 'b', [
 					[/* text */ 't', ` Depending on the specification of `],

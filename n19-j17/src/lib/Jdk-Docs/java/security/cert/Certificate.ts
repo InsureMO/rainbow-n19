@@ -165,6 +165,7 @@ DocsCollector.collect('java.security.cert.Certificate', [
 				[/* text */ 't', ` object is an
  `],
 				[/* inline code block */ 'i', `instanceof`],
+				[/* text */ 't', ` `],
 				[/* inline code block */ 'i', `Certificate`],
 				[/* text */ 't', `, then
  its encoded form is retrieved and compared with the

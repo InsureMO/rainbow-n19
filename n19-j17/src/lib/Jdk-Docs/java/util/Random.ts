@@ -412,6 +412,7 @@ DocsCollector.collect('java.util.Random', [
  `]
 				]],
 				[/* code block */ 'c', [
+					[/* text */ 't', ` `],
 					[/* inline code block */ 'i', `double nextDouble(double origin, double bound) {
    double r = nextDouble();
    r = r * (bound - origin) + origin;
@@ -504,6 +505,7 @@ DocsCollector.collect('java.util.Random', [
  `]
 				]],
 				[/* code block */ 'c', [
+					[/* text */ 't', ` `],
 					[/* inline code block */ 'i', `double nextDouble(double origin, double bound) {
    double r = nextDouble();
    r = r * (bound - origin) + origin;
@@ -590,6 +592,7 @@ DocsCollector.collect('java.util.Random', [
  `]
 				]],
 				[/* code block */ 'c', [
+					[/* text */ 't', ` `],
 					[/* inline code block */ 'i', `int nextInt(int origin, int bound) {
    int n = bound - origin;
    if (n > 0) {
@@ -687,6 +690,7 @@ DocsCollector.collect('java.util.Random', [
  `]
 				]],
 				[/* code block */ 'c', [
+					[/* text */ 't', ` `],
 					[/* inline code block */ 'i', `int nextInt(int origin, int bound) {
    int n = bound - origin;
    if (n > 0) {
@@ -812,6 +816,7 @@ DocsCollector.collect('java.util.Random', [
  `]
 				]],
 				[/* code block */ 'c', [
+					[/* text */ 't', ` `],
 					[/* inline code block */ 'i', `long nextLong(long origin, long bound) {
    long r = nextLong();
    long n = bound - origin, m = n - 1;
@@ -876,6 +881,7 @@ DocsCollector.collect('java.util.Random', [
  `]
 				]],
 				[/* code block */ 'c', [
+					[/* text */ 't', ` `],
 					[/* inline code block */ 'i', `long nextLong(long origin, long bound) {
    long r = nextLong();
    long n = bound - origin, m = n - 1;

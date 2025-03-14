@@ -64,6 +64,7 @@ DocsCollector.collect('java.util.concurrent.ConcurrentMap', [
 				[/* text */ 't', `:
  `],
 				[/* code block */ 'c', [
+					[/* text */ 't', ` `],
 					[/* inline code block */ 'i', `if (map.containsKey(key)
      && Objects.equals(map.get(key), value)) {
    map.remove(key);
@@ -119,6 +120,7 @@ DocsCollector.collect('java.util.concurrent.ConcurrentMap', [
 				[/* text */ 't', `:
  `],
 				[/* code block */ 'c', [
+					[/* text */ 't', ` `],
 					[/* inline code block */ 'i', `if (map.containsKey(key)
      && Objects.equals(map.get(key), oldValue)) {
    map.put(key, newValue);
@@ -176,6 +178,7 @@ DocsCollector.collect('java.util.concurrent.ConcurrentMap', [
 				[/* text */ 't', `:
  `],
 				[/* code block */ 'c', [
+					[/* text */ 't', ` `],
 					[/* inline code block */ 'i', `if (!map.containsKey(key))
    return map.put(key, value);
  else
@@ -235,6 +238,7 @@ DocsCollector.collect('java.util.concurrent.ConcurrentMap', [
 				[/* text */ 't', `:
  `],
 				[/* code block */ 'c', [
+					[/* text */ 't', ` `],
 					[/* inline code block */ 'i', `if (map.containsKey(key))
    return map.put(key, value);
  else
@@ -299,6 +303,7 @@ DocsCollector.collect('java.util.concurrent.ConcurrentMap', [
 
  `],
 				[/* code block */ 'c', [
+					[/* text */ 't', ` `],
 					[/* inline code block */ 'i', `map.compute(key, (k, v) -> (v == null) ? msg : v.concat(msg))`]
 				]],
 				[/* text */ 't', `
@@ -384,8 +389,12 @@ DocsCollector.collect('java.util.concurrent.ConcurrentMap', [
  `]
 				]],
 				[/* code block */ 'c', [
+					[/* text */ 't', ` `],
 					[/* inline code block */ 'i', `map.computeIfAbsent(key, k -> new Value(f(k)));`]
 				]],
+				[/* text */ 't', `
+
+ `],
 				[/* block */ 'b', ''],
 				[/* block */ 'b', [
 					[/* text */ 't', `Or to implement a multi-value map, `],
@@ -396,8 +405,12 @@ DocsCollector.collect('java.util.concurrent.ConcurrentMap', [
  `]
 				]],
 				[/* code block */ 'c', [
+					[/* text */ 't', ` `],
 					[/* inline code block */ 'i', `map.computeIfAbsent(key, k -> new HashSet<V>()).add(v);`]
 				]],
+				[/* text */ 't', `
+
+ `],
 				[/* block */ 'b', ''],
 				[/* block */ 'b', `The mapping function should not modify this map during computation.`]
 			],
@@ -557,8 +570,12 @@ DocsCollector.collect('java.util.concurrent.ConcurrentMap', [
 
  `],
 				[/* code block */ 'c', [
+					[/* text */ 't', ` `],
 					[/* inline code block */ 'i', `map.merge(key, msg, String::concat)`]
 				]],
+				[/* text */ 't', `
+
+ `],
 				[/* block */ 'b', [
 					[/* text */ 't', `If the remapping function returns `],
 					[/* inline code block */ 'i', `null`],

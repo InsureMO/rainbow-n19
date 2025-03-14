@@ -180,6 +180,9 @@ DocsCollector.collect('java.lang.Double', [
  `]
 			]]
 		]],
+		[/* text */ 't', `
+
+ `],
 		[/* block */ 'b', ''],
 		[/* block */ 'b', [
 			[/* text */ 't', `For ordered comparisons using the built-in comparison operators
@@ -726,7 +729,11 @@ DocsCollector.collect('java.lang.Double', [
 
  `],
 				[/* block */ 'b', [
-					[/* inline code block */ 'i', `(int)(v^(v>>>32))`]
+					[/* text */ 't', `
+  `],
+					[/* inline code block */ 'i', `(int)(v^(v>>>32))`],
+					[/* text */ 't', `
+ `]
 				]],
 				[/* text */ 't', `
 
@@ -736,7 +743,11 @@ DocsCollector.collect('java.lang.Double', [
 
  `],
 				[/* block */ 'b', [
-					[/* inline code block */ 'i', `long v = Double.doubleToLongBits(this.doubleValue());`]
+					[/* text */ 't', `
+  `],
+					[/* inline code block */ 'i', `long v = Double.doubleToLongBits(this.doubleValue());`],
+					[/* text */ 't', `
+ `]
 				]]
 			],
 			/* parameters */ UDF,
@@ -1191,6 +1202,8 @@ DocsCollector.collect('java.lang.Double', [
  `]
 				]],
 				[/* block */ 'b', [
+					[/* text */ 't', `
+ `],
 					[/* dl */ 'dl', [
 						[/* dt */ 'dt', [
 							[/* text */ 't', `FloatValue:`],
@@ -1227,6 +1240,9 @@ DocsCollector.collect('java.lang.Double', [
  `]
 						]]
 					]],
+					[/* text */ 't', `
+
+ `],
 					[/* dl */ 'dl', [
 						[/* dt */ 'dt', [
 							[/* text */ 't', `HexFloatingPointLiteral`],
@@ -1240,6 +1256,9 @@ DocsCollector.collect('java.lang.Double', [
  `]
 						]]
 					]],
+					[/* text */ 't', `
+
+ `],
 					[/* dl */ 'dl', [
 						[/* dt */ 'dt', [
 							[/* text */ 't', `HexSignificand:`],
@@ -1277,6 +1296,9 @@ DocsCollector.collect('java.lang.Double', [
  `]
 						]]
 					]],
+					[/* text */ 't', `
+
+ `],
 					[/* dl */ 'dl', [
 						[/* dt */ 'dt', [
 							[/* text */ 't', `BinaryExponent:`],
@@ -1289,6 +1311,9 @@ DocsCollector.collect('java.lang.Double', [
  `]
 						]]
 					]],
+					[/* text */ 't', `
+
+ `],
 					[/* dl */ 'dl', [
 						[/* dt */ 'dt', [
 							[/* text */ 't', `BinaryExponentIndicator:`],
@@ -1305,7 +1330,10 @@ DocsCollector.collect('java.lang.Double', [
 							[/* text */ 't', `
  `]
 						]]
-					]]
+					]],
+					[/* text */ 't', `
+
+ `]
 				]],
 				[/* text */ 't', `
 
@@ -1632,9 +1660,15 @@ DocsCollector.collect('java.lang.Double', [
 
  `]
 							]]
-						]]
+						]],
+						[/* text */ 't', `
+
+ `]
 					]]
 				]],
+				[/* text */ 't', `
+
+ `],
 				[/* table */ 'tbl',
 					[/* caption */ 'tc', [
 						[/* text */ 't', `Examples`]
@@ -1884,7 +1918,9 @@ DocsCollector.collect('java.lang.Double', [
 								[/* text */ 't', `.
  `]
 							]]
-						]]
+						]],
+						[/* text */ 't', `
+ `]
 					]]
 				]],
 				[/* text */ 't', `

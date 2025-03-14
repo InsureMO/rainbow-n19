@@ -27,10 +27,14 @@ DocsCollector.collect('java.util.Locale$LanguageRange', [
  `]
 		]],
 		[/* block */ 'b', [
+			[/* text */ 't', `
+ `],
 			[/* code block */ 'c', `     basic-language-range    = (1*8ALPHA *("-" 1*8alphanum)) / "*"
      extended-language-range = (1*8ALPHA / "*")
                                *("-" (1*8alphanum / "*"))
      alphanum                = ALPHA / DIGIT
+ `],
+			[/* text */ 't', `
  `]
 		]],
 		[/* text */ 't', `
@@ -271,6 +275,7 @@ DocsCollector.collect('java.util.Locale$LanguageRange', [
 					[/* text */ 't', `  An example of map:
     `],
 					[/* text */ 't', `Key`],
+					[/* text */ 't', `                            `],
 					[/* text */ 't', `Value`],
 					[/* text */ 't', `
       "zh" (Chinese)                 "zh",
@@ -450,7 +455,9 @@ DocsCollector.collect('java.util.Locale$LanguageRange', [
  `]
 				]],
 				[/* code block */ 'c', [
+					[/* text */ 't', `  `],
 					[/* text */ 't', `Range`],
+					[/* text */ 't', `                                   `],
 					[/* text */ 't', `Weight`],
 					[/* text */ 't', `
     "iw" (older tag for Hebrew)             1.0

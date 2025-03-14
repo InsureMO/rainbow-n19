@@ -1075,6 +1075,9 @@ DocsCollector.collect('java.util.stream.Collectors', [
  then calls the supplied merger and returns its result.
  `]
 				]],
+				[/* text */ 't', `
+
+ `],
 				[/* block */ 'b', ''],
 				[/* block */ 'b', [
 					[/* text */ 't', `The resulting collector is `],

@@ -17,6 +17,9 @@ DocsCollector.collect('java.lang.Module', [
 			[/* reference */ 'r', `java.lang.ModuleLayer`, `module layer`],
 			[/* text */ 't', `. `]
 		]],
+		[/* text */ 't', `
+
+ `],
 		[/* block */ 'b', [
 			[/* text */ 't', ` An unnamed module does not have a name. There is an unnamed module for
  each `],
@@ -27,6 +30,9 @@ DocsCollector.collect('java.lang.Module', [
  not in a named module are members of their defining class loader's unnamed
  module. `]
 		]],
+		[/* text */ 't', `
+
+ `],
 		[/* block */ 'b', [
 			[/* text */ 't', ` The package names that are parameters or returned by methods defined in
  this class are the fully-qualified names of the packages as defined in
@@ -39,6 +45,9 @@ DocsCollector.collect('java.lang.Module', [
 			[/* inline code block */ 'i', `"java.lang"`],
 			[/* text */ 't', `. `]
 		]],
+		[/* text */ 't', `
+
+ `],
 		[/* block */ 'b', [
 			[/* text */ 't', ` Unless otherwise specified, passing a `],
 			[/* inline code block */ 'i', `null`],
@@ -141,6 +150,9 @@ DocsCollector.collect('java.lang.Module', [
 					[/* inline code block */ 'i', `true`],
 					[/* text */ 't', ` if the package is opened unconditionally. `]
 				]],
+				[/* text */ 't', `
+
+ `],
 				[/* block */ 'b', ` This method does not check if the given module reads this module. `]
 			],
 			[/* parameters */
@@ -178,6 +190,9 @@ DocsCollector.collect('java.lang.Module', [
 					[/* text */ 't', ` if the package is open to the given
  module. `]
 				]],
+				[/* text */ 't', `
+
+ `],
 				[/* block */ 'b', ` This method does not check if the given module reads this module. `]
 			],
 			[/* parameters */
@@ -230,6 +245,9 @@ DocsCollector.collect('java.lang.Module', [
 					[/* text */ 't', ` module with a package in the
  module. `]
 				]],
+				[/* text */ 't', `
+
+ `],
 				[/* block */ 'b', ` This method does not check if the given module reads this module. `]
 			],
 			[/* parameters */
@@ -270,6 +288,9 @@ DocsCollector.collect('java.lang.Module', [
 					[/* inline code block */ 'i', `true`],
 					[/* text */ 't', ` when invoked on an unnamed module. `]
 				]],
+				[/* text */ 't', `
+
+ `],
 				[/* block */ 'b', ` This method does not check if the given module reads this module. `]
 			],
 			[/* parameters */
@@ -311,6 +332,9 @@ DocsCollector.collect('java.lang.Module', [
 
  `],
 				[/* block */ 'b', `encapsulated`],
+				[/* text */ 't', `
+
+ `],
 				[/* list */ 'l', [
 					[/* block */ 'b', [
 						[/* text */ 't', ` If the resource name ends with  "`],
@@ -333,6 +357,9 @@ DocsCollector.collect('java.lang.Module', [
      package in the module then the resource is not encapsulated. `]
 					]]
 				]],
+				[/* text */ 't', `
+
+ `],
 				[/* block */ 'b', [
 					[/* text */ 't', ` In the above, the `],
 					[/* text */ 't', `package name`],
@@ -359,6 +386,9 @@ DocsCollector.collect('java.lang.Module', [
 					[/* inline code block */ 'i', `META-INF`],
 					[/* text */ 't', `" is not a legal package name. `]
 				]],
+				[/* text */ 't', `
+
+ `],
 				[/* block */ 'b', [
 					[/* text */ 't', ` This method returns `],
 					[/* inline code block */ 'i', `null`],
@@ -627,6 +657,7 @@ DocsCollector.collect('java.lang.Module', [
 
  `],
 				[/* block */ 'b', [
+					[/* text */ 't', ` `],
 					[/* reference */ 'r', `java.lang.reflect.Proxy#dynamicmodule`, `Dynamic modules`],
 					[/* text */ 't', ` are
  named modules that are generated at runtime. A dynamic module may or may
@@ -677,6 +708,9 @@ DocsCollector.collect('java.lang.Module', [
  `],
 				[/* block */ 'b', ` For named modules, the returned set contains an element for each
  package in the module. `],
+				[/* text */ 't', `
+
+ `],
 				[/* block */ 'b', [
 					[/* text */ 't', ` For unnamed modules, the returned set contains an element for
  each package that `],

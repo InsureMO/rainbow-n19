@@ -69,6 +69,9 @@ DocsCollector.collect('java.util.EnumMap', [
 		[/* code block */ 'c', `     Map<EnumKey, V> m
          = Collections.synchronizedMap(new EnumMap<EnumKey, V>(...));
  `],
+		[/* text */ 't', `
+
+ `],
 		[/* block */ 'b', ''],
 		[/* block */ 'b', [
 			[/* text */ 't', `Implementation note: All basic operations execute in constant time.

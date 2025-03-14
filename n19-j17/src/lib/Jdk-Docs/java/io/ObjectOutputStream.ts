@@ -42,7 +42,9 @@ DocsCollector.collect('java.io.ObjectOutputStream', [
 			[/* text */ 't', `For example to write an object that can be read by the example in
  ObjectInputStream:
  `],
-			[/* new line */ 'n']
+			[/* new line */ 'n'],
+			[/* text */ 't', `
+ `]
 		]],
 		[/* code block */ 'c', `      FileOutputStream fos = new FileOutputStream("t.tmp");
       ObjectOutputStream oos = new ObjectOutputStream(fos);
@@ -53,13 +55,18 @@ DocsCollector.collect('java.io.ObjectOutputStream', [
 
       oos.close();
  `],
+		[/* text */ 't', `
+
+ `],
 		[/* block */ 'b', ''],
 		[/* block */ 'b', [
 			[/* text */ 't', `Classes that require special handling during the serialization and
  deserialization process must implement special methods with these exact
  signatures:
  `],
-			[/* new line */ 'n']
+			[/* new line */ 'n'],
+			[/* text */ 't', `
+ `]
 		]],
 		[/* code block */ 'c', ` private void readObject(java.io.ObjectInputStream stream)
      throws IOException, ClassNotFoundException;
@@ -67,6 +74,9 @@ DocsCollector.collect('java.io.ObjectOutputStream', [
      throws IOException
  private void readObjectNoData()
      throws ObjectStreamException;
+ `],
+		[/* text */ 't', `
+
  `],
 		[/* block */ 'b', ''],
 		[/* block */ 'b', `The writeObject method is responsible for writing the state of the object

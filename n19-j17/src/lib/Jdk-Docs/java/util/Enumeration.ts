@@ -14,12 +14,15 @@ DocsCollector.collect('java.util.Enumeration', [
 			[/* text */ 't', `
  For example, to print all elements of a `],
 			[/* inline code block */ 'i', `Vector<E>`],
+			[/* text */ 't', ` `],
 			[/* text */ 't', `v`],
 			[/* text */ 't', `:
  `]
 		]],
 		[/* code block */ 'c', `   for (Enumeration<E> e = v.elements(); e.hasMoreElements();)
        System.out.println(e.nextElement());`],
+		[/* text */ 't', `
+ `],
 		[/* block */ 'b', ''],
 		[/* block */ 'b', [
 			[/* text */ 't', `

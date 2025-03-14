@@ -308,7 +308,11 @@ DocsCollector.collect('java.lang.Long', [
 
  `],
 				[/* block */ 'b', [
-					[/* inline code block */ 'i', `(int)(this.longValue()^(this.longValue()>>>32))`]
+					[/* text */ 't', `
+  `],
+					[/* inline code block */ 'i', `(int)(this.longValue()^(this.longValue()>>>32))`],
+					[/* text */ 't', `
+ `]
 				]]
 			],
 			/* parameters */ UDF,
@@ -576,13 +580,17 @@ DocsCollector.collect('java.lang.Long', [
 						[/* text */ 't', `floor(log`],
 						[/* text */ 't', `2`, 'sub'],
 						[/* text */ 't', `(x)) = `],
-						[/* inline code block */ 'i', `63 - numberOfLeadingZeros(x)`]
+						[/* inline code block */ 'i', `63 - numberOfLeadingZeros(x)`],
+						[/* text */ 't', `
+ `]
 					]],
 					[/* block */ 'b', [
 						[/* text */ 't', `ceil(log`],
 						[/* text */ 't', `2`, 'sub'],
 						[/* text */ 't', `(x)) = `],
-						[/* inline code block */ 'i', `64 - numberOfLeadingZeros(x - 1)`]
+						[/* inline code block */ 'i', `64 - numberOfLeadingZeros(x - 1)`],
+						[/* text */ 't', `
+ `]
 					]]
 				]],
 				[/* block */ 'b', '']
@@ -659,6 +667,8 @@ DocsCollector.collect('java.lang.Long', [
 
  `],
 				[/* block */ 'b', [
+					[/* text */ 't', `
+ `],
 					[/* dl */ 'dl', [
 						[/* dt */ 'dt', [
 							[/* text */ 't', `DecodableString:`],
@@ -722,8 +732,13 @@ DocsCollector.collect('java.lang.Long', [
 							[/* text */ 't', `
  `]
 						]]
-					]]
+					]],
+					[/* text */ 't', `
+ `]
 				]],
+				[/* text */ 't', `
+
+ `],
 				[/* text */ 't', `DecimalNumeral`],
 				[/* text */ 't', `, `],
 				[/* text */ 't', `HexDigits`],
@@ -836,7 +851,11 @@ DocsCollector.collect('java.lang.Long', [
  `]
 				]],
 				[/* block */ 'b', [
-					[/* inline code block */ 'i', `getLong(nm, null)`]
+					[/* text */ 't', `
+  `],
+					[/* inline code block */ 'i', `getLong(nm, null)`],
+					[/* text */ 't', `
+ `]
 				]],
 				[/* block */ 'b', '']
 			],
@@ -914,6 +933,9 @@ DocsCollector.collect('java.lang.Long', [
  `]
 					]]
 				]],
+				[/* text */ 't', `
+
+ `],
 				[/* block */ 'b', [
 					[/* text */ 't', `Note that, in every case, neither `],
 					[/* inline code block */ 'i', `L`],
@@ -1004,7 +1026,11 @@ DocsCollector.collect('java.lang.Long', [
  `]
 				]],
 				[/* block */ 'b', [
-					[/* inline code block */ 'i', `getLong(nm, new Long(val))`]
+					[/* text */ 't', `
+  `],
+					[/* inline code block */ 'i', `getLong(nm, new Long(val))`],
+					[/* text */ 't', `
+ `]
 				]],
 				[/* text */ 't', `
 
@@ -1074,7 +1100,11 @@ DocsCollector.collect('java.lang.Long', [
  `]
 				]],
 				[/* block */ 'b', [
-					[/* inline code block */ 'i', `new Long(Long.parseLong(s))`]
+					[/* text */ 't', `
+  `],
+					[/* inline code block */ 'i', `new Long(Long.parseLong(s))`],
+					[/* text */ 't', `
+ `]
 				]],
 				[/* block */ 'b', '']
 			],
@@ -1131,7 +1161,11 @@ DocsCollector.collect('java.lang.Long', [
  `]
 				]],
 				[/* block */ 'b', [
-					[/* inline code block */ 'i', `new Long(Long.parseLong(s, radix))`]
+					[/* text */ 't', `
+  `],
+					[/* inline code block */ 'i', `new Long(Long.parseLong(s, radix))`],
+					[/* text */ 't', `
+ `]
 				]],
 				[/* block */ 'b', '']
 			],
@@ -1312,7 +1346,11 @@ DocsCollector.collect('java.lang.Long', [
  `]
 				]],
 				[/* block */ 'b', [
-					[/* inline code block */ 'i', `0123456789abcdef`]
+					[/* text */ 't', `
+  `],
+					[/* inline code block */ 'i', `0123456789abcdef`],
+					[/* text */ 't', `
+ `]
 				]],
 				[/* text */ 't', `
 
@@ -1334,7 +1372,11 @@ DocsCollector.collect('java.lang.Long', [
 
  `],
 				[/* block */ 'b', [
-					[/* inline code block */ 'i', `Long.toHexString(n).toUpperCase()`]
+					[/* text */ 't', `
+  `],
+					[/* inline code block */ 'i', `Long.toHexString(n).toUpperCase()`],
+					[/* text */ 't', `
+ `]
 				]],
 				[/* block */ 'b', '']
 			],
@@ -1401,7 +1443,11 @@ DocsCollector.collect('java.lang.Long', [
  `]
 				]],
 				[/* block */ 'b', [
-					[/* inline code block */ 'i', `01234567`]
+					[/* text */ 't', `
+  `],
+					[/* inline code block */ 'i', `01234567`],
+					[/* text */ 't', `
+ `]
 				]],
 				[/* text */ 't', `
 
@@ -1499,7 +1545,11 @@ DocsCollector.collect('java.lang.Long', [
  `]
 				]],
 				[/* block */ 'b', [
-					[/* inline code block */ 'i', `0123456789abcdefghijklmnopqrstuvwxyz`]
+					[/* text */ 't', `
+   `],
+					[/* inline code block */ 'i', `0123456789abcdefghijklmnopqrstuvwxyz`],
+					[/* text */ 't', `
+ `]
 				]],
 				[/* text */ 't', `
 
@@ -1535,7 +1585,11 @@ DocsCollector.collect('java.lang.Long', [
 
  `],
 				[/* block */ 'b', [
-					[/* inline code block */ 'i', `Long.toString(n, 16).toUpperCase()`]
+					[/* text */ 't', `
+  `],
+					[/* inline code block */ 'i', `Long.toString(n, 16).toUpperCase()`],
+					[/* text */ 't', `
+ `]
 				]],
 				[/* block */ 'b', '']
 			],
@@ -2027,6 +2081,9 @@ DocsCollector.collect('java.lang.Long', [
  `]
 					]]
 				]],
+				[/* text */ 't', `
+
+ `],
 				[/* block */ 'b', ''],
 				[/* block */ 'b', `Examples:
  `],

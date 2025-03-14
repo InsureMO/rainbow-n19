@@ -23,6 +23,9 @@ DocsCollector.collect('java.lang.module.ModuleDescriptor', [
 			[/* reference */ 'r', `#read(java.io.InputStream,java.util.function.Supplier)`, `read`],
 			[/* text */ 't', ` methods defined here. `]
 		]],
+		[/* text */ 't', `
+
+ `],
 		[/* block */ 'b', [
 			[/* text */ 't', ` A module descriptor describes a `],
 			[/* text */ 't', `normal`],
@@ -58,7 +61,11 @@ DocsCollector.collect('java.lang.module.ModuleDescriptor', [
  in the Java virtual machine then it reads every unnamed module and is
  treated as if all packages are exported and open. `]
 		]],
+		[/* text */ 't', `
+
+ `],
 		[/* block */ 'b', [
+			[/* text */ 't', ` `],
 			[/* inline code block */ 'i', `ModuleDescriptor`],
 			[/* text */ 't', ` objects are immutable and safe for use by
  multiple concurrent threads.`]
@@ -81,6 +88,9 @@ DocsCollector.collect('java.lang.module.ModuleDescriptor', [
 					[/* text */ 't', `. Two module descriptors are equal if each
  of their corresponding components is equal. `]
 				]],
+				[/* text */ 't', `
+
+ `],
 				[/* block */ 'b', [
 					[/* text */ 't', ` This method satisfies the general contract of the `],
 					[/* reference */ 'r', `java.lang.Object#equals(java.lang.Object)`, `Object.equals`],
@@ -106,6 +116,9 @@ DocsCollector.collect('java.lang.module.ModuleDescriptor', [
 					[/* inline code block */ 'i', `true`],
 					[/* text */ 't', ` if this is an automatic module. `]
 				]],
+				[/* text */ 't', `
+
+ `],
 				[/* block */ 'b', [
 					[/* text */ 't', ` This method is equivalent to testing if the set of `],
 					[/* reference */ 'r', `#modifiers()`, `modifiers`],
@@ -128,6 +141,9 @@ DocsCollector.collect('java.lang.module.ModuleDescriptor', [
 					[/* inline code block */ 'i', `true`],
 					[/* text */ 't', ` if this is an open module. `]
 				]],
+				[/* text */ 't', `
+
+ `],
 				[/* block */ 'b', [
 					[/* text */ 't', ` This method is equivalent to testing if the set of `],
 					[/* reference */ 'r', `#modifiers()`, `modifiers`],
@@ -286,6 +302,9 @@ DocsCollector.collect('java.lang.module.ModuleDescriptor', [
 					[/* text */ 't', ` objects representing the exported
  packages. `]
 				]],
+				[/* text */ 't', `
+
+ `],
 				[/* block */ 'b', ` If this module is an automatic module then the set of exports
  is empty. `]
 			],
@@ -313,6 +332,9 @@ DocsCollector.collect('java.lang.module.ModuleDescriptor', [
 					[/* text */ 't', ` objects representing the open
  packages. `]
 				]],
+				[/* text */ 't', `
+
+ `],
 				[/* block */ 'b', ` If this module is an open module or an automatic module then the
  set of open packages is empty. `]
 			],
@@ -346,6 +368,9 @@ DocsCollector.collect('java.lang.module.ModuleDescriptor', [
 					[/* text */ 't', ` objects representing the module
  dependences. `]
 				]],
+				[/* text */ 't', `
+
+ `],
 				[/* block */ 'b', [
 					[/* text */ 't', ` The set includes a dependency on "`],
 					[/* inline code block */ 'i', `java.base`],
@@ -385,6 +410,9 @@ DocsCollector.collect('java.lang.module.ModuleDescriptor', [
 		[/* method */ 'uses()', [
 			[/* method description */
 				[/* block */ 'b', ` Returns the set of service dependences. `],
+				[/* text */ 't', `
+
+ `],
 				[/* block */ 'b', ` If this module is an automatic module then the set of service
  dependences is empty. `]
 			],
@@ -449,6 +477,9 @@ DocsCollector.collect('java.lang.module.ModuleDescriptor', [
 					[/* reference */ 'r', `java.io.IOException`, `IOException`],
 					[/* text */ 't', ` cause will be re-thrown. `]
 				]],
+				[/* text */ 't', `
+
+ `],
 				[/* block */ 'b', [
 					[/* text */ 't', ` If there are bytes following the module descriptor then it is
  implementation specific as to whether those bytes are read, ignored,
@@ -540,6 +571,9 @@ DocsCollector.collect('java.lang.module.ModuleDescriptor', [
 					[/* reference */ 'r', `java.io.IOException`, `IOException`],
 					[/* text */ 't', ` cause will be re-thrown. `]
 				]],
+				[/* text */ 't', `
+
+ `],
 				[/* block */ 'b', [
 					[/* text */ 't', ` The module descriptor is read from the buffer starting at index
  `],
@@ -556,6 +590,9 @@ DocsCollector.collect('java.lang.module.ModuleDescriptor', [
 					[/* text */ 't', ` is the number of bytes
  read from the buffer. `]
 				]],
+				[/* text */ 't', `
+
+ `],
 				[/* block */ 'b', [
 					[/* text */ 't', ` If there are bytes following the module descriptor then it is
  implementation specific as to whether those bytes are read, ignored,

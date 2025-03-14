@@ -34,6 +34,9 @@ DocsCollector.collect('java.lang.module.Configuration', [
 			[/* text */ 't', `
  configurations. `]
 		]],
+		[/* text */ 't', `
+
+ `],
 		[/* block */ 'b', [
 			[/* text */ 't', ` Configuration defines the `],
 			[/* reference */ 'r', `#resolve(java.lang.module.ModuleFinder,java.util.List,java.lang.module.ModuleFinder,java.util.Collection)`, `resolve`],
@@ -45,6 +48,9 @@ DocsCollector.collect('java.lang.module.Configuration', [
  with the receiver as the parent configuration. The static methods are for
  more advanced cases where there can be more than one parent configuration. `]
 		]],
+		[/* text */ 't', `
+
+ `],
 		[/* block */ 'b', [
 			[/* text */ 't', ` Each `],
 			[/* reference */ 'r', `java.lang.ModuleLayer`, `layer`],
@@ -56,7 +62,13 @@ DocsCollector.collect('java.lang.module.Configuration', [
 			[/* text */ 't', `. The configuration for the boot layer
  will often be the parent when creating new configurations. `]
 		]],
+		[/* text */ 't', `
+
+ `],
 		[/* block */ 'b', ` Example `],
+		[/* text */ 't', `
+
+ `],
 		[/* block */ 'b', [
 			[/* text */ 't', ` The following example uses the `],
 			[/* reference */ 'r', `#resolve(java.lang.module.ModuleFinder,java.lang.module.ModuleFinder,java.util.Collection)`, `resolve`],
@@ -67,6 +79,9 @@ DocsCollector.collect('java.lang.module.Configuration', [
  parent configuration. It prints the name of each resolved module and the
  names of the modules that each module reads. `]
 		]],
+		[/* text */ 't', `
+
+ `],
 		[/* code block */ 'c', [
 			[/* inline code block */ 'i', `ModuleFinder finder = ModuleFinder.of(dir1, dir2, dir3);
 
@@ -99,6 +114,7 @@ DocsCollector.collect('java.lang.module.Configuration', [
  invoking:
  `],
 				[/* code block */ 'c', [
+					[/* text */ 't', ` `],
 					[/* inline code block */ 'i', `Configuration.resolve(before, List.of(cf), after, roots);`]
 				]]
 			],
@@ -157,6 +173,7 @@ DocsCollector.collect('java.lang.module.Configuration', [
  this method is equivalent to invoking:
  `],
 				[/* code block */ 'c', [
+					[/* text */ 't', ` `],
 					[/* inline code block */ 'i', `Configuration.resolveAndBind(before, List.of(cf), after, roots);`]
 				]]
 			],
@@ -298,9 +315,15 @@ DocsCollector.collect('java.lang.module.Configuration', [
  or dependences that are located in a parent configuration are resolved
  no further and are not included in the resulting configuration. `]
 				]],
+				[/* text */ 't', `
+
+ `],
 				[/* block */ 'b', ` When all modules have been enumerated then a readability graph
  is computed, and in conjunction with the module exports and service use,
  checked for consistency. `],
+				[/* text */ 't', `
+
+ `],
 				[/* block */ 'b', [
 					[/* text */ 't', ` Resolution may fail with `],
 					[/* inline code block */ 'i', `FindException`],
@@ -309,6 +332,9 @@ DocsCollector.collect('java.lang.module.Configuration', [
 					[/* text */ 't', `observability-related`],
 					[/* text */ 't', ` reasons: `]
 				]],
+				[/* text */ 't', `
+
+ `],
 				[/* list */ 'l', [
 					[/* block */ 'b', [
 						[/* block */ 'b', ` A root module, or a direct or transitive dependency, is not
@@ -325,12 +351,18 @@ DocsCollector.collect('java.lang.module.Configuration', [
 						]]
 					]]
 				]],
+				[/* text */ 't', `
+
+ `],
 				[/* block */ 'b', [
 					[/* text */ 't', ` Resolution may fail with `],
 					[/* inline code block */ 'i', `ResolutionException`],
 					[/* text */ 't', ` if any of the
  following consistency checks fail: `]
 				]],
+				[/* text */ 't', `
+
+ `],
 				[/* list */ 'l', [
 					[/* block */ 'b', [
 						[/* block */ 'b', [
@@ -449,6 +481,9 @@ DocsCollector.collect('java.lang.module.Configuration', [
 					[/* text */ 't', ` except that the graph of resolved modules is augmented
  with modules induced by the service-use dependence relation. `]
 				]],
+				[/* text */ 't', `
+
+ `],
 				[/* block */ 'b', [
 					[/* anchor */ 'r', '#-id', `service-binding`, ``],
 					[/* text */ 't', `More specifically, the root modules are
@@ -468,6 +503,9 @@ DocsCollector.collect('java.lang.module.Configuration', [
  service-use dependences and so the process works iteratively until no
  more modules are added. `]
 				]],
+				[/* text */ 't', `
+
+ `],
 				[/* block */ 'b', [
 					[/* text */ 't', ` As service binding involves resolution then it may fail with `],
 					[/* inline code block */ 'i', `FindException`],

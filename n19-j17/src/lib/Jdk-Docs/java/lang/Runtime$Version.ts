@@ -11,6 +11,9 @@ DocsCollector.collect('java.lang.Runtime$Version', [
 		[/* block */ 'b', [
 			[/* anchor */ 'r', '#-id', `verNum`, `Version numbers`]
 		]],
+		[/* text */ 't', `
+
+ `],
 		[/* block */ 'b', [
 			[/* text */ 't', ` A `],
 			[/* text */ 't', `version number`],
@@ -22,19 +25,32 @@ DocsCollector.collect('java.lang.Runtime$Version', [
  element in a version number must not be zero.  When an element is
  incremented, all subsequent elements are removed.  The format is: `]
 		]],
+		[/* text */ 't', `
+
+ `],
 		[/* block */ 'b', [
 			[/* code block */ 'c', ` [1-9][0-9]*((\\.0)*\\.[1-9][0-9]*)*
  `]
 		]],
+		[/* text */ 't', `
+
+ `],
 		[/* block */ 'b', ` The sequence may be of arbitrary length but the first four elements
  are assigned specific meanings, as follows:`],
+		[/* text */ 't', `
+
+ `],
 		[/* block */ 'b', [
 			[/* code block */ 'c', ` $FEATURE.$INTERIM.$UPDATE.$PATCH
  `]
 		]],
+		[/* text */ 't', `
+
+ `],
 		[/* list */ 'l', [
 			[/* block */ 'b', [
 				[/* block */ 'b', [
+					[/* text */ 't', ` `],
 					[/* anchor */ 'r', '#-id', `FEATURE`, `$FEATURE`],
 					[/* text */ 't', ` — The
  feature-release counter, incremented for every feature release
@@ -46,6 +62,7 @@ DocsCollector.collect('java.lang.Runtime$Version', [
 			]],
 			[/* block */ 'b', [
 				[/* block */ 'b', [
+					[/* text */ 't', ` `],
 					[/* anchor */ 'r', '#-id', `INTERIM`, `$INTERIM`],
 					[/* text */ 't', ` — The
  interim-release counter, incremented for non-feature releases that
@@ -56,6 +73,7 @@ DocsCollector.collect('java.lang.Runtime$Version', [
 			]],
 			[/* block */ 'b', [
 				[/* block */ 'b', [
+					[/* text */ 't', ` `],
 					[/* anchor */ 'r', '#-id', `UPDATE`, `$UPDATE`],
 					[/* text */ 't', ` — The update-release
  counter, incremented for compatible update releases that fix security
@@ -64,6 +82,7 @@ DocsCollector.collect('java.lang.Runtime$Version', [
 			]],
 			[/* block */ 'b', [
 				[/* block */ 'b', [
+					[/* text */ 't', ` `],
 					[/* anchor */ 'r', '#-id', `PATCH`, `$PATCH`],
 					[/* text */ 't', ` — The emergency
  patch-release counter, incremented only when it's necessary to produce
@@ -71,12 +90,21 @@ DocsCollector.collect('java.lang.Runtime$Version', [
 				]]
 			]]
 		]],
+		[/* text */ 't', `
+
+ `],
 		[/* block */ 'b', ` The fifth and later elements of a version number are free for use by
  platform implementors, to identify implementor-specific patch
  releases. `],
+		[/* text */ 't', `
+
+ `],
 		[/* block */ 'b', ` A version number never has trailing zero elements.  If an element
  and all those that follow it logically have the value zero then all of
  them are omitted. `],
+		[/* text */ 't', `
+
+ `],
 		[/* block */ 'b', [
 			[/* text */ 't', ` The sequence of numerals in a version number is compared to another
  such sequence in numerical, pointwise fashion; `],
@@ -96,9 +124,15 @@ DocsCollector.collect('java.lang.Runtime$Version', [
 			[/* inline code block */ 'i', `10.0.2.1`],
 			[/* text */ 't', `. `]
 		]],
+		[/* text */ 't', `
+
+ `],
 		[/* block */ 'b', [
 			[/* anchor */ 'r', '#-id', `verStr`, `Version strings`]
 		]],
+		[/* text */ 't', `
+
+ `],
 		[/* block */ 'b', [
 			[/* text */ 't', ` A `],
 			[/* text */ 't', `version string`],
@@ -109,16 +143,26 @@ DocsCollector.collect('java.lang.Runtime$Version', [
 			[/* text */ 't', `, as described above, optionally followed by pre-release and build
  information, in one of the following formats: `]
 		]],
+		[/* text */ 't', `
+
+ `],
 		[/* block */ 'b', [
 			[/* code block */ 'c', `     $VNUM(-$PRE)?\\+$BUILD(-$OPT)?
      $VNUM-$PRE(-$OPT)?
      $VNUM(\\+-$OPT)?
  `]
 		]],
+		[/* text */ 't', `
+
+ `],
 		[/* block */ 'b', ` where: `],
+		[/* text */ 't', `
+
+ `],
 		[/* list */ 'l', [
 			[/* block */ 'b', [
 				[/* block */ 'b', [
+					[/* text */ 't', ` `],
 					[/* anchor */ 'r', '#-id', `pre`, `$PRE`],
 					[/* text */ 't', `, matching `],
 					[/* inline code block */ 'i', `([a-zA-Z0-9]+)`],
@@ -134,6 +178,7 @@ DocsCollector.collect('java.lang.Runtime$Version', [
 			]],
 			[/* block */ 'b', [
 				[/* block */ 'b', [
+					[/* text */ 't', ` `],
 					[/* anchor */ 'r', '#-id', `build`, `$BUILD`],
 					[/* text */ 't', `, matching `],
 					[/* inline code block */ 'i', `(0|[1-9][0-9]*)`],
@@ -149,6 +194,7 @@ DocsCollector.collect('java.lang.Runtime$Version', [
 			]],
 			[/* block */ 'b', [
 				[/* block */ 'b', [
+					[/* text */ 't', ` `],
 					[/* anchor */ 'r', '#-id', `opt`, `$OPT`],
 					[/* text */ 't', `, matching `],
 					[/* inline code block */ 'i', `([-a-zA-Z0-9.]+)`],
@@ -161,6 +207,9 @@ DocsCollector.collect('java.lang.Runtime$Version', [
 				]]
 			]]
 		]],
+		[/* text */ 't', `
+
+ `],
 		[/* block */ 'b', [
 			[/* text */ 't', ` A version string `],
 			[/* inline code block */ 'i', `10-ea`],
@@ -178,6 +227,9 @@ DocsCollector.collect('java.lang.Runtime$Version', [
 			[/* inline code block */ 'i', `$OPT = "ea"`],
 			[/* text */ 't', `. `]
 		]],
+		[/* text */ 't', `
+
+ `],
 		[/* block */ 'b', [
 			[/* text */ 't', ` When comparing two version strings, the value of `],
 			[/* inline code block */ 'i', `$OPT`],
@@ -194,6 +246,9 @@ DocsCollector.collect('java.lang.Runtime$Version', [
 			[/* reference */ 'r', `#equalsIgnoreOptional(java.lang.Object)`, `equalsIgnoreOptional()`],
 			[/* text */ 't', `.  `]
 		]],
+		[/* text */ 't', `
+
+ `],
 		[/* block */ 'b', [
 			[/* text */ 't', ` A `],
 			[/* text */ 't', `short version string`],
@@ -203,10 +258,16 @@ DocsCollector.collect('java.lang.Runtime$Version', [
  less formal contexts, is a version number optionally followed by a
  pre-release identifier:`]
 		]],
+		[/* text */ 't', `
+
+ `],
 		[/* block */ 'b', [
 			[/* code block */ 'c', `     $VNUM(-$PRE)?
  `]
 		]],
+		[/* text */ 't', `
+
+ `],
 		[/* block */ 'b', [
 			[/* text */ 't', `This is a `],
 			[/* text */ 't', `value-based`],
@@ -298,17 +359,29 @@ DocsCollector.collect('java.lang.Runtime$Version', [
  pre-release identifiers, build numbers, optional build information.
  `]
 				]],
+				[/* text */ 't', `
+
+ `],
 				[/* block */ 'b', ` Comparison begins by examining the sequence of version numbers.
  If one sequence is shorter than another, then the missing elements
  of the shorter sequence are considered to be less than the
  corresponding elements of the longer sequence. `],
+				[/* text */ 't', `
+
+ `],
 				[/* block */ 'b', ` A version with a pre-release identifier is always considered to
  be less than a version without one.  Pre-release identifiers are
  compared numerically when they consist only of digits, and
  lexicographically otherwise.  Numeric identifiers are considered to
  be less than non-numeric identifiers.  `],
+				[/* text */ 't', `
+
+ `],
 				[/* block */ 'b', ` A version without a build number is always less than one with a
  build number; otherwise build numbers are compared numerically. `],
+				[/* text */ 't', `
+
+ `],
 				[/* block */ 'b', ` The optional build information is compared lexicographically.
  During this comparison, a version with optional build information is
  considered to be greater than a version without one. `]
@@ -346,6 +419,9 @@ DocsCollector.collect('java.lang.Runtime$Version', [
 					[/* text */ 't', ` with the exception that the
  optional build information is always ignored. `]
 				]],
+				[/* text */ 't', `
+
+ `],
 				[/* block */ 'b', [
 					[/* text */ 't', ` This method provides ordering which is consistent with
  `],

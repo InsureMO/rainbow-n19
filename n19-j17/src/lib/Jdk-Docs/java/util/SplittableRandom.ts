@@ -72,6 +72,9 @@ DocsCollector.collect('java.util.SplittableRandom', [
 				[/* text */ 't', ` mode.`]
 			]]
 		]],
+		[/* text */ 't', `
+
+ `],
 		[/* block */ 'b', [
 			[/* text */ 't', `Instances of `],
 			[/* inline code block */ 'i', `SplittableRandom`],
@@ -83,6 +86,8 @@ DocsCollector.collect('java.util.SplittableRandom', [
  default-constructed instances do not use a cryptographically random
  seed unless the `],
 			[/* reference */ 'r', `java.lang.System#getProperty(java.lang.String)`, `system property`],
+			[/* text */ 't', `
+ `],
 			[/* inline code block */ 'i', `java.util.secureRandomSeed`],
 			[/* text */ 't', ` is set to `],
 			[/* inline code block */ 'i', `true`],

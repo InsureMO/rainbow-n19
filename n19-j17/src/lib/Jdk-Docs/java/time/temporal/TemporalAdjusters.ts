@@ -93,7 +93,9 @@ DocsCollector.collect('java.time.temporal.TemporalAdjusters', [
 					[/* new line */ 'n'],
 					[/* text */ 't', `
  The input 2011-12-15 for (0,TUESDAY) will return 2011-11-29 (last in previous month).`],
-					[/* new line */ 'n']
+					[/* new line */ 'n'],
+					[/* text */ 't', `
+ `]
 				]],
 				[/* block */ 'b', `
  For a positive or zero ordinal, the algorithm is equivalent to finding the first
@@ -231,7 +233,9 @@ DocsCollector.collect('java.time.temporal.TemporalAdjusters', [
 					[/* new line */ 'n'],
 					[/* text */ 't', `
  The input 2011-02-15 will return 2011-01-01.`],
-					[/* new line */ 'n']
+					[/* new line */ 'n'],
+					[/* text */ 't', `
+ `]
 				]],
 				[/* block */ 'b', `
  The behavior is suitable for use with most calendar systems.
@@ -262,7 +266,9 @@ DocsCollector.collect('java.time.temporal.TemporalAdjusters', [
 					[/* new line */ 'n'],
 					[/* text */ 't', `
  The input 2011-12-15 for (FRIDAY) will return 2011-12-02.`],
-					[/* new line */ 'n']
+					[/* new line */ 'n'],
+					[/* text */ 't', `
+ `]
 				]],
 				[/* block */ 'b', [
 					[/* text */ 't', `
@@ -338,7 +344,9 @@ DocsCollector.collect('java.time.temporal.TemporalAdjusters', [
 					[/* new line */ 'n'],
 					[/* text */ 't', `
  The input 2011-02-15 will return 2011-12-31.`],
-					[/* new line */ 'n']
+					[/* new line */ 'n'],
+					[/* text */ 't', `
+ `]
 				]],
 				[/* block */ 'b', `
  The behavior is suitable for use with most calendar systems.
@@ -370,7 +378,9 @@ DocsCollector.collect('java.time.temporal.TemporalAdjusters', [
 					[/* new line */ 'n'],
 					[/* text */ 't', `
  The input 2011-12-15 for (FRIDAY) will return 2011-12-30.`],
-					[/* new line */ 'n']
+					[/* new line */ 'n'],
+					[/* text */ 't', `
+ `]
 				]],
 				[/* block */ 'b', [
 					[/* text */ 't', `

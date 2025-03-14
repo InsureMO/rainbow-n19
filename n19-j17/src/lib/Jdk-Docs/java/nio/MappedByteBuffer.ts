@@ -92,6 +92,11 @@ DocsCollector.collect('java.nio.MappedByteBuffer', [
 					[/* text */ 't', `
  method. `]
 				]],
+				[/* text */ 't', `
+
+
+
+ `],
 				[/* block */ 'b', [
 					[/* text */ 't', ` Invoke this method after writing data from a buffer in case the
  write was incomplete.  The following loop, for example, copies bytes
@@ -176,6 +181,9 @@ DocsCollector.collect('java.nio.MappedByteBuffer', [
  The new buffer will be direct if, and only if, this buffer is direct, and
  it will be read-only if, and only if, this buffer is read-only.  `]
 				]],
+				[/* text */ 't', `
+
+ `],
 				[/* block */ 'b', [
 					[/* text */ 't', ` Reading bytes into physical memory by invoking `],
 					[/* inline code block */ 'i', `load()`],
@@ -230,6 +238,9 @@ DocsCollector.collect('java.nio.MappedByteBuffer', [
  The new buffer will be direct if, and only if, this buffer is direct,
  and it will be read-only if, and only if, this buffer is read-only. `]
 				]],
+				[/* text */ 't', `
+
+ `],
 				[/* block */ 'b', [
 					[/* text */ 't', ` Reading bytes into physical memory by invoking `],
 					[/* inline code block */ 'i', `load()`],
@@ -317,6 +328,9 @@ DocsCollector.collect('java.nio.MappedByteBuffer', [
 					[/* code block */ 'c', ` buf.clear();     // Prepare buffer for reading
  in.read(buf);    // Read data`]
 				]],
+				[/* text */ 't', `
+
+ `],
 				[/* block */ 'b', ''],
 				[/* block */ 'b', ` This method does not actually erase the data in the buffer, but it
  is named as if it did because it will most often be used in situations
@@ -352,6 +366,9 @@ DocsCollector.collect('java.nio.MappedByteBuffer', [
  buf.flip();        // Flip buffer
  out.write(buf);    // Write header + data to channel`]
 				]],
+				[/* text */ 't', `
+
+ `],
 				[/* block */ 'b', ''],
 				[/* block */ 'b', [
 					[/* text */ 't', ` This method is often used in conjunction with the `],

@@ -879,6 +879,7 @@ DocsCollector.collect('java.util.SimpleTimeZone', [
 					[/* text */ 't', ` on
                         or `],
 					[/* text */ 't', `after`],
+					[/* text */ 't', ` `],
 					[/* inline code block */ 'i', `endDay`],
 					[/* text */ 't', `.  If false, this rule
                         selects the last `],
@@ -1034,12 +1035,15 @@ DocsCollector.collect('java.util.SimpleTimeZone', [
 					[/* text */ 't', ` on or
                         `],
 					[/* text */ 't', `after`],
+					[/* text */ 't', ` `],
 					[/* inline code block */ 'i', `dayOfMonth`],
 					[/* text */ 't', `.  If false, this rule
                         selects the last `],
 					[/* inline code block */ 'i', `dayOfWeek`],
 					[/* text */ 't', ` on or `],
 					[/* text */ 't', `before`],
+					[/* text */ 't', `
+                        `],
 					[/* inline code block */ 'i', `dayOfMonth`],
 					[/* text */ 't', `.`]
 				]]

@@ -125,12 +125,14 @@ DocsCollector.collect('java.util.Collections', [
   `]
 				]],
 				[/* code block */ 'c', [
+					[/* text */ 't', ` `],
 					[/* inline code block */ 'i', `Collection<String> c = new HashSet<>();`]
 				]],
 				[/* text */ 't', `
  may be replaced temporarily by this one:
   `],
 				[/* code block */ 'c', [
+					[/* text */ 't', ` `],
 					[/* inline code block */ 'i', `Collection<String> c = Collections.checkedCollection(
          new HashSet<>(), String.class);`]
 				]],
@@ -299,6 +301,7 @@ DocsCollector.collect('java.util.Collections', [
  navigable set:
  `],
 				[/* code block */ 'c', [
+					[/* text */ 't', ` `],
 					[/* inline code block */ 'i', `NavigableSet<String> s = Collections.emptyNavigableSet();`]
 				]],
 				[/* block */ 'b', '']
@@ -537,6 +540,7 @@ DocsCollector.collect('java.util.Collections', [
  sorted set:
  `],
 				[/* code block */ 'c', [
+					[/* text */ 't', ` `],
 					[/* inline code block */ 'i', `SortedSet<String> s = Collections.emptySortedSet();`]
 				]],
 				[/* block */ 'b', '']
@@ -1627,6 +1631,7 @@ DocsCollector.collect('java.util.Collections', [
 						[/* text */ 't', `.`]
 					]],
 					[/* block */ 'b', [
+						[/* text */ 't', ` `],
 						[/* reference */ 'r', `java.util.Enumeration#nextElement()`, `nextElement`],
 						[/* text */ 't', ` always throws
  `],
@@ -1634,6 +1639,9 @@ DocsCollector.collect('java.util.Collections', [
 						[/* text */ 't', `.`]
 					]]
 				]],
+				[/* text */ 't', `
+
+ `],
 				[/* block */ 'b', `Implementations of this method are permitted, but not
  required, to return the same object from multiple invocations.`]
 			],
@@ -1694,6 +1702,9 @@ DocsCollector.collect('java.util.Collections', [
 						[/* text */ 't', `.`]
 					]]
 				]],
+				[/* text */ 't', `
+
+ `],
 				[/* block */ 'b', `Implementations of this method are permitted, but not
  required, to return the same object from multiple invocations.`]
 			],
@@ -1881,6 +1892,9 @@ DocsCollector.collect('java.util.Collections', [
 						[/* text */ 't', `.`]
 					]]
 				]],
+				[/* text */ 't', `
+
+ `],
 				[/* block */ 'b', `Implementations of this method are permitted, but not
  required, to return the same object from multiple invocations.`]
 			],
@@ -2566,6 +2580,7 @@ DocsCollector.collect('java.util.Collections', [
 				[/* block */ 'b', `This example illustrates the type-safe way to obtain an empty map:
  `],
 				[/* code block */ 'c', [
+					[/* text */ 't', ` `],
 					[/* inline code block */ 'i', `NavigableMap<String, Date> s = Collections.emptyNavigableMap();`]
 				]],
 				[/* block */ 'b', '']
@@ -2584,6 +2599,7 @@ DocsCollector.collect('java.util.Collections', [
 				[/* block */ 'b', `This example illustrates the type-safe way to obtain an empty map:
  `],
 				[/* code block */ 'c', [
+					[/* text */ 't', ` `],
 					[/* inline code block */ 'i', `SortedMap<String, Date> s = Collections.emptySortedMap();`]
 				]],
 				[/* block */ 'b', '']

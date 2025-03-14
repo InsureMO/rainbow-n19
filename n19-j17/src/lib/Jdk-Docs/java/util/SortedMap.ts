@@ -123,6 +123,9 @@ DocsCollector.collect('java.util.SortedMap', [
    ordering as the input sorted map.`]
 			]]
 		]],
+		[/* text */ 't', `
+
+ `],
 		[/* block */ 'b', ''],
 		[/* block */ 'b', [
 			[/* text */ 't', `Note`],
@@ -169,6 +172,9 @@ DocsCollector.collect('java.util.SortedMap', [
 		[/* inline code block */ 'i', `high`],
 		[/* text */ 't', `, exclusive:`],
 		[/* code block */ 'c', `   SortedMap<String, V> sub = m.subMap(low+"\\0", high);`],
+		[/* text */ 't', `
+
+ `],
 		[/* block */ 'b', ''],
 		[/* block */ 'b', [
 			[/* text */ 't', `This interface is a member of the

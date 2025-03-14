@@ -26,6 +26,8 @@ DocsCollector.collect('java.lang.Character', [
 		[/* block */ 'b', [
 			[/* anchor */ 'r', '#-id', `conformance`, `Unicode Conformance`]
 		]],
+		[/* text */ 't', `
+ `],
 		[/* block */ 'b', [
 			[/* text */ 't', `
  The fields and methods of class `],
@@ -162,6 +164,9 @@ DocsCollector.collect('java.lang.Character', [
 		[/* block */ 'b', [
 			[/* anchor */ 'r', '#-id', `unicode`, `Unicode Character Representations`]
 		]],
+		[/* text */ 't', `
+
+ `],
 		[/* block */ 'b', [
 			[/* text */ 't', `The `],
 			[/* inline code block */ 'i', `char`],
@@ -276,6 +281,9 @@ DocsCollector.collect('java.lang.Character', [
  `]
 			]]
 		]],
+		[/* text */ 't', `
+
+ `],
 		[/* block */ 'b', ''],
 		[/* block */ 'b', [
 			[/* text */ 't', `In the Java SE API documentation, `],
@@ -947,22 +955,40 @@ DocsCollector.collect('java.lang.Character', [
 				]],
 				[/* list */ 'l', [
 					[/* block */ 'b', [
-						[/* inline code block */ 'i', `UPPERCASE_LETTER`]
+						[/* text */ 't', ` `],
+						[/* inline code block */ 'i', `UPPERCASE_LETTER`],
+						[/* text */ 't', `
+ `]
 					]],
 					[/* block */ 'b', [
-						[/* inline code block */ 'i', `LOWERCASE_LETTER`]
+						[/* text */ 't', ` `],
+						[/* inline code block */ 'i', `LOWERCASE_LETTER`],
+						[/* text */ 't', `
+ `]
 					]],
 					[/* block */ 'b', [
-						[/* inline code block */ 'i', `TITLECASE_LETTER`]
+						[/* text */ 't', ` `],
+						[/* inline code block */ 'i', `TITLECASE_LETTER`],
+						[/* text */ 't', `
+ `]
 					]],
 					[/* block */ 'b', [
-						[/* inline code block */ 'i', `MODIFIER_LETTER`]
+						[/* text */ 't', ` `],
+						[/* inline code block */ 'i', `MODIFIER_LETTER`],
+						[/* text */ 't', `
+ `]
 					]],
 					[/* block */ 'b', [
-						[/* inline code block */ 'i', `OTHER_LETTER`]
+						[/* text */ 't', ` `],
+						[/* inline code block */ 'i', `OTHER_LETTER`],
+						[/* text */ 't', `
+ `]
 					]],
 					[/* block */ 'b', [
-						[/* inline code block */ 'i', `LETTER_NUMBER`]
+						[/* text */ 't', ` `],
+						[/* inline code block */ 'i', `LETTER_NUMBER`],
+						[/* text */ 't', `
+ `]
 					]]
 				]],
 				[/* text */ 't', `
@@ -1026,6 +1052,9 @@ DocsCollector.collect('java.lang.Character', [
 					[/* block */ 'b', `It has a value in a range defined by the UnicodeData file.
  `]
 				]],
+				[/* text */ 't', `
+
+ `],
 				[/* block */ 'b', ''],
 				[/* block */ 'b', [
 					[/* text */ 't', `Note:`],
@@ -1322,19 +1351,28 @@ DocsCollector.collect('java.lang.Character', [
 							[/* block */ 'b', [
 								[/* inline code block */ 'i', `'\\u0000'`],
 								[/* text */ 't', ` through `],
-								[/* inline code block */ 'i', `'\\u0008'`]
+								[/* inline code block */ 'i', `'\\u0008'`],
+								[/* text */ 't', `
+ `]
 							]],
 							[/* block */ 'b', [
 								[/* inline code block */ 'i', `'\\u000E'`],
 								[/* text */ 't', ` through `],
-								[/* inline code block */ 'i', `'\\u001B'`]
+								[/* inline code block */ 'i', `'\\u001B'`],
+								[/* text */ 't', `
+ `]
 							]],
 							[/* block */ 'b', [
 								[/* inline code block */ 'i', `'\\u007F'`],
 								[/* text */ 't', ` through `],
-								[/* inline code block */ 'i', `'\\u009F'`]
+								[/* inline code block */ 'i', `'\\u009F'`],
+								[/* text */ 't', `
+ `]
 							]]
-						]]
+						]],
+						[/* text */ 't', `
+
+ `]
 					]],
 					[/* block */ 'b', [
 						[/* text */ 't', `all characters that have the `],
@@ -1344,6 +1382,9 @@ DocsCollector.collect('java.lang.Character', [
  `]
 					]]
 				]],
+				[/* text */ 't', `
+
+ `],
 				[/* block */ 'b', ''],
 				[/* block */ 'b', [
 					[/* text */ 't', `Note:`],
@@ -1388,19 +1429,28 @@ DocsCollector.collect('java.lang.Character', [
 							[/* block */ 'b', [
 								[/* inline code block */ 'i', `'\\u0000'`],
 								[/* text */ 't', ` through `],
-								[/* inline code block */ 'i', `'\\u0008'`]
+								[/* inline code block */ 'i', `'\\u0008'`],
+								[/* text */ 't', `
+ `]
 							]],
 							[/* block */ 'b', [
 								[/* inline code block */ 'i', `'\\u000E'`],
 								[/* text */ 't', ` through `],
-								[/* inline code block */ 'i', `'\\u001B'`]
+								[/* inline code block */ 'i', `'\\u001B'`],
+								[/* text */ 't', `
+ `]
 							]],
 							[/* block */ 'b', [
 								[/* inline code block */ 'i', `'\\u007F'`],
 								[/* text */ 't', ` through `],
-								[/* inline code block */ 'i', `'\\u009F'`]
+								[/* inline code block */ 'i', `'\\u009F'`],
+								[/* text */ 't', `
+ `]
 							]]
-						]]
+						]],
+						[/* text */ 't', `
+
+ `]
 					]],
 					[/* block */ 'b', [
 						[/* text */ 't', `all characters that have the `],
@@ -1552,6 +1602,7 @@ DocsCollector.collect('java.lang.Character', [
 					[/* block */ 'b', `  it is a non-spacing mark
  `],
 					[/* block */ 'b', [
+						[/* text */ 't', ` `],
 						[/* inline code block */ 'i', `isIdentifierIgnorable`],
 						[/* text */ 't', ` returns
  `],
@@ -1560,6 +1611,9 @@ DocsCollector.collect('java.lang.Character', [
  `]
 					]]
 				]],
+				[/* text */ 't', `
+
+ `],
 				[/* block */ 'b', ''],
 				[/* block */ 'b', [
 					[/* text */ 't', `Note:`],
@@ -1619,6 +1673,7 @@ DocsCollector.collect('java.lang.Character', [
 					[/* block */ 'b', `  it is a non-spacing mark
  `],
 					[/* block */ 'b', [
+						[/* text */ 't', ` `],
 						[/* reference */ 'r', `#isIdentifierIgnorable(int)`, `isIdentifierIgnorable(codePoint)`],
 						[/* text */ 't', ` returns `],
 						[/* inline code block */ 'i', `true`],
@@ -1654,16 +1709,23 @@ DocsCollector.collect('java.lang.Character', [
  `],
 				[/* list */ 'l', [
 					[/* block */ 'b', [
+						[/* text */ 't', ` `],
 						[/* reference */ 'r', `#isLetter(int)`, `isLetter(ch)`],
 						[/* text */ 't', ` returns `],
-						[/* inline code block */ 'i', `true`]
+						[/* inline code block */ 'i', `true`],
+						[/* text */ 't', `
+ `]
 					]],
 					[/* block */ 'b', [
+						[/* text */ 't', ` `],
 						[/* reference */ 'r', `#getType(int)`, `getType(ch)`],
 						[/* text */ 't', ` returns `],
-						[/* inline code block */ 'i', `LETTER_NUMBER`]
+						[/* inline code block */ 'i', `LETTER_NUMBER`],
+						[/* text */ 't', `
+ `]
 					]],
 					[/* block */ 'b', [
+						[/* text */ 't', ` `],
 						[/* inline code block */ 'i', `ch`],
 						[/* text */ 't', ` is a currency symbol (such as `],
 						[/* inline code block */ 'i', `'$'`],
@@ -1671,6 +1733,7 @@ DocsCollector.collect('java.lang.Character', [
  `]
 					]],
 					[/* block */ 'b', [
+						[/* text */ 't', ` `],
 						[/* inline code block */ 'i', `ch`],
 						[/* text */ 't', ` is a connecting punctuation character (such as `],
 						[/* inline code block */ 'i', `'_'`],
@@ -1678,6 +1741,9 @@ DocsCollector.collect('java.lang.Character', [
  `]
 					]]
 				]],
+				[/* text */ 't', `
+
+ `],
 				[/* block */ 'b', ''],
 				[/* block */ 'b', [
 					[/* text */ 't', `Note:`],
@@ -1715,16 +1781,22 @@ DocsCollector.collect('java.lang.Character', [
  `],
 				[/* list */ 'l', [
 					[/* block */ 'b', [
+						[/* text */ 't', ` `],
 						[/* reference */ 'r', `#isLetter(int)`, `isLetter(codePoint)`],
 						[/* text */ 't', `
       returns `],
-						[/* inline code block */ 'i', `true`]
+						[/* inline code block */ 'i', `true`],
+						[/* text */ 't', `
+ `]
 					]],
 					[/* block */ 'b', [
+						[/* text */ 't', ` `],
 						[/* reference */ 'r', `#getType(int)`, `getType(codePoint)`],
 						[/* text */ 't', `
       returns `],
-						[/* inline code block */ 'i', `LETTER_NUMBER`]
+						[/* inline code block */ 'i', `LETTER_NUMBER`],
+						[/* text */ 't', `
+ `]
 					]],
 					[/* block */ 'b', [
 						[/* text */ 't', ` the referenced character is a currency symbol (such as `],
@@ -1767,16 +1839,23 @@ DocsCollector.collect('java.lang.Character', [
  `],
 				[/* list */ 'l', [
 					[/* block */ 'b', [
+						[/* text */ 't', ` `],
 						[/* reference */ 'r', `#isLetter(int)`, `isLetter(ch)`],
 						[/* text */ 't', ` returns `],
-						[/* inline code block */ 'i', `true`]
+						[/* inline code block */ 'i', `true`],
+						[/* text */ 't', `
+ `]
 					]],
 					[/* block */ 'b', [
+						[/* text */ 't', ` `],
 						[/* reference */ 'r', `#getType(int)`, `getType(ch)`],
 						[/* text */ 't', ` returns `],
-						[/* inline code block */ 'i', `LETTER_NUMBER`]
+						[/* inline code block */ 'i', `LETTER_NUMBER`],
+						[/* text */ 't', `
+ `]
 					]],
 					[/* block */ 'b', [
+						[/* text */ 't', ` `],
 						[/* inline code block */ 'i', `ch`],
 						[/* text */ 't', ` is a currency symbol (such as `],
 						[/* inline code block */ 'i', `'$'`],
@@ -1784,6 +1863,7 @@ DocsCollector.collect('java.lang.Character', [
  `]
 					]],
 					[/* block */ 'b', [
+						[/* text */ 't', ` `],
 						[/* inline code block */ 'i', `ch`],
 						[/* text */ 't', ` is a connecting punctuation character (such as `],
 						[/* inline code block */ 'i', `'_'`],
@@ -1840,6 +1920,7 @@ DocsCollector.collect('java.lang.Character', [
 					[/* block */ 'b', `  it is a non-spacing mark
  `],
 					[/* block */ 'b', [
+						[/* text */ 't', ` `],
 						[/* inline code block */ 'i', `isIdentifierIgnorable`],
 						[/* text */ 't', ` returns
  `],
@@ -1879,19 +1960,34 @@ DocsCollector.collect('java.lang.Character', [
 				]],
 				[/* list */ 'l', [
 					[/* block */ 'b', [
-						[/* inline code block */ 'i', `UPPERCASE_LETTER`]
+						[/* text */ 't', ` `],
+						[/* inline code block */ 'i', `UPPERCASE_LETTER`],
+						[/* text */ 't', `
+ `]
 					]],
 					[/* block */ 'b', [
-						[/* inline code block */ 'i', `LOWERCASE_LETTER`]
+						[/* text */ 't', ` `],
+						[/* inline code block */ 'i', `LOWERCASE_LETTER`],
+						[/* text */ 't', `
+ `]
 					]],
 					[/* block */ 'b', [
-						[/* inline code block */ 'i', `TITLECASE_LETTER`]
+						[/* text */ 't', ` `],
+						[/* inline code block */ 'i', `TITLECASE_LETTER`],
+						[/* text */ 't', `
+ `]
 					]],
 					[/* block */ 'b', [
-						[/* inline code block */ 'i', `MODIFIER_LETTER`]
+						[/* text */ 't', ` `],
+						[/* inline code block */ 'i', `MODIFIER_LETTER`],
+						[/* text */ 't', `
+ `]
 					]],
 					[/* block */ 'b', [
-						[/* inline code block */ 'i', `OTHER_LETTER`]
+						[/* text */ 't', ` `],
+						[/* inline code block */ 'i', `OTHER_LETTER`],
+						[/* text */ 't', `
+ `]
 					]]
 				]],
 				[/* text */ 't', `
@@ -1941,19 +2037,34 @@ DocsCollector.collect('java.lang.Character', [
 				]],
 				[/* list */ 'l', [
 					[/* block */ 'b', [
-						[/* inline code block */ 'i', `UPPERCASE_LETTER`]
+						[/* text */ 't', ` `],
+						[/* inline code block */ 'i', `UPPERCASE_LETTER`],
+						[/* text */ 't', `
+ `]
 					]],
 					[/* block */ 'b', [
-						[/* inline code block */ 'i', `LOWERCASE_LETTER`]
+						[/* text */ 't', ` `],
+						[/* inline code block */ 'i', `LOWERCASE_LETTER`],
+						[/* text */ 't', `
+ `]
 					]],
 					[/* block */ 'b', [
-						[/* inline code block */ 'i', `TITLECASE_LETTER`]
+						[/* text */ 't', ` `],
+						[/* inline code block */ 'i', `TITLECASE_LETTER`],
+						[/* text */ 't', `
+ `]
 					]],
 					[/* block */ 'b', [
-						[/* inline code block */ 'i', `MODIFIER_LETTER`]
+						[/* text */ 't', ` `],
+						[/* inline code block */ 'i', `MODIFIER_LETTER`],
+						[/* text */ 't', `
+ `]
 					]],
 					[/* block */ 'b', [
-						[/* inline code block */ 'i', `OTHER_LETTER`]
+						[/* text */ 't', ` `],
+						[/* inline code block */ 'i', `OTHER_LETTER`],
+						[/* text */ 't', `
+ `]
 					]]
 				]],
 				[/* text */ 't', `
@@ -2079,6 +2190,8 @@ DocsCollector.collect('java.lang.Character', [
  '\\u00F8' '\\u00F9' '\\u00FA' '\\u00FB' '\\u00FC' '\\u00FD' '\\u00FE' '\\u00FF'
  `]
 				]],
+				[/* text */ 't', `
+ `],
 				[/* block */ 'b', ''],
 				[/* block */ 'b', ` Many other Unicode characters are lowercase too.
 
@@ -2136,6 +2249,8 @@ DocsCollector.collect('java.lang.Character', [
  '\\u00F8' '\\u00F9' '\\u00FA' '\\u00FB' '\\u00FC' '\\u00FD' '\\u00FE' '\\u00FF'
  `]
 				]],
+				[/* text */ 't', `
+ `],
 				[/* block */ 'b', ''],
 				[/* block */ 'b', ` Many other Unicode characters are lowercase too.`]
 			],
@@ -2381,15 +2496,27 @@ DocsCollector.collect('java.lang.Character', [
  `],
 				[/* list */ 'l', [
 					[/* block */ 'b', [
-						[/* inline code block */ 'i', `SPACE_SEPARATOR`]
+						[/* text */ 't', ` `],
+						[/* inline code block */ 'i', `SPACE_SEPARATOR`],
+						[/* text */ 't', `
+ `]
 					]],
 					[/* block */ 'b', [
-						[/* inline code block */ 'i', `LINE_SEPARATOR`]
+						[/* text */ 't', ` `],
+						[/* inline code block */ 'i', `LINE_SEPARATOR`],
+						[/* text */ 't', `
+ `]
 					]],
 					[/* block */ 'b', [
-						[/* inline code block */ 'i', `PARAGRAPH_SEPARATOR`]
+						[/* text */ 't', ` `],
+						[/* inline code block */ 'i', `PARAGRAPH_SEPARATOR`],
+						[/* text */ 't', `
+ `]
 					]]
 				]],
+				[/* text */ 't', `
+
+ `],
 				[/* block */ 'b', [
 					[/* text */ 't', `Note:`],
 					[/* text */ 't', ` This method cannot handle `],
@@ -2426,13 +2553,22 @@ DocsCollector.collect('java.lang.Character', [
  `],
 				[/* list */ 'l', [
 					[/* block */ 'b', [
-						[/* text */ 't', `SPACE_SEPARATOR`]
+						[/* text */ 't', ` `],
+						[/* text */ 't', `SPACE_SEPARATOR`],
+						[/* text */ 't', `
+ `]
 					]],
 					[/* block */ 'b', [
-						[/* text */ 't', `LINE_SEPARATOR`]
+						[/* text */ 't', ` `],
+						[/* text */ 't', `LINE_SEPARATOR`],
+						[/* text */ 't', `
+ `]
 					]],
 					[/* block */ 'b', [
-						[/* text */ 't', `PARAGRAPH_SEPARATOR`]
+						[/* text */ 't', ` `],
+						[/* text */ 't', `PARAGRAPH_SEPARATOR`],
+						[/* text */ 't', `
+ `]
 					]]
 				]]
 			],
@@ -2601,18 +2737,28 @@ DocsCollector.collect('java.lang.Character', [
 				]],
 				[/* list */ 'l', [
 					[/* block */ 'b', [
-						[/* inline code block */ 'i', `LATIN CAPITAL LETTER D WITH SMALL LETTER Z WITH CARON`]
+						[/* inline code block */ 'i', `LATIN CAPITAL LETTER D WITH SMALL LETTER Z WITH CARON`],
+						[/* text */ 't', `
+ `]
 					]],
 					[/* block */ 'b', [
-						[/* inline code block */ 'i', `LATIN CAPITAL LETTER L WITH SMALL LETTER J`]
+						[/* inline code block */ 'i', `LATIN CAPITAL LETTER L WITH SMALL LETTER J`],
+						[/* text */ 't', `
+ `]
 					]],
 					[/* block */ 'b', [
-						[/* inline code block */ 'i', `LATIN CAPITAL LETTER N WITH SMALL LETTER J`]
+						[/* inline code block */ 'i', `LATIN CAPITAL LETTER N WITH SMALL LETTER J`],
+						[/* text */ 't', `
+ `]
 					]],
 					[/* block */ 'b', [
-						[/* inline code block */ 'i', `LATIN CAPITAL LETTER D WITH SMALL LETTER Z`]
+						[/* inline code block */ 'i', `LATIN CAPITAL LETTER D WITH SMALL LETTER Z`],
+						[/* text */ 't', `
+ `]
 					]]
 				]],
+				[/* text */ 't', `
+ `],
 				[/* block */ 'b', ''],
 				[/* block */ 'b', ` Many other Unicode characters are titlecase too.
 
@@ -2674,18 +2820,28 @@ DocsCollector.collect('java.lang.Character', [
 				]],
 				[/* list */ 'l', [
 					[/* block */ 'b', [
-						[/* inline code block */ 'i', `LATIN CAPITAL LETTER D WITH SMALL LETTER Z WITH CARON`]
+						[/* inline code block */ 'i', `LATIN CAPITAL LETTER D WITH SMALL LETTER Z WITH CARON`],
+						[/* text */ 't', `
+ `]
 					]],
 					[/* block */ 'b', [
-						[/* inline code block */ 'i', `LATIN CAPITAL LETTER L WITH SMALL LETTER J`]
+						[/* inline code block */ 'i', `LATIN CAPITAL LETTER L WITH SMALL LETTER J`],
+						[/* text */ 't', `
+ `]
 					]],
 					[/* block */ 'b', [
-						[/* inline code block */ 'i', `LATIN CAPITAL LETTER N WITH SMALL LETTER J`]
+						[/* inline code block */ 'i', `LATIN CAPITAL LETTER N WITH SMALL LETTER J`],
+						[/* text */ 't', `
+ `]
 					]],
 					[/* block */ 'b', [
-						[/* inline code block */ 'i', `LATIN CAPITAL LETTER D WITH SMALL LETTER Z`]
+						[/* inline code block */ 'i', `LATIN CAPITAL LETTER D WITH SMALL LETTER Z`],
+						[/* text */ 't', `
+ `]
 					]]
 				]],
+				[/* text */ 't', `
+ `],
 				[/* block */ 'b', ''],
 				[/* block */ 'b', ` Many other Unicode characters are titlecase too.`]
 			],
@@ -2730,6 +2886,7 @@ DocsCollector.collect('java.lang.Character', [
 					[/* block */ 'b', `  it is a non-spacing mark
  `],
 					[/* block */ 'b', [
+						[/* text */ 't', ` `],
 						[/* inline code block */ 'i', `isIdentifierIgnorable`],
 						[/* text */ 't', ` returns
  `],
@@ -2750,6 +2907,8 @@ DocsCollector.collect('java.lang.Character', [
  `]
 					]]
 				]],
+				[/* text */ 't', `
+ `],
 				[/* block */ 'b', ''],
 				[/* block */ 'b', [
 					[/* text */ 't', `
@@ -2762,6 +2921,8 @@ DocsCollector.collect('java.lang.Character', [
 				[/* code block */ 'c', ` Continue := Start + ID_Continue + ignorable
  Medial := empty
  ignorable := isIdentifierIgnorable(char) returns true for the character
+ `],
+				[/* text */ 't', `
  `],
 				[/* inline code block */ 'i', `ignorable`],
 				[/* text */ 't', ` is added to `],
@@ -2823,6 +2984,7 @@ DocsCollector.collect('java.lang.Character', [
 					[/* block */ 'b', `  it is a non-spacing mark
  `],
 					[/* block */ 'b', [
+						[/* text */ 't', ` `],
 						[/* inline code block */ 'i', `isIdentifierIgnorable`],
 						[/* text */ 't', ` returns
  `],
@@ -2843,6 +3005,8 @@ DocsCollector.collect('java.lang.Character', [
  `]
 					]]
 				]],
+				[/* text */ 't', `
+ `],
 				[/* block */ 'b', ''],
 				[/* block */ 'b', [
 					[/* text */ 't', `
@@ -2855,6 +3019,8 @@ DocsCollector.collect('java.lang.Character', [
 				[/* code block */ 'c', ` Continue := Start + ID_Continue + ignorable
  Medial := empty
  ignorable := isIdentifierIgnorable(int) returns true for the character
+ `],
+				[/* text */ 't', `
  `],
 				[/* inline code block */ 'i', `ignorable`],
 				[/* text */ 't', ` is added to `],
@@ -2888,11 +3054,15 @@ DocsCollector.collect('java.lang.Character', [
  `],
 				[/* list */ 'l', [
 					[/* block */ 'b', [
+						[/* text */ 't', ` `],
 						[/* reference */ 'r', `#isLetter(int)`, `isLetter(ch)`],
 						[/* text */ 't', ` returns `],
-						[/* inline code block */ 'i', `true`]
+						[/* inline code block */ 'i', `true`],
+						[/* text */ 't', `
+ `]
 					]],
 					[/* block */ 'b', [
+						[/* text */ 't', ` `],
 						[/* reference */ 'r', `#getType(int)`, `getType(ch)`],
 						[/* text */ 't', ` returns
       `],
@@ -2907,6 +3077,8 @@ DocsCollector.collect('java.lang.Character', [
  `]
 					]]
 				]],
+				[/* text */ 't', `
+ `],
 				[/* block */ 'b', ''],
 				[/* block */ 'b', [
 					[/* text */ 't', `
@@ -2917,6 +3089,8 @@ DocsCollector.collect('java.lang.Character', [
  `]
 				]],
 				[/* code block */ 'c', ` Start := ID_Start + 'VERTICAL TILDE' (U+2E2F)
+ `],
+				[/* text */ 't', `
  `],
 				[/* inline code block */ 'i', `'VERTICAL TILDE'`],
 				[/* text */ 't', ` is added to `],
@@ -2962,12 +3136,16 @@ DocsCollector.collect('java.lang.Character', [
  `],
 				[/* list */ 'l', [
 					[/* block */ 'b', [
+						[/* text */ 't', ` `],
 						[/* reference */ 'r', `#isLetter(int)`, `isLetter(codePoint)`],
 						[/* text */ 't', `
       returns `],
-						[/* inline code block */ 'i', `true`]
+						[/* inline code block */ 'i', `true`],
+						[/* text */ 't', `
+ `]
 					]],
 					[/* block */ 'b', [
+						[/* text */ 't', ` `],
 						[/* reference */ 'r', `#getType(int)`, `getType(codePoint)`],
 						[/* text */ 't', `
       returns `],
@@ -2982,6 +3160,8 @@ DocsCollector.collect('java.lang.Character', [
  `]
 					]]
 				]],
+				[/* text */ 't', `
+ `],
 				[/* block */ 'b', ''],
 				[/* block */ 'b', [
 					[/* text */ 't', `
@@ -2992,6 +3172,8 @@ DocsCollector.collect('java.lang.Character', [
  `]
 				]],
 				[/* code block */ 'c', ` Start := ID_Start + 'VERTICAL TILDE' (U+2E2F)
+ `],
+				[/* text */ 't', `
  `],
 				[/* inline code block */ 'i', `'VERTICAL TILDE'`],
 				[/* text */ 't', ` is added to `],
@@ -3040,6 +3222,8 @@ DocsCollector.collect('java.lang.Character', [
  '\\u00D9' '\\u00DA' '\\u00DB' '\\u00DC' '\\u00DD' '\\u00DE'
  `]
 				]],
+				[/* text */ 't', `
+ `],
 				[/* block */ 'b', ''],
 				[/* block */ 'b', ` Many other Unicode characters are uppercase too.
 
@@ -3095,6 +3279,8 @@ DocsCollector.collect('java.lang.Character', [
  '\\u00D9' '\\u00DA' '\\u00DB' '\\u00DC' '\\u00DD' '\\u00DE'
  `]
 				]],
+				[/* text */ 't', `
+ `],
 				[/* block */ 'b', ''],
 				[/* block */ 'b', ` Many other Unicode characters are uppercase too.`]
 			],
@@ -3220,6 +3406,9 @@ DocsCollector.collect('java.lang.Character', [
  `]
 					]]
 				]],
+				[/* text */ 't', `
+
+ `],
 				[/* block */ 'b', [
 					[/* text */ 't', `Note:`],
 					[/* text */ 't', ` This method cannot handle `],
@@ -4375,6 +4564,8 @@ DocsCollector.collect('java.lang.Character', [
 				[/* block */ 'b', [
 					[/* inline code block */ 'i', `Character.UnicodeBlock.of(codePoint).toString().replace('_', ' ') + " " + Integer.toHexString(codePoint).toUpperCase(Locale.ROOT);`]
 				]],
+				[/* text */ 't', `
+ `],
 				[/* block */ 'b', ''],
 				[/* block */ 'b', [
 					[/* text */ 't', `
@@ -4552,6 +4743,9 @@ DocsCollector.collect('java.lang.Character', [
  `]
 					]]
 				]],
+				[/* text */ 't', `
+
+ `],
 				[/* block */ 'b', ''],
 				[/* block */ 'b', [
 					[/* text */ 't', `Note:`],

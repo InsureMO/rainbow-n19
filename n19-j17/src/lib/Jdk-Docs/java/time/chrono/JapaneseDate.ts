@@ -44,7 +44,9 @@ DocsCollector.collect('java.time.chrono.JapaneseDate', [
  `],
 			[/* inline code block */ 'i', `JapaneseChronology.ERA_HEISEI`],
 			[/* text */ 't', `.`],
-			[/* new line */ 'n']
+			[/* new line */ 'n'],
+			[/* text */ 't', `
+ `]
 		]],
 		[/* block */ 'b', [
 			[/* text */ 't', `
@@ -124,31 +126,49 @@ DocsCollector.collect('java.time.chrono.JapaneseDate', [
 				]],
 				[/* list */ 'l', [
 					[/* block */ 'b', [
-						[/* inline code block */ 'i', `DAY_OF_WEEK`]
+						[/* inline code block */ 'i', `DAY_OF_WEEK`],
+						[/* text */ 't', `
+ `]
 					]],
 					[/* block */ 'b', [
-						[/* inline code block */ 'i', `DAY_OF_MONTH`]
+						[/* inline code block */ 'i', `DAY_OF_MONTH`],
+						[/* text */ 't', `
+ `]
 					]],
 					[/* block */ 'b', [
-						[/* inline code block */ 'i', `DAY_OF_YEAR`]
+						[/* inline code block */ 'i', `DAY_OF_YEAR`],
+						[/* text */ 't', `
+ `]
 					]],
 					[/* block */ 'b', [
-						[/* inline code block */ 'i', `EPOCH_DAY`]
+						[/* inline code block */ 'i', `EPOCH_DAY`],
+						[/* text */ 't', `
+ `]
 					]],
 					[/* block */ 'b', [
-						[/* inline code block */ 'i', `MONTH_OF_YEAR`]
+						[/* inline code block */ 'i', `MONTH_OF_YEAR`],
+						[/* text */ 't', `
+ `]
 					]],
 					[/* block */ 'b', [
-						[/* inline code block */ 'i', `PROLEPTIC_MONTH`]
+						[/* inline code block */ 'i', `PROLEPTIC_MONTH`],
+						[/* text */ 't', `
+ `]
 					]],
 					[/* block */ 'b', [
-						[/* inline code block */ 'i', `YEAR_OF_ERA`]
+						[/* inline code block */ 'i', `YEAR_OF_ERA`],
+						[/* text */ 't', `
+ `]
 					]],
 					[/* block */ 'b', [
-						[/* inline code block */ 'i', `YEAR`]
+						[/* inline code block */ 'i', `YEAR`],
+						[/* text */ 't', `
+ `]
 					]],
 					[/* block */ 'b', [
-						[/* inline code block */ 'i', `ERA`]
+						[/* inline code block */ 'i', `ERA`],
+						[/* text */ 't', `
+ `]
 					]]
 				]],
 				[/* text */ 't', `
@@ -319,6 +339,8 @@ DocsCollector.collect('java.time.chrono.JapaneseDate', [
   date = date.minus(duration);             // subtract a Duration instance
   date = date.minus(workingDays(6));       // example user-written workingDays method
  `],
+				[/* text */ 't', `
+ `],
 				[/* block */ 'b', ''],
 				[/* block */ 'b', [
 					[/* text */ 't', `
@@ -404,6 +426,8 @@ DocsCollector.collect('java.time.chrono.JapaneseDate', [
 				[/* code block */ 'c', `  date = date.plus(period);                // add a Period instance
   date = date.plus(duration);              // add a Duration instance
   date = date.plus(workingDays(6));        // example user-written workingDays method
+ `],
+				[/* text */ 't', `
  `],
 				[/* block */ 'b', ''],
 				[/* block */ 'b', [

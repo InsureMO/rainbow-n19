@@ -2017,6 +2017,7 @@ DocsCollector.collect('java.lang.StringBuffer', [
 				[/* inline code block */ 'i', `offset`],
 				[/* text */ 't', ` and extends `],
 				[/* inline code block */ 'i', `len`],
+				[/* text */ 't', ` `],
 				[/* inline code block */ 'i', `char`],
 				[/* text */ 't', `s.
  The characters of the subarray are inserted into this sequence at
@@ -2025,6 +2026,7 @@ DocsCollector.collect('java.lang.StringBuffer', [
 				[/* text */ 't', `. The length of this
  sequence increases by `],
 				[/* inline code block */ 'i', `len`],
+				[/* text */ 't', ` `],
 				[/* inline code block */ 'i', `char`],
 				[/* text */ 't', `s.`]
 			],
@@ -2114,7 +2116,9 @@ DocsCollector.collect('java.lang.StringBuffer', [
  `],
 						[/* text */ 't', `k`],
 						[/* text */ 't', ` is less than `],
-						[/* inline code block */ 'i', `dstOffset`]
+						[/* inline code block */ 'i', `dstOffset`],
+						[/* text */ 't', `
+ `]
 					]],
 					[/* block */ 'b', [
 						[/* text */ 't', `the character at index `],
@@ -2129,7 +2133,9 @@ DocsCollector.collect('java.lang.StringBuffer', [
  `],
 						[/* inline code block */ 'i', `dstOffset`],
 						[/* text */ 't', ` but is less than `],
-						[/* inline code block */ 'i', `dstOffset+end-start`]
+						[/* inline code block */ 'i', `dstOffset+end-start`],
+						[/* text */ 't', `
+ `]
 					]],
 					[/* block */ 'b', [
 						[/* text */ 't', `the character at index `],
@@ -2140,7 +2146,9 @@ DocsCollector.collect('java.lang.StringBuffer', [
 						[/* text */ 't', `k`],
 						[/* text */ 't', ` is greater than or equal to
  `],
-						[/* inline code block */ 'i', `dstOffset+end-start`]
+						[/* inline code block */ 'i', `dstOffset+end-start`],
+						[/* text */ 't', `
+ `]
 					]]
 				]],
 				[/* block */ 'b', ''],
@@ -2316,7 +2324,9 @@ DocsCollector.collect('java.lang.StringBuffer', [
  `],
 						[/* text */ 't', `k`],
 						[/* text */ 't', ` is less than `],
-						[/* inline code block */ 'i', `offset`]
+						[/* inline code block */ 'i', `offset`],
+						[/* text */ 't', `
+ `]
 					]],
 					[/* block */ 'b', [
 						[/* text */ 't', `the character at index `],
@@ -2331,7 +2341,9 @@ DocsCollector.collect('java.lang.StringBuffer', [
  `],
 						[/* inline code block */ 'i', `offset`],
 						[/* text */ 't', ` but is less than `],
-						[/* inline code block */ 'i', `offset+str.length()`]
+						[/* inline code block */ 'i', `offset+str.length()`],
+						[/* text */ 't', `
+ `]
 					]],
 					[/* block */ 'b', [
 						[/* text */ 't', `the character at index `],
@@ -2342,7 +2354,9 @@ DocsCollector.collect('java.lang.StringBuffer', [
 						[/* text */ 't', `k`],
 						[/* text */ 't', ` is not less than
  `],
-						[/* inline code block */ 'i', `offset+str.length()`]
+						[/* inline code block */ 'i', `offset+str.length()`],
+						[/* text */ 't', `
+ `]
 					]]
 				]],
 				[/* block */ 'b', ''],
@@ -2579,7 +2593,9 @@ DocsCollector.collect('java.lang.StringBuffer', [
 							[/* inline code block */ 'i', `dstBegin+srcEnd-srcBegin`],
 							[/* text */ 't', ` is greater than
              `],
-							[/* inline code block */ 'i', `dst.length`]
+							[/* inline code block */ 'i', `dst.length`],
+							[/* text */ 't', `
+             `]
 						]]
 					]]
 				]]

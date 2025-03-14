@@ -64,6 +64,9 @@ DocsCollector.collect('java.lang.module.ModuleDescriptor$Version', [
  `]
 			]]
 		]],
+		[/* text */ 't', `
+
+ `],
 		[/* block */ 'b', ''],
 		[/* block */ 'b', ` When comparing two version strings, the elements of their
  corresponding components are compared in pointwise fashion.  If one
@@ -101,6 +104,9 @@ DocsCollector.collect('java.lang.module.ModuleDescriptor$Version', [
 					[/* text */ 't', `. Two module version are equal if their
  corresponding components are equal. `]
 				]],
+				[/* text */ 't', `
+
+ `],
 				[/* block */ 'b', [
 					[/* text */ 't', ` This method satisfies the general contract of the `],
 					[/* reference */ 'r', `java.lang.Object#equals(java.lang.Object)`, `Object.equals`],

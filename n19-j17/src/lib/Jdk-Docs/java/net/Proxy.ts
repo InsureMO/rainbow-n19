@@ -20,6 +20,8 @@ DocsCollector.collect('java.net.Proxy', [
  proxy settings (like SOCKS):
  `],
 				[/* block */ 'b', [
+					[/* text */ 't', `
+ `],
 					[/* inline code block */ 'i', `Socket s = new Socket(Proxy.NO_PROXY);`]
 				]]
 			],

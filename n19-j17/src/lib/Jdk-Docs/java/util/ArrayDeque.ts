@@ -71,7 +71,10 @@ DocsCollector.collect('java.util.ArrayDeque', [
  Therefore, it would be wrong to write a program that depended on this
  exception for its correctness: `],
 			[/* text */ 't', `the fail-fast behavior of iterators
- should be used only to detect bugs.`]
+ should be used only to detect bugs.`],
+			[/* text */ 't', `
+
+ `]
 		]],
 		[/* block */ 'b', [
 			[/* text */ 't', `This class and its iterator implement all of the
@@ -179,6 +182,7 @@ DocsCollector.collect('java.util.ArrayDeque', [
  `]
 				]],
 				[/* code block */ 'c', [
+					[/* text */ 't', ` `],
 					[/* inline code block */ 'i', `String[] y = x.toArray(new String[0]);`]
 				]],
 				[/* text */ 't', `
@@ -887,6 +891,7 @@ DocsCollector.collect('java.util.ArrayDeque', [
 				[/* text */ 't', `
  and `],
 				[/* text */ 't', `fail-fast`],
+				[/* text */ 't', ` `],
 				[/* reference */ 'r', `java.util.Spliterator`, `Spliterator`],
 				[/* text */ 't', ` over the elements in this
  deque.

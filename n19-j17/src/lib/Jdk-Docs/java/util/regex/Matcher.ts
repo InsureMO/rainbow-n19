@@ -44,6 +44,9 @@ DocsCollector.collect('java.util.regex.Matcher', [
 				]]
 			]]
 		]],
+		[/* text */ 't', `
+
+ `],
 		[/* block */ 'b', ''],
 		[/* block */ 'b', ` Each of these methods returns a boolean indicating success or failure.
  More information about a successful match can be obtained by querying the
@@ -400,6 +403,7 @@ DocsCollector.collect('java.util.regex.Matcher', [
 
  `],
 				[/* block */ 'b', [
+					[/* text */ 't', ` `],
 					[/* reference */ 'r', `java.util.regex.Pattern#cg`, `Capturing groups`],
 					[/* text */ 't', ` are indexed from left
  to right, starting at one.  Group zero denotes the entire pattern, so
@@ -541,6 +545,7 @@ DocsCollector.collect('java.util.regex.Matcher', [
 
  `],
 				[/* block */ 'b', [
+					[/* text */ 't', ` `],
 					[/* reference */ 'r', `java.util.regex.Pattern#cg`, `Capturing groups`],
 					[/* text */ 't', ` are indexed from left
  to right, starting at one.  Group zero denotes the entire pattern, so
@@ -630,9 +635,14 @@ DocsCollector.collect('java.util.regex.Matcher', [
 					[/* inline code block */ 'i', `start(),`],
 					[/* text */ 't', ` `],
 					[/* text */ 't', `m.`],
+					[/* text */ 't', `
+ `],
 					[/* inline code block */ 'i', `end())`],
 					[/* text */ 't', ` are equivalent.  `]
 				]],
+				[/* text */ 't', `
+
+ `],
 				[/* block */ 'b', [
 					[/* text */ 't', ` Note that some patterns, for example `],
 					[/* inline code block */ 'i', `a*`],
@@ -688,7 +698,11 @@ DocsCollector.collect('java.util.regex.Matcher', [
 					[/* text */ 't', `
  are equivalent.  `]
 				]],
+				[/* text */ 't', `
+
+ `],
 				[/* block */ 'b', [
+					[/* text */ 't', ` `],
 					[/* reference */ 'r', `java.util.regex.Pattern#cg`, `Capturing groups`],
 					[/* text */ 't', ` are indexed from left
  to right, starting at one.  Group zero denotes the entire pattern, so
@@ -699,6 +713,9 @@ DocsCollector.collect('java.util.regex.Matcher', [
 					[/* text */ 't', `.
  `]
 				]],
+				[/* text */ 't', `
+
+ `],
 				[/* block */ 'b', [
 					[/* text */ 't', ` If the match was successful but the group specified failed to match
  any part of the input sequence, then `],
@@ -895,6 +912,9 @@ DocsCollector.collect('java.util.regex.Matcher', [
 				[/* block */ 'b', ` Invoking this method changes this matcher's state.  If the matcher
  is to be used in further matching operations then it should first be
  reset.  `],
+				[/* text */ 't', `
+
+ `],
 				[/* block */ 'b', [
 					[/* text */ 't', ` The replacer function should not modify this matcher's state during
  replacement.  This method will, on a best-effort basis, throw a
@@ -978,6 +998,9 @@ DocsCollector.collect('java.util.regex.Matcher', [
 					[/* inline code block */ 'i', `"zzzcatzzzdogzzz"`],
 					[/* text */ 't', `.  `]
 				]],
+				[/* text */ 't', `
+
+ `],
 				[/* block */ 'b', ` Invoking this method changes this matcher's state.  If the matcher
  is to be used in further matching operations then it should first be
  reset.  `]
@@ -1158,6 +1181,9 @@ DocsCollector.collect('java.util.regex.Matcher', [
 
  `],
 				[/* block */ 'b', ` This method performs the following actions: `],
+				[/* text */ 't', `
+
+ `],
 				[/* list */ 'l', [
 					[/* block */ 'b', [
 						[/* block */ 'b', [
@@ -1187,6 +1213,9 @@ DocsCollector.collect('java.util.regex.Matcher', [
 						]]
 					]]
 				]],
+				[/* text */ 't', `
+
+ `],
 				[/* block */ 'b', [
 					[/* text */ 't', ` The replacement string may contain references to subsequences
  captured during the previous match: Each occurrence of
@@ -1257,6 +1286,9 @@ DocsCollector.collect('java.util.regex.Matcher', [
 					[/* inline code block */ 'i', `one dog two dogs in the yard`],
 					[/* text */ 't', ` to the standard-output stream: `]
 				]],
+				[/* text */ 't', `
+
+ `],
 				[/* block */ 'b', [
 					[/* code block */ 'c', ` Pattern p = Pattern.compile("cat");
  Matcher m = p.matcher("one cat two cats in the yard");
@@ -1300,6 +1332,9 @@ DocsCollector.collect('java.util.regex.Matcher', [
 
  `],
 				[/* block */ 'b', ` This method performs the following actions: `],
+				[/* text */ 't', `
+
+ `],
 				[/* list */ 'l', [
 					[/* block */ 'b', [
 						[/* block */ 'b', [
@@ -1329,6 +1364,9 @@ DocsCollector.collect('java.util.regex.Matcher', [
 						]]
 					]]
 				]],
+				[/* text */ 't', `
+
+ `],
 				[/* block */ 'b', [
 					[/* text */ 't', ` The replacement string may contain references to subsequences
  captured during the previous match: Each occurrence of
@@ -1392,6 +1430,9 @@ DocsCollector.collect('java.util.regex.Matcher', [
 					[/* inline code block */ 'i', `one dog two dogs in the yard`],
 					[/* text */ 't', ` to the standard-output stream: `]
 				]],
+				[/* text */ 't', `
+
+ `],
 				[/* block */ 'b', [
 					[/* code block */ 'c', ` Pattern p = Pattern.compile("cat");
  Matcher m = p.matcher("one cat two cats in the yard");

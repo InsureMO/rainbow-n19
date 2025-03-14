@@ -57,6 +57,7 @@ DocsCollector.collect('java.math.BigDecimal', [
 			[/* text */ 't', `) to represent rounding mode is deprecated; the
  enumeration values of the `],
 			[/* inline code block */ 'i', `RoundingMode`],
+			[/* text */ 't', ` `],
 			[/* inline code block */ 'i', `enum`],
 			[/* text */ 't', `, (such
  as `],
@@ -288,14 +289,25 @@ DocsCollector.collect('java.math.BigDecimal', [
 			[/* text */ 't', `
  rounding mode, `],
 			[/* new line */ 'n'],
+			[/* text */ 't', `
+
+ `],
 			[/* inline code block */ 'i', `19/100 = 0.19 // integer=19, scale=2`],
+			[/* text */ 't', ` `],
 			[/* new line */ 'n'],
 			[/* text */ 't', `
 
  but`],
 			[/* new line */ 'n'],
+			[/* text */ 't', `
+
+ `],
 			[/* inline code block */ 'i', `21/110 = 0.190 // integer=190, scale=3`],
-			[/* new line */ 'n']
+			[/* text */ 't', ` `],
+			[/* new line */ 'n'],
+			[/* text */ 't', `
+
+ `]
 		]],
 		[/* block */ 'b', `Note that for add, subtract, and multiply, the reduction in
  scale will equal the number of digit positions of the exact result
@@ -370,9 +382,13 @@ DocsCollector.collect('java.math.BigDecimal', [
 			[/* inline code block */ 'i', `BigDecimal`],
 			[/* text */ 't', ` whose value is that of the `],
 			[/* inline code block */ 'i', `BigDecimal`],
+			[/* text */ 't', `
+ `],
 			[/* inline code block */ 'i', `i`],
 			[/* text */ 't', ` added to that of the `],
 			[/* inline code block */ 'i', `BigDecimal`],
+			[/* text */ 't', `
+ `],
 			[/* inline code block */ 'i', `j`],
 			[/* text */ 't', `." The pseudo-code expression `],
 			[/* inline code block */ 'i', `(i == j)`],
@@ -382,10 +398,12 @@ DocsCollector.collect('java.math.BigDecimal', [
 			[/* text */ 't', ` if and only if the
  `],
 			[/* inline code block */ 'i', `BigDecimal`],
+			[/* text */ 't', ` `],
 			[/* inline code block */ 'i', `i`],
 			[/* text */ 't', ` represents the same value as the
  `],
 			[/* inline code block */ 'i', `BigDecimal`],
+			[/* text */ 't', ` `],
 			[/* inline code block */ 'i', `j`],
 			[/* text */ 't', `." Other pseudo-code expressions
  are interpreted similarly.  Square brackets are used to represent
@@ -762,6 +780,7 @@ DocsCollector.collect('java.math.BigDecimal', [
 						[/* text */ 't', ` constructor.  To get that result,
  use the `],
 						[/* inline code block */ 'i', `static`],
+						[/* text */ 't', ` `],
 						[/* reference */ 'r', `#valueOf(double)`, `valueOf(double)`],
 						[/* text */ 't', ` method.
  `]
@@ -940,6 +959,8 @@ DocsCollector.collect('java.math.BigDecimal', [
  described by the following grammar:
  `],
 				[/* block */ 'b', [
+					[/* text */ 't', `
+ `],
 					[/* dl */ 'dl', [
 						[/* dt */ 'dt', [
 							[/* text */ 't', `BigDecimalString:`],
@@ -1076,8 +1097,13 @@ DocsCollector.collect('java.math.BigDecimal', [
 							[/* text */ 't', `, including 0, 1, 2 ...
  `]
 						]]
-					]]
+					]],
+					[/* text */ 't', `
+ `]
 				]],
+				[/* text */ 't', `
+
+ `],
 				[/* block */ 'b', ''],
 				[/* block */ 'b', [
 					[/* text */ 't', `The scale of the returned `],
@@ -1979,7 +2005,12 @@ DocsCollector.collect('java.math.BigDecimal', [
  [123,10]     "1.23E-8"
  [-123,12]    "-1.23E-10"
  `],
+				[/* text */ 't', `
+
+ `],
 				[/* text */ 't', `Notes:`],
+				[/* text */ 't', `
+ `],
 				[/* list */ 'l', [
 					[/* block */ 'b', [
 						[/* text */ 't', `There is a one-to-one mapping between the distinguishable
@@ -2825,12 +2856,16 @@ DocsCollector.collect('java.math.BigDecimal', [
   `],
 						[/* list */ 'l', [
 							[/* block */ 'b', [
-								[/* inline code block */ 'i', `abs(n) > 999999999`]
+								[/* inline code block */ 'i', `abs(n) > 999999999`],
+								[/* text */ 't', `
+    `]
 							]],
 							[/* block */ 'b', [
 								[/* inline code block */ 'i', `mc.precision == 0`],
 								[/* text */ 't', ` and `],
-								[/* inline code block */ 'i', `n < 0`]
+								[/* inline code block */ 'i', `n < 0`],
+								[/* text */ 't', `
+    `]
 							]],
 							[/* block */ 'b', [
 								[/* inline code block */ 'i', `mc.precision > 0`],
@@ -2842,7 +2877,10 @@ DocsCollector.collect('java.math.BigDecimal', [
 								[/* text */ 't', ` decimal digits
   `]
 							]]
-						]]
+						]],
+						[/* text */ 't', `
+
+ `]
 					]],
 					[/* block */ 'b', [
 						[/* text */ 't', ` if `],
@@ -2890,7 +2928,9 @@ DocsCollector.collect('java.math.BigDecimal', [
 							[/* block */ 'b', ` The final value from either the positive or negative case
    is then rounded to the destination precision.
    `]
-						]]
+						]],
+						[/* text */ 't', `
+ `]
 					]]
 				]],
 				[/* block */ 'b', '']

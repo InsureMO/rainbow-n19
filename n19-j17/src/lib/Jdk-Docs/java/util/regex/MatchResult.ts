@@ -40,6 +40,7 @@ DocsCollector.collect('java.util.regex.MatchResult', [
 
  `],
 				[/* block */ 'b', [
+					[/* text */ 't', ` `],
 					[/* reference */ 'r', `java.util.regex.Pattern#cg`, `Capturing groups`],
 					[/* text */ 't', ` are indexed from left
  to right, starting at one.  Group zero denotes the entire pattern, so
@@ -117,6 +118,7 @@ DocsCollector.collect('java.util.regex.MatchResult', [
 
  `],
 				[/* block */ 'b', [
+					[/* text */ 't', ` `],
 					[/* reference */ 'r', `java.util.regex.Pattern#cg`, `Capturing groups`],
 					[/* text */ 't', ` are indexed from left
  to right, starting at one.  Group zero denotes the entire pattern, so
@@ -179,6 +181,9 @@ DocsCollector.collect('java.util.regex.MatchResult', [
 					[/* text */ 't', `
  are equivalent.  `]
 				]],
+				[/* text */ 't', `
+
+ `],
 				[/* block */ 'b', [
 					[/* text */ 't', ` Note that some patterns, for example `],
 					[/* inline code block */ 'i', `a*`],
@@ -234,7 +239,11 @@ DocsCollector.collect('java.util.regex.MatchResult', [
 					[/* text */ 't', `
  are equivalent.  `]
 				]],
+				[/* text */ 't', `
+
+ `],
 				[/* block */ 'b', [
+					[/* text */ 't', ` `],
 					[/* reference */ 'r', `java.util.regex.Pattern#cg`, `Capturing groups`],
 					[/* text */ 't', ` are indexed from left
  to right, starting at one.  Group zero denotes the entire pattern, so
@@ -245,6 +254,9 @@ DocsCollector.collect('java.util.regex.MatchResult', [
 					[/* text */ 't', `.
  `]
 				]],
+				[/* text */ 't', `
+
+ `],
 				[/* block */ 'b', [
 					[/* text */ 't', ` If the match was successful but the group specified failed to match
  any part of the input sequence, then `],

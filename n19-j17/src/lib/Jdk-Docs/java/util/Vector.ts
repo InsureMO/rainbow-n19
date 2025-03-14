@@ -82,7 +82,10 @@ DocsCollector.collect('java.util.Vector', [
  Therefore, it would be wrong to write a program that depended on this
  exception for its correctness:  `],
 			[/* text */ 't', `the fail-fast behavior of iterators
- should be used only to detect bugs.`]
+ should be used only to detect bugs.`],
+			[/* text */ 't', `
+
+ `]
 		]],
 		[/* block */ 'b', [
 			[/* text */ 't', `As of the Java 2 platform v1.2, this class was retrofitted to
@@ -445,6 +448,7 @@ DocsCollector.collect('java.util.Vector', [
 				[/* text */ 't', `
  and `],
 				[/* text */ 't', `fail-fast`],
+				[/* text */ 't', ` `],
 				[/* reference */ 'r', `java.util.Spliterator`, `Spliterator`],
 				[/* text */ 't', ` over the elements in this
  list.

@@ -32,6 +32,9 @@ DocsCollector.collect('java.util.Scanner', [
      int i = sc.nextInt();`]
 			]]
 		]],
+		[/* text */ 't', `
+
+ `],
 		[/* block */ 'b', ''],
 		[/* block */ 'b', [
 			[/* text */ 't', `As another example, this code allows `],
@@ -50,6 +53,9 @@ DocsCollector.collect('java.util.Scanner', [
       }`]
 			]]
 		]],
+		[/* text */ 't', `
+
+ `],
 		[/* block */ 'b', ''],
 		[/* block */ 'b', `The scanner can also use delimiters other than whitespace. This
  example reads several items in from a string:
@@ -65,6 +71,8 @@ DocsCollector.collect('java.util.Scanner', [
      s.close();`]
 			]]
 		]],
+		[/* text */ 't', `
+ `],
 		[/* block */ 'b', ''],
 		[/* block */ 'b', `
  prints the following output:
@@ -77,6 +85,9 @@ DocsCollector.collect('java.util.Scanner', [
      blue`]
 			]]
 		]],
+		[/* text */ 't', `
+
+ `],
 		[/* block */ 'b', ''],
 		[/* block */ 'b', `The same output can be generated with this code, which uses a regular
  expression to parse all four tokens at once:
@@ -92,6 +103,9 @@ DocsCollector.collect('java.util.Scanner', [
      s.close();`]
 			]]
 		]],
+		[/* text */ 't', `
+
+ `],
 		[/* block */ 'b', ''],
 		[/* block */ 'b', [
 			[/* text */ 't', `The `],
@@ -245,8 +259,13 @@ DocsCollector.collect('java.util.Scanner', [
  `]
 		]],
 		[/* block */ 'b', [
-			[/* anchor */ 'r', '#-id', `localized-numbers`, `Localized numbers`]
+			[/* text */ 't', ` `],
+			[/* anchor */ 'r', '#-id', `localized-numbers`, `Localized numbers`],
+			[/* text */ 't', ` `]
 		]],
+		[/* text */ 't', `
+
+ `],
 		[/* block */ 'b', [
 			[/* text */ 't', ` An instance of this class is capable of scanning numbers in the standard
  formats as well as in the formats of the scanner's locale. A scanner's
@@ -405,10 +424,18 @@ DocsCollector.collect('java.util.Scanner', [
 				]]
 			]]
 		]],
+		[/* text */ 't', `
+
+ `],
 		[/* block */ 'b', ''],
 		[/* block */ 'b', [
-			[/* anchor */ 'r', '#-id', `number-syntax`, `Number syntax`]
+			[/* text */ 't', ` `],
+			[/* anchor */ 'r', '#-id', `number-syntax`, `Number syntax`],
+			[/* text */ 't', ` `]
 		]],
+		[/* text */ 't', `
+
+ `],
 		[/* block */ 'b', ` The strings that can be parsed as numbers by an instance of this class
  are specified in terms of the following regular-expression grammar, where
  Rmax is the highest digit in the radix being used (for example, Rmax is 9 in base 10).
@@ -720,6 +747,8 @@ DocsCollector.collect('java.util.Scanner', [
  `]
 			]]
 		]],
+		[/* text */ 't', `
+ `],
 		[/* block */ 'b', ''],
 		[/* block */ 'b', `Whitespace is not significant in the above regular expressions.`]
 	],

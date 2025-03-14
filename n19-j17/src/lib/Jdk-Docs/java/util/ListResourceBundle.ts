@@ -50,6 +50,8 @@ DocsCollector.collect('java.util.ListResourceBundle', [
  `]
 		]],
 		[/* block */ 'b', [
+			[/* text */ 't', `
+ `],
 			[/* code block */ 'c', `
  public class MyResources extends ListResourceBundle {
      protected Object[][] getContents() {
@@ -84,8 +86,13 @@ DocsCollector.collect('java.util.ListResourceBundle', [
          };
      }
  }
+ `],
+			[/* text */ 't', `
  `]
 		]],
+		[/* text */ 't', `
+
+ `],
 		[/* block */ 'b', ''],
 		[/* block */ 'b', [
 			[/* text */ 't', `

@@ -257,6 +257,9 @@ DocsCollector.collect('java.lang.Math', [
  `]
 					]]
 				]],
+				[/* text */ 't', `
+
+ `],
 				[/* block */ 'b', `The computed result must be within 1 ulp of the exact result.
  Results must be semi-monotonic.`]
 			],
@@ -286,6 +289,9 @@ DocsCollector.collect('java.lang.Math', [
 					[/* block */ 'b', `If the argument is zero, then the result is a zero with the
  same sign as the argument.`]
 				]],
+				[/* text */ 't', `
+
+ `],
 				[/* block */ 'b', `The computed result must be within 1 ulp of the exact result.
  Results must be semi-monotonic.`]
 			],
@@ -325,6 +331,9 @@ DocsCollector.collect('java.lang.Math', [
  `]
 					]]
 				]],
+				[/* text */ 't', `
+
+ `],
 				[/* block */ 'b', `The computed result must be within 1 ulp of the exact result.
  Results must be semi-monotonic.`]
 			],
@@ -457,6 +466,9 @@ DocsCollector.collect('java.lang.Math', [
 						[/* text */ 't', `/4.`]
 					]]
 				]],
+				[/* text */ 't', `
+
+ `],
 				[/* block */ 'b', `The computed result must be within 2 ulps of the exact result.
  Results must be semi-monotonic.`]
 			],
@@ -514,6 +526,9 @@ DocsCollector.collect('java.lang.Math', [
 
  `]
 				]],
+				[/* text */ 't', `
+
+ `],
 				[/* block */ 'b', `The computed result must be within 1 ulp of the exact result.`]
 			],
 			[/* parameters */
@@ -612,6 +627,9 @@ DocsCollector.collect('java.lang.Math', [
 `]
 					]]
 				]],
+				[/* text */ 't', `
+
+ `],
 				[/* block */ 'b', `The computed result must be within 1 ulp of the exact result.
  Results must be semi-monotonic.`]
 			],
@@ -661,6 +679,9 @@ DocsCollector.collect('java.lang.Math', [
  `]
 					]]
 				]],
+				[/* text */ 't', `
+
+ `],
 				[/* block */ 'b', ''],
 				[/* block */ 'b', `The computed result must be within 2.5 ulps of the exact result.`]
 			],
@@ -701,6 +722,9 @@ DocsCollector.collect('java.lang.Math', [
  `]
 					]]
 				]],
+				[/* text */ 't', `
+
+ `],
 				[/* block */ 'b', `The computed result must be within 1 ulp of the exact result.
  Results must be semi-monotonic.`]
 			],
@@ -761,6 +785,9 @@ DocsCollector.collect('java.lang.Math', [
 
  `]
 				]],
+				[/* text */ 't', `
+
+ `],
 				[/* block */ 'b', ''],
 				[/* block */ 'b', [
 					[/* text */ 't', `The computed result must be within 1 ulp of the exact result.
@@ -867,6 +894,9 @@ DocsCollector.collect('java.lang.Math', [
 
  `]
 				]],
+				[/* text */ 't', `
+
+ `],
 				[/* block */ 'b', ''],
 				[/* block */ 'b', [
 					[/* text */ 't', `Note that `],
@@ -952,6 +982,9 @@ DocsCollector.collect('java.lang.Math', [
 					[/* block */ 'b', ` If both arguments are zero, the result is positive zero.
  `]
 				]],
+				[/* text */ 't', `
+
+ `],
 				[/* block */ 'b', ''],
 				[/* block */ 'b', `The computed result must be within 1 ulp of the exact
  result.  If one parameter is held constant, the results must be
@@ -1056,6 +1089,9 @@ DocsCollector.collect('java.lang.Math', [
  `]
 					]]
 				]],
+				[/* text */ 't', `
+
+ `],
 				[/* block */ 'b', `The computed result must be within 1 ulp of the exact result.
  Results must be semi-monotonic.`]
 			],
@@ -1110,6 +1146,9 @@ DocsCollector.collect('java.lang.Math', [
  `]
 					]]
 				]],
+				[/* text */ 't', `
+
+ `],
 				[/* block */ 'b', `The computed result must be within 1 ulp of the exact result.
  Results must be semi-monotonic.`]
 			],
@@ -1163,6 +1202,9 @@ DocsCollector.collect('java.lang.Math', [
 
  `]
 				]],
+				[/* text */ 't', `
+
+ `],
 				[/* block */ 'b', ''],
 				[/* block */ 'b', `The computed result must be within 1 ulp of the exact result.
  Results must be semi-monotonic.`]
@@ -1371,7 +1413,10 @@ DocsCollector.collect('java.lang.Math', [
 					[/* block */ 'b', [
 						[/* text */ 't', ` If the argument is zero, the result is
  `],
-						[/* inline code block */ 'i', `-Double.MIN_VALUE`]
+						[/* inline code block */ 'i', `-Double.MIN_VALUE`],
+						[/* text */ 't', `
+
+ `]
 					]]
 				]],
 				[/* block */ 'b', '']
@@ -1417,7 +1462,10 @@ DocsCollector.collect('java.lang.Math', [
 					[/* block */ 'b', [
 						[/* text */ 't', ` If the argument is zero, the result is
  `],
-						[/* reference */ 'r', `java.lang.Double#MIN_VALUE`, `Double.MIN_VALUE`]
+						[/* reference */ 'r', `java.lang.Double#MIN_VALUE`, `Double.MIN_VALUE`],
+						[/* text */ 't', `
+
+ `]
 					]]
 				]],
 				[/* block */ 'b', '']
@@ -1603,7 +1651,10 @@ DocsCollector.collect('java.lang.Math', [
 							[/* block */ 'b', `if the second argument is finite and not an integer, then
  the result is NaN.
  `]
-						]]
+						]],
+						[/* text */ 't', `
+
+ `]
 					]],
 					[/* block */ 'b', [
 						[/* text */ 't', `If both arguments are integers, then the result is exactly equal
@@ -1614,6 +1665,9 @@ DocsCollector.collect('java.lang.Math', [
 						[/* text */ 't', ` value.`]
 					]]
 				]],
+				[/* text */ 't', `
+
+ `],
 				[/* block */ 'b', [
 					[/* text */ 't', `(In the foregoing descriptions, a floating-point value is
  considered to be an integer if and only if it is finite and a
@@ -1827,6 +1881,9 @@ DocsCollector.collect('java.lang.Math', [
 					[/* block */ 'b', `If the argument is zero, then the result is a zero with the
  same sign as the argument.`]
 				]],
+				[/* text */ 't', `
+
+ `],
 				[/* block */ 'b', `The computed result must be within 1 ulp of the exact result.
  Results must be semi-monotonic.`]
 			],
@@ -1873,6 +1930,9 @@ DocsCollector.collect('java.lang.Math', [
 
  `]
 				]],
+				[/* text */ 't', `
+
+ `],
 				[/* block */ 'b', ''],
 				[/* block */ 'b', `The computed result must be within 2.5 ulps of the exact result.`]
 			],
@@ -1936,6 +1996,9 @@ DocsCollector.collect('java.lang.Math', [
 					[/* block */ 'b', `If the argument is zero, then the result is a zero with the
  same sign as the argument.`]
 				]],
+				[/* text */ 't', `
+
+ `],
 				[/* block */ 'b', `The computed result must be within 1 ulp of the exact result.
  Results must be semi-monotonic.`]
 			],
@@ -1998,6 +2061,9 @@ DocsCollector.collect('java.lang.Math', [
  `]
 					]]
 				]],
+				[/* text */ 't', `
+
+ `],
 				[/* block */ 'b', ''],
 				[/* block */ 'b', [
 					[/* text */ 't', `The computed result must be within 2.5 ulps of the exact result.
@@ -2220,6 +2286,9 @@ DocsCollector.collect('java.lang.Math', [
 
  `]
 				]],
+				[/* text */ 't', `
+
+ `],
 				[/* block */ 'b', ''],
 				[/* block */ 'b', [
 					[/* text */ 't', `Note that `],
@@ -2467,7 +2536,10 @@ DocsCollector.collect('java.lang.Math', [
 					[/* block */ 'b', [
 						[/* text */ 't', ` If the argument is zero, the result is
  `],
-						[/* inline code block */ 'i', `-Float.MIN_VALUE`]
+						[/* inline code block */ 'i', `-Float.MIN_VALUE`],
+						[/* text */ 't', `
+
+ `]
 					]]
 				]],
 				[/* block */ 'b', '']
@@ -2513,7 +2585,10 @@ DocsCollector.collect('java.lang.Math', [
 					[/* block */ 'b', [
 						[/* text */ 't', ` If the argument is zero, the result is
  `],
-						[/* reference */ 'r', `java.lang.Float#MIN_VALUE`, `Float.MIN_VALUE`]
+						[/* reference */ 'r', `java.lang.Float#MIN_VALUE`, `Float.MIN_VALUE`],
+						[/* text */ 't', `
+
+ `]
 					]]
 				]],
 				[/* block */ 'b', '']
@@ -2911,9 +2986,13 @@ DocsCollector.collect('java.lang.Math', [
 				]],
 				[/* list */ 'l', [
 					[/* block */ 'b', [
-						[/* inline code block */ 'i', `floorDiv(x, y) * y + floorMod(x, y) == x`]
+						[/* inline code block */ 'i', `floorDiv(x, y) * y + floorMod(x, y) == x`],
+						[/* text */ 't', `
+ `]
 					]]
 				]],
+				[/* text */ 't', `
+ `],
 				[/* block */ 'b', ''],
 				[/* block */ 'b', [
 					[/* text */ 't', `
@@ -2943,6 +3022,8 @@ DocsCollector.collect('java.lang.Math', [
 						[/* inline code block */ 'i', `%`],
 						[/* text */ 't', ` operator are the same.`],
 						[/* new line */ 'n'],
+						[/* text */ 't', `
+       `],
 						[/* list */ 'l', [
 							[/* block */ 'b', [
 								[/* inline code block */ 'i', `floorMod(+4, +3) == +1`],
@@ -2954,7 +3035,9 @@ DocsCollector.collect('java.lang.Math', [
 								[/* text */ 't', `;   and `],
 								[/* inline code block */ 'i', `(-4 % -3) == -1`]
 							]]
-						]]
+						]],
+						[/* text */ 't', `
+   `]
 					]],
 					[/* block */ 'b', [
 						[/* text */ 't', `If the signs of the arguments are different, the results
@@ -2962,6 +3045,8 @@ DocsCollector.collect('java.lang.Math', [
 						[/* inline code block */ 'i', `%`],
 						[/* text */ 't', ` operator.`],
 						[/* new line */ 'n'],
+						[/* text */ 't', `
+       `],
 						[/* list */ 'l', [
 							[/* block */ 'b', [
 								[/* inline code block */ 'i', `floorMod(+4, -3) == -2`],
@@ -2973,9 +3058,13 @@ DocsCollector.collect('java.lang.Math', [
 								[/* text */ 't', `;   and `],
 								[/* inline code block */ 'i', `(-4 % +3) == -1`]
 							]]
-						]]
+						]],
+						[/* text */ 't', `
+   `]
 					]]
 				]],
+				[/* text */ 't', `
+ `],
 				[/* block */ 'b', ''],
 				[/* block */ 'b', [
 					[/* text */ 't', `
@@ -3038,9 +3127,13 @@ DocsCollector.collect('java.lang.Math', [
 				]],
 				[/* list */ 'l', [
 					[/* block */ 'b', [
-						[/* inline code block */ 'i', `floorDiv(x, y) * y + floorMod(x, y) == x`]
+						[/* inline code block */ 'i', `floorDiv(x, y) * y + floorMod(x, y) == x`],
+						[/* text */ 't', `
+ `]
 					]]
 				]],
+				[/* text */ 't', `
+ `],
 				[/* block */ 'b', ''],
 				[/* block */ 'b', [
 					[/* text */ 't', `
@@ -3633,9 +3726,13 @@ DocsCollector.collect('java.lang.Math', [
 				]],
 				[/* list */ 'l', [
 					[/* block */ 'b', [
-						[/* inline code block */ 'i', `floorDiv(x, y) * y + floorMod(x, y) == x`]
+						[/* inline code block */ 'i', `floorDiv(x, y) * y + floorMod(x, y) == x`],
+						[/* text */ 't', `
+ `]
 					]]
 				]],
+				[/* text */ 't', `
+ `],
 				[/* block */ 'b', ''],
 				[/* block */ 'b', [
 					[/* text */ 't', `

@@ -19,6 +19,8 @@ DocsCollector.collect('java.text.RuleBasedCollator', [
 
  `],
 		[/* block */ 'b', [
+			[/* text */ 't', `
+ `],
 			[/* inline code block */ 'i', `RuleBasedCollator`],
 			[/* text */ 't', ` has the following restrictions
  for efficiency (other subclasses may be used for more complex languages) :
@@ -32,6 +34,9 @@ DocsCollector.collect('java.text.RuleBasedCollator', [
      collation order.
  `]
 		]],
+		[/* text */ 't', `
+
+ `],
 		[/* block */ 'b', ''],
 		[/* block */ 'b', `
  The collation table is composed of a list of collation rules, where each
@@ -78,6 +83,8 @@ DocsCollector.collect('java.text.RuleBasedCollator', [
                       purposes.
         `]
 				]],
+				[/* text */ 't', `
+        `],
 				[/* block */ 'b', `'@' : Indicates that accents are sorted backwards, as in French.
     `]
 			]],
@@ -94,7 +101,9 @@ DocsCollector.collect('java.text.RuleBasedCollator', [
             `],
 					[/* block */ 'b', `'=' : Equal
         `]
-				]]
+				]],
+				[/* text */ 't', `
+    `]
 			]],
 			[/* block */ 'b', [
 				[/* text */ 't', `Reset`],
@@ -108,15 +117,22 @@ DocsCollector.collect('java.text.RuleBasedCollator', [
 			]],
 			[/* block */ 'b', '']
 		]],
+		[/* text */ 't', `
+
+ `],
 		[/* block */ 'b', ''],
 		[/* block */ 'b', `
  This sounds more complicated than it is in practice. For example, the
  following are equivalent ways of expressing the same thing:
  `],
 		[/* block */ 'b', [
+			[/* text */ 't', `
+ `],
 			[/* code block */ 'c', ` a < b < c
  a < b & b < c
  a < c & a < b
+ `],
+			[/* text */ 't', `
  `]
 		]],
 		[/* text */ 't', `
@@ -124,8 +140,12 @@ DocsCollector.collect('java.text.RuleBasedCollator', [
  after the text-argument. The following are not equivalent:
  `],
 		[/* block */ 'b', [
+			[/* text */ 't', `
+ `],
 			[/* code block */ 'c', ` a < b & a < c
  a < c & a < b
+ `],
+			[/* text */ 't', `
  `]
 		]],
 		[/* text */ 't', `
@@ -155,6 +175,8 @@ DocsCollector.collect('java.text.RuleBasedCollator', [
  `],
 		[/* block */ 'b', `Normalization and Accents`],
 		[/* block */ 'b', [
+			[/* text */ 't', `
+ `],
 			[/* inline code block */ 'i', `RuleBasedCollator`],
 			[/* text */ 't', ` automatically processes its rule table to
  include both pre-composed and combining-character versions of
@@ -230,14 +252,20 @@ DocsCollector.collect('java.text.RuleBasedCollator', [
  `]
 		]],
 		[/* block */ 'b', [
+			[/* text */ 't', `
+ `],
 			[/* code block */ 'c', ` String simple = "< a< b< c< d";
  RuleBasedCollator mySimple = new RuleBasedCollator(simple);
+ `],
+			[/* text */ 't', `
  `]
 		]],
 		[/* text */ 't', `
  Or:
  `],
 		[/* block */ 'b', [
+			[/* text */ 't', `
+ `],
 			[/* code block */ 'c', ` String Norwegian = "< a, A < b, B < c, C < d, D < e, E < f, F < g, G < h, H < i, I" +
                     "< j, J < k, K < l, L < m, M < n, N < o, O < p, P < q, Q < r, R" +
                     "< s, S < t, T < u, U < v, V < w, W < x, X < y, Y < z, Z" +
@@ -247,8 +275,13 @@ DocsCollector.collect('java.text.RuleBasedCollator', [
                     "  \\u00C5 = A\\u030A;" +  // Latin letter A with ring above
                     "  aa, AA";
  RuleBasedCollator myNorwegian = new RuleBasedCollator(Norwegian);
+ `],
+			[/* text */ 't', `
  `]
 		]],
+		[/* text */ 't', `
+
+ `],
 		[/* block */ 'b', ''],
 		[/* block */ 'b', [
 			[/* text */ 't', `
@@ -267,6 +300,8 @@ DocsCollector.collect('java.text.RuleBasedCollator', [
  non-spacing accents,
  `],
 		[/* block */ 'b', [
+			[/* text */ 't', `
+ `],
 			[/* code block */ 'c', ` // old rule
  String oldRules = "=\\u0301;\\u0300;\\u0302;\\u0308"    // main accents
                  + ";\\u0327;\\u0303;\\u0304;\\u0305"    // main accents
@@ -278,6 +313,8 @@ DocsCollector.collect('java.text.RuleBasedCollator', [
  // change the order of accent characters
  String addOn = "& \\u0300 ; \\u0308 ; \\u0302";
  RuleBasedCollator myCollator = new RuleBasedCollator(oldRules + addOn);
+ `],
+			[/* text */ 't', `
  `]
 		]],
 		[/* block */ 'b', '']

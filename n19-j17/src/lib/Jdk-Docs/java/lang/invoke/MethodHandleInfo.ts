@@ -83,6 +83,9 @@ DocsCollector.collect('java.lang.invoke.MethodHandleInfo', [
  `]
 			]]
 		]],
+		[/* text */ 't', `
+
+ `],
 		[/* block */ 'b', `Restrictions on Cracking`],
 		[/* text */ 't', `
  Given a suitable `],
@@ -592,6 +595,8 @@ DocsCollector.collect('java.lang.invoke.MethodHandleInfo', [
 				[/* reference */ 'r', `java.lang.Class#getName()`, `name`],
 				[/* text */ 't', ` of `],
 				[/* inline code block */ 'i', `defc`],
+				[/* text */ 't', `
+ `],
 				[/* inline code block */ 'i', `N`],
 				[/* text */ 't', ` is the `],
 				[/* inline code block */ 'i', `name`],

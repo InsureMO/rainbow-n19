@@ -12,6 +12,7 @@ DocsCollector.collect('java.util.GregorianCalendar', [
 
  `],
 		[/* block */ 'b', [
+			[/* text */ 't', ` `],
 			[/* inline code block */ 'i', `GregorianCalendar`],
 			[/* text */ 't', ` is a hybrid calendar that
  supports both the Julian and Gregorian calendar systems with the
@@ -39,6 +40,8 @@ DocsCollector.collect('java.util.GregorianCalendar', [
  `]
 		]],
 		[/* block */ 'b', [
+			[/* text */ 't', `
+ `],
 			[/* inline code block */ 'i', `GregorianCalendar`],
 			[/* text */ 't', ` implements `],
 			[/* text */ 't', `proleptic`],
@@ -68,6 +71,9 @@ DocsCollector.collect('java.util.GregorianCalendar', [
 		[/* block */ 'b', [
 			[/* anchor */ 'r', '#-id', `week_and_year`, `Week Of Year and Week Year`]
 		]],
+		[/* text */ 't', `
+
+ `],
 		[/* block */ 'b', [
 			[/* text */ 't', `Values calculated for the `],
 			[/* reference */ 'r', `java.util.Calendar#WEEK_OF_YEAR`, `WEEK_OF_YEAR`],
@@ -153,6 +159,9 @@ DocsCollector.collect('java.util.GregorianCalendar', [
  `]
 		]],
 		[/* block */ 'b', `Week Of Month`],
+		[/* text */ 't', `
+
+ `],
 		[/* block */ 'b', [
 			[/* text */ 't', `Values calculated for the `],
 			[/* inline code block */ 'i', `WEEK_OF_MONTH`],
@@ -203,6 +212,9 @@ DocsCollector.collect('java.util.GregorianCalendar', [
  `]
 		]],
 		[/* block */ 'b', `Default Fields Values`],
+		[/* text */ 't', `
+
+ `],
 		[/* block */ 'b', [
 			[/* text */ 't', `The `],
 			[/* inline code block */ 'i', `clear`],
@@ -377,6 +389,8 @@ DocsCollector.collect('java.util.GregorianCalendar', [
 				]]
 			]],
 		],
+		[/* text */ 't', `
+ `],
 		[/* new line */ 'n'],
 		[/* text */ 't', `Default values are not applicable for the fields not listed above.
 
@@ -384,6 +398,8 @@ DocsCollector.collect('java.util.GregorianCalendar', [
 		[/* block */ 'b', ''],
 		[/* block */ 'b', `Example:`],
 		[/* block */ 'b', [
+			[/* text */ 't', `
+ `],
 			[/* code block */ 'c', ` // get the supported ids for GMT-08:00 (Pacific Standard Time)
  String[] ids = TimeZone.getAvailableIDs(-8 * 60 * 60 * 1000);
  // if no ids were returned, something is wrong. get out.
@@ -452,6 +468,8 @@ DocsCollector.collect('java.util.GregorianCalendar', [
         + (calendar.get(Calendar.ZONE_OFFSET)/(60*60*1000))); // in hours
  System.out.println("DST_OFFSET: "
         + (calendar.get(Calendar.DST_OFFSET)/(60*60*1000))); // in hours
+ `],
+			[/* text */ 't', `
  `]
 		]],
 		[/* block */ 'b', '']
@@ -1168,6 +1186,8 @@ DocsCollector.collect('java.util.GregorianCalendar', [
  `]
 				]],
 				[/* block */ 'b', [
+					[/* text */ 't', `
+ `],
 					[/* inline code block */ 'i', `ZoneDateTime`],
 					[/* text */ 't', ` can store points on the time-line further in the
  future and further in the past than `],
@@ -1224,6 +1244,9 @@ DocsCollector.collect('java.util.GregorianCalendar', [
  range and, as a result, the next larger field is incremented or
  decremented and the field value is adjusted back into its range.`]
 				]],
+				[/* text */ 't', `
+
+ `],
 				[/* block */ 'b', [
 					[/* text */ 't', `Add rule 2`],
 					[/* text */ 't', `. If a smaller field is expected to be
@@ -1273,6 +1296,8 @@ DocsCollector.collect('java.util.GregorianCalendar', [
  field without changing larger fields.
  `],
 				[/* block */ 'b', [
+					[/* text */ 't', `
+ `],
 					[/* text */ 't', `Example`],
 					[/* text */ 't', `: Consider a `],
 					[/* inline code block */ 'i', `GregorianCalendar`],
@@ -1337,6 +1362,8 @@ DocsCollector.collect('java.util.GregorianCalendar', [
  `]
 				]],
 				[/* block */ 'b', [
+					[/* text */ 't', `
+ `],
 					[/* text */ 't', `Example`],
 					[/* text */ 't', `: Consider a `],
 					[/* inline code block */ 'i', `GregorianCalendar`],
@@ -1363,6 +1390,8 @@ DocsCollector.collect('java.util.GregorianCalendar', [
  `]
 				]],
 				[/* block */ 'b', [
+					[/* text */ 't', `
+ `],
 					[/* text */ 't', `Example`],
 					[/* text */ 't', `: Consider a `],
 					[/* inline code block */ 'i', `GregorianCalendar`],

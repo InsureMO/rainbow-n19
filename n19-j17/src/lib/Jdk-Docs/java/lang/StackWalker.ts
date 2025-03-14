@@ -55,6 +55,7 @@ DocsCollector.collect('java.lang.StackWalker', [
  `]
 		]],
 		[/* block */ 'b', [
+			[/* text */ 't', ` `],
 			[/* inline code block */ 'i', `StackWalker`],
 			[/* text */ 't', ` is thread-safe. Multiple threads can share
  a single `],
@@ -410,7 +411,11 @@ DocsCollector.collect('java.lang.StackWalker', [
 				[/* block */ 'b', ` This method is equivalent to calling
  `],
 				[/* block */ 'b', [
-					[/* inline code block */ 'i', `walk(s -> { s.forEach(action); return null; });`]
+					[/* text */ 't', `
+ `],
+					[/* inline code block */ 'i', `walk(s -> { s.forEach(action); return null; });`],
+					[/* text */ 't', `
+ `]
 				]],
 				[/* block */ 'b', '']
 			],

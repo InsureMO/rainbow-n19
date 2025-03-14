@@ -73,6 +73,9 @@ DocsCollector.collect('java.util.Queue', [
 				]]
 			]],
 		],
+		[/* text */ 't', `
+
+ `],
 		[/* block */ 'b', [
 			[/* text */ 't', `Queues typically, but do not necessarily, order elements in a
  FIFO (first-in-first-out) manner.  Among the exceptions are

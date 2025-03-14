@@ -773,6 +773,9 @@ DocsCollector.collect('java.lang.reflect.Method', [
  `],
 				[/* code block */ 'c', `    public boolean java.lang.Object.equals(java.lang.Object)
  `],
+				[/* text */ 't', `
+
+ `],
 				[/* block */ 'b', [
 					[/* text */ 't', `The access modifiers are placed in canonical order as
  specified by "The Java Language Specification".  This is
@@ -834,11 +837,16 @@ DocsCollector.collect('java.lang.reflect.Method', [
 						[/* reference */ 'r', `java.lang.reflect.Member`, `member`],
 						[/* text */ 't', ` of `],
 						[/* reference */ 'r', `java.lang.reflect.Member#getDeclaringClass()`, `declaring class`],
+						[/* text */ 't', ` `],
 						[/* inline code block */ 'i', `D`],
 						[/* text */ 't', ` if any of the following hold: `]
 					]],
+					[/* text */ 't', `
+
+ `],
 					[/* list */ 'l', [
 						[/* block */ 'b', [
+							[/* text */ 't', ` `],
 							[/* inline code block */ 'i', `C`],
 							[/* text */ 't', ` and `],
 							[/* inline code block */ 'i', `D`],
@@ -854,6 +862,7 @@ DocsCollector.collect('java.lang.reflect.Method', [
 							[/* text */ 't', ` in
      a package that the module containing `],
 							[/* inline code block */ 'i', `D`],
+							[/* text */ 't', ` `],
 							[/* reference */ 'r', `java.lang.Module#isExported(java.lang.String,java.lang.Module)`, `exports`],
 							[/* text */ 't', ` to at least the module
      containing `],
@@ -863,6 +872,7 @@ DocsCollector.collect('java.lang.reflect.Method', [
 						[/* block */ 'b', [
 							[/* text */ 't', ` The member is `],
 							[/* inline code block */ 'i', `protected`],
+							[/* text */ 't', ` `],
 							[/* inline code block */ 'i', `static`],
 							[/* text */ 't', `, `],
 							[/* inline code block */ 'i', `D`],
@@ -882,9 +892,12 @@ DocsCollector.collect('java.lang.reflect.Method', [
 							[/* text */ 't', `. `]
 						]],
 						[/* block */ 'b', [
+							[/* text */ 't', ` `],
 							[/* inline code block */ 'i', `D`],
 							[/* text */ 't', ` is in a package that the module containing `],
 							[/* inline code block */ 'i', `D`],
+							[/* text */ 't', `
+     `],
 							[/* reference */ 'r', `java.lang.Module#isOpen(java.lang.String,java.lang.Module)`, `opens`],
 							[/* text */ 't', ` to at least the module
      containing `],
@@ -897,11 +910,17 @@ DocsCollector.collect('java.lang.reflect.Method', [
      open module. `]
 						]]
 					]],
+					[/* text */ 't', `
+
+ `],
 					[/* block */ 'b', ` This method cannot be used to enable access to private members,
  members with default (package) access, protected instance members, or
  protected constructors when the declaring class is in a different module
  to the caller and the package containing the declaring class is not open
  to the caller's module. `],
+					[/* text */ 't', `
+
+ `],
 					[/* block */ 'b', [
 						[/* text */ 't', ` This method cannot be used to enable `],
 						[/* reference */ 'r', `java.lang.reflect.Field#set(java.lang.Object,java.lang.Object)`, `write`],
@@ -923,6 +942,8 @@ DocsCollector.collect('java.lang.reflect.Method', [
 							[/* reference */ 'r', `java.lang.Class#isRecord()`, `record`]
 						]]
 					]],
+					[/* text */ 't', `
+ `],
 					[/* block */ 'b', ''],
 					[/* block */ 'b', [
 						[/* text */ 't', ` The `],

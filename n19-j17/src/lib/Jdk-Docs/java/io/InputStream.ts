@@ -464,7 +464,9 @@ DocsCollector.collect('java.io.InputStream', [
 					[/* text */ 't', `, that exception is returned from the call to
  the `],
 					[/* inline code block */ 'i', `read(b,`],
+					[/* text */ 't', ` `],
 					[/* inline code block */ 'i', `off,`],
+					[/* text */ 't', ` `],
 					[/* inline code block */ 'i', `len)`],
 					[/* text */ 't', ` method.  If
  any subsequent call to `],
@@ -588,6 +590,8 @@ DocsCollector.collect('java.io.InputStream', [
 					[/* text */ 't', `, leaving elements `],
 					[/* inline code block */ 'i', `b[off+`],
 					[/* text */ 't', `k`],
+					[/* text */ 't', `
+ `],
 					[/* inline code block */ 'i', `]`],
 					[/* text */ 't', ` through `],
 					[/* inline code block */ 'i', `b[off+len-1]`],
@@ -950,7 +954,10 @@ DocsCollector.collect('java.io.InputStream', [
 								[/* inline code block */ 'i', `reset`],
 								[/* text */ 't', `. `]
 							]]
-						]]
+						]],
+						[/* text */ 't', `
+
+ `]
 					]],
 					[/* block */ 'b', [
 						[/* text */ 't', ` If the method `],
@@ -986,6 +993,9 @@ DocsCollector.collect('java.io.InputStream', [
 						]]
 					]]
 				]],
+				[/* text */ 't', `
+
+ `],
 				[/* block */ 'b', ''],
 				[/* block */ 'b', [
 					[/* text */ 't', `The method `],

@@ -84,30 +84,57 @@ DocsCollector.collect('java.time.chrono.Chronology', [
 		]],
 		[/* list */ 'l', [
 			[/* block */ 'b', [
-				[/* reference */ 'r', `#dateNow()`, `dateNow()`]
+				[/* text */ 't', ` `],
+				[/* reference */ 'r', `#dateNow()`, `dateNow()`],
+				[/* text */ 't', `
+ `]
 			]],
 			[/* block */ 'b', [
-				[/* reference */ 'r', `#dateNow(java.time.Clock)`, `dateNow(clock)`]
+				[/* text */ 't', ` `],
+				[/* reference */ 'r', `#dateNow(java.time.Clock)`, `dateNow(clock)`],
+				[/* text */ 't', `
+ `]
 			]],
 			[/* block */ 'b', [
-				[/* reference */ 'r', `#dateNow(java.time.ZoneId)`, `dateNow(zone)`]
+				[/* text */ 't', ` `],
+				[/* reference */ 'r', `#dateNow(java.time.ZoneId)`, `dateNow(zone)`],
+				[/* text */ 't', `
+ `]
 			]],
 			[/* block */ 'b', [
-				[/* reference */ 'r', `#date(int,int,int)`, `date(yearProleptic, month, day)`]
+				[/* text */ 't', ` `],
+				[/* reference */ 'r', `#date(int,int,int)`, `date(yearProleptic, month, day)`],
+				[/* text */ 't', `
+ `]
 			]],
 			[/* block */ 'b', [
-				[/* reference */ 'r', `#date(java.time.chrono.Era,int,int,int)`, `date(era, yearOfEra, month, day)`]
+				[/* text */ 't', ` `],
+				[/* reference */ 'r', `#date(java.time.chrono.Era,int,int,int)`, `date(era, yearOfEra, month, day)`],
+				[/* text */ 't', `
+ `]
 			]],
 			[/* block */ 'b', [
-				[/* reference */ 'r', `#dateYearDay(int,int)`, `dateYearDay(yearProleptic, dayOfYear)`]
+				[/* text */ 't', ` `],
+				[/* reference */ 'r', `#dateYearDay(int,int)`, `dateYearDay(yearProleptic, dayOfYear)`],
+				[/* text */ 't', `
+ `]
 			]],
 			[/* block */ 'b', [
-				[/* reference */ 'r', `#dateYearDay(java.time.chrono.Era,int,int)`, `dateYearDay(era, yearOfEra, dayOfYear)`]
+				[/* text */ 't', ` `],
+				[/* reference */ 'r', `#dateYearDay(java.time.chrono.Era,int,int)`, `dateYearDay(era, yearOfEra, dayOfYear)`],
+				[/* text */ 't', `
+ `]
 			]],
 			[/* block */ 'b', [
-				[/* reference */ 'r', `#date(java.time.temporal.TemporalAccessor)`, `date(TemporalAccessor)`]
+				[/* text */ 't', ` `],
+				[/* reference */ 'r', `#date(java.time.temporal.TemporalAccessor)`, `date(TemporalAccessor)`],
+				[/* text */ 't', `
+ `]
 			]]
 		]],
+		[/* text */ 't', `
+
+ `],
 		[/* block */ 'b', ''],
 		[/* block */ 'b', `Adding New Calendars`],
 		[/* text */ 't', `
@@ -185,6 +212,8 @@ DocsCollector.collect('java.time.chrono.Chronology', [
      valid range of years for the chronology.
  `]
 				]],
+				[/* text */ 't', `
+ `],
 				[/* block */ 'b', ''],
 				[/* block */ 'b', `
  Outside the range of valid years an implementation is free to return

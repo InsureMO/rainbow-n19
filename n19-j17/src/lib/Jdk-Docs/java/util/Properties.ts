@@ -85,7 +85,10 @@ DocsCollector.collect('java.util.Properties', [
 			[/* text */ 't', `
  The `],
 			[/* reference */ 'r', `#load(java.io.Reader)`, `load(Reader)`],
+			[/* text */ 't', ` `],
 			[/* inline code block */ 'i', `/`],
+			[/* text */ 't', `
+ `],
 			[/* reference */ 'r', `#store(java.io.Writer,java.lang.String)`, `store(Writer, String)`],
 			[/* text */ 't', `
  methods load and store properties from and to a character based stream
@@ -93,7 +96,10 @@ DocsCollector.collect('java.util.Properties', [
 
  The `],
 			[/* reference */ 'r', `#load(java.io.InputStream)`, `load(InputStream)`],
+			[/* text */ 't', ` `],
 			[/* inline code block */ 'i', `/`],
+			[/* text */ 't', `
+ `],
 			[/* reference */ 'r', `#store(java.io.OutputStream,java.lang.String)`, `store(OutputStream, String)`],
 			[/* text */ 't', `
  methods work the same way as the load(Reader)/store(Writer, String) pair, except
@@ -145,6 +151,9 @@ DocsCollector.collect('java.util.Properties', [
     <!ELEMENT entry (#PCDATA) >
 
     <!ATTLIST entry key CDATA #REQUIRED>
+ `],
+		[/* text */ 't', `
+
  `],
 		[/* block */ 'b', ''],
 		[/* block */ 'b', [
@@ -508,6 +517,9 @@ DocsCollector.collect('java.util.Properties', [
  character; for example,`]
 				]],
 				[/* block */ 'b', [
+					[/* text */ 't', `
+
+ `],
 					[/* inline code block */ 'i', `\\:\\=`]
 				]],
 				[/* block */ 'b', [
@@ -598,6 +610,8 @@ DocsCollector.collect('java.util.Properties', [
  `],
 				[/* block */ 'b', ''],
 				[/* block */ 'b', [
+					[/* text */ 't', `
+ `],
 					[/* anchor */ 'r', '#-id', `unicodeescapes`, ``],
 					[/* text */ 't', `
  Characters in keys and elements can be represented in escape
@@ -661,6 +675,8 @@ DocsCollector.collect('java.util.Properties', [
 
  `]
 				]],
+				[/* text */ 't', `
+ `],
 				[/* block */ 'b', ''],
 				[/* block */ 'b', `
  The specified stream remains open after this method returns.`]
@@ -877,6 +893,8 @@ DocsCollector.collect('java.util.Properties', [
  `]
 					]]
 				]],
+				[/* text */ 't', `
+ `],
 				[/* block */ 'b', ''],
 				[/* block */ 'b', `
  After the entries have been written, the output stream is flushed.
@@ -1100,6 +1118,9 @@ DocsCollector.collect('java.util.Properties', [
  `],
 				[/* code block */ 'c', ` <!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
  `],
+				[/* text */ 't', `
+
+ `],
 				[/* block */ 'b', ''],
 				[/* block */ 'b', [
 					[/* text */ 't', `If the specified comment is `],
@@ -1193,6 +1214,9 @@ DocsCollector.collect('java.util.Properties', [
 				[/* block */ 'b', `The XML document will have the following DOCTYPE declaration:
  `],
 				[/* code block */ 'c', ` <!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+ `],
+				[/* text */ 't', `
+
  `],
 				[/* block */ 'b', ''],
 				[/* block */ 'b', [

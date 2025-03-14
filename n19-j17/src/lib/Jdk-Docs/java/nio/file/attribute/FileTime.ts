@@ -183,6 +183,7 @@ DocsCollector.collect('java.nio.file.attribute.FileTime', [
  `]
 				]],
 				[/* block */ 'b', [
+					[/* text */ 't', ` `],
 					[/* inline code block */ 'i', `FileTime`],
 					[/* text */ 't', ` can store points on the time-line further in the
  future and further in the past than `],

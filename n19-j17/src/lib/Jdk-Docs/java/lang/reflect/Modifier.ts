@@ -609,7 +609,9 @@ DocsCollector.collect('java.lang.reflect.Modifier', [
  The full modifier ordering used by this method is:
  `],
 				[/* block */ 'b', [
-					[/* inline code block */ 'i', `public protected private abstract static final transient volatile synchronized native strictfp interface`]
+					[/* text */ 't', ` `],
+					[/* inline code block */ 'i', `public protected private abstract static final transient volatile synchronized native strictfp interface`],
+					[/* text */ 't', ` `]
 				]],
 				[/* text */ 't', `
  The `],

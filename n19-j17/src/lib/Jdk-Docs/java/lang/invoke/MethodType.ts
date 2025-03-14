@@ -61,6 +61,8 @@ DocsCollector.collect('java.lang.invoke.MethodType', [
  `]
 		]],
 		[/* block */ 'b', [
+			[/* text */ 't', `
+ `],
 			[/* inline code block */ 'i', `MethodType`],
 			[/* text */ 't', ` objects are sometimes derived from bytecode instructions
  such as `],
@@ -145,6 +147,8 @@ DocsCollector.collect('java.lang.invoke.MethodType', [
 				[/* text */ 't', `).`]
 			]]
 		]],
+		[/* text */ 't', `
+ `],
 		[/* block */ 'b', ''],
 		[/* block */ 'b', [
 			[/* text */ 't', `

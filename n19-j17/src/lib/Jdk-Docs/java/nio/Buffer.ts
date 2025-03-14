@@ -9,13 +9,22 @@ DocsCollector.collect('java.nio.Buffer', [
 		[/* block */ 'b', ` A buffer is a linear, finite sequence of elements of a specific
  primitive type.  Aside from its content, the essential properties of a
  buffer are its capacity, limit, and position: `],
+		[/* text */ 't', `
+
+ `],
 		[/* block */ 'b', [
+			[/* text */ 't', `
+
+   `],
 			[/* block */ 'b', [
 				[/* text */ 't', ` A buffer's `],
 				[/* text */ 't', `capacity`],
 				[/* text */ 't', ` is the number of elements it contains.  The
    capacity of a buffer is never negative and never changes.  `]
 			]],
+			[/* text */ 't', `
+
+   `],
 			[/* block */ 'b', [
 				[/* text */ 't', ` A buffer's `],
 				[/* text */ 't', `limit`],
@@ -23,19 +32,31 @@ DocsCollector.collect('java.nio.Buffer', [
    not be read or written.  A buffer's limit is never negative and is never
    greater than its capacity.  `]
 			]],
+			[/* text */ 't', `
+
+   `],
 			[/* block */ 'b', [
 				[/* text */ 't', ` A buffer's `],
 				[/* text */ 't', `position`],
 				[/* text */ 't', ` is the index of the next element to be
    read or written.  A buffer's position is never negative and is never
    greater than its limit.  `]
-			]]
+			]],
+			[/* text */ 't', `
+
+ `]
 		]],
+		[/* text */ 't', `
+
+ `],
 		[/* block */ 'b', ` There is one subclass of this class for each non-boolean primitive type.
 
 
  `],
 		[/* block */ 'b', ` Transferring data `],
+		[/* text */ 't', `
+
+ `],
 		[/* block */ 'b', [
 			[/* text */ 't', ` Each subclass of this class defines two categories of `],
 			[/* text */ 't', `get`],
@@ -44,8 +65,15 @@ DocsCollector.collect('java.nio.Buffer', [
 			[/* text */ 't', `put`],
 			[/* text */ 't', ` operations: `]
 		]],
+		[/* text */ 't', `
+
+ `],
 		[/* block */ 'b', [
+			[/* text */ 't', `
+
+   `],
 			[/* block */ 'b', [
+				[/* text */ 't', ` `],
 				[/* text */ 't', `Relative`],
 				[/* text */ 't', ` operations read or write one or more elements starting
    at the current position and then increment the position by the number of
@@ -61,7 +89,11 @@ DocsCollector.collect('java.nio.Buffer', [
 				[/* reference */ 'r', `java.nio.BufferOverflowException`, `BufferOverflowException`],
 				[/* text */ 't', `; in either case, no data is transferred.  `]
 			]],
+			[/* text */ 't', `
+
+   `],
 			[/* block */ 'b', [
+				[/* text */ 't', ` `],
 				[/* text */ 't', `Absolute`],
 				[/* text */ 't', ` operations take an explicit element index and do not
    affect the position.  Absolute `],
@@ -73,8 +105,14 @@ DocsCollector.collect('java.nio.Buffer', [
 				[/* reference */ 'r', `java.lang.IndexOutOfBoundsException`, `IndexOutOfBoundsException`],
 				[/* text */ 't', ` if the index argument exceeds the
    limit.  `]
-			]]
+			]],
+			[/* text */ 't', `
+
+ `]
 		]],
+		[/* text */ 't', `
+
+ `],
 		[/* block */ 'b', ` Data may also, of course, be transferred in to or out of a buffer by the
  I/O operations of an appropriate channel, which are always relative to the
  current position.
@@ -82,6 +120,9 @@ DocsCollector.collect('java.nio.Buffer', [
 
  `],
 		[/* block */ 'b', ` Marking and resetting `],
+		[/* text */ 't', `
+
+ `],
 		[/* block */ 'b', [
 			[/* text */ 't', ` A buffer's `],
 			[/* text */ 't', `mark`],
@@ -103,21 +144,43 @@ DocsCollector.collect('java.nio.Buffer', [
  `]
 		]],
 		[/* block */ 'b', ` Invariants `],
+		[/* text */ 't', `
+
+ `],
 		[/* block */ 'b', ` The following invariant holds for the mark, position, limit, and
  capacity values:
 
  `],
 		[/* block */ 'b', [
+			[/* text */ 't', `
+     `],
 			[/* inline code block */ 'i', `0`],
+			[/* text */ 't', ` `],
 			[/* inline code block */ 'i', `<=`],
+			[/* text */ 't', `
+     `],
 			[/* text */ 't', `mark`],
+			[/* text */ 't', ` `],
 			[/* inline code block */ 'i', `<=`],
+			[/* text */ 't', `
+     `],
 			[/* text */ 't', `position`],
+			[/* text */ 't', ` `],
 			[/* inline code block */ 'i', `<=`],
+			[/* text */ 't', `
+     `],
 			[/* text */ 't', `limit`],
+			[/* text */ 't', ` `],
 			[/* inline code block */ 'i', `<=`],
-			[/* text */ 't', `capacity`]
+			[/* text */ 't', `
+     `],
+			[/* text */ 't', `capacity`],
+			[/* text */ 't', `
+ `]
 		]],
+		[/* text */ 't', `
+
+ `],
 		[/* block */ 'b', ''],
 		[/* block */ 'b', ` A newly-created buffer always has a position of zero and a mark that is
  undefined.  The initial limit may be zero, or it may be some other value
@@ -128,6 +191,9 @@ DocsCollector.collect('java.nio.Buffer', [
 
  `],
 		[/* block */ 'b', ` Additional operations `],
+		[/* text */ 't', `
+
+ `],
 		[/* block */ 'b', ` In addition to methods for accessing the position, limit, and capacity
  values and for marking and resetting, this class also defines the following
  operations upon buffers:
@@ -136,6 +202,7 @@ DocsCollector.collect('java.nio.Buffer', [
 		[/* list */ 'l', [
 			[/* block */ 'b', [
 				[/* block */ 'b', [
+					[/* text */ 't', ` `],
 					[/* reference */ 'r', `#clear()`, `clear()`],
 					[/* text */ 't', ` makes a buffer ready for a new sequence of
    channel-read or relative `],
@@ -146,6 +213,7 @@ DocsCollector.collect('java.nio.Buffer', [
 			]],
 			[/* block */ 'b', [
 				[/* block */ 'b', [
+					[/* text */ 't', ` `],
 					[/* reference */ 'r', `#flip()`, `flip()`],
 					[/* text */ 't', ` makes a buffer ready for a new sequence of
    channel-write or relative `],
@@ -156,6 +224,7 @@ DocsCollector.collect('java.nio.Buffer', [
 			]],
 			[/* block */ 'b', [
 				[/* block */ 'b', [
+					[/* text */ 't', ` `],
 					[/* reference */ 'r', `#rewind()`, `rewind()`],
 					[/* text */ 't', ` makes a buffer ready for re-reading the data that
    it already contains: It leaves the limit unchanged and sets the position
@@ -175,14 +244,22 @@ DocsCollector.collect('java.nio.Buffer', [
 			]],
 			[/* block */ 'b', [
 				[/* block */ 'b', [
+					[/* text */ 't', ` `],
 					[/* reference */ 'r', `#duplicate()`, `duplicate()`],
 					[/* text */ 't', ` creates a shallow copy of a buffer: It leaves
    the limit and the position unchanged. `]
 				]]
 			]]
 		]],
+		[/* text */ 't', `
+
+
+ `],
 		[/* block */ 'b', ''],
 		[/* block */ 'b', ` Read-only buffers `],
+		[/* text */ 't', `
+
+ `],
 		[/* block */ 'b', [
 			[/* text */ 't', ` Every buffer is readable, but not every buffer is writable.  The
  mutation methods of each buffer class are specified as `],
@@ -202,6 +279,9 @@ DocsCollector.collect('java.nio.Buffer', [
  `]
 		]],
 		[/* block */ 'b', ` Thread safety `],
+		[/* text */ 't', `
+
+ `],
 		[/* block */ 'b', ` Buffers are not safe for use by multiple concurrent threads.  If a
  buffer is to be used by more than one thread then access to the buffer
  should be controlled by appropriate synchronization.
@@ -209,6 +289,9 @@ DocsCollector.collect('java.nio.Buffer', [
 
  `],
 		[/* block */ 'b', ` Invocation chaining `],
+		[/* text */ 't', `
+
+ `],
 		[/* block */ 'b', ` Methods in this class that do not otherwise have a value to return are
  specified to return the buffer upon which they are invoked.  This allows
  method invocations to be chained; for example, the sequence of statements
@@ -538,6 +621,9 @@ DocsCollector.collect('java.nio.Buffer', [
 					[/* code block */ 'c', ` buf.clear();     // Prepare buffer for reading
  in.read(buf);    // Read data`]
 				]],
+				[/* text */ 't', `
+
+ `],
 				[/* block */ 'b', ''],
 				[/* block */ 'b', ` This method does not actually erase the data in the buffer, but it
  is named as if it did because it will most often be used in situations
@@ -573,6 +659,9 @@ DocsCollector.collect('java.nio.Buffer', [
  buf.flip();        // Flip buffer
  out.write(buf);    // Write header + data to channel`]
 				]],
+				[/* text */ 't', `
+
+ `],
 				[/* block */ 'b', ''],
 				[/* block */ 'b', [
 					[/* text */ 't', ` This method is often used in conjunction with the `],

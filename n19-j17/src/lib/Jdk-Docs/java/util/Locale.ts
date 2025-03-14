@@ -193,6 +193,9 @@ DocsCollector.collect('java.util.Locale', [
    key="x"/value="java-1-7"`]
 			]]
 		]],
+		[/* text */ 't', `
+
+ `],
 		[/* text */ 't', `Note:`],
 		[/* text */ 't', ` Although BCP 47 requires field values to be registered
  in the IANA Language Subtag Registry, the `],
@@ -212,6 +215,9 @@ DocsCollector.collect('java.util.Locale', [
 		[/* block */ 'b', [
 			[/* anchor */ 'r', '#-id', `def_locale_extension`, `Unicode locale/language extension`]
 		]],
+		[/* text */ 't', `
+
+ `],
 		[/* block */ 'b', `UTS#35, "Unicode Locale Data Markup Language" defines optional
  attributes and keywords to override or refine the default behavior
  associated with a locale.  A keyword is represented by a pair of
@@ -281,6 +287,9 @@ DocsCollector.collect('java.util.Locale', [
 
  `],
 		[/* block */ 'b', `Creating a Locale`],
+		[/* text */ 't', `
+
+ `],
 		[/* block */ 'b', [
 			[/* text */ 't', `There are several different ways to create a `],
 			[/* inline code block */ 'i', `Locale`],
@@ -290,6 +299,9 @@ DocsCollector.collect('java.util.Locale', [
  `]
 		]],
 		[/* block */ 'b', `Builder`],
+		[/* text */ 't', `
+
+ `],
 		[/* block */ 'b', [
 			[/* text */ 't', `Using `],
 			[/* reference */ 'r', `java.util.Locale.Builder`, `Locale.Builder`],
@@ -301,6 +313,9 @@ DocsCollector.collect('java.util.Locale', [
  `]
 		]],
 		[/* block */ 'b', `Constructors`],
+		[/* text */ 't', `
+
+ `],
 		[/* block */ 'b', [
 			[/* text */ 't', `The `],
 			[/* inline code block */ 'i', `Locale`],
@@ -308,11 +323,22 @@ DocsCollector.collect('java.util.Locale', [
  `]
 		]],
 		[/* block */ 'b', [
+			[/* text */ 't', `
+ `],
 			[/* code block */ 'c', [
+				[/* text */ 't', `     `],
 				[/* text */ 't', `Locale(String language)`],
+				[/* text */ 't', `
+     `],
 				[/* text */ 't', `Locale(String language, String country)`],
-				[/* text */ 't', `Locale(String language, String country, String variant)`]
-			]]
+				[/* text */ 't', `
+     `],
+				[/* text */ 't', `Locale(String language, String country, String variant)`],
+				[/* text */ 't', `
+ `]
+			]],
+			[/* text */ 't', `
+ `]
 		]],
 		[/* text */ 't', `
  These constructors allow you to create a `],
@@ -324,6 +350,9 @@ DocsCollector.collect('java.util.Locale', [
  `],
 		[/* block */ 'b', ''],
 		[/* block */ 'b', `Factory Methods`],
+		[/* text */ 't', `
+
+ `],
 		[/* block */ 'b', [
 			[/* text */ 't', `The method `],
 			[/* reference */ 'r', `#forLanguageTag(java.lang.String)`, `forLanguageTag(java.lang.String)`],
@@ -335,6 +364,9 @@ DocsCollector.collect('java.util.Locale', [
  `]
 		]],
 		[/* block */ 'b', `Locale Constants`],
+		[/* text */ 't', `
+
+ `],
 		[/* block */ 'b', [
 			[/* text */ 't', `The `],
 			[/* inline code block */ 'i', `Locale`],
@@ -349,13 +381,23 @@ DocsCollector.collect('java.util.Locale', [
  `]
 		]],
 		[/* block */ 'b', [
+			[/* text */ 't', `
+ `],
 			[/* code block */ 'c', `     Locale.US
+ `],
+			[/* text */ 't', `
  `]
 		]],
+		[/* text */ 't', `
+
+ `],
 		[/* block */ 'b', ''],
 		[/* block */ 'b', [
 			[/* anchor */ 'r', '#-id', `LocaleMatching`, `Locale Matching`]
 		]],
+		[/* text */ 't', `
+
+ `],
 		[/* block */ 'b', `If an application or a system is internationalized and provides localized
  resources for multiple locales, it sometimes needs to find one or more
  locales (or language tags) which meet each user's specific preferences. Note
@@ -392,6 +434,9 @@ DocsCollector.collect('java.util.Locale', [
  `]
 		]],
 		[/* block */ 'b', `Filtering`],
+		[/* text */ 't', `
+
+ `],
 		[/* block */ 'b', `The filtering operation returns all matching language tags. It is defined
  in RFC 4647 as follows:
  "In filtering, each language range represents the least specific language
@@ -415,6 +460,9 @@ DocsCollector.collect('java.util.Locale', [
  `]
 		]],
 		[/* block */ 'b', `Lookup`],
+		[/* text */ 't', `
+
+ `],
 		[/* block */ 'b', `The lookup operation returns the best matching language tags. It is
  defined in RFC 4647 as follows:
  "By contrast with filtering, each language range represents the most
@@ -435,11 +483,15 @@ DocsCollector.collect('java.util.Locale', [
  `]
 		]],
 		[/* block */ 'b', [
+			[/* text */ 't', `
+ `],
 			[/* code block */ 'c', `    1. zh-Hant-TW
     2. zh-Hant
     3. zh
     4. en-US
     5. en
+ `],
+			[/* text */ 't', `
  `]
 		]],
 		[/* text */ 't', `
@@ -469,6 +521,9 @@ DocsCollector.collect('java.util.Locale', [
  `]
 		]],
 		[/* block */ 'b', `Use of Locale`],
+		[/* text */ 't', `
+
+ `],
 		[/* block */ 'b', [
 			[/* text */ 't', `Once you've created a `],
 			[/* inline code block */ 'i', `Locale`],
@@ -517,9 +572,13 @@ DocsCollector.collect('java.util.Locale', [
  `]
 		]],
 		[/* block */ 'b', [
+			[/* text */ 't', `
+ `],
 			[/* code block */ 'c', `     NumberFormat.getInstance()
      NumberFormat.getCurrencyInstance()
      NumberFormat.getPercentInstance()
+ `],
+			[/* text */ 't', `
  `]
 		]],
 		[/* text */ 't', `
@@ -530,9 +589,13 @@ DocsCollector.collect('java.util.Locale', [
 		[/* text */ 't', ` locale:
  `],
 		[/* block */ 'b', [
+			[/* text */ 't', `
+ `],
 			[/* code block */ 'c', `     NumberFormat.getInstance(myLocale)
      NumberFormat.getCurrencyInstance(myLocale)
      NumberFormat.getPercentInstance(myLocale)
+ `],
+			[/* text */ 't', `
  `]
 		]],
 		[/* text */ 't', `
@@ -552,6 +615,9 @@ DocsCollector.collect('java.util.Locale', [
  `],
 		[/* block */ 'b', ''],
 		[/* block */ 'b', `Compatibility`],
+		[/* text */ 't', `
+
+ `],
 		[/* block */ 'b', [
 			[/* text */ 't', `In order to maintain compatibility with existing usage, Locale's
  constructors retain their behavior prior to the Java Runtime
@@ -597,6 +663,9 @@ DocsCollector.collect('java.util.Locale', [
 		[/* block */ 'b', [
 			[/* anchor */ 'r', '#-id', `special_cases_constructor`, `Special cases`]
 		]],
+		[/* text */ 't', `
+
+ `],
 		[/* block */ 'b', [
 			[/* text */ 't', `For compatibility reasons, two
  non-conforming locales are treated as special cases.  These are
@@ -646,6 +715,9 @@ DocsCollector.collect('java.util.Locale', [
  `]
 		]],
 		[/* block */ 'b', `Serialization`],
+		[/* text */ 't', `
+
+ `],
 		[/* block */ 'b', `During serialization, writeObject writes all fields to the output
  stream, including extensions.
 
@@ -662,6 +734,9 @@ DocsCollector.collect('java.util.Locale', [
 		[/* block */ 'b', [
 			[/* anchor */ 'r', '#-id', `legacy_language_codes`, `Legacy language codes`]
 		]],
+		[/* text */ 't', `
+
+ `],
 		[/* block */ 'b', [
 			[/* text */ 't', `Locale's constructor has always converted three language codes to
  their earlier, obsoleted forms: `],
@@ -738,6 +813,9 @@ DocsCollector.collect('java.util.Locale', [
  `]
 		]],
 		[/* block */ 'b', `Three-letter language/country(region) codes`],
+		[/* text */ 't', `
+
+ `],
 		[/* block */ 'b', `The Locale constructors have always specified that the language
  and the country param be two characters in length, although in
  practice they have accepted any length.  The specification has now
@@ -1081,7 +1159,9 @@ DocsCollector.collect('java.util.Locale', [
 					[/* new line */ 'n'],
 					[/* text */ 't', `
  country (extension)*`],
-					[/* new line */ 'n']
+					[/* new line */ 'n'],
+					[/* text */ 't', `
+ `]
 				]],
 				[/* text */ 't', `
  depending on which fields are specified in the locale. The field
@@ -1313,7 +1393,9 @@ DocsCollector.collect('java.util.Locale', [
 					[/* new line */ 'n'],
 					[/* text */ 't', `
  country (extension)*`],
-					[/* new line */ 'n']
+					[/* new line */ 'n'],
+					[/* text */ 't', `
+ `]
 				]],
 				[/* text */ 't', `
  depending on which fields are specified in the locale. The field
@@ -1574,6 +1656,7 @@ DocsCollector.collect('java.util.Locale', [
 					[/* text */ 't', `Variant:`],
 					[/* text */ 't', ` If variant `],
 					[/* text */ 't', `is`],
+					[/* text */ 't', ` `],
 					[/* text */ 't', `well-formed`],
 					[/* text */ 't', `, each sub-segment
  (delimited by '-' or '_') is emitted as a subtag.  Otherwise:
@@ -1606,6 +1689,9 @@ DocsCollector.collect('java.util.Locale', [
  "x-lvariant-Solaris", not as "solaris".`]
 					]]
 				]],
+				[/* text */ 't', `
+
+ `],
 				[/* block */ 'b', ''],
 				[/* block */ 'b', `Special Conversions:`],
 				[/* list */ 'l', [
@@ -1617,6 +1703,9 @@ DocsCollector.collect('java.util.Locale', [
  "NY", representing Norwegian Nynorsk (Norway), is converted
  to a language tag "nn-NO".`]
 				]],
+				[/* text */ 't', `
+
+ `],
 				[/* block */ 'b', ''],
 				[/* block */ 'b', `Note:`],
 				[/* code block */ 'c', `   new Locale("xx", "YY").toLanguageTag();`],
@@ -1742,10 +1831,13 @@ DocsCollector.collect('java.util.Locale', [
 				[/* text */ 't', `
  with `],
 				[/* inline code block */ 'i', `type`],
+				[/* text */ 't', `  `],
 				[/* reference */ 'r', `java.util.Locale.IsoCountryCode#PART1_ALPHA2`, `Locale.IsoCountryCode.PART1_ALPHA2`],
 				[/* text */ 't', `.
  `],
 				[/* block */ 'b', [
+					[/* text */ 't', `
+ `],
 					[/* text */ 't', `Note:`],
 					[/* text */ 't', ` The `],
 					[/* inline code block */ 'i', `Locale`],
@@ -1764,6 +1856,7 @@ DocsCollector.collect('java.util.Locale', [
 					[/* text */ 't', ` with
  `],
 					[/* inline code block */ 'i', `type`],
+					[/* text */ 't', `  `],
 					[/* reference */ 'r', `java.util.Locale.IsoCountryCode#PART3`, `Locale.IsoCountryCode.PART3`],
 					[/* text */ 't', `.`]
 				]]
@@ -2072,6 +2165,9 @@ DocsCollector.collect('java.util.Locale', [
      loc = Locale.forLanguageTag("de-POSIX-x-URP-lvariant-Abc-Def");
      loc.getVariant(); // returns "POSIX_Abc_Def"
      loc.getExtension('x'); // returns "urp"
+ `],
+						[/* text */ 't', `
+
  `]
 					]],
 					[/* block */ 'b', [
@@ -2082,6 +2178,9 @@ DocsCollector.collect('java.util.Locale', [
  `],
 						[/* code block */ 'c', `     Locale.forLanguageTag("ar-aao").getLanguage(); // returns "aao"
      Locale.forLanguageTag("en-abc-def-us").toString(); // returns "abc_US"
+ `],
+						[/* text */ 't', `
+
  `]
 					]],
 					[/* block */ 'b', `Case is normalized except for variant tags, which are left
@@ -2103,6 +2202,9 @@ DocsCollector.collect('java.util.Locale', [
  `]
 					]]
 				]],
+				[/* text */ 't', `
+
+ `],
 				[/* block */ 'b', ''],
 				[/* block */ 'b', `This implements the 'Language-Tag' production of BCP47, and
  so supports legacy (regular and irregular, referred to as
@@ -2291,6 +2393,9 @@ DocsCollector.collect('java.util.Locale', [
 						]]
 					]],
 				],
+				[/* text */ 't', `
+
+ `],
 				[/* block */ 'b', ''],
 				[/* block */ 'b', `Legacy tags with no modern replacement will be
  converted as follows:
@@ -2359,6 +2464,9 @@ DocsCollector.collect('java.util.Locale', [
 						]]
 					]],
 				],
+				[/* text */ 't', `
+
+ `],
 				[/* block */ 'b', ''],
 				[/* block */ 'b', `For a list of all legacy tags, see the
  IANA Language Subtag Registry (search for "Type: grandfathered").

@@ -79,6 +79,7 @@ DocsCollector.collect('java.security.CodeSource', [
  `],
 				[/* list */ 'l', [
 					[/* block */ 'b', [
+						[/* text */ 't', ` `],
 						[/* text */ 't', `codesource`],
 						[/* text */ 't', ` must not be null.
  `]
@@ -100,6 +101,7 @@ DocsCollector.collect('java.security.CodeSource', [
    `],
 						[/* list */ 'l', [
 							[/* block */ 'b', [
+								[/* text */ 't', `  `],
 								[/* text */ 't', `codesource`],
 								[/* text */ 't', `'s location must not be null.
 
@@ -172,9 +174,13 @@ DocsCollector.collect('java.security.CodeSource', [
 
    `]
 							]]
-						]]
+						]],
+						[/* text */ 't', `
+ `]
 					]]
 				]],
+				[/* text */ 't', `
+ `],
 				[/* block */ 'b', ''],
 				[/* block */ 'b', `
  For example, the codesource objects with the following locations

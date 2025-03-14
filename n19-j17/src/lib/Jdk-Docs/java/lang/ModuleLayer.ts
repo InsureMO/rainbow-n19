@@ -17,6 +17,9 @@ DocsCollector.collect('java.lang.ModuleLayer', [
  may be loaded from the modules so that the Java virtual machine knows which
  module that each class is a member of. `]
 		]],
+		[/* text */ 't', `
+
+ `],
 		[/* block */ 'b', [
 			[/* text */ 't', ` Creating a layer creates a `],
 			[/* reference */ 'r', `java.lang.Module`, `Module`],
@@ -27,6 +30,7 @@ DocsCollector.collect('java.lang.ModuleLayer', [
 			[/* reference */ 'r', `java.lang.module.ResolvedModule#reads()`, `read`],
 			[/* text */ 't', `, the `],
 			[/* inline code block */ 'i', `Module`],
+			[/* text */ 't', ` `],
 			[/* reference */ 'r', `java.lang.Module#canRead(java.lang.Module)`, `reads`],
 			[/* text */ 't', ` the corresponding run-time `],
 			[/* inline code block */ 'i', `Module`],
@@ -35,6 +39,9 @@ DocsCollector.collect('java.lang.ModuleLayer', [
 			[/* reference */ 'r', `#parents()`, `parent`],
 			[/* text */ 't', ` layer. `]
 		]],
+		[/* text */ 't', `
+
+ `],
 		[/* block */ 'b', [
 			[/* text */ 't', ` The `],
 			[/* reference */ 'r', `#defineModulesWithOneLoader(java.lang.module.Configuration,java.lang.ClassLoader)`, `defineModulesWithOneLoader`],
@@ -56,6 +63,9 @@ DocsCollector.collect('java.lang.ModuleLayer', [
 			[/* text */ 't', ` is needed to control modules in the layer
  `]
 		]],
+		[/* text */ 't', `
+
+ `],
 		[/* block */ 'b', [
 			[/* text */ 't', ` A Java virtual machine has at least one non-empty layer, the `],
 			[/* reference */ 'r', `#boot()`, `boot`],
@@ -74,6 +84,9 @@ DocsCollector.collect('java.lang.ModuleLayer', [
 			[/* reference */ 'r', `#parents()`, `parent`],
 			[/* text */ 't', ` when creating additional layers. `]
 		]],
+		[/* text */ 't', `
+
+ `],
 		[/* block */ 'b', [
 			[/* text */ 't', ` Each `],
 			[/* inline code block */ 'i', `Module`],
@@ -88,6 +101,8 @@ DocsCollector.collect('java.lang.ModuleLayer', [
  (where a package is exported to a set of target modules rather than all
  modules) are reified when creating the layer as follows: `]
 		]],
+		[/* text */ 't', `
+ `],
 		[/* list */ 'l', [
 			[/* block */ 'b', [
 				[/* text */ 't', ` If module `],
@@ -97,13 +112,16 @@ DocsCollector.collect('java.lang.ModuleLayer', [
 				[/* text */ 't', `, and if the
      runtime `],
 				[/* inline code block */ 'i', `Module`],
+				[/* text */ 't', ` `],
 				[/* inline code block */ 'i', `X`],
 				[/* text */ 't', ` reads `],
 				[/* inline code block */ 'i', `Module`],
+				[/* text */ 't', ` `],
 				[/* inline code block */ 'i', `Y`],
 				[/* text */ 't', `, then
      the package is exported to `],
 				[/* inline code block */ 'i', `Module`],
+				[/* text */ 't', ` `],
 				[/* inline code block */ 'i', `Y`],
 				[/* text */ 't', ` (which may be in
      the same layer as `],
@@ -118,6 +136,7 @@ DocsCollector.collect('java.lang.ModuleLayer', [
 				[/* text */ 't', `, and if the
      runtime `],
 				[/* inline code block */ 'i', `Module`],
+				[/* text */ 't', ` `],
 				[/* inline code block */ 'i', `X`],
 				[/* text */ 't', ` does not read `],
 				[/* inline code block */ 'i', `Y`],
@@ -138,7 +157,13 @@ DocsCollector.collect('java.lang.ModuleLayer', [
      export is ignored. `]
 			]]
 		]],
+		[/* text */ 't', `
+
+ `],
 		[/* block */ 'b', ` Qualified opens are handled in same way as qualified exports. `],
+		[/* text */ 't', `
+
+ `],
 		[/* block */ 'b', [
 			[/* text */ 't', ` As when creating a `],
 			[/* inline code block */ 'i', `Configuration`],
@@ -153,6 +178,9 @@ DocsCollector.collect('java.lang.ModuleLayer', [
 			[/* inline code block */ 'i', `Module`],
 			[/* text */ 't', ` in the Java virtual machine. `]
 		]],
+		[/* text */ 't', `
+
+ `],
 		[/* block */ 'b', [
 			[/* text */ 't', ` Unless otherwise specified, passing a `],
 			[/* inline code block */ 'i', `null`],
@@ -162,7 +190,13 @@ DocsCollector.collect('java.lang.ModuleLayer', [
 			[/* text */ 't', ` to
  be thrown. `]
 		]],
+		[/* text */ 't', `
+
+ `],
 		[/* block */ 'b', ` Example usage: `],
+		[/* text */ 't', `
+
+ `],
 		[/* block */ 'b', [
 			[/* text */ 't', ` This example creates a configuration by resolving a module named
  "`],
@@ -171,6 +205,9 @@ DocsCollector.collect('java.lang.ModuleLayer', [
  then creates a new layer with the modules in this configuration. All modules
  are defined to the same class loader. `]
 		]],
+		[/* text */ 't', `
+
+ `],
 		[/* code block */ 'c', [
 			[/* inline code block */ 'i', `ModuleFinder finder = ModuleFinder.of(dir1, dir2, dir3);
 
@@ -257,6 +294,7 @@ DocsCollector.collect('java.lang.ModuleLayer', [
  invoking:
  `],
 				[/* code block */ 'c', [
+					[/* text */ 't', ` `],
 					[/* inline code block */ 'i', `ModuleLayer.defineModules(cf, List.of(thisLayer), clf).layer();`]
 				]]
 			],
@@ -312,6 +350,7 @@ DocsCollector.collect('java.lang.ModuleLayer', [
  method is equivalent to invoking:
  `],
 				[/* code block */ 'c', [
+					[/* text */ 't', ` `],
 					[/* inline code block */ 'i', `ModuleLayer.defineModulesWithManyLoaders(cf, List.of(thisLayer), parentLoader).layer();`]
 				]]
 			],
@@ -371,6 +410,7 @@ DocsCollector.collect('java.lang.ModuleLayer', [
  method is equivalent to invoking:
  `],
 				[/* code block */ 'c', [
+					[/* text */ 't', ` `],
 					[/* inline code block */ 'i', `ModuleLayer.defineModulesWithOneLoader(cf, List.of(thisLayer), parentLoader).layer();`]
 				]]
 			],
@@ -523,7 +563,13 @@ DocsCollector.collect('java.lang.ModuleLayer', [
  ready to load from these modules before there are any attempts to load
  classes or resources. `]
 				]],
+				[/* text */ 't', `
+
+ `],
 				[/* block */ 'b', ` Creating a layer can fail for the following reasons: `],
+				[/* text */ 't', `
+
+ `],
 				[/* list */ 'l', [
 					[/* block */ 'b', [
 						[/* block */ 'b', ` Two or more modules with the same package are mapped to the
@@ -538,6 +584,9 @@ DocsCollector.collect('java.lang.ModuleLayer', [
      defined types in any of the packages in the module. `]
 					]]
 				]],
+				[/* text */ 't', `
+
+ `],
 				[/* block */ 'b', [
 					[/* text */ 't', ` In addition, a layer cannot be created if the configuration contains
  a module named "`],
@@ -555,6 +604,9 @@ DocsCollector.collect('java.lang.ModuleLayer', [
 					[/* reference */ 'r', `java.lang.ClassLoader#getPlatformClassLoader()`, `platform class loader`],
 					[/* text */ 't', `. `]
 				]],
+				[/* text */ 't', `
+
+ `],
 				[/* block */ 'b', ` If the function to map a module name to class loader throws an error
  or runtime exception then it is propagated to the caller of this method.
  `]
@@ -623,6 +675,9 @@ DocsCollector.collect('java.lang.ModuleLayer', [
  that does not map to a module then it delegates to the parent class
  loader. `]
 				]],
+				[/* text */ 't', `
+
+ `],
 				[/* block */ 'b', [
 					[/* text */ 't', ` The class loaders created by this method locate resources
  (`],
@@ -633,6 +688,9 @@ DocsCollector.collect('java.lang.ModuleLayer', [
  methods) in the module defined to the class loader before searching
  the parent class loader. `]
 				]],
+				[/* text */ 't', `
+
+ `],
 				[/* block */ 'b', ` If there is a security manager then the class loaders created by
  this method will load classes and resources with privileges that are
  restricted by the calling context of this method. `]
@@ -709,6 +767,9 @@ DocsCollector.collect('java.lang.ModuleLayer', [
 					[/* text */ 't', ` is invoked to load classes that do not map to a
  module then it delegates to the parent class loader. `]
 				]],
+				[/* text */ 't', `
+
+ `],
 				[/* block */ 'b', [
 					[/* text */ 't', ` The class loader created by this method locates resources
  (`],
@@ -719,6 +780,9 @@ DocsCollector.collect('java.lang.ModuleLayer', [
  methods) in all modules in the layer before searching the parent class
  loader. `]
 				]],
+				[/* text */ 't', `
+
+ `],
 				[/* block */ 'b', ` Attempting to create a layer with all modules defined to the same
  class loader can fail for the following reasons:
 
@@ -731,6 +795,9 @@ DocsCollector.collect('java.lang.ModuleLayer', [
 						[/* block */ 'b', `Split delegation`]
 					]]
 				]],
+				[/* text */ 't', `
+
+ `],
 				[/* block */ 'b', ''],
 				[/* block */ 'b', [
 					[/* text */ 't', ` In addition, a layer cannot be created if the configuration contains
@@ -743,6 +810,9 @@ DocsCollector.collect('java.lang.ModuleLayer', [
 					[/* inline code block */ 'i', `java.`],
 					[/* text */ 't', `". `]
 				]],
+				[/* text */ 't', `
+
+ `],
 				[/* block */ 'b', ` If there is a security manager then the class loader created by
  this method will load classes and resources with privileges that are
  restricted by the calling context of this method. `]

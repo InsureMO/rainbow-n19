@@ -38,6 +38,7 @@ DocsCollector.collect('java.util.Stack', [
  `]
 		]],
 		[/* code block */ 'c', [
+			[/* text */ 't', `   `],
 			[/* inline code block */ 'i', `Deque<Integer> stack = new ArrayDeque<Integer>();`]
 		]],
 		[/* block */ 'b', '']

@@ -125,6 +125,9 @@ DocsCollector.collect('java.util.HashMap', [
  unsynchronized access to the map:`]
 		]],
 		[/* code block */ 'c', `   Map m = Collections.synchronizedMap(new HashMap(...));`],
+		[/* text */ 't', `
+
+ `],
 		[/* block */ 'b', ''],
 		[/* block */ 'b', [
 			[/* text */ 't', `The iterators returned by all of this class's "collection view methods"
@@ -154,7 +157,10 @@ DocsCollector.collect('java.util.HashMap', [
  Therefore, it would be wrong to write a program that depended on this
  exception for its correctness: `],
 			[/* text */ 't', `the fail-fast behavior of iterators
- should be used only to detect bugs.`]
+ should be used only to detect bugs.`],
+			[/* text */ 't', `
+
+ `]
 		]],
 		[/* block */ 'b', [
 			[/* text */ 't', `This class is a member of the
@@ -449,6 +455,7 @@ DocsCollector.collect('java.util.HashMap', [
 
  `],
 				[/* code block */ 'c', [
+					[/* text */ 't', ` `],
 					[/* inline code block */ 'i', `map.compute(key, (k, v) -> (v == null) ? msg : v.concat(msg))`]
 				]],
 				[/* text */ 't', `
@@ -519,8 +526,12 @@ DocsCollector.collect('java.util.HashMap', [
  `]
 				]],
 				[/* code block */ 'c', [
+					[/* text */ 't', ` `],
 					[/* inline code block */ 'i', `map.computeIfAbsent(key, k -> new Value(f(k)));`]
 				]],
+				[/* text */ 't', `
+
+ `],
 				[/* block */ 'b', ''],
 				[/* block */ 'b', [
 					[/* text */ 't', `Or to implement a multi-value map, `],
@@ -531,8 +542,12 @@ DocsCollector.collect('java.util.HashMap', [
  `]
 				]],
 				[/* code block */ 'c', [
+					[/* text */ 't', ` `],
 					[/* inline code block */ 'i', `map.computeIfAbsent(key, k -> new HashSet<V>()).add(v);`]
 				]],
+				[/* text */ 't', `
+
+ `],
 				[/* block */ 'b', ''],
 				[/* block */ 'b', `The mapping function should not modify this map during computation.
 
@@ -679,8 +694,12 @@ DocsCollector.collect('java.util.HashMap', [
 
  `],
 				[/* code block */ 'c', [
+					[/* text */ 't', ` `],
 					[/* inline code block */ 'i', `map.merge(key, msg, String::concat)`]
 				]],
+				[/* text */ 't', `
+
+ `],
 				[/* block */ 'b', [
 					[/* text */ 't', `If the remapping function returns `],
 					[/* inline code block */ 'i', `null`],

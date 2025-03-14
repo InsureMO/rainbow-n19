@@ -88,6 +88,8 @@ DocsCollector.collect('java.lang.Package', [
      as specified above.`]
 			]]
 		]],
+		[/* text */ 't', `
+ `],
 		[/* block */ 'b', ''],
 		[/* block */ 'b', [
 			[/* text */ 't', `
@@ -117,6 +119,9 @@ DocsCollector.collect('java.lang.Package', [
      as specified above.`]
 			]]
 		]],
+		[/* text */ 't', `
+
+ `],
 		[/* block */ 'b', ''],
 		[/* block */ 'b', [
 			[/* text */ 't', `
@@ -543,6 +548,8 @@ DocsCollector.collect('java.lang.Package', [
  by the following formal grammar:
  `],
 				[/* block */ 'b', [
+					[/* text */ 't', `
+ `],
 					[/* dl */ 'dl', [
 						[/* dt */ 'dt', [
 							[/* text */ 't', `SpecificationVersion:`],
@@ -605,7 +612,9 @@ DocsCollector.collect('java.lang.Package', [
  e.g. 0, 1, 2, ...
  `]
 						]]
-					]]
+					]],
+					[/* text */ 't', `
+ `]
 				]],
 				[/* block */ 'b', '']
 			],

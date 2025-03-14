@@ -231,7 +231,10 @@ DocsCollector.collect('java.util.LinkedHashMap', [
  Therefore, it would be wrong to write a program that depended on this
  exception for its correctness:   `],
 			[/* text */ 't', `the fail-fast behavior of iterators
- should be used only to detect bugs.`]
+ should be used only to detect bugs.`],
+			[/* text */ 't', `
+
+ `]
 		]],
 		[/* block */ 'b', [
 			[/* text */ 't', `The spliterators returned by the spliterator method of the collections
@@ -385,6 +388,9 @@ DocsCollector.collect('java.util.LinkedHashMap', [
      protected boolean removeEldestEntry(Map.Entry eldest) {
         return size() > MAX_ENTRIES;
      }
+ `],
+				[/* text */ 't', `
+
  `],
 				[/* block */ 'b', ''],
 				[/* block */ 'b', [

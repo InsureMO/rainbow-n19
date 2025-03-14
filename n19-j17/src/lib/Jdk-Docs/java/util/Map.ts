@@ -173,6 +173,8 @@ DocsCollector.collect('java.util.Map', [
 		[/* block */ 'b', [
 			[/* anchor */ 'r', '#-id', `unmodifiable`, `Unmodifiable Maps`]
 		]],
+		[/* text */ 't', `
+ `],
 		[/* block */ 'b', [
 			[/* text */ 't', `The `],
 			[/* reference */ 'r', `#of()`, `Map.of`],
@@ -249,6 +251,9 @@ DocsCollector.collect('java.util.Map', [
  `]
 			]]
 		]],
+		[/* text */ 't', `
+
+ `],
 		[/* block */ 'b', ''],
 		[/* block */ 'b', [
 			[/* text */ 't', `This interface is a member of the
@@ -936,6 +941,7 @@ DocsCollector.collect('java.util.Map', [
 
  `],
 				[/* code block */ 'c', [
+					[/* text */ 't', ` `],
 					[/* inline code block */ 'i', `map.compute(key, (k, v) -> (v == null) ? msg : v.concat(msg))`]
 				]],
 				[/* text */ 't', `
@@ -1021,8 +1027,12 @@ DocsCollector.collect('java.util.Map', [
  `]
 				]],
 				[/* code block */ 'c', [
+					[/* text */ 't', ` `],
 					[/* inline code block */ 'i', `map.computeIfAbsent(key, k -> new Value(f(k)));`]
 				]],
+				[/* text */ 't', `
+
+ `],
 				[/* block */ 'b', ''],
 				[/* block */ 'b', [
 					[/* text */ 't', `Or to implement a multi-value map, `],
@@ -1033,8 +1043,12 @@ DocsCollector.collect('java.util.Map', [
  `]
 				]],
 				[/* code block */ 'c', [
+					[/* text */ 't', ` `],
 					[/* inline code block */ 'i', `map.computeIfAbsent(key, k -> new HashSet<V>()).add(v);`]
 				]],
+				[/* text */ 't', `
+
+ `],
 				[/* block */ 'b', ''],
 				[/* block */ 'b', `The mapping function should not modify this map during computation.`]
 			],
@@ -1194,8 +1208,12 @@ DocsCollector.collect('java.util.Map', [
 
  `],
 				[/* code block */ 'c', [
+					[/* text */ 't', ` `],
 					[/* inline code block */ 'i', `map.merge(key, msg, String::concat)`]
 				]],
+				[/* text */ 't', `
+
+ `],
 				[/* block */ 'b', [
 					[/* text */ 't', `If the remapping function returns `],
 					[/* inline code block */ 'i', `null`],

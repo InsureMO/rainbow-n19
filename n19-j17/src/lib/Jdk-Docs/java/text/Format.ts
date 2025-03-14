@@ -9,6 +9,8 @@ DocsCollector.collect('java.text.Format', [
 
  `],
 		[/* block */ 'b', [
+			[/* text */ 't', `
+ `],
 			[/* inline code block */ 'i', `Format`],
 			[/* text */ 't', ` defines the programming interface for formatting
  locale-sensitive objects into `],
@@ -45,6 +47,9 @@ DocsCollector.collect('java.text.Format', [
  `]
 		]],
 		[/* block */ 'b', `Subclassing`],
+		[/* text */ 't', `
+
+ `],
 		[/* block */ 'b', [
 			[/* text */ 't', `
  The Java Platform provides three specialized subclasses of `],
@@ -66,13 +71,22 @@ DocsCollector.collect('java.text.Format', [
  `],
 		[/* list */ 'l', [
 			[/* block */ 'b', [
-				[/* inline code block */ 'i', `format(Object obj, StringBuffer toAppendTo, FieldPosition pos)`]
+				[/* text */ 't', ` `],
+				[/* inline code block */ 'i', `format(Object obj, StringBuffer toAppendTo, FieldPosition pos)`],
+				[/* text */ 't', `
+ `]
 			]],
 			[/* block */ 'b', [
-				[/* inline code block */ 'i', `formatToCharacterIterator(Object obj)`]
+				[/* text */ 't', ` `],
+				[/* inline code block */ 'i', `formatToCharacterIterator(Object obj)`],
+				[/* text */ 't', `
+ `]
 			]],
 			[/* block */ 'b', [
-				[/* inline code block */ 'i', `parseObject(String source, ParsePosition pos)`]
+				[/* text */ 't', ` `],
+				[/* inline code block */ 'i', `parseObject(String source, ParsePosition pos)`],
+				[/* text */ 't', `
+ `]
 			]]
 		]],
 		[/* text */ 't', `
@@ -103,12 +117,16 @@ DocsCollector.collect('java.text.Format', [
  `],
 		[/* list */ 'l', [
 			[/* block */ 'b', [
+				[/* text */ 't', `
+ `],
 				[/* inline code block */ 'i', `getInstance`],
 				[/* text */ 't', ` for getting a useful format object appropriate
  for the current locale
  `]
 			]],
 			[/* block */ 'b', [
+				[/* text */ 't', `
+ `],
 				[/* inline code block */ 'i', `getInstance(Locale)`],
 				[/* text */ 't', ` for getting a useful format
  object appropriate for the specified locale
@@ -144,9 +162,16 @@ DocsCollector.collect('java.text.Format', [
  `]
 		]],
 		[/* block */ 'b', [
+			[/* text */ 't', `
+ `],
 			[/* code block */ 'c', ` public static Locale[] getAvailableLocales()
+ `],
+			[/* text */ 't', `
  `]
 		]],
+		[/* text */ 't', `
+
+ `],
 		[/* block */ 'b', ''],
 		[/* block */ 'b', [
 			[/* text */ 't', `
@@ -171,6 +196,9 @@ DocsCollector.collect('java.text.Format', [
 		[/* block */ 'b', [
 			[/* anchor */ 'r', '#-id', `synchronization`, `Synchronization`]
 		]],
+		[/* text */ 't', `
+
+ `],
 		[/* block */ 'b', `
  Formats are generally not synchronized.
  It is recommended to create separate format instances for each thread.
@@ -296,8 +324,12 @@ DocsCollector.collect('java.text.Format', [
 				[/* text */ 't', `Formats an object to produce a string. This is equivalent to
  `],
 				[/* block */ 'b', [
+					[/* text */ 't', `
+ `],
 					[/* reference */ 'r', `#format(java.lang.Object,java.lang.StringBuffer,java.text.FieldPosition)`, `format`],
-					[/* inline code block */ 'i', `(obj, new StringBuffer(), new FieldPosition(0)).toString();`]
+					[/* inline code block */ 'i', `(obj, new StringBuffer(), new FieldPosition(0)).toString();`],
+					[/* text */ 't', `
+ `]
 				]]
 			],
 			[/* parameters */

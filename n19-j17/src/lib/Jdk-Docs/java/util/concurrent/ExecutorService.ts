@@ -77,6 +77,7 @@ DocsCollector.collect('java.util.concurrent.ExecutorService', [
 
  `],
 		[/* code block */ 'c', [
+			[/* text */ 't', ` `],
 			[/* inline code block */ 'i', `class NetworkService implements Runnable {
    private final ServerSocket serverSocket;
    private final ExecutorService pool;
@@ -120,6 +121,7 @@ DocsCollector.collect('java.util.concurrent.ExecutorService', [
 
  `],
 		[/* code block */ 'c', [
+			[/* text */ 't', ` `],
 			[/* inline code block */ 'i', `void shutdownAndAwaitTermination(ExecutorService pool) {
    pool.shutdown(); // Disable new tasks from being submitted
    try {
@@ -138,6 +140,9 @@ DocsCollector.collect('java.util.concurrent.ExecutorService', [
    }
  }`]
 		]],
+		[/* text */ 't', `
+
+ `],
 		[/* block */ 'b', [
 			[/* text */ 't', `Memory consistency effects: Actions in a thread prior to the
  submission of a `],
@@ -147,6 +152,8 @@ DocsCollector.collect('java.util.concurrent.ExecutorService', [
 			[/* text */ 't', ` task to an
  `],
 			[/* inline code block */ 'i', `ExecutorService`],
+			[/* text */ 't', `
+ `],
 			[/* text */ 't', `happen-before`],
 			[/* text */ 't', `
  any actions taken by that task, which in turn `],
@@ -204,7 +211,10 @@ DocsCollector.collect('java.util.concurrent.ExecutorService', [
  If you would like to immediately block waiting
  for a task, you can use constructions of the form
  `],
-					[/* inline code block */ 'i', `result = exec.submit(aCallable).get();`]
+					[/* inline code block */ 'i', `result = exec.submit(aCallable).get();`],
+					[/* text */ 't', `
+
+ `]
 				]],
 				[/* block */ 'b', [
 					[/* text */ 't', `Note: The `],

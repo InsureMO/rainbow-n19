@@ -999,6 +999,8 @@ DocsCollector.collect('java.time.Duration', [
    dateTime = thisDuration.addTo(dateTime);
    dateTime = dateTime.plus(thisDuration);
  `],
+				[/* text */ 't', `
+ `],
 				[/* block */ 'b', ''],
 				[/* block */ 'b', `
  The calculation will add the seconds, then nanos.
@@ -1043,6 +1045,8 @@ DocsCollector.collect('java.time.Duration', [
 				[/* code block */ 'c', `   // these two lines are equivalent, but the second approach is recommended
    dateTime = thisDuration.subtractFrom(dateTime);
    dateTime = dateTime.minus(thisDuration);
+ `],
+				[/* text */ 't', `
  `],
 				[/* block */ 'b', ''],
 				[/* block */ 'b', `

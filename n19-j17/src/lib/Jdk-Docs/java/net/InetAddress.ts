@@ -26,6 +26,9 @@ DocsCollector.collect('java.net.InetAddress', [
  `]
 		]],
 		[/* block */ 'b', ` Address types `],
+		[/* text */ 't', `
+
+ `],
 		[/* table */ 'tbl',
 			[/* caption */ 'tc'],
 			[/* table header */ 'th', [
@@ -87,8 +90,15 @@ DocsCollector.collect('java.net.InetAddress', [
 				]]
 			]],
 		],
+		[/* text */ 't', `
+
+ `],
 		[/* block */ 'b', ` IP address scope `],
+		[/* text */ 't', `
+
+ `],
 		[/* block */ 'b', [
+			[/* text */ 't', ` `],
 			[/* text */ 't', `Link-local`],
 			[/* text */ 't', ` addresses are designed to be used for addressing
  on a single link for purposes such as auto-address configuration,
@@ -97,6 +107,7 @@ DocsCollector.collect('java.net.InetAddress', [
  `]
 		]],
 		[/* block */ 'b', [
+			[/* text */ 't', ` `],
 			[/* text */ 't', `Site-local`],
 			[/* text */ 't', ` addresses are designed to be used for addressing
  inside of a site without the need for a global prefix.
@@ -104,6 +115,7 @@ DocsCollector.collect('java.net.InetAddress', [
  `]
 		]],
 		[/* block */ 'b', [
+			[/* text */ 't', ` `],
 			[/* text */ 't', `Global`],
 			[/* text */ 't', ` addresses are unique across the internet.
 
@@ -132,6 +144,9 @@ DocsCollector.collect('java.net.InetAddress', [
 			[/* text */ 't', `couple of System Properties`],
 			[/* text */ 't', ` affecting how IPv4 and IPv6 addresses are used.`]
 		]],
+		[/* text */ 't', `
+
+ `],
 		[/* block */ 'b', ` Host Name Resolution `],
 		[/* text */ 't', `
 
@@ -146,6 +161,7 @@ DocsCollector.collect('java.net.InetAddress', [
 
  `],
 		[/* block */ 'b', [
+			[/* text */ 't', ` `],
 			[/* text */ 't', `Reverse name resolution`],
 			[/* text */ 't', ` means that for any IP address,
  the host associated with the IP address is returned.
@@ -787,6 +803,9 @@ DocsCollector.collect('java.net.InetAddress', [
  `],
 				[/* block */ 'b', `Note: The resolved address may be cached for a short period of time.
  `],
+				[/* text */ 't', `
+
+ `],
 				[/* block */ 'b', [
 					[/* text */ 't', `If there is a security manager, its
  `],
@@ -877,6 +896,9 @@ DocsCollector.collect('java.net.InetAddress', [
 					[/* text */ 't', `
  section 2.5.3. `]
 				]],
+				[/* text */ 't', `
+
+ `],
 				[/* block */ 'b', [
 					[/* text */ 't', ` If there is a security manager, and `],
 					[/* inline code block */ 'i', `host`],

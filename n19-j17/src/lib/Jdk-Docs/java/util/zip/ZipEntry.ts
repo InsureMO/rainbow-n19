@@ -555,6 +555,7 @@ DocsCollector.collect('java.util.zip.ZipEntry', [
  `]
 				]],
 				[/* block */ 'b', [
+					[/* text */ 't', ` `],
 					[/* inline code block */ 'i', `LocalDateTime`],
 					[/* text */ 't', ` uses a precision of nanoseconds, whereas
  this class uses a precision of milliseconds. The conversion will

@@ -20,7 +20,9 @@ DocsCollector.collect('java.io.InvalidClassException', [
 			[/* block */ 'b', [
 				[/* text */ 't', ` Other conditions given in the `],
 				[/* text */ 't', `Java Object Serialization
-      Specification`]
+      Specification`],
+				[/* text */ 't', `
+ `]
 			]]
 		]]
 	],

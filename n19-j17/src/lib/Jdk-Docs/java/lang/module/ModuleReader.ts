@@ -16,6 +16,9 @@ DocsCollector.collect('java.lang.module.ModuleReader', [
 			[/* text */ 't', `
  implementations that load classes and resources from modules. `]
 		]],
+		[/* text */ 't', `
+
+ `],
 		[/* block */ 'b', [
 			[/* text */ 't', ` A resource in a module is identified by an abstract name that is a
  '`],
@@ -34,6 +37,9 @@ DocsCollector.collect('java.lang.module.ModuleReader', [
  that can be located as a resource then its name ends with a slash ('/'). The
  directory can also be located with a name that drops the trailing slash. `]
 		]],
+		[/* text */ 't', `
+
+ `],
 		[/* block */ 'b', [
 			[/* text */ 't', ` A `],
 			[/* inline code block */ 'i', `ModuleReader`],
@@ -48,6 +54,9 @@ DocsCollector.collect('java.lang.module.ModuleReader', [
 			[/* text */ 't', ` statement provides a useful construct to ensure that
  module readers are closed. `]
 		]],
+		[/* text */ 't', `
+
+ `],
 		[/* block */ 'b', [
 			[/* text */ 't', ` A `],
 			[/* inline code block */ 'i', `ModuleReader`],
@@ -121,6 +130,9 @@ DocsCollector.collect('java.lang.module.ModuleReader', [
  when using the stream to list the module contents and access is denied
  by the security manager. `]
 				]],
+				[/* text */ 't', `
+
+ `],
 				[/* block */ 'b', ` The behavior of the stream when used after the module reader is
  closed is implementation specific and therefore not specified. `]
 			],

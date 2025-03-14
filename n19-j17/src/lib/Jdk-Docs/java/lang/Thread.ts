@@ -56,6 +56,8 @@ DocsCollector.collect('java.lang.Thread', [
  `]
 			]]
 		]],
+		[/* text */ 't', `
+ `],
 		[/* block */ 'b', ''],
 		[/* block */ 'b', [
 			[/* text */ 't', `
@@ -89,6 +91,8 @@ DocsCollector.collect('java.lang.Thread', [
  `]
 		]],
 		[/* new line */ 'n'],
+		[/* text */ 't', `
+ `],
 		[/* block */ 'b', ''],
 		[/* block */ 'b', `
  The following code would then create a thread and start it running:
@@ -98,6 +102,8 @@ DocsCollector.collect('java.lang.Thread', [
      p.start();
  `]
 		]],
+		[/* text */ 't', `
+ `],
 		[/* block */ 'b', ''],
 		[/* block */ 'b', [
 			[/* text */ 't', `
@@ -131,6 +137,8 @@ DocsCollector.collect('java.lang.Thread', [
  `]
 		]],
 		[/* new line */ 'n'],
+		[/* text */ 't', `
+ `],
 		[/* block */ 'b', ''],
 		[/* block */ 'b', `
  The following code would then create a thread and start it running:
@@ -140,6 +148,8 @@ DocsCollector.collect('java.lang.Thread', [
      new Thread(p).start();
  `]
 		]],
+		[/* text */ 't', `
+ `],
 		[/* block */ 'b', ''],
 		[/* block */ 'b', `
  Every thread has a name for identification purposes. More than
@@ -182,6 +192,8 @@ DocsCollector.collect('java.lang.Thread', [
 				[/* text */ 't', ` object. This constructor has the same
  effect as `],
 				[/* reference */ 'r', `#%3Cinit%3E(java.lang.ThreadGroup,java.lang.Runnable,java.lang.String)`, `Thread`],
+				[/* text */ 't', `
+ `],
 				[/* inline code block */ 'i', `(null, null, gname)`],
 				[/* text */ 't', `, where `],
 				[/* inline code block */ 'i', `gname`],
@@ -204,6 +216,8 @@ DocsCollector.collect('java.lang.Thread', [
 				[/* text */ 't', ` object. This constructor has the same
  effect as `],
 				[/* reference */ 'r', `#%3Cinit%3E(java.lang.ThreadGroup,java.lang.Runnable,java.lang.String)`, `Thread`],
+				[/* text */ 't', `
+ `],
 				[/* inline code block */ 'i', `(null, target, gname)`],
 				[/* text */ 't', `, where `],
 				[/* inline code block */ 'i', `gname`],
@@ -238,6 +252,8 @@ DocsCollector.collect('java.lang.Thread', [
 				[/* text */ 't', ` object. This constructor has the same
  effect as `],
 				[/* reference */ 'r', `#%3Cinit%3E(java.lang.ThreadGroup,java.lang.Runnable,java.lang.String)`, `Thread`],
+				[/* text */ 't', `
+ `],
 				[/* inline code block */ 'i', `(null, target, name)`],
 				[/* text */ 't', `.`]
 			],
@@ -263,6 +279,8 @@ DocsCollector.collect('java.lang.Thread', [
 				[/* text */ 't', ` object. This constructor has the same
  effect as `],
 				[/* reference */ 'r', `#%3Cinit%3E(java.lang.ThreadGroup,java.lang.Runnable,java.lang.String)`, `Thread`],
+				[/* text */ 't', `
+ `],
 				[/* inline code block */ 'i', `(null, null, name)`],
 				[/* text */ 't', `.`]
 			],
@@ -280,6 +298,8 @@ DocsCollector.collect('java.lang.Thread', [
 				[/* text */ 't', ` object. This constructor has the same
  effect as `],
 				[/* reference */ 'r', `#%3Cinit%3E(java.lang.ThreadGroup,java.lang.Runnable,java.lang.String)`, `Thread`],
+				[/* text */ 't', `
+ `],
 				[/* inline code block */ 'i', `(group, target, gname)`],
 				[/* text */ 't', ` ,where `],
 				[/* inline code block */ 'i', `gname`],
@@ -442,7 +462,10 @@ DocsCollector.collect('java.lang.Thread', [
  that it allows the thread stack size to be specified.  The stack size
  is the approximate number of bytes of address space that the virtual
  machine is to allocate for this thread's stack.  `],
-					[/* inline code block */ 'i', `stackSize`]
+					[/* inline code block */ 'i', `stackSize`],
+					[/* text */ 't', `
+
+ `]
 				]],
 				[/* block */ 'b', [
 					[/* text */ 't', `On some platforms, specifying a higher value for the
@@ -461,7 +484,10 @@ DocsCollector.collect('java.lang.Thread', [
 					[/* text */ 't', ` parameter
  and the maximum recursion depth and concurrency level are
  platform-dependent.  `],
-					[/* inline code block */ 'i', `stackSize`]
+					[/* inline code block */ 'i', `stackSize`],
+					[/* text */ 't', `
+
+ `]
 				]],
 				[/* block */ 'b', [
 					[/* text */ 't', `The virtual machine is free to treat the `],
@@ -494,7 +520,10 @@ DocsCollector.collect('java.lang.Thread', [
  likely vary from one JRE implementation to another.  In light of this
  variation, careful tuning of the stack size parameter may be required,
  and the tuning may need to be repeated for each JRE implementation on
- which an application is to run.`]
+ which an application is to run.`],
+					[/* text */ 't', `
+
+ `]
 				]],
 				[/* block */ 'b', [
 					[/* text */ 't', `Implementation note: Java platform implementers are encouraged to
@@ -649,6 +678,8 @@ DocsCollector.collect('java.lang.Thread', [
 				[/* text */ 't', ` object. This constructor has the same
  effect as `],
 				[/* reference */ 'r', `#%3Cinit%3E(java.lang.ThreadGroup,java.lang.Runnable,java.lang.String)`, `Thread`],
+				[/* text */ 't', `
+ `],
 				[/* inline code block */ 'i', `(group, null, name)`],
 				[/* text */ 't', `.`]
 			],
@@ -956,8 +987,12 @@ DocsCollector.collect('java.lang.Thread', [
 
  `],
 				[/* block */ 'b', [
+					[/* text */ 't', `
+ `],
 					[/* reference */ 'r', `#join(long)`, `join`],
-					[/* inline code block */ 'i', `(0)`]
+					[/* inline code block */ 'i', `(0)`],
+					[/* text */ 't', `
+ `]
 				]],
 				[/* block */ 'b', '']
 			],
@@ -1837,6 +1872,9 @@ DocsCollector.collect('java.lang.Thread', [
 				]],
 				[/* block */ 'b', ` If none of the previous conditions hold then this thread's interrupt
  status will be set. `],
+				[/* text */ 't', `
+
+ `],
 				[/* block */ 'b', ` Interrupting a thread that is not alive need not have any effect.`]
 			],
 			/* parameters */ UDF,

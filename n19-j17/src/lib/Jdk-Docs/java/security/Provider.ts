@@ -17,6 +17,9 @@ DocsCollector.collect('java.security.Provider', [
 
  `]
 		]],
+		[/* text */ 't', `
+
+ `],
 		[/* block */ 'b', [
 			[/* text */ 't', `Some provider implementations may encounter unrecoverable internal
  errors during their operation, for example a failure to communicate with a
@@ -90,6 +93,9 @@ DocsCollector.collect('java.security.Provider', [
 				]]
 			]],
 		],
+		[/* text */ 't', `
+
+ `],
 		[/* block */ 'b', ''],
 		[/* block */ 'b', [
 			[/* text */ 't', `Each provider has a name and a version string. A provider normally
@@ -164,6 +170,9 @@ DocsCollector.collect('java.security.Provider', [
 					[/* code block */ 'c', `     ^[0-9]+(\\.[0-9]+)*
  `]
 				]],
+				[/* text */ 't', `
+
+ `],
 				[/* block */ 'b', ''],
 				[/* block */ 'b', [
 					[/* text */ 't', `In order to return the version number in a double, when there are

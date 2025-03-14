@@ -33,6 +33,9 @@ DocsCollector.collect('java.nio.file.WatchKey', [
 				[/* text */ 't', ` the watch service. `]
 			]]
 		]],
+		[/* text */ 't', `
+
+ `],
 		[/* block */ 'b', ''],
 		[/* block */ 'b', [
 			[/* text */ 't', ` A watch key has a state. When initially created the key is said to be
@@ -76,6 +79,9 @@ DocsCollector.collect('java.nio.file.WatchKey', [
              // object no longer registered
          }
      }
+ `],
+		[/* text */ 't', `
+
  `],
 		[/* block */ 'b', ''],
 		[/* block */ 'b', [

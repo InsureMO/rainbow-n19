@@ -278,6 +278,8 @@ DocsCollector.collect('java.time.chrono.Era', [
    temporal = thisEra.adjustInto(temporal);
    temporal = temporal.with(thisEra);
  `],
+				[/* text */ 't', `
+ `],
 				[/* block */ 'b', ''],
 				[/* block */ 'b', `
  This instance is immutable and unaffected by this method call.`]

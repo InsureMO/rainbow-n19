@@ -491,8 +491,12 @@ DocsCollector.collect('java.lang.ThreadGroup', [
 
  `],
 				[/* block */ 'b', [
+					[/* text */ 't', `
+ `],
 					[/* reference */ 'r', `#enumerate(java.lang.Thread%5B%5D,boolean)`, `enumerate`],
-					[/* inline code block */ 'i', `(list, true)`]
+					[/* inline code block */ 'i', `(list, true)`],
+					[/* text */ 't', `
+ `]
 				]],
 				[/* block */ 'b', '']
 			],
@@ -580,8 +584,12 @@ DocsCollector.collect('java.lang.ThreadGroup', [
 
  `],
 				[/* block */ 'b', [
+					[/* text */ 't', `
+ `],
 					[/* reference */ 'r', `#enumerate(java.lang.ThreadGroup%5B%5D,boolean)`, `enumerate`],
-					[/* inline code block */ 'i', `(list, true)`]
+					[/* inline code block */ 'i', `(list, true)`],
+					[/* text */ 't', `
+ `]
 				]],
 				[/* block */ 'b', '']
 			],
@@ -748,6 +756,8 @@ DocsCollector.collect('java.lang.ThreadGroup', [
  `]
 					]]
 				]],
+				[/* text */ 't', `
+ `],
 				[/* block */ 'b', ''],
 				[/* block */ 'b', [
 					[/* text */ 't', `

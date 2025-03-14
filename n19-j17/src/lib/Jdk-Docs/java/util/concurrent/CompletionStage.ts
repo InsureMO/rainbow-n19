@@ -26,6 +26,7 @@ DocsCollector.collect('java.util.concurrent.CompletionStage', [
  For example:
  `],
 				[/* code block */ 'c', [
+					[/* text */ 't', ` `],
 					[/* inline code block */ 'i', `stage.thenApply(x -> square(x))
       .thenAccept(x -> System.out.print(x))
       .thenRun(() -> System.out.println());`]
@@ -125,6 +126,9 @@ DocsCollector.collect('java.util.concurrent.CompletionStage', [
 			]],
 			[/* block */ 'b', '']
 		]],
+		[/* text */ 't', `
+
+ `],
 		[/* block */ 'b', [
 			[/* text */ 't', `All methods adhere to the above triggering, execution, and
  exceptional completion specifications (which are not repeated in
@@ -166,6 +170,9 @@ DocsCollector.collect('java.util.concurrent.CompletionStage', [
    }
  }`]
 		]],
+		[/* text */ 't', `
+
+ `],
 		[/* block */ 'b', ''],
 		[/* block */ 'b', [
 			[/* text */ 't', `This interface does not define methods for initially creating,

@@ -20,6 +20,9 @@ DocsCollector.collect('java.io.ObjectInputStream', [
  practices for defensive use of serial filters.
  `]
 		]],
+		[/* text */ 't', `
+
+ `],
 		[/* block */ 'b', [
 			[/* text */ 't', `The key to disabling deserialization attacks is to prevent instances of
  arbitrary classes from being deserialized, thereby preventing the direct or
@@ -107,7 +110,9 @@ DocsCollector.collect('java.io.ObjectInputStream', [
 			[/* text */ 't', `For example to read from a stream as written by the example in
  ObjectOutputStream:
  `],
-			[/* new line */ 'n']
+			[/* new line */ 'n'],
+			[/* text */ 't', `
+ `]
 		]],
 		[/* code block */ 'c', `      FileInputStream fis = new FileInputStream("t.tmp");
       ObjectInputStream ois = new ObjectInputStream(fis);
@@ -117,6 +122,9 @@ DocsCollector.collect('java.io.ObjectInputStream', [
       Date date = (Date) ois.readObject();
 
       ois.close();
+ `],
+		[/* text */ 't', `
+
  `],
 		[/* block */ 'b', ''],
 		[/* block */ 'b', `Classes control how they are serialized by implementing either the
@@ -141,6 +149,9 @@ DocsCollector.collect('java.io.ObjectInputStream', [
      throws IOException, ClassNotFoundException;
  private void readObjectNoData()
      throws ObjectStreamException;
+ `],
+		[/* text */ 't', `
+
  `],
 		[/* block */ 'b', ''],
 		[/* block */ 'b', `The readObject method is responsible for reading and restoring the state
@@ -233,7 +244,9 @@ DocsCollector.collect('java.io.ObjectInputStream', [
  are also ignored--all enum types have a fixed serialVersionUID of 0L.
 
  `],
-			[/* anchor */ 'r', '#-id', `record-serialization`, ``]
+			[/* anchor */ 'r', '#-id', `record-serialization`, ``],
+			[/* text */ 't', `
+ `]
 		]],
 		[/* block */ 'b', [
 			[/* text */ 't', `Records are serialized differently than ordinary serializable or externalizable

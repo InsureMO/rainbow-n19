@@ -149,6 +149,9 @@ DocsCollector.collect('java.io.File', [
  `]
 			]]
 		]],
+		[/* text */ 't', `
+
+ `],
 		[/* block */ 'b', ''],
 		[/* block */ 'b', [
 			[/* text */ 't', ` Instances of this class may or may not denote an actual file-system
@@ -197,6 +200,9 @@ DocsCollector.collect('java.io.File', [
 			[/* inline code block */ 'i', `java.nio.file`],
 			[/* text */ 't', ` package`]
 		]],
+		[/* text */ 't', `
+
+ `],
 		[/* block */ 'b', [
 			[/* text */ 't', ` The `],
 			[/* text */ 't', `java.nio.file`],
@@ -1965,6 +1971,7 @@ DocsCollector.collect('java.io.File', [
  `],
 				[/* block */ 'b', [
 					[/* code block */ 'c', [
+						[/* text */ 't', ` `],
 						[/* text */ 't', `FileSystems.getDefault`],
 						[/* text */ 't', `().`],
 						[/* text */ 't', `getPath`],

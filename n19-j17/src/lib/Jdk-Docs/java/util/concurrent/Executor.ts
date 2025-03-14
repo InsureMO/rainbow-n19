@@ -19,6 +19,7 @@ DocsCollector.collect('java.util.concurrent.Executor', [
 
  `],
 		[/* code block */ 'c', [
+			[/* text */ 't', ` `],
 			[/* inline code block */ 'i', `Executor executor = anExecutor();
  executor.execute(new RunnableTask1());
  executor.execute(new RunnableTask2());
@@ -34,6 +35,7 @@ DocsCollector.collect('java.util.concurrent.Executor', [
 
  `],
 		[/* code block */ 'c', [
+			[/* text */ 't', ` `],
 			[/* inline code block */ 'i', `class DirectExecutor implements Executor {
    public void execute(Runnable r) {
      r.run();
@@ -48,6 +50,7 @@ DocsCollector.collect('java.util.concurrent.Executor', [
 
  `],
 		[/* code block */ 'c', [
+			[/* text */ 't', ` `],
 			[/* inline code block */ 'i', `class ThreadPerTaskExecutor implements Executor {
    public void execute(Runnable r) {
      new Thread(r).start();
@@ -65,6 +68,7 @@ DocsCollector.collect('java.util.concurrent.Executor', [
 
  `],
 		[/* code block */ 'c', [
+			[/* text */ 't', ` `],
 			[/* inline code block */ 'i', `class SerialExecutor implements Executor {
    final Queue<Runnable> tasks = new ArrayDeque<>();
    final Executor executor;
@@ -117,6 +121,8 @@ DocsCollector.collect('java.util.concurrent.Executor', [
 			[/* inline code block */ 'i', `Runnable`],
 			[/* text */ 't', ` object to an `],
 			[/* inline code block */ 'i', `Executor`],
+			[/* text */ 't', `
+ `],
 			[/* text */ 't', `happen-before`],
 			[/* text */ 't', `
  its execution begins, perhaps in another thread.`]

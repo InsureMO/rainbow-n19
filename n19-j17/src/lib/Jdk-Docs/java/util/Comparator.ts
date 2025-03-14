@@ -206,6 +206,7 @@ DocsCollector.collect('java.util.Comparator', [
 				[/* text */ 't', `.  Additionally, this method can
  return `],
 				[/* inline code block */ 'i', `true`],
+				[/* text */ 't', ` `],
 				[/* text */ 't', `only`],
 				[/* text */ 't', ` if the specified object is also
  a comparator and it imposes the same ordering as this

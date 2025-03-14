@@ -13,6 +13,8 @@ DocsCollector.collect('java.text.Collator', [
 
  `],
 		[/* block */ 'b', [
+			[/* text */ 't', `
+ `],
 			[/* inline code block */ 'i', `Collator`],
 			[/* text */ 't', ` is an abstract base class. Subclasses
  implement specific collation strategies. One subclass,
@@ -50,6 +52,8 @@ DocsCollector.collect('java.text.Collator', [
  `]
 		]],
 		[/* block */ 'b', [
+			[/* text */ 't', `
+ `],
 			[/* code block */ 'c', [
 				[/* inline code block */ 'i', `// Compare two strings in the default locale
  Collator myCollator = Collator.getInstance();
@@ -57,8 +61,13 @@ DocsCollector.collect('java.text.Collator', [
      System.out.println("abc is less than ABC");
  else
      System.out.println("abc is greater than or equal to ABC");`]
-			]]
+			]],
+			[/* text */ 't', `
+ `]
 		]],
+		[/* text */ 't', `
+
+ `],
 		[/* block */ 'b', ''],
 		[/* block */ 'b', [
 			[/* text */ 't', `
@@ -87,14 +96,20 @@ DocsCollector.collect('java.text.Collator', [
  `]
 		]],
 		[/* block */ 'b', [
+			[/* text */ 't', `
+ `],
 			[/* code block */ 'c', ` //Get the Collator for US English and set its strength to PRIMARY
  Collator usCollator = Collator.getInstance(Locale.US);
  usCollator.setStrength(Collator.PRIMARY);
  if( usCollator.compare("abc", "ABC") == 0 ) {
      System.out.println("Strings are equivalent");
  }
+ `],
+			[/* text */ 't', `
  `]
 		]],
+		[/* text */ 't', `
+ `],
 		[/* block */ 'b', ''],
 		[/* block */ 'b', [
 			[/* text */ 't', `
@@ -130,7 +145,10 @@ DocsCollector.collect('java.text.Collator', [
 			[/* text */ 't', `.
  `],
 			[/* new line */ 'n'],
+			[/* text */ 't', `
+ `],
 			[/* text */ 't', `Note:`],
+			[/* text */ 't', ` `],
 			[/* inline code block */ 'i', `CollationKey`],
 			[/* text */ 't', `s from different
  `],

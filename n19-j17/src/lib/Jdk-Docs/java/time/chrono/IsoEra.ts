@@ -73,6 +73,8 @@ DocsCollector.collect('java.time.chrono.IsoEra', [
 				]]
 			]],
 		],
+		[/* text */ 't', `
+ `],
 		[/* block */ 'b', ''],
 		[/* block */ 'b', [
 			[/* text */ 't', `Do not use `],
@@ -112,6 +114,8 @@ DocsCollector.collect('java.time.chrono.IsoEra', [
 				[/* text */ 't', ` value.
  `],
 				[/* block */ 'b', [
+					[/* text */ 't', `
+ `],
 					[/* inline code block */ 'i', `IsoEra`],
 					[/* text */ 't', ` is an enum representing the ISO eras of BCE/CE.
  This factory allows the enum to be obtained from the `],

@@ -351,6 +351,7 @@ DocsCollector.collect('java.util.PriorityQueue', [
  `]
 				]],
 				[/* code block */ 'c', [
+					[/* text */ 't', ` `],
 					[/* inline code block */ 'i', `String[] y = x.toArray(new String[0]);`]
 				]],
 				[/* text */ 't', `
@@ -609,6 +610,7 @@ DocsCollector.collect('java.util.PriorityQueue', [
 				[/* text */ 't', `
  and `],
 				[/* text */ 't', `fail-fast`],
+				[/* text */ 't', ` `],
 				[/* reference */ 'r', `java.util.Spliterator`, `Spliterator`],
 				[/* text */ 't', ` over the elements in this
  queue. The spliterator does not traverse elements in any particular order

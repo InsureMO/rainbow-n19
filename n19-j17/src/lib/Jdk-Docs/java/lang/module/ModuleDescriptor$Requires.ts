@@ -24,6 +24,9 @@ DocsCollector.collect('java.lang.module.ModuleDescriptor$Requires', [
  compiled version of both modules is equal or not recorded for
  both modules. `]
 				]],
+				[/* text */ 't', `
+
+ `],
 				[/* block */ 'b', [
 					[/* text */ 't', ` This method satisfies the general contract of the `],
 					[/* reference */ 'r', `java.lang.Object#equals(java.lang.Object)`, `Object.equals`],

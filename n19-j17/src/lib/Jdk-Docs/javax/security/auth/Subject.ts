@@ -93,6 +93,9 @@ DocsCollector.collect('javax.security.auth.Subject', [
       subject.getPrincipals().add(principal);
       subject.getPublicCredentials().add(credential);
  `],
+		[/* text */ 't', `
+
+ `],
 		[/* block */ 'b', ''],
 		[/* block */ 'b', [
 			[/* text */ 't', ` This `],
@@ -275,6 +278,7 @@ DocsCollector.collect('javax.security.auth.Subject', [
 					[/* text */ 't', ` is not backed by this Subject's
  internal `],
 					[/* inline code block */ 'i', `Principal`],
+					[/* text */ 't', ` `],
 					[/* inline code block */ 'i', `Set`],
 					[/* text */ 't', `.  A new
  `],
@@ -285,6 +289,7 @@ DocsCollector.collect('javax.security.auth.Subject', [
 					[/* text */ 't', `
  will not affect the internal `],
 					[/* inline code block */ 'i', `Principal`],
+					[/* text */ 't', ` `],
 					[/* inline code block */ 'i', `Set`],
 					[/* text */ 't', `.`]
 				]]
@@ -675,6 +680,7 @@ DocsCollector.collect('javax.security.auth.Subject', [
 					[/* text */ 't', ` is backed by this Subject's
  internal `],
 					[/* inline code block */ 'i', `Principal`],
+					[/* text */ 't', ` `],
 					[/* inline code block */ 'i', `Set`],
 					[/* text */ 't', `.  Any modification
  to the returned `],
@@ -682,6 +688,7 @@ DocsCollector.collect('javax.security.auth.Subject', [
 					[/* text */ 't', ` affects the internal
  `],
 					[/* inline code block */ 'i', `Principal`],
+					[/* text */ 't', ` `],
 					[/* inline code block */ 'i', `Set`],
 					[/* text */ 't', ` as well.
 
@@ -1133,6 +1140,7 @@ DocsCollector.collect('javax.security.auth.Subject', [
 					[/* text */ 't', ` Modifications (additions and removals) to this Subject's
  `],
 					[/* inline code block */ 'i', `Principal`],
+					[/* text */ 't', ` `],
 					[/* inline code block */ 'i', `Set`],
 					[/* text */ 't', ` and
  credential Sets will be disallowed.

@@ -40,6 +40,9 @@ DocsCollector.collect('java.util.LinkedList', [
  unsynchronized access to the list:`]
 		]],
 		[/* code block */ 'c', `   List list = Collections.synchronizedList(new LinkedList(...));`],
+		[/* text */ 't', `
+
+ `],
 		[/* block */ 'b', ''],
 		[/* block */ 'b', [
 			[/* text */ 't', `The iterators returned by this class's `],
@@ -75,7 +78,10 @@ DocsCollector.collect('java.util.LinkedList', [
  Therefore, it would be wrong to write a program that depended on this
  exception for its correctness:   `],
 			[/* text */ 't', `the fail-fast behavior of iterators
- should be used only to detect bugs.`]
+ should be used only to detect bugs.`],
+			[/* text */ 't', `
+
+ `]
 		]],
 		[/* block */ 'b', [
 			[/* text */ 't', `This class is a member of the
@@ -834,6 +840,7 @@ DocsCollector.collect('java.util.LinkedList', [
 				[/* text */ 't', `
  and `],
 				[/* text */ 't', `fail-fast`],
+				[/* text */ 't', ` `],
 				[/* reference */ 'r', `java.util.Spliterator`, `Spliterator`],
 				[/* text */ 't', ` over the elements in this
  list.

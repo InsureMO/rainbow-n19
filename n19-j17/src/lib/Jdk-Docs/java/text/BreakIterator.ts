@@ -116,6 +116,8 @@ DocsCollector.collect('java.text.BreakIterator', [
  Creating and using text boundaries:
  `],
 		[/* block */ 'b', [
+			[/* text */ 't', `
+ `],
 			[/* code block */ 'c', ` public static void main(String args[]) {
       if (args.length == 1) {
           String stringToExamine = args[0];
@@ -131,6 +133,8 @@ DocsCollector.collect('java.text.BreakIterator', [
           printLast(boundary, stringToExamine);
       }
  }
+ `],
+			[/* text */ 't', `
  `]
 		]],
 		[/* text */ 't', `
@@ -138,6 +142,8 @@ DocsCollector.collect('java.text.BreakIterator', [
  Print each element in order:
  `],
 		[/* block */ 'b', [
+			[/* text */ 't', `
+ `],
 			[/* code block */ 'c', ` public static void printEachForward(BreakIterator boundary, String source) {
      int start = boundary.first();
      for (int end = boundary.next();
@@ -146,6 +152,8 @@ DocsCollector.collect('java.text.BreakIterator', [
           System.out.println(source.substring(start,end));
      }
  }
+ `],
+			[/* text */ 't', `
  `]
 		]],
 		[/* text */ 't', `
@@ -153,6 +161,8 @@ DocsCollector.collect('java.text.BreakIterator', [
  Print each element in reverse order:
  `],
 		[/* block */ 'b', [
+			[/* text */ 't', `
+ `],
 			[/* code block */ 'c', ` public static void printEachBackward(BreakIterator boundary, String source) {
      int end = boundary.last();
      for (int start = boundary.previous();
@@ -161,6 +171,8 @@ DocsCollector.collect('java.text.BreakIterator', [
          System.out.println(source.substring(start,end));
      }
  }
+ `],
+			[/* text */ 't', `
  `]
 		]],
 		[/* text */ 't', `
@@ -168,11 +180,15 @@ DocsCollector.collect('java.text.BreakIterator', [
  Print first element:
  `],
 		[/* block */ 'b', [
+			[/* text */ 't', `
+ `],
 			[/* code block */ 'c', ` public static void printFirst(BreakIterator boundary, String source) {
      int start = boundary.first();
      int end = boundary.next();
      System.out.println(source.substring(start,end));
  }
+ `],
+			[/* text */ 't', `
  `]
 		]],
 		[/* text */ 't', `
@@ -180,11 +196,15 @@ DocsCollector.collect('java.text.BreakIterator', [
  Print last element:
  `],
 		[/* block */ 'b', [
+			[/* text */ 't', `
+ `],
 			[/* code block */ 'c', ` public static void printLast(BreakIterator boundary, String source) {
      int end = boundary.last();
      int start = boundary.previous();
      System.out.println(source.substring(start,end));
  }
+ `],
+			[/* text */ 't', `
  `]
 		]],
 		[/* text */ 't', `
@@ -192,11 +212,15 @@ DocsCollector.collect('java.text.BreakIterator', [
  Print the element at a specified position:
  `],
 		[/* block */ 'b', [
+			[/* text */ 't', `
+ `],
 			[/* code block */ 'c', ` public static void printAt(BreakIterator boundary, int pos, String source) {
      int end = boundary.following(pos);
      int start = boundary.previous();
      System.out.println(source.substring(start,end));
  }
+ `],
+			[/* text */ 't', `
  `]
 		]],
 		[/* text */ 't', `
@@ -204,6 +228,8 @@ DocsCollector.collect('java.text.BreakIterator', [
  Find the next word:
  `],
 		[/* block */ 'b', [
+			[/* text */ 't', `
+ `],
 			[/* code block */ 'c', [
 				[/* inline code block */ 'i', `public static int nextWordStartAfter(int pos, String text) {
      BreakIterator wb = BreakIterator.getWordInstance();

@@ -4,6 +4,8 @@ import {DocsCollector} from '../../DocsCollector';
 DocsCollector.collect('java.text.CompactNumberFormat', [
 	[/* class description */
 		[/* block */ 'b', [
+			[/* text */ 't', `
+ `],
 			[/* inline code block */ 'i', `CompactNumberFormat`],
 			[/* text */ 't', ` is a concrete subclass of `],
 			[/* inline code block */ 'i', `NumberFormat`],
@@ -78,10 +80,15 @@ DocsCollector.collect('java.text.CompactNumberFormat', [
  String result = fmt.format(1000);
  `]
 		]],
+		[/* text */ 't', `
+
+ `],
 		[/* block */ 'b', ''],
 		[/* block */ 'b', [
 			[/* anchor */ 'r', '#-id', `compact_number_style`, `Style`]
 		]],
+		[/* text */ 't', `
+ `],
 		[/* block */ 'b', [
 			[/* text */ 't', `
  A number can be formatted in the compact forms with two different
@@ -128,6 +135,8 @@ DocsCollector.collect('java.text.CompactNumberFormat', [
 		[/* block */ 'b', [
 			[/* anchor */ 'r', '#-id', `compact_number_patterns`, `Compact Number Patterns`]
 		]],
+		[/* text */ 't', `
+ `],
 		[/* block */ 'b', [
 			[/* text */ 't', `
  The compact number patterns are represented in a series of patterns where each
@@ -231,6 +240,8 @@ DocsCollector.collect('java.text.CompactNumberFormat', [
  `]
 		]],
 		[/* block */ 'b', `Plurals`],
+		[/* text */ 't', `
+ `],
 		[/* block */ 'b', [
 			[/* text */ 't', `
  In case some localization requires compact number patterns to be different for
@@ -270,34 +281,61 @@ DocsCollector.collect('java.text.CompactNumberFormat', [
  `],
 		[/* block */ 'b', [
 			[/* code block */ 'c', [
+				[/* text */ 't', ` `],
 				[/* text */ 't', `Pattern:`],
+				[/* text */ 't', `
+         `],
 				[/* text */ 't', `SimplePattern`],
 				[/* text */ 't', `
          '{' `],
 				[/* text */ 't', `PluralPattern`],
+				[/* text */ 't', ` `],
 				[/* text */ 't', `optional`, 'sub'],
 				[/* text */ 't', ` '}'
  `],
 				[/* text */ 't', `SimplePattern:`],
+				[/* text */ 't', `
+         `],
 				[/* text */ 't', `PositivePattern`],
+				[/* text */ 't', `
+         `],
 				[/* text */ 't', `PositivePattern`],
+				[/* text */ 't', ` `],
 				[/* text */ 't', `optional`, 'sub'],
+				[/* text */ 't', `
+ `],
 				[/* text */ 't', `PluralPattern:`],
+				[/* text */ 't', `
+         `],
 				[/* text */ 't', `Count`],
 				[/* text */ 't', `:`],
 				[/* text */ 't', `SimplePattern`],
+				[/* text */ 't', `
+ `],
 				[/* text */ 't', `Count:`],
 				[/* text */ 't', `
          "zero" / "one" / "two" / "few" / "many" / "other"
  `],
 				[/* text */ 't', `PositivePattern:`],
+				[/* text */ 't', `
+         `],
 				[/* text */ 't', `optional`, 'sub'],
+				[/* text */ 't', ` `],
 				[/* text */ 't', `MinimumInteger`],
+				[/* text */ 't', ` `],
 				[/* text */ 't', `optional`, 'sub'],
+				[/* text */ 't', `
+ `],
 				[/* text */ 't', `NegativePattern:`],
+				[/* text */ 't', `
+        `],
 				[/* text */ 't', `optional`, 'sub'],
+				[/* text */ 't', ` `],
 				[/* text */ 't', `MinimumInteger`],
+				[/* text */ 't', ` `],
 				[/* text */ 't', `optional`, 'sub'],
+				[/* text */ 't', `
+ `],
 				[/* text */ 't', `Prefix:`],
 				[/* text */ 't', `
       Any Unicode characters except \\uFFFE, \\uFFFF, and
@@ -316,9 +354,14 @@ DocsCollector.collect('java.text.CompactNumberFormat', [
 				[/* text */ 't', `
       0
       0 `],
-				[/* text */ 't', `MinimumInteger`]
+				[/* text */ 't', `MinimumInteger`],
+				[/* text */ 't', `
+ `]
 			]]
 		]],
+		[/* text */ 't', `
+
+ `],
 		[/* block */ 'b', ''],
 		[/* block */ 'b', `Formatting`],
 		[/* text */ 't', `
@@ -370,6 +413,8 @@ DocsCollector.collect('java.text.CompactNumberFormat', [
 
  `],
 		[/* block */ 'b', `Rounding`],
+		[/* text */ 't', `
+ `],
 		[/* inline code block */ 'i', `CompactNumberFormat`],
 		[/* text */ 't', ` provides rounding modes defined in
  `],
@@ -822,8 +867,12 @@ DocsCollector.collect('java.text.CompactNumberFormat', [
 					]],
 					[/* block */ 'b', '']
 				]],
+				[/* text */ 't', `
+ `],
 				[/* block */ 'b', ''],
 				[/* block */ 'b', [
+					[/* text */ 't', `
+ `],
 					[/* inline code block */ 'i', `CompactNumberFormat`],
 					[/* text */ 't', ` parses all Unicode characters that represent
  decimal digits, as defined by `],
@@ -839,6 +888,8 @@ DocsCollector.collect('java.text.CompactNumberFormat', [
  `]
 				]],
 				[/* block */ 'b', [
+					[/* text */ 't', `
+ `],
 					[/* inline code block */ 'i', `CompactNumberFormat`],
 					[/* text */ 't', ` parse does not allow parsing scientific
  notations. For example, parsing a string `],

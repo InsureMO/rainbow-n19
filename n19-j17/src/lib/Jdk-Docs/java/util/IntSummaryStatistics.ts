@@ -16,10 +16,14 @@ DocsCollector.collect('java.util.IntSummaryStatistics', [
  `]
 		]],
 		[/* code block */ 'c', [
+			[/* text */ 't', ` `],
 			[/* inline code block */ 'i', `IntSummaryStatistics stats = intStream.collect(IntSummaryStatistics::new,
                                                 IntSummaryStatistics::accept,
                                                 IntSummaryStatistics::combine);`]
 		]],
+		[/* text */ 't', `
+
+ `],
 		[/* block */ 'b', ''],
 		[/* block */ 'b', [
 			[/* inline code block */ 'i', `IntSummaryStatistics`],
@@ -34,6 +38,7 @@ DocsCollector.collect('java.util.IntSummaryStatistics', [
  `]
 		]],
 		[/* code block */ 'c', [
+			[/* text */ 't', ` `],
 			[/* inline code block */ 'i', `IntSummaryStatistics stats = people.stream()
                                     .collect(Collectors.summarizingInt(Person::getDependents));`]
 		]],

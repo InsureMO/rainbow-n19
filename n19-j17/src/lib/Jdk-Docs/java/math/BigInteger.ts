@@ -1143,6 +1143,7 @@ DocsCollector.collect('java.math.BigInteger', [
 				[/* text */ 't', `Returns a BigInteger whose value is `],
 				[/* inline code block */ 'i', `(this`],
 				[/* text */ 't', `-1`, 'sup'],
+				[/* text */ 't', ` `],
 				[/* inline code block */ 'i', `mod m)`],
 				[/* text */ 't', `.`]
 			],
@@ -1165,6 +1166,7 @@ DocsCollector.collect('java.math.BigInteger', [
 			[/* return description */
 				[/* inline code block */ 'i', `this`],
 				[/* text */ 't', `-1`, 'sup'],
+				[/* text */ 't', ` `],
 				[/* inline code block */ 'i', `mod m`],
 				[/* text */ 't', `.`]
 			]

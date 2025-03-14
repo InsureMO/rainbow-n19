@@ -59,7 +59,11 @@ DocsCollector.collect('java.net.ContentHandler', [
  `]
 		]],
 		[/* block */ 'b', [
+			[/* text */ 't', `
+     `],
 			[/* text */ 't', `{package-prefix}.{major}.{minor}`],
+			[/* text */ 't', `
+     `],
 			[/* block */ 'b', [
 				[/* text */ 't', `
      where `],

@@ -289,6 +289,8 @@ DocsCollector.collect('java.time.ZoneId', [
  `]
 				]],
 				[/* block */ 'b', [
+					[/* text */ 't', `
+ `],
 					[/* reference */ 'r', `java.time.ZoneOffset`, `ZoneOffset`],
 					[/* text */ 't', ` will always return a set of rules where the offset never changes.`]
 				]]

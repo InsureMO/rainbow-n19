@@ -57,6 +57,9 @@ DocsCollector.collect('java.util.stream.Collector', [
 				[/* text */ 't', `)`]
 			]]
 		]],
+		[/* text */ 't', `
+
+ `],
 		[/* block */ 'b', ''],
 		[/* block */ 'b', [
 			[/* text */ 't', `Collectors also have a set of characteristics, such as
@@ -127,8 +130,12 @@ DocsCollector.collect('java.util.stream.Collector', [
      accumulator.accept(a2, t1);
      A a3 = supplier.get();
      accumulator.accept(a3, t2);
-     R r2 = finisher.apply(combiner.apply(a2, a3));  // result with splitting`]
+     R r2 = finisher.apply(combiner.apply(a2, a3));  // result with splitting`],
+			[/* text */ 't', ` `]
 		]],
+		[/* text */ 't', `
+
+ `],
 		[/* block */ 'b', ''],
 		[/* block */ 'b', [
 			[/* text */ 't', `For collectors that do not have the `],
@@ -198,6 +205,9 @@ DocsCollector.collect('java.util.stream.Collector', [
      originating data is unordered.`]
 			]]
 		]],
+		[/* text */ 't', `
+
+ `],
 		[/* block */ 'b', ''],
 		[/* block */ 'b', [
 			[/* text */ 't', `In addition to the predefined implementations in `],

@@ -75,37 +75,51 @@ DocsCollector.collect('java.lang.constant.DirectMethodHandleDesc$Kind', [
 					[/* block */ 'b', [
 						[/* inline code block */ 'i', `REF_invokeVirtual`],
 						[/* text */ 't', ` which matches to `],
-						[/* inline code block */ 'i', `VIRTUAL`]
+						[/* inline code block */ 'i', `VIRTUAL`],
+						[/* text */ 't', `
+     `]
 					]],
 					[/* block */ 'b', [
 						[/* inline code block */ 'i', `REF_invokeInterface`],
 						[/* text */ 't', ` which matches to `],
-						[/* inline code block */ 'i', `INTERFACE_VIRTUAL`]
+						[/* inline code block */ 'i', `INTERFACE_VIRTUAL`],
+						[/* text */ 't', `
+     `]
 					]],
 					[/* block */ 'b', [
 						[/* inline code block */ 'i', `REF_newInvokeSpecial`],
 						[/* text */ 't', ` which matches to `],
-						[/* inline code block */ 'i', `CONSTRUCTOR`]
+						[/* inline code block */ 'i', `CONSTRUCTOR`],
+						[/* text */ 't', `
+     `]
 					]],
 					[/* block */ 'b', [
 						[/* inline code block */ 'i', `REF_getField`],
 						[/* text */ 't', ` which matches to `],
-						[/* inline code block */ 'i', `GETTER`]
+						[/* inline code block */ 'i', `GETTER`],
+						[/* text */ 't', `
+     `]
 					]],
 					[/* block */ 'b', [
 						[/* inline code block */ 'i', `REF_putField`],
 						[/* text */ 't', ` which matches to `],
-						[/* inline code block */ 'i', `SETTER`]
+						[/* inline code block */ 'i', `SETTER`],
+						[/* text */ 't', `
+     `]
 					]],
 					[/* block */ 'b', [
 						[/* inline code block */ 'i', `REF_getStatic`],
 						[/* text */ 't', ` which matches to `],
-						[/* inline code block */ 'i', `STATIC_GETTER`]
+						[/* inline code block */ 'i', `STATIC_GETTER`],
+						[/* text */ 't', `
+     `]
 					]],
 					[/* block */ 'b', [
 						[/* inline code block */ 'i', `REF_putStatic`],
 						[/* text */ 't', ` which matches to `],
-						[/* inline code block */ 'i', `STATIC_SETTER`]
+						[/* inline code block */ 'i', `STATIC_SETTER`],
+						[/* text */ 't', `
+ `]
 					]]
 				]],
 				[/* text */ 't', `
@@ -119,14 +133,18 @@ DocsCollector.collect('java.lang.constant.DirectMethodHandleDesc$Kind', [
 						[/* text */ 't', ` which matches to `],
 						[/* inline code block */ 'i', `STATIC`],
 						[/* text */ 't', ` or `],
-						[/* inline code block */ 'i', `INTERFACE_STATIC`]
+						[/* inline code block */ 'i', `INTERFACE_STATIC`],
+						[/* text */ 't', `
+     `]
 					]],
 					[/* block */ 'b', [
 						[/* inline code block */ 'i', `REF_invokeSpecial`],
 						[/* text */ 't', ` which matches to `],
 						[/* inline code block */ 'i', `SPECIAL`],
 						[/* text */ 't', ` or `],
-						[/* inline code block */ 'i', `INTERFACE_SPECIAL`]
+						[/* inline code block */ 'i', `INTERFACE_SPECIAL`],
+						[/* text */ 't', `
+ `]
 					]]
 				]]
 			],

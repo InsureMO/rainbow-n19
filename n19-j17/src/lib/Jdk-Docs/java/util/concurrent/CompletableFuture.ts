@@ -90,6 +90,9 @@ DocsCollector.collect('java.util.concurrent.CompletableFuture', [
  `]
 			]]
 		]],
+		[/* text */ 't', `
+
+ `],
 		[/* block */ 'b', ''],
 		[/* block */ 'b', [
 			[/* text */ 't', `CompletableFuture also implements `],
@@ -138,6 +141,9 @@ DocsCollector.collect('java.util.concurrent.CompletableFuture', [
  `]
 			]]
 		]],
+		[/* text */ 't', `
+
+ `],
 		[/* block */ 'b', ''],
 		[/* block */ 'b', [
 			[/* text */ 't', `Arguments used to pass a completion result (that is, for
@@ -165,6 +171,7 @@ DocsCollector.collect('java.util.concurrent.CompletableFuture', [
  `]
 		]],
 		[/* code block */ 'c', [
+			[/* text */ 't', ` `],
 			[/* inline code block */ 'i', `class MyCompletableFuture<T> extends CompletableFuture<T> {
    static final Executor myExecutor = ...;
    public MyCompletableFuture() { }
@@ -1632,6 +1639,7 @@ DocsCollector.collect('java.util.concurrent.CompletableFuture', [
  `]
 				]],
 				[/* code block */ 'c', [
+					[/* text */ 't', ` `],
 					[/* inline code block */ 'i', `minimalStage.toCompletableFuture().join();`]
 				]],
 				[/* block */ 'b', '']

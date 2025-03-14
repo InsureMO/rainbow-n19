@@ -84,6 +84,9 @@ DocsCollector.collect('java.util.TreeSet', [
  unsynchronized access to the set: `]
 		]],
 		[/* code block */ 'c', `   SortedSet s = Collections.synchronizedSortedSet(new TreeSet(...));`],
+		[/* text */ 't', `
+
+ `],
 		[/* block */ 'b', ''],
 		[/* block */ 'b', [
 			[/* text */ 't', `The iterators returned by this class's `],
@@ -114,7 +117,10 @@ DocsCollector.collect('java.util.TreeSet', [
  Therefore, it would be wrong to write a program that depended on this
  exception for its correctness:   `],
 			[/* text */ 't', `the fail-fast behavior of iterators
- should be used only to detect bugs.`]
+ should be used only to detect bugs.`],
+			[/* text */ 't', `
+
+ `]
 		]],
 		[/* block */ 'b', [
 			[/* text */ 't', `This class is a member of the
@@ -1189,6 +1195,7 @@ DocsCollector.collect('java.util.TreeSet', [
 				[/* text */ 't', `
  and `],
 				[/* text */ 't', `fail-fast`],
+				[/* text */ 't', ` `],
 				[/* reference */ 'r', `java.util.Spliterator`, `Spliterator`],
 				[/* text */ 't', ` over the elements in this
  set.

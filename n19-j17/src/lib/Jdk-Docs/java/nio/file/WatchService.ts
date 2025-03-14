@@ -98,6 +98,9 @@ DocsCollector.collect('java.nio.file.WatchService', [
  `]
 		]],
 		[/* block */ 'b', `Platform dependencies`],
+		[/* text */ 't', `
+
+ `],
 		[/* block */ 'b', [
 			[/* text */ 't', ` The implementation that observes events from the file system is intended
  to map directly on to the native file event notification facility where

@@ -275,16 +275,22 @@ DocsCollector.collect('java.io.PipedReader', [
  `]
 				]],
 				[/* code block */ 'c', [
-					[/* inline code block */ 'i', `snk.connect(src)`]
+					[/* inline code block */ 'i', `snk.connect(src)`],
+					[/* text */ 't', ` `]
 				]],
+				[/* text */ 't', `
+ `],
 				[/* block */ 'b', ''],
 				[/* block */ 'b', `
  or the call:
 
  `],
 				[/* code block */ 'c', [
-					[/* inline code block */ 'i', `src.connect(snk)`]
+					[/* inline code block */ 'i', `src.connect(snk)`],
+					[/* text */ 't', ` `]
 				]],
+				[/* text */ 't', `
+ `],
 				[/* block */ 'b', ''],
 				[/* block */ 'b', `
  The two calls have the same effect.`]

@@ -116,6 +116,8 @@ DocsCollector.collect('java.util.Timer', [
 			[/* constructor description */
 				[/* text */ 't', `Creates a new timer.  The associated thread does `],
 				[/* text */ 't', `not`],
+				[/* text */ 't', `
+ `],
 				[/* reference */ 'r', `java.lang.Thread#setDaemon(boolean)`, `run as a daemon`],
 				[/* text */ 't', `.`]
 			],
@@ -145,6 +147,8 @@ DocsCollector.collect('java.util.Timer', [
 				[/* text */ 't', `Creates a new timer whose associated thread has the specified name.
  The associated thread does `],
 				[/* text */ 't', `not`],
+				[/* text */ 't', `
+ `],
 				[/* reference */ 'r', `java.lang.Thread#setDaemon(boolean)`, `run as a daemon`],
 				[/* text */ 't', `.`]
 			],

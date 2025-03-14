@@ -135,6 +135,9 @@ DocsCollector.collect('java.util.IdentityHashMap', [
  unsynchronized access to the map:`]
 		]],
 		[/* code block */ 'c', `   Map m = Collections.synchronizedMap(new IdentityHashMap(...));`],
+		[/* text */ 't', `
+
+ `],
 		[/* block */ 'b', ''],
 		[/* block */ 'b', [
 			[/* text */ 't', `The iterators returned by the `],
@@ -167,7 +170,10 @@ DocsCollector.collect('java.util.IdentityHashMap', [
  Therefore, it would be wrong to write a program that depended on this
  exception for its correctness: `],
 			[/* text */ 't', `fail-fast iterators should be used only
- to detect bugs.`]
+ to detect bugs.`],
+			[/* text */ 't', `
+
+ `]
 		]],
 		[/* block */ 'b', [
 			[/* text */ 't', `This class is a member of the

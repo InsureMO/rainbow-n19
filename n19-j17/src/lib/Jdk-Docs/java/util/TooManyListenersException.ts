@@ -12,6 +12,8 @@ DocsCollector.collect('java.util.TooManyListenersException', [
  a multicast Event Source.
  `]
 		]],
+		[/* text */ 't', `
+ `],
 		[/* block */ 'b', `
  The presence of a "throws TooManyListenersException" clause on any given
  concrete implementation of the normally multicast "void addXyzEventListener"

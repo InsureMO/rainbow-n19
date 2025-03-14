@@ -165,6 +165,9 @@ DocsCollector.collect('java.time.temporal.WeekFields', [
 				]]
 			]],
 		],
+		[/* text */ 't', `
+
+ `],
 		[/* block */ 'b', `Week of Year`],
 		[/* text */ 't', `
  One field is used: week-of-year.
@@ -567,7 +570,9 @@ DocsCollector.collect('java.time.temporal.WeekFields', [
 					[/* new line */ 'n'],
 					[/* text */ 't', `
  - if the 5th day of the month is a Monday, week two starts on the 5th and the 1st to 4th is in week one`],
-					[/* new line */ 'n']
+					[/* new line */ 'n'],
+					[/* text */ 't', `
+ `]
 				]],
 				[/* block */ 'b', `
  This field can be used with any calendar system.
@@ -662,7 +667,9 @@ DocsCollector.collect('java.time.temporal.WeekFields', [
 					[/* text */ 't', `
  - if the 5th day of the year is a Monday, week two starts on the 5th and
    the 1st to 4th is in week one`],
-					[/* new line */ 'n']
+					[/* new line */ 'n'],
+					[/* text */ 't', `
+ `]
 				]],
 				[/* block */ 'b', `
  This field can be used with any calendar system.
@@ -753,7 +760,9 @@ DocsCollector.collect('java.time.temporal.WeekFields', [
 					[/* new line */ 'n'],
 					[/* text */ 't', `
  - if the 5th day of the year is a Monday, week two starts on the 5th and the 1st to 4th is in week one`],
-					[/* new line */ 'n']
+					[/* new line */ 'n'],
+					[/* text */ 't', `
+ `]
 				]],
 				[/* block */ 'b', `
  This field can be used with any calendar system.

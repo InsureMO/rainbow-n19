@@ -25,31 +25,49 @@ DocsCollector.collect('java.time.chrono.JapaneseChronology', [
 		]],
 		[/* list */ 'l', [
 			[/* block */ 'b', [
-				[/* inline code block */ 'i', `DAY_OF_WEEK`]
+				[/* inline code block */ 'i', `DAY_OF_WEEK`],
+				[/* text */ 't', `
+ `]
 			]],
 			[/* block */ 'b', [
-				[/* inline code block */ 'i', `DAY_OF_MONTH`]
+				[/* inline code block */ 'i', `DAY_OF_MONTH`],
+				[/* text */ 't', `
+ `]
 			]],
 			[/* block */ 'b', [
-				[/* inline code block */ 'i', `DAY_OF_YEAR`]
+				[/* inline code block */ 'i', `DAY_OF_YEAR`],
+				[/* text */ 't', `
+ `]
 			]],
 			[/* block */ 'b', [
-				[/* inline code block */ 'i', `EPOCH_DAY`]
+				[/* inline code block */ 'i', `EPOCH_DAY`],
+				[/* text */ 't', `
+ `]
 			]],
 			[/* block */ 'b', [
-				[/* inline code block */ 'i', `MONTH_OF_YEAR`]
+				[/* inline code block */ 'i', `MONTH_OF_YEAR`],
+				[/* text */ 't', `
+ `]
 			]],
 			[/* block */ 'b', [
-				[/* inline code block */ 'i', `PROLEPTIC_MONTH`]
+				[/* inline code block */ 'i', `PROLEPTIC_MONTH`],
+				[/* text */ 't', `
+ `]
 			]],
 			[/* block */ 'b', [
-				[/* inline code block */ 'i', `YEAR_OF_ERA`]
+				[/* inline code block */ 'i', `YEAR_OF_ERA`],
+				[/* text */ 't', `
+ `]
 			]],
 			[/* block */ 'b', [
-				[/* inline code block */ 'i', `YEAR`]
+				[/* inline code block */ 'i', `YEAR`],
+				[/* text */ 't', `
+ `]
 			]],
 			[/* block */ 'b', [
-				[/* inline code block */ 'i', `ERA`]
+				[/* inline code block */ 'i', `ERA`],
+				[/* text */ 't', `
+ `]
 			]]
 		]],
 		[/* block */ 'b', '']
@@ -614,6 +632,8 @@ DocsCollector.collect('java.time.chrono.JapaneseChronology', [
  `]
 					]],
 					[/* block */ 'b', [
+						[/* text */ 't', `
+ `],
 						[/* inline code block */ 'i', `ChronoField`],
 						[/* text */ 't', ` instances are resolved by this method, which may
  be overridden in subclasses.
@@ -778,6 +798,8 @@ DocsCollector.collect('java.time.chrono.JapaneseChronology', [
  `]
 						]]
 					]],
+					[/* text */ 't', `
+ `],
 					[/* block */ 'b', ''],
 					[/* block */ 'b', [
 						[/* text */ 't', `

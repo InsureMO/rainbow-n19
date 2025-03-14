@@ -154,6 +154,9 @@ DocsCollector.collect('java.util.SortedSet', [
 		[/* inline code block */ 'i', `high`],
 		[/* text */ 't', `, exclusive:`],
 		[/* code block */ 'c', `   SortedSet<String> sub = s.subSet(low+"\\0", high);`],
+		[/* text */ 't', `
+
+ `],
 		[/* block */ 'b', ''],
 		[/* block */ 'b', [
 			[/* text */ 't', `This interface is a member of the
