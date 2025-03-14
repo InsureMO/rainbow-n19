@@ -245,13 +245,16 @@ export abstract class AbstractExecutable implements IExecutable {
 			sb = sb + Modifier.toString(mod) + ' ';
 		} else {
 			const access_mod: ModifiersValue = mod & Modifier.ACCESS_MODIFIERS;
-			if (access_mod != 0)
+			if (access_mod != 0) {
 				sb = sb + Modifier.toString(access_mod) + ' ';
-			if (isDefault)
+			}
+			if (isDefault) {
 				sb = sb + 'default ';
+			}
 			mod = (mod & ~Modifier.ACCESS_MODIFIERS);
-			if (mod != 0)
+			if (mod != 0) {
 				sb = sb + Modifier.toString(mod) + ' ';
+			}
 		}
 		return sb;
 	}

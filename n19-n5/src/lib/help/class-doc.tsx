@@ -3,6 +3,7 @@ import React from 'react';
 import {CodeEditorClassDocs} from '../types';
 import {ClassDocDetails} from './class-doc-details';
 import {ClassPartDoc} from './class-part';
+import {ConstructorsPartDoc} from './constructors-part';
 import {ExtendsPartDoc} from './extends-part';
 import {FieldsPartDoc} from './fields-part';
 import {MethodsPartDoc} from './methods-part';
@@ -27,6 +28,7 @@ export const HelpClassDoc = (props: HelpClassDocProps) => {
 		<ExtendsPartDoc details={details}/>
 		<ClassPartDoc details={details}/>
 		<FieldsPartDoc details={details}/>
+		<ConstructorsPartDoc details={details}/>
 		<MethodsPartDoc details={details}/>
 	</>;
 };

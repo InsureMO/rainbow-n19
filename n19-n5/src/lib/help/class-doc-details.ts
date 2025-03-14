@@ -88,6 +88,12 @@ export class ClassDocDetails {
 		}
 	}
 
+	findConstructorDoc(constructor: Java.IConstructor): Optional<Java.ClassMethodDoc> {
+		const parameters = constructor.parameters.map(p => this.transformParameterToExecutableKey(p)).join(',');
+		const key = `<init>(${parameters})`;
+		return this._doc?.methods?.find(f => f.key === key);
+	}
+
 	findMethodDoc(method: Java.IMethod): Optional<Java.ClassMethodDoc> {
 		const parameters = method.parameters.map(p => this.transformParameterToExecutableKey(p)).join(',');
 		const key = `${method.name}(${parameters})`;
