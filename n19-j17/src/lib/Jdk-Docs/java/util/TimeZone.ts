@@ -41,7 +41,7 @@ DocsCollector.collect('java.util.TimeZone', [
 			[/* text */ 't', ` object with:
  `]
 		]],
-		[/* block */ 'b', [
+		[/* blockquote */ 'q', [
 			[/* code block */ 'c', ` TimeZone tz = TimeZone.getTimeZone("America/Los_Angeles");
  `]
 		]],
@@ -58,7 +58,7 @@ DocsCollector.collect('java.util.TimeZone', [
  produce a TimeZone. The syntax of a custom time zone ID is:
 
  `],
-		[/* block */ 'b', [
+		[/* blockquote */ 'q', [
 			[/* code block */ 'c', [
 				[/* text */ 't', ` `],
 				[/* anchor */ 'r', '#-id', `CustomID`, `CustomID:`],
@@ -154,7 +154,7 @@ DocsCollector.collect('java.util.TimeZone', [
  zone ID is normalized in the following syntax:
  `]
 		]],
-		[/* block */ 'b', [
+		[/* blockquote */ 'q', [
 			[/* code block */ 'c', [
 				[/* text */ 't', ` `],
 				[/* anchor */ 'r', '#-id', `NormalizedCustomID`, `NormalizedCustomID:`],
@@ -463,7 +463,7 @@ DocsCollector.collect('java.util.TimeZone', [
  `],
 				[/* block */ 'b', `This method is equivalent to:
  `],
-				[/* block */ 'b', [
+				[/* blockquote */ 'q', [
 					[/* code block */ 'c', [
 						[/* text */ 't', ` getDisplayName(false, `],
 						[/* text */ 't', `LONG`],
@@ -503,7 +503,7 @@ DocsCollector.collect('java.util.TimeZone', [
  `],
 				[/* block */ 'b', `This method is equivalent to:
  `],
-				[/* block */ 'b', [
+				[/* blockquote */ 'q', [
 					[/* code block */ 'c', [
 						[/* text */ 't', ` getDisplayName(daylight, style,
                 Locale.getDefault(`],
@@ -553,7 +553,7 @@ DocsCollector.collect('java.util.TimeZone', [
  `],
 				[/* block */ 'b', `This method is equivalent to:
  `],
-				[/* block */ 'b', [
+				[/* blockquote */ 'q', [
 					[/* code block */ 'c', [
 						[/* text */ 't', ` getDisplayName(false, `],
 						[/* text */ 't', `LONG`],

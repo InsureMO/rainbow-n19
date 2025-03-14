@@ -161,7 +161,7 @@ DocsCollector.collect('java.text.Format', [
  must also implement the following class method:
  `]
 		]],
-		[/* block */ 'b', [
+		[/* blockquote */ 'q', [
 			[/* text */ 't', `
  `],
 			[/* code block */ 'c', ` public static Locale[] getAvailableLocales()
@@ -323,7 +323,7 @@ DocsCollector.collect('java.text.Format', [
 			[/* method description */
 				[/* text */ 't', `Formats an object to produce a string. This is equivalent to
  `],
-				[/* block */ 'b', [
+				[/* blockquote */ 'q', [
 					[/* text */ 't', `
  `],
 					[/* reference */ 'r', `#format(java.lang.Object,java.lang.StringBuffer,java.text.FieldPosition)`, `format`],

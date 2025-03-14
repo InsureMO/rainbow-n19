@@ -27,7 +27,7 @@ DocsCollector.collect('java.text.NumberFormat', [
  To format a number for the current Locale, use one of the factory
  class methods:
  `],
-		[/* block */ 'b', [
+		[/* blockquote */ 'q', [
 			[/* text */ 't', `
  `],
 			[/* code block */ 'c', [
@@ -42,7 +42,7 @@ DocsCollector.collect('java.text.NumberFormat', [
  the system doesn't have to fetch the information about the local
  language and country conventions multiple times.
  `],
-		[/* block */ 'b', [
+		[/* blockquote */ 'q', [
 			[/* text */ 't', `
  `],
 			[/* code block */ 'c', [
@@ -60,7 +60,7 @@ DocsCollector.collect('java.text.NumberFormat', [
 		[/* inline code block */ 'i', `getInstance`],
 		[/* text */ 't', `.
  `],
-		[/* block */ 'b', [
+		[/* blockquote */ 'q', [
 			[/* text */ 't', `
  `],
 			[/* code block */ 'c', [
@@ -90,7 +90,7 @@ DocsCollector.collect('java.text.NumberFormat', [
 			[/* text */ 't', ` to parse numbers:
  `]
 		]],
-		[/* block */ 'b', [
+		[/* blockquote */ 'q', [
 			[/* text */ 't', `
  `],
 			[/* code block */ 'c', [

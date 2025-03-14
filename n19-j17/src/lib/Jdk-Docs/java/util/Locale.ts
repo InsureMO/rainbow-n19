@@ -322,7 +322,7 @@ DocsCollector.collect('java.util.Locale', [
 			[/* text */ 't', ` class provides three constructors:
  `]
 		]],
-		[/* block */ 'b', [
+		[/* blockquote */ 'q', [
 			[/* text */ 't', `
  `],
 			[/* code block */ 'c', [
@@ -380,7 +380,7 @@ DocsCollector.collect('java.util.Locale', [
  for the United States:
  `]
 		]],
-		[/* block */ 'b', [
+		[/* blockquote */ 'q', [
 			[/* text */ 't', `
  `],
 			[/* code block */ 'c', `     Locale.US
@@ -482,7 +482,7 @@ DocsCollector.collect('java.util.Locale', [
  best matching language tag.
  `]
 		]],
-		[/* block */ 'b', [
+		[/* blockquote */ 'q', [
 			[/* text */ 't', `
  `],
 			[/* code block */ 'c', `    1. zh-Hant-TW
@@ -571,7 +571,7 @@ DocsCollector.collect('java.util.Locale', [
 			[/* text */ 't', ` object:
  `]
 		]],
-		[/* block */ 'b', [
+		[/* blockquote */ 'q', [
 			[/* text */ 't', `
  `],
 			[/* code block */ 'c', `     NumberFormat.getInstance()
@@ -588,7 +588,7 @@ DocsCollector.collect('java.util.Locale', [
 		[/* reference */ 'r', `java.util.Locale.Category#FORMAT`, `FORMAT`],
 		[/* text */ 't', ` locale:
  `],
-		[/* block */ 'b', [
+		[/* blockquote */ 'q', [
 			[/* text */ 't', `
  `],
 			[/* code block */ 'c', `     NumberFormat.getInstance(myLocale)
@@ -1144,7 +1144,7 @@ DocsCollector.collect('java.util.Locale', [
  assembled into a single string. The non-empty values are used in order, with
  the second and subsequent names in parentheses.  For example:
  `],
-				[/* block */ 'b', [
+				[/* blockquote */ 'q', [
 					[/* text */ 't', `
  language (script, country, variant(, extension)*)`],
 					[/* new line */ 'n'],
@@ -1198,7 +1198,7 @@ DocsCollector.collect('java.util.Locale', [
  object, consisting of language, country, variant, script,
  and extensions as below:
  `],
-				[/* block */ 'b', `
+				[/* blockquote */ 'q', `
  language + "_" + country + "_" + (variant + "_#" | "#") + script + "_" + extensions
  `],
 				[/* text */ 't', `
@@ -1378,7 +1378,7 @@ DocsCollector.collect('java.util.Locale', [
  values are used in order, with the second and subsequent names in
  parentheses.  For example:
  `],
-				[/* block */ 'b', [
+				[/* blockquote */ 'q', [
 					[/* text */ 't', `
  language (script, country, variant(, extension)*)`],
 					[/* new line */ 'n'],

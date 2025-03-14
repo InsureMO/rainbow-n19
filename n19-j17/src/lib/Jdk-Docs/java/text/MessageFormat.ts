@@ -52,7 +52,7 @@ DocsCollector.collect('java.text.MessageFormat', [
 		[/* inline code block */ 'i', `MessageFormat`],
 		[/* text */ 't', ` uses patterns of the following form:
  `],
-		[/* block */ 'b', [
+		[/* blockquote */ 'q', [
 			[/* code block */ 'c', [
 				[/* text */ 't', ` `],
 				[/* text */ 't', `MessageFormatPattern:`],
@@ -618,7 +618,7 @@ DocsCollector.collect('java.text.MessageFormat', [
 			[/* text */ 't', ` for one-time use:
  `]
 		]],
-		[/* block */ 'b', [
+		[/* blockquote */ 'q', [
 			[/* code block */ 'c', ` int planet = 7;
  String event = "a disturbance in the Force";
 
@@ -630,7 +630,7 @@ DocsCollector.collect('java.text.MessageFormat', [
 		[/* text */ 't', `
  The output is:
  `],
-		[/* block */ 'b', [
+		[/* blockquote */ 'q', [
 			[/* code block */ 'c', ` At 12:30 PM on Jul 3, 2053, there was a disturbance in the Force on planet 7.
  `]
 		]],
@@ -646,7 +646,7 @@ DocsCollector.collect('java.text.MessageFormat', [
  can be used repeatedly:
  `]
 		]],
-		[/* block */ 'b', [
+		[/* blockquote */ 'q', [
 			[/* code block */ 'c', ` int fileCount = 1273;
  String diskName = "MyDisk";
  Object[] testArgs = {new Long(fileCount), diskName};
@@ -662,7 +662,7 @@ DocsCollector.collect('java.text.MessageFormat', [
 		[/* inline code block */ 'i', `fileCount`],
 		[/* text */ 't', `:
  `],
-		[/* block */ 'b', [
+		[/* blockquote */ 'q', [
 			[/* code block */ 'c', ` The disk "MyDisk" contains 0 file(s).
  The disk "MyDisk" contains 1 file(s).
  The disk "MyDisk" contains 1,273 file(s).
@@ -680,7 +680,7 @@ DocsCollector.collect('java.text.MessageFormat', [
  to produce correct forms for singular and plural:
  `]
 		]],
-		[/* block */ 'b', [
+		[/* blockquote */ 'q', [
 			[/* code block */ 'c', ` MessageFormat form = new MessageFormat("The disk \\"{1}\\" contains {0}.");
  double[] filelimits = {0,1,2};
  String[] filepart = {"no files","one file","{0,number} files"};
@@ -699,7 +699,7 @@ DocsCollector.collect('java.text.MessageFormat', [
 		[/* inline code block */ 'i', `fileCount`],
 		[/* text */ 't', `:
  `],
-		[/* block */ 'b', [
+		[/* blockquote */ 'q', [
 			[/* code block */ 'c', ` The disk "MyDisk" contains no files.
  The disk "MyDisk" contains one file.
  The disk "MyDisk" contains 1,273 files.
@@ -720,7 +720,7 @@ DocsCollector.collect('java.text.MessageFormat', [
  for more information.
  `]
 		]],
-		[/* block */ 'b', [
+		[/* blockquote */ 'q', [
 			[/* code block */ 'c', [
 				[/* inline code block */ 'i', `form.applyPattern(
     "There {0,choice,0#are no files|1#is one file|1<are {0,number,integer} files}.");`]
@@ -754,7 +754,7 @@ DocsCollector.collect('java.text.MessageFormat', [
  When a single argument is parsed more than once in the string, the last match
  will be the final result of the parsing.  For example,
  `],
-		[/* block */ 'b', [
+		[/* blockquote */ 'q', [
 			[/* code block */ 'c', ` MessageFormat mf = new MessageFormat("{0,number,#.##}, {0,number,#.#}");
  Object[] objs = {new Double(3.1415)};
  String result = mf.format( objs );
@@ -777,7 +777,7 @@ DocsCollector.collect('java.text.MessageFormat', [
  example,
  `]
 		]],
-		[/* block */ 'b', [
+		[/* blockquote */ 'q', [
 			[/* code block */ 'c', ` MessageFormat mf = new MessageFormat("{0}, {0}, {0}");
  String forParsing = "x, y, z";
  Object[] objs = mf.parse(forParsing, new ParsePosition(0));
@@ -897,7 +897,7 @@ DocsCollector.collect('java.text.MessageFormat', [
 				[/* text */ 't', `.
  This is equivalent to
  `],
-				[/* block */ 'b', [
+				[/* blockquote */ 'q', [
 					[/* text */ 't', `
      `],
 					[/* inline code block */ 'i', `format((Object[]) arguments, result, pos)`],
@@ -1365,7 +1365,7 @@ DocsCollector.collect('java.text.MessageFormat', [
  the same that would be returned by
  `]
 				]],
-				[/* block */ 'b', [
+				[/* blockquote */ 'q', [
 					[/* text */ 't', `
      `],
 					[/* inline code block */ 'i', `format(arguments, new StringBuffer(), null).toString()`],
@@ -1515,7 +1515,7 @@ DocsCollector.collect('java.text.MessageFormat', [
 				[/* text */ 't', `Creates a MessageFormat with the given pattern and uses it
  to format the given arguments. This is equivalent to
  `],
-				[/* block */ 'b', [
+				[/* blockquote */ 'q', [
 					[/* text */ 't', `
      `],
 					[/* inline code block */ 'i', `(new MessageFormat(pattern)).format(arguments, new StringBuffer(), null).toString()`],

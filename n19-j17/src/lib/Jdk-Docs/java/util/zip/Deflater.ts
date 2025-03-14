@@ -36,7 +36,7 @@ DocsCollector.collect('java.util.zip.Deflater', [
 
  `]
 		]],
-		[/* block */ 'b', [
+		[/* blockquote */ 'q', [
 			[/* code block */ 'c', ` try {
      // Encode a String into bytes
      String inputString = "blahblahblah";

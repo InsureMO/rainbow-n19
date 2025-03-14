@@ -198,7 +198,7 @@ DocsCollector.collect('java.lang.ClassLoader', [
  download class files from a server.  Sample code might look like:
 
  `],
-		[/* block */ 'b', [
+		[/* blockquote */ 'q', [
 			[/* code block */ 'c', `   ClassLoader loader = new NetworkClassLoader(host, port);
    Object main = loader.loadClass("Main", true).newInstance();
         . . .
@@ -222,7 +222,7 @@ DocsCollector.collect('java.lang.ClassLoader', [
 
  `]
 		]],
-		[/* block */ 'b', [
+		[/* blockquote */ 'q', [
 			[/* code block */ 'c', `     class NetworkClassLoader extends ClassLoader {
          String host;
          int port;
@@ -266,7 +266,7 @@ DocsCollector.collect('java.lang.ClassLoader', [
 		]],
 		[/* block */ 'b', ` Examples of valid class names include:
  `],
-		[/* block */ 'b', [
+		[/* blockquote */ 'q', [
 			[/* code block */ 'c', `   "java.lang.String"
    "javax.swing.JSpinner$DefaultEditor"
    "java.security.KeyStore$Builder$FileBuilder$1"

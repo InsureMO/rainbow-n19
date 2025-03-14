@@ -86,7 +86,7 @@ DocsCollector.collect('java.text.SimpleDateFormat', [
 			[/* text */ 't', ` are reserved):
  `]
 		]],
-		[/* block */ 'b', [
+		[/* blockquote */ 'q', [
 			[/* text */ 't', `
  `],
 			[/* table */ 'tbl',
@@ -1023,7 +1023,7 @@ DocsCollector.collect('java.text.SimpleDateFormat', [
  the U.S. locale. The given date and time are 2001-07-04 12:08:56 local time
  in the U.S. Pacific Time time zone.
  `],
-		[/* block */ 'b', [
+		[/* blockquote */ 'q', [
 			[/* text */ 't', `
  `],
 			[/* table */ 'tbl',

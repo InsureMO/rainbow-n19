@@ -218,7 +218,7 @@ DocsCollector.collect('java.net.URLConnection', [
 			[/* text */ 't', ` connection can be found at:
  `]
 		]],
-		[/* block */ 'b', [
+		[/* blockquote */ 'q', [
 			[/* code block */ 'c', [
 				[/* text */ 't', ` `],
 				[/* text */ 't', `http://www.ietf.org/rfc/rfc2616.txt`],

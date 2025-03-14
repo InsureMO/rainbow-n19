@@ -37,7 +37,7 @@ DocsCollector.collect('java.nio.channels.GatheringByteChannel', [
 
  `]
 				]],
-				[/* block */ 'b', [
+				[/* blockquote */ 'q', [
 					[/* code block */ 'c', ` c.write(srcs, 0, srcs.length);`]
 				]],
 				[/* block */ 'b', '']
@@ -89,7 +89,7 @@ DocsCollector.collect('java.nio.channels.GatheringByteChannel', [
 
  `]
 				]],
-				[/* block */ 'b', [
+				[/* blockquote */ 'q', [
 					[/* code block */ 'c', ` srcs[offset].remaining()
      + srcs[offset+1].remaining()
      + ... + srcs[offset+length-1].remaining()`]

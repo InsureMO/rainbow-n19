@@ -463,7 +463,7 @@ DocsCollector.collect('java.lang.invoke.MethodHandle', [
 		[/* text */ 't', `
  Here are some examples of usage:
  `],
-		[/* block */ 'b', [
+		[/* blockquote */ 'q', [
 			[/* code block */ 'c', [
 				[/* inline code block */ 'i', `Object x, y; String s; int i;
 MethodType mt; MethodHandle mh;
@@ -1093,7 +1093,7 @@ mh.invokeExact(System.out, "Hello, world.");
 				[/* block */ 'b', `
  Here are some examples of array-collecting method handles:
  `],
-				[/* block */ 'b', [
+				[/* blockquote */ 'q', [
 					[/* code block */ 'c', [
 						[/* inline code block */ 'i', `MethodHandle deepToString = publicLookup()
   .findStatic(Arrays.class, "deepToString", methodType(String.class, Object[].class));
@@ -1212,7 +1212,7 @@ assertEquals("[123]", (String) longsToString.invokeExact((long)123));`]
 				[/* block */ 'b', `
  Here is an example, of a list-making variable arity method handle:
  `],
-				[/* block */ 'b', [
+				[/* blockquote */ 'q', [
 					[/* code block */ 'c', [
 						[/* inline code block */ 'i', `MethodHandle asListVar = publicLookup()
   .findStatic(Arrays.class, "asList", methodType(List.class, Object[].class))
@@ -1392,7 +1392,7 @@ assertEquals("[three, thee, tee]", asListFix.invoke((Object)argv).toString());`]
 				[/* block */ 'b', `
  Here are some simple examples of array-spreading method handles:
  `],
-				[/* block */ 'b', [
+				[/* blockquote */ 'q', [
 					[/* code block */ 'c', [
 						[/* inline code block */ 'i', `MethodHandle equals = publicLookup()
   .findVirtual(String.class, "equals", methodType(boolean.class, Object.class));
@@ -1969,7 +1969,7 @@ assertEquals("[A, B, C]", (String) caToString2.invokeExact('A', "BC".toCharArray
 				[/* block */ 'b', `
  Here is an example, of a list-making variable arity method handle:
  `],
-				[/* block */ 'b', [
+				[/* blockquote */ 'q', [
 					[/* code block */ 'c', [
 						[/* inline code block */ 'i', `MethodHandle deepToString = publicLookup()
   .findStatic(Arrays.class, "deepToString", methodType(String.class, Object[].class));
@@ -2410,7 +2410,7 @@ assertEquals("[three, thee, tee]", Arrays.toString((Object[])ls.get(0)));`]
 				[/* block */ 'b', `
  This method is also equivalent to the following code:
  `],
-				[/* block */ 'b', [
+				[/* blockquote */ 'q', [
 					[/* code block */ 'c', [
 						[/* inline code block */ 'i', `invokeWithArguments(arguments.toArray())`]
 					]]
@@ -2462,7 +2462,7 @@ assertEquals("[three, thee, tee]", Arrays.toString((Object[])ls.get(0)));`]
  ending with the string representation of the method handle's type.
  In other words, this method returns a string equal to the value of:
  `],
-				[/* block */ 'b', [
+				[/* blockquote */ 'q', [
 					[/* code block */ 'c', [
 						[/* inline code block */ 'i', `"MethodHandle" + type().toString()`]
 					]]

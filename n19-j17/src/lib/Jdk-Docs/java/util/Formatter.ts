@@ -41,7 +41,7 @@ DocsCollector.collect('java.util.Formatter', [
 		[/* block */ 'b', ` Examples of expected usage:
 
  `],
-		[/* block */ 'b', [
+		[/* blockquote */ 'q', [
 			[/* code block */ 'c', `   StringBuilder sb = new StringBuilder();
    // Send all output to the Appendable object sb
    Formatter formatter = new Formatter(sb, Locale.US);
@@ -72,7 +72,7 @@ DocsCollector.collect('java.util.Formatter', [
  by the following invocations:
 
  `],
-		[/* block */ 'b', [
+		[/* blockquote */ 'q', [
 			[/* code block */ 'c', `   // Writes a formatted string to System.out.
    System.out.format("Local time: %tT", Calendar.getInstance());
    // -> "Local time: 13:34:18"
@@ -97,7 +97,7 @@ DocsCollector.collect('java.util.Formatter', [
 
  `]
 		]],
-		[/* block */ 'b', [
+		[/* blockquote */ 'q', [
 			[/* code block */ 'c', `   // Format a string containing a date.
    import java.util.Calendar;
    import java.util.GregorianCalendar;
@@ -167,7 +167,7 @@ DocsCollector.collect('java.util.Formatter', [
 
  `]
 		]],
-		[/* block */ 'b', [
+		[/* blockquote */ 'q', [
 			[/* code block */ 'c', `   Calendar c = ...;
    String s = String.format("Duke's Birthday: %1$tm %1$te,%1$tY", c);
  `]
@@ -206,7 +206,7 @@ DocsCollector.collect('java.util.Formatter', [
  the following syntax:
 
  `],
-				[/* block */ 'b', [
+				[/* blockquote */ 'q', [
 					[/* code block */ 'c', `   %[argument_index$][flags][width][.precision]conversion
  `]
 				]],
@@ -266,7 +266,7 @@ DocsCollector.collect('java.util.Formatter', [
  times have the following syntax:
 
  `],
-				[/* block */ 'b', [
+				[/* blockquote */ 'q', [
 					[/* code block */ 'c', `   %[argument_index$][flags][width]conversion
  `]
 				]],
@@ -310,7 +310,7 @@ DocsCollector.collect('java.util.Formatter', [
  following syntax:
 
  `],
-				[/* block */ 'b', [
+				[/* blockquote */ 'q', [
 					[/* code block */ 'c', `   %[flags][width]conversion
  `]
 				]],
@@ -1910,7 +1910,7 @@ DocsCollector.collect('java.util.Formatter', [
 
  `]
 		]],
-		[/* block */ 'b', [
+		[/* blockquote */ 'q', [
 			[/* code block */ 'c', `   Calendar c = ...;
    String s1 = String.format("Duke's Birthday: %1$tm %1$te,%1$tY", c);
 
@@ -5727,7 +5727,7 @@ DocsCollector.collect('java.util.Formatter', [
 				[/* block */ 'b', ` For example:
 
  `],
-				[/* block */ 'b', [
+				[/* blockquote */ 'q', [
 					[/* code block */ 'c', `   formatter.format("%4$s %3$s %2$s %1$s %4$s %3$s %2$s %1$s",
                     "a", "b", "c", "d")
    // -> "d c b a d c b a"
@@ -5752,7 +5752,7 @@ DocsCollector.collect('java.util.Formatter', [
 				[/* text */ 't', ` is thrown.
 
  `],
-				[/* block */ 'b', [
+				[/* blockquote */ 'q', [
 					[/* code block */ 'c', `    formatter.format("%s %s %<s %<s", "a", "b", "c", "d")
     // -> "a b b b"
     // "c" and "d" are ignored because they are not referenced
@@ -5774,7 +5774,7 @@ DocsCollector.collect('java.util.Formatter', [
  relative indexing.
 
  `],
-				[/* block */ 'b', [
+				[/* blockquote */ 'q', [
 					[/* code block */ 'c', `   formatter.format("%s %s %s %s", "a", "b", "c", "d")
    // -> "a b c d"
  `]
@@ -5793,7 +5793,7 @@ DocsCollector.collect('java.util.Formatter', [
  for example:
 
  `],
-		[/* block */ 'b', [
+		[/* blockquote */ 'q', [
 			[/* code block */ 'c', `   formatter.format("%2$s %s %<s %s", "a", "b", "c", "d")
    // -> "b a a b"
    // "c" and "d" are ignored because they are not referenced
@@ -6540,7 +6540,7 @@ DocsCollector.collect('java.util.Formatter', [
 				[/* text */ 't', ` then retrieves the resultant string:
 
  `],
-				[/* block */ 'b', [
+				[/* blockquote */ 'q', [
 					[/* code block */ 'c', `   Formatter f = new Formatter();
    f.format("Last reboot at %tc", lastRebootDate);
    String s = f.toString();

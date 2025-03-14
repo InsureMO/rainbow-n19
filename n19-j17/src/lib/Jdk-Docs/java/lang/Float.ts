@@ -1032,7 +1032,7 @@ DocsCollector.collect('java.lang.Float', [
 
  `]
 				]],
-				[/* block */ 'b', [
+				[/* blockquote */ 'q', [
 					[/* text */ 't', `
  `],
 					[/* dl */ 'dl', [
@@ -1844,7 +1844,7 @@ DocsCollector.collect('java.lang.Float', [
 
  `]
 				]],
-				[/* block */ 'b', [
+				[/* blockquote */ 'q', [
 					[/* code block */ 'c', [
 						[/* inline code block */ 'i', `int s = ((bits >> 31) == 0) ? 1 : -1;
  int e = ((bits >> 23) & 0xff);

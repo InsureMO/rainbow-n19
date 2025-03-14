@@ -45,7 +45,7 @@ DocsCollector.collect('java.text.DateFormat', [
 		[/* block */ 'b', `To format a date for the current Locale, use one of the
  static factory methods:
  `],
-		[/* block */ 'b', [
+		[/* blockquote */ 'q', [
 			[/* text */ 't', `
  `],
 			[/* code block */ 'c', [
@@ -62,7 +62,7 @@ DocsCollector.collect('java.text.DateFormat', [
  the system doesn't have to fetch the information about the local
  language and country conventions multiple times.
  `],
-		[/* block */ 'b', [
+		[/* blockquote */ 'q', [
 			[/* text */ 't', `
  `],
 			[/* code block */ 'c', [
@@ -84,7 +84,7 @@ DocsCollector.collect('java.text.DateFormat', [
 			[/* text */ 't', `.
  `]
 		]],
-		[/* block */ 'b', [
+		[/* blockquote */ 'q', [
 			[/* text */ 't', `
  `],
 			[/* code block */ 'c', [
@@ -109,7 +109,7 @@ DocsCollector.collect('java.text.DateFormat', [
 		]],
 		[/* block */ 'b', `You can use a DateFormat to parse also.
  `],
-		[/* block */ 'b', [
+		[/* blockquote */ 'q', [
 			[/* text */ 't', `
  `],
 			[/* code block */ 'c', [
@@ -568,7 +568,7 @@ DocsCollector.collect('java.text.DateFormat', [
 				[/* text */ 't', `Tell whether date/time parsing is to be lenient.
  This method is equivalent to the following call.
  `],
-				[/* block */ 'b', [
+				[/* blockquote */ 'q', [
 					[/* code block */ 'c', [
 						[/* inline code block */ 'i', `getCalendar().isLenient()`]
 					]]
@@ -825,7 +825,7 @@ DocsCollector.collect('java.text.DateFormat', [
 				[/* text */ 't', `Gets the time zone.
  This method is equivalent to the following call.
  `],
-				[/* block */ 'b', [
+				[/* blockquote */ 'q', [
 					[/* code block */ 'c', [
 						[/* inline code block */ 'i', `getCalendar().getTimeZone()`]
 					]]
@@ -1111,7 +1111,7 @@ DocsCollector.collect('java.text.DateFormat', [
  `],
 				[/* block */ 'b', `This method is equivalent to the following call.
  `],
-				[/* block */ 'b', [
+				[/* blockquote */ 'q', [
 					[/* code block */ 'c', [
 						[/* inline code block */ 'i', `getCalendar().setLenient(lenient)`]
 					]]
@@ -1155,7 +1155,7 @@ DocsCollector.collect('java.text.DateFormat', [
 				[/* text */ 't', ` object.
  This method is equivalent to the following call.
  `],
-				[/* block */ 'b', [
+				[/* blockquote */ 'q', [
 					[/* code block */ 'c', [
 						[/* inline code block */ 'i', `getCalendar().setTimeZone(zone)`]
 					]]

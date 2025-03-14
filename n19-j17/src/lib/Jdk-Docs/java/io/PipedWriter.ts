@@ -56,13 +56,13 @@ DocsCollector.collect('java.io.PipedWriter', [
  be connected by either the call:
  `]
 				]],
-				[/* block */ 'b', [
+				[/* blockquote */ 'q', [
 					[/* code block */ 'c', ` src.connect(snk)`]
 				]],
 				[/* text */ 't', `
  or the call:
  `],
-				[/* block */ 'b', [
+				[/* blockquote */ 'q', [
 					[/* code block */ 'c', ` snk.connect(src)`]
 				]],
 				[/* text */ 't', `

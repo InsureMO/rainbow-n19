@@ -700,7 +700,7 @@ DocsCollector.collect('java.lang.Byte', [
  the following grammar:
 
  `],
-				[/* block */ 'b', [
+				[/* blockquote */ 'q', [
 					[/* text */ 't', `
  `],
 					[/* dl */ 'dl', [
@@ -908,7 +908,7 @@ DocsCollector.collect('java.lang.Byte', [
 
  `]
 				]],
-				[/* block */ 'b', [
+				[/* blockquote */ 'q', [
 					[/* text */ 't', `
  `],
 					[/* inline code block */ 'i', `new Byte(Byte.parseByte(s))`],
@@ -970,7 +970,7 @@ DocsCollector.collect('java.lang.Byte', [
 
  `]
 				]],
-				[/* block */ 'b', [
+				[/* blockquote */ 'q', [
 					[/* text */ 't', `
  `],
 					[/* inline code block */ 'i', `new Byte(Byte.parseByte(s, radix))`],

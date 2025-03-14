@@ -87,7 +87,7 @@ DocsCollector.collect('java.text.CollationKey', [
 			[/* text */ 't', `s.
  `]
 		]],
-		[/* block */ 'b', [
+		[/* blockquote */ 'q', [
 			[/* text */ 't', `
  `],
 			[/* code block */ 'c', [

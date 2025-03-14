@@ -159,7 +159,7 @@ DocsCollector.collect('java.nio.file.FileStore', [
  and takes the form:
  `]
 				]],
-				[/* block */ 'b', [
+				[/* blockquote */ 'q', [
 					[/* text */ 't', `
  `],
 					[/* text */ 't', `view-name`],

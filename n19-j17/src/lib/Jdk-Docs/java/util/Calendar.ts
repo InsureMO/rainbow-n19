@@ -54,7 +54,7 @@ DocsCollector.collect('java.util.Calendar', [
  calendar fields have been initialized with the current date and time:
  `]
 		]],
-		[/* block */ 'b', [
+		[/* blockquote */ 'q', [
 			[/* text */ 't', `
  `],
 			[/* code block */ 'c', `     Calendar rightNow = Calendar.getInstance();
@@ -246,7 +246,7 @@ DocsCollector.collect('java.util.Calendar', [
 			[/* text */ 't', `:
  `]
 		]],
-		[/* block */ 'b', [
+		[/* blockquote */ 'q', [
 			[/* text */ 't', `
  `],
 			[/* code block */ 'c', ` YEAR + MONTH + DAY_OF_MONTH
@@ -262,7 +262,7 @@ DocsCollector.collect('java.util.Calendar', [
 		[/* anchor */ 'r', '#-id', `time_resolution`, `For the time of day fields`],
 		[/* text */ 't', `:
  `],
-		[/* block */ 'b', [
+		[/* blockquote */ 'q', [
 			[/* text */ 't', `
  `],
 			[/* code block */ 'c', ` HOUR_OF_DAY
@@ -420,7 +420,7 @@ DocsCollector.collect('java.util.Calendar', [
 		[/* text */ 't', `
 
  `],
-		[/* block */ 'b', [
+		[/* blockquote */ 'q', [
 			[/* text */ 't', `
    `],
 			[/* block */ 'b', [
@@ -532,7 +532,7 @@ DocsCollector.collect('java.util.Calendar', [
 		[/* text */ 't', `
 
  `],
-		[/* block */ 'b', [
+		[/* blockquote */ 'q', [
 			[/* text */ 't', `
    `],
 			[/* block */ 'b', [

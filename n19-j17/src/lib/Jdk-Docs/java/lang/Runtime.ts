@@ -1115,7 +1115,7 @@ DocsCollector.collect('java.lang.Runtime', [
 					[/* text */ 't', `) and then to put a static initializer:
  `]
 				]],
-				[/* block */ 'b', [
+				[/* blockquote */ 'q', [
 					[/* code block */ 'c', ` static { System.loadLibrary("LibFile"); }
  `]
 				]],

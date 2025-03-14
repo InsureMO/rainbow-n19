@@ -16,7 +16,7 @@ DocsCollector.collect('java.lang.String', [
  are created. String buffers support mutable strings.
  Because String objects are immutable they can be shared. For example:
  `],
-		[/* block */ 'b', [
+		[/* blockquote */ 'q', [
 			[/* code block */ 'c', `     String str = "abc";
  `]
 		]],
@@ -24,7 +24,7 @@ DocsCollector.collect('java.lang.String', [
 		[/* block */ 'b', `
  is equivalent to:
  `],
-		[/* block */ 'b', [
+		[/* blockquote */ 'q', [
 			[/* code block */ 'c', `     char data[] = {'a', 'b', 'c'};
      String str = new String(data);
  `]
@@ -33,7 +33,7 @@ DocsCollector.collect('java.lang.String', [
 		[/* block */ 'b', `
  Here are some more examples of how strings can be used:
  `],
-		[/* block */ 'b', [
+		[/* blockquote */ 'q', [
 			[/* code block */ 'c', `     System.out.println("abc");
      String cde = "cde";
      System.out.println("abc" + cde);
@@ -198,7 +198,7 @@ DocsCollector.collect('java.lang.String', [
 				[/* text */ 't', ` in the byte array such that:
 
  `],
-				[/* block */ 'b', [
+				[/* blockquote */ 'q', [
 					[/* code block */ 'c', [
 						[/* text */ 't', `     `],
 						[/* text */ 't', `c`],
@@ -1005,7 +1005,7 @@ DocsCollector.collect('java.lang.String', [
 
  `]
 				]],
-				[/* block */ 'b', [
+				[/* blockquote */ 'q', [
 					[/* text */ 't', `
  `],
 					[/* reference */ 'r', `java.util.regex.Pattern`, `Pattern`],
@@ -1734,7 +1734,7 @@ DocsCollector.collect('java.lang.String', [
  the two string -- that is, the value:
  `]
 				]],
-				[/* block */ 'b', [
+				[/* blockquote */ 'q', [
 					[/* code block */ 'c', ` this.charAt(k)-anotherString.charAt(k)
  `]
 				]],
@@ -1746,7 +1746,7 @@ DocsCollector.collect('java.lang.String', [
 				[/* text */ 't', ` returns the difference of the lengths of the
  strings -- that is, the value:
  `],
-				[/* block */ 'b', [
+				[/* blockquote */ 'q', [
 					[/* code block */ 'c', ` this.length()-anotherString.length()
  `]
 				]],
@@ -1828,7 +1828,7 @@ DocsCollector.collect('java.lang.String', [
 				[/* inline code block */ 'i', `String`],
 				[/* text */ 't', ` object is computed as
  `],
-				[/* block */ 'b', [
+				[/* blockquote */ 'q', [
 					[/* code block */ 'c', ` s[0]*31^(n-1) + s[1]*31^(n-2) + ... + s[n-1]
  `]
 				]],
@@ -1872,7 +1872,7 @@ DocsCollector.collect('java.lang.String', [
 				[/* text */ 't', `k`],
 				[/* text */ 't', ` such that:
  `],
-				[/* block */ 'b', [
+				[/* blockquote */ 'q', [
 					[/* code block */ 'c', [
 						[/* text */ 't', ` this.charAt(`],
 						[/* text */ 't', `k`],
@@ -1888,7 +1888,7 @@ DocsCollector.collect('java.lang.String', [
 				[/* text */ 't', `k`],
 				[/* text */ 't', ` such that:
  `],
-				[/* block */ 'b', [
+				[/* blockquote */ 'q', [
 					[/* code block */ 'c', [
 						[/* text */ 't', ` this.codePointAt(`],
 						[/* text */ 't', `k`],
@@ -1941,7 +1941,7 @@ DocsCollector.collect('java.lang.String', [
 					[/* text */ 't', ` such that:
  `]
 				]],
-				[/* block */ 'b', [
+				[/* blockquote */ 'q', [
 					[/* code block */ 'c', [
 						[/* text */ 't', ` (this.charAt(`],
 						[/* text */ 't', `k`],
@@ -1961,7 +1961,7 @@ DocsCollector.collect('java.lang.String', [
 				[/* text */ 't', `k`],
 				[/* text */ 't', ` such that:
  `],
-				[/* block */ 'b', [
+				[/* blockquote */ 'q', [
 					[/* code block */ 'c', [
 						[/* text */ 't', ` (this.codePointAt(`],
 						[/* text */ 't', `k`],
@@ -2113,7 +2113,7 @@ DocsCollector.collect('java.lang.String', [
 				[/* text */ 't', `k`],
 				[/* text */ 't', ` such that:
  `],
-				[/* block */ 'b', [
+				[/* blockquote */ 'q', [
 					[/* code block */ 'c', [
 						[/* text */ 't', ` this.charAt(`],
 						[/* text */ 't', `k`],
@@ -2129,7 +2129,7 @@ DocsCollector.collect('java.lang.String', [
 				[/* text */ 't', `k`],
 				[/* text */ 't', ` such that:
  `],
-				[/* block */ 'b', [
+				[/* blockquote */ 'q', [
 					[/* code block */ 'c', [
 						[/* text */ 't', ` this.codePointAt(`],
 						[/* text */ 't', `k`],
@@ -2173,7 +2173,7 @@ DocsCollector.collect('java.lang.String', [
 				[/* text */ 't', `k`],
 				[/* text */ 't', ` such that:
  `],
-				[/* block */ 'b', [
+				[/* blockquote */ 'q', [
 					[/* code block */ 'c', [
 						[/* text */ 't', ` (this.charAt(`],
 						[/* text */ 't', `k`],
@@ -2193,7 +2193,7 @@ DocsCollector.collect('java.lang.String', [
 				[/* text */ 't', `k`],
 				[/* text */ 't', ` such that:
  `],
-				[/* block */ 'b', [
+				[/* blockquote */ 'q', [
 					[/* code block */ 'c', [
 						[/* text */ 't', ` (this.codePointAt(`],
 						[/* text */ 't', `k`],
@@ -2411,7 +2411,7 @@ DocsCollector.collect('java.lang.String', [
 				[/* block */ 'b', ` An invocation of this method of the form
 
  `],
-				[/* block */ 'b', [
+				[/* blockquote */ 'q', [
 					[/* code block */ 'c', ` str.subSequence(begin, end)`]
 				]],
 				[/* text */ 't', `
@@ -2419,7 +2419,7 @@ DocsCollector.collect('java.lang.String', [
  behaves in exactly the same way as the invocation
 
  `],
-				[/* block */ 'b', [
+				[/* blockquote */ 'q', [
 					[/* code block */ 'c', ` str.substring(begin, end)`]
 				]],
 				[/* block */ 'b', '']
@@ -2478,7 +2478,7 @@ DocsCollector.collect('java.lang.String', [
 				[/* block */ 'b', `
  Examples:
  `],
-				[/* block */ 'b', [
+				[/* blockquote */ 'q', [
 					[/* code block */ 'c', ` "cares".concat("s") returns "caress"
  "to".concat("get").concat("her") returns "together"
  `]
@@ -2659,7 +2659,7 @@ DocsCollector.collect('java.lang.String', [
 				[/* block */ 'b', `
  Examples:
  `],
-				[/* block */ 'b', [
+				[/* blockquote */ 'q', [
 					[/* code block */ 'c', ` "mesquite in your cellar".replace('e', 'o')
          returns "mosquito in your collar"
  "the war of baronets".replace('r', 'y')
@@ -2733,7 +2733,7 @@ DocsCollector.collect('java.lang.String', [
 
  `]
 				]],
-				[/* block */ 'b', [
+				[/* blockquote */ 'q', [
 					[/* text */ 't', `
  `],
 					[/* inline code block */ 'i', `Pattern.compile(regex).matcher(str).replaceAll(repl)`],
@@ -2803,7 +2803,7 @@ DocsCollector.collect('java.lang.String', [
 
  `]
 				]],
-				[/* block */ 'b', [
+				[/* blockquote */ 'q', [
 					[/* text */ 't', `
  `],
 					[/* inline code block */ 'i', `Pattern.compile(regex).matcher(str).replaceFirst(repl)`],
@@ -2937,7 +2937,7 @@ DocsCollector.collect('java.lang.String', [
 					[/* text */ 't', `:
  `]
 				]],
-				[/* block */ 'b', [
+				[/* blockquote */ 'q', [
 					[/* code block */ 'c', ` String html = """
  ..............<html>
  ..............    <body>
@@ -2955,7 +2955,7 @@ DocsCollector.collect('java.lang.String', [
  stripped, producing a string that preserves the relative indentation of
  the content. Using | to visualize the start of each line of the string:
  `],
-				[/* block */ 'b', [
+				[/* blockquote */ 'q', [
 					[/* code block */ 'c', ` |<html>
  |    <body>
  |        <p>Hello, world</p>
@@ -3151,7 +3151,7 @@ DocsCollector.collect('java.lang.String', [
 				[/* block */ 'b', `
  Examples:
  `],
-				[/* block */ 'b', [
+				[/* blockquote */ 'q', [
 					[/* code block */ 'c', ` "unhappy".substring(2) returns "happy"
  "Harbison".substring(3) returns "bison"
  "emptiness".substring(9) returns "" (an empty string)
@@ -3195,7 +3195,7 @@ DocsCollector.collect('java.lang.String', [
 				[/* block */ 'b', `
  Examples:
  `],
-				[/* block */ 'b', [
+				[/* blockquote */ 'q', [
 					[/* code block */ 'c', ` "hamburger".substring(4, 8) returns "urge"
  "smiles".substring(1, 5) returns "mile"
  `]
@@ -3800,7 +3800,7 @@ DocsCollector.collect('java.lang.String', [
 
  `]
 				]],
-				[/* block */ 'b', [
+				[/* blockquote */ 'q', [
 					[/* table */ 'tbl',
 						[/* caption */ 'tc'],
 						[/* table header */ 'th', [
@@ -3928,7 +3928,7 @@ DocsCollector.collect('java.lang.String', [
 
  `]
 				]],
-				[/* block */ 'b', [
+				[/* blockquote */ 'q', [
 					[/* table */ 'tbl',
 						[/* caption */ 'tc'],
 						[/* table header */ 'th', [
@@ -4021,7 +4021,7 @@ DocsCollector.collect('java.lang.String', [
 
  `]
 				]],
-				[/* block */ 'b', [
+				[/* blockquote */ 'q', [
 					[/* text */ 't', `
  `],
 					[/* inline code block */ 'i', `Pattern.compile(regex).split(str, n)`],
@@ -4386,7 +4386,7 @@ DocsCollector.collect('java.lang.String', [
 				[/* text */ 't', `.
 
  `],
-				[/* block */ 'b', [
+				[/* blockquote */ 'q', [
 					[/* text */ 't', `For example,
  `],
 					[/* code block */ 'c', [
@@ -4442,7 +4442,7 @@ DocsCollector.collect('java.lang.String', [
 				[/* text */ 't', `.
 
  `],
-				[/* block */ 'b', [
+				[/* blockquote */ 'q', [
 					[/* text */ 't', `For example,
  `],
 					[/* code block */ 'c', [
@@ -4791,7 +4791,7 @@ DocsCollector.collect('java.lang.String', [
 
  `]
 				]],
-				[/* block */ 'b', [
+				[/* blockquote */ 'q', [
 					[/* code block */ 'c', `     dstBegin + (srcEnd-srcBegin) - 1
  `]
 				]],
@@ -4880,7 +4880,7 @@ DocsCollector.collect('java.lang.String', [
  and ending at index:
  `]
 				]],
-				[/* block */ 'b', [
+				[/* blockquote */ 'q', [
 					[/* code block */ 'c', `     dstBegin + (srcEnd-srcBegin) - 1
  `]
 				]],

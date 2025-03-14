@@ -106,7 +106,7 @@ DocsCollector.collect('java.nio.MappedByteBuffer', [
 
  `]
 				]],
-				[/* block */ 'b', [
+				[/* blockquote */ 'q', [
 					[/* code block */ 'c', [
 						[/* inline code block */ 'i', `buf.clear();          // Prepare buffer for use
    while (in.read(buf) >= 0 || buf.position != 0) {
@@ -324,7 +324,7 @@ DocsCollector.collect('java.nio.MappedByteBuffer', [
 
  `]
 				]],
-				[/* block */ 'b', [
+				[/* blockquote */ 'q', [
 					[/* code block */ 'c', ` buf.clear();     // Prepare buffer for reading
  in.read(buf);    // Read data`]
 				]],
@@ -360,7 +360,7 @@ DocsCollector.collect('java.nio.MappedByteBuffer', [
 
  `]
 				]],
-				[/* block */ 'b', [
+				[/* blockquote */ 'q', [
 					[/* code block */ 'c', ` buf.put(magic);    // Prepend header
  in.read(buf);      // Read data into rest of buffer
  buf.flip();        // Flip buffer
@@ -578,7 +578,7 @@ DocsCollector.collect('java.nio.MappedByteBuffer', [
 
  `]
 				]],
-				[/* block */ 'b', [
+				[/* blockquote */ 'q', [
 					[/* code block */ 'c', ` out.write(buf);    // Write remaining data
  buf.rewind();      // Rewind buffer
  buf.get(array);    // Copy data into array`]

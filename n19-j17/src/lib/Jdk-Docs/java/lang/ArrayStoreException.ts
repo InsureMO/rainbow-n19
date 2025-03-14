@@ -9,7 +9,7 @@ DocsCollector.collect('java.lang.ArrayStoreException', [
 		[/* inline code block */ 'i', `ArrayStoreException`],
 		[/* text */ 't', `:
  `],
-		[/* block */ 'b', [
+		[/* blockquote */ 'q', [
 			[/* code block */ 'c', `     Object x[] = new String[3];
      x[0] = new Integer(0);
  `]

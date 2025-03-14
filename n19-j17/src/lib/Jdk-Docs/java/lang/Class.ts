@@ -105,7 +105,7 @@ DocsCollector.collect('java.lang.Class', [
 
  `]
 		]],
-		[/* block */ 'b', [
+		[/* blockquote */ 'q', [
 			[/* code block */ 'c', `     void printClassName(Object obj) {
          System.out.println("The class of " + obj +
                             " is " + obj.getClass().getName());
@@ -125,7 +125,7 @@ DocsCollector.collect('java.lang.Class', [
  For example:
 
  `],
-		[/* block */ 'b', [
+		[/* blockquote */ 'q', [
 			[/* text */ 't', `
      `],
 			[/* inline code block */ 'i', `System.out.println("The name of class Foo is: "+Foo.class.getName());`],
@@ -763,7 +763,7 @@ DocsCollector.collect('java.lang.Class', [
 						[/* text */ 't', ` Otherwise, the absolute name is of the following form:
 
  `],
-						[/* block */ 'b', [
+						[/* blockquote */ 'q', [
 							[/* text */ 't', `
    `],
 							[/* inline code block */ 'i', `modified_package_name/name`],
@@ -1157,7 +1157,7 @@ DocsCollector.collect('java.lang.Class', [
  given the declaration:
  `]
 				]],
-				[/* block */ 'b', [
+				[/* blockquote */ 'q', [
 					[/* text */ 't', `
  `],
 					[/* inline code block */ 'i', `class Shimmer implements FloorWax, DessertTopping { ... }`],
@@ -1172,7 +1172,7 @@ DocsCollector.collect('java.lang.Class', [
 				[/* inline code block */ 'i', `Shimmer`],
 				[/* text */ 't', `; the value of the expression:
  `],
-				[/* block */ 'b', [
+				[/* blockquote */ 'q', [
 					[/* text */ 't', `
  `],
 					[/* inline code block */ 'i', `s.getClass().getInterfaces()[0]`],
@@ -1187,7 +1187,7 @@ DocsCollector.collect('java.lang.Class', [
 				[/* inline code block */ 'i', `FloorWax`],
 				[/* text */ 't', `; and the value of:
  `],
-				[/* block */ 'b', [
+				[/* blockquote */ 'q', [
 					[/* text */ 't', `
  `],
 					[/* inline code block */ 'i', `s.getClass().getInterfaces()[1]`],
@@ -3115,7 +3115,7 @@ DocsCollector.collect('java.lang.Class', [
 						[/* text */ 't', `,
       then the result is a string of the form:
       `],
-						[/* block */ 'b', [
+						[/* blockquote */ 'q', [
 							[/* text */ 't', `
       `],
 							[/* inline code block */ 'i', `"L" +`],
@@ -3320,7 +3320,7 @@ DocsCollector.collect('java.lang.Class', [
 
  `]
 				]],
-				[/* block */ 'b', [
+				[/* blockquote */ 'q', [
 					[/* table */ 'tbl',
 						[/* caption */ 'tc'],
 						[/* table header */ 'th', [
@@ -3479,7 +3479,7 @@ DocsCollector.collect('java.lang.Class', [
 				]],
 				[/* block */ 'b', ` Examples:
  `],
-				[/* block */ 'b', [
+				[/* blockquote */ 'q', [
 					[/* code block */ 'c', ` String.class.getName()
      returns "java.lang.String"
  byte.class.getName()
@@ -3750,7 +3750,7 @@ DocsCollector.collect('java.lang.Class', [
 						[/* text */ 't', ` Otherwise, the absolute name is of the following form:
 
  `],
-						[/* block */ 'b', [
+						[/* blockquote */ 'q', [
 							[/* text */ 't', `
    `],
 							[/* inline code block */ 'i', `modified_package_name/name`],
@@ -4333,7 +4333,7 @@ DocsCollector.collect('java.lang.Class', [
  equivalent to:
 
  `],
-				[/* block */ 'b', [
+				[/* blockquote */ 'q', [
 					[/* text */ 't', `
   `],
 					[/* inline code block */ 'i', `Class.forName(className, true, currentLoader)`],
@@ -4359,7 +4359,7 @@ DocsCollector.collect('java.lang.Class', [
 
  `]
 				]],
-				[/* block */ 'b', [
+				[/* blockquote */ 'q', [
 					[/* text */ 't', `
    `],
 					[/* inline code block */ 'i', `Class t = Class.forName("java.lang.Thread")`],
@@ -4453,7 +4453,7 @@ DocsCollector.collect('java.lang.Class', [
 				[/* block */ 'b', ` For example, in an instance method the expression:
 
  `],
-				[/* block */ 'b', [
+				[/* blockquote */ 'q', [
 					[/* text */ 't', `
   `],
 					[/* inline code block */ 'i', `Class.forName("Foo")`],
@@ -4465,7 +4465,7 @@ DocsCollector.collect('java.lang.Class', [
  is equivalent to:
 
  `],
-				[/* block */ 'b', [
+				[/* blockquote */ 'q', [
 					[/* text */ 't', `
   `],
 					[/* inline code block */ 'i', `Class.forName("Foo", true, this.getClass().getClassLoader())`],

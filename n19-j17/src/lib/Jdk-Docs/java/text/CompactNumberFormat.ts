@@ -74,7 +74,7 @@ DocsCollector.collect('java.text.CompactNumberFormat', [
 
  `]
 		]],
-		[/* block */ 'b', [
+		[/* blockquote */ 'q', [
 			[/* code block */ 'c', ` NumberFormat fmt = NumberFormat.getCompactNumberInstance(
                              new Locale("hi", "IN"), NumberFormat.Style.SHORT);
  String result = fmt.format(1000);
@@ -279,7 +279,7 @@ DocsCollector.collect('java.text.CompactNumberFormat', [
 		[/* block */ 'b', `
  A compact pattern has the following syntax:
  `],
-		[/* block */ 'b', [
+		[/* blockquote */ 'q', [
 			[/* code block */ 'c', [
 				[/* text */ 't', ` `],
 				[/* text */ 't', `Pattern:`],

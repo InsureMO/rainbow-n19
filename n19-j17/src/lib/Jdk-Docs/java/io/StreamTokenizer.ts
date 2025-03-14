@@ -302,7 +302,7 @@ DocsCollector.collect('java.io.StreamTokenizer', [
  example can be considered typical:
 
  `],
-				[/* block */ 'b', [
+				[/* blockquote */ 'q', [
 					[/* code block */ 'c', `Token['a'], line 10`]
 				]],
 				[/* block */ 'b', '']
@@ -482,7 +482,7 @@ DocsCollector.collect('java.io.StreamTokenizer', [
  syntax table of this tokenizer is modified so that each of the twelve
  characters:
  `],
-				[/* block */ 'b', [
+				[/* blockquote */ 'q', [
 					[/* code block */ 'c', `      0 1 2 3 4 5 6 7 8 9 . -
  `]
 				]],

@@ -454,7 +454,7 @@ DocsCollector.collect('java.nio.file.Path', [
  is guaranteed that
  `]
 				]],
-				[/* block */ 'b', [
+				[/* blockquote */ 'q', [
 					[/* text */ 't', `
  `],
 					[/* reference */ 'r', `#of(java.net.URI)`, `Path.of`],
@@ -619,7 +619,7 @@ DocsCollector.collect('java.nio.file.Path', [
 				[/* block */ 'b', ` If this path has more than one element, and no root component, then
  this method is equivalent to evaluating the expression:
  `],
-				[/* block */ 'b', [
+				[/* blockquote */ 'q', [
 					[/* code block */ 'c', ` subpath(0, getNameCount()-1);
  `]
 				]],
@@ -747,7 +747,7 @@ DocsCollector.collect('java.nio.file.Path', [
 					[/* text */ 't', ` does not have a root component,
  `]
 				]],
-				[/* block */ 'b', [
+				[/* blockquote */ 'q', [
 					[/* text */ 't', `
    `],
 					[/* text */ 't', `p`],
@@ -1627,7 +1627,7 @@ DocsCollector.collect('java.nio.file.Path', [
  is guaranteed that
  `]
 				]],
-				[/* block */ 'b', [
+				[/* blockquote */ 'q', [
 					[/* inline code block */ 'i', `Path.of(`],
 					[/* text */ 't', `p`],
 					[/* inline code block */ 'i', `.`],

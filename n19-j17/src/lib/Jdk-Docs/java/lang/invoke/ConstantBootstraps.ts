@@ -330,7 +330,7 @@ DocsCollector.collect('java.lang.invoke.ConstantBootstraps', [
 				[/* block */ 'b', `
  The result is the same as when using the following code:
  `],
-				[/* block */ 'b', [
+				[/* blockquote */ 'q', [
 					[/* code block */ 'c', [
 						[/* inline code block */ 'i', `MethodHandle id = MethodHandles.identity(dstType);
  MethodType mt = MethodType.methodType(dstType, Object.class);

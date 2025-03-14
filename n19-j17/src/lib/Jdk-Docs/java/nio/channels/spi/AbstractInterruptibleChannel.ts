@@ -27,7 +27,7 @@ DocsCollector.collect('java.nio.channels.spi.AbstractInterruptibleChannel', [
 
  `]
 		]],
-		[/* block */ 'b', [
+		[/* blockquote */ 'q', [
 			[/* code block */ 'c', ` boolean completed = false;
  try {
      begin();

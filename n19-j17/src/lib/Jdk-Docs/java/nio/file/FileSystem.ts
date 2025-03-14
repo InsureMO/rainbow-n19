@@ -454,7 +454,7 @@ DocsCollector.collect('java.nio.file.FileSystem', [
 				[/* text */ 't', ` parameter identifies the syntax and the
  pattern and takes the form:
  `],
-				[/* block */ 'b', [
+				[/* blockquote */ 'q', [
 					[/* code block */ 'c', [
 						[/* text */ 't', ` `],
 						[/* text */ 't', `syntax`],

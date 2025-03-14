@@ -37,7 +37,7 @@ DocsCollector.collect('java.nio.channels.ScatteringByteChannel', [
 
  `]
 				]],
-				[/* block */ 'b', [
+				[/* blockquote */ 'q', [
 					[/* code block */ 'c', ` c.read(dsts, 0, dsts.length);`]
 				]],
 				[/* block */ 'b', '']
@@ -95,7 +95,7 @@ DocsCollector.collect('java.nio.channels.ScatteringByteChannel', [
 
  `]
 				]],
-				[/* block */ 'b', [
+				[/* blockquote */ 'q', [
 					[/* code block */ 'c', ` dsts[offset].remaining()
      + dsts[offset+1].remaining()
      + ... + dsts[offset+length-1].remaining()`]

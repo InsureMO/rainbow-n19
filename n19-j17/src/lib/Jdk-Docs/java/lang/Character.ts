@@ -2182,7 +2182,7 @@ DocsCollector.collect('java.lang.Character', [
 				[/* block */ 'b', `
  The following are examples of lowercase characters:
  `],
-				[/* block */ 'b', [
+				[/* blockquote */ 'q', [
 					[/* code block */ 'c', ` a b c d e f g h i j k l m n o p q r s t u v w x y z
  '\\u00DF' '\\u00E0' '\\u00E1' '\\u00E2' '\\u00E3' '\\u00E4' '\\u00E5' '\\u00E6'
  '\\u00E7' '\\u00E8' '\\u00E9' '\\u00EA' '\\u00EB' '\\u00EC' '\\u00ED' '\\u00EE'
@@ -2241,7 +2241,7 @@ DocsCollector.collect('java.lang.Character', [
 				[/* block */ 'b', `
  The following are examples of lowercase characters:
  `],
-				[/* block */ 'b', [
+				[/* blockquote */ 'q', [
 					[/* code block */ 'c', ` a b c d e f g h i j k l m n o p q r s t u v w x y z
  '\\u00DF' '\\u00E0' '\\u00E1' '\\u00E2' '\\u00E3' '\\u00E4' '\\u00E5' '\\u00E6'
  '\\u00E7' '\\u00E8' '\\u00E9' '\\u00EA' '\\u00EB' '\\u00EC' '\\u00ED' '\\u00EE'
@@ -2680,7 +2680,7 @@ DocsCollector.collect('java.lang.Character', [
  `],
 				[/* block */ 'b', `This method is equivalent to the expression:
  `],
-				[/* block */ 'b', [
+				[/* blockquote */ 'q', [
 					[/* code block */ 'c', [
 						[/* inline code block */ 'i', `isHighSurrogate(high) && isLowSurrogate(low)`]
 					]]
@@ -3214,7 +3214,7 @@ DocsCollector.collect('java.lang.Character', [
 				[/* block */ 'b', `
  The following are examples of uppercase characters:
  `],
-				[/* block */ 'b', [
+				[/* blockquote */ 'q', [
 					[/* code block */ 'c', ` A B C D E F G H I J K L M N O P Q R S T U V W X Y Z
  '\\u00C0' '\\u00C1' '\\u00C2' '\\u00C3' '\\u00C4' '\\u00C5' '\\u00C6' '\\u00C7'
  '\\u00C8' '\\u00C9' '\\u00CA' '\\u00CB' '\\u00CC' '\\u00CD' '\\u00CE' '\\u00CF'
@@ -3271,7 +3271,7 @@ DocsCollector.collect('java.lang.Character', [
 				[/* block */ 'b', `
  The following are examples of uppercase characters:
  `],
-				[/* block */ 'b', [
+				[/* blockquote */ 'q', [
 					[/* code block */ 'c', ` A B C D E F G H I J K L M N O P Q R S T U V W X Y Z
  '\\u00C0' '\\u00C1' '\\u00C2' '\\u00C3' '\\u00C4' '\\u00C5' '\\u00C6' '\\u00C7'
  '\\u00C8' '\\u00C9' '\\u00CA' '\\u00CB' '\\u00CC' '\\u00CD' '\\u00CE' '\\u00CF'
@@ -4561,7 +4561,7 @@ DocsCollector.collect('java.lang.Character', [
 
  `]
 				]],
-				[/* block */ 'b', [
+				[/* blockquote */ 'q', [
 					[/* inline code block */ 'i', `Character.UnicodeBlock.of(codePoint).toString().replace('_', ' ') + " " + Integer.toHexString(codePoint).toUpperCase(Locale.ROOT);`]
 				]],
 				[/* text */ 't', `
@@ -5567,7 +5567,7 @@ DocsCollector.collect('java.lang.Character', [
 
  `]
 				]],
-				[/* block */ 'b', [
+				[/* blockquote */ 'q', [
 					[/* inline code block */ 'i', `Character.UnicodeBlock.of(codePoint).toString().replace('_', ' ') + " " + Integer.toHexString(codePoint).toUpperCase(Locale.ROOT);`]
 				]],
 				[/* block */ 'b', '']

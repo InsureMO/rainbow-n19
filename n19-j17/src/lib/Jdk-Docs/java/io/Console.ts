@@ -101,7 +101,7 @@ DocsCollector.collect('java.io.Console', [
 
  `]
 		]],
-		[/* block */ 'b', [
+		[/* blockquote */ 'q', [
 			[/* code block */ 'c', [
 				[/* inline code block */ 'i', `Console cons;
  char[] passwd;
@@ -311,7 +311,7 @@ DocsCollector.collect('java.io.Console', [
 					[/* text */ 't', `:
  `]
 				]],
-				[/* block */ 'b', [
+				[/* blockquote */ 'q', [
 					[/* code block */ 'c', ` Console con = System.console();
  if (con != null) {
      Scanner sc = new Scanner(con.reader());

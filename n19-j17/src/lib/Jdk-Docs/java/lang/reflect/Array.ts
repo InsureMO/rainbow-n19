@@ -28,7 +28,7 @@ DocsCollector.collect('java.lang.reflect.Array', [
  Invoking this method is equivalent to creating an array
  as follows:
  `],
-				[/* block */ 'b', [
+				[/* blockquote */ 'q', [
 					[/* text */ 't', `
  `],
 					[/* code block */ 'c', ` int[] x = {length};

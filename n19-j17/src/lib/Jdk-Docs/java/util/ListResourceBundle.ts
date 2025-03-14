@@ -49,7 +49,7 @@ DocsCollector.collect('java.util.ListResourceBundle', [
  Keys are case-sensitive.
  `]
 		]],
-		[/* block */ 'b', [
+		[/* blockquote */ 'q', [
 			[/* text */ 't', `
  `],
 			[/* code block */ 'c', `

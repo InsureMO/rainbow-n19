@@ -131,8 +131,11 @@ export const HelpDocOfItemContent = styled.div.attrs({
     }
 
     p[data-w=b],
-    pre[datra-w=c] {
+    pre[data-w=c] {
         padding: var(--groovy-editor-help-class-doc-padding, 4px 0);
+    }
+
+    blockquote[data-w=q] {
     }
 
     code[data-w=i] {
@@ -184,7 +187,6 @@ export const HelpDocOfItemContent = styled.div.attrs({
     }
 
     dl[data-w=dl] {
-        border-left: var(--groovy-editor-help-class-doc-detail-list-border, 2px solid #d5d5d5);
         padding: var(--groovy-editor-help-class-doc-detail-list-padding, 0 0 0 4px);
 
         > dt[data-w=dt] {

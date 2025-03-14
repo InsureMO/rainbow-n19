@@ -75,7 +75,7 @@ DocsCollector.collect('java.util.ResourceBundle', [
  method:
  `]
 		]],
-		[/* block */ 'b', [
+		[/* blockquote */ 'q', [
 			[/* text */ 't', `
  `],
 			[/* code block */ 'c', ` ResourceBundle myResources =
@@ -98,7 +98,7 @@ DocsCollector.collect('java.util.ResourceBundle', [
  two key/value pairs:
  `]
 		]],
-		[/* block */ 'b', [
+		[/* blockquote */ 'q', [
 			[/* text */ 't', `
  `],
 			[/* code block */ 'c', ` public class MyResources extends ListResourceBundle {
@@ -137,7 +137,7 @@ DocsCollector.collect('java.util.ResourceBundle', [
 			[/* text */ 't', ` to retrieve them:
  `]
 		]],
-		[/* block */ 'b', [
+		[/* blockquote */ 'q', [
 			[/* text */ 't', `
  `],
 			[/* code block */ 'c', ` button1 = new Button(myResources.getString("OkKey"));
@@ -174,7 +174,7 @@ DocsCollector.collect('java.util.ResourceBundle', [
  have to cast the result to the appropriate type. For example:
  `]
 		]],
-		[/* block */ 'b', [
+		[/* blockquote */ 'q', [
 			[/* text */ 't', `
  `],
 			[/* code block */ 'c', ` int[] myIntegers = (int[]) myResources.getObject("intList");
@@ -493,7 +493,7 @@ DocsCollector.collect('java.util.ResourceBundle', [
 		[/* text */ 't', ` handles the same
  key with the same value (as for the okKey below).
  `],
-		[/* block */ 'b', [
+		[/* blockquote */ 'q', [
 			[/* text */ 't', `
  `],
 			[/* code block */ 'c', ` // default (English language, United States)
@@ -749,7 +749,7 @@ DocsCollector.collect('java.util.ResourceBundle', [
 				[/* text */ 't', `Gets a string for the given key from this resource bundle or one of its parents.
  Calling this method is equivalent to calling
  `],
-				[/* block */ 'b', [
+				[/* blockquote */ 'q', [
 					[/* text */ 't', `
  `],
 					[/* inline code block */ 'i', `(String) getObject(key)`],
@@ -785,7 +785,7 @@ DocsCollector.collect('java.util.ResourceBundle', [
 				[/* text */ 't', `Gets a string array for the given key from this resource bundle or one of its parents.
  Calling this method is equivalent to calling
  `],
-				[/* block */ 'b', [
+				[/* blockquote */ 'q', [
 					[/* text */ 't', `
  `],
 					[/* inline code block */ 'i', `(String[]) getObject(key)`],
@@ -876,7 +876,7 @@ DocsCollector.collect('java.util.ResourceBundle', [
 				[/* text */ 't', `Gets a resource bundle using the specified base name, the default locale,
  and the caller module. Calling this method is equivalent to calling
  `],
-				[/* block */ 'b', [
+				[/* blockquote */ 'q', [
 					[/* text */ 't', `
  `],
 					[/* inline code block */ 'i', `getBundle(baseName, Locale.getDefault(), callerModule)`],
@@ -909,7 +909,7 @@ DocsCollector.collect('java.util.ResourceBundle', [
 				[/* text */ 't', `Gets a resource bundle using the specified base name and locale,
  and the caller module. Calling this method is equivalent to calling
  `],
-				[/* block */ 'b', [
+				[/* blockquote */ 'q', [
 					[/* text */ 't', `
  `],
 					[/* inline code block */ 'i', `getBundle(baseName, locale, callerModule)`],
@@ -1119,7 +1119,7 @@ DocsCollector.collect('java.util.ResourceBundle', [
 				[/* text */ 't', `Gets a resource bundle using the specified base name and the default locale
  on behalf of the specified module. This method is equivalent to calling
  `],
-				[/* block */ 'b', [
+				[/* blockquote */ 'q', [
 					[/* text */ 't', `
  `],
 					[/* inline code block */ 'i', `getBundle(baseName, Locale.getDefault(), module)`],
@@ -1169,7 +1169,7 @@ DocsCollector.collect('java.util.ResourceBundle', [
  loader is the class loader of the caller module, this is equivalent
  to calling:
  `],
-				[/* block */ 'b', [
+				[/* blockquote */ 'q', [
 					[/* code block */ 'c', ` getBundle(baseName, targetLocale, callerModule)
  `]
 				]],
@@ -1177,7 +1177,7 @@ DocsCollector.collect('java.util.ResourceBundle', [
 
  otherwise, this is equivalent to calling:
  `],
-				[/* block */ 'b', [
+				[/* blockquote */ 'q', [
 					[/* code block */ 'c', ` getBundle(baseName, targetLocale, loader, control)
  `]
 				]],
@@ -1263,7 +1263,7 @@ DocsCollector.collect('java.util.ResourceBundle', [
 				[/* text */ 't', `
 
  `],
-				[/* block */ 'b', [
+				[/* blockquote */ 'q', [
 					[/* text */ 't', `Note:`],
 					[/* text */ 't', ` For some `],
 					[/* inline code block */ 'i', `Locale`],

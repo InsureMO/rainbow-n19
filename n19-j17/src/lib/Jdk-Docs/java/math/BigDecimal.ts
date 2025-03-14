@@ -958,7 +958,7 @@ DocsCollector.collect('java.math.BigDecimal', [
 				[/* block */ 'b', `More formally, the strings this constructor accepts are
  described by the following grammar:
  `],
-				[/* block */ 'b', [
+				[/* blockquote */ 'q', [
 					[/* text */ 't', `
  `],
 					[/* dl */ 'dl', [

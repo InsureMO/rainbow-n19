@@ -33,7 +33,7 @@ DocsCollector.collect('java.net.URI', [
  form has the syntax
 
  `],
-		[/* block */ 'b', [
+		[/* blockquote */ 'q', [
 			[/* text */ 't', `
  [`],
 			[/* text */ 't', `scheme`],
@@ -82,7 +82,7 @@ DocsCollector.collect('java.net.URI', [
 
  `]
 		]],
-		[/* block */ 'b', [
+		[/* blockquote */ 'q', [
 			[/* list */ 'l', [
 				[/* block */ 'b', [
 					[/* inline code block */ 'i', `mailto:java-net@www.example.com`]
@@ -109,7 +109,7 @@ DocsCollector.collect('java.net.URI', [
 
  `]
 		]],
-		[/* block */ 'b', [
+		[/* blockquote */ 'q', [
 			[/* text */ 't', `
  `],
 			[/* inline code block */ 'i', `http://example.com/languages/java/`],
@@ -135,7 +135,7 @@ DocsCollector.collect('java.net.URI', [
 		[/* block */ 'b', ` A hierarchical URI is subject to further parsing according to the syntax
 
  `],
-		[/* block */ 'b', [
+		[/* blockquote */ 'q', [
 			[/* text */ 't', `
  [`],
 			[/* text */ 't', `scheme`],
@@ -182,7 +182,7 @@ DocsCollector.collect('java.net.URI', [
 
  `]
 		]],
-		[/* block */ 'b', [
+		[/* blockquote */ 'q', [
 			[/* text */ 't', `
  [`],
 			[/* text */ 't', `user-info`],
@@ -386,7 +386,7 @@ DocsCollector.collect('java.net.URI', [
 
  `]
 		]],
-		[/* block */ 'b', [
+		[/* blockquote */ 'q', [
 			[/* text */ 't', `
  `],
 			[/* inline code block */ 'i', `sample/a/index.html#28`],
@@ -403,7 +403,7 @@ DocsCollector.collect('java.net.URI', [
  URI
 
  `],
-		[/* block */ 'b', [
+		[/* blockquote */ 'q', [
 			[/* text */ 't', `
  `],
 			[/* inline code block */ 'i', `http://example.com/languages/java/sample/a/index.html#28`],
@@ -415,7 +415,7 @@ DocsCollector.collect('java.net.URI', [
  Resolving the relative URI
 
  `],
-		[/* block */ 'b', [
+		[/* blockquote */ 'q', [
 			[/* text */ 't', `
  `],
 			[/* inline code block */ 'i', `../../demo/b/index.html`],
@@ -427,7 +427,7 @@ DocsCollector.collect('java.net.URI', [
  against this result yields, in turn,
 
  `],
-		[/* block */ 'b', [
+		[/* blockquote */ 'q', [
 			[/* text */ 't', `
  `],
 			[/* inline code block */ 'i', `http://example.com/languages/java/demo/b/index.html`],
@@ -446,7 +446,7 @@ DocsCollector.collect('java.net.URI', [
  URI
 
  `],
-		[/* block */ 'b', [
+		[/* blockquote */ 'q', [
 			[/* text */ 't', `
  `],
 			[/* inline code block */ 'i', `demo/b/index.html`],
@@ -469,7 +469,7 @@ DocsCollector.collect('java.net.URI', [
 
  `]
 		]],
-		[/* block */ 'b', [
+		[/* blockquote */ 'q', [
 			[/* text */ 't', `
    `],
 			[/* text */ 't', `u`],
@@ -504,7 +504,7 @@ DocsCollector.collect('java.net.URI', [
  possible.  For example, relativizing the URI
 
  `],
-		[/* block */ 'b', [
+		[/* blockquote */ 'q', [
 			[/* text */ 't', `
  `],
 			[/* inline code block */ 'i', `http://example.com/languages/java/sample/a/index.html#28`],
@@ -516,7 +516,7 @@ DocsCollector.collect('java.net.URI', [
  against the base URI
 
  `],
-		[/* block */ 'b', [
+		[/* blockquote */ 'q', [
 			[/* text */ 't', `
  `],
 			[/* inline code block */ 'i', `http://example.com/languages/java/`],
@@ -897,7 +897,7 @@ DocsCollector.collect('java.net.URI', [
 		[/* text */ 't', `, it is always the case that
 
  `],
-		[/* block */ 'b', [
+		[/* blockquote */ 'q', [
 			[/* text */ 't', `
  `],
 			[/* inline code block */ 'i', `new URI(`],
@@ -1460,7 +1460,7 @@ DocsCollector.collect('java.net.URI', [
  seven-argument constructor as follows:
 
  `],
-				[/* block */ 'b', [
+				[/* blockquote */ 'q', [
 					[/* text */ 't', `
  `],
 					[/* inline code block */ 'i', `new`],
@@ -2439,7 +2439,7 @@ DocsCollector.collect('java.net.URI', [
  treated as an error.  In these cases a statement such as
 
  `],
-				[/* block */ 'b', [
+				[/* blockquote */ 'q', [
 					[/* text */ 't', `
  `],
 					[/* inline code block */ 'i', `URI`],

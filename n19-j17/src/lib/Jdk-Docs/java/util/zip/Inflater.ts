@@ -35,7 +35,7 @@ DocsCollector.collect('java.util.zip.Inflater', [
 
  `]
 		]],
-		[/* block */ 'b', [
+		[/* blockquote */ 'q', [
 			[/* code block */ 'c', ` try {
      // Encode a String into bytes
      String inputString = "blahblahblah€€";

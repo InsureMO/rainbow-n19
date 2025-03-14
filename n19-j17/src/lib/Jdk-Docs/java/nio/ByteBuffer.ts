@@ -198,7 +198,7 @@ DocsCollector.collect('java.nio.ByteBuffer', [
 
  `]
 		]],
-		[/* block */ 'b', [
+		[/* blockquote */ 'q', [
 			[/* code block */ 'c', [
 				[/* text */ 't', ` float  `],
 				[/* text */ 't', `getFloat()`],
@@ -341,7 +341,7 @@ DocsCollector.collect('java.nio.ByteBuffer', [
  The sequence of statements
 
  `],
-		[/* block */ 'b', [
+		[/* blockquote */ 'q', [
 			[/* code block */ 'c', ` bb.putInt(0xCAFEBABE);
  bb.putShort(3);
  bb.putShort(45);`]
@@ -351,7 +351,7 @@ DocsCollector.collect('java.nio.ByteBuffer', [
  can, for example, be replaced by the single statement
 
  `],
-		[/* block */ 'b', [
+		[/* blockquote */ 'q', [
 			[/* code block */ 'c', ` bb.putInt(0xCAFEBABE).putShort(3).putShort(45);`]
 		]],
 		[/* block */ 'b', '']
@@ -710,7 +710,7 @@ DocsCollector.collect('java.nio.ByteBuffer', [
 
  `]
 				]],
-				[/* block */ 'b', [
+				[/* blockquote */ 'q', [
 					[/* code block */ 'c', [
 						[/* inline code block */ 'i', `buf.clear();          // Prepare buffer for use
    while (in.read(buf) >= 0 || buf.position != 0) {
@@ -1713,19 +1713,19 @@ DocsCollector.collect('java.nio.ByteBuffer', [
  incremented by the unit size minus the return value.  Therefore given
  `]
 				]],
-				[/* block */ 'b', [
+				[/* blockquote */ 'q', [
 					[/* code block */ 'c', ` int value = alignmentOffset(index, unitSize)`]
 				]],
 				[/* text */ 't', `
  then the identities
  `],
-				[/* block */ 'b', [
+				[/* blockquote */ 'q', [
 					[/* code block */ 'c', ` alignmentOffset(index - value, unitSize) == 0, value ≤ index`]
 				]],
 				[/* text */ 't', `
  and
  `],
-				[/* block */ 'b', [
+				[/* blockquote */ 'q', [
 					[/* code block */ 'c', ` alignmentOffset(index + (unitSize - value), unitSize) == 0`]
 				]],
 				[/* text */ 't', `
@@ -2077,7 +2077,7 @@ DocsCollector.collect('java.nio.ByteBuffer', [
 
  `]
 				]],
-				[/* block */ 'b', [
+				[/* blockquote */ 'q', [
 					[/* code block */ 'c', ` buf.clear();     // Prepare buffer for reading
  in.read(buf);    // Read data`]
 				]],
@@ -2113,7 +2113,7 @@ DocsCollector.collect('java.nio.ByteBuffer', [
 
  `]
 				]],
-				[/* block */ 'b', [
+				[/* blockquote */ 'q', [
 					[/* code block */ 'c', ` buf.put(magic);    // Prepend header
  in.read(buf);      // Read data into rest of buffer
  buf.flip();        // Flip buffer
@@ -2846,7 +2846,7 @@ DocsCollector.collect('java.nio.ByteBuffer', [
 
  `]
 				]],
-				[/* block */ 'b', [
+				[/* blockquote */ 'q', [
 					[/* code block */ 'c', ` out.write(buf);    // Write remaining data
  buf.rewind();      // Rewind buffer
  buf.get(array);    // Copy data into array`]

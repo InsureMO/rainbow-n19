@@ -547,7 +547,7 @@ DocsCollector.collect('java.lang.Package', [
  major, minor, micro, etc. versions.  The version specification is described
  by the following formal grammar:
  `],
-				[/* block */ 'b', [
+				[/* blockquote */ 'q', [
 					[/* text */ 't', `
  `],
 					[/* dl */ 'dl', [

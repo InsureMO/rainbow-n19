@@ -30,7 +30,7 @@ DocsCollector.collect('java.lang.Object', [
 				[/* inline code block */ 'i', `x`],
 				[/* text */ 't', `, the expression:
  `],
-				[/* block */ 'b', [
+				[/* blockquote */ 'q', [
 					[/* text */ 't', `
  `],
 					[/* code block */ 'c', ` x.clone() != x`]
@@ -38,7 +38,7 @@ DocsCollector.collect('java.lang.Object', [
 				[/* text */ 't', `
  will be true, and that the expression:
  `],
-				[/* block */ 'b', [
+				[/* blockquote */ 'q', [
 					[/* text */ 't', `
  `],
 					[/* code block */ 'c', ` x.clone().getClass() == x.getClass()`]
@@ -49,7 +49,7 @@ DocsCollector.collect('java.lang.Object', [
 				[/* text */ 't', `, but these are not absolute requirements.
  While it is typically the case that:
  `],
-				[/* block */ 'b', [
+				[/* blockquote */ 'q', [
 					[/* text */ 't', `
  `],
 					[/* code block */ 'c', ` x.clone().equals(x)`]

@@ -166,7 +166,7 @@ DocsCollector.collect('java.security.Provider', [
  The format for the version number is:
 
  `],
-				[/* block */ 'b', [
+				[/* blockquote */ 'q', [
 					[/* code block */ 'c', `     ^[0-9]+(\\.[0-9]+)*
  `]
 				]],

@@ -19,7 +19,7 @@ DocsCollector.collect('java.net.URL', [
  In general, a URL can be broken into several parts. Consider the
  following example:
  `],
-		[/* block */ 'b', [
+		[/* blockquote */ 'q', [
 			[/* code block */ 'c', `     http://www.example.com/docs/resource1.html
  `]
 		]],
@@ -61,7 +61,7 @@ DocsCollector.collect('java.net.URL', [
  specified as:
  `]
 		]],
-		[/* block */ 'b', [
+		[/* blockquote */ 'q', [
 			[/* code block */ 'c', `     http://www.example.com:1080/docs/resource1.html
  `]
 		]],
@@ -88,7 +88,7 @@ DocsCollector.collect('java.net.URL', [
  as a "ref" or a "reference". The fragment is indicated by the sharp
  sign character "#" followed by more characters. For example,
  `],
-		[/* block */ 'b', [
+		[/* blockquote */ 'q', [
 			[/* code block */ 'c', `     http://www.example.com/index.html#chapter1
  `]
 		]],
@@ -112,21 +112,21 @@ DocsCollector.collect('java.net.URL', [
  relative to another URL. Relative URLs are frequently used within
  HTML pages. For example, if the contents of the URL:
  `],
-		[/* block */ 'b', [
+		[/* blockquote */ 'q', [
 			[/* code block */ 'c', `     http://www.example.com/index.html
  `]
 		]],
 		[/* text */ 't', `
  contained within it the relative URL:
  `],
-		[/* block */ 'b', [
+		[/* blockquote */ 'q', [
 			[/* code block */ 'c', `     FAQ.html
  `]
 		]],
 		[/* text */ 't', `
  it would be a shorthand for:
  `],
-		[/* block */ 'b', [
+		[/* blockquote */ 'q', [
 			[/* code block */ 'c', `     http://www.example.com/FAQ.html
  `]
 		]],
@@ -332,7 +332,7 @@ DocsCollector.collect('java.net.URL', [
 						[/* text */ 't', `If the previous step fails to find a protocol handler, the
      constructor reads the value of the system property:
      `],
-						[/* block */ 'b', [
+						[/* blockquote */ 'q', [
 							[/* inline code block */ 'i', `java.protocol.handler.pkgs`]
 						]],
 						[/* text */ 't', `
@@ -345,7 +345,7 @@ DocsCollector.collect('java.net.URL', [
 						[/* text */ 't', `'. The constructor tries to load
      the class named:
      `],
-						[/* block */ 'b', [
+						[/* blockquote */ 'q', [
 							[/* inline code block */ 'i', `<package>.<protocol>.Handler`]
 						]],
 						[/* text */ 't', `
@@ -553,7 +553,7 @@ DocsCollector.collect('java.net.URL', [
  argument as described in
  RFC2396 "Uniform Resource Identifiers : Generic * Syntax" :
  `],
-				[/* block */ 'b', [
+				[/* blockquote */ 'q', [
 					[/* code block */ 'c', `          <scheme>://<authority><path>?<query>#<fragment>
  `]
 				]],
@@ -747,7 +747,7 @@ DocsCollector.collect('java.net.URL', [
 				[/* text */ 't', ` for reading from that connection. This
  method is a shorthand for:
  `],
-				[/* block */ 'b', [
+				[/* blockquote */ 'q', [
 					[/* code block */ 'c', `     openConnection().getInputStream()
  `]
 				]]
@@ -766,7 +766,7 @@ DocsCollector.collect('java.net.URL', [
 			[/* method description */
 				[/* text */ 't', `Gets the contents of this URL. This method is a shorthand for:
  `],
-				[/* block */ 'b', [
+				[/* blockquote */ 'q', [
 					[/* code block */ 'c', `     openConnection().getContent()
  `]
 				]]
@@ -785,7 +785,7 @@ DocsCollector.collect('java.net.URL', [
 			[/* method description */
 				[/* text */ 't', `Gets the contents of this URL. This method is a shorthand for:
  `],
-				[/* block */ 'b', [
+				[/* blockquote */ 'q', [
 					[/* code block */ 'c', `     openConnection().getContent(classes)
  `]
 				]]

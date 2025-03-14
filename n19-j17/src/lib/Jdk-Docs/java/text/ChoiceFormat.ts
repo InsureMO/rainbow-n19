@@ -12,7 +12,7 @@ DocsCollector.collect('java.text.ChoiceFormat', [
  The choice is specified with an ascending list of doubles, where each item
  specifies a half-open interval up to the next item:
  `],
-		[/* block */ 'b', [
+		[/* blockquote */ 'q', [
 			[/* text */ 't', `
  `],
 			[/* code block */ 'c', ` X matches j if and only if limit[j] ≤ X < limit[j+1]
@@ -103,7 +103,7 @@ DocsCollector.collect('java.text.ChoiceFormat', [
 		[/* block */ 'b', `
  Here is a simple example that shows formatting and parsing:
  `],
-		[/* block */ 'b', [
+		[/* blockquote */ 'q', [
 			[/* text */ 't', `
  `],
 			[/* code block */ 'c', [
@@ -123,7 +123,7 @@ DocsCollector.collect('java.text.ChoiceFormat', [
 		[/* text */ 't', `
  Here is a more complex example, with a pattern format:
  `],
-		[/* block */ 'b', [
+		[/* blockquote */ 'q', [
 			[/* text */ 't', `
  `],
 			[/* code block */ 'c', [
@@ -150,7 +150,7 @@ DocsCollector.collect('java.text.ChoiceFormat', [
  Specifying a pattern for ChoiceFormat objects is fairly straightforward.
  For example:
  `],
-		[/* block */ 'b', [
+		[/* blockquote */ 'q', [
 			[/* text */ 't', `
  `],
 			[/* code block */ 'c', [
@@ -175,7 +175,7 @@ DocsCollector.collect('java.text.ChoiceFormat', [
 		[/* text */ 't', `
  And the output result would be like the following:
  `],
-		[/* block */ 'b', [
+		[/* blockquote */ 'q', [
 			[/* text */ 't', `
  `],
 			[/* code block */ 'c', [

@@ -410,7 +410,7 @@ DocsCollector.collect('java.lang.StackWalker', [
  `],
 				[/* block */ 'b', ` This method is equivalent to calling
  `],
-				[/* block */ 'b', [
+				[/* blockquote */ 'q', [
 					[/* text */ 't', `
  `],
 					[/* inline code block */ 'i', `walk(s -> { s.forEach(action); return null; });`],

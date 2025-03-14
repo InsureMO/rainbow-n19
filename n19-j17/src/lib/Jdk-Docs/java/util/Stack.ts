@@ -73,7 +73,7 @@ DocsCollector.collect('java.util.Stack', [
 				[/* text */ 't', `Pushes an item onto the top of this stack. This has exactly
  the same effect as:
  `],
-				[/* block */ 'b', [
+				[/* blockquote */ 'q', [
 					[/* code block */ 'c', ` addElement(item)`]
 				]]
 			],

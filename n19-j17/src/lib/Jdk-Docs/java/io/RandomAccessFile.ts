@@ -367,7 +367,7 @@ DocsCollector.collect('java.io.RandomAccessFile', [
 				[/* text */ 't', `,
  then the result is:
  `],
-				[/* block */ 'b', [
+				[/* blockquote */ 'q', [
 					[/* code block */ 'c', `     (byte)(b)
  `]
 				]],
@@ -408,7 +408,7 @@ DocsCollector.collect('java.io.RandomAccessFile', [
 				[/* text */ 't', `,
  then the result is equal to:
  `],
-				[/* block */ 'b', [
+				[/* blockquote */ 'q', [
 					[/* code block */ 'c', `     (char)((b1 << 8) | b2)
  `]
 				]],
@@ -542,7 +542,7 @@ DocsCollector.collect('java.io.RandomAccessFile', [
 				[/* text */ 't', `,
  then the result is equal to:
  `],
-				[/* block */ 'b', [
+				[/* blockquote */ 'q', [
 					[/* code block */ 'c', `     (b1 << 24) | (b2 << 16) + (b3 << 8) + b4
  `]
 				]],
@@ -608,7 +608,7 @@ DocsCollector.collect('java.io.RandomAccessFile', [
 				[/* text */ 't', `,
  then the result is equal to:
  `],
-				[/* block */ 'b', [
+				[/* blockquote */ 'q', [
 					[/* code block */ 'c', `     (b1 << 8) | b2
  `]
 				]],
@@ -783,7 +783,7 @@ DocsCollector.collect('java.io.RandomAccessFile', [
 				[/* inline code block */ 'i', `b8,`],
 				[/* text */ 't', ` where:
  `],
-				[/* block */ 'b', [
+				[/* blockquote */ 'q', [
 					[/* code block */ 'c', `     0 <= b1, b2, b3, b4, b5, b6, b7, b8 <=255,
  `]
 				]],
@@ -792,7 +792,7 @@ DocsCollector.collect('java.io.RandomAccessFile', [
 				[/* block */ 'b', `
  then the result is equal to:
  `],
-				[/* block */ 'b', [
+				[/* blockquote */ 'q', [
 					[/* code block */ 'c', `     ((long)b1 << 56) + ((long)b2 << 48)
      + ((long)b3 << 40) + ((long)b4 << 32)
      + ((long)b5 << 24) + ((long)b6 << 16)
@@ -840,7 +840,7 @@ DocsCollector.collect('java.io.RandomAccessFile', [
 				[/* text */ 't', `, inclusive, then the
  result is equal to:
  `],
-				[/* block */ 'b', [
+				[/* blockquote */ 'q', [
 					[/* code block */ 'c', `     (short)((b1 << 8) | b2)
  `]
 				]],

@@ -596,7 +596,7 @@ DocsCollector.collect('java.lang.reflect.Modifier', [
 				[/* text */ 't', `Return a string describing the access modifier flags in
  the specified modifier. For example:
  `],
-				[/* block */ 'b', [
+				[/* blockquote */ 'q', [
 					[/* code block */ 'c', `    public final synchronized strictfp
  `]
 				]],
@@ -608,7 +608,7 @@ DocsCollector.collect('java.lang.reflect.Modifier', [
 				[/* text */ 't', `.
  The full modifier ordering used by this method is:
  `],
-				[/* block */ 'b', [
+				[/* blockquote */ 'q', [
 					[/* text */ 't', ` `],
 					[/* inline code block */ 'i', `public protected private abstract static final transient volatile synchronized native strictfp interface`],
 					[/* text */ 't', ` `]

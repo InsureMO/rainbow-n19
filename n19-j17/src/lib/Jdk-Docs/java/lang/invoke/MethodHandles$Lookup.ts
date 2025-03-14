@@ -814,7 +814,7 @@ DocsCollector.collect('java.lang.invoke.MethodHandles$Lookup', [
  For example,
  `]
 		]],
-		[/* block */ 'b', [
+		[/* blockquote */ 'q', [
 			[/* code block */ 'c', [
 				[/* text */ 't', ` `],
 				[/* inline code block */ 'i', `Lookup lookup = MethodHandles.lookup();   // in class C
@@ -3141,7 +3141,7 @@ DocsCollector.collect('java.lang.invoke.MethodHandles$Lookup', [
 				[/* block */ 'b', `
  This is almost equivalent to the following code, with some differences noted below:
  `],
-				[/* block */ 'b', [
+				[/* blockquote */ 'q', [
 					[/* code block */ 'c', [
 						[/* inline code block */ 'i', `import static java.lang.invoke.MethodHandles.*;
 import static java.lang.invoke.MethodType.*;
@@ -3249,7 +3249,7 @@ return mh1;`]
  be initialized, if it has not already been initialized.
  `],
 				[/* block */ 'b', `Example:`],
-				[/* block */ 'b', [
+				[/* blockquote */ 'q', [
 					[/* code block */ 'c', [
 						[/* inline code block */ 'i', `import static java.lang.invoke.MethodHandles.*;
 import static java.lang.invoke.MethodType.*;
@@ -3442,7 +3442,7 @@ assertEquals("[x, y, z]", pb.command().toString());`]
  to access instance initialization methods in a safe manner.)`]
 				]],
 				[/* block */ 'b', `Example:`],
-				[/* block */ 'b', [
+				[/* blockquote */ 'q', [
 					[/* code block */ 'c', [
 						[/* inline code block */ 'i', `import static java.lang.invoke.MethodHandles.*;
 import static java.lang.invoke.MethodType.*;
@@ -3549,7 +3549,7 @@ assertEquals(""+l, (String) MH_this.invokeExact(subl)); // Listie method`]
  be initialized, if it has not already been initialized.
  `],
 				[/* block */ 'b', `Example:`],
-				[/* block */ 'b', [
+				[/* blockquote */ 'q', [
 					[/* code block */ 'c', [
 						[/* inline code block */ 'i', `import static java.lang.invoke.MethodHandles.*;
 import static java.lang.invoke.MethodType.*;
@@ -3785,7 +3785,7 @@ assertEquals("[x, y]", MH_asList.invoke("x", "y").toString());`]
  `]
 				]],
 				[/* block */ 'b', `Example:`],
-				[/* block */ 'b', [
+				[/* blockquote */ 'q', [
 					[/* code block */ 'c', [
 						[/* inline code block */ 'i', `import static java.lang.invoke.MethodHandles.*;
 import static java.lang.invoke.MethodType.*;

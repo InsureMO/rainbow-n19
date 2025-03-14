@@ -69,7 +69,7 @@ DocsCollector.collect('java.util.Date', [
  further information is the United States Naval Observatory (USNO):
  `]
 		]],
-		[/* block */ 'b', [
+		[/* blockquote */ 'q', [
 			[/* code block */ 'c', [
 				[/* text */ 't', `     `],
 				[/* text */ 't', `https://www.usno.navy.mil/USNO`],
@@ -83,7 +83,7 @@ DocsCollector.collect('java.util.Date', [
 		[/* block */ 'b', `
  and the material regarding "Systems of Time" at:
  `],
-		[/* block */ 'b', [
+		[/* blockquote */ 'q', [
 			[/* code block */ 'c', [
 				[/* text */ 't', `     `],
 				[/* text */ 't', `https://www.usno.navy.mil/USNO/time/master-clock/systems-of-time`],
@@ -586,14 +586,14 @@ DocsCollector.collect('java.util.Date', [
 				[/* block */ 'b', `
  For example, in Massachusetts, five time zones west of Greenwich:
  `],
-				[/* block */ 'b', [
+				[/* blockquote */ 'q', [
 					[/* code block */ 'c', ` new Date(96, 1, 14).getTimezoneOffset() returns 300`]
 				]],
 				[/* text */ 't', `
  because on February 14, 1996, standard time (Eastern Standard Time)
  is in use, which is offset five hours from UTC; but:
  `],
-				[/* block */ 'b', [
+				[/* blockquote */ 'q', [
 					[/* code block */ 'c', ` new Date(96, 5, 1).getTimezoneOffset() returns 240`]
 				]],
 				[/* text */ 't', `
@@ -603,7 +603,7 @@ DocsCollector.collect('java.util.Date', [
 				[/* block */ 'b', `
  This method produces the same result as if it computed:
  `],
-				[/* block */ 'b', [
+				[/* blockquote */ 'q', [
 					[/* code block */ 'c', ` (this.getTime() - UTC(this.getYear(),
                        this.getMonth(),
                        this.getDate(),
@@ -646,7 +646,7 @@ DocsCollector.collect('java.util.Date', [
 				[/* text */ 't', `
  method. That is, the hash code is the value of the expression:
  `],
-				[/* block */ 'b', [
+				[/* blockquote */ 'q', [
 					[/* code block */ 'c', [
 						[/* inline code block */ 'i', `(int)(this.getTime()^(this.getTime() >>> 32))`]
 					]]
@@ -675,7 +675,7 @@ DocsCollector.collect('java.util.Date', [
 				[/* text */ 't', ` object of
  the form:
  `],
-				[/* block */ 'b', [
+				[/* blockquote */ 'q', [
 					[/* code block */ 'c', ` d mon yyyy hh:mm:ss GMT`]
 				]],
 				[/* text */ 't', `
@@ -783,7 +783,7 @@ DocsCollector.collect('java.util.Date', [
 				[/* text */ 't', `
  of the form:
  `],
-				[/* block */ 'b', [
+				[/* blockquote */ 'q', [
 					[/* code block */ 'c', ` dow mon dd hh:mm:ss zzz yyyy`]
 				]],
 				[/* text */ 't', `
@@ -1006,7 +1006,7 @@ DocsCollector.collect('java.util.Date', [
 					[/* text */ 't', ` are these ASCII characters:
  `]
 				]],
-				[/* block */ 'b', [
+				[/* blockquote */ 'q', [
 					[/* code block */ 'c', ` abcdefghijklmnopqrstuvwxyz
  ABCDEFGHIJKLMNOPQRSTUVWXYZ
  0123456789,+-:/`]

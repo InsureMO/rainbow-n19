@@ -85,7 +85,7 @@ DocsCollector.collect('java.lang.invoke.VolatileCallSite', [
 				[/* block */ 'b', `
  This method is equivalent to the following code:
  `],
-				[/* block */ 'b', [
+				[/* blockquote */ 'q', [
 					[/* code block */ 'c', [
 						[/* inline code block */ 'i', `MethodHandle getTarget, invoker, result;
  getTarget = MethodHandles.publicLookup().bind(this, "getTarget", MethodType.methodType(MethodHandle.class));

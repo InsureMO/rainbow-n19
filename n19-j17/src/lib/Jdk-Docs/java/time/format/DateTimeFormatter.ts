@@ -54,7 +54,7 @@ DocsCollector.collect('java.time.format.DateTimeFormatter', [
 		]],
 		[/* block */ 'b', `For example:
  `],
-		[/* block */ 'b', [
+		[/* blockquote */ 'q', [
 			[/* code block */ 'c', `  LocalDate date = LocalDate.now();
   String text = date.format(formatter);
   LocalDate parsedDate = LocalDate.parse(text, formatter);
@@ -402,7 +402,7 @@ DocsCollector.collect('java.time.format.DateTimeFormatter', [
 		[/* block */ 'b', `
  For example:
  `],
-		[/* block */ 'b', [
+		[/* blockquote */ 'q', [
 			[/* code block */ 'c', `  LocalDate date = LocalDate.now();
   DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy MM dd");
   String text = date.format(formatter);

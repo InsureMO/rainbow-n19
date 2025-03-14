@@ -465,7 +465,7 @@ DocsCollector.collect('java.io.File', [
 
  `]
 				]],
-				[/* block */ 'b', [
+				[/* blockquote */ 'q', [
 					[/* inline code block */ 'i', `new File(`],
 					[/* text */ 't', ` f`],
 					[/* inline code block */ 'i', `.toURI()).equals(`],
@@ -1874,7 +1874,7 @@ DocsCollector.collect('java.io.File', [
 
  `]
 				]],
-				[/* block */ 'b', [
+				[/* blockquote */ 'q', [
 					[/* inline code block */ 'i', `new File(`],
 					[/* text */ 't', ` f`],
 					[/* inline code block */ 'i', `.toURI()).equals(`],
@@ -1969,7 +1969,7 @@ DocsCollector.collect('java.io.File', [
 				[/* block */ 'b', ` The first invocation of this method works as if invoking it were
  equivalent to evaluating the expression:
  `],
-				[/* block */ 'b', [
+				[/* blockquote */ 'q', [
 					[/* code block */ 'c', [
 						[/* text */ 't', ` `],
 						[/* text */ 't', `FileSystems.getDefault`],

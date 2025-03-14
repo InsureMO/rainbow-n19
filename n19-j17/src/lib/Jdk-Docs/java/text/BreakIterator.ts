@@ -115,7 +115,7 @@ DocsCollector.collect('java.text.BreakIterator', [
 		[/* block */ 'b', `
  Creating and using text boundaries:
  `],
-		[/* block */ 'b', [
+		[/* blockquote */ 'q', [
 			[/* text */ 't', `
  `],
 			[/* code block */ 'c', ` public static void main(String args[]) {
@@ -141,7 +141,7 @@ DocsCollector.collect('java.text.BreakIterator', [
 
  Print each element in order:
  `],
-		[/* block */ 'b', [
+		[/* blockquote */ 'q', [
 			[/* text */ 't', `
  `],
 			[/* code block */ 'c', ` public static void printEachForward(BreakIterator boundary, String source) {
@@ -160,7 +160,7 @@ DocsCollector.collect('java.text.BreakIterator', [
 
  Print each element in reverse order:
  `],
-		[/* block */ 'b', [
+		[/* blockquote */ 'q', [
 			[/* text */ 't', `
  `],
 			[/* code block */ 'c', ` public static void printEachBackward(BreakIterator boundary, String source) {
@@ -179,7 +179,7 @@ DocsCollector.collect('java.text.BreakIterator', [
 
  Print first element:
  `],
-		[/* block */ 'b', [
+		[/* blockquote */ 'q', [
 			[/* text */ 't', `
  `],
 			[/* code block */ 'c', ` public static void printFirst(BreakIterator boundary, String source) {
@@ -195,7 +195,7 @@ DocsCollector.collect('java.text.BreakIterator', [
 
  Print last element:
  `],
-		[/* block */ 'b', [
+		[/* blockquote */ 'q', [
 			[/* text */ 't', `
  `],
 			[/* code block */ 'c', ` public static void printLast(BreakIterator boundary, String source) {
@@ -211,7 +211,7 @@ DocsCollector.collect('java.text.BreakIterator', [
 
  Print the element at a specified position:
  `],
-		[/* block */ 'b', [
+		[/* blockquote */ 'q', [
 			[/* text */ 't', `
  `],
 			[/* code block */ 'c', ` public static void printAt(BreakIterator boundary, int pos, String source) {
@@ -227,7 +227,7 @@ DocsCollector.collect('java.text.BreakIterator', [
 
  Find the next word:
  `],
-		[/* block */ 'b', [
+		[/* blockquote */ 'q', [
 			[/* text */ 't', `
  `],
 			[/* code block */ 'c', [

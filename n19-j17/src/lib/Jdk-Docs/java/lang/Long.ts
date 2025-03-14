@@ -307,7 +307,7 @@ DocsCollector.collect('java.lang.Long', [
  object. That is, the hashcode is the value of the expression:
 
  `],
-				[/* block */ 'b', [
+				[/* blockquote */ 'q', [
 					[/* text */ 't', `
   `],
 					[/* inline code block */ 'i', `(int)(this.longValue()^(this.longValue()>>>32))`],
@@ -666,7 +666,7 @@ DocsCollector.collect('java.lang.Long', [
  following grammar:
 
  `],
-				[/* block */ 'b', [
+				[/* blockquote */ 'q', [
 					[/* text */ 't', `
  `],
 					[/* dl */ 'dl', [
@@ -856,7 +856,7 @@ DocsCollector.collect('java.lang.Long', [
 
  `]
 				]],
-				[/* block */ 'b', [
+				[/* blockquote */ 'q', [
 					[/* text */ 't', `
   `],
 					[/* inline code block */ 'i', `getLong(nm, null)`],
@@ -1031,7 +1031,7 @@ DocsCollector.collect('java.lang.Long', [
 
  `]
 				]],
-				[/* block */ 'b', [
+				[/* blockquote */ 'q', [
 					[/* text */ 't', `
   `],
 					[/* inline code block */ 'i', `getLong(nm, new Long(val))`],
@@ -1043,7 +1043,7 @@ DocsCollector.collect('java.lang.Long', [
  but in practice it may be implemented in a manner such as:
 
  `],
-				[/* block */ 'b', [
+				[/* blockquote */ 'q', [
 					[/* code block */ 'c', ` Long result = getLong(nm, null);
  return (result == null) ? new Long(val) : result;
  `]
@@ -1105,7 +1105,7 @@ DocsCollector.collect('java.lang.Long', [
 
  `]
 				]],
-				[/* block */ 'b', [
+				[/* blockquote */ 'q', [
 					[/* text */ 't', `
   `],
 					[/* inline code block */ 'i', `new Long(Long.parseLong(s))`],
@@ -1166,7 +1166,7 @@ DocsCollector.collect('java.lang.Long', [
 
  `]
 				]],
-				[/* block */ 'b', [
+				[/* blockquote */ 'q', [
 					[/* text */ 't', `
   `],
 					[/* inline code block */ 'i', `new Long(Long.parseLong(s, radix))`],
@@ -1351,7 +1351,7 @@ DocsCollector.collect('java.lang.Long', [
 
  `]
 				]],
-				[/* block */ 'b', [
+				[/* blockquote */ 'q', [
 					[/* text */ 't', `
   `],
 					[/* inline code block */ 'i', `0123456789abcdef`],
@@ -1377,7 +1377,7 @@ DocsCollector.collect('java.lang.Long', [
  on the result:
 
  `],
-				[/* block */ 'b', [
+				[/* blockquote */ 'q', [
 					[/* text */ 't', `
   `],
 					[/* inline code block */ 'i', `Long.toHexString(n).toUpperCase()`],
@@ -1448,7 +1448,7 @@ DocsCollector.collect('java.lang.Long', [
 
  `]
 				]],
-				[/* block */ 'b', [
+				[/* blockquote */ 'q', [
 					[/* text */ 't', `
   `],
 					[/* inline code block */ 'i', `01234567`],
@@ -1550,7 +1550,7 @@ DocsCollector.collect('java.lang.Long', [
 
  `]
 				]],
-				[/* block */ 'b', [
+				[/* blockquote */ 'q', [
 					[/* text */ 't', `
    `],
 					[/* inline code block */ 'i', `0123456789abcdefghijklmnopqrstuvwxyz`],
@@ -1590,7 +1590,7 @@ DocsCollector.collect('java.lang.Long', [
  be called on the result:
 
  `],
-				[/* block */ 'b', [
+				[/* blockquote */ 'q', [
 					[/* text */ 't', `
   `],
 					[/* inline code block */ 'i', `Long.toString(n, 16).toUpperCase()`],
@@ -2093,7 +2093,7 @@ DocsCollector.collect('java.lang.Long', [
 				[/* block */ 'b', ''],
 				[/* block */ 'b', `Examples:
  `],
-				[/* block */ 'b', [
+				[/* blockquote */ 'q', [
 					[/* code block */ 'c', ` parseLong("0", 10) returns 0L
  parseLong("473", 10) returns 473L
  parseLong("+42", 10) returns 42L

@@ -71,7 +71,7 @@ DocsCollector.collect('java.lang.SafeVarargs', [
  warning.  For example, the aliasing in
 
  `],
-				[/* block */ 'b', [
+				[/* blockquote */ 'q', [
 					[/* code block */ 'c', ` @SafeVarargs // Not actually safe!
  static void m(List<String>... stringLists) {
    Object[] array = stringLists;

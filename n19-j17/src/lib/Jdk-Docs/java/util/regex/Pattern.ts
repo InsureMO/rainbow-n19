@@ -22,7 +22,7 @@ DocsCollector.collect('java.util.regex.Pattern', [
 		[/* block */ 'b', ` A typical invocation sequence is thus
 
  `],
-		[/* block */ 'b', [
+		[/* blockquote */ 'q', [
 			[/* code block */ 'c', [
 				[/* text */ 't', ` Pattern p = Pattern.`],
 				[/* text */ 't', `compile`],
@@ -49,7 +49,7 @@ DocsCollector.collect('java.util.regex.Pattern', [
 
  `]
 		]],
-		[/* block */ 'b', [
+		[/* blockquote */ 'q', [
 			[/* code block */ 'c', ` boolean b = Pattern.matches("a*b", "aaaaab");`]
 		]],
 		[/* text */ 't', `
@@ -3049,7 +3049,7 @@ DocsCollector.collect('java.util.regex.Pattern', [
 				[/* block */ 'b', ` An invocation of this convenience method of the form
 
  `],
-				[/* block */ 'b', [
+				[/* blockquote */ 'q', [
 					[/* code block */ 'c', ` Pattern.matches(regex, input);`]
 				]],
 				[/* text */ 't', `
@@ -3057,7 +3057,7 @@ DocsCollector.collect('java.util.regex.Pattern', [
  behaves in exactly the same way as the expression
 
  `],
-				[/* block */ 'b', [
+				[/* blockquote */ 'q', [
 					[/* code block */ 'c', ` Pattern.compile(regex).matcher(input).matches()`]
 				]],
 				[/* text */ 't', `

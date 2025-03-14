@@ -58,7 +58,7 @@ DocsCollector.collect('java.net.ContentHandler', [
  property. The class name must be of the form:
  `]
 		]],
-		[/* block */ 'b', [
+		[/* blockquote */ 'q', [
 			[/* text */ 't', `
      `],
 			[/* text */ 't', `{package-prefix}.{major}.{minor}`],

@@ -12,7 +12,7 @@ DocsCollector.collect('java.nio.Buffer', [
 		[/* text */ 't', `
 
  `],
-		[/* block */ 'b', [
+		[/* blockquote */ 'q', [
 			[/* text */ 't', `
 
    `],
@@ -68,7 +68,7 @@ DocsCollector.collect('java.nio.Buffer', [
 		[/* text */ 't', `
 
  `],
-		[/* block */ 'b', [
+		[/* blockquote */ 'q', [
 			[/* text */ 't', `
 
    `],
@@ -151,7 +151,7 @@ DocsCollector.collect('java.nio.Buffer', [
  capacity values:
 
  `],
-		[/* block */ 'b', [
+		[/* blockquote */ 'q', [
 			[/* text */ 't', `
      `],
 			[/* inline code block */ 'i', `0`],
@@ -297,7 +297,7 @@ DocsCollector.collect('java.nio.Buffer', [
  method invocations to be chained; for example, the sequence of statements
 
  `],
-		[/* block */ 'b', [
+		[/* blockquote */ 'q', [
 			[/* code block */ 'c', ` b.flip();
  b.position(23);
  b.limit(42);`]
@@ -307,7 +307,7 @@ DocsCollector.collect('java.nio.Buffer', [
  can be replaced by the single, more compact statement
 
  `],
-		[/* block */ 'b', [
+		[/* blockquote */ 'q', [
 			[/* code block */ 'c', ` b.flip().position(23).limit(42);`]
 		]],
 		[/* block */ 'b', '']
@@ -617,7 +617,7 @@ DocsCollector.collect('java.nio.Buffer', [
 
  `]
 				]],
-				[/* block */ 'b', [
+				[/* blockquote */ 'q', [
 					[/* code block */ 'c', ` buf.clear();     // Prepare buffer for reading
  in.read(buf);    // Read data`]
 				]],
@@ -653,7 +653,7 @@ DocsCollector.collect('java.nio.Buffer', [
 
  `]
 				]],
-				[/* block */ 'b', [
+				[/* blockquote */ 'q', [
 					[/* code block */ 'c', ` buf.put(magic);    // Prepend header
  in.read(buf);      // Read data into rest of buffer
  buf.flip();        // Flip buffer
@@ -764,7 +764,7 @@ DocsCollector.collect('java.nio.Buffer', [
 
  `]
 				]],
-				[/* block */ 'b', [
+				[/* blockquote */ 'q', [
 					[/* code block */ 'c', ` out.write(buf);    // Write remaining data
  buf.rewind();      // Rewind buffer
  buf.get(array);    // Copy data into array`]

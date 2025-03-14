@@ -130,7 +130,7 @@ DocsCollector.collect('java.io.ByteArrayOutputStream', [
 				[/* text */ 't', ` in the byte
  array such that:
  `],
-				[/* block */ 'b', [
+				[/* blockquote */ 'q', [
 					[/* code block */ 'c', [
 						[/* inline code block */ 'i', `c == (char)(((hibyte & 0xff) << 8) | (b & 0xff))`]
 					]]

@@ -15,7 +15,7 @@ DocsCollector.collect('java.text.CollationElementIterator', [
 		[/* block */ 'b', `
  For example, consider the following in Spanish:
  `],
-		[/* block */ 'b', [
+		[/* blockquote */ 'q', [
 			[/* text */ 't', `
  `],
 			[/* code block */ 'c', ` "ca" → the first key is key('c') and second key is key('a').
@@ -27,7 +27,7 @@ DocsCollector.collect('java.text.CollationElementIterator', [
 		[/* text */ 't', `
  And in German,
  `],
-		[/* block */ 'b', [
+		[/* blockquote */ 'q', [
 			[/* text */ 't', `
  `],
 			[/* code block */ 'c', ` "äb" → the first key is key('a'), the second key is key('e'), and
@@ -62,7 +62,7 @@ DocsCollector.collect('java.text.CollationElementIterator', [
 		[/* block */ 'b', `
  Example of the iterator usage,
  `],
-		[/* block */ 'b', [
+		[/* blockquote */ 'q', [
 			[/* text */ 't', `
  `],
 			[/* code block */ 'c', `

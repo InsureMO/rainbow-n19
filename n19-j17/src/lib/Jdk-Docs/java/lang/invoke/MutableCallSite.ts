@@ -29,7 +29,7 @@ DocsCollector.collect('java.lang.invoke.MutableCallSite', [
 			[/* text */ 't', `
  `]
 		]],
-		[/* block */ 'b', [
+		[/* blockquote */ 'q', [
 			[/* code block */ 'c', [
 				[/* inline code block */ 'i', `MutableCallSite name = new MutableCallSite(MethodType.methodType(String.class));
 MethodHandle MH_name = name.dynamicInvoker();
@@ -50,7 +50,7 @@ assertEquals("FRED", (String) worker1.invokeExact());
 		[/* block */ 'b', `
  The same call site may be used in several places at once.
  `],
-		[/* block */ 'b', [
+		[/* blockquote */ 'q', [
 			[/* code block */ 'c', [
 				[/* inline code block */ 'i', `MethodType MT_str2 = MethodType.methodType(String.class, String.class);
 MethodHandle MH_cat = lookup().findVirtual(String.class,
@@ -145,7 +145,7 @@ assertEquals("Wilma, dear?", (String) worker2.invokeExact());`]
 				[/* block */ 'b', `
  This method is equivalent to the following code:
  `],
-				[/* block */ 'b', [
+				[/* blockquote */ 'q', [
 					[/* code block */ 'c', [
 						[/* inline code block */ 'i', `MethodHandle getTarget, invoker, result;
  getTarget = MethodHandles.publicLookup().bind(this, "getTarget", MethodType.methodType(MethodHandle.class));

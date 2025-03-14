@@ -93,7 +93,7 @@ DocsCollector.collect('java.io.ObjectStreamField', [
 			[/* method description */
 				[/* text */ 't', `Returns character encoding of field type.  The encoding is as follows:
  `],
-				[/* block */ 'b', [
+				[/* blockquote */ 'q', [
 					[/* code block */ 'c', ` B            byte
  C            char
  D            double

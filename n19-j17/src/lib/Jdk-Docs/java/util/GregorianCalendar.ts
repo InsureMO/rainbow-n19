@@ -397,7 +397,7 @@ DocsCollector.collect('java.util.GregorianCalendar', [
  `],
 		[/* block */ 'b', ''],
 		[/* block */ 'b', `Example:`],
-		[/* block */ 'b', [
+		[/* blockquote */ 'q', [
 			[/* text */ 't', `
  `],
 			[/* code block */ 'c', ` // get the supported ids for GMT-08:00 (Pacific Standard Time)

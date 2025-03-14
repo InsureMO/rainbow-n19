@@ -143,7 +143,7 @@ DocsCollector.collect('java.util.Observable', [
  words, this method is equivalent to:
  `]
 				]],
-				[/* block */ 'b', [
+				[/* blockquote */ 'q', [
 					[/* inline code block */ 'i', `notifyObservers(null)`]
 				]],
 				[/* block */ 'b', '']

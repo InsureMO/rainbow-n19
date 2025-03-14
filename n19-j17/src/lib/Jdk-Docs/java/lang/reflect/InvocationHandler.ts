@@ -161,7 +161,7 @@ DocsCollector.collect('java.lang.reflect.InvocationHandler', [
 
  `]
 				]],
-				[/* block */ 'b', [
+				[/* blockquote */ 'q', [
 					[/* code block */ 'c', [
 						[/* inline code block */ 'i', `interface A {
      default T m(A a) { return t1; }
@@ -182,7 +182,7 @@ DocsCollector.collect('java.lang.reflect.InvocationHandler', [
 				[/* text */ 't', `.
 
  `],
-				[/* block */ 'b', [
+				[/* blockquote */ 'q', [
 					[/* code block */ 'c', [
 						[/* inline code block */ 'i', `Object proxy = Proxy.newProxyInstance(loader, new Class<?>[] { A.class },
          (o, m, params) -> {
@@ -217,7 +217,7 @@ DocsCollector.collect('java.lang.reflect.InvocationHandler', [
 				[/* text */ 't', `.
 
  `],
-				[/* block */ 'b', [
+				[/* blockquote */ 'q', [
 					[/* code block */ 'c', [
 						[/* inline code block */ 'i', `Object proxy = Proxy.newProxyInstance(loader, new Class<?>[] { A.class, B.class },
          (o, m, params) -> {
@@ -253,7 +253,7 @@ DocsCollector.collect('java.lang.reflect.InvocationHandler', [
 				[/* text */ 't', `.
 
  `],
-				[/* block */ 'b', [
+				[/* blockquote */ 'q', [
 					[/* code block */ 'c', [
 						[/* inline code block */ 'i', `Object proxy = Proxy.newProxyInstance(loader, new Class<?>[] { C.class },
         (o, m, params) -> {
@@ -296,7 +296,7 @@ DocsCollector.collect('java.lang.reflect.InvocationHandler', [
 
  `]
 				]],
-				[/* block */ 'b', [
+				[/* blockquote */ 'q', [
 					[/* code block */ 'c', [
 						[/* inline code block */ 'i', `interface C extends A {
      default T m(A a) { return t3; }
@@ -332,7 +332,7 @@ DocsCollector.collect('java.lang.reflect.InvocationHandler', [
 
  `]
 				]],
-				[/* block */ 'b', [
+				[/* blockquote */ 'q', [
 					[/* code block */ 'c', [
 						[/* inline code block */ 'i', `C c = (C) Proxy.newProxyInstance(loader, new Class<?>[] { C.class },
          (o, m, params) -> {

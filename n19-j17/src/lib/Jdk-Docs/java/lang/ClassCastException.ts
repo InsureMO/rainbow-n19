@@ -9,7 +9,7 @@ DocsCollector.collect('java.lang.ClassCastException', [
 		[/* inline code block */ 'i', `ClassCastException`],
 		[/* text */ 't', `:
  `],
-		[/* block */ 'b', [
+		[/* blockquote */ 'q', [
 			[/* code block */ 'c', `     Object x = new Integer(0);
      System.out.println((String)x);
  `]

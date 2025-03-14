@@ -969,7 +969,7 @@ DocsCollector.collect('java.lang.Integer', [
 				[/* block */ 'b', ''],
 				[/* block */ 'b', `Examples:
  `],
-				[/* block */ 'b', [
+				[/* blockquote */ 'q', [
 					[/* code block */ 'c', ` parseInt("0", 10) returns 0
  parseInt("473", 10) returns 473
  parseInt("+42", 10) returns 42
@@ -1432,7 +1432,7 @@ DocsCollector.collect('java.lang.Integer', [
  by the following grammar:
 
  `],
-				[/* block */ 'b', [
+				[/* blockquote */ 'q', [
 					[/* text */ 't', `
  `],
 					[/* dl */ 'dl', [
@@ -1616,7 +1616,7 @@ DocsCollector.collect('java.lang.Integer', [
 
  `]
 				]],
-				[/* block */ 'b', [
+				[/* blockquote */ 'q', [
 					[/* text */ 't', `
   `],
 					[/* inline code block */ 'i', `getInteger(nm, null)`],
@@ -1685,7 +1685,7 @@ DocsCollector.collect('java.lang.Integer', [
 
  `]
 				]],
-				[/* block */ 'b', [
+				[/* blockquote */ 'q', [
 					[/* text */ 't', `
   `],
 					[/* inline code block */ 'i', `getInteger(nm, new Integer(val))`],
@@ -1697,7 +1697,7 @@ DocsCollector.collect('java.lang.Integer', [
  but in practice it may be implemented in a manner such as:
 
  `],
-				[/* block */ 'b', [
+				[/* blockquote */ 'q', [
 					[/* code block */ 'c', ` Integer result = getInteger(nm, null);
  return (result == null) ? new Integer(val) : result;
  `]
@@ -1879,7 +1879,7 @@ DocsCollector.collect('java.lang.Integer', [
 
  `]
 				]],
-				[/* block */ 'b', [
+				[/* blockquote */ 'q', [
 					[/* text */ 't', `
   `],
 					[/* inline code block */ 'i', `new Integer(Integer.parseInt(s))`],
@@ -1934,7 +1934,7 @@ DocsCollector.collect('java.lang.Integer', [
 
  `]
 				]],
-				[/* block */ 'b', [
+				[/* blockquote */ 'q', [
 					[/* text */ 't', `
   `],
 					[/* inline code block */ 'i', `new Integer(Integer.parseInt(s, radix))`],
@@ -2071,7 +2071,7 @@ DocsCollector.collect('java.lang.Integer', [
 
  `]
 				]],
-				[/* block */ 'b', [
+				[/* blockquote */ 'q', [
 					[/* text */ 't', `
   `],
 					[/* inline code block */ 'i', `0123456789abcdef`],
@@ -2097,7 +2097,7 @@ DocsCollector.collect('java.lang.Integer', [
  be called on the result:
 
  `],
-				[/* block */ 'b', [
+				[/* blockquote */ 'q', [
 					[/* text */ 't', `
   `],
 					[/* inline code block */ 'i', `Integer.toHexString(n).toUpperCase()`],
@@ -2158,7 +2158,7 @@ DocsCollector.collect('java.lang.Integer', [
 
  `]
 				]],
-				[/* block */ 'b', [
+				[/* blockquote */ 'q', [
 					[/* text */ 't', `
  `],
 					[/* inline code block */ 'i', `01234567`],
@@ -2252,7 +2252,7 @@ DocsCollector.collect('java.lang.Integer', [
 
  `]
 				]],
-				[/* block */ 'b', [
+				[/* blockquote */ 'q', [
 					[/* text */ 't', `
    `],
 					[/* inline code block */ 'i', `0123456789abcdefghijklmnopqrstuvwxyz`],
@@ -2292,7 +2292,7 @@ DocsCollector.collect('java.lang.Integer', [
  be called on the result:
 
  `],
-				[/* block */ 'b', [
+				[/* blockquote */ 'q', [
 					[/* text */ 't', `
   `],
 					[/* inline code block */ 'i', `Integer.toString(n, 16).toUpperCase()`],

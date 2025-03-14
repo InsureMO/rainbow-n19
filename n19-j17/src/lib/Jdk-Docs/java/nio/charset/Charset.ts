@@ -225,7 +225,7 @@ DocsCollector.collect('java.nio.charset.Charset', [
  of such optional charsets may differ between implementations.
 
  `],
-		[/* block */ 'b', [
+		[/* blockquote */ 'q', [
 			[/* table */ 'tbl',
 				[/* caption */ 'tc'],
 				[/* table header */ 'th', [

@@ -674,7 +674,7 @@ DocsCollector.collect('java.lang.invoke.MethodType', [
  and the result is a string of the form:
  `]
 				]],
-				[/* block */ 'b', [
+				[/* blockquote */ 'q', [
 					[/* inline code block */ 'i', `"(<parameter-descriptors>)<return-descriptor>"`]
 				]],
 				[/* text */ 't', `

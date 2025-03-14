@@ -72,7 +72,7 @@ DocsCollector.collect('java.util.Objects', [
  method is designed primarily for doing parameter validation in methods
  and constructors, as demonstrated below:
  `],
-				[/* block */ 'b', [
+				[/* blockquote */ 'q', [
 					[/* code block */ 'c', ` public Foo(Bar bar) {
      this.bar = Objects.requireNonNull(bar);
  }
@@ -109,7 +109,7 @@ DocsCollector.collect('java.util.Objects', [
  is designed primarily for doing parameter validation in methods and
  constructors with multiple parameters, as demonstrated below:
  `],
-				[/* block */ 'b', [
+				[/* blockquote */ 'q', [
 					[/* code block */ 'c', ` public Foo(Bar bar, Baz baz) {
      this.bar = Objects.requireNonNull(bar, "bar must not be null");
      this.baz = Objects.requireNonNull(baz, "baz must not be null");
@@ -600,7 +600,7 @@ DocsCollector.collect('java.util.Objects', [
 
  `]
 				]],
-				[/* block */ 'b', [
+				[/* blockquote */ 'q', [
 					[/* code block */ 'c', ` @Override public int hashCode() {
      return Objects.hash(x, y, z);
  }

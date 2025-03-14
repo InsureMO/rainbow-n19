@@ -60,7 +60,7 @@ DocsCollector.collect('java.util.PropertyResourceBundle', [
  Keys are case-sensitive.
  `]
 		]],
-		[/* block */ 'b', [
+		[/* blockquote */ 'q', [
 			[/* text */ 't', `
  `],
 			[/* code block */ 'c', ` # MessageFormat pattern

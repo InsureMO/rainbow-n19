@@ -725,7 +725,7 @@ DocsCollector.collect('java.lang.Throwable', [
  information depends on the implementation, but the following
  example may be regarded as typical:
  `],
-				[/* block */ 'b', [
+				[/* blockquote */ 'q', [
 					[/* code block */ 'c', ` java.lang.NullPointerException
          at MyClass.mash(MyClass.java:9)
          at MyClass.crunch(MyClass.java:6)

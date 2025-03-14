@@ -490,7 +490,7 @@ DocsCollector.collect('java.lang.ThreadGroup', [
  way as the invocation
 
  `],
-				[/* block */ 'b', [
+				[/* blockquote */ 'q', [
 					[/* text */ 't', `
  `],
 					[/* reference */ 'r', `#enumerate(java.lang.Thread%5B%5D,boolean)`, `enumerate`],
@@ -583,7 +583,7 @@ DocsCollector.collect('java.lang.ThreadGroup', [
  way as the invocation
 
  `],
-				[/* block */ 'b', [
+				[/* blockquote */ 'q', [
 					[/* text */ 't', `
  `],
 					[/* reference */ 'r', `#enumerate(java.lang.ThreadGroup%5B%5D,boolean)`, `enumerate`],

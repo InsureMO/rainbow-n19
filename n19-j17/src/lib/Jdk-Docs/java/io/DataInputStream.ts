@@ -257,7 +257,7 @@ DocsCollector.collect('java.io.DataInputStream', [
 					[/* text */ 't', ` method has the same effect as:
  `]
 				]],
-				[/* block */ 'b', [
+				[/* blockquote */ 'q', [
 					[/* code block */ 'c', ` read(b, 0, b.length)
  `]
 				]],

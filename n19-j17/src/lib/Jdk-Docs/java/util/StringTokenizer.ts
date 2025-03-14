@@ -73,7 +73,7 @@ DocsCollector.collect('java.util.StringTokenizer', [
 		[/* block */ 'b', `
  The following is one example of the use of the tokenizer. The code:
  `],
-		[/* block */ 'b', [
+		[/* blockquote */ 'q', [
 			[/* code block */ 'c', `     StringTokenizer st = new StringTokenizer("this is a test");
      while (st.hasMoreTokens()) {
          System.out.println(st.nextToken());
@@ -86,7 +86,7 @@ DocsCollector.collect('java.util.StringTokenizer', [
 		[/* block */ 'b', `
  prints the following output:
  `],
-		[/* block */ 'b', [
+		[/* blockquote */ 'q', [
 			[/* code block */ 'c', `     this
      is
      a
@@ -119,7 +119,7 @@ DocsCollector.collect('java.util.StringTokenizer', [
  method can be used to break up a string into its basic tokens:
  `]
 		]],
-		[/* block */ 'b', [
+		[/* blockquote */ 'q', [
 			[/* code block */ 'c', `     String[] result = "this is a test".split("\\\\s");
      for (int x=0; x<result.length; x++)
          System.out.println(result[x]);
@@ -131,7 +131,7 @@ DocsCollector.collect('java.util.StringTokenizer', [
 		[/* block */ 'b', `
  prints the following output:
  `],
-		[/* block */ 'b', [
+		[/* blockquote */ 'q', [
 			[/* code block */ 'c', `     this
      is
      a

@@ -52,7 +52,7 @@ DocsCollector.collect('java.text.DateFormatSymbols', [
  If you decide to create a date-time formatter with a specific
  format pattern for a specific locale, you can do so with:
  `],
-		[/* block */ 'b', [
+		[/* blockquote */ 'q', [
 			[/* text */ 't', `
  `],
 			[/* code block */ 'c', ` new SimpleDateFormat(aPattern, DateFormatSymbols.getInstance(aLocale)).

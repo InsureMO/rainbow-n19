@@ -246,7 +246,7 @@ DocsCollector.collect('java.nio.CharBuffer', [
  The sequence of statements
 
  `],
-		[/* block */ 'b', [
+		[/* blockquote */ 'q', [
 			[/* code block */ 'c', ` cb.put("text/");
  cb.put(subtype);
  cb.put("; charset=");
@@ -257,7 +257,7 @@ DocsCollector.collect('java.nio.CharBuffer', [
  can, for example, be replaced by the single statement
 
  `],
-		[/* block */ 'b', [
+		[/* blockquote */ 'q', [
 			[/* code block */ 'c', ` cb.put("text/").put(subtype).put("; charset=").put(enc);`]
 		]],
 		[/* block */ 'b', '']
@@ -897,7 +897,7 @@ DocsCollector.collect('java.nio.CharBuffer', [
 
  `]
 				]],
-				[/* block */ 'b', [
+				[/* blockquote */ 'q', [
 					[/* code block */ 'c', ` buf.clear();     // Prepare buffer for reading
  in.read(buf);    // Read data`]
 				]],
@@ -933,7 +933,7 @@ DocsCollector.collect('java.nio.CharBuffer', [
 
  `]
 				]],
-				[/* block */ 'b', [
+				[/* blockquote */ 'q', [
 					[/* code block */ 'c', ` buf.put(magic);    // Prepend header
  in.read(buf);      // Read data into rest of buffer
  buf.flip();        // Flip buffer
@@ -1105,7 +1105,7 @@ DocsCollector.collect('java.nio.CharBuffer', [
 
  `]
 				]],
-				[/* block */ 'b', [
+				[/* blockquote */ 'q', [
 					[/* code block */ 'c', ` out.write(buf);    // Write remaining data
  buf.rewind();      // Rewind buffer
  buf.get(array);    // Copy data into array`]

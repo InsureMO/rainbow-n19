@@ -51,7 +51,7 @@ DocsCollector.collect('java.text.Collator', [
 			[/* text */ 't', ` for the default locale.
  `]
 		]],
-		[/* block */ 'b', [
+		[/* blockquote */ 'q', [
 			[/* text */ 't', `
  `],
 			[/* code block */ 'c', [
@@ -95,7 +95,7 @@ DocsCollector.collect('java.text.Collator', [
  US English.
  `]
 		]],
-		[/* block */ 'b', [
+		[/* blockquote */ 'q', [
 			[/* text */ 't', `
  `],
 			[/* code block */ 'c', ` //Get the Collator for US English and set its strength to PRIMARY

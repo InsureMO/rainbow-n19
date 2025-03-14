@@ -1289,7 +1289,7 @@ DocsCollector.collect('java.util.regex.Matcher', [
 				[/* text */ 't', `
 
  `],
-				[/* block */ 'b', [
+				[/* blockquote */ 'q', [
 					[/* code block */ 'c', ` Pattern p = Pattern.compile("cat");
  Matcher m = p.matcher("one cat two cats in the yard");
  StringBuffer sb = new StringBuffer();
@@ -1433,7 +1433,7 @@ DocsCollector.collect('java.util.regex.Matcher', [
 				[/* text */ 't', `
 
  `],
-				[/* block */ 'b', [
+				[/* blockquote */ 'q', [
 					[/* code block */ 'c', ` Pattern p = Pattern.compile("cat");
  Matcher m = p.matcher("one cat two cats in the yard");
  StringBuilder sb = new StringBuilder();

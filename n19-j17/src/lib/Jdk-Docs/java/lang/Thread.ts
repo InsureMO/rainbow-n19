@@ -76,7 +76,7 @@ DocsCollector.collect('java.lang.Thread', [
  `]
 		]],
 		[/* new line */ 'n'],
-		[/* block */ 'b', [
+		[/* blockquote */ 'q', [
 			[/* code block */ 'c', `     class PrimeThread extends Thread {
          long minPrime;
          PrimeThread(long minPrime) {
@@ -97,7 +97,7 @@ DocsCollector.collect('java.lang.Thread', [
 		[/* block */ 'b', `
  The following code would then create a thread and start it running:
  `],
-		[/* block */ 'b', [
+		[/* blockquote */ 'q', [
 			[/* code block */ 'c', `     PrimeThread p = new PrimeThread(143);
      p.start();
  `]
@@ -122,7 +122,7 @@ DocsCollector.collect('java.lang.Thread', [
  `]
 		]],
 		[/* new line */ 'n'],
-		[/* block */ 'b', [
+		[/* blockquote */ 'q', [
 			[/* code block */ 'c', `     class PrimeRun implements Runnable {
          long minPrime;
          PrimeRun(long minPrime) {
@@ -143,7 +143,7 @@ DocsCollector.collect('java.lang.Thread', [
 		[/* block */ 'b', `
  The following code would then create a thread and start it running:
  `],
-		[/* block */ 'b', [
+		[/* blockquote */ 'q', [
 			[/* code block */ 'c', `     PrimeRun p = new PrimeRun(143);
      new Thread(p).start();
  `]
@@ -992,7 +992,7 @@ DocsCollector.collect('java.lang.Thread', [
  way as the invocation
 
  `],
-				[/* block */ 'b', [
+				[/* blockquote */ 'q', [
 					[/* text */ 't', `
  `],
 					[/* reference */ 'r', `#join(long)`, `join`],

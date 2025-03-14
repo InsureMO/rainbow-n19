@@ -39,6 +39,8 @@ export type DocSegmentTableRow = ['tr'] | ['tr', Array<DocSegmentTableHeaderCell
 export type DocSegmentTableHeader = ['th'] | ['th', Array<DocSegmentTableRow>]
 export type DocSegmentTableBody = ['tb'] | ['tb', Array<DocSegmentTableRow>]
 export type DocSegmentTable = ['tbl', DocSegmentTableCaption, DocSegmentTableHeader, DocSegmentTableBody]
+/** blockquote */
+export type DocSegmentBlockquote = ['q', DocSegmentContent | Array<DocSegment>]
 /** block */
 export type DocSegmentBlock = ['b', DocSegmentContent | Array<DocSegment>]
 export type DocSegment =
@@ -51,6 +53,7 @@ export type DocSegment =
 	| DocSegmentNewLine
 	| DocSegmentDl
 	| DocSegmentTable
+	| DocSegmentBlockquote
 	| DocSegmentBlock;
 export type DocDescription = Optional<Array<DocSegment>>;
 

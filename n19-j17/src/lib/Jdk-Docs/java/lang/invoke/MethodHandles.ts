@@ -502,7 +502,7 @@ DocsCollector.collect('java.lang.invoke.MethodHandles', [
 					[/* text */ 't', `.
  `]
 				]],
-				[/* block */ 'b', [
+				[/* blockquote */ 'q', [
 					[/* code block */ 'c', [
 						[/* inline code block */ 'i', `T target(A..., B...);
  T handler(ExType, A...);
@@ -612,7 +612,7 @@ DocsCollector.collect('java.lang.invoke.MethodHandles', [
  `]
 				]],
 				[/* block */ 'b', `Example:`],
-				[/* block */ 'b', [
+				[/* blockquote */ 'q', [
 					[/* code block */ 'c', [
 						[/* inline code block */ 'i', `import static java.lang.invoke.MethodHandles.*;
 import static java.lang.invoke.MethodType.*;
@@ -691,7 +691,7 @@ assertEquals("[top, [[up, down, strange], charm], bottom]",
 					[/* text */ 't', ` (if any).
  `]
 				]],
-				[/* block */ 'b', [
+				[/* blockquote */ 'q', [
 					[/* code block */ 'c', [
 						[/* inline code block */ 'i', `T target(A...,V,C...);
  V filter(B...);
@@ -727,7 +727,7 @@ assertEquals("[top, [[up, down, strange], charm], bottom]",
  steps as follows:
  `]
 				]],
-				[/* block */ 'b', [
+				[/* blockquote */ 'q', [
 					[/* code block */ 'c', [
 						[/* inline code block */ 'i', `mh = MethodHandles.dropArguments(mh, 1, coll.type().parameterList()); //step 2
  mh = MethodHandles.foldArguments(mh, coll); //step 1`]
@@ -1082,7 +1082,7 @@ assertEquals("[top, [[up, down, strange], charm], bottom]",
  arguments passed to the loop.
  `]
 				]],
-				[/* block */ 'b', [
+				[/* blockquote */ 'q', [
 					[/* code block */ 'c', [
 						[/* inline code block */ 'i', `int iterations(A...);
  V init(A...);
@@ -1404,7 +1404,7 @@ assertEquals("[top, [[up, down, strange], charm], bottom]",
  arguments passed to the loop.
  `]
 				]],
-				[/* block */ 'b', [
+				[/* blockquote */ 'q', [
 					[/* code block */ 'c', [
 						[/* inline code block */ 'i', `int start(A...);
  int end(A...);
@@ -1666,7 +1666,7 @@ assertEquals("[top, [[up, down, strange], charm], bottom]",
  passed to the loop.
  `]
 				]],
-				[/* block */ 'b', [
+				[/* blockquote */ 'q', [
 					[/* code block */ 'c', [
 						[/* inline code block */ 'i', `V init(A...);
  boolean pred(V, A...);
@@ -1824,7 +1824,7 @@ assertEquals("[top, [[up, down, strange], charm], bottom]",
  `]
 				]],
 				[/* block */ 'b', `Example:`],
-				[/* block */ 'b', [
+				[/* blockquote */ 'q', [
 					[/* code block */ 'c', [
 						[/* inline code block */ 'i', `import static java.lang.invoke.MethodHandles.*;
 import static java.lang.invoke.MethodType.*;
@@ -1844,7 +1844,7 @@ assertEquals("yz", (String) d0.invokeExact(123, "x", "y", "z"));`]
 				[/* block */ 'b', `
  This method is also equivalent to the following code:
  `],
-				[/* block */ 'b', [
+				[/* blockquote */ 'q', [
 					[/* code block */ 'c', [
 						[/* text */ 't', ` `],
 						[/* text */ 't', `dropArguments`],
@@ -2351,7 +2351,7 @@ assertEquals("yz", (String) d0.invokeExact(123, "x", "y", "z"));`]
  `]
 				]],
 				[/* block */ 'b', `Example:`],
-				[/* block */ 'b', [
+				[/* blockquote */ 'q', [
 					[/* code block */ 'c', [
 						[/* inline code block */ 'i', `import static java.lang.invoke.MethodHandles.*;
 import static java.lang.invoke.MethodType.*;
@@ -2408,7 +2408,7 @@ assertEquals("XY", (String) f2.invokeExact("x", "y")); // XY`]
  the resulting adapter.
  `]
 				]],
-				[/* block */ 'b', [
+				[/* blockquote */ 'q', [
 					[/* code block */ 'c', [
 						[/* inline code block */ 'i', `T target(P... p, A[i]... a[i], B... b);
  A[i] filter[i](V[i]);
@@ -2485,7 +2485,7 @@ assertEquals("XY", (String) f2.invokeExact("x", "y")); // XY`]
  return type of the target.
  `],
 				[/* block */ 'b', `Example:`],
-				[/* block */ 'b', [
+				[/* blockquote */ 'q', [
 					[/* code block */ 'c', [
 						[/* inline code block */ 'i', `import static java.lang.invoke.MethodHandles.*;
 import static java.lang.invoke.MethodType.*;
@@ -2526,7 +2526,7 @@ System.out.println((int) f0.invokeExact("x", "y")); // 2`]
 					[/* text */ 't', ` as well as the resulting adapter.
  `]
 				]],
-				[/* block */ 'b', [
+				[/* blockquote */ 'q', [
 					[/* code block */ 'c', [
 						[/* inline code block */ 'i', `T target(A...);
  V filter(T);
@@ -2715,7 +2715,7 @@ System.out.println((int) f0.invokeExact("x", "y")); // 2`]
  `]
 				]],
 				[/* block */ 'b', `Example:`],
-				[/* block */ 'b', [
+				[/* blockquote */ 'q', [
 					[/* code block */ 'c', [
 						[/* inline code block */ 'i', `import static java.lang.invoke.MethodHandles.*;
 import static java.lang.invoke.MethodType.*;
@@ -2772,7 +2772,7 @@ assertEquals("boojum", (String) catTrace.invokeExact("boo", "jum"));`]
  and arguments.
  `]
 				]],
-				[/* block */ 'b', [
+				[/* blockquote */ 'q', [
 					[/* code block */ 'c', [
 						[/* inline code block */ 'i', `// there are N arguments in A...
  T target(V, A[N]..., B...);
@@ -2872,7 +2872,7 @@ assertEquals("boojum", (String) catTrace.invokeExact("boo", "jum"));`]
 					[/* text */ 't', `.
  `]
 				]],
-				[/* block */ 'b', [
+				[/* blockquote */ 'q', [
 					[/* code block */ 'c', [
 						[/* inline code block */ 'i', `boolean test(A...);
  T target(A...,B...);
@@ -3431,7 +3431,7 @@ assertEquals("boojum", (String) catTrace.invokeExact("boo", "jum"));`]
 					[/* text */ 't', ` represent arguments passed to the loop.
  `]
 				]],
-				[/* block */ 'b', [
+				[/* blockquote */ 'q', [
 					[/* code block */ 'c', [
 						[/* inline code block */ 'i', `Iterator<T> iterator(A...);  // defaults to Iterable::iterator
  V init(A...);
@@ -4161,7 +4161,7 @@ assertEquals("boojum", (String) catTrace.invokeExact("boo", "jum"));`]
 					[/* text */ 't', ` is the common result type of all finalizers as well as of the resulting loop.
  `]
 				]],
-				[/* block */ 'b', [
+				[/* blockquote */ 'q', [
 					[/* code block */ 'c', [
 						[/* inline code block */ 'i', `V... init...(A...);
  boolean pred...(V..., A...);
@@ -4281,7 +4281,7 @@ assertEquals("boojum", (String) catTrace.invokeExact("boo", "jum"));`]
 					[/* text */ 't', `.
  `]
 				]],
-				[/* block */ 'b', [
+				[/* blockquote */ 'q', [
 					[/* code block */ 'c', [
 						[/* inline code block */ 'i', `import static java.lang.invoke.MethodHandles.*;
 import static java.lang.invoke.MethodType.*;
@@ -4429,7 +4429,7 @@ assert((int)twice.invokeExact(21) == 42);`]
 				[/* block */ 'b', `
  This method is equivalent to the following code (though it may be more efficient):
  `],
-				[/* block */ 'b', [
+				[/* blockquote */ 'q', [
 					[/* code block */ 'c', [
 						[/* inline code block */ 'i', `MethodHandle invoker = MethodHandles.invoker(type);
 int spreadArgCount = type.parameterCount() - leadingArgCount;
@@ -4708,7 +4708,7 @@ return invoker;`]
  the cleanup.
  `]
 				]],
-				[/* block */ 'b', [
+				[/* blockquote */ 'q', [
 					[/* code block */ 'c', [
 						[/* inline code block */ 'i', `V target(A..., B...);
  V cleanup(Throwable, V, A...);
@@ -5097,7 +5097,7 @@ return invoker;`]
  passed to the loop.
  `]
 				]],
-				[/* block */ 'b', [
+				[/* blockquote */ 'q', [
 					[/* code block */ 'c', [
 						[/* inline code block */ 'i', `V init(A...);
  boolean pred(V, A...);

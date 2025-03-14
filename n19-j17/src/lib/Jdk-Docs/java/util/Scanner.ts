@@ -26,7 +26,7 @@ DocsCollector.collect('java.util.Scanner', [
 			[/* text */ 't', `:
  `]
 		]],
-		[/* block */ 'b', [
+		[/* blockquote */ 'q', [
 			[/* code block */ 'c', [
 				[/* inline code block */ 'i', `Scanner sc = new Scanner(System.in);
      int i = sc.nextInt();`]
@@ -45,7 +45,7 @@ DocsCollector.collect('java.util.Scanner', [
 			[/* text */ 't', `:
  `]
 		]],
-		[/* block */ 'b', [
+		[/* blockquote */ 'q', [
 			[/* code block */ 'c', [
 				[/* inline code block */ 'i', `Scanner sc = new Scanner(new File("myNumbers"));
       while (sc.hasNextLong()) {
@@ -60,7 +60,7 @@ DocsCollector.collect('java.util.Scanner', [
 		[/* block */ 'b', `The scanner can also use delimiters other than whitespace. This
  example reads several items in from a string:
  `],
-		[/* block */ 'b', [
+		[/* blockquote */ 'q', [
 			[/* code block */ 'c', [
 				[/* inline code block */ 'i', `String input = "1 fish 2 fish red fish blue fish";
      Scanner s = new Scanner(input).useDelimiter("\\\\s*fish\\\\s*");
@@ -77,7 +77,7 @@ DocsCollector.collect('java.util.Scanner', [
 		[/* block */ 'b', `
  prints the following output:
  `],
-		[/* block */ 'b', [
+		[/* blockquote */ 'q', [
 			[/* code block */ 'c', [
 				[/* inline code block */ 'i', `1
      2
@@ -92,7 +92,7 @@ DocsCollector.collect('java.util.Scanner', [
 		[/* block */ 'b', `The same output can be generated with this code, which uses a regular
  expression to parse all four tokens at once:
  `],
-		[/* block */ 'b', [
+		[/* blockquote */ 'q', [
 			[/* code block */ 'c', [
 				[/* inline code block */ 'i', `String input = "1 fish 2 fish red fish blue fish";
      Scanner s = new Scanner(input);
@@ -299,7 +299,7 @@ DocsCollector.collect('java.util.Scanner', [
 
  `]
 		]],
-		[/* block */ 'b', [
+		[/* blockquote */ 'q', [
 			[/* dl */ 'dl', [
 				[/* dt */ 'dt', [
 					[/* text */ 't', `LocalGroupSeparator  `],
@@ -2479,7 +2479,7 @@ DocsCollector.collect('java.util.Scanner', [
 
  `]
 				]],
-				[/* block */ 'b', [
+				[/* blockquote */ 'q', [
 					[/* code block */ 'c', [
 						[/* inline code block */ 'i', `scanner.useDelimiter("\\\\p{javaWhitespace}+")
           .useLocale(Locale.getDefault(Locale.Category.FORMAT))

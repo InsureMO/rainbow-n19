@@ -263,7 +263,7 @@ DocsCollector.collect('java.util.UUID', [
  `],
 				[/* block */ 'b', ` The UUID string representation is as described by this BNF:
  `],
-				[/* block */ 'b', [
+				[/* blockquote */ 'q', [
 					[/* code block */ 'c', [
 						[/* text */ 't', ` `],
 						[/* inline code block */ 'i', `UUID                   = <time_low> "-" <time_mid> "-"

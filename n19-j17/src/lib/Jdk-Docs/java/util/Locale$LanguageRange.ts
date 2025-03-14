@@ -26,7 +26,7 @@ DocsCollector.collect('java.util.Locale$LanguageRange', [
 			[/* text */ 't', ` as follows:
  `]
 		]],
-		[/* block */ 'b', [
+		[/* blockquote */ 'q', [
 			[/* text */ 't', `
  `],
 			[/* code block */ 'c', `     basic-language-range    = (1*8ALPHA *("-" 1*8alphanum)) / "*"

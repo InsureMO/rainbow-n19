@@ -7,6 +7,7 @@ import {Dt} from './dt';
 import {I} from './i';
 import {L} from './l';
 import {N} from './n';
+import {Q} from './q';
 import {R} from './r';
 import {T} from './t';
 import {Tb} from './tb';
@@ -35,5 +36,6 @@ export const ClassDocContentWidgets = {
 	'th': Th,
 	'tb': Tb,
 	'tbl': Tbl,
+	'q': Q,
 	'b': B
 };

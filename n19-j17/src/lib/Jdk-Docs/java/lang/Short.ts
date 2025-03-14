@@ -542,7 +542,7 @@ DocsCollector.collect('java.lang.Short', [
  the following grammar:
 
  `],
-				[/* block */ 'b', [
+				[/* blockquote */ 'q', [
 					[/* text */ 't', `
  `],
 					[/* dl */ 'dl', [
@@ -718,7 +718,7 @@ DocsCollector.collect('java.lang.Short', [
 
  `]
 				]],
-				[/* block */ 'b', [
+				[/* blockquote */ 'q', [
 					[/* text */ 't', `
   `],
 					[/* inline code block */ 'i', `new Short(Short.parseShort(s))`],
@@ -780,7 +780,7 @@ DocsCollector.collect('java.lang.Short', [
 
  `]
 				]],
-				[/* block */ 'b', [
+				[/* blockquote */ 'q', [
 					[/* text */ 't', `
   `],
 					[/* inline code block */ 'i', `new Short(Short.parseShort(s, radix))`],

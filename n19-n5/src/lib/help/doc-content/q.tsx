@@ -2,11 +2,11 @@ import {Java} from '@rainbow-n19/n2';
 import React, {FC} from 'react';
 import {ClassDocContentWidgets} from './all';
 
-export interface BProps {
-	content: Java.DocSegmentBlock;
+export interface QProps {
+	content: Java.DocSegmentBlockquote;
 }
 
-export const B: FC<BProps> = (props: BProps) => {
+export const Q: FC<QProps> = (props: QProps) => {
 	const {content: [, textOrChildren]} = props;
 
 	if (textOrChildren == null || textOrChildren.length === 0) {
@@ -14,15 +14,15 @@ export const B: FC<BProps> = (props: BProps) => {
 	}
 
 	if (typeof textOrChildren === 'string') {
-		return <p data-w="b">{textOrChildren}</p>;
+		return <blockquote data-w="q">{textOrChildren}</blockquote>;
 	} else {
-		return <p data-w="b">
+		return <blockquote data-w="q">
 			{textOrChildren.map((child, index) => {
 				const [t] = child;
 				const C = ClassDocContentWidgets[t];
 				// @ts-expect-error dynamic widget used here
 				return <C content={child} key={`${index}-${JSON.stringify(child)}`}/>;
 			})}
-		</p>;
+		</blockquote>;
 	}
 };

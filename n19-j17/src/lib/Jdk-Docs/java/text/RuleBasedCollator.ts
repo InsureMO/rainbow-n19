@@ -125,7 +125,7 @@ DocsCollector.collect('java.text.RuleBasedCollator', [
  This sounds more complicated than it is in practice. For example, the
  following are equivalent ways of expressing the same thing:
  `],
-		[/* block */ 'b', [
+		[/* blockquote */ 'q', [
 			[/* text */ 't', `
  `],
 			[/* code block */ 'c', ` a < b < c
@@ -139,7 +139,7 @@ DocsCollector.collect('java.text.RuleBasedCollator', [
  Notice that the order is important, as the subsequent item goes immediately
  after the text-argument. The following are not equivalent:
  `],
-		[/* block */ 'b', [
+		[/* blockquote */ 'q', [
 			[/* text */ 't', `
  `],
 			[/* code block */ 'c', ` a < b & a < c
@@ -251,7 +251,7 @@ DocsCollector.collect('java.text.RuleBasedCollator', [
 			[/* text */ 't', ` object. For example:
  `]
 		]],
-		[/* block */ 'b', [
+		[/* blockquote */ 'q', [
 			[/* text */ 't', `
  `],
 			[/* code block */ 'c', ` String simple = "< a< b< c< d";
@@ -263,7 +263,7 @@ DocsCollector.collect('java.text.RuleBasedCollator', [
 		[/* text */ 't', `
  Or:
  `],
-		[/* block */ 'b', [
+		[/* blockquote */ 'q', [
 			[/* text */ 't', `
  `],
 			[/* code block */ 'c', ` String Norwegian = "< a, A < b, B < c, C < d, D < e, E < f, F < g, G < h, H < i, I" +
@@ -299,7 +299,7 @@ DocsCollector.collect('java.text.RuleBasedCollator', [
  The following example demonstrates how to change the order of
  non-spacing accents,
  `],
-		[/* block */ 'b', [
+		[/* blockquote */ 'q', [
 			[/* text */ 't', `
  `],
 			[/* code block */ 'c', ` // old rule

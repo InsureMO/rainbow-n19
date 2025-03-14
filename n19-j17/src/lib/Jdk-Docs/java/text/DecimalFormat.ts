@@ -38,7 +38,7 @@ DocsCollector.collect('java.text.DecimalFormat', [
 
  `]
 		]],
-		[/* block */ 'b', [
+		[/* blockquote */ 'q', [
 			[/* code block */ 'c', ` NumberFormat f = NumberFormat.getInstance(loc);
  if (f instanceof DecimalFormat) {
      ((DecimalFormat) f).setDecimalSeparatorAlwaysShown(true);
@@ -80,7 +80,7 @@ DocsCollector.collect('java.text.DecimalFormat', [
 		[/* inline code block */ 'i', `DecimalFormat`],
 		[/* text */ 't', ` patterns have the following syntax:
  `],
-		[/* block */ 'b', [
+		[/* blockquote */ 'q', [
 			[/* code block */ 'c', [
 				[/* text */ 't', ` `],
 				[/* text */ 't', `Pattern:`],
@@ -296,7 +296,7 @@ DocsCollector.collect('java.text.DecimalFormat', [
 
  `]
 		]],
-		[/* block */ 'b', [
+		[/* blockquote */ 'q', [
 			[/* text */ 't', `
  `],
 			[/* table */ 'tbl',
@@ -778,7 +778,7 @@ DocsCollector.collect('java.text.DecimalFormat', [
 		[/* text */ 't', `
 
  `],
-		[/* block */ 'b', [
+		[/* blockquote */ 'q', [
 			[/* code block */ 'c', [
 				[/* inline code block */ 'i', `// Print out a number using the localized number, integer, currency,
  // and percent format for each locale`],

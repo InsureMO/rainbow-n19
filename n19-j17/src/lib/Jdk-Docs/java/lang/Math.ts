@@ -1722,7 +1722,7 @@ DocsCollector.collect('java.lang.Math', [
  pseudorandom-number generator, exactly as if by the expression
 
  `],
-				[/* block */ 'b', [
+				[/* blockquote */ 'q', [
 					[/* inline code block */ 'i', `new java.util.Random()`]
 				]],
 				[/* text */ 't', `

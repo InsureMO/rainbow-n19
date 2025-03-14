@@ -83,7 +83,7 @@ DocsCollector.collect('java.lang.invoke.CallSite', [
  Here is a sample use of call sites and bootstrap methods which links every
  dynamic call site to print its arguments:
 `],
-		[/* block */ 'b', [
+		[/* blockquote */ 'q', [
 			[/* code block */ 'c', [
 				[/* inline code block */ 'i', `static void test() throws Throwable {
     // THE FOLLOWING LINE IS PSEUDOCODE FOR A JVM INSTRUCTION
@@ -118,7 +118,7 @@ private static CallSite bootstrapDynamic(MethodHandles.Lookup caller, String nam
 				[/* block */ 'b', `
  This method is equivalent to the following code:
  `],
-				[/* block */ 'b', [
+				[/* blockquote */ 'q', [
 					[/* code block */ 'c', [
 						[/* inline code block */ 'i', `MethodHandle getTarget, invoker, result;
  getTarget = MethodHandles.publicLookup().bind(this, "getTarget", MethodType.methodType(MethodHandle.class));

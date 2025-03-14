@@ -728,7 +728,7 @@ DocsCollector.collect('java.lang.Double', [
  of the expression:
 
  `],
-				[/* block */ 'b', [
+				[/* blockquote */ 'q', [
 					[/* text */ 't', `
   `],
 					[/* inline code block */ 'i', `(int)(v^(v>>>32))`],
@@ -742,7 +742,7 @@ DocsCollector.collect('java.lang.Double', [
 				[/* text */ 't', ` is defined by:
 
  `],
-				[/* block */ 'b', [
+				[/* blockquote */ 'q', [
 					[/* text */ 't', `
   `],
 					[/* inline code block */ 'i', `long v = Double.doubleToLongBits(this.doubleValue());`],
@@ -1201,7 +1201,7 @@ DocsCollector.collect('java.lang.Double', [
 
  `]
 				]],
-				[/* block */ 'b', [
+				[/* blockquote */ 'q', [
 					[/* text */ 't', `
  `],
 					[/* dl */ 'dl', [
@@ -2132,7 +2132,7 @@ DocsCollector.collect('java.lang.Double', [
 
  `]
 				]],
-				[/* block */ 'b', [
+				[/* blockquote */ 'q', [
 					[/* code block */ 'c', [
 						[/* inline code block */ 'i', `int s = ((bits >> 63) == 0) ? 1 : -1;
  int e = (int)((bits >> 52) & 0x7ffL);

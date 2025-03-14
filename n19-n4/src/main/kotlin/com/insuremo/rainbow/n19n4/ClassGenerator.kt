@@ -866,7 +866,7 @@ private class ClassGenerator(
 			}
 
 			"h2", "h3", "h4" -> "${indent}[/* block */ 'b', ${generateDocSegmentOfChildren(node, level, inCodeBlock)}]"
-			"blockquote" -> "${indent}[/* block */ 'b', ${generateDocSegmentOfChildren(node, level, inCodeBlock)}]"
+			"blockquote" -> "${indent}[/* blockquote */ 'q', ${generateDocSegmentOfChildren(node, level, inCodeBlock)}]"
 			"li" -> "${indent}[/* block */ 'b', ${generateDocSegmentOfChildren(node, level, inCodeBlock)}]"
 			"ul" -> "${indent}[/* list */ 'l', ${generateDocSegmentOfChildren(node, level, inCodeBlock)}]"
 			"ol" -> "${indent}[/* list */ 'l', ${generateDocSegmentOfChildren(node, level, inCodeBlock)}]"

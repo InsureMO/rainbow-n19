@@ -28,7 +28,7 @@ DocsCollector.collect('java.lang.Runtime$Version', [
 		[/* text */ 't', `
 
  `],
-		[/* block */ 'b', [
+		[/* blockquote */ 'q', [
 			[/* code block */ 'c', ` [1-9][0-9]*((\\.0)*\\.[1-9][0-9]*)*
  `]
 		]],
@@ -40,7 +40,7 @@ DocsCollector.collect('java.lang.Runtime$Version', [
 		[/* text */ 't', `
 
  `],
-		[/* block */ 'b', [
+		[/* blockquote */ 'q', [
 			[/* code block */ 'c', ` $FEATURE.$INTERIM.$UPDATE.$PATCH
  `]
 		]],
@@ -146,7 +146,7 @@ DocsCollector.collect('java.lang.Runtime$Version', [
 		[/* text */ 't', `
 
  `],
-		[/* block */ 'b', [
+		[/* blockquote */ 'q', [
 			[/* code block */ 'c', `     $VNUM(-$PRE)?\\+$BUILD(-$OPT)?
      $VNUM-$PRE(-$OPT)?
      $VNUM(\\+-$OPT)?
@@ -261,7 +261,7 @@ DocsCollector.collect('java.lang.Runtime$Version', [
 		[/* text */ 't', `
 
  `],
-		[/* block */ 'b', [
+		[/* blockquote */ 'q', [
 			[/* code block */ 'c', `     $VNUM(-$PRE)?
  `]
 		]],
