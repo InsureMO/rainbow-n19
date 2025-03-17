@@ -71,16 +71,17 @@ export class WildcardType implements IWildcardType {
 		let bounds: Array<IType> = [];
 		let sb: string = '';
 
-		if (this.lowerBounds.length > 0) {
+		if (this.lowerBounds.length === 0) {
+			if (this.upperBounds.length === 0
+				|| (this.upperBounds[0] instanceof Class && (this.upperBounds[0] as Class).name === BuiltInConstants.LANG_OBJECT)) {
+				return '?';
+			} else {
+				bounds = this.upperBounds;
+				sb = sb + '? extends ';
+			}
+		} else {
 			bounds = this.lowerBounds;
 			sb = sb + '? super ';
-		} else if (this.upperBounds.length > 0
-			&& this.upperBounds[0] instanceof Class
-			&& (this.upperBounds[0] as Class).name === BuiltInConstants.LANG_OBJECT) {
-			bounds = this.upperBounds;
-			sb = sb + '? extends ';
-		} else {
-			return '?';
 		}
 
 		sb = sb + bounds.map(bound => bound.typeName).join(' & ');
