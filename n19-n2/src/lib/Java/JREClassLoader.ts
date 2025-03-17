@@ -17,8 +17,11 @@ export class JREClassLoader extends AbstractClassLoader {
 		// 1041, 8 primitive types, array of them and 2 dims array of them
 		const modifiers = Modifier.PUBLIC & Modifier.SYNTHETIC & Modifier.BRIDGE;
 		[
+			// 8 primitive types
 			...Object.keys(BuiltInConstants.ARR_OF_PRIMITIVE_TYPES),
+			// void, also primitive type
 			BuiltInConstants.P_VOID,
+			// one and two dimensions array types of 8 primitive types
 			...(BuiltInConstants.CHAR_OF_PRIMITIVE_TYPES.split('').map(t => [`[${t}`, `[[${t}`]).flat())
 		].forEach(name => this.addClass(new Class(this, {name, modifiers})));
 	}

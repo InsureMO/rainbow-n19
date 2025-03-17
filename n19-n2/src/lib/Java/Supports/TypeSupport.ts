@@ -88,20 +88,22 @@ export class TypeSupport<T extends IClassLoaderHolder> extends AbstractClassLoad
 				return this.getRawClassName(bound as NotClassType);
 			}
 		} else if (type instanceof GenericArrayType) {
+			let name: string;
 			const genericComponentType = type.genericComponentType;
 			if (genericComponentType instanceof Class) {
-				// never occurs, just to complete all the rourtes
-				const name = genericComponentType.name;
-				if (BuiltInConstants.PRIMITIVE_TYPES.includes(name)) {
-					return BuiltInConstants.ARR_OF_PRIMITIVE_TYPES[name];
-				} else {
-					// add one dimension
-					return BuiltInConstants.ARR_HEAD + name;
-				}
+				// never occurs, just to complete all the routes
+				name = genericComponentType.name;
 			} else {
-				const name = this.getRawClassName(genericComponentType as NotClassType);
+				name = this.getRawClassName(genericComponentType as NotClassType);
+			}
+			if (BuiltInConstants.PRIMITIVE_TYPES.includes(name)) {
+				return BuiltInConstants.ARR_OF_PRIMITIVE_TYPES[name];
+			} else if (name.startsWith(BuiltInConstants.ARR_HEAD)) {
 				// add one dimension
 				return BuiltInConstants.ARR_HEAD + name;
+			} else {
+				// not primitive type, not array. is class
+				return BuiltInConstants.ARR_CLASS_HEAD + name + BuiltInConstants.ARR_CLASS_TAIL;
 			}
 		} else if (type instanceof WildcardType) {
 			let bounds = type.lowerBounds;

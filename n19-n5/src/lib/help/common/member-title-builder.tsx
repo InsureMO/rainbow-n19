@@ -36,31 +36,74 @@ const ClassType: FC<TypeProps<Java.IClass>> = (props) => {
 };
 
 const TypeVariable: FC<TypeProps<Java.ITypeVariable>> = (props) => {
-	const {details, type} = props;
+	const {type} = props;
 
-	// TODO
-	return type.typeName;
+	return type.name;
 };
 
 const GenericArrayType: FC<TypeProps<Java.IGenericArrayType>> = (props) => {
 	const {details, type} = props;
 
-	// TODO
-	return type.typeName;
+	return <>{<Type details={details} type={type.genericComponentType}/>}[]</>;
 };
 
 const ParameterizedType: FC<TypeProps<Java.IParameterizedType>> = (props) => {
 	const {details, type} = props;
 
-	// TODO
-	return type.typeName;
+	return <>
+		<ClassType details={details} type={type.rawType}/>
+		{(type.actualTypeArguments != null && type.actualTypeArguments.length > 0)
+			? <>
+				{'<'}
+				{type.actualTypeArguments.map((arg, index) => {
+					if (index !== 0) {
+						return <Fragment key={`${index}-${arg.typeName}`}>
+							{', '}
+							<Type details={details} type={arg}/>
+						</Fragment>;
+					} else {
+						return <Type details={details} type={arg} key={`${index}-${arg.typeName}`}/>;
+					}
+				})}
+				{'>'}
+			</>
+			: null}
+	</>;
 };
 
 const WildcardType: FC<TypeProps<Java.IWildcardType>> = (props) => {
 	const {details, type} = props;
 
-	// TODO
-	return type.typeName;
+	let bounds: Array<Java.IType>;
+	let syntax: string;
+
+	if (type.lowerBounds.length === 0) {
+		if (type.upperBounds.length === 0
+			|| (type.upperBounds[0] instanceof Java.Class && (type.upperBounds[0] as Java.Class).name === Java.BuiltInConstants.LANG_OBJECT)) {
+			bounds = [];
+			syntax = '?';
+		} else {
+			bounds = type.upperBounds;
+			syntax = '? extends ';
+		}
+	} else {
+		bounds = type.lowerBounds;
+		syntax = '? super ';
+	}
+
+	return <>
+		{syntax}
+		{bounds.map((bound, index) => {
+			if (index !== 0) {
+				return <Fragment key={`${index}-${bound.typeName}`}>
+					{' & '}
+					<Type details={details} type={bound}/>
+				</Fragment>;
+			} else {
+				return <Type details={details} type={bound} key={`${index}-${bound.typeName}`}/>;
+			}
+		})}
+	</>;
 };
 
 const Type: FC<TypeProps<Java.IType>> = (props) => {
@@ -147,13 +190,13 @@ const TypeParameters: FC<TypeParametersProps> = (props) => {
 
 	return <>
 		{'<'}
-			{typeParameters.map((typeParameter, index) => {
-				return <Fragment key={typeParameter.name}>
-					{index !== 0 ? ', ' : (void 0)}
-					<TypeParameter details={details} declaration={declaration} typeParameter={typeParameter}/>
-				</Fragment>;
-			})}
-			{'> '}
+		{typeParameters.map((typeParameter, index) => {
+			return <Fragment key={typeParameter.name}>
+				{index !== 0 ? ', ' : (void 0)}
+				<TypeParameter details={details} declaration={declaration} typeParameter={typeParameter}/>
+			</Fragment>;
+		})}
+		{'> '}
 	</>;
 };
 

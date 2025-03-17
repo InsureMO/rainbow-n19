@@ -30,13 +30,6 @@ const ClassTitle: FC<ClassTitleProps> = (props) => {
 		return null;
 	}
 
-	const modifiers = cls.modifiers & Java.Modifier.classModifiers();
-
-	const typeParameters = (() => {
-		const typeParameterNames = (cls.typeParameters ?? []).map(p => p.typeName);
-		return typeParameterNames.length === 0 ? '' : `<${typeParameterNames.join(', ')}>`;
-	})();
-
 	const onPackageClicked = (packageNames: Array<string>, index: number) => () => {
 		const packageName = packageNames.slice(0, index + 1).join('.');
 		const pkg = classDocs.classLoader().findPackage(packageName);
@@ -53,50 +46,72 @@ const ClassTitle: FC<ClassTitleProps> = (props) => {
 			switchTo(cls);
 		}
 	};
-	const [declaringClass, ...innerClasses] = className.split('$');
-	const [simpleName, ...reversedPackageNames] = declaringClass.split('.').reverse();
-	const packageNames = reversedPackageNames.reverse();
-	const names: Array<ReactNode> = [];
-	for (let index = 0, count = packageNames.length; index < count; index++) {
+
+	// modifiers
+	const modifiers = (() => {
+		const modifiers = cls.modifiers & Java.Modifier.classModifiers();
+		if (modifiers === 0) {
+			return '';
+		} else if (cls.isInterface) {
+			return Java.Modifier.toString(modifiers).replace('abstract', '').replace('  ', '').trim();
+		} else {
+			return Java.Modifier.toString(modifiers);
+		}
+	})();
+	// type parameters
+	const typeParameters = (() => {
+		const typeParameterNames = (cls.typeParameters ?? []).map(p => p.typeName);
+		return typeParameterNames.length === 0 ? '' : `<${typeParameterNames.join(', ')}>`;
+	})();
+	// name
+	const names: Array<ReactNode> = (() => {
+		const names: Array<ReactNode> = [];
+		const [declaringClass, ...innerClasses] = className.split('$');
+		const [simpleName, ...reversedPackageNames] = declaringClass.split('.').reverse();
+		const packageNames = reversedPackageNames.reverse();
+
+		for (let index = 0, count = packageNames.length; index < count; index++) {
+			if (names.length !== 0) {
+				names.push('.');
+			}
+			names.push(<span data-w="ref-to-package" onClick={onPackageClicked(packageNames, index)}
+			                 title={packageNames.slice(0, index + 1).join('.')}
+			                 key={`pkg-${index}-${packageNames[index]}`}>
+			{packageNames[index]}
+		</span>);
+		}
 		if (names.length !== 0) {
 			names.push('.');
 		}
-		names.push(<span data-w="ref-to-package" onClick={onPackageClicked(packageNames, index)}
-		                 title={packageNames.slice(0, index + 1).join('.')}
-		                 key={`pkg-${index}-${packageNames[index]}`}>
-			{packageNames[index]}
-		</span>);
-	}
-	if (names.length !== 0) {
-		names.push('.');
-	}
-	const declaringClassName = (packageNames.length === 0 ? '' : (packageNames.join('.') + '.')) + simpleName;
-	if (innerClasses.length === 0) {
-		names.push(simpleName);
-	} else {
-		names.push(<span data-w="ref-to-class" onClick={onClassClicked(packageNames, simpleName)}
-		                 title={declaringClassName}
-		                 key={`cls-${simpleName}`}>
+		const declaringClassName = (packageNames.length === 0 ? '' : (packageNames.join('.') + '.')) + simpleName;
+		if (innerClasses.length === 0) {
+			names.push(simpleName);
+		} else {
+			names.push(<span data-w="ref-to-class" onClick={onClassClicked(packageNames, simpleName)}
+			                 title={declaringClassName}
+			                 key={`cls-${simpleName}`}>
 			{simpleName}
 		</span>);
-	}
-	const lastInnerClassIndex = innerClasses.length - 1;
-	innerClasses.forEach((innerClassName, index) => {
-		names.push('$');
-		if (index === lastInnerClassIndex) {
-			names.push(innerClassName);
-		} else {
-			names.push(<span data-w="ref-to-class"
-			                 onClick={onClassClicked(packageNames, simpleName, innerClasses, index)}
-			                 title={declaringClassName + '$' + innerClasses.slice(0, index + 1).join('$')}
-			                 key={`inner-cls-${index}-${innerClassName}`}>
+		}
+		const lastInnerClassIndex = innerClasses.length - 1;
+		innerClasses.forEach((innerClassName, index) => {
+			names.push('$');
+			if (index === lastInnerClassIndex) {
+				names.push(innerClassName);
+			} else {
+				names.push(<span data-w="ref-to-class"
+				                 onClick={onClassClicked(packageNames, simpleName, innerClasses, index)}
+				                 title={declaringClassName + '$' + innerClasses.slice(0, index + 1).join('$')}
+				                 key={`inner-cls-${index}-${innerClassName}`}>
 				{innerClassName}
 			</span>);
-		}
-	});
+			}
+		});
+		return names;
+	})();
 
 	return <>
-		{modifiers !== 0 ? Java.Modifier.toString(modifiers).replace(/abstract\s?/, '') : ''}
+		{modifiers}
 		{' '}
 		{cls.isAnnotation ? '@' : ''}
 		{cls.isInterface ? 'interface' : ''}
