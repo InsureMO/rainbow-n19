@@ -13,10 +13,30 @@ export const RefToClass: FC<RefToClassProps> = (props) => {
 
 	const {switchTo} = useHelpDocsContext();
 
-	const title = cls.name !== cls.simpleName ? cls.name : (void 0);
-
-	return <span data-w="ref-to-class" title={title}
-	             onClick={() => switchTo(cls)}>
-		{cls.simpleName}
-	</span>;
+	if (cls.isPrimitive) {
+		// primitive type
+		return cls.typeName;
+	} else if (cls.isArray && cls.baseComponentType.isPrimitive) {
+		// primitive type array
+		return cls.typeName;
+	} else if (cls.isArray && !cls.baseComponentType.isPrimitive) {
+		// not primitive type array
+		let dimensions = 1;
+		let componentType = cls.componentType;
+		while (componentType.isArray) {
+			dimensions = dimensions + 1;
+			componentType = componentType.componentType;
+		}
+		return <>
+			<span data-w="ref-to-class" title={componentType.name} onClick={() => switchTo(componentType)}>
+				{componentType.name.substring(componentType.name.lastIndexOf('.') + 1)}
+			</span>
+			{new Array(dimensions).fill('[]').join('')}
+		</>;
+	} else {
+		// not primitive type, not array
+		return <span data-w="ref-to-class" title={cls.name} onClick={() => switchTo(cls)}>
+			{cls.name.substring(cls.name.lastIndexOf('.') + 1)}
+		</span>;
+	}
 };

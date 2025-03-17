@@ -8,33 +8,6 @@ interface TypeProps<T extends Java.IType> {
 	type: T;
 }
 
-const ClassType: FC<TypeProps<Java.IClass>> = (props) => {
-	const {details, type} = props;
-
-	if (type.isPrimitive) {
-		// primitive type
-		return type.typeName;
-	} else if (type.isArray && type.baseComponentType.isPrimitive) {
-		// primitive type array
-		return type.typeName;
-	} else if (type.isArray && !type.baseComponentType.isPrimitive) {
-		// not primitive type array
-		let dimensions = 1;
-		let componentType = type.componentType;
-		while (componentType.isArray) {
-			dimensions = dimensions + 1;
-			componentType = componentType.componentType;
-		}
-		return <>
-			<RefToClass details={details} class={componentType}/>
-			{new Array(dimensions).fill('[]').join('')}
-		</>;
-	} else {
-		// not primitive type, not array
-		return <RefToClass details={details} class={type}/>;
-	}
-};
-
 const TypeVariable: FC<TypeProps<Java.ITypeVariable>> = (props) => {
 	const {type} = props;
 
@@ -51,7 +24,7 @@ const ParameterizedType: FC<TypeProps<Java.IParameterizedType>> = (props) => {
 	const {details, type} = props;
 
 	return <>
-		<ClassType details={details} type={type.rawType}/>
+		<RefToClass details={details} class={type.rawType}/>
 		{(type.actualTypeArguments != null && type.actualTypeArguments.length > 0)
 			? <>
 				{'<'}
@@ -110,7 +83,7 @@ const Type: FC<TypeProps<Java.IType>> = (props) => {
 	const {details, type} = props;
 
 	if (type instanceof Java.Class) {
-		return <ClassType details={details} type={type}/>;
+		return <RefToClass details={details} class={type}/>;
 	} else if (type instanceof Java.TypeVariable) {
 		return <TypeVariable details={details} type={type}/>;
 	} else if (type instanceof Java.GenericArrayType) {
