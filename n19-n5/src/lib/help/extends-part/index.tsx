@@ -77,8 +77,11 @@ export const ExtendsPartDoc: FC<ExtendsDocProps> = (props) => {
 		return null;
 	}
 
-	return <HelpSuperclassOInterfaceList>
-		<SuperclassesDoc details={details} hasSuperclass={hasSuperclass} superclasses={superclasses}/>
-		<InterfacesDoc details={details} hasInterface={hasInterface} interfaces={interfaces}/>
-	</HelpSuperclassOInterfaceList>;
+	return <>
+		<a id="class-extends"/>
+		<HelpSuperclassOInterfaceList>
+			<SuperclassesDoc details={details} hasSuperclass={hasSuperclass} superclasses={superclasses}/>
+			<InterfacesDoc details={details} hasInterface={hasInterface} interfaces={interfaces}/>
+		</HelpSuperclassOInterfaceList>
+	</>;
 };

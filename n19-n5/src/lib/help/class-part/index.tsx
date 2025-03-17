@@ -22,6 +22,9 @@ export const ClassPartDoc = (props: ClassLevelDocProps) => {
 
 	const available = () => details.classDocAvailable;
 
-	return <DocPart details={details} title="Class documentation" available={available}
-	                content={ClassLevelDocContent}/>;
+	return <>
+		<a id="class-doc"/>
+		<DocPart details={details} title="Class documentation" available={available}
+		         content={ClassLevelDocContent}/>
+	</>;
 };

@@ -106,6 +106,7 @@ export const FieldTitle: FC<MemberTitleProps<Java.IField>> = (props) => {
 	const {details, member: field} = props;
 
 	return <>
+		<a id={field.toShortString()}/>
 		{(field.modifiers == 0) ? '' : (Java.Modifier.toString(field.modifiers) + ' ')}
 		<Type details={details} type={field.genericType}/>
 		{' '}
@@ -204,6 +205,7 @@ export const ConstructorTitle: FC<MemberTitleProps<Java.IConstructor>> = (props)
 	const {details, member: constructor} = props;
 
 	return <>
+		<a id={constructor.toShortString()}/>
 		{buildExecutableModifiers(constructor, false)}
 		{' '}
 		<TypeParameters details={details} declaration={constructor}/>
@@ -218,6 +220,7 @@ export const MethodTitle: FC<MemberTitleProps<Java.IMethod>> = (props) => {
 	const {details, member: method} = props;
 
 	return <>
+		<a id={method.toShortString()}/>
 		{buildExecutableModifiers(method, method.isDefault)}
 		{' '}
 		<TypeParameters details={details} declaration={method}/>
