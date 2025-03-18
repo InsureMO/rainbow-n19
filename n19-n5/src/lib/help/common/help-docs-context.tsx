@@ -8,23 +8,26 @@ export interface HelpDocsHelpers {
 	offSwitchToPackage: (listener: (to: Java.IPackage) => void) => void;
 	onSwitchToClass: (listener: (to: Java.IClass) => void) => void;
 	offSwitchToClass: (listener: (to: Java.IClass) => void) => void;
+	onSwitchToClassAnd: (listener: (to: string) => void) => void;
+	offSwitchToClassAnd: (listener: (to: string) => void) => void;
 }
 
 const createHelpDocsHelpers = () => {
 	const emitter = new EventEmitter().setMaxListeners(999999);
-	// eslint-disable-next-line @typescript-eslint/no-explicit-any
-	const on = (what: string) => (listener: (...args: Array<any>) => void) => emitter.on(what, listener);
-	// eslint-disable-next-line @typescript-eslint/no-explicit-any
-	const off = (what: string) => (listener: (...args: Array<any>) => void) => emitter.off(what, listener);
+	const on = (what: string) => {
+		// eslint-disable-next-line @typescript-eslint/no-explicit-any
+		return (listener: (...args: Array<any>) => void) => emitter.on(what, listener);
+	};
+	const off = (what: string) => {
+		// eslint-disable-next-line @typescript-eslint/no-explicit-any
+		return (listener: (...args: Array<any>) => void) => emitter.off(what, listener);
+	};
 	const switchTo = (to: Java.IPackage | Java.IClass | string): void => {
 		if (typeof to === 'string') {
-			// TODO, check link format, could be one of following:
-			// 1. internal field/constructor/method
-			// 2. internal anchor
-			// 3. another class
-			// 4. field/constructor/method of another class
-			// 5. anchor of another class
-			// 6. external link, should open new window
+			// 1. another class
+			// 2. field/constructor/method of another class
+			// 3. anchor of another class
+			emitter.emit('switchToClassAnd', to);
 		} else if ((to as Java.IClass).isArray == null) {
 			// is package
 			emitter.emit('switchToPackage', to);
@@ -37,7 +40,8 @@ const createHelpDocsHelpers = () => {
 	return {
 		switchTo,
 		onSwitchToPackage: on('switchToPackage'), offSwitchToPackage: off('switchToPackage'),
-		onSwitchToClass: on('switchToClass'), offSwitchToClass: off('switchToClass')
+		onSwitchToClass: on('switchToClass'), offSwitchToClass: off('switchToClass'),
+		onSwitchToClassAnd: on('switchToClassAnd'), offSwitchToClassAnd: off('switchToClassAnd')
 	};
 };
 

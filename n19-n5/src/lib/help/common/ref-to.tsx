@@ -40,3 +40,19 @@ export const RefToClass: FC<RefToClassProps> = (props) => {
 		</span>;
 	}
 };
+
+export const linkToAnchor = (root: HTMLDivElement, id: string) => {
+	const anchorId = id.substring(1);
+	const anchorSuffix1 = '.' + anchorId;
+	const anchorSuffix2 = anchorSuffix1.endsWith('...)') ? anchorSuffix1.replace('...)', '[])') : anchorSuffix1;
+	const shouldCompareSuffix2 = anchorSuffix1 !== anchorSuffix2;
+	const anchors = root.querySelectorAll('a[id]');
+	for (let index = 0, count = anchors.length; index < count; index++) {
+		const anchor = anchors.item(index);
+		const anId = anchor.getAttribute('id');
+		if (anId === anchorId || anId.endsWith(anchorSuffix1) || (shouldCompareSuffix2 && anId.endsWith(anchorSuffix2))) {
+			anchor.scrollIntoView({behavior: 'smooth', block: 'start'});
+			break;
+		}
+	}
+};

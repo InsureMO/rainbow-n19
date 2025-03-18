@@ -2,7 +2,7 @@ import {Java} from '@rainbow-n19/n2';
 import React, {FC, ReactNode, useEffect, useRef, useState} from 'react';
 import {CodeEditorClassDocs, GroovyEditorPackageGroup} from '../types';
 import {HelpClassDoc} from './class-doc';
-import {HelpDocsContextProvider, useHelpDocsContext} from './common';
+import {HelpDocsContextProvider, linkToAnchor, useHelpDocsContext} from './common';
 import {HelpItemList} from './item-list';
 import {HelpStateMode} from './types';
 import {
@@ -132,13 +132,17 @@ interface HelpState {
 	mode: HelpStateMode;
 	packageName?: Java.PackageName;
 	className?: Java.ClassName;
+	/** available only class name is given */
+	anchor?: string;
 }
 
 export const HelpDocs = (props: HelpProps) => {
 	const {classDocs, packageGroup} = props;
 
 	const {
-		onSwitchToPackage, offSwitchToPackage, onSwitchToClass, offSwitchToClass
+		onSwitchToPackage, offSwitchToPackage,
+		onSwitchToClass, offSwitchToClass,
+		onSwitchToClassAnd, offSwitchToClassAnd
 	} = useHelpDocsContext();
 	const contentRef = useRef<HTMLDivElement>(null);
 	const [opened, setOpened] = useState(false);
@@ -156,22 +160,36 @@ export const HelpDocs = (props: HelpProps) => {
 		};
 	}, [classDocs]);
 	useEffect(() => {
-		const onPackageClicked = (pkg: Java.IPackage) => {
+		const toPackage = (pkg: Java.IPackage) => {
 			setState({mode: HelpStateMode.PACKAGE, packageName: pkg.name});
 		};
-		const onClassClicked = (cls: Java.IClass) => {
-			setState({mode: HelpStateMode.CLASS, className: cls.name});
+		const toClass = (cls: Java.IClass, id?: string) => {
+			setState({mode: HelpStateMode.CLASS, className: cls.name, anchor: id});
 		};
-		onSwitchToPackage(onPackageClicked);
-		onSwitchToClass(onClassClicked);
+		const toClassAnd = (to: string) => {
+			const [className, id] = to.split('#');
+			const cls = classDocs.classLoader().findClass(className);
+			if (cls == null) {
+				return;
+			}
+			toClass(cls, id || (void 0));
+		};
+		onSwitchToPackage(toPackage);
+		onSwitchToClass(toClass);
+		onSwitchToClassAnd(toClassAnd);
 		return () => {
-			offSwitchToPackage(onPackageClicked);
-			offSwitchToClass(onClassClicked);
+			offSwitchToPackage(toPackage);
+			offSwitchToClass(toClass);
+			offSwitchToClassAnd(toClassAnd);
 		};
-	}, []);
+	}, [classDocs]);
 	useEffect(() => {
 		if (opened && contentRef.current != null) {
-			contentRef.current.scrollTo({top: 0, behavior: 'smooth'});
+			if (state.mode !== HelpStateMode.CLASS || state.anchor == null) {
+				contentRef.current.scrollTo({top: 0, behavior: 'smooth'});
+			} else {
+				linkToAnchor(contentRef.current, '#' + state.anchor);
+			}
 		}
 	});
 
