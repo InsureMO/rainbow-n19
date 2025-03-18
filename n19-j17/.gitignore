@@ -11,5 +11,11 @@ yarn-error.log*
 /index.d.ts
 /index.js
 /index.cjs
+/classes.d.ts
+/classes.js
+/classes.cjs
+/docs.d.ts
+/docs.js
+/docs.cjs
 /lib/
 

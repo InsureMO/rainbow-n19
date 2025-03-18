@@ -10,20 +10,29 @@ export const buildConfig = (lint) => {
 	// 	}
 	// });
 
-	return [{
-		input: './src/index.ts',
-		output: [
-			{format: 'es', dir: '.'},
-			{format: 'cjs', file: './index.cjs'}
-		],
-		plugins: [
-			lint ? eslint({exclude: ['../node_modules/**', 'node_modules/**']}) : null,
-			// lint ? tslint({exclude: ['../node_modules/**', 'node_modules/**']}) : null,
-			typescript({clean: true}),
-			babel({babelHelpers: 'bundled'})
-		].filter(x => x != null),
-		external(id) {
-			return ['@rainbow-n19/n2'].includes(id);
-		}
-	}];
+	const type = process.env.BUILD_TYPE || 'index';
+
+	return [
+		['./src/index.ts', './index.cjs', 'index'],
+		['./src/classes.ts', './classes.cjs', 'classes'],
+		['./src/docs.ts', './docs.cjs', 'docs']
+	].filter(([, , t]) => t === type)
+		.map(([input, cjs]) => {
+			return {
+				input,
+				output: [
+					{format: 'es', dir: '.'},
+					{format: 'cjs', file: cjs}
+				],
+				plugins: [
+					lint ? eslint({exclude: ['../node_modules/**', 'node_modules/**']}) : null,
+					// lint ? tslint({exclude: ['../node_modules/**', 'node_modules/**']}) : null,
+					typescript({clean: true}),
+					babel({babelHelpers: 'bundled'})
+				].filter(x => x != null),
+				external(id) {
+					return ['@rainbow-n19/n2'].includes(id);
+				}
+			}
+		});
 };

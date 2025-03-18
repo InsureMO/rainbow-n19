@@ -7,8 +7,14 @@
 	"types": "index.d.ts",
 	"type": "module",
 	"scripts": {
-		"build": "rollup -c",
-		"build:ci": "rollup -c rollup.config.ci.js",
+		"build:index": "BUILD_TYPE=index rollup -c",
+		"build:classes": "BUILD_TYPE=classes rollup -c",
+		"build:docs": "BUILD_TYPE=docs rollup -c",
+		"build": "yarn build:index && yarn build:classes && yarn build:docs",
+		"build:ci:index": "BUILD_TYPE=index rollup -c rollup.config.ci.js",
+		"build:ci:classes": "BUILD_TYPE=classes rollup -c rollup.config.ci.js",
+		"build:ci:docs": "BUILD_TYPE=docs rollup -c rollup.config.ci.js",
+		"build:ci": "yarn build:ci:index && yarn build:ci:classes && yarn build:ci:docs",
 		"test": "jest"
 	},
 	"repository": {
