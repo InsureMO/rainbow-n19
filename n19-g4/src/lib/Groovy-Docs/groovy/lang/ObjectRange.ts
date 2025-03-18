@@ -16,7 +16,7 @@ DocsCollector.collect('groovy.lang.ObjectRange', [
 			[/* text */ 't', `.`]
 		]]
 	],
-	/* fields */ UDF,
+	/* fields */,
 	[/* constructors */
 		[/* constructor */ '<init>(java.lang.Comparable,java.lang.Comparable)', [
 			[/* constructor description */
@@ -49,15 +49,15 @@ DocsCollector.collect('groovy.lang.ObjectRange', [
 				[/* block */ 'b', `
  Optimized Constructor avoiding initial computation of comparison.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			/* throws */ UDF
 		]]
 	],
 	[/* methods */
 		[/* method */ 'compareTo(java.lang.Comparable,java.lang.Comparable)', [
-			/* method description */ UDF,
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* method description */,
+			/* parameters */,
+			/* throws */,
 			/* return */ UDF
 		]],
 		[/* method */ 'decrement(java.lang.Object)', [
@@ -69,7 +69,7 @@ DocsCollector.collect('groovy.lang.ObjectRange', [
 					[/* text */ 't', `the value to decrement`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the decremented value`]
 			]
@@ -83,7 +83,7 @@ DocsCollector.collect('groovy.lang.ObjectRange', [
 					[/* text */ 't', `the value to increment`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the incremented value`]
 			]
@@ -93,16 +93,16 @@ DocsCollector.collect('groovy.lang.ObjectRange', [
 				[/* text */ 't', `throws IllegalArgumentException if to and from are incompatible, meaning they e.g. (likely) produce infinite sequences.
  Called at construction time, subclasses may override cautiously (using only members to and from).`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			/* return */ UDF
 		]],
 		[/* method */ 'contains(java.lang.Object)', [
 			[/* method description */
 				[/* text */ 't', `Iterates over all values and returns true if one value matches.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			/* return */ UDF
 		]],
 		[/* method */ 'containsWithinBounds(java.lang.Object)', [
@@ -114,7 +114,7 @@ DocsCollector.collect('groovy.lang.ObjectRange', [
 					[/* text */ 't', `the value of interest`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `true if the value is within the bounds`]
 			]
@@ -132,16 +132,16 @@ DocsCollector.collect('groovy.lang.ObjectRange', [
 					[/* text */ 't', `the object to check equality with`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if the ranges are equal`]
 			]
 		]],
 		[/* method */ 'equals(java.lang.Object)', [
-			/* method description */ UDF,
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* method description */,
+			/* parameters */,
+			/* throws */,
 			/* return */ UDF
 		]],
 		[/* method */ 'isReverse()', [
@@ -149,31 +149,31 @@ DocsCollector.collect('groovy.lang.ObjectRange', [
 				[/* block */ 'b', `Indicates whether this is a reverse range which iterates backwards
  starting from the to value and ending on the from value`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if this is a reverse range`]
 			]
 		]],
 		[/* method */ 'size()', [
-			/* method description */ UDF,
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* method description */,
+			/* parameters */,
+			/* throws */,
 			/* return */ UDF
 		]],
 		[/* method */ 'get(int)', [
-			/* method description */ UDF,
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* method description */,
+			/* parameters */,
+			/* throws */,
 			/* return */ UDF
 		]],
 		[/* method */ 'getFrom()', [
 			[/* method description */
 				[/* block */ 'b', `The lower value in the range.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the lower value in the range.`]
 			]
@@ -182,16 +182,16 @@ DocsCollector.collect('groovy.lang.ObjectRange', [
 			[/* method description */
 				[/* block */ 'b', `The upper value in the range.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the upper value in the range`]
 			]
 		]],
 		[/* method */ 'inspect()', [
-			/* method description */ UDF,
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* method description */,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the verbose `],
 				[/* external link */ 'a', `https://docs.oracle.com/javase/8/docs/api/java/lang/String.html`, `String`],
@@ -203,15 +203,15 @@ DocsCollector.collect('groovy.lang.ObjectRange', [
 			]
 		]],
 		[/* method */ 'toString()', [
-			/* method description */ UDF,
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* method description */,
+			/* parameters */,
+			/* throws */,
 			/* return */ UDF
 		]],
 		[/* method */ 'iterator()', [
-			/* method description */ UDF,
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* method description */,
+			/* parameters */,
+			/* throws */,
 			/* return */ UDF
 		]],
 		[/* method */ 'step(int)', [
@@ -223,15 +223,15 @@ DocsCollector.collect('groovy.lang.ObjectRange', [
 					[/* text */ 't', `the amount by which to step. If negative, steps through the range backwards.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the list formed by stepping through the range by the indicated interval.`]
 			]
 		]],
 		[/* method */ 'subList(int,int)', [
-			/* method description */ UDF,
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* method description */,
+			/* parameters */,
+			/* throws */,
 			/* return */ UDF
 		]],
 		[/* method */ 'step(int,groovy.lang.Closure)', [
@@ -248,8 +248,9 @@ DocsCollector.collect('groovy.lang.ObjectRange', [
 					[/* text */ 't', ` to call`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			/* return */ UDF
 		]]
 	],
+	/* enum values */ UDF
 ]);

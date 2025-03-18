@@ -62,7 +62,7 @@ DocsCollector.collect('groovy.lang.IntRange', [
 			[/* text */ 't', `.`]
 		]]
 	],
-	/* fields */ UDF,
+	/* fields */,
 	[/* constructors */
 		[/* constructor */ '<init>(int,int,boolean)', [
 			[/* constructor description */
@@ -193,21 +193,21 @@ DocsCollector.collect('groovy.lang.IntRange', [
 					[/* text */ 't', `the desired step size`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a new NumberRange`]
 			]
 		]],
 		[/* method */ 'contains(java.lang.Object)', [
-			/* method description */ UDF,
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* method description */,
+			/* parameters */,
+			/* throws */,
 			/* return */ UDF
 		]],
 		[/* method */ 'containsAll(java.util.Collection)', [
-			/* method description */ UDF,
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* method description */,
+			/* parameters */,
+			/* throws */,
 			/* return */ UDF
 		]],
 		[/* method */ 'containsWithinBounds(java.lang.Object)', [
@@ -233,7 +233,7 @@ DocsCollector.collect('groovy.lang.IntRange', [
 					[/* text */ 't', `the object to check against the boundaries of the range`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if the object is between the from and to values`]
@@ -252,7 +252,7 @@ DocsCollector.collect('groovy.lang.IntRange', [
 					[/* text */ 't', `the object to compare for equality`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if the ranges are equal`]
@@ -294,7 +294,7 @@ DocsCollector.collect('groovy.lang.IntRange', [
 					[/* text */ 't', `the object to compare`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if the objects are equal`]
@@ -305,8 +305,8 @@ DocsCollector.collect('groovy.lang.IntRange', [
 				[/* block */ 'b', `Indicates whether this is a reverse range which iterates backwards
  starting from the to value and ending on the from value`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if this is a reverse range`]
@@ -316,8 +316,8 @@ DocsCollector.collect('groovy.lang.IntRange', [
 			[/* method description */
 				[/* text */ 't', `Gets the 'from' value as a primitive integer.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the 'from' value as a primitive integer.`]
 			]
@@ -326,22 +326,22 @@ DocsCollector.collect('groovy.lang.IntRange', [
 			[/* method description */
 				[/* text */ 't', `Gets the 'to' value as a primitive integer.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the 'to' value as a primitive integer.`]
 			]
 		]],
 		[/* method */ 'hashCode()', [
-			/* method description */ UDF,
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* method description */,
+			/* parameters */,
+			/* throws */,
 			/* return */ UDF
 		]],
 		[/* method */ 'size()', [
-			/* method description */ UDF,
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* method description */,
+			/* parameters */,
+			/* throws */,
 			/* return */ UDF
 		]],
 		[/* method */ 'getInclusive()', [
@@ -350,38 +350,38 @@ DocsCollector.collect('groovy.lang.IntRange', [
 				[/* inline code block */ 'i', `getInclusiveRight`],
 				[/* text */ 't', `, kept here for backwards compatibility.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			/* return */ UDF
 		]],
 		[/* method */ 'getInclusiveLeft()', [
 			[/* method description */
 				[/* text */ 't', `Returns the inclusiveLeft flag. Null for non-inclusive aware ranges or non-null for inclusive aware ranges.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			/* return */ UDF
 		]],
 		[/* method */ 'getInclusiveRight()', [
 			[/* method description */
 				[/* text */ 't', `Returns the inclusiveRight flag. Null for non-inclusive aware ranges or non-null for inclusive aware ranges.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			/* return */ UDF
 		]],
 		[/* method */ 'get(int)', [
-			/* method description */ UDF,
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* method description */,
+			/* parameters */,
+			/* throws */,
 			/* return */ UDF
 		]],
 		[/* method */ 'getFrom()', [
 			[/* method description */
 				[/* block */ 'b', `The lower value in the range.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the lower value in the range.`]
 			]
@@ -390,16 +390,16 @@ DocsCollector.collect('groovy.lang.IntRange', [
 			[/* method description */
 				[/* block */ 'b', `The upper value in the range.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the upper value in the range`]
 			]
 		]],
 		[/* method */ 'inspect()', [
-			/* method description */ UDF,
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* method description */,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the verbose `],
 				[/* external link */ 'a', `https://docs.oracle.com/javase/8/docs/api/java/lang/String.html`, `String`],
@@ -411,15 +411,15 @@ DocsCollector.collect('groovy.lang.IntRange', [
 			]
 		]],
 		[/* method */ 'toString()', [
-			/* method description */ UDF,
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* method description */,
+			/* parameters */,
+			/* throws */,
 			/* return */ UDF
 		]],
 		[/* method */ 'iterator()', [
-			/* method description */ UDF,
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* method description */,
+			/* parameters */,
+			/* throws */,
 			/* return */ UDF
 		]],
 		[/* method */ 'step(int)', [
@@ -431,15 +431,15 @@ DocsCollector.collect('groovy.lang.IntRange', [
 					[/* text */ 't', `the amount by which to step. If negative, steps through the range backwards.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the list formed by stepping through the range by the indicated interval.`]
 			]
 		]],
 		[/* method */ 'subList(int,int)', [
-			/* method description */ UDF,
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* method description */,
+			/* parameters */,
+			/* throws */,
 			/* return */ UDF
 		]],
 		[/* method */ 'step(int,groovy.lang.Closure)', [
@@ -456,8 +456,9 @@ DocsCollector.collect('groovy.lang.IntRange', [
 					[/* text */ 't', ` to call`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			/* return */ UDF
 		]]
 	],
+	/* enum values */ UDF
 ]);

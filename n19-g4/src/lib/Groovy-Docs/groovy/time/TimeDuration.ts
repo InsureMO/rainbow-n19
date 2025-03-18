@@ -18,55 +18,56 @@ DocsCollector.collect('groovy.time.TimeDuration', [
  If you ask Duration to convert itself to milliseconds then it will work on the basis of 60 seconds in a minute.
  If you add or subtract it from a date it will take leap seconds into account.`]
 	],
-	/* fields */ UDF,
+	/* fields */,
 	[/* constructors */
 		[/* constructor */ '<init>(int,int,int,int)', [
-			/* constructor description */ UDF,
-			/* parameters */ UDF,
+			/* constructor description */,
+			/* parameters */,
 			/* throws */ UDF
 		]],
 		[/* constructor */ '<init>(int,int,int,int,int)', [
-			/* constructor description */ UDF,
-			/* parameters */ UDF,
+			/* constructor description */,
+			/* parameters */,
 			/* throws */ UDF
 		]]
 	],
 	[/* methods */
 		[/* method */ 'getFrom()', [
-			/* method description */ UDF,
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* method description */,
+			/* parameters */,
+			/* throws */,
 			/* return */ UDF
 		]],
 		[/* method */ 'minus(groovy.time.DatumDependentDuration)', [
-			/* method description */ UDF,
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* method description */,
+			/* parameters */,
+			/* throws */,
 			/* return */ UDF
 		]],
 		[/* method */ 'plus(groovy.time.DatumDependentDuration)', [
-			/* method description */ UDF,
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* method description */,
+			/* parameters */,
+			/* throws */,
 			/* return */ UDF
 		]],
 		[/* method */ 'minus(groovy.time.Duration)', [
-			/* method description */ UDF,
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* method description */,
+			/* parameters */,
+			/* throws */,
 			/* return */ UDF
 		]],
 		[/* method */ 'plus(groovy.time.Duration)', [
-			/* method description */ UDF,
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* method description */,
+			/* parameters */,
+			/* throws */,
 			/* return */ UDF
 		]],
 		[/* method */ 'getAgo()', [
-			/* method description */ UDF,
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* method description */,
+			/* parameters */,
+			/* throws */,
 			/* return */ UDF
 		]]
 	],
+	/* enum values */ UDF
 ]);

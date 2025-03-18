@@ -2,27 +2,28 @@ import {UDF} from '../../../utils';
 import {DocsCollector} from '../../DocsCollector';
 
 DocsCollector.collect('groovy.time.BaseDuration$From', [
-	/* class description */ UDF,
-	/* fields */ UDF,
+	/* class description */,
+	/* fields */,
 	[/* constructors */
 		[/* constructor */ '<init>()', [
-			/* constructor description */ UDF,
-			/* parameters */ UDF,
+			/* constructor description */,
+			/* parameters */,
 			/* throws */ UDF
 		]]
 	],
 	[/* methods */
 		[/* method */ 'getNow()', [
-			/* method description */ UDF,
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* method description */,
+			/* parameters */,
+			/* throws */,
 			/* return */ UDF
 		]],
 		[/* method */ 'getToday()', [
-			/* method description */ UDF,
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* method description */,
+			/* parameters */,
+			/* throws */,
 			/* return */ UDF
 		]]
 	],
+	/* enum values */ UDF
 ]);

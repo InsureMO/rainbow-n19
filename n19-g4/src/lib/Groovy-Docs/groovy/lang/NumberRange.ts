@@ -9,7 +9,7 @@ DocsCollector.collect('groovy.lang.NumberRange', [
  0..3 is deemed to be equal to 0.0..3.0 but they have different hashCode values,
  so storing a value using one of these ranges couldn't be retrieved using the other.`]
 	],
-	/* fields */ UDF,
+	/* fields */,
 	[/* constructors */
 		[/* constructor */ '<init>(java.lang.Number,java.lang.Number,java.lang.Number)', [
 			[/* constructor description */
@@ -183,7 +183,7 @@ DocsCollector.collect('groovy.lang.NumberRange', [
 					[/* text */ 't', `the desired step size`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a new NumberRange`]
 			]
@@ -193,8 +193,8 @@ DocsCollector.collect('groovy.lang.NumberRange', [
 				[/* text */ 't', `iterates over all values and returns true if one value matches.
  Also see containsWithinBounds.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			/* return */ UDF
 		]],
 		[/* method */ 'containsWithinBounds(java.lang.Object)', [
@@ -206,7 +206,7 @@ DocsCollector.collect('groovy.lang.NumberRange', [
 					[/* text */ 't', `the value of interest`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `true if the value is within the bounds`]
 			]
@@ -221,7 +221,7 @@ DocsCollector.collect('groovy.lang.NumberRange', [
 					[/* text */ 't', `the object to be compared for equality with this NumberRange`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if the specified object is equal to this NumberRange`]
@@ -242,7 +242,7 @@ DocsCollector.collect('groovy.lang.NumberRange', [
 					[/* text */ 't', `the NumberRange to check equality with`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if the ranges are equal`]
@@ -253,8 +253,8 @@ DocsCollector.collect('groovy.lang.NumberRange', [
 				[/* block */ 'b', `Indicates whether this is a reverse range which iterates backwards
  starting from the to value and ending on the from value`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if this is a reverse range`]
@@ -264,54 +264,54 @@ DocsCollector.collect('groovy.lang.NumberRange', [
 			[/* method description */
 				[/* text */ 't', `A NumberRange's hashCode is based on hashCode values of the discrete items it represents.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the hashCode value`]
 			]
 		]],
 		[/* method */ 'size()', [
-			/* method description */ UDF,
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* method description */,
+			/* parameters */,
+			/* throws */,
 			/* return */ UDF
 		]],
 		[/* method */ 'get(int)', [
-			/* method description */ UDF,
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* method description */,
+			/* parameters */,
+			/* throws */,
 			/* return */ UDF
 		]],
 		[/* method */ 'getFrom()', [
 			[/* method description */
 				[/* block */ 'b', `The lower value in the range.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the lower value in the range.`]
 			]
 		]],
 		[/* method */ 'getStepSize()', [
-			/* method description */ UDF,
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* method description */,
+			/* parameters */,
+			/* throws */,
 			/* return */ UDF
 		]],
 		[/* method */ 'getTo()', [
 			[/* method description */
 				[/* block */ 'b', `The upper value in the range.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the upper value in the range`]
 			]
 		]],
 		[/* method */ 'inspect()', [
-			/* method description */ UDF,
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* method description */,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the verbose `],
 				[/* external link */ 'a', `https://docs.oracle.com/javase/8/docs/api/java/lang/String.html`, `String`],
@@ -323,15 +323,15 @@ DocsCollector.collect('groovy.lang.NumberRange', [
 			]
 		]],
 		[/* method */ 'toString()', [
-			/* method description */ UDF,
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* method description */,
+			/* parameters */,
+			/* throws */,
 			/* return */ UDF
 		]],
 		[/* method */ 'iterator()', [
-			/* method description */ UDF,
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* method description */,
+			/* parameters */,
+			/* throws */,
 			/* return */ UDF
 		]],
 		[/* method */ 'step(int)', [
@@ -343,15 +343,15 @@ DocsCollector.collect('groovy.lang.NumberRange', [
 					[/* text */ 't', `the amount by which to step. If negative, steps through the range backwards.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the list formed by stepping through the range by the indicated interval.`]
 			]
 		]],
 		[/* method */ 'subList(int,int)', [
-			/* method description */ UDF,
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* method description */,
+			/* parameters */,
+			/* throws */,
 			/* return */ UDF
 		]],
 		[/* method */ 'step(int,groovy.lang.Closure)', [
@@ -368,8 +368,9 @@ DocsCollector.collect('groovy.lang.NumberRange', [
 					[/* text */ 't', ` to call`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			/* return */ UDF
 		]]
 	],
+	/* enum values */ UDF
 ]);

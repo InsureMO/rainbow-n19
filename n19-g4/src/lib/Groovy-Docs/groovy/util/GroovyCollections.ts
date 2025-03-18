@@ -5,25 +5,25 @@ DocsCollector.collect('groovy.util.GroovyCollections', [
 	[/* class description */
 		[/* text */ 't', `A Collections utility class`]
 	],
-	/* fields */ UDF,
+	/* fields */,
 	[/* constructors */
 		[/* constructor */ '<init>()', [
-			/* constructor description */ UDF,
-			/* parameters */ UDF,
+			/* constructor description */,
+			/* parameters */,
 			/* throws */ UDF
 		]]
 	],
 	[/* methods */
 		[/* method */ 'inits(java.lang.Iterable)', [
-			/* method description */ UDF,
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* method description */,
+			/* parameters */,
+			/* throws */,
 			/* return */ UDF
 		]],
 		[/* method */ 'tails(java.lang.Iterable)', [
-			/* method description */ UDF,
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* method description */,
+			/* parameters */,
+			/* throws */,
 			/* return */ UDF
 		]],
 		[/* method */ 'union(groovy.lang.Closure,java.lang.Iterable...)', [
@@ -43,7 +43,7 @@ DocsCollector.collect('groovy.util.GroovyCollections', [
 					[/* text */ 't', `the sources of items`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the ordered list of unique values found`]
 			]
@@ -60,7 +60,7 @@ DocsCollector.collect('groovy.util.GroovyCollections', [
 					[/* text */ 't', `the sources of items`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the ordered list of unique values found`]
 			]
@@ -83,7 +83,7 @@ DocsCollector.collect('groovy.util.GroovyCollections', [
 					[/* text */ 't', `the sources of items`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the ordered list of unique values found`]
 			]
@@ -100,7 +100,7 @@ DocsCollector.collect('groovy.util.GroovyCollections', [
 					[/* text */ 't', `the list of source items`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the ordered list of unique values found`]
 			]
@@ -121,7 +121,7 @@ DocsCollector.collect('groovy.util.GroovyCollections', [
 					[/* text */ 't', `a Closure used to determine unique items`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the ordered list of unique values found`]
 			]
@@ -144,7 +144,7 @@ DocsCollector.collect('groovy.util.GroovyCollections', [
 					[/* text */ 't', `a Comparator`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the ordered list of unique values found`]
 			]
@@ -162,7 +162,7 @@ DocsCollector.collect('groovy.util.GroovyCollections', [
 					[/* text */ 't', `the List of items`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the subsequences from items`]
 			]
@@ -176,7 +176,7 @@ DocsCollector.collect('groovy.util.GroovyCollections', [
 					[/* text */ 't', `a Collection`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the maximum value`]
 			]
@@ -191,7 +191,7 @@ DocsCollector.collect('groovy.util.GroovyCollections', [
 					[/* text */ 't', `an array of items`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the maximum value`]
 			]
@@ -205,7 +205,7 @@ DocsCollector.collect('groovy.util.GroovyCollections', [
 					[/* text */ 't', `an Iterable`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the minimum value`]
 			]
@@ -220,7 +220,7 @@ DocsCollector.collect('groovy.util.GroovyCollections', [
 					[/* text */ 't', `an array of items`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the minimum value`]
 			]
@@ -234,7 +234,7 @@ DocsCollector.collect('groovy.util.GroovyCollections', [
 					[/* text */ 't', `an Iterable of items`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the sum of the item`]
 			]
@@ -248,7 +248,7 @@ DocsCollector.collect('groovy.util.GroovyCollections', [
 					[/* text */ 't', `an array of items`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the sum of the items`]
 			]
@@ -281,7 +281,7 @@ DocsCollector.collect('groovy.util.GroovyCollections', [
 					[/* text */ 't', `the Iterable of given collections`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a List of the combinations found`]
 			]
@@ -295,7 +295,7 @@ DocsCollector.collect('groovy.util.GroovyCollections', [
 					[/* text */ 't', `the given collections`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a List of the combinations found`]
 			]
@@ -309,7 +309,7 @@ DocsCollector.collect('groovy.util.GroovyCollections', [
 					[/* text */ 't', `the given lists`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a List of the transposed lists`]
 			]
@@ -335,10 +335,11 @@ DocsCollector.collect('groovy.util.GroovyCollections', [
 					[/* text */ 't', `the given lists`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a List of the transposed lists`]
 			]
 		]]
 	],
+	/* enum values */ UDF
 ]);

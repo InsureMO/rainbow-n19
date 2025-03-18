@@ -7,117 +7,118 @@ DocsCollector.collect('groovy.time.BaseDuration', [
 	],
 	[/* fields */
 		[/* field */ 'days', [
-			/* field description */ UDF,
+			/* field description */,
 		]],
 		[/* field */ 'hours', [
-			/* field description */ UDF,
+			/* field description */,
 		]],
 		[/* field */ 'millis', [
-			/* field description */ UDF,
+			/* field description */,
 		]],
 		[/* field */ 'minutes', [
-			/* field description */ UDF,
+			/* field description */,
 		]],
 		[/* field */ 'months', [
-			/* field description */ UDF,
+			/* field description */,
 		]],
 		[/* field */ 'seconds', [
-			/* field description */ UDF,
+			/* field description */,
 		]],
 		[/* field */ 'years', [
-			/* field description */ UDF,
+			/* field description */,
 		]]
 	],
 	[/* constructors */
 		[/* constructor */ '<init>(int,int,int,int,int)', [
-			/* constructor description */ UDF,
-			/* parameters */ UDF,
+			/* constructor description */,
+			/* parameters */,
 			/* throws */ UDF
 		]],
 		[/* constructor */ '<init>(int,int,int,int,int,int,int)', [
-			/* constructor description */ UDF,
-			/* parameters */ UDF,
+			/* constructor description */,
+			/* parameters */,
 			/* throws */ UDF
 		]]
 	],
 	[/* methods */
 		[/* method */ 'getFrom()', [
-			/* method description */ UDF,
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* method description */,
+			/* parameters */,
+			/* throws */,
 			/* return */ UDF
 		]],
 		[/* method */ 'getAgo()', [
-			/* method description */ UDF,
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* method description */,
+			/* parameters */,
+			/* throws */,
 			/* return */ UDF
 		]],
 		[/* method */ 'toMilliseconds()', [
-			/* method description */ UDF,
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* method description */,
+			/* parameters */,
+			/* throws */,
 			/* return */ UDF
 		]],
 		[/* method */ 'compareTo(groovy.time.BaseDuration)', [
-			/* method description */ UDF,
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* method description */,
+			/* parameters */,
+			/* throws */,
 			/* return */ UDF
 		]],
 		[/* method */ 'getDays()', [
-			/* method description */ UDF,
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* method description */,
+			/* parameters */,
+			/* throws */,
 			/* return */ UDF
 		]],
 		[/* method */ 'getHours()', [
-			/* method description */ UDF,
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* method description */,
+			/* parameters */,
+			/* throws */,
 			/* return */ UDF
 		]],
 		[/* method */ 'getMillis()', [
-			/* method description */ UDF,
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* method description */,
+			/* parameters */,
+			/* throws */,
 			/* return */ UDF
 		]],
 		[/* method */ 'getMinutes()', [
-			/* method description */ UDF,
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* method description */,
+			/* parameters */,
+			/* throws */,
 			/* return */ UDF
 		]],
 		[/* method */ 'getMonths()', [
-			/* method description */ UDF,
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* method description */,
+			/* parameters */,
+			/* throws */,
 			/* return */ UDF
 		]],
 		[/* method */ 'getSeconds()', [
-			/* method description */ UDF,
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* method description */,
+			/* parameters */,
+			/* throws */,
 			/* return */ UDF
 		]],
 		[/* method */ 'getYears()', [
-			/* method description */ UDF,
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* method description */,
+			/* parameters */,
+			/* throws */,
 			/* return */ UDF
 		]],
 		[/* method */ 'toString()', [
-			/* method description */ UDF,
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* method description */,
+			/* parameters */,
+			/* throws */,
 			/* return */ UDF
 		]],
 		[/* method */ 'plus(java.util.Date)', [
-			/* method description */ UDF,
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* method description */,
+			/* parameters */,
+			/* throws */,
 			/* return */ UDF
 		]]
 	],
+	/* enum values */ UDF
 ]);

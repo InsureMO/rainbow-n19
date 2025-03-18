@@ -5,13 +5,14 @@ DocsCollector.collect('groovy.lang.GroovyObjectSupport', [
 	[/* class description */
 		[/* text */ 't', `Base class for Java objects wishing to be Groovy objects.`]
 	],
-	/* fields */ UDF,
+	/* fields */,
 	[/* constructors */
 		[/* constructor */ '<init>()', [
-			/* constructor description */ UDF,
-			/* parameters */ UDF,
+			/* constructor description */,
+			/* parameters */,
 			/* throws */ UDF
 		]]
 	],
-	/* methods */ UDF,
+	/* methods */,
+	/* enum values */ UDF
 ]);

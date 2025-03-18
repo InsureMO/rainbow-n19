@@ -38,7 +38,7 @@ DocsCollector.collect('groovy.lang.EmptyRange', [
 				[/* inline code block */ 'i', `UnsupportedOperationException`],
 				[/* text */ 't', ` for an empty range.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.lang.UnsupportedOperationException', [/* throw description */
 					[/* text */ 't', `always`]
@@ -52,7 +52,7 @@ DocsCollector.collect('groovy.lang.EmptyRange', [
 				[/* inline code block */ 'i', `UnsupportedOperationException`],
 				[/* text */ 't', ` for an empty range.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.lang.UnsupportedOperationException', UDF]
 			],
@@ -64,7 +64,7 @@ DocsCollector.collect('groovy.lang.EmptyRange', [
 				[/* inline code block */ 'i', `UnsupportedOperationException`],
 				[/* text */ 't', ` for an empty range.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.lang.UnsupportedOperationException', UDF]
 			],
@@ -79,7 +79,7 @@ DocsCollector.collect('groovy.lang.EmptyRange', [
 					[/* text */ 't', `the object to check against the boundaries of the range`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `false`]
 			]
@@ -88,8 +88,8 @@ DocsCollector.collect('groovy.lang.EmptyRange', [
 			[/* method description */
 				[/* text */ 't', `Never true for an empty range.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `false`]
 			]
@@ -100,7 +100,7 @@ DocsCollector.collect('groovy.lang.EmptyRange', [
 				[/* inline code block */ 'i', `UnsupportedOperationException`],
 				[/* text */ 't', ` for an empty range.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.lang.UnsupportedOperationException', UDF]
 			],
@@ -112,7 +112,7 @@ DocsCollector.collect('groovy.lang.EmptyRange', [
 				[/* inline code block */ 'i', `UnsupportedOperationException`],
 				[/* text */ 't', ` for an empty range.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.lang.UnsupportedOperationException', UDF]
 			],
@@ -124,7 +124,7 @@ DocsCollector.collect('groovy.lang.EmptyRange', [
 				[/* inline code block */ 'i', `UnsupportedOperationException`],
 				[/* text */ 't', ` for an empty range.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.lang.UnsupportedOperationException', UDF]
 			],
@@ -134,16 +134,16 @@ DocsCollector.collect('groovy.lang.EmptyRange', [
 			[/* method description */
 				[/* text */ 't', `Always 0 for an empty range.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `0`]
 			]
 		]],
 		[/* method */ 'inspect()', [
-			/* method description */ UDF,
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* method description */,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the verbose `],
 				[/* external link */ 'a', `https://docs.oracle.com/javase/8/docs/api/java/lang/String.html`, `String`],
@@ -155,9 +155,9 @@ DocsCollector.collect('groovy.lang.EmptyRange', [
 			]
 		]],
 		[/* method */ 'toString()', [
-			/* method description */ UDF,
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* method description */,
+			/* parameters */,
+			/* throws */,
 			/* return */ UDF
 		]],
 		[/* method */ 'step(int)', [
@@ -169,7 +169,7 @@ DocsCollector.collect('groovy.lang.EmptyRange', [
 					[/* text */ 't', `the amount by which to step. If negative, steps through the range backwards.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the list formed by stepping through the range by the indicated interval.`]
 			]
@@ -180,7 +180,7 @@ DocsCollector.collect('groovy.lang.EmptyRange', [
 				[/* inline code block */ 'i', `IndexOutOfBoundsException`],
 				[/* text */ 't', ` for an empty range.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.lang.IndexOutOfBoundsException', [/* throw description */
 					[/* text */ 't', `always`]
@@ -192,8 +192,8 @@ DocsCollector.collect('groovy.lang.EmptyRange', [
 			[/* method description */
 				[/* text */ 't', `The lower value in the range.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the lower value in the range.`]
 			]
@@ -202,8 +202,8 @@ DocsCollector.collect('groovy.lang.EmptyRange', [
 			[/* method description */
 				[/* text */ 't', `The upper value in the range.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the upper value in the range`]
 			]
@@ -214,7 +214,7 @@ DocsCollector.collect('groovy.lang.EmptyRange', [
 				[/* inline code block */ 'i', `UnsupportedOperationException`],
 				[/* text */ 't', ` for an empty range.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.lang.UnsupportedOperationException', UDF]
 			],
@@ -226,7 +226,7 @@ DocsCollector.collect('groovy.lang.EmptyRange', [
 				[/* inline code block */ 'i', `UnsupportedOperationException`],
 				[/* text */ 't', ` for an empty range.`]
 			],
-			/* parameters */ UDF,
+			/* parameters */,
 			[/* throws */
 				[/* throw */ 'java.lang.UnsupportedOperationException', UDF]
 			],
@@ -246,8 +246,9 @@ DocsCollector.collect('groovy.lang.EmptyRange', [
 					[/* text */ 't', ` to call`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			/* return */ UDF
 		]]
 	],
+	/* enum values */ UDF
 ]);

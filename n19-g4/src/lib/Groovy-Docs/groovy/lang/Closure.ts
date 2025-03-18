@@ -105,13 +105,13 @@ DocsCollector.collect('groovy.lang.Closure', [
 			],
 		]],
 		[/* field */ 'DONE', [
-			/* field description */ UDF,
+			/* field description */,
 		]],
 		[/* field */ 'IDENTITY', [
-			/* field description */ UDF,
+			/* field description */,
 		]],
 		[/* field */ 'maximumNumberOfParameters', [
-			/* field description */ UDF,
+			/* field description */,
 		]],
 		[/* field */ 'OWNER_FIRST', [
 			[/* field description */
@@ -186,10 +186,10 @@ DocsCollector.collect('groovy.lang.Closure', [
 			],
 		]],
 		[/* field */ 'parameterTypes', [
-			/* field description */ UDF,
+			/* field description */,
 		]],
 		[/* field */ 'SKIP', [
-			/* field description */ UDF,
+			/* field description */,
 		]],
 		[/* field */ 'TO_SELF', [
 			[/* field description */
@@ -219,8 +219,8 @@ DocsCollector.collect('groovy.lang.Closure', [
 			/* throws */ UDF
 		]],
 		[/* constructor */ '<init>(java.lang.Object,java.lang.Object)', [
-			/* constructor description */ UDF,
-			/* parameters */ UDF,
+			/* constructor description */,
+			/* parameters */,
 			/* throws */ UDF
 		]]
 	],
@@ -230,8 +230,8 @@ DocsCollector.collect('groovy.lang.Closure', [
 				[/* text */ 't', `Alias for `],
 				[/* reference */ 'r', `#rightShift(groovy.lang.Closure)`, `rightShift(Closure)`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the newly composed closure`]
 			]
@@ -265,21 +265,21 @@ DocsCollector.collect('groovy.lang.Closure', [
 					[/* text */ 't', `the Closure to compose with the current Closure`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the new composed Closure`]
 			]
 		]],
 		[/* method */ 'isCase(java.lang.Object)', [
-			/* method description */ UDF,
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* method description */,
+			/* parameters */,
+			/* throws */,
 			/* return */ UDF
 		]],
 		[/* method */ 'asWritable()', [
-			/* method description */ UDF,
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* method description */,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a version of this closure which implements Writable.  Note that
  the returned Writable also overrides `],
@@ -296,8 +296,8 @@ DocsCollector.collect('groovy.lang.Closure', [
 				[/* inline code block */ 'i', `this`],
 				[/* text */ 't', `.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the newly composed closure`]
 			]
@@ -317,7 +317,7 @@ DocsCollector.collect('groovy.lang.Closure', [
 					[/* text */ 't', `the number of times to reverse compose the closure with itself`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the newly composed closure`]
 			]
@@ -327,8 +327,8 @@ DocsCollector.collect('groovy.lang.Closure', [
 				[/* text */ 't', `Alias for `],
 				[/* reference */ 'r', `#leftShift(java.lang.Object)`, `leftShift(Closure)`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the newly composed closure`]
 			]
@@ -341,8 +341,8 @@ DocsCollector.collect('groovy.lang.Closure', [
 				[/* inline code block */ 'i', `this`],
 				[/* text */ 't', `.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the newly composed closure`]
 			]
@@ -362,7 +362,7 @@ DocsCollector.collect('groovy.lang.Closure', [
 					[/* text */ 't', `the number of times to compose the closure with itself`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the newly composed closure`]
 			]
@@ -376,7 +376,7 @@ DocsCollector.collect('groovy.lang.Closure', [
 					[/* text */ 't', `the argument to bind`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the new closure with the argument bound`]
 			]
@@ -428,7 +428,7 @@ DocsCollector.collect('groovy.lang.Closure', [
 					[/* text */ 't', `the arguments to bind`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the new closure with its arguments bound`]
 			]
@@ -438,8 +438,8 @@ DocsCollector.collect('groovy.lang.Closure', [
 				[/* text */ 't', `Returns a copy of this closure where the "owner", "delegate" and "thisObject"
  fields are null, allowing proper serialization when one of them is not serializable.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a serializable closure.`]
 			]
@@ -473,7 +473,7 @@ DocsCollector.collect('groovy.lang.Closure', [
 					[/* text */ 't', `the Closure to compose with the current Closure`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the new composed Closure`]
 			]
@@ -491,8 +491,8 @@ DocsCollector.collect('groovy.lang.Closure', [
 
  The cache gets garbage-collected together with the memoized closure.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `A new closure forwarding to the original one while caching the results`]
 			]
@@ -522,7 +522,7 @@ DocsCollector.collect('groovy.lang.Closure', [
 					[/* text */ 't', `Number of cached return values to protect from garbage collection`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `A new function forwarding to the original one while caching the results`]
 			]
@@ -546,7 +546,7 @@ DocsCollector.collect('groovy.lang.Closure', [
 					[/* text */ 't', `The maximum size the cache can grow to`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `A new function forwarding to the original one while caching the results`]
 			]
@@ -581,7 +581,7 @@ DocsCollector.collect('groovy.lang.Closure', [
 					[/* text */ 't', `The maximum size the cache can grow to`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `A new function forwarding to the original one while caching the results`]
 			]
@@ -595,7 +595,7 @@ DocsCollector.collect('groovy.lang.Closure', [
 					[/* text */ 't', `the argument to bind`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the new closure with the argument bound`]
 			]
@@ -657,7 +657,7 @@ DocsCollector.collect('groovy.lang.Closure', [
 					[/* text */ 't', `the arguments to bind`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the new closure with its arguments bound`]
 			]
@@ -671,7 +671,7 @@ DocsCollector.collect('groovy.lang.Closure', [
 					[/* text */ 't', `the argument to bind`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the new closure with the argument bound`]
 			]
@@ -701,7 +701,7 @@ DocsCollector.collect('groovy.lang.Closure', [
 					[/* text */ 't', `the arguments to bind`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the new closure with its arguments bound`]
 			]
@@ -726,7 +726,7 @@ DocsCollector.collect('groovy.lang.Closure', [
 					[/* text */ 't', `the closure "this" object`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `a copy of this closure where owner, delegate and thisObject are replaced`]
 			]
@@ -740,8 +740,8 @@ DocsCollector.collect('groovy.lang.Closure', [
  which will be executed by the trampoline as the next step.
  Once a non-closure value is returned, the trampoline stops and returns the value as the final result.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `A closure, which will execute the original closure on a trampoline.`]
 			]
@@ -777,23 +777,23 @@ DocsCollector.collect('groovy.lang.Closure', [
 					[/* text */ 't', `Parameters to the closure, so as the trampoline mechanism can call it`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `A closure, which will execute the original closure on a trampoline.`]
 			]
 		]],
 		[/* method */ 'getDirective()', [
-			/* method description */ UDF,
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* method description */,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `Returns the directive.`]
 			]
 		]],
 		[/* method */ 'getMaximumNumberOfParameters()', [
-			/* method description */ UDF,
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* method description */,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the maximum number of parameters a doCall method
  of this closure can take`]
@@ -803,57 +803,57 @@ DocsCollector.collect('groovy.lang.Closure', [
 			[/* method description */
 				[/* text */ 't', `Gets the strategy which the closure uses to resolve methods and properties`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `The resolve strategy`]
 			]
 		]],
 		[/* method */ 'getParameterTypes()', [
-			/* method description */ UDF,
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* method description */,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the parameter types of the longest doCall method
  of this closure`]
 			]
 		]],
 		[/* method */ 'clone()', [
-			/* method description */ UDF,
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* method description */,
+			/* parameters */,
+			/* throws */,
 			/* return */ UDF
 		]],
 		[/* method */ 'getDelegate()', [
-			/* method description */ UDF,
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* method description */,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the delegate Object to which method calls will go which is
          typically the outer class when the closure is constructed`]
 			]
 		]],
 		[/* method */ 'getOwner()', [
-			/* method description */ UDF,
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* method description */,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the owner Object to which method calls will go which is
          typically the outer class when the closure is constructed`]
 			]
 		]],
 		[/* method */ 'getThisObject()', [
-			/* method description */ UDF,
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* method description */,
+			/* parameters */,
+			/* throws */,
 			/* return */ UDF
 		]],
 		[/* method */ 'call()', [
 			[/* method description */
 				[/* text */ 't', `Invokes the closure with no arguments, returning any value if applicable.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `The value if applicable or null if there is no return statement in the closure.`]
 			]
@@ -867,7 +867,7 @@ DocsCollector.collect('groovy.lang.Closure', [
 					[/* text */ 't', `could be a single value or a List of values`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `The value if applicable or null if there is no return statement in the closure.`]
 			]
@@ -876,8 +876,8 @@ DocsCollector.collect('groovy.lang.Closure', [
 			[/* method description */
 				[/* text */ 't', `Invokes the closure with given argument(s), returning any value if applicable.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `The value if applicable or null if there is no return statement in the closure.`]
 			]
@@ -909,15 +909,15 @@ DocsCollector.collect('groovy.lang.Closure', [
 					[/* text */ 't', `the argument to call the closure with`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the result of calling the Closure`]
 			]
 		]],
 		[/* method */ 'run()', [
-			/* method description */ UDF,
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* method description */,
+			/* parameters */,
+			/* throws */,
 			/* return */ UDF
 		]],
 		[/* method */ 'setDelegate(java.lang.Object)', [
@@ -929,17 +929,17 @@ DocsCollector.collect('groovy.lang.Closure', [
 					[/* text */ 't', `the new delegate`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			/* return */ UDF
 		]],
 		[/* method */ 'setDirective(int)', [
-			/* method description */ UDF,
+			/* method description */,
 			[/* parameters */
 				[/* parameter */ 'directive', [/* parameter description */
 					[/* text */ 't', `The directive to set.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			/* return */ UDF
 		]],
 		[/* method */ 'setResolveStrategy(int)', [
@@ -952,8 +952,9 @@ DocsCollector.collect('groovy.lang.Closure', [
 					[/* text */ 't', `The resolve strategy to set`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			/* return */ UDF
 		]]
 	],
+	/* enum values */ UDF
 ]);

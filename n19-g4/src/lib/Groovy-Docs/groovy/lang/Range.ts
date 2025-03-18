@@ -74,8 +74,8 @@ DocsCollector.collect('groovy.lang.Range', [
 		[/* text */ 't', ` which, for numerical ranges, allows checking within the continuous
  interval between the Range's boundary values.`]
 	],
-	/* fields */ UDF,
-	/* constructors */ UDF,
+	/* fields */,
+	/* constructors */,
 	[/* methods */
 		[/* method */ 'containsWithinBounds(java.lang.Object)', [
 			[/* method description */
@@ -98,7 +98,7 @@ DocsCollector.collect('groovy.lang.Range', [
 					[/* text */ 't', `the object to check against the boundaries of the range`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if the object is between the from and to values`]
@@ -109,17 +109,17 @@ DocsCollector.collect('groovy.lang.Range', [
 				[/* text */ 't', `Indicates whether this is a reverse range which iterates backwards
  starting from the to value and ending on the from value`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if this is a reverse range`]
 			]
 		]],
 		[/* method */ 'inspect()', [
-			/* method description */ UDF,
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* method description */,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the verbose `],
 				[/* external link */ 'a', `https://docs.oracle.com/javase/8/docs/api/java/lang/String.html`, `String`],
@@ -139,7 +139,7 @@ DocsCollector.collect('groovy.lang.Range', [
 					[/* text */ 't', `the amount by which to step. If negative, steps through the range backwards.`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the list formed by stepping through the range by the indicated interval.`]
 			]
@@ -148,8 +148,8 @@ DocsCollector.collect('groovy.lang.Range', [
 			[/* method description */
 				[/* text */ 't', `The lower value in the range.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the lower value in the range.`]
 			]
@@ -158,8 +158,8 @@ DocsCollector.collect('groovy.lang.Range', [
 			[/* method description */
 				[/* text */ 't', `The upper value in the range.`]
 			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
+			/* parameters */,
+			/* throws */,
 			[/* return description */
 				[/* text */ 't', `the upper value in the range`]
 			]
@@ -178,8 +178,9 @@ DocsCollector.collect('groovy.lang.Range', [
 					[/* text */ 't', ` to call`]
 				]]
 			],
-			/* throws */ UDF,
+			/* throws */,
 			/* return */ UDF
 		]]
 	],
+	/* enum values */ UDF
 ]);
