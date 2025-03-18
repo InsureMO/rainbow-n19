@@ -11,7 +11,7 @@ import {
 	ITypeVariable
 } from '../Interfaces';
 import {AnnotatedElementTypeVariableSupport, TypeSupport} from '../Supports';
-import {ClassName, TypeOrNameOrTypeVariableRef} from '../TypeAlias';
+import {ClassName, SimpleTypeName, TypeName, TypeOrNameOrTypeVariableRef} from '../TypeAlias';
 
 /**
  * T refers to type parameter \<T\> which defined in class/constructor/method.<br/>
@@ -58,7 +58,11 @@ export class TypeVariable implements ITypeVariable {
 		return this.genericDeclaration.typeParameters.indexOf(this);
 	}
 
-	get typeName(): string {
+	get typeName(): TypeName {
+		return this.name;
+	}
+
+	get simpleTypeName(): SimpleTypeName {
 		return this.name;
 	}
 

@@ -1,7 +1,7 @@
 import {IGenericArrayTypeConstructorArgs} from '../ConstructorArgs';
 import {IClassLoader, IGenericArrayType, IGenericDeclaration, IType} from '../Interfaces';
 import {TypeSupport} from '../Supports';
-import {TypeOrNameOrTypeVariableRef} from '../TypeAlias';
+import {SimpleTypeName, TypeName, TypeOrNameOrTypeVariableRef} from '../TypeAlias';
 
 export class GenericArrayType implements IGenericArrayType {
 	/** define on where, could be class, constructor or method */
@@ -31,8 +31,12 @@ export class GenericArrayType implements IGenericArrayType {
 		return this;
 	}
 
-	get typeName(): string {
-		return this.toString();
+	get typeName(): TypeName {
+		return this.genericComponentType.typeName + '[]';
+	}
+
+	get simpleTypeName(): SimpleTypeName {
+		return this.genericComponentType.simpleTypeName + '[]';
 	}
 
 	// eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -47,6 +51,6 @@ export class GenericArrayType implements IGenericArrayType {
 	}
 
 	toString() {
-		return this.genericComponentType.typeName + '[]';
+		return this.typeName;
 	}
 }

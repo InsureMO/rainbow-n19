@@ -69,7 +69,7 @@ const ConstructorOption = (props: { constructor: Java.IConstructor }) => {
 			{(constructor.parameters ?? []).map((parameter, index) => {
 				return <Fragment key={parameter.name}>
 					{index !== 0 ? ', ' : (void 0)}
-					{parameter.genericTypeName}
+					{parameter.simpleGenericTypeName}
 					{parameter.isVarArgs ? '...' : (void 0)}
 				</Fragment>;
 			})}
@@ -89,13 +89,13 @@ const MethodOption = (props: { method: Java.IMethod }) => {
 			{(method.parameters ?? []).map((parameter, index) => {
 				return <Fragment key={parameter.name}>
 					{index !== 0 ? ', ' : (void 0)}
-					{parameter.genericTypeName}
+					{parameter.simpleGenericTypeName}
 					{parameter.isVarArgs ? '...' : (void 0)}
 				</Fragment>;
 			})}
 			{') '}
-			{method.returned.genericTypeName}
-					</span>
+			{method.returned.simpleGenericTypeName}
+		</span>
 	</>;
 };
 
@@ -133,7 +133,7 @@ export const ShortcutsPart: FC<ShortcutsPartProps> = (props) => {
 			return;
 		}
 
-		ref.current.parentElement.querySelector(`a[id="${id}"]`)?.scrollIntoView({behavior: 'smooth'});
+		ref.current.parentElement.querySelector(`a[id="${id}"]`)?.scrollIntoView({behavior: 'smooth', block: 'start'});
 		setState(state => {
 			return {details: state.details, currentOption: option, optionsState: ShortcutsOptionsState.HIDE};
 		});
@@ -176,8 +176,8 @@ export const ShortcutsPart: FC<ShortcutsPartProps> = (props) => {
 		if (details.class?.declaredFields != null && details.class.declaredFields.length > 0) {
 			details.class.declaredFields.sort((f1, f2) => {
 				return f1.name.localeCompare(f2.name, (void 0), {sensitivity: 'base'});
-			}).map(field => {
-				options.push(<ShortcutsOption onClick={toField(field)} key={field.toShortString()}>
+			}).map((field, index) => {
+				options.push(<ShortcutsOption onClick={toField(field)} key={`${index}-${field.toShortString()}`}>
 					<FieldOption field={field}/>
 				</ShortcutsOption>);
 			});
@@ -188,8 +188,9 @@ export const ShortcutsPart: FC<ShortcutsPartProps> = (props) => {
 				return {constructor, key: constructor.toGenericString()};
 			}).sort((m1, m2) => {
 				return m1.key.localeCompare(m2.key, (void 0), {sensitivity: 'base'});
-			}).map(({constructor}) => {
-				options.push(<ShortcutsOption onClick={toConstructor(constructor)} key={constructor.toShortString()}>
+			}).map(({constructor}, index) => {
+				options.push(<ShortcutsOption onClick={toConstructor(constructor)}
+				                              key={`${index}-${constructor.toShortString()}`}>
 					<ConstructorOption constructor={constructor}/>
 				</ShortcutsOption>);
 			});
@@ -200,8 +201,8 @@ export const ShortcutsPart: FC<ShortcutsPartProps> = (props) => {
 				return {method, key: method.toGenericString()};
 			}).sort((m1, m2) => {
 				return m1.key.localeCompare(m2.key, (void 0), {sensitivity: 'base'});
-			}).map(({method}) => {
-				options.push(<ShortcutsOption onClick={toMethod(method)} key={method.toShortString()}>
+			}).map(({method}, index) => {
+				options.push(<ShortcutsOption onClick={toMethod(method)} key={`${index}-${method.toShortString()}`}>
 					<MethodOption method={method}/>
 				</ShortcutsOption>);
 			});

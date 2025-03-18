@@ -121,7 +121,7 @@ export const HelpContent = styled.div.attrs({
     border: var(--groovy-editor-help-content-border, 0);
     border-top: var(--groovy-editor-help-content-border-top, 1px solid #ddd);
     margin: var(--groovy-editor-help-content-margin, 16px 0 0);
-    padding-bottom: var(--shortcuts-place);
+    scroll-padding-top: var(--groovy-editor-help-content-title-height, 40px);
     color: var(--groovy-editor-help-content-color, #555);
     overflow-x: hidden;
     overflow-y: scroll;

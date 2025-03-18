@@ -3,7 +3,7 @@ import {Optional} from '../TsAddon';
 import {IAnnotationConstructorArgs, IReturnedConstructorArgs} from './ConstructorArgs';
 import {IAnnotatedType, IAnnotation, IClass, IClassLoader, IExecutable, IMethod, IReturned, IType} from './Interfaces';
 import {AnnotatedElementReturnedSupport, TypeSupport} from './Supports';
-import {ClassName, TypeName, TypeOrNameOrTypeVariableRef} from './TypeAlias';
+import {ClassName, SimpleTypeName, TypeName, TypeOrNameOrTypeVariableRef} from './TypeAlias';
 
 export class Returned implements IReturned {
 	private readonly _executable: IExecutable;
@@ -44,6 +44,10 @@ export class Returned implements IReturned {
 	 */
 	get genericTypeName(): TypeName {
 		return this._typeSupport.genericName;
+	}
+
+	get simpleGenericTypeName(): SimpleTypeName {
+		return this._typeSupport.simpleGenericName;
 	}
 
 	/**

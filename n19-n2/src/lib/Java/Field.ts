@@ -4,7 +4,7 @@ import {IAnnotationConstructorArgs, IFieldConstructorArgs} from './ConstructorAr
 import {Modifier} from './Helpers';
 import {IAnnotatedType, IAnnotation, IClass, IClassLoader, IField, IType, MemberType} from './Interfaces';
 import {AnnotatedElementMemberSupport, ModifiersSupport, TypeSupport} from './Supports';
-import {ClassName, ModifiersValue, TypeName, TypeOrNameOrTypeVariableRef} from './TypeAlias';
+import {ClassName, ModifiersValue, SimpleTypeName, TypeName, TypeOrNameOrTypeVariableRef} from './TypeAlias';
 
 export class Field implements IField {
 	private readonly _declaringClass: IClass;
@@ -69,6 +69,10 @@ export class Field implements IField {
 	 */
 	get genericTypeName(): TypeName {
 		return this._typeSupport.genericName;
+	}
+
+	get simpleGenericTypeName(): SimpleTypeName {
+		return this._typeSupport.simpleGenericName;
 	}
 
 	get genericType(): IType {

@@ -10,7 +10,14 @@ import {Method} from '../Method';
 import {Parameter} from '../Parameter';
 import {Returned} from '../Returned';
 import {Thrown} from '../Thrown';
-import {ClassName, NotClassType, TypeName, TypeOrNameOrTypeVariableRef, TypeVariableRef} from '../TypeAlias';
+import {
+	ClassName,
+	NotClassType,
+	SimpleTypeName,
+	TypeName,
+	TypeOrNameOrTypeVariableRef,
+	TypeVariableRef
+} from '../TypeAlias';
 import {AbstractClassLoaderDelegate} from './AbstractClassLoaderDelegate';
 
 export class TypeSupport<T extends IClassLoaderHolder> extends AbstractClassLoaderDelegate<T> {
@@ -156,6 +163,10 @@ export class TypeSupport<T extends IClassLoaderHolder> extends AbstractClassLoad
 		return this.genericType.typeName;
 	}
 
+	get simpleGenericName(): SimpleTypeName {
+		return this.genericType.simpleTypeName;
+	}
+
 	/**
 	 * type with generic info
 	 */
@@ -194,6 +205,14 @@ export class SuperclassSupport<T extends IClassLoaderHolder> extends TypeSupport
 			return null;
 		} else {
 			return super.genericName;
+		}
+	}
+
+	get simpleGenericName(): SimpleTypeName {
+		if (this._typeOrName == null) {
+			return null;
+		} else {
+			return super.simpleGenericName;
 		}
 	}
 

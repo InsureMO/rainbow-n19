@@ -1,4 +1,4 @@
-import {ClassName, TypeName, TypeOrNameOrTypeVariableRef} from '../TypeAlias';
+import {ClassName, SimpleTypeName, TypeName, TypeOrNameOrTypeVariableRef} from '../TypeAlias';
 import {IAnnotatedType} from './IAnnotatedType';
 import {IClass} from './IClass';
 import {IType} from './IType';
@@ -21,6 +21,10 @@ export interface ITypedElement {
 	 * generic type name when generic info exists, or type name when generic info not exists
 	 */
 	get genericTypeName(): TypeName;
+	/**
+	 * simple generic type name when generic info exists, or simple type name when generic info not exists
+	 */
+	get simpleGenericTypeName(): SimpleTypeName;
 	/**
 	 * generic type when generic info exists, or type class when generic info not exists
 	 */

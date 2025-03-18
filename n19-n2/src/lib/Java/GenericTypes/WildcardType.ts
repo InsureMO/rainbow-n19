@@ -3,7 +3,7 @@ import {IWildcardTypeConstructorArgs} from '../ConstructorArgs';
 import {BuiltInConstants} from '../Helpers';
 import {IClassLoader, IGenericDeclaration, IType, IWildcardType} from '../Interfaces';
 import {TypeSupport} from '../Supports';
-import {TypeName, TypeOrNameOrTypeVariableRef} from '../TypeAlias';
+import {SimpleTypeName, TypeName, TypeOrNameOrTypeVariableRef} from '../TypeAlias';
 
 export class WildcardType implements IWildcardType {
 	/** define on where, could be class, constructor or method */
@@ -46,25 +46,7 @@ export class WildcardType implements IWildcardType {
 		return this;
 	}
 
-	get typeName(): TypeName {
-		return this.toString();
-	}
-
-	// eslint-disable-next-line @typescript-eslint/no-explicit-any
-	equals(o: any): boolean {
-		if (this === o) {
-			return true;
-		}
-		if (o == null || !(o instanceof WildcardType)) {
-			return false;
-		}
-		return this.lowerBounds.length === o.lowerBounds.length
-			&& this.lowerBounds.every((bound, index) => bound.equals(o.lowerBounds[index]))
-			&& this.upperBounds.length === o.upperBounds.length
-			&& this.upperBounds.every((bound, index) => bound.equals(o.upperBounds[index]));
-	}
-
-	toString(): string {
+	private toTypeName(simple: boolean): string {
 		// if using "? super", lower bound must be appointed,
 		// and if using "? extends", upper bound must be appointed,
 		// and if using "?", default upper bound is java.lang.Object
@@ -84,7 +66,33 @@ export class WildcardType implements IWildcardType {
 			sb = sb + '? super ';
 		}
 
-		sb = sb + bounds.map(bound => bound.typeName).join(' & ');
+		sb = sb + bounds.map(bound => simple ? bound.simpleTypeName : bound.typeName).join(' & ');
 		return sb;
+	}
+
+	get typeName(): TypeName {
+		return this.toTypeName(false);
+	}
+
+	get simpleTypeName(): SimpleTypeName {
+		return this.toTypeName(true);
+	}
+
+	// eslint-disable-next-line @typescript-eslint/no-explicit-any
+	equals(o: any): boolean {
+		if (this === o) {
+			return true;
+		}
+		if (o == null || !(o instanceof WildcardType)) {
+			return false;
+		}
+		return this.lowerBounds.length === o.lowerBounds.length
+			&& this.lowerBounds.every((bound, index) => bound.equals(o.lowerBounds[index]))
+			&& this.upperBounds.length === o.upperBounds.length
+			&& this.upperBounds.every((bound, index) => bound.equals(o.upperBounds[index]));
+	}
+
+	toString(): string {
+		return this.toTypeName(false);
 	}
 }

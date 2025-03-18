@@ -3,7 +3,7 @@ import {Optional} from '../TsAddon';
 import {IAnnotationConstructorArgs, IThrownConstructorArgs} from './ConstructorArgs';
 import {IAnnotatedType, IAnnotation, IClass, IClassLoader, IExecutable, IThrown, IType} from './Interfaces';
 import {AnnotatedElementThrownSupport, TypeSupport} from './Supports';
-import {ClassName, TypeName, TypeOrNameOrTypeVariableRef} from './TypeAlias';
+import {ClassName, SimpleTypeName, TypeName, TypeOrNameOrTypeVariableRef} from './TypeAlias';
 
 export class Thrown implements IThrown {
 	private readonly _executable: IExecutable;
@@ -50,8 +50,8 @@ export class Thrown implements IThrown {
 		return this._typeSupport.genericName;
 	}
 
-	get annotatedType(): IAnnotatedType {
-		throw new UnsupportedOperationException('Not implemented yet.');
+	get simpleGenericTypeName(): SimpleTypeName {
+		return this._typeSupport.simpleGenericName;
 	}
 
 	/**
@@ -64,6 +64,10 @@ export class Thrown implements IThrown {
 	setTypeOrName(typeOrName: TypeOrNameOrTypeVariableRef): this {
 		this._typeSupport.setTypeOrName(typeOrName);
 		return this;
+	}
+
+	get annotatedType(): IAnnotatedType {
+		throw new UnsupportedOperationException('Not implemented yet.');
 	}
 
 	get annotations(): Array<IAnnotation> {

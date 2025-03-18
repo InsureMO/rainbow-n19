@@ -4,7 +4,7 @@ import {IAnnotationConstructorArgs, IParameterConstructorArgs} from './Construct
 import {Modifier} from './Helpers';
 import {IAnnotatedType, IAnnotation, IClass, IClassLoader, IExecutable, IParameter, IType} from './Interfaces';
 import {AnnotatedElementParameterSupport, ModifiersSupport, TypeSupport} from './Supports';
-import {ClassName, ModifiersValue, TypeName, TypeOrNameOrTypeVariableRef} from './TypeAlias';
+import {ClassName, ModifiersValue, SimpleTypeName, TypeName, TypeOrNameOrTypeVariableRef} from './TypeAlias';
 
 /**
  * Is attached on an {@link IExecutable}.<br>
@@ -80,6 +80,10 @@ export class Parameter implements IParameter {
 	 */
 	get genericTypeName(): TypeName {
 		return this._typeSupport.genericName;
+	}
+
+	get simpleGenericTypeName(): SimpleTypeName {
+		return this._typeSupport.simpleGenericName;
 	}
 
 	/**

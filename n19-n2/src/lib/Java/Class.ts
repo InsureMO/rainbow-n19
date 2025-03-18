@@ -33,6 +33,7 @@ import {
 	ModifiersValue,
 	PackageName,
 	SimpleClassName,
+	SimpleTypeName,
 	TypeName,
 	TypeOrName
 } from './TypeAlias';
@@ -336,7 +337,7 @@ export class Class implements IClass {
 		}
 	}
 
-	get typeName(): TypeName {
+	private toTypeName(simple: boolean): string {
 		if (this.isArray) {
 			try {
 				// eslint-disable-next-line @typescript-eslint/no-this-alias
@@ -347,15 +348,23 @@ export class Class implements IClass {
 					component = component.componentType;
 				} while (component.isArray);
 				let sb: string = '';
-				sb = sb + component.name;
+				sb = sb + (simple ? component.simpleName : component.name);
 				for (let i = 0; i < dimensions; i++) {
 					sb = sb + '[]';
 				}
-				return sb.toString();
+				return sb;
 			} catch { /* fall through */
 			}
 		}
-		return this.name;
+		return simple ? this.simpleName : this.name;
+	}
+
+	get typeName(): TypeName {
+		return this.toTypeName(false);
+	}
+
+	get simpleTypeName(): SimpleTypeName {
+		return this.toTypeName(true);
 	}
 
 	get modifiers(): ModifiersValue {

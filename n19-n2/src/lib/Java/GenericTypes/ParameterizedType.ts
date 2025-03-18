@@ -2,7 +2,7 @@ import {Optional} from '../../TsAddon';
 import {IParameterizedTypeConstructorArgs} from '../ConstructorArgs';
 import {IClass, IClassLoader, IGenericDeclaration, IParameterizedType, IType} from '../Interfaces';
 import {TypeSupport} from '../Supports';
-import {ClassName, TypeName, TypeOrNameOrTypeVariableRef} from '../TypeAlias';
+import {ClassName, SimpleTypeName, TypeName, TypeOrNameOrTypeVariableRef} from '../TypeAlias';
 
 /**
  * Collection<String>, Collection<T>, Collection<Comparable<T>>
@@ -59,8 +59,41 @@ export class ParameterizedType implements IParameterizedType {
 		return this;
 	}
 
+	private toTypeName(simple: boolean): string {
+		let sb: string = '';
+
+		if (this.ownerType != null) {
+			sb = sb + (simple ? this.ownerType.simpleTypeName : this.ownerType.typeName);
+			sb = sb + '$';
+			if (this.ownerType instanceof ParameterizedType) {
+				// Find simple name of nested type by removing the shared prefix with owner.
+				sb = sb
+					+ (simple ? this.rawType.simpleName : this.rawType.name)
+						.replace((simple ? this.ownerType.rawType.simpleName : this.ownerType.rawType.name) + '$', '');
+			} else {
+				sb = sb + this.rawType.simpleName;
+			}
+		} else {
+			sb = sb + (simple ? this.rawType.simpleName : this.rawType.name);
+		}
+
+		if (this.actualTypeArguments != null && this.actualTypeArguments.length !== 0) {
+			sb = sb + '<'
+				+ this.actualTypeArguments.map(actualTypeArgument => {
+					return simple ? actualTypeArgument.simpleTypeName : actualTypeArgument.typeName;
+				}).join(', ')
+				+ '>';
+		}
+
+		return sb;
+	}
+
 	get typeName(): TypeName {
-		return this.toString();
+		return this.toTypeName(false);
+	}
+
+	get simpleTypeName(): SimpleTypeName {
+		return this.toTypeName(true);
 	}
 
 	// eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -79,25 +112,6 @@ export class ParameterizedType implements IParameterizedType {
 	}
 
 	toString(): string {
-		let sb: string = '';
-
-		if (this.ownerType != null) {
-			sb = sb + this.ownerType.typeName;
-			sb = sb + '$';
-			if (this.ownerType instanceof ParameterizedType) {
-				// Find simple name of nested type by removing the shared prefix with owner.
-				sb = sb + this.rawType.name.replace(this.ownerType.rawType.name + '$', '');
-			} else {
-				sb = sb + this.rawType.simpleName;
-			}
-		} else {
-			sb = sb + this.rawType.name;
-		}
-
-		if (this.actualTypeArguments != null && this.actualTypeArguments.length !== 0) {
-			sb = sb + '<' + this.actualTypeArguments.map(actualTypeArgument => actualTypeArgument.typeName).join(', ') + '>';
-		}
-
-		return sb;
+		return this.toTypeName(false);
 	}
 }
